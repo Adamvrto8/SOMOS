@@ -1,0 +1,32 @@
+/* Design tokens — "industrial loft café" (see CLAUDE.md §6).
+   The resolved theme is always set as data-theme on <html> by the inline
+   script in index.html and by lib/theme.ts. */
+
+:root {
+  --bg:        #F4F1EC;  /* warm concrete */
+  --surface:   #FFFFFF;
+  --surface-2: #ECE7DF;
+  --ink:       #1E1E1C;  /* steel beams */
+  --ink-muted: #6B665E;
+  --line:      #DDD6CB;
+  --brick:     #B5553C;  /* primary accent, buttons */
+  --leaf:      #4F6B45;  /* success */
+  --amber:     #E3A64B;  /* highlights, streak, irregular forms */
+  --error:     #A33A2B;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {     /* "neon lounge" */
+  --bg:        #161614;
+  --surface:   #1F1E1B;
+  --surface-2: #292723;
+  --ink:       #F1ECE3;
+  --ink-muted: #A39C90;
+  --line:      #34312C;
+  --brick:     #D06A4E;
+  --leaf:      #7F9E72;
+  --amber:     #F2B866;  /* subtle glow on active elements */
+
+  color-scheme: dark;
+}
