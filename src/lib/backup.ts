@@ -1,4 +1,5 @@
 import { db, type Attempt, type CustomWord, type ReviewCard, type SavedItem } from './db'
+import { syncReviewCards } from './srs'
 
 // JSON backup of everything stored on the device (IndexedDB).
 
@@ -58,7 +59,8 @@ const isCustomWord = (x: unknown): x is CustomWord =>
 const isSavedItem = (x: unknown): x is SavedItem =>
   isRec(x) && isStr(x.itemId) && ['word', 'verb', 'custom'].includes(x.itemType as string) && isNum(x.savedAt)
 
-const isReviewCard = (x: unknown): x is ReviewCard => isRec(x) && isStr(x.itemId) && isStr(x.itemType) && 'fsrs' in x
+const isReviewCard = (x: unknown): x is ReviewCard =>
+  isRec(x) && isStr(x.itemId) && ['word', 'custom'].includes(x.itemType as string) && isRec(x.fsrs) && 'due' in x.fsrs
 
 const isAttempt = (x: unknown): x is Attempt =>
   isRec(x) && isStr(x.exercise) && isStr(x.itemId) && typeof x.correct === 'boolean' && isNum(x.at)
@@ -100,7 +102,7 @@ export function parseBackup(text: string): ParseResult {
  * items with the same key are replaced by the backup version.
  */
 export async function importBackup(backup: Backup, skipped: number): Promise<ImportResult> {
-  return db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts], async () => {
+  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts], async () => {
     await db.customWords.bulkPut(backup.customWords)
     await db.savedItems.bulkPut(backup.savedItems)
     await db.reviewCards.bulkPut(backup.reviewCards)
@@ -121,4 +123,7 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       skipped,
     }
   })
+  // Backups made before review cards existed restore saved words without cards.
+  await syncReviewCards()
+  return result
 }

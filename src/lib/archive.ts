@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db, type CustomWord, type SavedItem, type SavedItemType } from './db'
+import { addReviewCard, removeReviewCard } from './srs'
 
 // Reads return `undefined` while IndexedDB is loading; components render a neutral state meanwhile.
 
@@ -21,13 +22,16 @@ export function useIsSaved(wordId: string): boolean | undefined {
   return useLiveQuery(async () => Boolean(await db.savedItems.get(wordKey(wordId))), [wordId])
 }
 
+/** Saving a word also schedules it for review; unsaving drops its review card. */
 export async function toggleSavedWord(wordId: string): Promise<boolean> {
-  const saved = await db.transaction('rw', db.savedItems, async () => {
+  const saved = await db.transaction('rw', db.savedItems, db.reviewCards, async () => {
     if (await db.savedItems.get(wordKey(wordId))) {
       await db.savedItems.delete(wordKey(wordId))
+      await removeReviewCard('word', wordId)
       return false
     }
     await db.savedItems.put({ itemType: 'word', itemId: wordId, savedAt: Date.now() })
+    await addReviewCard('word', wordId)
     return true
   })
   if (saved) void requestPersistence()
@@ -67,7 +71,10 @@ export async function saveCustomWord(input: CustomWordInput, id?: string): Promi
     return id
   }
   const created: CustomWord = { id: newId(), ...clean, createdAt: Date.now() }
-  await db.customWords.add(created)
+  await db.transaction('rw', db.customWords, db.reviewCards, async () => {
+    await db.customWords.add(created)
+    await addReviewCard('custom', created.id)
+  })
   void requestPersistence()
   return created.id
 }
@@ -75,7 +82,7 @@ export async function saveCustomWord(input: CustomWordInput, id?: string): Promi
 export async function deleteCustomWord(id: string): Promise<void> {
   await db.transaction('rw', db.customWords, db.reviewCards, async () => {
     await db.customWords.delete(id)
-    await db.reviewCards.delete(['custom', id])
+    await removeReviewCard('custom', id)
   })
 }
 

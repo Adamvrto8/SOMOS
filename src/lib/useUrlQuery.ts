@@ -2,11 +2,35 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router'
 
 /**
+ * Updates several URL search params in one navigation, keeping the others; `null` removes one.
+ *
+ * The base is the browser's current URL, not the hook's `prev` snapshot: the router writes
+ * history before React re-renders, so two quick updates (tap a filter, start typing) would
+ * otherwise have the second one restore what the first removed.
+ */
+export function useUpdateParams(): (updates: Record<string, string | null>) => void {
+  const [, setParams] = useSearchParams()
+  return (updates) =>
+    setParams(
+      () => {
+        const next = new URLSearchParams(window.location.search)
+        for (const [name, value] of Object.entries(updates)) {
+          if (value === null) next.delete(name)
+          else next.set(name, value)
+        }
+        return next
+      },
+      { replace: true },
+    )
+}
+
+/**
  * Text query mirrored in the URL (?q=) so "back" restores it. Local state keeps
  * typing smooth; the URL follows with replace navigations.
  */
 export function useUrlQuery(): [string, (value: string) => void] {
-  const [params, setParams] = useSearchParams()
+  const [params] = useSearchParams()
+  const update = useUpdateParams()
   const urlQuery = params.get('q') ?? ''
   const [query, setQuery] = useState(urlQuery)
 
@@ -19,38 +43,10 @@ export function useUrlQuery(): [string, (value: string) => void] {
 
   const change = (value: string) => {
     setQuery(value)
-    setParams(
-      (prev) => {
-        const next = new URLSearchParams(prev)
-        if (value) next.set('q', value)
-        else next.delete('q')
-        return next
-      },
-      { replace: true },
-    )
+    update({ q: value || null })
   }
 
   return [query, change]
-}
-
-/**
- * Updates several URL search params in one navigation, keeping the others; `null` removes one.
- * (Separate setSearchParams calls in one handler would overwrite each other.)
- */
-export function useUpdateParams(): (updates: Record<string, string | null>) => void {
-  const [, setParams] = useSearchParams()
-  return (updates) =>
-    setParams(
-      (prev) => {
-        const next = new URLSearchParams(prev)
-        for (const [name, value] of Object.entries(updates)) {
-          if (value === null) next.delete(name)
-          else next.set(name, value)
-        }
-        return next
-      },
-      { replace: true },
-    )
 }
 
 /** One URL search param and a setter that keeps the others. */

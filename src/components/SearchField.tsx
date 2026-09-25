@@ -7,9 +7,11 @@ interface SearchFieldProps {
   label: string
   placeholder: string
   autoFocus?: boolean
+  /** Called on Enter / the keyboard's search key. */
+  onSubmit?: (value: string) => void
 }
 
-export function SearchField({ value, onChange, label, placeholder, autoFocus }: SearchFieldProps) {
+export function SearchField({ value, onChange, label, placeholder, autoFocus, onSubmit }: SearchFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   return (
@@ -18,6 +20,7 @@ export function SearchField({ value, onChange, label, placeholder, autoFocus }: 
       onSubmit={(e) => {
         e.preventDefault()
         inputRef.current?.blur() // closes the keyboard so results are visible
+        onSubmit?.(value)
       }}
       className="relative"
     >

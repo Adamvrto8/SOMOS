@@ -7,6 +7,7 @@ import { SettingsPage } from './features/archive/SettingsPage'
 import { LessonPage } from './features/exercises/LessonPage'
 import { PracticePage } from './features/exercises/PracticePage'
 import { HomePage } from './features/home/HomePage'
+import { ReviewPage } from './features/review/ReviewPage'
 import { SearchPage } from './features/search/SearchPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
@@ -28,8 +29,9 @@ const router = createBrowserRouter([
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
-  // Full-screen lesson player: no header or tab bar, its own bottom action bar.
+  // Full-screen players: no header or tab bar, their own bottom action bar.
   { path: '/practice/lesson', element: <LessonPage /> },
+  { path: '/review', element: <ReviewPage /> },
 ])
 
 export default function App() {

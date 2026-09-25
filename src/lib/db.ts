@@ -1,4 +1,5 @@
 import Dexie, { type EntityTable, type Table } from 'dexie'
+import type { Card } from 'ts-fsrs'
 
 // Local, per-device user data (see CLAUDE.md §3). Static content lives in src/data.
 
@@ -19,10 +20,14 @@ export interface SavedItem {
   savedAt: number
 }
 
+/** Spaced-repetition items: saved dictionary words and the learner's own words. */
+export type ReviewItemType = 'word' | 'custom'
+
 export interface ReviewCard {
   itemId: string
-  itemType: string
-  fsrs: unknown // ts-fsrs Card, typed in phase 5
+  itemType: ReviewItemType
+  // Dates are Date objects in IndexedDB but strings after a JSON backup: read via srs.cardOf().
+  fsrs: Card
 }
 
 export interface Attempt {
@@ -37,7 +42,7 @@ export class SomosDB extends Dexie {
   customWords!: EntityTable<CustomWord, 'id'>
   // Compound key: a word and a verb can share an id (e.g. "tener").
   savedItems!: Table<SavedItem, [SavedItemType, string]>
-  reviewCards!: Table<ReviewCard, [string, string]>
+  reviewCards!: Table<ReviewCard, [ReviewItemType, string]>
   attempts!: EntityTable<Attempt, 'id'>
 
   constructor() {

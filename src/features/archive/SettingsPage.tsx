@@ -1,12 +1,14 @@
 import { BackButton } from '../../components/BackButton'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
+import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { setThemePref, useThemePref } from '../../lib/theme'
 import { BackupSettings } from './BackupSettings'
 import { VoiceSettings } from './VoiceSettings'
 
 export function SettingsPage() {
   const themePref = useThemePref()
+  const dailyGoal = useDailyGoal()
 
   return (
     <div className="space-y-8">
@@ -29,6 +31,19 @@ export function SettingsPage() {
             { id: 'dark', label: 'Tmavá' },
           ]}
         />
+      </section>
+
+      <section aria-labelledby="goal-heading">
+        <SectionTitle id="goal-heading">Denný cieľ</SectionTitle>
+        <Segmented
+          mode="radio"
+          label="Denný cieľ"
+          idPrefix="goal"
+          value={String(dailyGoal)}
+          onChange={(v) => setDailyGoal(Number(v))}
+          options={GOAL_OPTIONS.map((n) => ({ id: String(n), label: String(n) }))}
+        />
+        <p className="mt-2 text-sm text-ink-muted">Počet odpovedí za deň – v lekciách aj pri opakovaní.</p>
       </section>
 
       <VoiceSettings />

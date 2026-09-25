@@ -1,4 +1,4 @@
-import { Plus, Search, Settings } from 'lucide-react'
+import { Layers, Plus, Search, Settings } from 'lucide-react'
 import { useMemo } from 'react'
 import { Link } from 'react-router'
 import { Chip } from '../../components/Chip'
@@ -8,6 +8,7 @@ import { topics, wordById } from '../../data'
 import type { Word } from '../../data/types'
 import { useCustomWords, useSavedItems } from '../../lib/archive'
 import type { CustomWord } from '../../lib/db'
+import { useReviewOverview } from '../../lib/srs'
 import { fold } from '../../lib/text'
 import { useUpdateParams, useUrlParam, useUrlQuery } from '../../lib/useUrlQuery'
 import { WordRow } from '../search/WordRow'
@@ -27,6 +28,7 @@ export function ArchivePage() {
 
   const savedItems = useSavedItems()
   const customWords = useCustomWords()
+  const review = useReviewOverview()
 
   const savedWords = useMemo(
     () => (savedItems ?? []).flatMap((item) => (item.itemType === 'word' ? (wordById.get(item.itemId) ?? []) : [])),
@@ -65,6 +67,16 @@ export function ArchivePage() {
           <Settings size={22} strokeWidth={1.75} aria-hidden />
         </Link>
       </div>
+
+      {review && review.dueToday > 0 && (
+        <Link
+          to="/review"
+          className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-brick px-5 font-semibold text-on-accent transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
+        >
+          <Layers size={18} strokeWidth={1.75} aria-hidden />
+          Zopakovať dnes ({review.dueToday})
+        </Link>
+      )}
 
       <Segmented
         mode="tabs"

@@ -118,9 +118,17 @@ interface Topic { id: string; sk: string; es: string; icon: string; }
 // Stored in IndexedDB (Dexie)
 interface CustomWord { id: string; es: string; sk: string; note?: string; topic?: string; createdAt: number; }
 interface SavedItem  { itemId: string; itemType: 'word' | 'verb' | 'custom'; savedAt: number; }
-interface ReviewCard { itemId: string; itemType: string; fsrs: /* ts-fsrs Card */ unknown; }
+interface ReviewCard { itemId: string; itemType: 'word' | 'custom'; fsrs: Card /* ts-fsrs */; }
 interface Attempt    { id?: number; exercise: string; itemId: string; correct: boolean; at: number; }
 ```
+
+Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
+- Every saved dictionary word and every custom word has exactly one ReviewCard (created on save/add,
+  removed on unsave/delete; `syncReviewCards()` repairs this at startup and after a backup restore).
+- A card is "due today" when `due` ≤ end of the local day. Cards still due after rating
+  (short relearning steps) come back later in the same session.
+- Always read cards through `cardOf()` (ts-fsrs `TypeConvert`): JSON backups store dates as strings.
+- Every review is also an Attempt with `exercise: 'review'`; streak, daily goal and stats count all attempts.
 
 A validation script (`npm run validate:data`) must check: unique ids, every `verbId`
 exists, every topic exists, cloze `tokenIndex` in range and `tokens[tokenIndex] === answer`,
@@ -249,7 +257,7 @@ scripts/
 - [x] **2. Search + word detail + conjugation tables + TTS.**
 - [x] **3. Archive** — save/unsave, custom words, export/import.
 - [x] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.
-- [ ] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
+- [x] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
 - [ ] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
 - [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
 
