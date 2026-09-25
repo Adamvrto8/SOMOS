@@ -1,5 +1,5 @@
 import type { Card } from 'ts-fsrs'
-import { wordById } from '../../data'
+import { sentenceById, wordById } from '../../data'
 import type { Example } from '../../data/types'
 import { db, type ReviewItemType } from '../../lib/db'
 import { articleFor } from '../../lib/grammar'
@@ -28,6 +28,10 @@ export async function loadDueEntries(now = new Date()): Promise<ReviewEntry[]> {
   const customs = new Map((await db.customWords.bulkGet(customIds)).flatMap((c) => (c ? [[c.id, c] as const] : [])))
 
   return due.flatMap(({ rc, card }): ReviewEntry[] => {
+    if (rc.itemType === 'sentence') {
+      const sentence = sentenceById.get(rc.itemId)
+      return sentence ? [{ itemType: 'sentence', itemId: rc.itemId, card, es: sentence.es, sk: [sentence.sk] }] : []
+    }
     if (rc.itemType === 'word') {
       const word = wordById.get(rc.itemId)
       if (!word) return [] // removed from the dataset

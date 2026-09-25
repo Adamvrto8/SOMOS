@@ -26,6 +26,8 @@
 
   --animate-pop: pop 220ms ease-out;
   --animate-sheet-up: sheet-up 220ms ease-out;
+  --animate-slide-next: slide-next 200ms ease-out;
+  --animate-slide-prev: slide-prev 200ms ease-out;
 
   @keyframes pop {
     50% {
@@ -36,6 +38,20 @@
   @keyframes sheet-up {
     from {
       transform: translateY(100%);
+    }
+  }
+
+  @keyframes slide-next {
+    from {
+      transform: translateX(2rem);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-prev {
+    from {
+      transform: translateX(-2rem);
+      opacity: 0;
     }
   }
 }
@@ -53,6 +69,8 @@
   html {
     -webkit-tap-highlight-color: transparent;
     text-size-adjust: 100%;
+    /* Horizontal swipes are app gestures (word detail), not the browser's swipe-to-go-back. */
+    overscroll-behavior-x: none;
   }
 
   body {

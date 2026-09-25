@@ -1,5 +1,5 @@
-import { Play } from 'lucide-react'
-import { useNavigate, useSearchParams } from 'react-router'
+import { ChevronRight, Dumbbell, Play } from 'lucide-react'
+import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { Chip } from '../../components/Chip'
 import { SectionTitle } from '../../components/SectionTitle'
@@ -7,6 +7,7 @@ import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { availableCount, LESSON_SIZE, type ExerciseType } from '../../lib/lesson'
+import { useMistakes } from '../../lib/mistakes'
 import { pluralSk } from '../../lib/text'
 import { useUpdateParams } from '../../lib/useUrlQuery'
 import { EXERCISES, filterFromParams, filterToParams, LEVELS } from './exercises'
@@ -17,6 +18,7 @@ export function PracticePage() {
   const [params] = useSearchParams()
   const updateParams = useUpdateParams()
   const navigate = useNavigate()
+  const mistakes = useMistakes()
 
   const filter = filterFromParams(params)
   const count = availableCount(filter)
@@ -27,6 +29,24 @@ export function PracticePage() {
   return (
     <div className="space-y-7">
       <h1 className="font-serif text-4xl font-semibold tracking-tight">Cvičiť</h1>
+
+      {mistakes && mistakes.length > 0 && (
+        <Link
+          to="/practice/lesson?mistakes=1"
+          className="flex items-center gap-3 rounded-card border border-line bg-surface p-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
+        >
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-error/10 text-error">
+            <Dumbbell size={20} strokeWidth={1.75} aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">Precvičiť chyby</span>
+            <span className="block text-sm text-ink-muted">
+              {mistakes.length} {pluralSk(mistakes.length, ['úloha', 'úlohy', 'úloh'])}, v ktorých si sa pomýlil
+            </span>
+          </span>
+          <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+        </Link>
+      )}
 
       <section aria-labelledby="type-heading">
         <SectionTitle id="type-heading">Typ cvičenia</SectionTitle>

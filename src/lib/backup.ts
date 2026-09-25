@@ -1,4 +1,4 @@
-import { db, type Attempt, type CustomWord, type ReviewCard, type SavedItem } from './db'
+import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
 import { syncReviewCards } from './srs'
 
 // JSON backup of everything stored on the device (IndexedDB).
@@ -14,6 +14,7 @@ export interface Backup {
   savedItems: SavedItem[]
   reviewCards: ReviewCard[]
   attempts: Attempt[]
+  mistakes: Mistake[] // missing in backups made before the mistakes list existed
 }
 
 export interface ImportResult {
@@ -21,17 +22,19 @@ export interface ImportResult {
   savedItems: number
   reviewCards: number
   attempts: number
+  mistakes: number
   skipped: number
 }
 
 export async function createBackup(): Promise<Backup> {
-  const [customWords, savedItems, reviewCards, attempts] = await Promise.all([
+  const [customWords, savedItems, reviewCards, attempts, mistakes] = await Promise.all([
     db.customWords.toArray(),
     db.savedItems.toArray(),
     db.reviewCards.toArray(),
     db.attempts.toArray(),
+    db.mistakes.toArray(),
   ])
-  return { app: APP, version: VERSION, exportedAt: new Date().toISOString(), customWords, savedItems, reviewCards, attempts }
+  return { app: APP, version: VERSION, exportedAt: new Date().toISOString(), customWords, savedItems, reviewCards, attempts, mistakes }
 }
 
 export async function downloadBackup(): Promise<void> {
@@ -57,13 +60,16 @@ const isCustomWord = (x: unknown): x is CustomWord =>
   isRec(x) && isStr(x.id) && isStr(x.es) && isStr(x.sk) && isOptStr(x.note) && isOptStr(x.topic) && isNum(x.createdAt)
 
 const isSavedItem = (x: unknown): x is SavedItem =>
-  isRec(x) && isStr(x.itemId) && ['word', 'verb', 'custom'].includes(x.itemType as string) && isNum(x.savedAt)
+  isRec(x) && isStr(x.itemId) && ['word', 'verb', 'custom', 'sentence'].includes(x.itemType as string) && isNum(x.savedAt)
 
 const isReviewCard = (x: unknown): x is ReviewCard =>
-  isRec(x) && isStr(x.itemId) && ['word', 'custom'].includes(x.itemType as string) && isRec(x.fsrs) && 'due' in x.fsrs
+  isRec(x) && isStr(x.itemId) && ['word', 'custom', 'sentence'].includes(x.itemType as string) && isRec(x.fsrs) && 'due' in x.fsrs
 
 const isAttempt = (x: unknown): x is Attempt =>
   isRec(x) && isStr(x.exercise) && isStr(x.itemId) && typeof x.correct === 'boolean' && isNum(x.at)
+
+const isMistake = (x: unknown): x is Mistake =>
+  isRec(x) && isStr(x.exercise) && isStr(x.itemId) && isNum(x.firstWrongAt) && isNum(x.lastWrongAt) && isNum(x.wrongCount)
 
 export type ParseResult = { ok: true; backup: Backup; skipped: number } | { ok: false; error: string }
 
@@ -93,6 +99,7 @@ export function parseBackup(text: string): ParseResult {
     savedItems: pick(data.savedItems, isSavedItem),
     reviewCards: pick(data.reviewCards, isReviewCard),
     attempts: pick(data.attempts, isAttempt),
+    mistakes: pick(data.mistakes, isMistake),
   }
   return { ok: true, backup, skipped }
 }
@@ -102,10 +109,11 @@ export function parseBackup(text: string): ParseResult {
  * items with the same key are replaced by the backup version.
  */
 export async function importBackup(backup: Backup, skipped: number): Promise<ImportResult> {
-  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts], async () => {
+  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts, db.mistakes], async () => {
     await db.customWords.bulkPut(backup.customWords)
     await db.savedItems.bulkPut(backup.savedItems)
     await db.reviewCards.bulkPut(backup.reviewCards)
+    await db.mistakes.bulkPut(backup.mistakes)
 
     // Attempts use auto-increment ids that differ between devices: dedupe by content instead.
     const attemptKey = (a: Attempt) => `${a.at}|${a.exercise}|${a.itemId}`
@@ -120,6 +128,7 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       savedItems: backup.savedItems.length,
       reviewCards: backup.reviewCards.length,
       attempts: newAttempts.length,
+      mistakes: backup.mistakes.length,
       skipped,
     }
   })

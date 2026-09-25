@@ -1,11 +1,11 @@
-import { ArrowRight, RotateCcw } from 'lucide-react'
+import { ArrowRight, Repeat, RotateCcw } from 'lucide-react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
 import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
-import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
 import { pluralSk } from '../../lib/text'
+import { taskSummary } from './taskSummary'
 
 export interface LessonAnswer {
   task: Task
@@ -20,24 +20,16 @@ function praise(ratio: number): { es: string; sk: string } {
   return { es: '¡Ánimo!', sk: 'Nevadí – chyby si môžeš hneď zopakovať.' }
 }
 
-/** What was asked and the right answer, for the mistakes list. */
-function summary(task: Task): { prompt: string; answer: string } {
-  switch (task.kind) {
-    case 'conjugation':
-      return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
-    default:
-      return { prompt: task.sentence.sk, answer: task.sentence.es }
-  }
-}
-
 interface LessonResultProps {
   answers: LessonAnswer[]
+  fromMistakes: boolean // practising the mistakes list
   onRetryMistakes: () => void
+  onRepeatAll: () => void
   onNewLesson: () => void
   onExit: () => void
 }
 
-export function LessonResult({ answers, onRetryMistakes, onNewLesson, onExit }: LessonResultProps) {
+export function LessonResult({ answers, fromMistakes, onRetryMistakes, onRepeatAll, onNewLesson, onExit }: LessonResultProps) {
   const score = answers.filter((a) => a.correct).length
   const mistakes = answers.filter((a) => !a.correct)
   const { es, sk } = praise(score / answers.length)
@@ -66,7 +58,7 @@ export function LessonResult({ answers, onRetryMistakes, onNewLesson, onExit }: 
           <SectionTitle id="mistakes-heading">Na zopakovanie</SectionTitle>
           <ul className="divide-y divide-line rounded-card border border-line bg-surface">
             {mistakes.map(({ task }, i) => {
-              const { prompt, answer } = summary(task)
+              const { prompt, answer } = taskSummary(task)
               return (
                 <li key={`${task.itemId}-${i}`} className="flex items-start gap-1 py-3 pr-1 pl-4">
                   <div className="min-w-0 flex-1">
@@ -80,6 +72,7 @@ export function LessonResult({ answers, onRetryMistakes, onNewLesson, onExit }: 
               )
             })}
           </ul>
+          {!fromMistakes && <p className="mt-2 text-sm text-ink-muted">Chyby sa uložili do Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.</p>}
         </section>
       )}
 
@@ -89,11 +82,14 @@ export function LessonResult({ answers, onRetryMistakes, onNewLesson, onExit }: 
             Zopakovať {mistakes.length} {pluralSk(mistakes.length, ['chybu', 'chyby', 'chýb'])}
           </Button>
         )}
+        <Button variant="secondary" icon={Repeat} onClick={onRepeatAll}>
+          Zopakovať celú lekciu
+        </Button>
         <Button variant={mistakes.length > 0 ? 'secondary' : 'primary'} icon={ArrowRight} onClick={onNewLesson}>
-          Nová lekcia
+          {fromMistakes ? 'Ďalšie chyby' : 'Nová lekcia'}
         </Button>
         <Button variant="secondary" onClick={onExit}>
-          Späť na cvičenia
+          Späť
         </Button>
       </div>
     </div>

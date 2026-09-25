@@ -1,6 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, verbById, verbs } from '../data'
-import { availableCount, builderWords, conjugationTask, createLesson, gradeTask, LESSON_SIZE, retryTasks, type Task } from './lesson'
+import {
+  availableCount,
+  builderWords,
+  conjugationTask,
+  createLesson,
+  gradeTask,
+  LESSON_SIZE,
+  mistakesLesson,
+  retryTasks,
+  taskFromItem,
+  type Task,
+} from './lesson'
 import { lookupForm } from './knownForms'
 
 // Deterministic pseudo-random generator for reproducible lessons.
@@ -138,6 +149,46 @@ describe('gradeTask', () => {
     if (task.kind !== 'choice') throw new Error('wrong kind')
     expect(gradeTask(task, task.cloze.answer).correct).toBe(true)
     expect(gradeTask(task, task.options.find((o) => o !== task.cloze.answer)!).correct).toBe(false)
+  })
+})
+
+describe('least-seen first', () => {
+  it('puts items never answered before the ones already practised', () => {
+    const all = createLesson({ type: 'translation' }, 1000, seeded(20)).map((t) => t.itemId)
+    const fresh = new Set(all.slice(0, 4))
+    const seen = new Map(all.filter((id) => !fresh.has(id)).map((id) => [id, 3]))
+    const lesson = createLesson({ type: 'translation' }, LESSON_SIZE, seeded(21), seen)
+    expect(new Set(itemIds(lesson).slice(0, 4))).toEqual(fresh)
+  })
+})
+
+describe('taskFromItem', () => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation'] as const)('rebuilds a %s task from its itemId', (type) => {
+    for (const task of createLesson({ type }, LESSON_SIZE, seeded(22))) {
+      const rebuilt = taskFromItem(type, task.itemId, seeded(23))
+      expect(rebuilt?.kind).toBe(type)
+      expect(rebuilt?.itemId).toBe(task.itemId)
+      if (rebuilt && gradeTask(rebuilt, '').expected !== gradeTask(task, '').expected) throw new Error(`answer differs for ${task.itemId}`)
+    }
+  })
+
+  it('returns undefined for unknown items', () => {
+    expect(taskFromItem('cloze', 's999#0')).toBeUndefined()
+    expect(taskFromItem('cloze', 's001#9')).toBeUndefined()
+    expect(taskFromItem('conjugation', 'volar:presente:yo')).toBeUndefined()
+    expect(taskFromItem('conjugation', 'tener:futuro:yo')).toBeUndefined()
+  })
+})
+
+describe('mistakesLesson', () => {
+  it('takes the most-missed items first and skips ones no longer in the data', () => {
+    const m = (exercise: string, itemId: string, wrongCount: number, lastWrongAt = 1) => ({ exercise, itemId, wrongCount, lastWrongAt, firstWrongAt: 1 })
+    const lesson = mistakesLesson(
+      [m('cloze', 's001#0', 1), m('translation', 's004', 3), m('cloze', 's999#0', 5), m('conjugation', 'tener:preterito:yo', 2)],
+      LESSON_SIZE,
+      seeded(24),
+    )
+    expect(lesson.map((t) => `${t.kind}:${t.itemId}`)).toEqual(['translation:s004', 'conjugation:tener:preterito:yo', 'cloze:s001#0'])
   })
 })
 

@@ -10,9 +10,10 @@ interface Status {
 }
 
 function describeImport(r: ImportResult): string {
-  const parts = [`uložené slová: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
+  const parts = [`uložené: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
   if (r.reviewCards) parts.push(`karty na opakovanie: ${r.reviewCards}`)
   if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
+  if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
   const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''
   return `Obnovené – ${parts.join(', ')}.${skipped}`
 }

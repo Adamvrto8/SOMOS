@@ -71,16 +71,17 @@ export async function removeReviewCard(itemType: ReviewItemType, itemId: string)
 }
 
 /**
- * Makes review cards match the archive: every saved word and custom word has one,
- * nothing else does. Idempotent; run at startup and after restoring a backup.
+ * Makes review cards match the archive: every saved (⭐) word and sentence and every
+ * custom word has one, nothing else does. Idempotent; run at startup and after a restore.
  */
 export async function syncReviewCards(): Promise<void> {
   await db.transaction('rw', db.savedItems, db.customWords, db.reviewCards, async () => {
     const saved = await db.savedItems.toArray()
     const custom = await db.customWords.toArray()
+    const entry = (itemType: ReviewItemType, itemId: string): [string, [ReviewItemType, string]] => [`${itemType}:${itemId}`, [itemType, itemId]]
     const wanted = new Map<string, [ReviewItemType, string]>([
-      ...saved.filter((s) => s.itemType === 'word').map((s): [string, [ReviewItemType, string]] => [`word:${s.itemId}`, ['word', s.itemId]]),
-      ...custom.map((c): [string, [ReviewItemType, string]] => [`custom:${c.id}`, ['custom', c.id]]),
+      ...saved.flatMap((s) => (s.itemType === 'word' || s.itemType === 'sentence' ? [entry(s.itemType, s.itemId)] : [])),
+      ...custom.map((c) => entry('custom', c.id)),
     ])
     const existing = await db.reviewCards.toArray()
     const have = new Set(existing.map((c) => `${c.itemType}:${c.itemId}`))

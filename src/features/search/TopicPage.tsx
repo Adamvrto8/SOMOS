@@ -15,6 +15,7 @@ export function TopicPage() {
   if (!topic) return <NotFound title="Téma sa nenašla" />
 
   const list = wordsInTopic(topic.id)
+  const listIds = list.map((w) => w.id)
 
   return (
     <div>
@@ -36,7 +37,7 @@ export function TopicPage() {
       </p>
       <ul className="mt-1 divide-y divide-line">
         {list.map((word) => (
-          <WordRow key={word.id} word={word} saved={savedIds.has(word.id)} />
+          <WordRow key={word.id} word={word} saved={savedIds.has(word.id)} list={listIds} />
         ))}
       </ul>
     </div>

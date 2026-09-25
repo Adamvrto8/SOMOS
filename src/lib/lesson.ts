@@ -1,4 +1,4 @@
-import { sentences, verbById, verbs } from '../data'
+import { sentenceById, sentences, verbById, verbs } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb } from '../data/types'
 import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, type TableTense } from './conjugate'
@@ -180,33 +180,108 @@ export function conjugationTask(verb: Verb, tense: TableTense, person: Person): 
   }
 }
 
-export function createLesson(filter: LessonFilter, size = LESSON_SIZE, random: Random = Math.random): Task[] {
+const choiceTask = (sentence: Sentence, cloze: Cloze, itemId: string, random: Random): ChoiceTask => ({
+  kind: 'choice',
+  itemId,
+  sentence,
+  cloze,
+  options: shuffle([cloze.answer, ...(cloze.distractors ?? [])], random),
+})
+
+const builderTask = (sentence: Sentence, random: Random): BuilderTask => {
+  const expected = builderWords(sentence)
+  return { kind: 'builder', itemId: sentence.id, sentence, expected, tiles: shuffleTiles(expected, random) }
+}
+
+/**
+ * A lesson for the filter. `seen` (answers per itemId) makes items practised least come
+ * first, so lessons don't keep repeating the same sentences; ties stay random.
+ */
+export function createLesson(
+  filter: LessonFilter,
+  size = LESSON_SIZE,
+  random: Random = Math.random,
+  seen?: Map<string, number>,
+): Task[] {
+  const order = <T>(items: T[], itemId: (item: T) => string) => {
+    const shuffled = shuffle(items, random)
+    return seen ? shuffled.sort((a, b) => (seen.get(itemId(a)) ?? 0) - (seen.get(itemId(b)) ?? 0)) : shuffled
+  }
+
   switch (filter.type) {
     case 'cloze':
       // One cloze per sentence, so a lesson never shows the same sentence twice.
-      return takeLimited(shuffle(clozeItems(filter), random), size, (i) => i.sentence.id, 1).map(
+      return takeLimited(order(clozeItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).map(
         (i): ClozeTask => ({ kind: 'cloze', ...i }),
       )
     case 'choice':
-      return takeLimited(shuffle(choiceItems(filter), random), size, (i) => i.sentence.id, 1).map(
-        (i): ChoiceTask => ({ kind: 'choice', ...i, options: shuffle([i.cloze.answer, ...(i.cloze.distractors ?? [])], random) }),
+      return takeLimited(order(choiceItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).map((i) =>
+        choiceTask(i.sentence, i.cloze, i.itemId, random),
       )
     case 'conjugation':
-      return takeLimited(shuffle(conjugationItems(filter), random), size, (i) => i.verb.id, MAX_TASKS_PER_VERB).map(
-        ({ verb, tense, person }) => conjugationTask(verb, tense, person),
-      )
+      return takeLimited(
+        order(conjugationItems(filter), (i) => `${i.verb.id}:${i.tense}:${i.person}`),
+        size,
+        (i) => i.verb.id,
+        MAX_TASKS_PER_VERB,
+      ).map(({ verb, tense, person }) => conjugationTask(verb, tense, person))
     case 'builder':
-      return shuffle(builderSentences(filter), random)
+      return order(builderSentences(filter), (s) => s.id)
         .slice(0, size)
-        .map((sentence): BuilderTask => {
-          const expected = builderWords(sentence)
-          return { kind: 'builder', itemId: sentence.id, sentence, expected, tiles: shuffleTiles(expected, random) }
-        })
+        .map((sentence) => builderTask(sentence, random))
     case 'translation':
-      return shuffle(translationSentences(filter), random)
+      return order(translationSentences(filter), (s) => s.id)
         .slice(0, size)
         .map((sentence): TranslationTask => ({ kind: 'translation', itemId: sentence.id, sentence }))
   }
+}
+
+/** Rebuilds a task from what attempts and mistakes store: exercise type + itemId. */
+export function taskFromItem(exercise: ExerciseType, itemId: string, random: Random = Math.random): Task | undefined {
+  switch (exercise) {
+    case 'cloze':
+    case 'choice': {
+      const [sentenceId, index] = itemId.split('#')
+      const sentence = sentenceById.get(sentenceId)
+      const cloze = sentence?.cloze?.[Number(index)]
+      if (!sentence || !cloze) return undefined
+      return exercise === 'cloze' ? { kind: 'cloze', itemId, sentence, cloze } : choiceTask(sentence, cloze, itemId, random)
+    }
+    case 'conjugation': {
+      const [verbId, tense, person] = itemId.split(':')
+      const verb = verbById.get(verbId)
+      if (!verb || !TENSES.includes(tense as TableTense) || !PERSONS.includes(person as Person)) return undefined
+      return conjugationTask(verb, tense as TableTense, person as Person)
+    }
+    case 'builder': {
+      const sentence = sentenceById.get(itemId)
+      return sentence ? builderTask(sentence, random) : undefined
+    }
+    case 'translation': {
+      const sentence = sentenceById.get(itemId)
+      return sentence ? { kind: 'translation', itemId, sentence } : undefined
+    }
+  }
+}
+
+export interface MistakeRef {
+  exercise: string
+  itemId: string
+  wrongCount: number
+  lastWrongAt: number
+}
+
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation']
+
+/** A lesson from the mistakes list: most-missed first, then the ones not seen for longest. */
+export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random): Task[] {
+  return [...mistakes]
+    .sort((a, b) => b.wrongCount - a.wrongCount || a.lastWrongAt - b.lastWrongAt)
+    .flatMap((m) => {
+      const task = EXERCISE_TYPES.includes(m.exercise as ExerciseType) ? taskFromItem(m.exercise as ExerciseType, m.itemId, random) : undefined
+      return task ? [task] : []
+    })
+    .slice(0, size)
 }
 
 /** The same tasks again (e.g. "repeat mistakes") with options and tiles reshuffled. */

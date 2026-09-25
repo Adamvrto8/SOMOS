@@ -2,8 +2,19 @@ import { X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
-import { recordAttempt } from '../../lib/attempts'
-import { createLesson, gradeTask, retryTasks, type Answer, type Grade, type Task } from '../../lib/lesson'
+import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
+import {
+  createLesson,
+  gradeTask,
+  LESSON_SIZE,
+  mistakesLesson,
+  retryTasks,
+  type Answer,
+  type Grade,
+  type LessonFilter,
+  type Task,
+} from '../../lib/lesson'
+import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonResult, type LessonAnswer } from './LessonResult'
@@ -11,22 +22,49 @@ import { TaskView } from './tasks/TaskView'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
-/** Full-screen lesson player (no tab bar): one task per screen, check, feedback, result. */
+/** A fresh lesson: from the mistakes list, or least-practised items for the filter. */
+async function buildLesson(filter: LessonFilter, fromMistakes: boolean): Promise<Task[]> {
+  if (fromMistakes) return mistakesLesson(await loadMistakes())
+  return createLesson(filter, LESSON_SIZE, Math.random, await loadSeenCounts(filter.type))
+}
+
+/**
+ * Full-screen lesson player (no tab bar): one task per screen, check, feedback, result.
+ * `?mistakes=1` practises the mistakes list instead of the filter.
+ */
 export function LessonPage() {
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
+  const fromMistakes = params.get('mistakes') === '1'
   const navigate = useNavigate()
   const location = useLocation()
 
-  const [tasks, setTasks] = useState(() => createLesson(filter))
+  const [tasks, setTasks] = useState<Task[] | null>(null) // null = loading
   const [index, setIndex] = useState(0)
-  const [answer, setAnswer] = useState<Answer>(() => emptyAnswer(tasks[0]))
+  const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([])
   const [confirmExit, setConfirmExit] = useState(false)
 
-  const task: Task | undefined = tasks[index]
-  const finished = tasks.length > 0 && index >= tasks.length
+  const start = (next: Task[]) => {
+    setTasks(next)
+    setIndex(0)
+    setAnswer(emptyAnswer(next[0]))
+    setGrade(null)
+    setAnswers([])
+  }
+
+  useEffect(() => {
+    let active = true
+    void buildLesson(filter, fromMistakes).then((next) => active && start(next))
+    return () => {
+      active = false
+    }
+  }, [filter, fromMistakes])
+
+  const task: Task | undefined = tasks?.[index]
+  const total = tasks?.length ?? 0
+  const finished = total > 0 && index >= total
 
   // Braces matter: newer browsers return a Promise from scrollTo, which React
   // would treat as an (invalid) effect cleanup.
@@ -35,16 +73,8 @@ export function LessonPage() {
   }, [index, tasks])
 
   const exit = () => {
-    if (location.key === 'default') void navigate(`/practice?${filterToParams(filter)}`, { replace: true })
-    else void navigate(-1)
-  }
-
-  const start = (next: Task[]) => {
-    setTasks(next)
-    setIndex(0)
-    setAnswer(emptyAnswer(next[0]))
-    setGrade(null)
-    setAnswers([])
+    if (location.key !== 'default') void navigate(-1)
+    else void navigate(fromMistakes ? '/archive?tab=mistakes' : `/practice?${filterToParams(filter)}`, { replace: true })
   }
 
   const canCheck = task
@@ -60,17 +90,20 @@ export function LessonPage() {
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
   }
 
-  const next = (override?: boolean) => {
-    if (!task || !grade) return
+  /** Records the answer and moves on. `resolve` drops the item from the mistakes list. */
+  const next = ({ override, resolve }: { override?: boolean; resolve?: boolean } = {}) => {
+    if (!task || !grade || !tasks) return
     const correct = override ?? grade.correct
-    void recordAttempt(filter.type, task.itemId, correct)
+    void recordAttempt(task.kind, task.itemId, correct)
+    if (!correct) void recordMistake(task.kind, task.itemId)
+    if (resolve) void removeMistake(task.kind, task.itemId)
     setAnswers((prev) => [...prev, { task, grade, correct }])
     setIndex(index + 1)
     setAnswer(emptyAnswer(tasks[index + 1]))
     setGrade(null)
   }
 
-  const progress = tasks.length ? (answers.length / tasks.length) * 100 : 0
+  const progress = total ? (answers.length / total) * 100 : 0
 
   return (
     <div className="mx-auto min-h-dvh max-w-[480px] sm:border-x sm:border-line">
@@ -87,37 +120,46 @@ export function LessonPage() {
           role="progressbar"
           aria-label="Priebeh lekcie"
           aria-valuemin={0}
-          aria-valuemax={tasks.length}
+          aria-valuemax={total}
           aria-valuenow={answers.length}
           className="h-2.5 flex-1 overflow-hidden rounded-full bg-surface-2"
         >
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
         <span className="w-14 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
-          {Math.min(index + 1, tasks.length)}/{tasks.length}
+          {total ? `${Math.min(index + 1, total)}/${total}` : ''}
         </span>
       </header>
 
       <main className="px-4 pt-4 pb-80">
-        {tasks.length === 0 ? (
+        {tasks === null ? null : total === 0 ? (
           <div className="pt-10 text-center">
-            <p className="font-serif text-2xl font-semibold">Žiadne úlohy</p>
-            <p className="mt-2 text-ink-muted">Pre tento výber zatiaľ nie sú úlohy. Skús inú tému alebo úroveň.</p>
+            <p className="font-serif text-2xl font-semibold">{fromMistakes ? 'Žiadne chyby' : 'Žiadne úlohy'}</p>
+            <p className="mt-2 text-ink-muted">
+              {fromMistakes
+                ? 'V zozname chýb nič nie je. Zlé odpovede z lekcií sa sem ukladajú automaticky.'
+                : 'Pre tento výber zatiaľ nie sú úlohy. Skús inú tému alebo úroveň.'}
+            </p>
             <Button variant="secondary" onClick={exit} className="mt-6">
-              Späť na cvičenia
+              Späť
             </Button>
           </div>
         ) : finished ? (
           <LessonResult
             answers={answers}
+            fromMistakes={fromMistakes}
             onRetryMistakes={() => start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)))}
-            onNewLesson={() => start(createLesson(filter))}
+            onRepeatAll={() => start(retryTasks(tasks))}
+            onNewLesson={() => void buildLesson(filter, fromMistakes).then(start)}
             onExit={exit}
           />
         ) : (
           task && (
             <>
-              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{exerciseInfo(task.kind).instruction}</p>
+              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
+                {fromMistakes && 'Chyby · '}
+                {exerciseInfo(task.kind).instruction}
+              </p>
               <div className="mt-4">
                 <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} grade={grade} />
               </div>
@@ -147,7 +189,8 @@ export function LessonPage() {
                 task={task}
                 grade={grade}
                 onContinue={() => next()}
-                onOverride={task.kind === 'translation' ? () => next(true) : undefined}
+                onOverride={task.kind === 'translation' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
+                mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
             ) : (
               <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">

@@ -4,7 +4,10 @@ import { addReviewCard, removeReviewCard } from './srs'
 
 // Reads return `undefined` while IndexedDB is loading; components render a neutral state meanwhile.
 
-const wordKey = (id: string): [SavedItemType, string] => ['word', id]
+/** What the ⭐ can save: dictionary words and exercise sentences. */
+export type StarType = 'word' | 'sentence'
+
+const starKey = (type: StarType, id: string): [SavedItemType, string] => [type, id]
 
 export function useSavedItems(): SavedItem[] | undefined {
   return useLiveQuery(() => db.savedItems.orderBy('savedAt').reverse().toArray(), [])
@@ -18,20 +21,20 @@ export function useSavedWordIds(): Set<string> {
   return ids ?? new Set()
 }
 
-export function useIsSaved(wordId: string): boolean | undefined {
-  return useLiveQuery(async () => Boolean(await db.savedItems.get(wordKey(wordId))), [wordId])
+export function useIsSaved(type: StarType, id: string): boolean | undefined {
+  return useLiveQuery(async () => Boolean(await db.savedItems.get(starKey(type, id))), [type, id])
 }
 
-/** Saving a word also schedules it for review; unsaving drops its review card. */
-export async function toggleSavedWord(wordId: string): Promise<boolean> {
+/** Saving also schedules the item for review; unsaving drops its review card. */
+export async function toggleSaved(type: StarType, id: string): Promise<boolean> {
   const saved = await db.transaction('rw', db.savedItems, db.reviewCards, async () => {
-    if (await db.savedItems.get(wordKey(wordId))) {
-      await db.savedItems.delete(wordKey(wordId))
-      await removeReviewCard('word', wordId)
+    if (await db.savedItems.get(starKey(type, id))) {
+      await db.savedItems.delete(starKey(type, id))
+      await removeReviewCard(type, id)
       return false
     }
-    await db.savedItems.put({ itemType: 'word', itemId: wordId, savedAt: Date.now() })
-    await addReviewCard('word', wordId)
+    await db.savedItems.put({ itemType: type, itemId: id, savedAt: Date.now() })
+    await addReviewCard(type, id)
     return true
   })
   if (saved) void requestPersistence()

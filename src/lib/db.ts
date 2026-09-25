@@ -12,7 +12,8 @@ export interface CustomWord {
   createdAt: number
 }
 
-export type SavedItemType = 'word' | 'verb' | 'custom'
+// 'sentence' = a sentence starred from an exercise ('verb' is reserved, unused).
+export type SavedItemType = 'word' | 'verb' | 'custom' | 'sentence'
 
 export interface SavedItem {
   itemId: string
@@ -20,8 +21,8 @@ export interface SavedItem {
   savedAt: number
 }
 
-/** Spaced-repetition items: saved dictionary words and the learner's own words. */
-export type ReviewItemType = 'word' | 'custom'
+/** Spaced-repetition items: saved words and sentences (⭐) and the learner's own words. */
+export type ReviewItemType = 'word' | 'custom' | 'sentence'
 
 export interface ReviewCard {
   itemId: string
@@ -38,12 +39,22 @@ export interface Attempt {
   at: number
 }
 
+/** An exercise answered wrong, kept until the learner says they know it. */
+export interface Mistake {
+  exercise: string // ExerciseType
+  itemId: string // lesson task itemId ("s001#0", "tener:preterito:yo", "s004")
+  firstWrongAt: number
+  lastWrongAt: number
+  wrongCount: number
+}
+
 export class SomosDB extends Dexie {
   customWords!: EntityTable<CustomWord, 'id'>
   // Compound key: a word and a verb can share an id (e.g. "tener").
   savedItems!: Table<SavedItem, [SavedItemType, string]>
   reviewCards!: Table<ReviewCard, [ReviewItemType, string]>
   attempts!: EntityTable<Attempt, 'id'>
+  mistakes!: Table<Mistake, [string, string]>
 
   constructor() {
     super('somos')
@@ -52,6 +63,9 @@ export class SomosDB extends Dexie {
       savedItems: '[itemType+itemId], savedAt',
       reviewCards: '[itemType+itemId], itemType',
       attempts: '++id, exercise, itemId, at',
+    })
+    this.version(2).stores({
+      mistakes: '[exercise+itemId], lastWrongAt',
     })
   }
 }

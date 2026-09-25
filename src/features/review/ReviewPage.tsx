@@ -97,7 +97,10 @@ export function ReviewPage() {
           <article className="rounded-card border border-line bg-surface p-6 text-center">
             <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Pamätáš si?</p>
             <div className="mt-4 flex items-center justify-center gap-2">
-              <h1 lang="es" className="font-serif text-5xl leading-tight font-semibold tracking-tight hyphens-auto">
+              <h1
+                lang="es"
+                className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
+              >
                 {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
                 {entry.es}
               </h1>

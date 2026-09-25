@@ -24,6 +24,7 @@ export function SearchPage() {
   const savedIds = useSavedWordIds()
 
   const hits = useMemo(() => searchWords(query, filter), [query, filter])
+  const hitIds = useMemo(() => hits.map((h) => h.word.id), [hits])
   const showTopics = query.trim() === '' && filter === 'all'
 
   return (
@@ -56,7 +57,7 @@ export function SearchPage() {
           {hits.length > 0 ? (
             <ul className="divide-y divide-line">
               {hits.map((hit) => (
-                <WordRow key={hit.word.id} word={hit.word} matchedForm={hit.matchedForm} saved={savedIds.has(hit.word.id)} />
+                <WordRow key={hit.word.id} word={hit.word} matchedForm={hit.matchedForm} saved={savedIds.has(hit.word.id)} list={hitIds} />
               ))}
             </ul>
           ) : (

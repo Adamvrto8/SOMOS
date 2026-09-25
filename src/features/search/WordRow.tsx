@@ -2,20 +2,24 @@ import { ChevronRight, Star } from 'lucide-react'
 import { Link } from 'react-router'
 import type { Word } from '../../data/types'
 import { articleFor } from '../../lib/grammar'
+import type { WordNavState } from '../word/wordNav'
 
 interface WordRowProps {
   word: Word
   matchedForm?: string
   saved?: boolean
+  /** Ids of the list this row is in: the detail can then swipe to neighbours. */
+  list?: string[]
 }
 
-export function WordRow({ word, matchedForm, saved }: WordRowProps) {
+export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
   const article = articleFor(word)
 
   return (
     <li>
       <Link
         to={`/word/${word.id}`}
+        state={list ? ({ wordList: list } satisfies WordNavState) : undefined}
         className="flex min-h-16 items-center gap-3 py-2.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick active:bg-surface-2"
       >
         <div className="min-w-0 flex-1">

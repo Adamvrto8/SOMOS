@@ -5,6 +5,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
+import { SaveButton } from '../word/SaveButton'
 
 const TONE: Record<Verdict, { title: string; icon: LucideIcon; panel: string; heading: string }> = {
   correct: { title: 'Správne!', icon: CircleCheck, panel: 'bg-leaf/15 border-leaf/50', heading: 'text-leaf' },
@@ -34,9 +35,11 @@ interface FeedbackSheetProps {
   onContinue: () => void
   /** Free translation has many valid answers: let the learner overrule the checker. */
   onOverride?: () => void
+  /** Practising the mistakes list: after a right answer, keep the item or drop it. */
+  mistakeChoice?: { onKeep: () => void; onResolve: () => void }
 }
 
-export function FeedbackSheet({ task, grade, onContinue, onOverride }: FeedbackSheetProps) {
+export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice }: FeedbackSheetProps) {
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
   const ref = reference(task)
@@ -73,15 +76,22 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride }: FeedbackS
     )
   }
   if (task.kind === 'conjugation' && task.irregular) notes.push(<>Nepravidelný tvar – oplatí sa ho zapamätať.</>)
+  if (!grade.correct) notes.push(<>{mistakeChoice ? 'Ostáva v Chybách' : 'Uložené do Archív → Chyby'}, zopakuješ si to neskôr.</>)
+
+  // ⭐ saves the verb for conjugation drills, the whole sentence otherwise.
+  const star = task.kind === 'conjugation' ? ({ type: 'word', id: task.verb.id } as const) : ({ type: 'sentence', id: task.sentence.id } as const)
 
   return (
     // Opaque base + tinted layer: the sheet covers the task underneath.
     <div role="status" className="animate-sheet-up rounded-t-3xl bg-surface shadow-[0_-8px_24px_rgb(0_0_0/0.08)]">
       <div className={`rounded-t-3xl border-t-2 px-5 pt-5 pb-[calc(1rem+env(safe-area-inset-bottom))] ${tone.panel}`}>
-        <p className={`flex items-center gap-2 text-lg font-semibold ${tone.heading}`}>
-          <Icon size={24} strokeWidth={2} className={grade.correct ? 'animate-pop' : ''} aria-hidden />
-          {tone.title}
-        </p>
+        <div className="flex items-center justify-between gap-2">
+          <p className={`flex items-center gap-2 text-lg font-semibold ${tone.heading}`}>
+            <Icon size={24} strokeWidth={2} className={grade.correct ? 'animate-pop' : ''} aria-hidden />
+            {tone.title}
+          </p>
+          <SaveButton type={star.type} id={star.id} size="pill" />
+        </div>
 
         <div className="mt-3">
           {grade.verdict === 'wrong' && <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Správna odpoveď</p>}
@@ -106,9 +116,23 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride }: FeedbackS
           </ul>
         )}
 
-        <Button onClick={onContinue} autoFocus className="mt-4 w-full">
-          Pokračovať
-        </Button>
+        {mistakeChoice && grade.correct ? (
+          <>
+            <p className="mt-4 text-sm font-medium">Vedel si to. Odstrániť z Chýb, alebo nechať na neskôr?</p>
+            <div className="mt-2 grid grid-cols-2 gap-3">
+              <Button variant="secondary" onClick={mistakeChoice.onKeep}>
+                Nechať
+              </Button>
+              <Button onClick={mistakeChoice.onResolve} autoFocus>
+                Odstrániť
+              </Button>
+            </div>
+          </>
+        ) : (
+          <Button onClick={onContinue} autoFocus className="mt-4 w-full">
+            Pokračovať
+          </Button>
+        )}
         {onOverride && grade.verdict === 'wrong' && (
           <button
             type="button"

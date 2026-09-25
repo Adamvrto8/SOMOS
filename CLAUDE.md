@@ -28,8 +28,10 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    - **Sentence builder** — arrange shuffled word tiles into a correct sentence
    - **Translation SK → ES** — free typing, tolerant checking
    - **Conjugation drill** — "tener · yo · pretérito → ___"
-5. **Archive** — saved words + user's **own custom words** (ES, SK, note, topic).
-   Review via spaced repetition. Export / import JSON backup.
+5. **Archive** — ⭐ saved words and sentences (star on word detail or in exercise feedback),
+   user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
+   kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition;
+   mistakes are practised as a lesson. Export / import JSON backup.
 6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. MVP content A1–A2.
 
 ### Mexican Spanish rules (important for all content)
@@ -117,13 +119,16 @@ interface Topic { id: string; sk: string; es: string; icon: string; }
 
 // Stored in IndexedDB (Dexie)
 interface CustomWord { id: string; es: string; sk: string; note?: string; topic?: string; createdAt: number; }
-interface SavedItem  { itemId: string; itemType: 'word' | 'verb' | 'custom'; savedAt: number; }
-interface ReviewCard { itemId: string; itemType: 'word' | 'custom'; fsrs: Card /* ts-fsrs */; }
+interface SavedItem  { itemId: string; itemType: 'word' | 'verb' | 'custom' | 'sentence'; savedAt: number; }
+interface ReviewCard { itemId: string; itemType: 'word' | 'custom' | 'sentence'; fsrs: Card /* ts-fsrs */; }
 interface Attempt    { id?: number; exercise: string; itemId: string; correct: boolean; at: number; }
+interface Mistake    { exercise: string; itemId: string; firstWrongAt: number; lastWrongAt: number; wrongCount: number; }
+// exercise + itemId identify a lesson task: "s001#0" (cloze/choice), "tener:preterito:yo", "s004" (builder/translation);
+// lesson.taskFromItem() rebuilds the task from them.
 ```
 
 Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
-- Every saved dictionary word and every custom word has exactly one ReviewCard (created on save/add,
+- Every ⭐ word/sentence and every custom word has exactly one ReviewCard (created on save/add,
   removed on unsave/delete; `syncReviewCards()` repairs this at startup and after a backup restore).
 - A card is "due today" when `due` ≤ end of the local day. Cards still due after rating
   (short relearning steps) come back later in the same session.
@@ -181,11 +186,15 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   (všetko / slovesá / podstatné mená / frázy). Browse by topic below when input empty.
 - **Detail slova** (`/word/:id`) — big serif Spanish word + 🔊, gender badge, translations,
   examples, note, conjugation table for verbs (tabs: presente · progresivo · pretérito), ⭐ save.
+  Opened from a list (topic, search, archive) it swipes / pages (‹ n/N ›, ← →) to neighbouring words.
 - **Cvičiť** — pick exercise type (cards), topic, level → lesson player → result screen.
+  Lessons prefer items answered least often. "Precvičiť chyby" card when mistakes exist.
 - **Lekcia** — progress bar, one task per screen, big input / tiles, bottom "Skontrolovať" button,
-  feedback sheet slides up (green / amber / red).
-- **Archív** — tabs Uložené / Moje slová, search + topic filter, "Zopakovať" (SRS session),
-  "+" add custom word, settings: export/import backup, theme, TTS voice.
+  feedback sheet slides up (green / amber / red) with ⭐ (verb for conjugation, sentence otherwise).
+  Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
+  `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
+- **Archív** — tabs Uložené / Moje slová / Chyby, search + topic filter, "Zopakovať" (SRS session),
+  "+" add custom word, settings: export/import backup, theme, daily goal, TTS voice.
 
 Mobile first (375px), max content width ~480px centered on desktop. Large tap targets (≥44px).
 
