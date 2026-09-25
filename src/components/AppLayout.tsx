@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router'
+import { Outlet, ScrollRestoration } from 'react-router'
 import { TabBar } from './TabBar'
 import { ThemeToggle } from './ThemeToggle'
 
@@ -18,6 +18,8 @@ export function AppLayout() {
       </main>
 
       <TabBar />
+      {/* New pages start at the top; "back" returns to the previous scroll position. */}
+      <ScrollRestoration />
     </div>
   )
 }

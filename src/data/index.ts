@@ -10,3 +10,7 @@ export const topics = topicsJson as Topic[]
 export const words = wordsJson as Word[]
 export const verbs = verbsJson as Verb[]
 export const sentences = sentencesJson as Sentence[]
+
+export const wordById = new Map(words.map((w) => [w.id, w]))
+export const verbById = new Map(verbs.map((v) => [v.id, v]))
+export const topicById = new Map(topics.map((t) => [t.id, t]))

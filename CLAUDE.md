@@ -236,7 +236,7 @@ scripts/
 
 - [x] **0. Setup** — Vite/React/TS, Tailwind, tokens, fonts, router, tab bar shell, PWA manifest + icons, deploy to Vercel.
 - [x] **1. Data foundation** — types, seed dataset (~60 words, 20 verbs incl. ser/estar/tener/ir/hacer, 60 sentences, 8 topics), validation script.
-- [ ] **2. Search + word detail + conjugation tables + TTS.**
+- [x] **2. Search + word detail + conjugation tables + TTS.**
 - [ ] **3. Archive** — save/unsave, custom words, export/import.
 - [ ] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.
 - [ ] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
