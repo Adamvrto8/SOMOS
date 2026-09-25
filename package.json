@@ -11,7 +11,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "icons": "node scripts/generate-icons.ts"
+    "icons": "node scripts/generate-icons.ts",
+    "validate:data": "node scripts/validate-data.ts"
   },
   "dependencies": {
     "dexie": "^4.4.6",

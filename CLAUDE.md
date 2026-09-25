@@ -126,6 +126,19 @@ A validation script (`npm run validate:data`) must check: unique ids, every `ver
 exists, every topic exists, cloze `tokenIndex` in range and `tokens[tokenIndex] === answer`,
 no `vosotros` forms, all 5 persons present.
 
+Content conventions (types in `src/data/types.ts`, all enforced by `validate:data`):
+- Word `id` = slug of `es` (lowercase, accents/¿?¡! stripped, spaces → `-`); collisions get `-2`: `papa` (zemiak), `papa-2` (papá).
+- Every verb has exactly one Word (`pos: 'verb'`, `id` = `es` = `verbId` = infinitive).
+- `irregularForms` lists exactly the forms that differ from the regular -ar/-er/-ir pattern
+  (spelling changes count: `llegué` → `preterito.yo`); `regular` is true only when there are none;
+  `gerundIrregular` likewise. Use `tense.*` when all 5 persons differ.
+- Reflexive verbs: forms include the pronoun (`me llamo`), `gerund` does not (`llamando`).
+- Cloze hint for verbs: `"tener · yo · pretérito"`, `"hablar · gerundio"`, or `"ser/estar · él · presente"`
+  (person labels yo/tú/él/ella/usted/nosotros/ellos/ellas/ustedes). The validator conjugates and checks the answer.
+  Non-verb hints are short Slovak (`"člen"`, `"zajtra"`). Blanking a sentence-initial word keeps its capital.
+- Sentence tokens must rebuild `es` exactly (no space before `.,?!`, none after `¿¡`); ids `s001`…
+- Spain-only vocabulary (coche, ordenador, móvil, zumo, patata, conducir, coger, billete…) is rejected in Spanish text; Slovak notes may mention it.
+
 ---
 
 ## 4. Answer checking
@@ -221,8 +234,8 @@ scripts/
 
 ## 8. Build phases
 
-- [ ] **0. Setup** — Vite/React/TS, Tailwind, tokens, fonts, router, tab bar shell, PWA manifest + icons, deploy to Vercel.
-- [ ] **1. Data foundation** — types, seed dataset (~60 words, 20 verbs incl. ser/estar/tener/ir/hacer, 60 sentences, 8 topics), validation script.
+- [x] **0. Setup** — Vite/React/TS, Tailwind, tokens, fonts, router, tab bar shell, PWA manifest + icons, deploy to Vercel.
+- [x] **1. Data foundation** — types, seed dataset (~60 words, 20 verbs incl. ser/estar/tener/ir/hacer, 60 sentences, 8 topics), validation script.
 - [ ] **2. Search + word detail + conjugation tables + TTS.**
 - [ ] **3. Archive** — save/unsave, custom words, export/import.
 - [ ] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.

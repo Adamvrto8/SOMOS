@@ -1,0 +1,383 @@
+[
+  {
+    "id": "s001", "es": "Me llamo Adam y soy de Eslovaquia.", "sk": "Volám sa Adam a som zo Slovenska.",
+    "level": "A1", "topics": ["greetings"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Me", "llamo", "Adam", "y", "soy", "de", "Eslovaquia", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "soy", "lemma": "ser", "hint": "ser/estar · yo · presente", "distractors": ["estoy", "es", "eres"] }]
+  },
+  {
+    "id": "s002", "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?",
+    "level": "A1", "topics": ["greetings"], "grammar": ["presente"],
+    "tokens": ["¿", "Cómo", "te", "llamas", "?"],
+    "cloze": [{ "tokenIndex": 3, "answer": "llamas", "lemma": "llamarse", "hint": "llamarse · tú · presente", "distractors": ["llamo", "llama", "llaman"] }]
+  },
+  {
+    "id": "s003", "es": "Buenos días, ¿cómo está usted?", "sk": "Dobrý deň, ako sa máte?",
+    "level": "A1", "topics": ["greetings"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Buenos", "días", ",", "¿", "cómo", "está", "usted", "?"],
+    "cloze": [{ "tokenIndex": 5, "answer": "está", "lemma": "estar", "hint": "ser/estar · usted · presente", "distractors": ["es", "estás", "están"] }]
+  },
+  {
+    "id": "s004", "es": "Hablo un poco de español.", "sk": "Hovorím trochu po španielsky.",
+    "level": "A1", "topics": ["greetings"], "grammar": ["presente"],
+    "tokens": ["Hablo", "un", "poco", "de", "español", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Hablo", "lemma": "hablar", "hint": "hablar · yo · presente", "distractors": ["Habla", "Hablas", "Hablé"] }]
+  },
+  {
+    "id": "s005", "es": "Perdón, ¿dónde está el baño?", "sk": "Prepáčte, kde je tu záchod?",
+    "level": "A1", "topics": ["greetings", "home"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Perdón", ",", "¿", "dónde", "está", "el", "baño", "?"],
+    "cloze": [{ "tokenIndex": 4, "answer": "está", "lemma": "estar", "hint": "ser/estar · él · presente", "distractors": ["es", "están", "estás"] }]
+  },
+  {
+    "id": "s006", "es": "Muchas gracias por la comida.", "sk": "Ďakujem veľmi pekne za jedlo.",
+    "level": "A1", "topics": ["greetings", "food"], "grammar": ["articles", "gender"],
+    "tokens": ["Muchas", "gracias", "por", "la", "comida", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+  },
+  {
+    "id": "s007", "es": "Hasta luego, que te vaya bien.", "sk": "Zatiaľ, maj sa dobre.",
+    "level": "A1", "topics": ["greetings"],
+    "tokens": ["Hasta", "luego", ",", "que", "te", "vaya", "bien", "."]
+  },
+  {
+    "id": "s008", "es": "Mi amigo Carlos es de Monterrey.", "sk": "Môj kamarát Carlos je z Monterrey.",
+    "level": "A1", "topics": ["greetings", "family"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "amigo", "Carlos", "es", "de", "Monterrey", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "es", "lemma": "ser", "hint": "ser/estar · él · presente", "distractors": ["está", "son", "eres"] }]
+  },
+
+  {
+    "id": "s009", "es": "Tengo dos hermanos y una hermana.", "sk": "Mám dvoch bratov a jednu sestru.",
+    "level": "A1", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Tengo", "dos", "hermanos", "y", "una", "hermana", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Tengo", "lemma": "tener", "hint": "tener · yo · presente", "distractors": ["Tiene", "Tienes", "Tuve"] }]
+  },
+  {
+    "id": "s010", "es": "Mi abuela tiene ochenta años.", "sk": "Moja babka má osemdesiat rokov.",
+    "level": "A1", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "tiene", "ochenta", "años", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "tiene", "lemma": "tener", "hint": "tener · ella · presente", "distractors": ["tengo", "tienen", "es"] }]
+  },
+  {
+    "id": "s011", "es": "Mis papás viven en Guadalajara.", "sk": "Moji rodičia bývajú v Guadalajare.",
+    "level": "A1", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Mis", "papás", "viven", "en", "Guadalajara", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "viven", "lemma": "vivir", "hint": "vivir · ellos · presente", "distractors": ["vive", "vivimos", "vivieron"] }]
+  },
+  {
+    "id": "s012", "es": "Mi hermana está hablando por teléfono.", "sk": "Sestra práve telefonuje.",
+    "level": "A1", "topics": ["family"], "grammar": ["progresivo"],
+    "tokens": ["Mi", "hermana", "está", "hablando", "por", "teléfono", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "hablando", "lemma": "hablar", "hint": "hablar · gerundio", "distractors": ["habla", "hablado", "hablar"] }]
+  },
+  {
+    "id": "s013", "es": "Ayer comimos en casa de mi abuela.", "sk": "Včera sme obedovali u babky.",
+    "level": "A2", "topics": ["family", "food"], "grammar": ["preterito"],
+    "tokens": ["Ayer", "comimos", "en", "casa", "de", "mi", "abuela", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "comimos", "lemma": "comer", "hint": "comer · nosotros · pretérito", "distractors": ["comemos", "comieron", "comí"] }]
+  },
+  {
+    "id": "s014", "es": "Mi hijo quiere un perro.", "sk": "Môj syn chce psa.",
+    "level": "A1", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "quiere", "un", "perro", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "quiere", "lemma": "querer", "hint": "querer · él · presente", "distractors": ["quiero", "quieren", "quiso"] }]
+  },
+  {
+    "id": "s015", "es": "Te quiero mucho, mamá.", "sk": "Mami, veľmi ťa ľúbim.",
+    "level": "A1", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Te", "quiero", "mucho", ",", "mamá", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "quiero", "lemma": "querer", "hint": "querer · yo · presente", "distractors": ["quieres", "quiere", "quise"] }]
+  },
+  {
+    "id": "s016", "es": "Mi esposo y yo platicamos todas las noches.", "sk": "S manželom sa rozprávame každý večer.",
+    "level": "A2", "topics": ["family"], "grammar": ["presente"],
+    "tokens": ["Mi", "esposo", "y", "yo", "platicamos", "todas", "las", "noches", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "platicamos", "lemma": "platicar", "hint": "platicar · nosotros · presente", "distractors": ["platican", "platico", "platiqué"] }]
+  },
+
+  {
+    "id": "s017", "es": "¿Me da un jugo de naranja, por favor?", "sk": "Môžete mi dať pomarančový džús, prosím?",
+    "level": "A1", "topics": ["food"],
+    "tokens": ["¿", "Me", "da", "un", "jugo", "de", "naranja", ",", "por", "favor", "?"],
+    "cloze": [{ "tokenIndex": 4, "answer": "jugo", "lemma": "jugo", "hint": "džús", "distractors": ["agua", "café"] }]
+  },
+  {
+    "id": "s018", "es": "Los tacos están muy ricos.", "sk": "Tie tacos sú výborné.",
+    "level": "A1", "topics": ["food"], "grammar": ["presente", "ser-estar", "gender"],
+    "tokens": ["Los", "tacos", "están", "muy", "ricos", "."],
+    "cloze": [
+      { "tokenIndex": 2, "answer": "están", "lemma": "estar", "hint": "ser/estar · ellos · presente", "distractors": ["son", "está", "estamos"] },
+      { "tokenIndex": 4, "answer": "ricos", "lemma": "rico", "hint": "prídavné meno: rico", "distractors": ["rico", "rica", "ricas"] }
+    ]
+  },
+  {
+    "id": "s019", "es": "¿Qué quieres tomar?", "sk": "Čo si dáš na pitie?",
+    "level": "A1", "topics": ["food"], "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "quieres", "tomar", "?"],
+    "cloze": [{ "tokenIndex": 2, "answer": "quieres", "lemma": "querer", "hint": "querer · tú · presente", "distractors": ["quiero", "quiere", "quieren"] }]
+  },
+  {
+    "id": "s020", "es": "Estamos comiendo tacos en el mercado.", "sk": "Práve jeme tacos na trhu.",
+    "level": "A1", "topics": ["food", "city"], "grammar": ["progresivo"],
+    "tokens": ["Estamos", "comiendo", "tacos", "en", "el", "mercado", "."],
+    "cloze": [
+      { "tokenIndex": 1, "answer": "comiendo", "lemma": "comer", "hint": "comer · gerundio", "distractors": ["comido", "comemos", "comer"] },
+      { "tokenIndex": 0, "answer": "Estamos", "lemma": "estar", "hint": "estar · nosotros · presente", "distractors": ["Somos", "Están", "Estoy"] }
+    ]
+  },
+  {
+    "id": "s021", "es": "La cuenta, por favor.", "sk": "Účet, prosím.",
+    "level": "A1", "topics": ["food"], "grammar": ["articles", "gender"],
+    "tokens": ["La", "cuenta", ",", "por", "favor", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
+  },
+  {
+    "id": "s022", "es": "Ayer tomé mucha agua.", "sk": "Včera som vypil veľa vody.",
+    "level": "A2", "topics": ["food"], "grammar": ["preterito"],
+    "tokens": ["Ayer", "tomé", "mucha", "agua", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "tomé", "lemma": "tomar", "hint": "tomar · yo · pretérito", "distractors": ["tomo", "tomó", "tomaste"] }]
+  },
+  {
+    "id": "s023", "es": "Mi mamá hizo pollo con arroz.", "sk": "Mama uvarila kura s ryžou.",
+    "level": "A2", "topics": ["food", "family"], "grammar": ["preterito"],
+    "tokens": ["Mi", "mamá", "hizo", "pollo", "con", "arroz", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "hizo", "lemma": "hacer", "hint": "hacer · ella · pretérito", "distractors": ["hace", "hice", "hació"] }]
+  },
+  {
+    "id": "s024", "es": "No puedo comer picante.", "sk": "Nemôžem jesť pálivé.",
+    "level": "A1", "topics": ["food"], "grammar": ["presente"],
+    "tokens": ["No", "puedo", "comer", "picante", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "puedo", "lemma": "poder", "hint": "poder · yo · presente", "distractors": ["podo", "puede", "pude"] }]
+  },
+
+  {
+    "id": "s025", "es": "Vivo en un departamento pequeño.", "sk": "Bývam v malom byte.",
+    "level": "A1", "topics": ["home"], "grammar": ["presente"],
+    "tokens": ["Vivo", "en", "un", "departamento", "pequeño", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Vivo", "lemma": "vivir", "hint": "vivir · yo · presente", "distractors": ["Vive", "Vives", "Viví"] }]
+  },
+  {
+    "id": "s026", "es": "La cocina está al lado de la sala.", "sk": "Kuchyňa je vedľa obývačky.",
+    "level": "A1", "topics": ["home"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["La", "cocina", "está", "al", "lado", "de", "la", "sala", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "está", "lemma": "estar", "hint": "ser/estar · ella · presente", "distractors": ["es", "están", "estás"] }]
+  },
+  {
+    "id": "s027", "es": "Mi cuarto es muy bonito.", "sk": "Moja izba je veľmi pekná.",
+    "level": "A1", "topics": ["home"], "grammar": ["presente", "ser-estar", "gender"],
+    "tokens": ["Mi", "cuarto", "es", "muy", "bonito", "."],
+    "cloze": [
+      { "tokenIndex": 2, "answer": "es", "lemma": "ser", "hint": "ser/estar · él · presente", "distractors": ["está", "son", "eres"] },
+      { "tokenIndex": 4, "answer": "bonito", "lemma": "bonito", "hint": "prídavné meno: bonito", "distractors": ["bonita", "bonitos", "bonitas"] }
+    ]
+  },
+  {
+    "id": "s028", "es": "¿Puedes abrir la ventana?", "sk": "Môžeš otvoriť okno?",
+    "level": "A1", "topics": ["home"], "grammar": ["presente"],
+    "tokens": ["¿", "Puedes", "abrir", "la", "ventana", "?"],
+    "cloze": [{ "tokenIndex": 1, "answer": "Puedes", "lemma": "poder", "hint": "poder · tú · presente", "distractors": ["Puedo", "Puede", "Pueden"] }]
+  },
+  {
+    "id": "s029", "es": "Anoche dormí muy bien.", "sk": "V noci som spal veľmi dobre.",
+    "level": "A2", "topics": ["home"], "grammar": ["preterito"],
+    "tokens": ["Anoche", "dormí", "muy", "bien", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "dormí", "lemma": "dormir", "hint": "dormir · yo · pretérito", "distractors": ["duermo", "durmió", "dormió"] }]
+  },
+  {
+    "id": "s030", "es": "Los niños están durmiendo.", "sk": "Deti práve spia.",
+    "level": "A1", "topics": ["home", "family"], "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "están", "durmiendo", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "durmiendo", "lemma": "dormir", "hint": "dormir · gerundio", "distractors": ["dormiendo", "duermen", "dormido"] }]
+  },
+  {
+    "id": "s031", "es": "Estoy en casa todo el día.", "sk": "Celý deň som doma.",
+    "level": "A1", "topics": ["home", "time"], "grammar": ["presente", "ser-estar", "articles", "gender"],
+    "tokens": ["Estoy", "en", "casa", "todo", "el", "día", "."],
+    "cloze": [
+      { "tokenIndex": 0, "answer": "Estoy", "lemma": "estar", "hint": "ser/estar · yo · presente", "distractors": ["Soy", "Está", "Estás"] },
+      { "tokenIndex": 4, "answer": "el", "lemma": "el", "hint": "člen", "distractors": ["la", "los", "las"] }
+    ]
+  },
+
+  {
+    "id": "s032", "es": "Tomo el camión para ir al trabajo.", "sk": "Do práce chodím autobusom.",
+    "level": "A1", "topics": ["city", "work"], "grammar": ["presente"],
+    "tokens": ["Tomo", "el", "camión", "para", "ir", "al", "trabajo", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Tomo", "lemma": "tomar", "hint": "tomar · yo · presente", "distractors": ["Toma", "Tomé", "Tomas"] }]
+  },
+  {
+    "id": "s033", "es": "Mi carro está en el estacionamiento.", "sk": "Moje auto je na parkovisku.",
+    "level": "A1", "topics": ["city"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "carro", "está", "en", "el", "estacionamiento", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "está", "lemma": "estar", "hint": "ser/estar · él · presente", "distractors": ["es", "están", "estoy"] }]
+  },
+  {
+    "id": "s034", "es": "¿Vienes con nosotros al centro?", "sk": "Pôjdeš s nami do centra?",
+    "level": "A1", "topics": ["city"], "grammar": ["presente"],
+    "tokens": ["¿", "Vienes", "con", "nosotros", "al", "centro", "?"],
+    "cloze": [{ "tokenIndex": 1, "answer": "Vienes", "lemma": "venir", "hint": "venir · tú · presente", "distractors": ["Vengo", "Viene", "Vienen"] }]
+  },
+  {
+    "id": "s035", "es": "Voy al mercado a comprar fruta.", "sk": "Idem na trh kúpiť ovocie.",
+    "level": "A1", "topics": ["city", "food"], "grammar": ["presente"],
+    "tokens": ["Voy", "al", "mercado", "a", "comprar", "fruta", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Voy", "lemma": "ir", "hint": "ir · yo · presente", "distractors": ["Va", "Vamos", "Fui"] }]
+  },
+  {
+    "id": "s036", "es": "La tienda cierra a las nueve.", "sk": "Obchod zatvára o deviatej.",
+    "level": "A1", "topics": ["city", "time"], "grammar": ["articles", "gender"],
+    "tokens": ["La", "tienda", "cierra", "a", "las", "nueve", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
+  },
+  {
+    "id": "s037", "es": "Ayer compré una camisa en el centro.", "sk": "Včera som si v centre kúpil košeľu.",
+    "level": "A2", "topics": ["city"], "grammar": ["preterito"],
+    "tokens": ["Ayer", "compré", "una", "camisa", "en", "el", "centro", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "compré", "lemma": "comprar", "hint": "comprar · yo · pretérito", "distractors": ["compro", "compró", "compraste"] }]
+  },
+  {
+    "id": "s038", "es": "¿Dónde compran ustedes las tortillas?", "sk": "Kde kupujete tortilly?",
+    "level": "A1", "topics": ["city", "food"], "grammar": ["presente"],
+    "tokens": ["¿", "Dónde", "compran", "ustedes", "las", "tortillas", "?"],
+    "cloze": [{ "tokenIndex": 2, "answer": "compran", "lemma": "comprar", "hint": "comprar · ustedes · presente", "distractors": ["compras", "compramos", "compraron"] }]
+  },
+  {
+    "id": "s039", "es": "Estoy buscando la calle Juárez.", "sk": "Hľadám ulicu Juárez.",
+    "level": "A1", "topics": ["city"], "grammar": ["progresivo"],
+    "tokens": ["Estoy", "buscando", "la", "calle", "Juárez", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Estoy", "lemma": "estar", "hint": "estar · yo · presente", "distractors": ["Soy", "Está", "Estás"] }]
+  },
+
+  {
+    "id": "s040", "es": "El avión sale a las seis de la mañana.", "sk": "Lietadlo odlieta o šiestej ráno.",
+    "level": "A1", "topics": ["travel"], "grammar": ["presente"],
+    "tokens": ["El", "avión", "sale", "a", "las", "seis", "de", "la", "mañana", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "sale", "lemma": "salir", "hint": "salir · él · presente", "distractors": ["salgo", "salen", "salió"] }]
+  },
+  {
+    "id": "s041", "es": "¿A qué hora llega el camión?", "sk": "O koľkej príde autobus?",
+    "level": "A1", "topics": ["travel", "city"], "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "llega", "el", "camión", "?"],
+    "cloze": [{ "tokenIndex": 4, "answer": "llega", "lemma": "llegar", "hint": "llegar · él · presente", "distractors": ["llego", "llegan", "llegó"] }]
+  },
+  {
+    "id": "s042", "es": "Llegamos a Cancún el sábado.", "sk": "V sobotu sme dorazili do Cancúnu.",
+    "level": "A2", "topics": ["travel"], "grammar": ["preterito"],
+    "tokens": ["Llegamos", "a", "Cancún", "el", "sábado", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Llegamos", "lemma": "llegar", "hint": "llegar · nosotros · pretérito", "distractors": ["Llegaron", "Llegué", "Llegaste"] }]
+  },
+  {
+    "id": "s043", "es": "En vacaciones vamos a la playa.", "sk": "Cez dovolenku chodíme na pláž.",
+    "level": "A1", "topics": ["travel"], "grammar": ["presente"],
+    "tokens": ["En", "vacaciones", "vamos", "a", "la", "playa", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "vamos", "lemma": "ir", "hint": "ir · nosotros · presente", "distractors": ["van", "voy", "fuimos"] }]
+  },
+  {
+    "id": "s044", "es": "¿Tienes tu pasaporte?", "sk": "Máš pri sebe pas?",
+    "level": "A1", "topics": ["travel"], "grammar": ["presente"],
+    "tokens": ["¿", "Tienes", "tu", "pasaporte", "?"],
+    "cloze": [
+      { "tokenIndex": 1, "answer": "Tienes", "lemma": "tener", "hint": "tener · tú · presente", "distractors": ["Tengo", "Tiene", "Tuviste"] },
+      { "tokenIndex": 2, "answer": "tu", "lemma": "tu", "hint": "tvoj", "distractors": ["tú", "mi", "su"] }
+    ]
+  },
+  {
+    "id": "s045", "es": "El año pasado fuimos a Oaxaca.", "sk": "Minulý rok sme boli v Oaxace.",
+    "level": "A2", "topics": ["travel"], "grammar": ["preterito"],
+    "tokens": ["El", "año", "pasado", "fuimos", "a", "Oaxaca", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "fuimos", "lemma": "ir", "hint": "ir · nosotros · pretérito", "distractors": ["vamos", "fueron", "fui"] }]
+  },
+  {
+    "id": "s046", "es": "¿Qué hiciste en tus vacaciones?", "sk": "Čo si robil na dovolenke?",
+    "level": "A2", "topics": ["travel"], "grammar": ["preterito"],
+    "tokens": ["¿", "Qué", "hiciste", "en", "tus", "vacaciones", "?"],
+    "cloze": [{ "tokenIndex": 2, "answer": "hiciste", "lemma": "hacer", "hint": "hacer · tú · pretérito", "distractors": ["haces", "hizo", "haciste"] }]
+  },
+  {
+    "id": "s047", "es": "Estamos esperando el camión.", "sk": "Čakáme na autobus.",
+    "level": "A1", "topics": ["travel", "city"], "grammar": ["progresivo"],
+    "tokens": ["Estamos", "esperando", "el", "camión", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Estamos", "lemma": "estar", "hint": "estar · nosotros · presente", "distractors": ["Somos", "Están", "Estoy"] }]
+  },
+
+  {
+    "id": "s048", "es": "Son las tres de la tarde.", "sk": "Sú tri hodiny poobede.",
+    "level": "A1", "topics": ["time"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Son", "las", "tres", "de", "la", "tarde", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Son", "lemma": "ser", "hint": "ser/estar · ellas · presente", "distractors": ["Es", "Están", "Somos"] }]
+  },
+  {
+    "id": "s049", "es": "Hoy hace mucho calor.", "sk": "Dnes je veľmi teplo.",
+    "level": "A1", "topics": ["time"], "grammar": ["presente"],
+    "tokens": ["Hoy", "hace", "mucho", "calor", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "hace", "lemma": "hacer", "hint": "hacer · él · presente", "distractors": ["hago", "es", "está"] }]
+  },
+  {
+    "id": "s050", "es": "Ayer fui al doctor.", "sk": "Včera som bol u lekára.",
+    "level": "A2", "topics": ["time"], "grammar": ["preterito"],
+    "tokens": ["Ayer", "fui", "al", "doctor", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "fui", "lemma": "ir", "hint": "ir · yo · pretérito", "distractors": ["voy", "fue", "fuiste"] }]
+  },
+  {
+    "id": "s051", "es": "El lunes tengo una junta a las diez.", "sk": "V pondelok mám o desiatej poradu.",
+    "level": "A2", "topics": ["time", "work"], "grammar": ["presente"],
+    "tokens": ["El", "lunes", "tengo", "una", "junta", "a", "las", "diez", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "tengo", "lemma": "tener", "hint": "tener · yo · presente", "distractors": ["tiene", "tienes", "tuve"] }]
+  },
+  {
+    "id": "s052", "es": "¿Qué haces el fin de semana?", "sk": "Čo robíš cez víkend?",
+    "level": "A1", "topics": ["time"], "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "haces", "el", "fin", "de", "semana", "?"],
+    "cloze": [{ "tokenIndex": 2, "answer": "haces", "lemma": "hacer", "hint": "hacer · tú · presente", "distractors": ["hago", "hace", "hiciste"] }]
+  },
+  {
+    "id": "s053", "es": "Perdón, llegué tarde.", "sk": "Prepáč, prišiel som neskoro.",
+    "level": "A2", "topics": ["time"], "grammar": ["preterito"],
+    "tokens": ["Perdón", ",", "llegué", "tarde", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "llegué", "lemma": "llegar", "hint": "llegar · yo · pretérito", "distractors": ["llego", "llegó", "llegé"] }]
+  },
+  {
+    "id": "s054", "es": "Nos vemos mañana en la mañana.", "sk": "Uvidíme sa zajtra ráno.",
+    "level": "A1", "topics": ["time"],
+    "tokens": ["Nos", "vemos", "mañana", "en", "la", "mañana", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "mañana", "lemma": "mañana", "hint": "zajtra", "distractors": ["hoy", "ayer", "tarde"] }]
+  },
+
+  {
+    "id": "s055", "es": "Trabajo en una oficina en el centro.", "sk": "Pracujem v kancelárii v centre.",
+    "level": "A1", "topics": ["work"], "grammar": ["presente"],
+    "tokens": ["Trabajo", "en", "una", "oficina", "en", "el", "centro", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Trabajo", "lemma": "trabajar", "hint": "trabajar · yo · presente", "distractors": ["Trabaja", "Trabajas", "Trabajé"] }]
+  },
+  {
+    "id": "s056", "es": "Mi jefe está en una junta.", "sk": "Môj šéf je na porade.",
+    "level": "A2", "topics": ["work"], "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "jefe", "está", "en", "una", "junta", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "está", "lemma": "estar", "hint": "ser/estar · él · presente", "distractors": ["es", "están", "estoy"] }]
+  },
+  {
+    "id": "s057", "es": "Estoy trabajando desde casa.", "sk": "Momentálne pracujem z domu.",
+    "level": "A1", "topics": ["work", "home"], "grammar": ["progresivo"],
+    "tokens": ["Estoy", "trabajando", "desde", "casa", "."],
+    "cloze": [{ "tokenIndex": 1, "answer": "trabajando", "lemma": "trabajar", "hint": "trabajar · gerundio", "distractors": ["trabajado", "trabajo", "trabajar"] }]
+  },
+  {
+    "id": "s058", "es": "¿A qué hora sales del trabajo?", "sk": "O koľkej končíš v práci?",
+    "level": "A1", "topics": ["work", "time"], "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "sales", "del", "trabajo", "?"],
+    "cloze": [{ "tokenIndex": 4, "answer": "sales", "lemma": "salir", "hint": "salir · tú · presente", "distractors": ["salgo", "sale", "saliste"] }]
+  },
+  {
+    "id": "s059", "es": "El jefe dijo que la junta es mañana.", "sk": "Šéf povedal, že porada je zajtra.",
+    "level": "A2", "topics": ["work"], "grammar": ["preterito"],
+    "tokens": ["El", "jefe", "dijo", "que", "la", "junta", "es", "mañana", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "dijo", "lemma": "decir", "hint": "decir · él · pretérito", "distractors": ["dice", "dije", "dijeron"] }]
+  },
+  {
+    "id": "s060", "es": "Mis compañeros están platicando en la cocina.", "sk": "Kolegovia sa rozprávajú v kuchynke.",
+    "level": "A2", "topics": ["work"], "grammar": ["progresivo"],
+    "tokens": ["Mis", "compañeros", "están", "platicando", "en", "la", "cocina", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "platicando", "lemma": "platicar", "hint": "platicar · gerundio", "distractors": ["platicado", "platican", "platicar"] }]
+  }
+]

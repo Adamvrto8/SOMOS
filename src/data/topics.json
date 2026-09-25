@@ -1,0 +1,10 @@
+[
+  { "id": "greetings", "sk": "Pozdravy a frázy", "es": "Saludos y frases", "icon": "hand" },
+  { "id": "family", "sk": "Rodina", "es": "La familia", "icon": "users" },
+  { "id": "food", "sk": "Jedlo a pitie", "es": "Comida y bebida", "icon": "utensils" },
+  { "id": "home", "sk": "Domov a bývanie", "es": "La casa", "icon": "house" },
+  { "id": "city", "sk": "Mesto", "es": "La ciudad", "icon": "building-2" },
+  { "id": "travel", "sk": "Cestovanie", "es": "Los viajes", "icon": "plane" },
+  { "id": "time", "sk": "Čas a dni", "es": "El tiempo y los días", "icon": "clock" },
+  { "id": "work", "sk": "Práca", "es": "El trabajo", "icon": "briefcase" }
+]

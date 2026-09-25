@@ -1,0 +1,135 @@
+[
+  {
+    "id": "ser", "sk": ["byť"], "group": "er", "regular": false, "gerund": "siendo",
+    "presente": { "yo": "soy", "tu": "eres", "el": "es", "nosotros": "somos", "ellos": "son" },
+    "preterito": { "yo": "fui", "tu": "fuiste", "el": "fue", "nosotros": "fuimos", "ellos": "fueron" },
+    "irregularForms": ["presente.*", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "estar", "sk": ["byť"], "group": "ar", "regular": false, "gerund": "estando",
+    "presente": { "yo": "estoy", "tu": "estás", "el": "está", "nosotros": "estamos", "ellos": "están" },
+    "preterito": { "yo": "estuve", "tu": "estuviste", "el": "estuvo", "nosotros": "estuvimos", "ellos": "estuvieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "tener", "sk": ["mať"], "group": "er", "regular": false, "gerund": "teniendo",
+    "presente": { "yo": "tengo", "tu": "tienes", "el": "tiene", "nosotros": "tenemos", "ellos": "tienen" },
+    "preterito": { "yo": "tuve", "tu": "tuviste", "el": "tuvo", "nosotros": "tuvimos", "ellos": "tuvieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "ir", "sk": ["ísť"], "group": "ir", "regular": false, "gerund": "yendo", "gerundIrregular": true,
+    "presente": { "yo": "voy", "tu": "vas", "el": "va", "nosotros": "vamos", "ellos": "van" },
+    "preterito": { "yo": "fui", "tu": "fuiste", "el": "fue", "nosotros": "fuimos", "ellos": "fueron" },
+    "irregularForms": ["presente.*", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "hacer", "sk": ["robiť", "urobiť"], "group": "er", "regular": false, "gerund": "haciendo",
+    "presente": { "yo": "hago", "tu": "haces", "el": "hace", "nosotros": "hacemos", "ellos": "hacen" },
+    "preterito": { "yo": "hice", "tu": "hiciste", "el": "hizo", "nosotros": "hicimos", "ellos": "hicieron" },
+    "irregularForms": ["presente.yo", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "hablar", "sk": ["hovoriť", "rozprávať"], "group": "ar", "regular": true, "gerund": "hablando",
+    "presente": { "yo": "hablo", "tu": "hablas", "el": "habla", "nosotros": "hablamos", "ellos": "hablan" },
+    "preterito": { "yo": "hablé", "tu": "hablaste", "el": "habló", "nosotros": "hablamos", "ellos": "hablaron" },
+    "level": "A1"
+  },
+  {
+    "id": "comer", "sk": ["jesť", "obedovať"], "group": "er", "regular": true, "gerund": "comiendo",
+    "presente": { "yo": "como", "tu": "comes", "el": "come", "nosotros": "comemos", "ellos": "comen" },
+    "preterito": { "yo": "comí", "tu": "comiste", "el": "comió", "nosotros": "comimos", "ellos": "comieron" },
+    "level": "A1"
+  },
+  {
+    "id": "vivir", "sk": ["bývať", "žiť"], "group": "ir", "regular": true, "gerund": "viviendo",
+    "presente": { "yo": "vivo", "tu": "vives", "el": "vive", "nosotros": "vivimos", "ellos": "viven" },
+    "preterito": { "yo": "viví", "tu": "viviste", "el": "vivió", "nosotros": "vivimos", "ellos": "vivieron" },
+    "level": "A1"
+  },
+  {
+    "id": "trabajar", "sk": ["pracovať"], "group": "ar", "regular": true, "gerund": "trabajando",
+    "presente": { "yo": "trabajo", "tu": "trabajas", "el": "trabaja", "nosotros": "trabajamos", "ellos": "trabajan" },
+    "preterito": { "yo": "trabajé", "tu": "trabajaste", "el": "trabajó", "nosotros": "trabajamos", "ellos": "trabajaron" },
+    "level": "A1"
+  },
+  {
+    "id": "querer", "sk": ["chcieť", "ľúbiť"], "group": "er", "regular": false, "gerund": "queriendo",
+    "presente": { "yo": "quiero", "tu": "quieres", "el": "quiere", "nosotros": "queremos", "ellos": "quieren" },
+    "preterito": { "yo": "quise", "tu": "quisiste", "el": "quiso", "nosotros": "quisimos", "ellos": "quisieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "poder", "sk": ["môcť"], "group": "er", "regular": false, "gerund": "pudiendo", "gerundIrregular": true,
+    "presente": { "yo": "puedo", "tu": "puedes", "el": "puede", "nosotros": "podemos", "ellos": "pueden" },
+    "preterito": { "yo": "pude", "tu": "pudiste", "el": "pudo", "nosotros": "pudimos", "ellos": "pudieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "llegar", "sk": ["prísť", "doraziť"], "group": "ar", "regular": false, "gerund": "llegando",
+    "presente": { "yo": "llego", "tu": "llegas", "el": "llega", "nosotros": "llegamos", "ellos": "llegan" },
+    "preterito": { "yo": "llegué", "tu": "llegaste", "el": "llegó", "nosotros": "llegamos", "ellos": "llegaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "comprar", "sk": ["kúpiť", "kupovať"], "group": "ar", "regular": true, "gerund": "comprando",
+    "presente": { "yo": "compro", "tu": "compras", "el": "compra", "nosotros": "compramos", "ellos": "compran" },
+    "preterito": { "yo": "compré", "tu": "compraste", "el": "compró", "nosotros": "compramos", "ellos": "compraron" },
+    "level": "A1"
+  },
+  {
+    "id": "tomar", "sk": ["vziať", "piť", "ísť (autobusom, metrom…)"], "group": "ar", "regular": true, "gerund": "tomando",
+    "presente": { "yo": "tomo", "tu": "tomas", "el": "toma", "nosotros": "tomamos", "ellos": "toman" },
+    "preterito": { "yo": "tomé", "tu": "tomaste", "el": "tomó", "nosotros": "tomamos", "ellos": "tomaron" },
+    "level": "A1"
+  },
+  {
+    "id": "salir", "sk": ["odísť", "vyjsť", "ísť von"], "group": "ir", "regular": false, "gerund": "saliendo",
+    "presente": { "yo": "salgo", "tu": "sales", "el": "sale", "nosotros": "salimos", "ellos": "salen" },
+    "preterito": { "yo": "salí", "tu": "saliste", "el": "salió", "nosotros": "salimos", "ellos": "salieron" },
+    "irregularForms": ["presente.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "venir", "sk": ["prísť"], "group": "ir", "regular": false, "gerund": "viniendo", "gerundIrregular": true,
+    "presente": { "yo": "vengo", "tu": "vienes", "el": "viene", "nosotros": "venimos", "ellos": "vienen" },
+    "preterito": { "yo": "vine", "tu": "viniste", "el": "vino", "nosotros": "vinimos", "ellos": "vinieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "decir", "sk": ["povedať", "hovoriť"], "group": "ir", "regular": false, "gerund": "diciendo", "gerundIrregular": true,
+    "presente": { "yo": "digo", "tu": "dices", "el": "dice", "nosotros": "decimos", "ellos": "dicen" },
+    "preterito": { "yo": "dije", "tu": "dijiste", "el": "dijo", "nosotros": "dijimos", "ellos": "dijeron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "platicar", "sk": ["rozprávať sa", "pokecať si"], "group": "ar", "regular": false, "gerund": "platicando",
+    "presente": { "yo": "platico", "tu": "platicas", "el": "platica", "nosotros": "platicamos", "ellos": "platican" },
+    "preterito": { "yo": "platiqué", "tu": "platicaste", "el": "platicó", "nosotros": "platicamos", "ellos": "platicaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "llamarse", "sk": ["volať sa"], "group": "ar", "regular": true, "reflexive": true, "gerund": "llamando",
+    "presente": { "yo": "me llamo", "tu": "te llamas", "el": "se llama", "nosotros": "nos llamamos", "ellos": "se llaman" },
+    "preterito": { "yo": "me llamé", "tu": "te llamaste", "el": "se llamó", "nosotros": "nos llamamos", "ellos": "se llamaron" },
+    "level": "A1"
+  },
+  {
+    "id": "dormir", "sk": ["spať"], "group": "ir", "regular": false, "gerund": "durmiendo", "gerundIrregular": true,
+    "presente": { "yo": "duermo", "tu": "duermes", "el": "duerme", "nosotros": "dormimos", "ellos": "duermen" },
+    "preterito": { "yo": "dormí", "tu": "dormiste", "el": "durmió", "nosotros": "dormimos", "ellos": "durmieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A1"
+  }
+]
