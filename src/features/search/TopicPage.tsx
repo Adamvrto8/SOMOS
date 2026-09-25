@@ -3,6 +3,7 @@ import { BackButton } from '../../components/BackButton'
 import { NotFound } from '../../components/NotFound'
 import { TopicIcon } from '../../components/TopicIcon'
 import { topicById } from '../../data'
+import { useSavedWordIds } from '../../lib/archive'
 import { wordsInTopic } from '../../lib/search'
 import { pluralSk } from '../../lib/text'
 import { WordRow } from './WordRow'
@@ -10,6 +11,7 @@ import { WordRow } from './WordRow'
 export function TopicPage() {
   const { id = '' } = useParams()
   const topic = topicById.get(id)
+  const savedIds = useSavedWordIds()
   if (!topic) return <NotFound title="Téma sa nenašla" />
 
   const list = wordsInTopic(topic.id)
@@ -34,7 +36,7 @@ export function TopicPage() {
       </p>
       <ul className="mt-1 divide-y divide-line">
         {list.map((word) => (
-          <WordRow key={word.id} word={word} />
+          <WordRow key={word.id} word={word} saved={savedIds.has(word.id)} />
         ))}
       </ul>
     </div>

@@ -14,6 +14,9 @@
   --amber:     #E3A64B;  /* highlights, streak, irregular forms */
   --error:     #A33A2B;
 
+  /* Derived: text on brick/error fills (keeps WCAG AA contrast in both themes). */
+  --on-accent: #FFFFFF;
+
   color-scheme: light;
 }
 
@@ -27,6 +30,9 @@
   --brick:     #D06A4E;
   --leaf:      #7F9E72;
   --amber:     #F2B866;  /* subtle glow on active elements */
+  --error:     #E0715F;  /* not in the spec; the light value is unreadable on dark */
+
+  --on-accent: #161614;
 
   color-scheme: dark;
 }

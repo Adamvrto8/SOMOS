@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Star } from 'lucide-react'
 import { Link } from 'react-router'
 import type { Word } from '../../data/types'
 import { articleFor } from '../../lib/grammar'
@@ -6,9 +6,10 @@ import { articleFor } from '../../lib/grammar'
 interface WordRowProps {
   word: Word
   matchedForm?: string
+  saved?: boolean
 }
 
-export function WordRow({ word, matchedForm }: WordRowProps) {
+export function WordRow({ word, matchedForm, saved }: WordRowProps) {
   const article = articleFor(word)
 
   return (
@@ -31,6 +32,9 @@ export function WordRow({ word, matchedForm }: WordRowProps) {
             {word.sk.join(', ')}
           </p>
         </div>
+        {saved && (
+          <Star size={16} strokeWidth={1.75} className="shrink-0 fill-amber text-amber" aria-label="Uložené" role="img" />
+        )}
         <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
       </Link>
     </li>

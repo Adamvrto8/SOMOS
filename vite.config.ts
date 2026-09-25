@@ -7,6 +7,14 @@ const ONE_YEAR = 60 * 60 * 24 * 365
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    rolldownOptions: {
+      output: {
+        // Libraries change rarely: a separate chunk means a deploy only re-downloads app code.
+        codeSplitting: { groups: [{ name: 'vendor', test: /node_modules/ }] },
+      },
+    },
+  },
   plugins: [
     tailwindcss(),
     react(),

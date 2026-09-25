@@ -1,6 +1,7 @@
 import { Volume2 } from 'lucide-react'
-import { Fragment, useState, type KeyboardEvent } from 'react'
+import { Fragment, useState } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
+import { Segmented } from '../../components/Segmented'
 import type { Verb } from '../../data/types'
 import { conjugate, formText, PERSON_LABELS, PERSONS, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { speak, ttsSupported } from '../../lib/tts'
@@ -18,41 +19,19 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
   const rows = PERSONS.map((person) => ({ person, parts: conjugate(verb, tense, person, estar) }))
   const hasIrregular = rows.some((row) => row.parts.some((p) => p.irregular))
 
-  // Arrow keys move between tabs (WAI-ARIA tabs pattern).
-  const onTabKey = (e: KeyboardEvent) => {
-    const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
-    if (!step) return
-    const next = TENSES[(TENSES.indexOf(tense) + step + TENSES.length) % TENSES.length]
-    setTense(next)
-    document.getElementById(`tab-${next}`)?.focus()
-  }
-
   return (
     <section aria-labelledby="conjugation-heading">
       <SectionTitle id="conjugation-heading">Časovanie</SectionTitle>
 
-      <div role="tablist" aria-label="Čas" className="flex rounded-full bg-surface-2 p-1">
-        {TENSES.map((t) => (
-          <button
-            key={t}
-            id={`tab-${t}`}
-            type="button"
-            role="tab"
-            aria-selected={t === tense}
-            aria-controls="conjugation-panel"
-            tabIndex={t === tense ? 0 : -1}
-            onClick={() => setTense(t)}
-            onKeyDown={onTabKey}
-            className={[
-              'h-10 flex-1 rounded-full text-sm font-medium transition-colors duration-150',
-              'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',
-              t === tense ? 'bg-surface text-ink shadow-sm' : 'text-ink-muted hover:text-ink',
-            ].join(' ')}
-          >
-            {TENSE_LABELS[t]}
-          </button>
-        ))}
-      </div>
+      <Segmented
+        mode="tabs"
+        label="Čas"
+        idPrefix="tab"
+        panelId="conjugation-panel"
+        options={TENSES.map((t) => ({ id: t, label: TENSE_LABELS[t] }))}
+        value={tense}
+        onChange={setTense}
+      />
 
       <div role="tabpanel" id="conjugation-panel" aria-labelledby={`tab-${tense}`} className="mt-3">
         <ul className="divide-y divide-line rounded-card border border-line bg-surface">

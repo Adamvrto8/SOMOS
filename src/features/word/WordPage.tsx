@@ -8,6 +8,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import { topicById, verbById, wordById } from '../../data'
 import { articleFor, GENDER_LABELS, POS_LABELS } from '../../lib/grammar'
 import { ConjugationTable } from './ConjugationTable'
+import { SaveButton } from './SaveButton'
 
 export function WordPage() {
   const { id = '' } = useParams()
@@ -27,11 +28,19 @@ export function WordPage() {
 
         <header className="mt-2">
           <div className="flex items-start justify-between gap-3">
-            <h1 lang="es" className="min-w-0 font-serif text-5xl leading-tight font-semibold tracking-tight break-words">
+            <h1
+              lang="es"
+              className={[
+                'min-w-0 font-serif leading-tight font-semibold tracking-tight hyphens-auto',
+                // Long single words would not fit next to the two buttons at 375px.
+                word.es.length > 9 && !word.es.includes(' ') ? 'text-4xl' : 'text-5xl',
+              ].join(' ')}
+            >
               {article && <span className="text-3xl font-normal text-ink-muted">{article} </span>}
               {word.es}
             </h1>
-            <div className="pt-1.5">
+            <div className="flex gap-2 pt-1.5">
+              <SaveButton wordId={word.id} />
               <SpeakButton text={article ? `${article} ${word.es}` : word.es} size="lg" />
             </div>
           </div>
