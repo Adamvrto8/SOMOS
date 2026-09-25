@@ -12,6 +12,8 @@ Mobile-first PWA for learning Mexican Spanish from Slovak. Full spec: [CLAUDE.md
 | `npm run build` | Type-check + production build into `dist/` (incl. service worker) |
 | `npm run preview` | Serve the production build locally (http://localhost:4173) |
 | `npm run lint` | Lint with oxlint |
+| `npm test` | Unit tests (Vitest) for `src/lib` logic |
+| `npm run validate:data` | Check content in `src/data` |
 | `npm run icons` | Regenerate app icons from `scripts/generate-icons.ts` |
 
 Deployed on Vercel (Vite preset, output `dist`); `vercel.json` adds the SPA rewrite.

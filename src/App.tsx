@@ -4,6 +4,7 @@ import { AppLayout } from './components/AppLayout'
 import { ArchivePage } from './features/archive/ArchivePage'
 import { CustomWordPage } from './features/archive/CustomWordPage'
 import { SettingsPage } from './features/archive/SettingsPage'
+import { LessonPage } from './features/exercises/LessonPage'
 import { PracticePage } from './features/exercises/PracticePage'
 import { HomePage } from './features/home/HomePage'
 import { SearchPage } from './features/search/SearchPage'
@@ -27,6 +28,8 @@ const router = createBrowserRouter([
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
+  // Full-screen lesson player: no header or tab bar, its own bottom action bar.
+  { path: '/practice/lesson', element: <LessonPage /> },
 ])
 
 export default function App() {

@@ -152,6 +152,16 @@ Normalize: trim, lowercase, collapse spaces, strip ¿?¡!.,
 - Levenshtein distance 1 on words ≥ 5 letters → 🟡 "takmer" (typo), counted as correct once.
 - Otherwise ❌, show correct answer + hint.
 
+Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
+- Words are compared one by one; a different word count is ❌.
+- A missing ñ is treated like a missing accent (Slovak keyboards), except año/ano.
+- "Different real word" is decided by `lookupForm` (`src/lib/knownForms.ts`, every form in the dataset):
+  an accent-only difference to another known form is ❌ with both meanings shown (hablo/habló, papa/papá),
+  and a known form is never a typo (hablas for hablan is ❌, not 🟡).
+- "Counted as correct once" = the typo answer counts as correct, but at most one typo per answer.
+- Translation SK → ES also accepts an extra leading subject pronoun (Yo hablo… for Hablo…) and offers
+  "Moja odpoveď bola tiež správna" on ❌, since free translation has many valid answers.
+
 ---
 
 ## 5. Screens & navigation
@@ -238,7 +248,7 @@ scripts/
 - [x] **1. Data foundation** — types, seed dataset (~60 words, 20 verbs incl. ser/estar/tener/ir/hacer, 60 sentences, 8 topics), validation script.
 - [x] **2. Search + word detail + conjugation tables + TTS.**
 - [x] **3. Archive** — save/unsave, custom words, export/import.
-- [ ] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.
+- [x] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.
 - [ ] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
 - [ ] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
 - [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
@@ -252,5 +262,6 @@ scripts/
 - All user-facing strings in Slovak, all Spanish content Mexican.
 - Content quality matters more than quantity: natural everyday sentences, correct accents,
   Slovak translations that sound natural (not word-for-word).
-- Run `npm run validate:data` after any data change, and `npm run build` before finishing a phase.
+- Run `npm run validate:data` after any data change, `npm test` after changing `src/lib` logic,
+  and `npm run build` before finishing a phase.
 - Test UI at 375px width first.
