@@ -1,0 +1,333 @@
+[
+  {
+    "id": "calle",
+    "es": "calle",
+    "sk": ["ulica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Vivo en la calle Juárez.", "sk": "Bývam na ulici Juárez." }]
+  },
+  {
+    "id": "carro",
+    "es": "carro",
+    "sk": ["auto"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Mi carro es rojo.", "sk": "Moje auto je červené." }],
+    "note": "Mexické slovo pre auto (v Španielsku „coche“)."
+  },
+  {
+    "id": "camion",
+    "es": "camión",
+    "plural": "camiones",
+    "sk": ["autobus", "nákladné auto"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city", "travel"],
+    "examples": [{ "es": "¿Qué camión va al centro?", "sk": "Ktorý autobus ide do centra?" }],
+    "note": "V Mexiku „camión“ znamená hlavne mestský autobus."
+  },
+  {
+    "id": "tienda",
+    "es": "tienda",
+    "sk": ["obchod"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La tienda está en la esquina.", "sk": "Obchod je na rohu." }]
+  },
+  {
+    "id": "mercado",
+    "es": "mercado",
+    "sk": ["trh", "tržnica"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city", "food"],
+    "examples": [{ "es": "Compramos fruta en el mercado.", "sk": "Ovocie kupujeme na trhu." }]
+  },
+  {
+    "id": "centro",
+    "es": "centro",
+    "sk": ["centrum"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Vamos al centro el sábado.", "sk": "V sobotu ideme do centra." }]
+  },
+  {
+    "id": "cerca",
+    "es": "cerca",
+    "sk": ["blízko"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El metro está cerca de aquí.", "sk": "Metro je kúsok odtiaľto." }],
+    "note": "cerca de = blízko niečoho."
+  },
+  {
+    "id": "lejos",
+    "es": "lejos",
+    "sk": ["ďaleko"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Está lejos el aeropuerto?", "sk": "Je letisko ďaleko?" }],
+    "note": "lejos de = ďaleko od niečoho."
+  },
+  {
+    "id": "banco",
+    "es": "banco",
+    "sk": ["banka", "lavička"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El banco está enfrente del parque.", "sk": "Banka je oproti parku." }]
+  },
+  {
+    "id": "parque",
+    "es": "parque",
+    "sk": ["park"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Vamos al parque con los niños.", "sk": "Ideme s deťmi do parku." }]
+  },
+  {
+    "id": "iglesia",
+    "es": "iglesia",
+    "sk": ["kostol"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La iglesia es muy antigua.", "sk": "Kostol je veľmi starý." }]
+  },
+  {
+    "id": "museo",
+    "es": "museo",
+    "sk": ["múzeum"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El museo cierra los lunes.", "sk": "Múzeum je v pondelok zatvorené." }]
+  },
+  {
+    "id": "plaza",
+    "es": "plaza",
+    "sk": ["námestie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Nos vemos en la plaza.", "sk": "Stretneme sa na námestí." }],
+    "note": "Hlavné námestie mexického mesta sa volá „el zócalo“."
+  },
+  {
+    "id": "esquina",
+    "es": "esquina",
+    "sk": ["roh (ulice)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La farmacia está en la esquina.", "sk": "Lekáreň je na rohu." }]
+  },
+  {
+    "id": "cuadra",
+    "es": "cuadra",
+    "sk": ["blok (ulíc)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "El metro está a dos cuadras.", "sk": "Metro je o dva bloky ďalej." }],
+    "note": "V Mexiku „cuadra“ = úsek ulice medzi dvoma križovatkami."
+  },
+  {
+    "id": "colonia",
+    "es": "colonia",
+    "sk": ["štvrť (v meste)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "Vivo en una colonia muy tranquila.", "sk": "Bývam vo veľmi pokojnej štvrti." }],
+    "note": "V Mexiku „colonia“ = mestská štvrť."
+  },
+  {
+    "id": "semaforo",
+    "es": "semáforo",
+    "sk": ["semafor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Da vuelta a la derecha en el semáforo.", "sk": "Na semafore odboč doprava." }],
+    "note": "dar vuelta = odbočiť (Mexiko)."
+  },
+  {
+    "id": "derecha",
+    "es": "derecha",
+    "sk": ["pravá strana", "vpravo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La tienda está a la derecha del banco.", "sk": "Obchod je napravo od banky." }],
+    "note": "a la derecha = vpravo, doprava."
+  },
+  {
+    "id": "izquierda",
+    "es": "izquierda",
+    "sk": ["ľavá strana", "vľavo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Da vuelta a la izquierda.", "sk": "Odboč doľava." }]
+  },
+  {
+    "id": "todo-derecho",
+    "es": "todo derecho",
+    "sk": ["stále rovno"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Sigue todo derecho dos cuadras.", "sk": "Choď stále rovno dva bloky." }]
+  },
+  {
+    "id": "metro",
+    "es": "metro",
+    "sk": ["metro"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Tomo el metro para ir al centro.", "sk": "Do centra chodím metrom." }]
+  },
+  {
+    "id": "taxi",
+    "es": "taxi",
+    "sk": ["taxík"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Pedimos un taxi?", "sk": "Zavoláme si taxík?" }]
+  },
+  {
+    "id": "estacion",
+    "es": "estación",
+    "sk": ["stanica"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "estaciones",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Dónde está la estación de metro?", "sk": "Kde je stanica metra?" }]
+  },
+  {
+    "id": "farmacia",
+    "es": "farmacia",
+    "sk": ["lekáreň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city", "health"],
+    "examples": [{ "es": "La farmacia abre las 24 horas.", "sk": "Lekáreň má otvorené nonstop." }]
+  },
+  {
+    "id": "hospital",
+    "es": "hospital",
+    "sk": ["nemocnica"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "hospitales",
+    "level": "A1",
+    "topics": ["city", "health"],
+    "examples": [{ "es": "El hospital está lejos de aquí.", "sk": "Nemocnica je odtiaľto ďaleko." }]
+  },
+  {
+    "id": "ciudad",
+    "es": "ciudad",
+    "sk": ["mesto"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "ciudades",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La Ciudad de México es enorme.", "sk": "Mexiko City je obrovské." }],
+    "note": "La Ciudad de México (CDMX) = hlavné mesto Mexika."
+  },
+  {
+    "id": "pueblo",
+    "es": "pueblo",
+    "sk": ["dedina", "mestečko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Mis abuelos viven en un pueblo.", "sk": "Starí rodičia bývajú na dedine." }]
+  },
+  {
+    "id": "trafico",
+    "es": "tráfico",
+    "sk": ["doprava", "zápcha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Hay mucho tráfico a esta hora.", "sk": "V tomto čase je veľká zápcha." }]
+  },
+  {
+    "id": "estacionamiento",
+    "es": "estacionamiento",
+    "sk": ["parkovisko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El estacionamiento está lleno.", "sk": "Parkovisko je plné." }]
+  },
+  {
+    "id": "cajero",
+    "es": "cajero",
+    "sk": ["bankomat", "pokladník"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Dónde hay un cajero?", "sk": "Kde je tu bankomat?" }],
+    "note": "cajero automático = bankomat."
+  },
+  {
+    "id": "aqui",
+    "es": "aquí",
+    "sk": ["tu", "sem"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Hay una farmacia aquí cerca?", "sk": "Je tu niekde blízko lekáreň?" }]
+  },
+  {
+    "id": "alla",
+    "es": "allá",
+    "sk": ["tam"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El hotel está allá.", "sk": "Hotel je tamto." }],
+    "note": "allá = tam (ďalej); ahí = tam (blízko)."
+  }
+]

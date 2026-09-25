@@ -6,5 +6,14 @@
   { "id": "city", "sk": "Mesto", "es": "La ciudad", "icon": "building-2" },
   { "id": "travel", "sk": "Cestovanie", "es": "Los viajes", "icon": "plane" },
   { "id": "time", "sk": "Čas a dni", "es": "El tiempo y los días", "icon": "clock" },
-  { "id": "work", "sk": "Práca", "es": "El trabajo", "icon": "briefcase" }
+  { "id": "work", "sk": "Práca", "es": "El trabajo", "icon": "briefcase" },
+  { "id": "shopping", "sk": "Nakupovanie", "es": "De compras", "icon": "shopping-bag" },
+  { "id": "clothes", "sk": "Oblečenie", "es": "La ropa", "icon": "shirt" },
+  { "id": "body", "sk": "Telo", "es": "El cuerpo", "icon": "person-standing" },
+  { "id": "health", "sk": "Zdravie", "es": "La salud", "icon": "heart-pulse" },
+  { "id": "weather", "sk": "Počasie", "es": "El clima", "icon": "cloud-sun" },
+  { "id": "nature", "sk": "Príroda a zvieratá", "es": "La naturaleza", "icon": "trees" },
+  { "id": "school", "sk": "Škola a učenie", "es": "La escuela", "icon": "graduation-cap" },
+  { "id": "emotions", "sk": "Pocity", "es": "Las emociones", "icon": "smile" },
+  { "id": "hobbies", "sk": "Voľný čas", "es": "El tiempo libre", "icon": "music" }
 ]

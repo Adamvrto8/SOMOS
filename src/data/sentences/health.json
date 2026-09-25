@@ -1,0 +1,304 @@
+[
+  {
+    "id": "s255",
+    "es": "No me siento bien.",
+    "sk": "Necítim sa dobre.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["No", "me", "siento", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "siento",
+        "lemma": "sentirse",
+        "hint": "sentirse · yo · presente",
+        "distractors": ["siente", "sienten", "sentí"]
+      }
+    ]
+  },
+  {
+    "id": "s256",
+    "es": "¿Cómo te sientes hoy?",
+    "sk": "Ako sa dnes cítiš?",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cómo", "te", "sientes", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sientes",
+        "lemma": "sentirse",
+        "hint": "sentirse · tú · presente",
+        "distractors": ["sentimos", "siento", "sentiste"]
+      }
+    ]
+  },
+  {
+    "id": "s257",
+    "es": "Me enfermé de gripa.",
+    "sk": "Ochorel som na chrípku.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "enfermé", "de", "gripa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "enfermé",
+        "lemma": "enfermarse",
+        "hint": "enfermarse · yo · pretérito",
+        "distractors": ["enfermó", "enfermaron", "enfermo"]
+      }
+    ]
+  },
+  {
+    "id": "s258",
+    "es": "Tengo fiebre y me duele la garganta.",
+    "sk": "Mám horúčku a bolí ma hrdlo.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "fiebre", "y", "me", "duele", "la", "garganta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s259",
+    "es": "Necesito ir al doctor.",
+    "sk": "Musím ísť k lekárovi.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Necesito", "ir", "al", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["Necesita", "Necesitan", "Necesité"]
+      }
+    ]
+  },
+  {
+    "id": "s260",
+    "es": "La doctora me dio unas pastillas.",
+    "sk": "Lekárka mi dala tabletky.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "doctora", "me", "dio", "unas", "pastillas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · ella · pretérito",
+        "distractors": ["dieron", "diste", "da"]
+      }
+    ]
+  },
+  {
+    "id": "s261",
+    "es": "Tómate la medicina cada ocho horas.",
+    "sk": "Liek ber každých osem hodín.",
+    "level": "A1",
+    "topics": ["health"],
+    "tokens": ["Tómate", "la", "medicina", "cada", "ocho", "horas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "horas",
+        "lemma": "hora",
+        "hint": "hodiny",
+        "distractors": ["días", "minutos", "semanas"]
+      }
+    ]
+  },
+  {
+    "id": "s262",
+    "es": "Estoy muy cansado, voy a descansar.",
+    "sk": "Som veľmi unavený, idem si oddýchnuť.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Estoy", "muy", "cansado", ",", "voy", "a", "descansar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["va", "van", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s263",
+    "es": "Mi abuelo está en el hospital.",
+    "sk": "Dedko je v nemocnici.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "abuelo", "está", "en", "el", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s264",
+    "es": "Ya me siento mejor, gracias.",
+    "sk": "Už sa cítim lepšie, ďakujem.",
+    "level": "A1",
+    "topics": ["health"],
+    "tokens": ["Ya", "me", "siento", "mejor", ",", "gracias", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "lepšie",
+        "distractors": ["peor", "bien", "mal"]
+      }
+    ]
+  },
+  {
+    "id": "s265",
+    "es": "Hago ejercicio para estar sano.",
+    "sk": "Cvičím, aby som bol zdravý.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Hago", "ejercicio", "para", "estar", "sano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": ["Hace", "Hacen", "Hice"]
+      }
+    ]
+  },
+  {
+    "id": "s266",
+    "es": "Anoche no dormí bien por la tos.",
+    "sk": "Včera som kvôli kašľu zle spal.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "no", "dormí", "bien", "por", "la", "tos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dormí",
+        "lemma": "dormir",
+        "hint": "dormir · yo · pretérito",
+        "distractors": ["durmió", "durmieron", "duermo"]
+      }
+    ]
+  },
+  {
+    "id": "s267",
+    "es": "Tengo cita con el dentista el jueves.",
+    "sk": "Vo štvrtok mám termín u zubára.",
+    "level": "A1",
+    "topics": ["health"],
+    "tokens": ["Tengo", "cita", "con", "el", "dentista", "el", "jueves", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cita",
+        "lemma": "cita",
+        "hint": "termín",
+        "distractors": ["receta", "clase", "junta"]
+      }
+    ]
+  },
+  {
+    "id": "s268",
+    "es": "Caminar es bueno para la salud.",
+    "sk": "Chôdza prospieva zdraviu.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Caminar", "es", "bueno", "para", "la", "salud", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s269",
+    "es": "Los niños están enfermos.",
+    "sk": "Deti sú choré.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["gender"],
+    "tokens": ["Los", "niños", "están", "enfermos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enfermos",
+        "lemma": "enfermo",
+        "hint": "prídavné meno: enfermo",
+        "distractors": ["enfermo", "enferma", "enfermas"]
+      }
+    ]
+  },
+  {
+    "id": "s270",
+    "es": "Llamen a una ambulancia, por favor.",
+    "sk": "Zavolajte sanitku, prosím.",
+    "level": "A2",
+    "topics": ["health"],
+    "tokens": ["Llamen", "a", "una", "ambulancia", ",", "por", "favor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unos", "unas"]
+      }
+    ]
+  },
+  {
+    "id": "s271",
+    "es": "Mi mamá se preocupa mucho por mi salud.",
+    "sk": "Mama si veľmi robí starosti o moje zdravie.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "mamá", "se", "preocupa", "mucho", "por", "mi", "salud", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "preocupa",
+        "lemma": "preocuparse",
+        "hint": "preocuparse · ella · presente",
+        "distractors": ["preocupan", "preocupas", "preocupó"]
+      }
+    ]
+  }
+]

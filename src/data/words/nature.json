@@ -1,0 +1,208 @@
+[
+  {
+    "id": "naturaleza",
+    "es": "naturaleza",
+    "sk": ["príroda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Me encanta la naturaleza.", "sk": "Zbožňujem prírodu." }]
+  },
+  {
+    "id": "arbol",
+    "es": "árbol",
+    "sk": ["strom"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "árboles",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay un árbol enorme en el parque.", "sk": "V parku je obrovský strom." }]
+  },
+  {
+    "id": "flor",
+    "es": "flor",
+    "sk": ["kvet"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "flores",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Te compré flores.", "sk": "Kúpil som ti kvety." }]
+  },
+  {
+    "id": "planta",
+    "es": "planta",
+    "sk": ["rastlina", "kvetina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Tengo muchas plantas en mi departamento.", "sk": "V byte mám veľa kvetín." }]
+  },
+  {
+    "id": "montana",
+    "es": "montaña",
+    "sk": ["hora"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Vamos a la montaña el fin de semana.", "sk": "Cez víkend ideme do hôr." }]
+  },
+  {
+    "id": "rio",
+    "es": "río",
+    "sk": ["rieka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El río está muy limpio.", "sk": "Rieka je veľmi čistá." }]
+  },
+  {
+    "id": "lago",
+    "es": "lago",
+    "sk": ["jazero"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Nadamos en el lago.", "sk": "Plávali sme v jazere." }]
+  },
+  {
+    "id": "volcan",
+    "es": "volcán",
+    "sk": ["sopka"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "volcanes",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El Popocatépetl es un volcán activo.", "sk": "Popocatépetl je činná sopka." }]
+  },
+  {
+    "id": "bosque",
+    "es": "bosque",
+    "sk": ["les"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Caminamos por el bosque.", "sk": "Prechádzali sme sa lesom." }]
+  },
+  {
+    "id": "selva",
+    "es": "selva",
+    "sk": ["prales", "džungľa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "En Chiapas hay mucha selva.", "sk": "V Chiapase je veľa pralesa." }]
+  },
+  {
+    "id": "desierto",
+    "es": "desierto",
+    "sk": ["púšť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El desierto de Sonora es enorme.", "sk": "Púšť Sonora je obrovská." }]
+  },
+  {
+    "id": "isla",
+    "es": "isla",
+    "sk": ["ostrov"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Isla Mujeres está cerca de Cancún.", "sk": "Isla Mujeres je blízko Cancúnu." }]
+  },
+  {
+    "id": "cielo",
+    "es": "cielo",
+    "sk": ["obloha", "nebo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El cielo está muy azul.", "sk": "Obloha je veľmi modrá." }]
+  },
+  {
+    "id": "tierra",
+    "es": "tierra",
+    "sk": ["zem", "pôda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "La tierra está seca.", "sk": "Zem je suchá." }]
+  },
+  {
+    "id": "campo",
+    "es": "campo",
+    "sk": ["vidiek", "pole"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Mis abuelos viven en el campo.", "sk": "Starí rodičia žijú na vidieku." }]
+  },
+  {
+    "id": "animal",
+    "es": "animal",
+    "sk": ["zviera"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "animales",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Me gustan mucho los animales.", "sk": "Veľmi mám rád zvieratá." }]
+  },
+  {
+    "id": "pajaro",
+    "es": "pájaro",
+    "sk": ["vták"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Los pájaros cantan en la mañana.", "sk": "Vtáky ráno spievajú." }]
+  },
+  {
+    "id": "pez",
+    "es": "pez",
+    "sk": ["ryba (živá)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "peces",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay muchos peces de colores.", "sk": "Je tu veľa farebných rýb." }],
+    "note": "pez = živá ryba; pescado = ryba ako jedlo."
+  },
+  {
+    "id": "caballo",
+    "es": "caballo",
+    "sk": ["kôň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Mi tío tiene caballos.", "sk": "Strýko má kone." }]
+  },
+  {
+    "id": "vaca",
+    "es": "vaca",
+    "sk": ["krava"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Las vacas están en el campo.", "sk": "Kravy sú na poli." }]
+  }
+]

@@ -1,0 +1,1085 @@
+[
+  {
+    "id": "ser",
+    "es": "ser",
+    "sk": ["byť"],
+    "pos": "verb",
+    "verbId": "ser",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Soy de Eslovaquia.", "sk": "Som zo Slovenska." },
+      { "es": "Mi hermana es doctora.", "sk": "Moja sestra je lekárka." }
+    ],
+    "note": "Ser: kto alebo čo niečo je, pôvod, povolanie, vlastnosti (Soy de Eslovaquia). Estar: kde niečo je a ako sa kto má (Estoy en casa, Estoy cansado)."
+  },
+  {
+    "id": "estar",
+    "es": "estar",
+    "sk": ["byť"],
+    "pos": "verb",
+    "verbId": "estar",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "¿Cómo estás?", "sk": "Ako sa máš?" },
+      { "es": "El baño está a la derecha.", "sk": "Záchod je vpravo." }
+    ],
+    "note": "Estar: poloha a dočasný stav (Estoy en casa, Estoy cansado). Porovnaj so ser."
+  },
+  {
+    "id": "tener",
+    "es": "tener",
+    "sk": ["mať"],
+    "pos": "verb",
+    "verbId": "tener",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Tengo treinta años.", "sk": "Mám tridsať rokov." },
+      { "es": "Mañana tengo que trabajar.", "sk": "Zajtra musím pracovať." }
+    ],
+    "note": "Vek: Tengo 30 años = Mám 30 rokov. Tener que + infinitív = musieť: Tengo que trabajar."
+  },
+  {
+    "id": "ir",
+    "es": "ir",
+    "sk": ["ísť"],
+    "pos": "verb",
+    "verbId": "ir",
+    "level": "A1",
+    "topics": ["travel", "city"],
+    "examples": [
+      { "es": "Voy al mercado.", "sk": "Idem na trh." },
+      { "es": "¿Vamos a la playa el sábado?", "sk": "Pôjdeme v sobotu na pláž?" }
+    ],
+    "note": "Ir a + infinitív vyjadruje budúcnosť: Voy a comer = Idem jesť / Budem jesť."
+  },
+  {
+    "id": "hacer",
+    "es": "hacer",
+    "sk": ["robiť", "urobiť"],
+    "pos": "verb",
+    "verbId": "hacer",
+    "level": "A1",
+    "topics": [],
+    "examples": [
+      { "es": "¿Qué haces?", "sk": "Čo robíš?" },
+      { "es": "Hoy hace mucho frío.", "sk": "Dnes je veľká zima." }
+    ],
+    "note": "Počasie: Hace calor = Je teplo, Hace frío = Je zima."
+  },
+  {
+    "id": "hablar",
+    "es": "hablar",
+    "sk": ["hovoriť", "rozprávať"],
+    "pos": "verb",
+    "verbId": "hablar",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "¿Hablas inglés?", "sk": "Hovoríš po anglicky?" },
+      { "es": "Hablo un poco de español.", "sk": "Hovorím trochu po španielsky." }
+    ]
+  },
+  {
+    "id": "comer",
+    "es": "comer",
+    "sk": ["jesť", "obedovať"],
+    "pos": "verb",
+    "verbId": "comer",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Dónde comemos hoy?", "sk": "Kde dnes obedujeme?" }],
+    "note": "V Mexiku „comer“ často znamená obedovať (hlavné jedlo dňa)."
+  },
+  {
+    "id": "vivir",
+    "es": "vivir",
+    "sk": ["bývať", "žiť"],
+    "pos": "verb",
+    "verbId": "vivir",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Vivimos en un departamento en el centro.", "sk": "Bývame v byte v centre." }]
+  },
+  {
+    "id": "trabajar",
+    "es": "trabajar",
+    "sk": ["pracovať"],
+    "pos": "verb",
+    "verbId": "trabajar",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Trabajo en una oficina.", "sk": "Pracujem v kancelárii." }]
+  },
+  {
+    "id": "querer",
+    "es": "querer",
+    "sk": ["chcieť", "ľúbiť"],
+    "pos": "verb",
+    "verbId": "querer",
+    "level": "A1",
+    "topics": [],
+    "examples": [
+      { "es": "¿Quieres un café?", "sk": "Dáš si kávu?" },
+      { "es": "Quiero ir a la playa.", "sk": "Chcem ísť na pláž." }
+    ],
+    "note": "Te quiero = Ľúbim ťa (rodine, priateľom aj partnerovi)."
+  },
+  {
+    "id": "poder",
+    "es": "poder",
+    "sk": ["môcť"],
+    "pos": "verb",
+    "verbId": "poder",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Puedo pagar con tarjeta?", "sk": "Môžem platiť kartou?" }]
+  },
+  {
+    "id": "llegar",
+    "es": "llegar",
+    "sk": ["prísť", "doraziť"],
+    "pos": "verb",
+    "verbId": "llegar",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "¿A qué hora llega el camión?", "sk": "O koľkej príde autobus?" },
+      { "es": "Llegué tarde al trabajo.", "sk": "Prišiel som neskoro do práce." }
+    ],
+    "note": "V pretérite sa mení pravopis: llegué (aby sa zachovala výslovnosť „g“)."
+  },
+  {
+    "id": "comprar",
+    "es": "comprar",
+    "sk": ["kúpiť", "kupovať"],
+    "pos": "verb",
+    "verbId": "comprar",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Voy a comprar tortillas.", "sk": "Idem kúpiť tortilly." }]
+  },
+  {
+    "id": "tomar",
+    "es": "tomar",
+    "sk": ["vziať", "piť", "ísť (autobusom, metrom…)"],
+    "pos": "verb",
+    "verbId": "tomar",
+    "level": "A1",
+    "topics": ["food", "travel"],
+    "examples": [
+      { "es": "¿Qué quieres tomar?", "sk": "Čo si dáš na pitie?" },
+      { "es": "Tomo el metro todos los días.", "sk": "Každý deň chodím metrom." }
+    ],
+    "note": "V Mexiku: tomar agua = piť vodu, tomar el camión = ísť autobusom. Sloveso „coger“ v Mexiku nepoužívaj – je vulgárne."
+  },
+  {
+    "id": "salir",
+    "es": "salir",
+    "sk": ["odísť", "vyjsť", "ísť von"],
+    "pos": "verb",
+    "verbId": "salir",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Salgo del trabajo a las seis.", "sk": "Z práce odchádzam o šiestej." },
+      { "es": "¿Salimos el viernes?", "sk": "Pôjdeme v piatok von?" }
+    ]
+  },
+  {
+    "id": "venir",
+    "es": "venir",
+    "sk": ["prísť"],
+    "pos": "verb",
+    "verbId": "venir",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Vienes a la fiesta?", "sk": "Prídeš na párty?" }],
+    "note": "Venir = prísť sem, k hovoriacemu. Llegar = doraziť niekam."
+  },
+  {
+    "id": "decir",
+    "es": "decir",
+    "sk": ["povedať", "hovoriť"],
+    "pos": "verb",
+    "verbId": "decir",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Qué dijo el doctor?", "sk": "Čo povedal lekár?" }]
+  },
+  {
+    "id": "platicar",
+    "es": "platicar",
+    "sk": ["rozprávať sa", "pokecať si"],
+    "pos": "verb",
+    "verbId": "platicar",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Me gusta platicar con mi abuela.", "sk": "Rád sa rozprávam s babkou." }],
+    "note": "Typicky mexické slovo pre „rozprávať sa, kecať“. V Španielsku skôr „charlar“."
+  },
+  {
+    "id": "llamarse",
+    "es": "llamarse",
+    "sk": ["volať sa"],
+    "pos": "verb",
+    "verbId": "llamarse",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?" }, { "es": "Me llamo Adam.", "sk": "Volám sa Adam." }]
+  },
+  {
+    "id": "dormir",
+    "es": "dormir",
+    "sk": ["spať"],
+    "pos": "verb",
+    "verbId": "dormir",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Anoche dormí muy bien.", "sk": "V noci som spal veľmi dobre." }]
+  },
+  {
+    "id": "estudiar",
+    "es": "estudiar",
+    "sk": ["študovať", "učiť sa"],
+    "pos": "verb",
+    "verbId": "estudiar",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estudio español todos los días.", "sk": "Každý deň sa učím španielčinu." }],
+    "note": "estudiar = študovať, učiť sa (predmet); aprender = naučiť sa niečo."
+  },
+  {
+    "id": "caminar",
+    "es": "caminar",
+    "sk": ["chodiť (pešo)", "kráčať"],
+    "pos": "verb",
+    "verbId": "caminar",
+    "level": "A1",
+    "topics": ["city", "health"],
+    "examples": [{ "es": "Camino al trabajo porque está cerca.", "sk": "Do práce chodím pešo, lebo je to blízko." }]
+  },
+  {
+    "id": "cocinar",
+    "es": "cocinar",
+    "sk": ["variť"],
+    "pos": "verb",
+    "verbId": "cocinar",
+    "level": "A1",
+    "topics": ["food", "home"],
+    "examples": [{ "es": "Mi papá cocina los domingos.", "sk": "Ocko varí v nedeľu." }]
+  },
+  {
+    "id": "limpiar",
+    "es": "limpiar",
+    "sk": ["upratovať", "čistiť"],
+    "pos": "verb",
+    "verbId": "limpiar",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Tengo que limpiar la cocina.", "sk": "Musím upratať kuchyňu." }]
+  },
+  {
+    "id": "escuchar",
+    "es": "escuchar",
+    "sk": ["počúvať"],
+    "pos": "verb",
+    "verbId": "escuchar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Me gusta escuchar música en el camión.", "sk": "Rád počúvam hudbu v autobuse." }]
+  },
+  {
+    "id": "mirar",
+    "es": "mirar",
+    "sk": ["pozerať (sa)"],
+    "pos": "verb",
+    "verbId": "mirar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Qué miras?", "sk": "Na čo sa pozeráš?" }],
+    "note": "Na televíziu sa v Mexiku bežne hovorí „ver la tele“."
+  },
+  {
+    "id": "necesitar",
+    "es": "necesitar",
+    "sk": ["potrebovať"],
+    "pos": "verb",
+    "verbId": "necesitar",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Necesito ayuda, por favor.", "sk": "Potrebujem pomoc, prosím." }]
+  },
+  {
+    "id": "esperar",
+    "es": "esperar",
+    "sk": ["čakať", "dúfať"],
+    "pos": "verb",
+    "verbId": "esperar",
+    "level": "A1",
+    "topics": ["travel", "city"],
+    "examples": [{ "es": "Te espero en la entrada.", "sk": "Počkám ťa pri vchode." }],
+    "note": "esperar = čakať aj dúfať: Espero que sí. = Dúfam, že áno."
+  },
+  {
+    "id": "ayudar",
+    "es": "ayudar",
+    "sk": ["pomáhať", "pomôcť"],
+    "pos": "verb",
+    "verbId": "ayudar",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Me ayudas con las maletas?", "sk": "Pomôžeš mi s kuframi?" }]
+  },
+  {
+    "id": "bailar",
+    "es": "bailar",
+    "sk": ["tancovať"],
+    "pos": "verb",
+    "verbId": "bailar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Quieres bailar?", "sk": "Chceš tancovať?" }]
+  },
+  {
+    "id": "cantar",
+    "es": "cantar",
+    "sk": ["spievať"],
+    "pos": "verb",
+    "verbId": "cantar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi hermana canta muy bonito.", "sk": "Moja sestra spieva veľmi pekne." }]
+  },
+  {
+    "id": "viajar",
+    "es": "viajar",
+    "sk": ["cestovať"],
+    "pos": "verb",
+    "verbId": "viajar",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Queremos viajar a Oaxaca en diciembre.", "sk": "V decembri chceme cestovať do Oaxacy." }]
+  },
+  {
+    "id": "manejar",
+    "es": "manejar",
+    "sk": ["šoférovať", "riadiť"],
+    "pos": "verb",
+    "verbId": "manejar",
+    "level": "A1",
+    "topics": ["travel", "city"],
+    "examples": [{ "es": "¿Sabes manejar?", "sk": "Vieš šoférovať?" }],
+    "note": "V Mexiku „manejar“ (v Španielsku „conducir“)."
+  },
+  {
+    "id": "usar",
+    "es": "usar",
+    "sk": ["používať"],
+    "pos": "verb",
+    "verbId": "usar",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "¿Puedo usar tu computadora?", "sk": "Môžem použiť tvoj počítač?" }]
+  },
+  {
+    "id": "llevar",
+    "es": "llevar",
+    "sk": ["niesť", "nosiť (oblečenie)", "vziať"],
+    "pos": "verb",
+    "verbId": "llevar",
+    "level": "A1",
+    "topics": ["shopping", "clothes"],
+    "examples": [
+      { "es": "Me llevo esta camisa.", "sk": "Vezmem si túto košeľu." },
+      { "es": "Hoy llevo una chamarra.", "sk": "Dnes mám na sebe bundu." }
+    ],
+    "note": "V obchode „Me lo llevo“ = Beriem si to."
+  },
+  {
+    "id": "preguntar",
+    "es": "preguntar",
+    "sk": ["pýtať sa", "opýtať sa"],
+    "pos": "verb",
+    "verbId": "preguntar",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Puedo preguntarte algo?", "sk": "Môžem sa ťa niečo opýtať?" }],
+    "note": "preguntar = pýtať sa (otázkou); pedir = pýtať si, žiadať niečo."
+  },
+  {
+    "id": "contestar",
+    "es": "contestar",
+    "sk": ["odpovedať", "zdvihnúť (telefón)"],
+    "pos": "verb",
+    "verbId": "contestar",
+    "level": "A1",
+    "topics": ["school", "work"],
+    "examples": [{ "es": "No contesta el teléfono.", "sk": "Nedvíha telefón." }]
+  },
+  {
+    "id": "terminar",
+    "es": "terminar",
+    "sk": ["skončiť", "dokončiť"],
+    "pos": "verb",
+    "verbId": "terminar",
+    "level": "A1",
+    "topics": ["school", "work"],
+    "examples": [{ "es": "¿A qué hora termina la clase?", "sk": "O koľkej končí hodina?" }]
+  },
+  {
+    "id": "regresar",
+    "es": "regresar",
+    "sk": ["vrátiť sa"],
+    "pos": "verb",
+    "verbId": "regresar",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Regreso a las ocho.", "sk": "Vrátim sa o ôsmej." }],
+    "note": "V Mexiku bežne „regresar“ (v Španielsku skôr „volver“)."
+  },
+  {
+    "id": "descansar",
+    "es": "descansar",
+    "sk": ["oddychovať", "odpočívať"],
+    "pos": "verb",
+    "verbId": "descansar",
+    "level": "A1",
+    "topics": ["health", "hobbies"],
+    "examples": [{ "es": "Hoy quiero descansar en casa.", "sk": "Dnes chcem oddychovať doma." }]
+  },
+  {
+    "id": "lavar",
+    "es": "lavar",
+    "sk": ["umývať", "prať"],
+    "pos": "verb",
+    "verbId": "lavar",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Voy a lavar los platos.", "sk": "Idem umyť riad." }]
+  },
+  {
+    "id": "preparar",
+    "es": "preparar",
+    "sk": ["pripraviť"],
+    "pos": "verb",
+    "verbId": "preparar",
+    "level": "A1",
+    "topics": ["food", "home"],
+    "examples": [{ "es": "Estoy preparando la cena.", "sk": "Práve robím večeru." }]
+  },
+  {
+    "id": "ganar",
+    "es": "ganar",
+    "sk": ["zarábať", "vyhrať"],
+    "pos": "verb",
+    "verbId": "ganar",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "¿Cuánto ganas al mes?", "sk": "Koľko zarábaš mesačne?" }],
+    "note": "ganar = zarábať aj vyhrať: ganar el partido."
+  },
+  {
+    "id": "rentar",
+    "es": "rentar",
+    "sk": ["prenajať (si)"],
+    "pos": "verb",
+    "verbId": "rentar",
+    "level": "A2",
+    "topics": ["home", "travel"],
+    "examples": [
+      {
+        "es": "Queremos rentar un departamento cerca de la playa.",
+        "sk": "Chceme si prenajať byt blízko pláže."
+      }
+    ],
+    "note": "V Mexiku „rentar“ (v Španielsku „alquilar“)."
+  },
+  {
+    "id": "nadar",
+    "es": "nadar",
+    "sk": ["plávať"],
+    "pos": "verb",
+    "verbId": "nadar",
+    "level": "A1",
+    "topics": ["hobbies", "nature"],
+    "examples": [{ "es": "Me encanta nadar en el mar.", "sk": "Veľmi rád plávam v mori." }]
+  },
+  {
+    "id": "olvidar",
+    "es": "olvidar",
+    "sk": ["zabudnúť"],
+    "pos": "verb",
+    "verbId": "olvidar",
+    "level": "A2",
+    "topics": [],
+    "examples": [{ "es": "Siempre olvido mis llaves.", "sk": "Stále zabúdam kľúče." }],
+    "note": "Hovorovo sa často povie „Se me olvidó“ = Zabudol som (na to)."
+  },
+  {
+    "id": "desayunar",
+    "es": "desayunar",
+    "sk": ["raňajkovať"],
+    "pos": "verb",
+    "verbId": "desayunar",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Qué desayunas normalmente?", "sk": "Čo zvyčajne raňajkuješ?" }]
+  },
+  {
+    "id": "cenar",
+    "es": "cenar",
+    "sk": ["večerať"],
+    "pos": "verb",
+    "verbId": "cenar",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Cenamos a las nueve.", "sk": "Večeriame o deviatej." }]
+  },
+  {
+    "id": "visitar",
+    "es": "visitar",
+    "sk": ["navštíviť"],
+    "pos": "verb",
+    "verbId": "visitar",
+    "level": "A1",
+    "topics": ["family", "travel"],
+    "examples": [{ "es": "El sábado visitamos a mis abuelos.", "sk": "V sobotu navštívime starých rodičov." }]
+  },
+  {
+    "id": "entrar",
+    "es": "entrar",
+    "sk": ["vojsť", "vstúpiť"],
+    "pos": "verb",
+    "verbId": "entrar",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Puedo entrar?", "sk": "Môžem vojsť?" }]
+  },
+  {
+    "id": "llamar",
+    "es": "llamar",
+    "sk": ["volať", "telefonovať"],
+    "pos": "verb",
+    "verbId": "llamar",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Te llamo más tarde.", "sk": "Zavolám ti neskôr." }],
+    "note": "llamar = volať, telefonovať; llamarse = volať sa."
+  },
+  {
+    "id": "pasar",
+    "es": "pasar",
+    "sk": ["prejsť", "stráviť (čas)", "stať sa"],
+    "pos": "verb",
+    "verbId": "pasar",
+    "level": "A2",
+    "topics": [],
+    "examples": [
+      { "es": "¿Qué pasó?", "sk": "Čo sa stalo?" },
+      { "es": "Pasamos el fin de semana en la playa.", "sk": "Víkend sme strávili na pláži." }
+    ]
+  },
+  {
+    "id": "dejar",
+    "es": "dejar",
+    "sk": ["nechať", "prestať"],
+    "pos": "verb",
+    "verbId": "dejar",
+    "level": "A2",
+    "topics": [],
+    "examples": [{ "es": "Dejé mi celular en la casa.", "sk": "Mobil som nechal doma." }]
+  },
+  {
+    "id": "estacionar",
+    "es": "estacionar",
+    "sk": ["zaparkovať", "parkovať"],
+    "pos": "verb",
+    "verbId": "estacionar",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Dónde puedo estacionar el carro?", "sk": "Kde môžem zaparkovať auto?" }],
+    "note": "V Mexiku „estacionar“ (v Španielsku „aparcar“)."
+  },
+  {
+    "id": "extranar",
+    "es": "extrañar",
+    "sk": ["chýbať (niekto mi chýba)", "cnieť sa"],
+    "pos": "verb",
+    "verbId": "extrañar",
+    "level": "A2",
+    "topics": ["emotions", "family"],
+    "examples": [{ "es": "Te extraño mucho.", "sk": "Veľmi mi chýbaš." }],
+    "note": "Extraño a mi familia = Chýba mi rodina."
+  },
+  {
+    "id": "agarrar",
+    "es": "agarrar",
+    "sk": ["chytiť", "vziať"],
+    "pos": "verb",
+    "verbId": "agarrar",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "Agarramos el metro en el centro.", "sk": "V centre sme chytili metro." }],
+    "note": "V Mexiku bežné „agarrar“ (namiesto „coger“, ktoré je tu vulgárne)."
+  },
+  {
+    "id": "pagar",
+    "es": "pagar",
+    "sk": ["platiť", "zaplatiť"],
+    "pos": "verb",
+    "verbId": "pagar",
+    "level": "A1",
+    "topics": ["shopping", "food"],
+    "examples": [{ "es": "Yo pago la cuenta.", "sk": "Účet platím ja." }],
+    "note": "Pretérito: pagué („u“ zachová výslovnosť „g“)."
+  },
+  {
+    "id": "buscar",
+    "es": "buscar",
+    "sk": ["hľadať"],
+    "pos": "verb",
+    "verbId": "buscar",
+    "level": "A1",
+    "topics": ["city", "shopping"],
+    "examples": [{ "es": "Estoy buscando mis lentes.", "sk": "Hľadám okuliare." }],
+    "note": "Pretérito: busqué."
+  },
+  {
+    "id": "tocar",
+    "es": "tocar",
+    "sk": ["hrať (na nástroji)", "dotknúť sa"],
+    "pos": "verb",
+    "verbId": "tocar",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Toco la guitarra desde niño.", "sk": "Na gitare hrám od detstva." }],
+    "note": "tocar = hrať na nástroji; jugar = hrať hru alebo šport."
+  },
+  {
+    "id": "practicar",
+    "es": "practicar",
+    "sk": ["cvičiť", "trénovať", "precvičovať"],
+    "pos": "verb",
+    "verbId": "practicar",
+    "level": "A1",
+    "topics": ["school", "hobbies"],
+    "examples": [{ "es": "Practico español con mis amigos.", "sk": "Španielčinu si precvičujem s kamarátmi." }]
+  },
+  {
+    "id": "checar",
+    "es": "checar",
+    "sk": ["skontrolovať", "pozrieť (si)"],
+    "pos": "verb",
+    "verbId": "checar",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Voy a checar mi correo.", "sk": "Idem si skontrolovať mail." }],
+    "note": "Typicky mexické (z angl. check). Pretérito: chequé."
+  },
+  {
+    "id": "empezar",
+    "es": "empezar",
+    "sk": ["začať", "začínať"],
+    "pos": "verb",
+    "verbId": "empezar",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "La película empieza a las siete.", "sk": "Film začína o siedmej." }]
+  },
+  {
+    "id": "pensar",
+    "es": "pensar",
+    "sk": ["myslieť", "rozmýšľať"],
+    "pos": "verb",
+    "verbId": "pensar",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¿Qué piensas?", "sk": "Čo si myslíš?" }],
+    "note": "pensar en = myslieť na; pensar + infinitív = plánovať: Pienso viajar."
+  },
+  {
+    "id": "cerrar",
+    "es": "cerrar",
+    "sk": ["zatvoriť", "zatvárať"],
+    "pos": "verb",
+    "verbId": "cerrar",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿A qué hora cierra el banco?", "sk": "O koľkej zatvára banka?" }]
+  },
+  {
+    "id": "encontrar",
+    "es": "encontrar",
+    "sk": ["nájsť"],
+    "pos": "verb",
+    "verbId": "encontrar",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "No encuentro mi pasaporte.", "sk": "Neviem nájsť pas." }]
+  },
+  {
+    "id": "costar",
+    "es": "costar",
+    "sk": ["stáť (o cene)"],
+    "pos": "verb",
+    "verbId": "costar",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Cuánto cuesta?", "sk": "Koľko to stojí?" }],
+    "note": "Používa sa hlavne v 3. osobe: cuesta (jedna vec), cuestan (viac vecí)."
+  },
+  {
+    "id": "recordar",
+    "es": "recordar",
+    "sk": ["pamätať si", "pripomenúť"],
+    "pos": "verb",
+    "verbId": "recordar",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "No recuerdo su nombre.", "sk": "Nepamätám si jeho meno." }]
+  },
+  {
+    "id": "jugar",
+    "es": "jugar",
+    "sk": ["hrať (sa)"],
+    "pos": "verb",
+    "verbId": "jugar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Los niños juegan fútbol en el parque.", "sk": "Deti hrajú futbal v parku." }],
+    "note": "V Mexiku „jugar fútbol“ bez „al“. Pretérito: jugué."
+  },
+  {
+    "id": "probar",
+    "es": "probar",
+    "sk": ["ochutnať", "vyskúšať"],
+    "pos": "verb",
+    "verbId": "probar",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Quieres probar los tacos?", "sk": "Chceš ochutnať tacos?" }],
+    "note": "probarse = vyskúšať si (oblečenie)."
+  },
+  {
+    "id": "levantarse",
+    "es": "levantarse",
+    "sk": ["vstávať", "vstať"],
+    "pos": "verb",
+    "verbId": "levantarse",
+    "level": "A1",
+    "topics": ["home", "time"],
+    "examples": [{ "es": "Me levanto temprano.", "sk": "Vstávam skoro." }]
+  },
+  {
+    "id": "banarse",
+    "es": "bañarse",
+    "sk": ["osprchovať sa", "okúpať sa"],
+    "pos": "verb",
+    "verbId": "bañarse",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Me baño en la mañana.", "sk": "Sprchujem sa ráno." }],
+    "note": "V Mexiku „bañarse“ = osprchovať sa aj okúpať sa."
+  },
+  {
+    "id": "quedarse",
+    "es": "quedarse",
+    "sk": ["zostať", "ostať"],
+    "pos": "verb",
+    "verbId": "quedarse",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "Hoy me quedo en casa.", "sk": "Dnes ostávam doma." }]
+  },
+  {
+    "id": "despertarse",
+    "es": "despertarse",
+    "sk": ["zobudiť sa", "budiť sa"],
+    "pos": "verb",
+    "verbId": "despertarse",
+    "level": "A1",
+    "topics": ["home", "time"],
+    "examples": [{ "es": "Me despierto a las seis.", "sk": "Budím sa o šiestej." }]
+  },
+  {
+    "id": "acostarse",
+    "es": "acostarse",
+    "sk": ["ísť spať", "ľahnúť si"],
+    "pos": "verb",
+    "verbId": "acostarse",
+    "level": "A1",
+    "topics": ["home", "time"],
+    "examples": [{ "es": "Me acuesto tarde los viernes.", "sk": "V piatok chodím spať neskoro." }]
+  },
+  {
+    "id": "sentarse",
+    "es": "sentarse",
+    "sk": ["sadnúť si", "sedieť"],
+    "pos": "verb",
+    "verbId": "sentarse",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Me puedo sentar aquí?", "sk": "Môžem si sem sadnúť?" }]
+  },
+  {
+    "id": "enojarse",
+    "es": "enojarse",
+    "sk": ["nahnevať sa", "hnevať sa"],
+    "pos": "verb",
+    "verbId": "enojarse",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi jefe se enojó mucho.", "sk": "Šéf sa veľmi nahneval." }],
+    "note": "V Mexiku „enojarse“ (v Španielsku skôr „enfadarse“)."
+  },
+  {
+    "id": "preocuparse",
+    "es": "preocuparse",
+    "sk": ["robiť si starosti", "báť sa (o niečo)"],
+    "pos": "verb",
+    "verbId": "preocuparse",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "No te preocupes.", "sk": "Neboj sa." }]
+  },
+  {
+    "id": "enfermarse",
+    "es": "enfermarse",
+    "sk": ["ochorieť"],
+    "pos": "verb",
+    "verbId": "enfermarse",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "Me enfermé la semana pasada.", "sk": "Minulý týždeň som ochorel." }]
+  },
+  {
+    "id": "dar",
+    "es": "dar",
+    "sk": ["dať", "dávať"],
+    "pos": "verb",
+    "verbId": "dar",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Me das tu número?", "sk": "Dáš mi svoje číslo?" }]
+  },
+  {
+    "id": "beber",
+    "es": "beber",
+    "sk": ["piť"],
+    "pos": "verb",
+    "verbId": "beber",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Bebo mucha agua.", "sk": "Pijem veľa vody." }],
+    "note": "V Mexiku sa pri nápojoch častejšie hovorí „tomar“."
+  },
+  {
+    "id": "aprender",
+    "es": "aprender",
+    "sk": ["učiť sa", "naučiť sa"],
+    "pos": "verb",
+    "verbId": "aprender",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Quiero aprender español.", "sk": "Chcem sa naučiť po španielsky." }]
+  },
+  {
+    "id": "correr",
+    "es": "correr",
+    "sk": ["behať", "bežať"],
+    "pos": "verb",
+    "verbId": "correr",
+    "level": "A1",
+    "topics": ["hobbies", "health"],
+    "examples": [{ "es": "Corro en el parque los sábados.", "sk": "V sobotu behám v parku." }]
+  },
+  {
+    "id": "vender",
+    "es": "vender",
+    "sk": ["predávať"],
+    "pos": "verb",
+    "verbId": "vender",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Venden fruta en el mercado.", "sk": "Na trhu predávajú ovocie." }]
+  },
+  {
+    "id": "leer",
+    "es": "leer",
+    "sk": ["čítať"],
+    "pos": "verb",
+    "verbId": "leer",
+    "level": "A1",
+    "topics": ["hobbies", "school"],
+    "examples": [{ "es": "Me gusta leer antes de dormir.", "sk": "Rád si čítam pred spaním." }]
+  },
+  {
+    "id": "entender",
+    "es": "entender",
+    "sk": ["rozumieť", "pochopiť"],
+    "pos": "verb",
+    "verbId": "entender",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "No entiendo. ¿Puede repetir, por favor?", "sk": "Nerozumiem. Môžete to zopakovať, prosím?" }]
+  },
+  {
+    "id": "perder",
+    "es": "perder",
+    "sk": ["stratiť", "prehrať", "zmeškať"],
+    "pos": "verb",
+    "verbId": "perder",
+    "level": "A2",
+    "topics": [],
+    "examples": [{ "es": "Perdí mi celular.", "sk": "Stratil som mobil." }],
+    "note": "perder el camión = zmeškať autobus; perder el partido = prehrať zápas."
+  },
+  {
+    "id": "volver",
+    "es": "volver",
+    "sk": ["vrátiť sa"],
+    "pos": "verb",
+    "verbId": "volver",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Cuándo vuelves?", "sk": "Kedy sa vrátiš?" }],
+    "note": "volver a + infinitív = znova niečo urobiť: Volví a llamar = Znova som volal."
+  },
+  {
+    "id": "saber",
+    "es": "saber",
+    "sk": ["vedieť"],
+    "pos": "verb",
+    "verbId": "saber",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "No sé.", "sk": "Neviem." }, { "es": "¿Sabes nadar?", "sk": "Vieš plávať?" }],
+    "note": "saber = vedieť (informáciu, zručnosť); conocer = poznať (osobu, miesto)."
+  },
+  {
+    "id": "conocer",
+    "es": "conocer",
+    "sk": ["poznať", "spoznať"],
+    "pos": "verb",
+    "verbId": "conocer",
+    "level": "A1",
+    "topics": [],
+    "examples": [{ "es": "¿Conoces a mi hermana?", "sk": "Poznáš moju sestru?" }],
+    "note": "Pred osobou sa dáva „a“: conocer a alguien."
+  },
+  {
+    "id": "poner",
+    "es": "poner",
+    "sk": ["dať", "položiť"],
+    "pos": "verb",
+    "verbId": "poner",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Dónde pongo las llaves?", "sk": "Kam dám kľúče?" }]
+  },
+  {
+    "id": "traer",
+    "es": "traer",
+    "sk": ["priniesť", "nosiť"],
+    "pos": "verb",
+    "verbId": "traer",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Me traes un vaso de agua?", "sk": "Prinesieš mi pohár vody?" }]
+  },
+  {
+    "id": "ver",
+    "es": "ver",
+    "sk": ["vidieť", "pozerať"],
+    "pos": "verb",
+    "verbId": "ver",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Vamos a ver una película.", "sk": "Pozrieme si film." }]
+  },
+  {
+    "id": "escribir",
+    "es": "escribir",
+    "sk": ["písať", "napísať"],
+    "pos": "verb",
+    "verbId": "escribir",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Te escribo un mensaje.", "sk": "Napíšem ti správu." }]
+  },
+  {
+    "id": "abrir",
+    "es": "abrir",
+    "sk": ["otvoriť", "otvárať"],
+    "pos": "verb",
+    "verbId": "abrir",
+    "level": "A1",
+    "topics": ["city", "shopping"],
+    "examples": [{ "es": "La tienda abre a las diez.", "sk": "Obchod otvára o desiatej." }]
+  },
+  {
+    "id": "subir",
+    "es": "subir",
+    "sk": ["ísť hore", "nastúpiť"],
+    "pos": "verb",
+    "verbId": "subir",
+    "level": "A1",
+    "topics": ["city", "travel"],
+    "examples": [{ "es": "Subimos al camión en la esquina.", "sk": "Do autobusu nastupujeme na rohu." }],
+    "note": "subir = ísť hore, nastúpiť; bajar = zísť, vystúpiť."
+  },
+  {
+    "id": "pedir",
+    "es": "pedir",
+    "sk": ["objednať si", "pýtať si", "žiadať"],
+    "pos": "verb",
+    "verbId": "pedir",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Voy a pedir unos tacos.", "sk": "Objednám si tacos." }],
+    "note": "pedir = objednať si, pýtať si; preguntar = pýtať sa."
+  },
+  {
+    "id": "repetir",
+    "es": "repetir",
+    "sk": ["zopakovať", "opakovať"],
+    "pos": "verb",
+    "verbId": "repetir",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Puede repetir, por favor?", "sk": "Môžete to zopakovať, prosím?" }]
+  },
+  {
+    "id": "sentirse",
+    "es": "sentirse",
+    "sk": ["cítiť sa"],
+    "pos": "verb",
+    "verbId": "sentirse",
+    "level": "A2",
+    "topics": ["health", "emotions"],
+    "examples": [{ "es": "¿Cómo te sientes?", "sk": "Ako sa cítiš?" }]
+  },
+  {
+    "id": "preferir",
+    "es": "preferir",
+    "sk": ["mať radšej", "uprednostniť"],
+    "pos": "verb",
+    "verbId": "preferir",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [{ "es": "Prefiero el café sin azúcar.", "sk": "Kávu mám radšej bez cukru." }]
+  },
+  {
+    "id": "divertirse",
+    "es": "divertirse",
+    "sk": ["zabávať sa", "zabaviť sa"],
+    "pos": "verb",
+    "verbId": "divertirse",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Nos divertimos mucho en la fiesta.", "sk": "Na párty sme sa super zabavili." }]
+  }
+]

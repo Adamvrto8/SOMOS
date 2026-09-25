@@ -128,7 +128,7 @@ describe('gradeTask', () => {
   })
 
   it('grades builder answers by tile order, whichever copy of a repeated word is used', () => {
-    const task = createLesson({ type: 'builder' }, 100, seeded(11)).find((t) => t.kind === 'builder' && t.sentence.id === 's054')
+    const task = taskFromItem('builder', 's054', seeded(11))
     if (!task || task.kind !== 'builder') throw new Error('task not found') // "mañana" appears twice
     const inOrder = (words: string[]) => {
       const unused = [...task.tiles]
@@ -139,7 +139,7 @@ describe('gradeTask', () => {
   })
 
   it('accepts a translation with an extra subject pronoun', () => {
-    const task = createLesson({ type: 'translation' }, 100, seeded(12)).find((t) => t.kind === 'translation' && t.sentence.id === 's004')
+    const task = taskFromItem('translation', 's004')
     if (!task || task.kind !== 'translation') throw new Error('task not found')
     expect(gradeTask(task, 'Yo hablo un poco de español').correct).toBe(true)
   })

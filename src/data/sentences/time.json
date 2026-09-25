@@ -1,0 +1,450 @@
+[
+  {
+    "id": "s048",
+    "es": "Son las tres de la tarde.",
+    "sk": "Sú tri hodiny poobede.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Son", "las", "tres", "de", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Son",
+        "lemma": "ser",
+        "hint": "ser/estar · ellas · presente",
+        "distractors": ["Es", "Están", "Somos"]
+      }
+    ]
+  },
+  {
+    "id": "s049",
+    "es": "Hoy hace mucho calor.",
+    "sk": "Dnes je veľmi teplo.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "hace", "mucho", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["hago", "es", "está"]
+      }
+    ]
+  },
+  {
+    "id": "s050",
+    "es": "Ayer fui al doctor.",
+    "sk": "Včera som bol u lekára.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "fui", "al", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "fui",
+        "lemma": "ir",
+        "hint": "ir · yo · pretérito",
+        "distractors": ["voy", "fue", "fuiste"]
+      }
+    ]
+  },
+  {
+    "id": "s051",
+    "es": "El lunes tengo una junta a las diez.",
+    "sk": "V pondelok mám o desiatej poradu.",
+    "level": "A2",
+    "topics": ["time", "work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "lunes", "tengo", "una", "junta", "a", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tiene", "tienes", "tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s052",
+    "es": "¿Qué haces el fin de semana?",
+    "sk": "Čo robíš cez víkend?",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "haces", "el", "fin", "de", "semana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "haces",
+        "lemma": "hacer",
+        "hint": "hacer · tú · presente",
+        "distractors": ["hago", "hace", "hiciste"]
+      }
+    ]
+  },
+  {
+    "id": "s053",
+    "es": "Perdón, llegué tarde.",
+    "sk": "Prepáč, prišiel som neskoro.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Perdón", ",", "llegué", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegué",
+        "lemma": "llegar",
+        "hint": "llegar · yo · pretérito",
+        "distractors": ["llego", "llegó", "llegé"]
+      }
+    ]
+  },
+  {
+    "id": "s054",
+    "es": "Nos vemos mañana en la mañana.",
+    "sk": "Uvidíme sa zajtra ráno.",
+    "level": "A1",
+    "topics": ["time"],
+    "tokens": ["Nos", "vemos", "mañana", "en", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mañana",
+        "lemma": "mañana",
+        "hint": "zajtra",
+        "distractors": ["hoy", "ayer", "tarde"]
+      }
+    ]
+  },
+  {
+    "id": "s172",
+    "es": "¿Qué día es hoy?",
+    "sk": "Aký je dnes deň?",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Qué", "día", "es", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s173",
+    "es": "Mi cumpleaños es en marzo.",
+    "sk": "Narodeniny mám v marci.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "cumpleaños", "es", "en", "marzo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s174",
+    "es": "Son las ocho y cuarto.",
+    "sk": "Je štvrť na deväť.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Son", "las", "ocho", "y", "cuarto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Son",
+        "lemma": "ser",
+        "hint": "ser/estar · ellas · presente",
+        "distractors": ["Están", "Eres", "Somos"]
+      }
+    ]
+  },
+  {
+    "id": "s175",
+    "es": "Es la una de la tarde.",
+    "sk": "Je jedna hodina poobede.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Es", "la", "una", "de", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["Está", "Son", "Eres"]
+      }
+    ]
+  },
+  {
+    "id": "s176",
+    "es": "La clase empieza a las cinco.",
+    "sk": "Hodina začína o piatej.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["La", "clase", "empieza", "a", "las", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "empieza",
+        "lemma": "empezar",
+        "hint": "empezar · ella · presente",
+        "distractors": ["empiezan", "empiezas", "empezó"]
+      }
+    ]
+  },
+  {
+    "id": "s177",
+    "es": "Ayer empecé un curso de español.",
+    "sk": "Včera som začal kurz španielčiny.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "empecé", "un", "curso", "de", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "empecé",
+        "lemma": "empezar",
+        "hint": "empezar · yo · pretérito",
+        "distractors": ["empezó", "empezaron", "empiezo"]
+      }
+    ]
+  },
+  {
+    "id": "s178",
+    "es": "Siempre llego tarde los lunes.",
+    "sk": "V pondelok vždy prídem neskoro.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "llego", "tarde", "los", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llego",
+        "lemma": "llegar",
+        "hint": "llegar · yo · presente",
+        "distractors": ["llega", "llegan", "llegué"]
+      }
+    ]
+  },
+  {
+    "id": "s179",
+    "es": "Todavía no termino la tarea.",
+    "sk": "Ešte som nedokončil úlohu.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Todavía", "no", "termino", "la", "tarea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "termino",
+        "lemma": "terminar",
+        "hint": "terminar · yo · presente",
+        "distractors": ["termina", "terminan", "terminé"]
+      }
+    ]
+  },
+  {
+    "id": "s180",
+    "es": "¿Ya comiste?",
+    "sk": "Už si jedol?",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Ya", "comiste", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comiste",
+        "lemma": "comer",
+        "hint": "comer · tú · pretérito",
+        "distractors": ["comimos", "comí", "comes"]
+      }
+    ]
+  },
+  {
+    "id": "s181",
+    "es": "Nos vemos después de la comida.",
+    "sk": "Uvidíme sa po obede.",
+    "level": "A1",
+    "topics": ["time"],
+    "tokens": ["Nos", "vemos", "después", "de", "la", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "después",
+        "lemma": "después",
+        "hint": "po (niečom)",
+        "distractors": ["antes", "ahora", "siempre"]
+      }
+    ]
+  },
+  {
+    "id": "s182",
+    "es": "Mi hermano nunca se levanta temprano.",
+    "sk": "Brat nikdy nevstáva skoro.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "nunca", "se", "levanta", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "levanta",
+        "lemma": "levantarse",
+        "hint": "levantarse · él · presente",
+        "distractors": ["levantan", "levantas", "levantó"]
+      }
+    ]
+  },
+  {
+    "id": "s183",
+    "es": "Ahorita no puedo, estoy en una junta.",
+    "sk": "Teraz nemôžem, som na porade.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Ahorita", "no", "puedo", ",", "estoy", "en", "una", "junta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puedo",
+        "lemma": "poder",
+        "hint": "poder · yo · presente",
+        "distractors": ["puede", "pueden", "pude"]
+      }
+    ]
+  },
+  {
+    "id": "s184",
+    "es": "El fin de semana pasado fuimos al cine.",
+    "sk": "Minulý víkend sme boli v kine.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "fin", "de", "semana", "pasado", "fuimos", "al", "cine", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · pretérito",
+        "distractors": ["fui", "fue", "vamos"]
+      }
+    ]
+  },
+  {
+    "id": "s185",
+    "es": "¿Qué hiciste ayer en la noche?",
+    "sk": "Čo si robil včera večer?",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Qué", "hiciste", "ayer", "en", "la", "noche", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hiciste",
+        "lemma": "hacer",
+        "hint": "hacer · tú · pretérito",
+        "distractors": ["hicimos", "hice", "haces"]
+      }
+    ]
+  },
+  {
+    "id": "s186",
+    "es": "Los viernes salgo con mis amigos.",
+    "sk": "V piatok chodím von s kamarátmi.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "viernes", "salgo", "con", "mis", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "salgo",
+        "lemma": "salir",
+        "hint": "salir · yo · presente",
+        "distractors": ["sale", "salen", "salí"]
+      }
+    ]
+  },
+  {
+    "id": "s187",
+    "es": "Mañana me despierto a las cinco.",
+    "sk": "Zajtra vstávam o piatej.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Mañana", "me", "despierto", "a", "las", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "despierto",
+        "lemma": "despertarse",
+        "hint": "despertarse · yo · presente",
+        "distractors": ["despierta", "despiertan", "desperté"]
+      }
+    ]
+  },
+  {
+    "id": "s188",
+    "es": "Estuvimos en México dos semanas.",
+    "sk": "V Mexiku sme boli dva týždne.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito", "ser-estar"],
+    "tokens": ["Estuvimos", "en", "México", "dos", "semanas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estuvimos",
+        "lemma": "estar",
+        "hint": "ser/estar · nosotros · pretérito",
+        "distractors": ["Fuimos", "Estuve", "Estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s189",
+    "es": "¿Cuántas horas duermes?",
+    "sk": "Koľko hodín spíš?",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuántas", "horas", "duermes", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "duermes",
+        "lemma": "dormir",
+        "hint": "dormir · tú · presente",
+        "distractors": ["dormimos", "duermo", "dormiste"]
+      }
+    ]
+  }
+]

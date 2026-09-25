@@ -1,0 +1,179 @@
+[
+  {
+    "id": "tiempo-libre",
+    "es": "tiempo libre",
+    "sk": ["voľný čas"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Qué haces en tu tiempo libre?", "sk": "Čo robíš vo voľnom čase?" }]
+  },
+  {
+    "id": "musica",
+    "es": "música",
+    "sk": ["hudba"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Qué música te gusta?", "sk": "Akú hudbu máš rád?" }]
+  },
+  {
+    "id": "pelicula",
+    "es": "película",
+    "sk": ["film"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Vemos una película?", "sk": "Pozrieme si film?" }]
+  },
+  {
+    "id": "serie",
+    "es": "serie",
+    "sk": ["seriál"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Estoy viendo una serie muy buena.", "sk": "Pozerám veľmi dobrý seriál." }]
+  },
+  {
+    "id": "cine",
+    "es": "cine",
+    "sk": ["kino"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Vamos al cine el viernes.", "sk": "V piatok ideme do kina." }]
+  },
+  {
+    "id": "futbol",
+    "es": "fútbol",
+    "sk": ["futbal"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Vamos a ver el fútbol?", "sk": "Pozrieme futbal?" }],
+    "note": "V Mexiku „jugar fútbol“ bez „al“."
+  },
+  {
+    "id": "deporte",
+    "es": "deporte",
+    "sk": ["šport"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Haces algún deporte?", "sk": "Robíš nejaký šport?" }]
+  },
+  {
+    "id": "juego",
+    "es": "juego",
+    "sk": ["hra"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Es un juego muy divertido.", "sk": "Je to veľmi zábavná hra." }]
+  },
+  {
+    "id": "fiesta",
+    "es": "fiesta",
+    "sk": ["párty", "oslava", "večierok"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Hay una fiesta en casa de Luis.", "sk": "U Luisa je párty." }]
+  },
+  {
+    "id": "guitarra",
+    "es": "guitarra",
+    "sk": ["gitara"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi hermano toca la guitarra.", "sk": "Brat hrá na gitare." }]
+  },
+  {
+    "id": "cancion",
+    "es": "canción",
+    "sk": ["pieseň"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "canciones",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Esta canción me encanta.", "sk": "Túto pieseň zbožňujem." }]
+  },
+  {
+    "id": "foto",
+    "es": "foto",
+    "sk": ["fotka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Nos tomas una foto?", "sk": "Odfotíš nás?" }],
+    "note": "Hoci končí na -o, je ženského rodu: la foto (z „la fotografía“)."
+  },
+  {
+    "id": "bicicleta",
+    "es": "bicicleta",
+    "sk": ["bicykel"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Voy al trabajo en bicicleta.", "sk": "Do práce chodím na bicykli." }],
+    "note": "Hovorovo „la bici“."
+  },
+  {
+    "id": "concierto",
+    "es": "concierto",
+    "sk": ["koncert"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Fuimos a un concierto de mariachi.", "sk": "Boli sme na koncerte mariachi." }]
+  },
+  {
+    "id": "mariachi",
+    "es": "mariachi",
+    "sk": ["mariachi (skupina, muzikant)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Contratamos un mariachi para la fiesta.", "sk": "Na oslavu sme si objednali mariachi." }],
+    "note": "Tradičná mexická hudba a jej muzikanti; hrávajú na oslavách aj na námestí Garibaldi v Mexico City."
+  },
+  {
+    "id": "gimnasio",
+    "es": "gimnasio",
+    "sk": ["posilňovňa", "fitko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Voy al gimnasio en la mañana.", "sk": "Ráno chodím do posilňovne." }],
+    "note": "Hovorovo „el gym“."
+  },
+  {
+    "id": "divertido",
+    "es": "divertido",
+    "sk": ["zábavný"],
+    "pos": "adj",
+    "feminine": "divertida",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "La fiesta fue muy divertida.", "sk": "Párty bola veľmi zábavná." }]
+  }
+]

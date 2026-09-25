@@ -1,0 +1,229 @@
+[
+  {
+    "id": "cuerpo",
+    "es": "cuerpo",
+    "sk": ["telo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "El ejercicio es bueno para el cuerpo.", "sk": "Pohyb prospieva telu." }]
+  },
+  {
+    "id": "cabeza",
+    "es": "cabeza",
+    "sk": ["hlava"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me duele la cabeza.", "sk": "Bolí ma hlava." }]
+  },
+  {
+    "id": "cara",
+    "es": "cara",
+    "sk": ["tvár"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tiene una cara muy simpática.", "sk": "Má veľmi milú tvár." }]
+  },
+  {
+    "id": "ojo",
+    "es": "ojo",
+    "sk": ["oko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tiene los ojos verdes.", "sk": "Má zelené oči." }]
+  },
+  {
+    "id": "nariz",
+    "es": "nariz",
+    "sk": ["nos"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "narices",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tengo la nariz roja por el frío.", "sk": "Od zimy mám červený nos." }]
+  },
+  {
+    "id": "boca",
+    "es": "boca",
+    "sk": ["ústa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Abre la boca, por favor.", "sk": "Otvor ústa, prosím." }]
+  },
+  {
+    "id": "diente",
+    "es": "diente",
+    "sk": ["zub"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me lavo los dientes dos veces al día.", "sk": "Zuby si umývam dvakrát denne." }]
+  },
+  {
+    "id": "oreja",
+    "es": "oreja",
+    "sk": ["ucho"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Mi perro tiene las orejas grandes.", "sk": "Môj pes má veľké uši." }],
+    "note": "oreja = ucho (vonkajšie); oído = sluch, vnútorné ucho."
+  },
+  {
+    "id": "pelo",
+    "es": "pelo",
+    "sk": ["vlasy"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tengo el pelo corto.", "sk": "Mám krátke vlasy." }],
+    "note": "Aj „el cabello“."
+  },
+  {
+    "id": "mano",
+    "es": "mano",
+    "sk": ["ruka (dlaň)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Lávate las manos antes de comer.", "sk": "Pred jedlom si umy ruky." }],
+    "note": "Hoci končí na -o, je ženského rodu: la mano."
+  },
+  {
+    "id": "brazo",
+    "es": "brazo",
+    "sk": ["rameno", "ruka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me duele el brazo.", "sk": "Bolí ma ruka." }]
+  },
+  {
+    "id": "dedo",
+    "es": "dedo",
+    "sk": ["prst"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me corté el dedo.", "sk": "Porezal som si prst." }]
+  },
+  {
+    "id": "pierna",
+    "es": "pierna",
+    "sk": ["noha"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tengo las piernas cansadas.", "sk": "Mám unavené nohy." }]
+  },
+  {
+    "id": "pie",
+    "es": "pie",
+    "sk": ["chodidlo", "noha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Vamos a pie.", "sk": "Pôjdeme pešo." }],
+    "note": "a pie = pešo."
+  },
+  {
+    "id": "espalda",
+    "es": "espalda",
+    "sk": ["chrbát"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me duele la espalda.", "sk": "Bolí ma chrbát." }]
+  },
+  {
+    "id": "estomago",
+    "es": "estómago",
+    "sk": ["žalúdok", "brucho"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["body", "health"],
+    "examples": [{ "es": "Me duele el estómago.", "sk": "Bolí ma žalúdok." }]
+  },
+  {
+    "id": "panza",
+    "es": "panza",
+    "sk": ["brucho (hovorovo)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [{ "es": "Me duele la panza.", "sk": "Bolí ma brucho." }],
+    "note": "Hovorovo v Mexiku; spisovne „el estómago“."
+  },
+  {
+    "id": "corazon",
+    "es": "corazón",
+    "sk": ["srdce"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "corazones",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Te quiero con todo mi corazón.", "sk": "Ľúbim ťa celým srdcom." }]
+  },
+  {
+    "id": "alto",
+    "es": "alto",
+    "sk": ["vysoký"],
+    "pos": "adj",
+    "feminine": "alta",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Mi hermano es muy alto.", "sk": "Brat je veľmi vysoký." }]
+  },
+  {
+    "id": "bajo",
+    "es": "bajo",
+    "sk": ["nízky"],
+    "pos": "adj",
+    "feminine": "baja",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Soy más bajo que mi papá.", "sk": "Som nižší ako otec." }],
+    "note": "Hovorovo v Mexiku aj „chaparro“."
+  },
+  {
+    "id": "guapo",
+    "es": "guapo",
+    "sk": ["pekný (o ľuďoch)"],
+    "pos": "adj",
+    "feminine": "guapa",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tu novio es muy guapo.", "sk": "Tvoj priateľ je veľmi pekný." }]
+  },
+  {
+    "id": "fuerte",
+    "es": "fuerte",
+    "sk": ["silný"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["body"],
+    "examples": [{ "es": "Mi papá es muy fuerte.", "sk": "Ocko je veľmi silný." }]
+  }
+]

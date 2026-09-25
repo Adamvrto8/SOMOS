@@ -1,0 +1,426 @@
+[
+  {
+    "id": "s009",
+    "es": "Tengo dos hermanos y una hermana.",
+    "sk": "Mám dvoch bratov a jednu sestru.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "dos", "hermanos", "y", "una", "hermana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienes", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s010",
+    "es": "Mi abuela tiene ochenta años.",
+    "sk": "Moja babka má osemdesiat rokov.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "tiene", "ochenta", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · ella · presente",
+        "distractors": ["tengo", "tienen", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s011",
+    "es": "Mis papás viven en Guadalajara.",
+    "sk": "Moji rodičia bývajú v Guadalajare.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "papás", "viven", "en", "Guadalajara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "viven",
+        "lemma": "vivir",
+        "hint": "vivir · ellos · presente",
+        "distractors": ["vive", "vivimos", "vivieron"]
+      }
+    ]
+  },
+  {
+    "id": "s012",
+    "es": "Mi hermana está hablando por teléfono.",
+    "sk": "Sestra práve telefonuje.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mi", "hermana", "está", "hablando", "por", "teléfono", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hablando",
+        "lemma": "hablar",
+        "hint": "hablar · gerundio",
+        "distractors": ["habla", "hablado", "hablar"]
+      }
+    ]
+  },
+  {
+    "id": "s013",
+    "es": "Ayer comimos en casa de mi abuela.",
+    "sk": "Včera sme obedovali u babky.",
+    "level": "A2",
+    "topics": ["family", "food"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "comimos", "en", "casa", "de", "mi", "abuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comimos",
+        "lemma": "comer",
+        "hint": "comer · nosotros · pretérito",
+        "distractors": ["comemos", "comieron", "comí"]
+      }
+    ]
+  },
+  {
+    "id": "s014",
+    "es": "Mi hijo quiere un perro.",
+    "sk": "Môj syn chce psa.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "quiere", "un", "perro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quiere",
+        "lemma": "querer",
+        "hint": "querer · él · presente",
+        "distractors": ["quiero", "quieren", "quiso"]
+      }
+    ]
+  },
+  {
+    "id": "s015",
+    "es": "Te quiero mucho, mamá.",
+    "sk": "Mami, veľmi ťa ľúbim.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "quiero", "mucho", ",", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quiero",
+        "lemma": "querer",
+        "hint": "querer · yo · presente",
+        "distractors": ["quieres", "quiere", "quise"]
+      }
+    ]
+  },
+  {
+    "id": "s016",
+    "es": "Mi esposo y yo platicamos todas las noches.",
+    "sk": "S manželom sa rozprávame každý večer.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "esposo", "y", "yo", "platicamos", "todas", "las", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "platicamos",
+        "lemma": "platicar",
+        "hint": "platicar · nosotros · presente",
+        "distractors": ["platican", "platico", "platiqué"]
+      }
+    ]
+  },
+  {
+    "id": "s074",
+    "es": "Mi hermana mayor vive en Estados Unidos.",
+    "sk": "Moja staršia sestra žije v USA.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "mayor", "vive", "en", "Estados", "Unidos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vive",
+        "lemma": "vivir",
+        "hint": "vivir · ella · presente",
+        "distractors": ["viven", "vives", "vivió"]
+      }
+    ]
+  },
+  {
+    "id": "s075",
+    "es": "Tengo tres primos en Guadalajara.",
+    "sk": "V Guadalajare mám troch bratrancov.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "tres", "primos", "en", "Guadalajara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s076",
+    "es": "Mis papás están casados desde hace treinta años.",
+    "sk": "Moji rodičia sú manželia už tridsať rokov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mis", "papás", "están", "casados", "desde", "hace", "treinta", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "ser/estar · ellos · presente",
+        "distractors": ["son", "estás", "estamos"]
+      }
+    ]
+  },
+  {
+    "id": "s077",
+    "es": "El bebé está durmiendo en su cuarto.",
+    "sk": "Bábätko spí vo svojej izbe.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "bebé", "está", "durmiendo", "en", "su", "cuarto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "durmiendo",
+        "lemma": "dormir",
+        "hint": "dormir · gerundio",
+        "distractors": ["duerme", "dormir", "duermen"]
+      }
+    ]
+  },
+  {
+    "id": "s078",
+    "es": "Ayer visitamos a mis abuelos.",
+    "sk": "Včera sme navštívili starých rodičov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "visitamos", "a", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "visitamos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros · pretérito",
+        "distractors": ["visité", "visitó", "visitaste"]
+      }
+    ]
+  },
+  {
+    "id": "s079",
+    "es": "Mi tío es muy divertido.",
+    "sk": "Môj strýko je veľmi zábavný.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "tío", "es", "muy", "divertido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s080",
+    "es": "¿Cuántos años tiene tu hijo?",
+    "sk": "Koľko rokov má tvoj syn?",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuántos", "años", "tiene", "tu", "hijo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · él · presente",
+        "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s081",
+    "es": "Mi abuela cocina el mejor mole del mundo.",
+    "sk": "Moja babka varí najlepšie mole na svete.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "cocina", "el", "mejor", "mole", "del", "mundo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cocina",
+        "lemma": "cocinar",
+        "hint": "cocinar · ella · presente",
+        "distractors": ["cocinan", "cocinas", "cocinó"]
+      }
+    ]
+  },
+  {
+    "id": "s082",
+    "es": "Los domingos comemos juntos en casa de mis papás.",
+    "sk": "V nedeľu obedujeme spolu u rodičov.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "domingos", "comemos", "juntos", "en", "casa", "de", "mis", "papás", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comemos",
+        "lemma": "comer",
+        "hint": "comer · nosotros · presente",
+        "distractors": ["como", "come", "comimos"]
+      }
+    ]
+  },
+  {
+    "id": "s083",
+    "es": "Mi hermano y su esposa tienen dos niñas.",
+    "sk": "Brat a jeho žena majú dve dievčatá.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "y", "su", "esposa", "tienen", "dos", "niñas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tienen",
+        "lemma": "tener",
+        "hint": "tener · ellos · presente",
+        "distractors": ["tienes", "tenemos", "tuvieron"]
+      }
+    ]
+  },
+  {
+    "id": "s084",
+    "es": "Te extraño mucho, mamá.",
+    "sk": "Mami, veľmi mi chýbaš.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "extraño", "mucho", ",", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "extraño",
+        "lemma": "extrañar",
+        "hint": "extrañar · yo · presente",
+        "distractors": ["extraña", "extrañan", "extrañé"]
+      }
+    ]
+  },
+  {
+    "id": "s085",
+    "es": "Mi prima se casó el año pasado.",
+    "sk": "Sesternica sa minulý rok vydala.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Mi", "prima", "se", "casó", "el", "año", "pasado", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "el", "lemma": "el", "hint": "člen", "distractors": ["la", "los", "las"] }]
+  },
+  {
+    "id": "s086",
+    "es": "¿Tienes hermanos?",
+    "sk": "Máš súrodencov?",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tienes", "hermanos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["Tenemos", "Tengo", "Tuviste"]
+      }
+    ]
+  },
+  {
+    "id": "s087",
+    "es": "Mis padres llegaron ayer de Oaxaca.",
+    "sk": "Rodičia včera prišli z Oaxacy.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mis", "padres", "llegaron", "ayer", "de", "Oaxaca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegaron",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · pretérito",
+        "distractors": ["llegaste", "llegamos", "llegan"]
+      }
+    ]
+  },
+  {
+    "id": "s088",
+    "es": "El perro está jugando con los niños.",
+    "sk": "Pes sa hrá s deťmi.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "perro", "está", "jugando", "con", "los", "niños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jugando",
+        "lemma": "jugar",
+        "hint": "jugar · gerundio",
+        "distractors": ["juega", "jugar", "juegan"]
+      }
+    ]
+  },
+  {
+    "id": "s089",
+    "es": "Mi familia es pequeña pero muy unida.",
+    "sk": "Moja rodina je malá, ale veľmi súdržná.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "familia", "es", "pequeña", "pero", "muy", "unida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pequeña",
+        "lemma": "pequeño",
+        "hint": "prídavné meno: pequeño",
+        "distractors": ["pequeño", "pequeños", "pequeñas"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,499 @@
+[
+  {
+    "id": "s040",
+    "es": "El avión sale a las seis de la mañana.",
+    "sk": "Lietadlo odlieta o šiestej ráno.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["El", "avión", "sale", "a", "las", "seis", "de", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él · presente",
+        "distractors": ["salgo", "salen", "salió"]
+      }
+    ]
+  },
+  {
+    "id": "s041",
+    "es": "¿A qué hora llega el camión?",
+    "sk": "O koľkej príde autobus?",
+    "level": "A1",
+    "topics": ["travel", "city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "llega", "el", "camión", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llega",
+        "lemma": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors": ["llego", "llegan", "llegó"]
+      }
+    ]
+  },
+  {
+    "id": "s042",
+    "es": "Llegamos a Cancún el sábado.",
+    "sk": "V sobotu sme dorazili do Cancúnu.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegamos", "a", "Cancún", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llegamos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · pretérito",
+        "distractors": ["Llegaron", "Llegué", "Llegaste"]
+      }
+    ]
+  },
+  {
+    "id": "s043",
+    "es": "En vacaciones vamos a la playa.",
+    "sk": "Cez dovolenku chodíme na pláž.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["En", "vacaciones", "vamos", "a", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["van", "voy", "fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s044",
+    "es": "¿Tienes tu pasaporte?",
+    "sk": "Máš pri sebe pas?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tienes", "tu", "pasaporte", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["Tengo", "Tiene", "Tuviste"]
+      },
+      { "tokenIndex": 2, "answer": "tu", "lemma": "tu", "hint": "tvoj", "distractors": ["tú", "mi", "su"] }
+    ]
+  },
+  {
+    "id": "s045",
+    "es": "El año pasado fuimos a Oaxaca.",
+    "sk": "Minulý rok sme boli v Oaxace.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "año", "pasado", "fuimos", "a", "Oaxaca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · pretérito",
+        "distractors": ["vamos", "fueron", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s046",
+    "es": "¿Qué hiciste en tus vacaciones?",
+    "sk": "Čo si robil na dovolenke?",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Qué", "hiciste", "en", "tus", "vacaciones", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hiciste",
+        "lemma": "hacer",
+        "hint": "hacer · tú · pretérito",
+        "distractors": ["haces", "hizo", "haciste"]
+      }
+    ]
+  },
+  {
+    "id": "s047",
+    "es": "Estamos esperando el camión.",
+    "sk": "Čakáme na autobus.",
+    "level": "A1",
+    "topics": ["travel", "city"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "esperando", "el", "camión", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estamos",
+        "lemma": "estar",
+        "hint": "estar · nosotros · presente",
+        "distractors": ["Somos", "Están", "Estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s152",
+    "es": "Nuestro vuelo llega a Cancún a las tres.",
+    "sk": "Náš let prilieta do Cancúnu o tretej.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Nuestro", "vuelo", "llega", "a", "Cancún", "a", "las", "tres", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llega",
+        "lemma": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors": ["llegan", "llegas", "llegó"]
+      }
+    ]
+  },
+  {
+    "id": "s153",
+    "es": "Viajamos a Mérida el mes pasado.",
+    "sk": "Minulý mesiac sme cestovali do Méridy.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Viajamos", "a", "Mérida", "el", "mes", "pasado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Viajamos",
+        "lemma": "viajar",
+        "hint": "viajar · nosotros · pretérito",
+        "distractors": ["Viajé", "Viajó", "Viajaste"]
+      }
+    ]
+  },
+  {
+    "id": "s154",
+    "es": "Tengo una reservación para tres noches.",
+    "sk": "Mám rezerváciu na tri noci.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "una", "reservación", "para", "tres", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s155",
+    "es": "¿Llevas el pasaporte?",
+    "sk": "Máš so sebou pas?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Llevas", "el", "pasaporte", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Llevas",
+        "lemma": "llevar",
+        "hint": "llevar · tú · presente",
+        "distractors": ["Llevamos", "Llevo", "Llevaste"]
+      }
+    ]
+  },
+  {
+    "id": "s156",
+    "es": "Perdí mi maleta en el aeropuerto.",
+    "sk": "Na letisku som stratil kufor.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Perdí", "mi", "maleta", "en", "el", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Perdí",
+        "lemma": "perder",
+        "hint": "perder · yo · pretérito",
+        "distractors": ["Perdió", "Perdieron", "Pierdo"]
+      }
+    ]
+  },
+  {
+    "id": "s157",
+    "es": "Rentamos un carro para viajar por Yucatán.",
+    "sk": "Prenajali sme si auto na cestu po Yucatáne.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Rentamos", "un", "carro", "para", "viajar", "por", "Yucatán", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Rentamos",
+        "lemma": "rentar",
+        "hint": "rentar · nosotros · pretérito",
+        "distractors": ["Renté", "Rentó", "Rentaste"]
+      }
+    ]
+  },
+  {
+    "id": "s158",
+    "es": "Los turistas están visitando las pirámides.",
+    "sk": "Turisti si prezerajú pyramídy.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "turistas", "están", "visitando", "las", "pirámides", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visitando",
+        "lemma": "visitar",
+        "hint": "visitar · gerundio",
+        "distractors": ["visita", "visitar", "visitan"]
+      }
+    ]
+  },
+  {
+    "id": "s159",
+    "es": "¿Cuándo regresas a Eslovaquia?",
+    "sk": "Kedy sa vraciaš na Slovensko?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuándo", "regresas", "a", "Eslovaquia", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "regresas",
+        "lemma": "regresar",
+        "hint": "regresar · tú · presente",
+        "distractors": ["regresamos", "regreso", "regresaste"]
+      }
+    ]
+  },
+  {
+    "id": "s160",
+    "es": "El hotel tiene una alberca enorme.",
+    "sk": "Hotel má obrovský bazén.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["El", "hotel", "tiene", "una", "alberca", "enorme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unos", "unas"]
+      }
+    ]
+  },
+  {
+    "id": "s161",
+    "es": "Mis amigos volvieron de Oaxaca muy contentos.",
+    "sk": "Kamaráti sa vrátili z Oaxacy veľmi spokojní.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Mis", "amigos", "volvieron", "de", "Oaxaca", "muy", "contentos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "volvieron",
+        "lemma": "volver",
+        "hint": "volver · ellos · pretérito",
+        "distractors": ["volviste", "volvimos", "vuelven"]
+      }
+    ]
+  },
+  {
+    "id": "s162",
+    "es": "Estamos esperando el vuelo a Monterrey.",
+    "sk": "Čakáme na let do Monterrey.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "esperando", "el", "vuelo", "a", "Monterrey", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estamos",
+        "lemma": "estar",
+        "hint": "estar · nosotros · presente",
+        "distractors": ["Estoy", "Está", "Estuvimos"]
+      }
+    ]
+  },
+  {
+    "id": "s163",
+    "es": "¿Encontraste un buen hotel?",
+    "sk": "Našiel si dobrý hotel?",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Encontraste", "un", "buen", "hotel", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Encontraste",
+        "lemma": "encontrar",
+        "hint": "encontrar · tú · pretérito",
+        "distractors": ["Encontramos", "Encontré", "Encuentras"]
+      }
+    ]
+  },
+  {
+    "id": "s164",
+    "es": "Siempre viajo con una mochila pequeña.",
+    "sk": "Vždy cestujem s malým batohom.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "viajo", "con", "una", "mochila", "pequeña", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "viajo",
+        "lemma": "viajar",
+        "hint": "viajar · yo · presente",
+        "distractors": ["viaja", "viajan", "viajé"]
+      }
+    ]
+  },
+  {
+    "id": "s165",
+    "es": "La playa está muy limpia.",
+    "sk": "Pláž je veľmi čistá.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["gender"],
+    "tokens": ["La", "playa", "está", "muy", "limpia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "limpia",
+        "lemma": "limpio",
+        "hint": "prídavné meno: limpio",
+        "distractors": ["limpio", "limpios", "limpias"]
+      }
+    ]
+  },
+  {
+    "id": "s166",
+    "es": "Manejamos seis horas hasta Guanajuato.",
+    "sk": "Do Guanajuata sme šoférovali šesť hodín.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Manejamos", "seis", "horas", "hasta", "Guanajuato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Manejamos",
+        "lemma": "manejar",
+        "hint": "manejar · nosotros · pretérito",
+        "distractors": ["Manejé", "Manejó", "Manejaste"]
+      }
+    ]
+  },
+  {
+    "id": "s167",
+    "es": "El guía nos explicó la historia de la ciudad.",
+    "sk": "Sprievodca nám vysvetlil históriu mesta.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["El", "guía", "nos", "explicó", "la", "historia", "de", "la", "ciudad", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+  },
+  {
+    "id": "s168",
+    "es": "¿Cuánto cuesta el boleto a Puebla?",
+    "sk": "Koľko stojí lístok do Puebly?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "cuesta", "el", "boleto", "a", "Puebla", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuesta",
+        "lemma": "costar",
+        "hint": "costar · él · presente",
+        "distractors": ["cuestan", "cuestas", "costó"]
+      }
+    ]
+  },
+  {
+    "id": "s169",
+    "es": "Nos quedamos en casa de unos amigos.",
+    "sk": "Bývali sme u kamarátov.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "quedamos", "en", "casa", "de", "unos", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quedamos",
+        "lemma": "quedarse",
+        "hint": "quedarse · nosotros · pretérito",
+        "distractors": ["quedé", "quedó", "quedaste"]
+      }
+    ]
+  },
+  {
+    "id": "s170",
+    "es": "Te escribo desde el aeropuerto.",
+    "sk": "Píšem ti z letiska.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "escribo", "desde", "el", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "escribo",
+        "lemma": "escribir",
+        "hint": "escribir · yo · presente",
+        "distractors": ["escribe", "escriben", "escribí"]
+      }
+    ]
+  },
+  {
+    "id": "s171",
+    "es": "Llegamos tarde y perdimos el vuelo.",
+    "sk": "Prišli sme neskoro a zmeškali sme let.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegamos", "tarde", "y", "perdimos", "el", "vuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "perdimos",
+        "lemma": "perder",
+        "hint": "perder · nosotros · pretérito",
+        "distractors": ["perdí", "perdió", "perdemos"]
+      }
+    ]
+  }
+]

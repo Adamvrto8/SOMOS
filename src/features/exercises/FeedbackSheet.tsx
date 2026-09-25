@@ -2,6 +2,7 @@ import { CircleCheck, CircleX, Info, TriangleAlert, type LucideIcon } from 'luci
 import type { ReactNode } from 'react'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
+import { wordIdByVerb } from '../../data'
 import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
@@ -79,7 +80,10 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
   if (!grade.correct) notes.push(<>{mistakeChoice ? 'Ostáva v Chybách' : 'Uložené do Archív → Chyby'}, zopakuješ si to neskôr.</>)
 
   // ⭐ saves the verb for conjugation drills, the whole sentence otherwise.
-  const star = task.kind === 'conjugation' ? ({ type: 'word', id: task.verb.id } as const) : ({ type: 'sentence', id: task.sentence.id } as const)
+  const star =
+    task.kind === 'conjugation'
+      ? ({ type: 'word', id: wordIdByVerb.get(task.verb.id) ?? task.verb.id } as const)
+      : ({ type: 'sentence', id: task.sentence.id } as const)
 
   return (
     // Opaque base + tinted layer: the sheet covers the task underneath.

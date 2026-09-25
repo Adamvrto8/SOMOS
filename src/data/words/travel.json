@@ -1,0 +1,290 @@
+[
+  {
+    "id": "boleto",
+    "es": "boleto",
+    "sk": ["lístok", "letenka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Ya compré los boletos de avión.", "sk": "Letenky už mám kúpené." }],
+    "note": "V Mexiku „boleto“ (v Španielsku „billete“). Boleto de avión = letenka."
+  },
+  {
+    "id": "avion",
+    "es": "avión",
+    "plural": "aviones",
+    "sk": ["lietadlo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El avión sale a las seis.", "sk": "Lietadlo odlieta o šiestej." }]
+  },
+  {
+    "id": "maleta",
+    "es": "maleta",
+    "sk": ["kufor"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Mi maleta pesa mucho.", "sk": "Môj kufor je veľmi ťažký." }]
+  },
+  {
+    "id": "playa",
+    "es": "playa",
+    "sk": ["pláž"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Vamos a la playa el fin de semana.", "sk": "Cez víkend ideme na pláž." }]
+  },
+  {
+    "id": "hotel",
+    "es": "hotel",
+    "plural": "hoteles",
+    "sk": ["hotel"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El hotel está enfrente de la playa.", "sk": "Hotel je oproti pláži." }]
+  },
+  {
+    "id": "pasaporte",
+    "es": "pasaporte",
+    "sk": ["pas"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "No olvides tu pasaporte.", "sk": "Nezabudni si pas." }]
+  },
+  {
+    "id": "vacaciones",
+    "es": "vacaciones",
+    "sk": ["dovolenka", "prázdniny"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Adónde vas de vacaciones?", "sk": "Kam ideš na dovolenku?" }],
+    "note": "Používa sa len v množnom čísle: las vacaciones. Ir de vacaciones = ísť na dovolenku."
+  },
+  {
+    "id": "aeropuerto",
+    "es": "aeropuerto",
+    "sk": ["letisko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Llegamos al aeropuerto a las cinco.", "sk": "Na letisko sme prišli o piatej." }]
+  },
+  {
+    "id": "vuelo",
+    "es": "vuelo",
+    "sk": ["let"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El vuelo sale con retraso.", "sk": "Let má meškanie." }]
+  },
+  {
+    "id": "viaje",
+    "es": "viaje",
+    "sk": ["cesta", "výlet"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¡Buen viaje!", "sk": "Šťastnú cestu!" }]
+  },
+  {
+    "id": "equipaje",
+    "es": "equipaje",
+    "sk": ["batožina"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Cuánto equipaje llevas?", "sk": "Koľko batožiny máš so sebou?" }]
+  },
+  {
+    "id": "mochila",
+    "es": "mochila",
+    "sk": ["batoh"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Llevo todo en mi mochila.", "sk": "Všetko mám v batohu." }]
+  },
+  {
+    "id": "reservacion",
+    "es": "reservación",
+    "sk": ["rezervácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "reservaciones",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "Tengo una reservación a nombre de Adam.", "sk": "Mám rezerváciu na meno Adam." }],
+    "note": "V Mexiku „reservación“ (v Španielsku „reserva“)."
+  },
+  {
+    "id": "habitacion",
+    "es": "habitación",
+    "sk": ["izba (v hoteli)"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "habitaciones",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Quiero una habitación para dos personas.", "sk": "Chcel by som izbu pre dve osoby." }]
+  },
+  {
+    "id": "turista",
+    "es": "turista",
+    "sk": ["turista"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Hay muchos turistas en Cancún.", "sk": "V Cancúne je veľa turistov." }],
+    "note": "el turista / la turista – rovnaký tvar pre muža aj ženu."
+  },
+  {
+    "id": "mapa",
+    "es": "mapa",
+    "sk": ["mapa"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Tienes un mapa de la ciudad?", "sk": "Máš mapu mesta?" }],
+    "note": "Hoci končí na -a, je mužského rodu: el mapa."
+  },
+  {
+    "id": "piramide",
+    "es": "pirámide",
+    "sk": ["pyramída"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [
+      {
+        "es": "Las pirámides de Teotihuacán son impresionantes.",
+        "sk": "Pyramídy v Teotihuacáne sú úchvatné."
+      }
+    ]
+  },
+  {
+    "id": "mar",
+    "es": "mar",
+    "sk": ["more"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "mares",
+    "level": "A1",
+    "topics": ["travel", "nature"],
+    "examples": [{ "es": "El agua del mar está muy caliente.", "sk": "Voda v mori je veľmi teplá." }]
+  },
+  {
+    "id": "frontera",
+    "es": "frontera",
+    "sk": ["hranica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "Cruzamos la frontera en la mañana.", "sk": "Hranicu sme prekročili ráno." }]
+  },
+  {
+    "id": "moneda",
+    "es": "moneda",
+    "sk": ["minca", "mena"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "La moneda de México es el peso.", "sk": "Mexická mena je peso." }]
+  },
+  {
+    "id": "peso",
+    "es": "peso",
+    "sk": ["peso (mena)", "váha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Cuesta cien pesos.", "sk": "Stojí to sto pesos." }]
+  },
+  {
+    "id": "autobus",
+    "es": "autobús",
+    "sk": ["autobus (diaľkový)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "autobuses",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Tomamos el autobús a Puebla.", "sk": "Do Puebly sme išli autobusom." }],
+    "note": "Na dlhé trasy medzi mestami „autobús“; v meste sa hovorí „camión“."
+  },
+  {
+    "id": "salida",
+    "es": "salida",
+    "sk": ["východ", "odchod"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Dónde está la salida?", "sk": "Kde je východ?" }]
+  },
+  {
+    "id": "entrada",
+    "es": "entrada",
+    "sk": ["vchod", "vstup", "vstupenka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "La entrada al museo es gratis los domingos.", "sk": "Vstup do múzea je v nedeľu zadarmo." }]
+  },
+  {
+    "id": "extranjero",
+    "es": "extranjero",
+    "sk": ["cudzinec", "zahraničie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "Mi hermano vive en el extranjero.", "sk": "Brat žije v zahraničí." }],
+    "note": "en el extranjero = v zahraničí."
+  },
+  {
+    "id": "temprano",
+    "es": "temprano",
+    "sk": ["skoro"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["travel", "time"],
+    "examples": [{ "es": "El vuelo sale muy temprano.", "sk": "Let odlieta veľmi skoro." }]
+  },
+  {
+    "id": "guia",
+    "es": "guía",
+    "sk": ["sprievodca"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El guía habla inglés y español.", "sk": "Sprievodca hovorí po anglicky aj po španielsky." }],
+    "note": "el guía = sprievodca (osoba); la guía = sprievodca (kniha)."
+  }
+]

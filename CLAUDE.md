@@ -141,7 +141,7 @@ no `vosotros` forms, all 5 persons present.
 
 Content conventions (types in `src/data/types.ts`, all enforced by `validate:data`):
 - Word `id` = slug of `es` (lowercase, accents/¿?¡! stripped, spaces → `-`); collisions get `-2`: `papa` (zemiak), `papa-2` (papá).
-- Every verb has exactly one Word (`pos: 'verb'`, `id` = `es` = `verbId` = infinitive).
+- Every verb has exactly one Word (`pos: 'verb'`, `es` = `verbId` = infinitive, `id` = its slug: `extranar`); `wordIdByVerb` maps them.
 - `irregularForms` lists exactly the forms that differ from the regular -ar/-er/-ir pattern
   (spelling changes count: `llegué` → `preterito.yo`); `regular` is true only when there are none;
   `gerundIrregular` likewise. Use `tense.*` when all 5 persons differ.

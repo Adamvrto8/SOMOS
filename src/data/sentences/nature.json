@@ -1,0 +1,273 @@
+[
+  {
+    "id": "s290",
+    "es": "Me encantan los animales.",
+    "sk": "Zbožňujem zvieratá.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Me", "encantan", "los", "animales", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "los", "lemma": "el", "hint": "člen", "distractors": ["el", "la", "las"] }]
+  },
+  {
+    "id": "s291",
+    "es": "Subimos a la montaña el domingo.",
+    "sk": "V nedeľu sme vyšli na horu.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Subimos", "a", "la", "montaña", "el", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["Subí", "Subió", "Subiste"]
+      }
+    ]
+  },
+  {
+    "id": "s292",
+    "es": "Hay muchos pájaros en el jardín.",
+    "sk": "V záhrade je veľa vtákov.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["gender"],
+    "tokens": ["Hay", "muchos", "pájaros", "en", "el", "jardín", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "muchos",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "mucha", "muchas"]
+      }
+    ]
+  },
+  {
+    "id": "s293",
+    "es": "Nadamos en el río con mis primos.",
+    "sk": "S bratrancami sme plávali v rieke.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Nadamos", "en", "el", "río", "con", "mis", "primos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Nadamos",
+        "lemma": "nadar",
+        "hint": "nadar · nosotros · pretérito",
+        "distractors": ["Nadé", "Nadó", "Nadaste"]
+      }
+    ]
+  },
+  {
+    "id": "s294",
+    "es": "El volcán está muy cerca de la ciudad.",
+    "sk": "Sopka je veľmi blízko mesta.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["El", "volcán", "está", "muy", "cerca", "de", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s295",
+    "es": "Las flores de mi abuela son muy bonitas.",
+    "sk": "Babkine kvety sú veľmi pekné.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["gender"],
+    "tokens": ["Las", "flores", "de", "mi", "abuela", "son", "muy", "bonitas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "bonitas",
+        "lemma": "bonito",
+        "hint": "prídavné meno: bonito",
+        "distractors": ["bonito", "bonita", "bonitos"]
+      }
+    ]
+  },
+  {
+    "id": "s296",
+    "es": "Mi perro corre en el parque todos los días.",
+    "sk": "Môj pes každý deň behá v parku.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "perro", "corre", "en", "el", "parque", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "corre",
+        "lemma": "correr",
+        "hint": "correr · él · presente",
+        "distractors": ["corren", "corres", "corrió"]
+      }
+    ]
+  },
+  {
+    "id": "s297",
+    "es": "Vimos muchos peces en Cozumel.",
+    "sk": "V Cozumeli sme videli veľa rýb.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Vimos", "muchos", "peces", "en", "Cozumel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["Vi", "Vio", "Vemos"]
+      }
+    ]
+  },
+  {
+    "id": "s298",
+    "es": "En la selva hay animales increíbles.",
+    "sk": "V pralese žijú neuveriteľné zvieratá.",
+    "level": "A1",
+    "topics": ["nature"],
+    "tokens": ["En", "la", "selva", "hay", "animales", "increíbles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "je, sú (existuje)",
+        "distractors": ["es", "está", "son"]
+      }
+    ]
+  },
+  {
+    "id": "s299",
+    "es": "Estamos caminando por el bosque.",
+    "sk": "Prechádzame sa lesom.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "caminando", "por", "el", "bosque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "caminando",
+        "lemma": "caminar",
+        "hint": "caminar · gerundio",
+        "distractors": ["camina", "caminar", "caminan"]
+      }
+    ]
+  },
+  {
+    "id": "s300",
+    "es": "El desierto es muy seco.",
+    "sk": "Púšť je veľmi suchá.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["El", "desierto", "es", "muy", "seco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s301",
+    "es": "Mis abuelos tienen vacas y caballos.",
+    "sk": "Starí rodičia majú kravy a kone.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "abuelos", "tienen", "vacas", "y", "caballos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tienen",
+        "lemma": "tener",
+        "hint": "tener · ellos · presente",
+        "distractors": ["tienes", "tenemos", "tuvieron"]
+      }
+    ]
+  },
+  {
+    "id": "s302",
+    "es": "El lago es perfecto para nadar.",
+    "sk": "Jazero je ideálne na plávanie.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["El", "lago", "es", "perfecto", "para", "nadar", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "El", "lemma": "el", "hint": "člen", "distractors": ["La", "Los", "Las"] }]
+  },
+  {
+    "id": "s303",
+    "es": "¿Conoces las playas de Oaxaca?",
+    "sk": "Poznáš pláže v Oaxace?",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Conoces", "las", "playas", "de", "Oaxaca", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Conoces",
+        "lemma": "conocer",
+        "hint": "conocer · tú · presente",
+        "distractors": ["Conocemos", "Conozco", "Conociste"]
+      }
+    ]
+  },
+  {
+    "id": "s304",
+    "es": "Los niños juegan en el campo.",
+    "sk": "Deti sa hrajú na lúke.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "niños", "juegan", "en", "el", "campo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "juegan",
+        "lemma": "jugar",
+        "hint": "jugar · ellos · presente",
+        "distractors": ["juegas", "jugamos", "jugaron"]
+      }
+    ]
+  },
+  {
+    "id": "s305",
+    "es": "Mi gato duerme en el jardín.",
+    "sk": "Moja mačka spí v záhrade.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "gato", "duerme", "en", "el", "jardín", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "duerme",
+        "lemma": "dormir",
+        "hint": "dormir · él · presente",
+        "distractors": ["duermen", "duermes", "durmió"]
+      }
+    ]
+  }
+]

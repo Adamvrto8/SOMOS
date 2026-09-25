@@ -1,0 +1,29 @@
+pri cvičenieach ako doplnovacka atd. chcem vyrazne rozsiit 
+pocet roznych viet/cviceni. aby sa mi neopakovali. - 
+to zanmena ze tak isto by som chcel aj to aby sa mi v situacii
+ze neuhadnem, ta veta alebo cvicenie ulozilo a nasledne na mna vyskocilo 
+na konci aby som si to zopakoval. Ale stale by som chcel mat moznost
+si zopakovat lekcie aj tie ktore som urobil spravne. 
+
+teraz tam sisce je si zopakovat vety co som nevedel ale chcel
+by som aby som sa k nim vedel dostat aj neskor. Cize vytvorit
+jeden tab kde by som mal takuto historiu zlych odpovedi a mal 
+na vyber ci ich z tejto historie po zopakovani vymazat
+alebo ak mi stale budu roit problem tak ich nechat tam nabuduce
+
+aj pri spravnych odpovediach - - ako na screenshote s dormir
+tak v okienku kde mam potvrddenie ze odpoved je spravna , 
+chcel by som nejake tlacidko na zapamatanie si do archivu 
+ale aby sa to nepoplietlo s tými archivovanými co som mal zle
+toto by bola ina kategoria archivovaných , mozno tam dat 
+moznost hviezdicky ked uz nieco take existuje 
+
+to znamena ze budu 2 typy skupin slov na zopakovanie - hviezdicka
+a potom tie ktore som mal zle pocas cvicenia
+
+
+
+ked otvorim detail slova, chcel by som mat moznost slidenut napriklad
+z prava dolava na dalsie slovo. Napriklad idem na sova o rodine, 
+rozkliknem jedno a namiesto toho aby som siel naspat do menu a 
+hladal dalsie slovo, iba potiahnem a som na dalsiom slove rovno

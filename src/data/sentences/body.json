@@ -1,0 +1,208 @@
+[
+  {
+    "id": "s242",
+    "es": "Me duele mucho la cabeza.",
+    "sk": "Veľmi ma bolí hlava.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Me", "duele", "mucho", "la", "cabeza", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+  },
+  {
+    "id": "s243",
+    "es": "Tengo los ojos cafés.",
+    "sk": "Mám hnedé oči.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Tengo", "los", "ojos", "cafés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ojos",
+        "lemma": "ojo",
+        "hint": "oči",
+        "distractors": ["orejas", "manos", "pies"]
+      }
+    ]
+  },
+  {
+    "id": "s244",
+    "es": "Mi hijo es muy alto para su edad.",
+    "sk": "Môj syn je na svoj vek veľmi vysoký.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "hijo", "es", "muy", "alto", "para", "su", "edad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s245",
+    "es": "Me lavo las manos antes de comer.",
+    "sk": "Pred jedlom si umývam ruky.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Me", "lavo", "las", "manos", "antes", "de", "comer", "."],
+    "cloze": [{ "tokenIndex": 2, "answer": "las", "lemma": "el", "hint": "člen", "distractors": ["el", "la", "los"] }]
+  },
+  {
+    "id": "s246",
+    "es": "Mi abuela tiene el pelo blanco.",
+    "sk": "Babka má biele vlasy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "tiene", "el", "pelo", "blanco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · ella · presente",
+        "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s247",
+    "es": "Corrí cinco kilómetros y me duelen las piernas.",
+    "sk": "Bežal som päť kilometrov a bolia ma nohy.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Corrí", "cinco", "kilómetros", "y", "me", "duelen", "las", "piernas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Corrí",
+        "lemma": "correr",
+        "hint": "correr · yo · pretérito",
+        "distractors": ["Corrió", "Corrieron", "Corro"]
+      }
+    ]
+  },
+  {
+    "id": "s248",
+    "es": "El doctor me revisó el corazón.",
+    "sk": "Lekár mi vyšetril srdce.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["El", "doctor", "me", "revisó", "el", "corazón", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "el", "lemma": "el", "hint": "člen", "distractors": ["la", "los", "las"] }]
+  },
+  {
+    "id": "s249",
+    "es": "Tengo los pies cansados.",
+    "sk": "Mám unavené nohy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gender"],
+    "tokens": ["Tengo", "los", "pies", "cansados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cansados",
+        "lemma": "cansado",
+        "hint": "prídavné meno: cansado",
+        "distractors": ["cansado", "cansada", "cansadas"]
+      }
+    ]
+  },
+  {
+    "id": "s250",
+    "es": "Ella es guapa y muy simpática.",
+    "sk": "Je pekná a veľmi milá.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gender"],
+    "tokens": ["Ella", "es", "guapa", "y", "muy", "simpática", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "guapa",
+        "lemma": "guapo",
+        "hint": "prídavné meno: guapo",
+        "distractors": ["guapo", "guapos", "guapas"]
+      }
+    ]
+  },
+  {
+    "id": "s251",
+    "es": "Me corté el dedo con un cuchillo.",
+    "sk": "Porezal som si prst nožom.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["Me", "corté", "el", "dedo", "con", "un", "cuchillo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dedo",
+        "lemma": "dedo",
+        "hint": "prst",
+        "distractors": ["brazo", "pie", "ojo"]
+      }
+    ]
+  },
+  {
+    "id": "s252",
+    "es": "¿Te duele la espalda?",
+    "sk": "Bolí ťa chrbát?",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["¿", "Te", "duele", "la", "espalda", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "espalda",
+        "lemma": "espalda",
+        "hint": "chrbát",
+        "distractors": ["cabeza", "pierna", "panza"]
+      }
+    ]
+  },
+  {
+    "id": "s253",
+    "es": "Mi hermano es más fuerte que yo.",
+    "sk": "Brat je silnejší ako ja.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Mi", "hermano", "es", "más", "fuerte", "que", "yo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "ako (pri porovnaní)",
+        "distractors": ["como", "de", "qué"]
+      }
+    ]
+  },
+  {
+    "id": "s254",
+    "es": "Estoy haciendo ejercicio todos los días.",
+    "sk": "Každý deň cvičím.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "haciendo", "ejercicio", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haciendo",
+        "lemma": "hacer",
+        "hint": "hacer · gerundio",
+        "distractors": ["hace", "hacer", "hacen"]
+      }
+    ]
+  }
+]

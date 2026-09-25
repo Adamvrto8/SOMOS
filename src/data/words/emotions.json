@@ -1,0 +1,187 @@
+[
+  {
+    "id": "feliz",
+    "es": "feliz",
+    "sk": ["šťastný"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy feliz aquí.", "sk": "Som tu veľmi šťastný." }]
+  },
+  {
+    "id": "contento",
+    "es": "contento",
+    "sk": ["spokojný", "rád"],
+    "pos": "adj",
+    "feminine": "contenta",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy contento con mi trabajo.", "sk": "Som spokojný s prácou." }]
+  },
+  {
+    "id": "triste",
+    "es": "triste",
+    "sk": ["smutný"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¿Por qué estás triste?", "sk": "Prečo si smutný?" }]
+  },
+  {
+    "id": "enojado",
+    "es": "enojado",
+    "sk": ["nahnevaný"],
+    "pos": "adj",
+    "feminine": "enojada",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi mamá está enojada conmigo.", "sk": "Mama sa na mňa hnevá." }],
+    "note": "V Mexiku „enojado“ (v Španielsku skôr „enfadado“)."
+  },
+  {
+    "id": "nervioso",
+    "es": "nervioso",
+    "sk": ["nervózny"],
+    "pos": "adj",
+    "feminine": "nerviosa",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy nervioso por el examen.", "sk": "Som nervózny kvôli skúške." }]
+  },
+  {
+    "id": "preocupado",
+    "es": "preocupado",
+    "sk": ["ustarostený"],
+    "pos": "adj",
+    "feminine": "preocupada",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy preocupado por mi abuela.", "sk": "Robím si starosti o babku." }]
+  },
+  {
+    "id": "tranquilo",
+    "es": "tranquilo",
+    "sk": ["pokojný"],
+    "pos": "adj",
+    "feminine": "tranquila",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Tranquilo, todo está bien.", "sk": "Pokoj, všetko je v poriadku." }]
+  },
+  {
+    "id": "aburrido",
+    "es": "aburrido",
+    "sk": ["znudený", "nudný"],
+    "pos": "adj",
+    "feminine": "aburrida",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy aburrido.", "sk": "Nudím sa." }],
+    "note": "estar aburrido = nudiť sa; ser aburrido = byť nudný."
+  },
+  {
+    "id": "emocionado",
+    "es": "emocionado",
+    "sk": ["nadšený"],
+    "pos": "adj",
+    "feminine": "emocionada",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy emocionado por el viaje.", "sk": "Veľmi sa teším na cestu." }]
+  },
+  {
+    "id": "miedo",
+    "es": "miedo",
+    "sk": ["strach"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Tengo miedo de los perros.", "sk": "Bojím sa psov." }],
+    "note": "tener miedo = báť sa."
+  },
+  {
+    "id": "amor",
+    "es": "amor",
+    "sk": ["láska"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "amores",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "El amor es lo más importante.", "sk": "Láska je to najdôležitejšie." }],
+    "note": "V Mexiku aj oslovenie: ¿Cómo estás, amor?"
+  },
+  {
+    "id": "alegria",
+    "es": "alegría",
+    "sk": ["radosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Qué alegría verte!", "sk": "Aká radosť ťa vidieť!" }]
+  },
+  {
+    "id": "sorpresa",
+    "es": "sorpresa",
+    "sk": ["prekvapenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Qué sorpresa!", "sk": "Aké prekvapenie!" }]
+  },
+  {
+    "id": "verguenza",
+    "es": "vergüenza",
+    "sk": ["hanba"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Me da vergüenza hablar en público.", "sk": "Hanbím sa hovoriť pred ľuďmi." }],
+    "note": "¡Qué vergüenza! = To je trápne!"
+  },
+  {
+    "id": "ganas",
+    "es": "ganas",
+    "sk": ["chuť (niečo urobiť)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Tengo ganas de ir a la playa.", "sk": "Mám chuť ísť na pláž." }],
+    "note": "tener ganas de + infinitív = mať chuť niečo urobiť."
+  },
+  {
+    "id": "suerte",
+    "es": "suerte",
+    "sk": ["šťastie (náhoda)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Buena suerte!", "sk": "Veľa šťastia!" }]
+  },
+  {
+    "id": "ojala",
+    "es": "ojalá",
+    "sk": ["kiežby", "dúfam"],
+    "pos": "other",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Ojalá!", "sk": "Kiežby!" }],
+    "note": "Po „ojalá que“ nasleduje konjunktív: Ojalá que llueva."
+  },
+  {
+    "id": "que-pena",
+    "es": "¡qué pena!",
+    "sk": ["to je mi trápne", "to je škoda"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Qué pena llegar tarde!", "sk": "Je mi trápne, že meškám!" }],
+    "note": "V Mexiku „¡Qué pena!“ znamená hlavne „to je mi trápne, prepáč“."
+  }
+]

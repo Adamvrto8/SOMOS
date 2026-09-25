@@ -1,0 +1,273 @@
+[
+  {
+    "id": "hola",
+    "es": "hola",
+    "sk": ["ahoj"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Hola! ¿Cómo estás?", "sk": "Ahoj! Ako sa máš?" }],
+    "note": "V Mexiku sa „hola“ bežne používa aj s cudzími ľuďmi, nie je to neslušné."
+  },
+  {
+    "id": "buenos-dias",
+    "es": "buenos días",
+    "sk": ["dobré ráno", "dobrý deň"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Buenos días, señora. ¿Cómo está?", "sk": "Dobrý deň, pani. Ako sa máte?" }],
+    "note": "Používa sa do obeda."
+  },
+  {
+    "id": "buenas-tardes",
+    "es": "buenas tardes",
+    "sk": ["dobrý deň", "dobré popoludnie"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Buenas tardes, ¿tiene una mesa para dos?", "sk": "Dobrý deň, máte voľný stôl pre dvoch?" }],
+    "note": "Používa sa od obeda, kým sa nezotmie."
+  },
+  {
+    "id": "buenas-noches",
+    "es": "buenas noches",
+    "sk": ["dobrý večer", "dobrú noc"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Buenas noches, nos vemos mañana.", "sk": "Dobrú noc, uvidíme sa zajtra." }],
+    "note": "Keď je už tma, používa sa pri príchode aj pri odchode."
+  },
+  {
+    "id": "gracias",
+    "es": "gracias",
+    "sk": ["ďakujem", "vďaka"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Muchas gracias por todo.", "sk": "Veľmi pekne ďakujem za všetko." }]
+  },
+  {
+    "id": "por-favor",
+    "es": "por favor",
+    "sk": ["prosím"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Un café, por favor.", "sk": "Jednu kávu, prosím." }]
+  },
+  {
+    "id": "de-nada",
+    "es": "de nada",
+    "sk": ["nie je za čo"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "—Gracias. —De nada.", "sk": "„Ďakujem.“ „Nie je za čo.“" }],
+    "note": "V Mexiku počuješ aj „por nada“."
+  },
+  {
+    "id": "perdon",
+    "es": "perdón",
+    "sk": ["prepáč", "prepáčte"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Perdón, ¿dónde está el baño?", "sk": "Prepáčte, kde je tu záchod?" }],
+    "note": "Používa sa aj na upútanie pozornosti, podobne ako slovenské „prepáčte“."
+  },
+  {
+    "id": "mande",
+    "es": "¿mande?",
+    "sk": ["prosím? (keď si nepočul)", "áno? (keď ťa niekto volá)"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "—¡Carlos! —¿Mande?", "sk": "„Carlos!“ „Áno?“" },
+      { "es": "¿Mande? No le entendí.", "sk": "Prosím? Nerozumel som vám." }
+    ],
+    "note": "Typicky mexické. Zdvorilá reakcia, keď niekoho nepočuješ alebo keď ťa niekto osloví. Samotné „¿Qué?“ znie menej zdvorilo."
+  },
+  {
+    "id": "hasta-luego",
+    "es": "hasta luego",
+    "sk": ["dovidenia", "zatiaľ"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Hasta luego, que te vaya bien.", "sk": "Zatiaľ, maj sa dobre." }]
+  },
+  {
+    "id": "que-tal",
+    "es": "¿qué tal?",
+    "sk": ["ako sa máš?", "ako sa darí?"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Hola, ¿qué tal?", "sk": "Ahoj, ako sa máš?" }]
+  },
+  {
+    "id": "que-onda",
+    "es": "¿qué onda?",
+    "sk": ["čau, čo nové?"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Qué onda? ¿Cómo estás?", "sk": "Čau, ako sa máš?" }],
+    "note": "Hovorový mexický pozdrav medzi kamarátmi."
+  },
+  {
+    "id": "mucho-gusto",
+    "es": "mucho gusto",
+    "sk": ["teší ma"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Mucho gusto, soy Adam.", "sk": "Teší ma, som Adam." }]
+  },
+  {
+    "id": "igualmente",
+    "es": "igualmente",
+    "sk": ["podobne", "aj ja"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "—Mucho gusto. —Igualmente.", "sk": "„Teší ma.“ „Aj mňa.“" }]
+  },
+  {
+    "id": "bienvenido",
+    "es": "bienvenido",
+    "sk": ["vitaj", "vitajte"],
+    "pos": "adj",
+    "feminine": "bienvenida",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Bienvenidos a México!", "sk": "Vitajte v Mexiku!" }]
+  },
+  {
+    "id": "adios",
+    "es": "adiós",
+    "sk": ["zbohom", "ahoj (pri odchode)"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Adiós, nos vemos mañana.", "sk": "Ahoj, uvidíme sa zajtra." }]
+  },
+  {
+    "id": "nos-vemos",
+    "es": "nos vemos",
+    "sk": ["uvidíme sa"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Nos vemos el lunes.", "sk": "Uvidíme sa v pondelok." }]
+  },
+  {
+    "id": "con-permiso",
+    "es": "con permiso",
+    "sk": ["s dovolením"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Con permiso, voy al baño.", "sk": "S dovolením, idem na záchod." }],
+    "note": "V Mexiku sa hovorí, keď niekoho obchádzaš alebo odchádzaš od stola."
+  },
+  {
+    "id": "disculpe",
+    "es": "disculpe",
+    "sk": ["prepáčte"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Disculpe, ¿qué hora es?", "sk": "Prepáčte, koľko je hodín?" }],
+    "note": "Zdvorilé oslovenie cudzieho (usted). Kamarátovi: „disculpa“."
+  },
+  {
+    "id": "claro",
+    "es": "claro",
+    "sk": ["jasné", "samozrejme"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "—¿Me ayudas? —¡Claro!", "sk": "„Pomôžeš mi?“ „Jasné!“" }]
+  },
+  {
+    "id": "si",
+    "es": "sí",
+    "sk": ["áno"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Sí, claro.", "sk": "Áno, jasné." }],
+    "note": "Pozor na prízvuk: sí = áno, si = ak."
+  },
+  {
+    "id": "no",
+    "es": "no",
+    "sk": ["nie"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "No, gracias.", "sk": "Nie, ďakujem." }]
+  },
+  {
+    "id": "buen-provecho",
+    "es": "buen provecho",
+    "sk": ["dobrú chuť"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Buen provecho!", "sk": "Dobrú chuť!" }],
+    "note": "V Mexiku sa praje aj cudzím ľuďom, ktorí jedia, keď prechádzaš okolo."
+  },
+  {
+    "id": "felicidades",
+    "es": "felicidades",
+    "sk": ["blahoželám", "gratulujem"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Felicidades por tu nuevo trabajo!", "sk": "Blahoželám k novej práci!" }]
+  },
+  {
+    "id": "que-padre",
+    "es": "¡qué padre!",
+    "sk": ["to je super!"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Qué padre tu departamento!", "sk": "Máš super byt!" }],
+    "note": "Mexický hovorový výraz. Podobne „¡Qué chido!“."
+  },
+  {
+    "id": "me-gusta",
+    "es": "me gusta",
+    "sk": ["páči sa mi", "chutí mi", "mám rád"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Me gusta mucho México.", "sk": "Mexiko sa mi veľmi páči." }],
+    "note": "Pri viacerých veciach „me gustan“: Me gustan los tacos."
+  },
+  {
+    "id": "me-encanta",
+    "es": "me encanta",
+    "sk": ["zbožňujem", "veľmi sa mi páči"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Me encanta la comida mexicana.", "sk": "Zbožňujem mexické jedlo." }]
+  },
+  {
+    "id": "hay",
+    "es": "hay",
+    "sk": ["je", "sú (existuje)"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Hay un baño aquí?", "sk": "Je tu záchod?" }],
+    "note": "hay = je/sú (niečo niekde existuje): Hay mucha gente = Je tam veľa ľudí."
+  }
+]

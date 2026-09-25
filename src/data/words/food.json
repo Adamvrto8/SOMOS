@@ -1,0 +1,425 @@
+[
+  {
+    "id": "comida",
+    "es": "comida",
+    "sk": ["jedlo", "obed"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La comida está lista.", "sk": "Obed je hotový." },
+      { "es": "Me gusta mucho la comida mexicana.", "sk": "Veľmi mi chutí mexické jedlo." }
+    ],
+    "note": "V Mexiku je „la comida“ hlavné jedlo dňa, zvyčajne medzi 14:00 a 16:00."
+  },
+  {
+    "id": "agua",
+    "es": "agua",
+    "sk": ["voda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Me da un vaso de agua, por favor?", "sk": "Môžete mi dať pohár vody, prosím?" }],
+    "note": "Je ženského rodu, ale v jednotnom čísle sa hovorí „el agua“ (kvôli prízvuku na prvom a). Agua de jamaica = osviežujúci nápoj z ibišteka."
+  },
+  {
+    "id": "cafe",
+    "es": "café",
+    "sk": ["káva", "kaviareň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Tomo un café cada mañana.", "sk": "Každé ráno si dám kávu." }]
+  },
+  {
+    "id": "jugo",
+    "es": "jugo",
+    "sk": ["džús"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Un jugo de naranja, por favor.", "sk": "Pomarančový džús, prosím." }],
+    "note": "V Španielsku „zumo“, v Mexiku vždy „jugo“."
+  },
+  {
+    "id": "tortilla",
+    "es": "tortilla",
+    "sk": ["tortilla (kukuričná placka)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los tacos se hacen con tortillas de maíz.", "sk": "Tacos sa robia z kukuričných tortíl." }],
+    "note": "V Mexiku je tortilla tenká placka z kukurice alebo pšenice, nie zemiaková omeleta ako v Španielsku."
+  },
+  {
+    "id": "papa",
+    "es": "papa",
+    "sk": ["zemiak"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Quiero una hamburguesa con papas.", "sk": "Chcem hamburger s hranolkami." }],
+    "note": "V Španielsku „patata“. Pozor: papá (s prízvukom) = otec. Papas fritas = hranolky alebo čipsy."
+  },
+  {
+    "id": "pollo",
+    "es": "pollo",
+    "sk": ["kura", "kuracie mäso"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Hoy hay pollo con arroz.", "sk": "Dnes je kura s ryžou." }]
+  },
+  {
+    "id": "rico",
+    "es": "rico",
+    "feminine": "rica",
+    "sk": ["chutný", "bohatý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los tacos están muy ricos.", "sk": "Tie tacos sú výborné." }],
+    "note": "O jedle so slovesom estar: ¡Está muy rico! = Je to veľmi chutné. So slovesom ser znamená bohatý: Es rico."
+  },
+  {
+    "id": "cuenta",
+    "es": "cuenta",
+    "sk": ["účet"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "La cuenta, por favor.", "sk": "Účet, prosím." }]
+  },
+  {
+    "id": "pan",
+    "es": "pan",
+    "sk": ["chlieb", "pečivo"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "panes",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Compro pan en la panadería.", "sk": "Chlieb kupujem v pekárni." }],
+    "note": "pan dulce = sladké mexické pečivo k raňajkám."
+  },
+  {
+    "id": "arroz",
+    "es": "arroz",
+    "sk": ["ryža"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Hoy hay arroz con frijoles.", "sk": "Dnes je ryža s fazuľou." }]
+  },
+  {
+    "id": "frijol",
+    "es": "frijol",
+    "sk": ["fazuľa"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "frijoles",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los frijoles son muy comunes en México.", "sk": "Fazuľa je v Mexiku veľmi bežná." }],
+    "note": "Zvyčajne v množnom čísle: los frijoles. Frijoles refritos = rozmixovaná opekaná fazuľa."
+  },
+  {
+    "id": "carne",
+    "es": "carne",
+    "sk": ["mäso"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "No como carne.", "sk": "Nejem mäso." }]
+  },
+  {
+    "id": "pescado",
+    "es": "pescado",
+    "sk": ["ryba (jedlo)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los viernes comemos pescado.", "sk": "V piatok jeme rybu." }],
+    "note": "pescado = ryba ako jedlo; pez = živá ryba."
+  },
+  {
+    "id": "huevo",
+    "es": "huevo",
+    "sk": ["vajce", "vajíčko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Desayuno huevos con jamón.", "sk": "Na raňajky mám vajíčka so šunkou." }]
+  },
+  {
+    "id": "leche",
+    "es": "leche",
+    "sk": ["mlieko"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Tomas café con leche?", "sk": "Piješ kávu s mliekom?" }]
+  },
+  {
+    "id": "queso",
+    "es": "queso",
+    "sk": ["syr"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Una quesadilla con queso, por favor.", "sk": "Quesadillu so syrom, prosím." }]
+  },
+  {
+    "id": "fruta",
+    "es": "fruta",
+    "sk": ["ovocie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Como fruta todos los días.", "sk": "Každý deň jem ovocie." }]
+  },
+  {
+    "id": "verdura",
+    "es": "verdura",
+    "sk": ["zelenina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Necesito comprar verduras.", "sk": "Musím kúpiť zeleninu." }]
+  },
+  {
+    "id": "naranja",
+    "es": "naranja",
+    "sk": ["pomaranč"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Me gusta el jugo de naranja.", "sk": "Mám rád pomarančový džús." }]
+  },
+  {
+    "id": "manzana",
+    "es": "manzana",
+    "sk": ["jablko"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Siempre llevo una manzana en la mochila.", "sk": "V batohu mám vždy jablko." }]
+  },
+  {
+    "id": "platano",
+    "es": "plátano",
+    "sk": ["banán"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los plátanos están muy baratos.", "sk": "Banány sú veľmi lacné." }],
+    "note": "V Mexiku „plátano“ (inde aj „banana“)."
+  },
+  {
+    "id": "aguacate",
+    "es": "aguacate",
+    "sk": ["avokádo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "El guacamole se hace con aguacate.", "sk": "Guacamole sa robí z avokáda." }]
+  },
+  {
+    "id": "jitomate",
+    "es": "jitomate",
+    "sk": ["paradajka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Necesito tres jitomates para la salsa.", "sk": "Na salsu potrebujem tri paradajky." }],
+    "note": "V Mexiku „jitomate“ = červená paradajka; „tomate“ tu často znamená zelenú paradajku (tomatillo)."
+  },
+  {
+    "id": "chile",
+    "es": "chile",
+    "sk": ["čili paprička"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Pica mucho este chile?", "sk": "Štípe táto paprička veľmi?" }],
+    "note": "¿Pica? = Je to pálivé?"
+  },
+  {
+    "id": "salsa",
+    "es": "salsa",
+    "sk": ["omáčka", "salsa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿La salsa pica?", "sk": "Je tá salsa pálivá?" }]
+  },
+  {
+    "id": "sal",
+    "es": "sal",
+    "sk": ["soľ"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Me pasas la sal?", "sk": "Podáš mi soľ?" }]
+  },
+  {
+    "id": "azucar",
+    "es": "azúcar",
+    "sk": ["cukor"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Un café sin azúcar, por favor.", "sk": "Kávu bez cukru, prosím." }]
+  },
+  {
+    "id": "cerveza",
+    "es": "cerveza",
+    "sk": ["pivo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Dos cervezas bien frías, por favor.", "sk": "Dve poriadne vychladené pivá, prosím." }]
+  },
+  {
+    "id": "refresco",
+    "es": "refresco",
+    "sk": ["limonáda", "sladený nápoj"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Quieres un refresco?", "sk": "Dáš si limonádu?" }]
+  },
+  {
+    "id": "vaso",
+    "es": "vaso",
+    "sk": ["pohár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Un vaso de agua, por favor.", "sk": "Pohár vody, prosím." }]
+  },
+  {
+    "id": "plato",
+    "es": "plato",
+    "sk": ["tanier", "jedlo (chod)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Los platos están en la cocina.", "sk": "Taniere sú v kuchyni." }]
+  },
+  {
+    "id": "restaurante",
+    "es": "restaurante",
+    "sk": ["reštaurácia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Conozco un restaurante muy bueno.", "sk": "Poznám veľmi dobrú reštauráciu." }]
+  },
+  {
+    "id": "mesero",
+    "es": "mesero",
+    "sk": ["čašník"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "El mesero nos trae la cuenta.", "sk": "Čašník nám nesie účet." }],
+    "note": "mesera = čašníčka. V Mexiku „mesero“ (v Španielsku „camarero“)."
+  },
+  {
+    "id": "hambre",
+    "es": "hambre",
+    "sk": ["hlad"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Tengo mucha hambre.", "sk": "Som veľmi hladný." }],
+    "note": "Tener hambre = byť hladný. Je ženského rodu, ale hovorí sa „el hambre“."
+  },
+  {
+    "id": "sed",
+    "es": "sed",
+    "sk": ["smäd"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Tienes sed?", "sk": "Si smädný?" }],
+    "note": "Tener sed = byť smädný."
+  },
+  {
+    "id": "delicioso",
+    "es": "delicioso",
+    "sk": ["výborný", "vynikajúci (o jedle)"],
+    "pos": "adj",
+    "feminine": "deliciosa",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "El mole está delicioso.", "sk": "Mole je vynikajúce." }]
+  },
+  {
+    "id": "picante",
+    "es": "picante",
+    "sk": ["pálivý", "štipľavý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "No me gusta la comida picante.", "sk": "Nemám rád pálivé jedlo." }]
+  },
+  {
+    "id": "desayuno",
+    "es": "desayuno",
+    "sk": ["raňajky"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "El desayuno es a las ocho.", "sk": "Raňajky sú o ôsmej." }]
+  },
+  {
+    "id": "cena",
+    "es": "cena",
+    "sk": ["večera"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "¿Qué hay de cena?", "sk": "Čo je na večeru?" }]
+  }
+]

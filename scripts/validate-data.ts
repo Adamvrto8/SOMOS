@@ -1,15 +1,28 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import type { Cloze, Level, Person, Sentence, Tense, Topic, Verb, Word } from '../src/data/types.ts'
 
-const load = <T>(file: string): T =>
-  JSON.parse(readFileSync(new URL(`../src/data/${file}`, import.meta.url), 'utf8')) as T
+const DATA = new URL('../src/data/', import.meta.url)
+const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
 
-const topics = load<Topic[]>('topics.json')
-const words = load<Word[]>('words.json')
-const verbs = load<Verb[]>('verbs.json')
-const sentences = load<Sentence[]>('sentences.json')
+// words/, sentences/ and verbs/ hold one JSON array per file (same order as src/data/index.ts).
+function loadDir<T>(dir: string): T[] {
+  const url = new URL(`${dir}/`, DATA)
+  return readdirSync(url)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .flatMap((f) => {
+      const data = readJson(new URL(f, url))
+      if (!Array.isArray(data)) throw new Error(`src/data/${dir}/${f} must contain a JSON array`)
+      return data as T[]
+    })
+}
+
+const topics = readJson(new URL('topics.json', DATA)) as Topic[]
+const words = loadDir<Word>('words')
+const verbs = loadDir<Verb>('verbs')
+const sentences = loadDir<Sentence>('sentences')
 
 const errors: string[] = []
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`)
@@ -133,6 +146,10 @@ function expandIrregular(entries: string[], where: string): Set<string> {
 
 // ---------- topics ----------
 
+// The app maps icon names to components statically; every topic icon must be in that map.
+const topicIconSource = readFileSync(new URL('../src/components/TopicIcon.tsx', import.meta.url), 'utf8')
+const topicIconMap = new Set([...topicIconSource.matchAll(/^\s*'?([a-z0-9-]+)'?: [A-Z]\w*,$/gm)].map((m) => m[1]))
+
 checkUniqueIds(topics, 'topics')
 for (const t of topics) {
   const where = `topics[${t.id}]`
@@ -141,6 +158,7 @@ for (const t of topics) {
   checkSpanish(`${where}.es`, t.es)
   const iconFile = new URL(`../node_modules/lucide-react/dist/esm/icons/${t.icon}.mjs`, import.meta.url)
   if (!isNonEmpty(t.icon) || !existsSync(iconFile)) fail(where, `unknown lucide icon "${t.icon}"`)
+  else if (!topicIconMap.has(t.icon)) fail(where, `icon "${t.icon}" missing in the ICONS map of src/components/TopicIcon.tsx`)
 }
 
 // ---------- verbs ----------
@@ -214,7 +232,8 @@ for (const w of words) {
 
   if (w.pos === 'noun') {
     if (w.gender !== 'm' && w.gender !== 'f') fail(where, 'noun needs gender m/f')
-    if (!w.plural && /[^aeiouáéíóús]$/.test(w.es)) fail(where, 'noun ending in a consonant needs plural')
+    if (!w.plural && !w.uncountable && /[^aeiouáéíóús]$/.test(w.es)) fail(where, 'noun ending in a consonant needs plural (or uncountable: true)')
+    if (w.plural && w.uncountable) fail(where, 'uncountable noun cannot have a plural')
   } else if (w.gender) fail(where, 'gender is only for nouns')
   if (w.plural) checkSpanish(`${where}.plural`, w.plural)
 

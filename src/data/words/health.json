@@ -1,0 +1,196 @@
+[
+  {
+    "id": "salud",
+    "es": "¡salud!",
+    "sk": ["na zdravie!", "zdravie"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "¡Salud!", "sk": "Na zdravie!" }],
+    "note": "¡Salud! sa hovorí pri prípitku aj keď niekto kýchne. La salud = zdravie."
+  },
+  {
+    "id": "enfermo",
+    "es": "enfermo",
+    "sk": ["chorý"],
+    "pos": "adj",
+    "feminine": "enferma",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Hoy no voy a trabajar, estoy enfermo.", "sk": "Dnes nejdem do práce, som chorý." }]
+  },
+  {
+    "id": "medicina",
+    "es": "medicina",
+    "sk": ["liek", "medicína"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Toma la medicina después de comer.", "sk": "Liek si vezmi po jedle." }]
+  },
+  {
+    "id": "pastilla",
+    "es": "pastilla",
+    "sk": ["tabletka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Toma una pastilla cada ocho horas.", "sk": "Ber jednu tabletku každých osem hodín." }]
+  },
+  {
+    "id": "dolor",
+    "es": "dolor",
+    "sk": ["bolesť"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "dolores",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo dolor de cabeza.", "sk": "Bolí ma hlava." }]
+  },
+  {
+    "id": "me-duele",
+    "es": "me duele",
+    "sk": ["bolí ma"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Me duele la garganta.", "sk": "Bolí ma hrdlo." }],
+    "note": "Pri jednej veci „me duele“, pri viacerých „me duelen“: Me duelen los pies."
+  },
+  {
+    "id": "garganta",
+    "es": "garganta",
+    "sk": ["hrdlo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Toma un té para la garganta.", "sk": "Daj si čaj na hrdlo." }]
+  },
+  {
+    "id": "fiebre",
+    "es": "fiebre",
+    "sk": ["horúčka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "El niño tiene fiebre.", "sk": "Dieťa má horúčku." }]
+  },
+  {
+    "id": "gripa",
+    "es": "gripa",
+    "sk": ["chrípka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo gripa.", "sk": "Mám chrípku." }],
+    "note": "V Mexiku „gripa“ (v Španielsku „gripe“)."
+  },
+  {
+    "id": "tos",
+    "es": "tos",
+    "sk": ["kašeľ"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo mucha tos.", "sk": "Veľmi kašlem." }]
+  },
+  {
+    "id": "cita",
+    "es": "cita",
+    "sk": ["termín (u lekára)", "rande"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo cita con el doctor a las cinco.", "sk": "O piatej mám termín u lekára." }],
+    "note": "cita = termín aj rande."
+  },
+  {
+    "id": "receta",
+    "es": "receta",
+    "sk": ["recept (lekársky aj kuchársky)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "El doctor me dio una receta.", "sk": "Lekár mi dal recept." }]
+  },
+  {
+    "id": "seguro",
+    "es": "seguro",
+    "sk": ["poistenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "¿Tienes seguro médico?", "sk": "Máš zdravotné poistenie?" }],
+    "note": "Ako prídavné meno seguro = istý, bezpečný."
+  },
+  {
+    "id": "ejercicio",
+    "es": "ejercicio",
+    "sk": ["cvičenie", "pohyb"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Hago ejercicio tres veces por semana.", "sk": "Cvičím trikrát týždenne." }]
+  },
+  {
+    "id": "sano",
+    "es": "sano",
+    "sk": ["zdravý"],
+    "pos": "adj",
+    "feminine": "sana",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "La fruta es muy sana.", "sk": "Ovocie je veľmi zdravé." }]
+  },
+  {
+    "id": "mejor",
+    "es": "mejor",
+    "sk": ["lepšie", "lepší"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "¿Te sientes mejor?", "sk": "Cítiš sa lepšie?" }]
+  },
+  {
+    "id": "peor",
+    "es": "peor",
+    "sk": ["horšie", "horší"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Hoy me siento peor.", "sk": "Dnes sa cítim horšie." }]
+  },
+  {
+    "id": "emergencia",
+    "es": "emergencia",
+    "sk": ["núdza", "pohotovosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "Es una emergencia, llame al 911.", "sk": "Je to núdzová situácia, volajte 911." }],
+    "note": "Tiesňová linka v Mexiku je 911."
+  },
+  {
+    "id": "ambulancia",
+    "es": "ambulancia",
+    "sk": ["sanitka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "¡Llamen a una ambulancia!", "sk": "Zavolajte sanitku!" }]
+  }
+]

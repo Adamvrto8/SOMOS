@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ropa",
+    "es": "ropa",
+    "sk": ["oblečenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Necesito lavar la ropa.", "sk": "Musím oprať oblečenie." }]
+  },
+  {
+    "id": "camisa",
+    "es": "camisa",
+    "sk": ["košeľa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me gusta tu camisa.", "sk": "Páči sa mi tvoja košeľa." }]
+  },
+  {
+    "id": "playera",
+    "es": "playera",
+    "sk": ["tričko"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Llevo una playera blanca.", "sk": "Mám na sebe biele tričko." }],
+    "note": "V Mexiku „playera“ (v Španielsku „camiseta“)."
+  },
+  {
+    "id": "pantalon",
+    "es": "pantalón",
+    "sk": ["nohavice"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "pantalones",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Estos pantalones me quedan grandes.", "sk": "Tieto nohavice sú mi veľké." }],
+    "note": "Často v množnom čísle: unos pantalones."
+  },
+  {
+    "id": "falda",
+    "es": "falda",
+    "sk": ["sukňa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Mi hermana lleva una falda azul.", "sk": "Sestra má modrú sukňu." }]
+  },
+  {
+    "id": "vestido",
+    "es": "vestido",
+    "sk": ["šaty"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "¡Qué bonito vestido!", "sk": "Aké pekné šaty!" }]
+  },
+  {
+    "id": "zapato",
+    "es": "zapato",
+    "sk": ["topánka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Necesito zapatos nuevos.", "sk": "Potrebujem nové topánky." }]
+  },
+  {
+    "id": "tenis",
+    "es": "tenis",
+    "sk": ["tenisky"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "tenis",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Siempre uso tenis.", "sk": "Vždy nosím tenisky." }],
+    "note": "V Mexiku „los tenis“ = športové topánky (v Španielsku „zapatillas“)."
+  },
+  {
+    "id": "chamarra",
+    "es": "chamarra",
+    "sk": ["bunda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Lleva una chamarra, hace frío.", "sk": "Vezmi si bundu, je zima." }],
+    "note": "Typicky mexické (v Španielsku „chaqueta“)."
+  },
+  {
+    "id": "sueter",
+    "es": "suéter",
+    "sk": ["sveter"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "suéteres",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Este suéter es de lana.", "sk": "Tento sveter je z vlny." }]
+  },
+  {
+    "id": "sombrero",
+    "es": "sombrero",
+    "sk": ["klobúk"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Compré un sombrero en el mercado.", "sk": "Na trhu som si kúpil klobúk." }]
+  },
+  {
+    "id": "gorra",
+    "es": "gorra",
+    "sk": ["šiltovka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Él siempre lleva gorra.", "sk": "Stále nosí šiltovku." }]
+  },
+  {
+    "id": "lentes",
+    "es": "lentes",
+    "sk": ["okuliare"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "lentes",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "No veo nada sin mis lentes.", "sk": "Bez okuliarov nevidím nič." }],
+    "note": "V Mexiku „lentes“ (v Španielsku „gafas“). Lentes de sol = slnečné okuliare."
+  },
+  {
+    "id": "calcetin",
+    "es": "calcetín",
+    "sk": ["ponožka"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "calcetines",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "No encuentro mis calcetines.", "sk": "Neviem nájsť ponožky." }]
+  },
+  {
+    "id": "traje",
+    "es": "traje",
+    "sk": ["oblek"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Para la boda necesito un traje.", "sk": "Na svadbu potrebujem oblek." }],
+    "note": "traje de baño = plavky."
+  },
+  {
+    "id": "color",
+    "es": "color",
+    "sk": ["farba"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "colores",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "¿De qué color es?", "sk": "Akej je to farby?" }]
+  },
+  {
+    "id": "negro",
+    "es": "negro",
+    "sk": ["čierny"],
+    "pos": "adj",
+    "feminine": "negra",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Quiero la playera negra.", "sk": "Chcem to čierne tričko." }]
+  },
+  {
+    "id": "blanco",
+    "es": "blanco",
+    "sk": ["biely"],
+    "pos": "adj",
+    "feminine": "blanca",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "La camisa blanca es más elegante.", "sk": "Biela košeľa je elegantnejšia." }]
+  },
+  {
+    "id": "rojo",
+    "es": "rojo",
+    "sk": ["červený"],
+    "pos": "adj",
+    "feminine": "roja",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me gusta el vestido rojo.", "sk": "Páčia sa mi tie červené šaty." }]
+  },
+  {
+    "id": "azul",
+    "es": "azul",
+    "sk": ["modrý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Tengo los ojos azules.", "sk": "Mám modré oči." }]
+  },
+  {
+    "id": "verde",
+    "es": "verde",
+    "sk": ["zelený"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "La salsa verde pica mucho.", "sk": "Zelená salsa je veľmi pálivá." }]
+  },
+  {
+    "id": "amarillo",
+    "es": "amarillo",
+    "sk": ["žltý"],
+    "pos": "adj",
+    "feminine": "amarilla",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Las flores amarillas son para ti.", "sk": "Žlté kvety sú pre teba." }]
+  },
+  {
+    "id": "bonito",
+    "es": "bonito",
+    "sk": ["pekný"],
+    "pos": "adj",
+    "feminine": "bonita",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "¡Qué bonito día!", "sk": "Aký pekný deň!" }]
+  }
+]

@@ -1,0 +1,284 @@
+[
+  {
+    "id": "familia",
+    "es": "familia",
+    "sk": ["rodina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi familia vive en Guadalajara.", "sk": "Moja rodina býva v Guadalajare." }]
+  },
+  {
+    "id": "mama",
+    "es": "mamá",
+    "sk": ["mama", "mamička"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi mamá cocina muy rico.", "sk": "Moja mama varí veľmi chutne." }]
+  },
+  {
+    "id": "papa-2",
+    "es": "papá",
+    "sk": ["otec", "ocko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi papá trabaja en un banco.", "sk": "Môj otec pracuje v banke." }],
+    "note": "Pozor na prízvuk: papá = otec, papa = zemiak. Mis papás = moji rodičia."
+  },
+  {
+    "id": "hermano",
+    "es": "hermano",
+    "sk": ["brat"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hermano vive en Monterrey.", "sk": "Môj brat býva v Monterrey." }],
+    "note": "hermana = sestra, hermanos = bratia alebo súrodenci."
+  },
+  {
+    "id": "hijo",
+    "es": "hijo",
+    "sk": ["syn"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "¿Cuántos hijos tienes?", "sk": "Koľko máš detí?" }],
+    "note": "hija = dcéra, hijos = synovia alebo (vlastné) deti."
+  },
+  {
+    "id": "esposo",
+    "es": "esposo",
+    "sk": ["manžel"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi esposo se llama Luis.", "sk": "Môj manžel sa volá Luis." }],
+    "note": "esposa = manželka."
+  },
+  {
+    "id": "abuela",
+    "es": "abuela",
+    "sk": ["stará mama", "babka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Los domingos comemos con mi abuela.", "sk": "Každú nedeľu obedujeme s babkou." }],
+    "note": "abuelo = starý otec, abuelos = starí rodičia."
+  },
+  {
+    "id": "amigo",
+    "es": "amigo",
+    "sk": ["kamarát", "priateľ"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Voy al cine con unos amigos.", "sk": "Idem do kina s kamarátmi." }],
+    "note": "amiga = kamarátka."
+  },
+  {
+    "id": "hermana",
+    "es": "hermana",
+    "sk": ["sestra"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hermana tiene dos hijos.", "sk": "Moja sestra má dve deti." }]
+  },
+  {
+    "id": "hija",
+    "es": "hija",
+    "sk": ["dcéra"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hija estudia en la universidad.", "sk": "Moja dcéra študuje na univerzite." }]
+  },
+  {
+    "id": "esposa",
+    "es": "esposa",
+    "sk": ["manželka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi esposa es de Veracruz.", "sk": "Moja manželka je z Veracruzu." }]
+  },
+  {
+    "id": "abuelo",
+    "es": "abuelo",
+    "sk": ["starý otec", "dedko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi abuelo cuenta historias muy divertidas.", "sk": "Dedko rozpráva veľmi zábavné historky." }]
+  },
+  {
+    "id": "padre",
+    "es": "padre",
+    "sk": ["otec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi padre es maestro.", "sk": "Môj otec je učiteľ." }],
+    "note": "los padres = rodičia (v Mexiku skôr „mis papás“). Hovorovo „¡Qué padre!“ = To je super!"
+  },
+  {
+    "id": "madre",
+    "es": "madre",
+    "sk": ["matka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi madre se llama Elena.", "sk": "Moja matka sa volá Elena." }],
+    "note": "„Madre“ je v Mexiku súčasťou aj mnohých silných hovorových výrazov; bežne sa hovorí „mamá“."
+  },
+  {
+    "id": "tio",
+    "es": "tío",
+    "sk": ["strýko", "ujo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi tío vive en Estados Unidos.", "sk": "Môj strýko žije v USA." }],
+    "note": "tía = teta."
+  },
+  {
+    "id": "primo",
+    "es": "primo",
+    "sk": ["bratranec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mis primos vienen a la fiesta.", "sk": "Na párty prídu moji bratranci." }],
+    "note": "prima = sesternica."
+  },
+  {
+    "id": "sobrino",
+    "es": "sobrino",
+    "sk": ["synovec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi sobrino tiene cinco años.", "sk": "Môj synovec má päť rokov." }],
+    "note": "sobrina = neter."
+  },
+  {
+    "id": "nino",
+    "es": "niño",
+    "sk": ["dieťa", "chlapec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Los niños están jugando en el jardín.", "sk": "Deti sa hrajú v záhrade." }],
+    "note": "niña = dievčatko; los niños = deti."
+  },
+  {
+    "id": "bebe",
+    "es": "bebé",
+    "sk": ["bábätko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "El bebé está durmiendo.", "sk": "Bábätko spí." }]
+  },
+  {
+    "id": "novio",
+    "es": "novio",
+    "sk": ["priateľ (partner)", "ženích"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi novio es de Monterrey.", "sk": "Môj priateľ je z Monterrey." }],
+    "note": "novia = priateľka (partnerka) aj nevesta."
+  },
+  {
+    "id": "casado",
+    "es": "casado",
+    "sk": ["ženatý", "vydatá"],
+    "pos": "adj",
+    "feminine": "casada",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "¿Estás casado?", "sk": "Si ženatý?" }],
+    "note": "estar casado / casada = byť ženatý / vydatá."
+  },
+  {
+    "id": "soltero",
+    "es": "soltero",
+    "sk": ["slobodný"],
+    "pos": "adj",
+    "feminine": "soltera",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hermano todavía está soltero.", "sk": "Brat je stále slobodný." }]
+  },
+  {
+    "id": "mayor",
+    "es": "mayor",
+    "sk": ["starší"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hermano mayor vive en Cancún.", "sk": "Môj starší brat býva v Cancúne." }]
+  },
+  {
+    "id": "menor",
+    "es": "menor",
+    "sk": ["mladší"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Soy el menor de la familia.", "sk": "Som najmladší v rodine." }]
+  },
+  {
+    "id": "mascota",
+    "es": "mascota",
+    "sk": ["domáce zviera"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family", "nature"],
+    "examples": [{ "es": "¿Tienes mascota?", "sk": "Máš domáce zvieratko?" }]
+  },
+  {
+    "id": "perro",
+    "es": "perro",
+    "sk": ["pes"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family", "nature"],
+    "examples": [{ "es": "Mi perro se llama Chocolate.", "sk": "Môj pes sa volá Chocolate." }]
+  },
+  {
+    "id": "gato",
+    "es": "gato",
+    "sk": ["mačka", "kocúr"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family", "nature"],
+    "examples": [{ "es": "El gato duerme todo el día.", "sk": "Mačka spí celý deň." }]
+  }
+]

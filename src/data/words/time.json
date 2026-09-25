@@ -1,0 +1,304 @@
+[
+  {
+    "id": "hoy",
+    "es": "hoy",
+    "sk": ["dnes"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Hoy hace mucho calor.", "sk": "Dnes je veľmi teplo." }]
+  },
+  {
+    "id": "manana",
+    "es": "mañana",
+    "sk": ["zajtra", "ráno"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Nos vemos mañana.", "sk": "Uvidíme sa zajtra." },
+      { "es": "Trabajo en la mañana.", "sk": "Pracujem dopoludnia." }
+    ],
+    "note": "mañana = zajtra, la mañana = ráno, dopoludnie. V Mexiku sa hovorí „en la mañana“ (v Španielsku „por la mañana“)."
+  },
+  {
+    "id": "ayer",
+    "es": "ayer",
+    "sk": ["včera"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Ayer fui al doctor.", "sk": "Včera som bol u lekára." }]
+  },
+  {
+    "id": "semana",
+    "es": "semana",
+    "sk": ["týždeň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "La próxima semana tengo vacaciones.", "sk": "Budúci týždeň mám dovolenku." }]
+  },
+  {
+    "id": "hora",
+    "es": "hora",
+    "sk": ["hodina", "čas"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "¿Qué hora es?", "sk": "Koľko je hodín?" },
+      { "es": "¿A qué hora empieza la película?", "sk": "O koľkej začína film?" }
+    ]
+  },
+  {
+    "id": "dia",
+    "es": "día",
+    "sk": ["deň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Hoy es un día muy bonito.", "sk": "Dnes je veľmi pekný deň." }],
+    "note": "Hoci končí na -a, je mužského rodu: el día, buenos días."
+  },
+  {
+    "id": "lunes",
+    "es": "lunes",
+    "plural": "lunes",
+    "sk": ["pondelok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El lunes empiezo un trabajo nuevo.", "sk": "V pondelok nastupujem do novej práce." }],
+    "note": "Dni v týždni sa píšu malým písmenom. El lunes = v pondelok, los lunes = každý pondelok."
+  },
+  {
+    "id": "fin-de-semana",
+    "es": "fin de semana",
+    "plural": "fines de semana",
+    "sk": ["víkend"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "¿Qué haces el fin de semana?", "sk": "Čo robíš cez víkend?" }]
+  },
+  {
+    "id": "tarde",
+    "es": "tarde",
+    "sk": ["neskoro", "popoludnie"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Perdón, llegué tarde.", "sk": "Prepáč, prišiel som neskoro." },
+      { "es": "Te llamo en la tarde.", "sk": "Zavolám ti poobede." }
+    ],
+    "note": "tarde = neskoro, la tarde = popoludnie (do zotmenia). V Mexiku: en la tarde = poobede."
+  },
+  {
+    "id": "martes",
+    "es": "martes",
+    "sk": ["utorok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "martes",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El martes tengo clase de español.", "sk": "V utorok mám hodinu španielčiny." }]
+  },
+  {
+    "id": "miercoles",
+    "es": "miércoles",
+    "sk": ["streda"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "miércoles",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Nos vemos el miércoles.", "sk": "Uvidíme sa v stredu." }]
+  },
+  {
+    "id": "jueves",
+    "es": "jueves",
+    "sk": ["štvrtok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "jueves",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El jueves voy al doctor.", "sk": "Vo štvrtok idem k lekárovi." }]
+  },
+  {
+    "id": "viernes",
+    "es": "viernes",
+    "sk": ["piatok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "viernes",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "¡Por fin es viernes!", "sk": "Konečne je piatok!" }]
+  },
+  {
+    "id": "sabado",
+    "es": "sábado",
+    "sk": ["sobota"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Los sábados voy al mercado.", "sk": "Každú sobotu chodím na trh." }]
+  },
+  {
+    "id": "domingo",
+    "es": "domingo",
+    "sk": ["nedeľa"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El domingo comemos en familia.", "sk": "V nedeľu obedujeme spolu s rodinou." }]
+  },
+  {
+    "id": "mes",
+    "es": "mes",
+    "sk": ["mesiac"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "meses",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Voy a México el próximo mes.", "sk": "Budúci mesiac idem do Mexika." }]
+  },
+  {
+    "id": "ano",
+    "es": "año",
+    "sk": ["rok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Este año quiero aprender español.", "sk": "Tento rok sa chcem naučiť po španielsky." }],
+    "note": "Pozor na ñ: año = rok, ano je úplne iné (neslušné) slovo."
+  },
+  {
+    "id": "noche",
+    "es": "noche",
+    "sk": ["noc", "večer"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Trabajo de noche.", "sk": "Pracujem v noci." }],
+    "note": "V Mexiku: en la noche = večer, v noci."
+  },
+  {
+    "id": "minuto",
+    "es": "minuto",
+    "sk": ["minúta"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Espérame cinco minutos.", "sk": "Počkaj ma päť minút." }]
+  },
+  {
+    "id": "ahora",
+    "es": "ahora",
+    "sk": ["teraz"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Ahora no puedo, estoy ocupado.", "sk": "Teraz nemôžem, mám prácu." }]
+  },
+  {
+    "id": "ahorita",
+    "es": "ahorita",
+    "sk": ["hneď", "o chvíľu"],
+    "pos": "adv",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [{ "es": "Ahorita vengo.", "sk": "Hneď som späť." }],
+    "note": "Typicky mexické. Znamená „hneď“, v praxi často „o chvíľu“ alebo aj „niekedy neskôr“."
+  },
+  {
+    "id": "siempre",
+    "es": "siempre",
+    "sk": ["vždy"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Siempre desayuno a las siete.", "sk": "Vždy raňajkujem o siedmej." }]
+  },
+  {
+    "id": "nunca",
+    "es": "nunca",
+    "sk": ["nikdy"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Nunca tomo café en la noche.", "sk": "Večer nikdy nepijem kávu." }]
+  },
+  {
+    "id": "todavia",
+    "es": "todavía",
+    "sk": ["ešte", "stále"],
+    "pos": "adv",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [{ "es": "Todavía no termino.", "sk": "Ešte som neskončil." }]
+  },
+  {
+    "id": "ya",
+    "es": "ya",
+    "sk": ["už"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Ya comí, gracias.", "sk": "Už som jedol, ďakujem." }]
+  },
+  {
+    "id": "despues",
+    "es": "después",
+    "sk": ["potom", "neskôr"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Después de la clase vamos al café.", "sk": "Po hodine ideme do kaviarne." }]
+  },
+  {
+    "id": "antes",
+    "es": "antes",
+    "sk": ["predtým", "skôr"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Siempre desayuno antes de trabajar.", "sk": "Pred prácou vždy raňajkujem." }]
+  },
+  {
+    "id": "cumpleanos",
+    "es": "cumpleaños",
+    "sk": ["narodeniny"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cumpleaños",
+    "level": "A1",
+    "topics": ["time", "family"],
+    "examples": [{ "es": "¡Feliz cumpleaños!", "sk": "Všetko najlepšie k narodeninám!" }]
+  },
+  {
+    "id": "mediodia",
+    "es": "mediodía",
+    "sk": ["poludnie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [{ "es": "Nos vemos al mediodía.", "sk": "Uvidíme sa napoludnie." }]
+  }
+]

@@ -18,7 +18,7 @@ export const GENDER_LABELS = { m: 'mužský rod', f: 'ženský rod' } as const
 const EL_FEMININE = new Set(['agua', 'águila', 'ala', 'alma', 'ancla', 'área', 'arma', 'arpa', 'aula', 'ave', 'habla', 'hacha', 'hada', 'hambre'])
 
 // Nouns used only in the plural.
-const PLURAL_ONLY = new Set(['vacaciones'])
+const PLURAL_ONLY = new Set(['ganas', 'lentes', 'tenis', 'vacaciones'])
 
 /** Definite article shown before a noun: "la casa", "el agua", "las vacaciones". */
 export function articleFor(word: Word): string | undefined {

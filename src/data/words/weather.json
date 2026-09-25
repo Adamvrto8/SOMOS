@@ -1,0 +1,199 @@
+[
+  {
+    "id": "clima",
+    "es": "clima",
+    "sk": ["počasie", "podnebie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "¿Cómo está el clima hoy?", "sk": "Aké je dnes počasie?" }],
+    "note": "Hoci končí na -a, je mužského rodu: el clima. V Mexiku sa o počasí bežne hovorí „el clima“."
+  },
+  {
+    "id": "calor",
+    "es": "calor",
+    "sk": ["teplo", "horúčava"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hace mucho calor.", "sk": "Je veľmi teplo." }],
+    "note": "Hace calor = je teplo; tengo calor = je mi teplo."
+  },
+  {
+    "id": "frio",
+    "es": "frío",
+    "sk": ["zima (chlad)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hace frío en la noche.", "sk": "V noci je zima." }],
+    "note": "Hace frío = je zima; tengo frío = je mi zima."
+  },
+  {
+    "id": "sol",
+    "es": "sol",
+    "sk": ["slnko"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "soles",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hoy hace sol.", "sk": "Dnes svieti slnko." }]
+  },
+  {
+    "id": "lluvia",
+    "es": "lluvia",
+    "sk": ["dážď"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Me gusta el sonido de la lluvia.", "sk": "Mám rád zvuk dažďa." }]
+  },
+  {
+    "id": "llueve",
+    "es": "llueve",
+    "sk": ["prší"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En verano llueve mucho en la tarde.", "sk": "V lete poobede často prší." }],
+    "note": "Infinitív: llover. Está lloviendo = práve prší."
+  },
+  {
+    "id": "nube",
+    "es": "nube",
+    "sk": ["oblak", "mrak"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hay muchas nubes.", "sk": "Je veľa oblakov." }]
+  },
+  {
+    "id": "viento",
+    "es": "viento",
+    "sk": ["vietor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hace mucho viento.", "sk": "Veľmi fúka." }]
+  },
+  {
+    "id": "nieve",
+    "es": "nieve",
+    "sk": ["sneh"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En la montaña hay nieve.", "sk": "Na horách je sneh." }]
+  },
+  {
+    "id": "tormenta",
+    "es": "tormenta",
+    "sk": ["búrka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Viene una tormenta.", "sk": "Blíži sa búrka." }]
+  },
+  {
+    "id": "temperatura",
+    "es": "temperatura",
+    "sk": ["teplota"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [{ "es": "La temperatura baja en la noche.", "sk": "V noci teplota klesá." }]
+  },
+  {
+    "id": "grado",
+    "es": "grado",
+    "sk": ["stupeň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Estamos a treinta grados.", "sk": "Je tridsať stupňov." }]
+  },
+  {
+    "id": "paraguas",
+    "es": "paraguas",
+    "sk": ["dáždnik"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "paraguas",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "No olvides el paraguas.", "sk": "Nezabudni si dáždnik." }]
+  },
+  {
+    "id": "verano",
+    "es": "verano",
+    "sk": ["leto"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En verano vamos a la playa.", "sk": "V lete chodíme na pláž." }]
+  },
+  {
+    "id": "invierno",
+    "es": "invierno",
+    "sk": ["zima (ročné obdobie)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En invierno no hace mucho frío en Cancún.", "sk": "V zime v Cancúne nie je veľká zima." }]
+  },
+  {
+    "id": "primavera",
+    "es": "primavera",
+    "sk": ["jar"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "La primavera es muy calurosa en México.", "sk": "Jar je v Mexiku veľmi teplá." }],
+    "note": "V Mexiku býva najteplejšie často na jar (apríl, máj)."
+  },
+  {
+    "id": "otono",
+    "es": "otoño",
+    "sk": ["jeseň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Me gusta el otoño.", "sk": "Mám rád jeseň." }]
+  },
+  {
+    "id": "caliente",
+    "es": "caliente",
+    "sk": ["horúci", "teplý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "El café está muy caliente.", "sk": "Káva je veľmi horúca." }],
+    "note": "caliente = horúci (jedlo, voda); o počasí sa hovorí „hace calor“."
+  },
+  {
+    "id": "nublado",
+    "es": "nublado",
+    "sk": ["zamračený"],
+    "pos": "adj",
+    "feminine": "nublada",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hoy está nublado.", "sk": "Dnes je zamračené." }]
+  }
+]

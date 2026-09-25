@@ -1,0 +1,1055 @@
+[
+  {
+    "id": "estudiar",
+    "sk": ["študovať", "učiť sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "estudiando",
+    "presente": { "yo": "estudio", "tu": "estudias", "el": "estudia", "nosotros": "estudiamos", "ellos": "estudian" },
+    "preterito": { "yo": "estudié", "tu": "estudiaste", "el": "estudió", "nosotros": "estudiamos", "ellos": "estudiaron" },
+    "level": "A1"
+  },
+  {
+    "id": "caminar",
+    "sk": ["chodiť (pešo)", "kráčať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "caminando",
+    "presente": { "yo": "camino", "tu": "caminas", "el": "camina", "nosotros": "caminamos", "ellos": "caminan" },
+    "preterito": { "yo": "caminé", "tu": "caminaste", "el": "caminó", "nosotros": "caminamos", "ellos": "caminaron" },
+    "level": "A1"
+  },
+  {
+    "id": "cocinar",
+    "sk": ["variť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "cocinando",
+    "presente": { "yo": "cocino", "tu": "cocinas", "el": "cocina", "nosotros": "cocinamos", "ellos": "cocinan" },
+    "preterito": { "yo": "cociné", "tu": "cocinaste", "el": "cocinó", "nosotros": "cocinamos", "ellos": "cocinaron" },
+    "level": "A1"
+  },
+  {
+    "id": "limpiar",
+    "sk": ["upratovať", "čistiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "limpiando",
+    "presente": { "yo": "limpio", "tu": "limpias", "el": "limpia", "nosotros": "limpiamos", "ellos": "limpian" },
+    "preterito": { "yo": "limpié", "tu": "limpiaste", "el": "limpió", "nosotros": "limpiamos", "ellos": "limpiaron" },
+    "level": "A1"
+  },
+  {
+    "id": "escuchar",
+    "sk": ["počúvať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "escuchando",
+    "presente": { "yo": "escucho", "tu": "escuchas", "el": "escucha", "nosotros": "escuchamos", "ellos": "escuchan" },
+    "preterito": { "yo": "escuché", "tu": "escuchaste", "el": "escuchó", "nosotros": "escuchamos", "ellos": "escucharon" },
+    "level": "A1"
+  },
+  {
+    "id": "mirar",
+    "sk": ["pozerať (sa)"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "mirando",
+    "presente": { "yo": "miro", "tu": "miras", "el": "mira", "nosotros": "miramos", "ellos": "miran" },
+    "preterito": { "yo": "miré", "tu": "miraste", "el": "miró", "nosotros": "miramos", "ellos": "miraron" },
+    "level": "A1"
+  },
+  {
+    "id": "necesitar",
+    "sk": ["potrebovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "necesitando",
+    "presente": { "yo": "necesito", "tu": "necesitas", "el": "necesita", "nosotros": "necesitamos", "ellos": "necesitan" },
+    "preterito": {
+      "yo": "necesité",
+      "tu": "necesitaste",
+      "el": "necesitó",
+      "nosotros": "necesitamos",
+      "ellos": "necesitaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "esperar",
+    "sk": ["čakať", "dúfať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "esperando",
+    "presente": { "yo": "espero", "tu": "esperas", "el": "espera", "nosotros": "esperamos", "ellos": "esperan" },
+    "preterito": { "yo": "esperé", "tu": "esperaste", "el": "esperó", "nosotros": "esperamos", "ellos": "esperaron" },
+    "level": "A1"
+  },
+  {
+    "id": "ayudar",
+    "sk": ["pomáhať", "pomôcť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "ayudando",
+    "presente": { "yo": "ayudo", "tu": "ayudas", "el": "ayuda", "nosotros": "ayudamos", "ellos": "ayudan" },
+    "preterito": { "yo": "ayudé", "tu": "ayudaste", "el": "ayudó", "nosotros": "ayudamos", "ellos": "ayudaron" },
+    "level": "A1"
+  },
+  {
+    "id": "bailar",
+    "sk": ["tancovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "bailando",
+    "presente": { "yo": "bailo", "tu": "bailas", "el": "baila", "nosotros": "bailamos", "ellos": "bailan" },
+    "preterito": { "yo": "bailé", "tu": "bailaste", "el": "bailó", "nosotros": "bailamos", "ellos": "bailaron" },
+    "level": "A1"
+  },
+  {
+    "id": "cantar",
+    "sk": ["spievať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "cantando",
+    "presente": { "yo": "canto", "tu": "cantas", "el": "canta", "nosotros": "cantamos", "ellos": "cantan" },
+    "preterito": { "yo": "canté", "tu": "cantaste", "el": "cantó", "nosotros": "cantamos", "ellos": "cantaron" },
+    "level": "A1"
+  },
+  {
+    "id": "viajar",
+    "sk": ["cestovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "viajando",
+    "presente": { "yo": "viajo", "tu": "viajas", "el": "viaja", "nosotros": "viajamos", "ellos": "viajan" },
+    "preterito": { "yo": "viajé", "tu": "viajaste", "el": "viajó", "nosotros": "viajamos", "ellos": "viajaron" },
+    "level": "A1"
+  },
+  {
+    "id": "manejar",
+    "sk": ["šoférovať", "riadiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "manejando",
+    "presente": { "yo": "manejo", "tu": "manejas", "el": "maneja", "nosotros": "manejamos", "ellos": "manejan" },
+    "preterito": { "yo": "manejé", "tu": "manejaste", "el": "manejó", "nosotros": "manejamos", "ellos": "manejaron" },
+    "level": "A1"
+  },
+  {
+    "id": "usar",
+    "sk": ["používať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "usando",
+    "presente": { "yo": "uso", "tu": "usas", "el": "usa", "nosotros": "usamos", "ellos": "usan" },
+    "preterito": { "yo": "usé", "tu": "usaste", "el": "usó", "nosotros": "usamos", "ellos": "usaron" },
+    "level": "A1"
+  },
+  {
+    "id": "llevar",
+    "sk": ["niesť", "nosiť (oblečenie)", "vziať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "llevando",
+    "presente": { "yo": "llevo", "tu": "llevas", "el": "lleva", "nosotros": "llevamos", "ellos": "llevan" },
+    "preterito": { "yo": "llevé", "tu": "llevaste", "el": "llevó", "nosotros": "llevamos", "ellos": "llevaron" },
+    "level": "A1"
+  },
+  {
+    "id": "preguntar",
+    "sk": ["pýtať sa", "opýtať sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "preguntando",
+    "presente": { "yo": "pregunto", "tu": "preguntas", "el": "pregunta", "nosotros": "preguntamos", "ellos": "preguntan" },
+    "preterito": {
+      "yo": "pregunté",
+      "tu": "preguntaste",
+      "el": "preguntó",
+      "nosotros": "preguntamos",
+      "ellos": "preguntaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "contestar",
+    "sk": ["odpovedať", "zdvihnúť (telefón)"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "contestando",
+    "presente": { "yo": "contesto", "tu": "contestas", "el": "contesta", "nosotros": "contestamos", "ellos": "contestan" },
+    "preterito": {
+      "yo": "contesté",
+      "tu": "contestaste",
+      "el": "contestó",
+      "nosotros": "contestamos",
+      "ellos": "contestaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "terminar",
+    "sk": ["skončiť", "dokončiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "terminando",
+    "presente": { "yo": "termino", "tu": "terminas", "el": "termina", "nosotros": "terminamos", "ellos": "terminan" },
+    "preterito": { "yo": "terminé", "tu": "terminaste", "el": "terminó", "nosotros": "terminamos", "ellos": "terminaron" },
+    "level": "A1"
+  },
+  {
+    "id": "regresar",
+    "sk": ["vrátiť sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "regresando",
+    "presente": { "yo": "regreso", "tu": "regresas", "el": "regresa", "nosotros": "regresamos", "ellos": "regresan" },
+    "preterito": { "yo": "regresé", "tu": "regresaste", "el": "regresó", "nosotros": "regresamos", "ellos": "regresaron" },
+    "level": "A1"
+  },
+  {
+    "id": "descansar",
+    "sk": ["oddychovať", "odpočívať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "descansando",
+    "presente": { "yo": "descanso", "tu": "descansas", "el": "descansa", "nosotros": "descansamos", "ellos": "descansan" },
+    "preterito": {
+      "yo": "descansé",
+      "tu": "descansaste",
+      "el": "descansó",
+      "nosotros": "descansamos",
+      "ellos": "descansaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "lavar",
+    "sk": ["umývať", "prať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "lavando",
+    "presente": { "yo": "lavo", "tu": "lavas", "el": "lava", "nosotros": "lavamos", "ellos": "lavan" },
+    "preterito": { "yo": "lavé", "tu": "lavaste", "el": "lavó", "nosotros": "lavamos", "ellos": "lavaron" },
+    "level": "A1"
+  },
+  {
+    "id": "preparar",
+    "sk": ["pripraviť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "preparando",
+    "presente": { "yo": "preparo", "tu": "preparas", "el": "prepara", "nosotros": "preparamos", "ellos": "preparan" },
+    "preterito": { "yo": "preparé", "tu": "preparaste", "el": "preparó", "nosotros": "preparamos", "ellos": "prepararon" },
+    "level": "A1"
+  },
+  {
+    "id": "ganar",
+    "sk": ["zarábať", "vyhrať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "ganando",
+    "presente": { "yo": "gano", "tu": "ganas", "el": "gana", "nosotros": "ganamos", "ellos": "ganan" },
+    "preterito": { "yo": "gané", "tu": "ganaste", "el": "ganó", "nosotros": "ganamos", "ellos": "ganaron" },
+    "level": "A2"
+  },
+  {
+    "id": "rentar",
+    "sk": ["prenajať (si)"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "rentando",
+    "presente": { "yo": "rento", "tu": "rentas", "el": "renta", "nosotros": "rentamos", "ellos": "rentan" },
+    "preterito": { "yo": "renté", "tu": "rentaste", "el": "rentó", "nosotros": "rentamos", "ellos": "rentaron" },
+    "level": "A2"
+  },
+  {
+    "id": "nadar",
+    "sk": ["plávať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "nadando",
+    "presente": { "yo": "nado", "tu": "nadas", "el": "nada", "nosotros": "nadamos", "ellos": "nadan" },
+    "preterito": { "yo": "nadé", "tu": "nadaste", "el": "nadó", "nosotros": "nadamos", "ellos": "nadaron" },
+    "level": "A1"
+  },
+  {
+    "id": "olvidar",
+    "sk": ["zabudnúť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "olvidando",
+    "presente": { "yo": "olvido", "tu": "olvidas", "el": "olvida", "nosotros": "olvidamos", "ellos": "olvidan" },
+    "preterito": { "yo": "olvidé", "tu": "olvidaste", "el": "olvidó", "nosotros": "olvidamos", "ellos": "olvidaron" },
+    "level": "A2"
+  },
+  {
+    "id": "desayunar",
+    "sk": ["raňajkovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "desayunando",
+    "presente": { "yo": "desayuno", "tu": "desayunas", "el": "desayuna", "nosotros": "desayunamos", "ellos": "desayunan" },
+    "preterito": {
+      "yo": "desayuné",
+      "tu": "desayunaste",
+      "el": "desayunó",
+      "nosotros": "desayunamos",
+      "ellos": "desayunaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "cenar",
+    "sk": ["večerať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "cenando",
+    "presente": { "yo": "ceno", "tu": "cenas", "el": "cena", "nosotros": "cenamos", "ellos": "cenan" },
+    "preterito": { "yo": "cené", "tu": "cenaste", "el": "cenó", "nosotros": "cenamos", "ellos": "cenaron" },
+    "level": "A1"
+  },
+  {
+    "id": "visitar",
+    "sk": ["navštíviť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "visitando",
+    "presente": { "yo": "visito", "tu": "visitas", "el": "visita", "nosotros": "visitamos", "ellos": "visitan" },
+    "preterito": { "yo": "visité", "tu": "visitaste", "el": "visitó", "nosotros": "visitamos", "ellos": "visitaron" },
+    "level": "A1"
+  },
+  {
+    "id": "entrar",
+    "sk": ["vojsť", "vstúpiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "entrando",
+    "presente": { "yo": "entro", "tu": "entras", "el": "entra", "nosotros": "entramos", "ellos": "entran" },
+    "preterito": { "yo": "entré", "tu": "entraste", "el": "entró", "nosotros": "entramos", "ellos": "entraron" },
+    "level": "A1"
+  },
+  {
+    "id": "llamar",
+    "sk": ["volať", "telefonovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "llamando",
+    "presente": { "yo": "llamo", "tu": "llamas", "el": "llama", "nosotros": "llamamos", "ellos": "llaman" },
+    "preterito": { "yo": "llamé", "tu": "llamaste", "el": "llamó", "nosotros": "llamamos", "ellos": "llamaron" },
+    "level": "A1"
+  },
+  {
+    "id": "pasar",
+    "sk": ["prejsť", "stráviť (čas)", "stať sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "pasando",
+    "presente": { "yo": "paso", "tu": "pasas", "el": "pasa", "nosotros": "pasamos", "ellos": "pasan" },
+    "preterito": { "yo": "pasé", "tu": "pasaste", "el": "pasó", "nosotros": "pasamos", "ellos": "pasaron" },
+    "level": "A2"
+  },
+  {
+    "id": "dejar",
+    "sk": ["nechať", "prestať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "dejando",
+    "presente": { "yo": "dejo", "tu": "dejas", "el": "deja", "nosotros": "dejamos", "ellos": "dejan" },
+    "preterito": { "yo": "dejé", "tu": "dejaste", "el": "dejó", "nosotros": "dejamos", "ellos": "dejaron" },
+    "level": "A2"
+  },
+  {
+    "id": "estacionar",
+    "sk": ["zaparkovať", "parkovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "estacionando",
+    "presente": {
+      "yo": "estaciono",
+      "tu": "estacionas",
+      "el": "estaciona",
+      "nosotros": "estacionamos",
+      "ellos": "estacionan"
+    },
+    "preterito": {
+      "yo": "estacioné",
+      "tu": "estacionaste",
+      "el": "estacionó",
+      "nosotros": "estacionamos",
+      "ellos": "estacionaron"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "extrañar",
+    "sk": ["chýbať (niekto mi chýba)", "cnieť sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "extrañando",
+    "presente": { "yo": "extraño", "tu": "extrañas", "el": "extraña", "nosotros": "extrañamos", "ellos": "extrañan" },
+    "preterito": { "yo": "extrañé", "tu": "extrañaste", "el": "extrañó", "nosotros": "extrañamos", "ellos": "extrañaron" },
+    "level": "A2"
+  },
+  {
+    "id": "agarrar",
+    "sk": ["chytiť", "vziať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "agarrando",
+    "presente": { "yo": "agarro", "tu": "agarras", "el": "agarra", "nosotros": "agarramos", "ellos": "agarran" },
+    "preterito": { "yo": "agarré", "tu": "agarraste", "el": "agarró", "nosotros": "agarramos", "ellos": "agarraron" },
+    "level": "A2"
+  },
+  {
+    "id": "pagar",
+    "sk": ["platiť", "zaplatiť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "pagando",
+    "presente": { "yo": "pago", "tu": "pagas", "el": "paga", "nosotros": "pagamos", "ellos": "pagan" },
+    "preterito": { "yo": "pagué", "tu": "pagaste", "el": "pagó", "nosotros": "pagamos", "ellos": "pagaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "buscar",
+    "sk": ["hľadať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "buscando",
+    "presente": { "yo": "busco", "tu": "buscas", "el": "busca", "nosotros": "buscamos", "ellos": "buscan" },
+    "preterito": { "yo": "busqué", "tu": "buscaste", "el": "buscó", "nosotros": "buscamos", "ellos": "buscaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "tocar",
+    "sk": ["hrať (na nástroji)", "dotknúť sa"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "tocando",
+    "presente": { "yo": "toco", "tu": "tocas", "el": "toca", "nosotros": "tocamos", "ellos": "tocan" },
+    "preterito": { "yo": "toqué", "tu": "tocaste", "el": "tocó", "nosotros": "tocamos", "ellos": "tocaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "practicar",
+    "sk": ["cvičiť", "trénovať", "precvičovať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "practicando",
+    "presente": { "yo": "practico", "tu": "practicas", "el": "practica", "nosotros": "practicamos", "ellos": "practican" },
+    "preterito": {
+      "yo": "practiqué",
+      "tu": "practicaste",
+      "el": "practicó",
+      "nosotros": "practicamos",
+      "ellos": "practicaron"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "checar",
+    "sk": ["skontrolovať", "pozrieť (si)"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "checando",
+    "presente": { "yo": "checo", "tu": "checas", "el": "checa", "nosotros": "checamos", "ellos": "checan" },
+    "preterito": { "yo": "chequé", "tu": "checaste", "el": "checó", "nosotros": "checamos", "ellos": "checaron" },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "empezar",
+    "sk": ["začať", "začínať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "empezando",
+    "presente": { "yo": "empiezo", "tu": "empiezas", "el": "empieza", "nosotros": "empezamos", "ellos": "empiezan" },
+    "preterito": { "yo": "empecé", "tu": "empezaste", "el": "empezó", "nosotros": "empezamos", "ellos": "empezaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "pensar",
+    "sk": ["myslieť", "rozmýšľať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "pensando",
+    "presente": { "yo": "pienso", "tu": "piensas", "el": "piensa", "nosotros": "pensamos", "ellos": "piensan" },
+    "preterito": { "yo": "pensé", "tu": "pensaste", "el": "pensó", "nosotros": "pensamos", "ellos": "pensaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "cerrar",
+    "sk": ["zatvoriť", "zatvárať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "cerrando",
+    "presente": { "yo": "cierro", "tu": "cierras", "el": "cierra", "nosotros": "cerramos", "ellos": "cierran" },
+    "preterito": { "yo": "cerré", "tu": "cerraste", "el": "cerró", "nosotros": "cerramos", "ellos": "cerraron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "encontrar",
+    "sk": ["nájsť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "encontrando",
+    "presente": {
+      "yo": "encuentro",
+      "tu": "encuentras",
+      "el": "encuentra",
+      "nosotros": "encontramos",
+      "ellos": "encuentran"
+    },
+    "preterito": {
+      "yo": "encontré",
+      "tu": "encontraste",
+      "el": "encontró",
+      "nosotros": "encontramos",
+      "ellos": "encontraron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "costar",
+    "sk": ["stáť (o cene)"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "costando",
+    "presente": { "yo": "cuesto", "tu": "cuestas", "el": "cuesta", "nosotros": "costamos", "ellos": "cuestan" },
+    "preterito": { "yo": "costé", "tu": "costaste", "el": "costó", "nosotros": "costamos", "ellos": "costaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "recordar",
+    "sk": ["pamätať si", "pripomenúť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "recordando",
+    "presente": { "yo": "recuerdo", "tu": "recuerdas", "el": "recuerda", "nosotros": "recordamos", "ellos": "recuerdan" },
+    "preterito": { "yo": "recordé", "tu": "recordaste", "el": "recordó", "nosotros": "recordamos", "ellos": "recordaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "jugar",
+    "sk": ["hrať (sa)"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "jugando",
+    "presente": { "yo": "juego", "tu": "juegas", "el": "juega", "nosotros": "jugamos", "ellos": "juegan" },
+    "preterito": { "yo": "jugué", "tu": "jugaste", "el": "jugó", "nosotros": "jugamos", "ellos": "jugaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "probar",
+    "sk": ["ochutnať", "vyskúšať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "probando",
+    "presente": { "yo": "pruebo", "tu": "pruebas", "el": "prueba", "nosotros": "probamos", "ellos": "prueban" },
+    "preterito": { "yo": "probé", "tu": "probaste", "el": "probó", "nosotros": "probamos", "ellos": "probaron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "levantarse",
+    "sk": ["vstávať", "vstať"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "levantando",
+    "presente": {
+      "yo": "me levanto",
+      "tu": "te levantas",
+      "el": "se levanta",
+      "nosotros": "nos levantamos",
+      "ellos": "se levantan"
+    },
+    "preterito": {
+      "yo": "me levanté",
+      "tu": "te levantaste",
+      "el": "se levantó",
+      "nosotros": "nos levantamos",
+      "ellos": "se levantaron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "bañarse",
+    "sk": ["osprchovať sa", "okúpať sa"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "bañando",
+    "presente": { "yo": "me baño", "tu": "te bañas", "el": "se baña", "nosotros": "nos bañamos", "ellos": "se bañan" },
+    "preterito": { "yo": "me bañé", "tu": "te bañaste", "el": "se bañó", "nosotros": "nos bañamos", "ellos": "se bañaron" },
+    "level": "A1"
+  },
+  {
+    "id": "quedarse",
+    "sk": ["zostať", "ostať"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "quedando",
+    "presente": {
+      "yo": "me quedo",
+      "tu": "te quedas",
+      "el": "se queda",
+      "nosotros": "nos quedamos",
+      "ellos": "se quedan"
+    },
+    "preterito": {
+      "yo": "me quedé",
+      "tu": "te quedaste",
+      "el": "se quedó",
+      "nosotros": "nos quedamos",
+      "ellos": "se quedaron"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "despertarse",
+    "sk": ["zobudiť sa", "budiť sa"],
+    "group": "ar",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "despertando",
+    "presente": {
+      "yo": "me despierto",
+      "tu": "te despiertas",
+      "el": "se despierta",
+      "nosotros": "nos despertamos",
+      "ellos": "se despiertan"
+    },
+    "preterito": {
+      "yo": "me desperté",
+      "tu": "te despertaste",
+      "el": "se despertó",
+      "nosotros": "nos despertamos",
+      "ellos": "se despertaron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "acostarse",
+    "sk": ["ísť spať", "ľahnúť si"],
+    "group": "ar",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "acostando",
+    "presente": {
+      "yo": "me acuesto",
+      "tu": "te acuestas",
+      "el": "se acuesta",
+      "nosotros": "nos acostamos",
+      "ellos": "se acuestan"
+    },
+    "preterito": {
+      "yo": "me acosté",
+      "tu": "te acostaste",
+      "el": "se acostó",
+      "nosotros": "nos acostamos",
+      "ellos": "se acostaron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "sentarse",
+    "sk": ["sadnúť si", "sedieť"],
+    "group": "ar",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "sentando",
+    "presente": {
+      "yo": "me siento",
+      "tu": "te sientas",
+      "el": "se sienta",
+      "nosotros": "nos sentamos",
+      "ellos": "se sientan"
+    },
+    "preterito": {
+      "yo": "me senté",
+      "tu": "te sentaste",
+      "el": "se sentó",
+      "nosotros": "nos sentamos",
+      "ellos": "se sentaron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "enojarse",
+    "sk": ["nahnevať sa", "hnevať sa"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "enojando",
+    "presente": {
+      "yo": "me enojo",
+      "tu": "te enojas",
+      "el": "se enoja",
+      "nosotros": "nos enojamos",
+      "ellos": "se enojan"
+    },
+    "preterito": {
+      "yo": "me enojé",
+      "tu": "te enojaste",
+      "el": "se enojó",
+      "nosotros": "nos enojamos",
+      "ellos": "se enojaron"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "preocuparse",
+    "sk": ["robiť si starosti", "báť sa (o niečo)"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "preocupando",
+    "presente": {
+      "yo": "me preocupo",
+      "tu": "te preocupas",
+      "el": "se preocupa",
+      "nosotros": "nos preocupamos",
+      "ellos": "se preocupan"
+    },
+    "preterito": {
+      "yo": "me preocupé",
+      "tu": "te preocupaste",
+      "el": "se preocupó",
+      "nosotros": "nos preocupamos",
+      "ellos": "se preocuparon"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "enfermarse",
+    "sk": ["ochorieť"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "enfermando",
+    "presente": {
+      "yo": "me enfermo",
+      "tu": "te enfermas",
+      "el": "se enferma",
+      "nosotros": "nos enfermamos",
+      "ellos": "se enferman"
+    },
+    "preterito": {
+      "yo": "me enfermé",
+      "tu": "te enfermaste",
+      "el": "se enfermó",
+      "nosotros": "nos enfermamos",
+      "ellos": "se enfermaron"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "dar",
+    "sk": ["dať", "dávať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "dando",
+    "presente": { "yo": "doy", "tu": "das", "el": "da", "nosotros": "damos", "ellos": "dan" },
+    "preterito": { "yo": "di", "tu": "diste", "el": "dio", "nosotros": "dimos", "ellos": "dieron" },
+    "irregularForms": ["presente.yo", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "beber",
+    "sk": ["piť"],
+    "group": "er",
+    "regular": true,
+    "gerund": "bebiendo",
+    "presente": { "yo": "bebo", "tu": "bebes", "el": "bebe", "nosotros": "bebemos", "ellos": "beben" },
+    "preterito": { "yo": "bebí", "tu": "bebiste", "el": "bebió", "nosotros": "bebimos", "ellos": "bebieron" },
+    "level": "A1"
+  },
+  {
+    "id": "aprender",
+    "sk": ["učiť sa", "naučiť sa"],
+    "group": "er",
+    "regular": true,
+    "gerund": "aprendiendo",
+    "presente": { "yo": "aprendo", "tu": "aprendes", "el": "aprende", "nosotros": "aprendemos", "ellos": "aprenden" },
+    "preterito": {
+      "yo": "aprendí",
+      "tu": "aprendiste",
+      "el": "aprendió",
+      "nosotros": "aprendimos",
+      "ellos": "aprendieron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "correr",
+    "sk": ["behať", "bežať"],
+    "group": "er",
+    "regular": true,
+    "gerund": "corriendo",
+    "presente": { "yo": "corro", "tu": "corres", "el": "corre", "nosotros": "corremos", "ellos": "corren" },
+    "preterito": { "yo": "corrí", "tu": "corriste", "el": "corrió", "nosotros": "corrimos", "ellos": "corrieron" },
+    "level": "A1"
+  },
+  {
+    "id": "vender",
+    "sk": ["predávať"],
+    "group": "er",
+    "regular": true,
+    "gerund": "vendiendo",
+    "presente": { "yo": "vendo", "tu": "vendes", "el": "vende", "nosotros": "vendemos", "ellos": "venden" },
+    "preterito": { "yo": "vendí", "tu": "vendiste", "el": "vendió", "nosotros": "vendimos", "ellos": "vendieron" },
+    "level": "A1"
+  },
+  {
+    "id": "leer",
+    "sk": ["čítať"],
+    "group": "er",
+    "regular": false,
+    "gerund": "leyendo",
+    "gerundIrregular": true,
+    "presente": { "yo": "leo", "tu": "lees", "el": "lee", "nosotros": "leemos", "ellos": "leen" },
+    "preterito": { "yo": "leí", "tu": "leíste", "el": "leyó", "nosotros": "leímos", "ellos": "leyeron" },
+    "irregularForms": ["preterito.tu", "preterito.el", "preterito.nosotros", "preterito.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "entender",
+    "sk": ["rozumieť", "pochopiť"],
+    "group": "er",
+    "regular": false,
+    "gerund": "entendiendo",
+    "presente": { "yo": "entiendo", "tu": "entiendes", "el": "entiende", "nosotros": "entendemos", "ellos": "entienden" },
+    "preterito": {
+      "yo": "entendí",
+      "tu": "entendiste",
+      "el": "entendió",
+      "nosotros": "entendimos",
+      "ellos": "entendieron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "perder",
+    "sk": ["stratiť", "prehrať", "zmeškať"],
+    "group": "er",
+    "regular": false,
+    "gerund": "perdiendo",
+    "presente": { "yo": "pierdo", "tu": "pierdes", "el": "pierde", "nosotros": "perdemos", "ellos": "pierden" },
+    "preterito": { "yo": "perdí", "tu": "perdiste", "el": "perdió", "nosotros": "perdimos", "ellos": "perdieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "volver",
+    "sk": ["vrátiť sa"],
+    "group": "er",
+    "regular": false,
+    "gerund": "volviendo",
+    "presente": { "yo": "vuelvo", "tu": "vuelves", "el": "vuelve", "nosotros": "volvemos", "ellos": "vuelven" },
+    "preterito": { "yo": "volví", "tu": "volviste", "el": "volvió", "nosotros": "volvimos", "ellos": "volvieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "saber",
+    "sk": ["vedieť"],
+    "group": "er",
+    "regular": false,
+    "gerund": "sabiendo",
+    "presente": { "yo": "sé", "tu": "sabes", "el": "sabe", "nosotros": "sabemos", "ellos": "saben" },
+    "preterito": { "yo": "supe", "tu": "supiste", "el": "supo", "nosotros": "supimos", "ellos": "supieron" },
+    "irregularForms": ["presente.yo", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "conocer",
+    "sk": ["poznať", "spoznať"],
+    "group": "er",
+    "regular": false,
+    "gerund": "conociendo",
+    "presente": { "yo": "conozco", "tu": "conoces", "el": "conoce", "nosotros": "conocemos", "ellos": "conocen" },
+    "preterito": { "yo": "conocí", "tu": "conociste", "el": "conoció", "nosotros": "conocimos", "ellos": "conocieron" },
+    "irregularForms": ["presente.yo"],
+    "level": "A1"
+  },
+  {
+    "id": "poner",
+    "sk": ["dať", "položiť"],
+    "group": "er",
+    "regular": false,
+    "gerund": "poniendo",
+    "presente": { "yo": "pongo", "tu": "pones", "el": "pone", "nosotros": "ponemos", "ellos": "ponen" },
+    "preterito": { "yo": "puse", "tu": "pusiste", "el": "puso", "nosotros": "pusimos", "ellos": "pusieron" },
+    "irregularForms": ["presente.yo", "preterito.*"],
+    "level": "A1"
+  },
+  {
+    "id": "traer",
+    "sk": ["priniesť", "nosiť"],
+    "group": "er",
+    "regular": false,
+    "gerund": "trayendo",
+    "gerundIrregular": true,
+    "presente": { "yo": "traigo", "tu": "traes", "el": "trae", "nosotros": "traemos", "ellos": "traen" },
+    "preterito": { "yo": "traje", "tu": "trajiste", "el": "trajo", "nosotros": "trajimos", "ellos": "trajeron" },
+    "irregularForms": ["presente.yo", "preterito.*"],
+    "level": "A2"
+  },
+  {
+    "id": "ver",
+    "sk": ["vidieť", "pozerať"],
+    "group": "er",
+    "regular": false,
+    "gerund": "viendo",
+    "presente": { "yo": "veo", "tu": "ves", "el": "ve", "nosotros": "vemos", "ellos": "ven" },
+    "preterito": { "yo": "vi", "tu": "viste", "el": "vio", "nosotros": "vimos", "ellos": "vieron" },
+    "irregularForms": ["presente.yo", "preterito.yo", "preterito.el"],
+    "level": "A1"
+  },
+  {
+    "id": "escribir",
+    "sk": ["písať", "napísať"],
+    "group": "ir",
+    "regular": true,
+    "gerund": "escribiendo",
+    "presente": { "yo": "escribo", "tu": "escribes", "el": "escribe", "nosotros": "escribimos", "ellos": "escriben" },
+    "preterito": {
+      "yo": "escribí",
+      "tu": "escribiste",
+      "el": "escribió",
+      "nosotros": "escribimos",
+      "ellos": "escribieron"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "abrir",
+    "sk": ["otvoriť", "otvárať"],
+    "group": "ir",
+    "regular": true,
+    "gerund": "abriendo",
+    "presente": { "yo": "abro", "tu": "abres", "el": "abre", "nosotros": "abrimos", "ellos": "abren" },
+    "preterito": { "yo": "abrí", "tu": "abriste", "el": "abrió", "nosotros": "abrimos", "ellos": "abrieron" },
+    "level": "A1"
+  },
+  {
+    "id": "subir",
+    "sk": ["ísť hore", "nastúpiť"],
+    "group": "ir",
+    "regular": true,
+    "gerund": "subiendo",
+    "presente": { "yo": "subo", "tu": "subes", "el": "sube", "nosotros": "subimos", "ellos": "suben" },
+    "preterito": { "yo": "subí", "tu": "subiste", "el": "subió", "nosotros": "subimos", "ellos": "subieron" },
+    "level": "A1"
+  },
+  {
+    "id": "pedir",
+    "sk": ["objednať si", "pýtať si", "žiadať"],
+    "group": "ir",
+    "regular": false,
+    "gerund": "pidiendo",
+    "gerundIrregular": true,
+    "presente": { "yo": "pido", "tu": "pides", "el": "pide", "nosotros": "pedimos", "ellos": "piden" },
+    "preterito": { "yo": "pedí", "tu": "pediste", "el": "pidió", "nosotros": "pedimos", "ellos": "pidieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "repetir",
+    "sk": ["zopakovať", "opakovať"],
+    "group": "ir",
+    "regular": false,
+    "gerund": "repitiendo",
+    "gerundIrregular": true,
+    "presente": { "yo": "repito", "tu": "repites", "el": "repite", "nosotros": "repetimos", "ellos": "repiten" },
+    "preterito": { "yo": "repetí", "tu": "repetiste", "el": "repitió", "nosotros": "repetimos", "ellos": "repitieron" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "sentirse",
+    "sk": ["cítiť sa"],
+    "group": "ir",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "sintiendo",
+    "gerundIrregular": true,
+    "presente": {
+      "yo": "me siento",
+      "tu": "te sientes",
+      "el": "se siente",
+      "nosotros": "nos sentimos",
+      "ellos": "se sienten"
+    },
+    "preterito": {
+      "yo": "me sentí",
+      "tu": "te sentiste",
+      "el": "se sintió",
+      "nosotros": "nos sentimos",
+      "ellos": "se sintieron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "preferir",
+    "sk": ["mať radšej", "uprednostniť"],
+    "group": "ir",
+    "regular": false,
+    "gerund": "prefiriendo",
+    "gerundIrregular": true,
+    "presente": { "yo": "prefiero", "tu": "prefieres", "el": "prefiere", "nosotros": "preferimos", "ellos": "prefieren" },
+    "preterito": {
+      "yo": "preferí",
+      "tu": "preferiste",
+      "el": "prefirió",
+      "nosotros": "preferimos",
+      "ellos": "prefirieron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "divertirse",
+    "sk": ["zabávať sa", "zabaviť sa"],
+    "group": "ir",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "divirtiendo",
+    "gerundIrregular": true,
+    "presente": {
+      "yo": "me divierto",
+      "tu": "te diviertes",
+      "el": "se divierte",
+      "nosotros": "nos divertimos",
+      "ellos": "se divierten"
+    },
+    "preterito": {
+      "yo": "me divertí",
+      "tu": "te divertiste",
+      "el": "se divirtió",
+      "nosotros": "nos divertimos",
+      "ellos": "se divirtieron"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "level": "A2"
+  }
+]

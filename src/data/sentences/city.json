@@ -1,0 +1,489 @@
+[
+  {
+    "id": "s032",
+    "es": "Tomo el camión para ir al trabajo.",
+    "sk": "Do práce chodím autobusom.",
+    "level": "A1",
+    "topics": ["city", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Tomo", "el", "camión", "para", "ir", "al", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tomo",
+        "lemma": "tomar",
+        "hint": "tomar · yo · presente",
+        "distractors": ["Toma", "Tomé", "Tomas"]
+      }
+    ]
+  },
+  {
+    "id": "s033",
+    "es": "Mi carro está en el estacionamiento.",
+    "sk": "Moje auto je na parkovisku.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "carro", "está", "en", "el", "estacionamiento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s034",
+    "es": "¿Vienes con nosotros al centro?",
+    "sk": "Pôjdeš s nami do centra?",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Vienes", "con", "nosotros", "al", "centro", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Vienes",
+        "lemma": "venir",
+        "hint": "venir · tú · presente",
+        "distractors": ["Vengo", "Viene", "Vienen"]
+      }
+    ]
+  },
+  {
+    "id": "s035",
+    "es": "Voy al mercado a comprar fruta.",
+    "sk": "Idem na trh kúpiť ovocie.",
+    "level": "A1",
+    "topics": ["city", "food"],
+    "grammar": ["presente"],
+    "tokens": ["Voy", "al", "mercado", "a", "comprar", "fruta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["Va", "Vamos", "Fui"]
+      }
+    ]
+  },
+  {
+    "id": "s036",
+    "es": "La tienda cierra a las nueve.",
+    "sk": "Obchod zatvára o deviatej.",
+    "level": "A1",
+    "topics": ["city", "time"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["La", "tienda", "cierra", "a", "las", "nueve", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
+  },
+  {
+    "id": "s037",
+    "es": "Ayer compré una camisa en el centro.",
+    "sk": "Včera som si v centre kúpil košeľu.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "compré", "una", "camisa", "en", "el", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "distractors": ["compro", "compró", "compraste"]
+      }
+    ]
+  },
+  {
+    "id": "s038",
+    "es": "¿Dónde compran ustedes las tortillas?",
+    "sk": "Kde kupujete tortilly?",
+    "level": "A1",
+    "topics": ["city", "food"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Dónde", "compran", "ustedes", "las", "tortillas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compran",
+        "lemma": "comprar",
+        "hint": "comprar · ustedes · presente",
+        "distractors": ["compras", "compramos", "compraron"]
+      }
+    ]
+  },
+  {
+    "id": "s039",
+    "es": "Estoy buscando la calle Juárez.",
+    "sk": "Hľadám ulicu Juárez.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "buscando", "la", "calle", "Juárez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "estar · yo · presente",
+        "distractors": ["Soy", "Está", "Estás"]
+      }
+    ]
+  },
+  {
+    "id": "s132",
+    "es": "¿Dónde está el banco más cercano?",
+    "sk": "Kde je najbližšia banka?",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Dónde", "está", "el", "banco", "más", "cercano", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s133",
+    "es": "El museo abre a las diez.",
+    "sk": "Múzeum otvára o desiatej.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["El", "museo", "abre", "a", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abre",
+        "lemma": "abrir",
+        "hint": "abrir · él · presente",
+        "distractors": ["abren", "abres", "abrió"]
+      }
+    ]
+  },
+  {
+    "id": "s134",
+    "es": "Caminamos por el centro toda la tarde.",
+    "sk": "Celé popoludnie sme sa prechádzali po centre.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Caminamos", "por", "el", "centro", "toda", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Caminamos",
+        "lemma": "caminar",
+        "hint": "caminar · nosotros · pretérito",
+        "distractors": ["Caminé", "Caminó", "Caminaste"]
+      }
+    ]
+  },
+  {
+    "id": "s135",
+    "es": "Hay mucho tráfico en la mañana.",
+    "sk": "Ráno je veľká zápcha.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Hay", "mucho", "tráfico", "en", "la", "mañana", "."],
+    "cloze": [{ "tokenIndex": 4, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+  },
+  {
+    "id": "s136",
+    "es": "La farmacia está a dos cuadras.",
+    "sk": "Lekáreň je o dva bloky ďalej.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["La", "farmacia", "está", "a", "dos", "cuadras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s137",
+    "es": "Da vuelta a la izquierda en la esquina.",
+    "sk": "Na rohu odboč doľava.",
+    "level": "A1",
+    "topics": ["city"],
+    "tokens": ["Da", "vuelta", "a", "la", "izquierda", "en", "la", "esquina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "izquierda",
+        "lemma": "izquierda",
+        "hint": "vľavo",
+        "distractors": ["derecha", "esquina", "cuadra"]
+      }
+    ]
+  },
+  {
+    "id": "s138",
+    "es": "No encuentro la estación de metro.",
+    "sk": "Neviem nájsť stanicu metra.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["No", "encuentro", "la", "estación", "de", "metro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encuentro",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · presente",
+        "distractors": ["encuentra", "encuentran", "encontré"]
+      }
+    ]
+  },
+  {
+    "id": "s139",
+    "es": "¿Me puede decir dónde está el zócalo?",
+    "sk": "Môžete mi povedať, kde je hlavné námestie?",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "puede", "decir", "dónde", "está", "el", "zócalo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder · usted · presente",
+        "distractors": ["pueden", "puedes", "pudo"]
+      }
+    ]
+  },
+  {
+    "id": "s140",
+    "es": "Agarramos un taxi para ir al museo.",
+    "sk": "Do múzea sme išli taxíkom.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Agarramos", "un", "taxi", "para", "ir", "al", "museo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Agarramos",
+        "lemma": "agarrar",
+        "hint": "agarrar · nosotros · pretérito",
+        "distractors": ["Agarré", "Agarró", "Agarraste"]
+      }
+    ]
+  },
+  {
+    "id": "s141",
+    "es": "El camión pasa cada quince minutos.",
+    "sk": "Autobus chodí každých pätnásť minút.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["El", "camión", "pasa", "cada", "quince", "minutos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pasa",
+        "lemma": "pasar",
+        "hint": "pasar · él · presente",
+        "distractors": ["pasan", "pasas", "pasó"]
+      }
+    ]
+  },
+  {
+    "id": "s142",
+    "es": "Estacioné el carro enfrente de la iglesia.",
+    "sk": "Auto som zaparkoval pred kostolom.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Estacioné", "el", "carro", "enfrente", "de", "la", "iglesia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estacioné",
+        "lemma": "estacionar",
+        "hint": "estacionar · yo · pretérito",
+        "distractors": ["Estacionó", "Estacionaron", "Estaciono"]
+      }
+    ]
+  },
+  {
+    "id": "s143",
+    "es": "Esta colonia es muy tranquila.",
+    "sk": "Táto štvrť je veľmi pokojná.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Esta", "colonia", "es", "muy", "tranquila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · ella · presente",
+        "distractors": ["son", "eres", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s144",
+    "es": "Los bancos cierran a las cuatro.",
+    "sk": "Banky zatvárajú o štvrtej.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "bancos", "cierran", "a", "las", "cuatro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cierran",
+        "lemma": "cerrar",
+        "hint": "cerrar · ellos · presente",
+        "distractors": ["cierras", "cerramos", "cerraron"]
+      }
+    ]
+  },
+  {
+    "id": "s145",
+    "es": "¿Vives cerca o lejos de aquí?",
+    "sk": "Bývaš blízko alebo ďaleko odtiaľto?",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Vives", "cerca", "o", "lejos", "de", "aquí", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Vives",
+        "lemma": "vivir",
+        "hint": "vivir · tú · presente",
+        "distractors": ["Vivimos", "Vivo", "Viviste"]
+      }
+    ]
+  },
+  {
+    "id": "s146",
+    "es": "Te estoy esperando en la plaza.",
+    "sk": "Čakám ťa na námestí.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["progresivo"],
+    "tokens": ["Te", "estoy", "esperando", "en", "la", "plaza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "esperando",
+        "lemma": "esperar",
+        "hint": "esperar · gerundio",
+        "distractors": ["espera", "esperar", "esperan"]
+      }
+    ]
+  },
+  {
+    "id": "s147",
+    "es": "Subimos al metro en la estación Hidalgo.",
+    "sk": "Do metra sme nastúpili na stanici Hidalgo.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Subimos", "al", "metro", "en", "la", "estación", "Hidalgo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["Subí", "Subió", "Subiste"]
+      }
+    ]
+  },
+  {
+    "id": "s148",
+    "es": "La ciudad es enorme y tiene mucho tráfico.",
+    "sk": "Mesto je obrovské a je v ňom veľa premávky.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["La", "ciudad", "es", "enorme", "y", "tiene", "mucho", "tráfico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · ella · presente",
+        "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s149",
+    "es": "Entramos al museo sin pagar.",
+    "sk": "Do múzea sme vošli zadarmo.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Entramos", "al", "museo", "sin", "pagar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Entramos",
+        "lemma": "entrar",
+        "hint": "entrar · nosotros · pretérito",
+        "distractors": ["Entré", "Entró", "Entraste"]
+      }
+    ]
+  },
+  {
+    "id": "s150",
+    "es": "¿Sabes manejar en la Ciudad de México?",
+    "sk": "Vieš šoférovať v Mexiko City?",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Sabes", "manejar", "en", "la", "Ciudad", "de", "México", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Sabes",
+        "lemma": "saber",
+        "hint": "saber · tú · presente",
+        "distractors": ["Sabemos", "Sé", "Supiste"]
+      }
+    ]
+  },
+  {
+    "id": "s151",
+    "es": "Mañana voy al banco a sacar dinero.",
+    "sk": "Zajtra idem do banky vybrať peniaze.",
+    "level": "A1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Mañana", "voy", "al", "banco", "a", "sacar", "dinero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["va", "van", "fui"]
+      }
+    ]
+  }
+]

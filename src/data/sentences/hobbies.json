@@ -1,0 +1,324 @@
+[
+  {
+    "id": "s341",
+    "es": "¿Qué haces en tu tiempo libre?",
+    "sk": "Čo robíš vo voľnom čase?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "haces", "en", "tu", "tiempo", "libre", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "haces",
+        "lemma": "hacer",
+        "hint": "hacer · tú · presente",
+        "distractors": ["hacemos", "hago", "hiciste"]
+      }
+    ]
+  },
+  {
+    "id": "s342",
+    "es": "Me gusta leer y escuchar música.",
+    "sk": "Rád čítam a počúvam hudbu.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "tokens": ["Me", "gusta", "leer", "y", "escuchar", "música", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "música",
+        "lemma": "música",
+        "hint": "hudba",
+        "distractors": ["película", "canción", "fiesta"]
+      }
+    ]
+  },
+  {
+    "id": "s343",
+    "es": "Los sábados juego fútbol con mis amigos.",
+    "sk": "V sobotu hrám s kamarátmi futbal.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "sábados", "juego", "fútbol", "con", "mis", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "juego",
+        "lemma": "jugar",
+        "hint": "jugar · yo · presente",
+        "distractors": ["juega", "juegan", "jugué"]
+      }
+    ]
+  },
+  {
+    "id": "s344",
+    "es": "Ayer vimos una película muy buena.",
+    "sk": "Včera sme videli veľmi dobrý film.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "vimos", "una", "película", "muy", "buena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["vi", "vio", "vemos"]
+      }
+    ]
+  },
+  {
+    "id": "s345",
+    "es": "Mi hermano toca la guitarra muy bien.",
+    "sk": "Brat veľmi dobre hrá na gitare.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "toca", "la", "guitarra", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "toca",
+        "lemma": "tocar",
+        "hint": "tocar · él · presente",
+        "distractors": ["tocan", "tocas", "tocó"]
+      }
+    ]
+  },
+  {
+    "id": "s346",
+    "es": "¿Bailas salsa?",
+    "sk": "Tancuješ salsu?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Bailas", "salsa", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Bailas",
+        "lemma": "bailar",
+        "hint": "bailar · tú · presente",
+        "distractors": ["Bailamos", "Bailo", "Bailaste"]
+      }
+    ]
+  },
+  {
+    "id": "s347",
+    "es": "Nos divertimos mucho en el concierto.",
+    "sk": "Na koncerte sme sa super zabavili.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "divertimos", "mucho", "en", "el", "concierto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "divertimos",
+        "lemma": "divertirse",
+        "hint": "divertirse · nosotros · pretérito",
+        "distractors": ["divertí", "divirtió", "divertiste"]
+      }
+    ]
+  },
+  {
+    "id": "s348",
+    "es": "Estoy viendo una serie mexicana.",
+    "sk": "Pozerám mexický seriál.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "viendo", "una", "serie", "mexicana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "viendo",
+        "lemma": "ver",
+        "hint": "ver · gerundio",
+        "distractors": ["ve", "ver", "ven"]
+      }
+    ]
+  },
+  {
+    "id": "s349",
+    "es": "Mi papá corre todas las mañanas.",
+    "sk": "Otec behá každé ráno.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "papá", "corre", "todas", "las", "mañanas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "corre",
+        "lemma": "correr",
+        "hint": "correr · él · presente",
+        "distractors": ["corren", "corres", "corrió"]
+      }
+    ]
+  },
+  {
+    "id": "s350",
+    "es": "Jugué tenis con mi primo.",
+    "sk": "Hral som tenis s bratrancom.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Jugué", "tenis", "con", "mi", "primo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Jugué",
+        "lemma": "jugar",
+        "hint": "jugar · yo · pretérito",
+        "distractors": ["Jugó", "Jugaron", "Juego"]
+      }
+    ]
+  },
+  {
+    "id": "s351",
+    "es": "¿Te gusta cantar?",
+    "sk": "Rád spievaš?",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "tokens": ["¿", "Te", "gusta", "cantar", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Te",
+        "lemma": "te",
+        "hint": "tebe (zámeno)",
+        "distractors": ["Me", "Le", "Nos"]
+      }
+    ]
+  },
+  {
+    "id": "s352",
+    "es": "Vamos al cine el sábado.",
+    "sk": "V sobotu ideme do kina.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Vamos", "al", "cine", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["Voy", "Va", "Fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s353",
+    "es": "Mis amigos cantaron canciones de mariachi toda la noche.",
+    "sk": "Kamaráti celú noc spievali mariachi piesne.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Mis", "amigos", "cantaron", "canciones", "de", "mariachi", "toda", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cantaron",
+        "lemma": "cantar",
+        "hint": "cantar · ellos · pretérito",
+        "distractors": ["cantaste", "cantamos", "cantan"]
+      }
+    ]
+  },
+  {
+    "id": "s354",
+    "es": "Voy al gimnasio tres veces por semana.",
+    "sk": "Do posilňovne chodím trikrát týždenne.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Voy", "al", "gimnasio", "tres", "veces", "por", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["Va", "Van", "Fui"]
+      }
+    ]
+  },
+  {
+    "id": "s355",
+    "es": "Escuchamos música mexicana en el carro.",
+    "sk": "V aute počúvame mexickú hudbu.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Escuchamos", "música", "mexicana", "en", "el", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Escuchamos",
+        "lemma": "escuchar",
+        "hint": "escuchar · nosotros · presente",
+        "distractors": ["Escucho", "Escucha", "Escuchas"]
+      }
+    ]
+  },
+  {
+    "id": "s356",
+    "es": "Mis hijos están nadando en la alberca.",
+    "sk": "Deti plávajú v bazéne.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mis", "hijos", "están", "nadando", "en", "la", "alberca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nadando",
+        "lemma": "nadar",
+        "hint": "nadar · gerundio",
+        "distractors": ["nada", "nadar", "nadan"]
+      }
+    ]
+  },
+  {
+    "id": "s357",
+    "es": "¿Quieres ir al concierto conmigo?",
+    "sk": "Chceš ísť so mnou na koncert?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quieres", "ir", "al", "concierto", "conmigo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Quieres",
+        "lemma": "querer",
+        "hint": "querer · tú · presente",
+        "distractors": ["Queremos", "Quiero", "Quisiste"]
+      }
+    ]
+  },
+  {
+    "id": "s358",
+    "es": "Tomé muchas fotos en la playa.",
+    "sk": "Na pláži som urobil veľa fotiek.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Tomé", "muchas", "fotos", "en", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tomé",
+        "lemma": "tomar",
+        "hint": "tomar · yo · pretérito",
+        "distractors": ["Tomó", "Tomaron", "Tomo"]
+      }
+    ]
+  }
+]

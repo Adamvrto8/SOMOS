@@ -1,0 +1,208 @@
+[
+  {
+    "id": "escuela",
+    "es": "escuela",
+    "sk": ["škola"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Mis hijos van a la escuela en camión.", "sk": "Moje deti chodia do školy autobusom." }]
+  },
+  {
+    "id": "clase",
+    "es": "clase",
+    "sk": ["hodina", "trieda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "La clase empieza a las nueve.", "sk": "Hodina začína o deviatej." }]
+  },
+  {
+    "id": "universidad",
+    "es": "universidad",
+    "sk": ["univerzita"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "universidades",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estudio en la universidad.", "sk": "Študujem na univerzite." }]
+  },
+  {
+    "id": "estudiante",
+    "es": "estudiante",
+    "sk": ["študent"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Soy estudiante de español.", "sk": "Som študent španielčiny." }],
+    "note": "el estudiante / la estudiante – rovnaký tvar pre muža aj ženu."
+  },
+  {
+    "id": "libro",
+    "es": "libro",
+    "sk": ["kniha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estoy leyendo un libro muy bueno.", "sk": "Čítam veľmi dobrú knihu." }]
+  },
+  {
+    "id": "cuaderno",
+    "es": "cuaderno",
+    "sk": ["zošit"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Escribe las palabras en tu cuaderno.", "sk": "Napíš si slová do zošita." }]
+  },
+  {
+    "id": "pluma",
+    "es": "pluma",
+    "sk": ["pero"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Me prestas una pluma?", "sk": "Požičiaš mi pero?" }],
+    "note": "V Mexiku „pluma“ (v Španielsku „bolígrafo“)."
+  },
+  {
+    "id": "lapiz",
+    "es": "lápiz",
+    "sk": ["ceruzka"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "lápices",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Necesito un lápiz.", "sk": "Potrebujem ceruzku." }]
+  },
+  {
+    "id": "palabra",
+    "es": "palabra",
+    "sk": ["slovo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Qué significa esta palabra?", "sk": "Čo znamená toto slovo?" }]
+  },
+  {
+    "id": "pregunta",
+    "es": "pregunta",
+    "sk": ["otázka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Tengo una pregunta.", "sk": "Mám otázku." }]
+  },
+  {
+    "id": "respuesta",
+    "es": "respuesta",
+    "sk": ["odpoveď"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "No sé la respuesta.", "sk": "Neviem odpoveď." }]
+  },
+  {
+    "id": "examen",
+    "es": "examen",
+    "sk": ["skúška", "test"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "exámenes",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Mañana tengo examen.", "sk": "Zajtra mám skúšku." }]
+  },
+  {
+    "id": "tarea",
+    "es": "tarea",
+    "sk": ["domáca úloha"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "No hice la tarea.", "sk": "Neurobil som si úlohu." }]
+  },
+  {
+    "id": "idioma",
+    "es": "idioma",
+    "sk": ["jazyk (reč)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Hablo tres idiomas.", "sk": "Hovorím tromi jazykmi." }],
+    "note": "Hoci končí na -a, je mužského rodu: el idioma."
+  },
+  {
+    "id": "espanol",
+    "es": "español",
+    "sk": ["španielčina"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "españoles",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estoy aprendiendo español.", "sk": "Učím sa po španielsky." }],
+    "note": "V Mexiku sa jazyk volá „español“ (menej často „castellano“)."
+  },
+  {
+    "id": "ingles",
+    "es": "inglés",
+    "sk": ["angličtina"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "ingleses",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Mi jefe habla inglés.", "sk": "Môj šéf hovorí po anglicky." }]
+  },
+  {
+    "id": "que-significa",
+    "es": "¿qué significa?",
+    "sk": ["čo znamená?"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Qué significa «chamba»?", "sk": "Čo znamená «chamba»?" }]
+  },
+  {
+    "id": "como-se-dice",
+    "es": "¿cómo se dice?",
+    "sk": ["ako sa povie?"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Cómo se dice «ahoj» en español?", "sk": "Ako sa po španielsky povie «ahoj»?" }]
+  },
+  {
+    "id": "mas-despacio",
+    "es": "más despacio",
+    "sk": ["pomalšie"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Más despacio, por favor.", "sk": "Pomalšie, prosím." }]
+  },
+  {
+    "id": "correcto",
+    "es": "correcto",
+    "sk": ["správny"],
+    "pos": "adj",
+    "feminine": "correcta",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Tu respuesta es correcta.", "sk": "Tvoja odpoveď je správna." }]
+  }
+]

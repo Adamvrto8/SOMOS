@@ -1,0 +1,305 @@
+[
+  {
+    "id": "s324",
+    "es": "Estoy muy contento con mi nuevo trabajo.",
+    "sk": "Som veľmi spokojný s novou prácou.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Estoy", "muy", "contento", "con", "mi", "nuevo", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["Soy", "Está", "Están"]
+      }
+    ]
+  },
+  {
+    "id": "s325",
+    "es": "¿Por qué estás triste?",
+    "sk": "Prečo si smutný?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Por", "qué", "estás", "triste", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "ser/estar · tú · presente",
+        "distractors": ["eres", "estamos", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s326",
+    "es": "Mi jefe se enojó conmigo.",
+    "sk": "Šéf sa na mňa nahneval.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "jefe", "se", "enojó", "conmigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enojó",
+        "lemma": "enojarse",
+        "hint": "enojarse · él · pretérito",
+        "distractors": ["enojaron", "enojaste", "enoja"]
+      }
+    ]
+  },
+  {
+    "id": "s327",
+    "es": "No te preocupes, todo va a estar bien.",
+    "sk": "Neboj sa, všetko bude v poriadku.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["No", "te", "preocupes", ",", "todo", "va", "a", "estar", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": ["van", "vas", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s328",
+    "es": "Tengo miedo de volar.",
+    "sk": "Bojím sa lietať.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["Tengo", "miedo", "de", "volar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "miedo",
+        "lemma": "miedo",
+        "hint": "strach",
+        "distractors": ["hambre", "sed", "frío"]
+      }
+    ]
+  },
+  {
+    "id": "s329",
+    "es": "Extraño mucho a mi familia.",
+    "sk": "Veľmi mi chýba rodina.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Extraño", "mucho", "a", "mi", "familia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Extraño",
+        "lemma": "extrañar",
+        "hint": "extrañar · yo · presente",
+        "distractors": ["Extraña", "Extrañan", "Extrañé"]
+      }
+    ]
+  },
+  {
+    "id": "s330",
+    "es": "Mis amigos están muy emocionados por el viaje.",
+    "sk": "Kamaráti sa veľmi tešia na cestu.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["gender"],
+    "tokens": ["Mis", "amigos", "están", "muy", "emocionados", "por", "el", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "emocionados",
+        "lemma": "emocionado",
+        "hint": "prídavné meno: emocionado",
+        "distractors": ["emocionado", "emocionada", "emocionadas"]
+      }
+    ]
+  },
+  {
+    "id": "s331",
+    "es": "Me siento un poco nervioso.",
+    "sk": "Cítim sa trochu nervózne.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "siento", "un", "poco", "nervioso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "siento",
+        "lemma": "sentirse",
+        "hint": "sentirse · yo · presente",
+        "distractors": ["siente", "sienten", "sentí"]
+      }
+    ]
+  },
+  {
+    "id": "s332",
+    "es": "¿Qué piensas de mi idea?",
+    "sk": "Čo si myslíš o mojom nápade?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "piensas", "de", "mi", "idea", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "piensas",
+        "lemma": "pensar",
+        "hint": "pensar · tú · presente",
+        "distractors": ["pensamos", "pienso", "pensaste"]
+      }
+    ]
+  },
+  {
+    "id": "s333",
+    "es": "Pienso en ti todos los días.",
+    "sk": "Každý deň na teba myslím.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Pienso", "en", "ti", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pienso",
+        "lemma": "pensar",
+        "hint": "pensar · yo · presente",
+        "distractors": ["Piensa", "Piensan", "Pensé"]
+      }
+    ]
+  },
+  {
+    "id": "s334",
+    "es": "La película fue muy triste.",
+    "sk": "Film bol veľmi smutný.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "película", "fue", "muy", "triste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fue",
+        "lemma": "ser",
+        "hint": "ser · ella · pretérito",
+        "distractors": ["fueron", "fuiste", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s335",
+    "es": "Estamos muy felices de verte.",
+    "sk": "Veľmi sa tešíme, že ťa vidíme.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Estamos", "muy", "felices", "de", "verte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estamos",
+        "lemma": "estar",
+        "hint": "ser/estar · nosotros · presente",
+        "distractors": ["Somos", "Estoy", "Está"]
+      }
+    ]
+  },
+  {
+    "id": "s336",
+    "es": "¡Qué sorpresa verte aquí!",
+    "sk": "Aké prekvapenie, že ťa tu vidím!",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["¡", "Qué", "sorpresa", "verte", "aquí", "!"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sorpresa",
+        "lemma": "sorpresa",
+        "hint": "prekvapenie",
+        "distractors": ["alegría", "pena", "suerte"]
+      }
+    ]
+  },
+  {
+    "id": "s337",
+    "es": "Mi hermana está preocupada por el examen.",
+    "sk": "Sestra si robí starosti kvôli skúške.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "hermana", "está", "preocupada", "por", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "preocupada",
+        "lemma": "preocupado",
+        "hint": "prídavné meno: preocupado",
+        "distractors": ["preocupado", "preocupados", "preocupadas"]
+      }
+    ]
+  },
+  {
+    "id": "s338",
+    "es": "Me da vergüenza bailar.",
+    "sk": "Hanbím sa tancovať.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "da", "vergüenza", "bailar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · ella · presente",
+        "distractors": ["dan", "das", "dio"]
+      }
+    ]
+  },
+  {
+    "id": "s339",
+    "es": "Estoy aburrido, ¿salimos?",
+    "sk": "Nudím sa, pôjdeme von?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Estoy", "aburrido", ",", "¿", "salimos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "salimos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · presente",
+        "distractors": ["salgo", "sale", "sales"]
+      }
+    ]
+  },
+  {
+    "id": "s340",
+    "es": "Tengo ganas de ver a mis amigos.",
+    "sk": "Mám chuť stretnúť sa s kamarátmi.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "tokens": ["Tengo", "ganas", "de", "ver", "a", "mis", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ganas",
+        "lemma": "ganas",
+        "hint": "chuť",
+        "distractors": ["hambre", "miedo", "sed"]
+      }
+    ]
+  }
+]

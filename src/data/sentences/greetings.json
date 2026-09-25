@@ -1,0 +1,352 @@
+[
+  {
+    "id": "s001",
+    "es": "Me llamo Adam y soy de Eslovaquia.",
+    "sk": "Volám sa Adam a som zo Slovenska.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Me", "llamo", "Adam", "y", "soy", "de", "Eslovaquia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "soy",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["estoy", "es", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s002",
+    "es": "¿Cómo te llamas?",
+    "sk": "Ako sa voláš?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cómo", "te", "llamas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llamas",
+        "lemma": "llamarse",
+        "hint": "llamarse · tú · presente",
+        "distractors": ["llamo", "llama", "llaman"]
+      }
+    ]
+  },
+  {
+    "id": "s003",
+    "es": "Buenos días, ¿cómo está usted?",
+    "sk": "Dobrý deň, ako sa máte?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Buenos", "días", ",", "¿", "cómo", "está", "usted", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · usted · presente",
+        "distractors": ["es", "estás", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s004",
+    "es": "Hablo un poco de español.",
+    "sk": "Hovorím trochu po španielsky.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Hablo", "un", "poco", "de", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hablo",
+        "lemma": "hablar",
+        "hint": "hablar · yo · presente",
+        "distractors": ["Habla", "Hablas", "Hablé"]
+      }
+    ]
+  },
+  {
+    "id": "s005",
+    "es": "Perdón, ¿dónde está el baño?",
+    "sk": "Prepáčte, kde je tu záchod?",
+    "level": "A1",
+    "topics": ["greetings", "home"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Perdón", ",", "¿", "dónde", "está", "el", "baño", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s006",
+    "es": "Muchas gracias por la comida.",
+    "sk": "Ďakujem veľmi pekne za jedlo.",
+    "level": "A1",
+    "topics": ["greetings", "food"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Muchas", "gracias", "por", "la", "comida", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+  },
+  {
+    "id": "s007",
+    "es": "Hasta luego, que te vaya bien.",
+    "sk": "Zatiaľ, maj sa dobre.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "tokens": ["Hasta", "luego", ",", "que", "te", "vaya", "bien", "."]
+  },
+  {
+    "id": "s008",
+    "es": "Mi amigo Carlos es de Monterrey.",
+    "sk": "Môj kamarát Carlos je z Monterrey.",
+    "level": "A1",
+    "topics": ["greetings", "family"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "amigo", "Carlos", "es", "de", "Monterrey", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s061",
+    "es": "Mucho gusto, me llamo Laura.",
+    "sk": "Teší ma, volám sa Laura.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Mucho", "gusto", ",", "me", "llamo", "Laura", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llamo",
+        "lemma": "llamarse",
+        "hint": "llamarse · yo · presente",
+        "distractors": ["llama", "llaman", "llamé"]
+      }
+    ]
+  },
+  {
+    "id": "s062",
+    "es": "¿De dónde eres?",
+    "sk": "Odkiaľ si?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "De", "dónde", "eres", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "eres",
+        "lemma": "ser",
+        "hint": "ser/estar · tú · presente",
+        "distractors": ["estás", "somos", "soy"]
+      }
+    ]
+  },
+  {
+    "id": "s063",
+    "es": "Somos de Eslovaquia.",
+    "sk": "Sme zo Slovenska.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Somos", "de", "Eslovaquia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Somos",
+        "lemma": "ser",
+        "hint": "ser/estar · nosotros · presente",
+        "distractors": ["Estamos", "Soy", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s064",
+    "es": "¿Cómo están ustedes?",
+    "sk": "Ako sa máte?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Cómo", "están", "ustedes", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "ser/estar · ustedes · presente",
+        "distractors": ["son", "estás", "estamos"]
+      }
+    ]
+  },
+  {
+    "id": "s065",
+    "es": "Estoy muy bien, gracias.",
+    "sk": "Mám sa veľmi dobre, ďakujem.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Estoy", "muy", "bien", ",", "gracias", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["Soy", "Está", "Están"]
+      }
+    ]
+  },
+  {
+    "id": "s066",
+    "es": "Ella habla español y un poco de inglés.",
+    "sk": "Hovorí po španielsky a trochu po anglicky.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Ella", "habla", "español", "y", "un", "poco", "de", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "habla",
+        "lemma": "hablar",
+        "hint": "hablar · ella · presente",
+        "distractors": ["hablan", "hablas", "habló"]
+      }
+    ]
+  },
+  {
+    "id": "s067",
+    "es": "Te presento a mi amigo Carlos.",
+    "sk": "Predstavím ti môjho kamaráta Carlosa.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "tokens": ["Te", "presento", "a", "mi", "amigo", "Carlos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka pred osobou",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s068",
+    "es": "¿Hablas español?",
+    "sk": "Hovoríš po španielsky?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Hablas", "español", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Hablas",
+        "lemma": "hablar",
+        "hint": "hablar · tú · presente",
+        "distractors": ["Hablamos", "Hablo", "Hablaste"]
+      }
+    ]
+  },
+  {
+    "id": "s069",
+    "es": "Perdón, no entiendo.",
+    "sk": "Prepáčte, nerozumiem.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Perdón", ",", "no", "entiendo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "entiendo",
+        "lemma": "entender",
+        "hint": "entender · yo · presente",
+        "distractors": ["entiende", "entienden", "entendí"]
+      }
+    ]
+  },
+  {
+    "id": "s070",
+    "es": "¿Me puede ayudar, por favor?",
+    "sk": "Môžete mi pomôcť, prosím?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "puede", "ayudar", ",", "por", "favor", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder · usted · presente",
+        "distractors": ["pueden", "puedes", "pudo"]
+      }
+    ]
+  },
+  {
+    "id": "s071",
+    "es": "Nos vemos mañana en la oficina.",
+    "sk": "Uvidíme sa zajtra v kancelárii.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Nos", "vemos", "mañana", "en", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vemos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · presente",
+        "distractors": ["veo", "ve", "vimos"]
+      }
+    ]
+  },
+  {
+    "id": "s072",
+    "es": "Muchas gracias por tu ayuda.",
+    "sk": "Veľmi pekne ďakujem za pomoc.",
+    "level": "A1",
+    "topics": ["greetings"],
+    "tokens": ["Muchas", "gracias", "por", "tu", "ayuda", "."],
+    "cloze": [{ "tokenIndex": 3, "answer": "tu", "lemma": "tu", "hint": "tvoj", "distractors": ["tú", "mi", "su"] }]
+  },
+  {
+    "id": "s073",
+    "es": "¿Cómo se llama tu mamá?",
+    "sk": "Ako sa volá tvoja mama?",
+    "level": "A1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cómo", "se", "llama", "tu", "mamá", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llama",
+        "lemma": "llamarse",
+        "hint": "llamarse · ella · presente",
+        "distractors": ["llaman", "llamas", "llamó"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,415 @@
+[
+  {
+    "id": "s055",
+    "es": "Trabajo en una oficina en el centro.",
+    "sk": "Pracujem v kancelárii v centre.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Trabajo", "en", "una", "oficina", "en", "el", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Trabajo",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · presente",
+        "distractors": ["Trabaja", "Trabajas", "Trabajé"]
+      }
+    ]
+  },
+  {
+    "id": "s056",
+    "es": "Mi jefe está en una junta.",
+    "sk": "Môj šéf je na porade.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "jefe", "está", "en", "una", "junta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s057",
+    "es": "Estoy trabajando desde casa.",
+    "sk": "Momentálne pracujem z domu.",
+    "level": "A1",
+    "topics": ["work", "home"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "trabajando", "desde", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trabajando",
+        "lemma": "trabajar",
+        "hint": "trabajar · gerundio",
+        "distractors": ["trabajado", "trabajo", "trabajar"]
+      }
+    ]
+  },
+  {
+    "id": "s058",
+    "es": "¿A qué hora sales del trabajo?",
+    "sk": "O koľkej končíš v práci?",
+    "level": "A1",
+    "topics": ["work", "time"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "sales", "del", "trabajo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sales",
+        "lemma": "salir",
+        "hint": "salir · tú · presente",
+        "distractors": ["salgo", "sale", "saliste"]
+      }
+    ]
+  },
+  {
+    "id": "s059",
+    "es": "El jefe dijo que la junta es mañana.",
+    "sk": "Šéf povedal, že porada je zajtra.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "jefe", "dijo", "que", "la", "junta", "es", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dijo",
+        "lemma": "decir",
+        "hint": "decir · él · pretérito",
+        "distractors": ["dice", "dije", "dijeron"]
+      }
+    ]
+  },
+  {
+    "id": "s060",
+    "es": "Mis compañeros están platicando en la cocina.",
+    "sk": "Kolegovia sa rozprávajú v kuchynke.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mis", "compañeros", "están", "platicando", "en", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "platicando",
+        "lemma": "platicar",
+        "hint": "platicar · gerundio",
+        "distractors": ["platicado", "platican", "platicar"]
+      }
+    ]
+  },
+  {
+    "id": "s190",
+    "es": "Trabajo desde casa los lunes.",
+    "sk": "V pondelok pracujem z domu.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Trabajo", "desde", "casa", "los", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Trabajo",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · presente",
+        "distractors": ["Trabaja", "Trabajan", "Trabajé"]
+      }
+    ]
+  },
+  {
+    "id": "s191",
+    "es": "Mi jefa está muy ocupada hoy.",
+    "sk": "Šéfka má dnes veľa práce.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "jefa", "está", "muy", "ocupada", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ocupada",
+        "lemma": "ocupado",
+        "hint": "prídavné meno: ocupado",
+        "distractors": ["ocupado", "ocupados", "ocupadas"]
+      }
+    ]
+  },
+  {
+    "id": "s192",
+    "es": "Soy ingeniero y trabajo en una empresa grande.",
+    "sk": "Som inžinier a pracujem vo veľkej firme.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Soy", "ingeniero", "y", "trabajo", "en", "una", "empresa", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Soy",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["Estoy", "Es", "Son"]
+      }
+    ]
+  },
+  {
+    "id": "s193",
+    "es": "Necesito terminar este proyecto hoy.",
+    "sk": "Tento projekt musím dnes dokončiť.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Necesito", "terminar", "este", "proyecto", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["Necesita", "Necesitan", "Necesité"]
+      }
+    ]
+  },
+  {
+    "id": "s194",
+    "es": "Ayer trabajé diez horas.",
+    "sk": "Včera som pracoval desať hodín.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "trabajé", "diez", "horas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trabajé",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · pretérito",
+        "distractors": ["trabajó", "trabajaron", "trabajo"]
+      }
+    ]
+  },
+  {
+    "id": "s195",
+    "es": "Mis compañeros están comiendo en la cafetería.",
+    "sk": "Kolegovia obedujú v jedálni.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mis", "compañeros", "están", "comiendo", "en", "la", "cafetería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "comiendo",
+        "lemma": "comer",
+        "hint": "comer · gerundio",
+        "distractors": ["come", "comer", "comen"]
+      }
+    ]
+  },
+  {
+    "id": "s196",
+    "es": "¿Puedes checar el correo del cliente?",
+    "sk": "Môžeš skontrolovať mail od klienta?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Puedes", "checar", "el", "correo", "del", "cliente", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Puedes",
+        "lemma": "poder",
+        "hint": "poder · tú · presente",
+        "distractors": ["Podemos", "Puedo", "Pudiste"]
+      }
+    ]
+  },
+  {
+    "id": "s197",
+    "es": "El cliente llamó dos veces.",
+    "sk": "Klient volal dvakrát.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "cliente", "llamó", "dos", "veces", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llamó",
+        "lemma": "llamar",
+        "hint": "llamar · él · pretérito",
+        "distractors": ["llamaron", "llamaste", "llama"]
+      }
+    ]
+  },
+  {
+    "id": "s198",
+    "es": "Gano bien, pero trabajo mucho.",
+    "sk": "Zarábam dobre, ale veľa pracujem.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Gano", "bien", ",", "pero", "trabajo", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Gano",
+        "lemma": "ganar",
+        "hint": "ganar · yo · presente",
+        "distractors": ["Gana", "Ganan", "Gané"]
+      }
+    ]
+  },
+  {
+    "id": "s199",
+    "es": "La junta empezó a las nueve.",
+    "sk": "Porada začala o deviatej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "junta", "empezó", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · ella · pretérito",
+        "distractors": ["empezaron", "empezaste", "empieza"]
+      }
+    ]
+  },
+  {
+    "id": "s200",
+    "es": "¿Me ayudas con esta presentación?",
+    "sk": "Pomôžeš mi s touto prezentáciou?",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "ayudas", "con", "esta", "presentación", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ayudas",
+        "lemma": "ayudar",
+        "hint": "ayudar · tú · presente",
+        "distractors": ["ayudamos", "ayudo", "ayudaste"]
+      }
+    ]
+  },
+  {
+    "id": "s201",
+    "es": "Le mandé un correo a mi jefe.",
+    "sk": "Poslal som šéfovi mail.",
+    "level": "A2",
+    "topics": ["work"],
+    "tokens": ["Le", "mandé", "un", "correo", "a", "mi", "jefe", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
+      }
+    ]
+  },
+  {
+    "id": "s202",
+    "es": "Estoy muy cansado, necesito vacaciones.",
+    "sk": "Som strašne unavený, potrebujem dovolenku.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["gender"],
+    "tokens": ["Estoy", "muy", "cansado", ",", "necesito", "vacaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cansado",
+        "lemma": "cansado",
+        "hint": "prídavné meno: cansado",
+        "distractors": ["cansada", "cansados", "cansadas"]
+      }
+    ]
+  },
+  {
+    "id": "s203",
+    "es": "Usamos esta computadora para diseñar.",
+    "sk": "Tento počítač používame na navrhovanie.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Usamos", "esta", "computadora", "para", "diseñar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Usamos",
+        "lemma": "usar",
+        "hint": "usar · nosotros · presente",
+        "distractors": ["Uso", "Usa", "Usas"]
+      }
+    ]
+  },
+  {
+    "id": "s204",
+    "es": "¿Terminaste el reporte?",
+    "sk": "Dokončil si report?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Terminaste", "el", "reporte", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Terminaste",
+        "lemma": "terminar",
+        "hint": "terminar · tú · pretérito",
+        "distractors": ["Terminamos", "Terminé", "Terminas"]
+      }
+    ]
+  },
+  {
+    "id": "s205",
+    "es": "Hoy tengo mucha chamba.",
+    "sk": "Dnes mám veľa roboty.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "tengo", "mucha", "chamba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tiene", "tienen", "tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s206",
+    "es": "Mi hermana es maestra en una primaria.",
+    "sk": "Sestra je učiteľka na základnej škole.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "hermana", "es", "maestra", "en", "una", "primaria", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  }
+]

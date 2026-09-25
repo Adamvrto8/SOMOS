@@ -1,0 +1,314 @@
+[
+  {
+    "id": "casa",
+    "es": "casa",
+    "sk": ["dom", "domov"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Estoy en casa.", "sk": "Som doma." }, { "es": "Mi casa es tu casa.", "sk": "Cíť sa ako doma." }]
+  },
+  {
+    "id": "departamento",
+    "es": "departamento",
+    "sk": ["byt"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Vivo en un departamento pequeño.", "sk": "Bývam v malom byte." }],
+    "note": "V Mexiku „departamento“, v Španielsku „piso“."
+  },
+  {
+    "id": "cuarto",
+    "es": "cuarto",
+    "sk": ["izba"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Mi cuarto tiene una ventana grande.", "sk": "Moja izba má veľké okno." }],
+    "note": "Cuarto znamená aj štvrť: Son las dos y cuarto = Je štvrť na tri."
+  },
+  {
+    "id": "cocina",
+    "es": "cocina",
+    "sk": ["kuchyňa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Estamos en la cocina.", "sk": "Sme v kuchyni." }]
+  },
+  {
+    "id": "bano",
+    "es": "baño",
+    "sk": ["kúpeľňa", "záchod"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Dónde está el baño?", "sk": "Kde je záchod?" }]
+  },
+  {
+    "id": "mesa",
+    "es": "mesa",
+    "sk": ["stôl"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Las llaves están en la mesa.", "sk": "Kľúče sú na stole." }]
+  },
+  {
+    "id": "ventana",
+    "es": "ventana",
+    "sk": ["okno"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Puedes cerrar la ventana?", "sk": "Môžeš zavrieť okno?" }]
+  },
+  {
+    "id": "sala",
+    "es": "sala",
+    "sk": ["obývačka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Estamos viendo la tele en la sala.", "sk": "Pozeráme telku v obývačke." }]
+  },
+  {
+    "id": "recamara",
+    "es": "recámara",
+    "sk": ["spálňa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "El departamento tiene dos recámaras.", "sk": "Byt má dve spálne." }],
+    "note": "Typicky mexické slovo pre spálňu."
+  },
+  {
+    "id": "puerta",
+    "es": "puerta",
+    "sk": ["dvere"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Puedes cerrar la puerta?", "sk": "Môžeš zavrieť dvere?" }]
+  },
+  {
+    "id": "silla",
+    "es": "silla",
+    "sk": ["stolička"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Necesitamos otra silla.", "sk": "Potrebujeme ešte jednu stoličku." }]
+  },
+  {
+    "id": "sofa",
+    "es": "sofá",
+    "sk": ["gauč", "pohovka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "El gato duerme en el sofá.", "sk": "Mačka spí na gauči." }]
+  },
+  {
+    "id": "cama",
+    "es": "cama",
+    "sk": ["posteľ"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "La cama es muy cómoda.", "sk": "Posteľ je veľmi pohodlná." }]
+  },
+  {
+    "id": "regadera",
+    "es": "regadera",
+    "sk": ["sprcha"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "La regadera no tiene agua caliente.", "sk": "V sprche netečie teplá voda." }],
+    "note": "V Mexiku „regadera“ (v Španielsku „ducha“)."
+  },
+  {
+    "id": "refrigerador",
+    "es": "refrigerador",
+    "sk": ["chladnička"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "refrigeradores",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "La leche está en el refrigerador.", "sk": "Mlieko je v chladničke." }],
+    "note": "Hovorovo „el refri“."
+  },
+  {
+    "id": "estufa",
+    "es": "estufa",
+    "sk": ["sporák"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "La sopa está en la estufa.", "sk": "Polievka je na sporáku." }],
+    "note": "V Mexiku „estufa“ = sporák na varenie."
+  },
+  {
+    "id": "llave",
+    "es": "llave",
+    "sk": ["kľúč", "kohútik"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "No encuentro mis llaves.", "sk": "Neviem nájsť kľúče." }]
+  },
+  {
+    "id": "luz",
+    "es": "luz",
+    "sk": ["svetlo", "elektrina"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "luces",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Apaga la luz, por favor.", "sk": "Zhasni svetlo, prosím." }]
+  },
+  {
+    "id": "piso",
+    "es": "piso",
+    "sk": ["podlaha", "poschodie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Vivo en el tercer piso.", "sk": "Bývam na treťom poschodí." }],
+    "note": "V Mexiku „piso“ = podlaha alebo poschodie, nie byt (byt = departamento)."
+  },
+  {
+    "id": "jardin",
+    "es": "jardín",
+    "sk": ["záhrada"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "jardines",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Mi abuela tiene un jardín muy bonito.", "sk": "Babka má veľmi peknú záhradu." }]
+  },
+  {
+    "id": "vecino",
+    "es": "vecino",
+    "sk": ["sused"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Mis vecinos son muy amables.", "sk": "Moji susedia sú veľmi milí." }],
+    "note": "vecina = suseda."
+  },
+  {
+    "id": "renta",
+    "es": "renta",
+    "sk": ["nájom", "nájomné"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "La renta es muy cara en el centro.", "sk": "Nájom v centre je veľmi drahý." }],
+    "note": "V Mexiku „la renta“ (v Španielsku „el alquiler“)."
+  },
+  {
+    "id": "television",
+    "es": "televisión",
+    "sk": ["televízia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "televisiones",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "No hay nada bueno en la televisión.", "sk": "V telke nie je nič dobré." }],
+    "note": "Hovorovo „la tele“."
+  },
+  {
+    "id": "grande",
+    "es": "grande",
+    "sk": ["veľký"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Es una casa muy grande.", "sk": "Je to veľmi veľký dom." }]
+  },
+  {
+    "id": "pequeno",
+    "es": "pequeño",
+    "sk": ["malý"],
+    "pos": "adj",
+    "feminine": "pequeña",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Mi cuarto es pequeño pero bonito.", "sk": "Moja izba je malá, ale pekná." }],
+    "note": "V Mexiku sa často hovorí aj „chico“."
+  },
+  {
+    "id": "limpio",
+    "es": "limpio",
+    "sk": ["čistý"],
+    "pos": "adj",
+    "feminine": "limpia",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "La casa está limpia.", "sk": "Dom je čistý." }]
+  },
+  {
+    "id": "sucio",
+    "es": "sucio",
+    "sk": ["špinavý"],
+    "pos": "adj",
+    "feminine": "sucia",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Los platos están sucios.", "sk": "Riad je špinavý." }]
+  },
+  {
+    "id": "comodo",
+    "es": "cómodo",
+    "sk": ["pohodlný"],
+    "pos": "adj",
+    "feminine": "cómoda",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Este sofá es muy cómodo.", "sk": "Táto pohovka je veľmi pohodlná." }]
+  },
+  {
+    "id": "arriba",
+    "es": "arriba",
+    "sk": ["hore"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "El baño está arriba.", "sk": "Kúpeľňa je hore." }]
+  },
+  {
+    "id": "abajo",
+    "es": "abajo",
+    "sk": ["dole"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["home"],
+    "examples": [{ "es": "Te espero abajo.", "sk": "Počkám ťa dole." }]
+  }
+]

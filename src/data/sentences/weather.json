@@ -1,0 +1,314 @@
+[
+  {
+    "id": "s272",
+    "es": "Hace mucho calor en Monterrey.",
+    "sk": "V Monterrey je veľké teplo.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Hace", "mucho", "calor", "en", "Monterrey", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["Hacen", "Haces", "Hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s273",
+    "es": "¿Cómo está el clima en Eslovaquia?",
+    "sk": "Aké je počasie na Slovensku?",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Cómo", "está", "el", "clima", "en", "Eslovaquia", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s274",
+    "es": "Está lloviendo mucho.",
+    "sk": "Veľmi prší.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["progresivo"],
+    "tokens": ["Está", "lloviendo", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Está",
+        "lemma": "estar",
+        "hint": "estar · él · presente",
+        "distractors": ["Están", "Estás", "Estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s275",
+    "es": "En diciembre hace frío en la noche.",
+    "sk": "V decembri je v noci zima.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["En", "diciembre", "hace", "frío", "en", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "frío",
+        "lemma": "frío",
+        "hint": "zima (chlad)",
+        "distractors": ["calor", "sol", "viento"]
+      }
+    ]
+  },
+  {
+    "id": "s276",
+    "es": "Ayer hizo mucho viento.",
+    "sk": "Včera veľmi fúkalo.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "hizo", "mucho", "viento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · él · pretérito",
+        "distractors": ["hicieron", "hiciste", "hace"]
+      }
+    ]
+  },
+  {
+    "id": "s277",
+    "es": "Llevo el paraguas porque va a llover.",
+    "sk": "Beriem si dáždnik, lebo bude pršať.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Llevo", "el", "paraguas", "porque", "va", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": ["van", "vas", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s278",
+    "es": "El cielo está nublado.",
+    "sk": "Obloha je zamračená.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["gender"],
+    "tokens": ["El", "cielo", "está", "nublado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nublado",
+        "lemma": "nublado",
+        "hint": "prídavné meno: nublado",
+        "distractors": ["nublada", "nublados", "nubladas"]
+      }
+    ]
+  },
+  {
+    "id": "s279",
+    "es": "En verano llueve casi todas las tardes.",
+    "sk": "V lete prší skoro každé popoludnie.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["En", "verano", "llueve", "casi", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "verano",
+        "lemma": "verano",
+        "hint": "leto",
+        "distractors": ["invierno", "otoño", "primavera"]
+      }
+    ]
+  },
+  {
+    "id": "s280",
+    "es": "Tengo frío, ¿cierras la ventana?",
+    "sk": "Je mi zima, zavrieš okno?",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "frío", ",", "¿", "cierras", "la", "ventana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s281",
+    "es": "Estamos a treinta y cinco grados.",
+    "sk": "Je tridsaťpäť stupňov.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["Estamos", "a", "treinta", "y", "cinco", "grados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "grados",
+        "lemma": "grado",
+        "hint": "stupne",
+        "distractors": ["horas", "minutos", "días"]
+      }
+    ]
+  },
+  {
+    "id": "s282",
+    "es": "La temperatura bajó mucho en la noche.",
+    "sk": "V noci teplota výrazne klesla.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["La", "temperatura", "bajó", "mucho", "en", "la", "noche", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
+  },
+  {
+    "id": "s283",
+    "es": "Hace sol, vamos a la playa.",
+    "sk": "Svieti slnko, poďme na pláž.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Hace", "sol", ",", "vamos", "a", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["voy", "va", "fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s284",
+    "es": "La tormenta duró toda la noche.",
+    "sk": "Búrka trvala celú noc.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["gender"],
+    "tokens": ["La", "tormenta", "duró", "toda", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "toda",
+        "lemma": "todo",
+        "hint": "celý",
+        "distractors": ["todo", "todos", "todas"]
+      }
+    ]
+  },
+  {
+    "id": "s285",
+    "es": "En la montaña hay nieve en invierno.",
+    "sk": "Na horách je v zime sneh.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["En", "la", "montaña", "hay", "nieve", "en", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "nieve",
+        "lemma": "nieve",
+        "hint": "sneh",
+        "distractors": ["lluvia", "nube", "viento"]
+      }
+    ]
+  },
+  {
+    "id": "s286",
+    "es": "Mi mamá siempre sabe si va a llover.",
+    "sk": "Mama vždy vie, či bude pršať.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "mamá", "siempre", "sabe", "si", "va", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sabe",
+        "lemma": "saber",
+        "hint": "saber · ella · presente",
+        "distractors": ["saben", "sabes", "supo"]
+      }
+    ]
+  },
+  {
+    "id": "s287",
+    "es": "El agua del mar está caliente.",
+    "sk": "Voda v mori je teplá.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["El", "agua", "del", "mar", "está", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s288",
+    "es": "Pensamos ir a la playa, pero llovió.",
+    "sk": "Chceli sme ísť na pláž, ale pršalo.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Pensamos", "ir", "a", "la", "playa", ",", "pero", "llovió", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pensamos",
+        "lemma": "pensar",
+        "hint": "pensar · nosotros · pretérito",
+        "distractors": ["Pensé", "Pensó", "Pensaste"]
+      }
+    ]
+  },
+  {
+    "id": "s289",
+    "es": "¿Hace calor en tu ciudad?",
+    "sk": "Je v tvojom meste teplo?",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Hace", "calor", "en", "tu", "ciudad", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["Hacen", "Haces", "Hizo"]
+      }
+    ]
+  }
+]

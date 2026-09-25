@@ -1,0 +1,310 @@
+[
+  {
+    "id": "trabajo",
+    "es": "trabajo",
+    "sk": ["práca", "zamestnanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Busco trabajo.", "sk": "Hľadám si prácu." },
+      { "es": "¿A qué hora sales del trabajo?", "sk": "O koľkej končíš v práci?" }
+    ]
+  },
+  {
+    "id": "oficina",
+    "es": "oficina",
+    "sk": ["kancelária"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "La oficina está en el tercer piso.", "sk": "Kancelária je na treťom poschodí." }]
+  },
+  {
+    "id": "jefe",
+    "es": "jefe",
+    "sk": ["šéf", "vedúci"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi jefe es muy buena onda.", "sk": "Môj šéf je fakt v pohode." }],
+    "note": "jefa = šéfka. „Buena onda“ je mexický hovorový výraz pre „v pohode, fajn“."
+  },
+  {
+    "id": "computadora",
+    "es": "computadora",
+    "sk": ["počítač"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi computadora es muy lenta.", "sk": "Môj počítač je strašne pomalý." }],
+    "note": "V Mexiku „computadora“, v Španielsku „ordenador“."
+  },
+  {
+    "id": "celular",
+    "es": "celular",
+    "plural": "celulares",
+    "sk": ["mobil"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "¿Me pasas tu número de celular?", "sk": "Dáš mi číslo na mobil?" }],
+    "note": "V Mexiku „celular“ (v Španielsku „móvil“)."
+  },
+  {
+    "id": "junta",
+    "es": "junta",
+    "sk": ["porada", "schôdza"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Tengo una junta a las diez.", "sk": "O desiatej mám poradu." }],
+    "note": "V Mexiku bežné slovo pre pracovnú poradu (inde skôr „reunión“)."
+  },
+  {
+    "id": "dinero",
+    "es": "dinero",
+    "sk": ["peniaze"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "No tengo mucho dinero.", "sk": "Nemám veľa peňazí." }],
+    "note": "Je v jednotnom čísle: el dinero, mucho dinero."
+  },
+  {
+    "id": "ocupado",
+    "es": "ocupado",
+    "feminine": "ocupada",
+    "sk": ["zaneprázdnený", "obsadený"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Hoy estoy muy ocupado.", "sk": "Dnes mám veľa práce." },
+      { "es": "El baño está ocupado.", "sk": "Záchod je obsadený." }
+    ]
+  },
+  {
+    "id": "empresa",
+    "es": "empresa",
+    "sk": ["firma", "spoločnosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Trabajo en una empresa de software.", "sk": "Pracujem v softvérovej firme." }]
+  },
+  {
+    "id": "companero",
+    "es": "compañero",
+    "sk": ["kolega", "spolužiak"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mis compañeros son muy buena onda.", "sk": "Kolegovia sú fakt v pohode." }],
+    "note": "compañera = kolegyňa; compañero de trabajo = kolega."
+  },
+  {
+    "id": "reunion",
+    "es": "reunión",
+    "sk": ["stretnutie", "porada"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "reuniones",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tenemos una reunión con el cliente.", "sk": "Máme stretnutie s klientom." }],
+    "note": "Pracovnú poradu v Mexiku často volajú „junta“."
+  },
+  {
+    "id": "cliente",
+    "es": "cliente",
+    "sk": ["klient", "zákazník"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "El cliente llega a las once.", "sk": "Klient príde o jedenástej." }],
+    "note": "la clienta = zákazníčka."
+  },
+  {
+    "id": "correo",
+    "es": "correo",
+    "sk": ["e-mail", "pošta"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Te mando un correo.", "sk": "Pošlem ti mail." }],
+    "note": "correo (electrónico) = e-mail."
+  },
+  {
+    "id": "sueldo",
+    "es": "sueldo",
+    "sk": ["plat", "mzda"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "El sueldo no es muy alto.", "sk": "Plat nie je veľmi vysoký." }]
+  },
+  {
+    "id": "chamba",
+    "es": "chamba",
+    "sk": ["robota", "práca (hovorovo)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Tengo mucha chamba esta semana.", "sk": "Tento týždeň mám veľa roboty." }],
+    "note": "Mexický hovorový výraz. Chambear = pracovať."
+  },
+  {
+    "id": "escritorio",
+    "es": "escritorio",
+    "sk": ["písací stôl"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi celular está en el escritorio.", "sk": "Mobil mám na stole." }]
+  },
+  {
+    "id": "proyecto",
+    "es": "proyecto",
+    "sk": ["projekt"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Estamos trabajando en un proyecto nuevo.", "sk": "Pracujeme na novom projekte." }]
+  },
+  {
+    "id": "horario",
+    "es": "horario",
+    "sk": ["rozvrh", "pracovný čas"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "¿Cuál es tu horario?", "sk": "Aký máš pracovný čas?" }]
+  },
+  {
+    "id": "doctor",
+    "es": "doctor",
+    "sk": ["lekár", "doktor"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "doctores",
+    "level": "A1",
+    "topics": ["work", "health"],
+    "examples": [{ "es": "El doctor dice que estoy bien.", "sk": "Lekár hovorí, že som v poriadku." }],
+    "note": "doctora = lekárka."
+  },
+  {
+    "id": "maestro",
+    "es": "maestro",
+    "sk": ["učiteľ"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work", "school"],
+    "examples": [{ "es": "La maestra es muy paciente.", "sk": "Učiteľka je veľmi trpezlivá." }],
+    "note": "maestra = učiteľka. V Mexiku bežné aj ako oslovenie."
+  },
+  {
+    "id": "ingeniero",
+    "es": "ingeniero",
+    "sk": ["inžinier"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi esposo es ingeniero.", "sk": "Môj manžel je inžinier." }]
+  },
+  {
+    "id": "abogado",
+    "es": "abogado",
+    "sk": ["právnik"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Necesito hablar con un abogado.", "sk": "Potrebujem sa porozprávať s právnikom." }]
+  },
+  {
+    "id": "vendedor",
+    "es": "vendedor",
+    "sk": ["predavač"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "vendedores",
+    "level": "A1",
+    "topics": ["work", "shopping"],
+    "examples": [{ "es": "El vendedor fue muy amable.", "sk": "Predavač bol veľmi milý." }]
+  },
+  {
+    "id": "trabajador",
+    "es": "trabajador",
+    "sk": ["pracovitý"],
+    "pos": "adj",
+    "feminine": "trabajadora",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tu hermano es muy trabajador.", "sk": "Tvoj brat je veľmi pracovitý." }]
+  },
+  {
+    "id": "cansado",
+    "es": "cansado",
+    "sk": ["unavený"],
+    "pos": "adj",
+    "feminine": "cansada",
+    "level": "A1",
+    "topics": ["work", "health"],
+    "examples": [{ "es": "Estoy muy cansado hoy.", "sk": "Dnes som veľmi unavený." }]
+  },
+  {
+    "id": "dificil",
+    "es": "difícil",
+    "sk": ["ťažký", "náročný"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi trabajo es difícil pero interesante.", "sk": "Moja práca je náročná, ale zaujímavá." }]
+  },
+  {
+    "id": "facil",
+    "es": "fácil",
+    "sk": ["ľahký", "jednoduchý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Es un trabajo fácil.", "sk": "Je to ľahká práca." }]
+  },
+  {
+    "id": "interesante",
+    "es": "interesante",
+    "sk": ["zaujímavý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Es un proyecto muy interesante.", "sk": "Je to veľmi zaujímavý projekt." }]
+  },
+  {
+    "id": "importante",
+    "es": "importante",
+    "sk": ["dôležitý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mañana tengo una junta importante.", "sk": "Zajtra mám dôležitú poradu." }]
+  }
+]

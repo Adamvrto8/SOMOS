@@ -1,0 +1,361 @@
+[
+  {
+    "id": "s207",
+    "es": "¿Cuánto cuestan estos zapatos?",
+    "sk": "Koľko stoja tieto topánky?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "cuestan", "estos", "zapatos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuestan",
+        "lemma": "costar",
+        "hint": "costar · ellos · presente",
+        "distractors": ["cuestas", "costamos", "costaron"]
+      }
+    ]
+  },
+  {
+    "id": "s208",
+    "es": "Me llevo esta chamarra.",
+    "sk": "Beriem si túto bundu.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "llevo", "esta", "chamarra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["lleva", "llevan", "llevé"]
+      }
+    ]
+  },
+  {
+    "id": "s209",
+    "es": "¿Aceptan tarjeta de crédito?",
+    "sk": "Beriete kreditnú kartu?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "tokens": ["¿", "Aceptan", "tarjeta", "de", "crédito", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tarjeta",
+        "lemma": "tarjeta",
+        "hint": "karta",
+        "distractors": ["efectivo", "cambio", "bolsa"]
+      }
+    ]
+  },
+  {
+    "id": "s210",
+    "es": "Pagué en efectivo.",
+    "sk": "Platil som v hotovosti.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Pagué", "en", "efectivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pagué",
+        "lemma": "pagar",
+        "hint": "pagar · yo · pretérito",
+        "distractors": ["Pagó", "Pagaron", "Pago"]
+      }
+    ]
+  },
+  {
+    "id": "s211",
+    "es": "Estoy buscando un regalo para mi novia.",
+    "sk": "Hľadám darček pre priateľku.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "buscando", "un", "regalo", "para", "mi", "novia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "buscando",
+        "lemma": "buscar",
+        "hint": "buscar · gerundio",
+        "distractors": ["busca", "buscar", "buscan"]
+      }
+    ]
+  },
+  {
+    "id": "s212",
+    "es": "En el tianguis venden de todo.",
+    "sk": "Na trhu predávajú všetko možné.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["En", "el", "tianguis", "venden", "de", "todo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "venden",
+        "lemma": "vender",
+        "hint": "vender · ellos · presente",
+        "distractors": ["vendes", "vendemos", "vendieron"]
+      }
+    ]
+  },
+  {
+    "id": "s213",
+    "es": "Esta tienda es más barata.",
+    "sk": "Tento obchod je lacnejší.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["gender"],
+    "tokens": ["Esta", "tienda", "es", "más", "barata", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "barata",
+        "lemma": "barato",
+        "hint": "prídavné meno: barato",
+        "distractors": ["barato", "baratos", "baratas"]
+      }
+    ]
+  },
+  {
+    "id": "s214",
+    "es": "¿Me da una bolsa, por favor?",
+    "sk": "Dáte mi tašku, prosím?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "da", "una", "bolsa", ",", "por", "favor", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · usted · presente",
+        "distractors": ["dan", "das", "dio"]
+      }
+    ]
+  },
+  {
+    "id": "s215",
+    "es": "Compramos muchas cosas en el supermercado.",
+    "sk": "V supermarkete sme kúpili veľa vecí.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Compramos", "muchas", "cosas", "en", "el", "supermercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Compramos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · pretérito",
+        "distractors": ["Compré", "Compró", "Compraste"]
+      }
+    ]
+  },
+  {
+    "id": "s216",
+    "es": "Los precios subieron mucho este año.",
+    "sk": "Ceny tento rok veľmi stúpli.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "precios", "subieron", "mucho", "este", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "subieron",
+        "lemma": "subir",
+        "hint": "subir · ellos · pretérito",
+        "distractors": ["subiste", "subimos", "suben"]
+      }
+    ]
+  },
+  {
+    "id": "s217",
+    "es": "¿Tiene cambio de doscientos?",
+    "sk": "Máte vydať z dvesto?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tiene", "cambio", "de", "doscientos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tiene",
+        "lemma": "tener",
+        "hint": "tener · usted · presente",
+        "distractors": ["Tienen", "Tienes", "Tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s218",
+    "es": "No tengo efectivo, ¿puedo pagar con tarjeta?",
+    "sk": "Nemám hotovosť, môžem platiť kartou?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["No", "tengo", "efectivo", ",", "¿", "puedo", "pagar", "con", "tarjeta", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tiene", "tienen", "tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s219",
+    "es": "Mi hermana gastó todo su sueldo.",
+    "sk": "Sestra minula celý plat.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "hermana", "gastó", "todo", "su", "sueldo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "todo",
+        "lemma": "todo",
+        "hint": "celý",
+        "distractors": ["toda", "todos", "todas"]
+      }
+    ]
+  },
+  {
+    "id": "s220",
+    "es": "El vendedor me dio un descuento.",
+    "sk": "Predavač mi dal zľavu.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "vendedor", "me", "dio", "un", "descuento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · él · pretérito",
+        "distractors": ["dieron", "diste", "da"]
+      }
+    ]
+  },
+  {
+    "id": "s221",
+    "es": "¿A qué hora abre el centro comercial?",
+    "sk": "O koľkej otvára nákupné centrum?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "abre", "el", "centro", "comercial", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "abre",
+        "lemma": "abrir",
+        "hint": "abrir · él · presente",
+        "distractors": ["abren", "abres", "abrió"]
+      }
+    ]
+  },
+  {
+    "id": "s222",
+    "es": "Estas manzanas están muy caras.",
+    "sk": "Tieto jablká sú veľmi drahé.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["gender"],
+    "tokens": ["Estas", "manzanas", "están", "muy", "caras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "caras",
+        "lemma": "caro",
+        "hint": "prídavné meno: caro",
+        "distractors": ["caro", "cara", "caros"]
+      }
+    ]
+  },
+  {
+    "id": "s223",
+    "es": "Vendí mi carro viejo.",
+    "sk": "Predal som svoje staré auto.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Vendí", "mi", "carro", "viejo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vendí",
+        "lemma": "vender",
+        "hint": "vender · yo · pretérito",
+        "distractors": ["Vendió", "Vendieron", "Vendo"]
+      }
+    ]
+  },
+  {
+    "id": "s224",
+    "es": "¿Dónde está la caja?",
+    "sk": "Kde je pokladňa?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Dónde", "está", "la", "caja", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s225",
+    "es": "Los domingos voy al tianguis con mi mamá.",
+    "sk": "V nedeľu chodím s mamou na trh.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "domingos", "voy", "al", "tianguis", "con", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["va", "van", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s226",
+    "es": "Esta camisa está en oferta.",
+    "sk": "Táto košeľa je v akcii.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Esta", "camisa", "está", "en", "oferta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  }
+]

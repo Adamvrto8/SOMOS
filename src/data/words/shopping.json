@@ -1,0 +1,217 @@
+[
+  {
+    "id": "precio",
+    "es": "precio",
+    "sk": ["cena"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Cuál es el precio?", "sk": "Aká je cena?" }]
+  },
+  {
+    "id": "caro",
+    "es": "caro",
+    "sk": ["drahý"],
+    "pos": "adj",
+    "feminine": "cara",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Este celular es muy caro.", "sk": "Tento mobil je veľmi drahý." }]
+  },
+  {
+    "id": "barato",
+    "es": "barato",
+    "sk": ["lacný"],
+    "pos": "adj",
+    "feminine": "barata",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "En el mercado todo es más barato.", "sk": "Na trhu je všetko lacnejšie." }]
+  },
+  {
+    "id": "tarjeta",
+    "es": "tarjeta",
+    "sk": ["karta"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Aceptan tarjeta?", "sk": "Beriete kartu?" }]
+  },
+  {
+    "id": "efectivo",
+    "es": "efectivo",
+    "sk": ["hotovosť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Solo aceptamos efectivo.", "sk": "Berieme len hotovosť." }],
+    "note": "en efectivo = v hotovosti."
+  },
+  {
+    "id": "cambio",
+    "es": "cambio",
+    "sk": ["drobné", "výdavok", "zmena"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Tiene cambio de quinientos?", "sk": "Máte vydať z päťsto?" }]
+  },
+  {
+    "id": "bolsa",
+    "es": "bolsa",
+    "sk": ["taška", "igelitka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Quiere una bolsa?", "sk": "Chcete tašku?" }]
+  },
+  {
+    "id": "talla",
+    "es": "talla",
+    "sk": ["veľkosť (oblečenia)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping", "clothes"],
+    "examples": [{ "es": "¿Tiene esta camisa en talla mediana?", "sk": "Máte túto košeľu vo veľkosti M?" }]
+  },
+  {
+    "id": "oferta",
+    "es": "oferta",
+    "sk": ["akcia", "ponuka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Los zapatos están en oferta.", "sk": "Topánky sú v akcii." }],
+    "note": "en oferta = v akcii."
+  },
+  {
+    "id": "descuento",
+    "es": "descuento",
+    "sk": ["zľava"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Me hace un descuento?", "sk": "Dáte mi zľavu?" }]
+  },
+  {
+    "id": "supermercado",
+    "es": "supermercado",
+    "sk": ["supermarket"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Voy al supermercado.", "sk": "Idem do supermarketu." }]
+  },
+  {
+    "id": "tianguis",
+    "es": "tianguis",
+    "sk": ["trh pod holým nebom"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "tianguis",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Los domingos hay tianguis en mi colonia.", "sk": "V nedeľu je v našej štvrti trh." }],
+    "note": "Typicky mexické: pouličný trh, raz týždenne na tom istom mieste."
+  },
+  {
+    "id": "caja",
+    "es": "caja",
+    "sk": ["pokladňa", "krabica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Pague en la caja, por favor.", "sk": "Zaplaťte pri pokladni, prosím." }]
+  },
+  {
+    "id": "recibo",
+    "es": "recibo",
+    "sk": ["účtenka", "doklad"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Me da el recibo?", "sk": "Dáte mi účtenku?" }]
+  },
+  {
+    "id": "regalo",
+    "es": "regalo",
+    "sk": ["darček"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Busco un regalo para mi mamá.", "sk": "Hľadám darček pre mamu." }]
+  },
+  {
+    "id": "cuanto",
+    "es": "¿cuánto?",
+    "sk": ["koľko?"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Cuánto es?", "sk": "Koľko to bude?" }]
+  },
+  {
+    "id": "centro-comercial",
+    "es": "centro comercial",
+    "sk": ["nákupné centrum"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "centros comerciales",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Vamos al centro comercial el sábado.", "sk": "V sobotu ideme do nákupného centra." }]
+  },
+  {
+    "id": "abierto",
+    "es": "abierto",
+    "sk": ["otvorený"],
+    "pos": "adj",
+    "feminine": "abierta",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Está abierto el banco?", "sk": "Je banka otvorená?" }]
+  },
+  {
+    "id": "cerrado",
+    "es": "cerrado",
+    "sk": ["zatvorený"],
+    "pos": "adj",
+    "feminine": "cerrada",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "La tienda está cerrada.", "sk": "Obchod je zatvorený." }]
+  },
+  {
+    "id": "nuevo",
+    "es": "nuevo",
+    "sk": ["nový"],
+    "pos": "adj",
+    "feminine": "nueva",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Compré un celular nuevo.", "sk": "Kúpil som si nový mobil." }]
+  },
+  {
+    "id": "viejo",
+    "es": "viejo",
+    "sk": ["starý"],
+    "pos": "adj",
+    "feminine": "vieja",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Mi carro es muy viejo.", "sk": "Moje auto je veľmi staré." }],
+    "note": "O ľuďoch je zdvorilejšie „mayor“: una persona mayor."
+  }
+]

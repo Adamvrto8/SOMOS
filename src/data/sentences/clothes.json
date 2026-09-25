@@ -1,0 +1,261 @@
+[
+  {
+    "id": "s227",
+    "es": "Hoy llevo una playera azul.",
+    "sk": "Dnes mám na sebe modré tričko.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "llevo", "una", "playera", "azul", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["lleva", "llevan", "llevé"]
+      }
+    ]
+  },
+  {
+    "id": "s228",
+    "es": "¿Me puedo probar estos pantalones?",
+    "sk": "Môžem si vyskúšať tieto nohavice?",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gender"],
+    "tokens": ["¿", "Me", "puedo", "probar", "estos", "pantalones", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estos",
+        "lemma": "este",
+        "hint": "tento, tieto",
+        "distractors": ["este", "esta", "estas"]
+      }
+    ]
+  },
+  {
+    "id": "s229",
+    "es": "¿Qué talla usas?",
+    "sk": "Akú veľkosť nosíš?",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Qué", "talla", "usas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "usas",
+        "lemma": "usar",
+        "hint": "usar · tú · presente",
+        "distractors": ["usamos", "uso", "usaste"]
+      }
+    ]
+  },
+  {
+    "id": "s230",
+    "es": "Mi papá siempre usa sombrero.",
+    "sk": "Otec vždy nosí klobúk.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "papá", "siempre", "usa", "sombrero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "usa",
+        "lemma": "usar",
+        "hint": "usar · él · presente",
+        "distractors": ["usan", "usas", "usó"]
+      }
+    ]
+  },
+  {
+    "id": "s231",
+    "es": "Compré unos tenis nuevos.",
+    "sk": "Kúpil som si nové tenisky.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "tokens": ["Compré", "unos", "tenis", "nuevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "unos",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "una", "unas"]
+      }
+    ]
+  },
+  {
+    "id": "s232",
+    "es": "Necesito lavar mi ropa.",
+    "sk": "Musím si oprať oblečenie.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Necesito", "lavar", "mi", "ropa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["Necesita", "Necesitan", "Necesité"]
+      }
+    ]
+  },
+  {
+    "id": "s233",
+    "es": "La camisa blanca está sucia.",
+    "sk": "Biela košeľa je špinavá.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gender"],
+    "tokens": ["La", "camisa", "blanca", "está", "sucia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sucia",
+        "lemma": "sucio",
+        "hint": "prídavné meno: sucio",
+        "distractors": ["sucio", "sucios", "sucias"]
+      }
+    ]
+  },
+  {
+    "id": "s234",
+    "es": "¿De qué color es tu chamarra?",
+    "sk": "Akej farby je tvoja bunda?",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "De", "qué", "color", "es", "tu", "chamarra", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s235",
+    "es": "Me gustan tus lentes nuevos.",
+    "sk": "Páčia sa mi tvoje nové okuliare.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gender"],
+    "tokens": ["Me", "gustan", "tus", "lentes", "nuevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "nuevos",
+        "lemma": "nuevo",
+        "hint": "prídavné meno: nuevo",
+        "distractors": ["nuevo", "nueva", "nuevas"]
+      }
+    ]
+  },
+  {
+    "id": "s236",
+    "es": "Mi mamá me regaló un suéter.",
+    "sk": "Mama mi darovala sveter.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "tokens": ["Mi", "mamá", "me", "regaló", "un", "suéter", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
+      }
+    ]
+  },
+  {
+    "id": "s237",
+    "es": "Hace frío, ponte la chamarra.",
+    "sk": "Je zima, obleč si bundu.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "tokens": ["Hace", "frío", ",", "ponte", "la", "chamarra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "frío",
+        "lemma": "frío",
+        "hint": "zima (chlad)",
+        "distractors": ["calor", "sol", "viento"]
+      }
+    ]
+  },
+  {
+    "id": "s238",
+    "es": "Estos zapatos son muy cómodos.",
+    "sk": "Tieto topánky sú veľmi pohodlné.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Estos", "zapatos", "son", "muy", "cómodos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "son",
+        "lemma": "ser",
+        "hint": "ser · ellos · presente",
+        "distractors": ["eres", "somos", "fueron"]
+      }
+    ]
+  },
+  {
+    "id": "s239",
+    "es": "¿Dónde compraste esa gorra?",
+    "sk": "Kde si kúpil tú šiltovku?",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Dónde", "compraste", "esa", "gorra", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compraste",
+        "lemma": "comprar",
+        "hint": "comprar · tú · pretérito",
+        "distractors": ["compramos", "compré", "compras"]
+      }
+    ]
+  },
+  {
+    "id": "s240",
+    "es": "Busco una camisa roja para la fiesta.",
+    "sk": "Hľadám červenú košeľu na párty.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gender"],
+    "tokens": ["Busco", "una", "camisa", "roja", "para", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "roja",
+        "lemma": "rojo",
+        "hint": "prídavné meno: rojo",
+        "distractors": ["rojo", "rojos", "rojas"]
+      }
+    ]
+  },
+  {
+    "id": "s241",
+    "es": "Los calcetines están en el cajón.",
+    "sk": "Ponožky sú v šuplíku.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["Los", "calcetines", "están", "en", "el", "cajón", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "Los", "lemma": "el", "hint": "člen", "distractors": ["El", "La", "Las"] }]
+  }
+]
