@@ -142,6 +142,7 @@ no `vosotros` forms, all 5 persons present.
 Content conventions (types in `src/data/types.ts`, all enforced by `validate:data`):
 - Word `id` = slug of `es` (lowercase, accents/¿?¡! stripped, spaces → `-`); collisions get `-2`: `papa` (zemiak), `papa-2` (papá).
 - Every verb has exactly one Word (`pos: 'verb'`, `es` = `verbId` = infinitive, `id` = its slug: `extranar`); `wordIdByVerb` maps them.
+- Nouns ending in a consonant need `plural`, unless marked `uncountable: true` (el fútbol, la salud); plural-only nouns (ganas, lentes, vacaciones) are listed in `grammar.ts`.
 - `irregularForms` lists exactly the forms that differ from the regular -ar/-er/-ir pattern
   (spelling changes count: `llegué` → `preterito.yo`); `regular` is true only when there are none;
   `gerundIrregular` likewise. Use `tense.*` when all 5 persons differ.
@@ -247,7 +248,10 @@ Clean and calm, but with character. Not childish.
 
 ```
 src/
-  data/            words.json, verbs.json, sentences.json, topics.json
+  data/            topics.json, types.ts, index.ts (merges the folders below via import.meta.glob)
+    words/         one file per topic (food.json…) + verbs.json (the verb Words)
+    sentences/     one file per topic
+    verbs/         core.json (first 20), a1-a2.json
   lib/             db.ts (Dexie), search.ts, checkAnswer.ts, conjugate.ts, srs.ts, tts.ts
   features/
     search/  word/  exercises/  archive/  home/
@@ -268,6 +272,7 @@ scripts/
 - [x] **4. Exercises** — cloze → multiple choice → conjugation drill → sentence builder → translation. Shared lesson player + checkAnswer.
 - [x] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
 - [ ] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
+  Done so far: 17 topics, 521 words, 100 verbs, 358 sentences (362 clozes). Still to add: ~280 words, ~40 sentences.
 - [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
 
 ---
