@@ -300,5 +300,77 @@
         "distractors": ["preocupan", "preocupas", "preocupó"]
       }
     ]
+  },
+  {
+    "id": "s393",
+    "es": "Tengo alergia a los gatos.",
+    "sk": "Som alergický na mačky.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "alergia", "a", "los", "gatos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s394",
+    "es": "Me siento mareado, necesito sentarme.",
+    "sk": "Točí sa mi hlava, potrebujem si sadnúť.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "siento", "mareado", ",", "necesito", "sentarme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "siento",
+        "lemma": "sentirse",
+        "hint": "sentirse · yo · presente",
+        "distractors": ["siente", "sienten", "sentí"]
+      }
+    ]
+  },
+  {
+    "id": "s395",
+    "es": "El dentista me dio una cita para el lunes.",
+    "sk": "Zubár mi dal termín na pondelok.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "dentista", "me", "dio", "una", "cita", "para", "el", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · él · pretérito",
+        "distractors": ["dieron", "diste", "da"]
+      }
+    ]
+  },
+  {
+    "id": "s396",
+    "es": "Mi hermana está embarazada.",
+    "sk": "Sestra je tehotná.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "hermana", "está", "embarazada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
   }
 ]

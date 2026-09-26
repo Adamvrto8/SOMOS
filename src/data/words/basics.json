@@ -1,0 +1,734 @@
+[
+  {
+    "id": "el",
+    "es": "el",
+    "sk": ["(určitý člen, mužský rod)"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "El carro es nuevo.", "sk": "To auto je nové." }],
+    "note": "el (m), la (ž), los (m. mn. č.), las (ž. mn. č.). S prízvukom „él“ = on. a + el = al, de + el = del."
+  },
+  {
+    "id": "la",
+    "es": "la",
+    "sk": ["(určitý člen, ženský rod)"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "La casa es muy grande.", "sk": "Ten dom je veľmi veľký." }],
+    "note": "Množné číslo: las (las casas)."
+  },
+  {
+    "id": "un",
+    "es": "un",
+    "sk": ["(neurčitý člen, mužský rod)", "jeden"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Tengo un perro y dos gatos.", "sk": "Mám psa a dve mačky." }],
+    "note": "un (m), una (ž); unos, unas = nejakí, zopár."
+  },
+  {
+    "id": "una",
+    "es": "una",
+    "sk": ["(neurčitý člen, ženský rod)", "jedna"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Una cerveza, por favor.", "sk": "Jedno pivo, prosím." }]
+  },
+  {
+    "id": "yo",
+    "es": "yo",
+    "sk": ["ja"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Yo soy de Eslovaquia.", "sk": "Ja som zo Slovenska." }],
+    "note": "Zámeno sa často vynecháva, sloveso osobu ukazuje samo: soy = (ja) som."
+  },
+  {
+    "id": "tu",
+    "es": "tu",
+    "sk": ["tvoj", "tvoja"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Tu mamá es muy amable.", "sk": "Tvoja mama je veľmi milá." }],
+    "note": "Bez prízvuku = tvoj; s prízvukom „tú“ = ty. Množné číslo: tus (tus hermanos)."
+  },
+  {
+    "id": "tu-2",
+    "es": "tú",
+    "sk": ["ty"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Tú hablas inglés?", "sk": "Ty hovoríš po anglicky?" }],
+    "note": "S prízvukom = ty; bez prízvuku „tu“ = tvoj."
+  },
+  {
+    "id": "el-2",
+    "es": "él",
+    "sk": ["on"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Él es mi hermano.", "sk": "On je môj brat." }],
+    "note": "S prízvukom = on; bez prízvuku „el“ = člen."
+  },
+  {
+    "id": "ella",
+    "es": "ella",
+    "sk": ["ona"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Ella trabaja en un banco.", "sk": "Ona pracuje v banke." }]
+  },
+  {
+    "id": "usted",
+    "es": "usted",
+    "sk": ["vy (zdvorilo, jednej osobe)"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Usted es el doctor?", "sk": "Vy ste pán doktor?" }],
+    "note": "Zdvorilé oslovenie jednej osoby, sloveso je v 3. osobe: usted habla = vy hovoríte."
+  },
+  {
+    "id": "nosotros",
+    "es": "nosotros",
+    "sk": ["my"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Nosotros vivimos en Guadalajara.", "sk": "My bývame v Guadalajare." }],
+    "note": "Iba ženy o sebe povedia „nosotras“."
+  },
+  {
+    "id": "ellos",
+    "es": "ellos",
+    "sk": ["oni"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Ellos llegan mañana.", "sk": "Oni prídu zajtra." }],
+    "note": "ellas = ony (iba ženy)."
+  },
+  {
+    "id": "ustedes",
+    "es": "ustedes",
+    "sk": ["vy (viacerým ľuďom)"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Ustedes quieren algo de tomar?", "sk": "Dáte si niečo na pitie?" }],
+    "note": "V Mexiku jediný tvar pre „vy“ viacerým ľuďom, kamarátom aj cudzím. Vosotros sa nepoužíva."
+  },
+  {
+    "id": "mi",
+    "es": "mi",
+    "sk": ["môj", "moja"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Mi casa es tu casa.", "sk": "Môj dom je tvoj dom." }],
+    "note": "Množné číslo: mis (mis amigos). S prízvukom „mí“ = mne (para mí = pre mňa)."
+  },
+  {
+    "id": "su",
+    "es": "su",
+    "sk": ["jeho", "jej", "váš", "ich"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Su casa está cerca de aquí.", "sk": "Ich dom je blízko." }],
+    "note": "Význam vyplýva z kontextu: jeho / jej / váš (usted, ustedes) / ich. Množné číslo: sus."
+  },
+  {
+    "id": "nuestro",
+    "es": "nuestro",
+    "sk": ["náš"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Nuestro departamento es pequeño.", "sk": "Náš byt je malý." }],
+    "note": "nuestra, nuestros, nuestras podľa podstatného mena."
+  },
+  {
+    "id": "este",
+    "es": "este",
+    "sk": ["tento"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Este libro es muy bueno.", "sk": "Táto kniha je veľmi dobrá." }],
+    "note": "esta (ž), estos, estas. Pozor: esta = táto, está = je."
+  },
+  {
+    "id": "ese",
+    "es": "ese",
+    "sk": ["ten", "tamten"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Cuánto cuesta ese sombrero?", "sk": "Koľko stojí ten klobúk?" }],
+    "note": "esa (ž), esos, esas."
+  },
+  {
+    "id": "esto",
+    "es": "esto",
+    "sk": ["toto"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Qué es esto?", "sk": "Čo je toto?" }]
+  },
+  {
+    "id": "eso",
+    "es": "eso",
+    "sk": ["to"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Eso no es cierto.", "sk": "To nie je pravda." }]
+  },
+  {
+    "id": "algo",
+    "es": "algo",
+    "sk": ["niečo"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Quieres algo de tomar?", "sk": "Dáš si niečo na pitie?" }]
+  },
+  {
+    "id": "nada",
+    "es": "nada",
+    "sk": ["nič"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No tengo nada.", "sk": "Nemám nič." }],
+    "note": "Dvojitý zápor je v španielčine správne: no… nada = nič."
+  },
+  {
+    "id": "alguien",
+    "es": "alguien",
+    "sk": ["niekto"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Alguien habla inglés?", "sk": "Hovorí niekto po anglicky?" }]
+  },
+  {
+    "id": "nadie",
+    "es": "nadie",
+    "sk": ["nikto"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No hay nadie en la oficina.", "sk": "V kancelárii nikto nie je." }]
+  },
+  {
+    "id": "que",
+    "es": "que",
+    "sk": ["že", "ktorý"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Creo que va a llover.", "sk": "Myslím, že bude pršať." },
+      { "es": "El carro que compré es rojo.", "sk": "Auto, ktoré som kúpil, je červené." }
+    ],
+    "note": "Bez prízvuku = že / ktorý; s prízvukom „qué“ = čo."
+  },
+  {
+    "id": "que-2",
+    "es": "qué",
+    "sk": ["čo", "aký"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Qué quieres comer?", "sk": "Čo chceš jesť?" }, { "es": "¡Qué bonito!", "sk": "Aké pekné!" }],
+    "note": "V otázke a zvolaní vždy s prízvukom."
+  },
+  {
+    "id": "quien",
+    "es": "quién",
+    "sk": ["kto"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Quién es ella?", "sk": "Kto je to?" }],
+    "note": "Množné číslo: quiénes (¿Quiénes vienen?)."
+  },
+  {
+    "id": "cual",
+    "es": "cuál",
+    "sk": ["ktorý", "aký"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Cuál es tu color favorito?", "sk": "Aká je tvoja obľúbená farba?" }],
+    "note": "¿Cuál es…? sa pýta na výber z možností (meno, číslo, adresa); ¿Qué es…? na definíciu."
+  },
+  {
+    "id": "donde",
+    "es": "dónde",
+    "sk": ["kde"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Dónde está el baño?", "sk": "Kde je záchod?" }],
+    "note": "¿Adónde vas? = Kam ideš?"
+  },
+  {
+    "id": "cuando",
+    "es": "cuándo",
+    "sk": ["kedy"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Cuándo es tu cumpleaños?", "sk": "Kedy máš narodeniny?" }]
+  },
+  {
+    "id": "como",
+    "es": "cómo",
+    "sk": ["ako"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?" }],
+    "note": "Bez prízvuku „como“ = ako (prirovnanie) alebo „jem“ (comer)."
+  },
+  {
+    "id": "por-que",
+    "es": "por qué",
+    "sk": ["prečo"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Por qué estás triste?", "sk": "Prečo si smutný?" }],
+    "note": "Odpoveď: porque (spolu, bez prízvuku) = pretože."
+  },
+  {
+    "id": "porque",
+    "es": "porque",
+    "sk": ["pretože", "lebo"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No voy porque estoy cansado.", "sk": "Nejdem, lebo som unavený." }]
+  },
+  {
+    "id": "en",
+    "es": "en",
+    "sk": ["v", "na"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Vivo en Puebla.", "sk": "Bývam v Pueble." },
+      { "es": "Las llaves están en la mesa.", "sk": "Kľúče sú na stole." }
+    ]
+  },
+  {
+    "id": "de",
+    "es": "de",
+    "sk": ["z", "od", "(2. pád)"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Soy de Bratislava.", "sk": "Som z Bratislavy." },
+      { "es": "Es el carro de mi papá.", "sk": "To je otcovo auto." }
+    ],
+    "note": "de + el = del (la casa del vecino)."
+  },
+  {
+    "id": "a",
+    "es": "a",
+    "sk": ["do", "k", "na"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Voy a la playa.", "sk": "Idem na pláž." }, { "es": "Vamos al cine.", "sk": "Ideme do kina." }],
+    "note": "a + el = al. Pred osobou v predmete: Veo a mi mamá = Vidím mamu."
+  },
+  {
+    "id": "con",
+    "es": "con",
+    "sk": ["s"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Vivo con mi novia.", "sk": "Bývam s priateľkou." }],
+    "note": "conmigo = so mnou, contigo = s tebou."
+  },
+  {
+    "id": "sin",
+    "es": "sin",
+    "sk": ["bez"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Un café sin azúcar, por favor.", "sk": "Kávu bez cukru, prosím." }]
+  },
+  {
+    "id": "para",
+    "es": "para",
+    "sk": ["pre", "na", "aby"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Este regalo es para ti.", "sk": "Tento darček je pre teba." },
+      { "es": "Estudio para aprender.", "sk": "Učím sa, aby som sa niečo naučil." }
+    ]
+  },
+  {
+    "id": "por",
+    "es": "por",
+    "sk": ["za", "cez", "kvôli"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Gracias por todo.", "sk": "Ďakujem za všetko." },
+      { "es": "Caminamos por el parque.", "sk": "Prechádzali sme sa po parku." }
+    ]
+  },
+  {
+    "id": "desde",
+    "es": "desde",
+    "sk": ["od", "z"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Trabajo aquí desde enero.", "sk": "Pracujem tu od januára." }]
+  },
+  {
+    "id": "hasta",
+    "es": "hasta",
+    "sk": ["až do", "do"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "La tienda está abierta hasta las nueve.", "sk": "Obchod je otvorený do deviatej." }]
+  },
+  {
+    "id": "entre",
+    "es": "entre",
+    "sk": ["medzi"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "El banco está entre la farmacia y el hotel.", "sk": "Banka je medzi lekárňou a hotelom." }]
+  },
+  {
+    "id": "sobre",
+    "es": "sobre",
+    "sk": ["na", "o"],
+    "pos": "prep",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Tu celular está sobre la cama.", "sk": "Tvoj mobil je na posteli." },
+      { "es": "Hablamos sobre el viaje.", "sk": "Rozprávali sme sa o výlete." }
+    ]
+  },
+  {
+    "id": "debajo-de",
+    "es": "debajo de",
+    "sk": ["pod"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "El gato está debajo de la cama.", "sk": "Mačka je pod posteľou." }]
+  },
+  {
+    "id": "y",
+    "es": "y",
+    "sk": ["a"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Quiero tacos y un agua.", "sk": "Chcem tacos a vodu." }],
+    "note": "Pred slovom na i-/hi- sa mení na „e“: padre e hijo."
+  },
+  {
+    "id": "o",
+    "es": "o",
+    "sk": ["alebo"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Café o té?", "sk": "Kávu alebo čaj?" }]
+  },
+  {
+    "id": "pero",
+    "es": "pero",
+    "sk": ["ale"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Es caro, pero es muy bueno.", "sk": "Je to drahé, ale veľmi dobré." }]
+  },
+  {
+    "id": "si-2",
+    "es": "si",
+    "sk": ["ak", "či"],
+    "pos": "conj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Si llueve, no vamos.", "sk": "Ak bude pršať, nejdeme." },
+      { "es": "No sé si viene.", "sk": "Neviem, či príde." }
+    ],
+    "note": "Bez prízvuku = ak / či; s prízvukom „sí“ = áno."
+  },
+  {
+    "id": "tambien",
+    "es": "también",
+    "sk": ["tiež", "aj"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Yo también.", "sk": "Ja tiež." }]
+  },
+  {
+    "id": "tampoco",
+    "es": "tampoco",
+    "sk": ["tiež nie", "ani"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "—No me gusta. —A mí tampoco.", "sk": "„Nechutí mi to.“ „Mne tiež nie.“" }]
+  },
+  {
+    "id": "muy",
+    "es": "muy",
+    "sk": ["veľmi"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Estoy muy cansado.", "sk": "Som veľmi unavený." }],
+    "note": "muy + prídavné meno (muy bueno), mucho + sloveso alebo podst. meno (trabajo mucho)."
+  },
+  {
+    "id": "mucho",
+    "es": "mucho",
+    "sk": ["veľa", "veľmi"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Trabajo mucho.", "sk": "Veľa pracujem." },
+      { "es": "Tengo muchos amigos.", "sk": "Mám veľa priateľov." }
+    ],
+    "note": "Pred podstatným menom sa mení: mucha agua, muchos amigos, muchas gracias."
+  },
+  {
+    "id": "poco",
+    "es": "poco",
+    "sk": ["málo", "trochu"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Hablo un poco de español.", "sk": "Hovorím trochu po španielsky." }],
+    "note": "un poco = trochu; poco = málo (como poco = jem málo)."
+  },
+  {
+    "id": "bien",
+    "es": "bien",
+    "sk": ["dobre"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Estoy bien, gracias.", "sk": "Mám sa dobre, ďakujem." }],
+    "note": "V Mexiku aj „veľmi“: bien bonito = veľmi pekný."
+  },
+  {
+    "id": "mal",
+    "es": "mal",
+    "sk": ["zle"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Dormí muy mal.", "sk": "Spal som veľmi zle." }]
+  },
+  {
+    "id": "mas",
+    "es": "más",
+    "sk": ["viac", "ešte"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Quieres más café?", "sk": "Chceš ešte kávu?" }],
+    "note": "Vždy s prízvukom. más… que = viac… ako."
+  },
+  {
+    "id": "menos",
+    "es": "menos",
+    "sk": ["menej"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Ahora trabajo menos.", "sk": "Teraz pracujem menej." }]
+  },
+  {
+    "id": "solo",
+    "es": "solo",
+    "sk": ["len", "iba", "sám"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Solo quiero un café.", "sk": "Chcem iba kávu." }, { "es": "Vivo solo.", "sk": "Bývam sám." }],
+    "note": "Ako prídavné meno = sám (vivo sola = bývam sama)."
+  },
+  {
+    "id": "otra-vez",
+    "es": "otra vez",
+    "sk": ["znova", "zase"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Perdí el camión otra vez.", "sk": "Zase mi ušiel autobus." }]
+  },
+  {
+    "id": "asi",
+    "es": "así",
+    "sk": ["tak", "takto"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Se hace así.", "sk": "Robí sa to takto." }]
+  },
+  {
+    "id": "casi",
+    "es": "casi",
+    "sk": ["takmer", "skoro"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Casi siempre como en casa.", "sk": "Takmer vždy jem doma." }]
+  },
+  {
+    "id": "tal-vez",
+    "es": "tal vez",
+    "sk": ["možno"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Tal vez vamos mañana.", "sk": "Možno pôjdeme zajtra." }]
+  },
+  {
+    "id": "de-verdad",
+    "es": "de verdad",
+    "sk": ["naozaj", "vážne"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿De verdad? No lo sabía.", "sk": "Naozaj? To som nevedel." }]
+  },
+  {
+    "id": "bastante",
+    "es": "bastante",
+    "sk": ["dosť", "celkom"],
+    "pos": "adv",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [{ "es": "El examen fue bastante difícil.", "sk": "Skúška bola dosť ťažká." }]
+  },
+  {
+    "id": "demasiado",
+    "es": "demasiado",
+    "sk": ["príliš"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Es demasiado caro.", "sk": "Je to príliš drahé." }]
+  },
+  {
+    "id": "bueno",
+    "es": "bueno",
+    "sk": ["dobrý"],
+    "pos": "adj",
+    "feminine": "buena",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "La comida está muy buena.", "sk": "Jedlo je veľmi dobré." },
+      { "es": "Es un buen restaurante.", "sk": "Je to dobrá reštaurácia." }
+    ],
+    "note": "Pred podst. menom mužského rodu: buen (un buen día). V Mexiku sa do telefónu hovorí „¿Bueno?“ = Haló?"
+  },
+  {
+    "id": "malo",
+    "es": "malo",
+    "sk": ["zlý"],
+    "pos": "adj",
+    "feminine": "mala",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "La película es muy mala.", "sk": "Ten film je veľmi zlý." }],
+    "note": "Pred podst. menom mužského rodu: mal (un mal día)."
+  },
+  {
+    "id": "mismo",
+    "es": "mismo",
+    "sk": ["ten istý", "rovnaký"],
+    "pos": "adj",
+    "feminine": "misma",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Tenemos el mismo celular.", "sk": "Máme rovnaký mobil." }]
+  },
+  {
+    "id": "otro",
+    "es": "otro",
+    "sk": ["iný", "ďalší"],
+    "pos": "adj",
+    "feminine": "otra",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Otra cerveza, por favor.", "sk": "Ešte jedno pivo, prosím." }],
+    "note": "Nikdy nie „un otro“: otro café = ďalšiu kávu."
+  },
+  {
+    "id": "todo",
+    "es": "todo",
+    "sk": ["všetko", "celý"],
+    "pos": "pron",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Todo está bien.", "sk": "Všetko je v poriadku." },
+      { "es": "Trabajé todo el día.", "sk": "Pracoval som celý deň." }
+    ],
+    "note": "Ako prídavné meno: todo el día, toda la noche, todos los días, todas las semanas."
+  },
+  {
+    "id": "cada",
+    "es": "cada",
+    "sk": ["každý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Cada día aprendo algo nuevo.", "sk": "Každý deň sa naučím niečo nové." }],
+    "note": "Nemení sa: cada día, cada semana."
+  },
+  {
+    "id": "juntos",
+    "es": "juntos",
+    "sk": ["spolu"],
+    "pos": "adj",
+    "feminine": "juntas",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Vamos juntos al centro.", "sk": "Pôjdeme spolu do centra." }]
+  }
+]

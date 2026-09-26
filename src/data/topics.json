@@ -1,5 +1,7 @@
 [
   { "id": "greetings", "sk": "Pozdravy a frázy", "es": "Saludos y frases", "icon": "hand" },
+  { "id": "basics", "sk": "Základné slová", "es": "Palabras básicas", "icon": "blocks" },
+  { "id": "numbers", "sk": "Čísla", "es": "Los números", "icon": "hash" },
   { "id": "family", "sk": "Rodina", "es": "La familia", "icon": "users" },
   { "id": "food", "sk": "Jedlo a pitie", "es": "Comida y bebida", "icon": "utensils" },
   { "id": "home", "sk": "Domov a bývanie", "es": "La casa", "icon": "house" },

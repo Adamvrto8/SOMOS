@@ -88,12 +88,14 @@ const SPAIN_ONLY = new Map([
 ])
 const VOSOTROS_WORDS = new Set(['vosotros', 'vosotras', 'os', 'sois', 'vais'])
 const VOSOTROS_ENDING = /(áis|éis|asteis|isteis)$/
+// Numbers that happen to end like a vosotros form.
+const NOT_VOSOTROS = new Set(['dieciséis', 'veintiséis'])
 
 function checkSpanish(where: string, text: unknown) {
   if (typeof text !== 'string') return
   for (const word of text.toLowerCase().split(/[^\p{L}]+/u)) {
     if (!word) continue
-    if (VOSOTROS_WORDS.has(word) || VOSOTROS_ENDING.test(word)) fail(where, `vosotros form "${word}"`)
+    if (VOSOTROS_WORDS.has(word) || (VOSOTROS_ENDING.test(word) && !NOT_VOSOTROS.has(word))) fail(where, `vosotros form "${word}"`)
     const mx = SPAIN_ONLY.get(word)
     if (mx) fail(where, `Spain-only word "${word}", use "${mx}"`)
   }

@@ -269,5 +269,76 @@
         "distractors": ["duermen", "duermes", "durmió"]
       }
     ]
+  },
+  {
+    "id": "s389",
+    "es": "Anoche vimos muchas estrellas.",
+    "sk": "Včera večer sme videli veľa hviezd.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "vimos", "muchas", "estrellas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["vi", "vio", "vemos"]
+      }
+    ]
+  },
+  {
+    "id": "s390",
+    "es": "Las tortugas ponen sus huevos en la arena.",
+    "sk": "Korytnačky kladú vajíčka do piesku.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Las", "tortugas", "ponen", "sus", "huevos", "en", "la", "arena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ponen",
+        "lemma": "poner",
+        "hint": "poner · ellas · presente",
+        "distractors": ["pones", "ponemos", "pusieron"]
+      }
+    ]
+  },
+  {
+    "id": "s391",
+    "es": "Hay muchos mosquitos cerca del río.",
+    "sk": "Pri rieke je veľa komárov.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["gender"],
+    "tokens": ["Hay", "muchos", "mosquitos", "cerca", "del", "río", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "muchos",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "muchas", "mucha"]
+      }
+    ]
+  },
+  {
+    "id": "s392",
+    "es": "En Michoacán hay millones de mariposas monarca.",
+    "sk": "V Michoacáne sú milióny motýľov monarcha.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["En", "Michoacán", "hay", "millones", "de", "mariposas", "monarca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hay",
+        "lemma": "haber",
+        "hint": "je / sú",
+        "distractors": ["está", "es", "tiene"]
+      }
+    ]
   }
 ]

@@ -1,0 +1,369 @@
+[
+  {
+    "id": "numero",
+    "es": "número",
+    "sk": ["číslo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "¿Cuál es tu número de celular?", "sk": "Aké máš číslo na mobil?" }]
+  },
+  {
+    "id": "cero",
+    "es": "cero",
+    "sk": ["nula"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Mi número termina en cero.", "sk": "Moje číslo končí nulou." }]
+  },
+  {
+    "id": "uno",
+    "es": "uno",
+    "sk": ["jeden"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Solo quiero uno.", "sk": "Chcem iba jeden." }],
+    "note": "Pred podst. menom: un (un taco), una (una cerveza)."
+  },
+  {
+    "id": "dos",
+    "es": "dos",
+    "sk": ["dva"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Dos cafés, por favor.", "sk": "Dve kávy, prosím." }]
+  },
+  {
+    "id": "tres",
+    "es": "tres",
+    "sk": ["tri"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Tengo tres hermanos.", "sk": "Mám troch súrodencov." }]
+  },
+  {
+    "id": "cuatro",
+    "es": "cuatro",
+    "sk": ["štyri"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Somos cuatro en mi familia.", "sk": "V rodine sme štyria." }]
+  },
+  {
+    "id": "cinco",
+    "es": "cinco",
+    "sk": ["päť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Llego en cinco minutos.", "sk": "Prídem o päť minút." }]
+  },
+  {
+    "id": "seis",
+    "es": "seis",
+    "sk": ["šesť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "La clase empieza a las seis.", "sk": "Hodina začína o šiestej." }]
+  },
+  {
+    "id": "siete",
+    "es": "siete",
+    "sk": ["sedem"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "La semana tiene siete días.", "sk": "Týždeň má sedem dní." }]
+  },
+  {
+    "id": "ocho",
+    "es": "ocho",
+    "sk": ["osem"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Trabajo ocho horas al día.", "sk": "Pracujem osem hodín denne." }]
+  },
+  {
+    "id": "nueve",
+    "es": "nueve",
+    "sk": ["deväť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "El banco abre a las nueve.", "sk": "Banka otvára o deviatej." }]
+  },
+  {
+    "id": "diez",
+    "es": "diez",
+    "sk": ["desať"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Son diez pesos.", "sk": "To je desať pesos." }]
+  },
+  {
+    "id": "once",
+    "es": "once",
+    "sk": ["jedenásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Mi hijo tiene once años.", "sk": "Môj syn má jedenásť rokov." }]
+  },
+  {
+    "id": "doce",
+    "es": "doce",
+    "sk": ["dvanásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Nos vemos a las doce.", "sk": "Uvidíme sa o dvanástej." }]
+  },
+  {
+    "id": "trece",
+    "es": "trece",
+    "sk": ["trinásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Vivo en el número trece.", "sk": "Bývam na čísle trinásť." }]
+  },
+  {
+    "id": "catorce",
+    "es": "catorce",
+    "sk": ["štrnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      {
+        "es": "El catorce de febrero es el Día del Amor y la Amistad.",
+        "sk": "Štrnásteho februára je Deň lásky a priateľstva."
+      }
+    ]
+  },
+  {
+    "id": "quince",
+    "es": "quince",
+    "sk": ["pätnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      {
+        "es": "La fiesta de quince años es muy importante en México.",
+        "sk": "Oslava pätnástich narodenín je v Mexiku veľmi dôležitá."
+      }
+    ],
+    "note": "Quinceañera = dievča, ktoré oslavuje 15 rokov, a aj celá veľká oslava."
+  },
+  {
+    "id": "dieciseis",
+    "es": "dieciséis",
+    "sk": ["šestnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Mi hija tiene dieciséis años.", "sk": "Dcéra má šestnásť rokov." }],
+    "note": "16–19 sa píšu dokopy: dieciséis, diecisiete, dieciocho, diecinueve."
+  },
+  {
+    "id": "veinte",
+    "es": "veinte",
+    "sk": ["dvadsať"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Espérame veinte minutos.", "sk": "Počkaj na mňa dvadsať minút." }],
+    "note": "21–29 sa píšu dokopy: veintiuno, veintidós, veintitrés…"
+  },
+  {
+    "id": "treinta",
+    "es": "treinta",
+    "sk": ["tridsať"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Tengo treinta años.", "sk": "Mám tridsať rokov." }],
+    "note": "Od 31 sa píše s „y“: treinta y uno, cuarenta y dos."
+  },
+  {
+    "id": "cuarenta",
+    "es": "cuarenta",
+    "sk": ["štyridsať"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "La casa está a cuarenta minutos del centro.", "sk": "Dom je štyridsať minút od centra." }]
+  },
+  {
+    "id": "cincuenta",
+    "es": "cincuenta",
+    "sk": ["päťdesiat"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Me costó cincuenta pesos.", "sk": "Stálo ma to päťdesiat pesos." }]
+  },
+  {
+    "id": "sesenta",
+    "es": "sesenta",
+    "sk": ["šesťdesiat"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Una hora tiene sesenta minutos.", "sk": "Hodina má šesťdesiat minút." }]
+  },
+  {
+    "id": "setenta",
+    "es": "setenta",
+    "sk": ["sedemdesiat"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Mi abuelo tiene setenta años.", "sk": "Dedko má sedemdesiat rokov." }]
+  },
+  {
+    "id": "ochenta",
+    "es": "ochenta",
+    "sk": ["osemdesiat"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      {
+        "es": "Mi abuela tiene ochenta años y todavía cocina.",
+        "sk": "Babka má osemdesiat rokov a stále varí."
+      }
+    ]
+  },
+  {
+    "id": "noventa",
+    "es": "noventa",
+    "sk": ["deväťdesiat"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Solo tengo noventa pesos.", "sk": "Mám iba deväťdesiat pesos." }]
+  },
+  {
+    "id": "cien",
+    "es": "cien",
+    "sk": ["sto"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Hay cien personas en la fiesta.", "sk": "Na oslave je sto ľudí." }],
+    "note": "101 = ciento uno, 200 = doscientos, 500 = quinientos."
+  },
+  {
+    "id": "mil",
+    "es": "mil",
+    "sk": ["tisíc"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "El boleto cuesta mil pesos.", "sk": "Lístok stojí tisíc pesos." }],
+    "note": "Nemení sa: dos mil = dvetisíc."
+  },
+  {
+    "id": "millon",
+    "es": "millón",
+    "sk": ["milión"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "millones",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      {
+        "es": "En la Ciudad de México viven más de nueve millones de personas.",
+        "sk": "V meste Mexiko žije viac ako deväť miliónov ľudí."
+      }
+    ],
+    "note": "Za ním nasleduje „de“: un millón de pesos."
+  },
+  {
+    "id": "primero",
+    "es": "primero",
+    "sk": ["prvý"],
+    "pos": "adj",
+    "feminine": "primera",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Es la primera vez que vengo a México.", "sk": "Som v Mexiku prvýkrát." }],
+    "note": "Pred podst. menom mužského rodu: primer (el primer día)."
+  },
+  {
+    "id": "segundo",
+    "es": "segundo",
+    "sk": ["druhý"],
+    "pos": "adj",
+    "feminine": "segunda",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Vivo en el segundo piso.", "sk": "Bývam na druhom poschodí." }],
+    "note": "Ako podstatné meno: un segundo = sekunda. „Un segundo, por favor“ = Moment, prosím."
+  },
+  {
+    "id": "tercero",
+    "es": "tercero",
+    "sk": ["tretí"],
+    "pos": "adj",
+    "feminine": "tercera",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Es la tercera vez que te llamo.", "sk": "Volám ti už tretíkrát." }],
+    "note": "Pred podst. menom mužského rodu: tercer (el tercer piso)."
+  },
+  {
+    "id": "ultimo",
+    "es": "último",
+    "sk": ["posledný"],
+    "pos": "adj",
+    "feminine": "última",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Es el último camión de la noche.", "sk": "To je posledný nočný autobus." }]
+  },
+  {
+    "id": "medio",
+    "es": "medio",
+    "sk": ["pol", "polovičný"],
+    "pos": "adj",
+    "feminine": "media",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Espérame media hora.", "sk": "Počkaj na mňa pol hodiny." }],
+    "note": "y media = a pol: a las dos y media = o pol tretej."
+  },
+  {
+    "id": "mitad",
+    "es": "mitad",
+    "sk": ["polovica"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "mitades",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Quiero la mitad.", "sk": "Chcem polovicu." }]
+  },
+  {
+    "id": "docena",
+    "es": "docena",
+    "sk": ["tucet"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Compré una docena de huevos.", "sk": "Kúpil som tucet vajec." }]
+  }
+]

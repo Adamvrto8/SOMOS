@@ -213,5 +213,119 @@
     "topics": ["shopping"],
     "examples": [{ "es": "Mi carro es muy viejo.", "sk": "Moje auto je veľmi staré." }],
     "note": "O ľuďoch je zdvorilejšie „mayor“: una persona mayor."
+  },
+  {
+    "id": "kilo",
+    "es": "kilo",
+    "sk": ["kilo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Un kilo de tortillas, por favor.", "sk": "Kilo tortíl, prosím." }]
+  },
+  {
+    "id": "litro",
+    "es": "litro",
+    "sk": ["liter"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Compra un litro de leche.", "sk": "Kúp liter mlieka." }]
+  },
+  {
+    "id": "pedazo",
+    "es": "pedazo",
+    "sk": ["kúsok", "kus"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Me da un pedazo de queso?", "sk": "Dáte mi kúsok syra?" }]
+  },
+  {
+    "id": "tamano",
+    "es": "tamaño",
+    "sk": ["veľkosť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿De qué tamaño lo quiere?", "sk": "Akú veľkosť si želáte?" }],
+    "note": "Pri oblečení sa hovorí „talla“, pri topánkach „número“."
+  },
+  {
+    "id": "probador",
+    "es": "probador",
+    "sk": ["skúšobná kabínka"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "probadores",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Dónde están los probadores?", "sk": "Kde sú skúšobné kabínky?" }]
+  },
+  {
+    "id": "fila",
+    "es": "fila",
+    "sk": ["rad"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Hay mucha fila en la caja.", "sk": "Pri pokladni je dlhý rad." }],
+    "note": "hacer fila = stáť v rade."
+  },
+  {
+    "id": "marca",
+    "es": "marca",
+    "sk": ["značka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿De qué marca es tu celular?", "sk": "Akej značky je tvoj mobil?" }]
+  },
+  {
+    "id": "gratis",
+    "es": "gratis",
+    "sk": ["zadarmo"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "La entrada es gratis.", "sk": "Vstup je zadarmo." }]
+  },
+  {
+    "id": "panaderia",
+    "es": "panadería",
+    "sk": ["pekáreň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Compro pan dulce en la panadería.", "sk": "V pekárni kupujem sladké pečivo." }]
+  },
+  {
+    "id": "tiendita",
+    "es": "tiendita",
+    "sk": ["obchodík (za rohom)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Voy a la tiendita por unos refrescos.", "sk": "Idem do obchodíka po nejaké limonády." }],
+    "note": "Malý rodinný obchod, v Mexiku je takmer na každej ulici."
+  },
+  {
+    "id": "lista",
+    "es": "lista",
+    "sk": ["zoznam"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Hice una lista de compras.", "sk": "Spravil som si nákupný zoznam." }],
+    "note": "Pozor: estar lista = byť pripravená (listo, lista)."
   }
 ]

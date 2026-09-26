@@ -45,16 +45,6 @@
     ]
   },
   {
-    "id": "s245",
-    "es": "Me lavo las manos antes de comer.",
-    "sk": "Pred jedlom si umývam ruky.",
-    "level": "A1",
-    "topics": ["body"],
-    "grammar": ["articles", "gender"],
-    "tokens": ["Me", "lavo", "las", "manos", "antes", "de", "comer", "."],
-    "cloze": [{ "tokenIndex": 2, "answer": "las", "lemma": "el", "hint": "člen", "distractors": ["el", "la", "los"] }]
-  },
-  {
     "id": "s246",
     "es": "Mi abuela tiene el pelo blanco.",
     "sk": "Babka má biele vlasy.",
@@ -202,6 +192,110 @@
         "lemma": "hacer",
         "hint": "hacer · gerundio",
         "distractors": ["hace", "hacer", "hacen"]
+      }
+    ]
+  },
+  {
+    "id": "s379",
+    "es": "Me duele la rodilla desde ayer.",
+    "sk": "Od včera ma bolí koleno.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Me", "duele", "la", "rodilla", "desde", "ayer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rodilla",
+        "lemma": "rodilla",
+        "hint": "koleno",
+        "distractors": ["cabeza", "espalda", "mano"]
+      }
+    ]
+  },
+  {
+    "id": "s380",
+    "es": "Mi hermana tiene los ojos verdes.",
+    "sk": "Sestra má zelené oči.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Mi", "hermana", "tiene", "los", "ojos", "verdes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ojos",
+        "lemma": "ojo",
+        "hint": "oči",
+        "distractors": ["dientes", "pies", "brazos"]
+      }
+    ]
+  },
+  {
+    "id": "s245",
+    "es": "Me lavo las manos antes de comer.",
+    "sk": "Pred jedlom si umývam ruky.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Me", "lavo", "las", "manos", "antes", "de", "comer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "manos",
+        "lemma": "mano",
+        "hint": "ruky",
+        "distractors": ["uñas", "piernas", "orejas"]
+      }
+    ]
+  },
+  {
+    "id": "s381",
+    "es": "Mi papá es alto y delgado.",
+    "sk": "Otec je vysoký a štíhly.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "papá", "es", "alto", "y", "delgado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "delgado",
+        "lemma": "delgado",
+        "hint": "prídavné meno: delgado",
+        "distractors": ["delgada", "delgados", "delgadas"]
+      }
+    ]
+  },
+  {
+    "id": "s382",
+    "es": "El niño se cayó y se lastimó la pierna.",
+    "sk": "Chlapec spadol a poranil si nohu.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["El", "niño", "se", "cayó", "y", "se", "lastimó", "la", "pierna", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "pierna",
+        "lemma": "pierna",
+        "hint": "noha",
+        "distractors": ["cabeza", "espalda", "mano"]
+      }
+    ]
+  },
+  {
+    "id": "s383",
+    "es": "Tienes el pelo muy largo.",
+    "sk": "Máš veľmi dlhé vlasy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gender"],
+    "tokens": ["Tienes", "el", "pelo", "muy", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "largo",
+        "lemma": "largo",
+        "hint": "prídavné meno: largo",
+        "distractors": ["larga", "largos", "largas"]
       }
     ]
   }

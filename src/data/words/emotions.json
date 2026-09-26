@@ -183,5 +183,127 @@
     "topics": ["emotions"],
     "examples": [{ "es": "¡Qué pena llegar tarde!", "sk": "Je mi trápne, že meškám!" }],
     "note": "V Mexiku „¡Qué pena!“ znamená hlavne „to je mi trápne, prepáč“."
+  },
+  {
+    "id": "orgulloso",
+    "es": "orgulloso",
+    "sk": ["hrdý"],
+    "pos": "adj",
+    "feminine": "orgullosa",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy orgulloso de ti.", "sk": "Som na teba veľmi hrdý." }]
+  },
+  {
+    "id": "celoso",
+    "es": "celoso",
+    "sk": ["žiarlivý"],
+    "pos": "adj",
+    "feminine": "celosa",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi novio es muy celoso.", "sk": "Môj priateľ je veľmi žiarlivý." }]
+  },
+  {
+    "id": "asustado",
+    "es": "asustado",
+    "sk": ["vystrašený"],
+    "pos": "adj",
+    "feminine": "asustada",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "El niño está asustado.", "sk": "Chlapec je vystrašený." }]
+  },
+  {
+    "id": "sorprendido",
+    "es": "sorprendido",
+    "sk": ["prekvapený"],
+    "pos": "adj",
+    "feminine": "sorprendida",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy sorprendido.", "sk": "Som veľmi prekvapený." }]
+  },
+  {
+    "id": "enamorado",
+    "es": "enamorado",
+    "sk": ["zamilovaný"],
+    "pos": "adj",
+    "feminine": "enamorada",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy enamorado de ti.", "sk": "Som do teba zamilovaný." }]
+  },
+  {
+    "id": "estresado",
+    "es": "estresado",
+    "sk": ["vystresovaný"],
+    "pos": "adj",
+    "feminine": "estresada",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy estresado por el trabajo.", "sk": "Som z práce veľmi vystresovaný." }]
+  },
+  {
+    "id": "timido",
+    "es": "tímido",
+    "sk": ["hanblivý", "plachý"],
+    "pos": "adj",
+    "feminine": "tímida",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi hijo es un poco tímido.", "sk": "Syn je trochu hanblivý." }]
+  },
+  {
+    "id": "amable",
+    "es": "amable",
+    "sk": ["milý", "láskavý"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Gracias, es usted muy amable.", "sk": "Ďakujem, ste veľmi láskavý." }]
+  },
+  {
+    "id": "simpatico",
+    "es": "simpático",
+    "sk": ["sympatický", "milý"],
+    "pos": "adj",
+    "feminine": "simpática",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Tu hermano es muy simpático.", "sk": "Tvoj brat je veľmi milý." }]
+  },
+  {
+    "id": "loco",
+    "es": "loco",
+    "sk": ["blázon", "šialený"],
+    "pos": "adj",
+    "feminine": "loca",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¿Estás loco?", "sk": "Si blázon?" }]
+  },
+  {
+    "id": "carino",
+    "es": "cariño",
+    "sk": ["náklonnosť", "zlatko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Le tengo mucho cariño.", "sk": "Veľmi mi na ňom záleží." },
+      { "es": "¿Cómo estás, cariño?", "sk": "Ako sa máš, zlatko?" }
+    ]
+  },
+  {
+    "id": "animo",
+    "es": "ánimo",
+    "sk": ["nálada", "odvaha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¡Ánimo! Tú puedes.", "sk": "Hlavu hore! Zvládneš to." }]
   }
 ]

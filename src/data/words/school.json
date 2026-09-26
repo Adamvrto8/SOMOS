@@ -204,5 +204,142 @@
     "level": "A1",
     "topics": ["school"],
     "examples": [{ "es": "Tu respuesta es correcta.", "sk": "Tvoja odpoveď je správna." }]
+  },
+  {
+    "id": "salon",
+    "es": "salón",
+    "sk": ["trieda (miestnosť)", "sála"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "salones",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "El salón está en el segundo piso.", "sk": "Trieda je na druhom poschodí." }],
+    "note": "Celým názvom „salón de clases“."
+  },
+  {
+    "id": "pizarron",
+    "es": "pizarrón",
+    "sk": ["tabuľa"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "pizarrones",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Escribe la respuesta en el pizarrón.", "sk": "Napíš odpoveď na tabuľu." }]
+  },
+  {
+    "id": "hoja",
+    "es": "hoja",
+    "sk": ["list (papiera)", "list (stromu)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Me prestas una hoja?", "sk": "Požičiaš mi papier?" }]
+  },
+  {
+    "id": "goma",
+    "es": "goma",
+    "sk": ["guma"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Necesito una goma y un lápiz.", "sk": "Potrebujem gumu a ceruzku." }]
+  },
+  {
+    "id": "calificacion",
+    "es": "calificación",
+    "sk": ["známka"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "calificaciones",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "Saqué una buena calificación en el examen.", "sk": "Zo skúšky som dostal dobrú známku." }]
+  },
+  {
+    "id": "materia",
+    "es": "materia",
+    "sk": ["predmet (v škole)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Cuál es tu materia favorita?", "sk": "Aký je tvoj obľúbený predmet?" }]
+  },
+  {
+    "id": "matematicas",
+    "es": "matemáticas",
+    "sk": ["matematika"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Las matemáticas son difíciles para mí.", "sk": "Matematika je pre mňa ťažká." }],
+    "note": "Používa sa v množnom čísle: las matemáticas."
+  },
+  {
+    "id": "historia",
+    "es": "historia",
+    "sk": ["dejiny", "dejepis", "príbeh"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Me gusta la historia de México.", "sk": "Zaujímajú ma mexické dejiny." }]
+  },
+  {
+    "id": "diccionario",
+    "es": "diccionario",
+    "sk": ["slovník"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Busca la palabra en el diccionario.", "sk": "Vyhľadaj to slovo v slovníku." }]
+  },
+  {
+    "id": "ejemplo",
+    "es": "ejemplo",
+    "sk": ["príklad"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Me puede dar un ejemplo?", "sk": "Môžete mi dať príklad?" }]
+  },
+  {
+    "id": "error",
+    "es": "error",
+    "sk": ["chyba"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "errores",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Todos cometemos errores.", "sk": "Všetci robíme chyby." }]
+  },
+  {
+    "id": "recreo",
+    "es": "recreo",
+    "sk": ["prestávka (v škole)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["school"],
+    "examples": [{ "es": "Los niños juegan en el recreo.", "sk": "Deti sa hrajú cez prestávku." }]
+  },
+  {
+    "id": "prepa",
+    "es": "prepa",
+    "sk": ["stredná škola"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "Mi hijo está en la prepa.", "sk": "Syn chodí na strednú." }],
+    "note": "Skratka z „preparatoria“ (15–18 rokov)."
   }
 ]

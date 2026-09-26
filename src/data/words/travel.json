@@ -286,5 +286,137 @@
     "topics": ["travel"],
     "examples": [{ "es": "El guía habla inglés y español.", "sk": "Sprievodca hovorí po anglicky aj po španielsky." }],
     "note": "el guía = sprievodca (osoba); la guía = sprievodca (kniha)."
+  },
+  {
+    "id": "tren",
+    "es": "tren",
+    "sk": ["vlak"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "trenes",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "En México casi no hay trenes de pasajeros.", "sk": "V Mexiku takmer nejazdia osobné vlaky." }]
+  },
+  {
+    "id": "barco",
+    "es": "barco",
+    "sk": ["loď"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Fuimos a la isla en barco.", "sk": "Na ostrov sme išli loďou." }]
+  },
+  {
+    "id": "carretera",
+    "es": "carretera",
+    "sk": ["cesta (medzi mestami)", "diaľnica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "La carretera a Oaxaca es muy bonita.", "sk": "Cesta do Oaxacy je veľmi pekná." }]
+  },
+  {
+    "id": "llegada",
+    "es": "llegada",
+    "sk": ["prílet", "príchod"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "La llegada es a las cinco.", "sk": "Prílet je o piatej." }]
+  },
+  {
+    "id": "asiento",
+    "es": "asiento",
+    "sk": ["sedadlo", "miesto"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Quiero un asiento junto a la ventana.", "sk": "Chcem miesto pri okne." }]
+  },
+  {
+    "id": "pueblo-magico",
+    "es": "pueblo mágico",
+    "sk": ["„čarovné mestečko“"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "Tepoztlán es un pueblo mágico.", "sk": "Tepoztlán je jedno z „čarovných mestečiek“." }],
+    "note": "Oficiálny titul pre malebné mexické mestečká."
+  },
+  {
+    "id": "cenote",
+    "es": "cenote",
+    "sk": ["cenote (prírodná studňa)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Nadamos en un cenote en Yucatán.", "sk": "Na Yucatáne sme plávali v cenote." }]
+  },
+  {
+    "id": "recuerdo",
+    "es": "recuerdo",
+    "sk": ["suvenír", "spomienka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Compré unos recuerdos para mi familia.", "sk": "Kúpil som pár suvenírov pre rodinu." }]
+  },
+  {
+    "id": "visa",
+    "es": "visa",
+    "sk": ["víza"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "¿Necesito visa para ir a México?", "sk": "Potrebujem víza do Mexika?" }]
+  },
+  {
+    "id": "ida-y-vuelta",
+    "es": "ida y vuelta",
+    "sk": ["spiatočný (lístok)"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Un boleto de ida y vuelta, por favor.", "sk": "Spiatočný lístok, prosím." }],
+    "note": "Jednosmerný = sencillo."
+  },
+  {
+    "id": "bloqueador",
+    "es": "bloqueador",
+    "sk": ["opaľovací krém"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "bloqueadores",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "No olvides el bloqueador.", "sk": "Nezabudni opaľovací krém." }]
+  },
+  {
+    "id": "caseta",
+    "es": "caseta",
+    "sk": ["mýtna stanica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [{ "es": "Pagamos tres casetas en la carretera.", "sk": "Na diaľnici sme platili mýto trikrát." }]
+  },
+  {
+    "id": "gasolinera",
+    "es": "gasolinera",
+    "sk": ["benzínka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Hay una gasolinera a la salida del pueblo.", "sk": "Na konci dediny je benzínka." }]
   }
 ]

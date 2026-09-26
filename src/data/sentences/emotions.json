@@ -301,5 +301,77 @@
         "distractors": ["hambre", "miedo", "sed"]
       }
     ]
+  },
+  {
+    "id": "s397",
+    "es": "Estoy muy orgulloso de mi hijo.",
+    "sk": "Som veľmi hrdý na svojho syna.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["gender"],
+    "tokens": ["Estoy", "muy", "orgulloso", "de", "mi", "hijo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "orgulloso",
+        "lemma": "orgulloso",
+        "hint": "prídavné meno: orgulloso",
+        "distractors": ["orgullosa", "orgullosos", "orgullosas"]
+      }
+    ]
+  },
+  {
+    "id": "s398",
+    "es": "Mi novia se enojó conmigo.",
+    "sk": "Priateľka sa na mňa nahnevala.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "novia", "se", "enojó", "conmigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enojó",
+        "lemma": "enojarse",
+        "hint": "enojarse · ella · pretérito",
+        "distractors": ["enojaron", "enojaste", "enoja"]
+      }
+    ]
+  },
+  {
+    "id": "s399",
+    "es": "Mis hijos son muy tímidos.",
+    "sk": "Moje deti sú veľmi hanblivé.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mis", "hijos", "son", "muy", "tímidos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "son",
+        "lemma": "ser",
+        "hint": "ser/estar · ellos · presente",
+        "distractors": ["están", "eres", "somos"]
+      }
+    ]
+  },
+  {
+    "id": "s400",
+    "es": "¡Ánimo! Tú puedes.",
+    "sk": "Hlavu hore! Zvládneš to.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["¡", "Ánimo", "!", "Tú", "puedes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "puedes",
+        "lemma": "poder",
+        "hint": "poder · tú · presente",
+        "distractors": ["podemos", "puedo", "pudiste"]
+      }
+    ]
   }
 ]

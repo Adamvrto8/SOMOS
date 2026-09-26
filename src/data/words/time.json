@@ -300,5 +300,228 @@
     "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "Nos vemos al mediodía.", "sk": "Uvidíme sa napoludnie." }]
+  },
+  {
+    "id": "enero",
+    "es": "enero",
+    "sk": ["január"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En enero hace frío en el norte.", "sk": "V januári je na severe zima." }],
+    "note": "Mesiace sa píšu s malým písmenom."
+  },
+  {
+    "id": "febrero",
+    "es": "febrero",
+    "sk": ["február"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Mi cumpleaños es en febrero.", "sk": "Narodeniny mám vo februári." }]
+  },
+  {
+    "id": "marzo",
+    "es": "marzo",
+    "sk": ["marec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En marzo empieza la primavera.", "sk": "V marci začína jar." }]
+  },
+  {
+    "id": "abril",
+    "es": "abril",
+    "sk": ["apríl"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "abriles",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En abril hace mucho calor.", "sk": "V apríli je veľké teplo." }]
+  },
+  {
+    "id": "mayo",
+    "es": "mayo",
+    "sk": ["máj"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El diez de mayo es el Día de las Madres.", "sk": "Desiateho mája je Deň matiek." }],
+    "note": "V Mexiku je Deň matiek vždy 10. mája."
+  },
+  {
+    "id": "junio",
+    "es": "junio",
+    "sk": ["jún"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En junio empiezan las lluvias.", "sk": "V júni začínajú dažde." }]
+  },
+  {
+    "id": "julio",
+    "es": "julio",
+    "sk": ["júl"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En julio vamos a la playa.", "sk": "V júli ideme na pláž." }]
+  },
+  {
+    "id": "agosto",
+    "es": "agosto",
+    "sk": ["august"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En agosto tengo vacaciones.", "sk": "V auguste mám dovolenku." }]
+  },
+  {
+    "id": "septiembre",
+    "es": "septiembre",
+    "sk": ["september"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      {
+        "es": "El dieciséis de septiembre es el Día de la Independencia.",
+        "sk": "Šestnásteho septembra je Deň nezávislosti."
+      }
+    ]
+  },
+  {
+    "id": "octubre",
+    "es": "octubre",
+    "sk": ["október"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En octubre hace buen clima.", "sk": "V októbri je pekné počasie." }]
+  },
+  {
+    "id": "noviembre",
+    "es": "noviembre",
+    "sk": ["november"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El dos de noviembre es el Día de Muertos.", "sk": "Druhého novembra je Deň mŕtvych." }]
+  },
+  {
+    "id": "diciembre",
+    "es": "diciembre",
+    "sk": ["december"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En diciembre hay muchas posadas.", "sk": "V decembri je veľa posadas (predvianočných osláv)." }]
+  },
+  {
+    "id": "fecha",
+    "es": "fecha",
+    "sk": ["dátum"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "¿Qué fecha es hoy?", "sk": "Koľkého je dnes?" }]
+  },
+  {
+    "id": "reloj",
+    "es": "reloj",
+    "sk": ["hodinky", "hodiny"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "relojes",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Mi reloj no funciona.", "sk": "Hodinky mi nefungujú." }]
+  },
+  {
+    "id": "madrugada",
+    "es": "madrugada",
+    "sk": ["skoré ráno", "čas po polnoci"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [{ "es": "Llegamos a las tres de la madrugada.", "sk": "Prišli sme o tretej ráno." }]
+  },
+  {
+    "id": "pronto",
+    "es": "pronto",
+    "sk": ["čoskoro"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Nos vemos pronto.", "sk": "Čoskoro sa uvidíme." }]
+  },
+  {
+    "id": "luego",
+    "es": "luego",
+    "sk": ["potom", "neskôr"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "Luego te llamo.", "sk": "Neskôr ti zavolám." }]
+  },
+  {
+    "id": "a-veces",
+    "es": "a veces",
+    "sk": ["niekedy"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "A veces como en la oficina.", "sk": "Niekedy jem v kancelárii." }]
+  },
+  {
+    "id": "rato",
+    "es": "rato",
+    "sk": ["chvíľa"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Espérame un rato.", "sk": "Počkaj chvíľu." },
+      { "es": "Al rato te veo.", "sk": "Uvidíme sa neskôr." }
+    ],
+    "note": "Veľmi mexické: al rato = o chvíľu, neskôr (a niekedy aj oveľa neskôr)."
+  },
+  {
+    "id": "navidad",
+    "es": "Navidad",
+    "sk": ["Vianoce"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "En Navidad vemos a toda la familia.", "sk": "Na Vianoce sa stretneme s celou rodinou." }],
+    "note": "Štedrý večer = Nochebuena, 24. decembra sa večeria s rodinou."
+  },
+  {
+    "id": "dia-festivo",
+    "es": "día festivo",
+    "sk": ["sviatok (voľný deň)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "días festivos",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [{ "es": "El lunes es día festivo.", "sk": "V pondelok je sviatok." }]
   }
 ]

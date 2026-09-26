@@ -257,5 +257,109 @@
     "grammar": ["articles", "gender"],
     "tokens": ["Los", "calcetines", "están", "en", "el", "cajón", "."],
     "cloze": [{ "tokenIndex": 0, "answer": "Los", "lemma": "el", "hint": "člen", "distractors": ["El", "La", "Las"] }]
+  },
+  {
+    "id": "s384",
+    "es": "Ponte el abrigo, hace mucho frío.",
+    "sk": "Obleč si kabát, je veľká zima.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Ponte", "el", "abrigo", ",", "hace", "mucho", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abrigo",
+        "lemma": "abrigo",
+        "hint": "kabát",
+        "distractors": ["vestido", "sombrero", "cinturón"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["hacen", "haces", "hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s385",
+    "es": "Estos pantalones me quedan muy cortos.",
+    "sk": "Tieto nohavice sú mi veľmi krátke.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gender"],
+    "tokens": ["Estos", "pantalones", "me", "quedan", "muy", "cortos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cortos",
+        "lemma": "corto",
+        "hint": "prídavné meno: corto",
+        "distractors": ["corto", "corta", "cortas"]
+      }
+    ]
+  },
+  {
+    "id": "s386",
+    "es": "¿Tiene esta blusa en color rosa?",
+    "sk": "Máte túto blúzku v ružovej farbe?",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tiene", "esta", "blusa", "en", "color", "rosa", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tiene",
+        "lemma": "tener",
+        "hint": "tener · usted · presente",
+        "distractors": ["Tienen", "Tienes", "Tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s387",
+    "es": "Ayer me compré unas botas nuevas.",
+    "sk": "Včera som si kúpila nové čižmy.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["preterito", "gender"],
+    "tokens": ["Ayer", "me", "compré", "unas", "botas", "nuevas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "distractors": ["compró", "compraron", "compro"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "nuevas",
+        "lemma": "nuevo",
+        "hint": "prídavné meno: nuevo",
+        "distractors": ["nuevo", "nueva", "nuevos"]
+      }
+    ]
+  },
+  {
+    "id": "s388",
+    "es": "En la playa siempre llevo sandalias.",
+    "sk": "Na pláži vždy nosím sandále.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["En", "la", "playa", "siempre", "llevo", "sandalias", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["lleva", "llevan", "llevé"]
+      }
+    ]
   }
 ]

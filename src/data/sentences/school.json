@@ -314,5 +314,59 @@
         "distractors": ["aprende", "aprender", "aprenden"]
       }
     ]
+  },
+  {
+    "id": "s404",
+    "es": "El maestro escribió la tarea en el pizarrón.",
+    "sk": "Učiteľ napísal úlohu na tabuľu.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "maestro", "escribió", "la", "tarea", "en", "el", "pizarrón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "escribió",
+        "lemma": "escribir",
+        "hint": "escribir · él · pretérito",
+        "distractors": ["escribieron", "escribiste", "escribe"]
+      }
+    ]
+  },
+  {
+    "id": "s405",
+    "es": "Saqué una buena calificación en el examen.",
+    "sk": "Zo skúšky som dostal dobrú známku.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["gender"],
+    "tokens": ["Saqué", "una", "buena", "calificación", "en", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "buena",
+        "lemma": "bueno",
+        "hint": "prídavné meno: bueno",
+        "distractors": ["bueno", "buen", "buenas"]
+      }
+    ]
+  },
+  {
+    "id": "s406",
+    "es": "¿Me puedes dar un ejemplo?",
+    "sk": "Môžeš mi dať príklad?",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "puedes", "dar", "un", "ejemplo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puedes",
+        "lemma": "poder",
+        "hint": "poder · tú · presente",
+        "distractors": ["podemos", "puedo", "pudiste"]
+      }
+    ]
   }
 ]

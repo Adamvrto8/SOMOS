@@ -175,5 +175,164 @@
     "level": "A1",
     "topics": ["hobbies"],
     "examples": [{ "es": "La fiesta fue muy divertida.", "sk": "Párty bola veľmi zábavná." }]
+  },
+  {
+    "id": "alberca",
+    "es": "alberca",
+    "sk": ["bazén"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "El hotel tiene alberca.", "sk": "Hotel má bazén." }],
+    "note": "Mexické slovo; v Španielsku „piscina“."
+  },
+  {
+    "id": "baile",
+    "es": "baile",
+    "sk": ["tanec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      {
+        "es": "El baile típico de Jalisco es el jarabe tapatío.",
+        "sk": "Typický tanec z Jalisca je jarabe tapatío."
+      }
+    ]
+  },
+  {
+    "id": "teatro",
+    "es": "teatro",
+    "sk": ["divadlo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Vamos al teatro el sábado.", "sk": "V sobotu ideme do divadla." }]
+  },
+  {
+    "id": "partido",
+    "es": "partido",
+    "sk": ["zápas"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Viste el partido ayer?", "sk": "Videl si včera zápas?" }],
+    "note": "Aj politická strana: partido político."
+  },
+  {
+    "id": "equipo",
+    "es": "equipo",
+    "sk": ["tím", "mužstvo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Cuál es tu equipo favorito?", "sk": "Aký je tvoj obľúbený tím?" }]
+  },
+  {
+    "id": "lucha-libre",
+    "es": "lucha libre",
+    "sk": ["lucha libre (mexický wrestling)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Los viernes vamos a la lucha libre.", "sk": "V piatky chodíme na lucha libre." }],
+    "note": "Zápasníci v maskách, typická mexická zábava."
+  },
+  {
+    "id": "pintura",
+    "es": "pintura",
+    "sk": ["maľba", "farba (na maľovanie)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Me gusta la pintura de Frida Kahlo.", "sk": "Páčia sa mi obrazy Fridy Kahlo." }]
+  },
+  {
+    "id": "dibujo",
+    "es": "dibujo",
+    "sk": ["kresba", "obrázok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi hija hace dibujos muy bonitos.", "sk": "Dcéra kreslí veľmi pekné obrázky." }]
+  },
+  {
+    "id": "videojuego",
+    "es": "videojuego",
+    "sk": ["videohra"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi hermano juega videojuegos toda la noche.", "sk": "Brat hrá videohry celú noc." }]
+  },
+  {
+    "id": "paseo",
+    "es": "paseo",
+    "sk": ["prechádzka", "výlet"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Vamos de paseo al parque.", "sk": "Ideme na prechádzku do parku." }]
+  },
+  {
+    "id": "ajedrez",
+    "es": "ajedrez",
+    "sk": ["šach"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi abuelo me enseñó a jugar ajedrez.", "sk": "Dedko ma naučil hrať šach." }]
+  },
+  {
+    "id": "pelota",
+    "es": "pelota",
+    "sk": ["lopta"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Los niños juegan con la pelota.", "sk": "Deti sa hrajú s loptou." }]
+  },
+  {
+    "id": "pinata",
+    "es": "piñata",
+    "sk": ["piňata"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "En la fiesta rompimos una piñata.", "sk": "Na oslave sme rozbili piňatu." }]
+  },
+  {
+    "id": "revista",
+    "es": "revista",
+    "sk": ["časopis"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Leo una revista en el camión.", "sk": "V autobuse čítam časopis." }]
+  },
+  {
+    "id": "favorito",
+    "es": "favorito",
+    "sk": ["obľúbený"],
+    "pos": "adj",
+    "feminine": "favorita",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "¿Cuál es tu película favorita?", "sk": "Aký je tvoj obľúbený film?" }]
   }
 ]

@@ -238,5 +238,201 @@
     "level": "A1",
     "topics": ["clothes"],
     "examples": [{ "es": "¡Qué bonito día!", "sk": "Aký pekný deň!" }]
+  },
+  {
+    "id": "blusa",
+    "es": "blusa",
+    "sk": ["blúzka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Esta blusa es muy bonita.", "sk": "Táto blúzka je veľmi pekná." }]
+  },
+  {
+    "id": "abrigo",
+    "es": "abrigo",
+    "sk": ["kabát"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "En invierno uso abrigo.", "sk": "V zime nosím kabát." }]
+  },
+  {
+    "id": "bufanda",
+    "es": "bufanda",
+    "sk": ["šál"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Ponte la bufanda, hace frío.", "sk": "Daj si šál, je zima." }]
+  },
+  {
+    "id": "bota",
+    "es": "bota",
+    "sk": ["čižma"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me compré unas botas vaqueras.", "sk": "Kúpil som si kovbojské čižmy." }]
+  },
+  {
+    "id": "sandalia",
+    "es": "sandalia",
+    "sk": ["sandál"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "En la playa uso sandalias.", "sk": "Na pláži nosím sandále." }]
+  },
+  {
+    "id": "huarache",
+    "es": "huarache",
+    "sk": ["huarache (mexické kožené sandále)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Compré unos huaraches en Oaxaca.", "sk": "V Oaxace som si kúpil huaraches." }]
+  },
+  {
+    "id": "cinturon",
+    "es": "cinturón",
+    "sk": ["opasok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cinturones",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Este cinturón es de piel.", "sk": "Tento opasok je z kože." }]
+  },
+  {
+    "id": "bolsillo",
+    "es": "bolsillo",
+    "sk": ["vrecko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Tengo las llaves en el bolsillo.", "sk": "Kľúče mám vo vrecku." }],
+    "note": "V Mexiku aj „la bolsa“ (bolsa del pantalón)."
+  },
+  {
+    "id": "pijama",
+    "es": "pijama",
+    "sk": ["pyžamo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Todavía estoy en pijama.", "sk": "Ešte som v pyžame." }],
+    "note": "V Mexiku ženského rodu: la pijama."
+  },
+  {
+    "id": "traje-de-bano",
+    "es": "traje de baño",
+    "sk": ["plavky"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "trajes de baño",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "No olvides tu traje de baño.", "sk": "Nezabudni si plavky." }]
+  },
+  {
+    "id": "anillo",
+    "es": "anillo",
+    "sk": ["prsteň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Es un anillo de plata.", "sk": "Je to strieborný prsteň." }]
+  },
+  {
+    "id": "arete",
+    "es": "arete",
+    "sk": ["náušnica"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me regalaron unos aretes.", "sk": "Dostala som náušnice." }],
+    "note": "Mexické slovo; v Španielsku „pendiente“."
+  },
+  {
+    "id": "corto",
+    "es": "corto",
+    "sk": ["krátky"],
+    "pos": "adj",
+    "feminine": "corta",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "En verano uso pantalones cortos.", "sk": "V lete nosím krátke nohavice." }]
+  },
+  {
+    "id": "largo",
+    "es": "largo",
+    "sk": ["dlhý"],
+    "pos": "adj",
+    "feminine": "larga",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "El vestido es muy largo.", "sk": "Šaty sú veľmi dlhé." }],
+    "note": "Pozor: largo = dlhý, nie „veľký“ (to je grande)."
+  },
+  {
+    "id": "feo",
+    "es": "feo",
+    "sk": ["škaredý"],
+    "pos": "adj",
+    "feminine": "fea",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Ese suéter está muy feo.", "sk": "Ten sveter je veľmi škaredý." }]
+  },
+  {
+    "id": "morado",
+    "es": "morado",
+    "sk": ["fialový"],
+    "pos": "adj",
+    "feminine": "morada",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me gusta el color morado.", "sk": "Mám rád fialovú farbu." }]
+  },
+  {
+    "id": "rosa",
+    "es": "rosa",
+    "sk": ["ružový"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Quiero la camisa rosa.", "sk": "Chcem tú ružovú košeľu." }],
+    "note": "Ako farba sa nemení: una camisa rosa, unos zapatos rosa. Podstatné meno la rosa = ruža."
+  },
+  {
+    "id": "gris",
+    "es": "gris",
+    "sk": ["sivý"],
+    "pos": "adj",
+    "plural": "grises",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Tengo un suéter gris.", "sk": "Mám sivý sveter." }]
+  },
+  {
+    "id": "anaranjado",
+    "es": "anaranjado",
+    "sk": ["oranžový"],
+    "pos": "adj",
+    "feminine": "anaranjada",
+    "level": "A1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me compré una gorra anaranjada.", "sk": "Kúpil som si oranžovú šiltovku." }]
   }
 ]

@@ -280,5 +280,146 @@
     "level": "A1",
     "topics": ["family", "nature"],
     "examples": [{ "es": "El gato duerme todo el día.", "sk": "Mačka spí celý deň." }]
+  },
+  {
+    "id": "papas",
+    "es": "papás",
+    "sk": ["rodičia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mis papás viven en Toluca.", "sk": "Moji rodičia bývajú v Toluce." }],
+    "note": "V Mexiku sa bežne hovorí „mis papás“ namiesto „mis padres“."
+  },
+  {
+    "id": "nieto",
+    "es": "nieto",
+    "sk": ["vnuk"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi abuela tiene diez nietos.", "sk": "Babka má desať vnúčat." }],
+    "note": "nieta = vnučka."
+  },
+  {
+    "id": "suegra",
+    "es": "suegra",
+    "sk": ["svokra"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi suegra cocina muy rico.", "sk": "Svokra výborne varí." }],
+    "note": "suegro = svokor."
+  },
+  {
+    "id": "cunado",
+    "es": "cuñado",
+    "sk": ["švagor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi cuñado vive en Estados Unidos.", "sk": "Švagor žije v Spojených štátoch." }],
+    "note": "cuñada = švagriná."
+  },
+  {
+    "id": "pareja",
+    "es": "pareja",
+    "sk": ["partner", "partnerka", "pár"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Vivo con mi pareja.", "sk": "Bývam s partnerom." }],
+    "note": "Vždy ženského rodu, aj keď ide o muža."
+  },
+  {
+    "id": "gente",
+    "es": "gente",
+    "sk": ["ľudia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "La gente aquí es muy amable.", "sk": "Ľudia sú tu veľmi milí." }],
+    "note": "Gramaticky jednotné číslo: la gente es…"
+  },
+  {
+    "id": "persona",
+    "es": "persona",
+    "sk": ["osoba", "človek"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Es una persona muy buena.", "sk": "Je to veľmi dobrý človek." }],
+    "note": "Vždy ženského rodu, aj o mužovi."
+  },
+  {
+    "id": "hombre",
+    "es": "hombre",
+    "sk": ["muž"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Ese hombre es mi vecino.", "sk": "Ten muž je môj sused." }]
+  },
+  {
+    "id": "mujer",
+    "es": "mujer",
+    "sk": ["žena"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "mujeres",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Esa mujer es mi maestra.", "sk": "Tá žena je moja učiteľka." }]
+  },
+  {
+    "id": "chavo",
+    "es": "chavo",
+    "sk": ["chalan", "mladík"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Los chavos juegan fútbol en la calle.", "sk": "Chalani hrajú na ulici futbal." }],
+    "note": "Hovorové mexické; dievča = chava."
+  },
+  {
+    "id": "cuate",
+    "es": "cuate",
+    "sk": ["kamoš"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Es mi cuate de la escuela.", "sk": "To je môj kamoš zo školy." }],
+    "note": "Hovorové mexické; cuates = aj dvojčatá."
+  },
+  {
+    "id": "divorciado",
+    "es": "divorciado",
+    "sk": ["rozvedený"],
+    "pos": "adj",
+    "feminine": "divorciada",
+    "level": "A2",
+    "topics": ["family"],
+    "examples": [{ "es": "Mis papás están divorciados.", "sk": "Moji rodičia sú rozvedení." }]
+  },
+  {
+    "id": "joven",
+    "es": "joven",
+    "sk": ["mladý", "mladý človek"],
+    "pos": "adj",
+    "plural": "jóvenes",
+    "level": "A1",
+    "topics": ["family"],
+    "examples": [{ "es": "Tu mamá es muy joven.", "sk": "Tvoja mama je veľmi mladá." }],
+    "note": "V obchode aj oslovenie: ¡Joven! = Pane! (mladému mužovi)."
   }
 ]

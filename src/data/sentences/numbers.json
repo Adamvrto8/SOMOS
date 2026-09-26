@@ -1,0 +1,185 @@
+[
+  {
+    "id": "s359",
+    "es": "Tengo treinta y dos años.",
+    "sk": "Mám tridsaťdva rokov.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "treinta", "y", "dos", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "treinta",
+        "lemma": "treinta",
+        "hint": "30",
+        "distractors": ["trece", "tres", "veinte"]
+      }
+    ]
+  },
+  {
+    "id": "s360",
+    "es": "Son las cinco y media.",
+    "sk": "Je pol šiestej.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Son", "las", "cinco", "y", "media", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "media",
+        "lemma": "medio",
+        "hint": "pol",
+        "distractors": ["medio", "mitad", "cuarto"]
+      }
+    ]
+  },
+  {
+    "id": "s361",
+    "es": "Mi celular cuesta cinco mil pesos.",
+    "sk": "Môj mobil stojí päťtisíc pesos.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "celular", "cuesta", "cinco", "mil", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuesta",
+        "lemma": "costar",
+        "hint": "costar · él · presente",
+        "distractors": ["cuestan", "cuestas", "costó"]
+      }
+    ]
+  },
+  {
+    "id": "s362",
+    "es": "La clase empieza a las ocho.",
+    "sk": "Hodina začína o ôsmej.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["La", "clase", "empieza", "a", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ocho",
+        "lemma": "ocho",
+        "hint": "8",
+        "distractors": ["seis", "once", "dieciocho"]
+      }
+    ]
+  },
+  {
+    "id": "s363",
+    "es": "Compré dos kilos de tortillas.",
+    "sk": "Kúpil som dve kilá tortíl.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Compré", "dos", "kilos", "de", "tortillas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "distractors": ["Compró", "Compraron", "Compro"]
+      }
+    ]
+  },
+  {
+    "id": "s364",
+    "es": "Mi abuelo tiene ochenta años.",
+    "sk": "Dedko má osemdesiat rokov.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Mi", "abuelo", "tiene", "ochenta", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ochenta",
+        "lemma": "ochenta",
+        "hint": "80",
+        "distractors": ["ocho", "dieciocho", "setenta"]
+      }
+    ]
+  },
+  {
+    "id": "s365",
+    "es": "Es la primera vez que vengo a México.",
+    "sk": "V Mexiku som prvýkrát.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["gender"],
+    "tokens": ["Es", "la", "primera", "vez", "que", "vengo", "a", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "primera",
+        "lemma": "primero",
+        "hint": "prvý",
+        "distractors": ["primero", "primer", "primeras"]
+      }
+    ]
+  },
+  {
+    "id": "s366",
+    "es": "El vuelo sale a las once de la noche.",
+    "sk": "Let odlieta o jedenástej večer.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["El", "vuelo", "sale", "a", "las", "once", "de", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él · presente",
+        "distractors": ["salen", "sales", "salió"]
+      }
+    ]
+  },
+  {
+    "id": "s367",
+    "es": "¿Cuál es tu número de teléfono?",
+    "sk": "Aké je tvoje telefónne číslo?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["¿", "Cuál", "es", "tu", "número", "de", "teléfono", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "número",
+        "lemma": "número",
+        "hint": "číslo",
+        "distractors": ["nombre", "cuenta", "hora"]
+      }
+    ]
+  },
+  {
+    "id": "s368",
+    "es": "Un año tiene doce meses.",
+    "sk": "Rok má dvanásť mesiacov.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Un", "año", "tiene", "doce", "meses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · él · presente",
+        "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  }
+]

@@ -329,5 +329,137 @@
     "topics": ["city"],
     "examples": [{ "es": "El hotel está allá.", "sk": "Hotel je tamto." }],
     "note": "allá = tam (ďalej); ahí = tam (blízko)."
+  },
+  {
+    "id": "enfrente-de",
+    "es": "enfrente de",
+    "sk": ["oproti"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La farmacia está enfrente del parque.", "sk": "Lekáreň je oproti parku." }]
+  },
+  {
+    "id": "al-lado-de",
+    "es": "al lado de",
+    "sk": ["vedľa"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El banco está al lado del hotel.", "sk": "Banka je vedľa hotela." }]
+  },
+  {
+    "id": "detras-de",
+    "es": "detrás de",
+    "sk": ["za"],
+    "pos": "prep",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El estacionamiento está detrás del edificio.", "sk": "Parkovisko je za budovou." }]
+  },
+  {
+    "id": "edificio",
+    "es": "edificio",
+    "sk": ["budova"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Vivo en un edificio de diez pisos.", "sk": "Bývam v desaťposchodovej budove." }]
+  },
+  {
+    "id": "puente",
+    "es": "puente",
+    "sk": ["most"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Cruza el puente y da vuelta a la derecha.", "sk": "Prejdi cez most a zaboč doprava." }],
+    "note": "Hovorovo aj predĺžený víkend: hacer puente."
+  },
+  {
+    "id": "avenida",
+    "es": "avenida",
+    "sk": ["trieda", "široká ulica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Vivo en una avenida con mucho tráfico.", "sk": "Bývam na rušnej ulici." }]
+  },
+  {
+    "id": "policia",
+    "es": "policía",
+    "sk": ["polícia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Llama a la policía.", "sk": "Zavolaj políciu." }],
+    "note": "el policía / la policía = aj policajt / policajtka."
+  },
+  {
+    "id": "direccion",
+    "es": "dirección",
+    "sk": ["adresa", "smer"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "direcciones",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Cuál es tu dirección?", "sk": "Aká je tvoja adresa?" }]
+  },
+  {
+    "id": "glorieta",
+    "es": "glorieta",
+    "sk": ["kruhový objazd"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "En la glorieta toma la segunda salida.", "sk": "Na kruhovom objazde choď druhým výjazdom." }]
+  },
+  {
+    "id": "banqueta",
+    "es": "banqueta",
+    "sk": ["chodník"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Camina por la banqueta.", "sk": "Choď po chodníku." }],
+    "note": "Mexické slovo; v Španielsku „acera“."
+  },
+  {
+    "id": "zocalo",
+    "es": "zócalo",
+    "sk": ["hlavné námestie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "Nos vemos en el zócalo.", "sk": "Stretneme sa na hlavnom námestí." }],
+    "note": "Tak sa v Mexiku volá hlavné námestie mesta."
+  },
+  {
+    "id": "taqueria",
+    "es": "taquería",
+    "sk": ["taquería (bistro s tacos)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "La mejor taquería está en la esquina.", "sk": "Najlepšia taquería je na rohu." }]
+  },
+  {
+    "id": "lleno",
+    "es": "lleno",
+    "sk": ["plný"],
+    "pos": "adj",
+    "feminine": "llena",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [{ "es": "El metro está muy lleno.", "sk": "Metro je veľmi plné." }]
   }
 ]

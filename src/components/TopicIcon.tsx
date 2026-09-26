@@ -1,10 +1,12 @@
 import {
+  Blocks,
   Briefcase,
   Building2,
   Clock,
   CloudSun,
   GraduationCap,
   Hand,
+  Hash,
   HeartPulse,
   House,
   Music,
@@ -24,12 +26,14 @@ import {
 // Static map keeps the bundle small (no dynamic icon imports).
 // Add an entry when a topic in topics.json uses a new icon (validate:data checks this).
 const ICONS: Record<string, LucideIcon> = {
+  blocks: Blocks,
   briefcase: Briefcase,
   'building-2': Building2,
   clock: Clock,
   'cloud-sun': CloudSun,
   'graduation-cap': GraduationCap,
   hand: Hand,
+  hash: Hash,
   'heart-pulse': HeartPulse,
   house: House,
   music: Music,

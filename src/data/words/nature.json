@@ -204,5 +204,168 @@
     "level": "A1",
     "topics": ["nature"],
     "examples": [{ "es": "Las vacas están en el campo.", "sk": "Kravy sú na poli." }]
+  },
+  {
+    "id": "arena",
+    "es": "arena",
+    "sk": ["piesok"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "La arena está muy caliente.", "sk": "Piesok je veľmi horúci." }]
+  },
+  {
+    "id": "ola",
+    "es": "ola",
+    "sk": ["vlna"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hoy hay olas muy grandes.", "sk": "Dnes sú veľmi veľké vlny." }]
+  },
+  {
+    "id": "piedra",
+    "es": "piedra",
+    "sk": ["kameň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El niño tiró una piedra al agua.", "sk": "Chlapec hodil kameň do vody." }]
+  },
+  {
+    "id": "luna",
+    "es": "luna",
+    "sk": ["mesiac (na oblohe)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hoy hay luna llena.", "sk": "Dnes je spln." }],
+    "note": "Mesiac v roku = el mes."
+  },
+  {
+    "id": "estrella",
+    "es": "estrella",
+    "sk": ["hviezda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "En el desierto se ven muchas estrellas.", "sk": "V púšti vidno veľa hviezd." }]
+  },
+  {
+    "id": "mariposa",
+    "es": "mariposa",
+    "sk": ["motýľ"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      {
+        "es": "En Michoacán hay millones de mariposas monarca.",
+        "sk": "V Michoacáne sú milióny motýľov monarcha."
+      }
+    ]
+  },
+  {
+    "id": "tortuga",
+    "es": "tortuga",
+    "sk": ["korytnačka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Vimos tortugas en la playa.", "sk": "Na pláži sme videli korytnačky." }]
+  },
+  {
+    "id": "serpiente",
+    "es": "serpiente",
+    "sk": ["had"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay serpientes en el desierto.", "sk": "V púšti žijú hady." }],
+    "note": "Hovorovo aj „víbora“."
+  },
+  {
+    "id": "mosquito",
+    "es": "mosquito",
+    "sk": ["komár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay muchos mosquitos en la noche.", "sk": "V noci je veľa komárov." }]
+  },
+  {
+    "id": "cactus",
+    "es": "cactus",
+    "sk": ["kaktus"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cactus",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "En el norte hay muchos cactus.", "sk": "Na severe je veľa kaktusov." }]
+  },
+  {
+    "id": "nopal",
+    "es": "nopal",
+    "sk": ["opuncia (kaktus)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "nopales",
+    "level": "A1",
+    "topics": ["nature", "food"],
+    "examples": [{ "es": "En México se comen los nopales.", "sk": "V Mexiku sa jedia listy opuncie." }],
+    "note": "Nopal s orlom je aj na mexickej vlajke."
+  },
+  {
+    "id": "burro",
+    "es": "burro",
+    "sk": ["somár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "En el pueblo hay burros.", "sk": "V dedine sú somáre." }]
+  },
+  {
+    "id": "gallina",
+    "es": "gallina",
+    "sk": ["sliepka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Mi abuela tiene gallinas.", "sk": "Babka má sliepky." }]
+  },
+  {
+    "id": "contaminacion",
+    "es": "contaminación",
+    "sk": ["znečistenie", "smog"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay mucha contaminación en la ciudad.", "sk": "V meste je veľký smog." }]
+  },
+  {
+    "id": "temblor",
+    "es": "temblor",
+    "sk": ["zemetrasenie"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "temblores",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [{ "es": "Anoche hubo un temblor.", "sk": "Včera v noci bolo zemetrasenie." }],
+    "note": "Menšie zemetrasenie; veľké = terremoto. V Mexiku sú bežné."
   }
 ]

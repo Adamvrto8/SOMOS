@@ -192,5 +192,138 @@
     "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "¡Llamen a una ambulancia!", "sk": "Zavolajte sanitku!" }]
+  },
+  {
+    "id": "salud-2",
+    "es": "salud",
+    "sk": ["zdravie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "La salud es lo más importante.", "sk": "Zdravie je najdôležitejšie." }]
+  },
+  {
+    "id": "dentista",
+    "es": "dentista",
+    "sk": ["zubár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo cita con el dentista.", "sk": "Mám termín u zubára." }],
+    "note": "Žena: la dentista."
+  },
+  {
+    "id": "consultorio",
+    "es": "consultorio",
+    "sk": ["ordinácia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "El consultorio del doctor está en el centro.", "sk": "Lekárova ordinácia je v centre." }]
+  },
+  {
+    "id": "clinica",
+    "es": "clínica",
+    "sk": ["klinika", "zdravotné stredisko"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Hay una clínica cerca de mi casa.", "sk": "Blízko môjho domu je klinika." }]
+  },
+  {
+    "id": "herida",
+    "es": "herida",
+    "sk": ["rana"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "Tienes una herida en la mano.", "sk": "Máš ranu na ruke." }]
+  },
+  {
+    "id": "alergia",
+    "es": "alergia",
+    "sk": ["alergia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo alergia a los mariscos.", "sk": "Som alergický na morské plody." }]
+  },
+  {
+    "id": "vacuna",
+    "es": "vacuna",
+    "sk": ["očkovanie", "vakcína"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Necesito una vacuna para viajar.", "sk": "Na cestu potrebujem očkovanie." }]
+  },
+  {
+    "id": "termometro",
+    "es": "termómetro",
+    "sk": ["teplomer"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "El termómetro marca treinta y ocho grados.", "sk": "Teplomer ukazuje tridsaťosem stupňov." }]
+  },
+  {
+    "id": "jarabe",
+    "es": "jarabe",
+    "sk": ["sirup"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Toma este jarabe para la tos.", "sk": "Vezmi si tento sirup na kašeľ." }]
+  },
+  {
+    "id": "vitamina",
+    "es": "vitamina",
+    "sk": ["vitamín"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tomo vitaminas todos los días.", "sk": "Každý deň beriem vitamíny." }]
+  },
+  {
+    "id": "curita",
+    "es": "curita",
+    "sk": ["náplasť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "¿Tienes una curita?", "sk": "Máš náplasť?" }],
+    "note": "Mexické slovo; v Španielsku „tirita“."
+  },
+  {
+    "id": "mareado",
+    "es": "mareado",
+    "sk": ["s točením hlavy", "s nevoľnosťou"],
+    "pos": "adj",
+    "feminine": "mareada",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [{ "es": "Estoy mareado.", "sk": "Točí sa mi hlava." }]
+  },
+  {
+    "id": "embarazada",
+    "es": "embarazada",
+    "sk": ["tehotná"],
+    "pos": "adj",
+    "level": "A1",
+    "topics": ["health"],
+    "examples": [{ "es": "Mi hermana está embarazada.", "sk": "Sestra je tehotná." }],
+    "note": "Pozor, nie „embarrassed“: hanbím sa = me da vergüenza."
   }
 ]

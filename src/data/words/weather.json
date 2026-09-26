@@ -195,5 +195,77 @@
     "level": "A1",
     "topics": ["weather"],
     "examples": [{ "es": "Hoy está nublado.", "sk": "Dnes je zamračené." }]
+  },
+  {
+    "id": "humedo",
+    "es": "húmedo",
+    "sk": ["vlhký"],
+    "pos": "adj",
+    "feminine": "húmeda",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En Veracruz el clima es muy húmedo.", "sk": "Vo Veracruze je veľmi vlhké podnebie." }]
+  },
+  {
+    "id": "seco",
+    "es": "seco",
+    "sk": ["suchý"],
+    "pos": "adj",
+    "feminine": "seca",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "El aire está muy seco.", "sk": "Vzduch je veľmi suchý." }]
+  },
+  {
+    "id": "fresco",
+    "es": "fresco",
+    "sk": ["chladný", "svieži"],
+    "pos": "adj",
+    "feminine": "fresca",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En la mañana está fresco.", "sk": "Ráno je chladno." }],
+    "note": "Hace fresco = je príjemne chladno."
+  },
+  {
+    "id": "granizo",
+    "es": "granizo",
+    "sk": ["krupobitie", "krúpy"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [{ "es": "Ayer cayó granizo.", "sk": "Včera padali krúpy." }]
+  },
+  {
+    "id": "huracan",
+    "es": "huracán",
+    "sk": ["hurikán"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "huracanes",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Viene un huracán a la costa.", "sk": "K pobrežiu sa blíži hurikán." }]
+  },
+  {
+    "id": "pronostico",
+    "es": "pronóstico",
+    "sk": ["predpoveď"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "El pronóstico dice que va a llover.", "sk": "Podľa predpovede bude pršať." }]
+  },
+  {
+    "id": "relampago",
+    "es": "relámpago",
+    "sk": ["blesk"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Vi un relámpago muy grande.", "sk": "Videl som obrovský blesk." }]
   }
 ]

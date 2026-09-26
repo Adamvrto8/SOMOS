@@ -306,5 +306,129 @@
     "level": "A1",
     "topics": ["work"],
     "examples": [{ "es": "Mañana tengo una junta importante.", "sk": "Zajtra mám dôležitú poradu." }]
+  },
+  {
+    "id": "quincena",
+    "es": "quincena",
+    "sk": ["výplata (dvakrát mesačne)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Me pagan la quincena el viernes.", "sk": "Výplatu dostanem v piatok." }],
+    "note": "V Mexiku sa plat zvyčajne vypláca 15. a posledný deň mesiaca."
+  },
+  {
+    "id": "entrevista",
+    "es": "entrevista",
+    "sk": ["pohovor", "rozhovor"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mañana tengo una entrevista de trabajo.", "sk": "Zajtra mám pracovný pohovor." }]
+  },
+  {
+    "id": "contrato",
+    "es": "contrato",
+    "sk": ["zmluva"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Firmé el contrato ayer.", "sk": "Včera som podpísal zmluvu." }]
+  },
+  {
+    "id": "fabrica",
+    "es": "fábrica",
+    "sk": ["továreň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi papá trabaja en una fábrica.", "sk": "Otec pracuje v továrni." }]
+  },
+  {
+    "id": "enfermera",
+    "es": "enfermera",
+    "sk": ["zdravotná sestra"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi tía es enfermera.", "sk": "Teta je zdravotná sestra." }],
+    "note": "Muž: el enfermero."
+  },
+  {
+    "id": "cocinero",
+    "es": "cocinero",
+    "sk": ["kuchár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "El cocinero hace unos tacos muy ricos.", "sk": "Kuchár robí veľmi chutné tacos." }]
+  },
+  {
+    "id": "chofer",
+    "es": "chofer",
+    "sk": ["šofér", "vodič"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "choferes",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "El chofer del camión maneja muy rápido.", "sk": "Šofér autobusu jazdí veľmi rýchlo." }]
+  },
+  {
+    "id": "albanil",
+    "es": "albañil",
+    "sk": ["murár"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "albañiles",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "El albañil está arreglando la pared.", "sk": "Murár opravuje stenu." }]
+  },
+  {
+    "id": "jubilado",
+    "es": "jubilado",
+    "sk": ["na dôchodku", "dôchodca"],
+    "pos": "adj",
+    "feminine": "jubilada",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi abuelo ya está jubilado.", "sk": "Dedko je už na dôchodku." }]
+  },
+  {
+    "id": "experiencia",
+    "es": "experiencia",
+    "sk": ["skúsenosť", "prax"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tengo cinco años de experiencia.", "sk": "Mám päť rokov praxe." }]
+  },
+  {
+    "id": "descanso",
+    "es": "descanso",
+    "sk": ["prestávka", "oddych"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tenemos media hora de descanso.", "sk": "Máme polhodinovú prestávku." }]
+  },
+  {
+    "id": "negocio",
+    "es": "negocio",
+    "sk": ["podnik", "obchod"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi tío tiene un negocio de tacos.", "sk": "Strýko má vlastný stánok s tacos." }]
   }
 ]

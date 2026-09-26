@@ -269,5 +269,150 @@
     "topics": ["greetings"],
     "examples": [{ "es": "¿Hay un baño aquí?", "sk": "Je tu záchod?" }],
     "note": "hay = je/sú (niečo niekde existuje): Hay mucha gente = Je tam veľa ľudí."
+  },
+  {
+    "id": "como-estas",
+    "es": "¿cómo estás?",
+    "sk": ["ako sa máš?"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Hola, Ana! ¿Cómo estás?", "sk": "Ahoj, Ana! Ako sa máš?" }],
+    "note": "Zdvorilo: ¿Cómo está usted?"
+  },
+  {
+    "id": "como-te-va",
+    "es": "¿cómo te va?",
+    "sk": ["ako sa ti darí?"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Cómo te va en el trabajo?", "sk": "Ako sa ti darí v práci?" }]
+  },
+  {
+    "id": "lo-siento",
+    "es": "lo siento",
+    "sk": ["prepáč", "je mi to ľúto"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Lo siento, llegué tarde.", "sk": "Prepáč, prišiel som neskoro." }]
+  },
+  {
+    "id": "no-pasa-nada",
+    "es": "no pasa nada",
+    "sk": ["nič sa nedeje", "to nevadí"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Tranquilo, no pasa nada.", "sk": "Pokoj, nič sa nedeje." }]
+  },
+  {
+    "id": "buen-viaje",
+    "es": "¡buen viaje!",
+    "sk": ["šťastnú cestu!"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Buen viaje y nos vemos pronto!", "sk": "Šťastnú cestu a čoskoro sa uvidíme!" }]
+  },
+  {
+    "id": "que-te-vaya-bien",
+    "es": "que te vaya bien",
+    "sk": ["maj sa dobre"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Adiós, que te vaya bien.", "sk": "Ahoj, maj sa dobre." }]
+  },
+  {
+    "id": "saludos",
+    "es": "saludos",
+    "sk": ["pozdravujem", "pozdravy"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Saludos a tu familia.", "sk": "Pozdravuj rodinu." }]
+  },
+  {
+    "id": "que-bueno",
+    "es": "¡qué bueno!",
+    "sk": ["to je super!", "to je dobre!"],
+    "pos": "phrase",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Qué bueno que viniste!", "sk": "Super, že si prišiel!" }]
+  },
+  {
+    "id": "orale",
+    "es": "órale",
+    "sk": ["dobre", "jasné", "páni"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Órale, vamos!", "sk": "Dobre, poďme!" }],
+    "note": "Mexické citoslovce: súhlas, povzbudenie aj údiv podľa tónu."
+  },
+  {
+    "id": "sale",
+    "es": "sale",
+    "sk": ["platí", "dobre"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Sale, nos vemos mañana.", "sk": "Platí, uvidíme sa zajtra." }],
+    "note": "Hovorové mexické „ok“. Inak je to tvar slovesa salir (él sale = on odchádza)."
+  },
+  {
+    "id": "aguas",
+    "es": "¡aguas!",
+    "sk": ["pozor!"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Aguas! Viene un carro.", "sk": "Pozor! Ide auto." }],
+    "note": "Hovorové mexické varovanie."
+  },
+  {
+    "id": "neta",
+    "es": "¿neta?",
+    "sk": ["naozaj?", "vážne?"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Neta? No te creo.", "sk": "Vážne? Neverím ti." }],
+    "note": "Hovorové mexické: la neta = pravda (la neta, no sé = úprimne, neviem)."
+  },
+  {
+    "id": "chido",
+    "es": "chido",
+    "sk": ["super", "fajn"],
+    "pos": "adj",
+    "feminine": "chida",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Tu carro está bien chido.", "sk": "Tvoje auto je fakt super." }],
+    "note": "Hovorové mexické, podobne ako „padre“."
+  },
+  {
+    "id": "nombre",
+    "es": "nombre",
+    "sk": ["meno"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Cuál es tu nombre?", "sk": "Ako sa voláš?" }]
+  },
+  {
+    "id": "apellido",
+    "es": "apellido",
+    "sk": ["priezvisko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Cuál es su apellido?", "sk": "Aké je vaše priezvisko?" }],
+    "note": "Mexičania majú dve priezviská: prvé po otcovi, druhé po matke."
   }
 ]

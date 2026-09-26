@@ -320,5 +320,59 @@
         "distractors": ["Tomó", "Tomaron", "Tomo"]
       }
     ]
+  },
+  {
+    "id": "s401",
+    "es": "¿Viste el partido ayer?",
+    "sk": "Videl si včera zápas?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Viste", "el", "partido", "ayer", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Viste",
+        "lemma": "ver",
+        "hint": "ver · tú · pretérito",
+        "distractors": ["Vimos", "Vi", "Ves"]
+      }
+    ]
+  },
+  {
+    "id": "s402",
+    "es": "Mi equipo favorito es el América.",
+    "sk": "Môj obľúbený tím je América.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["gender"],
+    "tokens": ["Mi", "equipo", "favorito", "es", "el", "América", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "favorito",
+        "lemma": "favorito",
+        "hint": "prídavné meno: favorito",
+        "distractors": ["favorita", "favoritos", "favoritas"]
+      }
+    ]
+  },
+  {
+    "id": "s403",
+    "es": "Los domingos jugamos ajedrez con el abuelo.",
+    "sk": "V nedeľu hrávame s dedkom šach.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "domingos", "jugamos", "ajedrez", "con", "el", "abuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugamos",
+        "lemma": "jugar",
+        "hint": "jugar · nosotros · presente",
+        "distractors": ["juego", "juega", "juegas"]
+      }
+    ]
   }
 ]

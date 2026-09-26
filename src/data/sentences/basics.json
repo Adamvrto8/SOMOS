@@ -1,0 +1,176 @@
+[
+  {
+    "id": "s369",
+    "es": "¿Dónde está la estación del metro?",
+    "sk": "Kde je stanica metra?",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["¿", "Dónde", "está", "la", "estación", "del", "metro", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "distractors": ["Cuándo", "Cómo", "Qué"]
+      }
+    ]
+  },
+  {
+    "id": "s370",
+    "es": "¿Por qué no vienes con nosotros?",
+    "sk": "Prečo nejdeš s nami?",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Por", "qué", "no", "vienes", "con", "nosotros", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vienes",
+        "lemma": "venir",
+        "hint": "venir · tú · presente",
+        "distractors": ["venimos", "vengo", "viniste"]
+      }
+    ]
+  },
+  {
+    "id": "s371",
+    "es": "No hay nadie en la casa.",
+    "sk": "Doma nikto nie je.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["No", "hay", "nadie", "en", "la", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada", "alguien", "algo"]
+      }
+    ]
+  },
+  {
+    "id": "s372",
+    "es": "Quiero un café sin azúcar.",
+    "sk": "Chcem kávu bez cukru.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["Quiero", "un", "café", "sin", "azúcar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["con", "para", "por"]
+      }
+    ]
+  },
+  {
+    "id": "s373",
+    "es": "Este regalo es para ti.",
+    "sk": "Tento darček je pre teba.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["Este", "regalo", "es", "para", "ti", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "pre",
+        "distractors": ["por", "con", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s374",
+    "es": "Yo también quiero ir.",
+    "sk": "Aj ja chcem ísť.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["Yo", "también", "quiero", "ir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "también",
+        "lemma": "también",
+        "hint": "tiež",
+        "distractors": ["tampoco", "nunca", "nada"]
+      }
+    ]
+  },
+  {
+    "id": "s375",
+    "es": "Es muy caro, pero es muy bonito.",
+    "sk": "Je to veľmi drahé, ale veľmi pekné.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["Es", "muy", "caro", ",", "pero", "es", "muy", "bonito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["porque", "o", "si"]
+      }
+    ]
+  },
+  {
+    "id": "s376",
+    "es": "Si llueve, nos quedamos en casa.",
+    "sk": "Ak bude pršať, ostaneme doma.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "llueve", ",", "nos", "quedamos", "en", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quedamos",
+        "lemma": "quedarse",
+        "hint": "quedarse · nosotros · presente",
+        "distractors": ["quedo", "queda", "quedas"]
+      }
+    ]
+  },
+  {
+    "id": "s377",
+    "es": "Mis hermanos y yo vivimos juntos.",
+    "sk": "Moji súrodenci a ja bývame spolu.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hermanos", "y", "yo", "vivimos", "juntos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vivimos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · presente",
+        "distractors": ["vivo", "vive", "vives"]
+      }
+    ]
+  },
+  {
+    "id": "s378",
+    "es": "¿Cuándo llegaste?",
+    "sk": "Kedy si prišiel?",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Cuándo", "llegaste", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegaste",
+        "lemma": "llegar",
+        "hint": "llegar · tú · pretérito",
+        "distractors": ["llegamos", "llegué", "llegas"]
+      }
+    ]
+  }
+]
