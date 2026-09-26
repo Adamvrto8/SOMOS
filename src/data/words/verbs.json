@@ -1081,5 +1081,406 @@
     "level": "A2",
     "topics": ["hobbies"],
     "examples": [{ "es": "Nos divertimos mucho en la fiesta.", "sk": "Na párty sme sa super zabavili." }]
+  },
+  {
+    "id": "aprovechar",
+    "es": "aprovechar",
+    "sk": ["využiť", "využívať"],
+    "pos": "verb",
+    "verbId": "aprovechar",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Hay que aprovechar el buen clima.", "sk": "Treba využiť pekné počasie." }]
+  },
+  {
+    "id": "cambiar",
+    "es": "cambiar",
+    "sk": ["zmeniť", "vymeniť"],
+    "pos": "verb",
+    "verbId": "cambiar",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [
+      {
+        "es": "¿Puedo cambiar esta playera por otra talla?",
+        "sk": "Môžem si vymeniť toto tričko za inú veľkosť?"
+      }
+    ],
+    "note": "cambiar dinero = zameniť peniaze; cambiarse = prezliecť sa."
+  },
+  {
+    "id": "compartir",
+    "es": "compartir",
+    "sk": ["zdieľať", "deliť sa"],
+    "pos": "verb",
+    "verbId": "compartir",
+    "level": "B1",
+    "topics": ["home", "tech"],
+    "examples": [{ "es": "Comparto el departamento con dos amigos.", "sk": "Byt zdieľam s dvoma kamarátmi." }]
+  },
+  {
+    "id": "mandar",
+    "es": "mandar",
+    "sk": ["poslať", "rozkázať"],
+    "pos": "verb",
+    "verbId": "mandar",
+    "level": "B1",
+    "topics": ["tech", "work"],
+    "examples": [{ "es": "Te mando la foto por WhatsApp.", "sk": "Pošlem ti fotku cez WhatsApp." }],
+    "note": "V Mexiku bežnejšie ako „enviar“. ¿Mande? = Prosím? (keď niečo nepočuješ)."
+  },
+  {
+    "id": "gastar",
+    "es": "gastar",
+    "sk": ["míňať", "utrácať"],
+    "pos": "verb",
+    "verbId": "gastar",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Gasto mucho dinero en comida.", "sk": "Míňam veľa peňazí na jedlo." }]
+  },
+  {
+    "id": "intentar",
+    "es": "intentar",
+    "sk": ["skúsiť", "snažiť sa"],
+    "pos": "verb",
+    "verbId": "intentar",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Voy a intentar otra vez.", "sk": "Skúsim to znova." }]
+  },
+  {
+    "id": "lograr",
+    "es": "lograr",
+    "sk": ["dosiahnuť", "podariť sa"],
+    "pos": "verb",
+    "verbId": "lograr",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Logré terminar el proyecto a tiempo.", "sk": "Podarilo sa mi dokončiť projekt načas." }]
+  },
+  {
+    "id": "cumplir",
+    "es": "cumplir",
+    "sk": ["splniť", "dovŕšiť (vek)"],
+    "pos": "verb",
+    "verbId": "cumplir",
+    "level": "B1",
+    "topics": ["family", "time"],
+    "examples": [{ "es": "Mañana cumplo treinta años.", "sk": "Zajtra oslávim tridsiatku." }],
+    "note": "cumplir años = mať narodeniny; cumplir una promesa = splniť sľub."
+  },
+  {
+    "id": "ahorrar",
+    "es": "ahorrar",
+    "sk": ["šetriť"],
+    "pos": "verb",
+    "verbId": "ahorrar",
+    "level": "B1",
+    "topics": ["shopping", "work"],
+    "examples": [{ "es": "Estoy ahorrando para un carro.", "sk": "Šetrím na auto." }]
+  },
+  {
+    "id": "acabar",
+    "es": "acabar",
+    "sk": ["dokončiť", "skončiť"],
+    "pos": "verb",
+    "verbId": "acabar",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "Acabo de llegar.", "sk": "Práve som prišiel." }],
+    "note": "acabar de + infinitív = práve niečo urobiť."
+  },
+  {
+    "id": "prender",
+    "es": "prender",
+    "sk": ["zapnúť", "zapáliť"],
+    "pos": "verb",
+    "verbId": "prender",
+    "level": "B1",
+    "topics": ["home", "tech"],
+    "examples": [{ "es": "Prende la luz, por favor.", "sk": "Zapni svetlo, prosím." }],
+    "note": "Mexické; v Španielsku „encender“."
+  },
+  {
+    "id": "avisar",
+    "es": "avisar",
+    "sk": ["dať vedieť", "upozorniť"],
+    "pos": "verb",
+    "verbId": "avisar",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Avísame cuando llegues.", "sk": "Daj mi vedieť, keď prídeš." }]
+  },
+  {
+    "id": "regalar",
+    "es": "regalar",
+    "sk": ["darovať", "dať darček"],
+    "pos": "verb",
+    "verbId": "regalar",
+    "level": "B1",
+    "topics": ["family", "shopping"],
+    "examples": [{ "es": "¿Qué te regalaron en tu cumpleaños?", "sk": "Čo si dostal na narodeniny?" }]
+  },
+  {
+    "id": "pelear",
+    "es": "pelear",
+    "sk": ["hádať sa", "biť sa"],
+    "pos": "verb",
+    "verbId": "pelear",
+    "level": "B1",
+    "topics": ["family", "emotions"],
+    "examples": [{ "es": "Mis hermanos siempre se pelean.", "sk": "Moji súrodenci sa stále hádajú." }]
+  },
+  {
+    "id": "voltear",
+    "es": "voltear",
+    "sk": ["otočiť (sa)", "obrátiť"],
+    "pos": "verb",
+    "verbId": "voltear",
+    "level": "B1",
+    "topics": ["food", "city"],
+    "examples": [{ "es": "Voltea la tortilla.", "sk": "Obráť tortillu." }],
+    "note": "Mexické. voltear a ver = obzrieť sa."
+  },
+  {
+    "id": "mudarse",
+    "es": "mudarse",
+    "sk": ["presťahovať sa"],
+    "pos": "verb",
+    "verbId": "mudarse",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [
+      {
+        "es": "Nos mudamos a Guadalajara el año pasado.",
+        "sk": "Minulý rok sme sa presťahovali do Guadalajary."
+      }
+    ]
+  },
+  {
+    "id": "quejarse",
+    "es": "quejarse",
+    "sk": ["sťažovať sa"],
+    "pos": "verb",
+    "verbId": "quejarse",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi vecino siempre se queja del ruido.", "sk": "Sused sa stále sťažuje na hluk." }]
+  },
+  {
+    "id": "casarse",
+    "es": "casarse",
+    "sk": ["oženiť sa", "vydať sa"],
+    "pos": "verb",
+    "verbId": "casarse",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi hermana se casó en diciembre.", "sk": "Sestra sa vydala v decembri." }],
+    "note": "casarse con alguien = vziať si niekoho."
+  },
+  {
+    "id": "explicar",
+    "es": "explicar",
+    "sk": ["vysvetliť"],
+    "pos": "verb",
+    "verbId": "explicar",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Me puedes explicar otra vez?", "sk": "Môžeš mi to vysvetliť ešte raz?" }]
+  },
+  {
+    "id": "sacar",
+    "es": "sacar",
+    "sk": ["vybrať", "vytiahnuť", "urobiť (fotku)"],
+    "pos": "verb",
+    "verbId": "sacar",
+    "level": "B1",
+    "topics": ["hobbies", "school"],
+    "examples": [{ "es": "¿Nos sacas una foto?", "sk": "Odfotíš nás?" }],
+    "note": "sacar dinero = vybrať peniaze; sacar la basura = vyniesť smeti."
+  },
+  {
+    "id": "apagar",
+    "es": "apagar",
+    "sk": ["vypnúť", "zhasnúť"],
+    "pos": "verb",
+    "verbId": "apagar",
+    "level": "B1",
+    "topics": ["home", "tech"],
+    "examples": [{ "es": "Apaga la tele, ya es tarde.", "sk": "Vypni telku, už je neskoro." }]
+  },
+  {
+    "id": "crecer",
+    "es": "crecer",
+    "sk": ["rásť", "vyrásť"],
+    "pos": "verb",
+    "verbId": "crecer",
+    "level": "B1",
+    "topics": ["family", "nature"],
+    "examples": [{ "es": "Crecí en un pueblo cerca de Puebla.", "sk": "Vyrastal som v dedinke pri Pueble." }]
+  },
+  {
+    "id": "ofrecer",
+    "es": "ofrecer",
+    "sk": ["ponúknuť"],
+    "pos": "verb",
+    "verbId": "ofrecer",
+    "level": "B1",
+    "topics": ["shopping", "work"],
+    "examples": [{ "es": "Me ofrecieron un trabajo en Monterrey.", "sk": "Ponúkli mi prácu v Monterrey." }]
+  },
+  {
+    "id": "parecer",
+    "es": "parecer",
+    "sk": ["zdať sa", "vyzerať"],
+    "pos": "verb",
+    "verbId": "parecer",
+    "level": "B1",
+    "topics": ["basics", "emotions"],
+    "examples": [{ "es": "Me parece una buena idea.", "sk": "Zdá sa mi to dobrý nápad." }],
+    "note": "Me parece que… = zdá sa mi, že…; parecerse a alguien = podobať sa na niekoho."
+  },
+  {
+    "id": "creer",
+    "es": "creer",
+    "sk": ["veriť", "myslieť si"],
+    "pos": "verb",
+    "verbId": "creer",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Creo que tienes razón.", "sk": "Myslím, že máš pravdu." }]
+  },
+  {
+    "id": "caerse",
+    "es": "caerse",
+    "sk": ["spadnúť"],
+    "pos": "verb",
+    "verbId": "caerse",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Me caí de la bicicleta.", "sk": "Spadol som z bicykla." }],
+    "note": "Bez „se“: caer = padať (la lluvia cae). Me cae bien = je mi sympatický."
+  },
+  {
+    "id": "construir",
+    "es": "construir",
+    "sk": ["stavať", "postaviť"],
+    "pos": "verb",
+    "verbId": "construir",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Están construyendo un hospital nuevo.", "sk": "Stavajú novú nemocnicu." }]
+  },
+  {
+    "id": "acordarse",
+    "es": "acordarse",
+    "sk": ["spomenúť si", "pamätať si"],
+    "pos": "verb",
+    "verbId": "acordarse",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "¿Te acuerdas de mí?", "sk": "Pamätáš si ma?" }],
+    "note": "acordarse de algo = spomenúť si na niečo; recordar algo znamená to isté bez „de“."
+  },
+  {
+    "id": "atender",
+    "es": "atender",
+    "sk": ["obslúžiť", "venovať sa"],
+    "pos": "verb",
+    "verbId": "atender",
+    "level": "B1",
+    "topics": ["work", "shopping"],
+    "examples": [{ "es": "¿Ya lo atienden?", "sk": "Už vás niekto obsluhuje?" }]
+  },
+  {
+    "id": "conseguir",
+    "es": "conseguir",
+    "sk": ["zohnať", "získať", "dosiahnuť"],
+    "pos": "verb",
+    "verbId": "conseguir",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Por fin conseguí trabajo.", "sk": "Konečne som si našiel prácu." }]
+  },
+  {
+    "id": "seguir",
+    "es": "seguir",
+    "sk": ["pokračovať", "nasledovať", "stále (robiť)"],
+    "pos": "verb",
+    "verbId": "seguir",
+    "level": "B1",
+    "topics": ["city", "basics"],
+    "examples": [
+      { "es": "Sigue derecho dos cuadras.", "sk": "Choď rovno ešte dva bloky." },
+      { "es": "Sigo trabajando en el mismo lugar.", "sk": "Stále pracujem na tom istom mieste." }
+    ],
+    "note": "seguir + gerundium = stále niečo robiť."
+  },
+  {
+    "id": "elegir",
+    "es": "elegir",
+    "sk": ["vybrať si", "zvoliť"],
+    "pos": "verb",
+    "verbId": "elegir",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "No sé qué elegir.", "sk": "Neviem, čo si vybrať." }]
+  },
+  {
+    "id": "servir",
+    "es": "servir",
+    "sk": ["slúžiť", "fungovať", "podávať (jedlo)"],
+    "pos": "verb",
+    "verbId": "servir",
+    "level": "B1",
+    "topics": ["food", "tech"],
+    "examples": [{ "es": "Este cargador no sirve.", "sk": "Táto nabíjačka nefunguje." }],
+    "note": "V Mexiku: no sirve = nefunguje, je pokazené."
+  },
+  {
+    "id": "mentir",
+    "es": "mentir",
+    "sk": ["klamať"],
+    "pos": "verb",
+    "verbId": "mentir",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Siempre dice la verdad, nunca miente.", "sk": "Vždy hovorí pravdu, nikdy neklame." }]
+  },
+  {
+    "id": "morir",
+    "es": "morir",
+    "sk": ["zomrieť", "umrieť"],
+    "pos": "verb",
+    "verbId": "morir",
+    "level": "B1",
+    "topics": ["family", "health"],
+    "examples": [{ "es": "Mi abuelo murió hace dos años.", "sk": "Dedko zomrel pred dvoma rokmi." }],
+    "note": "Hovorovo: me muero de hambre = umieram od hladu."
+  },
+  {
+    "id": "traducir",
+    "es": "traducir",
+    "sk": ["preložiť", "prekladať"],
+    "pos": "verb",
+    "verbId": "traducir",
+    "level": "B1",
+    "topics": ["school", "tech"],
+    "examples": [{ "es": "¿Me puedes traducir este mensaje?", "sk": "Môžeš mi preložiť túto správu?" }]
+  },
+  {
+    "id": "andar",
+    "es": "andar",
+    "sk": ["chodiť", "byť (práve v nejakom stave)"],
+    "pos": "verb",
+    "verbId": "andar",
+    "level": "B1",
+    "topics": ["greetings", "emotions"],
+    "examples": [
+      { "es": "¿Cómo andas?", "sk": "Ako sa máš?" },
+      { "es": "Ando muy cansado esta semana.", "sk": "Tento týždeň som strašne unavený." }
+    ],
+    "note": "V Mexiku veľmi časté: ¿Cómo andas? = Ako sa máš?; ando + gerundium = práve niečo robím."
   }
 ]

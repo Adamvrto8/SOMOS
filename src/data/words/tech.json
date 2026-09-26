@@ -1,0 +1,255 @@
+[
+  {
+    "id": "internet",
+    "es": "internet",
+    "sk": ["internet"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "No tengo internet en mi casa.", "sk": "Doma nemám internet." }]
+  },
+  {
+    "id": "wifi",
+    "es": "wifi",
+    "sk": ["wifi"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "¿Cuál es la contraseña del wifi?", "sk": "Aké je heslo na wifi?" }]
+  },
+  {
+    "id": "contrasena",
+    "es": "contraseña",
+    "sk": ["heslo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Olvidé mi contraseña.", "sk": "Zabudol som heslo." }]
+  },
+  {
+    "id": "mensaje",
+    "es": "mensaje",
+    "sk": ["správa (v mobile)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Te mandé un mensaje.", "sk": "Poslal som ti správu." }],
+    "note": "Správy v médiách = las noticias."
+  },
+  {
+    "id": "cargador",
+    "es": "cargador",
+    "sk": ["nabíjačka"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cargadores",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "¿Tienes un cargador?", "sk": "Máš nabíjačku?" }]
+  },
+  {
+    "id": "bateria",
+    "es": "batería",
+    "sk": ["batéria"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Me queda poca batería.", "sk": "Mám málo batérie." }]
+  },
+  {
+    "id": "pantalla",
+    "es": "pantalla",
+    "sk": ["obrazovka", "displej"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Se me rompió la pantalla del celular.", "sk": "Rozbil sa mi displej na mobile." }]
+  },
+  {
+    "id": "video",
+    "es": "video",
+    "sk": ["video"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Mira este video.", "sk": "Pozri si toto video." }],
+    "note": "V Mexiku bez prízvuku: video (v Španielsku vídeo)."
+  },
+  {
+    "id": "pagina",
+    "es": "página",
+    "sk": ["stránka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Busca la información en la página web.", "sk": "Vyhľadaj si informácie na webovej stránke." }]
+  },
+  {
+    "id": "aplicacion",
+    "es": "aplicación",
+    "sk": ["aplikácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "aplicaciones",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Descarga la aplicación del banco.", "sk": "Stiahni si aplikáciu banky." }],
+    "note": "Hovorovo aj „la app“."
+  },
+  {
+    "id": "red-social",
+    "es": "red social",
+    "sk": ["sociálna sieť"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "redes sociales",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Paso mucho tiempo en redes sociales.", "sk": "Trávim veľa času na sociálnych sieťach." }]
+  },
+  {
+    "id": "noticia",
+    "es": "noticia",
+    "sk": ["správa (novinka)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "¿Viste las noticias?", "sk": "Videl si správy?" }],
+    "note": "las noticias = správy v médiách; el mensaje = správa v mobile."
+  },
+  {
+    "id": "periodico",
+    "es": "periódico",
+    "sk": ["noviny"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Mi papá lee el periódico en la mañana.", "sk": "Otec ráno číta noviny." }]
+  },
+  {
+    "id": "radio",
+    "es": "radio",
+    "sk": ["rádio"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Escucho la radio en el carro.", "sk": "V aute počúvam rádio." }],
+    "note": "V Mexiku sa o prístroji často hovorí „el radio“."
+  },
+  {
+    "id": "senal",
+    "es": "señal",
+    "sk": ["signál"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "señales",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Aquí no hay señal.", "sk": "Tu nie je signál." }]
+  },
+  {
+    "id": "audifono",
+    "es": "audífono",
+    "sk": ["slúchadlo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Siempre llevo mis audífonos.", "sk": "Vždy mám pri sebe slúchadlá." }],
+    "note": "Mexické slovo; v Španielsku „auriculares“."
+  },
+  {
+    "id": "en-linea",
+    "es": "en línea",
+    "sk": ["online", "cez internet"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Pagué la luz en línea.", "sk": "Elektrinu som zaplatil online." }]
+  },
+  {
+    "id": "laptop",
+    "es": "laptop",
+    "sk": ["notebook"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "laptops",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Traje mi laptop a la oficina.", "sk": "Priniesol som si notebook do kancelárie." }],
+    "note": "V Mexiku ženského rodu: la laptop."
+  },
+  {
+    "id": "teclado",
+    "es": "teclado",
+    "sk": ["klávesnica"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Mi teclado no tiene ñ.", "sk": "Moja klávesnica nemá ñ." }]
+  },
+  {
+    "id": "archivo",
+    "es": "archivo",
+    "sk": ["súbor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Te mando el archivo por correo.", "sk": "Pošlem ti súbor mailom." }]
+  },
+  {
+    "id": "usuario",
+    "es": "usuario",
+    "sk": ["používateľ", "používateľské meno"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Escribe tu usuario y tu contraseña.", "sk": "Zadaj používateľské meno a heslo." }]
+  },
+  {
+    "id": "anuncio",
+    "es": "anuncio",
+    "sk": ["reklama", "inzerát"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Vi el anuncio en Facebook.", "sk": "Videl som reklamu na Facebooku." }]
+  },
+  {
+    "id": "impresora",
+    "es": "impresora",
+    "sk": ["tlačiareň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "La impresora no tiene papel.", "sk": "V tlačiarni nie je papier." }]
+  },
+  {
+    "id": "descompuesto",
+    "es": "descompuesto",
+    "sk": ["pokazený"],
+    "pos": "adj",
+    "feminine": "descompuesta",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "La impresora está descompuesta.", "sk": "Tlačiareň je pokazená." }],
+    "note": "Mexické; v Španielsku „estropeado“."
+  }
+]

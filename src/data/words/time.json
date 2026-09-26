@@ -523,5 +523,45 @@
     "level": "A1",
     "topics": ["time"],
     "examples": [{ "es": "El lunes es día festivo.", "sk": "V pondelok je sviatok." }]
+  },
+  {
+    "id": "siglo",
+    "es": "siglo",
+    "sk": ["storočie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "La iglesia es del siglo dieciséis.", "sk": "Kostol je zo 16. storočia." }]
+  },
+  {
+    "id": "epoca",
+    "es": "época",
+    "sk": ["obdobie", "doba"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "En esa época vivía en Puebla.", "sk": "V tom období som býval v Pueble." }]
+  },
+  {
+    "id": "plazo",
+    "es": "plazo",
+    "sk": ["lehota", "termín"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "El plazo termina el viernes.", "sk": "Lehota končí v piatok." }]
+  },
+  {
+    "id": "puntual",
+    "es": "puntual",
+    "sk": ["presný (načas)", "dochvíľny"],
+    "pos": "adj",
+    "plural": "puntuales",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "Sé puntual, por favor.", "sk": "Príď načas, prosím." }]
   }
 ]

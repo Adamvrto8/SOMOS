@@ -393,5 +393,102 @@
         "distractors": ["comprará", "comprarán", "compro"]
       }
     ]
+  },
+  {
+    "id": "s474",
+    "es": "En esta tienda te atienden muy bien.",
+    "sk": "V tomto obchode ťa veľmi dobre obslúžia.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["En", "esta", "tienda", "te", "atienden", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "atienden",
+        "lemma": "atender",
+        "hint": "atender · ellos · presente",
+        "distractors": ["atiendes", "atendemos", "atendieron"]
+      }
+    ]
+  },
+  {
+    "id": "s475",
+    "es": "Quiero cambiar estos zapatos por otra talla.",
+    "sk": "Chcem vymeniť tieto topánky za inú veľkosť.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Quiero", "cambiar", "estos", "zapatos", "por", "otra", "talla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Quiero",
+        "lemma": "querer",
+        "hint": "querer · yo · presente",
+        "distractors": ["Quiere", "Quieren", "Quise"]
+      }
+    ]
+  },
+  {
+    "id": "s476",
+    "es": "Gasté todo mi sueldo en una semana.",
+    "sk": "Celý plat som minul za týždeň.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Gasté", "todo", "mi", "sueldo", "en", "una", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Gasté",
+        "lemma": "gastar",
+        "hint": "gastar · yo · pretérito",
+        "distractors": ["Gastó", "Gastaron", "Gastaba"]
+      }
+    ]
+  },
+  {
+    "id": "s477",
+    "es": "Elegí el vestido azul porque era más barato.",
+    "sk": "Vybrala som si modré šaty, lebo boli lacnejšie.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Elegí", "el", "vestido", "azul", "porque", "era", "más", "barato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Elegí",
+        "lemma": "elegir",
+        "hint": "elegir · yo · pretérito",
+        "distractors": ["Eligió", "Eligieron", "Elegía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors": ["eran", "eras", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s478",
+    "es": "Lo compré a meses sin intereses.",
+    "sk": "Kúpil som to na splátky bez úroku.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Lo", "compré", "a", "meses", "sin", "intereses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "distractors": ["compró", "compraron", "compraba"]
+      }
+    ]
   }
 ]

@@ -334,5 +334,56 @@
     "level": "A1",
     "topics": ["hobbies"],
     "examples": [{ "es": "¿Cuál es tu película favorita?", "sk": "Aký je tvoj obľúbený film?" }]
+  },
+  {
+    "id": "torneo",
+    "es": "torneo",
+    "sk": ["turnaj"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Ganamos el torneo de fútbol.", "sk": "Vyhrali sme futbalový turnaj." }]
+  },
+  {
+    "id": "aficionado",
+    "es": "aficionado",
+    "sk": ["fanúšik", "amatér"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Mi hermano es muy aficionado al fútbol.", "sk": "Brat je veľký futbalový fanúšik." }]
+  },
+  {
+    "id": "exposicion",
+    "es": "exposición",
+    "sk": ["výstava"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "exposiciones",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Fuimos a una exposición de arte.", "sk": "Boli sme na výstave umenia." }]
+  },
+  {
+    "id": "senderismo",
+    "es": "senderismo",
+    "sk": ["turistika (pešia)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Me gusta hacer senderismo en la montaña.", "sk": "Rád chodím na turistiku do hôr." }]
+  },
+  {
+    "id": "boliche",
+    "es": "boliche",
+    "sk": ["bowling"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Vamos al boliche el viernes.", "sk": "V piatok ideme na bowling." }]
   }
 ]

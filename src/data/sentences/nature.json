@@ -383,5 +383,47 @@
         "distractors": ["conocerá", "conocerán", "conozco"]
       }
     ]
+  },
+  {
+    "id": "s507",
+    "es": "El año pasado hubo muchos incendios por la sequía.",
+    "sk": "Minulý rok bolo kvôli suchu veľa požiarov.",
+    "level": "B1",
+    "topics": ["nature"],
+    "tokens": ["El", "año", "pasado", "hubo", "muchos", "incendios", "por", "la", "sequía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "incendios",
+        "lemma": "incendio",
+        "hint": "požiare",
+        "distractors": ["huracanes", "temblores", "ríos"]
+      }
+    ]
+  },
+  {
+    "id": "s508",
+    "es": "Si no cuidamos el medio ambiente, el clima seguirá cambiando.",
+    "sk": "Ak nebudeme chrániť životné prostredie, podnebie sa bude ďalej meniť.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["futuro", "progresivo"],
+    "tokens": ["Si", "no", "cuidamos", "el", "medio", "ambiente", ",", "el", "clima", "seguirá", "cambiando", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "seguirá",
+        "lemma": "seguir",
+        "hint": "seguir · él · futuro",
+        "distractors": ["seguirán", "seguirás", "sigue"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "cambiando",
+        "lemma": "cambiar",
+        "hint": "cambiar · gerundio",
+        "distractors": ["cambia", "cambiar", "cambian"]
+      }
+    ]
   }
 ]

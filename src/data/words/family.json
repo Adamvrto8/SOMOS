@@ -421,5 +421,25 @@
     "topics": ["family"],
     "examples": [{ "es": "Tu mamá es muy joven.", "sk": "Tvoja mama je veľmi mladá." }],
     "note": "V obchode aj oslovenie: ¡Joven! = Pane! (mladému mužovi)."
+  },
+  {
+    "id": "boda",
+    "es": "boda",
+    "sk": ["svadba"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "La boda es en junio.", "sk": "Svadba je v júni." }]
+  },
+  {
+    "id": "divorcio",
+    "es": "divorcio",
+    "sk": ["rozvod"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "Después del divorcio se mudó a Monterrey.", "sk": "Po rozvode sa presťahoval do Monterrey." }]
   }
 ]

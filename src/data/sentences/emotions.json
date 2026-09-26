@@ -409,5 +409,66 @@
         "distractors": ["saldrán", "saldrás", "sale"]
       }
     ]
+  },
+  {
+    "id": "s484",
+    "es": "Mi vecino se queja de todo.",
+    "sk": "Sused sa sťažuje na všetko.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "vecino", "se", "queja", "de", "todo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "queja",
+        "lemma": "quejarse",
+        "hint": "quejarse · él · presente",
+        "distractors": ["quejan", "quejas", "quejó"]
+      }
+    ]
+  },
+  {
+    "id": "s485",
+    "es": "Mis papás estaban decepcionados, pero no dijeron nada.",
+    "sk": "Rodičia boli sklamaní, ale nič nepovedali.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto", "ser-estar", "preterito"],
+    "tokens": ["Mis", "papás", "estaban", "decepcionados", ",", "pero", "no", "dijeron", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estaban",
+        "lemma": "estar",
+        "hint": "ser/estar · ellos · imperfecto",
+        "distractors": ["eran", "estabas", "estábamos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "dijeron",
+        "lemma": "decir",
+        "hint": "decir · ellos · pretérito",
+        "distractors": ["dijiste", "dijimos", "decían"]
+      }
+    ]
+  },
+  {
+    "id": "s486",
+    "es": "Nunca te voy a mentir.",
+    "sk": "Nikdy ti nebudem klamať.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Nunca", "te", "voy", "a", "mentir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": ["va", "van", "fui"]
+      }
+    ]
   }
 ]

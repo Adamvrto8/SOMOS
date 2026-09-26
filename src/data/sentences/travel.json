@@ -556,5 +556,94 @@
         "distractors": ["viajará", "viajarán", "viajo"]
       }
     ]
+  },
+  {
+    "id": "s495",
+    "es": "El vuelo tuvo tres horas de retraso.",
+    "sk": "Let meškal tri hodiny.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "vuelo", "tuvo", "tres", "horas", "de", "retraso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tuvo",
+        "lemma": "tener",
+        "hint": "tener · él · pretérito",
+        "distractors": ["tuvieron", "tuviste", "tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s496",
+    "es": "Cuando llegamos, el hotel ya estaba lleno.",
+    "sk": "Keď sme dorazili, hotel už bol plný.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "llegamos", ",", "el", "hotel", "ya", "estaba", "lleno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "distractors": ["era", "estaban", "estabas"]
+      }
+    ]
+  },
+  {
+    "id": "s497",
+    "es": "Vale la pena visitar los cenotes de Yucatán.",
+    "sk": "Oplatí sa navštíviť cenoty na Yucatáne.",
+    "level": "B1",
+    "topics": ["travel"],
+    "tokens": ["Vale", "la", "pena", "visitar", "los", "cenotes", "de", "Yucatán", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cenotes",
+        "lemma": "cenote",
+        "hint": "cenoty",
+        "distractors": ["volcanes", "desiertos", "ríos"]
+      }
+    ]
+  },
+  {
+    "id": "s498",
+    "es": "Perdieron mi maleta en la escala.",
+    "sk": "Pri prestupe mi stratili kufor.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Perdieron", "mi", "maleta", "en", "la", "escala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Perdieron",
+        "lemma": "perder",
+        "hint": "perder · ellos · pretérito",
+        "distractors": ["Perdiste", "Perdimos", "Perdían"]
+      }
+    ]
+  },
+  {
+    "id": "s499",
+    "es": "El próximo verano andaremos por todo el sur de México.",
+    "sk": "Budúce leto budeme cestovať po celom juhu Mexika.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "verano", "andaremos", "por", "todo", "el", "sur", "de", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "andaremos",
+        "lemma": "andar",
+        "hint": "andar · nosotros · futuro",
+        "distractors": ["andaré", "andará", "andamos"]
+      }
+    ]
   }
 ]

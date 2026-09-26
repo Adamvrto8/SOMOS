@@ -190,5 +190,152 @@
         "distractors": ["Podremos", "Podré", "Puedes"]
       }
     ]
+  },
+  {
+    "id": "s457",
+    "es": "Aunque estaba cansado, fui a la fiesta.",
+    "sk": "Hoci som bol unavený, išiel som na oslavu.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Aunque", "estaba", "cansado", ",", "fui", "a", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "hoci",
+        "distractors": ["Porque", "Si", "Cuando"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "fui",
+        "lemma": "ir",
+        "hint": "ir · yo · pretérito",
+        "distractors": ["fue", "fueron", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s458",
+    "es": "No tenía dinero; por eso no fui.",
+    "sk": "Nemal som peniaze, preto som nešiel.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["No", "tenía", "dinero", ";", "por", "eso", "no", "fui", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tenían", "tuve", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s459",
+    "es": "Creo que va a llover, así que lleva el paraguas.",
+    "sk": "Myslím, že bude pršať, tak si zober dáždnik.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "va", "a", "llover", ",", "así", "que", "lleva", "el", "paraguas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Creo",
+        "lemma": "creer",
+        "hint": "creer · yo · presente",
+        "distractors": ["Cree", "Creen", "Creí"]
+      }
+    ]
+  },
+  {
+    "id": "s460",
+    "es": "Mientras yo cocinaba, mis hijos veían la tele.",
+    "sk": "Kým som varil, deti pozerali telku.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "yo", "cocinaba", ",", "mis", "hijos", "veían", "la", "tele", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cocinaba",
+        "lemma": "cocinar",
+        "hint": "cocinar · yo · imperfecto",
+        "distractors": ["cocinaban", "cociné", "cocinábamos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "veían",
+        "lemma": "ver",
+        "hint": "ver · ellos · imperfecto",
+        "distractors": ["veías", "veíamos", "vieron"]
+      }
+    ]
+  },
+  {
+    "id": "s461",
+    "es": "Sigo sin entender por qué se fue.",
+    "sk": "Stále nechápem, prečo odišiel.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Sigo", "sin", "entender", "por", "qué", "se", "fue", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Sigo",
+        "lemma": "seguir",
+        "hint": "seguir · yo · presente",
+        "distractors": ["Sigue", "Siguen", "Seguí"]
+      }
+    ]
+  },
+  {
+    "id": "s462",
+    "es": "¿Te acuerdas de la maestra de inglés?",
+    "sk": "Pamätáš si na učiteľku angličtiny?",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Te", "acuerdas", "de", "la", "maestra", "de", "inglés", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "acuerdas",
+        "lemma": "acordarse",
+        "hint": "acordarse · tú · presente",
+        "distractors": ["acordamos", "acuerdo", "acordaste"]
+      }
+    ]
+  },
+  {
+    "id": "s463",
+    "es": "Intenté llamarte, pero no contestaste.",
+    "sk": "Skúšal som ti volať, ale nezdvihol si to.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Intenté", "llamarte", ",", "pero", "no", "contestaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Intenté",
+        "lemma": "intentar",
+        "hint": "intentar · yo · pretérito",
+        "distractors": ["Intentó", "Intentaron", "Intentaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "contestaste",
+        "lemma": "contestar",
+        "hint": "contestar · tú · pretérito",
+        "distractors": ["contestamos", "contesté", "contestabas"]
+      }
+    ]
   }
 ]

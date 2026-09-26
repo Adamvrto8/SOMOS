@@ -33,7 +33,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
    kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition;
    mistakes are practised as a lesson. Export / import JSON backup.
-6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. MVP content A1–A2.
+6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. Content A1–A2, plus B1 since phase 7 (Cvičiť level filter: A1 / A2 / B1).
 
 ### Mexican Spanish rules (important for all content)
 - No `vosotros` anywhere. Persons: `yo, tú, él/ella/usted, nosotros, ellos/ellas/ustedes` (5 forms).
@@ -259,7 +259,7 @@ src/
   data/            topics.json, types.ts, index.ts (merges the folders below via import.meta.glob)
     words/         one file per topic (food.json…) + verbs.json (the verb Words)
     sentences/     one file per topic
-    verbs/         core.json (first 20), a1-a2.json
+    verbs/         core.json (first 20), a1-a2.json, b1.json
   lib/             db.ts (Dexie), search.ts, checkAnswer.ts, conjugate.ts, srs.ts, tts.ts
   features/
     search/  word/  exercises/  archive/  home/
@@ -281,8 +281,9 @@ scripts/
 - [x] **5. SRS + Home** — ts-fsrs review sessions, due counter, streak, daily goal, attempts stats.
 - [x] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
   Result: 19 topics (incl. Základné slová, Čísla), 878 words, 100 verbs, 406 sentences (413 clozes).
-- [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
-  Done: 7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences); 7b DeepL online lookup. Next: 7c B1 content.
+- [x] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
+  7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences); 7b DeepL online lookup;
+  7c B1: 37 verbs, 138 words, 68 sentences, topic "Technológie a médiá". Totals: 20 topics, 1053 words, 137 verbs, 514 sentences.
 
 ---
 

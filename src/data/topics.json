@@ -17,5 +17,6 @@
   { "id": "nature", "sk": "Príroda a zvieratá", "es": "La naturaleza", "icon": "trees" },
   { "id": "school", "sk": "Škola a učenie", "es": "La escuela", "icon": "graduation-cap" },
   { "id": "emotions", "sk": "Pocity", "es": "Las emociones", "icon": "smile" },
-  { "id": "hobbies", "sk": "Voľný čas", "es": "El tiempo libre", "icon": "music" }
+  { "id": "hobbies", "sk": "Voľný čas", "es": "El tiempo libre", "icon": "music" },
+  { "id": "tech", "sk": "Technológie a médiá", "es": "Tecnología y medios", "icon": "smartphone" }
 ]

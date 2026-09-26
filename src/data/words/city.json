@@ -461,5 +461,72 @@
     "level": "A1",
     "topics": ["city"],
     "examples": [{ "es": "El metro está muy lleno.", "sk": "Metro je veľmi plné." }]
+  },
+  {
+    "id": "barrio",
+    "es": "barrio",
+    "sk": ["štvrť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Es un barrio muy tranquilo.", "sk": "Je to veľmi pokojná štvrť." }]
+  },
+  {
+    "id": "seguridad",
+    "es": "seguridad",
+    "sk": ["bezpečnosť"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [
+      {
+        "es": "La seguridad es un problema en algunas zonas.",
+        "sk": "V niektorých oblastiach je problém s bezpečnosťou."
+      }
+    ]
+  },
+  {
+    "id": "peligroso",
+    "es": "peligroso",
+    "sk": ["nebezpečný"],
+    "pos": "adj",
+    "feminine": "peligrosa",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Esta calle es peligrosa en la noche.", "sk": "Táto ulica je v noci nebezpečná." }]
+  },
+  {
+    "id": "ruidoso",
+    "es": "ruidoso",
+    "sk": ["hlučný"],
+    "pos": "adj",
+    "feminine": "ruidosa",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Mi calle es muy ruidosa.", "sk": "Moja ulica je veľmi hlučná." }]
+  },
+  {
+    "id": "tope",
+    "es": "tope",
+    "sk": ["spomaľovací retardér"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "¡Cuidado con el tope!", "sk": "Pozor na retardér!" }],
+    "note": "Veľmi mexické: v Mexiku sú retardéry takmer všade."
+  },
+  {
+    "id": "combi",
+    "es": "combi",
+    "sk": ["mikrobus (hromadná doprava)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Tomo la combi para ir al trabajo.", "sk": "Do práce chodím mikrobusom." }]
   }
 ]

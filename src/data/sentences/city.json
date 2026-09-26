@@ -521,5 +521,58 @@
         "distractors": ["abrirán", "abrirás", "abre"]
       }
     ]
+  },
+  {
+    "id": "s492",
+    "es": "Están construyendo un puente nuevo en la avenida.",
+    "sk": "Na triede stavajú nový most.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["progresivo"],
+    "tokens": ["Están", "construyendo", "un", "puente", "nuevo", "en", "la", "avenida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "construyendo",
+        "lemma": "construir",
+        "hint": "construir · gerundio",
+        "distractors": ["construye", "construir", "construyen"]
+      }
+    ]
+  },
+  {
+    "id": "s493",
+    "es": "Sigue derecho y voltea a la izquierda en el semáforo.",
+    "sk": "Choď rovno a pri semafore zaboč doľava.",
+    "level": "B1",
+    "topics": ["city"],
+    "tokens": ["Sigue", "derecho", "y", "voltea", "a", "la", "izquierda", "en", "el", "semáforo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "semáforo",
+        "lemma": "semáforo",
+        "hint": "semafor",
+        "distractors": ["tope", "puente", "banco"]
+      }
+    ]
+  },
+  {
+    "id": "s494",
+    "es": "Antes este barrio era muy peligroso.",
+    "sk": "Predtým bola táto štvrť veľmi nebezpečná.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "este", "barrio", "era", "muy", "peligroso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors": ["eran", "eras", "fue"]
+      }
+    ]
   }
 ]

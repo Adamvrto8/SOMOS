@@ -483,5 +483,119 @@
         "distractors": ["dirán", "dirás", "dice"]
       }
     ]
+  },
+  {
+    "id": "s468",
+    "es": "Por fin conseguí un trabajo en una empresa grande.",
+    "sk": "Konečne som dostal prácu vo veľkej firme.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Por", "fin", "conseguí", "un", "trabajo", "en", "una", "empresa", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "conseguí",
+        "lemma": "conseguir",
+        "hint": "conseguir · yo · pretérito",
+        "distractors": ["consiguió", "consiguieron", "conseguía"]
+      }
+    ]
+  },
+  {
+    "id": "s469",
+    "es": "Mi jefe me ofreció un aumento.",
+    "sk": "Šéf mi ponúkol zvýšenie platu.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "jefe", "me", "ofreció", "un", "aumento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ofreció",
+        "lemma": "ofrecer",
+        "hint": "ofrecer · él · pretérito",
+        "distractors": ["ofrecieron", "ofreciste", "ofrecía"]
+      }
+    ]
+  },
+  {
+    "id": "s470",
+    "es": "Si ahorro un poco cada mes, podré comprar un carro.",
+    "sk": "Ak si každý mesiac trochu odložím, budem si môcť kúpiť auto.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente", "futuro"],
+    "tokens": ["Si", "ahorro", "un", "poco", "cada", "mes", ",", "podré", "comprar", "un", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ahorro",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · yo · presente",
+        "distractors": ["ahorra", "ahorran", "ahorré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "podré",
+        "lemma": "poder",
+        "hint": "poder · yo · futuro",
+        "distractors": ["podrá", "podrán", "puedo"]
+      }
+    ]
+  },
+  {
+    "id": "s471",
+    "es": "Antes trabajaba en el turno de noche y dormía de día.",
+    "sk": "Predtým som pracoval na nočnej smene a spal cez deň.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "trabajaba", "en", "el", "turno", "de", "noche", "y", "dormía", "de", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "dormía",
+        "lemma": "dormir",
+        "hint": "dormir · yo · imperfecto",
+        "distractors": ["dormían", "dormí", "dormíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s472",
+    "es": "Logramos terminar el proyecto antes del plazo.",
+    "sk": "Podarilo sa nám dokončiť projekt pred termínom.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Logramos", "terminar", "el", "proyecto", "antes", "del", "plazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Logramos",
+        "lemma": "lograr",
+        "hint": "lograr · nosotros · pretérito",
+        "distractors": ["Logré", "Logró", "Lográbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s473",
+    "es": "Mi compañera presentó su renuncia ayer.",
+    "sk": "Kolegyňa včera podala výpoveď.",
+    "level": "B1",
+    "topics": ["work"],
+    "tokens": ["Mi", "compañera", "presentó", "su", "renuncia", "ayer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "renuncia",
+        "lemma": "renuncia",
+        "hint": "výpoveď",
+        "distractors": ["propuesta", "carrera", "meta"]
+      }
+    ]
   }
 ]

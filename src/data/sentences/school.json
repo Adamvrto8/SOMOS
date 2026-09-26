@@ -422,5 +422,66 @@
         "distractors": ["estará", "serán", "serás"]
       }
     ]
+  },
+  {
+    "id": "s504",
+    "es": "La maestra nos explicó el imperfecto otra vez.",
+    "sk": "Učiteľka nám znova vysvetlila imperfecto.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "maestra", "nos", "explicó", "el", "imperfecto", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "explicó",
+        "lemma": "explicar",
+        "hint": "explicar · ella · pretérito",
+        "distractors": ["explicaron", "explicaste", "explicaba"]
+      }
+    ]
+  },
+  {
+    "id": "s505",
+    "es": "Si consigo la beca, estudiaré en Guadalajara.",
+    "sk": "Ak získam štipendium, budem študovať v Guadalajare.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["presente", "futuro"],
+    "tokens": ["Si", "consigo", "la", "beca", ",", "estudiaré", "en", "Guadalajara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "consigo",
+        "lemma": "conseguir",
+        "hint": "conseguir · yo · presente",
+        "distractors": ["consigue", "consiguen", "conseguí"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "estudiaré",
+        "lemma": "estudiar",
+        "hint": "estudiar · yo · futuro",
+        "distractors": ["estudiará", "estudiarán", "estudio"]
+      }
+    ]
+  },
+  {
+    "id": "s506",
+    "es": "Saqué la mejor calificación de la clase.",
+    "sk": "Dostal som najlepšiu známku v triede.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Saqué", "la", "mejor", "calificación", "de", "la", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Saqué",
+        "lemma": "sacar",
+        "hint": "sacar · yo · pretérito",
+        "distractors": ["Sacó", "Sacaron", "Sacaba"]
+      }
+    ]
   }
 ]

@@ -327,5 +327,57 @@
     "topics": ["shopping"],
     "examples": [{ "es": "Hice una lista de compras.", "sk": "Spravil som si nákupný zoznam." }],
     "note": "Pozor: estar lista = byť pripravená (listo, lista)."
+  },
+  {
+    "id": "garantia",
+    "es": "garantía",
+    "sk": ["záruka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Tiene un año de garantía.", "sk": "Má ročnú záruku." }]
+  },
+  {
+    "id": "devolucion",
+    "es": "devolución",
+    "sk": ["vrátenie (tovaru)"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "devoluciones",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Quiero hacer una devolución.", "sk": "Chcem vrátiť tovar." }]
+  },
+  {
+    "id": "factura",
+    "es": "factura",
+    "sk": ["faktúra"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¿Me da factura, por favor?", "sk": "Dáte mi faktúru, prosím?" }]
+  },
+  {
+    "id": "mayoreo",
+    "es": "mayoreo",
+    "sk": ["veľkoobchod"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Aquí venden al mayoreo.", "sk": "Tu predávajú vo veľkom." }],
+    "note": "Mexické: al mayoreo = vo veľkom, al menudeo = v malom."
+  },
+  {
+    "id": "meses-sin-intereses",
+    "es": "meses sin intereses",
+    "sk": ["splátky bez úroku"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Compré el refri a meses sin intereses.", "sk": "Chladničku som kúpil na splátky bez úroku." }],
+    "note": "Veľmi bežné pri platbe kartou v Mexiku."
   }
 ]

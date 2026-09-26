@@ -325,5 +325,87 @@
     "topics": ["health"],
     "examples": [{ "es": "Mi hermana está embarazada.", "sk": "Sestra je tehotná." }],
     "note": "Pozor, nie „embarrassed“: hanbím sa = me da vergüenza."
+  },
+  {
+    "id": "estres",
+    "es": "estrés",
+    "sk": ["stres"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tengo mucho estrés en el trabajo.", "sk": "V práci mám veľa stresu." }]
+  },
+  {
+    "id": "dieta",
+    "es": "dieta",
+    "sk": ["diéta", "strava"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Estoy a dieta.", "sk": "Držím diétu." }]
+  },
+  {
+    "id": "habito",
+    "es": "hábito",
+    "sk": ["zvyk"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Correr es un buen hábito.", "sk": "Behanie je dobrý zvyk." }]
+  },
+  {
+    "id": "sintoma",
+    "es": "síntoma",
+    "sk": ["príznak"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "¿Qué síntomas tiene?", "sk": "Aké máte príznaky?" }],
+    "note": "Hoci končí na -a, je mužského rodu: el síntoma."
+  },
+  {
+    "id": "presion",
+    "es": "presión",
+    "sk": ["tlak"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "presiones",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Mi abuela tiene la presión alta.", "sk": "Babka má vysoký tlak." }]
+  },
+  {
+    "id": "cirugia",
+    "es": "cirugía",
+    "sk": ["operácia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Mi papá tuvo una cirugía de la rodilla.", "sk": "Otec mal operáciu kolena." }]
+  },
+  {
+    "id": "contagioso",
+    "es": "contagioso",
+    "sk": ["nákazlivý"],
+    "pos": "adj",
+    "feminine": "contagiosa",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "La gripa es muy contagiosa.", "sk": "Chrípka je veľmi nákazlivá." }]
+  },
+  {
+    "id": "grave",
+    "es": "grave",
+    "sk": ["vážny"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "No es nada grave.", "sk": "Nie je to nič vážne." }]
   }
 ]

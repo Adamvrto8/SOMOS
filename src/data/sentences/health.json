@@ -415,5 +415,77 @@
         "distractors": ["sentiremos", "sentiré", "sientes"]
       }
     ]
+  },
+  {
+    "id": "s500",
+    "es": "Me caí de la escalera y me lastimé el brazo.",
+    "sk": "Spadol som zo schodov a poranil som si ruku.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "caí", "de", "la", "escalera", "y", "me", "lastimé", "el", "brazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "caí",
+        "lemma": "caerse",
+        "hint": "caerse · yo · pretérito",
+        "distractors": ["cayó", "cayeron", "caía"]
+      }
+    ]
+  },
+  {
+    "id": "s501",
+    "es": "El doctor dice que no es nada grave.",
+    "sk": "Lekár hovorí, že to nie je nič vážne.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["El", "doctor", "dice", "que", "no", "es", "nada", "grave", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dice",
+        "lemma": "decir",
+        "hint": "decir · él · presente",
+        "distractors": ["dicen", "dices", "dijo"]
+      }
+    ]
+  },
+  {
+    "id": "s502",
+    "es": "Desde que hago ejercicio, tengo menos estrés.",
+    "sk": "Odkedy cvičím, mám menej stresu.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "hago", "ejercicio", ",", "tengo", "menos", "estrés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": ["hace", "hacen", "hice"]
+      }
+    ]
+  },
+  {
+    "id": "s503",
+    "es": "Mi abuelo tiene la presión alta, por eso no come sal.",
+    "sk": "Dedko má vysoký tlak, preto neje soľ.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuelo", "tiene", "la", "presión", "alta", ",", "por", "eso", "no", "come", "sal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "come",
+        "lemma": "comer",
+        "hint": "comer · él · presente",
+        "distractors": ["comen", "comes", "comió"]
+      }
+    ]
   }
 ]

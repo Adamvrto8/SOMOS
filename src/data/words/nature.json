@@ -367,5 +367,65 @@
     "topics": ["nature"],
     "examples": [{ "es": "Anoche hubo un temblor.", "sk": "Včera v noci bolo zemetrasenie." }],
     "note": "Menšie zemetrasenie; veľké = terremoto. V Mexiku sú bežné."
+  },
+  {
+    "id": "medio-ambiente",
+    "es": "medio ambiente",
+    "sk": ["životné prostredie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay que cuidar el medio ambiente.", "sk": "Treba chrániť životné prostredie." }]
+  },
+  {
+    "id": "sequia",
+    "es": "sequía",
+    "sk": ["sucho"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hay sequía en el norte del país.", "sk": "Na severe krajiny je sucho." }]
+  },
+  {
+    "id": "incendio",
+    "es": "incendio",
+    "sk": ["požiar"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Hubo un incendio en el bosque.", "sk": "V lese vypukol požiar." }]
+  },
+  {
+    "id": "especie",
+    "es": "especie",
+    "sk": ["druh"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El ajolote es una especie en peligro.", "sk": "Axolotl je ohrozený druh." }]
+  },
+  {
+    "id": "energia",
+    "es": "energía",
+    "sk": ["energia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "La energía solar es muy barata en México.", "sk": "Solárna energia je v Mexiku veľmi lacná." }]
+  },
+  {
+    "id": "reciclaje",
+    "es": "reciclaje",
+    "sk": ["recyklácia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El reciclaje empieza en casa.", "sk": "Recyklácia sa začína doma." }]
   }
 ]

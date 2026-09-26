@@ -430,5 +430,105 @@
     "level": "A1",
     "topics": ["work"],
     "examples": [{ "es": "Mi tío tiene un negocio de tacos.", "sk": "Strýko má vlastný stánok s tacos." }]
+  },
+  {
+    "id": "carrera",
+    "es": "carrera",
+    "sk": ["kariéra", "vysokoškolský odbor"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Estudié la carrera de Derecho.", "sk": "Študoval som právo." }]
+  },
+  {
+    "id": "empleo",
+    "es": "empleo",
+    "sk": ["zamestnanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Estoy buscando empleo.", "sk": "Hľadám si zamestnanie." }]
+  },
+  {
+    "id": "meta",
+    "es": "meta",
+    "sk": ["cieľ"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi meta es hablar bien español.", "sk": "Mojím cieľom je hovoriť dobre po španielsky." }]
+  },
+  {
+    "id": "exito",
+    "es": "éxito",
+    "sk": ["úspech"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "¡Mucho éxito en tu nuevo trabajo!", "sk": "Veľa úspechov v novej práci!" }],
+    "note": "Pozor: éxito = úspech, nie východ (to je la salida)."
+  },
+  {
+    "id": "renuncia",
+    "es": "renuncia",
+    "sk": ["výpoveď (z práce)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Presenté mi renuncia.", "sk": "Podal som výpoveď." }]
+  },
+  {
+    "id": "aumento",
+    "es": "aumento",
+    "sk": ["zvýšenie (platu)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Le pedí un aumento a mi jefe.", "sk": "Požiadal som šéfa o zvýšenie platu." }]
+  },
+  {
+    "id": "turno",
+    "es": "turno",
+    "sk": ["smena", "poradie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Trabajo en el turno de noche.", "sk": "Pracujem na nočnej smene." }]
+  },
+  {
+    "id": "propuesta",
+    "es": "propuesta",
+    "sk": ["návrh", "ponuka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tengo una propuesta para el proyecto.", "sk": "Mám návrh k projektu." }]
+  },
+  {
+    "id": "responsable",
+    "es": "responsable",
+    "sk": ["zodpovedný"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Es una persona muy responsable.", "sk": "Je to veľmi zodpovedný človek." }]
+  },
+  {
+    "id": "capaz",
+    "es": "capaz",
+    "sk": ["schopný"],
+    "pos": "adj",
+    "plural": "capaces",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Eres capaz de hacerlo.", "sk": "Si schopný to urobiť." }]
   }
 ]

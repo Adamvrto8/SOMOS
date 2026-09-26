@@ -562,5 +562,41 @@
         "distractors": ["cenaré", "cenará", "cenamos"]
       }
     ]
+  },
+  {
+    "id": "s509",
+    "es": "Tengo antojo de unos tacos al pastor.",
+    "sk": "Mám chuť na tacos al pastor.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "antojo", "de", "unos", "tacos", "al", "pastor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tienen", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s510",
+    "es": "En las fiestas patrias siempre servimos pozole.",
+    "sk": "Na oslavy nezávislosti vždy podávame pozole.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["En", "las", "fiestas", "patrias", "siempre", "servimos", "pozole", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "servimos",
+        "lemma": "servir",
+        "hint": "servir · nosotros · presente",
+        "distractors": ["sirvo", "sirve", "sirves"]
+      }
+    ]
   }
 ]

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "s447",
+    "es": "Se me acabó la batería y no pude llamarte.",
+    "sk": "Vybila sa mi batéria a nemohol som ti zavolať.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "acabó", "la", "batería", "y", "no", "pude", "llamarte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "acabó",
+        "lemma": "acabar",
+        "hint": "acabar · él · pretérito",
+        "distractors": ["acabaron", "acabaste", "acababa"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "pude",
+        "lemma": "poder",
+        "hint": "poder · yo · pretérito",
+        "distractors": ["pudo", "pudieron", "podía"]
+      }
+    ]
+  },
+  {
+    "id": "s448",
+    "es": "¿Me mandas la foto por WhatsApp?",
+    "sk": "Pošleš mi tú fotku cez WhatsApp?",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "mandas", "la", "foto", "por", "WhatsApp", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mandas",
+        "lemma": "mandar",
+        "hint": "mandar · tú · presente",
+        "distractors": ["mandamos", "mando", "mandaste"]
+      }
+    ]
+  },
+  {
+    "id": "s449",
+    "es": "Este cargador ya no sirve.",
+    "sk": "Táto nabíjačka už nefunguje.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Este", "cargador", "ya", "no", "sirve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sirve",
+        "lemma": "servir",
+        "hint": "servir · él · presente",
+        "distractors": ["sirven", "sirves", "sirvió"]
+      }
+    ]
+  },
+  {
+    "id": "s450",
+    "es": "Olvidé la contraseña del wifi.",
+    "sk": "Zabudol som heslo na wifi.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Olvidé", "la", "contraseña", "del", "wifi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Olvidé",
+        "lemma": "olvidar",
+        "hint": "olvidar · yo · pretérito",
+        "distractors": ["Olvidó", "Olvidaron", "Olvidaba"]
+      }
+    ]
+  },
+  {
+    "id": "s451",
+    "es": "Apaga el celular durante la película, por favor.",
+    "sk": "Počas filmu vypni mobil, prosím.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["Apaga", "el", "celular", "durante", "la", "película", ",", "por", "favor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "celular",
+        "lemma": "celular",
+        "hint": "mobil",
+        "distractors": ["cargador", "teclado", "archivo"]
+      }
+    ]
+  },
+  {
+    "id": "s452",
+    "es": "Mi hermano pasa horas en las redes sociales.",
+    "sk": "Brat trávi hodiny na sociálnych sieťach.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "pasa", "horas", "en", "las", "redes", "sociales", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pasa",
+        "lemma": "pasar",
+        "hint": "pasar · él · presente",
+        "distractors": ["pasan", "pasas", "pasó"]
+      }
+    ]
+  },
+  {
+    "id": "s453",
+    "es": "Si no hay señal, te mando un mensaje más tarde.",
+    "sk": "Ak nebude signál, pošlem ti správu neskôr.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "no", "hay", "señal", ",", "te", "mando", "un", "mensaje", "más", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "mando",
+        "lemma": "mandar",
+        "hint": "mandar · yo · presente",
+        "distractors": ["manda", "mandan", "mandé"]
+      }
+    ]
+  },
+  {
+    "id": "s454",
+    "es": "Ayer traduje un documento muy largo.",
+    "sk": "Včera som preložil veľmi dlhý dokument.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "traduje", "un", "documento", "muy", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "traduje",
+        "lemma": "traducir",
+        "hint": "traducir · yo · pretérito",
+        "distractors": ["tradujo", "tradujeron", "traducía"]
+      }
+    ]
+  },
+  {
+    "id": "s455",
+    "es": "La impresora está descompuesta otra vez.",
+    "sk": "Tlačiareň je zase pokazená.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["La", "impresora", "está", "descompuesta", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s456",
+    "es": "Todos mis amigos compartieron la noticia.",
+    "sk": "Všetci moji kamaráti zdieľali tú správu.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Todos", "mis", "amigos", "compartieron", "la", "noticia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "compartieron",
+        "lemma": "compartir",
+        "hint": "compartir · ellos · pretérito",
+        "distractors": ["compartiste", "compartimos", "compartían"]
+      }
+    ]
+  }
+]

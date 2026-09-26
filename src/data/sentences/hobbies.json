@@ -428,5 +428,41 @@
         "distractors": ["jugaré", "jugará", "jugamos"]
       }
     ]
+  },
+  {
+    "id": "s513",
+    "es": "Mi equipo ganó el torneo después de diez años.",
+    "sk": "Môj tím vyhral turnaj po desiatich rokoch.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "equipo", "ganó", "el", "torneo", "después", "de", "diez", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ganó",
+        "lemma": "ganar",
+        "hint": "ganar · él · pretérito",
+        "distractors": ["ganaron", "ganaste", "ganaba"]
+      }
+    ]
+  },
+  {
+    "id": "s514",
+    "es": "Aprovechamos el fin de semana para ir de senderismo.",
+    "sk": "Víkend sme využili na turistiku.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Aprovechamos", "el", "fin", "de", "semana", "para", "ir", "de", "senderismo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aprovechamos",
+        "lemma": "aprovechar",
+        "hint": "aprovechar · nosotros · pretérito",
+        "distractors": ["Aproveché", "Aprovechó", "Aprovechábamos"]
+      }
+    ]
   }
 ]

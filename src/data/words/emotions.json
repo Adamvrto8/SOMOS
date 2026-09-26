@@ -305,5 +305,107 @@
     "level": "A1",
     "topics": ["emotions"],
     "examples": [{ "es": "¡Ánimo! Tú puedes.", "sk": "Hlavu hore! Zvládneš to." }]
+  },
+  {
+    "id": "relacion",
+    "es": "relación",
+    "sk": ["vzťah"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "relaciones",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Tenemos una buena relación.", "sk": "Máme dobrý vzťah." }]
+  },
+  {
+    "id": "confianza",
+    "es": "confianza",
+    "sk": ["dôvera"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Te tengo mucha confianza.", "sk": "Veľmi ti dôverujem." }]
+  },
+  {
+    "id": "soledad",
+    "es": "soledad",
+    "sk": ["samota"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "No me gusta la soledad.", "sk": "Nemám rád samotu." }]
+  },
+  {
+    "id": "esperanza",
+    "es": "esperanza",
+    "sk": ["nádej"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Nunca pierdas la esperanza.", "sk": "Nikdy nestrácaj nádej." }]
+  },
+  {
+    "id": "agradecido",
+    "es": "agradecido",
+    "sk": ["vďačný"],
+    "pos": "adj",
+    "feminine": "agradecida",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy muy agradecido por tu ayuda.", "sk": "Som ti veľmi vďačný za pomoc." }]
+  },
+  {
+    "id": "decepcionado",
+    "es": "decepcionado",
+    "sk": ["sklamaný"],
+    "pos": "adj",
+    "feminine": "decepcionada",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy decepcionado del resultado.", "sk": "Som sklamaný z výsledku." }]
+  },
+  {
+    "id": "harto",
+    "es": "harto",
+    "sk": ["znechutený", "(mať) dosť"],
+    "pos": "adj",
+    "feminine": "harta",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Estoy harto del tráfico.", "sk": "Mám dosť tej dopravy." }]
+  },
+  {
+    "id": "flojo",
+    "es": "flojo",
+    "sk": ["lenivý"],
+    "pos": "adj",
+    "feminine": "floja",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "No seas flojo y ayúdame.", "sk": "Nebuď lenivý a pomôž mi." }]
+  },
+  {
+    "id": "carinoso",
+    "es": "cariñoso",
+    "sk": ["nežný", "prítulný"],
+    "pos": "adj",
+    "feminine": "cariñosa",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi perro es muy cariñoso.", "sk": "Môj pes je veľmi prítulný." }]
+  },
+  {
+    "id": "honesto",
+    "es": "honesto",
+    "sk": ["čestný", "úprimný"],
+    "pos": "adj",
+    "feminine": "honesta",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Es un hombre muy honesto.", "sk": "Je to veľmi čestný muž." }]
   }
 ]

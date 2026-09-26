@@ -483,5 +483,102 @@
         "distractors": ["tendrán", "tendrás", "tiene"]
       }
     ]
+  },
+  {
+    "id": "s479",
+    "es": "Mis abuelos se casaron en 1965.",
+    "sk": "Starí rodičia sa zobrali v roku 1965.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mis", "abuelos", "se", "casaron", "en", "1965", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "casaron",
+        "lemma": "casarse",
+        "hint": "casarse · ellos · pretérito",
+        "distractors": ["casaste", "casamos", "casaban"]
+      }
+    ]
+  },
+  {
+    "id": "s480",
+    "es": "Crecí en un pueblo, pero ahora vivo en la ciudad.",
+    "sk": "Vyrastal som na dedine, ale teraz bývam v meste.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Crecí", "en", "un", "pueblo", ",", "pero", "ahora", "vivo", "en", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Crecí",
+        "lemma": "crecer",
+        "hint": "crecer · yo · pretérito",
+        "distractors": ["Creció", "Crecieron", "Crecía"]
+      }
+    ]
+  },
+  {
+    "id": "s481",
+    "es": "Cuando éramos niños, mi hermano y yo siempre nos peleábamos.",
+    "sk": "Keď sme boli malí, s bratom sme sa stále bili.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "éramos", "niños", ",", "mi", "hermano", "y", "yo", "siempre", "nos", "peleábamos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "peleábamos",
+        "lemma": "pelear",
+        "hint": "pelear · nosotros · imperfecto",
+        "distractors": ["peleaba", "peleamos", "peleabas"]
+      }
+    ]
+  },
+  {
+    "id": "s482",
+    "es": "Mi abuela murió cuando yo tenía diez años.",
+    "sk": "Babka zomrela, keď som mal desať rokov.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Mi", "abuela", "murió", "cuando", "yo", "tenía", "diez", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "murió",
+        "lemma": "morir",
+        "hint": "morir · ella · pretérito",
+        "distractors": ["murieron", "moriste", "moría"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tenían", "tuve", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s483",
+    "es": "Le regalé un libro a mi hermana.",
+    "sk": "Sestre som daroval knihu.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "regalé", "un", "libro", "a", "mi", "hermana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "regalé",
+        "lemma": "regalar",
+        "hint": "regalar · yo · pretérito",
+        "distractors": ["regaló", "regalaron", "regalaba"]
+      }
+    ]
   }
 ]

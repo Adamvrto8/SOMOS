@@ -341,5 +341,61 @@
     "topics": ["school"],
     "examples": [{ "es": "Mi hijo está en la prepa.", "sk": "Syn chodí na strednú." }],
     "note": "Skratka z „preparatoria“ (15–18 rokov)."
+  },
+  {
+    "id": "beca",
+    "es": "beca",
+    "sk": ["štipendium"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      {
+        "es": "Conseguí una beca para estudiar en México.",
+        "sk": "Získal som štipendium na štúdium v Mexiku."
+      }
+    ]
+  },
+  {
+    "id": "titulo",
+    "es": "título",
+    "sk": ["titul", "diplom"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Tengo un título en ingeniería.", "sk": "Mám inžiniersky titul." }]
+  },
+  {
+    "id": "maestria",
+    "es": "maestría",
+    "sk": ["magisterské štúdium"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estoy haciendo una maestría.", "sk": "Robím si magisterský titul." }]
+  },
+  {
+    "id": "nivel",
+    "es": "nivel",
+    "sk": ["úroveň"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "niveles",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Qué nivel de español tienes?", "sk": "Akú úroveň španielčiny máš?" }]
+  },
+  {
+    "id": "curso",
+    "es": "curso",
+    "sk": ["kurz"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Tomé un curso de cocina.", "sk": "Absolvoval som kurz varenia." }]
   }
 ]

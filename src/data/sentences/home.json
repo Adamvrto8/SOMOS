@@ -536,5 +536,102 @@
         "distractors": ["Limpiaré", "Limpiará", "Limpiamos"]
       }
     ]
+  },
+  {
+    "id": "s487",
+    "es": "Nos mudaremos a un departamento más grande.",
+    "sk": "Presťahujeme sa do väčšieho bytu.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Nos", "mudaremos", "a", "un", "departamento", "más", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mudaremos",
+        "lemma": "mudarse",
+        "hint": "mudarse · nosotros · futuro",
+        "distractors": ["mudaré", "mudará", "mudamos"]
+      }
+    ]
+  },
+  {
+    "id": "s488",
+    "es": "Se acabó el gas y tuvimos que bañarnos con agua fría.",
+    "sk": "Minul sa plyn a museli sme sa osprchovať studenou vodou.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "acabó", "el", "gas", "y", "tuvimos", "que", "bañarnos", "con", "agua", "fría", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors": ["tuve", "tuvo", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s489",
+    "es": "De repente se fue la luz.",
+    "sk": "Zrazu vypadla elektrina.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["De", "repente", "se", "fue", "la", "luz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fue",
+        "lemma": "ir",
+        "hint": "ir · ella · pretérito",
+        "distractors": ["fueron", "fuiste", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s490",
+    "es": "El plomero vendrá mañana en la mañana.",
+    "sk": "Inštalatér príde zajtra ráno.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "plomero", "vendrá", "mañana", "en", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vendrá",
+        "lemma": "venir",
+        "hint": "venir · él · futuro",
+        "distractors": ["vendrán", "vendrás", "viene"]
+      }
+    ]
+  },
+  {
+    "id": "s491",
+    "es": "Prendí la luz porque no veía nada.",
+    "sk": "Zapol som svetlo, lebo som nič nevidel.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Prendí", "la", "luz", "porque", "no", "veía", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prendí",
+        "lemma": "prender",
+        "hint": "prender · yo · pretérito",
+        "distractors": ["Prendió", "Prendieron", "Prendía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "veía",
+        "lemma": "ver",
+        "hint": "ver · yo · imperfecto",
+        "distractors": ["veían", "vi", "veíamos"]
+      }
+    ]
   }
 ]

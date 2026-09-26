@@ -532,5 +532,41 @@
         "distractors": ["haremos", "haré", "haces"]
       }
     ]
+  },
+  {
+    "id": "s511",
+    "es": "Acabo de terminar el trabajo.",
+    "sk": "Práve som dokončil prácu.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Acabo", "de", "terminar", "el", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Acabo",
+        "lemma": "acabar",
+        "hint": "acabar · yo · presente",
+        "distractors": ["Acaba", "Acaban", "Acabé"]
+      }
+    ]
+  },
+  {
+    "id": "s512",
+    "es": "Mañana cumpliré cuarenta años.",
+    "sk": "Zajtra budem mať štyridsať.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "cumpliré", "cuarenta", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cumpliré",
+        "lemma": "cumplir",
+        "hint": "cumplir · yo · futuro",
+        "distractors": ["cumplirá", "cumplirán", "cumplo"]
+      }
+    ]
   }
 ]

@@ -348,5 +348,84 @@
         "distractors": ["llaman", "llamas", "llamó"]
       }
     ]
+  },
+  {
+    "id": "s464",
+    "es": "Me parece que tienes razón.",
+    "sk": "Zdá sa mi, že máš pravdu.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "parece", "que", "tienes", "razón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "parece",
+        "lemma": "parecer",
+        "hint": "parecer · él · presente",
+        "distractors": ["parecen", "pareces", "pareció"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["tenemos", "tengo", "tuviste"]
+      }
+    ]
+  },
+  {
+    "id": "s465",
+    "es": "¿Cómo andas? Hace mucho que no te veo.",
+    "sk": "Ako sa máš? Dlho som ťa nevidel.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cómo", "andas", "?", "Hace", "mucho", "que", "no", "te", "veo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "andas",
+        "lemma": "andar",
+        "hint": "andar · tú · presente",
+        "distractors": ["andamos", "ando", "anduviste"]
+      }
+    ]
+  },
+  {
+    "id": "s466",
+    "es": "Ni modo, lo intentaremos otra vez.",
+    "sk": "Nedá sa nič robiť, skúsime to znova.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["futuro"],
+    "tokens": ["Ni", "modo", ",", "lo", "intentaremos", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "intentaremos",
+        "lemma": "intentar",
+        "hint": "intentar · nosotros · futuro",
+        "distractors": ["intentaré", "intentará", "intentamos"]
+      }
+    ]
+  },
+  {
+    "id": "s467",
+    "es": "Estoy de acuerdo contigo, pero mi esposa no.",
+    "sk": "Súhlasím s tebou, ale manželka nie.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Estoy", "de", "acuerdo", "contigo", ",", "pero", "mi", "esposa", "no", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["Soy", "Está", "Están"]
+      }
+    ]
   }
 ]

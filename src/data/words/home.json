@@ -478,5 +478,75 @@
     "level": "A1",
     "topics": ["home"],
     "examples": [{ "es": "Los vecinos hacen mucho ruido.", "sk": "Susedia robia veľký hluk." }]
+  },
+  {
+    "id": "mudanza",
+    "es": "mudanza",
+    "sk": ["sťahovanie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "La mudanza es el sábado.", "sk": "Sťahovanie je v sobotu." }]
+  },
+  {
+    "id": "dueno",
+    "es": "dueño",
+    "sk": ["majiteľ"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "El dueño del departamento vive arriba.", "sk": "Majiteľ bytu býva nad nami." }]
+  },
+  {
+    "id": "fraccionamiento",
+    "es": "fraccionamiento",
+    "sk": ["obytný komplex", "sídlisko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [
+      {
+        "es": "Vivimos en un fraccionamiento cerca del centro.",
+        "sk": "Bývame v obytnom komplexe blízko centra."
+      }
+    ],
+    "note": "Mexické: štvrť rodinných domov, často s bránou a strážnikom."
+  },
+  {
+    "id": "gas",
+    "es": "gas",
+    "sk": ["plyn"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "Se acabó el gas y no hay agua caliente.", "sk": "Minul sa plyn a nie je teplá voda." }],
+    "note": "V Mexiku sa plyn často kupuje v bombách: el camión del gas."
+  },
+  {
+    "id": "tinaco",
+    "es": "tinaco",
+    "sk": ["nádrž na vodu (na streche)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "El tinaco está vacío.", "sk": "Nádrž na vodu je prázdna." }],
+    "note": "Mexické: typická čierna nádrž na streche domu."
+  },
+  {
+    "id": "plomero",
+    "es": "plomero",
+    "sk": ["inštalatér"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "Hay que llamar al plomero.", "sk": "Treba zavolať inštalatéra." }],
+    "note": "Mexické; v Španielsku „fontanero“."
   }
 ]

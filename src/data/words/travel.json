@@ -418,5 +418,80 @@
     "level": "A1",
     "topics": ["travel"],
     "examples": [{ "es": "Hay una gasolinera a la salida del pueblo.", "sk": "Na konci dediny je benzínka." }]
+  },
+  {
+    "id": "destino",
+    "es": "destino",
+    "sk": ["cieľ (cesty)", "osud"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Nuestro destino es Cancún.", "sk": "Naším cieľom je Cancún." }]
+  },
+  {
+    "id": "retraso",
+    "es": "retraso",
+    "sk": ["meškanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El vuelo tiene dos horas de retraso.", "sk": "Let mešká dve hodiny." }]
+  },
+  {
+    "id": "escala",
+    "es": "escala",
+    "sk": ["medzipristátie", "prestup"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El vuelo hace escala en Houston.", "sk": "Let má medzipristátie v Houstone." }]
+  },
+  {
+    "id": "aduana",
+    "es": "aduana",
+    "sk": ["colnica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Pasamos por la aduana sin problemas.", "sk": "Colnicou sme prešli bez problémov." }]
+  },
+  {
+    "id": "hospedaje",
+    "es": "hospedaje",
+    "sk": ["ubytovanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El hospedaje incluye el desayuno.", "sk": "V ubytovaní sú zahrnuté raňajky." }]
+  },
+  {
+    "id": "turismo",
+    "es": "turismo",
+    "sk": ["cestovný ruch"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [
+      {
+        "es": "El turismo es muy importante en Quintana Roo.",
+        "sk": "Cestovný ruch je v Quintana Roo veľmi dôležitý."
+      }
+    ]
+  },
+  {
+    "id": "extraviado",
+    "es": "extraviado",
+    "sk": ["stratený"],
+    "pos": "adj",
+    "feminine": "extraviada",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Mi maleta está extraviada.", "sk": "Môj kufor sa stratil." }]
   }
 ]

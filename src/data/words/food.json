@@ -677,5 +677,73 @@
         "sk": "V Mexiku sa necháva desať až pätnásť percent prepitného."
       }
     ]
+  },
+  {
+    "id": "ingrediente",
+    "es": "ingrediente",
+    "sk": ["prísada", "surovina"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Ya tengo todos los ingredientes.", "sk": "Už mám všetky prísady." }]
+  },
+  {
+    "id": "antojo",
+    "es": "antojo",
+    "sk": ["chuť (na niečo)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Tengo antojo de unos tamales.", "sk": "Mám chuť na tamales." }],
+    "note": "Antojitos = mexické pouličné jedlá (tacos, quesadillas, sopes…)."
+  },
+  {
+    "id": "tamal",
+    "es": "tamal",
+    "sk": ["tamal (kukuričné cesto v šúpolí)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "tamales",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "En la mañana venden tamales en la esquina.", "sk": "Ráno na rohu predávajú tamales." }]
+  },
+  {
+    "id": "pozole",
+    "es": "pozole",
+    "sk": ["pozole (polievka z kukurice)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      {
+        "es": "El pozole es típico en las fiestas patrias.",
+        "sk": "Pozole je typické jedlo na oslavy nezávislosti."
+      }
+    ]
+  },
+  {
+    "id": "crudo",
+    "es": "crudo",
+    "sk": ["surový"],
+    "pos": "adj",
+    "feminine": "cruda",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "La carne está cruda.", "sk": "Mäso je surové." }],
+    "note": "Hovorovo v Mexiku aj „po opici“: estoy crudo."
+  },
+  {
+    "id": "vegetariano",
+    "es": "vegetariano",
+    "sk": ["vegetariánsky", "vegetarián"],
+    "pos": "adj",
+    "feminine": "vegetariana",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Soy vegetariano, no como carne.", "sk": "Som vegetarián, nejem mäso." }]
   }
 ]

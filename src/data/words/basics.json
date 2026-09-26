@@ -730,5 +730,201 @@
     "level": "A1",
     "topics": ["basics"],
     "examples": [{ "es": "Vamos juntos al centro.", "sk": "Pôjdeme spolu do centra." }]
+  },
+  {
+    "id": "sin-embargo",
+    "es": "sin embargo",
+    "sk": ["však", "napriek tomu"],
+    "pos": "conj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Es caro; sin embargo, vale la pena.", "sk": "Je to drahé, no napriek tomu to stojí za to." }]
+  },
+  {
+    "id": "ademas",
+    "es": "además",
+    "sk": ["okrem toho", "navyše"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Es bonito y, además, es barato.", "sk": "Je to pekné a navyše lacné." }]
+  },
+  {
+    "id": "aunque",
+    "es": "aunque",
+    "sk": ["hoci", "aj keď"],
+    "pos": "conj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Aunque está lloviendo, vamos a salir.", "sk": "Hoci prší, ideme von." }]
+  },
+  {
+    "id": "mientras",
+    "es": "mientras",
+    "sk": ["kým", "zatiaľ čo"],
+    "pos": "conj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Mientras cocino, escucho música.", "sk": "Kým varím, počúvam hudbu." }]
+  },
+  {
+    "id": "por-eso",
+    "es": "por eso",
+    "sk": ["preto"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Estoy cansado, por eso me quedo en casa.", "sk": "Som unavený, preto ostanem doma." }]
+  },
+  {
+    "id": "en-cambio",
+    "es": "en cambio",
+    "sk": ["naopak"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      {
+        "es": "Yo tomo café; mi esposa, en cambio, prefiere té.",
+        "sk": "Ja pijem kávu, manželka má naopak radšej čaj."
+      }
+    ]
+  },
+  {
+    "id": "de-repente",
+    "es": "de repente",
+    "sk": ["zrazu"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "De repente empezó a llover.", "sk": "Zrazu začalo pršať." }]
+  },
+  {
+    "id": "al-final",
+    "es": "al final",
+    "sk": ["nakoniec"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Al final no fuimos.", "sk": "Nakoniec sme nešli." }]
+  },
+  {
+    "id": "por-lo-menos",
+    "es": "por lo menos",
+    "sk": ["aspoň"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Por lo menos llama a tu mamá.", "sk": "Aspoň zavolaj mame." }]
+  },
+  {
+    "id": "sobre-todo",
+    "es": "sobre todo",
+    "sk": ["hlavne", "najmä"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      {
+        "es": "Me gusta la comida mexicana, sobre todo los tacos.",
+        "sk": "Mám rád mexické jedlo, hlavne tacos."
+      }
+    ]
+  },
+  {
+    "id": "en-realidad",
+    "es": "en realidad",
+    "sk": ["v skutočnosti", "vlastne"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "En realidad no sé.", "sk": "Vlastne neviem." }]
+  },
+  {
+    "id": "de-hecho",
+    "es": "de hecho",
+    "sk": ["vlastne", "v skutočnosti"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "De hecho, ya lo sabía.", "sk": "Vlastne som to už vedel." }]
+  },
+  {
+    "id": "o-sea",
+    "es": "o sea",
+    "sk": ["čiže", "teda"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "O sea, ¿no vienes?", "sk": "Čiže neprídeš?" }],
+    "note": "V Mexiku veľmi časté aj ako vatové slovo."
+  },
+  {
+    "id": "es-decir",
+    "es": "es decir",
+    "sk": ["to znamená", "čiže"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Llego el lunes, es decir, en tres días.", "sk": "Prídem v pondelok, čiže o tri dni." }]
+  },
+  {
+    "id": "ya-que",
+    "es": "ya que",
+    "sk": ["keďže", "keď už"],
+    "pos": "conj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Ya que estás aquí, ayúdame con esto.", "sk": "Keď už si tu, pomôž mi s tým." }]
+  },
+  {
+    "id": "a-pesar-de",
+    "es": "a pesar de",
+    "sk": ["napriek"],
+    "pos": "prep",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Salimos a pesar de la lluvia.", "sk": "Išli sme von napriek dažďu." }]
+  },
+  {
+    "id": "apenas",
+    "es": "apenas",
+    "sk": ["sotva", "len", "práve"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Apenas son las siete.", "sk": "Je len sedem." }]
+  },
+  {
+    "id": "cualquier",
+    "es": "cualquier",
+    "sk": ["akýkoľvek"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Llámame a cualquier hora.", "sk": "Zavolaj mi kedykoľvek." }],
+    "note": "Pred podst. menom: cualquier; samostatne: cualquiera."
+  },
+  {
+    "id": "alguno",
+    "es": "alguno",
+    "sk": ["nejaký"],
+    "pos": "adj",
+    "feminine": "alguna",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Algún día voy a vivir en México.", "sk": "Raz budem bývať v Mexiku." }],
+    "note": "Pred podst. menom mužského rodu: algún."
+  },
+  {
+    "id": "ninguno",
+    "es": "ninguno",
+    "sk": ["žiadny"],
+    "pos": "adj",
+    "feminine": "ninguna",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No tengo ningún problema.", "sk": "Nemám žiadny problém." }],
+    "note": "Pred podst. menom mužského rodu: ningún. Používa sa so záporom: no… ningún."
   }
 ]

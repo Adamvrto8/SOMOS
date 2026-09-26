@@ -414,5 +414,137 @@
     "topics": ["greetings"],
     "examples": [{ "es": "¿Cuál es su apellido?", "sk": "Aké je vaše priezvisko?" }],
     "note": "Mexičania majú dve priezviská: prvé po otcovi, druhé po matke."
+  },
+  {
+    "id": "estoy-de-acuerdo",
+    "es": "estoy de acuerdo",
+    "sk": ["súhlasím"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Estoy de acuerdo contigo.", "sk": "Súhlasím s tebou." }]
+  },
+  {
+    "id": "tener-razon",
+    "es": "tener razón",
+    "sk": ["mať pravdu"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Tienes razón.", "sk": "Máš pravdu." }]
+  },
+  {
+    "id": "vale-la-pena",
+    "es": "vale la pena",
+    "sk": ["stojí to za to", "oplatí sa"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Vale la pena visitar Oaxaca.", "sk": "Oaxacu sa oplatí navštíviť." }]
+  },
+  {
+    "id": "depende",
+    "es": "depende",
+    "sk": ["záleží na tom"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Depende del clima.", "sk": "Záleží na počasí." }]
+  },
+  {
+    "id": "me-da-igual",
+    "es": "me da igual",
+    "sk": ["je mi to jedno"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿Tacos o pizza? Me da igual.", "sk": "Tacos alebo pizza? Je mi to jedno." }]
+  },
+  {
+    "id": "no-te-preocupes",
+    "es": "no te preocupes",
+    "sk": ["neboj sa", "nerob si starosti"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "No te preocupes, yo pago.", "sk": "Neboj sa, platím ja." }]
+  },
+  {
+    "id": "en-serio",
+    "es": "¿en serio?",
+    "sk": ["vážne?"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿En serio? No lo puedo creer.", "sk": "Vážne? Nemôžem tomu uveriť." }]
+  },
+  {
+    "id": "la-verdad",
+    "es": "la verdad",
+    "sk": ["úprimne povedané", "pravda"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "La verdad, no me gustó.", "sk": "Úprimne, nepáčilo sa mi to." }]
+  },
+  {
+    "id": "con-mucho-gusto",
+    "es": "con mucho gusto",
+    "sk": ["s radosťou", "rado sa stalo"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Con mucho gusto le ayudo.", "sk": "S radosťou vám pomôžem." }],
+    "note": "V Mexiku bežná odpoveď na „gracias“ namiesto „de nada“."
+  },
+  {
+    "id": "no-manches",
+    "es": "¡no manches!",
+    "sk": ["no nie!", "to snáď nie!"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡No manches! ¿Ganaste?", "sk": "No nie! Vyhral si?" }],
+    "note": "Hovorové mexické prekvapenie (slušnejšia verzia hrubšieho výrazu)."
+  },
+  {
+    "id": "ni-modo",
+    "es": "ni modo",
+    "sk": ["nedá sa nič robiť", "smola"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Ni modo, será otro día.", "sk": "Nedá sa nič robiť, tak inokedy." }],
+    "note": "Veľmi mexické."
+  },
+  {
+    "id": "a-poco",
+    "es": "a poco",
+    "sk": ["fakt?", "nehovor!"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¿A poco ya terminaste?", "sk": "Fakt si už skončil?" }],
+    "note": "Hovorové mexické: vyjadruje prekvapenie alebo neveru."
+  },
+  {
+    "id": "buen-fin",
+    "es": "¡buen fin!",
+    "sk": ["pekný víkend!"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "Nos vemos el lunes, ¡buen fin!", "sk": "Uvidíme sa v pondelok, pekný víkend!" }],
+    "note": "Skratka z „buen fin de semana“. El Buen Fin je aj mexický výpredajový víkend v novembri."
+  },
+  {
+    "id": "que-flojera",
+    "es": "¡qué flojera!",
+    "sk": ["to sa mi nechce!"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Qué flojera ir a trabajar hoy!", "sk": "Dnes sa mi fakt nechce ísť do práce!" }],
+    "note": "flojo = lenivý; tener flojera = nechcieť sa."
   }
 ]
