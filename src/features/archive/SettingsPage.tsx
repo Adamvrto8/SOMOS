@@ -48,6 +48,10 @@ export function SettingsPage() {
 
       <VoiceSettings />
       <BackupSettings />
+
+      <p className="text-center text-xs text-ink-muted tabular-nums">
+        Verzia {__APP_VERSION__} · {new Date(__BUILD_TIME__).toLocaleDateString('sk-SK')}
+      </p>
     </div>
   )
 }

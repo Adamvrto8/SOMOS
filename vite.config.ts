@@ -7,6 +7,11 @@ const ONE_YEAR = 60 * 60 * 24 * 365
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    // Shown in Nastavenia, so the phone's version can be compared with the Vercel deployment.
+    __APP_VERSION__: JSON.stringify(process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? 'dev'),
+    __BUILD_TIME__: JSON.stringify(Date.now()),
+  },
   build: {
     rolldownOptions: {
       output: {

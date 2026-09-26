@@ -50,7 +50,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
 | Framework | Vite + React + TypeScript |
 | Styling | Tailwind CSS with design tokens as CSS variables |
 | Routing | react-router |
-| PWA / offline | vite-plugin-pwa (precache app + all JSON data) |
+| PWA / offline | vite-plugin-pwa (precache app + all JSON data); `src/lib/pwa.ts` reloads into a new deploy by itself (waits while a lesson, review or form is open) and re-checks when the app returns to the foreground; Nastavenia show the build's commit |
 | Local storage | Dexie (IndexedDB) — archive, custom words, SRS state, stats |
 | Search | MiniSearch (or Fuse.js) with accent-folding normalization |
 | Spaced repetition | ts-fsrs (FSRS algorithm) |
