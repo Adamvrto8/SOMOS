@@ -5,11 +5,11 @@ export type Level = 'A1' | 'A2' | 'B1' | 'B2'
 // el = él/ella/usted, ellos = ellos/ellas/ustedes. No vosotros (Mexican Spanish).
 export type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos'
 
-export type Tense = 'presente' | 'preterito'
+export type Tense = 'presente' | 'preterito' | 'imperfecto' | 'futuro'
 
 export type PartOfSpeech = 'noun' | 'verb' | 'adj' | 'adv' | 'prep' | 'pron' | 'conj' | 'phrase' | 'other'
 
-export type Grammar = 'presente' | 'progresivo' | 'preterito' | 'ser-estar' | 'gender' | 'articles'
+export type Grammar = 'presente' | 'progresivo' | 'preterito' | 'imperfecto' | 'futuro' | 'ser-estar' | 'gender' | 'articles'
 
 export interface Example {
   es: string
@@ -43,7 +43,9 @@ export interface Verb {
   gerundIrregular?: boolean
   presente: Record<Person, string>
   preterito: Record<Person, string>
-  irregularForms?: string[] // "presente.yo", "preterito.*" → highlighted in UI
+  imperfecto: Record<Person, string>
+  futuro: Record<Person, string> // futuro simple: infinitive + é/ás/á/emos/án
+  irregularForms?: string[] // "presente.yo", "preterito.*", "futuro.*" → highlighted in UI
   level: Level
 }
 // presente progresivo is derived: estar.presente[person] + " " + gerund

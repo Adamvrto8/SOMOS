@@ -6,7 +6,15 @@
     "level": "A1",
     "topics": ["food"],
     "tokens": ["¿", "Me", "da", "un", "jugo", "de", "naranja", ",", "por", "favor", "?"],
-    "cloze": [{ "tokenIndex": 4, "answer": "jugo", "lemma": "jugo", "hint": "džús", "distractors": ["agua", "café"] }]
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "jugo",
+        "lemma": "jugo",
+        "hint": "džús",
+        "distractors": ["agua", "café", "refresco"]
+      }
+    ]
   },
   {
     "id": "s018",
@@ -516,6 +524,42 @@
         "lemma": "vender",
         "hint": "vender · él · presente",
         "distractors": ["venden", "vendes", "vendió"]
+      }
+    ]
+  },
+  {
+    "id": "s438",
+    "es": "De niño comía muchos dulces.",
+    "sk": "Ako dieťa som jedol veľa sladkostí.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niño", "comía", "muchos", "dulces", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comía",
+        "lemma": "comer",
+        "hint": "comer · yo · imperfecto",
+        "distractors": ["comían", "comí", "comíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s439",
+    "es": "Esta noche cenaremos en casa de mis papás.",
+    "sk": "Dnes večer budeme večerať u mojich rodičov.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["futuro"],
+    "tokens": ["Esta", "noche", "cenaremos", "en", "casa", "de", "mis", "papás", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cenaremos",
+        "lemma": "cenar",
+        "hint": "cenar · nosotros · futuro",
+        "distractors": ["cenaré", "cenará", "cenamos"]
       }
     ]
   }

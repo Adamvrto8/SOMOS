@@ -14,22 +14,33 @@ interface SegmentedProps<T extends string> {
   mode: 'tabs' | 'radio'
   idPrefix: string
   panelId?: string
+  // Too many options for the width: scroll sideways instead of squeezing.
+  scroll?: boolean
 }
 
 /** Pill-shaped segmented control; arrow keys move the selection (WAI-ARIA tabs/radio). */
-export function Segmented<T extends string>({ options, value, onChange, label, mode, idPrefix, panelId }: SegmentedProps<T>) {
+export function Segmented<T extends string>({ options, value, onChange, label, mode, idPrefix, panelId, scroll }: SegmentedProps<T>) {
+  const select = (id: T, focus: boolean) => {
+    onChange(id)
+    const button = document.getElementById(`${idPrefix}-${id}`)
+    if (focus) button?.focus()
+    if (scroll) button?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  }
+
   const onKeyDown = (e: KeyboardEvent) => {
     const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
     if (!step) return
     e.preventDefault()
     const index = options.findIndex((o) => o.id === value)
-    const next = options[(index + step + options.length) % options.length].id
-    onChange(next)
-    document.getElementById(`${idPrefix}-${next}`)?.focus()
+    select(options[(index + step + options.length) % options.length].id, true)
   }
 
   return (
-    <div role={mode === 'tabs' ? 'tablist' : 'radiogroup'} aria-label={label} className="flex rounded-full bg-surface-2 p-1">
+    <div
+      role={mode === 'tabs' ? 'tablist' : 'radiogroup'}
+      aria-label={label}
+      className={`flex rounded-full bg-surface-2 p-1 ${scroll ? 'no-scrollbar overflow-x-auto' : ''}`}
+    >
       {options.map((option) => {
         const selected = option.id === value
         return (
@@ -42,7 +53,7 @@ export function Segmented<T extends string>({ options, value, onChange, label, m
             aria-checked={mode === 'radio' ? selected : undefined}
             aria-controls={mode === 'tabs' ? panelId : undefined}
             tabIndex={selected ? 0 : -1}
-            onClick={() => onChange(option.id)}
+            onClick={() => select(option.id, false)}
             onKeyDown={onKeyDown}
             className={[
               // flex-auto: a longer label ("Podľa systému") takes more room instead of wrapping.

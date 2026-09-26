@@ -411,5 +411,77 @@
         "distractors": ["está", "son", "eres"]
       }
     ]
+  },
+  {
+    "id": "s425",
+    "es": "Antes trabajaba en un banco, ahora soy maestro.",
+    "sk": "Predtým som pracoval v banke, teraz som učiteľ.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "trabajaba", "en", "un", "banco", ",", "ahora", "soy", "maestro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trabajaba",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · imperfecto",
+        "distractors": ["trabajaban", "trabajé", "trabajábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s426",
+    "es": "Mi papá siempre llegaba tarde a la casa.",
+    "sk": "Otec vždy chodil domov neskoro.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "papá", "siempre", "llegaba", "tarde", "a", "la", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llegaba",
+        "lemma": "llegar",
+        "hint": "llegar · él · imperfecto",
+        "distractors": ["llegaban", "llegabas", "llegó"]
+      }
+    ]
+  },
+  {
+    "id": "s427",
+    "es": "Te llamaré cuando salga de la oficina.",
+    "sk": "Zavolám ti, keď odídem z kancelárie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["futuro"],
+    "tokens": ["Te", "llamaré", "cuando", "salga", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llamaré",
+        "lemma": "llamar",
+        "hint": "llamar · yo · futuro",
+        "distractors": ["llamará", "llamarán", "llamo"]
+      }
+    ]
+  },
+  {
+    "id": "s428",
+    "es": "El jefe dirá que no.",
+    "sk": "Šéf povie, že nie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "jefe", "dirá", "que", "no", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dirá",
+        "lemma": "decir",
+        "hint": "decir · él · futuro",
+        "distractors": ["dirán", "dirás", "dice"]
+      }
+    ]
   }
 ]

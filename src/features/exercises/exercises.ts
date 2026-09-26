@@ -1,7 +1,7 @@
 import { Blocks, Languages, ListChecks, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
-import type { TableTense } from '../../lib/conjugate'
+import { TABLE_TENSES, type TableTense } from '../../lib/conjugate'
 import type { ExerciseType, LessonFilter } from '../../lib/lesson'
 
 export interface ExerciseInfo {
@@ -53,7 +53,6 @@ export const EXERCISES: ExerciseInfo[] = [
 export const exerciseInfo = (type: ExerciseType) => EXERCISES.find((e) => e.type === type)!
 
 export const LEVELS: Level[] = ['A1', 'A2']
-const TENSES: TableTense[] = ['presente', 'progresivo', 'preterito']
 
 // ---------- filter <-> URL (?type=&topic=&level=&tense=) ----------
 
@@ -66,7 +65,7 @@ export function filterFromParams(params: URLSearchParams): LessonFilter {
     type,
     // Conjugation drills are filtered by tense; the other exercises by topic.
     topic: type !== 'conjugation' && topic && topicById.has(topic) ? topic : undefined,
-    tense: type === 'conjugation' && tense && TENSES.includes(tense) ? tense : undefined,
+    tense: type === 'conjugation' && tense && TABLE_TENSES.includes(tense) ? tense : undefined,
     level: level && LEVELS.includes(level) ? level : undefined,
   }
 }

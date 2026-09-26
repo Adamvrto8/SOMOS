@@ -1,7 +1,7 @@
 import { sentenceById, sentences, verbById, verbs } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb } from '../data/types'
 import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
-import { conjugate, formText, PERSONS, type TableTense } from './conjugate'
+import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
 
 export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation'
@@ -73,7 +73,6 @@ export interface Grade {
 
 type Random = () => number
 
-const TENSES: TableTense[] = ['presente', 'progresivo', 'preterito']
 const PUNCTUATION = /^[¿?¡!.,;:]$/
 const MAX_TASKS_PER_VERB = 2
 
@@ -136,7 +135,7 @@ function choiceItems(filter: LessonFilter) {
 }
 
 function conjugationItems({ level, tense }: LessonFilter) {
-  const tenses = tense ? [tense] : TENSES
+  const tenses = tense ? [tense] : TABLE_TENSES
   return verbs
     .filter((v) => !level || v.level === level)
     .flatMap((verb) => tenses.flatMap((t) => PERSONS.map((person) => ({ verb, tense: t, person }))))
@@ -250,7 +249,7 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
     case 'conjugation': {
       const [verbId, tense, person] = itemId.split(':')
       const verb = verbById.get(verbId)
-      if (!verb || !TENSES.includes(tense as TableTense) || !PERSONS.includes(person as Person)) return undefined
+      if (!verb || !TABLE_TENSES.includes(tense as TableTense) || !PERSONS.includes(person as Person)) return undefined
       return conjugationTask(verb, tense as TableTense, person as Person)
     }
     case 'builder': {

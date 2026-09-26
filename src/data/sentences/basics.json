@@ -172,5 +172,23 @@
         "distractors": ["llegamos", "llegué", "llegas"]
       }
     ]
+  },
+  {
+    "id": "s446",
+    "es": "¿Podrás ayudarme mañana?",
+    "sk": "Budeš mi môcť zajtra pomôcť?",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["futuro"],
+    "tokens": ["¿", "Podrás", "ayudarme", "mañana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podrás",
+        "lemma": "poder",
+        "hint": "poder · tú · futuro",
+        "distractors": ["Podremos", "Podré", "Puedes"]
+      }
+    ]
   }
 ]

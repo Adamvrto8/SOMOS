@@ -3,10 +3,9 @@ import { Fragment, useState } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import type { Verb } from '../../data/types'
-import { conjugate, formText, PERSON_LABELS, PERSONS, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
+import { conjugate, formText, PERSON_LABELS, PERSONS, TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { speak, ttsSupported } from '../../lib/tts'
 
-const TENSES: TableTense[] = ['presente', 'progresivo', 'preterito']
 const IRREGULAR = 'rounded-md bg-amber/30 px-1 font-semibold'
 
 interface ConjugationTableProps {
@@ -28,9 +27,10 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
         label="Čas"
         idPrefix="tab"
         panelId="conjugation-panel"
-        options={TENSES.map((t) => ({ id: t, label: TENSE_LABELS[t] }))}
+        options={TABLE_TENSES.map((t) => ({ id: t, label: TENSE_LABELS[t] }))}
         value={tense}
         onChange={setTense}
+        scroll
       />
 
       <div role="tabpanel" id="conjugation-panel" aria-labelledby={`tab-${tense}`} className="mt-3">
@@ -65,6 +65,24 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
         {tense === 'progresivo' && (
           <p className="mt-3 text-sm text-ink-muted">
             estar + gerundium <span lang="es" className={`font-serif text-ink ${verb.gerundIrregular ? IRREGULAR : ''}`}>{verb.gerund}</span>
+          </p>
+        )}
+        {tense === 'imperfecto' && (
+          <p className="mt-3 text-sm text-ink-muted">
+            Opakovaný alebo prebiehajúci dej v minulosti a opis:{' '}
+            <span lang="es" className="font-serif text-ink">
+              De niño jugaba fútbol.
+            </span>{' '}
+            Jednorazový ukončený dej je pretérito.
+          </p>
+        )}
+        {tense === 'futuro' && (
+          <p className="mt-3 text-sm text-ink-muted">
+            V bežnej reči sa v Mexiku častejšie povie ir a + infinitív:{' '}
+            <span lang="es" className="font-serif text-ink">
+              voy a {verb.reflexive ? `${verb.id.slice(0, -2)}me` : verb.id}
+            </span>
+            .
           </p>
         )}
         {hasIrregular && (

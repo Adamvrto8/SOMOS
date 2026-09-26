@@ -12,10 +12,18 @@ export const PERSON_LABELS: Record<Person, string> = {
 
 export type TableTense = Tense | 'progresivo'
 
+/** Tenses stored on every verb. */
+export const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro']
+
+/** Conjugation tabs and the drill's tense filter, in teaching order. */
+export const TABLE_TENSES: TableTense[] = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro']
+
 export const TENSE_LABELS: Record<TableTense, string> = {
   presente: 'presente',
   progresivo: 'progresivo',
   preterito: 'pretérito',
+  imperfecto: 'imperfecto',
+  futuro: 'futuro',
 }
 
 const REFLEXIVE_PRONOUN: Record<Person, string> = { yo: 'me', tu: 'te', el: 'se', nosotros: 'nos', ellos: 'se' }

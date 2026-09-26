@@ -368,5 +368,59 @@
         "distractors": ["podemos", "puedo", "pudiste"]
       }
     ]
+  },
+  {
+    "id": "s422",
+    "es": "En la escuela tenía un maestro muy estricto.",
+    "sk": "V škole som mal veľmi prísneho učiteľa.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["imperfecto"],
+    "tokens": ["En", "la", "escuela", "tenía", "un", "maestro", "muy", "estricto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tenían", "tuve", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s423",
+    "es": "No entendía nada en la clase de matemáticas.",
+    "sk": "Na hodine matematiky som ničomu nerozumel.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["imperfecto"],
+    "tokens": ["No", "entendía", "nada", "en", "la", "clase", "de", "matemáticas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "entendía",
+        "lemma": "entender",
+        "hint": "entender · yo · imperfecto",
+        "distractors": ["entendían", "entendí", "entendíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s424",
+    "es": "El examen será el lunes.",
+    "sk": "Skúška bude v pondelok.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["futuro", "ser-estar"],
+    "tokens": ["El", "examen", "será", "el", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "será",
+        "lemma": "ser",
+        "hint": "ser/estar · él · futuro",
+        "distractors": ["estará", "serán", "serás"]
+      }
+    ]
   }
 ]

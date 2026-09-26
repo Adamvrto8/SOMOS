@@ -446,5 +446,91 @@
         "distractors": ["dormimos", "duermo", "dormiste"]
       }
     ]
+  },
+  {
+    "id": "s418",
+    "es": "Mi abuela siempre cocinaba los domingos.",
+    "sk": "Babka vždy v nedeľu varila.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "siempre", "cocinaba", "los", "domingos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cocinaba",
+        "lemma": "cocinar",
+        "hint": "cocinar · ella · imperfecto",
+        "distractors": ["cocinaban", "cocinabas", "cocinó"]
+      }
+    ]
+  },
+  {
+    "id": "s419",
+    "es": "¿Qué hacías cuando te llamé?",
+    "sk": "Čo si robil, keď som ti volal?",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["¿", "Qué", "hacías", "cuando", "te", "llamé", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hacías",
+        "lemma": "hacer",
+        "hint": "hacer · tú · imperfecto",
+        "distractors": ["hacíamos", "hacía", "hiciste"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "llamé",
+        "lemma": "llamar",
+        "hint": "llamar · yo · pretérito",
+        "distractors": ["llamó", "llamaron", "llamaba"]
+      }
+    ]
+  },
+  {
+    "id": "s420",
+    "es": "Eran las diez de la noche cuando llegamos.",
+    "sk": "Bolo desať večer, keď sme dorazili.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["imperfecto", "ser-estar", "preterito"],
+    "tokens": ["Eran", "las", "diez", "de", "la", "noche", "cuando", "llegamos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Eran",
+        "lemma": "ser",
+        "hint": "ser/estar · ellas · imperfecto",
+        "distractors": ["Estaban", "Eras", "Éramos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "llegamos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · pretérito",
+        "distractors": ["llegué", "llegó", "llegábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s421",
+    "es": "¿Qué harás en las vacaciones?",
+    "sk": "Čo budeš robiť cez prázdniny?",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["futuro"],
+    "tokens": ["¿", "Qué", "harás", "en", "las", "vacaciones", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "harás",
+        "lemma": "hacer",
+        "hint": "hacer · tú · futuro",
+        "distractors": ["haremos", "haré", "haces"]
+      }
+    ]
   }
 ]

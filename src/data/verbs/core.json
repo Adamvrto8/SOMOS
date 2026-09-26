@@ -7,7 +7,9 @@
     "gerund": "siendo",
     "presente": { "yo": "soy", "tu": "eres", "el": "es", "nosotros": "somos", "ellos": "son" },
     "preterito": { "yo": "fui", "tu": "fuiste", "el": "fue", "nosotros": "fuimos", "ellos": "fueron" },
-    "irregularForms": ["presente.*", "preterito.*"],
+    "imperfecto": { "yo": "era", "tu": "eras", "el": "era", "nosotros": "éramos", "ellos": "eran" },
+    "futuro": { "yo": "seré", "tu": "serás", "el": "será", "nosotros": "seremos", "ellos": "serán" },
+    "irregularForms": ["presente.*", "preterito.*", "imperfecto.*"],
     "level": "A1"
   },
   {
@@ -18,6 +20,8 @@
     "gerund": "estando",
     "presente": { "yo": "estoy", "tu": "estás", "el": "está", "nosotros": "estamos", "ellos": "están" },
     "preterito": { "yo": "estuve", "tu": "estuviste", "el": "estuvo", "nosotros": "estuvimos", "ellos": "estuvieron" },
+    "imperfecto": { "yo": "estaba", "tu": "estabas", "el": "estaba", "nosotros": "estábamos", "ellos": "estaban" },
+    "futuro": { "yo": "estaré", "tu": "estarás", "el": "estará", "nosotros": "estaremos", "ellos": "estarán" },
     "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
     "level": "A1"
   },
@@ -29,7 +33,9 @@
     "gerund": "teniendo",
     "presente": { "yo": "tengo", "tu": "tienes", "el": "tiene", "nosotros": "tenemos", "ellos": "tienen" },
     "preterito": { "yo": "tuve", "tu": "tuviste", "el": "tuvo", "nosotros": "tuvimos", "ellos": "tuvieron" },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "imperfecto": { "yo": "tenía", "tu": "tenías", "el": "tenía", "nosotros": "teníamos", "ellos": "tenían" },
+    "futuro": { "yo": "tendré", "tu": "tendrás", "el": "tendrá", "nosotros": "tendremos", "ellos": "tendrán" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -41,7 +47,9 @@
     "gerundIrregular": true,
     "presente": { "yo": "voy", "tu": "vas", "el": "va", "nosotros": "vamos", "ellos": "van" },
     "preterito": { "yo": "fui", "tu": "fuiste", "el": "fue", "nosotros": "fuimos", "ellos": "fueron" },
-    "irregularForms": ["presente.*", "preterito.*"],
+    "imperfecto": { "yo": "iba", "tu": "ibas", "el": "iba", "nosotros": "íbamos", "ellos": "iban" },
+    "futuro": { "yo": "iré", "tu": "irás", "el": "irá", "nosotros": "iremos", "ellos": "irán" },
+    "irregularForms": ["presente.*", "preterito.*", "imperfecto.*"],
     "level": "A1"
   },
   {
@@ -52,7 +60,9 @@
     "gerund": "haciendo",
     "presente": { "yo": "hago", "tu": "haces", "el": "hace", "nosotros": "hacemos", "ellos": "hacen" },
     "preterito": { "yo": "hice", "tu": "hiciste", "el": "hizo", "nosotros": "hicimos", "ellos": "hicieron" },
-    "irregularForms": ["presente.yo", "preterito.*"],
+    "imperfecto": { "yo": "hacía", "tu": "hacías", "el": "hacía", "nosotros": "hacíamos", "ellos": "hacían" },
+    "futuro": { "yo": "haré", "tu": "harás", "el": "hará", "nosotros": "haremos", "ellos": "harán" },
+    "irregularForms": ["presente.yo", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -63,6 +73,8 @@
     "gerund": "hablando",
     "presente": { "yo": "hablo", "tu": "hablas", "el": "habla", "nosotros": "hablamos", "ellos": "hablan" },
     "preterito": { "yo": "hablé", "tu": "hablaste", "el": "habló", "nosotros": "hablamos", "ellos": "hablaron" },
+    "imperfecto": { "yo": "hablaba", "tu": "hablabas", "el": "hablaba", "nosotros": "hablábamos", "ellos": "hablaban" },
+    "futuro": { "yo": "hablaré", "tu": "hablarás", "el": "hablará", "nosotros": "hablaremos", "ellos": "hablarán" },
     "level": "A1"
   },
   {
@@ -73,6 +85,8 @@
     "gerund": "comiendo",
     "presente": { "yo": "como", "tu": "comes", "el": "come", "nosotros": "comemos", "ellos": "comen" },
     "preterito": { "yo": "comí", "tu": "comiste", "el": "comió", "nosotros": "comimos", "ellos": "comieron" },
+    "imperfecto": { "yo": "comía", "tu": "comías", "el": "comía", "nosotros": "comíamos", "ellos": "comían" },
+    "futuro": { "yo": "comeré", "tu": "comerás", "el": "comerá", "nosotros": "comeremos", "ellos": "comerán" },
     "level": "A1"
   },
   {
@@ -83,6 +97,8 @@
     "gerund": "viviendo",
     "presente": { "yo": "vivo", "tu": "vives", "el": "vive", "nosotros": "vivimos", "ellos": "viven" },
     "preterito": { "yo": "viví", "tu": "viviste", "el": "vivió", "nosotros": "vivimos", "ellos": "vivieron" },
+    "imperfecto": { "yo": "vivía", "tu": "vivías", "el": "vivía", "nosotros": "vivíamos", "ellos": "vivían" },
+    "futuro": { "yo": "viviré", "tu": "vivirás", "el": "vivirá", "nosotros": "viviremos", "ellos": "vivirán" },
     "level": "A1"
   },
   {
@@ -93,6 +109,20 @@
     "gerund": "trabajando",
     "presente": { "yo": "trabajo", "tu": "trabajas", "el": "trabaja", "nosotros": "trabajamos", "ellos": "trabajan" },
     "preterito": { "yo": "trabajé", "tu": "trabajaste", "el": "trabajó", "nosotros": "trabajamos", "ellos": "trabajaron" },
+    "imperfecto": {
+      "yo": "trabajaba",
+      "tu": "trabajabas",
+      "el": "trabajaba",
+      "nosotros": "trabajábamos",
+      "ellos": "trabajaban"
+    },
+    "futuro": {
+      "yo": "trabajaré",
+      "tu": "trabajarás",
+      "el": "trabajará",
+      "nosotros": "trabajaremos",
+      "ellos": "trabajarán"
+    },
     "level": "A1"
   },
   {
@@ -103,7 +133,9 @@
     "gerund": "queriendo",
     "presente": { "yo": "quiero", "tu": "quieres", "el": "quiere", "nosotros": "queremos", "ellos": "quieren" },
     "preterito": { "yo": "quise", "tu": "quisiste", "el": "quiso", "nosotros": "quisimos", "ellos": "quisieron" },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "imperfecto": { "yo": "quería", "tu": "querías", "el": "quería", "nosotros": "queríamos", "ellos": "querían" },
+    "futuro": { "yo": "querré", "tu": "querrás", "el": "querrá", "nosotros": "querremos", "ellos": "querrán" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -115,7 +147,9 @@
     "gerundIrregular": true,
     "presente": { "yo": "puedo", "tu": "puedes", "el": "puede", "nosotros": "podemos", "ellos": "pueden" },
     "preterito": { "yo": "pude", "tu": "pudiste", "el": "pudo", "nosotros": "pudimos", "ellos": "pudieron" },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "imperfecto": { "yo": "podía", "tu": "podías", "el": "podía", "nosotros": "podíamos", "ellos": "podían" },
+    "futuro": { "yo": "podré", "tu": "podrás", "el": "podrá", "nosotros": "podremos", "ellos": "podrán" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -126,6 +160,8 @@
     "gerund": "llegando",
     "presente": { "yo": "llego", "tu": "llegas", "el": "llega", "nosotros": "llegamos", "ellos": "llegan" },
     "preterito": { "yo": "llegué", "tu": "llegaste", "el": "llegó", "nosotros": "llegamos", "ellos": "llegaron" },
+    "imperfecto": { "yo": "llegaba", "tu": "llegabas", "el": "llegaba", "nosotros": "llegábamos", "ellos": "llegaban" },
+    "futuro": { "yo": "llegaré", "tu": "llegarás", "el": "llegará", "nosotros": "llegaremos", "ellos": "llegarán" },
     "irregularForms": ["preterito.yo"],
     "level": "A1"
   },
@@ -137,6 +173,8 @@
     "gerund": "comprando",
     "presente": { "yo": "compro", "tu": "compras", "el": "compra", "nosotros": "compramos", "ellos": "compran" },
     "preterito": { "yo": "compré", "tu": "compraste", "el": "compró", "nosotros": "compramos", "ellos": "compraron" },
+    "imperfecto": { "yo": "compraba", "tu": "comprabas", "el": "compraba", "nosotros": "comprábamos", "ellos": "compraban" },
+    "futuro": { "yo": "compraré", "tu": "comprarás", "el": "comprará", "nosotros": "compraremos", "ellos": "comprarán" },
     "level": "A1"
   },
   {
@@ -147,6 +185,8 @@
     "gerund": "tomando",
     "presente": { "yo": "tomo", "tu": "tomas", "el": "toma", "nosotros": "tomamos", "ellos": "toman" },
     "preterito": { "yo": "tomé", "tu": "tomaste", "el": "tomó", "nosotros": "tomamos", "ellos": "tomaron" },
+    "imperfecto": { "yo": "tomaba", "tu": "tomabas", "el": "tomaba", "nosotros": "tomábamos", "ellos": "tomaban" },
+    "futuro": { "yo": "tomaré", "tu": "tomarás", "el": "tomará", "nosotros": "tomaremos", "ellos": "tomarán" },
     "level": "A1"
   },
   {
@@ -157,7 +197,9 @@
     "gerund": "saliendo",
     "presente": { "yo": "salgo", "tu": "sales", "el": "sale", "nosotros": "salimos", "ellos": "salen" },
     "preterito": { "yo": "salí", "tu": "saliste", "el": "salió", "nosotros": "salimos", "ellos": "salieron" },
-    "irregularForms": ["presente.yo"],
+    "imperfecto": { "yo": "salía", "tu": "salías", "el": "salía", "nosotros": "salíamos", "ellos": "salían" },
+    "futuro": { "yo": "saldré", "tu": "saldrás", "el": "saldrá", "nosotros": "saldremos", "ellos": "saldrán" },
+    "irregularForms": ["presente.yo", "futuro.*"],
     "level": "A1"
   },
   {
@@ -169,7 +211,9 @@
     "gerundIrregular": true,
     "presente": { "yo": "vengo", "tu": "vienes", "el": "viene", "nosotros": "venimos", "ellos": "vienen" },
     "preterito": { "yo": "vine", "tu": "viniste", "el": "vino", "nosotros": "vinimos", "ellos": "vinieron" },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "imperfecto": { "yo": "venía", "tu": "venías", "el": "venía", "nosotros": "veníamos", "ellos": "venían" },
+    "futuro": { "yo": "vendré", "tu": "vendrás", "el": "vendrá", "nosotros": "vendremos", "ellos": "vendrán" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -181,7 +225,9 @@
     "gerundIrregular": true,
     "presente": { "yo": "digo", "tu": "dices", "el": "dice", "nosotros": "decimos", "ellos": "dicen" },
     "preterito": { "yo": "dije", "tu": "dijiste", "el": "dijo", "nosotros": "dijimos", "ellos": "dijeron" },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*"],
+    "imperfecto": { "yo": "decía", "tu": "decías", "el": "decía", "nosotros": "decíamos", "ellos": "decían" },
+    "futuro": { "yo": "diré", "tu": "dirás", "el": "dirá", "nosotros": "diremos", "ellos": "dirán" },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
     "level": "A1"
   },
   {
@@ -192,6 +238,20 @@
     "gerund": "platicando",
     "presente": { "yo": "platico", "tu": "platicas", "el": "platica", "nosotros": "platicamos", "ellos": "platican" },
     "preterito": { "yo": "platiqué", "tu": "platicaste", "el": "platicó", "nosotros": "platicamos", "ellos": "platicaron" },
+    "imperfecto": {
+      "yo": "platicaba",
+      "tu": "platicabas",
+      "el": "platicaba",
+      "nosotros": "platicábamos",
+      "ellos": "platicaban"
+    },
+    "futuro": {
+      "yo": "platicaré",
+      "tu": "platicarás",
+      "el": "platicará",
+      "nosotros": "platicaremos",
+      "ellos": "platicarán"
+    },
     "irregularForms": ["preterito.yo"],
     "level": "A2"
   },
@@ -216,6 +276,20 @@
       "nosotros": "nos llamamos",
       "ellos": "se llamaron"
     },
+    "imperfecto": {
+      "yo": "me llamaba",
+      "tu": "te llamabas",
+      "el": "se llamaba",
+      "nosotros": "nos llamábamos",
+      "ellos": "se llamaban"
+    },
+    "futuro": {
+      "yo": "me llamaré",
+      "tu": "te llamarás",
+      "el": "se llamará",
+      "nosotros": "nos llamaremos",
+      "ellos": "se llamarán"
+    },
     "level": "A1"
   },
   {
@@ -227,6 +301,8 @@
     "gerundIrregular": true,
     "presente": { "yo": "duermo", "tu": "duermes", "el": "duerme", "nosotros": "dormimos", "ellos": "duermen" },
     "preterito": { "yo": "dormí", "tu": "dormiste", "el": "durmió", "nosotros": "dormimos", "ellos": "durmieron" },
+    "imperfecto": { "yo": "dormía", "tu": "dormías", "el": "dormía", "nosotros": "dormíamos", "ellos": "dormían" },
+    "futuro": { "yo": "dormiré", "tu": "dormirás", "el": "dormirá", "nosotros": "dormiremos", "ellos": "dormirán" },
     "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
     "level": "A1"
   }

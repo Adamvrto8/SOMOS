@@ -485,5 +485,41 @@
         "distractors": ["va", "van", "fui"]
       }
     ]
+  },
+  {
+    "id": "s429",
+    "es": "Cuando vivía en la Ciudad de México, tomaba el metro todos los días.",
+    "sk": "Keď som býval v meste Mexiko, každý deň som jazdil metrom.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "la", "Ciudad", "de", "México", ",", "tomaba", "el", "metro", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "tomaba",
+        "lemma": "tomar",
+        "hint": "tomar · yo · imperfecto",
+        "distractors": ["tomaban", "tomé", "tomábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s430",
+    "es": "El nuevo metro abrirá en diciembre.",
+    "sk": "Nové metro otvoria v decembri.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "nuevo", "metro", "abrirá", "en", "diciembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "abrirá",
+        "lemma": "abrir",
+        "hint": "abrir · él · futuro",
+        "distractors": ["abrirán", "abrirás", "abre"]
+      }
+    ]
   }
 ]

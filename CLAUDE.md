@@ -18,6 +18,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    - `presente` (hablo)
    - `presente progresivo` = estar (presente) + gerundio (estoy hablando)
    - `pretérito` (pretérito perfecto simple: hablé, fui)
+   - `imperfecto` (hablaba, era) and `futuro` (futuro simple: hablaré, tendré), added in phase 7
    Irregular forms highlighted (amber). Conjugation drill exercise.
 3. **Vocabulary groups** — thematic topics (jídlo, cestovanie, práca, dom, telo, rodina,
    čas, počasie, oblečenie, mesto, škola, emócie, zdravie, nakupovanie, príroda…)
@@ -93,7 +94,9 @@ interface Verb {
   gerundIrregular?: boolean;
   presente: Record<Person, string>;
   preterito: Record<Person, string>;
-  irregularForms?: string[];  // "presente.yo", "preterito.*" → highlighted in UI
+  imperfecto: Record<Person, string>;
+  futuro: Record<Person, string>;     // infinitive + é/ás/á/emos/án
+  irregularForms?: string[];  // "presente.yo", "preterito.*", "futuro.*" → highlighted in UI
   level: Level;
 }
 // presente progresivo is derived: estar.presente[person] + " " + gerund
@@ -112,7 +115,7 @@ interface Sentence {
     hint?: string;            // "tener · yo · pretérito"
     distractors?: string[];   // for multiple choice
   }[];
-  grammar?: ('presente' | 'progresivo' | 'preterito' | 'ser-estar' | 'gender' | 'articles')[];
+  grammar?: ('presente' | 'progresivo' | 'preterito' | 'imperfecto' | 'futuro' | 'ser-estar' | 'gender' | 'articles')[];
 }
 
 interface Topic { id: string; sk: string; es: string; icon: string; }
@@ -146,9 +149,10 @@ Content conventions (types in `src/data/types.ts`, all enforced by `validate:dat
 - Nouns ending in a consonant need `plural`, unless marked `uncountable: true` (el fútbol, la salud); plural-only nouns (ganas, lentes, papás, vacaciones) are listed in `PLURAL_ONLY` in `grammar.ts`.
 - `irregularForms` lists exactly the forms that differ from the regular -ar/-er/-ir pattern
   (spelling changes count: `llegué` → `preterito.yo`); `regular` is true only when there are none;
-  `gerundIrregular` likewise. Use `tense.*` when all 5 persons differ.
+  `gerundIrregular` likewise. Use `tense.*` when all 5 persons differ. Irregular imperfecto: only ser, ir, ver;
+  irregular futuro stems: tendr-, podr-, saldr-, vendr-, dir-, har-, querr-, sabr-, pondr- (+ habr-, cabr-, valdr-).
 - Reflexive verbs: forms include the pronoun (`me llamo`), `gerund` does not (`llamando`).
-- Cloze hint for verbs: `"tener · yo · pretérito"`, `"hablar · gerundio"`, or `"ser/estar · él · presente"`
+- Cloze hint for verbs: `"tener · yo · pretérito"` (tenses: presente, pretérito, imperfecto, futuro), `"hablar · gerundio"`, or `"ser/estar · él · presente"`
   (person labels yo/tú/él/ella/usted/nosotros/ellos/ellas/ustedes). The validator conjugates and checks the answer.
   Non-verb hints are short Slovak (`"člen"`, `"zajtra"`). Blanking a sentence-initial word keeps its capital.
 - Sentence tokens must rebuild `es` exactly (no space before `.,?!`, none after `¿¡`); ids `s001`…
@@ -187,7 +191,8 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
 - **Hľadať** — search input autofocused, results list (ES bold serif + SK muted), filter chips
   (všetko / slovesá / podstatné mená / frázy). Browse by topic below when input empty.
 - **Detail slova** (`/word/:id`) — big serif Spanish word + 🔊, gender badge, translations,
-  examples, note, conjugation table for verbs (tabs: presente · progresivo · pretérito), ⭐ save.
+  examples, note, conjugation table for verbs (scrollable tabs: presente · progresivo · pretérito · imperfecto · futuro;
+  `TABLE_TENSES` in `conjugate.ts` is the single list for tabs, drill filter and task ids), ⭐ save.
   Opened from a list (topic, search, archive) it swipes / pages (‹ n/N ›, ← →) to neighbouring words.
 - **Cvičiť** — pick exercise type (cards), topic, level → lesson player → result screen.
   Lessons prefer items answered least often. "Precvičiť chyby" card when mistakes exist.
@@ -275,6 +280,7 @@ scripts/
 - [x] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
   Result: 19 topics (incl. Základné slová, Čísla), 878 words, 100 verbs, 406 sentences (413 clozes).
 - [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
+  Done: 7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences). Next: 7b DeepL, 7c B1 content.
 
 ---
 

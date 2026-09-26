@@ -1,5 +1,5 @@
 import { sentences, verbs, words } from '../data'
-import { PERSON_LABELS, PERSONS, TENSE_LABELS } from './conjugate'
+import { PERSON_LABELS, PERSONS, TENSE_LABELS, TENSES } from './conjugate'
 
 // Every single-word Spanish form in the dataset → short Slovak/grammar description.
 // checkAnswer uses it to tell a different real word from a typo or a missing accent.
@@ -23,7 +23,7 @@ function buildIndex(): Map<string, Set<string>> {
     if (w.feminine) add(w.feminine, w.sk[0])
   }
   for (const v of verbs) {
-    for (const tense of ['presente', 'preterito'] as const) {
+    for (const tense of TENSES) {
       for (const person of PERSONS) {
         // Reflexive forms carry the pronoun ("me llamo"): index the verb itself.
         const form = v[tense][person].split(' ').at(-1)!

@@ -422,5 +422,66 @@
         "distractors": ["pequeño", "pequeños", "pequeñas"]
       }
     ]
+  },
+  {
+    "id": "s407",
+    "es": "Cuando era niño, vivía con mis abuelos.",
+    "sk": "Keď som bol malý, býval som u starých rodičov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "era", "niño", ",", "vivía", "con", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors": ["estaba", "eran", "fui"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "vivía",
+        "lemma": "vivir",
+        "hint": "vivir · yo · imperfecto",
+        "distractors": ["vivían", "viví", "vivíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s408",
+    "es": "Mis papás siempre nos llevaban a la playa en verano.",
+    "sk": "Rodičia nás v lete vždy brávali na pláž.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mis", "papás", "siempre", "nos", "llevaban", "a", "la", "playa", "en", "verano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llevaban",
+        "lemma": "llevar",
+        "hint": "llevar · ellos · imperfecto",
+        "distractors": ["llevabas", "llevábamos", "llevaron"]
+      }
+    ]
+  },
+  {
+    "id": "s409",
+    "es": "Mi hermana tendrá un bebé en marzo.",
+    "sk": "Sestra bude mať v marci bábätko.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["futuro"],
+    "tokens": ["Mi", "hermana", "tendrá", "un", "bebé", "en", "marzo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tendrá",
+        "lemma": "tener",
+        "hint": "tener · ella · futuro",
+        "distractors": ["tendrán", "tendrás", "tiene"]
+      }
+    ]
   }
 ]

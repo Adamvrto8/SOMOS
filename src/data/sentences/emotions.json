@@ -373,5 +373,41 @@
         "distractors": ["podemos", "puedo", "pudiste"]
       }
     ]
+  },
+  {
+    "id": "s431",
+    "es": "Estaba muy nervioso antes del examen.",
+    "sk": "Pred skúškou som bol veľmi nervózny.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Estaba", "muy", "nervioso", "antes", "del", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors": ["Era", "Estaban", "Estuve"]
+      }
+    ]
+  },
+  {
+    "id": "s432",
+    "es": "No te preocupes, todo saldrá bien.",
+    "sk": "Neboj sa, všetko dobre dopadne.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["futuro"],
+    "tokens": ["No", "te", "preocupes", ",", "todo", "saldrá", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "saldrá",
+        "lemma": "salir",
+        "hint": "salir · él · futuro",
+        "distractors": ["saldrán", "saldrás", "sale"]
+      }
+    ]
   }
 ]

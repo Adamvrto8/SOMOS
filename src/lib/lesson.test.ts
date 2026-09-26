@@ -12,6 +12,7 @@ import {
   taskFromItem,
   type Task,
 } from './lesson'
+import { TABLE_TENSES } from './conjugate'
 import { lookupForm } from './knownForms'
 
 // Deterministic pseudo-random generator for reproducible lessons.
@@ -68,7 +69,7 @@ describe('createLesson', () => {
   })
 
   it('counts every conjugation combination', () => {
-    expect(availableCount({ type: 'conjugation' })).toBe(verbs.length * 3 * 5)
+    expect(availableCount({ type: 'conjugation' })).toBe(verbs.length * TABLE_TENSES.length * 5)
   })
 
   it('offers the answer plus distractors, shuffled, without duplicates', () => {
@@ -94,6 +95,15 @@ describe('createLesson', () => {
     expect(llamarse.irregular).toBe(false)
     expect(conjugationTask(verbById.get('tener')!, 'preterito', 'el')).toMatchObject({ answer: 'tuvo', irregular: true })
     expect(conjugationTask(verbById.get('ir')!, 'progresivo', 'yo')).toMatchObject({ answer: 'estoy yendo', irregular: true })
+  })
+
+  it('conjugates imperfecto and futuro, irregular ones flagged', () => {
+    expect(conjugationTask(verbById.get('hablar')!, 'imperfecto', 'nosotros')).toMatchObject({ answer: 'hablábamos', irregular: false })
+    expect(conjugationTask(verbById.get('vivir')!, 'imperfecto', 'ellos')).toMatchObject({ answer: 'vivían', irregular: false })
+    expect(conjugationTask(verbById.get('ir')!, 'imperfecto', 'yo')).toMatchObject({ answer: 'iba', irregular: true })
+    expect(conjugationTask(verbById.get('comer')!, 'futuro', 'tu')).toMatchObject({ answer: 'comerás', irregular: false })
+    expect(conjugationTask(verbById.get('tener')!, 'futuro', 'el')).toMatchObject({ answer: 'tendrá', irregular: true })
+    expect(conjugationTask(verbById.get('levantarse')!, 'futuro', 'yo').answer).toBe('me levantaré')
   })
 })
 
@@ -176,7 +186,7 @@ describe('taskFromItem', () => {
     expect(taskFromItem('cloze', 's999#0')).toBeUndefined()
     expect(taskFromItem('cloze', 's001#9')).toBeUndefined()
     expect(taskFromItem('conjugation', 'volar:presente:yo')).toBeUndefined()
-    expect(taskFromItem('conjugation', 'tener:futuro:yo')).toBeUndefined()
+    expect(taskFromItem('conjugation', 'tener:condicional:yo')).toBeUndefined()
   })
 })
 
@@ -203,6 +213,8 @@ describe('retryTasks', () => {
 describe('lookupForm', () => {
   it('describes verb forms and words from the dataset', () => {
     expect(lookupForm('habló')).toBe('hablar · él / ella / usted · pretérito')
+    expect(lookupForm('hablábamos')).toBe('hablar · nosotros · imperfecto')
+    expect(lookupForm('tendrás')).toBe('tener · tú · futuro')
     expect(lookupForm('fui')).toContain('alebo')
     expect(lookupForm('papa')).toBe('zemiak')
     expect(lookupForm('cafe')).toBeUndefined()

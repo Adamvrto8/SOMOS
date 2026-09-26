@@ -495,5 +495,66 @@
         "distractors": ["perdí", "perdió", "perdemos"]
       }
     ]
+  },
+  {
+    "id": "s433",
+    "es": "Mientras esperábamos el vuelo, comimos tacos.",
+    "sk": "Kým sme čakali na let, dali sme si tacos.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "esperábamos", "el", "vuelo", ",", "comimos", "tacos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esperábamos",
+        "lemma": "esperar",
+        "hint": "esperar · nosotros · imperfecto",
+        "distractors": ["esperaba", "esperamos", "esperabas"]
+      }
+    ]
+  },
+  {
+    "id": "s434",
+    "es": "Mientras manejaba, mi esposa dormía.",
+    "sk": "Kým som šoféroval, manželka spala.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "manejaba", ",", "mi", "esposa", "dormía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "manejaba",
+        "lemma": "manejar",
+        "hint": "manejar · yo · imperfecto",
+        "distractors": ["manejaban", "manejé", "manejábamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "dormía",
+        "lemma": "dormir",
+        "hint": "dormir · ella · imperfecto",
+        "distractors": ["dormían", "dormías", "durmió"]
+      }
+    ]
+  },
+  {
+    "id": "s435",
+    "es": "El próximo año viajaré a Oaxaca.",
+    "sk": "Budúci rok pocestujem do Oaxacy.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "año", "viajaré", "a", "Oaxaca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viajaré",
+        "lemma": "viajar",
+        "hint": "viajar · yo · futuro",
+        "distractors": ["viajará", "viajarán", "viajo"]
+      }
+    ]
   }
 ]

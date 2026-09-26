@@ -310,5 +310,41 @@
         "distractors": ["Hacen", "Haces", "Hizo"]
       }
     ]
+  },
+  {
+    "id": "s416",
+    "es": "Hacía mucho frío en la montaña.",
+    "sk": "Na horách bola veľká zima.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Hacía", "mucho", "frío", "en", "la", "montaña", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hacía",
+        "lemma": "hacer",
+        "hint": "hacer · él · imperfecto",
+        "distractors": ["Hacían", "Hacías", "Hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s417",
+    "es": "Mañana hará mucho calor.",
+    "sk": "Zajtra bude veľké teplo.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "hará", "mucho", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hará",
+        "lemma": "hacer",
+        "hint": "hacer · él · futuro",
+        "distractors": ["harán", "harás", "hace"]
+      }
+    ]
   }
 ]

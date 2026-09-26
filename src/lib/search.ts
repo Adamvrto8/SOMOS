@@ -1,6 +1,7 @@
 import MiniSearch from 'minisearch'
 import { verbById, wordById, words } from '../data'
 import type { Word } from '../data/types'
+import { TENSES } from './conjugate'
 import { compareEs, fold } from './text'
 
 export type SearchFilter = 'all' | 'verb' | 'noun' | 'phrase'
@@ -24,7 +25,7 @@ const MAX_RESULTS = 50
 function verbForms(word: Word): string[] {
   const verb = word.verbId ? verbById.get(word.verbId) : undefined
   if (!verb) return []
-  const forms = [...Object.values(verb.presente), ...Object.values(verb.preterito), verb.gerund]
+  const forms = [...TENSES.flatMap((t) => Object.values(verb[t])), verb.gerund]
   return [...new Set(forms.map((f) => f.split(' ').at(-1)!))]
 }
 

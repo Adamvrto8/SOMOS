@@ -29,9 +29,9 @@ const fail = (where: string, message: string) => errors.push(`${where}: ${messag
 
 const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos']
-const TENSES: Tense[] = ['presente', 'preterito']
+const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro']
 const POS = ['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'conj', 'phrase', 'other']
-const GRAMMAR = ['presente', 'progresivo', 'preterito', 'ser-estar', 'gender', 'articles']
+const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles']
 
 // ---------- helpers ----------
 
@@ -114,6 +114,17 @@ const ENDINGS: Record<Tense, Record<Verb['group'], string[]>> = {
     er: ['í', 'iste', 'ió', 'imos', 'ieron'],
     ir: ['í', 'iste', 'ió', 'imos', 'ieron'],
   },
+  imperfecto: {
+    ar: ['aba', 'abas', 'aba', 'ábamos', 'aban'],
+    er: ['ía', 'ías', 'ía', 'íamos', 'ían'],
+    ir: ['ía', 'ías', 'ía', 'íamos', 'ían'],
+  },
+  // Added to the whole infinitive (hablar → hablaré), not to the stem.
+  futuro: {
+    ar: ['é', 'ás', 'á', 'emos', 'án'],
+    er: ['é', 'ás', 'á', 'emos', 'án'],
+    ir: ['é', 'ás', 'á', 'emos', 'án'],
+  },
 }
 const REFLEXIVE_PRONOUN: Record<Person, string> = { yo: 'me', tu: 'te', el: 'se', nosotros: 'nos', ellos: 'se' }
 
@@ -123,7 +134,8 @@ function baseInfinitive(verb: Verb) {
 
 function regularForm(verb: Verb, tense: Tense, person: Person) {
   const base = baseInfinitive(verb)
-  const form = base.slice(0, -2) + ENDINGS[tense][verb.group][PERSONS.indexOf(person)]
+  const stem = tense === 'futuro' ? base : base.slice(0, -2)
+  const form = stem + ENDINGS[tense][verb.group][PERSONS.indexOf(person)]
   return verb.reflexive ? `${REFLEXIVE_PRONOUN[person]} ${form}` : form
 }
 
@@ -135,7 +147,7 @@ function regularGerund(verb: Verb) {
 function expandIrregular(entries: string[], where: string): Set<string> {
   const out = new Set<string>()
   for (const entry of entries) {
-    const match = /^(presente|preterito)\.(yo|tu|el|nosotros|ellos|\*)$/.exec(entry)
+    const match = /^(presente|preterito|imperfecto|futuro)\.(yo|tu|el|nosotros|ellos|\*)$/.exec(entry)
     if (!match) {
       fail(where, `invalid irregularForms entry "${entry}"`)
       continue
@@ -280,7 +292,12 @@ const PERSON_LABELS: Record<string, Person> = {
   ellas: 'ellos',
   ustedes: 'ellos',
 }
-const TENSE_LABELS: Record<string, Tense> = { presente: 'presente', pretérito: 'preterito' }
+const TENSE_LABELS: Record<string, Tense> = {
+  presente: 'presente',
+  pretérito: 'preterito',
+  imperfecto: 'imperfecto',
+  futuro: 'futuro',
+}
 
 // Rebuilds the sentence from tokens: no space before .,?!;: and after ¿¡
 const joinTokens = (tokens: string[]) =>

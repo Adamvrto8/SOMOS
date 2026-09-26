@@ -340,5 +340,48 @@
         "distractors": ["está", "es", "tiene"]
       }
     ]
+  },
+  {
+    "id": "s444",
+    "es": "Cuando éramos niños, íbamos al río todos los fines de semana.",
+    "sk": "Keď sme boli malí, chodievali sme každý víkend k rieke.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "éramos", "niños", ",", "íbamos", "al", "río", "todos", "los", "fines", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "éramos",
+        "lemma": "ser",
+        "hint": "ser/estar · nosotros · imperfecto",
+        "distractors": ["estábamos", "era", "fuimos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["iba", "fuimos", "ibas"]
+      }
+    ]
+  },
+  {
+    "id": "s445",
+    "es": "Algún día conoceré el desierto de Sonora.",
+    "sk": "Raz spoznám púšť Sonora.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["futuro"],
+    "tokens": ["Algún", "día", "conoceré", "el", "desierto", "de", "Sonora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "conoceré",
+        "lemma": "conocer",
+        "hint": "conocer · yo · futuro",
+        "distractors": ["conocerá", "conocerán", "conozco"]
+      }
+    ]
   }
 ]

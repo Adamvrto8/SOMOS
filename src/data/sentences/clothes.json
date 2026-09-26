@@ -361,5 +361,41 @@
         "distractors": ["lleva", "llevan", "llevé"]
       }
     ]
+  },
+  {
+    "id": "s442",
+    "es": "Siempre llevaba una gorra roja.",
+    "sk": "Vždy nosil červenú šiltovku.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Siempre", "llevaba", "una", "gorra", "roja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llevaba",
+        "lemma": "llevar",
+        "hint": "llevar · él · imperfecto",
+        "distractors": ["llevaban", "llevabas", "llevó"]
+      }
+    ]
+  },
+  {
+    "id": "s443",
+    "es": "Me pondré el vestido nuevo para la boda.",
+    "sk": "Na svadbu si oblečiem nové šaty.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["futuro"],
+    "tokens": ["Me", "pondré", "el", "vestido", "nuevo", "para", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pondré",
+        "lemma": "poner",
+        "hint": "poner · yo · futuro",
+        "distractors": ["pondrá", "pondrán", "pongo"]
+      }
+    ]
   }
 ]

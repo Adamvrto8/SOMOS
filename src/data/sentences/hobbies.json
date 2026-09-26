@@ -374,5 +374,59 @@
         "distractors": ["juego", "juega", "juegas"]
       }
     ]
+  },
+  {
+    "id": "s410",
+    "es": "De niño jugaba fútbol todos los días.",
+    "sk": "Ako chlapec som každý deň hrával futbal.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niño", "jugaba", "fútbol", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugaba",
+        "lemma": "jugar",
+        "hint": "jugar · yo · imperfecto",
+        "distractors": ["jugaban", "jugué", "jugábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s411",
+    "es": "Mi hermana bailaba muy bien de joven.",
+    "sk": "Sestra za mlada veľmi dobre tancovala.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "hermana", "bailaba", "muy", "bien", "de", "joven", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "bailaba",
+        "lemma": "bailar",
+        "hint": "bailar · ella · imperfecto",
+        "distractors": ["bailaban", "bailabas", "bailó"]
+      }
+    ]
+  },
+  {
+    "id": "s412",
+    "es": "Este sábado jugaremos fútbol en el parque.",
+    "sk": "Túto sobotu budeme hrať futbal v parku.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["futuro"],
+    "tokens": ["Este", "sábado", "jugaremos", "fútbol", "en", "el", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugaremos",
+        "lemma": "jugar",
+        "hint": "jugar · nosotros · futuro",
+        "distractors": ["jugaré", "jugará", "jugamos"]
+      }
+    ]
   }
 ]

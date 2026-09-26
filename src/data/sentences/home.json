@@ -482,5 +482,59 @@
         "distractors": ["sentaron", "sentaste", "sienta"]
       }
     ]
+  },
+  {
+    "id": "s413",
+    "es": "Antes vivíamos en un departamento pequeño.",
+    "sk": "Predtým sme bývali v malom byte.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "vivíamos", "en", "un", "departamento", "pequeño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vivíamos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · imperfecto",
+        "distractors": ["vivía", "vivimos", "vivías"]
+      }
+    ]
+  },
+  {
+    "id": "s414",
+    "es": "El departamento era viejo, pero muy bonito.",
+    "sk": "Byt bol starý, ale veľmi pekný.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperfecto"],
+    "tokens": ["El", "departamento", "era", "viejo", ",", "pero", "muy", "bonito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors": ["eran", "eras", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s415",
+    "es": "Limpiaremos la casa el fin de semana.",
+    "sk": "Cez víkend upraceme dom.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Limpiaremos", "la", "casa", "el", "fin", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Limpiaremos",
+        "lemma": "limpiar",
+        "hint": "limpiar · nosotros · futuro",
+        "distractors": ["Limpiaré", "Limpiará", "Limpiamos"]
+      }
+    ]
   }
 ]

@@ -372,5 +372,48 @@
         "distractors": ["es", "están", "estás"]
       }
     ]
+  },
+  {
+    "id": "s436",
+    "es": "Mi hijo estaba enfermo y no fue a la escuela.",
+    "sk": "Syn bol chorý a nešiel do školy.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["imperfecto", "ser-estar", "preterito"],
+    "tokens": ["Mi", "hijo", "estaba", "enfermo", "y", "no", "fue", "a", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "distractors": ["era", "estaban", "estabas"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "fue",
+        "lemma": "ir",
+        "hint": "ir · él · pretérito",
+        "distractors": ["fueron", "fuiste", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s437",
+    "es": "Con esta medicina te sentirás mejor.",
+    "sk": "S týmto liekom sa budeš cítiť lepšie.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["futuro"],
+    "tokens": ["Con", "esta", "medicina", "te", "sentirás", "mejor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sentirás",
+        "lemma": "sentirse",
+        "hint": "sentirse · tú · futuro",
+        "distractors": ["sentiremos", "sentiré", "sientes"]
+      }
+    ]
   }
 ]

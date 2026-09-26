@@ -357,5 +357,41 @@
         "distractors": ["es", "están", "estás"]
       }
     ]
+  },
+  {
+    "id": "s440",
+    "es": "Antes todo era más barato.",
+    "sk": "Predtým bolo všetko lacnejšie.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Antes", "todo", "era", "más", "barato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser/estar · él · imperfecto",
+        "distractors": ["estaba", "eran", "eras"]
+      }
+    ]
+  },
+  {
+    "id": "s441",
+    "es": "Mañana compraré los boletos.",
+    "sk": "Zajtra kúpim lístky.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "compraré", "los", "boletos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compraré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · futuro",
+        "distractors": ["comprará", "comprarán", "compro"]
+      }
+    ]
   }
 ]

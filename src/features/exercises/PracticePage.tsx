@@ -5,14 +5,13 @@ import { Chip } from '../../components/Chip'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
-import { TENSE_LABELS, type TableTense } from '../../lib/conjugate'
+import { TABLE_TENSES, TENSE_LABELS } from '../../lib/conjugate'
 import { availableCount, LESSON_SIZE, type ExerciseType } from '../../lib/lesson'
 import { useMistakes } from '../../lib/mistakes'
 import { pluralSk } from '../../lib/text'
 import { useUpdateParams } from '../../lib/useUrlQuery'
 import { EXERCISES, filterFromParams, filterToParams, LEVELS } from './exercises'
 
-const TENSES: TableTense[] = ['presente', 'progresivo', 'preterito']
 
 export function PracticePage() {
   const [params] = useSearchParams()
@@ -91,7 +90,7 @@ export function PracticePage() {
             <Chip selected={!filter.tense} onClick={() => updateParams({ tense: null })}>
               Všetky
             </Chip>
-            {TENSES.map((t) => (
+            {TABLE_TENSES.map((t) => (
               <Chip key={t} selected={filter.tense === t} onClick={() => updateParams({ tense: t })}>
                 {TENSE_LABELS[t]}
               </Chip>
