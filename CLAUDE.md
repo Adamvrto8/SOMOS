@@ -57,7 +57,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
 | Spaced repetition | ts-fsrs (FSRS algorithm) |
 | Pronunciation | Web Speech API `speechSynthesis` (free, built into browser) |
 | Hosting | Vercel (free) |
-| Optional later | DeepL API Free for lookups outside dataset — via a Vercel serverless function (never expose the key in client code) |
+| Online lookup | DeepL API Free via the Vercel function `api/translate.ts` (key only in the `DEEPL_API_KEY` env var, same-origin requests, ≤120 chars, ES-419 with ES fallback); `src/lib/translate.ts` caches results in Dexie `lookups`. Files in `api/` starting with `_` are not deployed (tests) |
 
 Content lives as **static JSON in `src/data/`**, bundled with the app → offline & free.
 
@@ -126,6 +126,7 @@ interface SavedItem  { itemId: string; itemType: 'word' | 'verb' | 'custom' | 's
 interface ReviewCard { itemId: string; itemType: 'word' | 'custom' | 'sentence'; fsrs: Card /* ts-fsrs */; }
 interface Attempt    { id?: number; exercise: string; itemId: string; correct: boolean; at: number; }
 interface Mistake    { exercise: string; itemId: string; firstWrongAt: number; lastWrongAt: number; wrongCount: number; }
+interface Lookup     { key: string; text: string; from: 'sk' | 'es'; translation: string; at: number; } // DeepL cache, not backed up
 // exercise + itemId identify a lesson task: "s001#0" (cloze/choice), "tener:preterito:yo", "s004" (builder/translation);
 // lesson.taskFromItem() rebuilds the task from them.
 ```
@@ -190,6 +191,7 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
 - **Domov** — "Na zopakovanie dnes: N" CTA, streak, daily goal ring, quick search field, slovo dňa.
 - **Hľadať** — search input autofocused, results list (ES bold serif + SK muted), filter chips
   (všetko / slovesá / podstatné mená / frázy). Browse by topic below when input empty.
+  Below the results: "Preložiť online" (DeepL, direction SK → ES / ES → SK guessed from the query) → "Pridať do Moje slová".
 - **Detail slova** (`/word/:id`) — big serif Spanish word + 🔊, gender badge, translations,
   examples, note, conjugation table for verbs (scrollable tabs: presente · progresivo · pretérito · imperfecto · futuro;
   `TABLE_TENSES` in `conjugate.ts` is the single list for tabs, drill filter and task ids), ⭐ save.
@@ -280,7 +282,7 @@ scripts/
 - [x] **6. Content expansion** — target A1–A2: ~800 words, ~100 verbs, ~400 sentences, 15–20 topics. Generate in batches per topic, run validation after each batch, Adam spot-checks.
   Result: 19 topics (incl. Základné slová, Čísla), 878 words, 100 verbs, 406 sentences (413 clozes).
 - [ ] **7. Optional** — DeepL fallback lookup via serverless function, more tenses (imperfecto, futuro), B1 content.
-  Done: 7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences). Next: 7b DeepL, 7c B1 content.
+  Done: 7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences); 7b DeepL online lookup. Next: 7c B1 content.
 
 ---
 

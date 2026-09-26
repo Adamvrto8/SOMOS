@@ -61,10 +61,10 @@ describe('createLesson', () => {
   })
 
   it('returns fewer tasks when the pool is small, none when empty', () => {
-    const count = availableCount({ type: 'translation', topic: 'family', level: 'A2' })
+    const count = availableCount({ type: 'translation', topic: 'numbers', level: 'A2' })
     expect(count).toBeGreaterThan(0)
     expect(count).toBeLessThan(LESSON_SIZE)
-    expect(createLesson({ type: 'translation', topic: 'family', level: 'A2' }, LESSON_SIZE, seeded(5))).toHaveLength(count)
+    expect(createLesson({ type: 'translation', topic: 'numbers', level: 'A2' }, LESSON_SIZE, seeded(5))).toHaveLength(count)
     expect(createLesson({ type: 'translation', level: 'B2' }, LESSON_SIZE, seeded(5))).toHaveLength(0)
   })
 

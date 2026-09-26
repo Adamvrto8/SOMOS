@@ -23,6 +23,17 @@ export function CustomWordPage() {
   return <CustomWordForm key={id ?? 'new'} word={existing ?? undefined} />
 }
 
+/** Values handed over by the online lookup (Hľadať → Preložiť online → Pridať do Moje slová). */
+export interface CustomWordPrefill {
+  es: string
+  sk: string
+}
+
+function readPrefill(state: unknown): CustomWordPrefill | undefined {
+  const prefill = (state as { prefill?: Partial<CustomWordPrefill> } | null)?.prefill
+  return typeof prefill?.es === 'string' && typeof prefill.sk === 'string' ? { es: prefill.es, sk: prefill.sk } : undefined
+}
+
 interface Errors {
   es?: string
   sk?: string
@@ -31,8 +42,9 @@ interface Errors {
 function CustomWordForm({ word }: { word?: CustomWord }) {
   const navigate = useNavigate()
   const location = useLocation()
-  const [es, setEs] = useState(word?.es ?? '')
-  const [sk, setSk] = useState(word?.sk ?? '')
+  const prefill = word ? undefined : readPrefill(location.state)
+  const [es, setEs] = useState(word?.es ?? prefill?.es ?? '')
+  const [sk, setSk] = useState(word?.sk ?? prefill?.sk ?? '')
   const [note, setNote] = useState(word?.note ?? '')
   const [topic, setTopic] = useState(word?.topic ?? '')
   const [errors, setErrors] = useState<Errors>({})

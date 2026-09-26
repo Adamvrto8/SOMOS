@@ -5,6 +5,7 @@ import { useSavedWordIds } from '../../lib/archive'
 import { searchWords, type SearchFilter } from '../../lib/search'
 import { pluralSk } from '../../lib/text'
 import { useUrlParam, useUrlQuery } from '../../lib/useUrlQuery'
+import { OnlineTranslate } from './OnlineTranslate'
 import { TopicGrid } from './TopicGrid'
 import { WordRow } from './WordRow'
 
@@ -66,6 +67,7 @@ export function SearchPage() {
               <p className="mt-1 text-sm text-ink-muted">Skús iný tvar slova alebo slovenský výraz.</p>
             </div>
           )}
+          {query.trim() !== '' && <OnlineTranslate key={query.trim()} query={query} />}
         </>
       )}
     </div>

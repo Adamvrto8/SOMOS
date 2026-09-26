@@ -48,6 +48,15 @@ export interface Mistake {
   wrongCount: number
 }
 
+/** Cached online (DeepL) translation, so a repeated lookup is free and works offline. Not backed up. */
+export interface Lookup {
+  key: string // "sk:zmrzlinár" = source language + lowercased text
+  text: string
+  from: 'sk' | 'es'
+  translation: string
+  at: number
+}
+
 export class SomosDB extends Dexie {
   customWords!: EntityTable<CustomWord, 'id'>
   // Compound key: a word and a verb can share an id (e.g. "tener").
@@ -55,6 +64,7 @@ export class SomosDB extends Dexie {
   reviewCards!: Table<ReviewCard, [ReviewItemType, string]>
   attempts!: EntityTable<Attempt, 'id'>
   mistakes!: Table<Mistake, [string, string]>
+  lookups!: EntityTable<Lookup, 'key'>
 
   constructor() {
     super('somos')
@@ -66,6 +76,9 @@ export class SomosDB extends Dexie {
     })
     this.version(2).stores({
       mistakes: '[exercise+itemId], lastWrongAt',
+    })
+    this.version(3).stores({
+      lookups: 'key, at',
     })
   }
 }

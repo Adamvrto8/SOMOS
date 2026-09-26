@@ -49,6 +49,7 @@ export default defineConfig({
         // Precache the whole app shell (and JSON content once it exists in the build).
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,json}'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
