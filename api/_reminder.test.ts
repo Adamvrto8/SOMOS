@@ -13,6 +13,7 @@ import {
   todayView,
   upstashStore,
   VAPID_PUBLIC_KEY,
+  depsFromEnv,
   type Deps,
   type ReminderProgress,
   type ReminderSub,
@@ -358,3 +359,30 @@ describe('VAPID public key', () => {
     expect(app).toContain(`export const VAPID_PUBLIC_KEY = '${VAPID_PUBLIC_KEY}'`)
   })
 })
+
+describe('depsFromEnv', () => {
+  const base = { VAPID_PRIVATE_KEY: 'priv', CRON_SECRET: 'secret' }
+
+  it('accepts KV_REST_API_*', () => {
+    const deps = depsFromEnv({ ...base, KV_REST_API_URL: 'https://url', KV_REST_API_TOKEN: 'tok' })
+    expect(deps).toBeDefined()
+    expect(deps?.cronSecret).toBe('secret')
+  })
+
+  it('accepts STORAGE_KV_REST_API_* from Vercel storage default prefix', () => {
+    const deps = depsFromEnv({ ...base, STORAGE_KV_REST_API_URL: 'https://url', STORAGE_KV_REST_API_TOKEN: 'tok' })
+    expect(deps).toBeDefined()
+    expect(deps?.cronSecret).toBe('secret')
+  })
+
+  it('accepts UPSTASH_REDIS_REST_*', () => {
+    const deps = depsFromEnv({ ...base, UPSTASH_REDIS_REST_URL: 'https://url', UPSTASH_REDIS_REST_TOKEN: 'tok' })
+    expect(deps).toBeDefined()
+  })
+
+  it('returns undefined if any key is missing', () => {
+    expect(depsFromEnv({ ...base, STORAGE_KV_REST_API_URL: 'https://url' })).toBeUndefined()
+    expect(depsFromEnv({ KV_REST_API_URL: 'https://url', KV_REST_API_TOKEN: 'tok' })).toBeUndefined()
+  })
+})
+

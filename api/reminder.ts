@@ -342,10 +342,10 @@ export async function handleReminder(request: Request, deps: Deps | undefined): 
   }
 }
 
-/** Upstash adds KV_REST_API_* when connected from the Vercel dashboard; UPSTASH_REDIS_REST_* is its own naming. */
+/** Upstash adds KV_REST_API_* or STORAGE_KV_REST_API_* when connected from the Vercel dashboard; UPSTASH_REDIS_REST_* is its own naming. */
 export function depsFromEnv(env: Record<string, string | undefined>): Deps | undefined {
-  const url = env.KV_REST_API_URL ?? env.UPSTASH_REDIS_REST_URL
-  const token = env.KV_REST_API_TOKEN ?? env.UPSTASH_REDIS_REST_TOKEN
+  const url = env.KV_REST_API_URL ?? env.UPSTASH_REDIS_REST_URL ?? env.STORAGE_KV_REST_API_URL
+  const token = env.KV_REST_API_TOKEN ?? env.UPSTASH_REDIS_REST_TOKEN ?? env.STORAGE_KV_REST_API_TOKEN
   const privateKey = env.VAPID_PRIVATE_KEY
   const cronSecret = env.CRON_SECRET
   if (!url || !token || !privateKey || !cronSecret) return undefined
