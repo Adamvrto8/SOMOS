@@ -2,8 +2,10 @@ import { BackButton } from '../../components/BackButton'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
+import { reportProgress } from '../../lib/reminder'
 import { setThemePref, useThemePref } from '../../lib/theme'
 import { BackupSettings } from './BackupSettings'
+import { ReminderSettings } from './ReminderSettings'
 import { VoiceSettings } from './VoiceSettings'
 
 export function SettingsPage() {
@@ -40,12 +42,16 @@ export function SettingsPage() {
           label="Denný cieľ"
           idPrefix="goal"
           value={String(dailyGoal)}
-          onChange={(v) => setDailyGoal(Number(v))}
+          onChange={(v) => {
+            setDailyGoal(Number(v))
+            reportProgress()
+          }}
           options={GOAL_OPTIONS.map((n) => ({ id: String(n), label: String(n) }))}
         />
         <p className="mt-2 text-sm text-ink-muted">Počet odpovedí za deň – v lekciách aj pri opakovaní.</p>
       </section>
 
+      <ReminderSettings />
       <VoiceSettings />
       <BackupSettings />
 
