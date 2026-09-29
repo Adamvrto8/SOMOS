@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { useLocation } from 'react-router'
 import { Chip } from '../../components/Chip'
 import { SearchField } from '../../components/SearchField'
 import { useSavedWordIds } from '../../lib/archive'
@@ -23,6 +24,7 @@ export function SearchPage() {
   const [filterParam, setFilterParam] = useUrlParam('f')
   const filter: SearchFilter = isFilter(filterParam) ? filterParam : 'all'
   const savedIds = useSavedWordIds()
+  const location = useLocation()
 
   const hits = useMemo(() => searchWords(query, filter), [query, filter])
   const hitIds = useMemo(() => hits.map((h) => h.word.id), [hits])
@@ -37,6 +39,8 @@ export function SearchPage() {
         onChange={setQuery}
         label="Hľadať slovo"
         placeholder="napr. casa, dom, tengo"
+        // Only from the Home search button: the tab itself keeps the keyboard closed.
+        autoFocus={(location.state as { focus?: boolean } | null)?.focus === true}
       />
 
       <div role="group" aria-label="Filter" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">

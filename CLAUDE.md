@@ -189,7 +189,9 @@ Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
 
 Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
 
-- **Domov** — "Na zopakovanie dnes: N" CTA, streak, daily goal ring, quick search field, slovo dňa.
+- **Domov** — hero "Na zopakovanie dnes" (big light serif N, words · sentences · minutes, round brick → button),
+  streak | daily goal strip (goal as a leaf bar), slovo dňa, "Precvičiť chyby" card, 7-day chart.
+  Quick search = round search button in the top bar (Home only; it focuses the Hľadať field).
 - **Hľadať** — search input autofocused, results list (ES bold serif + SK muted), filter chips
   (všetko / slovesá / podstatné mená / frázy). Browse by topic below when input empty.
   Below the results: "Preložiť online" (DeepL, direction SK → ES / ES → SK guessed from the query) → "Pridať do Moje slová".

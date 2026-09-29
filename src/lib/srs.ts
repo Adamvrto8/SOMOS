@@ -98,12 +98,16 @@ export async function syncReviewCards(): Promise<void> {
 export interface ReviewOverview {
   total: number // cards in the archive
   dueToday: number
+  dueWords: number // saved and custom words
+  dueSentences: number
 }
 
 export function useReviewOverview(): ReviewOverview | undefined {
   return useLiveQuery(async () => {
     const cards = await db.reviewCards.toArray()
     const now = new Date()
-    return { total: cards.length, dueToday: cards.filter((c) => isDueToday(cardOf(c), now)).length }
+    const due = cards.filter((c) => isDueToday(cardOf(c), now))
+    const dueSentences = due.filter((c) => c.itemType === 'sentence').length
+    return { total: cards.length, dueToday: due.length, dueWords: due.length - dueSentences, dueSentences }
   }, [])
 }

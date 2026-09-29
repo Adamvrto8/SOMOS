@@ -1,61 +1,63 @@
-import { CircleCheck, Layers, Search } from 'lucide-react'
+import { ArrowRight, CircleCheck } from 'lucide-react'
 import { Link } from 'react-router'
 import { useReviewOverview } from '../../lib/srs'
 import { pluralSk } from '../../lib/text'
 
-const LINK =
-  'inline-flex h-12 items-center justify-center gap-2 rounded-2xl px-5 font-semibold transition duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+const SECONDS_PER_CARD = 25
 
-/** The Home call to action: "Na zopakovanie dnes: N". */
+const ROUND_LINK =
+  'flex size-16 shrink-0 items-center justify-center rounded-full transition duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+// (No button when nothing is due: the header's search button is the way to find words to save.)
+
+/** The Home hero: "Na zopakovanie dnes" with one big serif number and a round go button. */
 export function ReviewCard() {
   const overview = useReviewOverview()
-  if (!overview) return <div className="h-40 rounded-card bg-surface-2" aria-hidden />
+  if (!overview) return <div className="h-44" aria-hidden />
 
-  if (overview.dueToday > 0) {
-    return (
-      <section aria-labelledby="due-heading" className="rounded-card bg-brick p-5 text-on-accent">
-        <h2 id="due-heading" className="text-sm font-medium opacity-90">
-          Na zopakovanie dnes
-        </h2>
-        <p className="mt-1 flex items-baseline gap-2">
-          <span className="text-5xl font-semibold">{overview.dueToday}</span>
-          <span className="opacity-90">{pluralSk(overview.dueToday, ['slovo', 'slová', 'slov'])}</span>
-        </p>
-        <Link to="/review" className={`${LINK} mt-4 w-full bg-surface text-ink hover:bg-surface-2`}>
-          <Layers size={18} strokeWidth={1.75} aria-hidden />
-          Zopakovať
-        </Link>
-      </section>
-    )
-  }
+  const { dueToday, dueWords, dueSentences, total } = overview
+  const minutes = Math.max(1, Math.round((dueToday * SECONDS_PER_CARD) / 60))
+  const parts = [
+    dueWords > 0 && `${dueWords} ${pluralSk(dueWords, ['slovo', 'slová', 'slov'])}`,
+    dueSentences > 0 && `${dueSentences} ${pluralSk(dueSentences, ['veta', 'vety', 'viet'])}`,
+    `asi ${minutes} min`,
+  ].filter(Boolean)
 
   return (
-    <section aria-labelledby="due-heading" className="rounded-card border border-line bg-surface p-5">
-      {overview.total > 0 ? (
-        <>
-          <h2 id="due-heading" className="flex items-center gap-2 font-semibold">
-            <CircleCheck size={20} strokeWidth={1.75} className="text-leaf" aria-hidden />
-            Všetko zopakované
-          </h2>
-          <p className="mt-1 text-sm text-ink-muted">
-            V archíve máš {overview.total} {pluralSk(overview.total, ['slovo', 'slová', 'slov'])}. Ďalšie prídu na rad, keď ich
-            začneš zabúdať.
-          </p>
-        </>
-      ) : (
-        <>
-          <h2 id="due-heading" className="font-semibold">
-            Zatiaľ nemáš čo opakovať
-          </h2>
-          <p className="mt-1 text-sm text-ink-muted">
-            Ulož si slová hviezdičkou alebo pridaj vlastné v Archíve – budú sa ti tu vracať na zopakovanie.
-          </p>
-          <Link to="/search" className={`${LINK} mt-4 border border-line bg-surface hover:bg-surface-2`}>
-            <Search size={18} strokeWidth={1.75} aria-hidden />
-            Hľadať slová
+    <section aria-labelledby="due-heading">
+      <h2 id="due-heading" className="text-sm text-ink-muted">
+        Na zopakovanie dnes
+      </h2>
+      <div className="mt-2 flex items-center justify-between gap-4">
+        <p
+          className={[
+            'font-serif text-[7.5rem] leading-[0.8] font-light tracking-tighter tabular-nums',
+            dueToday > 0 ? 'text-ink' : 'text-ink-muted/50',
+          ].join(' ')}
+        >
+          {dueToday}
+        </p>
+        {dueToday > 0 && (
+          <Link
+            to="/review"
+            aria-label={`Zopakovať ${dueToday}`}
+            className={`${ROUND_LINK} bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)] hover:brightness-110`}
+          >
+            <ArrowRight size={26} strokeWidth={1.75} aria-hidden />
           </Link>
-        </>
-      )}
+        )}
+      </div>
+      <p className="mt-4 flex items-center gap-1.5 text-sm text-ink-muted">
+        {dueToday > 0 ? (
+          parts.join(' · ')
+        ) : total > 0 ? (
+          <>
+            <CircleCheck size={16} strokeWidth={1.75} className="shrink-0 text-leaf" aria-hidden />
+            Všetko zopakované · v archíve {total} {pluralSk(total, ['položka', 'položky', 'položiek'])}
+          </>
+        ) : (
+          'Ulož si slová hviezdičkou – budú sa ti tu vracať na zopakovanie.'
+        )}
+      </p>
     </section>
   )
 }
