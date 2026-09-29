@@ -31,7 +31,7 @@ cron-job.org every 15 min ──GET──────▶ api/reminder.ts  ◀─
                                                                      shows the notification
 ```
 
-Three separate keys, so a progress report and a tick never overwrite each other's data.
+Separate keys, so a progress report and a tick never overwrite each other's data.
 
 ### Stored state
 
@@ -41,7 +41,6 @@ interface ReminderSub {
   subscription: { endpoint: string; keys: { p256dh: string; auth: string } }
   time: string      // "19:00", phone-local
   timeZone: string  // IANA zone from the phone, e.g. "Europe/Bratislava"
-  lastTestAt?: number
 }
 // somos:reminder:progress — as the phone computed it at report time
 interface ReminderProgress {
@@ -54,6 +53,7 @@ interface ReminderProgress {
   activeToday: boolean // computeStreak().activeToday
 }
 // somos:reminder:sent — day key of the last reminder sent, e.g. "2026-09-27"
+// somos:reminder:test — exists for 60 s after a test notification (SET … EX 60 NX)
 ```
 
 `dueTomorrow` lets a reminder show a correct card count even when the app has not been opened
@@ -83,7 +83,7 @@ Body is discriminated by `type`:
 | `subscribe` | `subscription, time, timeZone` | stores `sub` (replaces any older device) |
 | `unsubscribe` | `endpoint` | deletes `sub` only if the endpoint matches |
 | `progress` | `endpoint, progress` | stores `progress` only if the endpoint matches the stored one; else ignored |
-| `test` | `endpoint` | if the endpoint matches, sends a test notification now (ignores the time window); at most once per minute (`lastTestAt`) |
+| `test` | `endpoint` | if the endpoint matches, sends a test notification now (ignores the time window); at most once per minute (`somos:reminder:test`) |
 
 Validation: `time` matches `HH:MM` (00:00–23:59); `timeZone` accepted by `Intl.DateTimeFormat`;
 numbers are non-negative integers. Invalid input → `400`, wrong origin → `403`.
@@ -93,19 +93,19 @@ numbers are non-negative integers. Invalid input → `400`, wrong origin → `40
 Wrong or missing secret → `401`. Otherwise loads the three keys, runs `decide()`, sends when told to,
 and answers `{ sent, reason }` so the cron-job.org history shows what happened.
 
-`decide(now, sub, progress, sentDay)` is a pure function:
+No stored `sub` → `{ sent: false, reason: 'no-subscription' }`. Otherwise
+`decide(now, sub, progress, sentDay)`, a pure function, runs:
 
-1. No `sub` → `no-subscription`.
-2. Local time in `sub.timeZone` (via `Intl.DateTimeFormat#formatToParts`, so DST is handled).
+1. Local time in `sub.timeZone` (via `Intl.DateTimeFormat#formatToParts`, so DST is handled).
    Window = `[time, min(time + 2 h, 23:59)]`. Before it → `too-early`; after it → `too-late`.
    The window keeps a late-evening enable from firing at a surprising hour.
-3. `sentDay === localDay` → `already-sent`.
-4. Today's view from the last report:
+2. `sentDay === localDay` → `already-sent`.
+3. Today's view from the last report:
    - report from today: `done`, `goal`, `due = dueToday`, `streak = streakDays`
    - report from yesterday: `done = 0`, `due = dueTomorrow`, `streak = activeToday ? streakDays : 0`
    - older or none: `done = 0`, `due` unknown, `streak = 0`, `goal = progress?.goal ?? 20`
-5. `done >= goal` → `goal-met`.
-6. Otherwise send `composeMessage(view)`.
+4. `done >= goal` → `goal-met`.
+5. Otherwise send `composeMessage(view)`.
 
 After a successful send the tick writes `sent = localDay`. A failed send leaves it unset, so the next
 tick retries within the window. A `404`/`410` from the push service deletes `sub`.
@@ -141,19 +141,24 @@ When `due` is 0 or unknown, the body says `Denný cieľ: 20 odpovedí` instead o
 - `syncReminder()` at app start: when enabled and permitted, re-`subscribe` (covers a rotated
   endpoint or lost server state), then report progress. When enabled but the permission was revoked,
   it switches the setting off.
-- `reportProgress()`: debounced (~3 s), skipped when disabled or offline, `fetch` with
-  `keepalive: true`. Called from `recordAttempt` (lessons and reviews both go through it), after
-  `setDailyGoal`, when the page becomes hidden, and from `syncReminder`. Failures are ignored.
-- `buildProgress(attemptTimestamps, cards, goal, now)`: pure, unit-tested. Reuses
-  `computeStreak`, `dayKey`, `endOfDay`, `addDays` and `cardOf`.
+- `reportProgress()`: debounced (~3 s), skipped when disabled or offline; the report sent when the
+  page becomes hidden uses `fetch` with `keepalive: true`. Triggered by a Dexie `creating` hook on
+  `attempts` (lessons and reviews both add one; `attempts.ts` stays unaware of reminders), after
+  the daily goal changes, when the page becomes hidden, and from `syncReminder`. Failures are ignored.
+
+### `src/lib/reminderProgress.ts`
+- `buildProgress(attemptTimestamps, dueDates, goal, now)`: pure, unit-tested. Reuses
+  `computeStreak`, `dayKey`, `endOfDay` and `addDays`.
+- `loadProgress(now)`: reads attempts and review cards (`cardOf(card).due`) from Dexie and the goal
+  from `getDailyGoal()` (new export of `dailyGoal.ts`).
 
 ### `public/push-sw.js`
 ~30 lines, added to the generated service worker through `workbox.importScripts` in `vite.config.ts`,
 so the existing generateSW setup and auto-update stay untouched.
 - `push`: `showNotification(title, { body, icon: '/pwa-192x192.png', badge: '/badge-96x96.png',
   tag: 'somos-reminder', lang: 'sk', data: { url } })`.
-- `notificationclick`: close it; focus an open SOMOS window and navigate it to `url`, otherwise
-  `clients.openWindow(url)`.
+- `notificationclick`: close it; focus an open SOMOS window as it is (navigating it could throw away
+  a lesson in progress), otherwise `clients.openWindow(url)`.
 
 `public/badge-96x96.png`: monochrome, transparent badge for the Android status bar (generated
 from the app icon with sharp).
@@ -199,7 +204,8 @@ A section in Nastavenia under "Denný cieľ", titled "Pripomienka cvičenia":
   - handler: 401 without the secret, 403 cross-origin, 503 not configured, endpoint mismatch ignored,
     test rate limit, `410` deletes the subscription, `sent` written only after a successful send
     (Redis and the sender are injected fakes)
-- `src/lib/reminder.test.ts`: `buildProgress()`: done today, due today/tomorrow, streak.
+- `src/lib/reminderProgress.test.ts`: `buildProgress()`: done today, due today/tomorrow, streak.
+- `src/lib/reminder.test.ts`: stored settings parsing, VAPID key decoding.
 - On the phone:
   1. enable, then send a test notification; tapping it opens Domov
   2. set the time a few minutes ahead with the goal not met: the reminder arrives
