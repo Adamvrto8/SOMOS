@@ -3,10 +3,13 @@
 // - A lesson is passed when score >= passThreshold(total) (at least 8/10 or 80%).
 // - Lesson 1 is always unlocked.
 // - Lesson N is unlocked only if Lesson N-1 is passed.
-// - The app remembers the active lesson and returns to the first unpassed one.
+// - The app remembers the last played topic/tense and returns to the first unpassed lesson.
+// Only LessonPage records attempts, and only for a full run of a numbered lesson
+// (not for "repeat mistakes" runs), so `total` is the lesson's real size — lessons
+// of small topics have fewer than LESSON_SIZE tasks.
 
 import { useSyncExternalStore } from 'react'
-import { LESSON_SIZE, type ExerciseType } from './lesson'
+import type { ExerciseType } from './lesson'
 
 export interface LessonRecord {
   bestScore: number
@@ -17,8 +20,10 @@ export interface LessonRecord {
 
 export type LessonProgressionMap = Record<string, LessonRecord>
 
-const STORAGE_KEY = 'somos-lesson-progression'
-const ACTIVE_KEY = 'somos-lesson-active'
+// v2: the v1 keys hold records written by a bug that passed lesson N+1 with lesson N's
+// answers, and "topic:level" groups stored as topics. They are left in place, unread.
+const STORAGE_KEY = 'somos-lesson-progression-v2'
+const ACTIVE_KEY = 'somos-lesson-active-v2'
 
 export function passThreshold(total: number): number {
   return Math.max(1, Math.ceil(total * 0.8))
@@ -48,6 +53,20 @@ function safeSetItem(key: string, value: string): void {
   }
 }
 
+function isValidRecord(val: unknown): val is LessonRecord {
+  if (!val || typeof val !== 'object') return false
+  const { bestScore, total, passed } = val as Partial<LessonRecord>
+  return (
+    typeof bestScore === 'number' &&
+    typeof total === 'number' &&
+    typeof passed === 'boolean' &&
+    Number.isInteger(total) &&
+    total >= 1 &&
+    bestScore >= 0 &&
+    bestScore <= total
+  )
+}
+
 function loadMap(): LessonProgressionMap {
   try {
     const raw = safeGetItem(STORAGE_KEY)
@@ -57,24 +76,10 @@ function loadMap(): LessonProgressionMap {
       const cleaned: LessonProgressionMap = {}
       let dirty = false
       for (const [key, val] of Object.entries(parsed as Record<string, unknown>)) {
-        if (
-          val &&
-          typeof val === 'object' &&
-          'bestScore' in val &&
-          'total' in val &&
-          typeof (val as LessonRecord).bestScore === 'number' &&
-          typeof (val as LessonRecord).total === 'number' &&
-          (val as LessonRecord).total >= LESSON_SIZE &&
-          (val as LessonRecord).bestScore <= (val as LessonRecord).total
-        ) {
-          cleaned[key] = val as LessonRecord
-        } else {
-          dirty = true
-        }
+        if (isValidRecord(val)) cleaned[key] = val
+        else dirty = true
       }
-      if (dirty) {
-        safeSetItem(STORAGE_KEY, JSON.stringify(cleaned))
-      }
+      if (dirty) safeSetItem(STORAGE_KEY, JSON.stringify(cleaned))
       return cleaned
     }
   } catch {
@@ -135,13 +140,7 @@ export function isLessonUnlocked(
   map: LessonProgressionMap = progressionMap,
 ): boolean {
   if (lessonNumber <= 1) return true
-  const prevRecord = map[lessonKey(type, group, lessonNumber - 1)]
-  return (
-    prevRecord !== undefined &&
-    prevRecord.passed === true &&
-    prevRecord.total >= LESSON_SIZE &&
-    prevRecord.bestScore >= passThreshold(prevRecord.total)
-  )
+  return map[lessonKey(type, group, lessonNumber - 1)]?.passed === true
 }
 
 export function getFirstUnpassedLesson(
@@ -167,6 +166,7 @@ export interface RecordAttemptResult {
   bestScore: number
 }
 
+/** Stores the result of one full run of a numbered lesson (`total` = its task count). */
 export function recordLessonAttempt(
   type: ExerciseType,
   group: string,
@@ -174,44 +174,34 @@ export function recordLessonAttempt(
   score: number,
   total: number,
 ): RecordAttemptResult {
-  if (total < LESSON_SIZE) {
+  if (!Number.isInteger(total) || total < 1 || score < 0 || score > total) {
     return { passed: false, newlyPassed: false, bestScore: 0 }
   }
   const key = lessonKey(type, group, lessonNumber)
   const current = progressionMap[key]
-  const threshold = passThreshold(total)
-  const passed = score >= threshold
-  const bestScore = Math.max(current?.bestScore ?? 0, score)
+  const passed = score >= passThreshold(total)
+  // min: a lesson shrinks only when the dataset changes.
+  const bestScore = Math.min(total, Math.max(current?.bestScore ?? 0, score))
   const wasPassed = current?.passed === true
-  const nowPassed = bestScore >= threshold
-  const newlyPassed = !wasPassed && nowPassed
-
-  const updated: LessonRecord = {
-    bestScore,
-    total,
-    passed: nowPassed,
-    passedAt: newlyPassed ? Date.now() : current?.passedAt,
-  }
+  const newlyPassed = !wasPassed && passed
 
   saveMap({
     ...progressionMap,
-    [key]: updated,
+    [key]: {
+      bestScore,
+      total,
+      passed: wasPassed || passed,
+      passedAt: newlyPassed ? Date.now() : current?.passedAt,
+    },
   })
 
-  // Update active tracking
-  saveActiveLesson(type, group, nowPassed ? lessonNumber + 1 : lessonNumber)
-
-  return {
-    passed,
-    newlyPassed,
-    bestScore,
-  }
+  return { passed, newlyPassed, bestScore }
 }
 
 // ---------- active lesson memory ----------
 
 export interface ActiveLessonInfo {
-  group: string
+  group: string // topic id or tense (not the progression group), or 'all'
   lesson: number
 }
 
@@ -230,33 +220,20 @@ function loadActiveStore(): ActiveLessonsStore {
 }
 
 let activeStore = loadActiveStore()
-const activeListeners = new Set<() => void>()
 
-function saveActiveLesson(type: ExerciseType, group: string, lesson: number) {
+/** Remembers the topic/tense of the numbered lesson being played, for the Cvičiť screen. */
+export function rememberActiveLesson(type: ExerciseType, group: string, lesson: number): void {
   activeStore = {
     ...activeStore,
     [type]: { group, lesson },
   }
   safeSetItem(ACTIVE_KEY, JSON.stringify(activeStore))
-  activeListeners.forEach((notify) => notify())
 }
 
 export function getActiveLesson(type: ExerciseType, fallbackGroup: string): ActiveLessonInfo {
   const entry = activeStore[type]
-  if (entry && entry.group && typeof entry.lesson === 'number') {
+  if (entry && typeof entry.group === 'string' && typeof entry.lesson === 'number') {
     return entry
   }
   return { group: fallbackGroup, lesson: 1 }
-}
-
-export function useActiveLesson(type: ExerciseType, fallbackGroup: string): ActiveLessonInfo {
-  return useSyncExternalStore(
-    (notify) => {
-      activeListeners.add(notify)
-      return () => {
-        activeListeners.delete(notify)
-      }
-    },
-    () => getActiveLesson(type, fallbackGroup),
-  )
 }

@@ -6,19 +6,20 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
-import { getNumberedLessonCount, type ExerciseType, type LessonFilter } from '../../lib/lesson'
+import { getStablePool, LESSON_SIZE, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
   getActiveLesson,
   getFirstUnpassedLesson,
   getLessonRecord,
   isLessonUnlocked,
+  passThreshold,
   progressionGroup,
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
 import { pluralSk } from '../../lib/text'
 import { useUpdateParams } from '../../lib/useUrlQuery'
-import { EXERCISES, filterFromParams, filterToParams, LEVELS } from './exercises'
+import { EXERCISES, filterFromParams, filterToParams, isLessonGroup, LEVELS } from './exercises'
 
 export function PracticePage() {
   const [params] = useSearchParams()
@@ -29,16 +30,14 @@ export function PracticePage() {
 
   const rawFilter = filterFromParams(params)
 
-  // Default to saved active topic/tense or standard defaults
-  const activeMemory = getActiveLesson(
-    rawFilter.type,
-    'all',
-  )
+  // Default to the topic/tense of the last played lesson
+  const rememberedGroup = (type: ExerciseType) => {
+    const { group } = getActiveLesson(type, 'all')
+    return isLessonGroup(type, group) ? group : 'all'
+  }
 
   const group =
-    rawFilter.type === 'conjugation'
-      ? (rawFilter.tense ?? activeMemory.group ?? 'all')
-      : (rawFilter.topic ?? activeMemory.group ?? 'all')
+    (rawFilter.type === 'conjugation' ? rawFilter.tense : rawFilter.topic) ?? rememberedGroup(rawFilter.type)
 
   const filter: LessonFilter =
     rawFilter.type === 'conjugation'
@@ -46,7 +45,9 @@ export function PracticePage() {
       : { ...rawFilter, topic: group }
 
   const progGroup = progressionGroup(group, filter.level)
-  const totalLessons = getNumberedLessonCount(filter)
+  const poolSize = getStablePool(filter).length
+  const totalLessons = Math.ceil(poolSize / LESSON_SIZE)
+  const lessonSize = Math.min(poolSize, LESSON_SIZE)
   const unpassedLesson = getFirstUnpassedLesson(filter.type, progGroup, totalLessons, progression)
 
   // Passed lessons count in this topic & level
@@ -59,11 +60,11 @@ export function PracticePage() {
   const allPassed = totalLessons > 0 && passedCount === totalLessons
 
   const selectType = (type: ExerciseType) => {
-    const memory = getActiveLesson(type, 'all')
+    const remembered = rememberedGroup(type)
     if (type === 'conjugation') {
-      updateParams({ type, tense: memory.group, topic: null })
+      updateParams({ type, tense: remembered, topic: null })
     } else {
-      updateParams({ type, topic: memory.group, tense: null })
+      updateParams({ type, topic: remembered, tense: null })
     }
   }
 
@@ -213,7 +214,7 @@ export function PracticePage() {
                       className={[
                         'flex size-9 shrink-0 items-center justify-center rounded-lg text-sm font-semibold',
                         isPassed
-                          ? 'bg-success/15 text-success'
+                          ? 'bg-leaf/15 text-leaf'
                           : isCurrent
                             ? 'bg-brick text-on-accent'
                             : unlocked
@@ -229,9 +230,9 @@ export function PracticePage() {
                         {isPassed
                           ? `Splnené (${record.bestScore}/${record.total}) · ťukni pre opakovanie`
                           : record
-                            ? `Najlepšie: ${record.bestScore}/${record.total} (potrebuješ aspoň 8/10)`
+                            ? `Najlepšie: ${record.bestScore}/${record.total} (potrebuješ aspoň ${passThreshold(record.total)}/${record.total})`
                             : unlocked
-                              ? '10 úloh · pripravené'
+                              ? `${lessonSize} ${pluralSk(lessonSize, ['úloha', 'úlohy', 'úloh'])} · pripravené`
                               : `Odomkne sa po splnení Lekcie ${num - 1}`}
                       </span>
                     </div>
@@ -239,11 +240,11 @@ export function PracticePage() {
 
                   <div>
                     {isPassed ? (
-                      <span className="rounded-full bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
+                      <span className="rounded-full bg-leaf/10 px-2.5 py-1 text-xs font-medium text-leaf">
                         {record.bestScore}/{record.total}
                       </span>
                     ) : record ? (
-                      <span className="rounded-full bg-amber-500/10 px-2.5 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
+                      <span className="rounded-full bg-amber/20 px-2.5 py-1 text-xs font-medium text-ink">
                         {record.bestScore}/{record.total}
                       </span>
                     ) : isCurrent ? (

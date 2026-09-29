@@ -77,6 +77,12 @@ export function filterFromParams(params: URLSearchParams): LessonFilter {
   }
 }
 
+/** Whether `group` is a valid topic (or tense, for conjugation) of the exercise type. */
+export function isLessonGroup(type: ExerciseType, group: string): boolean {
+  if (group === 'all') return true
+  return type === 'conjugation' ? TABLE_TENSES.includes(group as TableTense) : topicById.has(group)
+}
+
 export function filterToParams(filter: LessonFilter): URLSearchParams {
   const params = new URLSearchParams({ type: filter.type })
   if (filter.topic) params.set('topic', filter.topic)

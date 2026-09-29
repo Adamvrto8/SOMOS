@@ -76,7 +76,7 @@ export function LessonResult({
           {isNumbered && (
             <div className="mt-4">
               {isPassed ? (
-                <div className="inline-flex items-center gap-2 rounded-xl bg-success/10 px-4 py-2 text-sm font-medium text-success">
+                <div className="inline-flex items-center gap-2 rounded-xl bg-leaf/10 px-4 py-2 text-sm font-medium text-leaf">
                   <Check size={18} strokeWidth={2.5} aria-hidden />
                   <span>Splnené ({score}/{total}) · Ďalšia lekcia odomknutá!</span>
                 </div>

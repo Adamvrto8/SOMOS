@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   getFirstUnpassedLesson,
   getLessonRecord,
@@ -92,38 +92,56 @@ describe('lessonProgress', () => {
     expect(isLessonUnlocked('vocab', progressionGroup('all', 'all'), 2)).toBe(false)
   })
 
-  it('rejects attempts with total < LESSON_SIZE and does not unlock next lesson', () => {
-    // E.g. retrying 2 mistakes: 2/2 should NOT record as passing the 10-question lesson
-    const result = recordLessonAttempt('cloze', 'basics', 1, 2, 2)
-    expect(result.passed).toBe(false)
-    expect(result.newlyPassed).toBe(false)
-    expect(result.bestScore).toBe(0)
-    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(false)
+  it('passes a small lesson (topic with fewer than LESSON_SIZE tasks) at 80 %', () => {
+    expect(recordLessonAttempt('cloze', 'food:B1', 1, 1, 2).passed).toBe(false)
+    expect(recordLessonAttempt('cloze', 'food:B1', 1, 2, 2).passed).toBe(true)
+    expect(getLessonRecord('cloze', 'food:B1', 1)).toMatchObject({ bestScore: 2, total: 2, passed: true })
+  })
+
+  it('ignores invalid attempts', () => {
+    expect(recordLessonAttempt('cloze', 'basics', 1, 0, 0).passed).toBe(false)
+    expect(recordLessonAttempt('cloze', 'basics', 1, 11, 10).passed).toBe(false)
     expect(getLessonRecord('cloze', 'basics', 1)).toBeUndefined()
   })
 
-  it('purges corrupted or partial entries from storage on load', () => {
-    // Corrupted record e.g. bestScore: 7, total: 1
+  it('keeps a passed lesson passed after a worse attempt', () => {
+    recordLessonAttempt('cloze', 'basics', 1, 9, 10)
+    const worse = recordLessonAttempt('cloze', 'basics', 1, 3, 10)
+    expect(worse.passed).toBe(false)
+    expect(worse.bestScore).toBe(9)
+    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(true)
+  })
+
+  it('unlocks only the lesson right after the passed one', () => {
+    recordLessonAttempt('cloze', 'basics', 1, 10, 10)
+    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(true)
+    expect(isLessonUnlocked('cloze', 'basics', 3)).toBe(false)
+    // Failing lesson 2 does not unlock lesson 3.
+    recordLessonAttempt('cloze', 'basics', 2, 7, 10)
+    expect(isLessonUnlocked('cloze', 'basics', 3)).toBe(false)
+  })
+
+  it('drops malformed records from storage on load', async () => {
     storage.set(
-      'somos-lesson-progression',
+      'somos-lesson-progression-v2',
       JSON.stringify({
         'cloze:basics:1': { bestScore: 7, total: 1, passed: true },
         'cloze:basics:2': { bestScore: 9, total: 10, passed: true },
+        'cloze:basics:3': { bestScore: 'x', total: 10, passed: true },
       }),
     )
+    vi.resetModules()
+    const fresh = await import('./lessonProgress')
+    expect(fresh.getLessonRecord('cloze', 'basics', 1)).toBeUndefined()
+    expect(fresh.getLessonRecord('cloze', 'basics', 2)?.passed).toBe(true)
+    expect(fresh.getLessonRecord('cloze', 'basics', 3)).toBeUndefined()
+    expect(Object.keys(JSON.parse(storage.get('somos-lesson-progression-v2')!) as object)).toEqual(['cloze:basics:2'])
+  })
 
-    // Re-trigger load by resetting progression with storage preserved
-    resetProgressionForTesting()
-    // Populate storage with invalid entry again to test load cleaning
-    storage.set(
-      'somos-lesson-progression',
-      JSON.stringify({
-        'cloze:basics:1': { bestScore: 7, total: 1, passed: true },
-        'cloze:basics:2': { bestScore: 9, total: 10, passed: true },
-      }),
-    )
-
-    // Unlocked check for lesson 2 should be false because lesson 1 was invalid (total < 10)
-    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(false)
+  it('does not read progress written by the buggy v1 build', async () => {
+    storage.set('somos-lesson-progression', JSON.stringify({ 'cloze:basics:1': { bestScore: 10, total: 10, passed: true } }))
+    vi.resetModules()
+    const fresh = await import('./lessonProgress')
+    expect(fresh.isLessonUnlocked('cloze', 'basics', 2)).toBe(false)
   })
 })

@@ -16,7 +16,13 @@ import {
   type LessonFilter,
   type Task,
 } from '../../lib/lesson'
-import { progressionGroup, recordLessonAttempt } from '../../lib/lessonProgress'
+import {
+  isLessonUnlocked,
+  progressionGroup,
+  recordLessonAttempt,
+  rememberActiveLesson,
+  useLessonProgression,
+} from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
@@ -41,51 +47,59 @@ export function LessonPage() {
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
   const fromMistakes = params.get('mistakes') === '1'
-  const lessonParam = params.get('lesson')
-  const lessonNumber = lessonParam ? Number(lessonParam) : undefined
+  const lessonParam = fromMistakes ? null : params.get('lesson')
+  const lessonNumber = lessonParam === null ? undefined : Number(lessonParam)
   const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
   const group = progressionGroup(rawGroup, filter.level)
-  const totalLessons = getNumberedLessonCount(filter)
+  const totalLessons = useMemo(() => getNumberedLessonCount(filter), [filter])
+  const progression = useLessonProgression()
+  // A typed URL, an old link or browser history must not open (and then pass) a locked lesson.
+  const locked =
+    lessonNumber !== undefined &&
+    !(
+      Number.isInteger(lessonNumber) &&
+      lessonNumber >= 1 &&
+      lessonNumber <= totalLessons &&
+      isLessonUnlocked(filter.type, group, lessonNumber, progression)
+    )
 
   const navigate = useNavigate()
   const location = useLocation()
 
   const [tasks, setTasks] = useState<Task[] | null>(null) // null = loading
+  // The numbered lesson these tasks are a full run of; undefined for "repeat mistakes" runs.
+  // Kept with the tasks, not read from the URL: after "Ďalšia lekcia" the URL already
+  // names the next lesson while the finished one is still on screen.
+  const [runLesson, setRunLesson] = useState<number | undefined>()
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([])
   const [confirmExit, setConfirmExit] = useState(false)
-  const [isRetryingMistakes, setIsRetryingMistakes] = useState(false)
 
-  const start = (next: Task[], isMistakesRetry = false) => {
+  const start = (next: Task[], lesson?: number) => {
     setTasks(next)
+    setRunLesson(lesson)
     setIndex(0)
     setAnswer(emptyAnswer(next[0]))
     setGrade(null)
     setAnswers([])
-    setIsRetryingMistakes(isMistakesRetry)
+    setConfirmExit(false)
   }
 
   useEffect(() => {
+    if (locked) return
     let active = true
-    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => active && start(next))
+    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => active && start(next, lessonNumber))
+    if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber)
     return () => {
       active = false
     }
-  }, [filter, fromMistakes, lessonNumber])
+  }, [filter, fromMistakes, lessonNumber, locked, rawGroup])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
   const finished = total > 0 && index >= total
-
-  // Record progress when a numbered lesson finishes
-  useEffect(() => {
-    if (finished && lessonNumber && !isRetryingMistakes && answers.length >= LESSON_SIZE) {
-      const score = answers.filter((a) => a.correct).length
-      recordLessonAttempt(filter.type, group, lessonNumber, score, answers.length)
-    }
-  }, [finished, lessonNumber, isRetryingMistakes, filter.type, group, answers])
 
   // Braces matter: newer browsers return a Promise from scrollTo, which React
   // would treat as an (invalid) effect cleanup.
@@ -118,7 +132,13 @@ export function LessonPage() {
     void recordAttempt(task.kind, task.itemId, correct)
     if (!correct) void recordMistake(task.kind, task.itemId)
     if (resolve) void removeMistake(task.kind, task.itemId)
-    setAnswers((prev) => [...prev, { task, grade, correct }])
+    const nextAnswers = [...answers, { task, grade, correct }]
+    setAnswers(nextAnswers)
+    // Recorded once, at the last answer of a full numbered-lesson run.
+    if (runLesson !== undefined && index + 1 === tasks.length) {
+      const score = nextAnswers.filter((a) => a.correct).length
+      recordLessonAttempt(filter.type, group, runLesson, score, nextAnswers.length)
+    }
     setIndex(index + 1)
     setAnswer(emptyAnswer(tasks[index + 1]))
     setGrade(null)
@@ -148,12 +168,20 @@ export function LessonPage() {
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
         <span className="w-16 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
-          {lessonNumber ? `L${lessonNumber} · ` : ''}{total ? `${Math.min(index + 1, total)}/${total}` : ''}
+          {runLesson ? `L${runLesson} · ` : ''}{total ? `${Math.min(index + 1, total)}/${total}` : ''}
         </span>
       </header>
 
       <main className="px-4 pt-4 pb-80">
-        {tasks === null ? null : total === 0 ? (
+        {locked ? (
+          <div className="pt-10 text-center">
+            <p className="font-serif text-2xl font-semibold">Lekcia je zamknutá</p>
+            <p className="mt-2 text-ink-muted">Odomkne sa, keď splníš predchádzajúcu lekciu aspoň na 80 %.</p>
+            <Button variant="secondary" onClick={exit} className="mt-6">
+              Späť
+            </Button>
+          </div>
+        ) : tasks === null ? null : total === 0 ? (
           <div className="pt-10 text-center">
             <p className="font-serif text-2xl font-semibold">{fromMistakes ? 'Žiadne chyby' : 'Žiadne úlohy'}</p>
             <p className="mt-2 text-ink-muted">
@@ -168,30 +196,25 @@ export function LessonPage() {
         ) : finished ? (
           <LessonResult
             answers={answers}
-            fromMistakes={fromMistakes || isRetryingMistakes}
-            lessonNumber={isRetryingMistakes ? undefined : lessonNumber}
+            fromMistakes={fromMistakes}
+            lessonNumber={runLesson}
             totalLessons={totalLessons}
             onRetryMistakes={() => {
-              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), true)
+              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)))
             }}
             onRepeatAll={() => {
-              setIsRetryingMistakes(false)
-              if (lessonNumber) {
-                void buildLesson(filter, fromMistakes, lessonNumber).then(start)
+              if (lessonNumber !== undefined) {
+                void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
               } else if (tasks) {
                 start(retryTasks(tasks))
               }
             }}
             onNewLesson={() => {
-              setIsRetryingMistakes(false)
-              void buildLesson(filter, fromMistakes, lessonNumber).then(start)
+              void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
             }}
             onNextLesson={() => {
-              setIsRetryingMistakes(false)
-              if (!lessonNumber) return
-              const nextNum = lessonNumber + 1
-              const nextParams = filterToParams(filter)
-              void navigate(`/practice/lesson?${nextParams}&lesson=${nextNum}`)
+              if (runLesson === undefined) return
+              void navigate(`/practice/lesson?${filterToParams(filter)}&lesson=${runLesson + 1}`, { replace: true })
             }}
             onExit={exit}
           />
@@ -199,7 +222,7 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? 'Chyby · ' : lessonNumber ? `Lekcia ${lessonNumber} · ` : ''}
+                {fromMistakes ? 'Chyby · ' : runLesson ? `Lekcia ${runLesson} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
@@ -210,7 +233,7 @@ export function LessonPage() {
         )}
       </main>
 
-      {task && !finished && (
+      {!locked && task && !finished && (
         <div className="fixed inset-x-0 bottom-0 z-20">
           <div className="mx-auto max-w-[480px]">
             {confirmExit ? (
