@@ -258,5 +258,44 @@ describe('createNumberedLesson', () => {
       expect(Array.from(ids1).sort()).not.toEqual(Array.from(ids2).sort())
     }
   })
+
+  it('creates deterministically mixed tasks across topics when topic is all', () => {
+    const filter = { type: 'vocab' as const, topic: 'all' }
+    const count = getNumberedLessonCount(filter)
+    expect(count).toBeGreaterThan(1)
+
+    const lesson1AttemptA = createNumberedLesson(filter, 1, seeded(1))
+    const lesson1AttemptB = createNumberedLesson(filter, 1, seeded(2))
+
+    // Set of items in lesson 1 must be identical across attempts
+    expect(itemIds(lesson1AttemptA).sort()).toEqual(itemIds(lesson1AttemptB).sort())
+    expect(lesson1AttemptA).toHaveLength(LESSON_SIZE)
+
+    // Lesson 1 must contain words from multiple topics (mixed)
+    const topicsInLesson1 = new Set(
+      lesson1AttemptA.flatMap((t) => (t.kind === 'vocab' ? t.word.topics : [])),
+    )
+    expect(topicsInLesson1.size).toBeGreaterThan(1)
+
+    // Lesson 2 must not repeat any items from Lesson 1
+    const lesson2 = createNumberedLesson(filter, 2, seeded(3))
+    const ids1 = new Set(itemIds(lesson1AttemptA))
+    for (const task of lesson2) {
+      expect(ids1.has(task.itemId)).toBe(false)
+    }
+  })
+
+  it('creates deterministically mixed tasks for sentences when topic is all', () => {
+    const filter = { type: 'translation' as const, topic: 'all' }
+    const lesson1AttemptA = createNumberedLesson(filter, 1, seeded(1))
+    const lesson1AttemptB = createNumberedLesson(filter, 1, seeded(2))
+    expect(itemIds(lesson1AttemptA).sort()).toEqual(itemIds(lesson1AttemptB).sort())
+
+    const lesson2 = createNumberedLesson(filter, 2, seeded(3))
+    const ids1 = new Set(itemIds(lesson1AttemptA))
+    for (const task of lesson2) {
+      expect(ids1.has(task.itemId)).toBe(false)
+    }
+  })
 })
 

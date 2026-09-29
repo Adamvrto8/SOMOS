@@ -10,9 +10,9 @@ export const LESSON_SIZE = 10
 
 export interface LessonFilter {
   type: ExerciseType
-  topic?: string // sentence exercises
+  topic?: string // sentence exercises or 'all'
   level?: Level
-  tense?: TableTense // conjugation drill
+  tense?: TableTense | 'all' // conjugation drill or 'all'
 }
 
 export interface ClozeTask {
@@ -113,7 +113,7 @@ function takeLimited<T>(items: T[], size: number, key: (item: T) => string, max:
 }
 
 const matchesSentence = (s: Sentence, { topic, level }: LessonFilter) =>
-  (!topic || s.topics.includes(topic)) && (!level || s.level === level)
+  (!topic || topic === 'all' || s.topics.includes(topic)) && (!level || s.level === level)
 
 /** Words for the sentence builder: no punctuation, sentence-initial capital dropped. */
 export function builderWords(sentence: Sentence): string[] {
@@ -145,7 +145,7 @@ function choiceItems(filter: LessonFilter) {
 }
 
 function conjugationItems({ level, tense }: LessonFilter) {
-  const tenses = tense ? [tense] : TABLE_TENSES
+  const tenses = tense && tense !== 'all' ? [tense] : TABLE_TENSES
   return verbs
     .filter((v) => !level || v.level === level)
     .flatMap((verb) => tenses.flatMap((t) => PERSONS.map((person) => ({ verb, tense: t, person }))))
@@ -172,7 +172,7 @@ export function availableCount(filter: LessonFilter): number {
     case 'translation':
       return translationSentences(filter).length
     case 'vocab':
-      return words.filter((w) => (!filter.topic || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length * 2
+      return words.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length * 2
   }
 }
 
@@ -280,13 +280,56 @@ function compareSentences(a: Sentence, b: Sentence): number {
   return a.id.localeCompare(b.id, undefined, { numeric: true })
 }
 
+function seedFor(type: ExerciseType): number {
+  switch (type) {
+    case 'cloze': return 1013904223
+    case 'choice': return 2147483647
+    case 'builder': return 1664525
+    case 'translation': return 982451653
+    case 'vocab': return 42424242
+    case 'conjugation': return 7777777
+  }
+}
+
+function seededRandom(seed: number): () => number {
+  let s = seed
+  return () => {
+    s = (s * 1664525 + 1013904223) % 4294967296
+    return s / 4294967296
+  }
+}
+
+function orderSentences(items: Sentence[], type: ExerciseType, isAllTopics: boolean): Sentence[] {
+  if (!isAllTopics) {
+    const sorted = [...items]
+    sorted.sort(compareSentences)
+    return sorted
+  }
+  const byLevel = new Map<Level, Sentence[]>()
+  for (const s of items) {
+    const list = byLevel.get(s.level) ?? []
+    list.push(s)
+    byLevel.set(s.level, list)
+  }
+  const sortedLevels: Level[] = ['A1', 'A2', 'B1', 'B2']
+  const result: Sentence[] = []
+  for (const lvl of sortedLevels) {
+    const list = byLevel.get(lvl)
+    if (list && list.length > 0) {
+      list.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
+      result.push(...shuffle(list, seededRandom(seedFor(type) + (LEVEL_ORDER[lvl] ?? 1))))
+    }
+  }
+  return result
+}
+
 /** Deterministic list of all candidate items for a topic/tense filter, sorted stably. */
 export function getStablePool(filter: LessonFilter): Task[] {
   switch (filter.type) {
     case 'cloze': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.length ?? 0) > 0)
-      matching.sort(compareSentences)
-      return matching.map((sentence): ClozeTask => ({
+      const ordered = orderSentences(matching, 'cloze', !filter.topic || filter.topic === 'all')
+      return ordered.map((sentence): ClozeTask => ({
         kind: 'cloze',
         itemId: `${sentence.id}#0`,
         sentence,
@@ -295,37 +338,65 @@ export function getStablePool(filter: LessonFilter): Task[] {
     }
     case 'choice': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.[0].distractors?.length ?? 0) >= 2)
-      matching.sort(compareSentences)
-      return matching.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5))
+      const ordered = orderSentences(matching, 'choice', !filter.topic || filter.topic === 'all')
+      return ordered.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5))
     }
     case 'conjugation': {
-      const tenses = filter.tense ? [filter.tense] : TABLE_TENSES
+      const isAll = !filter.tense || filter.tense === 'all'
+      const tenses: TableTense[] = isAll ? TABLE_TENSES : [filter.tense as TableTense]
       const matchingVerbs = verbs.filter((v) => !filter.level || v.level === filter.level)
       matchingVerbs.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.id.localeCompare(b.id))
-      return tenses.flatMap((tense) =>
+      const allTasks = tenses.flatMap((tense) =>
         PERSONS.flatMap((person) =>
           matchingVerbs.map((verb) => conjugationTask(verb, tense, person)),
         ),
       )
+      if (isAll) {
+        allTasks.sort((a, b) => a.itemId.localeCompare(b.itemId))
+        return shuffle(allTasks, seededRandom(seedFor('conjugation')))
+      }
+      return allTasks
     }
     case 'builder': {
       const matching = builderSentences(filter)
-      matching.sort(compareSentences)
-      return matching.map((sentence) => builderTask(sentence, () => 0.5))
+      const ordered = orderSentences(matching, 'builder', !filter.topic || filter.topic === 'all')
+      return ordered.map((sentence) => builderTask(sentence, () => 0.5))
     }
     case 'translation': {
       const matching = translationSentences(filter)
-      matching.sort(compareSentences)
-      return matching.map((sentence): TranslationTask => ({
+      const ordered = orderSentences(matching, 'translation', !filter.topic || filter.topic === 'all')
+      return ordered.map((sentence): TranslationTask => ({
         kind: 'translation',
         itemId: sentence.id,
         sentence,
       }))
     }
     case 'vocab': {
+      const isAll = !filter.topic || filter.topic === 'all'
       const matching = words.filter(
-        (w) => (!filter.topic || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level),
+        (w) => (isAll || w.topics.includes(filter.topic!)) && (!filter.level || w.level === filter.level),
       )
+      if (isAll) {
+        const byLevel = new Map<Level, Word[]>()
+        for (const w of matching) {
+          const list = byLevel.get(w.level) ?? []
+          list.push(w)
+          byLevel.set(w.level, list)
+        }
+        const sortedLevels: Level[] = ['A1', 'A2', 'B1', 'B2']
+        const orderedWords: Word[] = []
+        for (const lvl of sortedLevels) {
+          const list = byLevel.get(lvl)
+          if (list && list.length > 0) {
+            list.sort((a, b) => a.id.localeCompare(b.id))
+            orderedWords.push(...shuffle(list, seededRandom(seedFor('vocab') + (LEVEL_ORDER[lvl] ?? 1))))
+          }
+        }
+        return [
+          ...orderedWords.map((w, i) => vocabTask(w, i % 2 === 0 ? 'sk-es' : 'es-sk')),
+          ...orderedWords.map((w, i) => vocabTask(w, i % 2 === 0 ? 'es-sk' : 'sk-es')),
+        ]
+      }
       matching.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.es.localeCompare(b.es))
       return [
         ...matching.map((w, i) => vocabTask(w, i % 2 === 0 ? 'sk-es' : 'es-sk')),

@@ -31,17 +31,17 @@ export function PracticePage() {
   // Default to saved active topic/tense or standard defaults
   const activeMemory = getActiveLesson(
     rawFilter.type,
-    rawFilter.type === 'conjugation' ? 'presente' : 'basics',
+    'all',
   )
 
   const group =
     rawFilter.type === 'conjugation'
-      ? (rawFilter.tense ?? (activeMemory.group as TableTense) ?? 'presente')
-      : (rawFilter.topic ?? activeMemory.group ?? 'basics')
+      ? (rawFilter.tense ?? activeMemory.group ?? 'all')
+      : (rawFilter.topic ?? activeMemory.group ?? 'all')
 
   const filter: LessonFilter =
     rawFilter.type === 'conjugation'
-      ? { ...rawFilter, tense: group as TableTense }
+      ? { ...rawFilter, tense: group as TableTense | 'all' }
       : { ...rawFilter, topic: group }
 
   const totalLessons = getNumberedLessonCount(filter)
@@ -57,7 +57,7 @@ export function PracticePage() {
   const allPassed = totalLessons > 0 && passedCount === totalLessons
 
   const selectType = (type: ExerciseType) => {
-    const memory = getActiveLesson(type, type === 'conjugation' ? 'presente' : 'basics')
+    const memory = getActiveLesson(type, 'all')
     if (type === 'conjugation') {
       updateParams({ type, tense: memory.group, topic: null })
     } else {
@@ -131,6 +131,9 @@ export function PracticePage() {
         <section aria-labelledby="tense-heading">
           <SectionTitle id="tense-heading">Čas</SectionTitle>
           <div role="group" aria-labelledby="tense-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
+            <Chip selected={group === 'all'} onClick={() => updateParams({ tense: 'all' })}>
+              Všetky časy
+            </Chip>
             {TABLE_TENSES.map((t) => (
               <Chip key={t} selected={group === t} onClick={() => updateParams({ tense: t })}>
                 {TENSE_LABELS[t]}
@@ -142,6 +145,9 @@ export function PracticePage() {
         <section aria-labelledby="topic-heading">
           <SectionTitle id="topic-heading">Téma</SectionTitle>
           <div role="group" aria-labelledby="topic-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
+            <Chip selected={group === 'all'} onClick={() => updateParams({ topic: 'all' })}>
+              Všetko
+            </Chip>
             {topics.map((t) => (
               <Chip key={t.id} selected={group === t.id} onClick={() => updateParams({ topic: t.id })}>
                 {t.sk}
@@ -265,7 +271,9 @@ export function PracticePage() {
           {totalLessons === 0
             ? 'Pre tento výber zatiaľ nie sú žiadne úlohy.'
             : allPassed
-              ? 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓'
+              ? group === 'all'
+                ? 'Všetky lekcie sú úspešne zvládnuté! ✓'
+                : 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓'
               : 'Na odomknutie ďalšej lekcie potrebuješ aspoň 8/10 (80 %)'}
         </p>
       </div>

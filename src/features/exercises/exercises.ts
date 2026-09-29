@@ -67,12 +67,12 @@ export function filterFromParams(params: URLSearchParams): LessonFilter {
   const type = EXERCISES.find((e) => e.type === params.get('type'))?.type ?? 'cloze'
   const topic = params.get('topic')
   const level = params.get('level') as Level | null
-  const tense = params.get('tense') as TableTense | null
+  const tense = params.get('tense') as TableTense | 'all' | null
   return {
     type,
     // Conjugation drills are filtered by tense; the other exercises by topic.
-    topic: type !== 'conjugation' && topic && topicById.has(topic) ? topic : undefined,
-    tense: type === 'conjugation' && tense && TABLE_TENSES.includes(tense) ? tense : undefined,
+    topic: type !== 'conjugation' && topic && (topic === 'all' || topicById.has(topic)) ? topic : undefined,
+    tense: type === 'conjugation' && tense && (tense === 'all' || TABLE_TENSES.includes(tense as TableTense)) ? tense : undefined,
     level: level && LEVELS.includes(level) ? level : undefined,
   }
 }
