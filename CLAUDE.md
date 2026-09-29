@@ -58,6 +58,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
 | Pronunciation | Web Speech API `speechSynthesis` (free, built into browser) |
 | Hosting | Vercel (free) |
 | Online lookup | DeepL API Free via the Vercel function `api/translate.ts` (key only in the `DEEPL_API_KEY` env var, same-origin requests, ≤120 chars, ES-419 with ES fallback); `src/lib/translate.ts` caches results in Dexie `lookups`. Files in `api/` starting with `_` are not deployed (tests) |
+| Reminders | Web Push: `api/reminder.ts` (Vercel function, `web-push`) keeps state in Upstash Redis and is called every 15 min by cron-job.org (`Authorization: Bearer CRON_SECRET`); env `VAPID_PRIVATE_KEY`, `CRON_SECRET`, Upstash `KV_REST_API_URL`/`KV_REST_API_TOKEN`. `public/push-sw.js` is imported into the service worker. One reminder a day at the chosen time (±2 h window), only while the daily goal is not met |
 
 Content lives as **static JSON in `src/data/`**, bundled with the app → offline & free.
 
@@ -203,7 +204,7 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
   `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
 - **Archív** — tabs Uložené / Moje slová / Chyby, search + topic filter, "Zopakovať" (SRS session),
-  "+" add custom word, settings: export/import backup, theme, daily goal, TTS voice.
+  "+" add custom word, settings: export/import backup, theme, daily goal, practice reminder (push, time), TTS voice.
 
 Mobile first (375px), max content width ~480px centered on desktop. Large tap targets (≥44px).
 
@@ -260,7 +261,7 @@ src/
     words/         one file per topic (food.json…) + verbs.json (the verb Words)
     sentences/     one file per topic
     verbs/         core.json (first 20), a1-a2.json, b1.json
-  lib/             db.ts (Dexie), search.ts, checkAnswer.ts, conjugate.ts, srs.ts, tts.ts
+  lib/             db.ts (Dexie), search.ts, checkAnswer.ts, conjugate.ts, srs.ts, tts.ts, reminder.ts (push reminder)
   features/
     search/  word/  exercises/  archive/  home/
   components/      ui primitives (Button, Card, Chip, Sheet, TabBar…)
