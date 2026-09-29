@@ -12,6 +12,7 @@ import {
   getFirstUnpassedLesson,
   getLessonRecord,
   isLessonUnlocked,
+  progressionGroup,
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
@@ -44,13 +45,14 @@ export function PracticePage() {
       ? { ...rawFilter, tense: group as TableTense | 'all' }
       : { ...rawFilter, topic: group }
 
+  const progGroup = progressionGroup(group, filter.level)
   const totalLessons = getNumberedLessonCount(filter)
-  const unpassedLesson = getFirstUnpassedLesson(filter.type, group, totalLessons, progression)
+  const unpassedLesson = getFirstUnpassedLesson(filter.type, progGroup, totalLessons, progression)
 
-  // Passed lessons count in this topic
+  // Passed lessons count in this topic & level
   let passedCount = 0
   for (let i = 1; i <= totalLessons; i++) {
-    if (getLessonRecord(filter.type, group, i, progression)?.passed) {
+    if (getLessonRecord(filter.type, progGroup, i, progression)?.passed) {
       passedCount++
     }
   }
@@ -185,8 +187,8 @@ export function PracticePage() {
         ) : (
           <div className="grid gap-2">
             {Array.from({ length: totalLessons }, (_, i) => i + 1).map((num) => {
-              const record = getLessonRecord(filter.type, group, num, progression)
-              const unlocked = isLessonUnlocked(filter.type, group, num, progression)
+              const record = getLessonRecord(filter.type, progGroup, num, progression)
+              const unlocked = isLessonUnlocked(filter.type, progGroup, num, progression)
               const isCurrent = num === unpassedLesson && (!record || !record.passed)
               const isPassed = record?.passed === true
 

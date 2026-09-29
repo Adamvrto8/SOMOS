@@ -24,6 +24,10 @@ export function passThreshold(total: number): number {
   return Math.max(1, Math.ceil(total * 0.8))
 }
 
+export function progressionGroup(group: string, level?: string): string {
+  return level && level !== 'all' ? `${group}:${level}` : `${group}:all`
+}
+
 export function lessonKey(type: ExerciseType, group: string, lessonNumber: number): string {
   return `${type}:${group}:${lessonNumber}`
 }
@@ -50,7 +54,22 @@ function loadMap(): LessonProgressionMap {
     if (!raw) return {}
     const parsed: unknown = JSON.parse(raw)
     if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
-      return parsed as LessonProgressionMap
+      const cleaned: LessonProgressionMap = {}
+      for (const [key, val] of Object.entries(parsed as Record<string, unknown>)) {
+        if (
+          val &&
+          typeof val === 'object' &&
+          'bestScore' in val &&
+          'total' in val &&
+          typeof (val as LessonRecord).bestScore === 'number' &&
+          typeof (val as LessonRecord).total === 'number' &&
+          (val as LessonRecord).total >= 10 &&
+          (val as LessonRecord).bestScore <= (val as LessonRecord).total
+        ) {
+          cleaned[key] = val as LessonRecord
+        }
+      }
+      return cleaned
     }
   } catch {
     // Missing or invalid JSON

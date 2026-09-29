@@ -5,6 +5,7 @@ import {
   isLessonUnlocked,
   lessonKey,
   passThreshold,
+  progressionGroup,
   recordLessonAttempt,
   resetProgressionForTesting,
 } from './lessonProgress'
@@ -76,5 +77,18 @@ describe('lessonProgress', () => {
 
     recordLessonAttempt('cloze', 'basics', 2, 10, 10) // passed
     expect(getFirstUnpassedLesson('cloze', 'basics', 3)).toBe(3)
+  })
+
+  it('distinguishes progression groups by level', () => {
+    expect(progressionGroup('all', 'A1')).toBe('all:A1')
+    expect(progressionGroup('all', 'A2')).toBe('all:A2')
+    expect(progressionGroup('all', undefined)).toBe('all:all')
+    expect(progressionGroup('all', 'all')).toBe('all:all')
+
+    // Passing Lesson 1 in A1 does not unlock Lesson 2 in A2
+    recordLessonAttempt('vocab', progressionGroup('all', 'A1'), 1, 9, 10)
+    expect(isLessonUnlocked('vocab', progressionGroup('all', 'A1'), 2)).toBe(true)
+    expect(isLessonUnlocked('vocab', progressionGroup('all', 'A2'), 2)).toBe(false)
+    expect(isLessonUnlocked('vocab', progressionGroup('all', 'all'), 2)).toBe(false)
   })
 })

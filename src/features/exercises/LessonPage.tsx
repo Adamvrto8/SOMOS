@@ -16,7 +16,7 @@ import {
   type LessonFilter,
   type Task,
 } from '../../lib/lesson'
-import { recordLessonAttempt } from '../../lib/lessonProgress'
+import { progressionGroup, recordLessonAttempt } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
@@ -43,7 +43,8 @@ export function LessonPage() {
   const fromMistakes = params.get('mistakes') === '1'
   const lessonParam = params.get('lesson')
   const lessonNumber = lessonParam ? Number(lessonParam) : undefined
-  const group = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
+  const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
+  const group = progressionGroup(rawGroup, filter.level)
   const totalLessons = getNumberedLessonCount(filter)
 
   const navigate = useNavigate()
