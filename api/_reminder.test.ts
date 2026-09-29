@@ -1,4 +1,5 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
+import { readFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
 import {
   composeMessage,
@@ -11,6 +12,7 @@ import {
   previousDay,
   todayView,
   upstashStore,
+  VAPID_PUBLIC_KEY,
   type Deps,
   type ReminderProgress,
   type ReminderSub,
@@ -327,5 +329,12 @@ describe('upstashStore', () => {
   it('throws on an Upstash error', async () => {
     const store = upstashStore('https://redis.example', 'token', vi.fn(async () => Response.json({ error: 'WRONGPASS' }, { status: 401 })))
     await expect(store.mget([KEYS.sub])).rejects.toThrow('WRONGPASS')
+  })
+})
+
+describe('VAPID public key', () => {
+  it('is the same in the app and on the server', async () => {
+    const app = await readFile(new URL('../src/lib/reminder.ts', import.meta.url), 'utf8')
+    expect(app).toContain(`export const VAPID_PUBLIC_KEY = '${VAPID_PUBLIC_KEY}'`)
   })
 })
