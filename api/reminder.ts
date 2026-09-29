@@ -3,6 +3,7 @@
 //   GET  /api/reminder: from cron-job.org every 15 minutes (Authorization: Bearer CRON_SECRET)
 // Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
+import webpush from 'web-push'
 
 // ---------- types (ReminderProgress mirrors src/lib/reminderProgress.ts) ----------
 
@@ -157,4 +158,200 @@ export function decide(now: Date, sub: ReminderSub, progress: ReminderProgress |
   const view = todayView(progress, day)
   if (view.done >= view.goal) return { send: false, reason: 'goal-met' }
   return { send: true, day, message: composeMessage(view) }
+}
+
+// ---------- storage: Upstash Redis over REST ----------
+
+export const KEYS = {
+  sub: 'somos:reminder:sub',
+  progress: 'somos:reminder:progress',
+  sent: 'somos:reminder:sent', // day key of the last reminder sent
+  test: 'somos:reminder:test', // exists for 60 s after a test notification
+} as const
+
+export interface Store {
+  mget(keys: string[]): Promise<(string | null)[]>
+  set(key: string, value: string): Promise<void>
+  del(key: string): Promise<void>
+  /** SET … EX ttl NX: true when the key did not exist yet. */
+  setIfAbsent(key: string, value: string, ttlSeconds: number): Promise<boolean>
+}
+
+export function upstashStore(url: string, token: string, fetchImpl: typeof fetch = fetch): Store {
+  const run = async (command: (string | number)[]): Promise<unknown> => {
+    const res = await fetchImpl(url, { method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: JSON.stringify(command) })
+    const data = (await res.json().catch(() => ({}))) as { result?: unknown; error?: string }
+    if (!res.ok || data.error) throw new Error(`Upstash ${command[0]} failed: ${data.error ?? res.status}`)
+    return data.result
+  }
+  return {
+    mget: async (keys) => (await run(['MGET', ...keys])) as (string | null)[],
+    set: async (key, value) => {
+      await run(['SET', key, value])
+    },
+    del: async (key) => {
+      await run(['DEL', key])
+    },
+    setIfAbsent: async (key, value, ttlSeconds) => (await run(['SET', key, value, 'EX', ttlSeconds, 'NX'])) === 'OK',
+  }
+}
+
+/** Stored JSON that no longer parses or validates counts as missing. */
+function parseStored<T>(raw: string | null | undefined, isValid: (v: unknown) => v is T): T | null {
+  if (!raw) return null
+  try {
+    const value: unknown = JSON.parse(raw)
+    return isValid(value) ? value : null
+  } catch {
+    return null
+  }
+}
+
+// ---------- sending ----------
+
+// Public half of the VAPID key pair (the private half is VAPID_PRIVATE_KEY). Same value in src/lib/reminder.ts.
+export const VAPID_PUBLIC_KEY = 'BPTIxlaW9JLc2601tsFgNg6FVwR8CUB4GHBVze_ERU7m0EEuYrWb4Y8XwBVAIMRjYgB_aBVi48EnbCx4-isXD_Q'
+const VAPID_SUBJECT = 'https://somos-jade.vercel.app'
+const REMINDER_TTL = 4 * 60 * 60 // seconds; a reminder that arrives hours late is pointless
+
+export interface SendOptions {
+  ttl: number
+  topic: string
+}
+
+/** Delivers one push message; rejects with `{ statusCode }` when the push service refuses it. */
+export type Sender = (subscription: PushSub, payload: string, options: SendOptions) => Promise<void>
+
+export function webPushSender(privateKey: string): Sender {
+  return async (subscription, payload, { ttl, topic }) => {
+    await webpush.sendNotification(subscription, payload, {
+      vapidDetails: { subject: VAPID_SUBJECT, publicKey: VAPID_PUBLIC_KEY, privateKey },
+      TTL: ttl,
+      topic,
+      urgency: 'normal',
+    })
+  }
+}
+
+export interface Deps {
+  store: Store
+  send: Sender
+  now: () => Date
+  cronSecret: string
+}
+
+type Delivery = 'sent' | 'gone' | 'failed'
+
+const statusOf = (error: unknown) => (isRecord(error) && typeof error.statusCode === 'number' ? error.statusCode : undefined)
+
+/** Sends a message; forgets a subscription the push service no longer knows. */
+async function deliver(deps: Deps, sub: ReminderSub, message: Message, topic: string): Promise<Delivery> {
+  try {
+    await deps.send(sub.subscription, JSON.stringify({ ...message, url: '/' }), { ttl: REMINDER_TTL, topic })
+    return 'sent'
+  } catch (error) {
+    const status = statusOf(error)
+    if (status === 404 || status === 410) {
+      await deps.store.del(KEYS.sub)
+      return 'gone'
+    }
+    console.error('push failed', status ?? error)
+    return 'failed'
+  }
+}
+
+// ---------- HTTP ----------
+
+const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
+
+/** Browsers send Origin on POST: only pages of this same deployment may change the reminder. */
+function sameOrigin(request: Request): boolean {
+  const origin = request.headers.get('origin')
+  if (!origin) return false
+  try {
+    return new URL(origin).host === request.headers.get('host')
+  } catch {
+    return false
+  }
+}
+
+async function tick(deps: Deps): Promise<Response> {
+  const [rawSub, rawProgress, sentDay] = await deps.store.mget([KEYS.sub, KEYS.progress, KEYS.sent])
+  const sub = parseStored(rawSub, isReminderSub)
+  if (!sub) return json({ sent: false, reason: 'no-subscription' })
+  const decision = decide(deps.now(), sub, parseStored(rawProgress, isProgress), sentDay ?? null)
+  if (!decision.send) return json({ sent: false, reason: decision.reason })
+  const result = await deliver(deps, sub, decision.message, 'reminder')
+  if (result === 'sent') await deps.store.set(KEYS.sent, decision.day)
+  return json({ sent: result === 'sent', reason: result }, result === 'failed' ? 502 : 200)
+}
+
+async function handlePost(request: Request, deps: Deps): Promise<Response> {
+  if (!sameOrigin(request)) return json({ error: 'forbidden' }, 403)
+  const body: unknown = await request.json().catch(() => undefined)
+  if (!isRecord(body)) return json({ error: 'bad-request' }, 400)
+
+  const [rawSub] = await deps.store.mget([KEYS.sub])
+  const stored = parseStored(rawSub, isReminderSub)
+  // Only the device that gets the reminders may change or feed them.
+  const fromStoredDevice = typeof body.endpoint === 'string' && stored?.subscription.endpoint === body.endpoint
+
+  switch (body.type) {
+    case 'subscribe': {
+      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone }
+      if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
+      const { endpoint, keys } = sub.subscription
+      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone }
+      await deps.store.set(KEYS.sub, JSON.stringify(clean))
+      return json({ ok: true })
+    }
+    case 'unsubscribe':
+      if (fromStoredDevice) await deps.store.del(KEYS.sub)
+      return json({ ok: true })
+    case 'progress':
+      if (!isProgress(body.progress)) return json({ error: 'bad-request' }, 400)
+      if (fromStoredDevice) await deps.store.set(KEYS.progress, JSON.stringify(body.progress))
+      return json({ ok: true })
+    case 'test': {
+      if (!stored || !fromStoredDevice) return json({ error: 'not-subscribed' }, 409)
+      if (!(await deps.store.setIfAbsent(KEYS.test, '1', 60))) return json({ error: 'too-many' }, 429)
+      const result = await deliver(deps, stored, TEST_MESSAGE, 'test')
+      if (result === 'sent') return json({ ok: true })
+      return json({ error: result }, result === 'gone' ? 410 : 502)
+    }
+    default:
+      return json({ error: 'bad-request' }, 400)
+  }
+}
+
+export async function handleReminder(request: Request, deps: Deps | undefined): Promise<Response> {
+  if (!deps) return json({ error: 'not-configured' }, 503)
+  try {
+    if (request.method === 'GET') {
+      if (request.headers.get('authorization') !== `Bearer ${deps.cronSecret}`) return json({ error: 'unauthorized' }, 401)
+      return await tick(deps)
+    }
+    return await handlePost(request, deps)
+  } catch (error) {
+    console.error('reminder failed', error)
+    return json({ error: 'failed' }, 500)
+  }
+}
+
+/** Upstash adds KV_REST_API_* when connected from the Vercel dashboard; UPSTASH_REDIS_REST_* is its own naming. */
+export function depsFromEnv(env: Record<string, string | undefined>): Deps | undefined {
+  const url = env.KV_REST_API_URL ?? env.UPSTASH_REDIS_REST_URL
+  const token = env.KV_REST_API_TOKEN ?? env.UPSTASH_REDIS_REST_TOKEN
+  const privateKey = env.VAPID_PRIVATE_KEY
+  const cronSecret = env.CRON_SECRET
+  if (!url || !token || !privateKey || !cronSecret) return undefined
+  return { store: upstashStore(url, token), send: webPushSender(privateKey), now: () => new Date(), cronSecret }
+}
+
+export function GET(request: Request): Promise<Response> {
+  return handleReminder(request, depsFromEnv(process.env))
+}
+
+export function POST(request: Request): Promise<Response> {
+  return handleReminder(request, depsFromEnv(process.env))
 }

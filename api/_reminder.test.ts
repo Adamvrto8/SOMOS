@@ -1,15 +1,21 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import {
   composeMessage,
   decide,
+  handleReminder,
   isProgress,
   isReminderSub,
+  KEYS,
   localClock,
   previousDay,
   todayView,
+  upstashStore,
+  type Deps,
   type ReminderProgress,
   type ReminderSub,
+  type Sender,
+  type Store,
 } from './reminder.ts'
 
 const TZ = 'Europe/Bratislava'
@@ -141,5 +147,185 @@ describe('validation', () => {
     expect(isProgress(progress({ done: -1 }))).toBe(false)
     expect(isProgress(progress({ goal: 0 }))).toBe(false)
     expect(isProgress({ ...progress(), day: 'yesterday' })).toBe(false)
+  })
+})
+
+// ---------- HTTP ----------
+
+const SECRET = 'cron-secret'
+const OTHER_DEVICE = 'https://push.example/other-device'
+
+function memoryStore(initial: Record<string, unknown> = {}) {
+  const data = new Map<string, string>(Object.entries(initial).map(([k, v]) => [k, typeof v === 'string' ? v : JSON.stringify(v)]))
+  const store: Store & { data: Map<string, string> } = {
+    data,
+    mget: async (keys) => keys.map((k) => data.get(k) ?? null),
+    set: async (k, v) => {
+      data.set(k, v)
+    },
+    del: async (k) => {
+      data.delete(k)
+    },
+    setIfAbsent: async (k, v) => {
+      if (data.has(k)) return false
+      data.set(k, v)
+      return true
+    },
+  }
+  return store
+}
+
+const noop: Sender = async () => {}
+const deps = (store: Store, send: Sender = noop, now = SUMMER_1910): Deps => ({ store, send, now: () => now, cronSecret: SECRET })
+
+const cron = (secret = SECRET) => new Request('https://somos.example/api/reminder', { headers: { authorization: `Bearer ${secret}` } })
+const post = (body: unknown, origin = 'https://somos.example') =>
+  new Request('https://somos.example/api/reminder', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', origin, host: 'somos.example' },
+    body: JSON.stringify(body),
+  })
+const pushError = (statusCode: number) => Object.assign(new Error('push refused'), { statusCode })
+
+describe('api/reminder: cron tick', () => {
+  it('refuses a request without the cron secret', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    expect((await handleReminder(cron('wrong'), deps(store))).status).toBe(401)
+    expect((await handleReminder(new Request('https://somos.example/api/reminder'), deps(store))).status).toBe(401)
+  })
+
+  it('reports a missing configuration', async () => {
+    const res = await handleReminder(cron(), undefined)
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ error: 'not-configured' })
+  })
+
+  it('sends the reminder and remembers the day', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ day: '2026-06-30', activeToday: true }) })
+    const send = vi.fn<Sender>(async () => {})
+    const res = await handleReminder(cron(), deps(store, send))
+    expect(await res.json()).toEqual({ sent: true, reason: 'sent' })
+    expect(send).toHaveBeenCalledWith(
+      SUB.subscription,
+      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/' }),
+      { ttl: 14_400, topic: 'reminder' },
+    )
+    expect(store.data.get(KEYS.sent)).toBe('2026-07-01')
+  })
+
+  it('explains why it stayed quiet', async () => {
+    const send = vi.fn<Sender>(async () => {})
+    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 20, activeToday: true }) })
+    expect(await (await handleReminder(cron(), deps(store, send))).json()).toEqual({ sent: false, reason: 'goal-met' })
+    expect(await (await handleReminder(cron(), deps(memoryStore(), send))).json()).toEqual({ sent: false, reason: 'no-subscription' })
+    expect(send).not.toHaveBeenCalled()
+  })
+
+  it('treats unreadable stored data as missing', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: '{not json', [KEYS.sent]: null })
+    const send = vi.fn<Sender>(async () => {})
+    expect(await (await handleReminder(cron(), deps(store, send))).json()).toEqual({ sent: true, reason: 'sent' })
+    expect(send.mock.calls[0][1]).toContain('Denný cieľ: 20 odpovedí')
+  })
+
+  it('forgets a subscription the push service no longer knows', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    const res = await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(410))))
+    expect(await res.json()).toEqual({ sent: false, reason: 'gone' })
+    expect(store.data.has(KEYS.sub)).toBe(false)
+    expect(store.data.has(KEYS.sent)).toBe(false)
+  })
+
+  it('leaves the day open for the next tick after a failed send', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    const res = await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(500))))
+    expect(res.status).toBe(502)
+    expect(store.data.has(KEYS.sent)).toBe(false)
+    expect(store.data.has(KEYS.sub)).toBe(true)
+  })
+})
+
+describe('api/reminder: requests from the app', () => {
+  it('only accepts requests from its own pages', async () => {
+    const store = memoryStore()
+    const res = await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ }, 'https://evil.example'), deps(store))
+    expect(res.status).toBe(403)
+    expect(store.data.size).toBe(0)
+  })
+
+  it('stores a subscription with its time and time zone', async () => {
+    const store = memoryStore()
+    const body = { type: 'subscribe', subscription: { ...SUB.subscription, expirationTime: null }, time: '19:00', timeZone: TZ }
+    expect((await handleReminder(post(body), deps(store))).status).toBe(200)
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(SUB)
+  })
+
+  it('rejects malformed requests', async () => {
+    const store = memoryStore()
+    const bodies = [
+      { type: 'subscribe', subscription: SUB.subscription, time: '25:00', timeZone: TZ },
+      { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: 'Nowhere/City' },
+      { type: 'subscribe', subscription: { endpoint: 'https://push.example/x' }, time: '19:00', timeZone: TZ },
+      { type: 'launch-rockets' },
+      'not an object',
+    ]
+    for (const body of bodies) expect((await handleReminder(post(body), deps(store))).status).toBe(400)
+    expect(store.data.size).toBe(0)
+  })
+
+  it('keeps progress only from the subscribed device', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(post({ type: 'progress', endpoint: OTHER_DEVICE, progress: progress({ done: 3 }) }), deps(store))
+    expect(store.data.has(KEYS.progress)).toBe(false)
+    await handleReminder(post({ type: 'progress', endpoint: SUB.subscription.endpoint, progress: progress({ done: 3 }) }), deps(store))
+    expect(JSON.parse(store.data.get(KEYS.progress)!)).toEqual(progress({ done: 3 }))
+    const invalid = post({ type: 'progress', endpoint: SUB.subscription.endpoint, progress: { day: 'x' } })
+    expect((await handleReminder(invalid, deps(store))).status).toBe(400)
+  })
+
+  it('unsubscribes only the device that asks', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(post({ type: 'unsubscribe', endpoint: OTHER_DEVICE }), deps(store))
+    expect(store.data.has(KEYS.sub)).toBe(true)
+    await handleReminder(post({ type: 'unsubscribe', endpoint: SUB.subscription.endpoint }), deps(store))
+    expect(store.data.has(KEYS.sub)).toBe(false)
+  })
+
+  it('sends a test notification at most once a minute', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    const send = vi.fn<Sender>(async () => {})
+    const test = () => handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))
+    expect((await test()).status).toBe(200)
+    expect(send).toHaveBeenCalledWith(
+      SUB.subscription,
+      JSON.stringify({ title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓', url: '/' }),
+      { ttl: 14_400, topic: 'test' },
+    )
+    expect((await test()).status).toBe(429)
+    expect(send).toHaveBeenCalledTimes(1)
+  })
+
+  it('refuses a test for a device that is not subscribed', async () => {
+    const res = await handleReminder(post({ type: 'test', endpoint: OTHER_DEVICE }), deps(memoryStore({ [KEYS.sub]: SUB })))
+    expect(res.status).toBe(409)
+    expect(await res.json()).toEqual({ error: 'not-subscribed' })
+  })
+})
+
+describe('upstashStore', () => {
+  it('sends Redis commands to the REST endpoint', async () => {
+    const fetchImpl = vi.fn(async () => Response.json({ result: 'OK' }))
+    const store = upstashStore('https://redis.example', 'token', fetchImpl)
+    expect(await store.setIfAbsent(KEYS.test, '1', 60)).toBe(true)
+    const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toBe('https://redis.example')
+    expect(new Headers(init.headers).get('authorization')).toBe('Bearer token')
+    expect(JSON.parse(init.body as string)).toEqual(['SET', KEYS.test, '1', 'EX', 60, 'NX'])
+  })
+
+  it('throws on an Upstash error', async () => {
+    const store = upstashStore('https://redis.example', 'token', vi.fn(async () => Response.json({ error: 'WRONGPASS' }, { status: 401 })))
+    await expect(store.mget([KEYS.sub])).rejects.toThrow('WRONGPASS')
   })
 })
