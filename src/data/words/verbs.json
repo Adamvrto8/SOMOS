@@ -1482,5 +1482,216 @@
       { "es": "Ando muy cansado esta semana.", "sk": "Tento týždeň som strašne unavený." }
     ],
     "note": "V Mexiku veľmi časté: ¿Cómo andas? = Ako sa máš?; ando + gerundium = práve niečo robím."
+  },
+  {
+    "id": "contar",
+    "es": "contar",
+    "sk": ["počítať", "rozprávať (niečo)"],
+    "pos": "verb",
+    "verbId": "contar",
+    "level": "A2",
+    "topics": ["basics", "numbers"],
+    "examples": [
+      { "es": "Cuéntame qué pasó.", "sk": "Povedz mi, čo sa stalo." },
+      { "es": "Mi hijo ya sabe contar hasta cien.", "sk": "Syn už vie počítať do sto." }
+    ]
+  },
+  {
+    "id": "mostrar",
+    "es": "mostrar",
+    "sk": ["ukázať", "ukazovať"],
+    "pos": "verb",
+    "verbId": "mostrar",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "¿Me muestras el camino al metro?", "sk": "Ukážeš mi cestu k metru?" }]
+  },
+  {
+    "id": "ensenar",
+    "es": "enseñar",
+    "sk": ["učiť (niekoho)", "ukázať"],
+    "pos": "verb",
+    "verbId": "enseñar",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "Mi abuela me enseñó a cocinar.", "sk": "Babka ma naučila variť." }],
+    "note": "Učiť niekoho = enseñar; učiť sa = aprender."
+  },
+  {
+    "id": "recibir",
+    "es": "recibir",
+    "sk": ["dostať", "prijať"],
+    "pos": "verb",
+    "verbId": "recibir",
+    "level": "A2",
+    "topics": ["tech", "work"],
+    "examples": [{ "es": "¿Recibiste mi mensaje?", "sk": "Dostal si moju správu?" }]
+  },
+  {
+    "id": "decidir",
+    "es": "decidir",
+    "sk": ["rozhodnúť (sa)"],
+    "pos": "verb",
+    "verbId": "decidir",
+    "level": "A2",
+    "topics": ["basics", "travel"],
+    "examples": [{ "es": "Todavía no decidimos a dónde ir de vacaciones.", "sk": "Ešte sme sa nerozhodli, kam pôjdeme na dovolenku." }]
+  },
+  {
+    "id": "invitar",
+    "es": "invitar",
+    "sk": ["pozvať", "pozývať"],
+    "pos": "verb",
+    "verbId": "invitar",
+    "level": "A2",
+    "topics": ["greetings", "food"],
+    "examples": [{ "es": "Te invito a un café.", "sk": "Pozývam ťa na kávu." }],
+    "note": "„Te invito“ zvyčajne znamená, že aj platím."
+  },
+  {
+    "id": "arreglar",
+    "es": "arreglar",
+    "sk": ["opraviť", "dať do poriadku"],
+    "pos": "verb",
+    "verbId": "arreglar",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "El técnico va a arreglar la lavadora mañana.", "sk": "Technik zajtra opraví práčku." }]
+  },
+  {
+    "id": "cuidar",
+    "es": "cuidar",
+    "sk": ["starať sa", "strážiť"],
+    "pos": "verb",
+    "verbId": "cuidar",
+    "level": "A2",
+    "topics": ["family", "health"],
+    "examples": [{ "es": "Mi mamá cuida a mis hijos los viernes.", "sk": "Mama mi v piatok stráži deti." }]
+  },
+  {
+    "id": "mover",
+    "es": "mover",
+    "sk": ["hýbať", "posunúť"],
+    "pos": "verb",
+    "verbId": "mover",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [{ "es": "¿Me ayudas a mover el sofá?", "sk": "Pomôžeš mi posunúť gauč?" }]
+  },
+  {
+    "id": "vestirse",
+    "es": "vestirse",
+    "sk": ["obliekať sa", "obliecť sa"],
+    "pos": "verb",
+    "verbId": "vestirse",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Me visto rápido y nos vamos.", "sk": "Rýchlo sa oblečiem a ideme." }]
+  },
+  {
+    "id": "aceptar",
+    "es": "aceptar",
+    "sk": ["prijať", "akceptovať"],
+    "pos": "verb",
+    "verbId": "aceptar",
+    "level": "B1",
+    "topics": ["shopping", "work"],
+    "examples": [{ "es": "¿Aceptan tarjeta?", "sk": "Beriete kartu?" }]
+  },
+  {
+    "id": "evitar",
+    "es": "evitar",
+    "sk": ["vyhnúť sa", "zabrániť"],
+    "pos": "verb",
+    "verbId": "evitar",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Salgo temprano para evitar el tráfico.", "sk": "Odchádzam skoro, aby som sa vyhol zápche." }]
+  },
+  {
+    "id": "permitir",
+    "es": "permitir",
+    "sk": ["dovoliť", "povoliť"],
+    "pos": "verb",
+    "verbId": "permitir",
+    "level": "B1",
+    "topics": ["city", "basics"],
+    "examples": [{ "es": "Aquí no se permite fumar.", "sk": "Tu sa nesmie fajčiť." }]
+  },
+  {
+    "id": "reconocer",
+    "es": "reconocer",
+    "sk": ["spoznať", "uznať"],
+    "pos": "verb",
+    "verbId": "reconocer",
+    "level": "B1",
+    "topics": ["emotions", "basics"],
+    "examples": [{ "es": "No te reconocí con lentes.", "sk": "S okuliarmi som ťa nespoznal." }]
+  },
+  {
+    "id": "resolver",
+    "es": "resolver",
+    "sk": ["vyriešiť"],
+    "pos": "verb",
+    "verbId": "resolver",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Tenemos que resolver este problema hoy.", "sk": "Tento problém musíme vyriešiť dnes." }]
+  },
+  {
+    "id": "sugerir",
+    "es": "sugerir",
+    "sk": ["navrhnúť", "odporučiť"],
+    "pos": "verb",
+    "verbId": "sugerir",
+    "level": "B1",
+    "topics": ["food", "travel"],
+    "examples": [{ "es": "¿Qué restaurante nos sugieres?", "sk": "Akú reštauráciu nám odporúčaš?" }]
+  },
+  {
+    "id": "obtener",
+    "es": "obtener",
+    "sk": ["získať", "dostať"],
+    "pos": "verb",
+    "verbId": "obtener",
+    "level": "B1",
+    "topics": ["travel", "work"],
+    "examples": [{ "es": "Obtuvo la visa después de tres meses.", "sk": "Víza dostal po troch mesiacoch." }],
+    "note": "Časuje sa ako tener: obtengo, obtuve, obtendré."
+  },
+  {
+    "id": "proponer",
+    "es": "proponer",
+    "sk": ["navrhnúť", "navrhovať"],
+    "pos": "verb",
+    "verbId": "proponer",
+    "level": "B1",
+    "topics": ["work", "hobbies"],
+    "examples": [{ "es": "Te propongo algo: vamos a la playa el sábado.", "sk": "Navrhujem ti niečo: v sobotu poďme na pláž." }],
+    "note": "Časuje sa ako poner: propongo, propuse, propondré."
+  },
+  {
+    "id": "alcanzar",
+    "es": "alcanzar",
+    "sk": ["dosiahnuť", "dočiahnuť", "stačiť"],
+    "pos": "verb",
+    "verbId": "alcanzar",
+    "level": "B1",
+    "topics": ["home", "shopping"],
+    "examples": [
+      { "es": "No alcanzo el estante de arriba.", "sk": "Nedočiahnem na hornú policu." },
+      { "es": "¿Te alcanza el dinero?", "sk": "Stačia ti peniaze?" }
+    ],
+    "note": "V Mexiku často „stačiť“: no me alcanza = nemám dosť (peňazí, času)."
+  },
+  {
+    "id": "merecer",
+    "es": "merecer",
+    "sk": ["zaslúžiť si"],
+    "pos": "verb",
+    "verbId": "merecer",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Te mereces unas vacaciones.", "sk": "Zaslúžiš si dovolenku." }]
   }
 ]

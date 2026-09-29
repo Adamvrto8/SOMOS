@@ -291,7 +291,8 @@ scripts/
   7a imperfecto + futuro (all verbs, table, drill, search, 40 A2 sentences); 7b DeepL online lookup;
   7c B1: 37 verbs, 138 words, 68 sentences, topic "Technológie a médiá". Totals: 20 topics, 1053 words, 137 verbs, 514 sentences.
   Level rebalance: ~260 words, 13 verbs and 25 sentences re-tagged A1 → A2 (A1 = survival vocabulary, pretérito is A2);
-  +69 B1 words, +84 B1 sentences (s515–s598). Totals: 1122 words (A1 521 · A2 362 · B1 239), 137 verbs, 598 sentences (266 · 180 · 152).
+  +69 B1 words, +84 B1 sentences (s515–s598), +20 verbs (10 A2, 10 B1) with their Words.
+  Totals: 1142 words, 157 verbs (A1 63 · A2 47 · B1 47), 598 sentences (266 · 180 · 152).
 
 ---
 
