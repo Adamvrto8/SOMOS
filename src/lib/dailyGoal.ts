@@ -19,6 +19,9 @@ function readGoal(): number {
 let goal = readGoal()
 const listeners = new Set<() => void>()
 
+/** Current goal outside React (the reminder's progress report). */
+export const getDailyGoal = () => goal
+
 export function setDailyGoal(value: number) {
   goal = value
   try {
