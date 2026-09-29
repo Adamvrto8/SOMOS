@@ -380,7 +380,7 @@
     "sk": ["používať"],
     "pos": "verb",
     "verbId": "usar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "¿Puedo usar tu computadora?", "sk": "Môžem použiť tvoj počítač?" }]
   },
@@ -415,7 +415,7 @@
     "sk": ["odpovedať", "zdvihnúť (telefón)"],
     "pos": "verb",
     "verbId": "contestar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school", "work"],
     "examples": [{ "es": "No contesta el teléfono.", "sk": "Nedvíha telefón." }]
   },
@@ -446,7 +446,7 @@
     "sk": ["oddychovať", "odpočívať"],
     "pos": "verb",
     "verbId": "descansar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health", "hobbies"],
     "examples": [{ "es": "Hoy quiero descansar en casa.", "sk": "Dnes chcem oddychovať doma." }]
   },
@@ -456,7 +456,7 @@
     "sk": ["umývať", "prať"],
     "pos": "verb",
     "verbId": "lavar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Voy a lavar los platos.", "sk": "Idem umyť riad." }]
   },
@@ -466,7 +466,7 @@
     "sk": ["pripraviť"],
     "pos": "verb",
     "verbId": "preparar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food", "home"],
     "examples": [{ "es": "Estoy preparando la cena.", "sk": "Práve robím večeru." }]
   },
@@ -503,7 +503,7 @@
     "sk": ["plávať"],
     "pos": "verb",
     "verbId": "nadar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["hobbies", "nature"],
     "examples": [{ "es": "Me encanta nadar en el mar.", "sk": "Veľmi rád plávam v mori." }]
   },
@@ -544,7 +544,7 @@
     "sk": ["navštíviť"],
     "pos": "verb",
     "verbId": "visitar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family", "travel"],
     "examples": [{ "es": "El sábado visitamos a mis abuelos.", "sk": "V sobotu navštívime starých rodičov." }]
   },
@@ -554,7 +554,7 @@
     "sk": ["vojsť", "vstúpiť"],
     "pos": "verb",
     "verbId": "entrar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "¿Puedo entrar?", "sk": "Môžem vojsť?" }]
   },
@@ -664,7 +664,7 @@
     "sk": ["cvičiť", "trénovať", "precvičovať"],
     "pos": "verb",
     "verbId": "practicar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school", "hobbies"],
     "examples": [{ "es": "Practico español con mis amigos.", "sk": "Španielčinu si precvičujem s kamarátmi." }]
   },
@@ -716,7 +716,7 @@
     "sk": ["nájsť"],
     "pos": "verb",
     "verbId": "encontrar",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "No encuentro mi pasaporte.", "sk": "Neviem nájsť pas." }]
   },
@@ -902,7 +902,7 @@
     "sk": ["predávať"],
     "pos": "verb",
     "verbId": "vender",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Venden fruta en el mercado.", "sk": "Na trhu predávajú ovocie." }]
   },
@@ -976,7 +976,7 @@
     "sk": ["dať", "položiť"],
     "pos": "verb",
     "verbId": "poner",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "¿Dónde pongo las llaves?", "sk": "Kam dám kľúče?" }]
   },
@@ -1026,7 +1026,7 @@
     "sk": ["ísť hore", "nastúpiť"],
     "pos": "verb",
     "verbId": "subir",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city", "travel"],
     "examples": [{ "es": "Subimos al camión en la esquina.", "sk": "Do autobusu nastupujeme na rohu." }],
     "note": "subir = ísť hore, nastúpiť; bajar = zísť, vystúpiť."

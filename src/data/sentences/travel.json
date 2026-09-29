@@ -256,7 +256,7 @@
     "id": "s158",
     "es": "Los turistas están visitando las pirámides.",
     "sk": "Turisti si prezerajú pyramídy.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "grammar": ["progresivo"],
     "tokens": ["Los", "turistas", "están", "visitando", "las", "pirámides", "."],
@@ -643,6 +643,78 @@
         "lemma": "andar",
         "hint": "andar · nosotros · futuro",
         "distractors": ["andaré", "andará", "andamos"]
+      }
+    ]
+  },
+  {
+    "id": "s587",
+    "es": "Cuando llegamos a Mérida, hacía un calor horrible.",
+    "sk": "Keď sme prišli do Méridy, bola strašná horúčava.",
+    "level": "B1",
+    "topics": ["travel", "weather"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Cuando", "llegamos", "a", "Mérida", ",", "hacía", "un", "calor", "horrible", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hacía",
+        "lemma": "hacer",
+        "hint": "hacer · él · imperfecto",
+        "distractors": ["hace", "hará", "hacían"]
+      }
+    ]
+  },
+  {
+    "id": "s588",
+    "es": "Perdimos el camión y tuvimos que esperar dos horas.",
+    "sk": "Ušiel nám autobus a museli sme čakať dve hodiny.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Perdimos", "el", "camión", "y", "tuvimos", "que", "esperar", "dos", "horas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors": ["tenemos", "tenían", "tendremos"]
+      }
+    ]
+  },
+  {
+    "id": "s589",
+    "es": "¿Alguna vez fuiste a Chiapas?",
+    "sk": "Bol si už niekedy v Chiapase?",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Alguna", "vez", "fuiste", "a", "Chiapas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fuiste",
+        "lemma": "ir",
+        "hint": "ir · tú · pretérito",
+        "distractors": ["vas", "fui", "irás"]
+      }
+    ]
+  },
+  {
+    "id": "s590",
+    "es": "Si reservas con tiempo, el hotel sale más barato.",
+    "sk": "Ak si rezervuješ včas, hotel vyjde lacnejšie.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "reservas", "con", "tiempo", ",", "el", "hotel", "sale", "más", "barato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él · presente",
+        "distractors": ["salen", "salgo", "salimos"]
       }
     ]
   }

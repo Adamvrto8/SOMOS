@@ -251,5 +251,38 @@
     "topics": ["tech"],
     "examples": [{ "es": "La impresora está descompuesta.", "sk": "Tlačiareň je pokazená." }],
     "note": "Mexické; v Španielsku „estropeado“."
+  },
+  {
+    "id": "actualizacion",
+    "es": "actualización",
+    "sk": ["aktualizácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "actualizaciones",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "El celular necesita una actualización.", "sk": "Mobil potrebuje aktualizáciu." }]
+  },
+  {
+    "id": "respaldo",
+    "es": "respaldo",
+    "sk": ["záloha (dát)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Haz un respaldo de tus fotos.", "sk": "Zálohuj si fotky." }],
+    "note": "V Mexiku sa hovorí respaldo, v Španielsku copia de seguridad."
+  },
+  {
+    "id": "navegador",
+    "es": "navegador",
+    "sk": ["prehliadač"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "navegadores",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [{ "es": "Abre la página en otro navegador.", "sk": "Otvor stránku v inom prehliadači." }]
   }
 ]

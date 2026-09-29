@@ -274,7 +274,7 @@
     "id": "s389",
     "es": "Anoche vimos muchas estrellas.",
     "sk": "Včera večer sme videli veľa hviezd.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "grammar": ["preterito"],
     "tokens": ["Anoche", "vimos", "muchas", "estrellas", "."],
@@ -423,6 +423,78 @@
         "lemma": "cambiar",
         "hint": "cambiar · gerundio",
         "distractors": ["cambia", "cambiar", "cambian"]
+      }
+    ]
+  },
+  {
+    "id": "s562",
+    "es": "Cuando subimos al volcán, empezó a nevar.",
+    "sk": "Keď sme vystúpili na sopku, začalo snežiť.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "subimos", "al", "volcán", ",", "empezó", "a", "nevar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["suben", "subí", "subiremos"]
+      }
+    ]
+  },
+  {
+    "id": "s563",
+    "es": "Antes había muchas mariposas en este bosque.",
+    "sk": "Predtým bolo v tomto lese veľa motýľov.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "había", "muchas", "mariposas", "en", "este", "bosque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mariposas",
+        "lemma": "mariposa",
+        "hint": "motýle",
+        "distractors": ["mariposa", "pájaros", "árboles"]
+      }
+    ]
+  },
+  {
+    "id": "s564",
+    "es": "Mientras caminábamos por la selva, vimos un jaguar.",
+    "sk": "Keď sme kráčali pralesom, videli sme jaguára.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["Mientras", "caminábamos", "por", "la", "selva", ",", "vimos", "un", "jaguar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["vemos", "vieron", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s565",
+    "es": "Hay que cuidar el agua; cada vez llueve menos.",
+    "sk": "Treba šetriť vodou, prší čoraz menej.",
+    "level": "B1",
+    "topics": ["nature", "weather"],
+    "grammar": ["presente"],
+    "tokens": ["Hay", "que", "cuidar", "el", "agua", ";", "cada", "vez", "llueve", "menos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "menos",
+        "lemma": "menos",
+        "hint": "menej",
+        "distractors": ["más", "muy", "tanto"]
       }
     ]
   }

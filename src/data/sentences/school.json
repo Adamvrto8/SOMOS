@@ -211,7 +211,7 @@
     "id": "s318",
     "es": "Practicamos la conversación en parejas.",
     "sk": "Konverzáciu precvičujeme vo dvojiciach.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "grammar": ["presente"],
     "tokens": ["Practicamos", "la", "conversación", "en", "parejas", "."],
@@ -265,7 +265,7 @@
     "id": "s321",
     "es": "Ella contesta todas las preguntas.",
     "sk": "Odpovedá na všetky otázky.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "grammar": ["presente"],
     "tokens": ["Ella", "contesta", "todas", "las", "preguntas", "."],
@@ -481,6 +481,96 @@
         "lemma": "sacar",
         "hint": "sacar · yo · pretérito",
         "distractors": ["Sacó", "Sacaron", "Sacaba"]
+      }
+    ]
+  },
+  {
+    "id": "s570",
+    "es": "Si estudias todos los días, vas a pasar el examen.",
+    "sk": "Ak sa budeš učiť každý deň, skúšku urobíš.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "estudias", "todos", "los", "días", ",", "vas", "a", "pasar", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estudias",
+        "lemma": "estudiar",
+        "hint": "estudiar · tú · presente",
+        "distractors": ["estudia", "estudiaste", "estudiamos"]
+      }
+    ]
+  },
+  {
+    "id": "s571",
+    "es": "La maestra nos pidió la tarea dos veces.",
+    "sk": "Učiteľka si od nás dvakrát vypýtala domácu úlohu.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "maestra", "nos", "pidió", "la", "tarea", "dos", "veces", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pidió",
+        "lemma": "pedir",
+        "hint": "pedir · ella · pretérito",
+        "distractors": ["pide", "pedí", "pedirá"]
+      }
+    ]
+  },
+  {
+    "id": "s572",
+    "es": "Cuando estaba en la prepa, odiaba las matemáticas.",
+    "sk": "Keď som chodil na strednú, nenávidel som matematiku.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "estaba", "en", "la", "prepa", ",", "odiaba", "las", "matemáticas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors": ["era", "estoy", "estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s573",
+    "es": "Todavía no entiendo la diferencia entre ser y estar.",
+    "sk": "Stále nechápem rozdiel medzi ser a estar.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Todavía", "no", "entiendo", "la", "diferencia", "entre", "ser", "y", "estar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entiendo",
+        "lemma": "entender",
+        "hint": "entender · yo · presente",
+        "distractors": ["entiende", "entendí", "entendemos"]
+      }
+    ]
+  },
+  {
+    "id": "s574",
+    "es": "El próximo semestre tomaré un curso de francés.",
+    "sk": "Budúci semester si zapíšem kurz francúzštiny.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "semestre", "tomaré", "un", "curso", "de", "francés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tomaré",
+        "lemma": "tomar",
+        "hint": "tomar · yo · futuro",
+        "distractors": ["tomé", "toma", "tomaba"]
       }
     ]
   }

@@ -110,7 +110,7 @@
     "id": "s278",
     "es": "El cielo está nublado.",
     "sk": "Obloha je zamračená.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "grammar": ["gender"],
     "tokens": ["El", "cielo", "está", "nublado", "."],
@@ -163,7 +163,7 @@
     "id": "s281",
     "es": "Estamos a treinta y cinco grados.",
     "sk": "Je tridsaťpäť stupňov.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "tokens": ["Estamos", "a", "treinta", "y", "cinco", "grados", "."],
     "cloze": [
@@ -344,6 +344,78 @@
         "lemma": "hacer",
         "hint": "hacer · él · futuro",
         "distractors": ["harán", "harás", "hace"]
+      }
+    ]
+  },
+  {
+    "id": "s591",
+    "es": "Estaba lloviendo tanto que no salimos de la casa.",
+    "sk": "Tak veľmi pršalo, že sme nevyšli z domu.",
+    "level": "B1",
+    "topics": ["weather", "home"],
+    "grammar": ["progresivo", "preterito"],
+    "tokens": ["Estaba", "lloviendo", "tanto", "que", "no", "salimos", "de", "la", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "salimos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · pretérito",
+        "distractors": ["salen", "salí", "saldremos"]
+      }
+    ]
+  },
+  {
+    "id": "s592",
+    "es": "Según el pronóstico, mañana hará mucho calor.",
+    "sk": "Podľa predpovede bude zajtra veľké teplo.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["futuro"],
+    "tokens": ["Según", "el", "pronóstico", ",", "mañana", "hará", "mucho", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hará",
+        "lemma": "hacer",
+        "hint": "hacer · él · futuro",
+        "distractors": ["hizo", "hacía", "harán"]
+      }
+    ]
+  },
+  {
+    "id": "s593",
+    "es": "Llevamos tres meses sin lluvia.",
+    "sk": "Už tri mesiace nepršalo.",
+    "level": "B1",
+    "topics": ["weather", "nature"],
+    "grammar": ["presente"],
+    "tokens": ["Llevamos", "tres", "meses", "sin", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevamos",
+        "lemma": "llevar",
+        "hint": "llevar · nosotros · presente",
+        "distractors": ["Llevo", "Llevan", "Llevaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s594",
+    "es": "Traje el paraguas porque parecía que iba a llover.",
+    "sk": "Vzal som si dáždnik, lebo to vyzeralo, že bude pršať.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Traje", "el", "paraguas", "porque", "parecía", "que", "iba", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Traje",
+        "lemma": "traer",
+        "hint": "traer · yo · pretérito",
+        "distractors": ["Traigo", "Trajo", "Traeré"]
       }
     ]
   }

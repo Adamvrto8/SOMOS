@@ -289,7 +289,7 @@
     "sk": ["pohodlný"],
     "pos": "adj",
     "feminine": "cómoda",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Este sofá es muy cómodo.", "sk": "Táto pohovka je veľmi pohodlná." }]
   },
@@ -317,7 +317,7 @@
     "sk": ["práčka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "La lavadora no funciona.", "sk": "Práčka nefunguje." }]
   },
@@ -328,7 +328,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "microondas",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Calienta la comida en el microondas.", "sk": "Zohrej si jedlo v mikrovlnke." }]
   },
@@ -338,7 +338,7 @@
     "sk": ["zrkadlo"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Hay un espejo en el baño.", "sk": "V kúpeľni je zrkadlo." }]
   },
@@ -348,7 +348,7 @@
     "sk": ["lampa"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Prende la lámpara, por favor.", "sk": "Zapni lampu, prosím." }],
     "note": "V Mexiku: prender = zapnúť, apagar = vypnúť."
@@ -359,7 +359,7 @@
     "sk": ["vankúš"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Necesito otra almohada.", "sk": "Potrebujem ešte jeden vankúš." }]
   },
@@ -369,7 +369,7 @@
     "sk": ["deka", "prikrývka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Hace frío, ¿me pasas una cobija?", "sk": "Je zima, podáš mi deku?" }],
     "note": "Mexické slovo; v Španielsku „manta“."
@@ -380,7 +380,7 @@
     "sk": ["uterák"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Las toallas están en el baño.", "sk": "Uteráky sú v kúpeľni." }]
   },
@@ -390,7 +390,7 @@
     "sk": ["smeti", "odpad"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Hay que sacar la basura.", "sk": "Treba vyniesť smeti." }]
   },
@@ -400,7 +400,7 @@
     "sk": ["schody", "rebrík"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Subimos por la escalera.", "sk": "Išli sme hore po schodoch." }]
   },
@@ -411,7 +411,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "paredes",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Hay una foto en la pared.", "sk": "Na stene visí fotka." }]
   },
@@ -421,7 +421,7 @@
     "sk": ["strop", "strecha"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "El techo es muy alto.", "sk": "Strop je veľmi vysoko." }]
   },
@@ -442,7 +442,7 @@
     "sk": ["kus nábytku"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Compramos muebles nuevos.", "sk": "Kúpili sme nový nábytok." }],
     "note": "Nábytok všeobecne = los muebles (množné číslo)."
@@ -454,7 +454,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "clósets",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Tu ropa está en el clóset.", "sk": "Tvoje oblečenie je v skrini." }]
   },
@@ -465,7 +465,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "ventiladores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Sin ventilador no puedo dormir.", "sk": "Bez ventilátora nemôžem spať." }]
   },
@@ -475,7 +475,7 @@
     "sk": ["hluk"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "examples": [{ "es": "Los vecinos hacen mucho ruido.", "sk": "Susedia robia veľký hluk." }]
   },
@@ -548,5 +548,46 @@
     "topics": ["home"],
     "examples": [{ "es": "Hay que llamar al plomero.", "sk": "Treba zavolať inštalatéra." }],
     "note": "Mexické; v Španielsku „fontanero“."
+  },
+  {
+    "id": "hipoteca",
+    "es": "hipoteca",
+    "sk": ["hypotéka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "Todavía estamos pagando la hipoteca.", "sk": "Stále splácame hypotéku." }]
+  },
+  {
+    "id": "gotera",
+    "es": "gotera",
+    "sk": ["miesto, kde zateká"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "Cuando llueve, hay una gotera en la cocina.", "sk": "Keď prší, v kuchyni zateká." }]
+  },
+  {
+    "id": "inquilino",
+    "es": "inquilino",
+    "sk": ["nájomník"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "El inquilino de arriba hace mucho ruido.", "sk": "Nájomník nad nami robí veľa hluku." }]
+  },
+  {
+    "id": "mantenimiento",
+    "es": "mantenimiento",
+    "sk": ["údržba"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [{ "es": "El elevador está en mantenimiento.", "sk": "Výťah je v údržbe." }]
   }
 ]

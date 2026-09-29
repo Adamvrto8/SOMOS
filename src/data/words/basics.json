@@ -219,7 +219,7 @@
     "es": "alguien",
     "sk": ["niekto"],
     "pos": "pron",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "¿Alguien habla inglés?", "sk": "Hovorí niekto po anglicky?" }]
   },
@@ -228,7 +228,7 @@
     "es": "nadie",
     "sk": ["nikto"],
     "pos": "pron",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "No hay nadie en la oficina.", "sk": "V kancelárii nikto nie je." }]
   },
@@ -406,7 +406,7 @@
     "es": "desde",
     "sk": ["od", "z"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Trabajo aquí desde enero.", "sk": "Pracujem tu od januára." }]
   },
@@ -415,7 +415,7 @@
     "es": "hasta",
     "sk": ["až do", "do"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "La tienda está abierta hasta las nueve.", "sk": "Obchod je otvorený do deviatej." }]
   },
@@ -424,7 +424,7 @@
     "es": "entre",
     "sk": ["medzi"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "El banco está entre la farmacia y el hotel.", "sk": "Banka je medzi lekárňou a hotelom." }]
   },
@@ -445,7 +445,7 @@
     "es": "debajo de",
     "sk": ["pod"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "El gato está debajo de la cama.", "sk": "Mačka je pod posteľou." }]
   },
@@ -504,7 +504,7 @@
     "es": "tampoco",
     "sk": ["tiež nie", "ani"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "—No me gusta. —A mí tampoco.", "sk": "„Nechutí mi to.“ „Mne tiež nie.“" }]
   },
@@ -603,7 +603,7 @@
     "es": "así",
     "sk": ["tak", "takto"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Se hace así.", "sk": "Robí sa to takto." }]
   },
@@ -612,7 +612,7 @@
     "es": "casi",
     "sk": ["takmer", "skoro"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Casi siempre como en casa.", "sk": "Takmer vždy jem doma." }]
   },
@@ -621,7 +621,7 @@
     "es": "tal vez",
     "sk": ["možno"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Tal vez vamos mañana.", "sk": "Možno pôjdeme zajtra." }]
   },
@@ -630,7 +630,7 @@
     "es": "de verdad",
     "sk": ["naozaj", "vážne"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "¿De verdad? No lo sabía.", "sk": "Naozaj? To som nevedel." }]
   },
@@ -648,7 +648,7 @@
     "es": "demasiado",
     "sk": ["príliš"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Es demasiado caro.", "sk": "Je to príliš drahé." }]
   },
@@ -683,7 +683,7 @@
     "sk": ["ten istý", "rovnaký"],
     "pos": "adj",
     "feminine": "misma",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Tenemos el mismo celular.", "sk": "Máme rovnaký mobil." }]
   },
@@ -716,7 +716,7 @@
     "es": "cada",
     "sk": ["každý"],
     "pos": "adj",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Cada día aprendo algo nuevo.", "sk": "Každý deň sa naučím niečo nové." }],
     "note": "Nemení sa: cada día, cada semana."
@@ -727,7 +727,7 @@
     "sk": ["spolu"],
     "pos": "adj",
     "feminine": "juntas",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "examples": [{ "es": "Vamos juntos al centro.", "sk": "Pôjdeme spolu do centra." }]
   },
@@ -926,5 +926,50 @@
     "topics": ["basics"],
     "examples": [{ "es": "No tengo ningún problema.", "sk": "Nemám žiadny problém." }],
     "note": "Pred podst. menom mužského rodu: ningún. Používa sa so záporom: no… ningún."
+  },
+  {
+    "id": "por-lo-tanto",
+    "es": "por lo tanto",
+    "sk": ["preto", "a teda"],
+    "pos": "conj",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No estudió; por lo tanto, reprobó.", "sk": "Neučil sa, a preto neprešiel." }]
+  },
+  {
+    "id": "de-todos-modos",
+    "es": "de todos modos",
+    "sk": ["aj tak", "tak či tak"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Llovía, pero salimos de todos modos.", "sk": "Pršalo, ale aj tak sme išli von." }]
+  },
+  {
+    "id": "incluso",
+    "es": "incluso",
+    "sk": ["dokonca"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Incluso mi abuela usa WhatsApp.", "sk": "Dokonca aj babka používa WhatsApp." }]
+  },
+  {
+    "id": "en-lugar-de",
+    "es": "en lugar de",
+    "sk": ["namiesto"],
+    "pos": "prep",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "En lugar de ir al cine, nos quedamos en casa.", "sk": "Namiesto kina sme zostali doma." }]
+  },
+  {
+    "id": "aun-asi",
+    "es": "aun así",
+    "sk": ["aj tak", "a predsa"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [{ "es": "Estaba cansado; aun así, terminó el trabajo.", "sk": "Bol unavený, a predsa prácu dokončil." }]
   }
 ]

@@ -38,7 +38,7 @@
     "id": "s371",
     "es": "No hay nadie en la casa.",
     "sk": "Doma nikto nie je.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "tokens": ["No", "hay", "nadie", "en", "la", "casa", "."],
     "cloze": [
@@ -159,7 +159,7 @@
     "id": "s378",
     "es": "¿Cuándo llegaste?",
     "sk": "Kedy si prišiel?",
-    "level": "A1",
+    "level": "A2",
     "topics": ["basics"],
     "grammar": ["preterito"],
     "tokens": ["¿", "Cuándo", "llegaste", "?"],
@@ -335,6 +335,96 @@
         "lemma": "contestar",
         "hint": "contestar · tú · pretérito",
         "distractors": ["contestamos", "contesté", "contestabas"]
+      }
+    ]
+  },
+  {
+    "id": "s515",
+    "es": "Hace dos años que no veo a mis primos.",
+    "sk": "Bratrancov som nevidel už dva roky.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Hace", "dos", "años", "que", "no", "veo", "a", "mis", "primos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "veo",
+        "lemma": "ver",
+        "hint": "ver · yo · presente",
+        "distractors": ["ve", "vemos", "ven"]
+      }
+    ]
+  },
+  {
+    "id": "s516",
+    "es": "Todavía no sé si voy a poder ir.",
+    "sk": "Ešte neviem, či budem môcť ísť.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Todavía", "no", "sé", "si", "voy", "a", "poder", "ir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sé",
+        "lemma": "saber",
+        "hint": "saber · yo · presente",
+        "distractors": ["sabe", "sabes", "sabemos"]
+      }
+    ]
+  },
+  {
+    "id": "s517",
+    "es": "Volví a leer el libro porque no lo entendí.",
+    "sk": "Knihu som si prečítal znova, lebo som jej nerozumel.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Volví", "a", "leer", "el", "libro", "porque", "no", "lo", "entendí", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "entendí",
+        "lemma": "entender",
+        "hint": "entender · yo · pretérito",
+        "distractors": ["entiendo", "entendió", "entenderé"]
+      }
+    ]
+  },
+  {
+    "id": "s518",
+    "es": "Cualquier persona puede aprender otro idioma.",
+    "sk": "Ktokoľvek sa môže naučiť cudzí jazyk.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Cualquier", "persona", "puede", "aprender", "otro", "idioma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cualquier",
+        "lemma": "cualquier",
+        "hint": "akýkoľvek",
+        "distractors": ["Ninguna", "Nadie", "Algo"]
+      }
+    ]
+  },
+  {
+    "id": "s519",
+    "es": "Por lo menos llegamos a tiempo.",
+    "sk": "Aspoň sme prišli načas.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Por", "lo", "menos", "llegamos", "a", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llegamos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · pretérito",
+        "distractors": ["llegaron", "llegué", "llegaremos"]
       }
     ]
   }

@@ -217,7 +217,7 @@
     "id": "s267",
     "es": "Tengo cita con el dentista el jueves.",
     "sk": "Vo štvrtok mám termín u zubára.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "tokens": ["Tengo", "cita", "con", "el", "dentista", "el", "jueves", "."],
     "cloze": [
@@ -341,7 +341,7 @@
     "id": "s395",
     "es": "El dentista me dio una cita para el lunes.",
     "sk": "Zubár mi dal termín na pondelok.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "grammar": ["preterito"],
     "tokens": ["El", "dentista", "me", "dio", "una", "cita", "para", "el", "lunes", "."],
@@ -485,6 +485,78 @@
         "lemma": "comer",
         "hint": "comer · él · presente",
         "distractors": ["comen", "comes", "comió"]
+      }
+    ]
+  },
+  {
+    "id": "s550",
+    "es": "Fui al doctor porque tenía mucha tos.",
+    "sk": "Išiel som k lekárovi, lebo som veľmi kašľal.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Fui", "al", "doctor", "porque", "tenía", "mucha", "tos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tienen", "tuvimos", "tendré"]
+      }
+    ]
+  },
+  {
+    "id": "s551",
+    "es": "El doctor me dijo que tengo que descansar.",
+    "sk": "Lekár mi povedal, že musím oddychovať.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "doctor", "me", "dijo", "que", "tengo", "que", "descansar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dijo",
+        "lemma": "decir",
+        "hint": "decir · él · pretérito",
+        "distractors": ["dije", "dijeron", "digo"]
+      }
+    ]
+  },
+  {
+    "id": "s552",
+    "es": "Si sigues comiendo tantos dulces, te vas a enfermar.",
+    "sk": "Ak budeš ďalej jesť toľko sladkostí, ochorieš.",
+    "level": "B1",
+    "topics": ["health", "food"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "sigues", "comiendo", "tantos", "dulces", ",", "te", "vas", "a", "enfermar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comiendo",
+        "lemma": "comer",
+        "hint": "comer · gerundio",
+        "distractors": ["comido", "comer", "come"]
+      }
+    ]
+  },
+  {
+    "id": "s553",
+    "es": "Desde que duermo ocho horas, me siento con más energía.",
+    "sk": "Odkedy spím osem hodín, mám viac energie.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "duermo", "ocho", "horas", ",", "me", "siento", "con", "más", "energía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "duermo",
+        "lemma": "dormir",
+        "hint": "dormir · yo · presente",
+        "distractors": ["duerme", "dormí", "dormimos"]
       }
     ]
   }

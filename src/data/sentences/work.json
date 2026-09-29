@@ -344,7 +344,7 @@
     "id": "s203",
     "es": "Usamos esta computadora para diseñar.",
     "sk": "Tento počítač používame na navrhovanie.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "grammar": ["presente"],
     "tokens": ["Usamos", "esta", "computadora", "para", "diseñar", "."],
@@ -595,6 +595,78 @@
         "lemma": "renuncia",
         "hint": "výpoveď",
         "distractors": ["propuesta", "carrera", "meta"]
+      }
+    ]
+  },
+  {
+    "id": "s595",
+    "es": "Llevo cinco años trabajando en esta empresa.",
+    "sk": "V tejto firme pracujem už päť rokov.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["progresivo"],
+    "tokens": ["Llevo", "cinco", "años", "trabajando", "en", "esta", "empresa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trabajando",
+        "lemma": "trabajar",
+        "hint": "trabajar · gerundio",
+        "distractors": ["trabajado", "trabajo", "trabajar"]
+      }
+    ]
+  },
+  {
+    "id": "s596",
+    "es": "Mañana tengo una entrevista y estoy muy nervioso.",
+    "sk": "Zajtra mám pohovor a som veľmi nervózny.",
+    "level": "B1",
+    "topics": ["work", "emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mañana", "tengo", "una", "entrevista", "y", "estoy", "muy", "nervioso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["soy", "estaba", "estuve"]
+      }
+    ]
+  },
+  {
+    "id": "s597",
+    "es": "Si terminamos el proyecto a tiempo, nos darán un bono.",
+    "sk": "Ak dokončíme projekt načas, dajú nám prémiu.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["futuro"],
+    "tokens": ["Si", "terminamos", "el", "proyecto", "a", "tiempo", ",", "nos", "darán", "un", "bono", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "darán",
+        "lemma": "dar",
+        "hint": "dar · ellos · futuro",
+        "distractors": ["dieron", "daban", "daremos"]
+      }
+    ]
+  },
+  {
+    "id": "s598",
+    "es": "Antes era mesero, pero ahora tengo mi propio negocio.",
+    "sk": "Predtým som bol čašník, ale teraz mám vlastný podnik.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Antes", "era", "mesero", ",", "pero", "ahora", "tengo", "mi", "propio", "negocio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors": ["estaba", "soy", "seré"]
       }
     ]
   }

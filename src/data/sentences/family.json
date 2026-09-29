@@ -580,5 +580,95 @@
         "distractors": ["regaló", "regalaron", "regalaba"]
       }
     ]
+  },
+  {
+    "id": "s536",
+    "es": "Mis papás se conocieron en la universidad.",
+    "sk": "Rodičia sa zoznámili na univerzite.",
+    "level": "B1",
+    "topics": ["family", "school"],
+    "grammar": ["preterito"],
+    "tokens": ["Mis", "papás", "se", "conocieron", "en", "la", "universidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "conocieron",
+        "lemma": "conocer",
+        "hint": "conocer · ellos · pretérito",
+        "distractors": ["conocen", "conocimos", "conocerán"]
+      }
+    ]
+  },
+  {
+    "id": "s537",
+    "es": "Cuando mi abuelo era joven, trabajaba en el campo.",
+    "sk": "Keď bol dedko mladý, pracoval na poli.",
+    "level": "B1",
+    "topics": ["family", "work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "mi", "abuelo", "era", "joven", ",", "trabajaba", "en", "el", "campo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "trabajaba",
+        "lemma": "trabajar",
+        "hint": "trabajar · él · imperfecto",
+        "distractors": ["trabajaban", "trabajábamos", "trabajará"]
+      }
+    ]
+  },
+  {
+    "id": "s538",
+    "es": "Mi hermana menor se va a casar el próximo año.",
+    "sk": "Moja mladšia sestra sa budúci rok vydáva.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "menor", "se", "va", "a", "casar", "el", "próximo", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · ella · presente",
+        "distractors": ["van", "voy", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s539",
+    "es": "Desde que nació el bebé, casi no dormimos.",
+    "sk": "Odkedy sa narodilo bábätko, skoro nespíme.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "nació", "el", "bebé", ",", "casi", "no", "dormimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "dormimos",
+        "lemma": "dormir",
+        "hint": "dormir · nosotros · presente",
+        "distractors": ["duermen", "duermo", "dormiremos"]
+      }
+    ]
+  },
+  {
+    "id": "s540",
+    "es": "Mi suegra siempre nos trae comida cuando viene.",
+    "sk": "Svokra nám vždy prinesie jedlo, keď príde na návštevu.",
+    "level": "B1",
+    "topics": ["family", "food"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "suegra", "siempre", "nos", "trae", "comida", "cuando", "viene", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "trae",
+        "lemma": "traer",
+        "hint": "traer · ella · presente",
+        "distractors": ["traen", "traigo", "trajo"]
+      }
+    ]
   }
 ]

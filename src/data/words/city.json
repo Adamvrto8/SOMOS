@@ -139,7 +139,7 @@
     "sk": ["roh (ulice)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "La farmacia está en la esquina.", "sk": "Lekáreň je na rohu." }]
   },
@@ -171,7 +171,7 @@
     "sk": ["semafor"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Da vuelta a la derecha en el semáforo.", "sk": "Na semafore odboč doprava." }],
     "note": "dar vuelta = odbočiť (Mexiko)."
@@ -276,7 +276,7 @@
     "sk": ["dedina", "mestečko"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Mis abuelos viven en un pueblo.", "sk": "Starí rodičia bývajú na dedine." }]
   },
@@ -286,7 +286,7 @@
     "sk": ["doprava", "zápcha"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Hay mucho tráfico a esta hora.", "sk": "V tomto čase je veľká zápcha." }]
   },
@@ -296,7 +296,7 @@
     "sk": ["parkovisko"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "El estacionamiento está lleno.", "sk": "Parkovisko je plné." }]
   },
@@ -335,7 +335,7 @@
     "es": "enfrente de",
     "sk": ["oproti"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "La farmacia está enfrente del parque.", "sk": "Lekáreň je oproti parku." }]
   },
@@ -353,7 +353,7 @@
     "es": "detrás de",
     "sk": ["za"],
     "pos": "prep",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "El estacionamiento está detrás del edificio.", "sk": "Parkovisko je za budovou." }]
   },
@@ -363,7 +363,7 @@
     "sk": ["budova"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Vivo en un edificio de diez pisos.", "sk": "Bývam v desaťposchodovej budove." }]
   },
@@ -373,7 +373,7 @@
     "sk": ["most"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Cruza el puente y da vuelta a la derecha.", "sk": "Prejdi cez most a zaboč doprava." }],
     "note": "Hovorovo aj predĺžený víkend: hacer puente."
@@ -384,7 +384,7 @@
     "sk": ["trieda", "široká ulica"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Vivo en una avenida con mucho tráfico.", "sk": "Bývam na rušnej ulici." }]
   },
@@ -394,7 +394,7 @@
     "sk": ["polícia"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Llama a la policía.", "sk": "Zavolaj políciu." }],
     "note": "el policía / la policía = aj policajt / policajtka."
@@ -406,7 +406,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "direcciones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "¿Cuál es tu dirección?", "sk": "Aká je tvoja adresa?" }]
   },
@@ -426,7 +426,7 @@
     "sk": ["chodník"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Camina por la banqueta.", "sk": "Choď po chodníku." }],
     "note": "Mexické slovo; v Španielsku „acera“."
@@ -437,7 +437,7 @@
     "sk": ["hlavné námestie"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "Nos vemos en el zócalo.", "sk": "Stretneme sa na hlavnom námestí." }],
     "note": "Tak sa v Mexiku volá hlavné námestie mesta."
@@ -448,7 +448,7 @@
     "sk": ["taquería (bistro s tacos)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "La mejor taquería está en la esquina.", "sk": "Najlepšia taquería je na rohu." }]
   },
@@ -458,7 +458,7 @@
     "sk": ["plný"],
     "pos": "adj",
     "feminine": "llena",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "examples": [{ "es": "El metro está muy lleno.", "sk": "Metro je veľmi plné." }]
   },
@@ -528,5 +528,37 @@
     "level": "B1",
     "topics": ["city"],
     "examples": [{ "es": "Tomo la combi para ir al trabajo.", "sk": "Do práce chodím mikrobusom." }]
+  },
+  {
+    "id": "embotellamiento",
+    "es": "embotellamiento",
+    "sk": ["dopravná zápcha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Hubo un embotellamiento enorme en el Periférico.", "sk": "Na Periférico bola obrovská zápcha." }]
+  },
+  {
+    "id": "alcaldia",
+    "es": "alcaldía",
+    "sk": ["miestny úrad"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "Tienes que hacer el trámite en la alcaldía.", "sk": "Musíš to vybaviť na miestnom úrade." }],
+    "note": "V Mexiku City sa mestské časti volajú alcaldías (predtým delegaciones)."
+  },
+  {
+    "id": "transporte-publico",
+    "es": "transporte público",
+    "sk": ["verejná doprava"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [{ "es": "El transporte público es barato en la Ciudad de México.", "sk": "Verejná doprava je v Mexiku City lacná." }]
   }
 ]

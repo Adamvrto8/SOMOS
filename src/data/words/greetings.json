@@ -132,7 +132,7 @@
     "es": "igualmente",
     "sk": ["podobne", "aj ja"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "—Mucho gusto. —Igualmente.", "sk": "„Teší ma.“ „Aj mňa.“" }]
   },
@@ -169,7 +169,7 @@
     "es": "con permiso",
     "sk": ["s dovolením"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "Con permiso, voy al baño.", "sk": "S dovolením, idem na záchod." }],
     "note": "V Mexiku sa hovorí, keď niekoho obchádzaš alebo odchádzaš od stola."
@@ -217,7 +217,7 @@
     "es": "buen provecho",
     "sk": ["dobrú chuť"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "¡Buen provecho!", "sk": "Dobrú chuť!" }],
     "note": "V Mexiku sa praje aj cudzím ľuďom, ktorí jedia, keď prechádzaš okolo."
@@ -227,7 +227,7 @@
     "es": "felicidades",
     "sk": ["blahoželám", "gratulujem"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "¡Felicidades por tu nuevo trabajo!", "sk": "Blahoželám k novej práci!" }]
   },
@@ -303,7 +303,7 @@
     "es": "no pasa nada",
     "sk": ["nič sa nedeje", "to nevadí"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "Tranquilo, no pasa nada.", "sk": "Pokoj, nič sa nedeje." }]
   },
@@ -312,7 +312,7 @@
     "es": "¡buen viaje!",
     "sk": ["šťastnú cestu!"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "¡Buen viaje y nos vemos pronto!", "sk": "Šťastnú cestu a čoskoro sa uvidíme!" }]
   },
@@ -321,7 +321,7 @@
     "es": "que te vaya bien",
     "sk": ["maj sa dobre"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "Adiós, que te vaya bien.", "sk": "Ahoj, maj sa dobre." }]
   },
@@ -330,7 +330,7 @@
     "es": "saludos",
     "sk": ["pozdravujem", "pozdravy"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "Saludos a tu familia.", "sk": "Pozdravuj rodinu." }]
   },
@@ -339,7 +339,7 @@
     "es": "¡qué bueno!",
     "sk": ["to je super!", "to je dobre!"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["greetings"],
     "examples": [{ "es": "¡Qué bueno que viniste!", "sk": "Super, že si prišiel!" }]
   },
@@ -546,5 +546,35 @@
     "topics": ["greetings"],
     "examples": [{ "es": "¡Qué flojera ir a trabajar hoy!", "sk": "Dnes sa mi fakt nechce ísť do práce!" }],
     "note": "flojo = lenivý; tener flojera = nechcieť sa."
+  },
+  {
+    "id": "echale-ganas",
+    "es": "¡échale ganas!",
+    "sk": ["daj do toho všetko!", "drž sa!"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Échale ganas al examen!", "sk": "Daj do skúšky všetko!" }],
+    "note": "Veľmi mexické povzbudenie."
+  },
+  {
+    "id": "no-hay-bronca",
+    "es": "no hay bronca",
+    "sk": ["v pohode", "žiadny problém"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "—Perdón por llegar tarde. —No hay bronca.", "sk": "„Prepáč, že meškám.“ „V pohode.“" }],
+    "note": "Hovorové mexické; bronca = problém, hádka."
+  },
+  {
+    "id": "andale",
+    "es": "ándale",
+    "sk": ["no tak!", "presne tak!"],
+    "pos": "other",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [{ "es": "¡Ándale, vámonos!", "sk": "No tak, poďme!" }],
+    "note": "Mexické citoslovce: popohnanie (¡ándale, apúrate!) aj súhlas (¡ándale! = presne tak)."
   }
 ]

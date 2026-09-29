@@ -238,7 +238,7 @@
     "id": "s138",
     "es": "No encuentro la estación de metro.",
     "sk": "Neviem nájsť stanicu metra.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["city"],
     "grammar": ["presente"],
     "tokens": ["No", "encuentro", "la", "estación", "de", "metro", "."],
@@ -572,6 +572,78 @@
         "lemma": "ser",
         "hint": "ser · él · imperfecto",
         "distractors": ["eran", "eras", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s524",
+    "es": "Antes no había tanto tráfico en esta avenida.",
+    "sk": "Predtým nebolo na tejto triede toľko premávky.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "no", "había", "tanto", "tráfico", "en", "esta", "avenida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "toľko",
+        "distractors": ["tanta", "tantos", "muy"]
+      }
+    ]
+  },
+  {
+    "id": "s525",
+    "es": "Si sigues derecho, vas a encontrar el museo a la izquierda.",
+    "sk": "Ak pôjdeš stále rovno, múzeum nájdeš naľavo.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "sigues", "derecho", ",", "vas", "a", "encontrar", "el", "museo", "a", "la", "izquierda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sigues",
+        "lemma": "seguir",
+        "hint": "seguir · tú · presente",
+        "distractors": ["sigue", "seguiste", "seguimos"]
+      }
+    ]
+  },
+  {
+    "id": "s526",
+    "es": "Nos perdimos porque el celular no tenía señal.",
+    "sk": "Stratili sme sa, lebo mobil nemal signál.",
+    "level": "B1",
+    "topics": ["city", "tech"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Nos", "perdimos", "porque", "el", "celular", "no", "tenía", "señal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "perdimos",
+        "lemma": "perder",
+        "hint": "perder · nosotros · pretérito",
+        "distractors": ["perdemos", "perdieron", "perderemos"]
+      }
+    ]
+  },
+  {
+    "id": "s527",
+    "es": "Cuando vivía en el centro, iba a todos lados caminando.",
+    "sk": "Keď som býval v centre, všade som chodil pešo.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "el", "centro", ",", "iba", "a", "todos", "lados", "caminando", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vivía",
+        "lemma": "vivir",
+        "hint": "vivir · yo · imperfecto",
+        "distractors": ["vivo", "vivían", "viviré"]
       }
     ]
   }

@@ -182,7 +182,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "corazones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Te quiero con todo mi corazón.", "sk": "Ľúbim ťa celým srdcom." }]
   },
@@ -222,7 +222,7 @@
     "es": "fuerte",
     "sk": ["silný"],
     "pos": "adj",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Mi papá es muy fuerte.", "sk": "Ocko je veľmi silný." }]
   },
@@ -232,7 +232,7 @@
     "sk": ["krk"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Me duele el cuello.", "sk": "Bolí ma krk." }],
     "note": "Hrdlo (vnútri) = la garganta."
@@ -243,7 +243,7 @@
     "sk": ["rameno"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Me duele el hombro derecho.", "sk": "Bolí ma pravé rameno." }]
   },
@@ -253,7 +253,7 @@
     "sk": ["koleno"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Me lastimé la rodilla jugando fútbol.", "sk": "Pri futbale som si poranil koleno." }]
   },
@@ -273,7 +273,7 @@
     "sk": ["hruď"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Me duele el pecho.", "sk": "Bolí ma na hrudi." }]
   },
@@ -283,7 +283,7 @@
     "sk": ["pera"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Tengo los labios secos.", "sk": "Mám suché pery." }]
   },
@@ -293,7 +293,7 @@
     "sk": ["jazyk"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "El chile me quemó la lengua.", "sk": "Čili mi spálilo jazyk." }],
     "note": "Aj jazyk ako reč: la lengua materna = materinský jazyk."
@@ -304,7 +304,7 @@
     "sk": ["necht"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Me corté las uñas.", "sk": "Ostrihal som si nechty." }]
   },
@@ -315,7 +315,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "pieles",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "El sol es malo para la piel.", "sk": "Slnko škodí pokožke." }]
   },
@@ -325,7 +325,7 @@
     "sk": ["krv"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "No me gusta ver sangre.", "sk": "Nerád sa pozerám na krv." }]
   },
@@ -335,7 +335,7 @@
     "sk": ["kosť"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "El perro tiene un hueso.", "sk": "Pes má kosť." }]
   },
@@ -345,7 +345,7 @@
     "sk": ["brada (fúzy)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Mi papá tiene barba.", "sk": "Otec má bradu." }],
     "note": "Brada (časť tváre) = la barbilla."
@@ -377,7 +377,7 @@
     "sk": ["snedý", "tmavovlasý"],
     "pos": "adj",
     "feminine": "morena",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "examples": [{ "es": "Mi novia es morena.", "sk": "Moja priateľka je tmavovlasá." }]
   },
@@ -391,5 +391,26 @@
     "topics": ["body"],
     "examples": [{ "es": "Mi primo es güero.", "sk": "Môj bratranec je blonďák." }],
     "note": "Mexické: svetlé vlasy alebo pleť. Na trhu tak často oslovujú cudzincov: ¿Qué le damos, güero?"
+  },
+  {
+    "id": "musculo",
+    "es": "músculo",
+    "sk": ["sval"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["body"],
+    "examples": [{ "es": "Me duelen los músculos después del gimnasio.", "sk": "Po posilňovni ma bolia svaly." }]
+  },
+  {
+    "id": "cicatriz",
+    "es": "cicatriz",
+    "sk": ["jazva"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "cicatrices",
+    "level": "B1",
+    "topics": ["body"],
+    "examples": [{ "es": "Tengo una cicatriz en la mano.", "sk": "Mám jazvu na ruke." }]
   }
 ]

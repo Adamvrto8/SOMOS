@@ -252,7 +252,7 @@
     "id": "s096",
     "es": "Estamos preparando la cena.",
     "sk": "Pripravujeme večeru.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "grammar": ["progresivo"],
     "tokens": ["Estamos", "preparando", "la", "cena", "."],
@@ -513,7 +513,7 @@
     "id": "s111",
     "es": "Este puesto vende los mejores tacos de la colonia.",
     "sk": "Tento stánok predáva najlepšie tacos v štvrti.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "grammar": ["presente"],
     "tokens": ["Este", "puesto", "vende", "los", "mejores", "tacos", "de", "la", "colonia", "."],
@@ -596,6 +596,96 @@
         "lemma": "servir",
         "hint": "servir · nosotros · presente",
         "distractors": ["sirvo", "sirve", "sirves"]
+      }
+    ]
+  },
+  {
+    "id": "s541",
+    "es": "Cuando vivía en Oaxaca, comía mole cada domingo.",
+    "sk": "Keď som býval v Oaxace, každú nedeľu som jedol mole.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "Oaxaca", ",", "comía", "mole", "cada", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "comía",
+        "lemma": "comer",
+        "hint": "comer · yo · imperfecto",
+        "distractors": ["comían", "como", "comeré"]
+      }
+    ]
+  },
+  {
+    "id": "s542",
+    "es": "Se me olvidó comprar tortillas.",
+    "sk": "Zabudol som kúpiť tortilly.",
+    "level": "B1",
+    "topics": ["food", "shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "olvidó", "comprar", "tortillas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "olvidó",
+        "lemma": "olvidar",
+        "hint": "olvidar · él · pretérito",
+        "distractors": ["olvidé", "olvida", "olvidará"]
+      }
+    ]
+  },
+  {
+    "id": "s543",
+    "es": "Probé el chile más picante de mi vida.",
+    "sk": "Ochutnal som najpálivejšie čili v živote.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Probé", "el", "chile", "más", "picante", "de", "mi", "vida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Probé",
+        "lemma": "probar",
+        "hint": "probar · yo · pretérito",
+        "distractors": ["Pruebo", "Probó", "Probaré"]
+      }
+    ]
+  },
+  {
+    "id": "s544",
+    "es": "Si tienes hambre, te preparo unas quesadillas.",
+    "sk": "Ak si hladný, pripravím ti quesadillas.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "tienes", "hambre", ",", "te", "preparo", "unas", "quesadillas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "preparo",
+        "lemma": "preparar",
+        "hint": "preparar · yo · presente",
+        "distractors": ["prepara", "preparé", "preparaba"]
+      }
+    ]
+  },
+  {
+    "id": "s545",
+    "es": "Ya no como carne desde hace un año.",
+    "sk": "Už rok nejem mäso.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Ya", "no", "como", "carne", "desde", "hace", "un", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "como",
+        "lemma": "comer",
+        "hint": "comer · yo · presente",
+        "distractors": ["come", "comí", "comemos"]
       }
     ]
   }

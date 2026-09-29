@@ -201,7 +201,7 @@
     "sk": ["správny"],
     "pos": "adj",
     "feminine": "correcta",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Tu respuesta es correcta.", "sk": "Tvoja odpoveď je správna." }]
   },
@@ -212,7 +212,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "salones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "El salón está en el segundo piso.", "sk": "Trieda je na druhom poschodí." }],
     "note": "Celým názvom „salón de clases“."
@@ -224,7 +224,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "pizarrones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Escribe la respuesta en el pizarrón.", "sk": "Napíš odpoveď na tabuľu." }]
   },
@@ -234,7 +234,7 @@
     "sk": ["list (papiera)", "list (stromu)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "¿Me prestas una hoja?", "sk": "Požičiaš mi papier?" }]
   },
@@ -244,7 +244,7 @@
     "sk": ["guma"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Necesito una goma y un lápiz.", "sk": "Potrebujem gumu a ceruzku." }]
   },
@@ -265,7 +265,7 @@
     "sk": ["predmet (v škole)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "¿Cuál es tu materia favorita?", "sk": "Aký je tvoj obľúbený predmet?" }]
   },
@@ -275,7 +275,7 @@
     "sk": ["matematika"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Las matemáticas son difíciles para mí.", "sk": "Matematika je pre mňa ťažká." }],
     "note": "Používa sa v množnom čísle: las matemáticas."
@@ -286,7 +286,7 @@
     "sk": ["dejiny", "dejepis", "príbeh"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Me gusta la historia de México.", "sk": "Zaujímajú ma mexické dejiny." }]
   },
@@ -296,7 +296,7 @@
     "sk": ["slovník"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Busca la palabra en el diccionario.", "sk": "Vyhľadaj to slovo v slovníku." }]
   },
@@ -306,7 +306,7 @@
     "sk": ["príklad"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "¿Me puede dar un ejemplo?", "sk": "Môžete mi dať príklad?" }]
   },
@@ -317,7 +317,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "errores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Todos cometemos errores.", "sk": "Všetci robíme chyby." }]
   },
@@ -327,7 +327,7 @@
     "sk": ["prestávka (v škole)"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["school"],
     "examples": [{ "es": "Los niños juegan en el recreo.", "sk": "Deti sa hrajú cez prestávku." }]
   },
@@ -397,5 +397,49 @@
     "level": "B1",
     "topics": ["school"],
     "examples": [{ "es": "Tomé un curso de cocina.", "sk": "Absolvoval som kurz varenia." }]
+  },
+  {
+    "id": "licenciatura",
+    "es": "licenciatura",
+    "sk": ["vysokoškolské štúdium"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Mi hermana estudia la licenciatura en Derecho.", "sk": "Sestra študuje na vysokej škole právo." }],
+    "note": "Mexická licenciatura trvá zvyčajne 4–5 rokov a je to základný vysokoškolský titul."
+  },
+  {
+    "id": "promedio",
+    "es": "promedio",
+    "sk": ["priemer (známok)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Necesito un promedio de nueve para la beca.", "sk": "Na štipendium potrebujem priemer deväť." }],
+    "note": "V Mexiku sa známkuje od 0 do 10, najlepšia známka je 10."
+  },
+  {
+    "id": "tesis",
+    "es": "tesis",
+    "sk": ["záverečná práca"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "tesis",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "Estoy escribiendo mi tesis.", "sk": "Píšem záverečnú prácu." }]
+  },
+  {
+    "id": "investigacion",
+    "es": "investigación",
+    "sk": ["výskum"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "investigaciones",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [{ "es": "La universidad hace mucha investigación.", "sk": "Univerzita robí veľa výskumu." }]
   }
 ]

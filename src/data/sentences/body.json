@@ -199,7 +199,7 @@
     "id": "s379",
     "es": "Me duele la rodilla desde ayer.",
     "sk": "Od včera ma bolí koleno.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["body"],
     "tokens": ["Me", "duele", "la", "rodilla", "desde", "ayer", "."],
     "cloze": [
@@ -296,6 +296,78 @@
         "lemma": "largo",
         "hint": "prídavné meno: largo",
         "distractors": ["larga", "largos", "largas"]
+      }
+    ]
+  },
+  {
+    "id": "s520",
+    "es": "Cuando era niño, me rompí el brazo.",
+    "sk": "Keď som bol malý, zlomil som si ruku.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["imperfecto", "preterito", "ser-estar"],
+    "tokens": ["Cuando", "era", "niño", ",", "me", "rompí", "el", "brazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors": ["estaba", "soy", "seré"]
+      }
+    ]
+  },
+  {
+    "id": "s521",
+    "es": "Mi hermana se parece mucho a mi mamá.",
+    "sk": "Sestra sa veľmi podobá na mamu.",
+    "level": "B1",
+    "topics": ["body", "family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "se", "parece", "mucho", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "parece",
+        "lemma": "parecer",
+        "hint": "parecer · ella · presente",
+        "distractors": ["parecen", "parezco", "parecerán"]
+      }
+    ]
+  },
+  {
+    "id": "s522",
+    "es": "Llevo una semana con dolor de cabeza.",
+    "sk": "Už týždeň ma bolí hlava.",
+    "level": "B1",
+    "topics": ["body", "health"],
+    "grammar": ["presente"],
+    "tokens": ["Llevo", "una", "semana", "con", "dolor", "de", "cabeza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["Lleva", "Llevamos", "Llevaré"]
+      }
+    ]
+  },
+  {
+    "id": "s523",
+    "es": "Se cayó en la calle y se lastimó la rodilla.",
+    "sk": "Spadol na ulici a poranil si koleno.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "cayó", "en", "la", "calle", "y", "se", "lastimó", "la", "rodilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cayó",
+        "lemma": "caerse",
+        "hint": "caerse · él · pretérito",
+        "distractors": ["cae", "caí", "caerá"]
       }
     ]
   }

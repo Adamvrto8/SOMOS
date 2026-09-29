@@ -257,7 +257,7 @@
     "sk": ["domáce zviera"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family", "nature"],
     "examples": [{ "es": "¿Tienes mascota?", "sk": "Máš domáce zvieratko?" }]
   },
@@ -298,7 +298,7 @@
     "sk": ["vnuk"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family"],
     "examples": [{ "es": "Mi abuela tiene diez nietos.", "sk": "Babka má desať vnúčat." }],
     "note": "nieta = vnučka."
@@ -309,7 +309,7 @@
     "sk": ["svokra"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family"],
     "examples": [{ "es": "Mi suegra cocina muy rico.", "sk": "Svokra výborne varí." }],
     "note": "suegro = svokor."
@@ -320,7 +320,7 @@
     "sk": ["švagor"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family"],
     "examples": [{ "es": "Mi cuñado vive en Estados Unidos.", "sk": "Švagor žije v Spojených štátoch." }],
     "note": "cuñada = švagriná."
@@ -331,7 +331,7 @@
     "sk": ["partner", "partnerka", "pár"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["family"],
     "examples": [{ "es": "Vivo con mi pareja.", "sk": "Bývam s partnerom." }],
     "note": "Vždy ženského rodu, aj keď ide o muža."
@@ -441,5 +441,37 @@
     "level": "B1",
     "topics": ["family"],
     "examples": [{ "es": "Después del divorcio se mudó a Monterrey.", "sk": "Po rozvode sa presťahoval do Monterrey." }]
+  },
+  {
+    "id": "padrino",
+    "es": "padrino",
+    "sk": ["krstný otec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi padrino me regaló mi primera bicicleta.", "sk": "Krstný otec mi daroval môj prvý bicykel." }],
+    "note": "V Mexiku sú padrinos aj na svadbách, oslavách XV años či prvom svätom prijímaní."
+  },
+  {
+    "id": "compadre",
+    "es": "compadre",
+    "sk": ["kmotor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "Mi compadre viene a comer el domingo.", "sk": "Kmotor príde v nedeľu na obed." }],
+    "note": "Tak si hovoria rodičia dieťaťa a jeho krstný otec; hovorovo aj „dobrý kamarát“."
+  },
+  {
+    "id": "herencia",
+    "es": "herencia",
+    "sk": ["dedičstvo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [{ "es": "Recibió una herencia de su tía.", "sk": "Dostal dedičstvo po tete." }]
   }
 ]

@@ -56,7 +56,7 @@
     "sk": ["drobné", "výdavok", "zmena"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "¿Tiene cambio de quinientos?", "sk": "Máte vydať z päťsto?" }]
   },
@@ -76,7 +76,7 @@
     "sk": ["veľkosť (oblečenia)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping", "clothes"],
     "examples": [{ "es": "¿Tiene esta camisa en talla mediana?", "sk": "Máte túto košeľu vo veľkosti M?" }]
   },
@@ -129,7 +129,7 @@
     "sk": ["pokladňa", "krabica"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Pague en la caja, por favor.", "sk": "Zaplaťte pri pokladni, prosím." }]
   },
@@ -169,7 +169,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "centros comerciales",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Vamos al centro comercial el sábado.", "sk": "V sobotu ideme do nákupného centra." }]
   },
@@ -230,7 +230,7 @@
     "sk": ["liter"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Compra un litro de leche.", "sk": "Kúp liter mlieka." }]
   },
@@ -240,7 +240,7 @@
     "sk": ["kúsok", "kus"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "¿Me da un pedazo de queso?", "sk": "Dáte mi kúsok syra?" }]
   },
@@ -250,7 +250,7 @@
     "sk": ["veľkosť"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "¿De qué tamaño lo quiere?", "sk": "Akú veľkosť si želáte?" }],
     "note": "Pri oblečení sa hovorí „talla“, pri topánkach „número“."
@@ -262,7 +262,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "probadores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "¿Dónde están los probadores?", "sk": "Kde sú skúšobné kabínky?" }]
   },
@@ -272,7 +272,7 @@
     "sk": ["rad"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Hay mucha fila en la caja.", "sk": "Pri pokladni je dlhý rad." }],
     "note": "hacer fila = stáť v rade."
@@ -283,7 +283,7 @@
     "sk": ["značka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "¿De qué marca es tu celular?", "sk": "Akej značky je tvoj mobil?" }]
   },
@@ -292,7 +292,7 @@
     "es": "gratis",
     "sk": ["zadarmo"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "La entrada es gratis.", "sk": "Vstup je zadarmo." }]
   },
@@ -302,7 +302,7 @@
     "sk": ["pekáreň"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Compro pan dulce en la panadería.", "sk": "V pekárni kupujem sladké pečivo." }]
   },
@@ -312,7 +312,7 @@
     "sk": ["obchodík (za rohom)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Voy a la tiendita por unos refrescos.", "sk": "Idem do obchodíka po nejaké limonády." }],
     "note": "Malý rodinný obchod, v Mexiku je takmer na každej ulici."
@@ -323,7 +323,7 @@
     "sk": ["zoznam"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["shopping"],
     "examples": [{ "es": "Hice una lista de compras.", "sk": "Spravil som si nákupný zoznam." }],
     "note": "Pozor: estar lista = byť pripravená (listo, lista)."
@@ -379,5 +379,35 @@
     "topics": ["shopping"],
     "examples": [{ "es": "Compré el refri a meses sin intereses.", "sk": "Chladničku som kúpil na splátky bez úroku." }],
     "note": "Veľmi bežné pri platbe kartou v Mexiku."
+  },
+  {
+    "id": "reembolso",
+    "es": "reembolso",
+    "sk": ["vrátenie peňazí"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Pedí un reembolso porque el producto llegó roto.", "sk": "Požiadal som o vrátenie peňazí, lebo tovar prišiel rozbitý." }]
+  },
+  {
+    "id": "ganga",
+    "es": "ganga",
+    "sk": ["výhodná kúpa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "¡Estos zapatos fueron una ganga!", "sk": "Tieto topánky boli za babku!" }]
+  },
+  {
+    "id": "comprobante",
+    "es": "comprobante",
+    "sk": ["potvrdenie", "doklad"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [{ "es": "Guarda el comprobante de pago.", "sk": "Odlož si potvrdenie o platbe." }]
   }
 ]

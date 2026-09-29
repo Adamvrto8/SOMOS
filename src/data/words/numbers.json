@@ -330,7 +330,7 @@
     "sk": ["posledný"],
     "pos": "adj",
     "feminine": "última",
-    "level": "A1",
+    "level": "A2",
     "topics": ["numbers"],
     "examples": [{ "es": "Es el último camión de la noche.", "sk": "To je posledný nočný autobus." }]
   },
@@ -352,7 +352,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "mitades",
-    "level": "A1",
+    "level": "A2",
     "topics": ["numbers"],
     "examples": [{ "es": "Quiero la mitad.", "sk": "Chcem polovicu." }]
   },
@@ -365,5 +365,25 @@
     "level": "A2",
     "topics": ["numbers"],
     "examples": [{ "es": "Compré una docena de huevos.", "sk": "Kúpil som tucet vajec." }]
+  },
+  {
+    "id": "porcentaje",
+    "es": "porcentaje",
+    "sk": ["percento", "percentuálny podiel"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "¿Qué porcentaje de propina se deja en México?", "sk": "Koľko percent sprepitného sa v Mexiku necháva?" }]
+  },
+  {
+    "id": "cifra",
+    "es": "cifra",
+    "sk": ["číslo", "údaj"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [{ "es": "Las cifras de desempleo mejoraron.", "sk": "Čísla o nezamestnanosti sa zlepšili." }]
   }
 ]

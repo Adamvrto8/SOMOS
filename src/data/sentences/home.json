@@ -381,7 +381,7 @@
     "id": "s126",
     "es": "Nuestra casa es vieja pero muy cómoda.",
     "sk": "Náš dom je starý, ale veľmi pohodlný.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["home"],
     "grammar": ["gender"],
     "tokens": ["Nuestra", "casa", "es", "vieja", "pero", "muy", "cómoda", "."],
@@ -631,6 +631,78 @@
         "lemma": "ver",
         "hint": "ver · yo · imperfecto",
         "distractors": ["veían", "vi", "veíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s558",
+    "es": "Nos mudamos aquí hace tres años.",
+    "sk": "Presťahovali sme sa sem pred tromi rokmi.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "mudamos", "aquí", "hace", "tres", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mudamos",
+        "lemma": "mudarse",
+        "hint": "mudarse · nosotros · pretérito",
+        "distractors": ["mudaron", "mudé", "mudaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s559",
+    "es": "Cuando llegué a casa, los niños ya estaban dormidos.",
+    "sk": "Keď som prišiel domov, deti už spali.",
+    "level": "B1",
+    "topics": ["home", "family"],
+    "grammar": ["preterito", "imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "llegué", "a", "casa", ",", "los", "niños", "ya", "estaban", "dormidos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaban",
+        "lemma": "estar",
+        "hint": "ser/estar · ellos · imperfecto",
+        "distractors": ["eran", "están", "estaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s560",
+    "es": "Siempre se me olvida apagar la luz del baño.",
+    "sk": "Vždy zabudnem zhasnúť svetlo v kúpeľni.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "se", "me", "olvida", "apagar", "la", "luz", "del", "baño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "olvida",
+        "lemma": "olvidar",
+        "hint": "olvidar · él · presente",
+        "distractors": ["olvido", "olvidan", "olvidé"]
+      }
+    ]
+  },
+  {
+    "id": "s561",
+    "es": "El dueño del departamento nos va a subir la renta.",
+    "sk": "Majiteľ bytu nám zvýši nájomné.",
+    "level": "B1",
+    "topics": ["home", "shopping"],
+    "grammar": ["presente"],
+    "tokens": ["El", "dueño", "del", "departamento", "nos", "va", "a", "subir", "la", "renta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "renta",
+        "lemma": "renta",
+        "hint": "nájomné",
+        "distractors": ["recibo", "sueldo", "dinero"]
       }
     ]
   }

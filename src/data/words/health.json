@@ -35,7 +35,7 @@
     "sk": ["tabletka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Toma una pastilla cada ocho horas.", "sk": "Ber jednu tabletku každých osem hodín." }]
   },
@@ -66,7 +66,7 @@
     "sk": ["hrdlo"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Toma un té para la garganta.", "sk": "Daj si čaj na hrdlo." }]
   },
@@ -86,7 +86,7 @@
     "sk": ["chrípka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Tengo gripa.", "sk": "Mám chrípku." }],
     "note": "V Mexiku „gripa“ (v Španielsku „gripe“)."
@@ -98,7 +98,7 @@
     "pos": "noun",
     "gender": "f",
     "uncountable": true,
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Tengo mucha tos.", "sk": "Veľmi kašlem." }]
   },
@@ -108,7 +108,7 @@
     "sk": ["termín (u lekára)", "rande"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Tengo cita con el doctor a las cinco.", "sk": "O piatej mám termín u lekára." }],
     "note": "cita = termín aj rande."
@@ -140,7 +140,7 @@
     "sk": ["cvičenie", "pohyb"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Hago ejercicio tres veces por semana.", "sk": "Cvičím trikrát týždenne." }]
   },
@@ -150,7 +150,7 @@
     "sk": ["zdravý"],
     "pos": "adj",
     "feminine": "sana",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "La fruta es muy sana.", "sk": "Ovocie je veľmi zdravé." }]
   },
@@ -221,7 +221,7 @@
     "sk": ["ordinácia"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "El consultorio del doctor está en el centro.", "sk": "Lekárova ordinácia je v centre." }]
   },
@@ -231,7 +231,7 @@
     "sk": ["klinika", "zdravotné stredisko"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Hay una clínica cerca de mi casa.", "sk": "Blízko môjho domu je klinika." }]
   },
@@ -251,7 +251,7 @@
     "sk": ["alergia"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Tengo alergia a los mariscos.", "sk": "Som alergický na morské plody." }]
   },
@@ -261,7 +261,7 @@
     "sk": ["očkovanie", "vakcína"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Necesito una vacuna para viajar.", "sk": "Na cestu potrebujem očkovanie." }]
   },
@@ -271,7 +271,7 @@
     "sk": ["teplomer"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "El termómetro marca treinta y ocho grados.", "sk": "Teplomer ukazuje tridsaťosem stupňov." }]
   },
@@ -281,7 +281,7 @@
     "sk": ["sirup"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Toma este jarabe para la tos.", "sk": "Vezmi si tento sirup na kašeľ." }]
   },
@@ -291,7 +291,7 @@
     "sk": ["vitamín"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Tomo vitaminas todos los días.", "sk": "Každý deň beriem vitamíny." }]
   },
@@ -301,7 +301,7 @@
     "sk": ["náplasť"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "¿Tienes una curita?", "sk": "Máš náplasť?" }],
     "note": "Mexické slovo; v Španielsku „tirita“."
@@ -321,7 +321,7 @@
     "es": "embarazada",
     "sk": ["tehotná"],
     "pos": "adj",
-    "level": "A1",
+    "level": "A2",
     "topics": ["health"],
     "examples": [{ "es": "Mi hermana está embarazada.", "sk": "Sestra je tehotná." }],
     "note": "Pozor, nie „embarrassed“: hanbím sa = me da vergüenza."
@@ -407,5 +407,48 @@
     "level": "B1",
     "topics": ["health"],
     "examples": [{ "es": "No es nada grave.", "sk": "Nie je to nič vážne." }]
+  },
+  {
+    "id": "tratamiento",
+    "es": "tratamiento",
+    "sk": ["liečba"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "El tratamiento dura tres semanas.", "sk": "Liečba trvá tri týždne." }]
+  },
+  {
+    "id": "analisis",
+    "es": "análisis",
+    "sk": ["rozbor", "laboratórny test"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "análisis",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Me mandaron a hacer unos análisis de sangre.", "sk": "Poslali ma na krvné testy." }]
+  },
+  {
+    "id": "lesion",
+    "es": "lesión",
+    "sk": ["zranenie"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "lesiones",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Tiene una lesión en la rodilla.", "sk": "Má zranené koleno." }]
+  },
+  {
+    "id": "cansancio",
+    "es": "cansancio",
+    "sk": ["únava"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [{ "es": "Últimamente siento mucho cansancio.", "sk": "V poslednom čase cítim veľkú únavu." }]
   }
 ]

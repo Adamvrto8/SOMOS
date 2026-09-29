@@ -245,7 +245,7 @@
     "sk": ["blúzka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Esta blusa es muy bonita.", "sk": "Táto blúzka je veľmi pekná." }]
   },
@@ -255,7 +255,7 @@
     "sk": ["kabát"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "En invierno uso abrigo.", "sk": "V zime nosím kabát." }]
   },
@@ -265,7 +265,7 @@
     "sk": ["šál"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Ponte la bufanda, hace frío.", "sk": "Daj si šál, je zima." }]
   },
@@ -275,7 +275,7 @@
     "sk": ["čižma"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Me compré unas botas vaqueras.", "sk": "Kúpil som si kovbojské čižmy." }]
   },
@@ -285,7 +285,7 @@
     "sk": ["sandál"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "En la playa uso sandalias.", "sk": "Na pláži nosím sandále." }]
   },
@@ -306,7 +306,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "cinturones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Este cinturón es de piel.", "sk": "Tento opasok je z kože." }]
   },
@@ -316,7 +316,7 @@
     "sk": ["vrecko"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Tengo las llaves en el bolsillo.", "sk": "Kľúče mám vo vrecku." }],
     "note": "V Mexiku aj „la bolsa“ (bolsa del pantalón)."
@@ -327,7 +327,7 @@
     "sk": ["pyžamo"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Todavía estoy en pijama.", "sk": "Ešte som v pyžame." }],
     "note": "V Mexiku ženského rodu: la pijama."
@@ -339,7 +339,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "trajes de baño",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "No olvides tu traje de baño.", "sk": "Nezabudni si plavky." }]
   },
@@ -349,7 +349,7 @@
     "sk": ["prsteň"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Es un anillo de plata.", "sk": "Je to strieborný prsteň." }]
   },
@@ -359,7 +359,7 @@
     "sk": ["náušnica"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "examples": [{ "es": "Me regalaron unos aretes.", "sk": "Dostala som náušnice." }],
     "note": "Mexické slovo; v Španielsku „pendiente“."
@@ -434,5 +434,35 @@
     "level": "A1",
     "topics": ["clothes"],
     "examples": [{ "es": "Me compré una gorra anaranjada.", "sk": "Kúpil som si oranžovú šiltovku." }]
+  },
+  {
+    "id": "moda",
+    "es": "moda",
+    "sk": ["móda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Esos pantalones ya no están de moda.", "sk": "Tieto nohavice už nie sú v móde." }]
+  },
+  {
+    "id": "prenda",
+    "es": "prenda",
+    "sk": ["kus oblečenia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Cada prenda cuesta cien pesos.", "sk": "Každý kus oblečenia stojí sto pesos." }]
+  },
+  {
+    "id": "tela",
+    "es": "tela",
+    "sk": ["látka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [{ "es": "Esta tela es muy suave.", "sk": "Táto látka je veľmi jemná." }]
   }
 ]

@@ -271,7 +271,7 @@
     "id": "s356",
     "es": "Mis hijos están nadando en la alberca.",
     "sk": "Deti plávajú v bazéne.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["hobbies"],
     "grammar": ["progresivo"],
     "tokens": ["Mis", "hijos", "están", "nadando", "en", "la", "alberca", "."],
@@ -325,7 +325,7 @@
     "id": "s401",
     "es": "¿Viste el partido ayer?",
     "sk": "Videl si včera zápas?",
-    "level": "A1",
+    "level": "A2",
     "topics": ["hobbies"],
     "grammar": ["preterito"],
     "tokens": ["¿", "Viste", "el", "partido", "ayer", "?"],
@@ -462,6 +462,78 @@
         "lemma": "aprovechar",
         "hint": "aprovechar · nosotros · pretérito",
         "distractors": ["Aproveché", "Aprovechó", "Aprovechábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s554",
+    "es": "De niño jugaba futbol todas las tardes.",
+    "sk": "Ako malý som každé poobedie hrával futbal.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niño", "jugaba", "futbol", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugaba",
+        "lemma": "jugar",
+        "hint": "jugar · yo · imperfecto",
+        "distractors": ["juego", "jugaron", "jugaré"]
+      }
+    ]
+  },
+  {
+    "id": "s555",
+    "es": "El sábado iremos a un concierto de mariachi en Garibaldi.",
+    "sk": "V sobotu pôjdeme na koncert mariachi na Garibaldi.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "sábado", "iremos", "a", "un", "concierto", "de", "mariachi", "en", "Garibaldi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "iremos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · futuro",
+        "distractors": ["fuimos", "irán", "iré"]
+      }
+    ]
+  },
+  {
+    "id": "s556",
+    "es": "Empecé a tocar la guitarra hace dos años.",
+    "sk": "Na gitare som začal hrať pred dvoma rokmi.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Empecé", "a", "tocar", "la", "guitarra", "hace", "dos", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Empecé",
+        "lemma": "empezar",
+        "hint": "empezar · yo · pretérito",
+        "distractors": ["Empiezo", "Empezó", "Empezaré"]
+      }
+    ]
+  },
+  {
+    "id": "s557",
+    "es": "Nos divertimos mucho en la fiesta de anoche.",
+    "sk": "Na včerajšej párty sme sa výborne zabavili.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "divertimos", "mucho", "en", "la", "fiesta", "de", "anoche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "divertimos",
+        "lemma": "divertirse",
+        "hint": "divertirse · nosotros · pretérito",
+        "distractors": ["divierten", "divertí", "divertiremos"]
       }
     ]
   }

@@ -273,7 +273,7 @@
     "sk": ["omáčka", "salsa"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "¿La salsa pica?", "sk": "Je tá salsa pálivá?" }]
   },
@@ -355,7 +355,7 @@
     "sk": ["čašník"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "El mesero nos trae la cuenta.", "sk": "Čašník nám nesie účet." }],
     "note": "mesera = čašníčka. V Mexiku „mesero“ (v Španielsku „camarero“)."
@@ -389,7 +389,7 @@
     "sk": ["výborný", "vynikajúci (o jedle)"],
     "pos": "adj",
     "feminine": "deliciosa",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "El mole está delicioso.", "sk": "Mole je vynikajúce." }]
   },
@@ -398,7 +398,7 @@
     "es": "picante",
     "sk": ["pálivý", "štipľavý"],
     "pos": "adj",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "No me gusta la comida picante.", "sk": "Nemám rád pálivé jedlo." }]
   },
@@ -460,7 +460,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "limones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Me gustan los tacos con limón.", "sk": "Tacos mám rád s limetkou." }],
     "note": "V Mexiku je „limón“ malá zelená limetka."
@@ -471,7 +471,7 @@
     "sk": ["jahoda"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Un licuado de fresa, por favor.", "sk": "Jahodový koktail, prosím." }],
     "note": "Hovorovo aj „namyslený, snobský“: es muy fresa. Licuado = mixovaný nápoj s mliekom."
@@ -482,7 +482,7 @@
     "sk": ["mango"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "El mango con chile es delicioso.", "sk": "Mango s čili je výborné." }]
   },
@@ -492,7 +492,7 @@
     "sk": ["ananás"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Compré una piña en el mercado.", "sk": "Na trhu som kúpil ananás." }]
   },
@@ -502,7 +502,7 @@
     "sk": ["vodový melón"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "En verano comemos mucha sandía.", "sk": "V lete jeme veľa melóna." }]
   },
@@ -512,7 +512,7 @@
     "sk": ["cibuľa"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Los tacos llevan cebolla y cilantro.", "sk": "Do tacos sa dáva cibuľa a koriander." }]
   },
@@ -522,7 +522,7 @@
     "sk": ["cesnak"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "La salsa tiene mucho ajo.", "sk": "V salse je veľa cesnaku." }]
   },
@@ -532,7 +532,7 @@
     "sk": ["mrkva"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Compra un kilo de zanahorias.", "sk": "Kúp kilo mrkvy." }]
   },
@@ -542,7 +542,7 @@
     "sk": ["kukurica (klas)"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Vamos a comprar un elote en la esquina.", "sk": "Kúpme si kukuricu na rohu." }],
     "note": "Elote = varený klas kukurice s majonézou, syrom a čili; esquites = to isté v pohári."
@@ -554,7 +554,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "pasteles",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Hice un pastel para tu cumpleaños.", "sk": "Upiekol som ti tortu na narodeniny." }]
   },
@@ -564,7 +564,7 @@
     "sk": ["sušienka", "keks"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Los niños quieren galletas.", "sk": "Deti chcú sušienky." }]
   },
@@ -574,7 +574,7 @@
     "sk": ["cukrík", "sladkosť"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Los niños comen muchos dulces.", "sk": "Deti jedia veľa sladkostí." }],
     "note": "Ako prídavné meno: sladký (pan dulce = sladké pečivo)."
@@ -616,7 +616,7 @@
     "sk": ["tequila"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "El tequila se hace en Jalisco.", "sk": "Tequila sa vyrába v Jalisku." }],
     "note": "V španielčine je mužského rodu: el tequila."
@@ -627,7 +627,7 @@
     "sk": ["bravčové", "prasa"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Los tacos al pastor son de cerdo.", "sk": "Tacos al pastor sú z bravčového." }],
     "note": "Hovädzie = carne de res."
@@ -638,7 +638,7 @@
     "sk": ["lyžica"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "¿Me trae una cuchara, por favor?", "sk": "Doniesli by ste mi lyžicu, prosím?" }]
   },
@@ -649,7 +649,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "tenedores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Los tacos se comen sin tenedor.", "sk": "Tacos sa jedia bez vidličky." }]
   },
@@ -659,7 +659,7 @@
     "sk": ["nôž"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["food"],
     "examples": [{ "es": "Este cuchillo no corta.", "sk": "Tento nôž nereže." }]
   },
@@ -745,5 +745,36 @@
     "level": "B1",
     "topics": ["food"],
     "examples": [{ "es": "Soy vegetariano, no como carne.", "sk": "Som vegetarián, nejem mäso." }]
+  },
+  {
+    "id": "sobremesa",
+    "es": "sobremesa",
+    "sk": ["posedenie pri stole po jedle"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "En México la sobremesa puede durar horas.", "sk": "V Mexiku môže posedenie po jedle trvať hodiny." }]
+  },
+  {
+    "id": "porcion",
+    "es": "porción",
+    "sk": ["porcia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "porciones",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Las porciones en este restaurante son enormes.", "sk": "Porcie v tejto reštaurácii sú obrovské." }]
+  },
+  {
+    "id": "congelado",
+    "es": "congelado",
+    "sk": ["mrazený", "zamrznutý"],
+    "pos": "adj",
+    "feminine": "congelada",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Compré verduras congeladas.", "sk": "Kúpil som mrazenú zeleninu." }]
   }
 ]

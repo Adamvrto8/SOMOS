@@ -427,5 +427,77 @@
         "distractors": ["Soy", "Está", "Están"]
       }
     ]
+  },
+  {
+    "id": "s546",
+    "es": "¡Qué milagro! Hace años que no nos vemos.",
+    "sk": "To je zázrak! Nevideli sme sa celé roky.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¡", "Qué", "milagro", "!", "Hace", "años", "que", "no", "nos", "vemos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "vemos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · presente",
+        "distractors": ["ven", "veo", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s547",
+    "es": "Gracias por avisarme, no sabía nada.",
+    "sk": "Vďaka, že si mi dal vedieť, nič som nevedel.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Gracias", "por", "avisarme", ",", "no", "sabía", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sabía",
+        "lemma": "saber",
+        "hint": "saber · yo · imperfecto",
+        "distractors": ["sabían", "sabemos", "sabes"]
+      }
+    ]
+  },
+  {
+    "id": "s548",
+    "es": "Me dio mucho gusto conocerte.",
+    "sk": "Veľmi ma potešilo, že som ťa spoznal.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "dio", "mucho", "gusto", "conocerte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · él · pretérito",
+        "distractors": ["di", "dimos", "dieron"]
+      }
+    ]
+  },
+  {
+    "id": "s549",
+    "es": "Con permiso, ya me tengo que ir.",
+    "sk": "S dovolením, už musím ísť.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Con", "permiso", ",", "ya", "me", "tengo", "que", "ir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tiene", "tienes", "tenemos"]
+      }
+    ]
   }
 ]

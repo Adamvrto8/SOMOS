@@ -568,5 +568,77 @@
         "distractors": ["cumplirá", "cumplirán", "cumplo"]
       }
     ]
+  },
+  {
+    "id": "s583",
+    "es": "Hace media hora que te estoy esperando.",
+    "sk": "Čakám na teba už pol hodiny.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["progresivo"],
+    "tokens": ["Hace", "media", "hora", "que", "te", "estoy", "esperando", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "esperando",
+        "lemma": "esperar",
+        "hint": "esperar · gerundio",
+        "distractors": ["esperado", "espero", "esperar"]
+      }
+    ]
+  },
+  {
+    "id": "s584",
+    "es": "Antes me levantaba a las seis, pero ahora trabajo desde casa.",
+    "sk": "Predtým som vstával o šiestej, ale teraz pracujem z domu.",
+    "level": "B1",
+    "topics": ["time", "work"],
+    "grammar": ["imperfecto", "presente"],
+    "tokens": ["Antes", "me", "levantaba", "a", "las", "seis", ",", "pero", "ahora", "trabajo", "desde", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "levantaba",
+        "lemma": "levantarse",
+        "hint": "levantarse · yo · imperfecto",
+        "distractors": ["levanto", "levanté", "levantaré"]
+      }
+    ]
+  },
+  {
+    "id": "s585",
+    "es": "Llegaste tarde otra vez; la película ya empezó.",
+    "sk": "Zase si prišiel neskoro, film už začal.",
+    "level": "B1",
+    "topics": ["time", "hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegaste", "tarde", "otra", "vez", ";", "la", "película", "ya", "empezó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · ella · pretérito",
+        "distractors": ["empieza", "empecé", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s586",
+    "es": "Dentro de dos semanas saldremos de vacaciones.",
+    "sk": "O dva týždne pôjdeme na dovolenku.",
+    "level": "B1",
+    "topics": ["time", "travel"],
+    "grammar": ["futuro"],
+    "tokens": ["Dentro", "de", "dos", "semanas", "saldremos", "de", "vacaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "saldremos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · futuro",
+        "distractors": ["saldrán", "salíamos", "saldré"]
+      }
+    ]
   }
 ]

@@ -78,7 +78,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "volcanes",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "El Popocatépetl es un volcán activo.", "sk": "Popocatépetl je činná sopka." }]
   },
@@ -98,7 +98,7 @@
     "sk": ["prales", "džungľa"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "En Chiapas hay mucha selva.", "sk": "V Chiapase je veľa pralesa." }]
   },
@@ -108,7 +108,7 @@
     "sk": ["púšť"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "El desierto de Sonora es enorme.", "sk": "Púšť Sonora je obrovská." }]
   },
@@ -118,7 +118,7 @@
     "sk": ["ostrov"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Isla Mujeres está cerca de Cancún.", "sk": "Isla Mujeres je blízko Cancúnu." }]
   },
@@ -138,7 +138,7 @@
     "sk": ["zem", "pôda"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "La tierra está seca.", "sk": "Zem je suchá." }]
   },
@@ -148,7 +148,7 @@
     "sk": ["vidiek", "pole"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Mis abuelos viven en el campo.", "sk": "Starí rodičia žijú na vidieku." }]
   },
@@ -211,7 +211,7 @@
     "sk": ["piesok"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "La arena está muy caliente.", "sk": "Piesok je veľmi horúci." }]
   },
@@ -221,7 +221,7 @@
     "sk": ["vlna"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Hoy hay olas muy grandes.", "sk": "Dnes sú veľmi veľké vlny." }]
   },
@@ -231,7 +231,7 @@
     "sk": ["kameň"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "El niño tiró una piedra al agua.", "sk": "Chlapec hodil kameň do vody." }]
   },
@@ -277,7 +277,7 @@
     "sk": ["korytnačka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Vimos tortugas en la playa.", "sk": "Na pláži sme videli korytnačky." }]
   },
@@ -287,7 +287,7 @@
     "sk": ["had"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Hay serpientes en el desierto.", "sk": "V púšti žijú hady." }],
     "note": "Hovorovo aj „víbora“."
@@ -298,7 +298,7 @@
     "sk": ["komár"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Hay muchos mosquitos en la noche.", "sk": "V noci je veľa komárov." }]
   },
@@ -309,7 +309,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "cactus",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "En el norte hay muchos cactus.", "sk": "Na severe je veľa kaktusov." }]
   },
@@ -320,7 +320,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "nopales",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature", "food"],
     "examples": [{ "es": "En México se comen los nopales.", "sk": "V Mexiku sa jedia listy opuncie." }],
     "note": "Nopal s orlom je aj na mexickej vlajke."
@@ -331,7 +331,7 @@
     "sk": ["somár"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "En el pueblo hay burros.", "sk": "V dedine sú somáre." }]
   },
@@ -341,7 +341,7 @@
     "sk": ["sliepka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["nature"],
     "examples": [{ "es": "Mi abuela tiene gallinas.", "sk": "Babka má sliepky." }]
   },
@@ -427,5 +427,36 @@
     "level": "B1",
     "topics": ["nature"],
     "examples": [{ "es": "El reciclaje empieza en casa.", "sk": "Recyklácia sa začína doma." }]
+  },
+  {
+    "id": "calentamiento-global",
+    "es": "calentamiento global",
+    "sk": ["globálne otepľovanie"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El calentamiento global afecta a todo el planeta.", "sk": "Globálne otepľovanie ovplyvňuje celú planétu." }]
+  },
+  {
+    "id": "paisaje",
+    "es": "paisaje",
+    "sk": ["krajina (výhľad)", "scenéria"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "Desde la montaña hay un paisaje increíble.", "sk": "Z hory je neuveriteľný výhľad na krajinu." }]
+  },
+  {
+    "id": "recurso",
+    "es": "recurso",
+    "sk": ["zdroj"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [{ "es": "El agua es un recurso muy importante.", "sk": "Voda je veľmi dôležitý zdroj." }]
   }
 ]

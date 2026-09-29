@@ -100,7 +100,7 @@
     "sk": ["búrka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "Viene una tormenta.", "sk": "Blíži sa búrka." }]
   },
@@ -120,7 +120,7 @@
     "sk": ["stupeň"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "Estamos a treinta grados.", "sk": "Je tridsať stupňov." }]
   },
@@ -131,7 +131,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "paraguas",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "No olvides el paraguas.", "sk": "Nezabudni si dáždnik." }]
   },
@@ -192,7 +192,7 @@
     "sk": ["zamračený"],
     "pos": "adj",
     "feminine": "nublada",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "Hoy está nublado.", "sk": "Dnes je zamračené." }]
   },
@@ -202,7 +202,7 @@
     "sk": ["vlhký"],
     "pos": "adj",
     "feminine": "húmeda",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "En Veracruz el clima es muy húmedo.", "sk": "Vo Veracruze je veľmi vlhké podnebie." }]
   },
@@ -212,7 +212,7 @@
     "sk": ["suchý"],
     "pos": "adj",
     "feminine": "seca",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "El aire está muy seco.", "sk": "Vzduch je veľmi suchý." }]
   },
@@ -222,7 +222,7 @@
     "sk": ["chladný", "svieži"],
     "pos": "adj",
     "feminine": "fresca",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "En la mañana está fresco.", "sk": "Ráno je chladno." }],
     "note": "Hace fresco = je príjemne chladno."
@@ -244,7 +244,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "huracanes",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "Viene un huracán a la costa.", "sk": "K pobrežiu sa blíži hurikán." }]
   },
@@ -254,7 +254,7 @@
     "sk": ["predpoveď"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "El pronóstico dice que va a llover.", "sk": "Podľa predpovede bude pršať." }]
   },
@@ -264,8 +264,40 @@
     "sk": ["blesk"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["weather"],
     "examples": [{ "es": "Vi un relámpago muy grande.", "sk": "Videl som obrovský blesk." }]
+  },
+  {
+    "id": "ola-de-calor",
+    "es": "ola de calor",
+    "sk": ["vlna horúčav"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "olas de calor",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Hay una ola de calor en todo el norte.", "sk": "Na celom severe je vlna horúčav." }]
+  },
+  {
+    "id": "inundacion",
+    "es": "inundación",
+    "sk": ["záplava", "povodeň"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "inundaciones",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [{ "es": "Las lluvias causaron inundaciones en la ciudad.", "sk": "Dažde spôsobili v meste záplavy." }]
+  },
+  {
+    "id": "neblina",
+    "es": "neblina",
+    "sk": ["hmla"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [{ "es": "En la mañana había mucha neblina en la carretera.", "sk": "Ráno bola na ceste hustá hmla." }]
   }
 ]

@@ -97,7 +97,7 @@
     "sk": ["firma", "spoločnosť"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Trabajo en una empresa de software.", "sk": "Pracujem v softvérovej firme." }]
   },
@@ -119,7 +119,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "reuniones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Tenemos una reunión con el cliente.", "sk": "Máme stretnutie s klientom." }],
     "note": "Pracovnú poradu v Mexiku často volajú „junta“."
@@ -130,7 +130,7 @@
     "sk": ["klient", "zákazník"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "El cliente llega a las once.", "sk": "Klient príde o jedenástej." }],
     "note": "la clienta = zákazníčka."
@@ -141,7 +141,7 @@
     "sk": ["e-mail", "pošta"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Te mando un correo.", "sk": "Pošlem ti mail." }],
     "note": "correo (electrónico) = e-mail."
@@ -173,7 +173,7 @@
     "sk": ["písací stôl"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Mi celular está en el escritorio.", "sk": "Mobil mám na stole." }]
   },
@@ -183,7 +183,7 @@
     "sk": ["projekt"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Estamos trabajando en un proyecto nuevo.", "sk": "Pracujeme na novom projekte." }]
   },
@@ -226,7 +226,7 @@
     "sk": ["inžinier"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Mi esposo es ingeniero.", "sk": "Môj manžel je inžinier." }]
   },
@@ -247,7 +247,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "vendedores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work", "shopping"],
     "examples": [{ "es": "El vendedor fue muy amable.", "sk": "Predavač bol veľmi milý." }]
   },
@@ -257,7 +257,7 @@
     "sk": ["pracovitý"],
     "pos": "adj",
     "feminine": "trabajadora",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Tu hermano es muy trabajador.", "sk": "Tvoj brat je veľmi pracovitý." }]
   },
@@ -324,7 +324,7 @@
     "sk": ["pohovor", "rozhovor"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Mañana tengo una entrevista de trabajo.", "sk": "Zajtra mám pracovný pohovor." }]
   },
@@ -344,7 +344,7 @@
     "sk": ["továreň"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Mi papá trabaja en una fábrica.", "sk": "Otec pracuje v továrni." }]
   },
@@ -354,7 +354,7 @@
     "sk": ["zdravotná sestra"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Mi tía es enfermera.", "sk": "Teta je zdravotná sestra." }],
     "note": "Muž: el enfermero."
@@ -365,7 +365,7 @@
     "sk": ["kuchár"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "El cocinero hace unos tacos muy ricos.", "sk": "Kuchár robí veľmi chutné tacos." }]
   },
@@ -376,7 +376,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "choferes",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "El chofer del camión maneja muy rápido.", "sk": "Šofér autobusu jazdí veľmi rýchlo." }]
   },
@@ -407,7 +407,7 @@
     "sk": ["skúsenosť", "prax"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "B1",
     "topics": ["work"],
     "examples": [{ "es": "Tengo cinco años de experiencia.", "sk": "Mám päť rokov praxe." }]
   },
@@ -417,7 +417,7 @@
     "sk": ["prestávka", "oddych"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["work"],
     "examples": [{ "es": "Tenemos media hora de descanso.", "sk": "Máme polhodinovú prestávku." }]
   },
@@ -427,7 +427,7 @@
     "sk": ["podnik", "obchod"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "B1",
     "topics": ["work"],
     "examples": [{ "es": "Mi tío tiene un negocio de tacos.", "sk": "Strýko má vlastný stánok s tacos." }]
   },
@@ -530,5 +530,70 @@
     "level": "B1",
     "topics": ["work"],
     "examples": [{ "es": "Eres capaz de hacerlo.", "sk": "Si schopný to urobiť." }]
+  },
+  {
+    "id": "aguinaldo",
+    "es": "aguinaldo",
+    "sk": ["vianočný príspevok", "13. plat"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "En diciembre nos pagan el aguinaldo.", "sk": "V decembri nám vyplatia vianočný príspevok." }],
+    "note": "V Mexiku ho zamestnávateľ musí zo zákona vyplatiť do 20. decembra."
+  },
+  {
+    "id": "empleado",
+    "es": "empleado",
+    "sk": ["zamestnanec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "La empresa tiene doscientos empleados.", "sk": "Firma má dvesto zamestnancov." }]
+  },
+  {
+    "id": "desempleo",
+    "es": "desempleo",
+    "sk": ["nezamestnanosť"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "El desempleo bajó este año.", "sk": "Nezamestnanosť tento rok klesla." }]
+  },
+  {
+    "id": "capacitacion",
+    "es": "capacitación",
+    "sk": ["školenie"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "capacitaciones",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mañana tenemos una capacitación sobre seguridad.", "sk": "Zajtra máme školenie o bezpečnosti." }],
+    "note": "V Mexiku bežné slovo pre firemné školenie."
+  },
+  {
+    "id": "jubilacion",
+    "es": "jubilación",
+    "sk": ["dôchodok", "odchod do dôchodku"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "jubilaciones",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Mi papá está ahorrando para su jubilación.", "sk": "Otec si šetrí na dôchodok." }]
+  },
+  {
+    "id": "bono",
+    "es": "bono",
+    "sk": ["prémia", "bonus"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Si vendemos más, nos dan un bono.", "sk": "Ak predáme viac, dostaneme prémiu." }]
   }
 ]

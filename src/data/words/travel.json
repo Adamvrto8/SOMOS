@@ -89,7 +89,7 @@
     "sk": ["let"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "El vuelo sale con retraso.", "sk": "Let má meškanie." }]
   },
@@ -119,7 +119,7 @@
     "sk": ["batoh"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Llevo todo en mi mochila.", "sk": "Všetko mám v batohu." }]
   },
@@ -142,7 +142,7 @@
     "pos": "noun",
     "gender": "f",
     "plural": "habitaciones",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Quiero una habitación para dos personas.", "sk": "Chcel by som izbu pre dve osoby." }]
   },
@@ -174,7 +174,7 @@
     "sk": ["pyramída"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [
       {
@@ -210,7 +210,7 @@
     "sk": ["minca", "mena"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "La moneda de México es el peso.", "sk": "Mexická mena je peso." }]
   },
@@ -220,7 +220,7 @@
     "sk": ["peso (mena)", "váha"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Cuesta cien pesos.", "sk": "Stojí to sto pesos." }]
   },
@@ -242,7 +242,7 @@
     "sk": ["východ", "odchod"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "¿Dónde está la salida?", "sk": "Kde je východ?" }]
   },
@@ -252,7 +252,7 @@
     "sk": ["vchod", "vstup", "vstupenka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "La entrada al museo es gratis los domingos.", "sk": "Vstup do múzea je v nedeľu zadarmo." }]
   },
@@ -282,7 +282,7 @@
     "sk": ["sprievodca"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "El guía habla inglés y español.", "sk": "Sprievodca hovorí po anglicky aj po španielsky." }],
     "note": "el guía = sprievodca (osoba); la guía = sprievodca (kniha)."
@@ -314,7 +314,7 @@
     "sk": ["cesta (medzi mestami)", "diaľnica"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "La carretera a Oaxaca es muy bonita.", "sk": "Cesta do Oaxacy je veľmi pekná." }]
   },
@@ -324,7 +324,7 @@
     "sk": ["prílet", "príchod"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "La llegada es a las cinco.", "sk": "Prílet je o piatej." }]
   },
@@ -334,7 +334,7 @@
     "sk": ["sedadlo", "miesto"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Quiero un asiento junto a la ventana.", "sk": "Chcem miesto pri okne." }]
   },
@@ -354,7 +354,7 @@
     "sk": ["cenote (prírodná studňa)"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Nadamos en un cenote en Yucatán.", "sk": "Na Yucatáne sme plávali v cenote." }]
   },
@@ -364,7 +364,7 @@
     "sk": ["suvenír", "spomienka"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Compré unos recuerdos para mi familia.", "sk": "Kúpil som pár suvenírov pre rodinu." }]
   },
@@ -374,7 +374,7 @@
     "sk": ["víza"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "¿Necesito visa para ir a México?", "sk": "Potrebujem víza do Mexika?" }]
   },
@@ -383,7 +383,7 @@
     "es": "ida y vuelta",
     "sk": ["spiatočný (lístok)"],
     "pos": "phrase",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Un boleto de ida y vuelta, por favor.", "sk": "Spiatočný lístok, prosím." }],
     "note": "Jednosmerný = sencillo."
@@ -395,7 +395,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "bloqueadores",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "No olvides el bloqueador.", "sk": "Nezabudni opaľovací krém." }]
   },
@@ -415,7 +415,7 @@
     "sk": ["benzínka"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["travel"],
     "examples": [{ "es": "Hay una gasolinera a la salida del pueblo.", "sk": "Na konci dediny je benzínka." }]
   },
@@ -493,5 +493,46 @@
     "level": "B1",
     "topics": ["travel"],
     "examples": [{ "es": "Mi maleta está extraviada.", "sk": "Môj kufor sa stratil." }]
+  },
+  {
+    "id": "itinerario",
+    "es": "itinerario",
+    "sk": ["itinerár", "plán cesty"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Ya tengo el itinerario del viaje.", "sk": "Už mám plán cesty." }]
+  },
+  {
+    "id": "tramite",
+    "es": "trámite",
+    "sk": ["úradná vybavovačka", "formalita"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Los trámites en el gobierno tardan mucho.", "sk": "Vybavovanie na úradoch trvá dlho." }]
+  },
+  {
+    "id": "pasajero",
+    "es": "pasajero",
+    "sk": ["cestujúci"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "El avión lleva doscientos pasajeros.", "sk": "Lietadlo vezie dvesto cestujúcich." }]
+  },
+  {
+    "id": "crucero",
+    "es": "crucero",
+    "sk": ["plavba výletnou loďou"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Hicimos un crucero por el Caribe.", "sk": "Boli sme na plavbe po Karibiku." }],
+    "note": "V Mexiku znamená crucero aj križovatka."
   }
 ]

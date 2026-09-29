@@ -80,7 +80,7 @@
     "id": "s363",
     "es": "Compré dos kilos de tortillas.",
     "sk": "Kúpil som dve kilá tortíl.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["numbers"],
     "grammar": ["preterito"],
     "tokens": ["Compré", "dos", "kilos", "de", "tortillas", "."],
@@ -179,6 +179,78 @@
         "lemma": "tener",
         "hint": "tener · él · presente",
         "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s566",
+    "es": "Mi abuela cumplió noventa y dos años en marzo.",
+    "sk": "Babka v marci oslávila deväťdesiatdva rokov.",
+    "level": "B1",
+    "topics": ["numbers", "family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "abuela", "cumplió", "noventa", "y", "dos", "años", "en", "marzo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cumplió",
+        "lemma": "cumplir",
+        "hint": "cumplir · ella · pretérito",
+        "distractors": ["cumple", "cumplí", "cumplirá"]
+      }
+    ]
+  },
+  {
+    "id": "s567",
+    "es": "Casi la mitad de los estudiantes reprobó el examen.",
+    "sk": "Takmer polovica študentov neurobila skúšku.",
+    "level": "B1",
+    "topics": ["numbers", "school"],
+    "grammar": ["preterito"],
+    "tokens": ["Casi", "la", "mitad", "de", "los", "estudiantes", "reprobó", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mitad",
+        "lemma": "mitad",
+        "hint": "polovica",
+        "distractors": ["medio", "media", "mitades"]
+      }
+    ]
+  },
+  {
+    "id": "s568",
+    "es": "El departamento cuesta dos millones de pesos.",
+    "sk": "Byt stojí dva milióny pesos.",
+    "level": "B1",
+    "topics": ["numbers", "home"],
+    "grammar": ["presente"],
+    "tokens": ["El", "departamento", "cuesta", "dos", "millones", "de", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "millones",
+        "lemma": "millón",
+        "hint": "milióny",
+        "distractors": ["millón", "mil", "miles"]
+      }
+    ]
+  },
+  {
+    "id": "s569",
+    "es": "Ahorraba quinientos pesos cada quincena.",
+    "sk": "Z každej výplaty som si odkladal päťsto pesos.",
+    "level": "B1",
+    "topics": ["numbers", "work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Ahorraba", "quinientos", "pesos", "cada", "quincena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ahorraba",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · yo · imperfecto",
+        "distractors": ["Ahorro", "Ahorró", "Ahorraré"]
       }
     ]
   }

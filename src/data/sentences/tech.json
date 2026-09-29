@@ -184,5 +184,77 @@
         "distractors": ["compartiste", "compartimos", "compartían"]
       }
     ]
+  },
+  {
+    "id": "s579",
+    "es": "Se me descompuso la computadora y perdí todos mis archivos.",
+    "sk": "Pokazil sa mi počítač a stratil som všetky súbory.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "descompuso", "la", "computadora", "y", "perdí", "todos", "mis", "archivos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "perdí",
+        "lemma": "perder",
+        "hint": "perder · yo · pretérito",
+        "distractors": ["pierdo", "perdió", "perderé"]
+      }
+    ]
+  },
+  {
+    "id": "s580",
+    "es": "¿Ya descargaste la aplicación del banco?",
+    "sk": "Už si si stiahol aplikáciu banky?",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Ya", "descargaste", "la", "aplicación", "del", "banco", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aplicación",
+        "lemma": "aplicación",
+        "hint": "aplikácia",
+        "distractors": ["aplicaciones", "archivo", "usuario"]
+      }
+    ]
+  },
+  {
+    "id": "s581",
+    "es": "Cuando no había internet, escribíamos cartas.",
+    "sk": "Keď nebol internet, písali sme listy.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "no", "había", "internet", ",", "escribíamos", "cartas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "escribíamos",
+        "lemma": "escribir",
+        "hint": "escribir · nosotros · imperfecto",
+        "distractors": ["escriben", "escribía", "escribiré"]
+      }
+    ]
+  },
+  {
+    "id": "s582",
+    "es": "Te mandaré el archivo esta noche.",
+    "sk": "Ten súbor ti pošlem dnes večer.",
+    "level": "B1",
+    "topics": ["tech", "work"],
+    "grammar": ["futuro"],
+    "tokens": ["Te", "mandaré", "el", "archivo", "esta", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mandaré",
+        "lemma": "mandar",
+        "hint": "mandar · yo · futuro",
+        "distractors": ["mandé", "manda", "mandaba"]
+      }
+    ]
   }
 ]

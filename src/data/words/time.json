@@ -435,7 +435,7 @@
     "sk": ["dátum"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "¿Qué fecha es hoy?", "sk": "Koľkého je dnes?" }]
   },
@@ -446,7 +446,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "relojes",
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "Mi reloj no funciona.", "sk": "Hodinky mi nefungujú." }]
   },
@@ -465,7 +465,7 @@
     "es": "pronto",
     "sk": ["čoskoro"],
     "pos": "adv",
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "Nos vemos pronto.", "sk": "Čoskoro sa uvidíme." }]
   },
@@ -493,7 +493,7 @@
     "sk": ["chvíľa"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [
       { "es": "Espérame un rato.", "sk": "Počkaj chvíľu." },
@@ -508,7 +508,7 @@
     "pos": "noun",
     "gender": "f",
     "uncountable": true,
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "En Navidad vemos a toda la familia.", "sk": "Na Vianoce sa stretneme s celou rodinou." }],
     "note": "Štedrý večer = Nochebuena, 24. decembra sa večeria s rodinou."
@@ -520,7 +520,7 @@
     "pos": "noun",
     "gender": "m",
     "plural": "días festivos",
-    "level": "A1",
+    "level": "A2",
     "topics": ["time"],
     "examples": [{ "es": "El lunes es día festivo.", "sk": "V pondelok je sviatok." }]
   },
@@ -563,5 +563,26 @@
     "level": "B1",
     "topics": ["time"],
     "examples": [{ "es": "Sé puntual, por favor.", "sk": "Príď načas, prosím." }]
+  },
+  {
+    "id": "temporada",
+    "es": "temporada",
+    "sk": ["sezóna", "obdobie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "En temporada de lluvias llueve casi todas las tardes.", "sk": "V období dažďov prší takmer každé popoludnie." }]
+  },
+  {
+    "id": "fecha-limite",
+    "es": "fecha límite",
+    "sk": ["termín (uzávierka)"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "fechas límite",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [{ "es": "La fecha límite es el viernes.", "sk": "Termín je v piatok." }]
   }
 ]

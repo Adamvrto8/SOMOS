@@ -118,7 +118,7 @@
     "sk": ["radosť"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "¡Qué alegría verte!", "sk": "Aká radosť ťa vidieť!" }]
   },
@@ -128,7 +128,7 @@
     "sk": ["prekvapenie"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "¡Qué sorpresa!", "sk": "Aké prekvapenie!" }]
   },
@@ -160,7 +160,7 @@
     "sk": ["šťastie (náhoda)"],
     "pos": "noun",
     "gender": "f",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "¡Buena suerte!", "sk": "Veľa šťastia!" }]
   },
@@ -190,7 +190,7 @@
     "sk": ["hrdý"],
     "pos": "adj",
     "feminine": "orgullosa",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "Estoy muy orgulloso de ti.", "sk": "Som na teba veľmi hrdý." }]
   },
@@ -200,7 +200,7 @@
     "sk": ["žiarlivý"],
     "pos": "adj",
     "feminine": "celosa",
-    "level": "A1",
+    "level": "B1",
     "topics": ["emotions"],
     "examples": [{ "es": "Mi novio es muy celoso.", "sk": "Môj priateľ je veľmi žiarlivý." }]
   },
@@ -210,7 +210,7 @@
     "sk": ["vystrašený"],
     "pos": "adj",
     "feminine": "asustada",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "El niño está asustado.", "sk": "Chlapec je vystrašený." }]
   },
@@ -220,7 +220,7 @@
     "sk": ["prekvapený"],
     "pos": "adj",
     "feminine": "sorprendida",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "Estoy muy sorprendido.", "sk": "Som veľmi prekvapený." }]
   },
@@ -230,7 +230,7 @@
     "sk": ["zamilovaný"],
     "pos": "adj",
     "feminine": "enamorada",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "Estoy enamorado de ti.", "sk": "Som do teba zamilovaný." }]
   },
@@ -240,7 +240,7 @@
     "sk": ["vystresovaný"],
     "pos": "adj",
     "feminine": "estresada",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "Estoy muy estresado por el trabajo.", "sk": "Som z práce veľmi vystresovaný." }]
   },
@@ -250,7 +250,7 @@
     "sk": ["hanblivý", "plachý"],
     "pos": "adj",
     "feminine": "tímida",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "Mi hijo es un poco tímido.", "sk": "Syn je trochu hanblivý." }]
   },
@@ -279,7 +279,7 @@
     "sk": ["blázon", "šialený"],
     "pos": "adj",
     "feminine": "loca",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [{ "es": "¿Estás loco?", "sk": "Si blázon?" }]
   },
@@ -289,7 +289,7 @@
     "sk": ["náklonnosť", "zlatko"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "examples": [
       { "es": "Le tengo mucho cariño.", "sk": "Veľmi mi na ňom záleží." },
@@ -302,7 +302,7 @@
     "sk": ["nálada", "odvaha"],
     "pos": "noun",
     "gender": "m",
-    "level": "A1",
+    "level": "B1",
     "topics": ["emotions"],
     "examples": [{ "es": "¡Ánimo! Tú puedes.", "sk": "Hlavu hore! Zvládneš to." }]
   },
@@ -407,5 +407,75 @@
     "level": "B1",
     "topics": ["emotions"],
     "examples": [{ "es": "Es un hombre muy honesto.", "sk": "Je to veľmi čestný muž." }]
+  },
+  {
+    "id": "envidia",
+    "es": "envidia",
+    "sk": ["závisť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Le tengo un poco de envidia a mi hermano.", "sk": "Trochu závidím bratovi." }]
+  },
+  {
+    "id": "culpa",
+    "es": "culpa",
+    "sk": ["vina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "No fue tu culpa.", "sk": "Nebola to tvoja vina." }]
+  },
+  {
+    "id": "paciencia",
+    "es": "paciencia",
+    "sk": ["trpezlivosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Hay que tener paciencia con los niños.", "sk": "S deťmi treba mať trpezlivosť." }]
+  },
+  {
+    "id": "ansiedad",
+    "es": "ansiedad",
+    "sk": ["úzkosť"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Antes de los exámenes siento mucha ansiedad.", "sk": "Pred skúškami mávam veľkú úzkosť." }]
+  },
+  {
+    "id": "sentimiento",
+    "es": "sentimiento",
+    "sk": ["pocit", "cit"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Es difícil hablar de mis sentimientos.", "sk": "Je ťažké hovoriť o mojich pocitoch." }]
+  },
+  {
+    "id": "valiente",
+    "es": "valiente",
+    "sk": ["odvážny", "statočný"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Fuiste muy valiente.", "sk": "Bol si veľmi odvážny." }]
+  },
+  {
+    "id": "egoista",
+    "es": "egoísta",
+    "sk": ["sebecký"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Mi ex era muy egoísta.", "sk": "Môj bývalý bol veľmi sebecký." }],
+    "note": "Rovnaký tvar pre mužský aj ženský rod."
   }
 ]

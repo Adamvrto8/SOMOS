@@ -39,7 +39,7 @@
     "id": "s229",
     "es": "¿Qué talla usas?",
     "sk": "Akú veľkosť nosíš?",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "grammar": ["presente"],
     "tokens": ["¿", "Qué", "talla", "usas", "?"],
@@ -57,7 +57,7 @@
     "id": "s230",
     "es": "Mi papá siempre usa sombrero.",
     "sk": "Otec vždy nosí klobúk.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "grammar": ["presente"],
     "tokens": ["Mi", "papá", "siempre", "usa", "sombrero", "."],
@@ -262,7 +262,7 @@
     "id": "s384",
     "es": "Ponte el abrigo, hace mucho frío.",
     "sk": "Obleč si kabát, je veľká zima.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "grammar": ["presente"],
     "tokens": ["Ponte", "el", "abrigo", ",", "hace", "mucho", "frío", "."],
@@ -323,7 +323,7 @@
     "id": "s387",
     "es": "Ayer me compré unas botas nuevas.",
     "sk": "Včera som si kúpila nové čižmy.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["clothes"],
     "grammar": ["preterito", "gender"],
     "tokens": ["Ayer", "me", "compré", "unas", "botas", "nuevas", "."],
@@ -395,6 +395,78 @@
         "lemma": "poner",
         "hint": "poner · yo · futuro",
         "distractors": ["pondrá", "pondrán", "pongo"]
+      }
+    ]
+  },
+  {
+    "id": "s528",
+    "es": "Esta chamarra me queda grande; necesito una talla más chica.",
+    "sk": "Táto bunda mi je veľká, potrebujem o číslo menšiu.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Esta", "chamarra", "me", "queda", "grande", ";", "necesito", "una", "talla", "más", "chica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["necesita", "necesitamos", "necesitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s529",
+    "es": "Me puse el suéter porque empezaba a hacer frío.",
+    "sk": "Obliekol som si sveter, lebo sa začínalo ochladzovať.",
+    "level": "B1",
+    "topics": ["clothes", "weather"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Me", "puse", "el", "suéter", "porque", "empezaba", "a", "hacer", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "puse",
+        "lemma": "poner",
+        "hint": "poner · yo · pretérito",
+        "distractors": ["pongo", "puso", "pondré"]
+      }
+    ]
+  },
+  {
+    "id": "s530",
+    "es": "Antes me vestía de negro, pero ahora prefiero la ropa de colores.",
+    "sk": "Predtým som nosil čiernu, ale teraz mám radšej farebné oblečenie.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["imperfecto", "presente"],
+    "tokens": ["Antes", "me", "vestía", "de", "negro", ",", "pero", "ahora", "prefiero", "la", "ropa", "de", "colores", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["prefiere", "preferí", "prefería"]
+      }
+    ]
+  },
+  {
+    "id": "s531",
+    "es": "Cambié los tenis porque me quedaban chicos.",
+    "sk": "Vymenil som tenisky, lebo mi boli malé.",
+    "level": "B1",
+    "topics": ["clothes", "shopping"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Cambié", "los", "tenis", "porque", "me", "quedaban", "chicos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cambié",
+        "lemma": "cambiar",
+        "hint": "cambiar · yo · pretérito",
+        "distractors": ["Cambio", "Cambió", "Cambiaré"]
       }
     ]
   }

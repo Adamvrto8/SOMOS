@@ -207,7 +207,7 @@
     "preterito": { "yo": "usé", "tu": "usaste", "el": "usó", "nosotros": "usamos", "ellos": "usaron" },
     "imperfecto": { "yo": "usaba", "tu": "usabas", "el": "usaba", "nosotros": "usábamos", "ellos": "usaban" },
     "futuro": { "yo": "usaré", "tu": "usarás", "el": "usará", "nosotros": "usaremos", "ellos": "usarán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "llevar",
@@ -279,7 +279,7 @@
       "nosotros": "contestaremos",
       "ellos": "contestarán"
     },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "terminar",
@@ -357,7 +357,7 @@
       "nosotros": "descansaremos",
       "ellos": "descansarán"
     },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "lavar",
@@ -369,7 +369,7 @@
     "preterito": { "yo": "lavé", "tu": "lavaste", "el": "lavó", "nosotros": "lavamos", "ellos": "lavaron" },
     "imperfecto": { "yo": "lavaba", "tu": "lavabas", "el": "lavaba", "nosotros": "lavábamos", "ellos": "lavaban" },
     "futuro": { "yo": "lavaré", "tu": "lavarás", "el": "lavará", "nosotros": "lavaremos", "ellos": "lavarán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "preparar",
@@ -393,7 +393,7 @@
       "nosotros": "prepararemos",
       "ellos": "prepararán"
     },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "ganar",
@@ -429,7 +429,7 @@
     "preterito": { "yo": "nadé", "tu": "nadaste", "el": "nadó", "nosotros": "nadamos", "ellos": "nadaron" },
     "imperfecto": { "yo": "nadaba", "tu": "nadabas", "el": "nadaba", "nosotros": "nadábamos", "ellos": "nadaban" },
     "futuro": { "yo": "nadaré", "tu": "nadarás", "el": "nadará", "nosotros": "nadaremos", "ellos": "nadarán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "olvidar",
@@ -495,7 +495,7 @@
     "preterito": { "yo": "visité", "tu": "visitaste", "el": "visitó", "nosotros": "visitamos", "ellos": "visitaron" },
     "imperfecto": { "yo": "visitaba", "tu": "visitabas", "el": "visitaba", "nosotros": "visitábamos", "ellos": "visitaban" },
     "futuro": { "yo": "visitaré", "tu": "visitarás", "el": "visitará", "nosotros": "visitaremos", "ellos": "visitarán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "entrar",
@@ -507,7 +507,7 @@
     "preterito": { "yo": "entré", "tu": "entraste", "el": "entró", "nosotros": "entramos", "ellos": "entraron" },
     "imperfecto": { "yo": "entraba", "tu": "entrabas", "el": "entraba", "nosotros": "entrábamos", "ellos": "entraban" },
     "futuro": { "yo": "entraré", "tu": "entrarás", "el": "entrará", "nosotros": "entraremos", "ellos": "entrarán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "llamar",
@@ -685,7 +685,7 @@
       "ellos": "practicarán"
     },
     "irregularForms": ["preterito.yo"],
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "checar",
@@ -774,7 +774,7 @@
       "ellos": "encontrarán"
     },
     "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "costar",
@@ -1235,7 +1235,7 @@
     "preterito": { "yo": "vendí", "tu": "vendiste", "el": "vendió", "nosotros": "vendimos", "ellos": "vendieron" },
     "imperfecto": { "yo": "vendía", "tu": "vendías", "el": "vendía", "nosotros": "vendíamos", "ellos": "vendían" },
     "futuro": { "yo": "venderé", "tu": "venderás", "el": "venderá", "nosotros": "venderemos", "ellos": "venderán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "leer",
@@ -1339,7 +1339,7 @@
     "imperfecto": { "yo": "ponía", "tu": "ponías", "el": "ponía", "nosotros": "poníamos", "ellos": "ponían" },
     "futuro": { "yo": "pondré", "tu": "pondrás", "el": "pondrá", "nosotros": "pondremos", "ellos": "pondrán" },
     "irregularForms": ["presente.yo", "preterito.*", "futuro.*"],
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "traer",
@@ -1414,7 +1414,7 @@
     "preterito": { "yo": "subí", "tu": "subiste", "el": "subió", "nosotros": "subimos", "ellos": "subieron" },
     "imperfecto": { "yo": "subía", "tu": "subías", "el": "subía", "nosotros": "subíamos", "ellos": "subían" },
     "futuro": { "yo": "subiré", "tu": "subirás", "el": "subirá", "nosotros": "subiremos", "ellos": "subirán" },
-    "level": "A1"
+    "level": "A2"
   },
   {
     "id": "pedir",

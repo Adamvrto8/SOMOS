@@ -218,7 +218,7 @@
     "id": "s336",
     "es": "¡Qué sorpresa verte aquí!",
     "sk": "Aké prekvapenie, že ťa tu vidím!",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "tokens": ["¡", "Qué", "sorpresa", "verte", "aquí", "!"],
     "cloze": [
@@ -306,7 +306,7 @@
     "id": "s397",
     "es": "Estoy muy orgulloso de mi hijo.",
     "sk": "Som veľmi hrdý na svojho syna.",
-    "level": "A1",
+    "level": "A2",
     "topics": ["emotions"],
     "grammar": ["gender"],
     "tokens": ["Estoy", "muy", "orgulloso", "de", "mi", "hijo", "."],
@@ -468,6 +468,78 @@
         "lemma": "ir",
         "hint": "ir · yo · presente",
         "distractors": ["va", "van", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s532",
+    "es": "Estaba tan nervioso que no pude dormir.",
+    "sk": "Bol som taký nervózny, že som nemohol spať.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["Estaba", "tan", "nervioso", "que", "no", "pude", "dormir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "pude",
+        "lemma": "poder",
+        "hint": "poder · yo · pretérito",
+        "distractors": ["puedo", "pudo", "podré"]
+      }
+    ]
+  },
+  {
+    "id": "s533",
+    "es": "Me da mucha vergüenza hablar en público.",
+    "sk": "Veľmi sa hanbím hovoriť pred ľuďmi.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "da", "mucha", "vergüenza", "hablar", "en", "público", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · él · presente",
+        "distractors": ["doy", "dio", "dan"]
+      }
+    ]
+  },
+  {
+    "id": "s534",
+    "es": "Estoy harto de esperar; ya me voy.",
+    "sk": "Už mám dosť čakania, idem preč.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Estoy", "harto", "de", "esperar", ";", "ya", "me", "voy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "distractors": ["Soy", "Está", "Estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s535",
+    "es": "Se enojó conmigo porque olvidé su cumpleaños.",
+    "sk": "Nahnevala sa na mňa, lebo som zabudol na jej narodeniny.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "enojó", "conmigo", "porque", "olvidé", "su", "cumpleaños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "enojó",
+        "lemma": "enojarse",
+        "hint": "enojarse · ella · pretérito",
+        "distractors": ["enoja", "enojé", "enojará"]
       }
     ]
   }

@@ -490,5 +490,77 @@
         "distractors": ["compró", "compraron", "compraba"]
       }
     ]
+  },
+  {
+    "id": "s575",
+    "es": "Si pagas en efectivo, te hacen un descuento.",
+    "sk": "Ak platíš v hotovosti, dajú ti zľavu.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "pagas", "en", "efectivo", ",", "te", "hacen", "un", "descuento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "hacen",
+        "lemma": "hacer",
+        "hint": "hacer · ellos · presente",
+        "distractors": ["hace", "hicieron", "hago"]
+      }
+    ]
+  },
+  {
+    "id": "s576",
+    "es": "Busqué ese regalo en tres tiendas y no lo encontré.",
+    "sk": "Ten darček som hľadal v troch obchodoch a nenašiel som ho.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Busqué", "ese", "regalo", "en", "tres", "tiendas", "y", "no", "lo", "encontré", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "encontré",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · pretérito",
+        "distractors": ["encuentro", "encontró", "encontraré"]
+      }
+    ]
+  },
+  {
+    "id": "s577",
+    "es": "En el tianguis todo es más barato que en el súper.",
+    "sk": "Na trhu je všetko lacnejšie než v supermarkete.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["En", "el", "tianguis", "todo", "es", "más", "barato", "que", "en", "el", "súper", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "barato",
+        "lemma": "barato",
+        "hint": "lacný",
+        "distractors": ["barata", "baratos", "caro"]
+      }
+    ]
+  },
+  {
+    "id": "s578",
+    "es": "Gasté más de lo que pensaba.",
+    "sk": "Minul som viac, než som si myslel.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito", "imperfecto"],
+    "tokens": ["Gasté", "más", "de", "lo", "que", "pensaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "pensaba",
+        "lemma": "pensar",
+        "hint": "pensar · yo · imperfecto",
+        "distractors": ["pienso", "pensará", "pensamos"]
+      }
+    ]
   }
 ]
