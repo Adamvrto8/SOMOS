@@ -189,8 +189,11 @@ Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
 
 Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
 
-- **Domov** — hero "Na zopakovanie dnes" (big light serif N, words · sentences · minutes, round brick → button),
-  streak | daily goal strip (goal as a leaf bar), slovo dňa, "Precvičiť chyby" card, 7-day chart.
+- **Domov** — "¡Hola!" + date, hero "Na zopakovanie dnes" (big light serif N, words · sentences · minutes, round
+  brick → button); with nothing due the hero becomes "Pokračuj v lekcii" (first unpassed lesson of the last played
+  exercise/topic/level, `continueLesson.ts`). Streak | daily goal strip (goal as a leaf bar, taps into that lesson;
+  streak turns amber "v ohrození" after 18:00 without practice), slovo dňa, "Precvičiť chyby" card,
+  7-day chart with the daily goal as a dashed line.
   Quick search = round search button in the top bar (Home only; it focuses the Hľadať field).
 - **Hľadať** — search input autofocused, results list (ES bold serif + SK muted), filter chips
   (všetko / slovesá / podstatné mená / frázy). Browse by topic below when input empty.

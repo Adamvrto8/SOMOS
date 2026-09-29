@@ -2,9 +2,11 @@ import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { Tapestry } from '../../components/Tapestry'
 import { useDailyGoal } from '../../lib/dailyGoal'
+import { useLessonProgression } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
 import { useActivity } from '../../lib/stats'
 import { pluralSk } from '../../lib/text'
+import { continueLesson } from './continueLesson'
 import { ProgressTiles } from './ProgressTiles'
 import { ReviewCard } from './ReviewCard'
 import { WeekChart } from './WeekChart'
@@ -14,20 +16,29 @@ export function HomePage() {
   const activity = useActivity()
   const goal = useDailyGoal()
   const mistakes = useMistakes()
+  const next = continueLesson(useLessonProgression())
+  const today = new Date().toLocaleDateString('sk-SK', { weekday: 'long', day: 'numeric', month: 'long' })
 
   return (
     <div className="space-y-6">
-      <h1 className="sr-only">Domov</h1>
-      {/* Character moment: the tapestry behind the hero, fading into the page. */}
-      <div className="relative -mx-4 -mt-6 overflow-hidden px-4 pt-6 pb-2">
-        <Tapestry className="opacity-20 dark:opacity-10" />
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-bg/50 via-bg/80 to-bg" aria-hidden />
+      {/* Character moment: the tapestry behind greeting and hero, fading into the page. */}
+      <div className="relative -mx-4 -mt-6 overflow-hidden px-4 pt-8 pb-2">
+        <Tapestry className="opacity-25 dark:opacity-15" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-bg/40 via-bg/75 to-bg" aria-hidden />
         <div className="relative">
-          <ReviewCard />
+          <header>
+            <h1 lang="es" className="font-serif text-4xl font-semibold tracking-tight">
+              ¡Hola!
+            </h1>
+            <p className="mt-1 text-ink-muted first-letter:uppercase">{today}</p>
+          </header>
+          <div className="mt-7">
+            <ReviewCard next={next} />
+          </div>
         </div>
       </div>
 
-      {activity && <ProgressTiles activity={activity} goal={goal} />}
+      {activity && <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />}
 
       <WordOfDayCard />
 
@@ -46,7 +57,7 @@ export function HomePage() {
         </Link>
       )}
 
-      {activity && <WeekChart activity={activity} />}
+      {activity && <WeekChart activity={activity} goal={goal} />}
     </div>
   )
 }

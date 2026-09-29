@@ -101,7 +101,7 @@ export function LessonPage() {
     if (locked) return
     let active = true
     void buildLesson(filter, fromMistakes, lessonNumber).then((next) => active && start(next, lessonNumber))
-    if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber)
+    if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber, filter.level)
     return () => {
       active = false
     }

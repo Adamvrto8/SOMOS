@@ -12,13 +12,16 @@ const answers = (n: number) => `${n} ${pluralSk(n, ['odpoveď', 'odpovede', 'odp
 
 /**
  * Answers per day, last 7 days: one series, one hue (brick), thin columns from a
- * hairline baseline. The selected day (today by default, tap to change) carries
- * the only value label; every column is a button whose label reads the full value.
+ * hairline baseline, the daily goal as a dashed reference line. The selected day
+ * (today by default, tap to change) carries the only value label; every column is
+ * a button whose label reads the full value.
  */
-export function WeekChart({ activity }: { activity: Activity }) {
+export function WeekChart({ activity, goal }: { activity: Activity; goal: number }) {
   const { week, weekTotal, weekAccuracy } = activity
   const [selected, setSelected] = useState(week.length - 1)
-  const max = Math.max(...week.map((d) => d.count), 1)
+  const max = Math.max(...week.map((d) => d.count), goal, 1)
+  const goalTop = PLOT_HEIGHT - Math.round((goal / max) * CHART_HEIGHT)
+  const goalDays = week.filter((d) => d.count >= goal).length
 
   return (
     <section aria-labelledby="week-heading">
@@ -32,10 +35,21 @@ export function WeekChart({ activity }: { activity: Activity }) {
               <span className="font-semibold text-ink">{answers(weekTotal)}</span>
               {weekAccuracy !== null && <> · {Math.round(weekAccuracy * 100)} % správne</>}
             </p>
+            {/* Legend for the dashed line (a label inside the plot collides with tall columns). */}
+            <p className="mt-1 flex items-center gap-2 text-xs text-ink-muted">
+              <span aria-hidden className="w-5 border-t border-dashed border-ink-muted" />
+              denný cieľ {goal} · splnený {goalDays} z 7 dní
+            </p>
 
             <div role="group" aria-label="Odpovede po dňoch" className="relative mt-4 grid grid-cols-7 gap-1">
               {/* One continuous hairline baseline under all columns. */}
               <span aria-hidden className="absolute inset-x-0 h-px bg-line" style={{ top: PLOT_HEIGHT }} />
+              {/* Daily goal: dashed reference line. */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 border-t border-dashed border-ink-muted/60"
+                style={{ top: goalTop }}
+              />
               {week.map((day, i) => {
                 const height = day.count ? Math.max(4, Math.round((day.count / max) * CHART_HEIGHT)) : 0
                 const isSelected = i === selected

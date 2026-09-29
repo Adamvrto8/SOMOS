@@ -203,6 +203,8 @@ export function recordLessonAttempt(
 export interface ActiveLessonInfo {
   group: string // topic id or tense (not the progression group), or 'all'
   lesson: number
+  level?: string // undefined = all levels
+  at?: number // when it was last played (missing in entries saved before 2026-09-30)
 }
 
 type ActiveLessonsStore = Partial<Record<ExerciseType, ActiveLessonInfo>>
@@ -221,13 +223,23 @@ function loadActiveStore(): ActiveLessonsStore {
 
 let activeStore = loadActiveStore()
 
-/** Remembers the topic/tense of the numbered lesson being played, for the Cvičiť screen. */
-export function rememberActiveLesson(type: ExerciseType, group: string, lesson: number): void {
+/** Remembers the numbered lesson being played, for Cvičiť (topic/tense) and Home ("Pokračovať"). */
+export function rememberActiveLesson(type: ExerciseType, group: string, lesson: number, level?: string): void {
   activeStore = {
     ...activeStore,
-    [type]: { group, lesson },
+    [type]: { group, lesson, level, at: Date.now() },
   }
   safeSetItem(ACTIVE_KEY, JSON.stringify(activeStore))
+}
+
+/** The most recently played numbered lesson across all exercise types. */
+export function getLastActiveLesson(): (ActiveLessonInfo & { type: ExerciseType }) | undefined {
+  let last: (ActiveLessonInfo & { type: ExerciseType }) | undefined
+  for (const [type, entry] of Object.entries(activeStore) as [ExerciseType, ActiveLessonInfo | undefined][]) {
+    if (!entry || typeof entry.group !== 'string' || typeof entry.lesson !== 'number') continue
+    if (!last || (entry.at ?? 0) > (last.at ?? 0)) last = { ...entry, type }
+  }
+  return last
 }
 
 export function getActiveLesson(type: ExerciseType, fallbackGroup: string): ActiveLessonInfo {

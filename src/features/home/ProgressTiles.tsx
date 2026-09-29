@@ -1,16 +1,23 @@
-import { Flame } from 'lucide-react'
+import { ChevronRight, CircleCheck, Flame } from 'lucide-react'
+import { Link } from 'react-router'
 import type { Activity } from '../../lib/stats'
 import { pluralSk } from '../../lib/text'
+
+/** From this hour on, a streak not yet extended today is shown as at risk. */
+const AT_RISK_HOUR = 18
 
 interface ProgressTilesProps {
   activity: Activity
   goal: number
+  practiceHref: string // where tapping the daily goal leads: the lesson to continue
 }
 
 /** Streak + daily goal: one strip between thin steel lines, halves split by a hairline. */
-export function ProgressTiles({ activity, goal }: ProgressTilesProps) {
+export function ProgressTiles({ activity, goal, practiceHref }: ProgressTilesProps) {
   const { days, activeToday } = activity.streak
+  const atRisk = !activeToday && days > 0 && new Date().getHours() >= AT_RISK_HOUR
   const left = Math.max(0, goal - activity.today)
+  const reached = left === 0
   const ratio = goal ? Math.min(activity.today, goal) / goal : 0
 
   return (
@@ -20,36 +27,50 @@ export function ProgressTiles({ activity, goal }: ProgressTilesProps) {
           <Flame
             size={24}
             strokeWidth={1.75}
-            className={activeToday ? 'fill-amber/30 text-amber drop-shadow-[0_0_8px_var(--amber)]' : 'text-ink-muted'}
+            className={
+              activeToday
+                ? 'fill-amber/30 text-amber drop-shadow-[0_0_8px_var(--amber)]'
+                : atRisk
+                  ? 'text-amber motion-safe:animate-pulse'
+                  : 'text-ink-muted'
+            }
             aria-hidden
           />
-          <span className={`font-serif text-4xl font-semibold tabular-nums ${activeToday ? 'dark:text-amber' : ''}`}>{days}</span>
+          <span
+            className={[
+              'font-serif text-4xl font-semibold tabular-nums',
+              activeToday ? 'dark:text-amber' : atRisk ? 'text-brick dark:text-amber' : '',
+            ].join(' ')}
+          >
+            {days}
+          </span>
         </p>
-        <p className="mt-1 text-sm text-ink-muted">
-          {pluralSk(days, ['deň', 'dni', 'dní'])} v rade
-          {!activeToday && days > 0 && ' · precvič si dnes'}
-        </p>
+        <p className="mt-1 text-sm text-ink-muted">{pluralSk(days, ['deň', 'dni', 'dní'])} v rade</p>
+        {atRisk ? (
+          <p className="mt-0.5 text-sm font-medium text-brick dark:text-amber">Séria v ohrození – precvič si ešte dnes</p>
+        ) : (
+          !activeToday && days > 0 && <p className="mt-0.5 text-sm text-ink-muted">precvič si dnes</p>
+        )}
       </section>
 
-      <section aria-label="Denný cieľ" className="py-4 pl-4">
+      <Link
+        to={practiceHref}
+        aria-label={`Denný cieľ: ${activity.today} z ${goal}${reached ? ', splnený' : ''}. Precvičovať`}
+        className="group block py-4 pl-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
+      >
         <p className="flex items-baseline gap-1">
           <span className="font-serif text-4xl font-semibold tabular-nums">{activity.today}</span>
           <span className="text-lg text-ink-muted">/ {goal}</span>
+          {reached && <CircleCheck size={22} strokeWidth={2} className="ml-auto animate-pop self-center text-leaf" aria-hidden />}
         </p>
-        <div
-          role="meter"
-          aria-valuenow={Math.min(activity.today, goal)}
-          aria-valuemin={0}
-          aria-valuemax={goal}
-          aria-label={`Denný cieľ: ${activity.today} z ${goal}`}
-          className="mt-2 h-1.5 overflow-hidden rounded-full bg-leaf/15"
-        >
+        <div aria-hidden className="mt-2 h-1.5 overflow-hidden rounded-full bg-leaf/15">
           <div className="h-full rounded-full bg-leaf transition-[width] duration-500" style={{ width: `${ratio * 100}%` }} />
         </div>
-        <p className="mt-1.5 text-sm text-ink-muted">
-          {left === 0 ? 'Denný cieľ splnený' : `denný cieľ · ešte ${left}`}
+        <p className={`mt-1.5 flex items-center text-sm ${reached ? 'font-medium text-leaf' : 'text-ink-muted group-hover:text-ink'}`}>
+          {reached ? 'Denný cieľ splnený!' : `denný cieľ · ešte ${left}`}
+          <ChevronRight size={16} strokeWidth={1.75} className="ml-auto shrink-0 text-ink-muted" aria-hidden />
         </p>
-      </section>
+      </Link>
     </div>
   )
 }
