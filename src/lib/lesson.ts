@@ -235,6 +235,89 @@ export function createLesson(
   }
 }
 
+const LEVEL_ORDER: Record<Level, number> = { A1: 1, A2: 2, B1: 3, B2: 4 }
+
+function compareSentences(a: Sentence, b: Sentence): number {
+  const levelDiff = (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1)
+  if (levelDiff !== 0) return levelDiff
+  return a.id.localeCompare(b.id, undefined, { numeric: true })
+}
+
+/** Deterministic list of all candidate items for a topic/tense filter, sorted stably. */
+export function getStablePool(filter: LessonFilter): Task[] {
+  switch (filter.type) {
+    case 'cloze': {
+      const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.length ?? 0) > 0)
+      matching.sort(compareSentences)
+      return matching.map((sentence): ClozeTask => ({
+        kind: 'cloze',
+        itemId: `${sentence.id}#0`,
+        sentence,
+        cloze: sentence.cloze![0],
+      }))
+    }
+    case 'choice': {
+      const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.[0].distractors?.length ?? 0) >= 2)
+      matching.sort(compareSentences)
+      return matching.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5))
+    }
+    case 'conjugation': {
+      const tenses = filter.tense ? [filter.tense] : TABLE_TENSES
+      const matchingVerbs = verbs.filter((v) => !filter.level || v.level === filter.level)
+      matchingVerbs.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.id.localeCompare(b.id))
+      return tenses.flatMap((tense) =>
+        PERSONS.flatMap((person) =>
+          matchingVerbs.map((verb) => conjugationTask(verb, tense, person)),
+        ),
+      )
+    }
+    case 'builder': {
+      const matching = builderSentences(filter)
+      matching.sort(compareSentences)
+      return matching.map((sentence) => builderTask(sentence, () => 0.5))
+    }
+    case 'translation': {
+      const matching = translationSentences(filter)
+      matching.sort(compareSentences)
+      return matching.map((sentence): TranslationTask => ({
+        kind: 'translation',
+        itemId: sentence.id,
+        sentence,
+      }))
+    }
+  }
+}
+
+export function getNumberedLessonCount(filter: LessonFilter): number {
+  const pool = getStablePool(filter)
+  if (pool.length === 0) return 0
+  if (pool.length <= LESSON_SIZE) return 1
+  return Math.ceil(pool.length / LESSON_SIZE)
+}
+
+export function createNumberedLesson(
+  filter: LessonFilter,
+  lessonNumber: number,
+  random: Random = Math.random,
+): Task[] {
+  const pool = getStablePool(filter)
+  if (pool.length === 0) return []
+  if (pool.length <= LESSON_SIZE) return retryTasks(pool, random)
+
+  const totalLessons = Math.ceil(pool.length / LESSON_SIZE)
+  const clampedNum = Math.max(1, Math.min(lessonNumber, totalLessons))
+
+  let slice: Task[]
+  if (clampedNum < totalLessons) {
+    const start = (clampedNum - 1) * LESSON_SIZE
+    slice = pool.slice(start, start + LESSON_SIZE)
+  } else {
+    slice = pool.slice(Math.max(0, pool.length - LESSON_SIZE))
+  }
+
+  return retryTasks(slice, random)
+}
+
 /** Rebuilds a task from what attempts and mistakes store: exercise type + itemId. */
 export function taskFromItem(exercise: ExerciseType, itemId: string, random: Random = Math.random): Task | undefined {
   switch (exercise) {

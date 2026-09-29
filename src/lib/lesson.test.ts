@@ -5,6 +5,8 @@ import {
   builderWords,
   conjugationTask,
   createLesson,
+  createNumberedLesson,
+  getNumberedLessonCount,
   gradeTask,
   LESSON_SIZE,
   mistakesLesson,
@@ -220,3 +222,28 @@ describe('lookupForm', () => {
     expect(lookupForm('cafe')).toBeUndefined()
   })
 })
+
+describe('createNumberedLesson', () => {
+  it('creates stable tasks for each lesson number', () => {
+    const filter = { type: 'cloze' as const, topic: 'basics' }
+    const count = getNumberedLessonCount(filter)
+    expect(count).toBeGreaterThan(0)
+
+    const lesson1AttemptA = createNumberedLesson(filter, 1, seeded(1))
+    const lesson1AttemptB = createNumberedLesson(filter, 1, seeded(2))
+
+    // The set of items in lesson 1 must be identical across attempts
+    expect(itemIds(lesson1AttemptA).sort()).toEqual(itemIds(lesson1AttemptB).sort())
+    expect(lesson1AttemptA).toHaveLength(LESSON_SIZE)
+
+    if (count > 1) {
+      const lesson2 = createNumberedLesson(filter, 2, seeded(3))
+      // Lesson 2 must have different tasks from Lesson 1
+      const ids1 = new Set(itemIds(lesson1AttemptA))
+      const ids2 = new Set(itemIds(lesson2))
+      // Not identical
+      expect(Array.from(ids1).sort()).not.toEqual(Array.from(ids2).sort())
+    }
+  })
+})
+

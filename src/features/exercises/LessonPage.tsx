@@ -5,6 +5,8 @@ import { Button } from '../../components/Button'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
 import {
   createLesson,
+  createNumberedLesson,
+  getNumberedLessonCount,
   gradeTask,
   LESSON_SIZE,
   mistakesLesson,
@@ -14,6 +16,7 @@ import {
   type LessonFilter,
   type Task,
 } from '../../lib/lesson'
+import { recordLessonAttempt } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
@@ -22,20 +25,27 @@ import { TaskView } from './tasks/TaskView'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
-/** A fresh lesson: from the mistakes list, or least-practised items for the filter. */
-async function buildLesson(filter: LessonFilter, fromMistakes: boolean): Promise<Task[]> {
+/** A fresh lesson: from the mistakes list, or numbered lesson, or least-practised items. */
+async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number): Promise<Task[]> {
   if (fromMistakes) return mistakesLesson(await loadMistakes())
+  if (lessonNumber) return createNumberedLesson(filter, lessonNumber)
   return createLesson(filter, LESSON_SIZE, Math.random, await loadSeenCounts(filter.type))
 }
 
 /**
  * Full-screen lesson player (no tab bar): one task per screen, check, feedback, result.
  * `?mistakes=1` practises the mistakes list instead of the filter.
+ * `?lesson=X` plays the fixed, numbered lesson X.
  */
 export function LessonPage() {
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
   const fromMistakes = params.get('mistakes') === '1'
+  const lessonParam = params.get('lesson')
+  const lessonNumber = lessonParam ? Number(lessonParam) : undefined
+  const group = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
+  const totalLessons = getNumberedLessonCount(filter)
+
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -56,15 +66,23 @@ export function LessonPage() {
 
   useEffect(() => {
     let active = true
-    void buildLesson(filter, fromMistakes).then((next) => active && start(next))
+    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => active && start(next))
     return () => {
       active = false
     }
-  }, [filter, fromMistakes])
+  }, [filter, fromMistakes, lessonNumber])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
   const finished = total > 0 && index >= total
+
+  // Record progress when a numbered lesson finishes
+  useEffect(() => {
+    if (finished && lessonNumber) {
+      const score = answers.filter((a) => a.correct).length
+      recordLessonAttempt(filter.type, group, lessonNumber, score, answers.length)
+    }
+  }, [finished, lessonNumber, filter.type, group, answers])
 
   // Braces matter: newer browsers return a Promise from scrollTo, which React
   // would treat as an (invalid) effect cleanup.
@@ -126,8 +144,8 @@ export function LessonPage() {
         >
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
-        <span className="w-14 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
-          {total ? `${Math.min(index + 1, total)}/${total}` : ''}
+        <span className="w-16 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
+          {lessonNumber ? `L${lessonNumber} · ` : ''}{total ? `${Math.min(index + 1, total)}/${total}` : ''}
         </span>
       </header>
 
@@ -148,16 +166,24 @@ export function LessonPage() {
           <LessonResult
             answers={answers}
             fromMistakes={fromMistakes}
+            lessonNumber={lessonNumber}
+            totalLessons={totalLessons}
             onRetryMistakes={() => start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)))}
             onRepeatAll={() => start(retryTasks(tasks))}
-            onNewLesson={() => void buildLesson(filter, fromMistakes).then(start)}
+            onNewLesson={() => void buildLesson(filter, fromMistakes, lessonNumber).then(start)}
+            onNextLesson={() => {
+              if (!lessonNumber) return
+              const nextNum = lessonNumber + 1
+              const nextParams = filterToParams(filter)
+              void navigate(`/practice/lesson?${nextParams}&lesson=${nextNum}`)
+            }}
             onExit={exit}
           />
         ) : (
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes && 'Chyby · '}
+                {fromMistakes ? 'Chyby · ' : lessonNumber ? `Lekcia ${lessonNumber} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
