@@ -6,7 +6,7 @@
 // - The app remembers the active lesson and returns to the first unpassed one.
 
 import { useSyncExternalStore } from 'react'
-import type { ExerciseType } from './lesson'
+import { LESSON_SIZE, type ExerciseType } from './lesson'
 
 export interface LessonRecord {
   bestScore: number
@@ -55,6 +55,7 @@ function loadMap(): LessonProgressionMap {
     const parsed: unknown = JSON.parse(raw)
     if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
       const cleaned: LessonProgressionMap = {}
+      let dirty = false
       for (const [key, val] of Object.entries(parsed as Record<string, unknown>)) {
         if (
           val &&
@@ -63,11 +64,16 @@ function loadMap(): LessonProgressionMap {
           'total' in val &&
           typeof (val as LessonRecord).bestScore === 'number' &&
           typeof (val as LessonRecord).total === 'number' &&
-          (val as LessonRecord).total >= 10 &&
+          (val as LessonRecord).total >= LESSON_SIZE &&
           (val as LessonRecord).bestScore <= (val as LessonRecord).total
         ) {
           cleaned[key] = val as LessonRecord
+        } else {
+          dirty = true
         }
+      }
+      if (dirty) {
+        safeSetItem(STORAGE_KEY, JSON.stringify(cleaned))
       }
       return cleaned
     }
@@ -130,7 +136,12 @@ export function isLessonUnlocked(
 ): boolean {
   if (lessonNumber <= 1) return true
   const prevRecord = map[lessonKey(type, group, lessonNumber - 1)]
-  return prevRecord?.passed === true
+  return (
+    prevRecord !== undefined &&
+    prevRecord.passed === true &&
+    prevRecord.total >= LESSON_SIZE &&
+    prevRecord.bestScore >= passThreshold(prevRecord.total)
+  )
 }
 
 export function getFirstUnpassedLesson(
@@ -163,6 +174,9 @@ export function recordLessonAttempt(
   score: number,
   total: number,
 ): RecordAttemptResult {
+  if (total < LESSON_SIZE) {
+    return { passed: false, newlyPassed: false, bestScore: 0 }
+  }
   const key = lessonKey(type, group, lessonNumber)
   const current = progressionMap[key]
   const threshold = passThreshold(total)

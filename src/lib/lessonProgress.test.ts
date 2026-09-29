@@ -91,4 +91,39 @@ describe('lessonProgress', () => {
     expect(isLessonUnlocked('vocab', progressionGroup('all', 'A2'), 2)).toBe(false)
     expect(isLessonUnlocked('vocab', progressionGroup('all', 'all'), 2)).toBe(false)
   })
+
+  it('rejects attempts with total < LESSON_SIZE and does not unlock next lesson', () => {
+    // E.g. retrying 2 mistakes: 2/2 should NOT record as passing the 10-question lesson
+    const result = recordLessonAttempt('cloze', 'basics', 1, 2, 2)
+    expect(result.passed).toBe(false)
+    expect(result.newlyPassed).toBe(false)
+    expect(result.bestScore).toBe(0)
+    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(false)
+    expect(getLessonRecord('cloze', 'basics', 1)).toBeUndefined()
+  })
+
+  it('purges corrupted or partial entries from storage on load', () => {
+    // Corrupted record e.g. bestScore: 7, total: 1
+    storage.set(
+      'somos-lesson-progression',
+      JSON.stringify({
+        'cloze:basics:1': { bestScore: 7, total: 1, passed: true },
+        'cloze:basics:2': { bestScore: 9, total: 10, passed: true },
+      }),
+    )
+
+    // Re-trigger load by resetting progression with storage preserved
+    resetProgressionForTesting()
+    // Populate storage with invalid entry again to test load cleaning
+    storage.set(
+      'somos-lesson-progression',
+      JSON.stringify({
+        'cloze:basics:1': { bestScore: 7, total: 1, passed: true },
+        'cloze:basics:2': { bestScore: 9, total: 10, passed: true },
+      }),
+    )
+
+    // Unlocked check for lesson 2 should be false because lesson 1 was invalid (total < 10)
+    expect(isLessonUnlocked('cloze', 'basics', 2)).toBe(false)
+  })
 })

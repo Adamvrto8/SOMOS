@@ -56,13 +56,15 @@ export function LessonPage() {
   const [grade, setGrade] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([])
   const [confirmExit, setConfirmExit] = useState(false)
+  const [isRetryingMistakes, setIsRetryingMistakes] = useState(false)
 
-  const start = (next: Task[]) => {
+  const start = (next: Task[], isMistakesRetry = false) => {
     setTasks(next)
     setIndex(0)
     setAnswer(emptyAnswer(next[0]))
     setGrade(null)
     setAnswers([])
+    setIsRetryingMistakes(isMistakesRetry)
   }
 
   useEffect(() => {
@@ -79,11 +81,11 @@ export function LessonPage() {
 
   // Record progress when a numbered lesson finishes
   useEffect(() => {
-    if (finished && lessonNumber) {
+    if (finished && lessonNumber && !isRetryingMistakes && answers.length >= LESSON_SIZE) {
       const score = answers.filter((a) => a.correct).length
       recordLessonAttempt(filter.type, group, lessonNumber, score, answers.length)
     }
-  }, [finished, lessonNumber, filter.type, group, answers])
+  }, [finished, lessonNumber, isRetryingMistakes, filter.type, group, answers])
 
   // Braces matter: newer browsers return a Promise from scrollTo, which React
   // would treat as an (invalid) effect cleanup.
@@ -166,13 +168,26 @@ export function LessonPage() {
         ) : finished ? (
           <LessonResult
             answers={answers}
-            fromMistakes={fromMistakes}
-            lessonNumber={lessonNumber}
+            fromMistakes={fromMistakes || isRetryingMistakes}
+            lessonNumber={isRetryingMistakes ? undefined : lessonNumber}
             totalLessons={totalLessons}
-            onRetryMistakes={() => start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)))}
-            onRepeatAll={() => start(retryTasks(tasks))}
-            onNewLesson={() => void buildLesson(filter, fromMistakes, lessonNumber).then(start)}
+            onRetryMistakes={() => {
+              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), true)
+            }}
+            onRepeatAll={() => {
+              setIsRetryingMistakes(false)
+              if (lessonNumber) {
+                void buildLesson(filter, fromMistakes, lessonNumber).then(start)
+              } else if (tasks) {
+                start(retryTasks(tasks))
+              }
+            }}
+            onNewLesson={() => {
+              setIsRetryingMistakes(false)
+              void buildLesson(filter, fromMistakes, lessonNumber).then(start)
+            }}
             onNextLesson={() => {
+              setIsRetryingMistakes(false)
               if (!lessonNumber) return
               const nextNum = lessonNumber + 1
               const nextParams = filterToParams(filter)
