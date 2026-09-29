@@ -18,9 +18,10 @@ interface TypedAnswerProps {
   placeholder: string
   status?: Status // set once graded; the field is then read-only
   multiline?: boolean
+  lang?: 'es' | 'sk' // language typed; Slovak needs no Spanish extra keys
 }
 
-export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline }: TypedAnswerProps) {
+export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline, lang = 'es' }: TypedAnswerProps) {
   const ref = useRef<HTMLTextAreaElement>(null)
   const locked = status !== undefined
 
@@ -54,7 +55,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
         readOnly={locked}
         rows={multiline ? 3 : 1}
         autoFocus
-        lang="es"
+        lang={lang}
         aria-label={label}
         placeholder={placeholder}
         enterKeyHint="done"
@@ -68,7 +69,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
           status ? BORDER[status] : 'border-line focus:border-brick',
         ].join(' ')}
       />
-      {!locked && (
+      {!locked && lang === 'es' && (
         <div className="mt-2 flex flex-wrap gap-1.5" aria-label="Špeciálne znaky">
           {EXTRA_KEYS.map((char) => (
             <button

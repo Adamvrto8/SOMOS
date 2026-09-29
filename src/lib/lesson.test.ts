@@ -175,6 +175,20 @@ describe('gradeTask', () => {
     expect(gradeTask(toSk, 'pes').correct).toBe(true)
     expect(gradeTask(toSk, 'mačka').correct).toBe(false)
   })
+
+  it.each([
+    ['como-te-va', 'ako sa darí', true], // a phrase may drop "ti"
+    ['como-te-va', 'ako sa ti darí', true],
+    ['mande', 'prosím', true], // "(keď si nepočul)" is an explanation
+    ['cincuenta', '50', true],
+    ['cincuenta', '60', false],
+    ['mil', '1000', true],
+    ['llamarse', 'volať', false], // "volať" alone is llamar
+  ])('accepts natural Slovak answers: %s ← "%s"', (id, typed, correct) => {
+    const task = taskFromItem('vocab', `${id}:es-sk`)
+    if (!task || task.kind !== 'vocab') throw new Error('task not found')
+    expect(gradeTask(task, typed).correct).toBe(correct)
+  })
 })
 
 describe('least-seen first', () => {

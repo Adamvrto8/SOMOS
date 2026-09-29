@@ -176,6 +176,39 @@ export function availableCount(filter: LessonFilter): number {
   }
 }
 
+const NUMBER_VALUES: Record<string, number> = {
+  cero: 0, uno: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8, nueve: 9, diez: 10,
+  once: 11, doce: 12, trece: 13, catorce: 14, quince: 15, dieciséis: 16, veinte: 20, treinta: 30, cuarenta: 40,
+  cincuenta: 50, sesenta: 60, setenta: 70, ochenta: 80, noventa: 90, cien: 100, mil: 1000, millón: 1000000,
+}
+
+// Pronouns and particles a Slovak phrase can do without: "ako sa ti darí?" ≈ "ako sa darí?".
+const OPTIONAL_SK = new Set(['ti', 'mi', 'si', 'sa', 'ťa', 'ma', 'to'])
+
+/** Slovak answers accepted for an ES → SK vocab task. */
+export function slovakAnswers(word: Word): string[] {
+  const out = new Set<string>()
+  for (const sk of word.sk) {
+    // Parentheses explain usage ("prosím? (keď si nepočul)"), nobody types them.
+    const bare = sk.replace(/\s*\([^)]*\)/g, '').trim()
+    for (const variant of [sk, bare]) {
+      if (!variant) continue
+      out.add(variant)
+      const parts = variant.split(/\s+/)
+      if (parts.length < 3) continue // "volať sa" without "sa" is another verb
+      parts.forEach((part, i) => {
+        if (OPTIONAL_SK.has(part.toLowerCase())) out.add(parts.filter((_, j) => j !== i).join(' '))
+      })
+    }
+  }
+  const value = NUMBER_VALUES[word.es]
+  if (value !== undefined) {
+    out.add(String(value))
+    if (value >= 1000) out.add(value.toLocaleString('sk-SK').replace(/\s/g, ' ')) // "1 000"
+  }
+  return [...out]
+}
+
 export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
   const isToSpanish = direction === 'sk-es'
   const prompt = isToSpanish
@@ -186,7 +219,7 @@ export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
   const expected = isToSpanish ? word.es : word.sk[0]
   const acceptable = isToSpanish
     ? [word.es, ...(word.gender ? [`${word.gender === 'm' ? 'el' : 'la'} ${word.es}`] : [])]
-    : word.sk
+    : slovakAnswers(word)
 
   return {
     kind: 'vocab',

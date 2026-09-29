@@ -115,6 +115,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, grade }: TaskViewPr
             onChange={onAnswer}
             onSubmit={onSubmit}
             status={status}
+            lang={isToSpanish ? 'es' : 'sk'}
             label={isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
             placeholder={isToSpanish ? 'Po španielsky…' : 'Po slovensky…'}
           />

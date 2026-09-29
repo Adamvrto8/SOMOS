@@ -67,19 +67,29 @@ export function LessonPage() {
   const location = useLocation()
 
   const [tasks, setTasks] = useState<Task[] | null>(null) // null = loading
-  // The numbered lesson these tasks are a full run of; undefined for "repeat mistakes" runs.
+  // The numbered lesson these tasks belong to (its full run or a correction round).
   // Kept with the tasks, not read from the URL: after "Ďalšia lekcia" the URL already
   // names the next lesson while the finished one is still on screen.
   const [runLesson, setRunLesson] = useState<number | undefined>()
+  // Correction round: the mistakes of the previous round again.
+  const [isRetry, setIsRetry] = useState(false)
+  // Numbered lesson score: tasks answered right in the full run or in any correction round.
+  const [solved, setSolved] = useState<ReadonlySet<string>>(new Set())
+  const [lessonTotal, setLessonTotal] = useState(0)
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
-  const [answers, setAnswers] = useState<LessonAnswer[]>([])
+  const [answers, setAnswers] = useState<LessonAnswer[]>([]) // this round
   const [confirmExit, setConfirmExit] = useState(false)
 
-  const start = (next: Task[], lesson?: number) => {
+  const start = (next: Task[], lesson?: number, retry = false) => {
     setTasks(next)
     setRunLesson(lesson)
+    setIsRetry(retry)
+    if (!retry) {
+      setSolved(new Set())
+      setLessonTotal(next.length)
+    }
     setIndex(0)
     setAnswer(emptyAnswer(next[0]))
     setGrade(null)
@@ -131,13 +141,16 @@ export function LessonPage() {
     const correct = override ?? grade.correct
     void recordAttempt(task.kind, task.itemId, correct)
     if (!correct) void recordMistake(task.kind, task.itemId)
-    if (resolve) void removeMistake(task.kind, task.itemId)
-    const nextAnswers = [...answers, { task, grade, correct }]
-    setAnswers(nextAnswers)
-    // Recorded once, at the last answer of a full numbered-lesson run.
-    if (runLesson !== undefined && index + 1 === tasks.length) {
-      const score = nextAnswers.filter((a) => a.correct).length
-      recordLessonAttempt(filter.type, group, runLesson, score, nextAnswers.length)
+    // A mistake fixed in a correction round leaves Chyby; the ones left behind stay there.
+    // (The mistakes list itself asks "Nechať / Odstrániť" instead.)
+    if (resolve || (isRetry && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
+    setAnswers([...answers, { task, grade, correct }])
+    if (runLesson !== undefined) {
+      const nextSolved = correct ? new Set(solved).add(task.itemId) : solved
+      setSolved(nextSolved)
+      // Saved on every right answer and at the end of each round, so quitting a
+      // correction round halfway keeps the credit (the store keeps the best score).
+      if (correct || index + 1 === tasks.length) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal)
     }
     setIndex(index + 1)
     setAnswer(emptyAnswer(tasks[index + 1]))
@@ -198,9 +211,11 @@ export function LessonPage() {
             answers={answers}
             fromMistakes={fromMistakes}
             lessonNumber={runLesson}
+            lessonScore={runLesson !== undefined ? { score: solved.size, total: lessonTotal } : undefined}
+            isRetry={isRetry}
             totalLessons={totalLessons}
             onRetryMistakes={() => {
-              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)))
+              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, true)
             }}
             onRepeatAll={() => {
               if (lessonNumber !== undefined) {
@@ -222,7 +237,7 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? 'Chyby · ' : runLesson ? `Lekcia ${runLesson} · ` : ''}
+                {fromMistakes ? 'Chyby · ' : runLesson ? `Lekcia ${runLesson}${isRetry ? ' · oprava' : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
