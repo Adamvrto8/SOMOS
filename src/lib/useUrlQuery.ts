@@ -7,6 +7,9 @@ import { useSearchParams } from 'react-router'
  * The base is the browser's current URL, not the hook's `prev` snapshot: the router writes
  * history before React re-renders, so two quick updates (tap a filter, start typing) would
  * otherwise have the second one restore what the first removed.
+ *
+ * These are in-page filters (topic, level, tab), so the scroll position stays where it is;
+ * without preventScrollReset, <ScrollRestoration> jumps to the top on every change.
  */
 export function useUpdateParams(): (updates: Record<string, string | null>) => void {
   const [, setParams] = useSearchParams()
@@ -20,7 +23,7 @@ export function useUpdateParams(): (updates: Record<string, string | null>) => v
         }
         return next
       },
-      { replace: true },
+      { replace: true, preventScrollReset: true },
     )
 }
 
