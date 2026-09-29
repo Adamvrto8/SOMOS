@@ -50,6 +50,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,json}'],
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api\//],
+        // Practice reminders (api/reminder.ts): shows the push notification, handles the tap.
+        importScripts: ['push-sw.js'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

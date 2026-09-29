@@ -48,6 +48,18 @@ function iconSvg({ rounded, contentScale }: IconOptions): string {
 `
 }
 
+// Android status-bar badge: only the alpha channel is shown, so a white "S" on transparency.
+function badgeSvg(): string {
+  const height = 400
+  const scale = height / S_HEIGHT
+  const x = (CANVAS - S_WIDTH * scale) / 2
+  const y = (CANVAS - height) / 2
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${CANVAS}" height="${CANVAS}" viewBox="0 0 ${CANVAS} ${CANVAS}">
+  <path transform="translate(${round(x)} ${round(y)}) scale(${round(scale)})" fill="#FFFFFF" d="${S_PATH}"/>
+</svg>
+`
+}
+
 async function renderPng(svg: string, size: number, file: string) {
   await sharp(Buffer.from(svg)).resize(size, size).png().toFile(`public/${file}`)
   console.log(`public/${file}`)
@@ -64,3 +76,4 @@ await renderPng(anyIcon, 192, 'pwa-192x192.png')
 await renderPng(anyIcon, 512, 'pwa-512x512.png')
 await renderPng(maskableIcon, 512, 'maskable-icon-512x512.png')
 await renderPng(appleIcon, 180, 'apple-touch-icon-180x180.png')
+await renderPng(badgeSvg(), 96, 'badge-96x96.png')
