@@ -66,19 +66,21 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
         <NoMatches />
       ) : (
         <ul className="divide-y divide-line">
-          {visible.map(({ mistake, task, prompt, answer }) => (
-            <li key={`${mistake.exercise}:${mistake.itemId}`} className="flex items-start gap-1 py-3">
-              <div className="min-w-0 flex-1 pt-1">
-                <p className="text-xs text-ink-muted">
-                  {exerciseInfo(task.kind).label} · {mistake.wrongCount}× zle
-                </p>
-                <p className="text-sm text-ink-muted">{prompt}</p>
-                <p lang="es" className="font-serif text-lg leading-snug">
-                  {answer}
-                </p>
-              </div>
-              <SpeakButton text={answer} />
-              <button
+          {visible.map(({ mistake, task, prompt, answer }) => {
+            const isSlovakAnswer = task.kind === 'vocab' && task.direction === 'es-sk'
+            return (
+              <li key={`${mistake.exercise}:${mistake.itemId}`} className="flex items-start gap-1 py-3">
+                <div className="min-w-0 flex-1 pt-1">
+                  <p className="text-xs text-ink-muted">
+                    {exerciseInfo(task.kind).label} · {mistake.wrongCount}× zle
+                  </p>
+                  <p className="text-sm text-ink-muted">{prompt}</p>
+                  <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
+                    {answer}
+                  </p>
+                </div>
+                <SpeakButton text={task.kind === 'vocab' ? task.word.es : answer} />
+                <button
                 type="button"
                 onClick={() => void removeMistake(mistake.exercise, mistake.itemId)}
                 aria-label={`Odstrániť z chýb: ${answer}`}
@@ -88,7 +90,8 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
                 <X size={18} strokeWidth={1.75} aria-hidden />
               </button>
             </li>
-          ))}
+          )
+        })}
         </ul>
       )}
 

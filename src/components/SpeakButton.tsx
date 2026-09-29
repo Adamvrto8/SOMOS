@@ -3,7 +3,7 @@ import { speak, ttsSupported } from '../lib/tts'
 
 interface SpeakButtonProps {
   text: string
-  size?: 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export function SpeakButton({ text, size = 'md' }: SpeakButtonProps) {
@@ -20,10 +20,12 @@ export function SpeakButton({ text, size = 'md' }: SpeakButtonProps) {
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',
         size === 'lg'
           ? 'size-12 bg-surface-2 text-brick hover:bg-line active:scale-95'
-          : 'size-11 text-ink-muted hover:text-brick',
+          : size === 'sm'
+            ? 'size-7 text-ink-muted hover:text-brick active:scale-95'
+            : 'size-11 text-ink-muted hover:text-brick',
       ].join(' ')}
     >
-      <Volume2 size={size === 'lg' ? 24 : 18} strokeWidth={1.75} aria-hidden />
+      <Volume2 size={size === 'lg' ? 24 : size === 'sm' ? 14 : 18} strokeWidth={1.75} aria-hidden />
     </button>
   )
 }

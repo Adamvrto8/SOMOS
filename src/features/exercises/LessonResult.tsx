@@ -99,15 +99,16 @@ export function LessonResult({
           <ul className="divide-y divide-line rounded-card border border-line bg-surface">
             {mistakes.map(({ task }, i) => {
               const { prompt, answer } = taskSummary(task)
+              const isSlovakAnswer = task.kind === 'vocab' && task.direction === 'es-sk'
               return (
                 <li key={`${task.itemId}-${i}`} className="flex items-start gap-1 py-3 pr-1 pl-4">
                   <div className="min-w-0 flex-1">
                     <p className="text-sm text-ink-muted">{prompt}</p>
-                    <p lang="es" className="font-serif text-lg leading-snug">
+                    <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
                       {answer}
                     </p>
                   </div>
-                  <SpeakButton text={answer} />
+                  <SpeakButton text={task.kind === 'vocab' ? task.word.es : answer} />
                 </li>
               )
             })}

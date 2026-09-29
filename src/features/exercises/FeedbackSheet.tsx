@@ -15,24 +15,53 @@ const TONE: Record<Verdict, { title: string; icon: LucideIcon; panel: string; he
   wrong: { title: 'Nesprávne', icon: CircleX, panel: 'bg-error/10 border-error/50', heading: 'text-error' },
 }
 
-/** The full correct answer to show and speak, with its Slovak meaning where helpful. */
-function reference(task: Task): { label?: string; es: string; sk?: string } {
+interface Reference {
+  label?: string
+  correct: string
+  correctLang: 'es' | 'sk'
+  detail?: string
+  detailLang?: 'es' | 'sk'
+  speak?: string
+}
+
+/** The full correct answer to show and speak, with secondary meaning where helpful. */
+function reference(task: Task): Reference {
   switch (task.kind) {
     case 'cloze':
     case 'choice':
-      return { es: task.sentence.es, sk: task.sentence.sk }
+      return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
     case 'conjugation':
-      return { label: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, es: task.answer }
-    case 'builder':
-      return { es: task.sentence.es }
-    case 'translation':
-      return { es: task.sentence.es }
-    case 'vocab':
       return {
-        label: task.direction === 'sk-es' ? 'Preklad do španielčiny' : 'Preklad do slovenčiny',
-        es: task.word.es,
-        sk: task.word.sk.join(', '),
+        label: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`,
+        correct: task.answer,
+        correctLang: 'es',
+        speak: task.answer,
       }
+    case 'builder':
+    case 'translation':
+      return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
+    case 'vocab': {
+      const esFormatted = task.word.gender ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}` : task.word.es
+      const skFormatted = task.word.sk.join(', ')
+      if (task.direction === 'sk-es') {
+        return {
+          label: 'Preklad do španielčiny',
+          correct: esFormatted,
+          correctLang: 'es',
+          detail: skFormatted,
+          detailLang: 'sk',
+          speak: task.word.es,
+        }
+      }
+      return {
+        label: 'Preklad do slovenčiny',
+        correct: skFormatted,
+        correctLang: 'sk',
+        detail: esFormatted,
+        detailLang: 'es',
+        speak: task.word.es,
+      }
+    }
   }
 }
 
@@ -109,12 +138,17 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
           {grade.verdict === 'wrong' && <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Správna odpoveď</p>}
           {ref.label && <p className="text-sm text-ink-muted">{ref.label}</p>}
           <div className="flex items-start gap-1">
-            <p lang="es" className="min-w-0 flex-1 pt-1.5 font-serif text-xl leading-snug">
-              {ref.es}
+            <p lang={ref.correctLang} className="min-w-0 flex-1 pt-1.5 font-serif text-xl leading-snug">
+              {ref.correct}
             </p>
-            <SpeakButton text={ref.es} />
+            {ref.correctLang === 'es' && ref.speak && <SpeakButton text={ref.speak} />}
           </div>
-          {ref.sk && <p className="text-sm text-ink-muted">{ref.sk}</p>}
+          {ref.detail && (
+            <div className="flex items-center gap-1.5 text-sm text-ink-muted">
+              <span lang={ref.detailLang}>{ref.detail}</span>
+              {ref.detailLang === 'es' && ref.speak && <SpeakButton text={ref.speak} size="sm" />}
+            </div>
+          )}
         </div>
 
         {notes.length > 0 && (
