@@ -14,6 +14,8 @@ self.addEventListener('push', (event) => {
       icon: '/pwa-192x192.png',
       badge: '/badge-96x96.png',
       tag: 'somos-reminder',
+      // Without it, replacing yesterday's unread reminder (same tag) would be silent.
+      renotify: true,
       lang: 'sk',
       data: { url: data.url || '/' },
     }),

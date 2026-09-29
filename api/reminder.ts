@@ -167,6 +167,7 @@ export const KEYS = {
   progress: 'somos:reminder:progress',
   sent: 'somos:reminder:sent', // day key of the last reminder sent
   test: 'somos:reminder:test', // exists for 60 s after a test notification
+  gone: 'somos:reminder:gone', // endpoint the push service dropped: the app must replace it, not re-register it
 } as const
 
 export interface Store {
@@ -253,6 +254,7 @@ async function deliver(deps: Deps, sub: ReminderSub, message: Message, topic: st
     const status = statusOf(error)
     if (status === 404 || status === 410) {
       await deps.store.del(KEYS.sub)
+      await deps.store.set(KEYS.gone, sub.subscription.endpoint)
       return 'gone'
     }
     console.error('push failed', status ?? error)
@@ -291,7 +293,7 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
   const body: unknown = await request.json().catch(() => undefined)
   if (!isRecord(body)) return json({ error: 'bad-request' }, 400)
 
-  const [rawSub] = await deps.store.mget([KEYS.sub])
+  const [rawSub, goneEndpoint] = await deps.store.mget([KEYS.sub, KEYS.gone])
   const stored = parseStored(rawSub, isReminderSub)
   // Only the device that gets the reminders may change or feed them.
   const fromStoredDevice = typeof body.endpoint === 'string' && stored?.subscription.endpoint === body.endpoint
@@ -300,6 +302,8 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
     case 'subscribe': {
       const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone }
       if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
+      // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
+      if (sub.subscription.endpoint === goneEndpoint) return json({ error: 'gone' }, 410)
       const { endpoint, keys } = sub.subscription
       const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone }
       await deps.store.set(KEYS.sub, JSON.stringify(clean))

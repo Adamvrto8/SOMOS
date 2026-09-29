@@ -66,7 +66,16 @@ export function useReminderSettings(): ReminderSettings {
 
 // ---------- errors and support ----------
 
-export type ReminderError = 'unavailable' | 'unsupported' | 'denied' | 'not-allowed' | 'offline' | 'not-configured' | 'too-many' | 'failed'
+export type ReminderError =
+  | 'unavailable'
+  | 'unsupported'
+  | 'denied'
+  | 'not-allowed'
+  | 'offline'
+  | 'not-configured'
+  | 'too-many'
+  | 'gone'
+  | 'failed'
 
 export const REMINDER_ERRORS: Record<ReminderError, string> = {
   unavailable: 'Pripomienky fungujú len v nasadenej aplikácii, nie na lokálnom serveri.',
@@ -76,6 +85,7 @@ export const REMINDER_ERRORS: Record<ReminderError, string> = {
   offline: 'Potrebuješ internet.',
   'not-configured': 'Pripomienky ešte nie sú na serveri nastavené.',
   'too-many': 'Skúšobnú notifikáciu môžeš poslať raz za minútu.',
+  gone: 'Prihlásenie na notifikácie vypršalo. Skús to znova.',
   failed: 'Nepodarilo sa. Skús to znova.',
 }
 
@@ -120,8 +130,11 @@ async function post(body: Record<string, unknown>, keepalive = false): Promise<v
   const data = (await res.json().catch(() => ({}))) as { error?: string }
   if (data.error === 'not-configured') throw new ReminderFailure('not-configured')
   if (res.status === 429) throw new ReminderFailure('too-many')
+  if (res.status === 410) throw new ReminderFailure('gone')
   throw new ReminderFailure('failed')
 }
+
+const isGone = (error: unknown) => error instanceof ReminderFailure && error.code === 'gone'
 
 /** VAPID keys are base64url; pushManager.subscribe wants the raw bytes. */
 export function base64UrlToBytes(value: string): Uint8Array<ArrayBuffer> {
@@ -151,6 +164,21 @@ function register(subscription: PushSubscription, time: string): Promise<void> {
   return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone })
 }
 
+/** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
+async function registerDevice(time: string): Promise<PushSubscription> {
+  const subscription = await ensureSubscription()
+  try {
+    await register(subscription, time)
+    return subscription
+  } catch (error) {
+    if (!isGone(error)) throw error
+    await subscription.unsubscribe()
+    const fresh = await ensureSubscription()
+    await register(fresh, time)
+    return fresh
+  }
+}
+
 // ---------- actions (Nastavenia) ----------
 
 /** Asks for permission, subscribes this device and turns the reminder on. */
@@ -158,7 +186,7 @@ export async function enableReminder(time: string): Promise<void> {
   assertReady()
   const permission = await Notification.requestPermission()
   if (permission !== 'granted') throw new ReminderFailure(permission === 'denied' ? 'denied' : 'not-allowed')
-  await register(await ensureSubscription(), time)
+  await registerDevice(time)
   saveSettings({ enabled: true, time })
   void reportProgressNow()
 }
@@ -166,7 +194,7 @@ export async function enableReminder(time: string): Promise<void> {
 export async function setReminderTime(time: string): Promise<void> {
   if (!settings.enabled) return saveSettings({ ...settings, time })
   assertReady()
-  await register(await ensureSubscription(), time)
+  await registerDevice(time)
   saveSettings({ ...settings, time })
 }
 
@@ -186,9 +214,17 @@ export async function disableReminder(): Promise<void> {
 /** Registers this device again (in case the server lost it) and asks for a test notification. */
 export async function sendTestReminder(): Promise<void> {
   assertReady()
-  const subscription = await ensureSubscription()
-  await register(subscription, settings.time)
-  await post({ type: 'test', endpoint: subscription.endpoint })
+  const attempt = async () => {
+    const subscription = await registerDevice(settings.time)
+    await post({ type: 'test', endpoint: subscription.endpoint })
+  }
+  try {
+    await attempt()
+  } catch (error) {
+    if (!isGone(error)) throw error
+    // The push service just dropped the subscription; the server now answers 410 for it, so this round replaces it.
+    await attempt()
+  }
 }
 
 /**
@@ -202,7 +238,7 @@ export async function syncReminder(): Promise<void> {
   if (support !== 'ok' || Notification.permission !== 'granted') return saveSettings({ ...settings, enabled: false })
   if (!navigator.onLine) return
   try {
-    await register(await ensureSubscription(), settings.time)
+    await registerDevice(settings.time)
     await reportProgressNow()
   } catch {
     // The next start tries again.

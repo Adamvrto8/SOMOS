@@ -238,6 +238,18 @@ describe('api/reminder: cron tick', () => {
     expect(store.data.has(KEYS.sent)).toBe(false)
   })
 
+  it('makes the app replace a subscription the push service dropped', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(410))))
+    const again = { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ }
+    const res = await handleReminder(post(again), deps(store))
+    expect(res.status).toBe(410)
+    expect(await res.json()).toEqual({ error: 'gone' })
+    expect(store.data.has(KEYS.sub)).toBe(false)
+    const fresh = { ...again, subscription: { ...SUB.subscription, endpoint: 'https://push.example/fresh' } }
+    expect((await handleReminder(post(fresh), deps(store))).status).toBe(200)
+  })
+
   it('leaves the day open for the next tick after a failed send', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     const store = memoryStore({ [KEYS.sub]: SUB })
@@ -306,6 +318,14 @@ describe('api/reminder: requests from the app', () => {
     )
     expect((await test()).status).toBe(429)
     expect(send).toHaveBeenCalledTimes(1)
+  })
+
+  it('reports a subscription dropped during a test, and refuses it afterwards', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    const test = post({ type: 'test', endpoint: SUB.subscription.endpoint })
+    expect((await handleReminder(test, deps(store, async () => Promise.reject(pushError(410))))).status).toBe(410)
+    const again = post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ })
+    expect((await handleReminder(again, deps(store))).status).toBe(410)
   })
 
   it('refuses a test for a device that is not subscribed', async () => {

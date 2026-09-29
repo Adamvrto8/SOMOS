@@ -58,7 +58,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
 | Pronunciation | Web Speech API `speechSynthesis` (free, built into browser) |
 | Hosting | Vercel (free) |
 | Online lookup | DeepL API Free via the Vercel function `api/translate.ts` (key only in the `DEEPL_API_KEY` env var, same-origin requests, ≤120 chars, ES-419 with ES fallback); `src/lib/translate.ts` caches results in Dexie `lookups`. Files in `api/` starting with `_` are not deployed (tests) |
-| Reminders | Web Push: `api/reminder.ts` (Vercel function, `web-push`) keeps state in Upstash Redis and is called every 15 min by cron-job.org (`Authorization: Bearer CRON_SECRET`); env `VAPID_PRIVATE_KEY`, `CRON_SECRET`, Upstash `KV_REST_API_URL`/`KV_REST_API_TOKEN`. `public/push-sw.js` is imported into the service worker. One reminder a day at the chosen time (±2 h window), only while the daily goal is not met |
+| Reminders | Web Push: `api/reminder.ts` (Vercel function, `web-push`) keeps state in Upstash Redis and is called every 15 min by cron-job.org (`Authorization: Bearer CRON_SECRET`); env `VAPID_PRIVATE_KEY`, `CRON_SECRET`, Upstash `KV_REST_API_URL`/`KV_REST_API_TOKEN`. `public/push-sw.js` is imported into the service worker. One reminder a day, at most 2 h after the chosen time (never past 23:59), only while the daily goal is not met |
 
 Content lives as **static JSON in `src/data/`**, bundled with the app → offline & free.
 

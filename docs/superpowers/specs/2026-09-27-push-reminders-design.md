@@ -54,6 +54,7 @@ interface ReminderProgress {
 }
 // somos:reminder:sent — day key of the last reminder sent, e.g. "2026-09-27"
 // somos:reminder:test — exists for 60 s after a test notification (SET … EX 60 NX)
+// somos:reminder:gone — endpoint the push service dropped (404/410); `subscribe` answers 410 for it
 ```
 
 `dueTomorrow` lets a reminder show a correct card count even when the app has not been opened
@@ -184,7 +185,7 @@ A section in Nastavenia under "Denný cieľ", titled "Pripomienka cvičenia":
 | offline while changing | "Potrebuješ internet.", setting unchanged |
 | progress report fails | ignored, sent again with the next trigger |
 | tick fails (Upstash/push down) | `sent` not written, retried next tick inside the window; visible on cron-job.org |
-| subscription gone (404/410) | deleted on the server; app re-subscribes on next start |
+| subscription gone (404/410) | deleted on the server and remembered as `gone`; re-registering that endpoint gets 410, so the app unsubscribes it and subscribes afresh (at start, on enable/time change, and on a test, which is retried once) |
 | practised fully offline | server does not know, so the reminder still comes (accepted limitation) |
 
 ## Security
