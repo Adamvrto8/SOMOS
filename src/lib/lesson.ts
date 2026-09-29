@@ -1,10 +1,10 @@
-import { sentenceById, sentences, verbById, verbs } from '../data'
-import type { Cloze, Level, Person, Sentence, Verb } from '../data/types'
+import { sentenceById, sentences, verbById, verbs, wordById, words } from '../data'
+import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
 
-export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation'
+export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab'
 
 export const LESSON_SIZE = 10
 
@@ -59,7 +59,17 @@ export interface TranslationTask {
   sentence: Sentence
 }
 
-export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask
+export interface VocabTask {
+  kind: 'vocab'
+  itemId: string
+  word: Word
+  direction: 'sk-es' | 'es-sk'
+  prompt: string
+  expected: string
+  acceptable: string[]
+}
+
+export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask
 
 /** Typed text or chosen option, or tile ids in the chosen order (builder). */
 export type Answer = string | string[]
@@ -161,6 +171,31 @@ export function availableCount(filter: LessonFilter): number {
       return builderSentences(filter).length
     case 'translation':
       return translationSentences(filter).length
+    case 'vocab':
+      return words.filter((w) => (!filter.topic || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length * 2
+  }
+}
+
+export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
+  const isToSpanish = direction === 'sk-es'
+  const prompt = isToSpanish
+    ? word.sk.join(', ')
+    : word.gender
+      ? `${word.gender === 'm' ? 'el' : 'la'} ${word.es}`
+      : word.es
+  const expected = isToSpanish ? word.es : word.sk[0]
+  const acceptable = isToSpanish
+    ? [word.es, ...(word.gender ? [`${word.gender === 'm' ? 'el' : 'la'} ${word.es}`] : [])]
+    : word.sk
+
+  return {
+    kind: 'vocab',
+    itemId: `${word.id}:${direction}`,
+    word,
+    direction,
+    prompt,
+    expected,
+    acceptable,
   }
 }
 
@@ -232,6 +267,8 @@ export function createLesson(
       return order(translationSentences(filter), (s) => s.id)
         .slice(0, size)
         .map((sentence): TranslationTask => ({ kind: 'translation', itemId: sentence.id, sentence }))
+    case 'vocab':
+      return order(getStablePool(filter), (t) => t.itemId).slice(0, size)
   }
 }
 
@@ -284,6 +321,16 @@ export function getStablePool(filter: LessonFilter): Task[] {
         itemId: sentence.id,
         sentence,
       }))
+    }
+    case 'vocab': {
+      const matching = words.filter(
+        (w) => (!filter.topic || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level),
+      )
+      matching.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.es.localeCompare(b.es))
+      return [
+        ...matching.map((w, i) => vocabTask(w, i % 2 === 0 ? 'sk-es' : 'es-sk')),
+        ...matching.map((w, i) => vocabTask(w, i % 2 === 0 ? 'es-sk' : 'sk-es')),
+      ]
     }
   }
 }
@@ -343,6 +390,12 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
       const sentence = sentenceById.get(itemId)
       return sentence ? { kind: 'translation', itemId, sentence } : undefined
     }
+    case 'vocab': {
+      const [wordId, direction] = itemId.split(':')
+      const word = wordById.get(wordId)
+      if (!word || (direction !== 'sk-es' && direction !== 'es-sk')) return undefined
+      return vocabTask(word, direction)
+    }
   }
 }
 
@@ -353,7 +406,7 @@ export interface MistakeRef {
   lastWrongAt: number
 }
 
-const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation']
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab']
 
 /** A lesson from the mistakes list: most-missed first, then the ones not seen for longest. */
 export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random): Task[] {
@@ -403,5 +456,7 @@ export function gradeTask(task: Task, answer: Answer): Grade {
     }
     case 'translation':
       return fromCheck(checkAnswer(text, task.sentence.es, { lookup: lookupForm, optionalSubject: true }))
+    case 'vocab':
+      return fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
   }
 }

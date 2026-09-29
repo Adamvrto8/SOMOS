@@ -1,4 +1,5 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
+import { GENDER_LABELS, POS_LABELS } from '../../../lib/grammar'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { ChoiceOptions } from './ChoiceOptions'
 import { SentenceWithBlank } from './SentenceWithBlank'
@@ -94,5 +95,31 @@ export function TaskView({ task, answer, onAnswer, onSubmit, grade }: TaskViewPr
           />
         </div>
       )
+
+    case 'vocab': {
+      const isToSpanish = task.direction === 'sk-es'
+      return (
+        <div className="space-y-5">
+          <div className="rounded-card border border-line bg-surface p-5 text-center">
+            <p lang={isToSpanish ? 'sk' : 'es'} className="font-serif text-3xl font-semibold">
+              {task.prompt}
+            </p>
+            <div className="mt-3 flex flex-wrap justify-center gap-2">
+              <Pill>{isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}</Pill>
+              {task.word.pos && <Pill>{POS_LABELS[task.word.pos] ?? task.word.pos}</Pill>}
+              {task.word.gender && <Pill>{GENDER_LABELS[task.word.gender]}</Pill>}
+            </div>
+          </div>
+          <TypedAnswer
+            value={text}
+            onChange={onAnswer}
+            onSubmit={onSubmit}
+            status={status}
+            label={isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
+            placeholder={isToSpanish ? 'Po španielsky…' : 'Po slovensky…'}
+          />
+        </div>
+      )
+    }
   }
 }

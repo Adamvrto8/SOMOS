@@ -27,6 +27,12 @@ function reference(task: Task): { label?: string; es: string; sk?: string } {
       return { es: task.sentence.es }
     case 'translation':
       return { es: task.sentence.es }
+    case 'vocab':
+      return {
+        label: task.direction === 'sk-es' ? 'Preklad do španielčiny' : 'Preklad do slovenčiny',
+        es: task.word.es,
+        sk: task.word.sk.join(', '),
+      }
   }
 }
 
@@ -79,11 +85,13 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
   if (task.kind === 'conjugation' && task.irregular) notes.push(<>Nepravidelný tvar – oplatí sa ho zapamätať.</>)
   if (!grade.correct) notes.push(<>{mistakeChoice ? 'Ostáva v Chybách' : 'Uložené do Archív → Chyby'}, zopakuješ si to neskôr.</>)
 
-  // ⭐ saves the verb for conjugation drills, the whole sentence otherwise.
+  // ⭐ saves the verb or vocab word, the whole sentence otherwise.
   const star =
     task.kind === 'conjugation'
       ? ({ type: 'word', id: wordIdByVerb.get(task.verb.id) ?? task.verb.id } as const)
-      : ({ type: 'sentence', id: task.sentence.id } as const)
+      : task.kind === 'vocab'
+        ? ({ type: 'word', id: task.word.id } as const)
+        : ({ type: 'sentence', id: task.sentence.id } as const)
 
   return (
     // Opaque base + tinted layer: the sheet covers the task underneath.

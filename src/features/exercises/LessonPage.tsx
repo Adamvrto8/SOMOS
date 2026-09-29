@@ -215,7 +215,7 @@ export function LessonPage() {
                 task={task}
                 grade={grade}
                 onContinue={() => next()}
-                onOverride={task.kind === 'translation' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
+                onOverride={task.kind === 'translation' || task.kind === 'vocab' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
             ) : (

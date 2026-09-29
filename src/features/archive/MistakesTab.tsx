@@ -4,13 +4,19 @@ import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import type { Mistake } from '../../lib/db'
-import { taskFromItem, type ExerciseType } from '../../lib/lesson'
+import { taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
 import { clearMistakes, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo } from '../exercises/exercises'
 import { taskSummary } from '../exercises/taskSummary'
 import { ArchiveFilters, NoMatches } from './ArchiveFilters'
 import { EmptyState } from './EmptyState'
 import { useArchiveFilter } from './useArchiveFilter'
+
+const taskTopics = (task: Task): string[] => {
+  if (task.kind === 'conjugation') return []
+  if (task.kind === 'vocab') return task.word.topics
+  return task.sentence.topics
+}
 
 /** "Chyby": exercises answered wrong, kept until the learner removes them. */
 export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
@@ -27,7 +33,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
     const task = taskFromItem(m.exercise as ExerciseType, m.itemId)
     return task ? [{ mistake: m, task, ...taskSummary(task) }] : []
   })
-  const topicIds = new Set(rows.flatMap(({ task }) => (task.kind === 'conjugation' ? [] : task.sentence.topics)))
+  const topicIds = new Set(rows.flatMap(({ task }) => taskTopics(task)))
   const filter = useArchiveFilter(topicIds)
 
   if (rows.length === 0) {
@@ -41,7 +47,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
 
   const visible = rows.filter(
     ({ task, prompt, answer }) =>
-      (!filter.topic || (task.kind !== 'conjugation' && task.sentence.topics.includes(filter.topic))) && filter.matches([prompt, answer]),
+      (!filter.topic || taskTopics(task).includes(filter.topic)) && filter.matches([prompt, answer]),
   )
 
   return (

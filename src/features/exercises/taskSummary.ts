@@ -6,6 +6,8 @@ export function taskSummary(task: Task): { prompt: string; answer: string } {
   switch (task.kind) {
     case 'conjugation':
       return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
+    case 'vocab':
+      return { prompt: task.prompt, answer: task.expected }
     default:
       return { prompt: task.sentence.sk, answer: task.sentence.es }
   }

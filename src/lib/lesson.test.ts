@@ -28,7 +28,7 @@ function seeded(seed: number) {
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
 describe('createLesson', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
     const tasks = createLesson({ type }, LESSON_SIZE, seeded(1))
     expect(tasks).toHaveLength(LESSON_SIZE)
     expect(new Set(itemIds(tasks)).size).toBe(LESSON_SIZE)
@@ -162,6 +162,19 @@ describe('gradeTask', () => {
     expect(gradeTask(task, task.cloze.answer).correct).toBe(true)
     expect(gradeTask(task, task.options.find((o) => o !== task.cloze.answer)!).correct).toBe(false)
   })
+
+  it('grades vocab answers for both directions', () => {
+    const toEs = taskFromItem('vocab', 'perro:sk-es')
+    if (!toEs || toEs.kind !== 'vocab') throw new Error('task not found')
+    expect(gradeTask(toEs, 'perro').correct).toBe(true)
+    expect(gradeTask(toEs, 'el perro').correct).toBe(true)
+    expect(gradeTask(toEs, 'gato').correct).toBe(false)
+
+    const toSk = taskFromItem('vocab', 'perro:es-sk')
+    if (!toSk || toSk.kind !== 'vocab') throw new Error('task not found')
+    expect(gradeTask(toSk, 'pes').correct).toBe(true)
+    expect(gradeTask(toSk, 'mačka').correct).toBe(false)
+  })
 })
 
 describe('least-seen first', () => {
@@ -175,7 +188,7 @@ describe('least-seen first', () => {
 })
 
 describe('taskFromItem', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation'] as const)('rebuilds a %s task from its itemId', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab'] as const)('rebuilds a %s task from its itemId', (type) => {
     for (const task of createLesson({ type }, LESSON_SIZE, seeded(22))) {
       const rebuilt = taskFromItem(type, task.itemId, seeded(23))
       expect(rebuilt?.kind).toBe(type)
