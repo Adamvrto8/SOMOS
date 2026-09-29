@@ -37,7 +37,6 @@ export function SearchPage() {
         onChange={setQuery}
         label="Hľadať slovo"
         placeholder="napr. casa, dom, tengo"
-        autoFocus={query === ''}
       />
 
       <div role="group" aria-label="Filter" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
