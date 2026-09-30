@@ -34,7 +34,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
      ≤1 missed word in 5+ words = 🟡; 3 tries; "Teraz nemôžem hovoriť" drops the speaking tasks ahead (`speechMatch.ts`, `speech.ts`)
 5. **Archive** — ⭐ saved words and sentences (star on word detail or in exercise feedback),
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
-   kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition;
+   kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition; words practised in Slovná zásoba / Časovanie join too (auto review, daily limit in Nastavenia);
    mistakes are practised as a lesson. Export / import JSON backup.
 6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. Content A1–A2, plus B1 since phase 7 (Cvičiť level filter: A1 / A2 / B1).
 
@@ -127,7 +127,7 @@ interface Topic { id: string; sk: string; es: string; icon: string; }
 // Stored in IndexedDB (Dexie)
 interface CustomWord { id: string; es: string; sk: string; note?: string; topic?: string; createdAt: number; }
 interface SavedItem  { itemId: string; itemType: 'word' | 'verb' | 'custom' | 'sentence'; savedAt: number; }
-interface ReviewCard { itemId: string; itemType: 'word' | 'custom' | 'sentence'; fsrs: Card /* ts-fsrs */; }
+interface ReviewCard { itemId: string; itemType: 'word' | 'custom' | 'sentence'; fsrs: Card /* ts-fsrs */; practised?: true; }
 interface Attempt    { id?: number; exercise: string; itemId: string; correct: boolean; at: number; }
 interface Mistake    { exercise: string; itemId: string; firstWrongAt: number; lastWrongAt: number; wrongCount: number; }
 interface Lookup     { key: string; text: string; from: 'sk' | 'es'; translation: string; at: number; } // DeepL cache, not backed up
@@ -141,6 +141,11 @@ Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
 - A card is "due today" when `due` ≤ end of the local day. Cards still due after rating
   (short relearning steps) come back later in the same session.
 - Always read cards through `cardOf()` (ts-fsrs `TypeConvert`): JSON backups store dates as strings.
+- Words practised in Slovná zásoba / Časovanie get a card with `practised: true` (`src/lib/practice.ts`): the lesson
+  answer is a review (Good / Again, no short-term steps, first answer per local day); `syncPracticeCards()` builds
+  missing ones from past attempts after `syncReviewCards()`. Un-starring keeps a practised card.
+- "Due today" always goes through `selectDue()`: practised-only words (not ⭐) are capped per day
+  (`autoReview.ts`, default 20, switch in Nastavenia); review, Domov, Archív and the reminder share it.
 - Every review is also an Attempt with `exercise: 'review'`; streak, daily goal and stats count all attempts.
 
 A validation script (`npm run validate:data`) must check: unique ids, every `verbId`
@@ -212,7 +217,7 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
   `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
 - **Archív** — tabs Uložené / Moje slová / Chyby, search + topic filter, "Zopakovať" (SRS session),
-  "+" add custom word, settings: export/import backup, theme, daily goal, practice reminder (push, time), TTS voice.
+  "+" add custom word, settings: export/import backup, theme, daily goal, automatic review (on/off, daily limit), practice reminder (push, time), TTS voice.
 
 Mobile first (375px), max content width ~480px centered on desktop. Large tap targets (≥44px).
 
