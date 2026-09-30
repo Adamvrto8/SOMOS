@@ -1,11 +1,12 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { createEmptyCard, fsrs, Rating, TypeConvert, type Card, type Grade } from 'ts-fsrs'
 import { recordAttempt } from './attempts'
-import { endOfDay } from './dates'
+import { getAutoReview, useAutoReviewSettings, type AutoReviewSettings } from './autoReview'
+import { addDays, endOfDay, startOfDay } from './dates'
 import { db, type ReviewCard, type ReviewItemType } from './db'
 import { pluralSk } from './text'
 
-// Spaced repetition (FSRS) for saved dictionary words and custom words.
+// Spaced repetition (FSRS) for saved words and sentences, custom words and practised words.
 
 const scheduler = fsrs({ enable_fuzz: true })
 
@@ -66,13 +67,29 @@ export async function addReviewCard(itemType: ReviewItemType, itemId: string): P
   await db.reviewCards.put({ itemType, itemId, fsrs: createEmptyCard(new Date()) })
 }
 
+/** A practised word stays in review when its ⭐ is removed. */
 export async function removeReviewCard(itemType: ReviewItemType, itemId: string): Promise<void> {
+  const card = await db.reviewCards.get(key(itemType, itemId))
+  if (card?.practised) return
   await db.reviewCards.delete(key(itemType, itemId))
+}
+
+/** Cards to delete (not wanted, not practised) and to create (wanted, missing). */
+export function reviewCardChanges(
+  wanted: Map<string, [ReviewItemType, string]>,
+  existing: ReviewCard[],
+  now: Date,
+): { stale: [ReviewItemType, string][]; missing: ReviewCard[] } {
+  const have = new Set(existing.map((c) => `${c.itemType}:${c.itemId}`))
+  const stale = existing.filter((c) => !c.practised && !wanted.has(`${c.itemType}:${c.itemId}`)).map((c) => key(c.itemType, c.itemId))
+  const missing = [...wanted].filter(([k]) => !have.has(k)).map(([, [itemType, itemId]]) => ({ itemType, itemId, fsrs: createEmptyCard(now) }))
+  return { stale, missing }
 }
 
 /**
  * Makes review cards match the archive: every saved (⭐) word and sentence and every
- * custom word has one, nothing else does. Idempotent; run at startup and after a restore.
+ * custom word has one; practised words keep theirs; nothing else does. Idempotent; run at
+ * startup and after a restore.
  */
 export async function syncReviewCards(): Promise<void> {
   await db.transaction('rw', db.savedItems, db.customWords, db.reviewCards, async () => {
@@ -83,31 +100,92 @@ export async function syncReviewCards(): Promise<void> {
       ...saved.flatMap((s) => (s.itemType === 'word' || s.itemType === 'sentence' ? [entry(s.itemType, s.itemId)] : [])),
       ...custom.map((c) => entry('custom', c.id)),
     ])
-    const existing = await db.reviewCards.toArray()
-    const have = new Set(existing.map((c) => `${c.itemType}:${c.itemId}`))
-
-    const stale = existing.filter((c) => !wanted.has(`${c.itemType}:${c.itemId}`)).map((c) => key(c.itemType, c.itemId))
-    const now = new Date()
-    const missing = [...wanted].filter(([k]) => !have.has(k)).map(([, [itemType, itemId]]) => ({ itemType, itemId, fsrs: createEmptyCard(now) }))
-
+    const { stale, missing } = reviewCardChanges(wanted, await db.reviewCards.toArray(), new Date())
     await db.reviewCards.bulkDelete(stale)
     await db.reviewCards.bulkPut(missing)
   })
 }
 
+// ---------- due today (with the daily limit for practised words) ----------
+
+/** A practised word nobody starred: these are capped by the daily limit. */
+export const isPractisedOnly = (card: ReviewCard, savedWordIds: ReadonlySet<string>) =>
+  card.itemType === 'word' && card.practised === true && !savedWordIds.has(card.itemId)
+
+/**
+ * Cards to review today, soonest first: every due ⭐ word, ⭐ sentence and custom word, plus
+ * practised-only words (most overdue first) up to the daily limit minus the ones reviewed today.
+ */
+export function selectDue(
+  cards: ReviewCard[],
+  savedWordIds: ReadonlySet<string>,
+  settings: AutoReviewSettings,
+  reviewedToday: ReadonlySet<string>,
+  now: Date,
+): ReviewCard[] {
+  const due = cards.map((rc) => ({ rc, card: cardOf(rc) })).filter(({ card }) => isDueToday(card, now))
+  const always = due.filter(({ rc }) => !isPractisedOnly(rc, savedWordIds))
+  const practisedOnly = due.filter(({ rc }) => isPractisedOnly(rc, savedWordIds)).sort((a, b) => a.card.due.getTime() - b.card.due.getTime())
+  const used = cards.filter((rc) => isPractisedOnly(rc, savedWordIds) && reviewedToday.has(rc.itemId)).length
+  const slots = settings.enabled ? Math.max(0, settings.limit - used) : 0
+  return [...always, ...practisedOnly.slice(0, slots)]
+    .sort((a, b) => a.card.due.getTime() - b.card.due.getTime())
+    .map(({ rc }) => rc)
+}
+
+/** Due today, and by the end of tomorrow (a fresh limit, nothing reviewed yet). */
+export function dueCounts(
+  cards: ReviewCard[],
+  savedWordIds: ReadonlySet<string>,
+  settings: AutoReviewSettings,
+  reviewedToday: ReadonlySet<string>,
+  now: Date,
+): { today: number; tomorrow: number } {
+  return {
+    today: selectDue(cards, savedWordIds, settings, reviewedToday, now).length,
+    tomorrow: selectDue(cards, savedWordIds, settings, new Set(), addDays(now, 1)).length,
+  }
+}
+
+/** Everything the selection reads from the database. */
+async function loadSelectionInput(now: Date) {
+  const [cards, saved, todayAttempts] = await Promise.all([
+    db.reviewCards.toArray(),
+    db.savedItems.toArray(),
+    db.attempts.where('at').aboveOrEqual(startOfDay(now).getTime()).toArray(),
+  ])
+  const savedWordIds = new Set(saved.filter((s) => s.itemType === 'word').map((s) => s.itemId))
+  const reviewedToday = new Set(
+    todayAttempts.filter((a) => a.exercise === 'review' && a.itemId.startsWith('word:')).map((a) => a.itemId.slice('word:'.length)),
+  )
+  return { cards, savedWordIds, reviewedToday }
+}
+
+export async function loadDueCards(now = new Date(), settings = getAutoReview()): Promise<ReviewCard[]> {
+  const { cards, savedWordIds, reviewedToday } = await loadSelectionInput(now)
+  return selectDue(cards, savedWordIds, settings, reviewedToday, now)
+}
+
+export async function loadDueCounts(now = new Date()): Promise<{ today: number; tomorrow: number }> {
+  const { cards, savedWordIds, reviewedToday } = await loadSelectionInput(now)
+  return dueCounts(cards, savedWordIds, getAutoReview(), reviewedToday, now)
+}
+
 export interface ReviewOverview {
-  total: number // cards in the archive
+  total: number // cards that can come up in review
   dueToday: number
   dueWords: number // saved and custom words
   dueSentences: number
 }
 
 export function useReviewOverview(): ReviewOverview | undefined {
+  const settings = useAutoReviewSettings()
   return useLiveQuery(async () => {
-    const cards = await db.reviewCards.toArray()
     const now = new Date()
-    const due = cards.filter((c) => isDueToday(cardOf(c), now))
+    const { cards, savedWordIds, reviewedToday } = await loadSelectionInput(now)
+    const due = selectDue(cards, savedWordIds, settings, reviewedToday, now)
     const dueSentences = due.filter((c) => c.itemType === 'sentence').length
-    return { total: cards.length, dueToday: due.length, dueWords: due.length - dueSentences, dueSentences }
-  }, [])
+    const total = cards.filter((c) => settings.enabled || !isPractisedOnly(c, savedWordIds)).length
+    return { total, dueToday: due.length, dueWords: due.length - dueSentences, dueSentences }
+  }, [settings])
 }

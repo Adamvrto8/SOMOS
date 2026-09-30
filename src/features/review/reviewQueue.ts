@@ -3,7 +3,7 @@ import { sentenceById, wordById } from '../../data'
 import type { Example } from '../../data/types'
 import { db, type ReviewItemType } from '../../lib/db'
 import { articleFor } from '../../lib/grammar'
-import { cardOf, isDueToday } from '../../lib/srs'
+import { cardOf, loadDueCards } from '../../lib/srs'
 
 /** One flashcard in a review session, with everything needed to show both sides. */
 export interface ReviewEntry {
@@ -17,12 +17,9 @@ export interface ReviewEntry {
   note?: string
 }
 
-/** Cards due today, soonest first, joined with their dictionary or custom word. */
+/** Cards due today (daily limit applied), soonest first, joined with their word, sentence or custom word. */
 export async function loadDueEntries(now = new Date()): Promise<ReviewEntry[]> {
-  const due = (await db.reviewCards.toArray())
-    .map((rc) => ({ rc, card: cardOf(rc) }))
-    .filter(({ card }) => isDueToday(card, now))
-    .sort((a, b) => a.card.due.getTime() - b.card.due.getTime())
+  const due = (await loadDueCards(now)).map((rc) => ({ rc, card: cardOf(rc) }))
 
   const customIds = due.filter(({ rc }) => rc.itemType === 'custom').map(({ rc }) => rc.itemId)
   const customs = new Map((await db.customWords.bulkGet(customIds)).flatMap((c) => (c ? [[c.id, c] as const] : [])))

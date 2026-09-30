@@ -1,7 +1,7 @@
 import { getDailyGoal } from './dailyGoal'
-import { addDays, dayKey, endOfDay } from './dates'
+import { dayKey } from './dates'
 import { db } from './db'
-import { cardOf } from './srs'
+import { loadDueCounts } from './srs'
 import { computeStreak } from './stats'
 
 // What the phone tells api/reminder.ts about today, so the reminder only goes out while the daily
@@ -16,29 +16,23 @@ export interface ReminderProgress {
   activeToday: boolean
 }
 
-export function buildProgress(attemptTimestamps: number[], dueDates: Date[], goal: number, now: Date): ReminderProgress {
+export function buildProgress(attemptTimestamps: number[], due: { today: number; tomorrow: number }, goal: number, now: Date): ReminderProgress {
   const today = dayKey(now)
   const activeDays = new Set(attemptTimestamps.map((t) => dayKey(new Date(t))))
   const streak = computeStreak(activeDays, now)
-  const endToday = endOfDay(now).getTime()
-  const endTomorrow = endOfDay(addDays(now, 1)).getTime()
   return {
     day: today,
     done: attemptTimestamps.filter((t) => dayKey(new Date(t)) === today).length,
     goal,
-    dueToday: dueDates.filter((d) => d.getTime() <= endToday).length,
-    dueTomorrow: dueDates.filter((d) => d.getTime() <= endTomorrow).length,
+    dueToday: due.today,
+    dueTomorrow: due.tomorrow,
     streakDays: streak.days,
     activeToday: streak.activeToday,
   }
 }
 
 export async function loadProgress(now = new Date()): Promise<ReminderProgress> {
-  const [timestamps, cards] = await Promise.all([db.attempts.orderBy('at').keys() as Promise<number[]>, db.reviewCards.toArray()])
-  return buildProgress(
-    timestamps,
-    cards.map((c) => cardOf(c).due),
-    getDailyGoal(),
-    now,
-  )
+  // Same due counts as Domov: the daily limit for practised words applies.
+  const [timestamps, due] = await Promise.all([db.attempts.orderBy('at').keys() as Promise<number[]>, loadDueCounts(now)])
+  return buildProgress(timestamps, due, getDailyGoal(), now)
 }
