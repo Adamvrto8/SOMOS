@@ -77,7 +77,10 @@ export function useVoices(): VoiceState {
   return useSyncExternalStore(subscribe, () => state)
 }
 
-export function speak(text: string) {
+/** 🐢 in Diktát. */
+export const SLOW_RATE = 0.6
+
+export function speak(text: string, { rate = 0.9 }: { rate?: number } = {}) {
   if (!synth) return
   if (state.voices.length === 0) refreshVoices()
   const voice = activeVoice()
@@ -85,6 +88,11 @@ export function speak(text: string) {
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = voice?.lang ?? 'es-MX'
   if (voice) utterance.voice = voice
-  utterance.rate = 0.9
+  utterance.rate = rate
   synth.speak(utterance)
+}
+
+/** Silences the phone before the microphone opens, so the recognizer doesn't hear it. */
+export function stopSpeaking() {
+  synth?.cancel()
 }
