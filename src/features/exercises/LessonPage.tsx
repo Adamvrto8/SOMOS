@@ -122,17 +122,28 @@ export function LessonPage() {
     else void navigate(fromMistakes ? '/archive?tab=mistakes' : `/practice?${filterToParams(filter)}`, { replace: true })
   }
 
-  const canCheck = task
-    ? task.kind === 'builder'
-      ? Array.isArray(answer) && answer.length === task.tiles.length
-      : typeof answer === 'string' && answer.trim() !== ''
-    : false
+  const isAnswered = (value: Answer) =>
+    task
+      ? task.kind === 'builder'
+        ? Array.isArray(value) && value.length === task.tiles.length
+        : typeof value === 'string' && value.trim() !== ''
+      : false
+  const canCheck = isAnswered(answer)
 
-  const check = () => {
-    if (!task || grade || !canCheck) return
-    setGrade(gradeTask(task, answer))
+  /** `value` lets a task submit an answer it has just set (Vyslovovanie's 3rd recording). */
+  const check = (value: Answer = answer) => {
+    if (!task || grade || !isAnswered(value)) return
+    setAnswer(value)
+    setGrade(gradeTask(task, value))
     // Close the phone keyboard so the feedback sheet is visible.
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
+  }
+
+  /** "Teraz nemôžem hovoriť": end here; the tasks not reached count neither way. */
+  const skipRest = () => {
+    if (!tasks || grade) return
+    if (answers.length === 0) return exit()
+    setTasks(tasks.slice(0, index))
   }
 
   /** Records the answer and moves on. `resolve` drops the item from the mistakes list. */
@@ -241,7 +252,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} grade={grade} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} grade={grade} />
               </div>
             </>
           )
@@ -269,12 +280,12 @@ export function LessonPage() {
                 task={task}
                 grade={grade}
                 onContinue={() => next()}
-                onOverride={task.kind === 'translation' || task.kind === 'vocab' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
+                onOverride={task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
             ) : (
               <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                <Button onClick={check} disabled={!canCheck} className="w-full">
+                <Button onClick={() => check()} disabled={!canCheck} className="w-full">
                   Skontrolovať
                 </Button>
               </div>

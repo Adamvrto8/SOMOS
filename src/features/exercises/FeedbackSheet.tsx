@@ -7,6 +7,7 @@ import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
 import { SaveButton } from '../word/SaveButton'
+import { SpeechWords } from './tasks/SpeechWords'
 
 const TONE: Record<Verdict, { title: string; icon: LucideIcon; panel: string; heading: string }> = {
   correct: { title: 'Správne!', icon: CircleCheck, panel: 'bg-leaf/15 border-leaf/50', heading: 'text-leaf' },
@@ -40,6 +41,7 @@ function reference(task: Task): Reference {
     case 'builder':
     case 'translation':
     case 'dictation':
+    case 'speaking':
       return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
     case 'vocab': {
       const esFormatted = task.word.gender ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}` : task.word.es
@@ -79,6 +81,7 @@ interface FeedbackSheetProps {
 export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice }: FeedbackSheetProps) {
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
+  const title = grade.speech && grade.verdict === 'typo' ? 'Takmer!' : tone.title
   const ref = reference(task)
   const check = grade.check
   const notes: ReactNode[] = []
@@ -112,6 +115,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
       </>,
     )
   }
+  if (grade.speech && grade.verdict === 'typo') notes.push(<>Takmer — jedno slovo som nepočul.</>)
   if (task.kind === 'conjugation' && task.irregular) notes.push(<>Nepravidelný tvar – oplatí sa ho zapamätať.</>)
   if (!grade.correct) notes.push(<>{mistakeChoice ? 'Ostáva v Chybách' : 'Uložené do Archív → Chyby'}, zopakuješ si to neskôr.</>)
 
@@ -130,7 +134,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
         <div className="flex items-center justify-between gap-2">
           <p className={`flex items-center gap-2 text-lg font-semibold ${tone.heading}`}>
             <Icon size={24} strokeWidth={2} className={grade.correct ? 'animate-pop' : ''} aria-hidden />
-            {tone.title}
+            {title}
           </p>
           <SaveButton type={star.type} id={star.id} size="pill" />
         </div>
@@ -148,6 +152,12 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
             <div className="flex items-center gap-1.5 text-sm text-ink-muted">
               <span lang={ref.detailLang}>{ref.detail}</span>
               {ref.detailLang === 'es' && ref.speak && <SpeakButton text={ref.speak} size="sm" />}
+            </div>
+          )}
+          {grade.speech && grade.verdict !== 'correct' && (
+            <div className="mt-2">
+              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Čo som počul</p>
+              <SpeechWords words={grade.speech.words} />
             </div>
           )}
         </div>

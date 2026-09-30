@@ -1,8 +1,9 @@
-import { Blocks, BookOpen, Headphones, Languages, ListChecks, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
+import { Blocks, BookOpen, Headphones, Languages, ListChecks, Mic, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
 import { TABLE_TENSES, type TableTense } from '../../lib/conjugate'
 import type { ExerciseType, LessonFilter } from '../../lib/lesson'
+import { speechSupported } from '../../lib/speech'
 
 export interface ExerciseInfo {
   type: ExerciseType
@@ -10,6 +11,8 @@ export interface ExerciseInfo {
   description: string
   instruction: string // shown above each task
   icon: LucideIcon
+  /** Why the exercise can't be used in this browser; the card is then disabled. */
+  unavailable?: string
 }
 
 export const EXERCISES: ExerciseInfo[] = [
@@ -61,6 +64,14 @@ export const EXERCISES: ExerciseInfo[] = [
     description: 'Počúvaj vetu a napíš ju.',
     instruction: 'Napíš, čo počuješ',
     icon: Headphones,
+  },
+  {
+    type: 'speaking',
+    label: 'Vyslovovanie',
+    description: 'Prečítaj vetu nahlas.',
+    instruction: 'Povedz vetu nahlas',
+    icon: Mic,
+    unavailable: speechSupported ? undefined : 'Tento prehliadač nepodporuje rozpoznávanie reči.',
   },
 ]
 

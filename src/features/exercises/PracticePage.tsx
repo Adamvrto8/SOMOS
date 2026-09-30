@@ -97,7 +97,7 @@ export function PracticePage() {
       <section aria-labelledby="type-heading">
         <SectionTitle id="type-heading">Typ cvičenia</SectionTitle>
         <div role="radiogroup" aria-labelledby="type-heading" className="space-y-2">
-          {EXERCISES.map(({ type, label, description, icon: Icon }) => {
+          {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
             const selected = filter.type === type
             return (
               <button
@@ -105,10 +105,12 @@ export function PracticePage() {
                 type="button"
                 role="radio"
                 aria-checked={selected}
+                disabled={Boolean(unavailable)}
                 onClick={() => selectType(type)}
                 className={[
                   'flex w-full items-center gap-3 rounded-card border bg-surface p-3 text-left transition-colors duration-150',
                   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',
+                  'disabled:pointer-events-none disabled:opacity-50',
                   selected ? 'border-brick ring-1 ring-brick' : 'border-line hover:border-ink-muted',
                 ].join(' ')}
               >
@@ -122,7 +124,7 @@ export function PracticePage() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-medium">{label}</span>
-                  <span className="block text-sm text-ink-muted">{description}</span>
+                  <span className="block text-sm text-ink-muted">{unavailable ?? description}</span>
                 </span>
               </button>
             )

@@ -3,8 +3,9 @@ import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
+import { matchSpeech, type SpeechMatch } from './speechMatch'
 
-export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation'
+export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking'
 
 export const LESSON_SIZE = 10
 
@@ -65,6 +66,12 @@ export interface DictationTask {
   sentence: Sentence
 }
 
+export interface SpeakingTask {
+  kind: 'speaking'
+  itemId: string // sentence id
+  sentence: Sentence
+}
+
 export interface VocabTask {
   kind: 'vocab'
   itemId: string
@@ -75,7 +82,7 @@ export interface VocabTask {
   acceptable: string[]
 }
 
-export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask
+export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask
 
 /** Typed text or chosen option, or tile ids in the chosen order (builder). */
 export type Answer = string | string[]
@@ -85,6 +92,7 @@ export interface Grade {
   verdict: Verdict
   expected: string // correct answer to show
   check?: CheckResult // details for typed answers
+  speech?: SpeechMatch // Vyslovovanie: which words were heard
 }
 
 type Random = () => number
@@ -182,6 +190,7 @@ export function availableCount(filter: LessonFilter): number {
       return builderSentences(filter).length
     case 'translation':
       return translationSentences(filter).length
+    case 'speaking':
     case 'dictation':
       return listeningSentences(filter).length
     case 'vocab':
@@ -317,6 +326,10 @@ export function createLesson(
       return order(listeningSentences(filter), (s) => s.id)
         .slice(0, size)
         .map((sentence): DictationTask => ({ kind: 'dictation', itemId: sentence.id, sentence }))
+    case 'speaking':
+      return order(listeningSentences(filter), (s) => s.id)
+        .slice(0, size)
+        .map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
     case 'vocab':
       return order(getStablePool(filter), (t) => t.itemId).slice(0, size)
   }
@@ -339,6 +352,7 @@ function seedFor(type: ExerciseType): number {
     case 'vocab': return 42424242
     case 'conjugation': return 7777777
     case 'dictation': return 314159265
+    case 'speaking': return 271828182
   }
 }
 
@@ -425,6 +439,10 @@ export function getStablePool(filter: LessonFilter): Task[] {
     case 'dictation': {
       const ordered = orderSentences(listeningSentences(filter), 'dictation', !filter.topic || filter.topic === 'all')
       return ordered.map((sentence): DictationTask => ({ kind: 'dictation', itemId: sentence.id, sentence }))
+    }
+    case 'speaking': {
+      const ordered = orderSentences(listeningSentences(filter), 'speaking', !filter.topic || filter.topic === 'all')
+      return ordered.map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
     }
     case 'vocab': {
       const isAll = !filter.topic || filter.topic === 'all'
@@ -520,6 +538,10 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
       const sentence = sentenceById.get(itemId)
       return sentence ? { kind: 'dictation', itemId, sentence } : undefined
     }
+    case 'speaking': {
+      const sentence = sentenceById.get(itemId)
+      return sentence ? { kind: 'speaking', itemId, sentence } : undefined
+    }
     case 'vocab': {
       const [wordId, direction] = itemId.split(':')
       const word = wordById.get(wordId)
@@ -536,7 +558,7 @@ export interface MistakeRef {
   lastWrongAt: number
 }
 
-const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation']
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
 
 /** A lesson from the mistakes list: most-missed first, then the ones not seen for longest. */
 export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random): Task[] {
@@ -590,5 +612,9 @@ export function gradeTask(task: Task, answer: Answer): Grade {
       return fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
     case 'dictation':
       return fromCheck(checkAnswer(text, task.sentence.es, { lookup: lookupForm }))
+    case 'speaking': {
+      const speech = matchSpeech(text, task.sentence.es)
+      return { correct: speech.verdict !== 'wrong', verdict: speech.verdict, expected: task.sentence.es, speech }
+    }
   }
 }
