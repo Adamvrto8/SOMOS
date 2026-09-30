@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createEmptyCard } from 'ts-fsrs'
 import type { ReviewCard, ReviewItemType } from './db'
-import { dueCounts, reviewCardChanges, selectDue } from './srs'
+import { dueCounts, knownCards, reviewCardChanges, selectDue } from './srs'
 
 const now = new Date(2026, 8, 30, 10)
 const daysAgo = (n: number) => new Date(now.getTime() - n * 86_400_000)
@@ -61,5 +61,12 @@ describe('reviewCardChanges', () => {
     const { stale, missing } = reviewCardChanges(new Map([['word:new', ['word', 'new']]]), existing, now)
     expect(stale).toEqual([['word', 'unsaved']])
     expect(missing.map((c) => c.itemId)).toEqual(['new'])
+  })
+})
+
+describe('knownCards', () => {
+  it('drops cards whose word or sentence is no longer in the dataset', () => {
+    const cards = [card('word', 'perro', 1, true), card('word', 'no-such-word', 5, true), card('sentence', 's001', 1), card('sentence', 's9999', 1), card('custom', 'c1', 1)]
+    expect(ids(knownCards(cards))).toEqual(['word:perro', 'sentence:s001', 'custom:c1'])
   })
 })

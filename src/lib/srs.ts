@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { createEmptyCard, fsrs, Rating, TypeConvert, type Card, type Grade } from 'ts-fsrs'
+import { sentenceById, wordById } from '../data'
 import { recordAttempt } from './attempts'
 import { getAutoReview, useAutoReviewSettings, type AutoReviewSettings } from './autoReview'
 import { addDays, endOfDay, startOfDay } from './dates'
@@ -147,6 +148,14 @@ export function dueCounts(
   }
 }
 
+/**
+ * Cards whose word or sentence still exists: a renamed or removed item would otherwise stay
+ * "due" forever (and, practised, take a daily slot) without ever showing up in review.
+ */
+export function knownCards(cards: ReviewCard[]): ReviewCard[] {
+  return cards.filter((c) => (c.itemType === 'word' ? wordById.has(c.itemId) : c.itemType === 'sentence' ? sentenceById.has(c.itemId) : true))
+}
+
 /** Everything the selection reads from the database. */
 async function loadSelectionInput(now: Date) {
   const [cards, saved, todayAttempts] = await Promise.all([
@@ -158,7 +167,7 @@ async function loadSelectionInput(now: Date) {
   const reviewedToday = new Set(
     todayAttempts.filter((a) => a.exercise === 'review' && a.itemId.startsWith('word:')).map((a) => a.itemId.slice('word:'.length)),
   )
-  return { cards, savedWordIds, reviewedToday }
+  return { cards: knownCards(cards), savedWordIds, reviewedToday }
 }
 
 export async function loadDueCards(now = new Date(), settings = getAutoReview()): Promise<ReviewCard[]> {
