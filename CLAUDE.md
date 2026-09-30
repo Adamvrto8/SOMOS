@@ -29,6 +29,9 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    - **Sentence builder** — arrange shuffled word tiles into a correct sentence
    - **Translation SK → ES** — free typing, tolerant checking
    - **Conjugation drill** — "tener · yo · pretérito → ___"
+   - **Diktát** — hear a sentence (🔊, 🐢 slower), type it; checked like translation
+   - **Vyslovovanie** — read a sentence aloud; Chrome speech recognition (es-MX, online), word by word,
+     ≤1 missed word in 5+ words = 🟡; 3 tries; "Teraz nemôžem hovoriť" ends the lesson (`speechMatch.ts`, `speech.ts`)
 5. **Archive** — ⭐ saved words and sentences (star on word detail or in exercise feedback),
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
    kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition;
@@ -55,7 +58,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
 | Local storage | Dexie (IndexedDB) — archive, custom words, SRS state, stats |
 | Search | MiniSearch (or Fuse.js) with accent-folding normalization |
 | Spaced repetition | ts-fsrs (FSRS algorithm) |
-| Pronunciation | Web Speech API `speechSynthesis` (free, built into browser) |
+| Pronunciation | Web Speech API `speechSynthesis` (free, built into browser); `SpeechRecognition` (es-MX) for Vyslovovanie |
 | Hosting | Vercel (free) |
 | Online lookup | DeepL API Free via the Vercel function `api/translate.ts` (key only in the `DEEPL_API_KEY` env var, same-origin requests, ≤120 chars, ES-419 with ES fallback); `src/lib/translate.ts` caches results in Dexie `lookups`. Files in `api/` starting with `_` are not deployed (tests) |
 | Reminders | Web Push: `api/reminder.ts` (Vercel function, `web-push`) keeps state in Upstash Redis and is called every 15 min by cron-job.org (`Authorization: Bearer CRON_SECRET`); env `VAPID_PRIVATE_KEY`, `CRON_SECRET`, Upstash `KV_REST_API_URL`/`KV_REST_API_TOKEN`. `public/push-sw.js` is imported into the service worker. One reminder a day, at most 2 h after the chosen time (never past 23:59), only while the daily goal is not met |
