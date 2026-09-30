@@ -1,4 +1,5 @@
 import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
+import { syncPracticeCards } from './practice'
 import { syncReviewCards } from './srs'
 
 // JSON backup of everything stored on the device (IndexedDB).
@@ -134,5 +135,6 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
   })
   // Backups made before review cards existed restore saved words without cards.
   await syncReviewCards()
+  await syncPracticeCards()
   return result
 }

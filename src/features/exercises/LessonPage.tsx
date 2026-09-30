@@ -25,6 +25,7 @@ import {
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
+import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
@@ -159,6 +160,7 @@ export function LessonPage() {
     if (!task || !grade || !tasks) return
     const correct = override ?? grade.correct
     void recordAttempt(task.kind, task.itemId, correct)
+    void recordPractice(task.kind, task.itemId, correct)
     if (!correct) void recordMistake(task.kind, task.itemId)
     // A mistake fixed in a correction round leaves Chyby; the ones left behind stay there.
     // (The mistakes list itself asks "Nechať / Odstrániť" instead.)

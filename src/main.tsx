@@ -4,10 +4,12 @@ import './index.css'
 import App from './App.tsx'
 import { registerServiceWorker } from './lib/pwa'
 import { startProgressReporting, syncReminder } from './lib/reminder'
+import { syncPracticeCards } from './lib/practice'
 import { syncReviewCards } from './lib/srs'
 
 // Words saved before spaced repetition existed get their review cards here.
-void syncReviewCards()
+// Practised cards after the archive sync, which would otherwise not know them yet.
+void syncReviewCards().then(syncPracticeCards)
 registerServiceWorker()
 // Daily reminder: report practice to the server and refresh this device's push subscription.
 startProgressReporting()

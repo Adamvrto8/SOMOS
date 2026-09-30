@@ -1,7 +1,7 @@
 import { createEmptyCard, fsrs, Rating, type Card } from 'ts-fsrs'
 import { wordById, wordIdByVerb } from '../data'
 import { addDays, dayKey, startOfDay } from './dates'
-import type { ReviewCard } from './db'
+import { db, type ReviewCard } from './db'
 import { cardOf } from './srs'
 
 // Automatic review: a word answered in Slovná zásoba or Časovanie joins spaced repetition, and
@@ -62,4 +62,28 @@ export function planPracticeSync(answers: PracticeAnswer[], existing: ReviewCard
     else if (!card.practised) puts.push({ ...card, practised: true })
   }
   return puts
+}
+
+// ---------- database ----------
+
+/** After a lesson answer: the practised word's card moves (or is created). */
+export async function recordPractice(exercise: string, itemId: string, correct: boolean, now = new Date()): Promise<void> {
+  const wordId = practisedWordId(exercise, itemId)
+  if (!wordId) return
+  await db.transaction('rw', db.reviewCards, async () => {
+    const next = practiceUpdate(await db.reviewCards.get(['word', wordId]), wordId, correct, now)
+    if (next) await db.reviewCards.put(next)
+  })
+}
+
+/**
+ * Every practised word has a card (built from past lesson answers when missing).
+ * Run after syncReviewCards(), at startup and after a backup restore. Idempotent.
+ */
+export async function syncPracticeCards(): Promise<void> {
+  await db.transaction('rw', db.attempts, db.reviewCards, async () => {
+    const answers = await db.attempts.where('exercise').anyOf('vocab', 'conjugation').toArray()
+    const puts = planPracticeSync(answers, await db.reviewCards.where('itemType').equals('word').toArray())
+    if (puts.length) await db.reviewCards.bulkPut(puts)
+  })
 }
