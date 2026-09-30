@@ -15,11 +15,13 @@ interface SpeakingViewProps {
   onAnswer: (answer: string) => void
   onSubmit: (answer: string) => void
   onSkipRest?: () => void
+  /** Skontrolovať waits while the mic is open, so the attempt being spoken isn't skipped. */
+  onRecordingChange?: (recording: boolean) => void
   status?: Status
 }
 
 /** Vyslovovanie: read the sentence aloud; up to 3 recordings, the best one is submitted. */
-export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, status }: SpeakingViewProps) {
+export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecordingChange, status }: SpeakingViewProps) {
   const [tries, setTries] = useState(0)
   const [recording, setRecording] = useState(false)
   const [last, setLast] = useState<{ transcript: string; match: SpeechMatch } | null>(null)
@@ -36,6 +38,19 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, status }: S
     },
     [],
   )
+
+  useEffect(() => {
+    onRecordingChange?.(recording)
+    return () => onRecordingChange?.(false)
+  }, [recording, onRecordingChange])
+
+  // Graded: a recording still running must not change the answer any more.
+  useEffect(() => {
+    if (!graded || !current.current) return
+    current.current.abort()
+    current.current = null
+    setRecording(false)
+  }, [graded])
 
   const record = async () => {
     if (recording) return current.current?.stop()

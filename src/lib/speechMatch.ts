@@ -21,14 +21,56 @@ const UNITS = [
   'veinte', 'veintiuno', 'veintidós', 'veintitrés', 'veinticuatro', 'veinticinco', 'veintiséis', 'veintisiete', 'veintiocho', 'veintinueve',
 ]
 const TENS = ['', '', '', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa']
+const HUNDREDS = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos']
 
-/** 0–100 in words; the recognizer writes "3" for "tres". */
-export function numberWords(n: number): string | undefined {
-  if (!Number.isInteger(n) || n < 0 || n > 100) return undefined
-  if (n === 100) return 'cien'
+function below100(n: number): string {
   if (n < 30) return UNITS[n]
   const unit = n % 10
   return unit ? `${TENS[Math.floor(n / 10)]} y ${UNITS[unit]}` : TENS[n / 10]
+}
+
+function below1000(n: number): string {
+  if (n === 100) return 'cien'
+  if (n < 100) return below100(n)
+  const rest = n % 100
+  return rest ? `${HUNDREDS[Math.floor(n / 100)]} ${below100(rest)}` : HUNDREDS[Math.floor(n / 100)]
+}
+
+/** Before "mil" / "millones" a final "uno" shortens: veintiún mil, treinta y un mil. */
+const shortOne = (words: string) => words.replace(/veintiuno$/, 'veintiún').replace(/uno$/, 'un')
+
+/** The number in words, up to 999 999 999; Google writes most spoken numbers as digits. */
+export function numberWords(n: number): string | undefined {
+  if (!Number.isInteger(n) || n < 0 || n >= 1_000_000_000) return undefined
+  if (n < 1000) return below1000(n)
+  if (n < 1_000_000) {
+    const thousands = Math.floor(n / 1000)
+    const head = thousands === 1 ? 'mil' : `${shortOne(below1000(thousands))} mil`
+    return n % 1000 ? `${head} ${below1000(n % 1000)}` : head
+  }
+  const millions = Math.floor(n / 1_000_000)
+  const head = millions === 1 ? 'un millón' : `${shortOne(below1000(millions))} millones`
+  return n % 1_000_000 ? `${head} ${numberWords(n % 1_000_000)}` : head
+}
+
+/** Clock time as said: 6:30 → seis y media, 9:00 → nueve, 8:45 → nueve menos cuarto. */
+function timeWords(hour: number, minutes: number): string {
+  const said = (h: number) => numberWords(h % 12 === 0 ? 12 : h % 12) ?? String(h)
+  if (minutes === 0) return said(hour)
+  if (minutes === 15) return `${said(hour)} y cuarto`
+  if (minutes === 30) return `${said(hour)} y media`
+  if (minutes === 45) return `${said(hour + 1)} menos cuarto`
+  return `${said(hour)} y ${numberWords(minutes)}`
+}
+
+/** The recognizer's digits and symbols back into the words the sentence uses. */
+function spokenForm(transcript: string): string {
+  return transcript
+    .replace(/\$\s?([\d.,]+)(?!\s*pesos)/g, '$1 pesos') // $5,000 → 5,000 pesos
+    .replace(/\b(\d{1,2}):(\d{2})\b/g, (_, h: string, m: string) => timeWords(Number(h), Number(m)))
+    .replace(/(\d)\s?°\s?C?/g, '$1 grados')
+    .replace(/(\d)[.,](?=\d{3}\b)/g, '$1') // thousands separators
+    .replace(/\d+/g, (digits) => numberWords(Number(digits)) ?? digits)
 }
 
 // "1" becomes "uno", but the sentence may say "un" or "una".
@@ -73,8 +115,7 @@ function alignment(expected: string[], spoken: string[]): boolean[] {
 
 export function matchSpeech(transcript: string, expected: string): SpeechMatch {
   const written = expected.split(/\s+/).filter((w) => normalize(w) !== '')
-  const spoken = transcript
-    .replace(/\d+/g, (digits) => numberWords(Number(digits)) ?? digits)
+  const spoken = spokenForm(transcript)
     .split(/\s+/)
     .map(normalize)
     .filter(Boolean)

@@ -16,6 +16,7 @@ interface TaskViewProps {
   onSubmit: (value?: Answer) => void
   /** "Teraz nemôžem hovoriť": end the lesson here (Vyslovovanie). */
   onSkipRest?: () => void
+  onRecordingChange?: (recording: boolean) => void
   grade: Grade | null
 }
 
@@ -23,7 +24,7 @@ const Pill = ({ children }: { children: string }) => (
   <span className="rounded-full bg-surface-2 px-3 py-1 text-sm font-medium">{children}</span>
 )
 
-export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, grade }: TaskViewProps) {
+export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade }: TaskViewProps) {
   const status = statusOf(grade)
   const text = typeof answer === 'string' ? answer : ''
 
@@ -104,7 +105,16 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, grade }
       return <DictationView task={task} answer={text} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
 
     case 'speaking':
-      return <SpeakingView task={task} onAnswer={onAnswer} onSubmit={onSubmit} onSkipRest={onSkipRest} status={status} />
+      return (
+        <SpeakingView
+          task={task}
+          onAnswer={onAnswer}
+          onSubmit={onSubmit}
+          onSkipRest={onSkipRest}
+          onRecordingChange={onRecordingChange}
+          status={status}
+        />
+      )
 
     case 'vocab': {
       const isToSpanish = task.direction === 'sk-es'

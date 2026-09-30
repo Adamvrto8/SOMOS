@@ -81,6 +81,7 @@ export function LessonPage() {
   const [grade, setGrade] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([]) // this round
   const [confirmExit, setConfirmExit] = useState(false)
+  const [recording, setRecording] = useState(false) // Vyslovovanie: the mic is open
 
   const start = (next: Task[], lesson?: number, retry = false) => {
     setTasks(next)
@@ -252,7 +253,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} grade={grade} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} />
               </div>
             </>
           )
@@ -285,7 +286,7 @@ export function LessonPage() {
               />
             ) : (
               <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                <Button onClick={() => check()} disabled={!canCheck} className="w-full">
+                <Button onClick={() => check()} disabled={!canCheck || recording} className="w-full">
                   Skontrolovať
                 </Button>
               </div>

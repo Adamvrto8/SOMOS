@@ -43,6 +43,19 @@ describe('matchSpeech', () => {
     expect(matchSpeech('', 'Hola.')).toMatchObject({ missed: 1, verdict: 'wrong' })
   })
 
+  it.each([
+    ['tiene cambio de 200', '¿Tiene cambio de doscientos?'],
+    ['mi celular cuesta 5000 pesos', 'Mi celular cuesta cinco mil pesos.'],
+    ['mi celular cuesta $5,000', 'Mi celular cuesta cinco mil pesos.'],
+    ['mi celular cuesta 5.000 pesos', 'Mi celular cuesta cinco mil pesos.'],
+    ['me levanto a las 6:30', 'Me levanto a las seis y media.'],
+    ['son las 8:15', 'Son las ocho y cuarto.'],
+    ['la tienda cierra a las 9:00', 'La tienda cierra a las nueve.'],
+    ['estamos a 35°', 'Estamos a treinta y cinco grados.'],
+  ])('reads the transcript "%s" as words', (transcript, expected) => {
+    expect(matchSpeech(transcript, expected)).toMatchObject({ missed: 0, verdict: 'correct' })
+  })
+
   it('aligns in order, so a repeated word is matched once per occurrence', () => {
     expect(heard('mañana', 'Mañana voy mañana.')).toBe('Mañana voy✗ mañana.✗')
   })
@@ -56,12 +69,22 @@ describe('numberWords', () => {
     [30, 'treinta'],
     [47, 'cuarenta y siete'],
     [100, 'cien'],
+    [101, 'ciento uno'],
+    [200, 'doscientos'],
+    [555, 'quinientos cincuenta y cinco'],
+    [1000, 'mil'],
+    [1965, 'mil novecientos sesenta y cinco'],
+    [5000, 'cinco mil'],
+    [21000, 'veintiún mil'],
+    [31000, 'treinta y un mil'],
+    [1000000, 'un millón'],
+    [2500000, 'dos millones quinientos mil'],
   ])('%i → %s', (n, word) => {
     expect(numberWords(n)).toBe(word)
   })
 
-  it('leaves bigger numbers alone', () => {
-    expect(numberWords(1965)).toBeUndefined()
+  it('leaves numbers from a billion up alone', () => {
+    expect(numberWords(1_000_000_000)).toBeUndefined()
   })
 })
 

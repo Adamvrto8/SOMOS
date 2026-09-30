@@ -29,10 +29,11 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status }: Dict
     <div className="space-y-5">
       {ttsSupported ? (
         <div className="grid grid-cols-2 gap-3">
-          <Button variant="secondary" icon={Volume2} onClick={() => speak(text)}>
+          {/* preventDefault keeps the focus (and the phone keyboard) in the answer field. */}
+          <Button variant="secondary" icon={Volume2} onPointerDown={(e) => e.preventDefault()} onClick={() => speak(text)}>
             Prehrať
           </Button>
-          <Button variant="secondary" icon={Snail} onClick={() => speak(text, { rate: SLOW_RATE })}>
+          <Button variant="secondary" icon={Snail} onPointerDown={(e) => e.preventDefault()} onClick={() => speak(text, { rate: SLOW_RATE })}>
             Pomaly
           </Button>
         </div>
