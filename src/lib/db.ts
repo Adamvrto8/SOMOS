@@ -29,6 +29,8 @@ export interface ReviewCard {
   itemType: ReviewItemType
   // Dates are Date objects in IndexedDB but strings after a JSON backup: read via srs.cardOf().
   fsrs: Card
+  /** Joined review because it was practised in a lesson (kept when its ⭐ is removed). */
+  practised?: true
 }
 
 export interface Attempt {
