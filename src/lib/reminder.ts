@@ -91,9 +91,12 @@ export const REMINDER_ERRORS: Record<ReminderError, string> = {
 
 export class ReminderFailure extends Error {
   code: ReminderError
-  constructor(code: ReminderError) {
+  /** The underlying cause for 'failed' (browser error or HTTP status), shown small under the message. */
+  detail?: string
+  constructor(code: ReminderError, detail?: string) {
     super(code)
     this.code = code
+    this.detail = detail
   }
 }
 
@@ -131,7 +134,7 @@ async function post(body: Record<string, unknown>, keepalive = false): Promise<v
   if (data.error === 'not-configured') throw new ReminderFailure('not-configured')
   if (res.status === 429) throw new ReminderFailure('too-many')
   if (res.status === 410) throw new ReminderFailure('gone')
-  throw new ReminderFailure('failed')
+  throw new ReminderFailure('failed', `server ${res.status}${data.error ? ` ${data.error}` : ''}`)
 }
 
 const isGone = (error: unknown) => error instanceof ReminderFailure && error.code === 'gone'
@@ -153,8 +156,9 @@ async function ensureSubscription(): Promise<PushSubscription> {
   if (existing) return existing
   try {
     return await registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: base64UrlToBytes(VAPID_PUBLIC_KEY) })
-  } catch {
-    throw new ReminderFailure(navigator.onLine ? 'failed' : 'offline')
+  } catch (error) {
+    if (!navigator.onLine) throw new ReminderFailure('offline')
+    throw new ReminderFailure('failed', error instanceof Error ? `${error.name}: ${error.message}` : String(error))
   }
 }
 

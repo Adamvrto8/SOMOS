@@ -13,7 +13,7 @@ import {
   useReminderSettings,
 } from '../../lib/reminder'
 
-type Status = { tone: 'ok' | 'error'; text: string } | null
+type Status = { tone: 'ok' | 'error'; text: string; detail?: string } | null
 
 export function ReminderSettings() {
   const settings = useReminderSettings()
@@ -30,7 +30,8 @@ export function ReminderSettings() {
       await action()
       if (doneText) setStatus({ tone: 'ok', text: doneText })
     } catch (error) {
-      setStatus({ tone: 'error', text: REMINDER_ERRORS[error instanceof ReminderFailure ? error.code : 'failed'] })
+      const failure = error instanceof ReminderFailure ? error : new ReminderFailure('failed', String(error))
+      setStatus({ tone: 'error', text: REMINDER_ERRORS[failure.code], detail: failure.detail })
     } finally {
       setBusy(false)
     }
@@ -81,6 +82,7 @@ export function ReminderSettings() {
       {status && (
         <p role="status" className={`mt-2 text-sm ${status.tone === 'error' ? 'text-error' : 'text-leaf'}`}>
           {status.text}
+          {status.detail && <span className="mt-0.5 block break-words text-xs text-ink-muted">{status.detail}</span>}
         </p>
       )}
 
