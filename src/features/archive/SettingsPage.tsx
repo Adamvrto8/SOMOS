@@ -4,6 +4,7 @@ import { Segmented } from '../../components/Segmented'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { reportProgress } from '../../lib/reminder'
 import { setThemePref, useThemePref } from '../../lib/theme'
+import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
 import { ReminderSettings } from './ReminderSettings'
 import { VoiceSettings } from './VoiceSettings'
@@ -51,6 +52,7 @@ export function SettingsPage() {
         <p className="mt-2 text-sm text-ink-muted">Počet odpovedí za deň – v lekciách aj pri opakovaní.</p>
       </section>
 
+      <AutoReviewSettings />
       <ReminderSettings />
       <VoiceSettings />
       <BackupSettings />
