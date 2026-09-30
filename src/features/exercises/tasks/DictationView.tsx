@@ -1,0 +1,67 @@
+import { Eye, Snail, Volume2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Button } from '../../../components/Button'
+import type { DictationTask } from '../../../lib/lesson'
+import { SLOW_RATE, speak, ttsSupported } from '../../../lib/tts'
+import type { Status } from './status'
+import { TypedAnswer } from './TypedAnswer'
+
+interface DictationViewProps {
+  task: DictationTask
+  answer: string
+  onAnswer: (answer: string) => void
+  onSubmit: () => void
+  status?: Status
+}
+
+/** Diktát: hear the sentence (normal or slow) and type it. The Slovak meaning stays hidden until asked for. */
+export function DictationView({ task, answer, onAnswer, onSubmit, status }: DictationViewProps) {
+  // Without a voice the task still works as a translation.
+  const [showMeaning, setShowMeaning] = useState(!ttsSupported)
+  const text = task.sentence.es
+
+  // Starting the lesson was a tap, so Chrome lets the page speak right away.
+  useEffect(() => {
+    speak(text)
+  }, [text])
+
+  return (
+    <div className="space-y-5">
+      {ttsSupported ? (
+        <div className="grid grid-cols-2 gap-3">
+          <Button variant="secondary" icon={Volume2} onClick={() => speak(text)}>
+            Prehrať
+          </Button>
+          <Button variant="secondary" icon={Snail} onClick={() => speak(text, { rate: SLOW_RATE })}>
+            Pomaly
+          </Button>
+        </div>
+      ) : (
+        <p className="text-sm text-ink-muted">Tento prehliadač nevie prehrávať reč.</p>
+      )}
+
+      {showMeaning || status ? (
+        <p className="text-ink-muted">{task.sentence.sk}</p>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setShowMeaning(true)}
+          className="flex h-11 items-center gap-2 text-sm font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
+        >
+          <Eye size={16} strokeWidth={1.75} aria-hidden />
+          Zobraziť preklad
+        </button>
+      )}
+
+      <TypedAnswer
+        value={answer}
+        onChange={onAnswer}
+        onSubmit={onSubmit}
+        status={status}
+        label="Čo si počul"
+        placeholder="Po španielsky…"
+        multiline
+      />
+    </div>
+  )
+}

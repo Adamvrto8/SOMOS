@@ -28,11 +28,17 @@ function seeded(seed: number) {
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
 describe('createLesson', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
     const tasks = createLesson({ type }, LESSON_SIZE, seeded(1))
     expect(tasks).toHaveLength(LESSON_SIZE)
     expect(new Set(itemIds(tasks)).size).toBe(LESSON_SIZE)
     expect(tasks.every((t) => t.kind === type)).toBe(true)
+  })
+
+  it('leaves sentences with digits out of dictation', () => {
+    const ids = itemIds(createLesson({ type: 'dictation' }, 1000, seeded(30)))
+    expect(ids).not.toContain('s479')
+    expect(ids).toHaveLength(sentences.filter((s) => !/\d/.test(s.es)).length)
   })
 
   it('never uses the same sentence twice in a cloze lesson', () => {
@@ -156,6 +162,14 @@ describe('gradeTask', () => {
     expect(gradeTask(task, 'Yo hablo un poco de español').correct).toBe(true)
   })
 
+  it('grades dictation against the exact sentence', () => {
+    const task = taskFromItem('dictation', 's004')
+    if (!task || task.kind !== 'dictation') throw new Error('task not found')
+    expect(gradeTask(task, 'Hablo un poco de español').verdict).toBe('correct')
+    expect(gradeTask(task, 'hablo un poco de espanol').correct).toBe(true) // accent + ñ only
+    expect(gradeTask(task, 'Yo hablo un poco de español').correct).toBe(false) // not what was said
+  })
+
   it('grades choice answers by exact option', () => {
     const task = createLesson({ type: 'choice' }, 1, seeded(13))[0]
     if (task.kind !== 'choice') throw new Error('wrong kind')
@@ -202,7 +216,7 @@ describe('least-seen first', () => {
 })
 
 describe('taskFromItem', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab'] as const)('rebuilds a %s task from its itemId', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation'] as const)('rebuilds a %s task from its itemId', (type) => {
     for (const task of createLesson({ type }, LESSON_SIZE, seeded(22))) {
       const rebuilt = taskFromItem(type, task.itemId, seeded(23))
       expect(rebuilt?.kind).toBe(type)

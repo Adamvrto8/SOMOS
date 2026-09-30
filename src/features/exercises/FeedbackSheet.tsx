@@ -39,6 +39,7 @@ function reference(task: Task): Reference {
       }
     case 'builder':
     case 'translation':
+    case 'dictation':
       return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
     case 'vocab': {
       const esFormatted = task.word.gender ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}` : task.word.es

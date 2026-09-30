@@ -2,6 +2,7 @@ import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
 import { GENDER_LABELS, POS_LABELS } from '../../../lib/grammar'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { ChoiceOptions } from './ChoiceOptions'
+import { DictationView } from './DictationView'
 import { SentenceWithBlank } from './SentenceWithBlank'
 import { statusOf } from './status'
 import { TileBuilder } from './TileBuilder'
@@ -95,6 +96,9 @@ export function TaskView({ task, answer, onAnswer, onSubmit, grade }: TaskViewPr
           />
         </div>
       )
+
+    case 'dictation':
+      return <DictationView task={task} answer={text} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
 
     case 'vocab': {
       const isToSpanish = task.direction === 'sk-es'

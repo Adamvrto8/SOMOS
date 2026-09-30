@@ -1,4 +1,4 @@
-import { Blocks, BookOpen, Languages, ListChecks, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
+import { Blocks, BookOpen, Headphones, Languages, ListChecks, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
 import { TABLE_TENSES, type TableTense } from '../../lib/conjugate'
@@ -54,6 +54,13 @@ export const EXERCISES: ExerciseInfo[] = [
     description: 'Prelož vetu zo slovenčiny do španielčiny.',
     instruction: 'Prelož do španielčiny',
     icon: Languages,
+  },
+  {
+    type: 'dictation',
+    label: 'Diktát',
+    description: 'Počúvaj vetu a napíš ju.',
+    instruction: 'Napíš, čo počuješ',
+    icon: Headphones,
   },
 ]
 
