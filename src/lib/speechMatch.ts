@@ -63,8 +63,8 @@ function timeWords(hour: number, minutes: number): string {
   return `${said(hour)} y ${numberWords(minutes)}`
 }
 
-/** The recognizer's digits and symbols back into the words the sentence uses. */
-function spokenForm(transcript: string): string {
+/** Digits and symbols (from the recognizer, or typed in Diktát) as the words the sentence uses. */
+export function spokenForm(transcript: string): string {
   return transcript
     .replace(/\$\s?([\d.,]+)(?!\s*pesos)/g, '$1 pesos') // $5,000 → 5,000 pesos
     .replace(/\b(\d{1,2}):(\d{2})\b/g, (_, h: string, m: string) => timeWords(Number(h), Number(m)))

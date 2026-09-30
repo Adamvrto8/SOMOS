@@ -11,6 +11,7 @@ import {
   LESSON_SIZE,
   mistakesLesson,
   retryTasks,
+  skipSpeaking,
   taskFromItem,
   type Task,
 } from './lesson'
@@ -170,6 +171,14 @@ describe('gradeTask', () => {
     expect(gradeTask(task, 'Yo hablo un poco de español').correct).toBe(false) // not what was said
   })
 
+  it('accepts digits typed in a dictation', () => {
+    const task = taskFromItem('dictation', 's174') // "Son las ocho y cuarto."
+    if (!task || task.kind !== 'dictation') throw new Error('task not found')
+    expect(gradeTask(task, 'Son las 8 y cuarto').correct).toBe(true)
+    expect(gradeTask(task, 'son las 8:15').correct).toBe(true)
+    expect(gradeTask(task, 'Son las 9 y cuarto').correct).toBe(false)
+  })
+
   it('grades speaking word by word, lenient by one word', () => {
     const task = taskFromItem('speaking', 's004') // "Hablo un poco de español." (5 words)
     if (!task || task.kind !== 'speaking') throw new Error('task not found')
@@ -252,6 +261,29 @@ describe('mistakesLesson', () => {
       seeded(24),
     )
     expect(lesson.map((t) => `${t.kind}:${t.itemId}`)).toEqual(['translation:s004', 'conjugation:tener:preterito:yo', 'cloze:s001#0'])
+  })
+})
+
+describe('mistakesLesson without a microphone', () => {
+  it('leaves speaking mistakes out when speech recognition is missing', () => {
+    const m = (exercise: string, itemId: string) => ({ exercise, itemId, wrongCount: 1, lastWrongAt: 1, firstWrongAt: 1 })
+    const mistakes = [m('speaking', 's004'), m('cloze', 's001#0')]
+    expect(mistakesLesson(mistakes, LESSON_SIZE, seeded(25)).map((t) => t.kind)).toContain('speaking')
+    expect(mistakesLesson(mistakes, LESSON_SIZE, seeded(25), false).map((t) => t.kind)).toEqual(['cloze'])
+  })
+})
+
+describe('skipSpeaking', () => {
+  const task = (exercise: 'speaking' | 'cloze' | 'translation', itemId: string) => taskFromItem(exercise, itemId)!
+  const tasks = [task('cloze', 's001#0'), task('speaking', 's004'), task('translation', 's004'), task('speaking', 's005')]
+
+  it('keeps the answered tasks and drops only the speaking ones ahead', () => {
+    expect(skipSpeaking(tasks, 1).map((t) => t.kind)).toEqual(['cloze', 'translation'])
+  })
+
+  it('ends a speaking-only lesson where it is', () => {
+    const speakingOnly = [task('speaking', 's004'), task('speaking', 's005'), task('speaking', 's006')]
+    expect(skipSpeaking(speakingOnly, 1)).toEqual(speakingOnly.slice(0, 1))
   })
 })
 

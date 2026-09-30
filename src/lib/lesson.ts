@@ -3,7 +3,7 @@ import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
-import { matchSpeech, type SpeechMatch } from './speechMatch'
+import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
 
 export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking'
 
@@ -560,15 +560,24 @@ export interface MistakeRef {
 
 const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
 
-/** A lesson from the mistakes list: most-missed first, then the ones not seen for longest. */
-export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random): Task[] {
+/**
+ * A lesson from the mistakes list: most-missed first, then the ones not seen for longest.
+ * `canSpeak` false (no speech recognition) leaves Vyslovovanie mistakes out.
+ */
+export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random, canSpeak = true): Task[] {
   return [...mistakes]
+    .filter((m) => canSpeak || m.exercise !== 'speaking')
     .sort((a, b) => b.wrongCount - a.wrongCount || a.lastWrongAt - b.lastWrongAt)
     .flatMap((m) => {
       const task = EXERCISE_TYPES.includes(m.exercise as ExerciseType) ? taskFromItem(m.exercise as ExerciseType, m.itemId, random) : undefined
       return task ? [task] : []
     })
     .slice(0, size)
+}
+
+/** "Teraz nemôžem hovoriť": the answered tasks stay, the speaking ones ahead go (a mistakes lesson mixes types). */
+export function skipSpeaking(tasks: Task[], index: number): Task[] {
+  return tasks.filter((task, i) => i < index || task.kind !== 'speaking')
 }
 
 /** The same tasks again (e.g. "repeat mistakes") with options and tiles reshuffled. */
@@ -611,7 +620,8 @@ export function gradeTask(task: Task, answer: Answer): Grade {
     case 'vocab':
       return fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
     case 'dictation':
-      return fromCheck(checkAnswer(text, task.sentence.es, { lookup: lookupForm }))
+      // "8" is what was heard as much as "ocho".
+      return fromCheck(checkAnswer(spokenForm(text), task.sentence.es, { lookup: lookupForm }))
     case 'speaking': {
       const speech = matchSpeech(text, task.sentence.es)
       return { correct: speech.verdict !== 'wrong', verdict: speech.verdict, expected: task.sentence.es, speech }

@@ -99,8 +99,10 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
           <button
             type="button"
             onClick={() => speak(task.sentence.es)}
+            // The open mic would hear the phone read the sentence.
+            disabled={recording}
             aria-label="Prehrať vetu"
-            className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2 hover:text-ink"
+            className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2 hover:text-ink disabled:opacity-40"
           >
             <Volume2 size={20} strokeWidth={1.75} aria-hidden />
           </button>

@@ -11,6 +11,7 @@ import {
   LESSON_SIZE,
   mistakesLesson,
   retryTasks,
+  skipSpeaking,
   type Answer,
   type Grade,
   type LessonFilter,
@@ -24,6 +25,7 @@ import {
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
+import { speechSupported } from '../../lib/speech'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonResult, type LessonAnswer } from './LessonResult'
@@ -33,7 +35,7 @@ const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : ''
 
 /** A fresh lesson: from the mistakes list, or numbered lesson, or least-practised items. */
 async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number): Promise<Task[]> {
-  if (fromMistakes) return mistakesLesson(await loadMistakes())
+  if (fromMistakes) return mistakesLesson(await loadMistakes(), LESSON_SIZE, Math.random, speechSupported)
   if (lessonNumber) return createNumberedLesson(filter, lessonNumber)
   return createLesson(filter, LESSON_SIZE, Math.random, await loadSeenCounts(filter.type))
 }
@@ -140,11 +142,16 @@ export function LessonPage() {
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
   }
 
-  /** "Teraz nemôžem hovoriť": end here; the tasks not reached count neither way. */
+  /**
+   * "Teraz nemôžem hovoriť": the speaking tasks ahead are dropped and count neither way; a mistakes
+   * lesson goes on with its other tasks, otherwise the lesson ends here.
+   */
   const skipRest = () => {
     if (!tasks || grade) return
-    if (answers.length === 0) return exit()
-    setTasks(tasks.slice(0, index))
+    const rest = skipSpeaking(tasks, index)
+    if (rest.length === index && answers.length === 0) return exit()
+    setTasks(rest)
+    setAnswer(emptyAnswer(rest[index]))
   }
 
   /** Records the answer and moves on. `resolve` drops the item from the mistakes list. */

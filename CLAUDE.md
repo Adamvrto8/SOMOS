@@ -31,7 +31,7 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    - **Conjugation drill** — "tener · yo · pretérito → ___"
    - **Diktát** — hear a sentence (🔊, 🐢 slower), type it; checked like translation
    - **Vyslovovanie** — read a sentence aloud; Chrome speech recognition (es-MX, online), word by word,
-     ≤1 missed word in 5+ words = 🟡; 3 tries; "Teraz nemôžem hovoriť" ends the lesson (`speechMatch.ts`, `speech.ts`)
+     ≤1 missed word in 5+ words = 🟡; 3 tries; "Teraz nemôžem hovoriť" drops the speaking tasks ahead (`speechMatch.ts`, `speech.ts`)
 5. **Archive** — ⭐ saved words and sentences (star on word detail or in exercise feedback),
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
    kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition;
