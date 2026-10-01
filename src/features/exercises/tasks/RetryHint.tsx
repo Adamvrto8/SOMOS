@@ -59,11 +59,12 @@ export function RetryHint({ grade, onCheck, onGiveUp }: RetryHintProps) {
       )}
       {notes.length > 0 && <p className="mt-1 text-sm text-ink-muted">{notes.join(' ')}</p>}
       <div className="mt-3 flex gap-2">
-        <Button variant="secondary" onClick={onGiveUp}>
+        {/* Called without the click event: the lesson's check takes an optional answer as its argument. */}
+        <Button variant="secondary" onClick={() => onGiveUp()}>
           Vzdať sa
         </Button>
         {/* preventDefault keeps the focus (and the keyboard) in the answer field. */}
-        <Button onPointerDown={(e) => e.preventDefault()} onClick={onCheck} className="flex-1">
+        <Button onPointerDown={(e) => e.preventDefault()} onClick={() => onCheck()} className="flex-1">
           Skontrolovať
         </Button>
       </div>
