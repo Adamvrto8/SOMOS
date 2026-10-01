@@ -28,14 +28,18 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    - **Multiple choice** — pick the correct word/form
    - **Sentence builder** — arrange shuffled word tiles into a correct sentence
    - **Translation SK → ES** — free typing, tolerant checking
-   - **Conjugation drill** — "tener · yo · pretérito → ___"
+   - **Conjugation drill** — "tener · yo · pretérito → ___"; the numbered lessons of one tense rotate the persons
+     (10 verbs, every person twice; after 5 rounds each verb has had all persons)
+   - **Slovná zásoba** — translate a word; each word is asked once, every other one towards Spanish
+     (the opposite direction comes later in review, not in the next lesson)
    - **Diktát** — hear a sentence (🔊, 🐢 slower), type it; checked like translation
    - **Vyslovovanie** — read a sentence aloud; Chrome speech recognition (es-MX, online), word by word,
      ≤1 missed word in 5+ words = 🟡; 3 tries; "Teraz nemôžem hovoriť" drops the speaking tasks ahead (`speechMatch.ts`, `speech.ts`)
 5. **Archive** — ⭐ saved words and sentences (star on word detail or in exercise feedback),
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
    kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition; words practised in Slovná zásoba / Časovanie join too (auto review, daily limit in Nastavenia);
-   mistakes are practised as a lesson. Export / import JSON backup.
+   mistakes are practised as a lesson. Export / import JSON backup (IndexedDB data + the numbered lessons'
+   progress from localStorage, merged on import by `mergeProgression()`; settings are not backed up).
 6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. Content A1–A2, plus B1 since phase 7 (Cvičiť level filter: A1 / A2 / B1).
 
 ### Mexican Spanish rules (important for all content)
@@ -141,6 +145,8 @@ Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
 - A card is "due today" when `due` ≤ end of the local day. Cards still due after rating
   (short relearning steps) come back later in the same session.
 - Always read cards through `cardOf()` (ts-fsrs `TypeConvert`): JSON backups store dates as strings.
+- Word and custom-word cards alternate the side shown first (`slovakFirst()` in `reviewQueue.ts`, odd `reps` =
+  Slovak first, "Ako sa to povie po španielsky?"); decided when the session loads. Sentences are always Spanish first.
 - Words practised in Slovná zásoba / Časovanie get a card with `practised: true` (`src/lib/practice.ts`): the lesson
   answer is a review (Good / Again, no short-term steps, first answer per local day); `syncPracticeCards()` builds
   missing ones from past attempts after `syncReviewCards()`. Un-starring keeps a practised card.
@@ -188,6 +194,10 @@ Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
   an accent-only difference to another known form is ❌ with both meanings shown (hablo/habló, papa/papá),
   and a known form is never a typo (hablas for hablan is ❌, not 🟡).
 - "Counted as correct once" = the typo answer counts as correct, but at most one typo per answer.
+- A missing or an extra space ("nieje" for "nie je", "porfavor") is that one typo (`spacing`), unless the joined
+  word is another known form ("porque" for "por qué").
+- `diffWords()` aligns a wrong answer with the expected one word by word (ok / wrong / missing) for the second-try
+  hint; a forgiven accent is ok, a meaning-changing one is wrong with `accent`.
 - Translation SK → ES also accepts an extra leading subject pronoun (Yo hablo… for Hablo…) and offers
   "Moja odpoveď bola tiež správna" on ❌, since free translation has many valid answers.
 
@@ -214,7 +224,12 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   Lessons prefer items answered least often. "Precvičiť chyby" card when mistakes exist.
 - **Lekcia** — progress bar, one task per screen, big input / tiles, bottom "Skontrolovať" button,
   feedback sheet slides up (green / amber / red) with ⭐ (verb for conjugation, sentence otherwise).
+  A wrong typed answer (cloze, conjugation, translation, vocab, dictation; `canRetry()`) is not final: `RetryHint`
+  under the field marks the wrong words and gaps of a sentence, the learner fixes and checks again as often as needed,
+  and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong.
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
+  A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)
+  with "Zopakovať lekciu".
   `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
 - **Archív** — tabs Uložené / Moje slová / Chyby, search + topic filter, "Zopakovať" (SRS session),
   "+" add custom word, settings: export/import backup, theme, daily goal, automatic review (on/off, daily limit), practice reminder (push, time), TTS voice.
