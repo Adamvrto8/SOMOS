@@ -146,7 +146,9 @@ describe('spacing slips', () => {
 
 describe('diffWords', () => {
   const states = (input: string, expected: string, options = {}) =>
-    diffWords(input, expected, options).map((p) => (p.state === 'missing' ? '_' : p.state === 'wrong' ? `*${p.text}*` : p.text))
+    diffWords(input, expected, options).map((p) =>
+      p.state === 'missing' ? '_' : p.state === 'wrong' ? `*${p.text}*` : p.state === 'extra' ? `+${p.text}+` : p.text,
+    )
 
   it('marks a misspelled word, keeping what the learner typed', () => {
     expect(states('Aceptan tarcheta de crédito', '¿Aceptan tarjeta de crédito?')).toEqual(['Aceptan', '*tarcheta*', 'de', 'crédito'])
@@ -163,8 +165,9 @@ describe('diffWords', () => {
     expect(states('voy mercdo a comprar', 'Voy al mercado a comprar')).toEqual(['voy', '_', '*mercdo*', 'a', 'comprar'])
   })
 
-  it('marks a word that does not belong', () => {
-    expect(states('voy a al mercado', 'Voy al mercado.')).toEqual(['voy', '*a*', 'al', 'mercado'])
+  it('tells a word that does not belong from a wrong one', () => {
+    expect(states('voy a al mercado', 'Voy al mercado.')).toEqual(['voy', '+a+', 'al', 'mercado'])
+    expect(states('el bano', 'baño')).toEqual(['+el+', 'bano'])
   })
 
   it('lets a missing accent pass, unless it changes the meaning', () => {

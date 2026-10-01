@@ -4,14 +4,17 @@ import type { Grade } from '../../../lib/lesson'
 
 /**
  * A wrong try the learner may still fix: for a sentence, their own words with the wrong ones
- * in red and a gap where a word is missing. The correct words are not given away.
+ * in red, the ones that do not belong struck through and a gap where a word is missing.
+ * The correct words are not given away.
  */
 export function RetryHint({ grade }: { grade: Grade }) {
   const ref = useRef<HTMLDivElement>(null)
   const diff = grade.diff
+  const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
   const notes = [
-    diff?.some((p) => p.state === 'wrong') && 'Červené slová sú zle.',
-    diff?.some((p) => p.state === 'missing') && 'Na prázdnom mieste chýba slovo.',
+    has('wrong') && 'Červené slovo je zle.',
+    has('extra') && 'Prečiarknuté slovo je navyše.',
+    has('missing') && 'Na prázdnom mieste chýba slovo.',
     (diff ? diff.some((p) => p.accent) : grade.check?.meanings) && 'Skontroluj prízvuk.',
   ].filter(Boolean)
 
@@ -35,6 +38,8 @@ export function RetryHint({ grade }: { grade: Grade }) {
                 <span role="img" aria-label="chýba slovo" className="inline-block w-7 border-b-2 border-error" />
               ) : part.state === 'wrong' ? (
                 <span className="rounded-md bg-error/20 px-1 font-semibold text-error">{part.text}</span>
+              ) : part.state === 'extra' ? (
+                <s className="text-error decoration-2">{part.text}</s>
               ) : (
                 part.text
               )}

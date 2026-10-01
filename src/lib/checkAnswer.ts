@@ -179,7 +179,7 @@ export function checkAnswer(input: string, expected: string | string[], options:
 /** One word of a wrong answer as the learner typed it, or the place where a word is missing. */
 export interface DiffPart {
   text: string // '' for a missing word
-  state: 'ok' | 'wrong' | 'missing'
+  state: 'ok' | 'wrong' | 'extra' | 'missing' // extra = a word that does not belong there
   /** Wrong only in its accent ("esta" for "está"). */
   accent?: true
 }
@@ -188,8 +188,8 @@ export interface DiffPart {
 const isNear = (a: string, e: string) => levenshtein(fold(a), fold(e)) <= Math.max(1, Math.floor(e.length / 3))
 
 /**
- * A wrong answer word by word, for a second try: which typed words are wrong and where
- * one is missing. The expected words themselves are not given away.
+ * A wrong answer word by word, for a second try: which typed words are wrong or do not
+ * belong, and where one is missing. The expected words themselves are not given away.
  */
 export function diffWords(input: string, expected: string, options: CheckOptions = {}): DiffPart[] {
   const typed = input.replace(PUNCTUATION, ' ').split(/\s+/).filter(Boolean)
@@ -226,7 +226,7 @@ export function diffWords(input: string, expected: string, options: CheckOptions
     else if (j < want.length && (i === got.length || cost[i][j] === 1 + cost[i][j + 1])) {
       parts.push({ text: '', state: 'missing' })
       j++
-    } else parts.push({ text: typed[i++], state: 'wrong' })
+    } else parts.push({ text: typed[i++], state: 'extra' })
   }
   return parts
 }
