@@ -296,7 +296,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} onGiveUp={giveUp} />
               </div>
             </>
           )
@@ -336,7 +336,7 @@ export function LessonPage() {
                 onOverride={task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
-            ) : (
+            ) : hint ? null : ( // after a wrong try the buttons sit in the hint under the field, above the phone keyboard
               <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
                 {canRetry(task) && (
                   <Button variant="secondary" onClick={giveUp}>

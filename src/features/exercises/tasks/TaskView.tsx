@@ -20,13 +20,14 @@ interface TaskViewProps {
   grade: Grade | null
   /** A wrong try the learner may still fix (typed tasks). */
   hint?: Grade | null
+  onGiveUp?: () => void
 }
 
 const Pill = ({ children }: { children: string }) => (
   <span className="rounded-full bg-surface-2 px-3 py-1 text-sm font-medium">{children}</span>
 )
 
-export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint }: TaskViewProps) {
+export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint, onGiveUp }: TaskViewProps) {
   const status = statusOf(grade)
   const text = typeof answer === 'string' ? answer : ''
 
@@ -39,7 +40,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             <p className="text-ink-muted">{task.sentence.sk}</p>
             {task.cloze.hint && <Pill>{task.cloze.hint}</Pill>}
           </div>
-          <TypedAnswer value={text} onChange={onAnswer} onSubmit={onSubmit} status={status} hint={hint} label="Chýbajúce slovo" placeholder="Napíš slovo…" />
+          <TypedAnswer value={text} onChange={onAnswer} onSubmit={onSubmit} status={status} hint={hint} onGiveUp={onGiveUp} label="Chýbajúce slovo" placeholder="Napíš slovo…" />
         </div>
       )
 
@@ -74,6 +75,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
+            onGiveUp={onGiveUp}
             label="Tvar slovesa"
             placeholder={task.tense === 'progresivo' ? 'estar + gerundium…' : 'Napíš tvar…'}
           />
@@ -98,6 +100,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
+            onGiveUp={onGiveUp}
             label="Preklad do španielčiny"
             placeholder="Po španielsky…"
             multiline
@@ -106,7 +109,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
       )
 
     case 'dictation':
-      return <DictationView task={task} answer={text} onAnswer={onAnswer} onSubmit={onSubmit} status={status} hint={hint} />
+      return <DictationView task={task} answer={text} onAnswer={onAnswer} onSubmit={onSubmit} status={status} hint={hint} onGiveUp={onGiveUp} />
 
     case 'speaking':
       return (
@@ -140,6 +143,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
+            onGiveUp={onGiveUp}
             lang={isToSpanish ? 'es' : 'sk'}
             label={isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
             placeholder={isToSpanish ? 'Po španielsky…' : 'Po slovensky…'}

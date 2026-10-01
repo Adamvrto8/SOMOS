@@ -1,13 +1,23 @@
 import { CircleX } from 'lucide-react'
 import { useEffect, useRef } from 'react'
+import { Button } from '../../../components/Button'
 import type { Grade } from '../../../lib/lesson'
+
+interface RetryHintProps {
+  grade: Grade
+  onCheck: () => void
+  onGiveUp: () => void
+}
 
 /**
  * A wrong try the learner may still fix: for a sentence, their own words with the wrong ones
  * in red, the ones that do not belong struck through and a gap where a word is missing.
  * The correct words are not given away.
+ *
+ * The way on is here too, right under the field: the phone keyboard, open for the fix, covers
+ * the bar at the bottom of the screen.
  */
-export function RetryHint({ grade }: { grade: Grade }) {
+export function RetryHint({ grade, onCheck, onGiveUp }: RetryHintProps) {
   const ref = useRef<HTMLDivElement>(null)
   const diff = grade.diff
   const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
@@ -48,6 +58,15 @@ export function RetryHint({ grade }: { grade: Grade }) {
         </p>
       )}
       {notes.length > 0 && <p className="mt-1 text-sm text-ink-muted">{notes.join(' ')}</p>}
+      <div className="mt-3 flex gap-2">
+        <Button variant="secondary" onClick={onGiveUp}>
+          Vzdať sa
+        </Button>
+        {/* preventDefault keeps the focus (and the keyboard) in the answer field. */}
+        <Button onPointerDown={(e) => e.preventDefault()} onClick={onCheck} className="flex-1">
+          Skontrolovať
+        </Button>
+      </div>
     </div>
   )
 }
