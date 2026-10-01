@@ -16,7 +16,7 @@ const GRADE_STYLE: Record<number, string> = {
   4: 'border border-line bg-surface text-leaf',
 }
 
-/** Full-screen flashcard session: Spanish first, reveal, rate (FSRS). */
+/** Full-screen flashcard session: one side (words alternate, see slovakFirst), reveal, rate (FSRS). */
 export function ReviewPage() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -30,6 +30,7 @@ export function ReviewPage() {
   }, [])
 
   const entry = queue?.[0]
+  const spoken = entry ? (entry.article ? `${entry.article} ${entry.es}` : entry.es) : ''
   const intervals = entry && revealed ? previewIntervals(entry.card, new Date()) : undefined
 
   const exit = () => {
@@ -95,24 +96,50 @@ export function ReviewPage() {
       <main className="px-4 pt-4 pb-56">
         {queue === null ? null : entry ? (
           <article className="rounded-card border border-line bg-surface p-6 text-center">
-            <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Pamätáš si?</p>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <h1
-                lang="es"
-                className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
-              >
-                {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
-                {entry.es}
-              </h1>
-            </div>
-            <div className="mt-3 flex justify-center">
-              <SpeakButton text={entry.article ? `${entry.article} ${entry.es}` : entry.es} size="lg" />
-            </div>
+            <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
+              {entry.slovakFirst ? 'Ako sa to povie po španielsky?' : 'Pamätáš si?'}
+            </p>
+            {entry.slovakFirst ? (
+              // No 🔊 here: hearing the word would give the answer away.
+              <div className="mt-4">
+                <h1 lang="sk" className="font-serif text-4xl leading-tight font-semibold tracking-tight hyphens-auto">
+                  {entry.sk[0]}
+                </h1>
+                {entry.sk.length > 1 && <p className="mt-2 text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
+              </div>
+            ) : (
+              <>
+                <div className="mt-4 flex items-center justify-center gap-2">
+                  <h1
+                    lang="es"
+                    className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
+                  >
+                    {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
+                    {entry.es}
+                  </h1>
+                </div>
+                <div className="mt-3 flex justify-center">
+                  <SpeakButton text={spoken} size="lg" />
+                </div>
+              </>
+            )}
 
             {revealed && (
               <div className="mt-6 border-t border-line pt-6 text-left">
-                <p className="text-2xl font-medium">{entry.sk[0]}</p>
-                {entry.sk.length > 1 && <p className="text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
+                {entry.slovakFirst ? (
+                  <div className="flex items-center gap-1">
+                    <p lang="es" className="min-w-0 flex-1 font-serif text-3xl leading-tight font-semibold hyphens-auto">
+                      {entry.article && <span className="font-normal text-ink-muted">{entry.article} </span>}
+                      {entry.es}
+                    </p>
+                    <SpeakButton text={spoken} size="lg" />
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-2xl font-medium">{entry.sk[0]}</p>
+                    {entry.sk.length > 1 && <p className="text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
+                  </>
+                )}
                 {entry.example && (
                   <div className="mt-4 flex items-start gap-1 rounded-2xl bg-surface-2 py-2 pr-1 pl-4">
                     <div className="min-w-0 flex-1 pt-1">

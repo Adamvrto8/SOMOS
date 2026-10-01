@@ -15,6 +15,16 @@ export interface ReviewEntry {
   sk: string[]
   example?: Example
   note?: string
+  /** Decided when the session loads, so a card coming back in the same session keeps its side. */
+  slovakFirst: boolean
+}
+
+/**
+ * Words alternate the side shown first with every review, so recalling the Spanish word
+ * is practised too. Sentences are always read in Spanish.
+ */
+export function slovakFirst(itemType: ReviewItemType, card: Card): boolean {
+  return itemType !== 'sentence' && card.reps % 2 === 1
 }
 
 /** Cards due today (daily limit applied), soonest first, joined with their word, sentence or custom word. */
@@ -25,17 +35,18 @@ export async function loadDueEntries(now = new Date()): Promise<ReviewEntry[]> {
   const customs = new Map((await db.customWords.bulkGet(customIds)).flatMap((c) => (c ? [[c.id, c] as const] : [])))
 
   return due.flatMap(({ rc, card }): ReviewEntry[] => {
+    const base = { itemType: rc.itemType, itemId: rc.itemId, card, slovakFirst: slovakFirst(rc.itemType, card) }
     if (rc.itemType === 'sentence') {
       const sentence = sentenceById.get(rc.itemId)
-      return sentence ? [{ itemType: 'sentence', itemId: rc.itemId, card, es: sentence.es, sk: [sentence.sk] }] : []
+      return sentence ? [{ ...base, es: sentence.es, sk: [sentence.sk] }] : []
     }
     if (rc.itemType === 'word') {
       const word = wordById.get(rc.itemId)
       if (!word) return [] // removed from the dataset
-      return [{ itemType: 'word', itemId: rc.itemId, card, es: word.es, article: articleFor(word), sk: word.sk, example: word.examples[0], note: word.note }]
+      return [{ ...base, es: word.es, article: articleFor(word), sk: word.sk, example: word.examples[0], note: word.note }]
     }
     const custom = customs.get(rc.itemId)
     if (!custom) return []
-    return [{ itemType: 'custom', itemId: rc.itemId, card, es: custom.es, sk: [custom.sk], note: custom.note }]
+    return [{ ...base, es: custom.es, sk: [custom.sk], note: custom.note }]
   })
 }

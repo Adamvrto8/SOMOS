@@ -1,4 +1,6 @@
 import { useRef, type KeyboardEvent } from 'react'
+import type { Grade } from '../../../lib/lesson'
+import { RetryHint } from './RetryHint'
 import type { Status } from './status'
 
 // Characters a Slovak keyboard doesn't have at hand.
@@ -19,9 +21,10 @@ interface TypedAnswerProps {
   status?: Status // set once graded; the field is then read-only
   multiline?: boolean
   lang?: 'es' | 'sk' // language typed; Slovak needs no Spanish extra keys
+  hint?: Grade | null // a wrong try that may still be fixed
 }
 
-export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline, lang = 'es' }: TypedAnswerProps) {
+export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline, lang = 'es', hint }: TypedAnswerProps) {
   const ref = useRef<HTMLTextAreaElement>(null)
   const locked = status !== undefined
 
@@ -69,6 +72,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
           status ? BORDER[status] : 'border-line focus:border-brick',
         ].join(' ')}
       />
+      {hint && !locked && <RetryHint grade={hint} />}
       {!locked && lang === 'es' && (
         <div className="mt-2 flex flex-wrap gap-1.5" aria-label="Špeciálne znaky">
           {EXTRA_KEYS.map((char) => (

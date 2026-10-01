@@ -1,6 +1,6 @@
 import { sentenceById, sentences, verbById, verbs, wordById, words } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
-import { checkAnswer, type CheckResult, type Verdict } from './checkAnswer'
+import { checkAnswer, diffWords, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
@@ -92,6 +92,7 @@ export interface Grade {
   verdict: Verdict
   expected: string // correct answer to show
   check?: CheckResult // details for typed answers
+  diff?: DiffPart[] // a wrong typed sentence word by word, for a second try
   speech?: SpeechMatch // Vyslovovanie: which words were heard
 }
 
@@ -194,7 +195,7 @@ export function availableCount(filter: LessonFilter): number {
     case 'dictation':
       return listeningSentences(filter).length
     case 'vocab':
-      return words.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length * 2
+      return words.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length
   }
 }
 
@@ -253,6 +254,12 @@ export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
     acceptable,
   }
 }
+
+/**
+ * Each word is asked once in the lessons, every other one towards Spanish. The opposite
+ * direction comes days later in review (reviewQueue's slovakFirst), not in the next lesson.
+ */
+const alternateDirection = (word: Word, i: number): VocabTask => vocabTask(word, i % 2 === 0 ? 'sk-es' : 'es-sk')
 
 // ---------- lesson ----------
 
@@ -411,9 +418,11 @@ export function getStablePool(filter: LessonFilter): Task[] {
       const tenses: TableTense[] = isAll ? TABLE_TENSES : [filter.tense as TableTense]
       const matchingVerbs = verbs.filter((v) => !filter.level || v.level === filter.level)
       matchingVerbs.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.id.localeCompare(b.id))
+      // Round r asks verb i for person i + r: a lesson of 10 verbs has every person twice,
+      // and after 5 rounds each verb has been through all of them.
       const allTasks = tenses.flatMap((tense) =>
-        PERSONS.flatMap((person) =>
-          matchingVerbs.map((verb) => conjugationTask(verb, tense, person)),
+        PERSONS.flatMap((_, round) =>
+          matchingVerbs.map((verb, i) => conjugationTask(verb, tense, PERSONS[(i + round) % PERSONS.length])),
         ),
       )
       if (isAll) {
@@ -465,16 +474,10 @@ export function getStablePool(filter: LessonFilter): Task[] {
             orderedWords.push(...shuffle(list, seededRandom(seedFor('vocab') + (LEVEL_ORDER[lvl] ?? 1))))
           }
         }
-        return [
-          ...orderedWords.map((w, i) => vocabTask(w, i % 2 === 0 ? 'sk-es' : 'es-sk')),
-          ...orderedWords.map((w, i) => vocabTask(w, i % 2 === 0 ? 'es-sk' : 'sk-es')),
-        ]
+        return orderedWords.map(alternateDirection)
       }
       matching.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.es.localeCompare(b.es))
-      return [
-        ...matching.map((w, i) => vocabTask(w, i % 2 === 0 ? 'sk-es' : 'es-sk')),
-        ...matching.map((w, i) => vocabTask(w, i % 2 === 0 ? 'es-sk' : 'sk-es')),
-      ]
+      return matching.map(alternateDirection)
     }
   }
 }
@@ -600,15 +603,28 @@ const fromCheck = (check: CheckResult): Grade => ({
 
 const exact = (correct: boolean, expected: string): Grade => ({ correct, verdict: correct ? 'correct' : 'wrong', expected })
 
+/** A typed answer with one expected text: a wrong one of several words also says which words to fix. */
+function typed(text: string, expected: string, options: CheckOptions): Grade {
+  const grade = fromCheck(checkAnswer(text, expected, options))
+  if (grade.correct) return grade
+  const diff = diffWords(text, expected, options)
+  return diff.length > 1 ? { ...grade, diff } : grade
+}
+
+/** A wrong typed answer may be fixed and checked again; the task counts as wrong only when the learner gives up. */
+export function canRetry(task: Task): boolean {
+  return task.kind === 'cloze' || task.kind === 'conjugation' || task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'dictation'
+}
+
 export function gradeTask(task: Task, answer: Answer): Grade {
   const text = typeof answer === 'string' ? answer : ''
   switch (task.kind) {
     case 'cloze':
-      return fromCheck(checkAnswer(text, task.cloze.answer, { lookup: lookupForm }))
+      return typed(text, task.cloze.answer, { lookup: lookupForm })
     case 'choice':
       return exact(text === task.cloze.answer, task.cloze.answer)
     case 'conjugation':
-      return fromCheck(checkAnswer(text, task.answer, { lookup: lookupForm }))
+      return typed(text, task.answer, { lookup: lookupForm })
     case 'builder': {
       const ids = Array.isArray(answer) ? answer : []
       const built = ids.map((id) => task.tiles.find((t) => t.id === id)?.text ?? '')
@@ -616,12 +632,12 @@ export function gradeTask(task: Task, answer: Answer): Grade {
       return exact(correct, task.sentence.es)
     }
     case 'translation':
-      return fromCheck(checkAnswer(text, task.sentence.es, { lookup: lookupForm, optionalSubject: true }))
+      return typed(text, task.sentence.es, { lookup: lookupForm, optionalSubject: true })
     case 'vocab':
       return fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
     case 'dictation':
       // "8" is what was heard as much as "ocho".
-      return fromCheck(checkAnswer(spokenForm(text), task.sentence.es, { lookup: lookupForm }))
+      return typed(spokenForm(text), task.sentence.es, { lookup: lookupForm })
     case 'speaking': {
       const speech = matchSpeech(text, task.sentence.es)
       return { correct: speech.verdict !== 'wrong', verdict: speech.verdict, expected: task.sentence.es, speech }

@@ -1,9 +1,10 @@
-import { X } from 'lucide-react'
+import { Repeat, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
 import {
+  canRetry,
   createLesson,
   createNumberedLesson,
   getNumberedLessonCount,
@@ -18,17 +19,20 @@ import {
   type Task,
 } from '../../lib/lesson'
 import {
+  getLessonRecord,
   isLessonUnlocked,
   progressionGroup,
   recordLessonAttempt,
   rememberActiveLesson,
   useLessonProgression,
+  type LessonRecord,
 } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
+import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
 import { TaskView } from './tasks/TaskView'
 
@@ -79,14 +83,19 @@ export function LessonPage() {
   // Numbered lesson score: tasks answered right in the full run or in any correction round.
   const [solved, setSolved] = useState<ReadonlySet<string>>(new Set())
   const [lessonTotal, setLessonTotal] = useState(0)
+  // A passed lesson opens on its overview (correct answers) instead of starting right away.
+  const [overview, setOverview] = useState<LessonRecord | null>(null)
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
+  // A wrong try at a typed task: shown as a hint while the learner fixes the answer.
+  const [hint, setHint] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([]) // this round
   const [confirmExit, setConfirmExit] = useState(false)
   const [recording, setRecording] = useState(false) // Vyslovovanie: the mic is open
 
   const start = (next: Task[], lesson?: number, retry = false) => {
+    setOverview(null)
     setTasks(next)
     setRunLesson(lesson)
     setIsRetry(retry)
@@ -97,6 +106,7 @@ export function LessonPage() {
     setIndex(0)
     setAnswer(emptyAnswer(next[0]))
     setGrade(null)
+    setHint(null)
     setAnswers([])
     setConfirmExit(false)
   }
@@ -104,12 +114,18 @@ export function LessonPage() {
   useEffect(() => {
     if (locked) return
     let active = true
-    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => active && start(next, lessonNumber))
+    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => {
+      if (!active) return
+      start(next, lessonNumber)
+      // Read once, on entry: the record also changes while the lesson is being played.
+      const record = lessonNumber === undefined ? undefined : getLessonRecord(filter.type, group, lessonNumber)
+      setOverview(record?.passed && next.length > 0 ? record : null)
+    })
     if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber, filter.level)
     return () => {
       active = false
     }
-  }, [filter, fromMistakes, lessonNumber, locked, rawGroup])
+  }, [filter, fromMistakes, lessonNumber, locked, rawGroup, group])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
@@ -119,7 +135,7 @@ export function LessonPage() {
   // would treat as an (invalid) effect cleanup.
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [index, tasks])
+  }, [index, tasks, overview])
 
   const exit = () => {
     if (location.key !== 'default') void navigate(-1)
@@ -134,13 +150,27 @@ export function LessonPage() {
       : false
   const canCheck = isAnswered(answer)
 
+  const showGrade = (result: Grade) => {
+    setHint(null)
+    setGrade(result)
+    // Close the phone keyboard so the feedback sheet is visible.
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
+  }
+
   /** `value` lets a task submit an answer it has just set (Vyslovovanie's 3rd recording). */
   const check = (value: Answer = answer) => {
     if (!task || grade || !isAnswered(value)) return
     setAnswer(value)
-    setGrade(gradeTask(task, value))
-    // Close the phone keyboard so the feedback sheet is visible.
-    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
+    const result = gradeTask(task, value)
+    // A wrong typed answer can be fixed and checked again, as often as it takes.
+    if (!result.correct && canRetry(task)) setHint(result)
+    else showGrade(result)
+  }
+
+  /** "Vzdať sa": shows the correct answer; the task counts as wrong. */
+  const giveUp = () => {
+    if (!task || grade) return
+    showGrade(gradeTask(task, answer))
   }
 
   /**
@@ -176,6 +206,7 @@ export function LessonPage() {
     setIndex(index + 1)
     setAnswer(emptyAnswer(tasks[index + 1]))
     setGrade(null)
+    setHint(null)
   }
 
   const progress = total ? (answers.length / total) * 100 : 0
@@ -202,7 +233,8 @@ export function LessonPage() {
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
         <span className="w-16 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
-          {runLesson ? `L${runLesson} · ` : ''}{total ? `${Math.min(index + 1, total)}/${total}` : ''}
+          {runLesson ? `L${runLesson}` : ''}
+          {total && !overview ? `${runLesson ? ' · ' : ''}${Math.min(index + 1, total)}/${total}` : ''}
         </span>
       </header>
 
@@ -227,6 +259,8 @@ export function LessonPage() {
               Späť
             </Button>
           </div>
+        ) : overview && runLesson !== undefined ? (
+          <LessonOverview lessonNumber={runLesson} record={overview} tasks={tasks} />
         ) : finished ? (
           <LessonResult
             answers={answers}
@@ -262,7 +296,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} />
               </div>
             </>
           )
@@ -272,7 +306,16 @@ export function LessonPage() {
       {!locked && task && !finished && (
         <div className="fixed inset-x-0 bottom-0 z-20">
           <div className="mx-auto max-w-[480px]">
-            {confirmExit ? (
+            {overview ? (
+              <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
+                <Button variant="secondary" onClick={exit}>
+                  Späť
+                </Button>
+                <Button icon={Repeat} onClick={() => setOverview(null)} className="flex-1" autoFocus>
+                  Zopakovať lekciu
+                </Button>
+              </div>
+            ) : confirmExit ? (
               <div className="animate-sheet-up rounded-t-3xl border-t border-line bg-surface px-5 pt-5 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgb(0_0_0/0.08)]">
                 <p className="text-lg font-semibold">Ukončiť lekciu?</p>
                 <p className="mt-1 text-sm text-ink-muted">Odpovede, ktoré si už dal, ostanú uložené.</p>
@@ -294,8 +337,14 @@ export function LessonPage() {
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
             ) : (
-              <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                <Button onClick={() => check()} disabled={!canCheck || recording} className="w-full">
+              <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
+                {canRetry(task) && (
+                  <Button variant="secondary" onClick={giveUp}>
+                    Vzdať sa
+                  </Button>
+                )}
+                {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
+                <Button onPointerDown={(e) => e.preventDefault()} onClick={() => check()} disabled={!canCheck || recording} className="flex-1">
                   Skontrolovať
                 </Button>
               </div>

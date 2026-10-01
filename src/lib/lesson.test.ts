@@ -3,6 +3,7 @@ import { sentences, verbById, verbs } from '../data'
 import {
   availableCount,
   builderWords,
+  canRetry,
   conjugationTask,
   createLesson,
   createNumberedLesson,
@@ -169,6 +170,28 @@ describe('gradeTask', () => {
     expect(gradeTask(task, 'Hablo un poco de español').verdict).toBe('correct')
     expect(gradeTask(task, 'hablo un poco de espanol').correct).toBe(true) // accent + ñ only
     expect(gradeTask(task, 'Yo hablo un poco de español').correct).toBe(false) // not what was said
+  })
+
+  it('says which words of a wrong sentence to fix', () => {
+    const task = taskFromItem('dictation', 's004') // "Hablo un poco de español."
+    if (!task || task.kind !== 'dictation') throw new Error('task not found')
+    expect(gradeTask(task, 'hablo un poko español').diff?.map((p) => p.state)).toEqual(['ok', 'ok', 'wrong', 'missing', 'ok'])
+    expect(gradeTask(task, 'hablo un poco de español').diff).toBeUndefined()
+    // One wrong word has nothing to point at.
+    expect(gradeTask(conjugationTask(verbById.get('hablar')!, 'presente', 'ellos'), 'hablas').diff).toBeUndefined()
+  })
+
+  it.each([
+    ['cloze', true],
+    ['conjugation', true],
+    ['translation', true],
+    ['vocab', true],
+    ['dictation', true],
+    ['choice', false], // a second try would be a guess among fewer options
+    ['builder', false],
+    ['speaking', false], // has its own three recordings
+  ] as const)('lets a wrong %s answer be fixed: %s', (type, retry) => {
+    expect(canRetry(createLesson({ type }, 1, seeded(5))[0])).toBe(retry)
   })
 
   it('accepts digits typed in a dictation', () => {
@@ -353,6 +376,35 @@ describe('createNumberedLesson', () => {
     for (const task of lesson2) {
       expect(ids1.has(task.itemId)).toBe(false)
     }
+  })
+
+  it.each(['all', 'food'])('asks every word of topic %s once, in one direction', (topic) => {
+    const filter = { type: 'vocab' as const, topic, level: 'A1' as const }
+    const all = Array.from({ length: getNumberedLessonCount(filter) }, (_, i) => createNumberedLesson(filter, i + 1, seeded(i))).flat()
+    const tasks = [...new Map(all.map((t) => [t.itemId, t])).values()] // the last lesson overlaps the one before
+    const wordIds = tasks.map((t) => (t.kind === 'vocab' ? t.word.id : ''))
+    expect(new Set(wordIds).size).toBe(wordIds.length)
+    expect(wordIds).toHaveLength(availableCount(filter))
+    expect(new Set(tasks.map((t) => (t.kind === 'vocab' ? t.direction : ''))).size).toBe(2)
+  })
+
+  it('mixes the persons in the lessons of one tense', () => {
+    const filter = { type: 'conjugation' as const, tense: 'presente' as const, level: 'A1' as const }
+    const a1Verbs = verbs.filter((v) => v.level === 'A1')
+    const persons = (tasks: Task[]) => tasks.map((t) => (t.kind === 'conjugation' ? t.person : ''))
+
+    for (const lessonNumber of [1, 2]) {
+      const lesson = createNumberedLesson(filter, lessonNumber, seeded(lessonNumber))
+      expect(new Set(lesson.map((t) => (t.kind === 'conjugation' ? t.verb.id : ''))).size).toBe(LESSON_SIZE)
+      // Each of the 5 persons twice.
+      for (const person of ['yo', 'tu', 'el', 'nosotros', 'ellos']) {
+        expect(persons(lesson).filter((p) => p === person)).toHaveLength(2)
+      }
+    }
+
+    // Every verb still comes in every person, once.
+    const all = Array.from({ length: getNumberedLessonCount(filter) }, (_, i) => createNumberedLesson(filter, i + 1, seeded(i))).flat()
+    expect(new Set(itemIds(all)).size).toBe(a1Verbs.length * 5)
   })
 
   it('creates deterministically mixed tasks for sentences when topic is all', () => {

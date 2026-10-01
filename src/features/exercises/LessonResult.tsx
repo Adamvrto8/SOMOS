@@ -1,12 +1,11 @@
 import { ArrowRight, Check, Lock, Repeat, RotateCcw } from 'lucide-react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
-import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
 import type { Grade, Task } from '../../lib/lesson'
 import { passThreshold as calcPassThreshold } from '../../lib/lessonProgress'
 import { pluralSk } from '../../lib/text'
-import { taskSummary } from './taskSummary'
+import { TaskAnswerList } from './TaskAnswerList'
 
 export interface LessonAnswer {
   task: Task
@@ -112,23 +111,7 @@ export function LessonResult({
       {mistakes.length > 0 && (
         <section aria-labelledby="mistakes-heading">
           <SectionTitle id="mistakes-heading">{isNumbered ? 'Na opravu' : 'Na zopakovanie'}</SectionTitle>
-          <ul className="divide-y divide-line rounded-card border border-line bg-surface">
-            {mistakes.map(({ task }, i) => {
-              const { prompt, answer } = taskSummary(task)
-              const isSlovakAnswer = task.kind === 'vocab' && task.direction === 'es-sk'
-              return (
-                <li key={`${task.itemId}-${i}`} className="flex items-start gap-1 py-3 pr-1 pl-4">
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm text-ink-muted">{prompt}</p>
-                    <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
-                      {answer}
-                    </p>
-                  </div>
-                  <SpeakButton text={task.kind === 'vocab' ? task.word.es : answer} />
-                </li>
-              )
-            })}
-          </ul>
+          <TaskAnswerList tasks={mistakes.map((a) => a.task)} />
           {!fromMistakes && (
             <p className="mt-2 text-sm text-ink-muted">
               {isNumbered

@@ -93,6 +93,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
       </>,
     )
   }
+  if (check?.spacing) notes.push(<>Pozor na medzery medzi slovami.</>)
   if (grade.verdict !== 'wrong' && check?.accentWords.length) {
     notes.push(
       <>

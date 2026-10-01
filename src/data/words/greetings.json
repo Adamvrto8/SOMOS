@@ -60,7 +60,7 @@
   {
     "id": "de-nada",
     "es": "de nada",
-    "sk": ["nie je za čo"],
+    "sk": ["nie je za čo", "nemáš za čo"],
     "pos": "phrase",
     "level": "A1",
     "topics": ["greetings"],

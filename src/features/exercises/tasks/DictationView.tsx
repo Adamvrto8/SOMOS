@@ -1,7 +1,7 @@
 import { Eye, Snail, Volume2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Button } from '../../../components/Button'
-import type { DictationTask } from '../../../lib/lesson'
+import type { DictationTask, Grade } from '../../../lib/lesson'
 import { SLOW_RATE, speak, ttsSupported } from '../../../lib/tts'
 import type { Status } from './status'
 import { TypedAnswer } from './TypedAnswer'
@@ -12,10 +12,11 @@ interface DictationViewProps {
   onAnswer: (answer: string) => void
   onSubmit: () => void
   status?: Status
+  hint?: Grade | null
 }
 
 /** Diktát: hear the sentence (normal or slow) and type it. The Slovak meaning stays hidden until asked for. */
-export function DictationView({ task, answer, onAnswer, onSubmit, status }: DictationViewProps) {
+export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }: DictationViewProps) {
   // Without a voice the task still works as a translation.
   const [showMeaning, setShowMeaning] = useState(!ttsSupported)
   const text = task.sentence.es
@@ -59,6 +60,7 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status }: Dict
         onChange={onAnswer}
         onSubmit={onSubmit}
         status={status}
+        hint={hint}
         label="Čo si počul"
         placeholder="Po španielsky…"
         multiline

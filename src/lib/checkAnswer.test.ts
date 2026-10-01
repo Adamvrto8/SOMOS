@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { checkAnswer } from './checkAnswer'
+import { checkAnswer, diffWords } from './checkAnswer'
 
 // Minimal stand-in for the dataset's known forms.
 const known = new Map([
@@ -124,5 +124,63 @@ describe('checkAnswer', () => {
     const r = checkAnswer('me llamo adam', ['Mi nombre es Adam.', 'Me llamo Adam.'])
     expect(r.verdict).toBe('correct')
     expect(r.expected).toBe('Me llamo Adam.')
+  })
+})
+
+describe('spacing slips', () => {
+  it('accepts a missing or an extra space as a typo', () => {
+    expect(checkAnswer('nieje za co', 'nie je za čo')).toMatchObject({ verdict: 'typo', spacing: true })
+    expect(checkAnswer('porfavor', 'por favor', { lookup })).toMatchObject({ verdict: 'typo', spacing: true })
+    expect(checkAnswer('buenos días', 'buenosdías').verdict).toBe('typo')
+  })
+
+  it('rejects another known word written together', () => {
+    const porque = (word: string) => (word === 'porque' ? 'pretože' : undefined)
+    expect(checkAnswer('porque', 'por qué', { lookup: porque }).verdict).toBe('wrong')
+  })
+
+  it('still rejects a missing word', () => {
+    expect(checkAnswer('nie za čo', 'nie je za čo').verdict).toBe('wrong')
+  })
+})
+
+describe('diffWords', () => {
+  const states = (input: string, expected: string, options = {}) =>
+    diffWords(input, expected, options).map((p) => (p.state === 'missing' ? '_' : p.state === 'wrong' ? `*${p.text}*` : p.text))
+
+  it('marks a misspelled word, keeping what the learner typed', () => {
+    expect(states('Aceptan tarcheta de crédito', '¿Aceptan tarjeta de crédito?')).toEqual(['Aceptan', '*tarcheta*', 'de', 'crédito'])
+  })
+
+  it('marks every slip, not only the first', () => {
+    expect(states('mi quarto está aribba a la derecha', 'Mi cuarto está arriba, a la derecha.')).toEqual([
+      'mi', '*quarto*', 'está', '*aribba*', 'a', 'la', 'derecha',
+    ])
+  })
+
+  it('shows where a word is missing', () => {
+    expect(states('voy al mercado comprar fruta', 'Voy al mercado a comprar fruta.')).toEqual(['voy', 'al', 'mercado', '_', 'comprar', 'fruta'])
+    expect(states('voy mercdo a comprar', 'Voy al mercado a comprar')).toEqual(['voy', '_', '*mercdo*', 'a', 'comprar'])
+  })
+
+  it('marks a word that does not belong', () => {
+    expect(states('voy a al mercado', 'Voy al mercado.')).toEqual(['voy', '*a*', 'al', 'mercado'])
+  })
+
+  it('lets a missing accent pass, unless it changes the meaning', () => {
+    const parts = diffWords('el volcan esta muy cerca', 'El volcán está muy cerca.')
+    expect(parts.map((p) => p.state)).toEqual(['ok', 'ok', 'wrong', 'ok', 'ok'])
+    expect(parts[2]).toMatchObject({ text: 'esta', accent: true })
+    expect(states('hablo mucho', 'habló mucho', { lookup })).toEqual(['*hablo*', 'mucho'])
+  })
+
+  it('leaves an accepted subject pronoun alone', () => {
+    expect(states('Yo hablo un poco de espanol', 'Hablo un poco de francés.', { optionalSubject: true })).toEqual([
+      'Yo', 'hablo', 'un', 'poco', 'de', '*espanol*',
+    ])
+  })
+
+  it('marks everything missing for an empty answer', () => {
+    expect(states('', 'de nada')).toEqual(['_', '_'])
   })
 })
