@@ -1,19 +1,24 @@
 import { BellRing } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
 import {
   disableReminder,
   enableReminder,
+  fetchReminderStatus,
   REMINDER_ERRORS,
   ReminderFailure,
   reminderSupport,
   sendTestReminder,
   setReminderTime,
+  useReminderProblem,
   useReminderSettings,
 } from '../../lib/reminder'
+import { describeStatus, type StatusLine } from '../../lib/reminderStatus'
 
 type Status = { tone: 'ok' | 'error'; text: string; detail?: string } | null
+
+const LINE_TONE: Record<StatusLine['tone'], string> = { ok: 'text-leaf', info: 'text-ink-muted', problem: 'text-error' }
 
 export function ReminderSettings() {
   const settings = useReminderSettings()
@@ -22,6 +27,19 @@ export function ReminderSettings() {
   const [status, setStatus] = useState<Status>(null)
   // Local draft, so typing a time on a keyboard is not reset mid-way.
   const [time, setTime] = useState(settings.time)
+  const problem = useReminderProblem()
+  // What the server knows: a reminder that stopped is otherwise invisible. null = not asked yet.
+  const [server, setServer] = useState<StatusLine[] | 'unreachable' | null>(null)
+
+  const refreshServer = () =>
+    fetchReminderStatus().then(
+      (s) => setServer(describeStatus(s, new Date())),
+      () => setServer('unreachable'),
+    )
+
+  useEffect(() => {
+    if (settings.enabled && support !== 'unavailable') void refreshServer()
+  }, [settings.enabled, support])
 
   async function run(action: () => Promise<void>, doneText?: string) {
     setBusy(true)
@@ -34,6 +52,7 @@ export function ReminderSettings() {
       setStatus({ tone: 'error', text: REMINDER_ERRORS[failure.code], detail: failure.detail })
     } finally {
       setBusy(false)
+      if (support !== 'unavailable') void refreshServer()
     }
   }
 
@@ -79,6 +98,11 @@ export function ReminderSettings() {
       </div>
 
       {support !== 'ok' && <p className="mt-2 text-sm text-ink-muted">{REMINDER_ERRORS[support]}</p>}
+      {problem && (
+        <p role="alert" className="mt-2 text-sm text-error">
+          {problem}
+        </p>
+      )}
       {status && (
         <p role="status" className={`mt-2 text-sm ${status.tone === 'error' ? 'text-error' : 'text-leaf'}`}>
           {status.text}
@@ -96,6 +120,23 @@ export function ReminderSettings() {
         >
           Poslať skúšobnú notifikáciu
         </Button>
+      )}
+
+      {settings.enabled && server && (
+        <div className="mt-3 rounded-card border border-line bg-surface px-4 py-3">
+          <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Stav pripomienky</p>
+          {server === 'unreachable' ? (
+            <p className="mt-1.5 text-sm text-error">Server je odtiaľto nedostupný, stav sa nedá zistiť. Skús iné pripojenie.</p>
+          ) : (
+            <ul className="mt-1.5 space-y-1 text-sm">
+              {server.map((line) => (
+                <li key={line.text} className={LINE_TONE[line.tone]}>
+                  {line.text}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
     </section>
   )

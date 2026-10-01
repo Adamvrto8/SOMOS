@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { db } from './db'
 import { loadProgress } from './reminderProgress'
+import type { ReminderStatus } from './reminderStatus'
 
 // Daily practice reminder (Web Push). The server side is api/reminder.ts; the design is in
 // docs/superpowers/specs/2026-09-27-push-reminders-design.md. Settings are per device, like the daily goal.
@@ -13,6 +14,8 @@ export const VAPID_PUBLIC_KEY = 'BPTIxlaW9JLc2601tsFgNg6FVwR8CUB4GHBVze_ERU7m0EE
 export interface ReminderSettings {
   enabled: boolean
   time: string // "19:00"
+  /** Turned off by the app, not the learner: Android took the notification permission back. */
+  lost?: true
 }
 
 const STORAGE_KEY = 'somos-reminder'
@@ -24,7 +27,10 @@ export function parseSettings(raw: string | null): ReminderSettings {
     const value: unknown = JSON.parse(raw ?? '')
     if (typeof value === 'object' && value !== null) {
       const { enabled, time } = value as Record<string, unknown>
-      if (typeof enabled === 'boolean' && typeof time === 'string' && TIME.test(time)) return { enabled, time }
+      const { lost } = value as Record<string, unknown>
+      if (typeof enabled === 'boolean' && typeof time === 'string' && TIME.test(time)) {
+        return lost === true && !enabled ? { enabled, time, lost } : { enabled, time }
+      }
     }
   } catch {
     // Missing or corrupted: the defaults.
@@ -117,7 +123,8 @@ function assertReady() {
 
 // ---------- server and push subscription ----------
 
-async function post(body: Record<string, unknown>, keepalive = false): Promise<void> {
+/** Resolves with the server's JSON answer. */
+async function post(body: Record<string, unknown>, keepalive = false): Promise<unknown> {
   let res: Response
   try {
     res = await fetch('/api/reminder', {
@@ -129,8 +136,8 @@ async function post(body: Record<string, unknown>, keepalive = false): Promise<v
   } catch {
     throw new ReminderFailure('offline')
   }
-  if (res.ok) return
   const data = (await res.json().catch(() => ({}))) as { error?: string }
+  if (res.ok) return data
   if (data.error === 'not-configured') throw new ReminderFailure('not-configured')
   if (res.status === 429) throw new ReminderFailure('too-many')
   if (res.status === 410) throw new ReminderFailure('gone')
@@ -163,7 +170,7 @@ async function ensureSubscription(): Promise<PushSubscription> {
 }
 
 /** Tells the server where and when to remind (also refreshes a rotated subscription). */
-function register(subscription: PushSubscription, time: string): Promise<void> {
+function register(subscription: PushSubscription, time: string): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone })
 }
@@ -192,6 +199,7 @@ export async function enableReminder(time: string): Promise<void> {
   if (permission !== 'granted') throw new ReminderFailure(permission === 'denied' ? 'denied' : 'not-allowed')
   await registerDevice(time)
   saveSettings({ enabled: true, time })
+  synced()
   void reportProgressNow()
 }
 
@@ -212,7 +220,8 @@ export async function disableReminder(): Promise<void> {
       await subscription.unsubscribe()
     }
   }
-  saveSettings({ ...settings, enabled: false })
+  saveSettings({ enabled: false, time: settings.time })
+  setSyncFailure(null)
 }
 
 /** Registers this device again (in case the server lost it) and asks for a test notification. */
@@ -229,24 +238,84 @@ export async function sendTestReminder(): Promise<void> {
     // The push service just dropped the subscription; the server now answers 410 for it, so this round replaces it.
     await attempt()
   }
+  synced()
+}
+
+// ---------- keeping the server's copy alive ----------
+
+// A reminder that stops working is silent by nature, so the app has to say it: on Domov and in Nastavenia.
+let syncFailure: ReminderFailure | null = null
+let lastSync = 0
+const SYNC_EVERY = 30 * 60_000
+
+function setSyncFailure(next: ReminderFailure | null) {
+  if (syncFailure === next) return
+  syncFailure = next
+  listeners.forEach((notify) => notify())
+}
+
+function synced() {
+  lastSync = Date.now()
+  setSyncFailure(null)
+}
+
+/** What to tell the learner when the reminder they turned on is not working, or null. */
+export function reminderProblem(): string | null {
+  if (settings.lost) {
+    return 'Pripomienka sa vypla, lebo Android zrušil povolenie upozornení (napríklad po preinštalovaní aplikácie). Zapni ju znova.'
+  }
+  if (!settings.enabled || !syncFailure) return null
+  const why =
+    syncFailure.code === 'offline'
+      ? 'Server je z tejto siete nedostupný, skús iné pripojenie.'
+      : syncFailure.code === 'failed'
+        ? 'Skús poslať skúšobnú notifikáciu.'
+        : REMINDER_ERRORS[syncFailure.code]
+  return `Telefón sa nepodarilo prihlásiť na pripomienky. ${why}`
+}
+
+export function useReminderProblem(): string | null {
+  return useSyncExternalStore(subscribe, reminderProblem)
 }
 
 /**
- * At app start: keeps the server's copy fresh (Chrome can rotate a subscription) and turns the
- * setting off when notifications were blocked in Android settings meanwhile.
+ * Keeps the server's copy fresh (Chrome can rotate a subscription, the push service can drop it)
+ * and turns the setting off, visibly, when Android took the notification permission back.
  */
 export async function syncReminder(): Promise<void> {
   if (!settings.enabled) return
   const support = reminderSupport()
   if (support === 'unavailable') return
-  if (support !== 'ok' || Notification.permission !== 'granted') return saveSettings({ ...settings, enabled: false })
+  if (support !== 'ok' || Notification.permission !== 'granted') return saveSettings({ enabled: false, time: settings.time, lost: true })
   if (!navigator.onLine) return
   try {
     await registerDevice(settings.time)
+    synced()
     await reportProgressNow()
-  } catch {
-    // The next start tries again.
+  } catch (error) {
+    // Shown as reminderProblem(); the next start or return to the app tries again.
+    setSyncFailure(error instanceof ReminderFailure ? error : new ReminderFailure('failed', String(error)))
   }
+}
+
+/**
+ * At app start and whenever the app comes back to the front: Android keeps an installed PWA alive
+ * for days, so a subscription lost meanwhile would otherwise stay lost until a full restart.
+ */
+export function keepReminderSynced(): void {
+  void syncReminder()
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return
+    if (syncFailure || Date.now() - lastSync > SYNC_EVERY) void syncReminder()
+  })
+}
+
+/** What the server knows about this device's reminder (see reminderStatus.ts). */
+export async function fetchReminderStatus(): Promise<ReminderStatus> {
+  const subscription = reminderSupport() === 'ok' ? await existingSubscription().catch(() => null) : null
+  const data = (await post({ type: 'status', endpoint: subscription?.endpoint })) as { status?: ReminderStatus }
+  if (!data.status) throw new ReminderFailure('failed', 'no status')
+  return data.status
 }
 
 // ---------- progress reports ----------

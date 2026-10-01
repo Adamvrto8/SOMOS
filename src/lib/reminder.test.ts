@@ -1,9 +1,24 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { base64UrlToBytes, enableReminder, parseSettings, sendTestReminder, VAPID_PUBLIC_KEY } from './reminder'
+import {
+  base64UrlToBytes,
+  enableReminder,
+  fetchReminderStatus,
+  parseSettings,
+  reminderProblem,
+  sendTestReminder,
+  syncReminder,
+  VAPID_PUBLIC_KEY,
+} from './reminder'
 
 describe('parseSettings', () => {
   it('reads stored settings', () => {
     expect(parseSettings('{"enabled":true,"time":"07:30"}')).toEqual({ enabled: true, time: '07:30' })
+  })
+
+  it('remembers a reminder the app had to turn off', () => {
+    expect(parseSettings('{"enabled":false,"time":"07:30","lost":true}')).toEqual({ enabled: false, time: '07:30', lost: true })
+    // Turned on again: the note is gone.
+    expect(parseSettings('{"enabled":true,"time":"07:30","lost":true}')).toEqual({ enabled: true, time: '07:30' })
   })
 
   it('falls back to off at 19:00 for missing or broken values', () => {
@@ -103,5 +118,58 @@ describe('a subscription the push service dropped', () => {
       'subscribe https://push.example/2',
       'test https://push.example/2',
     ])
+  })
+})
+
+describe('a reminder that stopped working', () => {
+  const ENDPOINT = 'https://push.example/1'
+  const subscription = { endpoint: ENDPOINT, toJSON: () => ({ endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } }), unsubscribe: async () => true }
+  const serverOk = async () => Response.json({ ok: true })
+
+  function stubDevice(fetchMock: typeof fetch) {
+    vi.stubEnv('DEV', false)
+    vi.stubGlobal('Notification', { permission: 'granted', requestPermission: async () => 'granted' })
+    vi.stubGlobal('window', { PushManager: class {}, Notification: {}, setTimeout, clearTimeout })
+    const pushManager = { getSubscription: async () => subscription, subscribe: async () => subscription }
+    vi.stubGlobal('navigator', { onLine: true, serviceWorker: { ready: Promise.resolve({ pushManager }) } })
+    vi.stubGlobal('fetch', fetchMock)
+  }
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
+    vi.unstubAllGlobals()
+  })
+
+  it('says so when the server cannot be reached, and recovers on the next sync', async () => {
+    stubDevice(serverOk)
+    await enableReminder('19:00')
+    expect(reminderProblem()).toBeNull()
+
+    vi.stubGlobal('fetch', async () => Promise.reject(new TypeError('network')))
+    await syncReminder()
+    expect(reminderProblem()).toContain('Server je z tejto siete nedostupný')
+
+    vi.stubGlobal('fetch', serverOk)
+    await syncReminder()
+    expect(reminderProblem()).toBeNull()
+  })
+
+  it('says so when Android took the notification permission back', async () => {
+    stubDevice(serverOk)
+    await enableReminder('19:00')
+    vi.stubGlobal('Notification', { permission: 'default', requestPermission: async () => 'default' })
+    await syncReminder()
+    expect(reminderProblem()).toContain('Zapni ju znova')
+
+    vi.stubGlobal('Notification', { permission: 'granted', requestPermission: async () => 'granted' })
+    await enableReminder('19:00')
+    expect(reminderProblem()).toBeNull()
+  })
+
+  it('asks the server what it knows about this device', async () => {
+    const fetchMock = vi.fn(async (_input: RequestInfo | URL, _init?: RequestInit) => Response.json({ ok: true, status: { subscribed: true } }))
+    stubDevice(fetchMock)
+    expect(await fetchReminderStatus()).toEqual({ subscribed: true })
+    expect(JSON.parse(String(fetchMock.mock.calls[0][1]?.body))).toEqual({ type: 'status', endpoint: ENDPOINT })
   })
 })
