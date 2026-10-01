@@ -4,6 +4,8 @@ import {
   getLessonRecord,
   isLessonUnlocked,
   lessonKey,
+  mergeProgression,
+  parseProgression,
   passThreshold,
   progressionGroup,
   recordLessonAttempt,
@@ -136,6 +138,31 @@ describe('lessonProgress', () => {
     expect(fresh.getLessonRecord('cloze', 'basics', 2)?.passed).toBe(true)
     expect(fresh.getLessonRecord('cloze', 'basics', 3)).toBeUndefined()
     expect(Object.keys(JSON.parse(storage.get('somos-lesson-progression-v2')!) as object)).toEqual(['cloze:basics:2'])
+  })
+
+  it('keeps only the valid records of a backup', () => {
+    const good = { bestScore: 9, total: 10, passed: true, passedAt: 5 }
+    expect(parseProgression({ 'cloze:basics:1': good, 'cloze:basics:2': { bestScore: 'x' }, 'cloze:basics:3': null })).toEqual({
+      records: { 'cloze:basics:1': good },
+      skipped: 2,
+    })
+    expect(parseProgression(undefined)).toEqual({ records: {}, skipped: 0 }) // a backup made before lessons were saved
+    expect(parseProgression(['nonsense'])).toEqual({ records: {}, skipped: 0 })
+  })
+
+  it('merges a backup, keeping the better record of each lesson', () => {
+    recordLessonAttempt('cloze', 'basics', 1, 9, 10) // passed here
+    recordLessonAttempt('cloze', 'basics', 2, 5, 10) // not passed here
+    const taken = mergeProgression({
+      'cloze:basics:1': { bestScore: 6, total: 10, passed: false },
+      'cloze:basics:2': { bestScore: 8, total: 10, passed: true, passedAt: 5 },
+      'vocab:all:A1:1': { bestScore: 10, total: 10, passed: true },
+    })
+    expect(taken).toBe(2)
+    expect(getLessonRecord('cloze', 'basics', 1)).toMatchObject({ bestScore: 9, passed: true })
+    expect(getLessonRecord('cloze', 'basics', 2)).toMatchObject({ bestScore: 8, passed: true })
+    expect(isLessonUnlocked('vocab', 'all:A1', 2)).toBe(true)
+    expect(JSON.parse(storage.get('somos-lesson-progression-v2')!)).toHaveProperty(['vocab:all:A1:1'])
   })
 
   it('does not read progress written by the buggy v1 build', async () => {

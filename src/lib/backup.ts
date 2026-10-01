@@ -1,8 +1,10 @@
 import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
+import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
 import { syncReviewCards } from './srs'
 
-// JSON backup of everything stored on the device (IndexedDB).
+// JSON backup of the learner's data on the device: IndexedDB and the numbered lessons' progress
+// (localStorage). Settings and the DeepL cache are not backed up.
 
 const APP = 'somos'
 const VERSION = 1
@@ -16,6 +18,7 @@ export interface Backup {
   reviewCards: ReviewCard[]
   attempts: Attempt[]
   mistakes: Mistake[] // missing in backups made before the mistakes list existed
+  lessons?: LessonProgressionMap // passed lessons and best scores; missing in backups made before 2026-10-01
 }
 
 export interface ImportResult {
@@ -24,6 +27,7 @@ export interface ImportResult {
   reviewCards: number
   attempts: number
   mistakes: number
+  lessons: number
   skipped: number
 }
 
@@ -35,7 +39,7 @@ export async function createBackup(): Promise<Backup> {
     db.attempts.toArray(),
     db.mistakes.toArray(),
   ])
-  return { app: APP, version: VERSION, exportedAt: new Date().toISOString(), customWords, savedItems, reviewCards, attempts, mistakes }
+  return { app: APP, version: VERSION, exportedAt: new Date().toISOString(), customWords, savedItems, reviewCards, attempts, mistakes, lessons: getProgressionSnapshot() }
 }
 
 export async function downloadBackup(): Promise<void> {
@@ -92,6 +96,9 @@ export function parseBackup(text: string): ParseResult {
     return valid
   }
 
+  const lessons = parseProgression(data.lessons)
+  skipped += lessons.skipped
+
   const backup: Backup = {
     app: APP,
     version: VERSION,
@@ -101,6 +108,7 @@ export function parseBackup(text: string): ParseResult {
     reviewCards: pick(data.reviewCards, isReviewCard),
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
+    lessons: lessons.records,
   }
   return { ok: true, backup, skipped }
 }
@@ -130,9 +138,11 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       reviewCards: backup.reviewCards.length,
       attempts: newAttempts.length,
       mistakes: backup.mistakes.length,
+      lessons: 0,
       skipped,
     }
   })
+  result.lessons = mergeProgression(backup.lessons ?? {})
   // Backups made before review cards existed restore saved words without cards.
   await syncReviewCards()
   await syncPracticeCards()

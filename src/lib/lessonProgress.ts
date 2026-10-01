@@ -67,21 +67,26 @@ function isValidRecord(val: unknown): val is LessonRecord {
   )
 }
 
+/** The valid lesson records in data from outside (localStorage, a backup file). */
+export function parseProgression(data: unknown): { records: LessonProgressionMap; skipped: number } {
+  const records: LessonProgressionMap = {}
+  let skipped = 0
+  if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+    for (const [key, val] of Object.entries(data as Record<string, unknown>)) {
+      if (isValidRecord(val)) records[key] = val
+      else skipped++
+    }
+  }
+  return { records, skipped }
+}
+
 function loadMap(): LessonProgressionMap {
   try {
     const raw = safeGetItem(STORAGE_KEY)
     if (!raw) return {}
-    const parsed: unknown = JSON.parse(raw)
-    if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
-      const cleaned: LessonProgressionMap = {}
-      let dirty = false
-      for (const [key, val] of Object.entries(parsed as Record<string, unknown>)) {
-        if (isValidRecord(val)) cleaned[key] = val
-        else dirty = true
-      }
-      if (dirty) safeSetItem(STORAGE_KEY, JSON.stringify(cleaned))
-      return cleaned
-    }
+    const { records, skipped } = parseProgression(JSON.parse(raw))
+    if (skipped) safeSetItem(STORAGE_KEY, JSON.stringify(records))
+    return records
   } catch {
     // Missing or invalid JSON
   }
@@ -196,6 +201,23 @@ export function recordLessonAttempt(
   })
 
   return { passed, newlyPassed, bestScore }
+}
+
+/**
+ * Restores a backup's lesson records. Where this device has the lesson too, the better
+ * record stays (passed beats not passed, then the higher score). Returns how many were taken.
+ */
+export function mergeProgression(incoming: LessonProgressionMap): number {
+  const isBetter = (a: LessonRecord, b: LessonRecord) => (a.passed !== b.passed ? a.passed : a.bestScore > b.bestScore)
+  const next = { ...progressionMap }
+  let taken = 0
+  for (const [key, record] of Object.entries(incoming)) {
+    if (next[key] && !isBetter(record, next[key])) continue
+    next[key] = record
+    taken++
+  }
+  if (taken) saveMap(next)
+  return taken
 }
 
 // ---------- active lesson memory ----------

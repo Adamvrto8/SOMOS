@@ -14,6 +14,7 @@ function describeImport(r: ImportResult): string {
   if (r.reviewCards) parts.push(`karty na opakovanie: ${r.reviewCards}`)
   if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
   if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
+  if (r.lessons) parts.push(`lekcie: ${r.lessons}`)
   const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''
   return `Obnovené – ${parts.join(', ')}.${skipped}`
 }
@@ -57,8 +58,8 @@ export function BackupSettings() {
     <section aria-labelledby="backup-heading">
       <SectionTitle id="backup-heading">Záloha</SectionTitle>
       <p className="text-sm leading-relaxed text-ink-muted">
-        Uložené a vlastné slová sú len v tomto zariadení. Občas si stiahni zálohu, napríklad na Google Drive, aby si o ne
-        neprišiel pri výmene telefónu.
+        Uložené a vlastné slová aj postup v lekciách sú len v tomto zariadení. Občas si stiahni zálohu, napríklad na
+        Google Drive, aby si o ne neprišiel pri výmene telefónu.
       </p>
       {persisted !== null && (
         <p className="mt-2 text-sm text-ink-muted">
