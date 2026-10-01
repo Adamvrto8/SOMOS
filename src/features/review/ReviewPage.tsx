@@ -1,13 +1,18 @@
-import { CircleCheck, Info, X } from 'lucide-react'
+import { CircleCheck, CircleX, Info, TriangleAlert, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
-import type { Grade } from 'ts-fsrs'
+import { Rating, type Grade } from 'ts-fsrs'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
+import { checkAnswer, type CheckResult } from '../../lib/checkAnswer'
+import { lookupForm } from '../../lib/knownForms'
+import type { Grade as LessonGrade } from '../../lib/lesson'
 import { GRADES, isDueToday, previewIntervals, rateCard } from '../../lib/srs'
 import { pluralSk } from '../../lib/text'
-import { loadDueEntries, type ReviewEntry } from './reviewQueue'
+import { statusOf } from '../exercises/tasks/status'
+import { TypedAnswer } from '../exercises/tasks/TypedAnswer'
+import { loadDueEntries, typedRating, type ReviewEntry } from './reviewQueue'
 
 const GRADE_STYLE: Record<number, string> = {
   1: 'border border-line bg-surface text-error',
@@ -16,7 +21,13 @@ const GRADE_STYLE: Record<number, string> = {
   4: 'border border-line bg-surface text-leaf',
 }
 
-/** Full-screen flashcard session: one side (words alternate, see slovakFirst), reveal, rate (FSRS). */
+/** What TypedAnswer and its hint take: a lesson grade made from a check. */
+const asGrade = (check: CheckResult): LessonGrade => ({ correct: check.verdict !== 'wrong', verdict: check.verdict, expected: check.expected, check })
+
+/**
+ * Full-screen flashcard session: one side (words alternate, see slovakFirst), then either
+ * type the other side (it rates itself, see typedRating) or reveal it and rate (FSRS).
+ */
 export function ReviewPage() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -24,12 +35,18 @@ export function ReviewPage() {
   const [revealed, setRevealed] = useState(false)
   const [reviewed, setReviewed] = useState(0)
   const [busy, setBusy] = useState(false)
+  // Typing the hidden side instead of revealing it.
+  const [typed, setTyped] = useState('')
+  const [tries, setTries] = useState(0)
+  const [hint, setHint] = useState<CheckResult | null>(null) // a wrong try, still to be fixed
+  const [outcome, setOutcome] = useState<{ grade: Grade; check: CheckResult } | null>(null) // settled: the answer rated itself
 
   useEffect(() => {
     void loadDueEntries().then(setQueue)
   }, [])
 
   const entry = queue?.[0]
+  const canType = Boolean(entry?.answers.length)
   const spoken = entry ? (entry.article ? `${entry.article} ${entry.es}` : entry.es) : ''
   const intervals = entry && revealed ? previewIntervals(entry.card, new Date()) : undefined
 
@@ -46,17 +63,45 @@ export function ReviewPage() {
     setQueue((q) => (q ? [...q.slice(1), ...(isDueToday(card) ? [{ ...entry, card }] : [])] : q))
     setReviewed((n) => n + 1)
     setRevealed(false)
+    setTyped('')
+    setTries(0)
+    setHint(null)
+    setOutcome(null)
     setBusy(false)
+  }
+
+  const closeKeyboard = () => {
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
+  }
+
+  const reveal = () => {
+    setRevealed(true)
+    closeKeyboard()
+  }
+
+  const settle = (grade: Grade, check: CheckResult) => {
+    setHint(null)
+    setOutcome({ grade, check })
+    reveal()
+  }
+
+  const check = () => {
+    if (!entry || revealed || !typed.trim()) return
+    const result = checkAnswer(typed, entry.answers, entry.slovakFirst ? { lookup: lookupForm } : {})
+    setTries(tries + 1)
+    // A wrong answer can be fixed and checked again, like in a lesson.
+    if (result.verdict === 'wrong') setHint(result)
+    else settle(typedRating(tries + 1, false), result)
   }
 
   // Keyboard: Space/Enter reveals, 1–4 rates.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!entry || e.target instanceof HTMLButtonElement) return
+      if (!entry || e.target instanceof HTMLButtonElement || e.target instanceof HTMLTextAreaElement) return
       if (!revealed && (e.key === ' ' || e.key === 'Enter')) {
         e.preventDefault()
-        setRevealed(true)
-      } else if (revealed && ['1', '2', '3', '4'].includes(e.key)) {
+        reveal()
+      } else if (revealed && !outcome && ['1', '2', '3', '4'].includes(e.key)) {
         void rate(Number(e.key) as Grade)
       }
     }
@@ -95,71 +140,88 @@ export function ReviewPage() {
 
       <main className="px-4 pt-4 pb-56">
         {queue === null ? null : entry ? (
-          <article className="rounded-card border border-line bg-surface p-6 text-center">
-            <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-              {entry.slovakFirst ? 'Ako sa to povie po španielsky?' : 'Pamätáš si?'}
-            </p>
-            {entry.slovakFirst ? (
-              // No 🔊 here: hearing the word would give the answer away.
-              <div className="mt-4">
-                <h1 lang="sk" className="font-serif text-4xl leading-tight font-semibold tracking-tight hyphens-auto">
-                  {entry.sk[0]}
-                </h1>
-                {entry.sk.length > 1 && <p className="mt-2 text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
-              </div>
-            ) : (
-              <>
-                <div className="mt-4 flex items-center justify-center gap-2">
-                  <h1
-                    lang="es"
-                    className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
-                  >
-                    {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
-                    {entry.es}
+          <>
+            <article className="rounded-card border border-line bg-surface p-6 text-center">
+              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
+                {entry.slovakFirst ? 'Ako sa to povie po španielsky?' : 'Pamätáš si?'}
+              </p>
+              {entry.slovakFirst ? (
+                // No 🔊 here: hearing the word would give the answer away.
+                <div className="mt-4">
+                  <h1 lang="sk" className="font-serif text-4xl leading-tight font-semibold tracking-tight hyphens-auto">
+                    {entry.sk[0]}
                   </h1>
+                  {entry.sk.length > 1 && <p className="mt-2 text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
                 </div>
-                <div className="mt-3 flex justify-center">
-                  <SpeakButton text={spoken} size="lg" />
-                </div>
-              </>
-            )}
-
-            {revealed && (
-              <div className="mt-6 border-t border-line pt-6 text-left">
-                {entry.slovakFirst ? (
-                  <div className="flex items-center gap-1">
-                    <p lang="es" className="min-w-0 flex-1 font-serif text-3xl leading-tight font-semibold hyphens-auto">
-                      {entry.article && <span className="font-normal text-ink-muted">{entry.article} </span>}
+              ) : (
+                <>
+                  <div className="mt-4 flex items-center justify-center gap-2">
+                    <h1
+                      lang="es"
+                      className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
+                    >
+                      {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
                       {entry.es}
-                    </p>
+                    </h1>
+                  </div>
+                  <div className="mt-3 flex justify-center">
                     <SpeakButton text={spoken} size="lg" />
                   </div>
-                ) : (
-                  <>
-                    <p className="text-2xl font-medium">{entry.sk[0]}</p>
-                    {entry.sk.length > 1 && <p className="text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
-                  </>
-                )}
-                {entry.example && (
-                  <div className="mt-4 flex items-start gap-1 rounded-2xl bg-surface-2 py-2 pr-1 pl-4">
-                    <div className="min-w-0 flex-1 pt-1">
-                      <p lang="es" className="font-serif text-lg leading-snug">
-                        {entry.example.es}
+                </>
+              )}
+
+              {revealed && (
+                <div className="mt-6 border-t border-line pt-6 text-left">
+                  {entry.slovakFirst ? (
+                    <div className="flex items-center gap-1">
+                      <p lang="es" className="min-w-0 flex-1 font-serif text-3xl leading-tight font-semibold hyphens-auto">
+                        {entry.article && <span className="font-normal text-ink-muted">{entry.article} </span>}
+                        {entry.es}
                       </p>
-                      <p className="text-sm text-ink-muted">{entry.example.sk}</p>
+                      <SpeakButton text={spoken} size="lg" />
                     </div>
-                    <SpeakButton text={entry.example.es} />
-                  </div>
-                )}
-                {entry.note && (
-                  <p className="mt-3 flex gap-2 text-sm leading-relaxed text-ink-muted">
-                    <Info size={16} strokeWidth={1.75} className="mt-0.5 shrink-0" aria-hidden />
-                    {entry.note}
-                  </p>
-                )}
+                  ) : (
+                    <>
+                      <p className="text-2xl font-medium">{entry.sk[0]}</p>
+                      {entry.sk.length > 1 && <p className="text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
+                    </>
+                  )}
+                  {entry.example && (
+                    <div className="mt-4 flex items-start gap-1 rounded-2xl bg-surface-2 py-2 pr-1 pl-4">
+                      <div className="min-w-0 flex-1 pt-1">
+                        <p lang="es" className="font-serif text-lg leading-snug">
+                          {entry.example.es}
+                        </p>
+                        <p className="text-sm text-ink-muted">{entry.example.sk}</p>
+                      </div>
+                      <SpeakButton text={entry.example.es} />
+                    </div>
+                  )}
+                  {entry.note && (
+                    <p className="mt-3 flex gap-2 text-sm leading-relaxed text-ink-muted">
+                      <Info size={16} strokeWidth={1.75} className="mt-0.5 shrink-0" aria-hidden />
+                      {entry.note}
+                    </p>
+                  )}
+                </div>
+              )}
+            </article>
+            {canType && (!revealed || outcome) && (
+              <div className="mt-4">
+                <TypedAnswer
+                  key={reviewed}
+                  value={typed}
+                  onChange={setTyped}
+                  onSubmit={check}
+                  status={outcome ? statusOf(asGrade(outcome.check)) : undefined}
+                  hint={hint && asGrade(hint)}
+                  lang={entry.slovakFirst ? 'es' : 'sk'}
+                  label={entry.slovakFirst ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
+                  placeholder={entry.slovakFirst ? 'Po španielsky…' : 'Po slovensky…'}
+                />
               </div>
             )}
-          </article>
+          </>
         ) : (
           <SessionEnd reviewed={reviewed} />
         )}
@@ -169,9 +231,35 @@ export function ReviewPage() {
         <div className="fixed inset-x-0 bottom-0 z-20">
           <div className="mx-auto max-w-[480px] border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
             {!revealed ? (
-              <Button onClick={() => setRevealed(true)} className="w-full" autoFocus>
-                Ukázať preklad
-              </Button>
+              canType ? (
+                <div className="flex gap-3">
+                  {/* After a wrong try the way out is to give up (rated Znova); before it, to flip the card and rate it. */}
+                  {hint ? (
+                    <Button variant="secondary" onClick={() => settle(typedRating(tries, true), hint)}>
+                      Vzdať sa
+                    </Button>
+                  ) : (
+                    <Button variant="secondary" onClick={reveal}>
+                      Ukázať preklad
+                    </Button>
+                  )}
+                  {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
+                  <Button onPointerDown={(e) => e.preventDefault()} onClick={check} disabled={!typed.trim()} className="flex-1">
+                    Skontrolovať
+                  </Button>
+                </div>
+              ) : (
+                <Button onClick={reveal} className="w-full" autoFocus>
+                  Ukázať preklad
+                </Button>
+              )
+            ) : outcome ? (
+              <>
+                <TypedVerdict grade={outcome.grade} check={outcome.check} interval={intervals?.[outcome.grade]} />
+                <Button onClick={() => void rate(outcome.grade)} disabled={busy} className="mt-3 w-full" autoFocus>
+                  Pokračovať
+                </Button>
+              </>
             ) : (
               <>
                 <p className="mb-2 text-center text-sm text-ink-muted">Ako dobre si to vedel?</p>
@@ -194,6 +282,37 @@ export function ReviewPage() {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+/** How a typed answer went and when the card comes back; the rating was decided by the answer. */
+function TypedVerdict({ grade, check, interval }: { grade: Grade; check: CheckResult; interval?: string }) {
+  const tone =
+    grade === Rating.Again
+      ? { title: 'Nevedel si – ešte sa vráti', icon: CircleX, color: 'text-error' }
+      : grade === Rating.Hard
+        ? { title: 'Správne po oprave', icon: TriangleAlert, color: 'text-ink' }
+        : { title: 'Správne!', icon: CircleCheck, color: 'text-leaf' }
+  const Icon = tone.icon
+  const note = check.spacing
+    ? 'Pozor na medzery medzi slovami.'
+    : check.typoWord
+      ? `Preklep v slove ${check.typoWord}.`
+      : check.verdict === 'accent'
+        ? `Pozor na prízvuk: ${check.accentWords.join(', ')}.`
+        : undefined
+
+  return (
+    <div role="status">
+      <p className={`flex items-center gap-2 font-semibold ${tone.color}`}>
+        <Icon size={20} strokeWidth={2} className="shrink-0" aria-hidden />
+        {tone.title}
+      </p>
+      <p className="mt-0.5 text-sm text-ink-muted">
+        {note && `${note} `}
+        {interval && `Ďalšie opakovanie: ${interval}.`}
+      </p>
     </div>
   )
 }

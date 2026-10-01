@@ -147,6 +147,9 @@ Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
 - Always read cards through `cardOf()` (ts-fsrs `TypeConvert`): JSON backups store dates as strings.
 - Word and custom-word cards alternate the side shown first (`slovakFirst()` in `reviewQueue.ts`, odd `reps` =
   Slovak first, "Ako sa to povie po španielsky?"); decided when the session loads. Sentences are always Spanish first.
+- A word card can be typed instead of revealed (`ReviewEntry.answers`, checked like Slovná zásoba, wrong tries can be
+  fixed). A typed answer rates itself (`typedRating()`): right at once = Good, fixed after a hint = Hard, "Vzdať sa" =
+  Again (the card returns in the session). "Ukázať preklad" keeps the four manual ratings; sentences are reveal-only.
 - Words practised in Slovná zásoba / Časovanie get a card with `practised: true` (`src/lib/practice.ts`): the lesson
   answer is a review (Good / Again, no short-term steps, first answer per local day); `syncPracticeCards()` builds
   missing ones from past attempts after `syncReviewCards()`. Un-starring keeps a practised card.
@@ -196,8 +199,8 @@ Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
 - "Counted as correct once" = the typo answer counts as correct, but at most one typo per answer.
 - A missing or an extra space ("nieje" for "nie je", "porfavor") is that one typo (`spacing`), unless the joined
   word is another known form ("porque" for "por qué").
-- `diffWords()` aligns a wrong answer with the expected one word by word (ok / wrong / missing) for the second-try
-  hint; a forgiven accent is ok, a meaning-changing one is wrong with `accent`.
+- `diffWords()` aligns a wrong answer with the expected one word by word (ok / wrong / extra / missing) for the
+  second-try hint (red / struck through / gap); a forgiven accent is ok, a meaning-changing one is wrong with `accent`.
 - Translation SK → ES also accepts an extra leading subject pronoun (Yo hablo… for Hablo…) and offers
   "Moja odpoveď bola tiež správna" on ❌, since free translation has many valid answers.
 
