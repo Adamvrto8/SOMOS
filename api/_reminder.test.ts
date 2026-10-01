@@ -188,6 +188,7 @@ const post = (body: unknown, origin = 'https://somos.example') =>
     headers: { 'Content-Type': 'application/json', origin, host: 'somos.example' },
     body: JSON.stringify(body),
   })
+const statusOf = async (res: Response) => ((await res.json()) as { status: unknown }).status
 const pushError = (statusCode: number) => Object.assign(new Error('push refused'), { statusCode })
 
 describe('api/reminder: cron tick', () => {
@@ -249,6 +250,19 @@ describe('api/reminder: cron tick', () => {
     expect(store.data.has(KEYS.sub)).toBe(false)
     const fresh = { ...again, subscription: { ...SUB.subscription, endpoint: 'https://push.example/fresh' } }
     expect((await handleReminder(post(fresh), deps(store))).status).toBe(200)
+  })
+
+  it('remembers when the last tick came and what it decided', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 20, activeToday: true }) })
+    await handleReminder(cron(), deps(store))
+    expect(JSON.parse(store.data.get(KEYS.tick)!)).toEqual({ at: '2026-07-01T17:10:00.000Z', reason: 'goal-met' })
+    const empty = memoryStore()
+    await handleReminder(cron(), deps(empty))
+    expect(JSON.parse(empty.data.get(KEYS.tick)!)).toEqual({ at: '2026-07-01T17:10:00.000Z', reason: 'no-subscription' })
+    // A request without the secret is not a tick.
+    const untouched = memoryStore()
+    await handleReminder(cron('wrong'), deps(untouched))
+    expect(untouched.data.has(KEYS.tick)).toBe(false)
   })
 
   it('leaves the day open for the next tick after a failed send', async () => {
@@ -327,6 +341,48 @@ describe('api/reminder: requests from the app', () => {
     expect((await handleReminder(test, deps(store, async () => Promise.reject(pushError(410))))).status).toBe(410)
     const again = post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ })
     expect((await handleReminder(again, deps(store))).status).toBe(410)
+  })
+
+  it('tells what the server knows, without giving the subscription away', async () => {
+    const tick = { at: '2026-07-01T17:00:30.000Z', reason: 'sent' }
+    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 3 }), [KEYS.sent]: '2026-07-01', [KEYS.tick]: tick })
+    const res = await handleReminder(post({ type: 'status', endpoint: SUB.subscription.endpoint }), deps(store))
+    const text = await res.text()
+    expect(JSON.parse(text)).toEqual({
+      ok: true,
+      status: {
+        subscribed: true,
+        thisDevice: true,
+        time: '19:00',
+        timeZone: TZ,
+        serverClock: { day: '2026-07-01', time: '19:10' },
+        sentDay: '2026-07-01',
+        progress: progress({ done: 3 }),
+        lastTick: tick,
+        dropped: false,
+      },
+    })
+    expect(text).not.toContain('push.example')
+
+    const other = await handleReminder(post({ type: 'status', endpoint: OTHER_DEVICE }), deps(store))
+    expect(await statusOf(other)).toMatchObject({ subscribed: true, thisDevice: false })
+  })
+
+  it('tells that it has no device, and whether the push service dropped it', async () => {
+    const none = await handleReminder(post({ type: 'status' }), deps(memoryStore()))
+    expect(await statusOf(none)).toEqual({
+      subscribed: false,
+      thisDevice: false,
+      time: null,
+      timeZone: null,
+      serverClock: null,
+      sentDay: null,
+      progress: null,
+      lastTick: null,
+      dropped: false,
+    })
+    const dropped = await handleReminder(post({ type: 'status' }), deps(memoryStore({ [KEYS.gone]: SUB.subscription.endpoint })))
+    expect(await statusOf(dropped)).toMatchObject({ subscribed: false, dropped: true })
   })
 
   it('refuses a test for a device that is not subscribed', async () => {

@@ -1,5 +1,5 @@
 // Vercel function: the daily practice reminder (Web Push).
-//   POST /api/reminder: from the app (same-origin): subscribe | unsubscribe | progress | test
+//   POST /api/reminder: from the app (same-origin): subscribe | unsubscribe | progress | test | status
 //   GET  /api/reminder: from cron-job.org every 15 minutes (Authorization: Bearer CRON_SECRET)
 // Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
@@ -27,6 +27,25 @@ export interface ReminderProgress {
   dueTomorrow: number // … by the end of the next day
   streakDays: number
   activeToday: boolean
+}
+
+/** The last cron tick: when it came and what it decided ("sent", "goal-met", "no-subscription"…). */
+export interface LastTick {
+  at: string // ISO time
+  reason: string
+}
+
+/** What the server knows, for "Stav pripomienky" in the app. The subscription itself is never included. */
+export interface ReminderStatus {
+  subscribed: boolean // the server has a device to remind
+  thisDevice: boolean // … and it is the one asking
+  time: string | null
+  timeZone: string | null
+  serverClock: { day: string; time: string } | null // now, in that time zone
+  sentDay: string | null // day of the last reminder sent
+  progress: ReminderProgress | null
+  lastTick: LastTick | null
+  dropped: boolean // no device because the push service dropped its subscription
 }
 
 export interface Message {
@@ -87,6 +106,8 @@ export const isProgress = (v: unknown): v is ReminderProgress =>
   isCount(v.streakDays) &&
   typeof v.activeToday === 'boolean'
 
+const isLastTick = (v: unknown): v is LastTick => isRecord(v) && typeof v.at === 'string' && typeof v.reason === 'string'
+
 // ---------- time ----------
 
 /** The calendar day and minute of the day at `now` in `timeZone` (DST-aware). */
@@ -112,6 +133,7 @@ export function previousDay(day: string): string {
 }
 
 const toMinutes = (time: string) => Number(time.slice(0, 2)) * 60 + Number(time.slice(3, 5))
+const toTime = (minutes: number) => `${String(Math.floor(minutes / 60)).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`
 
 // ---------- what to send ----------
 
@@ -168,6 +190,7 @@ export const KEYS = {
   sent: 'somos:reminder:sent', // day key of the last reminder sent
   test: 'somos:reminder:test', // exists for 60 s after a test notification
   gone: 'somos:reminder:gone', // endpoint the push service dropped: the app must replace it, not re-register it
+  tick: 'somos:reminder:tick', // LastTick
 } as const
 
 export interface Store {
@@ -279,13 +302,20 @@ function sameOrigin(request: Request): boolean {
 
 async function tick(deps: Deps): Promise<Response> {
   const [rawSub, rawProgress, sentDay] = await deps.store.mget([KEYS.sub, KEYS.progress, KEYS.sent])
+  const now = deps.now()
+  // Remembered so the app can show that the cron comes and what it decided.
+  const done = async (sent: boolean, reason: string, status = 200) => {
+    const lastTick: LastTick = { at: now.toISOString(), reason }
+    await deps.store.set(KEYS.tick, JSON.stringify(lastTick))
+    return json({ sent, reason }, status)
+  }
   const sub = parseStored(rawSub, isReminderSub)
-  if (!sub) return json({ sent: false, reason: 'no-subscription' })
-  const decision = decide(deps.now(), sub, parseStored(rawProgress, isProgress), sentDay ?? null)
-  if (!decision.send) return json({ sent: false, reason: decision.reason })
+  if (!sub) return done(false, 'no-subscription')
+  const decision = decide(now, sub, parseStored(rawProgress, isProgress), sentDay ?? null)
+  if (!decision.send) return done(false, decision.reason)
   const result = await deliver(deps, sub, decision.message, 'reminder')
   if (result === 'sent') await deps.store.set(KEYS.sent, decision.day)
-  return json({ sent: result === 'sent', reason: result }, result === 'failed' ? 502 : 200)
+  return done(result === 'sent', result, result === 'failed' ? 502 : 200)
 }
 
 async function handlePost(request: Request, deps: Deps): Promise<Response> {
@@ -322,6 +352,22 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
       const result = await deliver(deps, stored, TEST_MESSAGE, 'test')
       if (result === 'sent') return json({ ok: true })
       return json({ error: result }, result === 'gone' ? 410 : 502)
+    }
+    case 'status': {
+      const [rawProgress, sentDay, rawTick] = await deps.store.mget([KEYS.progress, KEYS.sent, KEYS.tick])
+      const clock = stored ? localClock(deps.now(), stored.timeZone) : null
+      const status: ReminderStatus = {
+        subscribed: stored !== null,
+        thisDevice: fromStoredDevice,
+        time: stored?.time ?? null,
+        timeZone: stored?.timeZone ?? null,
+        serverClock: clock && { day: clock.day, time: toTime(clock.minutes) },
+        sentDay: sentDay ?? null,
+        progress: parseStored(rawProgress, isProgress),
+        lastTick: parseStored(rawTick, isLastTick),
+        dropped: stored === null && Boolean(goneEndpoint),
+      }
+      return json({ ok: true, status })
     }
     default:
       return json({ error: 'bad-request' }, 400)
