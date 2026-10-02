@@ -201,6 +201,8 @@ Implementation (`src/lib/checkAnswer.ts`, unit-tested in `checkAnswer.test.ts`):
   word is another known form ("porque" for "por qué").
 - `diffWords()` aligns a wrong answer with the expected one word by word (ok / wrong / extra / missing) for the
   second-try hint (red / struck through / gap); a forgiven accent is ok, a meaning-changing one is wrong with `accent`.
+  A one-word answer comes back as one wrong part; with several accepted answers (vocab, review) there is nothing to
+  align, so the whole text is one wrong part (`wrongAsWhole()`).
 - Translation SK → ES also accepts an extra leading subject pronoun (Yo hablo… for Hablo…) and offers
   "Moja odpoveď bola tiež správna" on ❌, since free translation has many valid answers.
 
@@ -222,15 +224,20 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
 - **Detail slova** (`/word/:id`) — big serif Spanish word + 🔊, gender badge, translations,
   examples, note, conjugation table for verbs (scrollable tabs: presente · progresivo · pretérito · imperfecto · futuro;
   `TABLE_TENSES` in `conjugate.ts` is the single list for tabs, drill filter and task ids), ⭐ save.
-  Opened from a list (topic, search, archive) it swipes / pages (‹ n/N ›, ← →) to neighbouring words.
+  Opened from a list (topic, search, archive) it swipes / pages (‹ n/N ›, ← →) to neighbouring words. The swipe works
+  anywhere in `main` (also in the empty space under a short word), but not when it starts on a bar that scrolls
+  sideways (the tense tabs).
 - **Cvičiť** — pick exercise type (cards), topic, level → lesson player → result screen.
-  Lessons prefer items answered least often. "Precvičiť chyby" card when mistakes exist.
+  Each choice is a row of numbered lessons with fixed tasks (`getStablePool()`, 10 per lesson); the next lesson
+  unlocks at 80 %. "Precvičiť chyby" card when mistakes exist.
 - **Lekcia** — progress bar, one task per screen, big input / tiles, bottom "Skontrolovať" button,
   feedback sheet slides up (green / amber / red) with ⭐ (verb for conjugation, sentence otherwise).
   A wrong typed answer (cloze, conjugation, translation, vocab, dictation; `canRetry()`) is not final: `RetryHint`
-  under the field marks the wrong words and gaps of a sentence, the learner fixes and checks again as often as needed,
-  and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong. After a wrong try
-  "Vzdať sa" and "Skontrolovať" sit inside the hint (the open phone keyboard covers the bottom bar, which is hidden then).
+  under the field repeats the checked answer with its wrong words and gaps marked, the learner fixes and checks again
+  as often as needed, and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong. After a
+  wrong try "Vzdať sa" and "Skontrolovať" sit inside the hint (the open phone keyboard covers the bottom bar, which is
+  hidden then). Every check must be visible: the hint shakes each time, since the same mistake leaves it unchanged.
+  The accent keys under the field (á é í ó ú ñ ü ¿ ¡) are one row at any width.
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
   A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)
   with "Zopakovať lekciu".
@@ -298,6 +305,7 @@ src/
     search/  word/  exercises/  archive/  home/
   components/      ui primitives (Button, Card, Chip, Sheet, TabBar…)
   styles/          tokens.css
+e2e/               browser tests of the screens (Playwright): lesson retry, review typing, word swipe
 scripts/
   validate-data.ts
 ```
@@ -332,4 +340,8 @@ scripts/
   Slovak translations that sound natural (not word-for-word).
 - Run `npm run validate:data` after any data change, `npm test` after changing `src/lib` logic,
   and `npm run build` before finishing a phase.
+- Run `npm run test:e2e` after changing a screen (`src/features`, `src/components`) and before every push. It drives
+  the installed Chrome at phone size with touch against its own dev server on port 5199 (`playwright.config.ts`);
+  tests tap, they never click with a mouse. A bug found on the phone gets a test there before it is fixed.
+  Vercel does not run these tests: nothing stops a push that skipped them.
 - Test UI at 375px width first.
