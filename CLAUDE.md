@@ -234,9 +234,11 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   feedback sheet slides up (green / amber / red) with ⭐ (verb for conjugation, sentence otherwise).
   A wrong typed answer (cloze, conjugation, translation, vocab, dictation; `canRetry()`) is not final: `RetryHint`
   under the field repeats the checked answer with its wrong words and gaps marked, the learner fixes and checks again
-  as often as needed, and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong. After a
-  wrong try "Vzdať sa" and "Skontrolovať" sit inside the hint (the open phone keyboard covers the bottom bar, which is
-  hidden then). Every check must be visible: the hint shakes each time, since the same mistake leaves it unchanged.
+  as often as needed, and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong.
+  The open phone keyboard covers the bar at the bottom of the screen, so a typed task has no bar: `TypedAnswer` brings
+  "Vzdať sa" and "Skontrolovať" right under the field (inside the hint after a wrong try); the same in review, where
+  the first button is "Ukázať preklad" until a try was wrong. Only tasks without typing keep the bottom "Skontrolovať".
+  Every check must be visible: the hint shakes each time, since the same mistake leaves it unchanged.
   The accent keys under the field (á é í ó ú ñ ü ¿ ¡) are one row at any width.
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
   A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)

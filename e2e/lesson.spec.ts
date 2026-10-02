@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { askedSentence, button, countShakes, field, status } from './helpers.ts'
+import { askedSentence, button, countShakes, field, gapBelowField, status } from './helpers.ts'
 
 const lesson = (type: string) => `/practice/lesson?type=${type}&topic=all&level=A1&lesson=1`
 
@@ -64,6 +64,21 @@ test.describe('a wrong typed answer', () => {
     await expect(hint).toContainText(spanish[0])
     await expect(hint).not.toContainText(spanish.at(-1)!)
   })
+})
+
+test('"Vzdať sa" and "Skontrolovať" sit right under the field from the start', async ({ page }) => {
+  await page.goto(lesson('cloze'))
+  await expect(field(page)).toBeVisible()
+  await expect(button(page, 'Skontrolovať')).toHaveCount(1)
+  for (const name of ['Vzdať sa', 'Skontrolovať']) {
+    const gap = await gapBelowField(page, button(page, name))
+    expect(gap).toBeGreaterThanOrEqual(0)
+    expect(gap).toBeLessThan(24)
+  }
+  // Nothing typed yet: there is nothing to check, but giving up is possible.
+  await expect(button(page, 'Skontrolovať')).toBeDisabled()
+  await button(page, 'Vzdať sa').tap()
+  await expect(status(page)).toContainText('Správna odpoveď')
 })
 
 test('the accent keys sit in one row and type into the field', async ({ page }) => {

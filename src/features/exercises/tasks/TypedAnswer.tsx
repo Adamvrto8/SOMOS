@@ -1,4 +1,5 @@
 import { useRef, type KeyboardEvent } from 'react'
+import { Button } from '../../../components/Button'
 import type { Grade } from '../../../lib/lesson'
 import { RetryHint } from './RetryHint'
 import type { Status } from './status'
@@ -22,12 +23,39 @@ interface TypedAnswerProps {
   multiline?: boolean
   lang?: 'es' | 'sk' // language typed; Slovak needs no Spanish extra keys
   hint?: Grade | null // a wrong try that may still be fixed
-  onGiveUp?: () => void // with a hint: show the answer instead of trying again
+  onGiveUp?: () => void // the way out without an answer; with it the field brings its own buttons
+  giveUpLabel?: string
 }
 
-export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline, lang = 'es', hint, onGiveUp }: TypedAnswerProps) {
+export function TypedAnswer({
+  value,
+  onChange,
+  onSubmit,
+  label,
+  placeholder,
+  status,
+  multiline,
+  lang = 'es',
+  hint,
+  onGiveUp,
+  giveUpLabel = 'Vzdať sa',
+}: TypedAnswerProps) {
   const ref = useRef<HTMLTextAreaElement>(null)
   const locked = status !== undefined
+
+  // Right under the field, not in a bar at the bottom of the screen: the open phone keyboard covers that bar.
+  const actions = onGiveUp && (
+    <div className="flex gap-2">
+      {/* Called without the click event: the lesson's check takes an optional answer as its argument. */}
+      <Button variant="secondary" onClick={() => onGiveUp()}>
+        {giveUpLabel}
+      </Button>
+      {/* preventDefault keeps the focus (and the keyboard) in the answer field. */}
+      <Button onPointerDown={(e) => e.preventDefault()} onClick={() => onSubmit()} disabled={!value.trim()} className="flex-1">
+        Skontrolovať
+      </Button>
+    </div>
+  )
 
   const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     // Enter checks the answer (keyboard "done" key); no line breaks in answers.
@@ -73,7 +101,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
           status ? BORDER[status] : 'border-line focus:border-brick',
         ].join(' ')}
       />
-      {hint && onGiveUp && !locked && <RetryHint grade={hint} onCheck={onSubmit} onGiveUp={onGiveUp} />}
+      {!locked && actions && (hint ? <RetryHint grade={hint}>{actions}</RetryHint> : <div className="mt-2">{actions}</div>)}
       {!locked && lang === 'es' && (
         // One row at any width: a second row would end up under the phone keyboard.
         <div className="mt-2 grid grid-cols-9 gap-1" aria-label="Špeciálne znaky">

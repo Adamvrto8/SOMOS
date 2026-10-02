@@ -1,12 +1,10 @@
 import { CircleX } from 'lucide-react'
-import { useEffect, useRef } from 'react'
-import { Button } from '../../../components/Button'
+import { useEffect, useRef, type ReactNode } from 'react'
 import type { Grade } from '../../../lib/lesson'
 
 interface RetryHintProps {
   grade: Grade
-  onCheck: () => void
-  onGiveUp: () => void
+  children: ReactNode // the field's buttons ("Vzdať sa", "Skontrolovať"), kept inside the hint
 }
 
 const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'translateX(-6px)' }, { transform: 'translateX(5px)' }, { transform: 'translateX(0)' }]
@@ -15,11 +13,8 @@ const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'transla
  * A wrong try the learner may still fix: the answer that was checked, its wrong words in red,
  * the ones that do not belong struck through and a gap where a word is missing.
  * The correct words are not given away.
- *
- * The way on is here too, right under the field: the phone keyboard, open for the fix, covers
- * the bar at the bottom of the screen.
  */
-export function RetryHint({ grade, onCheck, onGiveUp }: RetryHintProps) {
+export function RetryHint({ grade, children }: RetryHintProps) {
   const ref = useRef<HTMLDivElement>(null)
   const diff = grade.diff
   const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
@@ -66,16 +61,7 @@ export function RetryHint({ grade, onCheck, onGiveUp }: RetryHintProps) {
         </p>
       )}
       {notes.length > 0 && <p className="mt-1 text-sm text-ink-muted">{notes.join(' ')}</p>}
-      <div className="mt-3 flex gap-2">
-        {/* Called without the click event: the lesson's check takes an optional answer as its argument. */}
-        <Button variant="secondary" onClick={() => onGiveUp()}>
-          Vzdať sa
-        </Button>
-        {/* preventDefault keeps the focus (and the keyboard) in the answer field. */}
-        <Button onPointerDown={(e) => e.preventDefault()} onClick={() => onCheck()} className="flex-1">
-          Skontrolovať
-        </Button>
-      </div>
+      <div className="mt-3">{children}</div>
     </div>
   )
 }

@@ -219,7 +219,9 @@ export function ReviewPage() {
                   onSubmit={check}
                   status={outcome ? statusOf(asGrade(outcome.check)) : undefined}
                   hint={hint}
-                  onGiveUp={giveUp}
+                  // Before a try the way out is to look at the other side and rate it by hand.
+                  onGiveUp={hint ? giveUp : reveal}
+                  giveUpLabel={hint ? undefined : 'Ukázať preklad'}
                   lang={entry.slovakFirst ? 'es' : 'sk'}
                   label={entry.slovakFirst ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
                   placeholder={entry.slovakFirst ? 'Po španielsky…' : 'Po slovensky…'}
@@ -232,26 +234,14 @@ export function ReviewPage() {
         )}
       </main>
 
-      {/* After a wrong try the buttons sit in the hint under the field, above the phone keyboard. */}
-      {entry && !hint && (
+      {/* A card that can be typed has its buttons under the field: the phone keyboard would cover this bar. */}
+      {entry && (revealed || !canType) && (
         <div className="fixed inset-x-0 bottom-0 z-20">
           <div className="mx-auto max-w-[480px] border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
             {!revealed ? (
-              canType ? (
-                <div className="flex gap-3">
-                  <Button variant="secondary" onClick={reveal}>
-                    Ukázať preklad
-                  </Button>
-                  {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
-                  <Button onPointerDown={(e) => e.preventDefault()} onClick={check} disabled={!typed.trim()} className="flex-1">
-                    Skontrolovať
-                  </Button>
-                </div>
-              ) : (
-                <Button onClick={reveal} className="w-full" autoFocus>
-                  Ukázať preklad
-                </Button>
-              )
+              <Button onClick={reveal} className="w-full" autoFocus>
+                Ukázať preklad
+              </Button>
             ) : outcome ? (
               <>
                 <TypedVerdict grade={outcome.grade} check={outcome.check} interval={intervals?.[outcome.grade]} />

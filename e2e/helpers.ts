@@ -16,6 +16,17 @@ export const field = (page: Page) => page.getByRole('textbox')
 export const status = (page: Page) => page.getByRole('status')
 export const button = (scope: Page | Locator, name: string) => scope.getByRole('button', { name, exact: true })
 
+/**
+ * How far below the answer field something starts, in px. The open phone keyboard covers the lower
+ * half of the screen, the bar at its bottom included: whatever is needed while typing has to sit
+ * right under the field.
+ */
+export async function gapBelowField(page: Page, target: Locator): Promise<number> {
+  const input = (await field(page).boundingBox())!
+  const box = (await target.boundingBox())!
+  return box.y - (input.y + input.height)
+}
+
 /** The sentence a cloze, translation or dictation task is asking for, found by its Slovak text on screen. */
 export async function askedSentence(page: Page): Promise<Sentence> {
   await expect(field(page)).toBeVisible()

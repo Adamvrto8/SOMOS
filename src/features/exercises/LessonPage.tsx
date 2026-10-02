@@ -336,15 +336,9 @@ export function LessonPage() {
                 onOverride={task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
               />
-            ) : hint ? null : ( // after a wrong try the buttons sit in the hint under the field, above the phone keyboard
-              <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                {canRetry(task) && (
-                  <Button variant="secondary" onClick={giveUp}>
-                    Vzdať sa
-                  </Button>
-                )}
-                {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
-                <Button onPointerDown={(e) => e.preventDefault()} onClick={() => check()} disabled={!canCheck || recording} className="flex-1">
+            ) : canRetry(task) ? null : ( // a typed task has its buttons under the field: the phone keyboard would cover this bar
+              <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
+                <Button onClick={() => check()} disabled={!canCheck || recording} className="w-full">
                   Skontrolovať
                 </Button>
               </div>
