@@ -1,17 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, tipById, verbById } from '../data'
 import { TABLE_TENSES } from './conjugate'
-import { conjugationTask, gradeTask, taskFromItem, type Grade, type Task } from './lesson'
+import { conjugationTask, gradeTask, taskFromItem, type ExerciseType, type Grade, type Task } from './lesson'
 import { tipFor, tipLabel } from './tips'
 
 const WRONG: Grade = { correct: false, verdict: 'wrong', expected: '' }
 
-function task(exercise: string, itemId: string): Task {
+function task(exercise: ExerciseType, itemId: string): Task {
   const found = taskFromItem(exercise, itemId)
   if (!found) throw new Error(`no task ${exercise} ${itemId}`)
   return found
 }
-const tipOf = (exercise: string, itemId: string) => tipFor(task(exercise, itemId), WRONG)
+const tipOf = (exercise: ExerciseType, itemId: string) => tipFor(task(exercise, itemId), WRONG)
 
 describe('tipFor', () => {
   it('gives a ser/estar cloze its tip and the reason of that sentence', () => {
@@ -49,7 +49,7 @@ describe('tipFor', () => {
 
   it('gives a whole sentence its main grammar topic, without claiming to explain the mistake', () => {
     // s520 is tagged imperfecto, preterito, ser-estar: ser/estar is the one most worth explaining.
-    for (const exercise of ['translation', 'builder', 'dictation', 'speaking']) {
+    for (const exercise of ['translation', 'builder', 'dictation', 'speaking'] as const) {
       const found = tipOf(exercise, 's520')
       expect(found?.tip.id).toBe('ser-estar')
       expect(found?.targeted).toBe(false)
