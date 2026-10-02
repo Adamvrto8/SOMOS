@@ -16,7 +16,9 @@ function describeImport(r: ImportResult): string {
   if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
   if (r.lessons) parts.push(`lekcie: ${r.lessons}`)
   const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''
-  return `Obnovené – ${parts.join(', ')}.${skipped}`
+  const settings = r.settings ? ' Obnovené sú aj nastavenia.' : ''
+  const reminder = r.reminderOff ? ' Pripomienku treba na tomto zariadení zapnúť znova.' : ''
+  return `Obnovené – ${parts.join(', ')}.${skipped}${settings}${reminder}`
 }
 
 export function BackupSettings() {
@@ -58,7 +60,7 @@ export function BackupSettings() {
     <section aria-labelledby="backup-heading">
       <SectionTitle id="backup-heading">Záloha</SectionTitle>
       <p className="text-sm leading-relaxed text-ink-muted">
-        Uložené a vlastné slová aj postup v lekciách sú len v tomto zariadení. Občas si stiahni zálohu, napríklad na
+        Uložené a vlastné slová, postup v lekciách aj nastavenia sú len v tomto zariadení. Občas si stiahni zálohu, napríklad na
         Google Drive, aby si o ne neprišiel pri výmene telefónu.
       </p>
       {persisted !== null && (

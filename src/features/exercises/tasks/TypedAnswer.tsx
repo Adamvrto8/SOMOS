@@ -1,4 +1,4 @@
-import { useRef, type KeyboardEvent } from 'react'
+import { useRef, useState, type KeyboardEvent } from 'react'
 import { Button } from '../../../components/Button'
 import type { Grade } from '../../../lib/lesson'
 import { RetryHint } from './RetryHint'
@@ -42,6 +42,10 @@ export function TypedAnswer({
 }: TypedAnswerProps) {
   const ref = useRef<HTMLTextAreaElement>(null)
   const locked = status !== undefined
+  // The text a hint is about. Once the learner changes it, the hint belongs to the previous try and fades.
+  const [checked, setChecked] = useState({ hint, value })
+  if (checked.hint !== hint) setChecked({ hint, value })
+  const stale = checked.hint === hint && checked.value !== value
 
   // Right under the field, not in a bar at the bottom of the screen: the open phone keyboard covers that bar.
   const actions = onGiveUp && (
@@ -101,7 +105,13 @@ export function TypedAnswer({
           status ? BORDER[status] : 'border-line focus:border-brick',
         ].join(' ')}
       />
-      {!locked && actions && (hint ? <RetryHint grade={hint}>{actions}</RetryHint> : <div className="mt-2">{actions}</div>)}
+      {!locked && actions && (hint ? (
+          <RetryHint grade={hint} stale={stale}>
+            {actions}
+          </RetryHint>
+        ) : (
+          <div className="mt-2">{actions}</div>
+        ))}
       {!locked && lang === 'es' && (
         // One row at any width: a second row would end up under the phone keyboard.
         <div className="mt-2 grid grid-cols-9 gap-1" aria-label="Špeciálne znaky">

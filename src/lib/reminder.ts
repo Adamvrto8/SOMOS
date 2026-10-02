@@ -66,6 +66,9 @@ function subscribe(notify: () => void) {
   }
 }
 
+/** Current settings outside React (the backup). */
+export const getReminderSettings = () => settings
+
 export function useReminderSettings(): ReminderSettings {
   return useSyncExternalStore(subscribe, () => settings)
 }

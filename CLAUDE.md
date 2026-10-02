@@ -39,7 +39,9 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    user's **own custom words** (ES, SK, note, topic), and **Chyby** — exercises answered wrong,
    kept until the learner removes them. ⭐ + custom words are reviewed via spaced repetition; words practised in Slovná zásoba / Časovanie join too (auto review, daily limit in Nastavenia);
    mistakes are practised as a lesson. Export / import JSON backup (IndexedDB data + the numbered lessons'
-   progress from localStorage, merged on import by `mergeProgression()`; settings are not backed up).
+   progress from localStorage, merged on import by `mergeProgression()`, + the settings: theme, daily goal, automatic
+   review, reminder time — `settingsBackup.ts`; a restore replaces them. The voice stays per device, and the reminder
+   is never switched on by a restore: notifications need a tap on each device, the import says so).
 6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. Content A1–A2, plus B1 since phase 7 (Cvičiť level filter: A1 / A2 / B1).
 
 ### Mexican Spanish rules (important for all content)
@@ -239,6 +241,7 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   "Vzdať sa" and "Skontrolovať" right under the field (inside the hint after a wrong try); the same in review, where
   the first button is "Ukázať preklad" until a try was wrong. Only tasks without typing keep the bottom "Skontrolovať".
   Every check must be visible: the hint shakes each time, since the same mistake leaves it unchanged.
+  While the answer is being edited the hint's text fades (it is about the previous try); its buttons do not.
   The accent keys under the field (á é í ó ú ñ ü ¿ ¡) are one row at any width.
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
   A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)

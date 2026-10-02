@@ -326,7 +326,9 @@ function SessionEnd({ reviewed }: { reviewed: number }) {
           ) : (
             <>
               <h1 className="mt-2 font-serif text-2xl font-semibold">Nič na zopakovanie</h1>
-              <p className="mt-1 text-ink-muted">Dnes máš všetko zopakované. Nové slová si ulož hviezdičkou pri slove.</p>
+              <p className="mt-1 text-ink-muted">
+                Dnes máš všetko zopakované. Pribudnú sem slová, ktoré precvičíš v lekciách, a tie, ktoré si uložíš hviezdičkou.
+              </p>
             </>
           )}
         </div>

@@ -1,10 +1,15 @@
+import { getAutoReview, setAutoReview } from './autoReview'
+import { getDailyGoal, setDailyGoal } from './dailyGoal'
 import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
+import { getReminderSettings, setReminderTime } from './reminder'
+import { parseSettingsBackup, type SettingsBackup } from './settingsBackup'
 import { syncReviewCards } from './srs'
+import { getThemePref, setThemePref } from './theme'
 
-// JSON backup of the learner's data on the device: IndexedDB and the numbered lessons' progress
-// (localStorage). Settings and the DeepL cache are not backed up.
+// JSON backup of the learner's data on the device: IndexedDB, the numbered lessons' progress and
+// the settings (localStorage; see settingsBackup.ts for what is left out). The DeepL cache is not backed up.
 
 const APP = 'somos'
 const VERSION = 1
@@ -19,6 +24,7 @@ export interface Backup {
   attempts: Attempt[]
   mistakes: Mistake[] // missing in backups made before the mistakes list existed
   lessons?: LessonProgressionMap // passed lessons and best scores; missing in backups made before 2026-10-01
+  settings?: SettingsBackup // missing in backups made before 2026-10-02
 }
 
 export interface ImportResult {
@@ -29,6 +35,26 @@ export interface ImportResult {
   mistakes: number
   lessons: number
   skipped: number
+  settings: boolean // the backup had settings and they now apply here
+  reminderOff: boolean // the reminder was on in the backup but is off on this device
+}
+
+function currentSettings(): SettingsBackup {
+  const { enabled, time } = getReminderSettings()
+  return { theme: getThemePref(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time } }
+}
+
+/** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
+async function applySettings(settings: SettingsBackup): Promise<boolean> {
+  if (settings.theme) setThemePref(settings.theme)
+  if (settings.dailyGoal) setDailyGoal(settings.dailyGoal)
+  if (settings.autoReview) setAutoReview(settings.autoReview)
+  if (!settings.reminder) return false
+  const here = getReminderSettings()
+  if (here.enabled) return false // a reminder that runs here keeps its own time
+  // Only the time: notifications have to be allowed on each device, by a tap of the learner.
+  await setReminderTime(settings.reminder.time)
+  return settings.reminder.enabled
 }
 
 export async function createBackup(): Promise<Backup> {
@@ -39,7 +65,18 @@ export async function createBackup(): Promise<Backup> {
     db.attempts.toArray(),
     db.mistakes.toArray(),
   ])
-  return { app: APP, version: VERSION, exportedAt: new Date().toISOString(), customWords, savedItems, reviewCards, attempts, mistakes, lessons: getProgressionSnapshot() }
+  return {
+    app: APP,
+    version: VERSION,
+    exportedAt: new Date().toISOString(),
+    customWords,
+    savedItems,
+    reviewCards,
+    attempts,
+    mistakes,
+    lessons: getProgressionSnapshot(),
+    settings: currentSettings(),
+  }
 }
 
 export async function downloadBackup(): Promise<void> {
@@ -109,6 +146,7 @@ export function parseBackup(text: string): ParseResult {
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
     lessons: lessons.records,
+    settings: parseSettingsBackup(data.settings),
   }
   return { ok: true, backup, skipped }
 }
@@ -140,9 +178,14 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       mistakes: backup.mistakes.length,
       lessons: 0,
       skipped,
+      settings: false,
+      reminderOff: false,
     }
   })
   result.lessons = mergeProgression(backup.lessons ?? {})
+  const settings = backup.settings ?? {}
+  result.settings = Object.keys(settings).length > 0
+  result.reminderOff = await applySettings(settings)
   // Backups made before review cards existed restore saved words without cards.
   await syncReviewCards()
   await syncPracticeCards()

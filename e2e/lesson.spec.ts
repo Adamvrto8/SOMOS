@@ -21,9 +21,16 @@ test.describe('a wrong typed answer', () => {
     await expect(button(hint, 'Vzdať sa')).toBeVisible()
     await expect(field(page)).toBeFocused()
 
-    // Still wrong: the hint now repeats the new answer.
+    // While the answer is being changed, the hint (about the previous try) fades; its buttons do not.
+    const message = hint.getByText('Ešte to nie je ono').locator('..')
+    await expect(message).toHaveCSS('opacity', '1')
     await field(page).fill('yyyy')
+    await expect(message).toHaveCSS('opacity', '0.5')
+    await expect(button(hint, 'Skontrolovať')).toHaveCSS('opacity', '1')
+
+    // Still wrong: the hint now repeats the new answer.
     await button(hint, 'Skontrolovať').tap()
+    await expect(message).toHaveCSS('opacity', '1')
     await expect(hint).toContainText('yyyy')
     await expect(hint).not.toContainText('zzzz')
 

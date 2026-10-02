@@ -46,6 +46,9 @@ darkQuery.addEventListener('change', () => {
   if (currentPref === 'system') applyTheme('system')
 })
 
+/** Current preference outside React (the backup). */
+export const getThemePref = () => currentPref
+
 export function setThemePref(pref: ThemePref) {
   currentPref = pref
   writeThemePref(pref)
