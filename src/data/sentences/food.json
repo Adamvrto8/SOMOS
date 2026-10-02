@@ -30,6 +30,7 @@
         "answer": "están",
         "lemma": "estar",
         "hint": "ser/estar · ellos · presente",
+        "why": "state",
         "distractors": ["son", "está", "estamos"]
       },
       {

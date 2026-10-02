@@ -1,0 +1,655 @@
+[
+  {
+    "id": "ser-estar",
+    "title": "ser a estar",
+    "intro": "Obe slovesá znamenajú „byť“. Ser hovorí, čo alebo aké niečo je. Estar hovorí, kde to je a v akom stave je práve teraz.",
+    "related": ["progresivo", "adjectives"],
+    "rules": [
+      {
+        "id": "identity",
+        "verb": "ser",
+        "title": "Kto alebo čo to je",
+        "text": "Meno, vzťah, národnosť, aj to, kým bol niekto kedysi (de niño = ako dieťa).",
+        "because": "Hovorí sa, kto alebo čo to je, preto ser.",
+        "examples": [
+          { "es": "Ella es mi hermana.", "sk": "Ona je moja sestra." },
+          { "es": "Cuando era niño, vivía en Puebla.", "sk": "Keď som bol malý, býval som v Pueble." }
+        ]
+      },
+      {
+        "id": "origin",
+        "verb": "ser",
+        "title": "Pôvod",
+        "text": "Odkiaľ niekto alebo niečo je: ser de.",
+        "because": "Ide o pôvod (odkiaľ kto je), preto ser.",
+        "examples": [
+          { "es": "Soy de Eslovaquia.", "sk": "Som zo Slovenska." },
+          { "es": "Este café es de Chiapas.", "sk": "Táto káva je z Chiapasu." }
+        ]
+      },
+      {
+        "id": "profession",
+        "verb": "ser",
+        "title": "Povolanie",
+        "text": "Bez člena: soy maestro, nie soy un maestro.",
+        "because": "Ide o povolanie, preto ser.",
+        "examples": [
+          { "es": "Mi mamá es doctora.", "sk": "Mama je lekárka." },
+          { "es": "Antes era mesero.", "sk": "Predtým som bol čašník." }
+        ]
+      },
+      {
+        "id": "trait",
+        "verb": "ser",
+        "title": "Vlastnosť, opis",
+        "text": "Aké niečo je vo všeobecnosti: povaha, výzor, farba, veľkosť, cena, hodnotenie.",
+        "because": "Opisuje sa, aké niečo je vo všeobecnosti, preto ser.",
+        "examples": [
+          { "es": "Mi tío es muy divertido.", "sk": "Môj strýko je veľmi zábavný." },
+          { "es": "La casa es grande.", "sk": "Dom je veľký." },
+          { "es": "El carro es rojo.", "sk": "Auto je červené." }
+        ]
+      },
+      {
+        "id": "time",
+        "verb": "ser",
+        "title": "Čas a dátum",
+        "text": "Hodiny, dni, dátumy. Pri jednej hodine es la una, inak son las…",
+        "because": "Ide o čas alebo dátum, preto ser.",
+        "examples": [
+          { "es": "Son las tres de la tarde.", "sk": "Sú tri hodiny poobede." },
+          { "es": "Hoy es lunes.", "sk": "Dnes je pondelok." }
+        ]
+      },
+      {
+        "id": "possession",
+        "verb": "ser",
+        "title": "Komu to patrí, z čoho to je",
+        "text": "Ser de + majiteľ alebo materiál.",
+        "because": "Hovorí sa, komu to patrí alebo z čoho to je, preto ser.",
+        "examples": [
+          { "es": "El celular es de Ana.", "sk": "Mobil je Anin." },
+          { "es": "La mesa es de madera.", "sk": "Stôl je z dreva." }
+        ]
+      },
+      {
+        "id": "event",
+        "verb": "ser",
+        "title": "Kde a kedy sa niečo koná",
+        "text": "Udalosť (fiesta, examen, junta) sa „koná“, preto ser, aj keď ide o miesto.",
+        "because": "Hovorí sa, kedy alebo kde sa niečo koná, preto ser.",
+        "examples": [
+          { "es": "La fiesta es en mi casa.", "sk": "Oslava je u mňa doma." },
+          { "es": "El examen será el lunes.", "sk": "Skúška bude v pondelok." }
+        ]
+      },
+      {
+        "id": "place",
+        "verb": "estar",
+        "title": "Poloha",
+        "text": "Kde sa niekto alebo niečo nachádza.",
+        "because": "Ide o to, kde sa niekto alebo niečo nachádza, preto estar.",
+        "examples": [
+          { "es": "Estoy en casa.", "sk": "Som doma." },
+          { "es": "¿Dónde está el baño?", "sk": "Kde je záchod?" }
+        ]
+      },
+      {
+        "id": "state",
+        "verb": "estar",
+        "title": "Stav, nálada, zdravie",
+        "text": "Ako sa niekto má alebo aké je niečo práve teraz. Patrí sem aj to, ako niečo chutí.",
+        "because": "Ide o stav alebo náladu práve teraz, preto estar.",
+        "examples": [
+          { "es": "Estoy cansado.", "sk": "Som unavený." },
+          { "es": "¿Cómo estás?", "sk": "Ako sa máš?" },
+          { "es": "Los tacos están muy ricos.", "sk": "Tie tacos sú výborné." }
+        ]
+      },
+      {
+        "id": "result",
+        "verb": "estar",
+        "title": "Výsledok deja",
+        "text": "Stav, ktorý z niečoho vznikol. Často príčastie na -ado, -ido: cerrado, casado, dormido.",
+        "because": "Ide o stav, ktorý je výsledkom deja, preto estar.",
+        "examples": [
+          { "es": "La tienda está cerrada.", "sk": "Obchod je zatvorený." },
+          { "es": "Mis papás están casados.", "sk": "Rodičia sú manželia." }
+        ]
+      },
+      {
+        "id": "expression",
+        "verb": "estar",
+        "title": "Ustálené spojenia",
+        "text": "Niektoré spojenia sa treba naučiť celé: estar de acuerdo, estar en oferta, estar de vacaciones.",
+        "because": "Je to ustálené spojenie so slovesom estar.",
+        "examples": [
+          { "es": "Estoy de acuerdo.", "sk": "Súhlasím." },
+          { "es": "Estamos de vacaciones.", "sk": "Sme na dovolenke." }
+        ]
+      },
+      {
+        "id": "progressive",
+        "verb": "estar",
+        "title": "Práve prebiehajúci dej",
+        "text": "Estar + gerundium (-ando, -iendo).",
+        "because": "Dej práve prebieha (estar + gerundium), preto estar.",
+        "examples": [{ "es": "Estoy comiendo.", "sk": "Práve jem." }]
+      }
+    ]
+  },
+  {
+    "id": "presente",
+    "title": "Prítomný čas (presente)",
+    "intro": "Hovorí o tom, čo robíš bežne alebo práve teraz. Koncovka sa mení podľa osoby, zámeno (yo, tú…) sa väčšinou vynecháva.",
+    "related": ["reflexive", "progresivo"],
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Slovesá na -ar",
+        "text": "hablar: hablo, hablas, habla, hablamos, hablan.",
+        "examples": [
+          { "es": "Hablo español.", "sk": "Hovorím po španielsky." },
+          { "es": "¿Trabajas mañana?", "sk": "Pracuješ zajtra?" }
+        ]
+      },
+      {
+        "id": "er-ir",
+        "title": "Slovesá na -er a -ir",
+        "text": "comer: como, comes, come, comemos, comen. vivir: vivo, vives, vive, vivimos, viven.",
+        "examples": [
+          { "es": "Comemos a las dos.", "sk": "Jeme o druhej." },
+          { "es": "Viven en Guadalajara.", "sk": "Bývajú v Guadalajare." }
+        ]
+      },
+      {
+        "id": "stem",
+        "title": "Zmena v kmeni",
+        "text": "V niektorých slovesách sa mení samohláska: e → ie (querer: quiero), o → ue (poder: puedo), e → i (pedir: pido). V tvare nosotros sa nemení: queremos, podemos, pedimos.",
+        "examples": [
+          { "es": "Quiero un café.", "sk": "Chcem kávu." },
+          { "es": "No puedo ir hoy.", "sk": "Dnes nemôžem ísť." }
+        ]
+      },
+      {
+        "id": "yo",
+        "title": "Nepravidelné yo",
+        "text": "Niektoré slovesá majú zvláštny len tvar pre yo: tengo, hago, salgo, pongo, digo, vengo, sé, conozco, doy, veo.",
+        "examples": [
+          { "es": "Tengo dos hermanos.", "sk": "Mám dvoch bratov." },
+          { "es": "Salgo a las ocho.", "sk": "Odchádzam o ôsmej." }
+        ]
+      },
+      {
+        "id": "irregular",
+        "title": "Úplne nepravidelné",
+        "text": "ser: soy, eres, es, somos, son. estar: estoy, estás, está, estamos, están. ir: voy, vas, va, vamos, van.",
+        "examples": [{ "es": "Voy al mercado.", "sk": "Idem na trh." }]
+      }
+    ]
+  },
+  {
+    "id": "preterito",
+    "title": "Pretérito (dokončený minulý čas)",
+    "intro": "Hovorí o deji, ktorý sa stal a skončil: včera, minulý týždeň, raz. V Mexiku je to bežný minulý čas aj pre nedávne udalosti.",
+    "related": ["imperfecto", "preterito-imperfecto"],
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Slovesá na -ar",
+        "text": "hablar: hablé, hablaste, habló, hablamos, hablaron. Prízvuk na konci je dôležitý: hablo = hovorím, habló = hovoril.",
+        "examples": [
+          { "es": "Ayer hablé con mi mamá.", "sk": "Včera som hovoril s mamou." },
+          { "es": "Compraron una casa.", "sk": "Kúpili dom." }
+        ]
+      },
+      {
+        "id": "er-ir",
+        "title": "Slovesá na -er a -ir",
+        "text": "comer: comí, comiste, comió, comimos, comieron. vivir: viví, viviste, vivió, vivimos, vivieron.",
+        "examples": [
+          { "es": "Comí tacos.", "sk": "Jedol som tacos." },
+          { "es": "¿Saliste anoche?", "sk": "Bol si včera večer vonku?" }
+        ]
+      },
+      {
+        "id": "stems",
+        "title": "Nepravidelný kmeň",
+        "text": "Tieto slovesá majú iný kmeň a koncovky bez prízvuku (-e, -iste, -o, -imos, -ieron): tener → tuve, estar → estuve, poder → pude, hacer → hice (hizo), venir → vine, decir → dije (dijeron).",
+        "examples": [
+          { "es": "No pude dormir.", "sk": "Nemohol som spať." },
+          { "es": "¿Qué hiciste ayer?", "sk": "Čo si robil včera?" }
+        ]
+      },
+      {
+        "id": "ser-ir",
+        "title": "ser a ir majú rovnaké tvary",
+        "text": "fui, fuiste, fue, fuimos, fueron. Význam určí zvyšok vety.",
+        "examples": [
+          { "es": "Fui al cine.", "sk": "Bol som v kine." },
+          { "es": "Fue un día muy bonito.", "sk": "Bol to veľmi pekný deň." }
+        ]
+      },
+      {
+        "id": "spelling",
+        "title": "Zmena pravopisu v tvare yo",
+        "text": "Aby sa zachovala výslovnosť: -car → -qué (busqué), -gar → -gué (llegué), -zar → -cé (empecé).",
+        "examples": [
+          { "es": "Llegué tarde.", "sk": "Prišiel som neskoro." },
+          { "es": "Busqué mis llaves.", "sk": "Hľadal som kľúče." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "imperfecto",
+    "title": "Imperfecto (priebehový minulý čas)",
+    "intro": "Opisuje, čo sa dialo opakovane alebo ako veci vyzerali: čo si robieval, aké to bolo, koľko si mal rokov.",
+    "related": ["preterito", "preterito-imperfecto"],
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Slovesá na -ar",
+        "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablaban. Tvar pre yo a él je rovnaký.",
+        "examples": [{ "es": "De niño jugaba en la calle.", "sk": "Ako dieťa som sa hrával na ulici." }]
+      },
+      {
+        "id": "er-ir",
+        "title": "Slovesá na -er a -ir",
+        "text": "comer: comía, comías, comía, comíamos, comían. vivir: vivía, vivías, vivía, vivíamos, vivían.",
+        "examples": [{ "es": "Vivíamos cerca del mar.", "sk": "Bývali sme blízko mora." }]
+      },
+      {
+        "id": "irregular",
+        "title": "Len tri nepravidelné slovesá",
+        "text": "ser: era, eras, era, éramos, eran. ir: iba, ibas, iba, íbamos, iban. ver: veía, veías, veía, veíamos, veían.",
+        "examples": [{ "es": "Cuando era niño, iba a la escuela a pie.", "sk": "Keď som bol malý, chodil som do školy pešo." }]
+      },
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Zvyk (siempre, todos los días, antes), opis v minulosti, vek a čas.",
+        "examples": [
+          { "es": "Antes trabajaba en un banco.", "sk": "Predtým som pracoval v banke." },
+          { "es": "Tenía diez años.", "sk": "Mal som desať rokov." },
+          { "es": "Eran las ocho.", "sk": "Bolo osem hodín." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "preterito-imperfecto",
+    "title": "Pretérito alebo imperfecto?",
+    "intro": "Oba sú minulé časy. Pretérito hovorí, čo sa stalo. Imperfecto hovorí, ako to vtedy vyzeralo alebo čo sa dialo opakovane.",
+    "related": ["preterito", "imperfecto"],
+    "rules": [
+      {
+        "id": "event",
+        "title": "Jedna dokončená udalosť → pretérito",
+        "text": "Slová ako ayer, anoche, el lunes, una vez, hace dos años.",
+        "examples": [
+          { "es": "Ayer fui al doctor.", "sk": "Včera som bol u lekára." },
+          { "es": "Viví en México dos años.", "sk": "Žil som v Mexiku dva roky." }
+        ]
+      },
+      {
+        "id": "habit",
+        "title": "Zvyk a opakovanie → imperfecto",
+        "text": "Slová ako siempre, todos los días, cada verano, de niño, antes.",
+        "examples": [{ "es": "Íbamos a la playa cada verano.", "sk": "Každé leto sme chodievali na pláž." }]
+      },
+      {
+        "id": "background",
+        "title": "Opis a pozadie → imperfecto",
+        "text": "Aké bolo počasie, ako sa kto cítil, koľko bolo hodín, čo práve prebiehalo.",
+        "examples": [{ "es": "Hacía frío y estaba cansado.", "sk": "Bola zima a bol som unavený." }]
+      },
+      {
+        "id": "together",
+        "title": "Oba v jednej vete",
+        "text": "Imperfecto je pozadie, pretérito je to, čo sa zrazu stalo.",
+        "examples": [
+          { "es": "Dormía cuando sonó el teléfono.", "sk": "Spal som, keď zazvonil telefón." },
+          { "es": "Cuando llegamos, el hotel ya estaba lleno.", "sk": "Keď sme dorazili, hotel už bol plný." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "futuro",
+    "title": "Budúci čas (futuro)",
+    "intro": "Koncovky sa pridávajú k celému neurčitku a sú rovnaké pre všetky slovesá.",
+    "related": ["presente"],
+    "rules": [
+      {
+        "id": "endings",
+        "title": "Neurčitok + koncovka",
+        "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablarán. Rovnako comeré, viviré.",
+        "examples": [
+          { "es": "Mañana hablaré con el jefe.", "sk": "Zajtra sa porozprávam so šéfom." },
+          { "es": "Llegarán el viernes.", "sk": "Prídu v piatok." }
+        ]
+      },
+      {
+        "id": "stems",
+        "title": "Nepravidelný kmeň",
+        "text": "Koncovky ostávajú, mení sa kmeň: tener → tendré, poder → podré, salir → saldré, venir → vendré, poner → pondré, decir → diré, hacer → haré, querer → querré, saber → sabré.",
+        "examples": [
+          { "es": "Tendré tiempo el sábado.", "sk": "V sobotu budem mať čas." },
+          { "es": "¿Qué harás mañana?", "sk": "Čo budeš robiť zajtra?" }
+        ]
+      },
+      {
+        "id": "ir-a",
+        "title": "V bežnej reči: ir a + neurčitok",
+        "text": "O blízkej budúcnosti sa v Mexiku hovorí najčastejšie takto: voy a, vas a, va a, vamos a, van a.",
+        "examples": [
+          { "es": "Voy a comer.", "sk": "Idem jesť." },
+          { "es": "Vamos a viajar en mayo.", "sk": "V máji budeme cestovať." }
+        ]
+      },
+      {
+        "id": "guess",
+        "title": "Domnienka",
+        "text": "Futuro vyjadruje aj odhad o prítomnosti.",
+        "examples": [{ "es": "¿Dónde estará Ana?", "sk": "Kde asi je Ana?" }]
+      }
+    ]
+  },
+  {
+    "id": "progresivo",
+    "title": "Priebehový čas (estar + gerundio)",
+    "intro": "Hovorí o tom, čo sa deje práve v tejto chvíli. Skladá sa zo slovesa estar a gerundia.",
+    "related": ["ser-estar", "presente"],
+    "rules": [
+      {
+        "id": "form",
+        "title": "estar + gerundium",
+        "text": "Časuje sa len estar: estoy, estás, está, estamos, están. Gerundium sa nemení.",
+        "examples": [
+          { "es": "Estoy trabajando.", "sk": "Práve pracujem." },
+          { "es": "¿Qué estás haciendo?", "sk": "Čo práve robíš?" }
+        ]
+      },
+      {
+        "id": "gerund",
+        "title": "Ako sa tvorí gerundium",
+        "text": "-ar → -ando (hablar: hablando), -er a -ir → -iendo (comer: comiendo, vivir: viviendo).",
+        "examples": [{ "es": "Estamos comiendo.", "sk": "Práve jeme." }]
+      },
+      {
+        "id": "irregular",
+        "title": "Nepravidelné gerundiá",
+        "text": "leer → leyendo, ir → yendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
+        "examples": [
+          { "es": "El niño está durmiendo.", "sk": "Dieťa práve spí." },
+          { "es": "Estoy leyendo un libro.", "sk": "Čítam knihu." }
+        ]
+      },
+      {
+        "id": "use",
+        "title": "Kedy stačí presente",
+        "text": "Na zvyky a blízku budúcnosť sa používa presente, nie priebehový čas.",
+        "examples": [
+          { "es": "Trabajo en un banco.", "sk": "Pracujem v banke." },
+          { "es": "Mañana trabajo.", "sk": "Zajtra pracujem." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gender",
+    "title": "Rod podstatných mien",
+    "intro": "Každé podstatné meno je mužského (el) alebo ženského (la) rodu. Rod sa často dá odhadnúť podľa koncovky, ale so slovenčinou sa nezhoduje.",
+    "related": ["articles", "adjectives"],
+    "rules": [
+      {
+        "id": "o-a",
+        "title": "-o je mužský, -a je ženský",
+        "text": "Platí to pre väčšinu slov.",
+        "examples": [
+          { "es": "el libro", "sk": "kniha" },
+          { "es": "la mesa", "sk": "stôl" }
+        ]
+      },
+      {
+        "id": "feminine",
+        "title": "Ženské koncovky",
+        "text": "-ción, -sión, -dad, -tad, -umbre.",
+        "examples": [
+          { "es": "la canción", "sk": "pieseň" },
+          { "es": "la ciudad", "sk": "mesto" },
+          { "es": "la costumbre", "sk": "zvyk" }
+        ]
+      },
+      {
+        "id": "masculine",
+        "title": "Mužské koncovky",
+        "text": "-or, -aje a väčšina slov na -ma gréckeho pôvodu.",
+        "examples": [
+          { "es": "el color", "sk": "farba" },
+          { "es": "el viaje", "sk": "cesta" },
+          { "es": "el problema", "sk": "problém" }
+        ]
+      },
+      {
+        "id": "exceptions",
+        "title": "Výnimky, ktoré sa oplatí vedieť",
+        "text": "Ženské sú aj la foto a la moto (skrátené z fotografía, motocicleta).",
+        "examples": [
+          { "es": "el día", "sk": "deň" },
+          { "es": "la mano", "sk": "ruka" },
+          { "es": "el mapa", "sk": "mapa" }
+        ]
+      },
+      {
+        "id": "people",
+        "title": "Osoby",
+        "text": "Rod podľa pohlavia. Koncovka -o sa mení na -a, k spoluhláske sa -a pridá.",
+        "examples": [
+          { "es": "el maestro, la maestra", "sk": "učiteľ, učiteľka" },
+          { "es": "el doctor, la doctora", "sk": "lekár, lekárka" }
+        ]
+      },
+      {
+        "id": "a-tonica",
+        "title": "el pred prízvučným a-",
+        "text": "Ženské slová, ktoré sa začínajú prízvučným a- alebo ha-, majú v jednotnom čísle člen el. Rod ostáva ženský.",
+        "examples": [{ "es": "El agua está fría.", "sk": "Voda je studená." }]
+      }
+    ]
+  },
+  {
+    "id": "articles",
+    "title": "Členy (el, la, un, una)",
+    "intro": "Slovenčina členy nemá, španielčina ich používa takmer vždy. Člen sa zhoduje s podstatným menom v rode a čísle.",
+    "related": ["gender", "adjectives"],
+    "rules": [
+      {
+        "id": "definite",
+        "title": "Určitý člen: el, la, los, las",
+        "text": "O niečom konkrétnom alebo známom, a tiež keď hovoríš o veciach všeobecne.",
+        "examples": [
+          { "es": "La casa es grande.", "sk": "Ten dom je veľký." },
+          { "es": "Me gusta el café.", "sk": "Mám rád kávu." }
+        ]
+      },
+      {
+        "id": "indefinite",
+        "title": "Neurčitý člen: un, una, unos, unas",
+        "text": "O niečom, čo spomínaš prvýkrát alebo je jedno z mnohých.",
+        "examples": [
+          { "es": "Tengo un perro.", "sk": "Mám psa." },
+          { "es": "Busco una farmacia.", "sk": "Hľadám lekáreň." }
+        ]
+      },
+      {
+        "id": "contractions",
+        "title": "al a del",
+        "text": "a + el = al, de + el = del. S la, los, las sa nespája.",
+        "examples": [
+          { "es": "Voy al mercado.", "sk": "Idem na trh." },
+          { "es": "Es el carro del vecino.", "sk": "To je susedovo auto." }
+        ]
+      },
+      {
+        "id": "days",
+        "title": "Dni a hodiny",
+        "text": "el lunes = v pondelok, los lunes = každý pondelok. Hodiny majú la alebo las.",
+        "examples": [
+          { "es": "El lunes tengo junta.", "sk": "V pondelok mám poradu." },
+          { "es": "Son las ocho.", "sk": "Je osem hodín." }
+        ]
+      },
+      {
+        "id": "none",
+        "title": "Kedy člen nie je",
+        "text": "Pri povolaní po ser a pri neurčitom množstve.",
+        "examples": [
+          { "es": "Soy ingeniero.", "sk": "Som inžinier." },
+          { "es": "No tengo dinero.", "sk": "Nemám peniaze." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adjectives",
+    "title": "Zhoda prídavných mien",
+    "intro": "Prídavné meno má rovnaký rod a číslo ako podstatné meno a zvyčajne stojí za ním.",
+    "related": ["gender", "articles", "ser-estar"],
+    "rules": [
+      {
+        "id": "o-a",
+        "title": "-o / -a",
+        "text": "Prídavné mená na -o majú ženský tvar na -a.",
+        "examples": [
+          { "es": "un carro nuevo", "sk": "nové auto" },
+          { "es": "una casa nueva", "sk": "nový dom" }
+        ]
+      },
+      {
+        "id": "same",
+        "title": "Rovnaký tvar pre oba rody",
+        "text": "Prídavné mená na -e alebo na spoluhlásku sa v rode nemenia.",
+        "examples": [
+          { "es": "un libro interesante", "sk": "zaujímavá kniha" },
+          { "es": "una clase fácil", "sk": "ľahká hodina" }
+        ]
+      },
+      {
+        "id": "plural",
+        "title": "Množné číslo",
+        "text": "Po samohláske -s, po spoluhláske -es.",
+        "examples": [
+          { "es": "Los tacos están ricos.", "sk": "Tacos sú výborné." },
+          { "es": "Son preguntas difíciles.", "sk": "Sú to ťažké otázky." }
+        ]
+      },
+      {
+        "id": "after-verb",
+        "title": "Aj po ser a estar",
+        "text": "Prídavné meno sa zhoduje s tým, o kom alebo o čom sa hovorí.",
+        "examples": [
+          { "es": "Ella está cansada.", "sk": "Je unavená." },
+          { "es": "Mis hijos son altos.", "sk": "Moje deti sú vysoké." }
+        ]
+      },
+      {
+        "id": "position",
+        "title": "Poradie slov",
+        "text": "Najprv podstatné meno, potom prídavné. Pred ním stoja napríklad mucho, poco, otro. Bueno a malo sa pred mužským menom skracujú na buen, mal.",
+        "examples": [
+          { "es": "una camisa blanca", "sk": "biela košeľa" },
+          { "es": "un buen amigo", "sk": "dobrý kamarát" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reflexive",
+    "title": "Zvratné slovesá",
+    "intro": "Neurčitok sa končí na -se (levantarse). Zámeno sa mení podľa osoby: me, te, se, nos, se.",
+    "related": ["presente"],
+    "rules": [
+      {
+        "id": "forms",
+        "title": "Časovanie",
+        "text": "levantarse: me levanto, te levantas, se levanta, nos levantamos, se levantan.",
+        "examples": [
+          { "es": "Me levanto a las siete.", "sk": "Vstávam o siedmej." },
+          { "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?" }
+        ]
+      },
+      {
+        "id": "position",
+        "title": "Kde stojí zámeno",
+        "text": "Pred časovaným slovesom. Pri neurčitku a gerundiu môže byť aj pripojené na konci.",
+        "examples": [
+          { "es": "Me voy a bañar.", "sk": "Idem sa okúpať." },
+          { "es": "Voy a bañarme.", "sk": "Idem sa okúpať." }
+        ]
+      },
+      {
+        "id": "negative",
+        "title": "Zápor",
+        "text": "No stojí pred zámenom.",
+        "examples": [{ "es": "No me acuerdo.", "sk": "Nepamätám si." }]
+      },
+      {
+        "id": "not-like-slovak",
+        "title": "Nie vždy ako v slovenčine",
+        "text": "Niektoré slovesá sú zvratné len v jednom z jazykov.",
+        "examples": [
+          { "es": "Me quedo en casa.", "sk": "Ostávam doma." },
+          { "es": "Descanso un rato.", "sk": "Chvíľu si oddýchnem." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accents",
+    "title": "Prízvuk, ktorý mení význam",
+    "intro": "Čiarka nad samohláskou (á, é, í, ó, ú) ukazuje prízvuk. Pri niektorých slovách rozlišuje dve rôzne slová, preto ju vtedy aplikácia neodpustí.",
+    "related": ["preterito"],
+    "rules": [
+      {
+        "id": "pairs",
+        "title": "Krátke slová",
+        "text": "el = člen, él = on. tu = tvoj, tú = ty. mi = môj, mí = mňa. si = ak, sí = áno. te = ťa, té = čaj. se = sa, sé = viem. mas = ale, más = viac.",
+        "examples": [
+          { "es": "Él tiene el libro.", "sk": "On má tú knihu." },
+          { "es": "Tú tienes tu celular.", "sk": "Ty máš svoj mobil." },
+          { "es": "Sí, si quieres.", "sk": "Áno, ak chceš." }
+        ]
+      },
+      {
+        "id": "questions",
+        "title": "Opytovacie slová",
+        "text": "V otázke majú čiarku: qué, cómo, dónde, cuándo, quién, cuánto. Bez čiarky sú to spojky.",
+        "examples": [
+          { "es": "¿Dónde vives?", "sk": "Kde bývaš?" },
+          { "es": "Vivo donde trabajo.", "sk": "Bývam tam, kde pracujem." }
+        ]
+      },
+      {
+        "id": "verbs",
+        "title": "Slovesné tvary",
+        "text": "Prízvuk mení osobu aj čas: hablo = hovorím, habló = hovoril. esta = táto, está = je.",
+        "examples": [
+          { "es": "Hablo con Ana.", "sk": "Hovorím s Anou." },
+          { "es": "Habló con Ana.", "sk": "Hovoril s Anou." },
+          { "es": "Esta casa está lejos.", "sk": "Tento dom je ďaleko." }
+        ]
+      },
+      {
+        "id": "nouns",
+        "title": "Podstatné mená",
+        "text": "papa = zemiak, papá = otec. Ani ñ sa nedá vždy vynechať: año = rok.",
+        "examples": [
+          { "es": "Mi papá compra papas.", "sk": "Otec kupuje zemiaky." },
+          { "es": "Tengo treinta años.", "sk": "Mám tridsať rokov." }
+        ]
+      }
+    ]
+  }
+]

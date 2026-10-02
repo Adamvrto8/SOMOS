@@ -58,6 +58,7 @@ export interface Cloze {
   // Verbs: "tener · yo · pretérito", "hablar · gerundio", "ser/estar · él · presente".
   // Otherwise a short Slovak hint ("člen", "zajtra").
   hint?: string
+  why?: string // ser/estar clozes: the rule of the "ser-estar" tip that applies here ("origin")
   distractors?: string[] // for multiple choice
 }
 
@@ -70,6 +71,24 @@ export interface Sentence {
   tokens: string[] // for sentence builder, punctuation separate
   cloze?: Cloze[]
   grammar?: Grammar[]
+}
+
+// Grammar tips ("Prečo?"): a short Slovak explanation with examples, src/data/tips.json.
+export interface TipRule {
+  id: string // unique within its tip; a ser/estar cloze points at one with `why`
+  title: string // Slovak: "Pôvod"
+  text?: string // Slovak, one or two sentences
+  examples: Example[] // 1–3
+  verb?: 'ser' | 'estar' // ser-estar only: groups the rules, must equal the lemma of a cloze pointing here
+  because?: string // ser-estar only, shown for one sentence: "Ide o pôvod, preto ser."
+}
+
+export interface Tip {
+  id: string // a Grammar tag where one exists ("preterito"), else its own ("accents")
+  title: string
+  intro: string
+  rules: TipRule[]
+  related?: string[] // tip ids, "Pozri aj"
 }
 
 export interface Topic {

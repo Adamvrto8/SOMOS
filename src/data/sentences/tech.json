@@ -163,6 +163,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · ella · presente",
+        "why": "result",
         "distractors": ["es", "están", "estás"]
       }
     ]

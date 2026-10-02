@@ -31,6 +31,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · ella · presente",
+        "why": "place",
         "distractors": ["es", "están", "estás"]
       }
     ]
@@ -49,6 +50,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · él · presente",
+        "why": "trait",
         "distractors": ["está", "son", "eres"]
       },
       {
@@ -128,6 +130,7 @@
         "answer": "Estoy",
         "lemma": "estar",
         "hint": "ser/estar · yo · presente",
+        "why": "place",
         "distractors": ["Soy", "Está", "Estás"]
       },
       { "tokenIndex": 4, "answer": "el", "lemma": "el", "hint": "člen", "distractors": ["la", "los", "las"] }
@@ -255,6 +258,7 @@
         "answer": "están",
         "lemma": "estar",
         "hint": "ser/estar · ellos · presente",
+        "why": "state",
         "distractors": ["son", "estás", "estamos"]
       }
     ]
@@ -373,6 +377,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · él · presente",
+        "why": "state",
         "distractors": ["es", "están", "estás"]
       }
     ]
@@ -666,6 +671,7 @@
         "answer": "estaban",
         "lemma": "estar",
         "hint": "ser/estar · ellos · imperfecto",
+        "why": "result",
         "distractors": ["eran", "están", "estaremos"]
       }
     ]

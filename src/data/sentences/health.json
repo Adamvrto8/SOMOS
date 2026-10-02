@@ -156,6 +156,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · él · presente",
+        "why": "place",
         "distractors": ["es", "están", "estás"]
       }
     ]
@@ -244,6 +245,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · él · presente",
+        "why": "trait",
         "distractors": ["está", "son", "eres"]
       }
     ]
@@ -369,6 +371,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · ella · presente",
+        "why": "state",
         "distractors": ["es", "están", "estás"]
       }
     ]
@@ -387,6 +390,7 @@
         "answer": "estaba",
         "lemma": "estar",
         "hint": "ser/estar · él · imperfecto",
+        "why": "state",
         "distractors": ["era", "estaban", "estabas"]
       },
       {

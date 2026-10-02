@@ -138,6 +138,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · ella · presente",
+        "why": "trait",
         "distractors": ["está", "son", "eres"]
       }
     ]

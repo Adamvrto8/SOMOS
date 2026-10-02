@@ -589,6 +589,7 @@
         "answer": "estaba",
         "lemma": "estar",
         "hint": "ser/estar · él · imperfecto",
+        "why": "state",
         "distractors": ["era", "estaban", "estabas"]
       }
     ]

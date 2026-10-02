@@ -31,6 +31,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · él · presente",
+        "why": "place",
         "distractors": ["es", "están", "estoy"]
       }
     ]
@@ -157,6 +158,7 @@
         "answer": "Soy",
         "lemma": "ser",
         "hint": "ser/estar · yo · presente",
+        "why": "profession",
         "distractors": ["Estoy", "Es", "Son"]
       }
     ]
@@ -408,6 +410,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · ella · presente",
+        "why": "profession",
         "distractors": ["está", "son", "eres"]
       }
     ]
@@ -630,6 +633,7 @@
         "answer": "estoy",
         "lemma": "estar",
         "hint": "ser/estar · yo · presente",
+        "why": "state",
         "distractors": ["soy", "estaba", "estuve"]
       }
     ]
@@ -666,6 +670,7 @@
         "answer": "era",
         "lemma": "ser",
         "hint": "ser/estar · yo · imperfecto",
+        "why": "profession",
         "distractors": ["estaba", "soy", "seré"]
       }
     ]

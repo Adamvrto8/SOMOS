@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Level, Person, Sentence, Tense, Topic, Verb, Word } from '../src/data/types.ts'
+import type { Cloze, Level, Person, Sentence, Tense, Tip, Topic, Verb, Word } from '../src/data/types.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -23,6 +23,8 @@ const topics = readJson(new URL('topics.json', DATA)) as Topic[]
 const words = loadDir<Word>('words')
 const verbs = loadDir<Verb>('verbs')
 const sentences = loadDir<Sentence>('sentences')
+const tipsUrl = new URL('tips.json', DATA)
+const tips = (existsSync(tipsUrl) ? readJson(tipsUrl) : []) as Tip[]
 
 const errors: string[] = []
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`)
@@ -278,6 +280,44 @@ for (const v of verbs) {
   if (count !== 1) fail(`verbs[${v.id}]`, `needs exactly one word entry (found ${count})`)
 }
 
+// ---------- grammar tips ----------
+
+const SER_ESTAR = 'ser-estar'
+const tipById = new Map(tips.map((t) => [t.id, t]))
+// The reasons a ser/estar cloze can point at with `why`: rule id → the verb the rule is about.
+const serEstarRules = new Map(tipById.get(SER_ESTAR)?.rules.map((r) => [r.id, r.verb]) ?? [])
+
+checkUniqueIds(tips, 'tips')
+for (const g of GRAMMAR) if (!tipById.has(g)) fail('tips', `no tip for the grammar tag "${g}"`)
+for (const tip of tips) {
+  const where = `tips[${tip.id}]`
+  if (!isNonEmpty(tip.title) || !isNonEmpty(tip.intro)) fail(where, 'missing title/intro')
+  if (!Array.isArray(tip.rules) || tip.rules.length === 0) {
+    fail(where, 'needs at least one rule')
+    continue
+  }
+  checkUniqueIds(tip.rules, `${where}.rules`)
+  for (const rule of tip.rules) {
+    const rw = `${where}.rules[${rule.id}]`
+    if (!isNonEmpty(rule.title)) fail(rw, 'missing title')
+    if (rule.text !== undefined && !isNonEmpty(rule.text)) fail(rw, 'empty text')
+    if (!Array.isArray(rule.examples) || rule.examples.length < 1 || rule.examples.length > 3) fail(rw, 'needs 1–3 examples')
+    rule.examples?.forEach((ex, i) => {
+      if (!isNonEmpty(ex.es) || !isNonEmpty(ex.sk)) fail(`${rw}.examples[${i}]`, 'missing es/sk')
+      checkSpanish(`${rw}.examples[${i}]`, ex.es)
+    })
+    // The reason shown for one sentence ("Ide o pôvod, preto ser.") exists only for ser/estar.
+    if (tip.id === SER_ESTAR) {
+      if (rule.verb !== 'ser' && rule.verb !== 'estar') fail(rw, 'needs verb "ser" or "estar"')
+      if (!isNonEmpty(rule.because)) fail(rw, 'needs because')
+    } else if (rule.verb !== undefined || rule.because !== undefined) fail(rw, `verb/because are only for the "${SER_ESTAR}" tip`)
+  }
+  for (const id of tip.related ?? []) {
+    if (id === tip.id) fail(where, 'related to itself')
+    else if (!tipById.has(id)) fail(where, `unknown related tip "${id}"`)
+  }
+}
+
 // ---------- sentences ----------
 
 const PERSON_LABELS: Record<string, Person> = {
@@ -362,6 +402,13 @@ for (const s of sentences) {
       fail(cw, `hint "${c.hint}" gives "${result.expected}", answer is "${c.answer}"`)
     }
 
+    // A ser/estar cloze says why it is that verb: the tip shows this reason for the sentence.
+    if (c.hint?.startsWith('ser/estar ·')) {
+      if (!c.why) fail(cw, 'ser/estar cloze needs `why` (a rule of the ser-estar tip)')
+      else if (!serEstarRules.has(c.why)) fail(cw, `why "${c.why}" is not a rule of the ser-estar tip`)
+      else if (serEstarRules.get(c.why) !== c.lemma) fail(cw, `why "${c.why}" is a rule for ${serEstarRules.get(c.why)}, the answer is ${c.lemma}`)
+    } else if (c.why !== undefined) fail(cw, '`why` is only for ser/estar clozes')
+
     const distractors = c.distractors ?? []
     const lower = distractors.map((d) => d.toLowerCase())
     if (new Set(lower).size !== lower.length) fail(cw, 'duplicate distractors')
@@ -382,5 +429,5 @@ if (errors.length) {
 const clozeCount = sentences.reduce((n, s) => n + (s.cloze?.length ?? 0), 0)
 console.log(
   `✓ Data OK — ${topics.length} topics, ${words.length} words, ${verbs.length} verbs, ` +
-    `${sentences.length} sentences (${clozeCount} cloze)`,
+    `${sentences.length} sentences (${clozeCount} cloze), ${tips.length} tips`,
 )

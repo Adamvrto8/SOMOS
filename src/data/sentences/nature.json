@@ -77,6 +77,7 @@
         "answer": "está",
         "lemma": "estar",
         "hint": "ser/estar · él · presente",
+        "why": "place",
         "distractors": ["es", "están", "estás"]
       }
     ]
@@ -184,6 +185,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · él · presente",
+        "why": "trait",
         "distractors": ["está", "son", "eres"]
       }
     ]
@@ -355,6 +357,7 @@
         "answer": "éramos",
         "lemma": "ser",
         "hint": "ser/estar · nosotros · imperfecto",
+        "why": "identity",
         "distractors": ["estábamos", "era", "fuimos"]
       },
       {

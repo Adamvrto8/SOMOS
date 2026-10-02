@@ -13,6 +13,7 @@
         "answer": "Son",
         "lemma": "ser",
         "hint": "ser/estar · ellas · presente",
+        "why": "time",
         "distractors": ["Es", "Están", "Somos"]
       }
     ]
@@ -138,6 +139,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · él · presente",
+        "why": "time",
         "distractors": ["está", "son", "eres"]
       }
     ]
@@ -156,6 +158,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser/estar · él · presente",
+        "why": "event",
         "distractors": ["está", "son", "eres"]
       }
     ]
@@ -174,6 +177,7 @@
         "answer": "Son",
         "lemma": "ser",
         "hint": "ser/estar · ellas · presente",
+        "why": "time",
         "distractors": ["Están", "Eres", "Somos"]
       }
     ]
@@ -192,6 +196,7 @@
         "answer": "Es",
         "lemma": "ser",
         "hint": "ser/estar · ella · presente",
+        "why": "time",
         "distractors": ["Está", "Son", "Eres"]
       }
     ]
@@ -425,6 +430,7 @@
         "answer": "Estuvimos",
         "lemma": "estar",
         "hint": "ser/estar · nosotros · pretérito",
+        "why": "place",
         "distractors": ["Fuimos", "Estuve", "Estuvo"]
       }
     ]
@@ -504,6 +510,7 @@
         "answer": "Eran",
         "lemma": "ser",
         "hint": "ser/estar · ellas · imperfecto",
+        "why": "time",
         "distractors": ["Estaban", "Eras", "Éramos"]
       },
       {

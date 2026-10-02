@@ -13,6 +13,7 @@
         "answer": "Estoy",
         "lemma": "estar",
         "hint": "ser/estar · yo · presente",
+        "why": "state",
         "distractors": ["Soy", "Está", "Están"]
       }
     ]
@@ -31,6 +32,7 @@
         "answer": "estás",
         "lemma": "estar",
         "hint": "ser/estar · tú · presente",
+        "why": "state",
         "distractors": ["eres", "estamos", "estoy"]
       }
     ]
@@ -210,6 +212,7 @@
         "answer": "Estamos",
         "lemma": "estar",
         "hint": "ser/estar · nosotros · presente",
+        "why": "state",
         "distractors": ["Somos", "Estoy", "Está"]
       }
     ]
@@ -352,6 +355,7 @@
         "answer": "son",
         "lemma": "ser",
         "hint": "ser/estar · ellos · presente",
+        "why": "trait",
         "distractors": ["están", "eres", "somos"]
       }
     ]
@@ -388,6 +392,7 @@
         "answer": "Estaba",
         "lemma": "estar",
         "hint": "ser/estar · yo · imperfecto",
+        "why": "state",
         "distractors": ["Era", "Estaban", "Estuve"]
       }
     ]
@@ -442,6 +447,7 @@
         "answer": "estaban",
         "lemma": "estar",
         "hint": "ser/estar · ellos · imperfecto",
+        "why": "result",
         "distractors": ["eran", "estabas", "estábamos"]
       },
       {
@@ -521,6 +527,7 @@
         "answer": "Estoy",
         "lemma": "estar",
         "hint": "ser/estar · yo · presente",
+        "why": "state",
         "distractors": ["Soy", "Está", "Estaré"]
       }
     ]

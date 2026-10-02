@@ -419,6 +419,7 @@
         "answer": "será",
         "lemma": "ser",
         "hint": "ser/estar · él · futuro",
+        "why": "event",
         "distractors": ["estará", "serán", "serás"]
       }
     ]
@@ -534,6 +535,7 @@
         "answer": "estaba",
         "lemma": "estar",
         "hint": "ser/estar · yo · imperfecto",
+        "why": "place",
         "distractors": ["era", "estoy", "estaré"]
       }
     ]
