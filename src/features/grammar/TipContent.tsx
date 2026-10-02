@@ -13,6 +13,29 @@ interface TipContentProps {
   onOpenTip: (id: string) => void // "Pozri aj"
 }
 
+/** One rule: its name, a line of explanation and the examples with 🔊. */
+function RuleBody({ rule }: { rule: TipRule }) {
+  return (
+    <>
+      <h3 className="font-semibold">{rule.title}</h3>
+      {rule.text && <p className="mt-1 text-sm leading-relaxed text-ink-muted">{rule.text}</p>}
+      <ul className="mt-2 divide-y divide-line border-t border-line">
+        {rule.examples.map((example) => (
+          <li key={example.es} className="flex items-center gap-1 py-1.5">
+            <div className="min-w-0 flex-1">
+              <p lang="es" className="font-serif text-lg leading-snug">
+                {example.es}
+              </p>
+              <p className="text-sm text-ink-muted">{example.sk}</p>
+            </div>
+            <SpeakButton text={example.es} />
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
+
 /** One grammar tip: what the rule is, with examples. Shown over a lesson (TipSheet) and in the handbook (TipPage). */
 export function TipContent({ tip, rule, asked, onOpenTip }: TipContentProps) {
   // ser/estar is two lists of reasons; every other tip is one list of rules.
@@ -36,10 +59,17 @@ export function TipContent({ tip, rule, asked, onOpenTip }: TipContentProps) {
             ))}
           </p>
           <p className="mt-1.5">{rule.because}</p>
+          {/* The rule itself, here and not only in the list below: nothing to scroll for and look up. */}
+          <div className="mt-4 border-t border-amber/60 pt-3">
+            <RuleBody rule={rule} />
+          </div>
         </aside>
       )}
 
-      <p className="leading-relaxed text-ink-muted">{tip.intro}</p>
+      <div>
+        {rule?.because && asked && <SectionTitle id="overview-heading">Celý prehľad</SectionTitle>}
+        <p className="leading-relaxed text-ink-muted">{tip.intro}</p>
+      </div>
 
       {groups.map((group) => (
         <section key={group.title ?? tip.id} className="space-y-3">
@@ -51,21 +81,7 @@ export function TipContent({ tip, rule, asked, onOpenTip }: TipContentProps) {
           <ul className="space-y-3">
             {group.rules.map((r) => (
               <li key={r.id} className={`rounded-card border bg-surface p-4 ${r.id === rule?.id ? 'border-amber ring-1 ring-amber' : 'border-line'}`}>
-                <h3 className="font-semibold">{r.title}</h3>
-                {r.text && <p className="mt-1 text-sm leading-relaxed text-ink-muted">{r.text}</p>}
-                <ul className="mt-2 divide-y divide-line border-t border-line">
-                  {r.examples.map((example) => (
-                    <li key={example.es} className="flex items-center gap-1 py-1.5">
-                      <div className="min-w-0 flex-1">
-                        <p lang="es" className="font-serif text-lg leading-snug">
-                          {example.es}
-                        </p>
-                        <p className="text-sm text-ink-muted">{example.sk}</p>
-                      </div>
-                      <SpeakButton text={example.es} />
-                    </li>
-                  ))}
-                </ul>
+                <RuleBody rule={r} />
               </li>
             ))}
           </ul>

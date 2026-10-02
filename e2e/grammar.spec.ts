@@ -31,7 +31,10 @@ test('"Prečo?" explains why a sentence takes ser or estar, and the back button 
   const here = tip.getByLabel('V tejto vete')
   await expect(here).toContainText(sentence.es)
   await expect(here).toContainText(rule.because!)
-  await expect(tip.getByRole('heading', { name: rule.title, exact: true })).toBeVisible()
+  // The rule that applies is right there with its examples: nothing to scroll for and look up in the list below.
+  await expect(here.getByRole('heading', { name: rule.title, exact: true })).toBeInViewport({ ratio: 1 })
+  await expect(here.getByText(rule.examples[0].es, { exact: true })).toBeInViewport({ ratio: 1 })
+  await expect(tip.getByRole('heading', { name: 'Celý prehľad' })).toBeVisible()
 
   // The phone's back button closes the tip; the lesson has not moved or restarted.
   await page.goBack()

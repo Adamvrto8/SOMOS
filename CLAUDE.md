@@ -271,7 +271,9 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   After a wrong answer the sheet has a tip link next to "Pokračovať" when `tipFor()` finds one: "Prečo?" for a tip
   about the thing that was asked, "Gramatika k vete" for a whole sentence's topic. It opens `TipSheet` over the lesson
   (full screen, ✕ / Esc); opening pushes a history entry with the same URL and `state.tip`, so the phone's back button
-  closes the tip and the lesson is neither left nor rebuilt. A ser/estar blank shows "V tejto vete" with its reason.
+  closes the tip and the lesson is neither left nor rebuilt. A ser/estar blank starts with the box "V tejto vete":
+  the sentence, its reason and the rule that applies with its examples (so nothing has to be looked up in the list);
+  the whole tip follows under "Celý prehľad", with that rule highlighted.
   A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)
   with "Zopakovať lekciu".
   `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
