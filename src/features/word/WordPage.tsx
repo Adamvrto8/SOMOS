@@ -16,6 +16,17 @@ import { readWordNav, type WordNavState } from './wordNav'
 const SWIPE_MIN_PX = 60
 
 /**
+ * Inside a bar that scrolls sideways (the tense tabs of a verb): a horizontal drag there
+ * scrolls the bar and must not turn the page, also once the bar has reached its end.
+ */
+function inSidewaysScroller(target: Element): boolean {
+  for (let el: Element | null = target; el && el.tagName !== 'MAIN'; el = el.parentElement) {
+    if (/auto|scroll/.test(getComputedStyle(el).overflowX)) return true
+  }
+  return false
+}
+
+/**
  * Word detail. Opened from a list (topic, search, archive), it swipes — or pages with
  * ‹ › and the arrow keys — to the neighbouring words; "back" still returns to the list.
  */
@@ -37,14 +48,15 @@ export function WordPage() {
   }
 
   // Listened for on the window, not on this page's own element: a short word ends mid-screen
-  // and the empty space below it has to swipe too. The header and the tab bar are left out.
+  // and the empty space below it has to swipe too. The header, the tab bar and bars that
+  // scroll sideways are left out.
   const touchStart = useRef<{ id: number; x: number; y: number } | null>(null)
   useEffect(() => {
     const onTouchStart = (e: TouchEvent) => {
-      const inPage = e.target instanceof Element && e.target.closest('main') !== null
+      const turnsPage = e.target instanceof Element && e.target.closest('main') !== null && !inSidewaysScroller(e.target)
       // The finger that just came down (changedTouches), whatever else is resting on the screen.
       const touch = e.changedTouches[0]
-      touchStart.current = inPage ? { id: touch.identifier, x: touch.clientX, y: touch.clientY } : null
+      touchStart.current = turnsPage ? { id: touch.identifier, x: touch.clientX, y: touch.clientY } : null
     }
     const onTouchEnd = (e: TouchEvent) => {
       const start = touchStart.current
