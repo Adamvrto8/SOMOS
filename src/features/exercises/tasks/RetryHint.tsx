@@ -9,9 +9,11 @@ interface RetryHintProps {
   onGiveUp: () => void
 }
 
+const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'translateX(-6px)' }, { transform: 'translateX(5px)' }, { transform: 'translateX(0)' }]
+
 /**
- * A wrong try the learner may still fix: for a sentence, their own words with the wrong ones
- * in red, the ones that do not belong struck through and a gap where a word is missing.
+ * A wrong try the learner may still fix: the answer that was checked, its wrong words in red,
+ * the ones that do not belong struck through and a gap where a word is missing.
  * The correct words are not given away.
  *
  * The way on is here too, right under the field: the phone keyboard, open for the fix, covers
@@ -22,15 +24,21 @@ export function RetryHint({ grade, onCheck, onGiveUp }: RetryHintProps) {
   const diff = grade.diff
   const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
   const notes = [
-    has('wrong') && 'Červené slovo je zle.',
+    // A lone red answer needs no legend: the title already says it is wrong.
+    diff && diff.length > 1 && has('wrong') && 'Červené slovo je zle.',
     has('extra') && 'Prečiarknuté slovo je navyše.',
     has('missing') && 'Na prázdnom mieste chýba slovo.',
-    (diff ? diff.some((p) => p.accent) : grade.check?.meanings) && 'Skontroluj prízvuk.',
+    (diff?.some((p) => p.accent) || grade.check?.meanings) && 'Skontroluj prízvuk.',
   ].filter(Boolean)
 
-  // The phone keyboard stays open for the fix and may cover the hint.
+  // Every check has to be seen, also one that finds the same mistake again: the hint would
+  // otherwise look untouched, as if the button did nothing. The phone keyboard stays open for
+  // the fix and may cover the hint, hence the scroll.
   useEffect(() => {
-    ref.current?.scrollIntoView({ block: 'nearest' })
+    const el = ref.current
+    if (!el) return
+    el.scrollIntoView({ block: 'nearest' })
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) el.animate(SHAKE, { duration: 220, easing: 'ease-out' })
   }, [grade])
 
   return (

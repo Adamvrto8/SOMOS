@@ -177,8 +177,16 @@ describe('gradeTask', () => {
     if (!task || task.kind !== 'dictation') throw new Error('task not found')
     expect(gradeTask(task, 'hablo un poko español').diff?.map((p) => p.state)).toEqual(['ok', 'ok', 'wrong', 'missing', 'ok'])
     expect(gradeTask(task, 'hablo un poco de español').diff).toBeUndefined()
-    // One wrong word has nothing to point at.
-    expect(gradeTask(conjugationTask(verbById.get('hablar')!, 'presente', 'ellos'), 'hablas').diff).toBeUndefined()
+  })
+
+  it('repeats a wrong answer back, so each new try shows what was checked', () => {
+    const wrong = [{ text: 'hablas', state: 'wrong' }]
+    expect(gradeTask(conjugationTask(verbById.get('hablar')!, 'presente', 'ellos'), 'hablas').diff).toEqual(wrong)
+    // Several accepted answers: nothing to line the words up with, the answer is wrong as a whole.
+    const vocab = taskFromItem('vocab', 'de-nada:es-sk')
+    if (!vocab) throw new Error('task not found')
+    expect(gradeTask(vocab, '  nic   sa nestalo ').diff).toEqual([{ text: 'nic sa nestalo', state: 'wrong' }])
+    expect(gradeTask(vocab, 'nie je za čo').diff).toBeUndefined()
   })
 
   it.each([

@@ -75,7 +75,8 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
       />
       {hint && onGiveUp && !locked && <RetryHint grade={hint} onCheck={onSubmit} onGiveUp={onGiveUp} />}
       {!locked && lang === 'es' && (
-        <div className="mt-2 flex flex-wrap gap-1.5" aria-label="Špeciálne znaky">
+        // One row at any width: a second row would end up under the phone keyboard.
+        <div className="mt-2 grid grid-cols-9 gap-1" aria-label="Špeciálne znaky">
           {EXTRA_KEYS.map((char) => (
             <button
               key={char}
@@ -85,7 +86,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
               onPointerDown={(e) => e.preventDefault()}
               onClick={() => insert(char)}
               aria-label={`Vložiť ${char}`}
-              className="flex h-10 min-w-10 items-center justify-center rounded-lg border border-line bg-surface font-serif text-lg transition-colors duration-150 hover:bg-surface-2 active:bg-surface-2"
+              className="flex h-11 items-center justify-center rounded-lg border border-line bg-surface font-serif text-lg transition-colors duration-150 hover:bg-surface-2 active:bg-surface-2"
             >
               {char}
             </button>

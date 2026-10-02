@@ -1,6 +1,6 @@
 import { sentenceById, sentences, verbById, verbs, wordById, words } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
-import { checkAnswer, diffWords, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
+import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { lookupForm } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
@@ -92,7 +92,7 @@ export interface Grade {
   verdict: Verdict
   expected: string // correct answer to show
   check?: CheckResult // details for typed answers
-  diff?: DiffPart[] // a wrong typed sentence word by word, for a second try
+  diff?: DiffPart[] // a wrong typed answer word by word, for a second try
   speech?: SpeechMatch // Vyslovovanie: which words were heard
 }
 
@@ -603,12 +603,10 @@ const fromCheck = (check: CheckResult): Grade => ({
 
 const exact = (correct: boolean, expected: string): Grade => ({ correct, verdict: correct ? 'correct' : 'wrong', expected })
 
-/** A typed answer with one expected text: a wrong one of several words also says which words to fix. */
+/** A typed answer with one expected text: a wrong one also says which of its words to fix. */
 function typed(text: string, expected: string, options: CheckOptions): Grade {
   const grade = fromCheck(checkAnswer(text, expected, options))
-  if (grade.correct) return grade
-  const diff = diffWords(text, expected, options)
-  return diff.length > 1 ? { ...grade, diff } : grade
+  return grade.correct ? grade : { ...grade, diff: diffWords(text, expected, options) }
 }
 
 /** A wrong typed answer may be fixed and checked again; the task counts as wrong only when the learner gives up. */
@@ -633,8 +631,10 @@ export function gradeTask(task: Task, answer: Answer): Grade {
     }
     case 'translation':
       return typed(text, task.sentence.es, { lookup: lookupForm, optionalSubject: true })
-    case 'vocab':
-      return fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
+    case 'vocab': {
+      const grade = fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
+      return grade.correct ? grade : { ...grade, diff: wrongAsWhole(text) }
+    }
     case 'dictation':
       // "8" is what was heard as much as "ocho".
       return typed(spokenForm(text), task.sentence.es, { lookup: lookupForm })

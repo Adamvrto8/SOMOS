@@ -184,6 +184,9 @@ export interface DiffPart {
   accent?: true
 }
 
+/** A wrong answer with several accepted texts: there is nothing to line its words up with, so it is wrong as a whole. */
+export const wrongAsWhole = (input: string): DiffPart[] => [{ text: input.trim().replace(/\s+/g, ' '), state: 'wrong' }]
+
 /** Close enough to be the same word misspelled: keeps "mercdo" lined up with "mercado". */
 const isNear = (a: string, e: string) => levenshtein(fold(a), fold(e)) <= Math.max(1, Math.floor(e.length / 3))
 

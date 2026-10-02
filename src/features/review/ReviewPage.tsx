@@ -5,7 +5,7 @@ import { Rating, type Grade } from 'ts-fsrs'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
-import { checkAnswer, type CheckResult } from '../../lib/checkAnswer'
+import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
 import { GRADES, isDueToday, previewIntervals, rateCard } from '../../lib/srs'
@@ -38,7 +38,7 @@ export function ReviewPage() {
   // Typing the hidden side instead of revealing it.
   const [typed, setTyped] = useState('')
   const [tries, setTries] = useState(0)
-  const [hint, setHint] = useState<CheckResult | null>(null) // a wrong try, still to be fixed
+  const [hint, setHint] = useState<LessonGrade | null>(null) // a wrong try, still to be fixed
   const [outcome, setOutcome] = useState<{ grade: Grade; check: CheckResult } | null>(null) // settled: the answer rated itself
 
   useEffect(() => {
@@ -90,8 +90,12 @@ export function ReviewPage() {
     const result = checkAnswer(typed, entry.answers, entry.slovakFirst ? { lookup: lookupForm } : {})
     setTries(tries + 1)
     // A wrong answer can be fixed and checked again, like in a lesson.
-    if (result.verdict === 'wrong') setHint(result)
+    if (result.verdict === 'wrong') setHint({ ...asGrade(result), diff: wrongAsWhole(typed) })
     else settle(typedRating(tries + 1, false), result)
+  }
+
+  const giveUp = () => {
+    if (hint?.check) settle(typedRating(tries, true), hint.check)
   }
 
   // Keyboard: Space/Enter reveals, 1–4 rates.
@@ -214,8 +218,8 @@ export function ReviewPage() {
                   onChange={setTyped}
                   onSubmit={check}
                   status={outcome ? statusOf(asGrade(outcome.check)) : undefined}
-                  hint={hint && asGrade(hint)}
-                onGiveUp={() => hint && settle(typedRating(tries, true), hint)}
+                  hint={hint}
+                  onGiveUp={giveUp}
                   lang={entry.slovakFirst ? 'es' : 'sk'}
                   label={entry.slovakFirst ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
                   placeholder={entry.slovakFirst ? 'Po španielsky…' : 'Po slovensky…'}
