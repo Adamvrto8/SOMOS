@@ -44,8 +44,8 @@ export function CustomTab({ words }: { words: CustomWord[] }) {
         </ul>
       )}
 
-      {/* Floating "+" above the tab bar, aligned to the 480px column. */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-10">
+      {/* Floating "+" above the tab bar, aligned to the 480px column; gone with the tab bar while the keyboard is open. */}
+      <div className="pointer-events-none fixed inset-x-0 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-10 keyboard:hidden">
         <div className="mx-auto flex max-w-[480px] justify-end px-4">
           <Link
             to="/archive/new"

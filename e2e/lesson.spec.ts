@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test'
-import { askedSentence, button, countShakes, field, gapBelowField, status } from './helpers.ts'
+import { askedSentence, button, countShakes, field, gapAboveBottom, KEYBOARD_OPEN, SCREEN, status } from './helpers.ts'
 
 const lesson = (type: string) => `/practice/lesson?type=${type}&topic=all&level=A1&lesson=1`
 
 test.describe('a wrong typed answer', () => {
-  test('is checked again with the button in the hint', async ({ page }) => {
+  test('can be fixed and checked again, as often as it takes', async ({ page }) => {
     const shakes = await countShakes(page)
     await page.goto(lesson('cloze'))
     const answer = (await askedSentence(page)).cloze![0].answer
@@ -14,34 +14,28 @@ test.describe('a wrong typed answer', () => {
     const hint = status(page)
     await expect(hint).toContainText('Ešte to nie je ono')
     await expect(hint).toContainText('zzzz')
-    // The phone keyboard would cover the bar at the bottom: the only buttons left are in the hint,
-    // and the field keeps the focus (the keyboard stays open).
-    await expect(button(page, 'Skontrolovať')).toHaveCount(1)
-    await expect(button(hint, 'Skontrolovať')).toBeVisible()
-    await expect(button(hint, 'Vzdať sa')).toBeVisible()
+    // The field keeps the focus, so the phone keyboard stays open for the fix.
     await expect(field(page)).toBeFocused()
 
-    // While the answer is being changed, the hint (about the previous try) fades; its buttons do not.
-    const message = hint.getByText('Ešte to nie je ono').locator('..')
-    await expect(message).toHaveCSS('opacity', '1')
+    // While the answer is being changed, the hint (about the previous try) fades.
+    await expect(hint).toHaveCSS('opacity', '1')
     await field(page).fill('yyyy')
-    await expect(message).toHaveCSS('opacity', '0.5')
-    await expect(button(hint, 'Skontrolovať')).toHaveCSS('opacity', '1')
+    await expect(hint).toHaveCSS('opacity', '0.5')
 
     // Still wrong: the hint now repeats the new answer.
-    await button(hint, 'Skontrolovať').tap()
-    await expect(message).toHaveCSS('opacity', '1')
+    await button(page, 'Skontrolovať').tap()
+    await expect(hint).toHaveCSS('opacity', '1')
     await expect(hint).toContainText('yyyy')
     await expect(hint).not.toContainText('zzzz')
 
     // The very same answer again: nothing in the hint changes, so it has to shake.
     const before = await shakes()
-    await button(hint, 'Skontrolovať').tap()
+    await button(page, 'Skontrolovať').tap()
     await expect.poll(shakes).toBe(before + 1)
 
     // Fixed: counts as correct, the lesson goes on.
     await field(page).fill(answer)
-    await button(hint, 'Skontrolovať').tap()
+    await button(page, 'Skontrolovať').tap()
     await expect(status(page)).toContainText('Správne!')
     await button(page, 'Pokračovať').tap()
     await expect(page.locator('header')).toContainText('2/10')
@@ -51,7 +45,7 @@ test.describe('a wrong typed answer', () => {
     await page.goto(lesson('vocab'))
     await field(page).fill('zzzz')
     await button(page, 'Skontrolovať').tap()
-    await button(status(page), 'Vzdať sa').tap()
+    await button(page, 'Vzdať sa').tap()
     await expect(status(page)).toContainText('Nesprávne')
     await expect(status(page)).toContainText('Správna odpoveď')
     await expect(button(page, 'Moja odpoveď bola tiež správna')).toBeVisible()
@@ -73,17 +67,32 @@ test.describe('a wrong typed answer', () => {
   })
 })
 
-test('"Vzdať sa" and "Skontrolovať" sit right under the field from the start', async ({ page }) => {
+test('"Vzdať sa" and "Skontrolovať" ride on the keyboard and rest at the bottom of the screen without it', async ({ page }) => {
   await page.goto(lesson('cloze'))
   await expect(field(page)).toBeVisible()
-  await expect(button(page, 'Skontrolovať')).toHaveCount(1)
-  for (const name of ['Vzdať sa', 'Skontrolovať']) {
-    const gap = await gapBelowField(page, button(page, name))
-    expect(gap).toBeGreaterThanOrEqual(0)
-    expect(gap).toBeLessThan(24)
+  // Without this Chrome lays the keyboard over the page and covers the bar.
+  await expect(page.locator('meta[name=viewport]')).toHaveAttribute('content', /interactive-widget=resizes-content/)
+
+  const inBottomBar = async () => {
+    await expect(button(page, 'Skontrolovať')).toHaveCount(1)
+    for (const name of ['Vzdať sa', 'Skontrolovať']) {
+      const gap = await gapAboveBottom(page, button(page, name))
+      expect(gap).toBeGreaterThanOrEqual(0)
+      expect(gap).toBeLessThan(24)
+    }
   }
-  // Nothing typed yet: there is nothing to check, but giving up is possible.
-  await expect(button(page, 'Skontrolovať')).toBeDisabled()
+  await inBottomBar()
+  await page.setViewportSize(KEYBOARD_OPEN)
+  await inBottomBar()
+
+  // After a wrong try too, with the hint in view above the bar.
+  await field(page).fill('zzzz')
+  await button(page, 'Skontrolovať').tap()
+  await expect(status(page)).toBeInViewport({ ratio: 1 })
+  await inBottomBar()
+  await page.setViewportSize(SCREEN)
+  await inBottomBar()
+
   await button(page, 'Vzdať sa').tap()
   await expect(status(page)).toContainText('Správna odpoveď')
 })

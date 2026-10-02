@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import type { Word } from '../src/data/types.ts'
-import { button, field, gapBelowField, status, words } from './helpers.ts'
+import { button, field, gapAboveBottom, KEYBOARD_OPEN, status, words } from './helpers.ts'
 
 const DAY = 86_400_000
 
@@ -12,7 +12,7 @@ async function practiseOneWord(page: Page): Promise<Word> {
   if (!word) throw new Error(`no word for "${prompt}"`)
   await field(page).fill('zzzz')
   await button(page, 'Skontrolovať').tap()
-  await button(status(page), 'Vzdať sa').tap()
+  await button(page, 'Vzdať sa').tap()
   await button(page, 'Pokračovať').tap()
   await expect(page.locator('header')).toContainText('2/10')
   return word
@@ -28,29 +28,37 @@ test('a word card can be typed, fixed after a hint, and rates itself', async ({ 
   await expect(card).toBeVisible()
   const answer = (await card.getAttribute('lang')) === 'sk' ? word.es : word.sk[0]
 
-  // Both ways on sit right under the field, where the open phone keyboard does not cover them.
-  await expect(button(page, 'Skontrolovať')).toHaveCount(1)
-  for (const name of ['Ukázať preklad', 'Skontrolovať']) {
-    const gap = await gapBelowField(page, button(page, name))
-    expect(gap).toBeGreaterThanOrEqual(0)
-    expect(gap).toBeLessThan(24)
+  // Both ways on are in the bar at the bottom, which rides on the keyboard when that is open.
+  const inBottomBar = async (names: string[]) => {
+    await expect(button(page, 'Skontrolovať')).toHaveCount(1)
+    for (const name of names) {
+      const gap = await gapAboveBottom(page, button(page, name))
+      expect(gap).toBeGreaterThanOrEqual(0)
+      expect(gap).toBeLessThan(24)
+    }
   }
+  await inBottomBar(['Ukázať preklad', 'Skontrolovať'])
+  await page.setViewportSize(KEYBOARD_OPEN)
+  await inBottomBar(['Ukázať preklad', 'Skontrolovať'])
 
   await field(page).fill('zzzz')
   await button(page, 'Skontrolovať').tap()
   const hint = status(page)
   await expect(hint).toContainText('Ešte to nie je ono')
   await expect(hint).toContainText('zzzz')
+  await expect(hint).toBeInViewport({ ratio: 1 })
+  // After a wrong try the way out is to give up (the card then comes back in this session).
+  await inBottomBar(['Vzdať sa', 'Skontrolovať'])
 
-  // Fixed with the button in the hint: right after a hint = "Hard", no manual rating.
+  // Fixed after a hint = "Hard", no manual rating.
   await field(page).fill(answer)
-  await button(hint, 'Skontrolovať').tap()
+  await button(page, 'Skontrolovať').tap()
   await expect(status(page)).toContainText('Správne po oprave')
   await expect(status(page)).toContainText('Ďalšie opakovanie')
   await expect(button(page, 'Pokračovať')).toBeVisible()
 })
 
-test('"Ukázať preklad" under the field reveals the card for a manual rating', async ({ page }) => {
+test('"Ukázať preklad" reveals the card for a manual rating', async ({ page }) => {
   await practiseOneWord(page)
   await page.clock.setFixedTime(Date.now() + 3 * DAY)
   await page.goto('/review')

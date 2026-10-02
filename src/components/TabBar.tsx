@@ -27,7 +27,8 @@ export function TabBar() {
   const { pathname } = useLocation()
 
   return (
-    <nav aria-label="Hlavná navigácia" className="fixed inset-x-0 bottom-0 z-20">
+    // Hidden while the phone keyboard is open: it would otherwise ride on top of it and take the room for typing.
+    <nav aria-label="Hlavná navigácia" className="fixed inset-x-0 bottom-0 z-20 keyboard:hidden">
       <div className="mx-auto max-w-[480px] border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur sm:border-x">
         <ul className="grid grid-cols-4">
           {TABS.map((tab) => {

@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { watchKeyboard } from './lib/keyboard'
 import { registerServiceWorker } from './lib/pwa'
 import { keepReminderSynced, startProgressReporting } from './lib/reminder'
 import { syncPracticeCards } from './lib/practice'
@@ -14,6 +15,7 @@ registerServiceWorker()
 // Daily reminder: report practice to the server and refresh this device's push subscription.
 startProgressReporting()
 keepReminderSynced()
+watchKeyboard()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

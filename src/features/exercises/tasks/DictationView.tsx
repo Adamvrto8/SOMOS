@@ -13,11 +13,10 @@ interface DictationViewProps {
   onSubmit: () => void
   status?: Status
   hint?: Grade | null
-  onGiveUp?: () => void
 }
 
 /** Diktát: hear the sentence (normal or slow) and type it. The Slovak meaning stays hidden until asked for. */
-export function DictationView({ task, answer, onAnswer, onSubmit, status, hint, onGiveUp }: DictationViewProps) {
+export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }: DictationViewProps) {
   // Without a voice the task still works as a translation.
   const [showMeaning, setShowMeaning] = useState(!ttsSupported)
   const text = task.sentence.es
@@ -62,7 +61,6 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint, 
         onSubmit={onSubmit}
         status={status}
         hint={hint}
-        onGiveUp={onGiveUp}
         label="Čo si počul"
         placeholder="Po španielsky…"
         multiline

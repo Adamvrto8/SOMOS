@@ -320,7 +320,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} onGiveUp={giveUp} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} />
               </div>
             </>
           )
@@ -361,9 +361,16 @@ export function LessonPage() {
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
                 why={taskTip && { label: tipLabel(taskTip), onOpen: () => showTip(taskTip.tip.id) }}
               />
-            ) : canRetry(task) ? null : ( // a typed task has its buttons under the field: the phone keyboard would cover this bar
-              <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                <Button onClick={() => check()} disabled={!canCheck || recording} className="w-full">
+            ) : (
+              // Rides on top of the open phone keyboard and drops back to the bottom without it (src/lib/keyboard.ts).
+              <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
+                {canRetry(task) && (
+                  <Button variant="secondary" onClick={giveUp}>
+                    Vzdať sa
+                  </Button>
+                )}
+                {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
+                <Button onPointerDown={(e) => e.preventDefault()} onClick={() => check()} disabled={!canCheck || recording} className="flex-1">
                   Skontrolovať
                 </Button>
               </div>

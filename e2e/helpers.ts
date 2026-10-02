@@ -17,15 +17,17 @@ export const field = (page: Page) => page.getByRole('textbox')
 export const status = (page: Page) => page.getByRole('status')
 export const button = (scope: Page | Locator, name: string) => scope.getByRole('button', { name, exact: true })
 
+export const SCREEN = { width: 375, height: 800 }
 /**
- * How far below the answer field something starts, in px. The open phone keyboard covers the lower
- * half of the screen, the bar at its bottom included: whatever is needed while typing has to sit
- * right under the field.
+ * The screen with the phone keyboard open. index.html asks Chrome on Android to shrink the page
+ * for the keyboard (interactive-widget=resizes-content), which to the page is a shorter viewport.
  */
-export async function gapBelowField(page: Page, target: Locator): Promise<number> {
-  const input = (await field(page).boundingBox())!
+export const KEYBOARD_OPEN = { width: 375, height: 460 }
+
+/** How far above the bottom edge of the viewport something ends, in px (0 = touching it). */
+export async function gapAboveBottom(page: Page, target: Locator): Promise<number> {
   const box = (await target.boundingBox())!
-  return box.y - (input.y + input.height)
+  return page.viewportSize()!.height - (box.y + box.height)
 }
 
 /** The sentence a cloze, translation or dictation task is asking for, found by its Slovak text on screen. */

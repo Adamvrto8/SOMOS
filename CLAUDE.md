@@ -258,9 +258,12 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   A wrong typed answer (cloze, conjugation, translation, vocab, dictation; `canRetry()`) is not final: `RetryHint`
   under the field repeats the checked answer with its wrong words and gaps marked, the learner fixes and checks again
   as often as needed, and the fixed answer counts as correct. "Vzdať sa" shows the answer and counts as wrong.
-  The open phone keyboard covers the bar at the bottom of the screen, so a typed task has no bar: `TypedAnswer` brings
-  "Vzdať sa" and "Skontrolovať" right under the field (inside the hint after a wrong try); the same in review, where
-  the first button is "Ukázať preklad" until a try was wrong. Only tasks without typing keep the bottom "Skontrolovať".
+  "Vzdať sa" and "Skontrolovať" are in the bar at the bottom of the screen (in review the first one is "Ukázať
+  preklad" until a try was wrong). The bar rides on top of the open phone keyboard and drops back to the bottom when it
+  closes: `index.html` sets `interactive-widget=resizes-content` in the viewport meta, so Chrome on Android shrinks the
+  page for the keyboard instead of covering it. Never remove that key: without it the keyboard hides the bar. What must
+  not ride on the keyboard hides while it is open (`keyboard:hidden` — the tab bar, the "+" in Moje slová);
+  `src/lib/keyboard.ts` sets `<html data-keyboard>` when the page got ≥150px shorter while a field has the focus.
   Every check must be visible: the hint shakes each time, since the same mistake leaves it unchanged.
   While the answer is being edited the hint's text fades (it is about the previous try); its buttons do not.
   The accent keys under the field (á é í ó ú ñ ü ¿ ¡) are one row at any width.
@@ -374,6 +377,7 @@ scripts/
   and `npm run build` before finishing a phase.
 - Run `npm run test:e2e` after changing a screen (`src/features`, `src/components`) and before every push. It drives
   the installed Chrome at phone size with touch against its own dev server on port 5199 (`playwright.config.ts`);
-  tests tap, they never click with a mouse. A bug found on the phone gets a test there before it is fixed.
+  tests tap, they never click with a mouse. There is no phone keyboard on the desktop: a test stands in for it with a
+  shorter viewport (`KEYBOARD_OPEN`), which checks the layout but not that Android really resizes the page. A bug found on the phone gets a test there before it is fixed.
   Vercel does not run these tests: nothing stops a push that skipped them.
 - Test UI at 375px width first.

@@ -1,11 +1,10 @@
 import { CircleX } from 'lucide-react'
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef } from 'react'
 import type { Grade } from '../../../lib/lesson'
 
 interface RetryHintProps {
   grade: Grade
   stale?: boolean // the answer was edited since: the hint is about the previous try
-  children: ReactNode // the field's buttons ("Vzdať sa", "Skontrolovať"), kept inside the hint
 }
 
 const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'translateX(-6px)' }, { transform: 'translateX(5px)' }, { transform: 'translateX(0)' }]
@@ -15,7 +14,7 @@ const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'transla
  * the ones that do not belong struck through and a gap where a word is missing.
  * The correct words are not given away.
  */
-export function RetryHint({ grade, stale, children }: RetryHintProps) {
+export function RetryHint({ grade, stale }: RetryHintProps) {
   const ref = useRef<HTMLDivElement>(null)
   const diff = grade.diff
   const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
@@ -28,8 +27,8 @@ export function RetryHint({ grade, stale, children }: RetryHintProps) {
   ].filter(Boolean)
 
   // Every check has to be seen, also one that finds the same mistake again: the hint would
-  // otherwise look untouched, as if the button did nothing. The phone keyboard stays open for
-  // the fix and may cover the hint, hence the scroll.
+  // otherwise look untouched, as if the button did nothing. The scroll keeps it above the bar
+  // at the bottom, which rides on the open phone keyboard.
   useEffect(() => {
     const el = ref.current
     if (!el) return
@@ -38,33 +37,34 @@ export function RetryHint({ grade, stale, children }: RetryHintProps) {
   }, [grade])
 
   return (
-    <div ref={ref} role="status" className="mt-2 scroll-mb-24 rounded-2xl border border-error/40 bg-error/10 px-4 py-3">
-      <div className={`transition-opacity duration-150 ${stale ? 'opacity-50' : ''}`}>
-        <p className="flex items-center gap-2 font-semibold text-error">
-          <CircleX size={18} strokeWidth={2} className="shrink-0" aria-hidden />
-          Ešte to nie je ono. Skús znova.
+    <div
+      ref={ref}
+      role="status"
+      className={`mt-2 scroll-mb-24 rounded-2xl border border-error/40 bg-error/10 px-4 py-3 transition-opacity duration-150 ${stale ? 'opacity-50' : ''}`}
+    >
+      <p className="flex items-center gap-2 font-semibold text-error">
+        <CircleX size={18} strokeWidth={2} className="shrink-0" aria-hidden />
+        Ešte to nie je ono. Skús znova.
+      </p>
+      {diff && (
+        <p className="mt-2 font-serif text-lg leading-relaxed">
+          {diff.map((part, i) => (
+            <span key={i}>
+              {i > 0 && ' '}
+              {part.state === 'missing' ? (
+                <span role="img" aria-label="chýba slovo" className="inline-block w-7 border-b-2 border-error" />
+              ) : part.state === 'wrong' ? (
+                <span className="rounded-md bg-error/20 px-1 font-semibold text-error">{part.text}</span>
+              ) : part.state === 'extra' ? (
+                <s className="text-error decoration-2">{part.text}</s>
+              ) : (
+                part.text
+              )}
+            </span>
+          ))}
         </p>
-        {diff && (
-          <p className="mt-2 font-serif text-lg leading-relaxed">
-            {diff.map((part, i) => (
-              <span key={i}>
-                {i > 0 && ' '}
-                {part.state === 'missing' ? (
-                  <span role="img" aria-label="chýba slovo" className="inline-block w-7 border-b-2 border-error" />
-                ) : part.state === 'wrong' ? (
-                  <span className="rounded-md bg-error/20 px-1 font-semibold text-error">{part.text}</span>
-                ) : part.state === 'extra' ? (
-                  <s className="text-error decoration-2">{part.text}</s>
-                ) : (
-                  part.text
-                )}
-              </span>
-            ))}
-          </p>
-        )}
-        {notes.length > 0 && <p className="mt-1 text-sm text-ink-muted">{notes.join(' ')}</p>}
-      </div>
-      <div className="mt-3">{children}</div>
+      )}
+      {notes.length > 0 && <p className="mt-1 text-sm text-ink-muted">{notes.join(' ')}</p>}
     </div>
   )
 }

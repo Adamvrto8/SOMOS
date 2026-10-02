@@ -2,6 +2,8 @@
 @import "./styles/tokens.css";
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+/* While the phone keyboard is open (src/lib/keyboard.ts). */
+@custom-variant keyboard (&:where([data-keyboard] *));
 
 /* Map design tokens to Tailwind utilities (bg-bg, text-ink-muted, border-line…).
    The default palette is reset so only tokens can be used. */
