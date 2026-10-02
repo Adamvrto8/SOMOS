@@ -2,6 +2,7 @@ import { Repeat, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
+import { tipById } from '../../data'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
 import {
   canRetry,
@@ -30,6 +31,9 @@ import {
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
+import { tipFor, tipLabel } from '../../lib/tips'
+import { TipContent } from '../grammar/TipContent'
+import { TipSheet } from '../grammar/TipSheet'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
@@ -93,6 +97,10 @@ export function LessonPage() {
   const [answers, setAnswers] = useState<LessonAnswer[]>([]) // this round
   const [confirmExit, setConfirmExit] = useState(false)
   const [recording, setRecording] = useState(false) // Vyslovovanie: the mic is open
+  // The grammar tip open over the feedback ("Prečo?"). Opening it also adds a history entry (same URL,
+  // so the lesson is not rebuilt): the phone's back button then closes the tip instead of leaving the lesson.
+  const [openTip, setOpenTip] = useState<string | null>(null)
+  const tipInHistory = (location.state as { tip?: true } | null)?.tip === true
 
   const start = (next: Task[], lesson?: number, retry = false) => {
     setOverview(null)
@@ -207,6 +215,22 @@ export function LessonPage() {
     setAnswer(emptyAnswer(tasks[index + 1]))
     setGrade(null)
     setHint(null)
+    setOpenTip(null)
+  }
+
+  const taskTip = task && grade ? tipFor(task, grade) : undefined
+  // Both are needed: after a reload the history entry is still there, but nothing was opened.
+  const shownTip = grade && tipInHistory && openTip ? tipById.get(openTip) : undefined
+  const isTaskTip = shownTip !== undefined && shownTip === taskTip?.tip
+
+  const showTip = (id: string) => {
+    setOpenTip(id)
+    void navigate({ search: location.search }, { state: { tip: true } })
+  }
+
+  const closeTip = () => {
+    setOpenTip(null)
+    void navigate(-1)
   }
 
   const progress = total ? (answers.length / total) * 100 : 0
@@ -335,6 +359,7 @@ export function LessonPage() {
                 onContinue={() => next()}
                 onOverride={task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
+                why={taskTip && { label: tipLabel(taskTip), onOpen: () => showTip(taskTip.tip.id) }}
               />
             ) : canRetry(task) ? null : ( // a typed task has its buttons under the field: the phone keyboard would cover this bar
               <div className="border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
@@ -345,6 +370,18 @@ export function LessonPage() {
             )}
           </div>
         </div>
+      )}
+
+      {shownTip && (
+        <TipSheet key={shownTip.id} label={shownTip.title} onClose={closeTip}>
+          <TipContent
+            tip={shownTip}
+            // The task's own reason only in the task's own tip, not in one reached through "Pozri aj".
+            rule={isTaskTip ? taskTip?.rule : undefined}
+            asked={isTaskTip && (task?.kind === 'cloze' || task?.kind === 'choice') ? { sentence: task.sentence, cloze: task.cloze } : undefined}
+            onOpenTip={setOpenTip}
+          />
+        </TipSheet>
       )}
     </div>
   )

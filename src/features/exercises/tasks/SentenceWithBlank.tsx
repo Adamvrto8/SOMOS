@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { spaceBefore } from '../../../lib/text'
 import type { Status } from './status'
 
 const BLANK: Record<Status | 'open', string> = {
@@ -8,8 +9,6 @@ const BLANK: Record<Status | 'open', string> = {
   wrong: 'border-error text-error line-through decoration-2',
 }
 
-// Same spacing rules as the data validator: no space before .,?! and none after ¿¡
-const spaceBefore = (tokens: string[], i: number) => i > 0 && !/^[.,!?;:]$/.test(tokens[i]) && !/^[¿¡]$/.test(tokens[i - 1])
 
 interface SentenceWithBlankProps {
   tokens: string[]

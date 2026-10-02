@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { expect, type Locator, type Page } from '@playwright/test'
-import type { Sentence, Word } from '../src/data/types.ts'
+import type { Sentence, Tip, Word } from '../src/data/types.ts'
 
 // The content as the app bundles it, read from disk: the order of a lesson's tasks is shuffled,
 // so a test looks up the answer to whatever the screen asks.
@@ -10,6 +10,7 @@ function load<T>(folder: string): T[] {
 }
 export const sentences = load<Sentence>('sentences')
 export const words = load<Word>('words')
+export const tips = JSON.parse(readFileSync(new URL('../src/data/tips.json', import.meta.url), 'utf8')) as Tip[]
 
 export const field = (page: Page) => page.getByRole('textbox')
 /** The hint of a wrong try, or the feedback sheet once the task is graded. */

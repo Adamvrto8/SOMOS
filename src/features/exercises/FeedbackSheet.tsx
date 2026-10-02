@@ -1,4 +1,4 @@
-import { CircleCheck, CircleX, Info, TriangleAlert, type LucideIcon } from 'lucide-react'
+import { CircleCheck, CircleX, Info, Lightbulb, TriangleAlert, type LucideIcon } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
@@ -76,9 +76,11 @@ interface FeedbackSheetProps {
   onOverride?: () => void
   /** Practising the mistakes list: after a right answer, keep the item or drop it. */
   mistakeChoice?: { onKeep: () => void; onResolve: () => void }
+  /** The grammar tip behind a wrong answer ("Prečo?"), when there is one. */
+  why?: { label: string; onOpen: () => void }
 }
 
-export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice }: FeedbackSheetProps) {
+export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why }: FeedbackSheetProps) {
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
   const title = grade.speech && grade.verdict === 'typo' ? 'Takmer!' : tone.title
@@ -187,9 +189,16 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
             </div>
           </>
         ) : (
-          <Button onClick={onContinue} autoFocus className="mt-4 w-full">
-            Pokračovať
-          </Button>
+          <div className="mt-4 flex gap-3">
+            {why && grade.verdict === 'wrong' && (
+              <Button variant="secondary" icon={Lightbulb} onClick={why.onOpen}>
+                {why.label}
+              </Button>
+            )}
+            <Button onClick={onContinue} autoFocus className="flex-1">
+              Pokračovať
+            </Button>
+          </div>
         )}
         {onOverride && grade.verdict === 'wrong' && (
           <button

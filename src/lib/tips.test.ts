@@ -86,6 +86,6 @@ describe('tipFor', () => {
 describe('tipLabel', () => {
   it('asks "Prečo?" only when the tip is about the thing that was asked', () => {
     expect(tipLabel(tipOf('cloze', 's063#0')!)).toBe('Prečo?')
-    expect(tipLabel(tipOf('translation', 's378')!)).toBe(`Gramatika: ${tipById.get('preterito')!.title}`)
+    expect(tipLabel(tipOf('translation', 's378')!)).toBe('Gramatika k vete')
   })
 })

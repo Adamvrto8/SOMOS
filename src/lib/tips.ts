@@ -64,4 +64,5 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
   }
 }
 
-export const tipLabel = (found: TaskTip) => (found.targeted ? 'Prečo?' : `Gramatika: ${found.tip.title}`)
+/** The link's text: "Prečo?" promises to explain the mistake, which only a targeted tip can. */
+export const tipLabel = (found: TaskTip) => (found.targeted ? 'Prečo?' : 'Gramatika k vete')
