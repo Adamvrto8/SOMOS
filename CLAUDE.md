@@ -43,6 +43,9 @@ Single user, no login, works offline. Owner: Adam (knows basic Spanish, A1).
    review, reminder time — `settingsBackup.ts`; a restore replaces them. The voice stays per device, and the reminder
    is never switched on by a restore: notifications need a tap on each device, the import says so).
 6. **Levels** — every word/verb/sentence tagged `A1 | A2 | B1…`. Content A1–A2, plus B1 since phase 7 (Cvičiť level filter: A1 / A2 / B1).
+7. **Grammar tips ("Prečo?")** — twelve short Slovak explanations with examples (ser/estar, the tenses, pretérito vs
+   imperfecto, gender, articles, adjective agreement, reflexive verbs, accents). A wrong answer links to the tip behind
+   the task; a ser/estar blank also gets the reason that applies in that sentence. Browsable as "Gramatika" under Cvičiť.
 
 ### Mexican Spanish rules (important for all content)
 - No `vosotros` anywhere. Persons: `yo, tú, él/ella/usted, nosotros, ellos/ellas/ustedes` (5 forms).
@@ -123,12 +126,22 @@ interface Sentence {
     answer: string;           // correct form
     lemma: string;            // base word / infinitive
     hint?: string;            // "tener · yo · pretérito"
+    why?: string;             // ser/estar clozes only: the rule of the "ser-estar" tip that applies ("origin")
     distractors?: string[];   // for multiple choice
   }[];
   grammar?: ('presente' | 'progresivo' | 'preterito' | 'imperfecto' | 'futuro' | 'ser-estar' | 'gender' | 'articles')[];
 }
 
 interface Topic { id: string; sk: string; es: string; icon: string; }
+
+// Grammar tips, src/data/tips.json. Tip ids equal the grammar tags where one exists,
+// plus preterito-imperfecto, adjectives, reflexive, accents.
+interface Tip { id: string; title: string; intro: string; rules: TipRule[]; related?: string[]; }
+interface TipRule {
+  id: string; title: string; text?: string; examples: { es: string; sk: string }[]; // 1–3
+  verb?: 'ser' | 'estar';     // ser-estar only: groups the rules, must equal the lemma of a cloze pointing here
+  because?: string;           // ser-estar only, shown for one sentence: "Ide o pôvod, preto ser."
+}
 
 // Stored in IndexedDB (Dexie)
 interface CustomWord { id: string; es: string; sk: string; note?: string; topic?: string; createdAt: number; }
@@ -161,7 +174,14 @@ Spaced repetition (`src/lib/srs.ts`, `src/features/review/`):
 
 A validation script (`npm run validate:data`) must check: unique ids, every `verbId`
 exists, every topic exists, cloze `tokenIndex` in range and `tokens[tokenIndex] === answer`,
-no `vosotros` forms, all 5 persons present.
+no `vosotros` forms, all 5 persons present. Tips: every grammar tag has a tip, rule ids unique within a tip, 1–3
+examples per rule (Spanish checked like all content), `related` ids exist; every cloze with a `ser/estar · …` hint has
+`why` naming a ser-estar rule of the same verb as its lemma, and no other cloze has `why`.
+
+Which tip a task gets is decided by `tipFor()` (`src/lib/tips.ts`): an accent that changed the meaning → `accents`;
+cloze / choice by the hint (ser/estar + its rule, the tense, gerundio → progresivo, člen → articles, prídavné meno →
+adjectives, a vocabulary hint → none); conjugation by its tense; whole-sentence tasks by the first grammar tag in the
+order ser-estar, imperfecto, preterito, futuro, progresivo, gender, articles, presente; vocab → none.
 
 Content conventions (types in `src/data/types.ts`, all enforced by `validate:data`):
 - Word `id` = slug of `es` (lowercase, accents/¿?¡! stripped, spaces → `-`); collisions get `-2`: `papa` (zemiak), `papa-2` (papá).
@@ -231,7 +251,8 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   sideways (the tense tabs).
 - **Cvičiť** — pick exercise type (cards), topic, level → lesson player → result screen.
   Each choice is a row of numbered lessons with fixed tasks (`getStablePool()`, 10 per lesson); the next lesson
-  unlocks at 80 %. "Precvičiť chyby" card when mistakes exist.
+  unlocks at 80 %. "Precvičiť chyby" card when mistakes exist. "Gramatika" card → `/practice/grammar` (all tips) →
+  `/practice/grammar/:id` (one tip, "Pozri aj" to related ones).
 - **Lekcia** — progress bar, one task per screen, big input / tiles, bottom "Skontrolovať" button,
   feedback sheet slides up (green / amber / red) with ⭐ (verb for conjugation, sentence otherwise).
   A wrong typed answer (cloze, conjugation, translation, vocab, dictation; `canRetry()`) is not final: `RetryHint`
@@ -244,6 +265,10 @@ Bottom tab bar (4 tabs): **Domov · Hľadať · Cvičiť · Archív**
   While the answer is being edited the hint's text fades (it is about the previous try); its buttons do not.
   The accent keys under the field (á é í ó ú ñ ü ¿ ¡) are one row at any width.
   Wrong answers go to Chyby. Result: repeat mistakes / whole lesson / new lesson.
+  After a wrong answer the sheet has a tip link next to "Pokračovať" when `tipFor()` finds one: "Prečo?" for a tip
+  about the thing that was asked, "Gramatika k vete" for a whole sentence's topic. It opens `TipSheet` over the lesson
+  (full screen, ✕ / Esc); opening pushes a history entry with the same URL and `state.tip`, so the phone's back button
+  closes the tip and the lesson is neither left nor rebuilt. A ser/estar blank shows "V tejto vete" with its reason.
   A passed numbered lesson opens on `LessonOverview` (its tasks with the correct answers, those in Chyby marked)
   with "Zopakovať lekciu".
   `?mistakes=1` practises the mistakes list; a right answer asks "Nechať / Odstrániť".
@@ -301,13 +326,13 @@ Clean and calm, but with character. Not childish.
 
 ```
 src/
-  data/            topics.json, types.ts, index.ts (merges the folders below via import.meta.glob)
+  data/            topics.json, tips.json (grammar tips), types.ts, index.ts (merges the folders below via import.meta.glob)
     words/         one file per topic (food.json…) + verbs.json (the verb Words)
     sentences/     one file per topic
     verbs/         core.json (first 20), a1-a2.json, b1.json
   lib/             db.ts (Dexie), search.ts, checkAnswer.ts, conjugate.ts, srs.ts, tts.ts, reminder.ts (push reminder)
   features/
-    search/  word/  exercises/  archive/  home/
+    search/  word/  exercises/  archive/  home/  review/  grammar/ (TipContent, TipSheet, GrammarPage, TipPage)
   components/      ui primitives (Button, Card, Chip, Sheet, TabBar…)
   styles/          tokens.css
 e2e/               browser tests of the screens (Playwright): lesson retry, review typing, word swipe
@@ -333,6 +358,8 @@ scripts/
   Level rebalance: ~260 words, 13 verbs and 25 sentences re-tagged A1 → A2 (A1 = survival vocabulary, pretérito is A2);
   +69 B1 words, +84 B1 sentences (s515–s598), +20 verbs (10 A2, 10 B1) with their Words.
   Totals: 1142 words, 157 verbs (A1 63 · A2 47 · B1 47), 598 sentences (266 · 180 · 152).
+- [x] **8. Grammar tips ("Prečo?")** — 12 tips, a reason on each of the 60 ser/estar clozes, the link in the lesson
+  feedback, the handbook under Cvičiť. Spec and plan in `docs/superpowers/` (2026-10-02). Not reviewed by a native speaker.
 
 ---
 

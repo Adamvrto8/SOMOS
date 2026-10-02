@@ -1,6 +1,11 @@
 # Grammar tips ("Prečo?") — design
 
-Date: 2026-10-02 · Status: approved in chat (scope B), awaiting spec review
+Date: 2026-10-02 · Status: approved by Adam, built the same day
+
+Changed while building: the link for a whole sentence reads "Gramatika k vete" (the tip titles are
+too long for a button next to "Pokračovať"); estar got a fifth rule, `expression` (estar de acuerdo,
+estar en oferta), because two sentences needed it; the rule that applies is highlighted but not
+scrolled to, since the "V tejto vete" box at the top already states it.
 
 ## Goal
 
