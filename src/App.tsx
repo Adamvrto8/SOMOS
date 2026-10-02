@@ -6,6 +6,8 @@ import { CustomWordPage } from './features/archive/CustomWordPage'
 import { SettingsPage } from './features/archive/SettingsPage'
 import { LessonPage } from './features/exercises/LessonPage'
 import { PracticePage } from './features/exercises/PracticePage'
+import { GrammarPage } from './features/grammar/GrammarPage'
+import { TipPage } from './features/grammar/TipPage'
 import { HomePage } from './features/home/HomePage'
 import { ReviewPage } from './features/review/ReviewPage'
 import { SearchPage } from './features/search/SearchPage'
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
       { path: 'word/:id', element: <WordPage /> },
       { path: 'topic/:id', element: <TopicPage /> },
       { path: 'practice', element: <PracticePage /> },
+      { path: 'practice/grammar', element: <GrammarPage /> },
+      { path: 'practice/grammar/:id', element: <TipPage /> },
       { path: 'archive', element: <ArchivePage /> },
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },

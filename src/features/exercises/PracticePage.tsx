@@ -1,4 +1,4 @@
-import { Check, ChevronRight, Dumbbell, Lock, Play } from 'lucide-react'
+import { BookOpen, Check, ChevronRight, Dumbbell, Lock, Play } from 'lucide-react'
 import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { Chip } from '../../components/Chip'
@@ -93,6 +93,20 @@ export function PracticePage() {
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
         </Link>
       )}
+
+      <Link
+        to="/practice/grammar"
+        className="flex items-center gap-3 rounded-card border border-line bg-surface p-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
+      >
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-brick">
+          <BookOpen size={20} strokeWidth={1.75} aria-hidden />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-medium">Gramatika</span>
+          <span className="block text-sm text-ink-muted">Krátke pravidlá s príkladmi</span>
+        </span>
+        <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+      </Link>
 
       <section aria-labelledby="type-heading">
         <SectionTitle id="type-heading">Typ cvičenia</SectionTitle>

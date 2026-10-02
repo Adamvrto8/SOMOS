@@ -60,6 +60,30 @@ test('"Prečo?" explains why a sentence takes ser or estar, and the back button 
   await expect(tip).toHaveCount(0)
 })
 
+test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {
+  await page.goto('/practice')
+  await page.getByRole('link', { name: /Gramatika/ }).tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Gramatika')
+  const list = page.getByRole('main').getByRole('listitem')
+  await expect(list).toHaveCount(tips.length)
+  expect(tips.length).toBe(12)
+
+  await list.getByRole('link', { name: /^ser a estar/ }).tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')
+  await expect(page.getByRole('heading', { level: 2, name: 'ser', exact: true })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 2, name: 'estar', exact: true })).toBeVisible()
+  // Read on its own, a tip has no sentence to explain.
+  await expect(page.getByLabel('V tejto vete')).toHaveCount(0)
+
+  await page.getByRole('button', { name: 'Zhoda prídavných mien' }).tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Zhoda prídavných mien')
+  await button(page, 'Späť').tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')
+
+  await page.goto('/practice/grammar/nope')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tip sa nenašiel')
+})
+
 test('a whole sentence links to its grammar topic, if it has one', async ({ page }) => {
   await page.goto(lesson('translation'))
   const sentence = await askedSentence(page)
