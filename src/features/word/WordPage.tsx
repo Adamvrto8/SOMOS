@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, Info } from 'lucide-react'
-import { useEffect, useRef, type ReactNode, type TouchEvent } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { Badge } from '../../components/Badge'
@@ -36,21 +36,35 @@ export function WordPage() {
     void navigate(`/word/${targetId}`, { replace: true, state })
   }
 
-  const touchStart = useRef<{ x: number; y: number } | null>(null)
-  const onTouchStart = (e: TouchEvent) => {
-    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }
-  }
-  const onTouchEnd = (e: TouchEvent) => {
-    const start = touchStart.current
-    touchStart.current = null
-    if (!start) return
-    const dx = e.changedTouches[0].clientX - start.x
-    const dy = e.changedTouches[0].clientY - start.y
-    // Only a clearly horizontal swipe counts; right-to-left = next word.
-    if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < 2 * Math.abs(dy)) return
-    if (dx < 0) go(nextId, 'next')
-    else go(prevId, 'prev')
-  }
+  // Listened for on the window, not on this page's own element: a short word ends mid-screen
+  // and the empty space below it has to swipe too. The header and the tab bar are left out.
+  const touchStart = useRef<{ id: number; x: number; y: number } | null>(null)
+  useEffect(() => {
+    const onTouchStart = (e: TouchEvent) => {
+      const inPage = e.target instanceof Element && e.target.closest('main') !== null
+      // The finger that just came down (changedTouches), whatever else is resting on the screen.
+      const touch = e.changedTouches[0]
+      touchStart.current = inPage ? { id: touch.identifier, x: touch.clientX, y: touch.clientY } : null
+    }
+    const onTouchEnd = (e: TouchEvent) => {
+      const start = touchStart.current
+      const touch = start && [...e.changedTouches].find((t) => t.identifier === start.id)
+      if (!start || !touch) return
+      touchStart.current = null
+      const dx = touch.clientX - start.x
+      const dy = touch.clientY - start.y
+      // Only a clearly horizontal swipe counts; right-to-left = next word.
+      if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < 2 * Math.abs(dy)) return
+      if (dx < 0) go(nextId, 'next')
+      else go(prevId, 'prev')
+    }
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchend', onTouchEnd, { passive: true })
+    return () => {
+      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchend', onTouchEnd)
+    }
+  })
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -67,7 +81,7 @@ export function WordPage() {
 
   return (
     // pan-y: the page still scrolls vertically, horizontal swipes are ours.
-    <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} className="touch-pan-y">
+    <div className="touch-pan-y">
       <div className="flex items-center justify-between">
         <BackButton fallback="/search" />
         {index >= 0 && list.length > 1 && (
