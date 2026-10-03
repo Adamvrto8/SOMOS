@@ -237,22 +237,25 @@ function parseStored<T>(raw: string | null | undefined, isValid: (v: unknown) =>
 export const VAPID_PUBLIC_KEY = 'BPTIxlaW9JLc2601tsFgNg6FVwR8CUB4GHBVze_ERU7m0EEuYrWb4Y8XwBVAIMRjYgB_aBVi48EnbCx4-isXD_Q'
 const VAPID_SUBJECT = 'https://somos-jade.vercel.app'
 const REMINDER_TTL = 4 * 60 * 60 // seconds; a reminder that arrives hours late is pointless
+// With 'normal' Android holds the message while the phone sleeps (Doze): it showed up late or never.
+const REMINDER_URGENCY = 'high'
 
 export interface SendOptions {
   ttl: number
   topic: string
+  urgency: 'normal' | 'high'
 }
 
 /** Delivers one push message; rejects with `{ statusCode }` when the push service refuses it. */
 export type Sender = (subscription: PushSub, payload: string, options: SendOptions) => Promise<void>
 
 export function webPushSender(privateKey: string): Sender {
-  return async (subscription, payload, { ttl, topic }) => {
+  return async (subscription, payload, { ttl, topic, urgency }) => {
     await webpush.sendNotification(subscription, payload, {
       vapidDetails: { subject: VAPID_SUBJECT, publicKey: VAPID_PUBLIC_KEY, privateKey },
       TTL: ttl,
       topic,
-      urgency: 'normal',
+      urgency,
     })
   }
 }
@@ -271,7 +274,7 @@ const statusOf = (error: unknown) => (isRecord(error) && typeof error.statusCode
 /** Sends a message; forgets a subscription the push service no longer knows. */
 async function deliver(deps: Deps, sub: ReminderSub, message: Message, topic: string): Promise<Delivery> {
   try {
-    await deps.send(sub.subscription, JSON.stringify({ ...message, url: '/' }), { ttl: REMINDER_TTL, topic })
+    await deps.send(sub.subscription, JSON.stringify({ ...message, url: '/' }), { ttl: REMINDER_TTL, topic, urgency: REMINDER_URGENCY })
     return 'sent'
   } catch (error) {
     const status = statusOf(error)

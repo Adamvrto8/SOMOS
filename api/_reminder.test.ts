@@ -212,7 +212,7 @@ describe('api/reminder: cron tick', () => {
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
       JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/' }),
-      { ttl: 14_400, topic: 'reminder' },
+      { ttl: 14_400, topic: 'reminder', urgency: 'high' },
     )
     expect(store.data.get(KEYS.sent)).toBe('2026-07-01')
   })
@@ -329,7 +329,7 @@ describe('api/reminder: requests from the app', () => {
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
       JSON.stringify({ title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓', url: '/' }),
-      { ttl: 14_400, topic: 'test' },
+      { ttl: 14_400, topic: 'test', urgency: 'high' },
     )
     expect((await test()).status).toBe(429)
     expect(send).toHaveBeenCalledTimes(1)
