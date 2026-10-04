@@ -6,6 +6,7 @@ import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
 import { useT } from '../../i18n'
+import { useLanguage } from '../../lib/language'
 import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
@@ -29,6 +30,7 @@ const asGrade = (check: CheckResult): LessonGrade => ({ correct: check.verdict !
  * type the other side (it rates itself, see typedRating) or reveal it and rate (FSRS).
  */
 export function ReviewPage() {
+  const language = useLanguage()
   const dictionary = useT()
   const text = dictionary.review
   const navigate = useNavigate()
@@ -221,7 +223,7 @@ export function ReviewPage() {
                   onSubmit={check}
                   status={outcome ? statusOf(asGrade(outcome.check)) : undefined}
                   hint={hint}
-                  lang={entry.slovakFirst ? 'es' : 'sk'}
+                  lang={entry.slovakFirst ? 'es' : language}
                   label={entry.slovakFirst ? dictionary.lesson.toSpanish : dictionary.lesson.toNative}
                   placeholder={entry.slovakFirst ? dictionary.lesson.task.inSpanish : dictionary.lesson.task.inNative}
                 />

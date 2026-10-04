@@ -1,10 +1,15 @@
 import { db, type Lookup } from './db'
 import { lookupForm } from './knownForms'
+import { getLanguage } from './language'
 
 // Online lookup for words outside the dataset: POST /api/translate (Vercel function → DeepL).
 // Results are cached in IndexedDB, so a repeated lookup costs nothing and works offline.
 
-export type Lang = 'sk' | 'es'
+/** Spanish, or the learner's language: a lookup always has Spanish on one side. */
+export type Lang = 'sk' | 'en' | 'es'
+
+/** The other side of a lookup that starts from `from`. */
+export const targetOf = (from: Lang): Lang => (from === 'es' ? getLanguage() : 'es')
 
 export type TranslateError = 'offline' | 'unavailable' | 'not-configured' | 'quota' | 'failed'
 
@@ -24,7 +29,12 @@ export class TranslateFailure extends Error {
 const isTranslateError = (value: unknown): value is TranslateError => TRANSLATE_ERROR_CODES.includes(value as TranslateError)
 
 // Accents stay in the key: "papa" and "papá" are different words.
-const lookupKey = (text: string, from: Lang) => `${from}:${text.trim().toLowerCase().replace(/\s+/g, ' ')}`
+// The Slovak pair keeps its old key ("sk:…", "es:…"), so what is cached stays; the English pair names both sides.
+const lookupKey = (text: string, from: Lang) => {
+  const to = targetOf(from)
+  const pair = from === 'sk' || to === 'sk' ? from : `${from}>${to}`
+  return `${pair}:${text.trim().toLowerCase().replace(/\s+/g, ' ')}`
+}
 
 export function cachedTranslation(text: string, from: Lang): Promise<Lookup | undefined> {
   return db.lookups.get(lookupKey(text, from))
@@ -41,7 +51,7 @@ export async function translateOnline(text: string, from: Lang): Promise<Lookup>
     res = await fetch('/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text.trim(), from }),
+      body: JSON.stringify({ text: text.trim(), from, to: targetOf(from) }),
     })
   } catch {
     throw new TranslateFailure('offline')
@@ -60,14 +70,18 @@ const SPANISH_LETTERS = /[ñ¿¡ü]/
 const SLOVAK_LETTERS = /[äôľĺŕčďťžšňý]/
 // Spanish-looking endings: -ción, -dad, -mente and infinitives (regresar, subirse).
 const SPANISH_ENDING = /(ción|sión|dad|mente|[aei]r(se)?)$/
+const SPANISH_ENDING_NOT_ENGLISH = /(ción|sión|mente|[aei]rse)$/
 
 /** Best guess of the query's language, so the lookup button points the right way; the learner can switch. */
 export function guessLang(text: string): Lang {
   const t = text.trim().toLowerCase()
   if (SPANISH_LETTERS.test(t)) return 'es'
-  if (SLOVAK_LETTERS.test(t)) return 'sk'
+  const native = getLanguage()
+  if (native === 'sk' && SLOVAK_LETTERS.test(t)) return 'sk'
   const words = t.split(/\s+/).filter(Boolean)
   const known = words.filter((w) => lookupForm(w) !== undefined).length
   if (known > words.length / 2) return 'es'
-  return words.some((w) => SPANISH_ENDING.test(w)) ? 'es' : 'sk'
+  // English is full of words that end like a Spanish infinitive or noun (seller, car, dad).
+  const ending = native === 'en' ? SPANISH_ENDING_NOT_ENGLISH : SPANISH_ENDING
+  return words.some((w) => ending.test(w)) ? 'es' : native
 }

@@ -2,6 +2,8 @@ import MiniSearch from 'minisearch'
 import { verbById, wordById, words } from '../data'
 import type { Word } from '../data/types'
 import { TENSES } from './conjugate'
+import { getLanguage, type Language } from './language'
+import { wordTranslations } from './localized'
 import { compareEs, fold } from './text'
 
 export type SearchFilter = 'all' | 'verb' | 'noun' | 'phrase'
@@ -15,7 +17,7 @@ export interface WordHit {
 interface SearchDoc {
   id: string
   es: string
-  sk: string
+  native: string // the translations in the learner's language
   forms: string
 }
 
@@ -30,15 +32,18 @@ function verbForms(word: Word): string[] {
 }
 
 let index: MiniSearch<SearchDoc> | undefined
+let indexLanguage: Language | undefined
 
-// Built lazily on the first search.
+// Built lazily on the first search, and again after the language changed.
 function getIndex(): MiniSearch<SearchDoc> {
-  if (index) return index
+  const language = getLanguage()
+  if (index && indexLanguage === language) return index
+  indexLanguage = language
   index = new MiniSearch<SearchDoc>({
-    fields: ['es', 'sk', 'forms'],
+    fields: ['es', 'native', 'forms'],
     processTerm: (term) => fold(term) || null,
     searchOptions: {
-      boost: { es: 3, sk: 3 },
+      boost: { es: 3, native: 3 },
       prefix: true,
       fuzzy: (term) => (term.length >= 4 ? 0.2 : false),
       combineWith: 'AND',
@@ -48,7 +53,7 @@ function getIndex(): MiniSearch<SearchDoc> {
     words.map((w) => ({
       id: w.id,
       es: [w.es, w.plural, w.feminine].filter(Boolean).join(' '),
-      sk: w.sk.join(' '),
+      native: wordTranslations(w).join(' '),
       forms: verbForms(w).join(' '),
     })),
   )
@@ -61,7 +66,7 @@ const byEs = (a: Word, b: Word) => compareEs(a.es.replace(/[¿?¡!]/g, ''), b.es
 
 // Exact matches rank first; a literal match ("byt" → byt) beats a folded one ("byt" → byť).
 function exactness(word: Word, raw: string, folded: string): number {
-  const candidates = [word.es.replace(/[¿?¡!]/g, ''), ...word.sk]
+  const candidates = [word.es.replace(/[¿?¡!]/g, ''), ...wordTranslations(word)]
   if (candidates.some((c) => c.toLowerCase() === raw)) return 3
   if (candidates.some((c) => fold(c) === folded)) return 2
   if (verbForms(word).some((f) => fold(f) === folded)) return 1
@@ -84,7 +89,7 @@ export function searchWords(query: string, filter: SearchFilter): WordHit[] {
       if (!word || !matchesFilter(word, filter)) return []
       const fields = new Set(Object.values(result.match).flat())
       const matchedForm =
-        fields.has('es') || fields.has('sk') ? undefined : verbForms(word).find((f) => result.terms.includes(fold(f)))
+        fields.has('es') || fields.has('native') ? undefined : verbForms(word).find((f) => result.terms.includes(fold(f)))
       return [{ word, matchedForm, score: result.score, exact: exactness(word, raw, folded) }]
     })
 

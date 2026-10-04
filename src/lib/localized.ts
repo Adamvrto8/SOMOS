@@ -15,7 +15,9 @@ export interface LocalExample {
 }
 
 export function wordTranslations(word: Word): string[] {
-  return (isEnglish() && english.words.get(word.id)?.en) || word.sk
+  if (!isEnglish()) return word.sk
+  // A verb's dictionary entry means what the verb means: one translation serves both.
+  return english.words.get(word.id)?.en ?? (word.verbId ? english.verbs.get(word.verbId)?.en : undefined) ?? word.sk
 }
 
 export function wordExamples(word: Word): LocalExample[] {

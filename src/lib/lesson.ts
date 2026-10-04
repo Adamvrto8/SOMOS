@@ -1,7 +1,9 @@
 import { sentenceById, sentences, verbById, verbs, wordById, words } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
+import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
+import { getLanguage } from './language'
 import { wordTranslations } from './localized'
 import { lookupForm } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
@@ -209,15 +211,27 @@ const NUMBER_VALUES: Record<string, number> = {
 // Pronouns and particles a Slovak phrase can do without: "ako sa ti darí?" ≈ "ako sa darí?".
 const OPTIONAL_SK = new Set(['ti', 'mi', 'si', 'sa', 'ťa', 'ma', 'to'])
 
+/** "to have" is also right as "have", "rain" as "the rain": English answers with or without their little words. */
+function englishVariants(answer: string): string[] {
+  if (/^to /i.test(answer)) return [answer, answer.slice(3)]
+  const bare = answer.replace(/^(the|an?) /i, '')
+  return [answer, bare, `the ${bare}`, `a ${bare}`, `an ${bare}`]
+}
+
 /** Answers accepted for a vocab task from Spanish: the word's translations in the learner's language. */
-export function slovakAnswers(word: Word): string[] {
+export function nativeAnswers(word: Word): string[] {
+  const english = getLanguage() === 'en'
   const out = new Set<string>()
-  for (const sk of wordTranslations(word)) {
+  for (const translation of wordTranslations(word)) {
     // Parentheses explain usage ("prosím? (keď si nepočul)"), nobody types them.
-    const bare = sk.replace(/\s*\([^)]*\)/g, '').trim()
-    for (const variant of [sk, bare]) {
+    const bare = translation.replace(/\s*\([^)]*\)/g, '').trim()
+    for (const variant of [translation, bare]) {
       if (!variant) continue
       out.add(variant)
+      if (english) {
+        englishVariants(variant).forEach((v) => out.add(v))
+        continue
+      }
       const parts = variant.split(/\s+/)
       if (parts.length < 3) continue // "volať sa" without "sa" is another verb
       parts.forEach((part, i) => {
@@ -228,7 +242,8 @@ export function slovakAnswers(word: Word): string[] {
   const value = NUMBER_VALUES[word.es]
   if (value !== undefined) {
     out.add(String(value))
-    if (value >= 1000) out.add(value.toLocaleString('sk-SK').replace(/\s/g, ' ')) // "1 000"
+    // "1 000" in Slovak (a plain space for the narrow one the locale gives), "1,000" in English.
+    if (value >= 1000) out.add(value.toLocaleString(t().dateLocale).replace(/\s/g, ' '))
   }
   return [...out]
 }
@@ -243,7 +258,7 @@ export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
   const expected = isToSpanish ? word.es : wordTranslations(word)[0]
   const acceptable = isToSpanish
     ? [word.es, ...(word.gender ? [`${word.gender === 'm' ? 'el' : 'la'} ${word.es}`] : [])]
-    : slovakAnswers(word)
+    : nativeAnswers(word)
 
   return {
     kind: 'vocab',

@@ -6,6 +6,7 @@ import { Button } from '../../components/Button'
 import { Segmented } from '../../components/Segmented'
 import { SpeakButton } from '../../components/SpeakButton'
 import { useT } from '../../i18n'
+import { useLanguage } from '../../lib/language'
 import {
   cachedTranslation,
   guessLang,
@@ -17,15 +18,16 @@ import {
 } from '../../lib/translate'
 import type { CustomWordPrefill } from '../archive/CustomWordPage'
 
-const DIRECTIONS: { id: Lang; label: string }[] = [
-  { id: 'sk', label: 'SK → ES' },
-  { id: 'es', label: 'ES → SK' },
-]
-
 /** DeepL lookup for a query the dictionary doesn't cover. Remount it (key) when the query changes. */
 export function OnlineTranslate({ query }: { query: string }) {
   const navigate = useNavigate()
   const labels = useT().search.online
+  // Spanish on one side, the learner's language on the other.
+  const native = useLanguage()
+  const directions: { id: Lang; label: string }[] = [
+    { id: native, label: `${native.toUpperCase()} → ES` },
+    { id: 'es', label: `ES → ${native.toUpperCase()}` },
+  ]
   const text = query.trim()
   const [from, setFrom] = useState<Lang>(() => guessLang(text))
   const [busy, setBusy] = useState(false)
@@ -47,8 +49,8 @@ export function OnlineTranslate({ query }: { query: string }) {
     }
   }
 
-  const es = result ? (from === 'sk' ? result.translation : result.text) : ''
-  const sk = result ? (from === 'sk' ? result.text : result.translation) : ''
+  const es = result ? (from === 'es' ? result.text : result.translation) : ''
+  const sk = result ? (from === 'es' ? result.translation : result.text) : ''
   const addToMine = () => {
     const prefill: CustomWordPrefill = { es, sk }
     void navigate('/archive/new', { state: { prefill } })
@@ -69,7 +71,7 @@ export function OnlineTranslate({ query }: { query: string }) {
           mode="radio"
           label={labels.direction}
           idPrefix="direction"
-          options={DIRECTIONS}
+          options={directions}
           value={from}
           onChange={(value) => {
             setFrom(value)

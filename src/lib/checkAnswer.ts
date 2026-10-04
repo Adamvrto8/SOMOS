@@ -1,3 +1,5 @@
+import { t } from '../i18n'
+import { getLanguage } from './language'
 import { fold } from './text'
 
 // Tolerant answer checking (CLAUDE.md §4).
@@ -33,8 +35,8 @@ export interface Meaning {
   gloss: string // "táto", "hablar · yo · presente"
 }
 
-// Words whose accent changes the meaning, with a short Slovak gloss.
-const MEANING_PAIRS: Record<string, string> = {
+// Words whose accent changes the meaning, with a short gloss.
+const MEANING_PAIRS_SK: Record<string, string> = {
   esta: 'táto',
   está: 'je (estar)',
   estas: 'tieto',
@@ -75,6 +77,49 @@ const MEANING_PAIRS: Record<string, string> = {
   año: 'rok',
 }
 
+const MEANING_PAIRS_EN: Record<string, string> = {
+  esta: 'this (feminine)',
+  está: 'is (estar)',
+  estas: 'these (feminine)',
+  estás: 'you are (estar)',
+  el: 'the (article)',
+  él: 'he',
+  tu: 'your',
+  tú: 'you',
+  si: 'if',
+  sí: 'yes',
+  mas: 'but (literary)',
+  más: 'more',
+  se: 'himself / herself (pronoun)',
+  sé: 'I know',
+  te: 'you (object)',
+  té: 'tea',
+  de: 'of / from',
+  dé: 'give (a form of dar)',
+  mi: 'my',
+  mí: 'me',
+  que: 'that / which',
+  qué: 'what?',
+  como: 'like, as / I eat',
+  cómo: 'how? (question)',
+  donde: 'where (in a statement)',
+  dónde: 'where? (question)',
+  cuando: 'when (in a statement)',
+  cuándo: 'when? (question)',
+  quien: 'who (in a statement)',
+  quién: 'who? (question)',
+  cual: 'which (in a statement)',
+  cuál: 'which? (question)',
+  cuanto: 'as much as',
+  cuánto: 'how much? (question)',
+  aun: 'even',
+  aún: 'still, yet',
+  ano: 'anus',
+  año: 'year',
+}
+
+const meaningPairs = () => (getLanguage() === 'en' ? MEANING_PAIRS_EN : MEANING_PAIRS_SK)
+
 const SUBJECT_PRONOUNS = new Set(['yo', 'tú', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'ellos', 'ellas', 'ustedes'])
 
 const MIN_TYPO_LENGTH = 5
@@ -106,16 +151,17 @@ function levenshtein(a: string, b: string): number {
 
 /** For words that differ only in accents: both meanings if they are different words, else undefined. */
 function meaningChange(got: string, want: string, lookup?: CheckOptions['lookup']): Meaning[] | undefined {
-  if (MEANING_PAIRS[got] && MEANING_PAIRS[want]) {
+  const pairs = meaningPairs()
+  if (pairs[got] && pairs[want]) {
     return [
-      { word: got, gloss: MEANING_PAIRS[got] },
-      { word: want, gloss: MEANING_PAIRS[want] },
+      { word: got, gloss: pairs[got] },
+      { word: want, gloss: pairs[want] },
     ]
   }
   const gotGloss = lookup?.(got)
   if (gotGloss === undefined) return undefined
   const wantGloss = lookup?.(want)
-  return [{ word: got, gloss: gotGloss || 'iné slovo' }, ...(wantGloss ? [{ word: want, gloss: wantGloss }] : [])]
+  return [{ word: got, gloss: gotGloss || t().lesson.otherWord }, ...(wantGloss ? [{ word: want, gloss: wantGloss }] : [])]
 }
 
 type WordMatch =

@@ -398,6 +398,9 @@ export const sk = {
     keep: 'Nechať',
     remove: 'Odstrániť',
     override: 'Moja odpoveď bola tiež správna',
+    /** A word that exists but is not the one asked for, when it has no translation to show. */
+    otherWord: 'iné slovo',
+    or: 'alebo',
 
     result: {
       passed: (n: number) => `Lekcia ${n} splnená`,
@@ -524,6 +527,46 @@ export const sk = {
     rule: 'Pravidlo',
     overview: 'Celý prehľad',
     related: 'Pozri aj',
+  },
+
+  /** The reasons "Prečo?" gives for one task (src/lib/tips.ts picks which). */
+  tips: {
+    regularVerb: (verb: string, group: string) => `${verb} je pravidelné sloveso na -${group}.`,
+    regularForm: (verb: string, group: string) => `Tento tvar slovesa ${verb} je pravidelný, ako pri ostatných slovesách na -${group}.`,
+    gerundIrregular: (verb: string, gerund: string) => `${verb} má nepravidelné gerundium: ${gerund}.`,
+    gerundForm: (verb: string, gerund: string) => `Pri slovese ${verb} sa časuje len estar, gerundium ${gerund} sa nemení.`,
+    gerundRegular: (verb: string, group: string, ending: string, gerund: string) =>
+      `${verb} je sloveso na -${group}, gerundium sa končí na ${ending}: ${gerund}.`,
+    presenteIrregular: (verb: string) => `${verb} je v prítomnom čase úplne nepravidelné, tvary sa treba naučiť.`,
+    presenteYo: (verb: string, form: string) => `${verb} má nepravidelný tvar pre yo: ${form}.`,
+    presenteStem: (verb: string) => `V slovese ${verb} sa v tomto tvare mení kmeň.`,
+    preteritoSerIr: 'ser a ir majú v pretérite rovnaké, nepravidelné tvary.',
+    preteritoStems: (verb: string) => `${verb} patrí v pretérite medzi nepravidelné slovesá: koncovky sú bez prízvuku.`,
+    preteritoSpelling: (verb: string) => `V slovese ${verb} sa pred koncovkou -é mení pravopis, aby ostala výslovnosť.`,
+    preteritoThird: (verb: string) => `Sloveso ${verb} má v pretérite zmenu len v tvaroch él a ellos.`,
+    preteritoAccent: (verb: string) => `Tento tvar slovesa ${verb} sa od pravidelného líši len prízvukom, treba si ho zapamätať.`,
+    imperfectoIrregular: (verb: string) => `${verb} je jedno z troch slovies, ktoré sú v imperfecte nepravidelné.`,
+    futuroStems: (verb: string) => `${verb} má v budúcom čase nepravidelný kmeň, koncovky ostávajú.`,
+    futuroEndings: (verb: string) => `Pri slovese ${verb} sa koncovka pridáva k celému neurčitku.`,
+    articleForms: {
+      el: 'mužský rod, jednotné číslo',
+      la: 'ženský rod, jednotné číslo',
+      los: 'mužský rod, množné číslo',
+      las: 'ženský rod, množné číslo',
+      un: 'mužský rod, jednotné číslo',
+      una: 'ženský rod, jednotné číslo',
+      unos: 'mužský rod, množné číslo',
+      unas: 'ženský rod, množné číslo',
+    } as Record<string, string>,
+    contraction: (preposition: string, result: string) => `Predložka ${preposition} sa s členom el spája: ${preposition} + el = ${result}.`,
+    article: (article: string, form: string) => `Člen sa riadi podstatným menom: ${article} je ${form}.`,
+    feminineWithEl: (noun: string) => `Slovo ${noun} je ženského rodu, ale začína sa prízvučným a-, preto má v jednotnom čísle člen el.`,
+    adjectiveNoGender: (form: string, plural: boolean) =>
+      `Prídavné meno sa zhoduje s podstatným menom: ${form} je ${plural ? 'množné číslo' : 'jednotné číslo'}, v rode sa nemení.`,
+    adjective: (form: string, feminine: boolean, plural: boolean) =>
+      `Prídavné meno sa zhoduje s podstatným menom: ${form} je ${feminine ? 'ženský rod' : 'mužský rod'}, ${plural ? 'množné číslo' : 'jednotné číslo'}.`,
+    /** `meanings` = "hablo = hovorím, habló = hovoril" */
+    accent: (meanings: string) => `Prízvuk tu mení význam: ${meanings}.`,
   },
 }
 

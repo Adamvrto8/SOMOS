@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { t } from '../i18n'
 import { db } from './db'
+import { getLanguage, subscribeLanguage } from './language'
 import { loadProgress } from './reminderProgress'
 import type { ReminderStatus } from './reminderStatus'
 
@@ -164,7 +165,7 @@ async function ensureSubscription(): Promise<PushSubscription> {
 /** Tells the server where and when to remind (also refreshes a rotated subscription). */
 function register(subscription: PushSubscription, time: string): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone })
+  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage() })
 }
 
 /** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
@@ -290,6 +291,8 @@ export async function syncReminder(): Promise<void> {
  */
 export function keepReminderSynced(): void {
   void syncReminder()
+  // The notification is written by the server: it has to hear about a switch.
+  subscribeLanguage(() => void syncReminder())
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible') return
     if (syncFailure || Date.now() - lastSync > SYNC_EVERY) void syncReminder()

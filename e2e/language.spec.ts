@@ -77,6 +77,18 @@ test('English content shows where it exists, Slovak where it does not yet', asyn
   await page.goto('/word/casa')
   await expect(page.getByText('dom, domov')).toBeVisible()
 
+  // Search finds a word by its English translation, and offers the online lookup in the English direction.
+  await page.goto('/search?q=rain')
+  await expect(page.getByRole('link', { name: /lluvia.*rain/ })).toBeVisible()
+  await expect(page.getByRole('radio', { name: 'EN → ES' })).toBeVisible()
+
+  // A verb asked in a lesson is explained in English.
+  await page.goto('/practice/lesson?type=conjugation&tense=presente&level=A1&lesson=1')
+  await page.getByRole('button', { name: 'Give up', exact: true }).tap()
+  await page.getByRole('button', { name: 'Why?', exact: true }).tap()
+  await expect(page.getByRole('dialog').getByLabel('In this task')).toContainText(/ (verb|form|stem)[ .]/)
+  await page.getByRole('dialog').getByRole('button', { name: 'Close' }).tap()
+
   // A grammar tip that has an English version, and one that has not.
   await page.goto('/practice/grammar/futuro')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Future tense (futuro)')

@@ -6,6 +6,7 @@ import { wordIdByVerb } from '../../data'
 import { t, useT } from '../../i18n'
 import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
+import { getLanguage, type Language } from '../../lib/language'
 import type { Grade, Task } from '../../lib/lesson'
 import { sentenceTranslation, wordTranslations } from '../../lib/localized'
 import { SaveButton } from '../word/SaveButton'
@@ -21,9 +22,9 @@ const TONE: Record<Verdict, { icon: LucideIcon; panel: string; heading: string }
 interface Reference {
   label?: string
   correct: string
-  correctLang: 'es' | 'sk'
+  correctLang: 'es' | Language
   detail?: string
-  detailLang?: 'es' | 'sk'
+  detailLang?: 'es' | Language
   speak?: string
 }
 
@@ -32,7 +33,7 @@ function reference(task: Task): Reference {
   switch (task.kind) {
     case 'cloze':
     case 'choice':
-      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: 'sk', speak: task.sentence.es }
+      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: getLanguage(), speak: task.sentence.es }
     case 'conjugation':
       return {
         label: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`,
@@ -44,7 +45,7 @@ function reference(task: Task): Reference {
     case 'translation':
     case 'dictation':
     case 'speaking':
-      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: 'sk', speak: task.sentence.es }
+      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: getLanguage(), speak: task.sentence.es }
     case 'vocab': {
       const esFormatted = task.word.gender ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}` : task.word.es
       const skFormatted = wordTranslations(task.word).join(', ')
@@ -54,14 +55,14 @@ function reference(task: Task): Reference {
           correct: esFormatted,
           correctLang: 'es',
           detail: skFormatted,
-          detailLang: 'sk',
+          detailLang: getLanguage(),
           speak: task.word.es,
         }
       }
       return {
         label: t().lesson.toNative,
         correct: skFormatted,
-        correctLang: 'sk',
+        correctLang: getLanguage(),
         detail: esFormatted,
         detailLang: 'es',
         speak: task.word.es,

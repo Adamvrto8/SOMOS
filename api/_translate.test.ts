@@ -60,3 +60,26 @@ describe('api/translate', () => {
     expect(fetchImpl).not.toHaveBeenCalled()
   })
 })
+
+describe('api/translate: the English pair', () => {
+  it('translates English to Latin American Spanish and Spanish to American English', async () => {
+    const fetchImpl = deepl([200, { translations: [{ text: 'heladero' }] }], [200, { translations: [{ text: 'ice cream seller' }] }])
+    const toSpanish = await translate(request({ text: 'ice cream seller', from: 'en', to: 'es' }), KEY, fetchImpl)
+    expect(await toSpanish.json()).toEqual({ translation: 'heladero', from: 'en', to: 'es' })
+    await translate(request({ text: 'heladero', from: 'es', to: 'en' }), KEY, fetchImpl)
+    const calls = fetchImpl.mock.calls as unknown as [string, RequestInit][]
+    const sent = calls.map(([, init]) => JSON.parse(String(init.body)) as unknown)
+    expect(sent).toEqual([
+      { text: ['ice cream seller'], source_lang: 'EN', target_lang: 'ES-419' },
+      { text: ['heladero'], source_lang: 'ES', target_lang: 'EN-US' },
+    ])
+  })
+
+  it('wants Spanish on exactly one side', async () => {
+    const fetchImpl = deepl([200])
+    expect((await translate(request({ text: 'dom', from: 'sk', to: 'en' }), KEY, fetchImpl)).status).toBe(400)
+    expect((await translate(request({ text: 'casa', from: 'es', to: 'es' }), KEY, fetchImpl)).status).toBe(400)
+    expect((await translate(request({ text: 'casa', from: 'es', to: 'fr' }), KEY, fetchImpl)).status).toBe(400)
+    expect(fetchImpl).not.toHaveBeenCalled()
+  })
+})

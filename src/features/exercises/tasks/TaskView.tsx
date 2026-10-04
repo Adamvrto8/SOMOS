@@ -1,5 +1,6 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
 import { useT } from '../../../i18n'
+import { useLanguage } from '../../../lib/language'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { clozeHint, sentenceTranslation, verbTranslations } from '../../../lib/localized'
 import { ChoiceOptions } from './ChoiceOptions'
@@ -30,6 +31,7 @@ const Pill = ({ children }: { children: string }) => (
 export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint }: TaskViewProps) {
   const dictionary = useT()
   const labels = dictionary.lesson.task
+  const language = useLanguage()
   const status = statusOf(grade)
   const text = typeof answer === 'string' ? answer : ''
 
@@ -128,7 +130,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
       return (
         <div className="space-y-5">
           <div className="rounded-card border border-line bg-surface p-5 text-center">
-            <p lang={isToSpanish ? 'sk' : 'es'} className="font-serif text-3xl font-semibold">
+            <p lang={isToSpanish ? language : 'es'} className="font-serif text-3xl font-semibold">
               {task.prompt}
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -143,7 +145,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
-            lang={isToSpanish ? 'es' : 'sk'}
+            lang={isToSpanish ? 'es' : language}
             label={isToSpanish ? dictionary.lesson.toSpanish : dictionary.lesson.toNative}
             placeholder={isToSpanish ? labels.inSpanish : labels.inNative}
           />

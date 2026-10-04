@@ -52,44 +52,44 @@ const groupRule = (verb: Verb) => (verb.group === 'ar' ? 'ar' : 'er-ir')
 const regularWhy = (verb: Verb): Why => ({
   rule: groupRule(verb),
   because: verb.regular
-    ? `${verb.id} je pravidelné sloveso na -${verb.group}.`
-    : `Tento tvar slovesa ${verb.id} je pravidelný, ako pri ostatných slovesách na -${verb.group}.`,
+    ? t().tips.regularVerb(verb.id, verb.group)
+    : t().tips.regularForm(verb.id, verb.group),
 })
 
 function gerundWhy(verb: Verb, regularRule: 'form' | 'gerund'): Why {
-  if (verb.gerundIrregular) return { rule: 'irregular', because: `${verb.id} má nepravidelné gerundium: ${verb.gerund}.` }
-  if (regularRule === 'form') return { rule: 'form', because: `Pri slovese ${verb.id} sa časuje len estar, gerundium ${verb.gerund} sa nemení.` }
+  if (verb.gerundIrregular) return { rule: 'irregular', because: t().tips.gerundIrregular(verb.id, verb.gerund) }
+  if (regularRule === 'form') return { rule: 'form', because: t().tips.gerundForm(verb.id, verb.gerund) }
   const ending = verb.group === 'ar' ? '-ando' : '-iendo'
-  return { rule: 'gerund', because: `${verb.id} je sloveso na -${verb.group}, gerundium sa končí na ${ending}: ${verb.gerund}.` }
+  return { rule: 'gerund', because: t().tips.gerundRegular(verb.id, verb.group, ending, verb.gerund) }
 }
 
 function presenteWhy(verb: Verb, person: Person): Why {
   if (!isIrregular(verb, 'presente', person)) return regularWhy(verb)
   if (verb.irregularForms?.includes('presente.*') || verb.id === 'estar') {
-    return { rule: 'irregular', because: `${verb.id} je v prítomnom čase úplne nepravidelné, tvary sa treba naučiť.` }
+    return { rule: 'irregular', because: t().tips.presenteIrregular(verb.id) }
   }
   // tengo, digo, conozco, doy… but not sigo or juego, where the g belongs to the stem and the vowel changed.
   const onlyYo = !isIrregular(verb, 'presente', 'tu')
   const specialYo = /(go|zco|oy)$/.test(verb.presente.yo) && !/gu?(ar|er|ir)(se)?$/.test(verb.id)
-  if (person === 'yo' && (onlyYo || specialYo)) return { rule: 'yo', because: `${verb.id} má nepravidelný tvar pre yo: ${verb.presente.yo}.` }
-  return { rule: 'stem', because: `V slovese ${verb.id} sa v tomto tvare mení kmeň.` }
+  if (person === 'yo' && (onlyYo || specialYo)) return { rule: 'yo', because: t().tips.presenteYo(verb.id, verb.presente.yo) }
+  return { rule: 'stem', because: t().tips.presenteStem(verb.id) }
 }
 
 function preteritoWhy(verb: Verb, person: Person): Why {
-  if (verb.id === 'ser' || verb.id === 'ir') return { rule: 'ser-ir', because: 'ser a ir majú v pretérite rovnaké, nepravidelné tvary.' }
+  if (verb.id === 'ser' || verb.id === 'ir') return { rule: 'ser-ir', because: t().tips.preteritoSerIr }
   if (!isIrregular(verb, 'preterito', person)) return regularWhy(verb)
   if (verb.irregularForms?.includes('preterito.*')) {
-    return { rule: 'stems', because: `${verb.id} patrí v pretérite medzi nepravidelné slovesá: koncovky sú bez prízvuku.` }
+    return { rule: 'stems', because: t().tips.preteritoStems(verb.id) }
   }
   if (person === 'yo' && /[cgz]ar(se)?$/.test(verb.id)) {
-    return { rule: 'spelling', because: `V slovese ${verb.id} sa pred koncovkou -é mení pravopis, aby ostala výslovnosť.` }
+    return { rule: 'spelling', because: t().tips.preteritoSpelling(verb.id) }
   }
   const thirdOnly = isIrregular(verb, 'preterito', 'el') && isIrregular(verb, 'preterito', 'ellos') && !isIrregular(verb, 'preterito', 'yo')
   if (thirdOnly && (person === 'el' || person === 'ellos')) {
-    return { rule: 'third', because: `Sloveso ${verb.id} má v pretérite zmenu len v tvaroch él a ellos.` }
+    return { rule: 'third', because: t().tips.preteritoThird(verb.id) }
   }
   // leíste, vi: the endings of the group, only an accent more or less.
-  return { rule: groupRule(verb), because: `Tento tvar slovesa ${verb.id} sa od pravidelného líši len prízvukom, treba si ho zapamätať.` }
+  return { rule: groupRule(verb), because: t().tips.preteritoAccent(verb.id) }
 }
 
 /** The rule behind one conjugated form. */
@@ -101,12 +101,12 @@ function verbWhy(verb: Verb, tense: TableTense, person: Person): Why {
       return preteritoWhy(verb, person)
     case 'imperfecto':
       return isIrregular(verb, 'imperfecto', person)
-        ? { rule: 'irregular', because: `${verb.id} je jedno z troch slovies, ktoré sú v imperfecte nepravidelné.` }
+        ? { rule: 'irregular', because: t().tips.imperfectoIrregular(verb.id) }
         : regularWhy(verb)
     case 'futuro':
       return isIrregular(verb, 'futuro', person)
-        ? { rule: 'stems', because: `${verb.id} má v budúcom čase nepravidelný kmeň, koncovky ostávajú.` }
-        : { rule: 'endings', because: `Pri slovese ${verb.id} sa koncovka pridáva k celému neurčitku.` }
+        ? { rule: 'stems', because: t().tips.futuroStems(verb.id) }
+        : { rule: 'endings', because: t().tips.futuroEndings(verb.id) }
     case 'progresivo':
       return gerundWhy(verb, 'form')
   }
@@ -114,31 +114,20 @@ function verbWhy(verb: Verb, tense: TableTense, person: Person): Why {
 
 // ---------- articles, adjectives, accents ----------
 
-const ARTICLES: Record<string, string> = {
-  el: 'mužský rod, jednotné číslo',
-  la: 'ženský rod, jednotné číslo',
-  los: 'mužský rod, množné číslo',
-  las: 'ženský rod, množné číslo',
-  un: 'mužský rod, jednotné číslo',
-  una: 'ženský rod, jednotné číslo',
-  unos: 'mužský rod, množné číslo',
-  unas: 'ženský rod, množné číslo',
-}
-
 /** el agua: a feminine noun that takes el. The gender tip explains it, not the one about articles. */
 function feminineWithEl(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
   const next = sentence.tokens[cloze.tokenIndex + 1]?.toLowerCase()
   if (cloze.answer.toLowerCase() !== 'el' || !words.some((w) => w.pos === 'noun' && w.gender === 'f' && w.es === next)) return undefined
-  return targeted('gender', { rule: 'a-tonica', because: `Slovo ${next} je ženského rodu, ale začína sa prízvučným a-, preto má v jednotnom čísle člen el.` })
+  return targeted('gender', { rule: 'a-tonica', because: t().tips.feminineWithEl(next ?? '') })
 }
 
 function articleWhy(answer: string): Why | undefined {
   const article = answer.toLowerCase()
-  if (article === 'al') return { rule: 'contractions', because: 'Predložka a sa s členom el spája: a + el = al.' }
-  if (article === 'del') return { rule: 'contractions', because: 'Predložka de sa s členom el spája: de + el = del.' }
-  const form = ARTICLES[article]
+  if (article === 'al') return { rule: 'contractions', because: t().tips.contraction('a', 'al') }
+  if (article === 'del') return { rule: 'contractions', because: t().tips.contraction('de', 'del') }
+  const form = t().tips.articleForms[article]
   if (!form) return undefined
-  return { rule: article.startsWith('u') ? 'indefinite' : 'definite', because: `Člen sa riadi podstatným menom: ${article} je ${form}.` }
+  return { rule: article.startsWith('u') ? 'indefinite' : 'definite', because: t().tips.article(article, form) }
 }
 
 /** "prídavné meno: cansado" → cansados */
@@ -147,11 +136,8 @@ function adjectiveWhy(hint: string, answer: string): Why | undefined {
   if (!base) return undefined
   const form = answer.toLowerCase()
   const plural = form.endsWith('s') && !base.endsWith('s')
-  const number = plural ? 'množné číslo' : 'jednotné číslo'
-  const start = 'Prídavné meno sa zhoduje s podstatným menom'
-  if (!base.endsWith('o')) return { rule: plural ? 'plural' : 'same', because: `${start}: ${form} je ${number}, v rode sa nemení.` }
-  const gender = /as?$/.test(form) ? 'ženský rod' : 'mužský rod'
-  return { rule: plural ? 'plural' : 'o-a', because: `${start}: ${form} je ${gender}, ${number}.` }
+  if (!base.endsWith('o')) return { rule: plural ? 'plural' : 'same', because: t().tips.adjectiveNoGender(form, plural) }
+  return { rule: plural ? 'plural' : 'o-a', because: t().tips.adjective(form, /as?$/.test(form), plural) }
 }
 
 const SHORT_PAIRS = new Set(['el', 'tu', 'mi', 'si', 'te', 'se', 'mas', 'de'])
@@ -161,7 +147,7 @@ const QUESTION_WORDS = new Set(['que', 'como', 'donde', 'adonde', 'cuando', 'qui
 function accentWhy(meanings: Meaning[]): Why {
   const word = fold(meanings[0]?.word ?? '')
   const rule = SHORT_PAIRS.has(word) ? 'pairs' : QUESTION_WORDS.has(word) ? 'questions' : meanings.some((m) => m.gloss.includes(' · ')) ? 'verbs' : 'nouns'
-  return { rule, because: `Prízvuk tu mení význam: ${meanings.map((m) => `${m.word} = ${m.gloss}`).join(', ')}.` }
+  return { rule, because: t().tips.accent(meanings.map((m) => `${m.word} = ${m.gloss}`).join(', ')) }
 }
 
 // ---------- tasks ----------

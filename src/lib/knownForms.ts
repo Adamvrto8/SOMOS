@@ -1,10 +1,13 @@
 import { sentences, verbs, words } from '../data'
+import { t } from '../i18n'
 import { PERSON_LABELS, PERSONS, TENSE_LABELS, TENSES } from './conjugate'
+import { getLanguage, type Language } from './language'
+import { wordTranslations } from './localized'
 
-// Every single-word Spanish form in the dataset → short Slovak/grammar description.
+// Every single-word Spanish form in the dataset → its meaning in the learner's language, or its grammar.
 // checkAnswer uses it to tell a different real word from a typo or a missing accent.
 
-let index: Map<string, Set<string>> | undefined
+const indexes = new Map<Language, Map<string, Set<string>>>()
 
 function buildIndex(): Map<string, Set<string>> {
   const map = new Map<string, Set<string>>()
@@ -18,9 +21,10 @@ function buildIndex(): Map<string, Set<string>> {
 
   for (const w of words) {
     if (w.pos === 'verb') continue // verbs are described per form below
-    add(w.es, w.sk[0])
-    if (w.plural) add(w.plural, w.sk[0])
-    if (w.feminine) add(w.feminine, w.sk[0])
+    const meaning = wordTranslations(w)[0]
+    add(w.es, meaning)
+    if (w.plural) add(w.plural, meaning)
+    if (w.feminine) add(w.feminine, meaning)
   }
   for (const v of verbs) {
     for (const tense of TENSES) {
@@ -40,7 +44,9 @@ function buildIndex(): Map<string, Set<string>> {
 
 /** Description of a known form ('' if known without one), undefined if unknown. */
 export function lookupForm(word: string): string | undefined {
-  index ??= buildIndex()
+  const language = getLanguage()
+  let index = indexes.get(language)
+  if (!index) indexes.set(language, (index = buildIndex()))
   const descriptions = index.get(word.toLowerCase())
-  return descriptions ? [...descriptions].join(' alebo ') : undefined
+  return descriptions ? [...descriptions].join(` ${t().lesson.or} `) : undefined
 }

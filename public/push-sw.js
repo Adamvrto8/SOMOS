@@ -16,7 +16,7 @@ self.addEventListener('push', (event) => {
       tag: 'somos-reminder',
       // Without it, replacing yesterday's unread reminder (same tag) would be silent.
       renotify: true,
-      lang: 'sk',
+      lang: data.lang || 'sk',
       data: { url: data.url || '/' },
     }),
   )

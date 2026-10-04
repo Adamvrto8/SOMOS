@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { useT } from '../../i18n'
+import { useLanguage } from '../../lib/language'
 import type { Mistake } from '../../lib/db'
 import { taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
 import { clearMistakes, removeMistake } from '../../lib/mistakes'
@@ -24,6 +25,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
   const [confirmClear, setConfirmClear] = useState(false)
   const dictionary = useT()
   const text = dictionary.archive
+  const language = useLanguage()
 
   // The clear-all confirmation expires so a later stray tap can't wipe the list.
   useEffect(() => {
@@ -78,7 +80,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
                     {exerciseInfo(task.kind).label} · {text.timesWrong(mistake.wrongCount)}
                   </p>
                   <p className="text-sm text-ink-muted">{prompt}</p>
-                  <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
+                  <p lang={isSlovakAnswer ? language : 'es'} className="font-serif text-lg leading-snug">
                     {answer}
                   </p>
                 </div>

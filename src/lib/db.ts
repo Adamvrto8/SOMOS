@@ -52,9 +52,9 @@ export interface Mistake {
 
 /** Cached online (DeepL) translation, so a repeated lookup is free and works offline. Not backed up. */
 export interface Lookup {
-  key: string // "sk:zmrzlinár" = source language + lowercased text
+  key: string // "sk:zmrzlinár" = source language + lowercased text ("en>es:ice cream" for the English pair)
   text: string
-  from: 'sk' | 'es'
+  from: 'sk' | 'en' | 'es'
   translation: string
   at: number
 }

@@ -442,3 +442,48 @@ describe('depsFromEnv', () => {
   })
 })
 
+
+describe('the reminder in the learner\'s language', () => {
+  const EN_SUB: ReminderSub = { ...SUB, language: 'en' }
+
+  it('composes the message in English', () => {
+    expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 }, 'en')).toEqual({
+      title: '🔥 A 12-day streak is waiting for today',
+      body: 'To review: 14 cards · a few minutes is enough',
+    })
+    expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('To review: 1 card')
+    expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 answer' })
+    expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 1 }, 'en')).toEqual({ title: '8 to go for the daily goal', body: 'Today 12/20 · 1-day streak 🔥' })
+  })
+
+  it('stays Slovak for a subscription stored before there were two languages', () => {
+    expect(isReminderSub(SUB)).toBe(true)
+    expect(isReminderSub(EN_SUB)).toBe(true)
+    expect(isReminderSub({ ...SUB, language: 'de' })).toBe(false)
+    const decision = decide(SUMMER_1910, SUB, progress({ day: '2026-06-30', activeToday: true }), null)
+    expect(decision.send && decision.message.title).toBe('🔥 Séria 12 dní čaká na dnešok')
+  })
+
+  it('keeps the language of a subscribing phone and sends the reminder in it', async () => {
+    const store = memoryStore({})
+    const body = { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, language: 'en' }
+    expect((await handleReminder(post(body), deps(store))).status).toBe(200)
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(EN_SUB)
+
+    const send = vi.fn<Sender>(async () => {})
+    await handleReminder(cron(), deps(store, send))
+    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 answers', url: '/', lang: 'en' })
+
+    // The test notification too.
+    await handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))
+    expect(JSON.parse(send.mock.calls[1][1])).toMatchObject({ body: 'Test notification — reminders work ✓', lang: 'en' })
+  })
+
+  it('stores nothing extra for a Slovak phone, and ignores a language it does not know', async () => {
+    for (const language of ['sk', 'de', undefined]) {
+      const store = memoryStore({})
+      await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, language }), deps(store))
+      expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(SUB)
+    }
+  })
+})

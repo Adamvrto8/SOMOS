@@ -2,7 +2,7 @@ import { Rating, type Card, type Grade } from 'ts-fsrs'
 import { sentenceById, wordById } from '../../data'
 import { db, type ReviewItemType } from '../../lib/db'
 import { articleFor } from '../../lib/grammar'
-import { slovakAnswers } from '../../lib/lesson'
+import { nativeAnswers } from '../../lib/lesson'
 import { sentenceTranslation, wordExamples, wordNote, wordTranslations, type LocalExample } from '../../lib/localized'
 import { cardOf, loadDueCards } from '../../lib/srs'
 
@@ -64,7 +64,7 @@ export async function loadDueEntries(now = new Date()): Promise<ReviewEntry[]> {
       const word = wordById.get(rc.itemId)
       if (!word) return [] // removed from the dataset
       const article = articleFor(word)
-      const answers = base.slovakFirst ? spanishAnswers(word.es, article) : slovakAnswers(word)
+      const answers = base.slovakFirst ? spanishAnswers(word.es, article) : nativeAnswers(word)
       return [{ ...base, es: word.es, article, sk: wordTranslations(word), example: wordExamples(word)[0], note: wordNote(word), answers }]
     }
     const custom = customs.get(rc.itemId)

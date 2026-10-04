@@ -1,6 +1,15 @@
 # Language layer (Slovak / English) — design
 
-Date: 2026-10-04 · Status: design approved by Adam in chat, spec awaiting his review
+Date: 2026-10-04 · Status: approved by Adam, built the same day (four steps, each tested on his phone)
+
+Changed while building: a verb's dictionary entry takes its English from the verb's overlay, so the
+157 verb Words need no translations of their own; a translated word shows its English note or none
+(a Slovak note explains what a Slovak trips over); the English tips and words give the translations
+of their examples as plain strings, in the order of the base examples; the lookup cache keeps its
+old key for the Slovak pair, so nothing cached is lost; the server stores `language` only for
+English, a subscription without it is Slovak; the one existing test that changed is the backup
+test, whose settings now carry the language. Translated so far, as a sample: the weather topic, the
+20 core verbs, the topic names and the futuro tip.
 
 ## Goal
 

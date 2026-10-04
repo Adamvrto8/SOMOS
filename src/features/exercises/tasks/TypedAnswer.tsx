@@ -1,4 +1,5 @@
 import { useT } from '../../../i18n'
+import type { Language } from '../../../lib/language'
 import { useRef, useState, type KeyboardEvent } from 'react'
 import type { Grade } from '../../../lib/lesson'
 import { RetryHint } from './RetryHint'
@@ -21,7 +22,7 @@ interface TypedAnswerProps {
   placeholder: string
   status?: Status // set once graded; the field is then read-only
   multiline?: boolean
-  lang?: 'es' | 'sk' // language typed; Slovak needs no Spanish extra keys
+  lang?: 'es' | Language // 'es' gets the accent keys // language typed; Slovak needs no Spanish extra keys
   hint?: Grade | null // a wrong try that may still be fixed
 }
 

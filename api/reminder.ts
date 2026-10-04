@@ -16,6 +16,7 @@ export interface ReminderSub {
   subscription: PushSub
   time: string // "19:00", phone-local
   timeZone: string // IANA zone from the phone, e.g. "Europe/Bratislava"
+  language?: 'en' // the app's language; missing = Slovak (also every subscription stored before 2026-10-04)
 }
 
 /** What the phone last reported, computed in its local time. */
@@ -93,7 +94,7 @@ export function isPushSub(v: unknown): v is PushSub {
 }
 
 export const isReminderSub = (v: unknown): v is ReminderSub =>
-  isRecord(v) && isPushSub(v.subscription) && isTime(v.time) && isTimeZone(v.timeZone)
+  isRecord(v) && isPushSub(v.subscription) && isTime(v.time) && isTimeZone(v.timeZone) && (v.language === undefined || v.language === 'en')
 
 export const isProgress = (v: unknown): v is ReminderProgress =>
   isRecord(v) &&
@@ -156,7 +157,21 @@ function pluralSk(count: number, [one, few, many]: [string, string, string]): st
 
 const days = (n: number) => `${n} ${pluralSk(n, ['deň', 'dni', 'dní'])}`
 
-export function composeMessage({ done, goal, due, streak }: TodayView): Message {
+const plural = (count: number, one: string, many: string) => `${count} ${count === 1 ? one : many}`
+
+function composeEnglish({ done, goal, due, streak }: TodayView): Message {
+  if (done > 0) {
+    const streakPart = streak > 0 ? ` · ${streak}-day streak 🔥` : ''
+    return { title: `${goal - done} to go for the daily goal`, body: `Today ${done}/${goal}${streakPart}` }
+  }
+  const waiting = due ? `To review: ${plural(due, 'card', 'cards')}` : `Daily goal: ${plural(goal, 'answer', 'answers')}`
+  if (streak > 0) return { title: `🔥 A ${streak}-day streak is waiting for today`, body: `${waiting} · a few minutes is enough` }
+  return { title: '¿Practicamos? 🇲🇽', body: waiting }
+}
+
+export function composeMessage(view: TodayView, language?: 'sk' | 'en'): Message {
+  if (language === 'en') return composeEnglish(view)
+  const { done, goal, due, streak } = view
   if (done > 0) {
     const streakPart = streak > 0 ? ` · séria ${days(streak)} 🔥` : ''
     return { title: `Ešte ${goal - done} do denného cieľa`, body: `Dnes ${done}/${goal}${streakPart}` }
@@ -169,6 +184,7 @@ export function composeMessage({ done, goal, due, streak }: TodayView): Message 
 }
 
 export const TEST_MESSAGE: Message = { title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓' }
+export const TEST_MESSAGE_EN: Message = { title: 'SOMOS', body: 'Test notification — reminders work ✓' }
 
 /** Whether the tick at `now` should send today's reminder. */
 export function decide(now: Date, sub: ReminderSub, progress: ReminderProgress | null, sentDay: string | null): Decision {
@@ -179,7 +195,7 @@ export function decide(now: Date, sub: ReminderSub, progress: ReminderProgress |
   if (sentDay === day) return { send: false, reason: 'already-sent' }
   const view = todayView(progress, day)
   if (view.done >= view.goal) return { send: false, reason: 'goal-met' }
-  return { send: true, day, message: composeMessage(view) }
+  return { send: true, day, message: composeMessage(view, sub.language) }
 }
 
 // ---------- storage: Upstash Redis over REST ----------
@@ -274,7 +290,9 @@ const statusOf = (error: unknown) => (isRecord(error) && typeof error.statusCode
 /** Sends a message; forgets a subscription the push service no longer knows. */
 async function deliver(deps: Deps, sub: ReminderSub, message: Message, topic: string): Promise<Delivery> {
   try {
-    await deps.send(sub.subscription, JSON.stringify({ ...message, url: '/' }), { ttl: REMINDER_TTL, topic, urgency: REMINDER_URGENCY })
+    // `lang` tells the service worker how to mark the notification; Slovak is its default.
+    const payload = { ...message, url: '/', ...(sub.language === 'en' ? { lang: 'en' } : {}) }
+    await deps.send(sub.subscription, JSON.stringify(payload), { ttl: REMINDER_TTL, topic, urgency: REMINDER_URGENCY })
     return 'sent'
   } catch (error) {
     const status = statusOf(error)
@@ -333,12 +351,14 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
 
   switch (body.type) {
     case 'subscribe': {
-      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone }
+      // Anything but English is Slovak, and stored as before.
+      const language = body.language === 'en' ? { language: 'en' as const } : {}
+      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language }
       if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
       // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
       if (sub.subscription.endpoint === goneEndpoint) return json({ error: 'gone' }, 410)
       const { endpoint, keys } = sub.subscription
-      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone }
+      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language }
       await deps.store.set(KEYS.sub, JSON.stringify(clean))
       return json({ ok: true })
     }
@@ -352,7 +372,7 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
     case 'test': {
       if (!stored || !fromStoredDevice) return json({ error: 'not-subscribed' }, 409)
       if (!(await deps.store.setIfAbsent(KEYS.test, '1', 60))) return json({ error: 'too-many' }, 429)
-      const result = await deliver(deps, stored, TEST_MESSAGE, 'test')
+      const result = await deliver(deps, stored, stored.language === 'en' ? TEST_MESSAGE_EN : TEST_MESSAGE, 'test')
       if (result === 'sent') return json({ ok: true })
       return json({ error: result }, result === 'gone' ? 410 : 502)
     }
