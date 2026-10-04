@@ -19,6 +19,9 @@ export default defineConfig({
     hasTouch: true,
     isMobile: true,
     locale: 'sk-SK',
+    // The tests only talk to localhost. Without this, each fresh Chrome first looks for a proxy on the
+    // network (WPAD), and with a flaky DNS that lookup stalls the very first page load until the test times out.
+    launchOptions: { args: ['--no-proxy-server'] },
   },
   webServer: {
     command: `npx vite --port ${PORT} --strictPort`,
