@@ -1,6 +1,7 @@
 import { ChevronRight, Star } from 'lucide-react'
 import { Link } from 'react-router'
 import type { Word } from '../../data/types'
+import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
 import type { WordNavState } from '../word/wordNav'
 
@@ -14,6 +15,8 @@ interface WordRowProps {
 
 export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
   const article = articleFor(word)
+  const dictionary = useT()
+  const text = dictionary.search
 
   return (
     <li>
@@ -30,14 +33,14 @@ export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
           <p className="truncate text-sm text-ink-muted">
             {matchedForm && (
               <span className="text-ink">
-                tvar <span lang="es">„{matchedForm}“</span> ·{' '}
+                {text.form} <span lang="es">{dictionary.common.quote(matchedForm)}</span> ·{' '}
               </span>
             )}
             {word.sk.join(', ')}
           </p>
         </div>
         {saved && (
-          <Star size={16} strokeWidth={1.75} className="shrink-0 fill-amber text-amber" aria-label="Uložené" role="img" />
+          <Star size={16} strokeWidth={1.75} className="shrink-0 fill-amber text-amber" aria-label={text.saved} role="img" />
         )}
         <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
       </Link>

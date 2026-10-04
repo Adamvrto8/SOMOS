@@ -6,6 +6,7 @@ import { Button } from '../../components/Button'
 import { NotFound } from '../../components/NotFound'
 import { SpeakButton } from '../../components/SpeakButton'
 import { topics, words } from '../../data'
+import { t, useT } from '../../i18n'
 import { deleteCustomWord, saveCustomWord, useCustomWord } from '../../lib/archive'
 import type { CustomWord } from '../../lib/db'
 import { fold } from '../../lib/text'
@@ -19,7 +20,7 @@ export function CustomWordPage() {
   const existing = useCustomWord(id ?? '')
 
   if (id && existing === undefined) return null // loading from IndexedDB
-  if (id && !existing) return <NotFound title="Slovo sa nenašlo" />
+  if (id && !existing) return <NotFound title={t().word.notFound} />
   return <CustomWordForm key={id ?? 'new'} word={existing ?? undefined} />
 }
 
@@ -42,6 +43,8 @@ interface Errors {
 function CustomWordForm({ word }: { word?: CustomWord }) {
   const navigate = useNavigate()
   const location = useLocation()
+  const dictionary = useT()
+  const text = dictionary.archive.custom
   const prefill = word ? undefined : readPrefill(location.state)
   const [es, setEs] = useState(word?.es ?? prefill?.es ?? '')
   const [sk, setSk] = useState(word?.sk ?? prefill?.sk ?? '')
@@ -74,8 +77,8 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
   const submit = async (e: FormEvent) => {
     e.preventDefault()
     const next: Errors = {
-      es: es.trim() ? undefined : 'Vyplň slovo po španielsky.',
-      sk: sk.trim() ? undefined : 'Vyplň preklad po slovensky.',
+      es: es.trim() ? undefined : text.spanishRequired,
+      sk: sk.trim() ? undefined : text.translationRequired,
     }
     setErrors(next)
     if (next.es) return esRef.current?.focus()
@@ -97,12 +100,12 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
   return (
     <div>
       <BackButton fallback="/archive?tab=mine" />
-      <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{word ? 'Upraviť slovo' : 'Nové slovo'}</h1>
+      <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{word ? text.edit : text.create}</h1>
 
       <form onSubmit={(e) => void submit(e)} noValidate className="mt-6 space-y-5">
         <div>
           <label htmlFor="cw-es" className="mb-1.5 block text-sm font-medium">
-            Po španielsky
+            {text.spanish}
           </label>
           <div className="flex items-center gap-1">
             <input
@@ -111,7 +114,7 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
               lang="es"
               value={es}
               onChange={(e) => setEs(e.target.value)}
-              placeholder="napr. chamba"
+              placeholder={text.spanishPlaceholder}
               autoCapitalize="off"
               autoComplete="off"
               aria-invalid={Boolean(errors.es)}
@@ -128,10 +131,10 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
           {duplicate && (
             <div className="mt-2 flex items-center justify-between gap-3 rounded-xl bg-surface-2 px-3 py-2 text-sm">
               <span>
-                „<span lang="es">{duplicate.es}</span>“ už je v slovníku.
+                <span lang="es">{dictionary.common.quote(duplicate.es)}</span> {text.duplicate}
               </span>
               <Link to={`/word/${duplicate.id}`} className="shrink-0 font-semibold text-brick underline-offset-4 hover:underline">
-                Otvoriť
+                {text.open}
               </Link>
             </div>
           )}
@@ -139,14 +142,14 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
 
         <div>
           <label htmlFor="cw-sk" className="mb-1.5 block text-sm font-medium">
-            Po slovensky
+            {text.translation}
           </label>
           <input
             ref={skRef}
             id="cw-sk"
             value={sk}
             onChange={(e) => setSk(e.target.value)}
-            placeholder="napr. robota, práca"
+            placeholder={text.translationPlaceholder}
             autoComplete="off"
             aria-invalid={Boolean(errors.sk)}
             aria-describedby={errors.sk ? 'cw-sk-error' : undefined}
@@ -161,21 +164,21 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
 
         <div>
           <label htmlFor="cw-note" className="mb-1.5 block text-sm font-medium">
-            Poznámka <span className="font-normal text-ink-muted">(nepovinné)</span>
+            {text.note} <span className="font-normal text-ink-muted">{text.optional}</span>
           </label>
           <textarea
             id="cw-note"
             value={note}
             onChange={(e) => setNote(e.target.value)}
             rows={3}
-            placeholder="napr. hovorovo, počul som v Oaxace"
+            placeholder={text.notePlaceholder}
             className={`${INPUT} resize-none py-3`}
           />
         </div>
 
         <div>
           <label htmlFor="cw-topic" className="mb-1.5 block text-sm font-medium">
-            Téma <span className="font-normal text-ink-muted">(nepovinné)</span>
+            {text.topic} <span className="font-normal text-ink-muted">{text.optional}</span>
           </label>
           <div className="relative">
             <select
@@ -184,7 +187,7 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
               onChange={(e) => setTopic(e.target.value)}
               className={`${INPUT} h-12 appearance-none pr-11`}
             >
-              <option value="">Bez témy</option>
+              <option value="">{text.noTopic}</option>
               {topics.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.sk}
@@ -201,7 +204,7 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
         </div>
 
         <Button type="submit" disabled={busy} className="w-full">
-          {word ? 'Uložiť zmeny' : 'Uložiť slovo'}
+          {word ? text.saveChanges : text.saveWord}
         </Button>
 
         {word && (
@@ -212,7 +215,7 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
             onClick={() => void remove()}
             className="w-full"
           >
-            {confirmDelete ? 'Naozaj vymazať?' : 'Vymazať slovo'}
+            {confirmDelete ? text.removeConfirm : text.remove}
           </Button>
         )}
       </form>

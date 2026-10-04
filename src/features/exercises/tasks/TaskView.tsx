@@ -1,5 +1,5 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
-import { GENDER_LABELS, POS_LABELS } from '../../../lib/grammar'
+import { t } from '../../../i18n'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { ChoiceOptions } from './ChoiceOptions'
 import { DictationView } from './DictationView'
@@ -130,8 +130,8 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-2">
               <Pill>{isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}</Pill>
-              {task.word.pos && <Pill>{POS_LABELS[task.word.pos] ?? task.word.pos}</Pill>}
-              {task.word.gender && <Pill>{GENDER_LABELS[task.word.gender]}</Pill>}
+              {task.word.pos && <Pill>{t().word.pos[task.word.pos] ?? task.word.pos}</Pill>}
+              {task.word.gender && <Pill>{t().word.gender[task.word.gender]}</Pill>}
             </div>
           </div>
           <TypedAnswer

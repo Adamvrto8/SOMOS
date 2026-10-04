@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import type { Verb } from '../../data/types'
+import { useT } from '../../i18n'
 import { conjugate, formText, PERSON_LABELS, PERSONS, TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { speak, ttsSupported } from '../../lib/tts'
 
@@ -15,16 +16,17 @@ interface ConjugationTableProps {
 
 export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
   const [tense, setTense] = useState<TableTense>('presente')
+  const labels = useT().word
   const rows = PERSONS.map((person) => ({ person, parts: conjugate(verb, tense, person, estar) }))
   const hasIrregular = rows.some((row) => row.parts.some((p) => p.irregular))
 
   return (
     <section aria-labelledby="conjugation-heading">
-      <SectionTitle id="conjugation-heading">Časovanie</SectionTitle>
+      <SectionTitle id="conjugation-heading">{labels.conjugation}</SectionTitle>
 
       <Segmented
         mode="tabs"
-        label="Čas"
+        label={labels.tense}
         idPrefix="tab"
         panelId="conjugation-panel"
         options={TABLE_TENSES.map((t) => ({ id: t, label: TENSE_LABELS[t] }))}
@@ -43,7 +45,7 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
                   type="button"
                   onClick={() => speak(text)}
                   disabled={!ttsSupported}
-                  aria-label={ttsSupported ? `${PERSON_LABELS[person]}: ${text}. Prehrať` : undefined}
+                  aria-label={ttsSupported ? `${PERSON_LABELS[person]}: ${text}. ${labels.play}` : undefined}
                   className="flex min-h-13 w-full items-center gap-3 px-4 py-2 text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brick active:bg-surface-2 disabled:active:bg-transparent"
                 >
                   <span className="w-24 shrink-0 text-sm leading-tight text-ink-muted">{PERSON_LABELS[person]}</span>
@@ -64,21 +66,21 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
 
         {tense === 'progresivo' && (
           <p className="mt-3 text-sm text-ink-muted">
-            estar + gerundium <span lang="es" className={`font-serif text-ink ${verb.gerundIrregular ? IRREGULAR : ''}`}>{verb.gerund}</span>
+            {labels.progresivoNote} <span lang="es" className={`font-serif text-ink ${verb.gerundIrregular ? IRREGULAR : ''}`}>{verb.gerund}</span>
           </p>
         )}
         {tense === 'imperfecto' && (
           <p className="mt-3 text-sm text-ink-muted">
-            Opakovaný alebo prebiehajúci dej v minulosti a opis:{' '}
+            {labels.imperfectoBefore}{' '}
             <span lang="es" className="font-serif text-ink">
               De niño jugaba fútbol.
             </span>{' '}
-            Jednorazový ukončený dej je pretérito.
+            {labels.imperfectoAfter}
           </p>
         )}
         {tense === 'futuro' && (
           <p className="mt-3 text-sm text-ink-muted">
-            V bežnej reči sa v Mexiku častejšie povie ir a + infinitív:{' '}
+            {labels.futuroNote}{' '}
             <span lang="es" className="font-serif text-ink">
               voy a {verb.reflexive ? `${verb.id.slice(0, -2)}me` : verb.id}
             </span>
@@ -88,7 +90,7 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
         {hasIrregular && (
           <p className="mt-2 flex items-center gap-2 text-sm text-ink-muted">
             <span className="inline-block size-3 rounded-sm bg-amber/60" aria-hidden />
-            nepravidelný tvar
+            {labels.irregularForm}
           </p>
         )}
       </div>

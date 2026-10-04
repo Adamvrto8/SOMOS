@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
+import { useT } from '../../i18n'
 import type { Mistake } from '../../lib/db'
 import { taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
 import { clearMistakes, removeMistake } from '../../lib/mistakes'
@@ -21,6 +22,8 @@ const taskTopics = (task: Task): string[] => {
 /** "Chyby": exercises answered wrong, kept until the learner removes them. */
 export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
   const [confirmClear, setConfirmClear] = useState(false)
+  const dictionary = useT()
+  const text = dictionary.archive
 
   // The clear-all confirmation expires so a later stray tap can't wipe the list.
   useEffect(() => {
@@ -39,8 +42,8 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
   if (rows.length === 0) {
     return (
       <EmptyState
-        title="Žiadne chyby"
-        text="Keď v lekcii odpovieš zle, úloha sa uloží sem. Precvičíš si ju, kedy chceš, a keď ju budeš vedieť, odstrániš ju."
+        title={text.mistakesEmptyTitle}
+        text={text.mistakesEmptyText}
       />
     )
   }
@@ -57,7 +60,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
         className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-brick px-5 font-semibold text-on-accent transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
       >
         <Dumbbell size={18} strokeWidth={1.75} aria-hidden />
-        Precvičiť chyby
+        {dictionary.home.practiceMistakes}
       </Link>
 
       <ArchiveFilters filter={filter} />
@@ -72,7 +75,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
               <li key={`${mistake.exercise}:${mistake.itemId}`} className="flex items-start gap-1 py-3">
                 <div className="min-w-0 flex-1 pt-1">
                   <p className="text-xs text-ink-muted">
-                    {exerciseInfo(task.kind).label} · {mistake.wrongCount}× zle
+                    {exerciseInfo(task.kind).label} · {text.timesWrong(mistake.wrongCount)}
                   </p>
                   <p className="text-sm text-ink-muted">{prompt}</p>
                   <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
@@ -83,8 +86,8 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
                 <button
                 type="button"
                 onClick={() => void removeMistake(mistake.exercise, mistake.itemId)}
-                aria-label={`Odstrániť z chýb: ${answer}`}
-                title="Odstrániť z chýb"
+                aria-label={`${text.removeMistake}: ${answer}`}
+                title={text.removeMistake}
                 className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
               >
                 <X size={18} strokeWidth={1.75} aria-hidden />
@@ -101,7 +104,7 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
         onClick={() => (confirmClear ? void clearMistakes() : setConfirmClear(true))}
         className="w-full"
       >
-        {confirmClear ? 'Naozaj vymazať všetky?' : 'Vymazať všetky chyby'}
+        {confirmClear ? text.clearAllConfirm : text.clearAll}
       </Button>
     </>
   )

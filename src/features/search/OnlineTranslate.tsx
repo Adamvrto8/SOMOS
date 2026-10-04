@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
 import { Segmented } from '../../components/Segmented'
 import { SpeakButton } from '../../components/SpeakButton'
+import { useT } from '../../i18n'
 import {
   cachedTranslation,
   guessLang,
   MAX_TRANSLATE_CHARS,
-  TRANSLATE_ERRORS,
   TranslateFailure,
   translateOnline,
   type Lang,
@@ -25,6 +25,7 @@ const DIRECTIONS: { id: Lang; label: string }[] = [
 /** DeepL lookup for a query the dictionary doesn't cover. Remount it (key) when the query changes. */
 export function OnlineTranslate({ query }: { query: string }) {
   const navigate = useNavigate()
+  const labels = useT().search.online
   const text = query.trim()
   const [from, setFrom] = useState<Lang>(() => guessLang(text))
   const [busy, setBusy] = useState(false)
@@ -57,16 +58,16 @@ export function OnlineTranslate({ query }: { query: string }) {
     <section aria-labelledby="online-heading" className="rounded-card border border-line bg-surface p-4">
       <div className="flex items-baseline justify-between gap-3">
         <h2 id="online-heading" className="font-semibold">
-          Preložiť online
+          {labels.title}
         </h2>
-        <span className="text-xs text-ink-muted">DeepL · potrebuje internet</span>
+        <span className="text-xs text-ink-muted">{labels.source}</span>
       </div>
-      <p className="mt-1 text-sm text-ink-muted">Pre slová a vety, ktoré v slovníku nie sú.</p>
+      <p className="mt-1 text-sm text-ink-muted">{labels.hint}</p>
 
       <div className="mt-3">
         <Segmented
           mode="radio"
-          label="Smer prekladu"
+          label={labels.direction}
           idPrefix="direction"
           options={DIRECTIONS}
           value={from}
@@ -88,21 +89,21 @@ export function OnlineTranslate({ query }: { query: string }) {
             </div>
             <SpeakButton text={es} />
           </div>
-          <p className="text-xs text-ink-muted">Strojový preklad, nemusí byť mexický ani presný.</p>
+          <p className="text-xs text-ink-muted">{labels.machine}</p>
           <Button variant="secondary" icon={Plus} className="w-full" onClick={addToMine}>
-            Pridať do Moje slová
+            {labels.add}
           </Button>
         </div>
       ) : (
         <Button icon={Languages} className="mt-3 w-full" onClick={run} disabled={busy || tooLong || result === undefined}>
-          {busy ? 'Prekladám…' : 'Preložiť'}
+          {busy ? labels.translating : labels.translate}
         </Button>
       )}
 
-      {tooLong && <p className="mt-2 text-sm text-ink-muted">Najviac {MAX_TRANSLATE_CHARS} znakov.</p>}
+      {tooLong && <p className="mt-2 text-sm text-ink-muted">{labels.tooLong(MAX_TRANSLATE_CHARS)}</p>}
       {error && (
         <p role="alert" className="mt-2 text-sm text-error">
-          {TRANSLATE_ERRORS[error]}
+          {labels.errors[error]}
         </p>
       )}
     </section>

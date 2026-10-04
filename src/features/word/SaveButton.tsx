@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react'
 import { useState } from 'react'
+import { useT } from '../../i18n'
 import { toggleSaved, useIsSaved, type StarType } from '../../lib/archive'
 
 interface SaveButtonProps {
@@ -13,13 +14,14 @@ interface SaveButtonProps {
 export function SaveButton({ type, id, size = 'lg' }: SaveButtonProps) {
   const saved = useIsSaved(type, id)
   const [popping, setPopping] = useState(false)
+  const text = useT().word
 
   const toggle = async () => {
     const nowSaved = await toggleSaved(type, id)
     setPopping(nowSaved)
   }
 
-  const label = saved ? 'Odstrániť z archívu' : 'Uložiť do archívu'
+  const label = saved ? text.unsave : text.save
 
   return (
     <button
@@ -46,7 +48,7 @@ export function SaveButton({ type, id, size = 'lg' }: SaveButtonProps) {
         onAnimationEnd={() => setPopping(false)}
         aria-hidden
       />
-      {size === 'pill' && (saved ? 'Uložené' : 'Uložiť')}
+      {size === 'pill' && (saved ? text.saved : text.saveShort)}
     </button>
   )
 }

@@ -8,13 +8,7 @@ export type Lang = 'sk' | 'es'
 
 export type TranslateError = 'offline' | 'unavailable' | 'not-configured' | 'quota' | 'failed'
 
-export const TRANSLATE_ERRORS: Record<TranslateError, string> = {
-  offline: 'Online preklad potrebuje internet.',
-  unavailable: 'Online preklad funguje len v nasadenej aplikácii, nie na lokálnom serveri.',
-  'not-configured': 'Online preklad nie je nastavený: na Verceli chýba kľúč DEEPL_API_KEY.',
-  quota: 'Mesačný limit prekladov DeepL je vyčerpaný.',
-  failed: 'Preklad sa nepodaril. Skús to znova.',
-}
+const TRANSLATE_ERROR_CODES: TranslateError[] = ['offline', 'unavailable', 'not-configured', 'quota', 'failed']
 
 /** Same limit as the server (api/translate.ts). */
 export const MAX_TRANSLATE_CHARS = 120
@@ -27,7 +21,7 @@ export class TranslateFailure extends Error {
   }
 }
 
-const isTranslateError = (value: unknown): value is TranslateError => typeof value === 'string' && value in TRANSLATE_ERRORS
+const isTranslateError = (value: unknown): value is TranslateError => TRANSLATE_ERROR_CODES.includes(value as TranslateError)
 
 // Accents stay in the key: "papa" and "papá" are different words.
 const lookupKey = (text: string, from: Lang) => `${from}:${text.trim().toLowerCase().replace(/\s+/g, ' ')}`

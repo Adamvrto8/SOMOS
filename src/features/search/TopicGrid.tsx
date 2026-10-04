@@ -2,13 +2,14 @@ import { Link } from 'react-router'
 import { SectionTitle } from '../../components/SectionTitle'
 import { TopicIcon } from '../../components/TopicIcon'
 import { topics } from '../../data'
+import { useT } from '../../i18n'
 import { wordsInTopic } from '../../lib/search'
-import { pluralSk } from '../../lib/text'
 
 export function TopicGrid() {
+  const text = useT().search
   return (
     <section aria-labelledby="topics-heading">
-      <SectionTitle id="topics-heading">Témy</SectionTitle>
+      <SectionTitle id="topics-heading">{text.topics}</SectionTitle>
       <ul className="grid grid-cols-2 gap-3">
         {topics.map((topic) => {
           const count = wordsInTopic(topic.id).length
@@ -23,7 +24,7 @@ export function TopicGrid() {
                     <TopicIcon name={topic.icon} size={20} />
                   </span>
                   <span className="text-xs text-ink-muted">
-                    {count} {pluralSk(count, ['slovo', 'slová', 'slov'])}
+                    {text.words(count)}
                   </span>
                 </span>
                 <span>

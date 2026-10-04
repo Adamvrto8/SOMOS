@@ -4,6 +4,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { SpeakButton } from '../../components/SpeakButton'
 import { sentenceById, wordById } from '../../data'
 import type { Sentence, Word } from '../../data/types'
+import { useT } from '../../i18n'
 import type { SavedItem } from '../../lib/db'
 import { WordRow } from '../search/WordRow'
 import { SaveButton } from '../word/SaveButton'
@@ -22,19 +23,20 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
     return sentence ? [sentence] : []
   })
   const filter = useArchiveFilter(new Set([...words, ...sentences].flatMap((x) => x.topics)))
+  const text = useT().archive
 
   if (words.length + sentences.length === 0) {
     return (
       <EmptyState
-        title="Zatiaľ nič uložené"
-        text="Na detaile slova alebo po odpovedi v cvičení ťukni na hviezdičku. Uložené sa ti budú vracať na zopakovanie."
+        title={text.savedEmptyTitle}
+        text={text.savedEmptyText}
         action={
           <Link
             to="/search"
             className="inline-flex h-12 items-center gap-2 rounded-2xl border border-line bg-surface px-5 font-semibold transition-colors duration-150 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
           >
             <Search size={18} strokeWidth={1.75} aria-hidden />
-            Hľadať slová
+            {text.searchWords}
           </Link>
         }
       />
@@ -53,7 +55,7 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
 
       {visibleWords.length > 0 && (
         <section aria-labelledby="saved-words-heading">
-          {visibleSentences.length > 0 && <SectionTitle id="saved-words-heading">Slová</SectionTitle>}
+          {visibleSentences.length > 0 && <SectionTitle id="saved-words-heading">{text.words}</SectionTitle>}
           <ul aria-labelledby="saved-words-heading" className="divide-y divide-line">
             {visibleWords.map((word) => (
               <WordRow key={word.id} word={word} list={wordIds} />
@@ -64,7 +66,7 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
 
       {visibleSentences.length > 0 && (
         <section aria-labelledby="saved-sentences-heading">
-          <SectionTitle id="saved-sentences-heading">Vety</SectionTitle>
+          <SectionTitle id="saved-sentences-heading">{text.sentences}</SectionTitle>
           <ul className="divide-y divide-line">
             {visibleSentences.map((s) => (
               <li key={s.id} className="flex items-start gap-1 py-3">

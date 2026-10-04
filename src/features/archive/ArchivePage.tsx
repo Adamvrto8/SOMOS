@@ -1,6 +1,7 @@
 import { Layers, Settings } from 'lucide-react'
 import { Link } from 'react-router'
 import { Segmented } from '../../components/Segmented'
+import { useT } from '../../i18n'
 import { useCustomWords, useSavedItems } from '../../lib/archive'
 import { useMistakes } from '../../lib/mistakes'
 import { useReviewOverview } from '../../lib/srs'
@@ -14,6 +15,8 @@ type Tab = 'saved' | 'mine' | 'mistakes'
 const count = (items: unknown[] | undefined) => (items ? ` (${items.length})` : '')
 
 export function ArchivePage() {
+  const dictionary = useT()
+  const text = dictionary.archive
   const [tabParam] = useUrlParam('tab')
   const tab: Tab = tabParam === 'mine' || tabParam === 'mistakes' ? tabParam : 'saved'
   const updateParams = useUpdateParams()
@@ -29,11 +32,11 @@ export function ArchivePage() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight">Archív</h1>
+        <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
         <Link
           to="/archive/settings"
-          aria-label="Nastavenia"
-          title="Nastavenia"
+          aria-label={dictionary.settings.title}
+          title={dictionary.settings.title}
           className="-mr-2 flex size-11 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
         >
           <Settings size={22} strokeWidth={1.75} aria-hidden />
@@ -46,21 +49,21 @@ export function ArchivePage() {
           className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-brick px-5 font-semibold text-on-accent transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
         >
           <Layers size={18} strokeWidth={1.75} aria-hidden />
-          Zopakovať dnes ({review.dueToday})
+          {text.reviewToday(review.dueToday)}
         </Link>
       )}
 
       <Segmented
         mode="tabs"
-        label="Archív"
+        label={text.title}
         idPrefix="archive-tab"
         panelId="archive-panel"
         value={tab}
         onChange={switchTab}
         options={[
-          { id: 'saved', label: `Uložené${count(starred)}` },
-          { id: 'mine', label: `Moje slová${count(customWords)}` },
-          { id: 'mistakes', label: `Chyby${count(mistakes)}` },
+          { id: 'saved', label: `${text.tabs.saved}${count(starred)}` },
+          { id: 'mine', label: `${text.tabs.mine}${count(customWords)}` },
+          { id: 'mistakes', label: `${text.tabs.mistakes}${count(mistakes)}` },
         ]}
       />
 

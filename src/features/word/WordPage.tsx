@@ -8,7 +8,8 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { SpeakButton } from '../../components/SpeakButton'
 import { topicById, verbById, wordById } from '../../data'
 import type { Word } from '../../data/types'
-import { articleFor, GENDER_LABELS, POS_LABELS } from '../../lib/grammar'
+import { useT } from '../../i18n'
+import { articleFor } from '../../lib/grammar'
 import { ConjugationTable } from './ConjugationTable'
 import { SaveButton } from './SaveButton'
 import { readWordNav, type WordNavState } from './wordNav'
@@ -32,6 +33,7 @@ function inSidewaysScroller(target: Element): boolean {
  */
 export function WordPage() {
   const { id = '' } = useParams()
+  const text = useT().word
   const location = useLocation()
   const navigate = useNavigate()
   const nav = readWordNav(location.state)
@@ -89,7 +91,7 @@ export function WordPage() {
   })
 
   const word = wordById.get(id)
-  if (!word) return <NotFound title="Slovo sa nenašlo" />
+  if (!word) return <NotFound title={text.notFound} />
 
   return (
     // pan-y: the page still scrolls vertically, horizontal swipes are ours.
@@ -97,14 +99,14 @@ export function WordPage() {
       <div className="flex items-center justify-between">
         <BackButton fallback="/search" />
         {index >= 0 && list.length > 1 && (
-          <nav aria-label="Slová zo zoznamu" className="-mr-2 flex items-center">
-            <PagerButton label="Predchádzajúce slovo" disabled={!prevId} onClick={() => go(prevId, 'prev')}>
+          <nav aria-label={text.listNav} className="-mr-2 flex items-center">
+            <PagerButton label={text.previous} disabled={!prevId} onClick={() => go(prevId, 'prev')}>
               <ChevronLeft size={20} strokeWidth={1.75} aria-hidden />
             </PagerButton>
             <span className="min-w-12 text-center text-sm text-ink-muted tabular-nums">
               {index + 1} / {list.length}
             </span>
-            <PagerButton label="Ďalšie slovo" disabled={!nextId} onClick={() => go(nextId, 'next')}>
+            <PagerButton label={text.next} disabled={!nextId} onClick={() => go(nextId, 'next')}>
               <ChevronRight size={20} strokeWidth={1.75} aria-hidden />
             </PagerButton>
           </nav>
@@ -145,6 +147,7 @@ function WordDetail({ word }: { word: Word }) {
   const article = articleFor(word)
   const [primary, ...otherTranslations] = word.sk
   const wordTopics = word.topics.flatMap((t) => topicById.get(t) ?? [])
+  const text = useT().word
 
   return (
     <article className="space-y-8">
@@ -168,10 +171,10 @@ function WordDetail({ word }: { word: Word }) {
         </div>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          <Badge>{POS_LABELS[word.pos]}</Badge>
-          {word.gender && <Badge>{GENDER_LABELS[word.gender]}</Badge>}
-          {verb && !verb.regular && <Badge tone="amber">nepravidelné</Badge>}
-          {verb?.reflexive && <Badge>zvratné</Badge>}
+          <Badge>{text.pos[word.pos]}</Badge>
+          {word.gender && <Badge>{text.gender[word.gender]}</Badge>}
+          {verb && !verb.regular && <Badge tone="amber">{text.irregular}</Badge>}
+          {verb?.reflexive && <Badge>{text.reflexive}</Badge>}
           <Badge>{word.level}</Badge>
         </div>
 
@@ -184,7 +187,7 @@ function WordDetail({ word }: { word: Word }) {
           <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-muted">
             {word.plural && (
               <div className="flex gap-1.5">
-                <dt>množné číslo:</dt>
+                <dt>{text.plural}</dt>
                 <dd lang="es" className="font-serif text-ink">
                   {word.plural}
                 </dd>
@@ -192,7 +195,7 @@ function WordDetail({ word }: { word: Word }) {
             )}
             {word.feminine && (
               <div className="flex gap-1.5">
-                <dt>ženský tvar:</dt>
+                <dt>{text.feminine}</dt>
                 <dd lang="es" className="font-serif text-ink">
                   {word.feminine}
                 </dd>
@@ -203,14 +206,14 @@ function WordDetail({ word }: { word: Word }) {
       </header>
 
       {word.note && (
-        <aside aria-label="Poznámka" className="flex gap-3 rounded-card bg-surface-2 p-4 text-sm leading-relaxed">
+        <aside aria-label={text.note} className="flex gap-3 rounded-card bg-surface-2 p-4 text-sm leading-relaxed">
           <Info size={18} strokeWidth={1.75} className="mt-0.5 shrink-0 text-brick" aria-hidden />
           <p>{word.note}</p>
         </aside>
       )}
 
       <section aria-labelledby="examples-heading">
-        <SectionTitle id="examples-heading">Príklady</SectionTitle>
+        <SectionTitle id="examples-heading">{text.examples}</SectionTitle>
         <ul className="divide-y divide-line rounded-card border border-line bg-surface">
           {word.examples.map((example) => (
             <li key={example.es} className="flex items-start gap-1 py-3 pr-1 pl-4">
@@ -230,7 +233,7 @@ function WordDetail({ word }: { word: Word }) {
 
       {wordTopics.length > 0 && (
         <section aria-labelledby="topics-heading">
-          <SectionTitle id="topics-heading">Témy</SectionTitle>
+          <SectionTitle id="topics-heading">{text.topics}</SectionTitle>
           <ul className="flex flex-wrap gap-2">
             {wordTopics.map((topic) => (
               <li key={topic.id}>

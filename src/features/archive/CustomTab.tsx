@@ -1,5 +1,6 @@
 import { Plus } from 'lucide-react'
 import { Link } from 'react-router'
+import { useT } from '../../i18n'
 import type { CustomWord } from '../../lib/db'
 import { ArchiveFilters, NoMatches } from './ArchiveFilters'
 import { CustomWordRow } from './CustomWordRow'
@@ -9,19 +10,20 @@ import { useArchiveFilter } from './useArchiveFilter'
 /** "Moje slová": the learner's own words, newest first, with a floating "+". */
 export function CustomTab({ words }: { words: CustomWord[] }) {
   const filter = useArchiveFilter(new Set(words.flatMap((c) => (c.topic ? [c.topic] : []))))
+  const text = useT().archive
 
   if (words.length === 0) {
     return (
       <EmptyState
-        title="Zatiaľ žiadne vlastné slová"
-        text="Počul si niekde slovo, ktoré v slovníku nie je? Pridaj si ho aj s prekladom a poznámkou."
+        title={text.customEmptyTitle}
+        text={text.customEmptyText}
         action={
           <Link
             to="/archive/new"
             className="inline-flex h-12 items-center gap-2 rounded-2xl bg-brick px-5 font-semibold text-on-accent transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
           >
             <Plus size={18} strokeWidth={1.75} aria-hidden />
-            Pridať slovo
+            {text.addWord}
           </Link>
         }
       />
@@ -49,8 +51,8 @@ export function CustomTab({ words }: { words: CustomWord[] }) {
         <div className="mx-auto flex max-w-[480px] justify-end px-4">
           <Link
             to="/archive/new"
-            aria-label="Pridať slovo"
-            title="Pridať slovo"
+            aria-label={text.addWord}
+            title={text.addWord}
             className="pointer-events-auto flex size-14 items-center justify-center rounded-full bg-brick text-on-accent shadow-lg transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick active:scale-95"
           >
             <Plus size={26} strokeWidth={2} aria-hidden />

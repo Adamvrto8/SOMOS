@@ -1,18 +1,4 @@
-import type { PartOfSpeech, Word } from '../data/types'
-
-export const POS_LABELS: Record<PartOfSpeech, string> = {
-  noun: 'podstatné meno',
-  verb: 'sloveso',
-  adj: 'prídavné meno',
-  adv: 'príslovka',
-  prep: 'predložka',
-  pron: 'zámeno',
-  conj: 'spojka',
-  phrase: 'fráza',
-  other: 'iné',
-}
-
-export const GENDER_LABELS = { m: 'mužský rod', f: 'ženský rod' } as const
+import type { Word } from '../data/types'
 
 // Feminine nouns starting with a stressed a-/ha- take "el" in the singular: el agua.
 const EL_FEMININE = new Set(['agua', 'águila', 'ala', 'alma', 'ancla', 'área', 'arma', 'arpa', 'aula', 'ave', 'habla', 'hacha', 'hada', 'hambre'])
