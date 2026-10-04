@@ -1,5 +1,5 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
-import { t } from '../../../i18n'
+import { useT } from '../../../i18n'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { ChoiceOptions } from './ChoiceOptions'
 import { DictationView } from './DictationView'
@@ -27,6 +27,8 @@ const Pill = ({ children }: { children: string }) => (
 )
 
 export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint }: TaskViewProps) {
+  const dictionary = useT()
+  const labels = dictionary.lesson.task
   const status = statusOf(grade)
   const text = typeof answer === 'string' ? answer : ''
 
@@ -39,7 +41,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             <p className="text-ink-muted">{task.sentence.sk}</p>
             {task.cloze.hint && <Pill>{task.cloze.hint}</Pill>}
           </div>
-          <TypedAnswer value={text} onChange={onAnswer} onSubmit={onSubmit} status={status} hint={hint} label="Chýbajúce slovo" placeholder="Napíš slovo…" />
+          <TypedAnswer value={text} onChange={onAnswer} onSubmit={onSubmit} status={status} hint={hint} label={labels.missingWordLabel} placeholder={labels.typeWord} />
         </div>
       )
 
@@ -66,7 +68,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
               <Pill>{PERSON_LABELS[task.person]}</Pill>
               <Pill>{TENSE_LABELS[task.tense]}</Pill>
             </div>
-            {task.verb.reflexive && <p className="mt-3 text-sm text-ink-muted">zvratné sloveso – nezabudni na me / te / se…</p>}
+            {task.verb.reflexive && <p className="mt-3 text-sm text-ink-muted">{labels.reflexiveHint}</p>}
           </div>
           <TypedAnswer
             value={text}
@@ -74,8 +76,8 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
-            label="Tvar slovesa"
-            placeholder={task.tense === 'progresivo' ? 'estar + gerundium…' : 'Napíš tvar…'}
+            label={labels.verbForm}
+            placeholder={task.tense === 'progresivo' ? labels.typeProgresivo : labels.typeForm}
           />
         </div>
       )
@@ -98,8 +100,8 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             onSubmit={onSubmit}
             status={status}
             hint={hint}
-            label="Preklad do španielčiny"
-            placeholder="Po španielsky…"
+            label={dictionary.lesson.toSpanish}
+            placeholder={labels.inSpanish}
             multiline
           />
         </div>
@@ -129,9 +131,9 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
               {task.prompt}
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-2">
-              <Pill>{isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}</Pill>
-              {task.word.pos && <Pill>{t().word.pos[task.word.pos] ?? task.word.pos}</Pill>}
-              {task.word.gender && <Pill>{t().word.gender[task.word.gender]}</Pill>}
+              <Pill>{isToSpanish ? dictionary.lesson.toSpanish : dictionary.lesson.toNative}</Pill>
+              {task.word.pos && <Pill>{dictionary.word.pos[task.word.pos] ?? task.word.pos}</Pill>}
+              {task.word.gender && <Pill>{dictionary.word.gender[task.word.gender]}</Pill>}
             </div>
           </div>
           <TypedAnswer
@@ -141,8 +143,8 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             status={status}
             hint={hint}
             lang={isToSpanish ? 'es' : 'sk'}
-            label={isToSpanish ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
-            placeholder={isToSpanish ? 'Po španielsky…' : 'Po slovensky…'}
+            label={isToSpanish ? dictionary.lesson.toSpanish : dictionary.lesson.toNative}
+            placeholder={isToSpanish ? labels.inSpanish : labels.inNative}
           />
         </div>
       )

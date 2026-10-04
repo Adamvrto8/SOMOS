@@ -1,6 +1,7 @@
 import { Mic, Square, Volume2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { SPEECH_ERRORS, SpeechFailure, startRecording, type Recording, type SpeechError } from '../../../lib/speech'
+import { useT } from '../../../i18n'
+import { SpeechFailure, startRecording, type Recording, type SpeechError } from '../../../lib/speech'
 import { bestMatch, type SpeechMatch } from '../../../lib/speechMatch'
 import type { SpeakingTask } from '../../../lib/lesson'
 import { speak, stopSpeaking } from '../../../lib/tts'
@@ -22,6 +23,7 @@ interface SpeakingViewProps {
 
 /** Vyslovovanie: read the sentence aloud; up to 3 recordings, the best one is submitted. */
 export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecordingChange, status }: SpeakingViewProps) {
+  const labels = useT().lesson.task
   const [tries, setTries] = useState(0)
   const [recording, setRecording] = useState(false)
   const [last, setLast] = useState<{ transcript: string; match: SpeechMatch } | null>(null)
@@ -101,7 +103,7 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
             onClick={() => speak(task.sentence.es)}
             // The open mic would hear the phone read the sentence.
             disabled={recording}
-            aria-label="Prehrať vetu"
+            aria-label={labels.playSentence}
             className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2 hover:text-ink disabled:opacity-40"
           >
             <Volume2 size={20} strokeWidth={1.75} aria-hidden />
@@ -115,7 +117,7 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
           type="button"
           onClick={() => void record()}
           disabled={graded || micBlocked}
-          aria-label={recording ? 'Zastaviť nahrávanie' : 'Nahrať vetu'}
+          aria-label={recording ? labels.stopRecording : labels.record}
           className={[
             'flex size-20 items-center justify-center rounded-full text-on-accent shadow-md transition duration-150',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',
@@ -126,14 +128,14 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
           {recording ? <Square size={28} strokeWidth={1.75} aria-hidden /> : <Mic size={32} strokeWidth={1.75} aria-hidden />}
         </button>
         <p role="status" className="min-h-5 text-sm text-ink-muted">
-          {recording ? 'Počúvam…' : tries > 0 && !graded ? `Pokus ${tries}/${MAX_TRIES}` : ''}
+          {recording ? labels.listening : tries > 0 && !graded ? labels.attempt(tries, MAX_TRIES) : ''}
         </p>
         {last && !recording && (
           <p className="text-center text-sm text-ink-muted">
-            Rozpoznal som: <span lang="es">{last.transcript}</span>
+            {labels.recognized} <span lang="es">{last.transcript}</span>
           </p>
         )}
-        {error && <p className="text-center text-sm text-error">{SPEECH_ERRORS[error]}</p>}
+        {error && <p className="text-center text-sm text-error">{labels.speechErrors[error]}</p>}
       </div>
 
       {onSkipRest && !graded && (
@@ -142,7 +144,7 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
           onClick={onSkipRest}
           className="h-11 w-full text-sm font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
         >
-          Teraz nemôžem hovoriť
+          {labels.cantSpeak}
         </button>
       )}
     </div>

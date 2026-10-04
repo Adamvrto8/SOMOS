@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n'
 import { useRef, useState, type KeyboardEvent } from 'react'
 import type { Grade } from '../../../lib/lesson'
 import { RetryHint } from './RetryHint'
@@ -25,6 +26,7 @@ interface TypedAnswerProps {
 }
 
 export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, status, multiline, lang = 'es', hint }: TypedAnswerProps) {
+  const text = useT().lesson.task
   const ref = useRef<HTMLTextAreaElement>(null)
   const locked = status !== undefined
   // The text a hint is about. Once the learner changes it, the hint belongs to the previous try and fades.
@@ -79,7 +81,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
       {hint && !locked && <RetryHint grade={hint} stale={stale} />}
       {!locked && lang === 'es' && (
         // One row at any width: the room above the phone keyboard is short.
-        <div className="mt-2 grid grid-cols-9 gap-1" aria-label="Špeciálne znaky">
+        <div className="mt-2 grid grid-cols-9 gap-1" aria-label={text.specialChars}>
           {EXTRA_KEYS.map((char) => (
             <button
               key={char}
@@ -88,7 +90,7 @@ export function TypedAnswer({ value, onChange, onSubmit, label, placeholder, sta
               // Keep focus (and the phone keyboard) in the text field.
               onPointerDown={(e) => e.preventDefault()}
               onClick={() => insert(char)}
-              aria-label={`Vložiť ${char}`}
+              aria-label={text.insert(char)}
               className="flex h-11 items-center justify-center rounded-lg border border-line bg-surface font-serif text-lg transition-colors duration-150 hover:bg-surface-2 active:bg-surface-2"
             >
               {char}

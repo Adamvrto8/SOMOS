@@ -1,6 +1,7 @@
 import { Eye, Snail, Volume2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Button } from '../../../components/Button'
+import { useT } from '../../../i18n'
 import type { DictationTask, Grade } from '../../../lib/lesson'
 import { SLOW_RATE, speak, ttsSupported } from '../../../lib/tts'
 import type { Status } from './status'
@@ -20,6 +21,7 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }
   // Without a voice the task still works as a translation.
   const [showMeaning, setShowMeaning] = useState(!ttsSupported)
   const text = task.sentence.es
+  const labels = useT().lesson.task
 
   // Starting the lesson was a tap, so Chrome lets the page speak right away.
   useEffect(() => {
@@ -32,14 +34,14 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }
         <div className="grid grid-cols-2 gap-3">
           {/* preventDefault keeps the focus (and the phone keyboard) in the answer field. */}
           <Button variant="secondary" icon={Volume2} onPointerDown={(e) => e.preventDefault()} onClick={() => speak(text)}>
-            Prehrať
+            {labels.play}
           </Button>
           <Button variant="secondary" icon={Snail} onPointerDown={(e) => e.preventDefault()} onClick={() => speak(text, { rate: SLOW_RATE })}>
-            Pomaly
+            {labels.slowly}
           </Button>
         </div>
       ) : (
-        <p className="text-sm text-ink-muted">Tento prehliadač nevie prehrávať reč.</p>
+        <p className="text-sm text-ink-muted">{labels.noTts}</p>
       )}
 
       {showMeaning || status ? (
@@ -51,7 +53,7 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }
           className="flex h-11 items-center gap-2 text-sm font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
         >
           <Eye size={16} strokeWidth={1.75} aria-hidden />
-          Zobraziť preklad
+          {labels.showMeaning}
         </button>
       )}
 
@@ -61,8 +63,8 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }
         onSubmit={onSubmit}
         status={status}
         hint={hint}
-        label="Čo si počul"
-        placeholder="Po španielsky…"
+        label={labels.heardLabel}
+        placeholder={labels.inSpanish}
         multiline
       />
     </div>

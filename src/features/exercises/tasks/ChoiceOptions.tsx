@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n'
 interface ChoiceOptionsProps {
   options: string[]
   selected: string
@@ -6,10 +7,11 @@ interface ChoiceOptionsProps {
 }
 
 export function ChoiceOptions({ options, selected, onSelect, correctAnswer }: ChoiceOptionsProps) {
+  const text = useT().lesson.task
   const graded = correctAnswer !== undefined
 
   return (
-    <div role="radiogroup" aria-label="Možnosti" className="grid grid-cols-2 gap-3">
+    <div role="radiogroup" aria-label={text.options} className="grid grid-cols-2 gap-3">
       {options.map((option) => {
         const isSelected = option === selected
         const style = !graded

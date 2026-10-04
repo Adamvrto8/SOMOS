@@ -5,6 +5,7 @@ import { Chip } from '../../components/Chip'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
+import { useT } from '../../i18n'
 import { TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { getStablePool, LESSON_SIZE, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
@@ -17,11 +18,12 @@ import {
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
-import { pluralSk } from '../../lib/text'
 import { useUpdateParams } from '../../lib/useUrlQuery'
 import { EXERCISES, filterFromParams, filterToParams, isLessonGroup, LEVELS } from './exercises'
 
 export function PracticePage() {
+  const dictionary = useT()
+  const text = dictionary.practice
   const [params] = useSearchParams()
   const updateParams = useUpdateParams()
   const navigate = useNavigate()
@@ -74,7 +76,7 @@ export function PracticePage() {
 
   return (
     <div className="space-y-7">
-      <h1 className="font-serif text-4xl font-semibold tracking-tight">Cvičiť</h1>
+      <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
 
       {mistakes && mistakes.length > 0 && (
         <Link
@@ -85,9 +87,9 @@ export function PracticePage() {
             <Dumbbell size={20} strokeWidth={1.75} aria-hidden />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block font-medium">Precvičiť chyby</span>
+            <span className="block font-medium">{dictionary.home.practiceMistakes}</span>
             <span className="block text-sm text-ink-muted">
-              {mistakes.length} {pluralSk(mistakes.length, ['úloha', 'úlohy', 'úloh'])}, v ktorých si sa pomýlil
+              {text.mistakesHint(mistakes.length)}
             </span>
           </span>
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
@@ -102,14 +104,14 @@ export function PracticePage() {
           <BookOpen size={20} strokeWidth={1.75} aria-hidden />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block font-medium">Gramatika</span>
-          <span className="block text-sm text-ink-muted">Krátke pravidlá s príkladmi</span>
+          <span className="block font-medium">{text.grammar}</span>
+          <span className="block text-sm text-ink-muted">{text.grammarHint}</span>
         </span>
         <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
       </Link>
 
       <section aria-labelledby="type-heading">
-        <SectionTitle id="type-heading">Typ cvičenia</SectionTitle>
+        <SectionTitle id="type-heading">{text.type}</SectionTitle>
         <div role="radiogroup" aria-labelledby="type-heading" className="space-y-2">
           {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
             const selected = filter.type === type
@@ -148,10 +150,10 @@ export function PracticePage() {
 
       {filter.type === 'conjugation' ? (
         <section aria-labelledby="tense-heading">
-          <SectionTitle id="tense-heading">Čas</SectionTitle>
+          <SectionTitle id="tense-heading">{text.tense}</SectionTitle>
           <div role="group" aria-labelledby="tense-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
             <Chip selected={group === 'all'} onClick={() => updateParams({ tense: 'all' })}>
-              Všetky časy
+              {dictionary.exercise.allTenses}
             </Chip>
             {TABLE_TENSES.map((t) => (
               <Chip key={t} selected={group === t} onClick={() => updateParams({ tense: t })}>
@@ -162,10 +164,10 @@ export function PracticePage() {
         </section>
       ) : (
         <section aria-labelledby="topic-heading">
-          <SectionTitle id="topic-heading">Téma</SectionTitle>
+          <SectionTitle id="topic-heading">{text.topic}</SectionTitle>
           <div role="group" aria-labelledby="topic-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
             <Chip selected={group === 'all'} onClick={() => updateParams({ topic: 'all' })}>
-              Všetko
+              {text.all}
             </Chip>
             {topics.map((t) => (
               <Chip key={t.id} selected={group === t.id} onClick={() => updateParams({ topic: t.id })}>
@@ -177,29 +179,29 @@ export function PracticePage() {
       )}
 
       <section aria-labelledby="level-heading">
-        <SectionTitle id="level-heading">Úroveň</SectionTitle>
+        <SectionTitle id="level-heading">{text.level}</SectionTitle>
         <Segmented
           mode="radio"
-          label="Úroveň"
+          label={text.level}
           idPrefix="level"
           value={filter.level ?? 'all'}
           onChange={(level) => updateParams({ level: level === 'all' ? null : level })}
-          options={[{ id: 'all', label: 'Všetky' }, ...LEVELS.map((l) => ({ id: l, label: l }))]}
+          options={[{ id: 'all', label: text.allLevels }, ...LEVELS.map((l) => ({ id: l, label: l }))]}
         />
       </section>
 
       {/* Numbered Lessons List */}
       <section aria-labelledby="lessons-heading" className="space-y-3">
         <div className="flex items-center justify-between">
-          <SectionTitle id="lessons-heading">Lekcie</SectionTitle>
+          <SectionTitle id="lessons-heading">{text.lessons}</SectionTitle>
           <span className="text-xs text-ink-muted">
-            {passedCount}/{totalLessons} {pluralSk(totalLessons, ['splnená', 'splnené', 'splnených'])}
+            {text.passedOf(passedCount, totalLessons)}
           </span>
         </div>
 
         {totalLessons === 0 ? (
           <p className="rounded-card border border-line bg-surface p-4 text-center text-sm text-ink-muted">
-            Pre tento výber zatiaľ nie sú žiadne úlohy.
+            {text.noTasks}
           </p>
         ) : (
           <div className="grid gap-2">
@@ -241,15 +243,15 @@ export function PracticePage() {
                       {isPassed ? <Check size={16} strokeWidth={2.5} /> : unlocked ? num : <Lock size={15} />}
                     </span>
                     <div>
-                      <span className="block font-medium">Lekcia {num}</span>
+                      <span className="block font-medium">{text.lesson(num)}</span>
                       <span className="block text-xs text-ink-muted">
                         {isPassed
-                          ? `Splnené (${record.bestScore}/${record.total}) · ťukni pre opakovanie`
+                          ? text.passedAgain(record.bestScore, record.total)
                           : record
-                            ? `Najlepšie: ${record.bestScore}/${record.total} (potrebuješ aspoň ${passThreshold(record.total)}/${record.total})`
+                            ? text.best(record.bestScore, record.total, passThreshold(record.total))
                             : unlocked
-                              ? `${lessonSize} ${pluralSk(lessonSize, ['úloha', 'úlohy', 'úloh'])} · pripravené`
-                              : `Odomkne sa po splnení Lekcie ${num - 1}`}
+                              ? text.ready(lessonSize)
+                              : text.unlocks(num - 1)}
                       </span>
                     </div>
                   </div>
@@ -265,7 +267,7 @@ export function PracticePage() {
                       </span>
                     ) : isCurrent ? (
                       <span className="rounded-full bg-brick/10 px-2.5 py-1 text-xs font-medium text-brick">
-                        Aktuálna
+                        {text.current}
                       </span>
                     ) : null}
                   </div>
@@ -284,16 +286,16 @@ export function PracticePage() {
           onClick={() => navigateToLesson(unpassedLesson)}
           className="w-full"
         >
-          {allPassed ? 'Zopakovať Lekciu 1' : `Pokračovať (Lekcia ${unpassedLesson})`}
+          {allPassed ? text.repeatFirst : text.continueWith(unpassedLesson)}
         </Button>
         <p className="mt-2 text-center text-sm text-ink-muted" aria-live="polite">
           {totalLessons === 0
-            ? 'Pre tento výber zatiaľ nie sú žiadne úlohy.'
+            ? text.noTasks
             : allPassed
               ? group === 'all'
-                ? 'Všetky lekcie sú úspešne zvládnuté! ✓'
-                : 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓'
-              : 'Na odomknutie ďalšej lekcie potrebuješ aspoň 8/10 (80 %)'}
+                ? text.allDone
+                : text.allDoneTopic
+              : text.needToUnlock}
         </p>
       </div>
     </div>

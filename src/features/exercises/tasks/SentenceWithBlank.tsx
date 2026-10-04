@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { useT } from '../../../i18n'
 import { spaceBefore } from '../../../lib/text'
 import type { Status } from './status'
 
@@ -18,6 +19,7 @@ interface SentenceWithBlankProps {
 }
 
 export function SentenceWithBlank({ tokens, blankIndex, filled, status }: SentenceWithBlankProps) {
+  const text = useT().lesson.task
   return (
     <p lang="es" className="font-serif text-2xl leading-relaxed">
       {tokens.map((token, i) => (
@@ -26,7 +28,7 @@ export function SentenceWithBlank({ tokens, blankIndex, filled, status }: Senten
           {i === blankIndex ? (
             <span
               className={`inline-block min-w-[4ch] border-b-2 px-1 text-center font-semibold ${BLANK[status ?? 'open']}`}
-              aria-label={filled ? undefined : 'chýbajúce slovo'}
+              aria-label={filled ? undefined : text.missingWord}
             >
               {filled.trim() || ' '}
             </span>

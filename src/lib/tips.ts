@@ -1,4 +1,5 @@
 import { tipById, verbById, words } from '../data'
+import { t } from '../i18n'
 import type { Cloze, Grammar, Person, Sentence, Tip, TipRule, Verb } from '../data/types'
 import type { Meaning } from './checkAnswer'
 import { isIrregular, type TableTense } from './conjugate'
@@ -211,4 +212,4 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
 }
 
 /** The link's text: "Prečo?" promises to explain the mistake, which only a targeted tip can. */
-export const tipLabel = (found: TaskTip) => (found.targeted ? 'Prečo?' : 'Gramatika k vete')
+export const tipLabel = (found: TaskTip) => (found.targeted ? t().lesson.why : t().lesson.grammarOfSentence)

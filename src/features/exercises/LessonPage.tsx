@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { tipById } from '../../data'
+import { useT } from '../../i18n'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import {
@@ -63,6 +64,8 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
  * `?lesson=X` plays the fixed, numbered lesson X.
  */
 export function LessonPage() {
+  const dictionary = useT()
+  const text = dictionary.lesson
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
   const fromMistakes = params.get('mistakes') === '1'
@@ -249,14 +252,14 @@ export function LessonPage() {
         <button
           type="button"
           onClick={() => (answers.length > 0 && !finished ? setConfirmExit(true) : exit())}
-          aria-label="Ukončiť lekciu"
+          aria-label={text.quit}
           className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
         >
           <X size={22} strokeWidth={1.75} aria-hidden />
         </button>
         <div
           role="progressbar"
-          aria-label="Priebeh lekcie"
+          aria-label={text.progress}
           aria-valuemin={0}
           aria-valuemax={total}
           aria-valuenow={answers.length}
@@ -273,22 +276,22 @@ export function LessonPage() {
       <main className="px-4 pt-4 pb-80">
         {locked ? (
           <div className="pt-10 text-center">
-            <p className="font-serif text-2xl font-semibold">Lekcia je zamknutá</p>
-            <p className="mt-2 text-ink-muted">Odomkne sa, keď splníš predchádzajúcu lekciu aspoň na 80 %.</p>
+            <p className="font-serif text-2xl font-semibold">{text.locked}</p>
+            <p className="mt-2 text-ink-muted">{text.lockedHint}</p>
             <Button variant="secondary" onClick={exit} className="mt-6">
-              Späť
+              {dictionary.common.back}
             </Button>
           </div>
         ) : tasks === null ? null : total === 0 ? (
           <div className="pt-10 text-center">
-            <p className="font-serif text-2xl font-semibold">{fromMistakes ? 'Žiadne chyby' : 'Žiadne úlohy'}</p>
+            <p className="font-serif text-2xl font-semibold">{fromMistakes ? text.noMistakes : text.noTasks}</p>
             <p className="mt-2 text-ink-muted">
               {fromMistakes
-                ? 'V zozname chýb nič nie je. Zlé odpovede z lekcií sa sem ukladajú automaticky.'
-                : 'Pre tento výber zatiaľ nie sú úlohy. Skús inú tému alebo úroveň.'}
+                ? text.noMistakesHint
+                : text.noTasksHint}
             </p>
             <Button variant="secondary" onClick={exit} className="mt-6">
-              Späť
+              {dictionary.common.back}
             </Button>
           </div>
         ) : overview && runLesson !== undefined ? (
@@ -341,22 +344,22 @@ export function LessonPage() {
             {overview ? (
               <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
                 <Button variant="secondary" onClick={exit}>
-                  Späť
+                  {dictionary.common.back}
                 </Button>
                 <Button icon={Repeat} onClick={() => setOverview(null)} className="flex-1" autoFocus>
-                  Zopakovať lekciu
+                  {text.repeat}
                 </Button>
               </div>
             ) : confirmExit ? (
               <div className="animate-sheet-up rounded-t-3xl border-t border-line bg-surface px-5 pt-5 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgb(0_0_0/0.08)]">
-                <p className="text-lg font-semibold">Ukončiť lekciu?</p>
-                <p className="mt-1 text-sm text-ink-muted">Odpovede, ktoré si už dal, ostanú uložené.</p>
+                <p className="text-lg font-semibold">{text.quitQuestion}</p>
+                <p className="mt-1 text-sm text-ink-muted">{text.quitHint}</p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <Button variant="secondary" onClick={() => setConfirmExit(false)} autoFocus>
-                    Pokračovať
+                    {text.carryOn}
                   </Button>
                   <Button variant="danger" onClick={exit}>
-                    Ukončiť
+                    {text.quitShort}
                   </Button>
                 </div>
               </div>
@@ -374,12 +377,12 @@ export function LessonPage() {
               <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
                 {canRetry(task) && (
                   <Button variant="secondary" onClick={giveUp}>
-                    Vzdať sa
+                    {text.giveUp}
                   </Button>
                 )}
                 {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
                 <Button onPointerDown={(e) => e.preventDefault()} onClick={() => check()} disabled={!canCheck || recording} className="flex-1">
-                  Skontrolovať
+                  {text.check}
                 </Button>
               </div>
             )}

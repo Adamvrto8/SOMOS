@@ -4,7 +4,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Tapestry } from '../../components/Tapestry'
 import type { Grade, Task } from '../../lib/lesson'
 import { passThreshold as calcPassThreshold } from '../../lib/lessonProgress'
-import { pluralSk } from '../../lib/text'
+import { useT } from '../../i18n'
 import { TaskAnswerList } from './TaskAnswerList'
 
 export interface LessonAnswer {
@@ -13,11 +13,12 @@ export interface LessonAnswer {
   correct: boolean
 }
 
-function praise(ratio: number): { es: string; sk: string } {
-  if (ratio === 1) return { es: '¡Perfecto!', sk: 'Všetko správne.' }
-  if (ratio >= 0.8) return { es: '¡Muy bien!', sk: 'Skvelá práca.' }
-  if (ratio >= 0.5) return { es: '¡Bien!', sk: 'Ide ti to. Chyby si zopakuj, kým sú čerstvé.' }
-  return { es: '¡Ánimo!', sk: 'Nevadí – chyby si môžeš hneď zopakovať.' }
+/** The Spanish cheer and which line of the dictionary goes under it. */
+function praise(ratio: number): { es: string; key: 'perfect' | 'great' | 'good' | 'low' } {
+  if (ratio === 1) return { es: '¡Perfecto!', key: 'perfect' }
+  if (ratio >= 0.8) return { es: '¡Muy bien!', key: 'great' }
+  if (ratio >= 0.5) return { es: '¡Bien!', key: 'good' }
+  return { es: '¡Ánimo!', key: 'low' }
 }
 
 interface LessonResultProps {
@@ -56,9 +57,9 @@ export function LessonResult({
   const isPassed = !isNumbered || score >= requiredScore
   const hasNext = isNumbered && lessonNumber < totalLessons
   const fixed = answers.length - mistakes.length
-  const mistakesLabel = `${mistakes.length} ${pluralSk(mistakes.length, ['chybu', 'chyby', 'chýb'])}`
-
-  const { es, sk } = praise(total > 0 ? score / total : 0)
+  const dictionary = useT()
+  const text = dictionary.lesson.result
+  const { es, key } = praise(total > 0 ? score / total : 0)
 
   return (
     <div className="space-y-7">
@@ -68,11 +69,11 @@ export function LessonResult({
         </div>
         <div className="px-6 pt-5 pb-6 text-center">
           <h1 className="font-serif text-lg text-ink-muted">
-            {isNumbered ? `Lekcia ${lessonNumber} ${isPassed ? 'splnená' : 'zatiaľ nesplnená'}` : 'Lekcia hotová'}
+            {isNumbered ? (isPassed ? text.passed(lessonNumber) : text.notPassed(lessonNumber)) : text.done}
           </h1>
           {isNumbered && isRetry && (
             <p className="mt-1 text-sm text-ink-muted">
-              Opravené: {fixed} z {answers.length}
+              {text.fixed(fixed, answers.length)}
             </p>
           )}
           <p className="mt-1 font-serif text-6xl font-semibold tabular-nums">
@@ -82,7 +83,7 @@ export function LessonResult({
           <p lang="es" className="mt-2 font-serif text-2xl font-semibold text-brick">
             {es}
           </p>
-          <p className="mt-1 text-sm text-ink-muted">{sk}</p>
+          <p className="mt-1 text-sm text-ink-muted">{text.praise[key]}</p>
 
           {isNumbered && (
             <div className="mt-4">
@@ -90,16 +91,16 @@ export function LessonResult({
                 <div className="inline-flex items-center gap-2 rounded-xl bg-leaf/10 px-4 py-2 text-sm font-medium text-leaf">
                   <Check size={18} strokeWidth={2.5} aria-hidden />
                   <span>
-                    Splnené ({score}/{total}){hasNext ? ' · Ďalšia lekcia odomknutá!' : ''}
+                    {text.passedLine(score, total, hasNext)}
                   </span>
                 </div>
               ) : (
                 <div className="rounded-xl border border-error/20 bg-error/10 p-3 text-sm text-error">
                   <p className="font-medium">
-                    Potrebuješ aspoň {requiredScore}/{total} (80 %) – chýba ešte {requiredScore - score}
+                    {text.needed(requiredScore, total, requiredScore - score)}
                   </p>
                   <p className="mt-0.5 text-xs opacity-90">
-                    Oprav chyby: každá opravená odpoveď sa ti započíta do lekcie.
+                    {text.fixHint}
                   </p>
                 </div>
               )}
@@ -110,13 +111,13 @@ export function LessonResult({
 
       {mistakes.length > 0 && (
         <section aria-labelledby="mistakes-heading">
-          <SectionTitle id="mistakes-heading">{isNumbered ? 'Na opravu' : 'Na zopakovanie'}</SectionTitle>
+          <SectionTitle id="mistakes-heading">{isNumbered ? text.toFix : text.toRepeat}</SectionTitle>
           <TaskAnswerList tasks={mistakes.map((a) => a.task)} />
           {!fromMistakes && (
             <p className="mt-2 text-sm text-ink-muted">
               {isNumbered
-                ? 'Chyby, ktoré neopravíš, ostanú v Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.'
-                : 'Chyby sa uložili do Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.'}
+                ? text.mistakesStay
+                : text.mistakesSaved}
             </p>
           )}
         </section>
@@ -128,49 +129,49 @@ export function LessonResult({
           <>
             {mistakes.length > 0 && (
               <Button variant="primary" icon={RotateCcw} onClick={onRetryMistakes}>
-                Opraviť {mistakesLabel}
+                {text.fixMistakes(mistakes.length)}
               </Button>
             )}
             <Button variant={mistakes.length > 0 ? 'secondary' : 'primary'} icon={Repeat} onClick={onRepeatAll}>
-              Zopakovať celú Lekciu {lessonNumber}
+              {text.repeatLesson(lessonNumber)}
             </Button>
             <Button variant="secondary" disabled icon={Lock}>
-              Ďalšia lekcia (zamknutá)
+              {text.nextLocked}
             </Button>
           </>
         ) : isNumbered && isPassed ? (
           <>
             {hasNext && (
               <Button variant="primary" icon={ArrowRight} onClick={onNextLesson ?? onNewLesson}>
-                Ďalšia lekcia (Lekcia {lessonNumber + 1})
+                {text.next(lessonNumber + 1)}
               </Button>
             )}
             {mistakes.length > 0 && (
               <Button variant={hasNext ? 'secondary' : 'primary'} icon={RotateCcw} onClick={onRetryMistakes}>
-                Opraviť {mistakesLabel}
+                {text.fixMistakes(mistakes.length)}
               </Button>
             )}
             <Button variant="secondary" icon={Repeat} onClick={onRepeatAll}>
-              Zopakovať celú lekciu
+              {text.repeatAll}
             </Button>
           </>
         ) : (
           <>
             {mistakes.length > 0 && (
               <Button icon={RotateCcw} onClick={onRetryMistakes}>
-                Zopakovať {mistakesLabel}
+                {text.repeatMistakes(mistakes.length)}
               </Button>
             )}
             <Button variant="secondary" icon={Repeat} onClick={onRepeatAll}>
-              Zopakovať celú lekciu
+              {text.repeatAll}
             </Button>
             <Button variant={mistakes.length > 0 ? 'secondary' : 'primary'} icon={ArrowRight} onClick={onNewLesson}>
-              {fromMistakes ? 'Ďalšie chyby' : 'Nová lekcia'}
+              {fromMistakes ? text.moreMistakes : text.newLesson}
             </Button>
           </>
         )}
         <Button variant="secondary" onClick={onExit}>
-          Späť
+          {dictionary.common.back}
         </Button>
       </div>
     </div>

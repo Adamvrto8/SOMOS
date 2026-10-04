@@ -1,5 +1,6 @@
 import { CircleX } from 'lucide-react'
 import { useEffect, useRef } from 'react'
+import { useT } from '../../../i18n'
 import type { Grade } from '../../../lib/lesson'
 
 interface RetryHintProps {
@@ -16,14 +17,16 @@ const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'transla
  */
 export function RetryHint({ grade, stale }: RetryHintProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const dictionary = useT().lesson.task
+  const text = dictionary.retry
   const diff = grade.diff
   const has = (state: 'wrong' | 'extra' | 'missing') => diff?.some((p) => p.state === state)
   const notes = [
     // A lone red answer needs no legend: the title already says it is wrong.
-    diff && diff.length > 1 && has('wrong') && 'Červené slovo je zle.',
-    has('extra') && 'Prečiarknuté slovo je navyše.',
-    has('missing') && 'Na prázdnom mieste chýba slovo.',
-    (diff?.some((p) => p.accent) || grade.check?.meanings) && 'Skontroluj prízvuk.',
+    diff && diff.length > 1 && has('wrong') && text.wrong,
+    has('extra') && text.extra,
+    has('missing') && text.missing,
+    (diff?.some((p) => p.accent) || grade.check?.meanings) && text.accent,
   ].filter(Boolean)
 
   // Every check has to be seen, also one that finds the same mistake again: the hint would
@@ -44,7 +47,7 @@ export function RetryHint({ grade, stale }: RetryHintProps) {
     >
       <p className="flex items-center gap-2 font-semibold text-error">
         <CircleX size={18} strokeWidth={2} className="shrink-0" aria-hidden />
-        Ešte to nie je ono. Skús znova.
+        {text.title}
       </p>
       {diff && (
         <p className="mt-2 font-serif text-lg leading-relaxed">
@@ -52,7 +55,7 @@ export function RetryHint({ grade, stale }: RetryHintProps) {
             <span key={i}>
               {i > 0 && ' '}
               {part.state === 'missing' ? (
-                <span role="img" aria-label="chýba slovo" className="inline-block w-7 border-b-2 border-error" />
+                <span role="img" aria-label={dictionary.gapMissing} className="inline-block w-7 border-b-2 border-error" />
               ) : part.state === 'wrong' ? (
                 <span className="rounded-md bg-error/20 px-1 font-semibold text-error">{part.text}</span>
               ) : part.state === 'extra' ? (

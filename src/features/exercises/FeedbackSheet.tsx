@@ -3,17 +3,18 @@ import type { ReactNode } from 'react'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { wordIdByVerb } from '../../data'
+import { t, useT } from '../../i18n'
 import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
 import { SaveButton } from '../word/SaveButton'
 import { SpeechWords } from './tasks/SpeechWords'
 
-const TONE: Record<Verdict, { title: string; icon: LucideIcon; panel: string; heading: string }> = {
-  correct: { title: 'Správne!', icon: CircleCheck, panel: 'bg-leaf/15 border-leaf/50', heading: 'text-leaf' },
-  accent: { title: 'Správne, len pozor na prízvuk', icon: TriangleAlert, panel: 'bg-amber/20 border-amber', heading: 'text-ink' },
-  typo: { title: 'Takmer! Malý preklep', icon: TriangleAlert, panel: 'bg-amber/20 border-amber', heading: 'text-ink' },
-  wrong: { title: 'Nesprávne', icon: CircleX, panel: 'bg-error/10 border-error/50', heading: 'text-error' },
+const TONE: Record<Verdict, { icon: LucideIcon; panel: string; heading: string }> = {
+  correct: { icon: CircleCheck, panel: 'bg-leaf/15 border-leaf/50', heading: 'text-leaf' },
+  accent: { icon: TriangleAlert, panel: 'bg-amber/20 border-amber', heading: 'text-ink' },
+  typo: { icon: TriangleAlert, panel: 'bg-amber/20 border-amber', heading: 'text-ink' },
+  wrong: { icon: CircleX, panel: 'bg-error/10 border-error/50', heading: 'text-error' },
 }
 
 interface Reference {
@@ -48,7 +49,7 @@ function reference(task: Task): Reference {
       const skFormatted = task.word.sk.join(', ')
       if (task.direction === 'sk-es') {
         return {
-          label: 'Preklad do španielčiny',
+          label: t().lesson.toSpanish,
           correct: esFormatted,
           correctLang: 'es',
           detail: skFormatted,
@@ -57,7 +58,7 @@ function reference(task: Task): Reference {
         }
       }
       return {
-        label: 'Preklad do slovenčiny',
+        label: t().lesson.toNative,
         correct: skFormatted,
         correctLang: 'sk',
         detail: esFormatted,
@@ -81,9 +82,10 @@ interface FeedbackSheetProps {
 }
 
 export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why }: FeedbackSheetProps) {
+  const text = useT().lesson
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
-  const title = grade.speech && grade.verdict === 'typo' ? 'Takmer!' : tone.title
+  const title = grade.speech && grade.verdict === 'typo' ? text.almost : text.verdicts[grade.verdict]
   const ref = reference(task)
   const check = grade.check
   const notes: ReactNode[] = []
@@ -91,22 +93,22 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
   if (check?.typoWord) {
     notes.push(
       <>
-        Preklep v slove <strong lang="es">{check.typoWord}</strong>
+        {text.typoIn} <strong lang="es">{check.typoWord}</strong>
       </>,
     )
   }
-  if (check?.spacing) notes.push(<>Pozor na medzery medzi slovami.</>)
+  if (check?.spacing) notes.push(<>{text.spacing}</>)
   if (grade.verdict !== 'wrong' && check?.accentWords.length) {
     notes.push(
       <>
-        Pozor na prízvuk: <strong lang="es">{check.accentWords.join(', ')}</strong>
+        {text.accentNote} <strong lang="es">{check.accentWords.join(', ')}</strong>
       </>,
     )
   }
   if (check?.meanings) {
     notes.push(
       <>
-        Prízvuk mení význam:
+        {text.meaningNote}
         {check.meanings.map(({ word, gloss }) => (
           <span key={word} className="block">
             <strong lang="es" className="font-serif">
@@ -118,9 +120,9 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
       </>,
     )
   }
-  if (grade.speech && grade.verdict === 'typo') notes.push(<>Takmer — jedno slovo som nepočul.</>)
-  if (task.kind === 'conjugation' && task.irregular) notes.push(<>Nepravidelný tvar – oplatí sa ho zapamätať.</>)
-  if (!grade.correct) notes.push(<>{mistakeChoice ? 'Ostáva v Chybách' : 'Uložené do Archív → Chyby'}, zopakuješ si to neskôr.</>)
+  if (grade.speech && grade.verdict === 'typo') notes.push(<>{text.speechAlmost}</>)
+  if (task.kind === 'conjugation' && task.irregular) notes.push(<>{text.irregularNote}</>)
+  if (!grade.correct) notes.push(<>{mistakeChoice ? text.staysInMistakes : text.savedToMistakes}</>)
 
   // ⭐ saves the verb or vocab word, the whole sentence otherwise.
   const star =
@@ -143,7 +145,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
         </div>
 
         <div className="mt-3">
-          {grade.verdict === 'wrong' && <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Správna odpoveď</p>}
+          {grade.verdict === 'wrong' && <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.correctAnswer}</p>}
           {ref.label && <p className="text-sm text-ink-muted">{ref.label}</p>}
           <div className="flex items-start gap-1">
             <p lang={ref.correctLang} className="min-w-0 flex-1 pt-1.5 font-serif text-xl leading-snug">
@@ -159,7 +161,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
           )}
           {grade.speech && grade.verdict !== 'correct' && (
             <div className="mt-2">
-              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Čo som počul</p>
+              <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.heard}</p>
               <SpeechWords words={grade.speech.words} />
             </div>
           )}
@@ -178,13 +180,13 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
 
         {mistakeChoice && grade.correct ? (
           <>
-            <p className="mt-4 text-sm font-medium">Vedel si to. Odstrániť z Chýb, alebo nechať na neskôr?</p>
+            <p className="mt-4 text-sm font-medium">{text.knewIt}</p>
             <div className="mt-2 grid grid-cols-2 gap-3">
               <Button variant="secondary" onClick={mistakeChoice.onKeep}>
-                Nechať
+                {text.keep}
               </Button>
               <Button onClick={mistakeChoice.onResolve} autoFocus>
-                Odstrániť
+                {text.remove}
               </Button>
             </div>
           </>
@@ -196,7 +198,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
               </Button>
             )}
             <Button onClick={onContinue} autoFocus className="flex-1">
-              Pokračovať
+              {text.carryOn}
             </Button>
           </div>
         )}
@@ -206,7 +208,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
             onClick={onOverride}
             className="mt-1 h-11 w-full text-sm font-medium text-ink-muted underline underline-offset-4 hover:text-ink"
           >
-            Moja odpoveď bola tiež správna
+            {text.override}
           </button>
         )}
       </div>

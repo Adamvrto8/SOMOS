@@ -3,14 +3,6 @@
 
 export type SpeechError = 'denied' | 'offline' | 'no-speech' | 'aborted' | 'failed'
 
-export const SPEECH_ERRORS: Record<SpeechError, string> = {
-  denied: 'Mikrofón je zablokovaný. Povoľ ho v Nastaveniach Androidu → Aplikácie → SOMOS → Povolenia.',
-  offline: 'Rozpoznávanie reči potrebuje internet.',
-  'no-speech': 'Nič som nepočul. Skús to znova.',
-  aborted: 'Nahrávanie sa prerušilo. Skús to znova.',
-  failed: 'Nepodarilo sa. Skús to znova.',
-}
-
 export class SpeechFailure extends Error {
   code: SpeechError
   constructor(code: SpeechError) {

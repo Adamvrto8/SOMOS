@@ -1,4 +1,5 @@
 import { SpeakButton } from '../../components/SpeakButton'
+import { useT } from '../../i18n'
 import type { Task } from '../../lib/lesson'
 import { taskSummary } from './taskSummary'
 
@@ -10,6 +11,7 @@ interface TaskAnswerListProps {
 
 /** What each task asked and its correct answer, with 🔊. */
 export function TaskAnswerList({ tasks, isMistake }: TaskAnswerListProps) {
+  const text = useT().lesson.overview
   return (
     <ul className="divide-y divide-line rounded-card border border-line bg-surface">
       {tasks.map((task, i) => {
@@ -22,7 +24,7 @@ export function TaskAnswerList({ tasks, isMistake }: TaskAnswerListProps) {
               <p lang={isSlovakAnswer ? 'sk' : 'es'} className="font-serif text-lg leading-snug">
                 {answer}
               </p>
-              {isMistake?.(task) && <p className="mt-0.5 text-xs font-medium text-error">Máš to v Chybách</p>}
+              {isMistake?.(task) && <p className="mt-0.5 text-xs font-medium text-error">{text.inMistakes}</p>}
             </div>
             <SpeakButton text={task.kind === 'vocab' ? task.word.es : answer} />
           </li>

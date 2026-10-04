@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n'
 import type { Tile } from '../../../lib/lesson'
 import type { Status } from './status'
 
@@ -19,16 +20,17 @@ interface TileBuilderProps {
 }
 
 export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProps) {
+  const text = useT().lesson.task
   const locked = status !== undefined
   const byId = new Map(tiles.map((t) => [t.id, t]))
 
   return (
     <div className="space-y-5">
       <div
-        aria-label="Tvoja veta"
+        aria-label={text.yourSentence}
         className={`flex min-h-28 flex-wrap content-start gap-2 rounded-card border-2 border-dashed p-3 ${AREA[status ?? 'open']}`}
       >
-        {placed.length === 0 && <p className="self-center px-1 text-ink-muted">Ťukaj na slová nižšie…</p>}
+        {placed.length === 0 && <p className="self-center px-1 text-ink-muted">{text.tapWords}</p>}
         {placed.map((id) => (
           <button
             key={id}
@@ -36,7 +38,7 @@ export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProp
             lang="es"
             disabled={locked}
             onClick={() => onChange(placed.filter((p) => p !== id))}
-            aria-label={`${byId.get(id)?.text}, odobrať`}
+            aria-label={text.removeTile(byId.get(id)?.text ?? '')}
             className={TILE}
           >
             {byId.get(id)?.text}
@@ -45,7 +47,7 @@ export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProp
       </div>
 
       {/* Used tiles leave a placeholder so the others don't jump around. */}
-      <div aria-label="Slová" className="flex flex-wrap justify-center gap-2">
+      <div aria-label={text.words} className="flex flex-wrap justify-center gap-2">
         {tiles.map((tile) =>
           placed.includes(tile.id) ? (
             <span key={tile.id} aria-hidden className={`${TILE} border-dashed bg-transparent text-transparent shadow-none`}>
