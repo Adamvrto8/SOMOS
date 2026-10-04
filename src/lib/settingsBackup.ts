@@ -1,5 +1,6 @@
 import { AUTO_REVIEW_LIMITS, type AutoReviewSettings } from './autoReview'
 import { GOAL_OPTIONS } from './dailyGoal'
+import { parseLanguage, type Language } from './language'
 import type { ThemePref } from './theme'
 
 /**
@@ -12,6 +13,7 @@ export interface SettingsBackup {
   dailyGoal?: number
   autoReview?: AutoReviewSettings
   reminder?: { enabled: boolean; time: string }
+  language?: Language // missing in backups made before 2026-10-04
 }
 
 const TIME = /^([01]\d|2[0-3]):[0-5]\d$/
@@ -21,7 +23,7 @@ const isRec = (x: unknown): x is Record<string, unknown> => typeof x === 'object
 export function parseSettingsBackup(data: unknown): SettingsBackup {
   const settings: SettingsBackup = {}
   if (!isRec(data)) return settings
-  const { theme, dailyGoal, autoReview, reminder } = data
+  const { theme, dailyGoal, autoReview, reminder, language } = data
   if (theme === 'system' || theme === 'light' || theme === 'dark') settings.theme = theme
   if ((GOAL_OPTIONS as readonly unknown[]).includes(dailyGoal)) settings.dailyGoal = dailyGoal as number
   if (isRec(autoReview) && typeof autoReview.enabled === 'boolean' && (AUTO_REVIEW_LIMITS as readonly unknown[]).includes(autoReview.limit)) {
@@ -30,5 +32,7 @@ export function parseSettingsBackup(data: unknown): SettingsBackup {
   if (isRec(reminder) && typeof reminder.enabled === 'boolean' && typeof reminder.time === 'string' && TIME.test(reminder.time)) {
     settings.reminder = { enabled: reminder.enabled, time: reminder.time }
   }
+  const parsedLanguage = parseLanguage(language)
+  if (parsedLanguage) settings.language = parsedLanguage
   return settings
 }

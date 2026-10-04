@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { t } from '../i18n'
 import { db } from './db'
 import { loadProgress } from './reminderProgress'
 import type { ReminderStatus } from './reminderStatus'
@@ -85,18 +86,6 @@ export type ReminderError =
   | 'too-many'
   | 'gone'
   | 'failed'
-
-export const REMINDER_ERRORS: Record<ReminderError, string> = {
-  unavailable: 'Pripomienky fungujú len v nasadenej aplikácii, nie na lokálnom serveri.',
-  unsupported: 'Tento prehliadač notifikácie nepodporuje.',
-  denied: 'Notifikácie sú zablokované. Povoľ ich v Nastaveniach Androidu → Aplikácie → SOMOS → Upozornenia.',
-  'not-allowed': 'Bez povolenia notifikácií pripomienky nefungujú.',
-  offline: 'Potrebuješ internet.',
-  'not-configured': 'Pripomienky ešte nie sú na serveri nastavené.',
-  'too-many': 'Skúšobnú notifikáciu môžeš poslať raz za minútu.',
-  gone: 'Prihlásenie na notifikácie vypršalo. Skús to znova.',
-  failed: 'Nepodarilo sa. Skús to znova.',
-}
 
 export class ReminderFailure extends Error {
   code: ReminderError
@@ -264,17 +253,11 @@ function synced() {
 
 /** What to tell the learner when the reminder they turned on is not working, or null. */
 export function reminderProblem(): string | null {
-  if (settings.lost) {
-    return 'Pripomienka sa vypla, lebo Android zrušil povolenie upozornení (napríklad po preinštalovaní aplikácie). Zapni ju znova.'
-  }
+  const text = t().reminder
+  if (settings.lost) return text.lost
   if (!settings.enabled || !syncFailure) return null
-  const why =
-    syncFailure.code === 'offline'
-      ? 'Server je z tejto siete nedostupný, skús iné pripojenie.'
-      : syncFailure.code === 'failed'
-        ? 'Skús poslať skúšobnú notifikáciu.'
-        : REMINDER_ERRORS[syncFailure.code]
-  return `Telefón sa nepodarilo prihlásiť na pripomienky. ${why}`
+  const why = syncFailure.code === 'offline' ? text.problemOffline : syncFailure.code === 'failed' ? text.problemFailed : text.errors[syncFailure.code]
+  return text.problem(why)
 }
 
 export function useReminderProblem(): string | null {

@@ -1,3 +1,4 @@
+import { t } from '../i18n'
 import { addDays, dayKey } from './dates'
 import type { ReminderProgress } from './reminderProgress'
 
@@ -22,50 +23,38 @@ export interface StatusLine {
   tone: 'ok' | 'info' | 'problem'
 }
 
-const REASONS: Record<string, string> = {
-  sent: 'pripomienka poslaná',
-  'already-sent': 'dnes už bola poslaná',
-  'goal-met': 'denný cieľ je splnený',
-  'too-early': 'ešte nie je čas',
-  'too-late': 'už je po čase',
-  'no-subscription': 'žiadne zariadenie',
-  gone: 'prihlásenie telefónu zaniklo',
-  failed: 'odoslanie zlyhalo',
-}
-
 /** The timer calls every 15 minutes; three missed calls mean it stopped. */
 const STALE_MS = 45 * 60_000
 
 const clock = (date: Date) => `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
-const shortDay = (day: string) => `${Number(day.slice(8, 10))}. ${Number(day.slice(5, 7))}.`
 
 export function describeStatus(status: ReminderStatus, now: Date): StatusLine[] {
+  const text = t().reminder.status
+  const shortDay = (day: string) => text.shortDay(Number(day.slice(8, 10)), Number(day.slice(5, 7)))
   const today = dayKey(now)
   const lines: StatusLine[] = []
 
-  if (status.thisDevice) lines.push({ tone: 'ok', text: `Server pozná tento telefón, pripomienka o ${status.time}.` })
-  else if (status.subscribed) lines.push({ tone: 'problem', text: 'Pripomienky chodia na iné zariadenie. Pošli skúšobnú notifikáciu, tým sa prepnú sem.' })
-  else if (status.dropped) {
-    lines.push({ tone: 'problem', text: 'Server nepozná žiadny telefón: prihlásenie na notifikácie zaniklo. Pošli skúšobnú notifikáciu, tým sa obnoví.' })
-  } else lines.push({ tone: 'problem', text: 'Server nepozná žiadny telefón. Pošli skúšobnú notifikáciu, tým sa prihlási znova.' })
+  if (status.thisDevice) lines.push({ tone: 'ok', text: text.thisDevice(status.time) })
+  else if (status.subscribed) lines.push({ tone: 'problem', text: text.otherDevice })
+  else if (status.dropped) lines.push({ tone: 'problem', text: text.dropped })
+  else lines.push({ tone: 'problem', text: text.none })
 
-  if (!status.lastTick) lines.push({ tone: 'info', text: 'Server ešte nedostal signál z časovača.' })
+  if (!status.lastTick) lines.push({ tone: 'info', text: text.noTick })
   else {
     const at = new Date(status.lastTick.at)
     const sameDay = dayKey(at) === today
     if (now.getTime() - at.getTime() > STALE_MS) {
-      lines.push({ tone: 'problem', text: `Časovač sa neozval od ${sameDay ? '' : `${shortDay(dayKey(at))} `}${clock(at)}.` })
+      lines.push({ tone: 'problem', text: text.stale(sameDay ? clock(at) : `${shortDay(dayKey(at))} ${clock(at)}`) })
     } else {
-      lines.push({ tone: 'info', text: `Posledná kontrola o ${clock(at)}: ${REASONS[status.lastTick.reason] ?? status.lastTick.reason}.` })
+      lines.push({ tone: 'info', text: text.lastCheck(clock(at), text.reasons[status.lastTick.reason] ?? status.lastTick.reason) })
     }
   }
 
-  if (!status.sentDay) lines.push({ tone: 'info', text: 'Zatiaľ nebola poslaná žiadna.' })
-  else {
-    const day = status.sentDay === today ? 'dnes' : status.sentDay === dayKey(addDays(now, -1)) ? 'včera' : shortDay(status.sentDay)
-    lines.push({ tone: 'info', text: `Naposledy poslaná ${day}${day.endsWith('.') ? '' : '.'}` })
-  }
+  if (!status.sentDay) lines.push({ tone: 'info', text: text.neverSent })
+  else if (status.sentDay === today) lines.push({ tone: 'info', text: text.sentToday })
+  else if (status.sentDay === dayKey(addDays(now, -1))) lines.push({ tone: 'info', text: text.sentYesterday })
+  else lines.push({ tone: 'info', text: text.sentOn(shortDay(status.sentDay)) })
 
-  if (status.progress?.day === today) lines.push({ tone: 'info', text: `Dnes podľa servera: ${status.progress.done}/${status.progress.goal}.` })
+  if (status.progress?.day === today) lines.push({ tone: 'info', text: text.today(status.progress.done, status.progress.goal) })
   return lines
 }

@@ -1,19 +1,20 @@
 import { Bookmark, House, PencilLine, Search, type LucideIcon } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
+import { useT } from '../i18n'
 
 interface Tab {
   to: string
-  label: string
+  key: 'home' | 'search' | 'practice' | 'archive' // its name in the dictionary
   icon: LucideIcon
   // Paths (besides `to`) that belong to this tab, e.g. word detail under Hľadať.
   sections?: string[]
 }
 
 const TABS: Tab[] = [
-  { to: '/', label: 'Domov', icon: House },
-  { to: '/search', label: 'Hľadať', icon: Search, sections: ['/word', '/topic'] },
-  { to: '/practice', label: 'Cvičiť', icon: PencilLine },
-  { to: '/archive', label: 'Archív', icon: Bookmark },
+  { to: '/', key: 'home', icon: House },
+  { to: '/search', key: 'search', icon: Search, sections: ['/word', '/topic'] },
+  { to: '/practice', key: 'practice', icon: PencilLine },
+  { to: '/archive', key: 'archive', icon: Bookmark },
 ]
 
 const isUnder = (pathname: string, base: string) => pathname === base || pathname.startsWith(`${base}/`)
@@ -25,10 +26,11 @@ function isActive(tab: Tab, pathname: string) {
 
 export function TabBar() {
   const { pathname } = useLocation()
+  const text = useT().nav
 
   return (
     // Hidden while the phone keyboard is open: it would otherwise ride on top of it and take the room for typing.
-    <nav aria-label="Hlavná navigácia" className="fixed inset-x-0 bottom-0 z-20 keyboard:hidden">
+    <nav aria-label={text.main} className="fixed inset-x-0 bottom-0 z-20 keyboard:hidden">
       <div className="mx-auto max-w-[480px] border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur sm:border-x">
         <ul className="grid grid-cols-4">
           {TABS.map((tab) => {
@@ -46,7 +48,7 @@ export function TabBar() {
                   ].join(' ')}
                 >
                   <Icon size={24} strokeWidth={1.75} aria-hidden />
-                  {tab.label}
+                  {text[tab.key]}
                 </Link>
               </li>
             )

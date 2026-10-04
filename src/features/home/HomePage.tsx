@@ -1,12 +1,12 @@
 import { BellOff, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { Tapestry } from '../../components/Tapestry'
+import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { useLessonProgression } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
 import { useReminderProblem } from '../../lib/reminder'
 import { useActivity } from '../../lib/stats'
-import { pluralSk } from '../../lib/text'
 import { continueLesson } from './continueLesson'
 import { ProgressTiles } from './ProgressTiles'
 import { ReviewCard } from './ReviewCard'
@@ -19,7 +19,8 @@ export function HomePage() {
   const mistakes = useMistakes()
   const reminderProblem = useReminderProblem()
   const next = continueLesson(useLessonProgression())
-  const today = new Date().toLocaleDateString('sk-SK', { weekday: 'long', day: 'numeric', month: 'long' })
+  const text = useT()
+  const today = new Date().toLocaleDateString(text.dateLocale, { weekday: 'long', day: 'numeric', month: 'long' })
 
   return (
     <div className="space-y-6">
@@ -48,7 +49,7 @@ export function HomePage() {
         >
           <BellOff size={20} strokeWidth={1.75} className="shrink-0 text-error" aria-hidden />
           <span className="min-w-0 flex-1">
-            <span className="block font-semibold">Pripomienka nefunguje</span>
+            <span className="block font-semibold">{text.reminder.notWorking}</span>
             <span className="block text-sm text-ink-muted">{reminderProblem}</span>
           </span>
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
@@ -65,9 +66,9 @@ export function HomePage() {
           className="flex items-center gap-3 rounded-card border border-line bg-surface px-5 py-4 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
         >
           <span className="min-w-0 flex-1">
-            <span className="block font-semibold">Precvičiť chyby</span>
+            <span className="block font-semibold">{text.home.practiceMistakes}</span>
             <span className="block text-sm text-ink-muted">
-              {mistakes.length} {pluralSk(mistakes.length, ['úloha čaká', 'úlohy čakajú', 'úloh čaká'])}
+              {text.home.mistakesWaiting(mistakes.length)}
             </span>
           </span>
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />

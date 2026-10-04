@@ -7,6 +7,11 @@ describe('parseSettingsBackup', () => {
     expect(parseSettingsBackup(settings)).toEqual(settings)
   })
 
+  it('carries the language, and drops one it does not know', () => {
+    expect(parseSettingsBackup({ language: 'en' }).language).toBe('en')
+    expect(parseSettingsBackup({ language: 'de' }).language).toBeUndefined()
+  })
+
   it('has nothing for a backup made before settings were part of it', () => {
     expect(parseSettingsBackup(undefined)).toEqual({})
     expect(parseSettingsBackup('dark')).toEqual({})

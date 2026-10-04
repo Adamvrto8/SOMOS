@@ -1,5 +1,6 @@
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
+import { t } from '../../i18n'
 import { TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type LessonFilter } from '../../lib/lesson'
 import { getFirstUnpassedLesson, getLastActiveLesson, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
@@ -30,8 +31,8 @@ export function continueLesson(progression: LessonProgressionMap): ContinueLesso
   const groupLabel =
     group === 'all'
       ? type === 'conjugation'
-        ? 'Všetky časy'
-        : 'Všetky témy'
+        ? t().exercise.allTenses
+        : t().exercise.allTopics
       : type === 'conjugation'
         ? TENSE_LABELS[group as TableTense]
         : (topicById.get(group)?.sk ?? group)

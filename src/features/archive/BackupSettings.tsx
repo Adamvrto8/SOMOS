@@ -2,26 +2,16 @@ import { Download, Upload } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
-import { downloadBackup, importBackup, parseBackup, type ImportResult } from '../../lib/backup'
+import { useT } from '../../i18n'
+import { downloadBackup, importBackup, parseBackup } from '../../lib/backup'
 
 interface Status {
   tone: 'ok' | 'error'
   text: string
 }
 
-function describeImport(r: ImportResult): string {
-  const parts = [`uložené: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
-  if (r.reviewCards) parts.push(`karty na opakovanie: ${r.reviewCards}`)
-  if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
-  if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
-  if (r.lessons) parts.push(`lekcie: ${r.lessons}`)
-  const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''
-  const settings = r.settings ? ' Obnovené sú aj nastavenia.' : ''
-  const reminder = r.reminderOff ? ' Pripomienku treba na tomto zariadení zapnúť znova.' : ''
-  return `Obnovené – ${parts.join(', ')}.${skipped}${settings}${reminder}`
-}
-
 export function BackupSettings() {
+  const text = useT().settings.backup
   const fileRef = useRef<HTMLInputElement>(null)
   const [status, setStatus] = useState<Status | null>(null)
   const [busy, setBusy] = useState(false)
@@ -37,9 +27,9 @@ export function BackupSettings() {
   const exportData = async () => {
     try {
       await downloadBackup()
-      setStatus({ tone: 'ok', text: 'Záloha je stiahnutá (priečinok Stiahnuté).' })
+      setStatus({ tone: 'ok', text: text.downloaded })
     } catch {
-      setStatus({ tone: 'error', text: 'Zálohu sa nepodarilo vytvoriť.' })
+      setStatus({ tone: 'error', text: text.downloadFailed })
     }
   }
 
@@ -48,9 +38,9 @@ export function BackupSettings() {
     try {
       const parsed = parseBackup(await file.text())
       if (!parsed.ok) return setStatus({ tone: 'error', text: parsed.error })
-      setStatus({ tone: 'ok', text: describeImport(await importBackup(parsed.backup, parsed.skipped)) })
+      setStatus({ tone: 'ok', text: text.restored(await importBackup(parsed.backup, parsed.skipped)) })
     } catch {
-      setStatus({ tone: 'error', text: 'Zálohu sa nepodarilo obnoviť.' })
+      setStatus({ tone: 'error', text: text.restoreFailed })
     } finally {
       setBusy(false)
     }
@@ -58,25 +48,22 @@ export function BackupSettings() {
 
   return (
     <section aria-labelledby="backup-heading">
-      <SectionTitle id="backup-heading">Záloha</SectionTitle>
+      <SectionTitle id="backup-heading">{text.title}</SectionTitle>
       <p className="text-sm leading-relaxed text-ink-muted">
-        Uložené a vlastné slová, postup v lekciách aj nastavenia sú len v tomto zariadení. Občas si stiahni zálohu, napríklad na
-        Google Drive, aby si o ne neprišiel pri výmene telefónu.
+        {text.intro}
       </p>
       {persisted !== null && (
         <p className="mt-2 text-sm text-ink-muted">
-          {persisted
-            ? 'Úložisko je trvalé, prehliadač dáta sám nezmaže.'
-            : 'Prehliadač môže dáta pri nedostatku miesta zmazať – záloha sa oplatí.'}
+          {persisted ? text.persisted : text.notPersisted}
         </p>
       )}
 
       <div className="mt-4 grid gap-3">
         <Button variant="secondary" icon={Download} onClick={() => void exportData()}>
-          Stiahnuť zálohu
+          {text.download}
         </Button>
         <Button variant="secondary" icon={Upload} disabled={busy} onClick={() => fileRef.current?.click()}>
-          Obnoviť zo zálohy
+          {text.restore}
         </Button>
         <input
           ref={fileRef}

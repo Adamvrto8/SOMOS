@@ -1,7 +1,9 @@
 import { BackButton } from '../../components/BackButton'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
+import { dictionaries, useT } from '../../i18n'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
+import { LANGUAGES, setLanguage, useLanguage } from '../../lib/language'
 import { reportProgress } from '../../lib/reminder'
 import { setThemePref, useThemePref } from '../../lib/theme'
 import { AutoReviewSettings } from './AutoReviewSettings'
@@ -12,35 +14,50 @@ import { VoiceSettings } from './VoiceSettings'
 export function SettingsPage() {
   const themePref = useThemePref()
   const dailyGoal = useDailyGoal()
+  const language = useLanguage()
+  const text = useT()
 
   return (
     <div className="space-y-8">
       <div>
         <BackButton fallback="/archive" />
-        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">Nastavenia</h1>
+        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.settings.title}</h1>
       </div>
 
-      <section aria-labelledby="theme-heading">
-        <SectionTitle id="theme-heading">Vzhľad</SectionTitle>
+      <section aria-labelledby="language-heading">
+        <SectionTitle id="language-heading">{text.settings.language}</SectionTitle>
         <Segmented
           mode="radio"
-          label="Téma"
+          label={text.settings.language}
+          idPrefix="language"
+          value={language}
+          onChange={setLanguage}
+          // Each language under its own name, whatever the current one is.
+          options={LANGUAGES.map((id) => ({ id, label: dictionaries[id].languageName }))}
+        />
+      </section>
+
+      <section aria-labelledby="theme-heading">
+        <SectionTitle id="theme-heading">{text.settings.appearance}</SectionTitle>
+        <Segmented
+          mode="radio"
+          label={text.settings.theme}
           idPrefix="theme"
           value={themePref}
           onChange={setThemePref}
           options={[
-            { id: 'system', label: 'Podľa systému' },
-            { id: 'light', label: 'Svetlá' },
-            { id: 'dark', label: 'Tmavá' },
+            { id: 'system', label: text.settings.themeOptions.system },
+            { id: 'light', label: text.settings.themeOptions.light },
+            { id: 'dark', label: text.settings.themeOptions.dark },
           ]}
         />
       </section>
 
       <section aria-labelledby="goal-heading">
-        <SectionTitle id="goal-heading">Denný cieľ</SectionTitle>
+        <SectionTitle id="goal-heading">{text.settings.dailyGoal}</SectionTitle>
         <Segmented
           mode="radio"
-          label="Denný cieľ"
+          label={text.settings.dailyGoal}
           idPrefix="goal"
           value={String(dailyGoal)}
           onChange={(v) => {
@@ -49,7 +66,7 @@ export function SettingsPage() {
           }}
           options={GOAL_OPTIONS.map((n) => ({ id: String(n), label: String(n) }))}
         />
-        <p className="mt-2 text-sm text-ink-muted">Počet odpovedí za deň – v lekciách aj pri opakovaní.</p>
+        <p className="mt-2 text-sm text-ink-muted">{text.settings.dailyGoalHint}</p>
       </section>
 
       <AutoReviewSettings />
@@ -58,7 +75,7 @@ export function SettingsPage() {
       <BackupSettings />
 
       <p className="text-center text-xs text-ink-muted tabular-nums">
-        Verzia {__APP_VERSION__} · {new Date(__BUILD_TIME__).toLocaleDateString('sk-SK')}
+        {text.settings.version} {__APP_VERSION__} · {new Date(__BUILD_TIME__).toLocaleDateString(text.dateLocale)}
       </p>
     </div>
   )

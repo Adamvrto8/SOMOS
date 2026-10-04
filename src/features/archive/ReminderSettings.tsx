@@ -2,11 +2,11 @@ import { BellRing } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
+import { useT } from '../../i18n'
 import {
   disableReminder,
   enableReminder,
   fetchReminderStatus,
-  REMINDER_ERRORS,
   ReminderFailure,
   reminderSupport,
   sendTestReminder,
@@ -22,6 +22,7 @@ const LINE_TONE: Record<StatusLine['tone'], string> = { ok: 'text-leaf', info: '
 
 export function ReminderSettings() {
   const settings = useReminderSettings()
+  const text = useT().reminder
   const support = reminderSupport()
   const [busy, setBusy] = useState(false)
   const [status, setStatus] = useState<Status>(null)
@@ -49,7 +50,7 @@ export function ReminderSettings() {
       if (doneText) setStatus({ tone: 'ok', text: doneText })
     } catch (error) {
       const failure = error instanceof ReminderFailure ? error : new ReminderFailure('failed', String(error))
-      setStatus({ tone: 'error', text: REMINDER_ERRORS[failure.code], detail: failure.detail })
+      setStatus({ tone: 'error', text: text.errors[failure.code], detail: failure.detail })
     } finally {
       setBusy(false)
       if (support !== 'unavailable') void refreshServer()
@@ -58,13 +59,13 @@ export function ReminderSettings() {
 
   return (
     <section aria-labelledby="reminder-heading">
-      <SectionTitle id="reminder-heading">Pripomienka cvičenia</SectionTitle>
+      <SectionTitle id="reminder-heading">{text.title}</SectionTitle>
 
       <div className="divide-y divide-line rounded-card border border-line bg-surface">
         <label className="flex min-h-14 cursor-pointer items-center gap-3 px-4 py-2.5">
           <span className="min-w-0 flex-1">
-            <span className="block leading-snug">Pripomínať cvičenie</span>
-            <span className="block text-sm text-ink-muted">Raz denne, ak ešte nemáš splnený denný cieľ.</span>
+            <span className="block leading-snug">{text.toggle}</span>
+            <span className="block text-sm text-ink-muted">{text.toggleHint}</span>
           </span>
           <input
             type="checkbox"
@@ -82,7 +83,7 @@ export function ReminderSettings() {
 
         {settings.enabled && (
           <label className="flex min-h-14 items-center justify-between gap-3 px-4 py-2.5">
-            <span>Čas</span>
+            <span>{text.time}</span>
             <input
               type="time"
               value={time}
@@ -97,7 +98,7 @@ export function ReminderSettings() {
         )}
       </div>
 
-      {support !== 'ok' && <p className="mt-2 text-sm text-ink-muted">{REMINDER_ERRORS[support]}</p>}
+      {support !== 'ok' && <p className="mt-2 text-sm text-ink-muted">{text.errors[support]}</p>}
       {problem && (
         <p role="alert" className="mt-2 text-sm text-error">
           {problem}
@@ -115,18 +116,18 @@ export function ReminderSettings() {
           variant="secondary"
           icon={BellRing}
           disabled={busy}
-          onClick={() => void run(sendTestReminder, 'Odoslané. Notifikácia by mala prísť o pár sekúnd.')}
+          onClick={() => void run(sendTestReminder, text.testSent)}
           className="mt-3 w-full"
         >
-          Poslať skúšobnú notifikáciu
+          {text.sendTest}
         </Button>
       )}
 
       {settings.enabled && server && (
         <div className="mt-3 rounded-card border border-line bg-surface px-4 py-3">
-          <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">Stav pripomienky</p>
+          <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.statusTitle}</p>
           {server === 'unreachable' ? (
-            <p className="mt-1.5 text-sm text-error">Server je odtiaľto nedostupný, stav sa nedá zistiť. Skús iné pripojenie.</p>
+            <p className="mt-1.5 text-sm text-error">{text.unreachable}</p>
           ) : (
             <ul className="mt-1.5 space-y-1 text-sm">
               {server.map((line) => (

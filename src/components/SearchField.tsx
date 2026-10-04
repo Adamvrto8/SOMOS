@@ -1,5 +1,6 @@
 import { Search, X } from 'lucide-react'
 import { useRef } from 'react'
+import { useT } from '../i18n'
 
 interface SearchFieldProps {
   value: string
@@ -13,6 +14,7 @@ interface SearchFieldProps {
 
 export function SearchField({ value, onChange, label, placeholder, autoFocus, onSubmit }: SearchFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null)
+  const text = useT().common
 
   return (
     <form
@@ -51,7 +53,7 @@ export function SearchField({ value, onChange, label, placeholder, autoFocus, on
             onChange('')
             inputRef.current?.focus()
           }}
-          aria-label="Vymazať"
+          aria-label={text.clear}
           className="absolute top-1/2 right-0.5 flex size-11 -translate-y-1/2 items-center justify-center rounded-full text-ink-muted hover:text-ink"
         >
           <X size={18} strokeWidth={1.75} aria-hidden />

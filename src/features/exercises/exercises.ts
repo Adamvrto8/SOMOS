@@ -1,78 +1,48 @@
 import { Blocks, BookOpen, Headphones, Languages, ListChecks, Mic, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
+import { t } from '../../i18n'
 import { TABLE_TENSES, type TableTense } from '../../lib/conjugate'
 import type { ExerciseType, LessonFilter } from '../../lib/lesson'
 import { speechSupported } from '../../lib/speech'
 
 export interface ExerciseInfo {
-  type: ExerciseType
-  label: string
-  description: string
-  instruction: string // shown above each task
-  icon: LucideIcon
+  readonly type: ExerciseType
+  readonly label: string
+  readonly description: string
+  readonly instruction: string // shown above each task
+  readonly icon: LucideIcon
   /** Why the exercise can't be used in this browser; the card is then disabled. */
-  unavailable?: string
+  readonly unavailable?: string
 }
 
+/** Names and instructions come from the dictionary when they are read, so they follow the language. */
+const exercise = (type: ExerciseType, icon: LucideIcon, available = true): ExerciseInfo => ({
+  type,
+  icon,
+  get label() {
+    return t().exercise.types[type].label
+  },
+  get description() {
+    return t().exercise.types[type].description
+  },
+  get instruction() {
+    return t().exercise.types[type].instruction
+  },
+  get unavailable() {
+    return available ? undefined : t().exercise.noSpeech
+  },
+})
+
 export const EXERCISES: ExerciseInfo[] = [
-  {
-    type: 'cloze',
-    label: 'Doplňovačka',
-    description: 'Doplň chýbajúce slovo v správnom tvare.',
-    instruction: 'Doplň slovo',
-    icon: PencilLine,
-  },
-  {
-    type: 'choice',
-    label: 'Výber z možností',
-    description: 'Vyber správne slovo alebo tvar.',
-    instruction: 'Vyber správnu možnosť',
-    icon: ListChecks,
-  },
-  {
-    type: 'vocab',
-    label: 'Slovná zásoba',
-    description: 'Prelož slovenské alebo španielske slovo.',
-    instruction: 'Prelož slovo',
-    icon: BookOpen,
-  },
-  {
-    type: 'conjugation',
-    label: 'Časovanie',
-    description: 'tener · yo · pretérito → tuve',
-    instruction: 'Vyčasuj sloveso',
-    icon: Repeat2,
-  },
-  {
-    type: 'builder',
-    label: 'Skladanie viet',
-    description: 'Poskladaj vetu zo zamiešaných slov.',
-    instruction: 'Poskladaj vetu',
-    icon: Blocks,
-  },
-  {
-    type: 'translation',
-    label: 'Preklad viet',
-    description: 'Prelož vetu zo slovenčiny do španielčiny.',
-    instruction: 'Prelož do španielčiny',
-    icon: Languages,
-  },
-  {
-    type: 'dictation',
-    label: 'Diktát',
-    description: 'Počúvaj vetu a napíš ju.',
-    instruction: 'Napíš, čo počuješ',
-    icon: Headphones,
-  },
-  {
-    type: 'speaking',
-    label: 'Vyslovovanie',
-    description: 'Prečítaj vetu nahlas.',
-    instruction: 'Povedz vetu nahlas',
-    icon: Mic,
-    unavailable: speechSupported ? undefined : 'Tento prehliadač nepodporuje rozpoznávanie reči.',
-  },
+  exercise('cloze', PencilLine),
+  exercise('choice', ListChecks),
+  exercise('vocab', BookOpen),
+  exercise('conjugation', Repeat2),
+  exercise('builder', Blocks),
+  exercise('translation', Languages),
+  exercise('dictation', Headphones),
+  exercise('speaking', Mic, speechSupported),
 ]
 
 export const exerciseInfo = (type: ExerciseType) => EXERCISES.find((e) => e.type === type)!

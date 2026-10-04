@@ -1,6 +1,7 @@
 import { Volume2 } from 'lucide-react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
+import { useT } from '../../i18n'
 import { setPreferredVoice, speak, ttsSupported, useVoices } from '../../lib/tts'
 
 const SAMPLE = '¡Hola! ¿Cómo estás?'
@@ -9,22 +10,23 @@ export function VoiceSettings() {
   const { voices, preferredURI } = useVoices()
   const selected = voices.some((v) => v.voiceURI === preferredURI) ? preferredURI : null
   const auto = voices[0]
+  const text = useT().settings.voice
 
   return (
     <section aria-labelledby="voice-heading">
-      <SectionTitle id="voice-heading">Výslovnosť</SectionTitle>
+      <SectionTitle id="voice-heading">{text.title}</SectionTitle>
 
       {!ttsSupported ? (
-        <p className="text-sm text-ink-muted">Tento prehliadač výslovnosť nepodporuje. Skús Chrome.</p>
+        <p className="text-sm text-ink-muted">{text.unsupported}</p>
       ) : voices.length === 0 ? (
         <NoVoiceHelp />
       ) : (
         <fieldset className="divide-y divide-line rounded-card border border-line bg-surface">
-          <legend className="sr-only">Hlas</legend>
+          <legend className="sr-only">{text.legend}</legend>
           <VoiceOption
             checked={selected === null}
             onSelect={() => setPreferredVoice(null)}
-            title="Automaticky"
+            title={text.auto}
             detail={auto ? `${auto.name} · ${auto.lang}` : ''}
           />
           {voices.map((voice) => (
@@ -33,7 +35,7 @@ export function VoiceSettings() {
               checked={selected === voice.voiceURI}
               onSelect={() => setPreferredVoice(voice.voiceURI)}
               title={voice.name}
-              detail={`${voice.lang} · ${voice.localService ? 'funguje offline' : 'potrebuje internet'}`}
+              detail={`${voice.lang} · ${voice.localService ? text.offline : text.online}`}
             />
           ))}
         </fieldset>
@@ -41,7 +43,7 @@ export function VoiceSettings() {
 
       {ttsSupported && (
         <Button variant="secondary" icon={Volume2} onClick={() => speak(SAMPLE)} className="mt-3 w-full">
-          Vyskúšať hlas
+          {text.tryIt}
         </Button>
       )}
     </section>
@@ -68,15 +70,15 @@ function VoiceOption({ checked, onSelect, title, detail }: VoiceOptionProps) {
 }
 
 function NoVoiceHelp() {
+  const text = useT().settings.voice
   return (
     <div className="rounded-card bg-surface-2 p-4 text-sm leading-relaxed">
-      <p className="font-medium">V zariadení sme nenašli španielsky hlas.</p>
-      <p className="mt-2 text-ink-muted">Na Androide ho doinštaluješ takto:</p>
+      <p className="font-medium">{text.none}</p>
+      <p className="mt-2 text-ink-muted">{text.installIntro}</p>
       <ol className="mt-1 list-decimal space-y-1 pl-5 text-ink-muted">
-        <li>Nastavenia → vyhľadaj „Prevod textu na reč“.</li>
-        <li>Pri nástroji Google ťukni na ozubené koliesko → Inštalovať hlasové údaje.</li>
-        <li>Stiahni Español (Estados Unidos), prípadne México, ak je v ponuke.</li>
-        <li>Zatvor a znova otvor SOMOS.</li>
+        {text.installSteps.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
       </ol>
     </div>
   )

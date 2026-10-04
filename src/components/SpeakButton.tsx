@@ -1,4 +1,5 @@
 import { Volume2 } from 'lucide-react'
+import { useT } from '../i18n'
 import { speak, ttsSupported } from '../lib/tts'
 
 interface SpeakButtonProps {
@@ -6,15 +7,16 @@ interface SpeakButtonProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
-export function SpeakButton({ text, size = 'md' }: SpeakButtonProps) {
+export function SpeakButton({ text: spoken, size = 'md' }: SpeakButtonProps) {
+  const text = useT().common
   if (!ttsSupported) return null
 
   return (
     <button
       type="button"
-      onClick={() => speak(text)}
-      aria-label={`Prehrať výslovnosť: ${text}`}
-      title="Prehrať výslovnosť"
+      onClick={() => speak(spoken)}
+      aria-label={`${text.playPronunciation}: ${spoken}`}
+      title={text.playPronunciation}
       className={[
         'flex shrink-0 items-center justify-center rounded-full transition-colors duration-150',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',

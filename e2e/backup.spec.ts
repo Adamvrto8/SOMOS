@@ -30,5 +30,6 @@ test('a backup carries the settings to another device', async ({ page }) => {
   // The next backup from this device holds what now applies here.
   const [download] = await Promise.all([page.waitForEvent('download'), button(page, 'Stiahnuť zálohu').tap()])
   const saved = JSON.parse(readFileSync(await download.path(), 'utf8')) as { settings: unknown }
-  expect(saved.settings).toEqual({ ...settings, reminder: { enabled: false, time: '07:30' } })
+  // The backup had no language (made before there were two): this device keeps its own.
+  expect(saved.settings).toEqual({ ...settings, reminder: { enabled: false, time: '07:30' }, language: 'sk' })
 })

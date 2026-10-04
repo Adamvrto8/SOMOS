@@ -1,5 +1,7 @@
 import { getAutoReview, setAutoReview } from './autoReview'
+import { t } from '../i18n'
 import { getDailyGoal, setDailyGoal } from './dailyGoal'
+import { getLanguage, setLanguage } from './language'
 import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
@@ -41,7 +43,7 @@ export interface ImportResult {
 
 function currentSettings(): SettingsBackup {
   const { enabled, time } = getReminderSettings()
-  return { theme: getThemePref(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time } }
+  return { theme: getThemePref(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage() }
 }
 
 /** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
@@ -49,6 +51,7 @@ async function applySettings(settings: SettingsBackup): Promise<boolean> {
   if (settings.theme) setThemePref(settings.theme)
   if (settings.dailyGoal) setDailyGoal(settings.dailyGoal)
   if (settings.autoReview) setAutoReview(settings.autoReview)
+  if (settings.language) setLanguage(settings.language)
   if (!settings.reminder) return false
   const here = getReminderSettings()
   if (here.enabled) return false // a reminder that runs here keeps its own time
@@ -120,10 +123,10 @@ export function parseBackup(text: string): ParseResult {
   try {
     data = JSON.parse(text)
   } catch {
-    return { ok: false, error: 'Súbor nie je platný JSON.' }
+    return { ok: false, error: t().settings.backup.notJson }
   }
-  if (!isRec(data) || data.app !== APP) return { ok: false, error: 'Toto nie je záloha zo SOMOS.' }
-  if (data.version !== VERSION) return { ok: false, error: `Nepodporovaná verzia zálohy (${String(data.version)}).` }
+  if (!isRec(data) || data.app !== APP) return { ok: false, error: t().settings.backup.notSomos }
+  if (data.version !== VERSION) return { ok: false, error: t().settings.backup.badVersion(String(data.version)) }
 
   let skipped = 0
   const pick = <T>(list: unknown, guard: (x: unknown) => x is T): T[] => {

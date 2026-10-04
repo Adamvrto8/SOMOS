@@ -1,5 +1,6 @@
 import { ChevronLeft } from 'lucide-react'
 import { useLocation, useNavigate } from 'react-router'
+import { useT } from '../i18n'
 
 interface BackButtonProps {
   // Where to go when the page was opened directly (no history in this app).
@@ -9,6 +10,7 @@ interface BackButtonProps {
 export function BackButton({ fallback }: BackButtonProps) {
   const navigate = useNavigate()
   const location = useLocation()
+  const text = useT().common
 
   const goBack = () => {
     // "default" is the key of the first entry in the session's history.
@@ -23,7 +25,7 @@ export function BackButton({ fallback }: BackButtonProps) {
       className="-ml-3 flex h-11 items-center gap-1 rounded-full pr-4 pl-2 text-ink-muted transition-colors duration-150 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
     >
       <ChevronLeft size={20} strokeWidth={1.75} aria-hidden />
-      Späť
+      {text.back}
     </button>
   )
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { SpeakButton } from '../../components/SpeakButton'
+import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
 import { wordOfDay } from '../../lib/wordOfDay'
 
@@ -8,11 +9,12 @@ export function WordOfDayCard() {
   const word = wordOfDay()
   const article = articleFor(word)
   const example = word.examples[0]
+  const text = useT().home
 
   return (
     <section aria-labelledby="wod-heading" className="relative rounded-card border border-line bg-surface p-5 transition-colors duration-150 hover:border-ink-muted">
       <h2 id="wod-heading" className="text-xs font-semibold tracking-widest text-brick uppercase dark:text-amber">
-        Slovo dňa
+        {text.wordOfDay}
       </h2>
       <div className="mt-2 flex items-start justify-between gap-3">
         <div className="min-w-0">

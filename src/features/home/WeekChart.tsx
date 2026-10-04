@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
+import { useT } from '../../i18n'
 import type { Activity } from '../../lib/stats'
-import { pluralSk } from '../../lib/text'
 
-const DAY_ABBR = ['Ne', 'Po', 'Ut', 'St', 'Št', 'Pi', 'So'] // Date.getDay() order
 const CHART_HEIGHT = 96 // tallest column
 const PLOT_HEIGHT = CHART_HEIGHT + 20 // room for the value label on the cap
 
-const fullDate = (date: Date) => date.toLocaleDateString('sk-SK', { weekday: 'long', day: 'numeric', month: 'numeric' })
-const answers = (n: number) => `${n} ${pluralSk(n, ['odpoveď', 'odpovede', 'odpovedí'])}`
 
 /**
  * Answers per day, last 7 days: one series, one hue (brick), thin columns from a
@@ -17,6 +14,9 @@ const answers = (n: number) => `${n} ${pluralSk(n, ['odpoveď', 'odpovede', 'odp
  * a button whose label reads the full value.
  */
 export function WeekChart({ activity, goal }: { activity: Activity; goal: number }) {
+  const dictionary = useT()
+  const text = dictionary.home
+  const fullDate = (date: Date) => date.toLocaleDateString(dictionary.dateLocale, { weekday: 'long', day: 'numeric', month: 'numeric' })
   const { week, weekTotal, weekAccuracy } = activity
   const [selected, setSelected] = useState(week.length - 1)
   const max = Math.max(...week.map((d) => d.count), goal, 1)
@@ -25,23 +25,23 @@ export function WeekChart({ activity, goal }: { activity: Activity; goal: number
 
   return (
     <section aria-labelledby="week-heading">
-      <SectionTitle id="week-heading">Posledných 7 dní</SectionTitle>
+      <SectionTitle id="week-heading">{text.week}</SectionTitle>
       <div className="rounded-card border border-line bg-surface p-4">
         {weekTotal === 0 ? (
-          <p className="text-sm text-ink-muted">Zatiaľ žiadna aktivita. Každá odpoveď v lekcii aj pri opakovaní sa ráta.</p>
+          <p className="text-sm text-ink-muted">{text.noActivity}</p>
         ) : (
           <>
             <p className="text-sm text-ink-muted">
-              <span className="font-semibold text-ink">{answers(weekTotal)}</span>
-              {weekAccuracy !== null && <> · {Math.round(weekAccuracy * 100)} % správne</>}
+              <span className="font-semibold text-ink">{text.answers(weekTotal)}</span>
+              {weekAccuracy !== null && <> · {text.percentCorrect(Math.round(weekAccuracy * 100))}</>}
             </p>
             {/* Legend for the dashed line (a label inside the plot collides with tall columns). */}
             <p className="mt-1 flex items-center gap-2 text-xs text-ink-muted">
               <span aria-hidden className="w-5 border-t border-dashed border-ink-muted" />
-              denný cieľ {goal} · splnený {goalDays} z 7 dní
+              {text.goalLegend(goal, goalDays)}
             </p>
 
-            <div role="group" aria-label="Odpovede po dňoch" className="relative mt-4 grid grid-cols-7 gap-1">
+            <div role="group" aria-label={text.byDay} className="relative mt-4 grid grid-cols-7 gap-1">
               {/* One continuous hairline baseline under all columns. */}
               <span aria-hidden className="absolute inset-x-0 h-px bg-line" style={{ top: PLOT_HEIGHT }} />
               {/* Daily goal: dashed reference line. */}
@@ -59,7 +59,7 @@ export function WeekChart({ activity, goal }: { activity: Activity; goal: number
                     type="button"
                     onClick={() => setSelected(i)}
                     aria-pressed={isSelected}
-                    aria-label={`${fullDate(day.date)}: ${answers(day.count)}, ${day.correct} správne`}
+                    aria-label={`${fullDate(day.date)}: ${text.answers(day.count)}, ${text.correct(day.correct)}`}
                     className="flex flex-col items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
                   >
                     <span className="flex w-full flex-col items-center justify-end" style={{ height: PLOT_HEIGHT }}>
@@ -73,15 +73,15 @@ export function WeekChart({ activity, goal }: { activity: Activity; goal: number
                       />
                     </span>
                     <span className={`mt-1.5 text-xs ${isSelected ? 'font-semibold text-ink' : 'text-ink-muted'}`}>
-                      {i === week.length - 1 ? 'Dnes' : DAY_ABBR[day.date.getDay()]}
+                      {i === week.length - 1 ? text.today : text.weekdays[day.date.getDay()]}
                     </span>
                   </button>
                 )
               })}
             </div>
             <p className="mt-2 text-xs text-ink-muted" aria-hidden>
-              {fullDate(week[selected].date)}: {answers(week[selected].count)}
-              {week[selected].count > 0 && `, ${week[selected].correct} správne`}
+              {fullDate(week[selected].date)}: {text.answers(week[selected].count)}
+              {week[selected].count > 0 && `, ${text.correct(week[selected].correct)}`}
             </p>
           </>
         )}
