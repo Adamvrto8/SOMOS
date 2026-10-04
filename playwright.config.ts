@@ -19,9 +19,10 @@ export default defineConfig({
     hasTouch: true,
     isMobile: true,
     locale: 'sk-SK',
-    // The tests only talk to localhost. Without this, each fresh Chrome first looks for a proxy on the
-    // network (WPAD), and with a flaky DNS that lookup stalls the very first page load until the test times out.
-    launchOptions: { args: ['--no-proxy-server'] },
+    // The tests only talk to localhost, so nothing may wait for the network: with a flaky DNS a fresh
+    // Chrome looking for a proxy (WPAD), or the page fetching its Google Fonts, stalls the page load
+    // until the test times out. Every other host fails to resolve at once.
+    launchOptions: { args: ['--no-proxy-server', '--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE localhost'] },
   },
   webServer: {
     command: `npx vite --port ${PORT} --strictPort`,
