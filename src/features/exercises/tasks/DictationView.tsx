@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Button } from '../../../components/Button'
 import { useT } from '../../../i18n'
 import type { DictationTask, Grade } from '../../../lib/lesson'
+import { sentenceTranslation } from '../../../lib/localized'
 import { SLOW_RATE, speak, ttsSupported } from '../../../lib/tts'
 import type { Status } from './status'
 import { TypedAnswer } from './TypedAnswer'
@@ -45,7 +46,7 @@ export function DictationView({ task, answer, onAnswer, onSubmit, status, hint }
       )}
 
       {showMeaning || status ? (
-        <p className="text-ink-muted">{task.sentence.sk}</p>
+        <p className="text-ink-muted">{sentenceTranslation(task.sentence)}</p>
       ) : (
         <button
           type="button"

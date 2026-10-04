@@ -1,4 +1,5 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
+import { sentenceTranslation, wordTranslations } from '../../lib/localized'
 import type { Task } from '../../lib/lesson'
 
 /** What was asked and the right answer, for mistake lists. */
@@ -9,13 +10,13 @@ export function taskSummary(task: Task): { prompt: string; answer: string } {
     case 'vocab': {
       const expectedAnswer =
         task.direction === 'es-sk'
-          ? task.word.sk.join(', ')
+          ? wordTranslations(task.word).join(', ')
           : task.word.gender
             ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}`
             : task.word.es
       return { prompt: task.prompt, answer: expectedAnswer }
     }
     default:
-      return { prompt: task.sentence.sk, answer: task.sentence.es }
+      return { prompt: sentenceTranslation(task.sentence), answer: task.sentence.es }
   }
 }

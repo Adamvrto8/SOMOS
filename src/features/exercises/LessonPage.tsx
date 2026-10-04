@@ -31,6 +31,7 @@ import {
   type LessonRecord,
 } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
+import { localizedTip } from '../../lib/localized'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
 import { tipFor, tipLabel } from '../../lib/tips'
@@ -391,7 +392,7 @@ export function LessonPage() {
       )}
 
       {shownTip && (
-        <TipSheet key={shownTip.id} label={shownTip.title} onClose={closeTip}>
+        <TipSheet key={shownTip.id} label={localizedTip(shownTip).title} onClose={closeTip}>
           <TipContent
             tip={shownTip}
             // The task's own reason only in the task's own tip, not in one reached through "Pozri aj".

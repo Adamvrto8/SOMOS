@@ -6,6 +6,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { useT } from '../../i18n'
+import { topicName } from '../../lib/localized'
 import { TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { getStablePool, LESSON_SIZE, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
@@ -171,7 +172,7 @@ export function PracticePage() {
             </Chip>
             {topics.map((t) => (
               <Chip key={t.id} selected={group === t.id} onClick={() => updateParams({ topic: t.id })}>
-                {t.sk}
+                {topicName(t)}
               </Chip>
             ))}
           </div>

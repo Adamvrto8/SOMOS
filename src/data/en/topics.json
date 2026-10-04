@@ -1,0 +1,22 @@
+[
+  { "id": "greetings", "en": "Greetings and phrases" },
+  { "id": "basics", "en": "Basic words" },
+  { "id": "numbers", "en": "Numbers" },
+  { "id": "family", "en": "Family" },
+  { "id": "food", "en": "Food and drink" },
+  { "id": "home", "en": "Home" },
+  { "id": "city", "en": "City" },
+  { "id": "travel", "en": "Travel" },
+  { "id": "time", "en": "Time and days" },
+  { "id": "work", "en": "Work" },
+  { "id": "shopping", "en": "Shopping" },
+  { "id": "clothes", "en": "Clothes" },
+  { "id": "body", "en": "Body" },
+  { "id": "health", "en": "Health" },
+  { "id": "weather", "en": "Weather" },
+  { "id": "nature", "en": "Nature and animals" },
+  { "id": "school", "en": "School and learning" },
+  { "id": "emotions", "en": "Feelings" },
+  { "id": "hobbies", "en": "Free time" },
+  { "id": "tech", "en": "Technology and media" }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "clima",
+    "en": ["weather", "climate"],
+    "examples": ["What's the weather like today?"],
+    "note": "It ends in -a but is masculine: el clima. In Mexico people usually say “el clima” for the weather."
+  },
+  { "id": "calor", "en": ["heat"], "examples": ["It's very hot."], "note": "Hace calor = it's hot (the weather); tengo calor = I'm hot." },
+  { "id": "frio", "en": ["cold"], "examples": ["It's cold at night."], "note": "Hace frío = it's cold; tengo frío = I'm cold." },
+  { "id": "sol", "en": ["sun"], "examples": ["It's sunny today."] },
+  { "id": "lluvia", "en": ["rain"], "examples": ["I like the sound of the rain."] },
+  {
+    "id": "llueve",
+    "en": ["it rains", "it's raining"],
+    "examples": ["In summer it rains a lot in the afternoon."],
+    "note": "Infinitive: llover. Está lloviendo = it is raining right now."
+  },
+  { "id": "nube", "en": ["cloud"], "examples": ["There are a lot of clouds."] },
+  { "id": "viento", "en": ["wind"], "examples": ["It's very windy."] },
+  { "id": "nieve", "en": ["snow"], "examples": ["There is snow in the mountains."] },
+  { "id": "tormenta", "en": ["storm"], "examples": ["A storm is coming."] },
+  { "id": "temperatura", "en": ["temperature"], "examples": ["The temperature drops at night."] },
+  { "id": "grado", "en": ["degree"], "examples": ["It's thirty degrees."] },
+  { "id": "paraguas", "en": ["umbrella"], "examples": ["Don't forget the umbrella."] },
+  { "id": "verano", "en": ["summer"], "examples": ["In summer we go to the beach."] },
+  { "id": "invierno", "en": ["winter"], "examples": ["In winter it isn't very cold in Cancún."] },
+  {
+    "id": "primavera",
+    "en": ["spring"],
+    "examples": ["Spring is very hot in Mexico."],
+    "note": "In Mexico the hottest time of the year is often spring (April, May)."
+  },
+  { "id": "otono", "en": ["fall", "autumn"], "examples": ["I like fall."] },
+  {
+    "id": "caliente",
+    "en": ["hot"],
+    "examples": ["The coffee is very hot."],
+    "note": "caliente = hot (food, water); for the weather say “hace calor”."
+  },
+  { "id": "nublado", "en": ["cloudy"], "examples": ["It's cloudy today."] },
+  { "id": "humedo", "en": ["humid", "damp"], "examples": ["In Veracruz the climate is very humid."] },
+  { "id": "seco", "en": ["dry"], "examples": ["The air is very dry."] },
+  { "id": "fresco", "en": ["cool", "fresh"], "examples": ["It's cool in the morning."], "note": "Hace fresco = it's pleasantly cool." },
+  { "id": "granizo", "en": ["hail"], "examples": ["It hailed yesterday."] },
+  { "id": "huracan", "en": ["hurricane"], "examples": ["A hurricane is coming to the coast."] },
+  { "id": "pronostico", "en": ["forecast"], "examples": ["The forecast says it's going to rain."] },
+  { "id": "relampago", "en": ["lightning"], "examples": ["I saw a huge flash of lightning."] },
+  { "id": "ola-de-calor", "en": ["heat wave"], "examples": ["There is a heat wave all over the north."] },
+  { "id": "inundacion", "en": ["flood"], "examples": ["The rains caused floods in the city."] },
+  { "id": "neblina", "en": ["fog", "mist"], "examples": ["There was a lot of fog on the highway in the morning."] }
+]

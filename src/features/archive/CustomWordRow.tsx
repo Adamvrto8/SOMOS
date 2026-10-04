@@ -2,6 +2,7 @@ import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { topicById } from '../../data'
 import type { CustomWord } from '../../lib/db'
+import { topicName } from '../../lib/localized'
 
 interface CustomWordRowProps {
   word: CustomWord
@@ -22,7 +23,7 @@ export function CustomWordRow({ word }: CustomWordRowProps) {
           </p>
           <p className="truncate text-sm text-ink-muted">
             {word.sk}
-            {topic && <span> · {topic.sk}</span>}
+            {topic && <span> · {topicName(topic)}</span>}
           </p>
         </div>
         <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />

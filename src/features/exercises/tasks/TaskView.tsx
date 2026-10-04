@@ -1,6 +1,7 @@
 import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
 import { useT } from '../../../i18n'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
+import { clozeHint, sentenceTranslation, verbTranslations } from '../../../lib/localized'
 import { ChoiceOptions } from './ChoiceOptions'
 import { DictationView } from './DictationView'
 import { SentenceWithBlank } from './SentenceWithBlank'
@@ -38,8 +39,8 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
         <div className="space-y-5">
           <div className="space-y-3">
             <SentenceWithBlank tokens={task.sentence.tokens} blankIndex={task.cloze.tokenIndex} filled={text} status={status} />
-            <p className="text-ink-muted">{task.sentence.sk}</p>
-            {task.cloze.hint && <Pill>{task.cloze.hint}</Pill>}
+            <p className="text-ink-muted">{sentenceTranslation(task.sentence)}</p>
+            {task.cloze.hint && <Pill>{clozeHint(task.sentence, task.cloze) ?? task.cloze.hint}</Pill>}
           </div>
           <TypedAnswer value={text} onChange={onAnswer} onSubmit={onSubmit} status={status} hint={hint} label={labels.missingWordLabel} placeholder={labels.typeWord} />
         </div>
@@ -50,7 +51,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
         <div className="space-y-6">
           <div className="space-y-3">
             <SentenceWithBlank tokens={task.sentence.tokens} blankIndex={task.cloze.tokenIndex} filled={text} status={status} />
-            <p className="text-ink-muted">{task.sentence.sk}</p>
+            <p className="text-ink-muted">{sentenceTranslation(task.sentence)}</p>
           </div>
           <ChoiceOptions options={task.options} selected={text} onSelect={onAnswer} correctAnswer={grade ? task.cloze.answer : undefined} />
         </div>
@@ -63,7 +64,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             <p lang="es" className="font-serif text-4xl font-semibold">
               {task.verb.id}
             </p>
-            <p className="mt-1 text-ink-muted">{task.verb.sk.join(', ')}</p>
+            <p className="mt-1 text-ink-muted">{verbTranslations(task.verb).join(', ')}</p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               <Pill>{PERSON_LABELS[task.person]}</Pill>
               <Pill>{TENSE_LABELS[task.tense]}</Pill>
@@ -85,7 +86,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
     case 'builder':
       return (
         <div className="space-y-5">
-          <p className="text-xl leading-snug font-medium">{task.sentence.sk}</p>
+          <p className="text-xl leading-snug font-medium">{sentenceTranslation(task.sentence)}</p>
           <TileBuilder tiles={task.tiles} placed={Array.isArray(answer) ? answer : []} onChange={onAnswer} status={status} />
         </div>
       )
@@ -93,7 +94,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
     case 'translation':
       return (
         <div className="space-y-5">
-          <p className="text-2xl leading-snug font-medium">{task.sentence.sk}</p>
+          <p className="text-2xl leading-snug font-medium">{sentenceTranslation(task.sentence)}</p>
           <TypedAnswer
             value={text}
             onChange={onAnswer}

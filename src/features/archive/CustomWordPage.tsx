@@ -9,6 +9,7 @@ import { topics, words } from '../../data'
 import { t, useT } from '../../i18n'
 import { deleteCustomWord, saveCustomWord, useCustomWord } from '../../lib/archive'
 import type { CustomWord } from '../../lib/db'
+import { topicName } from '../../lib/localized'
 import { fold } from '../../lib/text'
 
 const INPUT =
@@ -190,7 +191,7 @@ function CustomWordForm({ word }: { word?: CustomWord }) {
               <option value="">{text.noTopic}</option>
               {topics.map((t) => (
                 <option key={t.id} value={t.id}>
-                  {t.sk}
+                  {topicName(t)}
                 </option>
               ))}
             </select>

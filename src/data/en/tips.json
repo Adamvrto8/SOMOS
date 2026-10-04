@@ -1,0 +1,33 @@
+[
+  {
+    "id": "futuro",
+    "title": "Future tense (futuro)",
+    "intro": "The endings are added to the whole infinitive and are the same for all verbs.",
+    "rules": [
+      {
+        "id": "endings",
+        "title": "Infinitive + ending",
+        "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablarán. Likewise comeré, viviré.",
+        "examples": ["Tomorrow I will talk to the boss.", "They will arrive on Friday."]
+      },
+      {
+        "id": "stems",
+        "title": "Irregular stem",
+        "text": "The endings stay, the stem changes: tener → tendré, poder → podré, salir → saldré, venir → vendré, poner → pondré, decir → diré, hacer → haré, querer → querré, saber → sabré.",
+        "examples": ["I will have time on Saturday.", "What will you do tomorrow?"]
+      },
+      {
+        "id": "ir-a",
+        "title": "In everyday speech: ir a + infinitive",
+        "text": "For the near future, Mexicans most often say it this way: voy a, vas a, va a, vamos a, van a.",
+        "examples": ["I'm going to eat.", "We're going to travel in May."]
+      },
+      {
+        "id": "guess",
+        "title": "A guess",
+        "text": "The future tense also expresses a guess about the present.",
+        "examples": ["I wonder where Ana is."]
+      }
+    ]
+  }
+]

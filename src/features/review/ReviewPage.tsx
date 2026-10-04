@@ -198,7 +198,7 @@ export function ReviewPage() {
                         <p lang="es" className="font-serif text-lg leading-snug">
                           {entry.example.es}
                         </p>
-                        <p className="text-sm text-ink-muted">{entry.example.sk}</p>
+                        <p className="text-sm text-ink-muted">{entry.example.text}</p>
                       </div>
                       <SpeakButton text={entry.example.es} />
                     </div>

@@ -4,6 +4,7 @@ import { useT } from '../../../i18n'
 import { SpeechFailure, startRecording, type Recording, type SpeechError } from '../../../lib/speech'
 import { bestMatch, type SpeechMatch } from '../../../lib/speechMatch'
 import type { SpeakingTask } from '../../../lib/lesson'
+import { sentenceTranslation } from '../../../lib/localized'
 import { speak, stopSpeaking } from '../../../lib/tts'
 import { SpeechWords } from './SpeechWords'
 import type { Status } from './status'
@@ -109,7 +110,7 @@ export function SpeakingView({ task, onAnswer, onSubmit, onSkipRest, onRecording
             <Volume2 size={20} strokeWidth={1.75} aria-hidden />
           </button>
         </div>
-        <p className="mt-2 text-ink-muted">{task.sentence.sk}</p>
+        <p className="mt-2 text-ink-muted">{sentenceTranslation(task.sentence)}</p>
       </div>
 
       <div className="flex flex-col items-center gap-3">

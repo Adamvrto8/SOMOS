@@ -3,6 +3,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { TopicIcon } from '../../components/TopicIcon'
 import { topics } from '../../data'
 import { useT } from '../../i18n'
+import { topicName } from '../../lib/localized'
 import { wordsInTopic } from '../../lib/search'
 
 export function TopicGrid() {
@@ -28,7 +29,7 @@ export function TopicGrid() {
                   </span>
                 </span>
                 <span>
-                  <span className="block leading-snug font-medium">{topic.sk}</span>
+                  <span className="block leading-snug font-medium">{topicName(topic)}</span>
                   <span lang="es" className="block font-serif text-sm text-ink-muted">
                     {topic.es}
                   </span>

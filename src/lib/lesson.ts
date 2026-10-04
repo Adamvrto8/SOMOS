@@ -2,6 +2,7 @@ import { sentenceById, sentences, verbById, verbs, wordById, words } from '../da
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
+import { wordTranslations } from './localized'
 import { lookupForm } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
 
@@ -208,10 +209,10 @@ const NUMBER_VALUES: Record<string, number> = {
 // Pronouns and particles a Slovak phrase can do without: "ako sa ti darí?" ≈ "ako sa darí?".
 const OPTIONAL_SK = new Set(['ti', 'mi', 'si', 'sa', 'ťa', 'ma', 'to'])
 
-/** Slovak answers accepted for an ES → SK vocab task. */
+/** Answers accepted for a vocab task from Spanish: the word's translations in the learner's language. */
 export function slovakAnswers(word: Word): string[] {
   const out = new Set<string>()
-  for (const sk of word.sk) {
+  for (const sk of wordTranslations(word)) {
     // Parentheses explain usage ("prosím? (keď si nepočul)"), nobody types them.
     const bare = sk.replace(/\s*\([^)]*\)/g, '').trim()
     for (const variant of [sk, bare]) {
@@ -235,11 +236,11 @@ export function slovakAnswers(word: Word): string[] {
 export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
   const isToSpanish = direction === 'sk-es'
   const prompt = isToSpanish
-    ? word.sk.join(', ')
+    ? wordTranslations(word).join(', ')
     : word.gender
       ? `${word.gender === 'm' ? 'el' : 'la'} ${word.es}`
       : word.es
-  const expected = isToSpanish ? word.es : word.sk[0]
+  const expected = isToSpanish ? word.es : wordTranslations(word)[0]
   const acceptable = isToSpanish
     ? [word.es, ...(word.gender ? [`${word.gender === 'm' ? 'el' : 'la'} ${word.es}`] : [])]
     : slovakAnswers(word)

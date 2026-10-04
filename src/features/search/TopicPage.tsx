@@ -5,6 +5,7 @@ import { TopicIcon } from '../../components/TopicIcon'
 import { topicById } from '../../data'
 import { useT } from '../../i18n'
 import { useSavedWordIds } from '../../lib/archive'
+import { topicName } from '../../lib/localized'
 import { wordsInTopic } from '../../lib/search'
 import { WordRow } from './WordRow'
 
@@ -26,7 +27,7 @@ export function TopicPage() {
           <TopicIcon name={topic.icon} size={26} />
         </span>
         <div className="min-w-0">
-          <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight">{topic.sk}</h1>
+          <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight">{topicName(topic)}</h1>
           <p lang="es" className="font-serif text-ink-muted">
             {topic.es}
           </p>

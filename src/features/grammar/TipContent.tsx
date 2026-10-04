@@ -4,6 +4,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import { tipById } from '../../data'
 import { useT } from '../../i18n'
 import type { Cloze, Sentence, Tip, TipRule } from '../../data/types'
+import { clozeHint, localizedTip, type LocalRule } from '../../lib/localized'
 import { spaceBefore } from '../../lib/text'
 
 /** The answer to "Prečo?" for one task: what was asked, why the answer is what it is, and the rule behind it. */
@@ -22,7 +23,7 @@ interface TipContentProps {
 }
 
 /** One rule: its name, a line of explanation and the examples with 🔊. */
-function RuleBody({ rule }: { rule: TipRule }) {
+function RuleBody({ rule }: { rule: LocalRule }) {
   return (
     <>
       <h3 className="font-semibold">{rule.title}</h3>
@@ -34,7 +35,7 @@ function RuleBody({ rule }: { rule: TipRule }) {
               <p lang="es" className="font-serif text-lg leading-snug">
                 {example.es}
               </p>
-              <p className="text-sm text-ink-muted">{example.sk}</p>
+              <p className="text-sm text-ink-muted">{example.text}</p>
             </div>
             <SpeakButton text={example.es} />
           </li>
@@ -67,17 +68,20 @@ function Asked({ asked }: { asked: NonNullable<TipHere['asked']> }) {
           </Fragment>
         ))}
       </p>
-      {cloze.hint && <p className="mt-0.5 text-sm text-ink-muted">{cloze.hint}</p>}
+      {cloze.hint && <p className="mt-0.5 text-sm text-ink-muted">{clozeHint(sentence, cloze)}</p>}
     </>
   )
 }
 
 /** One grammar tip: what the rule is, with examples. Shown over a lesson (TipSheet) and in the handbook (TipPage). */
-export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
+export function TipContent({ tip: base, here, onOpenTip }: TipContentProps) {
+  // In the learner's language; the rules keep their ids, so the one that applies is found again.
+  const tip = localizedTip(base)
+  const hereRule = tip.rules.find((r) => r.id === here?.rule?.id)
   // ser/estar is two lists of reasons; every other tip is one list of rules.
   const verbs = [...new Set(tip.rules.flatMap((r) => r.verb ?? []))]
   const groups = verbs.length ? verbs.map((verb) => ({ title: verb, rules: tip.rules.filter((r) => r.verb === verb) })) : [{ title: undefined, rules: tip.rules }]
-  const related = (tip.related ?? []).flatMap((id) => tipById.get(id) ?? [])
+  const related = (tip.related ?? []).flatMap((id) => tipById.get(id) ?? []).map(localizedTip)
   const text = useT().grammar
   const hereLabel = here?.asked && 'sentence' in here.asked ? text.inSentence : text.inTask
 
@@ -90,10 +94,10 @@ export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
           {here.asked && <Asked asked={here.asked} />}
           <p className="mt-2 font-medium">{here.because}</p>
           {/* The rule itself, here and not only in the list below: nothing to scroll for and look up. */}
-          {here.rule && (
+          {hereRule && (
             <div className="mt-4 border-t border-amber/60 pt-3">
               <p className="mb-1 text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.rule}</p>
-              <RuleBody rule={here.rule} />
+              <RuleBody rule={hereRule} />
             </div>
           )}
         </aside>

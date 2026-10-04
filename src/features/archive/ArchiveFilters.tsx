@@ -1,6 +1,7 @@
 import { Chip } from '../../components/Chip'
 import { SearchField } from '../../components/SearchField'
 import { useT } from '../../i18n'
+import { topicName } from '../../lib/localized'
 import type { ArchiveFilter } from './useArchiveFilter'
 
 export function ArchiveFilters({ filter }: { filter: ArchiveFilter }) {
@@ -16,7 +17,7 @@ export function ArchiveFilters({ filter }: { filter: ArchiveFilter }) {
           </Chip>
           {filter.tabTopics.map((t) => (
             <Chip key={t.id} selected={filter.topic === t.id} onClick={() => filter.setTopic(t.id)}>
-              {t.sk}
+              {topicName(t)}
             </Chip>
           ))}
         </div>

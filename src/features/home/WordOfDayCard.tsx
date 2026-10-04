@@ -2,13 +2,14 @@ import { Link } from 'react-router'
 import { SpeakButton } from '../../components/SpeakButton'
 import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
+import { wordExamples, wordTranslations } from '../../lib/localized'
 import { wordOfDay } from '../../lib/wordOfDay'
 
 /** Compact word-of-the-day card; the whole card opens the word detail. */
 export function WordOfDayCard() {
   const word = wordOfDay()
   const article = articleFor(word)
-  const example = word.examples[0]
+  const example = wordExamples(word)[0]
   const text = useT().home
 
   return (
@@ -27,7 +28,7 @@ export function WordOfDayCard() {
             {article && <span className="text-xl font-normal text-ink-muted">{article} </span>}
             {word.es}
           </Link>
-          <p className="mt-0.5 text-ink-muted">{word.sk.join(', ')}</p>
+          <p className="mt-0.5 text-ink-muted">{wordTranslations(word).join(', ')}</p>
         </div>
         <div className="relative">
           <SpeakButton text={article ? `${article} ${word.es}` : word.es} />
@@ -36,7 +37,7 @@ export function WordOfDayCard() {
       <p lang="es" className="mt-3 border-t border-line pt-3 font-serif leading-snug">
         {example.es}
       </p>
-      <p className="text-sm text-ink-muted">{example.sk}</p>
+      <p className="text-sm text-ink-muted">{example.text}</p>
     </section>
   )
 }

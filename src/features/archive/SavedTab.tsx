@@ -6,6 +6,7 @@ import { sentenceById, wordById } from '../../data'
 import type { Sentence, Word } from '../../data/types'
 import { useT } from '../../i18n'
 import type { SavedItem } from '../../lib/db'
+import { sentenceTranslation, wordTranslations } from '../../lib/localized'
 import { WordRow } from '../search/WordRow'
 import { SaveButton } from '../word/SaveButton'
 import { ArchiveFilters, NoMatches } from './ArchiveFilters'
@@ -44,8 +45,8 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
   }
 
   const inTopic = (x: { topics: string[] }) => !filter.topic || x.topics.includes(filter.topic)
-  const visibleWords = words.filter((w) => inTopic(w) && filter.matches([w.es, ...w.sk]))
-  const visibleSentences = sentences.filter((s) => inTopic(s) && filter.matches([s.es, s.sk]))
+  const visibleWords = words.filter((w) => inTopic(w) && filter.matches([w.es, ...wordTranslations(w)]))
+  const visibleSentences = sentences.filter((s) => inTopic(s) && filter.matches([s.es, sentenceTranslation(s)]))
   const wordIds = visibleWords.map((w) => w.id)
 
   return (
@@ -74,7 +75,7 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
                   <p lang="es" className="font-serif text-lg leading-snug">
                     {s.es}
                   </p>
-                  <p className="text-sm text-ink-muted">{s.sk}</p>
+                  <p className="text-sm text-ink-muted">{sentenceTranslation(s)}</p>
                 </div>
                 <SpeakButton text={s.es} />
                 <SaveButton type="sentence" id={s.id} size="md" />

@@ -4,6 +4,7 @@ import type { Cloze, Grammar, Person, Sentence, Tip, TipRule, Verb } from '../da
 import type { Meaning } from './checkAnswer'
 import { isIrregular, type TableTense } from './conjugate'
 import type { Grade, Task } from './lesson'
+import { localizedTip } from './localized'
 import { fold } from './text'
 
 // Grammar tips ("Prečo?"): which tip explains a task that was answered wrong, which of its rules
@@ -169,7 +170,9 @@ function accentWhy(meanings: Meaning[]): Why {
 function tipForCloze(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
   const hint = cloze.hint ?? ''
   if (hint.startsWith('ser/estar ·')) {
-    const rule = tipById.get('ser-estar')?.rules.find((r) => r.id === cloze.why)
+    const tip = tipById.get('ser-estar')
+    // The reason is said in the learner's language; the rule is found by its id in either.
+    const rule = tip && localizedTip(tip).rules.find((r) => r.id === cloze.why)
     return targeted('ser-estar', rule?.because ? { rule: rule.id, because: rule.because } : undefined)
   }
   const parts = hint.split(' · ')

@@ -4,7 +4,13 @@ import { t } from '../../i18n'
 import { TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type LessonFilter } from '../../lib/lesson'
 import { getFirstUnpassedLesson, getLastActiveLesson, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
+import { topicName } from '../../lib/localized'
 import { exerciseInfo, filterToParams, isLessonGroup, LEVELS } from '../exercises/exercises'
+
+const topicLabel = (id: string) => {
+  const topic = topicById.get(id)
+  return topic ? topicName(topic) : id
+}
 
 export interface ContinueLesson {
   href: string
@@ -35,7 +41,7 @@ export function continueLesson(progression: LessonProgressionMap): ContinueLesso
         : t().exercise.allTopics
       : type === 'conjugation'
         ? TENSE_LABELS[group as TableTense]
-        : (topicById.get(group)?.sk ?? group)
+        : topicLabel(group)
 
   return {
     href: `/practice/lesson?${filterToParams(filter)}&lesson=${lesson}`,

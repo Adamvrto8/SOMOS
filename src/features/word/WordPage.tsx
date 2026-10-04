@@ -10,6 +10,7 @@ import { topicById, verbById, wordById } from '../../data'
 import type { Word } from '../../data/types'
 import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
+import { topicName, wordExamples, wordNote, wordTranslations } from '../../lib/localized'
 import { ConjugationTable } from './ConjugationTable'
 import { SaveButton } from './SaveButton'
 import { readWordNav, type WordNavState } from './wordNav'
@@ -145,7 +146,8 @@ function WordDetail({ word }: { word: Word }) {
   const verb = word.verbId ? verbById.get(word.verbId) : undefined
   const estar = verbById.get('estar')
   const article = articleFor(word)
-  const [primary, ...otherTranslations] = word.sk
+  const [primary, ...otherTranslations] = wordTranslations(word)
+  const note = wordNote(word)
   const wordTopics = word.topics.flatMap((t) => topicById.get(t) ?? [])
   const text = useT().word
 
@@ -205,23 +207,23 @@ function WordDetail({ word }: { word: Word }) {
         )}
       </header>
 
-      {word.note && (
+      {note && (
         <aside aria-label={text.note} className="flex gap-3 rounded-card bg-surface-2 p-4 text-sm leading-relaxed">
           <Info size={18} strokeWidth={1.75} className="mt-0.5 shrink-0 text-brick" aria-hidden />
-          <p>{word.note}</p>
+          <p>{note}</p>
         </aside>
       )}
 
       <section aria-labelledby="examples-heading">
         <SectionTitle id="examples-heading">{text.examples}</SectionTitle>
         <ul className="divide-y divide-line rounded-card border border-line bg-surface">
-          {word.examples.map((example) => (
+          {wordExamples(word).map((example) => (
             <li key={example.es} className="flex items-start gap-1 py-3 pr-1 pl-4">
               <div className="min-w-0 flex-1 pt-1">
                 <p lang="es" className="font-serif text-lg leading-snug">
                   {example.es}
                 </p>
-                <p className="mt-0.5 text-sm text-ink-muted">{example.sk}</p>
+                <p className="mt-0.5 text-sm text-ink-muted">{example.text}</p>
               </div>
               <SpeakButton text={example.es} />
             </li>
@@ -241,7 +243,7 @@ function WordDetail({ word }: { word: Word }) {
                   to={`/topic/${topic.id}`}
                   className="flex h-11 items-center rounded-full border border-line bg-surface px-4 text-sm font-medium text-ink-muted transition-colors duration-150 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
                 >
-                  {topic.sk}
+                  {topicName(topic)}
                 </Link>
               </li>
             ))}

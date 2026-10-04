@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import type { Word } from '../../data/types'
 import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
+import { wordTranslations } from '../../lib/localized'
 import type { WordNavState } from '../word/wordNav'
 
 interface WordRowProps {
@@ -36,7 +37,7 @@ export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
                 {text.form} <span lang="es">{dictionary.common.quote(matchedForm)}</span> ·{' '}
               </span>
             )}
-            {word.sk.join(', ')}
+            {wordTranslations(word).join(', ')}
           </p>
         </div>
         {saved && (

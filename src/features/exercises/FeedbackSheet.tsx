@@ -7,6 +7,7 @@ import { t, useT } from '../../i18n'
 import type { Verdict } from '../../lib/checkAnswer'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import type { Grade, Task } from '../../lib/lesson'
+import { sentenceTranslation, wordTranslations } from '../../lib/localized'
 import { SaveButton } from '../word/SaveButton'
 import { SpeechWords } from './tasks/SpeechWords'
 
@@ -31,7 +32,7 @@ function reference(task: Task): Reference {
   switch (task.kind) {
     case 'cloze':
     case 'choice':
-      return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
+      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: 'sk', speak: task.sentence.es }
     case 'conjugation':
       return {
         label: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`,
@@ -43,10 +44,10 @@ function reference(task: Task): Reference {
     case 'translation':
     case 'dictation':
     case 'speaking':
-      return { correct: task.sentence.es, correctLang: 'es', detail: task.sentence.sk, detailLang: 'sk', speak: task.sentence.es }
+      return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: 'sk', speak: task.sentence.es }
     case 'vocab': {
       const esFormatted = task.word.gender ? `${task.word.gender === 'm' ? 'el' : 'la'} ${task.word.es}` : task.word.es
-      const skFormatted = task.word.sk.join(', ')
+      const skFormatted = wordTranslations(task.word).join(', ')
       if (task.direction === 'sk-es') {
         return {
           label: t().lesson.toSpanish,

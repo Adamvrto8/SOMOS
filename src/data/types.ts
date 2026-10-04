@@ -97,3 +97,38 @@ export interface Topic {
   es: string
   icon: string // lucide icon name, kebab-case ("utensils")
 }
+
+// ---------- English overlay (src/data/en/) ----------
+// Matched to the base data by id and holding only what is language. An entry that is missing
+// means "not translated yet": src/lib/localized.ts then shows the Slovak.
+
+export interface WordEn {
+  id: string
+  en: string[] // translations, first = primary
+  examples?: string[] // translations of the word's examples, in their order
+  note?: string // written for an English speaker; none = the word has no note in English
+}
+
+export interface VerbEn {
+  id: string
+  en: string[]
+}
+
+export interface SentenceEn {
+  id: string
+  en: string
+  hints?: (string | null)[] // one per cloze; null keeps the base hint ("tener · yo · pretérito")
+}
+
+export interface TopicEn {
+  id: string
+  en: string
+}
+
+/** A whole tip rewritten for an English speaker: same id, the same rules in the same order. */
+export interface TipEn {
+  id: string
+  title: string
+  intro: string
+  rules: { id: string; title: string; text?: string; because?: string; examples: string[] }[] // examples: translations, in order
+}

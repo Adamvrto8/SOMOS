@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Level, Person, Sentence, Tense, Tip, Topic, Verb, Word } from '../src/data/types.ts'
+import type { Cloze, Level, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -418,6 +418,106 @@ for (const s of sentences) {
   })
 }
 
+// ---------- English overlay (src/data/en) ----------
+// Matched to the base data by id. Missing English is not an error (the app shows Slovak);
+// English that points at nothing, or does not fit what it translates, is.
+
+function loadEnDir<T>(dir: string): T[] {
+  return existsSync(new URL(`en/${dir}/`, DATA)) ? loadDir<T>(`en/${dir}`) : []
+}
+function loadEnFile<T>(file: string): T[] {
+  const url = new URL(`en/${file}`, DATA)
+  return existsSync(url) ? (readJson(url) as T[]) : []
+}
+
+const enWords = loadEnDir<WordEn>('words')
+const enVerbs = loadEnDir<VerbEn>('verbs')
+const enSentences = loadEnDir<SentenceEn>('sentences')
+const enTopics = loadEnFile<TopicEn>('topics.json')
+const enTips = loadEnFile<TipEn>('tips.json')
+
+const isTextList = (v: unknown): v is string[] => Array.isArray(v) && v.length > 0 && v.every(isNonEmpty)
+
+checkUniqueIds(enWords, 'en/words')
+const wordsById = new Map(words.map((w) => [w.id, w]))
+for (const entry of enWords) {
+  const where = `en/words[${entry.id}]`
+  const word = wordsById.get(entry.id)
+  if (!word) {
+    fail(where, 'no such word')
+    continue
+  }
+  if (!isTextList(entry.en)) fail(where, 'needs `en`: at least one translation')
+  if (entry.examples !== undefined && (!isTextList(entry.examples) || entry.examples.length !== word.examples.length)) {
+    fail(where, `examples must translate the word's ${word.examples.length} example(s), in order`)
+  }
+  if (entry.note !== undefined && !isNonEmpty(entry.note)) fail(where, 'empty note')
+}
+
+checkUniqueIds(enVerbs, 'en/verbs')
+const verbIds = new Set(verbs.map((v) => v.id))
+for (const entry of enVerbs) {
+  const where = `en/verbs[${entry.id}]`
+  if (!verbIds.has(entry.id)) fail(where, 'no such verb')
+  if (!isTextList(entry.en)) fail(where, 'needs `en`: at least one translation')
+}
+
+checkUniqueIds(enSentences, 'en/sentences')
+const sentencesById = new Map(sentences.map((s) => [s.id, s]))
+for (const entry of enSentences) {
+  const where = `en/sentences[${entry.id}]`
+  const sentence = sentencesById.get(entry.id)
+  if (!sentence) {
+    fail(where, 'no such sentence')
+    continue
+  }
+  if (!isNonEmpty(entry.en)) fail(where, 'missing `en`')
+  const clozes = sentence.cloze ?? []
+  if (entry.hints !== undefined && (!Array.isArray(entry.hints) || entry.hints.length !== clozes.length)) {
+    fail(where, `hints must have one entry per cloze (${clozes.length})`)
+    continue
+  }
+  clozes.forEach((cloze, i) => {
+    const hint = entry.hints?.[i]
+    if (hint !== undefined && hint !== null && !isNonEmpty(hint)) fail(where, `hints[${i}] is empty`)
+    // "tener · yo · pretérito" reads the same in any language; "člen" or "leto" does not.
+    const slovak = cloze.hint !== undefined && !cloze.hint.includes(' · ')
+    if (slovak && !isNonEmpty(hint)) fail(where, `the hint "${cloze.hint}" of cloze ${i} needs an English one in hints[${i}]`)
+  })
+}
+
+checkUniqueIds(enTopics, 'en/topics')
+for (const entry of enTopics) {
+  if (!topicIds.has(entry.id)) fail(`en/topics[${entry.id}]`, 'no such topic')
+  if (!isNonEmpty(entry.en)) fail(`en/topics[${entry.id}]`, 'missing `en`')
+}
+
+checkUniqueIds(enTips, 'en/tips')
+for (const entry of enTips) {
+  const where = `en/tips[${entry.id}]`
+  const tip = tipById.get(entry.id)
+  if (!tip) {
+    fail(where, 'no such tip')
+    continue
+  }
+  if (!isNonEmpty(entry.title) || !isNonEmpty(entry.intro)) fail(where, 'missing title/intro')
+  const ruleIds = (entry.rules ?? []).map((r) => r.id).join(', ')
+  if (ruleIds !== tip.rules.map((r) => r.id).join(', ')) {
+    fail(where, `rules must be the tip's own, in its order: ${tip.rules.map((r) => r.id).join(', ')}`)
+    continue
+  }
+  entry.rules.forEach((rule, i) => {
+    const rw = `${where}.rules[${rule.id}]`
+    const base = tip.rules[i]
+    if (!isNonEmpty(rule.title)) fail(rw, 'missing title')
+    if (rule.text !== undefined && !isNonEmpty(rule.text)) fail(rw, 'empty text')
+    if (!isTextList(rule.examples) || rule.examples.length !== base.examples.length) {
+      fail(rw, `examples must translate the rule's ${base.examples.length} example(s), in order`)
+    }
+    if (Boolean(base.because) !== isNonEmpty(rule.because)) fail(rw, base.because ? 'needs because' : 'because is only for ser-estar rules')
+  })
+}
+
 // ---------- report ----------
 
 if (errors.length) {
@@ -431,3 +531,20 @@ console.log(
   `✓ Data OK — ${topics.length} topics, ${words.length} words, ${verbs.length} verbs, ` +
     `${sentences.length} sentences (${clozeCount} cloze), ${tips.length} tips`,
 )
+
+// How much of the content has English, per topic (a word counts under its first topic).
+const share = (done: number, total: number) => `${done}/${total}`
+const enWordIds = new Set(enWords.map((e) => e.id))
+const enSentenceIds = new Set(enSentences.map((e) => e.id))
+console.log(
+  `  English: ${share(enWords.length, words.length)} words, ${share(enVerbs.length, verbs.length)} verbs, ` +
+    `${share(enSentences.length, sentences.length)} sentences, ${share(enTopics.length, topics.length)} topic names, ${share(enTips.length, tips.length)} tips`,
+)
+for (const topic of topics) {
+  const topicWords = words.filter((w) => w.topics[0] === topic.id)
+  const topicSentences = sentences.filter((s) => s.topics[0] === topic.id)
+  const doneWords = topicWords.filter((w) => enWordIds.has(w.id)).length
+  const doneSentences = topicSentences.filter((s) => enSentenceIds.has(s.id)).length
+  if (doneWords + doneSentences === 0) continue
+  console.log(`    ${topic.id}: ${share(doneWords, topicWords.length)} words, ${share(doneSentences, topicSentences.length)} sentences`)
+}

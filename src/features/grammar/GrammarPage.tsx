@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { tips } from '../../data'
 import { useT } from '../../i18n'
+import { localizedTip } from '../../lib/localized'
 
 /** The grammar tips as a small handbook; the same tips open from a wrong answer in a lesson ("Prečo?"). */
 export function GrammarPage() {
@@ -16,7 +17,7 @@ export function GrammarPage() {
       </p>
 
       <ul className="mt-6 space-y-2">
-        {tips.map((tip) => (
+        {tips.map(localizedTip).map((tip) => (
           <li key={tip.id}>
             <Link
               to={`/practice/grammar/${tip.id}`}
