@@ -5,11 +5,11 @@ import { Rating, type Grade } from 'ts-fsrs'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
 import { Tapestry } from '../../components/Tapestry'
+import { useT } from '../../i18n'
 import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
 import { GRADES, isDueToday, previewIntervals, rateCard } from '../../lib/srs'
-import { pluralSk } from '../../lib/text'
 import { statusOf } from '../exercises/tasks/status'
 import { TypedAnswer } from '../exercises/tasks/TypedAnswer'
 import { loadDueEntries, typedRating, type ReviewEntry } from './reviewQueue'
@@ -29,6 +29,8 @@ const asGrade = (check: CheckResult): LessonGrade => ({ correct: check.verdict !
  * type the other side (it rates itself, see typedRating) or reveal it and rate (FSRS).
  */
 export function ReviewPage() {
+  const dictionary = useT()
+  const text = dictionary.review
   const navigate = useNavigate()
   const location = useLocation()
   const [queue, setQueue] = useState<ReviewEntry[] | null>(null) // null = loading
@@ -122,14 +124,14 @@ export function ReviewPage() {
         <button
           type="button"
           onClick={exit}
-          aria-label="Ukončiť opakovanie"
+          aria-label={text.quit}
           className="flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
         >
           <X size={22} strokeWidth={1.75} aria-hidden />
         </button>
         <div
           role="progressbar"
-          aria-label="Priebeh opakovania"
+          aria-label={text.progress}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(progress)}
@@ -137,7 +139,7 @@ export function ReviewPage() {
         >
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
-        <span className="w-14 shrink-0 pr-2 text-right text-sm text-ink-muted" aria-label={`Zostáva ${remaining}`}>
+        <span className="w-14 shrink-0 pr-2 text-right text-sm text-ink-muted" aria-label={text.remaining(remaining)}>
           {queue ? remaining : ''}
         </span>
       </header>
@@ -147,7 +149,7 @@ export function ReviewPage() {
           <>
             <article className="rounded-card border border-line bg-surface p-6 text-center">
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {entry.slovakFirst ? 'Ako sa to povie po španielsky?' : 'Pamätáš si?'}
+                {entry.slovakFirst ? text.howInSpanish : text.remember}
               </p>
               {entry.slovakFirst ? (
                 // No 🔊 here: hearing the word would give the answer away.
@@ -220,8 +222,8 @@ export function ReviewPage() {
                   status={outcome ? statusOf(asGrade(outcome.check)) : undefined}
                   hint={hint}
                   lang={entry.slovakFirst ? 'es' : 'sk'}
-                  label={entry.slovakFirst ? 'Preklad do španielčiny' : 'Preklad do slovenčiny'}
-                  placeholder={entry.slovakFirst ? 'Po španielsky…' : 'Po slovensky…'}
+                  label={entry.slovakFirst ? dictionary.lesson.toSpanish : dictionary.lesson.toNative}
+                  placeholder={entry.slovakFirst ? dictionary.lesson.task.inSpanish : dictionary.lesson.task.inNative}
                 />
               </div>
             )}
@@ -240,30 +242,30 @@ export function ReviewPage() {
                 <div className="flex gap-3">
                   {/* Before a try the way out is to look at the other side and rate it by hand; after a wrong one, to give up. */}
                   <Button variant="secondary" onClick={hint ? giveUp : reveal}>
-                    {hint ? 'Vzdať sa' : 'Ukázať preklad'}
+                    {hint ? dictionary.lesson.giveUp : text.showTranslation}
                   </Button>
                   {/* preventDefault keeps the focus (and the phone keyboard) in the answer field for a second try. */}
                   <Button onPointerDown={(e) => e.preventDefault()} onClick={check} disabled={!typed.trim()} className="flex-1">
-                    Skontrolovať
+                    {dictionary.lesson.check}
                   </Button>
                 </div>
               ) : (
                 <Button onClick={reveal} className="w-full" autoFocus>
-                  Ukázať preklad
+                  {text.showTranslation}
                 </Button>
               )
             ) : outcome ? (
               <>
                 <TypedVerdict grade={outcome.grade} check={outcome.check} interval={intervals?.[outcome.grade]} />
                 <Button onClick={() => void rate(outcome.grade)} disabled={busy} className="mt-3 w-full" autoFocus>
-                  Pokračovať
+                  {dictionary.lesson.carryOn}
                 </Button>
               </>
             ) : (
               <>
-                <p className="mb-2 text-center text-sm text-ink-muted">Ako dobre si to vedel?</p>
+                <p className="mb-2 text-center text-sm text-ink-muted">{text.howWell}</p>
                 <div className="grid grid-cols-4 gap-2">
-                  {GRADES.map(({ grade, label }) => (
+                  {GRADES.map(({ grade, key }) => (
                     <button
                       key={grade}
                       type="button"
@@ -271,7 +273,7 @@ export function ReviewPage() {
                       onClick={() => void rate(grade)}
                       className={`flex h-16 flex-col items-center justify-center rounded-2xl font-semibold transition duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick disabled:opacity-60 ${GRADE_STYLE[grade]}`}
                     >
-                      {label}
+                      {text.grades[key]}
                       <span className="text-xs font-normal opacity-80">{intervals?.[grade]}</span>
                     </button>
                   ))}
@@ -287,19 +289,21 @@ export function ReviewPage() {
 
 /** How a typed answer went and when the card comes back; the rating was decided by the answer. */
 function TypedVerdict({ grade, check, interval }: { grade: Grade; check: CheckResult; interval?: string }) {
+  const dictionary = useT()
+  const text = dictionary.review
   const tone =
     grade === Rating.Again
-      ? { title: 'Nevedel si – ešte sa vráti', icon: CircleX, color: 'text-error' }
+      ? { title: text.didNotKnow, icon: CircleX, color: 'text-error' }
       : grade === Rating.Hard
-        ? { title: 'Správne po oprave', icon: TriangleAlert, color: 'text-ink' }
-        : { title: 'Správne!', icon: CircleCheck, color: 'text-leaf' }
+        ? { title: text.correctAfterFix, icon: TriangleAlert, color: 'text-ink' }
+        : { title: dictionary.lesson.verdicts.correct, icon: CircleCheck, color: 'text-leaf' }
   const Icon = tone.icon
   const note = check.spacing
-    ? 'Pozor na medzery medzi slovami.'
+    ? dictionary.lesson.spacing
     : check.typoWord
-      ? `Preklep v slove ${check.typoWord}.`
+      ? text.typoNote(check.typoWord)
       : check.verdict === 'accent'
-        ? `Pozor na prízvuk: ${check.accentWords.join(', ')}.`
+        ? text.accentNote(check.accentWords.join(', '))
         : undefined
 
   return (
@@ -310,13 +314,15 @@ function TypedVerdict({ grade, check, interval }: { grade: Grade; check: CheckRe
       </p>
       <p className="mt-0.5 text-sm text-ink-muted">
         {note && `${note} `}
-        {interval && `Ďalšie opakovanie: ${interval}.`}
+        {interval && text.nextReview(interval)}
       </p>
     </div>
   )
 }
 
 function SessionEnd({ reviewed }: { reviewed: number }) {
+  const dictionary = useT()
+  const text = dictionary.review
   return (
     <div className="space-y-6">
       <div className="overflow-hidden rounded-card border border-line bg-surface">
@@ -327,17 +333,16 @@ function SessionEnd({ reviewed }: { reviewed: number }) {
           <CircleCheck size={32} strokeWidth={1.75} className="mx-auto text-leaf" aria-hidden />
           {reviewed > 0 ? (
             <>
-              <h1 className="mt-2 font-serif text-2xl font-semibold">Hotovo na dnes</h1>
+              <h1 className="mt-2 font-serif text-2xl font-semibold">{text.doneTitle}</h1>
               <p className="mt-1 text-ink-muted">
-                Zopakoval si {reviewed} {pluralSk(reviewed, ['kartu', 'karty', 'kariet'])}. Ďalšie prídu na rad, keď ich začneš
-                zabúdať.
+                {text.done(reviewed)}
               </p>
             </>
           ) : (
             <>
-              <h1 className="mt-2 font-serif text-2xl font-semibold">Nič na zopakovanie</h1>
+              <h1 className="mt-2 font-serif text-2xl font-semibold">{text.nothingTitle}</h1>
               <p className="mt-1 text-ink-muted">
-                Dnes máš všetko zopakované. Pribudnú sem slová, ktoré precvičíš v lekciách, a tie, ktoré si uložíš hviezdičkou.
+                {text.nothing}
               </p>
             </>
           )}
@@ -348,13 +353,13 @@ function SessionEnd({ reviewed }: { reviewed: number }) {
           to="/practice"
           className="inline-flex h-12 items-center justify-center rounded-2xl bg-brick px-5 font-semibold text-on-accent transition duration-150 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
         >
-          Precvičiť v lekcii
+          {text.practiceInLesson}
         </Link>
         <Link
           to="/"
           className="inline-flex h-12 items-center justify-center rounded-2xl border border-line bg-surface px-5 font-semibold transition-colors duration-150 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
         >
-          Domov
+          {dictionary.nav.home}
         </Link>
       </div>
     </div>

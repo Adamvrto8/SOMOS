@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
 import { SpeakButton } from '../../components/SpeakButton'
 import { tipById } from '../../data'
+import { useT } from '../../i18n'
 import type { Cloze, Sentence, Tip, TipRule } from '../../data/types'
 import { spaceBefore } from '../../lib/text'
 
@@ -77,7 +78,8 @@ export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
   const verbs = [...new Set(tip.rules.flatMap((r) => r.verb ?? []))]
   const groups = verbs.length ? verbs.map((verb) => ({ title: verb, rules: tip.rules.filter((r) => r.verb === verb) })) : [{ title: undefined, rules: tip.rules }]
   const related = (tip.related ?? []).flatMap((id) => tipById.get(id) ?? [])
-  const hereLabel = here?.asked && 'sentence' in here.asked ? 'V tejto vete' : 'V tejto úlohe'
+  const text = useT().grammar
+  const hereLabel = here?.asked && 'sentence' in here.asked ? text.inSentence : text.inTask
 
   return (
     <div className="space-y-6">
@@ -90,7 +92,7 @@ export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
           {/* The rule itself, here and not only in the list below: nothing to scroll for and look up. */}
           {here.rule && (
             <div className="mt-4 border-t border-amber/60 pt-3">
-              <p className="mb-1 text-xs font-semibold tracking-widest text-ink-muted uppercase">Pravidlo</p>
+              <p className="mb-1 text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.rule}</p>
               <RuleBody rule={here.rule} />
             </div>
           )}
@@ -98,7 +100,7 @@ export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
       )}
 
       <div>
-        {here && <SectionTitle id="overview-heading">Celý prehľad</SectionTitle>}
+        {here && <SectionTitle id="overview-heading">{text.overview}</SectionTitle>}
         <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight">{tip.title}</h1>
         <p className="mt-3 leading-relaxed text-ink-muted">{tip.intro}</p>
       </div>
@@ -122,7 +124,7 @@ export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
 
       {related.length > 0 && (
         <section aria-labelledby="related-heading">
-          <SectionTitle id="related-heading">Pozri aj</SectionTitle>
+          <SectionTitle id="related-heading">{text.related}</SectionTitle>
           <div className="flex flex-wrap gap-2">
             {related.map((other) => (
               <button

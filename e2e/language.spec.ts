@@ -29,3 +29,33 @@ test('a phone that is not Slovak or Czech starts in English', async ({ browser }
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Settings')
   await context.close()
 })
+
+test('the screens are in English: search, a lesson with its feedback, review and the archive', async ({ browser }) => {
+  const context = await browser.newContext({ locale: 'en-US' })
+  const page = await context.newPage()
+
+  await page.goto('/search')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Search')
+  await expect(page.getByRole('button', { name: 'Verbs' })).toBeVisible()
+
+  await page.goto('/practice')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practice')
+  await expect(page.getByRole('radio', { name: /Fill in the blank/ })).toBeVisible()
+
+  await page.goto('/practice/lesson?type=conjugation&tense=presente&level=A1&lesson=1')
+  await expect(page.getByRole('textbox', { name: 'Verb form' })).toBeVisible()
+  await page.getByRole('button', { name: 'Give up', exact: true }).tap()
+  await expect(page.getByRole('status')).toContainText('Correct answer')
+  await page.getByRole('button', { name: 'Why?', exact: true }).tap()
+  await expect(page.getByRole('dialog').getByLabel('In this task')).toBeVisible()
+  await page.getByRole('dialog').getByRole('button', { name: 'Close' }).tap()
+  await page.getByRole('button', { name: 'Continue', exact: true }).tap()
+
+  await page.goto('/review')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Nothing to review')
+
+  await page.goto('/archive')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Archive')
+  await expect(page.getByRole('tab', { name: /^Mistakes/ })).toBeVisible()
+  await context.close()
+})

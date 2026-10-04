@@ -1,5 +1,6 @@
 import { X } from 'lucide-react'
 import { useEffect, useRef, type ReactNode } from 'react'
+import { useT } from '../../i18n'
 
 interface TipSheetProps {
   label: string // the tip's title, for screen readers
@@ -10,6 +11,7 @@ interface TipSheetProps {
 /** A grammar tip over the lesson: a full-screen page with ✕. The lesson underneath stays as it is. */
 export function TipSheet({ label, onClose, children }: TipSheetProps) {
   const closeButton = useRef<HTMLButtonElement>(null)
+  const text = useT().grammar
 
   useEffect(() => {
     closeButton.current?.focus()
@@ -31,7 +33,7 @@ export function TipSheet({ label, onClose, children }: TipSheetProps) {
             ref={closeButton}
             type="button"
             onClick={onClose}
-            aria-label="Zavrieť"
+            aria-label={text.close}
             className="flex size-11 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
           >
             <X size={22} strokeWidth={1.75} aria-hidden />

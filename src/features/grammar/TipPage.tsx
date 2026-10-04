@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { tipById } from '../../data'
+import { useT } from '../../i18n'
 import { TipContent } from './TipContent'
 
 const LIST = '/practice/grammar'
@@ -10,6 +11,7 @@ const LIST = '/practice/grammar'
 export function TipPage() {
   const { id = '' } = useParams()
   const navigate = useNavigate()
+  const text = useT().grammar
   const tip = tipById.get(id)
 
   // "Pozri aj" leads to another tip on the same route: start reading it from the top.
@@ -21,11 +23,11 @@ export function TipPage() {
     return (
       <div>
         <BackButton fallback={LIST} />
-        <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight">Tip sa nenašiel</h1>
+        <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight">{text.notFound}</h1>
         <p className="mt-2 text-ink-muted">
-          Pozri si{' '}
+          {text.seeBefore}{' '}
           <Link to={LIST} className="font-medium text-brick underline underline-offset-4">
-            všetky tipy
+            {text.seeLink}
           </Link>
           .
         </p>

@@ -357,6 +357,8 @@ export const sk = {
 
   lesson: {
     quit: 'Ukončiť lekciu',
+    /** Above the task while the mistakes of a lesson are being fixed: Lekcia 2 · oprava · Doplň slovo */
+    fixing: 'oprava',
     progress: 'Priebeh lekcie',
     locked: 'Lekcia je zamknutá',
     lockedHint: 'Odomkne sa, keď splníš predchádzajúcu lekciu aspoň na 80 %.',
@@ -478,6 +480,50 @@ export const sk = {
         accent: 'Skontroluj prízvuk.',
       },
     },
+  },
+
+  review: {
+    quit: 'Ukončiť opakovanie',
+    progress: 'Priebeh opakovania',
+    remaining: (n: number) => `Zostáva ${n}`,
+    howInSpanish: 'Ako sa to povie po španielsky?',
+    remember: 'Pamätáš si?',
+    showTranslation: 'Ukázať preklad',
+    howWell: 'Ako dobre si to vedel?',
+    grades: { again: 'Znova', hard: 'Ťažké', good: 'Dobre', easy: 'Ľahké' },
+    didNotKnow: 'Nevedel si – ešte sa vráti',
+    correctAfterFix: 'Správne po oprave',
+    typoNote: (word: string) => `Preklep v slove ${word}.`,
+    accentNote: (words: string) => `Pozor na prízvuk: ${words}.`,
+    nextReview: (interval: string) => `Ďalšie opakovanie: ${interval}.`,
+    doneTitle: 'Hotovo na dnes',
+    done: (n: number) => `Zopakoval si ${n} ${pluralSk(n, ['kartu', 'karty', 'kariet'])}. Ďalšie prídu na rad, keď ich začneš zabúdať.`,
+    nothingTitle: 'Nič na zopakovanie',
+    nothing: 'Dnes máš všetko zopakované. Pribudnú sem slová, ktoré precvičíš v lekciách, a tie, ktoré si uložíš hviezdičkou.',
+    practiceInLesson: 'Precvičiť v lekcii',
+    /** When a card comes back: "< 1 min", "10 min", "3 h", "1 deň", "2 mes.", "1,5 r." */
+    interval: {
+      underMinute: '< 1 min',
+      minutes: (n: number) => `${n} min`,
+      hours: (n: number) => `${n} h`,
+      days: (n: number) => `${n} ${pluralSk(n, ['deň', 'dni', 'dní'])}`,
+      months: (n: number) => `${n} mes.`,
+      years: (n: number) => `${n.toFixed(1).replace('.', ',')} r.`,
+    },
+  },
+
+  grammar: {
+    title: 'Gramatika',
+    intro: 'Krátke pravidlá s príkladmi. K tipu sa dostaneš aj z lekcie: po zlej odpovedi ťukni na „Prečo?“.',
+    notFound: 'Tip sa nenašiel',
+    seeBefore: 'Pozri si',
+    seeLink: 'všetky tipy',
+    close: 'Zavrieť',
+    inSentence: 'V tejto vete',
+    inTask: 'V tejto úlohe',
+    rule: 'Pravidlo',
+    overview: 'Celý prehľad',
+    related: 'Pozri aj',
   },
 }
 

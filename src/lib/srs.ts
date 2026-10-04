@@ -5,17 +5,18 @@ import { recordAttempt } from './attempts'
 import { getAutoReview, useAutoReviewSettings, type AutoReviewSettings } from './autoReview'
 import { addDays, endOfDay, startOfDay } from './dates'
 import { db, type ReviewCard, type ReviewItemType } from './db'
-import { pluralSk } from './text'
+import { t } from '../i18n'
 
 // Spaced repetition (FSRS) for saved words and sentences, custom words and practised words.
 
 const scheduler = fsrs({ enable_fuzz: true })
 
-export const GRADES: { grade: Grade; label: string }[] = [
-  { grade: Rating.Again, label: 'Znova' },
-  { grade: Rating.Hard, label: 'Ťažké' },
-  { grade: Rating.Good, label: 'Dobre' },
-  { grade: Rating.Easy, label: 'Ľahké' },
+/** The four ratings; `key` names the button's text in the dictionary (review.grades). */
+export const GRADES: { grade: Grade; key: 'again' | 'hard' | 'good' | 'easy' }[] = [
+  { grade: Rating.Again, key: 'again' },
+  { grade: Rating.Hard, key: 'hard' },
+  { grade: Rating.Good, key: 'good' },
+  { grade: Rating.Easy, key: 'easy' },
 ]
 
 /** The FSRS card with real Date objects (JSON backups store dates as strings). */
@@ -26,15 +27,16 @@ export const isDueToday = (card: Card, now = new Date()) => card.due.getTime() <
 
 /** "< 1 min", "10 min", "3 h", "1 deň", "5 dní", "2 mes.", "1,5 r." */
 export function formatInterval(ms: number): string {
+  const text = t().review.interval
   const minutes = ms / 60_000
-  if (minutes < 1) return '< 1 min'
-  if (minutes < 60) return `${Math.round(minutes)} min`
+  if (minutes < 1) return text.underMinute
+  if (minutes < 60) return text.minutes(Math.round(minutes))
   const hours = minutes / 60
-  if (hours < 24) return `${Math.round(hours)} h`
+  if (hours < 24) return text.hours(Math.round(hours))
   const days = Math.round(hours / 24)
-  if (days < 30) return `${days} ${pluralSk(days, ['deň', 'dni', 'dní'])}`
-  if (days < 365) return `${Math.round(days / 30)} mes.`
-  return `${(days / 365).toFixed(1).replace('.', ',')} r.`
+  if (days < 30) return text.days(days)
+  if (days < 365) return text.months(Math.round(days / 30))
+  return text.years(days / 365)
 }
 
 /** When the card would come back for each grade, as labels for the rating buttons. */

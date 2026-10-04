@@ -2,15 +2,17 @@ import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { tips } from '../../data'
+import { useT } from '../../i18n'
 
 /** The grammar tips as a small handbook; the same tips open from a wrong answer in a lesson ("Prečo?"). */
 export function GrammarPage() {
+  const text = useT().grammar
   return (
     <div>
       <BackButton fallback="/practice" />
-      <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">Gramatika</h1>
+      <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
       <p className="mt-2 leading-relaxed text-ink-muted">
-        Krátke pravidlá s príkladmi. K tipu sa dostaneš aj z lekcie: po zlej odpovedi ťukni na „Prečo?“.
+        {text.intro}
       </p>
 
       <ul className="mt-6 space-y-2">

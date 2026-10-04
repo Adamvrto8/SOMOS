@@ -327,7 +327,7 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? 'Chyby · ' : runLesson ? `Lekcia ${runLesson}${isRetry ? ' · oprava' : ''} · ` : ''}
+                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${isRetry ? ` · ${text.fixing}` : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
