@@ -238,6 +238,16 @@
           { "es": "Llegué tarde.", "sk": "Prišiel som neskoro." },
           { "es": "Busqué mis llaves.", "sk": "Hľadal som kľúče." }
         ]
+      },
+      {
+        "id": "third",
+        "title": "Zmena len v tvaroch él a ellos",
+        "text": "Slovesá na -ir so zmenou v kmeni ju v pretérite majú len v tretej osobe: e → i (pedir: pidió, pidieron), o → u (dormir: durmió, durmieron). Medzi dvoma samohláskami sa i mení na y: leer → leyó, leyeron.",
+        "examples": [
+          { "es": "Pidió un café.", "sk": "Objednal si kávu." },
+          { "es": "Durmieron ocho horas.", "sk": "Spali osem hodín." },
+          { "es": "Leyó todo el libro.", "sk": "Prečítal celú knihu." }
+        ]
       }
     ]
   },

@@ -6,17 +6,19 @@ const lesson = (type: string) => `/practice/lesson?type=${type}&topic=all&level=
 const counter = (page: Page) => page.locator('header').first()
 const tipLink = (page: Page) => page.getByRole('button', { name: /^(Prečo\?|Gramatika k vete)$/ })
 
-/** Gives up the tasks of a cloze lesson until one asks for ser or estar; that task is left unanswered. */
-async function reachSerEstar(page: Page): Promise<Sentence> {
+/** Gives up the tasks of a cloze lesson until one fits; that task is left unanswered. */
+async function reach(page: Page, fits: (sentence: Sentence) => boolean): Promise<Sentence> {
   for (let n = 1; n <= 10; n++) {
     await expect(counter(page)).toContainText(`${n}/10`)
     const sentence = await askedSentence(page)
-    if (sentence.cloze![0].hint?.startsWith('ser/estar')) return sentence
+    if (fits(sentence)) return sentence
     await button(page, 'Vzdať sa').tap()
     await button(page, 'Pokračovať').tap()
   }
-  throw new Error('no ser/estar task in this lesson')
+  throw new Error('no such task in this lesson')
 }
+
+const reachSerEstar = (page: Page) => reach(page, (s) => Boolean(s.cloze![0].hint?.startsWith('ser/estar')))
 
 test('"Prečo?" explains why a sentence takes ser or estar, and the back button closes it', async ({ page }) => {
   await page.goto(lesson('cloze'))
@@ -33,7 +35,8 @@ test('"Prečo?" explains why a sentence takes ser or estar, and the back button 
   await expect(here).toContainText(rule.because!)
   // The rule that applies is right there with its examples: nothing to scroll for and look up in the list below.
   await expect(here.getByRole('heading', { name: rule.title, exact: true })).toBeInViewport({ ratio: 1 })
-  await expect(here.getByText(rule.examples[0].es, { exact: true })).toBeInViewport({ ratio: 1 })
+  // (.last(): the sentence asked can itself be the rule's first example.)
+  await expect(here.getByText(rule.examples[0].es, { exact: true }).last()).toBeInViewport({ ratio: 1 })
   await expect(tip.getByRole('heading', { name: 'Celý prehľad' })).toBeVisible()
 
   // The phone's back button closes the tip; the lesson has not moved or restarted.
@@ -61,6 +64,47 @@ test('"Prečo?" explains why a sentence takes ser or estar, and the back button 
   await button(page, 'Vzdať sa').tap()
   await expect(status(page)).toContainText('Správna odpoveď')
   await expect(tip).toHaveCount(0)
+})
+
+test('"Prečo?" on a verb form answers for that form first: the reason, its rule, then the handbook', async ({ page }) => {
+  await page.goto('/practice/lesson?type=conjugation&tense=preterito&level=A1&lesson=1')
+  await expect(field(page)).toBeVisible()
+  await button(page, 'Vzdať sa').tap()
+  await button(page, 'Prečo?').tap()
+
+  const tip = page.getByRole('dialog')
+  const here = tip.getByLabel('V tejto úlohe')
+  // What was asked, why, and the rule with an example: all on the first screen, nothing to look up.
+  await expect(here).toContainText('· pretérito')
+  await expect(here.getByText('Pravidlo', { exact: true })).toBeInViewport({ ratio: 1 })
+  const rule = here.getByRole('heading', { level: 3 })
+  await expect(rule).toBeInViewport({ ratio: 1 })
+  const preterito = tips.find((t) => t.id === 'preterito')!
+  const title = await rule.innerText()
+  const found = preterito.rules.find((r) => r.title === title)!
+  await expect(here.getByText(found.examples[0].es, { exact: true })).toBeInViewport({ ratio: 1 })
+
+  // The handbook page follows, with the same rule marked in its list.
+  await expect(tip.getByRole('heading', { name: 'Celý prehľad' })).toBeVisible()
+  await expect(tip.getByRole('heading', { level: 1 })).toHaveText(preterito.title)
+  const marked = tip.locator('li.ring-1')
+  await expect(marked).toHaveCount(1)
+  await expect(marked.getByRole('heading', { level: 3 })).toHaveText(title)
+})
+
+test('"Prečo?" on a blank that asks for a tense shows the sentence, the reason and the rule', async ({ page }) => {
+  await page.goto(lesson('cloze'))
+  const tense = /^[^/]+ · \S+ · (presente|pretérito|imperfecto|futuro)$/
+  const sentence = await reach(page, (s) => tense.test(s.cloze![0].hint ?? ''))
+  await button(page, 'Vzdať sa').tap()
+  await button(page, 'Prečo?').tap()
+
+  const here = page.getByRole('dialog').getByLabel('V tejto vete')
+  await expect(here).toContainText(sentence.es)
+  await expect(here).toContainText(sentence.cloze![0].hint!)
+  await expect(here.getByText('Pravidlo', { exact: true })).toBeInViewport({ ratio: 1 })
+  await expect(here.getByRole('heading', { level: 3 })).toBeInViewport({ ratio: 1 })
+  await expect(page.getByRole('dialog').locator('li.ring-1')).toHaveCount(1)
 })
 
 test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {

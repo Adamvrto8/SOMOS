@@ -5,11 +5,18 @@ import { tipById } from '../../data'
 import type { Cloze, Sentence, Tip, TipRule } from '../../data/types'
 import { spaceBefore } from '../../lib/text'
 
+/** The answer to "Prečo?" for one task: what was asked, why the answer is what it is, and the rule behind it. */
+export interface TipHere {
+  because: string
+  rule?: TipRule
+  /** A blank in a sentence, or a bare prompt ("tener · yo · pretérito") with its answer. */
+  asked?: { sentence: Sentence; cloze: Cloze } | { prompt: string; answer: string }
+}
+
 interface TipContentProps {
   tip: Tip
-  /** Opened from a task: the rule that applies there is marked, and with `asked` it is spelled out for that sentence. */
-  rule?: TipRule
-  asked?: { sentence: Sentence; cloze: Cloze }
+  /** Opened with "Prečo?" from a task: its answer comes first, the handbook page follows. */
+  here?: TipHere
   onOpenTip: (id: string) => void // "Pozri aj"
 }
 
@@ -36,39 +43,64 @@ function RuleBody({ rule }: { rule: TipRule }) {
   )
 }
 
+/** What was asked, with the right answer marked. */
+function Asked({ asked }: { asked: NonNullable<TipHere['asked']> }) {
+  if ('prompt' in asked) {
+    return (
+      <>
+        <p className="mt-1 text-sm text-ink-muted">{asked.prompt}</p>
+        <p lang="es" className="font-serif text-2xl leading-snug font-semibold text-brick">
+          {asked.answer}
+        </p>
+      </>
+    )
+  }
+  const { sentence, cloze } = asked
+  return (
+    <>
+      <p lang="es" className="mt-1 font-serif text-xl leading-snug">
+        {sentence.tokens.map((token, i) => (
+          <Fragment key={i}>
+            {spaceBefore(sentence.tokens, i) && ' '}
+            {i === cloze.tokenIndex ? <strong className="font-semibold text-brick">{token}</strong> : token}
+          </Fragment>
+        ))}
+      </p>
+      {cloze.hint && <p className="mt-0.5 text-sm text-ink-muted">{cloze.hint}</p>}
+    </>
+  )
+}
+
 /** One grammar tip: what the rule is, with examples. Shown over a lesson (TipSheet) and in the handbook (TipPage). */
-export function TipContent({ tip, rule, asked, onOpenTip }: TipContentProps) {
+export function TipContent({ tip, here, onOpenTip }: TipContentProps) {
   // ser/estar is two lists of reasons; every other tip is one list of rules.
   const verbs = [...new Set(tip.rules.flatMap((r) => r.verb ?? []))]
   const groups = verbs.length ? verbs.map((verb) => ({ title: verb, rules: tip.rules.filter((r) => r.verb === verb) })) : [{ title: undefined, rules: tip.rules }]
   const related = (tip.related ?? []).flatMap((id) => tipById.get(id) ?? [])
+  const hereLabel = here?.asked && 'sentence' in here.asked ? 'V tejto vete' : 'V tejto úlohe'
 
   return (
     <div className="space-y-6">
-      <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight">{tip.title}</h1>
-
-      {rule?.because && asked && (
-        <aside aria-label="V tejto vete" className="rounded-card border border-amber bg-amber/15 p-4">
-          <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">V tejto vete</p>
-          <p lang="es" className="mt-1 font-serif text-xl leading-snug">
-            {asked.sentence.tokens.map((token, i) => (
-              <Fragment key={i}>
-                {spaceBefore(asked.sentence.tokens, i) && ' '}
-                {i === asked.cloze.tokenIndex ? <strong className="font-semibold text-brick">{token}</strong> : token}
-              </Fragment>
-            ))}
-          </p>
-          <p className="mt-1.5">{rule.because}</p>
+      {here && (
+        // First on the page: "Prečo?" is a question about this task, the handbook below is only the background.
+        <aside aria-label={hereLabel} className="rounded-card border border-amber bg-amber/15 p-4">
+          <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{hereLabel}</p>
+          {here.asked && <Asked asked={here.asked} />}
+          <p className="mt-2 font-medium">{here.because}</p>
           {/* The rule itself, here and not only in the list below: nothing to scroll for and look up. */}
-          <div className="mt-4 border-t border-amber/60 pt-3">
-            <RuleBody rule={rule} />
-          </div>
+          {here.rule && (
+            <div className="mt-4 border-t border-amber/60 pt-3">
+              <p className="mb-1 text-xs font-semibold tracking-widest text-ink-muted uppercase">Pravidlo</p>
+              <RuleBody rule={here.rule} />
+            </div>
+          )}
         </aside>
       )}
 
       <div>
-        {rule?.because && asked && <SectionTitle id="overview-heading">Celý prehľad</SectionTitle>}
-        <p className="leading-relaxed text-ink-muted">{tip.intro}</p>
+        {here && <SectionTitle id="overview-heading">Celý prehľad</SectionTitle>}
+        <h1 className="font-serif text-3xl leading-tight font-semibold tracking-tight">{tip.title}</h1>
+        <p className="mt-3 leading-relaxed text-ink-muted">{tip.intro}</p>
       </div>
 
       {groups.map((group) => (
@@ -80,7 +112,7 @@ export function TipContent({ tip, rule, asked, onOpenTip }: TipContentProps) {
           )}
           <ul className="space-y-3">
             {group.rules.map((r) => (
-              <li key={r.id} className={`rounded-card border bg-surface p-4 ${r.id === rule?.id ? 'border-amber ring-1 ring-amber' : 'border-line'}`}>
+              <li key={r.id} className={`rounded-card border bg-surface p-4 ${r.id === here?.rule?.id ? 'border-amber ring-1 ring-amber' : 'border-line'}`}>
                 <RuleBody rule={r} />
               </li>
             ))}

@@ -4,6 +4,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { tipById } from '../../data'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
+import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import {
   canRetry,
   createLesson,
@@ -32,7 +33,7 @@ import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
 import { tipFor, tipLabel } from '../../lib/tips'
-import { TipContent } from '../grammar/TipContent'
+import { TipContent, type TipHere } from '../grammar/TipContent'
 import { TipSheet } from '../grammar/TipSheet'
 import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
@@ -41,6 +42,13 @@ import { LessonResult, type LessonAnswer } from './LessonResult'
 import { TaskView } from './tasks/TaskView'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
+
+/** What the task asked, as the tip repeats it above its reason. */
+function askedIn(task: Task): TipHere['asked'] {
+  if (task.kind === 'cloze' || task.kind === 'choice') return { sentence: task.sentence, cloze: task.cloze }
+  if (task.kind === 'conjugation') return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
+  return undefined
+}
 
 /** A fresh lesson: from the mistakes list, or numbered lesson, or least-practised items. */
 async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number): Promise<Task[]> {
@@ -384,8 +392,7 @@ export function LessonPage() {
           <TipContent
             tip={shownTip}
             // The task's own reason only in the task's own tip, not in one reached through "Pozri aj".
-            rule={isTaskTip ? taskTip?.rule : undefined}
-            asked={isTaskTip && (task?.kind === 'cloze' || task?.kind === 'choice') ? { sentence: task.sentence, cloze: task.cloze } : undefined}
+            here={isTaskTip && task && taskTip?.because ? { because: taskTip.because, rule: taskTip.rule, asked: askedIn(task) } : undefined}
             onOpenTip={setOpenTip}
           />
         </TipSheet>
