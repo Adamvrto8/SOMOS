@@ -23,6 +23,12 @@
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-text: "Inter", ui-sans-serif, system-ui, sans-serif;
 
+  /* Corners: cards, then the three sizes of controls (buttons and inputs, chips, small marks). */
+  --corner-card: 16px;
+  --corner-lg: 1rem;
+  --corner-md: 0.75rem;
+  --corner-sm: 0.5rem;
+
   color-scheme: light;
 }
 
@@ -82,4 +88,87 @@
 /* Young Serif has one weight: a heading asking for semibold gets it as drawn, not smeared bolder. */
 [data-look="talavera"] .font-serif {
   font-synthesis-weight: none;
+}
+
+/* ---------- Barragán: rosa mexicano on plaster, after the walls of Luis Barragán's houses ----------
+   Flat planes and square corners, and no serif anywhere: the display face is a grotesque. */
+
+[data-look="barragan"] {
+  --bg:        #FAF2EF;  /* plaster */
+  --surface:   #FFFFFF;
+  --surface-2: #F3E2DF;
+  --ink:       #2A1420;
+  --ink-muted: #765B67;
+  --line:      #EBD4D2;
+  --brick:     #C81765;  /* rosa mexicano */
+  --leaf:      #1B7560;
+  --amber:     #F5A20A;
+  --error:     #B3261E;
+  --on-accent: #FFFFFF;
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-text: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --corner-card: 4px;
+  --corner-lg: 4px;
+  --corner-md: 4px;
+  --corner-sm: 4px;
+}
+
+[data-look="barragan"][data-theme="dark"] {
+  --bg:        #190E16;
+  --surface:   #23141E;
+  --surface-2: #301C29;
+  --ink:       #F8ECEF;
+  --ink-muted: #B99AA8;
+  --line:      #402839;
+  --brick:     #FF72AA;
+  --leaf:      #5CC4A6;
+  --amber:     #FFC04D;
+  --error:     #FF8370;
+  --on-accent: #190E16;
+}
+
+[data-look="barragan"] .font-serif {
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Agáve: the blue-green of the agave fields of Jalisco, gold like tequila reposado ---------- */
+
+[data-look="agave"] {
+  --bg:        #F2F5F2;
+  --surface:   #FFFFFF;
+  --surface-2: #E1E9E5;
+  --ink:       #11282A;
+  --ink-muted: #516868;
+  --line:      #D1DCD7;
+  --brick:     #17656E;  /* agave */
+  --leaf:      #4B8427;
+  --amber:     #E29E00;  /* reposado */
+  --error:     #B83A2A;
+  --on-accent: #FFFFFF;
+
+  --font-display: "Alegreya", ui-serif, Georgia, serif;
+  --font-text: "Alegreya Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --corner-card: 10px;
+
+  /* Alegreya Sans runs small: everything measured in rem grows with it. */
+  font-size: 106.25%;
+  /* Both Alegreyas draw old-style figures by default: a 1 like an I, a 0 like an o. Counts need lining ones. */
+  font-feature-settings: "lnum";
+}
+
+[data-look="agave"][data-theme="dark"] {
+  --bg:        #0C191A;
+  --surface:   #132425;
+  --surface-2: #1C3233;
+  --ink:       #EAF3F1;
+  --ink-muted: #93ABA8;
+  --line:      #273F41;
+  --brick:     #62C6CF;
+  --leaf:      #9BCB6A;
+  --amber:     #F4C04E;
+  --error:     #FF8A76;
+  --on-accent: #0C191A;
 }

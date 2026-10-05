@@ -11,6 +11,8 @@ const LOOK_KEY = 'somos-look'
 const THEME_COLOR: Record<Look, Record<Theme, string>> = {
   classic: { light: '#F4F1EC', dark: '#161614' },
   talavera: { light: '#F2F5FB', dark: '#0B1124' },
+  barragan: { light: '#FAF2EF', dark: '#190E16' },
+  agave: { light: '#F2F5F2', dark: '#0C191A' },
 }
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')

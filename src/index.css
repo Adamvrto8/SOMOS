@@ -25,7 +25,11 @@
   --font-sans: var(--font-text);
   --font-serif: var(--font-display);
 
-  --radius-card: 16px;
+  /* Corners come from the style too; rounded-full (pills, rings) stays round in every one. */
+  --radius-card: var(--corner-card);
+  --radius-2xl: var(--corner-lg);
+  --radius-xl: var(--corner-md);
+  --radius-lg: var(--corner-sm);
 
   --animate-pop: pop 220ms ease-out;
   --animate-sheet-up: sheet-up 220ms ease-out;

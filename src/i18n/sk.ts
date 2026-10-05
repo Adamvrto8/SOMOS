@@ -49,7 +49,7 @@ export const sk = {
     theme: 'Téma',
     themeOptions: { system: 'Podľa systému', light: 'Svetlá', dark: 'Tmavá' },
     look: 'Štýl',
-    lookOptions: { classic: 'Pôvodný', talavera: 'Talavera' },
+    lookOptions: { classic: 'Pôvodný', talavera: 'Talavera', barragan: 'Barragán', agave: 'Agáve' },
     dailyGoal: 'Denný cieľ',
     dailyGoalHint: 'Počet odpovedí za deň – v lekciách aj pri opakovaní.',
     version: 'Verzia',

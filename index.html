@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=Young+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400..700&family=Alegreya+Sans:wght@400;500;700&family=Bricolage+Grotesque:wght@400..700&family=Figtree:wght@400..700&family=Fraunces:opsz,wght@9..144,300..700&family=Instrument+Sans:wght@400..700&family=Inter:wght@400..700&family=Young+Serif&display=swap"
     />
 
     <!-- Resolve the theme (light / dark) and the style before first paint, to avoid a flash.
@@ -28,7 +28,12 @@
           pref = localStorage.getItem('somos-theme') || 'system';
           look = localStorage.getItem('somos-look') || 'classic';
         } catch (e) {}
-        var page = { classic: ['#F4F1EC', '#161614'], talavera: ['#F2F5FB', '#0B1124'] };
+        var page = {
+          classic: ['#F4F1EC', '#161614'],
+          talavera: ['#F2F5FB', '#0B1124'],
+          barragan: ['#FAF2EF', '#190E16'],
+          agave: ['#F2F5F2', '#0C191A'],
+        };
         if (!page[look]) look = 'classic';
         var dark = pref === 'dark' ||
           (pref !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);

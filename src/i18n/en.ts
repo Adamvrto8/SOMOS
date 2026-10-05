@@ -39,7 +39,7 @@ export const en: Dictionary = {
     theme: 'Theme',
     themeOptions: { system: 'System', light: 'Light', dark: 'Dark' },
     look: 'Style',
-    lookOptions: { classic: 'Original', talavera: 'Talavera' },
+    lookOptions: { classic: 'Original', talavera: 'Talavera', barragan: 'Barragán', agave: 'Agave' },
     dailyGoal: 'Daily goal',
     dailyGoalHint: 'Answers per day, in lessons and in review.',
     version: 'Version',
