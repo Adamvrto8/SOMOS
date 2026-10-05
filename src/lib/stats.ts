@@ -9,9 +9,10 @@ export interface DayStat {
   correct: number
 }
 
+/** Days in a row on which the daily goal was reached. A few answers under the goal do not carry it. */
 export interface Streak {
   days: number
-  activeToday: boolean // false = the streak is still alive but needs activity today
+  activeToday: boolean // today's goal is reached; false = the streak is still alive but needs today's goal
 }
 
 export interface Activity {
@@ -22,12 +23,26 @@ export interface Activity {
   weekAccuracy: number | null // 0–1, null without answers
 }
 
-/** Consecutive active days ending today, or yesterday if today has no activity yet. */
-export function computeStreak(activeDays: Set<string>, now: Date): Streak {
-  const activeToday = activeDays.has(dayKey(now))
+/**
+ * The days that count for the streak: those whose answers and reviews reached the goal.
+ * Judged by the goal as it is now, so changing the goal re-reads the past days too.
+ */
+export function goalDays(timestamps: number[], goal: number): Set<string> {
+  const counts = new Map<string, number>()
+  for (const t of timestamps) {
+    const key = dayKey(new Date(t))
+    counts.set(key, (counts.get(key) ?? 0) + 1)
+  }
+  const needed = Math.max(1, goal)
+  return new Set([...counts].filter(([, count]) => count >= needed).map(([key]) => key))
+}
+
+/** Consecutive counted days ending today, or yesterday while today's goal is still open. */
+export function computeStreak(countedDays: Set<string>, now: Date): Streak {
+  const activeToday = countedDays.has(dayKey(now))
   let day = activeToday ? now : addDays(now, -1)
   let days = 0
-  while (activeDays.has(dayKey(day))) {
+  while (countedDays.has(dayKey(day))) {
     days++
     day = addDays(day, -1)
   }
@@ -49,21 +64,21 @@ export function summarizeWeek(recent: Pick<Attempt, 'at' | 'correct'>[], now: Da
   return week
 }
 
-export function computeActivity(allTimestamps: number[], recent: Pick<Attempt, 'at' | 'correct'>[], now: Date): Activity {
+export function computeActivity(allTimestamps: number[], recent: Pick<Attempt, 'at' | 'correct'>[], now: Date, goal: number): Activity {
   const week = summarizeWeek(recent, now)
   const weekTotal = week.reduce((n, d) => n + d.count, 0)
   const weekCorrect = week.reduce((n, d) => n + d.correct, 0)
   return {
     today: week[6].count,
-    streak: computeStreak(new Set(allTimestamps.map((t) => dayKey(new Date(t)))), now),
+    streak: computeStreak(goalDays(allTimestamps, goal), now),
     week,
     weekTotal,
     weekAccuracy: weekTotal ? weekCorrect / weekTotal : null,
   }
 }
 
-/** Live activity from the attempts table (exercise answers and SRS reviews). */
-export function useActivity(): Activity | undefined {
+/** Live activity from the attempts table (exercise answers and SRS reviews), the streak by the daily goal. */
+export function useActivity(goal: number): Activity | undefined {
   return useLiveQuery(async () => {
     const now = new Date()
     const since = startOfDay(addDays(now, -6)).getTime()
@@ -71,6 +86,6 @@ export function useActivity(): Activity | undefined {
       db.attempts.orderBy('at').keys() as Promise<number[]>,
       db.attempts.where('at').aboveOrEqual(since).toArray(),
     ])
-    return computeActivity(allTimestamps, recent, now)
-  }, [])
+    return computeActivity(allTimestamps, recent, now, goal)
+  }, [goal])
 }

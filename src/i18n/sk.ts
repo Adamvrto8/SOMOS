@@ -167,8 +167,9 @@ export const sk = {
     streak: 'Séria',
     /** Under the big number of days. */
     streakDays: (n: number) => `${pluralSk(n, ['deň', 'dni', 'dní'])} v rade`,
-    atRisk: 'Séria v ohrození – precvič si ešte dnes',
-    practiceToday: 'precvič si dnes',
+    atRisk: 'Séria v ohrození – splň cieľ ešte dnes',
+    /** A day counts for the streak once the daily goal is reached. */
+    practiceToday: 'splň dnešný cieľ',
     goalAria: (done: number, goal: number, reached: boolean) => `Denný cieľ: ${done} z ${goal}${reached ? ', splnený' : ''}. Precvičovať`,
     goalReached: 'Denný cieľ splnený!',
     goalLeft: (left: number) => `denný cieľ · ešte ${left}`,

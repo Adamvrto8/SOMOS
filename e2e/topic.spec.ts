@@ -22,9 +22,8 @@ test('a swipe turns the topic page, and so do the arrows', async ({ page }) => {
   await swipe(page, { x: LEFT, y: 400 }, { x: RIGHT, y: 400 })
   await expect(title(page)).toHaveText('Pozdravy a frázy')
 
-  // The first topic has nothing before it; a vertical drag is a scroll, not a turn.
+  // The first topic has nothing before it.
   await swipe(page, { x: LEFT, y: 400 }, { x: RIGHT, y: 400 })
-  await swipe(page, { x: 200, y: 500 }, { x: 210, y: 300 })
   await page.waitForTimeout(400)
   await expect(title(page)).toHaveText('Pozdravy a frázy')
   await expect(page.getByRole('button', { name: 'Predchádzajúca téma' })).toBeDisabled()
@@ -35,6 +34,14 @@ test('a swipe turns the topic page, and so do the arrows', async ({ page }) => {
   // Paging does not pile up history: one step back is the list of topics.
   await page.getByRole('button', { name: 'Späť' }).tap()
   await expect(page).toHaveURL(/\/search$/)
+})
+
+test('a vertical drag scrolls the list of a topic and keeps the topic', async ({ page }) => {
+  await page.goto('/topic/greetings')
+  await swipe(page, { x: 200, y: 500 }, { x: 210, y: 300 })
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
+  await page.waitForTimeout(400)
+  await expect(title(page)).toHaveText('Pozdravy a frázy')
 })
 
 test('a word opened from a swiped-to topic pages through that topic', async ({ page }) => {

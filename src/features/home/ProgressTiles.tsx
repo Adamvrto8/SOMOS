@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import type { Activity } from '../../lib/stats'
 
-/** From this hour on, a streak not yet extended today is shown as at risk. */
+/** From this hour on, a streak whose goal for today is still open is shown as at risk. */
 const AT_RISK_HOUR = 18
 
 interface ProgressTilesProps {
@@ -50,7 +50,8 @@ export function ProgressTiles({ activity, goal, practiceHref }: ProgressTilesPro
         {atRisk ? (
           <p className="mt-0.5 text-sm font-medium text-brick dark:text-amber">{text.atRisk}</p>
         ) : (
-          !activeToday && days > 0 && <p className="mt-0.5 text-sm text-ink-muted">{text.practiceToday}</p>
+          // Also at 0 days: it says what a day needs to count.
+          !activeToday && <p className="mt-0.5 text-sm text-ink-muted">{text.practiceToday}</p>
         )}
       </section>
 

@@ -14,8 +14,8 @@ import { WeekChart } from './WeekChart'
 import { WordOfDayCard } from './WordOfDayCard'
 
 export function HomePage() {
-  const activity = useActivity()
   const goal = useDailyGoal()
+  const activity = useActivity(goal)
   const mistakes = useMistakes()
   const reminderProblem = useReminderProblem()
   const next = continueLesson(useLessonProgression())
