@@ -33,19 +33,23 @@ test('the style is switched in Nastavenia, applies at once and survives a reload
   expect(await token(page, '--bg')).toBe('#161614')
 })
 
-test('every style brings its own colours, typefaces and corners, and none overflows the screen', async ({ page }) => {
+test('every style brings its own colours and typefaces, keeps the same corners, and none overflows the screen', async ({ page }) => {
   const cardCorner = () => page.locator('.rounded-card').first().evaluate((card) => getComputedStyle(card).borderRadius)
   const fits = () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)
 
   await page.goto('/archive/settings')
   expect(await cardCorner()).toBe('16px')
 
-  // Barragán: flat planes, square corners, no serif.
+  await page.getByRole('radio', { name: 'Talavera' }).tap()
+  await expect(page.locator('html')).toHaveAttribute('data-look', 'talavera')
+  expect(await cardCorner()).toBe('16px')
+
+  // Barragán: flat planes, no serif.
   await page.getByRole('radio', { name: 'Barragán' }).tap()
   await expect(page.locator('html')).toHaveAttribute('data-look', 'barragan')
   expect(await token(page, '--brick')).toBe('#C81765')
   expect(await titleFont(page)).toContain('Bricolage Grotesque')
-  expect(await cardCorner()).toBe('4px')
+  expect(await cardCorner()).toBe('16px')
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#FAF2EF')
   expect(await fits()).toBe(true)
 
@@ -54,7 +58,7 @@ test('every style brings its own colours, typefaces and corners, and none overfl
   await expect(page.locator('html')).toHaveAttribute('data-look', 'agave')
   expect(await token(page, '--brick')).toBe('#17656E')
   expect(await titleFont(page)).toContain('Alegreya')
-  expect(await cardCorner()).toBe('10px')
+  expect(await cardCorner()).toBe('16px')
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).fontSize)).toBe('17px')
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#F2F5F2')
   expect(await fits()).toBe(true)

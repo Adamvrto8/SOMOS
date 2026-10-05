@@ -23,7 +23,8 @@
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-text: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Corners: cards, then the three sizes of controls (buttons and inputs, chips, small marks). */
+  /* Corners: cards, then the three sizes of controls (buttons and inputs, chips, small marks).
+     The same in every style. */
   --corner-card: 16px;
   --corner-lg: 1rem;
   --corner-md: 0.75rem;
@@ -91,7 +92,7 @@
 }
 
 /* ---------- Barragán: rosa mexicano on plaster, after the walls of Luis Barragán's houses ----------
-   Flat planes and square corners, and no serif anywhere: the display face is a grotesque. */
+   Flat planes and no serif anywhere: the display face is a grotesque. */
 
 [data-look="barragan"] {
   --bg:        #FAF2EF;  /* plaster */
@@ -108,11 +109,6 @@
 
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-text: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-
-  --corner-card: 4px;
-  --corner-lg: 4px;
-  --corner-md: 4px;
-  --corner-sm: 4px;
 }
 
 [data-look="barragan"][data-theme="dark"] {
@@ -150,8 +146,6 @@
 
   --font-display: "Alegreya", ui-serif, Georgia, serif;
   --font-text: "Alegreya Sans", ui-sans-serif, system-ui, sans-serif;
-
-  --corner-card: 10px;
 
   /* Alegreya Sans runs small: everything measured in rem grows with it. */
   font-size: 106.25%;
