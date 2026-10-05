@@ -1,6 +1,8 @@
-/* Design tokens — "industrial loft café" (see CLAUDE.md §6).
-   The resolved theme is always set as data-theme on <html> by the inline
-   script in index.html and by lib/theme.ts. */
+/* Design tokens. Two choices meet here, both set on <html> by the inline script in
+   index.html and by lib/theme.ts:
+     data-theme  light | dark
+     data-look   the style: its colours and typefaces, each with a light and a dark side
+   "classic" is the original "industrial loft café" (CLAUDE.md §6) and needs no selector. */
 
 :root {
   --bg:        #F4F1EC;  /* warm concrete */
@@ -16,6 +18,10 @@
 
   /* Derived: text on brick/error fills (keeps WCAG AA contrast in both themes). */
   --on-accent: #FFFFFF;
+
+  /* Typefaces: the display face sets the Spanish and the headings, the text face everything else. */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-text: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   color-scheme: light;
 }
@@ -35,4 +41,45 @@
   --on-accent: #161614;
 
   color-scheme: dark;
+}
+
+/* ---------- Talavera: cobalt on white glaze, like the tiles of Puebla; yellow for highlights ----------
+   Comes after the blocks above and redefines every colour, so it wins over [data-theme="dark"]
+   by order and its own dark side by the second attribute. The accent is never red or green:
+   those mean wrong and right. */
+
+[data-look="talavera"] {
+  --bg:        #F2F5FB;  /* glaze */
+  --surface:   #FFFFFF;
+  --surface-2: #E2E9F6;
+  --ink:       #0F1A3A;  /* indigo */
+  --ink-muted: #55607F;
+  --line:      #D2DAEA;
+  --brick:     #1F45B5;  /* cobalt: the primary accent keeps its token name */
+  --leaf:      #2A7A4B;
+  --amber:     #F0B11A;
+  --error:     #C0392B;
+  --on-accent: #FFFFFF;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-text: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-look="talavera"][data-theme="dark"] {
+  --bg:        #0B1124;
+  --surface:   #131B35;
+  --surface-2: #1C2646;
+  --ink:       #EEF1FA;
+  --ink-muted: #9AA6C7;
+  --line:      #293457;
+  --brick:     #8FA8FF;
+  --leaf:      #6FBF8B;
+  --amber:     #FFCB45;
+  --error:     #FF8A7A;
+  --on-accent: #0B1124;
+}
+
+/* Young Serif has one weight: a heading asking for semibold gets it as drawn, not smeared bolder. */
+[data-look="talavera"] .font-serif {
+  font-synthesis-weight: none;
 }

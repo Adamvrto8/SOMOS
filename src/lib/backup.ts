@@ -8,7 +8,7 @@ import { syncPracticeCards } from './practice'
 import { getReminderSettings, setReminderTime } from './reminder'
 import { parseSettingsBackup, type SettingsBackup } from './settingsBackup'
 import { syncReviewCards } from './srs'
-import { getThemePref, setThemePref } from './theme'
+import { getLook, getThemePref, setLook, setThemePref } from './theme'
 
 // JSON backup of the learner's data on the device: IndexedDB, the numbered lessons' progress and
 // the settings (localStorage; see settingsBackup.ts for what is left out). The DeepL cache is not backed up.
@@ -43,12 +43,13 @@ export interface ImportResult {
 
 function currentSettings(): SettingsBackup {
   const { enabled, time } = getReminderSettings()
-  return { theme: getThemePref(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage() }
+  return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage() }
 }
 
 /** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
 async function applySettings(settings: SettingsBackup): Promise<boolean> {
   if (settings.theme) setThemePref(settings.theme)
+  if (settings.look) setLook(settings.look)
   if (settings.dailyGoal) setDailyGoal(settings.dailyGoal)
   if (settings.autoReview) setAutoReview(settings.autoReview)
   if (settings.language) setLanguage(settings.language)

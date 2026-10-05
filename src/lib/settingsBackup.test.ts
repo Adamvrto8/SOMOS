@@ -12,6 +12,12 @@ describe('parseSettingsBackup', () => {
     expect(parseSettingsBackup({ language: 'de' }).language).toBeUndefined()
   })
 
+  it('carries the style, and drops one it does not know', () => {
+    expect(parseSettingsBackup({ look: 'talavera' }).look).toBe('talavera')
+    expect(parseSettingsBackup({ look: 'classic' }).look).toBe('classic')
+    expect(parseSettingsBackup({ look: 'neon' }).look).toBeUndefined()
+  })
+
   it('has nothing for a backup made before settings were part of it', () => {
     expect(parseSettingsBackup(undefined)).toEqual({})
     expect(parseSettingsBackup('dark')).toEqual({})

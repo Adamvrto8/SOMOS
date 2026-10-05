@@ -4,8 +4,9 @@ import { Segmented } from '../../components/Segmented'
 import { dictionaries, useT } from '../../i18n'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { LANGUAGES, setLanguage, useLanguage } from '../../lib/language'
+import { LOOKS } from '../../lib/look'
 import { reportProgress } from '../../lib/reminder'
-import { setThemePref, useThemePref } from '../../lib/theme'
+import { setLook, setThemePref, useLook, useThemePref } from '../../lib/theme'
 import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
 import { ReminderSettings } from './ReminderSettings'
@@ -13,6 +14,7 @@ import { VoiceSettings } from './VoiceSettings'
 
 export function SettingsPage() {
   const themePref = useThemePref()
+  const look = useLook()
   const dailyGoal = useDailyGoal()
   const language = useLanguage()
   const text = useT()
@@ -51,6 +53,17 @@ export function SettingsPage() {
             { id: 'dark', label: text.settings.themeOptions.dark },
           ]}
         />
+        {/* The style is its own choice: each one has a light and a dark side. */}
+        <div className="mt-2">
+          <Segmented
+            mode="radio"
+            label={text.settings.look}
+            idPrefix="look"
+            value={look}
+            onChange={setLook}
+            options={LOOKS.map((id) => ({ id, label: text.settings.lookOptions[id] }))}
+          />
+        </div>
       </section>
 
       <section aria-labelledby="goal-heading">

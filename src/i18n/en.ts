@@ -38,6 +38,8 @@ export const en: Dictionary = {
     appearance: 'Appearance',
     theme: 'Theme',
     themeOptions: { system: 'System', light: 'Light', dark: 'Dark' },
+    look: 'Style',
+    lookOptions: { classic: 'Original', talavera: 'Talavera' },
     dailyGoal: 'Daily goal',
     dailyGoalHint: 'Answers per day, in lessons and in review.',
     version: 'Version',

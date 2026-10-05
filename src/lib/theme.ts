@@ -1,15 +1,30 @@
 import { useSyncExternalStore } from 'react'
+import { parseLook, type Look } from './look'
 
 export type ThemePref = 'system' | 'light' | 'dark'
 export type Theme = 'light' | 'dark'
 
 // Keep in sync with the inline script in index.html.
 const STORAGE_KEY = 'somos-theme'
-const THEME_COLOR: Record<Theme, string> = { light: '#F4F1EC', dark: '#161614' }
+const LOOK_KEY = 'somos-look'
+/** The page background of each style: what the phone paints its status bar with. */
+const THEME_COLOR: Record<Look, Record<Theme, string>> = {
+  classic: { light: '#F4F1EC', dark: '#161614' },
+  talavera: { light: '#F2F5FB', dark: '#0B1124' },
+}
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
 const listeners = new Set<() => void>()
 let currentPref: ThemePref = readThemePref()
+let currentLook: Look = readLook()
+
+function readLook(): Look {
+  try {
+    return parseLook(localStorage.getItem(LOOK_KEY)) ?? 'classic'
+  } catch {
+    return 'classic'
+  }
+}
 
 function readThemePref(): ThemePref {
   try {
@@ -38,7 +53,8 @@ function resolveTheme(pref: ThemePref): Theme {
 function applyTheme(pref: ThemePref) {
   const theme = resolveTheme(pref)
   document.documentElement.dataset.theme = theme
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEME_COLOR[theme])
+  document.documentElement.dataset.look = currentLook
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEME_COLOR[currentLook][theme])
 }
 
 // Follow the OS setting live while the preference is "system".
@@ -65,4 +81,22 @@ function subscribe(notify: () => void) {
 
 export function useThemePref(): ThemePref {
   return useSyncExternalStore(subscribe, () => currentPref)
+}
+
+/** Current style outside React (the backup). */
+export const getLook = () => currentLook
+
+export function setLook(look: Look) {
+  currentLook = look
+  try {
+    localStorage.setItem(LOOK_KEY, look)
+  } catch {
+    // The choice just won't survive a reload.
+  }
+  applyTheme(currentPref)
+  listeners.forEach((notify) => notify())
+}
+
+export function useLook(): Look {
+  return useSyncExternalStore(subscribe, () => currentLook)
 }

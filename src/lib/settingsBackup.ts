@@ -1,6 +1,7 @@
 import { AUTO_REVIEW_LIMITS, type AutoReviewSettings } from './autoReview'
 import { GOAL_OPTIONS } from './dailyGoal'
 import { parseLanguage, type Language } from './language'
+import { parseLook, type Look } from './look'
 import type { ThemePref } from './theme'
 
 /**
@@ -10,6 +11,7 @@ import type { ThemePref } from './theme'
  */
 export interface SettingsBackup {
   theme?: ThemePref
+  look?: Look // missing in backups made before 2026-10-05
   dailyGoal?: number
   autoReview?: AutoReviewSettings
   reminder?: { enabled: boolean; time: string }
@@ -23,8 +25,10 @@ const isRec = (x: unknown): x is Record<string, unknown> => typeof x === 'object
 export function parseSettingsBackup(data: unknown): SettingsBackup {
   const settings: SettingsBackup = {}
   if (!isRec(data)) return settings
-  const { theme, dailyGoal, autoReview, reminder, language } = data
+  const { theme, look, dailyGoal, autoReview, reminder, language } = data
   if (theme === 'system' || theme === 'light' || theme === 'dark') settings.theme = theme
+  const parsedLook = parseLook(look)
+  if (parsedLook) settings.look = parsedLook
   if ((GOAL_OPTIONS as readonly unknown[]).includes(dailyGoal)) settings.dailyGoal = dailyGoal as number
   if (isRec(autoReview) && typeof autoReview.enabled === 'boolean' && (AUTO_REVIEW_LIMITS as readonly unknown[]).includes(autoReview.limit)) {
     settings.autoReview = { enabled: autoReview.enabled, limit: autoReview.limit as AutoReviewSettings['limit'] }
