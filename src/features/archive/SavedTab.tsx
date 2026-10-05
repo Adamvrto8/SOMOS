@@ -59,7 +59,8 @@ export function SavedTab({ items }: { items: SavedItem[] }) {
           {visibleSentences.length > 0 && <SectionTitle id="saved-words-heading">{text.words}</SectionTitle>}
           <ul aria-labelledby="saved-words-heading" className="divide-y divide-line">
             {visibleWords.map((word) => (
-              <WordRow key={word.id} word={word} list={wordIds} />
+              // Every word here is starred; the star says so the way it does in search and in a topic.
+              <WordRow key={word.id} word={word} saved list={wordIds} />
             ))}
           </ul>
         </section>
