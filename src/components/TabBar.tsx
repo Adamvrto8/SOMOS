@@ -11,7 +11,7 @@ interface Tab {
 }
 
 const TABS: Tab[] = [
-  { to: '/', key: 'home', icon: House },
+  { to: '/', key: 'home', icon: House, sections: ['/stats'] },
   { to: '/search', key: 'search', icon: Search, sections: ['/word', '/topic'] },
   { to: '/practice', key: 'practice', icon: PencilLine },
   { to: '/archive', key: 'archive', icon: Bookmark },
@@ -20,8 +20,9 @@ const TABS: Tab[] = [
 const isUnder = (pathname: string, base: string) => pathname === base || pathname.startsWith(`${base}/`)
 
 function isActive(tab: Tab, pathname: string) {
-  if (tab.to === '/') return pathname === '/'
-  return [tab.to, ...(tab.sections ?? [])].some((base) => isUnder(pathname, base))
+  // "/" is the base of every path: Domov is itself and its own sections only.
+  const bases = tab.to === '/' ? (tab.sections ?? []) : [tab.to, ...(tab.sections ?? [])]
+  return pathname === tab.to || bases.some((base) => isUnder(pathname, base))
 }
 
 export function TabBar() {

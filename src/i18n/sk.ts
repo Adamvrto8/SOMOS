@@ -195,6 +195,29 @@ export const sk = {
     wordOfDay: 'Slovo dňa',
   },
 
+  /** The overview behind the week chart of Domov (/stats). */
+  stats: {
+    title: 'Prehľad',
+    open: 'Celý prehľad',
+    longestStreak: (n: number) => `${pluralSk(n, ['deň', 'dni', 'dní'])} · najdlhšia séria`,
+    answersInTotal: (n: number) => `${pluralSk(n, ['odpoveď', 'odpovede', 'odpovedí'])} spolu`,
+    since: (date: string) => `od ${date}`,
+    correctAnswers: 'správnych odpovedí',
+    percent: (n: number) => `${n} %`,
+    history: 'História',
+    period: 'Obdobie',
+    days: (n: number) => `${n} dní`,
+    perDay: (n: number) => `priemer ${n} denne`,
+    goalLegend: (goal: number, met: number, of: number) => `denný cieľ ${goal} · splnený ${met} z ${of} dní`,
+    byDay: (n: number) => `Odpovede po dňoch, posledných ${n} dní`,
+    previousDay: 'Predchádzajúci deň',
+    nextDay: 'Nasledujúci deň',
+    goalMet: 'cieľ splnený',
+    byExercise: (n: number) => `Čo si cvičil · ${n} dní`,
+    review: 'Opakovanie',
+    nothing: 'V tomto období žiadne odpovede.',
+  },
+
   exercise: {
     types: {
       cloze: { label: 'Doplňovačka', description: 'Doplň chýbajúce slovo v správnom tvare.', instruction: 'Doplň slovo' },

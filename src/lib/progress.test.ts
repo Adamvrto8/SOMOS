@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCard, Rating } from 'ts-fsrs'
 import { addDays, dayKey } from './dates'
 import { formatInterval, isDueToday, previewIntervals, scheduleNext } from './srs'
-import { computeActivity, computeStreak, goalDays, summarizeWeek } from './stats'
+import { byExercise, computeActivity, computeHistory, computeStreak, goalDays, longestStreak, summarizeDays, summarizeWeek } from './stats'
 import { wordOfDay } from './wordOfDay'
 
 const at = (y: number, m: number, d: number, h = 12) => new Date(y, m - 1, d, h)
@@ -121,5 +121,50 @@ describe('wordOfDay', () => {
 
   it('always has an example sentence', () => {
     for (let i = 0; i < 60; i++) expect(wordOfDay(addDays(at(2026, 1, 1), i)).examples.length).toBeGreaterThan(0)
+  })
+})
+
+describe('history (the overview behind the week chart)', () => {
+  const answers = (day: number, count: number, exercise = 'vocab', right = count) =>
+    Array.from({ length: count }, (_, i) => ({ at: at(2026, 9, day, 8).getTime() + i * 60_000, correct: i < right, exercise }))
+
+  it('buckets any number of days, oldest first, today last', () => {
+    const now = at(2026, 9, 25, 18)
+    const days = summarizeDays([...answers(25, 2), ...answers(1, 3), ...answers(-5, 9)], now, 30)
+    expect(days).toHaveLength(30)
+    expect(days[0].key).toBe('2026-08-27')
+    expect(days[29]).toMatchObject({ key: '2026-09-25', count: 2 })
+    expect(days.find((d) => d.key === '2026-09-01')).toMatchObject({ count: 3 })
+    // The day before the window is left out.
+    expect(days.reduce((n, d) => n + d.count, 0)).toBe(5)
+  })
+
+  it('finds the longest run of days that reached the goal', () => {
+    expect(longestStreak(new Set())).toBe(0)
+    expect(longestStreak(new Set(['2026-09-01']))).toBe(1)
+    // Over a month end, and the longer of two runs.
+    expect(longestStreak(new Set(['2026-08-30', '2026-08-31', '2026-09-01', '2026-09-03', '2026-09-04']))).toBe(3)
+  })
+
+  it('splits answers by exercise, most practised first', () => {
+    const split = byExercise([...answers(24, 2, 'cloze', 1), ...answers(25, 5, 'vocab', 4), ...answers(25, 1, 'review')])
+    expect(split).toEqual([
+      { exercise: 'vocab', count: 5, correct: 4 },
+      { exercise: 'cloze', count: 2, correct: 1 },
+      { exercise: 'review', count: 1, correct: 1 },
+    ])
+  })
+
+  it('sums up everything since the first answer', () => {
+    const now = at(2026, 9, 25, 18)
+    const all = [...answers(20, 3), ...answers(21, 3), ...answers(22, 1), ...answers(24, 4, 'cloze', 2), ...answers(25, 3)]
+    expect(computeHistory(all, now, 3)).toMatchObject({
+      total: 14,
+      correct: 12,
+      firstDay: at(2026, 9, 20, 8),
+      streak: { days: 2, activeToday: true },
+      longestStreak: 2,
+    })
+    expect(computeHistory([], now, 3)).toMatchObject({ total: 0, correct: 0, firstDay: null, longestStreak: 0 })
   })
 })

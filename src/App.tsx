@@ -11,6 +11,7 @@ import { TipPage } from './features/grammar/TipPage'
 import { HomePage } from './features/home/HomePage'
 import { ReviewPage } from './features/review/ReviewPage'
 import { SearchPage } from './features/search/SearchPage'
+import { StatsPage } from './features/stats/StatsPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: 'stats', element: <StatsPage /> },
       { path: 'search', element: <SearchPage /> },
       { path: 'word/:id', element: <WordPage /> },
       { path: 'topic/:id', element: <TopicPage /> },

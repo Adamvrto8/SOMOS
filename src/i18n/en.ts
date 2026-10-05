@@ -181,6 +181,28 @@ export const en: Dictionary = {
     wordOfDay: 'Word of the day',
   },
 
+  stats: {
+    title: 'Overview',
+    open: 'Full overview',
+    longestStreak: (n) => `${pluralEn(n, 'day', 'days')} · longest streak`,
+    answersInTotal: (n) => `${pluralEn(n, 'answer', 'answers')} in total`,
+    since: (date) => `since ${date}`,
+    correctAnswers: 'of answers correct',
+    percent: (n) => `${n}%`,
+    history: 'History',
+    period: 'Period',
+    days: (n) => `${n} days`,
+    perDay: (n) => `${n} a day on average`,
+    goalLegend: (goal, met, of) => `daily goal ${goal} · reached on ${met} of ${of} days`,
+    byDay: (n) => `Answers by day, last ${n} days`,
+    previousDay: 'Previous day',
+    nextDay: 'Next day',
+    goalMet: 'goal reached',
+    byExercise: (n) => `What you practiced · ${n} days`,
+    review: 'Review',
+    nothing: 'No answers in this period.',
+  },
+
   exercise: {
     types: {
       cloze: { label: 'Fill in the blank', description: 'Fill in the missing word in the right form.', instruction: 'Fill in the word' },

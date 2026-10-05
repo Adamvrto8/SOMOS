@@ -49,19 +49,74 @@ export function computeStreak(countedDays: Set<string>, now: Date): Streak {
   return { days, activeToday }
 }
 
-export function summarizeWeek(recent: Pick<Attempt, 'at' | 'correct'>[], now: Date): DayStat[] {
-  const week = Array.from({ length: 7 }, (_, i) => {
-    const date = startOfDay(addDays(now, i - 6))
+/** The longest run of consecutive counted days there has ever been. */
+export function longestStreak(countedDays: Set<string>): number {
+  let longest = 0
+  for (const key of countedDays) {
+    const day = new Date(`${key}T12:00:00`)
+    // Count each run once, from its first day.
+    if (countedDays.has(dayKey(addDays(day, -1)))) continue
+    let length = 1
+    while (countedDays.has(dayKey(addDays(day, length)))) length++
+    longest = Math.max(longest, length)
+  }
+  return longest
+}
+
+/** Answers per day for the last `days` days, oldest first, today last. */
+export function summarizeDays(attempts: Pick<Attempt, 'at' | 'correct'>[], now: Date, days: number): DayStat[] {
+  const stats = Array.from({ length: days }, (_, i) => {
+    const date = startOfDay(addDays(now, i - (days - 1)))
     return { key: dayKey(date), date, count: 0, correct: 0 }
   })
-  const byKey = new Map(week.map((d) => [d.key, d]))
-  for (const a of recent) {
+  const byKey = new Map(stats.map((d) => [d.key, d]))
+  for (const a of attempts) {
     const day = byKey.get(dayKey(new Date(a.at)))
     if (!day) continue
     day.count++
     if (a.correct) day.correct++
   }
-  return week
+  return stats
+}
+
+export const summarizeWeek = (recent: Pick<Attempt, 'at' | 'correct'>[], now: Date): DayStat[] => summarizeDays(recent, now, 7)
+
+export interface ExerciseStat {
+  exercise: string // an exercise type, or "review"
+  count: number
+  correct: number
+}
+
+/** Answers split by what was practised, most practised first. */
+export function byExercise(attempts: Pick<Attempt, 'exercise' | 'correct'>[]): ExerciseStat[] {
+  const stats = new Map<string, ExerciseStat>()
+  for (const a of attempts) {
+    const stat = stats.get(a.exercise) ?? { exercise: a.exercise, count: 0, correct: 0 }
+    stat.count++
+    if (a.correct) stat.correct++
+    stats.set(a.exercise, stat)
+  }
+  return [...stats.values()].sort((a, b) => b.count - a.count)
+}
+
+/** Everything since the first answer, for the overview page. */
+export interface History {
+  total: number
+  correct: number
+  firstDay: Date | null // when the first answer was given
+  streak: Streak
+  longestStreak: number
+}
+
+export function computeHistory(all: Pick<Attempt, 'at' | 'correct'>[], now: Date, goal: number): History {
+  const counted = goalDays(all.map((a) => a.at), goal)
+  return {
+    total: all.length,
+    correct: all.filter((a) => a.correct).length,
+    firstDay: all.length ? new Date(Math.min(...all.map((a) => a.at))) : null,
+    streak: computeStreak(counted, now),
+    longestStreak: longestStreak(counted),
+  }
 }
 
 export function computeActivity(allTimestamps: number[], recent: Pick<Attempt, 'at' | 'correct'>[], now: Date, goal: number): Activity {
@@ -75,6 +130,11 @@ export function computeActivity(allTimestamps: number[], recent: Pick<Attempt, '
     weekTotal,
     weekAccuracy: weekTotal ? weekCorrect / weekTotal : null,
   }
+}
+
+/** Every attempt, live: the overview page computes its periods from them. */
+export function useAttempts(): Attempt[] | undefined {
+  return useLiveQuery(() => db.attempts.orderBy('at').toArray(), [])
 }
 
 /** Live activity from the attempts table (exercise answers and SRS reviews), the streak by the daily goal. */

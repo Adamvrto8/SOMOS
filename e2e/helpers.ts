@@ -69,3 +69,29 @@ export async function swipe(page: Page, from: Point, to: Point): Promise<void> {
   await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
   await cdp.detach()
 }
+
+/**
+ * Answers in the past: `perDay[daysAgo]` answers on that day (0 = today), two of three right,
+ * every fifth a review. The page has to be open already, so the database exists; it is reloaded.
+ */
+export async function seedAttempts(page: Page, perDay: Record<number, number>): Promise<void> {
+  await page.evaluate(async (counts) => {
+    const open = indexedDB.open('somos')
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      open.onsuccess = () => resolve(open.result)
+      open.onerror = () => reject(open.error)
+    })
+    const tx = db.transaction('attempts', 'readwrite')
+    for (const [daysAgo, count] of Object.entries(counts)) {
+      for (let i = 0; i < count; i++) {
+        const at = new Date()
+        at.setDate(at.getDate() - Number(daysAgo))
+        at.setHours(10, i % 60, 0, 0)
+        tx.objectStore('attempts').add({ exercise: i % 5 === 4 ? 'review' : 'vocab', itemId: `seed-${daysAgo}-${i}`, correct: i % 3 !== 0, at: at.getTime() })
+      }
+    }
+    await new Promise((resolve) => (tx.oncomplete = resolve))
+    db.close()
+  }, perDay)
+  await page.reload()
+}
