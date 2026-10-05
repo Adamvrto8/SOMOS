@@ -1,0 +1,99 @@
+[
+  { "id": "trabajo", "en": ["work", "job"], "examples": ["I'm looking for a job.", "What time do you get off work?"] },
+  { "id": "oficina", "en": ["office"], "examples": ["The office is on the third floor."] },
+  {
+    "id": "jefe",
+    "en": ["boss"],
+    "examples": ["My boss is really nice."],
+    "note": "jefa = a female boss. “Buena onda” is Mexican slang for “nice, easygoing”."
+  },
+  { "id": "computadora", "en": ["computer"], "examples": ["My computer is very slow."], "note": "In Mexico it's “computadora”; in Spain “ordenador”." },
+  {
+    "id": "celular",
+    "en": ["cell phone", "phone", "cell"],
+    "examples": ["Can you give me your cell number?"],
+    "note": "In Mexico it's “celular” (in Spain “móvil”)."
+  },
+  {
+    "id": "junta",
+    "en": ["meeting"],
+    "examples": ["I have a meeting at ten."],
+    "note": "In Mexico the usual word for a work meeting (elsewhere more often “reunión”)."
+  },
+  { "id": "dinero", "en": ["money"], "examples": ["I don't have much money."], "note": "Always singular: el dinero, mucho dinero." },
+  { "id": "ocupado", "en": ["busy", "occupied"], "examples": ["I'm very busy today.", "The bathroom is occupied."] },
+  { "id": "empresa", "en": ["company", "business", "firm"], "examples": ["I work at a software company."] },
+  {
+    "id": "companero",
+    "en": ["coworker", "colleague", "classmate"],
+    "examples": ["My coworkers are really nice."],
+    "note": "compañera = a female coworker; compañero de trabajo = coworker."
+  },
+  {
+    "id": "reunion",
+    "en": ["meeting", "gathering"],
+    "examples": ["We have a meeting with the client."],
+    "note": "In Mexico a work meeting is often called a “junta”."
+  },
+  { "id": "cliente", "en": ["client", "customer"], "examples": ["The client arrives at eleven."], "note": "la clienta = a female customer." },
+  { "id": "correo", "en": ["email", "mail"], "examples": ["I'll send you an email."], "note": "correo (electrónico) = email." },
+  { "id": "sueldo", "en": ["salary", "pay", "wage"], "examples": ["The salary isn't very high."] },
+  { "id": "chamba", "en": ["work (slang)", "job", "gig"], "examples": ["I have a lot of work this week."], "note": "Mexican slang. Chambear = to work." },
+  { "id": "escritorio", "en": ["desk"], "examples": ["My phone is on the desk."] },
+  { "id": "proyecto", "en": ["project"], "examples": ["We're working on a new project."] },
+  { "id": "horario", "en": ["schedule", "working hours"], "examples": ["What's your schedule?"] },
+  { "id": "doctor", "en": ["doctor"], "examples": ["The doctor says I'm fine."], "note": "doctora = a female doctor." },
+  {
+    "id": "maestro",
+    "en": ["teacher"],
+    "examples": ["The teacher is very patient."],
+    "note": "maestra = a female teacher. In Mexico it's also common as a form of address."
+  },
+  { "id": "ingeniero", "en": ["engineer"], "examples": ["My husband is an engineer."] },
+  { "id": "abogado", "en": ["lawyer", "attorney"], "examples": ["I need to talk to a lawyer."] },
+  { "id": "vendedor", "en": ["salesperson", "seller", "salesman"], "examples": ["The salesperson was very nice."] },
+  { "id": "trabajador", "en": ["hardworking"], "examples": ["Your brother is very hardworking."] },
+  { "id": "cansado", "en": ["tired"], "examples": ["I'm very tired today."] },
+  { "id": "dificil", "en": ["difficult", "hard"], "examples": ["My job is hard but interesting."] },
+  { "id": "facil", "en": ["easy"], "examples": ["It's an easy job."] },
+  { "id": "interesante", "en": ["interesting"], "examples": ["It's a very interesting project."] },
+  { "id": "importante", "en": ["important"], "examples": ["Tomorrow I have an important meeting."] },
+  {
+    "id": "quincena",
+    "en": ["paycheck (twice a month)", "biweekly pay"],
+    "examples": ["I get my paycheck on Friday."],
+    "note": "In Mexico wages are usually paid on the 15th and on the last day of the month."
+  },
+  { "id": "entrevista", "en": ["interview"], "examples": ["Tomorrow I have a job interview."] },
+  { "id": "contrato", "en": ["contract"], "examples": ["I signed the contract yesterday."] },
+  { "id": "fabrica", "en": ["factory"], "examples": ["My dad works in a factory."], "note": "A false friend: fábrica = factory; fabric = tela." },
+  { "id": "enfermera", "en": ["nurse"], "examples": ["My aunt is a nurse."], "note": "A man: el enfermero." },
+  { "id": "cocinero", "en": ["cook", "chef"], "examples": ["The cook makes delicious tacos."] },
+  { "id": "chofer", "en": ["driver", "chauffeur"], "examples": ["The bus driver drives very fast."] },
+  { "id": "albanil", "en": ["bricklayer", "construction worker", "mason"], "examples": ["The bricklayer is fixing the wall."] },
+  { "id": "jubilado", "en": ["retired", "retiree"], "examples": ["My grandpa is already retired."] },
+  { "id": "experiencia", "en": ["experience"], "examples": ["I have five years of experience."] },
+  { "id": "descanso", "en": ["break", "rest"], "examples": ["We have a half-hour break."] },
+  { "id": "negocio", "en": ["business"], "examples": ["My uncle has a taco business."] },
+  { "id": "carrera", "en": ["career", "degree", "major"], "examples": ["I studied law."], "note": "Also a race: una carrera de diez kilómetros." },
+  { "id": "empleo", "en": ["employment", "job"], "examples": ["I'm looking for a job."] },
+  { "id": "meta", "en": ["goal"], "examples": ["My goal is to speak Spanish well."] },
+  { "id": "exito", "en": ["success"], "examples": ["Best of luck in your new job!"], "note": "Careful: éxito = success, not exit (that's la salida)." },
+  { "id": "renuncia", "en": ["resignation"], "examples": ["I handed in my resignation."] },
+  { "id": "aumento", "en": ["raise", "increase"], "examples": ["I asked my boss for a raise."] },
+  { "id": "turno", "en": ["shift", "turn"], "examples": ["I work the night shift."] },
+  { "id": "propuesta", "en": ["proposal", "offer"], "examples": ["I have a proposal for the project."] },
+  { "id": "responsable", "en": ["responsible"], "examples": ["He's a very responsible person."] },
+  { "id": "capaz", "en": ["capable", "able"], "examples": ["You're capable of doing it."] },
+  {
+    "id": "aguinaldo",
+    "en": ["Christmas bonus", "year-end bonus"],
+    "examples": ["In December they pay us the Christmas bonus."],
+    "note": "In Mexico employers must by law pay it by December 20."
+  },
+  { "id": "empleado", "en": ["employee"], "examples": ["The company has two hundred employees."] },
+  { "id": "desempleo", "en": ["unemployment"], "examples": ["Unemployment went down this year."] },
+  { "id": "capacitacion", "en": ["training"], "examples": ["Tomorrow we have a safety training."], "note": "In Mexico the usual word for job training." },
+  { "id": "jubilacion", "en": ["retirement", "pension"], "examples": ["My dad is saving for his retirement."] },
+  { "id": "bono", "en": ["bonus"], "examples": ["If we sell more, they give us a bonus."] }
+]

@@ -1,5 +1,238 @@
 [
   {
+    "id": "ser-estar",
+    "title": "ser and estar",
+    "intro": "Both verbs mean “to be”. Ser says what something is or what it is like. Estar says where it is and what state it is in right now.",
+    "rules": [
+      {
+        "id": "identity",
+        "title": "Who or what it is",
+        "text": "A name, a relationship, a nationality, and also who someone used to be (de niño = as a child).",
+        "because": "It says who or what it is, so ser.",
+        "examples": ["She is my sister.", "When I was a kid, I lived in Puebla."]
+      },
+      {
+        "id": "origin",
+        "title": "Origin",
+        "text": "Where someone or something is from: ser de.",
+        "because": "It's about origin (where someone is from), so ser.",
+        "examples": ["I'm from Slovakia.", "This coffee is from Chiapas."]
+      },
+      {
+        "id": "profession",
+        "title": "Profession",
+        "text": "Without an article: soy maestro, not soy un maestro.",
+        "because": "It's about a profession, so ser.",
+        "examples": ["My mom is a doctor.", "I used to be a waiter."]
+      },
+      {
+        "id": "trait",
+        "title": "Characteristics, description",
+        "text": "What something is like in general: character, looks, color, size, price, opinion.",
+        "because": "It describes what something is like in general, so ser.",
+        "examples": ["My uncle is very funny.", "The house is big.", "The car is red."]
+      },
+      {
+        "id": "time",
+        "title": "Time and date",
+        "text": "Hours, days, dates. For one o'clock it's es la una, otherwise son las…",
+        "because": "It's about the time or the date, so ser.",
+        "examples": ["It's three in the afternoon.", "Today is Monday."]
+      },
+      {
+        "id": "possession",
+        "title": "Whose it is, what it's made of",
+        "text": "Ser de + the owner or the material.",
+        "because": "It says whose it is or what it's made of, so ser.",
+        "examples": ["The phone is Ana's.", "The table is made of wood."]
+      },
+      {
+        "id": "event",
+        "title": "Where and when something takes place",
+        "text": "An event (fiesta, examen, junta) “takes place”, so it's ser even though it's about a place.",
+        "because": "It says when or where something takes place, so ser.",
+        "examples": ["The party is at my house.", "The exam will be on Monday."]
+      },
+      {
+        "id": "place",
+        "title": "Location",
+        "text": "Where someone or something is.",
+        "because": "It's about where someone or something is, so estar.",
+        "examples": ["I'm at home.", "Where is the bathroom?"]
+      },
+      {
+        "id": "state",
+        "title": "State, mood, health",
+        "text": "How someone is doing or what something is like right now. That includes how something tastes.",
+        "because": "It's about a state or a mood right now, so estar.",
+        "examples": ["I'm tired.", "How are you?", "The tacos are really good."]
+      },
+      {
+        "id": "result",
+        "title": "The result of an action",
+        "text": "A state that came out of something. Often a participle in -ado, -ido: cerrado, casado, dormido.",
+        "because": "It's a state that results from an action, so estar.",
+        "examples": ["The store is closed.", "My parents are married."]
+      },
+      {
+        "id": "expression",
+        "title": "Fixed expressions",
+        "text": "Some phrases have to be learned whole: estar de acuerdo, estar en oferta, estar de vacaciones.",
+        "because": "It's a fixed expression with estar.",
+        "examples": ["I agree.", "We're on vacation."]
+      },
+      {
+        "id": "progressive",
+        "title": "An action in progress",
+        "text": "Estar + gerund (-ando, -iendo).",
+        "because": "The action is in progress (estar + gerund), so estar.",
+        "examples": ["I'm eating."]
+      }
+    ]
+  },
+  {
+    "id": "presente",
+    "title": "Present tense (presente)",
+    "intro": "It covers what you do regularly and what you are doing right now. The ending changes with the person, and the pronoun (yo, tú…) is usually left out.",
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Verbs in -ar",
+        "text": "hablar: hablo, hablas, habla, hablamos, hablan.",
+        "examples": ["I speak Spanish.", "Do you work tomorrow?"]
+      },
+      {
+        "id": "er-ir",
+        "title": "Verbs in -er and -ir",
+        "text": "comer: como, comes, come, comemos, comen. vivir: vivo, vives, vive, vivimos, viven.",
+        "examples": ["We eat at two.", "They live in Guadalajara."]
+      },
+      {
+        "id": "stem",
+        "title": "Stem changes",
+        "text": "In some verbs the vowel changes: e → ie (querer: quiero), o → ue (poder: puedo), e → i (pedir: pido). It doesn't change in the nosotros form: queremos, podemos, pedimos.",
+        "examples": ["I want a coffee.", "I can't go today."]
+      },
+      {
+        "id": "yo",
+        "title": "Irregular yo",
+        "text": "Some verbs are irregular only in the yo form: tengo, hago, salgo, pongo, digo, vengo, sé, conozco, doy, veo.",
+        "examples": ["I have two brothers.", "I leave at eight."]
+      },
+      {
+        "id": "irregular",
+        "title": "Fully irregular",
+        "text": "ser: soy, eres, es, somos, son. estar: estoy, estás, está, estamos, están. ir: voy, vas, va, vamos, van.",
+        "examples": ["I'm going to the market."]
+      }
+    ]
+  },
+  {
+    "id": "preterito",
+    "title": "Preterite (pretérito)",
+    "intro": "It tells of something that happened and is over: yesterday, last week, once. In Mexico it's the everyday past tense for recent events too, where English might say “I have eaten”.",
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Verbs in -ar",
+        "text": "hablar: hablé, hablaste, habló, hablamos, hablaron. The accent on the ending matters: hablo = I speak, habló = he spoke.",
+        "examples": ["Yesterday I talked to my mom.", "They bought a house."]
+      },
+      {
+        "id": "er-ir",
+        "title": "Verbs in -er and -ir",
+        "text": "comer: comí, comiste, comió, comimos, comieron. vivir: viví, viviste, vivió, vivimos, vivieron.",
+        "examples": ["I ate tacos.", "Did you go out last night?"]
+      },
+      {
+        "id": "stems",
+        "title": "Irregular stem",
+        "text": "These verbs have a different stem and endings without an accent (-e, -iste, -o, -imos, -ieron): tener → tuve, estar → estuve, poder → pude, hacer → hice (hizo), venir → vine, decir → dije (dijeron).",
+        "examples": ["I couldn't sleep.", "What did you do yesterday?"]
+      },
+      {
+        "id": "ser-ir",
+        "title": "ser and ir share their forms",
+        "text": "fui, fuiste, fue, fuimos, fueron. The rest of the sentence tells you which one it is.",
+        "examples": ["I went to the movies.", "It was a very nice day."]
+      },
+      {
+        "id": "spelling",
+        "title": "Spelling change in the yo form",
+        "text": "To keep the pronunciation: -car → -qué (busqué), -gar → -gué (llegué), -zar → -cé (empecé).",
+        "examples": ["I arrived late.", "I looked for my keys."]
+      },
+      {
+        "id": "third",
+        "title": "A change only in the él and ellos forms",
+        "text": "Stem-changing -ir verbs change in the preterite only in the third person: e → i (pedir: pidió, pidieron), o → u (dormir: durmió, durmieron). Between two vowels, i becomes y: leer → leyó, leyeron.",
+        "examples": ["He ordered a coffee.", "They slept eight hours.", "He read the whole book."]
+      }
+    ]
+  },
+  {
+    "id": "imperfecto",
+    "title": "Imperfect (imperfecto)",
+    "intro": "It describes what used to happen or what things were like: what you used to do, how it was, how old you were.",
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Verbs in -ar",
+        "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablaban. The yo and él forms are the same.",
+        "examples": ["As a kid I used to play in the street."]
+      },
+      {
+        "id": "er-ir",
+        "title": "Verbs in -er and -ir",
+        "text": "comer: comía, comías, comía, comíamos, comían. vivir: vivía, vivías, vivía, vivíamos, vivían.",
+        "examples": ["We lived near the sea."]
+      },
+      {
+        "id": "irregular",
+        "title": "Only three irregular verbs",
+        "text": "ser: era, eras, era, éramos, eran. ir: iba, ibas, iba, íbamos, iban. ver: veía, veías, veía, veíamos, veían.",
+        "examples": ["When I was a kid, I walked to school."]
+      },
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "A habit (siempre, todos los días, antes), a description in the past, age and time. English often says “used to” or “was …ing”.",
+        "examples": ["I used to work at a bank.", "I was ten years old.", "It was eight o'clock."]
+      }
+    ]
+  },
+  {
+    "id": "preterito-imperfecto",
+    "title": "Preterite or imperfect?",
+    "intro": "Both are past tenses. The preterite says what happened. The imperfect says what things were like at the time, or what happened again and again.",
+    "rules": [
+      {
+        "id": "event",
+        "title": "One completed event → preterite",
+        "text": "Words like ayer, anoche, el lunes, una vez, hace dos años.",
+        "examples": ["Yesterday I went to the doctor.", "I lived in Mexico for two years."]
+      },
+      {
+        "id": "habit",
+        "title": "Habit and repetition → imperfect",
+        "text": "Words like siempre, todos los días, cada verano, de niño, antes.",
+        "examples": ["We used to go to the beach every summer."]
+      },
+      {
+        "id": "background",
+        "title": "Description and background → imperfect",
+        "text": "What the weather was like, how someone felt, what time it was, what was going on.",
+        "examples": ["It was cold and I was tired."]
+      },
+      {
+        "id": "together",
+        "title": "Both in one sentence",
+        "text": "The imperfect is the background; the preterite is what suddenly happened.",
+        "examples": ["I was sleeping when the phone rang.", "When we arrived, the hotel was already full."]
+      }
+    ]
+  },
+  {
     "id": "futuro",
     "title": "Future tense (futuro)",
     "intro": "The endings are added to the whole infinitive and are the same for all verbs.",
@@ -27,6 +260,216 @@
         "title": "A guess",
         "text": "The future tense also expresses a guess about the present.",
         "examples": ["I wonder where Ana is."]
+      }
+    ]
+  },
+  {
+    "id": "progresivo",
+    "title": "Present progressive (estar + gerundio)",
+    "intro": "It says what is happening at this very moment. It is made of the verb estar and a gerund, like English “I am working”.",
+    "rules": [
+      {
+        "id": "form",
+        "title": "estar + gerund",
+        "text": "Only estar is conjugated: estoy, estás, está, estamos, están. The gerund doesn't change.",
+        "examples": ["I'm working.", "What are you doing?"]
+      },
+      {
+        "id": "gerund",
+        "title": "How the gerund is formed",
+        "text": "-ar → -ando (hablar: hablando), -er and -ir → -iendo (comer: comiendo, vivir: viviendo).",
+        "examples": ["We're eating."]
+      },
+      {
+        "id": "irregular",
+        "title": "Irregular gerunds",
+        "text": "leer → leyendo, ir → yendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
+        "examples": ["The child is sleeping.", "I'm reading a book."]
+      },
+      {
+        "id": "use",
+        "title": "When the present is enough",
+        "text": "Spanish uses it less than English does: for habits and for the near future it's the plain present, not the progressive.",
+        "examples": ["I work at a bank.", "I'm working tomorrow."]
+      }
+    ]
+  },
+  {
+    "id": "gender",
+    "title": "Gender of nouns",
+    "intro": "Every noun is masculine (el) or feminine (la), things included. English has nothing like it, but the ending often tells you which it is.",
+    "rules": [
+      {
+        "id": "o-a",
+        "title": "-o is masculine, -a is feminine",
+        "text": "True for most words.",
+        "examples": ["the book", "the table"]
+      },
+      {
+        "id": "feminine",
+        "title": "Feminine endings",
+        "text": "-ción, -sión, -dad, -tad, -umbre.",
+        "examples": ["the song", "the city", "the custom"]
+      },
+      {
+        "id": "masculine",
+        "title": "Masculine endings",
+        "text": "-or, -aje and most words in -ma that come from Greek.",
+        "examples": ["the color", "the trip", "the problem"]
+      },
+      {
+        "id": "exceptions",
+        "title": "Exceptions worth knowing",
+        "text": "La foto and la moto are feminine too (short for fotografía, motocicleta).",
+        "examples": ["the day", "the hand", "the map"]
+      },
+      {
+        "id": "people",
+        "title": "People",
+        "text": "The gender follows the person. The ending -o becomes -a; after a consonant, -a is added.",
+        "examples": ["the teacher (a man, a woman)", "the doctor (a man, a woman)"]
+      },
+      {
+        "id": "a-tonica",
+        "title": "el before a stressed a-",
+        "text": "Feminine words that start with a stressed a- or ha- take the article el in the singular. They stay feminine.",
+        "examples": ["The water is cold."]
+      }
+    ]
+  },
+  {
+    "id": "articles",
+    "title": "Articles (el, la, un, una)",
+    "intro": "Spanish uses articles more often than English does. The article agrees with its noun in gender and number.",
+    "rules": [
+      {
+        "id": "definite",
+        "title": "Definite article: el, la, los, las",
+        "text": "For something specific or already known, and also when you talk about things in general, where English uses no article.",
+        "examples": ["The house is big.", "I like coffee."]
+      },
+      {
+        "id": "indefinite",
+        "title": "Indefinite article: un, una, unos, unas",
+        "text": "For something you mention for the first time or that is one of many.",
+        "examples": ["I have a dog.", "I'm looking for a pharmacy."]
+      },
+      {
+        "id": "contractions",
+        "title": "al and del",
+        "text": "a + el = al, de + el = del. La, los and las never contract.",
+        "examples": ["I'm going to the market.", "It's the neighbor's car."]
+      },
+      {
+        "id": "days",
+        "title": "Days and hours",
+        "text": "el lunes = on Monday, los lunes = on Mondays. Hours take la or las.",
+        "examples": ["On Monday I have a meeting.", "It's eight o'clock."]
+      },
+      {
+        "id": "none",
+        "title": "When there is no article",
+        "text": "With a profession after ser, where English says “a”, and with an unspecified amount.",
+        "examples": ["I'm an engineer.", "I don't have any money."]
+      }
+    ]
+  },
+  {
+    "id": "adjectives",
+    "title": "Adjective agreement",
+    "intro": "An adjective takes the gender and number of its noun and usually comes after it. In English it never changes; in Spanish it almost always does.",
+    "rules": [
+      {
+        "id": "o-a",
+        "title": "-o / -a",
+        "text": "Adjectives in -o have a feminine form in -a.",
+        "examples": ["a new car", "a new house"]
+      },
+      {
+        "id": "same",
+        "title": "One form for both genders",
+        "text": "Adjectives that end in -e or in a consonant don't change with gender.",
+        "examples": ["an interesting book", "an easy class"]
+      },
+      {
+        "id": "plural",
+        "title": "Plural",
+        "text": "After a vowel add -s, after a consonant -es.",
+        "examples": ["The tacos are delicious.", "They are hard questions."]
+      },
+      {
+        "id": "after-verb",
+        "title": "After ser and estar too",
+        "text": "The adjective agrees with whoever or whatever it is about.",
+        "examples": ["She is tired.", "My kids are tall."]
+      },
+      {
+        "id": "position",
+        "title": "Word order",
+        "text": "First the noun, then the adjective. Words like mucho, poco, otro go before it. Bueno and malo shorten to buen, mal before a masculine noun.",
+        "examples": ["a white shirt", "a good friend"]
+      }
+    ]
+  },
+  {
+    "id": "reflexive",
+    "title": "Reflexive verbs",
+    "intro": "The infinitive ends in -se (levantarse). The pronoun changes with the person: me, te, se, nos, se.",
+    "rules": [
+      {
+        "id": "forms",
+        "title": "Conjugation",
+        "text": "levantarse: me levanto, te levantas, se levanta, nos levantamos, se levantan.",
+        "examples": ["I get up at seven.", "What's your name?"]
+      },
+      {
+        "id": "position",
+        "title": "Where the pronoun goes",
+        "text": "Before the conjugated verb. With an infinitive or a gerund it can also be attached to the end.",
+        "examples": ["I'm going to take a shower.", "I'm going to take a shower."]
+      },
+      {
+        "id": "negative",
+        "title": "Negation",
+        "text": "No goes before the pronoun.",
+        "examples": ["I don't remember."]
+      },
+      {
+        "id": "not-like-slovak",
+        "title": "Not something English shows",
+        "text": "English almost never marks these verbs, so each one has to be learned: some need the pronoun, and some that feel as if they should don't.",
+        "examples": ["I'm staying home.", "I'll rest for a while."]
+      }
+    ]
+  },
+  {
+    "id": "accents",
+    "title": "Accents that change the meaning",
+    "intro": "The mark over a vowel (á, é, í, ó, ú) shows the stress. In some words it is the only difference between two words, which is why the app doesn't let it pass there.",
+    "rules": [
+      {
+        "id": "pairs",
+        "title": "Short words",
+        "text": "el = the, él = he. tu = your, tú = you. mi = my, mí = me. si = if, sí = yes. te = you (object), té = tea. se = himself / herself, sé = I know. mas = but, más = more.",
+        "examples": ["He has the book.", "You have your phone.", "Yes, if you want."]
+      },
+      {
+        "id": "questions",
+        "title": "Question words",
+        "text": "In a question they carry an accent: qué, cómo, dónde, cuándo, quién, cuánto. Without it they are linking words.",
+        "examples": ["Where do you live?", "I live where I work."]
+      },
+      {
+        "id": "verbs",
+        "title": "Verb forms",
+        "text": "The accent changes the person and the tense: hablo = I speak, habló = he spoke. esta = this, está = is.",
+        "examples": ["I'm talking to Ana.", "He talked to Ana.", "This house is far away."]
+      },
+      {
+        "id": "nouns",
+        "title": "Nouns",
+        "text": "papa = potato, papá = dad. The ñ can't always be dropped either: año = year.",
+        "examples": ["My dad buys potatoes.", "I'm thirty years old."]
       }
     ]
   }

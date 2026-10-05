@@ -1,0 +1,185 @@
+[
+  {
+    "id": "el",
+    "en": ["the (masculine)"],
+    "examples": ["The car is new."],
+    "note": "el (m), la (f), los (m. pl.), las (f. pl.). With an accent, “él” = he. a + el = al, de + el = del."
+  },
+  { "id": "la", "en": ["the (feminine)"], "examples": ["The house is very big."], "note": "Plural: las (las casas)." },
+  { "id": "un", "en": ["a (masculine)", "an", "one"], "examples": ["I have a dog and two cats."], "note": "un (m), una (f); unos, unas = some, a few." },
+  { "id": "una", "en": ["a (feminine)", "an", "one"], "examples": ["One beer, please."] },
+  { "id": "yo", "en": ["I"], "examples": ["I'm from Slovakia."], "note": "The pronoun is often left out; the verb shows the person by itself: soy = I am." },
+  { "id": "tu", "en": ["your"], "examples": ["Your mom is very kind."], "note": "Without an accent = your; with one, “tú” = you. Plural: tus (tus hermanos)." },
+  { "id": "tu-2", "en": ["you (informal)"], "examples": ["Do you speak English?"], "note": "With an accent = you; without one, “tu” = your." },
+  { "id": "el-2", "en": ["he"], "examples": ["He is my brother."], "note": "With an accent = he; without one, “el” = the." },
+  { "id": "ella", "en": ["she"], "examples": ["She works at a bank."] },
+  {
+    "id": "usted",
+    "en": ["you (formal, to one person)"],
+    "examples": ["Are you the doctor?"],
+    "note": "The polite way to address one person; the verb goes in the 3rd person: usted habla = you speak."
+  },
+  { "id": "nosotros", "en": ["we"], "examples": ["We live in Guadalajara."], "note": "A group of women only says “nosotras”." },
+  { "id": "ellos", "en": ["they"], "examples": ["They arrive tomorrow."], "note": "ellas = they (women only)." },
+  {
+    "id": "ustedes",
+    "en": ["you (to several people)", "you all"],
+    "examples": ["Do you all want something to drink?"],
+    "note": "In Mexico the only form for “you” to several people, friends and strangers alike. Vosotros isn't used."
+  },
+  { "id": "mi", "en": ["my"], "examples": ["My house is your house."], "note": "Plural: mis (mis amigos). With an accent, “mí” = me (para mí = for me)." },
+  {
+    "id": "su",
+    "en": ["his", "her", "your (formal)", "their", "its"],
+    "examples": ["Their house is near here."],
+    "note": "The context tells which: his / her / your (usted, ustedes) / their. Plural: sus."
+  },
+  { "id": "nuestro", "en": ["our"], "examples": ["Our apartment is small."], "note": "nuestra, nuestros, nuestras, to match the noun." },
+  { "id": "este", "en": ["this (masculine)"], "examples": ["This book is very good."], "note": "esta (f), estos, estas. Careful: esta = this, está = is." },
+  { "id": "ese", "en": ["that (masculine)"], "examples": ["How much is that hat?"], "note": "esa (f), esos, esas." },
+  { "id": "esto", "en": ["this (a thing or an idea)"], "examples": ["What is this?"] },
+  { "id": "eso", "en": ["that (a thing or an idea)"], "examples": ["That's not true."] },
+  { "id": "algo", "en": ["something", "anything"], "examples": ["Do you want something to drink?"] },
+  {
+    "id": "nada",
+    "en": ["nothing", "anything"],
+    "examples": ["I don't have anything."],
+    "note": "The double negative is correct in Spanish: no… nada = nothing."
+  },
+  { "id": "alguien", "en": ["someone", "somebody", "anyone", "anybody"], "examples": ["Does anyone speak English?"] },
+  { "id": "nadie", "en": ["nobody", "no one"], "examples": ["There's nobody in the office."] },
+  {
+    "id": "que",
+    "en": ["that", "which", "who"],
+    "examples": ["I think it's going to rain.", "The car that I bought is red."],
+    "note": "Without an accent = that / which; with one, “qué” = what."
+  },
+  {
+    "id": "que-2",
+    "en": ["what", "how"],
+    "examples": ["What do you want to eat?", "How pretty!"],
+    "note": "Always with an accent in questions and exclamations."
+  },
+  { "id": "quien", "en": ["who"], "examples": ["Who is she?"], "note": "Plural: quiénes (¿Quiénes vienen?)." },
+  {
+    "id": "cual",
+    "en": ["which", "what"],
+    "examples": ["What's your favorite color?"],
+    "note": "¿Cuál es…? asks you to pick from possibilities (a name, a number, an address); ¿Qué es…? asks for a definition."
+  },
+  { "id": "donde", "en": ["where"], "examples": ["Where is the bathroom?"], "note": "¿Adónde vas? = Where are you going?" },
+  { "id": "cuando", "en": ["when"], "examples": ["When is your birthday?"] },
+  { "id": "como", "en": ["how"], "examples": ["What's your name?"], "note": "Without an accent, “como” = like, as, or “I eat” (comer)." },
+  { "id": "por-que", "en": ["why"], "examples": ["Why are you sad?"], "note": "The answer: porque (one word, no accent) = because." },
+  { "id": "porque", "en": ["because"], "examples": ["I'm not going because I'm tired."] },
+  { "id": "en", "en": ["in", "on", "at"], "examples": ["I live in Puebla.", "The keys are on the table."] },
+  {
+    "id": "de",
+    "en": ["of", "from"],
+    "examples": ["I'm from Bratislava.", "It's my dad's car."],
+    "note": "de + el = del (la casa del vecino). Spanish has no 's: el carro de mi papá = my dad's car."
+  },
+  {
+    "id": "a",
+    "en": ["to"],
+    "examples": ["I'm going to the beach.", "We're going to the movies."],
+    "note": "a + el = al. Before a person who is the object: Veo a mi mamá = I see my mom."
+  },
+  { "id": "con", "en": ["with"], "examples": ["I live with my girlfriend."], "note": "conmigo = with me, contigo = with you." },
+  { "id": "sin", "en": ["without"], "examples": ["A coffee with no sugar, please."] },
+  { "id": "para", "en": ["for", "to", "in order to"], "examples": ["This gift is for you.", "I study in order to learn."] },
+  { "id": "por", "en": ["for", "through", "because of", "by"], "examples": ["Thanks for everything.", "We walked through the park."] },
+  { "id": "desde", "en": ["since", "from"], "examples": ["I've worked here since January."] },
+  { "id": "hasta", "en": ["until", "up to"], "examples": ["The store is open until nine."] },
+  { "id": "entre", "en": ["between", "among"], "examples": ["The bank is between the pharmacy and the hotel."] },
+  { "id": "sobre", "en": ["on", "about", "over"], "examples": ["Your phone is on the bed.", "We talked about the trip."] },
+  { "id": "debajo-de", "en": ["under", "below", "underneath"], "examples": ["The cat is under the bed."] },
+  { "id": "y", "en": ["and"], "examples": ["I want tacos and a water."], "note": "Before a word that starts with i-/hi- it becomes “e”: padre e hijo." },
+  { "id": "o", "en": ["or"], "examples": ["Coffee or tea?"] },
+  { "id": "pero", "en": ["but"], "examples": ["It's expensive, but it's very good."] },
+  {
+    "id": "si-2",
+    "en": ["if", "whether"],
+    "examples": ["If it rains, we're not going.", "I don't know if he's coming."],
+    "note": "Without an accent = if / whether; with one, “sí” = yes."
+  },
+  { "id": "tambien", "en": ["also", "too"], "examples": ["Me too."] },
+  { "id": "tampoco", "en": ["neither", "not either"], "examples": ["“I don't like it.” “Me neither.”"] },
+  { "id": "muy", "en": ["very"], "examples": ["I'm very tired."], "note": "muy + adjective (muy bueno), mucho + verb or noun (trabajo mucho)." },
+  {
+    "id": "mucho",
+    "en": ["a lot", "much", "many"],
+    "examples": ["I work a lot.", "I have a lot of friends."],
+    "note": "Before a noun it changes: mucha agua, muchos amigos, muchas gracias."
+  },
+  {
+    "id": "poco",
+    "en": ["little", "a little", "not much"],
+    "examples": ["I speak a little Spanish."],
+    "note": "un poco = a little; poco = not much (como poco = I don't eat much)."
+  },
+  { "id": "bien", "en": ["well", "fine", "good"], "examples": ["I'm fine, thanks."], "note": "In Mexico also “really”: bien bonito = really pretty." },
+  { "id": "mal", "en": ["badly", "bad"], "examples": ["I slept very badly."] },
+  { "id": "mas", "en": ["more"], "examples": ["Do you want more coffee?"], "note": "Always with an accent. más… que = more… than." },
+  { "id": "menos", "en": ["less", "fewer"], "examples": ["I work less now."] },
+  {
+    "id": "solo",
+    "en": ["only", "just", "alone"],
+    "examples": ["I only want a coffee.", "I live alone."],
+    "note": "As an adjective = alone (a woman says: vivo sola)."
+  },
+  { "id": "otra-vez", "en": ["again"], "examples": ["I missed the bus again."] },
+  { "id": "asi", "en": ["like this", "this way", "so"], "examples": ["It's done like this."] },
+  { "id": "casi", "en": ["almost", "nearly"], "examples": ["I almost always eat at home."] },
+  { "id": "tal-vez", "en": ["maybe", "perhaps"], "examples": ["Maybe we'll go tomorrow."] },
+  { "id": "de-verdad", "en": ["really", "seriously"], "examples": ["Really? I didn't know that."] },
+  { "id": "bastante", "en": ["quite", "pretty", "enough"], "examples": ["The exam was pretty hard."] },
+  { "id": "demasiado", "en": ["too", "too much"], "examples": ["It's too expensive."] },
+  {
+    "id": "bueno",
+    "en": ["good"],
+    "examples": ["The food is very good.", "It's a good restaurant."],
+    "note": "Before a masculine noun: buen (un buen día). In Mexico people answer the phone with “¿Bueno?” = Hello?"
+  },
+  { "id": "malo", "en": ["bad"], "examples": ["The movie is very bad."], "note": "Before a masculine noun: mal (un mal día)." },
+  { "id": "mismo", "en": ["same"], "examples": ["We have the same phone."] },
+  { "id": "otro", "en": ["other", "another"], "examples": ["Another beer, please."], "note": "Never “un otro”: otro café = another coffee." },
+  {
+    "id": "todo",
+    "en": ["everything", "all", "whole"],
+    "examples": ["Everything is fine.", "I worked all day."],
+    "note": "As an adjective: todo el día, toda la noche, todos los días, todas las semanas."
+  },
+  { "id": "cada", "en": ["each", "every"], "examples": ["Every day I learn something new."], "note": "It never changes: cada día, cada semana." },
+  { "id": "juntos", "en": ["together"], "examples": ["We'll go downtown together."] },
+  { "id": "sin-embargo", "en": ["however", "nevertheless"], "examples": ["It's expensive; however, it's worth it."] },
+  { "id": "ademas", "en": ["besides", "in addition", "also"], "examples": ["It's pretty and, besides, it's cheap."] },
+  { "id": "aunque", "en": ["although", "even though"], "examples": ["Even though it's raining, we're going out."] },
+  { "id": "mientras", "en": ["while"], "examples": ["While I cook, I listen to music."] },
+  { "id": "por-eso", "en": ["that's why", "so"], "examples": ["I'm tired, that's why I'm staying home."] },
+  { "id": "en-cambio", "en": ["on the other hand", "instead"], "examples": ["I drink coffee; my wife, on the other hand, prefers tea."] },
+  { "id": "de-repente", "en": ["suddenly", "all of a sudden"], "examples": ["Suddenly it started to rain."] },
+  { "id": "al-final", "en": ["in the end", "at the end"], "examples": ["In the end we didn't go."] },
+  { "id": "por-lo-menos", "en": ["at least"], "examples": ["At least call your mom."] },
+  { "id": "sobre-todo", "en": ["especially", "above all"], "examples": ["I like Mexican food, especially tacos."] },
+  { "id": "en-realidad", "en": ["actually", "in reality"], "examples": ["Actually, I don't know."] },
+  { "id": "de-hecho", "en": ["in fact", "actually"], "examples": ["In fact, I already knew."] },
+  { "id": "o-sea", "en": ["I mean", "in other words", "so"], "examples": ["So, you're not coming?"], "note": "Very common in Mexico, also as a filler word." },
+  { "id": "es-decir", "en": ["that is", "in other words"], "examples": ["I arrive on Monday, that is, in three days."] },
+  { "id": "ya-que", "en": ["since", "seeing that"], "examples": ["Since you're here, help me with this."] },
+  { "id": "a-pesar-de", "en": ["despite", "in spite of"], "examples": ["We went out despite the rain."] },
+  { "id": "apenas", "en": ["barely", "only", "just"], "examples": ["It's only seven o'clock."] },
+  { "id": "cualquier", "en": ["any"], "examples": ["Call me at any time."], "note": "Before a noun: cualquier; on its own: cualquiera." },
+  { "id": "alguno", "en": ["some", "any"], "examples": ["Someday I'm going to live in Mexico."], "note": "Before a masculine noun: algún." },
+  {
+    "id": "ninguno",
+    "en": ["no", "none", "not any"],
+    "examples": ["I don't have any problem."],
+    "note": "Before a masculine noun: ningún. Used with a negative: no… ningún."
+  },
+  { "id": "por-lo-tanto", "en": ["therefore", "so"], "examples": ["He didn't study; therefore, he failed."] },
+  { "id": "de-todos-modos", "en": ["anyway", "in any case"], "examples": ["It was raining, but we went out anyway."] },
+  { "id": "incluso", "en": ["even"], "examples": ["Even my grandma uses WhatsApp."] },
+  { "id": "en-lugar-de", "en": ["instead of"], "examples": ["Instead of going to the movies, we stayed home."] },
+  { "id": "aun-asi", "en": ["even so", "still"], "examples": ["He was tired; even so, he finished the job."] }
+]

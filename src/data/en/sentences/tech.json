@@ -1,0 +1,16 @@
+[
+  { "id": "s447", "en": "My battery died and I couldn't call you." },
+  { "id": "s448", "en": "Can you send me the photo on WhatsApp?" },
+  { "id": "s449", "en": "This charger doesn't work anymore." },
+  { "id": "s450", "en": "I forgot the wifi password." },
+  { "id": "s451", "en": "Turn off your phone during the movie, please.", "hints": ["cell phone"] },
+  { "id": "s452", "en": "My brother spends hours on social media." },
+  { "id": "s453", "en": "If there's no signal, I'll send you a message later." },
+  { "id": "s454", "en": "Yesterday I translated a very long document." },
+  { "id": "s455", "en": "The printer is broken again." },
+  { "id": "s456", "en": "All my friends shared the news." },
+  { "id": "s579", "en": "My computer broke down and I lost all my files." },
+  { "id": "s580", "en": "Have you downloaded the bank's app yet?", "hints": ["app"] },
+  { "id": "s581", "en": "When there was no internet, we wrote letters." },
+  { "id": "s582", "en": "I'll send you the file tonight." }
+]

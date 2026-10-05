@@ -14,10 +14,11 @@ import {
 
 afterEach(() => setLanguage('sk'))
 
-// "lluvia" (weather) is translated; "casa" (home) is not yet.
+// Every word has English by now, so the fallback is checked on a copy under an id the overlay does not know.
 const lluvia = wordById.get('lluvia')!
 const clima = wordById.get('clima')!
 const casa = wordById.get('casa')!
+const UNKNOWN = 'not-translated'
 
 describe('in Slovak', () => {
   it('gives the base data as it is', () => {
@@ -43,18 +44,22 @@ describe('in English', () => {
 
   it('falls back to Slovak for a word that has no English yet', () => {
     setLanguage('en')
-    expect(wordTranslations(casa)).toEqual(casa.sk)
-    expect(wordExamples(casa)[0].text).toBe(casa.examples[0].sk)
-    expect(wordNote(casa)).toBe(casa.note)
+    expect(wordTranslations(casa)).toEqual(['house', 'home'])
+    const untranslated = { ...clima, id: UNKNOWN }
+    expect(wordTranslations(untranslated)).toEqual(clima.sk)
+    expect(wordExamples(untranslated)[0].text).toBe(clima.examples[0].sk)
+    expect(wordNote(untranslated)).toBe(clima.note)
   })
 
   it('translates verbs, sentences and topic names, each with its own fallback', () => {
     setLanguage('en')
     expect(verbTranslations(verbById.get('tener')!)).toEqual(['to have'])
-    const untranslated = [...verbById.values()].find((v) => v.id === 'aprender')!
-    expect(verbTranslations(untranslated)).toEqual(untranslated.sk)
+    const aprender = verbById.get('aprender')!
+    expect(verbTranslations(aprender)).toEqual(['to learn'])
+    expect(verbTranslations({ ...aprender, id: UNKNOWN })).toEqual(aprender.sk)
     expect(sentenceTranslation(sentenceById.get('s272')!)).toBe("It's very hot in Monterrey.")
-    expect(sentenceTranslation(sentenceById.get('s001')!)).toBe(sentenceById.get('s001')!.sk)
+    const s001 = sentenceById.get('s001')!
+    expect(sentenceTranslation({ ...s001, id: UNKNOWN })).toBe(s001.sk)
     expect(topicName(topicById.get('weather')!)).toBe('Weather')
   })
 
@@ -75,6 +80,8 @@ describe('in English', () => {
     expect(tip.rules.map((r) => r.id)).toEqual(base.rules.map((r) => r.id))
     expect(tip.rules[0].examples[0]).toEqual({ es: base.rules[0].examples[0].es, text: 'Tomorrow I will talk to the boss.' })
     expect(tip.related).toEqual(base.related)
-    expect(localizedTip(tipById.get('presente')!).title).toBe(tipById.get('presente')!.title)
+    const presente = tipById.get('presente')!
+    expect(localizedTip(presente).title).toBe('Present tense (presente)')
+    expect(localizedTip({ ...presente, id: UNKNOWN }).title).toBe(presente.title)
   })
 })

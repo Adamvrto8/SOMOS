@@ -1,0 +1,16 @@
+[
+  { "id": "s359", "en": "I'm thirty-two years old.", "hints": [null, "30"] },
+  { "id": "s360", "en": "It's five thirty.", "hints": ["half"] },
+  { "id": "s361", "en": "My phone costs five thousand pesos." },
+  { "id": "s362", "en": "The class starts at eight.", "hints": ["8"] },
+  { "id": "s363", "en": "I bought two kilos of tortillas." },
+  { "id": "s364", "en": "My grandpa is eighty years old.", "hints": ["80"] },
+  { "id": "s365", "en": "It's the first time I've come to Mexico.", "hints": ["first"] },
+  { "id": "s366", "en": "The flight leaves at eleven at night." },
+  { "id": "s367", "en": "What's your phone number?", "hints": ["number"] },
+  { "id": "s368", "en": "A year has twelve months." },
+  { "id": "s566", "en": "My grandma turned ninety-two in March." },
+  { "id": "s567", "en": "Almost half of the students failed the exam.", "hints": ["half"] },
+  { "id": "s568", "en": "The apartment costs two million pesos.", "hints": ["millions"] },
+  { "id": "s569", "en": "I used to save five hundred pesos from every paycheck." }
+]

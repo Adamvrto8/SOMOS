@@ -1,0 +1,39 @@
+[
+  { "id": "internet", "en": ["internet"], "examples": ["I don't have internet at home."] },
+  { "id": "wifi", "en": ["wifi"], "examples": ["What's the wifi password?"] },
+  { "id": "contrasena", "en": ["password"], "examples": ["I forgot my password."] },
+  { "id": "mensaje", "en": ["message", "text"], "examples": ["I sent you a message."] },
+  { "id": "cargador", "en": ["charger"], "examples": ["Do you have a charger?"] },
+  { "id": "bateria", "en": ["battery"], "examples": ["I'm low on battery."] },
+  { "id": "pantalla", "en": ["screen", "display"], "examples": ["My phone screen broke."] },
+  { "id": "video", "en": ["video"], "examples": ["Watch this video."], "note": "No accent in Mexico: video (in Spain vídeo)." },
+  { "id": "pagina", "en": ["page", "website"], "examples": ["Look for the information on the website."] },
+  { "id": "aplicacion", "en": ["app", "application"], "examples": ["Download the bank's app."], "note": "Colloquially also “la app”." },
+  { "id": "red-social", "en": ["social network", "social media"], "examples": ["I spend a lot of time on social media."] },
+  {
+    "id": "noticia",
+    "en": ["news", "piece of news"],
+    "examples": ["Did you see the news?"],
+    "note": "One piece of news = una noticia; the news = las noticias."
+  },
+  { "id": "periodico", "en": ["newspaper"], "examples": ["My dad reads the newspaper in the morning."] },
+  { "id": "radio", "en": ["radio"], "examples": ["I listen to the radio in the car."], "note": "In Mexico the device is often “el radio”." },
+  { "id": "senal", "en": ["signal"], "examples": ["There's no signal here."] },
+  {
+    "id": "audifono",
+    "en": ["headphone", "earphone", "headphones"],
+    "examples": ["I always carry my headphones."],
+    "note": "A Mexican word; in Spain “auriculares”."
+  },
+  { "id": "en-linea", "en": ["online"], "examples": ["I paid the electric bill online."] },
+  { "id": "laptop", "en": ["laptop"], "examples": ["I brought my laptop to the office."], "note": "Feminine in Mexico: la laptop." },
+  { "id": "teclado", "en": ["keyboard"], "examples": ["My keyboard doesn't have an ñ."] },
+  { "id": "archivo", "en": ["file"], "examples": ["I'll send you the file by email."] },
+  { "id": "usuario", "en": ["user", "username"], "examples": ["Type in your username and password."] },
+  { "id": "anuncio", "en": ["ad", "advertisement", "announcement"], "examples": ["I saw the ad on Facebook."] },
+  { "id": "impresora", "en": ["printer"], "examples": ["The printer is out of paper."] },
+  { "id": "descompuesto", "en": ["broken", "out of order"], "examples": ["The printer is broken."], "note": "Mexican; in Spain “estropeado”." },
+  { "id": "actualizacion", "en": ["update"], "examples": ["The phone needs an update."] },
+  { "id": "respaldo", "en": ["backup"], "examples": ["Back up your photos."], "note": "In Mexico people say respaldo; in Spain copia de seguridad." },
+  { "id": "navegador", "en": ["browser"], "examples": ["Open the page in another browser."] }
+]

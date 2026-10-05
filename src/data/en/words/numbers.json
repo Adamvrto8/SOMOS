@@ -1,0 +1,75 @@
+[
+  { "id": "numero", "en": ["number"], "examples": ["What's your cell number?"] },
+  { "id": "cero", "en": ["zero"], "examples": ["My number ends in zero."] },
+  { "id": "uno", "en": ["one"], "examples": ["I only want one."], "note": "Before a noun: un (un taco), una (una cerveza)." },
+  { "id": "dos", "en": ["two"], "examples": ["Two coffees, please."] },
+  { "id": "tres", "en": ["three"], "examples": ["I have three siblings."] },
+  { "id": "cuatro", "en": ["four"], "examples": ["There are four of us in my family."] },
+  { "id": "cinco", "en": ["five"], "examples": ["I'll be there in five minutes."] },
+  { "id": "seis", "en": ["six"], "examples": ["The class starts at six."] },
+  { "id": "siete", "en": ["seven"], "examples": ["A week has seven days."] },
+  { "id": "ocho", "en": ["eight"], "examples": ["I work eight hours a day."] },
+  { "id": "nueve", "en": ["nine"], "examples": ["The bank opens at nine."] },
+  { "id": "diez", "en": ["ten"], "examples": ["It's ten pesos."] },
+  { "id": "once", "en": ["eleven"], "examples": ["My son is eleven years old."] },
+  { "id": "doce", "en": ["twelve"], "examples": ["See you at twelve."] },
+  { "id": "trece", "en": ["thirteen"], "examples": ["I live at number thirteen."] },
+  { "id": "catorce", "en": ["fourteen"], "examples": ["February 14 is the Day of Love and Friendship."] },
+  {
+    "id": "quince",
+    "en": ["fifteen"],
+    "examples": ["The fifteenth-birthday party is very important in Mexico."],
+    "note": "Quinceañera = a girl celebrating her 15th birthday, and also the big party itself."
+  },
+  {
+    "id": "dieciseis",
+    "en": ["sixteen"],
+    "examples": ["My daughter is sixteen years old."],
+    "note": "16–19 are written as one word: dieciséis, diecisiete, dieciocho, diecinueve."
+  },
+  { "id": "veinte", "en": ["twenty"], "examples": ["Wait for me twenty minutes."], "note": "21–29 are written as one word: veintiuno, veintidós, veintitrés…" },
+  { "id": "treinta", "en": ["thirty"], "examples": ["I'm thirty years old."], "note": "From 31 on they're written with “y”: treinta y uno, cuarenta y dos." },
+  { "id": "cuarenta", "en": ["forty"], "examples": ["The house is forty minutes from downtown."] },
+  { "id": "cincuenta", "en": ["fifty"], "examples": ["It cost me fifty pesos."] },
+  { "id": "sesenta", "en": ["sixty"], "examples": ["An hour has sixty minutes."] },
+  { "id": "setenta", "en": ["seventy"], "examples": ["My grandpa is seventy years old."] },
+  { "id": "ochenta", "en": ["eighty"], "examples": ["My grandma is eighty years old and still cooks."] },
+  { "id": "noventa", "en": ["ninety"], "examples": ["I only have ninety pesos."] },
+  {
+    "id": "cien",
+    "en": ["one hundred", "a hundred", "hundred"],
+    "examples": ["There are a hundred people at the party."],
+    "note": "101 = ciento uno, 200 = doscientos, 500 = quinientos."
+  },
+  {
+    "id": "mil",
+    "en": ["one thousand", "a thousand", "thousand"],
+    "examples": ["The ticket costs a thousand pesos."],
+    "note": "It doesn't change: dos mil = two thousand."
+  },
+  {
+    "id": "millon",
+    "en": ["million"],
+    "examples": ["More than nine million people live in Mexico City."],
+    "note": "It's followed by “de”: un millón de pesos."
+  },
+  { "id": "primero", "en": ["first"], "examples": ["It's the first time I've come to Mexico."], "note": "Before a masculine noun: primer (el primer día)." },
+  {
+    "id": "segundo",
+    "en": ["second"],
+    "examples": ["I live on the second floor."],
+    "note": "As a noun: un segundo = a second. “Un segundo, por favor” = One moment, please."
+  },
+  { "id": "tercero", "en": ["third"], "examples": ["It's the third time I've called you."], "note": "Before a masculine noun: tercer (el tercer piso)." },
+  { "id": "ultimo", "en": ["last"], "examples": ["It's the last bus of the night."] },
+  {
+    "id": "medio",
+    "en": ["half (adjective)", "half a"],
+    "examples": ["Wait for me half an hour."],
+    "note": "y media = half past: a las dos y media = at half past two."
+  },
+  { "id": "mitad", "en": ["half (noun)"], "examples": ["I want half."] },
+  { "id": "docena", "en": ["dozen"], "examples": ["I bought a dozen eggs."] },
+  { "id": "porcentaje", "en": ["percentage", "percent"], "examples": ["What percentage do you leave as a tip in Mexico?"] },
+  { "id": "cifra", "en": ["figure", "number"], "examples": ["The unemployment figures improved."] }
+]

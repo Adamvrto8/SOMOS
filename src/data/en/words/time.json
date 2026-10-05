@@ -1,0 +1,93 @@
+[
+  { "id": "hoy", "en": ["today"], "examples": ["It's very hot today."] },
+  {
+    "id": "manana",
+    "en": ["tomorrow", "morning"],
+    "examples": ["See you tomorrow.", "I work in the morning."],
+    "note": "mañana = tomorrow, la mañana = the morning. In Mexico people say “en la mañana” (in Spain “por la mañana”)."
+  },
+  { "id": "ayer", "en": ["yesterday"], "examples": ["Yesterday I went to the doctor."] },
+  { "id": "semana", "en": ["week"], "examples": ["Next week I'm on vacation."] },
+  { "id": "hora", "en": ["hour", "time"], "examples": ["What time is it?", "What time does the movie start?"] },
+  { "id": "dia", "en": ["day"], "examples": ["Today is a very nice day."], "note": "It ends in -a but is masculine: el día, buenos días." },
+  {
+    "id": "lunes",
+    "en": ["Monday"],
+    "examples": ["On Monday I start a new job."],
+    "note": "Days of the week aren't capitalized. El lunes = on Monday, los lunes = on Mondays."
+  },
+  { "id": "fin-de-semana", "en": ["weekend"], "examples": ["What are you doing on the weekend?"] },
+  {
+    "id": "tarde",
+    "en": ["late", "afternoon"],
+    "examples": ["Sorry, I arrived late.", "I'll call you in the afternoon."],
+    "note": "tarde = late, la tarde = the afternoon (until dark). In Mexico: en la tarde = in the afternoon."
+  },
+  { "id": "martes", "en": ["Tuesday"], "examples": ["On Tuesday I have Spanish class."] },
+  { "id": "miercoles", "en": ["Wednesday"], "examples": ["See you on Wednesday."] },
+  { "id": "jueves", "en": ["Thursday"], "examples": ["On Thursday I'm going to the doctor."] },
+  { "id": "viernes", "en": ["Friday"], "examples": ["It's finally Friday!"] },
+  { "id": "sabado", "en": ["Saturday"], "examples": ["On Saturdays I go to the market."] },
+  { "id": "domingo", "en": ["Sunday"], "examples": ["On Sunday we eat together as a family."] },
+  { "id": "mes", "en": ["month"], "examples": ["I'm going to Mexico next month."] },
+  {
+    "id": "ano",
+    "en": ["year"],
+    "examples": ["This year I want to learn Spanish."],
+    "note": "Mind the ñ: año = year; “ano” is a completely different (rude) word."
+  },
+  { "id": "noche", "en": ["night", "evening"], "examples": ["I work at night."], "note": "In Mexico: en la noche = in the evening, at night." },
+  { "id": "minuto", "en": ["minute"], "examples": ["Wait for me five minutes."] },
+  { "id": "ahora", "en": ["now"], "examples": ["I can't right now, I'm busy."] },
+  {
+    "id": "ahorita",
+    "en": ["right now", "in a moment"],
+    "examples": ["I'll be right back."],
+    "note": "Typically Mexican. It means “right now”, in practice often “in a little while” or even “sometime later”."
+  },
+  { "id": "siempre", "en": ["always"], "examples": ["I always have breakfast at seven."] },
+  { "id": "nunca", "en": ["never"], "examples": ["I never drink coffee at night."] },
+  { "id": "todavia", "en": ["still", "yet"], "examples": ["I haven't finished yet."] },
+  { "id": "ya", "en": ["already", "now"], "examples": ["I already ate, thanks."] },
+  { "id": "despues", "en": ["after", "afterward", "later", "then"], "examples": ["After class we're going to the café."] },
+  { "id": "antes", "en": ["before", "earlier"], "examples": ["I always have breakfast before work."] },
+  { "id": "cumpleanos", "en": ["birthday"], "examples": ["Happy birthday!"] },
+  { "id": "mediodia", "en": ["noon", "midday"], "examples": ["See you at noon."] },
+  { "id": "enero", "en": ["January"], "examples": ["In January it's cold in the north."], "note": "Months aren't capitalized." },
+  { "id": "febrero", "en": ["February"], "examples": ["My birthday is in February."] },
+  { "id": "marzo", "en": ["March"], "examples": ["Spring begins in March."] },
+  { "id": "abril", "en": ["April"], "examples": ["It's very hot in April."] },
+  { "id": "mayo", "en": ["May"], "examples": ["May 10 is Mother's Day."], "note": "In Mexico Mother's Day is always on May 10." },
+  { "id": "junio", "en": ["June"], "examples": ["The rains start in June."] },
+  { "id": "julio", "en": ["July"], "examples": ["In July we're going to the beach."] },
+  { "id": "agosto", "en": ["August"], "examples": ["I'm on vacation in August."] },
+  { "id": "septiembre", "en": ["September"], "examples": ["September 16 is Independence Day."] },
+  { "id": "octubre", "en": ["October"], "examples": ["The weather is nice in October."] },
+  { "id": "noviembre", "en": ["November"], "examples": ["November 2 is the Day of the Dead."] },
+  { "id": "diciembre", "en": ["December"], "examples": ["In December there are a lot of posadas (pre-Christmas parties)."] },
+  { "id": "fecha", "en": ["date"], "examples": ["What's the date today?"] },
+  { "id": "reloj", "en": ["watch", "clock"], "examples": ["My watch doesn't work."] },
+  { "id": "madrugada", "en": ["early morning", "the small hours"], "examples": ["We arrived at three in the morning."] },
+  { "id": "pronto", "en": ["soon"], "examples": ["See you soon."] },
+  { "id": "luego", "en": ["later", "then"], "examples": ["I'll call you later."] },
+  { "id": "a-veces", "en": ["sometimes"], "examples": ["Sometimes I eat at the office."] },
+  {
+    "id": "rato",
+    "en": ["while", "little while"],
+    "examples": ["Wait for me a while.", "See you in a bit."],
+    "note": "Very Mexican: al rato = in a while, later (and sometimes much later)."
+  },
+  {
+    "id": "navidad",
+    "en": ["Christmas"],
+    "examples": ["At Christmas we see the whole family."],
+    "note": "Christmas Eve = Nochebuena; on December 24 families have dinner together."
+  },
+  { "id": "dia-festivo", "en": ["public holiday", "holiday"], "examples": ["Monday is a holiday."] },
+  { "id": "siglo", "en": ["century"], "examples": ["The church is from the sixteenth century."] },
+  { "id": "epoca", "en": ["time", "period", "era"], "examples": ["At that time I lived in Puebla."] },
+  { "id": "plazo", "en": ["deadline", "term", "time limit"], "examples": ["The deadline is up on Friday."] },
+  { "id": "puntual", "en": ["punctual", "on time"], "examples": ["Be on time, please."] },
+  { "id": "temporada", "en": ["season"], "examples": ["In the rainy season it rains almost every afternoon."] },
+  { "id": "fecha-limite", "en": ["deadline", "due date"], "examples": ["The deadline is Friday."] }
+]

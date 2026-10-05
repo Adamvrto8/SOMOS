@@ -127,14 +127,15 @@ const MIN_TYPO_LENGTH = 5
 const RANK: Record<Verdict, number> = { correct: 0, accent: 1, typo: 2, wrong: 3 }
 
 const PUNCTUATION = /[¿?¡!.,;:"“”„«»—–]/g
+// English answers: a phone types "it’s", a learner in a hurry "its". Neither is a mistake worth marking.
+const APOSTROPHE = /['’‘ʼ`´]/g
+
+/** A typed word as it is compared: lowercased, apostrophes dropped. */
+const comparable = (word: string) => word.toLowerCase().replace(APOSTROPHE, '')
 
 /** Lowercased words without punctuation: "¿Cómo  estás?" → ["cómo", "estás"]. */
 function words(text: string): string[] {
-  return text
-    .toLowerCase()
-    .replace(PUNCTUATION, ' ')
-    .split(/\s+/)
-    .filter(Boolean)
+  return text.replace(PUNCTUATION, ' ').split(/\s+/).map(comparable).filter(Boolean)
 }
 
 function levenshtein(a: string, b: string): number {
@@ -242,7 +243,7 @@ const isNear = (a: string, e: string) => levenshtein(fold(a), fold(e)) <= Math.m
  */
 export function diffWords(input: string, expected: string, options: CheckOptions = {}): DiffPart[] {
   const typed = input.replace(PUNCTUATION, ' ').split(/\s+/).filter(Boolean)
-  const got = typed.map((w) => w.toLowerCase())
+  const got = typed.map(comparable)
   const want = words(expected)
   const lead: DiffPart[] = []
   if (options.optionalSubject && got.length > 0 && hasExtraSubject(got, want)) {

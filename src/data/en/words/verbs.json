@@ -1,0 +1,389 @@
+[
+  {
+    "id": "ser",
+    "en": ["to be (who, what)"],
+    "examples": ["I'm from Slovakia.", "My sister is a doctor."],
+    "note": "Ser: who or what something is, origin, profession, characteristics (Soy de Eslovaquia). Estar: where something is and how someone is doing (Estoy en casa, Estoy cansado)."
+  },
+  {
+    "id": "estar",
+    "en": ["to be (where, how)"],
+    "examples": ["How are you?", "The bathroom is on the right."],
+    "note": "Estar: location and temporary states (Estoy en casa, Estoy cansado). Compare with ser."
+  },
+  {
+    "id": "tener",
+    "en": ["to have"],
+    "examples": ["I'm thirty years old.", "Tomorrow I have to work."],
+    "note": "Age: Tengo 30 años = I'm 30 years old. Tener que + infinitive = to have to: Tengo que trabajar."
+  },
+  {
+    "id": "ir",
+    "en": ["to go"],
+    "examples": ["I'm going to the market.", "Shall we go to the beach on Saturday?"],
+    "note": "Ir a + infinitive expresses the future: Voy a comer = I'm going to eat."
+  },
+  {
+    "id": "hacer",
+    "en": ["to do", "to make"],
+    "examples": ["What are you doing?", "It's very cold today."],
+    "note": "Weather: Hace calor = It's hot, Hace frío = It's cold."
+  },
+  { "id": "hablar", "en": ["to speak", "to talk"], "examples": ["Do you speak English?", "I speak a little Spanish."] },
+  {
+    "id": "comer",
+    "en": ["to eat", "to have lunch"],
+    "examples": ["Where are we having lunch today?"],
+    "note": "In Mexico “comer” often means to have lunch (the main meal of the day)."
+  },
+  { "id": "vivir", "en": ["to live"], "examples": ["We live in an apartment downtown."] },
+  { "id": "trabajar", "en": ["to work"], "examples": ["I work in an office."] },
+  {
+    "id": "querer",
+    "en": ["to want", "to love"],
+    "examples": ["Do you want a coffee?", "I want to go to the beach."],
+    "note": "Te quiero = I love you (to family, friends and a partner)."
+  },
+  { "id": "poder", "en": ["can", "to be able to"], "examples": ["Can I pay by card?"] },
+  {
+    "id": "llegar",
+    "en": ["to arrive", "to get there"],
+    "examples": ["What time does the bus arrive?", "I got to work late."],
+    "note": "The spelling changes in the preterite: llegué (to keep the sound of the “g”)."
+  },
+  { "id": "comprar", "en": ["to buy"], "examples": ["I'm going to buy tortillas."] },
+  {
+    "id": "tomar",
+    "en": ["to take", "to drink", "to take (a bus, the metro…)"],
+    "examples": ["What do you want to drink?", "I take the subway every day."],
+    "note": "In Mexico: tomar agua = to drink water, tomar el camión = to take the bus. Don't use the verb “coger” in Mexico: it's vulgar."
+  },
+  { "id": "salir", "en": ["to leave", "to go out"], "examples": ["I leave work at six.", "Shall we go out on Friday?"] },
+  {
+    "id": "venir",
+    "en": ["to come"],
+    "examples": ["Are you coming to the party?"],
+    "note": "Venir = to come here, toward the speaker. Llegar = to arrive somewhere."
+  },
+  { "id": "decir", "en": ["to say", "to tell"], "examples": ["What did the doctor say?"] },
+  {
+    "id": "platicar",
+    "en": ["to chat", "to talk"],
+    "examples": ["I like chatting with my grandma."],
+    "note": "A typically Mexican word for “to chat”. In Spain more often “charlar”."
+  },
+  { "id": "llamarse", "en": ["to be called"], "examples": ["What's your name?", "My name is Adam."] },
+  { "id": "dormir", "en": ["to sleep"], "examples": ["I slept very well last night."] },
+  {
+    "id": "estudiar",
+    "en": ["to study"],
+    "examples": ["I study Spanish every day."],
+    "note": "estudiar = to study (a subject); aprender = to learn something."
+  },
+  { "id": "caminar", "en": ["to walk"], "examples": ["I walk to work because it's close."] },
+  { "id": "cocinar", "en": ["to cook"], "examples": ["My dad cooks on Sundays."] },
+  { "id": "limpiar", "en": ["to clean"], "examples": ["I have to clean the kitchen."] },
+  { "id": "escuchar", "en": ["to listen", "to listen to", "to hear"], "examples": ["I like listening to music on the bus."] },
+  {
+    "id": "mirar",
+    "en": ["to look", "to look at", "to watch"],
+    "examples": ["What are you looking at?"],
+    "note": "For television, Mexicans usually say “ver la tele”."
+  },
+  { "id": "necesitar", "en": ["to need"], "examples": ["I need help, please."] },
+  {
+    "id": "esperar",
+    "en": ["to wait", "to wait for", "to hope", "to expect"],
+    "examples": ["I'll wait for you at the entrance."],
+    "note": "esperar = to wait and also to hope: Espero que sí. = I hope so."
+  },
+  { "id": "ayudar", "en": ["to help"], "examples": ["Will you help me with the suitcases?"] },
+  { "id": "bailar", "en": ["to dance"], "examples": ["Do you want to dance?"] },
+  { "id": "cantar", "en": ["to sing"], "examples": ["My sister sings beautifully."] },
+  { "id": "viajar", "en": ["to travel"], "examples": ["We want to travel to Oaxaca in December."] },
+  { "id": "manejar", "en": ["to drive"], "examples": ["Do you know how to drive?"], "note": "In Mexico it's “manejar” (in Spain “conducir”)." },
+  { "id": "usar", "en": ["to use", "to wear"], "examples": ["Can I use your computer?"] },
+  {
+    "id": "llevar",
+    "en": ["to carry", "to wear", "to take"],
+    "examples": ["I'll take this shirt.", "Today I'm wearing a jacket."],
+    "note": "In a store, “Me lo llevo” = I'll take it."
+  },
+  { "id": "preguntar", "en": ["to ask"], "examples": ["Can I ask you something?"], "note": "preguntar = to ask a question; pedir = to ask for something." },
+  { "id": "contestar", "en": ["to answer", "to reply"], "examples": ["He isn't answering the phone."] },
+  { "id": "terminar", "en": ["to finish", "to end"], "examples": ["What time does the class end?"] },
+  {
+    "id": "regresar",
+    "en": ["to return", "to come back", "to go back"],
+    "examples": ["I'll be back at eight."],
+    "note": "In Mexico usually “regresar” (in Spain more often “volver”)."
+  },
+  { "id": "descansar", "en": ["to rest"], "examples": ["Today I want to rest at home."] },
+  { "id": "lavar", "en": ["to wash"], "examples": ["I'm going to wash the dishes."] },
+  { "id": "preparar", "en": ["to prepare", "to make"], "examples": ["I'm making dinner."] },
+  { "id": "ganar", "en": ["to earn", "to win"], "examples": ["How much do you earn a month?"], "note": "ganar = to earn and also to win: ganar el partido." },
+  { "id": "rentar", "en": ["to rent"], "examples": ["We want to rent an apartment near the beach."], "note": "In Mexico it's “rentar” (in Spain “alquilar”)." },
+  { "id": "nadar", "en": ["to swim"], "examples": ["I love swimming in the sea."] },
+  { "id": "olvidar", "en": ["to forget"], "examples": ["I always forget my keys."], "note": "In everyday speech people often say “Se me olvidó” = I forgot." },
+  { "id": "desayunar", "en": ["to have breakfast", "to eat breakfast"], "examples": ["What do you usually have for breakfast?"] },
+  { "id": "cenar", "en": ["to have dinner", "to eat dinner"], "examples": ["We have dinner at nine."] },
+  { "id": "visitar", "en": ["to visit"], "examples": ["On Saturday we're visiting my grandparents."] },
+  { "id": "entrar", "en": ["to enter", "to come in", "to go in"], "examples": ["May I come in?"] },
+  { "id": "llamar", "en": ["to call", "to phone"], "examples": ["I'll call you later."], "note": "llamar = to call, to phone; llamarse = to be called." },
+  { "id": "pasar", "en": ["to pass", "to spend (time)", "to happen"], "examples": ["What happened?", "We spent the weekend at the beach."] },
+  { "id": "dejar", "en": ["to leave (something)", "to let", "to quit"], "examples": ["I left my phone at home."] },
+  { "id": "estacionar", "en": ["to park"], "examples": ["Where can I park the car?"], "note": "In Mexico it's “estacionar” (in Spain “aparcar”)." },
+  { "id": "extranar", "en": ["to miss (someone)"], "examples": ["I miss you a lot."], "note": "Extraño a mi familia = I miss my family." },
+  {
+    "id": "agarrar",
+    "en": ["to grab", "to take", "to catch"],
+    "examples": ["We caught the subway downtown."],
+    "note": "Common in Mexico (instead of “coger”, which is vulgar here)."
+  },
+  { "id": "pagar", "en": ["to pay"], "examples": ["I'll pay the check."], "note": "Preterite: pagué (the “u” keeps the sound of the “g”)." },
+  { "id": "buscar", "en": ["to look for", "to search for"], "examples": ["I'm looking for my glasses."], "note": "Preterite: busqué." },
+  {
+    "id": "tocar",
+    "en": ["to play (an instrument)", "to touch"],
+    "examples": ["I've played the guitar since I was a kid."],
+    "note": "tocar = to play an instrument; jugar = to play a game or a sport."
+  },
+  { "id": "practicar", "en": ["to practice"], "examples": ["I practice Spanish with my friends."] },
+  { "id": "checar", "en": ["to check"], "examples": ["I'm going to check my email."], "note": "Typically Mexican (from English “check”). Preterite: chequé." },
+  { "id": "empezar", "en": ["to start", "to begin"], "examples": ["The movie starts at seven."] },
+  {
+    "id": "pensar",
+    "en": ["to think"],
+    "examples": ["What do you think?"],
+    "note": "pensar en = to think about; pensar + infinitive = to plan to: Pienso viajar."
+  },
+  { "id": "cerrar", "en": ["to close", "to shut"], "examples": ["What time does the bank close?"] },
+  { "id": "encontrar", "en": ["to find"], "examples": ["I can't find my passport."] },
+  {
+    "id": "costar",
+    "en": ["to cost"],
+    "examples": ["How much does it cost?"],
+    "note": "Used mostly in the 3rd person: cuesta (one thing), cuestan (several things)."
+  },
+  {
+    "id": "recordar",
+    "en": ["to remember", "to remind"],
+    "examples": ["I don't remember his name."],
+    "note": "A false friend: recordar = to remember; to record = grabar."
+  },
+  {
+    "id": "jugar",
+    "en": ["to play (a game or a sport)"],
+    "examples": ["The kids play soccer in the park."],
+    "note": "In Mexico it's “jugar fútbol”, with no “al”. Preterite: jugué."
+  },
+  { "id": "probar", "en": ["to try", "to taste", "to try out"], "examples": ["Do you want to try the tacos?"], "note": "probarse = to try on (clothes)." },
+  { "id": "levantarse", "en": ["to get up"], "examples": ["I get up early."] },
+  {
+    "id": "banarse",
+    "en": ["to shower", "to take a shower", "to bathe", "to take a bath"],
+    "examples": ["I shower in the morning."],
+    "note": "In Mexico “bañarse” = to take a shower as well as a bath."
+  },
+  { "id": "quedarse", "en": ["to stay"], "examples": ["Today I'm staying home."] },
+  { "id": "despertarse", "en": ["to wake up"], "examples": ["I wake up at six."] },
+  { "id": "acostarse", "en": ["to go to bed", "to lie down"], "examples": ["I go to bed late on Fridays."] },
+  { "id": "sentarse", "en": ["to sit down", "to sit"], "examples": ["Can I sit here?"] },
+  {
+    "id": "enojarse",
+    "en": ["to get angry", "to get mad"],
+    "examples": ["My boss got very angry."],
+    "note": "In Mexico it's “enojarse” (in Spain more often “enfadarse”)."
+  },
+  { "id": "preocuparse", "en": ["to worry"], "examples": ["Don't worry."] },
+  { "id": "enfermarse", "en": ["to get sick"], "examples": ["I got sick last week."] },
+  { "id": "dar", "en": ["to give"], "examples": ["Will you give me your number?"] },
+  { "id": "beber", "en": ["to drink"], "examples": ["I drink a lot of water."], "note": "In Mexico people more often say “tomar” for drinks." },
+  { "id": "aprender", "en": ["to learn"], "examples": ["I want to learn Spanish."] },
+  { "id": "correr", "en": ["to run"], "examples": ["I run in the park on Saturdays."] },
+  { "id": "vender", "en": ["to sell"], "examples": ["They sell fruit at the market."] },
+  { "id": "leer", "en": ["to read"], "examples": ["I like to read before going to sleep."] },
+  { "id": "entender", "en": ["to understand"], "examples": ["I don't understand. Could you repeat that, please?"] },
+  {
+    "id": "perder",
+    "en": ["to lose", "to miss"],
+    "examples": ["I lost my phone."],
+    "note": "perder el camión = to miss the bus; perder el partido = to lose the game."
+  },
+  {
+    "id": "volver",
+    "en": ["to come back", "to return"],
+    "examples": ["When are you coming back?"],
+    "note": "volver a + infinitive = to do something again: Volví a llamar = I called again."
+  },
+  {
+    "id": "saber",
+    "en": ["to know"],
+    "examples": ["I don't know.", "Do you know how to swim?"],
+    "note": "saber = to know (a fact, a skill); conocer = to know (a person, a place)."
+  },
+  {
+    "id": "conocer",
+    "en": ["to know (a person, a place)", "to meet"],
+    "examples": ["Do you know my sister?"],
+    "note": "Before a person it takes “a”: conocer a alguien."
+  },
+  { "id": "poner", "en": ["to put", "to place"], "examples": ["Where do I put the keys?"] },
+  { "id": "traer", "en": ["to bring"], "examples": ["Will you bring me a glass of water?"] },
+  { "id": "ver", "en": ["to see", "to watch"], "examples": ["We're going to watch a movie."] },
+  { "id": "escribir", "en": ["to write"], "examples": ["I'll write you a message."] },
+  { "id": "abrir", "en": ["to open"], "examples": ["The store opens at ten."] },
+  {
+    "id": "subir",
+    "en": ["to go up", "to get on", "to climb"],
+    "examples": ["We get on the bus at the corner."],
+    "note": "subir = to go up, to get on; bajar = to go down, to get off."
+  },
+  {
+    "id": "pedir",
+    "en": ["to order", "to ask for", "to request"],
+    "examples": ["I'm going to order some tacos."],
+    "note": "pedir = to order, to ask for something; preguntar = to ask a question."
+  },
+  { "id": "repetir", "en": ["to repeat"], "examples": ["Could you repeat that, please?"] },
+  { "id": "sentirse", "en": ["to feel"], "examples": ["How do you feel?"] },
+  { "id": "preferir", "en": ["to prefer"], "examples": ["I prefer coffee without sugar."] },
+  { "id": "divertirse", "en": ["to have fun", "to enjoy oneself"], "examples": ["We had a lot of fun at the party."] },
+  { "id": "aprovechar", "en": ["to take advantage of", "to make the most of"], "examples": ["We have to make the most of the nice weather."] },
+  {
+    "id": "cambiar",
+    "en": ["to change", "to exchange"],
+    "examples": ["Can I exchange this T-shirt for another size?"],
+    "note": "cambiar dinero = to exchange money; cambiarse = to change clothes."
+  },
+  { "id": "compartir", "en": ["to share"], "examples": ["I share the apartment with two friends."] },
+  {
+    "id": "mandar",
+    "en": ["to send", "to order"],
+    "examples": ["I'll send you the photo on WhatsApp."],
+    "note": "In Mexico more common than “enviar”. ¿Mande? = Pardon? (when you didn't hear something)."
+  },
+  { "id": "gastar", "en": ["to spend (money)"], "examples": ["I spend a lot of money on food."] },
+  { "id": "intentar", "en": ["to try", "to attempt"], "examples": ["I'm going to try again."] },
+  { "id": "lograr", "en": ["to manage", "to achieve", "to succeed in"], "examples": ["I managed to finish the project on time."] },
+  {
+    "id": "cumplir",
+    "en": ["to turn (an age)", "to fulfill", "to keep (a promise)"],
+    "examples": ["Tomorrow I turn thirty."],
+    "note": "cumplir años = to have a birthday; cumplir una promesa = to keep a promise."
+  },
+  { "id": "ahorrar", "en": ["to save (money)"], "examples": ["I'm saving for a car."] },
+  {
+    "id": "acabar",
+    "en": ["to end", "to finish", "to run out"],
+    "examples": ["I just got here."],
+    "note": "acabar de + infinitive = to have just done something."
+  },
+  { "id": "prender", "en": ["to turn on", "to light"], "examples": ["Turn on the light, please."], "note": "Mexican; in Spain “encender”." },
+  { "id": "avisar", "en": ["to let know", "to warn", "to tell"], "examples": ["Let me know when you get here."] },
+  { "id": "regalar", "en": ["to give (as a gift)"], "examples": ["What did you get for your birthday?"] },
+  { "id": "pelear", "en": ["to fight", "to argue"], "examples": ["My siblings are always fighting."] },
+  { "id": "voltear", "en": ["to turn", "to turn around", "to flip"], "examples": ["Flip the tortilla."], "note": "Mexican. voltear a ver = to turn and look." },
+  { "id": "mudarse", "en": ["to move (to a new home)"], "examples": ["We moved to Guadalajara last year."] },
+  { "id": "quejarse", "en": ["to complain"], "examples": ["My neighbor is always complaining about the noise."] },
+  {
+    "id": "casarse",
+    "en": ["to get married", "to marry"],
+    "examples": ["My sister got married in December."],
+    "note": "casarse con alguien = to marry someone."
+  },
+  { "id": "explicar", "en": ["to explain"], "examples": ["Can you explain it to me again?"] },
+  {
+    "id": "sacar",
+    "en": ["to take out", "to pull out", "to take (a photo)"],
+    "examples": ["Can you take a picture of us?"],
+    "note": "sacar dinero = to take out money; sacar la basura = to take out the trash."
+  },
+  { "id": "apagar", "en": ["to turn off", "to put out"], "examples": ["Turn off the TV, it's late."] },
+  { "id": "crecer", "en": ["to grow", "to grow up"], "examples": ["I grew up in a small town near Puebla."] },
+  { "id": "ofrecer", "en": ["to offer"], "examples": ["They offered me a job in Monterrey."] },
+  {
+    "id": "parecer",
+    "en": ["to seem", "to look"],
+    "examples": ["It seems like a good idea to me."],
+    "note": "Me parece que… = it seems to me that…; parecerse a alguien = to look like someone."
+  },
+  { "id": "creer", "en": ["to believe", "to think"], "examples": ["I think you're right."] },
+  {
+    "id": "caerse",
+    "en": ["to fall", "to fall down"],
+    "examples": ["I fell off my bike."],
+    "note": "Without “se”: caer = to fall (la lluvia cae). Me cae bien = I like him (as a person)."
+  },
+  { "id": "construir", "en": ["to build"], "examples": ["They're building a new hospital."] },
+  {
+    "id": "acordarse",
+    "en": ["to remember"],
+    "examples": ["Do you remember me?"],
+    "note": "acordarse de algo = to remember something; recordar algo means the same without “de”."
+  },
+  {
+    "id": "atender",
+    "en": ["to serve", "to help (a customer)", "to attend to"],
+    "examples": ["Is someone helping you already?"],
+    "note": "A false friend: to attend (a class, an event) = asistir a."
+  },
+  { "id": "conseguir", "en": ["to get", "to obtain", "to manage to"], "examples": ["I finally got a job."] },
+  {
+    "id": "seguir",
+    "en": ["to continue", "to follow", "to keep (doing)"],
+    "examples": ["Keep going straight for two blocks.", "I still work at the same place."],
+    "note": "seguir + gerund = to keep doing something, to still be doing it."
+  },
+  { "id": "elegir", "en": ["to choose", "to pick"], "examples": ["I don't know what to choose."] },
+  {
+    "id": "servir",
+    "en": ["to serve", "to work (to function)"],
+    "examples": ["This charger doesn't work."],
+    "note": "In Mexico: no sirve = it doesn't work, it's broken."
+  },
+  { "id": "mentir", "en": ["to lie"], "examples": ["He always tells the truth; he never lies."] },
+  { "id": "morir", "en": ["to die"], "examples": ["My grandpa died two years ago."], "note": "Colloquially: me muero de hambre = I'm starving." },
+  { "id": "traducir", "en": ["to translate"], "examples": ["Can you translate this message for me?"] },
+  {
+    "id": "andar",
+    "en": ["to walk", "to go around", "to be (in some state)"],
+    "examples": ["How are you doing?", "I'm very tired this week."],
+    "note": "Very common in Mexico: ¿Cómo andas? = How are you doing?; ando + gerund = I'm doing something right now."
+  },
+  { "id": "contar", "en": ["to count", "to tell (a story)"], "examples": ["Tell me what happened.", "My son already knows how to count to a hundred."] },
+  { "id": "mostrar", "en": ["to show"], "examples": ["Can you show me the way to the subway?"] },
+  { "id": "ensenar", "en": ["to teach", "to show"], "examples": ["My grandma taught me to cook."], "note": "To teach someone = enseñar; to learn = aprender." },
+  { "id": "recibir", "en": ["to receive", "to get"], "examples": ["Did you get my message?"] },
+  { "id": "decidir", "en": ["to decide"], "examples": ["We haven't decided yet where to go on vacation."] },
+  { "id": "invitar", "en": ["to invite", "to treat"], "examples": ["Let me buy you a coffee."], "note": "“Te invito” usually means that I'm paying too." },
+  { "id": "arreglar", "en": ["to fix", "to repair", "to sort out"], "examples": ["The technician is going to fix the washing machine tomorrow."] },
+  { "id": "cuidar", "en": ["to take care of", "to look after"], "examples": ["My mom looks after my kids on Fridays."] },
+  { "id": "mover", "en": ["to move (something)"], "examples": ["Will you help me move the couch?"] },
+  { "id": "vestirse", "en": ["to get dressed", "to dress"], "examples": ["I'll get dressed quickly and we'll go."] },
+  { "id": "aceptar", "en": ["to accept"], "examples": ["Do you take cards?"] },
+  { "id": "evitar", "en": ["to avoid", "to prevent"], "examples": ["I leave early to avoid the traffic."] },
+  { "id": "permitir", "en": ["to allow", "to permit", "to let"], "examples": ["Smoking isn't allowed here."] },
+  { "id": "reconocer", "en": ["to recognize", "to admit"], "examples": ["I didn't recognize you with glasses."] },
+  { "id": "resolver", "en": ["to solve", "to resolve"], "examples": ["We have to solve this problem today."] },
+  { "id": "sugerir", "en": ["to suggest", "to recommend"], "examples": ["Which restaurant do you suggest?"] },
+  {
+    "id": "obtener",
+    "en": ["to obtain", "to get"],
+    "examples": ["He got the visa after three months."],
+    "note": "Conjugated like tener: obtengo, obtuve, obtendré."
+  },
+  {
+    "id": "proponer",
+    "en": ["to propose", "to suggest"],
+    "examples": ["Here's an idea: let's go to the beach on Saturday."],
+    "note": "Conjugated like poner: propongo, propuse, propondré."
+  },
+  {
+    "id": "alcanzar",
+    "en": ["to reach", "to be enough"],
+    "examples": ["I can't reach the top shelf.", "Do you have enough money?"],
+    "note": "In Mexico often “to be enough”: no me alcanza = I don't have enough (money, time)."
+  },
+  { "id": "merecer", "en": ["to deserve"], "examples": ["You deserve a vacation."] }
+]

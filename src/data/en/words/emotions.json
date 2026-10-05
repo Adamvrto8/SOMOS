@@ -1,0 +1,79 @@
+[
+  { "id": "feliz", "en": ["happy"], "examples": ["I'm very happy here."] },
+  { "id": "contento", "en": ["happy", "glad", "pleased"], "examples": ["I'm happy with my job."] },
+  { "id": "triste", "en": ["sad"], "examples": ["Why are you sad?"] },
+  {
+    "id": "enojado",
+    "en": ["angry", "mad", "upset"],
+    "examples": ["My mom is mad at me."],
+    "note": "In Mexico it's “enojado” (in Spain more often “enfadado”)."
+  },
+  { "id": "nervioso", "en": ["nervous"], "examples": ["I'm nervous about the exam."] },
+  { "id": "preocupado", "en": ["worried"], "examples": ["I'm worried about my grandma."] },
+  { "id": "tranquilo", "en": ["calm", "quiet"], "examples": ["Relax, everything is fine."] },
+  { "id": "aburrido", "en": ["bored", "boring"], "examples": ["I'm bored."], "note": "estar aburrido = to be bored; ser aburrido = to be boring." },
+  { "id": "emocionado", "en": ["excited"], "examples": ["I'm very excited about the trip."] },
+  { "id": "miedo", "en": ["fear"], "examples": ["I'm afraid of dogs."], "note": "tener miedo = to be afraid." },
+  { "id": "amor", "en": ["love"], "examples": ["Love is the most important thing."], "note": "In Mexico also a term of endearment: ¿Cómo estás, amor?" },
+  { "id": "alegria", "en": ["joy", "happiness"], "examples": ["What a joy to see you!"] },
+  { "id": "sorpresa", "en": ["surprise"], "examples": ["What a surprise!"] },
+  { "id": "verguenza", "en": ["embarrassment", "shame"], "examples": ["I'm embarrassed to speak in public."], "note": "¡Qué vergüenza! = How embarrassing!" },
+  {
+    "id": "ganas",
+    "en": ["desire (to do something)", "urge"],
+    "examples": ["I feel like going to the beach."],
+    "note": "tener ganas de + infinitive = to feel like doing something."
+  },
+  { "id": "suerte", "en": ["luck"], "examples": ["Good luck!"] },
+  {
+    "id": "ojala",
+    "en": ["hopefully", "I hope so", "if only"],
+    "examples": ["I hope so!"],
+    "note": "After “ojalá que” comes the subjunctive: Ojalá que llueva."
+  },
+  {
+    "id": "que-pena",
+    "en": ["how embarrassing!", "what a shame!"],
+    "examples": ["How embarrassing to be late!"],
+    "note": "In Mexico “¡Qué pena!” mostly means “how embarrassing, I'm sorry”."
+  },
+  { "id": "orgulloso", "en": ["proud"], "examples": ["I'm very proud of you."] },
+  { "id": "celoso", "en": ["jealous"], "examples": ["My boyfriend is very jealous."] },
+  { "id": "asustado", "en": ["scared", "frightened"], "examples": ["The boy is scared."] },
+  { "id": "sorprendido", "en": ["surprised"], "examples": ["I'm very surprised."] },
+  { "id": "enamorado", "en": ["in love"], "examples": ["I'm in love with you."] },
+  { "id": "estresado", "en": ["stressed", "stressed out"], "examples": ["I'm very stressed about work."] },
+  { "id": "timido", "en": ["shy", "timid"], "examples": ["My son is a little shy."] },
+  { "id": "amable", "en": ["kind", "nice", "friendly"], "examples": ["Thank you, you're very kind."] },
+  {
+    "id": "simpatico",
+    "en": ["nice", "friendly", "likeable"],
+    "examples": ["Your brother is very nice."],
+    "note": "A false friend: simpático = nice; sympathetic = comprensivo."
+  },
+  { "id": "loco", "en": ["crazy"], "examples": ["Are you crazy?"] },
+  { "id": "carino", "en": ["affection", "sweetheart", "honey"], "examples": ["I'm very fond of him.", "How are you, sweetheart?"] },
+  { "id": "animo", "en": ["spirits", "mood", "courage"], "examples": ["Cheer up! You can do it."] },
+  { "id": "relacion", "en": ["relationship"], "examples": ["We have a good relationship."] },
+  { "id": "confianza", "en": ["trust", "confidence"], "examples": ["I trust you a lot."] },
+  { "id": "soledad", "en": ["loneliness", "solitude"], "examples": ["I don't like solitude."] },
+  { "id": "esperanza", "en": ["hope"], "examples": ["Never lose hope."] },
+  { "id": "agradecido", "en": ["grateful", "thankful"], "examples": ["I'm very grateful for your help."] },
+  {
+    "id": "decepcionado",
+    "en": ["disappointed"],
+    "examples": ["I'm disappointed with the result."],
+    "note": "A false friend: decepción = disappointment; deception = engaño."
+  },
+  { "id": "harto", "en": ["fed up", "sick of"], "examples": ["I'm fed up with the traffic."] },
+  { "id": "flojo", "en": ["lazy"], "examples": ["Don't be lazy and help me."] },
+  { "id": "carinoso", "en": ["affectionate", "loving"], "examples": ["My dog is very affectionate."] },
+  { "id": "honesto", "en": ["honest"], "examples": ["He's a very honest man."] },
+  { "id": "envidia", "en": ["envy"], "examples": ["I'm a little envious of my brother."] },
+  { "id": "culpa", "en": ["fault", "blame", "guilt"], "examples": ["It wasn't your fault."] },
+  { "id": "paciencia", "en": ["patience"], "examples": ["You have to be patient with children."] },
+  { "id": "ansiedad", "en": ["anxiety"], "examples": ["Before exams I feel a lot of anxiety."] },
+  { "id": "sentimiento", "en": ["feeling"], "examples": ["It's hard to talk about my feelings."] },
+  { "id": "valiente", "en": ["brave", "courageous"], "examples": ["You were very brave."] },
+  { "id": "egoista", "en": ["selfish"], "examples": ["My ex was very selfish."], "note": "The same form for masculine and feminine." }
+]

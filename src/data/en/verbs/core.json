@@ -1,6 +1,6 @@
 [
-  { "id": "ser", "en": ["to be"] },
-  { "id": "estar", "en": ["to be"] },
+  { "id": "ser", "en": ["to be (who, what)"] },
+  { "id": "estar", "en": ["to be (where, how)"] },
   { "id": "tener", "en": ["to have"] },
   { "id": "ir", "en": ["to go"] },
   { "id": "hacer", "en": ["to do", "to make"] },

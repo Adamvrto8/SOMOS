@@ -1,0 +1,93 @@
+[
+  { "id": "casa", "en": ["house", "home"], "examples": ["I'm at home.", "Make yourself at home."] },
+  { "id": "departamento", "en": ["apartment"], "examples": ["I live in a small apartment."], "note": "In Mexico it's “departamento”; in Spain “piso”." },
+  {
+    "id": "cuarto",
+    "en": ["room", "bedroom"],
+    "examples": ["My room has a big window."],
+    "note": "Cuarto also means a quarter: Son las dos y cuarto = It's a quarter past two."
+  },
+  { "id": "cocina", "en": ["kitchen"], "examples": ["We're in the kitchen."] },
+  { "id": "bano", "en": ["bathroom", "restroom"], "examples": ["Where is the bathroom?"] },
+  { "id": "mesa", "en": ["table"], "examples": ["The keys are on the table."] },
+  { "id": "ventana", "en": ["window"], "examples": ["Can you close the window?"] },
+  { "id": "sala", "en": ["living room"], "examples": ["We're watching TV in the living room."] },
+  { "id": "recamara", "en": ["bedroom"], "examples": ["The apartment has two bedrooms."], "note": "A typically Mexican word for a bedroom." },
+  { "id": "puerta", "en": ["door"], "examples": ["Can you close the door?"] },
+  { "id": "silla", "en": ["chair"], "examples": ["We need another chair."] },
+  { "id": "sofa", "en": ["couch", "sofa"], "examples": ["The cat sleeps on the couch."] },
+  { "id": "cama", "en": ["bed"], "examples": ["The bed is very comfortable."] },
+  { "id": "regadera", "en": ["shower"], "examples": ["The shower has no hot water."], "note": "In Mexico it's “regadera” (in Spain “ducha”)." },
+  { "id": "refrigerador", "en": ["refrigerator", "fridge"], "examples": ["The milk is in the fridge."], "note": "Colloquially “el refri”." },
+  { "id": "estufa", "en": ["stove"], "examples": ["The soup is on the stove."], "note": "In Mexico “estufa” = the stove you cook on." },
+  { "id": "llave", "en": ["key", "faucet"], "examples": ["I can't find my keys."] },
+  { "id": "luz", "en": ["light", "electricity"], "examples": ["Turn off the light, please."] },
+  {
+    "id": "piso",
+    "en": ["floor", "story"],
+    "examples": ["I live on the third floor."],
+    "note": "In Mexico “piso” = the floor or a story of a building, not an apartment (apartment = departamento)."
+  },
+  { "id": "jardin", "en": ["garden", "yard"], "examples": ["My grandma has a very pretty garden."] },
+  { "id": "vecino", "en": ["neighbor"], "examples": ["My neighbors are very nice."], "note": "vecina = a female neighbor." },
+  { "id": "renta", "en": ["rent"], "examples": ["Rent is very expensive downtown."], "note": "In Mexico it's “la renta” (in Spain “el alquiler”)." },
+  { "id": "television", "en": ["television", "TV"], "examples": ["There's nothing good on TV."], "note": "Colloquially “la tele”." },
+  { "id": "grande", "en": ["big", "large"], "examples": ["It's a very big house."] },
+  { "id": "pequeno", "en": ["small", "little"], "examples": ["My room is small but nice."], "note": "In Mexico people also often say “chico”." },
+  { "id": "limpio", "en": ["clean"], "examples": ["The house is clean."] },
+  { "id": "sucio", "en": ["dirty"], "examples": ["The dishes are dirty."] },
+  { "id": "comodo", "en": ["comfortable"], "examples": ["This couch is very comfortable."] },
+  { "id": "arriba", "en": ["upstairs", "up", "above"], "examples": ["The bathroom is upstairs."] },
+  { "id": "abajo", "en": ["downstairs", "down", "below"], "examples": ["I'll wait for you downstairs."] },
+  { "id": "lavadora", "en": ["washing machine", "washer"], "examples": ["The washing machine doesn't work."] },
+  { "id": "microondas", "en": ["microwave"], "examples": ["Heat up the food in the microwave."] },
+  { "id": "espejo", "en": ["mirror"], "examples": ["There's a mirror in the bathroom."] },
+  { "id": "lampara", "en": ["lamp"], "examples": ["Turn on the lamp, please."], "note": "In Mexico: prender = to turn on, apagar = to turn off." },
+  { "id": "almohada", "en": ["pillow"], "examples": ["I need another pillow."] },
+  { "id": "cobija", "en": ["blanket"], "examples": ["It's cold, can you pass me a blanket?"], "note": "A Mexican word; in Spain “manta”." },
+  { "id": "toalla", "en": ["towel"], "examples": ["The towels are in the bathroom."] },
+  { "id": "basura", "en": ["trash", "garbage"], "examples": ["We have to take out the trash."] },
+  { "id": "escalera", "en": ["stairs", "staircase", "ladder"], "examples": ["We went up the stairs."] },
+  { "id": "pared", "en": ["wall"], "examples": ["There's a photo on the wall."] },
+  { "id": "techo", "en": ["ceiling", "roof"], "examples": ["The ceiling is very high."] },
+  {
+    "id": "azotea",
+    "en": ["rooftop", "flat roof", "roof terrace"],
+    "examples": ["We hang the laundry on the rooftop."],
+    "note": "On Mexico's flat roofs people dry their laundry and throw parties."
+  },
+  {
+    "id": "mueble",
+    "en": ["piece of furniture", "furniture"],
+    "examples": ["We bought new furniture."],
+    "note": "Furniture in general = los muebles (plural)."
+  },
+  { "id": "closet", "en": ["closet"], "examples": ["Your clothes are in the closet."] },
+  { "id": "ventilador", "en": ["fan"], "examples": ["I can't sleep without a fan."] },
+  { "id": "ruido", "en": ["noise"], "examples": ["The neighbors make a lot of noise."] },
+  { "id": "mudanza", "en": ["move (to a new home)", "moving"], "examples": ["The move is on Saturday."] },
+  { "id": "dueno", "en": ["owner", "landlord"], "examples": ["The owner of the apartment lives upstairs."] },
+  {
+    "id": "fraccionamiento",
+    "en": ["housing development", "gated community", "subdivision"],
+    "examples": ["We live in a housing development near downtown."],
+    "note": "Mexican: a neighborhood of single-family homes, often with a gate and a guard."
+  },
+  {
+    "id": "gas",
+    "en": ["gas"],
+    "examples": ["We ran out of gas and there's no hot water."],
+    "note": "In Mexico gas is often bought by the tank: el camión del gas."
+  },
+  {
+    "id": "tinaco",
+    "en": ["water tank (on the roof)"],
+    "examples": ["The water tank is empty."],
+    "note": "Mexican: the typical black tank on the roof of a house."
+  },
+  { "id": "plomero", "en": ["plumber"], "examples": ["We need to call the plumber."], "note": "Mexican; in Spain “fontanero”." },
+  { "id": "hipoteca", "en": ["mortgage"], "examples": ["We're still paying the mortgage."] },
+  { "id": "gotera", "en": ["leak (in the roof)", "drip"], "examples": ["When it rains, there's a leak in the kitchen."] },
+  { "id": "inquilino", "en": ["tenant"], "examples": ["The tenant upstairs makes a lot of noise."] },
+  { "id": "mantenimiento", "en": ["maintenance"], "examples": ["The elevator is under maintenance."] }
+]

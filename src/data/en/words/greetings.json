@@ -1,0 +1,167 @@
+[
+  { "id": "hola", "en": ["hello", "hi"], "examples": ["Hi! How are you?"], "note": "In Mexico “hola” is fine with strangers too." },
+  { "id": "buenos-dias", "en": ["good morning"], "examples": ["Good morning, ma'am. How are you?"], "note": "Used until around noon." },
+  {
+    "id": "buenas-tardes",
+    "en": ["good afternoon"],
+    "examples": ["Good afternoon, do you have a table for two?"],
+    "note": "Used from noon until it gets dark."
+  },
+  {
+    "id": "buenas-noches",
+    "en": ["good evening", "good night"],
+    "examples": ["Good night, see you tomorrow."],
+    "note": "Once it's dark, it's used both when you arrive and when you leave."
+  },
+  { "id": "gracias", "en": ["thank you", "thanks"], "examples": ["Thank you very much for everything."] },
+  { "id": "por-favor", "en": ["please"], "examples": ["A coffee, please."] },
+  { "id": "de-nada", "en": ["you're welcome"], "examples": ["“Thank you.” “You're welcome.”"], "note": "In Mexico you also hear “por nada”." },
+  {
+    "id": "perdon",
+    "en": ["sorry", "excuse me", "pardon"],
+    "examples": ["Excuse me, where is the bathroom?"],
+    "note": "Also used to get someone's attention, like “excuse me”."
+  },
+  {
+    "id": "mande",
+    "en": ["pardon? (when you didn't hear)", "yes? (when someone calls you)"],
+    "examples": ["“Carlos!” “Yes?”", "Pardon? I didn't understand you."],
+    "note": "Typically Mexican. The polite reply when you didn't hear someone or when someone calls you. A bare “¿Qué?” sounds less polite."
+  },
+  { "id": "hasta-luego", "en": ["see you later", "goodbye"], "examples": ["See you later, take care."] },
+  { "id": "que-tal", "en": ["how are things?", "how's it going?"], "examples": ["Hi, how are things?"] },
+  { "id": "que-onda", "en": ["what's up?"], "examples": ["What's up? How are you?"], "note": "A casual Mexican greeting among friends." },
+  { "id": "mucho-gusto", "en": ["nice to meet you", "pleased to meet you"], "examples": ["Nice to meet you, I'm Adam."] },
+  { "id": "igualmente", "en": ["likewise", "same to you", "you too"], "examples": ["“Nice to meet you.” “Likewise.”"] },
+  { "id": "bienvenido", "en": ["welcome"], "examples": ["Welcome to Mexico!"] },
+  { "id": "adios", "en": ["goodbye", "bye"], "examples": ["Bye, see you tomorrow."] },
+  { "id": "nos-vemos", "en": ["see you"], "examples": ["See you on Monday."] },
+  {
+    "id": "con-permiso",
+    "en": ["excuse me (to get past or to leave)", "with your permission"],
+    "examples": ["Excuse me, I'm going to the bathroom."],
+    "note": "In Mexico you say it when you squeeze past someone or get up from the table."
+  },
+  {
+    "id": "disculpe",
+    "en": ["excuse me (formal)", "sorry"],
+    "examples": ["Excuse me, what time is it?"],
+    "note": "The polite form for a stranger (usted). To a friend: “disculpa”."
+  },
+  { "id": "claro", "en": ["of course", "sure"], "examples": ["“Will you help me?” “Of course!”"] },
+  { "id": "si", "en": ["yes"], "examples": ["Yes, of course."], "note": "Mind the accent: sí = yes, si = if." },
+  { "id": "no", "en": ["no", "not"], "examples": ["No, thanks."] },
+  {
+    "id": "buen-provecho",
+    "en": ["enjoy your meal", "bon appétit"],
+    "examples": ["Enjoy your meal!"],
+    "note": "In Mexico you also say it to strangers who are eating as you walk past them."
+  },
+  { "id": "felicidades", "en": ["congratulations"], "examples": ["Congratulations on your new job!"] },
+  { "id": "que-padre", "en": ["how cool!", "that's great!", "cool"], "examples": ["Your apartment is so cool!"], "note": "Mexican slang. Also “¡Qué chido!”." },
+  {
+    "id": "me-gusta",
+    "en": ["I like", "I like it"],
+    "examples": ["I like Mexico a lot."],
+    "note": "Literally “it pleases me”, so for several things it's “me gustan”: Me gustan los tacos."
+  },
+  { "id": "me-encanta", "en": ["I love", "I love it"], "examples": ["I love Mexican food."] },
+  {
+    "id": "hay",
+    "en": ["there is", "there are"],
+    "examples": ["Is there a bathroom here?"],
+    "note": "One form for one thing and for many: Hay mucha gente = There are a lot of people."
+  },
+  { "id": "como-estas", "en": ["how are you?"], "examples": ["Hi, Ana! How are you?"], "note": "Formal: ¿Cómo está usted?" },
+  { "id": "como-te-va", "en": ["how are you doing?", "how's it going for you?"], "examples": ["How are you doing at work?"] },
+  { "id": "lo-siento", "en": ["I'm sorry", "sorry"], "examples": ["I'm sorry, I got here late."] },
+  { "id": "no-pasa-nada", "en": ["it's okay", "no problem", "don't worry about it"], "examples": ["Relax, it's okay."] },
+  { "id": "buen-viaje", "en": ["have a good trip!"], "examples": ["Have a good trip, and see you soon!"] },
+  { "id": "que-te-vaya-bien", "en": ["take care", "have a good one"], "examples": ["Bye, take care."] },
+  { "id": "saludos", "en": ["greetings", "regards", "say hi"], "examples": ["Say hi to your family."] },
+  { "id": "que-bueno", "en": ["that's great!", "how nice!"], "examples": ["I'm so glad you came!"] },
+  {
+    "id": "orale",
+    "en": ["okay", "all right", "wow"],
+    "examples": ["All right, let's go!"],
+    "note": "A Mexican interjection: agreement, encouragement or surprise, depending on the tone."
+  },
+  {
+    "id": "sale",
+    "en": ["deal", "okay"],
+    "examples": ["Okay, see you tomorrow."],
+    "note": "The casual Mexican “OK”. It is also a form of the verb salir (él sale = he leaves)."
+  },
+  { "id": "aguas", "en": ["watch out!", "look out!", "careful!"], "examples": ["Watch out! A car is coming."], "note": "A casual Mexican warning." },
+  {
+    "id": "neta",
+    "en": ["really?", "seriously?"],
+    "examples": ["Really? I don't believe you."],
+    "note": "Mexican slang: la neta = the truth (la neta, no sé = honestly, I don't know)."
+  },
+  { "id": "chido", "en": ["cool", "great"], "examples": ["Your car is really cool."], "note": "Mexican slang, like “padre”." },
+  { "id": "nombre", "en": ["name", "first name"], "examples": ["What's your name?"] },
+  {
+    "id": "apellido",
+    "en": ["last name", "surname"],
+    "examples": ["What is your last name?"],
+    "note": "Mexicans have two last names: the first from the father, the second from the mother."
+  },
+  { "id": "estoy-de-acuerdo", "en": ["I agree"], "examples": ["I agree with you."] },
+  { "id": "tener-razon", "en": ["to be right"], "examples": ["You're right."] },
+  { "id": "vale-la-pena", "en": ["it's worth it"], "examples": ["Oaxaca is worth visiting."] },
+  { "id": "depende", "en": ["it depends"], "examples": ["It depends on the weather."] },
+  { "id": "me-da-igual", "en": ["I don't mind", "it's all the same to me", "I don't care"], "examples": ["Tacos or pizza? I don't mind."] },
+  { "id": "no-te-preocupes", "en": ["don't worry"], "examples": ["Don't worry, I'll pay."] },
+  { "id": "en-serio", "en": ["seriously?", "really?"], "examples": ["Seriously? I can't believe it."] },
+  { "id": "la-verdad", "en": ["honestly", "to be honest", "the truth"], "examples": ["Honestly, I didn't like it."] },
+  {
+    "id": "con-mucho-gusto",
+    "en": ["with pleasure", "my pleasure", "gladly"],
+    "examples": ["I'll gladly help you."],
+    "note": "In Mexico a common reply to “gracias” instead of “de nada”."
+  },
+  {
+    "id": "no-manches",
+    "en": ["no way!", "you're kidding!"],
+    "examples": ["No way! You won?"],
+    "note": "Mexican slang for surprise (the mild version of a cruder expression)."
+  },
+  { "id": "ni-modo", "en": ["oh well", "too bad", "it can't be helped"], "examples": ["Oh well, another day then."], "note": "Very Mexican." },
+  {
+    "id": "a-poco",
+    "en": ["really?", "no way!", "you don't say!"],
+    "examples": ["No way, you're done already?"],
+    "note": "Mexican slang: it expresses surprise or disbelief."
+  },
+  {
+    "id": "buen-fin",
+    "en": ["have a good weekend!"],
+    "examples": ["See you on Monday, have a good weekend!"],
+    "note": "Short for “buen fin de semana”. El Buen Fin is also Mexico's big sales weekend in November."
+  },
+  {
+    "id": "que-flojera",
+    "en": ["I can't be bothered!", "what a drag!"],
+    "examples": ["I really don't feel like going to work today!"],
+    "note": "flojo = lazy; tener flojera = to not feel like doing anything."
+  },
+  {
+    "id": "echale-ganas",
+    "en": ["give it your all!", "go for it!", "hang in there!"],
+    "examples": ["Give the exam your best shot!"],
+    "note": "A very Mexican way to cheer someone on."
+  },
+  {
+    "id": "no-hay-bronca",
+    "en": ["no problem", "no worries"],
+    "examples": ["“Sorry I'm late.” “No worries.”"],
+    "note": "Mexican slang; bronca = a problem, a fight."
+  },
+  {
+    "id": "andale",
+    "en": ["come on!", "exactly!"],
+    "examples": ["Come on, let's go!"],
+    "note": "A Mexican interjection: to hurry someone up (¡ándale, apúrate!) and to agree (¡ándale! = exactly)."
+  }
+]

@@ -1,0 +1,82 @@
+[
+  { "id": "familia", "en": ["family"], "examples": ["My family lives in Guadalajara."] },
+  { "id": "mama", "en": ["mom", "mother", "mommy"], "examples": ["My mom is a great cook."] },
+  {
+    "id": "papa-2",
+    "en": ["dad", "father"],
+    "examples": ["My dad works at a bank."],
+    "note": "Mind the accent: papá = dad, papa = potato. Mis papás = my parents."
+  },
+  { "id": "hermano", "en": ["brother"], "examples": ["My brother lives in Monterrey."], "note": "hermana = sister, hermanos = brothers or siblings." },
+  { "id": "hijo", "en": ["son"], "examples": ["How many children do you have?"], "note": "hija = daughter, hijos = sons or (one's own) children." },
+  { "id": "esposo", "en": ["husband"], "examples": ["My husband's name is Luis."], "note": "esposa = wife." },
+  {
+    "id": "abuela",
+    "en": ["grandmother", "grandma"],
+    "examples": ["On Sundays we have lunch with my grandma."],
+    "note": "abuelo = grandfather, abuelos = grandparents."
+  },
+  { "id": "amigo", "en": ["friend"], "examples": ["I'm going to the movies with some friends."], "note": "amiga = a female friend." },
+  { "id": "hermana", "en": ["sister"], "examples": ["My sister has two children."] },
+  { "id": "hija", "en": ["daughter"], "examples": ["My daughter studies at the university."] },
+  { "id": "esposa", "en": ["wife"], "examples": ["My wife is from Veracruz."] },
+  { "id": "abuelo", "en": ["grandfather", "grandpa"], "examples": ["My grandpa tells very funny stories."] },
+  {
+    "id": "padre",
+    "en": ["father"],
+    "examples": ["My father is a teacher."],
+    "note": "los padres = parents (in Mexico more often “mis papás”). Colloquially “¡Qué padre!” = How cool!"
+  },
+  {
+    "id": "madre",
+    "en": ["mother"],
+    "examples": ["My mother's name is Elena."],
+    "note": "In Mexico “madre” also turns up in a lot of strong slang; the everyday word is “mamá”."
+  },
+  { "id": "tio", "en": ["uncle"], "examples": ["My uncle lives in the United States."], "note": "tía = aunt." },
+  { "id": "primo", "en": ["cousin"], "examples": ["My cousins are coming to the party."], "note": "prima = a female cousin." },
+  { "id": "sobrino", "en": ["nephew"], "examples": ["My nephew is five years old."], "note": "sobrina = niece." },
+  { "id": "nino", "en": ["child", "boy", "kid"], "examples": ["The children are playing in the yard."], "note": "niña = girl; los niños = children." },
+  { "id": "bebe", "en": ["baby"], "examples": ["The baby is sleeping."] },
+  { "id": "novio", "en": ["boyfriend", "groom"], "examples": ["My boyfriend is from Monterrey."], "note": "novia = girlfriend, and also bride." },
+  { "id": "casado", "en": ["married"], "examples": ["Are you married?"], "note": "estar casado / casada = to be married." },
+  { "id": "soltero", "en": ["single"], "examples": ["My brother is still single."] },
+  { "id": "mayor", "en": ["older", "elder"], "examples": ["My older brother lives in Cancún."] },
+  { "id": "menor", "en": ["younger"], "examples": ["I'm the youngest in the family."] },
+  { "id": "mascota", "en": ["pet"], "examples": ["Do you have a pet?"] },
+  { "id": "perro", "en": ["dog"], "examples": ["My dog's name is Chocolate."] },
+  { "id": "gato", "en": ["cat"], "examples": ["The cat sleeps all day."] },
+  { "id": "papas", "en": ["parents"], "examples": ["My parents live in Toluca."], "note": "In Mexico people usually say “mis papás” instead of “mis padres”." },
+  { "id": "nieto", "en": ["grandson", "grandchild"], "examples": ["My grandma has ten grandchildren."], "note": "nieta = granddaughter." },
+  { "id": "suegra", "en": ["mother-in-law"], "examples": ["My mother-in-law is a great cook."], "note": "suegro = father-in-law." },
+  { "id": "cunado", "en": ["brother-in-law"], "examples": ["My brother-in-law lives in the United States."], "note": "cuñada = sister-in-law." },
+  { "id": "pareja", "en": ["partner", "couple"], "examples": ["I live with my partner."], "note": "Always feminine, even for a man." },
+  { "id": "gente", "en": ["people"], "examples": ["People here are very friendly."], "note": "Grammatically singular: la gente es…" },
+  { "id": "persona", "en": ["person"], "examples": ["He's a very good person."], "note": "Always feminine, even about a man." },
+  { "id": "hombre", "en": ["man"], "examples": ["That man is my neighbor."] },
+  { "id": "mujer", "en": ["woman"], "examples": ["That woman is my teacher."] },
+  { "id": "chavo", "en": ["guy", "kid", "young guy"], "examples": ["The guys are playing soccer in the street."], "note": "Mexican slang; a girl = chava." },
+  { "id": "cuate", "en": ["buddy", "pal"], "examples": ["He's my buddy from school."], "note": "Mexican slang; cuates also = twins." },
+  { "id": "divorciado", "en": ["divorced"], "examples": ["My parents are divorced."] },
+  {
+    "id": "joven",
+    "en": ["young", "young person"],
+    "examples": ["Your mom is very young."],
+    "note": "Also a way to address a young man, for example in a store: ¡Joven!"
+  },
+  { "id": "boda", "en": ["wedding"], "examples": ["The wedding is in June."] },
+  { "id": "divorcio", "en": ["divorce"], "examples": ["After the divorce he moved to Monterrey."] },
+  {
+    "id": "padrino",
+    "en": ["godfather"],
+    "examples": ["My godfather gave me my first bicycle."],
+    "note": "In Mexico there are also padrinos at weddings, quinceañeras (XV años) and first communions."
+  },
+  {
+    "id": "compadre",
+    "en": ["compadre (your child's godfather)", "close friend"],
+    "examples": ["My compadre is coming over for lunch on Sunday."],
+    "note": "What a child's parents and the godfather call each other; colloquially also “good friend”."
+  },
+  { "id": "herencia", "en": ["inheritance"], "examples": ["He got an inheritance from his aunt."] }
+]

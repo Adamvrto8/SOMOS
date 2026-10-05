@@ -1,0 +1,139 @@
+[
+  {
+    "id": "comida",
+    "en": ["food", "meal", "lunch"],
+    "examples": ["Lunch is ready.", "I really like Mexican food."],
+    "note": "In Mexico “la comida” is the main meal of the day, usually between 2 and 4 p.m."
+  },
+  {
+    "id": "agua",
+    "en": ["water"],
+    "examples": ["Could I have a glass of water, please?"],
+    "note": "It's feminine, but in the singular you say “el agua” (because of the stressed first a). Agua de jamaica = a refreshing hibiscus drink."
+  },
+  { "id": "cafe", "en": ["coffee", "café"], "examples": ["I have a coffee every morning."] },
+  { "id": "jugo", "en": ["juice"], "examples": ["An orange juice, please."], "note": "In Spain it's “zumo”; in Mexico always “jugo”." },
+  {
+    "id": "tortilla",
+    "en": ["tortilla"],
+    "examples": ["Tacos are made with corn tortillas."],
+    "note": "In Mexico a tortilla is a thin flatbread made of corn or wheat, not the potato omelet it is in Spain."
+  },
+  {
+    "id": "papa",
+    "en": ["potato"],
+    "examples": ["I want a hamburger with fries."],
+    "note": "In Spain it's “patata”. Careful: papá (with an accent) = dad. Papas fritas = French fries or potato chips."
+  },
+  { "id": "pollo", "en": ["chicken"], "examples": ["Today there's chicken with rice."] },
+  {
+    "id": "rico",
+    "en": ["tasty", "delicious", "rich"],
+    "examples": ["The tacos are really good."],
+    "note": "About food, with estar: ¡Está muy rico! = It's delicious. With ser it means rich: Es rico."
+  },
+  { "id": "cuenta", "en": ["check", "bill"], "examples": ["The check, please."] },
+  { "id": "pan", "en": ["bread"], "examples": ["I buy bread at the bakery."], "note": "pan dulce = Mexican sweet bread, eaten for breakfast." },
+  { "id": "arroz", "en": ["rice"], "examples": ["Today there's rice and beans."] },
+  {
+    "id": "frijol",
+    "en": ["bean", "beans"],
+    "examples": ["Beans are very common in Mexico."],
+    "note": "Usually plural: los frijoles. Frijoles refritos = refried beans."
+  },
+  { "id": "carne", "en": ["meat"], "examples": ["I don't eat meat."] },
+  { "id": "pescado", "en": ["fish (as food)"], "examples": ["We eat fish on Fridays."], "note": "pescado = fish as food; pez = a live fish." },
+  { "id": "huevo", "en": ["egg"], "examples": ["I have eggs with ham for breakfast."] },
+  { "id": "leche", "en": ["milk"], "examples": ["Do you take milk in your coffee?"] },
+  { "id": "queso", "en": ["cheese"], "examples": ["A quesadilla with cheese, please."] },
+  { "id": "fruta", "en": ["fruit"], "examples": ["I eat fruit every day."] },
+  { "id": "verdura", "en": ["vegetable", "vegetables"], "examples": ["I need to buy vegetables."] },
+  { "id": "naranja", "en": ["orange (the fruit)"], "examples": ["I like orange juice."] },
+  { "id": "manzana", "en": ["apple"], "examples": ["I always carry an apple in my backpack."] },
+  { "id": "platano", "en": ["banana", "plantain"], "examples": ["Bananas are very cheap."], "note": "In Mexico it's “plátano” (elsewhere also “banana”)." },
+  { "id": "aguacate", "en": ["avocado"], "examples": ["Guacamole is made with avocado."] },
+  {
+    "id": "jitomate",
+    "en": ["tomato"],
+    "examples": ["I need three tomatoes for the salsa."],
+    "note": "In Mexico “jitomate” = the red tomato; “tomate” often means the green one (tomatillo)."
+  },
+  { "id": "chile", "en": ["chili", "chili pepper", "chile"], "examples": ["Is this chili very hot?"], "note": "¿Pica? = Is it spicy?" },
+  { "id": "salsa", "en": ["salsa", "sauce"], "examples": ["Is the salsa spicy?"] },
+  { "id": "sal", "en": ["salt"], "examples": ["Can you pass me the salt?"] },
+  { "id": "azucar", "en": ["sugar"], "examples": ["A coffee with no sugar, please."] },
+  { "id": "cerveza", "en": ["beer"], "examples": ["Two ice-cold beers, please."] },
+  { "id": "refresco", "en": ["soda", "soft drink"], "examples": ["Do you want a soda?"] },
+  { "id": "vaso", "en": ["glass"], "examples": ["A glass of water, please."] },
+  { "id": "plato", "en": ["plate", "dish"], "examples": ["The plates are in the kitchen."] },
+  { "id": "restaurante", "en": ["restaurant"], "examples": ["I know a very good restaurant."] },
+  {
+    "id": "mesero",
+    "en": ["waiter", "server"],
+    "examples": ["The waiter is bringing us the check."],
+    "note": "mesera = waitress. In Mexico it's “mesero” (in Spain “camarero”)."
+  },
+  { "id": "hambre", "en": ["hunger"], "examples": ["I'm very hungry."], "note": "Tener hambre = to be hungry. It's feminine, but you say “el hambre”." },
+  { "id": "sed", "en": ["thirst"], "examples": ["Are you thirsty?"], "note": "Tener sed = to be thirsty." },
+  { "id": "delicioso", "en": ["delicious"], "examples": ["The mole is delicious."] },
+  { "id": "picante", "en": ["spicy", "hot"], "examples": ["I don't like spicy food."] },
+  { "id": "desayuno", "en": ["breakfast"], "examples": ["Breakfast is at eight."] },
+  { "id": "cena", "en": ["dinner", "supper"], "examples": ["What's for dinner?"] },
+  { "id": "sopa", "en": ["soup"], "examples": ["The soup is very hot."] },
+  { "id": "ensalada", "en": ["salad"], "examples": ["A salad with no onion, please."] },
+  {
+    "id": "taco",
+    "en": ["taco"],
+    "examples": ["Let's go get some tacos."],
+    "note": "Tacos al pastor, de suadero, de canasta… They're eaten mostly on the street and in “taquerías”."
+  },
+  { "id": "limon", "en": ["lime", "lemon"], "examples": ["I like tacos with lime."], "note": "In Mexico a “limón” is the small green lime." },
+  {
+    "id": "fresa",
+    "en": ["strawberry"],
+    "examples": ["A strawberry smoothie, please."],
+    "note": "Colloquially also “snobby, stuck-up”: es muy fresa. Licuado = a blended drink made with milk."
+  },
+  { "id": "mango", "en": ["mango"], "examples": ["Mango with chili is delicious."] },
+  { "id": "pina", "en": ["pineapple"], "examples": ["I bought a pineapple at the market."] },
+  { "id": "sandia", "en": ["watermelon"], "examples": ["In summer we eat a lot of watermelon."] },
+  { "id": "cebolla", "en": ["onion"], "examples": ["Tacos come with onion and cilantro."] },
+  { "id": "ajo", "en": ["garlic"], "examples": ["The salsa has a lot of garlic."] },
+  { "id": "zanahoria", "en": ["carrot"], "examples": ["Buy a kilo of carrots."] },
+  {
+    "id": "elote",
+    "en": ["corn on the cob", "corn"],
+    "examples": ["Let's buy an elote on the corner."],
+    "note": "Elote = boiled corn on the cob with mayonnaise, cheese and chili; esquites = the same served in a cup."
+  },
+  { "id": "pastel", "en": ["cake"], "examples": ["I made a cake for your birthday."] },
+  { "id": "galleta", "en": ["cookie", "cracker"], "examples": ["The kids want cookies."] },
+  { "id": "dulce", "en": ["candy", "sweet"], "examples": ["Kids eat a lot of candy."], "note": "As an adjective: sweet (pan dulce = sweet bread)." },
+  { "id": "helado", "en": ["ice cream"], "examples": ["A chocolate ice cream, please."] },
+  {
+    "id": "te",
+    "en": ["tea"],
+    "examples": ["A chamomile tea, please."],
+    "note": "With an accent = tea; “te” without one = you (as an object: te veo = I see you)."
+  },
+  { "id": "vino", "en": ["wine"], "examples": ["A glass of red wine, please."] },
+  { "id": "tequila", "en": ["tequila"], "examples": ["Tequila is made in Jalisco."], "note": "It's masculine in Spanish: el tequila." },
+  { "id": "cerdo", "en": ["pork", "pig"], "examples": ["Tacos al pastor are made with pork."], "note": "Beef = carne de res." },
+  { "id": "cuchara", "en": ["spoon"], "examples": ["Could you bring me a spoon, please?"] },
+  { "id": "tenedor", "en": ["fork"], "examples": ["Tacos are eaten without a fork."] },
+  { "id": "cuchillo", "en": ["knife"], "examples": ["This knife doesn't cut."] },
+  { "id": "propina", "en": ["tip"], "examples": ["In Mexico you leave a ten or fifteen percent tip."] },
+  { "id": "ingrediente", "en": ["ingredient"], "examples": ["I already have all the ingredients."] },
+  { "id": "antojo", "en": ["craving"], "examples": ["I'm craving some tamales."], "note": "Antojitos = Mexican street food (tacos, quesadillas, sopes…)." },
+  { "id": "tamal", "en": ["tamale (corn dough steamed in a husk)", "tamal"], "examples": ["In the morning they sell tamales on the corner."] },
+  { "id": "pozole", "en": ["pozole (hominy soup)"], "examples": ["Pozole is the typical dish of the Independence Day celebrations."] },
+  { "id": "crudo", "en": ["raw"], "examples": ["The meat is raw."], "note": "Colloquially in Mexico also “hungover”: estoy crudo." },
+  { "id": "vegetariano", "en": ["vegetarian"], "examples": ["I'm a vegetarian, I don't eat meat."] },
+  {
+    "id": "sobremesa",
+    "en": ["after-meal conversation (staying at the table)", "sobremesa"],
+    "examples": ["In Mexico the after-meal conversation can last for hours."]
+  },
+  { "id": "porcion", "en": ["portion", "serving"], "examples": ["The portions at this restaurant are huge."] },
+  { "id": "congelado", "en": ["frozen"], "examples": ["I bought frozen vegetables."] }
+]

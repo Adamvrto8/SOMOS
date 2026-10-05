@@ -10,7 +10,7 @@ import { tipFor } from './tips'
 import { guessLang } from './translate'
 
 // What changes with the language besides the texts: answers, search, glosses, reasons.
-// lluvia (weather) and the core verbs have English; casa has not.
+// Every word and verb has English.
 
 const WRONG: Grade = { correct: false, verdict: 'wrong', expected: '' }
 const ids = (query: string) => searchWords(query, 'all').map((hit) => hit.word.id)
@@ -42,14 +42,27 @@ describe('in English', () => {
     expect(gradeTask(vocabTask(wordById.get('lluvia')!, 'es-sk'), 'snow').correct).toBe(false)
   })
 
+  it('takes an apostrophe as the phone types it, or none at all', () => {
+    const worry = vocabTask(wordById.get('no-te-preocupes')!, 'es-sk')
+    expect(gradeTask(worry, "don't worry").verdict).toBe('correct')
+    expect(gradeTask(worry, 'Don’t worry').verdict).toBe('correct')
+    expect(gradeTask(worry, 'dont worry').verdict).toBe('correct')
+    expect(gradeTask(worry, 'do not worry').correct).toBe(false)
+    // A short word is no typo, so without this "it’s" would be plain wrong.
+    const worth = vocabTask(wordById.get('vale-la-pena')!, 'es-sk')
+    expect(gradeTask(worth, 'it’s worth it').verdict).toBe('correct')
+    expect(gradeTask(worth, 'its worth it').verdict).toBe('correct')
+  })
+
   it('asks for the Spanish word with the English one', () => {
     expect(vocabTask(wordById.get('lluvia')!, 'sk-es').prompt).toBe('rain')
   })
 
-  it('searches the English translations, and the Slovak ones of words without English', () => {
+  it('searches the English translations, not the Slovak ones', () => {
     expect(ids('rain')).toContain('lluvia')
     expect(ids('dážď')).not.toContain('lluvia')
-    expect(ids('dom')).toContain('casa')
+    expect(ids('house')).toContain('casa')
+    expect(ids('dom')).not.toContain('casa')
     expect(ids('lluvia')).toContain('lluvia')
   })
 
