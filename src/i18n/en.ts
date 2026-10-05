@@ -209,6 +209,8 @@ export const en: Dictionary = {
     topics: 'Topics',
     words: (n) => counted(n, 'word', 'words'),
     topicNotFound: 'Topic not found',
+    previousTopic: 'Previous topic',
+    nextTopic: 'Next topic',
     form: 'form',
     saved: 'Saved',
     online: {

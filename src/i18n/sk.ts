@@ -222,6 +222,8 @@ export const sk = {
     topics: 'Témy',
     words: (n: number) => `${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     topicNotFound: 'Téma sa nenašla',
+    previousTopic: 'Predchádzajúca téma',
+    nextTopic: 'Ďalšia téma',
     /** A hit on a conjugated form: tvar „tengo“ · mať */
     form: 'tvar',
     saved: 'Uložené',
