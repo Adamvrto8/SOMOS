@@ -86,6 +86,7 @@ export type ReminderError =
   | 'not-configured'
   | 'too-many'
   | 'gone'
+  | 'elsewhere'
   | 'failed'
 
 export class ReminderFailure extends Error {
@@ -134,6 +135,7 @@ async function post(body: Record<string, unknown>, keepalive = false): Promise<u
   if (data.error === 'not-configured') throw new ReminderFailure('not-configured')
   if (res.status === 429) throw new ReminderFailure('too-many')
   if (res.status === 410) throw new ReminderFailure('gone')
+  if (data.error === 'other-device') throw new ReminderFailure('elsewhere')
   throw new ReminderFailure('failed', `server ${res.status}${data.error ? ` ${data.error}` : ''}`)
 }
 
@@ -162,36 +164,58 @@ async function ensureSubscription(): Promise<PushSubscription> {
   }
 }
 
-/** Tells the server where and when to remind (also refreshes a rotated subscription). */
-function register(subscription: PushSubscription, time: string): Promise<unknown> {
+const DEVICE_KEY = 'somos-reminder-device'
+
+/** This device's own name for the server: a subscription can change, the device stays. */
+function deviceId(): string | undefined {
+  try {
+    const stored = localStorage.getItem(DEVICE_KEY)
+    if (stored) return stored
+    const fresh = crypto.randomUUID()
+    localStorage.setItem(DEVICE_KEY, fresh)
+    return fresh
+  } catch {
+    return undefined // no storage: the server then takes this for an app from before device ids
+  }
+}
+
+/**
+ * Tells the server where and when to remind (also refreshes a rotated subscription).
+ * The server reminds one device. `takeOver` moves the reminders here from another one; without it
+ * the server refuses ('elsewhere'), so that merely opening the app somewhere does not move them.
+ */
+function register(subscription: PushSubscription, time: string, takeOver: boolean): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   // receipts: this app's service worker confirms the messages it gets (public/push-sw.js).
-  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true })
+  const here = { device: deviceId(), ...(takeOver ? { takeOver: true } : {}) }
+  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true, ...here })
 }
 
 /** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
-async function registerDevice(time: string): Promise<PushSubscription> {
+async function registerDevice(time: string, takeOver: boolean): Promise<PushSubscription> {
   const subscription = await ensureSubscription()
   try {
-    await register(subscription, time)
+    await register(subscription, time, takeOver)
     return subscription
   } catch (error) {
     if (!isGone(error)) throw error
     await subscription.unsubscribe()
     const fresh = await ensureSubscription()
-    await register(fresh, time)
+    await register(fresh, time, takeOver)
     return fresh
   }
 }
 
 // ---------- actions (Nastavenia) ----------
 
+// What the learner does here (turn on, change the time, send a test) brings the reminders to this device.
+
 /** Asks for permission, subscribes this device and turns the reminder on. */
 export async function enableReminder(time: string): Promise<void> {
   assertReady()
   const permission = await Notification.requestPermission()
   if (permission !== 'granted') throw new ReminderFailure(permission === 'denied' ? 'denied' : 'not-allowed')
-  await registerDevice(time)
+  await registerDevice(time, true)
   saveSettings({ enabled: true, time })
   synced()
   void reportProgressNow()
@@ -200,7 +224,7 @@ export async function enableReminder(time: string): Promise<void> {
 export async function setReminderTime(time: string): Promise<void> {
   if (!settings.enabled) return saveSettings({ ...settings, time })
   assertReady()
-  await registerDevice(time)
+  await registerDevice(time, true)
   saveSettings({ ...settings, time })
 }
 
@@ -222,7 +246,7 @@ export async function disableReminder(): Promise<void> {
 export async function sendTestReminder(): Promise<void> {
   assertReady()
   const attempt = async () => {
-    const subscription = await registerDevice(settings.time)
+    const subscription = await registerDevice(settings.time, true)
     await post({ type: 'test', endpoint: subscription.endpoint })
   }
   try {
@@ -241,7 +265,7 @@ export async function sendTestReminder(): Promise<void> {
  */
 export async function sendTestLater(): Promise<void> {
   assertReady()
-  const subscription = await registerDevice(settings.time)
+  const subscription = await registerDevice(settings.time, true)
   await post({ type: 'test-later', endpoint: subscription.endpoint })
   synced()
 }
@@ -269,6 +293,7 @@ export function reminderProblem(): string | null {
   const text = t().reminder
   if (settings.lost) return text.lost
   if (!settings.enabled || !syncFailure) return null
+  if (syncFailure.code === 'elsewhere') return text.elsewhere
   const why = syncFailure.code === 'offline' ? text.problemOffline : syncFailure.code === 'failed' ? text.problemFailed : text.errors[syncFailure.code]
   return text.problem(why)
 }
@@ -277,9 +302,15 @@ export function useReminderProblem(): string | null {
   return useSyncExternalStore(subscribe, reminderProblem)
 }
 
+/** The reminder is on here, but the server sends it to another device (and this one did not take it). */
+export function useReminderElsewhere(): boolean {
+  return useSyncExternalStore(subscribe, () => settings.enabled && syncFailure?.code === 'elsewhere')
+}
+
 /**
  * Keeps the server's copy fresh (Chrome can rotate a subscription, the push service can drop it)
  * and turns the setting off, visibly, when Android took the notification permission back.
+ * Never takes the reminders from another device: that it only reports.
  */
 export async function syncReminder(): Promise<void> {
   if (!settings.enabled) return
@@ -288,7 +319,7 @@ export async function syncReminder(): Promise<void> {
   if (support !== 'ok' || Notification.permission !== 'granted') return saveSettings({ enabled: false, time: settings.time, lost: true })
   if (!navigator.onLine) return
   try {
-    await registerDevice(settings.time)
+    await registerDevice(settings.time, false)
     synced()
     await reportProgressNow()
   } catch (error) {

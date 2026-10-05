@@ -12,6 +12,7 @@ import {
   sendTestLater,
   sendTestReminder,
   setReminderTime,
+  useReminderElsewhere,
   useReminderProblem,
   useReminderSettings,
 } from '../../lib/reminder'
@@ -30,6 +31,7 @@ export function ReminderSettings() {
   // Local draft, so typing a time on a keyboard is not reset mid-way.
   const [time, setTime] = useState(settings.time)
   const problem = useReminderProblem()
+  const elsewhere = useReminderElsewhere()
   // What the server knows: a reminder that stopped is otherwise invisible. null = not asked yet.
   const [server, setServer] = useState<StatusLine[] | 'unreachable' | null>(null)
 
@@ -104,6 +106,11 @@ export function ReminderSettings() {
         <p role="alert" className="mt-2 text-sm text-error">
           {problem}
         </p>
+      )}
+      {elsewhere && (
+        <Button icon={BellRing} disabled={busy} onClick={() => void run(() => enableReminder(settings.time), text.movedHere)} className="mt-3 w-full">
+          {text.moveHere}
+        </Button>
       )}
       {status && (
         <p role="status" className={`mt-2 text-sm ${status.tone === 'error' ? 'text-error' : 'text-leaf'}`}>

@@ -166,6 +166,28 @@ describe('a reminder that stopped working', () => {
     expect(reminderProblem()).toBeNull()
   })
 
+  it('says that the reminders go to another device, and takes them only when asked', async () => {
+    const bodies: Record<string, unknown>[] = []
+    // Like api/reminder.ts with another device stored: checking in is refused, asking for them here is not.
+    const server = async (_input: RequestInfo | URL, init?: RequestInit) => {
+      const body = JSON.parse(String(init?.body)) as Record<string, unknown>
+      bodies.push(body)
+      return body.type === 'subscribe' && body.takeOver !== true ? Response.json({ error: 'other-device' }, { status: 409 }) : Response.json({ ok: true })
+    }
+    stubDevice(server)
+    await enableReminder('19:00')
+    expect(bodies[0]).toMatchObject({ type: 'subscribe', takeOver: true })
+    expect(reminderProblem()).toBeNull()
+
+    await syncReminder()
+    expect(bodies.at(-1)).toMatchObject({ type: 'subscribe' })
+    expect(bodies.at(-1)).not.toHaveProperty('takeOver')
+    expect(reminderProblem()).toContain('Pripomienky chodia na iné zariadenie')
+
+    await sendTestReminder()
+    expect(reminderProblem()).toBeNull()
+  })
+
   it('asks the server what it knows about this device', async () => {
     const fetchMock = vi.fn(async (_input: RequestInfo | URL, _init?: RequestInit) => Response.json({ ok: true, status: { subscribed: true } }))
     stubDevice(fetchMock)

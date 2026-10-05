@@ -43,7 +43,7 @@ describe('describeStatus', () => {
   })
 
   it('points at reminders going to another device', () => {
-    expect(problems(status({ thisDevice: false }))).toEqual(['Pripomienky chodia na iné zariadenie. Pošli skúšobnú notifikáciu, tým sa prepnú sem.'])
+    expect(problems(status({ thisDevice: false }))).toEqual(['Pripomienky chodia na iné zariadenie.'])
   })
 
   it('points at a timer that stopped calling', () => {

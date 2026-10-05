@@ -464,6 +464,51 @@ describe('api/reminder: did the phone get it', () => {
   })
 })
 
+describe('api/reminder: one device, and it stays where the learner put it', () => {
+  const PHONE = 'phone-device-1'
+  const LAPTOP = 'laptop-device-2'
+  const LAPTOP_SUB = { ...SUB.subscription, endpoint: OTHER_DEVICE }
+  const subscribe = (subscription: unknown, extra: Record<string, unknown>) => post({ type: 'subscribe', subscription, time: '19:00', timeZone: TZ, ...extra })
+  const storedEndpoint = (store: { data: Map<string, string> }) => (JSON.parse(store.data.get(KEYS.sub)!) as ReminderSub).subscription.endpoint
+
+  it('does not hand the reminders to another device that only opened the app', async () => {
+    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
+    const res = await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP }), deps(store))
+    expect(res.status).toBe(409)
+    expect(await res.json()).toEqual({ error: 'other-device' })
+    expect(storedEndpoint(store)).toBe(SUB.subscription.endpoint)
+  })
+
+  it('moves them when the learner asks for them there', async () => {
+    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
+    expect((await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP, takeOver: true }), deps(store))).status).toBe(200)
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, subscription: LAPTOP_SUB, device: LAPTOP })
+  })
+
+  it('follows the same device to a new subscription', async () => {
+    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
+    const rotated = { ...SUB.subscription, endpoint: 'https://push.example/rotated' }
+    expect((await handleReminder(subscribe(rotated, { device: PHONE }), deps(store))).status).toBe(200)
+    expect(storedEndpoint(store)).toBe(rotated.endpoint)
+  })
+
+  it('keeps a phone stored before devices had ids, and learns its id when it checks in', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    expect((await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP }), deps(store))).status).toBe(409)
+    expect((await handleReminder(subscribe(SUB.subscription, { device: PHONE }), deps(store))).status).toBe(200)
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, device: PHONE })
+  })
+
+  it('takes the first device when there is none, and ignores an id that is not one', async () => {
+    const store = memoryStore()
+    expect((await handleReminder(subscribe(SUB.subscription, { device: PHONE }), deps(store))).status).toBe(200)
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, device: PHONE })
+    const other = memoryStore()
+    await handleReminder(subscribe(SUB.subscription, { device: 'x y' }), deps(other))
+    expect(JSON.parse(other.data.get(KEYS.sub)!)).toEqual(SUB)
+  })
+})
+
 describe('upstashStore', () => {
   it('sends Redis commands to the REST endpoint', async () => {
     const fetchImpl = vi.fn(async () => Response.json({ result: 'OK' }))

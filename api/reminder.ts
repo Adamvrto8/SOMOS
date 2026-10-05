@@ -19,6 +19,7 @@ export interface ReminderSub {
   timeZone: string // IANA zone from the phone, e.g. "Europe/Bratislava"
   language?: 'en' // the app's language; missing = Slovak (also every subscription stored before 2026-10-04)
   receipts?: true // its service worker confirms what it receives (apps since 2026-10-05)
+  device?: string // the app's own id for this device: outlives a rotated subscription (apps since 2026-10-06)
 }
 
 /** What the phone last reported, computed in its local time. */
@@ -110,13 +111,16 @@ export function isPushSub(v: unknown): v is PushSub {
   return typeof v.keys.p256dh === 'string' && typeof v.keys.auth === 'string'
 }
 
+const isDevice = (v: unknown): v is string => typeof v === 'string' && /^[\w-]{8,64}$/.test(v)
+
 export const isReminderSub = (v: unknown): v is ReminderSub =>
   isRecord(v) &&
   isPushSub(v.subscription) &&
   isTime(v.time) &&
   isTimeZone(v.timeZone) &&
   (v.language === undefined || v.language === 'en') &&
-  (v.receipts === undefined || v.receipts === true)
+  (v.receipts === undefined || v.receipts === true) &&
+  (v.device === undefined || isDevice(v.device))
 
 export const isProgress = (v: unknown): v is ReminderProgress =>
   isRecord(v) &&
@@ -391,12 +395,20 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
       // Anything but English is Slovak, and stored as before.
       const language = body.language === 'en' ? { language: 'en' as const } : {}
       const receipts = body.receipts === true ? { receipts: true as const } : {}
-      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language, ...receipts }
+      const device = isDevice(body.device) ? { device: body.device } : {}
+      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language, ...receipts, ...device }
       if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
+      // There is one device to remind. An app that only checks in (at its start, back in front) must not take
+      // the reminders from the device that has them: whoever opened the app last would get them. Turning the
+      // reminder on, changing its time or sending a test is the learner saying "here", and moves them.
+      if (stored && sub.device && body.takeOver !== true) {
+        const sameDevice = stored.device ? stored.device === sub.device : stored.subscription.endpoint === sub.subscription.endpoint
+        if (!sameDevice) return json({ error: 'other-device' }, 409)
+      }
       // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
       if (sub.subscription.endpoint === goneEndpoint) return json({ error: 'gone' }, 410)
       const { endpoint, keys } = sub.subscription
-      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language, ...receipts }
+      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language, ...receipts, ...device }
       await deps.store.set(KEYS.sub, JSON.stringify(clean))
       return json({ ok: true })
     }
