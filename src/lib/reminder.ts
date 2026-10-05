@@ -165,7 +165,8 @@ async function ensureSubscription(): Promise<PushSubscription> {
 /** Tells the server where and when to remind (also refreshes a rotated subscription). */
 function register(subscription: PushSubscription, time: string): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage() })
+  // receipts: this app's service worker confirms the messages it gets (public/push-sw.js).
+  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true })
 }
 
 /** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
@@ -231,6 +232,17 @@ export async function sendTestReminder(): Promise<void> {
     // The push service just dropped the subscription; the server now answers 410 for it, so this round replaces it.
     await attempt()
   }
+  synced()
+}
+
+/**
+ * Asks for a test notification at the timer's next call (within 15 minutes): the way to try the
+ * reminder as it really comes, with the app closed and the phone asleep.
+ */
+export async function sendTestLater(): Promise<void> {
+  assertReady()
+  const subscription = await registerDevice(settings.time)
+  await post({ type: 'test-later', endpoint: subscription.endpoint })
   synced()
 }
 

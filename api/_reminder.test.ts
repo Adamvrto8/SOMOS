@@ -211,7 +211,7 @@ describe('api/reminder: cron tick', () => {
     expect(await res.json()).toEqual({ sent: true, reason: 'sent' })
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
-      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/' }),
+      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/', id: '2026-07-01T17:10:00.000Z' }),
       { ttl: 14_400, topic: 'reminder', urgency: 'high' },
     )
     expect(store.data.get(KEYS.sent)).toBe('2026-07-01')
@@ -328,7 +328,7 @@ describe('api/reminder: requests from the app', () => {
     expect((await test()).status).toBe(200)
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
-      JSON.stringify({ title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓', url: '/' }),
+      JSON.stringify({ title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓', url: '/', id: '2026-07-01T17:10:00.000Z' }),
       { ttl: 14_400, topic: 'test', urgency: 'high' },
     )
     expect((await test()).status).toBe(429)
@@ -360,6 +360,8 @@ describe('api/reminder: requests from the app', () => {
         progress: progress({ done: 3 }),
         lastTick: tick,
         dropped: false,
+        delivery: null,
+        testPending: false,
       },
     })
     expect(text).not.toContain('push.example')
@@ -380,6 +382,8 @@ describe('api/reminder: requests from the app', () => {
       progress: null,
       lastTick: null,
       dropped: false,
+      delivery: null,
+      testPending: false,
     })
     const dropped = await handleReminder(post({ type: 'status' }), deps(memoryStore({ [KEYS.gone]: SUB.subscription.endpoint })))
     expect(await statusOf(dropped)).toMatchObject({ subscribed: false, dropped: true })
@@ -389,6 +393,74 @@ describe('api/reminder: requests from the app', () => {
     const res = await handleReminder(post({ type: 'test', endpoint: OTHER_DEVICE }), deps(memoryStore({ [KEYS.sub]: SUB })))
     expect(res.status).toBe(409)
     expect(await res.json()).toEqual({ error: 'not-subscribed' })
+  })
+})
+
+describe('api/reminder: did the phone get it', () => {
+  const endpoint = SUB.subscription.endpoint
+  const SENT_AT = '2026-07-01T17:10:00.000Z'
+  const LATER = new Date('2026-07-01T17:10:04Z')
+  const deliveryOf = (store: { data: Map<string, string> }) => JSON.parse(store.data.get(KEYS.delivery) ?? 'null') as unknown
+
+  it('remembers what it sent and when', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(cron(), deps(store))
+    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false })
+    await handleReminder(post({ type: 'test', endpoint }), deps(store, noop, LATER))
+    expect(deliveryOf(store)).toEqual({ kind: 'test', sentAt: '2026-07-01T17:10:04.000Z', receipts: false })
+  })
+
+  it('notes that the phone can confirm, once its app says so', async () => {
+    const store = memoryStore()
+    await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, receipts: true }), deps(store))
+    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, receipts: true })
+    await handleReminder(cron(), deps(store))
+    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: true })
+  })
+
+  it('takes the phone’s word that it showed the message, or why it could not', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(cron(), deps(store))
+    await handleReminder(post({ type: 'received', endpoint, id: SENT_AT, shown: true }), deps(store, noop, LATER))
+    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false, receivedAt: '2026-07-01T17:10:04.000Z', shown: true })
+
+    await handleReminder(post({ type: 'received', endpoint, id: SENT_AT, shown: false, error: 'NotAllowedError: no permission' }), deps(store, noop, LATER))
+    expect(deliveryOf(store)).toMatchObject({ shown: false, error: 'NotAllowedError: no permission' })
+  })
+
+  it('ignores a receipt from another device, or for another message', async () => {
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    await handleReminder(cron(), deps(store))
+    await handleReminder(post({ type: 'received', endpoint: OTHER_DEVICE, id: SENT_AT, shown: true }), deps(store, noop, LATER))
+    await handleReminder(post({ type: 'received', endpoint, id: '2026-06-30T17:00:00.000Z', shown: true }), deps(store, noop, LATER))
+    const res = await handleReminder(post({ type: 'received', endpoint, id: SENT_AT }), deps(store, noop, LATER))
+    expect(res.status).toBe(400)
+    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false })
+  })
+
+  it('sends a test asked for later at the next tick, whatever the hour', async () => {
+    const MORNING = new Date('2026-07-01T06:00:00Z')
+    const store = memoryStore({ [KEYS.sub]: SUB })
+    const send = vi.fn<Sender>(async () => {})
+    expect((await handleReminder(post({ type: 'test-later', endpoint: OTHER_DEVICE }), deps(store, send, MORNING))).status).toBe(409)
+    expect((await handleReminder(post({ type: 'test-later', endpoint }), deps(store, send, MORNING))).status).toBe(200)
+    expect(send).not.toHaveBeenCalled()
+    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint }), deps(store, send, MORNING)))).toMatchObject({ testPending: true })
+
+    // The tick sends it, and still decides about the reminder itself.
+    expect(await (await handleReminder(cron(), deps(store, send, MORNING))).json()).toEqual({ sent: false, reason: 'too-early' })
+    expect(send).toHaveBeenCalledTimes(1)
+    expect(send.mock.calls[0][1]).toContain('Skúšobná notifikácia')
+    expect(send.mock.calls[0][2]).toMatchObject({ topic: 'test' })
+    expect(deliveryOf(store)).toMatchObject({ kind: 'test', sentAt: '2026-07-01T06:00:00.000Z' })
+
+    // Once: the next tick has nothing left to send.
+    await handleReminder(cron(), deps(store, send, MORNING))
+    expect(send).toHaveBeenCalledTimes(1)
+    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint }), deps(store, send, MORNING)))).toMatchObject({
+      testPending: false,
+      delivery: { kind: 'test', sentAt: '2026-07-01T06:00:00.000Z', receipts: false },
+    })
   })
 })
 
@@ -472,7 +544,7 @@ describe('the reminder in the learner\'s language', () => {
 
     const send = vi.fn<Sender>(async () => {})
     await handleReminder(cron(), deps(store, send))
-    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 answers', url: '/', lang: 'en' })
+    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 answers', url: '/', id: '2026-07-01T17:10:00.000Z', lang: 'en' })
 
     // The test notification too.
     await handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))

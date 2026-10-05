@@ -104,6 +104,8 @@ export const en: Dictionary = {
     time: 'Time',
     sendTest: 'Send a test notification',
     testSent: 'Sent. The notification should arrive in a few seconds.',
+    sendTestLater: 'Send a test in a few minutes',
+    testLaterSet: 'Scheduled, it goes out within 15 minutes. Close the app, lock the phone and wait.',
     statusTitle: 'Reminder status',
     unreachable: 'The server cannot be reached from here, so the status is unknown. Try another connection.',
     notWorking: 'The reminder is not working',
@@ -146,6 +148,16 @@ export const en: Dictionary = {
       sentYesterday: 'Last sent yesterday.',
       sentOn: (day) => `Last sent on ${day}.`,
       today: (done, goal) => `Today, according to the server: ${done}/${goal}.`,
+      delivery: {
+        kinds: { reminder: 'Reminder', test: 'Test notification' },
+        shown: (what, sent, received) => `${what} of ${sent}: the phone showed it at ${received}.`,
+        notShown: (what, sent, received, error) => `${what} of ${sent}: the phone got it at ${received}, but Android did not show it (${error}).`,
+        waiting: (what, sent) => `${what} of ${sent}: sent, waiting for the phone to confirm.`,
+        cannotConfirm: (what, sent) => `${what} of ${sent}: sent. This phone cannot confirm yet, open the app.`,
+        notReceived: (what, sent) =>
+          `${what} of ${sent}: the phone did not get it. Android is probably keeping Chrome from running in the background: in Android Settings → Apps → Chrome and SOMOS, allow autostart and set the battery to “No restrictions”.`,
+      },
+      testPending: 'A test notification goes out at the next check (within 15 minutes). Close the app, lock the phone and wait.',
     },
   },
 

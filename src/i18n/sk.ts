@@ -114,6 +114,8 @@ export const sk = {
     time: 'Čas',
     sendTest: 'Poslať skúšobnú notifikáciu',
     testSent: 'Odoslané. Notifikácia by mala prísť o pár sekúnd.',
+    sendTestLater: 'Poslať skúšobnú o pár minút',
+    testLaterSet: 'Naplánované, odíde do 15 minút. Zavri aplikáciu, zamkni telefón a počkaj.',
     statusTitle: 'Stav pripomienky',
     unreachable: 'Server je odtiaľto nedostupný, stav sa nedá zistiť. Skús iné pripojenie.',
     notWorking: 'Pripomienka nefunguje',
@@ -158,6 +160,18 @@ export const sk = {
       /** `day` comes from shortDay. */
       sentOn: (day: string) => `Naposledy poslaná ${day}`,
       today: (done: number, goal: number) => `Dnes podľa servera: ${done}/${goal}.`,
+      /** `what` is one of `kinds`; `sent` and `received` are times ("19:00", or "4. 10. 19:00"). */
+      delivery: {
+        kinds: { reminder: 'Pripomienka', test: 'Skúšobná notifikácia' },
+        shown: (what: string, sent: string, received: string) => `${what} z ${sent}: telefón ju zobrazil o ${received}.`,
+        notShown: (what: string, sent: string, received: string, error: string) =>
+          `${what} z ${sent}: telefón ju prijal o ${received}, ale Android ju nezobrazil (${error}).`,
+        waiting: (what: string, sent: string) => `${what} z ${sent}: odoslaná, čaká sa na potvrdenie z telefónu.`,
+        cannotConfirm: (what: string, sent: string) => `${what} z ${sent}: odoslaná. Tento telefón ešte nevie potvrdiť prijatie, otvor aplikáciu.`,
+        notReceived: (what: string, sent: string) =>
+          `${what} z ${sent}: telefón ju neprijal. Android zrejme nepúšťa Chrome na pozadí: v Nastaveniach Androidu → Aplikácie → Chrome a SOMOS povoľ automatické spustenie a batériu nastav na „Bez obmedzení“.`,
+      },
+      testPending: 'Skúšobná notifikácia odíde pri najbližšej kontrole (do 15 minút). Zavri aplikáciu, zamkni telefón a počkaj.',
     },
   },
 

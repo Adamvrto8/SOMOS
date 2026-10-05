@@ -16,15 +16,17 @@ interface FakeEvent {
 
 type Listener = (event: FakeEvent & { waitUntil(promise: Promise<unknown>): void }) => void
 
-function loadWorker(windows: FakeWindow[] = []) {
+function loadWorker(windows: FakeWindow[] = [], show: () => Promise<void> = async () => {}) {
   const listeners = new Map<string, Listener>()
-  const showNotification = vi.fn(async (_title: string, _options: Record<string, unknown>) => {})
+  const showNotification = vi.fn(async (_title: string, _options: Record<string, unknown>) => show())
   const openWindow = vi.fn(async (_url: string) => null)
+  const fetch = vi.fn(async (_url: string, _init: { method: string; body: string }) => ({ ok: true }))
   const self = {
     location: { origin: 'https://somos.example' },
-    registration: { showNotification },
+    registration: { showNotification, pushManager: { getSubscription: async () => ({ endpoint: 'https://push.example/abc' }) } },
     clients: { matchAll: async () => windows, openWindow },
     addEventListener: (type: string, listener: Listener) => listeners.set(type, listener),
+    fetch,
   }
   new Function('self', source)(self)
 
@@ -33,7 +35,8 @@ function loadWorker(windows: FakeWindow[] = []) {
     listeners.get(type)?.({ ...event, waitUntil: (promise) => (pending = promise) })
     await pending
   }
-  return { dispatch, showNotification, openWindow }
+  const reports = () => fetch.mock.calls.map(([url, init]) => ({ url, method: init.method, body: JSON.parse(init.body) as unknown }))
+  return { dispatch, showNotification, openWindow, reports }
 }
 
 describe('push-sw.js', () => {
@@ -44,6 +47,33 @@ describe('push-sw.js', () => {
       'Ešte 8 do denného cieľa',
       expect.objectContaining({ body: 'Dnes 12/20', tag: 'somos-reminder', renotify: true }),
     )
+  })
+
+  it('tells the server that the message arrived and was shown', async () => {
+    const worker = loadWorker()
+    await worker.dispatch('push', { data: { json: () => ({ title: 'SOMOS', body: 'x', id: '2026-07-01T17:10:00.000Z' }) } })
+    expect(worker.reports()).toEqual([
+      { url: '/api/reminder', method: 'POST', body: { type: 'received', endpoint: 'https://push.example/abc', id: '2026-07-01T17:10:00.000Z', shown: true } },
+    ])
+  })
+
+  it('tells the server why a message could not be shown', async () => {
+    const worker = loadWorker([], async () => Promise.reject(new TypeError('No notification permission has been granted')))
+    await worker.dispatch('push', { data: { json: () => ({ title: 'SOMOS', id: 'm1' }) } })
+    expect(worker.reports()[0].body).toEqual({
+      type: 'received',
+      endpoint: 'https://push.example/abc',
+      id: 'm1',
+      shown: false,
+      error: 'TypeError: No notification permission has been granted',
+    })
+  })
+
+  it('has nothing to confirm for a message without an id', async () => {
+    const worker = loadWorker()
+    await worker.dispatch('push', { data: { json: () => ({ title: 'SOMOS' }) } })
+    expect(worker.showNotification).toHaveBeenCalled()
+    expect(worker.reports()).toEqual([])
   })
 
   it('brings an open window to the front without navigating it (a lesson stays as it was)', async () => {

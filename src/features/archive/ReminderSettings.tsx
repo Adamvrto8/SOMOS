@@ -1,4 +1,4 @@
-import { BellRing } from 'lucide-react'
+import { BellRing, Clock } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
@@ -9,6 +9,7 @@ import {
   fetchReminderStatus,
   ReminderFailure,
   reminderSupport,
+  sendTestLater,
   sendTestReminder,
   setReminderTime,
   useReminderProblem,
@@ -120,6 +121,12 @@ export function ReminderSettings() {
           className="mt-3 w-full"
         >
           {text.sendTest}
+        </Button>
+      )}
+      {/* The real conditions: the test above arrives while the app is open, the reminder has to wake a sleeping phone. */}
+      {settings.enabled && (
+        <Button variant="secondary" icon={Clock} disabled={busy} onClick={() => void run(sendTestLater, text.testLaterSet)} className="mt-2 w-full">
+          {text.sendTestLater}
         </Button>
       )}
 

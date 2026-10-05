@@ -1,5 +1,6 @@
 // Vercel function: the daily practice reminder (Web Push).
-//   POST /api/reminder: from the app (same-origin): subscribe | unsubscribe | progress | test | status
+//   POST /api/reminder: from the app (same-origin): subscribe | unsubscribe | progress | test | test-later | status
+//                       from its service worker: received (a message arrived and was shown, or why not)
 //   GET  /api/reminder: from cron-job.org every 15 minutes (Authorization: Bearer CRON_SECRET)
 // Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
@@ -17,6 +18,7 @@ export interface ReminderSub {
   time: string // "19:00", phone-local
   timeZone: string // IANA zone from the phone, e.g. "Europe/Bratislava"
   language?: 'en' // the app's language; missing = Slovak (also every subscription stored before 2026-10-04)
+  receipts?: true // its service worker confirms what it receives (apps since 2026-10-05)
 }
 
 /** What the phone last reported, computed in its local time. */
@@ -36,6 +38,19 @@ export interface LastTick {
   reason: string
 }
 
+/**
+ * The last message handed to the push service, and what the phone said about it. The push service
+ * accepting a message says nothing about the phone getting it: only the phone can tell.
+ */
+export interface Delivery {
+  kind: 'reminder' | 'test'
+  sentAt: string // ISO time; also the id the message carries and its receipt answers to
+  receipts: boolean // the phone's app is one that confirms: without it, silence means nothing
+  receivedAt?: string // the service worker got the message
+  shown?: boolean // … and Android took the notification
+  error?: string // why not
+}
+
 /** What the server knows, for "Stav pripomienky" in the app. The subscription itself is never included. */
 export interface ReminderStatus {
   subscribed: boolean // the server has a device to remind
@@ -47,6 +62,8 @@ export interface ReminderStatus {
   progress: ReminderProgress | null
   lastTick: LastTick | null
   dropped: boolean // no device because the push service dropped its subscription
+  delivery: Delivery | null
+  testPending: boolean // a test notification waits for the next tick
 }
 
 export interface Message {
@@ -94,7 +111,12 @@ export function isPushSub(v: unknown): v is PushSub {
 }
 
 export const isReminderSub = (v: unknown): v is ReminderSub =>
-  isRecord(v) && isPushSub(v.subscription) && isTime(v.time) && isTimeZone(v.timeZone) && (v.language === undefined || v.language === 'en')
+  isRecord(v) &&
+  isPushSub(v.subscription) &&
+  isTime(v.time) &&
+  isTimeZone(v.timeZone) &&
+  (v.language === undefined || v.language === 'en') &&
+  (v.receipts === undefined || v.receipts === true)
 
 export const isProgress = (v: unknown): v is ReminderProgress =>
   isRecord(v) &&
@@ -108,6 +130,9 @@ export const isProgress = (v: unknown): v is ReminderProgress =>
   typeof v.activeToday === 'boolean'
 
 const isLastTick = (v: unknown): v is LastTick => isRecord(v) && typeof v.at === 'string' && typeof v.reason === 'string'
+
+const isDelivery = (v: unknown): v is Delivery =>
+  isRecord(v) && (v.kind === 'reminder' || v.kind === 'test') && typeof v.sentAt === 'string' && typeof v.receipts === 'boolean'
 
 // ---------- time ----------
 
@@ -207,6 +232,8 @@ export const KEYS = {
   test: 'somos:reminder:test', // exists for 60 s after a test notification
   gone: 'somos:reminder:gone', // endpoint the push service dropped: the app must replace it, not re-register it
   tick: 'somos:reminder:tick', // LastTick
+  delivery: 'somos:reminder:delivery', // Delivery
+  testLater: 'somos:reminder:test-later', // exists until the next tick has sent the test asked for
 } as const
 
 export interface Store {
@@ -283,16 +310,19 @@ export interface Deps {
   cronSecret: string
 }
 
-type Delivery = 'sent' | 'gone' | 'failed'
+type Outcome = 'sent' | 'gone' | 'failed'
 
 const statusOf = (error: unknown) => (isRecord(error) && typeof error.statusCode === 'number' ? error.statusCode : undefined)
 
-/** Sends a message; forgets a subscription the push service no longer knows. */
-async function deliver(deps: Deps, sub: ReminderSub, message: Message, topic: string): Promise<Delivery> {
+/** Sends a message and notes it as the last one sent; forgets a subscription the push service no longer knows. */
+async function deliver(deps: Deps, sub: ReminderSub, message: Message, kind: Delivery['kind']): Promise<Outcome> {
   try {
-    // `lang` tells the service worker how to mark the notification; Slovak is its default.
-    const payload = { ...message, url: '/', ...(sub.language === 'en' ? { lang: 'en' } : {}) }
-    await deps.send(sub.subscription, JSON.stringify(payload), { ttl: REMINDER_TTL, topic, urgency: REMINDER_URGENCY })
+    const sentAt = deps.now().toISOString()
+    // `id` is what the service worker's receipt names; `lang` tells it how to mark the notification (Slovak is its default).
+    const payload = { ...message, url: '/', id: sentAt, ...(sub.language === 'en' ? { lang: 'en' } : {}) }
+    await deps.send(sub.subscription, JSON.stringify(payload), { ttl: REMINDER_TTL, topic: kind, urgency: REMINDER_URGENCY })
+    const delivery: Delivery = { kind, sentAt, receipts: sub.receipts === true }
+    await deps.store.set(KEYS.delivery, JSON.stringify(delivery))
     return 'sent'
   } catch (error) {
     const status = statusOf(error)
@@ -322,7 +352,7 @@ function sameOrigin(request: Request): boolean {
 }
 
 async function tick(deps: Deps): Promise<Response> {
-  const [rawSub, rawProgress, sentDay] = await deps.store.mget([KEYS.sub, KEYS.progress, KEYS.sent])
+  const [rawSub, rawProgress, sentDay, testLater] = await deps.store.mget([KEYS.sub, KEYS.progress, KEYS.sent, KEYS.testLater])
   const now = deps.now()
   // Remembered so the app can show that the cron comes and what it decided.
   const done = async (sent: boolean, reason: string, status = 200) => {
@@ -332,6 +362,12 @@ async function tick(deps: Deps): Promise<Response> {
   }
   const sub = parseStored(rawSub, isReminderSub)
   if (!sub) return done(false, 'no-subscription')
+  // A test the learner asked to get later, with the app closed and the phone asleep: the real conditions.
+  if (testLater) {
+    await deps.store.del(KEYS.testLater)
+    const result = await deliver(deps, sub, sub.language === 'en' ? TEST_MESSAGE_EN : TEST_MESSAGE, 'test')
+    if (result === 'gone') return done(false, 'gone')
+  }
   const decision = decide(now, sub, parseStored(rawProgress, isProgress), sentDay ?? null)
   if (!decision.send) return done(false, decision.reason)
   const result = await deliver(deps, sub, decision.message, 'reminder')
@@ -344,8 +380,9 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
   const body: unknown = await request.json().catch(() => undefined)
   if (!isRecord(body)) return json({ error: 'bad-request' }, 400)
 
-  const [rawSub, goneEndpoint] = await deps.store.mget([KEYS.sub, KEYS.gone])
+  const [rawSub, goneEndpoint, rawDelivery, testLater] = await deps.store.mget([KEYS.sub, KEYS.gone, KEYS.delivery, KEYS.testLater])
   const stored = parseStored(rawSub, isReminderSub)
+  const delivery = parseStored(rawDelivery, isDelivery)
   // Only the device that gets the reminders may change or feed them.
   const fromStoredDevice = typeof body.endpoint === 'string' && stored?.subscription.endpoint === body.endpoint
 
@@ -353,12 +390,13 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
     case 'subscribe': {
       // Anything but English is Slovak, and stored as before.
       const language = body.language === 'en' ? { language: 'en' as const } : {}
-      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language }
+      const receipts = body.receipts === true ? { receipts: true as const } : {}
+      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language, ...receipts }
       if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
       // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
       if (sub.subscription.endpoint === goneEndpoint) return json({ error: 'gone' }, 410)
       const { endpoint, keys } = sub.subscription
-      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language }
+      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language, ...receipts }
       await deps.store.set(KEYS.sub, JSON.stringify(clean))
       return json({ ok: true })
     }
@@ -376,6 +414,20 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
       if (result === 'sent') return json({ ok: true })
       return json({ error: result }, result === 'gone' ? 410 : 502)
     }
+    case 'test-later':
+      if (!stored || !fromStoredDevice) return json({ error: 'not-subscribed' }, 409)
+      await deps.store.set(KEYS.testLater, '1')
+      return json({ ok: true })
+    case 'received': {
+      if (typeof body.id !== 'string' || typeof body.shown !== 'boolean') return json({ error: 'bad-request' }, 400)
+      // Only the phone the message went to, and only about the message that is the last one sent.
+      if (fromStoredDevice && delivery?.sentAt === body.id) {
+        const error = typeof body.error === 'string' && !body.shown ? { error: body.error.slice(0, 200) } : {}
+        const receipt: Delivery = { kind: delivery.kind, sentAt: delivery.sentAt, receipts: delivery.receipts, receivedAt: deps.now().toISOString(), shown: body.shown, ...error }
+        await deps.store.set(KEYS.delivery, JSON.stringify(receipt))
+      }
+      return json({ ok: true })
+    }
     case 'status': {
       const [rawProgress, sentDay, rawTick] = await deps.store.mget([KEYS.progress, KEYS.sent, KEYS.tick])
       const clock = stored ? localClock(deps.now(), stored.timeZone) : null
@@ -389,6 +441,8 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
         progress: parseStored(rawProgress, isProgress),
         lastTick: parseStored(rawTick, isLastTick),
         dropped: stored === null && Boolean(goneEndpoint),
+        delivery,
+        testPending: stored !== null && Boolean(testLater),
       }
       return json({ ok: true, status })
     }
