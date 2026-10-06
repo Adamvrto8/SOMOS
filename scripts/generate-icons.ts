@@ -3,8 +3,9 @@
 import { writeFile } from 'node:fs/promises'
 import sharp from 'sharp'
 
-// Colors from src/styles/tokens.css (light theme).
-const BRICK = '#B5553C'
+// Colors from src/styles/tokens.css: the brighter brick of the dark theme (Adam prefers it to the
+// earthy one of the light theme), on the concrete of the light theme.
+const BRICK = '#D06A4E'
 const CONCRETE = '#F4F1EC'
 
 // "S" from Fraunces SemiBold (opsz 144), extracted with opentype.js at size 100
