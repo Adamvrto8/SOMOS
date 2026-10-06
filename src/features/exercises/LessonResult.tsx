@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Lock, Repeat, RotateCcw } from 'lucide-react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
-import { Tapestry } from '../../components/Tapestry'
+import { Azulejos } from '../../components/Azulejos'
 import type { Grade, Task } from '../../lib/lesson'
 import { passThreshold as calcPassThreshold } from '../../lib/lessonProgress'
 import { useT } from '../../i18n'
@@ -65,7 +65,7 @@ export function LessonResult({
     <div className="space-y-7">
       <div className="overflow-hidden rounded-card border border-line bg-surface">
         <div className="relative h-28 border-b border-line bg-surface-2">
-          <Tapestry className="opacity-30 dark:opacity-20" />
+          <Azulejos className="opacity-30 dark:opacity-20" />
         </div>
         <div className="px-6 pt-5 pb-6 text-center">
           <h1 className="font-serif text-lg text-ink-muted">

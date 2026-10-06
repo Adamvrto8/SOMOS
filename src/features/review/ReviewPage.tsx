@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router'
 import { Rating, type Grade } from 'ts-fsrs'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
-import { Tapestry } from '../../components/Tapestry'
+import { Azulejos } from '../../components/Azulejos'
 import { useT } from '../../i18n'
 import { useLanguage } from '../../lib/language'
 import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
@@ -329,7 +329,7 @@ function SessionEnd({ reviewed }: { reviewed: number }) {
     <div className="space-y-6">
       <div className="overflow-hidden rounded-card border border-line bg-surface">
         <div className="relative h-28 border-b border-line bg-surface-2">
-          <Tapestry className="opacity-30 dark:opacity-20" />
+          <Azulejos className="opacity-30 dark:opacity-20" />
         </div>
         <div className="px-6 pt-5 pb-6 text-center">
           <CircleCheck size={32} strokeWidth={1.75} className="mx-auto text-leaf" aria-hidden />

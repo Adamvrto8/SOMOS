@@ -1,6 +1,6 @@
 import { BellOff, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
-import { Tapestry } from '../../components/Tapestry'
+import { Azulejos } from '../../components/Azulejos'
 import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { useLessonProgression } from '../../lib/lessonProgress'
@@ -24,10 +24,9 @@ export function HomePage() {
 
   return (
     <div className="space-y-6">
-      {/* Character moment: the tapestry behind greeting and hero, fading into the page. */}
+      {/* Character moment: the tiles behind greeting and hero, fading away towards the bottom. */}
       <div className="relative -mx-4 -mt-6 overflow-hidden px-4 pt-8 pb-2">
-        <Tapestry className="opacity-25 dark:opacity-15" />
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-bg/40 via-bg/75 to-bg" aria-hidden />
+        <Azulejos className="mask-b-from-0% mask-b-to-88% opacity-42" />
         <div className="relative">
           <header>
             <h1 lang="es" className="font-serif text-4xl font-semibold tracking-tight">
