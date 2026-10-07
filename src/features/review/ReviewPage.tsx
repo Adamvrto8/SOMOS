@@ -96,14 +96,20 @@ export function ReviewPage() {
     if (!entry || revealed || !typed.trim()) return
     const result = checkAnswer(typed, entry.answers, entry.slovakFirst ? { lookup: lookupForm } : {})
     setTries(tries + 1)
-    playSound(soundForVerdict(result.verdict))
-    // A wrong answer can be fixed and checked again, like in a lesson.
-    if (result.verdict === 'wrong') setHint({ ...asGrade(result), diff: wrongAsWhole(typed) })
-    else settle(typedRating(tries + 1, false), result)
+    // A wrong answer can be fixed and checked again, like in a lesson, and sounds like "not yet".
+    if (result.verdict === 'wrong') {
+      playSound('almost')
+      setHint({ ...asGrade(result), diff: wrongAsWhole(typed) })
+    } else {
+      playSound(soundForVerdict(result.verdict))
+      settle(typedRating(tries + 1, false), result)
+    }
   }
 
   const giveUp = () => {
-    if (hint?.check) settle(typedRating(tries, true), hint.check)
+    if (!hint?.check) return
+    playSound('wrong')
+    settle(typedRating(tries, true), hint.check)
   }
 
   // Keyboard: Space/Enter reveals, 1–4 rates.

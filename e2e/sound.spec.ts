@@ -31,7 +31,7 @@ test('the sounds are chosen in Nastavenia, heard at once, and the choice survive
   await expect(page.getByRole('radio', { name: 'Vypnuté' })).toBeChecked()
 })
 
-test('an answer in a lesson is heard: wrong, then right', async ({ page }) => {
+test('an answer in a lesson is heard: not yet, then right', async ({ page }) => {
   const heard = await listen(page)
   await page.goto('/practice/lesson?type=cloze&topic=all&level=A1&lesson=1')
   const answer = (await askedSentence(page)).cloze![0].answer
@@ -39,13 +39,27 @@ test('an answer in a lesson is heard: wrong, then right', async ({ page }) => {
   await field(page).fill('zzzz')
   await button(page, 'Skontrolovať').tap()
   await expect(status(page)).toContainText('Ešte to nie je ono')
-  // Suave: wrong is one low triangle note.
-  expect(await heard()).toEqual(['triangle'])
+  // Suave: a try that can still be fixed is one soft note, not the sound of a wrong answer.
+  expect(await heard()).toEqual(['sine'])
 
   await field(page).fill(answer)
   await button(page, 'Skontrolovať').tap()
   await expect(status(page)).toContainText('Správne!')
   expect(await heard()).toEqual(['sine', 'sine'])
+})
+
+test('giving up sounds like a wrong answer', async ({ page }) => {
+  const heard = await listen(page)
+  await page.goto('/practice/lesson?type=cloze&topic=all&level=A1&lesson=1')
+  await askedSentence(page)
+  await field(page).fill('zzzz')
+  await button(page, 'Skontrolovať').tap()
+  await expect(status(page)).toContainText('Ešte to nie je ono')
+  await heard()
+
+  await button(page, 'Vzdať sa').tap()
+  // Suave: wrong is one low triangle note.
+  expect(await heard()).toEqual(['triangle'])
 })
 
 test('with the sounds off, a lesson is silent', async ({ page }) => {

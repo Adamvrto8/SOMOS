@@ -183,15 +183,21 @@ export function LessonPage() {
     if (!task || grade || !isAnswered(value)) return
     setAnswer(value)
     const result = gradeTask(task, value)
-    playSound(soundForVerdict(result.verdict))
-    // A wrong typed answer can be fixed and checked again, as often as it takes.
-    if (!result.correct && canRetry(task)) setHint(result)
-    else showGrade(result)
+    // A wrong typed answer can be fixed and checked again, as often as it takes:
+    // it sounds like "not yet", the sound of a wrong answer is kept for the one that stands.
+    if (!result.correct && canRetry(task)) {
+      playSound('almost')
+      setHint(result)
+    } else {
+      playSound(soundForVerdict(result.verdict))
+      showGrade(result)
+    }
   }
 
   /** "Vzdať sa": shows the correct answer; the task counts as wrong. */
   const giveUp = () => {
     if (!task || grade) return
+    playSound('wrong')
     showGrade(gradeTask(task, answer))
   }
 

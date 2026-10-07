@@ -7,6 +7,7 @@ import type { Verdict } from './checkAnswer'
 
 export const SOUND_SETS = ['off', 'suave', 'marimba'] as const
 export type SoundSet = (typeof SOUND_SETS)[number]
+/** `almost`: right but not quite (an accent, a typo), and a wrong try that can still be fixed. `wrong`: a wrong answer that stands. */
 export type SoundEvent = 'correct' | 'almost' | 'wrong' | 'tap' | 'lesson' | 'goal'
 
 const STORAGE_KEY = 'somos-sound'
@@ -49,7 +50,7 @@ export function useSoundSet(): SoundSet {
   return useSyncExternalStore(subscribe, () => current)
 }
 
-/** The sound for a checked answer: an accent slip or a forgiven typo is right, but not quite. */
+/** The sound for an answer that is settled: an accent slip or a forgiven typo is right, but not quite. */
 export function soundForVerdict(verdict: Verdict): SoundEvent {
   if (verdict === 'wrong') return 'wrong'
   return verdict === 'correct' ? 'correct' : 'almost'
