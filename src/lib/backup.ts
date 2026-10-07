@@ -7,6 +7,7 @@ import { getProgressionSnapshot, mergeProgression, parseProgression, type Lesson
 import { syncPracticeCards } from './practice'
 import { getReminderSettings, setReminderTime } from './reminder'
 import { parseSettingsBackup, type SettingsBackup } from './settingsBackup'
+import { getSoundSet, setSoundSet } from './sound'
 import { syncReviewCards } from './srs'
 import { getLook, getThemePref, setLook, setThemePref } from './theme'
 
@@ -43,7 +44,7 @@ export interface ImportResult {
 
 function currentSettings(): SettingsBackup {
   const { enabled, time } = getReminderSettings()
-  return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage() }
+  return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage(), sound: getSoundSet() }
 }
 
 /** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
@@ -53,6 +54,7 @@ async function applySettings(settings: SettingsBackup): Promise<boolean> {
   if (settings.dailyGoal) setDailyGoal(settings.dailyGoal)
   if (settings.autoReview) setAutoReview(settings.autoReview)
   if (settings.language) setLanguage(settings.language)
+  if (settings.sound) setSoundSet(settings.sound)
   if (!settings.reminder) return false
   const here = getReminderSettings()
   if (here.enabled) return false // a reminder that runs here keeps its own time

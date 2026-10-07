@@ -42,6 +42,9 @@ export const en: Dictionary = {
     lookOptions: { classic: 'Original', talavera: 'Talavera', barragan: 'Barragán', agave: 'Agave' },
     dailyGoal: 'Daily goal',
     dailyGoalHint: 'Answers per day, in lessons and in review.',
+    sound: 'Sounds',
+    soundOptions: { off: 'Off', suave: 'Suave', marimba: 'Marimba' },
+    soundHint: "When you answer, at the end of a lesson and when the daily goal is reached. They follow the phone's media volume.",
     version: 'Version',
 
     autoReview: {

@@ -18,6 +18,12 @@ describe('parseSettingsBackup', () => {
     expect(parseSettingsBackup({ look: 'neon' }).look).toBeUndefined()
   })
 
+  it('carries the sounds, and drops a set it does not know', () => {
+    expect(parseSettingsBackup({ sound: 'marimba' }).sound).toBe('marimba')
+    expect(parseSettingsBackup({ sound: 'off' }).sound).toBe('off')
+    expect(parseSettingsBackup({ sound: 'guitarra' }).sound).toBeUndefined()
+  })
+
   it('has nothing for a backup made before settings were part of it', () => {
     expect(parseSettingsBackup(undefined)).toEqual({})
     expect(parseSettingsBackup('dark')).toEqual({})

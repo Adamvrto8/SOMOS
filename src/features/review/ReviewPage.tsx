@@ -10,6 +10,7 @@ import { useLanguage } from '../../lib/language'
 import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
+import { playSound, soundForVerdict } from '../../lib/sound'
 import { GRADES, isDueToday, previewIntervals, rateCard } from '../../lib/srs'
 import { statusOf } from '../exercises/tasks/status'
 import { TypedAnswer } from '../exercises/tasks/TypedAnswer'
@@ -63,6 +64,8 @@ export function ReviewPage() {
     if (!entry || busy) return
     setBusy(true)
     const card = await rateCard(entry.itemType, entry.itemId, grade)
+    // The last card, and it does not come back today: the session is over.
+    if (queue?.length === 1 && !isDueToday(card)) playSound('lesson')
     // Cards still due today (short relearning steps) come back later in this session.
     setQueue((q) => (q ? [...q.slice(1), ...(isDueToday(card) ? [{ ...entry, card }] : [])] : q))
     setReviewed((n) => n + 1)
@@ -93,6 +96,7 @@ export function ReviewPage() {
     if (!entry || revealed || !typed.trim()) return
     const result = checkAnswer(typed, entry.answers, entry.slovakFirst ? { lookup: lookupForm } : {})
     setTries(tries + 1)
+    playSound(soundForVerdict(result.verdict))
     // A wrong answer can be fixed and checked again, like in a lesson.
     if (result.verdict === 'wrong') setHint({ ...asGrade(result), diff: wrongAsWhole(typed) })
     else settle(typedRating(tries + 1, false), result)

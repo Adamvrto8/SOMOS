@@ -2,6 +2,7 @@ import { AUTO_REVIEW_LIMITS, type AutoReviewSettings } from './autoReview'
 import { GOAL_OPTIONS } from './dailyGoal'
 import { parseLanguage, type Language } from './language'
 import { parseLook, type Look } from './look'
+import { parseSoundSet, type SoundSet } from './sound'
 import type { ThemePref } from './theme'
 
 /**
@@ -16,6 +17,7 @@ export interface SettingsBackup {
   autoReview?: AutoReviewSettings
   reminder?: { enabled: boolean; time: string }
   language?: Language // missing in backups made before 2026-10-04
+  sound?: SoundSet // missing in backups made before 2026-10-07
 }
 
 const TIME = /^([01]\d|2[0-3]):[0-5]\d$/
@@ -25,7 +27,7 @@ const isRec = (x: unknown): x is Record<string, unknown> => typeof x === 'object
 export function parseSettingsBackup(data: unknown): SettingsBackup {
   const settings: SettingsBackup = {}
   if (!isRec(data)) return settings
-  const { theme, look, dailyGoal, autoReview, reminder, language } = data
+  const { theme, look, dailyGoal, autoReview, reminder, language, sound } = data
   if (theme === 'system' || theme === 'light' || theme === 'dark') settings.theme = theme
   const parsedLook = parseLook(look)
   if (parsedLook) settings.look = parsedLook
@@ -38,5 +40,7 @@ export function parseSettingsBackup(data: unknown): SettingsBackup {
   }
   const parsedLanguage = parseLanguage(language)
   if (parsedLanguage) settings.language = parsedLanguage
+  const parsedSound = parseSoundSet(sound)
+  if (parsedSound) settings.sound = parsedSound
   return settings
 }

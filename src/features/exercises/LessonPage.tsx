@@ -5,6 +5,7 @@ import { Button } from '../../components/Button'
 import { tipById } from '../../data'
 import { useT } from '../../i18n'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
+import { playSound, soundForVerdict } from '../../lib/sound'
 import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import {
   canRetry,
@@ -182,6 +183,7 @@ export function LessonPage() {
     if (!task || grade || !isAnswered(value)) return
     setAnswer(value)
     const result = gradeTask(task, value)
+    playSound(soundForVerdict(result.verdict))
     // A wrong typed answer can be fixed and checked again, as often as it takes.
     if (!result.correct && canRetry(task)) setHint(result)
     else showGrade(result)
@@ -223,6 +225,7 @@ export function LessonPage() {
       // correction round halfway keeps the credit (the store keeps the best score).
       if (correct || index + 1 === tasks.length) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal)
     }
+    if (index + 1 === tasks.length) playSound('lesson')
     setIndex(index + 1)
     setAnswer(emptyAnswer(tasks[index + 1]))
     setGrade(null)

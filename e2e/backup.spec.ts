@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { button } from './helpers.ts'
 
 test('a backup carries the settings to another device', async ({ page }) => {
-  const settings = { theme: 'dark', look: 'talavera', dailyGoal: 50, autoReview: { enabled: false, limit: 10 }, reminder: { enabled: true, time: '07:30' } }
+  const settings = { theme: 'dark', look: 'talavera', dailyGoal: 50, autoReview: { enabled: false, limit: 10 }, reminder: { enabled: true, time: '07:30' }, sound: 'marimba' }
   const backup = {
     app: 'somos',
     version: 1,

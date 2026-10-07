@@ -1,5 +1,6 @@
 import { useT } from '../../../i18n'
 import type { Tile } from '../../../lib/lesson'
+import { playSound } from '../../../lib/sound'
 import type { Status } from './status'
 
 const AREA: Record<Status | 'open', string> = {
@@ -23,6 +24,10 @@ export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProp
   const text = useT().lesson.task
   const locked = status !== undefined
   const byId = new Map(tiles.map((t) => [t.id, t]))
+  const change = (next: string[]) => {
+    playSound('tap')
+    onChange(next)
+  }
 
   return (
     <div className="space-y-5">
@@ -37,7 +42,7 @@ export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProp
             type="button"
             lang="es"
             disabled={locked}
-            onClick={() => onChange(placed.filter((p) => p !== id))}
+            onClick={() => change(placed.filter((p) => p !== id))}
             aria-label={text.removeTile(byId.get(id)?.text ?? '')}
             className={TILE}
           >
@@ -54,7 +59,7 @@ export function TileBuilder({ tiles, placed, onChange, status }: TileBuilderProp
               {tile.text}
             </span>
           ) : (
-            <button key={tile.id} type="button" lang="es" disabled={locked} onClick={() => onChange([...placed, tile.id])} className={TILE}>
+            <button key={tile.id} type="button" lang="es" disabled={locked} onClick={() => change([...placed, tile.id])} className={TILE}>
               {tile.text}
             </button>
           ),

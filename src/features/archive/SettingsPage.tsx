@@ -6,6 +6,7 @@ import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { LANGUAGES, setLanguage, useLanguage } from '../../lib/language'
 import { LOOKS } from '../../lib/look'
 import { reportProgress } from '../../lib/reminder'
+import { playSound, setSoundSet, SOUND_SETS, useSoundSet } from '../../lib/sound'
 import { setLook, setThemePref, useLook, useThemePref } from '../../lib/theme'
 import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
@@ -15,6 +16,7 @@ import { VoiceSettings } from './VoiceSettings'
 export function SettingsPage() {
   const themePref = useThemePref()
   const look = useLook()
+  const soundSet = useSoundSet()
   const dailyGoal = useDailyGoal()
   const language = useLanguage()
   const text = useT()
@@ -80,6 +82,23 @@ export function SettingsPage() {
           options={GOAL_OPTIONS.map((n) => ({ id: String(n), label: String(n) }))}
         />
         <p className="mt-2 text-sm text-ink-muted">{text.settings.dailyGoalHint}</p>
+      </section>
+
+      <section aria-labelledby="sound-heading">
+        <SectionTitle id="sound-heading">{text.settings.sound}</SectionTitle>
+        <Segmented
+          mode="radio"
+          label={text.settings.sound}
+          idPrefix="sound"
+          value={soundSet}
+          onChange={(set) => {
+            setSoundSet(set)
+            // Hear what was chosen.
+            playSound('correct', 0, set)
+          }}
+          options={SOUND_SETS.map((id) => ({ id, label: text.settings.soundOptions[id] }))}
+        />
+        <p className="mt-2 text-sm text-ink-muted">{text.settings.soundHint}</p>
       </section>
 
       <AutoReviewSettings />

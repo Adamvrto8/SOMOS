@@ -52,6 +52,9 @@ export const sk = {
     lookOptions: { classic: 'Pôvodný', talavera: 'Talavera', barragan: 'Barragán', agave: 'Agáve' },
     dailyGoal: 'Denný cieľ',
     dailyGoalHint: 'Počet odpovedí za deň – v lekciách aj pri opakovaní.',
+    sound: 'Zvuky',
+    soundOptions: { off: 'Vypnuté', suave: 'Suave', marimba: 'Marimba' },
+    soundHint: 'Pri odpovedi, na konci lekcie a pri splnení denného cieľa. Hlasitosť sa riadi hlasitosťou médií v telefóne.',
     version: 'Verzia',
 
     autoReview: {
