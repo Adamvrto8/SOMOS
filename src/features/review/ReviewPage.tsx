@@ -7,6 +7,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import { Azulejos } from '../../components/Azulejos'
 import { useT } from '../../i18n'
 import { useLanguage } from '../../lib/language'
+import { celebrationOver } from '../../lib/celebration'
 import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
@@ -64,6 +65,8 @@ export function ReviewPage() {
     if (!entry || busy) return
     setBusy(true)
     const card = await rateCard(entry.itemType, entry.itemId, grade)
+    // A daily goal this card completed is celebrated over it, before the next card comes.
+    await celebrationOver()
     // The last card, and it does not come back today: the session is over.
     if (queue?.length === 1 && !isDueToday(card)) playSound('lesson')
     // Cards still due today (short relearning steps) come back later in this session.

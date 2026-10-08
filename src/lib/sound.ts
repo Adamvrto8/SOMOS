@@ -160,6 +160,15 @@ function output(): { ctx: AudioContext; out: GainNode } | undefined {
   return { ctx, out }
 }
 
+/** Roughly how long each sound rings (seconds): what a sound that must not play on top of it waits for. */
+const LENGTH: Record<SoundEvent, number> = { correct: 0.4, almost: 0.3, wrong: 0.45, tap: 0.05, lesson: 0.9, goal: 1.7 }
+
+/** When the sounds started so far have rung out (performance.now(), ms). */
+let busyUntil = 0
+
+/** Seconds until the sound playing now has rung out; 0 in silence. */
+export const soundBusyFor = () => Math.max(0, busyUntil - performance.now()) / 1000
+
 /**
  * Plays a sound of the chosen set, `delay` seconds from now. Never throws and never waits:
  * a sound that cannot play is simply not heard.
@@ -168,7 +177,9 @@ export function playSound(event: SoundEvent, delay = 0, set: SoundSet = current)
   if (set === 'off') return
   try {
     const audio = output()
-    if (audio) SOUNDS[set][event](audio.ctx, audio.out, audio.ctx.currentTime + 0.02 + delay)
+    if (!audio) return
+    SOUNDS[set][event](audio.ctx, audio.out, audio.ctx.currentTime + 0.02 + delay)
+    busyUntil = Math.max(busyUntil, performance.now() + (delay + LENGTH[event]) * 1000)
   } catch {
     // No audio device, or the browser refused: silence.
   }

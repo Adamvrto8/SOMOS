@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { parseSoundSet, playSound, soundForVerdict } from './sound'
+import { parseSoundSet, playSound, soundBusyFor, soundForVerdict } from './sound'
 
 describe('soundForVerdict', () => {
   it('tells right, right but not quite, and wrong apart', () => {
@@ -20,26 +20,26 @@ describe('parseSoundSet', () => {
   })
 })
 
+/** Counts what is scheduled, like a browser's AudioContext would play it. */
+function fakeAudio() {
+  const started: number[] = []
+  const param = () => ({ value: 0, setValueAtTime: vi.fn(), linearRampToValueAtTime: vi.fn(), exponentialRampToValueAtTime: vi.fn() })
+  const node = () => ({ connect: (next: unknown) => next })
+  class FakeContext {
+    currentTime = 10
+    state = 'running'
+    destination = node()
+    createGain = () => ({ ...node(), gain: param() })
+    createOscillator = () => ({ ...node(), type: 'sine', frequency: param(), start: (at: number) => started.push(at), stop: vi.fn() })
+    resume = vi.fn()
+  }
+  vi.stubGlobal('window', { AudioContext: FakeContext })
+  vi.stubGlobal('AudioContext', FakeContext)
+  return started
+}
+
 describe('playSound', () => {
   afterEach(() => vi.unstubAllGlobals())
-
-  /** Counts what is scheduled, like a browser's AudioContext would play it. */
-  function fakeAudio() {
-    const started: number[] = []
-    const param = () => ({ value: 0, setValueAtTime: vi.fn(), linearRampToValueAtTime: vi.fn(), exponentialRampToValueAtTime: vi.fn() })
-    const node = () => ({ connect: (next: unknown) => next })
-    class FakeContext {
-      currentTime = 10
-      state = 'running'
-      destination = node()
-      createGain = () => ({ ...node(), gain: param() })
-      createOscillator = () => ({ ...node(), type: 'sine', frequency: param(), start: (at: number) => started.push(at), stop: vi.fn() })
-      resume = vi.fn()
-    }
-    vi.stubGlobal('window', { AudioContext: FakeContext })
-    vi.stubGlobal('AudioContext', FakeContext)
-    return started
-  }
 
   it('is silent without an audio device, and when turned off', () => {
     expect(() => playSound('correct', 0, 'suave')).not.toThrow()
@@ -58,5 +58,33 @@ describe('playSound', () => {
         expect(Math.min(...started)).toBeCloseTo(10.52)
       }
     }
+  })
+})
+
+describe('soundBusyFor', () => {
+  afterEach(() => {
+    vi.useRealTimers()
+    vi.unstubAllGlobals()
+  })
+
+  it('tells how long the sound playing now still rings, so the next one can wait for it', () => {
+    vi.useFakeTimers()
+    // Long after whatever the tests above played.
+    vi.advanceTimersByTime(60_000)
+    fakeAudio()
+    expect(soundBusyFor()).toBe(0)
+    // Turned off, nothing rings.
+    playSound('lesson', 0, 'off')
+    expect(soundBusyFor()).toBe(0)
+
+    playSound('lesson', 0, 'suave')
+    expect(soundBusyFor()).toBeCloseTo(0.9)
+    vi.advanceTimersByTime(300)
+    expect(soundBusyFor()).toBeCloseTo(0.6)
+    // A short sound in between does not cut the longer one short.
+    playSound('tap', 0, 'suave')
+    expect(soundBusyFor()).toBeCloseTo(0.6)
+    vi.advanceTimersByTime(1000)
+    expect(soundBusyFor()).toBe(0)
   })
 })

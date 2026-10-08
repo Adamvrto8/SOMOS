@@ -171,7 +171,13 @@ export function LessonPage() {
       : false
   const canCheck = isAnswered(answer)
 
+  /**
+   * Shows the verdict. A right answer is settled by it and counts at once, so a daily goal it
+   * completes is celebrated before the next task; a wrong one waits for "Pokračovať", where it
+   * can still be overruled.
+   */
   const showGrade = (result: Grade) => {
+    if (task && result.correct) void recordAttempt(task.kind, task.itemId, true)
     setHint(null)
     setGrade(result)
     // Close the phone keyboard so the feedback sheet is visible.
@@ -213,11 +219,11 @@ export function LessonPage() {
     setAnswer(emptyAnswer(rest[index]))
   }
 
-  /** Records the answer and moves on. `resolve` drops the item from the mistakes list. */
+  /** Records the answer (a right one already counted when it was shown) and moves on. `resolve` drops the item from the mistakes list. */
   const next = ({ override, resolve }: { override?: boolean; resolve?: boolean } = {}) => {
     if (!task || !grade || !tasks) return
     const correct = override ?? grade.correct
-    void recordAttempt(task.kind, task.itemId, correct)
+    if (!grade.correct) void recordAttempt(task.kind, task.itemId, correct)
     void recordPractice(task.kind, task.itemId, correct)
     if (!correct) void recordMistake(task.kind, task.itemId)
     // A mistake fixed in a correction round leaves Chyby; the ones left behind stay there.

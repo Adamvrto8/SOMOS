@@ -3,8 +3,12 @@ import { useEffect, useState } from 'react'
 import { useT } from '../i18n'
 import { dismissCelebration, useCelebration, type Celebration } from '../lib/celebration'
 
-/** How long the sun stays before it leaves by itself, and how long leaving takes (ms). */
-const STAY = 2400
+/**
+ * How long the sun stays before it leaves by itself (ms). `null` while Adam is tuning its look
+ * (since 2026-10-08): it stays until it is tapped. Back to 2400 when he is done.
+ */
+const STAY: number | null = null
+/** How long leaving takes (ms). */
 const FADE = 300
 
 /** Twelve long rays, a short one between each two. */
@@ -12,7 +16,7 @@ const RAYS = Array.from({ length: 12 }, (_, i) => i * 30)
 
 /**
  * The daily goal was just reached: a sun with the streak over whatever screen is open.
- * It leaves by itself; a tap sends it away at once. Lives beside the router, because the
+ * It leaves by itself (see STAY); a tap sends it away at once. Lives beside the router, because the
  * lesson and the review are outside AppLayout.
  */
 export function GoalCelebration() {
@@ -26,6 +30,7 @@ function Sun({ celebration }: { celebration: Celebration }) {
   const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
+    if (STAY === null) return
     const timer = setTimeout(() => setLeaving(true), STAY)
     return () => clearTimeout(timer)
   }, [])
