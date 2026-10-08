@@ -6,14 +6,14 @@ import type { Activity } from '../../lib/stats'
 import { DayColumns } from '../stats/DayColumns'
 
 /**
- * Answers per day, last 7 days, with today's value on its column. The whole card opens the
+ * Right answers per day (what the daily goal counts), last 7 days, with today's value on its column. The whole card opens the
  * overview (/stats): longer periods, the streaks and what was practised.
  */
 export function WeekChart({ activity, goal }: { activity: Activity; goal: number }) {
   const dictionary = useT()
   const text = dictionary.home
   const { week, weekTotal, weekAccuracy } = activity
-  const goalDays = week.filter((d) => d.count >= goal).length
+  const goalDays = week.filter((d) => d.correct >= goal).length
 
   return (
     <section aria-labelledby="week-heading">

@@ -55,7 +55,7 @@ export function scheduleNext(card: Card, grade: Grade, now: Date): Card {
 
 const key = (itemType: ReviewItemType, itemId: string): [ReviewItemType, string] => [itemType, itemId]
 
-/** Stores the new schedule and counts the review toward the streak and daily goal. */
+/** Stores the new schedule; a review that was not "Again" counts toward the streak and daily goal. */
 export async function rateCard(itemType: ReviewItemType, itemId: string, grade: Grade, now = new Date()): Promise<Card> {
   const stored = await db.reviewCards.get(key(itemType, itemId))
   if (!stored) throw new Error(`No review card for ${itemType}:${itemId}`)

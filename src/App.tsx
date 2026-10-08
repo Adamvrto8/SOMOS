@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
+import { GoalCelebration } from './components/GoalCelebration'
 import { ArchivePage } from './features/archive/ArchivePage'
 import { CustomWordPage } from './features/archive/CustomWordPage'
 import { SettingsPage } from './features/archive/SettingsPage'
@@ -41,5 +42,10 @@ const router = createBrowserRouter([
 ])
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <GoalCelebration />
+    </>
+  )
 }

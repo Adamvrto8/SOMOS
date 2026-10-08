@@ -25,7 +25,7 @@ export interface ReminderSub {
 /** What the phone last reported, computed in its local time. */
 export interface ReminderProgress {
   day: string // "2026-09-27"
-  done: number // answers + reviews that day
+  done: number // right answers + reviews that day
   goal: number
   dueToday: number // review cards due by the end of `day`
   dueTomorrow: number // … by the end of the next day
@@ -193,7 +193,7 @@ function composeEnglish({ done, goal, due, streak }: TodayView): Message {
     const streakPart = streak > 0 ? ` · ${streak}-day streak 🔥` : ''
     return { title: `${goal - done} to go for the daily goal`, body: `Today ${done}/${goal}${streakPart}` }
   }
-  const waiting = due ? `To review: ${plural(due, 'card', 'cards')}` : `Daily goal: ${plural(goal, 'answer', 'answers')}`
+  const waiting = due ? `To review: ${plural(due, 'card', 'cards')}` : `Daily goal: ${plural(goal, 'correct answer', 'correct answers')}`
   if (streak > 0) return { title: `🔥 A ${streak}-day streak is waiting for today`, body: `${waiting} · a few minutes is enough` }
   return { title: '¿Practicamos? 🇲🇽', body: waiting }
 }
@@ -207,7 +207,7 @@ export function composeMessage(view: TodayView, language?: 'sk' | 'en'): Message
   }
   const waiting = due
     ? `Na zopakovanie: ${due} ${pluralSk(due, ['kartička', 'kartičky', 'kartičiek'])}`
-    : `Denný cieľ: ${goal} ${pluralSk(goal, ['odpoveď', 'odpovede', 'odpovedí'])}`
+    : `Denný cieľ: ${goal} ${pluralSk(goal, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`
   if (streak > 0) return { title: `🔥 Séria ${days(streak)} čaká na dnešok`, body: `${waiting} · stačí pár minút` }
   return { title: '¿Practicamos? 🇲🇽', body: waiting }
 }

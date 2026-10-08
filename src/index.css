@@ -35,6 +35,12 @@
   --animate-sheet-up: sheet-up 220ms ease-out;
   --animate-slide-next: slide-next 200ms ease-out;
   --animate-slide-prev: slide-prev 200ms ease-out;
+  /* The sun of a reached daily goal (GoalCelebration): each piece waits for its turn unseen. */
+  --animate-fade-in: fade-in 250ms ease-out backwards;
+  --animate-rise-in: rise-in 400ms ease-out backwards;
+  --animate-sun-rise: sun-rise 520ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
+  --animate-sun-turn: sun-turn 2400ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  --animate-badge-pop: badge-pop 320ms cubic-bezier(0.2, 1.6, 0.4, 1) backwards;
 
   @keyframes pop {
     50% {
@@ -58,6 +64,39 @@
   @keyframes slide-prev {
     from {
       transform: translateX(-2rem);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rise-in {
+    from {
+      transform: translateY(6px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sun-rise {
+    from {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sun-turn {
+    from {
+      transform: rotate(-50deg);
+    }
+  }
+
+  @keyframes badge-pop {
+    from {
+      transform: scale(0);
       opacity: 0;
     }
   }

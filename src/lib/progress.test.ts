@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { createEmptyCard, Rating } from 'ts-fsrs'
 import { addDays, dayKey } from './dates'
 import { formatInterval, isDueToday, previewIntervals, scheduleNext } from './srs'
-import { byExercise, computeActivity, computeHistory, computeStreak, goalDays, longestStreak, summarizeDays, summarizeWeek } from './stats'
+import { byExercise, computeActivity, computeHistory, computeStreak, countedTimestamps, goalDays, longestStreak, summarizeDays, summarizeWeek } from './stats'
 import { wordOfDay } from './wordOfDay'
 
 const at = (y: number, m: number, d: number, h = 12) => new Date(y, m - 1, d, h)
@@ -35,7 +35,16 @@ describe('computeStreak', () => {
 describe('goalDays', () => {
   const answers = (day: number, count: number) => Array.from({ length: count }, (_, i) => at(2026, 9, day, 8 + i).getTime())
 
-  it('keeps only the days whose answers reach the daily goal', () => {
+  it('counts the right answers only: a wrong one is practice, not progress', () => {
+    const attempts = [
+      { at: at(2026, 9, 23, 8).getTime(), correct: true },
+      { at: at(2026, 9, 23, 9).getTime(), correct: false },
+      { at: at(2026, 9, 23, 10).getTime(), correct: true },
+    ]
+    expect(countedTimestamps(attempts)).toEqual([at(2026, 9, 23, 8).getTime(), at(2026, 9, 23, 10).getTime()])
+  })
+
+  it('keeps only the days whose counted answers reach the daily goal', () => {
     const stamps = [...answers(23, 3), ...answers(24, 2), ...answers(25, 4)]
     expect(goalDays(stamps, 3)).toEqual(new Set(['2026-09-23', '2026-09-25']))
   })
@@ -65,13 +74,15 @@ describe('summarizeWeek / computeActivity', () => {
   })
 
   it('derives today, totals and accuracy', () => {
-    const activity = computeActivity(attempts.map((a) => a.at), attempts, now, 2)
-    expect(activity.today).toBe(2)
+    const counted = countedTimestamps(attempts)
+    const activity = computeActivity(counted, attempts, now, 1)
+    // Two answers today, one of them right: the goal counts the right one.
+    expect(activity.today).toBe(1)
     expect(activity.weekTotal).toBe(3)
     expect(activity.weekAccuracy).toBeCloseTo(2 / 3)
     expect(activity.streak).toEqual({ days: 1, activeToday: true })
-    // The same two answers under a goal of three: today does not count yet.
-    expect(computeActivity(attempts.map((a) => a.at), attempts, now, 3).streak).toEqual({ days: 0, activeToday: false })
+    // The same answers under a goal of two: today does not count yet.
+    expect(computeActivity(counted, attempts, now, 2).streak).toEqual({ days: 0, activeToday: false })
   })
 
   it('has no accuracy without answers', () => {
@@ -162,7 +173,8 @@ describe('history (the overview behind the week chart)', () => {
       total: 14,
       correct: 12,
       firstDay: at(2026, 9, 20, 8),
-      streak: { days: 2, activeToday: true },
+      // The 24th had four answers but only two right ones: under the goal of three, so it breaks the streak.
+      streak: { days: 1, activeToday: true },
       longestStreak: 2,
     })
     expect(computeHistory([], now, 3)).toMatchObject({ total: 0, correct: 0, firstDay: null, longestStreak: 0 })

@@ -13,7 +13,7 @@ type Range = (typeof RANGES)[number]
 
 /**
  * The overview behind the week chart on Domov: the streaks and totals since the first answer,
- * the answers per day over a longer period, and what was practised in it.
+ * the right answers per day over a longer period, and what was practised in it.
  */
 export function StatsPage() {
   const dictionary = useT()
@@ -46,7 +46,7 @@ export function StatsPage() {
   const fullDate = (date: Date) => date.toLocaleDateString(dictionary.dateLocale, { weekday: 'long', day: 'numeric', month: 'numeric' })
   const periodTotal = days.reduce((n, d) => n + d.count, 0)
   const periodCorrect = days.reduce((n, d) => n + d.correct, 0)
-  const metDays = days.filter((d) => d.count >= goal).length
+  const metDays = days.filter((d) => d.correct >= goal).length
   const mostPractised = Math.max(...split.map((s) => s.count), 1)
   const exerciseName = (exercise: string) =>
     exercise === 'review' ? text.review : (dictionary.exercise.types[exercise as keyof typeof dictionary.exercise.types]?.label ?? exercise)
@@ -100,7 +100,7 @@ export function StatsPage() {
             <p aria-live="polite" className="min-w-0 flex-1 text-center text-sm">
               <span className="block font-medium first-letter:uppercase">
                 {selected === days.length - 1 ? home.today : fullDate(day.date)}
-                {day.count >= goal && <span className="font-normal text-leaf"> · {text.goalMet}</span>}
+                {day.correct >= goal && <span className="font-normal text-leaf"> · {text.goalMet}</span>}
               </span>
               <span className="block text-ink-muted">
                 {home.answers(day.count)}

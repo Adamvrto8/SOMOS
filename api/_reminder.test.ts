@@ -94,8 +94,8 @@ describe('composeMessage', () => {
   })
 
   it('falls back to the daily goal without cards to review', () => {
-    expect(composeMessage({ done: 0, goal: 20, due: 0, streak: 0 })).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Denný cieľ: 20 odpovedí' })
-    expect(composeMessage({ done: 0, goal: 10, due: null, streak: 2 }).body).toBe('Denný cieľ: 10 odpovedí · stačí pár minút')
+    expect(composeMessage({ done: 0, goal: 20, due: 0, streak: 0 })).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Denný cieľ: 20 správnych odpovedí' })
+    expect(composeMessage({ done: 0, goal: 10, due: null, streak: 2 }).body).toBe('Denný cieľ: 10 správnych odpovedí · stačí pár minút')
   })
 
   it('counts down to the goal once practice has started', () => {
@@ -229,7 +229,7 @@ describe('api/reminder: cron tick', () => {
     const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: '{not json', [KEYS.sent]: null })
     const send = vi.fn<Sender>(async () => {})
     expect(await (await handleReminder(cron(), deps(store, send))).json()).toEqual({ sent: true, reason: 'sent' })
-    expect(send.mock.calls[0][1]).toContain('Denný cieľ: 20 odpovedí')
+    expect(send.mock.calls[0][1]).toContain('Denný cieľ: 20 správnych odpovedí')
   })
 
   it('forgets a subscription the push service no longer knows', async () => {
@@ -569,7 +569,7 @@ describe('the reminder in the learner\'s language', () => {
       body: 'To review: 14 cards · a few minutes is enough',
     })
     expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('To review: 1 card')
-    expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 answer' })
+    expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 correct answer' })
     expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 1 }, 'en')).toEqual({ title: '8 to go for the daily goal', body: 'Today 12/20 · 1-day streak 🔥' })
   })
 
@@ -589,7 +589,7 @@ describe('the reminder in the learner\'s language', () => {
 
     const send = vi.fn<Sender>(async () => {})
     await handleReminder(cron(), deps(store, send))
-    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 answers', url: '/', id: '2026-07-01T17:10:00.000Z', lang: 'en' })
+    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 correct answers', url: '/', id: '2026-07-01T17:10:00.000Z', lang: 'en' })
 
     // The test notification too.
     await handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))
