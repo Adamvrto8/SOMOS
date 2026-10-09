@@ -105,7 +105,7 @@ export function LessonPage() {
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
-  // A wrong try at a typed task: shown as a hint while the learner fixes the answer.
+  // A wrong try: shown as a hint while the learner fixes the answer.
   const [hint, setHint] = useState<Grade | null>(null)
   const [answers, setAnswers] = useState<LessonAnswer[]>([]) // this round
   const [confirmExit, setConfirmExit] = useState(false)
@@ -189,11 +189,13 @@ export function LessonPage() {
     if (!task || grade || !isAnswered(value)) return
     setAnswer(value)
     const result = gradeTask(task, value)
-    // A wrong typed answer can be fixed and checked again, as often as it takes:
+    // A wrong answer can be fixed and checked again, as often as it takes:
     // it sounds like "not yet", the sound of a wrong answer is kept for the one that stands.
     if (!result.correct && canRetry(task)) {
       playSound('almost')
       setHint(result)
+      // The wrong option is out: another one has to be picked before the next check.
+      if (task.kind === 'choice') setAnswer('')
     } else {
       playSound(soundForVerdict(result.verdict))
       showGrade(result)

@@ -195,11 +195,30 @@ describe('gradeTask', () => {
     ['translation', true],
     ['vocab', true],
     ['dictation', true],
-    ['choice', false], // a second try would be a guess among fewer options
-    ['builder', false],
+    ['choice', true],
+    ['builder', true],
     ['speaking', false], // has its own three recordings
   ] as const)('lets a wrong %s answer be fixed: %s', (type, retry) => {
     expect(canRetry(createLesson({ type }, 1, seeded(5))[0])).toBe(retry)
+  })
+
+  it('says which tiles of a wrong sentence are out of place', () => {
+    const task = taskFromItem('builder', 's004', seeded(11)) // "Hablo un poco de español."
+    if (!task || task.kind !== 'builder') throw new Error('task not found')
+    const id = (word: string) => task.tiles.find((t) => t.text === word)!.id
+    const ids = (sentence: string) => sentence.split(' ').map(id)
+    // One word moved: only that one, the rest are in the right order among themselves.
+    expect(gradeTask(task, ids('español hablo un poco de')).misplaced).toEqual([id('español')])
+    expect(gradeTask(task, ids('hablo poco un de español')).misplaced).toHaveLength(1)
+    expect(gradeTask(task, ids('hablo un poco de español')).misplaced).toBeUndefined()
+  })
+
+  it('repeats a wrong option back, so it can be taken out of the choice', () => {
+    const task = createLesson({ type: 'choice' }, 1, seeded(13))[0]
+    if (task.kind !== 'choice') throw new Error('wrong kind')
+    const wrong = task.options.find((o) => o !== task.cloze.answer)!
+    expect(gradeTask(task, wrong).diff).toEqual([{ text: wrong, state: 'wrong' }])
+    expect(gradeTask(task, task.cloze.answer).diff).toBeUndefined()
   })
 
   it('accepts digits typed in a dictation', () => {

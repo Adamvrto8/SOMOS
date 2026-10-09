@@ -509,6 +509,7 @@ export const en: Dictionary = {
         wrong: 'The red word is wrong.',
         extra: 'The crossed-out word does not belong.',
         missing: 'A word is missing in the gap.',
+        misplaced: (n) => (n === 1 ? 'The red word is in the wrong place.' : 'The red words are in the wrong place.'),
         accent: 'Check the accent.',
       },
     },

@@ -20,7 +20,7 @@ interface TaskViewProps {
   onSkipRest?: () => void
   onRecordingChange?: (recording: boolean) => void
   grade: Grade | null
-  /** A wrong try the learner may still fix (typed tasks). */
+  /** A wrong try the learner may still fix. */
   hint?: Grade | null
 }
 
@@ -55,7 +55,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             <SentenceWithBlank tokens={task.sentence.tokens} blankIndex={task.cloze.tokenIndex} filled={text} status={status} />
             <p className="text-ink-muted">{sentenceTranslation(task.sentence)}</p>
           </div>
-          <ChoiceOptions options={task.options} selected={text} onSelect={onAnswer} correctAnswer={grade ? task.cloze.answer : undefined} />
+          <ChoiceOptions options={task.options} selected={text} onSelect={onAnswer} correctAnswer={grade ? task.cloze.answer : undefined} hint={hint} />
         </div>
       )
 
@@ -89,7 +89,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
       return (
         <div className="space-y-5">
           <p className="text-xl leading-snug font-medium">{sentenceTranslation(task.sentence)}</p>
-          <TileBuilder tiles={task.tiles} placed={Array.isArray(answer) ? answer : []} onChange={onAnswer} status={status} />
+          <TileBuilder tiles={task.tiles} placed={Array.isArray(answer) ? answer : []} onChange={onAnswer} status={status} hint={hint} />
         </div>
       )
 

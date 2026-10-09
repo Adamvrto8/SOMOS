@@ -13,7 +13,7 @@ const SHAKE: Keyframe[] = [{ transform: 'translateX(0)' }, { transform: 'transla
 /**
  * A wrong try the learner may still fix: the answer that was checked, its wrong words in red,
  * the ones that do not belong struck through and a gap where a word is missing.
- * The correct words are not given away.
+ * The correct words are not given away. (A built sentence has its own tiles marked instead.)
  */
 export function RetryHint({ grade, stale }: RetryHintProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -26,6 +26,7 @@ export function RetryHint({ grade, stale }: RetryHintProps) {
     diff && diff.length > 1 && has('wrong') && text.wrong,
     has('extra') && text.extra,
     has('missing') && text.missing,
+    !!grade.misplaced?.length && text.misplaced(grade.misplaced.length),
     (diff?.some((p) => p.accent) || grade.check?.meanings) && text.accent,
   ].filter(Boolean)
 

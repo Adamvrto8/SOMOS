@@ -67,6 +67,74 @@ test.describe('a wrong typed answer', () => {
   })
 })
 
+test.describe('a wrong try without typing', () => {
+  test('a built sentence has its misplaced words marked and can be rearranged', async ({ page }) => {
+    await page.goto(lesson('builder'))
+    const pool = page.locator('[aria-label="Slová"]').getByRole('button')
+    const built = page.locator('[aria-label="Tvoja veta"]').getByRole('button')
+    const sentence = await askedSentence(page, pool.first())
+    const words = sentence.tokens.filter((t) => !/^[¿?¡!.,;:]$/.test(t)).map((w, i) => (i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w))
+
+    // The tiles as they lie are never the answer.
+    for (let left = await pool.count(); left > 0; left--) await pool.first().tap()
+    await button(page, 'Skontrolovať').tap()
+    const hint = status(page)
+    await expect(hint).toContainText('Ešte to nie je ono')
+    await expect(hint).toContainText(/Červené (slovo nie je|slová nie sú) na správnom mieste/)
+    const red = page.locator('[aria-label="Tvoja veta"] button.text-error')
+    await expect(red).not.toHaveCount(0)
+    await expect(built).toHaveCount(words.length)
+
+    // Taking a red word out: the hint is about the previous try and fades.
+    await red.first().tap()
+    await expect(hint).toHaveCSS('opacity', '0.5')
+
+    // Rebuilt in the right order: counts as correct.
+    for (let left = await built.count(); left > 0; left--) await built.first().tap()
+    for (const word of words) await pool.getByText(word, { exact: true }).first().tap()
+    await button(page, 'Skontrolovať').tap()
+    await expect(status(page)).toContainText('Správne!')
+  })
+
+  test('a built sentence can be given up', async ({ page }) => {
+    await page.goto(lesson('builder'))
+    const pool = page.locator('[aria-label="Slová"]').getByRole('button')
+    await expect(pool.first()).toBeVisible()
+    for (let left = await pool.count(); left > 0; left--) await pool.first().tap()
+    await button(page, 'Skontrolovať').tap()
+    await expect(status(page)).toContainText('Ešte to nie je ono')
+    await button(page, 'Vzdať sa').tap()
+    await expect(status(page)).toContainText('Nesprávne')
+    await expect(status(page)).toContainText('Správna odpoveď')
+  })
+
+  test('a wrong option is taken out and another one can be picked', async ({ page }) => {
+    await page.goto(lesson('choice'))
+    const options = page.getByRole('radio')
+    const option = (name: string) => page.getByRole('radio', { name, exact: true })
+    const sentence = await askedSentence(page, options.first())
+    const answers = sentence.cloze!.map((c) => c.answer)
+    const all = await options.allInnerTexts()
+    const wrong = all.find((o) => !answers.includes(o))!
+
+    await option(wrong).tap()
+    await button(page, 'Skontrolovať').tap()
+    await expect(status(page)).toContainText('Ešte to nie je ono')
+    await expect(option(wrong)).toBeDisabled()
+    // Nothing is picked any more, so there is nothing to check.
+    await expect(button(page, 'Skontrolovať')).toBeDisabled()
+
+    // The other options one by one: each wrong one goes out too, until the right one is found.
+    for (const next of all.filter((o) => o !== wrong)) {
+      await option(next).tap()
+      await button(page, 'Skontrolovať').tap()
+      await expect(option(next)).toBeDisabled()
+      if (await button(page, 'Pokračovať').isVisible()) break
+    }
+    await expect(status(page)).toContainText('Správne!')
+  })
+})
+
 test('"Vzdať sa" and "Skontrolovať" ride on the keyboard and rest at the bottom of the screen without it', async ({ page }) => {
   await page.goto(lesson('cloze'))
   await expect(field(page)).toBeVisible()

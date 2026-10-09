@@ -30,9 +30,12 @@ export async function gapAboveBottom(page: Page, target: Locator): Promise<numbe
   return page.viewportSize()!.height - (box.y + box.height)
 }
 
-/** The sentence a cloze, translation or dictation task is asking for, found by its Slovak text on screen. */
-export async function askedSentence(page: Page): Promise<Sentence> {
-  await expect(field(page)).toBeVisible()
+/**
+ * The sentence a task is asking for, found by its Slovak text on screen.
+ * `ready` is what shows that the task is there: the text field, or the tiles / options of a task without one.
+ */
+export async function askedSentence(page: Page, ready: Locator = field(page)): Promise<Sentence> {
+  await expect(ready).toBeVisible()
   const shown = await page.locator('main p').allInnerTexts()
   const sentence = sentences.find((s) => shown.includes(s.sk))
   if (!sentence) throw new Error(`no sentence on screen: ${shown.join(' | ')}`)
