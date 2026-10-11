@@ -26,7 +26,7 @@ export function RetryHint({ grade, stale }: RetryHintProps) {
     diff && diff.length > 1 && has('wrong') && text.wrong,
     has('extra') && text.extra,
     has('missing') && text.missing,
-    !!grade.misplaced?.length && text.misplaced(grade.misplaced.length),
+    !!grade.misplaced?.length && text.misplaced,
     (diff?.some((p) => p.accent) || grade.check?.meanings) && text.accent,
   ].filter(Boolean)
 

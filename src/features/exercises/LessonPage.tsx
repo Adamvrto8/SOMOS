@@ -166,7 +166,7 @@ export function LessonPage() {
   const isAnswered = (value: Answer) =>
     task
       ? task.kind === 'builder'
-        ? Array.isArray(value) && value.length === task.tiles.length
+        ? Array.isArray(value) && value.length === task.tiles.length && value.every(Boolean)
         : typeof value === 'string' && value.trim() !== ''
       : false
   const canCheck = isAnswered(answer)

@@ -1,5 +1,5 @@
 import { Flame } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useT } from '../i18n'
 import { dismissCelebration, useCelebration, type Celebration } from '../lib/celebration'
 
@@ -28,6 +28,31 @@ function Sun({ celebration }: { celebration: Celebration }) {
   const text = useT().home
   const { goal, streakDays } = celebration
   const [leaving, setLeaving] = useState(false)
+  const size = streakDays > 99 ? 34 : 46
+  const number = useRef<SVGTextElement>(null)
+  // The baseline that puts the digits themselves in the middle of the disc. It is measured, not assumed:
+  // every style draws them in its own typeface, and old-style figures (Young Serif, Alegreya) hang below the line.
+  const [baseline, setBaseline] = useState(size * 0.35)
+
+  useLayoutEffect(() => {
+    const el = number.current
+    const pen = document.createElement('canvas').getContext('2d')
+    if (!el || !pen) return
+    let active = true
+    const measure = () => {
+      if (!active) return
+      const { fontWeight, fontFamily } = getComputedStyle(el)
+      pen.font = `${fontWeight} ${size}px ${fontFamily}`
+      const ink = pen.measureText(String(streakDays))
+      setBaseline((ink.actualBoundingBoxAscent - ink.actualBoundingBoxDescent) / 2)
+    }
+    measure()
+    // Again once the typeface is there: until then the fallback's digits were measured.
+    void document.fonts.ready.then(measure)
+    return () => {
+      active = false
+    }
+  }, [size, streakDays])
 
   useEffect(() => {
     if (STAY === null) return
@@ -64,8 +89,9 @@ function Sun({ celebration }: { celebration: Celebration }) {
         <circle r="43" className="fill-amber" />
         {/* Dark on the amber disc in both themes. */}
         <text
-          y={streakDays > 99 ? 12 : 16}
-          fontSize={streakDays > 99 ? 34 : 46}
+          ref={number}
+          y={baseline}
+          fontSize={size}
           textAnchor="middle"
           className="animate-rise-in fill-ink font-serif font-semibold [animation-delay:200ms] dark:fill-bg"
         >

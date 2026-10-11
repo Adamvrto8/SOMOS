@@ -87,7 +87,7 @@ export interface VocabTask {
 
 export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask
 
-/** Typed text or chosen option, or tile ids in the chosen order (builder). */
+/** Typed text or chosen option, or tile ids slot by slot (builder; '' = a slot left open in the middle). */
 export type Answer = string | string[]
 
 export interface Grade {
@@ -96,7 +96,7 @@ export interface Grade {
   expected: string // correct answer to show
   check?: CheckResult // details for typed answers
   diff?: DiffPart[] // a wrong typed answer word by word (or the wrong option), for a second try
-  misplaced?: string[] // a wrong built sentence: the tiles that are out of place
+  misplaced?: string[] // a wrong built sentence: the tiles that sit in a wrong slot
   speech?: SpeechMatch // Vyslovovanie: which words were heard
 }
 
@@ -626,31 +626,6 @@ function typed(text: string, expected: string, options: CheckOptions): Grade {
   return grade.correct ? grade : { ...grade, diff: diffWords(text, expected, options) }
 }
 
-/**
- * Which of the `built` words are out of place (their positions): the ones outside the longest
- * run of words that already follow each other as in `expected`. Moving just those fixes the sentence.
- */
-function outOfPlace(built: string[], expected: string[]): number[] {
-  // kept[i][j] = most words of built[i..] that can stay, lined up with expected[j..].
-  const kept = Array.from({ length: built.length + 1 }, () => Array.from({ length: expected.length + 1 }, () => 0))
-  for (let i = built.length - 1; i >= 0; i--) {
-    for (let j = expected.length - 1; j >= 0; j--) {
-      kept[i][j] = built[i] === expected[j] ? 1 + kept[i + 1][j + 1] : Math.max(kept[i + 1][j], kept[i][j + 1])
-    }
-  }
-  const out: number[] = []
-  let i = 0
-  let j = 0
-  while (i < built.length) {
-    if (j < expected.length && built[i] === expected[j]) {
-      i++
-      j++
-    } else if (j < expected.length && kept[i][j + 1] >= kept[i + 1][j]) j++
-    else out.push(i++)
-  }
-  return out
-}
-
 /** A wrong answer may be fixed and checked again; the task counts as wrong only when the learner gives up. */
 export function canRetry(task: Task): boolean {
   return task.kind !== 'speaking' // has its own three recordings
@@ -673,7 +648,8 @@ export function gradeTask(task: Task, answer: Answer): Grade {
       const built = lower(ids.map((id) => task.tiles.find((t) => t.id === id)?.text ?? ''))
       const expected = lower(task.expected)
       const grade = exact(built.join(' ') === expected.join(' '), task.sentence.es)
-      return grade.correct ? grade : { ...grade, misplaced: outOfPlace(built, expected).map((i) => ids[i]) }
+      // Slot by slot: the right words stay where they are, the marked ones are taken out and put back in order.
+      return grade.correct ? grade : { ...grade, misplaced: ids.filter((id, i) => id !== '' && built[i] !== expected[i]) }
     }
     case 'translation':
       return typed(text, task.sentence.es, { lookup: lookupForm, optionalSubject: true })

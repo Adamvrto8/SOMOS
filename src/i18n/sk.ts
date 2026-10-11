@@ -531,7 +531,7 @@ export const sk = {
         wrong: 'Červené slovo je zle.',
         extra: 'Prečiarknuté slovo je navyše.',
         missing: 'Na prázdnom mieste chýba slovo.',
-        misplaced: (n: number): string => (n === 1 ? 'Červené slovo nie je na správnom mieste.' : 'Červené slová nie sú na správnom mieste.'),
+        misplaced: 'Červené slová sú na zlom mieste. Ťukni na ne a doplň ich v správnom poradí.',
         accent: 'Skontroluj prízvuk.',
       },
     },

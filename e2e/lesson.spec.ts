@@ -68,30 +68,35 @@ test.describe('a wrong typed answer', () => {
 })
 
 test.describe('a wrong try without typing', () => {
-  test('a built sentence has its misplaced words marked and can be rearranged', async ({ page }) => {
+  test('a built sentence has the words in a wrong slot marked, and only those have to be put back', async ({ page }) => {
     await page.goto(lesson('builder'))
     const pool = page.locator('[aria-label="Slová"]').getByRole('button')
-    const built = page.locator('[aria-label="Tvoja veta"]').getByRole('button')
+    const sentenceArea = page.locator('[aria-label="Tvoja veta"]')
+    const built = sentenceArea.getByRole('button')
     const sentence = await askedSentence(page, pool.first())
     const words = sentence.tokens.filter((t) => !/^[¿?¡!.,;:]$/.test(t)).map((w, i) => (i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w))
 
     // The tiles as they lie are never the answer.
     for (let left = await pool.count(); left > 0; left--) await pool.first().tap()
+    await expect(built).toHaveCount(words.length)
+    const wrongSlots = (await built.allInnerTexts()).flatMap((word, slot) => (word === words[slot] ? [] : [slot]))
     await button(page, 'Skontrolovať').tap()
     const hint = status(page)
     await expect(hint).toContainText('Ešte to nie je ono')
-    await expect(hint).toContainText(/Červené (slovo nie je|slová nie sú) na správnom mieste/)
-    const red = page.locator('[aria-label="Tvoja veta"] button.text-error')
-    await expect(red).not.toHaveCount(0)
-    await expect(built).toHaveCount(words.length)
+    await expect(hint).toContainText('Červené slová sú na zlom mieste')
+    // Red is exactly the words that sit where another one belongs.
+    const red = sentenceArea.locator('button.text-error')
+    await expect(red).toHaveCount(wrongSlots.length)
 
-    // Taking a red word out: the hint is about the previous try and fades.
+    // Taking a red word out leaves its slot open (the others stay put); the hint is about the previous try and fades.
     await red.first().tap()
     await expect(hint).toHaveCSS('opacity', '0.5')
+    await expect(built).toHaveCount(words.length - 1)
+    await expect(sentenceArea.getByRole('img', { name: 'chýba slovo' })).toHaveCount(1)
 
-    // Rebuilt in the right order: counts as correct.
-    for (let left = await built.count(); left > 0; left--) await built.first().tap()
-    for (const word of words) await pool.getByText(word, { exact: true }).first().tap()
+    // The other red words out too, then the right word into each open slot, first slot first: counts as correct.
+    for (let left = await red.count(); left > 0; left--) await red.first().tap()
+    for (const slot of wrongSlots) await pool.getByText(words[slot], { exact: true }).first().tap()
     await button(page, 'Skontrolovať').tap()
     await expect(status(page)).toContainText('Správne!')
   })

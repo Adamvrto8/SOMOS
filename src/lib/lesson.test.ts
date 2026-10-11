@@ -202,15 +202,17 @@ describe('gradeTask', () => {
     expect(canRetry(createLesson({ type }, 1, seeded(5))[0])).toBe(retry)
   })
 
-  it('says which tiles of a wrong sentence are out of place', () => {
+  it('says which tiles of a wrong sentence sit in a wrong slot', () => {
     const task = taskFromItem('builder', 's004', seeded(11)) // "Hablo un poco de español."
     if (!task || task.kind !== 'builder') throw new Error('task not found')
-    const id = (word: string) => task.tiles.find((t) => t.text === word)!.id
+    const id = (word: string) => (word === '_' ? '' : task.tiles.find((t) => t.text === word)!.id)
     const ids = (sentence: string) => sentence.split(' ').map(id)
-    // One word moved: only that one, the rest are in the right order among themselves.
-    expect(gradeTask(task, ids('español hablo un poco de')).misplaced).toEqual([id('español')])
-    expect(gradeTask(task, ids('hablo poco un de español')).misplaced).toHaveLength(1)
+    // Slot by slot: the words that are right stay, only the two swapped ones have to change places.
+    expect(gradeTask(task, ids('hablo poco un de español')).misplaced).toEqual(ids('poco un'))
+    expect(gradeTask(task, ids('español hablo un poco de')).misplaced).toEqual(ids('español hablo un poco de'))
     expect(gradeTask(task, ids('hablo un poco de español')).misplaced).toBeUndefined()
+    // A slot left open is wrong, but there is no tile in it to mark.
+    expect(gradeTask(task, ids('hablo _ poco de español'))).toMatchObject({ correct: false, misplaced: [] })
   })
 
   it('repeats a wrong option back, so it can be taken out of the choice', () => {
