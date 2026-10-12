@@ -47,6 +47,12 @@ export const en: Dictionary = {
     soundHint: "When you answer, at the end of a lesson and when the daily goal is reached. They follow the phone's media volume.",
     version: 'Version',
 
+    dev: {
+      title: 'For development',
+      showSun: 'Show the daily goal sun',
+      showSunHint: 'Just a preview, nothing is counted. Every tap shows another number of days.',
+    },
+
     autoReview: {
       title: 'Automatic review',
       toggle: 'Review practiced words',

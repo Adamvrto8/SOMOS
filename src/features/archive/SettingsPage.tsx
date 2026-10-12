@@ -10,6 +10,7 @@ import { playSound, setSoundSet, SOUND_SETS, useSoundSet } from '../../lib/sound
 import { setLook, setThemePref, useLook, useThemePref } from '../../lib/theme'
 import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
+import { DevSettings } from './DevSettings'
 import { ReminderSettings } from './ReminderSettings'
 import { VoiceSettings } from './VoiceSettings'
 
@@ -105,6 +106,7 @@ export function SettingsPage() {
       <ReminderSettings />
       <VoiceSettings />
       <BackupSettings />
+      <DevSettings />
 
       <p className="text-center text-xs text-ink-muted tabular-nums">
         {text.settings.version} {__APP_VERSION__} · {new Date(__BUILD_TIME__).toLocaleDateString(text.dateLocale)}

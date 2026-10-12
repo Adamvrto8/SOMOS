@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { askedSentence, button, field, seedAttempts, status } from './helpers.ts'
+import { askedSentence, button, field, KEYBOARD_OPEN, seedAttempts, status, swipe } from './helpers.ts'
 
 const LESSON = '/practice/lesson?type=cloze&topic=all&level=A1&lesson=1'
 const DAY = 86_400_000
@@ -60,6 +60,21 @@ test('a tap sends the sun away at once', async ({ page }) => {
   await expect(sun(page)).toHaveCount(0, { timeout: 1000 })
 })
 
+test('a swipe sends the sun away too, and the screen under it stays where it was', async ({ page }) => {
+  await lessonWith(page, { 0: 9 })
+  await answerRight(page)
+  await expect(sun(page)).toBeVisible()
+  // A screen short enough for the lesson under the sun to scroll.
+  await page.setViewportSize(KEYBOARD_OPEN)
+  expect(await page.evaluate(() => document.documentElement.scrollHeight - window.innerHeight)).toBeGreaterThan(100)
+
+  await swipe(page, { x: 180, y: 380 }, { x: 180, y: 120 })
+  await expect(sun(page)).toHaveCount(0, { timeout: 1000 })
+  expect(await page.evaluate(() => window.scrollY)).toBe(0)
+  // The finger that sent it away did not press anything under it.
+  await expect(page.locator('header')).toContainText('1/10')
+})
+
 test('an answer given up does not count for the goal; the next right one does', async ({ page }) => {
   await lessonWith(page, { 0: 9 })
   await field(page).fill('zzzz')
@@ -109,6 +124,27 @@ test('in a review the card that completes the goal waits under the sun', async (
   await expect(page.getByText(/^Zopakoval si 1 kartu/)).toBeVisible()
 })
 
+test('Nastavenia can show the sun without an answer, each time with another streak, and nothing is counted', async ({ page }) => {
+  await goalOfTen(page)
+  await page.goto('/archive/settings')
+  const show = button(page, 'Ukázať slnko denného cieľa')
+
+  await show.tap()
+  await expect(sun(page)).toContainText('Denný cieľ splnený · 10/10')
+  await expect(sun(page)).toContainText('7 dní v rade')
+  await sun(page).tap()
+  await expect(sun(page)).toHaveCount(0)
+  // The tap that sent the sun away did not press the button under it again.
+  await page.waitForTimeout(600)
+  await expect(sun(page)).toHaveCount(0)
+
+  await show.tap()
+  await expect(sun(page)).toContainText('1 deň v rade')
+  await sun(page).tap()
+  await page.goto('/')
+  await expect(page.getByRole('link', { name: /^Denný cieľ: 0 z 10\./ })).toBeVisible()
+})
+
 test('Domov counts the right answers of today toward the goal', async ({ page }) => {
   await goalOfTen(page)
   await page.goto('/')
@@ -117,3 +153,44 @@ test('Domov counts the right answers of today toward the goal', async ({ page })
 
   await expect(page.getByRole('link', { name: /^Denný cieľ: 6 z 10\./ })).toContainText('denný cieľ · ešte 4')
 })
+
+/** How far below the middle of the sun the middle of the drawn digits is, in px (above it: negative). */
+async function inkBelowCentre(page: Page): Promise<number> {
+  const shot = (await page.locator('svg', { has: page.locator('text') }).screenshot()).toString('base64')
+  return page.evaluate(async (png) => {
+    const image = new Image()
+    image.src = `data:image/png;base64,${png}`
+    await image.decode()
+    const canvas = document.createElement('canvas')
+    canvas.width = image.width
+    canvas.height = image.height
+    const pen = canvas.getContext('2d')!
+    pen.drawImage(image, 0, 0)
+    const { data, width, height } = pen.getImageData(0, 0, image.width, image.height)
+    let top = height
+    let bottom = 0
+    for (let y = 0; y < height; y++)
+      for (let x = 0; x < width; x++) {
+        // Inside the disc only, and only the dark of the digits (the light theme).
+        if (Math.hypot(x - width / 2, y - height / 2) > width * 0.24) continue
+        const i = (y * width + x) * 4
+        if (data[i] + data[i + 1] + data[i + 2] >= 300) continue
+        top = Math.min(top, y)
+        bottom = Math.max(bottom, y)
+      }
+    return (top + bottom + 1) / 2 - height / 2
+  }, shot)
+}
+
+// Agave asks its typeface for lining figures (tokens.css), where a 7 stands on the line instead of hanging below it.
+for (const look of ['classic', 'talavera', 'barragan', 'agave'])
+  test(`the streak sits in the middle of the sun in the ${look} style`, async ({ page }) => {
+    await page.addInitScript((picked) => localStorage.setItem('somos-look', picked), look)
+    await lessonWith(page, { 0: 9, 1: 10, 2: 10, 3: 10, 4: 10, 5: 10, 6: 10 })
+    await answerRight(page)
+    await expect(sun(page)).toContainText('7 dní v rade')
+    // The digits have risen into place.
+    await page.waitForTimeout(900)
+
+    expect(Math.abs(await inkBelowCentre(page))).toBeLessThanOrEqual(1.5)
+  })

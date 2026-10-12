@@ -16,7 +16,7 @@ const RAYS = Array.from({ length: 12 }, (_, i) => i * 30)
 
 /**
  * The daily goal was just reached: a sun with the streak over whatever screen is open.
- * It leaves by itself (see STAY); a tap sends it away at once. Lives beside the router, because the
+ * It leaves by itself (see STAY); a touch sends it away at once. Lives beside the router, because the
  * lesson and the review are outside AppLayout.
  */
 export function GoalCelebration() {
@@ -30,18 +30,23 @@ function Sun({ celebration }: { celebration: Celebration }) {
   const [leaving, setLeaving] = useState(false)
   const size = streakDays > 99 ? 34 : 46
   const number = useRef<SVGTextElement>(null)
+  const ruler = useRef<HTMLCanvasElement>(null)
   // The baseline that puts the digits themselves in the middle of the disc. It is measured, not assumed:
   // every style draws them in its own typeface, and old-style figures (Young Serif, Alegreya) hang below the line.
   const [baseline, setBaseline] = useState(size * 0.35)
 
   useLayoutEffect(() => {
     const el = number.current
-    const pen = document.createElement('canvas').getContext('2d')
+    const pen = ruler.current?.getContext('2d')
     if (!el || !pen) return
     let active = true
     const measure = () => {
       if (!active) return
-      const { fontWeight, fontFamily } = getComputedStyle(el)
+      const { fontWeight, fontFamily, fontFeatureSettings } = getComputedStyle(el)
+      // The ruler has to draw the figures the number is drawn with: Agave asks for lining ones (tokens.css),
+      // which stand on the line. A canvas has no setting for that; it takes it from its own style,
+      // and only while it is part of the page.
+      pen.canvas.style.fontFeatureSettings = fontFeatureSettings
       pen.font = `${fontWeight} ${size}px ${fontFamily}`
       const ink = pen.measureText(String(streakDays))
       setBaseline((ink.actualBoundingBoxAscent - ink.actualBoundingBoxDescent) / 2)
@@ -67,13 +72,17 @@ function Sun({ celebration }: { celebration: Celebration }) {
   }, [leaving])
 
   return (
-    // The whole screen is the button: while the sun is up, a tap closes it and does not reach the task below.
+    // The whole screen is the button: while the sun is up, a touch closes it and does not reach the task below.
+    // The touch itself, not the tap it may become: a swipe closes it too, and (touch-none) does not scroll
+    // the screen under it. Fading out, it still takes the tap, which would land on the task otherwise.
     // Only the children animate in; the button itself just fades out.
     <button
       type="button"
+      onPointerDown={() => setLeaving(true)}
       onClick={() => setLeaving(true)}
-      className={`fixed inset-0 z-50 flex cursor-default flex-col items-center justify-center px-6 text-center transition-opacity duration-300 ${leaving ? 'pointer-events-none opacity-0' : ''}`}
+      className={`fixed inset-0 z-50 flex cursor-default touch-none flex-col items-center justify-center px-6 text-center transition-opacity duration-300 ${leaving ? 'opacity-0' : ''}`}
     >
+      <canvas ref={ruler} aria-hidden className="hidden" />
       <span aria-hidden className="absolute inset-0 animate-fade-in bg-bg/92 backdrop-blur-[2px]" />
 
       <svg viewBox="-80 -80 160 160" aria-hidden className="relative size-44 animate-sun-rise">

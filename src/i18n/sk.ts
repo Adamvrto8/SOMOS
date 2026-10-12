@@ -57,6 +57,13 @@ export const sk = {
     soundHint: 'Pri odpovedi, na konci lekcie a pri splnení denného cieľa. Hlasitosť sa riadi hlasitosťou médií v telefóne.',
     version: 'Verzia',
 
+    /** Tools for working on the app. */
+    dev: {
+      title: 'Pre vývoj',
+      showSun: 'Ukázať slnko denného cieľa',
+      showSunHint: 'Len na skúšku, nič sa nezapočíta. Každé ťuknutie ukáže iný počet dní.',
+    },
+
     autoReview: {
       title: 'Automatické opakovanie',
       toggle: 'Opakovať precvičené slová',
