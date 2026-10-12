@@ -370,6 +370,8 @@ export const en: Dictionary = {
     all: 'All',
     level: 'Level',
     allLevels: 'All',
+    everyLevel: 'All levels',
+    changeChoice: 'Change topic and level',
     lessons: 'Lessons',
     passedOf: (passed, total) => `${passed}/${total} passed`,
     noTasks: 'There are no tasks for this choice yet.',
@@ -383,12 +385,12 @@ export const en: Dictionary = {
     continueWith: (n) => `Continue (Lesson ${n})`,
     allDone: 'All lessons passed! ✓',
     allDoneTopic: 'All lessons in this topic passed! ✓',
-    needToUnlock: 'To unlock the next lesson you need at least 8/10 (80%)',
   },
 
   lesson: {
     quit: 'Quit the lesson',
     fixing: 'fixing',
+    resuming: 'continuing',
     progress: 'Lesson progress',
     locked: 'The lesson is locked',
     lockedHint: 'It unlocks once you pass the previous lesson with at least 80%.',

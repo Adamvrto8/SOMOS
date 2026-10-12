@@ -1,4 +1,5 @@
-import { BookOpen, Check, ChevronRight, Dumbbell, Lock, Play } from 'lucide-react'
+import { BookOpen, Check, ChevronRight, Dumbbell, Lock, Play, SlidersHorizontal } from 'lucide-react'
+import { useRef } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Button } from '../../components/Button'
 import { Chip } from '../../components/Chip'
@@ -20,7 +21,7 @@ import {
 } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
 import { useUpdateParams } from '../../lib/useUrlQuery'
-import { EXERCISES, filterFromParams, filterToParams, isLessonGroup, LEVELS } from './exercises'
+import { EXERCISES, filterFromParams, filterLabel, filterToParams, isLessonGroup, LEVELS } from './exercises'
 
 export function PracticePage() {
   const dictionary = useT()
@@ -74,6 +75,15 @@ export function PracticePage() {
   const navigateToLesson = (num: number) => {
     void navigate(`/practice/lesson?${filterToParams(filter)}&lesson=${num}`)
   }
+
+  // Topic (or tense) and, right below it, level: where the bar's label leads.
+  const optionsRef = useRef<HTMLElement>(null)
+  const showOptions = () => {
+    const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    optionsRef.current?.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' })
+  }
+  // Clear of the sticky app header.
+  const optionsClass = 'scroll-mt-[calc(4.5rem+env(safe-area-inset-top))]'
 
   return (
     <div className="space-y-7">
@@ -150,7 +160,7 @@ export function PracticePage() {
       </section>
 
       {filter.type === 'conjugation' ? (
-        <section aria-labelledby="tense-heading">
+        <section ref={optionsRef} aria-labelledby="tense-heading" className={optionsClass}>
           <SectionTitle id="tense-heading">{text.tense}</SectionTitle>
           <div role="group" aria-labelledby="tense-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
             <Chip selected={group === 'all'} onClick={() => updateParams({ tense: 'all' })}>
@@ -164,7 +174,7 @@ export function PracticePage() {
           </div>
         </section>
       ) : (
-        <section aria-labelledby="topic-heading">
+        <section ref={optionsRef} aria-labelledby="topic-heading" className={optionsClass}>
           <SectionTitle id="topic-heading">{text.topic}</SectionTitle>
           <div role="group" aria-labelledby="topic-heading" className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4">
             <Chip selected={group === 'all'} onClick={() => updateParams({ topic: 'all' })}>
@@ -279,8 +289,17 @@ export function PracticePage() {
         )}
       </section>
 
-      {/* Stays visible above the tab bar while scrolling the options. */}
-      <div className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 bg-bg/95 px-4 pt-3 pb-3 backdrop-blur">
+      {/* Stays visible above the tab bar while scrolling the options; names what is picked up there and leads back to it. */}
+      <div className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 bg-bg/95 px-4 pt-2 pb-3 backdrop-blur">
+        <button
+          type="button"
+          onClick={showOptions}
+          title={text.changeChoice}
+          className="mx-auto mb-1 flex min-h-11 max-w-full items-center justify-center gap-2 rounded-xl px-3 text-center text-base font-semibold text-balance transition-colors duration-150 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick"
+        >
+          <SlidersHorizontal size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+          {filterLabel(filter, text.everyLevel)}
+        </button>
         <Button
           icon={Play}
           disabled={totalLessons === 0}
@@ -289,15 +308,11 @@ export function PracticePage() {
         >
           {allPassed ? text.repeatFirst : text.continueWith(unpassedLesson)}
         </Button>
-        <p className="mt-2 text-center text-sm text-ink-muted" aria-live="polite">
-          {totalLessons === 0
-            ? text.noTasks
-            : allPassed
-              ? group === 'all'
-                ? text.allDone
-                : text.allDoneTopic
-              : text.needToUnlock}
-        </p>
+        {(totalLessons === 0 || allPassed) && (
+          <p className="mt-2 text-center text-sm text-ink-muted" aria-live="polite">
+            {totalLessons === 0 ? text.noTasks : group === 'all' ? text.allDone : text.allDoneTopic}
+          </p>
+        )}
       </div>
     </div>
   )

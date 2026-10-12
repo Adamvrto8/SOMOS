@@ -1,16 +1,8 @@
-import { topicById } from '../../data'
 import type { Level } from '../../data/types'
-import { t } from '../../i18n'
-import { TENSE_LABELS, type TableTense } from '../../lib/conjugate'
+import type { TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type LessonFilter } from '../../lib/lesson'
 import { getFirstUnpassedLesson, getLastActiveLesson, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
-import { topicName } from '../../lib/localized'
-import { exerciseInfo, filterToParams, isLessonGroup, LEVELS } from '../exercises/exercises'
-
-const topicLabel = (id: string) => {
-  const topic = topicById.get(id)
-  return topic ? topicName(topic) : id
-}
+import { filterLabel, filterToParams, isLessonGroup, LEVELS } from '../exercises/exercises'
 
 export interface ContinueLesson {
   href: string
@@ -34,19 +26,10 @@ export function continueLesson(progression: LessonProgressionMap): ContinueLesso
   const total = getNumberedLessonCount(filter)
   const lesson = total > 0 ? getFirstUnpassedLesson(type, progressionGroup(group, level), total, progression) : 1
 
-  const groupLabel =
-    group === 'all'
-      ? type === 'conjugation'
-        ? t().exercise.allTenses
-        : t().exercise.allTopics
-      : type === 'conjugation'
-        ? TENSE_LABELS[group as TableTense]
-        : topicLabel(group)
-
   return {
     href: `/practice/lesson?${filterToParams(filter)}&lesson=${lesson}`,
     lesson,
-    label: [exerciseInfo(type).label, groupLabel, level].filter(Boolean).join(' · '),
+    label: filterLabel(filter),
     started: last !== undefined,
   }
 }

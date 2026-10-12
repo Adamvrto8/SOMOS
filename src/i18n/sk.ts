@@ -390,6 +390,10 @@ export const sk = {
     all: 'Všetko',
     level: 'Úroveň',
     allLevels: 'Všetky',
+    /** In the label above "Pokračovať": Doplňovačka · Jedlo a pitie · Všetky úrovne */
+    everyLevel: 'Všetky úrovne',
+    /** What a tap on that label does: it scrolls to topic and level. */
+    changeChoice: 'Zmeniť tému a úroveň',
     lessons: 'Lekcie',
     passedOf: (passed: number, total: number) => `${passed}/${total} ${pluralSk(total, ['splnená', 'splnené', 'splnených'])}`,
     noTasks: 'Pre tento výber zatiaľ nie sú žiadne úlohy.',
@@ -403,13 +407,14 @@ export const sk = {
     continueWith: (n: number) => `Pokračovať (Lekcia ${n})`,
     allDone: 'Všetky lekcie sú úspešne zvládnuté! ✓',
     allDoneTopic: 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓',
-    needToUnlock: 'Na odomknutie ďalšej lekcie potrebuješ aspoň 8/10 (80 %)',
   },
 
   lesson: {
     quit: 'Ukončiť lekciu',
     /** Above the task while the mistakes of a lesson are being fixed: Lekcia 2 · oprava · Doplň slovo */
     fixing: 'oprava',
+    /** Above the task of a lesson that goes on where it was left: Lekcia 2 · pokračovanie · Doplň slovo */
+    resuming: 'pokračovanie',
     progress: 'Priebeh lekcie',
     locked: 'Lekcia je zamknutá',
     lockedHint: 'Odomkne sa, keď splníš predchádzajúcu lekciu aspoň na 80 %.',

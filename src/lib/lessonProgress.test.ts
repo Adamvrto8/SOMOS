@@ -10,6 +10,7 @@ import {
   progressionGroup,
   recordLessonAttempt,
   resetProgressionForTesting,
+  resumeLesson,
 } from './lessonProgress'
 
 const storage = new Map<string, string>()
@@ -163,6 +164,46 @@ describe('lessonProgress', () => {
     expect(getLessonRecord('cloze', 'basics', 2)).toMatchObject({ bestScore: 8, passed: true })
     expect(isLessonUnlocked('vocab', 'all:A1', 2)).toBe(true)
     expect(JSON.parse(storage.get('somos-lesson-progression-v2')!)).toHaveProperty(['vocab:all:A1:1'])
+  })
+
+  it('remembers which tasks of an unfinished lesson were answered right', () => {
+    recordLessonAttempt('cloze', 'basics', 1, 2, 10, ['s001#0', 's002#0'])
+    expect(getLessonRecord('cloze', 'basics', 1)?.solved).toEqual(['s001#0', 's002#0'])
+    expect(JSON.parse(storage.get('somos-lesson-progression-v2')!)).toHaveProperty(['cloze:basics:1', 'solved'], ['s001#0', 's002#0'])
+
+    // A run from scratch starts its own list; the best score stays.
+    recordLessonAttempt('cloze', 'basics', 1, 1, 10, ['s003#0'])
+    expect(getLessonRecord('cloze', 'basics', 1)).toMatchObject({ bestScore: 2, solved: ['s003#0'] })
+
+    // Passed: nothing is left to continue.
+    const eight = Array.from({ length: 8 }, (_, i) => `s00${i}#0`)
+    recordLessonAttempt('cloze', 'basics', 1, 8, 10, eight)
+    expect(getLessonRecord('cloze', 'basics', 1)?.solved).toBeUndefined()
+    recordLessonAttempt('cloze', 'basics', 1, 1, 10, ['s003#0'])
+    expect(getLessonRecord('cloze', 'basics', 1)?.solved).toBeUndefined()
+  })
+
+  it('continues an unfinished lesson with the tasks not answered right yet', () => {
+    const tasks = ['a', 'b', 'c', 'd'].map((itemId) => ({ itemId }))
+    const record = { bestScore: 2, total: 4, passed: false }
+    // "gone": a task the lesson lost when the dataset changed.
+    expect(resumeLesson(tasks, { ...record, solved: ['b', 'gone', 'd'] })).toEqual({
+      tasks: [{ itemId: 'a' }, { itemId: 'c' }],
+      solved: ['b', 'd'],
+    })
+    expect(resumeLesson(tasks, undefined)).toBeUndefined()
+    expect(resumeLesson(tasks, record)).toBeUndefined() // saved before solved tasks were remembered
+    expect(resumeLesson(tasks, { ...record, solved: ['gone'] })).toBeUndefined()
+    expect(resumeLesson(tasks, { ...record, solved: ['a', 'b', 'c', 'd'] })).toBeUndefined()
+    expect(resumeLesson(tasks, { bestScore: 4, total: 4, passed: true, solved: ['a'] })).toBeUndefined()
+  })
+
+  it('skips a record whose list of solved tasks is malformed', () => {
+    const base = { bestScore: 2, total: 10, passed: false }
+    expect(parseProgression({ 'cloze:basics:1': { ...base, solved: ['s001#0'] }, 'cloze:basics:2': { ...base, solved: [1] }, 'cloze:basics:3': { ...base, solved: 'x' } })).toEqual({
+      records: { 'cloze:basics:1': { ...base, solved: ['s001#0'] } },
+      skipped: 2,
+    })
   })
 
   it('does not read progress written by the buggy v1 build', async () => {

@@ -28,6 +28,7 @@ import {
   progressionGroup,
   recordLessonAttempt,
   rememberActiveLesson,
+  resumeLesson,
   useLessonProgression,
   type LessonRecord,
 } from '../../lib/lessonProgress'
@@ -45,6 +46,12 @@ import { LessonResult, type LessonAnswer } from './LessonResult'
 import { TaskView } from './tasks/TaskView'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
+
+/**
+ * What the tasks on screen are: the whole lesson, the mistakes of the previous round again ('fix'),
+ * or what was left of a numbered lesson when it was last quit ('resume').
+ */
+type Round = 'full' | 'fix' | 'resume'
 
 /** What the task asked, as the tip repeats it above its reason. */
 function askedIn(task: Task): TipHere['asked'] {
@@ -95,9 +102,9 @@ export function LessonPage() {
   // Kept with the tasks, not read from the URL: after "Ďalšia lekcia" the URL already
   // names the next lesson while the finished one is still on screen.
   const [runLesson, setRunLesson] = useState<number | undefined>()
-  // Correction round: the mistakes of the previous round again.
-  const [isRetry, setIsRetry] = useState(false)
-  // Numbered lesson score: tasks answered right in the full run or in any correction round.
+  const [round, setRound] = useState<Round>('full')
+  // Numbered lesson score: tasks answered right in the full run, in any correction round
+  // or before the lesson was quit.
   const [solved, setSolved] = useState<ReadonlySet<string>>(new Set())
   const [lessonTotal, setLessonTotal] = useState(0)
   // A passed lesson opens on its overview (correct answers) instead of starting right away.
@@ -115,14 +122,15 @@ export function LessonPage() {
   const [openTip, setOpenTip] = useState<string | null>(null)
   const tipInHistory = (location.state as { tip?: true } | null)?.tip === true
 
-  const start = (next: Task[], lesson?: number, retry = false) => {
+  /** `score`: where the lesson's score starts. A correction round keeps the one it has. */
+  const start = (next: Task[], lesson?: number, nextRound: Round = 'full', score = { solved: new Set<string>(), total: next.length }) => {
     setOverview(null)
     setTasks(next)
     setRunLesson(lesson)
-    setIsRetry(retry)
-    if (!retry) {
-      setSolved(new Set())
-      setLessonTotal(next.length)
+    setRound(nextRound)
+    if (nextRound !== 'fix') {
+      setSolved(score.solved)
+      setLessonTotal(score.total)
     }
     setIndex(0)
     setAnswer(emptyAnswer(next[0]))
@@ -137,9 +145,12 @@ export function LessonPage() {
     let active = true
     void buildLesson(filter, fromMistakes, lessonNumber).then((next) => {
       if (!active) return
-      start(next, lessonNumber)
       // Read once, on entry: the record also changes while the lesson is being played.
       const record = lessonNumber === undefined ? undefined : getLessonRecord(filter.type, group, lessonNumber)
+      // A lesson quit before it was passed goes on with what was wrong or not reached.
+      const left = resumeLesson(next, record)
+      if (left) start(left.tasks, lessonNumber, 'resume', { solved: new Set(left.solved), total: next.length })
+      else start(next, lessonNumber)
       setOverview(record?.passed && next.length > 0 ? record : null)
     })
     if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber, filter.level)
@@ -228,16 +239,16 @@ export function LessonPage() {
     if (!grade.correct) void recordAttempt(task.kind, task.itemId, correct)
     void recordPractice(task.kind, task.itemId, correct)
     if (!correct) void recordMistake(task.kind, task.itemId)
-    // A mistake fixed in a correction round leaves Chyby; the ones left behind stay there.
-    // (The mistakes list itself asks "Nechať / Odstrániť" instead.)
-    if (resolve || (isRetry && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
+    // A mistake fixed in a correction round or on coming back leaves Chyby; the ones left behind
+    // stay there. (The mistakes list itself asks "Nechať / Odstrániť" instead.)
+    if (resolve || (round !== 'full' && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
     setAnswers([...answers, { task, grade, correct }])
     if (runLesson !== undefined) {
       const nextSolved = correct ? new Set(solved).add(task.itemId) : solved
       setSolved(nextSolved)
-      // Saved on every right answer and at the end of each round, so quitting a
-      // correction round halfway keeps the credit (the store keeps the best score).
-      if (correct || index + 1 === tasks.length) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal)
+      // Saved on every right answer and at the end of each round, so quitting halfway keeps
+      // the credit: the store keeps the best score, and the solved tasks to continue from.
+      if (correct || index + 1 === tasks.length) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal, [...nextSolved])
     }
     if (index + 1 === tasks.length) playSound('lesson')
     setIndex(index + 1)
@@ -320,10 +331,10 @@ export function LessonPage() {
             fromMistakes={fromMistakes}
             lessonNumber={runLesson}
             lessonScore={runLesson !== undefined ? { score: solved.size, total: lessonTotal } : undefined}
-            isRetry={isRetry}
+            isRetry={round === 'fix'}
             totalLessons={totalLessons}
             onRetryMistakes={() => {
-              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, true)
+              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, 'fix')
             }}
             onRepeatAll={() => {
               if (lessonNumber !== undefined) {
@@ -345,7 +356,7 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${isRetry ? ` · ${text.fixing}` : ''} · ` : ''}
+                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">

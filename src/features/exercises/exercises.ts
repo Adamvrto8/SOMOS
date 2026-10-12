@@ -2,8 +2,9 @@ import { Blocks, BookOpen, Headphones, Languages, ListChecks, Mic, PencilLine, R
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
 import { t } from '../../i18n'
-import { TABLE_TENSES, type TableTense } from '../../lib/conjugate'
+import { TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
 import type { ExerciseType, LessonFilter } from '../../lib/lesson'
+import { topicName } from '../../lib/localized'
 import { speechSupported } from '../../lib/speech'
 
 export interface ExerciseInfo {
@@ -69,6 +70,27 @@ export function filterFromParams(params: URLSearchParams): LessonFilter {
 export function isLessonGroup(type: ExerciseType, group: string): boolean {
   if (group === 'all') return true
   return type === 'conjugation' ? TABLE_TENSES.includes(group as TableTense) : topicById.has(group)
+}
+
+/**
+ * What a filter picks, in words: "Doplňovačka · Jedlo a pitie · A1".
+ * Without a level the label ends after the topic, unless `allLevels` names that case.
+ */
+export function filterLabel(filter: LessonFilter, allLevels?: string): string {
+  const byTense = filter.type === 'conjugation'
+  const group = (byTense ? filter.tense : filter.topic) ?? 'all'
+  const topic = topicById.get(group)
+  const groupLabel =
+    group === 'all'
+      ? byTense
+        ? t().exercise.allTenses
+        : t().exercise.allTopics
+      : byTense
+        ? TENSE_LABELS[group as TableTense]
+        : topic
+          ? topicName(topic)
+          : group
+  return [exerciseInfo(filter.type).label, groupLabel, filter.level ?? allLevels].filter(Boolean).join(' · ')
 }
 
 export function filterToParams(filter: LessonFilter): URLSearchParams {

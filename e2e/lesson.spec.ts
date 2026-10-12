@@ -197,3 +197,70 @@ test('a passed lesson opens on its overview', async ({ page }) => {
   await expect(field(page)).toBeVisible()
   await expect(page.locator('header')).toContainText('1/10')
 })
+
+test('a lesson left before it was passed goes on with the tasks not answered right yet', async ({ page }) => {
+  await page.goto(lesson('cloze'))
+  const header = page.locator('header')
+  /** A sentence with two blanks is asked twice, so the answer is whichever blank fits. */
+  const answerRight = async () => {
+    for (const { answer } of (await askedSentence(page)).cloze!) {
+      await field(page).fill(answer)
+      await button(page, 'Skontrolovať').tap()
+      if (await button(page, 'Pokračovať').isVisible()) break
+    }
+    await expect(status(page)).toContainText('Správne!')
+    await button(page, 'Pokračovať').tap()
+  }
+
+  // Two right, one wrong, seven not reached.
+  await answerRight()
+  await answerRight()
+  await field(page).fill('zzzz')
+  await button(page, 'Skontrolovať').tap()
+  await button(page, 'Vzdať sa').tap()
+  await button(page, 'Pokračovať').tap()
+  await expect(header).toContainText('4/10')
+  await button(page, 'Ukončiť lekciu').tap()
+  await button(page, 'Ukončiť').tap()
+
+  // Back in the lesson: only the eight that are still open, the score goes on from 2.
+  await page.goto(lesson('cloze'))
+  await expect(header).toContainText('1/8')
+  await expect(page.getByText('Lekcia 1 · pokračovanie')).toBeVisible()
+  await answerRight()
+  await page.goto(lesson('cloze'))
+  await expect(header).toContainText('1/7')
+
+  // Through to the end: the result counts the answers from before too.
+  for (let left = 7; left > 0; left--) await answerRight()
+  await expect(page.getByRole('heading', { name: 'Lekcia 1 splnená' })).toBeVisible()
+  await expect(page.getByText('Splnené (10/10)')).toBeVisible()
+})
+
+test('Cvičiť names the picked exercise, topic and level right above its button, and a tap on it leads to them', async ({ page }) => {
+  // All topics: lessons enough below the options for the page to scroll all the way to them.
+  await page.goto('/practice?type=cloze&topic=all&level=A1')
+  const picked = button(page, 'Doplňovačka · Všetky témy · A1')
+  await expect(picked).toBeInViewport({ ratio: 1 })
+  // Seen together with the button, without scrolling up to the options.
+  expect(await gapAboveBottom(page, picked)).toBeLessThan(200)
+  expect((await picked.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+
+  // Topic and level are further down the page; the tap brings both between the header and the bar.
+  const level = page.getByRole('radio', { name: 'Všetky', exact: true })
+  await expect(level).not.toBeInViewport()
+  await picked.tap()
+  // The scroll is animated: it has arrived when the topic heading sits right under the header.
+  const headerBottom = await page.locator('header').evaluate((header) => header.getBoundingClientRect().bottom)
+  const topicTop = async () => (await page.locator('#topic-heading').boundingBox())!.y - headerBottom
+  await expect.poll(topicTop).toBeLessThan(40)
+  expect(await topicTop()).toBeGreaterThanOrEqual(0)
+  const levelBox = (await level.boundingBox())!
+  expect(levelBox.y + levelBox.height).toBeLessThanOrEqual((await picked.boundingBox())!.y)
+
+  await page.getByRole('button', { name: 'Jedlo a pitie', exact: true }).tap()
+  await level.tap()
+  await expect(button(page, 'Doplňovačka · Jedlo a pitie · Všetky úrovne')).toBeInViewport({ ratio: 1 })
+  await page.getByRole('radio', { name: /^Časovanie/ }).tap()
+  await expect(page.getByRole('button', { name: /^Časovanie · .+ · Všetky úrovne$/ })).toBeInViewport({ ratio: 1 })
+})

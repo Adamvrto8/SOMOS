@@ -7,6 +7,7 @@
 // Only LessonPage records attempts, and only for a full run of a numbered lesson
 // (not for "repeat mistakes" runs), so `total` is the lesson's real size — lessons
 // of small topics have fewer than LESSON_SIZE tasks.
+// - A lesson left before it is passed continues with the tasks not answered right yet (`solved`).
 
 import { useSyncExternalStore } from 'react'
 import type { ExerciseType } from './lesson'
@@ -16,6 +17,7 @@ export interface LessonRecord {
   total: number
   passed: boolean
   passedAt?: number
+  solved?: string[] // itemIds answered right in the run still open; gone once the lesson is passed
 }
 
 export type LessonProgressionMap = Record<string, LessonRecord>
@@ -55,8 +57,9 @@ function safeSetItem(key: string, value: string): void {
 
 function isValidRecord(val: unknown): val is LessonRecord {
   if (!val || typeof val !== 'object') return false
-  const { bestScore, total, passed } = val as Partial<LessonRecord>
+  const { bestScore, total, passed, solved } = val as Partial<LessonRecord>
   return (
+    (solved === undefined || (Array.isArray(solved) && solved.every((id) => typeof id === 'string'))) &&
     typeof bestScore === 'number' &&
     typeof total === 'number' &&
     typeof passed === 'boolean' &&
@@ -171,13 +174,17 @@ export interface RecordAttemptResult {
   bestScore: number
 }
 
-/** Stores the result of one full run of a numbered lesson (`total` = its task count). */
+/**
+ * Stores the result of one full run of a numbered lesson (`total` = its task count).
+ * `solved` = the tasks answered right in it so far, for continuing the lesson later.
+ */
 export function recordLessonAttempt(
   type: ExerciseType,
   group: string,
   lessonNumber: number,
   score: number,
   total: number,
+  solved?: readonly string[],
 ): RecordAttemptResult {
   if (!Number.isInteger(total) || total < 1 || score < 0 || score > total) {
     return { passed: false, newlyPassed: false, bestScore: 0 }
@@ -197,10 +204,28 @@ export function recordLessonAttempt(
       total,
       passed: wasPassed || passed,
       passedAt: newlyPassed ? Date.now() : current?.passedAt,
+      // A passed lesson opens on its overview and is repeated whole.
+      solved: wasPassed || passed || !solved ? undefined : [...solved],
     },
   })
 
   return { passed, newlyPassed, bestScore }
+}
+
+/**
+ * What is left of a lesson that was not passed yet: its tasks without the ones already answered
+ * right, and those answers (`solved`, only the tasks the lesson still has). Undefined when there
+ * is nothing to continue.
+ */
+export function resumeLesson<T extends { itemId: string }>(
+  tasks: T[],
+  record: LessonRecord | undefined,
+): { tasks: T[]; solved: string[] } | undefined {
+  if (!record?.solved || record.passed) return undefined
+  const done = new Set(record.solved)
+  const solved = tasks.filter((task) => done.has(task.itemId)).map((task) => task.itemId)
+  const left = tasks.filter((task) => !done.has(task.itemId))
+  return solved.length > 0 && left.length > 0 ? { tasks: left, solved } : undefined
 }
 
 /**
