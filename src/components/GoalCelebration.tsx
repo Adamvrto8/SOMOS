@@ -8,6 +8,11 @@ import { dismissCelebration, useCelebration, type Celebration } from '../lib/cel
  * (since 2026-10-08): it stays until it is tapped. Back to 2400 when he is done.
  */
 const STAY: number | null = null
+/**
+ * How long the sun cannot be sent away (ms): until all its pieces have come up, plus a moment to see them.
+ * The answer that earns it is often followed by a tap on "Pokračovať" at once, which would close it unseen.
+ */
+const HOLD = 1000
 /** How long leaving takes (ms). */
 const FADE = 300
 
@@ -16,7 +21,7 @@ const RAYS = Array.from({ length: 12 }, (_, i) => i * 30)
 
 /**
  * The daily goal was just reached: a sun with the streak over whatever screen is open.
- * It leaves by itself (see STAY); a touch sends it away at once. Lives beside the router, because the
+ * It leaves by itself (see STAY); a touch sends it away at once, after its first moment (HOLD). Lives beside the router, because the
  * lesson and the review are outside AppLayout.
  */
 export function GoalCelebration() {
@@ -28,6 +33,10 @@ function Sun({ celebration }: { celebration: Celebration }) {
   const text = useT().home
   const { goal, streakDays } = celebration
   const [leaving, setLeaving] = useState(false)
+  const [held, setHeld] = useState(true)
+  const leave = () => {
+    if (!held) setLeaving(true)
+  }
   const size = streakDays > 99 ? 34 : 46
   const number = useRef<SVGTextElement>(null)
   const ruler = useRef<HTMLCanvasElement>(null)
@@ -60,6 +69,11 @@ function Sun({ celebration }: { celebration: Celebration }) {
   }, [size, streakDays])
 
   useEffect(() => {
+    const timer = setTimeout(() => setHeld(false), HOLD)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
     if (STAY === null) return
     const timer = setTimeout(() => setLeaving(true), STAY)
     return () => clearTimeout(timer)
@@ -74,12 +88,14 @@ function Sun({ celebration }: { celebration: Celebration }) {
   return (
     // The whole screen is the button: while the sun is up, a touch closes it and does not reach the task below.
     // The touch itself, not the tap it may become: a swipe closes it too, and (touch-none) does not scroll
-    // the screen under it. Fading out, it still takes the tap, which would land on the task otherwise.
+    // the screen under it. Fading out, it still takes the tap, which would land on the task otherwise;
+    // so it does while it is held, when a touch does nothing at all.
     // Only the children animate in; the button itself just fades out.
     <button
       type="button"
-      onPointerDown={() => setLeaving(true)}
-      onClick={() => setLeaving(true)}
+      aria-disabled={held}
+      onPointerDown={leave}
+      onClick={leave}
       className={`fixed inset-0 z-50 flex cursor-default touch-none flex-col items-center justify-center px-6 text-center transition-opacity duration-300 ${leaving ? 'opacity-0' : ''}`}
     >
       <canvas ref={ruler} aria-hidden className="hidden" />

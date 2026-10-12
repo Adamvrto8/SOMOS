@@ -51,11 +51,20 @@ test('the right answer that completes the daily goal brings the sun over its own
   await expect(page.getByRole('link', { name: /^Denný cieľ: 10 z 10, splnený\./ })).toBeVisible()
 })
 
-test('a tap sends the sun away at once', async ({ page }) => {
+test('a tap sends the sun away at once, but not while it is still coming up', async ({ page }) => {
   await lessonWith(page, { 0: 9 })
   await answerRight(page)
 
-  await expect(sun(page)).toContainText('1 deň v rade')
+  // A finger already on its way to "Pokračovať" lands on the sun as it appears: the sun stays, and nothing under it is pressed.
+  // Caught in the very frame it appears in, so the touch comes well within its first moment.
+  await page.waitForFunction(() => [...document.querySelectorAll('button')].some((b) => b.textContent.includes('Meta cumplida')), null, { polling: 'raf' })
+  const onward = (await button(page, 'Pokračovať').boundingBox())!
+  await page.touchscreen.tap(onward.x + onward.width / 2, onward.y + onward.height / 2)
+  await page.waitForTimeout(500)
+  await expect(sun(page)).toBeVisible()
+  await expect(page.locator('header')).toContainText('1/10')
+
+  // Once it has been seen (the tap waits for that), a tap sends it away at once.
   await sun(page).tap()
   await expect(sun(page)).toHaveCount(0, { timeout: 1000 })
 })
@@ -68,6 +77,8 @@ test('a swipe sends the sun away too, and the screen under it stays where it was
   await page.setViewportSize(KEYBOARD_OPEN)
   expect(await page.evaluate(() => document.documentElement.scrollHeight - window.innerHeight)).toBeGreaterThan(100)
 
+  // Past its first moment, in which it cannot be sent away.
+  await expect(sun(page)).toBeEnabled()
   await swipe(page, { x: 180, y: 380 }, { x: 180, y: 120 })
   await expect(sun(page)).toHaveCount(0, { timeout: 1000 })
   expect(await page.evaluate(() => window.scrollY)).toBe(0)
