@@ -36,6 +36,7 @@ import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { localizedTip } from '../../lib/localized'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
+import { itemKey, parseTestKey, prepareLesson, TEST_TYPES, testToParams } from '../../lib/tests'
 import { tipFor, tipLabel } from '../../lib/tips'
 import { TipContent, type TipHere } from '../grammar/TipContent'
 import { TipSheet } from '../grammar/TipSheet'
@@ -60,9 +61,23 @@ function askedIn(task: Task): TipHere['asked'] {
   return undefined
 }
 
-/** A fresh lesson: from the mistakes list, or numbered lesson, or least-practised items. */
-async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number): Promise<Task[]> {
+/** How often each item of the test's exercise types was answered, by itemKey. */
+async function loadTestSeenCounts(): Promise<Map<string, number>> {
+  const seen = new Map<string, number>()
+  for (const type of TEST_TYPES) {
+    for (const [itemId, n] of await loadSeenCounts(type)) seen.set(itemKey(type, itemId), n)
+  }
+  return seen
+}
+
+/** A fresh lesson: from the mistakes list, or to prepare for a test, or numbered lesson, or least-practised items. */
+async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number, prepareKey?: string | null): Promise<Task[]> {
   if (fromMistakes) return mistakesLesson(await loadMistakes(), LESSON_SIZE, Math.random, speechSupported)
+  const test = parseTestKey(prepareKey ?? null)
+  if (test) {
+    const mistakes = new Set((await loadMistakes()).map((m) => itemKey(m.exercise, m.itemId)))
+    return prepareLesson(test, mistakes, await loadTestSeenCounts())
+  }
   if (lessonNumber) return createNumberedLesson(filter, lessonNumber)
   return createLesson(filter, LESSON_SIZE, Math.random, await loadSeenCounts(filter.type))
 }
@@ -71,6 +86,7 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
  * Full-screen lesson player (no tab bar): one task per screen, check, feedback, result.
  * `?mistakes=1` practises the mistakes list instead of the filter.
  * `?lesson=X` plays the fixed, numbered lesson X.
+ * `?prepare=food:A1` (a test key) practises the material of that test ("Pripraviť sa").
  */
 export function LessonPage() {
   const dictionary = useT()
@@ -78,7 +94,9 @@ export function LessonPage() {
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
   const fromMistakes = params.get('mistakes') === '1'
-  const lessonParam = fromMistakes ? null : params.get('lesson')
+  const prepareKey = fromMistakes ? null : params.get('prepare')
+  const preparing = parseTestKey(prepareKey) !== undefined
+  const lessonParam = fromMistakes || preparing ? null : params.get('lesson')
   const lessonNumber = lessonParam === null ? undefined : Number(lessonParam)
   const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
   const group = progressionGroup(rawGroup, filter.level)
@@ -143,7 +161,7 @@ export function LessonPage() {
   useEffect(() => {
     if (locked) return
     let active = true
-    void buildLesson(filter, fromMistakes, lessonNumber).then((next) => {
+    void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => {
       if (!active) return
       // Read once, on entry: the record also changes while the lesson is being played.
       const record = lessonNumber === undefined ? undefined : getLessonRecord(filter.type, group, lessonNumber)
@@ -157,7 +175,7 @@ export function LessonPage() {
     return () => {
       active = false
     }
-  }, [filter, fromMistakes, lessonNumber, locked, rawGroup, group])
+  }, [filter, fromMistakes, lessonNumber, prepareKey, locked, rawGroup, group])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
@@ -171,7 +189,11 @@ export function LessonPage() {
 
   const exit = () => {
     if (location.key !== 'default') void navigate(-1)
-    else void navigate(fromMistakes ? '/archive?tab=mistakes' : `/practice?${filterToParams(filter)}`, { replace: true })
+    else {
+      const test = parseTestKey(prepareKey)
+      const fallback = fromMistakes ? '/archive?tab=mistakes' : test ? `/practice/test?${testToParams(test)}` : `/practice?${filterToParams(filter)}`
+      void navigate(fallback, { replace: true })
+    }
   }
 
   const isAnswered = (value: Answer) =>
@@ -241,7 +263,8 @@ export function LessonPage() {
     if (!correct) void recordMistake(task.kind, task.itemId)
     // A mistake fixed in a correction round or on coming back leaves Chyby; the ones left behind
     // stay there. (The mistakes list itself asks "Nechať / Odstrániť" instead.)
-    if (resolve || (round !== 'full' && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
+    // Preparing for a test puts the mistakes first: one answered right is fixed too.
+    if (resolve || ((round !== 'full' || preparing) && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
     setAnswers([...answers, { task, grade, correct }])
     if (runLesson !== undefined) {
       const nextSolved = correct ? new Set(solved).add(task.itemId) : solved
@@ -344,7 +367,7 @@ export function LessonPage() {
               }
             }}
             onNewLesson={() => {
-              void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
+              void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => start(next, lessonNumber))
             }}
             onNextLesson={() => {
               if (runLesson === undefined) return
@@ -356,7 +379,7 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
+                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : preparing ? `${dictionary.tests.preparing} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">

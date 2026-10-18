@@ -9,6 +9,7 @@ import { getReminderSettings, setReminderTime } from './reminder'
 import { parseSettingsBackup, type SettingsBackup } from './settingsBackup'
 import { getSoundSet, setSoundSet } from './sound'
 import { syncReviewCards } from './srs'
+import { getTestResults, mergeTestResults, parseTestResults, type TestResultsMap } from './testProgress'
 import { getLook, getThemePref, setLook, setThemePref } from './theme'
 
 // JSON backup of the learner's data on the device: IndexedDB, the numbered lessons' progress and
@@ -28,6 +29,7 @@ export interface Backup {
   mistakes: Mistake[] // missing in backups made before the mistakes list existed
   lessons?: LessonProgressionMap // passed lessons and best scores; missing in backups made before 2026-10-01
   settings?: SettingsBackup // missing in backups made before 2026-10-02
+  tests?: TestResultsMap // test results; missing in backups made before 2026-10-18
 }
 
 export interface ImportResult {
@@ -36,7 +38,7 @@ export interface ImportResult {
   reviewCards: number
   attempts: number
   mistakes: number
-  lessons: number
+  lessons: number // numbered lessons and tests
   skipped: number
   settings: boolean // the backup had settings and they now apply here
   reminderOff: boolean // the reminder was on in the backup but is off on this device
@@ -81,6 +83,7 @@ export async function createBackup(): Promise<Backup> {
     attempts,
     mistakes,
     lessons: getProgressionSnapshot(),
+    tests: getTestResults(),
     settings: currentSettings(),
   }
 }
@@ -141,6 +144,8 @@ export function parseBackup(text: string): ParseResult {
 
   const lessons = parseProgression(data.lessons)
   skipped += lessons.skipped
+  const tests = parseTestResults(data.tests)
+  skipped += tests.skipped
 
   const backup: Backup = {
     app: APP,
@@ -152,6 +157,7 @@ export function parseBackup(text: string): ParseResult {
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
     lessons: lessons.records,
+    tests: tests.records,
     settings: parseSettingsBackup(data.settings),
   }
   return { ok: true, backup, skipped }
@@ -188,7 +194,7 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       reminderOff: false,
     }
   })
-  result.lessons = mergeProgression(backup.lessons ?? {})
+  result.lessons = mergeProgression(backup.lessons ?? {}) + mergeTestResults(backup.tests ?? {})
   const settings = backup.settings ?? {}
   result.settings = Object.keys(settings).length > 0
   result.reminderOff = await applySettings(settings)

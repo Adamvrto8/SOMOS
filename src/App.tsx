@@ -13,6 +13,8 @@ import { HomePage } from './features/home/HomePage'
 import { ReviewPage } from './features/review/ReviewPage'
 import { SearchPage } from './features/search/SearchPage'
 import { StatsPage } from './features/stats/StatsPage'
+import { TestPage } from './features/tests/TestPage'
+import { TestsPage } from './features/tests/TestsPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
 
@@ -28,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'topic/:id', element: <TopicPage /> },
       { path: 'practice', element: <PracticePage /> },
       { path: 'practice/grammar', element: <GrammarPage /> },
+      { path: 'practice/tests', element: <TestsPage /> },
       { path: 'practice/grammar/:id', element: <TipPage /> },
       { path: 'archive', element: <ArchivePage /> },
       { path: 'archive/new', element: <CustomWordPage /> },
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
   },
   // Full-screen players: no header or tab bar, their own bottom action bar.
   { path: '/practice/lesson', element: <LessonPage /> },
+  { path: '/practice/test', element: <TestPage /> },
   { path: '/review', element: <ReviewPage /> },
 ])
 

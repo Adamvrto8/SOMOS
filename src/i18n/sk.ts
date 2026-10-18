@@ -632,6 +632,75 @@ export const sk = {
     /** `meanings` = "hablo = hovorím, habló = hovoril" */
     accent: (meanings: string) => `Prízvuk tu mení význam: ${meanings}.`,
   },
+
+  /** Topic tests and level exams (src/lib/tests.ts). */
+  tests: {
+    title: 'Testy',
+    cardHint: 'Testy tém a skúšky úrovní: ciele, na ktoré sa pripravíš',
+    intro: 'Test ukáže, čo už naozaj vieš. Mieša všetky druhy cvičení, počas neho nie je nápoveda a zložený je pri 80 %. Nič sa nezamyká: je to cieľ, na ktorý sa môžeš pripraviť.',
+    level: 'Úroveň',
+    exam: (level: string) => `Skúška ${level}`,
+    examHint: (n: number) => `${n} úloh zo všetkého na úrovni`,
+    topicsPassed: (passed: number, total: number) => `Témy: ${passed}/${total} ${pluralSk(total, ['zložená', 'zložené', 'zložených'])}`,
+    topicTests: 'Testy tém',
+    topicTest: (topic: string, level: string) => `${topic} · ${level}`,
+    notTried: 'Ešte neskúšané',
+    best: (score: number, total: number) => `Najlepšie: ${score}/${total}`,
+    passedOn: (score: number, total: number, date: string) => `Zložené ${date} · ${score}/${total}`,
+    passed: 'Zložené',
+    /** The exam badge of a level. */
+    levelDone: (level: string) => `${level} zvládnutá`,
+    notFound: 'Taký test nie je',
+    notFoundHint: 'Vyber si test zo zoznamu.',
+
+    // Before the test
+    whatsInside: 'V teste',
+    tasks: (n: number) => `${n} ${pluralSk(n, ['úloha', 'úlohy', 'úloh'])}`,
+    rules: 'Pravidlá',
+    ruleNoFeedback: 'Kým test neskončí, neukazuje sa, či je odpoveď správna.',
+    ruleOneTry: 'Každá úloha má jeden pokus, bez nápovedy.',
+    rulePass: (needed: number, total: number) => `Zložený je pri 80 %: aspoň ${needed} z ${total}.`,
+    ruleNew: 'Každý pokus má nové úlohy, test sa nedá naučiť naspamäť.',
+    yourBest: 'Tvoj najlepší výsledok',
+    attempts: (n: number) => `${n} ${pluralSk(n, ['pokus', 'pokusy', 'pokusov'])}`,
+    prepare: 'Pripraviť sa',
+    prepareHint: 'Cvičná lekcia z látky testu, s nápovedou. Najprv to, čo máš v Chybách.',
+    start: 'Začať test',
+    again: 'Skúsiť znova',
+
+    // During the test
+    progress: 'Priebeh testu',
+    quit: 'Ukončiť test',
+    quitQuestion: 'Ukončiť test?',
+    quitHint: 'Odpovede sa nezapočítajú, test potom začneš odznova.',
+    next: 'Ďalej',
+    dontKnow: 'Neviem',
+    /** Above the tasks of "Pripraviť sa": Príprava na test · Doplň slovo */
+    preparing: 'Príprava na test',
+    finish: 'Dokončiť test',
+
+    // After the test
+    resultPassed: 'Test zložený!',
+    resultExamPassed: (level: string) => `Úroveň ${level} zvládnutá!`,
+    resultNotPassed: 'Zatiaľ nezložený',
+    praisePassed: 'Toto už vieš. Ďalší cieľ čaká.',
+    needed: (needed: number, total: number, missing: number) => `Na zloženie treba ${needed}/${total}, chýba ešte ${missing}.`,
+    neededHint: 'Priprav sa a skús znova, úlohy budú iné.',
+    answers: 'Tvoje odpovede',
+    yourAnswer: 'Tvoja odpoveď',
+    noAnswer: '(bez odpovede)',
+    accepted: 'Uznané',
+    mistakesSaved: 'Chyby sa uložili do Archív → Chyby.',
+    backToTests: 'Späť na testy',
+
+    // Domov
+    nextGoal: 'Ďalší cieľ',
+    goalTopic: (topic: string, level: string) => `Test: ${topic} · ${level}`,
+    goalExam: (level: string) => `Skúška ${level}`,
+    goalProgress: (level: string, passed: number, total: number) => `${level} · témy ${passed}/${total}`,
+    goalExamReady: (level: string) => `Všetky témy ${level} zložené, čaká ťa skúška`,
+    allDone: 'Všetky skúšky zložené',
+  },
 }
 
 export type Dictionary = typeof sk

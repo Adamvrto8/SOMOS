@@ -8,6 +8,7 @@ import { useMistakes } from '../../lib/mistakes'
 import { useReminderProblem } from '../../lib/reminder'
 import { useActivity } from '../../lib/stats'
 import { continueLesson } from './continueLesson'
+import { NextGoalCard } from './NextGoalCard'
 import { ProgressTiles } from './ProgressTiles'
 import { ReviewCard } from './ReviewCard'
 import { WeekChart } from './WeekChart'
@@ -56,6 +57,8 @@ export function HomePage() {
       )}
 
       {activity && <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />}
+
+      <NextGoalCard />
 
       <WordOfDayCard />
 
