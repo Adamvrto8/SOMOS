@@ -769,7 +769,7 @@ export const sk = {
       },
       {
         heading: 'Kto údaje spracúva',
-        body: 'Účty a progres uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom posiela Resend, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
+        body: 'Účty a progres uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
       },
       {
         heading: 'Ako dlho',

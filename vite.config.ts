@@ -19,7 +19,7 @@ export default defineConfig({
         // Supabase's library has its own, loaded only for accounts (src/lib/account.ts).
         codeSplitting: {
           groups: [
-            { name: 'supabase', test: /node_modules[\/]@supabase[\/]/, priority: 2 },
+            { name: 'supabase', test: /node_modules[\\/]@supabase[\\/]/, priority: 2 },
             { name: 'vendor', test: /node_modules/, priority: 1 },
           ],
         },

@@ -28,5 +28,7 @@ export default defineConfig({
     command: `npx vite --port ${PORT} --strictPort`,
     port: PORT,
     reuseExistingServer: true,
+    // Accounts switched on against a Supabase that every test answers itself (e2e/account.spec.ts).
+    env: { VITE_SUPABASE_URL: 'http://supabase.test', VITE_SUPABASE_ANON_KEY: 'e2e-anon-key' },
   },
 })

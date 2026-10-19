@@ -1,6 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
+import { PrivacyPage } from './features/account/PrivacyPage'
+import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
 import { ArchivePage } from './features/archive/ArchivePage'
 import { CustomWordPage } from './features/archive/CustomWordPage'
@@ -36,6 +38,8 @@ const router = createBrowserRouter([
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },
       { path: 'archive/settings', element: <SettingsPage /> },
+      { path: 'archive/account', element: <SignInPage /> },
+      { path: 'privacy', element: <PrivacyPage /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },

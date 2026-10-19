@@ -1,4 +1,5 @@
 import { BackButton } from '../../components/BackButton'
+import { AccountSection } from '../account/AccountSection'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { dictionaries, useT } from '../../i18n'
@@ -28,6 +29,8 @@ export function SettingsPage() {
         <BackButton fallback="/archive" />
         <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.settings.title}</h1>
       </div>
+
+      <AccountSection />
 
       <section aria-labelledby="language-heading">
         <SectionTitle id="language-heading">{text.settings.language}</SectionTitle>
