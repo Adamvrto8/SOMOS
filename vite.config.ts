@@ -16,7 +16,13 @@ export default defineConfig({
     rolldownOptions: {
       output: {
         // Libraries change rarely: a separate chunk means a deploy only re-downloads app code.
-        codeSplitting: { groups: [{ name: 'vendor', test: /node_modules/ }] },
+        // Supabase's library has its own, loaded only for accounts (src/lib/account.ts).
+        codeSplitting: {
+          groups: [
+            { name: 'supabase', test: /node_modules[\/]@supabase[\/]/, priority: 2 },
+            { name: 'vendor', test: /node_modules/, priority: 1 },
+          ],
+        },
       },
     },
   },
