@@ -71,7 +71,7 @@ export function parseTestResults(data: unknown): { records: TestResultsMap; skip
 
 export const getTestResults = (): TestResultsMap => results
 
-function subscribe(notify: () => void): () => void {
+export function subscribeTestResults(notify: () => void): () => void {
   listeners.add(notify)
   return () => {
     listeners.delete(notify)
@@ -79,7 +79,7 @@ function subscribe(notify: () => void): () => void {
 }
 
 export function useTestResults(): TestResultsMap {
-  return useSyncExternalStore(subscribe, getTestResults)
+  return useSyncExternalStore(subscribeTestResults, getTestResults)
 }
 
 export interface TestOutcome {

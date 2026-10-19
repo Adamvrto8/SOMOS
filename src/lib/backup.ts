@@ -44,13 +44,13 @@ export interface ImportResult {
   reminderOff: boolean // the reminder was on in the backup but is off on this device
 }
 
-function currentSettings(): SettingsBackup {
+export function currentSettings(): SettingsBackup {
   const { enabled, time } = getReminderSettings()
   return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage(), sound: getSoundSet() }
 }
 
 /** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
-async function applySettings(settings: SettingsBackup): Promise<boolean> {
+export async function applySettings(settings: SettingsBackup): Promise<boolean> {
   if (settings.theme) setThemePref(settings.theme)
   if (settings.look) setLook(settings.look)
   if (settings.dailyGoal) setDailyGoal(settings.dailyGoal)
