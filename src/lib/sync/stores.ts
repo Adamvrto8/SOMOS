@@ -44,10 +44,10 @@ export async function applyStoreRecord(state: SyncState, record: SyncRecord): Pr
   const known = { ...state.known, [knownKey(record.kind, record.key)]: JSON.stringify(record.data) }
   switch (record.kind) {
     case 'lesson':
-      mergeProgression(parseProgression({ [record.key]: record.data }).records)
+      mergeProgression(parseProgression({ [record.key]: record.data }).records, true)
       return { ...state, known }
     case 'test':
-      mergeTestResults(parseTestResults({ [record.key]: record.data }).records)
+      mergeTestResults(parseTestResults({ [record.key]: record.data }).records, true)
       return { ...state, known }
     case 'settings': {
       if (record.changedAt <= state.settingsAt) return state

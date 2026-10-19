@@ -110,13 +110,17 @@ export function recordTestResult(key: string, score: number, total: number, newA
   return { passed, newlyPassed: passed && !wasPassed }
 }
 
-/** Restores a backup's results; where this device has the test too, the better record stays. */
-export function mergeTestResults(incoming: TestResultsMap): number {
+/**
+ * Restores a backup's results; where this device has the test too, the better record stays.
+ * `tiesToIncoming`: an equally good record from outside replaces this one (sync: devices settle on one).
+ */
+export function mergeTestResults(incoming: TestResultsMap, tiesToIncoming = false): number {
   const isBetter = (a: TestRecord, b: TestRecord) => (a.passed !== b.passed ? a.passed : a.bestScore / a.total > b.bestScore / b.total)
   const next = { ...results }
   let taken = 0
   for (const [key, record] of Object.entries(incoming)) {
-    if (next[key] && !isBetter(record, next[key])) continue
+    const here = next[key]
+    if (here && (tiesToIncoming ? isBetter(here, record) || JSON.stringify(here) === JSON.stringify(record) : !isBetter(record, here))) continue
     next[key] = record
     taken++
   }
@@ -124,6 +128,9 @@ export function mergeTestResults(incoming: TestResultsMap): number {
   return taken
 }
 
-export function resetTestResultsForTesting(): void {
+/** Signing out: the results leave the device (src/lib/sync/engine.ts). */
+export function clearTestResults(): void {
   save({})
 }
+
+export const resetTestResultsForTesting = clearTestResults

@@ -109,13 +109,16 @@ function saveMap(next: LessonProgressionMap) {
   notifyListeners()
 }
 
-export function resetProgressionForTesting(): void {
+/** Signing out: the lessons' progress leaves the device (src/lib/sync/engine.ts). */
+export function clearLessonProgress(): void {
   progressionMap = {}
   activeStore = {}
   safeSetItem(STORAGE_KEY, '{}')
   safeSetItem(ACTIVE_KEY, '{}')
   notifyListeners()
 }
+
+export const resetProgressionForTesting = clearLessonProgress
 
 export function subscribeProgression(notify: () => void): () => void {
   listeners.add(notify)
@@ -231,13 +234,15 @@ export function resumeLesson<T extends { itemId: string }>(
 /**
  * Restores a backup's lesson records. Where this device has the lesson too, the better
  * record stays (passed beats not passed, then the higher score). Returns how many were taken.
+ * `tiesToIncoming`: an equally good record from outside replaces this one (sync: devices settle on one).
  */
-export function mergeProgression(incoming: LessonProgressionMap): number {
+export function mergeProgression(incoming: LessonProgressionMap, tiesToIncoming = false): number {
   const isBetter = (a: LessonRecord, b: LessonRecord) => (a.passed !== b.passed ? a.passed : a.bestScore > b.bestScore)
   const next = { ...progressionMap }
   let taken = 0
   for (const [key, record] of Object.entries(incoming)) {
-    if (next[key] && !isBetter(record, next[key])) continue
+    const here = next[key]
+    if (here && (tiesToIncoming ? isBetter(here, record) || JSON.stringify(here) === JSON.stringify(record) : !isBetter(record, here))) continue
     next[key] = record
     taken++
   }
