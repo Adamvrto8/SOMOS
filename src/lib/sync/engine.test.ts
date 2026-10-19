@@ -121,7 +121,7 @@ describe('a sync round', () => {
     await syncOnce(server)
     expect(await db.outbox.count()).toBe(1)
     await syncOnce(server)
-    expect((server.get('saved', 'word:casa')?.data as { savedAt: number }).savedAt).toBe(2)
+    expect((server.get('saved', 'word:casa')!.data as { savedAt: number }).savedAt).toBe(2)
   })
 
   it('merges lessons by the better result', async () => {
