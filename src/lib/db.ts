@@ -59,6 +59,13 @@ export interface Lookup {
   at: number
 }
 
+/** A change of the learner's tables not sent to the account yet (src/lib/sync). */
+export interface OutboxEntry {
+  kind: 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake'
+  key: string
+  at: number // when it changed; 0 = taken over at the first sign-in (the server's version wins)
+}
+
 export class SomosDB extends Dexie {
   customWords!: EntityTable<CustomWord, 'id'>
   // Compound key: a word and a verb can share an id (e.g. "tener").
@@ -67,6 +74,7 @@ export class SomosDB extends Dexie {
   attempts!: EntityTable<Attempt, 'id'>
   mistakes!: Table<Mistake, [string, string]>
   lookups!: EntityTable<Lookup, 'key'>
+  outbox!: Table<OutboxEntry, [string, string]>
 
   constructor() {
     super('somos')
@@ -81,6 +89,9 @@ export class SomosDB extends Dexie {
     })
     this.version(3).stores({
       lookups: 'key, at',
+    })
+    this.version(4).stores({
+      outbox: '[kind+key]',
     })
   }
 }
