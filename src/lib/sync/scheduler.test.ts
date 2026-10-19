@@ -44,4 +44,13 @@ describe('the sync schedule', () => {
     await syncNow()
     expect(getSyncStatus()).toMatchObject({ state: 'error', lastSyncedAt: last, error: '500' })
   })
+
+  it('stops only after the round that is running', async () => {
+    const server = new CountingServer()
+    startSync(server)
+    let finished = false
+    void syncNow().then(() => (finished = true))
+    await stopSync()
+    expect(finished).toBe(true)
+  })
 })

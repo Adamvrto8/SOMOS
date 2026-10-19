@@ -108,10 +108,12 @@ export function startSync(target: SyncServer): void {
   requestSync(0)
 }
 
-export function stopSync(): void {
+/** Stops syncing; resolves once a round still running is over, so nothing it pulls lands after a wipe. */
+export async function stopSync(): Promise<void> {
   clearTimeout(timer)
   unsubscribe?.()
   unsubscribe = undefined
-  server = undefined
+  server = undefined // no further round starts
+  await running?.catch(() => undefined)
   setStatus({ state: 'idle' })
 }

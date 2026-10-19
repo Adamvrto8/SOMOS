@@ -701,6 +701,86 @@ export const sk = {
     goalExamReady: (level: string) => `Všetky témy ${level} zložené, čaká ťa skúška`,
     allDone: 'Všetky skúšky zložené',
   },
+
+  /** Optional accounts and sync (src/lib/account.ts). */
+  account: {
+    title: 'Účet',
+    why: 'S účtom máš progres v bezpečí a na každom zariadení, kde sa prihlásiš. Bez účtu ostáva len v tomto zariadení.',
+    signIn: 'Prihlásiť sa',
+    status: {
+      syncing: 'Synchronizujem…',
+      synced: (ago: string) => `Synchronizované ${ago}`,
+      waiting: 'Čaká na synchronizáciu',
+      offline: 'Offline – zmeny sa odošlú, keď bude internet',
+      error: 'Synchronizácia zlyhala, skúsim to znova',
+    },
+    justNow: 'práve teraz',
+    minutesAgo: (n: number) => `pred ${n} min`,
+    hoursAgo: (n: number) => `pred ${n} h`,
+    syncNow: 'Synchronizovať',
+    signOut: 'Odhlásiť sa',
+    signOutHint: 'Progres ostane v účte, z tohto zariadenia sa zmaže.',
+    pendingTitle: 'Niektoré zmeny ešte nie sú odoslané',
+    pendingHint: 'Zariadenie je asi offline. Ak sa odhlásiš teraz, tieto zmeny sa stratia.',
+    wait: 'Počkať',
+    signOutAnyway: 'Odhlásiť aj tak',
+    delete: 'Zmazať účet',
+    deleteTitle: 'Zmazať účet?',
+    deleteHint: 'Zmaže sa účet a celý progres na serveri aj v tomto zariadení. Nedá sa to vrátiť.',
+    deleteConfirm: 'Zmazať natrvalo',
+    cancel: 'Zrušiť',
+    failed: 'Nepodarilo sa. Skontroluj pripojenie a skús to znova.',
+
+    // Sign-in page
+    signInTitle: 'Prihlásenie',
+    signInIntro: 'Účet je nepovinný. Progres, ktorý už máš v tomto zariadení, sa pri prvom prihlásení pridá k účtu.',
+    google: 'Pokračovať cez Google',
+    orEmail: 'alebo e-mailom',
+    email: 'E-mail',
+    emailPlaceholder: 'meno@example.com',
+    sendCode: 'Poslať kód',
+    codeSent: (email: string) => `Poslali sme 6-miestny kód na ${email}. Ak neprišiel, pozri aj spam.`,
+    code: 'Kód z e-mailu',
+    confirm: 'Prihlásiť sa',
+    otherEmail: 'Iný e-mail',
+    resend: 'Poslať nový kód',
+    badEmail: 'Skontroluj e-mailovú adresu.',
+    badCode: 'Kód nesedí alebo už neplatí. Skús ho zadať znova alebo si pošli nový.',
+    finishing: 'Dokončujem prihlásenie…',
+    signedIn: (email: string) => `Prihlásené: ${email}`,
+    toSettings: 'Do nastavení',
+    unavailable: 'Účty zatiaľ nie sú zapnuté.',
+    privacyNote: 'Prihlásením berieš na vedomie zásady ochrany súkromia.',
+    privacy: 'Ochrana súkromia',
+  },
+
+  /** The privacy policy (/privacy). Written by Claude; to be checked before a public release. */
+  privacy: {
+    title: 'Ochrana súkromia',
+    updated: 'Platné od 19. 10. 2026',
+    sections: [
+      {
+        heading: 'Bez účtu',
+        body: 'Všetko, čo sa naučíš, ostáva iba v tomto zariadení. Zo zariadenia odchádza len text, ktorý dáš preložiť online (služba DeepL), a ak si zapneš pripomienku, adresa na doručenie upozornenia a čas pripomienky.',
+      },
+      {
+        heading: 'S účtom',
+        body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
+      },
+      {
+        heading: 'Kto údaje spracúva',
+        body: 'Účty a progres uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom posiela Resend, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
+      },
+      {
+        heading: 'Ako dlho',
+        body: 'Kým máš účet. V Nastaveniach → Účet → Zmazať účet zmažeš účet a celý progres na serveri aj v zariadení okamžite. Odhlásením sa progres zmaže iba zo zariadenia.',
+      },
+      {
+        heading: 'Tvoje práva',
+        body: 'Máš právo na prístup k svojim údajom (Nastavenia → Záloha ich uloží do súboru), na ich opravu a výmaz a na podanie sťažnosti dozornému orgánu (na Slovensku Úrad na ochranu osobných údajov).',
+      },
+    ],
+  },
 }
 
 export type Dictionary = typeof sk

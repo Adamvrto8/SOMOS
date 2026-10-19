@@ -19,6 +19,8 @@ export interface Account {
 }
 
 const MARKER = 'somos-account'
+/** Where supabase-js keeps the session (and, with "-code-verifier", the PKCE verifier during a Google sign-in). */
+const AUTH_STORAGE_KEY = 'somos-auth'
 /** Where Google sends the learner back; the sign-in page finishes there. */
 export const SIGN_IN_PATH = '/archive/account'
 
@@ -67,7 +69,9 @@ function getClient(): Promise<SupabaseClient> {
   if (!accountsAvailable) return Promise.reject(new Error('accounts are not configured'))
   // On the page Google returns to, creating the client exchanges the ?code= for a session (PKCE).
   client ??= import('@supabase/supabase-js').then(({ createClient }) =>
-    createClient(URL!, ANON_KEY!, { auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }),
+    createClient(URL!, ANON_KEY!, {
+      auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, storageKey: AUTH_STORAGE_KEY },
+    }),
   )
   return client
 }
@@ -78,10 +82,18 @@ async function startSyncing(): Promise<void> {
   startSync(new SupabaseServer(supabase))
 }
 
-/** Signed in: the first time on this device, its progress goes to the account too. */
+/**
+ * Signed in: the first time on this device, its progress goes to the account too. The data of another
+ * account still here (the screens never allow that) leaves first and is not taken over.
+ */
 async function signedIn(user: User): Promise<void> {
   if (account?.userId === user.id) return
-  if (!account) await adoptDevice()
+  if (account) {
+    await stopSync()
+    await wipeLearnerData()
+  } else {
+    await adoptDevice()
+  }
   setAccount({ userId: user.id, email: user.email ?? '' })
   await startSyncing()
 }
@@ -128,10 +140,17 @@ export async function verifyCode(email: string, code: string): Promise<void> {
 }
 
 async function leave(): Promise<void> {
-  stopSync()
+  await stopSync()
   const supabase = await getClient()
-  // This device only: the account's other devices stay signed in.
+  // This device only: the account's other devices stay signed in. Whatever the server answers,
+  // the session's tokens must not stay behind.
   await supabase.auth.signOut({ scope: 'local' }).catch(() => undefined)
+  try {
+    localStorage.removeItem(AUTH_STORAGE_KEY)
+    localStorage.removeItem(`${AUTH_STORAGE_KEY}-code-verifier`)
+  } catch {
+    // Blocked storage held no session.
+  }
   await wipeLearnerData()
   setAccount(null)
 }
