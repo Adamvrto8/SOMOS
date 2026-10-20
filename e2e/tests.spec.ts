@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { button, field, status } from './helpers.ts'
+import { button, field, status, words } from './helpers.ts'
 
 const foodTest = '/practice/test?level=A1&topic=food'
 
@@ -76,4 +76,37 @@ test('a passed test counts on the tests page and moves the goal on Domov', async
   await page.goto('/practice/tests?level=A1')
   await expect(page.getByRole('link', { name: /Pozdravy a frázy/ })).toContainText('Zložené')
   await expect(page.getByRole('link', { name: /Skúška A1/ })).toContainText('Témy: 1/19 zložených')
+})
+
+const vocabA1Lessons = Math.ceil(words.filter((w) => w.level === 'A1').length / 10)
+
+test('the lessons of Všetko × A1 end with a test, locked until they are passed', async ({ page }) => {
+  await page.goto('/practice?type=vocab&topic=all&level=A1')
+  const card = page.getByText('Test: Slovná zásoba · A1')
+  await expect(card).toBeVisible()
+  await expect(page.getByText(`Odomkne sa po splnení všetkých lekcií (0/${vocabA1Lessons})`)).toBeVisible()
+  await expect(page.getByRole('link', { name: /Test: Slovná zásoba · A1/ })).toHaveCount(0)
+
+  // A typed address does not open it either.
+  await page.goto('/practice/test?level=A1&type=vocab')
+  await expect(page.getByText('Test je zamknutý')).toBeVisible()
+
+  // A topic has no such test.
+  await page.goto('/practice?type=vocab&topic=food&level=A1')
+  await expect(page.getByRole('button', { name: /^1 Lekcia 1/ })).toBeVisible()
+  await expect(page.getByText('Test: Slovná zásoba · A1')).toHaveCount(0)
+})
+
+test('with every lesson passed the test opens and is offered at the bottom', async ({ page }) => {
+  const passed = Object.fromEntries(
+    Array.from({ length: vocabA1Lessons }, (_, i) => [`vocab:all:A1:${i + 1}`, { bestScore: 10, total: 10, passed: true, passedAt: 1 }]),
+  )
+  await page.addInitScript((data) => localStorage.setItem('somos-lesson-progression-v2', data), JSON.stringify(passed))
+  await page.goto('/practice?type=vocab&topic=all&level=A1')
+  await expect(page.getByRole('link', { name: /Test: Slovná zásoba · A1/ })).toContainText('30 úloh zo všetkých lekcií')
+  await button(page, 'Spraviť test').tap()
+  await expect(page.getByRole('heading', { name: 'Test: Slovná zásoba · A1' })).toBeVisible()
+  await expect(page.getByText('aspoň 24 z 30')).toBeVisible()
+  await button(page, 'Začať test').tap()
+  await expect(page.locator('header')).toContainText('1/30')
 })

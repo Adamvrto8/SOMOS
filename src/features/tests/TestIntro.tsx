@@ -5,7 +5,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { useT } from '../../i18n'
 import { passThreshold } from '../../lib/lessonProgress'
 import { useTestResults } from '../../lib/testProgress'
-import { TEST_TYPES, testKey, testSize, type TestId } from '../../lib/tests'
+import { testKey, testSize, testTypes, type TestId } from '../../lib/tests'
 import { exerciseInfo } from '../exercises/exercises'
 import { shortDate, testTitle } from './testTitle'
 
@@ -38,7 +38,7 @@ export function TestIntro({ test, onStart }: { test: TestId; onStart: () => void
       <section aria-labelledby="inside-heading">
         <SectionTitle id="inside-heading">{text.whatsInside}</SectionTitle>
         <ul className="flex flex-wrap gap-2">
-          {TEST_TYPES.map((type) => {
+          {testTypes(test).map((type) => {
             const { label, icon: Icon } = exerciseInfo(type)
             return (
               <li key={type} className="flex items-center gap-1.5 rounded-full bg-surface-2 px-3 py-1.5 text-sm">

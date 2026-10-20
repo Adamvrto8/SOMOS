@@ -8,13 +8,18 @@ import { gradeTask, type Answer, type Grade, type Task } from '../../lib/lesson'
 import { recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { playSound } from '../../lib/sound'
+import { useLessonProgression } from '../../lib/lessonProgress'
 import { recordTestResult } from '../../lib/testProgress'
-import { createTest, testFromParams, testKey, type TestId } from '../../lib/tests'
-import { exerciseInfo } from '../exercises/exercises'
+import { createTest, exerciseFilter, isTestUnlocked, testFromParams, testKey, type TestId } from '../../lib/tests'
+import { exerciseInfo, filterToParams } from '../exercises/exercises'
 import { TaskView } from '../exercises/tasks/TaskView'
 import { TestIntro } from './TestIntro'
 import { TestResult, type TestAnswer } from './TestResult'
 import { testTitle } from './testTitle'
+
+/** Where a test leads back to: an exercise test to its lessons, the others to the tests of the level. */
+const backTo = (test?: TestId) =>
+  test?.type ? `/practice?${filterToParams(exerciseFilter(test.type, test.level))}` : `/practice/tests${test ? `?level=${test.level}` : ''}`
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
@@ -53,6 +58,8 @@ export function TestPage() {
   // Wrong answers the learner says were right too ("Moja odpoveď bola tiež správna"), by index.
   const [accepted, setAccepted] = useState<ReadonlySet<number>>(new Set())
   const [confirmExit, setConfirmExit] = useState(false)
+  const [recording, setRecording] = useState(false) // Vyslovovanie: the mic is open
+  const progression = useLessonProgression()
 
   const task: Task | undefined = tasks[index]
   const total = tasks.length
@@ -63,7 +70,7 @@ export function TestPage() {
 
   const exit = () => {
     if (location.key !== 'default') void navigate(-1)
-    else void navigate(`/practice/tests${test ? `?level=${test.level}` : ''}`, { replace: true })
+    else void navigate(backTo(test), { replace: true })
   }
 
   const start = () => {
@@ -108,6 +115,19 @@ export function TestPage() {
     void removeMistake(accTask.kind, accTask.itemId)
     const score = answers.filter((a, j) => a.grade.correct || nextAccepted.has(j)).length
     if (recordTestResult(testKey(test), score, answers.length, false).newlyPassed) playSound('lesson')
+  }
+
+  // A typed URL or an old link must not open an exercise test before its lessons are passed.
+  if (test && !isTestUnlocked(test, progression)) {
+    return (
+      <div className="mx-auto max-w-[480px] px-4 pt-16 text-center">
+        <p className="font-serif text-2xl font-semibold">{text.locked}</p>
+        <p className="mt-2 text-ink-muted">{text.lockedHint}</p>
+        <Button variant="secondary" onClick={exit} className="mt-6">
+          {dictionary.common.back}
+        </Button>
+      </div>
+    )
   }
 
   if (!test) {
@@ -168,7 +188,7 @@ export function TestPage() {
             onAccept={accept}
             onAgain={start}
             onPrepare={() => void navigate(`/practice/lesson?prepare=${testKey(test)}`)}
-            onExit={() => void navigate(`/practice/tests?level=${test.level}`, { replace: true })}
+            onExit={() => void navigate(backTo(test), { replace: true })}
           />
         ) : (
           task && (
@@ -177,7 +197,7 @@ export function TestPage() {
                 {testTitle(test)} · {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={(value) => isAnswered(task, value ?? answer) && next(value ?? answer)} grade={null} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={(value) => isAnswered(task, value ?? answer) && next(value ?? answer)} onRecordingChange={setRecording} grade={null} />
               </div>
             </>
           )
@@ -203,11 +223,11 @@ export function TestPage() {
             ) : (
               // Rides on top of the open phone keyboard, like the lesson's bar (src/lib/keyboard.ts).
               <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
-                <Button variant="secondary" onPointerDown={(e) => e.preventDefault()} onClick={() => next(emptyAnswer(task))}>
+                <Button variant="secondary" onPointerDown={(e) => e.preventDefault()} onClick={() => next(emptyAnswer(task))} disabled={recording}>
                   {text.dontKnow}
                 </Button>
                 {/* preventDefault keeps the phone keyboard open for the next typed task. */}
-                <Button onPointerDown={(e) => e.preventDefault()} onClick={() => next()} disabled={!isAnswered(task, answer)} className="flex-1">
+                <Button onPointerDown={(e) => e.preventDefault()} onClick={() => next()} disabled={!isAnswered(task, answer) || recording} className="flex-1">
                   {index + 1 === total ? text.finish : text.next}
                 </Button>
               </div>

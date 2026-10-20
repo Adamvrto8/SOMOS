@@ -650,6 +650,13 @@ export const sk = {
     passed: 'Zložené',
     /** The exam badge of a level. */
     levelDone: (level: string) => `${level} zvládnutá`,
+    /** The test at the end of an exercise's lessons: Test: Slovná zásoba · A1 */
+    exerciseTest: (exercise: string, level: string) => `Test: ${exercise} · ${level}`,
+    exerciseTestHint: (n: number) => `${n} ${pluralSk(n, ['úloha', 'úlohy', 'úloh'])} zo všetkých lekcií · zložený pri 80 %`,
+    exerciseLocked: (passed: number, total: number) => `Odomkne sa po splnení všetkých lekcií (${passed}/${total})`,
+    takeTest: 'Spraviť test',
+    locked: 'Test je zamknutý',
+    lockedHint: 'Odomkne sa, keď splníš všetky lekcie tohto cvičenia na tejto úrovni.',
     notFound: 'Taký test nie je',
     notFoundHint: 'Vyber si test zo zoznamu.',
 

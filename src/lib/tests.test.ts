@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { topics } from '../data'
 import type { Task } from './lesson'
+import { lessonKey, type LessonProgressionMap } from './lessonProgress'
 import {
   createTest,
+  EXERCISE_TEST_SIZE,
+  exerciseTestProgress,
+  isTestUnlocked,
   nextGoal,
   hasTest,
   itemKey,
@@ -151,5 +155,50 @@ describe('one test', () => {
       expect(verbs.filter((v) => lemmas.includes(v))).toEqual([])
       expect(new Set(lemmas).size).toBe(lemmas.length)
     }
+  })
+})
+
+describe('exercise tests', () => {
+  const vocabA1: TestId = { level: 'A1', type: 'vocab' }
+
+  it('read their keys back', () => {
+    expect(testKey(vocabA1)).toBe('exercise:vocab:A1')
+    expect(parseTestKey('exercise:vocab:A1')).toEqual(vocabA1)
+    expect(parseTestKey('exercise:nope:A1')).toBeUndefined()
+  })
+
+  it.each(['vocab', 'cloze', 'choice', 'conjugation', 'builder', 'translation', 'dictation', 'speaking'] as const)(
+    'ask 30 %s tasks of the level only',
+    (type) => {
+      const tasks = createTest({ level: 'A1', type }, seeded(2))
+      expect(tasks).toHaveLength(EXERCISE_TEST_SIZE)
+      expect(new Set(tasks.map((t) => t.itemId)).size).toBe(EXERCISE_TEST_SIZE)
+      for (const task of tasks) {
+        expect(task.kind).toBe(type)
+        const level = task.kind === 'vocab' ? task.word.level : task.kind === 'conjugation' ? task.verb.level : task.sentence.level
+        expect(level).toBe('A1')
+      }
+    },
+  )
+
+  it('open only when every lesson before them is passed', () => {
+    const { total } = exerciseTestProgress('vocab', 'A1', {})
+    expect(total).toBeGreaterThan(10)
+    const map: LessonProgressionMap = {}
+    for (let n = 1; n < total; n++) map[lessonKey('vocab', 'all:A1', n)] = { bestScore: 10, total: 10, passed: true }
+    expect(isTestUnlocked(vocabA1, map)).toBe(false)
+    expect(exerciseTestProgress('vocab', 'A1', map)).toEqual({ passed: total - 1, total })
+    map[lessonKey('vocab', 'all:A1', total)] = { bestScore: 8, total: 10, passed: true }
+    expect(isTestUnlocked(vocabA1, map)).toBe(true)
+    // Topic tests and exams are never locked.
+    expect(isTestUnlocked({ level: 'A1' }, {})).toBe(true)
+  })
+
+  it('prepare with a lesson of the same exercise, mistakes first', () => {
+    const mistake = createTest(vocabA1, seeded(5))[7]
+    const tasks = prepareLesson(vocabA1, new Set([itemKey(mistake.kind, mistake.itemId)]), new Map(), seeded(6))
+    expect(tasks).toHaveLength(10)
+    expect(tasks.every((t) => t.kind === 'vocab')).toBe(true)
+    expect(tasks[0].itemId).toBe(mistake.itemId)
   })
 })

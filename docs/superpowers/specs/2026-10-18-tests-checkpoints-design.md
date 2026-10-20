@@ -65,3 +65,12 @@ Time limit, "jump here" (a passed exam marking its topics), downloadable certifi
 
 Unit tests for `createTest` (sizes, mix, fallback, no repeated sentence, tenses by level) and the result store;
 a Playwright spec: open a topic test, answer, see the result and the record on the tests page.
+
+## Addendum 2026-10-20: exercise tests
+
+Adam's wish: the numbered lessons of an exercise at **Všetko × level** (e.g. Slovná zásoba · Všetko · A1, 53 lessons)
+end with a test of that exercise alone — 30 tasks drawn like the lessons draw them, passed at 80 %, exam style.
+Every exercise type has one per level (conjugation: "Všetky časy"); topics and "Všetky úrovne" have none.
+It is the last item of the lesson list, **locked until every lesson before it is passed** (also by URL), and
+the bottom button offers "Spraviť test" once they are. Key `exercise:<type>:<level>`, URL `?level=A1&type=vocab`;
+"Pripraviť sa" is a lesson of the same exercise and level, mistakes first. Not on the Testy page or Domov.

@@ -20,6 +20,10 @@ import {
   useLessonProgression,
 } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
+import { useTestResults } from '../../lib/testProgress'
+import { TEST_LEVELS, testKey, type TestId, type TestLevel } from '../../lib/tests'
+import { testHref } from '../tests/testTitle'
+import { ExerciseTestCard } from './ExerciseTestCard'
 import { useUpdateParams } from '../../lib/useUrlQuery'
 import { EXERCISES, filterFromParams, filterLabel, filterToParams, isLessonGroup, LEVELS } from './exercises'
 
@@ -31,6 +35,7 @@ export function PracticePage() {
   const navigate = useNavigate()
   const mistakes = useMistakes()
   const progression = useLessonProgression()
+  const testResults = useTestResults()
 
   const rawFilter = filterFromParams(params)
 
@@ -62,6 +67,14 @@ export function PracticePage() {
     }
   }
   const allPassed = totalLessons > 0 && passedCount === totalLessons
+
+  // Všetko × a level: the lessons end with a test of the exercise.
+  const exerciseTest: TestId | undefined =
+    group === 'all' && TEST_LEVELS.includes(filter.level as TestLevel) && totalLessons > 0
+      ? { level: filter.level as TestLevel, type: filter.type }
+      : undefined
+  const exerciseTestRecord = exerciseTest ? testResults[testKey(exerciseTest)] : undefined
+  const takeTest = exerciseTest !== undefined && allPassed && !exerciseTestRecord?.passed
 
   const selectType = (type: ExerciseType) => {
     const remembered = rememberedGroup(type)
@@ -299,6 +312,7 @@ export function PracticePage() {
                 </button>
               )
             })}
+            {exerciseTest && <ExerciseTestCard test={exerciseTest} record={exerciseTestRecord} passed={passedCount} total={totalLessons} />}
           </div>
         )}
       </section>
@@ -317,10 +331,10 @@ export function PracticePage() {
         <Button
           icon={Play}
           disabled={totalLessons === 0}
-          onClick={() => navigateToLesson(unpassedLesson)}
+          onClick={() => (takeTest ? void navigate(testHref(exerciseTest)) : navigateToLesson(unpassedLesson))}
           className="w-full"
         >
-          {allPassed ? text.repeatFirst : text.continueWith(unpassedLesson)}
+          {takeTest ? dictionary.tests.takeTest : allPassed ? text.repeatFirst : text.continueWith(unpassedLesson)}
         </Button>
         {(totalLessons === 0 || allPassed) && (
           <p className="mt-2 text-center text-sm text-ink-muted" aria-live="polite">

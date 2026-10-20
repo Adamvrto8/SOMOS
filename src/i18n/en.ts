@@ -615,6 +615,12 @@ export const en: Dictionary = {
     passedOn: (score, total, date) => `Passed ${date} · ${score}/${total}`,
     passed: 'Passed',
     levelDone: (level) => `${level} done`,
+    exerciseTest: (exercise, level) => `Test: ${exercise} · ${level}`,
+    exerciseTestHint: (n) => `${counted(n, 'task', 'tasks')} from all the lessons · passed at 80 %`,
+    exerciseLocked: (passed, total) => `Unlocks when all lessons are passed (${passed}/${total})`,
+    takeTest: 'Take the test',
+    locked: 'The test is locked',
+    lockedHint: 'It unlocks when you pass all lessons of this exercise at this level.',
     notFound: 'No such test',
     notFoundHint: 'Pick a test from the list.',
 

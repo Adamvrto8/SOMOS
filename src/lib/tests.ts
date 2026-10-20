@@ -1,18 +1,21 @@
 import { sentences, topicById, verbById, verbs, words } from '../data'
 import type { Level, Sentence, Verb } from '../data/types'
 import { PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
-import { conjugationTask, createLesson, LESSON_SIZE, type ExerciseType, type Task } from './lesson'
+import { conjugationTask, createLesson, getNumberedLessonCount, LESSON_SIZE, type ExerciseType, type LessonFilter, type Task } from './lesson'
+import { getLessonRecord, progressionGroup, type LessonProgressionMap } from './lessonProgress'
 
-// Tests: a checkpoint per topic and level, and an exam per level. Each mixes the exercise types
-// (all but Vyslovovanie, which needs a microphone) and draws new tasks on every attempt.
+// Tests: a checkpoint per topic and level, and an exam per level, both mixing the exercise types (all but
+// Vyslovovanie, which needs a microphone); and at the end of an exercise's lessons (Všetko × level) a
+// test of that exercise alone, opened once those lessons are passed. Every attempt draws new tasks.
 
 export type TestLevel = 'A1' | 'A2' | 'B1'
 export const TEST_LEVELS: TestLevel[] = ['A1', 'A2', 'B1']
 
-/** A topic test (topic × level) or, without a topic, the exam of the level. */
+/** A topic test (topic × level), an exercise test (exercise × level) or, with neither, the exam of the level. */
 export interface TestId {
   level: TestLevel
   topic?: string
+  type?: ExerciseType
 }
 
 type Mix = [ExerciseType, number][]
@@ -33,30 +36,62 @@ const MIN_TOPIC_SENTENCES = 5
 const sizeOf = (mix: Mix) => mix.reduce((sum, [, n]) => sum + n, 0)
 export const TOPIC_TEST_SIZE = sizeOf(TOPIC_MIX)
 export const LEVEL_EXAM_SIZE = sizeOf(EXAM_MIX)
+export const EXERCISE_TEST_SIZE = 30
 
-/** "food:A1" for a topic test, "A1" for the level exam: the key of its results and of `?prepare=`. */
-export const testKey = ({ level, topic }: TestId): string => (topic ? `${topic}:${level}` : level)
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
+const isExerciseType = (type: string | null | undefined): type is ExerciseType => EXERCISE_TYPES.includes(type as ExerciseType)
+
+/**
+ * "food:A1" for a topic test, "exercise:vocab:A1" for an exercise test, "A1" for the level exam:
+ * the key of its results and of `?prepare=`.
+ */
+export const testKey = ({ level, topic, type }: TestId): string => (type ? `exercise:${type}:${level}` : topic ? `${topic}:${level}` : level)
 
 const isTestLevel = (level: string | null | undefined): level is TestLevel => TEST_LEVELS.includes(level as TestLevel)
 
 export function parseTestKey(key: string | null): TestId | undefined {
   if (!key) return undefined
-  const [first, second] = key.split(':')
-  const id: TestId | undefined = second === undefined ? (isTestLevel(first) ? { level: first } : undefined) : isTestLevel(second) ? { level: second, topic: first } : undefined
+  const parts = key.split(':')
+  let id: TestId | undefined
+  if (parts.length === 1 && isTestLevel(parts[0])) id = { level: parts[0] }
+  else if (parts.length === 2 && isTestLevel(parts[1])) id = { level: parts[1], topic: parts[0] }
+  else if (parts.length === 3 && parts[0] === 'exercise' && isExerciseType(parts[1]) && isTestLevel(parts[2])) id = { level: parts[2], type: parts[1] }
   return id && hasTest(id) ? id : undefined
 }
 
-/** The test a URL names: `?level=A1` (exam) or `?level=A1&topic=food`. */
+/** The test a URL names: `?level=A1` (exam), `?level=A1&topic=food` or `?level=A1&type=vocab`. */
 export function testFromParams(params: URLSearchParams): TestId | undefined {
   const level = params.get('level')
   const topic = params.get('topic')
+  const type = params.get('type')
   if (!isTestLevel(level)) return undefined
-  const id: TestId = topic ? { level, topic } : { level }
+  const id: TestId = isExerciseType(type) ? { level, type } : topic ? { level, topic } : { level }
   return hasTest(id) ? id : undefined
 }
 
-export function testToParams({ level, topic }: TestId): string {
-  return new URLSearchParams(topic ? { level, topic } : { level }).toString()
+export function testToParams({ level, topic, type }: TestId): string {
+  return new URLSearchParams(type ? { level, type } : topic ? { level, topic } : { level }).toString()
+}
+
+/** The lessons an exercise test closes: the exercise, every topic (or tense), the level. */
+export function exerciseFilter(type: ExerciseType, level: TestLevel): LessonFilter {
+  return type === 'conjugation' ? { type, tense: 'all', level } : { type, topic: 'all', level }
+}
+
+/** How many of the lessons before an exercise test are passed; the test opens when all are. */
+export function exerciseTestProgress(type: ExerciseType, level: TestLevel, map: LessonProgressionMap): { passed: number; total: number } {
+  const total = getNumberedLessonCount(exerciseFilter(type, level))
+  const group = progressionGroup('all', level)
+  let passed = 0
+  for (let n = 1; n <= total; n++) if (getLessonRecord(type, group, n, map)?.passed) passed++
+  return { passed, total }
+}
+
+/** Only an exercise test can be locked: until every lesson before it is passed. */
+export function isTestUnlocked(id: TestId, map: LessonProgressionMap): boolean {
+  if (!id.type) return true
+  const { passed, total } = exerciseTestProgress(id.type, id.level, map)
+  return total > 0 && passed === total
 }
 
 /** The tenses a level's conjugation asks: imperfecto and futuro come with A2. */
@@ -72,6 +107,7 @@ function levelsFor({ level, topic }: TestId): Level[] {
 
 export function hasTest(id: TestId): boolean {
   if (!isTestLevel(id.level)) return false
+  if (id.type) return isExerciseType(id.type) && getNumberedLessonCount(exerciseFilter(id.type, id.level)) > 0
   if (!id.topic) return true
   const { topic, level } = id
   if (!topicById.has(topic)) return false
@@ -89,7 +125,10 @@ export function topicTests(level: TestLevel): TestId[] {
   return [...topicById.keys()].map((topic) => ({ level, topic })).filter(hasTest)
 }
 
-export const testSize = (id: TestId) => (id.topic ? TOPIC_TEST_SIZE : LEVEL_EXAM_SIZE)
+export const testSize = (id: TestId) => (id.type ? EXERCISE_TEST_SIZE : id.topic ? TOPIC_TEST_SIZE : LEVEL_EXAM_SIZE)
+
+/** The exercise types a test asks. */
+export const testTypes = (id: TestId): ExerciseType[] => (id.type ? [id.type] : TEST_TYPES)
 
 /** The verbs a test conjugates: a topic's own verbs, or the level's when the topic has none. */
 function testVerbs(id: TestId): Verb[] {
@@ -198,6 +237,8 @@ function compose(mix: Mix, lists: Map<ExerciseType, Candidate[]>): Task[] {
 
 /** A new attempt at a test: fresh tasks every time. */
 export function createTest(id: TestId, random: Random = Math.random): Task[] {
+  // From all the lessons of the exercise at the level, picked as the lessons pick them (one cloze per sentence…).
+  if (id.type) return createLesson(exerciseFilter(id.type, id.level), EXERCISE_TEST_SIZE, random)
   const mix = id.topic ? TOPIC_MIX : EXAM_MIX
   return compose(mix, new Map(mix.map(([type]) => [type, candidates(id, type, random)])))
 }
@@ -223,6 +264,12 @@ export function prepareLesson(
         a.rank - b.rank ||
         (seen.get(key(a)) ?? 0) - (seen.get(key(b)) ?? 0),
     )
+  }
+  if (id.type) {
+    const all = createLesson(exerciseFilter(id.type, id.level), Number.MAX_SAFE_INTEGER, random).map((task) => ({ task, rank: 0 }))
+    return order(all)
+      .slice(0, LESSON_SIZE)
+      .map(({ task }) => task)
   }
   const tasks = compose(PREPARE_MIX, new Map(PREPARE_MIX.map(([type]) => [type, order(candidates(id, type, random))])))
   return tasks.slice(0, LESSON_SIZE)

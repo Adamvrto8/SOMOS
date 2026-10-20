@@ -26,7 +26,7 @@ function answerText(task: Task, answer: Answer): string {
 }
 
 /** Free answers that may be right in another way, as in a lesson ("Moja odpoveď bola tiež správna"). */
-const canAccept = (task: Task) => task.kind === 'translation' || task.kind === 'vocab'
+const canAccept = (task: Task) => task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking'
 
 interface TestResultProps {
   test: TestId
