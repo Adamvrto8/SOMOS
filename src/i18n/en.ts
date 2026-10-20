@@ -725,7 +725,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'Who processes the data',
-        body: 'Accounts and progress are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the app's e-mail service, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
+        body: 'Accounts and progress are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
       },
       {
         heading: 'How long',
