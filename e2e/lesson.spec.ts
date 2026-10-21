@@ -237,7 +237,7 @@ test('a lesson left before it was passed goes on with the tasks not answered rig
   await expect(page.getByText('Splnené (10/10)')).toBeVisible()
 })
 
-test('Cvičiť is a hub that fits the screen: where to go on, the shortcuts and every exercise', async ({ page }) => {
+test('Cvičiť is a hub: where to go on, the shortcuts and every exercise', async ({ page }) => {
   await page.goto('/practice')
   await expect(page.getByRole('link', { name: /Lekcia 1/ })).toHaveAttribute('href', /\/practice\/lesson\?type=vocab/)
   await expect(page.getByRole('link', { name: /Testy/ })).toBeVisible()
@@ -245,7 +245,6 @@ test('Cvičiť is a hub that fits the screen: where to go on, the shortcuts and 
   // Chyby only once there are some.
   await expect(page.getByRole('link', { name: /Chyby/ })).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(8)
-  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
 
   // A tile opens its exercise; the tab bar leads back to the hub from there.
   await page.getByRole('link', { name: /^Doplňovačka/ }).tap()
@@ -287,8 +286,9 @@ test('an exercise shows its lessons as a grid; the picked topic and level come b
   await button(page, 'Pokračovať (Lekcia 1)').tap()
   await expect(page).toHaveURL(/\/practice\/lesson\?type=cloze&topic=food(?!.*level).*&lesson=1/)
   await page.goto('/practice')
-  const tile = page.getByRole('link', { name: /^Doplňovačka/ })
-  await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne · 0/')
+  const tile = page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ })
+  await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne')
+  await expect(tile).toContainText(/0\/\d+/)
   await tile.tap()
   await expect(page).toHaveURL(/\/practice\?type=cloze&topic=food/)
   await expect(page.getByRole('button', { name: 'Jedlo a pitie', exact: true })).toHaveAttribute('aria-pressed', 'true')

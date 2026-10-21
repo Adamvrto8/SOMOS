@@ -51,10 +51,10 @@ export function PracticeHub() {
   const mistakeCount = mistakes?.length ?? 0
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
 
-      <Link to={next.href} className={`${TILE} flex items-center gap-4 px-4 py-3`}>
+      <Link to={next.href} className={`${TILE} flex items-center gap-4 p-4`}>
         <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)]">
           <Play size={22} strokeWidth={1.75} className="translate-x-px" aria-hidden />
         </span>
@@ -75,30 +75,39 @@ export function PracticeHub() {
         <h2 id="exercises-heading" className="mb-2 text-xs font-semibold tracking-widest text-ink-muted uppercase">
           {text.exercises}
         </h2>
-        <ul className="grid grid-cols-2 gap-2">
+        <ul className="grid grid-cols-2 gap-3">
           {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
             const filter = exerciseFilter(type)
             const played = getRememberedLesson(type) !== undefined
             const { passed, total } = played ? passedOf(filter, progression) : { passed: 0, total: 0 }
             const body = (
               <>
-                <span className="flex items-center gap-2">
-                  <Icon size={18} strokeWidth={1.75} className="shrink-0 text-brick" aria-hidden />
-                  <span className="min-w-0 leading-snug font-medium">{label}</span>
+                <span className="flex items-center justify-between">
+                  <span className="flex size-10 items-center justify-center rounded-xl bg-surface-2 text-brick">
+                    <Icon size={20} strokeWidth={1.75} aria-hidden />
+                  </span>
+                  {played && !unavailable && (
+                    <span className="text-xs text-ink-muted tabular-nums">
+                      {passed}/{total}
+                    </span>
+                  )}
                 </span>
-                <span className="mt-1 line-clamp-2 block text-xs text-ink-muted">
-                  {unavailable ?? (played ? `${selectionLabel(filter, text.everyLevel)} · ${passed}/${total}` : description)}
+                <span>
+                  <span className="block leading-snug font-medium">{label}</span>
+                  <span className="block text-sm text-ink-muted">
+                    {unavailable ?? (played ? selectionLabel(filter, text.everyLevel) : description)}
+                  </span>
                 </span>
               </>
             )
             return (
               <li key={type}>
                 {unavailable ? (
-                  <div aria-disabled="true" className={`${TILE} block h-full px-3 py-2.5 opacity-50`}>
+                  <div aria-disabled="true" className={`${TILE} flex h-full flex-col gap-3 p-4 opacity-50`}>
                     {body}
                   </div>
                 ) : (
-                  <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} block h-full px-3 py-2.5`}>
+                  <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex h-full flex-col gap-3 p-4 active:bg-surface-2`}>
                     {body}
                   </Link>
                 )}
