@@ -255,7 +255,7 @@ export const sk = {
       cloze: { label: 'Doplňovačka', description: 'Doplň chýbajúce slovo v správnom tvare.', instruction: 'Doplň slovo' },
       choice: { label: 'Výber z možností', description: 'Vyber správne slovo alebo tvar.', instruction: 'Vyber správnu možnosť' },
       vocab: { label: 'Slovná zásoba', description: 'Prelož slovenské alebo španielske slovo.', instruction: 'Prelož slovo' },
-      conjugation: { label: 'Časovanie', description: 'tener · yo · pretérito → tuve', instruction: 'Vyčasuj sloveso' },
+      conjugation: { label: 'Časovanie', description: 'Vyčasuj sloveso v danej osobe a čase.', instruction: 'Vyčasuj sloveso' },
       builder: { label: 'Skladanie viet', description: 'Poskladaj vetu zo zamiešaných slov.', instruction: 'Poskladaj vetu' },
       translation: { label: 'Preklad viet', description: 'Prelož vetu zo slovenčiny do španielčiny.', instruction: 'Prelož do španielčiny' },
       dictation: { label: 'Diktát', description: 'Počúvaj vetu a napíš ju.', instruction: 'Napíš, čo počuješ' },

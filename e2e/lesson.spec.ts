@@ -247,7 +247,7 @@ test('Cvičiť is a hub: where to go on, the shortcuts and every exercise', asyn
   await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(8)
 
   // A tile opens its exercise; the tab bar leads back to the hub from there.
-  await page.getByRole('link', { name: /^Doplňovačka/ }).tap()
+  await page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ }).tap()
   await expect(page).toHaveURL(/\/practice\?type=cloze&topic=all&level=A1/)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Doplňovačka')
   await page.getByRole('navigation').getByRole('link', { name: 'Cvičiť' }).tap()

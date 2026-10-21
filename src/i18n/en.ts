@@ -236,7 +236,7 @@ export const en: Dictionary = {
       cloze: { label: 'Fill in the blank', description: 'Fill in the missing word in the right form.', instruction: 'Fill in the word' },
       choice: { label: 'Multiple choice', description: 'Pick the right word or form.', instruction: 'Pick the right option' },
       vocab: { label: 'Vocabulary', description: 'Translate an English or a Spanish word.', instruction: 'Translate the word' },
-      conjugation: { label: 'Conjugation', description: 'tener · yo · pretérito → tuve', instruction: 'Conjugate the verb' },
+      conjugation: { label: 'Conjugation', description: 'Conjugate the verb for the given person and tense.', instruction: 'Conjugate the verb' },
       builder: { label: 'Sentence builder', description: 'Build a sentence from shuffled words.', instruction: 'Build the sentence' },
       translation: { label: 'Sentence translation', description: 'Translate a sentence from English into Spanish.', instruction: 'Translate into Spanish' },
       dictation: { label: 'Dictation', description: 'Listen to a sentence and type it.', instruction: 'Type what you hear' },

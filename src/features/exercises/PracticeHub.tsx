@@ -33,7 +33,7 @@ function Shortcut({ to, icon: Icon, label, badge, tone = 'brick' }: { to: string
       <Icon size={18} strokeWidth={1.75} className={`shrink-0 ${tone === 'error' ? 'text-error' : 'text-brick'}`} aria-hidden />
       <span className="text-sm font-medium">{label}</span>
       {badge !== undefined && (
-        <span className="min-w-5 rounded-full bg-error px-1.5 text-center text-[0.7rem] leading-5 font-semibold text-on-accent tabular-nums">
+        <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-error px-1.5 text-[0.7rem] leading-none font-semibold text-on-accent tabular-nums">
           {badge}
         </span>
       )}
@@ -79,14 +79,14 @@ export function PracticeHub() {
           {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
             const filter = exerciseFilter(type)
             const played = getRememberedLesson(type) !== undefined
-            const { passed, total } = played ? passedOf(filter, progression) : { passed: 0, total: 0 }
+            const { passed, total } = passedOf(filter, progression)
             const body = (
               <>
                 <span className="flex items-center justify-between">
                   <span className="flex size-10 items-center justify-center rounded-xl bg-surface-2 text-brick">
                     <Icon size={20} strokeWidth={1.75} aria-hidden />
                   </span>
-                  {played && !unavailable && (
+                  {!unavailable && total > 0 && (
                     <span className="text-xs text-ink-muted tabular-nums">
                       {passed}/{total}
                     </span>
