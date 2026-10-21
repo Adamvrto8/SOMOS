@@ -1,4 +1,4 @@
-import { Award, BookOpen, Dumbbell, Play, type LucideIcon } from 'lucide-react'
+import { Award, BookOpen, ChevronRight, Dumbbell, Play, type LucideIcon } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import type { TableTense } from '../../lib/conjugate'
@@ -75,39 +75,38 @@ export function PracticeHub() {
         <h2 id="exercises-heading" className="mb-2 text-xs font-semibold tracking-widest text-ink-muted uppercase">
           {text.exercises}
         </h2>
-        <ul className="grid grid-cols-2 gap-3">
+        <ul className="space-y-2">
           {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
             const filter = exerciseFilter(type)
             const played = getRememberedLesson(type) !== undefined
             const { passed, total } = passedOf(filter, progression)
             const body = (
               <>
-                <span className="flex items-center justify-between">
-                  <span className="flex size-10 items-center justify-center rounded-xl bg-surface-2 text-brick">
-                    <Icon size={20} strokeWidth={1.75} aria-hidden />
-                  </span>
-                  {!unavailable && total > 0 && (
-                    <span className="text-xs text-ink-muted tabular-nums">
-                      {passed}/{total}
-                    </span>
-                  )}
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-brick">
+                  <Icon size={20} strokeWidth={1.75} aria-hidden />
                 </span>
-                <span>
-                  <span className="block leading-snug font-medium">{label}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium">{label}</span>
                   <span className="block text-sm text-ink-muted">
                     {unavailable ?? (played ? selectionLabel(filter, text.everyLevel) : description)}
                   </span>
                 </span>
+                {!unavailable && total > 0 && (
+                  <span className="shrink-0 text-xs text-ink-muted tabular-nums">
+                    {passed}/{total}
+                  </span>
+                )}
+                {!unavailable && <ChevronRight size={18} strokeWidth={1.75} className="-ml-1 shrink-0 text-ink-muted" aria-hidden />}
               </>
             )
             return (
               <li key={type}>
                 {unavailable ? (
-                  <div aria-disabled="true" className={`${TILE} flex h-full flex-col gap-3 p-4 opacity-50`}>
+                  <div aria-disabled="true" className={`${TILE} flex items-center gap-3 p-3 opacity-50`}>
                     {body}
                   </div>
                 ) : (
-                  <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex h-full flex-col gap-3 p-4 active:bg-surface-2`}>
+                  <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex items-center gap-3 p-3 active:bg-surface-2`}>
                     {body}
                   </Link>
                 )}
