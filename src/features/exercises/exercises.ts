@@ -77,6 +77,11 @@ export function isLessonGroup(type: ExerciseType, group: string): boolean {
  * Without a level the label ends after the topic, unless `allLevels` names that case.
  */
 export function filterLabel(filter: LessonFilter, allLevels?: string): string {
+  return [exerciseInfo(filter.type).label, selectionLabel(filter, allLevels)].filter(Boolean).join(' · ')
+}
+
+/** The topic (or tense) and level a filter picks: "Jedlo a pitie · A1". */
+export function selectionLabel(filter: LessonFilter, allLevels?: string): string {
   const byTense = filter.type === 'conjugation'
   const group = (byTense ? filter.tense : filter.topic) ?? 'all'
   const topic = topicById.get(group)
@@ -90,7 +95,7 @@ export function filterLabel(filter: LessonFilter, allLevels?: string): string {
         : topic
           ? topicName(topic)
           : group
-  return [exerciseInfo(filter.type).label, groupLabel, filter.level ?? allLevels].filter(Boolean).join(' · ')
+  return [groupLabel, filter.level ?? allLevels].filter(Boolean).join(' · ')
 }
 
 export function filterToParams(filter: LessonFilter): URLSearchParams {

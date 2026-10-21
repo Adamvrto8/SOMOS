@@ -294,6 +294,12 @@ export function getLastActiveLesson(): (ActiveLessonInfo & { type: ExerciseType 
   return last
 }
 
+/** The numbered lesson of an exercise type played last; undefined when it was never played. */
+export function getRememberedLesson(type: ExerciseType): ActiveLessonInfo | undefined {
+  const entry = activeStore[type]
+  return entry && typeof entry.group === 'string' && typeof entry.lesson === 'number' ? entry : undefined
+}
+
 export function getActiveLesson(type: ExerciseType, fallbackGroup: string): ActiveLessonInfo {
   const entry = activeStore[type]
   if (entry && typeof entry.group === 'string' && typeof entry.lesson === 'number') {

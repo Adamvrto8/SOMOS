@@ -237,30 +237,59 @@ test('a lesson left before it was passed goes on with the tasks not answered rig
   await expect(page.getByText('Splnené (10/10)')).toBeVisible()
 })
 
-test('Cvičiť names the picked exercise, topic and level right above its button, and a tap on it leads to them', async ({ page }) => {
-  // All topics: lessons enough below the options for the page to scroll all the way to them.
+test('Cvičiť is a hub that fits the screen: where to go on, the shortcuts and every exercise', async ({ page }) => {
+  await page.goto('/practice')
+  await expect(page.getByRole('link', { name: /Lekcia 1/ })).toHaveAttribute('href', /\/practice\/lesson\?type=vocab/)
+  await expect(page.getByRole('link', { name: /Testy/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Gramatika/ })).toBeVisible()
+  // Chyby only once there are some.
+  await expect(page.getByRole('link', { name: /Chyby/ })).toHaveCount(0)
+  await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(8)
+  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
+
+  // A tile opens its exercise; the tab bar leads back to the hub from there.
+  await page.getByRole('link', { name: /^Doplňovačka/ }).tap()
+  await expect(page).toHaveURL(/\/practice\?type=cloze&topic=all&level=A1/)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Doplňovačka')
+  await page.getByRole('navigation').getByRole('link', { name: 'Cvičiť' }).tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Cvičiť')
+})
+
+test('an exercise shows its lessons as a grid; the picked topic and level come back on its tile', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      'somos-lesson-progression-v2',
+      JSON.stringify({
+        'cloze:all:A1:1': { bestScore: 10, total: 10, passed: true, passedAt: 1 },
+        'cloze:all:A1:2': { bestScore: 5, total: 10, passed: false },
+      }),
+    )
+  })
   await page.goto('/practice?type=cloze&topic=all&level=A1')
-  const picked = button(page, 'Doplňovačka · Všetky témy · A1')
-  await expect(picked).toBeInViewport({ ratio: 1 })
-  // Seen together with the button, without scrolling up to the options.
-  expect(await gapAboveBottom(page, picked)).toBeLessThan(200)
-  expect((await picked.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+  await expect(button(page, 'Lekcia 1, splnená')).toBeEnabled()
+  await expect(button(page, 'Lekcia 2, najlepšie 5/10')).toHaveAttribute('aria-current', 'step')
+  await expect(button(page, 'Lekcia 3, zamknutá')).toBeDisabled()
+  // What each card of the old list said, for the lesson that matters now.
+  await expect(page.getByText('Lekcia 2 · Najlepšie: 5/10 (potrebuješ aspoň 8/10)')).toBeVisible()
+  for (const name of ['Lekcia 1, splnená', 'Lekcia 2, najlepšie 5/10', 'Lekcia 3, zamknutá'])
+    expect((await button(page, name).boundingBox())!.width).toBeGreaterThanOrEqual(44)
+  await expect(button(page, 'Pokračovať (Lekcia 2)')).toBeInViewport({ ratio: 1 })
 
-  // Topic and level are further down the page; the tap brings both between the header and the bar.
-  const level = page.getByRole('radio', { name: 'Všetky', exact: true })
-  await expect(level).not.toBeInViewport()
-  await picked.tap()
-  // The scroll is animated: it has arrived when the topic heading sits right under the header.
-  const headerBottom = await page.locator('header').evaluate((header) => header.getBoundingClientRect().bottom)
-  const topicTop = async () => (await page.locator('#topic-heading').boundingBox())!.y - headerBottom
-  await expect.poll(topicTop).toBeLessThan(40)
-  expect(await topicTop()).toBeGreaterThanOrEqual(0)
-  const levelBox = (await level.boundingBox())!
-  expect(levelBox.y + levelBox.height).toBeLessThanOrEqual((await picked.boundingBox())!.y)
+  // An earlier lesson opens from the grid.
+  await button(page, 'Lekcia 1, splnená').tap()
+  await expect(page).toHaveURL(/\/practice\/lesson\?type=cloze&topic=all&level=A1&lesson=1/)
 
+  // Topic and level are picked at the top; the lesson started there is where the tile leads afterwards.
+  await page.goto('/practice?type=cloze&topic=all&level=A1')
   await page.getByRole('button', { name: 'Jedlo a pitie', exact: true }).tap()
-  await level.tap()
-  await expect(button(page, 'Doplňovačka · Jedlo a pitie · Všetky úrovne')).toBeInViewport({ ratio: 1 })
-  await page.getByRole('radio', { name: /^Časovanie/ }).tap()
-  await expect(page.getByRole('button', { name: /^Časovanie · .+ · Všetky úrovne$/ })).toBeInViewport({ ratio: 1 })
+  await page.getByRole('radio', { name: 'Všetky', exact: true }).tap()
+  await expect(button(page, 'Lekcia 1, aktuálna')).toBeVisible()
+  await button(page, 'Pokračovať (Lekcia 1)').tap()
+  await expect(page).toHaveURL(/\/practice\/lesson\?type=cloze&topic=food(?!.*level).*&lesson=1/)
+  await page.goto('/practice')
+  const tile = page.getByRole('link', { name: /^Doplňovačka/ })
+  await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne · 0/')
+  await tile.tap()
+  await expect(page).toHaveURL(/\/practice\?type=cloze&topic=food/)
+  await expect(page.getByRole('button', { name: 'Jedlo a pitie', exact: true })).toHaveAttribute('aria-pressed', 'true')
 })

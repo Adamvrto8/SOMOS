@@ -40,7 +40,7 @@ test('the screens are in English: search, a lesson with its feedback, review and
 
   await page.goto('/practice')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practice')
-  await expect(page.getByRole('radio', { name: /Fill in the blank/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Fill in the blank/ })).toBeVisible()
 
   await page.goto('/practice/lesson?type=conjugation&tense=presente&level=A1&lesson=1')
   await expect(page.getByRole('textbox', { name: 'Verb form' })).toBeVisible()

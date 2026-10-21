@@ -388,32 +388,34 @@ export const sk = {
 
   practice: {
     title: 'Cvičiť',
-    mistakesHint: (n: number) => `${n} ${pluralSk(n, ['úloha', 'úlohy', 'úloh'])}, v ktorých si sa pomýlil`,
     grammar: 'Gramatika',
-    grammarHint: 'Krátke pravidlá s príkladmi',
-    type: 'Typ cvičenia',
     tense: 'Čas',
     topic: 'Téma',
     all: 'Všetko',
     level: 'Úroveň',
     allLevels: 'Všetky',
-    /** In the label above "Pokračovať": Doplňovačka · Jedlo a pitie · Všetky úrovne */
+    /** On an exercise tile of the hub: Všetko · Všetky úrovne · 3/53 */
     everyLevel: 'Všetky úrovne',
-    /** What a tap on that label does: it scrolls to topic and level. */
-    changeChoice: 'Zmeniť tému a úroveň',
     lessons: 'Lekcie',
     passedOf: (passed: number, total: number) => `${passed}/${total} ${pluralSk(total, ['splnená', 'splnené', 'splnených'])}`,
     noTasks: 'Pre tento výber zatiaľ nie sú žiadne úlohy.',
     lesson: (n: number) => `Lekcia ${n}`,
-    passedAgain: (score: number, total: number) => `Splnené (${score}/${total}) · ťukni pre opakovanie`,
     best: (score: number, total: number, needed: number) => `Najlepšie: ${score}/${total} (potrebuješ aspoň ${needed}/${total})`,
     ready: (n: number) => `${n} ${pluralSk(n, ['úloha', 'úlohy', 'úloh'])} · pripravené`,
-    unlocks: (previous: number) => `Odomkne sa po splnení Lekcie ${previous}`,
-    current: 'Aktuálna',
     repeatFirst: 'Zopakovať Lekciu 1',
     continueWith: (n: number) => `Pokračovať (Lekcia ${n})`,
     allDone: 'Všetky lekcie sú úspešne zvládnuté! ✓',
     allDoneTopic: 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓',
+    /** The hub: the exercise types as a grid. */
+    exercises: 'Cvičenia',
+    mistakes: 'Chyby',
+    /** How a lesson of the grid is read out: Lekcia 12, aktuálna */
+    lessonState: {
+      passed: 'splnená',
+      current: 'aktuálna',
+      locked: 'zamknutá',
+      tried: (score: number, total: number) => `najlepšie ${score}/${total}`,
+    },
   },
 
   lesson: {
@@ -636,7 +638,6 @@ export const sk = {
   /** Topic tests and level exams (src/lib/tests.ts). */
   tests: {
     title: 'Testy',
-    cardHint: 'Testy tém a skúšky úrovní: ciele, na ktoré sa pripravíš',
     intro: 'Test ukáže, čo už naozaj vieš. Mieša všetky druhy cvičení, počas neho nie je nápoveda a zložený je pri 80 %. Nič sa nezamyká: je to cieľ, na ktorý sa môžeš pripraviť.',
     level: 'Úroveň',
     exam: (level: string) => `Skúška ${level}`,

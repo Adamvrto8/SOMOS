@@ -93,7 +93,7 @@ test('the lessons of Všetko × A1 end with a test, locked until they are passed
 
   // A topic has no such test.
   await page.goto('/practice?type=vocab&topic=food&level=A1')
-  await expect(page.getByRole('button', { name: /^1 Lekcia 1/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Lekcia 1, aktuálna' })).toBeVisible()
   await expect(page.getByText('Test: Slovná zásoba · A1')).toHaveCount(0)
 })
 
