@@ -9,7 +9,7 @@ import { useReminderSettings } from '../../lib/reminder'
 import { useSoundSet } from '../../lib/sound'
 import { useLook, useThemePref } from '../../lib/theme'
 import { ttsSupported, useVoices } from '../../lib/tts'
-import { AccountRow } from '../account/AccountSettings'
+import { AccountActions, AccountRow } from '../account/AccountSettings'
 import { ProfileStats } from './ProfileStats'
 import { SettingsGroup, SettingsRow } from './SettingsList'
 
@@ -74,6 +74,8 @@ export function SettingsPage() {
           <SettingsRow to="/profile/dev" icon={Wrench} title={text.dev.title} value={__APP_VERSION__} />
         </SettingsGroup>
       )}
+
+      <AccountActions />
 
       <VersionLine />
     </div>

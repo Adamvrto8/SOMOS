@@ -59,8 +59,9 @@ test('the tab bar ends with Profil, its numbers there without an account; Archí
   await bar.getByRole('link', { name: 'Profil' }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profil')
   await expect(page.getByRole('heading', { name: 'Moje štatistiky' })).toBeVisible()
-  await page.getByRole('link', { name: /^Celý prehľad/ }).tap()
-  await expect(page).toHaveURL(/\/stats$/)
+  await expect(page.getByText('najdlhšia séria')).toBeVisible()
+  // Without an account there is nothing to sign out of.
+  await expect(button(page, 'Odhlásiť sa')).toHaveCount(0)
 
   await bar.getByRole('link', { name: 'Hľadať' }).tap()
   await page.getByRole('link', { name: /^Môj archív/ }).tap()

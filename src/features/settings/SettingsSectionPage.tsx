@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { useDevMode } from '../../lib/devMode'
-import { AccountSettings } from '../account/AccountSettings'
 import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
 import { GoalSettings, LanguageSettings, LookSettings, SoundSettings } from './ChoiceSettings'
@@ -10,7 +9,6 @@ import { ReminderSettings } from './ReminderSettings'
 import { VoiceSettings } from './VoiceSettings'
 
 const SECTIONS: Record<string, () => ReactNode> = {
-  account: () => <AccountSettings />,
   goal: () => <GoalSettings />,
   review: () => <AutoReviewSettings />,
   reminder: () => <ReminderSettings />,

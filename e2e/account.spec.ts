@@ -67,11 +67,9 @@ test('signing in with an e-mail code shows the account and syncs', async ({ page
   const calls = await fakeSupabase(page)
   await signInWithCode(page)
   await expect(page).toHaveURL(/\/profile$/)
-  // The top row of Nastavenia is Môj účet now, with the e-mail; its page says how it syncs.
-  const row = page.getByRole('link', { name: new RegExp(EMAIL) })
-  await expect(row).toContainText('Môj účet')
-  await row.tap()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Môj účet')
+  // The top of Profil is the e-mail with how it syncs, nothing to open.
+  await expect(page.getByText(EMAIL)).toBeVisible()
+  await expect(page.getByRole('link', { name: new RegExp(EMAIL) })).toHaveCount(0)
   await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   // The device's settings went to the account.
   expect(calls.pushed).toContainEqual({ kind: 'settings', key: 'settings' })
@@ -87,7 +85,6 @@ test('a wrong code says so and lets the learner try again', async ({ page }) => 
 test('signing out leaves the device without the account', async ({ page }) => {
   const calls = await fakeSupabase(page)
   await signInWithCode(page)
-  await page.getByRole('link', { name: new RegExp(EMAIL) }).tap()
   await button(page, 'Odhlásiť sa').tap()
   await expect(page).toHaveURL(/\/$/)
   expect(calls.logout).toBe(1)
@@ -99,7 +96,6 @@ test('signing out leaves the device without the account', async ({ page }) => {
 test('deleting the account asks first', async ({ page }) => {
   const calls = await fakeSupabase(page)
   await signInWithCode(page)
-  await page.getByRole('link', { name: new RegExp(EMAIL) }).tap()
   await button(page, 'Zmazať účet').tap()
   await expect(page.getByText('Zmazať účet?')).toBeVisible()
   await button(page, 'Zrušiť').tap()
@@ -124,7 +120,6 @@ test('the first sign-in takes the progress already on the device to the account'
   await page.getByRole('button', { name: 'Uložiť do archívu' }).first().tap()
   await expect(page.getByRole('button', { name: 'Odstrániť z archívu' }).first()).toBeVisible()
   await signInWithCode(page)
-  await page.getByRole('link', { name: new RegExp(EMAIL) }).tap()
   await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   expect(calls.pushed).toContainEqual({ kind: 'saved', key: 'word:casa' })
 })

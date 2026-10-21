@@ -815,7 +815,7 @@ export const sk = {
       },
       {
         heading: 'Ako dlho',
-        body: 'Kým máš účet. V Nastaveniach → Môj účet → Zmazať účet zmažeš účet a celý progres na serveri aj v zariadení okamžite. Odhlásením sa progres zmaže iba zo zariadenia.',
+        body: 'Kým máš účet. V Profile → Zmazať účet (úplne dole) zmažeš účet a celý progres na serveri aj v zariadení okamžite. Odhlásením sa progres zmaže iba zo zariadenia.',
       },
       {
         heading: 'Tvoje práva',

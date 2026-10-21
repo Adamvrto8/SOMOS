@@ -759,7 +759,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'How long',
-        body: 'As long as you have an account. Settings → My account → Delete account deletes the account and all progress on the server and on the device at once. Signing out removes the progress from the device only.',
+        body: 'As long as you have an account. Profile → Delete account (at the very bottom) deletes the account and all progress on the server and on the device at once. Signing out removes the progress from the device only.',
       },
       {
         heading: 'Your rights',
