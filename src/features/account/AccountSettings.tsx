@@ -46,19 +46,17 @@ function StatusLine({ status }: { status: SyncStatus }) {
   )
 }
 
-/** The top of Nastavenia: sign in, or the account with its sync state, leading to its page. */
+/** The top of Profil: sign in, or Môj účet with the e-mail, leading to its page. */
 export function AccountRow() {
   const text = useT().account
   const account = useAccount()
-  const status = useSyncStatus()
-  const line = useStatusText(status)
   if (!accountsAvailable) return null
   return (
     <SettingsGroup id="account-heading">
       {account ? (
-        <SettingsRow to="/archive/settings/account" icon={CircleUser} title={account.email ?? text.title} detail={line} />
+        <SettingsRow to="/profile/account" icon={CircleUser} title={text.title} detail={account.email} />
       ) : (
-        <SettingsRow to="/archive/account" icon={CircleUser} title={text.signIn} detail={text.rowHint} />
+        <SettingsRow to="/profile/sign-in" icon={CircleUser} title={text.signIn} detail={text.rowHint} />
       )}
     </SettingsGroup>
   )
@@ -67,7 +65,7 @@ export function AccountRow() {
 /** Starts the app afresh once the account's data has left the device. */
 const restart = () => window.location.assign('/')
 
-/** Nastavenia → Účet: the account with its sync state, sign-out and deletion. */
+/** Profil → Môj účet: the account with its sync state, sign-out and deletion. */
 export function AccountSettings() {
   const text = useT().account
   const account = useAccount()
@@ -76,8 +74,8 @@ export function AccountSettings() {
   const [busy, setBusy] = useState(false)
   const [failed, setFailed] = useState(false)
 
-  if (!accountsAvailable) return <Navigate to="/archive/settings" replace />
-  if (!account) return <Navigate to="/archive/account" replace />
+  if (!accountsAvailable) return <Navigate to="/profile" replace />
+  if (!account) return <Navigate to="/profile/sign-in" replace />
 
   const run = async (action: () => Promise<void>) => {
     setBusy(true)
@@ -119,9 +117,11 @@ export function AccountSettings() {
             <RefreshCw size={18} strokeWidth={1.75} className={status.state === 'syncing' ? 'animate-spin' : ''} aria-hidden />
           </button>
         </div>
+      </div>
 
+      <div className="rounded-card border border-line bg-surface p-4">
         {confirm === 'pending' ? (
-          <div className="mt-4 rounded-xl border border-amber/40 bg-amber/10 p-3">
+          <div className="rounded-xl border border-amber/40 bg-amber/10 p-3">
             <p className="font-medium">{text.pendingTitle}</p>
             <p className="mt-1 text-sm text-ink-muted">{text.pendingHint}</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
@@ -134,7 +134,7 @@ export function AccountSettings() {
             </div>
           </div>
         ) : confirm === 'delete' ? (
-          <div className="mt-4 rounded-xl border border-error/30 bg-error/10 p-3">
+          <div className="rounded-xl border border-error/30 bg-error/10 p-3">
             <p className="font-medium">{text.deleteTitle}</p>
             <p className="mt-1 text-sm text-ink-muted">{text.deleteHint}</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
@@ -147,7 +147,7 @@ export function AccountSettings() {
             </div>
           </div>
         ) : (
-          <div className="mt-4 grid gap-2">
+          <div className="grid gap-2">
             <Button variant="secondary" icon={LogOut} disabled={busy} onClick={() => void leave(false)}>
               {text.signOut}
             </Button>

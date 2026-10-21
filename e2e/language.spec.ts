@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test'
 
 test('the language is switched in Nastavenia and applies at once, everywhere', async ({ page }) => {
-  await page.goto('/archive/settings')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Nastavenia')
+  await page.goto('/profile')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profil')
   await page.getByRole('link', { name: /^Jazyk/ }).tap()
   await page.getByRole('radio', { name: 'English' }).tap()
 
@@ -17,7 +17,7 @@ test('the language is switched in Nastavenia and applies at once, everywhere', a
   await page.getByRole('navigation').getByRole('link', { name: 'Home' }).tap()
   await expect(page.getByRole('heading', { name: 'Last 7 days' })).toBeVisible()
 
-  await page.goto('/archive/settings/language')
+  await page.goto('/profile/language')
   await page.getByRole('radio', { name: 'Slovenčina' }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Jazyk')
   await expect(page.getByRole('navigation').getByRole('link', { name: 'Domov' })).toBeVisible()
@@ -26,8 +26,8 @@ test('the language is switched in Nastavenia and applies at once, everywhere', a
 test('a phone that is not Slovak or Czech starts in English', async ({ browser }) => {
   const context = await browser.newContext({ locale: 'de-DE' })
   const page = await context.newPage()
-  await page.goto('/archive/settings')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Settings')
+  await page.goto('/profile')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profile')
   await context.close()
 })
 

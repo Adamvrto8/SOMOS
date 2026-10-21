@@ -1,6 +1,5 @@
 import { AudioLines, Bell, DatabaseBackup, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
 import { useRef, useState } from 'react'
-import { BackButton } from '../../components/BackButton'
 import { dictionaries, useT } from '../../i18n'
 import { useAutoReviewSettings } from '../../lib/autoReview'
 import { useDailyGoal } from '../../lib/dailyGoal'
@@ -11,6 +10,7 @@ import { useSoundSet } from '../../lib/sound'
 import { useLook, useThemePref } from '../../lib/theme'
 import { ttsSupported, useVoices } from '../../lib/tts'
 import { AccountRow } from '../account/AccountSettings'
+import { ProfileStats } from './ProfileStats'
 import { SettingsGroup, SettingsRow } from './SettingsList'
 
 /** The name of the voice that speaks now; none when the phone has no Spanish one. */
@@ -24,7 +24,7 @@ function useVoiceName(): string | undefined {
 /** Taps on the version line that start the countdown toward developer mode, as in Android. */
 const COUNTDOWN_FROM = 3
 
-/** Nastavenia: every setting as a row with what is set now; each one opens its own page. */
+/** Profil (`/profile`, the fourth tab): the account, the learner's numbers, and every setting as a row with what is set now. */
 export function SettingsPage() {
   const dictionary = useT()
   const text = dictionary.settings
@@ -40,39 +40,38 @@ export function SettingsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <BackButton fallback="/archive" />
-        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
-      </div>
+      <h1 className="font-serif text-4xl font-semibold tracking-tight">{dictionary.nav.profile}</h1>
 
       <AccountRow />
 
+      <ProfileStats />
+
       <SettingsGroup id="settings-learning" title={text.groups.learning}>
-        <SettingsRow to="/archive/settings/goal" icon={Target} title={text.dailyGoal} value={String(goal)} />
+        <SettingsRow to="/profile/goal" icon={Target} title={text.dailyGoal} value={String(goal)} />
         <SettingsRow
-          to="/archive/settings/review"
+          to="/profile/review"
           icon={Repeat}
           title={text.autoReview.row}
           value={autoReview.enabled ? text.perDay(autoReview.limit) : text.off}
         />
-        <SettingsRow to="/archive/settings/reminder" icon={Bell} title={dictionary.reminder.row} value={reminder.enabled ? reminder.time : text.off} />
+        <SettingsRow to="/profile/reminder" icon={Bell} title={dictionary.reminder.row} value={reminder.enabled ? reminder.time : text.off} />
       </SettingsGroup>
 
       <SettingsGroup id="settings-app" title={text.groups.app}>
-        <SettingsRow to="/archive/settings/language" icon={Languages} title={text.language} value={dictionaries[language].languageName} />
-        <SettingsRow to="/archive/settings/look" icon={Palette} title={text.appearance} value={themePref === 'system' ? text.lookOptions[look] : `${text.lookOptions[look]} · ${text.themeOptions[themePref]}`} />
-        <SettingsRow to="/archive/settings/sound" icon={Volume2} title={text.sound} value={text.soundOptions[soundSet]} />
-        <SettingsRow to="/archive/settings/voice" icon={AudioLines} title={text.voice.title} value={voice} />
+        <SettingsRow to="/profile/language" icon={Languages} title={text.language} value={dictionaries[language].languageName} />
+        <SettingsRow to="/profile/look" icon={Palette} title={text.appearance} value={themePref === 'system' ? text.lookOptions[look] : `${text.lookOptions[look]} · ${text.themeOptions[themePref]}`} />
+        <SettingsRow to="/profile/sound" icon={Volume2} title={text.sound} value={text.soundOptions[soundSet]} />
+        <SettingsRow to="/profile/voice" icon={AudioLines} title={text.voice.title} value={voice} />
       </SettingsGroup>
 
       <SettingsGroup id="settings-data" title={text.groups.data}>
-        <SettingsRow to="/archive/settings/backup" icon={DatabaseBackup} title={text.backup.title} />
+        <SettingsRow to="/profile/backup" icon={DatabaseBackup} title={text.backup.title} />
         <SettingsRow to="/privacy" icon={ShieldCheck} title={text.privacy} />
       </SettingsGroup>
 
       {devMode && (
         <SettingsGroup id="settings-dev" title={text.groups.dev}>
-          <SettingsRow to="/archive/settings/dev" icon={Wrench} title={text.dev.title} value={__APP_VERSION__} />
+          <SettingsRow to="/profile/dev" icon={Wrench} title={text.dev.title} value={__APP_VERSION__} />
         </SettingsGroup>
       )}
 

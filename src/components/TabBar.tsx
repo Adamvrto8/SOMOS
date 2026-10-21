@@ -1,10 +1,10 @@
-import { Bookmark, House, PencilLine, Search, type LucideIcon } from 'lucide-react'
+import { CircleUser, House, PencilLine, Search, type LucideIcon } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
 import { useT } from '../i18n'
 
 interface Tab {
   to: string
-  key: 'home' | 'search' | 'practice' | 'archive' // its name in the dictionary
+  key: 'home' | 'search' | 'practice' | 'profile' // its name in the dictionary
   icon: LucideIcon
   // Paths (besides `to`) that belong to this tab, e.g. word detail under Hľadať.
   sections?: string[]
@@ -12,9 +12,10 @@ interface Tab {
 
 const TABS: Tab[] = [
   { to: '/', key: 'home', icon: House, sections: ['/stats'] },
-  { to: '/search', key: 'search', icon: Search, sections: ['/word', '/topic'] },
+  // Archív is the learner's own dictionary: it opens from Hľadať.
+  { to: '/search', key: 'search', icon: Search, sections: ['/word', '/topic', '/archive'] },
   { to: '/practice', key: 'practice', icon: PencilLine },
-  { to: '/archive', key: 'archive', icon: Bookmark },
+  { to: '/profile', key: 'profile', icon: CircleUser, sections: ['/privacy'] },
 ]
 
 const isUnder = (pathname: string, base: string) => pathname === base || pathname.startsWith(`${base}/`)

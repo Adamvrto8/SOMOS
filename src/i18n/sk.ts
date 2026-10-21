@@ -38,7 +38,8 @@ export const sk = {
     home: 'Domov',
     search: 'Hľadať',
     practice: 'Cvičiť',
-    archive: 'Archív',
+    /** The fourth tab: the learner's numbers, account and Nastavenia. */
+    profile: 'Profil',
     searchWord: 'Hľadať slovo',
   },
 
@@ -58,6 +59,8 @@ export const sk = {
     version: 'Verzia',
     /** The groups of rows on the main page. */
     groups: { learning: 'Učenie', app: 'Aplikácia', data: 'Údaje', dev: 'Vývoj' },
+    /** Profil, above the settings: the learner's numbers. */
+    stats: 'Moje štatistiky',
     goalOption: (n: number) => `${n} ${pluralSk(n, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`,
     /** The value of a switched-off row: Automatické opakovanie · Vypnuté */
     off: 'Vypnuté',
@@ -301,6 +304,10 @@ export const sk = {
     nothing: (query: string) => `Nenašli sme nič pre „${query}“.`,
     nothingHint: 'Skús iný tvar slova alebo slovenský výraz.',
     topics: 'Témy',
+    /** The card above the topics that opens Archív. */
+    archive: 'Môj archív',
+    archiveCounts: (saved: number, mine: number) =>
+      `${saved} ${pluralSk(saved, ['uložené', 'uložené', 'uložených'])} · ${mine} ${pluralSk(mine, ['moje slovo', 'moje slová', 'mojich slov'])}`,
     words: (n: number) => `${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     topicNotFound: 'Téma sa nenašla',
     previousTopic: 'Predchádzajúca téma',
@@ -737,7 +744,7 @@ export const sk = {
 
   /** Optional accounts and sync (src/lib/account.ts). */
   account: {
-    title: 'Účet',
+    title: 'Môj účet',
     why: 'S účtom máš progres v bezpečí a na každom zariadení, kde sa prihlásiš. Bez účtu ostáva len v tomto zariadení.',
     /** Under "Prihlásiť sa" in the list of Nastavenia. */
     rowHint: 'Progres v bezpečí na každom zariadení',
@@ -808,7 +815,7 @@ export const sk = {
       },
       {
         heading: 'Ako dlho',
-        body: 'Kým máš účet. V Nastaveniach → Účet → Zmazať účet zmažeš účet a celý progres na serveri aj v zariadení okamžite. Odhlásením sa progres zmaže iba zo zariadenia.',
+        body: 'Kým máš účet. V Nastaveniach → Môj účet → Zmazať účet zmažeš účet a celý progres na serveri aj v zariadení okamžite. Odhlásením sa progres zmaže iba zo zariadenia.',
       },
       {
         heading: 'Tvoje práva',

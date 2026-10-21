@@ -28,7 +28,7 @@ export const en: Dictionary = {
     home: 'Home',
     search: 'Search',
     practice: 'Practice',
-    archive: 'Archive',
+    profile: 'Profile',
     searchWord: 'Search for a word',
   },
 
@@ -47,6 +47,7 @@ export const en: Dictionary = {
     soundHint: "When you answer, at the end of a lesson and when the daily goal is reached. They follow the phone's media volume.",
     version: 'Version',
     groups: { learning: 'Learning', app: 'App', data: 'Data', dev: 'Development' },
+    stats: 'My statistics',
     goalOption: (n) => counted(n, 'correct answer', 'correct answers'),
     off: 'Off',
     perDay: (n) => `${n} a day`,
@@ -277,6 +278,8 @@ export const en: Dictionary = {
     nothing: (query) => `Nothing found for “${query}”.`,
     nothingHint: 'Try another form of the word, or the English word.',
     topics: 'Topics',
+    archive: 'My archive',
+    archiveCounts: (saved, mine) => `${saved} saved · ${counted(mine, 'own word', 'own words')}`,
     words: (n) => counted(n, 'word', 'words'),
     topicNotFound: 'Topic not found',
     previousTopic: 'Previous topic',
@@ -688,7 +691,7 @@ export const en: Dictionary = {
     allDone: 'All exams passed',
   },
   account: {
-    title: 'Account',
+    title: 'My account',
     why: 'With an account your progress is safe and on every device you sign in on. Without one it stays on this device only.',
     rowHint: 'Progress kept safe on every device',
     signIn: 'Sign in',
@@ -756,7 +759,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'How long',
-        body: 'As long as you have an account. Settings → Account → Delete account deletes the account and all progress on the server and on the device at once. Signing out removes the progress from the device only.',
+        body: 'As long as you have an account. Settings → My account → Delete account deletes the account and all progress on the server and on the device at once. Signing out removes the progress from the device only.',
       },
       {
         heading: 'Your rights',

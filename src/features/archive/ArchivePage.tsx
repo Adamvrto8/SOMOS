@@ -1,5 +1,6 @@
-import { Layers, Settings } from 'lucide-react'
+import { Layers } from 'lucide-react'
 import { Link } from 'react-router'
+import { BackButton } from '../../components/BackButton'
 import { Segmented } from '../../components/Segmented'
 import { useT } from '../../i18n'
 import { useCustomWords, useSavedItems } from '../../lib/archive'
@@ -31,16 +32,10 @@ export function ArchivePage() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
-        <Link
-          to="/archive/settings"
-          aria-label={dictionary.settings.title}
-          title={dictionary.settings.title}
-          className="-mr-2 flex size-11 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
-        >
-          <Settings size={22} strokeWidth={1.75} aria-hidden />
-        </Link>
+      {/* Opened from Hľadať: the learner's own dictionary. */}
+      <div>
+        <BackButton fallback="/search" />
+        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
       </div>
 
       {review && review.dueToday > 0 && (

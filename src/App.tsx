@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router'
+import { createBrowserRouter, Navigate, useLocation, useParams } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
 import { PrivacyPage } from './features/account/PrivacyPage'
@@ -21,6 +21,16 @@ import { TestsPage } from './features/tests/TestsPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
 
+function LegacySettingsRedirect() {
+  return <Navigate to={`/profile/${useParams().section ?? ''}`} replace />
+}
+
+/** Keeps ?code= and #… of a sign-in that Google finishes at the old address. */
+function LegacySignInRedirect() {
+  const { search, hash } = useLocation()
+  return <Navigate to={`/profile/sign-in${search}${hash}`} replace />
+}
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -38,9 +48,13 @@ const router = createBrowserRouter([
       { path: 'archive', element: <ArchivePage /> },
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },
-      { path: 'archive/settings', element: <SettingsPage /> },
-      { path: 'archive/settings/:section', element: <SettingsSectionPage /> },
-      { path: 'archive/account', element: <SignInPage /> },
+      { path: 'profile', element: <SettingsPage /> },
+      { path: 'profile/sign-in', element: <SignInPage /> },
+      { path: 'profile/:section', element: <SettingsSectionPage /> },
+      // Where Nastavenia and the sign-in page were: old bookmarks, and Google returning to an older redirect address.
+      { path: 'archive/settings', element: <Navigate to="/profile" replace /> },
+      { path: 'archive/settings/:section', element: <LegacySettingsRedirect /> },
+      { path: 'archive/account', element: <LegacySignInRedirect /> },
       { path: 'privacy', element: <PrivacyPage /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],

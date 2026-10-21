@@ -44,7 +44,7 @@ export function HomePage() {
       {/* A reminder that stopped is silent: without this nobody would notice. */}
       {reminderProblem && (
         <Link
-          to="/archive/settings"
+          to="/profile/reminder"
           className="flex items-center gap-3 rounded-card border border-error/40 bg-error/10 px-5 py-4 transition-colors duration-150 hover:border-error focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
         >
           <BellOff size={20} strokeWidth={1.75} className="shrink-0 text-error" aria-hidden />

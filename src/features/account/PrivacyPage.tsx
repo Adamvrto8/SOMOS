@@ -6,7 +6,7 @@ export function PrivacyPage() {
   const text = useT().privacy
   return (
     <div>
-      <BackButton fallback="/archive/settings" />
+      <BackButton fallback="/profile" />
       <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
       <p className="mt-1 text-sm text-ink-muted">{text.updated}</p>
       <div className="mt-6 space-y-6">

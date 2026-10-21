@@ -22,7 +22,7 @@ const MARKER = 'somos-account'
 /** Where supabase-js keeps the session (and, with "-code-verifier", the PKCE verifier during a Google sign-in). */
 const AUTH_STORAGE_KEY = 'somos-auth'
 /** Where Google sends the learner back; the sign-in page finishes there. */
-export const SIGN_IN_PATH = '/archive/account'
+export const SIGN_IN_PATH = '/profile/sign-in'
 
 function readMarker(): Account | null {
   try {

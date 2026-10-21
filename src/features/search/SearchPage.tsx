@@ -6,6 +6,7 @@ import { useT } from '../../i18n'
 import { useSavedWordIds } from '../../lib/archive'
 import { searchWords, type SearchFilter } from '../../lib/search'
 import { useUrlParam, useUrlQuery } from '../../lib/useUrlQuery'
+import { ArchiveCard } from './ArchiveCard'
 import { OnlineTranslate } from './OnlineTranslate'
 import { TopicGrid } from './TopicGrid'
 import { WordRow } from './WordRow'
@@ -48,7 +49,12 @@ export function SearchPage() {
       </div>
 
       {showTopics ? (
-        <TopicGrid />
+        <>
+          <ArchiveCard />
+          <div className="pt-2">
+            <TopicGrid />
+          </div>
+        </>
       ) : (
         <>
           <p aria-live="polite" className="sr-only">

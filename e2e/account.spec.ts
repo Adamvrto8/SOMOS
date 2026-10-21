@@ -54,7 +54,7 @@ async function fakeSupabase(page: Page, { goodCode = '123456' } = {}): Promise<C
 }
 
 async function signInWithCode(page: Page, code = '123456') {
-  await page.goto('/archive/settings')
+  await page.goto('/profile')
   await page.getByRole('link', { name: 'Prihlásiť sa' }).tap()
   await page.getByLabel('E-mail').fill(EMAIL)
   await button(page, 'Poslať kód').tap()
@@ -66,12 +66,12 @@ async function signInWithCode(page: Page, code = '123456') {
 test('signing in with an e-mail code shows the account and syncs', async ({ page }) => {
   const calls = await fakeSupabase(page)
   await signInWithCode(page)
-  await expect(page).toHaveURL(/\/archive\/settings$/)
-  // The top row of Nastavenia is the account now, with how it syncs; its page says the same.
+  await expect(page).toHaveURL(/\/profile$/)
+  // The top row of Nastavenia is Môj účet now, with the e-mail; its page says how it syncs.
   const row = page.getByRole('link', { name: new RegExp(EMAIL) })
-  await expect(row).toContainText('Synchronizované práve teraz')
+  await expect(row).toContainText('Môj účet')
   await row.tap()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Účet')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Môj účet')
   await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   // The device's settings went to the account.
   expect(calls.pushed).toContainEqual({ kind: 'settings', key: 'settings' })
@@ -91,7 +91,7 @@ test('signing out leaves the device without the account', async ({ page }) => {
   await button(page, 'Odhlásiť sa').tap()
   await expect(page).toHaveURL(/\/$/)
   expect(calls.logout).toBe(1)
-  await page.goto('/archive/settings')
+  await page.goto('/profile')
   await expect(page.getByRole('link', { name: 'Prihlásiť sa' })).toBeVisible()
   expect(await page.evaluate(() => localStorage.getItem('somos-auth'))).toBeNull()
 })
@@ -112,7 +112,7 @@ test('deleting the account asks first', async ({ page }) => {
 })
 
 test('the privacy policy opens from the sign-in page', async ({ page }) => {
-  await page.goto('/archive/account')
+  await page.goto('/profile/sign-in')
   await page.getByRole('link', { name: 'Ochrana súkromia' }).tap()
   await expect(page.getByRole('heading', { name: 'Ochrana súkromia' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'S účtom' })).toBeVisible()
@@ -124,6 +124,7 @@ test('the first sign-in takes the progress already on the device to the account'
   await page.getByRole('button', { name: 'Uložiť do archívu' }).first().tap()
   await expect(page.getByRole('button', { name: 'Odstrániť z archívu' }).first()).toBeVisible()
   await signInWithCode(page)
-  await expect(page.getByRole('link', { name: new RegExp(EMAIL) })).toContainText('Synchronizované práve teraz')
+  await page.getByRole('link', { name: new RegExp(EMAIL) }).tap()
+  await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   expect(calls.pushed).toContainEqual({ kind: 'saved', key: 'word:casa' })
 })

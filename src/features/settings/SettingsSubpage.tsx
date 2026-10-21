@@ -11,7 +11,7 @@ export function SettingsSubpage({ title, children }: SettingsSubpageProps) {
   return (
     <div className="space-y-6">
       <div>
-        <BackButton fallback="/archive/settings" />
+        <BackButton fallback="/profile" />
         <h1 className="mt-2 font-serif text-3xl leading-tight font-semibold tracking-tight">{title}</h1>
       </div>
       {children}

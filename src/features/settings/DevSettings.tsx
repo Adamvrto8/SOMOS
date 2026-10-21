@@ -31,7 +31,7 @@ export function DevSettings() {
 
   const turnOff = () => {
     setDevMode(false)
-    void navigate('/archive/settings', { replace: true })
+    void navigate('/profile', { replace: true })
   }
 
   return (

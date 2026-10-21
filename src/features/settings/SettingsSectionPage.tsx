@@ -22,11 +22,11 @@ const SECTIONS: Record<string, () => ReactNode> = {
   dev: () => <DevSettings />,
 }
 
-/** `/archive/settings/:section`: one setting's page; an unknown one, or the tools outside developer mode, lead back to the list. */
+/** `/profile/:section`: one setting's page; an unknown one, or the tools outside developer mode, lead back to the list. */
 export function SettingsSectionPage() {
   const { section = '' } = useParams()
   const devMode = useDevMode()
   const page = Object.hasOwn(SECTIONS, section) ? SECTIONS[section] : undefined
-  if (!page || (section === 'dev' && !devMode)) return <Navigate to="/archive/settings" replace />
+  if (!page || (section === 'dev' && !devMode)) return <Navigate to="/profile" replace />
   return page()
 }

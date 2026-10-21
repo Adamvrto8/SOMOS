@@ -17,7 +17,7 @@ test('a backup carries the settings to another device', async ({ page }) => {
     settings,
   }
 
-  await page.goto('/archive/settings/backup')
+  await page.goto('/profile/backup')
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light')
   await page.locator('input[type=file]').setInputFiles({ name: 'somos-zaloha.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(backup)) })
 

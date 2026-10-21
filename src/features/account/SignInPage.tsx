@@ -39,7 +39,7 @@ export function SignInPage() {
   const [busy, setBusy] = useState(returning)
   const codeField = useRef<HTMLInputElement>(null)
 
-  const done = () => void navigate('/archive/settings', { replace: true })
+  const done = () => void navigate('/profile', { replace: true })
 
   useEffect(() => {
     if (!returning || !accountsAvailable) return
@@ -103,7 +103,7 @@ export function SignInPage() {
   if (!accountsAvailable) {
     return (
       <div>
-        <BackButton fallback="/archive/settings" />
+        <BackButton fallback="/profile" />
         <p className="mt-6 text-ink-muted">{text.unavailable}</p>
       </div>
     )
@@ -111,7 +111,7 @@ export function SignInPage() {
 
   return (
     <div>
-      <BackButton fallback="/archive/settings" />
+      <BackButton fallback="/profile" />
       <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.signInTitle}</h1>
 
       {account && !busy ? (
