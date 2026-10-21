@@ -4,7 +4,7 @@ const token = (page: Page, name: string) => page.evaluate((n) => getComputedStyl
 const titleFont = (page: Page) => page.getByRole('heading', { level: 1 }).evaluate((h) => getComputedStyle(h).fontFamily)
 
 test('the style is switched in Nastavenia, applies at once and survives a reload', async ({ page }) => {
-  await page.goto('/archive/settings')
+  await page.goto('/archive/settings/look')
   await expect(page.locator('html')).toHaveAttribute('data-look', 'classic')
   expect(await token(page, '--brick')).toBe('#B5553C')
   expect(await titleFont(page)).toContain('Fraunces')
@@ -37,7 +37,7 @@ test('every style brings its own colours and typefaces, keeps the same corners, 
   const cardCorner = () => page.locator('.rounded-card').first().evaluate((card) => getComputedStyle(card).borderRadius)
   const fits = () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)
 
-  await page.goto('/archive/settings')
+  await page.goto('/archive/settings/look')
   expect(await cardCorner()).toBe('16px')
 
   await page.getByRole('radio', { name: 'Talavera' }).tap()

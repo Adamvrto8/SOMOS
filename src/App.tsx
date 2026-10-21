@@ -6,7 +6,8 @@ import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
 import { ArchivePage } from './features/archive/ArchivePage'
 import { CustomWordPage } from './features/archive/CustomWordPage'
-import { SettingsPage } from './features/archive/SettingsPage'
+import { SettingsPage } from './features/settings/SettingsPage'
+import { SettingsSectionPage } from './features/settings/SettingsSectionPage'
 import { LessonPage } from './features/exercises/LessonPage'
 import { PracticePage } from './features/exercises/PracticePage'
 import { GrammarPage } from './features/grammar/GrammarPage'
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },
       { path: 'archive/settings', element: <SettingsPage /> },
+      { path: 'archive/settings/:section', element: <SettingsSectionPage /> },
       { path: 'archive/account', element: <SignInPage /> },
       { path: 'privacy', element: <PrivacyPage /> },
       { path: '*', element: <Navigate to="/" replace /> },

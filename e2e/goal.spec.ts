@@ -137,7 +137,7 @@ test('in a review the card that completes the goal waits under the sun', async (
 
 test('Nastavenia can show the sun without an answer, each time with another streak, and nothing is counted', async ({ page }) => {
   await goalOfTen(page)
-  await page.goto('/archive/settings')
+  await page.goto('/archive/settings/dev')
   const show = button(page, 'Ukázať slnko denného cieľa')
 
   await show.tap()

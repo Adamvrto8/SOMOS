@@ -17,7 +17,7 @@ async function listen(page: Page): Promise<() => Promise<string[]>> {
 
 test('the sounds are chosen in Nastavenia, heard at once, and the choice survives a reload', async ({ page }) => {
   const heard = await listen(page)
-  await page.goto('/archive/settings')
+  await page.goto('/archive/settings/sound')
   await expect(page.getByRole('radio', { name: 'Suave' })).toBeChecked()
   expect(await heard()).toEqual([])
 

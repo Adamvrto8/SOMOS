@@ -46,15 +46,34 @@ export const en: Dictionary = {
     soundOptions: { off: 'Off', suave: 'Suave', marimba: 'Marimba' },
     soundHint: "When you answer, at the end of a lesson and when the daily goal is reached. They follow the phone's media volume.",
     version: 'Version',
+    groups: { learning: 'Learning', app: 'App', data: 'Data', dev: 'Development' },
+    goalOption: (n) => counted(n, 'correct answer', 'correct answers'),
+    off: 'Off',
+    perDay: (n) => `${n} a day`,
+    privacy: 'Privacy',
+    devTapsLeft: (n) => `${counted(n, 'more tap', 'more taps')} to turn on developer mode.`,
+    devModeOn: 'Developer mode is on.',
 
     dev: {
-      title: 'For development',
+      title: 'Developer tools',
+      sun: 'Daily goal sun',
       showSun: 'Show the daily goal sun',
       showSunHint: 'Just a preview, nothing is counted. Every tap shows another number of days.',
+      reminderOff: 'Test notifications and the server state are here while the reminder is on.',
+      storage: 'Storage',
+      build: 'App version',
+      commit: 'Commit',
+      builtAt: 'Built',
+      mode: 'Running as',
+      modeDev: 'dev server',
+      modeProd: 'deployed app',
+      turnOff: 'Turn off developer mode',
+      turnOffHint: 'Settings will look as they do for a learner. Tap the version seven times to turn it on again.',
     },
 
     autoReview: {
       title: 'Automatic review',
+      row: 'Word review',
       toggle: 'Review practiced words',
       toggleHint: 'Words from Vocabulary and Conjugation come back for review.',
       limit: 'Most per day',
@@ -110,6 +129,7 @@ export const en: Dictionary = {
 
   reminder: {
     title: 'Practice reminder',
+    row: 'Reminder',
     toggle: 'Remind me to practice',
     toggleHint: 'Once a day, if the daily goal is not met yet.',
     time: 'Time',
@@ -670,6 +690,7 @@ export const en: Dictionary = {
   account: {
     title: 'Account',
     why: 'With an account your progress is safe and on every device you sign in on. Without one it stays on this device only.',
+    rowHint: 'Progress kept safe on every device',
     signIn: 'Sign in',
     status: {
       syncing: 'Syncing…',

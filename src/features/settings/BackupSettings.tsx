@@ -1,28 +1,21 @@
 import { Download, Upload } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '../../components/Button'
-import { SectionTitle } from '../../components/SectionTitle'
 import { useT } from '../../i18n'
 import { downloadBackup, importBackup, parseBackup } from '../../lib/backup'
+import { SettingsHint, SettingsSubpage } from './SettingsSubpage'
 
 interface Status {
   tone: 'ok' | 'error'
   text: string
 }
 
+/** Nastavenia → Záloha: everything of this device to a file, and back. */
 export function BackupSettings() {
   const text = useT().settings.backup
   const fileRef = useRef<HTMLInputElement>(null)
   const [status, setStatus] = useState<Status | null>(null)
   const [busy, setBusy] = useState(false)
-  const [persisted, setPersisted] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    navigator.storage
-      ?.persisted?.()
-      .then(setPersisted)
-      .catch(() => setPersisted(null))
-  }, [])
 
   const exportData = async () => {
     try {
@@ -47,18 +40,10 @@ export function BackupSettings() {
   }
 
   return (
-    <section aria-labelledby="backup-heading">
-      <SectionTitle id="backup-heading">{text.title}</SectionTitle>
-      <p className="text-sm leading-relaxed text-ink-muted">
-        {text.intro}
-      </p>
-      {persisted !== null && (
-        <p className="mt-2 text-sm text-ink-muted">
-          {persisted ? text.persisted : text.notPersisted}
-        </p>
-      )}
+    <SettingsSubpage title={text.title}>
+      <SettingsHint>{text.intro}</SettingsHint>
 
-      <div className="mt-4 grid gap-3">
+      <div className="grid gap-3">
         <Button variant="secondary" icon={Download} onClick={() => void exportData()}>
           {text.download}
         </Button>
@@ -80,9 +65,25 @@ export function BackupSettings() {
         />
       </div>
 
-      <p role="status" className={`mt-3 text-sm ${status?.tone === 'error' ? 'text-error' : 'text-leaf'}`}>
+      <p role="status" className={`px-1 text-sm ${status?.tone === 'error' ? 'text-error' : 'text-leaf'}`}>
         {status?.text}
       </p>
-    </section>
+    </SettingsSubpage>
   )
+}
+
+/** Developer tools: whether the browser may clear this device's data when space runs out. */
+export function StorageInfo() {
+  const text = useT().settings.backup
+  const [persisted, setPersisted] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    navigator.storage
+      ?.persisted?.()
+      .then(setPersisted)
+      .catch(() => setPersisted(null))
+  }, [])
+
+  if (persisted === null) return null
+  return <p className="px-1 text-sm text-ink-muted">{persisted ? text.persisted : text.notPersisted}</p>
 }

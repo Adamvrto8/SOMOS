@@ -56,16 +56,39 @@ export const sk = {
     soundOptions: { off: 'Vypnuté', suave: 'Suave', marimba: 'Marimba' },
     soundHint: 'Pri odpovedi, na konci lekcie a pri splnení denného cieľa. Hlasitosť sa riadi hlasitosťou médií v telefóne.',
     version: 'Verzia',
+    /** The groups of rows on the main page. */
+    groups: { learning: 'Učenie', app: 'Aplikácia', data: 'Údaje', dev: 'Vývoj' },
+    goalOption: (n: number) => `${n} ${pluralSk(n, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`,
+    /** The value of a switched-off row: Automatické opakovanie · Vypnuté */
+    off: 'Vypnuté',
+    perDay: (n: number) => `${n} denne`,
+    privacy: 'Ochrana súkromia',
+    /** Under the version line while it is being tapped toward developer mode. */
+    devTapsLeft: (n: number) => `Ešte ${n} ${pluralSk(n, ['ťuknutie', 'ťuknutia', 'ťuknutí'])} a zapne sa vývojársky režim.`,
+    devModeOn: 'Vývojársky režim je zapnutý.',
 
-    /** Tools for working on the app. */
+    /** Tools for working on the app, shown in developer mode only. */
     dev: {
-      title: 'Pre vývoj',
+      title: 'Nástroje pre vývoj',
+      sun: 'Slnko denného cieľa',
       showSun: 'Ukázať slnko denného cieľa',
       showSunHint: 'Len na skúšku, nič sa nezapočíta. Každé ťuknutie ukáže iný počet dní.',
+      reminderOff: 'Skúšobné notifikácie a stav servera sú tu, keď je pripomienka zapnutá.',
+      storage: 'Úložisko',
+      build: 'Verzia aplikácie',
+      commit: 'Commit',
+      builtAt: 'Zostavená',
+      mode: 'Beží ako',
+      modeDev: 'dev server',
+      modeProd: 'nasadená aplikácia',
+      turnOff: 'Vypnúť vývojársky režim',
+      turnOffHint: 'Nastavenia budú vyzerať ako u bežného používateľa. Znova ho zapneš siedmimi ťuknutiami na verziu.',
     },
 
     autoReview: {
       title: 'Automatické opakovanie',
+      /** Its row in the list, where the full name does not fit next to "20 denne". */
+      row: 'Opakovanie slov',
       toggle: 'Opakovať precvičené slová',
       toggleHint: 'Slová zo Slovnej zásoby a Časovania sa vrátia na zopakovanie.',
       limit: 'Najviac za deň',
@@ -121,6 +144,8 @@ export const sk = {
 
   reminder: {
     title: 'Pripomienka cvičenia',
+    /** Its row in the list of Nastavenia. */
+    row: 'Pripomienka',
     toggle: 'Pripomínať cvičenie',
     toggleHint: 'Raz denne, ak ešte nemáš splnený denný cieľ.',
     time: 'Čas',
@@ -714,6 +739,8 @@ export const sk = {
   account: {
     title: 'Účet',
     why: 'S účtom máš progres v bezpečí a na každom zariadení, kde sa prihlásiš. Bez účtu ostáva len v tomto zariadení.',
+    /** Under "Prihlásiť sa" in the list of Nastavenia. */
+    rowHint: 'Progres v bezpečí na každom zariadení',
     signIn: 'Prihlásiť sa',
     status: {
       syncing: 'Synchronizujem…',
