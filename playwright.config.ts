@@ -29,6 +29,7 @@ export default defineConfig({
     port: PORT,
     reuseExistingServer: true,
     // Accounts switched on against a Supabase that every test answers itself (e2e/account.spec.ts).
-    env: { VITE_SUPABASE_URL: 'http://supabase.test', VITE_SUPABASE_ANON_KEY: 'e2e-anon-key' },
+    // Duels on the local backend: the tabs of one browser play against each other (src/lib/duel/localBackend.ts).
+    env: { VITE_SUPABASE_URL: 'http://supabase.test', VITE_SUPABASE_ANON_KEY: 'e2e-anon-key', VITE_DUEL_BACKEND: 'local' },
   },
 })

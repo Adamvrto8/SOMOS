@@ -1,9 +1,10 @@
-import { Award, BookOpen, ChevronRight, Dumbbell, Play, type LucideIcon } from 'lucide-react'
+import { Award, BookOpen, ChevronRight, Dumbbell, Play, Swords, type LucideIcon } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import type { TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import { getLessonRecord, getRememberedLesson, progressionGroup, useLessonProgression, type LessonProgressionMap } from '../../lib/lessonProgress'
+import { duelsAvailable } from '../../lib/duel/backend'
 import { useMistakes } from '../../lib/mistakes'
 import { continueLesson } from '../home/continueLesson'
 import { EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
@@ -49,6 +50,7 @@ export function PracticeHub() {
   const mistakes = useMistakes()
   const next = continueLesson(progression)
   const mistakeCount = mistakes?.length ?? 0
+  const shortcutCount = 2 + (mistakeCount > 0 ? 1 : 0) + (duelsAvailable ? 1 : 0)
 
   return (
     <div className="space-y-6">
@@ -65,8 +67,10 @@ export function PracticeHub() {
         </span>
       </Link>
 
-      <div className={`grid gap-2 ${mistakeCount > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+      {/* Three in a row; two or four as 2 × 2. */}
+      <div className={`grid gap-2 ${shortcutCount === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
         {mistakeCount > 0 && <Shortcut to="/practice/lesson?mistakes=1" icon={Dumbbell} label={text.mistakes} badge={mistakeCount} tone="error" />}
+        {duelsAvailable && <Shortcut to="/duel" icon={Swords} label={text.duel} />}
         <Shortcut to="/practice/tests" icon={Award} label={dictionary.tests.title} />
         <Shortcut to="/practice/grammar" icon={BookOpen} label={text.grammar} />
       </div>

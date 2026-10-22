@@ -14,7 +14,7 @@ const TABS: Tab[] = [
   { to: '/', key: 'home', icon: House, sections: ['/stats'] },
   // Archív is the learner's own dictionary: it opens from Hľadať.
   { to: '/search', key: 'search', icon: Search, sections: ['/word', '/topic', '/archive'] },
-  { to: '/practice', key: 'practice', icon: PencilLine },
+  { to: '/practice', key: 'practice', icon: PencilLine, sections: ['/duel'] },
   { to: '/profile', key: 'profile', icon: CircleUser, sections: ['/privacy'] },
 ]
 

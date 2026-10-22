@@ -30,9 +30,30 @@ export function expectCelebration() {
   })
 }
 
+/** Screens that must not be covered (a live duel against the clock): the celebration waits until they let go. */
+let holds = 0
+let held: Celebration | null = null
+
 export function celebrateGoal(celebration: Celebration) {
   expectCelebration()
-  show(celebration)
+  if (holds > 0) held = celebration
+  else show(celebration)
+}
+
+/** Keeps celebrations off the screen until the returned function is called; then the one that waited shows. */
+export function holdCelebrations(): () => void {
+  holds++
+  let released = false
+  return () => {
+    if (released) return
+    released = true
+    holds--
+    if (holds === 0 && held) {
+      const waiting = held
+      held = null
+      show(waiting)
+    }
+  }
 }
 
 export function dismissCelebration() {

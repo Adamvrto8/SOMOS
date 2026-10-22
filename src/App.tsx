@@ -6,6 +6,8 @@ import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
 import { ArchivePage } from './features/archive/ArchivePage'
 import { CustomWordPage } from './features/archive/CustomWordPage'
+import { DuelHomePage } from './features/duel/DuelHomePage'
+import { DuelRoomPage } from './features/duel/DuelRoomPage'
 import { SettingsPage } from './features/settings/SettingsPage'
 import { SettingsSectionPage } from './features/settings/SettingsSectionPage'
 import { LessonPage } from './features/exercises/LessonPage'
@@ -44,6 +46,7 @@ const router = createBrowserRouter([
       { path: 'practice', element: <PracticePage /> },
       { path: 'practice/grammar', element: <GrammarPage /> },
       { path: 'practice/tests', element: <TestsPage /> },
+      { path: 'duel', element: <DuelHomePage /> },
       { path: 'practice/grammar/:id', element: <TipPage /> },
       { path: 'archive', element: <ArchivePage /> },
       { path: 'archive/new', element: <CustomWordPage /> },
@@ -63,6 +66,7 @@ const router = createBrowserRouter([
   { path: '/practice/lesson', element: <LessonPage /> },
   { path: '/practice/test', element: <TestPage /> },
   { path: '/review', element: <ReviewPage /> },
+  { path: '/duel/:code', element: <DuelRoomPage /> },
 ])
 
 export default function App() {

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest'
-import { celebrateGoal, celebrationOver, dismissCelebration, expectCelebration, getCelebration } from './celebration'
+import { celebrateGoal, celebrationOver, dismissCelebration, expectCelebration, getCelebration, holdCelebrations } from './celebration'
 
 afterEach(dismissCelebration)
 
@@ -37,5 +37,14 @@ describe('the celebration of a reached daily goal', () => {
     celebrateGoal({ goal: 10, streakDays: 1, at: 1 })
     celebrateGoal({ goal: 20, streakDays: 1, at: 2 })
     expect(getCelebration()).toMatchObject({ goal: 20, at: 2 })
+  })
+
+  it('waits while a screen holds it back (a live duel), and shows once it lets go', () => {
+    const release = holdCelebrations()
+    celebrateGoal({ goal: 10, streakDays: 2, at: 5 })
+    expect(getCelebration()).toBeNull()
+    release()
+    release() // twice changes nothing
+    expect(getCelebration()).toEqual({ goal: 10, streakDays: 2, at: 5 })
   })
 })

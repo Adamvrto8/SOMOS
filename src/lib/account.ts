@@ -65,7 +65,8 @@ export function useAccount(): Account | null {
 
 let client: Promise<SupabaseClient> | undefined
 
-function getClient(): Promise<SupabaseClient> {
+/** The one Supabase client of the app (its session is the account), also for the duels. */
+export function getClient(): Promise<SupabaseClient> {
   if (!accountsAvailable) return Promise.reject(new Error('accounts are not configured'))
   // On the page Google returns to, creating the client exchanges the ?code= for a session (PKCE).
   client ??= import('@supabase/supabase-js').then(({ createClient }) =>

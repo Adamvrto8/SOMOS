@@ -380,7 +380,8 @@ function seedFor(type: ExerciseType): number {
   }
 }
 
-function seededRandom(seed: number): () => number {
+/** A repeatable sequence of numbers in [0, 1) from a seed (an LCG): the same seed, the same lesson or duel. */
+export function seededRandom(seed: number): () => number {
   let s = seed
   return () => {
     s = (s * 1664525 + 1013904223) % 4294967296
