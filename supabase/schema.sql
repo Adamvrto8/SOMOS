@@ -127,7 +127,8 @@ end $$;
 -- What a room may be: the app builds the rounds (lib/duel/match.ts), the server checks their shape.
 create or replace function public.valid_duel(p_code text, p_level text, p_rounds jsonb) returns boolean
 language sql immutable set search_path = '' as $$
-  select upper(p_code) ~ '^[A-Z0-9]{6}$'
+  -- Anything missing (NULL) makes the room invalid, never valid.
+  select coalesce(upper(p_code) ~ '^[A-Z0-9]{6}$'
     and p_level in ('A1', 'A2', 'B1')
     and jsonb_typeof(p_rounds) = 'array'
     and jsonb_array_length(p_rounds) = 3
@@ -137,8 +138,10 @@ language sql immutable set search_path = '' as $$
       where jsonb_typeof(r->'items') is distinct from 'array'
          or jsonb_array_length(r->'items') <> 5
          or exists (select 1 from jsonb_array_elements(r->'items') as i where jsonb_typeof(i) <> 'string' or length(i #>> '{}') > 60)
-         or (r->>'type', (r->>'seconds')::numeric) not in (('choice', 10), ('conjugation', 15), ('vocab', 15), ('builder', 25))
-    );
+         or jsonb_typeof(r->'seconds') is distinct from 'number'
+         or (select count(*) from jsonb_object_keys(r)) <> 3 -- type, seconds, items and nothing else
+         or coalesce((r->>'type', (r->>'seconds')::numeric) not in (('choice', 10), ('conjugation', 15), ('vocab', 15), ('builder', 25)), true)
+    ), false);
 $$;
 
 -- The guest takes a seat only through join_duel (or rematch_duel, for the opponent of the last match).
