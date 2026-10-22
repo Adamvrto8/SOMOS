@@ -45,6 +45,22 @@ describe('buildRounds', () => {
     }
   })
 
+  it('always builds what the server accepts (valid_duel in supabase/schema.sql): 3 × 5 items, the allowed type and time', () => {
+    const allowed: Record<string, number> = { choice: 10, conjugation: 15, vocab: 15, builder: 25 }
+    for (const level of ['A1', 'A2', 'B1'] as const) {
+      for (let seed = 0; seed < 40; seed++) {
+        const rounds = buildRounds(level, seed * 7919)
+        expect(rounds).toHaveLength(3)
+        for (const round of rounds) {
+          expect(round.items).toHaveLength(TASKS_PER_ROUND)
+          expect(round.seconds).toBe(allowed[round.type])
+          for (const item of round.items) expect(item.length).toBeLessThanOrEqual(60)
+        }
+        expect(JSON.stringify(rounds).length).toBeLessThan(4000)
+      }
+    }
+  })
+
   it('gives the same seed the same duel, another seed another one', () => {
     expect(buildRounds('A2', 99)).toEqual(buildRounds('A2', 99))
     expect(buildRounds('A2', 99)).not.toEqual(buildRounds('A2', 101))

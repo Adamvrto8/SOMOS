@@ -124,14 +124,35 @@ do $$ begin
   end if;
 end $$;
 
+-- What a room may be: the app builds the rounds (lib/duel/match.ts), the server checks their shape.
+create or replace function public.valid_duel(p_code text, p_level text, p_rounds jsonb) returns boolean
+language sql immutable set search_path = '' as $$
+  select upper(p_code) ~ '^[A-Z0-9]{6}$'
+    and p_level in ('A1', 'A2', 'B1')
+    and jsonb_typeof(p_rounds) = 'array'
+    and jsonb_array_length(p_rounds) = 3
+    and length(p_rounds::text) < 4000
+    and not exists (
+      select 1 from jsonb_array_elements(p_rounds) as r
+      where jsonb_typeof(r->'items') is distinct from 'array'
+         or jsonb_array_length(r->'items') <> 5
+         or exists (select 1 from jsonb_array_elements(r->'items') as i where jsonb_typeof(i) <> 'string' or length(i #>> '{}') > 60)
+         or (r->>'type', (r->>'seconds')::numeric) not in (('choice', 10), ('conjugation', 15), ('vocab', 15), ('builder', 25))
+    );
+$$;
+
 -- The guest takes a seat only through join_duel (or rematch_duel, for the opponent of the last match).
 drop function if exists public.create_duel(text, text, integer, jsonb, uuid);
 create or replace function public.create_duel(p_code text, p_level text, p_seed integer, p_rounds jsonb)
-returns public.duels language sql security definer set search_path = '' as $$
+returns public.duels language plpgsql security definer set search_path = '' as $$
+declare room public.duels;
+begin
+  if not public.valid_duel(p_code, p_level, p_rounds) then raise exception 'invalid'; end if;
   insert into public.duels (code, host, level, seed, rounds)
   values (upper(p_code), (select auth.uid()), p_level, p_seed, p_rounds)
-  returning *;
-$$;
+  returning * into room;
+  return room;
+end $$;
 
 -- The guest takes the free seat; a player of the room opening the link again just gets it.
 create or replace function public.join_duel(p_code text) returns public.duels
@@ -153,11 +174,14 @@ language sql security definer set search_path = '' as $$
 $$;
 
 -- The first answer of a player to a task counts; the server stamps the time it arrived.
+-- Right or wrong and how long it took come from the app (it checks the answer); for friends that is enough,
+-- before a public release the server should check them (docs/duel-spec.md, 4).
 create or replace function public.answer_duel(p_id uuid, p_task integer, p_result text, p_ms integer) returns void
 language sql security definer set search_path = '' as $$
   insert into public.duel_answers (duel_id, user_id, task, result, ms)
   select p_id, (select auth.uid()), p_task, p_result, p_ms
   from public.duels d where d.id = p_id and d.status = 'playing' and (select auth.uid()) in (d.host, d.guest)
+    and p_task between 0 and 14 and p_ms between 0 and 25000 -- no task has more time than 25 s
   on conflict do nothing;
 $$;
 
@@ -178,6 +202,7 @@ begin
     select * into room from public.duels where code = old.rematch;
     return room;
   end if;
+  if not public.valid_duel(p_code, old.level, p_rounds) then raise exception 'invalid'; end if;
   insert into public.duels (code, host, guest, level, seed, rounds)
   values (upper(p_code), (select auth.uid()), case when old.host = (select auth.uid()) then old.guest else old.host end, old.level, p_seed, p_rounds)
   returning * into room;

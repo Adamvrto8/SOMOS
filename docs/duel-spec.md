@@ -84,7 +84,10 @@ Tabuľky v `supabase/schema.sql`, všetky s RLS (hráč vidí len svoje miestnos
 - **Naživo:** Supabase Realtime – zmeny v `duel_answers` a `duels` sa okamžite pošlú obom; „presence“ ukazuje,
   kto je pripojený. Každá appka si z `started_at` a odpovedí sama vypočíta, kedy začína ďalšia úloha, takže obe
   idú rovnako, aj keď jedna správa príde neskôr.
-- Body počíta server z odpovedí; správnosť hlási appka (kontrola odpovede je v appke, pre kamarátov to stačí).
+- Body sa počítajú z odpovedí; správnosť a čas hlási appka (kontrola odpovede je v appke). Server overí len tvar
+  miestnosti (`valid_duel`: úroveň, kód, 3 × 5 úloh povolených typov s ich časom) a rozsah času odpovede.
+  Kto by posielal požiadavky mimo appky, môže si body prikresliť – pre kamarátov to stačí, **pred verejným vydaním
+  treba kontrolu odpovedí presunúť na server** (Edge Function s tou istou kontrolou ako `checkAnswer`).
 
 ## 5. Fázy
 
