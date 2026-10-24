@@ -112,8 +112,10 @@ const DEFAULT_GOAL = 20
 
 /** Devices the server keeps at most; a new one beyond it is refused. */
 export const MAX_DEVICES = 50_000
-/** New devices from one IP address in an hour. */
+/** New devices from one IP address (an IPv6 /64) in an hour. */
 export const NEW_DEVICES_PER_HOUR = 20
+/** New devices from everywhere in an hour: one source with many addresses cannot fill the table at once. */
+export const NEW_DEVICES_PER_HOUR_TOTAL = 1000
 /** Devices one page of a tick looks at; a tick takes pages until none are left or its time is up. */
 export const TICK_LIMIT = 500
 /** A tick stops taking devices after this long (maxDuration in vercel.json is 60 s). */
@@ -156,9 +158,18 @@ export function isPushHost(endpoint: string): boolean {
   }
 }
 
+/** How many bytes a base64url string holds, or -1 when it is not one. */
+function base64UrlBytes(value: unknown): number {
+  if (typeof value !== 'string' || !/^[A-Za-z0-9_-]+=*$/.test(value)) return -1
+  return Buffer.from(value, 'base64url').length
+}
+
+/** The keys a browser makes: an uncompressed P-256 point (65 bytes) and a 16-byte secret. */
+const isPushKeys = (v: unknown): v is PushSub['keys'] =>
+  isRecord(v) && base64UrlBytes(v.p256dh) === 65 && Buffer.from(String(v.p256dh), 'base64url')[0] === 4 && base64UrlBytes(v.auth) === 16
+
 export function isPushSub(v: unknown): v is PushSub {
-  if (!isRecord(v) || typeof v.endpoint !== 'string' || !isPushHost(v.endpoint) || !isRecord(v.keys)) return false
-  return typeof v.keys.p256dh === 'string' && typeof v.keys.auth === 'string'
+  return isRecord(v) && typeof v.endpoint === 'string' && isPushHost(v.endpoint) && isPushKeys(v.keys)
 }
 
 export const isDevice = (v: unknown): v is string => typeof v === 'string' && /^[\w-]{8,64}$/.test(v)
@@ -314,6 +325,8 @@ export interface DeviceStore {
   count(): Promise<number>
   /** Counts one new device for `key` this hour: false once over `limit`. */
   rateHit(key: string, limit: number): Promise<boolean>
+  /** Notes a test notification at `now` unless one went out within the last minute: false then (atomic). */
+  claimTest(device: string, now: Date): Promise<boolean>
   cleanup(): Promise<void>
 }
 
@@ -463,6 +476,13 @@ export function supabaseStore(url: string, key: string, fetchImpl: typeof fetch 
       const total = Number(res.headers.get('content-range')?.split('/')[1])
       return Number.isFinite(total) ? total : 0
     },
+    claimTest: async (device, now) => {
+      const since = new Date(now.getTime() - TEST_EVERY_MS).toISOString()
+      // One conditional update: two tests at once cannot both pass the check.
+      const filter = `device=${eq(device)}&or=(test_at.is.null,test_at.lt.${encodeURIComponent(since)})&select=device`
+      const data = await json(await call(`push_devices?${filter}`, { method: 'PATCH', body: { test_at: now.toISOString() }, prefer: 'return=representation' }))
+      return Array.isArray(data) && data.length > 0
+    },
     rateHit: async (rateKey, limit) => (await json(await call('rpc/push_rate_hit', { method: 'POST', body: { p_key: rateKey, p_limit: limit } }))) === true,
     cleanup: async () => {
       await call('rpc/push_cleanup', { method: 'POST', body: {} })
@@ -494,7 +514,20 @@ export function supabaseUser(url: string, key: string, fetchImpl: typeof fetch =
  */
 export function ipKey(request: Request, secret: string): string {
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-  return createHmac('sha256', `somos-reminder:${secret}`).update(ip).digest('hex')
+  return createHmac('sha256', `somos-reminder:${secret}`).update(ipNetwork(ip)).digest('hex')
+}
+
+/** An IPv6 address counts by its /64: one connection gets a whole /64 and can pick any address in it. */
+export function ipNetwork(ip: string): string {
+  if (!ip.includes(':')) return ip
+  const [head, tail = ''] = ip.toLowerCase().split('::')
+  const left = head ? head.split(':') : []
+  const right = tail ? tail.split(':') : []
+  const groups = ip.includes('::') ? [...left, ...Array<string>(Math.max(0, 8 - left.length - right.length)).fill('0'), ...right] : left
+  return `${groups
+    .slice(0, 4)
+    .map((g) => g.replace(/^0+(?=.)/, ''))
+    .join(':')}::/64`
 }
 
 // ---------- sending ----------
@@ -553,7 +586,9 @@ async function deliver(deps: Deps, row: DeviceRow, message: Message, kind: Deliv
     return { outcome: 'sent', delivery: { kind, sentAt, receipts: row.receipts } }
   } catch (error) {
     const status = statusOf(error)
-    if (status === 404 || status === 410) {
+    // 404/410: the subscription is gone; 400: the push service will never take it (a made-up one). Not 401/403:
+    // those say our own VAPID key is wrong, and would drop every device.
+    if (status === 400 || status === 404 || status === 410) {
       await deps.store.remove(row.device)
       await deps.store.markGone(row.endpoint)
       return { outcome: 'gone' }
@@ -672,6 +707,7 @@ async function subscribe(request: Request, body: Record<string, unknown>, deps: 
   if (!existing) {
     if ((await deps.store.count()) >= MAX_DEVICES) return json({ error: 'full' }, 503)
     if (!(await deps.store.rateHit(deps.ipOf(request), NEW_DEVICES_PER_HOUR))) return json({ error: 'too-many-devices' }, 429)
+    if (!(await deps.store.rateHit('all', NEW_DEVICES_PER_HOUR_TOTAL))) return json({ error: 'too-many-devices' }, 429)
   }
   // Signed in: the device counts its practice with the account's other devices. A token that cannot be
   // checked right now, or an app signed in that could not get one (`account`), keeps the link as it was;
@@ -721,8 +757,7 @@ async function handlePost(request: Request, deps: Deps): Promise<Response> {
       return json({ ok: true })
     case 'test': {
       if (!row) return json({ error: 'not-subscribed' }, 409)
-      if (row.testAt && now.getTime() - new Date(row.testAt).getTime() < TEST_EVERY_MS) return json({ error: 'too-many' }, 429)
-      await deps.store.update(row.device, { testAt: now.toISOString() })
+      if (!(await deps.store.claimTest(row.device, now))) return json({ error: 'too-many' }, 429)
       const result = await deliver(deps, row, testMessage(row), 'test')
       if (result.outcome === 'sent') {
         await deps.store.update(row.device, { delivery: result.delivery })

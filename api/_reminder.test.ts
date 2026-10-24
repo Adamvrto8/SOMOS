@@ -2,6 +2,8 @@
 import { readFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
 import {
+  ipNetwork,
+  NEW_DEVICES_PER_HOUR_TOTAL,
   bestProgress,
   composeMessage,
   decide,
@@ -33,9 +35,13 @@ import {
 } from './reminder.ts'
 
 const TZ = 'Europe/Bratislava'
+// The shapes a browser makes: an uncompressed P-256 point (65 bytes) and a 16-byte secret.
+const P256DH = Buffer.from([4, ...Array<number>(64).fill(7)]).toString('base64url')
+const AUTH = Buffer.alloc(16, 9).toString('base64url')
+const P256DH_2 = Buffer.from([4, ...Array<number>(64).fill(8)]).toString('base64url')
 const ENDPOINT = 'https://fcm.googleapis.com/fcm/send/abc'
 const SUB: ReminderSub = {
-  subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } },
+  subscription: { endpoint: ENDPOINT, keys: { p256dh: P256DH, auth: AUTH } },
   time: '19:00',
   timeZone: TZ,
 }
@@ -225,7 +231,17 @@ describe('validation', () => {
     for (const bad of ['https://push.example/x', 'https://fcm.googleapis.com.evil.example/x', 'https://evilfcm.googleapis.com.example/x', 'http://fcm.googleapis.com/x', 'not a url']) {
       expect(isPushHost(bad)).toBe(false)
     }
-    expect(isReminderSub({ ...SUB, subscription: { endpoint: 'https://push.example/x', keys: { p256dh: 'p', auth: 'a' } } })).toBe(false)
+    expect(isReminderSub({ ...SUB, subscription: { endpoint: 'https://push.example/x', keys: { p256dh: P256DH, auth: AUTH } } })).toBe(false)
+  })
+
+  it('takes only keys of the shape a browser makes', () => {
+    const withKeys = (p256dh: unknown, auth: unknown) => isReminderSub({ ...SUB, subscription: { endpoint: ENDPOINT, keys: { p256dh, auth } } })
+    expect(withKeys(P256DH, AUTH)).toBe(true)
+    expect(withKeys('p', 'a')).toBe(false)
+    expect(withKeys(Buffer.alloc(65, 4).toString('base64url'), AUTH)).toBe(true)
+    expect(withKeys(Buffer.from([2, ...Array<number>(64).fill(7)]).toString('base64url'), AUTH)).toBe(false) // compressed point
+    expect(withKeys(P256DH, Buffer.alloc(15).toString('base64url'))).toBe(false)
+    expect(withKeys(`${P256DH}!`, AUTH)).toBe(false)
   })
 })
 
@@ -240,8 +256,8 @@ const device = (over: Partial<DeviceRow> = {}): DeviceRow => ({
   device: PHONE,
   userId: null,
   endpoint: ENDPOINT,
-  p256dh: 'p',
-  auth: 'a',
+  p256dh: P256DH,
+  auth: AUTH,
   time: '19:00',
   timeZone: TZ,
   language: 'sk',
@@ -303,6 +319,12 @@ function memoryDevices(initial: DeviceRow[] = []) {
       state.tick = tick
     },
     count: async () => rows.size,
+    claimTest: async (id, now) => {
+      const r = rows.get(id)
+      if (!r || (r.testAt && now.getTime() - new Date(r.testAt).getTime() < 60_000)) return false
+      rows.set(id, { ...r, testAt: now.toISOString() })
+      return true
+    },
     rateHit: async (key, limit) => {
       const n = (rate.get(key) ?? 0) + 1
       rate.set(key, n)
@@ -335,13 +357,13 @@ const post = (body: unknown, { origin = 'https://somos.example', token }: { orig
   })
 const subscribeBody = (over: Record<string, unknown> = {}) => ({
   type: 'subscribe',
-  subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } },
+  subscription: { endpoint: ENDPOINT, keys: { p256dh: P256DH, auth: AUTH } },
   time: '19:00',
   timeZone: TZ,
   device: PHONE,
   ...over,
 })
-const tabletSubscription = { endpoint: TABLET_ENDPOINT, keys: { p256dh: 'p2', auth: 'a2' } }
+const tabletSubscription = { endpoint: TABLET_ENDPOINT, keys: { p256dh: P256DH_2, auth: AUTH } }
 const statusOf = async (res: Response) => ((await res.json()) as { status: Record<string, unknown> }).status
 const pushError = (statusCode: number) => Object.assign(new Error('push refused'), { statusCode })
 
@@ -361,7 +383,7 @@ describe('api/reminder: requests from the app', () => {
 
   it('stores a device with its time, time zone, language and receipts', async () => {
     const store = memoryDevices()
-    const body = subscribeBody({ subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' }, expirationTime: null }, language: 'en', receipts: true })
+    const body = subscribeBody({ subscription: { endpoint: ENDPOINT, keys: { p256dh: P256DH, auth: AUTH }, expirationTime: null }, language: 'en', receipts: true })
     expect((await handleReminder(post(body), deps(store))).status).toBe(200)
     expect(store.rows.get(PHONE)).toEqual(device({ language: 'en', receipts: true, seenAt: SUMMER_1910.toISOString() }))
   })
@@ -380,7 +402,7 @@ describe('api/reminder: requests from the app', () => {
       subscribeBody({ time: '25:00' }),
       subscribeBody({ timeZone: 'Nowhere/City' }),
       subscribeBody({ subscription: { endpoint: ENDPOINT } }),
-      subscribeBody({ subscription: { endpoint: 'https://push.example/x', keys: { p256dh: 'p', auth: 'a' } } }),
+      subscribeBody({ subscription: { endpoint: 'https://push.example/x', keys: { p256dh: P256DH, auth: AUTH } } }),
       subscribeBody({ device: undefined }),
       subscribeBody({ device: 'x y' }),
       { type: 'launch-rockets' },
@@ -409,10 +431,10 @@ describe('api/reminder: requests from the app', () => {
 
   it('follows a device to a new subscription, and keeps what it knew', async () => {
     const store = memoryDevices([device({ sentDay: '2026-06-30', progress: progress() })])
-    const rotated = { endpoint: 'https://fcm.googleapis.com/fcm/send/rotated', keys: { p256dh: 'p3', auth: 'a3' } }
+    const rotated = { endpoint: 'https://fcm.googleapis.com/fcm/send/rotated', keys: { p256dh: P256DH_2, auth: AUTH } }
     await handleReminder(post(subscribeBody({ subscription: rotated })), deps(store))
     expect(store.rows.size).toBe(1)
-    expect(store.rows.get(PHONE)).toMatchObject({ endpoint: rotated.endpoint, p256dh: 'p3', sentDay: '2026-06-30', progress: progress() })
+    expect(store.rows.get(PHONE)).toMatchObject({ endpoint: rotated.endpoint, p256dh: P256DH_2, sentDay: '2026-06-30', progress: progress() })
   })
 
   it('moves a subscription to the new id of the same browser (storage cleared)', async () => {
@@ -468,18 +490,26 @@ describe('api/reminder: requests from the app', () => {
   it('limits new devices per IP address, but never a device checking in again', async () => {
     const store = memoryDevices()
     for (let i = 0; i < NEW_DEVICES_PER_HOUR; i++) {
-      const body = subscribeBody({ device: `device-number-${i}`, subscription: { endpoint: `https://fcm.googleapis.com/fcm/send/${i}`, keys: { p256dh: 'p', auth: 'a' } } })
+      const body = subscribeBody({ device: `device-number-${i}`, subscription: { endpoint: `https://fcm.googleapis.com/fcm/send/${i}`, keys: { p256dh: P256DH, auth: AUTH } } })
       expect((await handleReminder(post(body), deps(store))).status).toBe(200)
     }
-    const one = subscribeBody({ device: 'one-too-many', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/x', keys: { p256dh: 'p', auth: 'a' } } })
+    const one = subscribeBody({ device: 'one-too-many', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/x', keys: { p256dh: P256DH, auth: AUTH } } })
     const res = await handleReminder(post(one), deps(store))
     expect(res.status).toBe(429)
     expect(await res.json()).toEqual({ error: 'too-many-devices' })
     // Every app checks in at every start: that is not a new device.
-    const again = subscribeBody({ device: 'device-number-0', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/0', keys: { p256dh: 'p', auth: 'a' } } })
+    const again = subscribeBody({ device: 'device-number-0', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/0', keys: { p256dh: P256DH, auth: AUTH } } })
     expect((await handleReminder(post(again), deps(store))).status).toBe(200)
     // Another address may still add one.
     expect((await handleReminder(post(one), deps(store, noop, SUMMER_1910, { ipOf: () => 'ip-2' }))).status).toBe(200)
+  })
+
+  it('limits new devices from everywhere together too', async () => {
+    const store = memoryDevices()
+    for (let i = 0; i < NEW_DEVICES_PER_HOUR_TOTAL; i++) await store.rateHit('all', NEW_DEVICES_PER_HOUR_TOTAL)
+    const res = await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { ipOf: () => 'fresh-address' }))
+    expect(res.status).toBe(429)
+    expect(store.rows.size).toBe(0)
   })
 
   it('refuses a new device once the server is full', async () => {
@@ -543,7 +573,7 @@ describe('api/reminder: requests from the app', () => {
     const res = await handleReminder(post(subscribeBody()), deps(store))
     expect(res.status).toBe(410)
     expect(await res.json()).toEqual({ error: 'gone' })
-    const fresh = subscribeBody({ subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/fresh', keys: { p256dh: 'p', auth: 'a' } } })
+    const fresh = subscribeBody({ subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/fresh', keys: { p256dh: P256DH, auth: AUTH } } })
     expect((await handleReminder(post(fresh), deps(store))).status).toBe(200)
   })
 
@@ -666,6 +696,17 @@ describe('api/reminder: cron tick', () => {
     expect(await tickJson(store, async () => Promise.reject(pushError(500)))).toEqual({ sent: 0, reason: 'done' })
     expect(store.rows.get(PHONE)).toMatchObject({ handledDay: null, lastDecision: { reason: 'failed' } })
     expect(await tickJson(store)).toEqual({ sent: 1, reason: 'done' })
+  })
+
+  it('forgets a device the push service will never take, but not on a refusal of our own key', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const madeUp = memoryDevices([device()])
+    await tickJson(madeUp, async () => Promise.reject(pushError(400)))
+    expect(madeUp.rows.size).toBe(0)
+    // 403: the VAPID key is wrong. Dropping every device for it would lose them all.
+    const ours = memoryDevices([device()])
+    await tickJson(ours, async () => Promise.reject(pushError(403)))
+    expect(ours.rows.size).toBe(1)
   })
 
   it('forgets only the device the push service no longer knows', async () => {
@@ -799,8 +840,8 @@ describe('supabaseStore', () => {
     device: PHONE,
     user_id: 'user-1',
     endpoint: ENDPOINT,
-    p256dh: 'p',
-    auth: 'a',
+    p256dh: P256DH,
+    auth: AUTH,
     time: '19:00',
     time_zone: TZ,
     language: 'en',
@@ -835,8 +876,8 @@ describe('supabaseStore', () => {
       device: PHONE,
       userId: 'user-1',
       endpoint: ENDPOINT,
-      p256dh: 'p',
-      auth: 'a',
+      p256dh: P256DH,
+      auth: AUTH,
       time: '19:00',
       timeZone: TZ,
       language: 'en',
@@ -931,6 +972,20 @@ describe('supabaseStore', () => {
     expect(calls[5].url).toBe('https://project.supabase.co/rest/v1/rpc/push_cleanup')
   })
 
+  it('claims a test in one conditional update', async () => {
+    const answers = [Response.json([{ device: PHONE }]), Response.json([])]
+    const { impl, calls } = fakeFetch(() => answers.shift()!)
+    const store = supabaseStore(URL_, 'sb_secret_abc', impl)
+    expect(await store.claimTest(PHONE, SUMMER_1910)).toBe(true)
+    expect(calls[0]).toMatchObject({
+      method: 'PATCH',
+      url: `https://project.supabase.co/rest/v1/push_devices?device=eq.${PHONE}&or=(test_at.is.null,test_at.lt.${encodeURIComponent('2026-07-01T17:09:00.000Z')})&select=device`,
+      body: { test_at: '2026-07-01T17:10:00.000Z' },
+    })
+    expect(calls[0].headers.get('prefer')).toBe('return=representation')
+    expect(await store.claimTest(PHONE, SUMMER_1910)).toBe(false)
+  })
+
   it('throws with the message PostgREST gives', async () => {
     const { impl } = fakeFetch(() => Response.json({ message: 'permission denied for table push_devices' }, { status: 401 }))
     await expect(supabaseStore(URL_, 'sb_secret_abc', impl).byDevice(PHONE)).rejects.toThrow('Supabase push_devices failed: permission denied for table push_devices')
@@ -963,6 +1018,16 @@ describe('ipKey', () => {
     expect(ipKey(request({ 'x-forwarded-for': '198.51.100.1' }), 'secret')).not.toBe(key)
     // Keyed: without the server's secret the hash of every address cannot be tried.
     expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }), 'other')).not.toBe(key)
+  })
+})
+
+describe('ipNetwork', () => {
+  it('counts an IPv6 address by its /64 and leaves IPv4 as it is', () => {
+    expect(ipNetwork('203.0.113.7')).toBe('203.0.113.7')
+    expect(ipNetwork('2001:db8:85a3:0042:1000:8a2e:0370:7334')).toBe('2001:db8:85a3:42::/64')
+    expect(ipNetwork('2001:DB8:85A3:42:ffff::1')).toBe('2001:db8:85a3:42::/64')
+    expect(ipNetwork('2001:db8::1')).toBe('2001:db8:0:0::/64')
+    expect(ipNetwork('::1')).toBe('0:0:0:0::/64')
   })
 })
 
