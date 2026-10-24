@@ -8,6 +8,8 @@ export interface Celebration {
   goal: number
   /** Days in a row on which the goal was reached, today included. */
   streakDays: number
+  /** Today's goal completed a week in a row and earned a streak freeze. */
+  freezeEarned?: boolean
   /** When the answer that completed the goal was given: tells one celebration from the next. */
   at: number
 }

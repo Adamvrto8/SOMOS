@@ -241,6 +241,17 @@ export const sk = {
     /** Under the big number of days. */
     streakDays: (n: number) => `${pluralSk(n, ['deň', 'dni', 'dní'])} v rade`,
     atRisk: 'Séria v ohrození – splň cieľ ešte dnes',
+    /** Streak freezes held (src/lib/stats.ts): the word after the number. */
+    freezes: (n: number) => `${pluralSk(n, ['ochrana', 'ochrany', 'ochrán'])} série`,
+    freezesHint: 'Za 7 dní v rade získaš ochranu série (najviac 2). Keď deň vynecháš, minie sa a séria pokračuje.',
+    /** Once a freeze kept the streak: `when` is "Včera" or a date. */
+    streakSaved: 'Séria zachránená',
+    streakSavedBody: (when: string, left: number) =>
+      `${when} nebol denný cieľ splnený, ale séria pokračuje – podržala ju ochrana. ${left > 0 ? `Zostáva ti ${left} ${pluralSk(left, ['ochrana', 'ochrany', 'ochrán'])}.` : 'Ďalšiu získaš za 7 dní v rade.'}`,
+    yesterday: 'Včera',
+    close: 'Zavrieť',
+    /** Under the streak when the goal of today earned a freeze. */
+    freezeEarned: '+1 ochrana série',
     /** A day counts for the streak once the daily goal is reached. */
     practiceToday: 'splň dnešný cieľ',
     goalAria: (done: number, goal: number, reached: boolean) => `Denný cieľ: ${done} z ${goal}${reached ? ', splnený' : ''}. Precvičovať`,

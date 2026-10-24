@@ -1,4 +1,4 @@
-import { ChevronRight, CircleCheck, Flame } from 'lucide-react'
+import { ChevronRight, CircleCheck, Flame, Snowflake } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import type { Activity } from '../../lib/stats'
@@ -15,7 +15,7 @@ interface ProgressTilesProps {
 /** Streak + daily goal: one strip between thin steel lines, halves split by a hairline. */
 export function ProgressTiles({ activity, goal, practiceHref }: ProgressTilesProps) {
   const text = useT().home
-  const { days, activeToday } = activity.streak
+  const { days, activeToday, freezes } = activity.streak
   const atRisk = !activeToday && days > 0 && new Date().getHours() >= AT_RISK_HOUR
   const left = Math.max(0, goal - activity.today)
   const reached = left === 0
@@ -52,6 +52,15 @@ export function ProgressTiles({ activity, goal, practiceHref }: ProgressTilesPro
         ) : (
           // Also at 0 days: it says what a day needs to count.
           !activeToday && <p className="mt-0.5 text-sm text-ink-muted">{text.practiceToday}</p>
+        )}
+        {/* The freezes held: a missed day uses one instead of ending the streak. */}
+        {freezes > 0 && (
+          <p title={text.freezesHint} className="mt-1.5 flex items-center gap-1.5 text-sm text-ink-muted">
+            <Snowflake size={16} strokeWidth={1.75} aria-hidden />
+            <span className="tabular-nums">
+              {freezes} {text.freezes(freezes)}
+            </span>
+          </p>
         )}
       </section>
 

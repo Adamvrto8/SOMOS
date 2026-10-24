@@ -35,7 +35,9 @@ export function DevSettings() {
   // As recordAttempt does it for the answer that completes the goal, without the answer.
   const showSun = () => {
     playSound('goal')
-    celebrateGoal({ goal, streakDays: SAMPLE_STREAKS[shown.current++ % SAMPLE_STREAKS.length], at: Date.now() })
+    const streakDays = SAMPLE_STREAKS[shown.current++ % SAMPLE_STREAKS.length]
+    // A week in a row earns a streak freeze: the 7 shows that line too.
+    celebrateGoal({ goal, streakDays, freezeEarned: streakDays === 7, at: Date.now() })
   }
 
   const turnOff = () => {

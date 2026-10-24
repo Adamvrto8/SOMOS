@@ -13,7 +13,18 @@ export interface DayStat {
 export interface Streak {
   days: number
   activeToday: boolean // today's goal is reached; false = the streak is still alive but needs today's goal
+  /** Streak freezes held now (ochrana série): a missed day uses one up instead of ending the streak. */
+  freezes: number
+  /** The days of the current streak that a freeze kept, oldest first; they do not add to `days`. */
+  frozenDays: string[]
+  /** Today's goal completed a week in a row, which earned a freeze. */
+  freezeEarnedToday: boolean
 }
+
+/** A learner starts with one freeze, earns one for every 7 days in a row with the goal reached, holds 2 at most. */
+export const FREEZE_START = 1
+export const FREEZE_EVERY = 7
+export const FREEZE_MAX = 2
 
 export interface Activity {
   today: number // right answers + reviews today (what the daily goal counts)
@@ -50,30 +61,62 @@ export function goalDays(timestamps: number[], goal: number): Set<string> {
   return new Set([...counts].filter(([, count]) => count >= needed).map(([key]) => key))
 }
 
-/** Consecutive counted days ending today, or yesterday while today's goal is still open. */
-export function computeStreak(countedDays: Set<string>, now: Date): Streak {
-  const activeToday = countedDays.has(dayKey(now))
-  let day = activeToday ? now : addDays(now, -1)
-  let days = 0
-  while (countedDays.has(dayKey(day))) {
-    days++
-    day = addDays(day, -1)
+/**
+ * The streak, replayed day by day from the first counted day, with its freezes: a day with the goal reached
+ * adds one, a missed day uses a freeze while there is one (the streak goes on without growing) and ends the
+ * streak otherwise. Today counts once its goal is reached; while it is open, the streak is still alive.
+ * Everything follows from the answers, so a backup, a sync or a changed goal give the same streak.
+ */
+function replayStreak(countedDays: Set<string>, now: Date): { streak: Streak; longest: number } {
+  const todayKey = dayKey(now)
+  let run = 0
+  let longest = 0
+  let inARow = 0 // goal days since the last freeze was earned (a frozen day neither adds nor breaks)
+  let freezes = FREEZE_START
+  let frozenDays: string[] = []
+  let freezeEarnedToday = false
+
+  const reached = (key: string) => {
+    run++
+    longest = Math.max(longest, run)
+    if (++inARow === FREEZE_EVERY) {
+      inARow = 0
+      if (freezes < FREEZE_MAX) {
+        freezes++
+        if (key === todayKey) freezeEarnedToday = true
+      }
+    }
   }
-  return { days, activeToday }
+
+  const first = [...countedDays].sort()[0]
+  if (first !== undefined) {
+    // Keys are YYYY-MM-DD, so they compare as dates.
+    for (let day = new Date(`${first}T12:00:00`); dayKey(day) < todayKey; day = addDays(day, 1)) {
+      const key = dayKey(day)
+      if (countedDays.has(key)) reached(key)
+      else if (run > 0 && freezes > 0) {
+        freezes--
+        frozenDays.push(key)
+      } else {
+        run = 0
+        inARow = 0
+        frozenDays = []
+      }
+    }
+  }
+  const activeToday = countedDays.has(todayKey)
+  if (activeToday) reached(todayKey)
+  return { streak: { days: run, activeToday, freezes, frozenDays, freezeEarnedToday }, longest }
 }
 
-/** The longest run of consecutive counted days there has ever been. */
-export function longestStreak(countedDays: Set<string>): number {
-  let longest = 0
-  for (const key of countedDays) {
-    const day = new Date(`${key}T12:00:00`)
-    // Count each run once, from its first day.
-    if (countedDays.has(dayKey(addDays(day, -1)))) continue
-    let length = 1
-    while (countedDays.has(dayKey(addDays(day, length)))) length++
-    longest = Math.max(longest, length)
-  }
-  return longest
+/** Consecutive counted days ending today, or yesterday while today's goal is still open; freezes bridge missed days. */
+export function computeStreak(countedDays: Set<string>, now: Date): Streak {
+  return replayStreak(countedDays, now).streak
+}
+
+/** The longest streak there has ever been, freezes included as in computeStreak. */
+export function longestStreak(countedDays: Set<string>, now: Date = new Date()): number {
+  return replayStreak(countedDays, now).longest
 }
 
 /** Answers per day for the last `days` days, oldest first, today last. */
@@ -128,7 +171,7 @@ export function computeHistory(all: Pick<Attempt, 'at' | 'correct'>[], now: Date
     correct: all.filter((a) => a.correct).length,
     firstDay: all.length ? new Date(Math.min(...all.map((a) => a.at))) : null,
     streak: computeStreak(counted, now),
-    longestStreak: longestStreak(counted),
+    longestStreak: longestStreak(counted, now),
   }
 }
 

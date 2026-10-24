@@ -11,6 +11,7 @@ import { continueLesson } from './continueLesson'
 import { NextGoalCard } from './NextGoalCard'
 import { ProgressTiles } from './ProgressTiles'
 import { ReviewCard } from './ReviewCard'
+import { StreakSavedCard } from './StreakSavedCard'
 import { WeekChart } from './WeekChart'
 import { WordOfDayCard } from './WordOfDayCard'
 
@@ -55,6 +56,8 @@ export function HomePage() {
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
         </Link>
       )}
+
+      {activity && <StreakSavedCard streak={activity.streak} />}
 
       {activity && <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />}
 

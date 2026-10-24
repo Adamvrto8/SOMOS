@@ -27,12 +27,12 @@ export async function recordAttempt(source: AttemptSource, itemId: string, corre
     .count()
   if (today !== goal) return
   expectCelebration()
-  const streakDays = computeStreak(goalDays(await loadCountedTimestamps(), goal), new Date(at)).days
+  const streak = computeStreak(goalDays(await loadCountedTimestamps(), goal), new Date(at))
   setTimeout(() => {
     // The same answer may have finished the lesson or the session: after that sound, not on top of it.
     const wait = soundBusyFor()
     playSound('goal', wait)
-    setTimeout(() => celebrateGoal({ goal, streakDays, at }), wait * 1000)
+    setTimeout(() => celebrateGoal({ goal, streakDays: streak.days, freezeEarned: streak.freezeEarnedToday, at }), wait * 1000)
   }, GOAL_DELAY * 1000)
 }
 

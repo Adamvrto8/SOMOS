@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Snowflake } from 'lucide-react'
 import { useMemo, useState, type ReactNode } from 'react'
 import { BackButton } from '../../components/BackButton'
 import { Chip } from '../../components/Chip'
@@ -57,6 +57,17 @@ export function StatsPage() {
       <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
 
       <HistoryFigures history={history} className="mt-6" />
+      {/* How the streak survives a missed day, with the freezes held now. */}
+      <p className="mt-3 flex gap-2 text-sm text-ink-muted">
+        <Snowflake size={16} strokeWidth={1.75} className="mt-0.5 shrink-0 text-brick" aria-hidden />
+        <span>
+          <span className="font-medium text-ink">
+            {history.streak.freezes} {dictionary.home.freezes(history.streak.freezes)}
+          </span>
+          {' · '}
+          {dictionary.home.freezesHint}
+        </span>
+      </p>
 
       <section aria-labelledby="history-heading" className="mt-8">
         <SectionTitle id="history-heading">{text.history}</SectionTitle>

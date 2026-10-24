@@ -18,17 +18,42 @@ describe('computeStreak', () => {
   const now = at(2026, 9, 25)
   const days = (...keys: string[]) => new Set(keys)
 
+  /** `n` days in a row ending with `last` (a YYYY-MM-DD key of September 2026). */
+  const run = (lastDay: number, n: number) => Array.from({ length: n }, (_, i) => `2026-09-${String(lastDay - i).padStart(2, '0')}`)
+
   it('counts consecutive days ending today', () => {
-    expect(computeStreak(days('2026-09-23', '2026-09-24', '2026-09-25'), now)).toEqual({ days: 3, activeToday: true })
+    expect(computeStreak(days('2026-09-23', '2026-09-24', '2026-09-25'), now)).toMatchObject({ days: 3, activeToday: true, frozenDays: [] })
   })
 
   it('keeps yesterday’s streak alive until today ends', () => {
-    expect(computeStreak(days('2026-09-23', '2026-09-24'), now)).toEqual({ days: 2, activeToday: false })
+    expect(computeStreak(days('2026-09-23', '2026-09-24'), now)).toMatchObject({ days: 2, activeToday: false })
   })
 
-  it('breaks on a missed day', () => {
-    expect(computeStreak(days('2026-09-22', '2026-09-23'), now)).toEqual({ days: 0, activeToday: false })
-    expect(computeStreak(days('2026-09-20', '2026-09-25'), now)).toEqual({ days: 1, activeToday: true })
+  it('a missed day uses the freeze a learner starts with; the next missed day ends the streak', () => {
+    // 24th missed: frozen, the streak goes on without growing.
+    expect(computeStreak(days('2026-09-22', '2026-09-23'), now)).toMatchObject({ days: 2, freezes: 0, frozenDays: ['2026-09-24'] })
+    // 23rd frozen, 24th missed with no freeze left.
+    expect(computeStreak(days('2026-09-21', '2026-09-22'), now)).toMatchObject({ days: 0, frozenDays: [] })
+    expect(computeStreak(days('2026-09-20', '2026-09-25'), now)).toMatchObject({ days: 1, activeToday: true })
+  })
+
+  it('a freeze is not spent while there is no streak, nor on today while it is open', () => {
+    expect(computeStreak(days(), now)).toMatchObject({ days: 0, freezes: 1 })
+    expect(computeStreak(days('2026-09-24'), now)).toMatchObject({ days: 1, freezes: 1, frozenDays: [] })
+  })
+
+  it('earns a freeze for every 7 days in a row, holding 2 at most', () => {
+    expect(computeStreak(days(...run(24, 6)), now)).toMatchObject({ days: 6, freezes: 1 })
+    expect(computeStreak(days(...run(24, 7)), now)).toMatchObject({ days: 7, freezes: 2, freezeEarnedToday: false })
+    expect(computeStreak(days(...run(24, 20)), now)).toMatchObject({ days: 20, freezes: 2 })
+    // Earned with today's goal: the celebration says so.
+    expect(computeStreak(days(...run(25, 7)), now)).toMatchObject({ days: 7, freezes: 2, freezeEarnedToday: true })
+  })
+
+  it('two freezes carry two missed days; a frozen day neither adds to the week nor breaks it', () => {
+    // 1st–14th reached (2 freezes held), 15th and 16th missed, 17th–20th reached.
+    const streak = computeStreak(days(...run(14, 14), ...run(20, 4)), at(2026, 9, 20))
+    expect(streak).toMatchObject({ days: 18, activeToday: true, freezes: 0, frozenDays: ['2026-09-15', '2026-09-16'] })
   })
 })
 
@@ -52,8 +77,9 @@ describe('goalDays', () => {
   it('a day with a few answers does not carry the streak', () => {
     // Goal met for four days, then two days under it: the streak is over, whatever today brings.
     const stamps = [20, 21, 22, 23].flatMap((day) => answers(day, 5)).concat(answers(24, 3), answers(25, 1))
-    expect(computeStreak(goalDays(stamps, 5), at(2026, 9, 26))).toEqual({ days: 0, activeToday: false })
-    expect(computeStreak(goalDays(stamps, 5), at(2026, 9, 24, 7))).toEqual({ days: 4, activeToday: false })
+    // The 24th is frozen, the 25th has no freeze left.
+    expect(computeStreak(goalDays(stamps, 5), at(2026, 9, 26))).toMatchObject({ days: 0, activeToday: false })
+    expect(computeStreak(goalDays(stamps, 5), at(2026, 9, 24, 7))).toMatchObject({ days: 4, activeToday: false })
   })
 })
 
@@ -80,9 +106,9 @@ describe('summarizeWeek / computeActivity', () => {
     expect(activity.today).toBe(1)
     expect(activity.weekTotal).toBe(3)
     expect(activity.weekAccuracy).toBeCloseTo(2 / 3)
-    expect(activity.streak).toEqual({ days: 1, activeToday: true })
+    expect(activity.streak).toMatchObject({ days: 1, activeToday: true })
     // The same answers under a goal of two: today does not count yet.
-    expect(computeActivity(counted, attempts, now, 2).streak).toEqual({ days: 0, activeToday: false })
+    expect(computeActivity(counted, attempts, now, 2).streak).toMatchObject({ days: 0, activeToday: false })
   })
 
   it('has no accuracy without answers', () => {
@@ -153,8 +179,10 @@ describe('history (the overview behind the week chart)', () => {
   it('finds the longest run of days that reached the goal', () => {
     expect(longestStreak(new Set())).toBe(0)
     expect(longestStreak(new Set(['2026-09-01']))).toBe(1)
-    // Over a month end, and the longer of two runs.
-    expect(longestStreak(new Set(['2026-08-30', '2026-08-31', '2026-09-01', '2026-09-03', '2026-09-04']))).toBe(3)
+    // Over a month end; one missed day is frozen, so both runs are one streak (3 + 2 days).
+    expect(longestStreak(new Set(['2026-08-30', '2026-08-31', '2026-09-01', '2026-09-03', '2026-09-04']))).toBe(5)
+    // Two missed days in a row: the freeze carries one, the second ends the streak.
+    expect(longestStreak(new Set(['2026-08-30', '2026-08-31', '2026-09-03']))).toBe(2)
   })
 
   it('splits answers by exercise, most practised first', () => {

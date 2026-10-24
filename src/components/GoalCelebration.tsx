@@ -1,4 +1,4 @@
-import { Flame } from 'lucide-react'
+import { Flame, Snowflake } from 'lucide-react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useT } from '../i18n'
 import { dismissCelebration, useCelebration, type Celebration } from '../lib/celebration'
@@ -31,7 +31,7 @@ export function GoalCelebration() {
 
 function Sun({ celebration }: { celebration: Celebration }) {
   const text = useT().home
-  const { goal, streakDays } = celebration
+  const { goal, streakDays, freezeEarned } = celebration
   const [leaving, setLeaving] = useState(false)
   const [held, setHeld] = useState(true)
   const leave = () => {
@@ -135,6 +135,12 @@ function Sun({ celebration }: { celebration: Celebration }) {
       <span className="relative mt-1.5 block animate-rise-in text-sm font-semibold [animation-delay:500ms]">
         {streakDays} {text.streakDays(streakDays)}
       </span>
+      {freezeEarned && (
+        <span className="relative mt-1 flex animate-rise-in items-center justify-center gap-1.5 text-sm text-ink-muted [animation-delay:600ms]">
+          <Snowflake size={16} strokeWidth={1.75} className="text-brick" aria-hidden />
+          {text.freezeEarned}
+        </span>
+      )}
     </button>
   )
 }
