@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { t } from '../i18n'
-import { accessToken, subscribeAccount } from './account'
+import { accessToken, getAccount, subscribeAccount } from './account'
 import { db } from './db'
 import { getLanguage, subscribeLanguage } from './language'
 import { loadProgress } from './reminderProgress'
@@ -190,8 +190,10 @@ function deviceId(): string {
 async function register(subscription: PushSubscription, time: string): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   const token = await accessToken()
+  // Signed in without a token (a refresh failed on a bad connection): the server keeps the link as it is.
+  const account = !token && getAccount() ? { account: true } : {}
   // receipts: this app's service worker confirms the messages it gets (public/push-sw.js).
-  const body = { type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true, device: deviceId() }
+  const body = { type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true, device: deviceId(), ...account }
   const answer = await post(body, false, token ? { Authorization: `Bearer ${token}` } : {})
   // A row the server has just made knows no progress yet: the next report must not be skipped as unchanged.
   lastReport = null

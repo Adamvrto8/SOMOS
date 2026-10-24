@@ -5,7 +5,7 @@
 // Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md; one row per device in Supabase
 // (push_devices in supabase/schema.sql) since docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
-import { createHash } from 'node:crypto'
+import { createHmac } from 'node:crypto'
 import webpush from 'web-push'
 
 // ---------- types (ReminderProgress mirrors src/lib/reminderProgress.ts) ----------
@@ -114,12 +114,14 @@ const DEFAULT_GOAL = 20
 export const MAX_DEVICES = 50_000
 /** New devices from one IP address in an hour. */
 export const NEW_DEVICES_PER_HOUR = 20
-/** Devices one tick looks at; the rest wait for the next tick (the window gives eight). */
+/** Devices one page of a tick looks at; a tick takes pages until none are left or its time is up. */
 export const TICK_LIMIT = 500
 /** A tick stops taking devices after this long (maxDuration in vercel.json is 60 s). */
 export const TICK_BUDGET_MS = 45_000
 export const SEND_CONCURRENCY = 20
 const TEST_EVERY_MS = 60_000
+/** One request to Supabase or a push service; a hung one must not use up the tick. */
+const REQUEST_TIMEOUT_MS = 10_000
 
 // ---------- validation (requests and stored data) ----------
 
@@ -128,6 +130,9 @@ const isCount = (v: unknown): v is number => typeof v === 'number' && Number.isI
 const isPositive = (v: unknown): v is number => isCount(v) && v > 0
 
 export const isTime = (v: unknown): v is string => typeof v === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(v)
+
+/** The zone's canonical IANA name ("europe/bratislava" → "Europe/Bratislava"), as Postgres knows it. */
+export const canonicalZone = (zone: string) => new Intl.DateTimeFormat('en', { timeZone: zone }).resolvedOptions().timeZone
 
 export function isTimeZone(v: unknown): v is string {
   if (typeof v !== 'string' || !v) return false
@@ -219,12 +224,13 @@ export function todayView(progress: ReminderProgress | null, day: string): Today
 /**
  * The report to judge a device of an account by: every device knows only what it has synced, so of the
  * reports from `day` the one with the most done (the best lower bound), else the same of yesterday's.
+ * The goal stays the device's own.
  */
 export function bestProgress(own: ReminderProgress | null, others: ReminderProgress[], day: string): ReminderProgress | null {
   const reports = own ? [own, ...others] : others
   for (const wanted of [day, previousDay(day)]) {
     const best = reports.filter((p) => p.day === wanted).sort((a, b) => b.done - a.done)[0]
-    if (best) return best
+    if (best) return own && best !== own ? { ...best, goal: own.goal } : best
   }
   return own
 }
@@ -393,6 +399,7 @@ export function supabaseStore(url: string, key: string, fetchImpl: typeof fetch 
       method: init.method ?? 'GET',
       headers: { apikey: key, ...auth, 'Content-Type': 'application/json', ...(init.prefer ? { Prefer: init.prefer } : {}) },
       body: init.body === undefined ? undefined : JSON.stringify(init.body),
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     })
     if (!res.ok) {
       const data = (await res.json().catch(() => ({}))) as { message?: string }
@@ -427,8 +434,8 @@ export function supabaseStore(url: string, key: string, fetchImpl: typeof fetch 
     due: async (now, limit) => rows(await call('rpc/reminders_due', { method: 'POST', body: { p_now: now.toISOString(), p_limit: limit } })),
     reportsOf: async (userIds) => {
       if (!userIds.length) return []
-      const ids = userIds.map(encodeURIComponent).join(',')
-      const data = await json(await call(`push_devices?user_id=in.(${ids})&progress=not.is.null&select=device,user_id,progress`))
+      // In the body: hundreds of ids in the URL would be too long for the gateway.
+      const data = await json(await call('rpc/push_reports', { method: 'POST', body: { p_users: userIds } }))
       if (!Array.isArray(data)) return []
       return data.flatMap((r: unknown) =>
         isRecord(r) && typeof r.user_id === 'string' && typeof r.device === 'string' && isProgress(r.progress)
@@ -468,7 +475,10 @@ export function supabaseUser(url: string, key: string, fetchImpl: typeof fetch =
   const base = url.replace(/\/+$/, '')
   return async (token) => {
     try {
-      const res = await fetchImpl(`${base}/auth/v1/user`, { headers: { apikey: key, Authorization: `Bearer ${token}` } })
+      const res = await fetchImpl(`${base}/auth/v1/user`, {
+        headers: { apikey: key, Authorization: `Bearer ${token}` },
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      })
       if (!res.ok) return null
       const data = (await res.json()) as { id?: unknown }
       return typeof data.id === 'string' ? data.id : null
@@ -478,10 +488,13 @@ export function supabaseUser(url: string, key: string, fetchImpl: typeof fetch =
   }
 }
 
-/** The key the per-IP limit counts under: a hash, the address itself is never stored. */
-export function ipKey(request: Request): string {
+/**
+ * The key the per-IP limit counts under. The address itself is never stored, and a keyed hash cannot be
+ * turned back into it by trying every address.
+ */
+export function ipKey(request: Request, secret: string): string {
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-  return createHash('sha256').update(`somos-reminder:${ip}`).digest('hex')
+  return createHmac('sha256', `somos-reminder:${secret}`).update(ip).digest('hex')
 }
 
 // ---------- sending ----------
@@ -509,6 +522,7 @@ export function webPushSender(privateKey: string): Sender {
       TTL: ttl,
       topic,
       urgency,
+      timeout: REQUEST_TIMEOUT_MS,
     })
   }
 }
@@ -599,33 +613,48 @@ async function tick(deps: Deps): Promise<Response> {
   const now = deps.now()
   const clock = deps.clock ?? Date.now
   const started = clock()
-  const rows = await deps.store.due(now, TICK_LIMIT)
-  const userIds = [...new Set(rows.flatMap((r) => (r.userId ? [r.userId] : [])))]
-  const reports = userIds.length ? await deps.store.reportsOf(userIds) : []
-
+  const outOfTime = () => clock() - started > TICK_BUDGET_MS
+  // Devices this tick has looked at: a page may bring them again (a send that failed stays due).
+  const seen = new Set<string>()
   let sent = 0
-  let partial = rows.length === TICK_LIMIT // more may be waiting
-  const queue = [...rows]
-  const worker = async () => {
-    for (let row = queue.shift(); row; row = queue.shift()) {
-      // Out of time: the rest stay unhandled, and the next tick is still inside their window.
-      if (clock() - started > TICK_BUDGET_MS) {
-        partial = true
-        queue.length = 0
-        return
-      }
-      try {
-        if ((await remind(deps, row, reports, now)) === 'sent') sent++
-      } catch (error) {
-        console.error('reminder failed for a device', error)
+  let partial = false
+
+  // Page after page: most learners keep the default time, so thousands can be due at the same tick.
+  for (;;) {
+    if (outOfTime()) {
+      partial = true
+      break
+    }
+    const due = await deps.store.due(now, TICK_LIMIT)
+    const page = due.filter((r) => !seen.has(r.device))
+    if (!page.length) break
+    page.forEach((r) => seen.add(r.device))
+    const userIds = [...new Set(page.flatMap((r) => (r.userId ? [r.userId] : [])))]
+    const reports = userIds.length ? await deps.store.reportsOf(userIds) : []
+
+    const queue = [...page]
+    const worker = async () => {
+      for (let row = queue.shift(); row; row = queue.shift()) {
+        // Out of time: the rest stay unhandled, and the next tick is still inside their window.
+        if (outOfTime()) {
+          partial = true
+          queue.length = 0
+          return
+        }
+        try {
+          if ((await remind(deps, row, reports, now)) === 'sent') sent++
+        } catch (error) {
+          console.error('reminder failed for a device', error)
+        }
       }
     }
+    await Promise.all(Array.from({ length: Math.min(SEND_CONCURRENCY, page.length) }, worker))
+    if (partial || due.length < TICK_LIMIT) break
   }
-  await Promise.all(Array.from({ length: Math.min(SEND_CONCURRENCY, rows.length) }, worker))
 
   // Once a day, at the first tick after 03:00 UTC.
   if (now.getUTCHours() === 3 && now.getUTCMinutes() < 15) await deps.store.cleanup()
-  const reason = rows.length === 0 ? 'nothing-due' : partial ? 'partial' : 'done'
+  const reason = seen.size === 0 ? 'nothing-due' : partial ? 'partial' : 'done'
   await deps.store.recordTick({ at: now.toISOString(), reason, sent })
   return json({ sent, reason })
 }
@@ -636,32 +665,38 @@ async function subscribe(request: Request, body: Record<string, unknown>, deps: 
   const { endpoint, keys } = sub.subscription
   // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
   if (await deps.store.isGone(endpoint)) return json({ error: 'gone' }, 410)
-  // The same device with a new subscription, or a subscription that moved to a new device id (storage cleared).
-  const existing = (await deps.store.byDevice(body.device)) ?? (await deps.store.byEndpoint(endpoint))
+  // The same device (perhaps with a new subscription), or a subscription that moved to a new device id (storage cleared).
+  const [own, holder] = await Promise.all([deps.store.byDevice(body.device), deps.store.byEndpoint(endpoint)])
+  const existing = own ?? holder
   // Only a new device counts toward the limits: every app checks in at every start.
   if (!existing) {
     if ((await deps.store.count()) >= MAX_DEVICES) return json({ error: 'full' }, 503)
     if (!(await deps.store.rateHit(deps.ipOf(request), NEW_DEVICES_PER_HOUR))) return json({ error: 'too-many-devices' }, 429)
   }
   // Signed in: the device counts its practice with the account's other devices. A token that cannot be
-  // checked right now keeps the link as it was; no token means signed out.
+  // checked right now, or an app signed in that could not get one (`account`), keeps the link as it was;
+  // neither means signed out.
   const token = bearer(request)
-  const userId = token ? ((await deps.userOf(token)) ?? existing?.userId ?? null) : null
-  const row: DeviceRow = {
-    ...EMPTY_STATE,
-    ...existing,
-    device: body.device,
+  const keepLink = existing?.userId ?? null
+  const userId = token ? ((await deps.userOf(token)) ?? keepLink) : body.account === true ? keepLink : null
+  const settings = {
     userId,
     endpoint,
     p256dh: keys.p256dh,
     auth: keys.auth,
     time: sub.time,
-    timeZone: sub.timeZone,
-    language: body.language === 'en' ? 'en' : 'sk',
+    timeZone: canonicalZone(sub.timeZone),
+    language: body.language === 'en' ? ('en' as const) : ('sk' as const),
     receipts: body.receipts === true,
     seenAt: deps.now().toISOString(),
   }
-  await deps.store.save(row)
+  if (own) {
+    // Only what the device says about itself: what a tick or a report wrote meanwhile stays.
+    if (holder && holder.device !== own.device) await deps.store.remove(holder.device)
+    await deps.store.update(own.device, settings)
+  } else {
+    await deps.store.save({ ...EMPTY_STATE, ...holder, device: body.device, ...settings })
+  }
   return json({ ok: true })
 }
 
@@ -760,7 +795,7 @@ export function depsFromEnv(env: Record<string, string | undefined>): Deps | und
     now: () => new Date(),
     cronSecret,
     userOf: supabaseUser(url, key),
-    ipOf: ipKey,
+    ipOf: (request) => ipKey(request, privateKey),
   }
 }
 

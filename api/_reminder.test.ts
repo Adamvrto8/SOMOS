@@ -94,20 +94,27 @@ describe('bestProgress', () => {
   it('takes the report from today with the most done', () => {
     const phone = progress({ done: 3 })
     const tablet = progress({ done: 12 })
-    expect(bestProgress(phone, [tablet], DAY)).toBe(tablet)
+    expect(bestProgress(phone, [tablet], DAY)).toEqual(tablet)
     expect(bestProgress(tablet, [phone], DAY)).toBe(tablet)
+  })
+
+  it('keeps the device’s own goal', () => {
+    const phone = progress({ done: 3, goal: 20 })
+    const tablet = progress({ done: 30, goal: 50 })
+    expect(bestProgress(phone, [tablet], DAY)).toEqual({ ...tablet, goal: 20 })
+    expect(bestProgress(null, [tablet], DAY)).toBe(tablet)
   })
 
   it('prefers a report from today over a busier one from yesterday', () => {
     const today = progress({ done: 1 })
     const yesterday = progress({ day: '2026-06-30', done: 30 })
-    expect(bestProgress(yesterday, [today], DAY)).toBe(today)
+    expect(bestProgress(yesterday, [today], DAY)).toEqual(today)
   })
 
   it('falls back to the busiest report from yesterday, then to the device’s own', () => {
     const a = progress({ day: '2026-06-30', done: 4 })
     const b = progress({ day: '2026-06-30', done: 9 })
-    expect(bestProgress(a, [b], DAY)).toBe(b)
+    expect(bestProgress(a, [b], DAY)).toEqual(b)
     const old = progress({ day: '2026-06-01' })
     expect(bestProgress(old, [progress({ day: '2026-05-01' })], DAY)).toBe(old)
     expect(bestProgress(null, [], DAY)).toBeNull()
@@ -282,7 +289,8 @@ function memoryDevices(initial: DeviceRow[] = []) {
           const start = minutes(r.time)
           return r.testLater || (clock.minutes >= start && clock.minutes <= Math.min(start + 120, 1439) && r.handledDay !== clock.day)
         })
-        .sort((a, b) => a.device.localeCompare(b.device))
+        // Like reminders_due: looked at longest ago first.
+        .sort((a, b) => (a.lastDecision?.at ?? '').localeCompare(b.lastDecision?.at ?? '') || a.device.localeCompare(b.device))
         .slice(0, limit),
     reportsOf: async (userIds) =>
       [...rows.values()].flatMap((r) => (r.userId && userIds.includes(r.userId) && r.progress ? [{ userId: r.userId, device: r.device, progress: r.progress }] : [])),
@@ -425,6 +433,36 @@ describe('api/reminder: requests from the app', () => {
     // Signed out.
     await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { userOf }))
     expect(store.rows.get(PHONE)?.userId).toBeNull()
+  })
+
+  it('keeps the link of an app that is signed in but could not get a token', async () => {
+    const store = memoryDevices([device({ userId: 'user-1' })])
+    await handleReminder(post(subscribeBody({ account: true })), deps(store))
+    expect(store.rows.get(PHONE)?.userId).toBe('user-1')
+  })
+
+  it('changes only the device’s own settings when it checks in, not what a tick or a report wrote', async () => {
+    const store = memoryDevices([device({ time: '18:00' })])
+    // The tick sends and a report arrives while the check-in waits on Supabase Auth.
+    const userOf = async () => {
+      await store.update(PHONE, { handledDay: '2026-07-01', sentDay: '2026-07-01', progress: progress({ done: 20 }) })
+      return 'user-1'
+    }
+    await handleReminder(post(subscribeBody({ time: '19:30' }), { token: 'good' }), deps(store, noop, SUMMER_1910, { userOf }))
+    expect(store.rows.get(PHONE)).toMatchObject({ time: '19:30', userId: 'user-1', handledDay: '2026-07-01', sentDay: '2026-07-01', progress: progress({ done: 20 }) })
+  })
+
+  it('frees a new endpoint of the device from a row that still holds it', async () => {
+    const store = memoryDevices([device(), tablet()])
+    await handleReminder(post(subscribeBody({ subscription: tabletSubscription })), deps(store))
+    expect([...store.rows.keys()]).toEqual([PHONE])
+    expect(store.rows.get(PHONE)?.endpoint).toBe(TABLET_ENDPOINT)
+  })
+
+  it('stores the time zone under the name Postgres knows', async () => {
+    const store = memoryDevices()
+    await handleReminder(post(subscribeBody({ timeZone: 'europe/bratislava' })), deps(store))
+    expect(store.rows.get(PHONE)?.timeZone).toBe('Europe/Bratislava')
   })
 
   it('limits new devices per IP address, but never a device checking in again', async () => {
@@ -664,8 +702,8 @@ describe('api/reminder: cron tick', () => {
   it('stops when its time is up and leaves the rest to the next tick', async () => {
     const rows = Array.from({ length: 3 }, (_, i) => device({ device: `device-number-${i}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` }))
     const store = memoryDevices(rows)
-    // The start, then the first device's check; every later check is past the budget.
-    const times = [0, 0]
+    // The start, the page's check and the first device's; every later check is past the budget.
+    const times = [0, 0, 0]
     const clock = () => times.shift() ?? TICK_BUDGET_MS + 1
     const send = vi.fn<Sender>(async () => {})
     expect(await tickJson(store, send, SUMMER_1910, { clock })).toEqual({ sent: 1, reason: 'partial' })
@@ -673,9 +711,29 @@ describe('api/reminder: cron tick', () => {
     expect(await tickJson(store, send)).toEqual({ sent: 2, reason: 'done' })
   })
 
-  it('says more may be waiting when it got as many devices as it asks for', async () => {
-    const store = memoryDevices(Array.from({ length: TICK_LIMIT }, (_, i) => device({ device: `device-number-${i}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` })))
-    expect(await tickJson(store)).toEqual({ sent: TICK_LIMIT, reason: 'partial' })
+  it('takes page after page while devices are due', async () => {
+    const store = memoryDevices(Array.from({ length: TICK_LIMIT + 3 }, (_, i) => device({ device: `device-number-${String(i).padStart(4, '0')}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` })))
+    const due = vi.spyOn(store, 'due')
+    expect(await tickJson(store)).toEqual({ sent: TICK_LIMIT + 3, reason: 'done' })
+    expect(due).toHaveBeenCalledTimes(2)
+  })
+
+  it('does not go round in circles on devices whose send keeps failing', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const rows = Array.from({ length: TICK_LIMIT + 2 }, (_, i) => device({ device: `device-number-${String(i).padStart(4, '0')}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` }))
+    const store = memoryDevices(rows)
+    const send = vi.fn<Sender>(async () => Promise.reject(pushError(500)))
+    expect(await tickJson(store, send)).toEqual({ sent: 0, reason: 'done' })
+    // Every device once, the first page and the two after it: then only devices already tried come back.
+    expect(send).toHaveBeenCalledTimes(TICK_LIMIT + 2)
+  })
+
+  it('tries the devices it looked at longest ago first', async () => {
+    const store = memoryDevices([
+      device({ device: 'a-failed-just-now', endpoint: 'https://fcm.googleapis.com/fcm/send/a', lastDecision: { at: '2026-07-01T17:00:00.000Z', reason: 'failed' } }),
+      device({ device: 'b-never-looked-at', endpoint: 'https://fcm.googleapis.com/fcm/send/b' }),
+    ])
+    expect((await store.due(SUMMER_1910, 10)).map((r) => r.device)).toEqual(['b-never-looked-at', 'a-failed-just-now'])
   })
 
   it('keeps going when one device fails', async () => {
@@ -837,7 +895,8 @@ describe('supabaseStore', () => {
     const { impl, calls } = fakeFetch(() => Response.json([{ device: TABLET, user_id: 'user-1', progress: progress() }, { device: 'x', user_id: 'user-1', progress: { day: 'bad' } }]))
     const store = supabaseStore(URL_, 'sb_secret_abc', impl)
     expect(await store.reportsOf(['user-1', 'user-2'])).toEqual([{ device: TABLET, userId: 'user-1', progress: progress() }])
-    expect(calls[0].url).toBe('https://project.supabase.co/rest/v1/push_devices?user_id=in.(user-1,user-2)&progress=not.is.null&select=device,user_id,progress')
+    // The ids in the body: hundreds of them would make the URL too long.
+    expect(calls[0]).toMatchObject({ method: 'POST', url: 'https://project.supabase.co/rest/v1/rpc/push_reports', body: { p_users: ['user-1', 'user-2'] } })
     expect(await store.reportsOf([])).toEqual([])
     expect(calls).toHaveLength(1)
   })
@@ -896,12 +955,14 @@ describe('supabaseUser', () => {
 describe('ipKey', () => {
   it('hashes the first forwarded address, and never keeps the address', () => {
     const request = (headers: Record<string, string>) => new Request('https://somos.example/api/reminder', { headers })
-    const key = ipKey(request({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }))
+    const key = ipKey(request({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }), 'secret')
     expect(key).toMatch(/^[0-9a-f]{64}$/)
     expect(key).not.toContain('203')
-    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }))).toBe(key)
-    expect(ipKey(request({ 'x-real-ip': '203.0.113.7' }))).toBe(key)
-    expect(ipKey(request({ 'x-forwarded-for': '198.51.100.1' }))).not.toBe(key)
+    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }), 'secret')).toBe(key)
+    expect(ipKey(request({ 'x-real-ip': '203.0.113.7' }), 'secret')).toBe(key)
+    expect(ipKey(request({ 'x-forwarded-for': '198.51.100.1' }), 'secret')).not.toBe(key)
+    // Keyed: without the server's secret the hash of every address cannot be tried.
+    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }), 'other')).not.toBe(key)
   })
 })
 

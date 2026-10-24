@@ -266,22 +266,40 @@ alter table public.push_rate enable row level security;
 revoke all on public.push_devices, public.push_gone, public.push_ticks, public.push_rate from anon, authenticated;
 grant select, insert, update, delete on public.push_devices, public.push_gone, public.push_ticks, public.push_rate to service_role;
 
+-- The wall-clock time in a zone; null for a zone Postgres does not know (the device then drops out of
+-- reminders_due instead of failing it for everyone).
+create or replace function public.push_local_time(p_now timestamptz, p_zone text) returns timestamp
+language plpgsql stable set search_path = '' as $$
+begin
+  return p_now at time zone p_zone;
+exception when others then
+  return null;
+end $$;
+
 -- Devices inside their window [time, min(time + 2 h, 23:59)] that were not handled today, and every test
--- asked for later. Minutes of the day, not time + interval (that wraps past midnight). A zone Postgres does
--- not know drops out here instead of failing the query for everyone.
+-- asked for later. Minutes of the day, not time + interval (that wraps past midnight). The devices the tick
+-- looked at longest ago come first: one it has just tried (and failed) waits behind the rest.
 create or replace function public.reminders_due(p_now timestamptz, p_limit integer)
 returns setof public.push_devices language sql stable set search_path = '' as $$
   select d.* from public.push_devices d
-  join pg_catalog.pg_timezone_names z on z.name = d.time_zone
-  cross join lateral (select p_now at time zone d.time_zone as t) l
+  cross join lateral (select public.push_local_time(p_now, d.time_zone) as t) l
   cross join lateral (select
       extract(hour from l.t)::int * 60 + extract(minute from l.t)::int as minutes,
       to_char(l.t, 'YYYY-MM-DD') as day,
       split_part(d.time, ':', 1)::int * 60 + split_part(d.time, ':', 2)::int as start) m
   where d.test_later
      or (m.minutes between m.start and least(m.start + 120, 1439) and d.handled_day is distinct from m.day)
-  order by d.device
+  order by d.last_decision->>'at' nulls first, d.device
   limit p_limit;
+$$;
+
+-- The last reports of every device of these accounts, as one JSON array: a list of ids in the body instead of
+-- the URL (too long for hundreds of accounts), and one value, so PostgREST's row limit cannot cut it short.
+create or replace function public.push_reports(p_users uuid[]) returns jsonb
+language sql stable set search_path = '' as $$
+  select coalesce(jsonb_agg(jsonb_build_object('device', d.device, 'user_id', d.user_id, 'progress', d.progress)), '[]'::jsonb)
+  from public.push_devices d
+  where d.user_id = any(p_users) and d.progress is not null;
 $$;
 
 -- One more new device from this key this hour: true while under the limit.
@@ -305,7 +323,7 @@ language sql set search_path = '' as $$
   delete from public.push_rate where hour < now() - interval '1 day';
 $$;
 
-revoke execute on function public.reminders_due(timestamptz, integer), public.push_rate_hit(text, integer), public.push_cleanup()
-  from public, anon, authenticated;
-grant execute on function public.reminders_due(timestamptz, integer), public.push_rate_hit(text, integer), public.push_cleanup()
-  to service_role;
+revoke execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),
+  public.push_reports(uuid[]), public.push_rate_hit(text, integer), public.push_cleanup() from public, anon, authenticated;
+grant execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),
+  public.push_reports(uuid[]), public.push_rate_hit(text, integer), public.push_cleanup() to service_role;

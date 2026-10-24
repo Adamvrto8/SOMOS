@@ -144,8 +144,14 @@ this one.
 4. Send with a concurrency of ~20. A 404/410 removes the row and notes `push_gone`.
 5. Write each row's `handled_day` / `delivery` / `last_reason`, then `push_ticks`
    (`reason`: `sent n`, `nothing-due`, `partial` when it stopped early).
-6. If 500 rows came back, or about 45 s have passed (`maxDuration` 60 s in `vercel.json`), stop and leave the rest to the next tick: the 2-hour
-   window gives 8 ticks, so a busy 19:00 is spread out instead of timing out.
+6. Pages of 500 until no device is left or about 45 s have passed (`maxDuration` 60 s in `vercel.json`); devices
+   the tick looked at longest ago come first, so one that keeps failing does not block the rest. Out of time,
+   the rest wait for the next tick: the 2-hour window gives 8. Every request has a 10 s timeout.
+
+Review fixes (2026-10-24): the account reports come through `rpc/push_reports` with the ids in the body (not a
+long `in.(…)` URL); a check-in of a known device changes only its settings, never what a tick or a report wrote;
+an app signed in without a token sends `account: true` and keeps the link; the device's own goal counts; zones
+are stored by their canonical name and an unknown one drops out (`push_local_time`); the IP hash is keyed.
 
 Rough size: one push takes ~100–300 ms, so 500 devices at 20 at a time take a few seconds.
 

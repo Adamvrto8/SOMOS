@@ -4,11 +4,13 @@ import type { ReminderProgress } from './reminderProgress'
 // The account and today's numbers come from Supabase and Dexie in the app; here the tests set them.
 const fake = vi.hoisted(() => ({
   token: null as string | null,
+  signedIn: false,
   accountListeners: [] as (() => void)[],
   progress: null as ReminderProgress | null,
 }))
 vi.mock('./account', () => ({
   accessToken: async () => fake.token,
+  getAccount: () => (fake.signedIn ? { userId: 'user-1', email: 'adam@example.com' } : null),
   subscribeAccount: (notify: () => void) => {
     fake.accountListeners.push(notify)
     return () => {}
@@ -220,14 +222,31 @@ describe('a reminder that stopped working', () => {
     keepReminderSynced()
     await vi.waitFor(() => expect(headers).toHaveLength(2))
     fake.token = 'access-token'
+    fake.signedIn = true
     fake.accountListeners.forEach((notify) => notify())
     await vi.waitFor(() => expect(headers).toHaveLength(3))
     expect(headers[2].get('authorization')).toBe('Bearer access-token')
 
     fake.token = null
+    fake.signedIn = false
     fake.accountListeners.forEach((notify) => notify())
     await vi.waitFor(() => expect(headers).toHaveLength(4))
     expect(headers[3].has('authorization')).toBe(false)
+  })
+
+  it('says it is signed in when it could not get a token, so the server keeps the link', async () => {
+    const bodies: Record<string, unknown>[] = []
+    stubDevice(async (_input: RequestInfo | URL, init?: RequestInit) => {
+      bodies.push(JSON.parse(String(init?.body)) as Record<string, unknown>)
+      return Response.json({ ok: true })
+    })
+    fake.signedIn = true
+    await syncReminder()
+    fake.signedIn = false
+    await syncReminder()
+    const subscribes = bodies.filter((b) => b.type === 'subscribe')
+    expect(subscribes[0]).toMatchObject({ account: true })
+    expect(subscribes[1]).not.toHaveProperty('account')
   })
 
   it('asks the server what it knows about this device', async () => {
