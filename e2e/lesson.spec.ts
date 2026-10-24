@@ -285,6 +285,8 @@ test('an exercise shows its lessons as a grid; the picked topic and level come b
   await expect(button(page, 'Lekcia 1, aktuálna')).toBeVisible()
   await button(page, 'Pokračovať (Lekcia 1)').tap()
   await expect(page).toHaveURL(/\/practice\/lesson\?type=cloze&topic=food(?!.*level).*&lesson=1/)
+  // The lesson remembers its pick once it is on screen: leaving earlier (a slow runner) would leave nothing behind.
+  await expect(field(page)).toBeVisible()
   await page.goto('/practice')
   const tile = page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ })
   await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne')
