@@ -13,7 +13,8 @@ export default defineConfig({
   forbidOnly: true,
   // GitHub's runner is slower than a desktop: one more try there before a timing test counts as failed.
   retries: process.env.CI ? 1 : 0,
-  reporter: 'list',
+  // On GitHub a failure also becomes a note on the commit, readable without the run's log.
+  reporter: process.env.CI ? [['list'], ['github']] : 'list',
   use: {
     baseURL: `http://localhost:${PORT}`,
     channel: 'chrome', // the installed Chrome, no browser download

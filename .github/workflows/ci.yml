@@ -15,11 +15,11 @@ concurrency:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
@@ -30,14 +30,14 @@ jobs:
       - run: npm run build # tsc -b included
 
   e2e:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
       - run: npm ci
-      # playwright.config.ts uses the installed Chrome (channel: 'chrome'), which ubuntu-latest has.
+      # playwright.config.ts uses the installed Chrome (channel: 'chrome'), which ubuntu-24.04 has.
       - run: npm run test:e2e
