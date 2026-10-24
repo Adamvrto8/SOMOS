@@ -51,16 +51,27 @@ function setAccount(next: Account | null) {
 
 export const getAccount = () => account
 
+/** Called on sign-in and sign-out (the reminder links its device to the account). */
+export function subscribeAccount(notify: () => void): () => void {
+  listeners.add(notify)
+  return () => {
+    listeners.delete(notify)
+  }
+}
+
 export function useAccount(): Account | null {
-  return useSyncExternalStore(
-    (notify) => {
-      listeners.add(notify)
-      return () => {
-        listeners.delete(notify)
-      }
-    },
-    getAccount,
-  )
+  return useSyncExternalStore(subscribeAccount, getAccount)
+}
+
+/** The signed-in session's access token, for our own server functions; null when signed out or unreachable. */
+export async function accessToken(): Promise<string | null> {
+  if (!account) return null
+  try {
+    const { data } = await (await getClient()).auth.getSession()
+    return data.session?.access_token ?? null
+  } catch {
+    return null
+  }
 }
 
 let client: Promise<SupabaseClient> | undefined

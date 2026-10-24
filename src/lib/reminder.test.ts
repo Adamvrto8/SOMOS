@@ -1,10 +1,35 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import type { ReminderProgress } from './reminderProgress'
+
+// The account and today's numbers come from Supabase and Dexie in the app; here the tests set them.
+const fake = vi.hoisted(() => ({
+  token: null as string | null,
+  accountListeners: [] as (() => void)[],
+  progress: null as ReminderProgress | null,
+}))
+vi.mock('./account', () => ({
+  accessToken: async () => fake.token,
+  subscribeAccount: (notify: () => void) => {
+    fake.accountListeners.push(notify)
+    return () => {}
+  },
+}))
+vi.mock('./reminderProgress', () => ({
+  loadProgress: async () => {
+    if (!fake.progress) throw new Error('no database in this test')
+    return fake.progress
+  },
+}))
+
 import {
   base64UrlToBytes,
   enableReminder,
   fetchReminderStatus,
+  keepReminderSynced,
+  noteAnswer,
   parseSettings,
   reminderProblem,
+  reportProgress,
   sendTestReminder,
   syncReminder,
   VAPID_PUBLIC_KEY,
@@ -166,26 +191,43 @@ describe('a reminder that stopped working', () => {
     expect(reminderProblem()).toBeNull()
   })
 
-  it('says that the reminders go to another device, and takes them only when asked', async () => {
+  it('names the device and never asks to take reminders over', async () => {
     const bodies: Record<string, unknown>[] = []
-    // Like api/reminder.ts with another device stored: checking in is refused, asking for them here is not.
-    const server = async (_input: RequestInfo | URL, init?: RequestInit) => {
-      const body = JSON.parse(String(init?.body)) as Record<string, unknown>
-      bodies.push(body)
-      return body.type === 'subscribe' && body.takeOver !== true ? Response.json({ error: 'other-device' }, { status: 409 }) : Response.json({ ok: true })
-    }
-    stubDevice(server)
+    stubDevice(async (_input: RequestInfo | URL, init?: RequestInit) => {
+      bodies.push(JSON.parse(String(init?.body)) as Record<string, unknown>)
+      return Response.json({ ok: true })
+    })
     await enableReminder('19:00')
-    expect(bodies[0]).toMatchObject({ type: 'subscribe', takeOver: true })
-    expect(reminderProblem()).toBeNull()
-
     await syncReminder()
-    expect(bodies.at(-1)).toMatchObject({ type: 'subscribe' })
-    expect(bodies.at(-1)).not.toHaveProperty('takeOver')
-    expect(reminderProblem()).toContain('Pripomienky chodia na iné zariadenie')
+    for (const body of bodies.filter((b) => b.type === 'subscribe')) {
+      expect(body).toMatchObject({ device: expect.any(String), receipts: true })
+      expect(body).not.toHaveProperty('takeOver')
+    }
+    expect(bodies.filter((b) => b.type === 'subscribe')).toHaveLength(2)
+  })
 
-    await sendTestReminder()
-    expect(reminderProblem()).toBeNull()
+  it('links the device to the account signed in, and checks in again on sign-in and sign-out', async () => {
+    const headers: Headers[] = []
+    const fetchMock = vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) => {
+      if (JSON.parse(String(init?.body)).type === 'subscribe') headers.push(new Headers(init?.headers))
+      return Response.json({ ok: true })
+    })
+    stubDevice(fetchMock)
+    vi.stubGlobal('document', { addEventListener: () => {}, visibilityState: 'visible' })
+    await enableReminder('19:00')
+    expect(headers[0].has('authorization')).toBe(false)
+
+    keepReminderSynced()
+    await vi.waitFor(() => expect(headers).toHaveLength(2))
+    fake.token = 'access-token'
+    fake.accountListeners.forEach((notify) => notify())
+    await vi.waitFor(() => expect(headers).toHaveLength(3))
+    expect(headers[2].get('authorization')).toBe('Bearer access-token')
+
+    fake.token = null
+    fake.accountListeners.forEach((notify) => notify())
+    await vi.waitFor(() => expect(headers).toHaveLength(4))
+    expect(headers[3].has('authorization')).toBe(false)
   })
 
   it('asks the server what it knows about this device', async () => {
@@ -193,5 +235,78 @@ describe('a reminder that stopped working', () => {
     stubDevice(fetchMock)
     expect(await fetchReminderStatus()).toEqual({ subscribed: true })
     expect(JSON.parse(String(fetchMock.mock.calls[0][1]?.body))).toEqual({ type: 'status', endpoint: ENDPOINT })
+  })
+})
+
+describe('progress reports', () => {
+  const ENDPOINT = 'https://push.example/1'
+  const subscription = { endpoint: ENDPOINT, toJSON: () => ({ endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } }), unsubscribe: async () => true }
+  const today = (done: number): ReminderProgress => ({ day: '2026-07-01', done, goal: 20, dueToday: 5, dueTomorrow: 8, streakDays: 3, activeToday: done >= 20 })
+  let reports: ReminderProgress[]
+
+  beforeEach(async () => {
+    vi.useFakeTimers()
+    reports = []
+    vi.stubEnv('DEV', false)
+    vi.stubGlobal('Notification', { permission: 'granted', requestPermission: async () => 'granted' })
+    vi.stubGlobal('window', { PushManager: class {}, Notification: {}, setTimeout, clearTimeout })
+    const pushManager = { getSubscription: async () => subscription, subscribe: async () => subscription }
+    vi.stubGlobal('navigator', { onLine: true, serviceWorker: { ready: Promise.resolve({ pushManager }) } })
+    vi.stubGlobal('fetch', async (_input: RequestInfo | URL, init?: RequestInit) => {
+      const body = JSON.parse(String(init?.body)) as { type: string; progress?: ReminderProgress }
+      if (body.type === 'progress') reports.push(body.progress!)
+      return Response.json({ ok: true })
+    })
+    fake.progress = today(0)
+    await enableReminder('19:00')
+    // Turning it on reports at once (without waiting for it).
+    await vi.waitFor(() => expect(reports).toHaveLength(1))
+    reports = []
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+    vi.unstubAllEnvs()
+    vi.unstubAllGlobals()
+    fake.progress = null
+  })
+
+  it('sends nothing for an answer below the goal, and once for the answer that reaches it', async () => {
+    fake.progress = today(5)
+    noteAnswer()
+    await vi.advanceTimersByTimeAsync(3000)
+    expect(reports).toEqual([])
+
+    fake.progress = today(20)
+    noteAnswer()
+    await vi.advanceTimersByTimeAsync(3000)
+    expect(reports).toEqual([today(20)])
+
+    fake.progress = today(21)
+    noteAnswer()
+    await vi.advanceTimersByTimeAsync(3000)
+    expect(reports).toHaveLength(1)
+  })
+
+  it('reports a change from the settings, but not the same numbers twice', async () => {
+    fake.progress = today(4)
+    reportProgress()
+    await vi.advanceTimersByTimeAsync(3000)
+    reportProgress()
+    await vi.advanceTimersByTimeAsync(3000)
+    expect(reports).toEqual([today(4)])
+
+    fake.progress = { ...today(4), goal: 30 }
+    reportProgress()
+    await vi.advanceTimersByTimeAsync(3000)
+    expect(reports).toHaveLength(2)
+  })
+
+  it('reports again after checking in, since the server may have made the device anew', async () => {
+    fake.progress = today(4)
+    reportProgress()
+    await vi.advanceTimersByTimeAsync(3000)
+    await syncReminder()
+    expect(reports).toEqual([today(4), today(4)])
   })
 })

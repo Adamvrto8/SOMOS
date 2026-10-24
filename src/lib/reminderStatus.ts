@@ -5,17 +5,17 @@ import type { ReminderProgress } from './reminderProgress'
 // "Stav pripomienky" in Nastavenia: what the server knows, in plain Slovak. A reminder that
 // silently stops is otherwise invisible: nothing arrives, and nothing says why.
 
-/** What api/reminder.ts answers to `status`. Keep in sync with ReminderStatus there. */
+/** What api/reminder.ts answers to `status`, about the asking device. Keep in sync with ReminderStatus there. */
 export interface ReminderStatus {
-  subscribed: boolean // the server has a device to remind
-  thisDevice: boolean // … and it is the one asking
+  subscribed: boolean // the server reminds this device
   time: string | null
   timeZone: string | null
   serverClock: { day: string; time: string } | null
   sentDay: string | null // day of the last reminder sent
   progress: ReminderProgress | null
-  lastTick: { at: string; reason: string } | null // the timer's last call and what the server decided
-  dropped: boolean // no device because the push service dropped its subscription
+  lastTick: { at: string; reason: string } | null // the timer's last call, for every device
+  lastDecision: { at: string; reason: string } | null // what the server last decided for this device
+  dropped: boolean // not reminded because the push service dropped its subscription
   delivery: Delivery | null
   testPending: boolean // a test notification waits for the timer's next call
 }
@@ -48,8 +48,7 @@ export function describeStatus(status: ReminderStatus, now: Date): StatusLine[] 
   const today = dayKey(now)
   const lines: StatusLine[] = []
 
-  if (status.thisDevice) lines.push({ tone: 'ok', text: text.thisDevice(status.time) })
-  else if (status.subscribed) lines.push({ tone: 'problem', text: text.otherDevice })
+  if (status.subscribed) lines.push({ tone: 'ok', text: text.thisDevice(status.time) })
   else if (status.dropped) lines.push({ tone: 'problem', text: text.dropped })
   else lines.push({ tone: 'problem', text: text.none })
 
@@ -62,6 +61,12 @@ export function describeStatus(status: ReminderStatus, now: Date): StatusLine[] 
     } else {
       lines.push({ tone: 'info', text: text.lastCheck(clock(at), text.reasons[status.lastTick.reason] ?? status.lastTick.reason) })
     }
+  }
+  // The timer runs for every device; this is what it last decided for this one.
+  if (status.subscribed && status.lastDecision) {
+    const at = new Date(status.lastDecision.at)
+    const stamp = dayKey(at) === today ? clock(at) : `${shortDay(dayKey(at))} ${clock(at)}`
+    lines.push({ tone: 'info', text: text.decision(stamp, text.reasons[status.lastDecision.reason] ?? status.lastDecision.reason) })
   }
 
   if (!status.sentDay) lines.push({ tone: 'info', text: text.neverSent })

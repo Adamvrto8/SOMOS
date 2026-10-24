@@ -11,7 +11,6 @@ import {
   sendTestLater,
   sendTestReminder,
   setReminderTime,
-  useReminderElsewhere,
   useReminderProblem,
   useReminderSettings,
 } from '../../lib/reminder'
@@ -65,7 +64,6 @@ export function ReminderSettings() {
   // Local draft, so typing a time on a keyboard is not reset mid-way.
   const [time, setTime] = useState(settings.time)
   const problem = useReminderProblem()
-  const elsewhere = useReminderElsewhere()
 
   return (
     <SettingsSubpage title={text.title}>
@@ -104,12 +102,6 @@ export function ReminderSettings() {
         )}
         <StatusMessage status={status} />
       </div>
-
-      {elsewhere && (
-        <Button icon={BellRing} disabled={busy} onClick={() => void run(() => enableReminder(settings.time), text.movedHere)} className="w-full">
-          {text.moveHere}
-        </Button>
-      )}
     </SettingsSubpage>
   )
 }

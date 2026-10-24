@@ -1,12 +1,14 @@
 import { useSyncExternalStore } from 'react'
 import { t } from '../i18n'
+import { accessToken, subscribeAccount } from './account'
 import { db } from './db'
 import { getLanguage, subscribeLanguage } from './language'
 import { loadProgress } from './reminderProgress'
 import type { ReminderStatus } from './reminderStatus'
 
 // Daily practice reminder (Web Push). The server side is api/reminder.ts; the design is in
-// docs/superpowers/specs/2026-09-27-push-reminders-design.md. Settings are per device, like the daily goal.
+// docs/superpowers/specs/2026-09-27-push-reminders-design.md. Settings are per device, like the daily goal; the
+// server reminds every device that has it on (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
 
 /** Public half of the VAPID key pair; the same value as in api/reminder.ts. */
 export const VAPID_PUBLIC_KEY = 'BPTIxlaW9JLc2601tsFgNg6FVwR8CUB4GHBVze_ERU7m0EEuYrWb4Y8XwBVAIMRjYgB_aBVi48EnbCx4-isXD_Q'
@@ -86,7 +88,6 @@ export type ReminderError =
   | 'not-configured'
   | 'too-many'
   | 'gone'
-  | 'elsewhere'
   | 'failed'
 
 export class ReminderFailure extends Error {
@@ -118,12 +119,12 @@ function assertReady() {
 // ---------- server and push subscription ----------
 
 /** Resolves with the server's JSON answer. */
-async function post(body: Record<string, unknown>, keepalive = false): Promise<unknown> {
+async function post(body: Record<string, unknown>, keepalive = false, headers: Record<string, string> = {}): Promise<unknown> {
   let res: Response
   try {
     res = await fetch('/api/reminder', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...headers },
       body: JSON.stringify(body),
       keepalive,
     })
@@ -133,9 +134,9 @@ async function post(body: Record<string, unknown>, keepalive = false): Promise<u
   const data = (await res.json().catch(() => ({}))) as { error?: string }
   if (res.ok) return data
   if (data.error === 'not-configured') throw new ReminderFailure('not-configured')
-  if (res.status === 429) throw new ReminderFailure('too-many')
+  // The test notification's once-a-minute limit (the server's other 429, too many new devices, is a plain failure).
+  if (res.status === 429 && data.error === 'too-many') throw new ReminderFailure('too-many')
   if (res.status === 410) throw new ReminderFailure('gone')
-  if (data.error === 'other-device') throw new ReminderFailure('elsewhere')
   throw new ReminderFailure('failed', `server ${res.status}${data.error ? ` ${data.error}` : ''}`)
 }
 
@@ -165,9 +166,10 @@ async function ensureSubscription(): Promise<PushSubscription> {
 }
 
 const DEVICE_KEY = 'somos-reminder-device'
+let sessionDevice: string | undefined
 
 /** This device's own name for the server: a subscription can change, the device stays. */
-function deviceId(): string | undefined {
+function deviceId(): string {
   try {
     const stored = localStorage.getItem(DEVICE_KEY)
     if (stored) return stored
@@ -175,47 +177,50 @@ function deviceId(): string | undefined {
     localStorage.setItem(DEVICE_KEY, fresh)
     return fresh
   } catch {
-    return undefined // no storage: the server then takes this for an app from before device ids
+    // No storage: a name for this session (the subscription itself still finds the device's row).
+    sessionDevice ??= crypto.randomUUID()
+    return sessionDevice
   }
 }
 
 /**
- * Tells the server where and when to remind (also refreshes a rotated subscription).
- * The server reminds one device. `takeOver` moves the reminders here from another one; without it
- * the server refuses ('elsewhere'), so that merely opening the app somewhere does not move them.
+ * Tells the server where and when to remind (also refreshes a rotated subscription). Signed in, the access
+ * token links the device to the account: the daily goal then counts the account's other devices too.
  */
-function register(subscription: PushSubscription, time: string, takeOver: boolean): Promise<unknown> {
+async function register(subscription: PushSubscription, time: string): Promise<unknown> {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const token = await accessToken()
   // receipts: this app's service worker confirms the messages it gets (public/push-sw.js).
-  const here = { device: deviceId(), ...(takeOver ? { takeOver: true } : {}) }
-  return post({ type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true, ...here })
+  const body = { type: 'subscribe', subscription: subscription.toJSON(), time, timeZone, language: getLanguage(), receipts: true, device: deviceId() }
+  const answer = await post(body, false, token ? { Authorization: `Bearer ${token}` } : {})
+  // A row the server has just made knows no progress yet: the next report must not be skipped as unchanged.
+  lastReport = null
+  return answer
 }
 
 /** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
-async function registerDevice(time: string, takeOver: boolean): Promise<PushSubscription> {
+async function registerDevice(time: string): Promise<PushSubscription> {
   const subscription = await ensureSubscription()
   try {
-    await register(subscription, time, takeOver)
+    await register(subscription, time)
     return subscription
   } catch (error) {
     if (!isGone(error)) throw error
     await subscription.unsubscribe()
     const fresh = await ensureSubscription()
-    await register(fresh, time, takeOver)
+    await register(fresh, time)
     return fresh
   }
 }
 
 // ---------- actions (Nastavenia) ----------
 
-// What the learner does here (turn on, change the time, send a test) brings the reminders to this device.
-
 /** Asks for permission, subscribes this device and turns the reminder on. */
 export async function enableReminder(time: string): Promise<void> {
   assertReady()
   const permission = await Notification.requestPermission()
   if (permission !== 'granted') throw new ReminderFailure(permission === 'denied' ? 'denied' : 'not-allowed')
-  await registerDevice(time, true)
+  await registerDevice(time)
   saveSettings({ enabled: true, time })
   synced()
   void reportProgressNow()
@@ -224,7 +229,7 @@ export async function enableReminder(time: string): Promise<void> {
 export async function setReminderTime(time: string): Promise<void> {
   if (!settings.enabled) return saveSettings({ ...settings, time })
   assertReady()
-  await registerDevice(time, true)
+  await registerDevice(time)
   saveSettings({ ...settings, time })
 }
 
@@ -246,7 +251,7 @@ export async function disableReminder(): Promise<void> {
 export async function sendTestReminder(): Promise<void> {
   assertReady()
   const attempt = async () => {
-    const subscription = await registerDevice(settings.time, true)
+    const subscription = await registerDevice(settings.time)
     await post({ type: 'test', endpoint: subscription.endpoint })
   }
   try {
@@ -265,7 +270,7 @@ export async function sendTestReminder(): Promise<void> {
  */
 export async function sendTestLater(): Promise<void> {
   assertReady()
-  const subscription = await registerDevice(settings.time, true)
+  const subscription = await registerDevice(settings.time)
   await post({ type: 'test-later', endpoint: subscription.endpoint })
   synced()
 }
@@ -293,7 +298,6 @@ export function reminderProblem(): string | null {
   const text = t().reminder
   if (settings.lost) return text.lost
   if (!settings.enabled || !syncFailure) return null
-  if (syncFailure.code === 'elsewhere') return text.elsewhere
   const why = syncFailure.code === 'offline' ? text.problemOffline : syncFailure.code === 'failed' ? text.problemFailed : text.errors[syncFailure.code]
   return text.problem(why)
 }
@@ -302,15 +306,9 @@ export function useReminderProblem(): string | null {
   return useSyncExternalStore(subscribe, reminderProblem)
 }
 
-/** The reminder is on here, but the server sends it to another device (and this one did not take it). */
-export function useReminderElsewhere(): boolean {
-  return useSyncExternalStore(subscribe, () => settings.enabled && syncFailure?.code === 'elsewhere')
-}
-
 /**
  * Keeps the server's copy fresh (Chrome can rotate a subscription, the push service can drop it)
  * and turns the setting off, visibly, when Android took the notification permission back.
- * Never takes the reminders from another device: that it only reports.
  */
 export async function syncReminder(): Promise<void> {
   if (!settings.enabled) return
@@ -319,7 +317,7 @@ export async function syncReminder(): Promise<void> {
   if (support !== 'ok' || Notification.permission !== 'granted') return saveSettings({ enabled: false, time: settings.time, lost: true })
   if (!navigator.onLine) return
   try {
-    await registerDevice(settings.time, false)
+    await registerDevice(settings.time)
     synced()
     await reportProgressNow()
   } catch (error) {
@@ -336,6 +334,8 @@ export function keepReminderSynced(): void {
   void syncReminder()
   // The notification is written by the server: it has to hear about a switch.
   subscribeLanguage(() => void syncReminder())
+  // Signed in or out: the server links the device to the account, or no longer.
+  subscribeAccount(() => void syncReminder())
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible') return
     if (syncFailure || Date.now() - lastSync > SYNC_EVERY) void syncReminder()
@@ -352,14 +352,41 @@ export async function fetchReminderStatus(): Promise<ReminderStatus> {
 
 // ---------- progress reports ----------
 
+// The server needs today's numbers before the reminder time, not after every answer: with many learners
+// that would be a request per answer. Reports go out at start, when the app goes to the background, when
+// the daily goal is reached and when a setting changes them; one equal to the last is not sent again.
+
 const REPORT_DELAY = 3000
 let reportTimer: number | undefined
+let answerTimer: number | undefined
+/** Endpoint and numbers of the last report the server took. */
+let lastReport: string | null = null
+/** The day whose reached goal was reported. */
+let goalReportedDay: string | null = null
 
-/** Sends today's numbers soon; answers in quick succession make one request. */
+/** Sends today's numbers soon (a setting changed the goal or the due cards); quick changes make one request. */
 export function reportProgress(): void {
   if (!settings.enabled) return
   window.clearTimeout(reportTimer)
   reportTimer = window.setTimeout(() => void reportProgressNow(), REPORT_DELAY)
+}
+
+/** After an answer or review: a request only for the one that reaches the daily goal (the reminder then stays quiet). */
+export function noteAnswer(): void {
+  if (!settings.enabled) return
+  window.clearTimeout(answerTimer)
+  answerTimer = window.setTimeout(() => void reportGoalReached(), REPORT_DELAY)
+}
+
+async function reportGoalReached(): Promise<void> {
+  try {
+    const progress = await loadProgress()
+    if (progress.done < progress.goal || goalReportedDay === progress.day) return
+    goalReportedDay = progress.day
+    await reportProgressNow()
+  } catch {
+    // Best effort: going to the background reports again.
+  }
 }
 
 async function reportProgressNow(keepalive = false): Promise<void> {
@@ -367,17 +394,21 @@ async function reportProgressNow(keepalive = false): Promise<void> {
   try {
     const subscription = await existingSubscription()
     if (!subscription) return
-    await post({ type: 'progress', endpoint: subscription.endpoint, progress: await loadProgress() }, keepalive)
+    const progress = await loadProgress()
+    const report = `${subscription.endpoint} ${JSON.stringify(progress)}`
+    if (report === lastReport) return
+    await post({ type: 'progress', endpoint: subscription.endpoint, progress }, keepalive)
+    lastReport = report
   } catch {
-    // Best effort: the next answer or app start reports again.
+    // Best effort: the next trigger reports again.
   }
 }
 
-/** Reports after every answer or review, and when the app goes to the background. */
+/** Watches answers and reviews for the reached goal, and reports when the app goes to the background. */
 export function startProgressReporting(): void {
   // A Dexie "creating" hook must not return a value: it would become the new record's key.
   db.attempts.hook('creating', () => {
-    reportProgress()
+    noteAnswer()
   })
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'hidden' || !settings.enabled) return
