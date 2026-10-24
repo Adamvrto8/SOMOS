@@ -1,0 +1,43 @@
+# Every push to main runs what was run by hand before a push. Vercel promotes a production
+# deployment only when both jobs pass (Deployment Checks, docs/deploy-checks.md): the job names
+# are what Vercel selects, so renaming a job means selecting it again there.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run validate:data
+      - run: npm test
+      - run: npm run build # tsc -b included
+
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # playwright.config.ts uses the installed Chrome (channel: 'chrome'), which ubuntu-latest has.
+      - run: npm run test:e2e

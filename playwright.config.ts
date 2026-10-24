@@ -11,6 +11,8 @@ export default defineConfig({
   outputDir: 'node_modules/.cache/e2e',
   fullyParallel: true,
   forbidOnly: true,
+  // GitHub's runner is slower than a desktop: one more try there before a timing test counts as failed.
+  retries: process.env.CI ? 1 : 0,
   reporter: 'list',
   use: {
     baseURL: `http://localhost:${PORT}`,
