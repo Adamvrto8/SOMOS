@@ -1,4 +1,4 @@
-import { Briefcase, CircleUser, GraduationCap, House, Palette, PencilLine, Plane, Search, Smile, Sprout, TreeDeciduous, Users, Flower2 } from 'lucide-react'
+import { Bell, Briefcase, CircleUser, GraduationCap, House, Palette, PencilLine, Plane, Search, Smile, Sprout, TreeDeciduous, Users, Flower2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Azulejos } from '../../components/Azulejos'
@@ -10,7 +10,7 @@ import { accountsAvailable, SIGN_IN_PATH } from '../../lib/account'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { installWay, promptInstall } from '../../lib/install'
 import { LANGUAGES, setLanguage, useLanguage, type Language } from '../../lib/language'
-import { enableReminder, reminderSupport, ReminderFailure } from '../../lib/reminder'
+import { enableReminder, getReminderSettings, reminderSupport, ReminderFailure } from '../../lib/reminder'
 import { finishOnboarding, getOnboarding, MOTIVATIONS, returnAfterSignIn, START_LEVELS, startFilter, updateOnboarding, useOnboarding, type Motivation } from '../../lib/onboarding'
 import { filterLabel, filterToParams } from '../exercises/exercises'
 import { OptionList } from './OptionList'
@@ -236,7 +236,8 @@ function GoalStep({ frame, onNext }: StepProps) {
 function ReminderStep({ frame, onNext }: StepProps) {
   const dictionary = useT()
   const text = dictionary.onboarding.reminder
-  const [time, setTime] = useState('19:00')
+  // Yes or no, as apps ask it: the time is the reminder's own (19:00 unless changed), set in Profil.
+  const { time } = getReminderSettings()
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -261,7 +262,7 @@ function ReminderStep({ frame, onNext }: StepProps) {
       hint={text.hint}
       footer={
         <>
-          <Button onClick={() => void enable()} disabled={busy || !time} className="w-full">
+          <Button onClick={() => void enable()} disabled={busy} className="w-full">
             {text.enable}
           </Button>
           <Button variant="secondary" onClick={onNext} className="w-full">
@@ -270,15 +271,10 @@ function ReminderStep({ frame, onNext }: StepProps) {
         </>
       }
     >
-      <label className="flex min-h-16 items-center justify-between gap-4 rounded-card border border-line bg-surface px-4 py-3">
-        <span className="font-semibold">{text.time}</span>
-        <input
-          type="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          className="h-11 rounded-xl border border-line bg-bg px-3 text-base tabular-nums focus:border-brick focus:outline-none"
-        />
-      </label>
+      <p className="flex items-center gap-3 rounded-card border border-line bg-surface px-4 py-3 text-ink-muted">
+        <Bell size={20} strokeWidth={1.75} className="shrink-0 text-brick" aria-hidden />
+        {text.when(time)}
+      </p>
       {error && (
         <p role="alert" className="mt-4 text-sm text-error">
           {error}

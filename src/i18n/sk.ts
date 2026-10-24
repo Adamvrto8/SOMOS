@@ -926,9 +926,9 @@ export const sk = {
     },
     reminder: {
       title: 'Pripomenúť ti cvičenie?',
-      hint: 'Raz denne o zvolenom čase, iba ak ešte nemáš splnený cieľ. Pomáha to udržať si sériu.',
-      time: 'Kedy',
-      enable: 'Zapnúť pripomienku',
+      hint: 'Raz denne, iba ak ešte nemáš splnený cieľ. Pomáha to udržať si sériu.',
+      when: (time: string) => `Pripomeniem ti o ${time}. Čas zmeníš v Profile.`,
+      enable: 'Zapnúť pripomienky',
       later: 'Teraz nie',
     },
     install: {

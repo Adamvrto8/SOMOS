@@ -867,9 +867,9 @@ export const en: Dictionary = {
     },
     reminder: {
       title: 'Remind you to practice?',
-      hint: 'Once a day at the time you pick, only while the goal is not met. It helps keep your streak.',
-      time: 'When',
-      enable: 'Turn on the reminder',
+      hint: 'Once a day, only while the goal is not met. It helps keep your streak.',
+      when: (time) => `I will remind you at ${time}. Change the time in Profile.`,
+      enable: 'Turn on reminders',
       later: 'Not now',
     },
     install: {
