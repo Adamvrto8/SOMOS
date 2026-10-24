@@ -135,5 +135,48 @@
     "examples": ["In Mexico the after-meal conversation can last for hours."]
   },
   { "id": "porcion", "en": ["portion", "serving"], "examples": ["The portions at this restaurant are huge."] },
-  { "id": "congelado", "en": ["frozen"], "examples": ["I bought frozen vegetables."] }
+  { "id": "congelado", "en": ["frozen"], "examples": ["I bought frozen vegetables."] },
+  {
+    "id": "licuado",
+    "en": ["smoothie", "milkshake"],
+    "examples": ["I have a banana smoothie for breakfast."],
+    "note": "Mexican: blended fruit with milk or water."
+  },
+  { "id": "horchata", "en": ["horchata (rice drink)"], "examples": ["A horchata, please."] },
+  { "id": "harina", "en": ["flour"], "examples": ["Flour tortillas are typical of the north."] },
+  { "id": "aceite", "en": ["oil"], "examples": ["Fry the onion in a little oil."] },
+  { "id": "mantequilla", "en": ["butter"], "examples": ["Should I put butter on the bread?"] },
+  { "id": "crema", "en": ["cream"], "examples": ["Crispy tacos come with cream and cheese."] },
+  { "id": "olla", "en": ["pot"], "examples": ["Beans are cooked in a big pot."] },
+  { "id": "salado", "en": ["salty"], "examples": ["The soup is very salty."] },
+  { "id": "sabroso", "en": ["tasty"], "examples": ["Your rice turned out so tasty!"] },
+  {
+    "id": "antojito",
+    "en": ["Mexican street snack"],
+    "examples": ["Sopes and quesadillas are antojitos."],
+    "note": "Mexican: small dishes made of corn dough (sopes, gorditas, quesadillas…)."
+  },
+  { "id": "botana", "en": ["snack", "appetizer"], "examples": ["There are peanuts and chips to snack on."], "note": "Mexican word." },
+  { "id": "comal", "en": ["comal (flat griddle)"], "examples": ["My mom heats the tortillas on the comal."] },
+  { "id": "mole", "en": ["mole (chile and chocolate sauce)"], "examples": ["Mole poblano has chocolate in it."] },
+  { "id": "cucharada", "en": ["spoonful", "tablespoon"], "examples": ["Add two tablespoons of sugar."] },
+  { "id": "grasoso", "en": ["greasy", "fatty"], "examples": ["I don't like such greasy food."] },
+  { "id": "nutritivo", "en": ["nutritious"], "examples": ["Oats are very nutritious."] },
+  { "id": "comida-chatarra", "en": ["junk food"], "examples": ["Kids eat too much junk food."] },
+  { "id": "amargo", "en": ["bitter"], "examples": ["This coffee is really bitter."] },
+  { "id": "jamaica", "en": ["hibiscus"], "examples": ["Hibiscus water is red and a bit tart."] },
+  { "id": "molcajete", "en": ["molcajete (stone mortar)"], "examples": ["Salsa tastes better made in a molcajete."] },
+  { "id": "pizca", "en": ["pinch"], "examples": ["Add a pinch of salt."] },
+  { "id": "empalagoso", "en": ["overly sweet", "cloying"], "examples": ["The pan de muerto is a bit too sweet."] },
+  { "id": "desabrido", "en": ["bland", "tasteless"], "examples": ["Hospital food is really bland."] },
+  {
+    "id": "recalentado",
+    "en": ["leftovers"],
+    "examples": ["Christmas leftovers taste even better."],
+    "note": "In Mexico, mostly the holiday dinner eaten again the next day."
+  },
+  { "id": "intolerante", "en": ["intolerant"], "examples": ["I'm lactose intolerant."] },
+  { "id": "lacteo", "en": ["dairy product"], "examples": ["I avoid dairy because of my allergy."] },
+  { "id": "agrio", "en": ["sour"], "examples": ["The milk went sour."] },
+  { "id": "gastronomia", "en": ["cuisine", "gastronomy"], "examples": ["Oaxacan cuisine is famous all over the world."] }
 ]

@@ -589,5 +589,265 @@
     "level": "B1",
     "topics": ["home"],
     "examples": [{ "es": "El elevador está en mantenimiento.", "sk": "Výťah je v údržbe." }]
+  },
+  {
+    "id": "patio",
+    "es": "patio",
+    "sk": ["dvor"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Los niños juegan en el patio.", "sk": "Deti sa hrajú na dvore." }
+    ]
+  },
+  {
+    "id": "cortina",
+    "es": "cortina",
+    "sk": ["záves"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Cierra las cortinas, entra mucho sol.", "sk": "Zatiahni závesy, svieti sem veľa slnka." }
+    ]
+  },
+  {
+    "id": "alfombra",
+    "es": "alfombra",
+    "sk": ["koberec"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "El perro duerme en la alfombra.", "sk": "Pes spí na koberci." }
+    ]
+  },
+  {
+    "id": "cajon",
+    "es": "cajón",
+    "sk": ["zásuvka", "šuplík"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cajones",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Las llaves están en el cajón.", "sk": "Kľúče sú v šuplíku." }
+    ]
+  },
+  {
+    "id": "foco",
+    "es": "foco",
+    "sk": ["žiarovka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Se fundió el foco del baño.", "sk": "V kúpeľni praskla žiarovka." }
+    ],
+    "note": "Mexické: el foco = žiarovka."
+  },
+  {
+    "id": "escoba",
+    "es": "escoba",
+    "sk": ["metla"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "¿Dónde está la escoba?", "sk": "Kde je metla?" }
+    ]
+  },
+  {
+    "id": "cucaracha",
+    "es": "cucaracha",
+    "sk": ["šváb"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Hay una cucaracha en el baño.", "sk": "V kúpeľni je šváb." }
+    ]
+  },
+  {
+    "id": "trapeador",
+    "es": "trapeador",
+    "sk": ["mop"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "trapeadores",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Pasa el trapeador por la cocina.", "sk": "Prejdi kuchyňu mopom." }
+    ]
+  },
+  {
+    "id": "calentador",
+    "es": "calentador",
+    "sk": ["ohrievač (vody)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "calentadores",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [
+      { "es": "El calentador no prende.", "sk": "Ohrievač sa nezapína." }
+    ]
+  },
+  {
+    "id": "cochera",
+    "es": "cochera",
+    "sk": ["garáž"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["home"],
+    "examples": [
+      { "es": "El carro no cabe en la cochera.", "sk": "Auto sa nezmestí do garáže." }
+    ]
+  },
+  {
+    "id": "vecindario",
+    "es": "vecindario",
+    "sk": ["susedstvo", "okolie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["home", "city"],
+    "examples": [
+      { "es": "Es un vecindario muy tranquilo.", "sk": "Je to veľmi pokojné okolie." }
+    ]
+  },
+  {
+    "id": "aval",
+    "es": "aval",
+    "sk": ["ručiteľ"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "avales",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Para rentar te piden un aval.", "sk": "Pri prenájme od teba chcú ručiteľa." }
+    ],
+    "note": "V Mexiku pri prenájme bytu často chcú „aval“: osobu s nehnuteľnosťou, ktorá ručí."
+  },
+  {
+    "id": "deposito",
+    "es": "depósito",
+    "sk": ["záloha", "kaucia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["home", "shopping"],
+    "examples": [
+      { "es": "Pagamos un mes de depósito.", "sk": "Zaplatili sme jednomesačnú zálohu." }
+    ]
+  },
+  {
+    "id": "casero",
+    "es": "casero",
+    "sk": ["domáci (prenajímateľ)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "El casero viene a cobrar la renta.", "sk": "Domáci prichádza vybrať nájomné." }
+    ]
+  },
+  {
+    "id": "fuga",
+    "es": "fuga",
+    "sk": ["únik"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Huele a gas, creo que hay una fuga.", "sk": "Cítiť plyn, myslím, že niekde uniká." }
+    ]
+  },
+  {
+    "id": "humedad",
+    "es": "humedad",
+    "sk": ["vlhkosť"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["home", "weather"],
+    "examples": [
+      { "es": "La humedad dañó la pared.", "sk": "Vlhkosť poškodila stenu." }
+    ]
+  },
+  {
+    "id": "plaga",
+    "es": "plaga",
+    "sk": ["škodcovia", "mor"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Tenemos una plaga de hormigas en la cocina.", "sk": "V kuchyni máme premnožené mravce." }
+    ]
+  },
+  {
+    "id": "electrodomestico",
+    "es": "electrodoméstico",
+    "sk": ["domáci spotrebič"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Compramos electrodomésticos nuevos.", "sk": "Kúpili sme nové spotrebiče." }
+    ]
+  },
+  {
+    "id": "amueblado",
+    "es": "amueblado",
+    "sk": ["zariadený (nábytkom)"],
+    "pos": "adj",
+    "feminine": "amueblada",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Buscamos un departamento amueblado.", "sk": "Hľadáme zariadený byt." }
+    ]
+  },
+  {
+    "id": "remodelacion",
+    "es": "remodelación",
+    "sk": ["rekonštrukcia", "prestavba"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "remodelaciones",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "La remodelación del baño tardó un mes.", "sk": "Rekonštrukcia kúpeľne trvala mesiac." }
+    ]
+  },
+  {
+    "id": "condominio",
+    "es": "condominio",
+    "sk": ["obytný komplex", "bytový dom"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Vivimos en un condominio con alberca.", "sk": "Bývame v obytnom komplexe s bazénom." }
+    ]
   }
 ]

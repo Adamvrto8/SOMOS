@@ -9,8 +9,11 @@ const settle = (page: Page) => page.waitForTimeout(400)
 
 test('a swipe turns the word page anywhere below the header', async ({ page }) => {
   await page.goto('/topic/greetings')
-  await page.locator('a[href^="/word/"]').first().tap()
-  await expect(position(page)).toContainText('1 /')
+  // A word picked by name, not the first in the list: new content must not change which word this is.
+  await page.locator('a[href="/word/hola"]').tap()
+  await expect(position(page)).toBeVisible()
+  const at = async () => Number(/(\d+)\s*\//.exec((await position(page).textContent()) ?? '')?.[1])
+  const start = await at()
 
   // A short word ends mid-screen: the empty space under it has to swipe too.
   const content = (await page.locator('article').boundingBox())!
@@ -19,17 +22,17 @@ test('a swipe turns the word page anywhere below the header', async ({ page }) =
   expect(empty - (content.y + content.height)).toBeGreaterThan(20)
 
   await swipe(page, { x: RIGHT, y: empty }, { x: LEFT, y: empty })
-  await expect(position(page)).toContainText('2 /')
+  await expect.poll(at).toBe(start + 1)
   await swipe(page, { x: LEFT, y: empty }, { x: RIGHT, y: empty })
-  await expect(position(page)).toContainText('1 /')
+  await expect.poll(at).toBe(start)
   await swipe(page, { x: RIGHT, y: 250 }, { x: LEFT, y: 250 }) // on the content
-  await expect(position(page)).toContainText('2 /')
+  await expect.poll(at).toBe(start + 1)
 
   // Not a page turn: a vertical drag, and a swipe on the tab bar.
   await swipe(page, { x: 200, y: empty }, { x: 210, y: empty - 150 })
   await swipe(page, { x: RIGHT, y: tabBar.y + 30 }, { x: LEFT, y: tabBar.y + 30 })
   await settle(page)
-  await expect(position(page)).toContainText('2 /')
+  expect(await at()).toBe(start + 1)
 })
 
 test('dragging the tense tabs of a verb keeps the word', async ({ page }) => {

@@ -470,5 +470,325 @@
         "distractors": ["Cambio", "Cambió", "Cambiaré"]
       }
     ]
+  },
+  {
+    "id": "s813",
+    "es": "Me pongo la chamarra porque hace frío.",
+    "sk": "Obliekam si bundu, lebo je zima.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "pongo", "la", "chamarra", "porque", "hace", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pongo",
+        "lemma": "ponerse",
+        "hint": "ponerse · yo · presente",
+        "distractors": ["pone", "puse", "ponía"]
+      }
+    ]
+  },
+  {
+    "id": "s814",
+    "es": "Me probé tres vestidos y no compré ninguno.",
+    "sk": "Vyskúšala som si tri šaty a nekúpila som žiadne.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "probé", "tres", "vestidos", "y", "no", "compré", "ninguno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "probé",
+        "lemma": "probarse",
+        "hint": "probarse · yo · pretérito",
+        "distractors": ["prueba", "probó", "probaba"]
+      }
+    ]
+  },
+  {
+    "id": "s815",
+    "es": "Se quitó los zapatos al entrar.",
+    "sk": "Pri vstupe sa vyzul.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "quitó", "los", "zapatos", "al", "entrar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quitó",
+        "lemma": "quitarse",
+        "hint": "quitarse · él · pretérito",
+        "distractors": ["quita", "quité", "quitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s816",
+    "es": "Esta sudadera es de algodón.",
+    "sk": "Táto mikina je z bavlny.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "tokens": ["Esta", "sudadera", "es", "de", "algodón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "algodón",
+        "lemma": "algodón",
+        "hint": "bavlna",
+        "distractors": ["lana", "seda", "mezclilla"]
+      }
+    ]
+  },
+  {
+    "id": "s817",
+    "es": "A la camisa le falta un botón.",
+    "sk": "Na košeli chýba gombík.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "tokens": ["A", "la", "camisa", "le", "falta", "un", "botón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "botón",
+        "lemma": "botón",
+        "hint": "gombík",
+        "distractors": ["bolsón", "balón", "bastón"]
+      }
+    ]
+  },
+  {
+    "id": "s818",
+    "es": "Se me rompió el cierre de la chamarra.",
+    "sk": "Pokazil sa mi zips na bunde.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "tokens": ["Se", "me", "rompió", "el", "cierre", "de", "la", "chamarra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cierre",
+        "lemma": "cierre",
+        "hint": "zips",
+        "distractors": ["cielo", "cine", "cerro"]
+      }
+    ]
+  },
+  {
+    "id": "s819",
+    "es": "Siempre uso pantalones de mezclilla.",
+    "sk": "Vždy nosím rifle.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "uso", "pantalones", "de", "mezclilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "uso",
+        "lemma": "usar",
+        "hint": "usar · yo · presente",
+        "distractors": ["usa", "usé", "usaba"]
+      }
+    ]
+  },
+  {
+    "id": "s820",
+    "es": "Tu camisa está muy arrugada.",
+    "sk": "Košeľu máš veľmi pokrčenú.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Tu", "camisa", "está", "muy", "arrugada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "son", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s821",
+    "es": "Ella no sabe caminar con tacones.",
+    "sk": "Nevie chodiť v podpätkoch.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Ella", "no", "sabe", "caminar", "con", "tacones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sabe",
+        "lemma": "saber",
+        "hint": "saber · ella · presente",
+        "distractors": ["sabes", "supo", "sabía"]
+      }
+    ]
+  },
+  {
+    "id": "s822",
+    "es": "Llevé el traje a la tintorería antes de la boda.",
+    "sk": "Pred svadbou som dal oblek do čistiarne.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Llevé", "el", "traje", "a", "la", "tintorería", "antes", "de", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevé",
+        "lemma": "llevar",
+        "hint": "llevar · yo · pretérito",
+        "distractors": ["Llevo", "Llevó", "Llevaba"]
+      }
+    ]
+  },
+  {
+    "id": "s823",
+    "es": "Estos jeans me quedan muy ajustados.",
+    "sk": "Tieto rifle sú mi veľmi tesné.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "tokens": ["Estos", "jeans", "me", "quedan", "muy", "ajustados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ajustados",
+        "lemma": "ajustado",
+        "hint": "tesný",
+        "distractors": ["ajustadas", "asustados", "holgado"]
+      }
+    ]
+  },
+  {
+    "id": "s824",
+    "es": "Prefiero la ropa holgada para viajar.",
+    "sk": "Na cestovanie mám radšej voľné oblečenie.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Prefiero", "la", "ropa", "holgada", "para", "viajar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["Prefiere", "Preferí", "Prefería"]
+      }
+    ]
+  },
+  {
+    "id": "s825",
+    "es": "Mi abuela me regaló un rebozo bordado a mano.",
+    "sk": "Babka mi darovala ručne vyšívané rebozo.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "abuela", "me", "regaló", "un", "rebozo", "bordado", "a", "mano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "regaló",
+        "lemma": "regalar",
+        "hint": "regalar · ella · pretérito",
+        "distractors": ["regala", "regalé", "regalaba"]
+      }
+    ]
+  },
+  {
+    "id": "s826",
+    "es": "Compro casi toda mi ropa de paca.",
+    "sk": "Skoro všetko oblečenie si kupujem v sekáči.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Compro", "casi", "toda", "mi", "ropa", "de", "paca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Compro",
+        "lemma": "comprar",
+        "hint": "comprar · yo · presente",
+        "distractors": ["Compra", "Compré", "Compraba"]
+      }
+    ]
+  },
+  {
+    "id": "s827",
+    "es": "Lavé la playera con agua caliente y se destiñó.",
+    "sk": "Tričko som opral v horúcej vode a vyblednelo.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Lavé", "la", "playera", "con", "agua", "caliente", "y", "se", "destiñó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lavé",
+        "lemma": "lavar",
+        "hint": "lavar · yo · pretérito",
+        "distractors": ["Lava", "Lavó", "Lavaba"]
+      }
+    ]
+  },
+  {
+    "id": "s828",
+    "es": "Las mujeres de Oaxaca usan huipiles de muchos colores.",
+    "sk": "Ženy v Oaxace nosia pestrofarebné huipily.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Las", "mujeres", "de", "Oaxaca", "usan", "huipiles", "de", "muchos", "colores", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "usan",
+        "lemma": "usar",
+        "hint": "usar · ellas · presente",
+        "distractors": ["usa", "usaron", "usaban"]
+      }
+    ]
+  },
+  {
+    "id": "s829",
+    "es": "Para la entrevista elegí un atuendo formal.",
+    "sk": "Na pohovor som si vybral formálne oblečenie.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Para", "la", "entrevista", "elegí", "un", "atuendo", "formal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "elegí",
+        "lemma": "elegir",
+        "hint": "elegir · yo · pretérito",
+        "distractors": ["elige", "eligió", "elegía"]
+      }
+    ]
+  },
+  {
+    "id": "s830",
+    "es": "Me gusta más la tela lisa que la estampada.",
+    "sk": "Viac sa mi páči jednofarebná látka ako vzorovaná.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "tokens": ["Me", "gusta", "más", "la", "tela", "lisa", "que", "la", "estampada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estampada",
+        "lemma": "estampado",
+        "hint": "vzorovaný",
+        "distractors": ["estampado", "estimada", "cansada"]
+      }
+    ]
   }
 ]

@@ -412,5 +412,268 @@
     "level": "B1",
     "topics": ["body"],
     "examples": [{ "es": "Tengo una cicatriz en la mano.", "sk": "Mám jazvu na ruke." }]
+  },
+  {
+    "id": "ceja",
+    "es": "ceja",
+    "sk": ["obočie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tiene las cejas muy pobladas.", "sk": "Má veľmi husté obočie." }
+    ]
+  },
+  {
+    "id": "pestana",
+    "es": "pestaña",
+    "sk": ["mihalnica"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tiene las pestañas largas.", "sk": "Má dlhé mihalnice." }
+    ]
+  },
+  {
+    "id": "codo",
+    "es": "codo",
+    "sk": ["lakeť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Me pegué en el codo.", "sk": "Udrel som si lakeť." }
+    ],
+    "note": "V Mexiku hovorovo aj „lakomec“: ¡No seas codo!"
+  },
+  {
+    "id": "muneca",
+    "es": "muñeca",
+    "sk": ["zápästie", "bábika"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Me torcí la muñeca.", "sk": "Vyvrtol som si zápästie." }
+    ]
+  },
+  {
+    "id": "cintura",
+    "es": "cintura",
+    "sk": ["pás (časť tela)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "El pantalón me queda grande de la cintura.", "sk": "Nohavice sú mi v páse veľké." }
+    ]
+  },
+  {
+    "id": "frente",
+    "es": "frente",
+    "sk": ["čelo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tienes una mancha en la frente.", "sk": "Máš na čele fľak." }
+    ],
+    "note": "el frente = predná časť; frente frío = studený front."
+  },
+  {
+    "id": "mejilla",
+    "es": "mejilla",
+    "sk": ["líce"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "En México se saluda con un beso en la mejilla.", "sk": "V Mexiku sa zdraví bozkom na líce." }
+    ]
+  },
+  {
+    "id": "cadera",
+    "es": "cadera",
+    "sk": ["bedro"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["body"],
+    "examples": [
+      { "es": "A mi abuela la operaron de la cadera.", "sk": "Babku operovali na bedro." }
+    ]
+  },
+  {
+    "id": "talon",
+    "es": "talón",
+    "sk": ["päta"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "talones",
+    "level": "B1",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Me salió una ampolla en el talón.", "sk": "Na päte mi vyskočil pľuzgier." }
+    ]
+  },
+  {
+    "id": "pulmon",
+    "es": "pulmón",
+    "sk": ["pľúca (jedno)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "pulmones",
+    "level": "B1",
+    "topics": ["body", "health"],
+    "examples": [
+      { "es": "El tabaco daña los pulmones.", "sk": "Tabak poškodzuje pľúca." }
+    ]
+  },
+  {
+    "id": "cerebro",
+    "es": "cerebro",
+    "sk": ["mozog"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["body"],
+    "examples": [
+      { "es": "El cerebro consume mucha energía.", "sk": "Mozog spotrebuje veľa energie." }
+    ]
+  },
+  {
+    "id": "higado",
+    "es": "hígado",
+    "sk": ["pečeň"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["body", "health"],
+    "examples": [
+      { "es": "El alcohol le hace daño al hígado.", "sk": "Alkohol škodí pečeni." }
+    ]
+  },
+  {
+    "id": "rinon",
+    "es": "riñón",
+    "sk": ["oblička"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "riñones",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Le donó un riñón a su hermano.", "sk": "Daroval bratovi obličku." }
+    ]
+  },
+  {
+    "id": "columna",
+    "es": "columna",
+    "sk": ["chrbtica", "stĺp"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tengo problemas de columna.", "sk": "Mám problémy s chrbticou." }
+    ]
+  },
+  {
+    "id": "articulacion",
+    "es": "articulación",
+    "sk": ["kĺb"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "articulaciones",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Con el frío me duelen las articulaciones.", "sk": "V zime ma bolia kĺby." }
+    ]
+  },
+  {
+    "id": "lunar",
+    "es": "lunar",
+    "sk": ["znamienko"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "lunares",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tiene un lunar en la cara.", "sk": "Má na tvári znamienko." }
+    ],
+    "note": "Aj: de lunares = bodkovaný (vestido de lunares)."
+  },
+  {
+    "id": "arruga",
+    "es": "arruga",
+    "sk": ["vráska"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Ya me están saliendo arrugas.", "sk": "Už sa mi robia vrásky." }
+    ]
+  },
+  {
+    "id": "cana",
+    "es": "cana",
+    "sk": ["šedivý vlas", "šediny"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Mi papá tiene muchas canas.", "sk": "Otec má veľa šedín." }
+    ]
+  },
+  {
+    "id": "zurdo",
+    "es": "zurdo",
+    "sk": ["ľavák", "ľavoruký"],
+    "pos": "adj",
+    "feminine": "zurda",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Soy zurdo.", "sk": "Som ľavák." }
+    ]
+  },
+  {
+    "id": "pelon",
+    "es": "pelón",
+    "sk": ["plešatý", "ostrihaný dohola"],
+    "pos": "adj",
+    "plural": "pelones",
+    "feminine": "pelona",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Mi abuelo está pelón.", "sk": "Dedo je plešatý." }
+    ],
+    "note": "Mexické, hovorové."
+  },
+  {
+    "id": "chino",
+    "es": "chino",
+    "sk": ["kučeravý (vlasy)", "čínsky"],
+    "pos": "adj",
+    "feminine": "china",
+    "level": "B2",
+    "topics": ["body"],
+    "examples": [
+      { "es": "Tengo el pelo chino como mi mamá.", "sk": "Mám kučeravé vlasy ako mama." }
+    ],
+    "note": "V Mexiku pelo chino = kučeravé vlasy. Opak: pelo lacio = rovné vlasy."
   }
 ]

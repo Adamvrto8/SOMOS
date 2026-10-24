@@ -441,5 +441,251 @@
     "level": "B1",
     "topics": ["school"],
     "examples": [{ "es": "La universidad hace mucha investigación.", "sk": "Univerzita robí veľa výskumu." }]
+  },
+  {
+    "id": "regla",
+    "es": "regla",
+    "sk": ["pravítko", "pravidlo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Necesito una regla para la clase de geometría.", "sk": "Na geometriu potrebujem pravítko." },
+      { "es": "Esa es la regla.", "sk": "Také je pravidlo." }
+    ]
+  },
+  {
+    "id": "calculadora",
+    "es": "calculadora",
+    "sk": ["kalkulačka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "¿Me prestas tu calculadora?", "sk": "Požičiaš mi kalkulačku?" }
+    ]
+  },
+  {
+    "id": "primaria",
+    "es": "primaria",
+    "sk": ["základná škola (1.–6. ročník)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Mi hija va en tercero de primaria.", "sk": "Moja dcéra chodí do tretej triedy." }
+    ],
+    "note": "V Mexiku: primaria (6 rokov), secundaria (3 roky), prepa (3 roky)."
+  },
+  {
+    "id": "secundaria",
+    "es": "secundaria",
+    "sk": ["nižšia stredná škola (7.–9. ročník)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Mi hijo entra a la secundaria en septiembre.", "sk": "Syn ide v septembri na druhý stupeň." }
+    ]
+  },
+  {
+    "id": "alumno",
+    "es": "alumno",
+    "sk": ["žiak"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Los alumnos llevan uniforme.", "sk": "Žiaci nosia uniformu." }
+    ]
+  },
+  {
+    "id": "uniforme",
+    "es": "uniforme",
+    "sk": ["uniforma", "rovnošata"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "El uniforme es azul con blanco.", "sk": "Uniforma je modrobiela." }
+    ]
+  },
+  {
+    "id": "apunte",
+    "es": "apunte",
+    "sk": ["poznámka (z hodiny)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Mi compañera me prestó sus apuntes.", "sk": "Spolužiačka mi požičala poznámky." }
+    ]
+  },
+  {
+    "id": "ensayo",
+    "es": "ensayo",
+    "sk": ["esej", "skúška (divadelná)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Tenemos que escribir un ensayo.", "sk": "Musíme napísať esej." }
+    ]
+  },
+  {
+    "id": "resumen",
+    "es": "resumen",
+    "sk": ["zhrnutie"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "resúmenes",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Haz un resumen del capítulo.", "sk": "Urob zhrnutie kapitoly." }
+    ]
+  },
+  {
+    "id": "boleta",
+    "es": "boleta",
+    "sk": ["vysvedčenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Mañana nos entregan la boleta.", "sk": "Zajtra dostaneme vysvedčenie." }
+    ],
+    "note": "Mexické: boleta de calificaciones."
+  },
+  {
+    "id": "extraordinario",
+    "es": "extraordinario",
+    "sk": ["opravná skúška", "mimoriadny"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Reprobé y tengo que presentar extraordinario.", "sk": "Neurobil som to a musím ísť na opravku." }
+    ],
+    "note": "V mexických školách: un extraordinario = opravná skúška."
+  },
+  {
+    "id": "posgrado",
+    "es": "posgrado",
+    "sk": ["postgraduálne štúdium"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Quiero hacer un posgrado en el extranjero.", "sk": "Chcem ísť na postgraduálne štúdium do zahraničia." }
+    ]
+  },
+  {
+    "id": "doctorado",
+    "es": "doctorado",
+    "sk": ["doktorát"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Está haciendo un doctorado en biología.", "sk": "Robí si doktorát z biológie." }
+    ]
+  },
+  {
+    "id": "servicio-social",
+    "es": "servicio social",
+    "sk": ["povinná verejnoprospešná prax (študentov)"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Hice mi servicio social en un hospital.", "sk": "Povinnú prax som robil v nemocnici." }
+    ],
+    "note": "V Mexiku musia vysokoškoláci pred titulom odpracovať stovky hodín pre verejnosť."
+  },
+  {
+    "id": "colegiatura",
+    "es": "colegiatura",
+    "sk": ["školné"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "La colegiatura subió otra vez.", "sk": "Školné zase stúplo." }
+    ]
+  },
+  {
+    "id": "plagio",
+    "es": "plagio",
+    "sk": ["plagiát"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Copiar de internet es plagio.", "sk": "Kopírovať z internetu je plagiát." }
+    ]
+  },
+  {
+    "id": "egresado",
+    "es": "egresado",
+    "sk": ["absolvent"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Es egresado de la UNAM.", "sk": "Je absolventom UNAM." }
+    ]
+  },
+  {
+    "id": "autodidacta",
+    "es": "autodidacta",
+    "sk": ["samouk"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Mi primo es autodidacta.", "sk": "Môj bratranec je samouk." }
+    ]
+  },
+  {
+    "id": "aprendizaje",
+    "es": "aprendizaje",
+    "sk": ["učenie (sa)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Cada persona tiene su ritmo de aprendizaje.", "sk": "Každý má svoje tempo učenia." }
+    ]
+  },
+  {
+    "id": "rendimiento",
+    "es": "rendimiento",
+    "sk": ["výkon", "výsledky"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["school"],
+    "examples": [
+      { "es": "Su rendimiento escolar mejoró.", "sk": "Jeho výsledky v škole sa zlepšili." }
+    ]
   }
 ]

@@ -29,5 +29,22 @@
   { "id": "s575", "en": "If you pay in cash, they give you a discount." },
   { "id": "s576", "en": "I looked for that gift in three stores and didn't find it." },
   { "id": "s577", "en": "At the street market everything is cheaper than at the supermarket.", "hints": ["cheap"] },
-  { "id": "s578", "en": "I spent more than I expected." }
+  { "id": "s578", "en": "I spent more than I expected." },
+  { "id": "s796", "en": "The cart has a broken wheel.", "hints": ["shopping cart"] },
+  { "id": "s797", "en": "I bought the boy a pack of cookies." },
+  { "id": "s798", "en": "How much for the two T-shirts? (formal)" },
+  { "id": "s799", "en": "In January there are sales in every store.", "hints": ["sales"] },
+  { "id": "s800", "en": "My order arrived broken and I sent it back." },
+  { "id": "s801", "en": "Shipping is free on orders over five hundred pesos.", "hints": ["shipping"] },
+  { "id": "s802", "en": "I have a twenty percent off coupon.", "hints": ["coupon"] },
+  { "id": "s803", "en": "I filed a complaint because they overcharged me." },
+  { "id": "s804", "en": "We bought the car in installments, with a twenty percent down payment.", "hints": ["down payment"] },
+  { "id": "s805", "en": "At the crafts market, haggling is part of the experience.", "hints": ["haggling"] },
+  { "id": "s806", "en": "That yogurt has already expired.", "hints": ["expired"] },
+  { "id": "s807", "en": "I went to complain because the blender turned out to be defective.", "hints": ["defective"] },
+  { "id": "s808", "en": "I ran out of credit and couldn't make the call.", "hints": ["credit"] },
+  { "id": "s809", "en": "The bank charged me a fee for withdrawing money." },
+  { "id": "s810", "en": "Consumers are entitled to a refund.", "hints": ["consumers"] },
+  { "id": "s811", "en": "Consumerism makes us buy things we don't need." },
+  { "id": "s812", "en": "We acquired the house five years ago." }
 ]

@@ -58,5 +58,29 @@
   { "id": "anaranjado", "en": ["orange (the color)"], "examples": ["I bought myself an orange cap."] },
   { "id": "moda", "en": ["fashion"], "examples": ["Those pants aren't in fashion anymore."] },
   { "id": "prenda", "en": ["garment", "item of clothing"], "examples": ["Each item costs a hundred pesos."] },
-  { "id": "tela", "en": ["fabric", "cloth"], "examples": ["This fabric is very soft."] }
+  { "id": "tela", "en": ["fabric", "cloth"], "examples": ["This fabric is very soft."] },
+  { "id": "sudadera", "en": ["sweatshirt", "hoodie"], "examples": ["Take a sweatshirt, it gets cold at night."] },
+  { "id": "algodon", "en": ["cotton"], "examples": ["This T-shirt is cotton."] },
+  { "id": "lana", "en": ["wool", "money (slang)"], "examples": ["It's a wool sweater.", "I'm broke."], "note": "In Mexican slang also \"money\"." },
+  { "id": "boton", "en": ["button"], "examples": ["The shirt is missing a button."] },
+  { "id": "manga", "en": ["sleeve"], "examples": ["I prefer short-sleeved shirts."] },
+  { "id": "guante", "en": ["glove"], "examples": ["I lost a glove on the bus."] },
+  { "id": "cierre", "en": ["zipper"], "examples": ["The zipper on my jacket broke."], "note": "Mexican: el cierre = zipper (in Spain la cremallera)." },
+  { "id": "mezclilla", "en": ["denim"], "examples": ["I always wear jeans."], "note": "Mexican: pantalones de mezclilla = jeans." },
+  { "id": "tacon", "en": ["heel"], "examples": ["I can't walk in heels."] },
+  { "id": "arrugado", "en": ["wrinkled"], "examples": ["Your shirt is really wrinkled."] },
+  { "id": "tintoreria", "en": ["dry cleaner's"], "examples": ["I took the suit to the dry cleaner's."] },
+  { "id": "ajustado", "en": ["tight", "fitted"], "examples": ["These jeans are really tight on me."] },
+  { "id": "holgado", "en": ["loose", "baggy"], "examples": ["I prefer loose clothing."] },
+  { "id": "estampado", "en": ["patterned", "printed"], "examples": ["I bought myself a patterned skirt."] },
+  { "id": "bordado", "en": ["embroidered"], "examples": ["It's a hand-embroidered blouse."] },
+  { "id": "rebozo", "en": ["rebozo (Mexican shawl)"], "examples": ["My grandmother always wore a rebozo."] },
+  { "id": "huipil", "en": ["huipil (embroidered tunic)"], "examples": ["Women in Oaxaca wear huipiles."] },
+  { "id": "atuendo", "en": ["outfit"], "examples": ["I chose a formal outfit."] },
+  {
+    "id": "ropa-de-paca",
+    "en": ["secondhand clothes"],
+    "examples": ["All these clothes are secondhand."],
+    "note": "Mexican: cheap used clothing (imported in bales, \"pacas\")."
+  }
 ]

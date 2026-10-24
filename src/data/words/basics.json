@@ -971,5 +971,450 @@
     "level": "B1",
     "topics": ["basics"],
     "examples": [{ "es": "Estaba cansado; aun así, terminó el trabajo.", "sk": "Bol unavený, a predsa prácu dokončil." }]
+  },
+  {
+    "id": "segun",
+    "es": "según",
+    "sk": ["podľa"],
+    "pos": "prep",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Según mi mamá, va a llover.", "sk": "Podľa mamy bude pršať." }
+    ]
+  },
+  {
+    "id": "durante",
+    "es": "durante",
+    "sk": ["počas"],
+    "pos": "prep",
+    "level": "A2",
+    "topics": ["basics", "time"],
+    "examples": [
+      { "es": "Durante la clase no se usa el celular.", "sk": "Počas hodiny sa mobil nepoužíva." }
+    ]
+  },
+  {
+    "id": "hacia",
+    "es": "hacia",
+    "sk": ["smerom k", "okolo (času)"],
+    "pos": "prep",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Caminamos hacia el centro.", "sk": "Kráčali sme smerom do centra." }
+    ]
+  },
+  {
+    "id": "alrededor-de",
+    "es": "alrededor de",
+    "sk": ["okolo"],
+    "pos": "prep",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Hay muchas tiendas alrededor de la plaza.", "sk": "Okolo námestia je veľa obchodov." }
+    ]
+  },
+  {
+    "id": "acerca-de",
+    "es": "acerca de",
+    "sk": ["o (čom)", "ohľadom"],
+    "pos": "prep",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Leí un libro acerca de los mayas.", "sk": "Čítal som knihu o Mayoch." }
+    ]
+  },
+  {
+    "id": "hoy-en-dia",
+    "es": "hoy en día",
+    "sk": ["v dnešnej dobe"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Hoy en día todos tienen celular.", "sk": "V dnešnej dobe má každý mobil." }
+    ]
+  },
+  {
+    "id": "sin-duda",
+    "es": "sin duda",
+    "sk": ["bezpochyby"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Sin duda, es la mejor época para viajar.", "sk": "Bezpochyby je to najlepšie obdobie na cestovanie." }
+    ]
+  },
+  {
+    "id": "propio",
+    "es": "propio",
+    "sk": ["vlastný"],
+    "pos": "adj",
+    "feminine": "propia",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Quiero tener mi propia casa.", "sk": "Chcem mať vlastný dom." }
+    ]
+  },
+  {
+    "id": "ventaja",
+    "es": "ventaja",
+    "sk": ["výhoda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Vivir cerca del trabajo es una gran ventaja.", "sk": "Bývať blízko práce je veľká výhoda." }
+    ]
+  },
+  {
+    "id": "desventaja",
+    "es": "desventaja",
+    "sk": ["nevýhoda"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "La única desventaja es el ruido.", "sk": "Jediná nevýhoda je hluk." }
+    ]
+  },
+  {
+    "id": "no-obstante",
+    "es": "no obstante",
+    "sk": ["však", "napriek tomu"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Estaba cansado; no obstante, terminó el trabajo.", "sk": "Bol unavený, napriek tomu prácu dokončil." }
+    ],
+    "note": "Formálnejšie ako „sin embargo“, hlavne v písanom texte."
+  },
+  {
+    "id": "puesto-que",
+    "es": "puesto que",
+    "sk": ["keďže"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Puesto que no contestas, me voy.", "sk": "Keďže neodpovedáš, idem preč." }
+    ]
+  },
+  {
+    "id": "dado-que",
+    "es": "dado que",
+    "sk": ["keďže", "vzhľadom na to, že"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Dado que llueve, cancelamos el partido.", "sk": "Keďže prší, zápas sme zrušili." }
+    ]
+  },
+  {
+    "id": "mientras-que",
+    "es": "mientras que",
+    "sk": ["zatiaľ čo"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Yo prefiero el mar, mientras que él prefiere la montaña.", "sk": "Ja mám radšej more, zatiaľ čo on hory." }
+    ]
+  },
+  {
+    "id": "a-medida-que",
+    "es": "a medida que",
+    "sk": ["(postupne) ako", "čím viac"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "A medida que practicas, hablas mejor.", "sk": "Čím viac cvičíš, tým lepšie hovoríš." }
+    ]
+  },
+  {
+    "id": "en-cuanto",
+    "es": "en cuanto",
+    "sk": ["hneď ako"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "En cuanto llegué, me llamó.", "sk": "Hneď ako som prišiel, zavolal mi." }
+    ],
+    "note": "O budúcnosti sa spája so subjuntívom: en cuanto llegues = hneď ako prídeš."
+  },
+  {
+    "id": "a-menos-que",
+    "es": "a menos que",
+    "sk": ["pokiaľ nie", "iba ak"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Voy a ir, a menos que llueva.", "sk": "Pôjdem, pokiaľ nebude pršať." }
+    ],
+    "note": "Vždy so subjuntívom (llueva, tengas)."
+  },
+  {
+    "id": "siempre-y-cuando",
+    "es": "siempre y cuando",
+    "sk": ["pokiaľ", "za predpokladu, že"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Puedes salir, siempre y cuando regreses temprano.", "sk": "Môžeš ísť von, pokiaľ sa vrátiš skoro." }
+    ],
+    "note": "So subjuntívom (regreses)."
+  },
+  {
+    "id": "de-modo-que",
+    "es": "de modo que",
+    "sk": ["takže"],
+    "pos": "conj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "No tenía dinero, de modo que me quedé en casa.", "sk": "Nemal som peniaze, takže som zostal doma." }
+    ]
+  },
+  {
+    "id": "por-lo-visto",
+    "es": "por lo visto",
+    "sk": ["zrejme", "ako sa zdá"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Por lo visto, ya se fueron.", "sk": "Zrejme už odišli." }
+    ]
+  },
+  {
+    "id": "por-lo-general",
+    "es": "por lo general",
+    "sk": ["zvyčajne", "spravidla"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Por lo general, como a las tres.", "sk": "Zvyčajne obedujem o tretej." }
+    ]
+  },
+  {
+    "id": "a-la-larga",
+    "es": "a la larga",
+    "sk": ["z dlhodobého hľadiska", "nakoniec"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "A la larga, sale más barato cocinar en casa.", "sk": "Z dlhodobého hľadiska je lacnejšie variť doma." }
+    ]
+  },
+  {
+    "id": "en-absoluto",
+    "es": "en absoluto",
+    "sk": ["vôbec (nie)"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "No me molesta en absoluto.", "sk": "Vôbec mi to neprekáža." }
+    ]
+  },
+  {
+    "id": "de-antemano",
+    "es": "de antemano",
+    "sk": ["vopred"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Gracias de antemano por tu ayuda.", "sk": "Vopred ďakujem za pomoc." }
+    ]
+  },
+  {
+    "id": "a-proposito",
+    "es": "a propósito",
+    "sk": ["mimochodom", "naschvál"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "A propósito, ¿viste a Laura?", "sk": "Mimochodom, videl si Lauru?" },
+      { "es": "No lo hice a propósito.", "sk": "Neurobil som to naschvál." }
+    ]
+  },
+  {
+    "id": "cuanto-antes",
+    "es": "cuanto antes",
+    "sk": ["čím skôr"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Llámame cuanto antes.", "sk": "Zavolaj mi čím skôr." }
+    ]
+  },
+  {
+    "id": "ni-siquiera",
+    "es": "ni siquiera",
+    "sk": ["ani len", "ani"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Ni siquiera me saludó.", "sk": "Ani ma len nepozdravil." }
+    ]
+  },
+  {
+    "id": "es-mas",
+    "es": "es más",
+    "sk": ["ba čo viac", "dokonca"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "No me gusta el café. Es más, nunca lo tomo.", "sk": "Kávu nemám rád. Ba čo viac, nikdy ju nepijem." }
+    ]
+  },
+  {
+    "id": "en-el-fondo",
+    "es": "en el fondo",
+    "sk": ["v podstate", "v hĺbke duše"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "En el fondo, es una buena persona.", "sk": "V hĺbke duše je to dobrý človek." }
+    ]
+  },
+  {
+    "id": "respecto-a",
+    "es": "respecto a",
+    "sk": ["čo sa týka", "ohľadom"],
+    "pos": "prep",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Respecto a tu pregunta, mañana te contesto.", "sk": "Čo sa týka tvojej otázky, odpoviem ti zajtra." }
+    ]
+  },
+  {
+    "id": "asunto",
+    "es": "asunto",
+    "sk": ["záležitosť", "vec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Es un asunto personal.", "sk": "Je to osobná záležitosť." }
+    ]
+  },
+  {
+    "id": "hecho",
+    "es": "hecho",
+    "sk": ["fakt", "skutočnosť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "El hecho es que no tenemos tiempo.", "sk": "Faktom je, že nemáme čas." }
+    ]
+  },
+  {
+    "id": "punto-de-vista",
+    "es": "punto de vista",
+    "sk": ["názor", "uhol pohľadu"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Desde mi punto de vista, es un error.", "sk": "Z môjho pohľadu je to chyba." }
+    ]
+  },
+  {
+    "id": "postura",
+    "es": "postura",
+    "sk": ["postoj", "poloha"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "No entiendo su postura sobre el tema.", "sk": "Nerozumiem jeho postoju k tej téme." }
+    ]
+  },
+  {
+    "id": "reto",
+    "es": "reto",
+    "sk": ["výzva"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Aprender un idioma es un reto.", "sk": "Naučiť sa jazyk je výzva." }
+    ]
+  },
+  {
+    "id": "imprescindible",
+    "es": "imprescindible",
+    "sk": ["nevyhnutný", "nepostrádateľný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "El pasaporte es imprescindible para el viaje.", "sk": "Pas je na cestu nevyhnutný." }
+    ]
+  },
+  {
+    "id": "evidente",
+    "es": "evidente",
+    "sk": ["zrejmý", "jasný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Es evidente que está enojado.", "sk": "Je zrejmé, že sa hnevá." }
+    ]
+  },
+  {
+    "id": "actual",
+    "es": "actual",
+    "sk": ["súčasný", "terajší"],
+    "pos": "adj",
+    "plural": "actuales",
+    "level": "B2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "La situación actual es difícil.", "sk": "Súčasná situácia je ťažká." }
+    ],
+    "note": "Pozor: actual ≠ aktuálny v zmysle „skutočný“. Actualmente = v súčasnosti."
+  },
+  {
+    "id": "eficaz",
+    "es": "eficaz",
+    "sk": ["účinný", "efektívny"],
+    "pos": "adj",
+    "plural": "eficaces",
+    "level": "B2",
+    "topics": ["basics", "health"],
+    "examples": [
+      { "es": "Es un remedio muy eficaz contra la tos.", "sk": "Je to veľmi účinný liek na kašeľ." }
+    ]
   }
 ]

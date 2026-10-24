@@ -575,5 +575,373 @@
         "distractors": ["tomé", "toma", "tomaba"]
       }
     ]
+  },
+  {
+    "id": "s906",
+    "es": "Mi hija va en tercero de primaria.",
+    "sk": "Moja dcéra chodí do tretej triedy základnej školy.",
+    "level": "A2",
+    "topics": ["school"],
+    "tokens": ["Mi", "hija", "va", "en", "tercero", "de", "primaria", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "primaria",
+        "lemma": "primaria",
+        "hint": "základná škola",
+        "distractors": ["primera", "primavera", "prima"]
+      }
+    ]
+  },
+  {
+    "id": "s907",
+    "es": "¿Me prestas tu calculadora?",
+    "sk": "Požičiaš mi kalkulačku?",
+    "level": "A2",
+    "topics": ["school"],
+    "tokens": ["¿", "Me", "prestas", "tu", "calculadora", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "calculadora",
+        "lemma": "calculadora",
+        "hint": "kalkulačka",
+        "distractors": ["calculador", "cucaracha", "computadora"]
+      }
+    ]
+  },
+  {
+    "id": "s908",
+    "es": "Los alumnos llevan uniforme.",
+    "sk": "Žiaci nosia uniformu.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "alumnos", "llevan", "uniforme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llevan",
+        "lemma": "llevar",
+        "hint": "llevar · ellos · presente",
+        "distractors": ["lleva", "llevaron", "llevaban"]
+      }
+    ]
+  },
+  {
+    "id": "s909",
+    "es": "Mi hijo entra a la secundaria en septiembre.",
+    "sk": "Syn ide v septembri na druhý stupeň.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "entra", "a", "la", "secundaria", "en", "septiembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entra",
+        "lemma": "entrar",
+        "hint": "entrar · él · presente",
+        "distractors": ["entran", "entró", "entraba"]
+      }
+    ]
+  },
+  {
+    "id": "s910",
+    "es": "¡Aprobé el examen de inglés!",
+    "sk": "Urobil som skúšku z angličtiny!",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Aprobé", "el", "examen", "de", "inglés", "!"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Aprobé",
+        "lemma": "aprobar",
+        "hint": "aprobar · yo · pretérito",
+        "distractors": ["Aprobó", "Apruebo", "Aprobaba"]
+      }
+    ]
+  },
+  {
+    "id": "s911",
+    "es": "Reprobó dos materias y tiene que presentar extraordinario.",
+    "sk": "Neurobil dva predmety a musí ísť na opravnú skúšku.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Reprobó", "dos", "materias", "y", "tiene", "que", "presentar", "extraordinario", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reprobó",
+        "lemma": "reprobar",
+        "hint": "reprobar · él · pretérito",
+        "distractors": ["Reprueba", "Reprobé", "Reprobaba"]
+      }
+    ]
+  },
+  {
+    "id": "s912",
+    "es": "Mi compañera me prestó sus apuntes.",
+    "sk": "Spolužiačka mi požičala poznámky.",
+    "level": "B1",
+    "topics": ["school"],
+    "tokens": ["Mi", "compañera", "me", "prestó", "sus", "apuntes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "apuntes",
+        "lemma": "apunte",
+        "hint": "poznámky",
+        "distractors": ["apuestas", "asuntos", "puntos"]
+      }
+    ]
+  },
+  {
+    "id": "s913",
+    "es": "Me inscribí a un curso de francés.",
+    "sk": "Prihlásil som sa na kurz francúzštiny.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "inscribí", "a", "un", "curso", "de", "francés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "inscribí",
+        "lemma": "inscribirse",
+        "hint": "inscribirse · yo · pretérito",
+        "distractors": ["inscribe", "inscribió", "inscribía"]
+      }
+    ]
+  },
+  {
+    "id": "s914",
+    "es": "Tenemos que escribir un ensayo de cinco páginas.",
+    "sk": "Musíme napísať esej na päť strán.",
+    "level": "B1",
+    "topics": ["school"],
+    "tokens": ["Tenemos", "que", "escribir", "un", "ensayo", "de", "cinco", "páginas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ensayo",
+        "lemma": "ensayo",
+        "hint": "esej",
+        "distractors": ["ensalada", "enojo", "ejemplo"]
+      }
+    ]
+  },
+  {
+    "id": "s915",
+    "es": "Mañana nos entregan la boleta de calificaciones.",
+    "sk": "Zajtra nám dajú vysvedčenie.",
+    "level": "B1",
+    "topics": ["school"],
+    "tokens": ["Mañana", "nos", "entregan", "la", "boleta", "de", "calificaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "boleta",
+        "lemma": "boleta",
+        "hint": "vysvedčenie",
+        "distractors": ["boleto", "botella", "bolsa"]
+      }
+    ]
+  },
+  {
+    "id": "s916",
+    "es": "Me equivoqué en la última pregunta.",
+    "sk": "V poslednej otázke som sa pomýlil.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "equivoqué", "en", "la", "última", "pregunta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "equivoqué",
+        "lemma": "equivocarse",
+        "hint": "equivocarse · yo · pretérito",
+        "distractors": ["equivoca", "equivocó", "equivocaba"]
+      }
+    ]
+  },
+  {
+    "id": "s917",
+    "es": "Antes de titularte tienes que hacer tu servicio social.",
+    "sk": "Pred ukončením štúdia musíš odpracovať povinnú prax.",
+    "level": "B2",
+    "topics": ["school"],
+    "tokens": ["Antes", "de", "titularte", "tienes", "que", "hacer", "tu", "servicio", "social", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "servicio",
+        "lemma": "servicio social",
+        "hint": "služba (… social)",
+        "distractors": ["servidor", "silencio", "sitio"]
+      }
+    ]
+  },
+  {
+    "id": "s918",
+    "es": "La colegiatura de esa universidad es carísima.",
+    "sk": "Školné na tej univerzite je strašne drahé.",
+    "level": "B2",
+    "topics": ["school"],
+    "tokens": ["La", "colegiatura", "de", "esa", "universidad", "es", "carísima", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "colegiatura",
+        "lemma": "colegiatura",
+        "hint": "školné",
+        "distractors": ["colegio", "caricatura", "asignatura"]
+      }
+    ]
+  },
+  {
+    "id": "s919",
+    "es": "Lo expulsaron por plagio en su tesis.",
+    "sk": "Vylúčili ho za plagiát v záverečnej práci.",
+    "level": "B2",
+    "topics": ["school"],
+    "tokens": ["Lo", "expulsaron", "por", "plagio", "en", "su", "tesis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "plagio",
+        "lemma": "plagio",
+        "hint": "plagiát",
+        "distractors": ["plaga", "playa", "prestigio"]
+      }
+    ]
+  },
+  {
+    "id": "s920",
+    "es": "Quiero hacer un posgrado en el extranjero.",
+    "sk": "Chcem ísť na postgraduálne štúdium do zahraničia.",
+    "level": "B2",
+    "topics": ["school"],
+    "tokens": ["Quiero", "hacer", "un", "posgrado", "en", "el", "extranjero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "posgrado",
+        "lemma": "posgrado",
+        "hint": "postgraduálne štúdium",
+        "distractors": ["grado", "pasado", "postre"]
+      }
+    ]
+  },
+  {
+    "id": "s921",
+    "es": "Mi primo es autodidacta: aprendió a programar solo.",
+    "sk": "Môj bratranec je samouk: programovať sa naučil sám.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "primo", "es", "autodidacta", ":", "aprendió", "a", "programar", "solo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "aprendió",
+        "lemma": "aprender",
+        "hint": "aprender · él · pretérito",
+        "distractors": ["aprende", "aprendía", "aprenderá"]
+      }
+    ]
+  },
+  {
+    "id": "s922",
+    "es": "Investigué el tema durante meses antes de escribir la tesis.",
+    "sk": "Pred písaním záverečnej práce som tú tému mesiace skúmal.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Investigué", "el", "tema", "durante", "meses", "antes", "de", "escribir", "la", "tesis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Investigué",
+        "lemma": "investigar",
+        "hint": "investigar · yo · pretérito",
+        "distractors": ["Investigó", "Investigo", "Investigaba"]
+      }
+    ]
+  },
+  {
+    "id": "s923",
+    "es": "El rendimiento de los alumnos mejoró con el nuevo método.",
+    "sk": "S novou metódou sa výsledky žiakov zlepšili.",
+    "level": "B2",
+    "topics": ["school"],
+    "tokens": ["El", "rendimiento", "de", "los", "alumnos", "mejoró", "con", "el", "nuevo", "método", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "rendimiento",
+        "lemma": "rendimiento",
+        "hint": "výkon; výsledky",
+        "distractors": ["rendición", "reglamento", "sentimiento"]
+      }
+    ]
+  },
+  {
+    "id": "s924",
+    "es": "La escuela fomenta el aprendizaje de idiomas.",
+    "sk": "Škola podporuje učenie sa jazykov.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["La", "escuela", "fomenta", "el", "aprendizaje", "de", "idiomas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fomenta",
+        "lemma": "fomentar",
+        "hint": "fomentar · ella · presente",
+        "distractors": ["fomentan", "fomentó", "fomentaba"]
+      }
+    ]
+  },
+  {
+    "id": "s925",
+    "es": "Todavía no distingo bien entre el pretérito y el imperfecto.",
+    "sk": "Ešte dobre nerozlišujem medzi pretéritom a imperfektom.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Todavía", "no", "distingo", "bien", "entre", "el", "pretérito", "y", "el", "imperfecto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "distingo",
+        "lemma": "distinguir",
+        "hint": "distinguir · yo · presente",
+        "distractors": ["distingue", "distinguí", "distinguía"]
+      }
+    ]
+  },
+  {
+    "id": "s926",
+    "es": "Los egresados de esta carrera encuentran trabajo rápido.",
+    "sk": "Absolventi tohto odboru rýchlo nájdu prácu.",
+    "level": "B2",
+    "topics": ["school", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "egresados", "de", "esta", "carrera", "encuentran", "trabajo", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "encuentran",
+        "lemma": "encontrar",
+        "hint": "encontrar · ellos · presente",
+        "distractors": ["encuentra", "encontraron", "encontraban"]
+      }
+    ]
   }
 ]

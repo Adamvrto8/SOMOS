@@ -43,5 +43,36 @@
     "note": "Mexican: light hair or light skin. At the market, vendors often call foreigners this: ¿Qué le damos, güero?"
   },
   { "id": "musculo", "en": ["muscle"], "examples": ["My muscles hurt after the gym."] },
-  { "id": "cicatriz", "en": ["scar"], "examples": ["I have a scar on my hand."] }
+  { "id": "cicatriz", "en": ["scar"], "examples": ["I have a scar on my hand."] },
+  { "id": "ceja", "en": ["eyebrow"], "examples": ["He has really thick eyebrows."] },
+  { "id": "pestana", "en": ["eyelash"], "examples": ["She has long eyelashes."] },
+  { "id": "codo", "en": ["elbow"], "examples": ["I hit my elbow."], "note": "Mexican slang also \"stingy\": ¡No seas codo! = Don't be cheap!" },
+  { "id": "muneca", "en": ["wrist", "doll"], "examples": ["I sprained my wrist."] },
+  { "id": "cintura", "en": ["waist"], "examples": ["The pants are too big in the waist."] },
+  { "id": "frente", "en": ["forehead"], "examples": ["You have a smudge on your forehead."], "note": "el frente = the front; frente frío = cold front." },
+  { "id": "mejilla", "en": ["cheek"], "examples": ["In Mexico people greet each other with a kiss on the cheek."] },
+  { "id": "cadera", "en": ["hip"], "examples": ["My grandma had hip surgery."] },
+  { "id": "talon", "en": ["heel"], "examples": ["I got a blister on my heel."] },
+  { "id": "pulmon", "en": ["lung"], "examples": ["Tobacco damages your lungs."] },
+  { "id": "cerebro", "en": ["brain"], "examples": ["The brain uses a lot of energy."] },
+  { "id": "higado", "en": ["liver"], "examples": ["Alcohol damages your liver."] },
+  { "id": "rinon", "en": ["kidney"], "examples": ["He donated a kidney to his brother."] },
+  { "id": "columna", "en": ["spine", "column"], "examples": ["I have back problems."] },
+  { "id": "articulacion", "en": ["joint"], "examples": ["My joints hurt in the cold."] },
+  {
+    "id": "lunar",
+    "en": ["mole", "beauty mark"],
+    "examples": ["She has a beauty mark on her face."],
+    "note": "Also: de lunares = polka-dot (vestido de lunares)."
+  },
+  { "id": "arruga", "en": ["wrinkle"], "examples": ["I'm starting to get wrinkles."] },
+  { "id": "cana", "en": ["gray hair"], "examples": ["My dad has a lot of gray hair."] },
+  { "id": "zurdo", "en": ["left-handed"], "examples": ["I'm left-handed."] },
+  { "id": "pelon", "en": ["bald", "with a shaved head"], "examples": ["My grandpa is bald."], "note": "Mexican, colloquial." },
+  {
+    "id": "chino",
+    "en": ["curly (hair)", "Chinese"],
+    "examples": ["I have curly hair like my mom."],
+    "note": "In Mexico pelo chino = curly hair. The opposite: pelo lacio = straight hair."
+  }
 ]

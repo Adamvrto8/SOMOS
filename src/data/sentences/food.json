@@ -689,5 +689,343 @@
         "distractors": ["come", "comí", "comemos"]
       }
     ]
+  },
+  {
+    "id": "s686",
+    "es": "Quiero un licuado de plátano.",
+    "sk": "Chcem banánový koktail.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Quiero", "un", "licuado", "de", "plátano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Quiero",
+        "lemma": "querer",
+        "hint": "querer · yo · presente",
+        "distractors": ["Quiere", "Quieres", "Quieren"]
+      }
+    ]
+  },
+  {
+    "id": "s687",
+    "es": "¿Ya quieren ordenar?",
+    "sk": "Chcete si už objednať?",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Ya", "quieren", "ordenar", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quieren",
+        "lemma": "querer",
+        "hint": "querer · ustedes · presente",
+        "distractors": ["quiere", "quieres", "quisieron"]
+      }
+    ]
+  },
+  {
+    "id": "s688",
+    "es": "La sopa está muy salada.",
+    "sk": "Polievka je veľmi slaná.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "sopa", "está", "muy", "salada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "están", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s689",
+    "es": "Le puse demasiada sal a la sopa.",
+    "sk": "Dal som do polievky priveľa soli.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "puse", "demasiada", "sal", "a", "la", "sopa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "puse",
+        "lemma": "poner",
+        "hint": "poner · yo · pretérito",
+        "distractors": ["pongo", "puso", "ponía"]
+      }
+    ]
+  },
+  {
+    "id": "s690",
+    "es": "Necesitamos harina, mantequilla y huevos.",
+    "sk": "Potrebujeme múku, maslo a vajcia.",
+    "level": "A2",
+    "topics": ["food"],
+    "tokens": ["Necesitamos", "harina", ",", "mantequilla", "y", "huevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mantequilla",
+        "lemma": "mantequilla",
+        "hint": "maslo",
+        "distractors": ["margarita", "manteca", "mantel"]
+      }
+    ]
+  },
+  {
+    "id": "s691",
+    "es": "Mi mamá calienta las tortillas en el comal.",
+    "sk": "Mama ohrieva tortily na comale.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "mamá", "calienta", "las", "tortillas", "en", "el", "comal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calienta",
+        "lemma": "calentar",
+        "hint": "calentar · ella · presente",
+        "distractors": ["calientan", "calentó", "calentaba"]
+      }
+    ]
+  },
+  {
+    "id": "s692",
+    "es": "De botana pedimos guacamole y totopos.",
+    "sk": "Na zahryznutie sme si objednali guacamole a nachos.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["De", "botana", "pedimos", "guacamole", "y", "totopos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pedimos",
+        "lemma": "pedir",
+        "hint": "pedir · nosotros · pretérito",
+        "distractors": ["piden", "pidieron", "pedí"]
+      }
+    ]
+  },
+  {
+    "id": "s693",
+    "es": "El mole de mi abuela lleva más de veinte ingredientes.",
+    "sk": "Babkino mole má viac ako dvadsať prísad.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["El", "mole", "de", "mi", "abuela", "lleva", "más", "de", "veinte", "ingredientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "lleva",
+        "lemma": "llevar",
+        "hint": "llevar · él · presente",
+        "distractors": ["llevan", "llevó", "llevaba"]
+      }
+    ]
+  },
+  {
+    "id": "s694",
+    "es": "La comida chatarra es barata, pero no es nutritiva.",
+    "sk": "Nezdravé jedlo je lacné, ale nie je výživné.",
+    "level": "B1",
+    "topics": ["food", "health"],
+    "tokens": ["La", "comida", "chatarra", "es", "barata", ",", "pero", "no", "es", "nutritiva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "nutritiva",
+        "lemma": "nutritivo",
+        "hint": "výživný",
+        "distractors": ["nutritivo", "nutritivas", "nutrición"]
+      }
+    ]
+  },
+  {
+    "id": "s695",
+    "es": "El agua ya está hirviendo.",
+    "sk": "Voda už vrie.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "agua", "ya", "está", "hirviendo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hirviendo",
+        "lemma": "hervir",
+        "hint": "hervir · gerundio",
+        "distractors": ["hirvió", "hierve", "hervir"]
+      }
+    ]
+  },
+  {
+    "id": "s696",
+    "es": "El café de olla lleva canela y piloncillo.",
+    "sk": "Do „café de olla“ sa dáva škorica a trstinový cukor.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["El", "café", "de", "olla", "lleva", "canela", "y", "piloncillo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "olla",
+        "lemma": "olla",
+        "hint": "hrniec",
+        "distractors": ["hoja", "ola", "bolsa"]
+      }
+    ]
+  },
+  {
+    "id": "s697",
+    "es": "Este pastel está demasiado empalagoso.",
+    "sk": "Tento koláč je príliš presladený.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Este", "pastel", "está", "demasiado", "empalagoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "empalagoso",
+        "lemma": "empalagoso",
+        "hint": "presladený",
+        "distractors": ["empalagosa", "amargo", "desabrido"]
+      }
+    ]
+  },
+  {
+    "id": "s698",
+    "es": "Sin sal, la comida queda desabrida.",
+    "sk": "Bez soli je jedlo mdlé.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Sin", "sal", ",", "la", "comida", "queda", "desabrida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "desabrida",
+        "lemma": "desabrido",
+        "hint": "mdlý",
+        "distractors": ["desabrido", "sabrosa", "salada"]
+      }
+    ]
+  },
+  {
+    "id": "s699",
+    "es": "Soy intolerante a la lactosa, así que evito los lácteos.",
+    "sk": "Mám laktózovú intoleranciu, takže sa vyhýbam mliečnym výrobkom.",
+    "level": "B2",
+    "topics": ["food", "health"],
+    "grammar": ["presente"],
+    "tokens": ["Soy", "intolerante", "a", "la", "lactosa", ",", "así", "que", "evito", "los", "lácteos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "evito",
+        "lemma": "evitar",
+        "hint": "evitar · yo · presente",
+        "distractors": ["evita", "evité", "evitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s700",
+    "es": "Puedes sustituir la crema por yogur.",
+    "sk": "Smotanu môžeš nahradiť jogurtom.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Puedes", "sustituir", "la", "crema", "por", "yogur", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "crema",
+        "lemma": "crema",
+        "hint": "smotana",
+        "distractors": ["leche", "queso", "cerveza"]
+      }
+    ]
+  },
+  {
+    "id": "s701",
+    "es": "El día después de Navidad comemos el recalentado.",
+    "sk": "Deň po Vianociach jeme zvyšky zo sviatočnej večere.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["El", "día", "después", "de", "Navidad", "comemos", "el", "recalentado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "comemos",
+        "lemma": "comer",
+        "hint": "comer · nosotros · presente",
+        "distractors": ["comen", "como", "comerán"]
+      }
+    ]
+  },
+  {
+    "id": "s702",
+    "es": "Mi abuela molía los chiles en el molcajete.",
+    "sk": "Babka mlela čili v kamennom mažiari.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "molía", "los", "chiles", "en", "el", "molcajete", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "molcajete",
+        "lemma": "molcajete",
+        "hint": "kamenný mažiar",
+        "distractors": ["comal", "cuchillo", "tenedor"]
+      }
+    ]
+  },
+  {
+    "id": "s703",
+    "es": "Agrégale una pizca de sal y listo.",
+    "sk": "Pridaj štipku soli a je to.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Agrégale", "una", "pizca", "de", "sal", "y", "listo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pizca",
+        "lemma": "pizca",
+        "hint": "štipka",
+        "distractors": ["pieza", "cucharada", "taza"]
+      }
+    ]
+  },
+  {
+    "id": "s704",
+    "es": "La cocina mexicana es patrimonio cultural de la humanidad.",
+    "sk": "Mexická kuchyňa patrí ku kultúrnemu dedičstvu ľudstva.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "cocina", "mexicana", "es", "patrimonio", "cultural", "de", "la", "humanidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "identity",
+        "distractors": ["está", "son", "están"]
+      }
+    ]
   }
 ]

@@ -71,5 +71,38 @@
   { "id": "mitad", "en": ["half (noun)"], "examples": ["I want half."] },
   { "id": "docena", "en": ["dozen"], "examples": ["I bought a dozen eggs."] },
   { "id": "porcentaje", "en": ["percentage", "percent"], "examples": ["What percentage do you leave as a tip in Mexico?"] },
-  { "id": "cifra", "en": ["figure", "number"], "examples": ["The unemployment figures improved."] }
+  { "id": "cifra", "en": ["figure", "number"], "examples": ["The unemployment figures improved."] },
+  { "id": "diecisiete", "en": ["seventeen"], "examples": ["My son is seventeen."] },
+  { "id": "dieciocho", "en": ["eighteen"], "examples": ["That's eighteen pesos."] },
+  { "id": "diecinueve", "en": ["nineteen"], "examples": ["We live at number nineteen."] },
+  {
+    "id": "doscientos",
+    "en": ["two hundred"],
+    "examples": ["The book has two hundred pages."],
+    "note": "Hundreds agree in gender: doscientos pesos, doscientas personas."
+  },
+  { "id": "quinientos", "en": ["five hundred"], "examples": ["Admission costs five hundred pesos."], "note": "Irregular: not \"cincocientos\"." },
+  { "id": "setecientos", "en": ["seven hundred"], "examples": ["The flight costs seven hundred dollars."], "note": "Not \"sietecientos\"." },
+  { "id": "novecientos", "en": ["nine hundred"], "examples": ["We paid nine hundred pesos for electricity."], "note": "Not \"nuevecientos\"." },
+  { "id": "cuarto-2", "en": ["quarter", "fourth"], "examples": ["It's a quarter past three.", "I live on the fourth floor."] },
+  { "id": "quinto", "en": ["fifth"], "examples": ["He came in fifth place."] },
+  { "id": "sexto", "en": ["sixth"], "examples": ["My daughter is in sixth grade."] },
+  { "id": "par", "en": ["pair", "couple"], "examples": ["I bought a pair of shoes."] },
+  { "id": "doble", "en": ["double", "twice as much"], "examples": ["Now it costs twice as much."] },
+  { "id": "cantidad", "en": ["amount", "quantity"], "examples": ["There was a huge number of people."] },
+  { "id": "aproximadamente", "en": ["approximately", "about"], "examples": ["It's about a two-hour trip."] },
+  { "id": "por-ciento", "en": ["percent"], "examples": ["There's a ten percent discount."] },
+  { "id": "decimo", "en": ["tenth"], "examples": ["This is the tenth time I've told you."] },
+  { "id": "mayoria", "en": ["majority", "most"], "examples": ["Most of my friends live nearby."] },
+  { "id": "minoria", "en": ["minority"], "examples": ["Only a minority voted against it."] },
+  { "id": "impar", "en": ["odd (number)"], "examples": ["Seven is an odd number."] },
+  { "id": "estadistica", "en": ["statistic", "statistics"], "examples": ["According to statistics, people read less."] },
+  {
+    "id": "mil-millones",
+    "en": ["billion"],
+    "examples": ["The project cost a billion pesos."],
+    "note": "Careful: un billón = a trillion. A billion = mil millones."
+  },
+  { "id": "calculo", "en": ["calculation"], "examples": ["I did a quick calculation."] },
+  { "id": "centenar", "en": ["about a hundred"], "examples": ["Hundreds of people came."] }
 ]

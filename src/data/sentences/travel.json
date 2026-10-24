@@ -718,5 +718,307 @@
         "distractors": ["salen", "salgo", "salimos"]
       }
     ]
+  },
+  {
+    "id": "s740",
+    "es": "¿Ya empacaste el bloqueador?",
+    "sk": "Už si si pribalil opaľovací krém?",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Ya", "empacaste", "el", "bloqueador", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "empacaste",
+        "lemma": "empacar",
+        "hint": "empacar · tú · pretérito",
+        "distractors": ["empacas", "empacó", "empacabas"]
+      }
+    ]
+  },
+  {
+    "id": "s741",
+    "es": "El camión sale de la terminal a las seis.",
+    "sk": "Autobus odchádza z terminálu o šiestej.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["El", "camión", "sale", "de", "la", "terminal", "a", "las", "seis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él · presente",
+        "distractors": ["salen", "salió", "salía"]
+      }
+    ]
+  },
+  {
+    "id": "s742",
+    "es": "Dormimos en un hostal muy barato.",
+    "sk": "Spali sme vo veľmi lacnom hosteli.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Dormimos", "en", "un", "hostal", "muy", "barato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dormimos",
+        "lemma": "dormir",
+        "hint": "dormir · nosotros · pretérito",
+        "distractors": ["Durmieron", "Dormí", "Dormíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s743",
+    "es": "Hicimos una excursión a las pirámides.",
+    "sk": "Boli sme na výlete pri pyramídach.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Hicimos", "una", "excursión", "a", "las", "pirámides", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hicimos",
+        "lemma": "hacer",
+        "hint": "hacer · nosotros · pretérito",
+        "distractors": ["Hacemos", "Hicieron", "Hice"]
+      }
+    ]
+  },
+  {
+    "id": "s744",
+    "es": "No encuentro mi pase de abordar.",
+    "sk": "Neviem nájsť palubný lístok.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["No", "encuentro", "mi", "pase", "de", "abordar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encuentro",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · presente",
+        "distractors": ["encuentra", "encontré", "encontraba"]
+      }
+    ]
+  },
+  {
+    "id": "s745",
+    "es": "El avión aterrizó con una hora de retraso.",
+    "sk": "Lietadlo pristálo s hodinovým meškaním.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "avión", "aterrizó", "con", "una", "hora", "de", "retraso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "aterrizó",
+        "lemma": "aterrizar",
+        "hint": "aterrizar · él · pretérito",
+        "distractors": ["aterriza", "aterrizaba", "aterrizará"]
+      }
+    ]
+  },
+  {
+    "id": "s746",
+    "es": "Cambiamos dinero en una casa de cambio del aeropuerto.",
+    "sk": "Peniaze sme si zamenili v zmenárni na letisku.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Cambiamos", "dinero", "en", "una", "casa", "de", "cambio", "del", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cambiamos",
+        "lemma": "cambiar",
+        "hint": "cambiar · nosotros · pretérito",
+        "distractors": ["Cambian", "Cambié", "Cambiaban"]
+      }
+    ]
+  },
+  {
+    "id": "s747",
+    "es": "Cancelaron el vuelo por el huracán.",
+    "sk": "Let zrušili kvôli hurikánu.",
+    "level": "B1",
+    "topics": ["travel", "weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Cancelaron", "el", "vuelo", "por", "el", "huracán", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "huracán",
+        "lemma": "huracán",
+        "hint": "hurikán",
+        "distractors": ["huracanes", "volcán", "temblor"]
+      }
+    ]
+  },
+  {
+    "id": "s748",
+    "es": "Solo llevo equipaje de mano.",
+    "sk": "Mám so sebou iba príručnú batožinu.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Solo", "llevo", "equipaje", "de", "mano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["lleva", "llevé", "llevaba"]
+      }
+    ]
+  },
+  {
+    "id": "s749",
+    "es": "Siempre contrato un seguro de viaje por si acaso.",
+    "sk": "Vždy si pre istotu uzavriem cestovné poistenie.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "contrato", "un", "seguro", "de", "viaje", "por", "si", "acaso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "contrato",
+        "lemma": "contratar",
+        "hint": "contratar · yo · presente",
+        "distractors": ["contrata", "contraté", "contrataba"]
+      }
+    ]
+  },
+  {
+    "id": "s750",
+    "es": "Tuvimos un contratiempo y perdimos el vuelo.",
+    "sk": "Mali sme nepríjemnosť a zmeškali sme let.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Tuvimos", "un", "contratiempo", "y", "perdimos", "el", "vuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "perdimos",
+        "lemma": "perder",
+        "hint": "perder · nosotros · pretérito",
+        "distractors": ["pierden", "perdió", "perdíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s751",
+    "es": "En temporada alta los hoteles cuestan el doble.",
+    "sk": "V hlavnej sezóne stoja hotely dvojnásobok.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["En", "temporada", "alta", "los", "hoteles", "cuestan", "el", "doble", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cuestan",
+        "lemma": "costar",
+        "hint": "costar · ellos · presente",
+        "distractors": ["cuesta", "costaron", "costaban"]
+      }
+    ]
+  },
+  {
+    "id": "s752",
+    "es": "El trayecto de Oaxaca a la costa es largo y lleno de curvas.",
+    "sk": "Cesta z Oaxacy na pobrežie je dlhá a plná zákrut.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["El", "trayecto", "de", "Oaxaca", "a", "la", "costa", "es", "largo", "y", "lleno", "de", "curvas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trayecto",
+        "lemma": "trayecto",
+        "hint": "cesta (úsek)",
+        "distractors": ["trato", "trapo", "trazo"]
+      }
+    ]
+  },
+  {
+    "id": "s753",
+    "es": "Me mareo en los camiones con tantas curvas.",
+    "sk": "Pri toľkých zákrutách mi je v autobuse zle.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["Me", "mareo", "en", "los", "camiones", "con", "tantas", "curvas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "curvas",
+        "lemma": "curva",
+        "hint": "zákruty",
+        "distractors": ["cuervos", "cuevas", "cuerdas"]
+      }
+    ]
+  },
+  {
+    "id": "s754",
+    "es": "Las ruinas mayas atraen a turistas de todo el mundo.",
+    "sk": "Mayské ruiny lákajú turistov z celého sveta.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Las", "ruinas", "mayas", "atraen", "a", "turistas", "de", "todo", "el", "mundo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "atraen",
+        "lemma": "atraer",
+        "hint": "atraer · ellos · presente",
+        "distractors": ["atrae", "atrajeron", "atraían"]
+      }
+    ]
+  },
+  {
+    "id": "s755",
+    "es": "Si hay algún imprevisto, avísame.",
+    "sk": "Ak sa stane niečo nečakané, daj mi vedieť.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["Si", "hay", "algún", "imprevisto", ",", "avísame", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "imprevisto",
+        "lemma": "imprevisto",
+        "hint": "nečakaná udalosť",
+        "distractors": ["impuesto", "previsto", "imperio"]
+      }
+    ]
+  },
+  {
+    "id": "s756",
+    "es": "La cancelación del hotel no tiene costo.",
+    "sk": "Storno hotela je bezplatné.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["La", "cancelación", "del", "hotel", "no", "tiene", "costo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cancelación",
+        "lemma": "cancelación",
+        "hint": "storno",
+        "distractors": ["canción", "celebración", "cantidad"]
+      }
+    ]
   }
 ]

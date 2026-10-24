@@ -163,5 +163,57 @@
     "en": ["come on!", "exactly!"],
     "examples": ["Come on, let's go!"],
     "note": "A Mexican interjection: to hurry someone up (¡ándale, apúrate!) and to agree (¡ándale! = exactly)."
+  },
+  { "id": "como-no", "en": ["of course", "sure"], "examples": ["\"Will you help me?\" \"Of course!\""] },
+  { "id": "que-te-mejores", "en": ["get well soon"], "examples": ["Get well soon, see you on Monday."] },
+  { "id": "no-hay-de-que", "en": ["you're welcome", "don't mention it"], "examples": ["\"Thanks for everything.\" \"Don't mention it.\""] },
+  {
+    "id": "a-la-orden",
+    "en": ["at your service", "you're welcome"],
+    "examples": ["\"Thank you, sir.\" \"You're welcome.\""],
+    "note": "Mexican vendors and waiters say it to offer help, and as a reply to \"gracias\"."
+  },
+  { "id": "al-rato", "en": ["in a bit", "later"], "examples": ["I'll call you in a bit."], "note": "Mexican: al rato = later on (it can mean hours)." },
+  {
+    "id": "buena-onda",
+    "en": ["nice", "cool (person)"],
+    "examples": ["Your brother is really nice."],
+    "note": "Mexican. The opposite: mala onda = mean, not nice."
+  },
+  { "id": "disculpa-la-molestia", "en": ["sorry to bother you"], "examples": ["Sorry to bother you, do you know where the bathroom is?"] },
+  { "id": "sin-querer", "en": ["by accident", "without meaning to"], "examples": ["Sorry, I deleted it by accident."] },
+  {
+    "id": "que-oso",
+    "en": ["how embarrassing!"],
+    "examples": ["How embarrassing! I got the name wrong."],
+    "note": "Mexican slang. Hacer el oso = to embarrass yourself."
+  },
+  {
+    "id": "me-late",
+    "en": ["I like it", "I have a feeling"],
+    "examples": ["I like that restaurant.", "I have a feeling it's going to rain."],
+    "note": "Mexican slang (literally \"it beats for me\")."
+  },
+  { "id": "echar-la-mano", "en": ["to give a hand"], "examples": ["Can you give me a hand with these boxes?"], "note": "Mexican: echar la mano = to help out." },
+  {
+    "id": "dar-pena",
+    "en": ["to be embarrassed", "to feel bad"],
+    "examples": ["I get embarrassed speaking in public."],
+    "note": "In Mexico mostly \"to be embarrassed\" (Me da pena = I'm embarrassed). Elsewhere rather \"to feel sorry\"."
+  },
+  {
+    "id": "quedar-de",
+    "en": ["to agree to", "to arrange to"],
+    "examples": ["We agreed to meet at five."],
+    "note": "Mexican: quedar de + infinitive. Elsewhere: quedar en."
+  },
+  { "id": "hacer-falta", "en": ["to be needed", "to miss (someone)"], "examples": ["I miss you.", "More time is needed."] },
+  { "id": "con-razon", "en": ["no wonder"], "examples": ["No wonder you're tired, you didn't sleep."] },
+  { "id": "de-plano", "en": ["really", "totally", "definitely"], "examples": ["I really don't understand anything."], "note": "Mexican, colloquial." },
+  {
+    "id": "ahi-nos-vidrios",
+    "en": ["see you (slang)"],
+    "examples": ["OK, see you around."],
+    "note": "A Mexican pun: \"vidrios\" (glass) for \"vemos\" (see you)."
   }
 ]

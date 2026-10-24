@@ -53,5 +53,27 @@
   },
   { "id": "reembolso", "en": ["refund"], "examples": ["I asked for a refund because the product arrived broken."] },
   { "id": "ganga", "en": ["bargain", "steal"], "examples": ["These shoes were a bargain!"] },
-  { "id": "comprobante", "en": ["proof (of payment)", "receipt", "voucher"], "examples": ["Keep the proof of payment."] }
+  { "id": "comprobante", "en": ["proof (of payment)", "receipt", "voucher"], "examples": ["Keep the proof of payment."] },
+  { "id": "carrito", "en": ["shopping cart"], "examples": ["Grab a cart, we're buying a lot."] },
+  { "id": "paquete", "en": ["package", "pack"], "examples": ["A package came for you."] },
+  { "id": "rebaja", "en": ["sale", "markdown"], "examples": ["In January there are sales in every store."] },
+  { "id": "pedido", "en": ["order"], "examples": ["My order arrived in two days."] },
+  { "id": "envio", "en": ["shipping", "delivery"], "examples": ["Shipping is free."] },
+  { "id": "cupon", "en": ["coupon"], "examples": ["I have a discount coupon."] },
+  { "id": "queja", "en": ["complaint"], "examples": ["I made a complaint at the store."] },
+  { "id": "recarga", "en": ["top-up", "recharge"], "examples": ["I need to top up a hundred pesos."] },
+  { "id": "a-plazos", "en": ["in installments"], "examples": ["We bought the fridge in installments."] },
+  {
+    "id": "enganche",
+    "en": ["down payment"],
+    "examples": ["We made a twenty percent down payment."],
+    "note": "Mexican word for the first payment when buying in installments."
+  },
+  { "id": "comision", "en": ["commission", "fee"], "examples": ["The bank charges a fee."] },
+  { "id": "saldo", "en": ["balance", "credit"], "examples": ["How much credit do you have left?"] },
+  { "id": "caducado", "en": ["expired", "out of date"], "examples": ["That yogurt has already expired."] },
+  { "id": "defectuoso", "en": ["defective", "faulty"], "examples": ["The blender turned out to be defective."] },
+  { "id": "consumidor", "en": ["consumer"], "examples": ["Consumers have rights."] },
+  { "id": "consumismo", "en": ["consumerism"], "examples": ["Consumerism is a problem for the planet."] },
+  { "id": "regateo", "en": ["haggling"], "examples": ["Haggling is normal at the market."] }
 ]

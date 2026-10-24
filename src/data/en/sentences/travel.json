@@ -38,5 +38,22 @@
   { "id": "s587", "en": "When we arrived in Mérida, it was horribly hot." },
   { "id": "s588", "en": "We missed the bus and had to wait two hours." },
   { "id": "s589", "en": "Did you ever go to Chiapas?" },
-  { "id": "s590", "en": "If you book ahead of time, the hotel works out cheaper." }
+  { "id": "s590", "en": "If you book ahead of time, the hotel works out cheaper." },
+  { "id": "s740", "en": "Did you pack the sunscreen yet?" },
+  { "id": "s741", "en": "The bus leaves the terminal at six." },
+  { "id": "s742", "en": "We slept in a really cheap hostel." },
+  { "id": "s743", "en": "We took a trip to the pyramids." },
+  { "id": "s744", "en": "I can't find my boarding pass." },
+  { "id": "s745", "en": "The plane landed an hour late." },
+  { "id": "s746", "en": "We changed money at an exchange office at the airport." },
+  { "id": "s747", "en": "They canceled the flight because of the hurricane.", "hints": ["hurricane"] },
+  { "id": "s748", "en": "I'm only bringing carry-on luggage." },
+  { "id": "s749", "en": "I always buy travel insurance just in case." },
+  { "id": "s750", "en": "We had a setback and missed our flight." },
+  { "id": "s751", "en": "In high season hotels cost twice as much." },
+  { "id": "s752", "en": "The trip from Oaxaca to the coast is long and full of curves.", "hints": ["journey"] },
+  { "id": "s753", "en": "I get carsick on buses with so many curves.", "hints": ["curves"] },
+  { "id": "s754", "en": "The Mayan ruins attract tourists from all over the world." },
+  { "id": "s755", "en": "If anything unexpected comes up, let me know.", "hints": ["unexpected event"] },
+  { "id": "s756", "en": "Canceling the hotel is free of charge.", "hints": ["cancellation"] }
 ]

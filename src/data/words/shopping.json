@@ -409,5 +409,214 @@
     "level": "B1",
     "topics": ["shopping"],
     "examples": [{ "es": "Guarda el comprobante de pago.", "sk": "Odlož si potvrdenie o platbe." }]
+  },
+  {
+    "id": "carrito",
+    "es": "carrito",
+    "sk": ["nákupný vozík"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Agarra un carrito, vamos a comprar mucho.", "sk": "Zober vozík, kúpime toho veľa." }
+    ]
+  },
+  {
+    "id": "paquete",
+    "es": "paquete",
+    "sk": ["balík", "balíček"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Llegó un paquete para ti.", "sk": "Prišiel ti balík." }
+    ]
+  },
+  {
+    "id": "rebaja",
+    "es": "rebaja",
+    "sk": ["zľava", "výpredaj"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "En enero hay rebajas en todas las tiendas.", "sk": "V januári sú vo všetkých obchodoch výpredaje." }
+    ]
+  },
+  {
+    "id": "pedido",
+    "es": "pedido",
+    "sk": ["objednávka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Mi pedido llegó en dos días.", "sk": "Moja objednávka prišla za dva dni." }
+    ]
+  },
+  {
+    "id": "envio",
+    "es": "envío",
+    "sk": ["doprava", "zásielka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "El envío es gratis.", "sk": "Doprava je zadarmo." }
+    ]
+  },
+  {
+    "id": "cupon",
+    "es": "cupón",
+    "sk": ["kupón"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cupones",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Tengo un cupón de descuento.", "sk": "Mám zľavový kupón." }
+    ]
+  },
+  {
+    "id": "queja",
+    "es": "queja",
+    "sk": ["sťažnosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Puse una queja en la tienda.", "sk": "Podal som v obchode sťažnosť." }
+    ]
+  },
+  {
+    "id": "recarga",
+    "es": "recarga",
+    "sk": ["dobitie (kreditu)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["shopping", "tech"],
+    "examples": [
+      { "es": "Necesito hacer una recarga de cien pesos.", "sk": "Potrebujem si dobiť kredit za sto pesos." }
+    ]
+  },
+  {
+    "id": "a-plazos",
+    "es": "a plazos",
+    "sk": ["na splátky"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Compramos el refri a plazos.", "sk": "Chladničku sme kúpili na splátky." }
+    ]
+  },
+  {
+    "id": "enganche",
+    "es": "enganche",
+    "sk": ["akontácia", "záloha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Dimos un enganche del veinte por ciento.", "sk": "Zaplatili sme akontáciu dvadsať percent." }
+    ],
+    "note": "Mexické slovo pre prvú platbu pri kúpe na splátky."
+  },
+  {
+    "id": "comision",
+    "es": "comisión",
+    "sk": ["provízia", "poplatok"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "comisiones",
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "El banco cobra una comisión.", "sk": "Banka si účtuje poplatok." }
+    ]
+  },
+  {
+    "id": "saldo",
+    "es": "saldo",
+    "sk": ["zostatok", "kredit"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["shopping", "tech"],
+    "examples": [
+      { "es": "¿Cuánto saldo te queda?", "sk": "Koľko kreditu ti zostáva?" }
+    ]
+  },
+  {
+    "id": "caducado",
+    "es": "caducado",
+    "sk": ["po záruke", "prošlý"],
+    "pos": "adj",
+    "feminine": "caducada",
+    "level": "B2",
+    "topics": ["shopping", "food"],
+    "examples": [
+      { "es": "Ese yogur ya está caducado.", "sk": "Ten jogurt už je po záruke." }
+    ]
+  },
+  {
+    "id": "defectuoso",
+    "es": "defectuoso",
+    "sk": ["chybný"],
+    "pos": "adj",
+    "feminine": "defectuosa",
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "La licuadora salió defectuosa.", "sk": "Mixér bol chybný." }
+    ]
+  },
+  {
+    "id": "consumidor",
+    "es": "consumidor",
+    "sk": ["spotrebiteľ"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "consumidores",
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "Los consumidores tienen derechos.", "sk": "Spotrebitelia majú práva." }
+    ]
+  },
+  {
+    "id": "consumismo",
+    "es": "consumismo",
+    "sk": ["konzumizmus"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "El consumismo es un problema para el planeta.", "sk": "Konzumizmus je problém pre planétu." }
+    ]
+  },
+  {
+    "id": "regateo",
+    "es": "regateo",
+    "sk": ["zjednávanie (ceny)"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["shopping"],
+    "examples": [
+      { "es": "En el mercado el regateo es normal.", "sk": "Na trhu je zjednávanie bežné." }
+    ]
   }
 ]

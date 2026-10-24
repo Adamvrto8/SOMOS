@@ -427,5 +427,473 @@
         "distractors": ["llegaron", "llegué", "llegaremos"]
       }
     ]
+  },
+  {
+    "id": "s599",
+    "es": "Esto es para ti.",
+    "sk": "Toto je pre teba.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Esto", "es", "para", "ti", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "pre",
+        "distractors": ["con", "en", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s600",
+    "es": "No tengo nada en el refri.",
+    "sk": "V chladničke nemám nič.",
+    "level": "A1",
+    "topics": ["basics", "home"],
+    "grammar": ["presente"],
+    "tokens": ["No", "tengo", "nada", "en", "el", "refri", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["algo", "nadie", "todo"]
+      }
+    ]
+  },
+  {
+    "id": "s601",
+    "es": "Mi hermano también habla inglés.",
+    "sk": "Môj brat tiež hovorí po anglicky.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "también", "habla", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "también",
+        "lemma": "también",
+        "hint": "tiež",
+        "distractors": ["tampoco", "nunca", "casi"]
+      }
+    ]
+  },
+  {
+    "id": "s602",
+    "es": "¿Quién quiere más café?",
+    "sk": "Kto chce ešte kávu?",
+    "level": "A1",
+    "topics": ["basics", "food"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quién", "quiere", "más", "café", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quiere",
+        "lemma": "querer",
+        "hint": "querer · él · presente",
+        "distractors": ["quieres", "quieren", "quiero"]
+      }
+    ]
+  },
+  {
+    "id": "s603",
+    "es": "Según el mapa, el museo está cerca.",
+    "sk": "Podľa mapy je múzeum blízko.",
+    "level": "A2",
+    "topics": ["basics", "city"],
+    "grammar": ["presente"],
+    "tokens": ["Según", "el", "mapa", ",", "el", "museo", "está", "cerca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Según",
+        "lemma": "según",
+        "hint": "podľa",
+        "distractors": ["Durante", "Hacia", "Entre"]
+      }
+    ]
+  },
+  {
+    "id": "s604",
+    "es": "Durante la película, nadie dijo nada.",
+    "sk": "Počas filmu nikto nič nepovedal.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Durante", "la", "película", ",", "nadie", "dijo", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Durante",
+        "lemma": "durante",
+        "hint": "počas",
+        "distractors": ["Según", "Hacia", "Entre"]
+      }
+    ]
+  },
+  {
+    "id": "s605",
+    "es": "Alguien dejó la puerta abierta.",
+    "sk": "Niekto nechal otvorené dvere.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Alguien", "dejó", "la", "puerta", "abierta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Alguien",
+        "lemma": "alguien",
+        "hint": "niekto",
+        "distractors": ["Algo", "Cada", "Mismo"]
+      }
+    ]
+  },
+  {
+    "id": "s606",
+    "es": "Hacia las ocho empezó a llover.",
+    "sk": "Okolo ôsmej začalo pršať.",
+    "level": "A2",
+    "topics": ["basics", "weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Hacia", "las", "ocho", "empezó", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · él · pretérito",
+        "distractors": ["empieza", "empezaba", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s607",
+    "es": "Caminamos alrededor del lago.",
+    "sk": "Prešli sme sa okolo jazera.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Caminamos", "alrededor", "del", "lago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Caminamos",
+        "lemma": "caminar",
+        "hint": "caminar · nosotros · pretérito",
+        "distractors": ["Caminaron", "Caminé", "Caminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s608",
+    "es": "Sin duda, es el mejor taco de la ciudad.",
+    "sk": "Bezpochyby je to najlepšie taco v meste.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Sin", "duda", ",", "es", "el", "mejor", "taco", "de", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "duda",
+        "lemma": "sin duda",
+        "hint": "pochybnosť (sin …)",
+        "distractors": ["miedo", "razón", "culpa"]
+      }
+    ]
+  },
+  {
+    "id": "s609",
+    "es": "Tengo mi propio negocio desde hace dos años.",
+    "sk": "Už dva roky mám vlastnú firmu.",
+    "level": "B1",
+    "topics": ["basics", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "mi", "propio", "negocio", "desde", "hace", "dos", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "propio",
+        "lemma": "propio",
+        "hint": "vlastný",
+        "distractors": ["mismo", "otro", "cada"]
+      }
+    ]
+  },
+  {
+    "id": "s610",
+    "es": "Hoy en día casi todo se paga con el celular.",
+    "sk": "V dnešnej dobe sa skoro všetko platí mobilom.",
+    "level": "B1",
+    "topics": ["basics", "tech"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "en", "día", "casi", "todo", "se", "paga", "con", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "paga",
+        "lemma": "pagar",
+        "hint": "pagar · él · presente",
+        "distractors": ["pagan", "pagó", "pagaba"]
+      }
+    ]
+  },
+  {
+    "id": "s611",
+    "es": "El viaje fue caro; no obstante, valió la pena.",
+    "sk": "Výlet bol drahý, no napriek tomu stál za to.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "viaje", "fue", "caro", ";", "no", "obstante", ",", "valió", "la", "pena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "obstante",
+        "lemma": "no obstante",
+        "hint": "napriek tomu (no …)",
+        "distractors": ["embargo", "cambio", "tanto"]
+      }
+    ]
+  },
+  {
+    "id": "s612",
+    "es": "Por lo visto, nadie sabía que la tienda había cerrado.",
+    "sk": "Zrejme nikto nevedel, že obchod zavrel.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Por", "lo", "visto", ",", "nadie", "sabía", "que", "la", "tienda", "había", "cerrado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sabía",
+        "lemma": "saber",
+        "hint": "saber · él · imperfecto",
+        "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
+  },
+  {
+    "id": "s613",
+    "es": "Puesto que llegaste tarde, ya no hay lugar.",
+    "sk": "Keďže si prišiel neskoro, už nie je miesto.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Puesto", "que", "llegaste", "tarde", ",", "ya", "no", "hay", "lugar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegaste",
+        "lemma": "llegar",
+        "hint": "llegar · tú · pretérito",
+        "distractors": ["llegas", "llegó", "llegabas"]
+      }
+    ]
+  },
+  {
+    "id": "s614",
+    "es": "Ni siquiera me dijo adiós.",
+    "sk": "Ani sa so mnou nerozlúčil.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Ni", "siquiera", "me", "dijo", "adiós", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dijo",
+        "lemma": "decir",
+        "hint": "decir · él · pretérito",
+        "distractors": ["dice", "decía", "dirá"]
+      }
+    ]
+  },
+  {
+    "id": "s615",
+    "es": "Por lo general desayuno en casa, mientras que mi esposa desayuna en el trabajo.",
+    "sk": "Zvyčajne raňajkujem doma, zatiaľ čo moja žena raňajkuje v práci.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Por", "lo", "general", "desayuno", "en", "casa", ",", "mientras", "que", "mi", "esposa", "desayuna", "en", "el", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "mientras",
+        "lemma": "mientras que",
+        "hint": "zatiaľ čo (… que)",
+        "distractors": ["aunque", "porque", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s616",
+    "es": "A medida que pasaban los años, el pueblo fue creciendo.",
+    "sk": "Ako plynuli roky, mestečko sa rozrastalo.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["A", "medida", "que", "pasaban", "los", "años", ",", "el", "pueblo", "fue", "creciendo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pasaban",
+        "lemma": "pasar",
+        "hint": "pasar · ellos · imperfecto",
+        "distractors": ["pasaron", "pasan", "pasarán"]
+      }
+    ]
+  },
+  {
+    "id": "s617",
+    "es": "Te lo agradezco de antemano.",
+    "sk": "Vopred ti za to ďakujem.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "lo", "agradezco", "de", "antemano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "agradezco",
+        "lemma": "agradecer",
+        "hint": "agradecer · yo · presente",
+        "distractors": ["agradece", "agradecí", "agradeceré"]
+      }
+    ]
+  },
+  {
+    "id": "s618",
+    "es": "Lo hizo a propósito, no fue un accidente.",
+    "sk": "Urobil to naschvál, nebola to nehoda.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Lo", "hizo", "a", "propósito", ",", "no", "fue", "un", "accidente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · él · pretérito",
+        "distractors": ["hace", "hacía", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s619",
+    "es": "Eso no me interesa en absoluto.",
+    "sk": "To ma vôbec nezaujíma.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Eso", "no", "me", "interesa", "en", "absoluto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "absoluto",
+        "lemma": "en absoluto",
+        "hint": "vôbec (en …)",
+        "distractors": ["total", "todo", "seguro"]
+      }
+    ]
+  },
+  {
+    "id": "s620",
+    "es": "Supongo que tienes razón.",
+    "sk": "Predpokladám, že máš pravdu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Supongo", "que", "tienes", "razón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Supongo",
+        "lemma": "suponer",
+        "hint": "suponer · yo · presente",
+        "distractors": ["Supone", "Supuse", "Supondré"]
+      }
+    ]
+  },
+  {
+    "id": "s621",
+    "es": "Respecto a tu pregunta, todavía no tengo respuesta.",
+    "sk": "Čo sa týka tvojej otázky, ešte nemám odpoveď.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Respecto", "a", "tu", "pregunta", ",", "todavía", "no", "tengo", "respuesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Respecto",
+        "lemma": "respecto a",
+        "hint": "čo sa týka (… a)",
+        "distractors": ["Acerca", "Según", "Durante"]
+      }
+    ]
+  },
+  {
+    "id": "s622",
+    "es": "Desde mi punto de vista, es un reto muy interesante.",
+    "sk": "Z môjho pohľadu je to veľmi zaujímavá výzva.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "mi", "punto", "de", "vista", ",", "es", "un", "reto", "muy", "interesante", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "reto",
+        "lemma": "reto",
+        "hint": "výzva",
+        "distractors": ["hecho", "asunto", "punto"]
+      }
+    ]
+  },
+  {
+    "id": "s623",
+    "es": "Es evidente que nadie leyó las instrucciones.",
+    "sk": "Je zrejmé, že nikto nečítal návod.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Es", "evidente", "que", "nadie", "leyó", "las", "instrucciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "leyó",
+        "lemma": "leer",
+        "hint": "leer · él · pretérito",
+        "distractors": ["lee", "leía", "leerá"]
+      }
+    ]
+  },
+  {
+    "id": "s624",
+    "es": "Averigüé que la tienda cierra a las nueve.",
+    "sk": "Zistil som, že obchod zatvára o deviatej.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Averigüé", "que", "la", "tienda", "cierra", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Averigüé",
+        "lemma": "averiguar",
+        "hint": "averiguar · yo · pretérito",
+        "distractors": ["Averiguó", "Averiguo", "Averiguaba"]
+      }
+    ]
   }
 ]

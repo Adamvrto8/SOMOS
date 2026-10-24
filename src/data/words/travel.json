@@ -534,5 +534,204 @@
     "topics": ["travel"],
     "examples": [{ "es": "Hicimos un crucero por el Caribe.", "sk": "Boli sme na plavbe po Karibiku." }],
     "note": "V Mexiku znamená crucero aj križovatka."
+  },
+  {
+    "id": "hostal",
+    "es": "hostal",
+    "sk": ["hostel"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "hostales",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Dormimos en un hostal en el centro.", "sk": "Spali sme v hosteli v centre." }
+    ]
+  },
+  {
+    "id": "excursion",
+    "es": "excursión",
+    "sk": ["výlet"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "excursiones",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Hicimos una excursión a las pirámides.", "sk": "Boli sme na výlete pri pyramídach." }
+    ]
+  },
+  {
+    "id": "terminal",
+    "es": "terminal",
+    "sk": ["terminál", "autobusová stanica"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "terminales",
+    "level": "A2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "El camión sale de la terminal del norte.", "sk": "Autobus odchádza zo severného terminálu." }
+    ]
+  },
+  {
+    "id": "turistico",
+    "es": "turístico",
+    "sk": ["turistický"],
+    "pos": "adj",
+    "feminine": "turística",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Cancún es muy turístico.", "sk": "Cancún je veľmi turistický." }
+    ]
+  },
+  {
+    "id": "pase-de-abordar",
+    "es": "pase de abordar",
+    "sk": ["palubný lístok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "pases de abordar",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Tenga a la mano su pase de abordar.", "sk": "Majte pripravený palubný lístok." }
+    ],
+    "note": "Mexické. Abordar = nastúpiť (do lietadla)."
+  },
+  {
+    "id": "casa-de-cambio",
+    "es": "casa de cambio",
+    "sk": ["zmenáreň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["travel", "shopping"],
+    "examples": [
+      { "es": "Cambié euros en una casa de cambio.", "sk": "Eurá som zamenil v zmenárni." }
+    ]
+  },
+  {
+    "id": "mochilero",
+    "es": "mochilero",
+    "sk": ["batôžkár", "cestovateľ s ruksakom"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Viajé como mochilero por Chiapas.", "sk": "Precestoval som Chiapas s ruksakom." }
+    ]
+  },
+  {
+    "id": "equipaje-de-mano",
+    "es": "equipaje de mano",
+    "sk": ["príručná batožina"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Solo llevo equipaje de mano.", "sk": "Mám iba príručnú batožinu." }
+    ]
+  },
+  {
+    "id": "trayecto",
+    "es": "trayecto",
+    "sk": ["cesta", "úsek"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "El trayecto dura cuatro horas.", "sk": "Cesta trvá štyri hodiny." }
+    ]
+  },
+  {
+    "id": "imprevisto",
+    "es": "imprevisto",
+    "sk": ["nečakaná udalosť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Tuve un imprevisto y no pude llegar.", "sk": "Stalo sa mi niečo nečakané a nemohol som prísť." }
+    ]
+  },
+  {
+    "id": "contratiempo",
+    "es": "contratiempo",
+    "sk": ["nepríjemnosť", "komplikácia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "El viaje fue sin contratiempos.", "sk": "Cesta prebehla bez komplikácií." }
+    ]
+  },
+  {
+    "id": "seguro-de-viaje",
+    "es": "seguro de viaje",
+    "sk": ["cestovné poistenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "¿Contrataste un seguro de viaje?", "sk": "Uzavrel si si cestovné poistenie?" }
+    ]
+  },
+  {
+    "id": "temporada-alta",
+    "es": "temporada alta",
+    "sk": ["hlavná sezóna"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "En temporada alta todo está lleno.", "sk": "V hlavnej sezóne je všetko plné." }
+    ]
+  },
+  {
+    "id": "cancelacion",
+    "es": "cancelación",
+    "sk": ["zrušenie", "storno"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "cancelaciones",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "La cancelación es gratis hasta un día antes.", "sk": "Storno je zadarmo do jedného dňa vopred." }
+    ]
+  },
+  {
+    "id": "mareo",
+    "es": "mareo",
+    "sk": ["nevoľnosť", "závrat"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["travel", "health"],
+    "examples": [
+      { "es": "Tomé una pastilla para el mareo.", "sk": "Vzal som si tabletku proti nevoľnosti." }
+    ]
+  },
+  {
+    "id": "aventurero",
+    "es": "aventurero",
+    "sk": ["dobrodružný"],
+    "pos": "adj",
+    "feminine": "aventurera",
+    "level": "B2",
+    "topics": ["travel"],
+    "examples": [
+      { "es": "Mi hermana es muy aventurera.", "sk": "Moja sestra je veľmi dobrodružná." }
+    ]
   }
 ]

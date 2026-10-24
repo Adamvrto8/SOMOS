@@ -576,5 +576,204 @@
     "topics": ["greetings"],
     "examples": [{ "es": "¡Ándale, vámonos!", "sk": "No tak, poďme!" }],
     "note": "Mexické citoslovce: popohnanie (¡ándale, apúrate!) aj súhlas (¡ándale! = presne tak)."
+  },
+  {
+    "id": "como-no",
+    "es": "cómo no",
+    "sk": ["samozrejme", "ale áno"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "—¿Me ayudas? —¡Cómo no!", "sk": "„Pomôžeš mi?“ „Samozrejme!“" }
+    ]
+  },
+  {
+    "id": "que-te-mejores",
+    "es": "que te mejores",
+    "sk": ["nech sa ti polepší"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings", "health"],
+    "examples": [
+      { "es": "Que te mejores, nos vemos el lunes.", "sk": "Nech sa ti polepší, uvidíme sa v pondelok." }
+    ]
+  },
+  {
+    "id": "no-hay-de-que",
+    "es": "no hay de qué",
+    "sk": ["niet za čo"],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "—Gracias por todo. —No hay de qué.", "sk": "„Vďaka za všetko.“ „Niet za čo.“" }
+    ]
+  },
+  {
+    "id": "a-la-orden",
+    "es": "a la orden",
+    "sk": ["nech sa páči", "k službám"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "—Gracias, señor. —A la orden.", "sk": "„Ďakujem, pane.“ „Rado sa stalo.“" }
+    ],
+    "note": "V Mexiku to hovoria predavači a čašníci: „Nech sa páči, čo si dáte?“ aj ako odpoveď na „gracias“."
+  },
+  {
+    "id": "al-rato",
+    "es": "al rato",
+    "sk": ["o chvíľu", "neskôr"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Al rato te marco.", "sk": "O chvíľu ti zavolám." }
+    ],
+    "note": "Mexické: al rato = neskôr (môže to byť aj o pár hodín)."
+  },
+  {
+    "id": "buena-onda",
+    "es": "buena onda",
+    "sk": ["fajn", "v pohode (človek)"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Tu hermano es muy buena onda.", "sk": "Tvoj brat je veľmi fajn." }
+    ],
+    "note": "Mexické. Opak: mala onda = nepríjemný, zlý."
+  },
+  {
+    "id": "disculpa-la-molestia",
+    "es": "disculpa la molestia",
+    "sk": ["prepáč, že otravujem"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Disculpa la molestia, ¿sabes dónde está el baño?", "sk": "Prepáč, že otravujem, nevieš, kde je záchod?" }
+    ]
+  },
+  {
+    "id": "sin-querer",
+    "es": "sin querer",
+    "sk": ["omylom", "nechtiac"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Perdón, lo borré sin querer.", "sk": "Prepáč, vymazal som to omylom." }
+    ]
+  },
+  {
+    "id": "que-oso",
+    "es": "¡qué oso!",
+    "sk": ["to je ale trápne!"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "¡Qué oso! Me equivoqué de nombre.", "sk": "To je ale trápne! Pomýlil som si meno." }
+    ],
+    "note": "Mexické, hovorové. Hacer el oso = strápniť sa."
+  },
+  {
+    "id": "me-late",
+    "es": "me late",
+    "sk": ["páči sa mi", "mám pocit"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Me late ese restaurante.", "sk": "Tá reštaurácia sa mi páči." },
+      { "es": "Me late que va a llover.", "sk": "Mám pocit, že bude pršať." }
+    ],
+    "note": "Mexické, hovorové (doslova „bije mi“)."
+  },
+  {
+    "id": "echar-la-mano",
+    "es": "echar la mano",
+    "sk": ["pomôcť", "podať pomocnú ruku"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "¿Me echas la mano con estas cajas?", "sk": "Pomôžeš mi s týmito krabicami?" }
+    ],
+    "note": "Mexické: echar la mano = pomôcť."
+  },
+  {
+    "id": "dar-pena",
+    "es": "dar pena",
+    "sk": ["hanbiť sa", "byť ľúto"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Me da pena hablar en público.", "sk": "Hanbím sa hovoriť pred ľuďmi." }
+    ],
+    "note": "V Mexiku hlavne „hanbiť sa“ (Me da pena = hanbím sa). Inde skôr „byť ľúto“."
+  },
+  {
+    "id": "quedar-de",
+    "es": "quedar de",
+    "sk": ["dohodnúť sa (že)"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Quedamos de vernos a las cinco.", "sk": "Dohodli sme sa, že sa stretneme o piatej." }
+    ],
+    "note": "Mexické: quedar de + infinitív. Inde: quedar en."
+  },
+  {
+    "id": "hacer-falta",
+    "es": "hacer falta",
+    "sk": ["chýbať", "byť treba"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings", "emotions"],
+    "examples": [
+      { "es": "Me haces falta.", "sk": "Chýbaš mi." },
+      { "es": "Hace falta más tiempo.", "sk": "Treba viac času." }
+    ]
+  },
+  {
+    "id": "con-razon",
+    "es": "con razón",
+    "sk": ["nečudo", "to vysvetľuje"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Con razón estás cansado, no dormiste.", "sk": "Nečudo, že si unavený, nespal si." }
+    ]
+  },
+  {
+    "id": "de-plano",
+    "es": "de plano",
+    "sk": ["naozaj", "úplne", "fakt"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "De plano no entiendo nada.", "sk": "Fakt ničomu nerozumiem." }
+    ],
+    "note": "Mexické, hovorové."
+  },
+  {
+    "id": "ahi-nos-vidrios",
+    "es": "ahí nos vidrios",
+    "sk": ["tak sa uvidíme", "čau"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["greetings"],
+    "examples": [
+      { "es": "Bueno, ahí nos vidrios.", "sk": "Tak dobre, uvidíme sa." }
+    ],
+    "note": "Mexický vtip: „vidrios“ (sklá) znie ako „vemos“ (uvidíme sa)."
   }
 ]

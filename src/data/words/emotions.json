@@ -477,5 +477,255 @@
     "topics": ["emotions"],
     "examples": [{ "es": "Mi ex era muy egoísta.", "sk": "Môj bývalý bol veľmi sebecký." }],
     "note": "Rovnaký tvar pre mužský aj ženský rod."
+  },
+  {
+    "id": "agotado",
+    "es": "agotado",
+    "sk": ["vyčerpaný"],
+    "pos": "adj",
+    "feminine": "agotada",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Después del viaje estaba agotado.", "sk": "Po ceste som bol vyčerpaný." }
+    ]
+  },
+  {
+    "id": "aliviado",
+    "es": "aliviado",
+    "sk": ["s úľavou", "upokojený"],
+    "pos": "adj",
+    "feminine": "aliviada",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Me sentí aliviado con la noticia.", "sk": "Tá správa mi priniesla úľavu." }
+    ]
+  },
+  {
+    "id": "desesperado",
+    "es": "desesperado",
+    "sk": ["zúfalý"],
+    "pos": "adj",
+    "feminine": "desesperada",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Estaba desesperado buscando las llaves.", "sk": "Zúfalo som hľadal kľúče." }
+    ]
+  },
+  {
+    "id": "sensible",
+    "es": "sensible",
+    "sk": ["citlivý"],
+    "pos": "adj",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Es una persona muy sensible.", "sk": "Je to veľmi citlivý človek." }
+    ],
+    "note": "Pozor: sensible = citlivý, nie „rozumný“ (to je sensato)."
+  },
+  {
+    "id": "agobiado",
+    "es": "agobiado",
+    "sk": ["zavalený", "preťažený"],
+    "pos": "adj",
+    "feminine": "agobiada",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Me siento agobiado con tanto trabajo.", "sk": "Cítim sa zavalený toľkou prácou." }
+    ]
+  },
+  {
+    "id": "angustia",
+    "es": "angustia",
+    "sk": ["úzkosť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Sentí mucha angustia esperando los resultados.", "sk": "Pri čakaní na výsledky som cítil veľkú úzkosť." }
+    ]
+  },
+  {
+    "id": "desilusion",
+    "es": "desilusión",
+    "sk": ["sklamanie"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "desilusiones",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Fue una gran desilusión.", "sk": "Bolo to veľké sklamanie." }
+    ]
+  },
+  {
+    "id": "rencor",
+    "es": "rencor",
+    "sk": ["zášť"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "No le guardo rencor.", "sk": "Nemám voči nemu zášť." }
+    ]
+  },
+  {
+    "id": "remordimiento",
+    "es": "remordimiento",
+    "sk": ["výčitky svedomia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Siente remordimiento por lo que hizo.", "sk": "Má výčitky svedomia za to, čo urobil." }
+    ]
+  },
+  {
+    "id": "nostalgia",
+    "es": "nostalgia",
+    "sk": ["nostalgia"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Siento nostalgia por mi pueblo.", "sk": "Cnie sa mi za mojím mestečkom." }
+    ]
+  },
+  {
+    "id": "frustracion",
+    "es": "frustración",
+    "sk": ["frustrácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "frustraciones",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Sentí mucha frustración.", "sk": "Cítil som veľkú frustráciu." }
+    ]
+  },
+  {
+    "id": "ilusionado",
+    "es": "ilusionado",
+    "sk": ["plný očakávania", "nadšený"],
+    "pos": "adj",
+    "feminine": "ilusionada",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Estamos muy ilusionados con el viaje.", "sk": "Veľmi sa tešíme na cestu." }
+    ]
+  },
+  {
+    "id": "conmovido",
+    "es": "conmovido",
+    "sk": ["dojatý"],
+    "pos": "adj",
+    "feminine": "conmovida",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Me quedé conmovido con su discurso.", "sk": "Jeho prejav ma dojal." }
+    ]
+  },
+  {
+    "id": "apenado",
+    "es": "apenado",
+    "sk": ["zahanbený", "v rozpakoch"],
+    "pos": "adj",
+    "feminine": "apenada",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Estoy muy apenado por llegar tarde.", "sk": "Veľmi sa ospravedlňujem, že meškám." }
+    ],
+    "note": "Mexické: apenado = zahanbený (od „dar pena“)."
+  },
+  {
+    "id": "coraje",
+    "es": "coraje",
+    "sk": ["hnev", "zlosť"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Me da coraje que me mientan.", "sk": "Hnevá ma, keď mi klamú." }
+    ],
+    "note": "V Mexiku coraje = hnev (Me da coraje = Hnevá ma). Inde aj „odvaha“."
+  },
+  {
+    "id": "berrinche",
+    "es": "berrinche",
+    "sk": ["záchvat vzdoru"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "El niño hizo un berrinche.", "sk": "Chlapec urobil scénu." }
+    ]
+  },
+  {
+    "id": "achicopalado",
+    "es": "achicopalado",
+    "sk": ["skleslý", "zronený"],
+    "pos": "adj",
+    "feminine": "achicopalada",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Anda medio achicopalado.", "sk": "Je nejaký skleslý." }
+    ],
+    "note": "Mexické, hovorové."
+  },
+  {
+    "id": "autoestima",
+    "es": "autoestima",
+    "sk": ["sebavedomie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Le falta autoestima.", "sk": "Chýba jej sebavedomie." }
+    ]
+  },
+  {
+    "id": "empatia",
+    "es": "empatía",
+    "sk": ["empatia"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [
+      { "es": "Hay que tener empatía con los demás.", "sk": "K druhým treba byť empatický." }
+    ]
+  },
+  {
+    "id": "ruptura",
+    "es": "ruptura",
+    "sk": ["rozchod", "prelomenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["emotions", "family"],
+    "examples": [
+      { "es": "Le costó superar la ruptura.", "sk": "Rozchod sa mu ťažko prekonával." }
+    ]
   }
 ]

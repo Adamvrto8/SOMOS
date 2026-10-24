@@ -52,5 +52,44 @@
   { "id": "reciclaje", "en": ["recycling"], "examples": ["Recycling starts at home."] },
   { "id": "calentamiento-global", "en": ["global warming"], "examples": ["Global warming affects the whole planet."] },
   { "id": "paisaje", "en": ["landscape", "scenery"], "examples": ["From the mountain there's an incredible view."] },
-  { "id": "recurso", "en": ["resource"], "examples": ["Water is a very important resource."] }
+  { "id": "recurso", "en": ["resource"], "examples": ["Water is a very important resource."] },
+  { "id": "rama", "en": ["branch"], "examples": ["The cat is on a branch of the tree."] },
+  { "id": "hormiga", "en": ["ant"], "examples": ["The ants got into the kitchen."] },
+  { "id": "abeja", "en": ["bee"], "examples": ["A bee stung me on the hand."] },
+  { "id": "oso", "en": ["bear"], "examples": ["There are black bears in northern Mexico."] },
+  { "id": "mono", "en": ["monkey"], "examples": ["We saw monkeys in the jungle."] },
+  { "id": "ballena", "en": ["whale"], "examples": ["Whales come to Baja California in winter."] },
+  { "id": "cascada", "en": ["waterfall"], "examples": ["We swam under a waterfall."] },
+  { "id": "cerro", "en": ["hill"], "examples": ["We climbed the hill to watch the sunset."] },
+  { "id": "costa", "en": ["coast"], "examples": ["We live on the coast of Veracruz."] },
+  { "id": "semilla", "en": ["seed"], "examples": ["We planted the seeds in the spring."] },
+  { "id": "raiz", "en": ["root"], "examples": ["The tree roots broke the sidewalk."] },
+  {
+    "id": "aguila",
+    "en": ["eagle"],
+    "examples": ["The eagle is the symbol of Mexico."],
+    "note": "Feminine, but \"el águila\" (before a stressed a-). Plural: las águilas."
+  },
+  { "id": "cueva", "en": ["cave"], "examples": ["We went into a cave with flashlights."] },
+  { "id": "en-peligro-de-extincion", "en": ["endangered"], "examples": ["The axolotl is endangered."] },
+  { "id": "ajolote", "en": ["axolotl"], "examples": ["The axolotl only lives in the lakes of Xochimilco."] },
+  { "id": "manglar", "en": ["mangrove swamp"], "examples": ["We took a boat ride through the mangroves."] },
+  { "id": "arrecife", "en": ["reef"], "examples": ["The reef at Cozumel is famous for diving."] },
+  { "id": "deforestacion", "en": ["deforestation"], "examples": ["Deforestation is a serious problem."] },
+  {
+    "id": "ecosistema",
+    "en": ["ecosystem"],
+    "examples": ["The lake's ecosystem is very fragile."],
+    "note": "Masculine even though it ends in -a: el ecosistema, el problema, el sistema."
+  },
+  {
+    "id": "sustentable",
+    "en": ["sustainable"],
+    "examples": ["We want more sustainable tourism."],
+    "note": "Mexicans say \"sustentable\" (in Spain mostly \"sostenible\")."
+  },
+  { "id": "renovable", "en": ["renewable"], "examples": ["Solar energy is renewable."] },
+  { "id": "residuo", "en": ["waste", "residue"], "examples": ["We separate organic waste."] },
+  { "id": "composta", "en": ["compost"], "examples": ["We make compost with the peels."] },
+  { "id": "huella-de-carbono", "en": ["carbon footprint"], "examples": ["Flying increases your carbon footprint."] }
 ]

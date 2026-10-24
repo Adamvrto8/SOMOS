@@ -420,5 +420,301 @@
         "distractors": ["Traigo", "Trajo", "Traeré"]
       }
     ]
+  },
+  {
+    "id": "s869",
+    "es": "Mañana va a hacer frío.",
+    "sk": "Zajtra bude zima.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Mañana", "va", "a", "hacer", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": ["van", "fue", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s870",
+    "es": "Hoy está soleado.",
+    "sk": "Dnes je slnečno.",
+    "level": "A2",
+    "topics": ["weather"],
+    "tokens": ["Hoy", "está", "soleado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "soleado",
+        "lemma": "soleado",
+        "hint": "slnečný",
+        "distractors": ["soleada", "nublado", "solo"]
+      }
+    ]
+  },
+  {
+    "id": "s871",
+    "es": "Hay muchos charcos después de la lluvia.",
+    "sk": "Po daždi je veľa mlák.",
+    "level": "A2",
+    "topics": ["weather"],
+    "tokens": ["Hay", "muchos", "charcos", "después", "de", "la", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "charcos",
+        "lemma": "charco",
+        "hint": "mláky",
+        "distractors": ["chorros", "charlas", "cerros"]
+      }
+    ]
+  },
+  {
+    "id": "s872",
+    "es": "¡Mira, salió un arcoíris!",
+    "sk": "Pozri, objavila sa dúha!",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Mira", ",", "salió", "un", "arcoíris", "!"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salió",
+        "lemma": "salir",
+        "hint": "salir · él · pretérito",
+        "distractors": ["sale", "salía", "saldrá"]
+      }
+    ]
+  },
+  {
+    "id": "s873",
+    "es": "Abril fue un mes muy lluvioso.",
+    "sk": "Apríl bol veľmi daždivý mesiac.",
+    "level": "A2",
+    "topics": ["weather"],
+    "tokens": ["Abril", "fue", "un", "mes", "muy", "lluvioso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "lluvioso",
+        "lemma": "lluvioso",
+        "hint": "daždivý",
+        "distractors": ["lluviosa", "lluvia", "soleada"]
+      }
+    ]
+  },
+  {
+    "id": "s874",
+    "es": "Anoche hubo truenos y rayos.",
+    "sk": "V noci hrmelo a blýskalo sa.",
+    "level": "B1",
+    "topics": ["weather"],
+    "tokens": ["Anoche", "hubo", "truenos", "y", "rayos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "truenos",
+        "lemma": "trueno",
+        "hint": "hromy",
+        "distractors": ["trenes", "trucos", "tronos"]
+      }
+    ]
+  },
+  {
+    "id": "s875",
+    "es": "En la temporada de lluvias llueve casi todas las tardes.",
+    "sk": "V období dažďov prší skoro každé popoludnie.",
+    "level": "B1",
+    "topics": ["weather"],
+    "tokens": ["En", "la", "temporada", "de", "lluvias", "llueve", "casi", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "temporada",
+        "lemma": "temporada",
+        "hint": "obdobie",
+        "distractors": ["temperatura", "tormenta", "tempestad"]
+      }
+    ]
+  },
+  {
+    "id": "s876",
+    "es": "El cielo está despejado, no hay ni una nube.",
+    "sk": "Obloha je jasná, nie je na nej ani mráčik.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["ser-estar"],
+    "tokens": ["El", "cielo", "está", "despejado", ",", "no", "hay", "ni", "una", "nube", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "why": "state",
+        "distractors": ["es", "son", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s877",
+    "es": "Cayó una helada y se murieron las plantas.",
+    "sk": "Udrel mráz a rastliny zahynuli.",
+    "level": "B1",
+    "topics": ["weather", "nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Cayó", "una", "helada", "y", "se", "murieron", "las", "plantas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "murieron",
+        "lemma": "morir",
+        "hint": "morir · ellas · pretérito",
+        "distractors": ["mueren", "murió", "morían"]
+      }
+    ]
+  },
+  {
+    "id": "s878",
+    "es": "Nos agarró un aguacero en la calle.",
+    "sk": "Na ulici nás zastihol lejak.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "agarró", "un", "aguacero", "en", "la", "calle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "agarró",
+        "lemma": "agarrar",
+        "hint": "agarrar · él · pretérito",
+        "distractors": ["agarra", "agarraron", "agarraba"]
+      }
+    ]
+  },
+  {
+    "id": "s879",
+    "es": "Qué bochorno, no corre nada de aire.",
+    "sk": "To je ale dusno, ani vánok nefúka.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Qué", "bochorno", ",", "no", "corre", "nada", "de", "aire", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "bochorno",
+        "lemma": "bochorno",
+        "hint": "dusno",
+        "distractors": ["bostezo", "borrador", "bolsillo"]
+      }
+    ]
+  },
+  {
+    "id": "s880",
+    "es": "Se espera un frente frío para el fin de semana.",
+    "sk": "Na víkend sa očakáva studený front.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Se", "espera", "un", "frente", "frío", "para", "el", "fin", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "frente",
+        "lemma": "frente frío",
+        "hint": "front (… frío)",
+        "distractors": ["fuente", "fondo", "fiesta"]
+      }
+    ]
+  },
+  {
+    "id": "s881",
+    "es": "Una ráfaga de viento tiró el árbol.",
+    "sk": "Poryv vetra zvalil strom.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Una", "ráfaga", "de", "viento", "tiró", "el", "árbol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ráfaga",
+        "lemma": "ráfaga",
+        "hint": "poryv",
+        "distractors": ["llovizna", "nevada", "helada"]
+      }
+    ]
+  },
+  {
+    "id": "s882",
+    "es": "El clima de Cuernavaca es templado todo el año.",
+    "sk": "Podnebie v Cuernavace je celý rok mierne.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["El", "clima", "de", "Cuernavaca", "es", "templado", "todo", "el", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "templado",
+        "lemma": "templado",
+        "hint": "mierny",
+        "distractors": ["templada", "tiempo", "temprano"]
+      }
+    ]
+  },
+  {
+    "id": "s883",
+    "es": "Por el cambio climático, las sequías son cada vez más largas.",
+    "sk": "Kvôli zmene klímy sú suchá stále dlhšie.",
+    "level": "B2",
+    "topics": ["weather", "nature"],
+    "tokens": ["Por", "el", "cambio", "climático", ",", "las", "sequías", "son", "cada", "vez", "más", "largas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sequías",
+        "lemma": "sequía",
+        "hint": "suchá",
+        "distractors": ["sequía", "secas", "semillas"]
+      }
+    ]
+  },
+  {
+    "id": "s884",
+    "es": "Protección Civil advirtió que vienen lluvias fuertes.",
+    "sk": "Civilná ochrana varovala, že prídu silné dažde.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Protección", "Civil", "advirtió", "que", "vienen", "lluvias", "fuertes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "advirtió",
+        "lemma": "advertir",
+        "hint": "advertir · él · pretérito",
+        "distractors": ["advierte", "advertía", "advertirá"]
+      }
+    ]
+  },
+  {
+    "id": "s885",
+    "es": "Cayó una tromba y se inundaron varias calles.",
+    "sk": "Prišla prietrž mračien a zaplavilo niekoľko ulíc.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Cayó", "una", "tromba", "y", "se", "inundaron", "varias", "calles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tromba",
+        "lemma": "tromba",
+        "hint": "prietrž mračien",
+        "distractors": ["trompa", "tumba", "trompeta"]
+      }
+    ]
   }
 ]

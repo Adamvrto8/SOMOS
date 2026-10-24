@@ -95,5 +95,33 @@
   { "id": "desempleo", "en": ["unemployment"], "examples": ["Unemployment went down this year."] },
   { "id": "capacitacion", "en": ["training"], "examples": ["Tomorrow we have a safety training."], "note": "In Mexico the usual word for job training." },
   { "id": "jubilacion", "en": ["retirement", "pension"], "examples": ["My dad is saving for his retirement."] },
-  { "id": "bono", "en": ["bonus"], "examples": ["If we sell more, they give us a bonus."] }
+  { "id": "bono", "en": ["bonus"], "examples": ["If we sell more, they give us a bonus."] },
+  { "id": "director", "en": ["director", "principal"], "examples": ["The director wants to talk to you."] },
+  { "id": "curriculum", "en": ["résumé", "CV"], "examples": ["I sent my résumé to three companies."] },
+  { "id": "vacante", "en": ["job opening"], "examples": ["There's an opening in sales."] },
+  { "id": "solicitud", "en": ["application"], "examples": ["I filled out the job application."] },
+  { "id": "gerente", "en": ["manager"], "examples": ["I'd like to speak to the manager."] },
+  { "id": "informe", "en": ["report"], "examples": ["I have to hand in the report on Friday."] },
+  { "id": "hora-extra", "en": ["overtime hour"], "examples": ["This month I did twenty hours of overtime."] },
+  { "id": "ascenso", "en": ["promotion"], "examples": ["My sister got a promotion."] },
+  { "id": "despido", "en": ["dismissal", "layoff"], "examples": ["There were a lot of layoffs this year."] },
+  {
+    "id": "finiquito",
+    "en": ["severance pay", "final settlement"],
+    "examples": ["They still haven't paid my severance."],
+    "note": "Mexican: the final payment a company owes an employee who leaves."
+  },
+  {
+    "id": "prestacion",
+    "en": ["(job) benefit"],
+    "examples": ["The job has good benefits."],
+    "note": "In Mexico \"prestaciones de ley\" are the legal benefits (aguinaldo, vacation, social security)."
+  },
+  { "id": "nomina", "en": ["payroll"], "examples": ["Payroll goes out every two weeks."] },
+  { "id": "sindicato", "en": ["labor union"], "examples": ["The union asked for a raise."] },
+  { "id": "emprendedor", "en": ["entrepreneur"], "examples": ["He's a young entrepreneur."] },
+  { "id": "liderazgo", "en": ["leadership"], "examples": ["The position requires leadership."] },
+  { "id": "desempeno", "en": ["performance"], "examples": ["They evaluated my performance."] },
+  { "id": "colaborador", "en": ["collaborator", "employee"], "examples": ["I thank all my coworkers."] },
+  { "id": "condicion", "en": ["condition", "term"], "examples": ["I agreed on one condition."] }
 ]
