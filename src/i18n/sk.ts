@@ -87,6 +87,10 @@ export const sk = {
       showSunHint: 'Len na skúšku, nič sa nezapočíta. Každé ťuknutie ukáže iný počet dní.',
       reminderOff: 'Skúšobné notifikácie a stav servera sú tu, keď je pripomienka zapnutá.',
       storage: 'Úložisko',
+      errorReports: 'Hlásenia chýb',
+      sendTestError: 'Poslať skúšobnú chybu',
+      testErrorSent: 'Poslané. V Sentry sa objaví do pár minút a príde aj e-mail.',
+      errorReportsOff: 'Hlásenia chýb nie sú zapnuté: na dev serveri sa neposielajú a nasadená aplikácia potrebuje VITE_SENTRY_DSN (docs/error-reports-setup.md).',
       build: 'Verzia aplikácie',
       commit: 'Commit',
       builtAt: 'Zostavená',
@@ -875,7 +879,7 @@ export const sk = {
   /** The privacy policy (/privacy). Written by Claude; to be checked before a public release. */
   privacy: {
     title: 'Ochrana súkromia',
-    updated: 'Platné od 19. 10. 2026',
+    updated: 'Platné od 24. 10. 2026',
     sections: [
       {
         heading: 'Bez účtu',
@@ -888,6 +892,10 @@ export const sk = {
       {
         heading: 'Kto údaje spracúva',
         body: 'Účty a progres uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
+      },
+      {
+        heading: 'Hlásenia chýb',
+        body: 'Keď aplikácia narazí na chybu, pošle o nej hlásenie službe Sentry (servery v EÚ): čo sa pokazilo a kde v aplikácii, verziu aplikácie, prehliadača a systému. Nie je v ňom tvoje meno, e-mail, IP adresa ani to, čo sa učíš. Slúži iba na opravu chýb a zmaže sa najneskôr po 90 dňoch.',
       },
       {
         heading: 'Ako dlho',

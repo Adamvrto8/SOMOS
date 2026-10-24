@@ -1,11 +1,12 @@
-import { PowerOff, Sun } from 'lucide-react'
-import { useRef } from 'react'
+import { Bug, PowerOff, Sun } from 'lucide-react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { celebrateGoal } from '../../lib/celebration'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { setDevMode } from '../../lib/devMode'
+import { errorReportsOn, reportError } from '../../lib/errorReports'
 import { reminderSupport } from '../../lib/reminder'
 import { playSound } from '../../lib/sound'
 import { StorageInfo } from './BackupSettings'
@@ -22,6 +23,13 @@ export function DevSettings() {
   const goal = useDailyGoal()
   const navigate = useNavigate()
   const shown = useRef(0)
+  const [testErrorSent, setTestErrorSent] = useState(false)
+
+  // Proves the whole way to Sentry on a phone, where /dev/crash does not exist.
+  const sendTestError = () => {
+    reportError(new Error(`Test error from Nástroje pre vývoj (${__APP_VERSION__})`))
+    setTestErrorSent(true)
+  }
 
   // As recordAttempt does it for the answer that completes the goal, without the answer.
   const showSun = () => {
@@ -52,6 +60,19 @@ export function DevSettings() {
 
       <SettingsPart id="dev-storage" title={text.storage}>
         <StorageInfo />
+      </SettingsPart>
+
+      <SettingsPart id="dev-errors" title={text.errorReports}>
+        {errorReportsOn() ? (
+          <>
+            <Button variant="secondary" icon={Bug} onClick={sendTestError} className="w-full">
+              {text.sendTestError}
+            </Button>
+            {testErrorSent && <SettingsHint>{text.testErrorSent}</SettingsHint>}
+          </>
+        ) : (
+          <SettingsHint>{text.errorReportsOff}</SettingsHint>
+        )}
       </SettingsPart>
 
       <SettingsPart id="dev-build" title={text.build}>

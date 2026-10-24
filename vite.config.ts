@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from '@sentry/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
@@ -5,21 +6,30 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 const ONE_YEAR = 60 * 60 * 24 * 365
 
+/** Shown in Nastavenia, so the phone's version can be compared with the Vercel deployment; also Sentry's release. */
+const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? 'dev'
+
+// Only on Vercel with Sentry set up (docs/error-reports-setup.md): source maps go to Sentry, so a report
+// points at our code, and are deleted before the deploy. Locally and in CI the build stays without them.
+const SENTRY_UPLOAD = Boolean(process.env.SENTRY_AUTH_TOKEN)
+
 // https://vite.dev/config/
 export default defineConfig({
   define: {
-    // Shown in Nastavenia, so the phone's version can be compared with the Vercel deployment.
-    __APP_VERSION__: JSON.stringify(process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? 'dev'),
+    __APP_VERSION__: JSON.stringify(APP_VERSION),
     __BUILD_TIME__: JSON.stringify(Date.now()),
   },
   build: {
+    sourcemap: SENTRY_UPLOAD ? 'hidden' : false,
     rolldownOptions: {
       output: {
         // Libraries change rarely: a separate chunk means a deploy only re-downloads app code.
-        // Supabase's library has its own, loaded only for accounts (src/lib/account.ts).
+        // Supabase's library has its own, loaded only for accounts (src/lib/account.ts), and so has
+        // Sentry's, loaded after the start (src/lib/errorReports.ts).
         codeSplitting: {
           groups: [
             { name: 'supabase', test: /node_modules[\\/]@supabase[\\/]/, priority: 2 },
+            { name: 'sentry', test: /node_modules[\\/]@sentry[\\/]/, priority: 2 },
             { name: 'vendor', test: /node_modules/, priority: 1 },
           ],
         },
@@ -80,5 +90,15 @@ export default defineConfig({
         ],
       },
     }),
+    // Last, as Sentry asks: it reads the files the other plugins produced.
+    SENTRY_UPLOAD &&
+      sentryVitePlugin({
+        org: process.env.SENTRY_ORG,
+        project: process.env.SENTRY_PROJECT,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        release: { name: APP_VERSION },
+        sourcemaps: { filesToDeleteAfterUpload: ['./dist/**/*.map'] },
+        telemetry: false,
+      }),
   ],
 })

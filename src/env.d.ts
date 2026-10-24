@@ -10,4 +10,6 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_URL?: string
   /** Its public (anon) key: row level security keeps every account's records to itself. */
   readonly VITE_SUPABASE_ANON_KEY?: string
+  /** Where crash reports go (Sentry); without it nothing is reported. docs/error-reports-setup.md */
+  readonly VITE_SENTRY_DSN?: string
 }

@@ -1,7 +1,8 @@
 import { House, RotateCw } from 'lucide-react'
-import { Component, type ErrorInfo, type ReactNode } from 'react'
+import { Component, useEffect, type ErrorInfo, type ReactNode } from 'react'
 import { useRouteError } from 'react-router'
 import { useT } from '../i18n'
+import { reportError } from '../lib/errorReports'
 import { Button } from './Button'
 
 const describe = (error: unknown) => (error instanceof Error ? error.message : String(error))
@@ -34,7 +35,10 @@ export function ErrorScreen({ error }: { error: unknown }) {
 
 /** The router's errorElement: a screen that threw while rendering. */
 export function RouteErrorScreen() {
-  return <ErrorScreen error={useRouteError()} />
+  const error = useRouteError()
+  // StrictMode runs this twice in dev, where nothing is sent; Sentry drops a repeat of the same error anyway.
+  useEffect(() => reportError(error), [error])
+  return <ErrorScreen error={error} />
 }
 
 /** Catches what the router does not: errors outside its routes (the goal's sun) and in the router itself. */
@@ -47,6 +51,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { error: u
 
   componentDidCatch(error: unknown, info: ErrorInfo) {
     console.error(error, info.componentStack)
+    reportError(error, { componentStack: info.componentStack ?? undefined })
   }
 
   render() {

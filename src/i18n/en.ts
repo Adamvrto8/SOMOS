@@ -70,6 +70,10 @@ export const en: Dictionary = {
       showSunHint: 'Just a preview, nothing is counted. Every tap shows another number of days.',
       reminderOff: 'Test notifications and the server state are here while the reminder is on.',
       storage: 'Storage',
+      errorReports: 'Error reports',
+      sendTestError: 'Send a test error',
+      testErrorSent: 'Sent. It shows up in Sentry within a few minutes, and an e-mail comes too.',
+      errorReportsOff: 'Error reports are off: the dev server sends none, and the deployed app needs VITE_SENTRY_DSN (docs/error-reports-setup.md).',
       build: 'App version',
       commit: 'Commit',
       builtAt: 'Built',
@@ -818,7 +822,7 @@ export const en: Dictionary = {
 
   privacy: {
     title: 'Privacy',
-    updated: 'Effective October 19, 2026',
+    updated: 'Effective October 24, 2026',
     sections: [
       {
         heading: 'Without an account',
@@ -831,6 +835,10 @@ export const en: Dictionary = {
       {
         heading: 'Who processes the data',
         body: 'Accounts and progress are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
+      },
+      {
+        heading: 'Error reports',
+        body: 'When the app runs into an error, it sends a report to Sentry (servers in the EU): what went wrong and where in the app, and the versions of the app, browser and system. It does not contain your name, e-mail, IP address or what you are learning. It is used only to fix errors and is deleted after 90 days at the latest.',
       },
       {
         heading: 'How long',
