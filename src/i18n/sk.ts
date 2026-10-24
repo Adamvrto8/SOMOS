@@ -33,6 +33,15 @@ export const sk = {
     themeSwitch: (current: string, next: string) => `Téma: ${current}. Prepnúť na: ${next}`,
   },
 
+  // The screen a crash leaves (components/ErrorScreen.tsx).
+  error: {
+    title: 'Niečo sa pokazilo',
+    body: 'Táto obrazovka narazila na chybu. Tvoj pokrok je v poriadku, je uložený v telefóne.',
+    reload: 'Obnoviť',
+    home: 'Domov',
+    details: 'Podrobnosti chyby',
+  },
+
   nav: {
     main: 'Hlavná navigácia',
     home: 'Domov',

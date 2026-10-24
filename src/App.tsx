@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, useLocation, useParams } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
+import { ErrorBoundary, RouteErrorScreen } from './components/ErrorScreen'
 import { PrivacyPage } from './features/account/PrivacyPage'
 import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
@@ -33,7 +34,12 @@ function LegacySignInRedirect() {
   return <Navigate to={`/profile/sign-in${search}${hash}`} replace />
 }
 
-const router = createBrowserRouter([
+/** Only on the dev server: a screen that crashes, to see the error screen (e2e/error.spec.ts). */
+function Crash(): never {
+  throw new Error('Test crash')
+}
+
+const routes = [
   {
     path: '/',
     element: <AppLayout />,
@@ -67,13 +73,17 @@ const router = createBrowserRouter([
   { path: '/practice/test', element: <TestPage /> },
   { path: '/review', element: <ReviewPage /> },
   { path: '/duel/:code', element: <DuelRoomPage /> },
-])
+  ...(import.meta.env.DEV ? [{ path: '/dev/crash', element: <Crash /> }] : []),
+]
+
+// One errorElement for every screen: a crash anywhere shows the error screen, not the router's own.
+const router = createBrowserRouter([{ errorElement: <RouteErrorScreen />, children: routes }])
 
 export default function App() {
   return (
-    <>
+    <ErrorBoundary>
       <RouterProvider router={router} />
       <GoalCelebration />
-    </>
+    </ErrorBoundary>
   )
 }

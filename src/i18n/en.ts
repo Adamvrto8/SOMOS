@@ -23,6 +23,14 @@ export const en: Dictionary = {
     themeSwitch: (current, next) => `Theme: ${current}. Switch to: ${next}`,
   },
 
+  error: {
+    title: 'Something went wrong',
+    body: 'This screen ran into an error. Your progress is safe, it is stored on your phone.',
+    reload: 'Reload',
+    home: 'Home',
+    details: 'Error details',
+  },
+
   nav: {
     main: 'Main navigation',
     home: 'Home',
