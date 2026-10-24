@@ -2,15 +2,16 @@
 import { readFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
 import {
+  ipBlock,
   ipNetwork,
-  NEW_DEVICES_PER_HOUR_TOTAL,
+  NEW_DEVICES_PER_HOUR_BLOCK,
   bestProgress,
   composeMessage,
   decide,
   depsFromEnv,
   fromDeviceRow,
   handleReminder,
-  ipKey,
+  ipKeys,
   isProgress,
   isPushHost,
   isReminderSub,
@@ -344,7 +345,7 @@ const deps = (store: DeviceStore, send: Sender = noop, now = SUMMER_1910, over: 
   now: () => now,
   cronSecret: SECRET,
   userOf: async () => null,
-  ipOf: () => 'ip-1',
+  ipOf: () => ({ address: 'ip-1', block: 'block-1' }),
   ...over,
 })
 
@@ -501,15 +502,18 @@ describe('api/reminder: requests from the app', () => {
     const again = subscribeBody({ device: 'device-number-0', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/0', keys: { p256dh: P256DH, auth: AUTH } } })
     expect((await handleReminder(post(again), deps(store))).status).toBe(200)
     // Another address may still add one.
-    expect((await handleReminder(post(one), deps(store, noop, SUMMER_1910, { ipOf: () => 'ip-2' }))).status).toBe(200)
+    expect((await handleReminder(post(one), deps(store, noop, SUMMER_1910, { ipOf: () => ({ address: 'ip-2', block: 'block-2' }) }))).status).toBe(200)
   })
 
-  it('limits new devices from everywhere together too', async () => {
+  it('limits new devices from one block of addresses, but not from everyone together', async () => {
     const store = memoryDevices()
-    for (let i = 0; i < NEW_DEVICES_PER_HOUR_TOTAL; i++) await store.rateHit('all', NEW_DEVICES_PER_HOUR_TOTAL)
-    const res = await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { ipOf: () => 'fresh-address' }))
+    for (let i = 0; i < NEW_DEVICES_PER_HOUR_BLOCK; i++) await store.rateHit('block-1', NEW_DEVICES_PER_HOUR_BLOCK)
+    const res = await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { ipOf: () => ({ address: 'fresh-address', block: 'block-1' }) }))
     expect(res.status).toBe(429)
     expect(store.rows.size).toBe(0)
+    // Someone in another block is not held up by it.
+    const elsewhere = await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { ipOf: () => ({ address: 'other-address', block: 'block-9' }) }))
+    expect(elsewhere.status).toBe(200)
   })
 
   it('refuses a new device once the server is full', async () => {
@@ -1007,17 +1011,35 @@ describe('supabaseUser', () => {
   })
 })
 
-describe('ipKey', () => {
+describe('ipKeys', () => {
+  const request = (headers: Record<string, string>) => new Request('https://somos.example/api/reminder', { headers })
+
   it('hashes the first forwarded address, and never keeps the address', () => {
-    const request = (headers: Record<string, string>) => new Request('https://somos.example/api/reminder', { headers })
-    const key = ipKey(request({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }), 'secret')
-    expect(key).toMatch(/^[0-9a-f]{64}$/)
-    expect(key).not.toContain('203')
-    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }), 'secret')).toBe(key)
-    expect(ipKey(request({ 'x-real-ip': '203.0.113.7' }), 'secret')).toBe(key)
-    expect(ipKey(request({ 'x-forwarded-for': '198.51.100.1' }), 'secret')).not.toBe(key)
+    const { address } = ipKeys(request({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }), 'secret')
+    expect(address).toMatch(/^[0-9a-f]{64}$/)
+    expect(address).not.toContain('203')
+    expect(ipKeys(request({ 'x-forwarded-for': '203.0.113.7' }), 'secret').address).toBe(address)
+    expect(ipKeys(request({ 'x-real-ip': '203.0.113.7' }), 'secret').address).toBe(address)
+    expect(ipKeys(request({ 'x-forwarded-for': '198.51.100.1' }), 'secret').address).not.toBe(address)
     // Keyed: without the server's secret the hash of every address cannot be tried.
-    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }), 'other')).not.toBe(key)
+    expect(ipKeys(request({ 'x-forwarded-for': '203.0.113.7' }), 'other').address).not.toBe(address)
+  })
+
+  it('gives neighbours the same block and different addresses', () => {
+    const a = ipKeys(request({ 'x-forwarded-for': '203.0.113.7' }), 'secret')
+    const b = ipKeys(request({ 'x-forwarded-for': '203.0.113.200' }), 'secret')
+    expect(a.block).toBe(b.block)
+    expect(a.address).not.toBe(b.address)
+    expect(ipKeys(request({ 'x-forwarded-for': '203.0.114.7' }), 'secret').block).not.toBe(a.block)
+  })
+})
+
+describe('ipBlock', () => {
+  it('takes the /24 of IPv4 and the /48 of IPv6', () => {
+    expect(ipBlock('203.0.113.7')).toBe('203.0.113.0/24')
+    expect(ipBlock('2001:db8:85a3:42:1000::1')).toBe('2001:db8:85a3::/48')
+    expect(ipBlock('2001:db8:85a3:ffff::1')).toBe('2001:db8:85a3::/48')
+    expect(ipBlock('unknown')).toBe('unknown')
   })
 })
 

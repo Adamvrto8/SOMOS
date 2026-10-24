@@ -114,8 +114,12 @@ const DEFAULT_GOAL = 20
 export const MAX_DEVICES = 50_000
 /** New devices from one IP address (an IPv6 /64) in an hour. */
 export const NEW_DEVICES_PER_HOUR = 20
-/** New devices from everywhere in an hour: one source with many addresses cannot fill the table at once. */
-export const NEW_DEVICES_PER_HOUR_TOTAL = 1000
+/**
+ * New devices from one block of addresses (IPv4 /24, IPv6 /48) in an hour: one source with many addresses.
+ * No limit for everyone together: one source could then lock every new learner out. The table itself is
+ * held by MAX_DEVICES and the clean-up of dropped and silent devices.
+ */
+export const NEW_DEVICES_PER_HOUR_BLOCK = 100
 /** Devices one page of a tick looks at; a tick takes pages until none are left or its time is up. */
 export const TICK_LIMIT = 500
 /** A tick stops taking devices after this long (maxDuration in vercel.json is 60 s). */
@@ -512,9 +516,16 @@ export function supabaseUser(url: string, key: string, fetchImpl: typeof fetch =
  * The key the per-IP limit counts under. The address itself is never stored, and a keyed hash cannot be
  * turned back into it by trying every address.
  */
-export function ipKey(request: Request, secret: string): string {
+export function ipKeys(request: Request, secret: string): { address: string; block: string } {
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-  return createHmac('sha256', `somos-reminder:${secret}`).update(ipNetwork(ip)).digest('hex')
+  const hash = (value: string) => createHmac('sha256', `somos-reminder:${secret}`).update(value).digest('hex')
+  return { address: hash(ipNetwork(ip)), block: hash(ipBlock(ip)) }
+}
+
+/** The /24 of an IPv4 address, the /48 of an IPv6 one. */
+export function ipBlock(ip: string): string {
+  if (!ip.includes(':')) return /^\d+\.\d+\.\d+\.\d+$/.test(ip) ? `${ip.split('.').slice(0, 3).join('.')}.0/24` : ip
+  return ipNetwork(ip).split(':').slice(0, 3).join(':') + '::/48'
 }
 
 /** An IPv6 address counts by its /64: one connection gets a whole /64 and can pick any address in it. */
@@ -567,7 +578,8 @@ export interface Deps {
   cronSecret: string
   /** The account of a Supabase access token, or null when it cannot be told. */
   userOf: (token: string) => Promise<string | null>
-  ipOf: (request: Request) => string
+  /** Keys for the limits on new devices: the address (an IPv6 /64) and its block. */
+  ipOf: (request: Request) => { address: string; block: string }
   /** Milliseconds for the tick's time budget; Date.now unless a test drives it. */
   clock?: () => number
 }
@@ -706,8 +718,9 @@ async function subscribe(request: Request, body: Record<string, unknown>, deps: 
   // Only a new device counts toward the limits: every app checks in at every start.
   if (!existing) {
     if ((await deps.store.count()) >= MAX_DEVICES) return json({ error: 'full' }, 503)
-    if (!(await deps.store.rateHit(deps.ipOf(request), NEW_DEVICES_PER_HOUR))) return json({ error: 'too-many-devices' }, 429)
-    if (!(await deps.store.rateHit('all', NEW_DEVICES_PER_HOUR_TOTAL))) return json({ error: 'too-many-devices' }, 429)
+    const { address, block } = deps.ipOf(request)
+    if (!(await deps.store.rateHit(address, NEW_DEVICES_PER_HOUR))) return json({ error: 'too-many-devices' }, 429)
+    if (!(await deps.store.rateHit(block, NEW_DEVICES_PER_HOUR_BLOCK))) return json({ error: 'too-many-devices' }, 429)
   }
   // Signed in: the device counts its practice with the account's other devices. A token that cannot be
   // checked right now, or an app signed in that could not get one (`account`), keeps the link as it was;
@@ -830,7 +843,7 @@ export function depsFromEnv(env: Record<string, string | undefined>): Deps | und
     now: () => new Date(),
     cronSecret,
     userOf: supabaseUser(url, key),
-    ipOf: (request) => ipKey(request, privateKey),
+    ipOf: (request) => ipKeys(request, privateKey),
   }
 }
 
