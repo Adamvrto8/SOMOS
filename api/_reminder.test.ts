@@ -2,28 +2,40 @@
 import { readFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
 import {
+  bestProgress,
   composeMessage,
   decide,
-  handleReminder,
-  isProgress,
-  isReminderSub,
-  KEYS,
-  localClock,
-  previousDay,
-  todayView,
-  upstashStore,
-  VAPID_PUBLIC_KEY,
   depsFromEnv,
+  fromDeviceRow,
+  handleReminder,
+  ipKey,
+  isProgress,
+  isPushHost,
+  isReminderSub,
+  localClock,
+  MAX_DEVICES,
+  NEW_DEVICES_PER_HOUR,
+  previousDay,
+  supabaseStore,
+  supabaseUser,
+  TICK_BUDGET_MS,
+  TICK_LIMIT,
+  todayView,
+  toDeviceRow,
+  VAPID_PUBLIC_KEY,
+  type DeviceRow,
+  type DeviceStore,
   type Deps,
+  type LastTick,
   type ReminderProgress,
   type ReminderSub,
   type Sender,
-  type Store,
 } from './reminder.ts'
 
 const TZ = 'Europe/Bratislava'
+const ENDPOINT = 'https://fcm.googleapis.com/fcm/send/abc'
 const SUB: ReminderSub = {
-  subscription: { endpoint: 'https://push.example/abc', keys: { p256dh: 'p', auth: 'a' } },
+  subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } },
   time: '19:00',
   timeZone: TZ,
 }
@@ -76,6 +88,32 @@ describe('todayView', () => {
   })
 })
 
+describe('bestProgress', () => {
+  const DAY = '2026-07-01'
+
+  it('takes the report from today with the most done', () => {
+    const phone = progress({ done: 3 })
+    const tablet = progress({ done: 12 })
+    expect(bestProgress(phone, [tablet], DAY)).toBe(tablet)
+    expect(bestProgress(tablet, [phone], DAY)).toBe(tablet)
+  })
+
+  it('prefers a report from today over a busier one from yesterday', () => {
+    const today = progress({ done: 1 })
+    const yesterday = progress({ day: '2026-06-30', done: 30 })
+    expect(bestProgress(yesterday, [today], DAY)).toBe(today)
+  })
+
+  it('falls back to the busiest report from yesterday, then to the device’s own', () => {
+    const a = progress({ day: '2026-06-30', done: 4 })
+    const b = progress({ day: '2026-06-30', done: 9 })
+    expect(bestProgress(a, [b], DAY)).toBe(b)
+    const old = progress({ day: '2026-06-01' })
+    expect(bestProgress(old, [progress({ day: '2026-05-01' })], DAY)).toBe(old)
+    expect(bestProgress(null, [], DAY)).toBeNull()
+  })
+})
+
 describe('composeMessage', () => {
   it('nudges a running streak with the cards waiting', () => {
     expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 })).toEqual({
@@ -101,6 +139,16 @@ describe('composeMessage', () => {
   it('counts down to the goal once practice has started', () => {
     expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 12 })).toEqual({ title: 'Ešte 8 do denného cieľa', body: 'Dnes 12/20 · séria 12 dní 🔥' })
     expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 0 }).body).toBe('Dnes 12/20')
+  })
+
+  it('composes the message in English', () => {
+    expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 }, 'en')).toEqual({
+      title: '🔥 A 12-day streak is waiting for today',
+      body: 'To review: 14 cards · a few minutes is enough',
+    })
+    expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('To review: 1 card')
+    expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 correct answer' })
+    expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 1 }, 'en')).toEqual({ title: '8 to go for the daily goal', body: 'Today 12/20 · 1-day streak 🔥' })
   })
 })
 
@@ -137,392 +185,738 @@ describe('decide', () => {
   it('stays quiet once the daily goal is met', () => {
     expect(decide(SUMMER_1910, SUB, progress({ done: 20, activeToday: true }), null)).toEqual({ send: false, reason: 'goal-met' })
   })
+
+  it('speaks the device’s language', () => {
+    const decision = decide(SUMMER_1910, { ...SUB, language: 'en' }, null, null)
+    expect(decision.send && decision.message.body).toBe('Daily goal: 20 correct answers')
+  })
 })
 
 describe('validation', () => {
   it('accepts well-formed data only', () => {
     expect(isReminderSub(SUB)).toBe(true)
+    expect(isReminderSub({ ...SUB, language: 'en' })).toBe(true)
+    expect(isReminderSub({ ...SUB, language: 'de' })).toBe(false)
     expect(isReminderSub({ ...SUB, time: '7:00' })).toBe(false)
     expect(isReminderSub({ ...SUB, time: '24:00' })).toBe(false)
     expect(isReminderSub({ ...SUB, timeZone: 'Mars/Olympus' })).toBe(false)
-    expect(isReminderSub({ ...SUB, subscription: { endpoint: 'http://push.example', keys: { p256dh: 'p', auth: 'a' } } })).toBe(false)
     expect(isProgress(progress())).toBe(true)
     expect(isProgress(progress({ done: -1 }))).toBe(false)
     expect(isProgress(progress({ goal: 0 }))).toBe(false)
     expect(isProgress({ ...progress(), day: 'yesterday' })).toBe(false)
   })
+
+  it('sends only to the push services of the browsers', () => {
+    for (const ok of [
+      'https://fcm.googleapis.com/fcm/send/x',
+      'https://updates.push.services.mozilla.com/wpush/v2/x',
+      'https://web.push.apple.com/x',
+      'https://db5p.notify.windows.com/w/?token=x',
+    ]) {
+      expect(isPushHost(ok)).toBe(true)
+    }
+    for (const bad of ['https://push.example/x', 'https://fcm.googleapis.com.evil.example/x', 'https://evilfcm.googleapis.com.example/x', 'http://fcm.googleapis.com/x', 'not a url']) {
+      expect(isPushHost(bad)).toBe(false)
+    }
+    expect(isReminderSub({ ...SUB, subscription: { endpoint: 'https://push.example/x', keys: { p256dh: 'p', auth: 'a' } } })).toBe(false)
+  })
 })
 
-// ---------- HTTP ----------
+// ---------- HTTP, with the devices in memory ----------
 
 const SECRET = 'cron-secret'
-const OTHER_DEVICE = 'https://push.example/other-device'
+const PHONE = 'phone-device-1'
+const TABLET = 'tablet-device-2'
+const TABLET_ENDPOINT = 'https://fcm.googleapis.com/fcm/send/tablet'
 
-function memoryStore(initial: Record<string, unknown> = {}) {
-  const data = new Map<string, string>(Object.entries(initial).map(([k, v]) => [k, typeof v === 'string' ? v : JSON.stringify(v)]))
-  const store: Store & { data: Map<string, string> } = {
-    data,
-    mget: async (keys) => keys.map((k) => data.get(k) ?? null),
-    set: async (k, v) => {
-      data.set(k, v)
+const device = (over: Partial<DeviceRow> = {}): DeviceRow => ({
+  device: PHONE,
+  userId: null,
+  endpoint: ENDPOINT,
+  p256dh: 'p',
+  auth: 'a',
+  time: '19:00',
+  timeZone: TZ,
+  language: 'sk',
+  receipts: false,
+  progress: null,
+  handledDay: null,
+  sentDay: null,
+  delivery: null,
+  lastDecision: null,
+  testAt: null,
+  testLater: false,
+  seenAt: '2026-07-01T00:00:00.000Z',
+  ...over,
+})
+const tablet = (over: Partial<DeviceRow> = {}) => device({ device: TABLET, endpoint: TABLET_ENDPOINT, ...over })
+
+/** Like push_devices and reminders_due, in memory. */
+function memoryDevices(initial: DeviceRow[] = []) {
+  const rows = new Map(initial.map((r) => [r.device, r]))
+  const gone = new Set<string>()
+  const rate = new Map<string, number>()
+  const state = { tick: null as (LastTick & { sent: number }) | null, cleanups: 0 }
+  const minutes = (time: string) => Number(time.slice(0, 2)) * 60 + Number(time.slice(3, 5))
+  const store: DeviceStore & { rows: typeof rows; gone: typeof gone; state: typeof state } = {
+    rows,
+    gone,
+    state,
+    byEndpoint: async (endpoint) => [...rows.values()].find((r) => r.endpoint === endpoint) ?? null,
+    byDevice: async (id) => rows.get(id) ?? null,
+    save: async (row) => {
+      for (const r of [...rows.values()]) if (r.endpoint === row.endpoint && r.device !== row.device) rows.delete(r.device)
+      rows.set(row.device, row)
     },
-    del: async (k) => {
-      data.delete(k)
+    update: async (id, fields) => {
+      const r = rows.get(id)
+      if (r) rows.set(id, { ...r, ...fields })
     },
-    setIfAbsent: async (k, v) => {
-      if (data.has(k)) return false
-      data.set(k, v)
-      return true
+    remove: async (id) => {
+      rows.delete(id)
+    },
+    due: async (now, limit) =>
+      [...rows.values()]
+        .filter((r) => {
+          const clock = localClock(now, r.timeZone)
+          const start = minutes(r.time)
+          return r.testLater || (clock.minutes >= start && clock.minutes <= Math.min(start + 120, 1439) && r.handledDay !== clock.day)
+        })
+        .sort((a, b) => a.device.localeCompare(b.device))
+        .slice(0, limit),
+    reportsOf: async (userIds) =>
+      [...rows.values()].flatMap((r) => (r.userId && userIds.includes(r.userId) && r.progress ? [{ userId: r.userId, device: r.device, progress: r.progress }] : [])),
+    isGone: async (endpoint) => gone.has(endpoint),
+    markGone: async (endpoint) => {
+      gone.add(endpoint)
+    },
+    lastTick: async () => state.tick && { at: state.tick.at, reason: state.tick.reason },
+    recordTick: async (tick) => {
+      state.tick = tick
+    },
+    count: async () => rows.size,
+    rateHit: async (key, limit) => {
+      const n = (rate.get(key) ?? 0) + 1
+      rate.set(key, n)
+      return n <= limit
+    },
+    cleanup: async () => {
+      state.cleanups++
     },
   }
   return store
 }
 
 const noop: Sender = async () => {}
-const deps = (store: Store, send: Sender = noop, now = SUMMER_1910): Deps => ({ store, send, now: () => now, cronSecret: SECRET })
+const deps = (store: DeviceStore, send: Sender = noop, now = SUMMER_1910, over: Partial<Deps> = {}): Deps => ({
+  store,
+  send,
+  now: () => now,
+  cronSecret: SECRET,
+  userOf: async () => null,
+  ipOf: () => 'ip-1',
+  ...over,
+})
 
 const cron = (secret = SECRET) => new Request('https://somos.example/api/reminder', { headers: { authorization: `Bearer ${secret}` } })
-const post = (body: unknown, origin = 'https://somos.example') =>
+const post = (body: unknown, { origin = 'https://somos.example', token }: { origin?: string; token?: string } = {}) =>
   new Request('https://somos.example/api/reminder', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', origin, host: 'somos.example' },
+    headers: { 'Content-Type': 'application/json', origin, host: 'somos.example', ...(token ? { authorization: `Bearer ${token}` } : {}) },
     body: JSON.stringify(body),
   })
-const statusOf = async (res: Response) => ((await res.json()) as { status: unknown }).status
+const subscribeBody = (over: Record<string, unknown> = {}) => ({
+  type: 'subscribe',
+  subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' } },
+  time: '19:00',
+  timeZone: TZ,
+  device: PHONE,
+  ...over,
+})
+const tabletSubscription = { endpoint: TABLET_ENDPOINT, keys: { p256dh: 'p2', auth: 'a2' } }
+const statusOf = async (res: Response) => ((await res.json()) as { status: Record<string, unknown> }).status
 const pushError = (statusCode: number) => Object.assign(new Error('push refused'), { statusCode })
 
-describe('api/reminder: cron tick', () => {
-  it('refuses a request without the cron secret', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    expect((await handleReminder(cron('wrong'), deps(store))).status).toBe(401)
-    expect((await handleReminder(new Request('https://somos.example/api/reminder'), deps(store))).status).toBe(401)
+describe('api/reminder: requests from the app', () => {
+  it('only accepts requests from its own pages', async () => {
+    const store = memoryDevices()
+    const res = await handleReminder(post(subscribeBody(), { origin: 'https://evil.example' }), deps(store))
+    expect(res.status).toBe(403)
+    expect(store.rows.size).toBe(0)
   })
 
   it('reports a missing configuration', async () => {
-    const res = await handleReminder(cron(), undefined)
+    const res = await handleReminder(post(subscribeBody()), undefined)
     expect(res.status).toBe(503)
     expect(await res.json()).toEqual({ error: 'not-configured' })
   })
 
-  it('sends the reminder and remembers the day', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ day: '2026-06-30', activeToday: true }) })
-    const send = vi.fn<Sender>(async () => {})
-    const res = await handleReminder(cron(), deps(store, send))
-    expect(await res.json()).toEqual({ sent: true, reason: 'sent' })
-    expect(send).toHaveBeenCalledWith(
-      SUB.subscription,
-      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/', id: '2026-07-01T17:10:00.000Z' }),
-      { ttl: 14_400, topic: 'reminder', urgency: 'high' },
-    )
-    expect(store.data.get(KEYS.sent)).toBe('2026-07-01')
-  })
-
-  it('explains why it stayed quiet', async () => {
-    const send = vi.fn<Sender>(async () => {})
-    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 20, activeToday: true }) })
-    expect(await (await handleReminder(cron(), deps(store, send))).json()).toEqual({ sent: false, reason: 'goal-met' })
-    expect(await (await handleReminder(cron(), deps(memoryStore(), send))).json()).toEqual({ sent: false, reason: 'no-subscription' })
-    expect(send).not.toHaveBeenCalled()
-  })
-
-  it('treats unreadable stored data as missing', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: '{not json', [KEYS.sent]: null })
-    const send = vi.fn<Sender>(async () => {})
-    expect(await (await handleReminder(cron(), deps(store, send))).json()).toEqual({ sent: true, reason: 'sent' })
-    expect(send.mock.calls[0][1]).toContain('Denný cieľ: 20 správnych odpovedí')
-  })
-
-  it('forgets a subscription the push service no longer knows', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    const res = await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(410))))
-    expect(await res.json()).toEqual({ sent: false, reason: 'gone' })
-    expect(store.data.has(KEYS.sub)).toBe(false)
-    expect(store.data.has(KEYS.sent)).toBe(false)
-  })
-
-  it('makes the app replace a subscription the push service dropped', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(410))))
-    const again = { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ }
-    const res = await handleReminder(post(again), deps(store))
-    expect(res.status).toBe(410)
-    expect(await res.json()).toEqual({ error: 'gone' })
-    expect(store.data.has(KEYS.sub)).toBe(false)
-    const fresh = { ...again, subscription: { ...SUB.subscription, endpoint: 'https://push.example/fresh' } }
-    expect((await handleReminder(post(fresh), deps(store))).status).toBe(200)
-  })
-
-  it('remembers when the last tick came and what it decided', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 20, activeToday: true }) })
-    await handleReminder(cron(), deps(store))
-    expect(JSON.parse(store.data.get(KEYS.tick)!)).toEqual({ at: '2026-07-01T17:10:00.000Z', reason: 'goal-met' })
-    const empty = memoryStore()
-    await handleReminder(cron(), deps(empty))
-    expect(JSON.parse(empty.data.get(KEYS.tick)!)).toEqual({ at: '2026-07-01T17:10:00.000Z', reason: 'no-subscription' })
-    // A request without the secret is not a tick.
-    const untouched = memoryStore()
-    await handleReminder(cron('wrong'), deps(untouched))
-    expect(untouched.data.has(KEYS.tick)).toBe(false)
-  })
-
-  it('leaves the day open for the next tick after a failed send', async () => {
-    vi.spyOn(console, 'error').mockImplementation(() => {})
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    const res = await handleReminder(cron(), deps(store, async () => Promise.reject(pushError(500))))
-    expect(res.status).toBe(502)
-    expect(store.data.has(KEYS.sent)).toBe(false)
-    expect(store.data.has(KEYS.sub)).toBe(true)
-  })
-})
-
-describe('api/reminder: requests from the app', () => {
-  it('only accepts requests from its own pages', async () => {
-    const store = memoryStore()
-    const res = await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ }, 'https://evil.example'), deps(store))
-    expect(res.status).toBe(403)
-    expect(store.data.size).toBe(0)
-  })
-
-  it('stores a subscription with its time and time zone', async () => {
-    const store = memoryStore()
-    const body = { type: 'subscribe', subscription: { ...SUB.subscription, expirationTime: null }, time: '19:00', timeZone: TZ }
+  it('stores a device with its time, time zone, language and receipts', async () => {
+    const store = memoryDevices()
+    const body = subscribeBody({ subscription: { endpoint: ENDPOINT, keys: { p256dh: 'p', auth: 'a' }, expirationTime: null }, language: 'en', receipts: true })
     expect((await handleReminder(post(body), deps(store))).status).toBe(200)
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(SUB)
+    expect(store.rows.get(PHONE)).toEqual(device({ language: 'en', receipts: true, seenAt: SUMMER_1910.toISOString() }))
+  })
+
+  it('keeps Slovak for any language it does not know', async () => {
+    for (const language of ['sk', 'de', undefined]) {
+      const store = memoryDevices()
+      await handleReminder(post(subscribeBody({ language })), deps(store))
+      expect(store.rows.get(PHONE)?.language).toBe('sk')
+    }
   })
 
   it('rejects malformed requests', async () => {
-    const store = memoryStore()
+    const store = memoryDevices()
     const bodies = [
-      { type: 'subscribe', subscription: SUB.subscription, time: '25:00', timeZone: TZ },
-      { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: 'Nowhere/City' },
-      { type: 'subscribe', subscription: { endpoint: 'https://push.example/x' }, time: '19:00', timeZone: TZ },
+      subscribeBody({ time: '25:00' }),
+      subscribeBody({ timeZone: 'Nowhere/City' }),
+      subscribeBody({ subscription: { endpoint: ENDPOINT } }),
+      subscribeBody({ subscription: { endpoint: 'https://push.example/x', keys: { p256dh: 'p', auth: 'a' } } }),
+      subscribeBody({ device: undefined }),
+      subscribeBody({ device: 'x y' }),
       { type: 'launch-rockets' },
       'not an object',
     ]
     for (const body of bodies) expect((await handleReminder(post(body), deps(store))).status).toBe(400)
-    expect(store.data.size).toBe(0)
+    expect(store.rows.size).toBe(0)
   })
 
-  it('keeps progress only from the subscribed device', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(post({ type: 'progress', endpoint: OTHER_DEVICE, progress: progress({ done: 3 }) }), deps(store))
-    expect(store.data.has(KEYS.progress)).toBe(false)
-    await handleReminder(post({ type: 'progress', endpoint: SUB.subscription.endpoint, progress: progress({ done: 3 }) }), deps(store))
-    expect(JSON.parse(store.data.get(KEYS.progress)!)).toEqual(progress({ done: 3 }))
-    const invalid = post({ type: 'progress', endpoint: SUB.subscription.endpoint, progress: { day: 'x' } })
+  it('keeps every device that subscribes, each with its own settings', async () => {
+    const store = memoryDevices()
+    await handleReminder(post(subscribeBody()), deps(store))
+    const res = await handleReminder(post(subscribeBody({ device: TABLET, subscription: tabletSubscription, time: '08:00', language: 'en' })), deps(store))
+    expect(res.status).toBe(200)
+    expect(store.rows.size).toBe(2)
+    expect(store.rows.get(PHONE)).toMatchObject({ time: '19:00', language: 'sk' })
+    expect(store.rows.get(TABLET)).toMatchObject({ time: '08:00', language: 'en', endpoint: TABLET_ENDPOINT })
+  })
+
+  it('ignores takeOver from an older app: there is nothing to take over', async () => {
+    const store = memoryDevices([device()])
+    const res = await handleReminder(post(subscribeBody({ device: TABLET, subscription: tabletSubscription, takeOver: true })), deps(store))
+    expect(res.status).toBe(200)
+    expect(store.rows.size).toBe(2)
+  })
+
+  it('follows a device to a new subscription, and keeps what it knew', async () => {
+    const store = memoryDevices([device({ sentDay: '2026-06-30', progress: progress() })])
+    const rotated = { endpoint: 'https://fcm.googleapis.com/fcm/send/rotated', keys: { p256dh: 'p3', auth: 'a3' } }
+    await handleReminder(post(subscribeBody({ subscription: rotated })), deps(store))
+    expect(store.rows.size).toBe(1)
+    expect(store.rows.get(PHONE)).toMatchObject({ endpoint: rotated.endpoint, p256dh: 'p3', sentDay: '2026-06-30', progress: progress() })
+  })
+
+  it('moves a subscription to the new id of the same browser (storage cleared)', async () => {
+    const store = memoryDevices([device({ sentDay: '2026-06-30' })])
+    await handleReminder(post(subscribeBody({ device: 'fresh-device-id' })), deps(store))
+    expect([...store.rows.keys()]).toEqual(['fresh-device-id'])
+    expect(store.rows.get('fresh-device-id')?.sentDay).toBe('2026-06-30')
+  })
+
+  it('links the device to the account of a valid token, and unlinks it without one', async () => {
+    const store = memoryDevices()
+    const userOf = vi.fn(async (token: string) => (token === 'good' ? 'user-1' : null))
+    await handleReminder(post(subscribeBody(), { token: 'good' }), deps(store, noop, SUMMER_1910, { userOf }))
+    expect(store.rows.get(PHONE)?.userId).toBe('user-1')
+    // A token that cannot be checked right now keeps the link.
+    await handleReminder(post(subscribeBody(), { token: 'expired' }), deps(store, noop, SUMMER_1910, { userOf }))
+    expect(store.rows.get(PHONE)?.userId).toBe('user-1')
+    // Signed out.
+    await handleReminder(post(subscribeBody()), deps(store, noop, SUMMER_1910, { userOf }))
+    expect(store.rows.get(PHONE)?.userId).toBeNull()
+  })
+
+  it('limits new devices per IP address, but never a device checking in again', async () => {
+    const store = memoryDevices()
+    for (let i = 0; i < NEW_DEVICES_PER_HOUR; i++) {
+      const body = subscribeBody({ device: `device-number-${i}`, subscription: { endpoint: `https://fcm.googleapis.com/fcm/send/${i}`, keys: { p256dh: 'p', auth: 'a' } } })
+      expect((await handleReminder(post(body), deps(store))).status).toBe(200)
+    }
+    const one = subscribeBody({ device: 'one-too-many', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/x', keys: { p256dh: 'p', auth: 'a' } } })
+    const res = await handleReminder(post(one), deps(store))
+    expect(res.status).toBe(429)
+    expect(await res.json()).toEqual({ error: 'too-many-devices' })
+    // Every app checks in at every start: that is not a new device.
+    const again = subscribeBody({ device: 'device-number-0', subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/0', keys: { p256dh: 'p', auth: 'a' } } })
+    expect((await handleReminder(post(again), deps(store))).status).toBe(200)
+    // Another address may still add one.
+    expect((await handleReminder(post(one), deps(store, noop, SUMMER_1910, { ipOf: () => 'ip-2' }))).status).toBe(200)
+  })
+
+  it('refuses a new device once the server is full', async () => {
+    const store = memoryDevices([device()])
+    store.count = async () => MAX_DEVICES
+    const res = await handleReminder(post(subscribeBody({ device: TABLET, subscription: tabletSubscription })), deps(store))
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ error: 'full' })
+    expect((await handleReminder(post(subscribeBody()), deps(store))).status).toBe(200)
+  })
+
+  it('keeps progress on the device that reports it', async () => {
+    const store = memoryDevices([device(), tablet()])
+    const LATER = new Date('2026-07-01T17:20:00Z')
+    await handleReminder(post({ type: 'progress', endpoint: TABLET_ENDPOINT, progress: progress({ done: 3 }) }), deps(store, noop, LATER))
+    expect(store.rows.get(TABLET)).toMatchObject({ progress: progress({ done: 3 }), seenAt: LATER.toISOString() })
+    expect(store.rows.get(PHONE)?.progress).toBeNull()
+    // A device the server does not know: nothing to keep.
+    await handleReminder(post({ type: 'progress', endpoint: 'https://fcm.googleapis.com/fcm/send/unknown', progress: progress() }), deps(store))
+    expect(store.rows.size).toBe(2)
+    const invalid = post({ type: 'progress', endpoint: ENDPOINT, progress: { day: 'x' } })
     expect((await handleReminder(invalid, deps(store))).status).toBe(400)
   })
 
   it('unsubscribes only the device that asks', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(post({ type: 'unsubscribe', endpoint: OTHER_DEVICE }), deps(store))
-    expect(store.data.has(KEYS.sub)).toBe(true)
-    await handleReminder(post({ type: 'unsubscribe', endpoint: SUB.subscription.endpoint }), deps(store))
-    expect(store.data.has(KEYS.sub)).toBe(false)
+    const store = memoryDevices([device(), tablet()])
+    await handleReminder(post({ type: 'unsubscribe', endpoint: TABLET_ENDPOINT }), deps(store))
+    expect([...store.rows.keys()]).toEqual([PHONE])
   })
 
-  it('sends a test notification at most once a minute', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
+  it('sends a test notification at most once a minute per device', async () => {
+    const store = memoryDevices([device(), tablet({ language: 'en' })])
     const send = vi.fn<Sender>(async () => {})
-    const test = () => handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))
-    expect((await test()).status).toBe(200)
+    const test = (endpoint: string, now = SUMMER_1910) => handleReminder(post({ type: 'test', endpoint }), deps(store, send, now))
+    expect((await test(ENDPOINT)).status).toBe(200)
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
       JSON.stringify({ title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓', url: '/', id: '2026-07-01T17:10:00.000Z' }),
       { ttl: 14_400, topic: 'test', urgency: 'high' },
     )
-    expect((await test()).status).toBe(429)
-    expect(send).toHaveBeenCalledTimes(1)
+    expect(store.rows.get(PHONE)?.delivery).toEqual({ kind: 'test', sentAt: '2026-07-01T17:10:00.000Z', receipts: false })
+    expect((await test(ENDPOINT)).status).toBe(429)
+    // Another device is not held up, and gets it in its own language.
+    expect((await test(TABLET_ENDPOINT)).status).toBe(200)
+    expect(JSON.parse(send.mock.calls[1][1])).toMatchObject({ body: 'Test notification — reminders work ✓', lang: 'en' })
+    expect((await test(ENDPOINT, new Date('2026-07-01T17:11:01Z'))).status).toBe(200)
+    expect(send).toHaveBeenCalledTimes(3)
+  })
+
+  it('refuses a test for a device that is not subscribed', async () => {
+    const res = await handleReminder(post({ type: 'test', endpoint: TABLET_ENDPOINT }), deps(memoryDevices([device()])))
+    expect(res.status).toBe(409)
+    expect(await res.json()).toEqual({ error: 'not-subscribed' })
   })
 
   it('reports a subscription dropped during a test, and refuses it afterwards', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    const test = post({ type: 'test', endpoint: SUB.subscription.endpoint })
+    const store = memoryDevices([device()])
+    const test = post({ type: 'test', endpoint: ENDPOINT })
     expect((await handleReminder(test, deps(store, async () => Promise.reject(pushError(410))))).status).toBe(410)
-    const again = post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ })
-    expect((await handleReminder(again, deps(store))).status).toBe(410)
+    expect(store.rows.size).toBe(0)
+    const res = await handleReminder(post(subscribeBody()), deps(store))
+    expect(res.status).toBe(410)
+    expect(await res.json()).toEqual({ error: 'gone' })
+    const fresh = subscribeBody({ subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/fresh', keys: { p256dh: 'p', auth: 'a' } } })
+    expect((await handleReminder(post(fresh), deps(store))).status).toBe(200)
   })
 
-  it('tells what the server knows, without giving the subscription away', async () => {
-    const tick = { at: '2026-07-01T17:00:30.000Z', reason: 'sent' }
-    const store = memoryStore({ [KEYS.sub]: SUB, [KEYS.progress]: progress({ done: 3 }), [KEYS.sent]: '2026-07-01', [KEYS.tick]: tick })
-    const res = await handleReminder(post({ type: 'status', endpoint: SUB.subscription.endpoint }), deps(store))
+  it('tells a device what the server knows about it, without giving any subscription away', async () => {
+    const tick = { at: '2026-07-01T17:00:30.000Z', reason: 'done', sent: 3 }
+    const decision = { at: '2026-07-01T17:00:30.000Z', reason: 'sent' }
+    const store = memoryDevices([device({ progress: progress({ done: 3 }), sentDay: '2026-07-01', lastDecision: decision }), tablet({ time: '08:00' })])
+    store.state.tick = tick
+    const res = await handleReminder(post({ type: 'status', endpoint: ENDPOINT }), deps(store))
     const text = await res.text()
     expect(JSON.parse(text)).toEqual({
       ok: true,
       status: {
         subscribed: true,
-        thisDevice: true,
         time: '19:00',
         timeZone: TZ,
         serverClock: { day: '2026-07-01', time: '19:10' },
         sentDay: '2026-07-01',
         progress: progress({ done: 3 }),
-        lastTick: tick,
+        lastTick: { at: tick.at, reason: 'done' },
+        lastDecision: decision,
         dropped: false,
         delivery: null,
         testPending: false,
       },
     })
-    expect(text).not.toContain('push.example')
-
-    const other = await handleReminder(post({ type: 'status', endpoint: OTHER_DEVICE }), deps(store))
-    expect(await statusOf(other)).toMatchObject({ subscribed: true, thisDevice: false })
+    expect(text).not.toContain('fcm.googleapis.com')
+    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint: TABLET_ENDPOINT }), deps(store)))).toMatchObject({ subscribed: true, time: '08:00' })
   })
 
-  it('tells that it has no device, and whether the push service dropped it', async () => {
-    const none = await handleReminder(post({ type: 'status' }), deps(memoryStore()))
+  it('tells that it does not know the device, and whether the push service dropped it', async () => {
+    const none = await handleReminder(post({ type: 'status' }), deps(memoryDevices()))
     expect(await statusOf(none)).toEqual({
       subscribed: false,
-      thisDevice: false,
       time: null,
       timeZone: null,
       serverClock: null,
       sentDay: null,
       progress: null,
       lastTick: null,
+      lastDecision: null,
       dropped: false,
       delivery: null,
       testPending: false,
     })
-    const dropped = await handleReminder(post({ type: 'status' }), deps(memoryStore({ [KEYS.gone]: SUB.subscription.endpoint })))
-    expect(await statusOf(dropped)).toMatchObject({ subscribed: false, dropped: true })
-  })
-
-  it('refuses a test for a device that is not subscribed', async () => {
-    const res = await handleReminder(post({ type: 'test', endpoint: OTHER_DEVICE }), deps(memoryStore({ [KEYS.sub]: SUB })))
-    expect(res.status).toBe(409)
-    expect(await res.json()).toEqual({ error: 'not-subscribed' })
+    const store = memoryDevices()
+    store.gone.add(ENDPOINT)
+    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint: ENDPOINT }), deps(store)))).toMatchObject({ subscribed: false, dropped: true })
   })
 })
 
-describe('api/reminder: did the phone get it', () => {
-  const endpoint = SUB.subscription.endpoint
-  const SENT_AT = '2026-07-01T17:10:00.000Z'
-  const LATER = new Date('2026-07-01T17:10:04Z')
-  const deliveryOf = (store: { data: Map<string, string> }) => JSON.parse(store.data.get(KEYS.delivery) ?? 'null') as unknown
+describe('api/reminder: cron tick', () => {
+  const tickJson = async (store: DeviceStore, send: Sender = noop, now = SUMMER_1910, over: Partial<Deps> = {}) =>
+    (await handleReminder(cron(), deps(store, send, now, over))).json()
 
-  it('remembers what it sent and when', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(cron(), deps(store))
-    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false })
-    await handleReminder(post({ type: 'test', endpoint }), deps(store, noop, LATER))
-    expect(deliveryOf(store)).toEqual({ kind: 'test', sentAt: '2026-07-01T17:10:04.000Z', receipts: false })
+  it('refuses a request without the cron secret, and does not count it as a tick', async () => {
+    const store = memoryDevices([device()])
+    expect((await handleReminder(cron('wrong'), deps(store))).status).toBe(401)
+    expect((await handleReminder(new Request('https://somos.example/api/reminder'), deps(store))).status).toBe(401)
+    expect(store.state.tick).toBeNull()
   })
 
-  it('notes that the phone can confirm, once its app says so', async () => {
-    const store = memoryStore()
-    await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, receipts: true }), deps(store))
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, receipts: true })
-    await handleReminder(cron(), deps(store))
-    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: true })
+  it('sends the reminder and remembers the day', async () => {
+    const store = memoryDevices([device({ progress: progress({ day: '2026-06-30', activeToday: true }) })])
+    const send = vi.fn<Sender>(async () => {})
+    expect(await tickJson(store, send)).toEqual({ sent: 1, reason: 'done' })
+    expect(send).toHaveBeenCalledWith(
+      SUB.subscription,
+      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/', id: '2026-07-01T17:10:00.000Z' }),
+      { ttl: 14_400, topic: 'reminder', urgency: 'high' },
+    )
+    expect(store.rows.get(PHONE)).toMatchObject({
+      handledDay: '2026-07-01',
+      sentDay: '2026-07-01',
+      delivery: { kind: 'reminder', sentAt: '2026-07-01T17:10:00.000Z', receipts: false },
+      lastDecision: { at: '2026-07-01T17:10:00.000Z', reason: 'sent' },
+    })
+    expect(store.state.tick).toEqual({ at: '2026-07-01T17:10:00.000Z', reason: 'done', sent: 1 })
+    // Handled: the next tick has nothing to do for it.
+    expect(await tickJson(store, send)).toEqual({ sent: 0, reason: 'nothing-due' })
+    expect(send).toHaveBeenCalledTimes(1)
   })
 
-  it('takes the phone’s word that it showed the message, or why it could not', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(cron(), deps(store))
-    await handleReminder(post({ type: 'received', endpoint, id: SENT_AT, shown: true }), deps(store, noop, LATER))
-    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false, receivedAt: '2026-07-01T17:10:04.000Z', shown: true })
+  it('reminds every device at its own time, in its own language', async () => {
+    const store = memoryDevices([device(), tablet({ timeZone: 'America/New_York', language: 'en' }), device({ device: 'third-device', endpoint: 'https://fcm.googleapis.com/fcm/send/3', language: 'en', time: '19:05' })])
+    const send = vi.fn<Sender>(async () => {})
+    // 19:10 in Bratislava is 13:10 in New York.
+    expect(await tickJson(store, send)).toEqual({ sent: 2, reason: 'done' })
+    expect(send.mock.calls.map((c) => c[0].endpoint).sort()).toEqual([ENDPOINT, 'https://fcm.googleapis.com/fcm/send/3'].sort())
+    const third = send.mock.calls.find((c) => c[0].endpoint.endsWith('/3'))!
+    expect(JSON.parse(third[1])).toMatchObject({ body: 'Daily goal: 20 correct answers', lang: 'en' })
+    expect(store.rows.get(TABLET)?.handledDay).toBeNull()
 
-    await handleReminder(post({ type: 'received', endpoint, id: SENT_AT, shown: false, error: 'NotAllowedError: no permission' }), deps(store, noop, LATER))
-    expect(deliveryOf(store)).toMatchObject({ shown: false, error: 'NotAllowedError: no permission' })
+    expect(await tickJson(store, send, new Date('2026-07-01T23:10:00Z'))).toEqual({ sent: 1, reason: 'done' })
+    expect(send.mock.calls.at(-1)?.[0].endpoint).toBe(TABLET_ENDPOINT)
   })
 
-  it('ignores a receipt from another device, or for another message', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    await handleReminder(cron(), deps(store))
-    await handleReminder(post({ type: 'received', endpoint: OTHER_DEVICE, id: SENT_AT, shown: true }), deps(store, noop, LATER))
-    await handleReminder(post({ type: 'received', endpoint, id: '2026-06-30T17:00:00.000Z', shown: true }), deps(store, noop, LATER))
-    const res = await handleReminder(post({ type: 'received', endpoint, id: SENT_AT }), deps(store, noop, LATER))
-    expect(res.status).toBe(400)
-    expect(deliveryOf(store)).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false })
+  it('counts the daily goal over all devices of an account', async () => {
+    const store = memoryDevices([
+      device({ userId: 'user-1', progress: progress({ day: '2026-06-30', activeToday: true }) }),
+      tablet({ userId: 'user-1', time: '08:00', progress: progress({ done: 20, activeToday: true }) }),
+      device({ device: 'someone-else', endpoint: 'https://fcm.googleapis.com/fcm/send/else', userId: 'user-2' }),
+    ])
+    const send = vi.fn<Sender>(async () => {})
+    expect(await tickJson(store, send)).toEqual({ sent: 1, reason: 'done' })
+    expect(send.mock.calls.map((c) => c[0].endpoint)).toEqual(['https://fcm.googleapis.com/fcm/send/else'])
+    expect(store.rows.get(PHONE)).toMatchObject({ handledDay: '2026-07-01', sentDay: null, lastDecision: { reason: 'goal-met' } })
+  })
+
+  it('does not let a stranger’s practice keep a device without an account quiet', async () => {
+    const store = memoryDevices([device(), tablet({ time: '08:00', progress: progress({ done: 20 }) })])
+    const send = vi.fn<Sender>(async () => {})
+    await tickJson(store, send)
+    expect(send).toHaveBeenCalledTimes(1)
+  })
+
+  it('leaves the day open for the next tick after a failed send', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const store = memoryDevices([device()])
+    expect(await tickJson(store, async () => Promise.reject(pushError(500)))).toEqual({ sent: 0, reason: 'done' })
+    expect(store.rows.get(PHONE)).toMatchObject({ handledDay: null, lastDecision: { reason: 'failed' } })
+    expect(await tickJson(store)).toEqual({ sent: 1, reason: 'done' })
+  })
+
+  it('forgets only the device the push service no longer knows', async () => {
+    const store = memoryDevices([device(), tablet({ timeZone: TZ })])
+    const send: Sender = async (subscription) => {
+      if (subscription.endpoint === ENDPOINT) throw pushError(410)
+    }
+    expect(await tickJson(store, send)).toEqual({ sent: 1, reason: 'done' })
+    expect([...store.rows.keys()]).toEqual([TABLET])
+    expect(store.gone.has(ENDPOINT)).toBe(true)
   })
 
   it('sends a test asked for later at the next tick, whatever the hour', async () => {
     const MORNING = new Date('2026-07-01T06:00:00Z')
-    const store = memoryStore({ [KEYS.sub]: SUB })
+    const store = memoryDevices([device()])
     const send = vi.fn<Sender>(async () => {})
-    expect((await handleReminder(post({ type: 'test-later', endpoint: OTHER_DEVICE }), deps(store, send, MORNING))).status).toBe(409)
-    expect((await handleReminder(post({ type: 'test-later', endpoint }), deps(store, send, MORNING))).status).toBe(200)
+    expect((await handleReminder(post({ type: 'test-later', endpoint: TABLET_ENDPOINT }), deps(store, send, MORNING))).status).toBe(409)
+    expect((await handleReminder(post({ type: 'test-later', endpoint: ENDPOINT }), deps(store, send, MORNING))).status).toBe(200)
     expect(send).not.toHaveBeenCalled()
-    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint }), deps(store, send, MORNING)))).toMatchObject({ testPending: true })
+    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint: ENDPOINT }), deps(store, send, MORNING)))).toMatchObject({ testPending: true })
 
     // The tick sends it, and still decides about the reminder itself.
-    expect(await (await handleReminder(cron(), deps(store, send, MORNING))).json()).toEqual({ sent: false, reason: 'too-early' })
+    expect(await tickJson(store, send, MORNING)).toEqual({ sent: 0, reason: 'done' })
     expect(send).toHaveBeenCalledTimes(1)
     expect(send.mock.calls[0][1]).toContain('Skúšobná notifikácia')
     expect(send.mock.calls[0][2]).toMatchObject({ topic: 'test' })
-    expect(deliveryOf(store)).toMatchObject({ kind: 'test', sentAt: '2026-07-01T06:00:00.000Z' })
+    expect(store.rows.get(PHONE)).toMatchObject({ testLater: false, delivery: { kind: 'test', sentAt: '2026-07-01T06:00:00.000Z' }, lastDecision: { reason: 'too-early' } })
 
     // Once: the next tick has nothing left to send.
-    await handleReminder(cron(), deps(store, send, MORNING))
+    expect(await tickJson(store, send, MORNING)).toEqual({ sent: 0, reason: 'nothing-due' })
     expect(send).toHaveBeenCalledTimes(1)
-    expect(await statusOf(await handleReminder(post({ type: 'status', endpoint }), deps(store, send, MORNING)))).toMatchObject({
-      testPending: false,
-      delivery: { kind: 'test', sentAt: '2026-07-01T06:00:00.000Z', receipts: false },
+  })
+
+  it('stops when its time is up and leaves the rest to the next tick', async () => {
+    const rows = Array.from({ length: 3 }, (_, i) => device({ device: `device-number-${i}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` }))
+    const store = memoryDevices(rows)
+    // The start, then the first device's check; every later check is past the budget.
+    const times = [0, 0]
+    const clock = () => times.shift() ?? TICK_BUDGET_MS + 1
+    const send = vi.fn<Sender>(async () => {})
+    expect(await tickJson(store, send, SUMMER_1910, { clock })).toEqual({ sent: 1, reason: 'partial' })
+    expect(rows.filter((r) => store.rows.get(r.device)?.handledDay === null)).toHaveLength(2)
+    expect(await tickJson(store, send)).toEqual({ sent: 2, reason: 'done' })
+  })
+
+  it('says more may be waiting when it got as many devices as it asks for', async () => {
+    const store = memoryDevices(Array.from({ length: TICK_LIMIT }, (_, i) => device({ device: `device-number-${i}`, endpoint: `https://fcm.googleapis.com/fcm/send/${i}` })))
+    expect(await tickJson(store)).toEqual({ sent: TICK_LIMIT, reason: 'partial' })
+  })
+
+  it('keeps going when one device fails', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const store = memoryDevices([device(), tablet({ timeZone: TZ })])
+    const update = store.update
+    store.update = async (id, fields) => {
+      if (id === PHONE) throw new Error('database hiccup')
+      return update(id, fields)
+    }
+    expect(await tickJson(store)).toEqual({ sent: 1, reason: 'done' })
+  })
+
+  it('cleans up once a day, at the first tick after 03:00 UTC', async () => {
+    const store = memoryDevices()
+    await tickJson(store, noop, new Date('2026-07-01T02:45:00Z'))
+    await tickJson(store, noop, new Date('2026-07-01T03:00:00Z'))
+    await tickJson(store, noop, new Date('2026-07-01T03:15:00Z'))
+    expect(store.state.cleanups).toBe(1)
+  })
+})
+
+describe('api/reminder: did the device get it', () => {
+  const SENT_AT = '2026-07-01T17:10:00.000Z'
+  const LATER = new Date('2026-07-01T17:10:04Z')
+
+  it('notes that the device can confirm, once its app says so', async () => {
+    const store = memoryDevices()
+    await handleReminder(post(subscribeBody({ receipts: true })), deps(store))
+    await handleReminder(cron(), deps(store))
+    expect(store.rows.get(PHONE)?.delivery).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: true })
+  })
+
+  it('takes the device’s word that it showed the message, or why it could not', async () => {
+    const store = memoryDevices([device()])
+    await handleReminder(cron(), deps(store))
+    await handleReminder(post({ type: 'received', endpoint: ENDPOINT, id: SENT_AT, shown: true }), deps(store, noop, LATER))
+    expect(store.rows.get(PHONE)?.delivery).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false, receivedAt: '2026-07-01T17:10:04.000Z', shown: true })
+
+    await handleReminder(post({ type: 'received', endpoint: ENDPOINT, id: SENT_AT, shown: false, error: 'NotAllowedError: no permission' }), deps(store, noop, LATER))
+    expect(store.rows.get(PHONE)?.delivery).toMatchObject({ shown: false, error: 'NotAllowedError: no permission' })
+  })
+
+  it('ignores a receipt from another device, or for another message', async () => {
+    const store = memoryDevices([device(), tablet({ time: '08:00' })])
+    await handleReminder(cron(), deps(store))
+    await handleReminder(post({ type: 'received', endpoint: TABLET_ENDPOINT, id: SENT_AT, shown: true }), deps(store, noop, LATER))
+    await handleReminder(post({ type: 'received', endpoint: ENDPOINT, id: '2026-06-30T17:00:00.000Z', shown: true }), deps(store, noop, LATER))
+    const res = await handleReminder(post({ type: 'received', endpoint: ENDPOINT, id: SENT_AT }), deps(store, noop, LATER))
+    expect(res.status).toBe(400)
+    expect(store.rows.get(PHONE)?.delivery).toEqual({ kind: 'reminder', sentAt: SENT_AT, receipts: false })
+    expect(store.rows.get(TABLET)?.delivery).toBeNull()
+  })
+})
+
+// ---------- Supabase ----------
+
+const SENT = '2026-07-01T17:00:00.000Z'
+
+describe('supabaseStore', () => {
+  const URL_ = 'https://project.supabase.co/'
+  const ROW = {
+    device: PHONE,
+    user_id: 'user-1',
+    endpoint: ENDPOINT,
+    p256dh: 'p',
+    auth: 'a',
+    time: '19:00',
+    time_zone: TZ,
+    language: 'en',
+    receipts: true,
+    progress: progress(),
+    handled_day: '2026-06-30',
+    sent_day: '2026-06-30',
+    delivery: { kind: 'reminder', sentAt: SENT, receipts: true },
+    last_decision: { at: SENT, reason: 'sent' },
+    test_at: null,
+    test_later: false,
+    created_at: '2026-06-01T00:00:00+00:00',
+    seen_at: '2026-07-01T10:00:00+00:00',
+  }
+  function fakeFetch(answer: (url: string, init: RequestInit) => Response = () => Response.json([])) {
+    const calls: { url: string; method: string; headers: Headers; body: unknown }[] = []
+    const impl = vi.fn(async (input: string | URL | Request, init: RequestInit = {}) => {
+      const url = String(input)
+      calls.push({ url, method: init.method ?? 'GET', headers: new Headers(init.headers), body: init.body ? JSON.parse(String(init.body)) : undefined })
+      return answer(url, init)
+    })
+    return { impl: impl as unknown as typeof fetch, calls }
+  }
+
+  it('reads a device by its endpoint, with the key in apikey only for a new secret key', async () => {
+    const { impl, calls } = fakeFetch(() => Response.json([ROW]))
+    const row = await supabaseStore(URL_, 'sb_secret_abc', impl).byEndpoint(ENDPOINT)
+    expect(calls[0].url).toBe(`https://project.supabase.co/rest/v1/push_devices?endpoint=eq.${encodeURIComponent(ENDPOINT)}&select=*`)
+    expect(calls[0].headers.get('apikey')).toBe('sb_secret_abc')
+    expect(calls[0].headers.has('authorization')).toBe(false)
+    expect(row).toEqual({
+      device: PHONE,
+      userId: 'user-1',
+      endpoint: ENDPOINT,
+      p256dh: 'p',
+      auth: 'a',
+      time: '19:00',
+      timeZone: TZ,
+      language: 'en',
+      receipts: true,
+      progress: progress(),
+      handledDay: '2026-06-30',
+      sentDay: '2026-06-30',
+      delivery: { kind: 'reminder', sentAt: SENT, receipts: true },
+      lastDecision: { at: SENT, reason: 'sent' },
+      testAt: null,
+      testLater: false,
+      seenAt: '2026-07-01T10:00:00+00:00',
     })
   })
+
+  it('sends a legacy service role key as the bearer too', async () => {
+    const { impl, calls } = fakeFetch()
+    await supabaseStore(URL_, 'eyJlegacy', impl).byDevice(PHONE)
+    expect(calls[0].headers.get('authorization')).toBe('Bearer eyJlegacy')
+    expect(calls[0].url).toContain(`push_devices?device=eq.${PHONE}`)
+  })
+
+  it('treats stored JSON that no longer validates as missing', () => {
+    expect(toDeviceRow({ ...ROW, progress: { day: 'x' }, delivery: 'nonsense', last_decision: 3 })).toMatchObject({ progress: null, delivery: null, lastDecision: null })
+    expect(toDeviceRow({ ...ROW, endpoint: undefined })).toBeNull()
+    expect(fromDeviceRow({ timeZone: TZ, handledDay: null, testLater: true })).toEqual({ time_zone: TZ, handled_day: null, test_later: true })
+  })
+
+  it('saves a device after freeing its endpoint from another row', async () => {
+    const { impl, calls } = fakeFetch(() => new Response(null, { status: 201 }))
+    const row = toDeviceRow(ROW)!
+    await supabaseStore(URL_, 'sb_secret_abc', impl).save(row)
+    expect(calls[0]).toMatchObject({ method: 'DELETE', url: `https://project.supabase.co/rest/v1/push_devices?endpoint=eq.${encodeURIComponent(ENDPOINT)}&device=neq.${PHONE}` })
+    expect(calls[1]).toMatchObject({ method: 'POST', url: 'https://project.supabase.co/rest/v1/push_devices' })
+    expect(calls[1].headers.get('prefer')).toBe('resolution=merge-duplicates,return=minimal')
+    expect(calls[1].body).toMatchObject({ device: PHONE, user_id: 'user-1', time_zone: TZ, seen_at: ROW.seen_at })
+  })
+
+  it('updates only the fields given', async () => {
+    const { impl, calls } = fakeFetch(() => new Response(null, { status: 204 }))
+    const store = supabaseStore(URL_, 'sb_secret_abc', impl)
+    await store.update(PHONE, { testLater: true })
+    expect(calls[0]).toMatchObject({ method: 'PATCH', url: `https://project.supabase.co/rest/v1/push_devices?device=eq.${PHONE}`, body: { test_later: true } })
+    await store.update(PHONE, {})
+    expect(calls).toHaveLength(1)
+  })
+
+  it('asks Postgres which devices are due, and takes what it returns', async () => {
+    const { impl, calls } = fakeFetch(() => Response.json([ROW, { nonsense: true }]))
+    const rows = await supabaseStore(URL_, 'sb_secret_abc', impl).due(SUMMER_1910, 500)
+    expect(calls[0]).toMatchObject({ method: 'POST', url: 'https://project.supabase.co/rest/v1/rpc/reminders_due', body: { p_now: '2026-07-01T17:10:00.000Z', p_limit: 500 } })
+    expect(rows.map((r) => r.device)).toEqual([PHONE])
+  })
+
+  it('reads the reports of the accounts’ devices', async () => {
+    const { impl, calls } = fakeFetch(() => Response.json([{ device: TABLET, user_id: 'user-1', progress: progress() }, { device: 'x', user_id: 'user-1', progress: { day: 'bad' } }]))
+    const store = supabaseStore(URL_, 'sb_secret_abc', impl)
+    expect(await store.reportsOf(['user-1', 'user-2'])).toEqual([{ device: TABLET, userId: 'user-1', progress: progress() }])
+    expect(calls[0].url).toBe('https://project.supabase.co/rest/v1/push_devices?user_id=in.(user-1,user-2)&progress=not.is.null&select=device,user_id,progress')
+    expect(await store.reportsOf([])).toEqual([])
+    expect(calls).toHaveLength(1)
+  })
+
+  it('counts the devices from the Content-Range header', async () => {
+    const { impl, calls } = fakeFetch(() => new Response(null, { status: 200, headers: { 'Content-Range': '0-24/1234' } }))
+    expect(await supabaseStore(URL_, 'sb_secret_abc', impl).count()).toBe(1234)
+    expect(calls[0]).toMatchObject({ method: 'HEAD' })
+    expect(calls[0].headers.get('prefer')).toBe('count=exact')
+    const empty = fakeFetch(() => new Response(null, { status: 200, headers: { 'Content-Range': '*/0' } }))
+    expect(await supabaseStore(URL_, 'sb_secret_abc', empty.impl).count()).toBe(0)
+  })
+
+  it('keeps gone endpoints, ticks and the per-IP limit', async () => {
+    const { impl, calls } = fakeFetch((url) => {
+      if (url.includes('push_gone?')) return Response.json([{ endpoint: ENDPOINT }])
+      if (url.includes('push_ticks?')) return Response.json([{ at: SENT, reason: 'done' }])
+      if (url.includes('push_rate_hit')) return Response.json(false)
+      return new Response(null, { status: 201 })
+    })
+    const store = supabaseStore(URL_, 'sb_secret_abc', impl)
+    expect(await store.isGone(ENDPOINT)).toBe(true)
+    await store.markGone(ENDPOINT)
+    expect(calls[1]).toMatchObject({ method: 'POST', body: { endpoint: ENDPOINT } })
+    expect(calls[1].headers.get('prefer')).toBe('resolution=ignore-duplicates,return=minimal')
+    expect(await store.lastTick()).toEqual({ at: SENT, reason: 'done' })
+    await store.recordTick({ at: SENT, reason: 'done', sent: 2 })
+    expect(calls[3].body).toEqual({ id: 1, at: SENT, reason: 'done', sent: 2 })
+    expect(await store.rateHit('hash', 20)).toBe(false)
+    expect(calls[4].body).toEqual({ p_key: 'hash', p_limit: 20 })
+    await store.cleanup()
+    expect(calls[5].url).toBe('https://project.supabase.co/rest/v1/rpc/push_cleanup')
+  })
+
+  it('throws with the message PostgREST gives', async () => {
+    const { impl } = fakeFetch(() => Response.json({ message: 'permission denied for table push_devices' }, { status: 401 }))
+    await expect(supabaseStore(URL_, 'sb_secret_abc', impl).byDevice(PHONE)).rejects.toThrow('Supabase push_devices failed: permission denied for table push_devices')
+  })
 })
 
-describe('api/reminder: one device, and it stays where the learner put it', () => {
-  const PHONE = 'phone-device-1'
-  const LAPTOP = 'laptop-device-2'
-  const LAPTOP_SUB = { ...SUB.subscription, endpoint: OTHER_DEVICE }
-  const subscribe = (subscription: unknown, extra: Record<string, unknown>) => post({ type: 'subscribe', subscription, time: '19:00', timeZone: TZ, ...extra })
-  const storedEndpoint = (store: { data: Map<string, string> }) => (JSON.parse(store.data.get(KEYS.sub)!) as ReminderSub).subscription.endpoint
 
-  it('does not hand the reminders to another device that only opened the app', async () => {
-    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
-    const res = await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP }), deps(store))
-    expect(res.status).toBe(409)
-    expect(await res.json()).toEqual({ error: 'other-device' })
-    expect(storedEndpoint(store)).toBe(SUB.subscription.endpoint)
-  })
-
-  it('moves them when the learner asks for them there', async () => {
-    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
-    expect((await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP, takeOver: true }), deps(store))).status).toBe(200)
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, subscription: LAPTOP_SUB, device: LAPTOP })
-  })
-
-  it('follows the same device to a new subscription', async () => {
-    const store = memoryStore({ [KEYS.sub]: { ...SUB, device: PHONE } })
-    const rotated = { ...SUB.subscription, endpoint: 'https://push.example/rotated' }
-    expect((await handleReminder(subscribe(rotated, { device: PHONE }), deps(store))).status).toBe(200)
-    expect(storedEndpoint(store)).toBe(rotated.endpoint)
-  })
-
-  it('keeps a phone stored before devices had ids, and learns its id when it checks in', async () => {
-    const store = memoryStore({ [KEYS.sub]: SUB })
-    expect((await handleReminder(subscribe(LAPTOP_SUB, { device: LAPTOP }), deps(store))).status).toBe(409)
-    expect((await handleReminder(subscribe(SUB.subscription, { device: PHONE }), deps(store))).status).toBe(200)
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, device: PHONE })
-  })
-
-  it('takes the first device when there is none, and ignores an id that is not one', async () => {
-    const store = memoryStore()
-    expect((await handleReminder(subscribe(SUB.subscription, { device: PHONE }), deps(store))).status).toBe(200)
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual({ ...SUB, device: PHONE })
-    const other = memoryStore()
-    await handleReminder(subscribe(SUB.subscription, { device: 'x y' }), deps(other))
-    expect(JSON.parse(other.data.get(KEYS.sub)!)).toEqual(SUB)
-  })
-})
-
-describe('upstashStore', () => {
-  it('sends Redis commands to the REST endpoint', async () => {
-    const fetchImpl = vi.fn(async () => Response.json({ result: 'OK' }))
-    const store = upstashStore('https://redis.example', 'token', fetchImpl)
-    expect(await store.setIfAbsent(KEYS.test, '1', 60)).toBe(true)
-    const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
-    expect(url).toBe('https://redis.example')
+describe('supabaseUser', () => {
+  it('tells the account of a token, or null when it cannot', async () => {
+    const answers = [Response.json({ id: 'user-1' }), new Response(null, { status: 401 })]
+    const impl = vi.fn(async () => answers.shift() ?? Promise.reject(new TypeError('network')))
+    const userOf = supabaseUser('https://project.supabase.co', 'sb_secret_abc', impl as unknown as typeof fetch)
+    expect(await userOf('token')).toBe('user-1')
+    const [url, init] = impl.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toBe('https://project.supabase.co/auth/v1/user')
     expect(new Headers(init.headers).get('authorization')).toBe('Bearer token')
-    expect(JSON.parse(init.body as string)).toEqual(['SET', KEYS.test, '1', 'EX', 60, 'NX'])
+    expect(await userOf('expired')).toBeNull()
+    expect(await userOf('offline')).toBeNull()
+  })
+})
+
+describe('ipKey', () => {
+  it('hashes the first forwarded address, and never keeps the address', () => {
+    const request = (headers: Record<string, string>) => new Request('https://somos.example/api/reminder', { headers })
+    const key = ipKey(request({ 'x-forwarded-for': '203.0.113.7, 10.0.0.1' }))
+    expect(key).toMatch(/^[0-9a-f]{64}$/)
+    expect(key).not.toContain('203')
+    expect(ipKey(request({ 'x-forwarded-for': '203.0.113.7' }))).toBe(key)
+    expect(ipKey(request({ 'x-real-ip': '203.0.113.7' }))).toBe(key)
+    expect(ipKey(request({ 'x-forwarded-for': '198.51.100.1' }))).not.toBe(key)
+  })
+})
+
+describe('depsFromEnv', () => {
+  const base = { VAPID_PRIVATE_KEY: 'priv', CRON_SECRET: 'secret' }
+
+  it('takes the Supabase project from its own variables or the app’s', () => {
+    expect(depsFromEnv({ ...base, SUPABASE_URL: 'https://p.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'k' })?.cronSecret).toBe('secret')
+    expect(depsFromEnv({ ...base, VITE_SUPABASE_URL: 'https://p.supabase.co', SUPABASE_SECRET_KEY: 'k' })).toBeDefined()
   })
 
-  it('throws on an Upstash error', async () => {
-    const store = upstashStore('https://redis.example', 'token', vi.fn(async () => Response.json({ error: 'WRONGPASS' }, { status: 401 })))
-    await expect(store.mget([KEYS.sub])).rejects.toThrow('WRONGPASS')
+  it('returns undefined if anything is missing, Upstash alone included', () => {
+    expect(depsFromEnv({ ...base, SUPABASE_URL: 'https://p.supabase.co' })).toBeUndefined()
+    expect(depsFromEnv({ SUPABASE_URL: 'https://p.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'k' })).toBeUndefined()
+    expect(depsFromEnv({ ...base, KV_REST_API_URL: 'https://url', KV_REST_API_TOKEN: 'tok' })).toBeUndefined()
   })
 })
 
@@ -530,77 +924,5 @@ describe('VAPID public key', () => {
   it('is the same in the app and on the server', async () => {
     const app = await readFile(new URL('../src/lib/reminder.ts', import.meta.url), 'utf8')
     expect(app).toContain(`export const VAPID_PUBLIC_KEY = '${VAPID_PUBLIC_KEY}'`)
-  })
-})
-
-describe('depsFromEnv', () => {
-  const base = { VAPID_PRIVATE_KEY: 'priv', CRON_SECRET: 'secret' }
-
-  it('accepts KV_REST_API_*', () => {
-    const deps = depsFromEnv({ ...base, KV_REST_API_URL: 'https://url', KV_REST_API_TOKEN: 'tok' })
-    expect(deps).toBeDefined()
-    expect(deps?.cronSecret).toBe('secret')
-  })
-
-  it('accepts STORAGE_KV_REST_API_* from Vercel storage default prefix', () => {
-    const deps = depsFromEnv({ ...base, STORAGE_KV_REST_API_URL: 'https://url', STORAGE_KV_REST_API_TOKEN: 'tok' })
-    expect(deps).toBeDefined()
-    expect(deps?.cronSecret).toBe('secret')
-  })
-
-  it('accepts UPSTASH_REDIS_REST_*', () => {
-    const deps = depsFromEnv({ ...base, UPSTASH_REDIS_REST_URL: 'https://url', UPSTASH_REDIS_REST_TOKEN: 'tok' })
-    expect(deps).toBeDefined()
-  })
-
-  it('returns undefined if any key is missing', () => {
-    expect(depsFromEnv({ ...base, STORAGE_KV_REST_API_URL: 'https://url' })).toBeUndefined()
-    expect(depsFromEnv({ KV_REST_API_URL: 'https://url', KV_REST_API_TOKEN: 'tok' })).toBeUndefined()
-  })
-})
-
-
-describe('the reminder in the learner\'s language', () => {
-  const EN_SUB: ReminderSub = { ...SUB, language: 'en' }
-
-  it('composes the message in English', () => {
-    expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 }, 'en')).toEqual({
-      title: '🔥 A 12-day streak is waiting for today',
-      body: 'To review: 14 cards · a few minutes is enough',
-    })
-    expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('To review: 1 card')
-    expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 correct answer' })
-    expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 1 }, 'en')).toEqual({ title: '8 to go for the daily goal', body: 'Today 12/20 · 1-day streak 🔥' })
-  })
-
-  it('stays Slovak for a subscription stored before there were two languages', () => {
-    expect(isReminderSub(SUB)).toBe(true)
-    expect(isReminderSub(EN_SUB)).toBe(true)
-    expect(isReminderSub({ ...SUB, language: 'de' })).toBe(false)
-    const decision = decide(SUMMER_1910, SUB, progress({ day: '2026-06-30', activeToday: true }), null)
-    expect(decision.send && decision.message.title).toBe('🔥 Séria 12 dní čaká na dnešok')
-  })
-
-  it('keeps the language of a subscribing phone and sends the reminder in it', async () => {
-    const store = memoryStore({})
-    const body = { type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, language: 'en' }
-    expect((await handleReminder(post(body), deps(store))).status).toBe(200)
-    expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(EN_SUB)
-
-    const send = vi.fn<Sender>(async () => {})
-    await handleReminder(cron(), deps(store, send))
-    expect(JSON.parse(send.mock.calls[0][1])).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 20 correct answers', url: '/', id: '2026-07-01T17:10:00.000Z', lang: 'en' })
-
-    // The test notification too.
-    await handleReminder(post({ type: 'test', endpoint: SUB.subscription.endpoint }), deps(store, send))
-    expect(JSON.parse(send.mock.calls[1][1])).toMatchObject({ body: 'Test notification — reminders work ✓', lang: 'en' })
-  })
-
-  it('stores nothing extra for a Slovak phone, and ignores a language it does not know', async () => {
-    for (const language of ['sk', 'de', undefined]) {
-      const store = memoryStore({})
-      await handleReminder(post({ type: 'subscribe', subscription: SUB.subscription, time: '19:00', timeZone: TZ, language }), deps(store))
-      expect(JSON.parse(store.data.get(KEYS.sub)!)).toEqual(SUB)
-    }
   })
 })

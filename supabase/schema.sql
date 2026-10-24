@@ -218,3 +218,94 @@ revoke execute on function public.create_duel(text, text, integer, jsonb), publi
 grant execute on function public.create_duel(text, text, integer, jsonb), public.join_duel(text), public.start_duel(uuid),
   public.answer_duel(uuid, integer, text, integer), public.finish_duel(uuid), public.rematch_duel(uuid, text, integer, jsonb),
   public.now_ms() to authenticated;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- Practice reminders, one row per device (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
+-- Only api/reminder.ts reads and writes these, with the service role key: no policies, nothing for users.
+
+create table if not exists public.push_devices (
+  device text primary key,                 -- the app's own id: outlives a rotated subscription
+  user_id uuid references auth.users on delete cascade, -- the account signed in on the device, or null
+  endpoint text not null unique,
+  p256dh text not null,
+  auth text not null,
+  time text not null check (time ~ '^([01]\d|2[0-3]):[0-5]\d$'), -- "19:00", device-local
+  time_zone text not null,                 -- IANA zone from the device
+  language text not null default 'sk' check (language in ('sk', 'en')),
+  receipts boolean not null default false, -- its service worker confirms what it receives
+  progress jsonb,                          -- ReminderProgress, as the device last reported it
+  handled_day text,                        -- local day the reminder was sent or skipped because the goal was met
+  sent_day text,                           -- local day of the last reminder sent
+  delivery jsonb,                          -- the last message handed to the push service, and the receipt
+  last_decision jsonb,                     -- { at, reason }: the tick's last word on this device
+  test_at timestamptz,                     -- last test notification: at most one a minute
+  test_later boolean not null default false,
+  created_at timestamptz not null default now(),
+  seen_at timestamptz not null default now() -- last subscribe or progress report
+);
+create index if not exists push_devices_user on public.push_devices (user_id) where user_id is not null;
+
+-- Endpoints the push service dropped (404/410): subscribing one again gets 410, so the app makes a new one.
+create table if not exists public.push_gone (endpoint text primary key, at timestamptz not null default now());
+
+-- The cron's last call, for "Stav pripomienky".
+create table if not exists public.push_ticks (
+  id smallint primary key default 1 check (id = 1),
+  at timestamptz not null,
+  reason text not null,
+  sent integer not null default 0
+);
+
+-- New devices per IP address (hashed) and hour.
+create table if not exists public.push_rate (key text primary key, hour timestamptz not null, count integer not null);
+
+alter table public.push_devices enable row level security;
+alter table public.push_gone enable row level security;
+alter table public.push_ticks enable row level security;
+alter table public.push_rate enable row level security;
+revoke all on public.push_devices, public.push_gone, public.push_ticks, public.push_rate from anon, authenticated;
+grant select, insert, update, delete on public.push_devices, public.push_gone, public.push_ticks, public.push_rate to service_role;
+
+-- Devices inside their window [time, min(time + 2 h, 23:59)] that were not handled today, and every test
+-- asked for later. Minutes of the day, not time + interval (that wraps past midnight). A zone Postgres does
+-- not know drops out here instead of failing the query for everyone.
+create or replace function public.reminders_due(p_now timestamptz, p_limit integer)
+returns setof public.push_devices language sql stable set search_path = '' as $$
+  select d.* from public.push_devices d
+  join pg_catalog.pg_timezone_names z on z.name = d.time_zone
+  cross join lateral (select p_now at time zone d.time_zone as t) l
+  cross join lateral (select
+      extract(hour from l.t)::int * 60 + extract(minute from l.t)::int as minutes,
+      to_char(l.t, 'YYYY-MM-DD') as day,
+      split_part(d.time, ':', 1)::int * 60 + split_part(d.time, ':', 2)::int as start) m
+  where d.test_later
+     or (m.minutes between m.start and least(m.start + 120, 1439) and d.handled_day is distinct from m.day)
+  order by d.device
+  limit p_limit;
+$$;
+
+-- One more new device from this key this hour: true while under the limit.
+create or replace function public.push_rate_hit(p_key text, p_limit integer) returns boolean
+language plpgsql set search_path = '' as $$
+declare
+  this_hour timestamptz := date_trunc('hour', now());
+  n integer;
+begin
+  insert into public.push_rate as r (key, hour, count) values (p_key, this_hour, 1)
+  on conflict (key) do update set count = case when r.hour = this_hour then r.count + 1 else 1 end, hour = this_hour
+  returning count into n;
+  return n <= p_limit;
+end $$;
+
+-- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows.
+create or replace function public.push_cleanup() returns void
+language sql set search_path = '' as $$
+  delete from public.push_devices where seen_at < now() - interval '60 days';
+  delete from public.push_gone where at < now() - interval '30 days';
+  delete from public.push_rate where hour < now() - interval '1 day';
+$$;
+
+revoke execute on function public.reminders_due(timestamptz, integer), public.push_rate_hit(text, integer), public.push_cleanup()
+  from public, anon, authenticated;
+grant execute on function public.reminders_due(timestamptz, integer), public.push_rate_hit(text, integer), public.push_cleanup()
+  to service_role;

@@ -1,9 +1,11 @@
-// Vercel function: the daily practice reminder (Web Push).
+// Vercel function: the daily practice reminder (Web Push), one for every device that turns it on.
 //   POST /api/reminder: from the app (same-origin): subscribe | unsubscribe | progress | test | test-later | status
 //                       from its service worker: received (a message arrived and was shown, or why not)
 //   GET  /api/reminder: from cron-job.org every 15 minutes (Authorization: Bearer CRON_SECRET)
-// Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md.
+// Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md; one row per device in Supabase
+// (push_devices in supabase/schema.sql) since docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
+import { createHash } from 'node:crypto'
 import webpush from 'web-push'
 
 // ---------- types (ReminderProgress mirrors src/lib/reminderProgress.ts) ----------
@@ -13,16 +15,15 @@ export interface PushSub {
   keys: { p256dh: string; auth: string }
 }
 
+/** What decide() needs to know about a device. */
 export interface ReminderSub {
   subscription: PushSub
-  time: string // "19:00", phone-local
-  timeZone: string // IANA zone from the phone, e.g. "Europe/Bratislava"
-  language?: 'en' // the app's language; missing = Slovak (also every subscription stored before 2026-10-04)
-  receipts?: true // its service worker confirms what it receives (apps since 2026-10-05)
-  device?: string // the app's own id for this device: outlives a rotated subscription (apps since 2026-10-06)
+  time: string // "19:00", device-local
+  timeZone: string // IANA zone from the device, e.g. "Europe/Bratislava"
+  language?: 'en' // the app's language; missing = Slovak
 }
 
-/** What the phone last reported, computed in its local time. */
+/** What the device last reported, computed in its local time. */
 export interface ReminderProgress {
   day: string // "2026-09-27"
   done: number // right answers + reviews that day
@@ -33,36 +34,57 @@ export interface ReminderProgress {
   activeToday: boolean
 }
 
-/** The last cron tick: when it came and what it decided ("sent", "goal-met", "no-subscription"…). */
+/** A cron tick, or the tick's last word on one device: when, and what it decided ("sent", "goal-met"…). */
 export interface LastTick {
   at: string // ISO time
   reason: string
 }
 
 /**
- * The last message handed to the push service, and what the phone said about it. The push service
- * accepting a message says nothing about the phone getting it: only the phone can tell.
+ * The last message handed to the push service, and what the device said about it. The push service
+ * accepting a message says nothing about the device getting it: only the device can tell.
  */
 export interface Delivery {
   kind: 'reminder' | 'test'
   sentAt: string // ISO time; also the id the message carries and its receipt answers to
-  receipts: boolean // the phone's app is one that confirms: without it, silence means nothing
+  receipts: boolean // the device's app is one that confirms: without it, silence means nothing
   receivedAt?: string // the service worker got the message
-  shown?: boolean // … and Android took the notification
+  shown?: boolean // … and the system took the notification
   error?: string // why not
 }
 
-/** What the server knows, for "Stav pripomienky" in the app. The subscription itself is never included. */
+/** One device that has the reminder on (a row of push_devices). */
+export interface DeviceRow {
+  device: string // the app's own id for the device: outlives a rotated subscription
+  userId: string | null // the account signed in on it
+  endpoint: string
+  p256dh: string
+  auth: string
+  time: string
+  timeZone: string
+  language: 'sk' | 'en'
+  receipts: boolean // its service worker confirms what it receives
+  progress: ReminderProgress | null
+  handledDay: string | null // local day the reminder was sent, or skipped because the goal was met
+  sentDay: string | null // local day of the last reminder sent
+  delivery: Delivery | null
+  lastDecision: LastTick | null
+  testAt: string | null // the last test notification
+  testLater: boolean // a test waits for the next tick
+  seenAt: string // the last subscribe or progress report
+}
+
+/** What the server knows about the asking device, for "Stav pripomienky". The subscription is never included. */
 export interface ReminderStatus {
-  subscribed: boolean // the server has a device to remind
-  thisDevice: boolean // … and it is the one asking
+  subscribed: boolean // the server reminds this device
   time: string | null
   timeZone: string | null
   serverClock: { day: string; time: string } | null // now, in that time zone
   sentDay: string | null // day of the last reminder sent
   progress: ReminderProgress | null
-  lastTick: LastTick | null
-  dropped: boolean // no device because the push service dropped its subscription
+  lastTick: LastTick | null // the cron's last call (for every device)
+  lastDecision: LastTick | null // what that call, or an earlier one, decided for this device
+  dropped: boolean // not reminded because the push service dropped its subscription
   delivery: Delivery | null
   testPending: boolean // a test notification waits for the next tick
 }
@@ -88,6 +110,17 @@ const WINDOW_MINUTES = 120
 const LAST_MINUTE = 23 * 60 + 59
 const DEFAULT_GOAL = 20
 
+/** Devices the server keeps at most; a new one beyond it is refused. */
+export const MAX_DEVICES = 50_000
+/** New devices from one IP address in an hour. */
+export const NEW_DEVICES_PER_HOUR = 20
+/** Devices one tick looks at; the rest wait for the next tick (the window gives eight). */
+export const TICK_LIMIT = 500
+/** A tick stops taking devices after this long (maxDuration in vercel.json is 60 s). */
+export const TICK_BUDGET_MS = 45_000
+export const SEND_CONCURRENCY = 20
+const TEST_EVERY_MS = 60_000
+
 // ---------- validation (requests and stored data) ----------
 
 const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null
@@ -106,21 +139,27 @@ export function isTimeZone(v: unknown): v is string {
   }
 }
 
+/** The push services of Chrome, Firefox, Safari and Edge: the server sends nowhere else. */
+const PUSH_HOSTS = ['fcm.googleapis.com', 'push.services.mozilla.com', 'web.push.apple.com', 'notify.windows.com']
+
+export function isPushHost(endpoint: string): boolean {
+  try {
+    const url = new URL(endpoint)
+    return url.protocol === 'https:' && PUSH_HOSTS.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`))
+  } catch {
+    return false
+  }
+}
+
 export function isPushSub(v: unknown): v is PushSub {
-  if (!isRecord(v) || typeof v.endpoint !== 'string' || !v.endpoint.startsWith('https://') || !isRecord(v.keys)) return false
+  if (!isRecord(v) || typeof v.endpoint !== 'string' || !isPushHost(v.endpoint) || !isRecord(v.keys)) return false
   return typeof v.keys.p256dh === 'string' && typeof v.keys.auth === 'string'
 }
 
-const isDevice = (v: unknown): v is string => typeof v === 'string' && /^[\w-]{8,64}$/.test(v)
+export const isDevice = (v: unknown): v is string => typeof v === 'string' && /^[\w-]{8,64}$/.test(v)
 
 export const isReminderSub = (v: unknown): v is ReminderSub =>
-  isRecord(v) &&
-  isPushSub(v.subscription) &&
-  isTime(v.time) &&
-  isTimeZone(v.timeZone) &&
-  (v.language === undefined || v.language === 'en') &&
-  (v.receipts === undefined || v.receipts === true) &&
-  (v.device === undefined || isDevice(v.device))
+  isRecord(v) && isPushSub(v.subscription) && isTime(v.time) && isTimeZone(v.timeZone) && (v.language === undefined || v.language === 'en')
 
 export const isProgress = (v: unknown): v is ReminderProgress =>
   isRecord(v) &&
@@ -177,6 +216,19 @@ export function todayView(progress: ReminderProgress | null, day: string): Today
   return { done: 0, goal: progress?.goal ?? DEFAULT_GOAL, due: null, streak: 0 }
 }
 
+/**
+ * The report to judge a device of an account by: every device knows only what it has synced, so of the
+ * reports from `day` the one with the most done (the best lower bound), else the same of yesterday's.
+ */
+export function bestProgress(own: ReminderProgress | null, others: ReminderProgress[], day: string): ReminderProgress | null {
+  const reports = own ? [own, ...others] : others
+  for (const wanted of [day, previousDay(day)]) {
+    const best = reports.filter((p) => p.day === wanted).sort((a, b) => b.done - a.done)[0]
+    if (best) return best
+  }
+  return own
+}
+
 /** Slovak plural form: 1 deň, 2–4 dni, 5+ dní (same as src/lib/text.ts). */
 function pluralSk(count: number, [one, few, many]: [string, string, string]): string {
   if (count === 1) return one
@@ -215,67 +267,221 @@ export function composeMessage(view: TodayView, language?: 'sk' | 'en'): Message
 export const TEST_MESSAGE: Message = { title: 'SOMOS', body: 'Skúšobná notifikácia — pripomienky fungujú ✓' }
 export const TEST_MESSAGE_EN: Message = { title: 'SOMOS', body: 'Test notification — reminders work ✓' }
 
-/** Whether the tick at `now` should send today's reminder. */
-export function decide(now: Date, sub: ReminderSub, progress: ReminderProgress | null, sentDay: string | null): Decision {
+const testMessage = (row: DeviceRow) => (row.language === 'en' ? TEST_MESSAGE_EN : TEST_MESSAGE)
+
+/** Whether the tick at `now` should send today's reminder. `handledDay`: the day it was already sent or skipped. */
+export function decide(now: Date, sub: ReminderSub, progress: ReminderProgress | null, handledDay: string | null): Decision {
   const { day, minutes } = localClock(now, sub.timeZone)
   const start = toMinutes(sub.time)
   if (minutes < start) return { send: false, reason: 'too-early' }
   if (minutes > Math.min(start + WINDOW_MINUTES, LAST_MINUTE)) return { send: false, reason: 'too-late' }
-  if (sentDay === day) return { send: false, reason: 'already-sent' }
+  if (handledDay === day) return { send: false, reason: 'already-sent' }
   const view = todayView(progress, day)
   if (view.done >= view.goal) return { send: false, reason: 'goal-met' }
   return { send: true, day, message: composeMessage(view, sub.language) }
 }
 
-// ---------- storage: Upstash Redis over REST ----------
+export const subOf = (row: DeviceRow): ReminderSub => ({
+  subscription: { endpoint: row.endpoint, keys: { p256dh: row.p256dh, auth: row.auth } },
+  time: row.time,
+  timeZone: row.timeZone,
+  ...(row.language === 'en' ? { language: 'en' as const } : {}),
+})
 
-export const KEYS = {
-  sub: 'somos:reminder:sub',
-  progress: 'somos:reminder:progress',
-  sent: 'somos:reminder:sent', // day key of the last reminder sent
-  test: 'somos:reminder:test', // exists for 60 s after a test notification
-  gone: 'somos:reminder:gone', // endpoint the push service dropped: the app must replace it, not re-register it
-  tick: 'somos:reminder:tick', // LastTick
-  delivery: 'somos:reminder:delivery', // Delivery
-  testLater: 'somos:reminder:test-later', // exists until the next tick has sent the test asked for
-} as const
+// ---------- storage ----------
 
-export interface Store {
-  mget(keys: string[]): Promise<(string | null)[]>
-  set(key: string, value: string): Promise<void>
-  del(key: string): Promise<void>
-  /** SET … EX ttl NX: true when the key did not exist yet. */
-  setIfAbsent(key: string, value: string, ttlSeconds: number): Promise<boolean>
+export interface DeviceStore {
+  byEndpoint(endpoint: string): Promise<DeviceRow | null>
+  byDevice(device: string): Promise<DeviceRow | null>
+  /** Stores the device's row; another row still holding its endpoint goes. */
+  save(row: DeviceRow): Promise<void>
+  update(device: string, fields: Partial<DeviceRow>): Promise<void>
+  remove(device: string): Promise<void>
+  /** Devices inside their window and not handled today, and those with a test waiting (reminders_due). */
+  due(now: Date, limit: number): Promise<DeviceRow[]>
+  /** The last reports of every device of these accounts. */
+  reportsOf(userIds: string[]): Promise<{ userId: string; device: string; progress: ReminderProgress }[]>
+  isGone(endpoint: string): Promise<boolean>
+  markGone(endpoint: string): Promise<void>
+  lastTick(): Promise<LastTick | null>
+  recordTick(tick: LastTick & { sent: number }): Promise<void>
+  count(): Promise<number>
+  /** Counts one new device for `key` this hour: false once over `limit`. */
+  rateHit(key: string, limit: number): Promise<boolean>
+  cleanup(): Promise<void>
 }
 
-export function upstashStore(url: string, token: string, fetchImpl: typeof fetch = fetch): Store {
-  const run = async (command: (string | number)[]): Promise<unknown> => {
-    const res = await fetchImpl(url, { method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: JSON.stringify(command) })
-    const data = (await res.json().catch(() => ({}))) as { result?: unknown; error?: string }
-    if (!res.ok || data.error) throw new Error(`Upstash ${command[0]} failed: ${data.error ?? res.status}`)
-    return data.result
-  }
+const EMPTY_STATE = {
+  progress: null,
+  handledDay: null,
+  sentDay: null,
+  delivery: null,
+  lastDecision: null,
+  testAt: null,
+  testLater: false,
+} satisfies Partial<DeviceRow>
+
+/** Columns of push_devices, by DeviceRow field. */
+const COLUMNS = {
+  device: 'device',
+  userId: 'user_id',
+  endpoint: 'endpoint',
+  p256dh: 'p256dh',
+  auth: 'auth',
+  time: 'time',
+  timeZone: 'time_zone',
+  language: 'language',
+  receipts: 'receipts',
+  progress: 'progress',
+  handledDay: 'handled_day',
+  sentDay: 'sent_day',
+  delivery: 'delivery',
+  lastDecision: 'last_decision',
+  testAt: 'test_at',
+  testLater: 'test_later',
+  seenAt: 'seen_at',
+} as const satisfies Record<keyof DeviceRow, string>
+
+const str = (v: unknown) => (typeof v === 'string' ? v : null)
+const valid = <T>(v: unknown, isValid: (x: unknown) => x is T): T | null => (isValid(v) ? v : null)
+
+/** A row as PostgREST returns it; stored JSON that no longer validates counts as missing. */
+export function toDeviceRow(r: unknown): DeviceRow | null {
+  if (!isRecord(r)) return null
+  const { device, endpoint, p256dh, auth, time, time_zone: timeZone } = r
+  if (typeof device !== 'string' || typeof endpoint !== 'string' || typeof p256dh !== 'string' || typeof auth !== 'string') return null
+  if (typeof time !== 'string' || typeof timeZone !== 'string') return null
   return {
-    mget: async (keys) => (await run(['MGET', ...keys])) as (string | null)[],
-    set: async (key, value) => {
-      await run(['SET', key, value])
-    },
-    del: async (key) => {
-      await run(['DEL', key])
-    },
-    setIfAbsent: async (key, value, ttlSeconds) => (await run(['SET', key, value, 'EX', ttlSeconds, 'NX'])) === 'OK',
+    device,
+    userId: str(r.user_id),
+    endpoint,
+    p256dh,
+    auth,
+    time,
+    timeZone,
+    language: r.language === 'en' ? 'en' : 'sk',
+    receipts: r.receipts === true,
+    progress: valid(r.progress, isProgress),
+    handledDay: str(r.handled_day),
+    sentDay: str(r.sent_day),
+    delivery: valid(r.delivery, isDelivery),
+    lastDecision: valid(r.last_decision, isLastTick),
+    testAt: str(r.test_at),
+    testLater: r.test_later === true,
+    seenAt: str(r.seen_at) ?? new Date(0).toISOString(),
   }
 }
 
-/** Stored JSON that no longer parses or validates counts as missing. */
-function parseStored<T>(raw: string | null | undefined, isValid: (v: unknown) => v is T): T | null {
-  if (!raw) return null
-  try {
-    const value: unknown = JSON.parse(raw)
-    return isValid(value) ? value : null
-  } catch {
-    return null
+export function fromDeviceRow(fields: Partial<DeviceRow>): Record<string, unknown> {
+  const out: Record<string, unknown> = {}
+  for (const [field, column] of Object.entries(COLUMNS)) {
+    const value = fields[field as keyof DeviceRow]
+    if (value !== undefined) out[column] = value
   }
+  return out
+}
+
+/**
+ * Supabase's REST API (PostgREST) with the service role key, so the function needs no supabase-js.
+ * A new secret key (sb_secret_…) goes only in `apikey`; a legacy one is a JWT and also the bearer.
+ */
+export function supabaseStore(url: string, key: string, fetchImpl: typeof fetch = fetch): DeviceStore {
+  const base = url.replace(/\/+$/, '')
+  const auth = key.startsWith('eyJ') ? { Authorization: `Bearer ${key}` } : {}
+  const call = async (path: string, init: { method?: string; body?: unknown; prefer?: string } = {}): Promise<Response> => {
+    const res = await fetchImpl(`${base}/rest/v1/${path}`, {
+      method: init.method ?? 'GET',
+      headers: { apikey: key, ...auth, 'Content-Type': 'application/json', ...(init.prefer ? { Prefer: init.prefer } : {}) },
+      body: init.body === undefined ? undefined : JSON.stringify(init.body),
+    })
+    if (!res.ok) {
+      const data = (await res.json().catch(() => ({}))) as { message?: string }
+      throw new Error(`Supabase ${path.split('?')[0]} failed: ${data.message ?? res.status}`)
+    }
+    return res
+  }
+  const json = async (res: Response): Promise<unknown> => {
+    const text = await res.text()
+    return text ? (JSON.parse(text) as unknown) : null
+  }
+  const rows = async (res: Response) => {
+    const data = await json(res)
+    return Array.isArray(data) ? data.flatMap((r) => toDeviceRow(r) ?? []) : []
+  }
+  const eq = (value: string) => `eq.${encodeURIComponent(value)}`
+  const quiet = 'return=minimal'
+
+  return {
+    byEndpoint: async (endpoint) => (await rows(await call(`push_devices?endpoint=${eq(endpoint)}&select=*`)))[0] ?? null,
+    byDevice: async (device) => (await rows(await call(`push_devices?device=${eq(device)}&select=*`)))[0] ?? null,
+    save: async (row) => {
+      await call(`push_devices?endpoint=${eq(row.endpoint)}&device=neq.${encodeURIComponent(row.device)}`, { method: 'DELETE', prefer: quiet })
+      await call('push_devices', { method: 'POST', body: fromDeviceRow(row), prefer: `resolution=merge-duplicates,${quiet}` })
+    },
+    update: async (device, fields) => {
+      if (Object.keys(fields).length) await call(`push_devices?device=${eq(device)}`, { method: 'PATCH', body: fromDeviceRow(fields), prefer: quiet })
+    },
+    remove: async (device) => {
+      await call(`push_devices?device=${eq(device)}`, { method: 'DELETE', prefer: quiet })
+    },
+    due: async (now, limit) => rows(await call('rpc/reminders_due', { method: 'POST', body: { p_now: now.toISOString(), p_limit: limit } })),
+    reportsOf: async (userIds) => {
+      if (!userIds.length) return []
+      const ids = userIds.map(encodeURIComponent).join(',')
+      const data = await json(await call(`push_devices?user_id=in.(${ids})&progress=not.is.null&select=device,user_id,progress`))
+      if (!Array.isArray(data)) return []
+      return data.flatMap((r: unknown) =>
+        isRecord(r) && typeof r.user_id === 'string' && typeof r.device === 'string' && isProgress(r.progress)
+          ? [{ userId: r.user_id, device: r.device, progress: r.progress }]
+          : [],
+      )
+    },
+    isGone: async (endpoint) => {
+      const data = await json(await call(`push_gone?endpoint=${eq(endpoint)}&select=endpoint`))
+      return Array.isArray(data) && data.length > 0
+    },
+    markGone: async (endpoint) => {
+      await call('push_gone', { method: 'POST', body: { endpoint }, prefer: `resolution=ignore-duplicates,${quiet}` })
+    },
+    lastTick: async () => {
+      const data = await json(await call('push_ticks?id=eq.1&select=at,reason'))
+      return Array.isArray(data) ? valid(data[0], isLastTick) : null
+    },
+    recordTick: async ({ at, reason, sent }) => {
+      await call('push_ticks', { method: 'POST', body: { id: 1, at, reason, sent }, prefer: `resolution=merge-duplicates,${quiet}` })
+    },
+    count: async () => {
+      const res = await call('push_devices?select=device', { method: 'HEAD', prefer: 'count=exact' })
+      // "0-24/1234", or "*/0" for an empty table.
+      const total = Number(res.headers.get('content-range')?.split('/')[1])
+      return Number.isFinite(total) ? total : 0
+    },
+    rateHit: async (rateKey, limit) => (await json(await call('rpc/push_rate_hit', { method: 'POST', body: { p_key: rateKey, p_limit: limit } }))) === true,
+    cleanup: async () => {
+      await call('rpc/push_cleanup', { method: 'POST', body: {} })
+    },
+  }
+}
+
+/** The account of a Supabase access token; null when it cannot be told (expired, invalid, Supabase down). */
+export function supabaseUser(url: string, key: string, fetchImpl: typeof fetch = fetch): (token: string) => Promise<string | null> {
+  const base = url.replace(/\/+$/, '')
+  return async (token) => {
+    try {
+      const res = await fetchImpl(`${base}/auth/v1/user`, { headers: { apikey: key, Authorization: `Bearer ${token}` } })
+      if (!res.ok) return null
+      const data = (await res.json()) as { id?: unknown }
+      return typeof data.id === 'string' ? data.id : null
+    } catch {
+      return null
+    }
+  }
+}
+
+/** The key the per-IP limit counts under: a hash, the address itself is never stored. */
+export function ipKey(request: Request): string {
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
+  return createHash('sha256').update(`somos-reminder:${ip}`).digest('hex')
 }
 
 // ---------- sending ----------
@@ -308,35 +514,38 @@ export function webPushSender(privateKey: string): Sender {
 }
 
 export interface Deps {
-  store: Store
+  store: DeviceStore
   send: Sender
   now: () => Date
   cronSecret: string
+  /** The account of a Supabase access token, or null when it cannot be told. */
+  userOf: (token: string) => Promise<string | null>
+  ipOf: (request: Request) => string
+  /** Milliseconds for the tick's time budget; Date.now unless a test drives it. */
+  clock?: () => number
 }
 
-type Outcome = 'sent' | 'gone' | 'failed'
+type Sent = { outcome: 'sent'; delivery: Delivery } | { outcome: 'gone' | 'failed' }
 
 const statusOf = (error: unknown) => (isRecord(error) && typeof error.statusCode === 'number' ? error.statusCode : undefined)
 
-/** Sends a message and notes it as the last one sent; forgets a subscription the push service no longer knows. */
-async function deliver(deps: Deps, sub: ReminderSub, message: Message, kind: Delivery['kind']): Promise<Outcome> {
+/** Sends a message; forgets a device whose subscription the push service no longer knows. */
+async function deliver(deps: Deps, row: DeviceRow, message: Message, kind: Delivery['kind']): Promise<Sent> {
   try {
     const sentAt = deps.now().toISOString()
     // `id` is what the service worker's receipt names; `lang` tells it how to mark the notification (Slovak is its default).
-    const payload = { ...message, url: '/', id: sentAt, ...(sub.language === 'en' ? { lang: 'en' } : {}) }
-    await deps.send(sub.subscription, JSON.stringify(payload), { ttl: REMINDER_TTL, topic: kind, urgency: REMINDER_URGENCY })
-    const delivery: Delivery = { kind, sentAt, receipts: sub.receipts === true }
-    await deps.store.set(KEYS.delivery, JSON.stringify(delivery))
-    return 'sent'
+    const payload = { ...message, url: '/', id: sentAt, ...(row.language === 'en' ? { lang: 'en' } : {}) }
+    await deps.send(subOf(row).subscription, JSON.stringify(payload), { ttl: REMINDER_TTL, topic: kind, urgency: REMINDER_URGENCY })
+    return { outcome: 'sent', delivery: { kind, sentAt, receipts: row.receipts } }
   } catch (error) {
     const status = statusOf(error)
     if (status === 404 || status === 410) {
-      await deps.store.del(KEYS.sub)
-      await deps.store.set(KEYS.gone, sub.subscription.endpoint)
-      return 'gone'
+      await deps.store.remove(row.device)
+      await deps.store.markGone(row.endpoint)
+      return { outcome: 'gone' }
     }
     console.error('push failed', status ?? error)
-    return 'failed'
+    return { outcome: 'failed' }
   }
 }
 
@@ -344,7 +553,7 @@ async function deliver(deps: Deps, sub: ReminderSub, message: Message, kind: Del
 
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
 
-/** Browsers send Origin on POST: only pages of this same deployment may change the reminder. */
+/** Browsers send Origin on POST: only pages of this same deployment may change a reminder. */
 function sameOrigin(request: Request): boolean {
   const origin = request.headers.get('origin')
   if (!origin) return false
@@ -355,106 +564,167 @@ function sameOrigin(request: Request): boolean {
   }
 }
 
-async function tick(deps: Deps): Promise<Response> {
-  const [rawSub, rawProgress, sentDay, testLater] = await deps.store.mget([KEYS.sub, KEYS.progress, KEYS.sent, KEYS.testLater])
-  const now = deps.now()
-  // Remembered so the app can show that the cron comes and what it decided.
-  const done = async (sent: boolean, reason: string, status = 200) => {
-    const lastTick: LastTick = { at: now.toISOString(), reason }
-    await deps.store.set(KEYS.tick, JSON.stringify(lastTick))
-    return json({ sent, reason }, status)
-  }
-  const sub = parseStored(rawSub, isReminderSub)
-  if (!sub) return done(false, 'no-subscription')
+const bearer = (request: Request) => /^Bearer (\S+)$/.exec(request.headers.get('authorization') ?? '')?.[1]
+
+/** One device in a tick: a test asked for later, then today's reminder. */
+async function remind(deps: Deps, row: DeviceRow, reports: { userId: string; device: string; progress: ReminderProgress }[], now: Date): Promise<string> {
+  const fields: Partial<DeviceRow> = {}
   // A test the learner asked to get later, with the app closed and the phone asleep: the real conditions.
-  if (testLater) {
-    await deps.store.del(KEYS.testLater)
-    const result = await deliver(deps, sub, sub.language === 'en' ? TEST_MESSAGE_EN : TEST_MESSAGE, 'test')
-    if (result === 'gone') return done(false, 'gone')
+  if (row.testLater) {
+    fields.testLater = false
+    const test = await deliver(deps, row, testMessage(row), 'test')
+    if (test.outcome === 'gone') return 'gone'
+    if (test.outcome === 'sent') fields.delivery = test.delivery
   }
-  const decision = decide(now, sub, parseStored(rawProgress, isProgress), sentDay ?? null)
-  if (!decision.send) return done(false, decision.reason)
-  const result = await deliver(deps, sub, decision.message, 'reminder')
-  if (result === 'sent') await deps.store.set(KEYS.sent, decision.day)
-  return done(result === 'sent', result, result === 'failed' ? 502 : 200)
+  // The daily goal counts for the whole account: practice on the tablet keeps the phone quiet.
+  const others = row.userId ? reports.filter((r) => r.userId === row.userId && r.device !== row.device).map((r) => r.progress) : []
+  const { day } = localClock(now, row.timeZone)
+  const decision = decide(now, subOf(row), bestProgress(row.progress, others, day), row.handledDay)
+  let reason: string
+  if (!decision.send) {
+    reason = decision.reason
+    if (reason === 'goal-met') fields.handledDay = day
+  } else {
+    const result = await deliver(deps, row, decision.message, 'reminder')
+    if (result.outcome === 'gone') return 'gone'
+    reason = result.outcome
+    if (result.outcome === 'sent') Object.assign(fields, { delivery: result.delivery, handledDay: decision.day, sentDay: decision.day })
+  }
+  fields.lastDecision = { at: now.toISOString(), reason }
+  await deps.store.update(row.device, fields)
+  return reason
+}
+
+async function tick(deps: Deps): Promise<Response> {
+  const now = deps.now()
+  const clock = deps.clock ?? Date.now
+  const started = clock()
+  const rows = await deps.store.due(now, TICK_LIMIT)
+  const userIds = [...new Set(rows.flatMap((r) => (r.userId ? [r.userId] : [])))]
+  const reports = userIds.length ? await deps.store.reportsOf(userIds) : []
+
+  let sent = 0
+  let partial = rows.length === TICK_LIMIT // more may be waiting
+  const queue = [...rows]
+  const worker = async () => {
+    for (let row = queue.shift(); row; row = queue.shift()) {
+      // Out of time: the rest stay unhandled, and the next tick is still inside their window.
+      if (clock() - started > TICK_BUDGET_MS) {
+        partial = true
+        queue.length = 0
+        return
+      }
+      try {
+        if ((await remind(deps, row, reports, now)) === 'sent') sent++
+      } catch (error) {
+        console.error('reminder failed for a device', error)
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(SEND_CONCURRENCY, rows.length) }, worker))
+
+  // Once a day, at the first tick after 03:00 UTC.
+  if (now.getUTCHours() === 3 && now.getUTCMinutes() < 15) await deps.store.cleanup()
+  const reason = rows.length === 0 ? 'nothing-due' : partial ? 'partial' : 'done'
+  await deps.store.recordTick({ at: now.toISOString(), reason, sent })
+  return json({ sent, reason })
+}
+
+async function subscribe(request: Request, body: Record<string, unknown>, deps: Deps): Promise<Response> {
+  const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone }
+  if (!isReminderSub(sub) || !isDevice(body.device)) return json({ error: 'bad-request' }, 400)
+  const { endpoint, keys } = sub.subscription
+  // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
+  if (await deps.store.isGone(endpoint)) return json({ error: 'gone' }, 410)
+  // The same device with a new subscription, or a subscription that moved to a new device id (storage cleared).
+  const existing = (await deps.store.byDevice(body.device)) ?? (await deps.store.byEndpoint(endpoint))
+  // Only a new device counts toward the limits: every app checks in at every start.
+  if (!existing) {
+    if ((await deps.store.count()) >= MAX_DEVICES) return json({ error: 'full' }, 503)
+    if (!(await deps.store.rateHit(deps.ipOf(request), NEW_DEVICES_PER_HOUR))) return json({ error: 'too-many-devices' }, 429)
+  }
+  // Signed in: the device counts its practice with the account's other devices. A token that cannot be
+  // checked right now keeps the link as it was; no token means signed out.
+  const token = bearer(request)
+  const userId = token ? ((await deps.userOf(token)) ?? existing?.userId ?? null) : null
+  const row: DeviceRow = {
+    ...EMPTY_STATE,
+    ...existing,
+    device: body.device,
+    userId,
+    endpoint,
+    p256dh: keys.p256dh,
+    auth: keys.auth,
+    time: sub.time,
+    timeZone: sub.timeZone,
+    language: body.language === 'en' ? 'en' : 'sk',
+    receipts: body.receipts === true,
+    seenAt: deps.now().toISOString(),
+  }
+  await deps.store.save(row)
+  return json({ ok: true })
 }
 
 async function handlePost(request: Request, deps: Deps): Promise<Response> {
   if (!sameOrigin(request)) return json({ error: 'forbidden' }, 403)
   const body: unknown = await request.json().catch(() => undefined)
   if (!isRecord(body)) return json({ error: 'bad-request' }, 400)
+  if (body.type === 'subscribe') return subscribe(request, body, deps)
 
-  const [rawSub, goneEndpoint, rawDelivery, testLater] = await deps.store.mget([KEYS.sub, KEYS.gone, KEYS.delivery, KEYS.testLater])
-  const stored = parseStored(rawSub, isReminderSub)
-  const delivery = parseStored(rawDelivery, isDelivery)
-  // Only the device that gets the reminders may change or feed them.
-  const fromStoredDevice = typeof body.endpoint === 'string' && stored?.subscription.endpoint === body.endpoint
+  // Every other request names its device by the endpoint, which only the browser and the push service know.
+  const endpoint = typeof body.endpoint === 'string' ? body.endpoint : null
+  const row = endpoint ? await deps.store.byEndpoint(endpoint) : null
+  const now = deps.now()
 
   switch (body.type) {
-    case 'subscribe': {
-      // Anything but English is Slovak, and stored as before.
-      const language = body.language === 'en' ? { language: 'en' as const } : {}
-      const receipts = body.receipts === true ? { receipts: true as const } : {}
-      const device = isDevice(body.device) ? { device: body.device } : {}
-      const sub = { subscription: body.subscription, time: body.time, timeZone: body.timeZone, ...language, ...receipts, ...device }
-      if (!isReminderSub(sub)) return json({ error: 'bad-request' }, 400)
-      // There is one device to remind. An app that only checks in (at its start, back in front) must not take
-      // the reminders from the device that has them: whoever opened the app last would get them. Turning the
-      // reminder on, changing its time or sending a test is the learner saying "here", and moves them.
-      if (stored && sub.device && body.takeOver !== true) {
-        const sameDevice = stored.device ? stored.device === sub.device : stored.subscription.endpoint === sub.subscription.endpoint
-        if (!sameDevice) return json({ error: 'other-device' }, 409)
-      }
-      // Chrome may still hold a subscription the push service dropped; 410 tells the app to make a new one.
-      if (sub.subscription.endpoint === goneEndpoint) return json({ error: 'gone' }, 410)
-      const { endpoint, keys } = sub.subscription
-      const clean: ReminderSub = { subscription: { endpoint, keys: { p256dh: keys.p256dh, auth: keys.auth } }, time: sub.time, timeZone: sub.timeZone, ...language, ...receipts, ...device }
-      await deps.store.set(KEYS.sub, JSON.stringify(clean))
-      return json({ ok: true })
-    }
     case 'unsubscribe':
-      if (fromStoredDevice) await deps.store.del(KEYS.sub)
+      if (row) await deps.store.remove(row.device)
       return json({ ok: true })
     case 'progress':
       if (!isProgress(body.progress)) return json({ error: 'bad-request' }, 400)
-      if (fromStoredDevice) await deps.store.set(KEYS.progress, JSON.stringify(body.progress))
+      if (row) await deps.store.update(row.device, { progress: body.progress, seenAt: now.toISOString() })
       return json({ ok: true })
     case 'test': {
-      if (!stored || !fromStoredDevice) return json({ error: 'not-subscribed' }, 409)
-      if (!(await deps.store.setIfAbsent(KEYS.test, '1', 60))) return json({ error: 'too-many' }, 429)
-      const result = await deliver(deps, stored, stored.language === 'en' ? TEST_MESSAGE_EN : TEST_MESSAGE, 'test')
-      if (result === 'sent') return json({ ok: true })
-      return json({ error: result }, result === 'gone' ? 410 : 502)
+      if (!row) return json({ error: 'not-subscribed' }, 409)
+      if (row.testAt && now.getTime() - new Date(row.testAt).getTime() < TEST_EVERY_MS) return json({ error: 'too-many' }, 429)
+      await deps.store.update(row.device, { testAt: now.toISOString() })
+      const result = await deliver(deps, row, testMessage(row), 'test')
+      if (result.outcome === 'sent') {
+        await deps.store.update(row.device, { delivery: result.delivery })
+        return json({ ok: true })
+      }
+      return json({ error: result.outcome }, result.outcome === 'gone' ? 410 : 502)
     }
     case 'test-later':
-      if (!stored || !fromStoredDevice) return json({ error: 'not-subscribed' }, 409)
-      await deps.store.set(KEYS.testLater, '1')
+      if (!row) return json({ error: 'not-subscribed' }, 409)
+      await deps.store.update(row.device, { testLater: true })
       return json({ ok: true })
     case 'received': {
       if (typeof body.id !== 'string' || typeof body.shown !== 'boolean') return json({ error: 'bad-request' }, 400)
-      // Only the phone the message went to, and only about the message that is the last one sent.
-      if (fromStoredDevice && delivery?.sentAt === body.id) {
+      // Only about the message that is the last one sent to this device.
+      const delivery = row?.delivery
+      if (row && delivery?.sentAt === body.id) {
         const error = typeof body.error === 'string' && !body.shown ? { error: body.error.slice(0, 200) } : {}
-        const receipt: Delivery = { kind: delivery.kind, sentAt: delivery.sentAt, receipts: delivery.receipts, receivedAt: deps.now().toISOString(), shown: body.shown, ...error }
-        await deps.store.set(KEYS.delivery, JSON.stringify(receipt))
+        const receipt: Delivery = { kind: delivery.kind, sentAt: delivery.sentAt, receipts: delivery.receipts, receivedAt: now.toISOString(), shown: body.shown, ...error }
+        await deps.store.update(row.device, { delivery: receipt })
       }
       return json({ ok: true })
     }
     case 'status': {
-      const [rawProgress, sentDay, rawTick] = await deps.store.mget([KEYS.progress, KEYS.sent, KEYS.tick])
-      const clock = stored ? localClock(deps.now(), stored.timeZone) : null
+      const [lastTick, dropped] = await Promise.all([deps.store.lastTick(), !row && endpoint ? deps.store.isGone(endpoint) : false])
+      const clock = row ? localClock(now, row.timeZone) : null
       const status: ReminderStatus = {
-        subscribed: stored !== null,
-        thisDevice: fromStoredDevice,
-        time: stored?.time ?? null,
-        timeZone: stored?.timeZone ?? null,
+        subscribed: row !== null,
+        time: row?.time ?? null,
+        timeZone: row?.timeZone ?? null,
         serverClock: clock && { day: clock.day, time: toTime(clock.minutes) },
-        sentDay: sentDay ?? null,
-        progress: parseStored(rawProgress, isProgress),
-        lastTick: parseStored(rawTick, isLastTick),
-        dropped: stored === null && Boolean(goneEndpoint),
-        delivery,
-        testPending: stored !== null && Boolean(testLater),
+        sentDay: row?.sentDay ?? null,
+        progress: row?.progress ?? null,
+        lastTick,
+        lastDecision: row?.lastDecision ?? null,
+        dropped,
+        delivery: row?.delivery ?? null,
+        testPending: row?.testLater ?? false,
       }
       return json({ ok: true, status })
     }
@@ -477,14 +747,21 @@ export async function handleReminder(request: Request, deps: Deps | undefined): 
   }
 }
 
-/** Upstash adds KV_REST_API_* or STORAGE_KV_REST_API_* when connected from the Vercel dashboard; UPSTASH_REDIS_REST_* is its own naming. */
+/** SUPABASE_URL, or the app's own VITE_SUPABASE_URL (Vercel gives functions every variable). */
 export function depsFromEnv(env: Record<string, string | undefined>): Deps | undefined {
-  const url = env.KV_REST_API_URL ?? env.UPSTASH_REDIS_REST_URL ?? env.STORAGE_KV_REST_API_URL
-  const token = env.KV_REST_API_TOKEN ?? env.UPSTASH_REDIS_REST_TOKEN ?? env.STORAGE_KV_REST_API_TOKEN
+  const url = env.SUPABASE_URL ?? env.VITE_SUPABASE_URL
+  const key = env.SUPABASE_SERVICE_ROLE_KEY ?? env.SUPABASE_SECRET_KEY
   const privateKey = env.VAPID_PRIVATE_KEY
   const cronSecret = env.CRON_SECRET
-  if (!url || !token || !privateKey || !cronSecret) return undefined
-  return { store: upstashStore(url, token), send: webPushSender(privateKey), now: () => new Date(), cronSecret }
+  if (!url || !key || !privateKey || !cronSecret) return undefined
+  return {
+    store: supabaseStore(url, key),
+    send: webPushSender(privateKey),
+    now: () => new Date(),
+    cronSecret,
+    userOf: supabaseUser(url, key),
+    ipOf: ipKey,
+  }
 }
 
 export function GET(request: Request): Promise<Response> {
