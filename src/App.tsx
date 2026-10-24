@@ -23,6 +23,9 @@ import { TestPage } from './features/tests/TestPage'
 import { TestsPage } from './features/tests/TestsPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
+import { OnboardingGate } from './features/onboarding/OnboardingGate'
+import { RestorePage } from './features/onboarding/RestorePage'
+import { WelcomePage } from './features/onboarding/WelcomePage'
 
 function LegacySettingsRedirect() {
   return <Navigate to={`/profile/${useParams().section ?? ''}`} replace />
@@ -44,7 +47,8 @@ const routes = [
     path: '/',
     element: <AppLayout />,
     children: [
-      { index: true, element: <HomePage /> },
+      // A new learner goes through the welcome first (src/lib/onboarding.ts).
+      { index: true, element: <OnboardingGate><HomePage /></OnboardingGate> },
       { path: 'stats', element: <StatsPage /> },
       { path: 'search', element: <SearchPage /> },
       { path: 'word/:id', element: <WordPage /> },
@@ -73,6 +77,8 @@ const routes = [
   { path: '/practice/test', element: <TestPage /> },
   { path: '/review', element: <ReviewPage /> },
   { path: '/duel/:code', element: <DuelRoomPage /> },
+  { path: '/welcome', element: <WelcomePage /> },
+  { path: '/welcome/restore', element: <RestorePage /> },
   ...(import.meta.env.DEV ? [{ path: '/dev/crash', element: <Crash /> }] : []),
 ]
 

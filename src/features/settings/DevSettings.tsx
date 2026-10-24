@@ -1,4 +1,4 @@
-import { Bug, PowerOff, Sun } from 'lucide-react'
+import { Bug, PartyPopper, PowerOff, Sun } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
@@ -7,6 +7,7 @@ import { celebrateGoal } from '../../lib/celebration'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { setDevMode } from '../../lib/devMode'
 import { errorReportsOn, reportError } from '../../lib/errorReports'
+import { resetOnboarding } from '../../lib/onboarding'
 import { reminderSupport } from '../../lib/reminder'
 import { playSound } from '../../lib/sound'
 import { StorageInfo } from './BackupSettings'
@@ -60,6 +61,21 @@ export function DevSettings() {
 
       <SettingsPart id="dev-storage" title={text.storage}>
         <StorageInfo />
+      </SettingsPart>
+
+      <SettingsPart id="dev-welcome" title={text.welcome}>
+        <Button
+          variant="secondary"
+          icon={PartyPopper}
+          onClick={() => {
+            resetOnboarding()
+            void navigate('/welcome')
+          }}
+          className="w-full"
+        >
+          {text.showWelcome}
+        </Button>
+        <SettingsHint>{text.showWelcomeHint}</SettingsHint>
       </SettingsPart>
 
       <SettingsPart id="dev-errors" title={text.errorReports}>

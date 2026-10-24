@@ -44,6 +44,7 @@ import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
+import { SaveProgressCard } from '../onboarding/SaveProgressCard'
 import { TaskView } from './tasks/TaskView'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
@@ -94,6 +95,8 @@ export function LessonPage() {
   const [params] = useSearchParams()
   const filter = useMemo(() => filterFromParams(params), [params])
   const fromMistakes = params.get('mistakes') === '1'
+  // The lesson the welcome ends in: closing it goes to Domov, and its result offers an account.
+  const firstLesson = params.get('first') === '1'
   const prepareKey = fromMistakes ? null : params.get('prepare')
   const preparing = parseTestKey(prepareKey) !== undefined
   const lessonParam = fromMistakes || preparing ? null : params.get('lesson')
@@ -188,7 +191,8 @@ export function LessonPage() {
   }, [index, tasks, overview])
 
   const exit = () => {
-    if (location.key !== 'default') void navigate(-1)
+    if (firstLesson) void navigate('/', { replace: true })
+    else if (location.key !== 'default') void navigate(-1)
     else {
       const test = parseTestKey(prepareKey)
       const fallback = fromMistakes ? '/archive?tab=mistakes' : test ? `/practice/test?${testToParams(test)}` : `/practice?${filterToParams(filter)}`
@@ -349,32 +353,35 @@ export function LessonPage() {
         ) : overview && runLesson !== undefined ? (
           <LessonOverview lessonNumber={runLesson} record={overview} tasks={tasks} />
         ) : finished ? (
-          <LessonResult
-            answers={answers}
-            fromMistakes={fromMistakes}
-            lessonNumber={runLesson}
-            lessonScore={runLesson !== undefined ? { score: solved.size, total: lessonTotal } : undefined}
-            isRetry={round === 'fix'}
-            totalLessons={totalLessons}
-            onRetryMistakes={() => {
-              start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, 'fix')
-            }}
-            onRepeatAll={() => {
-              if (lessonNumber !== undefined) {
-                void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
-              } else if (tasks) {
-                start(retryTasks(tasks))
-              }
-            }}
-            onNewLesson={() => {
-              void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => start(next, lessonNumber))
-            }}
-            onNextLesson={() => {
-              if (runLesson === undefined) return
-              void navigate(`/practice/lesson?${filterToParams(filter)}&lesson=${runLesson + 1}`, { replace: true })
-            }}
-            onExit={exit}
-          />
+          <>
+            {firstLesson && <SaveProgressCard />}
+            <LessonResult
+              answers={answers}
+              fromMistakes={fromMistakes}
+              lessonNumber={runLesson}
+              lessonScore={runLesson !== undefined ? { score: solved.size, total: lessonTotal } : undefined}
+              isRetry={round === 'fix'}
+              totalLessons={totalLessons}
+              onRetryMistakes={() => {
+                start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, 'fix')
+              }}
+              onRepeatAll={() => {
+                if (lessonNumber !== undefined) {
+                  void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
+                } else if (tasks) {
+                  start(retryTasks(tasks))
+                }
+              }}
+              onNewLesson={() => {
+                void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => start(next, lessonNumber))
+              }}
+              onNextLesson={() => {
+                if (runLesson === undefined) return
+                void navigate(`/practice/lesson?${filterToParams(filter)}&lesson=${runLesson + 1}`, { replace: true })
+              }}
+              onExit={exit}
+            />
+          </>
         ) : (
           task && (
             <>

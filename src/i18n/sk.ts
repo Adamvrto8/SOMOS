@@ -91,6 +91,9 @@ export const sk = {
       sendTestError: 'Poslať skúšobnú chybu',
       testErrorSent: 'Poslané. V Sentry sa objaví do pár minút a príde aj e-mail.',
       errorReportsOff: 'Hlásenia chýb nie sú zapnuté: na dev serveri sa neposielajú a nasadená aplikácia potrebuje VITE_SENTRY_DSN (docs/error-reports-setup.md).',
+      welcome: 'Uvítanie',
+      showWelcome: 'Ukázať uvítanie znova',
+      showWelcomeHint: 'Prejdeš ním ako nový používateľ. Pokrok ostane, denný cieľ a pripomienku z neho môžeš zmeniť.',
       build: 'Verzia aplikácie',
       commit: 'Commit',
       builtAt: 'Zostavená',
@@ -876,6 +879,91 @@ export const sk = {
   },
 
   /** The privacy policy (/privacy). Written by Claude; to be checked before a public release. */
+  // The welcome of a new learner (src/features/onboarding).
+  onboarding: {
+    progress: 'Postup úvodu',
+    skip: 'Preskočiť',
+    next: 'Pokračovať',
+    welcome: {
+      tagline: 'Mexická španielčina zo slovenčiny',
+      points: [
+        'Krátke lekcie podľa toho, čo už vieš',
+        'Slovník s výslovnosťou a časovaním slovies',
+        'Opakovanie v pravý čas, aby slová ostali v hlave',
+      ],
+      language: 'Jazyk aplikácie',
+      start: 'Začať',
+      haveAccount: 'Už mám účet',
+      consentBefore: 'Pokračovaním súhlasíš so',
+      consentLink: 'zásadami ochrany súkromia',
+    },
+    motivation: {
+      title: 'Prečo sa učíš španielčinu?',
+      hint: 'Podľa toho vyberieme, čím začneš.',
+      options: {
+        travel: 'Na cestovanie',
+        work: 'Kvôli práci',
+        family: 'Pre rodinu a priateľov',
+        school: 'Do školy',
+        hobbies: 'Pre záľuby a kultúru',
+        fun: 'Len tak, pre radosť',
+      },
+    },
+    level: {
+      title: 'Koľko španielčiny už vieš?',
+      hint: 'Úroveň lekcií zmeníš kedykoľvek v Cvičiť.',
+      options: {
+        A1: { label: 'Začínam od nuly', example: 'Hola, gracias – a to je zatiaľ všetko.' },
+        A2: { label: 'Poznám základy', example: 'Rozumiem: ¿Cómo estás? ¿De dónde eres?' },
+        B1: { label: 'Dohovorím sa', example: 'Poviem, čo som robil včera a čo zajtra.' },
+      },
+    },
+    goal: {
+      title: 'Koľko chceš denne cvičiť?',
+      hint: 'Denný cieľ sú správne odpovede za deň. Zmeníš ho v Profile.',
+      options: { 10: 'Pohodovo', 20: 'Bežne', 30: 'Vážne', 50: 'Naplno' } as Record<number, string>,
+      detail: (answers: number, minutes: number) => `${answers} odpovedí · asi ${minutes} min`,
+    },
+    reminder: {
+      title: 'Pripomenúť ti cvičenie?',
+      hint: 'Raz denne o zvolenom čase, iba ak ešte nemáš splnený cieľ. Pomáha to udržať si sériu.',
+      time: 'Kedy',
+      enable: 'Zapnúť pripomienku',
+      later: 'Teraz nie',
+    },
+    install: {
+      title: 'Pridaj si SOMOS na plochu',
+      hint: 'Otvorí sa ako aplikácia, bez lišty prehliadača, a funguje aj offline.',
+      add: 'Pridať na plochu',
+      later: 'Teraz nie',
+      iosSteps: ['Dole v Safari ťukni na Zdieľať (štvorček so šípkou).', 'Vyber „Pridať na plochu“.', 'Potvrď tlačidlom Pridať.'],
+    },
+    ready: {
+      title: 'Všetko je pripravené',
+      hint: 'Takto sa v aplikácii vyznáš:',
+      tabs: {
+        home: 'Čo ťa dnes čaká, séria a denný cieľ',
+        search: 'Slovník, témy a tvoje uložené slová',
+        practice: 'Lekcie, testy, chyby a duely',
+        profile: 'Štatistiky, účet a nastavenia',
+      },
+      start: 'Začať prvú lekciu',
+      first: (what: string) => `Prvá lekcia: ${what}`,
+    },
+    save: {
+      title: 'Ulož si pokrok',
+      hint: 'S účtom o pokrok neprídeš, ani keď vymeníš telefón, a máš ho na každom svojom zariadení.',
+      signIn: 'Vytvoriť účet alebo sa prihlásiť',
+      later: 'Neskôr',
+    },
+    restore: {
+      title: 'Sťahujem tvoj pokrok…',
+      failed: 'Pokrok sa nepodarilo stiahnuť. Skontroluj pripojenie.',
+      retry: 'Skúsiť znova',
+      skip: 'Pokračovať bez neho',
+    },
+  },
+
   privacy: {
     title: 'Ochrana súkromia',
     updated: 'Platné od 24. 10. 2026',

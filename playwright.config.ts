@@ -1,7 +1,8 @@
 import { defineConfig } from '@playwright/test'
 
 // Its own dev server: the one Adam keeps running on 5173 is never touched.
-const PORT = 5199
+// E2E_PORT lets a second copy of the repo (a worktree) run its suite next to this one.
+const PORT = Number(process.env.E2E_PORT ?? 5199)
 
 // Browser tests of the screens (e2e/): a phone-sized Chrome with touch, tapping like a finger.
 // `npm run test:e2e`. Unit tests of the logic stay in vitest (`npm test`).
@@ -22,6 +23,12 @@ export default defineConfig({
     hasTouch: true,
     isMobile: true,
     locale: 'sk-SK',
+    // The welcome is done: the tests open Domov as a learner who has been through it.
+    // e2e/onboarding.spec.ts starts from a new device instead.
+    storageState: {
+      cookies: [],
+      origins: [{ origin: `http://localhost:${PORT}`, localStorage: [{ name: 'somos-onboarding', value: '{"done":true}' }] }],
+    },
     // The tests only talk to localhost, so nothing may wait for the network: with a flaky DNS a fresh
     // Chrome looking for a proxy (WPAD), or the page fetching its Google Fonts, stalls the page load
     // until the test times out. Every other host fails to resolve at once.

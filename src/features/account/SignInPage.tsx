@@ -5,6 +5,7 @@ import { BackButton } from '../../components/BackButton'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { accountsAvailable, completeOAuth, sendCode, signInWithGoogle, useAccount, verifyCode } from '../../lib/account'
+import { takeReturnAfterSignIn } from '../../lib/onboarding'
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const FIELD =
@@ -24,7 +25,7 @@ function GoogleMark() {
 
 /**
  * Signing in: Google, or an e-mail and the 6-digit code sent to it. Google returns here with ?code=,
- * which finishes the sign-in. Signed in, it leads back to Nastavenia.
+ * which finishes the sign-in. Signed in, it leads back to Nastavenia (or to the welcome, see takeReturnAfterSignIn).
  */
 export function SignInPage() {
   const text = useT().account
@@ -39,7 +40,8 @@ export function SignInPage() {
   const [busy, setBusy] = useState(returning)
   const codeField = useRef<HTMLInputElement>(null)
 
-  const done = () => void navigate('/profile', { replace: true })
+  // Profil, or where the welcome or the first lesson sent the learner from.
+  const done = () => void navigate(takeReturnAfterSignIn() ?? '/profile', { replace: true })
 
   useEffect(() => {
     if (!returning || !accountsAvailable) return
