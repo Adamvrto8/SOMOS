@@ -140,7 +140,7 @@ describe('nextGoal', () => {
     expect(goal?.passed).toBe(goal?.total)
   })
 
-  it('moves on to the next level after its exam, and ends after B1', () => {
+  it('moves on to the next level after its exam, and ends after B2', () => {
     expect(nextGoal((key) => key === 'A1')?.level).toBe('A2')
     expect(nextGoal(() => true)).toBeUndefined()
   })

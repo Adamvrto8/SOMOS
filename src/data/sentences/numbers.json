@@ -253,5 +253,398 @@
         "distractors": ["Ahorro", "Ahorró", "Ahorraré"]
       }
     ]
+  },
+  {
+    "id": "s645",
+    "es": "Mi hijo tiene diecisiete años.",
+    "sk": "Môj syn má sedemnásť rokov.",
+    "level": "A1",
+    "topics": ["numbers", "family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "tiene", "diecisiete", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "diecisiete",
+        "lemma": "diecisiete",
+        "hint": "sedemnásť",
+        "distractors": ["dieciséis", "setenta", "siete"]
+      }
+    ]
+  },
+  {
+    "id": "s646",
+    "es": "Son dieciocho pesos, por favor.",
+    "sk": "Bude to osemnásť pesos, prosím.",
+    "level": "A1",
+    "topics": ["numbers", "shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Son", "dieciocho", "pesos", ",", "por", "favor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dieciocho",
+        "lemma": "dieciocho",
+        "hint": "osemnásť",
+        "distractors": ["ochenta", "ocho", "dieciséis"]
+      }
+    ]
+  },
+  {
+    "id": "s647",
+    "es": "Vivimos en el número diecinueve.",
+    "sk": "Bývame na čísle devätnásť.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Vivimos", "en", "el", "número", "diecinueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vivimos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · presente",
+        "distractors": ["Viven", "Vivo", "Vivíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s648",
+    "es": "Mi abuela tiene noventa años y camina todos los días.",
+    "sk": "Moja babka má deväťdesiat rokov a každý deň chodí na prechádzky.",
+    "level": "A1",
+    "topics": ["numbers", "family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "tiene", "noventa", "años", "y", "camina", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "noventa",
+        "lemma": "noventa",
+        "hint": "deväťdesiat",
+        "distractors": ["nueve", "nueva", "novecientos"]
+      }
+    ]
+  },
+  {
+    "id": "s649",
+    "es": "La entrada cuesta quinientos pesos.",
+    "sk": "Vstupné stojí päťsto pesos.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["La", "entrada", "cuesta", "quinientos", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quinientos",
+        "lemma": "quinientos",
+        "hint": "päťsto",
+        "distractors": ["quinientas", "cincocientos", "cincuenta"]
+      }
+    ]
+  },
+  {
+    "id": "s650",
+    "es": "Compré un par de zapatos.",
+    "sk": "Kúpil som si pár topánok.",
+    "level": "A2",
+    "topics": ["numbers", "clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Compré", "un", "par", "de", "zapatos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "par",
+        "lemma": "par",
+        "hint": "pár",
+        "distractors": ["parte", "docena", "mitad"]
+      }
+    ]
+  },
+  {
+    "id": "s651",
+    "es": "Llegó en quinto lugar.",
+    "sk": "Skončil na piatom mieste.",
+    "level": "A2",
+    "topics": ["numbers", "hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegó", "en", "quinto", "lugar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quinto",
+        "lemma": "quinto",
+        "hint": "piaty",
+        "distractors": ["cinco", "quinta", "cincuenta"]
+      }
+    ]
+  },
+  {
+    "id": "s652",
+    "es": "Son las cinco y cuarto.",
+    "sk": "Je štvrť na šesť.",
+    "level": "A2",
+    "topics": ["numbers", "time"],
+    "tokens": ["Son", "las", "cinco", "y", "cuarto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuarto",
+        "lemma": "cuarto",
+        "hint": "štvrť",
+        "distractors": ["cuatro", "cuarta", "mitad"]
+      }
+    ]
+  },
+  {
+    "id": "s653",
+    "es": "Doscientos cincuenta gramos de queso, por favor.",
+    "sk": "Dvesto päťdesiat gramov syra, prosím.",
+    "level": "A2",
+    "topics": ["numbers", "shopping"],
+    "tokens": ["Doscientos", "cincuenta", "gramos", "de", "queso", ",", "por", "favor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Doscientos",
+        "lemma": "doscientos",
+        "hint": "dvesto",
+        "distractors": ["Dos", "Doscientas", "Docientos"]
+      }
+    ]
+  },
+  {
+    "id": "s654",
+    "es": "¿Cuánto pesa tu maleta?",
+    "sk": "Koľko váži tvoj kufor?",
+    "level": "A2",
+    "topics": ["numbers", "travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "pesa", "tu", "maleta", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pesa",
+        "lemma": "pesar",
+        "hint": "pesar · él · presente",
+        "distractors": ["pesas", "pesan", "pesó"]
+      }
+    ]
+  },
+  {
+    "id": "s655",
+    "es": "Necesito el doble de harina para el pastel.",
+    "sk": "Na koláč potrebujem dvojnásobok múky.",
+    "level": "B1",
+    "topics": ["numbers", "food"],
+    "tokens": ["Necesito", "el", "doble", "de", "harina", "para", "el", "pastel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "doble",
+        "lemma": "doble",
+        "hint": "dvojnásobok",
+        "distractors": ["par", "medio", "mitad"]
+      }
+    ]
+  },
+  {
+    "id": "s656",
+    "es": "Aproximadamente el cuarenta por ciento de los estudiantes trabaja.",
+    "sk": "Približne štyridsať percent študentov pracuje.",
+    "level": "B1",
+    "topics": ["numbers", "school"],
+    "grammar": ["presente"],
+    "tokens": ["Aproximadamente", "el", "cuarenta", "por", "ciento", "de", "los", "estudiantes", "trabaja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ciento",
+        "lemma": "por ciento",
+        "hint": "percento (por …)",
+        "distractors": ["cien", "cientos", "centavo"]
+      }
+    ]
+  },
+  {
+    "id": "s657",
+    "es": "Había una gran cantidad de gente en el concierto.",
+    "sk": "Na koncerte bolo obrovské množstvo ľudí.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Había", "una", "gran", "cantidad", "de", "gente", "en", "el", "concierto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cantidad",
+        "lemma": "cantidad",
+        "hint": "množstvo",
+        "distractors": ["cuenta", "calidad", "cifra"]
+      }
+    ]
+  },
+  {
+    "id": "s658",
+    "es": "Mide un metro ochenta y pesa noventa kilos.",
+    "sk": "Meria meter osemdesiat a váži deväťdesiat kíl.",
+    "level": "B1",
+    "topics": ["numbers", "body"],
+    "grammar": ["presente"],
+    "tokens": ["Mide", "un", "metro", "ochenta", "y", "pesa", "noventa", "kilos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mide",
+        "lemma": "medir",
+        "hint": "medir · él · presente",
+        "distractors": ["Mido", "Midió", "Medía"]
+      }
+    ]
+  },
+  {
+    "id": "s659",
+    "es": "Si multiplicas tres por cuatro, te da doce.",
+    "sk": "Keď vynásobíš tri štyrmi, vyjde ti dvanásť.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "multiplicas", "tres", "por", "cuatro", ",", "te", "da", "doce", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "multiplicas",
+        "lemma": "multiplicar",
+        "hint": "multiplicar · tú · presente",
+        "distractors": ["multiplica", "multipliqué", "multiplicabas"]
+      }
+    ]
+  },
+  {
+    "id": "s660",
+    "es": "Dividimos la cuenta entre los cuatro.",
+    "sk": "Účet sme si rozdelili na štyroch.",
+    "level": "B1",
+    "topics": ["numbers", "food"],
+    "grammar": ["preterito"],
+    "tokens": ["Dividimos", "la", "cuenta", "entre", "los", "cuatro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dividimos",
+        "lemma": "dividir",
+        "hint": "dividir · nosotros · pretérito",
+        "distractors": ["Dividieron", "Dividí", "Dividía"]
+      }
+    ]
+  },
+  {
+    "id": "s661",
+    "es": "La mayoría de los mexicanos vive en ciudades.",
+    "sk": "Väčšina Mexičanov žije v mestách.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["La", "mayoría", "de", "los", "mexicanos", "vive", "en", "ciudades", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mayoría",
+        "lemma": "mayoría",
+        "hint": "väčšina",
+        "distractors": ["minoría", "mitad", "mayor"]
+      }
+    ]
+  },
+  {
+    "id": "s662",
+    "es": "Siete es un número impar.",
+    "sk": "Sedem je nepárne číslo.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Siete", "es", "un", "número", "impar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "impar",
+        "lemma": "impar",
+        "hint": "nepárny",
+        "distractors": ["par", "doble", "medio"]
+      }
+    ]
+  },
+  {
+    "id": "s663",
+    "es": "Calculé mal y me faltaron doscientos pesos.",
+    "sk": "Zle som to vyrátal a chýbalo mi dvesto pesos.",
+    "level": "B2",
+    "topics": ["numbers", "shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Calculé", "mal", "y", "me", "faltaron", "doscientos", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "faltaron",
+        "lemma": "faltar",
+        "hint": "chýbať",
+        "distractors": ["faltó", "falta", "faltará"]
+      }
+    ]
+  },
+  {
+    "id": "s664",
+    "es": "La empresa vendió mil millones de pesos el año pasado.",
+    "sk": "Firma minulý rok predala za miliardu pesos.",
+    "level": "B2",
+    "topics": ["numbers", "work"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "empresa", "vendió", "mil", "millones", "de", "pesos", "el", "año", "pasado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "millones",
+        "lemma": "mil millones",
+        "hint": "milióny (mil … = miliarda)",
+        "distractors": ["millón", "miles", "billones"]
+      }
+    ]
+  },
+  {
+    "id": "s665",
+    "es": "Según las estadísticas, el desempleo disminuyó este año.",
+    "sk": "Podľa štatistík nezamestnanosť tento rok klesla.",
+    "level": "B2",
+    "topics": ["numbers", "work"],
+    "grammar": ["preterito"],
+    "tokens": ["Según", "las", "estadísticas", ",", "el", "desempleo", "disminuyó", "este", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "disminuyó",
+        "lemma": "disminuir",
+        "hint": "disminuir · él · pretérito",
+        "distractors": ["disminuye", "disminuía", "disminuirá"]
+      }
+    ]
+  },
+  {
+    "id": "s666",
+    "es": "Hice el cálculo dos veces y no me sale.",
+    "sk": "Dvakrát som to prepočítal a nevychádza mi to.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Hice", "el", "cálculo", "dos", "veces", "y", "no", "me", "sale", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hice",
+        "lemma": "hacer",
+        "hint": "hacer · yo · pretérito",
+        "distractors": ["Hizo", "Hago", "Hacía"]
+      }
+    ]
   }
 ]

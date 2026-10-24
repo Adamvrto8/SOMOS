@@ -8,8 +8,8 @@ import { getLessonRecord, progressionGroup, type LessonProgressionMap } from './
 // Vyslovovanie, which needs a microphone); and at the end of an exercise's lessons (Všetko × level) a
 // test of that exercise alone, opened once those lessons are passed. Every attempt draws new tasks.
 
-export type TestLevel = 'A1' | 'A2' | 'B1'
-export const TEST_LEVELS: TestLevel[] = ['A1', 'A2', 'B1']
+export type TestLevel = 'A1' | 'A2' | 'B1' | 'B2'
+export const TEST_LEVELS: TestLevel[] = ['A1', 'A2', 'B1', 'B2']
 
 /** A topic test (topic × level), an exercise test (exercise × level) or, with neither, the exam of the level. */
 export interface TestId {

@@ -284,5 +284,239 @@
     "level": "B1",
     "topics": ["tech"],
     "examples": [{ "es": "Abre la página en otro navegador.", "sk": "Otvor stránku v inom prehliadači." }]
+  },
+  {
+    "id": "camara",
+    "es": "cámara",
+    "sk": ["fotoaparát", "kamera"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "La cámara de mi celular es muy buena.", "sk": "Fotoaparát v mojom mobile je veľmi dobrý." }
+    ]
+  },
+  {
+    "id": "tableta",
+    "es": "tableta",
+    "sk": ["tablet"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Mi hijo pasa horas en la tableta.", "sk": "Môj syn trávi hodiny na tablete." }
+    ]
+  },
+  {
+    "id": "comentario",
+    "es": "comentario",
+    "sk": ["komentár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Mi foto tiene muchos comentarios.", "sk": "Moja fotka má veľa komentárov." }
+    ]
+  },
+  {
+    "id": "enlace",
+    "es": "enlace",
+    "sk": ["odkaz"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Te mando el enlace por WhatsApp.", "sk": "Pošlem ti odkaz cez WhatsApp." }
+    ]
+  },
+  {
+    "id": "videollamada",
+    "es": "videollamada",
+    "sk": ["videohovor"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Hicimos una videollamada con la familia.", "sk": "Mali sme videohovor s rodinou." }
+    ]
+  },
+  {
+    "id": "publicacion",
+    "es": "publicación",
+    "sk": ["príspevok", "publikácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "publicaciones",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Tu publicación tuvo muchos me gusta.", "sk": "Tvoj príspevok mal veľa lajkov." }
+    ]
+  },
+  {
+    "id": "captura-de-pantalla",
+    "es": "captura de pantalla",
+    "sk": ["snímka obrazovky"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Mándame una captura de pantalla.", "sk": "Pošli mi snímku obrazovky." }
+    ]
+  },
+  {
+    "id": "en-vivo",
+    "es": "en vivo",
+    "sk": ["naživo"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "El partido se transmite en vivo.", "sk": "Zápas vysielajú naživo." }
+    ]
+  },
+  {
+    "id": "programador",
+    "es": "programador",
+    "sk": ["programátor"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "programadores",
+    "level": "B1",
+    "topics": ["tech", "work"],
+    "examples": [
+      { "es": "Mi hermano es programador.", "sk": "Môj brat je programátor." }
+    ]
+  },
+  {
+    "id": "dato",
+    "es": "dato",
+    "sk": ["údaj"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Nunca des tus datos por teléfono.", "sk": "Nikdy nedávaj svoje údaje cez telefón." }
+    ]
+  },
+  {
+    "id": "inteligencia-artificial",
+    "es": "inteligencia artificial",
+    "sk": ["umelá inteligencia"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "La inteligencia artificial cambia muchos trabajos.", "sk": "Umelá inteligencia mení veľa povolaní." }
+    ]
+  },
+  {
+    "id": "algoritmo",
+    "es": "algoritmo",
+    "sk": ["algoritmus"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "El algoritmo decide qué ves.", "sk": "Algoritmus rozhoduje, čo vidíš." }
+    ]
+  },
+  {
+    "id": "privacidad",
+    "es": "privacidad",
+    "sk": ["súkromie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Me preocupa mi privacidad.", "sk": "Robím si starosti o svoje súkromie." }
+    ]
+  },
+  {
+    "id": "estafa",
+    "es": "estafa",
+    "sk": ["podvod"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["tech", "shopping"],
+    "examples": [
+      { "es": "Ese mensaje es una estafa.", "sk": "Tá správa je podvod." }
+    ]
+  },
+  {
+    "id": "desinformacion",
+    "es": "desinformación",
+    "sk": ["dezinformácie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Hay mucha desinformación en internet.", "sk": "Na internete je veľa dezinformácií." }
+    ]
+  },
+  {
+    "id": "suscripcion",
+    "es": "suscripción",
+    "sk": ["predplatné"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "suscripciones",
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Cancelé la suscripción.", "sk": "Zrušil som predplatné." }
+    ]
+  },
+  {
+    "id": "dispositivo",
+    "es": "dispositivo",
+    "sk": ["zariadenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Puedes usar la app en varios dispositivos.", "sk": "Aplikáciu môžeš používať na viacerých zariadeniach." }
+    ]
+  },
+  {
+    "id": "adiccion",
+    "es": "adicción",
+    "sk": ["závislosť"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "adicciones",
+    "level": "B2",
+    "topics": ["tech", "health"],
+    "examples": [
+      { "es": "Tiene adicción a las redes sociales.", "sk": "Je závislý od sociálnych sietí." }
+    ]
+  },
+  {
+    "id": "plataforma",
+    "es": "plataforma",
+    "sk": ["platforma"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["tech"],
+    "examples": [
+      { "es": "Vemos series en varias plataformas.", "sk": "Seriály pozeráme na viacerých platformách." }
+    ]
   }
 ]

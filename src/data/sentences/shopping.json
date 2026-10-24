@@ -565,5 +565,304 @@
         "distractors": ["pienso", "pensará", "pensamos"]
       }
     ]
+  },
+  {
+    "id": "s796",
+    "es": "El carrito tiene una rueda rota.",
+    "sk": "Nákupný vozík má pokazené koliesko.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["El", "carrito", "tiene", "una", "rueda", "rota", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "carrito",
+        "lemma": "carrito",
+        "hint": "nákupný vozík",
+        "distractors": ["cartón", "cariño", "carril"]
+      }
+    ]
+  },
+  {
+    "id": "s797",
+    "es": "Le compré un paquete de galletas al niño.",
+    "sk": "Kúpil som chlapcovi balíček sušienok.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "compré", "un", "paquete", "de", "galletas", "al", "niño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "distractors": ["compra", "compró", "compraba"]
+      }
+    ]
+  },
+  {
+    "id": "s798",
+    "es": "¿Cuánto me cobra por las dos playeras?",
+    "sk": "Koľko vám dám za tie dve tričká?",
+    "level": "A2",
+    "topics": ["shopping", "clothes"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "me", "cobra", "por", "las", "dos", "playeras", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cobra",
+        "lemma": "cobrar",
+        "hint": "cobrar · usted · presente",
+        "distractors": ["cobras", "cobran", "cobró"]
+      }
+    ]
+  },
+  {
+    "id": "s799",
+    "es": "En enero hay rebajas en todas las tiendas.",
+    "sk": "V januári sú vo všetkých obchodoch výpredaje.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "tokens": ["En", "enero", "hay", "rebajas", "en", "todas", "las", "tiendas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rebajas",
+        "lemma": "rebaja",
+        "hint": "výpredaje",
+        "distractors": ["rebanadas", "rebajadas", "reglas"]
+      }
+    ]
+  },
+  {
+    "id": "s800",
+    "es": "Mi pedido llegó roto y lo devolví.",
+    "sk": "Moja objednávka prišla rozbitá, tak som ju vrátil.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "pedido", "llegó", "roto", "y", "lo", "devolví", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "devolví",
+        "lemma": "devolver",
+        "hint": "devolver · yo · pretérito",
+        "distractors": ["devuelvo", "devolvió", "devolvía"]
+      }
+    ]
+  },
+  {
+    "id": "s801",
+    "es": "El envío es gratis en compras mayores a quinientos pesos.",
+    "sk": "Doprava je zadarmo pri nákupe nad päťsto pesos.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "tokens": ["El", "envío", "es", "gratis", "en", "compras", "mayores", "a", "quinientos", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "envío",
+        "lemma": "envío",
+        "hint": "doprava (zásielka)",
+        "distractors": ["envió", "envidia", "viaje"]
+      }
+    ]
+  },
+  {
+    "id": "s802",
+    "es": "Tengo un cupón de veinte por ciento de descuento.",
+    "sk": "Mám kupón na dvadsaťpercentnú zľavu.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "tokens": ["Tengo", "un", "cupón", "de", "veinte", "por", "ciento", "de", "descuento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cupón",
+        "lemma": "cupón",
+        "hint": "kupón",
+        "distractors": ["cupones", "jabón", "cajón"]
+      }
+    ]
+  },
+  {
+    "id": "s803",
+    "es": "Puse una queja porque me cobraron de más.",
+    "sk": "Podal som sťažnosť, lebo mi naúčtovali viac.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Puse", "una", "queja", "porque", "me", "cobraron", "de", "más", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cobraron",
+        "lemma": "cobrar",
+        "hint": "cobrar · ellos · pretérito",
+        "distractors": ["cobra", "cobré", "cobraban"]
+      }
+    ]
+  },
+  {
+    "id": "s804",
+    "es": "Compramos el carro a plazos, con un enganche del veinte por ciento.",
+    "sk": "Auto sme kúpili na splátky, s akontáciou dvadsať percent.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Compramos", "el", "carro", "a", "plazos", ",", "con", "un", "enganche", "del", "veinte", "por", "ciento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "enganche",
+        "lemma": "enganche",
+        "hint": "akontácia",
+        "distractors": ["enchufe", "engaño", "anticipo"]
+      }
+    ]
+  },
+  {
+    "id": "s805",
+    "es": "En el mercado de artesanías el regateo es parte de la experiencia.",
+    "sk": "Na trhu s remeselnými výrobkami je zjednávanie súčasťou zážitku.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "tokens": ["En", "el", "mercado", "de", "artesanías", "el", "regateo", "es", "parte", "de", "la", "experiencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "regateo",
+        "lemma": "regateo",
+        "hint": "zjednávanie",
+        "distractors": ["regalo", "recreo", "reciclaje"]
+      }
+    ]
+  },
+  {
+    "id": "s806",
+    "es": "Ese yogur ya está caducado.",
+    "sk": "Ten jogurt už je po záruke.",
+    "level": "B2",
+    "topics": ["shopping", "food"],
+    "tokens": ["Ese", "yogur", "ya", "está", "caducado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "caducado",
+        "lemma": "caducado",
+        "hint": "po záruke",
+        "distractors": ["caducada", "cansado", "cuidado"]
+      }
+    ]
+  },
+  {
+    "id": "s807",
+    "es": "Fui a reclamar porque la licuadora salió defectuosa.",
+    "sk": "Išiel som to reklamovať, lebo mixér bol chybný.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "tokens": ["Fui", "a", "reclamar", "porque", "la", "licuadora", "salió", "defectuosa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "defectuosa",
+        "lemma": "defectuoso",
+        "hint": "chybný",
+        "distractors": ["defectuoso", "deliciosa", "perezosa"]
+      }
+    ]
+  },
+  {
+    "id": "s808",
+    "es": "Me quedé sin saldo y no pude hacer la llamada.",
+    "sk": "Minul sa mi kredit a nemohol som zavolať.",
+    "level": "B2",
+    "topics": ["shopping", "tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "quedé", "sin", "saldo", "y", "no", "pude", "hacer", "la", "llamada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "saldo",
+        "lemma": "saldo",
+        "hint": "kredit; zostatok",
+        "distractors": ["sueldo", "salto", "sabor"]
+      }
+    ]
+  },
+  {
+    "id": "s809",
+    "es": "El banco me cobró una comisión por retirar dinero.",
+    "sk": "Banka mi zaúčtovala poplatok za výber peňazí.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "banco", "me", "cobró", "una", "comisión", "por", "retirar", "dinero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cobró",
+        "lemma": "cobrar",
+        "hint": "cobrar · él · pretérito",
+        "distractors": ["cobra", "cobraba", "cobrará"]
+      }
+    ]
+  },
+  {
+    "id": "s810",
+    "es": "Los consumidores tienen derecho a un reembolso.",
+    "sk": "Spotrebitelia majú právo na vrátenie peňazí.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "tokens": ["Los", "consumidores", "tienen", "derecho", "a", "un", "reembolso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "consumidores",
+        "lemma": "consumidor",
+        "hint": "spotrebitelia",
+        "distractors": ["consumidor", "conocedores", "comedores"]
+      }
+    ]
+  },
+  {
+    "id": "s811",
+    "es": "El consumismo nos hace comprar cosas que no necesitamos.",
+    "sk": "Konzumizmus nás núti kupovať veci, ktoré nepotrebujeme.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["El", "consumismo", "nos", "hace", "comprar", "cosas", "que", "no", "necesitamos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "necesitamos",
+        "lemma": "necesitar",
+        "hint": "necesitar · nosotros · presente",
+        "distractors": ["necesitan", "necesité", "necesitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s812",
+    "es": "Adquirimos la casa hace cinco años.",
+    "sk": "Dom sme nadobudli pred piatimi rokmi.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Adquirimos", "la", "casa", "hace", "cinco", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Adquirimos",
+        "lemma": "adquirir",
+        "hint": "adquirir · nosotros · pretérito",
+        "distractors": ["Adquieren", "Adquirí", "Adquiría"]
+      }
+    ]
   }
 ]

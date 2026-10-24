@@ -711,5 +711,334 @@
         "distractors": ["recibo", "sueldo", "dinero"]
       }
     ]
+  },
+  {
+    "id": "s705",
+    "es": "Mi cuarto tiene una ventana grande.",
+    "sk": "Moja izba má veľké okno.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "cuarto", "tiene", "una", "ventana", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · él · presente",
+        "distractors": ["tienen", "tengo", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s706",
+    "es": "Las llaves están en el cajón de la cocina.",
+    "sk": "Kľúče sú v šuplíku v kuchyni.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Las", "llaves", "están", "en", "el", "cajón", "de", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "ser/estar · ellas · presente",
+        "why": "place",
+        "distractors": ["son", "está", "estamos"]
+      }
+    ]
+  },
+  {
+    "id": "s707",
+    "es": "Se fundió el foco del baño.",
+    "sk": "V kúpeľni praskla žiarovka.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "fundió", "el", "foco", "del", "baño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "foco",
+        "lemma": "foco",
+        "hint": "žiarovka",
+        "distractors": ["fuego", "foto", "faro"]
+      }
+    ]
+  },
+  {
+    "id": "s708",
+    "es": "¿Quién va a barrer la cocina hoy?",
+    "sk": "Kto dnes zametie kuchyňu?",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quién", "va", "a", "barrer", "la", "cocina", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": ["van", "fue", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s709",
+    "es": "Hay una cucaracha en el baño.",
+    "sk": "V kúpeľni je šváb.",
+    "level": "A2",
+    "topics": ["home"],
+    "tokens": ["Hay", "una", "cucaracha", "en", "el", "baño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cucaracha",
+        "lemma": "cucaracha",
+        "hint": "šváb",
+        "distractors": ["cuchara", "cucharada", "mariposa"]
+      }
+    ]
+  },
+  {
+    "id": "s710",
+    "es": "Tengo que planchar la camisa para mañana.",
+    "sk": "Na zajtra si musím vyžehliť košeľu.",
+    "level": "A2",
+    "topics": ["home", "clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "que", "planchar", "la", "camisa", "para", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tuve", "Tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s711",
+    "es": "Los sábados barro el patio y riego las plantas.",
+    "sk": "V sobotu zametám dvor a polievam kvety.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "sábados", "barro", "el", "patio", "y", "riego", "las", "plantas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "barro",
+        "lemma": "barrer",
+        "hint": "barrer · yo · presente",
+        "distractors": ["barre", "barrí", "barría"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "riego",
+        "lemma": "regar",
+        "hint": "regar · yo · presente",
+        "distractors": ["riega", "regué", "regaba"]
+      }
+    ]
+  },
+  {
+    "id": "s712",
+    "es": "Dejé el carro en la cochera.",
+    "sk": "Auto som nechal v garáži.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Dejé", "el", "carro", "en", "la", "cochera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dejé",
+        "lemma": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors": ["Dejó", "Dejo", "Dejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s713",
+    "es": "El calentador no funciona y no hay agua caliente.",
+    "sk": "Ohrievač nefunguje a nie je teplá voda.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["El", "calentador", "no", "funciona", "y", "no", "hay", "agua", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "funciona",
+        "lemma": "funcionar",
+        "hint": "funcionar · él · presente",
+        "distractors": ["funcionan", "funcionó", "funcioné"]
+      }
+    ]
+  },
+  {
+    "id": "s714",
+    "es": "No pises, acabo de trapear.",
+    "sk": "Nestúpaj tam, práve som vytrel.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["No", "pises", ",", "acabo", "de", "trapear", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "acabo",
+        "lemma": "acabar",
+        "hint": "acabar · yo · presente",
+        "distractors": ["acaba", "acabé", "acababa"]
+      }
+    ]
+  },
+  {
+    "id": "s715",
+    "es": "Para rentar el departamento nos pidieron un aval.",
+    "sk": "Pri prenájme bytu od nás chceli ručiteľa.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Para", "rentar", "el", "departamento", "nos", "pidieron", "un", "aval", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "aval",
+        "lemma": "aval",
+        "hint": "ručiteľ",
+        "distractors": ["aviso", "anuncio", "dueño"]
+      }
+    ]
+  },
+  {
+    "id": "s716",
+    "es": "El casero no quiere devolvernos el depósito.",
+    "sk": "Domáci nám nechce vrátiť zálohu.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["El", "casero", "no", "quiere", "devolvernos", "el", "depósito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "depósito",
+        "lemma": "depósito",
+        "hint": "záloha",
+        "distractors": ["deporte", "despacho", "descuento"]
+      }
+    ]
+  },
+  {
+    "id": "s717",
+    "es": "Hay una fuga de agua en la cocina.",
+    "sk": "V kuchyni niekde uniká voda.",
+    "level": "B2",
+    "topics": ["home"],
+    "tokens": ["Hay", "una", "fuga", "de", "agua", "en", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fuga",
+        "lemma": "fuga",
+        "hint": "únik",
+        "distractors": ["fuego", "foto", "fila"]
+      }
+    ]
+  },
+  {
+    "id": "s718",
+    "es": "La humedad está arruinando las paredes.",
+    "sk": "Vlhkosť ničí steny.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["La", "humedad", "está", "arruinando", "las", "paredes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · ella · presente",
+        "distractors": ["están", "es", "estaba"]
+      }
+    ]
+  },
+  {
+    "id": "s719",
+    "es": "Rentamos un departamento amueblado cerca del centro.",
+    "sk": "Prenajali sme si zariadený byt blízko centra.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Rentamos", "un", "departamento", "amueblado", "cerca", "del", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "amueblado",
+        "lemma": "amueblado",
+        "hint": "zariadený",
+        "distractors": ["amueblada", "amarillo", "alumbrado"]
+      }
+    ]
+  },
+  {
+    "id": "s720",
+    "es": "Estamos remodelando la cocina y todo es un desastre.",
+    "sk": "Prerábame kuchyňu a všetko je jeden veľký chaos.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "remodelando", "la", "cocina", "y", "todo", "es", "un", "desastre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estamos",
+        "lemma": "estar",
+        "hint": "estar · nosotros · presente",
+        "distractors": ["Están", "Estoy", "Estaba"]
+      }
+    ]
+  },
+  {
+    "id": "s721",
+    "es": "Tuvimos que fumigar por una plaga de cucarachas.",
+    "sk": "Museli sme dať vydezinsekovať kvôli švábom.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Tuvimos", "que", "fumigar", "por", "una", "plaga", "de", "cucarachas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors": ["Tenemos", "Tuvieron", "Tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s722",
+    "es": "En el condominio hay que pagar una cuota de mantenimiento.",
+    "sk": "V obytnom komplexe sa platí poplatok za údržbu.",
+    "level": "B2",
+    "topics": ["home"],
+    "tokens": ["En", "el", "condominio", "hay", "que", "pagar", "una", "cuota", "de", "mantenimiento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "condominio",
+        "lemma": "condominio",
+        "hint": "obytný komplex",
+        "distractors": ["consultorio", "comedor", "condimento"]
+      }
+    ]
   }
 ]

@@ -74,5 +74,21 @@
   { "id": "itinerario", "en": ["itinerary"], "examples": ["I already have the itinerary for the trip."] },
   { "id": "tramite", "en": ["paperwork", "procedure", "formality"], "examples": ["Paperwork at government offices takes a long time."] },
   { "id": "pasajero", "en": ["passenger"], "examples": ["The plane carries two hundred passengers."] },
-  { "id": "crucero", "en": ["cruise"], "examples": ["We took a cruise around the Caribbean."], "note": "In Mexico crucero also means an intersection." }
+  { "id": "crucero", "en": ["cruise"], "examples": ["We took a cruise around the Caribbean."], "note": "In Mexico crucero also means an intersection." },
+  { "id": "hostal", "en": ["hostel"], "examples": ["We stayed at a hostel downtown."] },
+  { "id": "excursion", "en": ["trip", "excursion"], "examples": ["We took a trip to the pyramids."] },
+  { "id": "terminal", "en": ["terminal", "bus station"], "examples": ["The bus leaves from the north terminal."] },
+  { "id": "turistico", "en": ["tourist", "touristy"], "examples": ["Cancún is really touristy."] },
+  { "id": "pase-de-abordar", "en": ["boarding pass"], "examples": ["Have your boarding pass ready."], "note": "Mexican. Abordar = to board." },
+  { "id": "casa-de-cambio", "en": ["currency exchange office"], "examples": ["I changed euros at an exchange office."] },
+  { "id": "mochilero", "en": ["backpacker"], "examples": ["I went backpacking around Chiapas."] },
+  { "id": "equipaje-de-mano", "en": ["carry-on luggage"], "examples": ["I only have carry-on luggage."] },
+  { "id": "trayecto", "en": ["journey", "route"], "examples": ["The journey takes four hours."] },
+  { "id": "imprevisto", "en": ["unexpected event"], "examples": ["Something came up and I couldn't make it."] },
+  { "id": "contratiempo", "en": ["setback", "mishap"], "examples": ["The trip went off without a hitch."] },
+  { "id": "seguro-de-viaje", "en": ["travel insurance"], "examples": ["Did you get travel insurance?"] },
+  { "id": "temporada-alta", "en": ["high season"], "examples": ["In high season everything is full."] },
+  { "id": "cancelacion", "en": ["cancellation"], "examples": ["Cancellation is free up to one day before."] },
+  { "id": "mareo", "en": ["dizziness", "motion sickness"], "examples": ["I took a pill for motion sickness."] },
+  { "id": "aventurero", "en": ["adventurous"], "examples": ["My sister is very adventurous."] }
 ]

@@ -500,5 +500,358 @@
         "distractors": ["más", "muy", "tanto"]
       }
     ]
+  },
+  {
+    "id": "s886",
+    "es": "Una abeja me picó en la mano.",
+    "sk": "Pichla ma včela do ruky.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["Una", "abeja", "me", "picó", "en", "la", "mano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "abeja",
+        "lemma": "abeja",
+        "hint": "včela",
+        "distractors": ["oveja", "abuela", "almeja"]
+      }
+    ]
+  },
+  {
+    "id": "s887",
+    "es": "Subimos al cerro para ver el atardecer.",
+    "sk": "Vyšli sme na kopec pozrieť sa na západ slnka.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Subimos", "al", "cerro", "para", "ver", "el", "atardecer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["Suben", "Subí", "Subíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s888",
+    "es": "Nadamos debajo de una cascada.",
+    "sk": "Plávali sme pod vodopádom.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["Nadamos", "debajo", "de", "una", "cascada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cascada",
+        "lemma": "cascada",
+        "hint": "vodopád",
+        "distractors": ["casada", "cáscara", "calzada"]
+      }
+    ]
+  },
+  {
+    "id": "s889",
+    "es": "En el zoológico vimos monos y osos.",
+    "sk": "V zoo sme videli opice a medvede.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "el", "zoológico", "vimos", "monos", "y", "osos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["ven", "vio", "veíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s890",
+    "es": "Las hormigas entraron a la cocina.",
+    "sk": "Do kuchyne vliezli mravce.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "hormigas", "entraron", "a", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entraron",
+        "lemma": "entrar",
+        "hint": "entrar · ellas · pretérito",
+        "distractors": ["entra", "entró", "entraban"]
+      }
+    ]
+  },
+  {
+    "id": "s891",
+    "es": "El águila es el símbolo de México.",
+    "sk": "Orol je symbolom Mexika.",
+    "level": "B1",
+    "topics": ["nature"],
+    "tokens": ["El", "águila", "es", "el", "símbolo", "de", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "águila",
+        "lemma": "águila",
+        "hint": "orol",
+        "distractors": ["agua", "ala", "aguja"]
+      }
+    ]
+  },
+  {
+    "id": "s892",
+    "es": "Las ballenas llegan a Baja California en invierno.",
+    "sk": "Veľryby priplávajú do Dolnej Kalifornie v zime.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Las", "ballenas", "llegan", "a", "Baja", "California", "en", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegan",
+        "lemma": "llegar",
+        "hint": "llegar · ellas · presente",
+        "distractors": ["llega", "llegaron", "llegaban"]
+      }
+    ]
+  },
+  {
+    "id": "s893",
+    "es": "Plantamos las semillas en primavera.",
+    "sk": "Semienka sme zasadili na jar.",
+    "level": "B1",
+    "topics": ["nature"],
+    "tokens": ["Plantamos", "las", "semillas", "en", "primavera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "semillas",
+        "lemma": "semilla",
+        "hint": "semienka",
+        "distractors": ["sillas", "semanas", "sombrillas"]
+      }
+    ]
+  },
+  {
+    "id": "s894",
+    "es": "En esta playa protegen los huevos de tortuga.",
+    "sk": "Na tejto pláži chránia korytnačie vajcia.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["En", "esta", "playa", "protegen", "los", "huevos", "de", "tortuga", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "protegen",
+        "lemma": "proteger",
+        "hint": "proteger · ellos · presente",
+        "distractors": ["protege", "protegieron", "protegían"]
+      }
+    ]
+  },
+  {
+    "id": "s895",
+    "es": "Las fábricas contaminaban el río.",
+    "sk": "Továrne znečisťovali rieku.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Las", "fábricas", "contaminaban", "el", "río", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "contaminaban",
+        "lemma": "contaminar",
+        "hint": "contaminar · ellas · imperfecto",
+        "distractors": ["contaminan", "contaminaron", "contaminarán"]
+      }
+    ]
+  },
+  {
+    "id": "s896",
+    "es": "El ajolote está en peligro de extinción.",
+    "sk": "Axolotl je ohrozený vyhynutím.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["El", "ajolote", "está", "en", "peligro", "de", "extinción", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "peligro",
+        "lemma": "peligro",
+        "hint": "nebezpečenstvo (en … de extinción)",
+        "distractors": ["peligroso", "camino", "período"]
+      }
+    ]
+  },
+  {
+    "id": "s897",
+    "es": "Los manglares protegen la costa de los huracanes.",
+    "sk": "Mangrovy chránia pobrežie pred hurikánmi.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "manglares", "protegen", "la", "costa", "de", "los", "huracanes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "protegen",
+        "lemma": "proteger",
+        "hint": "proteger · ellos · presente",
+        "distractors": ["protege", "protegieron", "protegerán"]
+      }
+    ]
+  },
+  {
+    "id": "s898",
+    "es": "La deforestación amenaza la selva Lacandona.",
+    "sk": "Odlesňovanie ohrozuje Lakandonský prales.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["La", "deforestación", "amenaza", "la", "selva", "Lacandona", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "amenaza",
+        "lemma": "amenazar",
+        "hint": "amenazar · ella · presente",
+        "distractors": ["amenazan", "amenazó", "amenazaba"]
+      }
+    ]
+  },
+  {
+    "id": "s899",
+    "es": "Cada año desaparecen miles de especies.",
+    "sk": "Každý rok vyhynú tisíce druhov.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Cada", "año", "desaparecen", "miles", "de", "especies", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "desaparecen",
+        "lemma": "desaparecer",
+        "hint": "desaparecer · ellas · presente",
+        "distractors": ["desaparece", "desaparecieron", "desaparecían"]
+      }
+    ]
+  },
+  {
+    "id": "s900",
+    "es": "Queremos una economía más sustentable.",
+    "sk": "Chceme udržateľnejšiu ekonomiku.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["Queremos", "una", "economía", "más", "sustentable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sustentable",
+        "lemma": "sustentable",
+        "hint": "udržateľný",
+        "distractors": ["sostenido", "sustantivo", "soportable"]
+      }
+    ]
+  },
+  {
+    "id": "s901",
+    "es": "La energía solar es una fuente renovable.",
+    "sk": "Slnečná energia je obnoviteľný zdroj.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["La", "energía", "solar", "es", "una", "fuente", "renovable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "renovable",
+        "lemma": "renovable",
+        "hint": "obnoviteľný",
+        "distractors": ["removible", "razonable", "reciclable"]
+      }
+    ]
+  },
+  {
+    "id": "s902",
+    "es": "Con los residuos orgánicos hacemos composta.",
+    "sk": "Z bioodpadu robíme kompost.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Con", "los", "residuos", "orgánicos", "hacemos", "composta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hacemos",
+        "lemma": "hacer",
+        "hint": "hacer · nosotros · presente",
+        "distractors": ["hacen", "hicimos", "hacíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s903",
+    "es": "Todos contribuimos a reducir nuestra huella de carbono.",
+    "sk": "Všetci prispievame k znižovaniu našej uhlíkovej stopy.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Todos", "contribuimos", "a", "reducir", "nuestra", "huella", "de", "carbono", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "contribuimos",
+        "lemma": "contribuir",
+        "hint": "contribuir · nosotros · presente",
+        "distractors": ["contribuyen", "contribuyó", "contribuía"]
+      }
+    ]
+  },
+  {
+    "id": "s904",
+    "es": "Los arrecifes de coral sobreviven cada vez con más dificultad.",
+    "sk": "Koralové útesy prežívajú čoraz ťažšie.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "arrecifes", "de", "coral", "sobreviven", "cada", "vez", "con", "más", "dificultad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sobreviven",
+        "lemma": "sobrevivir",
+        "hint": "sobrevivir · ellos · presente",
+        "distractors": ["sobrevive", "sobrevivieron", "sobrevivían"]
+      }
+    ]
+  },
+  {
+    "id": "s905",
+    "es": "El ecosistema del lago es muy frágil.",
+    "sk": "Ekosystém jazera je veľmi krehký.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["gender"],
+    "tokens": ["El", "ecosistema", "del", "lago", "es", "muy", "frágil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ecosistema",
+        "lemma": "ecosistema",
+        "hint": "ekosystém",
+        "distractors": ["sistemas", "economía", "ecología"]
+      }
+    ]
   }
 ]

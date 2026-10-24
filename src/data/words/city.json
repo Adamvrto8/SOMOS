@@ -560,5 +560,204 @@
     "level": "B1",
     "topics": ["city"],
     "examples": [{ "es": "El transporte público es barato en la Ciudad de México.", "sk": "Verejná doprava je v Mexiku City lacná." }]
+  },
+  {
+    "id": "parada",
+    "es": "parada",
+    "sk": ["zastávka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["city", "travel"],
+    "examples": [
+      { "es": "Me bajo en la próxima parada.", "sk": "Vystupujem na ďalšej zastávke." }
+    ]
+  },
+  {
+    "id": "catedral",
+    "es": "catedral",
+    "sk": ["katedrála"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "catedrales",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "La catedral está en el zócalo.", "sk": "Katedrála je na hlavnom námestí." }
+    ]
+  },
+  {
+    "id": "puesto",
+    "es": "puesto",
+    "sk": ["stánok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Compramos jugo en un puesto del mercado.", "sk": "Kúpili sme džús v stánku na trhu." }
+    ],
+    "note": "Aj: pracovné miesto (un puesto de trabajo)."
+  },
+  {
+    "id": "peaton",
+    "es": "peatón",
+    "sk": ["chodec"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "peatones",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Los peatones tienen preferencia.", "sk": "Chodci majú prednosť." }
+    ]
+  },
+  {
+    "id": "transito",
+    "es": "tránsito",
+    "sk": ["doprava", "premávka"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Me paró un policía de tránsito.", "sk": "Zastavil ma dopravný policajt." }
+    ]
+  },
+  {
+    "id": "metrobus",
+    "es": "metrobús",
+    "sk": ["metrobus (autobus s vlastným pruhom)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "metrobuses",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [
+      { "es": "El metrobús pasa cada cinco minutos.", "sk": "Metrobus chodí každých päť minút." }
+    ]
+  },
+  {
+    "id": "parquimetro",
+    "es": "parquímetro",
+    "sk": ["parkovací automat"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["city"],
+    "examples": [
+      { "es": "El parquímetro solo acepta monedas.", "sk": "Parkovací automat berie iba mince." }
+    ]
+  },
+  {
+    "id": "bache",
+    "es": "bache",
+    "sk": ["výmoľ"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "La calle está llena de baches.", "sk": "Ulica je plná výmoľov." }
+    ]
+  },
+  {
+    "id": "periferico",
+    "es": "periférico",
+    "sk": ["obchvat", "okruh"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "A esta hora el periférico está parado.", "sk": "V tomto čase stojí obchvat." }
+    ]
+  },
+  {
+    "id": "marcha",
+    "es": "marcha",
+    "sk": ["pochod", "demonštrácia"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Hubo una marcha en Reforma.", "sk": "Na Reforme bol pochod." }
+    ]
+  },
+  {
+    "id": "delincuencia",
+    "es": "delincuencia",
+    "sk": ["kriminalita"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "La delincuencia bajó en la colonia.", "sk": "Kriminalita v štvrti klesla." }
+    ]
+  },
+  {
+    "id": "asalto",
+    "es": "asalto",
+    "sk": ["prepadnutie", "lúpež"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Hubo un asalto en el camión.", "sk": "V autobuse bolo prepadnutie." }
+    ]
+  },
+  {
+    "id": "alumbrado",
+    "es": "alumbrado",
+    "sk": ["osvetlenie"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Arreglaron el alumbrado de la calle.", "sk": "Opravili pouličné osvetlenie." }
+    ]
+  },
+  {
+    "id": "urbano",
+    "es": "urbano",
+    "sk": ["mestský"],
+    "pos": "adj",
+    "feminine": "urbana",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "El transporte urbano es barato.", "sk": "Mestská doprava je lacná." }
+    ]
+  },
+  {
+    "id": "ambulante",
+    "es": "ambulante",
+    "sk": ["pouličný", "potulný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Le compré a un vendedor ambulante.", "sk": "Kúpil som to od pouličného predavača." }
+    ]
+  },
+  {
+    "id": "vialidad",
+    "es": "vialidad",
+    "sk": ["cesta", "komunikácia", "doprava"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "vialidades",
+    "level": "B2",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Cerraron varias vialidades por el desfile.", "sk": "Kvôli sprievodu uzavreli viacero ciest." }
+    ]
   }
 ]

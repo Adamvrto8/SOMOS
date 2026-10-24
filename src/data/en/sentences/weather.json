@@ -22,5 +22,22 @@
   { "id": "s591", "en": "It was raining so much that we didn't leave the house." },
   { "id": "s592", "en": "According to the forecast, it will be very hot tomorrow." },
   { "id": "s593", "en": "We've gone three months without rain." },
-  { "id": "s594", "en": "I brought the umbrella because it looked like it was going to rain." }
+  { "id": "s594", "en": "I brought the umbrella because it looked like it was going to rain." },
+  { "id": "s869", "en": "It's going to be cold tomorrow." },
+  { "id": "s870", "en": "It's sunny today.", "hints": ["sunny"] },
+  { "id": "s871", "en": "There are a lot of puddles after the rain.", "hints": ["puddles"] },
+  { "id": "s872", "en": "Look, a rainbow came out!" },
+  { "id": "s873", "en": "April was a very rainy month.", "hints": ["rainy"] },
+  { "id": "s874", "en": "Last night there was thunder and lightning.", "hints": ["thunder"] },
+  { "id": "s875", "en": "In the rainy season it rains almost every afternoon.", "hints": ["season"] },
+  { "id": "s876", "en": "The sky is clear, there isn't a single cloud." },
+  { "id": "s877", "en": "There was a frost and the plants died." },
+  { "id": "s878", "en": "We got caught in a downpour in the street." },
+  { "id": "s879", "en": "It's so muggy, there isn't a breath of air.", "hints": ["muggy heat"] },
+  { "id": "s880", "en": "A cold front is expected for the weekend.", "hints": ["front (… frío)"] },
+  { "id": "s881", "en": "A gust of wind knocked the tree down.", "hints": ["gust"] },
+  { "id": "s882", "en": "The climate in Cuernavaca is mild all year round.", "hints": ["mild"] },
+  { "id": "s883", "en": "Because of climate change, droughts are getting longer and longer.", "hints": ["droughts"] },
+  { "id": "s884", "en": "Civil Protection warned that heavy rain is coming." },
+  { "id": "s885", "en": "There was a cloudburst and several streets flooded.", "hints": ["cloudburst"] }
 ]

@@ -47,5 +47,21 @@
   { "id": "relampago", "en": ["lightning"], "examples": ["I saw a huge flash of lightning."] },
   { "id": "ola-de-calor", "en": ["heat wave"], "examples": ["There is a heat wave all over the north."] },
   { "id": "inundacion", "en": ["flood"], "examples": ["The rains caused floods in the city."] },
-  { "id": "neblina", "en": ["fog", "mist"], "examples": ["There was a lot of fog on the highway in the morning."] }
+  { "id": "neblina", "en": ["fog", "mist"], "examples": ["There was a lot of fog on the highway in the morning."] },
+  { "id": "soleado", "en": ["sunny"], "examples": ["It's sunny today."] },
+  { "id": "lluvioso", "en": ["rainy"], "examples": ["April was a very rainy month."] },
+  { "id": "charco", "en": ["puddle"], "examples": ["There are a lot of puddles after the rain."] },
+  { "id": "arcoiris", "en": ["rainbow"], "examples": ["Look, a rainbow came out!"] },
+  { "id": "despejado", "en": ["clear (sky)"], "examples": ["The sky is clear."] },
+  { "id": "trueno", "en": ["thunder"], "examples": ["Thunder scares my dog."] },
+  { "id": "rayo", "en": ["lightning", "ray"], "examples": ["Lightning struck the tree."] },
+  { "id": "helada", "en": ["frost"], "examples": ["There was a frost last night."] },
+  { "id": "temporada-de-lluvias", "en": ["rainy season"], "examples": ["The rainy season starts in June."] },
+  { "id": "aguacero", "en": ["downpour"], "examples": ["We got caught in a downpour."] },
+  { "id": "bochorno", "en": ["muggy heat"], "examples": ["It's so muggy today!"], "note": "Also: embarrassment." },
+  { "id": "frente-frio", "en": ["cold front"], "examples": ["A cold front is coming from the north."] },
+  { "id": "rafaga", "en": ["gust"], "examples": ["A gust of wind knocked the tree down."] },
+  { "id": "templado", "en": ["mild", "temperate"], "examples": ["Cuernavaca has a mild climate."] },
+  { "id": "tromba", "en": ["cloudburst", "heavy storm"], "examples": ["There was a cloudburst and the street flooded."] },
+  { "id": "cambio-climatico", "en": ["climate change"], "examples": ["Climate change affects everyone."] }
 ]

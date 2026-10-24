@@ -62,5 +62,30 @@
   { "id": "tratamiento", "en": ["treatment"], "examples": ["The treatment lasts three weeks."] },
   { "id": "analisis", "en": ["test", "lab test", "analysis"], "examples": ["They sent me to get some blood tests."] },
   { "id": "lesion", "en": ["injury"], "examples": ["He has a knee injury."] },
-  { "id": "cansancio", "en": ["tiredness", "fatigue"], "examples": ["Lately I've been feeling very tired."] }
+  { "id": "cansancio", "en": ["tiredness", "fatigue"], "examples": ["Lately I've been feeling very tired."] },
+  { "id": "inyeccion", "en": ["shot", "injection"], "examples": ["They gave me a shot in the arm."] },
+  { "id": "pomada", "en": ["ointment", "cream"], "examples": ["This ointment is for burns."] },
+  { "id": "gota", "en": ["drop"], "examples": ["The doctor prescribed me some eye drops."] },
+  { "id": "muleta", "en": ["crutch"], "examples": ["I have to use crutches for a month."] },
+  { "id": "yeso", "en": ["cast"], "examples": ["His arm is in a cast."] },
+  { "id": "radiografia", "en": ["X-ray"], "examples": ["They X-rayed his knee."] },
+  { "id": "antibiotico", "en": ["antibiotic"], "examples": ["Don't take antibiotics without a prescription."] },
+  { "id": "diabetes", "en": ["diabetes"], "examples": ["My grandpa has diabetes."] },
+  { "id": "remedio", "en": ["remedy"], "examples": ["My grandma has a home remedy for everything."] },
+  { "id": "chequeo", "en": ["checkup"], "examples": ["Get a checkup once a year."] },
+  { "id": "diagnostico", "en": ["diagnosis"], "examples": ["We're waiting for the doctor's diagnosis."] },
+  { "id": "efecto-secundario", "en": ["side effect"], "examples": ["The medicine has no side effects."] },
+  { "id": "sedentario", "en": ["sedentary"], "examples": ["I have a very sedentary job."] },
+  { "id": "insomnio", "en": ["insomnia"], "examples": ["I've suffered from insomnia for months."] },
+  { "id": "contagio", "en": ["infection", "contagion"], "examples": ["Washing your hands prevents infections."] },
+  {
+    "id": "cubrebocas",
+    "en": ["face mask"],
+    "examples": ["At the hospital they still ask for face masks."],
+    "note": "The Mexican word (elsewhere mascarilla, barbijo)."
+  },
+  { "id": "recaida", "en": ["relapse"], "examples": ["He had a relapse last week."] },
+  { "id": "sobrepeso", "en": ["excess weight", "overweight"], "examples": ["Being overweight is a common problem."] },
+  { "id": "cronico", "en": ["chronic"], "examples": ["She has a chronic illness."] },
+  { "id": "agotamiento", "en": ["exhaustion"], "examples": ["He fainted from exhaustion."] }
 ]

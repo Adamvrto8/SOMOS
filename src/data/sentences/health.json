@@ -563,5 +563,355 @@
         "distractors": ["duerme", "dormí", "dormimos"]
       }
     ]
+  },
+  {
+    "id": "s849",
+    "es": "Me pusieron una inyección en el brazo.",
+    "sk": "Dali mi injekciu do ruky.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "pusieron", "una", "inyección", "en", "el", "brazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pusieron",
+        "lemma": "poner",
+        "hint": "poner · ellos · pretérito",
+        "distractors": ["ponen", "puso", "ponían"]
+      }
+    ]
+  },
+  {
+    "id": "s850",
+    "es": "Esta pomada es para las quemaduras.",
+    "sk": "Táto masť je na popáleniny.",
+    "level": "A2",
+    "topics": ["health"],
+    "tokens": ["Esta", "pomada", "es", "para", "las", "quemaduras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pomada",
+        "lemma": "pomada",
+        "hint": "masť",
+        "distractors": ["manzana", "pintura", "almohada"]
+      }
+    ]
+  },
+  {
+    "id": "s851",
+    "es": "Tengo gripa y no puedo respirar bien.",
+    "sk": "Mám chrípku a nemôžem poriadne dýchať.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "gripa", "y", "no", "puedo", "respirar", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "puedo",
+        "lemma": "poder",
+        "hint": "poder · yo · presente",
+        "distractors": ["puede", "pude", "podía"]
+      }
+    ]
+  },
+  {
+    "id": "s852",
+    "es": "El doctor me recetó unas gotas para los ojos.",
+    "sk": "Lekár mi predpísal očné kvapky.",
+    "level": "A2",
+    "topics": ["health"],
+    "tokens": ["El", "doctor", "me", "recetó", "unas", "gotas", "para", "los", "ojos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "gotas",
+        "lemma": "gota",
+        "hint": "kvapky",
+        "distractors": ["gatas", "gorras", "botas"]
+      }
+    ]
+  },
+  {
+    "id": "s853",
+    "es": "Me rompí el pie y tengo que usar muletas.",
+    "sk": "Zlomil som si nohu a musím chodiť o barlách.",
+    "level": "B1",
+    "topics": ["health"],
+    "tokens": ["Me", "rompí", "el", "pie", "y", "tengo", "que", "usar", "muletas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "muletas",
+        "lemma": "muleta",
+        "hint": "barle",
+        "distractors": ["maletas", "mulas", "maletines"]
+      }
+    ]
+  },
+  {
+    "id": "s854",
+    "es": "Le hicieron una radiografía de la rodilla.",
+    "sk": "Urobili mu röntgen kolena.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "hicieron", "una", "radiografía", "de", "la", "rodilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hicieron",
+        "lemma": "hacer",
+        "hint": "hacer · ellos · pretérito",
+        "distractors": ["hacen", "hizo", "hacían"]
+      }
+    ]
+  },
+  {
+    "id": "s855",
+    "es": "No tomes antibióticos sin receta.",
+    "sk": "Neber antibiotiká bez receptu.",
+    "level": "B1",
+    "topics": ["health"],
+    "tokens": ["No", "tomes", "antibióticos", "sin", "receta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "receta",
+        "lemma": "receta",
+        "hint": "recept",
+        "distractors": ["recibo", "regla", "respuesta"]
+      }
+    ]
+  },
+  {
+    "id": "s856",
+    "es": "Toso mucho en las noches.",
+    "sk": "V noci veľa kašlem.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Toso", "mucho", "en", "las", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Toso",
+        "lemma": "toser",
+        "hint": "toser · yo · presente",
+        "distractors": ["Tose", "Tosí", "Tosía"]
+      }
+    ]
+  },
+  {
+    "id": "s857",
+    "es": "Mi abuelo tiene diabetes y cuida mucho lo que come.",
+    "sk": "Dedo má cukrovku a veľmi si dáva pozor na to, čo je.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuelo", "tiene", "diabetes", "y", "cuida", "mucho", "lo", "que", "come", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cuida",
+        "lemma": "cuidar",
+        "hint": "cuidar · él · presente",
+        "distractors": ["cuidan", "cuidó", "cuidaba"]
+      }
+    ]
+  },
+  {
+    "id": "s858",
+    "es": "Hazte un chequeo médico una vez al año.",
+    "sk": "Choď raz za rok na preventívnu prehliadku.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Hazte", "un", "chequeo", "médico", "una", "vez", "al", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "chequeo",
+        "lemma": "chequeo",
+        "hint": "prehliadka",
+        "distractors": ["cheque", "chiste", "choque"]
+      }
+    ]
+  },
+  {
+    "id": "s859",
+    "es": "El diagnóstico tardó varias semanas.",
+    "sk": "Na diagnózu sa čakalo niekoľko týždňov.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["El", "diagnóstico", "tardó", "varias", "semanas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "diagnóstico",
+        "lemma": "diagnóstico",
+        "hint": "diagnóza",
+        "distractors": ["pronóstico", "diálogo", "dibujo"]
+      }
+    ]
+  },
+  {
+    "id": "s860",
+    "es": "Esta pastilla tiene efectos secundarios, como el sueño.",
+    "sk": "Táto tabletka má vedľajšie účinky, napríklad ospalosť.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Esta", "pastilla", "tiene", "efectos", "secundarios", ",", "como", "el", "sueño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "secundarios",
+        "lemma": "secundario",
+        "hint": "vedľajší",
+        "distractors": ["secundaria", "segundos", "secretarios"]
+      }
+    ]
+  },
+  {
+    "id": "s861",
+    "es": "Llevar una vida sedentaria es malo para el corazón.",
+    "sk": "Sedavý spôsob života škodí srdcu.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Llevar", "una", "vida", "sedentaria", "es", "malo", "para", "el", "corazón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sedentaria",
+        "lemma": "sedentario",
+        "hint": "sedavý",
+        "distractors": ["sedentario", "secundaria", "solitaria"]
+      }
+    ]
+  },
+  {
+    "id": "s862",
+    "es": "Padezco insomnio desde hace meses.",
+    "sk": "Už mesiace trpím nespavosťou.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Padezco", "insomnio", "desde", "hace", "meses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "insomnio",
+        "lemma": "insomnio",
+        "hint": "nespavosť",
+        "distractors": ["sueño", "insulto", "invierno"]
+      }
+    ]
+  },
+  {
+    "id": "s863",
+    "es": "Lavarse las manos ayuda a prevenir contagios.",
+    "sk": "Umývanie rúk pomáha predchádzať nákaze.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Lavarse", "las", "manos", "ayuda", "a", "prevenir", "contagios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ayuda",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · presente",
+        "distractors": ["ayudan", "ayudó", "ayudaba"]
+      }
+    ]
+  },
+  {
+    "id": "s864",
+    "es": "Durante la pandemia todos usábamos cubrebocas.",
+    "sk": "Počas pandémie sme všetci nosili rúško.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Durante", "la", "pandemia", "todos", "usábamos", "cubrebocas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "usábamos",
+        "lemma": "usar",
+        "hint": "usar · nosotros · imperfecto",
+        "distractors": ["usamos", "usaban", "usaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s865",
+    "es": "Tuvo una recaída y lo volvieron a internar.",
+    "sk": "Stav sa mu zhoršil a znova ho hospitalizovali.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Tuvo", "una", "recaída", "y", "lo", "volvieron", "a", "internar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tuvo",
+        "lemma": "tener",
+        "hint": "tener · él · pretérito",
+        "distractors": ["Tiene", "Tenía", "Tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s866",
+    "es": "El ejercicio fortalece el corazón y reduce el estrés.",
+    "sk": "Pohyb posilňuje srdce a znižuje stres.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["El", "ejercicio", "fortalece", "el", "corazón", "y", "reduce", "el", "estrés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "reduce",
+        "lemma": "reducir",
+        "hint": "reducir · él · presente",
+        "distractors": ["reducen", "redujo", "reducía"]
+      }
+    ]
+  },
+  {
+    "id": "s867",
+    "es": "Tiene sobrepeso y el doctor le recomendó caminar más.",
+    "sk": "Má nadváhu a lekár mu odporučil viac chodiť.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Tiene", "sobrepeso", "y", "el", "doctor", "le", "recomendó", "caminar", "más", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sobrepeso",
+        "lemma": "sobrepeso",
+        "hint": "nadváha",
+        "distractors": ["sobremesa", "sobrino", "peso"]
+      }
+    ]
+  },
+  {
+    "id": "s868",
+    "es": "Con la medicina disminuyó la fiebre.",
+    "sk": "Po lieku horúčka klesla.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Con", "la", "medicina", "disminuyó", "la", "fiebre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "disminuyó",
+        "lemma": "disminuir",
+        "hint": "disminuir · ella · pretérito",
+        "distractors": ["disminuye", "disminuía", "disminuirá"]
+      }
+    ]
   }
 ]

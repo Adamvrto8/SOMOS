@@ -35,5 +35,22 @@
   { "id": "s524", "en": "There didn't use to be so much traffic on this avenue.", "hints": ["so much"] },
   { "id": "s525", "en": "If you keep going straight, you'll find the museum on the left." },
   { "id": "s526", "en": "We got lost because the phone had no signal." },
-  { "id": "s527", "en": "When I lived downtown, I walked everywhere." }
+  { "id": "s527", "en": "When I lived downtown, I walked everywhere." },
+  { "id": "s723", "en": "Where's the bus stop?", "hints": ["stop"] },
+  { "id": "s724", "en": "I crossed the street without looking." },
+  { "id": "s725", "en": "We got lost in downtown Guadalajara." },
+  { "id": "s726", "en": "The cathedral is on the main square." },
+  { "id": "s727", "en": "We bought corn on the cob at a stand on the corner.", "hints": ["stand"] },
+  { "id": "s728", "en": "Pedestrians have the right of way." },
+  { "id": "s729", "en": "A traffic cop gave me a ticket.", "hints": ["traffic (policía de …)"] },
+  { "id": "s730", "en": "We took the Metrobús to get to Reforma." },
+  { "id": "s731", "en": "We live in a very quiet neighborhood.", "hints": ["quiet"] },
+  { "id": "s732", "en": "The street is full of potholes.", "hints": ["potholes"] },
+  { "id": "s733", "en": "There was a march and they closed the beltway." },
+  { "id": "s734", "en": "Crime went down a lot in this neighborhood.", "hints": ["crime"] },
+  { "id": "s735", "en": "My neighbor got mugged coming out of the ATM." },
+  { "id": "s736", "en": "The street lights on the avenue don't work." },
+  { "id": "s737", "en": "City life is stressful, but it has a lot of advantages.", "hints": ["advantages"] },
+  { "id": "s738", "en": "The street vendors take up the whole sidewalk.", "hints": ["sidewalk"] },
+  { "id": "s739", "en": "The police officer showed us where to park." }
 ]

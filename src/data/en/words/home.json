@@ -89,5 +89,31 @@
   { "id": "hipoteca", "en": ["mortgage"], "examples": ["We're still paying the mortgage."] },
   { "id": "gotera", "en": ["leak (in the roof)", "drip"], "examples": ["When it rains, there's a leak in the kitchen."] },
   { "id": "inquilino", "en": ["tenant"], "examples": ["The tenant upstairs makes a lot of noise."] },
-  { "id": "mantenimiento", "en": ["maintenance"], "examples": ["The elevator is under maintenance."] }
+  { "id": "mantenimiento", "en": ["maintenance"], "examples": ["The elevator is under maintenance."] },
+  { "id": "patio", "en": ["patio", "yard"], "examples": ["The kids play in the yard."] },
+  { "id": "cortina", "en": ["curtain"], "examples": ["Close the curtains, there's a lot of sun coming in."] },
+  { "id": "alfombra", "en": ["rug", "carpet"], "examples": ["The dog sleeps on the rug."] },
+  { "id": "cajon", "en": ["drawer"], "examples": ["The keys are in the drawer."] },
+  { "id": "foco", "en": ["light bulb"], "examples": ["The bathroom light bulb burned out."], "note": "Mexican: el foco = light bulb." },
+  { "id": "escoba", "en": ["broom"], "examples": ["Where's the broom?"] },
+  { "id": "cucaracha", "en": ["cockroach"], "examples": ["There's a cockroach in the bathroom."] },
+  { "id": "trapeador", "en": ["mop"], "examples": ["Run the mop over the kitchen."] },
+  { "id": "calentador", "en": ["water heater"], "examples": ["The water heater won't turn on."] },
+  { "id": "cochera", "en": ["garage"], "examples": ["The car doesn't fit in the garage."] },
+  { "id": "vecindario", "en": ["neighborhood"], "examples": ["It's a very quiet neighborhood."] },
+  {
+    "id": "aval",
+    "en": ["guarantor"],
+    "examples": ["To rent, they ask you for a guarantor."],
+    "note": "Mexican landlords often ask for an \"aval\": someone who owns property and guarantees the rent."
+  },
+  { "id": "deposito", "en": ["deposit"], "examples": ["We paid one month's deposit."] },
+  { "id": "casero", "en": ["landlord"], "examples": ["The landlord comes to collect the rent."] },
+  { "id": "fuga", "en": ["leak", "escape"], "examples": ["It smells like gas, I think there's a leak."] },
+  { "id": "humedad", "en": ["damp", "humidity"], "examples": ["The damp damaged the wall."] },
+  { "id": "plaga", "en": ["pest infestation", "plague"], "examples": ["We have an ant infestation in the kitchen."] },
+  { "id": "electrodomestico", "en": ["household appliance"], "examples": ["We bought new appliances."] },
+  { "id": "amueblado", "en": ["furnished"], "examples": ["We're looking for a furnished apartment."] },
+  { "id": "remodelacion", "en": ["remodeling", "renovation"], "examples": ["The bathroom remodel took a month."] },
+  { "id": "condominio", "en": ["condo", "condominium"], "examples": ["We live in a condo complex with a pool."] }
 ]

@@ -536,5 +536,342 @@
         "distractors": ["divierten", "divertí", "divertiremos"]
       }
     ]
+  },
+  {
+    "id": "s948",
+    "es": "Los domingos jugamos fútbol en la cancha del parque.",
+    "sk": "V nedeľu hrávame futbal na ihrisku v parku.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "domingos", "jugamos", "fútbol", "en", "la", "cancha", "del", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugamos",
+        "lemma": "jugar",
+        "hint": "jugar · nosotros · presente",
+        "distractors": ["juegan", "jugué", "jugábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s949",
+    "es": "Mi hija pinta paisajes con acuarelas.",
+    "sk": "Moja dcéra maľuje krajinky akvarelom.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hija", "pinta", "paisajes", "con", "acuarelas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pinta",
+        "lemma": "pintar",
+        "hint": "pintar · ella · presente",
+        "distractors": ["pintan", "pintó", "pintaba"]
+      }
+    ]
+  },
+  {
+    "id": "s950",
+    "es": "Disfrutamos mucho el concierto.",
+    "sk": "Koncert sme si veľmi užili.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Disfrutamos", "mucho", "el", "concierto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Disfrutamos",
+        "lemma": "disfrutar",
+        "hint": "disfrutar · nosotros · pretérito",
+        "distractors": ["Disfrutan", "Disfruté", "Disfrutábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s951",
+    "es": "Armamos un rompecabezas de mil piezas.",
+    "sk": "Poskladali sme puzzle s tisíc dielikmi.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "tokens": ["Armamos", "un", "rompecabezas", "de", "mil", "piezas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "rompecabezas",
+        "lemma": "rompecabezas",
+        "hint": "puzzle",
+        "distractors": ["crucigrama", "dominó", "ajedrez"]
+      }
+    ]
+  },
+  {
+    "id": "s952",
+    "es": "Fuimos de campamento al bosque.",
+    "sk": "Išli sme stanovať do lesa.",
+    "level": "A2",
+    "topics": ["hobbies", "nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Fuimos", "de", "campamento", "al", "bosque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · pretérito",
+        "distractors": ["Vamos", "Fueron", "Íbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s953",
+    "es": "Mi hijo dibuja muy bien.",
+    "sk": "Môj syn veľmi pekne kreslí.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "dibuja", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dibuja",
+        "lemma": "dibujar",
+        "hint": "dibujar · él · presente",
+        "distractors": ["dibujan", "dibujó", "dibujaba"]
+      }
+    ]
+  },
+  {
+    "id": "s954",
+    "es": "Entrenamos para el maratón de la Ciudad de México.",
+    "sk": "Trénujeme na maratón v meste Mexiko.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Entrenamos", "para", "el", "maratón", "de", "la", "Ciudad", "de", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Entrenamos",
+        "lemma": "entrenar",
+        "hint": "entrenar · nosotros · presente",
+        "distractors": ["Entrenan", "Entrené", "Entrenaban"]
+      }
+    ]
+  },
+  {
+    "id": "s955",
+    "es": "Mi pasatiempo favorito es la jardinería.",
+    "sk": "Moje obľúbené hobby je záhradkárčenie.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "tokens": ["Mi", "pasatiempo", "favorito", "es", "la", "jardinería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pasatiempo",
+        "lemma": "pasatiempo",
+        "hint": "koníček",
+        "distractors": ["pasaporte", "pastel", "tiempo"]
+      }
+    ]
+  },
+  {
+    "id": "s956",
+    "es": "El partido terminó en empate.",
+    "sk": "Zápas skončil remízou.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "partido", "terminó", "en", "empate", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "terminó",
+        "lemma": "terminar",
+        "hint": "terminar · él · pretérito",
+        "distractors": ["termina", "terminaba", "terminará"]
+      }
+    ]
+  },
+  {
+    "id": "s957",
+    "es": "El árbitro no vio la falta.",
+    "sk": "Rozhodca nevidel faul.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "árbitro", "no", "vio", "la", "falta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vio",
+        "lemma": "ver",
+        "hint": "ver · él · pretérito",
+        "distractors": ["ve", "veía", "verá"]
+      }
+    ]
+  },
+  {
+    "id": "s958",
+    "es": "Los viernes vamos al karaoke con los de la oficina.",
+    "sk": "V piatok chodíme s ľuďmi z kancelárie na karaoke.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "viernes", "vamos", "al", "karaoke", "con", "los", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["van", "fuimos", "íbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s959",
+    "es": "La charreada es el deporte nacional de México.",
+    "sk": "Charreada (mexické rodeo) je národný šport Mexika.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "charreada", "es", "el", "deporte", "nacional", "de", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "identity",
+        "distractors": ["está", "son", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s960",
+    "es": "Ganaron por goleada: cinco a cero.",
+    "sk": "Vyhrali vysoko: päť nula.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Ganaron", "por", "goleada", ":", "cinco", "a", "cero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ganaron",
+        "lemma": "ganar",
+        "hint": "ganar · ellos · pretérito",
+        "distractors": ["Ganan", "Ganó", "Ganaban"]
+      }
+    ]
+  },
+  {
+    "id": "s961",
+    "es": "La porra del equipo no dejó de cantar en todo el partido.",
+    "sk": "Fanúšikovia tímu spievali počas celého zápasu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "porra", "del", "equipo", "no", "dejó", "de", "cantar", "en", "todo", "el", "partido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "dejó",
+        "lemma": "dejar",
+        "hint": "dejar · ella · pretérito",
+        "distractors": ["deja", "dejaron", "dejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s962",
+    "es": "Mi afición por la fotografía empezó en la prepa.",
+    "sk": "Moja vášeň pre fotografiu sa začala na strednej.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Mi", "afición", "por", "la", "fotografía", "empezó", "en", "la", "prepa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "afición",
+        "lemma": "afición",
+        "hint": "záľuba; vášeň",
+        "distractors": ["aficionado", "ficción", "atención"]
+      }
+    ]
+  },
+  {
+    "id": "s963",
+    "es": "Me inscribí a un taller de cerámica para desestresarme.",
+    "sk": "Prihlásil som sa na kurz keramiky, aby som sa zbavil stresu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Me", "inscribí", "a", "un", "taller", "de", "cerámica", "para", "desestresarme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "taller",
+        "lemma": "taller",
+        "hint": "kurz; dielňa",
+        "distractors": ["talla", "tela", "tablero"]
+      }
+    ]
+  },
+  {
+    "id": "s964",
+    "es": "En la premiación le dieron una medalla de oro.",
+    "sk": "Pri odovzdávaní cien dostala zlatú medailu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["En", "la", "premiación", "le", "dieron", "una", "medalla", "de", "oro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "medalla",
+        "lemma": "medalla",
+        "hint": "medaila",
+        "distractors": ["metal", "muralla", "mesa"]
+      }
+    ]
+  },
+  {
+    "id": "s965",
+    "es": "Superé mi récord personal en la carrera.",
+    "sk": "V pretekoch som prekonal svoj osobný rekord.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Superé", "mi", "récord", "personal", "en", "la", "carrera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Superé",
+        "lemma": "superar",
+        "hint": "superar · yo · pretérito",
+        "distractors": ["Supera", "Superó", "Superaba"]
+      }
+    ]
+  },
+  {
+    "id": "s966",
+    "es": "Me encanta la lucha libre: los luchadores son unos artistas.",
+    "sk": "Zbožňujem lucha libre: zápasníci sú skutoční umelci.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Me", "encanta", "la", "lucha", "libre", ":", "los", "luchadores", "son", "unos", "artistas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "luchadores",
+        "lemma": "luchador",
+        "hint": "zápasníci",
+        "distractors": ["luchador", "jugadores", "lectores"]
+      }
+    ]
   }
 ]

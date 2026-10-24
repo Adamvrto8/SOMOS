@@ -549,5 +549,372 @@
         "distractors": ["enoja", "enojé", "enojará"]
       }
     ]
+  },
+  {
+    "id": "s927",
+    "es": "Lloré de felicidad en la boda.",
+    "sk": "Na svadbe som plakala od šťastia.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Lloré", "de", "felicidad", "en", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lloré",
+        "lemma": "llorar",
+        "hint": "llorar · yo · pretérito",
+        "distractors": ["Llora", "Lloró", "Lloraba"]
+      }
+    ]
+  },
+  {
+    "id": "s928",
+    "es": "Odio esperar en el banco.",
+    "sk": "Neznášam čakanie v banke.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Odio", "esperar", "en", "el", "banco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Odio",
+        "lemma": "odiar",
+        "hint": "odiar · yo · presente",
+        "distractors": ["Odia", "Odié", "Odiaba"]
+      }
+    ]
+  },
+  {
+    "id": "s929",
+    "es": "Mi hija está nerviosa por el examen.",
+    "sk": "Moja dcéra je nervózna kvôli skúške.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "hija", "está", "nerviosa", "por", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "son", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s930",
+    "es": "Después de correr diez kilómetros, estoy agotado.",
+    "sk": "Po desiatich kilometroch behu som úplne vyčerpaný.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Después", "de", "correr", "diez", "kilómetros", ",", "estoy", "agotado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "agotado",
+        "lemma": "agotado",
+        "hint": "vyčerpaný",
+        "distractors": ["agotada", "ahorrado", "aburrido"]
+      }
+    ]
+  },
+  {
+    "id": "s931",
+    "es": "Me sentí aliviado cuando llegó el doctor.",
+    "sk": "Uľavilo sa mi, keď prišiel lekár.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Me", "sentí", "aliviado", "cuando", "llegó", "el", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "aliviado",
+        "lemma": "aliviado",
+        "hint": "s úľavou",
+        "distractors": ["aliviada", "alineado", "olvidado"]
+      }
+    ]
+  },
+  {
+    "id": "s932",
+    "es": "Ya me acostumbré a vivir sola.",
+    "sk": "Už som si zvykla bývať sama.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Ya", "me", "acostumbré", "a", "vivir", "sola", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "acostumbré",
+        "lemma": "acostumbrarse",
+        "hint": "acostumbrarse · yo · pretérito",
+        "distractors": ["acostumbra", "acostumbró", "acostumbraba"]
+      }
+    ]
+  },
+  {
+    "id": "s933",
+    "es": "No aguanto a la gente que grita.",
+    "sk": "Neznášam ľudí, ktorí kričia.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["No", "aguanto", "a", "la", "gente", "que", "grita", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "aguanto",
+        "lemma": "aguantar",
+        "hint": "aguantar · yo · presente",
+        "distractors": ["aguanta", "aguanté", "aguantaba"]
+      }
+    ]
+  },
+  {
+    "id": "s934",
+    "es": "Confío en ti, sé que lo vas a hacer bien.",
+    "sk": "Verím ti, viem, že to zvládneš.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Confío", "en", "ti", ",", "sé", "que", "lo", "vas", "a", "hacer", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Confío",
+        "lemma": "confiar",
+        "hint": "confiar · yo · presente",
+        "distractors": ["Confía", "Confié", "Confiaba"]
+      }
+    ]
+  },
+  {
+    "id": "s935",
+    "es": "Es una persona muy sensible, llora con cualquier película.",
+    "sk": "Je to veľmi citlivý človek, plače pri každom filme.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Es", "una", "persona", "muy", "sensible", ",", "llora", "con", "cualquier", "película", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sensible",
+        "lemma": "sensible",
+        "hint": "citlivý",
+        "distractors": ["sensata", "sencilla", "razonable"]
+      }
+    ]
+  },
+  {
+    "id": "s936",
+    "es": "Me siento agobiado con tanto trabajo.",
+    "sk": "Cítim sa zavalený toľkou prácou.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Me", "siento", "agobiado", "con", "tanto", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "agobiado",
+        "lemma": "agobiado",
+        "hint": "zavalený",
+        "distractors": ["agobiada", "abogado", "ahogado"]
+      }
+    ]
+  },
+  {
+    "id": "s937",
+    "es": "Me da mucho coraje que me mientan.",
+    "sk": "Strašne ma hnevá, keď mi klamú.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Me", "da", "mucho", "coraje", "que", "me", "mientan", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "coraje",
+        "lemma": "coraje",
+        "hint": "hnev (MX)",
+        "distractors": ["corazón", "garaje", "viaje"]
+      }
+    ]
+  },
+  {
+    "id": "s938",
+    "es": "El niño hizo un berrinche en el supermercado.",
+    "sk": "Chlapec urobil v supermarkete scénu.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["El", "niño", "hizo", "un", "berrinche", "en", "el", "supermercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "berrinche",
+        "lemma": "berrinche",
+        "hint": "záchvat vzdoru",
+        "distractors": ["bebida", "bombero", "bocadillo"]
+      }
+    ]
+  },
+  {
+    "id": "s939",
+    "es": "Ando medio achicopalado desde que se fue mi novia.",
+    "sk": "Odkedy odišla priateľka, som nejaký skleslý.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Ando", "medio", "achicopalado", "desde", "que", "se", "fue", "mi", "novia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "achicopalado",
+        "lemma": "achicopalado",
+        "hint": "skleslý (MX)",
+        "distractors": ["achicopalada", "acompañado", "apapachado"]
+      }
+    ]
+  },
+  {
+    "id": "s940",
+    "es": "Se arrepintió de lo que dijo.",
+    "sk": "Ľutoval, čo povedal.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "arrepintió", "de", "lo", "que", "dijo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "arrepintió",
+        "lemma": "arrepentirse",
+        "hint": "arrepentirse · él · pretérito",
+        "distractors": ["arrepiente", "arrepentía", "arrepentirá"]
+      }
+    ]
+  },
+  {
+    "id": "s941",
+    "es": "Le costó mucho superar la ruptura.",
+    "sk": "Rozchod sa mu ťažko prekonával.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Le", "costó", "mucho", "superar", "la", "ruptura", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ruptura",
+        "lemma": "ruptura",
+        "hint": "rozchod",
+        "distractors": ["rotura", "pintura", "postura"]
+      }
+    ]
+  },
+  {
+    "id": "s942",
+    "es": "Siento nostalgia cuando escucho las canciones de mi infancia.",
+    "sk": "Keď počujem piesne z detstva, prepadne ma nostalgia.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Siento", "nostalgia", "cuando", "escucho", "las", "canciones", "de", "mi", "infancia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "escucho",
+        "lemma": "escuchar",
+        "hint": "escuchar · yo · presente",
+        "distractors": ["escucha", "escuché", "escuchaba"]
+      }
+    ]
+  },
+  {
+    "id": "s943",
+    "es": "Estamos muy ilusionados con el viaje a Japón.",
+    "sk": "Veľmi sa tešíme na cestu do Japonska.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Estamos", "muy", "ilusionados", "con", "el", "viaje", "a", "Japón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ilusionados",
+        "lemma": "ilusionado",
+        "hint": "nadšený (z toho, čo príde)",
+        "distractors": ["ilusionadas", "iluminados", "emocionado"]
+      }
+    ]
+  },
+  {
+    "id": "s944",
+    "es": "Me atreví a hablar en público por primera vez.",
+    "sk": "Prvýkrát som sa odvážil hovoriť pred ľuďmi.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "atreví", "a", "hablar", "en", "público", "por", "primera", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "atreví",
+        "lemma": "atreverse",
+        "hint": "atreverse · yo · pretérito",
+        "distractors": ["atreve", "atrevió", "atrevía"]
+      }
+    ]
+  },
+  {
+    "id": "s945",
+    "es": "Le falta autoestima, no cree en sí misma.",
+    "sk": "Chýba jej sebavedomie, neverí si.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Le", "falta", "autoestima", ",", "no", "cree", "en", "sí", "misma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "autoestima",
+        "lemma": "autoestima",
+        "hint": "sebavedomie",
+        "distractors": ["autobús", "estima", "autopista"]
+      }
+    ]
+  },
+  {
+    "id": "s946",
+    "es": "Estoy muy apenado por llegar tarde.",
+    "sk": "Veľmi sa ospravedlňujem, že meškám.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Estoy", "muy", "apenado", "por", "llegar", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "apenado",
+        "lemma": "apenado",
+        "hint": "zahanbený (MX)",
+        "distractors": ["apenada", "apagado", "peinado"]
+      }
+    ]
+  },
+  {
+    "id": "s947",
+    "es": "No le guardo rencor a nadie.",
+    "sk": "Na nikoho nemám zášť.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["No", "le", "guardo", "rencor", "a", "nadie", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rencor",
+        "lemma": "rencor",
+        "hint": "zášť",
+        "distractors": ["rincón", "rumor", "calor"]
+      }
+    ]
   }
 ]

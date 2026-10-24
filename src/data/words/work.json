@@ -595,5 +595,232 @@
     "level": "B1",
     "topics": ["work"],
     "examples": [{ "es": "Si vendemos más, nos dan un bono.", "sk": "Ak predáme viac, dostaneme prémiu." }]
+  },
+  {
+    "id": "director",
+    "es": "director",
+    "sk": ["riaditeľ"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "directores",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "El director quiere hablar contigo.", "sk": "Riaditeľ s tebou chce hovoriť." }
+    ]
+  },
+  {
+    "id": "curriculum",
+    "es": "currículum",
+    "sk": ["životopis"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "currículums",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Mandé mi currículum a tres empresas.", "sk": "Poslal som životopis do troch firiem." }
+    ]
+  },
+  {
+    "id": "vacante",
+    "es": "vacante",
+    "sk": ["voľné pracovné miesto"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Hay una vacante en ventas.", "sk": "V predaji je voľné miesto." }
+    ]
+  },
+  {
+    "id": "solicitud",
+    "es": "solicitud",
+    "sk": ["žiadosť", "prihláška"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "solicitudes",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Llené la solicitud de empleo.", "sk": "Vyplnil som žiadosť o prácu." }
+    ]
+  },
+  {
+    "id": "gerente",
+    "es": "gerente",
+    "sk": ["manažér", "vedúci"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Quiero hablar con el gerente.", "sk": "Chcem hovoriť s vedúcim." }
+    ]
+  },
+  {
+    "id": "informe",
+    "es": "informe",
+    "sk": ["správa", "hlásenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Tengo que entregar el informe el viernes.", "sk": "Správu musím odovzdať v piatok." }
+    ]
+  },
+  {
+    "id": "hora-extra",
+    "es": "hora extra",
+    "sk": ["nadčas"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "horas extra",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Este mes hice veinte horas extra.", "sk": "Tento mesiac som odrobil dvadsať nadčasov." }
+    ]
+  },
+  {
+    "id": "ascenso",
+    "es": "ascenso",
+    "sk": ["povýšenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Le dieron un ascenso a mi hermana.", "sk": "Moju sestru povýšili." }
+    ]
+  },
+  {
+    "id": "despido",
+    "es": "despido",
+    "sk": ["prepustenie", "výpoveď (od zamestnávateľa)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Hubo muchos despidos este año.", "sk": "Tento rok bolo veľa prepúšťania." }
+    ]
+  },
+  {
+    "id": "finiquito",
+    "es": "finiquito",
+    "sk": ["odstupné", "konečné vyúčtovanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Todavía no me pagan el finiquito.", "sk": "Odstupné mi ešte nevyplatili." }
+    ],
+    "note": "Mexické: peniaze, ktoré firma vyplatí pri odchode zamestnanca."
+  },
+  {
+    "id": "prestacion",
+    "es": "prestación",
+    "sk": ["benefit", "zamestnanecká výhoda"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "prestaciones",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "El trabajo tiene buenas prestaciones.", "sk": "Tá práca má dobré benefity." }
+    ],
+    "note": "V Mexiku „prestaciones de ley“: zákonné výhody (aguinaldo, dovolenka, poistenie)."
+  },
+  {
+    "id": "nomina",
+    "es": "nómina",
+    "sk": ["výplatná listina", "výplata"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "La nómina se paga cada quincena.", "sk": "Výplaty sa vyplácajú každé dva týždne." }
+    ]
+  },
+  {
+    "id": "sindicato",
+    "es": "sindicato",
+    "sk": ["odbory"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "El sindicato pidió un aumento.", "sk": "Odbory žiadali zvýšenie platov." }
+    ]
+  },
+  {
+    "id": "emprendedor",
+    "es": "emprendedor",
+    "sk": ["podnikateľ (začínajúci)", "podnikavý"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "emprendedores",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Es un joven emprendedor.", "sk": "Je to mladý podnikateľ." }
+    ]
+  },
+  {
+    "id": "liderazgo",
+    "es": "liderazgo",
+    "sk": ["vedenie", "líderské schopnosti"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "El puesto exige liderazgo.", "sk": "Táto pozícia si vyžaduje líderské schopnosti." }
+    ]
+  },
+  {
+    "id": "desempeno",
+    "es": "desempeño",
+    "sk": ["výkon (v práci)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Evaluaron mi desempeño.", "sk": "Hodnotili môj výkon." }
+    ]
+  },
+  {
+    "id": "colaborador",
+    "es": "colaborador",
+    "sk": ["spolupracovník", "zamestnanec"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "colaboradores",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Agradezco a todos mis colaboradores.", "sk": "Ďakujem všetkým svojim spolupracovníkom." }
+    ]
+  },
+  {
+    "id": "condicion",
+    "es": "condición",
+    "sk": ["podmienka", "stav"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "condiciones",
+    "level": "B2",
+    "topics": ["work"],
+    "examples": [
+      { "es": "Acepté con una condición.", "sk": "Súhlasil som pod jednou podmienkou." }
+    ]
   }
 ]

@@ -299,5 +299,201 @@
     "level": "B1",
     "topics": ["weather"],
     "examples": [{ "es": "En la mañana había mucha neblina en la carretera.", "sk": "Ráno bola na ceste hustá hmla." }]
+  },
+  {
+    "id": "soleado",
+    "es": "soleado",
+    "sk": ["slnečný"],
+    "pos": "adj",
+    "feminine": "soleada",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Hoy está soleado.", "sk": "Dnes je slnečno." }
+    ]
+  },
+  {
+    "id": "lluvioso",
+    "es": "lluvioso",
+    "sk": ["daždivý"],
+    "pos": "adj",
+    "feminine": "lluviosa",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Abril fue un mes muy lluvioso.", "sk": "Apríl bol veľmi daždivý mesiac." }
+    ]
+  },
+  {
+    "id": "charco",
+    "es": "charco",
+    "sk": ["mláka"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Hay muchos charcos después de la lluvia.", "sk": "Po daždi je veľa mlák." }
+    ]
+  },
+  {
+    "id": "arcoiris",
+    "es": "arcoíris",
+    "sk": ["dúha"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "¡Mira, salió un arcoíris!", "sk": "Pozri, objavila sa dúha!" }
+    ]
+  },
+  {
+    "id": "despejado",
+    "es": "despejado",
+    "sk": ["jasný", "bez mráčika"],
+    "pos": "adj",
+    "feminine": "despejada",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "El cielo está despejado.", "sk": "Obloha je jasná." }
+    ]
+  },
+  {
+    "id": "trueno",
+    "es": "trueno",
+    "sk": ["hrom"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Los truenos asustan a mi perro.", "sk": "Hromy strašia môjho psa." }
+    ]
+  },
+  {
+    "id": "rayo",
+    "es": "rayo",
+    "sk": ["blesk"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Cayó un rayo en el árbol.", "sk": "Do stromu udrel blesk." }
+    ]
+  },
+  {
+    "id": "helada",
+    "es": "helada",
+    "sk": ["mráz"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Anoche cayó una helada.", "sk": "V noci udrel mráz." }
+    ]
+  },
+  {
+    "id": "temporada-de-lluvias",
+    "es": "temporada de lluvias",
+    "sk": ["obdobie dažďov"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "La temporada de lluvias empieza en junio.", "sk": "Obdobie dažďov začína v júni." }
+    ]
+  },
+  {
+    "id": "aguacero",
+    "es": "aguacero",
+    "sk": ["lejak", "prietrž mračien"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Nos agarró un aguacero.", "sk": "Zastihol nás lejak." }
+    ]
+  },
+  {
+    "id": "bochorno",
+    "es": "bochorno",
+    "sk": ["dusno", "parno"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "¡Qué bochorno hace hoy!", "sk": "Dnes je ale dusno!" }
+    ],
+    "note": "Aj: hanba, trápna situácia."
+  },
+  {
+    "id": "frente-frio",
+    "es": "frente frío",
+    "sk": ["studený front"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "frentes fríos",
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Viene un frente frío del norte.", "sk": "Zo severu prichádza studený front." }
+    ]
+  },
+  {
+    "id": "rafaga",
+    "es": "ráfaga",
+    "sk": ["poryv (vetra)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Una ráfaga de viento tiró el árbol.", "sk": "Poryv vetra zvalil strom." }
+    ]
+  },
+  {
+    "id": "templado",
+    "es": "templado",
+    "sk": ["mierny (podnebie)"],
+    "pos": "adj",
+    "feminine": "templada",
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Cuernavaca tiene un clima templado.", "sk": "Cuernavaca má mierne podnebie." }
+    ]
+  },
+  {
+    "id": "tromba",
+    "es": "tromba",
+    "sk": ["prietrž mračien"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Cayó una tromba y se inundó la calle.", "sk": "Prišla prietrž mračien a ulicu zaplavilo." }
+    ]
+  },
+  {
+    "id": "cambio-climatico",
+    "es": "cambio climático",
+    "sk": ["zmena klímy"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["weather", "nature"],
+    "examples": [
+      { "es": "El cambio climático afecta a todos.", "sk": "Zmena klímy sa týka všetkých." }
+    ]
   }
 ]

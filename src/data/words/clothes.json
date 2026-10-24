@@ -464,5 +464,245 @@
     "level": "B1",
     "topics": ["clothes"],
     "examples": [{ "es": "Esta tela es muy suave.", "sk": "Táto látka je veľmi jemná." }]
+  },
+  {
+    "id": "sudadera",
+    "es": "sudadera",
+    "sk": ["mikina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Llévate una sudadera, en la noche hace frío.", "sk": "Zober si mikinu, v noci je zima." }
+    ]
+  },
+  {
+    "id": "algodon",
+    "es": "algodón",
+    "sk": ["bavlna"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Esta playera es de algodón.", "sk": "Toto tričko je z bavlny." }
+    ]
+  },
+  {
+    "id": "lana",
+    "es": "lana",
+    "sk": ["vlna", "prachy (hovor.)"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Es un suéter de lana.", "sk": "Je to vlnený sveter." },
+      { "es": "No tengo lana.", "sk": "Nemám prachy." }
+    ],
+    "note": "V Mexiku hovorovo aj „peniaze“."
+  },
+  {
+    "id": "boton",
+    "es": "botón",
+    "sk": ["gombík"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "botones",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "A la camisa le falta un botón.", "sk": "Na košeli chýba gombík." }
+    ]
+  },
+  {
+    "id": "manga",
+    "es": "manga",
+    "sk": ["rukáv"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Prefiero las camisas de manga corta.", "sk": "Mám radšej košele s krátkym rukávom." }
+    ]
+  },
+  {
+    "id": "guante",
+    "es": "guante",
+    "sk": ["rukavica"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Perdí un guante en el camión.", "sk": "V autobuse som stratil rukavicu." }
+    ]
+  },
+  {
+    "id": "cierre",
+    "es": "cierre",
+    "sk": ["zips"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Se rompió el cierre de mi chamarra.", "sk": "Pokazil sa mi zips na bunde." }
+    ],
+    "note": "Mexické: el cierre = zips (v Španielsku la cremallera)."
+  },
+  {
+    "id": "mezclilla",
+    "es": "mezclilla",
+    "sk": ["rifľovina", "denim"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Siempre uso pantalones de mezclilla.", "sk": "Vždy nosím rifle." }
+    ],
+    "note": "Mexické: pantalones de mezclilla = rifle (aj „jeans“)."
+  },
+  {
+    "id": "tacon",
+    "es": "tacón",
+    "sk": ["podpätok"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "tacones",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "No sé caminar con tacones.", "sk": "Neviem chodiť v podpätkoch." }
+    ]
+  },
+  {
+    "id": "arrugado",
+    "es": "arrugado",
+    "sk": ["pokrčený"],
+    "pos": "adj",
+    "feminine": "arrugada",
+    "level": "B1",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Tu camisa está muy arrugada.", "sk": "Košeľu máš veľmi pokrčenú." }
+    ]
+  },
+  {
+    "id": "tintoreria",
+    "es": "tintorería",
+    "sk": ["čistiareň"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Llevé el traje a la tintorería.", "sk": "Dal som oblek do čistiarne." }
+    ]
+  },
+  {
+    "id": "ajustado",
+    "es": "ajustado",
+    "sk": ["tesný", "priliehavý"],
+    "pos": "adj",
+    "feminine": "ajustada",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Estos jeans me quedan muy ajustados.", "sk": "Tieto rifle sú mi veľmi tesné." }
+    ]
+  },
+  {
+    "id": "holgado",
+    "es": "holgado",
+    "sk": ["voľný", "široký"],
+    "pos": "adj",
+    "feminine": "holgada",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Prefiero la ropa holgada.", "sk": "Mám radšej voľné oblečenie." }
+    ]
+  },
+  {
+    "id": "estampado",
+    "es": "estampado",
+    "sk": ["vzorovaný", "potlačený"],
+    "pos": "adj",
+    "feminine": "estampada",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Me compré una falda estampada.", "sk": "Kúpila som si vzorovanú sukňu." }
+    ]
+  },
+  {
+    "id": "bordado",
+    "es": "bordado",
+    "sk": ["vyšívaný"],
+    "pos": "adj",
+    "feminine": "bordada",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Es una blusa bordada a mano.", "sk": "Je to ručne vyšívaná blúzka." }
+    ]
+  },
+  {
+    "id": "rebozo",
+    "es": "rebozo",
+    "sk": ["rebozo (mexický šál)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Mi abuela siempre usaba rebozo.", "sk": "Babka vždy nosila rebozo." }
+    ]
+  },
+  {
+    "id": "huipil",
+    "es": "huipil",
+    "sk": ["huipil (vyšívaná blúzka)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "huipiles",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Las mujeres de Oaxaca usan huipiles.", "sk": "Ženy v Oaxace nosia huipily." }
+    ]
+  },
+  {
+    "id": "atuendo",
+    "es": "atuendo",
+    "sk": ["oblečenie", "outfit"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Elegí un atuendo formal.", "sk": "Vybral som si formálne oblečenie." }
+    ]
+  },
+  {
+    "id": "ropa-de-paca",
+    "es": "ropa de paca",
+    "sk": ["oblečenie zo second handu"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["clothes"],
+    "examples": [
+      { "es": "Toda esta ropa es de paca.", "sk": "Všetko toto oblečenie je zo sekáča." }
+    ],
+    "note": "Mexické: ropa de paca = lacné použité oblečenie (dovážané v balíkoch, „pacas“)."
   }
 ]

@@ -52,5 +52,28 @@
   { "id": "senderismo", "en": ["hiking"], "examples": ["I like to go hiking in the mountains."] },
   { "id": "boliche", "en": ["bowling", "bowling alley"], "examples": ["We're going bowling on Friday."] },
   { "id": "entrenamiento", "en": ["training", "practice", "workout"], "examples": ["I have practice on Tuesdays and Thursdays."] },
-  { "id": "maraton", "en": ["marathon"], "examples": ["I'm going to run the Mexico City marathon."] }
+  { "id": "maraton", "en": ["marathon"], "examples": ["I'm going to run the Mexico City marathon."] },
+  { "id": "cancha", "en": ["court", "field"], "examples": ["On Sundays we play on the field in the park."] },
+  { "id": "campamento", "en": ["camp", "camping"], "examples": ["We went camping in the forest."] },
+  { "id": "rompecabezas", "en": ["jigsaw puzzle"], "examples": ["We did a thousand-piece puzzle."] },
+  { "id": "natacion", "en": ["swimming"], "examples": ["My son takes swimming lessons."] },
+  { "id": "estadio", "en": ["stadium"], "examples": ["Estadio Azteca is huge."] },
+  { "id": "pasatiempo", "en": ["hobby", "pastime"], "examples": ["My favorite hobby is gardening."] },
+  { "id": "jardineria", "en": ["gardening"], "examples": ["Gardening relaxes me."] },
+  { "id": "arbitro", "en": ["referee"], "examples": ["The referee didn't see the foul."] },
+  { "id": "empate", "en": ["tie", "draw"], "examples": ["The game ended in a tie."] },
+  { "id": "taller", "en": ["workshop", "class", "repair shop"], "examples": ["I signed up for a pottery class."] },
+  { "id": "karaoke", "en": ["karaoke"], "examples": ["On Fridays we go to karaoke."] },
+  { "id": "aficion", "en": ["passion", "hobby", "fans"], "examples": ["His passion for music started when he was a kid."] },
+  { "id": "charreada", "en": ["charreada (Mexican rodeo)"], "examples": ["We went to a charreada in Jalisco."] },
+  { "id": "goleada", "en": ["rout", "big win"], "examples": ["They won by a landslide."] },
+  {
+    "id": "porra",
+    "en": ["cheering section", "fans"],
+    "examples": ["The fans didn't stop singing."],
+    "note": "Mexican: echarle porras a alguien = to cheer someone on."
+  },
+  { "id": "premiacion", "en": ["awards ceremony"], "examples": ["The awards ceremony is at six."] },
+  { "id": "medalla", "en": ["medal"], "examples": ["She won a gold medal."] },
+  { "id": "record", "en": ["record"], "examples": ["I beat my personal record."] }
 ]

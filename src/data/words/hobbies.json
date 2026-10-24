@@ -406,5 +406,228 @@
     "level": "B1",
     "topics": ["hobbies"],
     "examples": [{ "es": "Voy a correr el maratón de la Ciudad de México.", "sk": "Pobežím maratón v Mexiku City." }]
+  },
+  {
+    "id": "cancha",
+    "es": "cancha",
+    "sk": ["ihrisko", "kurt"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Los domingos jugamos en la cancha del parque.", "sk": "V nedeľu hrávame na ihrisku v parku." }
+    ]
+  },
+  {
+    "id": "campamento",
+    "es": "campamento",
+    "sk": ["tábor", "stanovanie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Fuimos de campamento al bosque.", "sk": "Išli sme stanovať do lesa." }
+    ]
+  },
+  {
+    "id": "rompecabezas",
+    "es": "rompecabezas",
+    "sk": ["puzzle", "hlavolam"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Armamos un rompecabezas de mil piezas.", "sk": "Poskladali sme puzzle s tisíc dielikmi." }
+    ]
+  },
+  {
+    "id": "natacion",
+    "es": "natación",
+    "sk": ["plávanie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Mi hijo va a clases de natación.", "sk": "Syn chodí na plávanie." }
+    ]
+  },
+  {
+    "id": "estadio",
+    "es": "estadio",
+    "sk": ["štadión"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "El estadio Azteca es enorme.", "sk": "Štadión Azteca je obrovský." }
+    ]
+  },
+  {
+    "id": "pasatiempo",
+    "es": "pasatiempo",
+    "sk": ["koníček", "záľuba"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Mi pasatiempo favorito es la jardinería.", "sk": "Moje obľúbené hobby je záhradkárčenie." }
+    ]
+  },
+  {
+    "id": "jardineria",
+    "es": "jardinería",
+    "sk": ["záhradkárčenie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Me relaja la jardinería.", "sk": "Záhradkárčenie ma upokojuje." }
+    ]
+  },
+  {
+    "id": "arbitro",
+    "es": "árbitro",
+    "sk": ["rozhodca"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "El árbitro no vio la falta.", "sk": "Rozhodca nevidel faul." }
+    ]
+  },
+  {
+    "id": "empate",
+    "es": "empate",
+    "sk": ["remíza"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "El partido terminó en empate.", "sk": "Zápas skončil remízou." }
+    ]
+  },
+  {
+    "id": "taller",
+    "es": "taller",
+    "sk": ["dielňa", "kurz", "autoservis"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "talleres",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Me inscribí a un taller de cerámica.", "sk": "Prihlásil som sa na kurz keramiky." }
+    ]
+  },
+  {
+    "id": "karaoke",
+    "es": "karaoke",
+    "sk": ["karaoke"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Los viernes vamos al karaoke.", "sk": "V piatok chodíme na karaoke." }
+    ]
+  },
+  {
+    "id": "aficion",
+    "es": "afición",
+    "sk": ["záľuba", "vášeň", "fanúšikovia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "aficiones",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Su afición por la música empezó de niño.", "sk": "Jeho vášeň pre hudbu začala v detstve." }
+    ]
+  },
+  {
+    "id": "charreada",
+    "es": "charreada",
+    "sk": ["charreada (mexické rodeo)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Fuimos a una charreada en Jalisco.", "sk": "Boli sme na mexickom rodeu v Jalisku." }
+    ]
+  },
+  {
+    "id": "goleada",
+    "es": "goleada",
+    "sk": ["vysoké víťazstvo (veľa gólov)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Ganaron por goleada.", "sk": "Vyhrali vysoko." }
+    ]
+  },
+  {
+    "id": "porra",
+    "es": "porra",
+    "sk": ["fanúšikovia", "povzbudzovanie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "La porra no dejó de cantar.", "sk": "Fanúšikovia nepretržite spievali." }
+    ],
+    "note": "Mexické: echarle porras a alguien = povzbudzovať niekoho."
+  },
+  {
+    "id": "premiacion",
+    "es": "premiación",
+    "sk": ["vyhlásenie výsledkov", "odovzdávanie cien"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "premiaciones",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "La premiación es a las seis.", "sk": "Odovzdávanie cien je o šiestej." }
+    ]
+  },
+  {
+    "id": "medalla",
+    "es": "medalla",
+    "sk": ["medaila"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Ganó una medalla de oro.", "sk": "Vyhrala zlatú medailu." }
+    ]
+  },
+  {
+    "id": "record",
+    "es": "récord",
+    "sk": ["rekord"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "récords",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "examples": [
+      { "es": "Superé mi récord personal.", "sk": "Prekonal som svoj osobný rekord." }
+    ]
   }
 ]

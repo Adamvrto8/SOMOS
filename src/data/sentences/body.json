@@ -372,5 +372,314 @@
         "distractors": ["cae", "caí", "caerá"]
       }
     ]
+  },
+  {
+    "id": "s831",
+    "es": "Me lastimé el codo jugando fútbol.",
+    "sk": "Pri futbale som si poranil lakeť.",
+    "level": "A2",
+    "topics": ["body", "health"],
+    "tokens": ["Me", "lastimé", "el", "codo", "jugando", "fútbol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "codo",
+        "lemma": "codo",
+        "hint": "lakeť",
+        "distractors": ["cuello", "dedo", "coco"]
+      }
+    ]
+  },
+  {
+    "id": "s832",
+    "es": "Tiene los ojos verdes y las pestañas largas.",
+    "sk": "Má zelené oči a dlhé mihalnice.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["Tiene", "los", "ojos", "verdes", "y", "las", "pestañas", "largas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "pestañas",
+        "lemma": "pestaña",
+        "hint": "mihalnice",
+        "distractors": ["pestaña", "cejas", "pasteles"]
+      }
+    ]
+  },
+  {
+    "id": "s833",
+    "es": "Respira hondo y relájate.",
+    "sk": "Zhlboka sa nadýchni a uvoľni sa.",
+    "level": "A2",
+    "topics": ["body", "health"],
+    "tokens": ["Respira", "hondo", "y", "relájate", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hondo",
+        "lemma": "hondo",
+        "hint": "zhlboka",
+        "distractors": ["alto", "largo", "fondo"]
+      }
+    ]
+  },
+  {
+    "id": "s834",
+    "es": "En México se saluda con un beso en la mejilla.",
+    "sk": "V Mexiku sa zdraví bozkom na líce.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["En", "México", "se", "saluda", "con", "un", "beso", "en", "la", "mejilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "mejilla",
+        "lemma": "mejilla",
+        "hint": "líce",
+        "distractors": ["mejillón", "semilla", "ventanilla"]
+      }
+    ]
+  },
+  {
+    "id": "s835",
+    "es": "Mi hijo tiene una cicatriz en la frente.",
+    "sk": "Môj syn má jazvu na čele.",
+    "level": "B1",
+    "topics": ["body"],
+    "tokens": ["Mi", "hijo", "tiene", "una", "cicatriz", "en", "la", "frente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "frente",
+        "lemma": "frente",
+        "hint": "čelo",
+        "distractors": ["fruta", "fuente", "cara"]
+      }
+    ]
+  },
+  {
+    "id": "s836",
+    "es": "¿Cuánto mides?",
+    "sk": "Aký si vysoký?",
+    "level": "B1",
+    "topics": ["body", "numbers"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "mides", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mides",
+        "lemma": "medir",
+        "hint": "medir · tú · presente",
+        "distractors": ["mide", "mediste", "medías"]
+      }
+    ]
+  },
+  {
+    "id": "s837",
+    "es": "El tabaco daña los pulmones.",
+    "sk": "Tabak poškodzuje pľúca.",
+    "level": "B1",
+    "topics": ["body", "health"],
+    "tokens": ["El", "tabaco", "daña", "los", "pulmones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pulmones",
+        "lemma": "pulmón",
+        "hint": "pľúca",
+        "distractors": ["pulmón", "pelotones", "limones"]
+      }
+    ]
+  },
+  {
+    "id": "s838",
+    "es": "Me duele la cadera cuando camino mucho.",
+    "sk": "Keď veľa chodím, bolí ma bedro.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "duele", "la", "cadera", "cuando", "camino", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "camino",
+        "lemma": "caminar",
+        "hint": "caminar · yo · presente",
+        "distractors": ["camina", "caminé", "caminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s839",
+    "es": "El cerebro consume mucha energía.",
+    "sk": "Mozog spotrebuje veľa energie.",
+    "level": "B1",
+    "topics": ["body"],
+    "tokens": ["El", "cerebro", "consume", "mucha", "energía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cerebro",
+        "lemma": "cerebro",
+        "hint": "mozog",
+        "distractors": ["cerebros", "cerdo", "cebolla"]
+      }
+    ]
+  },
+  {
+    "id": "s840",
+    "es": "Mi abuelo está pelón, pero tiene barba.",
+    "sk": "Dedo je plešatý, ale má bradu.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Mi", "abuelo", "está", "pelón", ",", "pero", "tiene", "barba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pelón",
+        "lemma": "pelón",
+        "hint": "plešatý",
+        "distractors": ["pelona", "pelo", "peludo"]
+      }
+    ]
+  },
+  {
+    "id": "s841",
+    "es": "Tengo el pelo chino como mi mamá.",
+    "sk": "Mám kučeravé vlasy ako mama.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Tengo", "el", "pelo", "chino", "como", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "chino",
+        "lemma": "chino",
+        "hint": "kučeravý",
+        "distractors": ["china", "lacio", "chico"]
+      }
+    ]
+  },
+  {
+    "id": "s842",
+    "es": "Soy zurdo, así que escribo con la mano izquierda.",
+    "sk": "Som ľavák, takže píšem ľavou rukou.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Soy", "zurdo", ",", "así", "que", "escribo", "con", "la", "mano", "izquierda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "zurdo",
+        "lemma": "zurdo",
+        "hint": "ľavák",
+        "distractors": ["zurda", "zorro", "sordo"]
+      }
+    ]
+  },
+  {
+    "id": "s843",
+    "es": "Ya me están saliendo canas.",
+    "sk": "Už mi začínajú rásť šediny.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["progresivo"],
+    "tokens": ["Ya", "me", "están", "saliendo", "canas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "saliendo",
+        "lemma": "salir",
+        "hint": "salir · gerundio",
+        "distractors": ["salen", "salió", "salir"]
+      }
+    ]
+  },
+  {
+    "id": "s844",
+    "es": "La dermatóloga me revisó un lunar de la espalda.",
+    "sk": "Dermatologička mi skontrolovala znamienko na chrbte.",
+    "level": "B2",
+    "topics": ["body", "health"],
+    "tokens": ["La", "dermatóloga", "me", "revisó", "un", "lunar", "de", "la", "espalda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "lunar",
+        "lemma": "lunar",
+        "hint": "znamienko",
+        "distractors": ["lunes", "luna", "lugar"]
+      }
+    ]
+  },
+  {
+    "id": "s845",
+    "es": "El hígado y los riñones limpian la sangre.",
+    "sk": "Pečeň a obličky čistia krv.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["El", "hígado", "y", "los", "riñones", "limpian", "la", "sangre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "riñones",
+        "lemma": "riñón",
+        "hint": "obličky",
+        "distractors": ["riñón", "rincones", "piñones"]
+      }
+    ]
+  },
+  {
+    "id": "s846",
+    "es": "Con la edad duelen más las articulaciones.",
+    "sk": "S vekom bolia kĺby viac.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Con", "la", "edad", "duelen", "más", "las", "articulaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "articulaciones",
+        "lemma": "articulación",
+        "hint": "kĺby",
+        "distractors": ["articulación", "artículos", "aplicaciones"]
+      }
+    ]
+  },
+  {
+    "id": "s847",
+    "es": "Tengo dolor de espalda por la mala postura.",
+    "sk": "Bolí ma chrbát kvôli zlému držaniu tela.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Tengo", "dolor", "de", "espalda", "por", "la", "mala", "postura", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "postura",
+        "lemma": "postura",
+        "hint": "držanie tela",
+        "distractors": ["pastura", "costura", "pintura"]
+      }
+    ]
+  },
+  {
+    "id": "s848",
+    "es": "Sonríe tanto que ya tiene arrugas alrededor de los ojos.",
+    "sk": "Toľko sa usmieva, že už má okolo očí vrásky.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["Sonríe", "tanto", "que", "ya", "tiene", "arrugas", "alrededor", "de", "los", "ojos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "arrugas",
+        "lemma": "arruga",
+        "hint": "vrásky",
+        "distractors": ["arruga", "orugas", "tortugas"]
+      }
+    ]
   }
 ]

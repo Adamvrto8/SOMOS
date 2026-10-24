@@ -1673,5 +1673,1063 @@
     "futuro": { "yo": "me vestiré", "tu": "te vestirás", "el": "se vestirá", "nosotros": "nos vestiremos", "ellos": "se vestirán" },
     "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
     "level": "A2"
+  },
+  {
+    "id": "disfrutar",
+    "sk": ["užívať si"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "disfrutando",
+    "presente": {
+      "yo": "disfruto",
+      "tu": "disfrutas",
+      "el": "disfruta",
+      "nosotros": "disfrutamos",
+      "ellos": "disfrutan"
+    },
+    "preterito": {
+      "yo": "disfruté",
+      "tu": "disfrutaste",
+      "el": "disfrutó",
+      "nosotros": "disfrutamos",
+      "ellos": "disfrutaron"
+    },
+    "imperfecto": {
+      "yo": "disfrutaba",
+      "tu": "disfrutabas",
+      "el": "disfrutaba",
+      "nosotros": "disfrutábamos",
+      "ellos": "disfrutaban"
+    },
+    "futuro": {
+      "yo": "disfrutaré",
+      "tu": "disfrutarás",
+      "el": "disfrutará",
+      "nosotros": "disfrutaremos",
+      "ellos": "disfrutarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "funcionar",
+    "sk": ["fungovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "funcionando",
+    "presente": {
+      "yo": "funciono",
+      "tu": "funcionas",
+      "el": "funciona",
+      "nosotros": "funcionamos",
+      "ellos": "funcionan"
+    },
+    "preterito": {
+      "yo": "funcioné",
+      "tu": "funcionaste",
+      "el": "funcionó",
+      "nosotros": "funcionamos",
+      "ellos": "funcionaron"
+    },
+    "imperfecto": {
+      "yo": "funcionaba",
+      "tu": "funcionabas",
+      "el": "funcionaba",
+      "nosotros": "funcionábamos",
+      "ellos": "funcionaban"
+    },
+    "futuro": {
+      "yo": "funcionaré",
+      "tu": "funcionarás",
+      "el": "funcionará",
+      "nosotros": "funcionaremos",
+      "ellos": "funcionarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "guardar",
+    "sk": ["uložiť", "schovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "guardando",
+    "presente": {
+      "yo": "guardo",
+      "tu": "guardas",
+      "el": "guarda",
+      "nosotros": "guardamos",
+      "ellos": "guardan"
+    },
+    "preterito": {
+      "yo": "guardé",
+      "tu": "guardaste",
+      "el": "guardó",
+      "nosotros": "guardamos",
+      "ellos": "guardaron"
+    },
+    "imperfecto": {
+      "yo": "guardaba",
+      "tu": "guardabas",
+      "el": "guardaba",
+      "nosotros": "guardábamos",
+      "ellos": "guardaban"
+    },
+    "futuro": {
+      "yo": "guardaré",
+      "tu": "guardarás",
+      "el": "guardará",
+      "nosotros": "guardaremos",
+      "ellos": "guardarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "borrar",
+    "sk": ["vymazať", "zmazať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "borrando",
+    "presente": {
+      "yo": "borro",
+      "tu": "borras",
+      "el": "borra",
+      "nosotros": "borramos",
+      "ellos": "borran"
+    },
+    "preterito": {
+      "yo": "borré",
+      "tu": "borraste",
+      "el": "borró",
+      "nosotros": "borramos",
+      "ellos": "borraron"
+    },
+    "imperfecto": {
+      "yo": "borraba",
+      "tu": "borrabas",
+      "el": "borraba",
+      "nosotros": "borrábamos",
+      "ellos": "borraban"
+    },
+    "futuro": {
+      "yo": "borraré",
+      "tu": "borrarás",
+      "el": "borrará",
+      "nosotros": "borraremos",
+      "ellos": "borrarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "descargar",
+    "sk": ["stiahnuť (z internetu)"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "descargando",
+    "presente": {
+      "yo": "descargo",
+      "tu": "descargas",
+      "el": "descarga",
+      "nosotros": "descargamos",
+      "ellos": "descargan"
+    },
+    "preterito": {
+      "yo": "descargué",
+      "tu": "descargaste",
+      "el": "descargó",
+      "nosotros": "descargamos",
+      "ellos": "descargaron"
+    },
+    "imperfecto": {
+      "yo": "descargaba",
+      "tu": "descargabas",
+      "el": "descargaba",
+      "nosotros": "descargábamos",
+      "ellos": "descargaban"
+    },
+    "futuro": {
+      "yo": "descargaré",
+      "tu": "descargarás",
+      "el": "descargará",
+      "nosotros": "descargaremos",
+      "ellos": "descargarán"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "nacer",
+    "sk": ["narodiť sa"],
+    "group": "er",
+    "regular": false,
+    "gerund": "naciendo",
+    "presente": {
+      "yo": "nazco",
+      "tu": "naces",
+      "el": "nace",
+      "nosotros": "nacemos",
+      "ellos": "nacen"
+    },
+    "preterito": {
+      "yo": "nací",
+      "tu": "naciste",
+      "el": "nació",
+      "nosotros": "nacimos",
+      "ellos": "nacieron"
+    },
+    "imperfecto": {
+      "yo": "nacía",
+      "tu": "nacías",
+      "el": "nacía",
+      "nosotros": "nacíamos",
+      "ellos": "nacían"
+    },
+    "futuro": {
+      "yo": "naceré",
+      "tu": "nacerás",
+      "el": "nacerá",
+      "nosotros": "naceremos",
+      "ellos": "nacerán"
+    },
+    "irregularForms": ["presente.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "respirar",
+    "sk": ["dýchať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "respirando",
+    "presente": {
+      "yo": "respiro",
+      "tu": "respiras",
+      "el": "respira",
+      "nosotros": "respiramos",
+      "ellos": "respiran"
+    },
+    "preterito": {
+      "yo": "respiré",
+      "tu": "respiraste",
+      "el": "respiró",
+      "nosotros": "respiramos",
+      "ellos": "respiraron"
+    },
+    "imperfecto": {
+      "yo": "respiraba",
+      "tu": "respirabas",
+      "el": "respiraba",
+      "nosotros": "respirábamos",
+      "ellos": "respiraban"
+    },
+    "futuro": {
+      "yo": "respiraré",
+      "tu": "respirarás",
+      "el": "respirará",
+      "nosotros": "respiraremos",
+      "ellos": "respirarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "barrer",
+    "sk": ["zametať"],
+    "group": "er",
+    "regular": true,
+    "gerund": "barriendo",
+    "presente": {
+      "yo": "barro",
+      "tu": "barres",
+      "el": "barre",
+      "nosotros": "barremos",
+      "ellos": "barren"
+    },
+    "preterito": {
+      "yo": "barrí",
+      "tu": "barriste",
+      "el": "barrió",
+      "nosotros": "barrimos",
+      "ellos": "barrieron"
+    },
+    "imperfecto": {
+      "yo": "barría",
+      "tu": "barrías",
+      "el": "barría",
+      "nosotros": "barríamos",
+      "ellos": "barrían"
+    },
+    "futuro": {
+      "yo": "barreré",
+      "tu": "barrerás",
+      "el": "barrerá",
+      "nosotros": "barreremos",
+      "ellos": "barrerán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "planchar",
+    "sk": ["žehliť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "planchando",
+    "presente": {
+      "yo": "plancho",
+      "tu": "planchas",
+      "el": "plancha",
+      "nosotros": "planchamos",
+      "ellos": "planchan"
+    },
+    "preterito": {
+      "yo": "planché",
+      "tu": "planchaste",
+      "el": "planchó",
+      "nosotros": "planchamos",
+      "ellos": "plancharon"
+    },
+    "imperfecto": {
+      "yo": "planchaba",
+      "tu": "planchabas",
+      "el": "planchaba",
+      "nosotros": "planchábamos",
+      "ellos": "planchaban"
+    },
+    "futuro": {
+      "yo": "plancharé",
+      "tu": "plancharás",
+      "el": "planchará",
+      "nosotros": "plancharemos",
+      "ellos": "plancharán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "probarse",
+    "sk": ["vyskúšať si (oblečenie)"],
+    "group": "ar",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "probando",
+    "presente": {
+      "yo": "me pruebo",
+      "tu": "te pruebas",
+      "el": "se prueba",
+      "nosotros": "nos probamos",
+      "ellos": "se prueban"
+    },
+    "preterito": {
+      "yo": "me probé",
+      "tu": "te probaste",
+      "el": "se probó",
+      "nosotros": "nos probamos",
+      "ellos": "se probaron"
+    },
+    "imperfecto": {
+      "yo": "me probaba",
+      "tu": "te probabas",
+      "el": "se probaba",
+      "nosotros": "nos probábamos",
+      "ellos": "se probaban"
+    },
+    "futuro": {
+      "yo": "me probaré",
+      "tu": "te probarás",
+      "el": "se probará",
+      "nosotros": "nos probaremos",
+      "ellos": "se probarán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "quitarse",
+    "sk": ["vyzliecť si", "zložiť si"],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "quitando",
+    "presente": {
+      "yo": "me quito",
+      "tu": "te quitas",
+      "el": "se quita",
+      "nosotros": "nos quitamos",
+      "ellos": "se quitan"
+    },
+    "preterito": {
+      "yo": "me quité",
+      "tu": "te quitaste",
+      "el": "se quitó",
+      "nosotros": "nos quitamos",
+      "ellos": "se quitaron"
+    },
+    "imperfecto": {
+      "yo": "me quitaba",
+      "tu": "te quitabas",
+      "el": "se quitaba",
+      "nosotros": "nos quitábamos",
+      "ellos": "se quitaban"
+    },
+    "futuro": {
+      "yo": "me quitaré",
+      "tu": "te quitarás",
+      "el": "se quitará",
+      "nosotros": "nos quitaremos",
+      "ellos": "se quitarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "ponerse",
+    "sk": ["obliecť si", "dať si (na seba)"],
+    "group": "er",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "poniendo",
+    "presente": {
+      "yo": "me pongo",
+      "tu": "te pones",
+      "el": "se pone",
+      "nosotros": "nos ponemos",
+      "ellos": "se ponen"
+    },
+    "preterito": {
+      "yo": "me puse",
+      "tu": "te pusiste",
+      "el": "se puso",
+      "nosotros": "nos pusimos",
+      "ellos": "se pusieron"
+    },
+    "imperfecto": {
+      "yo": "me ponía",
+      "tu": "te ponías",
+      "el": "se ponía",
+      "nosotros": "nos poníamos",
+      "ellos": "se ponían"
+    },
+    "futuro": {
+      "yo": "me pondré",
+      "tu": "te pondrás",
+      "el": "se pondrá",
+      "nosotros": "nos pondremos",
+      "ellos": "se pondrán"
+    },
+    "irregularForms": ["presente.yo", "preterito.*", "futuro.*"],
+    "level": "A2"
+  },
+  {
+    "id": "cobrar",
+    "sk": ["vyberať (peniaze)", "účtovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "cobrando",
+    "presente": {
+      "yo": "cobro",
+      "tu": "cobras",
+      "el": "cobra",
+      "nosotros": "cobramos",
+      "ellos": "cobran"
+    },
+    "preterito": {
+      "yo": "cobré",
+      "tu": "cobraste",
+      "el": "cobró",
+      "nosotros": "cobramos",
+      "ellos": "cobraron"
+    },
+    "imperfecto": {
+      "yo": "cobraba",
+      "tu": "cobrabas",
+      "el": "cobraba",
+      "nosotros": "cobrábamos",
+      "ellos": "cobraban"
+    },
+    "futuro": {
+      "yo": "cobraré",
+      "tu": "cobrarás",
+      "el": "cobrará",
+      "nosotros": "cobraremos",
+      "ellos": "cobrarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "ordenar",
+    "sk": ["objednať si (jedlo)", "upratať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "ordenando",
+    "presente": {
+      "yo": "ordeno",
+      "tu": "ordenas",
+      "el": "ordena",
+      "nosotros": "ordenamos",
+      "ellos": "ordenan"
+    },
+    "preterito": {
+      "yo": "ordené",
+      "tu": "ordenaste",
+      "el": "ordenó",
+      "nosotros": "ordenamos",
+      "ellos": "ordenaron"
+    },
+    "imperfecto": {
+      "yo": "ordenaba",
+      "tu": "ordenabas",
+      "el": "ordenaba",
+      "nosotros": "ordenábamos",
+      "ellos": "ordenaban"
+    },
+    "futuro": {
+      "yo": "ordenaré",
+      "tu": "ordenarás",
+      "el": "ordenará",
+      "nosotros": "ordenaremos",
+      "ellos": "ordenarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "cruzar",
+    "sk": ["prejsť (cez)", "prekročiť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "cruzando",
+    "presente": {
+      "yo": "cruzo",
+      "tu": "cruzas",
+      "el": "cruza",
+      "nosotros": "cruzamos",
+      "ellos": "cruzan"
+    },
+    "preterito": {
+      "yo": "crucé",
+      "tu": "cruzaste",
+      "el": "cruzó",
+      "nosotros": "cruzamos",
+      "ellos": "cruzaron"
+    },
+    "imperfecto": {
+      "yo": "cruzaba",
+      "tu": "cruzabas",
+      "el": "cruzaba",
+      "nosotros": "cruzábamos",
+      "ellos": "cruzaban"
+    },
+    "futuro": {
+      "yo": "cruzaré",
+      "tu": "cruzarás",
+      "el": "cruzará",
+      "nosotros": "cruzaremos",
+      "ellos": "cruzarán"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "perderse",
+    "sk": ["stratiť sa", "zablúdiť"],
+    "group": "er",
+    "regular": false,
+    "reflexive": true,
+    "gerund": "perdiendo",
+    "presente": {
+      "yo": "me pierdo",
+      "tu": "te pierdes",
+      "el": "se pierde",
+      "nosotros": "nos perdemos",
+      "ellos": "se pierden"
+    },
+    "preterito": {
+      "yo": "me perdí",
+      "tu": "te perdiste",
+      "el": "se perdió",
+      "nosotros": "nos perdimos",
+      "ellos": "se perdieron"
+    },
+    "imperfecto": {
+      "yo": "me perdía",
+      "tu": "te perdías",
+      "el": "se perdía",
+      "nosotros": "nos perdíamos",
+      "ellos": "se perdían"
+    },
+    "futuro": {
+      "yo": "me perderé",
+      "tu": "te perderás",
+      "el": "se perderá",
+      "nosotros": "nos perderemos",
+      "ellos": "se perderán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "empacar",
+    "sk": ["zbaliť (sa)"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "empacando",
+    "presente": {
+      "yo": "empaco",
+      "tu": "empacas",
+      "el": "empaca",
+      "nosotros": "empacamos",
+      "ellos": "empacan"
+    },
+    "preterito": {
+      "yo": "empaqué",
+      "tu": "empacaste",
+      "el": "empacó",
+      "nosotros": "empacamos",
+      "ellos": "empacaron"
+    },
+    "imperfecto": {
+      "yo": "empacaba",
+      "tu": "empacabas",
+      "el": "empacaba",
+      "nosotros": "empacábamos",
+      "ellos": "empacaban"
+    },
+    "futuro": {
+      "yo": "empacaré",
+      "tu": "empacarás",
+      "el": "empacará",
+      "nosotros": "empacaremos",
+      "ellos": "empacarán"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "calentar",
+    "sk": ["zohriať", "ohriať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "calentando",
+    "presente": {
+      "yo": "caliento",
+      "tu": "calientas",
+      "el": "calienta",
+      "nosotros": "calentamos",
+      "ellos": "calientan"
+    },
+    "preterito": {
+      "yo": "calenté",
+      "tu": "calentaste",
+      "el": "calentó",
+      "nosotros": "calentamos",
+      "ellos": "calentaron"
+    },
+    "imperfecto": {
+      "yo": "calentaba",
+      "tu": "calentabas",
+      "el": "calentaba",
+      "nosotros": "calentábamos",
+      "ellos": "calentaban"
+    },
+    "futuro": {
+      "yo": "calentaré",
+      "tu": "calentarás",
+      "el": "calentará",
+      "nosotros": "calentaremos",
+      "ellos": "calentarán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "pintar",
+    "sk": ["maľovať", "natrieť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "pintando",
+    "presente": {
+      "yo": "pinto",
+      "tu": "pintas",
+      "el": "pinta",
+      "nosotros": "pintamos",
+      "ellos": "pintan"
+    },
+    "preterito": {
+      "yo": "pinté",
+      "tu": "pintaste",
+      "el": "pintó",
+      "nosotros": "pintamos",
+      "ellos": "pintaron"
+    },
+    "imperfecto": {
+      "yo": "pintaba",
+      "tu": "pintabas",
+      "el": "pintaba",
+      "nosotros": "pintábamos",
+      "ellos": "pintaban"
+    },
+    "futuro": {
+      "yo": "pintaré",
+      "tu": "pintarás",
+      "el": "pintará",
+      "nosotros": "pintaremos",
+      "ellos": "pintarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "dibujar",
+    "sk": ["kresliť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "dibujando",
+    "presente": {
+      "yo": "dibujo",
+      "tu": "dibujas",
+      "el": "dibuja",
+      "nosotros": "dibujamos",
+      "ellos": "dibujan"
+    },
+    "preterito": {
+      "yo": "dibujé",
+      "tu": "dibujaste",
+      "el": "dibujó",
+      "nosotros": "dibujamos",
+      "ellos": "dibujaron"
+    },
+    "imperfecto": {
+      "yo": "dibujaba",
+      "tu": "dibujabas",
+      "el": "dibujaba",
+      "nosotros": "dibujábamos",
+      "ellos": "dibujaban"
+    },
+    "futuro": {
+      "yo": "dibujaré",
+      "tu": "dibujarás",
+      "el": "dibujará",
+      "nosotros": "dibujaremos",
+      "ellos": "dibujarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "entrenar",
+    "sk": ["trénovať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "entrenando",
+    "presente": {
+      "yo": "entreno",
+      "tu": "entrenas",
+      "el": "entrena",
+      "nosotros": "entrenamos",
+      "ellos": "entrenan"
+    },
+    "preterito": {
+      "yo": "entrené",
+      "tu": "entrenaste",
+      "el": "entrenó",
+      "nosotros": "entrenamos",
+      "ellos": "entrenaron"
+    },
+    "imperfecto": {
+      "yo": "entrenaba",
+      "tu": "entrenabas",
+      "el": "entrenaba",
+      "nosotros": "entrenábamos",
+      "ellos": "entrenaban"
+    },
+    "futuro": {
+      "yo": "entrenaré",
+      "tu": "entrenarás",
+      "el": "entrenará",
+      "nosotros": "entrenaremos",
+      "ellos": "entrenarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "pescar",
+    "sk": ["chytať ryby", "rybárčiť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "pescando",
+    "presente": {
+      "yo": "pesco",
+      "tu": "pescas",
+      "el": "pesca",
+      "nosotros": "pescamos",
+      "ellos": "pescan"
+    },
+    "preterito": {
+      "yo": "pesqué",
+      "tu": "pescaste",
+      "el": "pescó",
+      "nosotros": "pescamos",
+      "ellos": "pescaron"
+    },
+    "imperfecto": {
+      "yo": "pescaba",
+      "tu": "pescabas",
+      "el": "pescaba",
+      "nosotros": "pescábamos",
+      "ellos": "pescaban"
+    },
+    "futuro": {
+      "yo": "pescaré",
+      "tu": "pescarás",
+      "el": "pescará",
+      "nosotros": "pescaremos",
+      "ellos": "pescarán"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "sumar",
+    "sk": ["sčítať", "pripočítať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "sumando",
+    "presente": {
+      "yo": "sumo",
+      "tu": "sumas",
+      "el": "suma",
+      "nosotros": "sumamos",
+      "ellos": "suman"
+    },
+    "preterito": {
+      "yo": "sumé",
+      "tu": "sumaste",
+      "el": "sumó",
+      "nosotros": "sumamos",
+      "ellos": "sumaron"
+    },
+    "imperfecto": {
+      "yo": "sumaba",
+      "tu": "sumabas",
+      "el": "sumaba",
+      "nosotros": "sumábamos",
+      "ellos": "sumaban"
+    },
+    "futuro": {
+      "yo": "sumaré",
+      "tu": "sumarás",
+      "el": "sumará",
+      "nosotros": "sumaremos",
+      "ellos": "sumarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "restar",
+    "sk": ["odčítať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "restando",
+    "presente": {
+      "yo": "resto",
+      "tu": "restas",
+      "el": "resta",
+      "nosotros": "restamos",
+      "ellos": "restan"
+    },
+    "preterito": {
+      "yo": "resté",
+      "tu": "restaste",
+      "el": "restó",
+      "nosotros": "restamos",
+      "ellos": "restaron"
+    },
+    "imperfecto": {
+      "yo": "restaba",
+      "tu": "restabas",
+      "el": "restaba",
+      "nosotros": "restábamos",
+      "ellos": "restaban"
+    },
+    "futuro": {
+      "yo": "restaré",
+      "tu": "restarás",
+      "el": "restará",
+      "nosotros": "restaremos",
+      "ellos": "restarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "pesar",
+    "sk": ["vážiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "pesando",
+    "presente": {
+      "yo": "peso",
+      "tu": "pesas",
+      "el": "pesa",
+      "nosotros": "pesamos",
+      "ellos": "pesan"
+    },
+    "preterito": {
+      "yo": "pesé",
+      "tu": "pesaste",
+      "el": "pesó",
+      "nosotros": "pesamos",
+      "ellos": "pesaron"
+    },
+    "imperfecto": {
+      "yo": "pesaba",
+      "tu": "pesabas",
+      "el": "pesaba",
+      "nosotros": "pesábamos",
+      "ellos": "pesaban"
+    },
+    "futuro": {
+      "yo": "pesaré",
+      "tu": "pesarás",
+      "el": "pesará",
+      "nosotros": "pesaremos",
+      "ellos": "pesarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "abrazar",
+    "sk": ["objať"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "abrazando",
+    "presente": {
+      "yo": "abrazo",
+      "tu": "abrazas",
+      "el": "abraza",
+      "nosotros": "abrazamos",
+      "ellos": "abrazan"
+    },
+    "preterito": {
+      "yo": "abracé",
+      "tu": "abrazaste",
+      "el": "abrazó",
+      "nosotros": "abrazamos",
+      "ellos": "abrazaron"
+    },
+    "imperfecto": {
+      "yo": "abrazaba",
+      "tu": "abrazabas",
+      "el": "abrazaba",
+      "nosotros": "abrazábamos",
+      "ellos": "abrazaban"
+    },
+    "futuro": {
+      "yo": "abrazaré",
+      "tu": "abrazarás",
+      "el": "abrazará",
+      "nosotros": "abrazaremos",
+      "ellos": "abrazarán"
+    },
+    "irregularForms": ["preterito.yo"],
+    "level": "A2"
+  },
+  {
+    "id": "besar",
+    "sk": ["bozkať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "besando",
+    "presente": {
+      "yo": "beso",
+      "tu": "besas",
+      "el": "besa",
+      "nosotros": "besamos",
+      "ellos": "besan"
+    },
+    "preterito": {
+      "yo": "besé",
+      "tu": "besaste",
+      "el": "besó",
+      "nosotros": "besamos",
+      "ellos": "besaron"
+    },
+    "imperfecto": {
+      "yo": "besaba",
+      "tu": "besabas",
+      "el": "besaba",
+      "nosotros": "besábamos",
+      "ellos": "besaban"
+    },
+    "futuro": {
+      "yo": "besaré",
+      "tu": "besarás",
+      "el": "besará",
+      "nosotros": "besaremos",
+      "ellos": "besarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "llorar",
+    "sk": ["plakať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "llorando",
+    "presente": {
+      "yo": "lloro",
+      "tu": "lloras",
+      "el": "llora",
+      "nosotros": "lloramos",
+      "ellos": "lloran"
+    },
+    "preterito": {
+      "yo": "lloré",
+      "tu": "lloraste",
+      "el": "lloró",
+      "nosotros": "lloramos",
+      "ellos": "lloraron"
+    },
+    "imperfecto": {
+      "yo": "lloraba",
+      "tu": "llorabas",
+      "el": "lloraba",
+      "nosotros": "llorábamos",
+      "ellos": "lloraban"
+    },
+    "futuro": {
+      "yo": "lloraré",
+      "tu": "llorarás",
+      "el": "llorará",
+      "nosotros": "lloraremos",
+      "ellos": "llorarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "odiar",
+    "sk": ["nenávidieť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "odiando",
+    "presente": {
+      "yo": "odio",
+      "tu": "odias",
+      "el": "odia",
+      "nosotros": "odiamos",
+      "ellos": "odian"
+    },
+    "preterito": {
+      "yo": "odié",
+      "tu": "odiaste",
+      "el": "odió",
+      "nosotros": "odiamos",
+      "ellos": "odiaron"
+    },
+    "imperfecto": {
+      "yo": "odiaba",
+      "tu": "odiabas",
+      "el": "odiaba",
+      "nosotros": "odiábamos",
+      "ellos": "odiaban"
+    },
+    "futuro": {
+      "yo": "odiaré",
+      "tu": "odiarás",
+      "el": "odiará",
+      "nosotros": "odiaremos",
+      "ellos": "odiarán"
+    },
+    "level": "A2"
   }
 ]

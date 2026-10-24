@@ -649,5 +649,307 @@
         "distractors": ["vivo", "vivían", "viviré"]
       }
     ]
+  },
+  {
+    "id": "s723",
+    "es": "¿Dónde está la parada del camión?",
+    "sk": "Kde je zastávka autobusu?",
+    "level": "A2",
+    "topics": ["city"],
+    "tokens": ["¿", "Dónde", "está", "la", "parada", "del", "camión", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "parada",
+        "lemma": "parada",
+        "hint": "zastávka",
+        "distractors": ["parado", "partida", "pared"]
+      }
+    ]
+  },
+  {
+    "id": "s724",
+    "es": "Crucé la calle sin mirar.",
+    "sk": "Prešiel som cez ulicu a nepozrel som sa.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Crucé", "la", "calle", "sin", "mirar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Crucé",
+        "lemma": "cruzar",
+        "hint": "cruzar · yo · pretérito",
+        "distractors": ["Cruzó", "Cruzo", "Cruzaba"]
+      }
+    ]
+  },
+  {
+    "id": "s725",
+    "es": "Nos perdimos en el centro de Guadalajara.",
+    "sk": "Stratili sme sa v centre Guadalajary.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "perdimos", "en", "el", "centro", "de", "Guadalajara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "perdimos",
+        "lemma": "perderse",
+        "hint": "perderse · nosotros · pretérito",
+        "distractors": ["pierden", "perdió", "perderemos"]
+      }
+    ]
+  },
+  {
+    "id": "s726",
+    "es": "La catedral está en el zócalo.",
+    "sk": "Katedrála je na hlavnom námestí.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "catedral", "está", "en", "el", "zócalo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "place",
+        "distractors": ["es", "están", "son"]
+      }
+    ]
+  },
+  {
+    "id": "s727",
+    "es": "Compramos elotes en un puesto de la esquina.",
+    "sk": "Kúpili sme kukuricu v stánku na rohu.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Compramos", "elotes", "en", "un", "puesto", "de", "la", "esquina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "puesto",
+        "lemma": "puesto",
+        "hint": "stánok",
+        "distractors": ["puerto", "puente", "precio"]
+      }
+    ]
+  },
+  {
+    "id": "s728",
+    "es": "Los peatones tienen preferencia.",
+    "sk": "Chodci majú prednosť.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "peatones", "tienen", "preferencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tienen",
+        "lemma": "tener",
+        "hint": "tener · ellos · presente",
+        "distractors": ["tiene", "tuvieron", "tenemos"]
+      }
+    ]
+  },
+  {
+    "id": "s729",
+    "es": "Me multó un policía de tránsito.",
+    "sk": "Dostal som pokutu od dopravného policajta.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "multó", "un", "policía", "de", "tránsito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tránsito",
+        "lemma": "tránsito",
+        "hint": "doprava (policía de …)",
+        "distractors": ["trámite", "transporte", "tranvía"]
+      }
+    ]
+  },
+  {
+    "id": "s730",
+    "es": "Tomamos el metrobús para llegar a Reforma.",
+    "sk": "Na Reformu sme sa dostali metrobusom.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Tomamos", "el", "metrobús", "para", "llegar", "a", "Reforma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tomamos",
+        "lemma": "tomar",
+        "hint": "tomar · nosotros · pretérito",
+        "distractors": ["Toman", "Tomé", "Tomaban"]
+      }
+    ]
+  },
+  {
+    "id": "s731",
+    "es": "Vivimos en un vecindario muy tranquilo.",
+    "sk": "Bývame vo veľmi pokojnom susedstve.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Vivimos", "en", "un", "vecindario", "muy", "tranquilo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tranquilo",
+        "lemma": "tranquilo",
+        "hint": "pokojný",
+        "distractors": ["tranquila", "ruidoso", "peligroso"]
+      }
+    ]
+  },
+  {
+    "id": "s732",
+    "es": "La calle está llena de baches.",
+    "sk": "Ulica je plná výmoľov.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["La", "calle", "está", "llena", "de", "baches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "baches",
+        "lemma": "bache",
+        "hint": "výmole",
+        "distractors": ["bichos", "bancos", "charcos"]
+      }
+    ]
+  },
+  {
+    "id": "s733",
+    "es": "Hubo una marcha y cerraron el periférico.",
+    "sk": "Bol pochod a zavreli obchvat.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Hubo", "una", "marcha", "y", "cerraron", "el", "periférico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cerraron",
+        "lemma": "cerrar",
+        "hint": "cerrar · ellos · pretérito",
+        "distractors": ["cierran", "cerró", "cerraban"]
+      }
+    ]
+  },
+  {
+    "id": "s734",
+    "es": "En esta colonia bajó mucho la delincuencia.",
+    "sk": "V tejto štvrti veľmi klesla kriminalita.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "esta", "colonia", "bajó", "mucho", "la", "delincuencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "delincuencia",
+        "lemma": "delincuencia",
+        "hint": "kriminalita",
+        "distractors": ["delicadeza", "violencia", "decencia"]
+      }
+    ]
+  },
+  {
+    "id": "s735",
+    "es": "A mi vecino lo asaltaron saliendo del cajero.",
+    "sk": "Suseda prepadli, keď vychádzal od bankomatu.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["A", "mi", "vecino", "lo", "asaltaron", "saliendo", "del", "cajero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "saliendo",
+        "lemma": "salir",
+        "hint": "salir · gerundio",
+        "distractors": ["salió", "sale", "salir"]
+      }
+    ]
+  },
+  {
+    "id": "s736",
+    "es": "El alumbrado público de la avenida no funciona.",
+    "sk": "Pouličné osvetlenie na triede nefunguje.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["El", "alumbrado", "público", "de", "la", "avenida", "no", "funciona", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "funciona",
+        "lemma": "funcionar",
+        "hint": "funcionar · él · presente",
+        "distractors": ["funcionan", "funcionó", "funcionará"]
+      }
+    ]
+  },
+  {
+    "id": "s737",
+    "es": "La vida urbana es estresante, pero tiene muchas ventajas.",
+    "sk": "Život v meste je stresujúci, ale má veľa výhod.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["La", "vida", "urbana", "es", "estresante", ",", "pero", "tiene", "muchas", "ventajas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "ventajas",
+        "lemma": "ventaja",
+        "hint": "výhody",
+        "distractors": ["ventanas", "desventajas", "vecinas"]
+      }
+    ]
+  },
+  {
+    "id": "s738",
+    "es": "Los vendedores ambulantes ocupan toda la banqueta.",
+    "sk": "Pouliční predavači zaberajú celý chodník.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["Los", "vendedores", "ambulantes", "ocupan", "toda", "la", "banqueta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "banqueta",
+        "lemma": "banqueta",
+        "hint": "chodník",
+        "distractors": ["banca", "bandeja", "carretera"]
+      }
+    ]
+  },
+  {
+    "id": "s739",
+    "es": "El policía nos señaló dónde estacionarnos.",
+    "sk": "Policajt nám ukázal, kde zaparkovať.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "policía", "nos", "señaló", "dónde", "estacionarnos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "señaló",
+        "lemma": "señalar",
+        "hint": "señalar · él · pretérito",
+        "distractors": ["señala", "señalaba", "señalará"]
+      }
+    ]
   }
 ]

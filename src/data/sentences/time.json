@@ -647,5 +647,343 @@
         "distractors": ["saldrán", "salíamos", "saldré"]
       }
     ]
+  },
+  {
+    "id": "s757",
+    "es": "Anoche cenamos en casa de mis papás.",
+    "sk": "Včera večer sme večerali u rodičov.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "cenamos", "en", "casa", "de", "mis", "papás", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cenamos",
+        "lemma": "cenar",
+        "hint": "cenar · nosotros · pretérito",
+        "distractors": ["cenan", "cené", "cenábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s758",
+    "es": "Pasado mañana es mi cumpleaños.",
+    "sk": "Pozajtra mám narodeniny.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Pasado", "mañana", "es", "mi", "cumpleaños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "why": "time",
+        "distractors": ["está", "son", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s759",
+    "es": "El próximo mes empiezo un trabajo nuevo.",
+    "sk": "Budúci mesiac začínam v novej práci.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["El", "próximo", "mes", "empiezo", "un", "trabajo", "nuevo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empiezo",
+        "lemma": "empezar",
+        "hint": "empezar · yo · presente",
+        "distractors": ["empieza", "empecé", "empezaba"]
+      }
+    ]
+  },
+  {
+    "id": "s760",
+    "es": "La semana pasada llovió todos los días.",
+    "sk": "Minulý týždeň pršalo každý deň.",
+    "level": "A2",
+    "topics": ["time", "weather"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "semana", "pasada", "llovió", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pasada",
+        "lemma": "pasado",
+        "hint": "minulý",
+        "distractors": ["pasado", "próxima", "primera"]
+      }
+    ]
+  },
+  {
+    "id": "s761",
+    "es": "Anteayer fui al dentista.",
+    "sk": "Predvčerom som bol u zubára.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Anteayer", "fui", "al", "dentista", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "fui",
+        "lemma": "ir",
+        "hint": "ir · yo · pretérito",
+        "distractors": ["fue", "voy", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s762",
+    "es": "De vez en cuando vamos al cine.",
+    "sk": "Z času na čas chodíme do kina.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["De", "vez", "en", "cuando", "vamos", "al", "cine", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["van", "fuimos", "íbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s763",
+    "es": "Llegamos a tiempo para el concierto.",
+    "sk": "Na koncert sme prišli načas.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegamos", "a", "tiempo", "para", "el", "concierto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiempo",
+        "lemma": "a tiempo",
+        "hint": "čas (a … = načas)",
+        "distractors": ["hora", "temprano", "momento"]
+      }
+    ]
+  },
+  {
+    "id": "s764",
+    "es": "Mañana tengo que madrugar para ir al aeropuerto.",
+    "sk": "Zajtra musím vstávať skoro, idem na letisko.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Mañana", "tengo", "que", "madrugar", "para", "ir", "al", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tiene", "tuve", "tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s765",
+    "es": "El sábado celebramos nuestro aniversario de bodas.",
+    "sk": "V sobotu oslavujeme výročie svadby.",
+    "level": "B1",
+    "topics": ["time"],
+    "tokens": ["El", "sábado", "celebramos", "nuestro", "aniversario", "de", "bodas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aniversario",
+        "lemma": "aniversario",
+        "hint": "výročie",
+        "distractors": ["cumpleaños", "universidad", "anuncio"]
+      }
+    ]
+  },
+  {
+    "id": "s766",
+    "es": "En la década de los ochenta mis papás vivían en Tijuana.",
+    "sk": "V osemdesiatych rokoch moji rodičia bývali v Tijuane.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperfecto"],
+    "tokens": ["En", "la", "década", "de", "los", "ochenta", "mis", "papás", "vivían", "en", "Tijuana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "vivían",
+        "lemma": "vivir",
+        "hint": "vivir · ellos · imperfecto",
+        "distractors": ["viven", "vivieron", "vivirán"]
+      }
+    ]
+  },
+  {
+    "id": "s767",
+    "es": "De ahora en adelante voy a llegar temprano.",
+    "sk": "Odteraz budem chodiť skoro.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["De", "ahora", "en", "adelante", "voy", "a", "llegar", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "adelante",
+        "lemma": "de ahora en adelante",
+        "hint": "odteraz (de ahora en …)",
+        "distractors": ["delante", "después", "antes"]
+      }
+    ]
+  },
+  {
+    "id": "s768",
+    "es": "Le pedimos que nos conteste a la brevedad.",
+    "sk": "Prosíme vás, aby ste nám čím skôr odpovedali.",
+    "level": "B2",
+    "topics": ["time", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Le", "pedimos", "que", "nos", "conteste", "a", "la", "brevedad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pedimos",
+        "lemma": "pedir",
+        "hint": "pedir · nosotros · presente",
+        "distractors": ["piden", "pidió", "pedíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s769",
+    "es": "La puntualidad no es su fuerte.",
+    "sk": "Dochvíľnosť nie je jeho silná stránka.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["La", "puntualidad", "no", "es", "su", "fuerte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "puntualidad",
+        "lemma": "puntualidad",
+        "hint": "dochvíľnosť",
+        "distractors": ["puntual", "personalidad", "publicidad"]
+      }
+    ]
+  },
+  {
+    "id": "s770",
+    "es": "Hay que reservar con antelación.",
+    "sk": "Treba si rezervovať vopred.",
+    "level": "B2",
+    "topics": ["time", "travel"],
+    "tokens": ["Hay", "que", "reservar", "con", "antelación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "antelación",
+        "lemma": "antelación",
+        "hint": "predstih (con …)",
+        "distractors": ["atención", "elección", "relación"]
+      }
+    ]
+  },
+  {
+    "id": "s771",
+    "es": "En el transcurso del día te mando la información.",
+    "sk": "Počas dňa ti pošlem informácie.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["En", "el", "transcurso", "del", "día", "te", "mando", "la", "información", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "mando",
+        "lemma": "mandar",
+        "hint": "mandar · yo · presente",
+        "distractors": ["manda", "mandé", "mandaba"]
+      }
+    ]
+  },
+  {
+    "id": "s772",
+    "es": "La víspera de Navidad cenamos bacalao.",
+    "sk": "Na Štedrý večer večeriame tresku.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["La", "víspera", "de", "Navidad", "cenamos", "bacalao", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "víspera",
+        "lemma": "víspera",
+        "hint": "predvečer",
+        "distractors": ["vista", "vuelta", "visita"]
+      }
+    ]
+  },
+  {
+    "id": "s773",
+    "es": "Es una solución a corto plazo, no a largo plazo.",
+    "sk": "Je to krátkodobé riešenie, nie dlhodobé.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["Es", "una", "solución", "a", "corto", "plazo", ",", "no", "a", "largo", "plazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "corto",
+        "lemma": "corto",
+        "hint": "krátky (a … plazo)",
+        "distractors": ["largo", "bajo", "poco"]
+      }
+    ]
+  },
+  {
+    "id": "s774",
+    "es": "Mi jornada empieza a las siete y termina a las cuatro.",
+    "sk": "Môj pracovný deň začína o siedmej a končí o štvrtej.",
+    "level": "B2",
+    "topics": ["time", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "jornada", "empieza", "a", "las", "siete", "y", "termina", "a", "las", "cuatro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "termina",
+        "lemma": "terminar",
+        "hint": "terminar · ella · presente",
+        "distractors": ["terminan", "terminó", "terminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s775",
+    "es": "Este trimestre las ventas aumentaron un diez por ciento.",
+    "sk": "Tento štvrťrok predaj stúpol o desať percent.",
+    "level": "B2",
+    "topics": ["time", "work"],
+    "grammar": ["preterito"],
+    "tokens": ["Este", "trimestre", "las", "ventas", "aumentaron", "un", "diez", "por", "ciento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aumentaron",
+        "lemma": "aumentar",
+        "hint": "aumentar · ellas · pretérito",
+        "distractors": ["aumenta", "aumentó", "aumentaban"]
+      }
+    ]
   }
 ]

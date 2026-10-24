@@ -75,7 +75,7 @@ describe('createLesson', () => {
     expect(count).toBeGreaterThan(0)
     expect(count).toBeLessThan(LESSON_SIZE)
     expect(createLesson({ type: 'translation', topic: 'numbers', level: 'A2' }, LESSON_SIZE, seeded(5))).toHaveLength(count)
-    expect(createLesson({ type: 'translation', level: 'B2' }, LESSON_SIZE, seeded(5))).toHaveLength(0)
+    expect(createLesson({ type: 'translation', topic: 'tech', level: 'A1' }, LESSON_SIZE, seeded(5))).toHaveLength(0)
   })
 
   it('counts every conjugation combination', () => {

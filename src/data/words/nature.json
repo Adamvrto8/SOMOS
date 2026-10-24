@@ -458,5 +458,297 @@
     "level": "B1",
     "topics": ["nature"],
     "examples": [{ "es": "El agua es un recurso muy importante.", "sk": "Voda je veľmi dôležitý zdroj." }]
+  },
+  {
+    "id": "rama",
+    "es": "rama",
+    "sk": ["konár"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El gato está en una rama del árbol.", "sk": "Mačka je na konári stromu." }
+    ]
+  },
+  {
+    "id": "hormiga",
+    "es": "hormiga",
+    "sk": ["mravec"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Las hormigas entraron a la cocina.", "sk": "Do kuchyne vliezli mravce." }
+    ]
+  },
+  {
+    "id": "abeja",
+    "es": "abeja",
+    "sk": ["včela"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Una abeja me picó en la mano.", "sk": "Pichla ma včela do ruky." }
+    ]
+  },
+  {
+    "id": "oso",
+    "es": "oso",
+    "sk": ["medveď"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "En el norte de México hay osos negros.", "sk": "Na severe Mexika žijú čierne medvede." }
+    ]
+  },
+  {
+    "id": "mono",
+    "es": "mono",
+    "sk": ["opica"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "En la selva vimos monos.", "sk": "V pralese sme videli opice." }
+    ]
+  },
+  {
+    "id": "ballena",
+    "es": "ballena",
+    "sk": ["veľryba"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Las ballenas llegan a Baja California en invierno.", "sk": "Veľryby priplávajú do Dolnej Kalifornie v zime." }
+    ]
+  },
+  {
+    "id": "cascada",
+    "es": "cascada",
+    "sk": ["vodopád"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Nadamos debajo de una cascada.", "sk": "Plávali sme pod vodopádom." }
+    ]
+  },
+  {
+    "id": "cerro",
+    "es": "cerro",
+    "sk": ["kopec"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Subimos al cerro para ver el atardecer.", "sk": "Vyšli sme na kopec pozrieť sa na západ slnka." }
+    ]
+  },
+  {
+    "id": "costa",
+    "es": "costa",
+    "sk": ["pobrežie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Vivimos en la costa de Veracruz.", "sk": "Bývame na pobreží Veracruzu." }
+    ]
+  },
+  {
+    "id": "semilla",
+    "es": "semilla",
+    "sk": ["semeno", "semienko"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Plantamos las semillas en primavera.", "sk": "Semienka sme zasadili na jar." }
+    ]
+  },
+  {
+    "id": "raiz",
+    "es": "raíz",
+    "sk": ["koreň"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "raíces",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Las raíces del árbol rompieron la banqueta.", "sk": "Korene stromu rozbili chodník." }
+    ]
+  },
+  {
+    "id": "aguila",
+    "es": "águila",
+    "sk": ["orol"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El águila es el símbolo de México.", "sk": "Orol je symbolom Mexika." }
+    ],
+    "note": "Ženský rod, ale „el águila“ (pred prízvučným a-). Množné číslo: las águilas."
+  },
+  {
+    "id": "cueva",
+    "es": "cueva",
+    "sk": ["jaskyňa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Entramos a una cueva con linternas.", "sk": "Vošli sme do jaskyne s baterkami." }
+    ]
+  },
+  {
+    "id": "en-peligro-de-extincion",
+    "es": "en peligro de extinción",
+    "sk": ["ohrozený vyhynutím"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El ajolote está en peligro de extinción.", "sk": "Axolotl je ohrozený vyhynutím." }
+    ]
+  },
+  {
+    "id": "ajolote",
+    "es": "ajolote",
+    "sk": ["axolotl"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El ajolote solo vive en los lagos de Xochimilco.", "sk": "Axolotl žije iba v jazerách Xochimilca." }
+    ]
+  },
+  {
+    "id": "manglar",
+    "es": "manglar",
+    "sk": ["mangrovy", "mangrovový porast"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "manglares",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Paseamos en lancha por el manglar.", "sk": "Previezli sme sa loďkou mangrovami." }
+    ]
+  },
+  {
+    "id": "arrecife",
+    "es": "arrecife",
+    "sk": ["útes"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El arrecife de Cozumel es famoso para bucear.", "sk": "Útes pri Cozumeli je slávny na potápanie." }
+    ]
+  },
+  {
+    "id": "deforestacion",
+    "es": "deforestación",
+    "sk": ["odlesňovanie"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "La deforestación es un problema grave.", "sk": "Odlesňovanie je vážny problém." }
+    ]
+  },
+  {
+    "id": "ecosistema",
+    "es": "ecosistema",
+    "sk": ["ekosystém"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "El ecosistema del lago es muy frágil.", "sk": "Ekosystém jazera je veľmi krehký." }
+    ],
+    "note": "Mužský rod, hoci končí na -a: el ecosistema, el problema, el sistema."
+  },
+  {
+    "id": "sustentable",
+    "es": "sustentable",
+    "sk": ["udržateľný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Queremos un turismo más sustentable.", "sk": "Chceme udržateľnejší turizmus." }
+    ],
+    "note": "V Mexiku sa hovorí „sustentable“ (v Španielsku skôr „sostenible“)."
+  },
+  {
+    "id": "renovable",
+    "es": "renovable",
+    "sk": ["obnoviteľný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "La energía solar es renovable.", "sk": "Slnečná energia je obnoviteľná." }
+    ]
+  },
+  {
+    "id": "residuo",
+    "es": "residuo",
+    "sk": ["odpad"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Separamos los residuos orgánicos.", "sk": "Triedime bioodpad." }
+    ]
+  },
+  {
+    "id": "composta",
+    "es": "composta",
+    "sk": ["kompost"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Con las cáscaras hacemos composta.", "sk": "Zo šupiek robíme kompost." }
+    ]
+  },
+  {
+    "id": "huella-de-carbono",
+    "es": "huella de carbono",
+    "sk": ["uhlíková stopa"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["nature"],
+    "examples": [
+      { "es": "Viajar en avión aumenta tu huella de carbono.", "sk": "Lietanie zvyšuje tvoju uhlíkovú stopu." }
+    ]
   }
 ]

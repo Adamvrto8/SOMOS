@@ -48,7 +48,7 @@ export const EXERCISES: ExerciseInfo[] = [
 
 export const exerciseInfo = (type: ExerciseType) => EXERCISES.find((e) => e.type === type)!
 
-export const LEVELS: Level[] = ['A1', 'A2', 'B1']
+export const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 
 // ---------- filter <-> URL (?type=&topic=&level=&tense=) ----------
 

@@ -60,5 +60,40 @@
     "note": "In Mexico grades go from 0 to 10; the best grade is 10."
   },
   { "id": "tesis", "en": ["thesis"], "examples": ["I'm writing my thesis."] },
-  { "id": "investigacion", "en": ["research", "investigation"], "examples": ["The university does a lot of research."] }
+  { "id": "investigacion", "en": ["research", "investigation"], "examples": ["The university does a lot of research."] },
+  { "id": "regla", "en": ["ruler", "rule"], "examples": ["I need a ruler for geometry class.", "That's the rule."] },
+  { "id": "calculadora", "en": ["calculator"], "examples": ["Can I borrow your calculator?"] },
+  {
+    "id": "primaria",
+    "en": ["elementary school"],
+    "examples": ["My daughter is in third grade."],
+    "note": "In Mexico: primaria (6 years), secundaria (3 years), prepa (3 years)."
+  },
+  { "id": "secundaria", "en": ["middle school"], "examples": ["My son starts middle school in September."] },
+  { "id": "alumno", "en": ["student", "pupil"], "examples": ["The students wear uniforms."] },
+  { "id": "uniforme", "en": ["uniform"], "examples": ["The uniform is blue and white."] },
+  { "id": "apunte", "en": ["note (from class)"], "examples": ["My classmate lent me her notes."] },
+  { "id": "ensayo", "en": ["essay", "rehearsal"], "examples": ["We have to write an essay."] },
+  { "id": "resumen", "en": ["summary"], "examples": ["Write a summary of the chapter."] },
+  { "id": "boleta", "en": ["report card"], "examples": ["We get our report cards tomorrow."], "note": "Mexican: boleta de calificaciones." },
+  {
+    "id": "extraordinario",
+    "en": ["makeup exam", "extraordinary"],
+    "examples": ["I failed and have to take the makeup exam."],
+    "note": "In Mexican schools: un extraordinario = a makeup exam."
+  },
+  { "id": "posgrado", "en": ["graduate degree"], "examples": ["I want to do a graduate degree abroad."] },
+  { "id": "doctorado", "en": ["doctorate", "PhD"], "examples": ["She's doing a PhD in biology."] },
+  {
+    "id": "servicio-social",
+    "en": ["social service (required for graduation)"],
+    "examples": ["I did my social service at a hospital."],
+    "note": "Mexican university students must do hundreds of hours of public service before graduating."
+  },
+  { "id": "colegiatura", "en": ["tuition"], "examples": ["Tuition went up again."] },
+  { "id": "plagio", "en": ["plagiarism"], "examples": ["Copying from the internet is plagiarism."] },
+  { "id": "egresado", "en": ["graduate"], "examples": ["He's a UNAM graduate."] },
+  { "id": "autodidacta", "en": ["self-taught"], "examples": ["My cousin is self-taught."] },
+  { "id": "aprendizaje", "en": ["learning"], "examples": ["Everyone learns at their own pace."] },
+  { "id": "rendimiento", "en": ["performance", "results"], "examples": ["His school performance improved."] }
 ]

@@ -257,5 +257,430 @@
         "distractors": ["mandé", "manda", "mandaba"]
       }
     ]
+  },
+  {
+    "id": "s967",
+    "es": "La impresora no funciona otra vez.",
+    "sk": "Tlačiareň zase nefunguje.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["La", "impresora", "no", "funciona", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "funciona",
+        "lemma": "funcionar",
+        "hint": "funcionar · ella · presente",
+        "distractors": ["funcionan", "funcionó", "funcionaba"]
+      }
+    ]
+  },
+  {
+    "id": "s968",
+    "es": "¿Por qué borraste mi mensaje?",
+    "sk": "Prečo si vymazal moju správu?",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Por", "qué", "borraste", "mi", "mensaje", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "borraste",
+        "lemma": "borrar",
+        "hint": "borrar · tú · pretérito",
+        "distractors": ["borras", "borró", "borrabas"]
+      }
+    ]
+  },
+  {
+    "id": "s969",
+    "es": "No guardé los cambios y perdí todo.",
+    "sk": "Neuložil som zmeny a všetko som stratil.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["No", "guardé", "los", "cambios", "y", "perdí", "todo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "guardé",
+        "lemma": "guardar",
+        "hint": "guardar · yo · pretérito",
+        "distractors": ["guarda", "guardó", "guardaba"]
+      }
+    ]
+  },
+  {
+    "id": "s970",
+    "es": "Descargué una aplicación para aprender español.",
+    "sk": "Stiahol som si aplikáciu na učenie sa španielčiny.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Descargué", "una", "aplicación", "para", "aprender", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Descargué",
+        "lemma": "descargar",
+        "hint": "descargar · yo · pretérito",
+        "distractors": ["Descarga", "Descargó", "Descargaba"]
+      }
+    ]
+  },
+  {
+    "id": "s971",
+    "es": "Le tomé una foto con la cámara del celular.",
+    "sk": "Odfotil som ho mobilom.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "tomé", "una", "foto", "con", "la", "cámara", "del", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tomé",
+        "lemma": "tomar",
+        "hint": "tomar · yo · pretérito",
+        "distractors": ["toma", "tomó", "tomaba"]
+      }
+    ]
+  },
+  {
+    "id": "s972",
+    "es": "Mi hijo pasa horas en la tableta.",
+    "sk": "Môj syn trávi hodiny na tablete.",
+    "level": "A2",
+    "topics": ["tech", "family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "pasa", "horas", "en", "la", "tableta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pasa",
+        "lemma": "pasar",
+        "hint": "pasar · él · presente",
+        "distractors": ["pasan", "pasó", "pasaba"]
+      }
+    ]
+  },
+  {
+    "id": "s973",
+    "es": "Te mando el enlace por WhatsApp.",
+    "sk": "Pošlem ti odkaz cez WhatsApp.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["Te", "mando", "el", "enlace", "por", "WhatsApp", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enlace",
+        "lemma": "enlace",
+        "hint": "odkaz",
+        "distractors": ["enchufe", "lazo", "anuncio"]
+      }
+    ]
+  },
+  {
+    "id": "s974",
+    "es": "Hicimos una videollamada con la familia en Navidad.",
+    "sk": "Na Vianoce sme mali videohovor s rodinou.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Hicimos", "una", "videollamada", "con", "la", "familia", "en", "Navidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hicimos",
+        "lemma": "hacer",
+        "hint": "hacer · nosotros · pretérito",
+        "distractors": ["Hacemos", "Hicieron", "Hacíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s975",
+    "es": "Mi publicación tuvo muchos comentarios.",
+    "sk": "Môj príspevok mal veľa komentárov.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "publicación", "tuvo", "muchos", "comentarios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tuvo",
+        "lemma": "tener",
+        "hint": "tener · ella · pretérito",
+        "distractors": ["tiene", "tenía", "tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s976",
+    "es": "Mándame una captura de pantalla del error.",
+    "sk": "Pošli mi snímku obrazovky s chybou.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["Mándame", "una", "captura", "de", "pantalla", "del", "error", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "captura",
+        "lemma": "captura de pantalla",
+        "hint": "snímka (… de pantalla)",
+        "distractors": ["cuadra", "carta", "factura"]
+      }
+    ]
+  },
+  {
+    "id": "s977",
+    "es": "El concierto se transmitió en vivo.",
+    "sk": "Koncert vysielali naživo.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["El", "concierto", "se", "transmitió", "en", "vivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "vivo",
+        "lemma": "en vivo",
+        "hint": "naživo (en …)",
+        "distractors": ["viva", "vida", "vino"]
+      }
+    ]
+  },
+  {
+    "id": "s978",
+    "es": "Mi hermano es programador y trabaja desde casa.",
+    "sk": "Môj brat je programátor a pracuje z domu.",
+    "level": "B1",
+    "topics": ["tech", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "es", "programador", "y", "trabaja", "desde", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "trabaja",
+        "lemma": "trabajar",
+        "hint": "trabajar · él · presente",
+        "distractors": ["trabajan", "trabajó", "trabajaba"]
+      }
+    ]
+  },
+  {
+    "id": "s979",
+    "es": "La inteligencia artificial está cambiando muchos trabajos.",
+    "sk": "Umelá inteligencia mení veľa povolaní.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["progresivo"],
+    "tokens": ["La", "inteligencia", "artificial", "está", "cambiando", "muchos", "trabajos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cambiando",
+        "lemma": "cambiar",
+        "hint": "cambiar · gerundio",
+        "distractors": ["cambia", "cambió", "cambiar"]
+      }
+    ]
+  },
+  {
+    "id": "s980",
+    "es": "Me llegó un mensaje de estafa pidiendo mis datos.",
+    "sk": "Prišla mi podvodná správa, ktorá pýtala moje údaje.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Me", "llegó", "un", "mensaje", "de", "estafa", "pidiendo", "mis", "datos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "estafa",
+        "lemma": "estafa",
+        "hint": "podvod",
+        "distractors": ["estufa", "estación", "tarifa"]
+      }
+    ]
+  },
+  {
+    "id": "s981",
+    "es": "Hay que tener cuidado con la desinformación en redes sociales.",
+    "sk": "Na sociálnych sieťach si treba dávať pozor na dezinformácie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Hay", "que", "tener", "cuidado", "con", "la", "desinformación", "en", "redes", "sociales", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "desinformación",
+        "lemma": "desinformación",
+        "hint": "dezinformácie",
+        "distractors": ["información", "desesperación", "decoración"]
+      }
+    ]
+  },
+  {
+    "id": "s982",
+    "es": "Cancelé la suscripción porque casi no la usaba.",
+    "sk": "Zrušil som predplatné, lebo som ho skoro nepoužíval.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cancelé", "la", "suscripción", "porque", "casi", "no", "la", "usaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "usaba",
+        "lemma": "usar",
+        "hint": "usar · yo · imperfecto",
+        "distractors": ["uso", "usé", "usaré"]
+      }
+    ]
+  },
+  {
+    "id": "s983",
+    "es": "Siempre compruebo que la página sea segura antes de pagar.",
+    "sk": "Pred platbou si vždy overím, či je stránka bezpečná.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "compruebo", "que", "la", "página", "sea", "segura", "antes", "de", "pagar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compruebo",
+        "lemma": "comprobar",
+        "hint": "comprobar · yo · presente",
+        "distractors": ["comprueba", "comprobé", "comprobaba"]
+      }
+    ]
+  },
+  {
+    "id": "s984",
+    "es": "Los algoritmos deciden qué noticias vemos.",
+    "sk": "Algoritmy rozhodujú, aké správy vidíme.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "algoritmos", "deciden", "qué", "noticias", "vemos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "deciden",
+        "lemma": "decidir",
+        "hint": "decidir · ellos · presente",
+        "distractors": ["decide", "decidieron", "decidían"]
+      }
+    ]
+  },
+  {
+    "id": "s985",
+    "es": "Me preocupa la privacidad de mis datos.",
+    "sk": "Robím si starosti o súkromie svojich údajov.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Me", "preocupa", "la", "privacidad", "de", "mis", "datos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "privacidad",
+        "lemma": "privacidad",
+        "hint": "súkromie",
+        "distractors": ["prioridad", "propiedad", "publicidad"]
+      }
+    ]
+  },
+  {
+    "id": "s986",
+    "es": "Mi sobrino tiene una adicción a los videojuegos.",
+    "sk": "Môj synovec je závislý od videohier.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Mi", "sobrino", "tiene", "una", "adicción", "a", "los", "videojuegos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "adicción",
+        "lemma": "adicción",
+        "hint": "závislosť",
+        "distractors": ["adición", "dirección", "elección"]
+      }
+    ]
+  },
+  {
+    "id": "s987",
+    "es": "Los dispositivos inteligentes escuchan todo lo que decimos.",
+    "sk": "Inteligentné zariadenia počúvajú všetko, čo hovoríme.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "dispositivos", "inteligentes", "escuchan", "todo", "lo", "que", "decimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "escuchan",
+        "lemma": "escuchar",
+        "hint": "escuchar · ellos · presente",
+        "distractors": ["escucha", "escucharon", "escuchaban"]
+      }
+    ]
+  },
+  {
+    "id": "s988",
+    "es": "Hackearon la cuenta de mi mamá y tuvo que cambiar la contraseña.",
+    "sk": "Mame hackli účet a musela si zmeniť heslo.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Hackearon", "la", "cuenta", "de", "mi", "mamá", "y", "tuvo", "que", "cambiar", "la", "contraseña", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tuvo",
+        "lemma": "tener",
+        "hint": "tener · ella · pretérito",
+        "distractors": ["tiene", "tenía", "tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s989",
+    "es": "En cuanto vi la noticia, te llamé.",
+    "sk": "Hneď ako som videl tú správu, zavolal som ti.",
+    "level": "B2",
+    "topics": ["tech", "basics"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "cuanto", "vi", "la", "noticia", ",", "te", "llamé", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "llamé",
+        "lemma": "llamar",
+        "hint": "llamar · yo · pretérito",
+        "distractors": ["llama", "llamó", "llamaba"]
+      }
+    ]
+  },
+  {
+    "id": "s990",
+    "es": "Vemos series en varias plataformas.",
+    "sk": "Seriály pozeráme na viacerých platformách.",
+    "level": "B2",
+    "topics": ["tech", "hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Vemos", "series", "en", "varias", "plataformas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "plataformas",
+        "lemma": "plataforma",
+        "hint": "platformy",
+        "distractors": ["plataforma", "platos", "plantas"]
+      }
+    ]
   }
 ]

@@ -473,5 +473,241 @@
     "level": "B1",
     "topics": ["family"],
     "examples": [{ "es": "Recibió una herencia de su tía.", "sk": "Dostal dedičstvo po tete." }]
+  },
+  {
+    "id": "bisabuelo",
+    "es": "bisabuelo",
+    "sk": ["pradedo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Mi bisabuelo peleó en la Revolución.", "sk": "Môj pradedo bojoval v revolúcii." }
+    ],
+    "note": "Bisabuela = prababka, bisabuelos = prastarí rodičia."
+  },
+  {
+    "id": "pariente",
+    "es": "pariente",
+    "sk": ["príbuzný"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Tengo muchos parientes en Estados Unidos.", "sk": "Mám veľa príbuzných v Spojených štátoch." }
+    ],
+    "note": "Pozor: pariente = príbuzný, padres = rodičia."
+  },
+  {
+    "id": "gemelo",
+    "es": "gemelo",
+    "sk": ["dvojča"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Mis primos son gemelos.", "sk": "Moji bratranci sú dvojčatá." }
+    ]
+  },
+  {
+    "id": "viudo",
+    "es": "viudo",
+    "sk": ["ovdovený", "vdovec"],
+    "pos": "adj",
+    "feminine": "viuda",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Mi tía es viuda desde hace cinco años.", "sk": "Moja teta je vdova už päť rokov." }
+    ]
+  },
+  {
+    "id": "comadre",
+    "es": "comadre",
+    "sk": ["kmotra (aj blízka kamarátka)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Voy a tomar un café con mi comadre.", "sk": "Idem na kávu s kmotrou." }
+    ]
+  },
+  {
+    "id": "quinceanera",
+    "es": "quinceañera",
+    "sk": ["pätnástiny (oslava)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Fuimos a la quinceañera de mi sobrina.", "sk": "Boli sme na pätnástinách mojej netere." }
+    ],
+    "note": "Veľká mexická oslava 15. narodenín dievčaťa. Aj samotné dievča je „la quinceañera“."
+  },
+  {
+    "id": "crianza",
+    "es": "crianza",
+    "sk": ["výchova (detí)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "La crianza de los hijos es un trabajo de tiempo completo.", "sk": "Výchova detí je práca na plný úväzok." }
+    ]
+  },
+  {
+    "id": "padrastro",
+    "es": "padrastro",
+    "sk": ["otčim"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Me llevo muy bien con mi padrastro.", "sk": "S otčimom vychádzam veľmi dobre." }
+    ]
+  },
+  {
+    "id": "madrastra",
+    "es": "madrastra",
+    "sk": ["macocha"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Su madrastra lo trata como a su propio hijo.", "sk": "Macocha s ním zaobchádza ako s vlastným synom." }
+    ]
+  },
+  {
+    "id": "huerfano",
+    "es": "huérfano",
+    "sk": ["sirota", "osirelý"],
+    "pos": "adj",
+    "feminine": "huérfana",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Se quedó huérfano muy joven.", "sk": "Veľmi mladý zostal sirotou." }
+    ]
+  },
+  {
+    "id": "embarazo",
+    "es": "embarazo",
+    "sk": ["tehotenstvo"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family", "health"],
+    "examples": [
+      { "es": "Tuvo un embarazo muy tranquilo.", "sk": "Mala veľmi pokojné tehotenstvo." }
+    ]
+  },
+  {
+    "id": "compromiso",
+    "es": "compromiso",
+    "sk": ["záväzok", "zásnuby", "povinnosť"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Anunciaron su compromiso en la cena.", "sk": "Na večeri oznámili zásnuby." },
+      { "es": "Hoy no puedo, tengo un compromiso.", "sk": "Dnes nemôžem, mám niečo dohodnuté." }
+    ]
+  },
+  {
+    "id": "convivencia",
+    "es": "convivencia",
+    "sk": ["spolužitie", "posedenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "La convivencia con mis suegros no es fácil.", "sk": "Spolužitie so svokrovcami nie je jednoduché." }
+    ],
+    "note": "V Mexiku aj „una convivencia“ = posedenie, stretnutie (v práci, v škole)."
+  },
+  {
+    "id": "ahijado",
+    "es": "ahijado",
+    "sk": ["krstný syn"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Le compré un regalo a mi ahijado.", "sk": "Kúpil som darček krstnému synovi." }
+    ]
+  },
+  {
+    "id": "generacion",
+    "es": "generación",
+    "sk": ["generácia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "generaciones",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Tres generaciones viven en la misma casa.", "sk": "V jednom dome žijú tri generácie." }
+    ]
+  },
+  {
+    "id": "antepasado",
+    "es": "antepasado",
+    "sk": ["predok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Nuestros antepasados eran campesinos.", "sk": "Naši predkovia boli roľníci." }
+    ]
+  },
+  {
+    "id": "chamaco",
+    "es": "chamaco",
+    "sk": ["chlapec", "decko"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "Los chamacos están jugando en la calle.", "sk": "Decká sa hrajú na ulici." }
+    ],
+    "note": "Mexické, hovorové. Chamaca = dievča."
+  },
+  {
+    "id": "consentido",
+    "es": "consentido",
+    "sk": ["rozmaznaný", "miláčik"],
+    "pos": "adj",
+    "feminine": "consentida",
+    "level": "B2",
+    "topics": ["family"],
+    "examples": [
+      { "es": "El más chico es el consentido de la familia.", "sk": "Najmladší je miláčik celej rodiny." }
+    ]
+  },
+  {
+    "id": "apapacho",
+    "es": "apapacho",
+    "sk": ["objatie", "pohladenie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["family", "emotions"],
+    "examples": [
+      { "es": "Necesito un apapacho.", "sk": "Potrebujem objatie." }
+    ],
+    "note": "Mexické (z jazyka nahuatl)."
   }
 ]

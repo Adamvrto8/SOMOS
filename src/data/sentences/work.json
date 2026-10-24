@@ -674,5 +674,360 @@
         "distractors": ["estaba", "soy", "seré"]
       }
     ]
+  },
+  {
+    "id": "s776",
+    "es": "El director llega a la oficina a las nueve.",
+    "sk": "Riaditeľ prichádza do kancelárie o deviatej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "director", "llega", "a", "la", "oficina", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llega",
+        "lemma": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors": ["llegan", "llegó", "llegaba"]
+      }
+    ]
+  },
+  {
+    "id": "s777",
+    "es": "¿Cuánto cobras por hora?",
+    "sk": "Koľko si účtuješ za hodinu?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "cobras", "por", "hora", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cobras",
+        "lemma": "cobrar",
+        "hint": "cobrar · tú · presente",
+        "distractors": ["cobra", "cobré", "cobraban"]
+      }
+    ]
+  },
+  {
+    "id": "s778",
+    "es": "Trabajo horas extra casi todos los días.",
+    "sk": "Skoro každý deň robím nadčasy.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Trabajo", "horas", "extra", "casi", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Trabajo",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · presente",
+        "distractors": ["Trabaja", "Trabajé", "Trabajaba"]
+      }
+    ]
+  },
+  {
+    "id": "s779",
+    "es": "Mandé mi currículum a tres empresas.",
+    "sk": "Poslal som životopis do troch firiem.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mandé", "mi", "currículum", "a", "tres", "empresas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mandé",
+        "lemma": "mandar",
+        "hint": "mandar · yo · pretérito",
+        "distractors": ["Mandó", "Mando", "Mandaba"]
+      }
+    ]
+  },
+  {
+    "id": "s780",
+    "es": "Hay una vacante en el área de ventas.",
+    "sk": "V oddelení predaja je voľné miesto.",
+    "level": "B1",
+    "topics": ["work"],
+    "tokens": ["Hay", "una", "vacante", "en", "el", "área", "de", "ventas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vacante",
+        "lemma": "vacante",
+        "hint": "voľné miesto",
+        "distractors": ["vacación", "ventaja", "vecina"]
+      }
+    ]
+  },
+  {
+    "id": "s781",
+    "es": "Contrataron a mi prima como gerente.",
+    "sk": "Moju sesternicu zamestnali ako manažérku.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Contrataron", "a", "mi", "prima", "como", "gerente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Contrataron",
+        "lemma": "contratar",
+        "hint": "contratar · ellos · pretérito",
+        "distractors": ["Contrata", "Contraté", "Contrataban"]
+      }
+    ]
+  },
+  {
+    "id": "s782",
+    "es": "Tengo que entregar el informe el viernes.",
+    "sk": "Správu musím odovzdať v piatok.",
+    "level": "B1",
+    "topics": ["work"],
+    "tokens": ["Tengo", "que", "entregar", "el", "informe", "el", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "informe",
+        "lemma": "informe",
+        "hint": "správa",
+        "distractors": ["informal", "uniforme", "información"]
+      }
+    ]
+  },
+  {
+    "id": "s783",
+    "es": "Despidieron a cincuenta trabajadores de la fábrica.",
+    "sk": "Z továrne prepustili päťdesiat robotníkov.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Despidieron", "a", "cincuenta", "trabajadores", "de", "la", "fábrica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Despidieron",
+        "lemma": "despedir",
+        "hint": "despedir · ellos · pretérito",
+        "distractors": ["Despiden", "Despidió", "Despedían"]
+      }
+    ]
+  },
+  {
+    "id": "s784",
+    "es": "Mi papá se jubiló después de treinta años en el banco.",
+    "sk": "Otec odišiel do dôchodku po tridsiatich rokoch v banke.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "papá", "se", "jubiló", "después", "de", "treinta", "años", "en", "el", "banco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jubiló",
+        "lemma": "jubilarse",
+        "hint": "jubilarse · él · pretérito",
+        "distractors": ["jubila", "jubilaba", "jubilará"]
+      }
+    ]
+  },
+  {
+    "id": "s785",
+    "es": "Me dieron un ascenso y ahora soy jefe de área.",
+    "sk": "Povýšili ma a teraz som vedúci oddelenia.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "dieron", "un", "ascenso", "y", "ahora", "soy", "jefe", "de", "área", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ascenso",
+        "lemma": "ascenso",
+        "hint": "povýšenie",
+        "distractors": ["ascensor", "aumento", "acceso"]
+      }
+    ]
+  },
+  {
+    "id": "s786",
+    "es": "Renunció porque no le daban prestaciones.",
+    "sk": "Dal výpoveď, lebo mu nedávali benefity.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Renunció", "porque", "no", "le", "daban", "prestaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Renunció",
+        "lemma": "renunciar",
+        "hint": "renunciar · él · pretérito",
+        "distractors": ["Renuncia", "Renuncié", "Renunciaba"]
+      }
+    ]
+  },
+  {
+    "id": "s787",
+    "es": "Después del despido le pagaron su finiquito.",
+    "sk": "Po prepustení mu vyplatili odstupné.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Después", "del", "despido", "le", "pagaron", "su", "finiquito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "finiquito",
+        "lemma": "finiquito",
+        "hint": "odstupné",
+        "distractors": ["aguinaldo", "sueldo", "bono"]
+      }
+    ]
+  },
+  {
+    "id": "s788",
+    "es": "Hay que negociar las condiciones antes de firmar.",
+    "sk": "Podmienky treba vyjednať pred podpisom.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Hay", "que", "negociar", "las", "condiciones", "antes", "de", "firmar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "condiciones",
+        "lemma": "condición",
+        "hint": "podmienky",
+        "distractors": ["condición", "canciones", "ocasiones"]
+      }
+    ]
+  },
+  {
+    "id": "s789",
+    "es": "En la junta planteé la necesidad de contratar a más gente.",
+    "sk": "Na porade som nastolil potrebu prijať viac ľudí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "la", "junta", "planteé", "la", "necesidad", "de", "contratar", "a", "más", "gente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "planteé",
+        "lemma": "plantear",
+        "hint": "plantear · yo · pretérito",
+        "distractors": ["plantea", "planteó", "planteaba"]
+      }
+    ]
+  },
+  {
+    "id": "s790",
+    "es": "El puesto exige experiencia en liderazgo.",
+    "sk": "Pozícia vyžaduje skúsenosti s vedením ľudí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "puesto", "exige", "experiencia", "en", "liderazgo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "exige",
+        "lemma": "exigir",
+        "hint": "exigir · él · presente",
+        "distractors": ["exigen", "exigió", "exigía"]
+      }
+    ]
+  },
+  {
+    "id": "s791",
+    "es": "Ella es muy emprendedora: abrió su propia cafetería.",
+    "sk": "Je veľmi podnikavá: otvorila si vlastnú kaviareň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Ella", "es", "muy", "emprendedora", ":", "abrió", "su", "propia", "cafetería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "abrió",
+        "lemma": "abrir",
+        "hint": "abrir · ella · pretérito",
+        "distractors": ["abre", "abría", "abrirá"]
+      }
+    ]
+  },
+  {
+    "id": "s792",
+    "es": "Su desempeño este año fue excelente.",
+    "sk": "Jeho výkon bol tento rok vynikajúci.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Su", "desempeño", "este", "año", "fue", "excelente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "desempeño",
+        "lemma": "desempeño",
+        "hint": "výkon",
+        "distractors": ["desempleo", "descanso", "desayuno"]
+      }
+    ]
+  },
+  {
+    "id": "s793",
+    "es": "El sindicato rechazó la propuesta de la empresa.",
+    "sk": "Odbory odmietli návrh firmy.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "sindicato", "rechazó", "la", "propuesta", "de", "la", "empresa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "rechazó",
+        "lemma": "rechazar",
+        "hint": "rechazar · él · pretérito",
+        "distractors": ["rechaza", "rechazaba", "rechazará"]
+      }
+    ]
+  },
+  {
+    "id": "s794",
+    "es": "Mi hermano chambea de lunes a sábado.",
+    "sk": "Môj brat maká od pondelka do soboty.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "chambea", "de", "lunes", "a", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "chambea",
+        "lemma": "chambear",
+        "hint": "chambear · él · presente",
+        "distractors": ["chambean", "chambeó", "chambeaba"]
+      }
+    ]
+  },
+  {
+    "id": "s795",
+    "es": "La nómina se paga cada quincena.",
+    "sk": "Výplaty sa vyplácajú každé dva týždne.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["La", "nómina", "se", "paga", "cada", "quincena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "quincena",
+        "lemma": "quincena",
+        "hint": "dva týždne (výplatné obdobie)",
+        "distractors": ["quinceañera", "cuarentena", "docena"]
+      }
+    ]
   }
 ]

@@ -385,5 +385,280 @@
     "level": "B1",
     "topics": ["numbers"],
     "examples": [{ "es": "Las cifras de desempleo mejoraron.", "sk": "Čísla o nezamestnanosti sa zlepšili." }]
+  },
+  {
+    "id": "diecisiete",
+    "es": "diecisiete",
+    "sk": ["sedemnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Mi hijo tiene diecisiete años.", "sk": "Môj syn má sedemnásť rokov." }
+    ]
+  },
+  {
+    "id": "dieciocho",
+    "es": "dieciocho",
+    "sk": ["osemnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Son dieciocho pesos.", "sk": "Bude to osemnásť pesos." }
+    ]
+  },
+  {
+    "id": "diecinueve",
+    "es": "diecinueve",
+    "sk": ["devätnásť"],
+    "pos": "other",
+    "level": "A1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Vivimos en el número diecinueve.", "sk": "Bývame na čísle devätnásť." }
+    ]
+  },
+  {
+    "id": "doscientos",
+    "es": "doscientos",
+    "sk": ["dvesto"],
+    "pos": "other",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "El libro tiene doscientas páginas.", "sk": "Kniha má dvesto strán." }
+    ],
+    "note": "Stovky majú ženský rod: doscientos pesos, doscientas personas."
+  },
+  {
+    "id": "quinientos",
+    "es": "quinientos",
+    "sk": ["päťsto"],
+    "pos": "other",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "La entrada cuesta quinientos pesos.", "sk": "Vstupné stojí päťsto pesos." }
+    ],
+    "note": "Nepravidelné: nie „cincocientos“."
+  },
+  {
+    "id": "setecientos",
+    "es": "setecientos",
+    "sk": ["sedemsto"],
+    "pos": "other",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "El vuelo cuesta setecientos dólares.", "sk": "Let stojí sedemsto dolárov." }
+    ],
+    "note": "Nie „sietecientos“."
+  },
+  {
+    "id": "novecientos",
+    "es": "novecientos",
+    "sk": ["deväťsto"],
+    "pos": "other",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Pagamos novecientos pesos de luz.", "sk": "Za elektrinu sme zaplatili deväťsto pesos." }
+    ],
+    "note": "Nie „nuevecientos“."
+  },
+  {
+    "id": "cuarto-2",
+    "es": "cuarto",
+    "sk": ["štvrť", "štvrtý"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["numbers", "time"],
+    "examples": [
+      { "es": "Son las tres y cuarto.", "sk": "Je štvrť na štyri." },
+      { "es": "Vivo en el cuarto piso.", "sk": "Bývam na štvrtom poschodí." }
+    ]
+  },
+  {
+    "id": "quinto",
+    "es": "quinto",
+    "sk": ["piaty"],
+    "pos": "adj",
+    "feminine": "quinta",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Llegó en quinto lugar.", "sk": "Skončil na piatom mieste." }
+    ]
+  },
+  {
+    "id": "sexto",
+    "es": "sexto",
+    "sk": ["šiesty"],
+    "pos": "adj",
+    "feminine": "sexta",
+    "level": "A2",
+    "topics": ["numbers", "school"],
+    "examples": [
+      { "es": "Mi hija está en sexto de primaria.", "sk": "Moja dcéra je v šiestej triede." }
+    ]
+  },
+  {
+    "id": "par",
+    "es": "par",
+    "sk": ["pár"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "pares",
+    "level": "A2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Compré un par de zapatos.", "sk": "Kúpil som si pár topánok." }
+    ]
+  },
+  {
+    "id": "doble",
+    "es": "doble",
+    "sk": ["dvojnásobok", "dvojitý"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Ahora cuesta el doble.", "sk": "Teraz to stojí dvojnásobok." }
+    ]
+  },
+  {
+    "id": "cantidad",
+    "es": "cantidad",
+    "sk": ["množstvo"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "cantidades",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Había una gran cantidad de gente.", "sk": "Bolo tam obrovské množstvo ľudí." }
+    ]
+  },
+  {
+    "id": "aproximadamente",
+    "es": "aproximadamente",
+    "sk": ["približne"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Son aproximadamente dos horas de camino.", "sk": "Je to približne dve hodiny cesty." }
+    ]
+  },
+  {
+    "id": "por-ciento",
+    "es": "por ciento",
+    "sk": ["percent"],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Hay un diez por ciento de descuento.", "sk": "Je tam desaťpercentná zľava." }
+    ]
+  },
+  {
+    "id": "decimo",
+    "es": "décimo",
+    "sk": ["desiaty"],
+    "pos": "adj",
+    "feminine": "décima",
+    "level": "B1",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Es la décima vez que te lo digo.", "sk": "Hovorím ti to už desiaty raz." }
+    ]
+  },
+  {
+    "id": "mayoria",
+    "es": "mayoría",
+    "sk": ["väčšina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "La mayoría de mis amigos vive cerca.", "sk": "Väčšina mojich kamarátov býva blízko." }
+    ]
+  },
+  {
+    "id": "minoria",
+    "es": "minoría",
+    "sk": ["menšina"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Solo una minoría votó en contra.", "sk": "Proti hlasovala iba menšina." }
+    ]
+  },
+  {
+    "id": "impar",
+    "es": "impar",
+    "sk": ["nepárny"],
+    "pos": "adj",
+    "plural": "impares",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Siete es un número impar.", "sk": "Sedem je nepárne číslo." }
+    ]
+  },
+  {
+    "id": "estadistica",
+    "es": "estadística",
+    "sk": ["štatistika"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Según las estadísticas, la gente lee menos.", "sk": "Podľa štatistík ľudia čítajú menej." }
+    ]
+  },
+  {
+    "id": "mil-millones",
+    "es": "mil millones",
+    "sk": ["miliarda"],
+    "pos": "phrase",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "El proyecto costó mil millones de pesos.", "sk": "Projekt stál miliardu pesos." }
+    ],
+    "note": "Pozor: un billón = bilión (milión miliónov), nie miliarda."
+  },
+  {
+    "id": "calculo",
+    "es": "cálculo",
+    "sk": ["výpočet"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Hice un cálculo rápido.", "sk": "Urobil som rýchly výpočet." }
+    ]
+  },
+  {
+    "id": "centenar",
+    "es": "centenar",
+    "sk": ["stovka (približne sto)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "centenares",
+    "level": "B2",
+    "topics": ["numbers"],
+    "examples": [
+      { "es": "Llegaron centenares de personas.", "sk": "Prišli stovky ľudí." }
+    ]
   }
 ]

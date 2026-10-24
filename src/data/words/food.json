@@ -776,5 +776,348 @@
     "level": "B1",
     "topics": ["food"],
     "examples": [{ "es": "Compré verduras congeladas.", "sk": "Kúpil som mrazenú zeleninu." }]
+  },
+  {
+    "id": "licuado",
+    "es": "licuado",
+    "sk": ["ovocný koktail (s mliekom)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Desayuno un licuado de plátano.", "sk": "Na raňajky si dám banánový koktail." }
+    ],
+    "note": "Mexické: mixovaný nápoj z ovocia s mliekom alebo vodou."
+  },
+  {
+    "id": "horchata",
+    "es": "horchata",
+    "sk": ["horchata (ryžový nápoj)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Un agua de horchata, por favor.", "sk": "Horchatu, prosím." }
+    ]
+  },
+  {
+    "id": "harina",
+    "es": "harina",
+    "sk": ["múka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Las tortillas de harina son típicas del norte.", "sk": "Tortily z pšeničnej múky sú typické pre sever." }
+    ]
+  },
+  {
+    "id": "aceite",
+    "es": "aceite",
+    "sk": ["olej"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Fríe la cebolla en un poco de aceite.", "sk": "Opraž cibuľu na troške oleja." }
+    ]
+  },
+  {
+    "id": "mantequilla",
+    "es": "mantequilla",
+    "sk": ["maslo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "¿Le pongo mantequilla al pan?", "sk": "Mám natrieť chlieb maslom?" }
+    ]
+  },
+  {
+    "id": "crema",
+    "es": "crema",
+    "sk": ["smotana", "krém"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Los tacos dorados llevan crema y queso.", "sk": "Na chrumkavé tacos sa dáva smotana a syr." }
+    ]
+  },
+  {
+    "id": "olla",
+    "es": "olla",
+    "sk": ["hrniec"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["food", "home"],
+    "examples": [
+      { "es": "Los frijoles se cocinan en una olla grande.", "sk": "Fazuľa sa varí vo veľkom hrnci." }
+    ]
+  },
+  {
+    "id": "salado",
+    "es": "salado",
+    "sk": ["slaný"],
+    "pos": "adj",
+    "feminine": "salada",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La sopa está muy salada.", "sk": "Polievka je veľmi slaná." }
+    ]
+  },
+  {
+    "id": "sabroso",
+    "es": "sabroso",
+    "sk": ["chutný"],
+    "pos": "adj",
+    "feminine": "sabrosa",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "¡Qué sabroso te quedó el arroz!", "sk": "Tá ryža sa ti ale podarila!" }
+    ]
+  },
+  {
+    "id": "antojito",
+    "es": "antojito",
+    "sk": ["mexické jedlo z ulice", "maškrta"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Los sopes y las quesadillas son antojitos.", "sk": "Sopes a quesadilly patria medzi „antojitos“." }
+    ],
+    "note": "Mexické: drobné jedlá z kukuričného cesta (sopes, gorditas, quesadillas…)."
+  },
+  {
+    "id": "botana",
+    "es": "botana",
+    "sk": ["niečo na zahryznutie", "predjedlo"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "De botana hay cacahuates y totopos.", "sk": "Na zahryznutie sú arašidy a nachos." }
+    ],
+    "note": "Mexické slovo."
+  },
+  {
+    "id": "comal",
+    "es": "comal",
+    "sk": ["comal (plochá panvica na tortily)"],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "comales",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Mi mamá calienta las tortillas en el comal.", "sk": "Mama ohrieva tortily na comale." }
+    ]
+  },
+  {
+    "id": "mole",
+    "es": "mole",
+    "sk": ["mole (omáčka z čili a čokolády)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "El mole poblano lleva chocolate.", "sk": "Do mole poblano sa dáva čokoláda." }
+    ]
+  },
+  {
+    "id": "cucharada",
+    "es": "cucharada",
+    "sk": ["lyžica (množstvo)"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Agrega dos cucharadas de azúcar.", "sk": "Pridaj dve lyžice cukru." }
+    ]
+  },
+  {
+    "id": "grasoso",
+    "es": "grasoso",
+    "sk": ["mastný"],
+    "pos": "adj",
+    "feminine": "grasosa",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "No me gusta la comida tan grasosa.", "sk": "Nemám rád také mastné jedlo." }
+    ]
+  },
+  {
+    "id": "nutritivo",
+    "es": "nutritivo",
+    "sk": ["výživný"],
+    "pos": "adj",
+    "feminine": "nutritiva",
+    "level": "B1",
+    "topics": ["food", "health"],
+    "examples": [
+      { "es": "La avena es muy nutritiva.", "sk": "Ovsené vločky sú veľmi výživné." }
+    ]
+  },
+  {
+    "id": "comida-chatarra",
+    "es": "comida chatarra",
+    "sk": ["nezdravé jedlo", "junk food"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Los niños comen demasiada comida chatarra.", "sk": "Deti jedia priveľa nezdravého jedla." }
+    ]
+  },
+  {
+    "id": "amargo",
+    "es": "amargo",
+    "sk": ["horký"],
+    "pos": "adj",
+    "feminine": "amarga",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Este café está muy amargo.", "sk": "Táto káva je veľmi horká." }
+    ]
+  },
+  {
+    "id": "jamaica",
+    "es": "jamaica",
+    "sk": ["ibištek (nápoj)"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [
+      { "es": "El agua de jamaica es roja y un poco ácida.", "sk": "Ibištekový nápoj je červený a trochu kyslý." }
+    ]
+  },
+  {
+    "id": "molcajete",
+    "es": "molcajete",
+    "sk": ["molcajete (kamenný mažiar)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La salsa sabe mejor hecha en molcajete.", "sk": "Salsa chutí lepšie, keď sa robí v kamennom mažiari." }
+    ]
+  },
+  {
+    "id": "pizca",
+    "es": "pizca",
+    "sk": ["štipka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Agrégale una pizca de sal.", "sk": "Pridaj štipku soli." }
+    ]
+  },
+  {
+    "id": "empalagoso",
+    "es": "empalagoso",
+    "sk": ["presladený", "prisladký"],
+    "pos": "adj",
+    "feminine": "empalagosa",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "El pan de muerto está un poco empalagoso.", "sk": "Pan de muerto je trochu presladený." }
+    ]
+  },
+  {
+    "id": "desabrido",
+    "es": "desabrido",
+    "sk": ["mdlý", "bez chuti"],
+    "pos": "adj",
+    "feminine": "desabrida",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La comida del hospital es muy desabrida.", "sk": "Nemocničné jedlo je veľmi mdlé." }
+    ]
+  },
+  {
+    "id": "recalentado",
+    "es": "recalentado",
+    "sk": ["zvyšky (ohriate na druhý deň)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "El recalentado de Navidad sabe mejor.", "sk": "Vianočné zvyšky na druhý deň chutia ešte lepšie." }
+    ],
+    "note": "V Mexiku hlavne jedlo zo sviatočnej večere, ktoré sa jedáva na druhý deň."
+  },
+  {
+    "id": "intolerante",
+    "es": "intolerante",
+    "sk": ["neznášanlivý", "netolerantný"],
+    "pos": "adj",
+    "level": "B2",
+    "topics": ["food", "health"],
+    "examples": [
+      { "es": "Soy intolerante a la lactosa.", "sk": "Mám laktózovú intoleranciu." }
+    ]
+  },
+  {
+    "id": "lacteo",
+    "es": "lácteo",
+    "sk": ["mliečny výrobok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "Evito los lácteos por mi alergia.", "sk": "Kvôli alergii sa vyhýbam mliečnym výrobkom." }
+    ]
+  },
+  {
+    "id": "agrio",
+    "es": "agrio",
+    "sk": ["kyslý"],
+    "pos": "adj",
+    "feminine": "agria",
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La leche se puso agria.", "sk": "Mlieko skyslo." }
+    ]
+  },
+  {
+    "id": "gastronomia",
+    "es": "gastronomía",
+    "sk": ["gastronómia", "kuchyňa"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "La gastronomía de Oaxaca es famosa en todo el mundo.", "sk": "Oaxacká kuchyňa je slávna po celom svete." }
+    ]
   }
 ]

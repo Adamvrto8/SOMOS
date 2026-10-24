@@ -89,5 +89,32 @@
   { "id": "plazo", "en": ["deadline", "term", "time limit"], "examples": ["The deadline is up on Friday."] },
   { "id": "puntual", "en": ["punctual", "on time"], "examples": ["Be on time, please."] },
   { "id": "temporada", "en": ["season"], "examples": ["In the rainy season it rains almost every afternoon."] },
-  { "id": "fecha-limite", "en": ["deadline", "due date"], "examples": ["The deadline is Friday."] }
+  { "id": "fecha-limite", "en": ["deadline", "due date"], "examples": ["The deadline is Friday."] },
+  { "id": "anoche", "en": ["last night"], "examples": ["I didn't sleep well last night."] },
+  { "id": "anteayer", "en": ["the day before yesterday"], "examples": ["The day before yesterday I went to the dentist."] },
+  { "id": "pasado-manana", "en": ["the day after tomorrow"], "examples": ["The day after tomorrow is my birthday."] },
+  { "id": "proximo", "en": ["next"], "examples": ["Next month I'm starting a new job."] },
+  { "id": "pasado", "en": ["last", "past"], "examples": ["It rained a lot last week."] },
+  { "id": "calendario", "en": ["calendar"], "examples": ["I wrote the date on the calendar."] },
+  { "id": "semestre", "en": ["semester"], "examples": ["The semester ends in June."] },
+  { "id": "decada", "en": ["decade"], "examples": ["In the nineties we lived in Monterrey."] },
+  { "id": "aniversario", "en": ["anniversary"], "examples": ["Today is our wedding anniversary."] },
+  { "id": "a-tiempo", "en": ["on time"], "examples": ["We got to the concert on time."] },
+  { "id": "de-vez-en-cuando", "en": ["every now and then"], "examples": ["Every now and then we go to the movies."] },
+  { "id": "mientras-tanto", "en": ["meanwhile", "in the meantime"], "examples": ["I'll cook, and in the meantime you set the table."] },
+  { "id": "de-ahora-en-adelante", "en": ["from now on"], "examples": ["From now on I'm going to get here early."] },
+  {
+    "id": "a-la-brevedad",
+    "en": ["as soon as possible"],
+    "examples": ["We'll get back to you as soon as possible."],
+    "note": "Formal, common in Mexican e-mails and offices."
+  },
+  { "id": "a-corto-plazo", "en": ["in the short term"], "examples": ["It's a short-term solution."], "note": "The opposite: a largo plazo = in the long term." },
+  { "id": "puntualidad", "en": ["punctuality"], "examples": ["Punctuality isn't his strong suit."] },
+  { "id": "impuntual", "en": ["unpunctual", "always late"], "examples": ["He's never on time, he always shows up late."] },
+  { "id": "antelacion", "en": ["advance notice"], "examples": ["You have to book in advance."] },
+  { "id": "transcurso", "en": ["course (of time)"], "examples": ["I'll let you know during the day."] },
+  { "id": "vispera", "en": ["eve", "day before"], "examples": ["The night before the trip I couldn't sleep."] },
+  { "id": "jornada", "en": ["workday", "shift"], "examples": ["My workday is eight hours."] },
+  { "id": "trimestre", "en": ["quarter (three months)"], "examples": ["Sales went up this quarter."] }
 ]

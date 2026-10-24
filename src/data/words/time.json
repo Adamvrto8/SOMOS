@@ -584,5 +584,264 @@
     "level": "B1",
     "topics": ["time"],
     "examples": [{ "es": "La fecha límite es el viernes.", "sk": "Termín je v piatok." }]
+  },
+  {
+    "id": "anoche",
+    "es": "anoche",
+    "sk": ["včera večer", "v noci"],
+    "pos": "adv",
+    "level": "A1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Anoche no dormí bien.", "sk": "Včera v noci som nespal dobre." }
+    ]
+  },
+  {
+    "id": "anteayer",
+    "es": "anteayer",
+    "sk": ["predvčerom"],
+    "pos": "adv",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Anteayer fui al dentista.", "sk": "Predvčerom som bol u zubára." }
+    ]
+  },
+  {
+    "id": "pasado-manana",
+    "es": "pasado mañana",
+    "sk": ["pozajtra"],
+    "pos": "adv",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Pasado mañana es mi cumpleaños.", "sk": "Pozajtra mám narodeniny." }
+    ]
+  },
+  {
+    "id": "proximo",
+    "es": "próximo",
+    "sk": ["budúci", "nasledujúci"],
+    "pos": "adj",
+    "feminine": "próxima",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "El próximo mes empiezo un trabajo nuevo.", "sk": "Budúci mesiac začínam v novej práci." }
+    ]
+  },
+  {
+    "id": "pasado",
+    "es": "pasado",
+    "sk": ["minulý"],
+    "pos": "adj",
+    "feminine": "pasada",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "La semana pasada llovió mucho.", "sk": "Minulý týždeň veľa pršalo." }
+    ]
+  },
+  {
+    "id": "calendario",
+    "es": "calendario",
+    "sk": ["kalendár"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Apunté la fecha en el calendario.", "sk": "Dátum som si zapísal do kalendára." }
+    ]
+  },
+  {
+    "id": "semestre",
+    "es": "semestre",
+    "sk": ["semester"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["time", "school"],
+    "examples": [
+      { "es": "El semestre termina en junio.", "sk": "Semester končí v júni." }
+    ]
+  },
+  {
+    "id": "decada",
+    "es": "década",
+    "sk": ["desaťročie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "En la década de los noventa vivíamos en Monterrey.", "sk": "V deväťdesiatych rokoch sme bývali v Monterrey." }
+    ]
+  },
+  {
+    "id": "aniversario",
+    "es": "aniversario",
+    "sk": ["výročie"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["time", "family"],
+    "examples": [
+      { "es": "Hoy es nuestro aniversario de bodas.", "sk": "Dnes máme výročie svadby." }
+    ]
+  },
+  {
+    "id": "a-tiempo",
+    "es": "a tiempo",
+    "sk": ["načas"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Llegamos a tiempo para el concierto.", "sk": "Na koncert sme prišli načas." }
+    ]
+  },
+  {
+    "id": "de-vez-en-cuando",
+    "es": "de vez en cuando",
+    "sk": ["z času na čas"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "De vez en cuando vamos al cine.", "sk": "Z času na čas chodíme do kina." }
+    ]
+  },
+  {
+    "id": "mientras-tanto",
+    "es": "mientras tanto",
+    "sk": ["medzitým"],
+    "pos": "adv",
+    "level": "B1",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Yo cocino y mientras tanto tú pones la mesa.", "sk": "Ja varím a ty medzitým prestri stôl." }
+    ]
+  },
+  {
+    "id": "de-ahora-en-adelante",
+    "es": "de ahora en adelante",
+    "sk": ["odteraz"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "De ahora en adelante voy a llegar temprano.", "sk": "Odteraz budem chodiť skoro." }
+    ]
+  },
+  {
+    "id": "a-la-brevedad",
+    "es": "a la brevedad",
+    "sk": ["čím skôr", "obratom"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Le contestaremos a la brevedad.", "sk": "Odpovieme vám čo najskôr." }
+    ],
+    "note": "Formálne, v Mexiku časté v e-mailoch a úradoch."
+  },
+  {
+    "id": "a-corto-plazo",
+    "es": "a corto plazo",
+    "sk": ["krátkodobo"],
+    "pos": "adv",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Es una solución a corto plazo.", "sk": "Je to krátkodobé riešenie." }
+    ],
+    "note": "Opak: a largo plazo = dlhodobo."
+  },
+  {
+    "id": "puntualidad",
+    "es": "puntualidad",
+    "sk": ["dochvíľnosť"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "La puntualidad no es su fuerte.", "sk": "Dochvíľnosť nie je jeho silná stránka." }
+    ]
+  },
+  {
+    "id": "impuntual",
+    "es": "impuntual",
+    "sk": ["nedochvíľny"],
+    "pos": "adj",
+    "plural": "impuntuales",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Es muy impuntual, siempre llega tarde.", "sk": "Je veľmi nedochvíľny, vždy mešká." }
+    ]
+  },
+  {
+    "id": "antelacion",
+    "es": "antelación",
+    "sk": ["predstih"],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Hay que reservar con antelación.", "sk": "Treba si rezervovať vopred." }
+    ]
+  },
+  {
+    "id": "transcurso",
+    "es": "transcurso",
+    "sk": ["priebeh"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "En el transcurso del día te aviso.", "sk": "Počas dňa ti dám vedieť." }
+    ]
+  },
+  {
+    "id": "vispera",
+    "es": "víspera",
+    "sk": ["predvečer"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "La víspera del viaje no pude dormir.", "sk": "Noc pred cestou som nemohol zaspať." }
+    ]
+  },
+  {
+    "id": "jornada",
+    "es": "jornada",
+    "sk": ["(pracovný) deň", "zmena"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["time", "work"],
+    "examples": [
+      { "es": "Mi jornada es de ocho horas.", "sk": "Môj pracovný deň má osem hodín." }
+    ]
+  },
+  {
+    "id": "trimestre",
+    "es": "trimestre",
+    "sk": ["štvrťrok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["time"],
+    "examples": [
+      { "es": "Las ventas subieron este trimestre.", "sk": "Predaj v tomto štvrťroku stúpol." }
+    ]
   }
 ]

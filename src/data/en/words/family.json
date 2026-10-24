@@ -78,5 +78,48 @@
     "examples": ["My compadre is coming over for lunch on Sunday."],
     "note": "What a child's parents and the godfather call each other; colloquially also “good friend”."
   },
-  { "id": "herencia", "en": ["inheritance"], "examples": ["He got an inheritance from his aunt."] }
+  { "id": "herencia", "en": ["inheritance"], "examples": ["He got an inheritance from his aunt."] },
+  {
+    "id": "bisabuelo",
+    "en": ["great-grandfather"],
+    "examples": ["My great-grandfather fought in the Revolution."],
+    "note": "Bisabuela = great-grandmother, bisabuelos = great-grandparents."
+  },
+  {
+    "id": "pariente",
+    "en": ["relative"],
+    "examples": ["I have a lot of relatives in the United States."],
+    "note": "Careful: pariente = relative; parents = padres (or papás)."
+  },
+  { "id": "gemelo", "en": ["twin"], "examples": ["My cousins are twins."] },
+  { "id": "viudo", "en": ["widowed", "widower"], "examples": ["My aunt has been a widow for five years."] },
+  { "id": "comadre", "en": ["godmother of one's child", "close friend"], "examples": ["I'm going for coffee with my comadre."] },
+  {
+    "id": "quinceanera",
+    "en": ["quinceañera (15th birthday party)"],
+    "examples": ["We went to my niece's quinceañera."],
+    "note": "A big Mexican party for a girl's 15th birthday. The girl herself is also \"la quinceañera\"."
+  },
+  { "id": "crianza", "en": ["upbringing", "raising (children)"], "examples": ["Raising kids is a full-time job."] },
+  { "id": "padrastro", "en": ["stepfather"], "examples": ["I get along really well with my stepfather."] },
+  { "id": "madrastra", "en": ["stepmother"], "examples": ["His stepmother treats him like her own son."] },
+  { "id": "huerfano", "en": ["orphan", "orphaned"], "examples": ["He was orphaned very young."] },
+  { "id": "embarazo", "en": ["pregnancy"], "examples": ["She had a very easy pregnancy."] },
+  {
+    "id": "compromiso",
+    "en": ["commitment", "engagement", "prior engagement"],
+    "examples": ["They announced their engagement at dinner.", "I can't today, I have a prior engagement."]
+  },
+  {
+    "id": "convivencia",
+    "en": ["living together", "get-together"],
+    "examples": ["Living with my in-laws isn't easy."],
+    "note": "In Mexico \"una convivencia\" is also a get-together (at work, at school)."
+  },
+  { "id": "ahijado", "en": ["godson"], "examples": ["I bought my godson a present."] },
+  { "id": "generacion", "en": ["generation"], "examples": ["Three generations live in the same house."] },
+  { "id": "antepasado", "en": ["ancestor"], "examples": ["Our ancestors were farmers."] },
+  { "id": "chamaco", "en": ["kid"], "examples": ["The kids are playing in the street."], "note": "Mexican, colloquial. Chamaca = girl." },
+  { "id": "consentido", "en": ["spoiled", "favorite"], "examples": ["The youngest is the family favorite."] },
+  { "id": "apapacho", "en": ["hug", "cuddle", "comfort"], "examples": ["I need a hug."], "note": "Mexican (from Nahuatl)." }
 ]

@@ -508,5 +508,359 @@
         "distractors": ["tiene", "tienes", "tenemos"]
       }
     ]
+  },
+  {
+    "id": "s625",
+    "es": "¡Cómo no! Con gusto te ayudo.",
+    "sk": "Ale samozrejme! Rád ti pomôžem.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¡", "Cómo", "no", "!", "Con", "gusto", "te", "ayudo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "ayudo",
+        "lemma": "ayudar",
+        "hint": "ayudar · yo · presente",
+        "distractors": ["ayuda", "ayudé", "ayudaré"]
+      }
+    ]
+  },
+  {
+    "id": "s626",
+    "es": "Que te mejores pronto.",
+    "sk": "Nech sa ti čoskoro polepší.",
+    "level": "A2",
+    "topics": ["greetings", "health"],
+    "tokens": ["Que", "te", "mejores", "pronto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pronto",
+        "lemma": "pronto",
+        "hint": "čoskoro",
+        "distractors": ["tarde", "nunca", "ayer"]
+      }
+    ]
+  },
+  {
+    "id": "s627",
+    "es": "Gracias por invitarme, la pasé muy bien.",
+    "sk": "Ďakujem za pozvanie, mal som sa výborne.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Gracias", "por", "invitarme", ",", "la", "pasé", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "pasé",
+        "lemma": "pasar",
+        "hint": "pasar · yo · pretérito",
+        "distractors": ["paso", "pasó", "pasaba"]
+      }
+    ]
+  },
+  {
+    "id": "s628",
+    "es": "Saludos a tu familia de mi parte.",
+    "sk": "Pozdravuj odo mňa rodinu.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "tokens": ["Saludos", "a", "tu", "familia", "de", "mi", "parte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Saludos",
+        "lemma": "saludos",
+        "hint": "pozdravy",
+        "distractors": ["Permiso", "Provecho", "Adiós"]
+      }
+    ]
+  },
+  {
+    "id": "s629",
+    "es": "Disculpe, ¿me puede repetir su nombre?",
+    "sk": "Prepáčte, môžete mi zopakovať svoje meno?",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Disculpe", ",", "¿", "me", "puede", "repetir", "su", "nombre", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder · usted · presente",
+        "distractors": ["puedes", "pueden", "pude"]
+      }
+    ]
+  },
+  {
+    "id": "s630",
+    "es": "Te presento a mi amiga Sofía.",
+    "sk": "Toto je moja kamarátka Sofía.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["gender"],
+    "tokens": ["Te", "presento", "a", "mi", "amiga", "Sofía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "amiga",
+        "lemma": "amigo",
+        "hint": "kamarátka",
+        "distractors": ["amigo", "amigas", "amigos"]
+      }
+    ]
+  },
+  {
+    "id": "s631",
+    "es": "No hay de qué, para eso son los amigos.",
+    "sk": "Niet za čo, na to sú priatelia.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "tokens": ["No", "hay", "de", "qué", ",", "para", "eso", "son", "los", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "niet (no … de qué)",
+        "distractors": ["es", "está", "tiene"]
+      }
+    ]
+  },
+  {
+    "id": "s632",
+    "es": "Al rato te marco, ahorita estoy manejando.",
+    "sk": "O chvíľu ti zavolám, teraz šoférujem.",
+    "level": "B1",
+    "topics": ["greetings", "tech"],
+    "grammar": ["progresivo"],
+    "tokens": ["Al", "rato", "te", "marco", ",", "ahorita", "estoy", "manejando", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "manejando",
+        "lemma": "manejar",
+        "hint": "manejar · gerundio",
+        "distractors": ["manejar", "manejo", "manejé"]
+      }
+    ]
+  },
+  {
+    "id": "s633",
+    "es": "Tu hermano es muy buena onda.",
+    "sk": "Tvoj brat je veľmi fajn.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Tu", "hermano", "es", "muy", "buena", "onda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "why": "trait",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s634",
+    "es": "Disculpa la molestia, ¿tienes un minuto?",
+    "sk": "Prepáč, že otravujem, máš minútku?",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Disculpa", "la", "molestia", ",", "¿", "tienes", "un", "minuto", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["tiene", "tengo", "tenías"]
+      }
+    ]
+  },
+  {
+    "id": "s635",
+    "es": "Perdón, te pisé sin querer.",
+    "sk": "Prepáč, stúpil som ti na nohu omylom.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "tokens": ["Perdón", ",", "te", "pisé", "sin", "querer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "querer",
+        "lemma": "sin querer",
+        "hint": "omylom (sin …)",
+        "distractors": ["quiero", "quería", "quise"]
+      }
+    ]
+  },
+  {
+    "id": "s636",
+    "es": "¿Me echas la mano con la mudanza?",
+    "sk": "Pomôžeš mi so sťahovaním?",
+    "level": "B2",
+    "topics": ["greetings", "home"],
+    "tokens": ["¿", "Me", "echas", "la", "mano", "con", "la", "mudanza", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "mano",
+        "lemma": "mano",
+        "hint": "ruka (echar la …)",
+        "distractors": ["pie", "cara", "boca"]
+      }
+    ]
+  },
+  {
+    "id": "s637",
+    "es": "¡Qué oso! Me caí enfrente de todos.",
+    "sk": "To je ale trápne! Spadol som pred všetkými.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Qué", "oso", "!", "Me", "caí", "enfrente", "de", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "caí",
+        "lemma": "caerse",
+        "hint": "caerse · yo · pretérito",
+        "distractors": ["cae", "cayó", "caía"]
+      }
+    ]
+  },
+  {
+    "id": "s638",
+    "es": "Me da pena pedirle dinero a mi papá.",
+    "sk": "Hanbím sa pýtať od otca peniaze.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "da", "pena", "pedirle", "dinero", "a", "mi", "papá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · él · presente",
+        "distractors": ["doy", "dan", "dio"]
+      }
+    ]
+  },
+  {
+    "id": "s639",
+    "es": "Quedamos de vernos a las cinco en el zócalo.",
+    "sk": "Dohodli sme sa, že sa stretneme o piatej na hlavnom námestí.",
+    "level": "B2",
+    "topics": ["greetings", "city"],
+    "tokens": ["Quedamos", "de", "vernos", "a", "las", "cinco", "en", "el", "zócalo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "zócalo",
+        "lemma": "zócalo",
+        "hint": "hlavné námestie",
+        "distractors": ["tianguis", "recreo", "cajero"]
+      }
+    ]
+  },
+  {
+    "id": "s640",
+    "es": "Con razón no contestabas, se te olvidó el celular.",
+    "sk": "Nečudo, že si nedvíhal, zabudol si si mobil.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Con", "razón", "no", "contestabas", ",", "se", "te", "olvidó", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "contestabas",
+        "lemma": "contestar",
+        "hint": "contestar · tú · imperfecto",
+        "distractors": ["contestas", "contestaste", "contestarás"]
+      }
+    ]
+  },
+  {
+    "id": "s641",
+    "es": "De plano no puedo ir, tengo mucha chamba.",
+    "sk": "Fakt nemôžem ísť, mám veľa roboty.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["De", "plano", "no", "puedo", "ir", ",", "tengo", "mucha", "chamba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "puedo",
+        "lemma": "poder",
+        "hint": "poder · yo · presente",
+        "distractors": ["puede", "pude", "podía"]
+      }
+    ]
+  },
+  {
+    "id": "s642",
+    "es": "Me haces mucha falta.",
+    "sk": "Veľmi mi chýbaš.",
+    "level": "B2",
+    "topics": ["greetings", "emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "haces", "mucha", "falta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haces",
+        "lemma": "hacer",
+        "hint": "hacer · tú · presente",
+        "distractors": ["hace", "hago", "hiciste"]
+      }
+    ]
+  },
+  {
+    "id": "s643",
+    "es": "Me late la idea de ir a la playa.",
+    "sk": "Páči sa mi nápad ísť na pláž.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "tokens": ["Me", "late", "la", "idea", "de", "ir", "a", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "idea",
+        "lemma": "idea",
+        "hint": "nápad",
+        "distractors": ["ida", "vida", "cosa"]
+      }
+    ]
+  },
+  {
+    "id": "s644",
+    "es": "Le agradecí al mesero su amabilidad.",
+    "sk": "Poďakoval som čašníkovi za jeho milý prístup.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "agradecí", "al", "mesero", "su", "amabilidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "agradecí",
+        "lemma": "agradecer",
+        "hint": "agradecer · yo · pretérito",
+        "distractors": ["agradece", "agradeció", "agradecía"]
+      }
+    ]
   }
 ]

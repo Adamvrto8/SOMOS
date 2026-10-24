@@ -68,7 +68,7 @@ test('the content is in English: topics, words, search, reasons and grammar tips
   // A topic: its name, the words, a word's example and note.
   await page.goto('/topic/weather')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Weather')
-  await expect(page.getByRole('link', { name: /lluvia.*rain/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /\blluvia\b.*\brain\b/ })).toBeVisible()
   await page.goto('/word/clima')
   await expect(page.getByText('weather, climate')).toBeVisible()
   await expect(page.getByText("What's the weather like today?")).toBeVisible()
@@ -79,7 +79,7 @@ test('the content is in English: topics, words, search, reasons and grammar tips
 
   // Search finds a word by its English translation, and offers the online lookup in the English direction.
   await page.goto('/search?q=rain')
-  await expect(page.getByRole('link', { name: /lluvia.*rain/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: /\blluvia\b.*\brain\b/ })).toBeVisible()
   await expect(page.getByRole('radio', { name: 'EN → ES' })).toBeVisible()
 
   // A verb asked in a lesson is explained in English.

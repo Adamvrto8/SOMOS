@@ -450,5 +450,250 @@
     "level": "B1",
     "topics": ["health"],
     "examples": [{ "es": "Últimamente siento mucho cansancio.", "sk": "V poslednom čase cítim veľkú únavu." }]
+  },
+  {
+    "id": "inyeccion",
+    "es": "inyección",
+    "sk": ["injekcia"],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "inyecciones",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Me pusieron una inyección en el brazo.", "sk": "Dali mi injekciu do ruky." }
+    ]
+  },
+  {
+    "id": "pomada",
+    "es": "pomada",
+    "sk": ["masť"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Esta pomada es para las quemaduras.", "sk": "Táto masť je na popáleniny." }
+    ]
+  },
+  {
+    "id": "gota",
+    "es": "gota",
+    "sk": ["kvapka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "El doctor me recetó unas gotas para los ojos.", "sk": "Lekár mi predpísal očné kvapky." }
+    ]
+  },
+  {
+    "id": "muleta",
+    "es": "muleta",
+    "sk": ["barla"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Tengo que usar muletas un mes.", "sk": "Mesiac musím chodiť o barlách." }
+    ]
+  },
+  {
+    "id": "yeso",
+    "es": "yeso",
+    "sk": ["sadra"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Trae el brazo enyesado; le pusieron yeso.", "sk": "Má ruku v sadre." }
+    ]
+  },
+  {
+    "id": "radiografia",
+    "es": "radiografía",
+    "sk": ["röntgen", "röntgenová snímka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Le hicieron una radiografía de la rodilla.", "sk": "Urobili mu röntgen kolena." }
+    ]
+  },
+  {
+    "id": "antibiotico",
+    "es": "antibiótico",
+    "sk": ["antibiotikum"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "No tomes antibióticos sin receta.", "sk": "Neber antibiotiká bez receptu." }
+    ]
+  },
+  {
+    "id": "diabetes",
+    "es": "diabetes",
+    "sk": ["cukrovka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Mi abuelo tiene diabetes.", "sk": "Dedo má cukrovku." }
+    ]
+  },
+  {
+    "id": "remedio",
+    "es": "remedio",
+    "sk": ["liek", "prostriedok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B1",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Mi abuela tiene un remedio casero para todo.", "sk": "Babka má domáci liek na všetko." }
+    ]
+  },
+  {
+    "id": "chequeo",
+    "es": "chequeo",
+    "sk": ["prehliadka (lekárska)"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Hazte un chequeo una vez al año.", "sk": "Choď raz za rok na preventívnu prehliadku." }
+    ]
+  },
+  {
+    "id": "diagnostico",
+    "es": "diagnóstico",
+    "sk": ["diagnóza"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Esperamos el diagnóstico del doctor.", "sk": "Čakáme na diagnózu od lekára." }
+    ]
+  },
+  {
+    "id": "efecto-secundario",
+    "es": "efecto secundario",
+    "sk": ["vedľajší účinok"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "La medicina no tiene efectos secundarios.", "sk": "Liek nemá vedľajšie účinky." }
+    ]
+  },
+  {
+    "id": "sedentario",
+    "es": "sedentario",
+    "sk": ["sedavý"],
+    "pos": "adj",
+    "feminine": "sedentaria",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Tengo un trabajo muy sedentario.", "sk": "Mám veľmi sedavú prácu." }
+    ]
+  },
+  {
+    "id": "insomnio",
+    "es": "insomnio",
+    "sk": ["nespavosť"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Padezco insomnio desde hace meses.", "sk": "Už mesiace trpím nespavosťou." }
+    ]
+  },
+  {
+    "id": "contagio",
+    "es": "contagio",
+    "sk": ["nákaza"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Lavarse las manos evita contagios.", "sk": "Umývanie rúk zabraňuje nákaze." }
+    ]
+  },
+  {
+    "id": "cubrebocas",
+    "es": "cubrebocas",
+    "sk": ["rúško"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "En el hospital todavía piden cubrebocas.", "sk": "V nemocnici ešte stále chcú rúško." }
+    ],
+    "note": "Mexické slovo (inde mascarilla, barbijo)."
+  },
+  {
+    "id": "recaida",
+    "es": "recaída",
+    "sk": ["recidíva", "zhoršenie"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Tuvo una recaída la semana pasada.", "sk": "Minulý týždeň sa mu stav zhoršil." }
+    ]
+  },
+  {
+    "id": "sobrepeso",
+    "es": "sobrepeso",
+    "sk": ["nadváha"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "El sobrepeso es un problema común.", "sk": "Nadváha je bežný problém." }
+    ]
+  },
+  {
+    "id": "cronico",
+    "es": "crónico",
+    "sk": ["chronický"],
+    "pos": "adj",
+    "feminine": "crónica",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Tiene una enfermedad crónica.", "sk": "Má chronickú chorobu." }
+    ]
+  },
+  {
+    "id": "agotamiento",
+    "es": "agotamiento",
+    "sk": ["vyčerpanosť"],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [
+      { "es": "Se desmayó por agotamiento.", "sk": "Odpadol od vyčerpania." }
+    ]
   }
 ]

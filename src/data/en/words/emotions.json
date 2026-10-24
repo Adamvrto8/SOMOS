@@ -75,5 +75,40 @@
   { "id": "ansiedad", "en": ["anxiety"], "examples": ["Before exams I feel a lot of anxiety."] },
   { "id": "sentimiento", "en": ["feeling"], "examples": ["It's hard to talk about my feelings."] },
   { "id": "valiente", "en": ["brave", "courageous"], "examples": ["You were very brave."] },
-  { "id": "egoista", "en": ["selfish"], "examples": ["My ex was very selfish."], "note": "The same form for masculine and feminine." }
+  { "id": "egoista", "en": ["selfish"], "examples": ["My ex was very selfish."], "note": "The same form for masculine and feminine." },
+  { "id": "agotado", "en": ["exhausted"], "examples": ["After the trip I was exhausted."] },
+  { "id": "aliviado", "en": ["relieved"], "examples": ["I felt relieved at the news."] },
+  { "id": "desesperado", "en": ["desperate"], "examples": ["I was desperately looking for my keys."] },
+  {
+    "id": "sensible",
+    "en": ["sensitive"],
+    "examples": ["She's a very sensitive person."],
+    "note": "False friend: sensible = sensitive. \"Sensible\" in English = sensato."
+  },
+  { "id": "agobiado", "en": ["overwhelmed"], "examples": ["I feel overwhelmed with so much work."] },
+  { "id": "angustia", "en": ["anguish", "distress"], "examples": ["I felt a lot of anxiety waiting for the results."] },
+  { "id": "desilusion", "en": ["disappointment"], "examples": ["It was a big disappointment."] },
+  { "id": "rencor", "en": ["resentment", "grudge"], "examples": ["I don't hold a grudge against him."] },
+  { "id": "remordimiento", "en": ["remorse"], "examples": ["He feels remorse for what he did."] },
+  { "id": "nostalgia", "en": ["nostalgia", "homesickness"], "examples": ["I feel nostalgic for my hometown."] },
+  { "id": "frustracion", "en": ["frustration"], "examples": ["I felt really frustrated."] },
+  { "id": "ilusionado", "en": ["excited", "hopeful"], "examples": ["We're really excited about the trip."] },
+  { "id": "conmovido", "en": ["moved", "touched"], "examples": ["I was moved by his speech."] },
+  {
+    "id": "apenado",
+    "en": ["embarrassed", "sorry"],
+    "examples": ["I'm so embarrassed to be late."],
+    "note": "Mexican: apenado = embarrassed (from \"dar pena\")."
+  },
+  {
+    "id": "coraje",
+    "en": ["anger"],
+    "examples": ["It makes me mad when people lie to me."],
+    "note": "In Mexico coraje = anger (Me da coraje = It makes me mad). Elsewhere also \"courage\"."
+  },
+  { "id": "berrinche", "en": ["tantrum"], "examples": ["The boy threw a tantrum."] },
+  { "id": "achicopalado", "en": ["down", "discouraged"], "examples": ["He's a bit down."], "note": "Mexican, colloquial." },
+  { "id": "autoestima", "en": ["self-esteem"], "examples": ["She lacks self-esteem."] },
+  { "id": "empatia", "en": ["empathy"], "examples": ["You have to show empathy toward others."] },
+  { "id": "ruptura", "en": ["breakup", "break"], "examples": ["It was hard for him to get over the breakup."] }
 ]
