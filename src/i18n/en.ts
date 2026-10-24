@@ -824,15 +824,19 @@ export const en: Dictionary = {
     sections: [
       {
         heading: 'Without an account',
-        body: 'Everything you learn stays on this device only. The only things that leave it are text you have translated online (by DeepL) and, if you turn on the reminder, the address to deliver the notification to and the reminder time.',
+        body: 'Everything you learn stays on this device only. The only things that leave it are text you have translated online (by DeepL) and, if you turn on the reminder, the data it needs (below).',
       },
       {
         heading: 'With an account',
         body: 'We store your e-mail (and, when you sign in with Google, your Google account identifier) and your progress: answers in exercises, saved and own words, reviews, mistakes, lesson and test results and settings. It is used only to keep your progress safe and on each of your devices.',
       },
       {
+        heading: 'Reminder',
+        body: 'When you turn on the reminder on a device, the server keeps for it the address to deliver the notification to, the reminder time, the time zone, the language and today\'s numbers (what you have done today, the daily goal, cards to review, the streak), so it reminds you only while the goal is not met. When you are signed in, the device is linked to your account. It is deleted when you turn the reminder off, delete your account, when notifications on the device lapse, or after 60 days without the app being opened on the device.',
+      },
+      {
         heading: 'Who processes the data',
-        body: 'Accounts and progress are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
+        body: 'Accounts, progress and reminders are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
       },
       {
         heading: 'Error reports',

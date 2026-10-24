@@ -882,15 +882,19 @@ export const sk = {
     sections: [
       {
         heading: 'Bez účtu',
-        body: 'Všetko, čo sa naučíš, ostáva iba v tomto zariadení. Zo zariadenia odchádza len text, ktorý dáš preložiť online (služba DeepL), a ak si zapneš pripomienku, adresa na doručenie upozornenia a čas pripomienky.',
+        body: 'Všetko, čo sa naučíš, ostáva iba v tomto zariadení. Zo zariadenia odchádza len text, ktorý dáš preložiť online (služba DeepL), a ak si zapneš pripomienku, údaje pre ňu (nižšie).',
       },
       {
         heading: 'S účtom',
         body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
       },
       {
+        heading: 'Pripomienka',
+        body: 'Keď si v zariadení zapneš pripomienku, server si k nemu uloží adresu na doručenie upozornenia, čas pripomienky, časové pásmo, jazyk a dnešné čísla (koľko si dnes urobil, denný cieľ, kartičky na zopakovanie, séria), aby ťa pripomenul, len kým nemáš cieľ splnený. Ak si prihlásený, zariadenie je spojené s tvojím účtom. Zmaže sa, keď pripomienku vypneš, keď zmažeš účet, keď upozornenia v zariadení zaniknú, alebo po 60 dňoch, keď sa aplikácia v zariadení neotvorí.',
+      },
+      {
         heading: 'Kto údaje spracúva',
-        body: 'Účty a progres uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
+        body: 'Účty, progres a pripomienky uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
       },
       {
         heading: 'Hlásenia chýb',
