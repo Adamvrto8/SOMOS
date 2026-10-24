@@ -15,7 +15,9 @@ Aby Vercel pokazenú verziu ani nenasadil, treba raz zapnúť **Deployment Check
 2. Vercel → projekt **somos** → **Settings → Environments → Production**: automatické priraďovanie
    produkčnej domény (auto-assign / automatic aliasing) musí byť **zapnuté**. Zvyčajne už je.
 3. **Settings → Build and Deployment → Deployment Checks** → **Add Checks** → provider **GitHub**
-   → vyhľadaj a vyber **checks** aj **e2e** → **Add**.
+   → vyhľadaj a vyber **checks** aj **e2e** → **Add**. Pridaj ich **iba raz**: v zozname majú byť presne dve
+   položky. Druhá kópia tej istej kontroly sa nikdy nesplní a Vercel potom čaká donekonečna („Running Checks“
+   aj pri zelených testoch). Ak sa to stane, odstráň všetky, obnov stránku a pridaj ich znova.
 
 ## Ako to potom funguje
 
