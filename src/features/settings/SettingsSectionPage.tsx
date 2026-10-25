@@ -7,6 +7,7 @@ import { GoalSettings, LanguageSettings, LookSettings, SoundSettings } from './C
 import { DevSettings } from './DevSettings'
 import { ReminderSettings } from './ReminderSettings'
 import { UsageSettings } from './UsageSettings'
+import { UsageStats } from './UsageStats'
 import { VoiceSettings } from './VoiceSettings'
 
 const SECTIONS: Record<string, () => ReactNode> = {
@@ -20,6 +21,7 @@ const SECTIONS: Record<string, () => ReactNode> = {
   backup: () => <BackupSettings />,
   usage: () => <UsageSettings />,
   dev: () => <DevSettings />,
+  'usage-stats': () => <UsageStats />,
 }
 
 /** `/profile/:section`: one setting's page; an unknown one, or the tools outside developer mode, lead back to the list. */
@@ -27,6 +29,6 @@ export function SettingsSectionPage() {
   const { section = '' } = useParams()
   const devMode = useDevMode()
   const page = Object.hasOwn(SECTIONS, section) ? SECTIONS[section] : undefined
-  if (!page || (section === 'dev' && !devMode)) return <Navigate to="/profile" replace />
+  if (!page || ((section === 'dev' || section === 'usage-stats') && !devMode)) return <Navigate to="/profile" replace />
   return page()
 }

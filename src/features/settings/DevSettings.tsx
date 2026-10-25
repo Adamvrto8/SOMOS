@@ -1,4 +1,4 @@
-import { Bug, PartyPopper, PowerOff, Sun } from 'lucide-react'
+import { Bug, ChartNoAxesColumn, PartyPopper, PowerOff, Sun } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
@@ -78,6 +78,13 @@ export function DevSettings() {
           {text.showWelcome}
         </Button>
         <SettingsHint>{text.showWelcomeHint}</SettingsHint>
+      </SettingsPart>
+
+      <SettingsPart id="dev-usage" title={text.usageStats}>
+        <Button variant="secondary" icon={ChartNoAxesColumn} onClick={() => void navigate('/profile/usage-stats')} className="w-full">
+          {text.usageStats}
+        </Button>
+        <SettingsHint>{text.usageStatsHint}</SettingsHint>
       </SettingsPart>
 
       <SettingsPart id="dev-errors" title={text.errorReports}>

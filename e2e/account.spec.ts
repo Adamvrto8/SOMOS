@@ -19,7 +19,7 @@ interface Calls {
 const cors = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': '*' }
 const json = (route: Route, body: unknown, status = 200) => route.fulfill({ status, headers: { ...cors, 'content-type': 'application/json' }, body: JSON.stringify(body) })
 
-async function fakeSupabase(page: Page, { goodCode = '123456' } = {}): Promise<Calls> {
+async function fakeSupabase(page: Page, { goodCode = '123456', usageReport }: { goodCode?: string; usageReport?: object | 'forbidden' } = {}): Promise<Calls> {
   const calls: Calls = { pushed: [], logout: 0, deleted: 0 }
   await page.route(`${SUPABASE}/**`, async (route) => {
     const request = route.request()
@@ -43,6 +43,10 @@ async function fakeSupabase(page: Page, { goodCode = '123456' } = {}): Promise<C
         calls.pushed.push(...items.map(({ kind, key }) => ({ kind, key })))
         return route.fulfill({ status: 204, headers: cors })
       }
+      case '/rest/v1/rpc/usage_report':
+        // What usage_report() raises for an account not in usage_admins.
+        if (usageReport === 'forbidden' || !usageReport) return json(route, { code: 'P0001', message: 'forbidden', details: null, hint: null }, 400)
+        return json(route, usageReport)
       case '/rest/v1/rpc/delete_my_account':
         calls.deleted++
         return route.fulfill({ status: 204, headers: cors })
@@ -122,4 +126,46 @@ test('the first sign-in takes the progress already on the device to the account'
   await signInWithCode(page)
   await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   expect(calls.pushed).toContainEqual({ kind: 'saved', key: 'word:casa' })
+})
+
+const USAGE_REPORT = {
+  since: '2026-09-26',
+  devices: 12,
+  active: Array.from({ length: 30 }, (_, i) => ({ day: `2026-10-${String((i % 28) + 1).padStart(2, '0')}`, devices: 3 + (i % 7) })),
+  returning: { new: 8, nextDay: 3, weekOld: 4, withinWeek: 2 },
+  welcome: { welcome: 8, motivation: 7, level: 7, goal: 6, ready: 5, done: 5 },
+  lessons: [
+    { by: 'type', key: 'cloze', started: 10, finished: 6, quit: 2, usualStop: 3 },
+    { by: 'type', key: 'builder', started: 20, finished: 15, quit: 5, usualStop: null },
+    { by: 'level', key: 'A1', started: 22, finished: 16, quit: 5, usualStop: 4 },
+    { by: 'level', key: '-', started: 8, finished: 5, quit: 2, usualStop: 1 },
+  ],
+  screens: { search: 9, practice: 8, duel: 1 },
+}
+
+test('Štatistiky používania show the numbers to an admin, and say no to any other account', async ({ page }) => {
+  await fakeSupabase(page, { usageReport: USAGE_REPORT })
+  await signInWithCode(page)
+  await expect(page.getByText(EMAIL)).toBeVisible()
+  await page.goto('/profile/dev')
+  await button(page, 'Štatistiky používania').tap()
+  await expect(page).toHaveURL(/\/profile\/usage-stats$/)
+  await expect(page.getByText('12 zariadení v období')).toBeVisible()
+  await expect(page.getByText('Vrátili sa na druhý deň: 3 (38 %)')).toBeVisible()
+  // Exercise types by name, most started first; finished as a share; the task they leave at.
+  const rows = page.getByRole('row')
+  await expect(rows.nth(1)).toContainText('Skladanie viet')
+  await expect(rows.nth(1)).toContainText('75 %')
+  await expect(rows.nth(2)).toContainText('60 %')
+  await expect(rows.nth(2)).toContainText('4')
+  await expect(page.getByText('Všetky úrovne')).toBeVisible()
+  if (process.env.USAGE_SCREENSHOT) await page.screenshot({ path: process.env.USAGE_SCREENSHOT, fullPage: true })
+})
+
+test('Štatistiky používania: an account not in usage_admins has no access', async ({ page }) => {
+  await fakeSupabase(page, { usageReport: 'forbidden' })
+  await signInWithCode(page)
+  await expect(page.getByText(EMAIL)).toBeVisible()
+  await page.goto('/profile/usage-stats')
+  await expect(page.getByText('Tento účet nemá prístup.')).toBeVisible()
 })
