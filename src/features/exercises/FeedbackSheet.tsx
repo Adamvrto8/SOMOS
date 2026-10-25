@@ -9,6 +9,8 @@ import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
 import { getLanguage, type Language } from '../../lib/language'
 import type { Grade, Task } from '../../lib/lesson'
 import { sentenceTranslation, wordTranslations } from '../../lib/localized'
+import { taskSubject } from '../../lib/contentReport'
+import { ReportButton } from '../report/ReportButton'
 import { SaveButton } from '../word/SaveButton'
 import { SpeechWords } from './tasks/SpeechWords'
 
@@ -81,9 +83,11 @@ interface FeedbackSheetProps {
   mistakeChoice?: { onKeep: () => void; onResolve: () => void }
   /** The grammar tip behind a wrong answer ("Prečo?"), when there is one. */
   why?: { label: string; onOpen: () => void }
+  /** What the learner answered: a wrong one can be reported as "should have been accepted". */
+  learnerAnswer?: string
 }
 
-export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why }: FeedbackSheetProps) {
+export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why, learnerAnswer }: FeedbackSheetProps) {
   const text = useT().lesson
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
@@ -143,7 +147,10 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
             <Icon size={24} strokeWidth={2} className={grade.correct ? 'animate-pop' : ''} aria-hidden />
             {title}
           </p>
-          <SaveButton type={star.type} id={star.id} size="pill" />
+          <div className="flex items-center gap-2">
+            <ReportButton subject={taskSubject(task)} answer={!grade.correct && learnerAnswer ? learnerAnswer : null} />
+            <SaveButton type={star.type} id={star.id} size="pill" />
+          </div>
         </div>
 
         <div className="mt-3">

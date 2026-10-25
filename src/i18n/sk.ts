@@ -401,6 +401,27 @@ export const sk = {
     },
   },
 
+  /** "Nahlásiť chybu" (src/features/report). */
+  report: {
+    button: 'Nahlásiť chybu',
+    reported: 'Nahlásené',
+    title: 'Čo je zle?',
+    reasons: {
+      spanish: 'Chyba v španielčine',
+      translation: 'Zlý alebo neprirodzený preklad',
+      answer: 'Moja odpoveď mala byť uznaná',
+      other: 'Iné',
+    },
+    noteLabel: 'Poznámka (nepovinná)',
+    notePlaceholder: 'Čo presne nesedí?',
+    send: 'Odoslať',
+    sending: 'Odosielam…',
+    cancel: 'Zrušiť',
+    thanks: 'Ďakujeme, pozrieme sa na to.',
+    failed: 'Nepodarilo sa odoslať. Skús to znova.',
+    tooMany: 'Priveľa hlásení, skús to neskôr.',
+    privacy: 'Hlásenie je anonymné.',
+  },
   word: {
     notFound: 'Slovo sa nenašlo',
     listNav: 'Slová zo zoznamu',

@@ -19,7 +19,8 @@ test('a swipe turns the word page anywhere below the header', async ({ page }) =
   const content = (await page.locator('article').boundingBox())!
   const tabBar = (await page.getByRole('navigation').last().boundingBox())!
   const empty = (content.y + content.height + tabBar.y) / 2
-  expect(empty - (content.y + content.height)).toBeGreaterThan(20)
+  // "Nahlásiť chybu" at the end of the page takes most of it; 12 px is still clearly off the content.
+  expect(empty - (content.y + content.height)).toBeGreaterThan(12)
 
   await swipe(page, { x: RIGHT, y: empty }, { x: LEFT, y: empty })
   await expect.poll(at).toBe(start + 1)

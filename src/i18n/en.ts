@@ -364,6 +364,26 @@ export const en: Dictionary = {
     },
   },
 
+  report: {
+    button: 'Report a mistake',
+    reported: 'Reported',
+    title: 'What is wrong?',
+    reasons: {
+      spanish: 'Mistake in the Spanish',
+      translation: 'Wrong or unnatural translation',
+      answer: 'My answer should have been accepted',
+      other: 'Other',
+    },
+    noteLabel: 'Note (optional)',
+    notePlaceholder: 'What exactly is off?',
+    send: 'Send',
+    sending: 'Sending…',
+    cancel: 'Cancel',
+    thanks: 'Thank you, we will look at it.',
+    failed: 'Could not send. Try again.',
+    tooMany: 'Too many reports, try again later.',
+    privacy: 'The report is anonymous.',
+  },
   word: {
     notFound: 'Word not found',
     listNav: 'Words of the list',

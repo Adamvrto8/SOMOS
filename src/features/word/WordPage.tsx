@@ -15,6 +15,8 @@ import { topicName, wordExamples, wordNote, wordTranslations } from '../../lib/l
 import { ConjugationTable } from './ConjugationTable'
 import { SaveButton } from './SaveButton'
 import { readWordNav, type WordNavState } from './wordNav'
+import { ReportButton } from '../report/ReportButton'
+import { wordSubject } from '../../lib/contentReport'
 
 /**
  * Word detail. Opened from a list (topic, search, archive), it swipes — or pages with
@@ -167,6 +169,11 @@ function WordDetail({ word }: { word: Word }) {
           </ul>
         </section>
       )}
+
+      {/* At the end, not next to ⭐: two header buttons already shrink long words at 375 px. */}
+      <div className="flex justify-center">
+        <ReportButton key={word.id} subject={wordSubject(word)} variant="text" />
+      </div>
     </article>
   )
 }
