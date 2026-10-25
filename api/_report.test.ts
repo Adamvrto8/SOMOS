@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { handleReport, parseReport, REPORTS_PER_HOUR, type ReportDeps, type ReportRow } from './report.ts'
+import { handleReport, parseReport, REPORTS_PER_BLOCK, REPORTS_PER_HOUR, depsFromEnv as limitDeps, type ReportDeps, type ReportRow } from './report.ts'
 
 const REPORT = {
   target: 'sentence:s001',
@@ -23,6 +23,7 @@ function deps(over: Partial<ReportDeps> = {}) {
     insert: vi.fn(async (r: ReportRow) => void rows.push(r)),
     rateHit: vi.fn(async () => true),
     ipKey: () => 'report:x',
+    blockKey: () => 'report-block:x',
     ...over,
   }
   return { d, rows }
@@ -34,6 +35,8 @@ describe('parseReport', () => {
     expect(parseReport({ ...REPORT, target: 'word:papa-2', detail: '', exercise: 'word', reason: 'translation', note: '' })).not.toBeNull()
     expect(parseReport({ ...REPORT, target: 'verb:levantarse', detail: 'preterito:yo', exercise: 'conjugation', reason: 'answer', answer: 'me levante' })).not.toBeNull()
     expect(parseReport({ ...REPORT, target: 'word:casa', detail: 'sk-es', exercise: 'vocab', reason: 'other' })).not.toBeNull()
+    // Verb ids are infinitives: extrañar, bañarse.
+    expect(parseReport({ ...REPORT, target: 'verb:extrañar', detail: 'presente:yo', exercise: 'conjugation' })).not.toBeNull()
   })
 
   it.each([
@@ -79,6 +82,13 @@ describe('handleReport', () => {
     expect(d.insert).not.toHaveBeenCalled()
   })
 
+  it('stops at the hourly limit of a whole block of addresses too', async () => {
+    const { d } = deps({ rateHit: vi.fn(async (key: string) => key !== 'report-block:x') })
+    expect((await handleReport(post(REPORT), d)).status).toBe(429)
+    expect(d.rateHit).toHaveBeenCalledWith('report-block:x', REPORTS_PER_BLOCK)
+    expect(d.insert).not.toHaveBeenCalled()
+  })
+
   it('stops at the hourly limit', async () => {
     const { d } = deps({ rateHit: vi.fn(async () => false) })
     expect((await handleReport(post(REPORT), d)).status).toBe(429)
@@ -91,5 +101,30 @@ describe('handleReport', () => {
     const { d } = deps({ insert: vi.fn(async () => Promise.reject(new Error('down'))) })
     expect((await handleReport(post(REPORT), d)).status).toBe(500)
     expect((await handleReport(post(REPORT), undefined)).status).toBe(503)
+  })
+})
+
+describe('the hourly limit key', () => {
+  const keyOf = (ip: string) => limitDeps({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!.ipKey(new Request('https://somos.app', { headers: { 'x-forwarded-for': ip } }))
+
+  it('counts an IPv6 connection by its /64: a phone can pick any address in it', () => {
+    expect(keyOf('2a02:ab88:1234:5678::1')).toBe(keyOf('2a02:ab88:1234:5678:9abc:def0:1:2'))
+    expect(keyOf('2a02:ab88:1234:5678::1')).not.toBe(keyOf('2a02:ab88:1234:5679::1'))
+  })
+
+  it('keeps IPv4 addresses apart, and never contains the address', () => {
+    expect(keyOf('81.2.3.4')).not.toBe(keyOf('81.2.3.5'))
+    expect(keyOf('81.2.3.4')).not.toContain('81.2.3.4')
+  })
+})
+
+describe('the block limit key', () => {
+  const blockOf = (ip: string) => limitDeps({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!.blockKey(new Request('https://somos.app', { headers: { 'x-forwarded-for': ip } }))
+
+  it('is the /48 of IPv6 and the /24 of IPv4', () => {
+    expect(blockOf('2a02:ab88:1234:5678::1')).toBe(blockOf('2a02:ab88:1234:ffff::9'))
+    expect(blockOf('2a02:ab88:1234::1')).not.toBe(blockOf('2a02:ab88:1235::1'))
+    expect(blockOf('81.2.3.4')).toBe(blockOf('81.2.3.200'))
+    expect(blockOf('81.2.3.4')).not.toBe(blockOf('81.2.4.4'))
   })
 })

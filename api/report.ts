@@ -6,6 +6,8 @@ import { createHmac } from 'node:crypto'
 
 export const MAX_BODY = 8_000
 export const REPORTS_PER_HOUR = 20
+/** Per /24 (IPv4) or /48 (IPv6): a home connection may get a whole /56 or /48 and switch its /64. */
+export const REPORTS_PER_BLOCK = 60
 const REQUEST_TIMEOUT_MS = 8000
 
 /** What the app sends; also the row of content_reports (the database adds id, created_at, status). */
@@ -26,6 +28,7 @@ export interface ReportDeps {
   insert(row: ReportRow): Promise<void>
   rateHit(key: string, limit: number): Promise<boolean>
   ipKey(request: Request): string
+  blockKey(request: Request): string
 }
 
 // Mirrors src/lib/contentReport.ts (ExerciseType + word, ReportReason, TARGET_PATTERN).
@@ -40,7 +43,7 @@ const text = (v: unknown, max: number, min = 0): v is string => typeof v === 'st
 export function parseReport(body: unknown): ReportBody | null {
   if (!isRecord(body) || Object.keys(body).length !== KEYS.length || !KEYS.every((k) => Object.hasOwn(body, k))) return null
   const { target, detail, exercise, reason, note, answer, shown, version, language } = body
-  if (typeof target !== 'string' || !/^(sentence|word|verb):[a-z0-9-]{1,60}$/.test(target)) return null
+  if (typeof target !== 'string' || !/^(sentence|word|verb):[a-z0-9ñ-]{1,60}$/.test(target)) return null
   if (typeof detail !== 'string' || !/^[a-z0-9:-]{0,40}$/.test(detail)) return null
   if (typeof exercise !== 'string' || !EXERCISES.includes(exercise)) return null
   if (typeof reason !== 'string' || !REASONS.includes(reason)) return null
@@ -60,6 +63,9 @@ export function parseReport(body: unknown): ReportBody | null {
     language,
   }
 }
+
+const clientIp = (request: Request) =>
+  request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
 
 const json = (body: unknown, status: number) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
 
@@ -90,12 +96,33 @@ export async function handleReport(request: Request, deps: ReportDeps | undefine
     const report = parseReport(parsed)
     if (!report) return json({ error: 'bad-request' }, 400)
     if (!(await deps.rateHit(deps.ipKey(request), REPORTS_PER_HOUR))) return json({ error: 'too-many' }, 429)
+    if (!(await deps.rateHit(deps.blockKey(request), REPORTS_PER_BLOCK))) return json({ error: 'too-many' }, 429)
     await deps.insert(report)
     return new Response(null, { status: 204 })
   } catch (error) {
     console.error('report failed', error)
     return json({ error: 'failed' }, 500)
   }
+}
+
+/** An IPv6 address counts by its /64: one connection gets a whole /64 and can pick any address in it.
+ *  The same as ipNetwork() in api/reminder.ts (functions are deployed one file each). */
+/** The /24 of an IPv4 address, the /48 of an IPv6 one (as ipBlock() in api/reminder.ts). */
+export function ipBlock(ip: string): string {
+  if (!ip.includes(':')) return /^\d+\.\d+\.\d+\.\d+$/.test(ip) ? `${ip.split('.').slice(0, 3).join('.')}.0/24` : ip
+  return ipNetwork(ip).split(':').slice(0, 3).join(':') + '::/48'
+}
+
+export function ipNetwork(ip: string): string {
+  if (!ip.includes(':')) return ip
+  const [head, tail = ''] = ip.toLowerCase().split('::')
+  const left = head ? head.split(':') : []
+  const right = tail ? tail.split(':') : []
+  const groups = ip.includes('::') ? [...left, ...Array<string>(Math.max(0, 8 - left.length - right.length)).fill('0'), ...right] : left
+  return `${groups
+    .slice(0, 4)
+    .map((g) => g.replace(/^0+(?=.)/, ''))
+    .join(':')}::/64`
 }
 
 /** SUPABASE_URL, or the app's own VITE_SUPABASE_URL (Vercel gives functions every variable). */
@@ -113,16 +140,15 @@ export function depsFromEnv(env: Record<string, string | undefined>): ReportDeps
     if (!res.ok) throw new Error(`Supabase ${path} failed: ${res.status}`)
     return res
   }
+  const hash = (value: string) => createHmac('sha256', `somos-report:${key}`).update(value).digest('hex').slice(0, 32)
   return {
     insert: async (row) => {
       await call('content_reports', row, 'return=minimal')
     },
     rateHit: async (rateKey, limit) => (await (await call('rpc/push_rate_hit', { p_key: rateKey, p_limit: limit })).json()) === true,
-    // A keyed hash: the address cannot be got back from push_rate by trying every address.
-    ipKey: (request) => {
-      const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-      return `report:${createHmac('sha256', `somos-report:${key}`).update(ip).digest('hex').slice(0, 32)}`
-    },
+    // Keyed hashes: the address cannot be got back from push_rate by trying every address.
+    ipKey: (request) => `report:${hash(ipNetwork(clientIp(request)))}`,
+    blockKey: (request) => `report-block:${hash(ipBlock(clientIp(request)))}`,
   }
 }
 
