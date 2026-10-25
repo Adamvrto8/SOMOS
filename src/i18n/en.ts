@@ -951,15 +951,23 @@ export const en: Dictionary = {
 
   privacy: {
     title: 'Privacy',
-    updated: 'Effective October 24, 2026',
+    updated: 'Effective October 25, 2026',
     sections: [
       {
+        heading: 'Who we are',
+        body: 'SOMOS is run by Adam Vrťo, contact: adam.vrto@gmail.com. Write to this address with questions about your data and requests to delete it.',
+      },
+      {
         heading: 'Without an account',
-        body: 'Everything you learn stays on this device only. The only things that leave it are text you have translated online (by DeepL) and, if you turn on the reminder, the data it needs (below).',
+        body: 'Everything you learn stays on this device only. The only things that leave it are text you have translated online (by DeepL), anonymous statistics (unless you turn them off) and, if you turn on the reminder, the data it needs (below).',
       },
       {
         heading: 'With an account',
         body: 'We store your e-mail (and, when you sign in with Google, your Google account identifier) and your progress: answers in exercises, saved and own words, reviews, mistakes, lesson and test results and settings. It is used only to keep your progress safe and on each of your devices.',
+      },
+      {
+        heading: 'Duels',
+        body: 'For duels you pick a nickname that other players see (nobody else sees your e-mail). We store the rooms of your duels and your answers in them: whether each was right and how long it took. They are deleted with your account.',
       },
       {
         heading: 'Reminder',
@@ -967,11 +975,19 @@ export const en: Dictionary = {
       },
       {
         heading: 'Who processes the data',
-        body: 'Accounts, progress and reminders are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you.',
+        body: 'Accounts, progress, duels, reminders and anonymous statistics are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you on other sites or apps.',
       },
       {
         heading: 'Error reports',
         body: 'When the app runs into an error, it sends a report to Sentry (servers in the EU): what went wrong and where in the app, and the versions of the app, browser and system. It does not contain your name, e-mail, IP address or what you are learning. It is used only to fix errors and is deleted after 90 days at the latest.',
+      },
+      {
+        heading: 'Anonymous statistics',
+        body: 'The app sends which screens and exercises you open, the steps of the welcome and how many tasks of a lesson you did. With them go a random number of the device, the app version, the language and the date, not your account, e-mail, IP address or your answers. They are used only to improve the app and are deleted after 13 months. Turn them off in Profile → Anonymous statistics; turning them off forgets the device number.',
+      },
+      {
+        heading: 'Legal basis',
+        body: 'We process your account, progress, duels and reminders to provide the service you asked for (Art. 6(1)(b) GDPR). Error reports and anonymous statistics rest on our legitimate interest in an app that works and gets better (Art. 6(1)(f) GDPR); you can turn the statistics off at any time.',
       },
       {
         heading: 'How long',

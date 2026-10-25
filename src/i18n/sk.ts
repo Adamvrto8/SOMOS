@@ -1016,15 +1016,23 @@ export const sk = {
 
   privacy: {
     title: 'Ochrana súkromia',
-    updated: 'Platné od 24. 10. 2026',
+    updated: 'Platné od 25. 10. 2026',
     sections: [
       {
+        heading: 'Kto sme',
+        body: 'Aplikáciu SOMOS prevádzkuje Adam Vrťo, kontakt: adam.vrto@gmail.com. Na tento e-mail píš aj otázky k tvojim údajom a žiadosti o ich výmaz.',
+      },
+      {
         heading: 'Bez účtu',
-        body: 'Všetko, čo sa naučíš, ostáva iba v tomto zariadení. Zo zariadenia odchádza len text, ktorý dáš preložiť online (služba DeepL), a ak si zapneš pripomienku, údaje pre ňu (nižšie).',
+        body: 'Všetko, čo sa naučíš, ostáva iba v tomto zariadení. Zo zariadenia odchádza len text, ktorý dáš preložiť online (služba DeepL), anonymné štatistiky (ak ich nevypneš) a ak si zapneš pripomienku, údaje pre ňu (nižšie).',
       },
       {
         heading: 'S účtom',
         body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
+      },
+      {
+        heading: 'Duely',
+        body: 'Na duel si zvolíš prezývku, ktorú vidia ostatní hráči (e-mail nikto iný nevidí). Ukladáme miestnosti tvojich duelov a odpovede v nich: či bola správna a ako dlho trvala. Zmažú sa spolu s účtom.',
       },
       {
         heading: 'Pripomienka',
@@ -1032,11 +1040,19 @@ export const sk = {
       },
       {
         heading: 'Kto údaje spracúva',
-        body: 'Účty, progres a pripomienky uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa.',
+        body: 'Účty, progres, duely, pripomienky a anonymné štatistiky uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa na iných stránkach ani v iných aplikáciách.',
       },
       {
         heading: 'Hlásenia chýb',
         body: 'Keď aplikácia narazí na chybu, pošle o nej hlásenie službe Sentry (servery v EÚ): čo sa pokazilo a kde v aplikácii, verziu aplikácie, prehliadača a systému. Nie je v ňom tvoje meno, e-mail, IP adresa ani to, čo sa učíš. Slúži iba na opravu chýb a zmaže sa najneskôr po 90 dňoch.',
+      },
+      {
+        heading: 'Anonymné štatistiky',
+        body: 'Aplikácia posiela, ktoré obrazovky a cvičenia otvoríš, kroky uvítania a koľko úloh lekcie si urobil. Pribalí k tomu náhodné číslo zariadenia, verziu aplikácie, jazyk a dátum, nie tvoj účet, e-mail, IP adresu ani tvoje odpovede. Slúžia iba na zlepšenie aplikácie a zmažú sa po 13 mesiacoch. Vypneš ich v Profile → Anonymné štatistiky; vypnutím sa číslo zariadenia zabudne.',
+      },
+      {
+        heading: 'Právny základ',
+        body: 'Účet, progres, duely a pripomienky spracúvame, aby sme ti poskytli službu, o ktorú si požiadal (čl. 6 ods. 1 písm. b GDPR). Hlásenia chýb a anonymné štatistiky spracúvame na základe oprávneného záujmu na fungujúcej a lepšej aplikácii (čl. 6 ods. 1 písm. f GDPR); štatistiky môžeš kedykoľvek vypnúť.',
       },
       {
         heading: 'Ako dlho',
