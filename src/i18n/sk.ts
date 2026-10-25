@@ -422,6 +422,8 @@ export const sk = {
         unavailable: 'Online preklad funguje len v nasadenej aplikácii, nie na lokálnom serveri.',
         'not-configured': 'Online preklad nie je nastavený: na Verceli chýba kľúč DEEPL_API_KEY.',
         quota: 'Mesačný limit prekladov DeepL je vyčerpaný.',
+        'too-many': 'Hľadaní bolo priveľa, skús to o chvíľu.',
+        'daily-limit': 'Online preklad je dnes vyčerpaný, skús to zajtra.',
         failed: 'Preklad sa nepodaril. Skús to znova.',
       },
     },

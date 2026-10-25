@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { translate } from './translate.ts'
+import { limitsFromEnv, LOOKUPS_PER_BLOCK, LOOKUPS_PER_HOUR, translate, type TranslateLimits } from './translate.ts'
 
 const KEY = 'test-key:fx'
 
@@ -81,5 +81,74 @@ describe('api/translate: the English pair', () => {
     expect((await translate(request({ text: 'casa', from: 'es', to: 'es' }), KEY, fetchImpl)).status).toBe(400)
     expect((await translate(request({ text: 'casa', from: 'es', to: 'fr' }), KEY, fetchImpl)).status).toBe(400)
     expect(fetchImpl).not.toHaveBeenCalled()
+  })
+})
+
+describe('api/translate limits', () => {
+  const OK = (): [number, unknown] => [200, { translations: [{ text: 'heladero' }] }]
+  const limits = (over: Partial<TranslateLimits> = {}): TranslateLimits => ({
+    rateHit: vi.fn(async () => true),
+    budgetHit: vi.fn(async () => true),
+    ipKey: () => 'translate:ip',
+    blockKey: () => 'translate-block:ip',
+    dailyChars: 15_000,
+    ...over,
+  })
+
+  it('counts every lookup per address and per block, and its characters in the day', async () => {
+    const l = limits()
+    const res = await translate(request({ text: ' zmrzlinár ', from: 'sk' }), KEY, deepl(OK()), l)
+    expect(res.status).toBe(200)
+    expect(l.rateHit).toHaveBeenCalledWith('translate:ip', LOOKUPS_PER_HOUR)
+    expect(l.rateHit).toHaveBeenCalledWith('translate-block:ip', LOOKUPS_PER_BLOCK)
+    expect(l.budgetHit).toHaveBeenCalledWith('zmrzlinár'.length, 15_000)
+  })
+
+  it('stops a learner over the hourly limit before DeepL is asked', async () => {
+    const fetchImpl = deepl(OK())
+    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, limits({ rateHit: vi.fn(async (key: string) => key !== 'translate:ip') }))
+    expect(res.status).toBe(429)
+    expect(await res.json()).toEqual({ error: 'too-many' })
+    expect(fetchImpl).not.toHaveBeenCalled()
+  })
+
+  it('stops everyone once the day has used its characters', async () => {
+    const fetchImpl = deepl(OK())
+    const l = limits({ budgetHit: vi.fn(async () => false) })
+    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, l)
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ error: 'daily-limit' })
+    expect(fetchImpl).not.toHaveBeenCalled()
+  })
+
+  it('a bad request costs nothing', async () => {
+    const l = limits()
+    expect((await translate(request({ text: '', from: 'sk' }), KEY, deepl(OK()), l)).status).toBe(400)
+    expect(l.rateHit).not.toHaveBeenCalled()
+    expect(l.budgetHit).not.toHaveBeenCalled()
+  })
+
+  it('translates anyway when the limits cannot be checked (Supabase down)', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const l = limits({ rateHit: vi.fn(async () => Promise.reject(new Error('down'))), budgetHit: vi.fn(async () => Promise.reject(new Error('down'))) })
+    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, deepl(OK()), l)
+    expect(res.status).toBe(200)
+  })
+
+  it('reads the daily budget from DEEPL_DAILY_CHARS, 15 000 without it', () => {
+    const env = { SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' }
+    expect(limitsFromEnv(env)?.dailyChars).toBe(15_000)
+    expect(limitsFromEnv({ ...env, DEEPL_DAILY_CHARS: '40000' })?.dailyChars).toBe(40_000)
+    expect(limitsFromEnv({ ...env, DEEPL_DAILY_CHARS: 'lots' })?.dailyChars).toBe(15_000)
+    expect(limitsFromEnv({})).toBeUndefined()
+  })
+
+  it('counts an IPv6 connection by its /64 and its block by the /48', () => {
+    const l = limitsFromEnv({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!
+    const req = (ip: string) => new Request('https://somos.example', { headers: { 'x-forwarded-for': ip } })
+    expect(l.ipKey(req('2a02:ab88:1234:5678::1'))).toBe(l.ipKey(req('2a02:ab88:1234:5678:9::2')))
+    expect(l.ipKey(req('2a02:ab88:1234:5678::1'))).not.toBe(l.ipKey(req('2a02:ab88:1234:5679::1')))
+    expect(l.blockKey(req('2a02:ab88:1234:5678::1'))).toBe(l.blockKey(req('2a02:ab88:1234:ffff::1')))
+    expect(l.ipKey(req('81.2.3.4'))).not.toContain('81.2.3.4')
   })
 })

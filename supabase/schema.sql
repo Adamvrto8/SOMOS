@@ -351,6 +351,30 @@ revoke execute on function public.content_reports_list(text), public.content_rep
 grant execute on function public.content_reports_list(text), public.content_reports_handle(text, text) to authenticated;
 
 -- ---------------------------------------------------------------------------------------------------------
+-- Online lookup (api/translate.ts): DeepL characters used each day by everyone together, so one shared key's
+-- monthly quota lasts the month. The per-learner limit uses push_rate (below). Only the service role.
+
+create table if not exists public.translate_budget (day date primary key, chars integer not null);
+
+alter table public.translate_budget enable row level security;
+revoke all on public.translate_budget from anon, authenticated;
+grant select, insert, update, delete on public.translate_budget to service_role;
+
+-- Adds a lookup's characters to today's total (UTC day): true while the total stays within the limit.
+create or replace function public.translate_budget_hit(p_chars integer, p_limit integer) returns boolean
+language plpgsql set search_path = '' as $$
+declare total integer;
+begin
+  insert into public.translate_budget as b (day, chars) values (current_date, greatest(p_chars, 0))
+  on conflict (day) do update set chars = b.chars + excluded.chars
+  returning chars into total;
+  return total <= p_limit;
+end $$;
+
+revoke execute on function public.translate_budget_hit(integer, integer) from public, anon, authenticated;
+grant execute on function public.translate_budget_hit(integer, integer) to service_role;
+
+-- ---------------------------------------------------------------------------------------------------------
 -- Practice reminders, one row per device (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
 -- Only api/reminder.ts reads and writes these, with the service role key: no policies, nothing for users.
 
@@ -447,7 +471,7 @@ begin
 end $$;
 
 -- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months,
--- handled content reports after 12 months.
+-- handled content reports after 12 months, lookup budgets after 40 days.
 create or replace function public.push_cleanup() returns void
 language sql set search_path = '' as $$
   delete from public.push_devices where seen_at < now() - interval '60 days';
@@ -455,6 +479,7 @@ language sql set search_path = '' as $$
   delete from public.push_rate where hour < now() - interval '1 day';
   delete from public.usage_events where day < current_date - interval '13 months';
   delete from public.content_reports where status <> 'open' and handled_at < now() - interval '12 months';
+  delete from public.translate_budget where day < current_date - 40;
 $$;
 
 revoke execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),

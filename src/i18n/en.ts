@@ -384,6 +384,8 @@ export const en: Dictionary = {
         unavailable: 'Online translation works only in the deployed app, not on a local server.',
         'not-configured': 'Online translation is not set up: the DEEPL_API_KEY is missing on Vercel.',
         quota: 'The monthly DeepL limit is used up.',
+        'too-many': 'Too many lookups, try again in a while.',
+        'daily-limit': 'Online translation is used up for today, try again tomorrow.',
         failed: 'The translation did not work. Try again.',
       },
     },

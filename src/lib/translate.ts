@@ -11,9 +11,10 @@ export type Lang = 'sk' | 'en' | 'es'
 /** The other side of a lookup that starts from `from`. */
 export const targetOf = (from: Lang): Lang => (from === 'es' ? getLanguage() : 'es')
 
-export type TranslateError = 'offline' | 'unavailable' | 'not-configured' | 'quota' | 'failed'
+/** too-many: this learner's hourly limit; daily-limit: everyone's characters for today (api/translate.ts). */
+export type TranslateError = 'offline' | 'unavailable' | 'not-configured' | 'quota' | 'too-many' | 'daily-limit' | 'failed'
 
-const TRANSLATE_ERROR_CODES: TranslateError[] = ['offline', 'unavailable', 'not-configured', 'quota', 'failed']
+const TRANSLATE_ERROR_CODES: TranslateError[] = ['offline', 'unavailable', 'not-configured', 'quota', 'too-many', 'daily-limit', 'failed']
 
 /** Same limit as the server (api/translate.ts). */
 export const MAX_TRANSLATE_CHARS = 120
