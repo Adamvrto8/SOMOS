@@ -137,6 +137,7 @@ const USAGE_REPORT = {
   lessons: [
     { by: 'type', key: 'cloze', started: 10, finished: 6, quit: 2, usualStop: 3 },
     { by: 'type', key: 'builder', started: 20, finished: 15, quit: 5, usualStop: null },
+    { by: 'type', key: 'mixed', started: 4, finished: 4, quit: 0, usualStop: null },
     { by: 'level', key: 'A1', started: 22, finished: 16, quit: 5, usualStop: 4 },
     { by: 'level', key: '-', started: 8, finished: 5, quit: 2, usualStop: 1 },
   ],
@@ -159,6 +160,7 @@ test('Štatistiky používania show the numbers to an admin, and say no to any o
   await expect(rows.nth(2)).toContainText('60 %')
   await expect(rows.nth(2)).toContainText('4')
   await expect(page.getByText('Všetky úrovne')).toBeVisible()
+  await expect(rows.nth(3)).toContainText('Zmiešané (chyby, príprava na test)')
   if (process.env.USAGE_SCREENSHOT) await page.screenshot({ path: process.env.USAGE_SCREENSHOT, fullPage: true })
 })
 

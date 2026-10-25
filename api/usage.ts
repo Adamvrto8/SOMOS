@@ -38,9 +38,9 @@ export interface UsageDeps {
   ipKey(request: Request): string
 }
 
-// The lists mirror src/lib/lesson.ts (ExerciseType), src/data/types.ts (Level), the welcome's steps and
-// screenOf() in src/lib/usage.ts.
-const TYPES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
+// The lists mirror src/lib/lesson.ts (ExerciseType, plus 'mixed' from src/features/exercises/lessonUsage.ts),
+// src/data/types.ts (Level), the welcome's steps and screenOf() in src/lib/usage.ts.
+const TYPES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'mixed']
 const LEVELS = ['A1', 'A2', 'B1', 'B2']
 const STEPS = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done']
 const SCREENS = ['home', 'search', 'word', 'topic', 'practice', 'grammar', 'tests', 'test', 'duel', 'archive', 'profile', 'review', 'stats']

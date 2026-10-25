@@ -123,7 +123,7 @@ function Report({ report }: { report: UsageReport }) {
       )}
 
       <SettingsPart id="usage-types" title={text.exercises}>
-        <LessonTable rows={lessonRows(report, 'type')} nameOf={(key) => EXERCISES.find((e) => e.type === key)?.label ?? key} few={few} />
+        <LessonTable rows={lessonRows(report, 'type')} nameOf={(key) => (key === 'mixed' ? text.mixed : (EXERCISES.find((e) => e.type === key)?.label ?? key))} few={few} />
       </SettingsPart>
 
       <SettingsPart id="usage-levels" title={text.levels}>

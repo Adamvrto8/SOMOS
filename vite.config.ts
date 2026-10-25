@@ -7,7 +7,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 const ONE_YEAR = 60 * 60 * 24 * 365
 
 /** Shown in Nastavenia, so the phone's version can be compared with the Vercel deployment; also Sentry's release. */
-const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? 'dev'
+const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || 'dev' // || : an empty SHA too (api/usage.ts refuses an empty version)
 
 // Only on Vercel with Sentry set up (docs/error-reports-setup.md): source maps go to Sentry, so a report
 // points at our code, and are deleted before the deploy. Locally and in CI the build stays without them.

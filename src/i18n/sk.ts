@@ -113,6 +113,7 @@ export const sk = {
         exercises: 'Cvičenia',
         levels: 'Úrovne',
         allLevels: 'Všetky úrovne',
+        mixed: 'Zmiešané (chyby, príprava na test)',
         started: 'Začaté',
         finished: 'Dokončené',
         usualStop: 'Odchod pri úlohe',

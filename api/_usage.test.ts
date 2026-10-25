@@ -29,8 +29,10 @@ describe('parseBatch', () => {
       { name: 'lesson_start', day: '2026-10-25', at: 1, props: { type: 'conjugation', level: null, topic: null, source: 'mistakes' } },
       { name: 'lesson_end', day: '2026-10-25', at: 1, props: { type: 'builder', level: 'A1', total: 10, answered: 3, finished: false } },
       { name: 'screen', day: '2026-10-25', at: 1, props: { name: 'duel' } },
+      // Mistakes and test preparation mix exercise types.
+      { name: 'lesson_end', day: '2026-10-25', at: 1, props: { type: 'mixed', level: null, total: 12, answered: 12, finished: true } },
     ]
-    expect(parseBatch(batch(events))?.events).toHaveLength(6)
+    expect(parseBatch(batch(events))?.events).toHaveLength(7)
   })
 
   it.each([

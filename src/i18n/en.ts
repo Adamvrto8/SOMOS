@@ -93,6 +93,7 @@ export const en: Dictionary = {
         exercises: 'Exercises',
         levels: 'Levels',
         allLevels: 'All levels',
+        mixed: 'Mixed (mistakes, test preparation)',
         started: 'Started',
         finished: 'Finished',
         usualStop: 'Leaves at task',
