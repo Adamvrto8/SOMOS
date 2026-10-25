@@ -292,6 +292,65 @@ revoke execute on function public.usage_report(integer) from public, anon;
 grant execute on function public.usage_report(integer) to authenticated;
 
 -- ---------------------------------------------------------------------------------------------------------
+-- Reports of wrong content ("Nahlásiť chybu", docs/superpowers/specs/2026-10-25-content-reports-design.md).
+-- Anonymous; only api/report.ts writes (service role); only accounts in usage_admins read and handle them.
+
+create table if not exists public.content_reports (
+  id bigint generated always as identity primary key,
+  target text not null,                    -- sentence:s001, word:casa, verb:tener
+  detail text not null default '',         -- cloze index, verb form (preterito:yo), vocab direction
+  exercise text not null,                  -- the exercise type, or word (Detail slova)
+  reason text not null,                    -- spanish, translation, answer, other
+  note text not null default '',
+  answer text,                             -- the learner's answer, only with reason answer
+  shown jsonb not null,                    -- { es, translation } as the learner saw it
+  version text not null,
+  language text not null,
+  created_at timestamptz not null default now(),
+  status text not null default 'open' check (status in ('open', 'fixed', 'rejected')),
+  handled_at timestamptz
+);
+create index if not exists content_reports_status_target on public.content_reports (status, target);
+
+alter table public.content_reports enable row level security;
+revoke all on public.content_reports from anon, authenticated;
+grant select, insert, update, delete on public.content_reports to service_role;
+
+-- 'open', or 'handled' (fixed and rejected): newest first, at most 500.
+create or replace function public.content_reports_list(p_status text) returns jsonb
+language plpgsql stable security definer set search_path = '' as $$
+begin
+  if not exists (select 1 from public.usage_admins where user_id = (select auth.uid())) then
+    raise exception 'forbidden';
+  end if;
+  return coalesce((
+    select jsonb_agg(to_jsonb(r) order by r.created_at desc) from (
+      select id, target, detail, exercise, reason, note, answer, shown, version, language, created_at, status, handled_at
+      from public.content_reports
+      where case when p_status = 'open' then status = 'open' else status <> 'open' end
+      order by created_at desc limit 500) r), '[]'::jsonb);
+end $$;
+
+-- Every open report of a target becomes fixed / rejected, or every handled one open again ('open').
+create or replace function public.content_reports_handle(p_target text, p_status text) returns integer
+language plpgsql security definer set search_path = '' as $$
+declare n integer;
+begin
+  if not exists (select 1 from public.usage_admins where user_id = (select auth.uid())) then
+    raise exception 'forbidden';
+  end if;
+  if p_status is null or p_status not in ('open', 'fixed', 'rejected') then raise exception 'invalid'; end if;
+  update public.content_reports
+    set status = p_status, handled_at = case when p_status = 'open' then null else now() end
+    where target = p_target and case when p_status = 'open' then status <> 'open' else status = 'open' end;
+  get diagnostics n = row_count;
+  return n;
+end $$;
+
+revoke execute on function public.content_reports_list(text), public.content_reports_handle(text, text) from public, anon;
+grant execute on function public.content_reports_list(text), public.content_reports_handle(text, text) to authenticated;
+
+-- ---------------------------------------------------------------------------------------------------------
 -- Practice reminders, one row per device (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
 -- Only api/reminder.ts reads and writes these, with the service role key: no policies, nothing for users.
 
@@ -387,13 +446,15 @@ begin
   return n <= p_limit;
 end $$;
 
--- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months.
+-- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months,
+-- handled content reports after 12 months.
 create or replace function public.push_cleanup() returns void
 language sql set search_path = '' as $$
   delete from public.push_devices where seen_at < now() - interval '60 days';
   delete from public.push_gone where at < now() - interval '30 days';
   delete from public.push_rate where hour < now() - interval '1 day';
   delete from public.usage_events where day < current_date - interval '13 months';
+  delete from public.content_reports where status <> 'open' and handled_at < now() - interval '12 months';
 $$;
 
 revoke execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),
