@@ -1,0 +1,6 @@
+# Everything Bubblewrap generates is rebuilt from twa-manifest.json (`bubblewrap update`).
+# Only the manifest and the store files are kept; the signing key NEVER goes into git.
+/*
+!/.gitignore
+!/twa-manifest.json
+!/store/

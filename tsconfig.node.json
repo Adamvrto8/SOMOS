@@ -19,5 +19,7 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "scripts", "api"]
+  "include": ["vite.config.ts", "vitest.config.ts", "scripts", "api"],
+  // Drives Chrome like the e2e tests: type-checked with them (tsconfig.e2e.json).
+  "exclude": ["scripts/store-screenshots.ts"]
 }

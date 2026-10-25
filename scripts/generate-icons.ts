@@ -56,15 +56,17 @@ function badgeSvg(): string {
 `
 }
 
-async function renderPng(svg: string, size: number, file: string) {
-  await sharp(Buffer.from(svg)).resize(size, size).png().toFile(`public/${file}`)
-  console.log(`public/${file}`)
+async function renderPng(svg: string, size: number, file: string, dir = 'public') {
+  await sharp(Buffer.from(svg)).resize(size, size).png().toFile(`${dir}/${file}`)
+  console.log(`${dir}/${file}`)
 }
 
 const anyIcon = iconSvg({ rounded: true, contentScale: 1 })
 // Maskable safe zone is a centered circle with 40% radius; 0.8 leaves a margin.
 const maskableIcon = iconSvg({ rounded: false, contentScale: 0.8 })
 const appleIcon = iconSvg({ rounded: false, contentScale: 0.9 })
+// Google Play rounds the corners itself and wants the full square (docs/google-play-setup.md).
+const storeIcon = iconSvg({ rounded: false, contentScale: 1 })
 
 await writeFile('public/favicon.svg', anyIcon)
 console.log('public/favicon.svg')
@@ -73,3 +75,4 @@ await renderPng(anyIcon, 512, 'pwa-512x512.png')
 await renderPng(maskableIcon, 512, 'maskable-icon-512x512.png')
 await renderPng(appleIcon, 180, 'apple-touch-icon-180x180.png')
 await renderPng(badgeSvg(), 96, 'badge-96x96.png')
+await renderPng(storeIcon, 512, 'icon-512.png', 'android/store')
