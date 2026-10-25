@@ -131,6 +131,20 @@ export async function handleUsage(request: Request, deps: UsageDeps | undefined)
   }
 }
 
+/** An IPv6 address counts by its /64: one connection gets a whole /64 and can pick any address in it.
+ *  The same as ipNetwork() in api/reminder.ts (functions are deployed one file each). */
+export function ipNetwork(ip: string): string {
+  if (!ip.includes(':')) return ip
+  const [head, tail = ''] = ip.toLowerCase().split('::')
+  const left = head ? head.split(':') : []
+  const right = tail ? tail.split(':') : []
+  const groups = ip.includes('::') ? [...left, ...Array<string>(Math.max(0, 8 - left.length - right.length)).fill('0'), ...right] : left
+  return `${groups
+    .slice(0, 4)
+    .map((g) => g.replace(/^0+(?=.)/, ''))
+    .join(':')}::/64`
+}
+
 /** SUPABASE_URL, or the app's own VITE_SUPABASE_URL (Vercel gives functions every variable). */
 export function depsFromEnv(env: Record<string, string | undefined>): UsageDeps | undefined {
   const url = (env.SUPABASE_URL ?? env.VITE_SUPABASE_URL)?.replace(/\/+$/, '')
@@ -154,7 +168,7 @@ export function depsFromEnv(env: Record<string, string | undefined>): UsageDeps 
     // A keyed hash: the address cannot be got back from push_rate by trying every address.
     ipKey: (request) => {
       const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-      return `usage:${createHmac('sha256', `somos-usage:${key}`).update(ip).digest('hex').slice(0, 32)}`
+      return `usage:${createHmac('sha256', `somos-usage:${key}`).update(ipNetwork(ip)).digest('hex').slice(0, 32)}`
     },
   }
 }

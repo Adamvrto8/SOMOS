@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { BATCHES_PER_HOUR, handleUsage, MAX_EVENTS, parseBatch, type UsageDeps, type UsageRow } from './usage.ts'
+import { BATCHES_PER_HOUR, handleUsage, MAX_EVENTS, parseBatch, depsFromEnv as limitDeps, type UsageDeps, type UsageRow } from './usage.ts'
 
 const DEVICE = '0b6f3a52-5c1e-4d7a-9a51-2f0d1c9e8b11'
 const OPEN = { name: 'open', day: '2026-10-25', at: 1, props: {} }
@@ -88,5 +88,19 @@ describe('handleUsage', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     expect((await handleUsage(post(batch()), d)).status).toBe(500)
     expect((await handleUsage(post(batch()), undefined)).status).toBe(503)
+  })
+})
+
+describe('the hourly limit key', () => {
+  const keyOf = (ip: string) => limitDeps({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!.ipKey(new Request('https://somos.app', { headers: { 'x-forwarded-for': ip } }))
+
+  it('counts an IPv6 connection by its /64: a phone can pick any address in it', () => {
+    expect(keyOf('2a02:ab88:1234:5678::1')).toBe(keyOf('2a02:ab88:1234:5678:9abc:def0:1:2'))
+    expect(keyOf('2a02:ab88:1234:5678::1')).not.toBe(keyOf('2a02:ab88:1234:5679::1'))
+  })
+
+  it('keeps IPv4 addresses apart, and never contains the address', () => {
+    expect(keyOf('81.2.3.4')).not.toBe(keyOf('81.2.3.5'))
+    expect(keyOf('81.2.3.4')).not.toContain('81.2.3.4')
   })
 })
