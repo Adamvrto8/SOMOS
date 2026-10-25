@@ -1,5 +1,5 @@
 import { Flag } from 'lucide-react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useT } from '../../i18n'
 import { reportedToday, type ReportSubject } from '../../lib/contentReport'
 import { ReportSheet } from './ReportSheet'
@@ -17,6 +17,7 @@ export function ReportButton({ subject, answer = null, variant = 'icon' }: Repor
   const text = useT().report
   const [open, setOpen] = useState(false)
   const [reported, setReported] = useState(() => reportedToday(subject.target))
+  const opener = useRef<HTMLButtonElement>(null)
   const label = reported ? text.reported : text.button
   const flag = <Flag size={variant === 'icon' ? 18 : 16} strokeWidth={1.75} className={reported ? 'fill-current text-brick' : ''} aria-hidden />
 
@@ -24,6 +25,7 @@ export function ReportButton({ subject, answer = null, variant = 'icon' }: Repor
     <>
       {variant === 'icon' ? (
         <button
+          ref={opener}
           type="button"
           onClick={() => setOpen(true)}
           aria-label={label}
@@ -34,6 +36,7 @@ export function ReportButton({ subject, answer = null, variant = 'icon' }: Repor
         </button>
       ) : (
         <button
+          ref={opener}
           type="button"
           onClick={() => setOpen(true)}
           className="flex min-h-11 items-center gap-2 rounded-full px-4 text-sm text-ink-muted transition-colors duration-150 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick"
@@ -49,6 +52,8 @@ export function ReportButton({ subject, answer = null, variant = 'icon' }: Repor
           onClose={(sent) => {
             setOpen(false)
             if (sent) setReported(true)
+            // Back where the learner was, as a dialog should leave it.
+            opener.current?.focus()
           }}
         />
       )}

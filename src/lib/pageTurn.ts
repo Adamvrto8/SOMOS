@@ -11,6 +11,9 @@ const SWIPE_MIN_PX = 60
  * Inside a bar that scrolls sideways (the tense tabs of a verb): a horizontal drag there
  * scrolls the bar and must not turn the page, also once the bar has reached its end.
  */
+/** A dialog over the page (the report sheet, a tip): the page underneath must not turn. */
+const dialogOpen = () => document.querySelector('[aria-modal="true"]') !== null
+
 function inSidewaysScroller(target: Element): boolean {
   for (let el: Element | null = target; el && el.tagName !== 'MAIN'; el = el.parentElement) {
     if (/auto|scroll/.test(getComputedStyle(el).overflowX)) return true
@@ -26,7 +29,7 @@ export function usePageTurn(turn: (dir: TurnDirection) => void): void {
   const touchStart = useRef<{ id: number; x: number; y: number } | null>(null)
   useEffect(() => {
     const onTouchStart = (e: TouchEvent) => {
-      const turnsPage = e.target instanceof Element && e.target.closest('main') !== null && !inSidewaysScroller(e.target)
+      const turnsPage = e.target instanceof Element && e.target.closest('main') !== null && !inSidewaysScroller(e.target) && !dialogOpen()
       // The finger that just came down (changedTouches), whatever else is resting on the screen.
       const touch = e.changedTouches[0]
       touchStart.current = turnsPage ? { id: touch.identifier, x: touch.clientX, y: touch.clientY } : null
@@ -62,7 +65,7 @@ export function usePageTurn(turn: (dir: TurnDirection) => void): void {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || dialogOpen()) return
       if (e.key === 'ArrowRight') turn('next')
       if (e.key === 'ArrowLeft') turn('prev')
     }

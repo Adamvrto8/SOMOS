@@ -65,6 +65,17 @@ export function wordSubject(word: Word): ReportSubject {
   return { target: `word:${word.id}`, detail: '', exercise: 'word', shown: wordShown(word) }
 }
 
+/** The learner's answer in a lesson as text: a builder answer holds tile ids, reported as the tiles' words. */
+export function learnerAnswerText(task: Task, answer: string | string[]): string {
+  if (task.kind === 'builder' && Array.isArray(answer)) {
+    return answer
+      .map((id) => task.tiles.find((t) => t.id === id)?.text ?? '')
+      .filter(Boolean)
+      .join(' ')
+  }
+  return answerText(answer)
+}
+
 /** The learner's answer as text: builder tiles joined with spaces. */
 export function answerText(answer: string | string[]): string {
   return (Array.isArray(answer) ? answer.join(' ') : answer).trim()

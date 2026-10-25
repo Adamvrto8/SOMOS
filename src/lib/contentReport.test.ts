@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, verbs, wordById, words } from '../data'
-import { answerText, buildReport, taskSubject, TARGET_PATTERN, wordSubject } from './contentReport'
+import { answerText, buildReport, learnerAnswerText, taskSubject, TARGET_PATTERN, wordSubject } from './contentReport'
 import { createLesson, type Task } from './lesson'
 
 const firstTask = <K extends Task['kind']>(kind: K) => {
@@ -69,5 +69,19 @@ describe('buildReport', () => {
   it('joins builder tiles', () => {
     expect(answerText(['Yo', 'hablo', 'español', '.'])).toBe('Yo hablo español .')
     expect(answerText(' hablo ')).toBe('hablo')
+  })
+})
+
+describe('learnerAnswerText', () => {
+  it('a builder answer is the words of its tiles, not their ids', () => {
+    const task = firstTask('builder')
+    const ids = task.tiles.map((t) => t.id)
+    expect(learnerAnswerText(task, ids)).toBe(task.tiles.map((t) => t.text).join(' '))
+    // A partly built sentence: empty slots leave no double spaces.
+    expect(learnerAnswerText(task, [ids[0], '', ids[1]])).toBe(`${task.tiles[0].text} ${task.tiles[1].text}`)
+  })
+
+  it('a typed answer is itself', () => {
+    expect(learnerAnswerText(firstTask('cloze'), ' trabajo ')).toBe('trabajo')
   })
 })

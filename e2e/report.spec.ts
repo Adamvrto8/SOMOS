@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { askedSentence, button, field, status } from './helpers.ts'
+import { askedSentence, button, field, status, swipe } from './helpers.ts'
 
 const LESSON = '/practice/lesson?type=cloze&topic=all&level=A1&lesson=1'
 
@@ -74,4 +74,32 @@ test('Detail slova reports the word; a failed send keeps what was chosen and wri
   // Zrušiť closes it; nothing was reported.
   await button(page, 'Zrušiť').tap()
   await expect(button(page, 'Nahlásiť chybu')).toBeVisible()
+})
+
+test('the open sheet keeps the word page still: a swipe or an arrow key does not turn it', async ({ page }) => {
+  await fakeReports(page)
+  await page.goto('/topic/greetings')
+  await page.locator('a[href="/word/hola"]').tap()
+  await expect(page).toHaveURL(/\/word\/hola$/)
+  await button(page, 'Nahlásiť chybu').tap()
+  await page.getByLabel('Poznámka (nepovinná)').fill('Nesedí prízvuk.')
+  const dialog = page.getByRole('dialog')
+  const box = (await dialog.boundingBox())!
+  const y = box.y + 30
+  await swipe(page, { x: 320, y }, { x: 60, y })
+  await page.getByRole('button', { name: 'Zrušiť', exact: true }).focus()
+  await page.keyboard.press('ArrowRight')
+  await expect(page).toHaveURL(/\/word\/hola$/)
+  await expect(page.getByLabel('Poznámka (nepovinná)')).toHaveValue('Nesedí prízvuk.')
+})
+
+test('the sheet takes the focus, Escape closes it, and the focus goes back to the flag', async ({ page }) => {
+  await page.goto('/word/casa')
+  const flag = button(page, 'Nahlásiť chybu')
+  await flag.focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('radio', { name: 'Chyba v španielčine' })).toBeFocused()
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await expect(flag).toBeFocused()
 })

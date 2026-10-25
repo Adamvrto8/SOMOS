@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { buildReport, markReported, REPORT_REASONS, sendReport, type ReportReason, type ReportSubject } from '../../lib/contentReport'
@@ -22,7 +23,23 @@ export function ReportSheet({ subject, answer, onClose }: ReportSheetProps) {
   const reasons = REPORT_REASONS.filter((r) => r !== 'answer' || answer)
   const closeLater = useRef<number | undefined>(undefined)
 
+  const firstReason = useRef<HTMLInputElement>(null)
+
   useEffect(() => () => window.clearTimeout(closeLater.current), [])
+
+  // As TipSheet: the focus comes into the sheet, Escape closes it.
+  useEffect(() => {
+    firstReason.current?.focus()
+  }, [])
+
+  const sent = state === 'sent'
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose(sent)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose, sent])
 
   const send = async () => {
     if (!reason) return
@@ -34,17 +51,18 @@ export function ReportSheet({ subject, answer, onClose }: ReportSheetProps) {
     closeLater.current = window.setTimeout(() => onClose(true), THANKS_MS)
   }
 
-  return (
+  // On <body>: out of the lesson's status region, and out of <main>, whose swipes turn the word page.
+  return createPortal(
     <div className="fixed inset-0 z-40 flex items-end">
       {/* The dimmed page behind: a tap there cancels (Zrušiť below does the same for keyboards and screen readers). */}
-      <button type="button" tabIndex={-1} aria-hidden="true" className="absolute inset-0 bg-ink/30" onClick={() => onClose(state === 'sent')} />
+      <button type="button" tabIndex={-1} aria-hidden="true" className="absolute inset-0 bg-ink/30" onClick={() => onClose(sent)} />
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="report-title"
-        className="relative mx-auto w-full max-w-[480px] animate-sheet-up rounded-t-3xl border-t border-line bg-surface px-5 pt-5 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgb(0_0_0/0.08)]"
+        className="relative mx-auto max-h-full w-full max-w-[480px] animate-sheet-up overflow-y-auto rounded-t-3xl border-t border-line bg-surface px-5 pt-5 pb-[calc(1rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgb(0_0_0/0.08)]"
       >
-        {state === 'sent' ? (
+        {sent ? (
           <p id="report-title" role="status" className="py-6 text-center text-lg font-semibold">
             {text.thanks}
           </p>
@@ -58,9 +76,9 @@ export function ReportSheet({ subject, answer, onClose }: ReportSheetProps) {
             </p>
             <fieldset className="mt-3">
               <legend className="sr-only">{text.title}</legend>
-              {reasons.map((r) => (
+              {reasons.map((r, i) => (
                 <label key={r} className="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl px-2 hover:bg-surface-2">
-                  <input type="radio" name="report-reason" value={r} checked={reason === r} onChange={() => setReason(r)} className="size-5 shrink-0 accent-brick" />
+                  <input ref={i === 0 ? firstReason : undefined} type="radio" name="report-reason" value={r} checked={reason === r} onChange={() => setReason(r)} className="size-5 shrink-0 accent-brick" />
                   <span>{text.reasons[r]}</span>
                 </label>
               ))}
@@ -94,6 +112,7 @@ export function ReportSheet({ subject, answer, onClose }: ReportSheetProps) {
           </>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

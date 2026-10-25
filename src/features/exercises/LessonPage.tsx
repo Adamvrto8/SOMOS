@@ -47,7 +47,7 @@ import { LessonResult, type LessonAnswer } from './LessonResult'
 import { SaveProgressCard } from '../onboarding/SaveProgressCard'
 import { TaskView } from './tasks/TaskView'
 import { createLessonRun, lessonUsage, type LessonRun, type LessonSource } from './lessonUsage'
-import { answerText } from '../../lib/contentReport'
+import { learnerAnswerText } from '../../lib/contentReport'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
@@ -470,7 +470,7 @@ export function LessonPage() {
                 onOverride={task.kind === 'translation' || task.kind === 'vocab' || task.kind === 'speaking' ? () => next({ override: true, resolve: fromMistakes }) : undefined}
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
                 why={taskTip && { label: tipLabel(taskTip), onOpen: () => showTip(taskTip.tip.id) }}
-                learnerAnswer={answerText(answer)}
+                learnerAnswer={learnerAnswerText(task, answer)}
               />
             ) : (
               // Rides on top of the open phone keyboard and drops back to the bottom without it (src/lib/keyboard.ts).
