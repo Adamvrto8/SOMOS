@@ -14,13 +14,20 @@ interface Calls {
   pushed: { kind: string; key: string }[]
   logout: number
   deleted: number
+  handled: unknown[]
 }
 
 const cors = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': '*' }
 const json = (route: Route, body: unknown, status = 200) => route.fulfill({ status, headers: { ...cors, 'content-type': 'application/json' }, body: JSON.stringify(body) })
 
-async function fakeSupabase(page: Page, { goodCode = '123456', usageReport }: { goodCode?: string; usageReport?: object | 'forbidden' } = {}): Promise<Calls> {
-  const calls: Calls = { pushed: [], logout: 0, deleted: 0 }
+interface FakeOptions {
+  goodCode?: string
+  usageReport?: object | 'forbidden'
+  contentReports?: { open: object[]; handled: object[] } | 'forbidden'
+}
+
+async function fakeSupabase(page: Page, { goodCode = '123456', usageReport, contentReports }: FakeOptions = {}): Promise<Calls> {
+  const calls: Calls = { pushed: [], logout: 0, deleted: 0, handled: [] }
   await page.route(`${SUPABASE}/**`, async (route) => {
     const request = route.request()
     if (request.method() === 'OPTIONS') return route.fulfill({ status: 204, headers: cors })
@@ -47,6 +54,14 @@ async function fakeSupabase(page: Page, { goodCode = '123456', usageReport }: { 
         // What usage_report() raises for an account not in usage_admins.
         if (usageReport === 'forbidden' || !usageReport) return json(route, { code: 'P0001', message: 'forbidden', details: null, hint: null }, 400)
         return json(route, usageReport)
+      case '/rest/v1/rpc/content_reports_list': {
+        if (contentReports === 'forbidden' || !contentReports) return json(route, { code: 'P0001', message: 'forbidden', details: null, hint: null }, 400)
+        const { p_status } = request.postDataJSON() as { p_status: 'open' | 'handled' }
+        return json(route, contentReports[p_status])
+      }
+      case '/rest/v1/rpc/content_reports_handle':
+        calls.handled.push(request.postDataJSON())
+        return json(route, 2)
       case '/rest/v1/rpc/delete_my_account':
         calls.deleted++
         return route.fulfill({ status: 204, headers: cors })
@@ -169,5 +184,57 @@ test('Štatistiky používania: an account not in usage_admins has no access', a
   await signInWithCode(page)
   await expect(page.getByText(EMAIL)).toBeVisible()
   await page.goto('/profile/usage-stats')
+  await expect(page.getByText('Tento účet nemá prístup.')).toBeVisible()
+})
+
+const stored = (over: object) => ({
+  id: 1,
+  target: 'word:casa',
+  detail: '',
+  exercise: 'word',
+  reason: 'spanish',
+  note: '',
+  answer: null,
+  shown: { es: 'la casa', translation: 'dom, domov' },
+  version: 'abc1234',
+  language: 'sk',
+  created_at: '2026-10-25T10:00:00Z',
+  status: 'open',
+  handled_at: null,
+  ...over,
+})
+const OPEN_REPORTS = [
+  stored({ id: 1, note: 'Rod?' }),
+  stored({ id: 2, reason: 'translation', created_at: '2026-10-24T10:00:00Z' }),
+  stored({ id: 3, target: 'sentence:s001', detail: '0', exercise: 'cloze', reason: 'answer', answer: 'trabaja', shown: { es: 'Veta, ako ju videl.', translation: 'Preklad.' } }),
+]
+
+test('Nahlásený obsah lists the reports by what they name, and Opravené handles the whole group', async ({ page }) => {
+  const calls = await fakeSupabase(page, { contentReports: { open: OPEN_REPORTS, handled: [] } })
+  await signInWithCode(page)
+  await expect(page.getByText(EMAIL)).toBeVisible()
+  await page.goto('/profile/dev')
+  await button(page, 'Nahlásený obsah').tap()
+  await expect(page).toHaveURL(/\/profile\/content-reports$/)
+  await expect(page.getByRole('radio', { name: 'Otvorené (3)' })).toBeChecked()
+  const casa = page.getByRole('article').filter({ hasText: 'Slovo casa' })
+  await expect(casa).toContainText('2×')
+  await expect(casa).toContainText('Rod?')
+  await expect(casa.getByRole('link', { name: 'Otvoriť slovo' })).toHaveAttribute('href', '/word/casa')
+  // The sentence changed since it was reported: both are shown.
+  const sentence = page.getByRole('article').filter({ hasText: 'Veta s001' })
+  await expect(sentence).toContainText('Veta, ako ju videl.')
+  await expect(sentence).toContainText('Teraz')
+  await expect(sentence).toContainText('trabaja')
+  await casa.getByRole('button', { name: 'Opravené' }).tap()
+  await expect.poll(() => calls.handled).toContainEqual({ p_target: 'word:casa', p_status: 'fixed' })
+  if (process.env.REPORTS_SCREENSHOT) await page.screenshot({ path: process.env.REPORTS_SCREENSHOT, fullPage: true })
+})
+
+test('Nahlásený obsah: an account not in usage_admins has no access', async ({ page }) => {
+  await fakeSupabase(page, { contentReports: 'forbidden' })
+  await signInWithCode(page)
+  await expect(page.getByText(EMAIL)).toBeVisible()
+  await page.goto('/profile/content-reports')
   await expect(page.getByText('Tento účet nemá prístup.')).toBeVisible()
 })
