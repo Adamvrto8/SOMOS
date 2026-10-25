@@ -348,7 +348,7 @@ export function LessonPage() {
         >
           <div className="h-full rounded-full bg-brick transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
-        <span className="w-16 shrink-0 pr-2 text-right text-sm text-ink-muted tabular-nums">
+        <span className="min-w-16 shrink-0 pr-2 text-right text-sm whitespace-nowrap text-ink-muted tabular-nums">
           {runLesson ? `L${runLesson}` : ''}
           {total && !overview ? `${runLesson ? ' · ' : ''}${Math.min(index + 1, total)}/${total}` : ''}
         </span>
