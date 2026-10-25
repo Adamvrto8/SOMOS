@@ -73,3 +73,31 @@ test('the tab bar ends with Profil, its numbers there without an account; Archí
   await page.goto('/archive/settings/sound')
   await expect(page).toHaveURL(/\/profile\/sound$/)
 })
+
+test('anonymous statistics can be turned off and on, and the dev server sends none', async ({ page }) => {
+  const sent: string[] = []
+  page.on('request', (request) => {
+    if (request.url().includes('/api/usage')) sent.push(request.url())
+  })
+  await page.goto('/profile')
+  const row = page.getByRole('link', { name: /^Anonymné štatistiky/ })
+  await expect(row).toContainText('Zapnuté')
+  await row.tap()
+  await expect(page).toHaveURL(/\/profile\/usage$/)
+  const toggle = page.getByRole('switch', { name: /Posielať anonymné štatistiky/ })
+  await expect(toggle).toBeChecked()
+  await toggle.uncheck()
+  await expect(toggle).not.toBeChecked()
+
+  // Kept on the device: still off after a reload, and the list says so.
+  await page.reload()
+  await expect(toggle).not.toBeChecked()
+  await toggle.check()
+  await expect(toggle).toBeChecked()
+  await button(page, 'Späť').tap()
+  await expect(row).toContainText('Zapnuté')
+
+  // Going to the background is when a deployed app sends; the dev server never does.
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')))
+  expect(sent).toEqual([])
+})

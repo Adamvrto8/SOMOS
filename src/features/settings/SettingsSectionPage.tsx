@@ -6,6 +6,7 @@ import { BackupSettings } from './BackupSettings'
 import { GoalSettings, LanguageSettings, LookSettings, SoundSettings } from './ChoiceSettings'
 import { DevSettings } from './DevSettings'
 import { ReminderSettings } from './ReminderSettings'
+import { UsageSettings } from './UsageSettings'
 import { VoiceSettings } from './VoiceSettings'
 
 const SECTIONS: Record<string, () => ReactNode> = {
@@ -17,6 +18,7 @@ const SECTIONS: Record<string, () => ReactNode> = {
   sound: () => <SoundSettings />,
   voice: () => <VoiceSettings />,
   backup: () => <BackupSettings />,
+  usage: () => <UsageSettings />,
   dev: () => <DevSettings />,
 }
 

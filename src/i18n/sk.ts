@@ -73,6 +73,8 @@ export const sk = {
     goalOption: (n: number) => `${n} ${pluralSk(n, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`,
     /** The value of a switched-off row: Automatické opakovanie · Vypnuté */
     off: 'Vypnuté',
+    /** The value of a switched-on row: Anonymné štatistiky · Zapnuté */
+    on: 'Zapnuté',
     perDay: (n: number) => `${n} denne`,
     privacy: 'Ochrana súkromia',
     /** Under the version line while it is being tapped toward developer mode. */
@@ -133,6 +135,15 @@ export const sk = {
       ],
     },
 
+    /** Profil → Anonymné štatistiky (src/lib/usage.ts). */
+    usage: {
+      title: 'Anonymné štatistiky',
+      toggle: 'Posielať anonymné štatistiky',
+      toggleHint: 'Ktoré cvičenia robíš a kde lekciu ukončíš, bez mena, e-mailu a odpovedí.',
+      about:
+        'Pomáhajú zistiť, ktoré časti aplikácie sa používajú a kde sa učenie zasekne. Nie sú spojené s tvojím účtom: zariadenie má na ne vlastné náhodné číslo, ktoré sa vypnutím zabudne.',
+      privacy: 'Viac v zásadách ochrany súkromia',
+    },
     backup: {
       title: 'Záloha',
       intro:

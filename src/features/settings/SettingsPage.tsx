@@ -1,4 +1,4 @@
-import { AudioLines, Bell, DatabaseBackup, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
+import { AudioLines, Bell, ChartNoAxesColumn, DatabaseBackup, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { dictionaries, useT } from '../../i18n'
 import { useAutoReviewSettings } from '../../lib/autoReview'
@@ -8,6 +8,7 @@ import { useLanguage } from '../../lib/language'
 import { useReminderSettings } from '../../lib/reminder'
 import { useSoundSet } from '../../lib/sound'
 import { useLook, useThemePref } from '../../lib/theme'
+import { useUsageOn } from '../../lib/usage'
 import { ttsSupported, useVoices } from '../../lib/tts'
 import { AccountActions, AccountRow } from '../account/AccountSettings'
 import { ProfileStats } from './ProfileStats'
@@ -37,6 +38,7 @@ export function SettingsPage() {
   const soundSet = useSoundSet()
   const voice = useVoiceName()
   const devMode = useDevMode()
+  const usageOn = useUsageOn()
 
   return (
     <div className="space-y-6">
@@ -66,6 +68,7 @@ export function SettingsPage() {
 
       <SettingsGroup id="settings-data" title={text.groups.data}>
         <SettingsRow to="/profile/backup" icon={DatabaseBackup} title={text.backup.title} />
+        <SettingsRow to="/profile/usage" icon={ChartNoAxesColumn} title={text.usage.title} value={usageOn ? text.on : text.off} />
         <SettingsRow to="/privacy" icon={ShieldCheck} title={text.privacy} />
       </SettingsGroup>
 

@@ -58,6 +58,7 @@ export const en: Dictionary = {
     stats: 'My statistics',
     goalOption: (n) => counted(n, 'correct answer', 'correct answers'),
     off: 'Off',
+    on: 'On',
     perDay: (n) => `${n} a day`,
     privacy: 'Privacy',
     devTapsLeft: (n) => `${counted(n, 'more tap', 'more taps')} to turn on developer mode.`,
@@ -115,6 +116,14 @@ export const en: Dictionary = {
       ],
     },
 
+    usage: {
+      title: 'Anonymous statistics',
+      toggle: 'Send anonymous statistics',
+      toggleHint: 'Which exercises you do and where you stop a lesson, without your name, e-mail or answers.',
+      about:
+        'They show which parts of the app are used and where learning gets stuck. They are not linked to your account: the device has its own random number for them, forgotten when you turn this off.',
+      privacy: 'More in the privacy policy',
+    },
     backup: {
       title: 'Backup',
       intro:
