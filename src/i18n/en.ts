@@ -1021,7 +1021,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'Who processes the data',
-        body: 'Accounts, progress, duels, reminders and anonymous statistics are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you on other sites or apps.',
+        body: 'Accounts, progress, duels, reminders, anonymous statistics and content reports are kept by Supabase (servers in the EU). The app is served by Vercel, sign-in codes are sent by the e-mail service of the app, Google handles signing in with Google and DeepL the online translation. We do not sell your data, use it for advertising or track you on other sites or apps.',
       },
       {
         heading: 'Error reports',
@@ -1032,8 +1032,12 @@ export const en: Dictionary = {
         body: 'The app sends which screens and exercises you open, the steps of the welcome and how many tasks of a lesson you did. With them go a random number of the device, the app version, the language and the date, not your account, e-mail, IP address or your answers. They are used only to improve the app and are deleted after 13 months. Turn them off in Profile → Anonymous statistics; turning them off forgets the device number.',
       },
       {
+        heading: 'Reports of wrong content',
+        body: 'When you report a mistake, the app sends which sentence, word or verb form you report and how it looked, what you chose and wrote, your answer when you pick "My answer should have been accepted", and the app version and language. It is not linked to your account or IP address. A report is kept until we handle it, and then for 12 months at most.',
+      },
+      {
         heading: 'Legal basis',
-        body: 'We process your account, progress, duels and reminders to provide the service you asked for (Art. 6(1)(b) GDPR). Error reports and anonymous statistics rest on our legitimate interest in an app that works and gets better (Art. 6(1)(f) GDPR); you can turn the statistics off at any time.',
+        body: 'We process your account, progress, duels and reminders to provide the service you asked for (Art. 6(1)(b) GDPR). Error reports, anonymous statistics and content reports rest on our legitimate interest in an app that works, gets better and teaches correct content (Art. 6(1)(f) GDPR); you can turn the statistics off at any time.',
       },
       {
         heading: 'How long',

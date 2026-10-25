@@ -1088,7 +1088,7 @@ export const sk = {
       },
       {
         heading: 'Kto údaje spracúva',
-        body: 'Účty, progres, duely, pripomienky a anonymné štatistiky uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa na iných stránkach ani v iných aplikáciách.',
+        body: 'Účty, progres, duely, pripomienky, anonymné štatistiky a hlásenia chýb v obsahu uchováva Supabase (servery v EÚ). Aplikáciu poskytuje Vercel, e-maily s kódom odosiela e-mailová služba aplikácie, prihlásenie cez Google zabezpečuje Google a online preklad DeepL. Údaje nepredávame, nepoužívame na reklamu a nesledujeme ťa na iných stránkach ani v iných aplikáciách.',
       },
       {
         heading: 'Hlásenia chýb',
@@ -1099,8 +1099,12 @@ export const sk = {
         body: 'Aplikácia posiela, ktoré obrazovky a cvičenia otvoríš, kroky uvítania a koľko úloh lekcie si urobil. Pribalí k tomu náhodné číslo zariadenia, verziu aplikácie, jazyk a dátum, nie tvoj účet, e-mail, IP adresu ani tvoje odpovede. Slúžia iba na zlepšenie aplikácie a zmažú sa po 13 mesiacoch. Vypneš ich v Profile → Anonymné štatistiky; vypnutím sa číslo zariadenia zabudne.',
       },
       {
+        heading: 'Hlásenia chýb v obsahu',
+        body: 'Keď nahlásiš chybu, pošle sa, ktorú vetu, slovo alebo tvar slovesa hlásiš a ako vyzerali, čo si zvolil a napísal, pri voľbe „Moja odpoveď mala byť uznaná“ aj tvoja odpoveď, a verzia a jazyk aplikácie. Nie je to spojené s tvojím účtom ani IP adresou. Hlásenie ostáva, kým ho nevybavíme, a potom najviac 12 mesiacov.',
+      },
+      {
         heading: 'Právny základ',
-        body: 'Účet, progres, duely a pripomienky spracúvame, aby sme ti poskytli službu, o ktorú si požiadal (čl. 6 ods. 1 písm. b GDPR). Hlásenia chýb a anonymné štatistiky spracúvame na základe oprávneného záujmu na fungujúcej a lepšej aplikácii (čl. 6 ods. 1 písm. f GDPR); štatistiky môžeš kedykoľvek vypnúť.',
+        body: 'Účet, progres, duely a pripomienky spracúvame, aby sme ti poskytli službu, o ktorú si požiadal (čl. 6 ods. 1 písm. b GDPR). Hlásenia chýb, anonymné štatistiky a hlásenia chýb v obsahu spracúvame na základe oprávneného záujmu na fungujúcej a lepšej aplikácii so správnym obsahom (čl. 6 ods. 1 písm. f GDPR); štatistiky môžeš kedykoľvek vypnúť.',
       },
       {
         heading: 'Ako dlho',
