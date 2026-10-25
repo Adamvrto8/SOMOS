@@ -1,5 +1,5 @@
 import { Bell, Briefcase, CircleUser, GraduationCap, House, Palette, PencilLine, Plane, Search, Smile, Sprout, TreeDeciduous, Users, Flower2 } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Azulejos } from '../../components/Azulejos'
 import { Button } from '../../components/Button'
@@ -13,6 +13,7 @@ import { LANGUAGES, setLanguage, useLanguage, type Language } from '../../lib/la
 import { enableReminder, getReminderSettings, reminderSupport, ReminderFailure } from '../../lib/reminder'
 import { finishOnboarding, getOnboarding, MOTIVATIONS, returnAfterSignIn, START_LEVELS, startFilter, updateOnboarding, useOnboarding, type Motivation } from '../../lib/onboarding'
 import { filterLabel, filterToParams } from '../exercises/exercises'
+import { track } from '../../lib/usage'
 import { OptionList } from './OptionList'
 import { StepFrame } from './StepFrame'
 
@@ -58,6 +59,11 @@ export function WelcomePage() {
   const index = steps.indexOf(step)
   // Read on entry, not followed: the last step finishes the welcome on its way into the lesson.
   const [alreadyDone] = useState(() => getOnboarding()?.done === true)
+
+  // Usage statistics: where new learners leave the welcome.
+  useEffect(() => {
+    if (!alreadyDone) track('welcome', { step })
+  }, [step, alreadyDone])
 
   const go = (next: StepId) => void navigate({ search: `?step=${next}` })
   const next = () => go(steps[index + 1])

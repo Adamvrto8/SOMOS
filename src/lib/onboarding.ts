@@ -3,6 +3,7 @@ import type { Level } from '../data/types'
 import { db } from './db'
 import { getNumberedLessonCount, type LessonFilter } from './lesson'
 import { getLastActiveLesson } from './lessonProgress'
+import { track } from './usage'
 
 // The welcome a new learner goes through once (src/features/onboarding). Kept on this device only:
 // not in the backup and not synced, so the reason for learning never leaves the phone.
@@ -88,6 +89,7 @@ export function updateOnboarding(change: Partial<OnboardingState>) {
 }
 
 export function finishOnboarding() {
+  track('welcome', { step: 'done' })
   save({ ...state, done: true, at: Date.now() })
 }
 

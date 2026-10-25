@@ -46,6 +46,7 @@ import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
 import { SaveProgressCard } from '../onboarding/SaveProgressCard'
 import { TaskView } from './tasks/TaskView'
+import { track } from '../../lib/usage'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
@@ -60,6 +61,20 @@ function askedIn(task: Task): TipHere['asked'] {
   if (task.kind === 'cloze' || task.kind === 'choice') return { sentence: task.sentence, cloze: task.cloze }
   if (task.kind === 'conjugation') return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
   return undefined
+}
+
+type LessonSource = 'lesson' | 'mistakes' | 'test' | 'first'
+
+/** Usage statistics (src/lib/usage.ts): a fresh lesson, not a correction round or a passed lesson's overview. */
+function trackLessonStart(filter: LessonFilter, source: LessonSource, count: number) {
+  if (count === 0) return
+  const topic = filter.topic && filter.topic !== 'all' ? filter.topic : null
+  track('lesson_start', { type: filter.type, level: filter.level ?? null, topic, source })
+}
+
+/** Usage statistics: a lesson's result screen, or leaving it through ✕ (counts capped as the server takes them). */
+function trackLessonEnd(filter: LessonFilter, total: number, answered: number, finished: boolean) {
+  track('lesson_end', { type: filter.type, level: filter.level ?? null, total: Math.min(total, 100), answered: Math.min(answered, 100), finished })
 }
 
 /** How often each item of the test's exercise types was answered, by itemKey. */
@@ -103,6 +118,8 @@ export function LessonPage() {
   const lessonNumber = lessonParam === null ? undefined : Number(lessonParam)
   const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
   const group = progressionGroup(rawGroup, filter.level)
+  const source: LessonSource = firstLesson ? 'first' : fromMistakes ? 'mistakes' : preparing ? 'test' : 'lesson'
+  const trackStart = (count: number) => trackLessonStart(filter, source, count)
   const totalLessons = useMemo(() => getNumberedLessonCount(filter), [filter])
   const progression = useLessonProgression()
   // A typed URL, an old link or browser history must not open (and then pass) a locked lesson.
@@ -173,16 +190,22 @@ export function LessonPage() {
       if (left) start(left.tasks, lessonNumber, 'resume', { solved: new Set(left.solved), total: next.length })
       else start(next, lessonNumber)
       setOverview(record?.passed && next.length > 0 ? record : null)
+      if (!(record?.passed && next.length > 0)) trackLessonStart(filter, source, next.length)
     })
     if (lessonNumber !== undefined) rememberActiveLesson(filter.type, rawGroup, lessonNumber, filter.level)
     return () => {
       active = false
     }
-  }, [filter, fromMistakes, lessonNumber, prepareKey, locked, rawGroup, group])
+  }, [filter, fromMistakes, lessonNumber, prepareKey, locked, rawGroup, group, source])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
   const finished = total > 0 && index >= total
+
+  // The result screen of a lesson (not of a correction round).
+  useEffect(() => {
+    if (finished && round !== 'fix') trackLessonEnd(filter, total, answers.length, true)
+  }, [finished, round, filter, total, answers.length])
 
   // Braces matter: newer browsers return a Promise from scrollTo, which React
   // would treat as an (invalid) effect cleanup.
@@ -191,6 +214,7 @@ export function LessonPage() {
   }, [index, tasks, overview])
 
   const exit = () => {
+    if (total > 0 && !finished && !overview && round !== 'fix') trackLessonEnd(filter, total, answers.length, false)
     if (firstLesson) void navigate('/', { replace: true })
     else if (location.key !== 'default') void navigate(-1)
     else {
@@ -367,13 +391,20 @@ export function LessonPage() {
               }}
               onRepeatAll={() => {
                 if (lessonNumber !== undefined) {
-                  void buildLesson(filter, fromMistakes, lessonNumber).then((next) => start(next, lessonNumber))
+                  void buildLesson(filter, fromMistakes, lessonNumber).then((next) => {
+                    start(next, lessonNumber)
+                    trackStart(next.length)
+                  })
                 } else if (tasks) {
                   start(retryTasks(tasks))
+                  trackStart(tasks.length)
                 }
               }}
               onNewLesson={() => {
-                void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => start(next, lessonNumber))
+                void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => {
+                  start(next, lessonNumber)
+                  trackStart(next.length)
+                })
               }}
               onNextLesson={() => {
                 if (runLesson === undefined) return
@@ -405,7 +436,15 @@ export function LessonPage() {
                 <Button variant="secondary" onClick={exit}>
                   {dictionary.common.back}
                 </Button>
-                <Button icon={Repeat} onClick={() => setOverview(null)} className="flex-1" autoFocus>
+                <Button
+                  icon={Repeat}
+                  onClick={() => {
+                    setOverview(null)
+                    trackStart(total)
+                  }}
+                  className="flex-1"
+                  autoFocus
+                >
                   {text.repeat}
                 </Button>
               </div>
