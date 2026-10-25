@@ -129,7 +129,7 @@ create or replace function public.valid_duel(p_code text, p_level text, p_rounds
 language sql immutable set search_path = '' as $$
   -- Anything missing (NULL) makes the room invalid, never valid.
   select coalesce(upper(p_code) ~ '^[A-Z0-9]{6}$'
-    and p_level in ('A1', 'A2', 'B1')
+    and p_level in ('A1', 'A2', 'B1', 'B2')
     and jsonb_typeof(p_rounds) = 'array'
     and jsonb_array_length(p_rounds) = 3
     and length(p_rounds::text) < 4000

@@ -5,7 +5,7 @@ import { getStablePool, seededRandom, taskFromItem, type ExerciseType, type Task
 // A duel: 3 rounds × 5 tasks, both players get the same tasks at the same moment (docs/duel-spec.md).
 // Everything here is pure: both phones compute the same match, schedule and score from the same data.
 
-export const DUEL_LEVELS: Level[] = ['A1', 'A2', 'B1']
+export const DUEL_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 export const TASKS_PER_ROUND = 5
 
 /** Seconds per task: shorter to pick, longer to type or build. */

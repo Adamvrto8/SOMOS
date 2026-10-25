@@ -33,7 +33,7 @@ describe('buildRounds', () => {
   })
 
   it('takes its tasks from the level only, and no sentence twice', () => {
-    for (const level of ['A1', 'A2', 'B1'] as const) {
+    for (const level of ['A1', 'A2', 'B1', 'B2'] as const) {
       const [choice, middle, builder] = buildRounds(level, 7)
       const sentences = [...choice.items.map((id) => id.split('#')[0]), ...builder.items]
       expect(new Set(sentences).size).toBe(sentences.length)
@@ -47,7 +47,7 @@ describe('buildRounds', () => {
 
   it('always builds what the server accepts (valid_duel in supabase/schema.sql): 3 × 5 items, the allowed type and time', () => {
     const allowed: Record<string, number> = { choice: 10, conjugation: 15, vocab: 15, builder: 25 }
-    for (const level of ['A1', 'A2', 'B1'] as const) {
+    for (const level of ['A1', 'A2', 'B1', 'B2'] as const) {
       for (let seed = 0; seed < 40; seed++) {
         const rounds = buildRounds(level, seed * 7919)
         expect(rounds).toHaveLength(3)
