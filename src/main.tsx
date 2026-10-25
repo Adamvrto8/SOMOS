@@ -11,6 +11,7 @@ import { registerServiceWorker } from './lib/pwa'
 import { keepReminderSynced, startProgressReporting } from './lib/reminder'
 import { syncPracticeCards } from './lib/practice'
 import { syncReviewCards } from './lib/srs'
+import { startUsage } from './lib/usage'
 
 // Before anything that could crash: errors from here on are reported (once Sentry is set up).
 startErrorReports()
@@ -26,6 +27,8 @@ registerServiceWorker()
 startProgressReporting()
 keepReminderSynced()
 watchKeyboard()
+// Anonymous usage statistics: today's open and last session's queue (nothing on the dev server).
+startUsage()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

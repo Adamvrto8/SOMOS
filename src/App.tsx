@@ -26,6 +26,7 @@ import { WordPage } from './features/word/WordPage'
 import { OnboardingGate } from './features/onboarding/OnboardingGate'
 import { RestorePage } from './features/onboarding/RestorePage'
 import { WelcomePage } from './features/onboarding/WelcomePage'
+import { trackScreen } from './lib/usage'
 
 function LegacySettingsRedirect() {
   return <Navigate to={`/profile/${useParams().section ?? ''}`} replace />
@@ -84,6 +85,10 @@ const routes = [
 
 // One errorElement for every screen: a crash anywhere shows the error screen, not the router's own.
 const router = createBrowserRouter([{ errorElement: <RouteErrorScreen />, children: routes }])
+
+// Usage statistics: every screen entered (src/lib/usage.ts names it without its id).
+trackScreen(router.state.location.pathname)
+router.subscribe((state) => trackScreen(state.location.pathname))
 
 export default function App() {
   return (
