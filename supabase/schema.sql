@@ -220,6 +220,78 @@ grant execute on function public.create_duel(text, text, integer, jsonb), public
   public.now_ms() to authenticated;
 
 -- ---------------------------------------------------------------------------------------------------------
+-- Anonymous usage statistics (docs/superpowers/specs/2026-10-25-usage-stats-design.md). A random id per device,
+-- never the account. Only api/usage.ts writes (service role); only accounts in usage_admins read the aggregates.
+
+create table if not exists public.usage_events (
+  id bigint generated always as identity primary key,
+  device uuid not null,
+  day date not null,                       -- the device's local date
+  received_at timestamptz not null default now(),
+  name text not null,                      -- open, welcome, lesson_start, lesson_end, screen
+  props jsonb not null default '{}'::jsonb,
+  version text not null,                   -- the build's commit
+  language text not null                   -- sk, en
+);
+create index if not exists usage_events_day on public.usage_events (day);
+create index if not exists usage_events_device_day on public.usage_events (device, day);
+
+-- Who may read the statistics: Adam adds his account once (docs/usage-stats-setup.md).
+create table if not exists public.usage_admins (user_id uuid primary key references auth.users on delete cascade);
+
+alter table public.usage_events enable row level security;
+alter table public.usage_admins enable row level security;
+revoke all on public.usage_events, public.usage_admins from anon, authenticated;
+grant select, insert, delete on public.usage_events to service_role;
+
+-- What Profil → Nástroje pre vývoj → Štatistiky používania shows, for the last p_days days (1–400).
+-- lessons: one row per exercise type ("by": "type") and one per level ("by": "level"); usualStop is the most
+-- common number of tasks answered before a lesson was left through ✕.
+create or replace function public.usage_report(p_days integer) returns jsonb
+language plpgsql stable security definer set search_path = '' as $$
+declare since date := current_date - (least(greatest(coalesce(p_days, 30), 1), 400) - 1);
+begin
+  if not exists (select 1 from public.usage_admins where user_id = (select auth.uid())) then
+    raise exception 'forbidden';
+  end if;
+  return jsonb_build_object(
+    'since', since,
+    'devices', (select count(distinct device) from public.usage_events where day >= since),
+    'active', (select coalesce(jsonb_agg(jsonb_build_object('day', a.day, 'devices', a.n) order by a.day), '[]'::jsonb)
+               from (select day, count(distinct device) as n from public.usage_events where day >= since group by day) a),
+    'returning', (
+      with firsts as (select device, min(day) as first from public.usage_events group by device)
+      select jsonb_build_object(
+        'new', count(*) filter (where f.first >= since),
+        'nextDay', count(*) filter (where f.first >= since and exists (
+          select 1 from public.usage_events e where e.device = f.device and e.day = f.first + 1)),
+        'weekOld', count(*) filter (where f.first >= since and f.first <= current_date - 7),
+        'withinWeek', count(*) filter (where f.first >= since and f.first <= current_date - 7 and exists (
+          select 1 from public.usage_events e where e.device = f.device and e.day between f.first + 1 and f.first + 7)))
+      from firsts f),
+    'welcome', (select coalesce(jsonb_object_agg(w.step, w.n), '{}'::jsonb)
+                from (select props->>'step' as step, count(distinct device) as n from public.usage_events
+                      where name = 'welcome' and day >= since group by 1) w),
+    'lessons', (select coalesce(jsonb_agg(to_jsonb(l)), '[]'::jsonb) from (
+        select case when grouping(props->>'level') = 1 then 'type' else 'level' end as "by",
+               case when grouping(props->>'level') = 1 then props->>'type' else coalesce(props->>'level', '-') end as "key",
+               count(*) filter (where name = 'lesson_start') as started,
+               count(*) filter (where name = 'lesson_end' and (props->>'finished')::boolean) as finished,
+               count(*) filter (where name = 'lesson_end' and not (props->>'finished')::boolean) as quit,
+               mode() within group (order by (props->>'answered')::int)
+                 filter (where name = 'lesson_end' and not (props->>'finished')::boolean) as "usualStop"
+        from public.usage_events where name in ('lesson_start', 'lesson_end') and day >= since
+        group by grouping sets ((props->>'type'), (props->>'level'))) l),
+    'screens', (select coalesce(jsonb_object_agg(s.screen, s.n), '{}'::jsonb)
+                from (select props->>'name' as screen, count(distinct device) as n from public.usage_events
+                      where name = 'screen' and day >= since group by 1) s)
+  );
+end $$;
+
+revoke execute on function public.usage_report(integer) from public, anon;
+grant execute on function public.usage_report(integer) to authenticated;
+
+-- ---------------------------------------------------------------------------------------------------------
 -- Practice reminders, one row per device (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
 -- Only api/reminder.ts reads and writes these, with the service role key: no policies, nothing for users.
 
@@ -315,12 +387,13 @@ begin
   return n <= p_limit;
 end $$;
 
--- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows.
+-- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months.
 create or replace function public.push_cleanup() returns void
 language sql set search_path = '' as $$
   delete from public.push_devices where seen_at < now() - interval '60 days';
   delete from public.push_gone where at < now() - interval '30 days';
   delete from public.push_rate where hour < now() - interval '1 day';
+  delete from public.usage_events where day < current_date - interval '13 months';
 $$;
 
 revoke execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),
