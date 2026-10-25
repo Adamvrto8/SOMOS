@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { limitsFromEnv, LOOKUPS_PER_BLOCK, LOOKUPS_PER_HOUR, translate, type TranslateLimits } from './translate.ts'
+import { DAILY_CHARS, IP_DAILY_CHARS, limitsFromEnv, LOOKUPS_PER_BLOCK, LOOKUPS_PER_HOUR, translate, type TranslateLimits } from './translate.ts'
 
 const KEY = 'test-key:fx'
 
@@ -86,27 +86,23 @@ describe('api/translate: the English pair', () => {
 
 describe('api/translate limits', () => {
   const OK = (): [number, unknown] => [200, { translations: [{ text: 'heladero' }] }]
-  const limits = (over: Partial<TranslateLimits> = {}): TranslateLimits => ({
-    rateHit: vi.fn(async () => true),
-    budgetHit: vi.fn(async () => true),
+  const limits = (verdict: Awaited<ReturnType<TranslateLimits['allow']>> = 'ok'): TranslateLimits & { allow: ReturnType<typeof vi.fn> } => ({
+    allow: vi.fn(async () => verdict),
     ipKey: () => 'translate:ip',
     blockKey: () => 'translate-block:ip',
-    dailyChars: 15_000,
-    ...over,
   })
 
-  it('counts every lookup per address and per block, and its characters in the day', async () => {
+  it('asks the limits once, with the address, the block and the characters', async () => {
     const l = limits()
     const res = await translate(request({ text: ' zmrzlinár ', from: 'sk' }), KEY, deepl(OK()), l)
     expect(res.status).toBe(200)
-    expect(l.rateHit).toHaveBeenCalledWith('translate:ip', LOOKUPS_PER_HOUR)
-    expect(l.rateHit).toHaveBeenCalledWith('translate-block:ip', LOOKUPS_PER_BLOCK)
-    expect(l.budgetHit).toHaveBeenCalledWith('zmrzlinár'.length, 15_000)
+    expect(l.allow).toHaveBeenCalledTimes(1)
+    expect(l.allow).toHaveBeenCalledWith({ ip: 'translate:ip', block: 'translate-block:ip', chars: 'zmrzlinár'.length })
   })
 
-  it('stops a learner over the hourly limit before DeepL is asked', async () => {
+  it('stops a learner over a limit before DeepL is asked', async () => {
     const fetchImpl = deepl(OK())
-    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, limits({ rateHit: vi.fn(async (key: string) => key !== 'translate:ip') }))
+    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, limits('too-many'))
     expect(res.status).toBe(429)
     expect(await res.json()).toEqual({ error: 'too-many' })
     expect(fetchImpl).not.toHaveBeenCalled()
@@ -114,8 +110,7 @@ describe('api/translate limits', () => {
 
   it('stops everyone once the day has used its characters', async () => {
     const fetchImpl = deepl(OK())
-    const l = limits({ budgetHit: vi.fn(async () => false) })
-    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, l)
+    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, fetchImpl, limits('daily-limit'))
     expect(res.status).toBe(503)
     expect(await res.json()).toEqual({ error: 'daily-limit' })
     expect(fetchImpl).not.toHaveBeenCalled()
@@ -124,31 +119,64 @@ describe('api/translate limits', () => {
   it('a bad request costs nothing', async () => {
     const l = limits()
     expect((await translate(request({ text: '', from: 'sk' }), KEY, deepl(OK()), l)).status).toBe(400)
-    expect(l.rateHit).not.toHaveBeenCalled()
-    expect(l.budgetHit).not.toHaveBeenCalled()
+    expect(l.allow).not.toHaveBeenCalled()
   })
 
-  it('translates anyway when the limits cannot be checked (Supabase down)', async () => {
+  it('translates anyway when the limits cannot be checked', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
-    const l = limits({ rateHit: vi.fn(async () => Promise.reject(new Error('down'))), budgetHit: vi.fn(async () => Promise.reject(new Error('down'))) })
-    const res = await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, deepl(OK()), l)
-    expect(res.status).toBe(200)
+    const l = { ...limits(), allow: vi.fn(async () => Promise.reject(new Error('down'))) }
+    expect((await translate(request({ text: 'zmrzlinár', from: 'sk' }), KEY, deepl(OK()), l)).status).toBe(200)
+  })
+})
+
+describe('api/translate limits in Supabase', () => {
+  const ENV = { SUPABASE_URL: 'https://x.supabase.co/', SUPABASE_SERVICE_ROLE_KEY: 'secret' }
+  const reply = (status: number, body: unknown) => vi.fn(async () => Response.json(body, { status }))
+
+  it('is one call of translate_allow with every limit, under a short timeout', async () => {
+    const fetchImpl = reply(200, 'ok')
+    const l = limitsFromEnv(ENV, fetchImpl)!
+    expect(await l.allow({ ip: 'a', block: 'b', chars: 9 })).toBe('ok')
+    const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toBe('https://x.supabase.co/rest/v1/rpc/translate_allow')
+    expect(new Headers(init.headers).get('authorization')).toBe('Bearer secret')
+    expect(JSON.parse(init.body as string)).toEqual({
+      p_ip: 'a',
+      p_block: 'b',
+      p_chars: 9,
+      p_ip_lookups: LOOKUPS_PER_HOUR,
+      p_block_lookups: LOOKUPS_PER_BLOCK,
+      p_ip_chars: IP_DAILY_CHARS,
+      p_daily_chars: DAILY_CHARS,
+    })
+    expect(init.signal).toBeInstanceOf(AbortSignal)
   })
 
-  it('reads the daily budget from DEEPL_DAILY_CHARS, 15 000 without it', () => {
-    const env = { SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' }
-    expect(limitsFromEnv(env)?.dailyChars).toBe(15_000)
-    expect(limitsFromEnv({ ...env, DEEPL_DAILY_CHARS: '40000' })?.dailyChars).toBe(40_000)
-    expect(limitsFromEnv({ ...env, DEEPL_DAILY_CHARS: 'lots' })?.dailyChars).toBe(15_000)
+  it('passes on the verdicts, and throws on anything else (the lookup then goes through)', async () => {
+    expect(await limitsFromEnv(ENV, reply(200, 'too-many'))!.allow({ ip: 'a', block: 'b', chars: 1 })).toBe('too-many')
+    expect(await limitsFromEnv(ENV, reply(200, 'daily-limit'))!.allow({ ip: 'a', block: 'b', chars: 1 })).toBe('daily-limit')
+    await expect(limitsFromEnv(ENV, reply(404, { message: 'no such function' }))!.allow({ ip: 'a', block: 'b', chars: 1 })).rejects.toThrow()
+    await expect(limitsFromEnv(ENV, reply(200, 'maybe'))!.allow({ ip: 'a', block: 'b', chars: 1 })).rejects.toThrow()
+  })
+
+  it('reads the daily budget from DEEPL_DAILY_CHARS, 15 000 without it', async () => {
+    const fetchImpl = reply(200, 'ok')
+    await limitsFromEnv({ ...ENV, DEEPL_DAILY_CHARS: '40000' }, fetchImpl)!.allow({ ip: 'a', block: 'b', chars: 1 })
+    await limitsFromEnv({ ...ENV, DEEPL_DAILY_CHARS: 'lots' }, fetchImpl)!.allow({ ip: 'a', block: 'b', chars: 1 })
+    const budgets = fetchImpl.mock.calls.map((call) => JSON.parse((call as unknown as [string, RequestInit])[1].body as string).p_daily_chars)
+    expect(budgets).toEqual([40_000, DAILY_CHARS])
+    expect(DAILY_CHARS).toBe(15_000)
     expect(limitsFromEnv({})).toBeUndefined()
   })
 
-  it('counts an IPv6 connection by its /64 and its block by the /48', () => {
-    const l = limitsFromEnv({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!
+  it('counts an IPv6 connection by its /64, its block by the /48, IPv4 by the address and the /24', () => {
+    const l = limitsFromEnv(ENV)!
     const req = (ip: string) => new Request('https://somos.example', { headers: { 'x-forwarded-for': ip } })
     expect(l.ipKey(req('2a02:ab88:1234:5678::1'))).toBe(l.ipKey(req('2a02:ab88:1234:5678:9::2')))
     expect(l.ipKey(req('2a02:ab88:1234:5678::1'))).not.toBe(l.ipKey(req('2a02:ab88:1234:5679::1')))
     expect(l.blockKey(req('2a02:ab88:1234:5678::1'))).toBe(l.blockKey(req('2a02:ab88:1234:ffff::1')))
+    expect(l.ipKey(req('81.2.3.4'))).not.toBe(l.ipKey(req('81.2.3.5')))
+    expect(l.blockKey(req('81.2.3.4'))).toBe(l.blockKey(req('81.2.3.200')))
     expect(l.ipKey(req('81.2.3.4'))).not.toContain('81.2.3.4')
   })
 })

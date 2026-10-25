@@ -351,28 +351,46 @@ revoke execute on function public.content_reports_list(text), public.content_rep
 grant execute on function public.content_reports_list(text), public.content_reports_handle(text, text) to authenticated;
 
 -- ---------------------------------------------------------------------------------------------------------
--- Online lookup (api/translate.ts): DeepL characters used each day by everyone together, so one shared key's
--- monthly quota lasts the month. The per-learner limit uses push_rate (below). Only the service role.
+-- Online lookup (api/translate.ts): one shared DeepL key, so every lookup passes translate_allow first —
+-- lookups per address and block an hour (push_rate, below), characters per address a day, and characters of
+-- everyone together a day (key 'all'), so the monthly quota lasts the month. Only the service role.
 
-create table if not exists public.translate_budget (day date primary key, chars integer not null);
+create table if not exists public.translate_chars (
+  key text not null,                       -- 'all', or the keyed hash of an address
+  day date not null,                       -- UTC
+  chars bigint not null,
+  primary key (key, day)
+);
 
-alter table public.translate_budget enable row level security;
-revoke all on public.translate_budget from anon, authenticated;
-grant select, insert, update, delete on public.translate_budget to service_role;
+alter table public.translate_chars enable row level security;
+revoke all on public.translate_chars from anon, authenticated;
+grant select, insert, update, delete on public.translate_chars to service_role;
 
--- Adds a lookup's characters to today's total (UTC day): true while the total stays within the limit.
-create or replace function public.translate_budget_hit(p_chars integer, p_limit integer) returns boolean
+-- Adds characters to a key's day; returns the new total.
+create or replace function public.translate_chars_add(p_key text, p_chars integer) returns bigint
+language sql set search_path = '' as $$
+  insert into public.translate_chars as c (key, day, chars) values (p_key, current_date, greatest(p_chars, 0))
+  on conflict (key, day) do update set chars = c.chars + excluded.chars
+  returning chars;
+$$;
+
+-- One round trip for every limit: 'ok', 'too-many' (this learner) or 'daily-limit' (everyone, until UTC midnight).
+create or replace function public.translate_allow(p_ip text, p_block text, p_chars integer, p_ip_lookups integer,
+  p_block_lookups integer, p_ip_chars integer, p_daily_chars integer) returns text
 language plpgsql set search_path = '' as $$
-declare total integer;
 begin
-  insert into public.translate_budget as b (day, chars) values (current_date, greatest(p_chars, 0))
-  on conflict (day) do update set chars = b.chars + excluded.chars
-  returning chars into total;
-  return total <= p_limit;
+  if not public.push_rate_hit(p_ip, p_ip_lookups) or not public.push_rate_hit(p_block, p_block_lookups) then
+    return 'too-many';
+  end if;
+  if public.translate_chars_add(p_ip, p_chars) > p_ip_chars then return 'too-many'; end if;
+  if public.translate_chars_add('all', p_chars) > p_daily_chars then return 'daily-limit'; end if;
+  return 'ok';
 end $$;
 
-revoke execute on function public.translate_budget_hit(integer, integer) from public, anon, authenticated;
-grant execute on function public.translate_budget_hit(integer, integer) to service_role;
+revoke execute on function public.translate_chars_add(text, integer),
+  public.translate_allow(text, text, integer, integer, integer, integer, integer) from public, anon, authenticated;
+grant execute on function public.translate_chars_add(text, integer),
+  public.translate_allow(text, text, integer, integer, integer, integer, integer) to service_role;
 
 -- ---------------------------------------------------------------------------------------------------------
 -- Practice reminders, one row per device (docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md).
@@ -471,7 +489,7 @@ begin
 end $$;
 
 -- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months,
--- handled content reports after 12 months, lookup budgets after 40 days.
+-- handled content reports after 12 months, lookup counts after 40 days.
 create or replace function public.push_cleanup() returns void
 language sql set search_path = '' as $$
   delete from public.push_devices where seen_at < now() - interval '60 days';
@@ -479,7 +497,7 @@ language sql set search_path = '' as $$
   delete from public.push_rate where hour < now() - interval '1 day';
   delete from public.usage_events where day < current_date - interval '13 months';
   delete from public.content_reports where status <> 'open' and handled_at < now() - interval '12 months';
-  delete from public.translate_budget where day < current_date - 40;
+  delete from public.translate_chars where day < current_date - 40;
 $$;
 
 revoke execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),

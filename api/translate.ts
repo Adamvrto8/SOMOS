@@ -1,8 +1,9 @@
 // Vercel function: POST /api/translate { text, from, to } → { translation, from, to }; Spanish is one of the two.
 // `to` may be left out (older app versions): Slovak ↔ Spanish.
 // The DeepL key lives only here (DEEPL_API_KEY in the Vercel project settings); the app never sees it.
-// One key for everyone: a learner may look up LOOKUPS_PER_HOUR words an hour, and all of them together
-// DEEPL_DAILY_CHARS characters a day (the Free plan's 500 000 a month over 31 days), counted in Supabase.
+// One key for everyone: a learner may look up LOOKUPS_PER_HOUR words an hour and IP_DAILY_CHARS characters a day,
+// and all of them together DEEPL_DAILY_CHARS characters a day (the Free plan's 500 000 a month over 31 days),
+// counted in Supabase (translate_allow in supabase/schema.sql).
 // Kept free of local imports so Vercel can deploy it as a single file.
 import { createHmac } from 'node:crypto'
 
@@ -14,16 +15,20 @@ export const MAX_CHARS = 120
 export const LOOKUPS_PER_HOUR = 30
 /** Per /24 (IPv4) or /48 (IPv6): a home connection may get a whole /56 or /48 and switch its /64. */
 export const LOOKUPS_PER_BLOCK = 100
-const DAILY_CHARS = 15_000
-const REQUEST_TIMEOUT_MS = 8000
+/** Per address and day: a learner looks up words of 10–20 characters; a script must not empty everyone's day. */
+export const IP_DAILY_CHARS = 2_000
+export const DAILY_CHARS = 15_000
+/** A slow Supabase must not hold up lookups: past this the lookup goes on without the limits. */
+const LIMITS_TIMEOUT_MS = 2000
+
+export type LimitVerdict = 'ok' | 'too-many' | 'daily-limit'
+const VERDICTS: LimitVerdict[] = ['ok', 'too-many', 'daily-limit']
 
 export interface TranslateLimits {
-  rateHit(key: string, limit: number): Promise<boolean>
-  /** Adds the characters to today's total: true while the total stays within the limit. */
-  budgetHit(chars: number, limit: number): Promise<boolean>
+  /** Counts the lookup against every limit at once; rejects when they cannot be checked. */
+  allow(lookup: { ip: string; block: string; chars: number }): Promise<LimitVerdict>
   ipKey(request: Request): string
   blockKey(request: Request): string
-  dailyChars: number
 }
 
 // Latin American Spanish when the DeepL account offers it, plain Spanish otherwise.
@@ -56,9 +61,9 @@ function parseBody(body: unknown): { text: string; from: Lang; to: Lang } | unde
 /** Which limit stops this lookup, if any. Supabase down: the lookup goes through (DeepL's own quota still holds). */
 async function limited(request: Request, chars: number, limits: TranslateLimits): Promise<Response | null> {
   try {
-    if (!(await limits.rateHit(limits.ipKey(request), LOOKUPS_PER_HOUR))) return json({ error: 'too-many' }, 429)
-    if (!(await limits.rateHit(limits.blockKey(request), LOOKUPS_PER_BLOCK))) return json({ error: 'too-many' }, 429)
-    if (!(await limits.budgetHit(chars, limits.dailyChars))) return json({ error: 'daily-limit' }, 503)
+    const verdict = await limits.allow({ ip: limits.ipKey(request), block: limits.blockKey(request), chars })
+    if (verdict === 'too-many') return json({ error: 'too-many' }, 429)
+    if (verdict === 'daily-limit') return json({ error: 'daily-limit' }, 503)
   } catch (error) {
     console.error('translate limits failed', error)
   }
@@ -82,7 +87,8 @@ export async function translate(request: Request, key: string | undefined, fetch
       headers: { Authorization: `DeepL-Auth-Key ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: [input.text], source_lang: input.from.toUpperCase(), target_lang: target }),
     })
-    // 400 here means the target language is not offered: try the next one.
+    // 400 here means the target language is not offered: try the next one. DeepL bills no refused request,
+    // so the text counted once against the limits above is right.
     if (res.status === 400 && i < targets.length - 1) continue
     if (res.status === 456) return json({ error: 'quota' }, 503)
     if (res.status === 403) return json({ error: 'not-configured' }, 503)
@@ -119,29 +125,37 @@ export function ipBlock(ip: string): string {
 }
 
 /** The limits through Supabase (SUPABASE_URL or VITE_SUPABASE_URL, the service role key); none without them. */
-export function limitsFromEnv(env: Record<string, string | undefined>): TranslateLimits | undefined {
+export function limitsFromEnv(env: Record<string, string | undefined>, fetchImpl: typeof fetch = fetch): TranslateLimits | undefined {
   const url = (env.SUPABASE_URL ?? env.VITE_SUPABASE_URL)?.replace(/\/+$/, '')
   const key = env.SUPABASE_SERVICE_ROLE_KEY ?? env.SUPABASE_SECRET_KEY
   if (!url || !key) return undefined
   const daily = Number(env.DEEPL_DAILY_CHARS)
-  const rpc = async (fn: string, body: unknown) => {
-    const res = await fetch(`${url}/rest/v1/rpc/${fn}`, {
-      method: 'POST',
-      headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
-    })
-    if (!res.ok) throw new Error(`Supabase ${fn} failed: ${res.status}`)
-    return (await res.json()) === true
-  }
-  // Keyed hashes: the address cannot be got back from push_rate by trying every address.
+  const dailyChars = Number.isInteger(daily) && daily > 0 ? daily : DAILY_CHARS
+  // Keyed hashes: the address cannot be got back from the tables by trying every address.
   const hash = (value: string) => createHmac('sha256', `somos-translate:${key}`).update(value).digest('hex').slice(0, 32)
   return {
-    rateHit: (rateKey, limit) => rpc('push_rate_hit', { p_key: rateKey, p_limit: limit }),
-    budgetHit: (chars, limit) => rpc('translate_budget_hit', { p_chars: chars, p_limit: limit }),
+    allow: async ({ ip, block, chars }) => {
+      const res = await fetchImpl(`${url}/rest/v1/rpc/translate_allow`, {
+        method: 'POST',
+        headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          p_ip: ip,
+          p_block: block,
+          p_chars: chars,
+          p_ip_lookups: LOOKUPS_PER_HOUR,
+          p_block_lookups: LOOKUPS_PER_BLOCK,
+          p_ip_chars: IP_DAILY_CHARS,
+          p_daily_chars: dailyChars,
+        }),
+        signal: AbortSignal.timeout(LIMITS_TIMEOUT_MS),
+      })
+      if (!res.ok) throw new Error(`Supabase translate_allow failed: ${res.status}`)
+      const verdict: unknown = await res.json()
+      if (!VERDICTS.includes(verdict as LimitVerdict)) throw new Error(`Supabase translate_allow said ${String(verdict)}`)
+      return verdict as LimitVerdict
+    },
     ipKey: (request) => `translate:${hash(ipNetwork(clientIp(request)))}`,
     blockKey: (request) => `translate-block:${hash(ipBlock(clientIp(request)))}`,
-    dailyChars: Number.isInteger(daily) && daily > 0 ? daily : DAILY_CHARS,
   }
 }
 
