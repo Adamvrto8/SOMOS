@@ -1433,5 +1433,23 @@
         "distractors": ["pierdo", "perdieron", "perdían"]
       }
     ]
+  },
+  {
+    "id": "s1606",
+    "es": "Disculpe, ¿dónde queda la farmacia más cercana?",
+    "sk": "Prepáčte, kde je najbližšia lekáreň?",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Disculpe", ",", "¿", "dónde", "queda", "la", "farmacia", "más", "cercana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "queda",
+        "lemma": "quedar",
+        "hint": "quedar · él · presente",
+        "distractors": ["quedó", "quedaba", "quedará"]
+      }
+    ]
   }
 ]

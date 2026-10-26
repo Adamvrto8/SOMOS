@@ -78,5 +78,8 @@
   { "id": "s1311", "en": "The previous tenant left the house a pigsty.", "hints": ["pigsty, mess"] },
   { "id": "s1312", "en": "They gave us our whole deposit back because we left everything spotless." },
   { "id": "s1313", "en": "We've been looking for an apartment for months and everything is either super expensive or super far." },
-  { "id": "s1314", "en": "My roommate never does the dishes and I'm fed up with it." }
+  { "id": "s1314", "en": "My roommate never does the dishes and I'm fed up with it." },
+  { "id": "s1613", "en": "The elevator isn't working, so we're taking the stairs down." },
+  { "id": "s1614", "en": "The dog broke my favorite mug." },
+  { "id": "s1619", "en": "They cut off our power because we forgot to pay the bill." }
 ]

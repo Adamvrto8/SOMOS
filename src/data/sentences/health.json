@@ -1427,5 +1427,41 @@
         "distractors": ["podemos", "pudo", "podía"]
       }
     ]
+  },
+  {
+    "id": "s1602",
+    "es": "Ayer me dolió el estómago y no fui a trabajar.",
+    "sk": "Včera ma bolelo brucho a nešiel som do práce.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "me", "dolió", "el", "estómago", "y", "no", "fui", "a", "trabajar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dolió",
+        "lemma": "doler",
+        "hint": "doler · él · pretérito",
+        "distractors": ["duele", "dolía", "dolerá"]
+      }
+    ]
+  },
+  {
+    "id": "s1621",
+    "es": "El dentista me revisará los dientes el lunes.",
+    "sk": "Zubár mi v pondelok skontroluje zuby.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "dentista", "me", "revisará", "los", "dientes", "el", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "revisará",
+        "lemma": "revisar",
+        "hint": "revisar · él · futuro",
+        "distractors": ["revisa", "revisó", "revisaba"]
+      }
+    ]
   }
 ]

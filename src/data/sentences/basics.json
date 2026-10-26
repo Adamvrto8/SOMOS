@@ -1442,5 +1442,23 @@
         "distractors": ["aprendes", "aprenderé", "aprendieron"]
       }
     ]
+  },
+  {
+    "id": "s1623",
+    "es": "Siempre trato de llegar temprano.",
+    "sk": "Vždy sa snažím prísť skoro.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "trato", "de", "llegar", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trato",
+        "lemma": "tratar",
+        "hint": "tratar · yo · presente",
+        "distractors": ["traté", "trataba", "trataré"]
+      }
+    ]
   }
 ]

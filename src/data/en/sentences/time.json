@@ -78,5 +78,7 @@
   { "id": "s1506", "en": "We've been talking about that trip for years and we never take it." },
   { "id": "s1507", "en": "Back then there were no cell phones.", "hints": ["then"] },
   { "id": "s1508", "en": "Every time the deadline gets close, I get all nervous." },
-  { "id": "s1509", "en": "You have to make the most of your time while you're young." }
+  { "id": "s1509", "en": "You have to make the most of your time while you're young." },
+  { "id": "s1609", "en": "The bus took an hour because there was a lot of traffic." },
+  { "id": "s1610", "en": "I won't be long, I'm just going to get bread." }
 ]

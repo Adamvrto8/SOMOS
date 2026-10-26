@@ -1412,5 +1412,95 @@
         "distractors": ["construyo", "construyeron", "construíamos"]
       }
     ]
+  },
+  {
+    "id": "s1595",
+    "es": "En la Ciudad de México llueve casi todas las tardes en julio.",
+    "sk": "V meste Mexiko v júli prší takmer každé popoludnie.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["En", "la", "Ciudad", "de", "México", "llueve", "casi", "todas", "las", "tardes", "en", "julio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llueve",
+        "lemma": "llover",
+        "hint": "llover · él · presente",
+        "distractors": ["llovió", "llovía", "lloverá"]
+      }
+    ]
+  },
+  {
+    "id": "s1596",
+    "es": "Anoche llovió tanto que se inundó la calle.",
+    "sk": "V noci tak pršalo, že zaplavilo ulicu.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "llovió", "tanto", "que", "se", "inundó", "la", "calle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llovió",
+        "lemma": "llover",
+        "hint": "llover · él · pretérito",
+        "distractors": ["llueve", "llovía", "lloverá"]
+      }
+    ]
+  },
+  {
+    "id": "s1597",
+    "es": "Está lloviendo, mejor espera un rato.",
+    "sk": "Prší, radšej chvíľu počkaj.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["progresivo"],
+    "tokens": ["Está", "lloviendo", ",", "mejor", "espera", "un", "rato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lloviendo",
+        "lemma": "llover",
+        "hint": "llover · gerundio",
+        "distractors": ["llueve", "llover", "llovió"]
+      }
+    ]
+  },
+  {
+    "id": "s1598",
+    "es": "En el norte de México a veces nieva en invierno.",
+    "sk": "Na severe Mexika v zime niekedy sneží.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["En", "el", "norte", "de", "México", "a", "veces", "nieva", "en", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "nieva",
+        "lemma": "nevar",
+        "hint": "nevar · él · presente",
+        "distractors": ["nevó", "nevaba", "nevará"]
+      }
+    ]
+  },
+  {
+    "id": "s1599",
+    "es": "Cuando era niño, nevaba mucho en mi pueblo en Eslovaquia.",
+    "sk": "Keď som bol malý, v mojej dedine na Slovensku veľa snežilo.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "era", "niño", ",", "nevaba", "mucho", "en", "mi", "pueblo", "en", "Eslovaquia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "nevaba",
+        "lemma": "nevar",
+        "hint": "nevar · él · imperfecto",
+        "distractors": ["nieva", "nevó", "nevará"]
+      }
+    ]
   }
 ]

@@ -1291,5 +1291,23 @@
         "distractors": ["señal", "pantalla", "contraseña"]
       }
     ]
+  },
+  {
+    "id": "s1612",
+    "es": "Anoche bajé dos películas para el viaje.",
+    "sk": "Včera večer som si stiahol dva filmy na cestu.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "bajé", "dos", "películas", "para", "el", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "bajé",
+        "lemma": "bajar",
+        "hint": "bajar · yo · pretérito",
+        "distractors": ["bajo", "bajaba", "bajaré"]
+      }
+    ]
   }
 ]

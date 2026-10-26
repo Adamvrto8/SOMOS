@@ -1431,5 +1431,41 @@
         "distractors": ["trayecto", "mareo", "contratiempo"]
       }
     ]
+  },
+  {
+    "id": "s1608",
+    "es": "¿Cuánto tardas en llegar al trabajo?",
+    "sk": "Ako dlho ti trvá cesta do práce?",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "tardas", "en", "llegar", "al", "trabajo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tardas",
+        "lemma": "tardar",
+        "hint": "tardar · tú · presente",
+        "distractors": ["tardaste", "tardabas", "tardarás"]
+      }
+    ]
+  },
+  {
+    "id": "s1622",
+    "es": "Los mecánicos revisaron los frenos del carro antes del viaje.",
+    "sk": "Mechanici pred cestou skontrolovali brzdy auta.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "mecánicos", "revisaron", "los", "frenos", "del", "carro", "antes", "del", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "revisaron",
+        "lemma": "revisar",
+        "hint": "revisar · ellos · pretérito",
+        "distractors": ["revisan", "revisaban", "revisarán"]
+      }
+    ]
   }
 ]

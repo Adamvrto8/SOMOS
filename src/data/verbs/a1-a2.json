@@ -2731,5 +2731,368 @@
       "ellos": "odiarán"
     },
     "level": "A2"
+  },
+  {
+    "id": "llover",
+    "sk": ["pršať"],
+    "group": "er",
+    "regular": false,
+    "gerund": "lloviendo",
+    "presente": {
+      "yo": "lluevo",
+      "tu": "llueves",
+      "el": "llueve",
+      "nosotros": "llovemos",
+      "ellos": "llueven"
+    },
+    "preterito": {
+      "yo": "lloví",
+      "tu": "lloviste",
+      "el": "llovió",
+      "nosotros": "llovimos",
+      "ellos": "llovieron"
+    },
+    "imperfecto": {
+      "yo": "llovía",
+      "tu": "llovías",
+      "el": "llovía",
+      "nosotros": "llovíamos",
+      "ellos": "llovían"
+    },
+    "futuro": {
+      "yo": "lloveré",
+      "tu": "lloverás",
+      "el": "lloverá",
+      "nosotros": "lloveremos",
+      "ellos": "lloverán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "nevar",
+    "sk": ["snežiť"],
+    "group": "ar",
+    "regular": false,
+    "gerund": "nevando",
+    "presente": {
+      "yo": "nievo",
+      "tu": "nievas",
+      "el": "nieva",
+      "nosotros": "nevamos",
+      "ellos": "nievan"
+    },
+    "preterito": {
+      "yo": "nevé",
+      "tu": "nevaste",
+      "el": "nevó",
+      "nosotros": "nevamos",
+      "ellos": "nevaron"
+    },
+    "imperfecto": {
+      "yo": "nevaba",
+      "tu": "nevabas",
+      "el": "nevaba",
+      "nosotros": "nevábamos",
+      "ellos": "nevaban"
+    },
+    "futuro": {
+      "yo": "nevaré",
+      "tu": "nevarás",
+      "el": "nevará",
+      "nosotros": "nevaremos",
+      "ellos": "nevarán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A2"
+  },
+  {
+    "id": "doler",
+    "sk": ["bolieť"],
+    "group": "er",
+    "regular": false,
+    "gerund": "doliendo",
+    "presente": {
+      "yo": "duelo",
+      "tu": "dueles",
+      "el": "duele",
+      "nosotros": "dolemos",
+      "ellos": "duelen"
+    },
+    "preterito": {
+      "yo": "dolí",
+      "tu": "doliste",
+      "el": "dolió",
+      "nosotros": "dolimos",
+      "ellos": "dolieron"
+    },
+    "imperfecto": {
+      "yo": "dolía",
+      "tu": "dolías",
+      "el": "dolía",
+      "nosotros": "dolíamos",
+      "ellos": "dolían"
+    },
+    "futuro": {
+      "yo": "doleré",
+      "tu": "dolerás",
+      "el": "dolerá",
+      "nosotros": "doleremos",
+      "ellos": "dolerán"
+    },
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "level": "A1"
+  },
+  {
+    "id": "quedar",
+    "sk": ["zostať", "padnúť (oblečenie)", "nachádzať sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "quedando",
+    "presente": {
+      "yo": "quedo",
+      "tu": "quedas",
+      "el": "queda",
+      "nosotros": "quedamos",
+      "ellos": "quedan"
+    },
+    "preterito": {
+      "yo": "quedé",
+      "tu": "quedaste",
+      "el": "quedó",
+      "nosotros": "quedamos",
+      "ellos": "quedaron"
+    },
+    "imperfecto": {
+      "yo": "quedaba",
+      "tu": "quedabas",
+      "el": "quedaba",
+      "nosotros": "quedábamos",
+      "ellos": "quedaban"
+    },
+    "futuro": {
+      "yo": "quedaré",
+      "tu": "quedarás",
+      "el": "quedará",
+      "nosotros": "quedaremos",
+      "ellos": "quedarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "tardar",
+    "sk": ["trvať (o čase)", "zdržať sa"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "tardando",
+    "presente": {
+      "yo": "tardo",
+      "tu": "tardas",
+      "el": "tarda",
+      "nosotros": "tardamos",
+      "ellos": "tardan"
+    },
+    "preterito": {
+      "yo": "tardé",
+      "tu": "tardaste",
+      "el": "tardó",
+      "nosotros": "tardamos",
+      "ellos": "tardaron"
+    },
+    "imperfecto": {
+      "yo": "tardaba",
+      "tu": "tardabas",
+      "el": "tardaba",
+      "nosotros": "tardábamos",
+      "ellos": "tardaban"
+    },
+    "futuro": {
+      "yo": "tardaré",
+      "tu": "tardarás",
+      "el": "tardará",
+      "nosotros": "tardaremos",
+      "ellos": "tardarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "bajar",
+    "sk": ["zísť (dole)", "klesnúť", "znížiť", "stiahnuť (súbor)"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "bajando",
+    "presente": {
+      "yo": "bajo",
+      "tu": "bajas",
+      "el": "baja",
+      "nosotros": "bajamos",
+      "ellos": "bajan"
+    },
+    "preterito": {
+      "yo": "bajé",
+      "tu": "bajaste",
+      "el": "bajó",
+      "nosotros": "bajamos",
+      "ellos": "bajaron"
+    },
+    "imperfecto": {
+      "yo": "bajaba",
+      "tu": "bajabas",
+      "el": "bajaba",
+      "nosotros": "bajábamos",
+      "ellos": "bajaban"
+    },
+    "futuro": {
+      "yo": "bajaré",
+      "tu": "bajarás",
+      "el": "bajará",
+      "nosotros": "bajaremos",
+      "ellos": "bajarán"
+    },
+    "level": "A1"
+  },
+  {
+    "id": "romper",
+    "sk": ["rozbiť", "zlomiť", "pokaziť"],
+    "group": "er",
+    "regular": true,
+    "gerund": "rompiendo",
+    "presente": {
+      "yo": "rompo",
+      "tu": "rompes",
+      "el": "rompe",
+      "nosotros": "rompemos",
+      "ellos": "rompen"
+    },
+    "preterito": {
+      "yo": "rompí",
+      "tu": "rompiste",
+      "el": "rompió",
+      "nosotros": "rompimos",
+      "ellos": "rompieron"
+    },
+    "imperfecto": {
+      "yo": "rompía",
+      "tu": "rompías",
+      "el": "rompía",
+      "nosotros": "rompíamos",
+      "ellos": "rompían"
+    },
+    "futuro": {
+      "yo": "romperé",
+      "tu": "romperás",
+      "el": "romperá",
+      "nosotros": "romperemos",
+      "ellos": "romperán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "cortar",
+    "sk": ["krájať", "strihať", "rezať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "cortando",
+    "presente": {
+      "yo": "corto",
+      "tu": "cortas",
+      "el": "corta",
+      "nosotros": "cortamos",
+      "ellos": "cortan"
+    },
+    "preterito": {
+      "yo": "corté",
+      "tu": "cortaste",
+      "el": "cortó",
+      "nosotros": "cortamos",
+      "ellos": "cortaron"
+    },
+    "imperfecto": {
+      "yo": "cortaba",
+      "tu": "cortabas",
+      "el": "cortaba",
+      "nosotros": "cortábamos",
+      "ellos": "cortaban"
+    },
+    "futuro": {
+      "yo": "cortaré",
+      "tu": "cortarás",
+      "el": "cortará",
+      "nosotros": "cortaremos",
+      "ellos": "cortarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "revisar",
+    "sk": ["skontrolovať", "prezrieť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "revisando",
+    "presente": {
+      "yo": "reviso",
+      "tu": "revisas",
+      "el": "revisa",
+      "nosotros": "revisamos",
+      "ellos": "revisan"
+    },
+    "preterito": {
+      "yo": "revisé",
+      "tu": "revisaste",
+      "el": "revisó",
+      "nosotros": "revisamos",
+      "ellos": "revisaron"
+    },
+    "imperfecto": {
+      "yo": "revisaba",
+      "tu": "revisabas",
+      "el": "revisaba",
+      "nosotros": "revisábamos",
+      "ellos": "revisaban"
+    },
+    "futuro": {
+      "yo": "revisaré",
+      "tu": "revisarás",
+      "el": "revisará",
+      "nosotros": "revisaremos",
+      "ellos": "revisarán"
+    },
+    "level": "A2"
+  },
+  {
+    "id": "tratar",
+    "sk": ["snažiť sa", "zaobchádzať"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "tratando",
+    "presente": {
+      "yo": "trato",
+      "tu": "tratas",
+      "el": "trata",
+      "nosotros": "tratamos",
+      "ellos": "tratan"
+    },
+    "preterito": {
+      "yo": "traté",
+      "tu": "trataste",
+      "el": "trató",
+      "nosotros": "tratamos",
+      "ellos": "trataron"
+    },
+    "imperfecto": {
+      "yo": "trataba",
+      "tu": "tratabas",
+      "el": "trataba",
+      "nosotros": "tratábamos",
+      "ellos": "trataban"
+    },
+    "futuro": {
+      "yo": "trataré",
+      "tu": "tratarás",
+      "el": "tratará",
+      "nosotros": "trataremos",
+      "ellos": "tratarán"
+    },
+    "level": "A2"
   }
 ]

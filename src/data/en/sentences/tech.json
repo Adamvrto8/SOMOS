@@ -70,5 +70,6 @@
   { "id": "s1480", "en": "With so much work online, it's hard for me to switch off on weekends." },
   { "id": "s1481", "en": "Platforms take advantage of our data to sell us stuff." },
   { "id": "s1482", "en": "My son is always glued to his phone and hardly talks to us." },
-  { "id": "s1483", "en": "I hope artificial intelligence doesn't put us out of work.", "hints": ["work"] }
+  { "id": "s1483", "en": "I hope artificial intelligence doesn't put us out of work.", "hints": ["work"] },
+  { "id": "s1612", "en": "Last night I downloaded two movies for the trip." }
 ]

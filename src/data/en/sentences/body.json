@@ -78,5 +78,8 @@
   { "id": "s1058", "en": "As much as I hate to admit it, I'm not in the shape I used to be." },
   { "id": "s1059", "en": "My uncle has a big belly, but he says it's all muscle." },
   { "id": "s1060", "en": "I've got a toothache that won't even let me sleep." },
-  { "id": "s1061", "en": "Stress shows up in your body: I broke out in a rash on my neck.", "hints": ["neck"] }
+  { "id": "s1061", "en": "Stress shows up in your body: I broke out in a rash on my neck.", "hints": ["neck"] },
+  { "id": "s1601", "en": "My feet hurt after walking all day." },
+  { "id": "s1603", "en": "As a girl, my ears used to hurt every winter." },
+  { "id": "s1618", "en": "My mom used to cut my hair when I was little." }
 ]

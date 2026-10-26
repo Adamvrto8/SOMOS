@@ -1438,5 +1438,41 @@
         "distractors": ["hago", "hicieron", "harás"]
       }
     ]
+  },
+  {
+    "id": "s1620",
+    "es": "Reviso mi correo antes de cada junta.",
+    "sk": "Pred každou poradou si skontrolujem e-maily.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Reviso", "mi", "correo", "antes", "de", "cada", "junta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reviso",
+        "lemma": "revisar",
+        "hint": "revisar · yo · presente",
+        "distractors": ["Revisé", "Revisaba", "Revisaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1624",
+    "es": "Mi jefe nos trata con mucho respeto.",
+    "sk": "Môj šéf sa k nám správa s veľkým rešpektom.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "jefe", "nos", "trata", "con", "mucho", "respeto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trata",
+        "lemma": "tratar",
+        "hint": "tratar · él · presente",
+        "distractors": ["trató", "trataba", "tratará"]
+      }
+    ]
   }
 ]

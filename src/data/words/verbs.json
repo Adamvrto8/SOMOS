@@ -2937,5 +2937,134 @@
     "examples": [
       { "es": "Confío en ti.", "sk": "Verím ti." }
     ]
+  },
+  {
+    "id": "llover",
+    "es": "llover",
+    "sk": ["pršať"],
+    "pos": "verb",
+    "verbId": "llover",
+    "level": "A1",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "Mañana va a llover.", "sk": "Zajtra bude pršať." }
+    ],
+    "note": "Používa sa takmer len v 3. osobe: llueve (prší), llovió (pršalo)."
+  },
+  {
+    "id": "nevar",
+    "es": "nevar",
+    "sk": ["snežiť"],
+    "pos": "verb",
+    "verbId": "nevar",
+    "level": "A2",
+    "topics": ["weather"],
+    "examples": [
+      { "es": "¿Nieva en tu país?", "sk": "Sneží u vás?" }
+    ],
+    "note": "Používa sa takmer len v 3. osobe: nieva (sneží), nevó (snežilo)."
+  },
+  {
+    "id": "doler",
+    "es": "doler",
+    "sk": ["bolieť"],
+    "pos": "verb",
+    "verbId": "doler",
+    "level": "A1",
+    "topics": ["body", "health"],
+    "examples": [
+      { "es": "Me duele la cabeza.", "sk": "Bolí ma hlava." }
+    ],
+    "note": "Ako gustar: me duele la cabeza (bolí ma hlava), me duelen los pies (bolia ma nohy)."
+  },
+  {
+    "id": "quedar",
+    "es": "quedar",
+    "sk": ["zostať", "padnúť (oblečenie)", "nachádzať sa"],
+    "pos": "verb",
+    "verbId": "quedar",
+    "level": "A2",
+    "topics": ["clothes", "city"],
+    "examples": [
+      { "es": "¿Dónde queda el banco?", "sk": "Kde je banka?" }
+    ],
+    "note": "Te queda bien = pristane ti. ¿Dónde queda…? = Kde je…? V Mexiku quedar de + infinitív = dohodnúť sa: Quedamos de vernos. Zostať niekde = quedarse."
+  },
+  {
+    "id": "tardar",
+    "es": "tardar",
+    "sk": ["trvať (o čase)", "zdržať sa"],
+    "pos": "verb",
+    "verbId": "tardar",
+    "level": "A2",
+    "topics": ["time", "travel"],
+    "examples": [
+      { "es": "¿Cuánto tarda el vuelo?", "sk": "Ako dlho trvá let?" }
+    ],
+    "note": "¿Cuánto tardas? = Ako dlho ti to trvá? Tardar en + infinitív: Tardé una hora en llegar."
+  },
+  {
+    "id": "bajar",
+    "es": "bajar",
+    "sk": ["zísť (dole)", "klesnúť", "znížiť", "stiahnuť (súbor)"],
+    "pos": "verb",
+    "verbId": "bajar",
+    "level": "A1",
+    "topics": ["city"],
+    "examples": [
+      { "es": "Baja el volumen, por favor.", "sk": "Stíš to, prosím." }
+    ],
+    "note": "Vystúpiť z autobusu = bajarse del camión. V Mexiku hovorovo aj stiahnuť: bajar una app."
+  },
+  {
+    "id": "romper",
+    "es": "romper",
+    "sk": ["rozbiť", "zlomiť", "pokaziť"],
+    "pos": "verb",
+    "verbId": "romper",
+    "level": "A2",
+    "topics": ["home"],
+    "examples": [
+      { "es": "Se rompió el vaso.", "sk": "Pohár sa rozbil." }
+    ],
+    "note": "Romper con alguien = rozísť sa s niekým. Príčastie je nepravidelné: roto (rozbitý)."
+  },
+  {
+    "id": "cortar",
+    "es": "cortar",
+    "sk": ["krájať", "strihať", "rezať"],
+    "pos": "verb",
+    "verbId": "cortar",
+    "level": "A2",
+    "topics": ["food"],
+    "examples": [
+      { "es": "¿Me ayudas a cortar el pastel?", "sk": "Pomôžeš mi nakrájať tortu?" }
+    ]
+  },
+  {
+    "id": "revisar",
+    "es": "revisar",
+    "sk": ["skontrolovať", "prezrieť"],
+    "pos": "verb",
+    "verbId": "revisar",
+    "level": "A2",
+    "topics": ["work", "health"],
+    "examples": [
+      { "es": "Revisa tu correo.", "sk": "Pozri si e-mail." }
+    ],
+    "note": "Revisar = skontrolovať, prezrieť (revisar el correo, revisar la tarea), nie revidovať."
+  },
+  {
+    "id": "tratar",
+    "es": "tratar",
+    "sk": ["snažiť sa", "zaobchádzať"],
+    "pos": "verb",
+    "verbId": "tratar",
+    "level": "A2",
+    "topics": ["basics"],
+    "examples": [
+      { "es": "Trata de descansar.", "sk": "Skús si oddýchnuť." }
+    ],
+    "note": "Tratar de + infinitív = snažiť sa: Trato de dormir más."
   }
 ]

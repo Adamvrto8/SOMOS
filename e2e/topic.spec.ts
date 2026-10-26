@@ -50,5 +50,5 @@ test('a word opened from a swiped-to topic pages through that topic', async ({ p
   await expect(title(page)).toHaveText('Základné slová')
   // Tapped at once: a quick swipe left to Chrome starts a fling, and the tap that follows it is swallowed.
   await page.locator('a[href^="/word/"]').first().tap()
-  await expect(page.getByRole('navigation', { name: 'Slová zo zoznamu' })).toContainText('1 / 152')
+  await expect(page.getByRole('navigation', { name: 'Slová zo zoznamu' })).toContainText('1 / 153')
 })

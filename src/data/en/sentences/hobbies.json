@@ -78,5 +78,6 @@
   { "id": "s1288", "en": "Pumas fans are some of the most loyal in the country." },
   { "id": "s1289", "en": "I've been training for the 10K for three months." },
   { "id": "s1290", "en": "The swimmer set a national record at just nineteen." },
-  { "id": "s1291", "en": "Going to a charreada is like diving headfirst into Mexican tradition.", "hints": ["Mexican rodeo"] }
+  { "id": "s1291", "en": "Going to a charreada is like diving headfirst into Mexican tradition.", "hints": ["Mexican rodeo"] },
+  { "id": "s1607", "en": "We agreed to meet at six at the café." }
 ]

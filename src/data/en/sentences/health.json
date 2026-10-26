@@ -78,5 +78,7 @@
   { "id": "s1257", "en": "The doctor sent me to get some blood tests done." },
   { "id": "s1258", "en": "No matter how careful he is, his blood pressure won't go down." },
   { "id": "s1259", "en": "We all caught it at the office because we didn't wear masks.", "hints": ["face mask"] },
-  { "id": "s1260", "en": "If you don't take care of yourself, diabetes can lead to serious complications." }
+  { "id": "s1260", "en": "If you don't take care of yourself, diabetes can lead to serious complications." },
+  { "id": "s1602", "en": "Yesterday my stomach hurt and I didn't go to work." },
+  { "id": "s1621", "en": "The dentist will check my teeth on Monday." }
 ]

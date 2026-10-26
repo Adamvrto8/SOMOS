@@ -78,5 +78,7 @@
   { "id": "s1529", "en": "In high season, it's best to book months in advance.", "hints": ["advance"] },
   { "id": "s1530", "en": "Once we were there, we realized the hotel didn't exist." },
   { "id": "s1531", "en": "Playing the adventurer, I got lost in the middle of the jungle." },
-  { "id": "s1532", "en": "The travel insurance covered all the hospital costs.", "hints": ["insurance"] }
+  { "id": "s1532", "en": "The travel insurance covered all the hospital costs.", "hints": ["insurance"] },
+  { "id": "s1608", "en": "How long does it take you to get to work?" },
+  { "id": "s1622", "en": "The mechanics checked the car's brakes before the trip." }
 ]

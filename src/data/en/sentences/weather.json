@@ -78,5 +78,10 @@
   { "id": "s1568", "en": "It was cloudy in the morning, but by noon it was awfully hot.", "hints": ["awful"] },
   { "id": "s1569", "en": "The fishermen didn't go out to sea because a hurricane was approaching." },
   { "id": "s1570", "en": "It's just drizzling; I don't think we need the umbrella." },
-  { "id": "s1571", "en": "Climate change forces us to rethink how we build cities." }
+  { "id": "s1571", "en": "Climate change forces us to rethink how we build cities." },
+  { "id": "s1595", "en": "In Mexico City it rains almost every afternoon in July." },
+  { "id": "s1596", "en": "Last night it rained so much that the street flooded." },
+  { "id": "s1597", "en": "It's raining, better wait a bit." },
+  { "id": "s1598", "en": "In northern Mexico it sometimes snows in winter." },
+  { "id": "s1599", "en": "When I was a kid, it used to snow a lot in my village in Slovakia." }
 ]

@@ -1425,5 +1425,23 @@
         "distractors": ["porra", "goleada", "medalla"]
       }
     ]
+  },
+  {
+    "id": "s1607",
+    "es": "Quedamos de vernos a las seis en el café.",
+    "sk": "Dohodli sme sa, že sa stretneme o šiestej v kaviarni.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Quedamos", "de", "vernos", "a", "las", "seis", "en", "el", "café", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Quedamos",
+        "lemma": "quedar",
+        "hint": "quedar · nosotros · pretérito",
+        "distractors": ["Quedábamos", "Quedaremos", "Quedaron"]
+      }
+    ]
   }
 ]

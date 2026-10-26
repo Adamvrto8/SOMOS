@@ -1436,5 +1436,23 @@
         "distractors": ["pelean", "peleaban", "pelearán"]
       }
     ]
+  },
+  {
+    "id": "s1615",
+    "es": "Mis hijos siempre rompen los juguetes nuevos en un día.",
+    "sk": "Moje deti vždy pokazia nové hračky za jeden deň.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "siempre", "rompen", "los", "juguetes", "nuevos", "en", "un", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rompen",
+        "lemma": "romper",
+        "hint": "romper · ellos · presente",
+        "distractors": ["rompieron", "rompían", "romperán"]
+      }
+    ]
   }
 ]

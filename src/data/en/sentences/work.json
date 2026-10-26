@@ -78,5 +78,7 @@
   { "id": "s1591", "en": "We demand that the company respect our benefits and the agreed schedule." },
   { "id": "s1592", "en": "If the company doesn't value your work, you'd better find another job." },
   { "id": "s1593", "en": "With this salary I can barely cover rent and food.", "hints": ["salary"] },
-  { "id": "s1594", "en": "The new manager lacks leadership; nobody listens to him." }
+  { "id": "s1594", "en": "The new manager lacks leadership; nobody listens to him." },
+  { "id": "s1620", "en": "I check my email before every meeting." },
+  { "id": "s1624", "en": "My boss treats us with a lot of respect." }
 ]

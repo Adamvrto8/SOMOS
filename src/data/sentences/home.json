@@ -1452,5 +1452,59 @@
         "distractors": ["lavo", "lavó", "lavaba"]
       }
     ]
+  },
+  {
+    "id": "s1613",
+    "es": "El elevador no sirve, así que estamos bajando por las escaleras.",
+    "sk": "Výťah nefunguje, tak schádzame po schodoch.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "elevador", "no", "sirve", ",", "así", "que", "estamos", "bajando", "por", "las", "escaleras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "bajando",
+        "lemma": "bajar",
+        "hint": "bajar · gerundio",
+        "distractors": ["bajamos", "bajar", "bajó"]
+      }
+    ]
+  },
+  {
+    "id": "s1614",
+    "es": "El perro rompió mi taza favorita.",
+    "sk": "Pes rozbil môj obľúbený hrnček.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "perro", "rompió", "mi", "taza", "favorita", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "rompió",
+        "lemma": "romper",
+        "hint": "romper · él · pretérito",
+        "distractors": ["rompe", "rompía", "romperá"]
+      }
+    ]
+  },
+  {
+    "id": "s1619",
+    "es": "Nos cortaron la luz porque se nos olvidó pagar el recibo.",
+    "sk": "Vypli nám elektrinu, lebo sme zabudli zaplatiť účet.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "cortaron", "la", "luz", "porque", "se", "nos", "olvidó", "pagar", "el", "recibo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cortaron",
+        "lemma": "cortar",
+        "hint": "cortar · ellos · pretérito",
+        "distractors": ["cortan", "cortaban", "cortarán"]
+      }
+    ]
   }
 ]

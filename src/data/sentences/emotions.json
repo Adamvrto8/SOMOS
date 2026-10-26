@@ -1433,5 +1433,41 @@
         "distractors": ["arrepientes", "arrepentí", "arrepentíamos"]
       }
     ]
+  },
+  {
+    "id": "s1616",
+    "es": "Rompimos hace un mes, pero seguimos siendo amigos.",
+    "sk": "Rozišli sme sa pred mesiacom, ale stále sme kamaráti.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Rompimos", "hace", "un", "mes", ",", "pero", "seguimos", "siendo", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Rompimos",
+        "lemma": "romper",
+        "hint": "romper · nosotros · pretérito",
+        "distractors": ["Rompemos", "Rompíamos", "Romperemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1625",
+    "es": "Traté de explicarle, pero no me quiso escuchar.",
+    "sk": "Snažil som sa mu to vysvetliť, ale nechcel ma počúvať.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Traté", "de", "explicarle", ",", "pero", "no", "me", "quiso", "escuchar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Traté",
+        "lemma": "tratar",
+        "hint": "tratar · yo · pretérito",
+        "distractors": ["Trato", "Trataba", "Trataré"]
+      }
+    ]
   }
 ]

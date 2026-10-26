@@ -78,5 +78,6 @@
   { "id": "s1018", "en": "Deep down, I knew she was right.", "hints": ["deep down"] },
   { "id": "s1019", "en": "It's essential that you bring your ID.", "hints": ["essential"] },
   { "id": "s1020", "en": "We'll leave the matter for the next meeting." },
-  { "id": "s1021", "en": "In the long run, you'll learn more if you practice every day." }
+  { "id": "s1021", "en": "In the long run, you'll learn more if you practice every day." },
+  { "id": "s1623", "en": "I always try to arrive early." }
 ]

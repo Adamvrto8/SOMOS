@@ -1393,5 +1393,59 @@
         "distractors": ["hígado", "riñón", "cerebro"]
       }
     ]
+  },
+  {
+    "id": "s1601",
+    "es": "Me duelen los pies después de caminar todo el día.",
+    "sk": "Po celodennom chodení ma bolia nohy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "duelen", "los", "pies", "después", "de", "caminar", "todo", "el", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "duelen",
+        "lemma": "doler",
+        "hint": "doler · ellos · presente",
+        "distractors": ["duele", "dolieron", "dolían"]
+      }
+    ]
+  },
+  {
+    "id": "s1603",
+    "es": "De niña me dolían los oídos cada invierno.",
+    "sk": "Ako dievča ma každú zimu boleli uši.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niña", "me", "dolían", "los", "oídos", "cada", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dolían",
+        "lemma": "doler",
+        "hint": "doler · ellos · imperfecto",
+        "distractors": ["duelen", "dolieron", "dolerán"]
+      }
+    ]
+  },
+  {
+    "id": "s1618",
+    "es": "Mi mamá me cortaba el pelo cuando era chico.",
+    "sk": "Keď som bol malý, mama mi strihala vlasy.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "mamá", "me", "cortaba", "el", "pelo", "cuando", "era", "chico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cortaba",
+        "lemma": "cortar",
+        "hint": "cortar · ella · imperfecto",
+        "distractors": ["corta", "cortó", "cortará"]
+      }
+    ]
   }
 ]

@@ -503,5 +503,15 @@
   { "id": "multiplicar", "en": ["to multiply"], "examples": ["Multiply the price by three."] },
   { "id": "dividir", "en": ["to divide", "to split"], "examples": ["We split the bill four ways."] },
   { "id": "medir", "en": ["to measure"], "examples": ["How tall are you?"] },
-  { "id": "confiar", "en": ["to trust"], "examples": ["I trust you."] }
+  { "id": "confiar", "en": ["to trust"], "examples": ["I trust you."] },
+  { "id": "llover", "en": ["to rain"], "examples": ["It's going to rain tomorrow."], "note": "Used almost only in the 3rd person: llueve (it rains), llovió (it rained)." },
+  { "id": "nevar", "en": ["to snow"], "examples": ["Does it snow in your country?"], "note": "Used almost only in the 3rd person: nieva (it snows), nevó (it snowed)." },
+  { "id": "doler", "en": ["to hurt", "to ache"], "examples": ["I have a headache."], "note": "Works like gustar: me duele la cabeza (my head hurts), me duelen los pies (my feet hurt)." },
+  { "id": "quedar", "en": ["to remain", "to fit, to suit (clothes)", "to be located"], "examples": ["Where is the bank?"], "note": "Te queda bien = it suits you. ¿Dónde queda…? = Where is…? In Mexico quedar de + infinitive = to agree to: Quedamos de vernos. To stay somewhere = quedarse." },
+  { "id": "tardar", "en": ["to take (time)", "to be long"], "examples": ["How long is the flight?"], "note": "¿Cuánto tardas? = How long does it take you? Tardar en + infinitive: Tardé una hora en llegar." },
+  { "id": "bajar", "en": ["to go down", "to drop", "to lower", "to download"], "examples": ["Turn the volume down, please."], "note": "To get off the bus = bajarse del camión. In Mexico also colloquially to download: bajar una app." },
+  { "id": "romper", "en": ["to break"], "examples": ["The glass broke."], "note": "Romper con alguien = to break up with someone. The participle is irregular: roto (broken)." },
+  { "id": "cortar", "en": ["to cut", "to chop"], "examples": ["Will you help me cut the cake?"] },
+  { "id": "revisar", "en": ["to check", "to look over"], "examples": ["Check your email."], "note": "Revisar = to check, to look over (revisar el correo, revisar la tarea), not to revise." },
+  { "id": "tratar", "en": ["to try", "to treat"], "examples": ["Try to get some rest."], "note": "Tratar de + infinitive = to try to: Trato de dormir más." }
 ]

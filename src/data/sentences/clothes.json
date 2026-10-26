@@ -1429,5 +1429,41 @@
         "distractors": ["hace", "hice", "hacían"]
       }
     ]
+  },
+  {
+    "id": "s1604",
+    "es": "Esa camisa te queda muy bien.",
+    "sk": "Tá košeľa ti veľmi pristane.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Esa", "camisa", "te", "queda", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "queda",
+        "lemma": "quedar",
+        "hint": "quedar · él · presente",
+        "distractors": ["quedó", "quedaba", "quedará"]
+      }
+    ]
+  },
+  {
+    "id": "s1605",
+    "es": "Los pantalones me quedaron chicos después de las vacaciones.",
+    "sk": "Po dovolenke mi boli nohavice malé.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "pantalones", "me", "quedaron", "chicos", "después", "de", "las", "vacaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quedaron",
+        "lemma": "quedar",
+        "hint": "quedar · ellos · pretérito",
+        "distractors": ["quedan", "quedaban", "quedarán"]
+      }
+    ]
   }
 ]

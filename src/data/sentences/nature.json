@@ -1422,5 +1422,23 @@
         "distractors": ["cuento", "contaron", "contaban"]
       }
     ]
+  },
+  {
+    "id": "s1600",
+    "es": "Dicen que mañana nevará en el Nevado de Toluca.",
+    "sk": "Vraj zajtra bude snežiť na Nevado de Toluca.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["futuro"],
+    "tokens": ["Dicen", "que", "mañana", "nevará", "en", "el", "Nevado", "de", "Toluca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nevará",
+        "lemma": "nevar",
+        "hint": "nevar · él · futuro",
+        "distractors": ["nieva", "nevó", "nevaba"]
+      }
+    ]
   }
 ]

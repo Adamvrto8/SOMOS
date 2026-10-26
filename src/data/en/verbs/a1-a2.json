@@ -117,5 +117,15 @@
   { "id": "abrazar", "en": ["to hug"] },
   { "id": "besar", "en": ["to kiss"] },
   { "id": "llorar", "en": ["to cry"] },
-  { "id": "odiar", "en": ["to hate"] }
+  { "id": "odiar", "en": ["to hate"] },
+  { "id": "llover", "en": ["to rain"] },
+  { "id": "nevar", "en": ["to snow"] },
+  { "id": "doler", "en": ["to hurt", "to ache"] },
+  { "id": "quedar", "en": ["to remain", "to fit, to suit (clothes)", "to be located"] },
+  { "id": "tardar", "en": ["to take (time)", "to be long"] },
+  { "id": "bajar", "en": ["to go down", "to drop", "to lower", "to download"] },
+  { "id": "romper", "en": ["to break"] },
+  { "id": "cortar", "en": ["to cut", "to chop"] },
+  { "id": "revisar", "en": ["to check", "to look over"] },
+  { "id": "tratar", "en": ["to try", "to treat"] }
 ]

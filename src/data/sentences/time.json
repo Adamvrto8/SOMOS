@@ -1447,5 +1447,41 @@
         "distractors": ["está", "era", "son"]
       }
     ]
+  },
+  {
+    "id": "s1609",
+    "es": "El camión tardó una hora porque había mucho tráfico.",
+    "sk": "Autobusu to trvalo hodinu, lebo bola hustá premávka.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "camión", "tardó", "una", "hora", "porque", "había", "mucho", "tráfico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tardó",
+        "lemma": "tardar",
+        "hint": "tardar · él · pretérito",
+        "distractors": ["tarda", "tardaba", "tardará"]
+      }
+    ]
+  },
+  {
+    "id": "s1610",
+    "es": "No tardaré mucho, solo voy por pan.",
+    "sk": "Nezdržím sa dlho, idem len po chlieb.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["futuro"],
+    "tokens": ["No", "tardaré", "mucho", ",", "solo", "voy", "por", "pan", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tardaré",
+        "lemma": "tardar",
+        "hint": "tardar · yo · futuro",
+        "distractors": ["tardo", "tardé", "tardaba"]
+      }
+    ]
   }
 ]

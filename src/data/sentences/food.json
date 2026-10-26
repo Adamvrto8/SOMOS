@@ -1417,5 +1417,23 @@
         "distractors": ["hace", "hacía", "hicieron"]
       }
     ]
+  },
+  {
+    "id": "s1617",
+    "es": "Yo corto la cebolla y tú pelas las papas.",
+    "sk": "Ja nakrájam cibuľu a ty ošúpeš zemiaky.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Yo", "corto", "la", "cebolla", "y", "tú", "pelas", "las", "papas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "corto",
+        "lemma": "cortar",
+        "hint": "cortar · yo · presente",
+        "distractors": ["corté", "cortaba", "cortaré"]
+      }
+    ]
   }
 ]

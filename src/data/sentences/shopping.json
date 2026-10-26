@@ -1435,5 +1435,23 @@
         "distractors": ["terminé", "terminamos", "terminarán"]
       }
     ]
+  },
+  {
+    "id": "s1611",
+    "es": "Los precios bajan en enero.",
+    "sk": "V januári ceny klesajú.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "precios", "bajan", "en", "enero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "bajan",
+        "lemma": "bajar",
+        "hint": "bajar · ellos · presente",
+        "distractors": ["bajaron", "bajaban", "bajarán"]
+      }
+    ]
   }
 ]
