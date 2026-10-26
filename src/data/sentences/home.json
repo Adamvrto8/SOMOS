@@ -1040,5 +1040,417 @@
         "distractors": ["consultorio", "comedor", "condimento"]
       }
     ]
+  },
+  {
+    "id": "s1292",
+    "es": "Ayer compramos una lavadora nueva.",
+    "sk": "Včera sme kúpili novú práčku.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "compramos", "una", "lavadora", "nueva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compramos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · pretérito",
+        "distractors": ["compro", "compraron", "comprábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1293",
+    "es": "¿Quién dejó la toalla mojada en la cama?",
+    "sk": "Kto nechal mokrý uterák na posteli?",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Quién", "dejó", "la", "toalla", "mojada", "en", "la", "cama", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dejó",
+        "lemma": "dejar",
+        "hint": "dejar · él · pretérito",
+        "distractors": ["deja", "dejaba", "dejará"]
+      }
+    ]
+  },
+  {
+    "id": "s1294",
+    "es": "Cuando vivía con mis papás, mi cuarto estaba en la azotea.",
+    "sk": "Keď som býval s rodičmi, moja izba bola hore na streche.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["ser-estar", "imperfecto"],
+    "tokens": ["Cuando", "vivía", "con", "mis", "papás", ",", "mi", "cuarto", "estaba", "en", "la", "azotea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "why": "place",
+        "distractors": ["era", "estuvo", "estaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1295",
+    "es": "Mañana pondré las cortinas nuevas en la sala.",
+    "sk": "Zajtra zavesím nové závesy v obývačke.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "pondré", "las", "cortinas", "nuevas", "en", "la", "sala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pondré",
+        "lemma": "poner",
+        "hint": "poner · yo · futuro",
+        "distractors": ["pongo", "puse", "ponía"]
+      }
+    ]
+  },
+  {
+    "id": "s1296",
+    "es": "Estamos pensando en comprar una casa, pero la hipoteca nos da miedo.",
+    "sk": "Rozmýšľame o kúpe domu, ale hypotéka nás desí.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "pensando", "en", "comprar", "una", "casa", ",", "pero", "la", "hipoteca", "nos", "da", "miedo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pensando",
+        "lemma": "pensar",
+        "hint": "pensar · gerundio",
+        "distractors": ["pensamos", "pensó", "pensaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1297",
+    "es": "Le avisé al dueño que hay una gotera en el techo.",
+    "sk": "Dal som majiteľovi vedieť, že nám zateká strop.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "avisé", "al", "dueño", "que", "hay", "una", "gotera", "en", "el", "techo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "avisé",
+        "lemma": "avisar",
+        "hint": "avisar · yo · pretérito",
+        "distractors": ["aviso", "avisaba", "avisaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1298",
+    "es": "El tinaco se vació y no tenemos agua desde la mañana.",
+    "sk": "Nádrž na vodu sa vyprázdnila a od rána nemáme vodu.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["El", "tinaco", "se", "vació", "y", "no", "tenemos", "agua", "desde", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tenemos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · presente",
+        "distractors": ["tengo", "tuvieron", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1299",
+    "es": "Vivimos en un fraccionamiento tranquilo, lejos del ruido del centro.",
+    "sk": "Bývame v tichej obytnej štvrti, ďaleko od ruchu centra.",
+    "level": "B1",
+    "topics": ["home"],
+    "tokens": ["Vivimos", "en", "un", "fraccionamiento", "tranquilo", ",", "lejos", "del", "ruido", "del", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fraccionamiento",
+        "lemma": "fraccionamiento",
+        "hint": "obytná štvrť",
+        "distractors": ["inquilino", "plomero", "trapeador"]
+      }
+    ]
+  },
+  {
+    "id": "s1300",
+    "es": "La mudanza fue un caos, pero por fin estamos instalados.",
+    "sk": "Sťahovanie bol chaos, ale konečne sme sa zabývali.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "mudanza", "fue", "un", "caos", ",", "pero", "por", "fin", "estamos", "instalados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "estamos",
+        "lemma": "estar",
+        "hint": "ser/estar · nosotros · presente",
+        "why": "result",
+        "distractors": ["somos", "estábamos", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1301",
+    "es": "Cuando éramos inquilinos, el mantenimiento siempre lo pagaba el dueño.",
+    "sk": "Keď sme bývali v podnájme, údržbu vždy platil majiteľ.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "éramos", "inquilinos", ",", "el", "mantenimiento", "siempre", "lo", "pagaba", "el", "dueño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "pagaba",
+        "lemma": "pagar",
+        "hint": "pagar · él · imperfecto",
+        "distractors": ["paga", "pagó", "pagará"]
+      }
+    ]
+  },
+  {
+    "id": "s1302",
+    "es": "Prende el calentador media hora antes de bañarte.",
+    "sk": "Zapni ohrievač vody pol hodiny predtým, ako sa pôjdeš osprchovať.",
+    "level": "B1",
+    "topics": ["home"],
+    "tokens": ["Prende", "el", "calentador", "media", "hora", "antes", "de", "bañarte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calentador",
+        "lemma": "calentador",
+        "hint": "ohrievač vody",
+        "distractors": ["tinaco", "trapeador", "fraccionamiento"]
+      }
+    ]
+  },
+  {
+    "id": "s1303",
+    "es": "Nos subieron la renta otra vez y ya no nos alcanza.",
+    "sk": "Zase nám zvýšili nájom a už na to nemáme.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "subieron", "la", "renta", "otra", "vez", "y", "ya", "no", "nos", "alcanza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "subieron",
+        "lemma": "subir",
+        "hint": "subir · ellos · pretérito",
+        "distractors": ["suben", "subían", "subirán"]
+      }
+    ]
+  },
+  {
+    "id": "s1304",
+    "es": "Si no arreglan la fuga pronto, se va a echar a perder el piso.",
+    "sk": "Ak tú netesnosť čoskoro neopravia, zničí sa podlaha.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "no", "arreglan", "la", "fuga", "pronto", ",", "se", "va", "a", "echar", "a", "perder", "el", "piso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "arreglan",
+        "lemma": "arreglar",
+        "hint": "arreglar · ellos · presente",
+        "distractors": ["arreglo", "arreglaron", "arreglaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1305",
+    "es": "Desde que remodelamos el baño, la casa se ve mucho más amplia.",
+    "sk": "Odkedy sme zrekonštruovali kúpeľňu, dom pôsobí oveľa priestrannejšie.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "remodelamos", "el", "baño", ",", "la", "casa", "se", "ve", "mucho", "más", "amplia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "ve",
+        "lemma": "ver",
+        "hint": "ver · ella · presente",
+        "distractors": ["vio", "veía", "verá"]
+      }
+    ]
+  },
+  {
+    "id": "s1306",
+    "es": "Me tocó un vecino que pone música a todo volumen a las tres de la mañana.",
+    "sk": "Dostal sa mi sused, ktorý o tretej ráno púšťa hudbu naplno.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "tocó", "un", "vecino", "que", "pone", "música", "a", "todo", "volumen", "a", "las", "tres", "de", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "pone",
+        "lemma": "poner",
+        "hint": "poner · él · presente",
+        "distractors": ["puso", "ponía", "pondrá"]
+      }
+    ]
+  },
+  {
+    "id": "s1307",
+    "es": "La humedad se metió en el clóset y se llenó todo de moho.",
+    "sk": "Vlhkosť sa dostala do skrine a všetko splesnivelo.",
+    "level": "B2",
+    "topics": ["home"],
+    "tokens": ["La", "humedad", "se", "metió", "en", "el", "clóset", "y", "se", "llenó", "todo", "de", "moho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "humedad",
+        "lemma": "humedad",
+        "hint": "vlhkosť",
+        "distractors": ["remodelación", "hipoteca", "mudanza"]
+      }
+    ]
+  },
+  {
+    "id": "s1308",
+    "es": "Para ahorrar luz, cambiamos todos los focos por unos de bajo consumo.",
+    "sk": "Aby sme ušetrili elektrinu, vymenili sme všetky žiarovky za úsporné.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Para", "ahorrar", "luz", ",", "cambiamos", "todos", "los", "focos", "por", "unos", "de", "bajo", "consumo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cambiamos",
+        "lemma": "cambiar",
+        "hint": "cambiar · nosotros · pretérito",
+        "distractors": ["cambio", "cambiaron", "cambiábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1309",
+    "es": "Los electrodomésticos nuevos gastan mucho menos luz que los viejos.",
+    "sk": "Nové spotrebiče míňajú oveľa menej elektriny ako staré.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "electrodomésticos", "nuevos", "gastan", "mucho", "menos", "luz", "que", "los", "viejos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "gastan",
+        "lemma": "gastar",
+        "hint": "gastar · ellos · presente",
+        "distractors": ["gasta", "gastaron", "gastaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1310",
+    "es": "Aunque el departamento está amueblado, traeremos nuestra propia cama.",
+    "sk": "Hoci je byt zariadený, prinesieme si vlastnú posteľ.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Aunque", "el", "departamento", "está", "amueblado", ",", "traeremos", "nuestra", "propia", "cama", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "traeremos",
+        "lemma": "traer",
+        "hint": "traer · nosotros · futuro",
+        "distractors": ["traemos", "trajeron", "traíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1311",
+    "es": "El inquilino anterior dejó la casa hecha un cochinero.",
+    "sk": "Predchádzajúci nájomník nechal dom ako chliev.",
+    "level": "B2",
+    "topics": ["home"],
+    "tokens": ["El", "inquilino", "anterior", "dejó", "la", "casa", "hecha", "un", "cochinero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "cochinero",
+        "lemma": "cochinero",
+        "hint": "chliev, neporiadok",
+        "distractors": ["condominio", "depósito", "aval"]
+      }
+    ]
+  },
+  {
+    "id": "s1312",
+    "es": "Nos devolvieron el depósito completo porque dejamos todo impecable.",
+    "sk": "Vrátili nám celú zálohu, lebo sme všetko nechali v perfektnom stave.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "devolvieron", "el", "depósito", "completo", "porque", "dejamos", "todo", "impecable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "devolvieron",
+        "lemma": "devolver",
+        "hint": "devolver · ellos · pretérito",
+        "distractors": ["devuelven", "devolvían", "devolverán"]
+      }
+    ]
+  },
+  {
+    "id": "s1313",
+    "es": "Llevamos meses buscando depa y todo está carísimo o lejísimos.",
+    "sk": "Už mesiace hľadáme byt a všetko je buď strašne drahé, alebo strašne ďaleko.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Llevamos", "meses", "buscando", "depa", "y", "todo", "está", "carísimo", "o", "lejísimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevamos",
+        "lemma": "llevar",
+        "hint": "llevar · nosotros · presente",
+        "distractors": ["Llevo", "Llevaron", "Llevábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1314",
+    "es": "Mi roomie nunca lava los trastes y ya me tiene harta.",
+    "sk": "Spolubývajúci nikdy neumýva riad a už ho mám plné zuby.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "roomie", "nunca", "lava", "los", "trastes", "y", "ya", "me", "tiene", "harta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "lava",
+        "lemma": "lavar",
+        "hint": "lavar · él · presente",
+        "distractors": ["lavo", "lavó", "lavaba"]
+      }
+    ]
   }
 ]

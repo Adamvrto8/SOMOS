@@ -895,5 +895,552 @@
         "distractors": ["Averiguó", "Averiguo", "Averiguaba"]
       }
     ]
+  },
+  {
+    "id": "s991",
+    "es": "¿Cuál es tu color favorito?",
+    "sk": "Aká je tvoja obľúbená farba?",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["¿", "Cuál", "es", "tu", "color", "favorito", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Cuál",
+        "lemma": "cuál",
+        "hint": "ktorý",
+        "distractors": ["Quién", "Dónde", "Cuándo"]
+      }
+    ]
+  },
+  {
+    "id": "s992",
+    "es": "Mi casa está cerca de la escuela.",
+    "sk": "Bývam kúsok od školy.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "casa", "está", "cerca", "de", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "place",
+        "distractors": ["es", "son", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s993",
+    "es": "No sé dónde están mis llaves.",
+    "sk": "Neviem, kde mám kľúče.",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["No", "sé", "dónde", "están", "mis", "llaves", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "distractors": ["cuándo", "quién", "qué"]
+      }
+    ]
+  },
+  {
+    "id": "s994",
+    "es": "Ella trabaja con su papá en la tienda.",
+    "sk": "Pracuje s otcom v obchode.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Ella", "trabaja", "con", "su", "papá", "en", "la", "tienda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trabaja",
+        "lemma": "trabajar",
+        "hint": "trabajar · ella · presente",
+        "distractors": ["trabajó", "trabajo", "trabajarán"]
+      }
+    ]
+  },
+  {
+    "id": "s995",
+    "es": "¿Por qué estás triste hoy?",
+    "sk": "Prečo si dnes smutná?",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["¿", "Por", "qué", "estás", "triste", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "ser/estar · tú · presente",
+        "why": "state",
+        "distractors": ["eres", "está", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s996",
+    "es": "Nosotros comemos a las dos de la tarde.",
+    "sk": "Obedujeme o druhej.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Nosotros", "comemos", "a", "las", "dos", "de", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comemos",
+        "lemma": "comer",
+        "hint": "comer · nosotros · presente",
+        "distractors": ["comimos", "como", "comerán"]
+      }
+    ]
+  },
+  {
+    "id": "s997",
+    "es": "¿Quieres té o café?",
+    "sk": "Chceš čaj alebo kávu?",
+    "level": "A1",
+    "topics": ["basics"],
+    "tokens": ["¿", "Quieres", "té", "o", "café", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "o",
+        "lemma": "o",
+        "hint": "alebo",
+        "distractors": ["pero", "porque", "si"]
+      }
+    ]
+  },
+  {
+    "id": "s998",
+    "es": "Mis amigos siempre llegan tarde.",
+    "sk": "Kamaráti vždy meškajú.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "amigos", "siempre", "llegan", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llegan",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · presente",
+        "distractors": ["llegaron", "llego", "llegaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s999",
+    "es": "Yo tampoco fui a la fiesta.",
+    "sk": "Ani ja som nešiel na oslavu.",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["Yo", "tampoco", "fui", "a", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tampoco",
+        "lemma": "tampoco",
+        "hint": "tiež nie",
+        "distractors": ["nadie", "nada", "alguien"]
+      }
+    ]
+  },
+  {
+    "id": "s1000",
+    "es": "El gato está durmiendo debajo de la cama.",
+    "sk": "Mačka spí pod posteľou.",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["El", "gato", "está", "durmiendo", "debajo", "de", "la", "cama", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "debajo",
+        "lemma": "debajo",
+        "hint": "pod",
+        "distractors": ["entre", "hacia", "durante"]
+      }
+    ]
+  },
+  {
+    "id": "s1001",
+    "es": "Te esperé desde las cinco hasta las seis.",
+    "sk": "Čakal som na teba od piatej do šiestej.",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["Te", "esperé", "desde", "las", "cinco", "hasta", "las", "seis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "do",
+        "distractors": ["desde", "sobre", "durante"]
+      }
+    ]
+  },
+  {
+    "id": "s1002",
+    "es": "Cada mañana mi abuelo leía el periódico.",
+    "sk": "Dedko každé ráno čítal noviny.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cada", "mañana", "mi", "abuelo", "leía", "el", "periódico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "leía",
+        "lemma": "leer",
+        "hint": "leer · él · imperfecto",
+        "distractors": ["leyó", "leían", "leen"]
+      }
+    ]
+  },
+  {
+    "id": "s1003",
+    "es": "Comimos demasiado y luego no pudimos dormir.",
+    "sk": "Prejedli sme sa a potom sme nemohli zaspať.",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["Comimos", "demasiado", "y", "luego", "no", "pudimos", "dormir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "demasiado",
+        "lemma": "demasiado",
+        "hint": "príliš veľa",
+        "distractors": ["tampoco", "según", "hacia"]
+      }
+    ]
+  },
+  {
+    "id": "s1004",
+    "es": "Mañana todos iremos juntos al mercado.",
+    "sk": "Zajtra pôjdeme všetci spolu na trh.",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["Mañana", "todos", "iremos", "juntos", "al", "mercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "juntos",
+        "lemma": "juntos",
+        "hint": "spolu",
+        "distractors": ["cada", "según", "hacia"]
+      }
+    ]
+  },
+  {
+    "id": "s1005",
+    "es": "Mi hermana y yo estudiamos en la misma escuela.",
+    "sk": "So sestrou chodíme do rovnakej školy.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "y", "yo", "estudiamos", "en", "la", "misma", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estudiamos",
+        "lemma": "estudiar",
+        "hint": "estudiar · nosotros · presente",
+        "distractors": ["estudio", "estudiaron", "estudiábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1006",
+    "es": "¿Hay alguien en el baño?",
+    "sk": "Je niekto na záchode?",
+    "level": "A2",
+    "topics": ["basics"],
+    "tokens": ["¿", "Hay", "alguien", "en", "el", "baño", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "alguien",
+        "lemma": "alguien",
+        "hint": "niekto",
+        "distractors": ["nadie", "tampoco", "cada"]
+      }
+    ]
+  },
+  {
+    "id": "s1007",
+    "es": "Según mi mamá, el doctor llegará a las diez.",
+    "sk": "Podľa mamy príde lekár o desiatej.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["futuro"],
+    "tokens": ["Según", "mi", "mamá", ",", "el", "doctor", "llegará", "a", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llegará",
+        "lemma": "llegar",
+        "hint": "llegar · él · futuro",
+        "distractors": ["llega", "llegaré", "llegaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1008",
+    "es": "Ahorita estoy aprendiendo a manejar.",
+    "sk": "Teraz sa učím šoférovať.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["progresivo"],
+    "tokens": ["Ahorita", "estoy", "aprendiendo", "a", "manejar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "aprendiendo",
+        "lemma": "aprender",
+        "hint": "aprender · gerundio",
+        "distractors": ["aprende", "aprender", "aprendió"]
+      }
+    ]
+  },
+  {
+    "id": "s1009",
+    "es": "Antes vivíamos entre el mercado y la iglesia.",
+    "sk": "Predtým sme bývali medzi trhom a kostolom.",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "vivíamos", "entre", "el", "mercado", "y", "la", "iglesia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vivíamos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · imperfecto",
+        "distractors": ["vivimos", "vivía", "viven"]
+      }
+    ]
+  },
+  {
+    "id": "s1010",
+    "es": "¿De verdad dijiste eso?",
+    "sk": "Naozaj si to povedal?",
+    "level": "A2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "De", "verdad", "dijiste", "eso", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dijiste",
+        "lemma": "decir",
+        "hint": "decir · tú · pretérito",
+        "distractors": ["dices", "dije", "decían"]
+      }
+    ]
+  },
+  {
+    "id": "s1011",
+    "es": "Además de trabajar, mi hermano estudia por las noches.",
+    "sk": "Okrem práce brat po večeroch aj študuje.",
+    "level": "B1",
+    "topics": ["basics"],
+    "tokens": ["Además", "de", "trabajar", ",", "mi", "hermano", "estudia", "por", "las", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Además",
+        "lemma": "además",
+        "hint": "okrem",
+        "distractors": ["Aunque", "Mientras", "Apenas"]
+      }
+    ]
+  },
+  {
+    "id": "s1012",
+    "es": "De repente empezó a llover y todos corrieron a la casa.",
+    "sk": "Zrazu začalo pršať a všetci utekali do domu.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["De", "repente", "empezó", "a", "llover", "y", "todos", "corrieron", "a", "la", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "corrieron",
+        "lemma": "correr",
+        "hint": "correr · ellos · pretérito",
+        "distractors": ["corren", "corrí", "corríamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1013",
+    "es": "En lugar de quejarte, ayúdame a buscar una solución.",
+    "sk": "Namiesto sťažovania mi radšej pomôž nájsť riešenie.",
+    "level": "B1",
+    "topics": ["basics"],
+    "tokens": ["En", "lugar", "de", "quejarte", ",", "ayúdame", "a", "buscar", "una", "solución", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lugar",
+        "lemma": "lugar",
+        "hint": "namiesto",
+        "distractors": ["cambio", "realidad", "hecho"]
+      }
+    ]
+  },
+  {
+    "id": "s1014",
+    "es": "No pude ir a la boda, ya que tenía que trabajar.",
+    "sk": "Nemohol som ísť na svadbu, keďže som musel pracovať.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["No", "pude", "ir", "a", "la", "boda", ",", "ya", "que", "tenía", "que", "trabajar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tuve", "teníamos", "tienen"]
+      }
+    ]
+  },
+  {
+    "id": "s1015",
+    "es": "A pesar de la lluvia, salimos a caminar.",
+    "sk": "Napriek dažďu sme išli na prechádzku.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["A", "pesar", "de", "la", "lluvia", ",", "salimos", "a", "caminar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "salimos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · pretérito",
+        "distractors": ["salí", "salieron", "salían"]
+      }
+    ]
+  },
+  {
+    "id": "s1016",
+    "es": "Siempre y cuando me avises antes, puedes usar mi carro.",
+    "sk": "Pokiaľ mi dáš vopred vedieť, môžeš si zobrať moje auto.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "y", "cuando", "me", "avises", "antes", ",", "puedes", "usar", "mi", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "puedes",
+        "lemma": "poder",
+        "hint": "poder · tú · presente",
+        "distractors": ["pudiste", "puedo", "podrán"]
+      }
+    ]
+  },
+  {
+    "id": "s1017",
+    "es": "Dado que nadie contestaba, decidimos irnos.",
+    "sk": "Keďže nikto nedvíhal, rozhodli sme sa odísť.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Dado", "que", "nadie", "contestaba", ",", "decidimos", "irnos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "contestaba",
+        "lemma": "contestar",
+        "hint": "contestar · él · imperfecto",
+        "distractors": ["contestó", "contestaban", "contestan"]
+      }
+    ]
+  },
+  {
+    "id": "s1018",
+    "es": "En el fondo, sabía que ella tenía razón.",
+    "sk": "V hĺbke duše som vedel, že má pravdu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "tokens": ["En", "el", "fondo", ",", "sabía", "que", "ella", "tenía", "razón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fondo",
+        "lemma": "fondo",
+        "hint": "v hĺbke",
+        "distractors": ["asunto", "reto", "hecho"]
+      }
+    ]
+  },
+  {
+    "id": "s1019",
+    "es": "Es imprescindible que lleves tu identificación.",
+    "sk": "Je nevyhnutné, aby si mal pri sebe doklady.",
+    "level": "B2",
+    "topics": ["basics"],
+    "tokens": ["Es", "imprescindible", "que", "lleves", "tu", "identificación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "imprescindible",
+        "lemma": "imprescindible",
+        "hint": "nevyhnutný",
+        "distractors": ["eficaz", "actual", "propio"]
+      }
+    ]
+  },
+  {
+    "id": "s1020",
+    "es": "Dejaremos el asunto para la próxima junta.",
+    "sk": "Tú vec necháme na budúcu poradu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["futuro"],
+    "tokens": ["Dejaremos", "el", "asunto", "para", "la", "próxima", "junta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dejaremos",
+        "lemma": "dejar",
+        "hint": "dejar · nosotros · futuro",
+        "distractors": ["Dejamos", "Dejaré", "Dejaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1021",
+    "es": "A la larga, aprenderás más si practicas a diario.",
+    "sk": "Z dlhodobého hľadiska sa naučíš viac, ak budeš cvičiť každý deň.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["futuro"],
+    "tokens": ["A", "la", "larga", ",", "aprenderás", "más", "si", "practicas", "a", "diario", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aprenderás",
+        "lemma": "aprender",
+        "hint": "aprender · tú · futuro",
+        "distractors": ["aprendes", "aprenderé", "aprendieron"]
+      }
+    ]
   }
 ]

@@ -951,5 +951,487 @@
         "distractors": ["señala", "señalaba", "señalará"]
       }
     ]
+  },
+  {
+    "id": "s1062",
+    "es": "Llegué tarde porque había mucho tráfico en la avenida.",
+    "sk": "Prišiel som neskoro, lebo na avenide bola veľká premávka.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Llegué", "tarde", "porque", "había", "mucho", "tráfico", "en", "la", "avenida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llegué",
+        "lemma": "llegar",
+        "hint": "llegar · yo · pretérito",
+        "distractors": ["Llego", "Llegó", "Llegaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1063",
+    "es": "Mañana visitaremos la catedral y el museo de arte.",
+    "sk": "Zajtra navštívime katedrálu a múzeum umenia.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "visitaremos", "la", "catedral", "y", "el", "museo", "de", "arte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "visitaremos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros · futuro",
+        "distractors": ["visitan", "visité", "visitábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1064",
+    "es": "Antes vivíamos en un pueblo, pero ahora vivimos en la ciudad.",
+    "sk": "Predtým sme bývali na dedine, ale teraz bývame v meste.",
+    "level": "A2",
+    "topics": ["city"],
+    "tokens": ["Antes", "vivíamos", "en", "un", "pueblo", ",", "pero", "ahora", "vivimos", "en", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pueblo",
+        "lemma": "pueblo",
+        "hint": "dedina, mestečko",
+        "distractors": ["semáforo", "puente", "tope"]
+      }
+    ]
+  },
+  {
+    "id": "s1065",
+    "es": "¿Estás manejando? Te escucho muy mal.",
+    "sk": "Šoféruješ? Veľmi zle ťa počujem.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["progresivo"],
+    "tokens": ["¿", "Estás", "manejando", "?", "Te", "escucho", "muy", "mal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "manejando",
+        "lemma": "manejar",
+        "hint": "manejar · gerundio",
+        "distractors": ["manejas", "manejaste", "manejabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1066",
+    "es": "El taxista nos dejó enfrente del hospital.",
+    "sk": "Taxikár nás vysadil pred nemocnicou.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "taxista", "nos", "dejó", "enfrente", "del", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dejó",
+        "lemma": "dejar",
+        "hint": "dejar · él · pretérito",
+        "distractors": ["deja", "dejé", "dejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1067",
+    "es": "Saqué dinero del cajero que está junto a la farmacia.",
+    "sk": "Vybral som peniaze z bankomatu vedľa lekárne.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Saqué", "dinero", "del", "cajero", "que", "está", "junto", "a", "la", "farmacia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Saqué",
+        "lemma": "sacar",
+        "hint": "sacar · yo · pretérito",
+        "distractors": ["Saco", "Sacó", "Sacaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1068",
+    "es": "En mi opinión, la ciudad necesita más ciclovías y menos carros.",
+    "sk": "Podľa mňa mesto potrebuje viac cyklotrás a menej áut.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["En", "mi", "opinión", ",", "la", "ciudad", "necesita", "más", "ciclovías", "y", "menos", "carros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "necesita",
+        "lemma": "necesitar",
+        "hint": "necesitar · ella · presente",
+        "distractors": ["necesito", "necesitó", "necesitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1069",
+    "es": "Nos mudamos a esta colonia porque está cerca de la escuela de los niños.",
+    "sk": "Presťahovali sme sa do tejto štvrte, lebo je blízko detskej školy.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "mudamos", "a", "esta", "colonia", "porque", "está", "cerca", "de", "la", "escuela", "de", "los", "niños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mudamos",
+        "lemma": "mudarse",
+        "hint": "mudarse · nosotros · pretérito",
+        "distractors": ["mudo", "mudaron", "mudábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1070",
+    "es": "El transporte público es barato, pero en hora pico va lleno.",
+    "sk": "Verejná doprava je lacná, ale v špičke je preplnená.",
+    "level": "B1",
+    "topics": ["city"],
+    "tokens": ["El", "transporte", "público", "es", "barato", ",", "pero", "en", "hora", "pico", "va", "lleno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "lleno",
+        "lemma": "lleno",
+        "hint": "plný",
+        "distractors": ["vacío", "tranquilo", "lejos"]
+      }
+    ]
+  },
+  {
+    "id": "s1071",
+    "es": "Había un embotellamiento enorme, así que decidimos irnos en metro.",
+    "sk": "Bola obrovská zápcha, tak sme sa rozhodli ísť metrom.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Había", "un", "embotellamiento", "enorme", ",", "así", "que", "decidimos", "irnos", "en", "metro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "decidimos",
+        "lemma": "decidir",
+        "hint": "decidir · nosotros · pretérito",
+        "distractors": ["decido", "decidieron", "decidíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1072",
+    "es": "Cuando era estudiante, siempre me bajaba de la combi una parada antes.",
+    "sk": "Keď som bol študent, vždy som z combi vystupoval o zastávku skôr.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["ser-estar", "imperfecto"],
+    "tokens": ["Cuando", "era", "estudiante", ",", "siempre", "me", "bajaba", "de", "la", "combi", "una", "parada", "antes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser/estar · yo · imperfecto",
+        "why": "profession",
+        "distractors": ["estaba", "soy", "seré"]
+      }
+    ]
+  },
+  {
+    "id": "s1073",
+    "es": "Me parece que los topes no sirven para que la gente maneje despacio.",
+    "sk": "Zdá sa mi, že spomaľovacie prahy ľudí nedonútia jazdiť pomaly.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "parece", "que", "los", "topes", "no", "sirven", "para", "que", "la", "gente", "maneje", "despacio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sirven",
+        "lemma": "servir",
+        "hint": "servir · ellos · presente",
+        "distractors": ["sirve", "sirvieron", "servían"]
+      }
+    ]
+  },
+  {
+    "id": "s1074",
+    "es": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
+    "sk": "Zaplatil som parkovné na dve hodiny, ale vrátil som sa neskoro a dostal som pokutu.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Pagué", "el", "parquímetro", "por", "dos", "horas", ",", "pero", "regresé", "tarde", "y", "me", "multaron", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "regresé",
+        "lemma": "regresar",
+        "hint": "regresar · yo · pretérito",
+        "distractors": ["regreso", "regresó", "regresaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1075",
+    "es": "La alcaldía va a arreglar la banqueta de nuestra calle el próximo mes.",
+    "sk": "Mestská časť nám budúci mesiac opraví chodník na ulici.",
+    "level": "B1",
+    "topics": ["city"],
+    "tokens": ["La", "alcaldía", "va", "a", "arreglar", "la", "banqueta", "de", "nuestra", "calle", "el", "próximo", "mes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "alcaldía",
+        "lemma": "alcaldía",
+        "hint": "úrad mestskej časti",
+        "distractors": ["glorieta", "esquina", "parada"]
+      }
+    ]
+  },
+  {
+    "id": "s1076",
+    "es": "Desde que abrieron la nueva línea del metrobús, llego al trabajo en media hora.",
+    "sk": "Odkedy otvorili novú linku metrobusu, do práce sa dostanem za pol hodiny.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Desde", "que", "abrieron", "la", "nueva", "línea", "del", "metrobús", ",", "llego", "al", "trabajo", "en", "media", "hora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abrieron",
+        "lemma": "abrir",
+        "hint": "abrir · ellos · pretérito",
+        "distractors": ["abren", "abrí", "abrían"]
+      }
+    ]
+  },
+  {
+    "id": "s1077",
+    "es": "¿Me das un aventón al centro? Te queda de paso, ¿no?",
+    "sk": "Hodíš ma do centra? Máš to po ceste, nie?",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "das", "un", "aventón", "al", "centro", "?", "Te", "queda", "de", "paso", ",", "¿", "no", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "das",
+        "lemma": "dar",
+        "hint": "dar · tú · presente",
+        "distractors": ["doy", "diste", "daba"]
+      }
+    ]
+  },
+  {
+    "id": "s1078",
+    "es": "El tráfico en el periférico estaba de locos; tardé dos horas en llegar.",
+    "sk": "Premávka na okruhu bola šialená, cesta mi trvala dve hodiny.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["ser-estar", "imperfecto"],
+    "tokens": ["El", "tráfico", "en", "el", "periférico", "estaba", "de", "locos", ";", "tardé", "dos", "horas", "en", "llegar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "why": "state",
+        "distractors": ["era", "están", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s1079",
+    "es": "En esta colonia ya no se puede salir de noche por la inseguridad.",
+    "sk": "V tejto štvrti sa už v noci nedá vychádzať, je to tu nebezpečné.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["En", "esta", "colonia", "ya", "no", "se", "puede", "salir", "de", "noche", "por", "la", "inseguridad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "inseguridad",
+        "lemma": "inseguridad",
+        "hint": "nebezpečnosť, kriminalita",
+        "distractors": ["alumbrado", "vialidad", "banqueta"]
+      }
+    ]
+  },
+  {
+    "id": "s1080",
+    "es": "Los vecinos se quejaron con la alcaldía por los baches de la calle.",
+    "sk": "Susedia sa sťažovali na úrade mestskej časti na výtlky na ulici.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "vecinos", "se", "quejaron", "con", "la", "alcaldía", "por", "los", "baches", "de", "la", "calle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quejaron",
+        "lemma": "quejarse",
+        "hint": "quejarse · ellos · pretérito",
+        "distractors": ["quejo", "quejó", "quejaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1081",
+    "es": "Si no hubiera tanto tráfico, iría a la chamba en bici.",
+    "sk": "Keby nebola taká premávka, chodil by som do roboty na bicykli.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["Si", "no", "hubiera", "tanto", "tráfico", ",", "iría", "a", "la", "chamba", "en", "bici", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tráfico",
+        "lemma": "tráfico",
+        "hint": "premávka",
+        "distractors": ["zócalo", "alumbrado", "puente"]
+      }
+    ]
+  },
+  {
+    "id": "s1082",
+    "es": "Me late mucho vivir en el centro histórico, aunque es bien ruidoso.",
+    "sk": "Strašne sa mi páči bývať v historickom centre, hoci je tam riadny hluk.",
+    "level": "B2",
+    "topics": ["city"],
+    "tokens": ["Me", "late", "mucho", "vivir", "en", "el", "centro", "histórico", ",", "aunque", "es", "bien", "ruidoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "ruidoso",
+        "lemma": "ruidoso",
+        "hint": "hlučný",
+        "distractors": ["bonito", "padre", "tranquilo"]
+      }
+    ]
+  },
+  {
+    "id": "s1083",
+    "es": "Dicen que van a ampliar el metro hasta el aeropuerto, pero nadie les cree.",
+    "sk": "Hovorí sa, že metro predĺžia až na letisko, ale nikto im neverí.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["Dicen", "que", "van", "a", "ampliar", "el", "metro", "hasta", "el", "aeropuerto", ",", "pero", "nadie", "les", "cree", "."],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer": "cree",
+        "lemma": "creer",
+        "hint": "creer · él · presente",
+        "distractors": ["creo", "creyó", "creía"]
+      }
+    ]
+  },
+  {
+    "id": "s1084",
+    "es": "A esta hora el metro va hasta el tope; mejor agarramos un taxi.",
+    "sk": "O tomto čase je metro napchaté, radšej si vezmime taxík.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["A", "esta", "hora", "el", "metro", "va", "hasta", "el", "tope", ";", "mejor", "agarramos", "un", "taxi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "agarramos",
+        "lemma": "agarrar",
+        "hint": "agarrar · nosotros · presente",
+        "distractors": ["agarro", "agarraron", "agarrábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1085",
+    "es": "La gentrificación está subiendo las rentas en colonias como la Roma y la Condesa.",
+    "sk": "Gentrifikácia zvyšuje nájomné v štvrtiach ako Roma a Condesa.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["progresivo"],
+    "tokens": ["La", "gentrificación", "está", "subiendo", "las", "rentas", "en", "colonias", "como", "la", "Roma", "y", "la", "Condesa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "subiendo",
+        "lemma": "subir",
+        "hint": "subir · gerundio",
+        "distractors": ["sube", "subió", "subía"]
+      }
+    ]
+  },
+  {
+    "id": "s1086",
+    "es": "Cuando llovía fuerte, la avenida se inundaba y nadie podía pasar.",
+    "sk": "Keď silno pršalo, avenidu zaplavilo a nikto nemohol prejsť.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "llovía", "fuerte", ",", "la", "avenida", "se", "inundaba", "y", "nadie", "podía", "pasar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "podía",
+        "lemma": "poder",
+        "hint": "poder · él · imperfecto",
+        "distractors": ["puede", "pudo", "podrán"]
+      }
+    ]
+  },
+  {
+    "id": "s1087",
+    "es": "Al salir del metro, un ambulante me vendió un paraguas carísimo.",
+    "sk": "Pri východe z metra mi pouličný predavač predal predražený dáždnik.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["preterito"],
+    "tokens": ["Al", "salir", "del", "metro", ",", "un", "ambulante", "me", "vendió", "un", "paraguas", "carísimo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "vendió",
+        "lemma": "vender",
+        "hint": "vender · él · pretérito",
+        "distractors": ["vende", "vendí", "vendía"]
+      }
+    ]
+  },
+  {
+    "id": "s1088",
+    "es": "La vialidad está tan mal planeada que hasta los taxistas se pierden.",
+    "sk": "Cestná sieť je tak zle naplánovaná, že sa v nej strácajú aj taxikári.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["presente"],
+    "tokens": ["La", "vialidad", "está", "tan", "mal", "planeada", "que", "hasta", "los", "taxistas", "se", "pierden", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "pierden",
+        "lemma": "perderse",
+        "hint": "perderse · ellos · presente",
+        "distractors": ["pierdo", "perdieron", "perdían"]
+      }
+    ]
   }
 ]

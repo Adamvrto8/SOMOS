@@ -1027,5 +1027,395 @@
         "distractors": ["está", "son", "están"]
       }
     ]
+  },
+  {
+    "id": "s1178",
+    "es": "Mis hijos no comen verduras.",
+    "sk": "Deti nejedia zeleninu.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "no", "comen", "verduras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "comen",
+        "lemma": "comer",
+        "hint": "comer · ellos · presente",
+        "distractors": ["como", "come", "comieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1179",
+    "es": "Cuando era chico, odiaba la cebolla; ahora me encanta.",
+    "sk": "Ako malý som nenávidel cibuľu; teraz ju zbožňujem.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "era", "chico", ",", "odiaba", "la", "cebolla", ";", "ahora", "me", "encanta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "odiaba",
+        "lemma": "odiar",
+        "hint": "odiar · yo · imperfecto",
+        "distractors": ["odio", "odié", "odiaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1180",
+    "es": "¿Cuánto le dejaste de propina al mesero?",
+    "sk": "Koľko si nechal čašníkovi ako prepitné?",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Cuánto", "le", "dejaste", "de", "propina", "al", "mesero", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dejaste",
+        "lemma": "dejar",
+        "hint": "dejar · tú · pretérito",
+        "distractors": ["dejas", "dejó", "dejabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1181",
+    "es": "Prefiero cocinar en casa porque en los restaurantes todo es muy grasoso.",
+    "sk": "Radšej varím doma, lebo v reštauráciách je všetko veľmi mastné.",
+    "level": "B1",
+    "topics": ["food"],
+    "tokens": ["Prefiero", "cocinar", "en", "casa", "porque", "en", "los", "restaurantes", "todo", "es", "muy", "grasoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "grasoso",
+        "lemma": "grasoso",
+        "hint": "mastný",
+        "distractors": ["nutritivo", "vegetariano", "sabroso"]
+      }
+    ]
+  },
+  {
+    "id": "s1182",
+    "es": "Mientras mi mamá hacía las tortillas, yo preparaba la salsa.",
+    "sk": "Kým mama robila tortilly, ja som pripravoval salsu.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "mi", "mamá", "hacía", "las", "tortillas", ",", "yo", "preparaba", "la", "salsa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "preparaba",
+        "lemma": "preparar",
+        "hint": "preparar · yo · imperfecto",
+        "distractors": ["preparo", "preparé", "preparaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1183",
+    "es": "Nos quedamos de sobremesa hasta las seis.",
+    "sk": "Po jedle sme ostali sedieť pri stole až do šiestej.",
+    "level": "B1",
+    "topics": ["food"],
+    "tokens": ["Nos", "quedamos", "de", "sobremesa", "hasta", "las", "seis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sobremesa",
+        "lemma": "sobremesa",
+        "hint": "posedenie po jedle",
+        "distractors": ["botana", "porción", "cucharada"]
+      }
+    ]
+  },
+  {
+    "id": "s1184",
+    "es": "Pedí el pozole sin saber que llevaba tanto chile.",
+    "sk": "Objednal som si pozole a nevedel som, že je v ňom toľko čili.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Pedí", "el", "pozole", "sin", "saber", "que", "llevaba", "tanto", "chile", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pedí",
+        "lemma": "pedir",
+        "hint": "pedir · yo · pretérito",
+        "distractors": ["Pido", "Pidió", "Pedía"]
+      }
+    ]
+  },
+  {
+    "id": "s1185",
+    "es": "Para la posada vamos a hacer tamales; ¿nos ayudas a envolverlos?",
+    "sk": "Na posadu budeme robiť tamales; pomôžeš nám ich zabaliť?",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Para", "la", "posada", "vamos", "a", "hacer", "tamales", ";", "¿", "nos", "ayudas", "a", "envolverlos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "ayudas",
+        "lemma": "ayudar",
+        "hint": "ayudar · tú · presente",
+        "distractors": ["ayudo", "ayudaste", "ayudabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1186",
+    "es": "Creo que la comida chatarra debería costar más que la fruta.",
+    "sk": "Myslím, že nezdravé jedlo by malo stáť viac než ovocie.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "la", "comida", "chatarra", "debería", "costar", "más", "que", "la", "fruta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Creo",
+        "lemma": "creer",
+        "hint": "creer · yo · presente",
+        "distractors": ["Crees", "Creí", "Creía"]
+      }
+    ]
+  },
+  {
+    "id": "s1187",
+    "es": "Antes no me gustaba el café amargo, pero me acostumbré.",
+    "sk": "Predtým mi nechutila horká káva, ale zvykol som si.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Antes", "no", "me", "gustaba", "el", "café", "amargo", ",", "pero", "me", "acostumbré", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "acostumbré",
+        "lemma": "acostumbrarse",
+        "hint": "acostumbrarse · yo · pretérito",
+        "distractors": ["acostumbro", "acostumbró", "acostumbraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1188",
+    "es": "Me llené de tacos y luego no podía ni moverme.",
+    "sk": "Napchal som sa tacos a potom som sa nemohol ani pohnúť.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Me", "llené", "de", "tacos", "y", "luego", "no", "podía", "ni", "moverme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "podía",
+        "lemma": "poder",
+        "hint": "poder · yo · imperfecto",
+        "distractors": ["puedo", "pude", "podían"]
+      }
+    ]
+  },
+  {
+    "id": "s1189",
+    "es": "Échale tantito más chile, que esto no pica nada.",
+    "sk": "Pridaj ešte trošku čili, toto vôbec nepáli.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Échale", "tantito", "más", "chile", ",", "que", "esto", "no", "pica", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tantito",
+        "lemma": "tantito",
+        "hint": "trošku",
+        "distractors": ["nunca", "ayer", "lejos"]
+      }
+    ]
+  },
+  {
+    "id": "s1190",
+    "es": "Si me invitas a comer, yo pongo el postre.",
+    "sk": "Ak ma pozveš na obed, ja donesiem dezert.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "me", "invitas", "a", "comer", ",", "yo", "pongo", "el", "postre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "pongo",
+        "lemma": "poner",
+        "hint": "poner · yo · presente",
+        "distractors": ["pones", "puse", "ponía"]
+      }
+    ]
+  },
+  {
+    "id": "s1191",
+    "es": "En la boda sirvieron una barbacoa que estaba para chuparse los dedos.",
+    "sk": "Na svadbe podávali barbacoa, že sa človek až oblizoval.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "la", "boda", "sirvieron", "una", "barbacoa", "que", "estaba", "para", "chuparse", "los", "dedos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sirvieron",
+        "lemma": "servir",
+        "hint": "servir · ellos · pretérito",
+        "distractors": ["sirven", "sirvió", "servían"]
+      }
+    ]
+  },
+  {
+    "id": "s1192",
+    "es": "Nunca había probado los chapulines, y la verdad me sorprendieron.",
+    "sk": "Nikdy predtým som neochutnal kobylky a úprimne ma prekvapili.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Nunca", "había", "probado", "los", "chapulines", ",", "y", "la", "verdad", "me", "sorprendieron", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "chapulines",
+        "lemma": "chapulín",
+        "hint": "kobylky",
+        "distractors": ["molcajetes", "comales", "cuchillos"]
+      }
+    ]
+  },
+  {
+    "id": "s1193",
+    "es": "Mi doctor me sugirió que evitara los lácteos y el azúcar.",
+    "sk": "Lekár mi odporučil, aby som sa vyhýbal mliečnym výrobkom a cukru.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "doctor", "me", "sugirió", "que", "evitara", "los", "lácteos", "y", "el", "azúcar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sugirió",
+        "lemma": "sugerir",
+        "hint": "sugerir · él · pretérito",
+        "distractors": ["sugiere", "sugirieron", "sugería"]
+      }
+    ]
+  },
+  {
+    "id": "s1194",
+    "es": "Ese restaurante tiene fama, pero la neta no vale lo que cuesta.",
+    "sk": "Tá reštaurácia má dobré meno, ale úprimne nestojí za tie peniaze.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Ese", "restaurante", "tiene", "fama", ",", "pero", "la", "neta", "no", "vale", "lo", "que", "cuesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fama",
+        "lemma": "fama",
+        "hint": "povesť",
+        "distractors": ["pizca", "olla", "cuchara"]
+      }
+    ]
+  },
+  {
+    "id": "s1195",
+    "es": "La gastronomía oaxaqueña destaca por sus siete moles.",
+    "sk": "Oaxacká gastronómia vyniká svojimi siedmimi druhmi mole.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["La", "gastronomía", "oaxaqueña", "destaca", "por", "sus", "siete", "moles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "destaca",
+        "lemma": "destacar",
+        "hint": "destacar · ella · presente",
+        "distractors": ["destaco", "destacó", "destacaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1196",
+    "es": "De tanto recalentar el guisado, se quedó bien seco.",
+    "sk": "Ako sme to jedlo stále prihrievali, úplne vyschlo.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["De", "tanto", "recalentar", "el", "guisado", ",", "se", "quedó", "bien", "seco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "quedó",
+        "lemma": "quedarse",
+        "hint": "quedarse · él · pretérito",
+        "distractors": ["queda", "quedaron", "quedaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1197",
+    "es": "Me rugían las tripas, así que paramos en un puesto de quesadillas.",
+    "sk": "Kručalo mi v bruchu, tak sme zastavili pri stánku s quesadillami.",
+    "level": "B2",
+    "topics": ["food"],
+    "tokens": ["Me", "rugían", "las", "tripas", ",", "así", "que", "paramos", "en", "un", "puesto", "de", "quesadillas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "puesto",
+        "lemma": "puesto",
+        "hint": "stánok",
+        "distractors": ["molcajete", "comal", "lácteo"]
+      }
+    ]
+  },
+  {
+    "id": "s1198",
+    "es": "Por más que lo intento, mis tamales nunca quedan como los de mi abuela.",
+    "sk": "Nech sa snažím akokoľvek, tamales mi nikdy nevyjdú ako babke.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Por", "más", "que", "lo", "intento", ",", "mis", "tamales", "nunca", "quedan", "como", "los", "de", "mi", "abuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "intento",
+        "lemma": "intentar",
+        "hint": "intentar · yo · presente",
+        "distractors": ["intentas", "intenté", "intentaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1199",
+    "es": "El chile habanero es tan picoso que hasta me hizo llorar.",
+    "sk": "Habanero je také pálivé, že ma až rozplakalo.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "chile", "habanero", "es", "tan", "picoso", "que", "hasta", "me", "hizo", "llorar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · él · pretérito",
+        "distractors": ["hace", "hacía", "hicieron"]
+      }
+    ]
   }
 ]

@@ -864,5 +864,576 @@
         "distractors": ["Adquieren", "Adquirí", "Adquiría"]
       }
     ]
+  },
+  {
+    "id": "s1418",
+    "es": "¿A cuánto está el kilo de tomate?",
+    "sk": "Za koľko je kilo paradajok?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "tokens": ["¿", "A", "cuánto", "está", "el", "kilo", "de", "tomate", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "kilo",
+        "lemma": "kilo",
+        "hint": "kilo",
+        "distractors": ["vaso", "metro", "litro"]
+      }
+    ]
+  },
+  {
+    "id": "s1419",
+    "es": "Hoy la tienda está cerrada.",
+    "sk": "Obchod je dnes zatvorený.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Hoy", "la", "tienda", "está", "cerrada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "son", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s1420",
+    "es": "No necesito bolsa, gracias.",
+    "sk": "Tašku nepotrebujem, ďakujem.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["No", "necesito", "bolsa", ",", "gracias", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["necesité", "necesitamos", "necesitarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1421",
+    "es": "¿Venden pan dulce aquí?",
+    "sk": "Predávate tu sladké pečivo?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Venden", "pan", "dulce", "aquí", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Venden",
+        "lemma": "vender",
+        "hint": "vender · ustedes · presente",
+        "distractors": ["Vendieron", "Vendo", "Venderemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1422",
+    "es": "Mis papás compran fruta en el mercado.",
+    "sk": "Rodičia kupujú ovocie na trhu.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "papás", "compran", "fruta", "en", "el", "mercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compran",
+        "lemma": "comprar",
+        "hint": "comprar · ellos · presente",
+        "distractors": ["compraron", "compro", "compraremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1423",
+    "es": "El precio está en la etiqueta.",
+    "sk": "Cena je na etikete.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "tokens": ["El", "precio", "está", "en", "la", "etiqueta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "precio",
+        "lemma": "precio",
+        "hint": "cena",
+        "distractors": ["regalo", "kilo", "dinero"]
+      }
+    ]
+  },
+  {
+    "id": "s1424",
+    "es": "¿Pagas tú o pago yo?",
+    "sk": "Platíš ty, alebo ja?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Pagas", "tú", "o", "pago", "yo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Pagas",
+        "lemma": "pagar",
+        "hint": "pagar · tú · presente",
+        "distractors": ["Pagaste", "Pago", "Pagarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1425",
+    "es": "Ayer hice una fila larguísima en el banco.",
+    "sk": "Včera som v banke stál v strašne dlhom rade.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "hice", "una", "fila", "larguísima", "en", "el", "banco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hice",
+        "lemma": "hacer",
+        "hint": "hacer · yo · pretérito",
+        "distractors": ["hago", "hicimos", "hacían"]
+      }
+    ]
+  },
+  {
+    "id": "s1426",
+    "es": "¿Guardaste el recibo de la tele?",
+    "sk": "Odložil si bloček od telky?",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Guardaste", "el", "recibo", "de", "la", "tele", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Guardaste",
+        "lemma": "guardar",
+        "hint": "guardar · tú · pretérito",
+        "distractors": ["Guardas", "Guardé", "Guardaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1427",
+    "es": "La señora de la tiendita siempre nos regalaba dulces.",
+    "sk": "Pani z obchodíka nám vždy dávala cukríky.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["imperfecto"],
+    "tokens": ["La", "señora", "de", "la", "tiendita", "siempre", "nos", "regalaba", "dulces", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "regalaba",
+        "lemma": "regalar",
+        "hint": "regalar · ella · imperfecto",
+        "distractors": ["regaló", "regalaban", "regalan"]
+      }
+    ]
+  },
+  {
+    "id": "s1428",
+    "es": "Mañana pasaré por la panadería.",
+    "sk": "Zajtra sa zastavím v pekárni.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "pasaré", "por", "la", "panadería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pasaré",
+        "lemma": "pasar",
+        "hint": "pasar · yo · futuro",
+        "distractors": ["paso", "pasaremos", "pasaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1429",
+    "es": "Estamos haciendo la lista del súper.",
+    "sk": "Píšeme nákupný zoznam.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "haciendo", "la", "lista", "del", "súper", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haciendo",
+        "lemma": "hacer",
+        "hint": "hacer · gerundio",
+        "distractors": ["hace", "hacer", "hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s1430",
+    "es": "¿Me trae una talla más grande, por favor?",
+    "sk": "Doniesli by ste mi, prosím, väčšiu veľkosť?",
+    "level": "A2",
+    "topics": ["shopping"],
+    "tokens": ["¿", "Me", "trae", "una", "talla", "más", "grande", ",", "por", "favor", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "talla",
+        "lemma": "talla",
+        "hint": "veľkosť",
+        "distractors": ["marca", "fila", "oferta"]
+      }
+    ]
+  },
+  {
+    "id": "s1431",
+    "es": "Antes comprábamos todo en el mercado de la colonia.",
+    "sk": "Kedysi sme všetko kupovali na trhu v našej štvrti.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "comprábamos", "todo", "en", "el", "mercado", "de", "la", "colonia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comprábamos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · imperfecto",
+        "distractors": ["compramos", "compraba", "compran"]
+      }
+    ]
+  },
+  {
+    "id": "s1432",
+    "es": "Pedí la factura porque la necesito para el trabajo.",
+    "sk": "Vypýtal som si faktúru, lebo ju potrebujem do práce.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Pedí", "la", "factura", "porque", "la", "necesito", "para", "el", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pedí",
+        "lemma": "pedir",
+        "hint": "pedir · yo · pretérito",
+        "distractors": ["Pido", "Pedimos", "Pedían"]
+      }
+    ]
+  },
+  {
+    "id": "s1433",
+    "es": "Esta licuadora tiene un año de garantía, así que no te preocupes.",
+    "sk": "Tento mixér má ročnú záruku, takže sa neboj.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "tokens": ["Esta", "licuadora", "tiene", "un", "año", "de", "garantía", ",", "así", "que", "no", "te", "preocupes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "garantía",
+        "lemma": "garantía",
+        "hint": "záruka",
+        "distractors": ["factura", "devolución", "queja"]
+      }
+    ]
+  },
+  {
+    "id": "s1434",
+    "es": "Si compras al mayoreo, te sale mucho más barato.",
+    "sk": "Keď kupuješ vo veľkom, vyjde ťa to oveľa lacnejšie.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "compras", "al", "mayoreo", ",", "te", "sale", "mucho", "más", "barato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compras",
+        "lemma": "comprar",
+        "hint": "comprar · tú · presente",
+        "distractors": ["compraste", "compro", "comprarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1435",
+    "es": "Me parece que esa ganga era demasiado buena para ser verdad.",
+    "sk": "Myslím, že tá výhodná ponuka bola príliš dobrá na to, aby bola pravdivá.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "tokens": ["Me", "parece", "que", "esa", "ganga", "era", "demasiado", "buena", "para", "ser", "verdad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ganga",
+        "lemma": "ganga",
+        "hint": "výhodná kúpa",
+        "distractors": ["queja", "factura", "devolución"]
+      }
+    ]
+  },
+  {
+    "id": "s1436",
+    "es": "Cuando llegué a la caja, me di cuenta de que no traía la cartera.",
+    "sk": "Keď som prišiel k pokladni, uvedomil som si, že nemám pri sebe peňaženku.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "llegué", "a", "la", "caja", ",", "me", "di", "cuenta", "de", "que", "no", "traía", "la", "cartera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "traía",
+        "lemma": "traer",
+        "hint": "traer · yo · imperfecto",
+        "distractors": ["traje", "traíamos", "traen"]
+      }
+    ]
+  },
+  {
+    "id": "s1437",
+    "es": "Prefiero comprar en línea porque no tengo que hacer fila.",
+    "sk": "Radšej nakupujem online, lebo nemusím stáť v rade.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Prefiero", "comprar", "en", "línea", "porque", "no", "tengo", "que", "hacer", "fila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["Preferí", "Preferimos", "Preferirán"]
+      }
+    ]
+  },
+  {
+    "id": "s1438",
+    "es": "Mi esposo devolvió la chamarra porque le quedaba chica.",
+    "sk": "Manžel vrátil bundu, lebo mu bola malá.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "esposo", "devolvió", "la", "chamarra", "porque", "le", "quedaba", "chica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "devolvió",
+        "lemma": "devolver",
+        "hint": "devolver · él · pretérito",
+        "distractors": ["devuelve", "devolví", "devolvían"]
+      }
+    ]
+  },
+  {
+    "id": "s1439",
+    "es": "Esperaré al Buen Fin, porque ahorita todo está carísimo.",
+    "sk": "Počkám na výpredaje Buen Fin, lebo teraz je všetko strašne drahé.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["futuro"],
+    "tokens": ["Esperaré", "al", "Buen", "Fin", ",", "porque", "ahorita", "todo", "está", "carísimo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esperaré",
+        "lemma": "esperar",
+        "hint": "esperar · yo · futuro",
+        "distractors": ["Espero", "Esperaremos", "Esperaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1440",
+    "es": "No te dejes engañar: en ese puesto siempre les cobran de más a los turistas.",
+    "sk": "Nenechaj sa oklamať: v tom stánku turistom vždy účtujú viac.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["No", "te", "dejes", "engañar", ":", "en", "ese", "puesto", "siempre", "les", "cobran", "de", "más", "a", "los", "turistas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "cobran",
+        "lemma": "cobrar",
+        "hint": "cobrar · ellos · presente",
+        "distractors": ["cobraron", "cobro", "cobraremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1441",
+    "es": "Le pedí al vendedor que me hiciera un descuentito y aceptó.",
+    "sk": "Poprosil som predavača, aby mi trochu zľavil, a súhlasil.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "pedí", "al", "vendedor", "que", "me", "hiciera", "un", "descuentito", "y", "aceptó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "aceptó",
+        "lemma": "aceptar",
+        "hint": "aceptar · él · pretérito",
+        "distractors": ["acepta", "acepté", "aceptaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1442",
+    "es": "Con la inflación, el sueldo ya no nos alcanza para nada.",
+    "sk": "S tou infláciou nám výplata už na nič nestačí.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Con", "la", "inflación", ",", "el", "sueldo", "ya", "no", "nos", "alcanza", "para", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "alcanza",
+        "lemma": "alcanzar",
+        "hint": "alcanzar · él · presente",
+        "distractors": ["alcanzó", "alcanzo", "alcanzarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1443",
+    "es": "Todavía estoy pagando la sala que compramos a plazos.",
+    "sk": "Ešte stále splácam sedačku, ktorú sme kúpili na splátky.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["progresivo"],
+    "tokens": ["Todavía", "estoy", "pagando", "la", "sala", "que", "compramos", "a", "plazos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pagando",
+        "lemma": "pagar",
+        "hint": "pagar · gerundio",
+        "distractors": ["paga", "pagar", "pagó"]
+      }
+    ]
+  },
+  {
+    "id": "s1444",
+    "es": "Sin comprobante de compra no te pueden hacer válida la garantía.",
+    "sk": "Bez dokladu o kúpe ti záruku neuznajú.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "tokens": ["Sin", "comprobante", "de", "compra", "no", "te", "pueden", "hacer", "válida", "la", "garantía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comprobante",
+        "lemma": "comprobante",
+        "hint": "doklad",
+        "distractors": ["enganche", "consumismo", "regateo"]
+      }
+    ]
+  },
+  {
+    "id": "s1445",
+    "es": "Al final, me salió más caro el caldo que las albóndigas.",
+    "sk": "Nakoniec ma oprava vyšla drahšie ako celá vec.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Al", "final", ",", "me", "salió", "más", "caro", "el", "caldo", "que", "las", "albóndigas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "salió",
+        "lemma": "salir",
+        "hint": "salir · él · pretérito",
+        "distractors": ["sale", "salí", "salían"]
+      }
+    ]
+  },
+  {
+    "id": "s1446",
+    "es": "Ahorramos durante meses para darnos ese gustito.",
+    "sk": "Mesiace sme šetrili, aby sme si dopriali túto malú radosť.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Ahorramos", "durante", "meses", "para", "darnos", "ese", "gustito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ahorramos",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · nosotros · pretérito",
+        "distractors": ["Ahorré", "Ahorraron", "Ahorraban"]
+      }
+    ]
+  },
+  {
+    "id": "s1447",
+    "es": "Me da coraje que nos vendan productos caducados.",
+    "sk": "Štve ma, že nám predávajú prošlé výrobky.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "da", "coraje", "que", "nos", "vendan", "productos", "caducados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · él · presente",
+        "distractors": ["dio", "doy", "darán"]
+      }
+    ]
+  },
+  {
+    "id": "s1448",
+    "es": "Reclamé ante la Profeco porque no me quisieron respetar el precio.",
+    "sk": "Sťažoval som sa na úrade na ochranu spotrebiteľa, lebo mi nechceli dodržať cenu.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Reclamé", "ante", "la", "Profeco", "porque", "no", "me", "quisieron", "respetar", "el", "precio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reclamé",
+        "lemma": "reclamar",
+        "hint": "reclamar · yo · pretérito",
+        "distractors": ["Reclamo", "Reclamamos", "Reclamaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1449",
+    "es": "Siempre que voy al tianguis termino gastando más de la cuenta.",
+    "sk": "Vždy, keď idem na tianguis, nakoniec minem viac, než som chcel.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "que", "voy", "al", "tianguis", "termino", "gastando", "más", "de", "la", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "termino",
+        "lemma": "terminar",
+        "hint": "terminar · yo · presente",
+        "distractors": ["terminé", "terminamos", "terminarán"]
+      }
+    ]
   }
 ]

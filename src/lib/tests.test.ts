@@ -38,7 +38,7 @@ describe('which tests exist', () => {
 
   it('has a topic test only where the topic has enough content', () => {
     expect(hasTest({ level: 'A1', topic: 'food' })).toBe(true)
-    expect(hasTest({ level: 'A1', topic: 'tech' })).toBe(false) // no A1 words or sentences
+    expect(hasTest({ level: 'A1', topic: 'tech' })).toBe(true) // no A1 words, but A1 sentences
     expect(hasTest({ level: 'A1', topic: 'nope' })).toBe(false)
   })
 
@@ -50,7 +50,7 @@ describe('which tests exist', () => {
     const ids: TestId[] = [{ level: 'A1' }, { level: 'B1', topic: 'work' }]
     for (const id of ids) expect(parseTestKey(testKey(id))).toEqual(id)
     expect(parseTestKey('C2')).toBeUndefined()
-    expect(parseTestKey('tech:A1')).toBeUndefined()
+    expect(parseTestKey('nope:A1')).toBeUndefined()
   })
 })
 
@@ -106,11 +106,11 @@ describe('createTest', () => {
     expect(second).not.toEqual(first)
   })
 
-  it('tops a small topic up from the level below', () => {
-    // Pozdravy has no A2 sentences: its sentence tasks come from A1.
-    const tasks = createTest({ level: 'A2', topic: 'greetings' }, seeded(4))
+  it('gives the places of a type that runs short to the others', () => {
+    // Technológie has no A1 words: the vocabulary places go to the sentence tasks.
+    const tasks = createTest({ level: 'A1', topic: 'tech' }, seeded(4))
     expect(tasks).toHaveLength(TOPIC_TEST_SIZE)
-    expect(tasks.some((t) => 'sentence' in t && t.sentence.level === 'A1')).toBe(true)
+    expect(kinds(tasks)).not.toContain('vocab')
   })
 })
 

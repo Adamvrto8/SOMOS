@@ -862,5 +862,580 @@
         "distractors": ["agradece", "agradeció", "agradecía"]
       }
     ]
+  },
+  {
+    "id": "s1200",
+    "es": "¿Qué onda? ¿Cómo te fue en el examen?",
+    "sk": "Čau, ako ti išla skúška?",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Qué", "onda", "?", "¿", "Cómo", "te", "fue", "en", "el", "examen", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "fue",
+        "lemma": "ir",
+        "hint": "ir · él · pretérito",
+        "distractors": ["va", "iba", "fueron"]
+      }
+    ]
+  },
+  {
+    "id": "s1201",
+    "es": "Ayer conocí a tus papás, son muy amables.",
+    "sk": "Včera som spoznal tvojich rodičov, sú veľmi milí.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "conocí", "a", "tus", "papás", ",", "son", "muy", "amables", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "conocí",
+        "lemma": "conocer",
+        "hint": "conocer · yo · pretérito",
+        "distractors": ["conozco", "conoció", "conocía"]
+      }
+    ]
+  },
+  {
+    "id": "s1202",
+    "es": "¡Felicidades! Me dijeron que te casaste.",
+    "sk": "Gratulujem! Počul som, že si sa oženil.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Felicidades", "!", "Me", "dijeron", "que", "te", "casaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dijeron",
+        "lemma": "decir",
+        "hint": "decir · ellos · pretérito",
+        "distractors": ["dicen", "dijo", "decían"]
+      }
+    ]
+  },
+  {
+    "id": "s1203",
+    "es": "Cuando llegamos, nos recibieron con un abrazo.",
+    "sk": "Keď sme prišli, privítali nás objatím.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "llegamos", ",", "nos", "recibieron", "con", "un", "abrazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "recibieron",
+        "lemma": "recibir",
+        "hint": "recibir · ellos · pretérito",
+        "distractors": ["reciben", "recibió", "recibían"]
+      }
+    ]
+  },
+  {
+    "id": "s1204",
+    "es": "Gracias por todo, nunca olvidaré tu ayuda.",
+    "sk": "Vďaka za všetko, na tvoju pomoc nikdy nezabudnem.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["futuro"],
+    "tokens": ["Gracias", "por", "todo", ",", "nunca", "olvidaré", "tu", "ayuda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "olvidaré",
+        "lemma": "olvidar",
+        "hint": "olvidar · yo · futuro",
+        "distractors": ["olvido", "olvidé", "olvidarás"]
+      }
+    ]
+  },
+  {
+    "id": "s1205",
+    "es": "¡Buen viaje! Nos vemos cuando regreses.",
+    "sk": "Šťastnú cestu! Uvidíme sa, keď sa vrátiš.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "tokens": ["¡", "Buen", "viaje", "!", "Nos", "vemos", "cuando", "regreses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "viaje",
+        "lemma": "viaje",
+        "hint": "cesta",
+        "distractors": ["provecho", "gusto", "permiso"]
+      }
+    ]
+  },
+  {
+    "id": "s1206",
+    "es": "Perdón por la tardanza, el camión no llegaba.",
+    "sk": "Prepáč, že meškám, autobus stále nechodil.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Perdón", "por", "la", "tardanza", ",", "el", "camión", "no", "llegaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "llegaba",
+        "lemma": "llegar",
+        "hint": "llegar · él · imperfecto",
+        "distractors": ["llega", "llegó", "llegaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1207",
+    "es": "Le di las buenas noches a mi abuela.",
+    "sk": "Zaprial som babke dobrú noc.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "di", "las", "buenas", "noches", "a", "mi", "abuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "di",
+        "lemma": "dar",
+        "hint": "dar · yo · pretérito",
+        "distractors": ["doy", "dio", "daba"]
+      }
+    ]
+  },
+  {
+    "id": "s1208",
+    "es": "Estamos esperando a tus papás para saludarlos.",
+    "sk": "Čakáme na tvojich rodičov, aby sme ich pozdravili.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "esperando", "a", "tus", "papás", "para", "saludarlos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esperando",
+        "lemma": "esperar",
+        "hint": "esperar · gerundio",
+        "distractors": ["esperamos", "esperar", "esperé"]
+      }
+    ]
+  },
+  {
+    "id": "s1209",
+    "es": "¡Órale! No sabía que hablabas español.",
+    "sk": "No teda! Nevedel som, že hovoríš po španielsky.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["¡", "Órale", "!", "No", "sabía", "que", "hablabas", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "hablabas",
+        "lemma": "hablar",
+        "hint": "hablar · tú · imperfecto",
+        "distractors": ["hablas", "hablaste", "hablaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1210",
+    "es": "Sale, te veré mañana a las nueve.",
+    "sk": "Dobre, uvidíme sa zajtra o deviatej.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["futuro"],
+    "tokens": ["Sale", ",", "te", "veré", "mañana", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "veré",
+        "lemma": "ver",
+        "hint": "ver · yo · futuro",
+        "distractors": ["veo", "vi", "verás"]
+      }
+    ]
+  },
+  {
+    "id": "s1211",
+    "es": "Lo siento, no pude ir a tu fiesta.",
+    "sk": "Prepáč, nemohol som prísť na tvoju oslavu.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Lo", "siento", ",", "no", "pude", "ir", "a", "tu", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pude",
+        "lemma": "poder",
+        "hint": "poder · yo · pretérito",
+        "distractors": ["puedo", "pudo", "podía"]
+      }
+    ]
+  },
+  {
+    "id": "s1212",
+    "es": "¡Qué bueno que viniste! Te extrañábamos mucho.",
+    "sk": "Super, že si prišiel! Veľmi si nám chýbal.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Qué", "bueno", "que", "viniste", "!", "Te", "extrañábamos", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "viniste",
+        "lemma": "venir",
+        "hint": "venir · tú · pretérito",
+        "distractors": ["vienes", "vino", "venías"]
+      }
+    ]
+  },
+  {
+    "id": "s1213",
+    "es": "La verdad, no esperaba que vinieras a mi cumpleaños.",
+    "sk": "Úprimne, nečakal som, že prídeš na moje narodeniny.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["La", "verdad", ",", "no", "esperaba", "que", "vinieras", "a", "mi", "cumpleaños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "esperaba",
+        "lemma": "esperar",
+        "hint": "esperar · yo · imperfecto",
+        "distractors": ["espero", "esperé", "esperabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1214",
+    "es": "¿En serio te vas a vivir a Guadalajara? ¡Te vamos a extrañar!",
+    "sk": "Fakt sa sťahuješ do Guadalajary? Budeš nám chýbať!",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "En", "serio", "te", "vas", "a", "vivir", "a", "Guadalajara", "?", "¡", "Te", "vamos", "a", "extrañar", "!"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vas",
+        "lemma": "ir",
+        "hint": "ir · tú · presente",
+        "distractors": ["voy", "fuiste", "ibas"]
+      }
+    ]
+  },
+  {
+    "id": "s1215",
+    "es": "No te preocupes, a cualquiera se le olvida un nombre.",
+    "sk": "Neboj sa, meno zabudne hocikto.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["No", "te", "preocupes", ",", "a", "cualquiera", "se", "le", "olvida", "un", "nombre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "olvida",
+        "lemma": "olvidar",
+        "hint": "olvidar · él · presente",
+        "distractors": ["olvido", "olvidó", "olvidaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1216",
+    "es": "Depende de la región, pero en México casi todos se saludan de beso.",
+    "sk": "Záleží na regióne, ale v Mexiku sa skoro všetci zdravia bozkom na líce.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "tokens": ["Depende", "de", "la", "región", ",", "pero", "en", "México", "casi", "todos", "se", "saludan", "de", "beso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "beso",
+        "lemma": "beso",
+        "hint": "bozk",
+        "distractors": ["nombre", "gusto", "permiso"]
+      }
+    ]
+  },
+  {
+    "id": "s1217",
+    "es": "Cuando llegué a la oficina, todos estaban cantando las mañanitas.",
+    "sk": "Keď som prišiel do kancelárie, všetci spievali Las Mañanitas.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "llegué", "a", "la", "oficina", ",", "todos", "estaban", "cantando", "las", "mañanitas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llegué",
+        "lemma": "llegar",
+        "hint": "llegar · yo · pretérito",
+        "distractors": ["llego", "llegó", "llegaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1218",
+    "es": "Te agradezco mucho que me hayas recibido en tu casa.",
+    "sk": "Veľmi ti ďakujem, že si ma prijal u seba doma.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "agradezco", "mucho", "que", "me", "hayas", "recibido", "en", "tu", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "agradezco",
+        "lemma": "agradecer",
+        "hint": "agradecer · yo · presente",
+        "distractors": ["agradeces", "agradecí", "agradecía"]
+      }
+    ]
+  },
+  {
+    "id": "s1219",
+    "es": "Ándale, quédate a cenar, mi mamá preparó mucha comida.",
+    "sk": "No tak, zostaň na večeru, mama navarila kopu jedla.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Ándale", ",", "quédate", "a", "cenar", ",", "mi", "mamá", "preparó", "mucha", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "preparó",
+        "lemma": "preparar",
+        "hint": "preparar · ella · pretérito",
+        "distractors": ["prepara", "prepararon", "preparaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1220",
+    "es": "Si vienes a la ciudad, avísame y nos tomamos un café.",
+    "sk": "Ak prídeš do mesta, daj mi vedieť a zájdeme na kávu.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "vienes", "a", "la", "ciudad", ",", "avísame", "y", "nos", "tomamos", "un", "café", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "tomamos",
+        "lemma": "tomar",
+        "hint": "tomar · nosotros · presente",
+        "distractors": ["tomo", "tomaron", "tomábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1221",
+    "es": "¡No manches! Hace siglos que no te veía, estás igualito.",
+    "sk": "No to snáď! Roky som ťa nevidel a vôbec si sa nezmenil.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["ser-estar"],
+    "tokens": ["¡", "No", "manches", "!", "Hace", "siglos", "que", "no", "te", "veía", ",", "estás", "igualito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "ser/estar · tú · presente",
+        "why": "state",
+        "distractors": ["eres", "está", "estabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1222",
+    "es": "Bueno, ya me voy, que mañana madrugo.",
+    "sk": "Tak ja už idem, zajtra vstávam skoro.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Bueno", ",", "ya", "me", "voy", ",", "que", "mañana", "madrugo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "madrugo",
+        "lemma": "madrugar",
+        "hint": "madrugar · yo · presente",
+        "distractors": ["madrugas", "madrugué", "madrugaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1223",
+    "es": "Se hizo el que no me conocía cuando lo saludé.",
+    "sk": "Keď som ho pozdravil, robil, že ma nepozná.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Se", "hizo", "el", "que", "no", "me", "conocía", "cuando", "lo", "saludé", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "conocía",
+        "lemma": "conocer",
+        "hint": "conocer · él · imperfecto",
+        "distractors": ["conoce", "conoció", "conocían"]
+      }
+    ]
+  },
+  {
+    "id": "s1224",
+    "es": "Se me hizo tarde y ni me despedí de tus papás.",
+    "sk": "Zdržal som sa a ani som sa nerozlúčil s tvojimi rodičmi.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "hizo", "tarde", "y", "ni", "me", "despedí", "de", "tus", "papás", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · él · pretérito",
+        "distractors": ["hace", "hacía", "hicieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1225",
+    "es": "Al rato paso a saludar a tu abuelita, si no es molestia.",
+    "sk": "O chvíľu sa zastavím pozdraviť babičku, ak to nevadí.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Al", "rato", "paso", "a", "saludar", "a", "tu", "abuelita", ",", "si", "no", "es", "molestia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "paso",
+        "lemma": "pasar",
+        "hint": "pasar · yo · presente",
+        "distractors": ["pasas", "pasé", "pasaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1226",
+    "es": "Échale ganas en tu nueva chamba, ya verás que te irá bien.",
+    "sk": "Daj do novej roboty všetko, uvidíš, že sa ti bude dariť.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["futuro"],
+    "tokens": ["Échale", "ganas", "en", "tu", "nueva", "chamba", ",", "ya", "verás", "que", "te", "irá", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "verás",
+        "lemma": "ver",
+        "hint": "ver · tú · futuro",
+        "distractors": ["ves", "viste", "veré"]
+      }
+    ]
+  },
+  {
+    "id": "s1227",
+    "es": "Ay, qué oso, no me acordaba de tu nombre.",
+    "sk": "Jaj, to je trápne, nevedel som si spomenúť na tvoje meno.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Ay", ",", "qué", "oso", ",", "no", "me", "acordaba", "de", "tu", "nombre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "acordaba",
+        "lemma": "acordarse",
+        "hint": "acordarse · yo · imperfecto",
+        "distractors": ["acuerdo", "acordé", "acordabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1228",
+    "es": "Salúdame a tu jefa y dile que pronto la visito.",
+    "sk": "Pozdravuj mamu a povedz jej, že ju čoskoro navštívim.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["presente"],
+    "tokens": ["Salúdame", "a", "tu", "jefa", "y", "dile", "que", "pronto", "la", "visito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "visito",
+        "lemma": "visitar",
+        "hint": "visitar · yo · presente",
+        "distractors": ["visitas", "visité", "visitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1229",
+    "es": "Ya ni la amuelas, me dejaste plantado otra vez.",
+    "sk": "No to už je vrchol, zase si ma nechal čakať.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["preterito"],
+    "tokens": ["Ya", "ni", "la", "amuelas", ",", "me", "dejaste", "plantado", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "dejaste",
+        "lemma": "dejar",
+        "hint": "dejar · tú · pretérito",
+        "distractors": ["dejas", "dejó", "dejabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1230",
+    "es": "¿A poco ya te vas? Apenas son las diez.",
+    "sk": "Fakt už ideš? Veď je len desať.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["ser-estar"],
+    "tokens": ["¿", "A", "poco", "ya", "te", "vas", "?", "Apenas", "son", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "son",
+        "lemma": "ser",
+        "hint": "ser/estar · ellas · presente",
+        "why": "time",
+        "distractors": ["es", "están", "está"]
+      }
+    ]
+  },
+  {
+    "id": "s1231",
+    "es": "Fue un gusto platicar contigo, a ver cuándo nos echamos un café.",
+    "sk": "Rád som s tebou pokecal, uvidíme, kedy si dáme kávu.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "tokens": ["Fue", "un", "gusto", "platicar", "contigo", ",", "a", "ver", "cuándo", "nos", "echamos", "un", "café", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gusto",
+        "lemma": "gusto",
+        "hint": "potešenie",
+        "distractors": ["permiso", "viaje", "provecho"]
+      }
+    ]
   }
 ]

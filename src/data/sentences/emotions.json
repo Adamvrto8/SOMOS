@@ -916,5 +916,522 @@
         "distractors": ["rincón", "rumor", "calor"]
       }
     ]
+  },
+  {
+    "id": "s1125",
+    "es": "Hoy estoy tranquilo, no tengo prisa.",
+    "sk": "Dnes som pokojný, neponáhľam sa.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Hoy", "estoy", "tranquilo", ",", "no", "tengo", "prisa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estoy",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · presente",
+        "why": "state",
+        "distractors": ["soy", "estás", "estaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1126",
+    "es": "¿Estás enojado conmigo?",
+    "sk": "Hneváš sa na mňa?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["¿", "Estás", "enojado", "conmigo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "enojado",
+        "lemma": "enojado",
+        "hint": "nahnevaný",
+        "distractors": ["abierto", "barato", "rojo"]
+      }
+    ]
+  },
+  {
+    "id": "s1127",
+    "es": "Mi abuela es una persona muy amable.",
+    "sk": "Babka je veľmi milý človek.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "abuela", "es", "una", "persona", "muy", "amable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "trait",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s1128",
+    "es": "Hay mucho amor en esta familia.",
+    "sk": "V tejto rodine je veľa lásky.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["Hay", "mucho", "amor", "en", "esta", "familia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "amor",
+        "lemma": "amor",
+        "hint": "láska",
+        "distractors": ["mesa", "ropa", "calle"]
+      }
+    ]
+  },
+  {
+    "id": "s1129",
+    "es": "Mi papá siempre canta cuando está feliz.",
+    "sk": "Otec si vždy spieva, keď má dobrú náladu.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "papá", "siempre", "canta", "cuando", "está", "feliz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "canta",
+        "lemma": "cantar",
+        "hint": "cantar · él · presente",
+        "distractors": ["cantamos", "cantó", "cantaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1130",
+    "es": "¿Por qué lloras? ¿Qué te pasa?",
+    "sk": "Prečo plačeš? Čo sa deje?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Por", "qué", "lloras", "?", "¿", "Qué", "te", "pasa", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "lloras",
+        "lemma": "llorar",
+        "hint": "llorar · tú · presente",
+        "distractors": ["llora", "lloraste", "lloraban"]
+      }
+    ]
+  },
+  {
+    "id": "s1131",
+    "es": "Ella sonríe cuando ve a su hijo.",
+    "sk": "Usmieva sa, keď vidí syna.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Ella", "sonríe", "cuando", "ve", "a", "su", "hijo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ve",
+        "lemma": "ver",
+        "hint": "ver · ella · presente",
+        "distractors": ["vemos", "vio", "veía"]
+      }
+    ]
+  },
+  {
+    "id": "s1132",
+    "es": "Mi hermana se siente sola en la ciudad.",
+    "sk": "Sestra sa v meste cíti osamelá.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "se", "siente", "sola", "en", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "siente",
+        "lemma": "sentirse",
+        "hint": "sentirse · ella · presente",
+        "distractors": ["sentimos", "sintió", "sentía"]
+      }
+    ]
+  },
+  {
+    "id": "s1133",
+    "es": "Odio los lunes, ¡qué aburrido!",
+    "sk": "Neznášam pondelky, aká nuda!",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["Odio", "los", "lunes", ",", "¡", "qué", "aburrido", "!"],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "aburrido",
+        "lemma": "aburrido",
+        "hint": "nudný",
+        "distractors": ["barato", "cerca", "rápido"]
+      }
+    ]
+  },
+  {
+    "id": "s1134",
+    "es": "¿Tienes miedo de los perros?",
+    "sk": "Bojíš sa psov?",
+    "level": "A1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tienes", "miedo", "de", "los", "perros", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["Tiene", "Tuviste", "Tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1135",
+    "es": "Necesito un abrazo, estoy triste.",
+    "sk": "Potrebujem objatie, som smutný.",
+    "level": "A1",
+    "topics": ["emotions"],
+    "tokens": ["Necesito", "un", "abrazo", ",", "estoy", "triste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abrazo",
+        "lemma": "abrazo",
+        "hint": "objatie",
+        "distractors": ["carro", "plato", "libro"]
+      }
+    ]
+  },
+  {
+    "id": "s1136",
+    "es": "Cuando vi el regalo, me puse muy contento.",
+    "sk": "Keď som uvidel darček, veľmi som sa potešil.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "vi", "el", "regalo", ",", "me", "puse", "muy", "contento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "puse",
+        "lemma": "ponerse",
+        "hint": "ponerse · yo · pretérito",
+        "distractors": ["pusiste", "pongo", "pondremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1137",
+    "es": "De niño tenía miedo de los payasos.",
+    "sk": "Ako dieťa som sa bál klaunov.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niño", "tenía", "miedo", "de", "los", "payasos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tenías", "tengo", "tenemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1138",
+    "es": "Mi abuelo se enojará si llegamos tarde.",
+    "sk": "Dedko sa nahnevá, ak prídeme neskoro.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["futuro"],
+    "tokens": ["Mi", "abuelo", "se", "enojará", "si", "llegamos", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enojará",
+        "lemma": "enojarse",
+        "hint": "enojarse · él · futuro",
+        "distractors": ["enojaremos", "enoja", "enojé"]
+      }
+    ]
+  },
+  {
+    "id": "s1139",
+    "es": "Le tengo mucha confianza a mi hermano mayor.",
+    "sk": "Staršiemu bratovi veľmi dôverujem.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Le", "tengo", "mucha", "confianza", "a", "mi", "hermano", "mayor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "confianza",
+        "lemma": "confianza",
+        "hint": "dôvera",
+        "distractors": ["soledad", "alegría", "sorpresa"]
+      }
+    ]
+  },
+  {
+    "id": "s1140",
+    "es": "Estaba celoso porque mi novia platicaba mucho con su ex.",
+    "sk": "Žiarlil som, lebo sa priateľka veľa rozprávala so svojím bývalým.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Estaba", "celoso", "porque", "mi", "novia", "platicaba", "mucho", "con", "su", "ex", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "platicaba",
+        "lemma": "platicar",
+        "hint": "platicar · ella · imperfecto",
+        "distractors": ["platicábamos", "platica", "platico"]
+      }
+    ]
+  },
+  {
+    "id": "s1141",
+    "es": "Cuando supe la noticia, me sentí muy agradecido con todos.",
+    "sk": "Keď som sa dozvedel tú správu, cítil som sa všetkým veľmi vďačný.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Cuando", "supe", "la", "noticia", ",", "me", "sentí", "muy", "agradecido", "con", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "agradecido",
+        "lemma": "agradecido",
+        "hint": "vďačný",
+        "distractors": ["celoso", "egoísta", "flojo"]
+      }
+    ]
+  },
+  {
+    "id": "s1142",
+    "es": "Hay que tener paciencia con los niños pequeños.",
+    "sk": "S malými deťmi treba mať trpezlivosť.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Hay", "que", "tener", "paciencia", "con", "los", "niños", "pequeños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "paciencia",
+        "lemma": "paciencia",
+        "hint": "trpezlivosť",
+        "distractors": ["ansiedad", "envidia", "culpa"]
+      }
+    ]
+  },
+  {
+    "id": "s1143",
+    "es": "No es tu culpa; a veces las cosas salen mal.",
+    "sk": "Nie je to tvoja chyba, niekedy sa veci pokazia.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["No", "es", "tu", "culpa", ";", "a", "veces", "las", "cosas", "salen", "mal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "salen",
+        "lemma": "salir",
+        "hint": "salir · ellas · presente",
+        "distractors": ["salgo", "salieron", "salía"]
+      }
+    ]
+  },
+  {
+    "id": "s1144",
+    "es": "Mi hermana sufre de ansiedad, por eso evita los lugares con mucha gente.",
+    "sk": "Sestra trpí úzkosťou, preto sa vyhýba miestam, kde je veľa ľudí.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "sufre", "de", "ansiedad", ",", "por", "eso", "evita", "los", "lugares", "con", "mucha", "gente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "evita",
+        "lemma": "evitar",
+        "hint": "evitar · ella · presente",
+        "distractors": ["evitamos", "evitó", "evitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1145",
+    "es": "Antes me daba envidia su éxito, pero ahora me alegro por él.",
+    "sk": "Kedysi som mu závidel úspech, ale teraz mu ho prajem.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "me", "daba", "envidia", "su", "éxito", ",", "pero", "ahora", "me", "alegro", "por", "él", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "daba",
+        "lemma": "dar",
+        "hint": "dar · él · imperfecto",
+        "distractors": ["dábamos", "da", "doy"]
+      }
+    ]
+  },
+  {
+    "id": "s1146",
+    "es": "Me dio mucho sentimiento que no vinieras a mi boda.",
+    "sk": "Veľmi ma zabolelo, že si neprišiel na moju svadbu.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "dio", "mucho", "sentimiento", "que", "no", "vinieras", "a", "mi", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · él · pretérito",
+        "distractors": ["dimos", "da", "daré"]
+      }
+    ]
+  },
+  {
+    "id": "s1147",
+    "es": "Me cae gordo cuando presume su dinero.",
+    "sk": "Lezie mi na nervy, keď sa chvasce peniazmi.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "cae", "gordo", "cuando", "presume", "su", "dinero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "presume",
+        "lemma": "presumir",
+        "hint": "presumir · él · presente",
+        "distractors": ["presumimos", "presumió", "presumía"]
+      }
+    ]
+  },
+  {
+    "id": "s1148",
+    "es": "Se me hizo un nudo en la garganta cuando vi a mi papá.",
+    "sk": "Keď som uvidel otca, stislo mi hrdlo.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "hizo", "un", "nudo", "en", "la", "garganta", "cuando", "vi", "a", "mi", "papá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "vi",
+        "lemma": "ver",
+        "hint": "ver · yo · pretérito",
+        "distractors": ["viste", "veo", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1149",
+    "es": "Gracias por tus palabras, me dejaste muy conmovido.",
+    "sk": "Ďakujem za tvoje slová, veľmi si ma dojal.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Gracias", "por", "tus", "palabras", ",", "me", "dejaste", "muy", "conmovido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "conmovido",
+        "lemma": "conmovido",
+        "hint": "dojatý",
+        "distractors": ["harto", "agotado", "celoso"]
+      }
+    ]
+  },
+  {
+    "id": "s1150",
+    "es": "Ando de malas desde la mañana, mejor no me hables.",
+    "sk": "Od rána mám zlú náladu, radšej na mňa nehovor.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Ando", "de", "malas", "desde", "la", "mañana", ",", "mejor", "no", "me", "hables", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ando",
+        "lemma": "andar",
+        "hint": "andar · yo · presente",
+        "distractors": ["Andas", "Anduve", "Andábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1151",
+    "es": "Me late que está celoso de su hermano menor.",
+    "sk": "Mám pocit, že žiarli na mladšieho brata.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Me", "late", "que", "está", "celoso", "de", "su", "hermano", "menor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "why": "state",
+        "distractors": ["es", "estoy", "era"]
+      }
+    ]
+  },
+  {
+    "id": "s1152",
+    "es": "Le dio el bajón después de las vacaciones y no quiere trabajar.",
+    "sk": "Po dovolenke ho chytila depka a nechce sa mu pracovať.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Le", "dio", "el", "bajón", "después", "de", "las", "vacaciones", "y", "no", "quiere", "trabajar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "quiere",
+        "lemma": "querer",
+        "hint": "querer · él · presente",
+        "distractors": ["queremos", "quiso", "quería"]
+      }
+    ]
+  },
+  {
+    "id": "s1153",
+    "es": "Me arrepiento de no haberle dicho lo que sentía.",
+    "sk": "Ľutujem, že som mu nepovedal, čo cítim.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "arrepiento", "de", "no", "haberle", "dicho", "lo", "que", "sentía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "arrepiento",
+        "lemma": "arrepentirse",
+        "hint": "arrepentirse · yo · presente",
+        "distractors": ["arrepientes", "arrepentí", "arrepentíamos"]
+      }
+    ]
   }
 ]

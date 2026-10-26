@@ -682,5 +682,614 @@
         "distractors": ["plataforma", "platos", "plantas"]
       }
     ]
+  },
+  {
+    "id": "s1450",
+    "es": "Necesito un cargador para mi celular.",
+    "sk": "Potrebujem nabíjačku na mobil.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Necesito", "un", "cargador", "para", "mi", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Necesito",
+        "lemma": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors": ["Necesitas", "Necesitamos", "Necesité"]
+      }
+    ]
+  },
+  {
+    "id": "s1451",
+    "es": "¿Tienes internet en tu casa?",
+    "sk": "Máš doma internet?",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tienes", "internet", "en", "tu", "casa", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["Tengo", "Tienen", "Tuviste"]
+      }
+    ]
+  },
+  {
+    "id": "s1452",
+    "es": "Le escribo un mensaje a mi mamá.",
+    "sk": "Píšem mame správu.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Le", "escribo", "un", "mensaje", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "escribo",
+        "lemma": "escribir",
+        "hint": "escribir · yo · presente",
+        "distractors": ["escribes", "escribimos", "escribí"]
+      }
+    ]
+  },
+  {
+    "id": "s1453",
+    "es": "La computadora está en mi cuarto.",
+    "sk": "Počítač je v mojej izbe.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "computadora", "está", "en", "mi", "cuarto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "place",
+        "distractors": ["es", "son", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1454",
+    "es": "Mi hermana ve la tele todas las noches.",
+    "sk": "Sestra pozerá telku každý večer.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "ve", "la", "tele", "todas", "las", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ve",
+        "lemma": "ver",
+        "hint": "ver · ella · presente",
+        "distractors": ["veo", "ven", "vio"]
+      }
+    ]
+  },
+  {
+    "id": "s1455",
+    "es": "Siempre tomo fotos con el celular.",
+    "sk": "Vždy fotím mobilom.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "tomo", "fotos", "con", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tomo",
+        "lemma": "tomar",
+        "hint": "tomar · yo · presente",
+        "distractors": ["tomas", "toman", "tomé"]
+      }
+    ]
+  },
+  {
+    "id": "s1456",
+    "es": "El wifi no funciona hoy.",
+    "sk": "Wifina dnes nefunguje.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["El", "wifi", "no", "funciona", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "funciona",
+        "lemma": "funcionar",
+        "hint": "funcionar · él · presente",
+        "distractors": ["funcionan", "funcionó", "funcionaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1457",
+    "es": "¿Cuál es la contraseña del wifi?",
+    "sk": "Aké je heslo na wifi?",
+    "level": "A1",
+    "topics": ["tech"],
+    "tokens": ["¿", "Cuál", "es", "la", "contraseña", "del", "wifi", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "contraseña",
+        "lemma": "contraseña",
+        "hint": "heslo",
+        "distractors": ["pantalla", "batería", "página"]
+      }
+    ]
+  },
+  {
+    "id": "s1458",
+    "es": "Mis hijos juegan videojuegos en la tableta.",
+    "sk": "Deti hrajú hry na tablete.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "juegan", "videojuegos", "en", "la", "tableta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "juegan",
+        "lemma": "jugar",
+        "hint": "jugar · ellos · presente",
+        "distractors": ["juego", "juega", "jugaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1459",
+    "es": "Leo las noticias en el celular.",
+    "sk": "Správy čítam v mobile.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Leo", "las", "noticias", "en", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Leo",
+        "lemma": "leer",
+        "hint": "leer · yo · presente",
+        "distractors": ["Lees", "Leen", "Leí"]
+      }
+    ]
+  },
+  {
+    "id": "s1460",
+    "es": "La pantalla de mi computadora es muy grande.",
+    "sk": "Obrazovka môjho počítača je veľmi veľká.",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "pantalla", "de", "mi", "computadora", "es", "muy", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "trait",
+        "distractors": ["está", "son", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1461",
+    "es": "¿Puedo usar tu computadora un momento?",
+    "sk": "Môžem na chvíľu použiť tvoj počítač?",
+    "level": "A1",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Puedo", "usar", "tu", "computadora", "un", "momento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Puedo",
+        "lemma": "poder",
+        "hint": "poder · yo · presente",
+        "distractors": ["Puedes", "Pueden", "Pude"]
+      }
+    ]
+  },
+  {
+    "id": "s1462",
+    "es": "Ayer se me olvidó el celular en el camión.",
+    "sk": "Včera som zabudol mobil v autobuse.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "se", "me", "olvidó", "el", "celular", "en", "el", "camión", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "olvidó",
+        "lemma": "olvidar",
+        "hint": "olvidar · él · pretérito",
+        "distractors": ["olvida", "olvidaron", "olvidaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1463",
+    "es": "Antes mi abuela no sabía usar la computadora.",
+    "sk": "Babka predtým nevedela pracovať s počítačom.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "mi", "abuela", "no", "sabía", "usar", "la", "computadora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sabía",
+        "lemma": "saber",
+        "hint": "saber · ella · imperfecto",
+        "distractors": ["sabe", "supo", "sabían"]
+      }
+    ]
+  },
+  {
+    "id": "s1464",
+    "es": "Estoy cargando el celular, ya casi no tiene batería.",
+    "sk": "Nabíjam mobil, už je skoro vybitý.",
+    "level": "A2",
+    "topics": ["tech"],
+    "tokens": ["Estoy", "cargando", "el", "celular", ",", "ya", "casi", "no", "tiene", "batería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "batería",
+        "lemma": "batería",
+        "hint": "batéria",
+        "distractors": ["pantalla", "contraseña", "página"]
+      }
+    ]
+  },
+  {
+    "id": "s1465",
+    "es": "Te mandé un mensaje, pero no me contestaste.",
+    "sk": "Poslal som ti správu, ale neodpísal si mi.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Te", "mandé", "un", "mensaje", ",", "pero", "no", "me", "contestaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "contestaste",
+        "lemma": "contestar",
+        "hint": "contestar · tú · pretérito",
+        "distractors": ["contestas", "contestó", "contestabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1466",
+    "es": "Mañana compraré una computadora nueva.",
+    "sk": "Zajtra si kúpim nový počítač.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "compraré", "una", "computadora", "nueva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compraré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · futuro",
+        "distractors": ["compro", "compré", "comprarás"]
+      }
+    ]
+  },
+  {
+    "id": "s1467",
+    "es": "Los niños están viendo un video en la tableta.",
+    "sk": "Deti pozerajú video na tablete.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "están", "viendo", "un", "video", "en", "la", "tableta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viendo",
+        "lemma": "ver",
+        "hint": "ver · gerundio",
+        "distractors": ["ven", "ver", "vieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1468",
+    "es": "¿Viste la foto que subí ayer?",
+    "sk": "Videl si tú fotku, čo som včera nahral?",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Viste", "la", "foto", "que", "subí", "ayer", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "subí",
+        "lemma": "subir",
+        "hint": "subir · yo · pretérito",
+        "distractors": ["subo", "subió", "subiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1469",
+    "es": "La página no abría porque no había internet.",
+    "sk": "Stránka sa neotvárala, lebo nešiel internet.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["La", "página", "no", "abría", "porque", "no", "había", "internet", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "abría",
+        "lemma": "abrir",
+        "hint": "abrir · ella · imperfecto",
+        "distractors": ["abre", "abrió", "abrían"]
+      }
+    ]
+  },
+  {
+    "id": "s1470",
+    "es": "Borré todas las fotos viejas del celular.",
+    "sk": "Vymazal som z mobilu všetky staré fotky.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Borré", "todas", "las", "fotos", "viejas", "del", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Borré",
+        "lemma": "borrar",
+        "hint": "borrar · yo · pretérito",
+        "distractors": ["Borro", "Borró", "Borraron"]
+      }
+    ]
+  },
+  {
+    "id": "s1471",
+    "es": "Mi papá siempre veía las noticias en la tele.",
+    "sk": "Otec vždy pozeral správy v telke.",
+    "level": "A2",
+    "topics": ["tech"],
+    "tokens": ["Mi", "papá", "siempre", "veía", "las", "noticias", "en", "la", "tele", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "noticias",
+        "lemma": "noticia",
+        "hint": "správy",
+        "distractors": ["contraseñas", "baterías", "cargadores"]
+      }
+    ]
+  },
+  {
+    "id": "s1472",
+    "es": "Mi hermano me ayudará con la computadora.",
+    "sk": "Brat mi pomôže s počítačom.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["futuro"],
+    "tokens": ["Mi", "hermano", "me", "ayudará", "con", "la", "computadora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ayudará",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · futuro",
+        "distractors": ["ayuda", "ayudó", "ayudarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1473",
+    "es": "Mientras cocinaba, escuchaba la radio.",
+    "sk": "Pri varení som počúvala rádio.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "cocinaba", ",", "escuchaba", "la", "radio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "escuchaba",
+        "lemma": "escuchar",
+        "hint": "escuchar · yo · imperfecto",
+        "distractors": ["escucho", "escuché", "escuchábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1474",
+    "es": "Estoy descargando una película para el viaje.",
+    "sk": "Sťahujem si film na cestu.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "descargando", "una", "película", "para", "el", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "descargando",
+        "lemma": "descargar",
+        "hint": "descargar · gerundio",
+        "distractors": ["descargo", "descargar", "descargué"]
+      }
+    ]
+  },
+  {
+    "id": "s1475",
+    "es": "Ayer perdí mi celular y lo encontré en el carro.",
+    "sk": "Včera som stratil mobil a našiel som ho v aute.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "perdí", "mi", "celular", "y", "lo", "encontré", "en", "el", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "encontré",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · pretérito",
+        "distractors": ["encuentro", "encontró", "encontraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1476",
+    "es": "Se me trabó la computadora justo cuando iba a mandar el trabajo.",
+    "sk": "Počítač mi zamrzol presne vo chvíli, keď som chcel odoslať prácu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Se", "me", "trabó", "la", "computadora", "justo", "cuando", "iba", "a", "mandar", "el", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "iba",
+        "lemma": "ir",
+        "hint": "ir · yo · imperfecto",
+        "distractors": ["voy", "fui", "iban"]
+      }
+    ]
+  },
+  {
+    "id": "s1477",
+    "es": "Me tienen harto los anuncios que salen en cada video.",
+    "sk": "Už ma štvú reklamy, ktoré vyskakujú v každom videu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Me", "tienen", "harto", "los", "anuncios", "que", "salen", "en", "cada", "video", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "anuncios",
+        "lemma": "anuncio",
+        "hint": "reklama",
+        "distractors": ["archivos", "teclados", "respaldos"]
+      }
+    ]
+  },
+  {
+    "id": "s1478",
+    "es": "Mi tío comparte cualquier noticia sin averiguar si es cierta.",
+    "sk": "Strýko zdieľa hocijakú správu a ani si neoverí, či je pravdivá.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "tío", "comparte", "cualquier", "noticia", "sin", "averiguar", "si", "es", "cierta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comparte",
+        "lemma": "compartir",
+        "hint": "compartir · él · presente",
+        "distractors": ["comparto", "compartió", "compartían"]
+      }
+    ]
+  },
+  {
+    "id": "s1479",
+    "es": "Me arrepentí de no haber hecho un respaldo antes de la actualización.",
+    "sk": "Ľutoval som, že som si pred aktualizáciou neurobil zálohu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "arrepentí", "de", "no", "haber", "hecho", "un", "respaldo", "antes", "de", "la", "actualización", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "arrepentí",
+        "lemma": "arrepentirse",
+        "hint": "arrepentirse · yo · pretérito",
+        "distractors": ["arrepiento", "arrepintió", "arrepentía"]
+      }
+    ]
+  },
+  {
+    "id": "s1480",
+    "es": "Con tanto trabajo en línea, me cuesta desconectarme los fines de semana.",
+    "sk": "Pri toľkej práci online sa cez víkendy ťažko odpájam.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Con", "tanto", "trabajo", "en", "línea", ",", "me", "cuesta", "desconectarme", "los", "fines", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "cuesta",
+        "lemma": "costar",
+        "hint": "costar · él · presente",
+        "distractors": ["cuestan", "costó", "costaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1481",
+    "es": "Las plataformas se aprovechan de nuestros datos para vendernos cosas.",
+    "sk": "Platformy zneužívajú naše údaje, aby nám mohli predávať veci.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Las", "plataformas", "se", "aprovechan", "de", "nuestros", "datos", "para", "vendernos", "cosas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprovechan",
+        "lemma": "aprovechar",
+        "hint": "aprovechar · ellas · presente",
+        "distractors": ["aprovecho", "aprovechó", "aprovechaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1482",
+    "es": "Mi hijo se la pasa pegado al celular y casi no platica con nosotros.",
+    "sk": "Syn je stále prilepený k mobilu a skoro sa s nami nerozpráva.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "se", "la", "pasa", "pegado", "al", "celular", "y", "casi", "no", "platica", "con", "nosotros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "platica",
+        "lemma": "platicar",
+        "hint": "platicar · él · presente",
+        "distractors": ["platico", "platicó", "platicaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1483",
+    "es": "Ojalá la inteligencia artificial no nos deje sin chamba.",
+    "sk": "Dúfam, že nás umelá inteligencia nepripraví o robotu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "tokens": ["Ojalá", "la", "inteligencia", "artificial", "no", "nos", "deje", "sin", "chamba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "chamba",
+        "lemma": "chamba",
+        "hint": "robota",
+        "distractors": ["señal", "pantalla", "contraseña"]
+      }
+    ]
   }
 ]

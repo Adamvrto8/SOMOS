@@ -373,7 +373,7 @@ function expectedFromHint(cloze: Cloze): { expected: string } | { error: string 
 checkUniqueIds(sentences, 'sentences')
 for (const s of sentences) {
   const where = `sentences[${s.id}]`
-  if (!/^s\d{3}$/.test(s.id)) fail(where, 'id must look like "s001"')
+  if (!/^s\d{3,}$/.test(s.id)) fail(where, 'id must look like "s001" (after s999: "s1000")')
   if (!isNonEmpty(s.es) || !isNonEmpty(s.sk)) fail(where, 'missing es/sk')
   checkLevel(where, s.level)
   checkTopics(where, s.topics, true)

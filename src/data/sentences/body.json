@@ -681,5 +681,717 @@
         "distractors": ["arruga", "orugas", "tortugas"]
       }
     ]
+  },
+  {
+    "id": "s1022",
+    "es": "Mi mamá tiene las manos muy frías.",
+    "sk": "Mama má veľmi studené ruky.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "mamá", "tiene", "las", "manos", "muy", "frías", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · ella · presente",
+        "distractors": ["tengo", "tienen", "tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s1023",
+    "es": "¿Por qué tienes la cara roja?",
+    "sk": "Prečo máš červenú tvár?",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["¿", "Por", "qué", "tienes", "la", "cara", "roja", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cara",
+        "lemma": "cara",
+        "hint": "tvár",
+        "distractors": ["pelo", "pie", "diente"]
+      }
+    ]
+  },
+  {
+    "id": "s1024",
+    "es": "Me lavo los dientes tres veces al día.",
+    "sk": "Zuby si umývam trikrát denne.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "lavo", "los", "dientes", "tres", "veces", "al", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lavo",
+        "lemma": "lavar",
+        "hint": "lavar · yo · presente",
+        "distractors": ["lavas", "lavé", "lavaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1025",
+    "es": "Mi abuelo está enfermo del estómago.",
+    "sk": "Dedko má chorý žalúdok.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "abuelo", "está", "enfermo", "del", "estómago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "why": "state",
+        "distractors": ["es", "están", "estoy"]
+      }
+    ]
+  },
+  {
+    "id": "s1026",
+    "es": "Abre la boca y saca la lengua.",
+    "sk": "Otvor ústa a vyplaz jazyk.",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["Abre", "la", "boca", "y", "saca", "la", "lengua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "lengua",
+        "lemma": "lengua",
+        "hint": "jazyk",
+        "distractors": ["nariz", "oreja", "espalda"]
+      }
+    ]
+  },
+  {
+    "id": "s1027",
+    "es": "Mi hermano y yo somos bajos.",
+    "sk": "S bratom sme obaja nízki.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "hermano", "y", "yo", "somos", "bajos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "somos",
+        "lemma": "ser",
+        "hint": "ser/estar · nosotros · presente",
+        "why": "trait",
+        "distractors": ["estamos", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s1028",
+    "es": "¿Cuántos dedos tiene una mano?",
+    "sk": "Koľko prstov má ruka?",
+    "level": "A1",
+    "topics": ["body"],
+    "tokens": ["¿", "Cuántos", "dedos", "tiene", "una", "mano", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dedos",
+        "lemma": "dedo",
+        "hint": "prsty",
+        "distractors": ["ojos", "dientes", "pies"]
+      }
+    ]
+  },
+  {
+    "id": "s1029",
+    "es": "Anoche no dormí porque me dolía la espalda.",
+    "sk": "V noci som nespal, lebo ma bolel chrbát.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "no", "dormí", "porque", "me", "dolía", "la", "espalda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dormí",
+        "lemma": "dormir",
+        "hint": "dormir · yo · pretérito",
+        "distractors": ["duermo", "durmió", "dormía"]
+      }
+    ]
+  },
+  {
+    "id": "s1030",
+    "es": "Mi hija perdió un diente ayer en la escuela.",
+    "sk": "Dcére včera v škole vypadol zub.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "hija", "perdió", "un", "diente", "ayer", "en", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "perdió",
+        "lemma": "perder",
+        "hint": "perder · ella · pretérito",
+        "distractors": ["pierde", "perdí", "perdía"]
+      }
+    ]
+  },
+  {
+    "id": "s1031",
+    "es": "El doctor me dio una crema para la piel.",
+    "sk": "Lekár mi dal krém na pokožku.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["El", "doctor", "me", "dio", "una", "crema", "para", "la", "piel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "piel",
+        "lemma": "piel",
+        "hint": "pokožka",
+        "distractors": ["sangre", "lengua", "cintura"]
+      }
+    ]
+  },
+  {
+    "id": "s1032",
+    "es": "Cuando era niña, tenía el pelo muy largo.",
+    "sk": "Keď som bola malá, mala som veľmi dlhé vlasy.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "era", "niña", ",", "tenía", "el", "pelo", "muy", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tengo", "tuve", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1033",
+    "es": "Estoy cuidando a mi papá porque se lastimó el hombro.",
+    "sk": "Starám sa o otca, lebo si poranil rameno.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "cuidando", "a", "mi", "papá", "porque", "se", "lastimó", "el", "hombro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cuidando",
+        "lemma": "cuidar",
+        "hint": "cuidar · gerundio",
+        "distractors": ["cuido", "cuidé", "cuidaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1034",
+    "es": "Mañana iré al dentista porque me duele una muela.",
+    "sk": "Zajtra pôjdem k zubárovi, lebo ma bolí zub.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "iré", "al", "dentista", "porque", "me", "duele", "una", "muela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "iré",
+        "lemma": "ir",
+        "hint": "ir · yo · futuro",
+        "distractors": ["voy", "fui", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s1035",
+    "es": "Me torcí el tobillo bajando las escaleras.",
+    "sk": "Vytkla som si členok, keď som schádzala po schodoch.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["Me", "torcí", "el", "tobillo", "bajando", "las", "escaleras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tobillo",
+        "lemma": "tobillo",
+        "hint": "členok",
+        "distractors": ["pelo", "labio", "corazón"]
+      }
+    ]
+  },
+  {
+    "id": "s1036",
+    "es": "Los jugadores tenían los músculos muy cansados después del partido.",
+    "sk": "Hráči mali po zápase veľmi unavené svaly.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Los", "jugadores", "tenían", "los", "músculos", "muy", "cansados", "después", "del", "partido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tenían",
+        "lemma": "tener",
+        "hint": "tener · ellos · imperfecto",
+        "distractors": ["tienen", "tuvieron", "tengo"]
+      }
+    ]
+  },
+  {
+    "id": "s1037",
+    "es": "¿Te cortaste el pelo? Te ves muy bien.",
+    "sk": "Ostrihala si sa? Vyzeráš veľmi dobre.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["¿", "Te", "cortaste", "el", "pelo", "?", "Te", "ves", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pelo",
+        "lemma": "pelo",
+        "hint": "vlasy",
+        "distractors": ["dedo", "brazo", "pie"]
+      }
+    ]
+  },
+  {
+    "id": "s1038",
+    "es": "Fuimos al hospital porque al niño le salía sangre de la nariz.",
+    "sk": "Išli sme do nemocnice, lebo malému tiekla krv z nosa.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Fuimos", "al", "hospital", "porque", "al", "niño", "le", "salía", "sangre", "de", "la", "nariz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · pretérito",
+        "distractors": ["Vamos", "Fueron", "Íbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1039",
+    "es": "El año pasado subí de peso, pero ahora estoy más delgado.",
+    "sk": "Minulý rok som pribral, ale teraz som štíhlejší.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "año", "pasado", "subí", "de", "peso", ",", "pero", "ahora", "estoy", "más", "delgado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "subí",
+        "lemma": "subir",
+        "hint": "subir · yo · pretérito",
+        "distractors": ["subo", "subió", "subía"]
+      }
+    ]
+  },
+  {
+    "id": "s1040",
+    "es": "Estaba corriendo en el parque cuando me torcí el tobillo.",
+    "sk": "Behal som v parku, keď som si vytkol členok.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["ser-estar", "imperfecto"],
+    "tokens": ["Estaba", "corriendo", "en", "el", "parque", "cuando", "me", "torcí", "el", "tobillo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · yo · imperfecto",
+        "why": "progressive",
+        "distractors": ["Era", "Estoy", "Estuve"]
+      }
+    ]
+  },
+  {
+    "id": "s1041",
+    "es": "Creo que deberías ir al médico si te sigue doliendo la espalda.",
+    "sk": "Myslím, že by si mal ísť k lekárovi, ak ťa chrbát stále bolí.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "deberías", "ir", "al", "médico", "si", "te", "sigue", "doliendo", "la", "espalda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "sigue",
+        "lemma": "seguir",
+        "hint": "seguir · él · presente",
+        "distractors": ["sigo", "siguió", "seguía"]
+      }
+    ]
+  },
+  {
+    "id": "s1042",
+    "es": "Desde que dejé de fumar, respiro mucho mejor.",
+    "sk": "Odkedy som prestal fajčiť, dýcham oveľa lepšie.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "dejé", "de", "fumar", ",", "respiro", "mucho", "mejor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "respiro",
+        "lemma": "respirar",
+        "hint": "respirar · yo · presente",
+        "distractors": ["respiras", "respiré", "respiraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1043",
+    "es": "Me duele el cuello porque paso todo el día frente a la computadora.",
+    "sk": "Bolí ma krk, lebo celý deň presedím pri počítači.",
+    "level": "B1",
+    "topics": ["body"],
+    "tokens": ["Me", "duele", "el", "cuello", "porque", "paso", "todo", "el", "día", "frente", "a", "la", "computadora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cuello",
+        "lemma": "cuello",
+        "hint": "krk",
+        "distractors": ["pelo", "talón", "lunar"]
+      }
+    ]
+  },
+  {
+    "id": "s1044",
+    "es": "De niño me fracturé la muñeca y todavía me duele cuando hace frío.",
+    "sk": "Ako dieťa som si zlomil zápästie a dodnes ma bolí, keď je zima.",
+    "level": "B1",
+    "topics": ["body"],
+    "tokens": ["De", "niño", "me", "fracturé", "la", "muñeca", "y", "todavía", "me", "duele", "cuando", "hace", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "muñeca",
+        "lemma": "muñeca",
+        "hint": "zápästie",
+        "distractors": ["cintura", "frente", "mejilla"]
+      }
+    ]
+  },
+  {
+    "id": "s1045",
+    "es": "El médico me recomendó estirar los músculos antes de correr.",
+    "sk": "Lekár mi odporučil pred behom si ponaťahovať svaly.",
+    "level": "B1",
+    "topics": ["body"],
+    "tokens": ["El", "médico", "me", "recomendó", "estirar", "los", "músculos", "antes", "de", "correr", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "músculos",
+        "lemma": "músculo",
+        "hint": "svaly",
+        "distractors": ["pulmones", "dientes", "riñones"]
+      }
+    ]
+  },
+  {
+    "id": "s1046",
+    "es": "Mi abuela decía que las zanahorias son buenas para los ojos.",
+    "sk": "Babka hovorievala, že mrkva je dobrá na oči.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "decía", "que", "las", "zanahorias", "son", "buenas", "para", "los", "ojos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "decía",
+        "lemma": "decir",
+        "hint": "decir · ella · imperfecto",
+        "distractors": ["dice", "dijo", "dirá"]
+      }
+    ]
+  },
+  {
+    "id": "s1047",
+    "es": "Cuando me levanté, sentí un dolor fuerte en el pecho y llamé a la ambulancia.",
+    "sk": "Keď som vstal, pocítil som silnú bolesť na hrudi a zavolal som záchranku.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "me", "levanté", ",", "sentí", "un", "dolor", "fuerte", "en", "el", "pecho", "y", "llamé", "a", "la", "ambulancia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "llamé",
+        "lemma": "llamar",
+        "hint": "llamar · yo · pretérito",
+        "distractors": ["llamo", "llamó", "llamaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1048",
+    "es": "Si quieres tener la piel sana, tienes que protegerte del sol.",
+    "sk": "Ak chceš mať zdravú pleť, musíš sa chrániť pred slnkom.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "quieres", "tener", "la", "piel", "sana", ",", "tienes", "que", "protegerte", "del", "sol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "tener · tú · presente",
+        "distractors": ["tengo", "tuviste", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1049",
+    "es": "Me parece que adelgazaste mucho; ¿estás comiendo bien?",
+    "sk": "Zdá sa mi, že si veľmi schudla. Ješ poriadne?",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["progresivo"],
+    "tokens": ["Me", "parece", "que", "adelgazaste", "mucho", ";", "¿", "estás", "comiendo", "bien", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "comiendo",
+        "lemma": "comer",
+        "hint": "comer · gerundio",
+        "distractors": ["comes", "comiste", "comías"]
+      }
+    ]
+  },
+  {
+    "id": "s1050",
+    "es": "Antes me mordía las uñas, pero ya dejé esa costumbre.",
+    "sk": "Kedysi som si obhrýzal nechty, ale s tým zlozvykom som už prestal.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Antes", "me", "mordía", "las", "uñas", ",", "pero", "ya", "dejé", "esa", "costumbre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "dejé",
+        "lemma": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors": ["dejo", "dejó", "dejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1051",
+    "es": "Me quedé con la boca abierta cuando vi lo que costaba.",
+    "sk": "Ostala som s otvorenými ústami, keď som videla, koľko to stojí.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "quedé", "con", "la", "boca", "abierta", "cuando", "vi", "lo", "que", "costaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quedé",
+        "lemma": "quedarse",
+        "hint": "quedarse · yo · pretérito",
+        "distractors": ["quedo", "quedó", "quedaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1052",
+    "es": "No le hagas caso, nomás te está tomando el pelo.",
+    "sk": "Nevšímaj si ho, len si z teba strieľa.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["progresivo"],
+    "tokens": ["No", "le", "hagas", "caso", ",", "nomás", "te", "está", "tomando", "el", "pelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "tomando",
+        "lemma": "tomar",
+        "hint": "tomar · gerundio",
+        "distractors": ["toma", "tomó", "tomaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1053",
+    "es": "Ese tratamiento dental me costó un ojo de la cara.",
+    "sk": "To zubné ošetrenie ma stálo majland.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Ese", "tratamiento", "dental", "me", "costó", "un", "ojo", "de", "la", "cara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "costó",
+        "lemma": "costar",
+        "hint": "costar · él · pretérito",
+        "distractors": ["cuesta", "costaban", "costará"]
+      }
+    ]
+  },
+  {
+    "id": "s1054",
+    "es": "Desde que me operaron la rodilla, ando con mucho cuidado.",
+    "sk": "Odkedy ma operovali na koleno, chodím veľmi opatrne.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Desde", "que", "me", "operaron", "la", "rodilla", ",", "ando", "con", "mucho", "cuidado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "ando",
+        "lemma": "andar",
+        "hint": "andar · yo · presente",
+        "distractors": ["anda", "anduve", "andaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1055",
+    "es": "Tengo la piel muy sensible, así que siempre uso bloqueador.",
+    "sk": "Mám veľmi citlivú pokožku, takže vždy používam opaľovací krém.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "la", "piel", "muy", "sensible", ",", "así", "que", "siempre", "uso", "bloqueador", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "uso",
+        "lemma": "usar",
+        "hint": "usar · yo · presente",
+        "distractors": ["usas", "usé", "usaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1056",
+    "es": "El doctor dice que la columna me está fallando por cargar cosas pesadas.",
+    "sk": "Lekár hovorí, že chrbtica mi vypovedáva službu, lebo nosím ťažké veci.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["El", "doctor", "dice", "que", "la", "columna", "me", "está", "fallando", "por", "cargar", "cosas", "pesadas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "columna",
+        "lemma": "columna",
+        "hint": "chrbtica",
+        "distractors": ["mejilla", "ceja", "pestaña"]
+      }
+    ]
+  },
+  {
+    "id": "s1057",
+    "es": "Se me puso la piel chinita cuando escuché la noticia.",
+    "sk": "Keď som počula tú správu, naskočili mi zimomriavky.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "puso", "la", "piel", "chinita", "cuando", "escuché", "la", "noticia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "escuché",
+        "lemma": "escuchar",
+        "hint": "escuchar · yo · pretérito",
+        "distractors": ["escucho", "escuchó", "escuchaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1058",
+    "es": "Aunque me duela admitirlo, ya no tengo la condición de antes.",
+    "sk": "Hoci to nerád priznávam, už nemám takú kondíciu ako kedysi.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Aunque", "me", "duela", "admitirlo", ",", "ya", "no", "tengo", "la", "condición", "de", "antes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["tienes", "tuve", "tendrán"]
+      }
+    ]
+  },
+  {
+    "id": "s1059",
+    "es": "Mi tío es bien panzón, pero dice que es pura masa muscular.",
+    "sk": "Strýko má poriadne brucho, ale tvrdí, že sú to samé svaly.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "tío", "es", "bien", "panzón", ",", "pero", "dice", "que", "es", "pura", "masa", "muscular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "dice",
+        "lemma": "decir",
+        "hint": "decir · él · presente",
+        "distractors": ["digo", "dijo", "decía"]
+      }
+    ]
+  },
+  {
+    "id": "s1060",
+    "es": "Ando con un dolor de muelas que no me deja ni dormir.",
+    "sk": "Mám takú bolesť zubov, že ani nemôžem spať.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Ando", "con", "un", "dolor", "de", "muelas", "que", "no", "me", "deja", "ni", "dormir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "deja",
+        "lemma": "dejar",
+        "hint": "dejar · él · presente",
+        "distractors": ["dejo", "dejó", "dejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1061",
+    "es": "El estrés se refleja en el cuerpo: me salió un sarpullido en el cuello.",
+    "sk": "Stres sa prejavuje na tele: vyskočila mi vyrážka na krku.",
+    "level": "B2",
+    "topics": ["body"],
+    "tokens": ["El", "estrés", "se", "refleja", "en", "el", "cuerpo", ":", "me", "salió", "un", "sarpullido", "en", "el", "cuello", "."],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer": "cuello",
+        "lemma": "cuello",
+        "hint": "krk",
+        "distractors": ["hígado", "riñón", "cerebro"]
+      }
+    ]
   }
 ]

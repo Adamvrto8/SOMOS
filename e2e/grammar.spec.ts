@@ -21,7 +21,8 @@ async function reach(page: Page, fits: (sentence: Sentence) => boolean): Promise
 const reachSerEstar = (page: Page) => reach(page, (s) => Boolean(s.cloze![0].hint?.startsWith('ser/estar')))
 
 test('"Prečo?" explains why a sentence takes ser or estar, and the back button closes it', async ({ page }) => {
-  await page.goto(lesson('cloze'))
+  // One topic keeps its lessons in id order: new content elsewhere does not move the ser/estar tasks out of lesson 1.
+  await page.goto('/practice/lesson?type=cloze&topic=greetings&level=A1&lesson=1')
   const sentence = await reachSerEstar(page)
   const rule = tips.find((t) => t.id === 'ser-estar')!.rules.find((r) => r.id === sentence.cloze![0].why)!
   const position = await counter(page).innerText()

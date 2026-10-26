@@ -47,7 +47,7 @@ describe('buildRounds', () => {
 
   it('always builds what the server accepts (valid_duel in supabase/schema.sql): 3 × 5 items, the allowed type and time', () => {
     const allowed: Record<string, number> = { choice: 10, conjugation: 15, vocab: 15, builder: 25 }
-    // 4 × 30 seeds: as many runs as 3 × 40 before B2, inside the 5 s test limit.
+    // 4 × 30 seeds: as many runs as 3 × 40 before B2.
     for (const level of ['A1', 'A2', 'B1', 'B2'] as const) {
       for (let seed = 0; seed < 30; seed++) {
         const rounds = buildRounds(level, seed * 7919)
@@ -60,7 +60,7 @@ describe('buildRounds', () => {
         expect(JSON.stringify(rounds).length).toBeLessThan(4000)
       }
     }
-  })
+  }, 20_000) // 120 duels take a few seconds now that every topic has two lessons per level
 
   it('gives the same seed the same duel, another seed another one', () => {
     expect(buildRounds('A2', 99)).toEqual(buildRounds('A2', 99))

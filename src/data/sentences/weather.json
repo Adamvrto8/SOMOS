@@ -716,5 +716,701 @@
         "distractors": ["trompa", "tumba", "trompeta"]
       }
     ]
+  },
+  {
+    "id": "s1533",
+    "es": "Hoy no hace viento.",
+    "sk": "Dnes nefúka vietor.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["Hoy", "no", "hace", "viento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viento",
+        "lemma": "viento",
+        "hint": "vietor",
+        "distractors": ["nube", "lluvia", "nieve"]
+      }
+    ]
+  },
+  {
+    "id": "s1534",
+    "es": "En primavera hace calor en la Ciudad de México.",
+    "sk": "Na jar je v Mexico City teplo.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["En", "primavera", "hace", "calor", "en", "la", "Ciudad", "de", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "primavera",
+        "lemma": "primavera",
+        "hint": "jar",
+        "distractors": ["invierno", "otoño", "nube"]
+      }
+    ]
+  },
+  {
+    "id": "s1535",
+    "es": "Mis hijos juegan en la nieve.",
+    "sk": "Deti sa hrajú v snehu.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "juegan", "en", "la", "nieve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "juegan",
+        "lemma": "jugar",
+        "hint": "jugar · ellos · presente",
+        "distractors": ["juego", "jugaron", "jugaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1536",
+    "es": "Hoy el cielo está gris.",
+    "sk": "Dnes je obloha sivá.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Hoy", "el", "cielo", "está", "gris", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "why": "state",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s1537",
+    "es": "¿Llevas una chamarra? Hace frío.",
+    "sk": "Berieš si bundu? Je zima.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Llevas", "una", "chamarra", "?", "Hace", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Llevas",
+        "lemma": "llevar",
+        "hint": "llevar · tú · presente",
+        "distractors": ["Llevo", "Llevaste", "Llevabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1538",
+    "es": "Me gusta mucho el sol.",
+    "sk": "Slnko mám veľmi rád.",
+    "level": "A1",
+    "topics": ["weather"],
+    "tokens": ["Me", "gusta", "mucho", "el", "sol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sol",
+        "lemma": "sol",
+        "hint": "slnko",
+        "distractors": ["nube", "lluvia", "tormenta"]
+      }
+    ]
+  },
+  {
+    "id": "s1539",
+    "es": "Cuando hace sol, comemos en el jardín.",
+    "sk": "Keď svieti slnko, jeme v záhrade.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Cuando", "hace", "sol", ",", "comemos", "en", "el", "jardín", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "comemos",
+        "lemma": "comer",
+        "hint": "comer · nosotros · presente",
+        "distractors": ["como", "comieron", "comíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1540",
+    "es": "El sábado llovió y no fuimos al parque.",
+    "sk": "V sobotu pršalo a nešli sme do parku.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "sábado", "llovió", "y", "no", "fuimos", "al", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · pretérito",
+        "distractors": ["vamos", "fueron", "íbamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1541",
+    "es": "Mañana estará nublado todo el día.",
+    "sk": "Zajtra bude celý deň zamračené.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["ser-estar", "futuro"],
+    "tokens": ["Mañana", "estará", "nublado", "todo", "el", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estará",
+        "lemma": "estar",
+        "hint": "ser/estar · él · futuro",
+        "why": "state",
+        "distractors": ["será", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s1542",
+    "es": "Cuando era niña, nevaba en mi pueblo cada invierno.",
+    "sk": "Keď som bola malá, v našej dedine každú zimu snežilo.",
+    "level": "A2",
+    "topics": ["weather"],
+    "tokens": ["Cuando", "era", "niña", ",", "nevaba", "en", "mi", "pueblo", "cada", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "invierno",
+        "lemma": "invierno",
+        "hint": "zima",
+        "distractors": ["verano", "primavera", "otoño"]
+      }
+    ]
+  },
+  {
+    "id": "s1543",
+    "es": "Se me olvidó el paraguas y me mojé toda.",
+    "sk": "Zabudla som dáždnik a celá som zmokla.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "olvidó", "el", "paraguas", "y", "me", "mojé", "toda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "olvidó",
+        "lemma": "olvidar",
+        "hint": "olvidar · él · pretérito",
+        "distractors": ["olvida", "olvidaba", "olvidará"]
+      }
+    ]
+  },
+  {
+    "id": "s1544",
+    "es": "El huracán llegará a la costa el jueves.",
+    "sk": "Hurikán dorazí k pobrežiu vo štvrtok.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "huracán", "llegará", "a", "la", "costa", "el", "jueves", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegará",
+        "lemma": "llegar",
+        "hint": "llegar · él · futuro",
+        "distractors": ["llega", "llegó", "llegaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1545",
+    "es": "Estaba haciendo mucho calor, así que nos quedamos adentro.",
+    "sk": "Bolo strašne teplo, tak sme zostali vnútri.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estaba", "haciendo", "mucho", "calor", ",", "así", "que", "nos", "quedamos", "adentro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haciendo",
+        "lemma": "hacer",
+        "hint": "hacer · gerundio",
+        "distractors": ["hace", "hizo", "hacía"]
+      }
+    ]
+  },
+  {
+    "id": "s1546",
+    "es": "Anoche cayó granizo y rompió el vidrio del carro.",
+    "sk": "Včera v noci padali krúpy a rozbili sklo na aute.",
+    "level": "A2",
+    "topics": ["weather"],
+    "tokens": ["Anoche", "cayó", "granizo", "y", "rompió", "el", "vidrio", "del", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "granizo",
+        "lemma": "granizo",
+        "hint": "krúpy",
+        "distractors": ["arcoíris", "pronóstico", "paraguas"]
+      }
+    ]
+  },
+  {
+    "id": "s1547",
+    "es": "¿Viste el pronóstico para el fin de semana?",
+    "sk": "Videl si predpoveď na víkend?",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Viste", "el", "pronóstico", "para", "el", "fin", "de", "semana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Viste",
+        "lemma": "ver",
+        "hint": "ver · tú · pretérito",
+        "distractors": ["Ves", "Veías", "Verás"]
+      }
+    ]
+  },
+  {
+    "id": "s1548",
+    "es": "Me encanta la temporada de lluvias porque todo se pone verde.",
+    "sk": "Milujem obdobie dažďov, lebo všetko zozelenie.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "encanta", "la", "temporada", "de", "lluvias", "porque", "todo", "se", "pone", "verde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "pone",
+        "lemma": "ponerse",
+        "hint": "ponerse · él · presente",
+        "distractors": ["puso", "ponía", "pondrá"]
+      }
+    ]
+  },
+  {
+    "id": "s1549",
+    "es": "Ojalá no llueva mañana, porque vamos a ir a las pirámides.",
+    "sk": "Dúfam, že zajtra nebude pršať, lebo ideme na pyramídy.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Ojalá", "no", "llueva", "mañana", ",", "porque", "vamos", "a", "ir", "a", "las", "pirámides", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["fuimos", "íbamos", "van"]
+      }
+    ]
+  },
+  {
+    "id": "s1550",
+    "es": "Con esta ola de calor, no se puede dormir sin ventilador.",
+    "sk": "Pri tejto vlne horúčav sa nedá spať bez ventilátora.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Con", "esta", "ola", "de", "calor", ",", "no", "se", "puede", "dormir", "sin", "ventilador", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder · él · presente",
+        "distractors": ["pudo", "podía", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s1551",
+    "es": "Había tanta neblina que el avión no pudo aterrizar.",
+    "sk": "Bola taká hmla, že lietadlo nemohlo pristáť.",
+    "level": "B1",
+    "topics": ["weather"],
+    "tokens": ["Había", "tanta", "neblina", "que", "el", "avión", "no", "pudo", "aterrizar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "neblina",
+        "lemma": "neblina",
+        "hint": "hmla",
+        "distractors": ["calor", "arcoíris", "trueno"]
+      }
+    ]
+  },
+  {
+    "id": "s1552",
+    "es": "Antes no hacía tanto calor en Monterrey; ahora es insoportable.",
+    "sk": "Predtým v Monterrey nebývalo také teplo, teraz je to neznesiteľné.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "no", "hacía", "tanto", "calor", "en", "Monterrey", ";", "ahora", "es", "insoportable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hacía",
+        "lemma": "hacer",
+        "hint": "hacer · él · imperfecto",
+        "distractors": ["hace", "hizo", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s1553",
+    "es": "Estábamos en la playa cuando de repente empezó a llover.",
+    "sk": "Boli sme na pláži, keď zrazu začalo pršať.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Estábamos", "en", "la", "playa", "cuando", "de", "repente", "empezó", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · él · pretérito",
+        "distractors": ["empieza", "empezaba", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s1554",
+    "es": "Después de la inundación, muchas familias perdieron sus casas.",
+    "sk": "Po povodni prišlo veľa rodín o domovy.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Después", "de", "la", "inundación", ",", "muchas", "familias", "perdieron", "sus", "casas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "perdieron",
+        "lemma": "perder",
+        "hint": "perder · ellas · pretérito",
+        "distractors": ["pierden", "perdían", "perderán"]
+      }
+    ]
+  },
+  {
+    "id": "s1555",
+    "es": "Prefiero el clima de Guadalajara porque no es ni muy húmedo ni muy seco.",
+    "sk": "Radšej mám podnebie v Guadalajare, lebo nie je ani veľmi vlhké, ani veľmi suché.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Prefiero", "el", "clima", "de", "Guadalajara", "porque", "no", "es", "ni", "muy", "húmedo", "ni", "muy", "seco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["Prefieres", "Preferí", "Prefería"]
+      }
+    ]
+  },
+  {
+    "id": "s1556",
+    "es": "Dicen que mañana va a estar fresco, así que llévate un suéter.",
+    "sk": "Vraj má byť zajtra chladno, tak si vezmi sveter.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Dicen", "que", "mañana", "va", "a", "estar", "fresco", ",", "así", "que", "llévate", "un", "suéter", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dicen",
+        "lemma": "decir",
+        "hint": "decir · ellos · presente",
+        "distractors": ["Digo", "Dijimos", "Decía"]
+      }
+    ]
+  },
+  {
+    "id": "s1557",
+    "es": "Si sigue lloviendo así, se va a inundar la colonia.",
+    "sk": "Ak bude takto pršať aj naďalej, štvrť zaplaví voda.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "sigue", "lloviendo", "así", ",", "se", "va", "a", "inundar", "la", "colonia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sigue",
+        "lemma": "seguir",
+        "hint": "seguir · él · presente",
+        "distractors": ["siguió", "seguía", "seguirá"]
+      }
+    ]
+  },
+  {
+    "id": "s1558",
+    "es": "Cuando terminó la película, ya había dejado de llover.",
+    "sk": "Keď sa film skončil, už prestalo pršať.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "terminó", "la", "película", ",", "ya", "había", "dejado", "de", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "terminó",
+        "lemma": "terminar",
+        "hint": "terminar · ella · pretérito",
+        "distractors": ["termina", "terminaba", "terminará"]
+      }
+    ]
+  },
+  {
+    "id": "s1559",
+    "es": "En el norte del país, los veranos son muy secos y calurosos.",
+    "sk": "Na severe krajiny sú letá veľmi suché a horúce.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["ser-estar"],
+    "tokens": ["En", "el", "norte", "del", "país", ",", "los", "veranos", "son", "muy", "secos", "y", "calurosos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "son",
+        "lemma": "ser",
+        "hint": "ser/estar · ellos · presente",
+        "why": "trait",
+        "distractors": ["están", "es", "eran"]
+      }
+    ]
+  },
+  {
+    "id": "s1560",
+    "es": "Está cayendo un aguacero; mejor esperamos a que pase.",
+    "sk": "Leje ako z krhly, radšej počkáme, kým to prejde.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Está", "cayendo", "un", "aguacero", ";", "mejor", "esperamos", "a", "que", "pase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "esperamos",
+        "lemma": "esperar",
+        "hint": "esperar · nosotros · presente",
+        "distractors": ["espero", "esperaron", "esperábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1561",
+    "es": "Hoy hace un frío que cala hasta los huesos.",
+    "sk": "Dnes je taká zima, že to prechádza až do kostí.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "hace", "un", "frío", "que", "cala", "hasta", "los", "huesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["hizo", "hacía", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s1562",
+    "es": "Con este calorón, lo único que se me antoja es una nieve de limón.",
+    "sk": "V takejto horúčave mám chuť len na limetkový sorbet.",
+    "level": "B2",
+    "topics": ["weather", "food"],
+    "tokens": ["Con", "este", "calorón", ",", "lo", "único", "que", "se", "me", "antoja", "es", "una", "nieve", "de", "limón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calorón",
+        "lemma": "calorón",
+        "hint": "horúčava",
+        "distractors": ["neblina", "helada", "tormenta"]
+      }
+    ]
+  },
+  {
+    "id": "s1563",
+    "es": "El frente frío número doce traerá heladas al norte del país.",
+    "sk": "Studený front číslo dvanásť prinesie na sever krajiny mrazy.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "frente", "frío", "número", "doce", "traerá", "heladas", "al", "norte", "del", "país", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "traerá",
+        "lemma": "traer",
+        "hint": "traer · él · futuro",
+        "distractors": ["trae", "trajo", "traía"]
+      }
+    ]
+  },
+  {
+    "id": "s1564",
+    "es": "Se soltó una tormenta tan fuerte que se fue la luz en toda la colonia.",
+    "sk": "Strhla sa taká silná búrka, že v celej štvrti vypadol prúd.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Se", "soltó", "una", "tormenta", "tan", "fuerte", "que", "se", "fue", "la", "luz", "en", "toda", "la", "colonia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tormenta",
+        "lemma": "tormenta",
+        "hint": "búrka",
+        "distractors": ["granizo", "pronóstico", "arcoíris"]
+      }
+    ]
+  },
+  {
+    "id": "s1565",
+    "es": "Por la sequía, varias ciudades del norte se quedaron sin agua.",
+    "sk": "Kvôli suchu zostalo niekoľko miest na severe bez vody.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Por", "la", "sequía", ",", "varias", "ciudades", "del", "norte", "se", "quedaron", "sin", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "quedaron",
+        "lemma": "quedarse",
+        "hint": "quedarse · ellas · pretérito",
+        "distractors": ["quedan", "quedaban", "quedarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1566",
+    "es": "El calentamiento global está cambiando los patrones de lluvia.",
+    "sk": "Globálne otepľovanie mení rozloženie zrážok.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "calentamiento", "global", "está", "cambiando", "los", "patrones", "de", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cambiando",
+        "lemma": "cambiar",
+        "hint": "cambiar · gerundio",
+        "distractors": ["cambia", "cambió", "cambiaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1567",
+    "es": "Ni modo, con este clima tan loco siempre llevo el paraguas en la mochila.",
+    "sk": "Nedá sa nič robiť, pri takom bláznivom počasí nosím dáždnik stále v batohu.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Ni", "modo", ",", "con", "este", "clima", "tan", "loco", "siempre", "llevo", "el", "paraguas", "en", "la", "mochila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["llevé", "llevaba", "llevaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1568",
+    "es": "Amaneció nublado, pero al mediodía ya hacía un calor espantoso.",
+    "sk": "Ráno bolo zamračené, ale na obed už bolo strašné teplo.",
+    "level": "B2",
+    "topics": ["weather"],
+    "tokens": ["Amaneció", "nublado", ",", "pero", "al", "mediodía", "ya", "hacía", "un", "calor", "espantoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "espantoso",
+        "lemma": "espantoso",
+        "hint": "strašný",
+        "distractors": ["templado", "despejado", "fresco"]
+      }
+    ]
+  },
+  {
+    "id": "s1569",
+    "es": "Los pescadores no salieron al mar porque se acercaba un huracán.",
+    "sk": "Rybári nevyplávali na more, lebo sa blížil hurikán.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "pescadores", "no", "salieron", "al", "mar", "porque", "se", "acercaba", "un", "huracán", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salieron",
+        "lemma": "salir",
+        "hint": "salir · ellos · pretérito",
+        "distractors": ["salen", "salían", "saldrán"]
+      }
+    ]
+  },
+  {
+    "id": "s1570",
+    "es": "Está chispeando, no creo que haga falta el paraguas.",
+    "sk": "Len mrholí, myslím, že dáždnik netreba.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["Está", "chispeando", ",", "no", "creo", "que", "haga", "falta", "el", "paraguas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "creo",
+        "lemma": "creer",
+        "hint": "creer · yo · presente",
+        "distractors": ["creí", "creía", "creeré"]
+      }
+    ]
+  },
+  {
+    "id": "s1571",
+    "es": "El cambio climático nos obliga a replantear cómo construimos las ciudades.",
+    "sk": "Klimatická zmena nás núti prehodnotiť, ako staviame mestá.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["presente"],
+    "tokens": ["El", "cambio", "climático", "nos", "obliga", "a", "replantear", "cómo", "construimos", "las", "ciudades", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "construimos",
+        "lemma": "construir",
+        "hint": "construir · nosotros · presente",
+        "distractors": ["construyo", "construyeron", "construíamos"]
+      }
+    ]
   }
 ]

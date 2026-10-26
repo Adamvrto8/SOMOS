@@ -1008,5 +1008,433 @@
         "distractors": ["apapachó", "apapacha", "apapacharán"]
       }
     ]
+  },
+  {
+    "id": "s1154",
+    "es": "Mi hija y yo cocinamos juntas los sábados.",
+    "sk": "S dcérou každú sobotu spolu varíme.",
+    "level": "A1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hija", "y", "yo", "cocinamos", "juntas", "los", "sábados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cocinamos",
+        "lemma": "cocinar",
+        "hint": "cocinar · nosotros · presente",
+        "distractors": ["cocino", "cocinaron", "cocinábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1155",
+    "es": "Mi cuñado nos ayudó con la mudanza.",
+    "sk": "Švagor nám pomohol so sťahovaním.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "cuñado", "nos", "ayudó", "con", "la", "mudanza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ayudó",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · pretérito",
+        "distractors": ["ayuda", "ayudaba", "ayudará"]
+      }
+    ]
+  },
+  {
+    "id": "s1156",
+    "es": "De niña, pasaba los veranos en el rancho de mis abuelos.",
+    "sk": "Ako dievča som trávila letá na ranči u starých rodičov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niña", ",", "pasaba", "los", "veranos", "en", "el", "rancho", "de", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pasaba",
+        "lemma": "pasar",
+        "hint": "pasar · yo · imperfecto",
+        "distractors": ["paso", "pasé", "pasaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1157",
+    "es": "Mi sobrino cumplió cinco años y le hicimos una fiesta.",
+    "sk": "Synovec mal päť rokov, tak sme mu urobili oslavu.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "sobrino", "cumplió", "cinco", "años", "y", "le", "hicimos", "una", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "hicimos",
+        "lemma": "hacer",
+        "hint": "hacer · nosotros · pretérito",
+        "distractors": ["hacemos", "hicieron", "hacíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1158",
+    "es": "¿Vendrán tus papás a la boda?",
+    "sk": "Prídu tvoji rodičia na svadbu?",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["futuro"],
+    "tokens": ["¿", "Vendrán", "tus", "papás", "a", "la", "boda", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Vendrán",
+        "lemma": "venir",
+        "hint": "venir · ellos · futuro",
+        "distractors": ["Vienen", "Vinieron", "Venían"]
+      }
+    ]
+  },
+  {
+    "id": "s1159",
+    "es": "Mi hermano está buscando casa con su novia.",
+    "sk": "Brat si s priateľkou hľadá bývanie.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mi", "hermano", "está", "buscando", "casa", "con", "su", "novia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "buscando",
+        "lemma": "buscar",
+        "hint": "buscar · gerundio",
+        "distractors": ["busca", "buscó", "buscaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1160",
+    "es": "Mi abuela siempre me contaba historias de la Revolución.",
+    "sk": "Babka mi vždy rozprávala príbehy z revolúcie.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "siempre", "me", "contaba", "historias", "de", "la", "Revolución", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "contaba",
+        "lemma": "contar",
+        "hint": "contar · ella · imperfecto",
+        "distractors": ["cuenta", "contó", "contará"]
+      }
+    ]
+  },
+  {
+    "id": "s1161",
+    "es": "En Navidad visitaremos a la familia de mi esposa.",
+    "sk": "Na Vianoce navštívime manželkinu rodinu.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["futuro"],
+    "tokens": ["En", "Navidad", "visitaremos", "a", "la", "familia", "de", "mi", "esposa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "visitaremos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros · futuro",
+        "distractors": ["visitamos", "visitaron", "visitábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1162",
+    "es": "Mi padrino me regaló mi primera bicicleta cuando cumplí ocho años.",
+    "sk": "Krstný otec mi daroval prvý bicykel, keď som mal osem rokov.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "padrino", "me", "regaló", "mi", "primera", "bicicleta", "cuando", "cumplí", "ocho", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "cumplí",
+        "lemma": "cumplir",
+        "hint": "cumplir · yo · pretérito",
+        "distractors": ["cumplo", "cumplía", "cumpliré"]
+      }
+    ]
+  },
+  {
+    "id": "s1163",
+    "es": "Aunque vivimos lejos, hablo con mi mamá todos los días.",
+    "sk": "Hoci bývame ďaleko od seba, s mamou hovorím každý deň.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Aunque", "vivimos", "lejos", ",", "hablo", "con", "mi", "mamá", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hablo",
+        "lemma": "hablar",
+        "hint": "hablar · yo · presente",
+        "distractors": ["hablé", "hablaba", "hablaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1164",
+    "es": "Creo que los abuelos consienten demasiado a los nietos.",
+    "sk": "Myslím si, že starí rodičia vnúčatá príliš rozmaznávajú.",
+    "level": "B1",
+    "topics": ["family"],
+    "tokens": ["Creo", "que", "los", "abuelos", "consienten", "demasiado", "a", "los", "nietos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "nietos",
+        "lemma": "nieto",
+        "hint": "vnúčatá",
+        "distractors": ["suegras", "bodas", "herencias"]
+      }
+    ]
+  },
+  {
+    "id": "s1165",
+    "es": "Mi compadre y yo nos conocimos cuando trabajábamos en la misma fábrica.",
+    "sk": "S kmotrom sme sa spoznali, keď sme robili v tej istej fabrike.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "compadre", "y", "yo", "nos", "conocimos", "cuando", "trabajábamos", "en", "la", "misma", "fábrica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "trabajábamos",
+        "lemma": "trabajar",
+        "hint": "trabajar · nosotros · imperfecto",
+        "distractors": ["trabajamos", "trabajaron", "trabajaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1166",
+    "es": "Cuando nacieron los gemelos, mi suegra se quedó con nosotros un mes.",
+    "sk": "Keď sa narodili dvojčatá, svokra u nás zostala mesiac.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "nacieron", "los", "gemelos", ",", "mi", "suegra", "se", "quedó", "con", "nosotros", "un", "mes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "nacieron",
+        "lemma": "nacer",
+        "hint": "nacer · ellos · pretérito",
+        "distractors": ["nacen", "nacían", "nacerán"]
+      }
+    ]
+  },
+  {
+    "id": "s1167",
+    "es": "Mis papás quieren que estudie medicina, pero yo prefiero el arte.",
+    "sk": "Rodičia chcú, aby som študoval medicínu, ale mňa viac láka umenie.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "papás", "quieren", "que", "estudie", "medicina", ",", "pero", "yo", "prefiero", "el", "arte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quieren",
+        "lemma": "querer",
+        "hint": "querer · ellos · presente",
+        "distractors": ["quiere", "quisieron", "querían"]
+      }
+    ]
+  },
+  {
+    "id": "s1168",
+    "es": "Mi tía se encargó de mí cuando quedé huérfano.",
+    "sk": "Teta sa o mňa postarala, keď som osirel.",
+    "level": "B2",
+    "topics": ["family"],
+    "tokens": ["Mi", "tía", "se", "encargó", "de", "mí", "cuando", "quedé", "huérfano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "huérfano",
+        "lemma": "huérfano",
+        "hint": "sirota",
+        "distractors": ["soltero", "divorciado", "casado"]
+      }
+    ]
+  },
+  {
+    "id": "s1169",
+    "es": "La convivencia con mis suegros no siempre es fácil.",
+    "sk": "Spolužitie so svokrovcami nie je vždy ľahké.",
+    "level": "B2",
+    "topics": ["family"],
+    "tokens": ["La", "convivencia", "con", "mis", "suegros", "no", "siempre", "es", "fácil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "convivencia",
+        "lemma": "convivencia",
+        "hint": "spolužitie",
+        "distractors": ["herencia", "generación", "quinceañera"]
+      }
+    ]
+  },
+  {
+    "id": "s1170",
+    "es": "Mi madrastra y yo no nos llevábamos bien, pero ahora somos inseparables.",
+    "sk": "S macochou sme si predtým nerozumeli, ale teraz sme nerozlučné.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "madrastra", "y", "yo", "no", "nos", "llevábamos", "bien", ",", "pero", "ahora", "somos", "inseparables", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llevábamos",
+        "lemma": "llevar",
+        "hint": "llevar · nosotros · imperfecto",
+        "distractors": ["llevan", "llevaron", "llevaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1171",
+    "es": "Mi abuelo se jubiló y ahora se dedica a consentir a sus nietos.",
+    "sk": "Dedko odišiel do dôchodku a teraz sa venuje rozmaznávaniu vnúčat.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "abuelo", "se", "jubiló", "y", "ahora", "se", "dedica", "a", "consentir", "a", "sus", "nietos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jubiló",
+        "lemma": "jubilarse",
+        "hint": "jubilarse · él · pretérito",
+        "distractors": ["jubila", "jubilaba", "jubilará"]
+      }
+    ]
+  },
+  {
+    "id": "s1172",
+    "es": "Cada generación cree que la siguiente la tiene más fácil.",
+    "sk": "Každá generácia si myslí, že tá ďalšia to má ľahšie.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Cada", "generación", "cree", "que", "la", "siguiente", "la", "tiene", "más", "fácil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cree",
+        "lemma": "creer",
+        "hint": "creer · ella · presente",
+        "distractors": ["creen", "creyó", "creía"]
+      }
+    ]
+  },
+  {
+    "id": "s1173",
+    "es": "Cuando mi hermana nos dio la noticia de su embarazo, mi mamá lloró de felicidad.",
+    "sk": "Keď nám sestra oznámila, že je tehotná, mama sa rozplakala od šťastia.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "mi", "hermana", "nos", "dio", "la", "noticia", "de", "su", "embarazo", ",", "mi", "mamá", "lloró", "de", "felicidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "lloró",
+        "lemma": "llorar",
+        "hint": "llorar · ella · pretérito",
+        "distractors": ["llora", "lloraba", "llorará"]
+      }
+    ]
+  },
+  {
+    "id": "s1174",
+    "es": "El apapacho de la abuela lo cura todo.",
+    "sk": "Babkino objatie vylieči všetko.",
+    "level": "B2",
+    "topics": ["family"],
+    "tokens": ["El", "apapacho", "de", "la", "abuela", "lo", "cura", "todo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "apapacho",
+        "lemma": "apapacho",
+        "hint": "objatie",
+        "distractors": ["compromiso", "divorcio", "antepasado"]
+      }
+    ]
+  },
+  {
+    "id": "s1175",
+    "es": "Mi ahijado me pidió que fuera su padrino de graduación.",
+    "sk": "Krstný syn ma požiadal, aby som mu bol kmotrom na promócii.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "ahijado", "me", "pidió", "que", "fuera", "su", "padrino", "de", "graduación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pidió",
+        "lemma": "pedir",
+        "hint": "pedir · él · pretérito",
+        "distractors": ["pide", "pedía", "pedirá"]
+      }
+    ]
+  },
+  {
+    "id": "s1176",
+    "es": "Mis tías son bien metiches y siempre preguntan cuándo me voy a casar.",
+    "sk": "Tety sú strašne zvedavé a stále sa vypytujú, kedy sa vydám.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "tías", "son", "bien", "metiches", "y", "siempre", "preguntan", "cuándo", "me", "voy", "a", "casar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "preguntan",
+        "lemma": "preguntar",
+        "hint": "preguntar · ellas · presente",
+        "distractors": ["pregunta", "preguntaron", "preguntaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1177",
+    "es": "Los hermanos se pelearon por la herencia y dejaron de hablarse.",
+    "sk": "Súrodenci sa pohádali kvôli dedičstvu a prestali spolu hovoriť.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["preterito"],
+    "tokens": ["Los", "hermanos", "se", "pelearon", "por", "la", "herencia", "y", "dejaron", "de", "hablarse", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pelearon",
+        "lemma": "pelear",
+        "hint": "pelear · ellos · pretérito",
+        "distractors": ["pelean", "peleaban", "pelearán"]
+      }
+    ]
   }
 ]

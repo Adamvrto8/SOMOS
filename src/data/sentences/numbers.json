@@ -646,5 +646,785 @@
         "distractors": ["Hizo", "Hago", "Hacía"]
       }
     ]
+  },
+  {
+    "id": "s1347",
+    "es": "¿Cuántos hijos tienen ustedes?",
+    "sk": "Koľko máte detí?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuántos", "hijos", "tienen", "ustedes", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tienen",
+        "lemma": "tener",
+        "hint": "tener · ustedes · presente",
+        "distractors": ["tenemos", "tuvieron", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1348",
+    "es": "Un kilo de tomates cuesta treinta pesos.",
+    "sk": "Kilo paradajok stojí tridsať pesos.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Un", "kilo", "de", "tomates", "cuesta", "treinta", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "treinta",
+        "lemma": "treinta",
+        "hint": "tridsať",
+        "distractors": ["trece", "tres", "cuarenta"]
+      }
+    ]
+  },
+  {
+    "id": "s1349",
+    "es": "Mi número empieza con cincuenta y cinco.",
+    "sk": "Moje číslo sa začína päťdesiatpäťkou.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "número", "empieza", "con", "cincuenta", "y", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "empieza",
+        "lemma": "empezar",
+        "hint": "empezar · él · presente",
+        "distractors": ["empiezo", "empezó", "empezaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1350",
+    "es": "En mi clase hay quince alumnos.",
+    "sk": "V mojej triede je pätnásť žiakov.",
+    "level": "A1",
+    "topics": ["numbers", "school"],
+    "tokens": ["En", "mi", "clase", "hay", "quince", "alumnos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quince",
+        "lemma": "quince",
+        "hint": "pätnásť",
+        "distractors": ["cinco", "cincuenta", "once"]
+      }
+    ]
+  },
+  {
+    "id": "s1351",
+    "es": "Necesito seis huevos para el pastel.",
+    "sk": "Na koláč potrebujem šesť vajec.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Necesito", "seis", "huevos", "para", "el", "pastel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "seis",
+        "lemma": "seis",
+        "hint": "šesť",
+        "distractors": ["siete", "dieciséis", "sesenta"]
+      }
+    ]
+  },
+  {
+    "id": "s1352",
+    "es": "Hoy es el primero de mayo.",
+    "sk": "Dnes je prvého mája.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Hoy", "es", "el", "primero", "de", "mayo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "primero",
+        "lemma": "primero",
+        "hint": "prvý",
+        "distractors": ["segundo", "tercero", "último"]
+      }
+    ]
+  },
+  {
+    "id": "s1353",
+    "es": "Mis hijos cuentan hasta diez en español.",
+    "sk": "Moje deti počítajú do desiatich po španielsky.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "cuentan", "hasta", "diez", "en", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuentan",
+        "lemma": "contar",
+        "hint": "contar · ellos · presente",
+        "distractors": ["cuento", "contaron", "contaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1354",
+    "es": "Tres más cinco son ocho.",
+    "sk": "Tri plus päť je osem.",
+    "level": "A1",
+    "topics": ["numbers"],
+    "tokens": ["Tres", "más", "cinco", "son", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ocho",
+        "lemma": "ocho",
+        "hint": "osem",
+        "distractors": ["seis", "nueve", "dieciocho"]
+      }
+    ]
+  },
+  {
+    "id": "s1355",
+    "es": "Pagué ciento veinte pesos por el taxi.",
+    "sk": "Za taxík som zaplatil stodvadsať pesos.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Pagué", "ciento", "veinte", "pesos", "por", "el", "taxi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pagué",
+        "lemma": "pagar",
+        "hint": "pagar · yo · pretérito",
+        "distractors": ["Pago", "Pagaba", "Pagaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1356",
+    "es": "Mi abuelo cumplirá setenta y cinco años en junio.",
+    "sk": "Dedko bude mať v júni sedemdesiatpäť rokov.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["futuro"],
+    "tokens": ["Mi", "abuelo", "cumplirá", "setenta", "y", "cinco", "años", "en", "junio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cumplirá",
+        "lemma": "cumplir",
+        "hint": "cumplir · él · futuro",
+        "distractors": ["cumplió", "cumple", "cumplirán"]
+      }
+    ]
+  },
+  {
+    "id": "s1357",
+    "es": "Cuando tenía seis años, aprendí a contar hasta cien.",
+    "sk": "Keď som mal šesť rokov, naučil som sa počítať do sto.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "tenía", "seis", "años", ",", "aprendí", "a", "contar", "hasta", "cien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tengo", "tuve", "tendré"]
+      }
+    ]
+  },
+  {
+    "id": "s1358",
+    "es": "Estamos contando el dinero de la fiesta.",
+    "sk": "Počítame peniaze z oslavy.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "contando", "el", "dinero", "de", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "contando",
+        "lemma": "contar",
+        "hint": "contar · gerundio",
+        "distractors": ["contamos", "contaba", "contar"]
+      }
+    ]
+  },
+  {
+    "id": "s1359",
+    "es": "La boda fue el doce de diciembre.",
+    "sk": "Svadba bola dvanásteho decembra.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "tokens": ["La", "boda", "fue", "el", "doce", "de", "diciembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "doce",
+        "lemma": "doce",
+        "hint": "dvanásť",
+        "distractors": ["dos", "veinte", "once"]
+      }
+    ]
+  },
+  {
+    "id": "s1360",
+    "es": "En la fiesta había cuarenta personas.",
+    "sk": "Na oslave bolo štyridsať ľudí.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "tokens": ["En", "la", "fiesta", "había", "cuarenta", "personas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuarenta",
+        "lemma": "cuarenta",
+        "hint": "štyridsať",
+        "distractors": ["catorce", "cuatro", "cuatrocientos"]
+      }
+    ]
+  },
+  {
+    "id": "s1361",
+    "es": "Ayer gasté trescientos pesos en el súper.",
+    "sk": "Včera som v obchode minul tristo pesos.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "gasté", "trescientos", "pesos", "en", "el", "súper", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gasté",
+        "lemma": "gastar",
+        "hint": "gastar · yo · pretérito",
+        "distractors": ["gasto", "gastaba", "gastaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1362",
+    "es": "Mañana compraremos una docena de huevos.",
+    "sk": "Zajtra kúpime tucet vajec.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "tokens": ["Mañana", "compraremos", "una", "docena", "de", "huevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "docena",
+        "lemma": "docena",
+        "hint": "tucet",
+        "distractors": ["mitad", "cantidad", "cifra"]
+      }
+    ]
+  },
+  {
+    "id": "s1363",
+    "es": "El camión pasaba cada veinte minutos.",
+    "sk": "Autobus chodil každých dvadsať minút.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto"],
+    "tokens": ["El", "camión", "pasaba", "cada", "veinte", "minutos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pasaba",
+        "lemma": "pasar",
+        "hint": "pasar · él · imperfecto",
+        "distractors": ["pasa", "pasó", "pasarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1364",
+    "es": "Mi papá pesaba cien kilos, pero bajó de peso.",
+    "sk": "Otec vážil sto kíl, ale schudol.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "papá", "pesaba", "cien", "kilos", ",", "pero", "bajó", "de", "peso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pesaba",
+        "lemma": "pesar",
+        "hint": "pesar · él · imperfecto",
+        "distractors": ["pesa", "pesó", "pesarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1365",
+    "es": "Te llamaré a las nueve y media.",
+    "sk": "Zavolám ti o pol desiatej.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["futuro"],
+    "tokens": ["Te", "llamaré", "a", "las", "nueve", "y", "media", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llamaré",
+        "lemma": "llamar",
+        "hint": "llamar · yo · futuro",
+        "distractors": ["llamo", "llamé", "llamarás"]
+      }
+    ]
+  },
+  {
+    "id": "s1366",
+    "es": "Vendimos la bicicleta en mil quinientos pesos.",
+    "sk": "Bicykel sme predali za tisícpäťsto pesos.",
+    "level": "A2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Vendimos", "la", "bicicleta", "en", "mil", "quinientos", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vendimos",
+        "lemma": "vender",
+        "hint": "vender · nosotros · pretérito",
+        "distractors": ["Vendemos", "Vendieron", "Vendíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1367",
+    "es": "Si ahorro doscientos pesos a la semana, en un año tendré más de diez mil.",
+    "sk": "Ak budem šetriť dvesto pesos týždenne, za rok budem mať viac ako desaťtisíc.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["futuro"],
+    "tokens": ["Si", "ahorro", "doscientos", "pesos", "a", "la", "semana", ",", "en", "un", "año", "tendré", "más", "de", "diez", "mil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "tendré",
+        "lemma": "tener",
+        "hint": "tener · yo · futuro",
+        "distractors": ["tengo", "tuve", "tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s1368",
+    "es": "Casi el treinta por ciento de mi sueldo se va en la renta.",
+    "sk": "Takmer tridsať percent výplaty mi ide na nájom.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "tokens": ["Casi", "el", "treinta", "por", "ciento", "de", "mi", "sueldo", "se", "va", "en", "la", "renta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "treinta",
+        "lemma": "treinta",
+        "hint": "tridsať",
+        "distractors": ["trece", "tres", "trescientos"]
+      }
+    ]
+  },
+  {
+    "id": "s1369",
+    "es": "Cuando llegué a México, no entendía los precios en pesos.",
+    "sk": "Keď som prišiel do Mexika, nerozumel som cenám v pesos.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "llegué", "a", "México", ",", "no", "entendía", "los", "precios", "en", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "entendía",
+        "lemma": "entender",
+        "hint": "entender · yo · imperfecto",
+        "distractors": ["entiendo", "entendí", "entenderé"]
+      }
+    ]
+  },
+  {
+    "id": "s1370",
+    "es": "Medimos la sala y tiene cuatro metros por cinco.",
+    "sk": "Odmerali sme obývačku a má štyri krát päť metrov.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Medimos", "la", "sala", "y", "tiene", "cuatro", "metros", "por", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Medimos",
+        "lemma": "medir",
+        "hint": "medir · nosotros · pretérito",
+        "distractors": ["Mido", "Midieron", "Medíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1371",
+    "es": "Calculo que vendrán unas cincuenta personas a la boda.",
+    "sk": "Odhadujem, že na svadbu príde asi päťdesiat ľudí.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["futuro"],
+    "tokens": ["Calculo", "que", "vendrán", "unas", "cincuenta", "personas", "a", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vendrán",
+        "lemma": "venir",
+        "hint": "venir · ellos · futuro",
+        "distractors": ["vienen", "vinieron", "venían"]
+      }
+    ]
+  },
+  {
+    "id": "s1372",
+    "es": "En México, los números de celular tienen diez dígitos.",
+    "sk": "V Mexiku majú čísla mobilov desať číslic.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["En", "México", ",", "los", "números", "de", "celular", "tienen", "diez", "dígitos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tienen",
+        "lemma": "tener",
+        "hint": "tener · ellos · presente",
+        "distractors": ["tiene", "tuvieron", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1373",
+    "es": "La mitad del grupo prefiere ir el sábado y la otra mitad, el domingo.",
+    "sk": "Polovica skupiny chce ísť radšej v sobotu a druhá polovica v nedeľu.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["La", "mitad", "del", "grupo", "prefiere", "ir", "el", "sábado", "y", "la", "otra", "mitad", ",", "el", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "prefiere",
+        "lemma": "preferir",
+        "hint": "preferir · él · presente",
+        "distractors": ["prefieren", "prefirió", "prefería"]
+      }
+    ]
+  },
+  {
+    "id": "s1374",
+    "es": "Pensaba que eran quinientos pesos, pero me cobraron el doble.",
+    "sk": "Myslel som si, že to bude päťsto pesos, ale zobrali mi dvojnásobok.",
+    "level": "B1",
+    "topics": ["numbers", "shopping"],
+    "grammar": ["preterito"],
+    "tokens": ["Pensaba", "que", "eran", "quinientos", "pesos", ",", "pero", "me", "cobraron", "el", "doble", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "cobraron",
+        "lemma": "cobrar",
+        "hint": "cobrar · ellos · pretérito",
+        "distractors": ["cobran", "cobraban", "cobrarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1375",
+    "es": "Es la tercera vez que cambio de celular este año.",
+    "sk": "Tento rok si mením mobil už tretíkrát.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "tokens": ["Es", "la", "tercera", "vez", "que", "cambio", "de", "celular", "este", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tercera",
+        "lemma": "tercero",
+        "hint": "tretí",
+        "distractors": ["primera", "segunda", "última"]
+      }
+    ]
+  },
+  {
+    "id": "s1376",
+    "es": "Aproximadamente diez mil personas corrieron el maratón el domingo.",
+    "sk": "V nedeľu bežalo maratón približne desaťtisíc ľudí.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Aproximadamente", "diez", "mil", "personas", "corrieron", "el", "maratón", "el", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "corrieron",
+        "lemma": "correr",
+        "hint": "correr · ellos · pretérito",
+        "distractors": ["corren", "corrían", "correrán"]
+      }
+    ]
+  },
+  {
+    "id": "s1377",
+    "es": "Esa cena nos costó un ojo de la cara: casi cuatro mil pesos.",
+    "sk": "Tá večera nás stála majland, skoro štyritisíc pesos.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Esa", "cena", "nos", "costó", "un", "ojo", "de", "la", "cara", ":", "casi", "cuatro", "mil", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "costó",
+        "lemma": "costar",
+        "hint": "costar · ella · pretérito",
+        "distractors": ["cuesta", "costaba", "costarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1378",
+    "es": "Un centenar de vecinos firmó la petición contra la construcción.",
+    "sk": "Petíciu proti výstavbe podpísalo asi sto susedov.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "tokens": ["Un", "centenar", "de", "vecinos", "firmó", "la", "petición", "contra", "la", "construcción", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "centenar",
+        "lemma": "centenar",
+        "hint": "stovka",
+        "distractors": ["porcentaje", "cálculo", "doble"]
+      }
+    ]
+  },
+  {
+    "id": "s1379",
+    "es": "Le faltan dos años para los cuarenta, pero se siente de veinte.",
+    "sk": "Do štyridsiatky mu chýbajú dva roky, ale cíti sa na dvadsať.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Le", "faltan", "dos", "años", "para", "los", "cuarenta", ",", "pero", "se", "siente", "de", "veinte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "siente",
+        "lemma": "sentirse",
+        "hint": "sentirse · él · presente",
+        "distractors": ["siento", "sintió", "sentía"]
+      }
+    ]
+  },
+  {
+    "id": "s1380",
+    "es": "Solo una minoría de los encuestados confía en los partidos políticos.",
+    "sk": "Politickým stranám dôveruje len menšina opýtaných.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "tokens": ["Solo", "una", "minoría", "de", "los", "encuestados", "confía", "en", "los", "partidos", "políticos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "minoría",
+        "lemma": "minoría",
+        "hint": "menšina",
+        "distractors": ["cifra", "cantidad", "estadística"]
+      }
+    ]
+  },
+  {
+    "id": "s1381",
+    "es": "Las cifras no cuadran: alguien se equivocó en el cálculo.",
+    "sk": "Čísla nesedia, niekto sa pomýlil vo výpočte.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "cifras", "no", "cuadran", ":", "alguien", "se", "equivocó", "en", "el", "cálculo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "equivocó",
+        "lemma": "equivocarse",
+        "hint": "equivocarse · él · pretérito",
+        "distractors": ["equivoca", "equivocaba", "equivocará"]
+      }
+    ]
+  },
+  {
+    "id": "s1382",
+    "es": "Te lo digo por enésima vez: son mil doscientos, no mil.",
+    "sk": "Hovorím ti to už po stýkrát: je to tisícdvesto, nie tisíc.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Te", "lo", "digo", "por", "enésima", "vez", ":", "son", "mil", "doscientos", ",", "no", "mil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "digo",
+        "lemma": "decir",
+        "hint": "decir · yo · presente",
+        "distractors": ["dije", "decía", "diré"]
+      }
+    ]
+  },
+  {
+    "id": "s1383",
+    "es": "La inflación aumentó casi un cinco por ciento el año pasado.",
+    "sk": "Inflácia minulý rok stúpla takmer o päť percent.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "inflación", "aumentó", "casi", "un", "cinco", "por", "ciento", "el", "año", "pasado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "aumentó",
+        "lemma": "aumentar",
+        "hint": "aumentar · ella · pretérito",
+        "distractors": ["aumenta", "aumentaba", "aumentará"]
+      }
+    ]
+  },
+  {
+    "id": "s1384",
+    "es": "Dimos el cuarenta por ciento de enganche y el resto lo pagamos a meses.",
+    "sk": "Štyridsať percent sme dali ako zálohu a zvyšok sme splácali mesačne.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Dimos", "el", "cuarenta", "por", "ciento", "de", "enganche", "y", "el", "resto", "lo", "pagamos", "a", "meses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "pagamos",
+        "lemma": "pagar",
+        "hint": "pagar · nosotros · pretérito",
+        "distractors": ["pago", "pagaron", "pagábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1385",
+    "es": "Gana el triple que yo y siempre se queja de que no le alcanza.",
+    "sk": "Zarába trikrát viac ako ja a stále sa sťažuje, že mu to nestačí.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Gana", "el", "triple", "que", "yo", "y", "siempre", "se", "queja", "de", "que", "no", "le", "alcanza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "alcanza",
+        "lemma": "alcanzar",
+        "hint": "alcanzar · él · presente",
+        "distractors": ["alcanzó", "alcanzaba", "alcanzará"]
+      }
+    ]
+  },
+  {
+    "id": "s1386",
+    "es": "Según el último censo, en México viven unos ciento treinta millones de personas.",
+    "sk": "Podľa posledného sčítania žije v Mexiku asi stotridsať miliónov ľudí.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Según", "el", "último", "censo", ",", "en", "México", "viven", "unos", "ciento", "treinta", "millones", "de", "personas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "viven",
+        "lemma": "vivir",
+        "hint": "vivir · ellos · presente",
+        "distractors": ["vive", "vivían", "vivirán"]
+      }
+    ]
+  },
+  {
+    "id": "s1387",
+    "es": "Me tocó pagar la mitad, aunque solo me tomé dos cervezas.",
+    "sk": "Musel som zaplatiť polovicu, hoci som si dal len dve pivá.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "tocó", "pagar", "la", "mitad", ",", "aunque", "solo", "me", "tomé", "dos", "cervezas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tocó",
+        "lemma": "tocar",
+        "hint": "tocar · él · pretérito",
+        "distractors": ["toca", "tocaba", "tocará"]
+      }
+    ]
+  },
+  {
+    "id": "s1388",
+    "es": "Ni de chiste llego a fin de mes con tres mil pesos a la quincena.",
+    "sk": "S tromi tisícmi pesos na dva týždne ani náhodou nevydržím do konca mesiaca.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Ni", "de", "chiste", "llego", "a", "fin", "de", "mes", "con", "tres", "mil", "pesos", "a", "la", "quincena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llego",
+        "lemma": "llegar",
+        "hint": "llegar · yo · presente",
+        "distractors": ["llegué", "llegaba", "llegaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1389",
+    "es": "Redondeé la cuenta a quinientos y le dejé el resto de propina.",
+    "sk": "Účet som zaokrúhlil na päťsto a zvyšok som mu nechal ako sprepitné.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["Redondeé", "la", "cuenta", "a", "quinientos", "y", "le", "dejé", "el", "resto", "de", "propina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "dejé",
+        "lemma": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors": ["dejo", "dejaba", "dejaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1390",
+    "es": "El candidato ganó por un margen mínimo: apenas tres mil votos.",
+    "sk": "Kandidát vyhral len tesne, iba o tritisíc hlasov.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "candidato", "ganó", "por", "un", "margen", "mínimo", ":", "apenas", "tres", "mil", "votos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ganó",
+        "lemma": "ganar",
+        "hint": "ganar · él · pretérito",
+        "distractors": ["gana", "ganaba", "ganará"]
+      }
+    ]
   }
 ]

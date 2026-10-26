@@ -985,5 +985,467 @@
         "distractors": ["aumenta", "aumentó", "aumentaban"]
       }
     ]
+  },
+  {
+    "id": "s1484",
+    "es": "El tren sale a las siete y media.",
+    "sk": "Vlak odchádza o pol ôsmej.",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["El", "tren", "sale", "a", "las", "siete", "y", "media", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él · presente",
+        "distractors": ["salimos", "salió", "salía"]
+      }
+    ]
+  },
+  {
+    "id": "s1485",
+    "es": "¿A qué hora cierras la tienda?",
+    "sk": "O koľkej zatváraš obchod?",
+    "level": "A1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "A", "qué", "hora", "cierras", "la", "tienda", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cierras",
+        "lemma": "cerrar",
+        "hint": "cerrar · tú · presente",
+        "distractors": ["cierra", "cerraste", "cerraban"]
+      }
+    ]
+  },
+  {
+    "id": "s1486",
+    "es": "En diciembre hace frío en el norte.",
+    "sk": "V decembri je na severe zima.",
+    "level": "A1",
+    "topics": ["time"],
+    "tokens": ["En", "diciembre", "hace", "frío", "en", "el", "norte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "diciembre",
+        "lemma": "diciembre",
+        "hint": "december",
+        "distractors": ["martes", "ayer", "hoy"]
+      }
+    ]
+  },
+  {
+    "id": "s1487",
+    "es": "Anoche me dormí a las dos de la madrugada.",
+    "sk": "Včera v noci som zaspal o druhej ráno.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "me", "dormí", "a", "las", "dos", "de", "la", "madrugada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dormí",
+        "lemma": "dormir",
+        "hint": "dormir · yo · pretérito",
+        "distractors": ["dormiste", "duermo", "dormiremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1488",
+    "es": "Hace un rato te llamé, pero no contestaste.",
+    "sk": "Pred chvíľou som ti volal, ale nezdvihol si to.",
+    "level": "A2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Hace", "un", "rato", "te", "llamé", ",", "pero", "no", "contestaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "contestaste",
+        "lemma": "contestar",
+        "hint": "contestar · tú · pretérito",
+        "distractors": ["contestó", "contestas", "contestarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1489",
+    "es": "El próximo domingo veremos a mis abuelos.",
+    "sk": "Budúcu nedeľu sa uvidíme so starými rodičmi.",
+    "level": "A2",
+    "topics": ["time"],
+    "tokens": ["El", "próximo", "domingo", "veremos", "a", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "próximo",
+        "lemma": "próximo",
+        "hint": "budúci",
+        "distractors": ["pasado", "último", "antiguo"]
+      }
+    ]
+  },
+  {
+    "id": "s1490",
+    "es": "Mientras tanto, yo voy preparando la comida.",
+    "sk": "Medzitým ja začnem chystať obed.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mientras", "tanto", ",", "yo", "voy", "preparando", "la", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "preparando",
+        "lemma": "preparar",
+        "hint": "preparar · gerundio",
+        "distractors": ["prepara", "preparar", "preparan"]
+      }
+    ]
+  },
+  {
+    "id": "s1491",
+    "es": "La fecha límite para entregar el proyecto es el viernes.",
+    "sk": "Termín na odovzdanie projektu je v piatok.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "fecha", "límite", "para", "entregar", "el", "proyecto", "es", "el", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "time",
+        "distractors": ["está", "era", "son"]
+      }
+    ]
+  },
+  {
+    "id": "s1492",
+    "es": "Cuando vivía en Puebla, siempre llegaba tarde a todos lados.",
+    "sk": "Keď som býval v Pueble, všade som chodil neskoro.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "Puebla", ",", "siempre", "llegaba", "tarde", "a", "todos", "lados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llegaba",
+        "lemma": "llegar",
+        "hint": "llegar · yo · imperfecto",
+        "distractors": ["llegabas", "llego", "llegamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1493",
+    "es": "En esta época del año, el centro siempre está lleno de turistas.",
+    "sk": "V tomto ročnom období je centrum vždy plné turistov.",
+    "level": "B1",
+    "topics": ["time"],
+    "tokens": ["En", "esta", "época", "del", "año", ",", "el", "centro", "siempre", "está", "lleno", "de", "turistas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "época",
+        "lemma": "época",
+        "hint": "obdobie",
+        "distractors": ["edad", "cuenta", "vuelta"]
+      }
+    ]
+  },
+  {
+    "id": "s1494",
+    "es": "Mi bisabuelo nació a principios del siglo pasado.",
+    "sk": "Pradedo sa narodil na začiatku minulého storočia.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "bisabuelo", "nació", "a", "principios", "del", "siglo", "pasado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nació",
+        "lemma": "nacer",
+        "hint": "nacer · él · pretérito",
+        "distractors": ["nacimos", "nace", "naceré"]
+      }
+    ]
+  },
+  {
+    "id": "s1495",
+    "es": "Siempre soy puntual, pero hoy el tráfico estaba horrible.",
+    "sk": "Vždy chodím načas, ale dnes bola hrozná premávka.",
+    "level": "B1",
+    "topics": ["time"],
+    "tokens": ["Siempre", "soy", "puntual", ",", "pero", "hoy", "el", "tráfico", "estaba", "horrible", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puntual",
+        "lemma": "puntual",
+        "hint": "dochvíľny",
+        "distractors": ["egoísta", "tímido", "celoso"]
+      }
+    ]
+  },
+  {
+    "id": "s1496",
+    "es": "Llevo dos años viviendo en México y todavía me sorprende.",
+    "sk": "V Mexiku žijem už dva roky a stále ma prekvapuje.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Llevo", "dos", "años", "viviendo", "en", "México", "y", "todavía", "me", "sorprende", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["Llevas", "Llevé", "Llevábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1497",
+    "es": "Antes del mediodía tendré listos todos los pendientes.",
+    "sk": "Do obeda budem mať hotové všetky resty.",
+    "level": "B1",
+    "topics": ["time"],
+    "tokens": ["Antes", "del", "mediodía", "tendré", "listos", "todos", "los", "pendientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mediodía",
+        "lemma": "mediodía",
+        "hint": "poludnie",
+        "distractors": ["siglo", "calendario", "reloj"]
+      }
+    ]
+  },
+  {
+    "id": "s1498",
+    "es": "De niño pensaba que el verano duraba para siempre.",
+    "sk": "Ako dieťa som si myslel, že leto trvá navždy.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "niño", "pensaba", "que", "el", "verano", "duraba", "para", "siempre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pensaba",
+        "lemma": "pensar",
+        "hint": "pensar · yo · imperfecto",
+        "distractors": ["pensabas", "pienso", "pensamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1499",
+    "es": "Cuando un mexicano dice ahorita, puede significar en cinco minutos o nunca.",
+    "sk": "Keď Mexičan povie ahorita, môže to znamenať o päť minút alebo nikdy.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Cuando", "un", "mexicano", "dice", "ahorita", ",", "puede", "significar", "en", "cinco", "minutos", "o", "nunca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dice",
+        "lemma": "decir",
+        "hint": "decir · él · presente",
+        "distractors": ["decimos", "dijo", "decía"]
+      }
+    ]
+  },
+  {
+    "id": "s1500",
+    "es": "Se me fue el tiempo volando y no terminé el informe.",
+    "sk": "Čas mi ubehol ako voda a správu som nedokončil.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "me", "fue", "el", "tiempo", "volando", "y", "no", "terminé", "el", "informe", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "terminé",
+        "lemma": "terminar",
+        "hint": "terminar · yo · pretérito",
+        "distractors": ["terminaste", "termino", "terminaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1501",
+    "es": "A primera hora checo el correo y te aviso.",
+    "sk": "Hneď zrána si skontrolujem poštu a dám ti vedieť.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["A", "primera", "hora", "checo", "el", "correo", "y", "te", "aviso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "aviso",
+        "lemma": "avisar",
+        "hint": "avisar · yo · presente",
+        "distractors": ["avisas", "avisé", "avisábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1502",
+    "es": "Lo dejamos para última hora, como siempre.",
+    "sk": "Nechali sme to na poslednú chvíľu, ako vždy.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Lo", "dejamos", "para", "última", "hora", ",", "como", "siempre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dejamos",
+        "lemma": "dejar",
+        "hint": "dejar · nosotros · pretérito",
+        "distractors": ["dejaron", "dejarás", "dejé"]
+      }
+    ]
+  },
+  {
+    "id": "s1503",
+    "es": "Con el tiempo aprendí a no preocuparme por cosas pequeñas.",
+    "sk": "Časom som sa naučil netrápiť sa maličkosťami.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["preterito"],
+    "tokens": ["Con", "el", "tiempo", "aprendí", "a", "no", "preocuparme", "por", "cosas", "pequeñas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprendí",
+        "lemma": "aprender",
+        "hint": "aprender · yo · pretérito",
+        "distractors": ["aprendiste", "aprendo", "aprenderemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1504",
+    "es": "El trámite tarda una eternidad; hay que armarse de paciencia.",
+    "sk": "Vybavovanie trvá celú večnosť, treba sa obrniť trpezlivosťou.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["El", "trámite", "tarda", "una", "eternidad", ";", "hay", "que", "armarse", "de", "paciencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "eternidad",
+        "lemma": "eternidad",
+        "hint": "večnosť",
+        "distractors": ["ventana", "receta", "mentira"]
+      }
+    ]
+  },
+  {
+    "id": "s1505",
+    "es": "Es impuntual por naturaleza: siempre llega con media hora de retraso.",
+    "sk": "Je od prírody nedochvíľny, vždy príde s polhodinovým meškaním.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["Es", "impuntual", "por", "naturaleza", ":", "siempre", "llega", "con", "media", "hora", "de", "retraso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "impuntual",
+        "lemma": "impuntual",
+        "hint": "nedochvíľny",
+        "distractors": ["puntual", "amable", "valiente"]
+      }
+    ]
+  },
+  {
+    "id": "s1506",
+    "es": "Llevamos años platicando de ese viaje y nunca lo hacemos.",
+    "sk": "Roky sa bavíme o tom výlete a nikdy ho neurobíme.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["progresivo"],
+    "tokens": ["Llevamos", "años", "platicando", "de", "ese", "viaje", "y", "nunca", "lo", "hacemos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "platicando",
+        "lemma": "platicar",
+        "hint": "platicar · gerundio",
+        "distractors": ["platica", "platicar", "platican"]
+      }
+    ]
+  },
+  {
+    "id": "s1507",
+    "es": "En aquel entonces no existían los celulares.",
+    "sk": "V tých časoch ešte neexistovali mobily.",
+    "level": "B2",
+    "topics": ["time"],
+    "tokens": ["En", "aquel", "entonces", "no", "existían", "los", "celulares", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entonces",
+        "lemma": "entonces",
+        "hint": "vtedy",
+        "distractors": ["mientras", "pronto", "todavía"]
+      }
+    ]
+  },
+  {
+    "id": "s1508",
+    "es": "Cada vez que se acerca la fecha límite, me pongo de nervios.",
+    "sk": "Zakaždým, keď sa blíži termín, som z toho nervózny.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Cada", "vez", "que", "se", "acerca", "la", "fecha", "límite", ",", "me", "pongo", "de", "nervios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "pongo",
+        "lemma": "ponerse",
+        "hint": "ponerse · yo · presente",
+        "distractors": ["pones", "puse", "poníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1509",
+    "es": "Hay que aprovechar el tiempo mientras uno es joven.",
+    "sk": "Čas treba využiť, kým je človek mladý.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Hay", "que", "aprovechar", "el", "tiempo", "mientras", "uno", "es", "joven", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "why": "trait",
+        "distractors": ["está", "era", "son"]
+      }
+    ]
   }
 ]

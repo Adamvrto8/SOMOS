@@ -853,5 +853,574 @@
         "distractors": ["sistemas", "economía", "ecología"]
       }
     ]
+  },
+  {
+    "id": "s1315",
+    "es": "El cielo está muy azul hoy.",
+    "sk": "Obloha je dnes veľmi modrá.",
+    "level": "A1",
+    "topics": ["nature"],
+    "tokens": ["El", "cielo", "está", "muy", "azul", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cielo",
+        "lemma": "cielo",
+        "hint": "obloha",
+        "distractors": ["árbol", "caballo", "perro"]
+      }
+    ]
+  },
+  {
+    "id": "s1316",
+    "es": "Vivimos cerca de una montaña.",
+    "sk": "Bývame blízko hory.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Vivimos", "cerca", "de", "una", "montaña", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vivimos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · presente",
+        "distractors": ["Vivo", "Viven", "Vivíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1317",
+    "es": "Mi abuelo cuida sus plantas cada mañana.",
+    "sk": "Dedko sa každé ráno stará o svoje rastliny.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuelo", "cuida", "sus", "plantas", "cada", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuida",
+        "lemma": "cuidar",
+        "hint": "cuidar · él · presente",
+        "distractors": ["cuido", "cuidan", "cuidó"]
+      }
+    ]
+  },
+  {
+    "id": "s1318",
+    "es": "Hay un árbol muy grande en el parque.",
+    "sk": "V parku je veľmi veľký strom.",
+    "level": "A1",
+    "topics": ["nature"],
+    "tokens": ["Hay", "un", "árbol", "muy", "grande", "en", "el", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "árbol",
+        "lemma": "árbol",
+        "hint": "strom",
+        "distractors": ["cielo", "mar", "sol"]
+      }
+    ]
+  },
+  {
+    "id": "s1319",
+    "es": "¿Nadas en el lago en verano?",
+    "sk": "Kúpeš sa v lete v jazere?",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Nadas", "en", "el", "lago", "en", "verano", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Nadas",
+        "lemma": "nadar",
+        "hint": "nadar · tú · presente",
+        "distractors": ["Nado", "Nadan", "Nadaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1320",
+    "es": "Las vacas están en el campo.",
+    "sk": "Kravy sú na poli.",
+    "level": "A1",
+    "topics": ["nature"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Las", "vacas", "están", "en", "el", "campo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "ser/estar · ellas · presente",
+        "why": "place",
+        "distractors": ["son", "está", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s1321",
+    "es": "Ayer vimos una serpiente en el camino.",
+    "sk": "Včera sme na chodníku videli hada.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["Ayer", "vimos", "una", "serpiente", "en", "el", "camino", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "serpiente",
+        "lemma": "serpiente",
+        "hint": "had",
+        "distractors": ["ola", "isla", "luna"]
+      }
+    ]
+  },
+  {
+    "id": "s1322",
+    "es": "Cuando vivía en el rancho, tenía dos burros.",
+    "sk": "Keď som býval na ranči, mal som dva osly.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "el", "rancho", ",", "tenía", "dos", "burros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tengo", "tuve", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1323",
+    "es": "El próximo verano visitaremos una isla en el Caribe.",
+    "sk": "Budúce leto navštívime ostrov v Karibiku.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "verano", "visitaremos", "una", "isla", "en", "el", "Caribe", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visitaremos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros · futuro",
+        "distractors": ["visitamos", "visitaron", "visitábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1324",
+    "es": "El temblor de anoche despertó a todos.",
+    "sk": "Nočné zemetrasenie zobudilo všetkých.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["El", "temblor", "de", "anoche", "despertó", "a", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "temblor",
+        "lemma": "temblor",
+        "hint": "zemetrasenie",
+        "distractors": ["cactus", "nopal", "burro"]
+      }
+    ]
+  },
+  {
+    "id": "s1325",
+    "es": "Los niños estaban jugando con la arena de la playa.",
+    "sk": "Deti sa hrali s pieskom na pláži.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "estaban", "jugando", "con", "la", "arena", "de", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jugando",
+        "lemma": "jugar",
+        "hint": "jugar · gerundio",
+        "distractors": ["juegan", "jugar", "jugaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1326",
+    "es": "Mi abuela regaba sus plantas todas las tardes.",
+    "sk": "Babka každé popoludnie polievala kvety.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "regaba", "sus", "plantas", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "regaba",
+        "lemma": "regar",
+        "hint": "regar · ella · imperfecto",
+        "distractors": ["riega", "regó", "regaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1327",
+    "es": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+    "sk": "Vlny boli veľmi silné, tak sme sa vrátili do hotela.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "olas", "estaban", "muy", "fuertes", ",", "así", "que", "regresamos", "al", "hotel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "regresamos",
+        "lemma": "regresar",
+        "hint": "regresar · nosotros · pretérito",
+        "distractors": ["regreso", "regresaron", "regresábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1328",
+    "es": "Creo que deberíamos reciclar más, porque la basura contamina los ríos.",
+    "sk": "Myslím, že by sme mali viac recyklovať, lebo odpadky znečisťujú rieky.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "deberíamos", "reciclar", "más", ",", "porque", "la", "basura", "contamina", "los", "ríos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "contamina",
+        "lemma": "contaminar",
+        "hint": "contaminar · ella · presente",
+        "distractors": ["contamino", "contaminó", "contaminaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1329",
+    "es": "Cuando éramos niños, este río estaba limpio; ahora da tristeza verlo.",
+    "sk": "Keď sme boli deti, táto rieka bola čistá; teraz je smutné sa na ňu pozerať.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Cuando", "éramos", "niños", ",", "este", "río", "estaba", "limpio", ";", "ahora", "da", "tristeza", "verlo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "why": "state",
+        "distractors": ["era", "está", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s1330",
+    "es": "Íbamos por la carretera cuando vimos un incendio en el cerro.",
+    "sk": "Išli sme po ceste, keď sme na kopci uvideli požiar.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Íbamos", "por", "la", "carretera", "cuando", "vimos", "un", "incendio", "en", "el", "cerro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["Vamos", "Fuimos", "Iban"]
+      }
+    ]
+  },
+  {
+    "id": "s1331",
+    "es": "Este año casi no llovió, por eso la sequía es tan grave.",
+    "sk": "Tento rok skoro nepršalo, preto je sucho také vážne.",
+    "level": "B1",
+    "topics": ["nature"],
+    "tokens": ["Este", "año", "casi", "no", "llovió", ",", "por", "eso", "la", "sequía", "es", "tan", "grave", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "sequía",
+        "lemma": "sequía",
+        "hint": "sucho",
+        "distractors": ["cueva", "semilla", "raíz"]
+      }
+    ]
+  },
+  {
+    "id": "s1332",
+    "es": "Pienso pasar el fin de semana en una cabaña en el bosque.",
+    "sk": "Víkend plánujem stráviť na chate v lese.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Pienso", "pasar", "el", "fin", "de", "semana", "en", "una", "cabaña", "en", "el", "bosque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pienso",
+        "lemma": "pensar",
+        "hint": "pensar · yo · presente",
+        "distractors": ["Piensas", "Pensé", "Pensaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1333",
+    "es": "Me encanta el paisaje de la sierra, sobre todo al amanecer.",
+    "sk": "Zbožňujem krajinu v horách, hlavne za úsvitu.",
+    "level": "B1",
+    "topics": ["nature"],
+    "tokens": ["Me", "encanta", "el", "paisaje", "de", "la", "sierra", ",", "sobre", "todo", "al", "amanecer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "paisaje",
+        "lemma": "paisaje",
+        "hint": "krajina",
+        "distractors": ["recurso", "reciclaje", "incendio"]
+      }
+    ]
+  },
+  {
+    "id": "s1334",
+    "es": "Los científicos dicen que muchas especies desaparecerán si no protegemos la selva.",
+    "sk": "Vedci hovoria, že veľa druhov vyhynie, ak nebudeme chrániť prales.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "científicos", "dicen", "que", "muchas", "especies", "desaparecerán", "si", "no", "protegemos", "la", "selva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "protegemos",
+        "lemma": "proteger",
+        "hint": "proteger · nosotros · presente",
+        "distractors": ["protejo", "protegieron", "protegíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1335",
+    "es": "En la cueva hacía mucho frío y no se veía nada.",
+    "sk": "V jaskyni bola veľká zima a nebolo nič vidieť.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["En", "la", "cueva", "hacía", "mucho", "frío", "y", "no", "se", "veía", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hacía",
+        "lemma": "hacer",
+        "hint": "hacer · él · imperfecto",
+        "distractors": ["hace", "hizo", "hacían"]
+      }
+    ]
+  },
+  {
+    "id": "s1336",
+    "es": "Dejamos de usar bolsas de plástico para ayudar al medio ambiente.",
+    "sk": "Prestali sme používať igelitové tašky, aby sme pomohli životnému prostrediu.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Dejamos", "de", "usar", "bolsas", "de", "plástico", "para", "ayudar", "al", "medio", "ambiente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dejamos",
+        "lemma": "dejar",
+        "hint": "dejar · nosotros · pretérito",
+        "distractors": ["Dejo", "Dejaron", "Dejábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1337",
+    "es": "Si seguimos talando los bosques, nos vamos a quedar sin agua.",
+    "sk": "Ak budeme ďalej rúbať lesy, ostaneme bez vody.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "seguimos", "talando", "los", "bosques", ",", "nos", "vamos", "a", "quedar", "sin", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "seguimos",
+        "lemma": "seguir",
+        "hint": "seguir · nosotros · presente",
+        "distractors": ["sigo", "siguieron", "seguíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1338",
+    "es": "Me da coraje ver cómo la gente tira basura en la playa.",
+    "sk": "Štve ma, keď vidím, ako ľudia hádžu odpadky na pláži.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["Me", "da", "coraje", "ver", "cómo", "la", "gente", "tira", "basura", "en", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "coraje",
+        "lemma": "coraje",
+        "hint": "zlosť",
+        "distractors": ["huella", "raíz", "composta"]
+      }
+    ]
+  },
+  {
+    "id": "s1339",
+    "es": "El huracán acabó con los manglares de la costa.",
+    "sk": "Hurikán zničil mangrovy na pobreží.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "huracán", "acabó", "con", "los", "manglares", "de", "la", "costa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "acabó",
+        "lemma": "acabar",
+        "hint": "acabar · él · pretérito",
+        "distractors": ["acaba", "acababa", "acabaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1340",
+    "es": "Aunque cueste más, prefiero comprar productos que no dañen el ecosistema.",
+    "sk": "Aj keď je to drahšie, radšej kupujem výrobky, ktoré nepoškodzujú ekosystém.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Aunque", "cueste", "más", ",", "prefiero", "comprar", "productos", "que", "no", "dañen", "el", "ecosistema", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["prefieres", "preferí", "prefería"]
+      }
+    ]
+  },
+  {
+    "id": "s1341",
+    "es": "Hace unos años nadie separaba los residuos; hoy ya es costumbre.",
+    "sk": "Pred pár rokmi nikto netriedil odpad; dnes je to už samozrejmosť.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["Hace", "unos", "años", "nadie", "separaba", "los", "residuos", ";", "hoy", "ya", "es", "costumbre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "residuos",
+        "lemma": "residuo",
+        "hint": "odpad",
+        "distractors": ["arrecifes", "manglares", "ajolotes"]
+      }
+    ]
+  },
+  {
+    "id": "s1342",
+    "es": "Los ajolotes solo viven en los canales de Xochimilco, y cada vez quedan menos.",
+    "sk": "Axolotly žijú len v kanáloch Xochimilca a je ich čoraz menej.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "ajolotes", "solo", "viven", "en", "los", "canales", "de", "Xochimilco", ",", "y", "cada", "vez", "quedan", "menos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viven",
+        "lemma": "vivir",
+        "hint": "vivir · ellos · presente",
+        "distractors": ["vivo", "vivió", "vivían"]
+      }
+    ]
+  },
+  {
+    "id": "s1343",
+    "es": "Por el calentamiento global, los veranos se han vuelto insoportables.",
+    "sk": "Kvôli globálnemu otepľovaniu sú letá neznesiteľné.",
+    "level": "B2",
+    "topics": ["nature"],
+    "tokens": ["Por", "el", "calentamiento", "global", ",", "los", "veranos", "se", "han", "vuelto", "insoportables", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "insoportables",
+        "lemma": "insoportable",
+        "hint": "neznesiteľný",
+        "distractors": ["renovables", "sustentables", "orgánicos"]
+      }
+    ]
+  },
+  {
+    "id": "s1344",
+    "es": "Las autoridades no hicieron nada para frenar la deforestación.",
+    "sk": "Úrady neurobili nič, aby zastavili odlesňovanie.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "autoridades", "no", "hicieron", "nada", "para", "frenar", "la", "deforestación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hicieron",
+        "lemma": "hacer",
+        "hint": "hacer · ellas · pretérito",
+        "distractors": ["hacen", "hizo", "hacían"]
+      }
+    ]
+  },
+  {
+    "id": "s1345",
+    "es": "Los pueblos de la sierra ya obtienen energía del sol y del viento.",
+    "sk": "Horské dediny už získavajú energiu zo slnka a z vetra.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "pueblos", "de", "la", "sierra", "ya", "obtienen", "energía", "del", "sol", "y", "del", "viento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "obtienen",
+        "lemma": "obtener",
+        "hint": "obtener · ellos · presente",
+        "distractors": ["obtengo", "obtuvieron", "obtenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1346",
+    "es": "Los pescadores cuentan que antes había el doble de peces en la bahía.",
+    "sk": "Rybári rozprávajú, že predtým bolo v zátoke dvakrát viac rýb.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "pescadores", "cuentan", "que", "antes", "había", "el", "doble", "de", "peces", "en", "la", "bahía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuentan",
+        "lemma": "contar",
+        "hint": "contar · ellos · presente",
+        "distractors": ["cuento", "contaron", "contaban"]
+      }
+    ]
   }
 ]

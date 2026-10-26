@@ -913,5 +913,519 @@
         "distractors": ["disminuye", "disminuía", "disminuirá"]
       }
     ]
+  },
+  {
+    "id": "s1232",
+    "es": "Me duele el estómago después de comer.",
+    "sk": "Po jedle ma bolí žalúdok.",
+    "level": "A1",
+    "topics": ["health"],
+    "tokens": ["Me", "duele", "el", "estómago", "después", "de", "comer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estómago",
+        "lemma": "estómago",
+        "hint": "žalúdok",
+        "distractors": ["mesa", "calle", "ventana"]
+      }
+    ]
+  },
+  {
+    "id": "s1233",
+    "es": "Mi hijo tiene una herida en la rodilla.",
+    "sk": "Syn má ranu na kolene.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "tiene", "una", "herida", "en", "la", "rodilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · él · presente",
+        "distractors": ["tenemos", "tuvo", "tenía"]
+      }
+    ]
+  },
+  {
+    "id": "s1234",
+    "es": "El consultorio abre a las nueve.",
+    "sk": "Ambulancia otvára o deviatej.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["El", "consultorio", "abre", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abre",
+        "lemma": "abrir",
+        "hint": "abrir · él · presente",
+        "distractors": ["abrimos", "abrió", "abría"]
+      }
+    ]
+  },
+  {
+    "id": "s1235",
+    "es": "Tomo vitaminas todos los días.",
+    "sk": "Každý deň beriem vitamíny.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Tomo", "vitaminas", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tomo",
+        "lemma": "tomar",
+        "hint": "tomar · yo · presente",
+        "distractors": ["Tomas", "Tomé", "Tomábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1236",
+    "es": "Mis papás comen muy sano.",
+    "sk": "Rodičia jedia veľmi zdravo.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "papás", "comen", "muy", "sano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comen",
+        "lemma": "comer",
+        "hint": "comer · ellos · presente",
+        "distractors": ["como", "comieron", "comía"]
+      }
+    ]
+  },
+  {
+    "id": "s1237",
+    "es": "¿Estás enfermo? Tienes mala cara.",
+    "sk": "Si chorý? Nevyzeráš dobre.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["ser-estar"],
+    "tokens": ["¿", "Estás", "enfermo", "?", "Tienes", "mala", "cara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Estás",
+        "lemma": "estar",
+        "hint": "ser/estar · tú · presente",
+        "why": "state",
+        "distractors": ["Eres", "Estoy", "Está"]
+      }
+    ]
+  },
+  {
+    "id": "s1238",
+    "es": "La clínica está cerca de mi casa.",
+    "sk": "Klinika je blízko môjho domu.",
+    "level": "A1",
+    "topics": ["health"],
+    "tokens": ["La", "clínica", "está", "cerca", "de", "mi", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cerca",
+        "lemma": "cerca",
+        "hint": "blízko",
+        "distractors": ["mañana", "nunca", "ayer"]
+      }
+    ]
+  },
+  {
+    "id": "s1239",
+    "es": "Ayer me tomé la temperatura con el termómetro.",
+    "sk": "Včera som si zmeral teplotu teplomerom.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "me", "tomé", "la", "temperatura", "con", "el", "termómetro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tomé",
+        "lemma": "tomar",
+        "hint": "tomar · yo · pretérito",
+        "distractors": ["tomaste", "tomo", "tomaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1240",
+    "es": "La enfermera me puso la vacuna contra la gripa.",
+    "sk": "Sestrička ma zaočkovala proti chrípke.",
+    "level": "A2",
+    "topics": ["health"],
+    "tokens": ["La", "enfermera", "me", "puso", "la", "vacuna", "contra", "la", "gripa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "vacuna",
+        "lemma": "vacuna",
+        "hint": "očkovanie",
+        "distractors": ["cita", "receta", "herida"]
+      }
+    ]
+  },
+  {
+    "id": "s1241",
+    "es": "El jarabe sabía horrible, pero me ayudó.",
+    "sk": "Sirup chutil hrozne, ale pomohol mi.",
+    "level": "A2",
+    "topics": ["health"],
+    "tokens": ["El", "jarabe", "sabía", "horrible", ",", "pero", "me", "ayudó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "jarabe",
+        "lemma": "jarabe",
+        "hint": "sirup",
+        "distractors": ["yeso", "termómetro", "curita"]
+      }
+    ]
+  },
+  {
+    "id": "s1242",
+    "es": "Mi esposo está tosiendo mucho, creo que tiene gripa.",
+    "sk": "Manžel veľa kašle, myslím, že má chrípku.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mi", "esposo", "está", "tosiendo", "mucho", ",", "creo", "que", "tiene", "gripa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tosiendo",
+        "lemma": "toser",
+        "hint": "toser · gerundio",
+        "distractors": ["tose", "toser", "tosen"]
+      }
+    ]
+  },
+  {
+    "id": "s1243",
+    "es": "Cuando era niño, nunca me enfermaba.",
+    "sk": "Keď som bol malý, nikdy som nebol chorý.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "era", "niño", ",", "nunca", "me", "enfermaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "enfermaba",
+        "lemma": "enfermarse",
+        "hint": "enfermarse · yo · imperfecto",
+        "distractors": ["enfermabas", "enfermo", "enfermamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1244",
+    "es": "Esta noche descansaré y mañana estaré mejor.",
+    "sk": "Dnes večer si oddýchnem a zajtra mi bude lepšie.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["futuro"],
+    "tokens": ["Esta", "noche", "descansaré", "y", "mañana", "estaré", "mejor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "descansaré",
+        "lemma": "descansar",
+        "hint": "descansar · yo · futuro",
+        "distractors": ["descansarás", "descanso", "descansamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1245",
+    "es": "El doctor me recomendó una dieta sin azúcar ni harina.",
+    "sk": "Lekár mi odporučil diétu bez cukru a múky.",
+    "level": "B1",
+    "topics": ["health"],
+    "tokens": ["El", "doctor", "me", "recomendó", "una", "dieta", "sin", "azúcar", "ni", "harina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "dieta",
+        "lemma": "dieta",
+        "hint": "diéta",
+        "distractors": ["cirugía", "lesión", "presión"]
+      }
+    ]
+  },
+  {
+    "id": "s1246",
+    "es": "Creo que el estrés es la causa de mis dolores de cabeza.",
+    "sk": "Myslím, že za mojimi bolesťami hlavy je stres.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "el", "estrés", "es", "la", "causa", "de", "mis", "dolores", "de", "cabeza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Creo",
+        "lemma": "creer",
+        "hint": "creer · yo · presente",
+        "distractors": ["Crees", "Creí", "Creíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1247",
+    "es": "Cuando era joven fumaba, pero lo dejé hace diez años.",
+    "sk": "Keď som bol mladý, fajčil som, ale pred desiatimi rokmi som prestal.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "era", "joven", "fumaba", ",", "pero", "lo", "dejé", "hace", "diez", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "dejé",
+        "lemma": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors": ["dejaste", "dejo", "dejaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1248",
+    "es": "Después de la cirugía, mi papá tuvo que quedarse tres días en el hospital.",
+    "sk": "Po operácii musel otec zostať tri dni v nemocnici.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Después", "de", "la", "cirugía", ",", "mi", "papá", "tuvo", "que", "quedarse", "tres", "días", "en", "el", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tuvo",
+        "lemma": "tener",
+        "hint": "tener · él · pretérito",
+        "distractors": ["tuvimos", "tiene", "tendré"]
+      }
+    ]
+  },
+  {
+    "id": "s1249",
+    "es": "La gripa es muy contagiosa, así que mejor quédate en casa.",
+    "sk": "Chrípka je veľmi nákazlivá, takže radšej zostaň doma.",
+    "level": "B1",
+    "topics": ["health"],
+    "tokens": ["La", "gripa", "es", "muy", "contagiosa", ",", "así", "que", "mejor", "quédate", "en", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "contagiosa",
+        "lemma": "contagioso",
+        "hint": "nákazlivý",
+        "distractors": ["sana", "barata", "divertida"]
+      }
+    ]
+  },
+  {
+    "id": "s1250",
+    "es": "Mientras esperaba al doctor, empecé a sentirme peor.",
+    "sk": "Kým som čakal na lekára, začalo mi byť horšie.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "esperaba", "al", "doctor", ",", "empecé", "a", "sentirme", "peor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esperaba",
+        "lemma": "esperar",
+        "hint": "esperar · yo · imperfecto",
+        "distractors": ["esperabas", "espero", "esperamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1251",
+    "es": "Para evitar lesiones, siempre caliento antes de correr.",
+    "sk": "Aby som sa vyhol zraneniam, pred behom sa vždy rozcvičím.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Para", "evitar", "lesiones", ",", "siempre", "caliento", "antes", "de", "correr", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "caliento",
+        "lemma": "calentar",
+        "hint": "calentar · yo · presente",
+        "distractors": ["calientas", "calenté", "calentábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1252",
+    "es": "Me dio un bajón de azúcar y casi me desmayo.",
+    "sk": "Klesol mi cukor a skoro som odpadol.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "dio", "un", "bajón", "de", "azúcar", "y", "casi", "me", "desmayo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dio",
+        "lemma": "dar",
+        "hint": "dar · él · pretérito",
+        "distractors": ["dimos", "da", "daré"]
+      }
+    ]
+  },
+  {
+    "id": "s1253",
+    "es": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
+    "sk": "Mám chronickú chorobu, takže chodím na kontroly každé tri mesiace.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "una", "enfermedad", "crónica", ",", "así", "que", "me", "checo", "cada", "tres", "meses", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "checo",
+        "lemma": "checar",
+        "hint": "checar · yo · presente",
+        "distractors": ["checas", "chequé", "checábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1254",
+    "es": "El agotamiento lo obligó a pedir una incapacidad en el trabajo.",
+    "sk": "Pre vyčerpanie musel ísť na práceneschopnosť.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["El", "agotamiento", "lo", "obligó", "a", "pedir", "una", "incapacidad", "en", "el", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "agotamiento",
+        "lemma": "agotamiento",
+        "hint": "vyčerpanie",
+        "distractors": ["termómetro", "jarabe", "cubrebocas"]
+      }
+    ]
+  },
+  {
+    "id": "s1255",
+    "es": "Siempre lo digo: más vale prevenir que lamentar.",
+    "sk": "Vždy to hovorím: lepšie je predchádzať, ako ľutovať.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Siempre", "lo", "digo", ":", "más", "vale", "prevenir", "que", "lamentar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "digo",
+        "lemma": "decir",
+        "hint": "decir · yo · presente",
+        "distractors": ["dices", "dije", "decíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1256",
+    "es": "Ando bien crudo; anoche tomé demasiado.",
+    "sk": "Mám poriadnu opicu, včera večer som to prehnal s pitím.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Ando", "bien", "crudo", ";", "anoche", "tomé", "demasiado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "crudo",
+        "lemma": "crudo",
+        "hint": "s opicou",
+        "distractors": ["sano", "puntual", "valiente"]
+      }
+    ]
+  },
+  {
+    "id": "s1257",
+    "es": "La doctora me mandó a hacer unos análisis de sangre.",
+    "sk": "Doktorka ma poslala na krvné testy.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "doctora", "me", "mandó", "a", "hacer", "unos", "análisis", "de", "sangre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mandó",
+        "lemma": "mandar",
+        "hint": "mandar · ella · pretérito",
+        "distractors": ["mandamos", "manda", "mandaré"]
+      }
+    ]
+  },
+  {
+    "id": "s1258",
+    "es": "Por más que se cuida, la presión no le baja.",
+    "sk": "Hoci sa veľmi stráži, tlak mu neklesá.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Por", "más", "que", "se", "cuida", ",", "la", "presión", "no", "le", "baja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuida",
+        "lemma": "cuidar",
+        "hint": "cuidar · él · presente",
+        "distractors": ["cuidamos", "cuidó", "cuidaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1259",
+    "es": "Nos contagiamos todos en la oficina por no usar cubrebocas.",
+    "sk": "V kancelárii sme sa nakazili všetci, lebo sme nenosili rúška.",
+    "level": "B2",
+    "topics": ["health"],
+    "tokens": ["Nos", "contagiamos", "todos", "en", "la", "oficina", "por", "no", "usar", "cubrebocas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "cubrebocas",
+        "lemma": "cubrebocas",
+        "hint": "rúško",
+        "distractors": ["curita", "yeso", "jarabe"]
+      }
+    ]
+  },
+  {
+    "id": "s1260",
+    "es": "Si no te cuidas, la diabetes puede traer complicaciones serias.",
+    "sk": "Ak sa nebudeš šetriť, cukrovka môže priniesť vážne komplikácie.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "no", "te", "cuidas", ",", "la", "diabetes", "puede", "traer", "complicaciones", "serias", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder · ella · presente",
+        "distractors": ["podemos", "pudo", "podía"]
+      }
+    ]
   }
 ]

@@ -873,5 +873,557 @@
         "distractors": ["luchador", "jugadores", "lectores"]
       }
     ]
+  },
+  {
+    "id": "s1261",
+    "es": "Mi hijo ve caricaturas todas las tardes.",
+    "sk": "Syn každé popoludnie pozerá rozprávky.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "ve", "caricaturas", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ve",
+        "lemma": "ver",
+        "hint": "ver · él · presente",
+        "distractors": ["vio", "veo", "verán"]
+      }
+    ]
+  },
+  {
+    "id": "s1262",
+    "es": "El concierto es el viernes en la noche.",
+    "sk": "Koncert je v piatok večer.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["El", "concierto", "es", "el", "viernes", "en", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · él · presente",
+        "why": "event",
+        "distractors": ["está", "son", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s1263",
+    "es": "Mis primas bailan muy bien.",
+    "sk": "Sesternice tancujú veľmi dobre.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "primas", "bailan", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "bailan",
+        "lemma": "bailar",
+        "hint": "bailar · ellas · presente",
+        "distractors": ["bailaron", "bailo", "bailaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1264",
+    "es": "Leo un libro antes de dormir.",
+    "sk": "Pred spaním si čítam knihu.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Leo", "un", "libro", "antes", "de", "dormir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Leo",
+        "lemma": "leer",
+        "hint": "leer · yo · presente",
+        "distractors": ["Leí", "Leemos", "Leerán"]
+      }
+    ]
+  },
+  {
+    "id": "s1265",
+    "es": "Los domingos andamos en bicicleta.",
+    "sk": "V nedeľu jazdíme na bicykli.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "tokens": ["Los", "domingos", "andamos", "en", "bicicleta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "bicicleta",
+        "lemma": "bicicleta",
+        "hint": "bicykel",
+        "distractors": ["guitarra", "película", "canción"]
+      }
+    ]
+  },
+  {
+    "id": "s1266",
+    "es": "¿Tocas algún instrumento?",
+    "sk": "Hráš na nejakom nástroji?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Tocas", "algún", "instrumento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tocas",
+        "lemma": "tocar",
+        "hint": "tocar · tú · presente",
+        "distractors": ["Tocaste", "Toco", "Tocarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1267",
+    "es": "Mi deporte favorito es la natación.",
+    "sk": "Môj obľúbený šport je plávanie.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "tokens": ["Mi", "deporte", "favorito", "es", "la", "natación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "deporte",
+        "lemma": "deporte",
+        "hint": "šport",
+        "distractors": ["canción", "película", "foto"]
+      }
+    ]
+  },
+  {
+    "id": "s1268",
+    "es": "Los niños están jugando en el parque.",
+    "sk": "Deti sa hrajú v parku.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "están", "jugando", "en", "el", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jugando",
+        "lemma": "jugar",
+        "hint": "jugar · gerundio",
+        "distractors": ["juega", "jugar", "jugó"]
+      }
+    ]
+  },
+  {
+    "id": "s1269",
+    "es": "El año pasado aprendí a nadar en una alberca pública.",
+    "sk": "Minulý rok som sa naučil plávať na verejnom kúpalisku.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "año", "pasado", "aprendí", "a", "nadar", "en", "una", "alberca", "pública", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprendí",
+        "lemma": "aprender",
+        "hint": "aprender · yo · pretérito",
+        "distractors": ["aprendo", "aprendimos", "aprendían"]
+      }
+    ]
+  },
+  {
+    "id": "s1270",
+    "es": "De chico iba al estadio con mi abuelo.",
+    "sk": "Ako malý som chodil s dedkom na štadión.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto"],
+    "tokens": ["De", "chico", "iba", "al", "estadio", "con", "mi", "abuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "iba",
+        "lemma": "ir",
+        "hint": "ir · yo · imperfecto",
+        "distractors": ["fui", "íbamos", "van"]
+      }
+    ]
+  },
+  {
+    "id": "s1271",
+    "es": "Me encanta ir al boliche con mis compañeros del trabajo.",
+    "sk": "Strašne rád chodím s kolegami na bowling.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "tokens": ["Me", "encanta", "ir", "al", "boliche", "con", "mis", "compañeros", "del", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "boliche",
+        "lemma": "boliche",
+        "hint": "bowling",
+        "distractors": ["árbitro", "empate", "pasatiempo"]
+      }
+    ]
+  },
+  {
+    "id": "s1272",
+    "es": "Antes no me gustaba correr, pero ahora entreno cuatro veces por semana.",
+    "sk": "Predtým som nerád behal, ale teraz trénujem štyrikrát do týždňa.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Antes", "no", "me", "gustaba", "correr", ",", "pero", "ahora", "entreno", "cuatro", "veces", "por", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "entreno",
+        "lemma": "entrenar",
+        "hint": "entrenar · yo · presente",
+        "distractors": ["entrené", "entrenamos", "entrenarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1273",
+    "es": "Pensamos inscribirnos a clases de baile este semestre.",
+    "sk": "Tento semester sa chceme prihlásiť na tanečné.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Pensamos", "inscribirnos", "a", "clases", "de", "baile", "este", "semestre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pensamos",
+        "lemma": "pensar",
+        "hint": "pensar · nosotros · presente",
+        "distractors": ["Pienso", "Piensan", "Pensarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1274",
+    "es": "La exposición de Frida Kahlo estuvo increíble.",
+    "sk": "Výstava Fridy Kahlo bola úžasná.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "tokens": ["La", "exposición", "de", "Frida", "Kahlo", "estuvo", "increíble", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "exposición",
+        "lemma": "exposición",
+        "hint": "výstava",
+        "distractors": ["jardinería", "natación", "pelota"]
+      }
+    ]
+  },
+  {
+    "id": "s1275",
+    "es": "Mientras esperábamos el partido, el estadio se llenó de aficionados.",
+    "sk": "Kým sme čakali na zápas, štadión sa zaplnil fanúšikmi.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "tokens": ["Mientras", "esperábamos", "el", "partido", ",", "el", "estadio", "se", "llenó", "de", "aficionados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "aficionados",
+        "lemma": "aficionado",
+        "hint": "fanúšikovia",
+        "distractors": ["árbitros", "torneos", "empates"]
+      }
+    ]
+  },
+  {
+    "id": "s1276",
+    "es": "Mis hijos prefieren los juegos de mesa porque así platicamos más.",
+    "sk": "Deti majú radšej spoločenské hry, lebo sa pri nich viac rozprávame.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "prefieren", "los", "juegos", "de", "mesa", "porque", "así", "platicamos", "más", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "prefieren",
+        "lemma": "preferir",
+        "hint": "preferir · ellos · presente",
+        "distractors": ["prefirieron", "prefiero", "preferiremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1277",
+    "es": "Si mañana no llueve, saldremos a pescar al lago.",
+    "sk": "Ak zajtra nebude pršať, pôjdeme na ryby k jazeru.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["futuro"],
+    "tokens": ["Si", "mañana", "no", "llueve", ",", "saldremos", "a", "pescar", "al", "lago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "saldremos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · futuro",
+        "distractors": ["salimos", "saldré", "salieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1278",
+    "es": "Dejé el gimnasio porque no tenía tiempo.",
+    "sk": "S fitkom som prestal, lebo som nemal čas.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Dejé", "el", "gimnasio", "porque", "no", "tenía", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dejé",
+        "lemma": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors": ["Dejo", "Dejamos", "Dejaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1279",
+    "es": "El torneo de ajedrez se canceló por falta de jugadores.",
+    "sk": "Šachový turnaj zrušili pre nedostatok hráčov.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "tokens": ["El", "torneo", "de", "ajedrez", "se", "canceló", "por", "falta", "de", "jugadores", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "torneo",
+        "lemma": "torneo",
+        "hint": "turnaj",
+        "distractors": ["árbitro", "empate", "pasatiempo"]
+      }
+    ]
+  },
+  {
+    "id": "s1280",
+    "es": "Le echamos porras al equipo hasta quedarnos sin voz.",
+    "sk": "Povzbudzovali sme tím, až kým sme neprišli o hlas.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Le", "echamos", "porras", "al", "equipo", "hasta", "quedarnos", "sin", "voz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "porras",
+        "lemma": "porra",
+        "hint": "povzbudzovanie",
+        "distractors": ["medallas", "goleadas", "premiaciones"]
+      }
+    ]
+  },
+  {
+    "id": "s1281",
+    "es": "El partido estuvo de flojera; nadie metió ni un gol.",
+    "sk": "Zápas bol na zaspanie, nikto nedal ani gól.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito", "ser-estar"],
+    "tokens": ["El", "partido", "estuvo", "de", "flojera", ";", "nadie", "metió", "ni", "un", "gol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estuvo",
+        "lemma": "estar",
+        "hint": "ser/estar · él · pretérito",
+        "why": "expression",
+        "distractors": ["fue", "estaba", "estuvieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1282",
+    "es": "Mi suegro se la pasa viendo futbol todo el domingo.",
+    "sk": "Svokor celú nedeľu len pozerá futbal.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "suegro", "se", "la", "pasa", "viendo", "futbol", "todo", "el", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pasa",
+        "lemma": "pasar",
+        "hint": "pasar · él · presente",
+        "distractors": ["pasó", "paso", "pasarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1283",
+    "es": "Cuando vi la final en vivo, se me puso la piel de gallina.",
+    "sk": "Keď som videl finále naživo, naskočili mi zimomriavky.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Cuando", "vi", "la", "final", "en", "vivo", ",", "se", "me", "puso", "la", "piel", "de", "gallina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vi",
+        "lemma": "ver",
+        "hint": "ver · yo · pretérito",
+        "distractors": ["veo", "vimos", "veían"]
+      }
+    ]
+  },
+  {
+    "id": "s1284",
+    "es": "Se me olvidó por completo que hoy era la premiación.",
+    "sk": "Úplne som zabudol, že dnes je vyhlásenie výsledkov.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Se", "me", "olvidó", "por", "completo", "que", "hoy", "era", "la", "premiación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "premiación",
+        "lemma": "premiación",
+        "hint": "vyhlásenie výsledkov",
+        "distractors": ["porra", "goleada", "afición"]
+      }
+    ]
+  },
+  {
+    "id": "s1285",
+    "es": "Desde que me jubilé, la carpintería se volvió mi gran afición.",
+    "sk": "Odkedy som na dôchodku, stolárčina sa stala mojou veľkou záľubou.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Desde", "que", "me", "jubilé", ",", "la", "carpintería", "se", "volvió", "mi", "gran", "afición", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jubilé",
+        "lemma": "jubilarse",
+        "hint": "jubilarse · yo · pretérito",
+        "distractors": ["jubilo", "jubilamos", "jubilaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1286",
+    "es": "Aunque perdieron, los jugadores dejaron el alma en la cancha.",
+    "sk": "Hoci prehrali, hráči na ihrisku nechali všetko.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Aunque", "perdieron", ",", "los", "jugadores", "dejaron", "el", "alma", "en", "la", "cancha", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "perdieron",
+        "lemma": "perder",
+        "hint": "perder · ellos · pretérito",
+        "distractors": ["pierden", "perdí", "perdíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1287",
+    "es": "Me atreví a cantar en el karaoke frente a cien personas.",
+    "sk": "Odvážil som sa spievať karaoke pred stovkou ľudí.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "atreví", "a", "cantar", "en", "el", "karaoke", "frente", "a", "cien", "personas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "atreví",
+        "lemma": "atreverse",
+        "hint": "atreverse · yo · pretérito",
+        "distractors": ["atrevo", "atrevimos", "atrevían"]
+      }
+    ]
+  },
+  {
+    "id": "s1288",
+    "es": "La afición de los Pumas es de las más fieles del país.",
+    "sk": "Fanúšikovia Pumas patria k najvernejším v krajine.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["La", "afición", "de", "los", "Pumas", "es", "de", "las", "más", "fieles", "del", "país", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "trait",
+        "distractors": ["está", "son", "estaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1289",
+    "es": "Llevo tres meses entrenando para la carrera de diez kilómetros.",
+    "sk": "Už tri mesiace trénujem na desaťkilometrový beh.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Llevo", "tres", "meses", "entrenando", "para", "la", "carrera", "de", "diez", "kilómetros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevo",
+        "lemma": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors": ["Llevé", "Llevamos", "Llevarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1290",
+    "es": "La nadadora logró un récord nacional con apenas diecinueve años.",
+    "sk": "Plavkyňa dosiahla národný rekord ako len devätnásťročná.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["preterito"],
+    "tokens": ["La", "nadadora", "logró", "un", "récord", "nacional", "con", "apenas", "diecinueve", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "logró",
+        "lemma": "lograr",
+        "hint": "lograr · ella · pretérito",
+        "distractors": ["logra", "logré", "lograban"]
+      }
+    ]
+  },
+  {
+    "id": "s1291",
+    "es": "Ir a una charreada es como meterte de lleno en la tradición mexicana.",
+    "sk": "Ísť na charreadu je ako ponoriť sa priamo do mexickej tradície.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "tokens": ["Ir", "a", "una", "charreada", "es", "como", "meterte", "de", "lleno", "en", "la", "tradición", "mexicana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "charreada",
+        "lemma": "charreada",
+        "hint": "mexické rodeo",
+        "distractors": ["porra", "goleada", "medalla"]
+      }
+    ]
   }
 ]

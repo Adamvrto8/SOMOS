@@ -38,7 +38,7 @@ describe('createLesson', () => {
   })
 
   it.each(['dictation', 'speaking'] as const)('leaves sentences with digits out of %s', (type) => {
-    const ids = itemIds(createLesson({ type }, 1000, seeded(30)))
+    const ids = itemIds(createLesson({ type }, Number.MAX_SAFE_INTEGER, seeded(30)))
     expect(ids).not.toContain('s479')
     expect(ids).toHaveLength(sentences.filter((s) => !/\d/.test(s.es)).length)
   })
@@ -71,11 +71,12 @@ describe('createLesson', () => {
   })
 
   it('returns fewer tasks when the pool is small, none when empty', () => {
-    const count = availableCount({ type: 'translation', topic: 'numbers', level: 'A2' })
+    // Every topic has two lessons of sentences at every level; its words are fewer at places (no A1 tech words).
+    const count = availableCount({ type: 'vocab', topic: 'hobbies', level: 'B2' })
     expect(count).toBeGreaterThan(0)
     expect(count).toBeLessThan(LESSON_SIZE)
-    expect(createLesson({ type: 'translation', topic: 'numbers', level: 'A2' }, LESSON_SIZE, seeded(5))).toHaveLength(count)
-    expect(createLesson({ type: 'translation', topic: 'tech', level: 'A1' }, LESSON_SIZE, seeded(5))).toHaveLength(0)
+    expect(createLesson({ type: 'vocab', topic: 'hobbies', level: 'B2' }, LESSON_SIZE, seeded(5))).toHaveLength(count)
+    expect(createLesson({ type: 'vocab', topic: 'tech', level: 'A1' }, LESSON_SIZE, seeded(5))).toHaveLength(0)
   })
 
   it('counts every conjugation combination', () => {
@@ -278,7 +279,7 @@ describe('gradeTask', () => {
 
 describe('least-seen first', () => {
   it('puts items never answered before the ones already practised', () => {
-    const all = createLesson({ type: 'translation' }, 1000, seeded(20)).map((t) => t.itemId)
+    const all = createLesson({ type: 'translation' }, Number.MAX_SAFE_INTEGER, seeded(20)).map((t) => t.itemId)
     const fresh = new Set(all.slice(0, 4))
     const seen = new Map(all.filter((id) => !fresh.has(id)).map((id) => [id, 3]))
     const lesson = createLesson({ type: 'translation' }, LESSON_SIZE, seeded(21), seen)
@@ -297,7 +298,7 @@ describe('taskFromItem', () => {
   })
 
   it('returns undefined for unknown items', () => {
-    expect(taskFromItem('cloze', 's999#0')).toBeUndefined()
+    expect(taskFromItem('cloze', 's9999#0')).toBeUndefined()
     expect(taskFromItem('cloze', 's001#9')).toBeUndefined()
     expect(taskFromItem('conjugation', 'volar:presente:yo')).toBeUndefined()
     expect(taskFromItem('conjugation', 'tener:condicional:yo')).toBeUndefined()
@@ -308,7 +309,7 @@ describe('mistakesLesson', () => {
   it('takes the most-missed items first and skips ones no longer in the data', () => {
     const m = (exercise: string, itemId: string, wrongCount: number, lastWrongAt = 1) => ({ exercise, itemId, wrongCount, lastWrongAt, firstWrongAt: 1 })
     const lesson = mistakesLesson(
-      [m('cloze', 's001#0', 1), m('translation', 's004', 3), m('cloze', 's999#0', 5), m('conjugation', 'tener:preterito:yo', 2)],
+      [m('cloze', 's001#0', 1), m('translation', 's004', 3), m('cloze', 's9999#0', 5), m('conjugation', 'tener:preterito:yo', 2)],
       LESSON_SIZE,
       seeded(24),
     )

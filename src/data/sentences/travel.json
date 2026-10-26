@@ -1020,5 +1020,416 @@
         "distractors": ["canción", "celebración", "cantidad"]
       }
     ]
+  },
+  {
+    "id": "s1510",
+    "es": "El tren sale de la estación a las ocho.",
+    "sk": "Vlak odchádza zo stanice o ôsmej.",
+    "level": "A1",
+    "topics": ["travel"],
+    "tokens": ["El", "tren", "sale", "de", "la", "estación", "a", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tren",
+        "lemma": "tren",
+        "hint": "vlak",
+        "distractors": ["mapa", "boleto", "hotel"]
+      }
+    ]
+  },
+  {
+    "id": "s1511",
+    "es": "Mi maleta es roja y muy grande.",
+    "sk": "Môj kufor je červený a veľmi veľký.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "maleta", "es", "roja", "y", "muy", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "trait",
+        "distractors": ["está", "son", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s1512",
+    "es": "¿Dónde compramos los boletos?",
+    "sk": "Kde si kúpime lístky?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Dónde", "compramos", "los", "boletos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compramos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · presente",
+        "distractors": ["compro", "compran", "comprarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1513",
+    "es": "Los turistas toman fotos del mar.",
+    "sk": "Turisti fotia more.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "turistas", "toman", "fotos", "del", "mar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "toman",
+        "lemma": "tomar",
+        "hint": "tomar · ellos · presente",
+        "distractors": ["tomaron", "tomo", "tomaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1514",
+    "es": "Necesito un mapa de la ciudad.",
+    "sk": "Potrebujem mapu mesta.",
+    "level": "A1",
+    "topics": ["travel"],
+    "tokens": ["Necesito", "un", "mapa", "de", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mapa",
+        "lemma": "mapa",
+        "hint": "mapa",
+        "distractors": ["barco", "tren", "mar"]
+      }
+    ]
+  },
+  {
+    "id": "s1515",
+    "es": "Pasar la aduana nos tomó más de una hora.",
+    "sk": "Prejsť colnicou nám trvalo vyše hodiny.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Pasar", "la", "aduana", "nos", "tomó", "más", "de", "una", "hora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tomó",
+        "lemma": "tomar",
+        "hint": "tomar · él · pretérito",
+        "distractors": ["toma", "tomé", "tomaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1516",
+    "es": "Mi itinerario incluye tres días en Oaxaca y dos en Puebla.",
+    "sk": "Môj plán cesty zahŕňa tri dni v Oaxace a dva v Pueble.",
+    "level": "B1",
+    "topics": ["travel"],
+    "tokens": ["Mi", "itinerario", "incluye", "tres", "días", "en", "Oaxaca", "y", "dos", "en", "Puebla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "itinerario",
+        "lemma": "itinerario",
+        "hint": "plán cesty",
+        "distractors": ["pasajero", "trámite", "crucero"]
+      }
+    ]
+  },
+  {
+    "id": "s1517",
+    "es": "Ya que el vuelo iba lleno, nos cambiaron a otro horario.",
+    "sk": "Keďže let bol plný, presunuli nás na iný čas.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Ya", "que", "el", "vuelo", "iba", "lleno", ",", "nos", "cambiaron", "a", "otro", "horario", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "iba",
+        "lemma": "ir",
+        "hint": "ir · él · imperfecto",
+        "distractors": ["fue", "iban", "van"]
+      }
+    ]
+  },
+  {
+    "id": "s1518",
+    "es": "Creo que viajar de mochilero te enseña mucho sobre la vida.",
+    "sk": "Myslím, že cestovanie s batohom ťa veľa naučí o živote.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "viajar", "de", "mochilero", "te", "enseña", "mucho", "sobre", "la", "vida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "enseña",
+        "lemma": "enseñar",
+        "hint": "enseñar · él · presente",
+        "distractors": ["enseñó", "enseño", "enseñarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1519",
+    "es": "Mientras yo documentaba las maletas, mi esposa cambiaba dinero.",
+    "sk": "Kým som odbavoval kufre, manželka menila peniaze.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "yo", "documentaba", "las", "maletas", ",", "mi", "esposa", "cambiaba", "dinero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "cambiaba",
+        "lemma": "cambiar",
+        "hint": "cambiar · ella · imperfecto",
+        "distractors": ["cambió", "cambiaban", "cambian"]
+      }
+    ]
+  },
+  {
+    "id": "s1520",
+    "es": "Al final decidimos quedarnos una noche más en Bacalar.",
+    "sk": "Nakoniec sme sa rozhodli zostať v Bacalare ešte jednu noc.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Al", "final", "decidimos", "quedarnos", "una", "noche", "más", "en", "Bacalar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "decidimos",
+        "lemma": "decidir",
+        "hint": "decidir · nosotros · pretérito",
+        "distractors": ["decidí", "decidieron", "decidían"]
+      }
+    ]
+  },
+  {
+    "id": "s1521",
+    "es": "Nos agarró la noche en la carretera y tuvimos que parar en un pueblito.",
+    "sk": "Na ceste nás zastihla noc a museli sme zastaviť v malej dedinke.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "agarró", "la", "noche", "en", "la", "carretera", "y", "tuvimos", "que", "parar", "en", "un", "pueblito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "agarró",
+        "lemma": "agarrar",
+        "hint": "agarrar · ella · pretérito",
+        "distractors": ["agarra", "agarré", "agarraban"]
+      }
+    ]
+  },
+  {
+    "id": "s1522",
+    "es": "Cruzamos la frontera de madrugada para evitar las filas.",
+    "sk": "Hranicu sme prekročili nadránom, aby sme sa vyhli radom.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Cruzamos", "la", "frontera", "de", "madrugada", "para", "evitar", "las", "filas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cruzamos",
+        "lemma": "cruzar",
+        "hint": "cruzar · nosotros · pretérito",
+        "distractors": ["Crucé", "Cruzaron", "Cruzaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1523",
+    "es": "El trámite de la visa fue un dolor de cabeza.",
+    "sk": "Vybavovanie víz bolo na zbláznenie.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito", "ser-estar"],
+    "tokens": ["El", "trámite", "de", "la", "visa", "fue", "un", "dolor", "de", "cabeza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "fue",
+        "lemma": "ser",
+        "hint": "ser/estar · él · pretérito",
+        "why": "identity",
+        "distractors": ["estuvo", "era", "fueron"]
+      }
+    ]
+  },
+  {
+    "id": "s1524",
+    "es": "Íbamos a ir a la playa, pero se nos cruzó un imprevisto.",
+    "sk": "Chceli sme ísť na pláž, ale niečo nám do toho vošlo.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Íbamos", "a", "ir", "a", "la", "playa", ",", "pero", "se", "nos", "cruzó", "un", "imprevisto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["Fuimos", "Iba", "Van"]
+      }
+    ]
+  },
+  {
+    "id": "s1525",
+    "es": "Rentar un carro allá cuesta una lana; mejor nos movemos en camión.",
+    "sk": "Prenajať si tam auto stojí kopu peňazí, radšej sa budeme presúvať autobusom.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["presente"],
+    "tokens": ["Rentar", "un", "carro", "allá", "cuesta", "una", "lana", ";", "mejor", "nos", "movemos", "en", "camión", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "movemos",
+        "lemma": "mover",
+        "hint": "mover · nosotros · presente",
+        "distractors": ["movimos", "muevo", "moverán"]
+      }
+    ]
+  },
+  {
+    "id": "s1526",
+    "es": "Me mareé tanto en la lancha que no disfruté nada del paseo.",
+    "sk": "Na člne mi bolo tak zle, že som si výlet vôbec neužil.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "mareé", "tanto", "en", "la", "lancha", "que", "no", "disfruté", "nada", "del", "paseo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "disfruté",
+        "lemma": "disfrutar",
+        "hint": "disfrutar · yo · pretérito",
+        "distractors": ["disfruto", "disfrutamos", "disfrutaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1527",
+    "es": "Viajar sola me ayudó a salir de mi zona de confort.",
+    "sk": "Cestovanie osamote mi pomohlo vystúpiť z komfortnej zóny.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Viajar", "sola", "me", "ayudó", "a", "salir", "de", "mi", "zona", "de", "confort", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ayudó",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · pretérito",
+        "distractors": ["ayuda", "ayudé", "ayudaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1528",
+    "es": "Contratamos un tour, pero el guía nos dejó plantados.",
+    "sk": "Objednali sme si prehliadku, ale sprievodca nás nechal v štichu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Contratamos", "un", "tour", ",", "pero", "el", "guía", "nos", "dejó", "plantados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "dejó",
+        "lemma": "dejar",
+        "hint": "dejar · él · pretérito",
+        "distractors": ["deja", "dejé", "dejaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1529",
+    "es": "En temporada alta conviene reservar con meses de anticipación.",
+    "sk": "V hlavnej sezóne sa oplatí rezervovať niekoľko mesiacov vopred.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["En", "temporada", "alta", "conviene", "reservar", "con", "meses", "de", "anticipación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "anticipación",
+        "lemma": "anticipación",
+        "hint": "predstih",
+        "distractors": ["cancelación", "temporada", "trayecto"]
+      }
+    ]
+  },
+  {
+    "id": "s1530",
+    "es": "Ya estando allá, nos dimos cuenta de que el hotel no existía.",
+    "sk": "Až keď sme tam boli, zistili sme, že hotel neexistuje.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Ya", "estando", "allá", ",", "nos", "dimos", "cuenta", "de", "que", "el", "hotel", "no", "existía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "dimos",
+        "lemma": "dar",
+        "hint": "dar · nosotros · pretérito",
+        "distractors": ["damos", "di", "daban"]
+      }
+    ]
+  },
+  {
+    "id": "s1531",
+    "es": "Por andar de aventurero, me perdí en plena selva.",
+    "sk": "Keďže som sa hral na dobrodruha, stratil som sa uprostred džungle.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["preterito"],
+    "tokens": ["Por", "andar", "de", "aventurero", ",", "me", "perdí", "en", "plena", "selva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "perdí",
+        "lemma": "perderse",
+        "hint": "perderse · yo · pretérito",
+        "distractors": ["pierdo", "perdimos", "perdían"]
+      }
+    ]
+  },
+  {
+    "id": "s1532",
+    "es": "El seguro de viaje cubrió todos los gastos del hospital.",
+    "sk": "Cestovné poistenie pokrylo všetky výdavky za nemocnicu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "tokens": ["El", "seguro", "de", "viaje", "cubrió", "todos", "los", "gastos", "del", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "seguro",
+        "lemma": "seguro",
+        "hint": "poistenie",
+        "distractors": ["trayecto", "mareo", "contratiempo"]
+      }
+    ]
   }
 ]
