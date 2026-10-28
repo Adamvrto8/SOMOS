@@ -153,7 +153,7 @@ function accentWhy(meanings: Meaning[]): Why {
 // ---------- tasks ----------
 
 /** The tip a blank's hint points at: "tener · yo · pretérito", "hacer · gerundio", "člen"… */
-function tipForCloze(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
+export function tipForCloze(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
   const hint = cloze.hint ?? ''
   if (hint.startsWith('ser/estar ·')) {
     const tip = tipById.get('ser-estar')

@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Level, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -416,6 +416,43 @@ for (const s of sentences) {
     if (distractors.some((d) => !isNonEmpty(d))) fail(cw, 'empty distractor')
     distractors.forEach((d) => checkSpanish(`${cw}.distractors`, d))
   })
+}
+
+// ---------- guided path (src/data/path.json) ----------
+
+const MAX_UNIT_WORDS = 20 // src/lib/pathUnits.ts
+const pathUrl = new URL('path.json', DATA)
+const path = (existsSync(pathUrl) ? readJson(pathUrl) : []) as PathEntry[]
+const pathLevels = new Set(path.map((e) => e.level))
+const partsOf = new Map<string, number[]>()
+path.forEach((entry, i) => {
+  const where = `path[${i}] ${entry.topic}:${entry.level}:${entry.part}`
+  checkLevel(where, entry.level)
+  if (!topicIds.has(entry.topic)) fail(where, `unknown topic "${entry.topic}"`)
+  if (!Number.isInteger(entry.part) || entry.part < 1) fail(where, 'part must be 1, 2…')
+  const tip = tipById.get(entry.grammar)
+  if (!tip) fail(where, `unknown tip "${entry.grammar}"`)
+  for (const rule of entry.rules ?? []) if (tip && !tip.rules.some((r) => r.id === rule)) fail(where, `tip "${entry.grammar}" has no rule "${rule}"`)
+  const previous = path[i - 1]
+  const point = (e: PathEntry) => `${e.grammar}|${(e.rules ?? []).join(',')}`
+  if (previous && point(previous) === point(entry)) fail(where, 'the same grammar point as the unit before it')
+  const key = `${entry.topic}:${entry.level}`
+  partsOf.set(key, [...(partsOf.get(key) ?? []), entry.part])
+})
+for (const [key, parts] of partsOf) {
+  const sorted = [...parts].sort((a, b) => a - b)
+  if (sorted.some((part, i) => part !== i + 1)) fail(`path ${key}`, `parts must be 1…${parts.length} once each, not ${parts.join(', ')}`)
+  const [topic, level] = key.split(':')
+  const count = words.filter((w) => w.level === level && w.topics[0] === topic).length
+  // pathUnits.ts splits the words evenly: the biggest part has ceil(count / parts).
+  if (Math.ceil(count / parts.length) > MAX_UNIT_WORDS) fail(`path ${key}`, `${count} words in ${parts.length} part(s): more than ${MAX_UNIT_WORDS} in a unit, add a part`)
+}
+// Every word and sentence of a level on the path is in a unit (under its first topic; a verb without
+// a topic is not, the grammar steps conjugate it).
+for (const level of pathLevels) {
+  for (const item of [...words, ...sentences]) {
+    if (item.level === level && item.topics.length > 0 && !partsOf.has(`${item.topics[0]}:${level}`)) fail(`path ${level}`, `no unit for topic "${item.topics[0]}" (${item.id})`)
+  }
 }
 
 // ---------- English overlay (src/data/en) ----------

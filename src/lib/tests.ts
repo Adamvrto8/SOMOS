@@ -3,6 +3,7 @@ import type { Level, Sentence, Verb } from '../data/types'
 import { PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
 import { conjugationTask, createLesson, getNumberedLessonCount, LESSON_SIZE, type ExerciseType, type LessonFilter, type Task } from './lesson'
 import { getLessonRecord, progressionGroup, type LessonProgressionMap } from './lessonProgress'
+import { pathUnitById, unitId, unitMaterial } from './pathUnits'
 
 // Tests: a checkpoint per topic and level, and an exam per level, both mixing the exercise types (all but
 // Vyslovovanie, which needs a microphone); and at the end of an exercise's lessons (Všetko × level) a
@@ -16,6 +17,7 @@ export interface TestId {
   level: TestLevel
   topic?: string
   type?: ExerciseType
+  part?: number // with topic: the test of one unit of a topic the path splits into units (pathUnits.ts)
 }
 
 type Mix = [ExerciseType, number][]
@@ -42,10 +44,11 @@ const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'build
 const isExerciseType = (type: string | null | undefined): type is ExerciseType => EXERCISE_TYPES.includes(type as ExerciseType)
 
 /**
- * "food:A1" for a topic test, "exercise:vocab:A1" for an exercise test, "A1" for the level exam:
- * the key of its results and of `?prepare=`.
+ * "food:A1" for a topic test, "food:A1:2" for the test of a part of it, "exercise:vocab:A1" for an
+ * exercise test, "A1" for the level exam: the key of its results and of `?prepare=`.
  */
-export const testKey = ({ level, topic, type }: TestId): string => (type ? `exercise:${type}:${level}` : topic ? `${topic}:${level}` : level)
+export const testKey = ({ level, topic, type, part }: TestId): string =>
+  type ? `exercise:${type}:${level}` : topic ? `${topic}:${level}${part ? `:${part}` : ''}` : level
 
 const isTestLevel = (level: string | null | undefined): level is TestLevel => TEST_LEVELS.includes(level as TestLevel)
 
@@ -56,21 +59,23 @@ export function parseTestKey(key: string | null): TestId | undefined {
   if (parts.length === 1 && isTestLevel(parts[0])) id = { level: parts[0] }
   else if (parts.length === 2 && isTestLevel(parts[1])) id = { level: parts[1], topic: parts[0] }
   else if (parts.length === 3 && parts[0] === 'exercise' && isExerciseType(parts[1]) && isTestLevel(parts[2])) id = { level: parts[2], type: parts[1] }
+  else if (parts.length === 3 && isTestLevel(parts[1]) && /^[1-9]$/.test(parts[2])) id = { level: parts[1], topic: parts[0], part: Number(parts[2]) }
   return id && hasTest(id) ? id : undefined
 }
 
-/** The test a URL names: `?level=A1` (exam), `?level=A1&topic=food` or `?level=A1&type=vocab`. */
+/** The test a URL names: `?level=A1` (exam), `?level=A1&topic=food` (`&part=2`) or `?level=A1&type=vocab`. */
 export function testFromParams(params: URLSearchParams): TestId | undefined {
   const level = params.get('level')
   const topic = params.get('topic')
   const type = params.get('type')
+  const part = Number(params.get('part'))
   if (!isTestLevel(level)) return undefined
-  const id: TestId = isExerciseType(type) ? { level, type } : topic ? { level, topic } : { level }
+  const id: TestId = isExerciseType(type) ? { level, type } : topic ? { level, topic, ...(Number.isInteger(part) && part > 0 ? { part } : {}) } : { level }
   return hasTest(id) ? id : undefined
 }
 
-export function testToParams({ level, topic, type }: TestId): string {
-  return new URLSearchParams(type ? { level, type } : topic ? { level, topic } : { level }).toString()
+export function testToParams({ level, topic, type, part }: TestId): string {
+  return new URLSearchParams(type ? { level, type } : topic ? { level, topic, ...(part ? { part: String(part) } : {}) } : { level }).toString()
 }
 
 /** The lessons an exercise test closes: the exercise, every topic (or tense), the level. */
@@ -99,11 +104,14 @@ export function testTenses(level: TestLevel): TableTense[] {
   return level === 'A1' ? ['presente', 'progresivo', 'preterito'] : TABLE_TENSES
 }
 
-/** The level itself first, then the ones below it (topic tests top up from them). */
-function levelsFor({ level, topic }: TestId): Level[] {
+/** The level itself first, then the ones below it (topic tests top up from them; a part's test does not). */
+function levelsFor({ level, topic, part }: TestId): Level[] {
   const index = TEST_LEVELS.indexOf(level)
-  return topic ? TEST_LEVELS.slice(0, index + 1).reverse() : [level]
+  return topic && !part ? TEST_LEVELS.slice(0, index + 1).reverse() : [level]
 }
+
+/** The words and sentences of a part's test: its unit's on the path. */
+const partMaterial = ({ level, topic, part }: TestId) => (topic && part ? unitMaterial({ level, topic, part }) : undefined)
 
 export function hasTest(id: TestId): boolean {
   if (!isTestLevel(id.level)) return false
@@ -111,6 +119,8 @@ export function hasTest(id: TestId): boolean {
   if (!id.topic) return true
   const { topic, level } = id
   if (!topicById.has(topic)) return false
+  // Only a topic the path splits has tests of its parts.
+  if (id.part !== undefined) return (pathUnitById.get(unitId({ level, topic, part: id.part }))?.parts ?? 0) > 1
   const count =
     words.filter((w) => w.level === level && w.topics.includes(topic)).length +
     sentences.filter((s) => s.level === level && s.topics.includes(topic)).length
@@ -135,8 +145,8 @@ function testVerbs(id: TestId): Verb[] {
   const levels = levelsFor(id)
   const ofLevel = verbs.filter((v) => levels.includes(v.level))
   if (!id.topic) return ofLevel
-  const own = words
-    .filter((w) => w.verbId && w.topics.includes(id.topic!) && levels.includes(w.level))
+  const own = (partMaterial(id)?.words ?? words.filter((w) => w.topics.includes(id.topic!) && levels.includes(w.level)))
+    .filter((w) => w.verbId)
     .flatMap((w) => verbById.get(w.verbId!) ?? [])
   return own.length > 0 ? own : verbs.filter((v) => v.level === id.level)
 }
@@ -177,8 +187,13 @@ interface Candidate {
 /** Every task a type could put into the test, its own level first, each level shuffled. */
 function candidates(id: TestId, type: ExerciseType, random: Random): Candidate[] {
   if (type === 'conjugation') return conjugationCandidates(id, random).map((task) => ({ task, rank: 0 }))
+  const part = partMaterial(id)
+  const inPart = (task: Task) =>
+    !part || (task.kind === 'vocab' ? part.words.includes(task.word) : part.sentences.some((s) => s === sentenceOf(task)))
   return levelsFor(id).flatMap((level, rank) =>
-    createLesson({ type, topic: id.topic ?? 'all', level }, Number.MAX_SAFE_INTEGER, random).map((task) => ({ task, rank })),
+    createLesson({ type, topic: id.topic ?? 'all', level }, Number.MAX_SAFE_INTEGER, random)
+      .filter(inPart)
+      .map((task) => ({ task, rank })),
   )
 }
 

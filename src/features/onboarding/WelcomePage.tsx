@@ -14,6 +14,7 @@ import { enableReminder, getReminderSettings, reminderSupport, ReminderFailure }
 import { finishOnboarding, getOnboarding, MOTIVATIONS, returnAfterSignIn, START_LEVELS, startFilter, updateOnboarding, useOnboarding, type Motivation } from '../../lib/onboarding'
 import { filterLabel, filterToParams } from '../exercises/exercises'
 import { track } from '../../lib/usage'
+import { firstUnit, stepHref, unitSteps, unitTitle } from '../../lib/path'
 import { OptionList } from './OptionList'
 import { StepFrame } from './StepFrame'
 
@@ -343,6 +344,9 @@ function ReadyStep({ frame }: { frame: StepProps['frame'] }) {
   const navigate = useNavigate()
   const onboarding = useOnboarding()
   const filter = startFilter(onboarding)
+  // The first step of the path at the chosen level, else the topic of the reason.
+  const unit = firstUnit(onboarding)
+  const firstStep = unit && unitSteps(unit)[0]
   const tabs = [
     { key: 'home', icon: House },
     { key: 'search', icon: Search },
@@ -352,8 +356,9 @@ function ReadyStep({ frame }: { frame: StepProps['frame'] }) {
 
   const start = () => {
     finishOnboarding()
+    const lesson = unit && firstStep ? stepHref(unit, firstStep) : `/practice/lesson?${filterToParams(filter)}&lesson=1`
     // In place of the welcome: closing the lesson goes to Domov, not back into the questions.
-    void navigate(`/practice/lesson?${filterToParams(filter)}&lesson=1&first=1`, { replace: true })
+    void navigate(`${lesson}&first=1`, { replace: true })
   }
 
   return (
@@ -363,7 +368,7 @@ function ReadyStep({ frame }: { frame: StepProps['frame'] }) {
       hint={text.hint}
       footer={
         <>
-          <p className="text-center text-sm text-ink-muted">{text.first(filterLabel(filter))}</p>
+          <p className="text-center text-sm text-ink-muted">{text.first(unit && firstStep ? `${unitTitle(unit)} · ${dictionary.path.steps[firstStep]}` : filterLabel(filter))}</p>
           <Button onClick={start} className="w-full">
             {text.start}
           </Button>

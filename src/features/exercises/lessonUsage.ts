@@ -6,7 +6,7 @@ import { track, type UsageProps } from '../../lib/usage'
 // The lesson events of the usage statistics (src/lib/usage.ts, api/usage.ts): one lesson_start when a fresh
 // lesson begins and exactly one lesson_end for it, however it ends (result screen, ✕, the phone's back button).
 
-export type LessonSource = 'lesson' | 'mistakes' | 'test' | 'first'
+export type LessonSource = 'lesson' | 'mistakes' | 'test' | 'first' | 'path'
 
 export interface LessonUsage {
   /** 'mixed': the mistakes list and test preparation mix exercise types (their URL has no type). */
@@ -16,7 +16,9 @@ export interface LessonUsage {
   source: LessonSource
 }
 
-export function lessonUsage(filter: LessonFilter, source: LessonSource, test?: TestId): LessonUsage {
+/** `unit`: a step of the path (src/lib/path.ts), which mixes exercise types too. */
+export function lessonUsage(filter: LessonFilter, source: LessonSource, test?: TestId, unit?: { level: Level; topic: string }): LessonUsage {
+  if (unit) return { type: 'mixed', level: unit.level, topic: unit.topic, source }
   if (source === 'mistakes') return { type: 'mixed', level: null, topic: null, source }
   if (source === 'test') return { type: test?.type ?? 'mixed', level: test?.level ?? null, topic: test?.topic ?? null, source }
   const topic = filter.topic && filter.topic !== 'all' ? filter.topic : null

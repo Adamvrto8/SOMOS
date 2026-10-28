@@ -29,6 +29,8 @@ interface LessonResultProps {
   lessonScore?: { score: number; total: number }
   isRetry?: boolean // `answers` are a correction round
   totalLessons?: number
+  /** A step of the path (src/lib/path.ts) instead of a numbered lesson: its name, and the step after it. */
+  step?: { name: string; next?: { name: string; onGo: () => void } }
   onRetryMistakes: () => void
   onRepeatAll: () => void
   onNewLesson: () => void
@@ -43,6 +45,7 @@ export function LessonResult({
   lessonScore,
   isRetry = false,
   totalLessons = 1,
+  step,
   onRetryMistakes,
   onRepeatAll,
   onNewLesson,
@@ -50,15 +53,18 @@ export function LessonResult({
   onExit,
 }: LessonResultProps) {
   const mistakes = answers.filter((a) => !a.correct)
-  const isNumbered = typeof lessonNumber === 'number' && lessonScore !== undefined
+  // A step of the path is scored like a numbered lesson.
+  const isNumbered = (typeof lessonNumber === 'number' || step !== undefined) && lessonScore !== undefined
   const score = isNumbered ? lessonScore.score : answers.length - mistakes.length
   const total = isNumbered ? lessonScore.total : answers.length
   const requiredScore = calcPassThreshold(total)
   const isPassed = !isNumbered || score >= requiredScore
-  const hasNext = isNumbered && lessonNumber < totalLessons
+  const nextNumber = (lessonNumber ?? 0) + 1
+  const hasNext = isNumbered && (step ? step.next !== undefined : nextNumber <= totalLessons)
   const fixed = answers.length - mistakes.length
   const dictionary = useT()
   const text = dictionary.lesson.result
+  const pathText = dictionary.path
   const { es, key } = praise(total > 0 ? score / total : 0)
 
   return (
@@ -69,7 +75,15 @@ export function LessonResult({
         </div>
         <div className="px-6 pt-5 pb-6 text-center">
           <h1 className="font-serif text-lg text-ink-muted">
-            {isNumbered ? (isPassed ? text.passed(lessonNumber) : text.notPassed(lessonNumber)) : text.done}
+            {step && isNumbered
+              ? isPassed
+                ? pathText.stepPassed(step.name)
+                : pathText.stepNotPassed(step.name)
+              : isNumbered
+                ? isPassed
+                  ? text.passed(lessonNumber!)
+                  : text.notPassed(lessonNumber!)
+                : text.done}
           </h1>
           {isNumbered && isRetry && (
             <p className="mt-1 text-sm text-ink-muted">
@@ -91,7 +105,7 @@ export function LessonResult({
                 <div className="inline-flex items-center gap-2 rounded-xl bg-leaf/10 px-4 py-2 text-sm font-medium text-leaf">
                   <Check size={18} strokeWidth={2.5} aria-hidden />
                   <span>
-                    {text.passedLine(score, total, hasNext)}
+                    {step ? pathText.passedLine(score, total, hasNext) : text.passedLine(score, total, hasNext)}
                   </span>
                 </div>
               ) : (
@@ -133,17 +147,17 @@ export function LessonResult({
               </Button>
             )}
             <Button variant={mistakes.length > 0 ? 'secondary' : 'primary'} icon={Repeat} onClick={onRepeatAll}>
-              {text.repeatLesson(lessonNumber)}
+              {step ? pathText.repeatStep : text.repeatLesson(lessonNumber!)}
             </Button>
             <Button variant="secondary" disabled icon={Lock}>
-              {text.nextLocked}
+              {step ? pathText.nextLocked : text.nextLocked}
             </Button>
           </>
         ) : isNumbered && isPassed ? (
           <>
             {hasNext && (
-              <Button variant="primary" icon={ArrowRight} onClick={onNextLesson ?? onNewLesson}>
-                {text.next(lessonNumber + 1)}
+              <Button variant="primary" icon={ArrowRight} onClick={step?.next?.onGo ?? onNextLesson ?? onNewLesson}>
+                {step?.next ? pathText.nextStep(step.next.name) : text.next(nextNumber)}
               </Button>
             )}
             {mistakes.length > 0 && (

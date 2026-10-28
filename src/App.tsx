@@ -24,6 +24,7 @@ import { TestsPage } from './features/tests/TestsPage'
 import { TopicPage } from './features/search/TopicPage'
 import { WordPage } from './features/word/WordPage'
 import { OnboardingGate } from './features/onboarding/OnboardingGate'
+import { PathPage } from './features/path/PathPage'
 import { RestorePage } from './features/onboarding/RestorePage'
 import { WelcomePage } from './features/onboarding/WelcomePage'
 import { trackScreen } from './lib/usage'
@@ -55,6 +56,7 @@ const routes = [
       { path: 'word/:id', element: <WordPage /> },
       { path: 'topic/:id', element: <TopicPage /> },
       { path: 'practice', element: <PracticePage /> },
+      { path: 'practice/path', element: <PathPage /> },
       { path: 'practice/grammar', element: <GrammarPage /> },
       { path: 'practice/tests', element: <TestsPage /> },
       { path: 'duel', element: <DuelHomePage /> },

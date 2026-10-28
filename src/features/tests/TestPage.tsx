@@ -9,6 +9,7 @@ import { recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { playSound } from '../../lib/sound'
 import { useLessonProgression } from '../../lib/lessonProgress'
+import { unitOfTest, usePathState } from '../../lib/path'
 import { recordTestResult } from '../../lib/testProgress'
 import { createTest, exerciseFilter, isTestUnlocked, testFromParams, testKey, type TestId } from '../../lib/tests'
 import { exerciseInfo, filterToParams } from '../exercises/exercises'
@@ -49,6 +50,9 @@ export function TestPage() {
   const test = useMemo<TestId | undefined>(() => testFromParams(params), [params])
   const navigate = useNavigate()
   const location = useLocation()
+  const pathStates = usePathState()
+  // The test of a unit of the path: its result ends the unit and leads back to the path.
+  const pathUnit = test && unitOfTest(pathStates, testKey(test))
 
   const [phase, setPhase] = useState<'intro' | 'test' | 'result'>('intro')
   const [tasks, setTasks] = useState<Task[]>([])
@@ -188,7 +192,8 @@ export function TestPage() {
             onAccept={accept}
             onAgain={start}
             onPrepare={() => void navigate(`/practice/lesson?prepare=${testKey(test)}`)}
-            onExit={() => void navigate(backTo(test), { replace: true })}
+            onExit={() => void navigate(pathUnit ? '/practice/path' : backTo(test), { replace: true })}
+            pathUnit={pathUnit && { unit: pathUnit, states: pathStates }}
           />
         ) : (
           task && (

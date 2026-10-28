@@ -11,10 +11,12 @@ const ROUND_LINK =
 
 /**
  * The Home hero, one big serif number and a round go button: reviews due today, or, with
- * nothing to review, the lesson to continue.
+ * nothing to review, the step of the path (the unit's number) or the lesson to continue.
  */
 export function ReviewCard({ next }: { next: ContinueLesson }) {
-  const text = useT().home
+  const dictionary = useT()
+  const text = dictionary.home
+  const pathText = dictionary.path
   const overview = useReviewOverview()
   if (!overview) return <div className="h-44" aria-hidden />
 
@@ -26,11 +28,13 @@ export function ReviewCard({ next }: { next: ContinueLesson }) {
     dueSentences > 0 && text.sentences(dueSentences),
     text.minutes(minutes),
   ].filter(Boolean)
+  const step = next.path && pathText.steps[next.path.step]
+  const heading = next.path ? (next.started ? pathText.homeContinue : pathText.homeStart) : next.started ? text.continueLesson : text.firstLesson
 
   return (
     <section aria-labelledby="due-heading">
       <h2 id="due-heading" className="text-sm text-ink-muted">
-        {reviewing ? text.dueToday : next.started ? text.continueLesson : text.firstLesson}
+        {reviewing ? text.dueToday : heading}
       </h2>
       <div className="mt-2 flex items-center justify-between gap-4">
         <p className="font-serif text-[7.5rem] leading-[0.8] font-light tracking-tighter tabular-nums">
@@ -38,13 +42,19 @@ export function ReviewCard({ next }: { next: ContinueLesson }) {
         </p>
         <Link
           to={reviewing ? '/review' : next.href}
-          aria-label={reviewing ? text.reviewAria(dueToday) : text.lessonAria(next.lesson, next.label)}
+          aria-label={reviewing ? text.reviewAria(dueToday) : step ? pathText.homeAria(next.lesson, step) : text.lessonAria(next.lesson, next.label)}
           className={ROUND_LINK}
         >
           <ArrowRight size={26} strokeWidth={1.75} aria-hidden />
         </Link>
       </div>
-      <p className="mt-4 text-sm text-ink-muted">{reviewing ? parts.join(' · ') : text.lessonLine(next.lesson, next.label)}</p>
+      <p className="mt-4 text-sm text-ink-muted">
+        {reviewing
+          ? parts.join(' · ')
+          : next.path && step
+            ? pathText.homeLine(next.lesson, next.label, step, next.path.stepNo, next.path.steps)
+            : text.lessonLine(next.lesson, next.label)}
+      </p>
       {!reviewing && total > 0 && (
         <p className="mt-1 flex items-center gap-1.5 text-sm text-ink-muted">
           <CircleCheck size={16} strokeWidth={1.75} className="shrink-0 text-leaf" aria-hidden />

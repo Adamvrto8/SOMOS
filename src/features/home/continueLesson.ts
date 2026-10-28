@@ -2,7 +2,8 @@ import type { Level } from '../../data/types'
 import type { TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type LessonFilter } from '../../lib/lesson'
 import { getFirstUnpassedLesson, getLastActiveLesson, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
-import { startFilter } from '../../lib/onboarding'
+import { startFilter, type OnboardingState } from '../../lib/onboarding'
+import { nextStep, pathCovers, pathStarted, stepHref, unitTitle, type StepId, type UnitState } from '../../lib/path'
 import { filterLabel, filterToParams, isLessonGroup, LEVELS } from '../exercises/exercises'
 
 export interface ContinueLesson {
@@ -10,6 +11,24 @@ export interface ContinueLesson {
   lesson: number
   label: string // "Doplňovačka · Jedlo a pitie · A1"
   started: boolean // false = nothing played yet, this is the suggested first lesson
+  /** A step of the path: `lesson` is then the unit's number and `label` its title. */
+  path?: { step: StepId; stepNo: number; steps: number }
+}
+
+/**
+ * Domov: the next step of the path while the path has the learner's level (the one picked in the
+ * welcome, A1 without one), else the lesson to continue.
+ */
+export function pathOrLesson(states: readonly UnitState[], progression: LessonProgressionMap, onboarding: OnboardingState | null): ContinueLesson {
+  const next = pathCovers(onboarding?.level) ? nextStep(states) : undefined
+  if (!next) return continueLesson(progression)
+  return {
+    href: stepHref(next.unit.unit, next.step.id),
+    lesson: next.unit.number,
+    label: unitTitle(next.unit.unit),
+    started: pathStarted(states, progression),
+    path: { step: next.step.id, stepNo: next.index + 1, steps: next.unit.steps.length },
+  }
 }
 
 /**

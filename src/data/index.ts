@@ -1,8 +1,9 @@
+import pathJson from './path.json'
 import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
-import type { Sentence, SentenceEn, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
+import type { PathEntry, Sentence, SentenceEn, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
 // Vite bundles every file matched here; order = file name, then order inside the file.
@@ -15,6 +16,7 @@ const collect = <T>(modules: Record<string, unknown>): T[] =>
 // shape and content are enforced by `npm run validate:data`.
 export const topics = topicsJson as Topic[]
 export const tips = tipsJson as Tip[]
+export const path = pathJson as PathEntry[]
 export const words = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
 export const verbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
 export const sentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))

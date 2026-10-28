@@ -7,7 +7,7 @@ test.use({ storageState: { cookies: [], origins: [] } })
 const radio = (page: Page, name: string | RegExp) => page.getByRole('radio', { name })
 const next = (page: Page) => button(page, 'Pokračovať')
 
-test('a new learner goes through the welcome into the first lesson of their topic and level', async ({ page }) => {
+test('a new learner goes through the welcome into the first step of the path at their level', async ({ page }) => {
   await page.goto('/')
   await expect(page).toHaveURL(/\/welcome$/)
   await expect(page.getByRole('heading', { name: '¡Hola!' })).toBeVisible()
@@ -42,9 +42,13 @@ test('a new learner goes through the welcome into the first lesson of their topi
 
   // No reminder step on the dev server (no push server) and none for adding to the home screen in this browser.
   await expect(page.getByRole('heading', { name: 'Všetko je pripravené' })).toBeVisible()
-  await expect(page.getByText('Prvá lekcia: Slovná zásoba · Cestovanie · A2')).toBeVisible()
+  // The path at A2, its first unit (the topic of the reason comes third).
+  await expect(page.getByText('Prvá lekcia: Pozdravy a frázy 1 · Nové slová')).toBeVisible()
   await button(page, 'Začať prvú lekciu').tap()
-  await expect(page).toHaveURL(/\/practice\/lesson\?type=vocab&topic=travel&level=A2&lesson=1&first=1/)
+  await expect(page).toHaveURL(/\/practice\/lesson\?path=a2-greetings-1&step=words&first=1/)
+  // The new words come on cards first.
+  await expect(page.getByText('Nové slovo · 1 z 10')).toBeVisible()
+  await button(page, 'Preskočiť').tap()
   await expect(field(page)).toBeVisible()
 
   // Through the lesson, giving every task up.
@@ -72,14 +76,15 @@ test('a new learner goes through the welcome into the first lesson of their topi
   await expect(page).toHaveURL(/\/$/)
 })
 
-test('every question can be skipped, which starts with all topics at A1', async ({ page }) => {
+test('every question can be skipped, which starts on the path at A1', async ({ page }) => {
   await page.goto('/welcome')
   await button(page, 'Začať').tap()
   for (const heading of ['Prečo sa učíš španielčinu?', 'Koľko španielčiny už vieš?', 'Koľko chceš denne cvičiť?']) {
     await expect(page.getByRole('heading', { name: heading })).toBeVisible()
     await button(page, 'Preskočiť').tap()
   }
-  await expect(page.getByText('Prvá lekcia: Slovná zásoba · Všetky témy · A1')).toBeVisible()
+  // A1 starts on the path, at its first step.
+  await expect(page.getByText('Prvá lekcia: Pozdravy a frázy 1 · Nové slová')).toBeVisible()
 })
 
 test('a device used before the welcome existed opens Domov', async ({ page }) => {

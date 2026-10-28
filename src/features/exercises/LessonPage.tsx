@@ -24,9 +24,11 @@ import {
 } from '../../lib/lesson'
 import {
   getLessonRecord,
+  getProgressionSnapshot,
   isLessonUnlocked,
   progressionGroup,
   recordLessonAttempt,
+  recordProgressAttempt,
   rememberActiveLesson,
   resumeLesson,
   useLessonProgression,
@@ -34,6 +36,7 @@ import {
 } from '../../lib/lessonProgress'
 import { loadMistakes, recordMistake, removeMistake } from '../../lib/mistakes'
 import { localizedTip } from '../../lib/localized'
+import { learnerUnits, parsePathStep, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitSteps, usePathState } from '../../lib/path'
 import { recordPractice } from '../../lib/practice'
 import { speechSupported } from '../../lib/speech'
 import { itemKey, parseTestKey, prepareLesson, TEST_TYPES, testToParams } from '../../lib/tests'
@@ -45,6 +48,8 @@ import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
 import { SaveProgressCard } from '../onboarding/SaveProgressCard'
+import { MeetCards } from '../path/MeetCards'
+import { TipIntro } from '../path/TipIntro'
 import { TaskView } from './tasks/TaskView'
 import { createLessonRun, lessonUsage, type LessonRun, type LessonSource } from './lessonUsage'
 import { learnerAnswerText } from '../../lib/contentReport'
@@ -73,9 +78,16 @@ async function loadTestSeenCounts(): Promise<Map<string, number>> {
   return seen
 }
 
-/** A fresh lesson: from the mistakes list, or to prepare for a test, or numbered lesson, or least-practised items. */
-async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number, prepareKey?: string | null): Promise<Task[]> {
+type PathStep = NonNullable<ReturnType<typeof parsePathStep>>
+
+/** A fresh lesson: from the mistakes list, or a step of the path, or to prepare for a test, or numbered lesson, or least-practised items. */
+async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNumber?: number, prepareKey?: string | null, path?: PathStep): Promise<Task[]> {
   if (fromMistakes) return mistakesLesson(await loadMistakes(), LESSON_SIZE, Math.random, speechSupported)
+  if (path?.step === 'review') {
+    const mistakes = new Set((await loadMistakes()).map((m) => itemKey(m.exercise, m.itemId)))
+    return reviewTasks(path.unit, learnerUnits(), mistakes, await loadTestSeenCounts())
+  }
+  if (path) return retryTasks(stepTasks(path.unit, path.step))
   const test = parseTestKey(prepareKey ?? null)
   if (test) {
     const mistakes = new Set((await loadMistakes()).map((m) => itemKey(m.exercise, m.itemId)))
@@ -90,6 +102,7 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
  * `?mistakes=1` practises the mistakes list instead of the filter.
  * `?lesson=X` plays the fixed, numbered lesson X.
  * `?prepare=food:A1` (a test key) practises the material of that test ("Pripraviť sa").
+ * `?path=a1-food-1&step=words` plays a step of the path (src/lib/path.ts), scored like a numbered lesson.
  */
 export function LessonPage() {
   const dictionary = useT()
@@ -99,15 +112,16 @@ export function LessonPage() {
   const fromMistakes = params.get('mistakes') === '1'
   // The lesson the welcome ends in: closing it goes to Domov, and its result offers an account.
   const firstLesson = params.get('first') === '1'
-  const prepareKey = fromMistakes ? null : params.get('prepare')
+  const pathStep = useMemo(() => (fromMistakes ? undefined : parsePathStep(params.get('path'), params.get('step'))), [fromMistakes, params])
+  const prepareKey = fromMistakes || pathStep ? null : params.get('prepare')
   const preparing = parseTestKey(prepareKey) !== undefined
-  const lessonParam = fromMistakes || preparing ? null : params.get('lesson')
+  const lessonParam = fromMistakes || preparing || pathStep ? null : params.get('lesson')
   const lessonNumber = lessonParam === null ? undefined : Number(lessonParam)
   const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
   const group = progressionGroup(rawGroup, filter.level)
   // Usage statistics (lessonUsage.ts): the lesson on screen, started once and ended once.
-  const source: LessonSource = firstLesson ? 'first' : fromMistakes ? 'mistakes' : preparing ? 'test' : 'lesson'
-  const usage = useMemo(() => lessonUsage(filter, source, parseTestKey(prepareKey)), [filter, source, prepareKey])
+  const source: LessonSource = firstLesson ? 'first' : fromMistakes ? 'mistakes' : preparing ? 'test' : pathStep ? 'path' : 'lesson'
+  const usage = useMemo(() => lessonUsage(filter, source, parseTestKey(prepareKey), pathStep?.unit), [filter, source, prepareKey, pathStep])
   const run = useRef<LessonRun | null>(null)
   /** A fresh lesson (not a correction round, not a passed lesson's overview). */
   const trackStart = (count: number) => {
@@ -116,15 +130,17 @@ export function LessonPage() {
   }
   const totalLessons = useMemo(() => getNumberedLessonCount(filter), [filter])
   const progression = useLessonProgression()
-  // A typed URL, an old link or browser history must not open (and then pass) a locked lesson.
+  const pathUnit = usePathState().find((u) => u.unit.id === pathStep?.unit.id)
+  // A typed URL, an old link or browser history must not open (and then pass) a locked lesson or step.
   const locked =
-    lessonNumber !== undefined &&
-    !(
-      Number.isInteger(lessonNumber) &&
-      lessonNumber >= 1 &&
-      lessonNumber <= totalLessons &&
-      isLessonUnlocked(filter.type, group, lessonNumber, progression)
-    )
+    (lessonNumber !== undefined &&
+      !(
+        Number.isInteger(lessonNumber) &&
+        lessonNumber >= 1 &&
+        lessonNumber <= totalLessons &&
+        isLessonUnlocked(filter.type, group, lessonNumber, progression)
+      )) ||
+    (pathStep !== undefined && pathUnit?.steps.find((s) => s.id === pathStep.step)?.unlocked !== true)
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -141,6 +157,8 @@ export function LessonPage() {
   const [lessonTotal, setLessonTotal] = useState(0)
   // A passed lesson opens on its overview (correct answers) instead of starting right away.
   const [overview, setOverview] = useState<LessonRecord | null>(null)
+  // A step of the path begun afresh opens on the cards of its new words, or on its grammar tip.
+  const [intro, setIntro] = useState<'meet' | 'tip' | null>(null)
   const [index, setIndex] = useState(0)
   const [answer, setAnswer] = useState<Answer>('')
   const [grade, setGrade] = useState<Grade | null>(null)
@@ -175,16 +193,25 @@ export function LessonPage() {
   useEffect(() => {
     if (locked) return
     let active = true
-    void buildLesson(filter, fromMistakes, lessonNumber, prepareKey).then((next) => {
+    void buildLesson(filter, fromMistakes, lessonNumber, prepareKey, pathStep).then((next) => {
       if (!active) return
       // Read once, on entry: the record also changes while the lesson is being played.
-      const record = lessonNumber === undefined ? undefined : getLessonRecord(filter.type, group, lessonNumber)
+      const record = pathStep
+        ? getProgressionSnapshot()[stepKey(pathStep.unit, pathStep.step)]
+        : lessonNumber === undefined
+          ? undefined
+          : getLessonRecord(filter.type, group, lessonNumber)
       // A lesson quit before it was passed goes on with what was wrong or not reached.
       const left = resumeLesson(next, record)
       if (left) start(left.tasks, lessonNumber, 'resume', { solved: new Set(left.solved), total: next.length })
       else start(next, lessonNumber)
-      setOverview(record?.passed && next.length > 0 ? record : null)
-      if (!(record?.passed && next.length > 0)) {
+      // Begun afresh, a step brings in its words or its tip first; passed before or quit halfway, it does not.
+      const fresh = pathStep !== undefined && !left && record?.passed !== true
+      setIntro(fresh && stepNewWords(pathStep.unit, pathStep.step).length > 0 ? 'meet' : fresh && pathStep.step === 'grammar' ? 'tip' : null)
+      // A passed step of the path is simply played again.
+      const showOverview = record?.passed === true && next.length > 0 && !pathStep
+      setOverview(showOverview ? record : null)
+      if (!showOverview) {
         run.current?.end(false)
         run.current = createLessonRun(usage, next.length)
       }
@@ -193,7 +220,7 @@ export function LessonPage() {
     return () => {
       active = false
     }
-  }, [filter, fromMistakes, lessonNumber, prepareKey, locked, rawGroup, group, usage])
+  }, [filter, fromMistakes, lessonNumber, prepareKey, pathStep, locked, rawGroup, group, usage])
 
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
@@ -211,7 +238,7 @@ export function LessonPage() {
   // would treat as an (invalid) effect cleanup.
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [index, tasks, overview])
+  }, [index, tasks, overview, intro])
 
   const exit = () => {
     if (!finished) run.current?.end(false)
@@ -219,7 +246,13 @@ export function LessonPage() {
     else if (location.key !== 'default') void navigate(-1)
     else {
       const test = parseTestKey(prepareKey)
-      const fallback = fromMistakes ? '/archive?tab=mistakes' : test ? `/practice/test?${testToParams(test)}` : `/practice?${filterToParams(filter)}`
+      const fallback = fromMistakes
+        ? '/archive?tab=mistakes'
+        : pathStep
+          ? '/practice/path'
+          : test
+            ? `/practice/test?${testToParams(test)}`
+            : `/practice?${filterToParams(filter)}`
       void navigate(fallback, { replace: true })
     }
   }
@@ -295,12 +328,15 @@ export function LessonPage() {
     // Preparing for a test puts the mistakes first: one answered right is fixed too.
     if (resolve || ((round !== 'full' || preparing) && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
     setAnswers([...answers, { task, grade, correct }])
-    if (runLesson !== undefined) {
+    if (runLesson !== undefined || pathStep) {
       const nextSolved = correct ? new Set(solved).add(task.itemId) : solved
       setSolved(nextSolved)
       // Saved on every right answer and at the end of each round, so quitting halfway keeps
       // the credit: the store keeps the best score, and the solved tasks to continue from.
-      if (correct || index + 1 === tasks.length) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal, [...nextSolved])
+      if (correct || index + 1 === tasks.length) {
+        if (pathStep) recordProgressAttempt(stepKey(pathStep.unit, pathStep.step), nextSolved.size, lessonTotal, [...nextSolved])
+        else if (runLesson !== undefined) recordLessonAttempt(filter.type, group, runLesson, nextSolved.size, lessonTotal, [...nextSolved])
+      }
     }
     if (index + 1 === tasks.length) playSound('lesson')
     setIndex(index + 1)
@@ -326,6 +362,11 @@ export function LessonPage() {
   }
 
   const progress = total ? (answers.length / total) * 100 : 0
+  const scored = runLesson !== undefined || pathStep !== undefined
+  const pathText = dictionary.path
+  // The step after this one in its unit, offered once this one is passed.
+  const pathSteps = pathStep && unitSteps(pathStep.unit)
+  const nextPathStep = pathStep && pathSteps?.[pathSteps.indexOf(pathStep.step) + 1]
 
   return (
     <div className="mx-auto min-h-dvh max-w-[480px] sm:border-x sm:border-line">
@@ -350,7 +391,7 @@ export function LessonPage() {
         </div>
         <span className="min-w-16 shrink-0 pr-2 text-right text-sm whitespace-nowrap text-ink-muted tabular-nums">
           {runLesson ? `L${runLesson}` : ''}
-          {total && !overview ? `${runLesson ? ' · ' : ''}${Math.min(index + 1, total)}/${total}` : ''}
+          {total && !overview && !intro ? `${runLesson ? ' · ' : ''}${Math.min(index + 1, total)}/${total}` : ''}
         </span>
       </header>
 
@@ -375,6 +416,12 @@ export function LessonPage() {
               {dictionary.common.back}
             </Button>
           </div>
+        ) : intro && pathStep ? (
+          intro === 'meet' ? (
+            <MeetCards words={stepNewWords(pathStep.unit, pathStep.step)} onDone={() => setIntro(null)} />
+          ) : (
+            <TipIntro unit={pathStep.unit} onDone={() => setIntro(null)} />
+          )
         ) : overview && runLesson !== undefined ? (
           <LessonOverview lessonNumber={runLesson} record={overview} tasks={tasks} />
         ) : finished ? (
@@ -384,15 +431,24 @@ export function LessonPage() {
               answers={answers}
               fromMistakes={fromMistakes}
               lessonNumber={runLesson}
-              lessonScore={runLesson !== undefined ? { score: solved.size, total: lessonTotal } : undefined}
+              lessonScore={scored ? { score: solved.size, total: lessonTotal } : undefined}
               isRetry={round === 'fix'}
               totalLessons={totalLessons}
+              step={
+                pathStep && {
+                  name: pathText.steps[pathStep.step],
+                  next: nextPathStep && {
+                    name: pathText.steps[nextPathStep],
+                    onGo: () => void navigate(stepHref(pathStep.unit, nextPathStep), { replace: true }),
+                  },
+                }
+              }
               onRetryMistakes={() => {
                 start(retryTasks(answers.filter((a) => !a.correct).map((a) => a.task)), runLesson, 'fix')
               }}
               onRepeatAll={() => {
-                if (lessonNumber !== undefined) {
-                  void buildLesson(filter, fromMistakes, lessonNumber).then((next) => {
+                if (lessonNumber !== undefined || pathStep) {
+                  void buildLesson(filter, fromMistakes, lessonNumber, null, pathStep).then((next) => {
                     start(next, lessonNumber)
                     trackStart(next.length)
                   })
@@ -418,7 +474,11 @@ export function LessonPage() {
           task && (
             <>
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-                {fromMistakes ? `${dictionary.archive.tabs.mistakes} · ` : preparing ? `${dictionary.tests.preparing} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
+                {fromMistakes
+                  ? `${dictionary.archive.tabs.mistakes} · `
+                  : pathStep
+                    ? `${pathText.unit(pathUnit?.number ?? 1)} · ${pathText.steps[pathStep.step]}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · `
+                    : preparing ? `${dictionary.tests.preparing} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
@@ -429,7 +489,7 @@ export function LessonPage() {
         )}
       </main>
 
-      {!locked && task && !finished && (
+      {!locked && task && !finished && !intro && (
         <div className="fixed inset-x-0 bottom-0 z-20">
           <div className="mx-auto max-w-[480px]">
             {overview ? (

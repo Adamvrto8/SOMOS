@@ -850,6 +850,59 @@ export const sk = {
     unavailableTask: 'Táto úloha v tvojej verzii appky chýba.',
   },
 
+  path: {
+    title: 'Cesta',
+    intro: 'Krok za krokom: nové slová, gramatika, vety a test. Vždy vieš, čo je na rade.',
+    levelProgress: (level: string, done: number, total: number) => `${level} · ${done} z ${total} ${pluralSk(total, ['jednotky', 'jednotiek', 'jednotiek'])}`,
+    unit: (n: number) => `Jednotka ${n}`,
+    steps: {
+      words: 'Nové slová',
+      words2: 'Nové slová II',
+      grammar: 'Gramatika',
+      sentences: 'Vety',
+      listening: 'Počúvanie a preklad',
+      review: 'Opakovanie',
+      test: 'Test jednotky',
+    },
+    stepOf: (n: number, total: number) => `krok ${n} z ${total}`,
+    testOpen: 'Látku už vieš? Test jednotky je otvorený hneď. Keď ho splníš, jednotka je hotová.',
+    tip: 'Tip',
+    exam: (level: string) => `Skúška ${level}`,
+    examHint: 'Celá úroveň naraz: keď ju splníš, všetky jej jednotky sú hotové.',
+    locked: 'Otvorí sa po teste predošlej jednotky',
+    walked: 'Celú cestu máš za sebou, od A1 po B2. ¡Felicidades!',
+    /** Domov, above the big unit number. */
+    homeStart: 'Začni svoju cestu',
+    homeContinue: 'Tvoja cesta',
+    homeLine: (unit: number, title: string, step: string, n: number, total: number) => `Jednotka ${unit} · ${title} · ${step} (${n}/${total})`,
+    homeAria: (unit: number, step: string) => `Jednotka ${unit}: ${step}`,
+    /** Cvičiť, the card on top. */
+    cardLine: (level: string, unit: number, total: number) => `${level} · jednotka ${unit} z ${total}`,
+    cardDone: (level: string) => `${level} · hotovo`,
+    /** Lesson result of a step. */
+    stepPassed: (step: string) => `${step}: splnené`,
+    stepNotPassed: (step: string) => `${step}: zatiaľ nesplnené`,
+    passedLine: (score: number, total: number, hasNext: boolean) => `Splnené (${score}/${total})${hasNext ? ' · Ďalší krok odomknutý!' : ''}`,
+    nextStep: (step: string) => `Ďalej: ${step}`,
+    repeatStep: 'Zopakovať celý krok',
+    nextLocked: 'Ďalší krok (zamknutý)',
+    /** The cards that bring in a step's new words. */
+    meetLabel: (n: number, total: number) => `Nové slovo · ${n} z ${total}`,
+    meetNext: 'Ďalšie slovo',
+    meetStart: 'Precvičiť slová',
+    meetSkip: 'Preskočiť',
+    meetExample: 'Príklad',
+    /** The tip before the grammar step. */
+    tipLabel: 'Gramatika jednotky',
+    tipToday: (rules: string) => `Dnes: ${rules}`,
+    tipStart: 'Rozumiem, začať',
+    /** The end of a unit, on the result of its test. */
+    unitDone: (n: number) => `Jednotka ${n} je hotová`,
+    unitWords: (n: number) => `+${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
+    nextUnit: (title: string) => `Ďalej: ${title}`,
+    backToPath: 'Späť na cestu',
+  },
+
   tests: {
     title: 'Testy',
     intro: 'Test ukáže, čo už naozaj vieš. Mieša všetky druhy cvičení, počas neho nie je nápoveda a zložený je pri 80 %. Nič sa nezamyká: je to cieľ, na ktorý sa môžeš pripraviť.',

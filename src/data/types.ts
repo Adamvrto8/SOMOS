@@ -91,6 +91,15 @@ export interface Tip {
   related?: string[] // tip ids, "Pozri aj"
 }
 
+// The guided path ("Cesta", docs/guided-path-spec.md): src/data/path.json, units in the order they are learned.
+export interface PathEntry {
+  level: Level
+  topic: string // the unit teaches the words and sentences whose first topic this is, at the level
+  part: number // 1…n: a topic with many words at a level is split into n units, in data order
+  grammar: string // a tip id: the grammar point of the unit
+  rules?: string[] // rule ids of that tip; none = the whole tip
+}
+
 export interface Topic {
   id: string
   sk: string

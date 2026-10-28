@@ -43,8 +43,8 @@ export interface UsageDeps {
 const TYPES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'mixed']
 const LEVELS = ['A1', 'A2', 'B1', 'B2']
 const STEPS = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done']
-const SCREENS = ['home', 'search', 'word', 'topic', 'practice', 'grammar', 'tests', 'test', 'duel', 'archive', 'profile', 'review', 'stats']
-const SOURCES = ['lesson', 'mistakes', 'test', 'first']
+const SCREENS = ['home', 'search', 'word', 'topic', 'practice', 'path', 'grammar', 'tests', 'test', 'duel', 'archive', 'profile', 'review', 'stats']
+const SOURCES = ['lesson', 'mistakes', 'test', 'first', 'path']
 
 type Check = (value: unknown) => boolean
 const oneOf =

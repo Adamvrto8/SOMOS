@@ -19,6 +19,8 @@ interface TipContentProps {
   tip: Tip
   /** Opened with "Prečo?" from a task: its answer comes first, the handbook page follows. */
   here?: TipHere
+  /** Rules marked as the ones that matter here (the grammar point of a unit of the path). */
+  focus?: readonly string[]
   onOpenTip: (id: string) => void // "Pozri aj"
 }
 
@@ -74,7 +76,7 @@ function Asked({ asked }: { asked: NonNullable<TipHere['asked']> }) {
 }
 
 /** One grammar tip: what the rule is, with examples. Shown over a lesson (TipSheet) and in the handbook (TipPage). */
-export function TipContent({ tip: base, here, onOpenTip }: TipContentProps) {
+export function TipContent({ tip: base, here, focus, onOpenTip }: TipContentProps) {
   // In the learner's language; the rules keep their ids, so the one that applies is found again.
   const tip = localizedTip(base)
   const hereRule = tip.rules.find((r) => r.id === here?.rule?.id)
@@ -118,7 +120,7 @@ export function TipContent({ tip: base, here, onOpenTip }: TipContentProps) {
           )}
           <ul className="space-y-3">
             {group.rules.map((r) => (
-              <li key={r.id} className={`rounded-card border bg-surface p-4 ${r.id === here?.rule?.id ? 'border-amber ring-1 ring-amber' : 'border-line'}`}>
+              <li key={r.id} className={`rounded-card border bg-surface p-4 ${r.id === here?.rule?.id || focus?.includes(r.id) ? 'border-amber ring-1 ring-amber' : 'border-line'}`}>
                 <RuleBody rule={r} />
               </li>
             ))}

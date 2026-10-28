@@ -1,4 +1,4 @@
-import { Award, BookOpen, ChevronRight, Dumbbell, Play, Swords, type LucideIcon } from 'lucide-react'
+import { Award, BookOpen, ChevronRight, Dumbbell, Play, Route, Swords, type LucideIcon } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import type { TableTense } from '../../lib/conjugate'
@@ -6,6 +6,7 @@ import { getNumberedLessonCount, type ExerciseType, type LessonFilter } from '..
 import { getLessonRecord, getRememberedLesson, progressionGroup, useLessonProgression, type LessonProgressionMap } from '../../lib/lessonProgress'
 import { duelsAvailable } from '../../lib/duel/backend'
 import { useMistakes } from '../../lib/mistakes'
+import { nextStep, unitTitle, usePathState } from '../../lib/path'
 import { continueLesson } from '../home/continueLesson'
 import { EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
 
@@ -42,7 +43,29 @@ function Shortcut({ to, icon: Icon, label, badge, tone = 'brick' }: { to: string
   )
 }
 
-/** Cvičiť: where to go on, the shortcuts (mistakes, tests, grammar) and the exercises as a grid. */
+/** The path (Cesta): its unit to do, or the level walked. */
+function PathCard() {
+  const text = useT().path
+  const states = usePathState()
+  const next = nextStep(states)
+  const level = next?.unit.unit.level ?? states[states.length - 1]?.unit.level ?? 'A1'
+  const ofLevel = states.filter((s) => s.unit.level === level)
+  return (
+    <Link to="/practice/path" className={`${TILE} flex items-center gap-4 p-4`}>
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)]">
+        <Route size={22} strokeWidth={1.75} aria-hidden />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm text-ink-muted">{text.title}</span>
+        <span className="block font-serif text-xl leading-snug font-semibold">{next ? unitTitle(next.unit.unit) : text.cardDone(level)}</span>
+        {next && <span className="block truncate text-sm text-ink-muted">{text.cardLine(level, next.unit.number, ofLevel.length)}</span>}
+      </span>
+      <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+    </Link>
+  )
+}
+
+/** Cvičiť: the path, where to go on, the shortcuts (mistakes, tests, grammar) and the exercises as a grid. */
 export function PracticeHub() {
   const dictionary = useT()
   const text = dictionary.practice
@@ -55,6 +78,8 @@ export function PracticeHub() {
   return (
     <div className="space-y-6">
       <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
+
+      <PathCard />
 
       <Link to={next.href} className={`${TILE} flex items-center gap-4 p-4`}>
         <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)]">

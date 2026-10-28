@@ -8,7 +8,9 @@ import { useLanguage } from '../../lib/language'
 import type { Answer, Grade, Task } from '../../lib/lesson'
 import { passThreshold } from '../../lib/lessonProgress'
 import type { TestId } from '../../lib/tests'
+import type { UnitState } from '../../lib/path'
 import { taskSummary } from '../exercises/taskSummary'
+import { UnitDone } from '../path/UnitDone'
 import { testTitle } from './testTitle'
 
 export interface TestAnswer {
@@ -36,9 +38,11 @@ interface TestResultProps {
   onAgain: () => void
   onPrepare: () => void
   onExit: () => void
+  /** The test is a unit's of the path: passed, it ends the unit (with the path's state, for the next one). */
+  pathUnit?: { unit: UnitState; states: readonly UnitState[] }
 }
 
-export function TestResult({ test, answers, accepted, onAccept, onAgain, onPrepare, onExit }: TestResultProps) {
+export function TestResult({ test, answers, accepted, onAccept, onAgain, onPrepare, onExit, pathUnit }: TestResultProps) {
   const dictionary = useT()
   const text = dictionary.tests
   const language = useLanguage()
@@ -51,6 +55,7 @@ export function TestResult({ test, answers, accepted, onAccept, onAgain, onPrepa
 
   return (
     <div className="space-y-7">
+      {passed && pathUnit && <UnitDone unit={pathUnit.unit} states={pathUnit.states} />}
       <div className="overflow-hidden rounded-card border border-line bg-surface">
         <div className="relative flex h-28 items-center justify-center border-b border-line bg-surface-2">
           <Azulejos className="opacity-30 dark:opacity-20" />
@@ -83,7 +88,9 @@ export function TestResult({ test, answers, accepted, onAccept, onAgain, onPrepa
       <div className="grid gap-3">
         {passed ? (
           <>
-            <Button onClick={onExit}>{text.backToTests}</Button>
+            <Button variant={pathUnit ? 'secondary' : 'primary'} onClick={onExit}>
+              {pathUnit ? dictionary.path.backToPath : text.backToTests}
+            </Button>
             <Button variant="secondary" icon={Repeat} onClick={onAgain}>
               {text.again}
             </Button>
@@ -97,7 +104,7 @@ export function TestResult({ test, answers, accepted, onAccept, onAgain, onPrepa
               {text.again}
             </Button>
             <Button variant="secondary" onClick={onExit}>
-              {text.backToTests}
+              {pathUnit ? dictionary.path.backToPath : text.backToTests}
             </Button>
           </>
         )}

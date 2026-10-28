@@ -189,10 +189,14 @@ export function recordLessonAttempt(
   total: number,
   solved?: readonly string[],
 ): RecordAttemptResult {
+  return recordProgressAttempt(lessonKey(type, group, lessonNumber), score, total, solved)
+}
+
+/** recordLessonAttempt for any key of the map: a step of the path is stored as "path:a1-food-1:words" (src/lib/path.ts). */
+export function recordProgressAttempt(key: string, score: number, total: number, solved?: readonly string[]): RecordAttemptResult {
   if (!Number.isInteger(total) || total < 1 || score < 0 || score > total) {
     return { passed: false, newlyPassed: false, bestScore: 0 }
   }
-  const key = lessonKey(type, group, lessonNumber)
   const current = progressionMap[key]
   const passed = score >= passThreshold(total)
   // min: a lesson shrinks only when the dataset changes.

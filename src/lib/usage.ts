@@ -33,7 +33,7 @@ const KEYS = { off: 'somos-usage-off', device: 'somos-usage-device', queue: 'som
 export const MAX_QUEUE = 200
 const BATCH = 100
 
-export type Screen = 'home' | 'search' | 'word' | 'topic' | 'practice' | 'grammar' | 'tests' | 'test' | 'duel' | 'archive' | 'profile' | 'review' | 'stats'
+export type Screen = 'home' | 'search' | 'word' | 'topic' | 'practice' | 'path' | 'grammar' | 'tests' | 'test' | 'duel' | 'archive' | 'profile' | 'review' | 'stats'
 
 // First match wins. The lesson and the welcome have their own events. Mirrored in api/usage.ts (SCREENS).
 const SCREENS: [RegExp, Screen][] = [
@@ -42,6 +42,7 @@ const SCREENS: [RegExp, Screen][] = [
   [/^\/word\//, 'word'],
   [/^\/topic\//, 'topic'],
   [/^\/practice\/?$/, 'practice'],
+  [/^\/practice\/path\/?$/, 'path'],
   [/^\/practice\/grammar(\/|$)/, 'grammar'],
   [/^\/practice\/tests\/?$/, 'tests'],
   [/^\/practice\/test\/?$/, 'test'],

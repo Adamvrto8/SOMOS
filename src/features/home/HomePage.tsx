@@ -5,9 +5,11 @@ import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { useLessonProgression } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
+import { useOnboarding } from '../../lib/onboarding'
+import { usePathState } from '../../lib/path'
 import { useReminderProblem } from '../../lib/reminder'
 import { useActivity } from '../../lib/stats'
-import { continueLesson } from './continueLesson'
+import { pathOrLesson } from './continueLesson'
 import { NextGoalCard } from './NextGoalCard'
 import { ProgressTiles } from './ProgressTiles'
 import { ReviewCard } from './ReviewCard'
@@ -20,7 +22,7 @@ export function HomePage() {
   const activity = useActivity(goal)
   const mistakes = useMistakes()
   const reminderProblem = useReminderProblem()
-  const next = continueLesson(useLessonProgression())
+  const next = pathOrLesson(usePathState(), useLessonProgression(), useOnboarding())
   const text = useT()
   const today = new Date().toLocaleDateString(text.dateLocale, { weekday: 'long', day: 'numeric', month: 'long' })
 
