@@ -3,6 +3,7 @@ import type { KeyboardEvent, ReactNode } from 'react'
 interface Option<T extends string> {
   id: T
   label: ReactNode
+  disabled?: boolean // shown, but cannot be picked
 }
 
 interface SegmentedProps<T extends string> {
@@ -31,8 +32,9 @@ export function Segmented<T extends string>({ options, value, onChange, label, m
     const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
     if (!step) return
     e.preventDefault()
-    const index = options.findIndex((o) => o.id === value)
-    select(options[(index + step + options.length) % options.length].id, true)
+    const enabled = options.filter((o) => !o.disabled)
+    const index = enabled.findIndex((o) => o.id === value)
+    select(enabled[(index + step + enabled.length) % enabled.length].id, true)
   }
 
   return (
@@ -53,6 +55,7 @@ export function Segmented<T extends string>({ options, value, onChange, label, m
             aria-checked={mode === 'radio' ? selected : undefined}
             aria-controls={mode === 'tabs' ? panelId : undefined}
             tabIndex={selected ? 0 : -1}
+            disabled={option.disabled}
             onClick={() => select(option.id, false)}
             onKeyDown={onKeyDown}
             className={[
@@ -60,6 +63,7 @@ export function Segmented<T extends string>({ options, value, onChange, label, m
               'h-10 flex-auto rounded-full px-3 text-sm font-medium whitespace-nowrap transition-colors duration-150',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick',
               selected ? 'bg-surface text-ink shadow-sm' : 'text-ink-muted hover:text-ink',
+              'disabled:opacity-40 disabled:hover:text-ink-muted',
             ].join(' ')}
           >
             {option.label}

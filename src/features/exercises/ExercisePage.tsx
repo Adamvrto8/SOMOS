@@ -45,8 +45,11 @@ export function ExercisePage() {
   const rawFilter = filterFromParams(params)
   const info = exerciseInfo(rawFilter.type)
   const group = (rawFilter.type === 'conjugation' ? rawFilter.tense : rawFilter.topic) ?? rememberedGroup(rawFilter.type)
+  // A tense is drilled from its own level up: a link or a remembered tense with a lower level shows the tense's level.
+  const tense = rawFilter.type === 'conjugation' && group !== 'all' ? (group as TableTense) : undefined
+  const level = tense && rawFilter.level && levelAbove(tense, rawFilter.level) ? TENSE_LEVEL[tense] : rawFilter.level
   const filter: LessonFilter =
-    rawFilter.type === 'conjugation' ? { ...rawFilter, tense: group as TableTense | 'all' } : { ...rawFilter, topic: group }
+    rawFilter.type === 'conjugation' ? { ...rawFilter, level, tense: group as TableTense | 'all' } : { ...rawFilter, topic: group }
 
   const progGroup = progressionGroup(group, filter.level)
   const poolSize = getStablePool(filter).length
@@ -90,7 +93,11 @@ export function ExercisePage() {
               {dictionary.exercise.allTenses}
             </Chip>
             {TABLE_TENSES.map((t) => (
-              <Chip key={t} selected={group === t} onClick={() => updateParams({ tense: t })}>
+              <Chip
+                key={t}
+                selected={group === t}
+                onClick={() => updateParams({ tense: t, level: filter.level && levelAbove(t, filter.level) ? TENSE_LEVEL[t] : (filter.level ?? null) })}
+              >
                 {TENSE_LABELS[t]}
                 {/* A tense of a higher level still works here; the badge says from where it is taught. */}
                 {filter.level && levelAbove(t, filter.level) && <span className="ml-1.5 rounded-full border border-current px-1.5 text-xs">{TENSE_LEVEL[t]}</span>}
@@ -122,7 +129,8 @@ export function ExercisePage() {
           idPrefix="level"
           value={filter.level ?? 'all'}
           onChange={(level) => updateParams({ level: level === 'all' ? null : level })}
-          options={[{ id: 'all', label: text.allLevels }, ...LEVELS.map((l) => ({ id: l, label: l }))]}
+          // Below the level of the chosen tense there is nothing to drill in it.
+          options={[{ id: 'all', label: text.allLevels }, ...LEVELS.map((l) => ({ id: l, label: l, disabled: tense !== undefined && levelAbove(tense, l) }))]}
         />
       </section>
 
