@@ -6,6 +6,7 @@ import {
   createTest,
   EXERCISE_TEST_SIZE,
   exerciseTestProgress,
+  isExerciseType,
   isTestUnlocked,
   nextGoal,
   hasTest,
@@ -208,5 +209,12 @@ describe('exercise tests', () => {
     expect(tasks).toHaveLength(10)
     expect(tasks.every((t) => t.kind === 'vocab')).toBe(true)
     expect(tasks[0].itemId).toBe(mistake.itemId)
+  })
+})
+
+describe('isExerciseType', () => {
+  it('knows the exam types, not truefalse', () => {
+    expect(isExerciseType('cloze')).toBe(true)
+    expect(isExerciseType('truefalse')).toBe(false)
   })
 })

@@ -40,7 +40,7 @@ export const TOPIC_TEST_SIZE = sizeOf(TOPIC_MIX)
 export const LEVEL_EXAM_SIZE = sizeOf(EXAM_MIX)
 export const EXERCISE_TEST_SIZE = 30
 
-const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse']
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
 export const isExerciseType = (type: string | null | undefined): type is ExerciseType => EXERCISE_TYPES.includes(type as ExerciseType)
 
 /**
