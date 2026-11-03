@@ -17,6 +17,7 @@ import {
   LESSON_SIZE,
   lessonSizeOf,
   matchingTask,
+  matchingTopics,
   MATCHING_MAX_WRONG,
   MATCHING_SIZE,
   mistakesLesson,
@@ -792,6 +793,18 @@ describe('matching', () => {
     expect(getNumberedLessonCount(filter)).toBe(Math.ceil(pool.length / lessonSizeOf('matching')) || 0)
     expect(getStablePool({ type: 'matching', topic: 'nope' })).toEqual([])
     expect(getNumberedLessonCount({ type: 'matching', topic: 'nope' })).toBe(0)
+  })
+
+  it('has the topics all its words share, else all of them', () => {
+    const t = matchingTask(round(), seeded(8))
+    const shared = matchingTopics(t)
+    expect(shared.length).toBeGreaterThan(0)
+    const lists = t.pairs.map((p) => p.word.topics)
+    expect(shared.every((topic) => lists.some((l) => l.includes(topic)))).toBe(true)
+    const odd = { ...t, pairs: t.pairs.map((p, i) => ({ ...p, word: { ...p.word, topics: [`x${i}`] } })) }
+    expect(matchingTopics(odd).sort()).toEqual(['x0', 'x1', 'x2', 'x3', 'x4'])
+    const same = { ...t, pairs: t.pairs.map((p) => ({ ...p, word: { ...p.word, topics: ['a', `b${p.word.id}`] } })) }
+    expect(matchingTopics(same)).toEqual(['a'])
   })
 
   it('is reported by its first word, with a detail the server accepts', () => {

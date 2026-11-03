@@ -342,6 +342,13 @@ function matchingRounds(words: Word[], topic?: string): Word[][] {
   return rounds
 }
 
+/** The topics of a round: those every word shares, else all of them (so the Chyby filter finds it). */
+export function matchingTopics(task: MatchingTask): string[] {
+  const lists = task.pairs.map((p) => p.word.topics)
+  const shared = lists[0].filter((topic) => lists.every((list) => list.includes(topic)))
+  return shared.length > 0 ? shared : [...new Set(lists.flat())]
+}
+
 export function matchingTask(words: Word[], random: Random): MatchingTask {
   const pairs = shuffle(
     words.map((word): MatchingPair => ({ word, es: withArticle(word), sk: wordTranslations(word)[0] })),

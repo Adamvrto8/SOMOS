@@ -90,6 +90,11 @@ export function wordSubject(word: Word): ReportSubject {
 /** The learner's answer in a lesson as text: a builder answer holds tile ids, reported as the tiles' words. */
 export function learnerAnswerText(task: Task, answer: string | string[]): string {
   if (task.kind === 'findmistake' && Array.isArray(answer)) return `${task.corrupted.tokens[Number(answer[0])] ?? ''} → ${answer[1] ?? ''}`.trim()
+  if (task.kind === 'matching' && typeof answer === 'string') {
+    // "m:casa,perro": the words that were paired wrong.
+    const wrong = new Set(answer.slice(2).split(','))
+    return task.pairs.filter((p) => wrong.has(p.word.id)).map((p) => p.es).join(', ')
+  }
   if (task.kind === 'builder' && Array.isArray(answer)) {
     return answer
       .map((id) => task.tiles.find((t) => t.id === id)?.text ?? '')

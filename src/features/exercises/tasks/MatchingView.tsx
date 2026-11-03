@@ -15,7 +15,7 @@ interface MatchingViewProps {
 type Side = 'es' | 'sk'
 
 const CHIP =
-  'min-h-14 w-full rounded-2xl border-2 px-3 py-2 text-lg leading-tight transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+  'min-h-14 w-full min-w-0 overflow-hidden rounded-2xl border-2 px-2 py-2 text-base leading-tight break-words hyphens-auto transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
 
 /** Tap a Spanish word and its translation; a right pair locks green, a wrong one flashes red. */
 export function MatchingView({ task, onAnswer, onSubmit, status }: MatchingViewProps) {

@@ -6,7 +6,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import { useT } from '../../i18n'
 import { useLanguage } from '../../lib/language'
 import type { Mistake } from '../../lib/db'
-import { taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
+import { matchingTopics, taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
 import { clearMistakes, removeMistake } from '../../lib/mistakes'
 import { exerciseInfo } from '../exercises/exercises'
 import { taskSummary } from '../exercises/taskSummary'
@@ -17,7 +17,7 @@ import { useArchiveFilter } from './useArchiveFilter'
 const taskTopics = (task: Task): string[] => {
   if (task.kind === 'conjugation') return []
   if (task.kind === 'vocab') return task.word.topics
-  if (task.kind === 'matching') return task.pairs[0].word.topics.slice(0, 1)
+  if (task.kind === 'matching') return matchingTopics(task)
   return task.sentence.topics
 }
 

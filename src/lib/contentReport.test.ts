@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, verbs, wordById, words } from '../data'
 import { answerText, buildReport, learnerAnswerText, taskSubject, TARGET_PATTERN, wordSubject } from './contentReport'
-import { createLesson, type Task } from './lesson'
+import { createLesson, matchingTask, type Task } from './lesson'
 
 const firstTask = <K extends Task['kind']>(kind: K) => {
   const task = createLesson({ type: kind, topic: 'all', level: 'A1' }, 3, () => 0.5)[0]
@@ -69,6 +69,16 @@ describe('buildReport', () => {
   it('joins builder tiles', () => {
     expect(answerText(['Yo', 'hablo', 'español', '.'])).toBe('Yo hablo español .')
     expect(answerText(' hablo ')).toBe('hablo')
+  })
+})
+
+describe('learnerAnswerText matching', () => {
+  it('names the words paired wrong, not the raw answer', () => {
+    const task = matchingTask(['casa', 'perro', 'agua', 'libro', 'mesa'].map((id) => wordById.get(id)!), () => 0.5)
+    const text = learnerAnswerText(task, 'm:casa,perro')
+    expect(text).toContain('casa')
+    expect(text).toContain('perro')
+    expect(text).not.toContain('m:')
   })
 })
 
