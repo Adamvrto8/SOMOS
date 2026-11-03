@@ -528,6 +528,44 @@
     ]
   },
   {
+    "id": "s1689",
+    "es": "Mis amigos llegan hoy y los voy a recibir en el aeropuerto.",
+    "sk": "Priatelia dnes prídu a ja ich privítam na letisku.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Mis", "amigos", "llegan", "hoy", "y", "los", "voy", "a", "recibir", "en", "el", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["les", "lo", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s1753",
+    "es": "Pásale y siéntate como en tu casa.",
+    "sk": "Poď ďalej a sadni si ako doma.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["imperativo"],
+    "tokens": ["Pásale", "y", "siéntate", "como", "en", "tu", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "siéntate",
+        "lemma": "sentarse",
+        "hint": "sentarse · tú · imperativo",
+        "distractors": ["siéntese", "siéntense", "sientas"]
+      }
+    ]
+  },
+  {
     "id": "s625",
     "es": "¡Cómo no! Con gusto te ayudo.",
     "sk": "Ale samozrejme! Rád ti pomôžem.",
@@ -612,41 +650,6 @@
         "lemma": "poder",
         "hint": "poder · usted · presente",
         "distractors": ["puedes", "pueden", "pude"]
-      }
-    ]
-  },
-  {
-    "id": "s630",
-    "es": "Te presento a mi amiga Sofía.",
-    "sk": "Toto je moja kamarátka Sofía.",
-    "level": "A2",
-    "topics": ["greetings"],
-    "grammar": ["gender"],
-    "tokens": ["Te", "presento", "a", "mi", "amiga", "Sofía", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "amiga",
-        "lemma": "amigo",
-        "hint": "kamarátka",
-        "distractors": ["amigo", "amigas", "amigos"]
-      }
-    ]
-  },
-  {
-    "id": "s631",
-    "es": "No hay de qué, para eso son los amigos.",
-    "sk": "Niet za čo, na to sú priatelia.",
-    "level": "A2",
-    "topics": ["greetings"],
-    "tokens": ["No", "hay", "de", "qué", ",", "para", "eso", "son", "los", "amigos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "hay",
-        "lemma": "hay",
-        "hint": "niet (no … de qué)",
-        "distractors": ["es", "está", "tiene"]
       }
     ]
   },
@@ -882,6 +885,41 @@
     ]
   },
   {
+    "id": "s630",
+    "es": "Te presento a mi amiga Sofía.",
+    "sk": "Toto je moja kamarátka Sofía.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["gender"],
+    "tokens": ["Te", "presento", "a", "mi", "amiga", "Sofía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "amiga",
+        "lemma": "amigo",
+        "hint": "kamarátka",
+        "distractors": ["amigo", "amigas", "amigos"]
+      }
+    ]
+  },
+  {
+    "id": "s631",
+    "es": "No hay de qué, para eso son los amigos.",
+    "sk": "Niet za čo, na to sú priatelia.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "tokens": ["No", "hay", "de", "qué", ",", "para", "eso", "son", "los", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "niet (no … de qué)",
+        "distractors": ["es", "está", "tiene"]
+      }
+    ]
+  },
+  {
     "id": "s1200",
     "es": "¿Qué onda? ¿Cómo te fue en el examen?",
     "sk": "Čau, ako ti išla skúška?",
@@ -1075,42 +1113,6 @@
         "lemma": "ver",
         "hint": "ver · yo · futuro",
         "distractors": ["veo", "vi", "verás"]
-      }
-    ]
-  },
-  {
-    "id": "s1211",
-    "es": "Lo siento, no pude ir a tu fiesta.",
-    "sk": "Prepáč, nemohol som prísť na tvoju oslavu.",
-    "level": "A2",
-    "topics": ["greetings"],
-    "grammar": ["preterito"],
-    "tokens": ["Lo", "siento", ",", "no", "pude", "ir", "a", "tu", "fiesta", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "pude",
-        "lemma": "poder",
-        "hint": "poder · yo · pretérito",
-        "distractors": ["puedo", "pudo", "podía"]
-      }
-    ]
-  },
-  {
-    "id": "s1212",
-    "es": "¡Qué bueno que viniste! Te extrañábamos mucho.",
-    "sk": "Super, že si prišiel! Veľmi si nám chýbal.",
-    "level": "A2",
-    "topics": ["greetings"],
-    "grammar": ["preterito"],
-    "tokens": ["¡", "Qué", "bueno", "que", "viniste", "!", "Te", "extrañábamos", "mucho", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "viniste",
-        "lemma": "venir",
-        "hint": "venir · tú · pretérito",
-        "distractors": ["vienes", "vino", "venías"]
       }
     ]
   },
@@ -1466,40 +1468,38 @@
     ]
   },
   {
-    "id": "s1689",
-    "es": "Mis amigos llegan hoy y los voy a recibir en el aeropuerto.",
-    "sk": "Priatelia dnes prídu a ja ich privítam na letisku.",
+    "id": "s1211",
+    "es": "Lo siento, no pude ir a tu fiesta.",
+    "sk": "Prepáč, nemohol som prísť na tvoju oslavu.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["object-pronouns", "presente"],
-    "tokens": ["Mis", "amigos", "llegan", "hoy", "y", "los", "voy", "a", "recibir", "en", "el", "aeropuerto", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Lo", "siento", ",", "no", "pude", "ir", "a", "tu", "fiesta", "."],
     "cloze": [
       {
-        "tokenIndex": 5,
-        "answer": "los",
-        "lemma": "los",
-        "hint": "zámeno: ich",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["les", "lo", "las"]
+        "tokenIndex": 4,
+        "answer": "pude",
+        "lemma": "poder",
+        "hint": "poder · yo · pretérito",
+        "distractors": ["puedo", "pudo", "podía"]
       }
     ]
   },
   {
-    "id": "s1753",
-    "es": "Pásale y siéntate como en tu casa.",
-    "sk": "Poď ďalej a sadni si ako doma.",
+    "id": "s1212",
+    "es": "¡Qué bueno que viniste! Te extrañábamos mucho.",
+    "sk": "Super, že si prišiel! Veľmi si nám chýbal.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["imperativo"],
-    "tokens": ["Pásale", "y", "siéntate", "como", "en", "tu", "casa", "."],
+    "grammar": ["preterito"],
+    "tokens": ["¡", "Qué", "bueno", "que", "viniste", "!", "Te", "extrañábamos", "mucho", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "siéntate",
-        "lemma": "sentarse",
-        "hint": "sentarse · tú · imperativo",
-        "distractors": ["siéntese", "siéntense", "sientas"]
+        "tokenIndex": 4,
+        "answer": "viniste",
+        "lemma": "venir",
+        "hint": "venir · tú · pretérito",
+        "distractors": ["vienes", "vino", "venías"]
       }
     ]
   }

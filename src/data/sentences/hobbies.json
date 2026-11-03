@@ -1,5 +1,25 @@
 [
   {
+    "id": "s1641",
+    "es": "Me gusta bailar con mis amigos.",
+    "sk": "Rád tancujem s kamarátmi.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "bailar", "con", "mis", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
     "id": "s341",
     "es": "¿Qué haces en tu tiempo libre?",
     "sk": "Čo robíš vo voľnom čase?",
@@ -45,24 +65,6 @@
     "grammar": ["gustar"]
   },
   {
-    "id": "s343",
-    "es": "Los sábados juego fútbol con mis amigos.",
-    "sk": "V sobotu hrám s kamarátmi futbal.",
-    "level": "A1",
-    "topics": ["hobbies"],
-    "grammar": ["presente"],
-    "tokens": ["Los", "sábados", "juego", "fútbol", "con", "mis", "amigos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "juego",
-        "lemma": "jugar",
-        "hint": "jugar · yo · presente",
-        "distractors": ["juega", "juegan", "jugué"]
-      }
-    ]
-  },
-  {
     "id": "s344",
     "es": "Ayer vimos una película muy buena.",
     "sk": "Včera sme videli veľmi dobrý film.",
@@ -99,20 +101,20 @@
     ]
   },
   {
-    "id": "s346",
-    "es": "¿Bailas salsa?",
-    "sk": "Tancuješ salsu?",
+    "id": "s343",
+    "es": "Los sábados juego fútbol con mis amigos.",
+    "sk": "V sobotu hrám s kamarátmi futbal.",
     "level": "A1",
     "topics": ["hobbies"],
     "grammar": ["presente"],
-    "tokens": ["¿", "Bailas", "salsa", "?"],
+    "tokens": ["Los", "sábados", "juego", "fútbol", "con", "mis", "amigos", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "Bailas",
-        "lemma": "bailar",
-        "hint": "bailar · tú · presente",
-        "distractors": ["Bailamos", "Bailo", "Bailaste"]
+        "tokenIndex": 2,
+        "answer": "juego",
+        "lemma": "jugar",
+        "hint": "jugar · yo · presente",
+        "distractors": ["juega", "juegan", "jugué"]
       }
     ]
   },
@@ -135,6 +137,24 @@
     ]
   },
   {
+    "id": "s346",
+    "es": "¿Bailas salsa?",
+    "sk": "Tancuješ salsu?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Bailas", "salsa", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Bailas",
+        "lemma": "bailar",
+        "hint": "bailar · tú · presente",
+        "distractors": ["Bailamos", "Bailo", "Bailaste"]
+      }
+    ]
+  },
+  {
     "id": "s348",
     "es": "Estoy viendo una serie mexicana.",
     "sk": "Pozerám mexický seriál.",
@@ -149,24 +169,6 @@
         "lemma": "ver",
         "hint": "ver · gerundio",
         "distractors": ["ve", "ver", "ven"]
-      }
-    ]
-  },
-  {
-    "id": "s349",
-    "es": "Mi papá corre todas las mañanas.",
-    "sk": "Otec behá každé ráno.",
-    "level": "A1",
-    "topics": ["hobbies"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "papá", "corre", "todas", "las", "mañanas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "corre",
-        "lemma": "correr",
-        "hint": "correr · él · presente",
-        "distractors": ["corren", "corres", "corrió"]
       }
     ]
   },
@@ -206,20 +208,20 @@
     ]
   },
   {
-    "id": "s352",
-    "es": "Vamos al cine el sábado.",
-    "sk": "V sobotu ideme do kina.",
+    "id": "s349",
+    "es": "Mi papá corre todas las mañanas.",
+    "sk": "Otec behá každé ráno.",
     "level": "A1",
     "topics": ["hobbies"],
     "grammar": ["presente"],
-    "tokens": ["Vamos", "al", "cine", "el", "sábado", "."],
+    "tokens": ["Mi", "papá", "corre", "todas", "las", "mañanas", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Vamos",
-        "lemma": "ir",
-        "hint": "ir · nosotros · presente",
-        "distractors": ["Voy", "Va", "Fuimos"]
+        "tokenIndex": 2,
+        "answer": "corre",
+        "lemma": "correr",
+        "hint": "correr · él · presente",
+        "distractors": ["corren", "corres", "corrió"]
       }
     ]
   },
@@ -242,6 +244,24 @@
     ]
   },
   {
+    "id": "s352",
+    "es": "Vamos al cine el sábado.",
+    "sk": "V sobotu ideme do kina.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Vamos", "al", "cine", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "distractors": ["Voy", "Va", "Fuimos"]
+      }
+    ]
+  },
+  {
     "id": "s354",
     "es": "Voy al gimnasio tres veces por semana.",
     "sk": "Do posilňovne chodím trikrát týždenne.",
@@ -256,24 +276,6 @@
         "lemma": "ir",
         "hint": "ir · yo · presente",
         "distractors": ["Va", "Van", "Fui"]
-      }
-    ]
-  },
-  {
-    "id": "s355",
-    "es": "Escuchamos música mexicana en el carro.",
-    "sk": "V aute počúvame mexickú hudbu.",
-    "level": "A1",
-    "topics": ["hobbies"],
-    "grammar": ["presente"],
-    "tokens": ["Escuchamos", "música", "mexicana", "en", "el", "carro", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Escuchamos",
-        "lemma": "escuchar",
-        "hint": "escuchar · nosotros · presente",
-        "distractors": ["Escucho", "Escucha", "Escuchas"]
       }
     ]
   },
@@ -296,20 +298,20 @@
     ]
   },
   {
-    "id": "s357",
-    "es": "¿Quieres ir al concierto conmigo?",
-    "sk": "Chceš ísť so mnou na koncert?",
+    "id": "s355",
+    "es": "Escuchamos música mexicana en el carro.",
+    "sk": "V aute počúvame mexickú hudbu.",
     "level": "A1",
     "topics": ["hobbies"],
     "grammar": ["presente"],
-    "tokens": ["¿", "Quieres", "ir", "al", "concierto", "conmigo", "?"],
+    "tokens": ["Escuchamos", "música", "mexicana", "en", "el", "carro", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "Quieres",
-        "lemma": "querer",
-        "hint": "querer · tú · presente",
-        "distractors": ["Queremos", "Quiero", "Quisiste"]
+        "tokenIndex": 0,
+        "answer": "Escuchamos",
+        "lemma": "escuchar",
+        "hint": "escuchar · nosotros · presente",
+        "distractors": ["Escucho", "Escucha", "Escuchas"]
       }
     ]
   },
@@ -350,6 +352,24 @@
     ]
   },
   {
+    "id": "s357",
+    "es": "¿Quieres ir al concierto conmigo?",
+    "sk": "Chceš ísť so mnou na koncert?",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quieres", "ir", "al", "concierto", "conmigo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Quieres",
+        "lemma": "querer",
+        "hint": "querer · tú · presente",
+        "distractors": ["Queremos", "Quiero", "Quisiste"]
+      }
+    ]
+  },
+  {
     "id": "s402",
     "es": "Mi equipo favorito es el América.",
     "sk": "Môj obľúbený tím je América.",
@@ -364,24 +384,6 @@
         "lemma": "favorito",
         "hint": "prídavné meno: favorito",
         "distractors": ["favorita", "favoritos", "favoritas"]
-      }
-    ]
-  },
-  {
-    "id": "s403",
-    "es": "Los domingos jugamos ajedrez con el abuelo.",
-    "sk": "V nedeľu hrávame s dedkom šach.",
-    "level": "A1",
-    "topics": ["hobbies"],
-    "grammar": ["presente"],
-    "tokens": ["Los", "domingos", "jugamos", "ajedrez", "con", "el", "abuelo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "jugamos",
-        "lemma": "jugar",
-        "hint": "jugar · nosotros · presente",
-        "distractors": ["juego", "juega", "juegas"]
       }
     ]
   },
@@ -885,6 +887,24 @@
     ]
   },
   {
+    "id": "s403",
+    "es": "Los domingos jugamos ajedrez con el abuelo.",
+    "sk": "V nedeľu hrávame s dedkom šach.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "domingos", "jugamos", "ajedrez", "con", "el", "abuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "jugamos",
+        "lemma": "jugar",
+        "hint": "jugar · nosotros · presente",
+        "distractors": ["juego", "juega", "juegas"]
+      }
+    ]
+  },
+  {
     "id": "s1261",
     "es": "Mi hijo ve caricaturas todas las tardes.",
     "sk": "Syn každé popoludnie pozerá rozprávky.",
@@ -1006,24 +1026,6 @@
         "lemma": "deporte",
         "hint": "šport",
         "distractors": ["canción", "película", "foto"]
-      }
-    ]
-  },
-  {
-    "id": "s1268",
-    "es": "Los niños están jugando en el parque.",
-    "sk": "Deti sa hrajú v parku.",
-    "level": "A1",
-    "topics": ["hobbies"],
-    "grammar": ["progresivo"],
-    "tokens": ["Los", "niños", "están", "jugando", "en", "el", "parque", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "jugando",
-        "lemma": "jugar",
-        "hint": "jugar · gerundio",
-        "distractors": ["juega", "jugar", "jugó"]
       }
     ]
   },
@@ -1464,22 +1466,20 @@
     ]
   },
   {
-    "id": "s1641",
-    "es": "Me gusta bailar con mis amigos.",
-    "sk": "Rád tancujem s kamarátmi.",
+    "id": "s1268",
+    "es": "Los niños están jugando en el parque.",
+    "sk": "Deti sa hrajú v parku.",
     "level": "A1",
     "topics": ["hobbies"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Me", "gusta", "bailar", "con", "mis", "amigos", "."],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "están", "jugando", "en", "el", "parque", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
+        "tokenIndex": 3,
+        "answer": "jugando",
+        "lemma": "jugar",
+        "hint": "jugar · gerundio",
+        "distractors": ["juega", "jugar", "jugó"]
       }
     ]
   },

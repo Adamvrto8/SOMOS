@@ -1,5 +1,25 @@
 [
   {
+    "id": "s1640",
+    "es": "Me duelen los pies.",
+    "sk": "Bolia ma nohy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "duelen", "los", "pies", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "duelen",
+        "lemma": "doler",
+        "hint": "doler",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["duele", "gustan", "encantan"]
+      }
+    ]
+  },
+  {
     "id": "s242",
     "es": "Me duele mucho la cabeza.",
     "sk": "Veľmi ma bolí hlava.",
@@ -46,24 +66,6 @@
     ]
   },
   {
-    "id": "s246",
-    "es": "Mi abuela tiene el pelo blanco.",
-    "sk": "Babka má biele vlasy.",
-    "level": "A1",
-    "topics": ["body"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "abuela", "tiene", "el", "pelo", "blanco", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "tiene",
-        "lemma": "tener",
-        "hint": "tener · ella · presente",
-        "distractors": ["tienen", "tienes", "tuvo"]
-      }
-    ]
-  },
-  {
     "id": "s247",
     "es": "Corrí cinco kilómetros y me duelen las piernas.",
     "sk": "Bežal som päť kilometrov a bolia ma nohy.",
@@ -101,6 +103,24 @@
     "cloze": [{ "tokenIndex": 4, "answer": "el", "lemma": "el", "hint": "člen", "distractors": ["la", "los", "las"] }]
   },
   {
+    "id": "s246",
+    "es": "Mi abuela tiene el pelo blanco.",
+    "sk": "Babka má biele vlasy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "tiene", "el", "pelo", "blanco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · ella · presente",
+        "distractors": ["tienen", "tienes", "tuvo"]
+      }
+    ]
+  },
+  {
     "id": "s249",
     "es": "Tengo los pies cansados.",
     "sk": "Mám unavené nohy.",
@@ -119,6 +139,23 @@
     ]
   },
   {
+    "id": "s251",
+    "es": "Me corté el dedo con un cuchillo.",
+    "sk": "Porezal som si prst nožom.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["Me", "corté", "el", "dedo", "con", "un", "cuchillo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dedo",
+        "lemma": "dedo",
+        "hint": "prst",
+        "distractors": ["brazo", "pie", "ojo"]
+      }
+    ]
+  },
+  {
     "id": "s250",
     "es": "Ella es guapa y muy simpática.",
     "sk": "Je pekná a veľmi milá.",
@@ -133,23 +170,6 @@
         "lemma": "guapo",
         "hint": "prídavné meno: guapo",
         "distractors": ["guapo", "guapos", "guapas"]
-      }
-    ]
-  },
-  {
-    "id": "s251",
-    "es": "Me corté el dedo con un cuchillo.",
-    "sk": "Porezal som si prst nožom.",
-    "level": "A2",
-    "topics": ["body"],
-    "tokens": ["Me", "corté", "el", "dedo", "con", "un", "cuchillo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "dedo",
-        "lemma": "dedo",
-        "hint": "prst",
-        "distractors": ["brazo", "pie", "ojo"]
       }
     ]
   },
@@ -198,6 +218,23 @@
     ]
   },
   {
+    "id": "s379",
+    "es": "Me duele la rodilla desde ayer.",
+    "sk": "Od včera ma bolí koleno.",
+    "level": "A2",
+    "topics": ["body"],
+    "tokens": ["Me", "duele", "la", "rodilla", "desde", "ayer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rodilla",
+        "lemma": "rodilla",
+        "hint": "koleno",
+        "distractors": ["cabeza", "espalda", "mano"]
+      }
+    ]
+  },
+  {
     "id": "s254",
     "es": "Estoy haciendo ejercicio todos los días.",
     "sk": "Každý deň cvičím.",
@@ -212,23 +249,6 @@
         "lemma": "hacer",
         "hint": "hacer · gerundio",
         "distractors": ["hace", "hacer", "hacen"]
-      }
-    ]
-  },
-  {
-    "id": "s379",
-    "es": "Me duele la rodilla desde ayer.",
-    "sk": "Od včera ma bolí koleno.",
-    "level": "A2",
-    "topics": ["body"],
-    "tokens": ["Me", "duele", "la", "rodilla", "desde", "ayer", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "rodilla",
-        "lemma": "rodilla",
-        "hint": "koleno",
-        "distractors": ["cabeza", "espalda", "mano"]
       }
     ]
   },
@@ -267,24 +287,6 @@
     ]
   },
   {
-    "id": "s381",
-    "es": "Mi papá es alto y delgado.",
-    "sk": "Otec je vysoký a štíhly.",
-    "level": "A1",
-    "topics": ["body"],
-    "grammar": ["gender"],
-    "tokens": ["Mi", "papá", "es", "alto", "y", "delgado", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "delgado",
-        "lemma": "delgado",
-        "hint": "prídavné meno: delgado",
-        "distractors": ["delgada", "delgados", "delgadas"]
-      }
-    ]
-  },
-  {
     "id": "s382",
     "es": "El niño se cayó y se lastimó la pierna.",
     "sk": "Chlapec spadol a poranil si nohu.",
@@ -302,20 +304,20 @@
     ]
   },
   {
-    "id": "s383",
-    "es": "Tienes el pelo muy largo.",
-    "sk": "Máš veľmi dlhé vlasy.",
+    "id": "s381",
+    "es": "Mi papá es alto y delgado.",
+    "sk": "Otec je vysoký a štíhly.",
     "level": "A1",
     "topics": ["body"],
     "grammar": ["gender"],
-    "tokens": ["Tienes", "el", "pelo", "muy", "largo", "."],
+    "tokens": ["Mi", "papá", "es", "alto", "y", "delgado", "."],
     "cloze": [
       {
-        "tokenIndex": 4,
-        "answer": "largo",
-        "lemma": "largo",
-        "hint": "prídavné meno: largo",
-        "distractors": ["larga", "largos", "largas"]
+        "tokenIndex": 5,
+        "answer": "delgado",
+        "lemma": "delgado",
+        "hint": "prídavné meno: delgado",
+        "distractors": ["delgada", "delgados", "delgadas"]
       }
     ]
   },
@@ -712,6 +714,24 @@
     ]
   },
   {
+    "id": "s383",
+    "es": "Tienes el pelo muy largo.",
+    "sk": "Máš veľmi dlhé vlasy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gender"],
+    "tokens": ["Tienes", "el", "pelo", "muy", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "largo",
+        "lemma": "largo",
+        "hint": "prídavné meno: largo",
+        "distractors": ["larga", "largos", "largas"]
+      }
+    ]
+  },
+  {
     "id": "s1022",
     "es": "Mi mamá tiene las manos muy frías.",
     "sk": "Mama má veľmi studené ruky.",
@@ -816,23 +836,6 @@
         "hint": "ser/estar · nosotros · presente",
         "why": "trait",
         "distractors": ["estamos", "son", "eres"]
-      }
-    ]
-  },
-  {
-    "id": "s1028",
-    "es": "¿Cuántos dedos tiene una mano?",
-    "sk": "Koľko prstov má ruka?",
-    "level": "A1",
-    "topics": ["body"],
-    "tokens": ["¿", "Cuántos", "dedos", "tiene", "una", "mano", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "dedos",
-        "lemma": "dedo",
-        "hint": "prsty",
-        "distractors": ["ojos", "dientes", "pies"]
       }
     ]
   },
@@ -1478,20 +1481,19 @@
     ]
   },
   {
-    "id": "s1601",
-    "es": "Me duelen los pies después de caminar todo el día.",
-    "sk": "Po celodennom chodení ma bolia nohy.",
+    "id": "s1028",
+    "es": "¿Cuántos dedos tiene una mano?",
+    "sk": "Koľko prstov má ruka?",
     "level": "A1",
     "topics": ["body"],
-    "grammar": ["presente"],
-    "tokens": ["Me", "duelen", "los", "pies", "después", "de", "caminar", "todo", "el", "día", "."],
+    "tokens": ["¿", "Cuántos", "dedos", "tiene", "una", "mano", "?"],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "duelen",
-        "lemma": "doler",
-        "hint": "doler · ellos · presente",
-        "distractors": ["duele", "dolieron", "dolían"]
+        "tokenIndex": 2,
+        "answer": "dedos",
+        "lemma": "dedo",
+        "hint": "prsty",
+        "distractors": ["ojos", "dientes", "pies"]
       }
     ]
   },
@@ -1532,22 +1534,20 @@
     ]
   },
   {
-    "id": "s1640",
-    "es": "Me duelen los pies.",
-    "sk": "Bolia ma nohy.",
+    "id": "s1601",
+    "es": "Me duelen los pies después de caminar todo el día.",
+    "sk": "Po celodennom chodení ma bolia nohy.",
     "level": "A1",
     "topics": ["body"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Me", "duelen", "los", "pies", "."],
+    "grammar": ["presente"],
+    "tokens": ["Me", "duelen", "los", "pies", "después", "de", "caminar", "todo", "el", "día", "."],
     "cloze": [
       {
         "tokenIndex": 1,
         "answer": "duelen",
         "lemma": "doler",
-        "hint": "doler",
-        "tip": "gustar",
-        "why": "similar",
-        "distractors": ["duele", "gustan", "encantan"]
+        "hint": "doler · ellos · presente",
+        "distractors": ["duele", "dolieron", "dolían"]
       }
     ]
   }

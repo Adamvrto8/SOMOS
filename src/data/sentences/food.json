@@ -1,5 +1,183 @@
 [
   {
+    "id": "s1626",
+    "es": "Me gustan los tacos de pollo.",
+    "sk": "Tacos s kuracím mi chutia.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gustan", "los", "tacos", "de", "pollo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1627",
+    "es": "A mi hermana le gusta el café con leche.",
+    "sk": "Mojej sestre chutí káva s mliekom.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "mi", "hermana", "le", "gusta", "el", "café", "con", "leche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1628",
+    "es": "¿Te gusta la sopa de verduras?",
+    "sk": "Chutí ti zeleninová polievka?",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["¿", "Te", "gusta", "la", "sopa", "de", "verduras", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1629",
+    "es": "No nos gustan las papas fritas.",
+    "sk": "Nechutia nám hranolky.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["No", "nos", "gustan", "las", "papas", "fritas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas", "gustamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1630",
+    "es": "A mis papás les encanta el pastel de chocolate.",
+    "sk": "Mojim rodičom veľmi chutí čokoládová torta.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "mis", "papás", "les", "encanta", "el", "pastel", "de", "chocolate", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "encanta",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["encantan", "gusta", "duele"]
+      }
+    ]
+  },
+  {
+    "id": "s1705",
+    "es": "Un taco cuesta quince pesos y una torta, veinte: la torta es más cara.",
+    "sk": "Taco stojí pätnásť pesos a torta dvadsať, torta je drahšia.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Un", "taco", "cuesta", "quince", "pesos", "y", "una", "torta", ",", "veinte", ":", "la", "torta", "es", "más", "cara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["menos", "tan", "mejor"]
+      }
+    ]
+  },
+  {
+    "id": "s022",
+    "es": "Ayer tomé mucha agua.",
+    "sk": "Včera som vypil veľa vody.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "tomé", "mucha", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tomé",
+        "lemma": "tomar",
+        "hint": "tomar · yo · pretérito",
+        "distractors": ["tomo", "tomó", "tomaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1631",
+    "es": "Nos encantan los frijoles con arroz.",
+    "sk": "Fazuľa s ryžou nám veľmi chutí.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Nos", "encantan", "los", "frijoles", "con", "arroz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encantan",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["encanta", "gustan", "duelen"]
+      }
+    ]
+  },
+  {
+    "id": "s1632",
+    "es": "Me gusta comer fruta en la mañana.",
+    "sk": "Rád jem ovocie ráno.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "comer", "fruta", "en", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
     "id": "s017",
     "es": "¿Me da un jugo de naranja, por favor?",
     "sk": "Môžete mi dať pomarančový džús, prosím?",
@@ -61,6 +239,60 @@
     ]
   },
   {
+    "id": "s023",
+    "es": "Mi mamá hizo pollo con arroz.",
+    "sk": "Mama uvarila kura s ryžou.",
+    "level": "A2",
+    "topics": ["food", "family"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "mamá", "hizo", "pollo", "con", "arroz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · ella · pretérito",
+        "distractors": ["hace", "hice", "hació"]
+      }
+    ]
+  },
+  {
+    "id": "s094",
+    "es": "Ayer probé los chiles en nogada.",
+    "sk": "Včera som ochutnal chiles en nogada.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "probé", "los", "chiles", "en", "nogada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "probé",
+        "lemma": "probar",
+        "hint": "probar · yo · pretérito",
+        "distractors": ["probó", "probaron", "pruebo"]
+      }
+    ]
+  },
+  {
+    "id": "s095",
+    "es": "El mesero trajo la cuenta.",
+    "sk": "Čašník priniesol účet.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "mesero", "trajo", "la", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "trajo",
+        "lemma": "traer",
+        "hint": "traer · él · pretérito",
+        "distractors": ["trajeron", "trajiste", "trae"]
+      }
+    ]
+  },
+  {
     "id": "s020",
     "es": "Estamos comiendo tacos en el mercado.",
     "sk": "Práve jeme tacos na trhu.",
@@ -96,42 +328,6 @@
     "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
   },
   {
-    "id": "s022",
-    "es": "Ayer tomé mucha agua.",
-    "sk": "Včera som vypil veľa vody.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["Ayer", "tomé", "mucha", "agua", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "tomé",
-        "lemma": "tomar",
-        "hint": "tomar · yo · pretérito",
-        "distractors": ["tomo", "tomó", "tomaste"]
-      }
-    ]
-  },
-  {
-    "id": "s023",
-    "es": "Mi mamá hizo pollo con arroz.",
-    "sk": "Mama uvarila kura s ryžou.",
-    "level": "A2",
-    "topics": ["food", "family"],
-    "grammar": ["preterito"],
-    "tokens": ["Mi", "mamá", "hizo", "pollo", "con", "arroz", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "hizo",
-        "lemma": "hacer",
-        "hint": "hacer · ella · pretérito",
-        "distractors": ["hace", "hice", "hació"]
-      }
-    ]
-  },
-  {
     "id": "s024",
     "es": "No puedo comer picante.",
     "sk": "Nemôžem jesť pálivé.",
@@ -146,6 +342,42 @@
         "lemma": "poder",
         "hint": "poder · yo · presente",
         "distractors": ["podo", "puede", "pude"]
+      }
+    ]
+  },
+  {
+    "id": "s096",
+    "es": "Estamos preparando la cena.",
+    "sk": "Pripravujeme večeru.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "preparando", "la", "cena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "preparando",
+        "lemma": "preparar",
+        "hint": "preparar · gerundio",
+        "distractors": ["prepara", "preparar", "preparan"]
+      }
+    ]
+  },
+  {
+    "id": "s100",
+    "es": "Prefiero el agua sin hielo.",
+    "sk": "Vodu mám radšej bez ľadu.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Prefiero", "el", "agua", "sin", "hielo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero",
+        "lemma": "preferir",
+        "hint": "preferir · yo · presente",
+        "distractors": ["Prefiere", "Prefieren", "Preferí"]
       }
     ]
   },
@@ -196,6 +428,42 @@
     "cloze": [{ "tokenIndex": 3, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
   },
   {
+    "id": "s101",
+    "es": "¿Quién cocinó hoy?",
+    "sk": "Kto dnes varil?",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Quién", "cocinó", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cocinó",
+        "lemma": "cocinar",
+        "hint": "cocinar · él · pretérito",
+        "distractors": ["cocinaron", "cocinaste", "cocina"]
+      }
+    ]
+  },
+  {
+    "id": "s105",
+    "es": "Pagamos la cuenta y salimos.",
+    "sk": "Zaplatili sme účet a odišli.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Pagamos", "la", "cuenta", "y", "salimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "salimos",
+        "lemma": "salir",
+        "hint": "salir · nosotros · pretérito",
+        "distractors": ["salí", "salió", "saliste"]
+      }
+    ]
+  },
+  {
     "id": "s093",
     "es": "No como carne, soy vegetariano.",
     "sk": "Nejem mäso, som vegetarián.",
@@ -210,60 +478,6 @@
         "lemma": "comer",
         "hint": "comer · yo · presente",
         "distractors": ["come", "comen", "comí"]
-      }
-    ]
-  },
-  {
-    "id": "s094",
-    "es": "Ayer probé los chiles en nogada.",
-    "sk": "Včera som ochutnal chiles en nogada.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["Ayer", "probé", "los", "chiles", "en", "nogada", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "probé",
-        "lemma": "probar",
-        "hint": "probar · yo · pretérito",
-        "distractors": ["probó", "probaron", "pruebo"]
-      }
-    ]
-  },
-  {
-    "id": "s095",
-    "es": "El mesero trajo la cuenta.",
-    "sk": "Čašník priniesol účet.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["El", "mesero", "trajo", "la", "cuenta", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "trajo",
-        "lemma": "traer",
-        "hint": "traer · él · pretérito",
-        "distractors": ["trajeron", "trajiste", "trae"]
-      }
-    ]
-  },
-  {
-    "id": "s096",
-    "es": "Estamos preparando la cena.",
-    "sk": "Pripravujeme večeru.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["progresivo"],
-    "tokens": ["Estamos", "preparando", "la", "cena", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "preparando",
-        "lemma": "preparar",
-        "hint": "preparar · gerundio",
-        "distractors": ["prepara", "preparar", "preparan"]
       }
     ]
   },
@@ -304,132 +518,6 @@
     ]
   },
   {
-    "id": "s099",
-    "es": "Los niños beben mucha leche.",
-    "sk": "Deti pijú veľa mlieka.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Los", "niños", "beben", "mucha", "leche", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "beben",
-        "lemma": "beber",
-        "hint": "beber · ellos · presente",
-        "distractors": ["bebes", "bebemos", "bebieron"]
-      }
-    ]
-  },
-  {
-    "id": "s100",
-    "es": "Prefiero el agua sin hielo.",
-    "sk": "Vodu mám radšej bez ľadu.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Prefiero", "el", "agua", "sin", "hielo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Prefiero",
-        "lemma": "preferir",
-        "hint": "preferir · yo · presente",
-        "distractors": ["Prefiere", "Prefieren", "Preferí"]
-      }
-    ]
-  },
-  {
-    "id": "s101",
-    "es": "¿Quién cocinó hoy?",
-    "sk": "Kto dnes varil?",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["¿", "Quién", "cocinó", "hoy", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "cocinó",
-        "lemma": "cocinar",
-        "hint": "cocinar · él · pretérito",
-        "distractors": ["cocinaron", "cocinaste", "cocina"]
-      }
-    ]
-  },
-  {
-    "id": "s102",
-    "es": "La comida está muy rica.",
-    "sk": "Jedlo je veľmi chutné.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gender"],
-    "tokens": ["La", "comida", "está", "muy", "rica", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "rica",
-        "lemma": "rico",
-        "hint": "prídavné meno: rico",
-        "distractors": ["rico", "ricos", "ricas"]
-      }
-    ]
-  },
-  {
-    "id": "s103",
-    "es": "Cenamos tarde porque trabajamos mucho.",
-    "sk": "Večeriame neskoro, lebo veľa pracujeme.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Cenamos", "tarde", "porque", "trabajamos", "mucho", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Cenamos",
-        "lemma": "cenar",
-        "hint": "cenar · nosotros · presente",
-        "distractors": ["Ceno", "Cena", "Cenas"]
-      }
-    ]
-  },
-  {
-    "id": "s104",
-    "es": "¿Quieres más tortillas?",
-    "sk": "Chceš ešte tortilly?",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "Quieres", "más", "tortillas", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "Quieres",
-        "lemma": "querer",
-        "hint": "querer · tú · presente",
-        "distractors": ["Queremos", "Quiero", "Quisiste"]
-      }
-    ]
-  },
-  {
-    "id": "s105",
-    "es": "Pagamos la cuenta y salimos.",
-    "sk": "Zaplatili sme účet a odišli.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["Pagamos", "la", "cuenta", "y", "salimos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "salimos",
-        "lemma": "salir",
-        "hint": "salir · nosotros · pretérito",
-        "distractors": ["salí", "salió", "saliste"]
-      }
-    ]
-  },
-  {
     "id": "s106",
     "es": "Compré aguacates en el mercado.",
     "sk": "Na trhu som kúpil avokáda.",
@@ -444,51 +532,6 @@
         "lemma": "comprar",
         "hint": "comprar · yo · pretérito",
         "distractors": ["Compró", "Compraron", "Compro"]
-      }
-    ]
-  },
-  {
-    "id": "s107",
-    "es": "El agua de jamaica es muy refrescante.",
-    "sk": "Ibištekový nápoj je veľmi osviežujúci.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["articles", "gender"],
-    "tokens": ["El", "agua", "de", "jamaica", "es", "muy", "refrescante", "."],
-    "cloze": [{ "tokenIndex": 0, "answer": "El", "lemma": "el", "hint": "člen", "distractors": ["La", "Los", "Las"] }]
-  },
-  {
-    "id": "s108",
-    "es": "Tengo mucha hambre, ¿comemos?",
-    "sk": "Som strašne hladný, ideme jesť?",
-    "level": "A1",
-    "topics": ["food"],
-    "tokens": ["Tengo", "mucha", "hambre", ",", "¿", "comemos", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "hambre",
-        "lemma": "hambre",
-        "hint": "hlad",
-        "distractors": ["sed", "frío", "miedo"]
-      }
-    ]
-  },
-  {
-    "id": "s109",
-    "es": "Mi mamá está haciendo tamales.",
-    "sk": "Mama robí tamales.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["progresivo"],
-    "tokens": ["Mi", "mamá", "está", "haciendo", "tamales", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "haciendo",
-        "lemma": "hacer",
-        "hint": "hacer · gerundio",
-        "distractors": ["hace", "hacer", "hacen"]
       }
     ]
   },
@@ -547,6 +590,134 @@
     ]
   },
   {
+    "id": "s1737",
+    "es": "Prueba este mole; lo hizo mi abuela.",
+    "sk": "Ochutnaj toto mole, urobila ho moja babka.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperativo", "preterito"],
+    "tokens": ["Prueba", "este", "mole", ";", "lo", "hizo", "mi", "abuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prueba",
+        "lemma": "probar",
+        "hint": "probar · tú · imperativo",
+        "distractors": ["Pruebe", "Probamos", "Pruebas"]
+      }
+    ]
+  },
+  {
+    "id": "s1738",
+    "es": "Pida el pozole, está muy rico.",
+    "sk": "Objednajte si pozole, je veľmi chutné.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Pida", "el", "pozole", ",", "está", "muy", "rico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pida",
+        "lemma": "pedir",
+        "hint": "pedir · usted · imperativo",
+        "distractors": ["Pide", "Pidan", "Pido"]
+      }
+    ]
+  },
+  {
+    "id": "s1739",
+    "es": "Prepara la salsa antes de que lleguen los invitados.",
+    "sk": "Priprav salsu, kým prídu hostia.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperativo", "subjuntivo"],
+    "tokens": ["Prepara", "la", "salsa", "antes", "de", "que", "lleguen", "los", "invitados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prepara",
+        "lemma": "preparar",
+        "hint": "preparar · tú · imperativo",
+        "distractors": ["Prepare", "Preparan", "Preparo"]
+      }
+    ]
+  },
+  {
+    "id": "s1740",
+    "es": "Coman despacio, que la sopa está caliente.",
+    "sk": "Jedzte pomaly, polievka je horúca.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Coman", "despacio", ",", "que", "la", "sopa", "está", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Coman",
+        "lemma": "comer",
+        "hint": "comer · ustedes · imperativo",
+        "distractors": ["Come", "Coma", "Comemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1741",
+    "es": "Cocinemos algo rico para la cena.",
+    "sk": "Uvarme niečo dobré na večeru.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperativo"],
+    "tokens": ["Cocinemos", "algo", "rico", "para", "la", "cena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cocinemos",
+        "lemma": "cocinar",
+        "hint": "cocinar · nosotros · imperativo",
+        "distractors": ["Cocinen", "Cocinamos", "Cocina"]
+      }
+    ]
+  },
+  {
+    "id": "s1818",
+    "es": "Yo pediría el pescado, se ve delicioso.",
+    "sk": "Ja by som si dal rybu, vyzerá výborne.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Yo", "pediría", "el", "pescado", ",", "se", "ve", "delicioso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pediría",
+        "lemma": "pedir",
+        "hint": "pedir · yo · condicional",
+        "distractors": ["pediré", "pedía", "pido"]
+      }
+    ]
+  },
+  {
+    "id": "s1857",
+    "es": "Me alegra que te guste la comida.",
+    "sk": "Teší ma, že ti chutí jedlo.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Me", "alegra", "que", "te", "guste", "la", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "guste",
+        "lemma": "gustar",
+        "hint": "gustar · él",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["gusta", "gustará", "gustó"]
+      }
+    ]
+  },
+  {
     "id": "s439",
     "es": "Esta noche cenaremos en casa de mis papás.",
     "sk": "Dnes večer budeme večerať u mojich rodičov.",
@@ -561,6 +732,104 @@
         "lemma": "cenar",
         "hint": "cenar · nosotros · futuro",
         "distractors": ["cenaré", "cenará", "cenamos"]
+      }
+    ]
+  },
+  {
+    "id": "s686",
+    "es": "Quiero un licuado de plátano.",
+    "sk": "Chcem banánový koktail.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Quiero", "un", "licuado", "de", "plátano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Quiero",
+        "lemma": "querer",
+        "hint": "querer · yo · presente",
+        "distractors": ["Quiere", "Quieres", "Quieren"]
+      }
+    ]
+  },
+  {
+    "id": "s1676",
+    "es": "La sopa está lista; cómela caliente.",
+    "sk": "Polievka je hotová, zjedz ju horúcu.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["object-pronouns", "presente", "imperativo"],
+    "tokens": ["La", "sopa", "está", "lista", ";", "cómela", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cómela",
+        "lemma": "cómela",
+        "hint": "zámeno: ju",
+        "tip": "object-pronouns",
+        "why": "position",
+        "distractors": ["cómelo", "cómele"]
+      }
+    ]
+  },
+  {
+    "id": "s1677",
+    "es": "Mi mamá preparó el mole y se lo llevó a mi abuela.",
+    "sk": "Mama pripravila mole a odniesla ho babke.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["Mi", "mamá", "preparó", "el", "mole", "y", "se", "lo", "llevó", "a", "mi", "abuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno: jej",
+        "tip": "object-pronouns",
+        "why": "se-lo",
+        "distractors": ["le", "la", "lo"]
+      }
+    ]
+  },
+  {
+    "id": "s1678",
+    "es": "Los frijoles están ricos; mi mamá los prepara con chile.",
+    "sk": "Fazuľa je výborná, mama ju varí s chilli.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Los", "frijoles", "están", "ricos", ";", "mi", "mamá", "los", "prepara", "con", "chile", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["las", "lo", "les"]
+      }
+    ]
+  },
+  {
+    "id": "s1876",
+    "es": "Si cocinas tú, yo lavo los platos.",
+    "sk": "Ak uvaríš ty, ja umyjem riad.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["si-clauses", "presente"],
+    "tokens": ["Si", "cocinas", "tú", ",", "yo", "lavo", "los", "platos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cocinas",
+        "lemma": "cocinar",
+        "hint": "cocinar · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["cocinarás", "cocinaste", "cocinabas"]
       }
     ]
   },
@@ -651,248 +920,6 @@
         "lemma": "probar",
         "hint": "probar · yo · pretérito",
         "distractors": ["Pruebo", "Probó", "Probaré"]
-      }
-    ]
-  },
-  {
-    "id": "s544",
-    "es": "Si tienes hambre, te preparo unas quesadillas.",
-    "sk": "Ak si hladný, pripravím ti quesadillas.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente", "si-clauses"],
-    "tokens": ["Si", "tienes", "hambre", ",", "te", "preparo", "unas", "quesadillas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "preparo",
-        "lemma": "preparar",
-        "hint": "preparar · yo · presente",
-        "distractors": ["prepara", "preparé", "preparaba"]
-      },
-      {
-        "tokenIndex": 1,
-        "answer": "tienes",
-        "lemma": "tener",
-        "hint": "tener · tú",
-        "tip": "si-clauses",
-        "why": "real",
-        "distractors": ["tendrás", "tengas"]
-      }
-    ]
-  },
-  {
-    "id": "s545",
-    "es": "Ya no como carne desde hace un año.",
-    "sk": "Už rok nejem mäso.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Ya", "no", "como", "carne", "desde", "hace", "un", "año", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "como",
-        "lemma": "comer",
-        "hint": "comer · yo · presente",
-        "distractors": ["come", "comí", "comemos"]
-      }
-    ]
-  },
-  {
-    "id": "s686",
-    "es": "Quiero un licuado de plátano.",
-    "sk": "Chcem banánový koktail.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Quiero", "un", "licuado", "de", "plátano", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Quiero",
-        "lemma": "querer",
-        "hint": "querer · yo · presente",
-        "distractors": ["Quiere", "Quieres", "Quieren"]
-      }
-    ]
-  },
-  {
-    "id": "s687",
-    "es": "¿Ya quieren ordenar?",
-    "sk": "Chcete si už objednať?",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "Ya", "quieren", "ordenar", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "quieren",
-        "lemma": "querer",
-        "hint": "querer · ustedes · presente",
-        "distractors": ["quiere", "quieres", "quisieron"]
-      }
-    ]
-  },
-  {
-    "id": "s688",
-    "es": "La sopa está muy salada.",
-    "sk": "Polievka je veľmi slaná.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["ser-estar"],
-    "tokens": ["La", "sopa", "está", "muy", "salada", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "ser/estar · ella · presente",
-        "why": "state",
-        "distractors": ["es", "están", "estoy"]
-      }
-    ]
-  },
-  {
-    "id": "s689",
-    "es": "Le puse demasiada sal a la sopa.",
-    "sk": "Dal som do polievky priveľa soli.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["Le", "puse", "demasiada", "sal", "a", "la", "sopa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "puse",
-        "lemma": "poner",
-        "hint": "poner · yo · pretérito",
-        "distractors": ["pongo", "puso", "ponía"]
-      }
-    ]
-  },
-  {
-    "id": "s690",
-    "es": "Necesitamos harina, mantequilla y huevos.",
-    "sk": "Potrebujeme múku, maslo a vajcia.",
-    "level": "A2",
-    "topics": ["food"],
-    "tokens": ["Necesitamos", "harina", ",", "mantequilla", "y", "huevos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "mantequilla",
-        "lemma": "mantequilla",
-        "hint": "maslo",
-        "distractors": ["margarita", "manteca", "mantel"]
-      }
-    ]
-  },
-  {
-    "id": "s691",
-    "es": "Mi mamá calienta las tortillas en el comal.",
-    "sk": "Mama ohrieva tortily na comale.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "mamá", "calienta", "las", "tortillas", "en", "el", "comal", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "calienta",
-        "lemma": "calentar",
-        "hint": "calentar · ella · presente",
-        "distractors": ["calientan", "calentó", "calentaba"]
-      }
-    ]
-  },
-  {
-    "id": "s692",
-    "es": "De botana pedimos guacamole y totopos.",
-    "sk": "Na zahryznutie sme si objednali guacamole a nachos.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["De", "botana", "pedimos", "guacamole", "y", "totopos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "pedimos",
-        "lemma": "pedir",
-        "hint": "pedir · nosotros · pretérito",
-        "distractors": ["piden", "pidieron", "pedí"]
-      }
-    ]
-  },
-  {
-    "id": "s693",
-    "es": "El mole de mi abuela lleva más de veinte ingredientes.",
-    "sk": "Babkino mole má viac ako dvadsať prísad.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["El", "mole", "de", "mi", "abuela", "lleva", "más", "de", "veinte", "ingredientes", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "lleva",
-        "lemma": "llevar",
-        "hint": "llevar · él · presente",
-        "distractors": ["llevan", "llevó", "llevaba"]
-      }
-    ]
-  },
-  {
-    "id": "s694",
-    "es": "La comida chatarra es barata, pero no es nutritiva.",
-    "sk": "Nezdravé jedlo je lacné, ale nie je výživné.",
-    "level": "B1",
-    "topics": ["food", "health"],
-    "tokens": ["La", "comida", "chatarra", "es", "barata", ",", "pero", "no", "es", "nutritiva", "."],
-    "cloze": [
-      {
-        "tokenIndex": 9,
-        "answer": "nutritiva",
-        "lemma": "nutritivo",
-        "hint": "výživný",
-        "distractors": ["nutritivo", "nutritivas", "nutrición"]
-      }
-    ]
-  },
-  {
-    "id": "s695",
-    "es": "El agua ya está hirviendo.",
-    "sk": "Voda už vrie.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["progresivo"],
-    "tokens": ["El", "agua", "ya", "está", "hirviendo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "hirviendo",
-        "lemma": "hervir",
-        "hint": "hervir · gerundio",
-        "distractors": ["hirvió", "hierve", "hervir"]
-      }
-    ]
-  },
-  {
-    "id": "s696",
-    "es": "El café de olla lleva canela y piloncillo.",
-    "sk": "Do „café de olla“ sa dáva škorica a trstinový cukor.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["El", "café", "de", "olla", "lleva", "canela", "y", "piloncillo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "olla",
-        "lemma": "olla",
-        "hint": "hrniec",
-        "distractors": ["hoja", "ola", "bolsa"]
       }
     ]
   },
@@ -1038,216 +1065,199 @@
     ]
   },
   {
-    "id": "s1178",
-    "es": "Mis hijos no comen verduras.",
-    "sk": "Deti nejedia zeleninu.",
+    "id": "s099",
+    "es": "Los niños beben mucha leche.",
+    "sk": "Deti pijú veľa mlieka.",
     "level": "A1",
     "topics": ["food"],
     "grammar": ["presente"],
-    "tokens": ["Mis", "hijos", "no", "comen", "verduras", "."],
+    "tokens": ["Los", "niños", "beben", "mucha", "leche", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
-        "answer": "comen",
-        "lemma": "comer",
-        "hint": "comer · ellos · presente",
-        "distractors": ["como", "come", "comieron"]
+        "tokenIndex": 2,
+        "answer": "beben",
+        "lemma": "beber",
+        "hint": "beber · ellos · presente",
+        "distractors": ["bebes", "bebemos", "bebieron"]
       }
     ]
   },
   {
-    "id": "s1179",
-    "es": "Cuando era chico, odiaba la cebolla; ahora me encanta.",
-    "sk": "Ako malý som nenávidel cibuľu; teraz ju zbožňujem.",
+    "id": "s1679",
+    "es": "¿Ya le trajiste el café a tu papá?",
+    "sk": "Priniesol si už otcovi kávu?",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["imperfecto", "gustar"],
-    "tokens": ["Cuando", "era", "chico", ",", "odiaba", "la", "cebolla", ";", "ahora", "me", "encanta", "."],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["¿", "Ya", "le", "trajiste", "el", "café", "a", "tu", "papá", "?"],
     "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "odiaba",
-        "lemma": "odiar",
-        "hint": "odiar · yo · imperfecto",
-        "distractors": ["odio", "odié", "odiaban"]
-      },
-      {
-        "tokenIndex": 10,
-        "answer": "encanta",
-        "lemma": "encantar",
-        "hint": "encantar",
-        "tip": "gustar",
-        "why": "similar",
-        "distractors": ["encantan", "encanto"]
-      }
-    ]
-  },
-  {
-    "id": "s1180",
-    "es": "¿Cuánto le dejaste de propina al mesero?",
-    "sk": "Koľko si nechal čašníkovi ako prepitné?",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["preterito", "object-pronouns"],
-    "tokens": ["¿", "Cuánto", "le", "dejaste", "de", "propina", "al", "mesero", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "dejaste",
-        "lemma": "dejar",
-        "hint": "dejar · tú · pretérito",
-        "distractors": ["dejas", "dejó", "dejabas"]
-      },
       {
         "tokenIndex": 2,
         "answer": "le",
         "lemma": "le",
-        "hint": "zámeno",
+        "hint": "zámeno: mu",
         "tip": "object-pronouns",
         "why": "indirect",
-        "distractors": ["lo", "les"]
+        "distractors": ["lo", "la", "les"]
       }
     ]
   },
   {
-    "id": "s1181",
-    "es": "Prefiero cocinar en casa porque en los restaurantes todo es muy grasoso.",
-    "sk": "Radšej varím doma, lebo v reštauráciách je všetko veľmi mastné.",
-    "level": "B1",
+    "id": "s1680",
+    "es": "Cocino pollo y lo sirvo con arroz.",
+    "sk": "Varím kura a podávam ho s ryžou.",
+    "level": "A2",
     "topics": ["food"],
-    "tokens": ["Prefiero", "cocinar", "en", "casa", "porque", "en", "los", "restaurantes", "todo", "es", "muy", "grasoso", "."],
-    "cloze": [
-      {
-        "tokenIndex": 11,
-        "answer": "grasoso",
-        "lemma": "grasoso",
-        "hint": "mastný",
-        "distractors": ["nutritivo", "vegetariano", "sabroso"]
-      }
-    ]
-  },
-  {
-    "id": "s1182",
-    "es": "Mientras mi mamá hacía las tortillas, yo preparaba la salsa.",
-    "sk": "Kým mama robila tortilly, ja som pripravoval salsu.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Mientras", "mi", "mamá", "hacía", "las", "tortillas", ",", "yo", "preparaba", "la", "salsa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "preparaba",
-        "lemma": "preparar",
-        "hint": "preparar · yo · imperfecto",
-        "distractors": ["preparo", "preparé", "preparaban"]
-      }
-    ]
-  },
-  {
-    "id": "s1183",
-    "es": "Nos quedamos de sobremesa hasta las seis.",
-    "sk": "Po jedle sme ostali sedieť pri stole až do šiestej.",
-    "level": "B1",
-    "topics": ["food"],
-    "tokens": ["Nos", "quedamos", "de", "sobremesa", "hasta", "las", "seis", "."],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Cocino", "pollo", "y", "lo", "sirvo", "con", "arroz", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "sobremesa",
-        "lemma": "sobremesa",
-        "hint": "posedenie po jedle",
-        "distractors": ["botana", "porción", "cucharada"]
-      }
-    ]
-  },
-  {
-    "id": "s1184",
-    "es": "Pedí el pozole sin saber que llevaba tanto chile.",
-    "sk": "Objednal som si pozole a nevedel som, že je v ňom toľko čili.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["preterito"],
-    "tokens": ["Pedí", "el", "pozole", "sin", "saber", "que", "llevaba", "tanto", "chile", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Pedí",
-        "lemma": "pedir",
-        "hint": "pedir · yo · pretérito",
-        "distractors": ["Pido", "Pidió", "Pedía"]
-      }
-    ]
-  },
-  {
-    "id": "s1185",
-    "es": "Para la posada vamos a hacer tamales; ¿nos ayudas a envolverlos?",
-    "sk": "Na posadu budeme robiť tamales; pomôžeš nám ich zabaliť?",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["presente", "object-pronouns"],
-    "tokens": ["Para", "la", "posada", "vamos", "a", "hacer", "tamales", ";", "¿", "nos", "ayudas", "a", "envolverlos", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 10,
-        "answer": "ayudas",
-        "lemma": "ayudar",
-        "hint": "ayudar · tú · presente",
-        "distractors": ["ayudo", "ayudaste", "ayudabas"]
-      },
-      {
-        "tokenIndex": 12,
-        "answer": "envolverlos",
-        "lemma": "los",
-        "hint": "zámeno",
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
         "tip": "object-pronouns",
-        "why": "position",
-        "distractors": ["envolverlas", "envolverles"]
+        "why": "direct",
+        "distractors": ["la", "le", "los"]
       }
     ]
   },
   {
-    "id": "s1186",
-    "es": "Creo que la comida chatarra debería costar más que la fruta.",
-    "sk": "Myslím, že nezdravé jedlo by malo stáť viac než ovocie.",
+    "id": "s544",
+    "es": "Si tienes hambre, te preparo unas quesadillas.",
+    "sk": "Ak si hladný, pripravím ti quesadillas.",
     "level": "B1",
     "topics": ["food"],
-    "grammar": ["presente", "comparisons"],
-    "tokens": ["Creo", "que", "la", "comida", "chatarra", "debería", "costar", "más", "que", "la", "fruta", "."],
+    "grammar": ["presente", "si-clauses"],
+    "tokens": ["Si", "tienes", "hambre", ",", "te", "preparo", "unas", "quesadillas", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Creo",
-        "lemma": "creer",
-        "hint": "creer · yo · presente",
-        "distractors": ["Crees", "Creí", "Creía"]
+        "tokenIndex": 5,
+        "answer": "preparo",
+        "lemma": "preparar",
+        "hint": "preparar · yo · presente",
+        "distractors": ["prepara", "preparé", "preparaba"]
       },
       {
-        "tokenIndex": 7,
-        "answer": "más",
-        "lemma": "más",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "more-less",
-        "distractors": ["tan", "muy"]
+        "tokenIndex": 1,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "tener · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["tendrás", "tengas"]
       }
     ]
   },
   {
-    "id": "s1187",
-    "es": "Antes no me gustaba el café amargo, pero me acostumbré.",
-    "sk": "Predtým mi nechutila horká káva, ale zvykol som si.",
+    "id": "s545",
+    "es": "Ya no como carne desde hace un año.",
+    "sk": "Už rok nejem mäso.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Ya", "no", "como", "carne", "desde", "hace", "un", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "como",
+        "lemma": "comer",
+        "hint": "comer · yo · presente",
+        "distractors": ["come", "comí", "comemos"]
+      }
+    ]
+  },
+  {
+    "id": "s691",
+    "es": "Mi mamá calienta las tortillas en el comal.",
+    "sk": "Mama ohrieva tortily na comale.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "mamá", "calienta", "las", "tortillas", "en", "el", "comal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calienta",
+        "lemma": "calentar",
+        "hint": "calentar · ella · presente",
+        "distractors": ["calientan", "calentó", "calentaba"]
+      }
+    ]
+  },
+  {
+    "id": "s692",
+    "es": "De botana pedimos guacamole y totopos.",
+    "sk": "Na zahryznutie sme si objednali guacamole a nachos.",
     "level": "B1",
     "topics": ["food"],
     "grammar": ["preterito"],
-    "tokens": ["Antes", "no", "me", "gustaba", "el", "café", "amargo", ",", "pero", "me", "acostumbré", "."],
+    "tokens": ["De", "botana", "pedimos", "guacamole", "y", "totopos", "."],
     "cloze": [
       {
-        "tokenIndex": 10,
-        "answer": "acostumbré",
-        "lemma": "acostumbrarse",
-        "hint": "acostumbrarse · yo · pretérito",
-        "distractors": ["acostumbro", "acostumbró", "acostumbraba"]
+        "tokenIndex": 2,
+        "answer": "pedimos",
+        "lemma": "pedir",
+        "hint": "pedir · nosotros · pretérito",
+        "distractors": ["piden", "pidieron", "pedí"]
+      }
+    ]
+  },
+  {
+    "id": "s693",
+    "es": "El mole de mi abuela lleva más de veinte ingredientes.",
+    "sk": "Babkino mole má viac ako dvadsať prísad.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["El", "mole", "de", "mi", "abuela", "lleva", "más", "de", "veinte", "ingredientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "lleva",
+        "lemma": "llevar",
+        "hint": "llevar · él · presente",
+        "distractors": ["llevan", "llevó", "llevaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1891",
+    "es": "Preparo una sopa para cuatro personas.",
+    "sk": "Pripravujem polievku pre štyri osoby.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Preparo", "una", "sopa", "para", "cuatro", "personas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1892",
+    "es": "Fui al mercado para comprar jitomates.",
+    "sk": "Išiel som na trh kúpiť paradajky.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Fui", "al", "mercado", "para", "comprar", "jitomates", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
       }
     ]
   },
@@ -1483,264 +1493,6 @@
     ]
   },
   {
-    "id": "s1617",
-    "es": "Yo corto la cebolla y tú pelas las papas.",
-    "sk": "Ja nakrájam cibuľu a ty ošúpeš zemiaky.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["presente"],
-    "tokens": ["Yo", "corto", "la", "cebolla", "y", "tú", "pelas", "las", "papas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "corto",
-        "lemma": "cortar",
-        "hint": "cortar · yo · presente",
-        "distractors": ["corté", "cortaba", "cortaré"]
-      }
-    ]
-  },
-  {
-    "id": "s1626",
-    "es": "Me gustan los tacos de pollo.",
-    "sk": "Tacos s kuracím mi chutia.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Me", "gustan", "los", "tacos", "de", "pollo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "gustan",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "plural",
-        "distractors": ["gusta", "gustas", "gusto"]
-      }
-    ]
-  },
-  {
-    "id": "s1627",
-    "es": "A mi hermana le gusta el café con leche.",
-    "sk": "Mojej sestre chutí káva s mliekom.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["A", "mi", "hermana", "le", "gusta", "el", "café", "con", "leche", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
-      }
-    ]
-  },
-  {
-    "id": "s1628",
-    "es": "¿Te gusta la sopa de verduras?",
-    "sk": "Chutí ti zeleninová polievka?",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["¿", "Te", "gusta", "la", "sopa", "de", "verduras", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
-      }
-    ]
-  },
-  {
-    "id": "s1629",
-    "es": "No nos gustan las papas fritas.",
-    "sk": "Nechutia nám hranolky.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["No", "nos", "gustan", "las", "papas", "fritas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "gustan",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "plural",
-        "distractors": ["gusta", "gustas", "gustamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1630",
-    "es": "A mis papás les encanta el pastel de chocolate.",
-    "sk": "Mojim rodičom veľmi chutí čokoládová torta.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["A", "mis", "papás", "les", "encanta", "el", "pastel", "de", "chocolate", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "encanta",
-        "lemma": "encantar",
-        "hint": "encantar",
-        "tip": "gustar",
-        "why": "similar",
-        "distractors": ["encantan", "gusta", "duele"]
-      }
-    ]
-  },
-  {
-    "id": "s1631",
-    "es": "Nos encantan los frijoles con arroz.",
-    "sk": "Fazuľa s ryžou nám veľmi chutí.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Nos", "encantan", "los", "frijoles", "con", "arroz", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "encantan",
-        "lemma": "encantar",
-        "hint": "encantar",
-        "tip": "gustar",
-        "why": "similar",
-        "distractors": ["encanta", "gustan", "duelen"]
-      }
-    ]
-  },
-  {
-    "id": "s1632",
-    "es": "Me gusta comer fruta en la mañana.",
-    "sk": "Rád jem ovocie ráno.",
-    "level": "A1",
-    "topics": ["food"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Me", "gusta", "comer", "fruta", "en", "la", "mañana", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
-      }
-    ]
-  },
-  {
-    "id": "s1676",
-    "es": "La sopa está lista; cómela caliente.",
-    "sk": "Polievka je hotová, zjedz ju horúcu.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["object-pronouns", "presente", "imperativo"],
-    "tokens": ["La", "sopa", "está", "lista", ";", "cómela", "caliente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "cómela",
-        "lemma": "cómela",
-        "hint": "zámeno: ju",
-        "tip": "object-pronouns",
-        "why": "position",
-        "distractors": ["cómelo", "cómele"]
-      }
-    ]
-  },
-  {
-    "id": "s1677",
-    "es": "Mi mamá preparó el mole y se lo llevó a mi abuela.",
-    "sk": "Mama pripravila mole a odniesla ho babke.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["object-pronouns", "preterito"],
-    "tokens": ["Mi", "mamá", "preparó", "el", "mole", "y", "se", "lo", "llevó", "a", "mi", "abuela", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "se",
-        "lemma": "se",
-        "hint": "zámeno: jej",
-        "tip": "object-pronouns",
-        "why": "se-lo",
-        "distractors": ["le", "la", "lo"]
-      }
-    ]
-  },
-  {
-    "id": "s1678",
-    "es": "Los frijoles están ricos; mi mamá los prepara con chile.",
-    "sk": "Fazuľa je výborná, mama ju varí s chilli.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["object-pronouns", "presente"],
-    "tokens": ["Los", "frijoles", "están", "ricos", ";", "mi", "mamá", "los", "prepara", "con", "chile", "."],
-    "cloze": [
-      {
-        "tokenIndex": 7,
-        "answer": "los",
-        "lemma": "los",
-        "hint": "zámeno: ich",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["las", "lo", "les"]
-      }
-    ]
-  },
-  {
-    "id": "s1679",
-    "es": "¿Ya le trajiste el café a tu papá?",
-    "sk": "Priniesol si už otcovi kávu?",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["object-pronouns", "preterito"],
-    "tokens": ["¿", "Ya", "le", "trajiste", "el", "café", "a", "tu", "papá", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "le",
-        "lemma": "le",
-        "hint": "zámeno: mu",
-        "tip": "object-pronouns",
-        "why": "indirect",
-        "distractors": ["lo", "la", "les"]
-      }
-    ]
-  },
-  {
-    "id": "s1680",
-    "es": "Cocino pollo y lo sirvo con arroz.",
-    "sk": "Varím kura a podávam ho s ryžou.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["object-pronouns", "presente"],
-    "tokens": ["Cocino", "pollo", "y", "lo", "sirvo", "con", "arroz", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "lo",
-        "lemma": "lo",
-        "hint": "zámeno: ho",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["la", "le", "los"]
-      }
-    ]
-  },
-  {
     "id": "s1681",
     "es": "Los niños tienen hambre; dales una tortilla.",
     "sk": "Deti sú hladné, daj im tortillu.",
@@ -1761,6 +1513,123 @@
     ]
   },
   {
+    "id": "s102",
+    "es": "La comida está muy rica.",
+    "sk": "Jedlo je veľmi chutné.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["gender"],
+    "tokens": ["La", "comida", "está", "muy", "rica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "rica",
+        "lemma": "rico",
+        "hint": "prídavné meno: rico",
+        "distractors": ["rico", "ricos", "ricas"]
+      }
+    ]
+  },
+  {
+    "id": "s103",
+    "es": "Cenamos tarde porque trabajamos mucho.",
+    "sk": "Večeriame neskoro, lebo veľa pracujeme.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Cenamos", "tarde", "porque", "trabajamos", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cenamos",
+        "lemma": "cenar",
+        "hint": "cenar · nosotros · presente",
+        "distractors": ["Ceno", "Cena", "Cenas"]
+      }
+    ]
+  },
+  {
+    "id": "s104",
+    "es": "¿Quieres más tortillas?",
+    "sk": "Chceš ešte tortilly?",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quieres", "más", "tortillas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Quieres",
+        "lemma": "querer",
+        "hint": "querer · tú · presente",
+        "distractors": ["Queremos", "Quiero", "Quisiste"]
+      }
+    ]
+  },
+  {
+    "id": "s107",
+    "es": "El agua de jamaica es muy refrescante.",
+    "sk": "Ibištekový nápoj je veľmi osviežujúci.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["articles", "gender"],
+    "tokens": ["El", "agua", "de", "jamaica", "es", "muy", "refrescante", "."],
+    "cloze": [{ "tokenIndex": 0, "answer": "El", "lemma": "el", "hint": "člen", "distractors": ["La", "Los", "Las"] }]
+  },
+  {
+    "id": "s108",
+    "es": "Tengo mucha hambre, ¿comemos?",
+    "sk": "Som strašne hladný, ideme jesť?",
+    "level": "A1",
+    "topics": ["food"],
+    "tokens": ["Tengo", "mucha", "hambre", ",", "¿", "comemos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hambre",
+        "lemma": "hambre",
+        "hint": "hlad",
+        "distractors": ["sed", "frío", "miedo"]
+      }
+    ]
+  },
+  {
+    "id": "s109",
+    "es": "Mi mamá está haciendo tamales.",
+    "sk": "Mama robí tamales.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mi", "mamá", "está", "haciendo", "tamales", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "haciendo",
+        "lemma": "hacer",
+        "hint": "hacer · gerundio",
+        "distractors": ["hace", "hacer", "hacen"]
+      }
+    ]
+  },
+  {
+    "id": "s1178",
+    "es": "Mis hijos no comen verduras.",
+    "sk": "Deti nejedia zeleninu.",
+    "level": "A1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Mis", "hijos", "no", "comen", "verduras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "comen",
+        "lemma": "comer",
+        "hint": "comer · ellos · presente",
+        "distractors": ["como", "come", "comieron"]
+      }
+    ]
+  },
+  {
     "id": "s1682",
     "es": "La pizza estaba fría y no la comí.",
     "sk": "Pizza bola studená a nezjedol som ju.",
@@ -1777,26 +1646,6 @@
         "tip": "object-pronouns",
         "why": "direct",
         "distractors": ["lo", "le", "las"]
-      }
-    ]
-  },
-  {
-    "id": "s1705",
-    "es": "Un taco cuesta quince pesos y una torta, veinte: la torta es más cara.",
-    "sk": "Taco stojí pätnásť pesos a torta dvadsať, torta je drahšia.",
-    "level": "A2",
-    "topics": ["food"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Un", "taco", "cuesta", "quince", "pesos", "y", "una", "torta", ",", "veinte", ":", "la", "torta", "es", "más", "cara", "."],
-    "cloze": [
-      {
-        "tokenIndex": 14,
-        "answer": "más",
-        "lemma": "más",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "more-less",
-        "distractors": ["menos", "tan", "mejor"]
       }
     ]
   },
@@ -1830,190 +1679,146 @@
     ]
   },
   {
-    "id": "s1737",
-    "es": "Prueba este mole; lo hizo mi abuela.",
-    "sk": "Ochutnaj toto mole, urobila ho moja babka.",
-    "level": "B1",
+    "id": "s687",
+    "es": "¿Ya quieren ordenar?",
+    "sk": "Chcete si už objednať?",
+    "level": "A2",
     "topics": ["food"],
-    "grammar": ["imperativo", "preterito"],
-    "tokens": ["Prueba", "este", "mole", ";", "lo", "hizo", "mi", "abuela", "."],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Ya", "quieren", "ordenar", "?"],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Prueba",
-        "lemma": "probar",
-        "hint": "probar · tú · imperativo",
-        "distractors": ["Pruebe", "Probamos", "Pruebas"]
+        "tokenIndex": 2,
+        "answer": "quieren",
+        "lemma": "querer",
+        "hint": "querer · ustedes · presente",
+        "distractors": ["quiere", "quieres", "quisieron"]
       }
     ]
   },
   {
-    "id": "s1738",
-    "es": "Pida el pozole, está muy rico.",
-    "sk": "Objednajte si pozole, je veľmi chutné.",
-    "level": "B1",
+    "id": "s688",
+    "es": "La sopa está muy salada.",
+    "sk": "Polievka je veľmi slaná.",
+    "level": "A2",
     "topics": ["food"],
-    "grammar": ["imperativo", "presente"],
-    "tokens": ["Pida", "el", "pozole", ",", "está", "muy", "rico", "."],
+    "grammar": ["ser-estar"],
+    "tokens": ["La", "sopa", "está", "muy", "salada", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Pida",
-        "lemma": "pedir",
-        "hint": "pedir · usted · imperativo",
-        "distractors": ["Pide", "Pidan", "Pido"]
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "están", "estoy"]
       }
     ]
   },
   {
-    "id": "s1739",
-    "es": "Prepara la salsa antes de que lleguen los invitados.",
-    "sk": "Priprav salsu, kým prídu hostia.",
-    "level": "B1",
+    "id": "s689",
+    "es": "Le puse demasiada sal a la sopa.",
+    "sk": "Dal som do polievky priveľa soli.",
+    "level": "A2",
     "topics": ["food"],
-    "grammar": ["imperativo", "subjuntivo"],
-    "tokens": ["Prepara", "la", "salsa", "antes", "de", "que", "lleguen", "los", "invitados", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Prepara",
-        "lemma": "preparar",
-        "hint": "preparar · tú · imperativo",
-        "distractors": ["Prepare", "Preparan", "Preparo"]
-      }
-    ]
-  },
-  {
-    "id": "s1740",
-    "es": "Coman despacio, que la sopa está caliente.",
-    "sk": "Jedzte pomaly, polievka je horúca.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["imperativo", "presente"],
-    "tokens": ["Coman", "despacio", ",", "que", "la", "sopa", "está", "caliente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Coman",
-        "lemma": "comer",
-        "hint": "comer · ustedes · imperativo",
-        "distractors": ["Come", "Coma", "Comemos"]
-      }
-    ]
-  },
-  {
-    "id": "s1741",
-    "es": "Cocinemos algo rico para la cena.",
-    "sk": "Uvarme niečo dobré na večeru.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["imperativo"],
-    "tokens": ["Cocinemos", "algo", "rico", "para", "la", "cena", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Cocinemos",
-        "lemma": "cocinar",
-        "hint": "cocinar · nosotros · imperativo",
-        "distractors": ["Cocinen", "Cocinamos", "Cocina"]
-      }
-    ]
-  },
-  {
-    "id": "s1818",
-    "es": "Yo pediría el pescado, se ve delicioso.",
-    "sk": "Ja by som si dal ryby, vyzerajú výborne.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["condicional", "presente"],
-    "tokens": ["Yo", "pediría", "el", "pescado", ",", "se", "ve", "delicioso", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "puse", "demasiada", "sal", "a", "la", "sopa", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "pediría",
-        "lemma": "pedir",
-        "hint": "pedir · yo · condicional",
-        "distractors": ["pediré", "pedía", "pido"]
+        "answer": "puse",
+        "lemma": "poner",
+        "hint": "poner · yo · pretérito",
+        "distractors": ["pongo", "puso", "ponía"]
       }
     ]
   },
   {
-    "id": "s1857",
-    "es": "Me alegra que te guste la comida.",
-    "sk": "Teší ma, že ti chutí jedlo.",
-    "level": "B1",
+    "id": "s690",
+    "es": "Necesitamos harina, mantequilla y huevos.",
+    "sk": "Potrebujeme múku, maslo a vajcia.",
+    "level": "A2",
     "topics": ["food"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Me", "alegra", "que", "te", "guste", "la", "comida", "."],
+    "tokens": ["Necesitamos", "harina", ",", "mantequilla", "y", "huevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mantequilla",
+        "lemma": "mantequilla",
+        "hint": "maslo",
+        "distractors": ["margarita", "manteca", "mantel"]
+      }
+    ]
+  },
+  {
+    "id": "s1179",
+    "es": "Cuando era chico, odiaba la cebolla; ahora me encanta.",
+    "sk": "Ako malý som nenávidel cibuľu; teraz ju zbožňujem.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["imperfecto", "gustar"],
+    "tokens": ["Cuando", "era", "chico", ",", "odiaba", "la", "cebolla", ";", "ahora", "me", "encanta", "."],
     "cloze": [
       {
         "tokenIndex": 4,
-        "answer": "guste",
-        "lemma": "gustar",
-        "hint": "gustar · él",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["gusta", "gustará", "gustó"]
+        "answer": "odiaba",
+        "lemma": "odiar",
+        "hint": "odiar · yo · imperfecto",
+        "distractors": ["odio", "odié", "odiaban"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "encanta",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["encantan", "encanto"]
       }
     ]
   },
   {
-    "id": "s1876",
-    "es": "Si cocinas tú, yo lavo los platos.",
-    "sk": "Ak uvaríš ty, ja umyjem riad.",
-    "level": "B1",
+    "id": "s1180",
+    "es": "¿Cuánto le dejaste de propina al mesero?",
+    "sk": "Koľko si nechal čašníkovi ako prepitné?",
+    "level": "A2",
     "topics": ["food"],
-    "grammar": ["si-clauses", "presente"],
-    "tokens": ["Si", "cocinas", "tú", ",", "yo", "lavo", "los", "platos", "."],
+    "grammar": ["preterito", "object-pronouns"],
+    "tokens": ["¿", "Cuánto", "le", "dejaste", "de", "propina", "al", "mesero", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dejaste",
+        "lemma": "dejar",
+        "hint": "dejar · tú · pretérito",
+        "distractors": ["dejas", "dejó", "dejabas"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["lo", "les"]
+      }
+    ]
+  },
+  {
+    "id": "s1617",
+    "es": "Yo corto la cebolla y tú pelas las papas.",
+    "sk": "Ja nakrájam cibuľu a ty ošúpeš zemiaky.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["Yo", "corto", "la", "cebolla", "y", "tú", "pelas", "las", "papas", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "cocinas",
-        "lemma": "cocinar",
-        "hint": "cocinar · tú",
-        "tip": "si-clauses",
-        "why": "real",
-        "distractors": ["cocinarás", "cocinaste", "cocinabas"]
-      }
-    ]
-  },
-  {
-    "id": "s1891",
-    "es": "Preparo una sopa para cuatro personas.",
-    "sk": "Pripravujem polievku pre štyri osoby.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["por-para", "presente"],
-    "tokens": ["Preparo", "una", "sopa", "para", "cuatro", "personas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "para",
-        "lemma": "para",
-        "hint": "por/para",
-        "tip": "por-para",
-        "why": "para",
-        "distractors": ["por", "a"]
-      }
-    ]
-  },
-  {
-    "id": "s1892",
-    "es": "Fui al mercado para comprar jitomates.",
-    "sk": "Išiel som na trh kúpiť paradajky.",
-    "level": "B1",
-    "topics": ["food"],
-    "grammar": ["por-para", "preterito"],
-    "tokens": ["Fui", "al", "mercado", "para", "comprar", "jitomates", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "para",
-        "lemma": "para",
-        "hint": "por/para",
-        "tip": "por-para",
-        "why": "para",
-        "distractors": ["por", "a"]
+        "answer": "corto",
+        "lemma": "cortar",
+        "hint": "cortar · yo · presente",
+        "distractors": ["corté", "cortaba", "cortaré"]
       }
     ]
   },
@@ -2114,6 +1919,201 @@
         "tip": "por-para",
         "why": "por",
         "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s694",
+    "es": "La comida chatarra es barata, pero no es nutritiva.",
+    "sk": "Nezdravé jedlo je lacné, ale nie je výživné.",
+    "level": "B1",
+    "topics": ["food", "health"],
+    "tokens": ["La", "comida", "chatarra", "es", "barata", ",", "pero", "no", "es", "nutritiva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "nutritiva",
+        "lemma": "nutritivo",
+        "hint": "výživný",
+        "distractors": ["nutritivo", "nutritivas", "nutrición"]
+      }
+    ]
+  },
+  {
+    "id": "s695",
+    "es": "El agua ya está hirviendo.",
+    "sk": "Voda už vrie.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["progresivo"],
+    "tokens": ["El", "agua", "ya", "está", "hirviendo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hirviendo",
+        "lemma": "hervir",
+        "hint": "hervir · gerundio",
+        "distractors": ["hirvió", "hierve", "hervir"]
+      }
+    ]
+  },
+  {
+    "id": "s696",
+    "es": "El café de olla lleva canela y piloncillo.",
+    "sk": "Do „café de olla“ sa dáva škorica a trstinový cukor.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente"],
+    "tokens": ["El", "café", "de", "olla", "lleva", "canela", "y", "piloncillo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "olla",
+        "lemma": "olla",
+        "hint": "hrniec",
+        "distractors": ["hoja", "ola", "bolsa"]
+      }
+    ]
+  },
+  {
+    "id": "s1181",
+    "es": "Prefiero cocinar en casa porque en los restaurantes todo es muy grasoso.",
+    "sk": "Radšej varím doma, lebo v reštauráciách je všetko veľmi mastné.",
+    "level": "B1",
+    "topics": ["food"],
+    "tokens": ["Prefiero", "cocinar", "en", "casa", "porque", "en", "los", "restaurantes", "todo", "es", "muy", "grasoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "grasoso",
+        "lemma": "grasoso",
+        "hint": "mastný",
+        "distractors": ["nutritivo", "vegetariano", "sabroso"]
+      }
+    ]
+  },
+  {
+    "id": "s1182",
+    "es": "Mientras mi mamá hacía las tortillas, yo preparaba la salsa.",
+    "sk": "Kým mama robila tortilly, ja som pripravoval salsu.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "mi", "mamá", "hacía", "las", "tortillas", ",", "yo", "preparaba", "la", "salsa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "preparaba",
+        "lemma": "preparar",
+        "hint": "preparar · yo · imperfecto",
+        "distractors": ["preparo", "preparé", "preparaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1183",
+    "es": "Nos quedamos de sobremesa hasta las seis.",
+    "sk": "Po jedle sme ostali sedieť pri stole až do šiestej.",
+    "level": "B1",
+    "topics": ["food"],
+    "tokens": ["Nos", "quedamos", "de", "sobremesa", "hasta", "las", "seis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sobremesa",
+        "lemma": "sobremesa",
+        "hint": "posedenie po jedle",
+        "distractors": ["botana", "porción", "cucharada"]
+      }
+    ]
+  },
+  {
+    "id": "s1184",
+    "es": "Pedí el pozole sin saber que llevaba tanto chile.",
+    "sk": "Objednal som si pozole a nevedel som, že je v ňom toľko čili.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Pedí", "el", "pozole", "sin", "saber", "que", "llevaba", "tanto", "chile", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pedí",
+        "lemma": "pedir",
+        "hint": "pedir · yo · pretérito",
+        "distractors": ["Pido", "Pidió", "Pedía"]
+      }
+    ]
+  },
+  {
+    "id": "s1185",
+    "es": "Para la posada vamos a hacer tamales; ¿nos ayudas a envolverlos?",
+    "sk": "Na posadu budeme robiť tamales; pomôžeš nám ich zabaliť?",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente", "object-pronouns"],
+    "tokens": ["Para", "la", "posada", "vamos", "a", "hacer", "tamales", ";", "¿", "nos", "ayudas", "a", "envolverlos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "ayudas",
+        "lemma": "ayudar",
+        "hint": "ayudar · tú · presente",
+        "distractors": ["ayudo", "ayudaste", "ayudabas"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "envolverlos",
+        "lemma": "los",
+        "hint": "envolver + zámeno",
+        "tip": "object-pronouns",
+        "why": "position",
+        "distractors": ["envolverlas", "envolverles"]
+      }
+    ]
+  },
+  {
+    "id": "s1186",
+    "es": "Creo que la comida chatarra debería costar más que la fruta.",
+    "sk": "Myslím, že nezdravé jedlo by malo stáť viac než ovocie.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["presente", "comparisons"],
+    "tokens": ["Creo", "que", "la", "comida", "chatarra", "debería", "costar", "más", "que", "la", "fruta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Creo",
+        "lemma": "creer",
+        "hint": "creer · yo · presente",
+        "distractors": ["Crees", "Creí", "Creía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["tan", "muy"]
+      }
+    ]
+  },
+  {
+    "id": "s1187",
+    "es": "Antes no me gustaba el café amargo, pero me acostumbré.",
+    "sk": "Predtým mi nechutila horká káva, ale zvykol som si.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["preterito"],
+    "tokens": ["Antes", "no", "me", "gustaba", "el", "café", "amargo", ",", "pero", "me", "acostumbré", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "acostumbré",
+        "lemma": "acostumbrarse",
+        "hint": "acostumbrarse · yo · pretérito",
+        "distractors": ["acostumbro", "acostumbró", "acostumbraba"]
       }
     ]
   },

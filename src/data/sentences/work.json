@@ -18,21 +18,22 @@
     ]
   },
   {
-    "id": "s056",
-    "es": "Mi jefe está en una junta.",
-    "sk": "Môj šéf je na porade.",
+    "id": "s1685",
+    "es": "Mi jefe nos mandó el informe y lo revisamos juntos.",
+    "sk": "Šéf nám poslal správu a skontrolovali sme ju spolu.",
     "level": "A2",
     "topics": ["work"],
-    "grammar": ["presente", "ser-estar"],
-    "tokens": ["Mi", "jefe", "está", "en", "una", "junta", "."],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["Mi", "jefe", "nos", "mandó", "el", "informe", "y", "lo", "revisamos", "juntos", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "ser/estar · él · presente",
-        "why": "place",
-        "distractors": ["es", "están", "estoy"]
+        "tokenIndex": 7,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["le", "la", "los"]
       }
     ]
   },
@@ -73,38 +74,41 @@
     ]
   },
   {
-    "id": "s059",
-    "es": "El jefe dijo que la junta es mañana.",
-    "sk": "Šéf povedal, že porada je zajtra.",
+    "id": "s1708",
+    "es": "Mi trabajo nuevo es mejor que el anterior: gano más y trabajo menos.",
+    "sk": "Moja nová práca je lepšia ako predošlá, zarábam viac a pracujem menej.",
     "level": "A2",
     "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["El", "jefe", "dijo", "que", "la", "junta", "es", "mañana", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Mi", "trabajo", "nuevo", "es", "mejor", "que", "el", "anterior", ":", "gano", "más", "y", "trabajo", "menos", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "dijo",
-        "lemma": "decir",
-        "hint": "decir · él · pretérito",
-        "distractors": ["dice", "dije", "dijeron"]
+        "tokenIndex": 4,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["peor", "más", "mayor"]
       }
     ]
   },
   {
-    "id": "s060",
-    "es": "Mis compañeros están platicando en la cocina.",
-    "sk": "Kolegovia sa rozprávajú v kuchynke.",
+    "id": "s056",
+    "es": "Mi jefe está en una junta.",
+    "sk": "Môj šéf je na porade.",
     "level": "A2",
     "topics": ["work"],
-    "grammar": ["progresivo"],
-    "tokens": ["Mis", "compañeros", "están", "platicando", "en", "la", "cocina", "."],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["Mi", "jefe", "está", "en", "una", "junta", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
-        "answer": "platicando",
-        "lemma": "platicar",
-        "hint": "platicar · gerundio",
-        "distractors": ["platicado", "platican", "platicar"]
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · él · presente",
+        "why": "place",
+        "distractors": ["es", "están", "estoy"]
       }
     ]
   },
@@ -182,20 +186,20 @@
     ]
   },
   {
-    "id": "s194",
-    "es": "Ayer trabajé diez horas.",
-    "sk": "Včera som pracoval desať hodín.",
+    "id": "s059",
+    "es": "El jefe dijo que la junta es mañana.",
+    "sk": "Šéf povedal, že porada je zajtra.",
     "level": "A2",
     "topics": ["work"],
     "grammar": ["preterito"],
-    "tokens": ["Ayer", "trabajé", "diez", "horas", "."],
+    "tokens": ["El", "jefe", "dijo", "que", "la", "junta", "es", "mañana", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "trabajé",
-        "lemma": "trabajar",
-        "hint": "trabajar · yo · pretérito",
-        "distractors": ["trabajó", "trabajaron", "trabajo"]
+        "tokenIndex": 2,
+        "answer": "dijo",
+        "lemma": "decir",
+        "hint": "decir · él · pretérito",
+        "distractors": ["dice", "dije", "dijeron"]
       }
     ]
   },
@@ -214,6 +218,42 @@
         "lemma": "comer",
         "hint": "comer · gerundio",
         "distractors": ["come", "comer", "comen"]
+      }
+    ]
+  },
+  {
+    "id": "s060",
+    "es": "Mis compañeros están platicando en la cocina.",
+    "sk": "Kolegovia sa rozprávajú v kuchynke.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["progresivo"],
+    "tokens": ["Mis", "compañeros", "están", "platicando", "en", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "platicando",
+        "lemma": "platicar",
+        "hint": "platicar · gerundio",
+        "distractors": ["platicado", "platican", "platicar"]
+      }
+    ]
+  },
+  {
+    "id": "s194",
+    "es": "Ayer trabajé diez horas.",
+    "sk": "Včera som pracoval desať hodín.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Ayer", "trabajé", "diez", "horas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trabajé",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo · pretérito",
+        "distractors": ["trabajó", "trabajaron", "trabajo"]
       }
     ]
   },
@@ -254,42 +294,6 @@
     ]
   },
   {
-    "id": "s198",
-    "es": "Gano bien, pero trabajo mucho.",
-    "sk": "Zarábam dobre, ale veľa pracujem.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Gano", "bien", ",", "pero", "trabajo", "mucho", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Gano",
-        "lemma": "ganar",
-        "hint": "ganar · yo · presente",
-        "distractors": ["Gana", "Ganan", "Gané"]
-      }
-    ]
-  },
-  {
-    "id": "s199",
-    "es": "La junta empezó a las nueve.",
-    "sk": "Porada začala o deviatej.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["La", "junta", "empezó", "a", "las", "nueve", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "empezó",
-        "lemma": "empezar",
-        "hint": "empezar · ella · pretérito",
-        "distractors": ["empezaron", "empezaste", "empieza"]
-      }
-    ]
-  },
-  {
     "id": "s200",
     "es": "¿Me ayudas con esta presentación?",
     "sk": "Pomôžeš mi s touto prezentáciou?",
@@ -308,19 +312,20 @@
     ]
   },
   {
-    "id": "s201",
-    "es": "Le mandé un correo a mi jefe.",
-    "sk": "Poslal som šéfovi mail.",
+    "id": "s198",
+    "es": "Gano bien, pero trabajo mucho.",
+    "sk": "Zarábam dobre, ale veľa pracujem.",
     "level": "A2",
     "topics": ["work"],
-    "tokens": ["Le", "mandé", "un", "correo", "a", "mi", "jefe", "."],
+    "grammar": ["presente"],
+    "tokens": ["Gano", "bien", ",", "pero", "trabajo", "mucho", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "un",
-        "lemma": "un",
-        "hint": "neurčitý člen",
-        "distractors": ["una", "unos", "unas"]
+        "tokenIndex": 0,
+        "answer": "Gano",
+        "lemma": "ganar",
+        "hint": "ganar · yo · presente",
+        "distractors": ["Gana", "Ganan", "Gané"]
       }
     ]
   },
@@ -343,38 +348,37 @@
     ]
   },
   {
-    "id": "s203",
-    "es": "Usamos esta computadora para diseñar.",
-    "sk": "Tento počítač používame na navrhovanie.",
+    "id": "s199",
+    "es": "La junta empezó a las nueve.",
+    "sk": "Porada začala o deviatej.",
     "level": "A2",
     "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Usamos", "esta", "computadora", "para", "diseñar", "."],
+    "grammar": ["preterito"],
+    "tokens": ["La", "junta", "empezó", "a", "las", "nueve", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Usamos",
-        "lemma": "usar",
-        "hint": "usar · nosotros · presente",
-        "distractors": ["Uso", "Usa", "Usas"]
+        "tokenIndex": 2,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · ella · pretérito",
+        "distractors": ["empezaron", "empezaste", "empieza"]
       }
     ]
   },
   {
-    "id": "s204",
-    "es": "¿Terminaste el reporte?",
-    "sk": "Dokončil si report?",
+    "id": "s201",
+    "es": "Le mandé un correo a mi jefe.",
+    "sk": "Poslal som šéfovi mail.",
     "level": "A2",
     "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["¿", "Terminaste", "el", "reporte", "?"],
+    "tokens": ["Le", "mandé", "un", "correo", "a", "mi", "jefe", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "Terminaste",
-        "lemma": "terminar",
-        "hint": "terminar · tú · pretérito",
-        "distractors": ["Terminamos", "Terminé", "Terminas"]
+        "tokenIndex": 2,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
       }
     ]
   },
@@ -416,6 +420,42 @@
     ]
   },
   {
+    "id": "s203",
+    "es": "Usamos esta computadora para diseñar.",
+    "sk": "Tento počítač používame na navrhovanie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Usamos", "esta", "computadora", "para", "diseñar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Usamos",
+        "lemma": "usar",
+        "hint": "usar · nosotros · presente",
+        "distractors": ["Uso", "Usa", "Usas"]
+      }
+    ]
+  },
+  {
+    "id": "s204",
+    "es": "¿Terminaste el reporte?",
+    "sk": "Dokončil si report?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Terminaste", "el", "reporte", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Terminaste",
+        "lemma": "terminar",
+        "hint": "terminar · tú · pretérito",
+        "distractors": ["Terminamos", "Terminé", "Terminas"]
+      }
+    ]
+  },
+  {
     "id": "s425",
     "es": "Antes trabajaba en un banco, ahora soy maestro.",
     "sk": "Predtým som pracoval v banke, teraz som učiteľ.",
@@ -452,38 +492,60 @@
     ]
   },
   {
-    "id": "s427",
-    "es": "Te llamaré cuando salga de la oficina.",
-    "sk": "Zavolám ti, keď odídem z kancelárie.",
-    "level": "A2",
+    "id": "s1768",
+    "es": "Mi jefe ya se había ido cuando llegué a la oficina.",
+    "sk": "Šéf už odišiel, keď som prišiel do kancelárie.",
+    "level": "B1",
     "topics": ["work"],
-    "grammar": ["futuro"],
-    "tokens": ["Te", "llamaré", "cuando", "salga", "de", "la", "oficina", "."],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Mi", "jefe", "ya", "se", "había", "ido", "cuando", "llegué", "a", "la", "oficina", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "llamaré",
-        "lemma": "llamar",
-        "hint": "llamar · yo · futuro",
-        "distractors": ["llamará", "llamarán", "llamo"]
+        "tokenIndex": 5,
+        "answer": "ido",
+        "lemma": "ir",
+        "hint": "ir · participio",
+        "distractors": ["yendo", "fue", "ir"]
       }
     ]
   },
   {
-    "id": "s428",
-    "es": "El jefe dirá que no.",
-    "sk": "Šéf povie, že nie.",
-    "level": "A2",
+    "id": "s1856",
+    "es": "Mi jefa pide que lleguemos temprano mañana.",
+    "sk": "Moja šéfka žiada, aby sme zajtra prišli skoro.",
+    "level": "B1",
     "topics": ["work"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "jefe", "dirá", "que", "no", "."],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Mi", "jefa", "pide", "que", "lleguemos", "temprano", "mañana", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "dirá",
-        "lemma": "decir",
-        "hint": "decir · él · futuro",
-        "distractors": ["dirán", "dirás", "dice"]
+        "tokenIndex": 4,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["llegamos", "llegaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1900",
+    "es": "Trabajo para una empresa de tecnología.",
+    "sk": "Pracujem pre technologickú firmu.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Trabajo", "para", "una", "empresa", "de", "tecnología", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
       }
     ]
   },
@@ -620,6 +682,46 @@
     ]
   },
   {
+    "id": "s1711",
+    "es": "Tengo que terminar el informe antes de las cinco.",
+    "sk": "Musím dokončiť správu pred piatou.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Tengo", "que", "terminar", "el", "informe", "antes", "de", "las", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1712",
+    "es": "Mañana tenemos que llegar temprano a la oficina.",
+    "sk": "Zajtra musíme prísť do kancelárie skoro.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mañana", "tenemos", "que", "llegar", "temprano", "a", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
     "id": "s596",
     "es": "Mañana tengo una entrevista y estoy muy nervioso.",
     "sk": "Zajtra mám pohovor a som veľmi nervózny.",
@@ -676,42 +778,6 @@
     ]
   },
   {
-    "id": "s776",
-    "es": "El director llega a la oficina a las nueve.",
-    "sk": "Riaditeľ prichádza do kancelárie o deviatej.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["El", "director", "llega", "a", "la", "oficina", "a", "las", "nueve", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "llega",
-        "lemma": "llegar",
-        "hint": "llegar · él · presente",
-        "distractors": ["llegan", "llegó", "llegaba"]
-      }
-    ]
-  },
-  {
-    "id": "s777",
-    "es": "¿Cuánto cobras por hora?",
-    "sk": "Koľko si účtuješ za hodinu?",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "Cuánto", "cobras", "por", "hora", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "cobras",
-        "lemma": "cobrar",
-        "hint": "cobrar · tú · presente",
-        "distractors": ["cobra", "cobré", "cobraban"]
-      }
-    ]
-  },
-  {
     "id": "s778",
     "es": "Trabajo horas extra casi todos los días.",
     "sk": "Skoro každý deň robím nadčasy.",
@@ -726,1090 +792,6 @@
         "lemma": "trabajar",
         "hint": "trabajar · yo · presente",
         "distractors": ["Trabaja", "Trabajé", "Trabajaba"]
-      }
-    ]
-  },
-  {
-    "id": "s779",
-    "es": "Mandé mi currículum a tres empresas.",
-    "sk": "Poslal som životopis do troch firiem.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Mandé", "mi", "currículum", "a", "tres", "empresas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Mandé",
-        "lemma": "mandar",
-        "hint": "mandar · yo · pretérito",
-        "distractors": ["Mandó", "Mando", "Mandaba"]
-      }
-    ]
-  },
-  {
-    "id": "s780",
-    "es": "Hay una vacante en el área de ventas.",
-    "sk": "V oddelení predaja je voľné miesto.",
-    "level": "B1",
-    "topics": ["work"],
-    "tokens": ["Hay", "una", "vacante", "en", "el", "área", "de", "ventas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "vacante",
-        "lemma": "vacante",
-        "hint": "voľné miesto",
-        "distractors": ["vacación", "ventaja", "vecina"]
-      },
-      {
-        "tokenIndex": 0,
-        "answer": "Hay",
-        "lemma": "hay",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "hay",
-        "distractors": ["Está", "Es"]
-      }
-    ],
-    "grammar": ["hay-estar"]
-  },
-  {
-    "id": "s781",
-    "es": "Contrataron a mi prima como gerente.",
-    "sk": "Moju sesternicu zamestnali ako manažérku.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Contrataron", "a", "mi", "prima", "como", "gerente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Contrataron",
-        "lemma": "contratar",
-        "hint": "contratar · ellos · pretérito",
-        "distractors": ["Contrata", "Contraté", "Contrataban"]
-      }
-    ]
-  },
-  {
-    "id": "s782",
-    "es": "Tengo que entregar el informe el viernes.",
-    "sk": "Správu musím odovzdať v piatok.",
-    "level": "B1",
-    "topics": ["work"],
-    "tokens": ["Tengo", "que", "entregar", "el", "informe", "el", "viernes", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "informe",
-        "lemma": "informe",
-        "hint": "správa",
-        "distractors": ["informal", "uniforme", "información"]
-      },
-      {
-        "tokenIndex": 0,
-        "answer": "Tengo",
-        "lemma": "tener",
-        "hint": "musieť",
-        "tip": "obligation",
-        "why": "tener-que",
-        "distractors": ["Hay", "Debo"]
-      }
-    ],
-    "grammar": ["obligation"]
-  },
-  {
-    "id": "s783",
-    "es": "Despidieron a cincuenta trabajadores de la fábrica.",
-    "sk": "Z továrne prepustili päťdesiat robotníkov.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Despidieron", "a", "cincuenta", "trabajadores", "de", "la", "fábrica", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Despidieron",
-        "lemma": "despedir",
-        "hint": "despedir · ellos · pretérito",
-        "distractors": ["Despiden", "Despidió", "Despedían"]
-      }
-    ]
-  },
-  {
-    "id": "s784",
-    "es": "Mi papá se jubiló después de treinta años en el banco.",
-    "sk": "Otec odišiel do dôchodku po tridsiatich rokoch v banke.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Mi", "papá", "se", "jubiló", "después", "de", "treinta", "años", "en", "el", "banco", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "jubiló",
-        "lemma": "jubilarse",
-        "hint": "jubilarse · él · pretérito",
-        "distractors": ["jubila", "jubilaba", "jubilará"]
-      }
-    ]
-  },
-  {
-    "id": "s785",
-    "es": "Me dieron un ascenso y ahora soy jefe de área.",
-    "sk": "Povýšili ma a teraz som vedúci oddelenia.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Me", "dieron", "un", "ascenso", "y", "ahora", "soy", "jefe", "de", "área", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "ascenso",
-        "lemma": "ascenso",
-        "hint": "povýšenie",
-        "distractors": ["ascensor", "aumento", "acceso"]
-      }
-    ]
-  },
-  {
-    "id": "s786",
-    "es": "Renunció porque no le daban prestaciones.",
-    "sk": "Dal výpoveď, lebo mu nedávali benefity.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Renunció", "porque", "no", "le", "daban", "prestaciones", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Renunció",
-        "lemma": "renunciar",
-        "hint": "renunciar · él · pretérito",
-        "distractors": ["Renuncia", "Renuncié", "Renunciaba"]
-      }
-    ]
-  },
-  {
-    "id": "s787",
-    "es": "Después del despido le pagaron su finiquito.",
-    "sk": "Po prepustení mu vyplatili odstupné.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Después", "del", "despido", "le", "pagaron", "su", "finiquito", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "finiquito",
-        "lemma": "finiquito",
-        "hint": "odstupné",
-        "distractors": ["aguinaldo", "sueldo", "bono"]
-      }
-    ]
-  },
-  {
-    "id": "s788",
-    "es": "Hay que negociar las condiciones antes de firmar.",
-    "sk": "Podmienky treba vyjednať pred podpisom.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["Hay", "que", "negociar", "las", "condiciones", "antes", "de", "firmar", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "condiciones",
-        "lemma": "condición",
-        "hint": "podmienky",
-        "distractors": ["condición", "canciones", "ocasiones"]
-      }
-    ]
-  },
-  {
-    "id": "s789",
-    "es": "En la junta planteé la necesidad de contratar a más gente.",
-    "sk": "Na porade som nastolil potrebu prijať viac ľudí.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["En", "la", "junta", "planteé", "la", "necesidad", "de", "contratar", "a", "más", "gente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "planteé",
-        "lemma": "plantear",
-        "hint": "plantear · yo · pretérito",
-        "distractors": ["plantea", "planteó", "planteaba"]
-      }
-    ]
-  },
-  {
-    "id": "s790",
-    "es": "El puesto exige experiencia en liderazgo.",
-    "sk": "Pozícia vyžaduje skúsenosti s vedením ľudí.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["El", "puesto", "exige", "experiencia", "en", "liderazgo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "exige",
-        "lemma": "exigir",
-        "hint": "exigir · él · presente",
-        "distractors": ["exigen", "exigió", "exigía"]
-      }
-    ]
-  },
-  {
-    "id": "s791",
-    "es": "Ella es muy emprendedora: abrió su propia cafetería.",
-    "sk": "Je veľmi podnikavá: otvorila si vlastnú kaviareň.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Ella", "es", "muy", "emprendedora", ":", "abrió", "su", "propia", "cafetería", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "abrió",
-        "lemma": "abrir",
-        "hint": "abrir · ella · pretérito",
-        "distractors": ["abre", "abría", "abrirá"]
-      }
-    ]
-  },
-  {
-    "id": "s792",
-    "es": "Su desempeño este año fue excelente.",
-    "sk": "Jeho výkon bol tento rok vynikajúci.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["Su", "desempeño", "este", "año", "fue", "excelente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "desempeño",
-        "lemma": "desempeño",
-        "hint": "výkon",
-        "distractors": ["desempleo", "descanso", "desayuno"]
-      }
-    ]
-  },
-  {
-    "id": "s793",
-    "es": "El sindicato rechazó la propuesta de la empresa.",
-    "sk": "Odbory odmietli návrh firmy.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["El", "sindicato", "rechazó", "la", "propuesta", "de", "la", "empresa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "rechazó",
-        "lemma": "rechazar",
-        "hint": "rechazar · él · pretérito",
-        "distractors": ["rechaza", "rechazaba", "rechazará"]
-      }
-    ]
-  },
-  {
-    "id": "s794",
-    "es": "Mi hermano chambea de lunes a sábado.",
-    "sk": "Môj brat maká od pondelka do soboty.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "hermano", "chambea", "de", "lunes", "a", "sábado", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "chambea",
-        "lemma": "chambear",
-        "hint": "chambear · él · presente",
-        "distractors": ["chambean", "chambeó", "chambeaba"]
-      }
-    ]
-  },
-  {
-    "id": "s795",
-    "es": "La nómina se paga cada quincena.",
-    "sk": "Výplaty sa vyplácajú každé dva týždne.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["La", "nómina", "se", "paga", "cada", "quincena", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "quincena",
-        "lemma": "quincena",
-        "hint": "dva týždne (výplatné obdobie)",
-        "distractors": ["quinceañera", "cuarentena", "docena"]
-      },
-      {
-        "tokenIndex": 3,
-        "answer": "paga",
-        "lemma": "pagar",
-        "hint": "pagar",
-        "tip": "passive-se",
-        "why": "se",
-        "distractors": ["pagan", "pago"]
-      }
-    ],
-    "grammar": ["passive-se"]
-  },
-  {
-    "id": "s1572",
-    "es": "Mi mamá es enfermera en un hospital.",
-    "sk": "Mama je zdravotná sestra v nemocnici.",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["ser-estar"],
-    "tokens": ["Mi", "mamá", "es", "enfermera", "en", "un", "hospital", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "es",
-        "lemma": "ser",
-        "hint": "ser/estar · ella · presente",
-        "why": "profession",
-        "distractors": ["está", "son", "eres"]
-      }
-    ]
-  },
-  {
-    "id": "s1573",
-    "es": "¿En qué trabajas?",
-    "sk": "Čo robíš?",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "En", "qué", "trabajas", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "trabajas",
-        "lemma": "trabajar",
-        "hint": "trabajar · tú · presente",
-        "distractors": ["trabajo", "trabajó", "trabajaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1574",
-    "es": "La oficina abre a las ocho de la mañana.",
-    "sk": "Kancelária otvára o ôsmej ráno.",
-    "level": "A1",
-    "topics": ["work"],
-    "tokens": ["La", "oficina", "abre", "a", "las", "ocho", "de", "la", "mañana", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "oficina",
-        "lemma": "oficina",
-        "hint": "kancelária",
-        "distractors": ["computadora", "quincena", "entrevista"]
-      }
-    ]
-  },
-  {
-    "id": "s1575",
-    "es": "Mi computadora no funciona hoy.",
-    "sk": "Počítač mi dnes nefunguje.",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "computadora", "no", "funciona", "hoy", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "funciona",
-        "lemma": "funcionar",
-        "hint": "funcionar · ella · presente",
-        "distractors": ["funcionan", "funcionó", "funcionaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1576",
-    "es": "Los lunes tenemos junta con el jefe.",
-    "sk": "V pondelok máme poradu so šéfom.",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Los", "lunes", "tenemos", "junta", "con", "el", "jefe", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "tenemos",
-        "lemma": "tener",
-        "hint": "tener · nosotros · presente",
-        "distractors": ["tengo", "tuvimos", "tenían"]
-      }
-    ]
-  },
-  {
-    "id": "s1577",
-    "es": "Mi papá es chofer y maneja un taxi.",
-    "sk": "Otec je šofér, jazdí na taxíku.",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "papá", "es", "chofer", "y", "maneja", "un", "taxi", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "maneja",
-        "lemma": "manejar",
-        "hint": "manejar · él · presente",
-        "distractors": ["manejo", "manejó", "manejaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1578",
-    "es": "Hoy salgo tarde de la oficina.",
-    "sk": "Dnes odchádzam z kancelárie neskoro.",
-    "level": "A1",
-    "topics": ["work"],
-    "tokens": ["Hoy", "salgo", "tarde", "de", "la", "oficina", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "tarde",
-        "lemma": "tarde",
-        "hint": "neskoro",
-        "distractors": ["ayer", "anoche", "nunca"]
-      }
-    ]
-  },
-  {
-    "id": "s1579",
-    "es": "El cliente quiere hablar con usted.",
-    "sk": "Klient s vami chce hovoriť.",
-    "level": "A1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["El", "cliente", "quiere", "hablar", "con", "usted", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "quiere",
-        "lemma": "querer",
-        "hint": "querer · él · presente",
-        "distractors": ["quiero", "quisieron", "querrás"]
-      }
-    ]
-  },
-  {
-    "id": "s1580",
-    "es": "El mes pasado empecé a trabajar en una fábrica.",
-    "sk": "Minulý mesiac som začal pracovať v továrni.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["El", "mes", "pasado", "empecé", "a", "trabajar", "en", "una", "fábrica", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "empecé",
-        "lemma": "empezar",
-        "hint": "empezar · yo · pretérito",
-        "distractors": ["empiezo", "empezó", "empezaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1581",
-    "es": "Mi abuelo era albañil y construyó su propia casa.",
-    "sk": "Dedko bol murár a sám si postavil dom.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Mi", "abuelo", "era", "albañil", "y", "construyó", "su", "propia", "casa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "construyó",
-        "lemma": "construir",
-        "hint": "construir · él · pretérito",
-        "distractors": ["construye", "construí", "construía"]
-      }
-    ]
-  },
-  {
-    "id": "s1582",
-    "es": "La próxima semana firmaré el contrato nuevo.",
-    "sk": "Budúci týždeň podpíšem novú zmluvu.",
-    "level": "A2",
-    "topics": ["work"],
-    "tokens": ["La", "próxima", "semana", "firmaré", "el", "contrato", "nuevo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "contrato",
-        "lemma": "contrato",
-        "hint": "zmluva",
-        "distractors": ["escritorio", "descanso", "sueldo"]
-      }
-    ]
-  },
-  {
-    "id": "s1583",
-    "es": "Me gustaría cambiar de carrera, pero me da miedo empezar de cero.",
-    "sk": "Rád by som zmenil profesiu, ale bojím sa začínať od nuly.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Me", "gustaría", "cambiar", "de", "carrera", ",", "pero", "me", "da", "miedo", "empezar", "de", "cero", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "da",
-        "lemma": "dar",
-        "hint": "dar · él · presente",
-        "distractors": ["doy", "dio", "daba"]
-      }
-    ]
-  },
-  {
-    "id": "s1584",
-    "es": "Mientras yo preparaba la presentación, mis compañeros atendían a los clientes.",
-    "sk": "Kým som pripravoval prezentáciu, kolegovia sa venovali klientom.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Mientras", "yo", "preparaba", "la", "presentación", ",", "mis", "compañeros", "atendían", "a", "los", "clientes", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "atendían",
-        "lemma": "atender",
-        "hint": "atender · ellos · imperfecto",
-        "distractors": ["atiende", "atendieron", "atenderán"]
-      }
-    ]
-  },
-  {
-    "id": "s1585",
-    "es": "Creo que merezco un aumento porque este año trabajé muchísimo.",
-    "sk": "Myslím, že si zaslúžim zvýšenie platu, lebo tento rok som makal ako kôň.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Creo", "que", "merezco", "un", "aumento", "porque", "este", "año", "trabajé", "muchísimo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "merezco",
-        "lemma": "merecer",
-        "hint": "merecer · yo · presente",
-        "distractors": ["mereces", "merecí", "merecía"]
-      }
-    ]
-  },
-  {
-    "id": "s1586",
-    "es": "Estoy hasta el gorro de tantas juntas que no sirven para nada.",
-    "sk": "Mám plné zuby všetkých tých porád, ktoré sú úplne zbytočné.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["Estoy", "hasta", "el", "gorro", "de", "tantas", "juntas", "que", "no", "sirven", "para", "nada", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "juntas",
-        "lemma": "junta",
-        "hint": "porady",
-        "distractors": ["quincenas", "vacantes", "renuncias"]
-      }
-    ]
-  },
-  {
-    "id": "s1587",
-    "es": "Mi cuñado anda sin chamba desde que cerró la fábrica.",
-    "sk": "Švagor je bez roboty, odkedy zatvorili továreň.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Mi", "cuñado", "anda", "sin", "chamba", "desde", "que", "cerró", "la", "fábrica", "."],
-    "cloze": [
-      {
-        "tokenIndex": 7,
-        "answer": "cerró",
-        "lemma": "cerrar",
-        "hint": "cerrar · ella · pretérito",
-        "distractors": ["cierra", "cerré", "cerraba"]
-      }
-    ]
-  },
-  {
-    "id": "s1588",
-    "es": "Le eché muchas ganas al proyecto y al final me lo reconocieron.",
-    "sk": "Do projektu som dal všetko a nakoniec to ocenili.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["preterito"],
-    "tokens": ["Le", "eché", "muchas", "ganas", "al", "proyecto", "y", "al", "final", "me", "lo", "reconocieron", "."],
-    "cloze": [
-      {
-        "tokenIndex": 11,
-        "answer": "reconocieron",
-        "lemma": "reconocer",
-        "hint": "reconocer · ellos · pretérito",
-        "distractors": ["reconoce", "reconocí", "reconocían"]
-      }
-    ]
-  },
-  {
-    "id": "s1589",
-    "es": "El aguinaldo llega en diciembre y casi todo se me va en regalos.",
-    "sk": "Vianočný príplatok chodí v decembri a takmer celý minem na darčeky.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["El", "aguinaldo", "llega", "en", "diciembre", "y", "casi", "todo", "se", "me", "va", "en", "regalos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "aguinaldo",
-        "lemma": "aguinaldo",
-        "hint": "vianočný príplatok",
-        "distractors": ["despido", "sindicato", "currículum"]
-      }
-    ]
-  },
-  {
-    "id": "s1590",
-    "es": "Trabajar desde casa me ahorra tiempo, aunque a veces extraño a mis compañeros.",
-    "sk": "Práca z domu mi šetrí čas, hoci kolegovia mi niekedy chýbajú.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Trabajar", "desde", "casa", "me", "ahorra", "tiempo", ",", "aunque", "a", "veces", "extraño", "a", "mis", "compañeros", "."],
-    "cloze": [
-      {
-        "tokenIndex": 10,
-        "answer": "extraño",
-        "lemma": "extrañar",
-        "hint": "extrañar · yo · presente",
-        "distractors": ["extrañas", "extrañé", "extrañaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1591",
-    "es": "Exigimos que la empresa respete nuestras prestaciones y el horario acordado.",
-    "sk": "Požadujeme, aby firma rešpektovala naše benefity a dohodnutý pracovný čas.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Exigimos", "que", "la", "empresa", "respete", "nuestras", "prestaciones", "y", "el", "horario", "acordado", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Exigimos",
-        "lemma": "exigir",
-        "hint": "exigir · nosotros · presente",
-        "distractors": ["Exijo", "Exigieron", "Exigíamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1592",
-    "es": "Si la empresa no valora tu trabajo, mejor busca otra chamba.",
-    "sk": "Ak firma tvoju prácu neoceňuje, radšej si nájdi inú robotu.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Si", "la", "empresa", "no", "valora", "tu", "trabajo", ",", "mejor", "busca", "otra", "chamba", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "valora",
-        "lemma": "valorar",
-        "hint": "valorar · ella · presente",
-        "distractors": ["valoro", "valoró", "valoraba"]
-      }
-    ]
-  },
-  {
-    "id": "s1593",
-    "es": "Con este sueldo apenas me alcanza para la renta y la comida.",
-    "sk": "S týmto platom mi sotva vystačí na nájom a jedlo.",
-    "level": "B2",
-    "topics": ["work"],
-    "tokens": ["Con", "este", "sueldo", "apenas", "me", "alcanza", "para", "la", "renta", "y", "la", "comida", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "sueldo",
-        "lemma": "sueldo",
-        "hint": "plat",
-        "distractors": ["horario", "descanso", "escritorio"]
-      }
-    ]
-  },
-  {
-    "id": "s1594",
-    "es": "Al nuevo gerente le falta liderazgo; nadie le hace caso.",
-    "sk": "Novému manažérovi chýbajú vodcovské schopnosti, nikto ho nepočúva.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Al", "nuevo", "gerente", "le", "falta", "liderazgo", ";", "nadie", "le", "hace", "caso", "."],
-    "cloze": [
-      {
-        "tokenIndex": 9,
-        "answer": "hace",
-        "lemma": "hacer",
-        "hint": "hacer · él · presente",
-        "distractors": ["hago", "hicieron", "harás"]
-      }
-    ]
-  },
-  {
-    "id": "s1620",
-    "es": "Reviso mi correo antes de cada junta.",
-    "sk": "Pred každou poradou si skontrolujem e-maily.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Reviso", "mi", "correo", "antes", "de", "cada", "junta", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Reviso",
-        "lemma": "revisar",
-        "hint": "revisar · yo · presente",
-        "distractors": ["Revisé", "Revisaba", "Revisaré"]
-      }
-    ]
-  },
-  {
-    "id": "s1624",
-    "es": "Mi jefe nos trata con mucho respeto.",
-    "sk": "Môj šéf sa k nám správa s veľkým rešpektom.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "jefe", "nos", "trata", "con", "mucho", "respeto", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "trata",
-        "lemma": "tratar",
-        "hint": "tratar · él · presente",
-        "distractors": ["trató", "trataba", "tratará"]
-      }
-    ]
-  },
-  {
-    "id": "s1685",
-    "es": "Mi jefe nos mandó el informe y lo revisamos juntos.",
-    "sk": "Šéf nám poslal správu a skontrolovali sme ju spolu.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["object-pronouns", "preterito"],
-    "tokens": ["Mi", "jefe", "nos", "mandó", "el", "informe", "y", "lo", "revisamos", "juntos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 7,
-        "answer": "lo",
-        "lemma": "lo",
-        "hint": "zámeno: ho",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["le", "la", "los"]
-      }
-    ]
-  },
-  {
-    "id": "s1708",
-    "es": "Mi trabajo nuevo es mejor que el anterior: gano más y trabajo menos.",
-    "sk": "Moja nová práca je lepšia ako predošlá, zarábam viac a pracujem menej.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Mi", "trabajo", "nuevo", "es", "mejor", "que", "el", "anterior", ":", "gano", "más", "y", "trabajo", "menos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "mejor",
-        "lemma": "mejor",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "irregular",
-        "distractors": ["peor", "más", "mayor"]
-      }
-    ]
-  },
-  {
-    "id": "s1711",
-    "es": "Tengo que terminar el informe antes de las cinco.",
-    "sk": "Musím dokončiť správu pred piatou.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Tengo", "que", "terminar", "el", "informe", "antes", "de", "las", "cinco", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "musieť",
-        "tip": "obligation",
-        "why": "tener-que",
-        "distractors": ["de", "a", "para"]
-      }
-    ]
-  },
-  {
-    "id": "s1712",
-    "es": "Mañana tenemos que llegar temprano a la oficina.",
-    "sk": "Zajtra musíme prísť do kancelárie skoro.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Mañana", "tenemos", "que", "llegar", "temprano", "a", "la", "oficina", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "musieť",
-        "tip": "obligation",
-        "why": "tener-que",
-        "distractors": ["de", "a", "para"]
-      }
-    ]
-  },
-  {
-    "id": "s1713",
-    "es": "En esta empresa hay que usar el uniforme.",
-    "sk": "V tejto firme treba nosiť uniformu.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["En", "esta", "empresa", "hay", "que", "usar", "el", "uniforme", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "treba",
-        "tip": "obligation",
-        "why": "hay-que",
-        "distractors": ["de", "a", "para"]
-      }
-    ]
-  },
-  {
-    "id": "s1714",
-    "es": "Para entrar a la bodega hay que pedir permiso.",
-    "sk": "Do skladu treba požiadať o povolenie.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Para", "entrar", "a", "la", "bodega", "hay", "que", "pedir", "permiso", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "treba",
-        "tip": "obligation",
-        "why": "hay-que",
-        "distractors": ["de", "a", "para"]
-      }
-    ]
-  },
-  {
-    "id": "s1715",
-    "es": "Usted debe llamar a su jefe hoy.",
-    "sk": "Mali by ste dnes zavolať šéfovi.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Usted", "debe", "llamar", "a", "su", "jefe", "hoy", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "debe",
-        "lemma": "deber",
-        "hint": "mal by",
-        "tip": "obligation",
-        "why": "deber",
-        "distractors": ["puede", "tiene", "debo"]
-      }
-    ]
-  },
-  {
-    "id": "s1716",
-    "es": "¿Puedo usar su computadora un momento?",
-    "sk": "Môžem si na chvíľu požičať váš počítač?",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["¿", "Puedo", "usar", "su", "computadora", "un", "momento", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "Puedo",
-        "lemma": "poder",
-        "hint": "môcť",
-        "tip": "obligation",
-        "why": "poder",
-        "distractors": ["Debo", "Tengo", "Puede"]
-      }
-    ]
-  },
-  {
-    "id": "s1717",
-    "es": "Los empleados deben llegar a las ocho.",
-    "sk": "Zamestnanci by mali prísť o ôsmej.",
-    "level": "A2",
-    "topics": ["work"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Los", "empleados", "deben", "llegar", "a", "las", "ocho", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "deben",
-        "lemma": "deber",
-        "hint": "mal by",
-        "tip": "obligation",
-        "why": "deber",
-        "distractors": ["pueden", "tienen", "debemos"]
-      }
-    ]
-  },
-  {
-    "id": "s1768",
-    "es": "Mi jefe ya se había ido cuando llegué a la oficina.",
-    "sk": "Šéf už odišiel, keď som prišiel do kancelárie.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["pluscuamperfecto", "preterito"],
-    "tokens": ["Mi", "jefe", "ya", "se", "había", "ido", "cuando", "llegué", "a", "la", "oficina", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "ido",
-        "lemma": "ir",
-        "hint": "ir · participio",
-        "distractors": ["yendo", "fue", "ir"]
-      }
-    ]
-  },
-  {
-    "id": "s1792",
-    "es": "Es esencial que los empleados cumplan con el horario.",
-    "sk": "Je nevyhnutné, aby zamestnanci dodržiavali pracovný čas.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["subjuntivo", "presente"],
-    "tokens": ["Es", "esencial", "que", "los", "empleados", "cumplan", "con", "el", "horario", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "cumplan",
-        "lemma": "cumplir",
-        "hint": "cumplir · ellos · subjuntivo",
-        "distractors": ["cumplen", "cumplirán", "cumplieron"]
-      }
-    ]
-  },
-  {
-    "id": "s1793",
-    "es": "Mi jefa espera que terminemos el proyecto antes de diciembre.",
-    "sk": "Moja šéfka dúfa, že projekt dokončíme pred decembrom.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["subjuntivo", "presente"],
-    "tokens": ["Mi", "jefa", "espera", "que", "terminemos", "el", "proyecto", "antes", "de", "diciembre", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "terminemos",
-        "lemma": "terminar",
-        "hint": "terminar · nosotros · subjuntivo",
-        "distractors": ["terminamos", "terminaremos"]
-      }
-    ]
-  },
-  {
-    "id": "s1794",
-    "es": "Es una lástima que no te den el ascenso.",
-    "sk": "Je škoda, že ti nedajú povýšenie.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["subjuntivo", "presente"],
-    "tokens": ["Es", "una", "lástima", "que", "no", "te", "den", "el", "ascenso", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "den",
-        "lemma": "dar",
-        "hint": "dar · ellos · subjuntivo",
-        "distractors": ["dan", "darán", "dieron"]
-      }
-    ]
-  },
-  {
-    "id": "s1795",
-    "es": "Prefiero que negocies tú el contrato con el cliente.",
-    "sk": "Radšej by som chcel, aby si zmluvu s klientom vyjednal ty.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["subjuntivo", "presente"],
-    "tokens": ["Prefiero", "que", "negocies", "tú", "el", "contrato", "con", "el", "cliente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "negocies",
-        "lemma": "negociar",
-        "hint": "negociar · tú · subjuntivo",
-        "distractors": ["negocias", "negociarás", "negociaste"]
-      }
-    ]
-  },
-  {
-    "id": "s1839",
-    "es": "Mi jefe quería que trabajáramos los sábados.",
-    "sk": "Môj šéf chcel, aby sme pracovali aj v soboty.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["subj-imperfecto", "imperfecto"],
-    "tokens": ["Mi", "jefe", "quería", "que", "trabajáramos", "los", "sábados", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "trabajáramos",
-        "lemma": "trabajar",
-        "hint": "trabajar · nosotros · subjuntivo imperfecto",
-        "distractors": ["trabajemos", "trabajábamos", "trabajaríamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1856",
-    "es": "Mi jefa pide que lleguemos temprano mañana.",
-    "sk": "Moja šéfka žiada, aby sme zajtra prišli skoro.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Mi", "jefa", "pide", "que", "lleguemos", "temprano", "mañana", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "lleguemos",
-        "lemma": "llegar",
-        "hint": "llegar · nosotros · subjuntivo",
-        "tip": "subjuntivo-wishes",
-        "why": "advice",
-        "distractors": ["llegamos", "llegaremos"]
       }
     ]
   },
@@ -1874,22 +856,20 @@
     ]
   },
   {
-    "id": "s1872",
-    "es": "Si la junta termina pronto, comeremos juntos.",
-    "sk": "Ak porada skončí skoro, pôjdeme spolu na obed.",
-    "level": "B1",
+    "id": "s1839",
+    "es": "Mi jefe quería que trabajáramos los sábados.",
+    "sk": "Môj šéf chcel, aby sme pracovali aj v soboty.",
+    "level": "B2",
     "topics": ["work"],
-    "grammar": ["si-clauses", "presente", "futuro"],
-    "tokens": ["Si", "la", "junta", "termina", "pronto", ",", "comeremos", "juntos", "."],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Mi", "jefe", "quería", "que", "trabajáramos", "los", "sábados", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
-        "answer": "termina",
-        "lemma": "terminar",
-        "hint": "terminar · él",
-        "tip": "si-clauses",
-        "why": "never",
-        "distractors": ["terminará", "terminó", "terminaba"]
+        "tokenIndex": 4,
+        "answer": "trabajáramos",
+        "lemma": "trabajar",
+        "hint": "trabajar · nosotros · subjuntivo imperfecto",
+        "distractors": ["trabajemos", "trabajábamos", "trabajaríamos"]
       }
     ]
   },
@@ -1914,26 +894,6 @@
     ]
   },
   {
-    "id": "s1874",
-    "es": "Si trabajáramos desde casa, ahorraríamos tiempo.",
-    "sk": "Keby sme pracovali z domu, ušetrili by sme čas.",
-    "level": "B2",
-    "topics": ["work"],
-    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
-    "tokens": ["Si", "trabajáramos", "desde", "casa", ",", "ahorraríamos", "tiempo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "ahorraríamos",
-        "lemma": "ahorrar",
-        "hint": "ahorrar · nosotros",
-        "tip": "si-clauses",
-        "why": "unreal",
-        "distractors": ["ahorraremos", "ahorrábamos", "ahorramos"]
-      }
-    ]
-  },
-  {
     "id": "s1875",
     "es": "Si mi jefa me ofreciera un ascenso, lo aceptaría.",
     "sk": "Keby mi šéfka ponúkla povýšenie, prijal by som ho.",
@@ -1950,26 +910,6 @@
         "tip": "si-clauses",
         "why": "unreal",
         "distractors": ["aceptaré", "aceptaba", "acepto"]
-      }
-    ]
-  },
-  {
-    "id": "s1900",
-    "es": "Trabajo para una empresa de tecnología.",
-    "sk": "Pracujem pre technologickú firmu.",
-    "level": "B1",
-    "topics": ["work"],
-    "grammar": ["por-para", "presente"],
-    "tokens": ["Trabajo", "para", "una", "empresa", "de", "tecnología", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "para",
-        "lemma": "para",
-        "hint": "por/para",
-        "tip": "por-para",
-        "why": "para",
-        "distractors": ["por", "a"]
       }
     ]
   },
@@ -2134,6 +1074,274 @@
     ]
   },
   {
+    "id": "s1572",
+    "es": "Mi mamá es enfermera en un hospital.",
+    "sk": "Mama je zdravotná sestra v nemocnici.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "mamá", "es", "enfermera", "en", "un", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser/estar · ella · presente",
+        "why": "profession",
+        "distractors": ["está", "son", "eres"]
+      }
+    ]
+  },
+  {
+    "id": "s1573",
+    "es": "¿En qué trabajas?",
+    "sk": "Čo robíš?",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "En", "qué", "trabajas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trabajas",
+        "lemma": "trabajar",
+        "hint": "trabajar · tú · presente",
+        "distractors": ["trabajo", "trabajó", "trabajaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1574",
+    "es": "La oficina abre a las ocho de la mañana.",
+    "sk": "Kancelária otvára o ôsmej ráno.",
+    "level": "A1",
+    "topics": ["work"],
+    "tokens": ["La", "oficina", "abre", "a", "las", "ocho", "de", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "oficina",
+        "lemma": "oficina",
+        "hint": "kancelária",
+        "distractors": ["computadora", "quincena", "entrevista"]
+      }
+    ]
+  },
+  {
+    "id": "s1575",
+    "es": "Mi computadora no funciona hoy.",
+    "sk": "Počítač mi dnes nefunguje.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "computadora", "no", "funciona", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "funciona",
+        "lemma": "funcionar",
+        "hint": "funcionar · ella · presente",
+        "distractors": ["funcionan", "funcionó", "funcionaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1576",
+    "es": "Los lunes tenemos junta con el jefe.",
+    "sk": "V pondelok máme poradu so šéfom.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Los", "lunes", "tenemos", "junta", "con", "el", "jefe", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tenemos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · presente",
+        "distractors": ["tengo", "tuvimos", "tenían"]
+      }
+    ]
+  },
+  {
+    "id": "s1577",
+    "es": "Mi papá es chofer y maneja un taxi.",
+    "sk": "Otec je šofér, jazdí na taxíku.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "papá", "es", "chofer", "y", "maneja", "un", "taxi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "maneja",
+        "lemma": "manejar",
+        "hint": "manejar · él · presente",
+        "distractors": ["manejo", "manejó", "manejaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1578",
+    "es": "Hoy salgo tarde de la oficina.",
+    "sk": "Dnes odchádzam z kancelárie neskoro.",
+    "level": "A1",
+    "topics": ["work"],
+    "tokens": ["Hoy", "salgo", "tarde", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tarde",
+        "lemma": "tarde",
+        "hint": "neskoro",
+        "distractors": ["ayer", "anoche", "nunca"]
+      }
+    ]
+  },
+  {
+    "id": "s1579",
+    "es": "El cliente quiere hablar con usted.",
+    "sk": "Klient s vami chce hovoriť.",
+    "level": "A1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "cliente", "quiere", "hablar", "con", "usted", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quiere",
+        "lemma": "querer",
+        "hint": "querer · él · presente",
+        "distractors": ["quiero", "quisieron", "querrás"]
+      }
+    ]
+  },
+  {
+    "id": "s1713",
+    "es": "En esta empresa hay que usar el uniforme.",
+    "sk": "V tejto firme treba nosiť uniformu.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["En", "esta", "empresa", "hay", "que", "usar", "el", "uniforme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1714",
+    "es": "Para entrar a la bodega hay que pedir permiso.",
+    "sk": "Do skladu treba požiadať o povolenie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Para", "entrar", "a", "la", "bodega", "hay", "que", "pedir", "permiso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1715",
+    "es": "Usted debe llamar a su jefe hoy.",
+    "sk": "Mali by ste dnes zavolať šéfovi.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Usted", "debe", "llamar", "a", "su", "jefe", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "debe",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["puede", "tiene", "debo"]
+      }
+    ]
+  },
+  {
+    "id": "s1872",
+    "es": "Si la junta termina pronto, comeremos juntos.",
+    "sk": "Ak porada skončí skoro, pôjdeme spolu na obed.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "la", "junta", "termina", "pronto", ",", "comeremos", "juntos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "termina",
+        "lemma": "terminar",
+        "hint": "terminar · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["terminará", "terminó", "terminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s779",
+    "es": "Mandé mi currículum a tres empresas.",
+    "sk": "Poslal som životopis do troch firiem.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mandé", "mi", "currículum", "a", "tres", "empresas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mandé",
+        "lemma": "mandar",
+        "hint": "mandar · yo · pretérito",
+        "distractors": ["Mandó", "Mando", "Mandaba"]
+      }
+    ]
+  },
+  {
+    "id": "s780",
+    "es": "Hay una vacante en el área de ventas.",
+    "sk": "V oddelení predaja je voľné miesto.",
+    "level": "B1",
+    "topics": ["work"],
+    "tokens": ["Hay", "una", "vacante", "en", "el", "área", "de", "ventas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vacante",
+        "lemma": "vacante",
+        "hint": "voľné miesto",
+        "distractors": ["vacación", "ventaja", "vecina"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Es"]
+      }
+    ],
+    "grammar": ["hay-estar"]
+  },
+  {
     "id": "s1969",
     "es": "El contrato fue aprobado por la directora.",
     "sk": "Zmluvu schválila riaditeľka.",
@@ -2150,6 +1358,798 @@
         "tip": "passive-se",
         "why": "ser-passive",
         "distractors": ["aprobada", "aprobando", "aprobó"]
+      }
+    ]
+  },
+  {
+    "id": "s785",
+    "es": "Me dieron un ascenso y ahora soy jefe de área.",
+    "sk": "Povýšili ma a teraz som vedúci oddelenia.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "dieron", "un", "ascenso", "y", "ahora", "soy", "jefe", "de", "área", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ascenso",
+        "lemma": "ascenso",
+        "hint": "povýšenie",
+        "distractors": ["ascensor", "aumento", "acceso"]
+      }
+    ]
+  },
+  {
+    "id": "s786",
+    "es": "Renunció porque no le daban prestaciones.",
+    "sk": "Dal výpoveď, lebo mu nedávali benefity.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Renunció", "porque", "no", "le", "daban", "prestaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Renunció",
+        "lemma": "renunciar",
+        "hint": "renunciar · él · pretérito",
+        "distractors": ["Renuncia", "Renuncié", "Renunciaba"]
+      }
+    ]
+  },
+  {
+    "id": "s787",
+    "es": "Después del despido le pagaron su finiquito.",
+    "sk": "Po prepustení mu vyplatili odstupné.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Después", "del", "despido", "le", "pagaron", "su", "finiquito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "finiquito",
+        "lemma": "finiquito",
+        "hint": "odstupné",
+        "distractors": ["aguinaldo", "sueldo", "bono"]
+      }
+    ]
+  },
+  {
+    "id": "s788",
+    "es": "Hay que negociar las condiciones antes de firmar.",
+    "sk": "Podmienky treba vyjednať pred podpisom.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Hay", "que", "negociar", "las", "condiciones", "antes", "de", "firmar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "condiciones",
+        "lemma": "condición",
+        "hint": "podmienky",
+        "distractors": ["condición", "canciones", "ocasiones"]
+      }
+    ]
+  },
+  {
+    "id": "s789",
+    "es": "En la junta planteé la necesidad de contratar a más gente.",
+    "sk": "Na porade som nastolil potrebu prijať viac ľudí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "la", "junta", "planteé", "la", "necesidad", "de", "contratar", "a", "más", "gente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "planteé",
+        "lemma": "plantear",
+        "hint": "plantear · yo · pretérito",
+        "distractors": ["plantea", "planteó", "planteaba"]
+      }
+    ]
+  },
+  {
+    "id": "s790",
+    "es": "El puesto exige experiencia en liderazgo.",
+    "sk": "Pozícia vyžaduje skúsenosti s vedením ľudí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "puesto", "exige", "experiencia", "en", "liderazgo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "exige",
+        "lemma": "exigir",
+        "hint": "exigir · él · presente",
+        "distractors": ["exigen", "exigió", "exigía"]
+      }
+    ]
+  },
+  {
+    "id": "s791",
+    "es": "Ella es muy emprendedora: abrió su propia cafetería.",
+    "sk": "Je veľmi podnikavá: otvorila si vlastnú kaviareň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Ella", "es", "muy", "emprendedora", ":", "abrió", "su", "propia", "cafetería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "abrió",
+        "lemma": "abrir",
+        "hint": "abrir · ella · pretérito",
+        "distractors": ["abre", "abría", "abrirá"]
+      }
+    ]
+  },
+  {
+    "id": "s1792",
+    "es": "Es esencial que los empleados cumplan con el horario.",
+    "sk": "Je nevyhnutné, aby zamestnanci dodržiavali pracovný čas.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "esencial", "que", "los", "empleados", "cumplan", "con", "el", "horario", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cumplan",
+        "lemma": "cumplir",
+        "hint": "cumplir · ellos · subjuntivo",
+        "distractors": ["cumplen", "cumplirán", "cumplieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1716",
+    "es": "¿Puedo usar su computadora un momento?",
+    "sk": "Môžem si na chvíľu požičať váš počítač?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["¿", "Puedo", "usar", "su", "computadora", "un", "momento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Puedo",
+        "lemma": "poder",
+        "hint": "môcť",
+        "tip": "obligation",
+        "why": "poder",
+        "distractors": ["Debo", "Tengo", "Puede"]
+      }
+    ]
+  },
+  {
+    "id": "s781",
+    "es": "Contrataron a mi prima como gerente.",
+    "sk": "Moju sesternicu zamestnali ako manažérku.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Contrataron", "a", "mi", "prima", "como", "gerente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Contrataron",
+        "lemma": "contratar",
+        "hint": "contratar · ellos · pretérito",
+        "distractors": ["Contrata", "Contraté", "Contrataban"]
+      }
+    ]
+  },
+  {
+    "id": "s1717",
+    "es": "Los empleados deben llegar a las ocho.",
+    "sk": "Zamestnanci by mali prísť o ôsmej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Los", "empleados", "deben", "llegar", "a", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "deben",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["pueden", "tienen", "debemos"]
+      }
+    ]
+  },
+  {
+    "id": "s427",
+    "es": "Te llamaré cuando salga de la oficina.",
+    "sk": "Zavolám ti, keď odídem z kancelárie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["futuro"],
+    "tokens": ["Te", "llamaré", "cuando", "salga", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llamaré",
+        "lemma": "llamar",
+        "hint": "llamar · yo · futuro",
+        "distractors": ["llamará", "llamarán", "llamo"]
+      }
+    ]
+  },
+  {
+    "id": "s428",
+    "es": "El jefe dirá que no.",
+    "sk": "Šéf povie, že nie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["futuro"],
+    "tokens": ["El", "jefe", "dirá", "que", "no", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dirá",
+        "lemma": "decir",
+        "hint": "decir · él · futuro",
+        "distractors": ["dirán", "dirás", "dice"]
+      }
+    ]
+  },
+  {
+    "id": "s776",
+    "es": "El director llega a la oficina a las nueve.",
+    "sk": "Riaditeľ prichádza do kancelárie o deviatej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["El", "director", "llega", "a", "la", "oficina", "a", "las", "nueve", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llega",
+        "lemma": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors": ["llegan", "llegó", "llegaba"]
+      }
+    ]
+  },
+  {
+    "id": "s777",
+    "es": "¿Cuánto cobras por hora?",
+    "sk": "Koľko si účtuješ za hodinu?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Cuánto", "cobras", "por", "hora", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cobras",
+        "lemma": "cobrar",
+        "hint": "cobrar · tú · presente",
+        "distractors": ["cobra", "cobré", "cobraban"]
+      }
+    ]
+  },
+  {
+    "id": "s1580",
+    "es": "El mes pasado empecé a trabajar en una fábrica.",
+    "sk": "Minulý mesiac som začal pracovať v továrni.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "mes", "pasado", "empecé", "a", "trabajar", "en", "una", "fábrica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empecé",
+        "lemma": "empezar",
+        "hint": "empezar · yo · pretérito",
+        "distractors": ["empiezo", "empezó", "empezaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1581",
+    "es": "Mi abuelo era albañil y construyó su propia casa.",
+    "sk": "Dedko bol murár a sám si postavil dom.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "abuelo", "era", "albañil", "y", "construyó", "su", "propia", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "construyó",
+        "lemma": "construir",
+        "hint": "construir · él · pretérito",
+        "distractors": ["construye", "construí", "construía"]
+      }
+    ]
+  },
+  {
+    "id": "s1582",
+    "es": "La próxima semana firmaré el contrato nuevo.",
+    "sk": "Budúci týždeň podpíšem novú zmluvu.",
+    "level": "A2",
+    "topics": ["work"],
+    "tokens": ["La", "próxima", "semana", "firmaré", "el", "contrato", "nuevo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "contrato",
+        "lemma": "contrato",
+        "hint": "zmluva",
+        "distractors": ["escritorio", "descanso", "sueldo"]
+      }
+    ]
+  },
+  {
+    "id": "s1620",
+    "es": "Reviso mi correo antes de cada junta.",
+    "sk": "Pred každou poradou si skontrolujem e-maily.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Reviso", "mi", "correo", "antes", "de", "cada", "junta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reviso",
+        "lemma": "revisar",
+        "hint": "revisar · yo · presente",
+        "distractors": ["Revisé", "Revisaba", "Revisaré"]
+      }
+    ]
+  },
+  {
+    "id": "s782",
+    "es": "Tengo que entregar el informe el viernes.",
+    "sk": "Správu musím odovzdať v piatok.",
+    "level": "B1",
+    "topics": ["work"],
+    "tokens": ["Tengo", "que", "entregar", "el", "informe", "el", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "informe",
+        "lemma": "informe",
+        "hint": "správa",
+        "distractors": ["informal", "uniforme", "información"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["Hay", "Debo"]
+      }
+    ],
+    "grammar": ["obligation"]
+  },
+  {
+    "id": "s1793",
+    "es": "Mi jefa espera que terminemos el proyecto antes de diciembre.",
+    "sk": "Moja šéfka dúfa, že projekt dokončíme pred decembrom.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Mi", "jefa", "espera", "que", "terminemos", "el", "proyecto", "antes", "de", "diciembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "terminemos",
+        "lemma": "terminar",
+        "hint": "terminar · nosotros · subjuntivo",
+        "distractors": ["terminamos", "terminaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1794",
+    "es": "Es una lástima que no te den el ascenso.",
+    "sk": "Je škoda, že ti nedajú povýšenie.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "una", "lástima", "que", "no", "te", "den", "el", "ascenso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "den",
+        "lemma": "dar",
+        "hint": "dar · ellos · subjuntivo",
+        "distractors": ["dan", "darán", "dieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1795",
+    "es": "Prefiero que negocies tú el contrato con el cliente.",
+    "sk": "Radšej by som chcel, aby si zmluvu s klientom vyjednal ty.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Prefiero", "que", "negocies", "tú", "el", "contrato", "con", "el", "cliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "negocies",
+        "lemma": "negociar",
+        "hint": "negociar · tú · subjuntivo",
+        "distractors": ["negocias", "negociarás", "negociaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1874",
+    "es": "Si trabajáramos desde casa, ahorraríamos tiempo.",
+    "sk": "Keby sme pracovali z domu, ušetrili by sme čas.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "trabajáramos", "desde", "casa", ",", "ahorraríamos", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ahorraríamos",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · nosotros",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["ahorraremos", "ahorrábamos", "ahorramos"]
+      }
+    ]
+  },
+  {
+    "id": "s792",
+    "es": "Su desempeño este año fue excelente.",
+    "sk": "Jeho výkon bol tento rok vynikajúci.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Su", "desempeño", "este", "año", "fue", "excelente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "desempeño",
+        "lemma": "desempeño",
+        "hint": "výkon",
+        "distractors": ["desempleo", "descanso", "desayuno"]
+      }
+    ]
+  },
+  {
+    "id": "s783",
+    "es": "Despidieron a cincuenta trabajadores de la fábrica.",
+    "sk": "Z továrne prepustili päťdesiat robotníkov.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Despidieron", "a", "cincuenta", "trabajadores", "de", "la", "fábrica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Despidieron",
+        "lemma": "despedir",
+        "hint": "despedir · ellos · pretérito",
+        "distractors": ["Despiden", "Despidió", "Despedían"]
+      }
+    ]
+  },
+  {
+    "id": "s784",
+    "es": "Mi papá se jubiló después de treinta años en el banco.",
+    "sk": "Otec odišiel do dôchodku po tridsiatich rokoch v banke.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "papá", "se", "jubiló", "después", "de", "treinta", "años", "en", "el", "banco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jubiló",
+        "lemma": "jubilarse",
+        "hint": "jubilarse · él · pretérito",
+        "distractors": ["jubila", "jubilaba", "jubilará"]
+      }
+    ]
+  },
+  {
+    "id": "s1583",
+    "es": "Me gustaría cambiar de carrera, pero me da miedo empezar de cero.",
+    "sk": "Rád by som zmenil profesiu, ale bojím sa začínať od nuly.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Me", "gustaría", "cambiar", "de", "carrera", ",", "pero", "me", "da", "miedo", "empezar", "de", "cero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "da",
+        "lemma": "dar",
+        "hint": "dar · él · presente",
+        "distractors": ["doy", "dio", "daba"]
+      }
+    ]
+  },
+  {
+    "id": "s1584",
+    "es": "Mientras yo preparaba la presentación, mis compañeros atendían a los clientes.",
+    "sk": "Kým som pripravoval prezentáciu, kolegovia sa venovali klientom.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "yo", "preparaba", "la", "presentación", ",", "mis", "compañeros", "atendían", "a", "los", "clientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "atendían",
+        "lemma": "atender",
+        "hint": "atender · ellos · imperfecto",
+        "distractors": ["atiende", "atendieron", "atenderán"]
+      }
+    ]
+  },
+  {
+    "id": "s1585",
+    "es": "Creo que merezco un aumento porque este año trabajé muchísimo.",
+    "sk": "Myslím, že si zaslúžim zvýšenie platu, lebo tento rok som makal ako kôň.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Creo", "que", "merezco", "un", "aumento", "porque", "este", "año", "trabajé", "muchísimo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "merezco",
+        "lemma": "merecer",
+        "hint": "merecer · yo · presente",
+        "distractors": ["mereces", "merecí", "merecía"]
+      }
+    ]
+  },
+  {
+    "id": "s793",
+    "es": "El sindicato rechazó la propuesta de la empresa.",
+    "sk": "Odbory odmietli návrh firmy.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["El", "sindicato", "rechazó", "la", "propuesta", "de", "la", "empresa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "rechazó",
+        "lemma": "rechazar",
+        "hint": "rechazar · él · pretérito",
+        "distractors": ["rechaza", "rechazaba", "rechazará"]
+      }
+    ]
+  },
+  {
+    "id": "s794",
+    "es": "Mi hermano chambea de lunes a sábado.",
+    "sk": "Môj brat maká od pondelka do soboty.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "chambea", "de", "lunes", "a", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "chambea",
+        "lemma": "chambear",
+        "hint": "chambear · él · presente",
+        "distractors": ["chambean", "chambeó", "chambeaba"]
+      }
+    ]
+  },
+  {
+    "id": "s795",
+    "es": "La nómina se paga cada quincena.",
+    "sk": "Výplaty sa vyplácajú každé dva týždne.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["La", "nómina", "se", "paga", "cada", "quincena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "quincena",
+        "lemma": "quincena",
+        "hint": "dva týždne (výplatné obdobie)",
+        "distractors": ["quinceañera", "cuarentena", "docena"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "paga",
+        "lemma": "pagar",
+        "hint": "pagar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["pagan", "pago"]
+      }
+    ],
+    "grammar": ["passive-se"]
+  },
+  {
+    "id": "s1624",
+    "es": "Mi jefe nos trata con mucho respeto.",
+    "sk": "Môj šéf sa k nám správa s veľkým rešpektom.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "jefe", "nos", "trata", "con", "mucho", "respeto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trata",
+        "lemma": "tratar",
+        "hint": "tratar · él · presente",
+        "distractors": ["trató", "trataba", "tratará"]
+      }
+    ]
+  },
+  {
+    "id": "s1586",
+    "es": "Estoy hasta el gorro de tantas juntas que no sirven para nada.",
+    "sk": "Mám plné zuby všetkých tých porád, ktoré sú úplne zbytočné.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Estoy", "hasta", "el", "gorro", "de", "tantas", "juntas", "que", "no", "sirven", "para", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "juntas",
+        "lemma": "junta",
+        "hint": "porady",
+        "distractors": ["quincenas", "vacantes", "renuncias"]
+      }
+    ]
+  },
+  {
+    "id": "s1587",
+    "es": "Mi cuñado anda sin chamba desde que cerró la fábrica.",
+    "sk": "Švagor je bez roboty, odkedy zatvorili továreň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "cuñado", "anda", "sin", "chamba", "desde", "que", "cerró", "la", "fábrica", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "cerró",
+        "lemma": "cerrar",
+        "hint": "cerrar · ella · pretérito",
+        "distractors": ["cierra", "cerré", "cerraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1588",
+    "es": "Le eché muchas ganas al proyecto y al final me lo reconocieron.",
+    "sk": "Do projektu som dal všetko a nakoniec to ocenili.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["preterito"],
+    "tokens": ["Le", "eché", "muchas", "ganas", "al", "proyecto", "y", "al", "final", "me", "lo", "reconocieron", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "reconocieron",
+        "lemma": "reconocer",
+        "hint": "reconocer · ellos · pretérito",
+        "distractors": ["reconoce", "reconocí", "reconocían"]
+      }
+    ]
+  },
+  {
+    "id": "s1589",
+    "es": "El aguinaldo llega en diciembre y casi todo se me va en regalos.",
+    "sk": "Vianočný príplatok chodí v decembri a takmer celý minem na darčeky.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["El", "aguinaldo", "llega", "en", "diciembre", "y", "casi", "todo", "se", "me", "va", "en", "regalos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "aguinaldo",
+        "lemma": "aguinaldo",
+        "hint": "vianočný príplatok",
+        "distractors": ["despido", "sindicato", "currículum"]
+      }
+    ]
+  },
+  {
+    "id": "s1590",
+    "es": "Trabajar desde casa me ahorra tiempo, aunque a veces extraño a mis compañeros.",
+    "sk": "Práca z domu mi šetrí čas, hoci kolegovia mi niekedy chýbajú.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Trabajar", "desde", "casa", "me", "ahorra", "tiempo", ",", "aunque", "a", "veces", "extraño", "a", "mis", "compañeros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "extraño",
+        "lemma": "extrañar",
+        "hint": "extrañar · yo · presente",
+        "distractors": ["extrañas", "extrañé", "extrañaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1591",
+    "es": "Exigimos que la empresa respete nuestras prestaciones y el horario acordado.",
+    "sk": "Požadujeme, aby firma rešpektovala naše benefity a dohodnutý pracovný čas.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Exigimos", "que", "la", "empresa", "respete", "nuestras", "prestaciones", "y", "el", "horario", "acordado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Exigimos",
+        "lemma": "exigir",
+        "hint": "exigir · nosotros · presente",
+        "distractors": ["Exijo", "Exigieron", "Exigíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1592",
+    "es": "Si la empresa no valora tu trabajo, mejor busca otra chamba.",
+    "sk": "Ak firma tvoju prácu neoceňuje, radšej si nájdi inú robotu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Si", "la", "empresa", "no", "valora", "tu", "trabajo", ",", "mejor", "busca", "otra", "chamba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "valora",
+        "lemma": "valorar",
+        "hint": "valorar · ella · presente",
+        "distractors": ["valoro", "valoró", "valoraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1593",
+    "es": "Con este sueldo apenas me alcanza para la renta y la comida.",
+    "sk": "S týmto platom mi sotva vystačí na nájom a jedlo.",
+    "level": "B2",
+    "topics": ["work"],
+    "tokens": ["Con", "este", "sueldo", "apenas", "me", "alcanza", "para", "la", "renta", "y", "la", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sueldo",
+        "lemma": "sueldo",
+        "hint": "plat",
+        "distractors": ["horario", "descanso", "escritorio"]
+      }
+    ]
+  },
+  {
+    "id": "s1594",
+    "es": "Al nuevo gerente le falta liderazgo; nadie le hace caso.",
+    "sk": "Novému manažérovi chýbajú vodcovské schopnosti, nikto ho nepočúva.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["presente"],
+    "tokens": ["Al", "nuevo", "gerente", "le", "falta", "liderazgo", ";", "nadie", "le", "hace", "caso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["hago", "hicieron", "harás"]
       }
     ]
   }

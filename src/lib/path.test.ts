@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { words } from '../data'
+import type { Grammar } from '../data/types'
 import type { LessonProgressionMap } from './lessonProgress'
 import { tipForCloze } from './tips'
 import { nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
@@ -110,6 +111,13 @@ describe('steps', () => {
           unit.id,
         ).toBe(true)
       }
+    }
+  })
+
+  it('give every usage unit sentences of its own on its tip', () => {
+    for (const unit of pathUnits.filter((u) => USAGE_TIPS.includes(u.grammar as Grammar))) {
+      const own = unitMaterial(unit).sentences.filter((s) => s.cloze?.some((c) => c.tip === unit.grammar))
+      expect(own.length, unit.id).toBeGreaterThanOrEqual(4)
     }
   })
 

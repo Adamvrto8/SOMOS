@@ -416,6 +416,199 @@
     ]
   },
   {
+    "id": "s1774",
+    "es": "Me puse triste porque mis amigos no habían escrito.",
+    "sk": "Bolo mi smutno, lebo mi priatelia nenapísali.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Me", "puse", "triste", "porque", "mis", "amigos", "no", "habían", "escrito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "escrito",
+        "lemma": "escribir",
+        "hint": "escribir · participio",
+        "distractors": ["escribe", "escribió", "escribiendo"]
+      }
+    ]
+  },
+  {
+    "id": "s1840",
+    "es": "Quiero que me digas qué te preocupa.",
+    "sk": "Chcem, aby si mi povedal, čo ťa trápi.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Quiero", "que", "me", "digas", "qué", "te", "preocupa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "digas",
+        "lemma": "decir",
+        "hint": "decir · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["dices", "dirás", "dijiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1842",
+    "es": "No quiero que te enojes conmigo.",
+    "sk": "Nechcem, aby si sa na mňa hneval.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["No", "quiero", "que", "te", "enojes", "conmigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "enojes",
+        "lemma": "enojarse",
+        "hint": "enojarse · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["enojas", "enojarás", "enojaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1844",
+    "es": "Me molesta que mis vecinos hagan tanto ruido.",
+    "sk": "Vadí mi, že moji susedia robia toľký hluk.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Me", "molesta", "que", "mis", "vecinos", "hagan", "tanto", "ruido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hagan",
+        "lemma": "hacer",
+        "hint": "hacer · ellos · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["hacen", "harán", "hicieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1846",
+    "es": "Espero que te sientas mejor pronto.",
+    "sk": "Dúfam, že sa čoskoro budeš cítiť lepšie.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Espero", "que", "te", "sientas", "mejor", "pronto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sientas",
+        "lemma": "sentirse",
+        "hint": "sentirse · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["sientes", "sentirás", "sentiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1848",
+    "es": "Te recomiendo que hables con alguien de confianza.",
+    "sk": "Odporúčam ti, aby si sa porozprával s niekým, komu dôveruješ.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Te", "recomiendo", "que", "hables", "con", "alguien", "de", "confianza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hables",
+        "lemma": "hablar",
+        "hint": "hablar · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["hablas", "hablarás", "hablaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1850",
+    "es": "Mi psicóloga me pide que escriba lo que siento.",
+    "sk": "Moja psychologička odo mňa chce, aby som písal, čo cítim.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Mi", "psicóloga", "me", "pide", "que", "escriba", "lo", "que", "siento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "escriba",
+        "lemma": "escribir",
+        "hint": "escribir · yo · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["escribo", "escribiré", "escribí"]
+      }
+    ]
+  },
+  {
+    "id": "s927",
+    "es": "Lloré de felicidad en la boda.",
+    "sk": "Na svadbe som plakala od šťastia.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Lloré", "de", "felicidad", "en", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lloré",
+        "lemma": "llorar",
+        "hint": "llorar · yo · pretérito",
+        "distractors": ["Llora", "Lloró", "Lloraba"]
+      }
+    ]
+  },
+  {
+    "id": "s928",
+    "es": "Odio esperar en el banco.",
+    "sk": "Neznášam čakanie v banke.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Odio", "esperar", "en", "el", "banco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Odio",
+        "lemma": "odiar",
+        "hint": "odiar · yo · presente",
+        "distractors": ["Odia", "Odié", "Odiaba"]
+      }
+    ]
+  },
+  {
+    "id": "s929",
+    "es": "Mi hija está nerviosa por el examen.",
+    "sk": "Moja dcéra je nervózna kvôli skúške.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["ser-estar"],
+    "tokens": ["Mi", "hija", "está", "nerviosa", "por", "el", "examen", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "state",
+        "distractors": ["es", "son", "estoy"]
+      }
+    ]
+  },
+  {
     "id": "s484",
     "es": "Mi vecino se queja de todo.",
     "sk": "Sused sa sťažuje na všetko.",
@@ -533,189 +726,74 @@
     ]
   },
   {
-    "id": "s535",
-    "es": "Se enojó conmigo porque olvidé su cumpleaños.",
-    "sk": "Nahnevala sa na mňa, lebo som zabudol na jej narodeniny.",
-    "level": "B1",
+    "id": "s1825",
+    "es": "Me molestó que no me escucharas.",
+    "sk": "Mrzelo ma, že si ma nepočúval.",
+    "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
-    "tokens": ["Se", "enojó", "conmigo", "porque", "olvidé", "su", "cumpleaños", "."],
+    "grammar": ["subj-imperfecto", "preterito"],
+    "tokens": ["Me", "molestó", "que", "no", "me", "escucharas", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "enojó",
-        "lemma": "enojarse",
-        "hint": "enojarse · ella · pretérito",
-        "distractors": ["enoja", "enojé", "enojará"]
+        "tokenIndex": 5,
+        "answer": "escucharas",
+        "lemma": "escuchar",
+        "hint": "escuchar · tú · subjuntivo imperfecto",
+        "distractors": ["escuches", "escuchabas", "escucharías"]
       }
     ]
   },
   {
-    "id": "s927",
-    "es": "Lloré de felicidad en la boda.",
-    "sk": "Na svadbe som plakala od šťastia.",
-    "level": "A2",
+    "id": "s1827",
+    "es": "Me alegraba que mis amigos me visitaran.",
+    "sk": "Tešilo ma, keď ma priatelia navštevovali.",
+    "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
-    "tokens": ["Lloré", "de", "felicidad", "en", "la", "boda", "."],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Me", "alegraba", "que", "mis", "amigos", "me", "visitaran", "."],
     "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Lloré",
-        "lemma": "llorar",
-        "hint": "llorar · yo · pretérito",
-        "distractors": ["Llora", "Lloró", "Lloraba"]
-      }
-    ]
-  },
-  {
-    "id": "s928",
-    "es": "Odio esperar en el banco.",
-    "sk": "Neznášam čakanie v banke.",
-    "level": "A2",
-    "topics": ["emotions"],
-    "grammar": ["presente"],
-    "tokens": ["Odio", "esperar", "en", "el", "banco", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Odio",
-        "lemma": "odiar",
-        "hint": "odiar · yo · presente",
-        "distractors": ["Odia", "Odié", "Odiaba"]
-      }
-    ]
-  },
-  {
-    "id": "s929",
-    "es": "Mi hija está nerviosa por el examen.",
-    "sk": "Moja dcéra je nervózna kvôli skúške.",
-    "level": "A2",
-    "topics": ["emotions"],
-    "grammar": ["ser-estar"],
-    "tokens": ["Mi", "hija", "está", "nerviosa", "por", "el", "examen", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "ser/estar · ella · presente",
-        "why": "state",
-        "distractors": ["es", "son", "estoy"]
-      }
-    ]
-  },
-  {
-    "id": "s930",
-    "es": "Después de correr diez kilómetros, estoy agotado.",
-    "sk": "Po desiatich kilometroch behu som úplne vyčerpaný.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "tokens": ["Después", "de", "correr", "diez", "kilómetros", ",", "estoy", "agotado", "."],
-    "cloze": [
-      {
-        "tokenIndex": 7,
-        "answer": "agotado",
-        "lemma": "agotado",
-        "hint": "vyčerpaný",
-        "distractors": ["agotada", "ahorrado", "aburrido"]
-      }
-    ]
-  },
-  {
-    "id": "s931",
-    "es": "Me sentí aliviado cuando llegó el doctor.",
-    "sk": "Uľavilo sa mi, keď prišiel lekár.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "tokens": ["Me", "sentí", "aliviado", "cuando", "llegó", "el", "doctor", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "aliviado",
-        "lemma": "aliviado",
-        "hint": "s úľavou",
-        "distractors": ["aliviada", "alineado", "olvidado"]
-      }
-    ]
-  },
-  {
-    "id": "s932",
-    "es": "Ya me acostumbré a vivir sola.",
-    "sk": "Už som si zvykla bývať sama.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["preterito"],
-    "tokens": ["Ya", "me", "acostumbré", "a", "vivir", "sola", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "acostumbré",
-        "lemma": "acostumbrarse",
-        "hint": "acostumbrarse · yo · pretérito",
-        "distractors": ["acostumbra", "acostumbró", "acostumbraba"]
-      }
-    ]
-  },
-  {
-    "id": "s933",
-    "es": "No aguanto a la gente que grita.",
-    "sk": "Neznášam ľudí, ktorí kričia.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["presente"],
-    "tokens": ["No", "aguanto", "a", "la", "gente", "que", "grita", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "aguanto",
-        "lemma": "aguantar",
-        "hint": "aguantar · yo · presente",
-        "distractors": ["aguanta", "aguanté", "aguantaba"]
-      }
-    ]
-  },
-  {
-    "id": "s934",
-    "es": "Confío en ti, sé que lo vas a hacer bien.",
-    "sk": "Verím ti, viem, že to zvládneš.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["presente", "object-pronouns"],
-    "tokens": ["Confío", "en", "ti", ",", "sé", "que", "lo", "vas", "a", "hacer", "bien", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Confío",
-        "lemma": "confiar",
-        "hint": "confiar · yo · presente",
-        "distractors": ["Confía", "Confié", "Confiaba"]
-      },
       {
         "tokenIndex": 6,
-        "answer": "lo",
-        "lemma": "lo",
-        "hint": "zámeno",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["la", "le"]
+        "answer": "visitaran",
+        "lemma": "visitar",
+        "hint": "visitar · ellos · subjuntivo imperfecto",
+        "distractors": ["visiten", "visitaban", "visitarían"]
       }
     ]
   },
   {
-    "id": "s935",
-    "es": "Es una persona muy sensible, llora con cualquier película.",
-    "sk": "Je to veľmi citlivý človek, plače pri každom filme.",
-    "level": "B1",
+    "id": "s1829",
+    "es": "Tenía miedo de que nadie quisiera hablar conmigo.",
+    "sk": "Bál som sa, že so mnou nebude nikto chcieť hovoriť.",
+    "level": "B2",
     "topics": ["emotions"],
-    "tokens": ["Es", "una", "persona", "muy", "sensible", ",", "llora", "con", "cualquier", "película", "."],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Tenía", "miedo", "de", "que", "nadie", "quisiera", "hablar", "conmigo", "."],
     "cloze": [
       {
-        "tokenIndex": 4,
-        "answer": "sensible",
-        "lemma": "sensible",
-        "hint": "citlivý",
-        "distractors": ["sensata", "sencilla", "razonable"]
+        "tokenIndex": 5,
+        "answer": "quisiera",
+        "lemma": "querer",
+        "hint": "querer · él · subjuntivo imperfecto",
+        "distractors": ["quiera", "quería", "querría"]
+      }
+    ]
+  },
+  {
+    "id": "s1831",
+    "es": "Era una lástima que ella se sintiera tan sola.",
+    "sk": "Bola škoda, že sa cítila taká osamelá.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Era", "una", "lástima", "que", "ella", "se", "sintiera", "tan", "sola", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sintiera",
+        "lemma": "sentirse",
+        "hint": "sentirse · ella · subjuntivo imperfecto",
+        "distractors": ["sienta", "sentía", "sentiría"]
       }
     ]
   },
@@ -873,75 +951,6 @@
         "lemma": "ilusionado",
         "hint": "nadšený (z toho, čo príde)",
         "distractors": ["ilusionadas", "iluminados", "emocionado"]
-      }
-    ]
-  },
-  {
-    "id": "s944",
-    "es": "Me atreví a hablar en público por primera vez.",
-    "sk": "Prvýkrát som sa odvážil hovoriť pred ľuďmi.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["preterito"],
-    "tokens": ["Me", "atreví", "a", "hablar", "en", "público", "por", "primera", "vez", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "atreví",
-        "lemma": "atreverse",
-        "hint": "atreverse · yo · pretérito",
-        "distractors": ["atreve", "atrevió", "atrevía"]
-      }
-    ]
-  },
-  {
-    "id": "s945",
-    "es": "Le falta autoestima, no cree en sí misma.",
-    "sk": "Chýba jej sebavedomie, neverí si.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "tokens": ["Le", "falta", "autoestima", ",", "no", "cree", "en", "sí", "misma", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "autoestima",
-        "lemma": "autoestima",
-        "hint": "sebavedomie",
-        "distractors": ["autobús", "estima", "autopista"]
-      }
-    ]
-  },
-  {
-    "id": "s946",
-    "es": "Estoy muy apenado por llegar tarde.",
-    "sk": "Veľmi sa ospravedlňujem, že meškám.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "tokens": ["Estoy", "muy", "apenado", "por", "llegar", "tarde", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "apenado",
-        "lemma": "apenado",
-        "hint": "zahanbený (MX)",
-        "distractors": ["apenada", "apagado", "peinado"]
-      }
-    ]
-  },
-  {
-    "id": "s947",
-    "es": "No le guardo rencor a nadie.",
-    "sk": "Na nikoho nemám zášť.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "tokens": ["No", "le", "guardo", "rencor", "a", "nadie", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "rencor",
-        "lemma": "rencor",
-        "hint": "zášť",
-        "distractors": ["rincón", "rumor", "calor"]
       }
     ]
   },
@@ -1196,135 +1205,331 @@
     ]
   },
   {
-    "id": "s1139",
-    "es": "Le tengo mucha confianza a mi hermano mayor.",
-    "sk": "Staršiemu bratovi veľmi dôverujem.",
+    "id": "s535",
+    "es": "Se enojó conmigo porque olvidé su cumpleaños.",
+    "sk": "Nahnevala sa na mňa, lebo som zabudol na jej narodeniny.",
     "level": "B1",
     "topics": ["emotions"],
-    "tokens": ["Le", "tengo", "mucha", "confianza", "a", "mi", "hermano", "mayor", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Se", "enojó", "conmigo", "porque", "olvidé", "su", "cumpleaños", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
-        "answer": "confianza",
-        "lemma": "confianza",
-        "hint": "dôvera",
-        "distractors": ["soledad", "alegría", "sorpresa"]
+        "tokenIndex": 1,
+        "answer": "enojó",
+        "lemma": "enojarse",
+        "hint": "enojarse · ella · pretérito",
+        "distractors": ["enoja", "enojé", "enojará"]
       }
     ]
   },
   {
-    "id": "s1140",
-    "es": "Estaba celoso porque mi novia platicaba mucho con su ex.",
-    "sk": "Žiarlil som, lebo sa priateľka veľa rozprávala so svojím bývalým.",
+    "id": "s930",
+    "es": "Después de correr diez kilómetros, estoy agotado.",
+    "sk": "Po desiatich kilometroch behu som úplne vyčerpaný.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Estaba", "celoso", "porque", "mi", "novia", "platicaba", "mucho", "con", "su", "ex", "."],
+    "tokens": ["Después", "de", "correr", "diez", "kilómetros", ",", "estoy", "agotado", "."],
     "cloze": [
       {
-        "tokenIndex": 5,
-        "answer": "platicaba",
-        "lemma": "platicar",
-        "hint": "platicar · ella · imperfecto",
-        "distractors": ["platicábamos", "platica", "platico"]
+        "tokenIndex": 7,
+        "answer": "agotado",
+        "lemma": "agotado",
+        "hint": "vyčerpaný",
+        "distractors": ["agotada", "ahorrado", "aburrido"]
       }
     ]
   },
   {
-    "id": "s1141",
-    "es": "Cuando supe la noticia, me sentí muy agradecido con todos.",
-    "sk": "Keď som sa dozvedel tú správu, cítil som sa všetkým veľmi vďačný.",
+    "id": "s931",
+    "es": "Me sentí aliviado cuando llegó el doctor.",
+    "sk": "Uľavilo sa mi, keď prišiel lekár.",
     "level": "B1",
     "topics": ["emotions"],
-    "tokens": ["Cuando", "supe", "la", "noticia", ",", "me", "sentí", "muy", "agradecido", "con", "todos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "agradecido",
-        "lemma": "agradecido",
-        "hint": "vďačný",
-        "distractors": ["celoso", "egoísta", "flojo"]
-      }
-    ]
-  },
-  {
-    "id": "s1142",
-    "es": "Hay que tener paciencia con los niños pequeños.",
-    "sk": "S malými deťmi treba mať trpezlivosť.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "tokens": ["Hay", "que", "tener", "paciencia", "con", "los", "niños", "pequeños", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "paciencia",
-        "lemma": "paciencia",
-        "hint": "trpezlivosť",
-        "distractors": ["ansiedad", "envidia", "culpa"]
-      },
-      {
-        "tokenIndex": 0,
-        "answer": "Hay",
-        "lemma": "hay",
-        "hint": "treba",
-        "tip": "obligation",
-        "why": "hay-que",
-        "distractors": ["Tiene", "Es"]
-      }
-    ],
-    "grammar": ["obligation"]
-  },
-  {
-    "id": "s1143",
-    "es": "No es tu culpa; a veces las cosas salen mal.",
-    "sk": "Nie je to tvoja chyba, niekedy sa veci pokazia.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["presente"],
-    "tokens": ["No", "es", "tu", "culpa", ";", "a", "veces", "las", "cosas", "salen", "mal", "."],
-    "cloze": [
-      {
-        "tokenIndex": 9,
-        "answer": "salen",
-        "lemma": "salir",
-        "hint": "salir · ellas · presente",
-        "distractors": ["salgo", "salieron", "salía"]
-      }
-    ]
-  },
-  {
-    "id": "s1144",
-    "es": "Mi hermana sufre de ansiedad, por eso evita los lugares con mucha gente.",
-    "sk": "Sestra trpí úzkosťou, preto sa vyhýba miestam, kde je veľa ľudí.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "hermana", "sufre", "de", "ansiedad", ",", "por", "eso", "evita", "los", "lugares", "con", "mucha", "gente", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "evita",
-        "lemma": "evitar",
-        "hint": "evitar · ella · presente",
-        "distractors": ["evitamos", "evitó", "evitaba"]
-      }
-    ]
-  },
-  {
-    "id": "s1145",
-    "es": "Antes me daba envidia su éxito, pero ahora me alegro por él.",
-    "sk": "Kedysi som mu závidel úspech, ale teraz mu ho prajem.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Antes", "me", "daba", "envidia", "su", "éxito", ",", "pero", "ahora", "me", "alegro", "por", "él", "."],
+    "tokens": ["Me", "sentí", "aliviado", "cuando", "llegó", "el", "doctor", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "daba",
-        "lemma": "dar",
-        "hint": "dar · él · imperfecto",
-        "distractors": ["dábamos", "da", "doy"]
+        "answer": "aliviado",
+        "lemma": "aliviado",
+        "hint": "s úľavou",
+        "distractors": ["aliviada", "alineado", "olvidado"]
+      }
+    ]
+  },
+  {
+    "id": "s932",
+    "es": "Ya me acostumbré a vivir sola.",
+    "sk": "Už som si zvykla bývať sama.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Ya", "me", "acostumbré", "a", "vivir", "sola", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "acostumbré",
+        "lemma": "acostumbrarse",
+        "hint": "acostumbrarse · yo · pretérito",
+        "distractors": ["acostumbra", "acostumbró", "acostumbraba"]
+      }
+    ]
+  },
+  {
+    "id": "s933",
+    "es": "No aguanto a la gente que grita.",
+    "sk": "Neznášam ľudí, ktorí kričia.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["No", "aguanto", "a", "la", "gente", "que", "grita", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "aguanto",
+        "lemma": "aguantar",
+        "hint": "aguantar · yo · presente",
+        "distractors": ["aguanta", "aguanté", "aguantaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1841",
+    "es": "Mi mamá quiere que yo sea más feliz.",
+    "sk": "Moja mama chce, aby som bol šťastnejší.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Mi", "mamá", "quiere", "que", "yo", "sea", "más", "feliz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sea",
+        "lemma": "ser",
+        "hint": "ser · yo · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["soy", "seré", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s1843",
+    "es": "Me alegra que estés aquí.",
+    "sk": "Teší ma, že si tu.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Me", "alegra", "que", "estés", "aquí", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estés",
+        "lemma": "estar",
+        "hint": "estar · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["estás", "estarás", "estuviste"]
+      }
+    ]
+  },
+  {
+    "id": "s944",
+    "es": "Me atreví a hablar en público por primera vez.",
+    "sk": "Prvýkrát som sa odvážil hovoriť pred ľuďmi.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "atreví", "a", "hablar", "en", "público", "por", "primera", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "atreví",
+        "lemma": "atreverse",
+        "hint": "atreverse · yo · pretérito",
+        "distractors": ["atreve", "atrevió", "atrevía"]
+      }
+    ]
+  },
+  {
+    "id": "s945",
+    "es": "Le falta autoestima, no cree en sí misma.",
+    "sk": "Chýba jej sebavedomie, neverí si.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Le", "falta", "autoestima", ",", "no", "cree", "en", "sí", "misma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "autoestima",
+        "lemma": "autoestima",
+        "hint": "sebavedomie",
+        "distractors": ["autobús", "estima", "autopista"]
+      }
+    ]
+  },
+  {
+    "id": "s1826",
+    "es": "Ojalá pudiera dormir sin preocuparme tanto.",
+    "sk": "Kiežby som mohol spať bez toľkých starostí.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subj-imperfecto"],
+    "tokens": ["Ojalá", "pudiera", "dormir", "sin", "preocuparme", "tanto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pudiera",
+        "lemma": "poder",
+        "hint": "poder · yo · subjuntivo imperfecto",
+        "distractors": ["pueda", "podía", "podría"]
+      }
+    ]
+  },
+  {
+    "id": "s1828",
+    "es": "Si fueras más paciente, no te enojarías tanto.",
+    "sk": "Keby si bol trpezlivejší, tak by si sa tak nehneval.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Si", "fueras", "más", "paciente", ",", "no", "te", "enojarías", "tanto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "fueras",
+        "lemma": "ser",
+        "hint": "ser · tú · subjuntivo imperfecto",
+        "distractors": ["seas", "eras", "serías"]
+      }
+    ]
+  },
+  {
+    "id": "s1830",
+    "es": "Sentía como si todos me miraran.",
+    "sk": "Cítil som sa, akoby sa na mňa všetci pozerali.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Sentía", "como", "si", "todos", "me", "miraran", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "miraran",
+        "lemma": "mirar",
+        "hint": "mirar · ellos · subjuntivo imperfecto",
+        "distractors": ["miren", "miraban", "mirarían"]
+      }
+    ]
+  },
+  {
+    "id": "s1832",
+    "es": "Si pudieras cambiar algo de tu vida, ¿qué cambiarías?",
+    "sk": "Keby si mohol zmeniť niečo vo svojom živote, čo by si zmenil?",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Si", "pudieras", "cambiar", "algo", "de", "tu", "vida", ",", "¿", "qué", "cambiarías", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pudieras",
+        "lemma": "poder",
+        "hint": "poder · tú · subjuntivo imperfecto",
+        "distractors": ["puedas", "podías", "podrías"]
+      }
+    ]
+  },
+  {
+    "id": "s946",
+    "es": "Estoy muy apenado por llegar tarde.",
+    "sk": "Veľmi sa ospravedlňujem, že meškám.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["Estoy", "muy", "apenado", "por", "llegar", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "apenado",
+        "lemma": "apenado",
+        "hint": "zahanbený (MX)",
+        "distractors": ["apenada", "apagado", "peinado"]
+      }
+    ]
+  },
+  {
+    "id": "s947",
+    "es": "No le guardo rencor a nadie.",
+    "sk": "Na nikoho nemám zášť.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "tokens": ["No", "le", "guardo", "rencor", "a", "nadie", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rencor",
+        "lemma": "rencor",
+        "hint": "zášť",
+        "distractors": ["rincón", "rumor", "calor"]
+      }
+    ]
+  },
+  {
+    "id": "s1845",
+    "es": "Me preocupa que no duermas bien.",
+    "sk": "Robí mi starosti, že zle spíš.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Me", "preocupa", "que", "no", "duermas", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "duermas",
+        "lemma": "dormir",
+        "hint": "dormir · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["duermes", "dormirás", "dormiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1847",
+    "es": "Tengo miedo de que me dejen solo.",
+    "sk": "Bojím sa, že ma nechajú samého.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Tengo", "miedo", "de", "que", "me", "dejen", "solo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "dejen",
+        "lemma": "dejar",
+        "hint": "dejar · ellos · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["dejan", "dejarán", "dejaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1849",
+    "es": "Es mejor que respires profundo antes de contestar.",
+    "sk": "Je lepšie, keď sa pred odpoveďou zhlboka nadýchneš.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Es", "mejor", "que", "respires", "profundo", "antes", "de", "contestar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "respires",
+        "lemma": "respirar",
+        "hint": "respirar · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["respiras", "respirarás", "respiraste"]
       }
     ]
   },
@@ -1482,6 +1687,203 @@
     ]
   },
   {
+    "id": "s1851",
+    "es": "Ojalá que seamos felices siempre.",
+    "sk": "Kiežby sme boli navždy šťastní.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Ojalá", "que", "seamos", "felices", "siempre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "seamos",
+        "lemma": "ser",
+        "hint": "ser · nosotros",
+        "tip": "subjuntivo-wishes",
+        "why": "ojala",
+        "distractors": ["somos", "seremos", "fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s934",
+    "es": "Confío en ti, sé que lo vas a hacer bien.",
+    "sk": "Verím ti, viem, že to zvládneš.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente", "object-pronouns"],
+    "tokens": ["Confío", "en", "ti", ",", "sé", "que", "lo", "vas", "a", "hacer", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Confío",
+        "lemma": "confiar",
+        "hint": "confiar · yo · presente",
+        "distractors": ["Confía", "Confié", "Confiaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["la", "le"]
+      }
+    ]
+  },
+  {
+    "id": "s935",
+    "es": "Es una persona muy sensible, llora con cualquier película.",
+    "sk": "Je to veľmi citlivý človek, plače pri každom filme.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Es", "una", "persona", "muy", "sensible", ",", "llora", "con", "cualquier", "película", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sensible",
+        "lemma": "sensible",
+        "hint": "citlivý",
+        "distractors": ["sensata", "sencilla", "razonable"]
+      }
+    ]
+  },
+  {
+    "id": "s1139",
+    "es": "Le tengo mucha confianza a mi hermano mayor.",
+    "sk": "Staršiemu bratovi veľmi dôverujem.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Le", "tengo", "mucha", "confianza", "a", "mi", "hermano", "mayor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "confianza",
+        "lemma": "confianza",
+        "hint": "dôvera",
+        "distractors": ["soledad", "alegría", "sorpresa"]
+      }
+    ]
+  },
+  {
+    "id": "s1140",
+    "es": "Estaba celoso porque mi novia platicaba mucho con su ex.",
+    "sk": "Žiarlil som, lebo sa priateľka veľa rozprávala so svojím bývalým.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Estaba", "celoso", "porque", "mi", "novia", "platicaba", "mucho", "con", "su", "ex", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "platicaba",
+        "lemma": "platicar",
+        "hint": "platicar · ella · imperfecto",
+        "distractors": ["platicábamos", "platica", "platico"]
+      }
+    ]
+  },
+  {
+    "id": "s1141",
+    "es": "Cuando supe la noticia, me sentí muy agradecido con todos.",
+    "sk": "Keď som sa dozvedel tú správu, cítil som sa všetkým veľmi vďačný.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Cuando", "supe", "la", "noticia", ",", "me", "sentí", "muy", "agradecido", "con", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "agradecido",
+        "lemma": "agradecido",
+        "hint": "vďačný",
+        "distractors": ["celoso", "egoísta", "flojo"]
+      }
+    ]
+  },
+  {
+    "id": "s1142",
+    "es": "Hay que tener paciencia con los niños pequeños.",
+    "sk": "S malými deťmi treba mať trpezlivosť.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "tokens": ["Hay", "que", "tener", "paciencia", "con", "los", "niños", "pequeños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "paciencia",
+        "lemma": "paciencia",
+        "hint": "trpezlivosť",
+        "distractors": ["ansiedad", "envidia", "culpa"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["Tiene", "Es"]
+      }
+    ],
+    "grammar": ["obligation"]
+  },
+  {
+    "id": "s1143",
+    "es": "No es tu culpa; a veces las cosas salen mal.",
+    "sk": "Nie je to tvoja chyba, niekedy sa veci pokazia.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["No", "es", "tu", "culpa", ";", "a", "veces", "las", "cosas", "salen", "mal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "salen",
+        "lemma": "salir",
+        "hint": "salir · ellas · presente",
+        "distractors": ["salgo", "salieron", "salía"]
+      }
+    ]
+  },
+  {
+    "id": "s1144",
+    "es": "Mi hermana sufre de ansiedad, por eso evita los lugares con mucha gente.",
+    "sk": "Sestra trpí úzkosťou, preto sa vyhýba miestam, kde je veľa ľudí.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermana", "sufre", "de", "ansiedad", ",", "por", "eso", "evita", "los", "lugares", "con", "mucha", "gente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "evita",
+        "lemma": "evitar",
+        "hint": "evitar · ella · presente",
+        "distractors": ["evitamos", "evitó", "evitaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1145",
+    "es": "Antes me daba envidia su éxito, pero ahora me alegro por él.",
+    "sk": "Kedysi som mu závidel úspech, ale teraz mu ho prajem.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "me", "daba", "envidia", "su", "éxito", ",", "pero", "ahora", "me", "alegro", "por", "él", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "daba",
+        "lemma": "dar",
+        "hint": "dar · él · imperfecto",
+        "distractors": ["dábamos", "da", "doy"]
+      }
+    ]
+  },
+  {
     "id": "s1616",
     "es": "Rompimos hace un mes, pero seguimos siendo amigos.",
     "sk": "Rozišli sme sa pred mesiacom, ale stále sme kamaráti.",
@@ -1514,408 +1916,6 @@
         "lemma": "tratar",
         "hint": "tratar · yo · pretérito",
         "distractors": ["Trato", "Trataba", "Trataré"]
-      }
-    ]
-  },
-  {
-    "id": "s1774",
-    "es": "Me puse triste porque mis amigos no habían escrito.",
-    "sk": "Bolo mi smutno, lebo mi priatelia nenapísali.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["pluscuamperfecto", "preterito"],
-    "tokens": ["Me", "puse", "triste", "porque", "mis", "amigos", "no", "habían", "escrito", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "escrito",
-        "lemma": "escribir",
-        "hint": "escribir · participio",
-        "distractors": ["escribe", "escribió", "escribiendo"]
-      }
-    ]
-  },
-  {
-    "id": "s1825",
-    "es": "Me molestó que no me escucharas.",
-    "sk": "Mrzelo ma, že si ma nepočúval.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "preterito"],
-    "tokens": ["Me", "molestó", "que", "no", "me", "escucharas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "escucharas",
-        "lemma": "escuchar",
-        "hint": "escuchar · tú · subjuntivo imperfecto",
-        "distractors": ["escuches", "escuchabas", "escucharías"]
-      }
-    ]
-  },
-  {
-    "id": "s1826",
-    "es": "Ojalá pudiera dormir sin preocuparme tanto.",
-    "sk": "Kiežby som mohol spať bez toľkých starostí.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto"],
-    "tokens": ["Ojalá", "pudiera", "dormir", "sin", "preocuparme", "tanto", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "pudiera",
-        "lemma": "poder",
-        "hint": "poder · yo · subjuntivo imperfecto",
-        "distractors": ["pueda", "podía", "podría"]
-      }
-    ]
-  },
-  {
-    "id": "s1827",
-    "es": "Me alegraba que mis amigos me visitaran.",
-    "sk": "Tešilo ma, keď ma priatelia navštevovali.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "imperfecto"],
-    "tokens": ["Me", "alegraba", "que", "mis", "amigos", "me", "visitaran", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "visitaran",
-        "lemma": "visitar",
-        "hint": "visitar · ellos · subjuntivo imperfecto",
-        "distractors": ["visiten", "visitaban", "visitarían"]
-      }
-    ]
-  },
-  {
-    "id": "s1828",
-    "es": "Si fueras más paciente, no te enojarías tanto.",
-    "sk": "Keby si bol trpezlivejší, tak by si sa tak nehneval.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "condicional"],
-    "tokens": ["Si", "fueras", "más", "paciente", ",", "no", "te", "enojarías", "tanto", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "fueras",
-        "lemma": "ser",
-        "hint": "ser · tú · subjuntivo imperfecto",
-        "distractors": ["seas", "eras", "serías"]
-      }
-    ]
-  },
-  {
-    "id": "s1829",
-    "es": "Tenía miedo de que nadie quisiera hablar conmigo.",
-    "sk": "Bál som sa, že so mnou nebude nikto chcieť hovoriť.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "imperfecto"],
-    "tokens": ["Tenía", "miedo", "de", "que", "nadie", "quisiera", "hablar", "conmigo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "quisiera",
-        "lemma": "querer",
-        "hint": "querer · él · subjuntivo imperfecto",
-        "distractors": ["quiera", "quería", "querría"]
-      }
-    ]
-  },
-  {
-    "id": "s1830",
-    "es": "Sentía como si todos me miraran.",
-    "sk": "Cítil som sa, akoby sa na mňa všetci pozerali.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "imperfecto"],
-    "tokens": ["Sentía", "como", "si", "todos", "me", "miraran", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "miraran",
-        "lemma": "mirar",
-        "hint": "mirar · ellos · subjuntivo imperfecto",
-        "distractors": ["miren", "miraban", "mirarían"]
-      }
-    ]
-  },
-  {
-    "id": "s1831",
-    "es": "Era una lástima que ella se sintiera tan sola.",
-    "sk": "Bola škoda, že sa cítila taká osamelá.",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "imperfecto"],
-    "tokens": ["Era", "una", "lástima", "que", "ella", "se", "sintiera", "tan", "sola", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "sintiera",
-        "lemma": "sentirse",
-        "hint": "sentirse · ella · subjuntivo imperfecto",
-        "distractors": ["sienta", "sentía", "sentiría"]
-      }
-    ]
-  },
-  {
-    "id": "s1832",
-    "es": "Si pudieras cambiar algo de tu vida, ¿qué cambiarías?",
-    "sk": "Keby si mohol zmeniť niečo vo svojom živote, čo by si zmenil?",
-    "level": "B2",
-    "topics": ["emotions"],
-    "grammar": ["subj-imperfecto", "condicional"],
-    "tokens": ["Si", "pudieras", "cambiar", "algo", "de", "tu", "vida", ",", "¿", "qué", "cambiarías", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "pudieras",
-        "lemma": "poder",
-        "hint": "poder · tú · subjuntivo imperfecto",
-        "distractors": ["puedas", "podías", "podrías"]
-      }
-    ]
-  },
-  {
-    "id": "s1840",
-    "es": "Quiero que me digas qué te preocupa.",
-    "sk": "Chcem, aby si mi povedal, čo ťa trápi.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Quiero", "que", "me", "digas", "qué", "te", "preocupa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "digas",
-        "lemma": "decir",
-        "hint": "decir · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "wish",
-        "distractors": ["dices", "dirás", "dijiste"]
-      }
-    ]
-  },
-  {
-    "id": "s1841",
-    "es": "Mi mamá quiere que yo sea más feliz.",
-    "sk": "Moja mama chce, aby som bol šťastnejší.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Mi", "mamá", "quiere", "que", "yo", "sea", "más", "feliz", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "sea",
-        "lemma": "ser",
-        "hint": "ser · yo · subjuntivo",
-        "tip": "subjuntivo-wishes",
-        "why": "wish",
-        "distractors": ["soy", "seré", "fui"]
-      }
-    ]
-  },
-  {
-    "id": "s1842",
-    "es": "No quiero que te enojes conmigo.",
-    "sk": "Nechcem, aby si sa na mňa hneval.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["No", "quiero", "que", "te", "enojes", "conmigo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "enojes",
-        "lemma": "enojarse",
-        "hint": "enojarse · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "wish",
-        "distractors": ["enojas", "enojarás", "enojaste"]
-      }
-    ]
-  },
-  {
-    "id": "s1843",
-    "es": "Me alegra que estés aquí.",
-    "sk": "Teší ma, že si tu.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Me", "alegra", "que", "estés", "aquí", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "estés",
-        "lemma": "estar",
-        "hint": "estar · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["estás", "estarás", "estuviste"]
-      }
-    ]
-  },
-  {
-    "id": "s1844",
-    "es": "Me molesta que mis vecinos hagan tanto ruido.",
-    "sk": "Vadí mi, že moji susedia robia toľký hluk.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Me", "molesta", "que", "mis", "vecinos", "hagan", "tanto", "ruido", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "hagan",
-        "lemma": "hacer",
-        "hint": "hacer · ellos · subjuntivo",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["hacen", "harán", "hicieron"]
-      }
-    ]
-  },
-  {
-    "id": "s1845",
-    "es": "Me preocupa que no duermas bien.",
-    "sk": "Robí mi starosti, že zle spíš.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Me", "preocupa", "que", "no", "duermas", "bien", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "duermas",
-        "lemma": "dormir",
-        "hint": "dormir · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["duermes", "dormirás", "dormiste"]
-      }
-    ]
-  },
-  {
-    "id": "s1846",
-    "es": "Espero que te sientas mejor pronto.",
-    "sk": "Dúfam, že sa čoskoro budeš cítiť lepšie.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Espero", "que", "te", "sientas", "mejor", "pronto", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "sientas",
-        "lemma": "sentirse",
-        "hint": "sentirse · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["sientes", "sentirás", "sentiste"]
-      }
-    ]
-  },
-  {
-    "id": "s1847",
-    "es": "Tengo miedo de que me dejen solo.",
-    "sk": "Bojím sa, že ma nechajú samého.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Tengo", "miedo", "de", "que", "me", "dejen", "solo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "dejen",
-        "lemma": "dejar",
-        "hint": "dejar · ellos · subjuntivo",
-        "tip": "subjuntivo-wishes",
-        "why": "feelings",
-        "distractors": ["dejan", "dejarán", "dejaron"]
-      }
-    ]
-  },
-  {
-    "id": "s1848",
-    "es": "Te recomiendo que hables con alguien de confianza.",
-    "sk": "Odporúčam ti, aby si sa porozprával s niekým, komu dôveruješ.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Te", "recomiendo", "que", "hables", "con", "alguien", "de", "confianza", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "hables",
-        "lemma": "hablar",
-        "hint": "hablar · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "advice",
-        "distractors": ["hablas", "hablarás", "hablaste"]
-      }
-    ]
-  },
-  {
-    "id": "s1849",
-    "es": "Es mejor que respires profundo antes de contestar.",
-    "sk": "Je lepšie, keď sa pred odpoveďou zhlboka nadýchneš.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Es", "mejor", "que", "respires", "profundo", "antes", "de", "contestar", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "respires",
-        "lemma": "respirar",
-        "hint": "respirar · tú",
-        "tip": "subjuntivo-wishes",
-        "why": "advice",
-        "distractors": ["respiras", "respirarás", "respiraste"]
-      }
-    ]
-  },
-  {
-    "id": "s1850",
-    "es": "Mi psicóloga me pide que escriba lo que siento.",
-    "sk": "Moja psychologička odo mňa chce, aby som písal, čo cítim.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Mi", "psicóloga", "me", "pide", "que", "escriba", "lo", "que", "siento", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "escriba",
-        "lemma": "escribir",
-        "hint": "escribir · yo · subjuntivo",
-        "tip": "subjuntivo-wishes",
-        "why": "advice",
-        "distractors": ["escribo", "escribiré", "escribí"]
-      }
-    ]
-  },
-  {
-    "id": "s1851",
-    "es": "Ojalá que seamos felices siempre.",
-    "sk": "Kiežby sme boli navždy šťastní.",
-    "level": "B1",
-    "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
-    "tokens": ["Ojalá", "que", "seamos", "felices", "siempre", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "seamos",
-        "lemma": "ser",
-        "hint": "ser · nosotros",
-        "tip": "subjuntivo-wishes",
-        "why": "ojala",
-        "distractors": ["somos", "seremos", "fuimos"]
       }
     ]
   }

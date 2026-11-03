@@ -1,5 +1,115 @@
 [
   {
+    "id": "s1772",
+    "es": "Perdí mi tarea porque no había guardado el archivo.",
+    "sk": "Stratil som úlohu, lebo som si neuložil súbor.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Perdí", "mi", "tarea", "porque", "no", "había", "guardado", "el", "archivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "guardado",
+        "lemma": "guardar",
+        "hint": "guardar · participio",
+        "distractors": ["guardando", "guardó", "guardar"]
+      }
+    ]
+  },
+  {
+    "id": "s1802",
+    "es": "¿Podrías prestarme tu celular un momento?",
+    "sk": "Mohol by si mi na chvíľu požičať svoj mobil?",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["¿", "Podrías", "prestarme", "tu", "celular", "un", "momento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podrías",
+        "lemma": "poder",
+        "hint": "poder · tú · condicional",
+        "distractors": ["Podrás", "Podías", "Puedes"]
+      }
+    ]
+  },
+  {
+    "id": "s1803",
+    "es": "Yo compraría una computadora nueva, pero está muy cara.",
+    "sk": "Kúpil by som si nový počítač, ale je veľmi drahý.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Yo", "compraría", "una", "computadora", "nueva", ",", "pero", "está", "muy", "cara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compraría",
+        "lemma": "comprar",
+        "hint": "comprar · yo · condicional",
+        "distractors": ["compraré", "compraba", "compro"]
+      }
+    ]
+  },
+  {
+    "id": "s1804",
+    "es": "Me dijo que me mandaría el archivo por correo.",
+    "sk": "Povedal mi, že mi pošle súbor e-mailom.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "dijo", "que", "me", "mandaría", "el", "archivo", "por", "correo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "mandaría",
+        "lemma": "mandar",
+        "hint": "mandar · él · condicional",
+        "distractors": ["mandará", "mandaba", "manda"]
+      }
+    ]
+  },
+  {
+    "id": "s1805",
+    "es": "Sería más fácil usar la aplicación del celular.",
+    "sk": "Bolo by jednoduchšie použiť aplikáciu v mobile.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Sería", "más", "fácil", "usar", "la", "aplicación", "del", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Sería",
+        "lemma": "ser",
+        "hint": "ser · él · condicional",
+        "distractors": ["Será", "Era", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s1903",
+    "es": "Te mando el archivo por correo.",
+    "sk": "Pošlem ti súbor e-mailom.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Te", "mando", "el", "archivo", "por", "correo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
     "id": "s447",
     "es": "Se me acabó la batería y no pude llamarte.",
     "sk": "Vybila sa mi batéria a nemohol som ti zavolať.",
@@ -150,115 +260,6 @@
     ]
   },
   {
-    "id": "s455",
-    "es": "La impresora está descompuesta otra vez.",
-    "sk": "Tlačiareň je zase pokazená.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["presente", "ser-estar"],
-    "tokens": ["La", "impresora", "está", "descompuesta", "otra", "vez", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "ser/estar · ella · presente",
-        "why": "result",
-        "distractors": ["es", "están", "estás"]
-      }
-    ]
-  },
-  {
-    "id": "s456",
-    "es": "Todos mis amigos compartieron la noticia.",
-    "sk": "Všetci moji kamaráti zdieľali tú správu.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["preterito"],
-    "tokens": ["Todos", "mis", "amigos", "compartieron", "la", "noticia", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "compartieron",
-        "lemma": "compartir",
-        "hint": "compartir · ellos · pretérito",
-        "distractors": ["compartiste", "compartimos", "compartían"]
-      }
-    ]
-  },
-  {
-    "id": "s579",
-    "es": "Se me descompuso la computadora y perdí todos mis archivos.",
-    "sk": "Pokazil sa mi počítač a stratil som všetky súbory.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["preterito"],
-    "tokens": ["Se", "me", "descompuso", "la", "computadora", "y", "perdí", "todos", "mis", "archivos", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "perdí",
-        "lemma": "perder",
-        "hint": "perder · yo · pretérito",
-        "distractors": ["pierdo", "perdió", "perderé"]
-      }
-    ]
-  },
-  {
-    "id": "s580",
-    "es": "¿Ya descargaste la aplicación del banco?",
-    "sk": "Už si si stiahol aplikáciu banky?",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["preterito"],
-    "tokens": ["¿", "Ya", "descargaste", "la", "aplicación", "del", "banco", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "aplicación",
-        "lemma": "aplicación",
-        "hint": "aplikácia",
-        "distractors": ["aplicaciones", "archivo", "usuario"]
-      }
-    ]
-  },
-  {
-    "id": "s581",
-    "es": "Cuando no había internet, escribíamos cartas.",
-    "sk": "Keď nebol internet, písali sme listy.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Cuando", "no", "había", "internet", ",", "escribíamos", "cartas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "escribíamos",
-        "lemma": "escribir",
-        "hint": "escribir · nosotros · imperfecto",
-        "distractors": ["escriben", "escribía", "escribiré"]
-      }
-    ]
-  },
-  {
-    "id": "s582",
-    "es": "Te mandaré el archivo esta noche.",
-    "sk": "Ten súbor ti pošlem dnes večer.",
-    "level": "B1",
-    "topics": ["tech", "work"],
-    "grammar": ["futuro"],
-    "tokens": ["Te", "mandaré", "el", "archivo", "esta", "noche", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "mandaré",
-        "lemma": "mandar",
-        "hint": "mandar · yo · futuro",
-        "distractors": ["mandé", "manda", "mandaba"]
-      }
-    ]
-  },
-  {
     "id": "s967",
     "es": "La impresora no funciona otra vez.",
     "sk": "Tlačiareň zase nefunguje.",
@@ -367,107 +368,111 @@
     ]
   },
   {
-    "id": "s973",
-    "es": "Te mando el enlace por WhatsApp.",
-    "sk": "Pošlem ti odkaz cez WhatsApp.",
+    "id": "s455",
+    "es": "La impresora está descompuesta otra vez.",
+    "sk": "Tlačiareň je zase pokazená.",
     "level": "B1",
     "topics": ["tech"],
-    "tokens": ["Te", "mando", "el", "enlace", "por", "WhatsApp", "."],
+    "grammar": ["presente", "ser-estar"],
+    "tokens": ["La", "impresora", "está", "descompuesta", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "ser/estar · ella · presente",
+        "why": "result",
+        "distractors": ["es", "están", "estás"]
+      }
+    ]
+  },
+  {
+    "id": "s456",
+    "es": "Todos mis amigos compartieron la noticia.",
+    "sk": "Všetci moji kamaráti zdieľali tú správu.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["preterito"],
+    "tokens": ["Todos", "mis", "amigos", "compartieron", "la", "noticia", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "enlace",
-        "lemma": "enlace",
-        "hint": "odkaz",
-        "distractors": ["enchufe", "lazo", "anuncio"]
+        "answer": "compartieron",
+        "lemma": "compartir",
+        "hint": "compartir · ellos · pretérito",
+        "distractors": ["compartiste", "compartimos", "compartían"]
       }
     ]
   },
   {
-    "id": "s974",
-    "es": "Hicimos una videollamada con la familia en Navidad.",
-    "sk": "Na Vianoce sme mali videohovor s rodinou.",
+    "id": "s579",
+    "es": "Se me descompuso la computadora y perdí todos mis archivos.",
+    "sk": "Pokazil sa mi počítač a stratil som všetky súbory.",
     "level": "B1",
     "topics": ["tech"],
     "grammar": ["preterito"],
-    "tokens": ["Hicimos", "una", "videollamada", "con", "la", "familia", "en", "Navidad", "."],
+    "tokens": ["Se", "me", "descompuso", "la", "computadora", "y", "perdí", "todos", "mis", "archivos", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Hicimos",
-        "lemma": "hacer",
-        "hint": "hacer · nosotros · pretérito",
-        "distractors": ["Hacemos", "Hicieron", "Hacíamos"]
+        "tokenIndex": 6,
+        "answer": "perdí",
+        "lemma": "perder",
+        "hint": "perder · yo · pretérito",
+        "distractors": ["pierdo", "perdió", "perderé"]
       }
     ]
   },
   {
-    "id": "s975",
-    "es": "Mi publicación tuvo muchos comentarios.",
-    "sk": "Môj príspevok mal veľa komentárov.",
+    "id": "s580",
+    "es": "¿Ya descargaste la aplicación del banco?",
+    "sk": "Už si si stiahol aplikáciu banky?",
     "level": "B1",
     "topics": ["tech"],
     "grammar": ["preterito"],
-    "tokens": ["Mi", "publicación", "tuvo", "muchos", "comentarios", "."],
+    "tokens": ["¿", "Ya", "descargaste", "la", "aplicación", "del", "banco", "?"],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "tuvo",
-        "lemma": "tener",
-        "hint": "tener · ella · pretérito",
-        "distractors": ["tiene", "tenía", "tendrá"]
+        "tokenIndex": 4,
+        "answer": "aplicación",
+        "lemma": "aplicación",
+        "hint": "aplikácia",
+        "distractors": ["aplicaciones", "archivo", "usuario"]
       }
     ]
   },
   {
-    "id": "s976",
-    "es": "Mándame una captura de pantalla del error.",
-    "sk": "Pošli mi snímku obrazovky s chybou.",
+    "id": "s581",
+    "es": "Cuando no había internet, escribíamos cartas.",
+    "sk": "Keď nebol internet, písali sme listy.",
     "level": "B1",
     "topics": ["tech"],
-    "tokens": ["Mándame", "una", "captura", "de", "pantalla", "del", "error", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "captura",
-        "lemma": "captura de pantalla",
-        "hint": "snímka (… de pantalla)",
-        "distractors": ["cuadra", "carta", "factura"]
-      }
-    ]
-  },
-  {
-    "id": "s977",
-    "es": "El concierto se transmitió en vivo.",
-    "sk": "Koncert vysielali naživo.",
-    "level": "B1",
-    "topics": ["tech"],
-    "tokens": ["El", "concierto", "se", "transmitió", "en", "vivo", "."],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "no", "había", "internet", ",", "escribíamos", "cartas", "."],
     "cloze": [
       {
         "tokenIndex": 5,
-        "answer": "vivo",
-        "lemma": "en vivo",
-        "hint": "naživo (en …)",
-        "distractors": ["viva", "vida", "vino"]
+        "answer": "escribíamos",
+        "lemma": "escribir",
+        "hint": "escribir · nosotros · imperfecto",
+        "distractors": ["escriben", "escribía", "escribiré"]
       }
     ]
   },
   {
-    "id": "s978",
-    "es": "Mi hermano es programador y trabaja desde casa.",
-    "sk": "Môj brat je programátor a pracuje z domu.",
+    "id": "s582",
+    "es": "Te mandaré el archivo esta noche.",
+    "sk": "Ten súbor ti pošlem dnes večer.",
     "level": "B1",
     "topics": ["tech", "work"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "hermano", "es", "programador", "y", "trabaja", "desde", "casa", "."],
+    "grammar": ["futuro"],
+    "tokens": ["Te", "mandaré", "el", "archivo", "esta", "noche", "."],
     "cloze": [
       {
-        "tokenIndex": 5,
-        "answer": "trabaja",
-        "lemma": "trabajar",
-        "hint": "trabajar · él · presente",
-        "distractors": ["trabajan", "trabajó", "trabajaba"]
+        "tokenIndex": 1,
+        "answer": "mandaré",
+        "lemma": "mandar",
+        "hint": "mandar · yo · futuro",
+        "distractors": ["mandé", "manda", "mandaba"]
       }
     ]
   },
@@ -1518,112 +1523,107 @@
     ]
   },
   {
-    "id": "s1772",
-    "es": "Perdí mi tarea porque no había guardado el archivo.",
-    "sk": "Stratil som úlohu, lebo som si neuložil súbor.",
+    "id": "s973",
+    "es": "Te mando el enlace por WhatsApp.",
+    "sk": "Pošlem ti odkaz cez WhatsApp.",
     "level": "B1",
     "topics": ["tech"],
-    "grammar": ["pluscuamperfecto", "preterito"],
-    "tokens": ["Perdí", "mi", "tarea", "porque", "no", "había", "guardado", "el", "archivo", "."],
+    "tokens": ["Te", "mando", "el", "enlace", "por", "WhatsApp", "."],
     "cloze": [
       {
-        "tokenIndex": 6,
-        "answer": "guardado",
-        "lemma": "guardar",
-        "hint": "guardar · participio",
-        "distractors": ["guardando", "guardó", "guardar"]
+        "tokenIndex": 3,
+        "answer": "enlace",
+        "lemma": "enlace",
+        "hint": "odkaz",
+        "distractors": ["enchufe", "lazo", "anuncio"]
       }
     ]
   },
   {
-    "id": "s1802",
-    "es": "¿Podrías prestarme tu celular un momento?",
-    "sk": "Mohol by si mi na chvíľu požičať svoj mobil?",
+    "id": "s974",
+    "es": "Hicimos una videollamada con la familia en Navidad.",
+    "sk": "Na Vianoce sme mali videohovor s rodinou.",
     "level": "B1",
     "topics": ["tech"],
-    "grammar": ["condicional", "presente"],
-    "tokens": ["¿", "Podrías", "prestarme", "tu", "celular", "un", "momento", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "Podrías",
-        "lemma": "poder",
-        "hint": "poder · tú · condicional",
-        "distractors": ["Podrás", "Podías", "Puedes"]
-      }
-    ]
-  },
-  {
-    "id": "s1803",
-    "es": "Yo compraría una computadora nueva, pero está muy cara.",
-    "sk": "Kúpil by som si nový počítač, ale je veľmi drahý.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["condicional", "presente"],
-    "tokens": ["Yo", "compraría", "una", "computadora", "nueva", ",", "pero", "está", "muy", "cara", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "compraría",
-        "lemma": "comprar",
-        "hint": "comprar · yo · condicional",
-        "distractors": ["compraré", "compraba", "compro"]
-      }
-    ]
-  },
-  {
-    "id": "s1804",
-    "es": "Me dijo que me mandaría el archivo por correo.",
-    "sk": "Povedal mi, že mi pošle súbor e-mailom.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["condicional", "presente"],
-    "tokens": ["Me", "dijo", "que", "me", "mandaría", "el", "archivo", "por", "correo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "mandaría",
-        "lemma": "mandar",
-        "hint": "mandar · él · condicional",
-        "distractors": ["mandará", "mandaba", "manda"]
-      }
-    ]
-  },
-  {
-    "id": "s1805",
-    "es": "Sería más fácil usar la aplicación del celular.",
-    "sk": "Bolo by jednoduchšie použiť aplikáciu v mobile.",
-    "level": "B1",
-    "topics": ["tech"],
-    "grammar": ["condicional", "presente"],
-    "tokens": ["Sería", "más", "fácil", "usar", "la", "aplicación", "del", "celular", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Hicimos", "una", "videollamada", "con", "la", "familia", "en", "Navidad", "."],
     "cloze": [
       {
         "tokenIndex": 0,
-        "answer": "Sería",
-        "lemma": "ser",
-        "hint": "ser · él · condicional",
-        "distractors": ["Será", "Era", "Es"]
+        "answer": "Hicimos",
+        "lemma": "hacer",
+        "hint": "hacer · nosotros · pretérito",
+        "distractors": ["Hacemos", "Hicieron", "Hacíamos"]
       }
     ]
   },
   {
-    "id": "s1903",
-    "es": "Te mando el archivo por correo.",
-    "sk": "Pošlem ti súbor e-mailom.",
+    "id": "s975",
+    "es": "Mi publicación tuvo muchos comentarios.",
+    "sk": "Môj príspevok mal veľa komentárov.",
     "level": "B1",
     "topics": ["tech"],
-    "grammar": ["por-para", "presente"],
-    "tokens": ["Te", "mando", "el", "archivo", "por", "correo", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "publicación", "tuvo", "muchos", "comentarios", "."],
     "cloze": [
       {
-        "tokenIndex": 4,
-        "answer": "por",
-        "lemma": "por",
-        "hint": "por/para",
-        "tip": "por-para",
-        "why": "por",
-        "distractors": ["para", "de"]
+        "tokenIndex": 2,
+        "answer": "tuvo",
+        "lemma": "tener",
+        "hint": "tener · ella · pretérito",
+        "distractors": ["tiene", "tenía", "tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s976",
+    "es": "Mándame una captura de pantalla del error.",
+    "sk": "Pošli mi snímku obrazovky s chybou.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["Mándame", "una", "captura", "de", "pantalla", "del", "error", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "captura",
+        "lemma": "captura de pantalla",
+        "hint": "snímka (… de pantalla)",
+        "distractors": ["cuadra", "carta", "factura"]
+      }
+    ]
+  },
+  {
+    "id": "s977",
+    "es": "El concierto se transmitió en vivo.",
+    "sk": "Koncert vysielali naživo.",
+    "level": "B1",
+    "topics": ["tech"],
+    "tokens": ["El", "concierto", "se", "transmitió", "en", "vivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "vivo",
+        "lemma": "en vivo",
+        "hint": "naživo (en …)",
+        "distractors": ["viva", "vida", "vino"]
+      }
+    ]
+  },
+  {
+    "id": "s978",
+    "es": "Mi hermano es programador y trabaja desde casa.",
+    "sk": "Môj brat je programátor a pracuje z domu.",
+    "level": "B1",
+    "topics": ["tech", "work"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hermano", "es", "programador", "y", "trabaja", "desde", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "trabaja",
+        "lemma": "trabajar",
+        "hint": "trabajar · él · presente",
+        "distractors": ["trabajan", "trabajó", "trabajaba"]
       }
     ]
   },

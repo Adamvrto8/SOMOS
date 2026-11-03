@@ -56,7 +56,7 @@
   { "id": "s1099", "en": "I left my swimsuit at the hotel." },
   { "id": "s1100", "en": "Tomorrow I'll wear the huaraches I bought in Oaxaca." },
   { "id": "s1101", "en": "This ring is gold, and it belonged to my grandma.", "hints": ["ring"] },
-  { "id": "s1102", "en": "I love this jacket, but I don't have enough money to buy it.", "hints": [null, "pronoun"] },
+  { "id": "s1102", "en": "I love this jacket, but I don't have enough money to buy it.", "hints": [null, "comprar + pronoun"] },
   { "id": "s1103", "en": "I think nineties fashion is coming back." },
   { "id": "s1104", "en": "When we got to the wedding, I realized my shirt was on inside out." },
   { "id": "s1105", "en": "I'd rather buy good-quality clothes even if they cost a bit more.", "hints": ["quality", null] },

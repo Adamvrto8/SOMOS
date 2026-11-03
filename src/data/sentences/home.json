@@ -1,5 +1,65 @@
 [
   {
+    "id": "s1642",
+    "es": "Me gusta mi recámara.",
+    "sk": "Moja spálňa sa mi páči.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "mi", "recámara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1660",
+    "es": "En mi departamento hay dos recámaras.",
+    "sk": "V mojom byte sú dve spálne.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["En", "mi", "departamento", "hay", "dos", "recámaras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["está", "están", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s1662",
+    "es": "¿Hay agua caliente en el baño?",
+    "sk": "Je v kúpeľni teplá voda?",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["¿", "Hay", "agua", "caliente", "en", "el", "baño", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "question",
+        "distractors": ["Está", "Están", "Es"]
+      }
+    ]
+  },
+  {
     "id": "s025",
     "es": "Vivo en un departamento pequeño.",
     "sk": "Bývam v malom byte.",
@@ -14,6 +74,26 @@
         "lemma": "vivir",
         "hint": "vivir · yo · presente",
         "distractors": ["Vive", "Vives", "Viví"]
+      }
+    ]
+  },
+  {
+    "id": "s1683",
+    "es": "Mi abuela tiene un gato y le da leche todos los días.",
+    "sk": "Babka má mačku a každý deň jej dáva mlieko.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Mi", "abuela", "tiene", "un", "gato", "y", "le", "da", "leche", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno: mu",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["lo", "la", "les"]
       }
     ]
   },
@@ -81,24 +161,6 @@
     ]
   },
   {
-    "id": "s029",
-    "es": "Anoche dormí muy bien.",
-    "sk": "V noci som spal veľmi dobre.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["preterito"],
-    "tokens": ["Anoche", "dormí", "muy", "bien", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "dormí",
-        "lemma": "dormir",
-        "hint": "dormir · yo · pretérito",
-        "distractors": ["duermo", "durmió", "dormió"]
-      }
-    ]
-  },
-  {
     "id": "s030",
     "es": "Los niños están durmiendo.",
     "sk": "Deti práve spia.",
@@ -155,6 +217,44 @@
     ]
   },
   {
+    "id": "s1727",
+    "es": "Ustedes deben limpiar su recámara hoy.",
+    "sk": "Mali by ste si dnes upratať spálňu.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Ustedes", "deben", "limpiar", "su", "recámara", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "deben",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["pueden", "tienen", "debemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1752",
+    "es": "Cierre la puerta, por favor, hace frío.",
+    "sk": "Zatvorte dvere, prosím, je zima.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Cierre", "la", "puerta", ",", "por", "favor", ",", "hace", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cierre",
+        "lemma": "cerrar",
+        "hint": "cerrar · usted · imperativo",
+        "distractors": ["Cierra", "Cierren", "Cierro"]
+      }
+    ]
+  },
+  {
     "id": "s113",
     "es": "Me levanto a las seis y media.",
     "sk": "Vstávam o pol siedmej.",
@@ -169,6 +269,24 @@
         "lemma": "levantarse",
         "hint": "levantarse · yo · presente",
         "distractors": ["levanta", "levantan", "levanté"]
+      }
+    ]
+  },
+  {
+    "id": "s029",
+    "es": "Anoche dormí muy bien.",
+    "sk": "V noci som spal veľmi dobre.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "dormí", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dormí",
+        "lemma": "dormir",
+        "hint": "dormir · yo · pretérito",
+        "distractors": ["duermo", "durmió", "dormió"]
       }
     ]
   },
@@ -191,20 +309,22 @@
     ]
   },
   {
-    "id": "s115",
-    "es": "Estoy limpiando la cocina.",
-    "sk": "Upratujem kuchyňu.",
+    "id": "s1661",
+    "es": "La cocina está al lado de la sala.",
+    "sk": "Kuchyňa je vedľa obývačky.",
     "level": "A1",
     "topics": ["home"],
-    "grammar": ["progresivo"],
-    "tokens": ["Estoy", "limpiando", "la", "cocina", "."],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["La", "cocina", "está", "al", "lado", "de", "la", "sala", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "limpiando",
-        "lemma": "limpiar",
-        "hint": "limpiar · gerundio",
-        "distractors": ["limpia", "limpiar", "limpian"]
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "estar",
+        "distractors": ["hay", "es", "están"]
       }
     ]
   },
@@ -223,6 +343,24 @@
         "lemma": "poner",
         "hint": "poner · tú · pretérito",
         "distractors": ["pusimos", "puse", "pones"]
+      }
+    ]
+  },
+  {
+    "id": "s115",
+    "es": "Estoy limpiando la cocina.",
+    "sk": "Upratujem kuchyňu.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "limpiando", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "limpiando",
+        "lemma": "limpiar",
+        "hint": "limpiar · gerundio",
+        "distractors": ["limpia", "limpiar", "limpian"]
       }
     ]
   },
@@ -310,24 +448,6 @@
     ]
   },
   {
-    "id": "s122",
-    "es": "Hoy me quedo en casa a descansar.",
-    "sk": "Dnes ostanem doma a oddýchnem si.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["presente"],
-    "tokens": ["Hoy", "me", "quedo", "en", "casa", "a", "descansar", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "quedo",
-        "lemma": "quedarse",
-        "hint": "quedarse · yo · presente",
-        "distractors": ["queda", "quedan", "quedé"]
-      }
-    ]
-  },
-  {
     "id": "s123",
     "es": "¿Cierras la puerta, por favor?",
     "sk": "Zavrieš dvere, prosím?",
@@ -342,24 +462,6 @@
         "lemma": "cerrar",
         "hint": "cerrar · tú · presente",
         "distractors": ["Cerramos", "Cierro", "Cerraste"]
-      }
-    ]
-  },
-  {
-    "id": "s124",
-    "es": "Mi mamá lavó toda la ropa.",
-    "sk": "Mama vyprala všetko oblečenie.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["preterito"],
-    "tokens": ["Mi", "mamá", "lavó", "toda", "la", "ropa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "lavó",
-        "lemma": "lavar",
-        "hint": "lavar · ella · pretérito",
-        "distractors": ["lavaron", "lavaste", "lava"]
       }
     ]
   },
@@ -383,6 +485,42 @@
     ]
   },
   {
+    "id": "s122",
+    "es": "Hoy me quedo en casa a descansar.",
+    "sk": "Dnes ostanem doma a oddýchnem si.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "me", "quedo", "en", "casa", "a", "descansar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quedo",
+        "lemma": "quedarse",
+        "hint": "quedarse · yo · presente",
+        "distractors": ["queda", "quedan", "quedé"]
+      }
+    ]
+  },
+  {
+    "id": "s124",
+    "es": "Mi mamá lavó toda la ropa.",
+    "sk": "Mama vyprala všetko oblečenie.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Mi", "mamá", "lavó", "toda", "la", "ropa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lavó",
+        "lemma": "lavar",
+        "hint": "lavar · ella · pretérito",
+        "distractors": ["lavaron", "lavaste", "lava"]
+      }
+    ]
+  },
+  {
     "id": "s126",
     "es": "Nuestra casa es vieja pero muy cómoda.",
     "sk": "Náš dom je starý, ale veľmi pohodlný.",
@@ -401,76 +539,6 @@
     ]
   },
   {
-    "id": "s127",
-    "es": "¿A qué hora te despiertas?",
-    "sk": "O koľkej sa budíš?",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "A", "qué", "hora", "te", "despiertas", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "despiertas",
-        "lemma": "despertarse",
-        "hint": "despertarse · tú · presente",
-        "distractors": ["despertamos", "despierto", "despertaste"]
-      }
-    ]
-  },
-  {
-    "id": "s128",
-    "es": "Estamos buscando un departamento cerca del metro.",
-    "sk": "Hľadáme byt blízko metra.",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["progresivo"],
-    "tokens": ["Estamos", "buscando", "un", "departamento", "cerca", "del", "metro", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "buscando",
-        "lemma": "buscar",
-        "hint": "buscar · gerundio",
-        "distractors": ["busca", "buscar", "buscan"]
-      }
-    ]
-  },
-  {
-    "id": "s129",
-    "es": "Abre la ventana, hace mucho calor.",
-    "sk": "Otvor okno, je veľké teplo.",
-    "level": "A1",
-    "topics": ["home"],
-    "tokens": ["Abre", "la", "ventana", ",", "hace", "mucho", "calor", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "calor",
-        "lemma": "calor",
-        "hint": "teplo",
-        "distractors": ["frío", "sol", "viento"]
-      }
-    ]
-  },
-  {
-    "id": "s130",
-    "es": "Mi cuarto está arriba, a la derecha.",
-    "sk": "Moja izba je hore vpravo.",
-    "level": "A1",
-    "topics": ["home"],
-    "tokens": ["Mi", "cuarto", "está", "arriba", ",", "a", "la", "derecha", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "arriba",
-        "lemma": "arriba",
-        "hint": "hore",
-        "distractors": ["abajo", "cerca", "lejos"]
-      }
-    ]
-  },
-  {
     "id": "s131",
     "es": "El gato se sentó en la mesa.",
     "sk": "Mačka si sadla na stôl.",
@@ -485,60 +553,6 @@
         "lemma": "sentarse",
         "hint": "sentarse · él · pretérito",
         "distractors": ["sentaron", "sentaste", "sienta"]
-      }
-    ]
-  },
-  {
-    "id": "s413",
-    "es": "Antes vivíamos en un departamento pequeño.",
-    "sk": "Predtým sme bývali v malom byte.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Antes", "vivíamos", "en", "un", "departamento", "pequeño", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "vivíamos",
-        "lemma": "vivir",
-        "hint": "vivir · nosotros · imperfecto",
-        "distractors": ["vivía", "vivimos", "vivías"]
-      }
-    ]
-  },
-  {
-    "id": "s414",
-    "es": "El departamento era viejo, pero muy bonito.",
-    "sk": "Byt bol starý, ale veľmi pekný.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["imperfecto"],
-    "tokens": ["El", "departamento", "era", "viejo", ",", "pero", "muy", "bonito", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "era",
-        "lemma": "ser",
-        "hint": "ser · él · imperfecto",
-        "distractors": ["eran", "eras", "fue"]
-      }
-    ]
-  },
-  {
-    "id": "s415",
-    "es": "Limpiaremos la casa el fin de semana.",
-    "sk": "Cez víkend upraceme dom.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["futuro"],
-    "tokens": ["Limpiaremos", "la", "casa", "el", "fin", "de", "semana", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Limpiaremos",
-        "lemma": "limpiar",
-        "hint": "limpiar · nosotros · futuro",
-        "distractors": ["Limpiaré", "Limpiará", "Limpiamos"]
       }
     ]
   },
@@ -713,20 +727,74 @@
     ]
   },
   {
-    "id": "s705",
-    "es": "Mi cuarto tiene una ventana grande.",
-    "sk": "Moja izba má veľké okno.",
+    "id": "s127",
+    "es": "¿A qué hora te despiertas?",
+    "sk": "O koľkej sa budíš?",
     "level": "A1",
     "topics": ["home"],
     "grammar": ["presente"],
-    "tokens": ["Mi", "cuarto", "tiene", "una", "ventana", "grande", "."],
+    "tokens": ["¿", "A", "qué", "hora", "te", "despiertas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "despiertas",
+        "lemma": "despertarse",
+        "hint": "despertarse · tú · presente",
+        "distractors": ["despertamos", "despierto", "despertaste"]
+      }
+    ]
+  },
+  {
+    "id": "s413",
+    "es": "Antes vivíamos en un departamento pequeño.",
+    "sk": "Predtým sme bývali v malom byte.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Antes", "vivíamos", "en", "un", "departamento", "pequeño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vivíamos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · imperfecto",
+        "distractors": ["vivía", "vivimos", "vivías"]
+      }
+    ]
+  },
+  {
+    "id": "s414",
+    "es": "El departamento era viejo, pero muy bonito.",
+    "sk": "Byt bol starý, ale veľmi pekný.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperfecto"],
+    "tokens": ["El", "departamento", "era", "viejo", ",", "pero", "muy", "bonito", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "tiene",
-        "lemma": "tener",
-        "hint": "tener · él · presente",
-        "distractors": ["tienen", "tengo", "tuvo"]
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors": ["eran", "eras", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s415",
+    "es": "Limpiaremos la casa el fin de semana.",
+    "sk": "Cez víkend upraceme dom.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Limpiaremos", "la", "casa", "el", "fin", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Limpiaremos",
+        "lemma": "limpiar",
+        "hint": "limpiar · nosotros · futuro",
+        "distractors": ["Limpiaré", "Limpiará", "Limpiamos"]
       }
     ]
   },
@@ -764,69 +832,6 @@
         "lemma": "foco",
         "hint": "žiarovka",
         "distractors": ["fuego", "foto", "faro"]
-      }
-    ]
-  },
-  {
-    "id": "s708",
-    "es": "¿Quién va a barrer la cocina hoy?",
-    "sk": "Kto dnes zametie kuchyňu?",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "Quién", "va", "a", "barrer", "la", "cocina", "hoy", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "va",
-        "lemma": "ir",
-        "hint": "ir · él · presente",
-        "distractors": ["van", "fue", "iba"]
-      }
-    ]
-  },
-  {
-    "id": "s709",
-    "es": "Hay una cucaracha en el baño.",
-    "sk": "V kúpeľni je šváb.",
-    "level": "A2",
-    "topics": ["home"],
-    "tokens": ["Hay", "una", "cucaracha", "en", "el", "baño", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "cucaracha",
-        "lemma": "cucaracha",
-        "hint": "šváb",
-        "distractors": ["cuchara", "cucharada", "mariposa"]
-      },
-      {
-        "tokenIndex": 0,
-        "answer": "Hay",
-        "lemma": "hay",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "hay",
-        "distractors": ["Está", "Están"]
-      }
-    ],
-    "grammar": ["hay-estar"]
-  },
-  {
-    "id": "s710",
-    "es": "Tengo que planchar la camisa para mañana.",
-    "sk": "Na zajtra si musím vyžehliť košeľu.",
-    "level": "A2",
-    "topics": ["home", "clothes"],
-    "grammar": ["presente"],
-    "tokens": ["Tengo", "que", "planchar", "la", "camisa", "para", "mañana", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Tengo",
-        "lemma": "tener",
-        "hint": "tener · yo · presente",
-        "distractors": ["Tiene", "Tuve", "Tenía"]
       }
     ]
   },
@@ -1071,6 +1076,69 @@
     "grammar": ["obligation"]
   },
   {
+    "id": "s708",
+    "es": "¿Quién va a barrer la cocina hoy?",
+    "sk": "Kto dnes zametie kuchyňu?",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Quién", "va", "a", "barrer", "la", "cocina", "hoy", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": ["van", "fue", "iba"]
+      }
+    ]
+  },
+  {
+    "id": "s709",
+    "es": "Hay una cucaracha en el baño.",
+    "sk": "V kúpeľni je šváb.",
+    "level": "A2",
+    "topics": ["home"],
+    "tokens": ["Hay", "una", "cucaracha", "en", "el", "baño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cucaracha",
+        "lemma": "cucaracha",
+        "hint": "šváb",
+        "distractors": ["cuchara", "cucharada", "mariposa"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Están"]
+      }
+    ],
+    "grammar": ["hay-estar"]
+  },
+  {
+    "id": "s710",
+    "es": "Tengo que planchar la camisa para mañana.",
+    "sk": "Na zajtra si musím vyžehliť košeľu.",
+    "level": "A2",
+    "topics": ["home", "clothes"],
+    "grammar": ["presente"],
+    "tokens": ["Tengo", "que", "planchar", "la", "camisa", "para", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "tener · yo · presente",
+        "distractors": ["Tiene", "Tuve", "Tenía"]
+      }
+    ]
+  },
+  {
     "id": "s1292",
     "es": "Ayer compramos una lavadora nueva.",
     "sk": "Včera sme kúpili novú práčku.",
@@ -1085,61 +1153,6 @@
         "lemma": "comprar",
         "hint": "comprar · nosotros · pretérito",
         "distractors": ["compro", "compraron", "comprábamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1293",
-    "es": "¿Quién dejó la toalla mojada en la cama?",
-    "sk": "Kto nechal mokrý uterák na posteli?",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["preterito"],
-    "tokens": ["¿", "Quién", "dejó", "la", "toalla", "mojada", "en", "la", "cama", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "dejó",
-        "lemma": "dejar",
-        "hint": "dejar · él · pretérito",
-        "distractors": ["deja", "dejaba", "dejará"]
-      }
-    ]
-  },
-  {
-    "id": "s1294",
-    "es": "Cuando vivía con mis papás, mi cuarto estaba en la azotea.",
-    "sk": "Keď som býval s rodičmi, moja izba bola hore na streche.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["ser-estar", "imperfecto"],
-    "tokens": ["Cuando", "vivía", "con", "mis", "papás", ",", "mi", "cuarto", "estaba", "en", "la", "azotea", "."],
-    "cloze": [
-      {
-        "tokenIndex": 8,
-        "answer": "estaba",
-        "lemma": "estar",
-        "hint": "ser/estar · él · imperfecto",
-        "why": "place",
-        "distractors": ["era", "estuvo", "estaban"]
-      }
-    ]
-  },
-  {
-    "id": "s1295",
-    "es": "Mañana pondré las cortinas nuevas en la sala.",
-    "sk": "Zajtra zavesím nové závesy v obývačke.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "pondré", "las", "cortinas", "nuevas", "en", "la", "sala", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "pondré",
-        "lemma": "poner",
-        "hint": "poner · yo · futuro",
-        "distractors": ["pongo", "puse", "ponía"]
       }
     ]
   },
@@ -1483,6 +1496,149 @@
     ]
   },
   {
+    "id": "s1293",
+    "es": "¿Quién dejó la toalla mojada en la cama?",
+    "sk": "Kto nechal mokrý uterák na posteli?",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "Quién", "dejó", "la", "toalla", "mojada", "en", "la", "cama", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dejó",
+        "lemma": "dejar",
+        "hint": "dejar · él · pretérito",
+        "distractors": ["deja", "dejaba", "dejará"]
+      }
+    ]
+  },
+  {
+    "id": "s1294",
+    "es": "Cuando vivía con mis papás, mi cuarto estaba en la azotea.",
+    "sk": "Keď som býval s rodičmi, moja izba bola hore na streche.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["ser-estar", "imperfecto"],
+    "tokens": ["Cuando", "vivía", "con", "mis", "papás", ",", "mi", "cuarto", "estaba", "en", "la", "azotea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "ser/estar · él · imperfecto",
+        "why": "place",
+        "distractors": ["era", "estuvo", "estaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1619",
+    "es": "Nos cortaron la luz porque se nos olvidó pagar el recibo.",
+    "sk": "Vypli nám elektrinu, lebo sme zabudli zaplatiť účet.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["preterito"],
+    "tokens": ["Nos", "cortaron", "la", "luz", "porque", "se", "nos", "olvidó", "pagar", "el", "recibo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cortaron",
+        "lemma": "cortar",
+        "hint": "cortar · ellos · pretérito",
+        "distractors": ["cortan", "cortaban", "cortarán"]
+      }
+    ]
+  },
+  {
+    "id": "s128",
+    "es": "Estamos buscando un departamento cerca del metro.",
+    "sk": "Hľadáme byt blízko metra.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estamos", "buscando", "un", "departamento", "cerca", "del", "metro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "buscando",
+        "lemma": "buscar",
+        "hint": "buscar · gerundio",
+        "distractors": ["busca", "buscar", "buscan"]
+      }
+    ]
+  },
+  {
+    "id": "s129",
+    "es": "Abre la ventana, hace mucho calor.",
+    "sk": "Otvor okno, je veľké teplo.",
+    "level": "A1",
+    "topics": ["home"],
+    "tokens": ["Abre", "la", "ventana", ",", "hace", "mucho", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "calor",
+        "lemma": "calor",
+        "hint": "teplo",
+        "distractors": ["frío", "sol", "viento"]
+      }
+    ]
+  },
+  {
+    "id": "s130",
+    "es": "Mi cuarto está arriba, a la derecha.",
+    "sk": "Moja izba je hore vpravo.",
+    "level": "A1",
+    "topics": ["home"],
+    "tokens": ["Mi", "cuarto", "está", "arriba", ",", "a", "la", "derecha", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "arriba",
+        "lemma": "arriba",
+        "hint": "hore",
+        "distractors": ["abajo", "cerca", "lejos"]
+      }
+    ]
+  },
+  {
+    "id": "s705",
+    "es": "Mi cuarto tiene una ventana grande.",
+    "sk": "Moja izba má veľké okno.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "cuarto", "tiene", "una", "ventana", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "tener · él · presente",
+        "distractors": ["tienen", "tengo", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s1295",
+    "es": "Mañana pondré las cortinas nuevas en la sala.",
+    "sk": "Zajtra zavesím nové závesy v obývačke.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["futuro"],
+    "tokens": ["Mañana", "pondré", "las", "cortinas", "nuevas", "en", "la", "sala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pondré",
+        "lemma": "poner",
+        "hint": "poner · yo · futuro",
+        "distractors": ["pongo", "puse", "ponía"]
+      }
+    ]
+  },
+  {
     "id": "s1613",
     "es": "El elevador no sirve, así que estamos bajando por las escaleras.",
     "sk": "Výťah nefunguje, tak schádzame po schodoch.",
@@ -1515,162 +1671,6 @@
         "lemma": "romper",
         "hint": "romper · él · pretérito",
         "distractors": ["rompe", "rompía", "romperá"]
-      }
-    ]
-  },
-  {
-    "id": "s1619",
-    "es": "Nos cortaron la luz porque se nos olvidó pagar el recibo.",
-    "sk": "Vypli nám elektrinu, lebo sme zabudli zaplatiť účet.",
-    "level": "B1",
-    "topics": ["home"],
-    "grammar": ["preterito"],
-    "tokens": ["Nos", "cortaron", "la", "luz", "porque", "se", "nos", "olvidó", "pagar", "el", "recibo", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "cortaron",
-        "lemma": "cortar",
-        "hint": "cortar · ellos · pretérito",
-        "distractors": ["cortan", "cortaban", "cortarán"]
-      }
-    ]
-  },
-  {
-    "id": "s1642",
-    "es": "Me gusta mi recámara.",
-    "sk": "Moja spálňa sa mi páči.",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["Me", "gusta", "mi", "recámara", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
-      }
-    ]
-  },
-  {
-    "id": "s1660",
-    "es": "En mi departamento hay dos recámaras.",
-    "sk": "V mojom byte sú dve spálne.",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["hay-estar", "presente"],
-    "tokens": ["En", "mi", "departamento", "hay", "dos", "recámaras", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "hay",
-        "lemma": "hay",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "hay",
-        "distractors": ["está", "están", "es"]
-      }
-    ]
-  },
-  {
-    "id": "s1661",
-    "es": "La cocina está al lado de la sala.",
-    "sk": "Kuchyňa je vedľa obývačky.",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["hay-estar", "presente"],
-    "tokens": ["La", "cocina", "está", "al", "lado", "de", "la", "sala", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "estar",
-        "distractors": ["hay", "es", "están"]
-      }
-    ]
-  },
-  {
-    "id": "s1662",
-    "es": "¿Hay agua caliente en el baño?",
-    "sk": "Je v kúpeľni teplá voda?",
-    "level": "A1",
-    "topics": ["home"],
-    "grammar": ["hay-estar", "presente"],
-    "tokens": ["¿", "Hay", "agua", "caliente", "en", "el", "baño", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "Hay",
-        "lemma": "hay",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "question",
-        "distractors": ["Está", "Están", "Es"]
-      }
-    ]
-  },
-  {
-    "id": "s1683",
-    "es": "Mi abuela tiene un gato y le da leche todos los días.",
-    "sk": "Babka má mačku a každý deň jej dáva mlieko.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["object-pronouns", "presente"],
-    "tokens": ["Mi", "abuela", "tiene", "un", "gato", "y", "le", "da", "leche", "todos", "los", "días", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "le",
-        "lemma": "le",
-        "hint": "zámeno: mu",
-        "tip": "object-pronouns",
-        "why": "indirect",
-        "distractors": ["lo", "la", "les"]
-      }
-    ]
-  },
-  {
-    "id": "s1727",
-    "es": "Ustedes deben limpiar su recámara hoy.",
-    "sk": "Mali by ste si dnes upratať spálňu.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Ustedes", "deben", "limpiar", "su", "recámara", "hoy", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "deben",
-        "lemma": "deber",
-        "hint": "mal by",
-        "tip": "obligation",
-        "why": "deber",
-        "distractors": ["pueden", "tienen", "debemos"]
-      }
-    ]
-  },
-  {
-    "id": "s1752",
-    "es": "Cierre la puerta, por favor, hace frío.",
-    "sk": "Zatvorte dvere, prosím, je zima.",
-    "level": "A2",
-    "topics": ["home"],
-    "grammar": ["imperativo", "presente"],
-    "tokens": ["Cierre", "la", "puerta", ",", "por", "favor", ",", "hace", "frío", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Cierre",
-        "lemma": "cerrar",
-        "hint": "cerrar · usted · imperativo",
-        "distractors": ["Cierra", "Cierren", "Cierro"]
       }
     ]
   },

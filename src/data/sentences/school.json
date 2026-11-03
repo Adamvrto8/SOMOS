@@ -1,5 +1,45 @@
 [
   {
+    "id": "s1643",
+    "es": "A Luis le gusta la clase de inglés.",
+    "sk": "Luisovi sa páči hodina angličtiny.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "Luis", "le", "gusta", "la", "clase", "de", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1665",
+    "es": "Hay veinte alumnos en mi clase.",
+    "sk": "V mojej triede je dvadsať žiakov.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["Hay", "veinte", "alumnos", "en", "mi", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Están", "Es"]
+      }
+    ]
+  },
+  {
     "id": "s306",
     "es": "Estudio español en una escuela de idiomas.",
     "sk": "Španielčinu študujem v jazykovej škole.",
@@ -14,6 +54,46 @@
         "lemma": "estudiar",
         "hint": "estudiar · yo · presente",
         "distractors": ["Estudia", "Estudian", "Estudié"]
+      }
+    ]
+  },
+  {
+    "id": "s1647",
+    "es": "¿Te interesa la historia de México?",
+    "sk": "Zaujíma ťa história Mexika?",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["¿", "Te", "interesa", "la", "historia", "de", "México", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "interesa",
+        "lemma": "interesar",
+        "hint": "interesar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["interesan", "gusta", "importa"]
+      }
+    ]
+  },
+  {
+    "id": "s1688",
+    "es": "La maestra nos explicó la tarea y la entendimos.",
+    "sk": "Učiteľka nám vysvetlila úlohu a pochopili sme ju.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["La", "maestra", "nos", "explicó", "la", "tarea", "y", "la", "entendimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "zámeno: ju",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["lo", "le", "las"]
       }
     ]
   },
@@ -42,42 +122,6 @@
         "lemma": "entender",
         "hint": "entender · tú · presente",
         "distractors": ["Entendemos", "Entiendo", "Entendiste"]
-      }
-    ]
-  },
-  {
-    "id": "s309",
-    "es": "No entendí la respuesta.",
-    "sk": "Nerozumel som odpovedi.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["preterito"],
-    "tokens": ["No", "entendí", "la", "respuesta", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "entendí",
-        "lemma": "entender",
-        "hint": "entender · yo · pretérito",
-        "distractors": ["entendió", "entendieron", "entiendo"]
-      }
-    ]
-  },
-  {
-    "id": "s310",
-    "es": "Aprendí mucho en esta clase.",
-    "sk": "Na tejto hodine som sa veľa naučil.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["preterito"],
-    "tokens": ["Aprendí", "mucho", "en", "esta", "clase", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Aprendí",
-        "lemma": "aprender",
-        "hint": "aprender · yo · pretérito",
-        "distractors": ["Aprendió", "Aprendieron", "Aprendo"]
       }
     ]
   },
@@ -118,38 +162,76 @@
     ]
   },
   {
-    "id": "s313",
-    "es": "Mi hijo hace la tarea después de comer.",
-    "sk": "Syn si robí úlohy po obede.",
-    "level": "A1",
+    "id": "s1725",
+    "es": "Mañana hay examen y tengo que estudiar.",
+    "sk": "Zajtra je skúška a musím sa učiť.",
+    "level": "A2",
     "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "hijo", "hace", "la", "tarea", "después", "de", "comer", "."],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mañana", "hay", "examen", "y", "tengo", "que", "estudiar", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "hace",
-        "lemma": "hacer",
-        "hint": "hacer · él · presente",
-        "distractors": ["hacen", "haces", "hizo"]
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
   {
-    "id": "s314",
-    "es": "Leo un libro en español cada mes.",
-    "sk": "Každý mesiac prečítam jednu knihu po španielsky.",
-    "level": "A1",
+    "id": "s1751",
+    "es": "Abran el libro en la página diez.",
+    "sk": "Otvorte knihu na desiatej strane.",
+    "level": "A2",
     "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["Leo", "un", "libro", "en", "español", "cada", "mes", "."],
+    "grammar": ["imperativo"],
+    "tokens": ["Abran", "el", "libro", "en", "la", "página", "diez", "."],
     "cloze": [
       {
         "tokenIndex": 0,
-        "answer": "Leo",
-        "lemma": "leer",
-        "hint": "leer · yo · presente",
-        "distractors": ["Lee", "Leen", "Leí"]
+        "answer": "Abran",
+        "lemma": "abrir",
+        "hint": "abrir · ustedes · imperativo",
+        "distractors": ["Abra", "Abre", "Abrimos"]
+      }
+    ]
+  },
+  {
+    "id": "s309",
+    "es": "No entendí la respuesta.",
+    "sk": "Nerozumel som odpovedi.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["No", "entendí", "la", "respuesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "entendí",
+        "lemma": "entender",
+        "hint": "entender · yo · pretérito",
+        "distractors": ["entendió", "entendieron", "entiendo"]
+      }
+    ]
+  },
+  {
+    "id": "s310",
+    "es": "Aprendí mucho en esta clase.",
+    "sk": "Na tejto hodine som sa veľa naučil.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["preterito"],
+    "tokens": ["Aprendí", "mucho", "en", "esta", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aprendí",
+        "lemma": "aprender",
+        "hint": "aprender · yo · pretérito",
+        "distractors": ["Aprendió", "Aprendieron", "Aprendo"]
       }
     ]
   },
@@ -172,6 +254,24 @@
     ]
   },
   {
+    "id": "s313",
+    "es": "Mi hijo hace la tarea después de comer.",
+    "sk": "Syn si robí úlohy po obede.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "hace", "la", "tarea", "después", "de", "comer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él · presente",
+        "distractors": ["hacen", "haces", "hizo"]
+      }
+    ]
+  },
+  {
     "id": "s316",
     "es": "No recuerdo esa palabra.",
     "sk": "Nepamätám si to slovo.",
@@ -186,6 +286,42 @@
         "lemma": "recordar",
         "hint": "recordar · yo · presente",
         "distractors": ["recuerda", "recuerdan", "recordé"]
+      }
+    ]
+  },
+  {
+    "id": "s314",
+    "es": "Leo un libro en español cada mes.",
+    "sk": "Každý mesiac prečítam jednu knihu po španielsky.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Leo", "un", "libro", "en", "español", "cada", "mes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Leo",
+        "lemma": "leer",
+        "hint": "leer · yo · presente",
+        "distractors": ["Lee", "Leen", "Leí"]
+      }
+    ]
+  },
+  {
+    "id": "s320",
+    "es": "¿Qué significa esta palabra?",
+    "sk": "Čo znamená toto slovo?",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["gender"],
+    "tokens": ["¿", "Qué", "significa", "esta", "palabra", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "esta",
+        "lemma": "este",
+        "hint": "tento, táto",
+        "distractors": ["este", "estos", "estas"]
       }
     ]
   },
@@ -226,6 +362,24 @@
     ]
   },
   {
+    "id": "s322",
+    "es": "Mañana tenemos examen de gramática.",
+    "sk": "Zajtra máme test z gramatiky.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Mañana", "tenemos", "examen", "de", "gramática", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenemos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · presente",
+        "distractors": ["tengo", "tiene", "tuvimos"]
+      }
+    ]
+  },
+  {
     "id": "s319",
     "es": "El examen fue muy difícil.",
     "sk": "Test bol veľmi ťažký.",
@@ -240,24 +394,6 @@
         "lemma": "ser",
         "hint": "ser · él · pretérito",
         "distractors": ["fueron", "fuiste", "es"]
-      }
-    ]
-  },
-  {
-    "id": "s320",
-    "es": "¿Qué significa esta palabra?",
-    "sk": "Čo znamená toto slovo?",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["gender"],
-    "tokens": ["¿", "Qué", "significa", "esta", "palabra", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "esta",
-        "lemma": "este",
-        "hint": "tento, táto",
-        "distractors": ["este", "estos", "estas"]
       }
     ]
   },
@@ -280,42 +416,6 @@
     ]
   },
   {
-    "id": "s322",
-    "es": "Mañana tenemos examen de gramática.",
-    "sk": "Zajtra máme test z gramatiky.",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["Mañana", "tenemos", "examen", "de", "gramática", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "tenemos",
-        "lemma": "tener",
-        "hint": "tener · nosotros · presente",
-        "distractors": ["tengo", "tiene", "tuvimos"]
-      }
-    ]
-  },
-  {
-    "id": "s323",
-    "es": "Estoy aprendiendo mucho con esta app.",
-    "sk": "S touto appkou sa veľa učím.",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["progresivo"],
-    "tokens": ["Estoy", "aprendiendo", "mucho", "con", "esta", "app", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "aprendiendo",
-        "lemma": "aprender",
-        "hint": "aprender · gerundio",
-        "distractors": ["aprende", "aprender", "aprenden"]
-      }
-    ]
-  },
-  {
     "id": "s404",
     "es": "El maestro escribió la tarea en el pizarrón.",
     "sk": "Učiteľ napísal úlohu na tabuľu.",
@@ -330,97 +430,6 @@
         "lemma": "escribir",
         "hint": "escribir · él · pretérito",
         "distractors": ["escribieron", "escribiste", "escribe"]
-      }
-    ]
-  },
-  {
-    "id": "s405",
-    "es": "Saqué una buena calificación en el examen.",
-    "sk": "Zo skúšky som dostal dobrú známku.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["gender"],
-    "tokens": ["Saqué", "una", "buena", "calificación", "en", "el", "examen", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "buena",
-        "lemma": "bueno",
-        "hint": "prídavné meno: bueno",
-        "distractors": ["bueno", "buen", "buenas"]
-      }
-    ]
-  },
-  {
-    "id": "s406",
-    "es": "¿Me puedes dar un ejemplo?",
-    "sk": "Môžeš mi dať príklad?",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["¿", "Me", "puedes", "dar", "un", "ejemplo", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "puedes",
-        "lemma": "poder",
-        "hint": "poder · tú · presente",
-        "distractors": ["podemos", "puedo", "pudiste"]
-      }
-    ]
-  },
-  {
-    "id": "s422",
-    "es": "En la escuela tenía un maestro muy estricto.",
-    "sk": "V škole som mal veľmi prísneho učiteľa.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["imperfecto"],
-    "tokens": ["En", "la", "escuela", "tenía", "un", "maestro", "muy", "estricto", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "tenía",
-        "lemma": "tener",
-        "hint": "tener · yo · imperfecto",
-        "distractors": ["tenían", "tuve", "teníamos"]
-      }
-    ]
-  },
-  {
-    "id": "s423",
-    "es": "No entendía nada en la clase de matemáticas.",
-    "sk": "Na hodine matematiky som ničomu nerozumel.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["imperfecto"],
-    "tokens": ["No", "entendía", "nada", "en", "la", "clase", "de", "matemáticas", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "entendía",
-        "lemma": "entender",
-        "hint": "entender · yo · imperfecto",
-        "distractors": ["entendían", "entendí", "entendíamos"]
-      }
-    ]
-  },
-  {
-    "id": "s424",
-    "es": "El examen será el lunes.",
-    "sk": "Skúška bude v pondelok.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["futuro", "ser-estar"],
-    "tokens": ["El", "examen", "será", "el", "lunes", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "será",
-        "lemma": "ser",
-        "hint": "ser/estar · él · futuro",
-        "why": "event",
-        "distractors": ["estará", "serán", "serás"]
       }
     ]
   },
@@ -586,72 +595,75 @@
     ]
   },
   {
-    "id": "s906",
-    "es": "Mi hija va en tercero de primaria.",
-    "sk": "Moja dcéra chodí do tretej triedy základnej školy.",
+    "id": "s405",
+    "es": "Saqué una buena calificación en el examen.",
+    "sk": "Zo skúšky som dostal dobrú známku.",
     "level": "A2",
     "topics": ["school"],
-    "tokens": ["Mi", "hija", "va", "en", "tercero", "de", "primaria", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "primaria",
-        "lemma": "primaria",
-        "hint": "základná škola",
-        "distractors": ["primera", "primavera", "prima"]
-      }
-    ]
-  },
-  {
-    "id": "s907",
-    "es": "¿Me prestas tu calculadora?",
-    "sk": "Požičiaš mi kalkulačku?",
-    "level": "A2",
-    "topics": ["school"],
-    "tokens": ["¿", "Me", "prestas", "tu", "calculadora", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "calculadora",
-        "lemma": "calculadora",
-        "hint": "kalkulačka",
-        "distractors": ["calculador", "cucaracha", "computadora"]
-      }
-    ]
-  },
-  {
-    "id": "s908",
-    "es": "Los alumnos llevan uniforme.",
-    "sk": "Žiaci nosia uniformu.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["Los", "alumnos", "llevan", "uniforme", "."],
+    "grammar": ["gender"],
+    "tokens": ["Saqué", "una", "buena", "calificación", "en", "el", "examen", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "llevan",
-        "lemma": "llevar",
-        "hint": "llevar · ellos · presente",
-        "distractors": ["lleva", "llevaron", "llevaban"]
+        "answer": "buena",
+        "lemma": "bueno",
+        "hint": "prídavné meno: bueno",
+        "distractors": ["bueno", "buen", "buenas"]
       }
     ]
   },
   {
-    "id": "s909",
-    "es": "Mi hijo entra a la secundaria en septiembre.",
-    "sk": "Syn ide v septembri na druhý stupeň.",
+    "id": "s422",
+    "es": "En la escuela tenía un maestro muy estricto.",
+    "sk": "V škole som mal veľmi prísneho učiteľa.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["presente"],
-    "tokens": ["Mi", "hijo", "entra", "a", "la", "secundaria", "en", "septiembre", "."],
+    "grammar": ["imperfecto"],
+    "tokens": ["En", "la", "escuela", "tenía", "un", "maestro", "muy", "estricto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tenían", "tuve", "teníamos"]
+      }
+    ]
+  },
+  {
+    "id": "s423",
+    "es": "No entendía nada en la clase de matemáticas.",
+    "sk": "Na hodine matematiky som ničomu nerozumel.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["imperfecto"],
+    "tokens": ["No", "entendía", "nada", "en", "la", "clase", "de", "matemáticas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "entendía",
+        "lemma": "entender",
+        "hint": "entender · yo · imperfecto",
+        "distractors": ["entendían", "entendí", "entendíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s424",
+    "es": "El examen será el lunes.",
+    "sk": "Skúška bude v pondelok.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["futuro", "ser-estar"],
+    "tokens": ["El", "examen", "será", "el", "lunes", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "entra",
-        "lemma": "entrar",
-        "hint": "entrar · él · presente",
-        "distractors": ["entran", "entró", "entraba"]
+        "answer": "será",
+        "lemma": "ser",
+        "hint": "ser/estar · él · futuro",
+        "why": "event",
+        "distractors": ["estará", "serán", "serás"]
       }
     ]
   },
@@ -974,6 +986,62 @@
     ]
   },
   {
+    "id": "s323",
+    "es": "Estoy aprendiendo mucho con esta app.",
+    "sk": "S touto appkou sa veľa učím.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["progresivo"],
+    "tokens": ["Estoy", "aprendiendo", "mucho", "con", "esta", "app", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "aprendiendo",
+        "lemma": "aprender",
+        "hint": "aprender · gerundio",
+        "distractors": ["aprende", "aprender", "aprenden"]
+      }
+    ]
+  },
+  {
+    "id": "s1666",
+    "es": "El maestro está en la oficina.",
+    "sk": "Učiteľ je v kancelárii.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["El", "maestro", "está", "en", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "estar",
+        "distractors": ["hay", "es", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s406",
+    "es": "¿Me puedes dar un ejemplo?",
+    "sk": "Môžeš mi dať príklad?",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["¿", "Me", "puedes", "dar", "un", "ejemplo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puedes",
+        "lemma": "poder",
+        "hint": "poder · tú · presente",
+        "distractors": ["podemos", "puedo", "pudiste"]
+      }
+    ]
+  },
+  {
     "id": "s1391",
     "es": "Los alumnos escriben con lápiz.",
     "sk": "Žiaci píšu ceruzkou.",
@@ -1092,118 +1160,54 @@
     ]
   },
   {
-    "id": "s1397",
-    "es": "Los niños juegan en el recreo.",
-    "sk": "Deti sa cez prestávku hrajú.",
-    "level": "A1",
+    "id": "s906",
+    "es": "Mi hija va en tercero de primaria.",
+    "sk": "Moja dcéra chodí do tretej triedy základnej školy.",
+    "level": "A2",
     "topics": ["school"],
-    "tokens": ["Los", "niños", "juegan", "en", "el", "recreo", "."],
+    "tokens": ["Mi", "hija", "va", "en", "tercero", "de", "primaria", "."],
     "cloze": [
       {
-        "tokenIndex": 5,
-        "answer": "recreo",
-        "lemma": "recreo",
-        "hint": "prestávka",
-        "distractors": ["lápiz", "idioma", "cuaderno"]
+        "tokenIndex": 6,
+        "answer": "primaria",
+        "lemma": "primaria",
+        "hint": "základná škola",
+        "distractors": ["primera", "primavera", "prima"]
       }
     ]
   },
   {
-    "id": "s1398",
-    "es": "Mi hija lee muy bien para su edad.",
-    "sk": "Dcéra na svoj vek číta veľmi dobre.",
-    "level": "A1",
+    "id": "s907",
+    "es": "¿Me prestas tu calculadora?",
+    "sk": "Požičiaš mi kalkulačku?",
+    "level": "A2",
+    "topics": ["school"],
+    "tokens": ["¿", "Me", "prestas", "tu", "calculadora", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "calculadora",
+        "lemma": "calculadora",
+        "hint": "kalkulačka",
+        "distractors": ["calculador", "cucaracha", "computadora"]
+      }
+    ]
+  },
+  {
+    "id": "s908",
+    "es": "Los alumnos llevan uniforme.",
+    "sk": "Žiaci nosia uniformu.",
+    "level": "A2",
     "topics": ["school"],
     "grammar": ["presente"],
-    "tokens": ["Mi", "hija", "lee", "muy", "bien", "para", "su", "edad", "."],
+    "tokens": ["Los", "alumnos", "llevan", "uniforme", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "lee",
-        "lemma": "leer",
-        "hint": "leer · ella · presente",
-        "distractors": ["leemos", "leyó", "leía"]
-      }
-    ]
-  },
-  {
-    "id": "s1399",
-    "es": "¿Qué materia te gusta más, historia o matemáticas?",
-    "sk": "Ktorý predmet máš najradšej, dejepis alebo matiku?",
-    "level": "A1",
-    "topics": ["school"],
-    "tokens": ["¿", "Qué", "materia", "te", "gusta", "más", ",", "historia", "o", "matemáticas", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "materia",
-        "lemma": "materia",
-        "hint": "predmet",
-        "distractors": ["fruta", "ciudad", "película"]
-      },
-      {
-        "tokenIndex": 4,
-        "answer": "gusta",
-        "lemma": "gustar",
-        "hint": "gustar",
-        "tip": "gustar",
-        "why": "how",
-        "distractors": ["gustan", "gustas"]
-      }
-    ],
-    "grammar": ["gustar"]
-  },
-  {
-    "id": "s1400",
-    "es": "¿A qué hora empezó el examen?",
-    "sk": "O koľkej sa začala písomka?",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["preterito"],
-    "tokens": ["¿", "A", "qué", "hora", "empezó", "el", "examen", "?"],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "empezó",
-        "lemma": "empezar",
-        "hint": "empezar · él · pretérito",
-        "distractors": ["empezamos", "empieza", "empezaré"]
-      }
-    ]
-  },
-  {
-    "id": "s1401",
-    "es": "En la primaria siempre sacaba buenas calificaciones.",
-    "sk": "Na základnej škole som mal vždy dobré známky.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["imperfecto"],
-    "tokens": ["En", "la", "primaria", "siempre", "sacaba", "buenas", "calificaciones", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "sacaba",
-        "lemma": "sacar",
-        "hint": "sacar · yo · imperfecto",
-        "distractors": ["sacabas", "saco", "sacamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1402",
-    "es": "El próximo año mi hija estudiará en la prepa.",
-    "sk": "Budúci rok bude dcéra študovať na strednej škole.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "próximo", "año", "mi", "hija", "estudiará", "en", "la", "prepa", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "estudiará",
-        "lemma": "estudiar",
-        "hint": "estudiar · ella · futuro",
-        "distractors": ["estudiaremos", "estudia", "estudié"]
+        "answer": "llevan",
+        "lemma": "llevar",
+        "hint": "llevar · ellos · presente",
+        "distractors": ["lleva", "llevaron", "llevaban"]
       }
     ]
   },
@@ -1485,140 +1489,136 @@
     ]
   },
   {
-    "id": "s1643",
-    "es": "A Luis le gusta la clase de inglés.",
-    "sk": "Luisovi sa páči hodina angličtiny.",
+    "id": "s1397",
+    "es": "Los niños juegan en el recreo.",
+    "sk": "Deti sa cez prestávku hrajú.",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["A", "Luis", "le", "gusta", "la", "clase", "de", "inglés", "."],
+    "tokens": ["Los", "niños", "juegan", "en", "el", "recreo", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
+        "tokenIndex": 5,
+        "answer": "recreo",
+        "lemma": "recreo",
+        "hint": "prestávka",
+        "distractors": ["lápiz", "idioma", "cuaderno"]
+      }
+    ]
+  },
+  {
+    "id": "s909",
+    "es": "Mi hijo entra a la secundaria en septiembre.",
+    "sk": "Syn ide v septembri na druhý stupeň.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hijo", "entra", "a", "la", "secundaria", "en", "septiembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entra",
+        "lemma": "entrar",
+        "hint": "entrar · él · presente",
+        "distractors": ["entran", "entró", "entraba"]
+      }
+    ]
+  },
+  {
+    "id": "s1398",
+    "es": "Mi hija lee muy bien para su edad.",
+    "sk": "Dcéra na svoj vek číta veľmi dobre.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "hija", "lee", "muy", "bien", "para", "su", "edad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lee",
+        "lemma": "leer",
+        "hint": "leer · ella · presente",
+        "distractors": ["leemos", "leyó", "leía"]
+      }
+    ]
+  },
+  {
+    "id": "s1399",
+    "es": "¿Qué materia te gusta más, historia o matemáticas?",
+    "sk": "Ktorý predmet máš najradšej, dejepis alebo matiku?",
+    "level": "A1",
+    "topics": ["school"],
+    "tokens": ["¿", "Qué", "materia", "te", "gusta", "más", ",", "historia", "o", "matemáticas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "materia",
+        "lemma": "materia",
+        "hint": "predmet",
+        "distractors": ["fruta", "ciudad", "película"]
+      },
+      {
+        "tokenIndex": 4,
         "answer": "gusta",
         "lemma": "gustar",
         "hint": "gustar",
         "tip": "gustar",
         "why": "how",
-        "distractors": ["gustan", "gustas", "gusto"]
+        "distractors": ["gustan", "gustas"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
-    "id": "s1647",
-    "es": "¿Te interesa la historia de México?",
-    "sk": "Zaujíma ťa história Mexika?",
+    "id": "s1400",
+    "es": "¿A qué hora empezó el examen?",
+    "sk": "O koľkej sa začala písomka?",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["gustar", "presente"],
-    "tokens": ["¿", "Te", "interesa", "la", "historia", "de", "México", "?"],
+    "grammar": ["preterito"],
+    "tokens": ["¿", "A", "qué", "hora", "empezó", "el", "examen", "?"],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "interesa",
-        "lemma": "interesar",
-        "hint": "interesar",
-        "tip": "gustar",
-        "why": "similar",
-        "distractors": ["interesan", "gusta", "importa"]
+        "tokenIndex": 4,
+        "answer": "empezó",
+        "lemma": "empezar",
+        "hint": "empezar · él · pretérito",
+        "distractors": ["empezamos", "empieza", "empezaré"]
       }
     ]
   },
   {
-    "id": "s1665",
-    "es": "Hay veinte alumnos en mi clase.",
-    "sk": "V mojej triede je dvadsať žiakov.",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["hay-estar", "presente"],
-    "tokens": ["Hay", "veinte", "alumnos", "en", "mi", "clase", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Hay",
-        "lemma": "hay",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "hay",
-        "distractors": ["Está", "Están", "Es"]
-      }
-    ]
-  },
-  {
-    "id": "s1666",
-    "es": "El maestro está en la oficina.",
-    "sk": "Učiteľ je v kancelárii.",
-    "level": "A1",
-    "topics": ["school"],
-    "grammar": ["hay-estar", "presente"],
-    "tokens": ["El", "maestro", "está", "en", "la", "oficina", "."],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "está",
-        "lemma": "estar",
-        "hint": "hay/estar",
-        "tip": "hay-estar",
-        "why": "estar",
-        "distractors": ["hay", "es", "están"]
-      }
-    ]
-  },
-  {
-    "id": "s1688",
-    "es": "La maestra nos explicó la tarea y la entendimos.",
-    "sk": "Učiteľka nám vysvetlila úlohu a pochopili sme ju.",
+    "id": "s1401",
+    "es": "En la primaria siempre sacaba buenas calificaciones.",
+    "sk": "Na základnej škole som mal vždy dobré známky.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["object-pronouns", "preterito"],
-    "tokens": ["La", "maestra", "nos", "explicó", "la", "tarea", "y", "la", "entendimos", "."],
+    "grammar": ["imperfecto"],
+    "tokens": ["En", "la", "primaria", "siempre", "sacaba", "buenas", "calificaciones", "."],
     "cloze": [
       {
-        "tokenIndex": 7,
-        "answer": "la",
-        "lemma": "la",
-        "hint": "zámeno: ju",
-        "tip": "object-pronouns",
-        "why": "direct",
-        "distractors": ["lo", "le", "las"]
+        "tokenIndex": 4,
+        "answer": "sacaba",
+        "lemma": "sacar",
+        "hint": "sacar · yo · imperfecto",
+        "distractors": ["sacabas", "saco", "sacamos"]
       }
     ]
   },
   {
-    "id": "s1725",
-    "es": "Mañana hay examen y tengo que estudiar.",
-    "sk": "Zajtra je skúška a musím sa učiť.",
+    "id": "s1402",
+    "es": "El próximo año mi hija estudiará en la prepa.",
+    "sk": "Budúci rok bude dcéra študovať na strednej škole.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["obligation", "presente"],
-    "tokens": ["Mañana", "hay", "examen", "y", "tengo", "que", "estudiar", "."],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "año", "mi", "hija", "estudiará", "en", "la", "prepa", "."],
     "cloze": [
       {
         "tokenIndex": 5,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "musieť",
-        "tip": "obligation",
-        "why": "tener-que",
-        "distractors": ["de", "a", "para"]
-      }
-    ]
-  },
-  {
-    "id": "s1751",
-    "es": "Abran el libro en la página diez.",
-    "sk": "Otvorte knihu na desiatej strane.",
-    "level": "A2",
-    "topics": ["school"],
-    "grammar": ["imperativo"],
-    "tokens": ["Abran", "el", "libro", "en", "la", "página", "diez", "."],
-    "cloze": [
-      {
-        "tokenIndex": 0,
-        "answer": "Abran",
-        "lemma": "abrir",
-        "hint": "abrir · ustedes · imperativo",
-        "distractors": ["Abra", "Abre", "Abrimos"]
+        "answer": "estudiará",
+        "lemma": "estudiar",
+        "hint": "estudiar · ella · futuro",
+        "distractors": ["estudiaremos", "estudia", "estudié"]
       }
     ]
   },

@@ -27,20 +27,22 @@
     ]
   },
   {
-    "id": "s291",
-    "es": "Subimos a la montaña el domingo.",
-    "sk": "V nedeľu sme vyšli na horu.",
+    "id": "s1690",
+    "es": "Este cerro es pequeño, pero ese volcán es más alto.",
+    "sk": "Tento kopec je malý, ale tamtá sopka je vyššia.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
-    "tokens": ["Subimos", "a", "la", "montaña", "el", "domingo", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Este", "cerro", "es", "pequeño", ",", "pero", "ese", "volcán", "es", "más", "alto", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Subimos",
-        "lemma": "subir",
-        "hint": "subir · nosotros · pretérito",
-        "distractors": ["Subí", "Subió", "Subiste"]
+        "tokenIndex": 9,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["menos", "tan", "muy"]
       }
     ]
   },
@@ -72,20 +74,22 @@
     ]
   },
   {
-    "id": "s293",
-    "es": "Nadamos en el río con mis primos.",
-    "sk": "S bratrancami sme plávali v rieke.",
+    "id": "s1691",
+    "es": "Hace más frío en el norte que en el sur.",
+    "sk": "Na severe je väčšia zima ako na juhu.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
-    "tokens": ["Nadamos", "en", "el", "río", "con", "mis", "primos", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Hace", "más", "frío", "en", "el", "norte", "que", "en", "el", "sur", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Nadamos",
-        "lemma": "nadar",
-        "hint": "nadar · nosotros · pretérito",
-        "distractors": ["Nadé", "Nadó", "Nadaste"]
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["como", "de", "más"]
       }
     ]
   },
@@ -145,20 +149,31 @@
     ]
   },
   {
-    "id": "s297",
-    "es": "Vimos muchos peces en Cozumel.",
-    "sk": "V Cozumeli sme videli veľa rýb.",
+    "id": "s1692",
+    "es": "Este lago es tan bonito como una playa.",
+    "sk": "Toto jazero je také krásne ako pláž.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
-    "tokens": ["Vimos", "muchos", "peces", "en", "Cozumel", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Este", "lago", "es", "tan", "bonito", "como", "una", "playa", "."],
     "cloze": [
       {
-        "tokenIndex": 0,
-        "answer": "Vimos",
-        "lemma": "ver",
-        "hint": "ver · nosotros · pretérito",
-        "distractors": ["Vi", "Vio", "Vemos"]
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["muy", "tanto", "más"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["que", "tan", "de"]
       }
     ]
   },
@@ -299,38 +314,42 @@
     ]
   },
   {
-    "id": "s389",
-    "es": "Anoche vimos muchas estrellas.",
-    "sk": "Včera večer sme videli veľa hviezd.",
+    "id": "s1693",
+    "es": "Ayer había muchas nubes, pero hoy hay menos.",
+    "sk": "Včera bolo veľa oblakov, ale dnes ich je menej.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
-    "tokens": ["Anoche", "vimos", "muchas", "estrellas", "."],
+    "grammar": ["comparisons", "imperfecto", "presente"],
+    "tokens": ["Ayer", "había", "muchas", "nubes", ",", "pero", "hoy", "hay", "menos", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "vimos",
-        "lemma": "ver",
-        "hint": "ver · nosotros · pretérito",
-        "distractors": ["vi", "vio", "vemos"]
+        "tokenIndex": 8,
+        "answer": "menos",
+        "lemma": "menos",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["más", "tan", "poco"]
       }
     ]
   },
   {
-    "id": "s390",
-    "es": "Las tortugas ponen sus huevos en la arena.",
-    "sk": "Korytnačky kladú vajíčka do piesku.",
+    "id": "s1694",
+    "es": "Esta playa es mejor que la otra: el agua es más limpia.",
+    "sk": "Táto pláž je lepšia ako tá druhá, voda je čistejšia.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["presente"],
-    "tokens": ["Las", "tortugas", "ponen", "sus", "huevos", "en", "la", "arena", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Esta", "playa", "es", "mejor", "que", "la", "otra", ":", "el", "agua", "es", "más", "limpia", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "ponen",
-        "lemma": "poner",
-        "hint": "poner · ellas · presente",
-        "distractors": ["pones", "ponemos", "pusieron"]
+        "tokenIndex": 3,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["peor", "más", "mayor"]
       }
     ]
   },
@@ -353,63 +372,60 @@
     ]
   },
   {
-    "id": "s392",
-    "es": "En Michoacán hay millones de mariposas monarca.",
-    "sk": "V Michoacáne sú milióny motýľov monarcha.",
+    "id": "s1695",
+    "es": "La lluvia de hoy es peor que la de ayer: no podemos salir.",
+    "sk": "Dnešný dážď je horší ako včerajší, nemôžeme von.",
     "level": "A2",
     "topics": ["nature"],
-    "tokens": ["En", "Michoacán", "hay", "millones", "de", "mariposas", "monarca", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["La", "lluvia", "de", "hoy", "es", "peor", "que", "la", "de", "ayer", ":", "no", "podemos", "salir", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "hay",
-        "lemma": "haber",
-        "hint": "je / sú",
-        "distractors": ["está", "es", "tiene"]
+        "tokenIndex": 5,
+        "answer": "peor",
+        "lemma": "peor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["mejor", "menor", "más"]
       }
     ]
   },
   {
-    "id": "s444",
-    "es": "Cuando éramos niños, íbamos al río todos los fines de semana.",
-    "sk": "Keď sme boli malí, chodievali sme každý víkend k rieke.",
+    "id": "s1696",
+    "es": "El Amazonas es el río más largo de América del Sur.",
+    "sk": "Amazonka je najdlhšia rieka Južnej Ameriky.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["imperfecto", "ser-estar"],
-    "tokens": ["Cuando", "éramos", "niños", ",", "íbamos", "al", "río", "todos", "los", "fines", "de", "semana", "."],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["El", "Amazonas", "es", "el", "río", "más", "largo", "de", "América", "del", "Sur", "."],
     "cloze": [
       {
-        "tokenIndex": 1,
-        "answer": "éramos",
-        "lemma": "ser",
-        "hint": "ser/estar · nosotros · imperfecto",
-        "why": "identity",
-        "distractors": ["estábamos", "era", "fuimos"]
-      },
-      {
-        "tokenIndex": 4,
-        "answer": "íbamos",
-        "lemma": "ir",
-        "hint": "ir · nosotros · imperfecto",
-        "distractors": ["iba", "fuimos", "ibas"]
+        "tokenIndex": 5,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "superlative",
+        "distractors": ["menos", "tan", "mayor"]
       }
     ]
   },
   {
-    "id": "s445",
-    "es": "Algún día conoceré el desierto de Sonora.",
-    "sk": "Raz spoznám púšť Sonora.",
+    "id": "s291",
+    "es": "Subimos a la montaña el domingo.",
+    "sk": "V nedeľu sme vyšli na horu.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["futuro"],
-    "tokens": ["Algún", "día", "conoceré", "el", "desierto", "de", "Sonora", "."],
+    "grammar": ["preterito"],
+    "tokens": ["Subimos", "a", "la", "montaña", "el", "domingo", "."],
     "cloze": [
       {
-        "tokenIndex": 2,
-        "answer": "conoceré",
-        "lemma": "conocer",
-        "hint": "conocer · yo · futuro",
-        "distractors": ["conocerá", "conocerán", "conozco"]
+        "tokenIndex": 0,
+        "answer": "Subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["Subí", "Subió", "Subiste"]
       }
     ]
   },
@@ -546,90 +562,91 @@
     ]
   },
   {
-    "id": "s886",
-    "es": "Una abeja me picó en la mano.",
-    "sk": "Pichla ma včela do ruky.",
-    "level": "A2",
-    "topics": ["nature"],
-    "tokens": ["Una", "abeja", "me", "picó", "en", "la", "mano", "."],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer": "abeja",
-        "lemma": "abeja",
-        "hint": "včela",
-        "distractors": ["oveja", "abuela", "almeja"]
-      }
-    ]
-  },
-  {
-    "id": "s887",
-    "es": "Subimos al cerro para ver el atardecer.",
-    "sk": "Vyšli sme na kopec pozrieť sa na západ slnka.",
+    "id": "s293",
+    "es": "Nadamos en el río con mis primos.",
+    "sk": "S bratrancami sme plávali v rieke.",
     "level": "A2",
     "topics": ["nature"],
     "grammar": ["preterito"],
-    "tokens": ["Subimos", "al", "cerro", "para", "ver", "el", "atardecer", "."],
+    "tokens": ["Nadamos", "en", "el", "río", "con", "mis", "primos", "."],
     "cloze": [
       {
         "tokenIndex": 0,
-        "answer": "Subimos",
-        "lemma": "subir",
-        "hint": "subir · nosotros · pretérito",
-        "distractors": ["Suben", "Subí", "Subíamos"]
+        "answer": "Nadamos",
+        "lemma": "nadar",
+        "hint": "nadar · nosotros · pretérito",
+        "distractors": ["Nadé", "Nadó", "Nadaste"]
       }
     ]
   },
   {
-    "id": "s888",
-    "es": "Nadamos debajo de una cascada.",
-    "sk": "Plávali sme pod vodopádom.",
-    "level": "A2",
-    "topics": ["nature"],
-    "tokens": ["Nadamos", "debajo", "de", "una", "cascada", "."],
-    "cloze": [
-      {
-        "tokenIndex": 4,
-        "answer": "cascada",
-        "lemma": "cascada",
-        "hint": "vodopád",
-        "distractors": ["casada", "cáscara", "calzada"]
-      }
-    ]
-  },
-  {
-    "id": "s889",
-    "es": "En el zoológico vimos monos y osos.",
-    "sk": "V zoo sme videli opice a medvede.",
+    "id": "s297",
+    "es": "Vimos muchos peces en Cozumel.",
+    "sk": "V Cozumeli sme videli veľa rýb.",
     "level": "A2",
     "topics": ["nature"],
     "grammar": ["preterito"],
-    "tokens": ["En", "el", "zoológico", "vimos", "monos", "y", "osos", "."],
+    "tokens": ["Vimos", "muchos", "peces", "en", "Cozumel", "."],
     "cloze": [
       {
-        "tokenIndex": 3,
+        "tokenIndex": 0,
+        "answer": "Vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["Vi", "Vio", "Vemos"]
+      }
+    ]
+  },
+  {
+    "id": "s389",
+    "es": "Anoche vimos muchas estrellas.",
+    "sk": "Včera večer sme videli veľa hviezd.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Anoche", "vimos", "muchas", "estrellas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
         "answer": "vimos",
         "lemma": "ver",
         "hint": "ver · nosotros · pretérito",
-        "distractors": ["ven", "vio", "veíamos"]
+        "distractors": ["vi", "vio", "vemos"]
       }
     ]
   },
   {
-    "id": "s890",
-    "es": "Las hormigas entraron a la cocina.",
-    "sk": "Do kuchyne vliezli mravce.",
+    "id": "s390",
+    "es": "Las tortugas ponen sus huevos en la arena.",
+    "sk": "Korytnačky kladú vajíčka do piesku.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
-    "tokens": ["Las", "hormigas", "entraron", "a", "la", "cocina", "."],
+    "grammar": ["presente"],
+    "tokens": ["Las", "tortugas", "ponen", "sus", "huevos", "en", "la", "arena", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "entraron",
-        "lemma": "entrar",
-        "hint": "entrar · ellas · pretérito",
-        "distractors": ["entra", "entró", "entraban"]
+        "answer": "ponen",
+        "lemma": "poner",
+        "hint": "poner · ellas · presente",
+        "distractors": ["pones", "ponemos", "pusieron"]
+      }
+    ]
+  },
+  {
+    "id": "s392",
+    "es": "En Michoacán hay millones de mariposas monarca.",
+    "sk": "V Michoacáne sú milióny motýľov monarcha.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["En", "Michoacán", "hay", "millones", "de", "mariposas", "monarca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hay",
+        "lemma": "haber",
+        "hint": "je / sú",
+        "distractors": ["está", "es", "tiene"]
       }
     ]
   },
@@ -1016,126 +1033,134 @@
     ]
   },
   {
-    "id": "s1321",
-    "es": "Ayer vimos una serpiente en el camino.",
-    "sk": "Včera sme na chodníku videli hada.",
+    "id": "s444",
+    "es": "Cuando éramos niños, íbamos al río todos los fines de semana.",
+    "sk": "Keď sme boli malí, chodievali sme každý víkend k rieke.",
     "level": "A2",
     "topics": ["nature"],
-    "tokens": ["Ayer", "vimos", "una", "serpiente", "en", "el", "camino", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "serpiente",
-        "lemma": "serpiente",
-        "hint": "had",
-        "distractors": ["ola", "isla", "luna"]
-      }
-    ]
-  },
-  {
-    "id": "s1322",
-    "es": "Cuando vivía en el rancho, tenía dos burros.",
-    "sk": "Keď som býval na ranči, mal som dva osly.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Cuando", "vivía", "en", "el", "rancho", ",", "tenía", "dos", "burros", "."],
-    "cloze": [
-      {
-        "tokenIndex": 6,
-        "answer": "tenía",
-        "lemma": "tener",
-        "hint": "tener · yo · imperfecto",
-        "distractors": ["tengo", "tuve", "tenían"]
-      }
-    ]
-  },
-  {
-    "id": "s1323",
-    "es": "El próximo verano visitaremos una isla en el Caribe.",
-    "sk": "Budúce leto navštívime ostrov v Karibiku.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "próximo", "verano", "visitaremos", "una", "isla", "en", "el", "Caribe", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "visitaremos",
-        "lemma": "visitar",
-        "hint": "visitar · nosotros · futuro",
-        "distractors": ["visitamos", "visitaron", "visitábamos"]
-      }
-    ]
-  },
-  {
-    "id": "s1324",
-    "es": "El temblor de anoche despertó a todos.",
-    "sk": "Nočné zemetrasenie zobudilo všetkých.",
-    "level": "A2",
-    "topics": ["nature"],
-    "tokens": ["El", "temblor", "de", "anoche", "despertó", "a", "todos", "."],
+    "grammar": ["imperfecto", "ser-estar"],
+    "tokens": ["Cuando", "éramos", "niños", ",", "íbamos", "al", "río", "todos", "los", "fines", "de", "semana", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "temblor",
-        "lemma": "temblor",
-        "hint": "zemetrasenie",
-        "distractors": ["cactus", "nopal", "burro"]
-      }
-    ]
-  },
-  {
-    "id": "s1325",
-    "es": "Los niños estaban jugando con la arena de la playa.",
-    "sk": "Deti sa hrali s pieskom na pláži.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["progresivo"],
-    "tokens": ["Los", "niños", "estaban", "jugando", "con", "la", "arena", "de", "la", "playa", "."],
-    "cloze": [
+        "answer": "éramos",
+        "lemma": "ser",
+        "hint": "ser/estar · nosotros · imperfecto",
+        "why": "identity",
+        "distractors": ["estábamos", "era", "fuimos"]
+      },
       {
-        "tokenIndex": 3,
-        "answer": "jugando",
-        "lemma": "jugar",
-        "hint": "jugar · gerundio",
-        "distractors": ["juegan", "jugar", "jugaron"]
+        "tokenIndex": 4,
+        "answer": "íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["iba", "fuimos", "ibas"]
       }
     ]
   },
   {
-    "id": "s1326",
-    "es": "Mi abuela regaba sus plantas todas las tardes.",
-    "sk": "Babka každé popoludnie polievala kvety.",
+    "id": "s445",
+    "es": "Algún día conoceré el desierto de Sonora.",
+    "sk": "Raz spoznám púšť Sonora.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["imperfecto"],
-    "tokens": ["Mi", "abuela", "regaba", "sus", "plantas", "todas", "las", "tardes", "."],
+    "grammar": ["futuro"],
+    "tokens": ["Algún", "día", "conoceré", "el", "desierto", "de", "Sonora", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "regaba",
-        "lemma": "regar",
-        "hint": "regar · ella · imperfecto",
-        "distractors": ["riega", "regó", "regaban"]
+        "answer": "conoceré",
+        "lemma": "conocer",
+        "hint": "conocer · yo · futuro",
+        "distractors": ["conocerá", "conocerán", "conozco"]
       }
     ]
   },
   {
-    "id": "s1327",
-    "es": "Las olas estaban muy fuertes, así que regresamos al hotel.",
-    "sk": "Vlny boli veľmi silné, tak sme sa vrátili do hotela.",
+    "id": "s886",
+    "es": "Una abeja me picó en la mano.",
+    "sk": "Pichla ma včela do ruky.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["Una", "abeja", "me", "picó", "en", "la", "mano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "abeja",
+        "lemma": "abeja",
+        "hint": "včela",
+        "distractors": ["oveja", "abuela", "almeja"]
+      }
+    ]
+  },
+  {
+    "id": "s887",
+    "es": "Subimos al cerro para ver el atardecer.",
+    "sk": "Vyšli sme na kopec pozrieť sa na západ slnka.",
     "level": "A2",
     "topics": ["nature"],
     "grammar": ["preterito"],
-    "tokens": ["Las", "olas", "estaban", "muy", "fuertes", ",", "así", "que", "regresamos", "al", "hotel", "."],
+    "tokens": ["Subimos", "al", "cerro", "para", "ver", "el", "atardecer", "."],
     "cloze": [
       {
-        "tokenIndex": 8,
-        "answer": "regresamos",
-        "lemma": "regresar",
-        "hint": "regresar · nosotros · pretérito",
-        "distractors": ["regreso", "regresaron", "regresábamos"]
+        "tokenIndex": 0,
+        "answer": "Subimos",
+        "lemma": "subir",
+        "hint": "subir · nosotros · pretérito",
+        "distractors": ["Suben", "Subí", "Subíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s888",
+    "es": "Nadamos debajo de una cascada.",
+    "sk": "Plávali sme pod vodopádom.",
+    "level": "A2",
+    "topics": ["nature"],
+    "tokens": ["Nadamos", "debajo", "de", "una", "cascada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cascada",
+        "lemma": "cascada",
+        "hint": "vodopád",
+        "distractors": ["casada", "cáscara", "calzada"]
+      }
+    ]
+  },
+  {
+    "id": "s889",
+    "es": "En el zoológico vimos monos y osos.",
+    "sk": "V zoo sme videli opice a medvede.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["En", "el", "zoológico", "vimos", "monos", "y", "osos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["ven", "vio", "veíamos"]
+      }
+    ]
+  },
+  {
+    "id": "s890",
+    "es": "Las hormigas entraron a la cocina.",
+    "sk": "Do kuchyne vliezli mravce.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "hormigas", "entraron", "a", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entraron",
+        "lemma": "entrar",
+        "hint": "entrar · ellas · pretérito",
+        "distractors": ["entra", "entró", "entraban"]
       }
     ]
   },
@@ -1505,151 +1530,126 @@
     ]
   },
   {
-    "id": "s1690",
-    "es": "Este cerro es pequeño, pero ese volcán es más alto.",
-    "sk": "Tento kopec je malý, ale tamtá sopka je vyššia.",
+    "id": "s1321",
+    "es": "Ayer vimos una serpiente en el camino.",
+    "sk": "Včera sme na chodníku videli hada.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Este", "cerro", "es", "pequeño", ",", "pero", "ese", "volcán", "es", "más", "alto", "."],
+    "tokens": ["Ayer", "vimos", "una", "serpiente", "en", "el", "camino", "."],
     "cloze": [
       {
-        "tokenIndex": 9,
-        "answer": "más",
-        "lemma": "más",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "more-less",
-        "distractors": ["menos", "tan", "muy"]
+        "tokenIndex": 3,
+        "answer": "serpiente",
+        "lemma": "serpiente",
+        "hint": "had",
+        "distractors": ["ola", "isla", "luna"]
       }
     ]
   },
   {
-    "id": "s1691",
-    "es": "Hace más frío en el norte que en el sur.",
-    "sk": "Na severe je väčšia zima ako na juhu.",
+    "id": "s1322",
+    "es": "Cuando vivía en el rancho, tenía dos burros.",
+    "sk": "Keď som býval na ranči, mal som dva osly.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Hace", "más", "frío", "en", "el", "norte", "que", "en", "el", "sur", "."],
+    "grammar": ["imperfecto"],
+    "tokens": ["Cuando", "vivía", "en", "el", "rancho", ",", "tenía", "dos", "burros", "."],
     "cloze": [
       {
         "tokenIndex": 6,
-        "answer": "que",
-        "lemma": "que",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "more-less",
-        "distractors": ["como", "de", "más"]
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · yo · imperfecto",
+        "distractors": ["tengo", "tuve", "tenían"]
       }
     ]
   },
   {
-    "id": "s1692",
-    "es": "Este lago es tan bonito como una playa.",
-    "sk": "Toto jazero je také krásne ako pláž.",
+    "id": "s1323",
+    "es": "El próximo verano visitaremos una isla en el Caribe.",
+    "sk": "Budúce leto navštívime ostrov v Karibiku.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Este", "lago", "es", "tan", "bonito", "como", "una", "playa", "."],
+    "grammar": ["futuro"],
+    "tokens": ["El", "próximo", "verano", "visitaremos", "una", "isla", "en", "el", "Caribe", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "tan",
-        "lemma": "tan",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "equal",
-        "distractors": ["muy", "tanto", "más"]
-      },
-      {
-        "tokenIndex": 5,
-        "answer": "como",
-        "lemma": "como",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "equal",
-        "distractors": ["que", "tan", "de"]
+        "answer": "visitaremos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros · futuro",
+        "distractors": ["visitamos", "visitaron", "visitábamos"]
       }
     ]
   },
   {
-    "id": "s1693",
-    "es": "Ayer había muchas nubes, pero hoy hay menos.",
-    "sk": "Včera bolo veľa oblakov, ale dnes ich je menej.",
+    "id": "s1324",
+    "es": "El temblor de anoche despertó a todos.",
+    "sk": "Nočné zemetrasenie zobudilo všetkých.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "imperfecto", "presente"],
-    "tokens": ["Ayer", "había", "muchas", "nubes", ",", "pero", "hoy", "hay", "menos", "."],
+    "tokens": ["El", "temblor", "de", "anoche", "despertó", "a", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "temblor",
+        "lemma": "temblor",
+        "hint": "zemetrasenie",
+        "distractors": ["cactus", "nopal", "burro"]
+      }
+    ]
+  },
+  {
+    "id": "s1325",
+    "es": "Los niños estaban jugando con la arena de la playa.",
+    "sk": "Deti sa hrali s pieskom na pláži.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["progresivo"],
+    "tokens": ["Los", "niños", "estaban", "jugando", "con", "la", "arena", "de", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jugando",
+        "lemma": "jugar",
+        "hint": "jugar · gerundio",
+        "distractors": ["juegan", "jugar", "jugaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1326",
+    "es": "Mi abuela regaba sus plantas todas las tardes.",
+    "sk": "Babka každé popoludnie polievala kvety.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuela", "regaba", "sus", "plantas", "todas", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "regaba",
+        "lemma": "regar",
+        "hint": "regar · ella · imperfecto",
+        "distractors": ["riega", "regó", "regaban"]
+      }
+    ]
+  },
+  {
+    "id": "s1327",
+    "es": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+    "sk": "Vlny boli veľmi silné, tak sme sa vrátili do hotela.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["preterito"],
+    "tokens": ["Las", "olas", "estaban", "muy", "fuertes", ",", "así", "que", "regresamos", "al", "hotel", "."],
     "cloze": [
       {
         "tokenIndex": 8,
-        "answer": "menos",
-        "lemma": "menos",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "more-less",
-        "distractors": ["más", "tan", "poco"]
-      }
-    ]
-  },
-  {
-    "id": "s1694",
-    "es": "Esta playa es mejor que la otra: el agua es más limpia.",
-    "sk": "Táto pláž je lepšia ako tá druhá, voda je čistejšia.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["Esta", "playa", "es", "mejor", "que", "la", "otra", ":", "el", "agua", "es", "más", "limpia", "."],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "mejor",
-        "lemma": "mejor",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "irregular",
-        "distractors": ["peor", "más", "mayor"]
-      }
-    ]
-  },
-  {
-    "id": "s1695",
-    "es": "La lluvia de hoy es peor que la de ayer: no podemos salir.",
-    "sk": "Dnešný dážď je horší ako včerajší, nemôžeme von.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["La", "lluvia", "de", "hoy", "es", "peor", "que", "la", "de", "ayer", ":", "no", "podemos", "salir", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "peor",
-        "lemma": "peor",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "irregular",
-        "distractors": ["mejor", "menor", "más"]
-      }
-    ]
-  },
-  {
-    "id": "s1696",
-    "es": "El Amazonas es el río más largo de América del Sur.",
-    "sk": "Amazonka je najdlhšia rieka Južnej Ameriky.",
-    "level": "A2",
-    "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
-    "tokens": ["El", "Amazonas", "es", "el", "río", "más", "largo", "de", "América", "del", "Sur", "."],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "más",
-        "lemma": "más",
-        "hint": "porovnanie",
-        "tip": "comparisons",
-        "why": "superlative",
-        "distractors": ["menos", "tan", "mayor"]
+        "answer": "regresamos",
+        "lemma": "regresar",
+        "hint": "regresar · nosotros · pretérito",
+        "distractors": ["regreso", "regresaron", "regresábamos"]
       }
     ]
   },
