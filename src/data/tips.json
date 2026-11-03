@@ -3,7 +3,7 @@
     "id": "ser-estar",
     "title": "ser a estar",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2", "UIMP 2026, Lengua Española A1, semana 2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1–A2" }, { "source": "uimp-a1", "where": "semana 2" }],
     "intro": "Obe slovesá znamenajú „byť“. Ser hovorí, čo alebo aké niečo je. Estar hovorí, kde to je a v akom stave je práve teraz.",
     "related": ["progresivo", "adjectives"],
     "rules": [
@@ -144,7 +144,7 @@
     "id": "presente",
     "title": "Prítomný čas (presente)",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 1"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }, { "source": "uimp-a1", "where": "semana 1" }],
     "intro": "Hovorí o tom, čo robíš bežne alebo práve teraz. Koncovka sa mení podľa osoby, zámeno (yo, tú…) sa väčšinou vynecháva.",
     "related": ["reflexive", "progresivo"],
     "rules": [
@@ -196,7 +196,7 @@
     "id": "preterito",
     "title": "Pretérito (dokončený minulý čas)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2" }],
     "intro": "Hovorí o deji, ktorý sa stal a skončil: včera, minulý týždeň, raz. V Mexiku je to bežný minulý čas aj pre nedávne udalosti.",
     "related": ["imperfecto", "preterito-imperfecto"],
     "rules": [
@@ -261,7 +261,7 @@
     "id": "imperfecto",
     "title": "Imperfecto (priebehový minulý čas)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2" }],
     "intro": "Opisuje, čo sa dialo opakovane alebo ako veci vyzerali: čo si robieval, aké to bolo, koľko si mal rokov.",
     "related": ["preterito", "preterito-imperfecto"],
     "rules": [
@@ -299,7 +299,7 @@
     "id": "preterito-imperfecto",
     "title": "Pretérito alebo imperfecto?",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B1"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2–B1" }],
     "intro": "Oba sú minulé časy. Pretérito hovorí, čo sa stalo. Imperfecto hovorí, ako to vtedy vyzeralo alebo čo sa dialo opakovane.",
     "related": ["preterito", "imperfecto"],
     "rules": [
@@ -339,7 +339,7 @@
     "id": "futuro",
     "title": "Budúci čas (futuro)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2" }],
     "intro": "Koncovky sa pridávajú k celému neurčitku a sú rovnaké pre všetky slovesá.",
     "related": ["presente"],
     "rules": [
@@ -382,7 +382,7 @@
     "id": "progresivo",
     "title": "Priebehový čas (estar + gerundio)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1–A2" }],
     "intro": "Hovorí o tom, čo sa deje práve v tejto chvíli. Skladá sa zo slovesa estar a gerundia.",
     "related": ["ser-estar", "presente"],
     "rules": [
@@ -425,7 +425,7 @@
     "id": "gender",
     "title": "Rod podstatných mien",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }],
     "intro": "Každé podstatné meno je mužského (el) alebo ženského (la) rodu. Rod sa často dá odhadnúť podľa koncovky, ale so slovenčinou sa nezhoduje.",
     "related": ["articles", "adjectives"],
     "rules": [
@@ -489,7 +489,7 @@
     "id": "articles",
     "title": "Členy (el, la, un, una)",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }],
     "intro": "Slovenčina členy nemá, španielčina ich používa takmer vždy. Člen sa zhoduje s podstatným menom v rode a čísle.",
     "related": ["gender", "adjectives"],
     "rules": [
@@ -544,7 +544,7 @@
     "id": "adjectives",
     "title": "Zhoda prídavných mien",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }],
     "intro": "Prídavné meno má rovnaký rod a číslo ako podstatné meno a zvyčajne stojí za ním.",
     "related": ["gender", "articles", "ser-estar"],
     "rules": [
@@ -599,7 +599,7 @@
     "id": "reflexive",
     "title": "Zvratné slovesá",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 3"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }, { "source": "uimp-a1", "where": "semana 3" }],
     "intro": "Neurčitok sa končí na -se (levantarse). Zámeno sa mení podľa osoby: me, te, se, nos, se.",
     "related": ["presente"],
     "rules": [
@@ -642,7 +642,7 @@
     "id": "accents",
     "title": "Prízvuk, ktorý mení význam",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Ortografía A1–A2", "RAE y ASALE (2010), Ortografía de la lengua española: tilde diacrítica"],
+    "sources": [{ "source": "pcic", "where": "Ortografía A1–A2" }, { "source": "rae-ortografia", "where": "tilde diacrítica" }],
     "intro": "Čiarka nad samohláskou (á, é, í, ó, ú) ukazuje prízvuk. Pri niektorých slovách rozlišuje dve rôzne slová, preto ju vtedy aplikácia neodpustí.",
     "related": ["preterito"],
     "rules": [
@@ -690,7 +690,7 @@
     "id": "imperativo",
     "title": "Imperativ (rozkazovací spôsob)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (kladný), B1 (záporný)", "UIMP 2026, Lengua Española B1, semana 3"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2 (imperativo afirmativo), B1 (imperativo negativo)" }, { "source": "uimp-b1", "where": "semana 3" }],
     "intro": "Prosby, rady a pokyny: ven, siéntate, no te preocupes. Tvar pre tú je jednoduchý, ostatné osoby si berú tvar zo subjuntivu.",
     "related": ["subjuntivo", "reflexive", "object-pronouns"],
     "rules": [
@@ -745,7 +745,7 @@
     "id": "subjuntivo",
     "title": "Subjuntivo presente: tvary",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 2"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1" }, { "source": "uimp-b1", "where": "semana 2" }],
     "intro": "Subjuntivo je spôsob pre to, čo si niekto želá, čo cíti alebo čo nie je isté. Tvorí sa z prítomného času s „opačnou“ samohláskou: -ar dostane koncovky s -e, -er a -ir koncovky s -a.",
     "related": ["subjuntivo-wishes", "subjuntivo-clauses", "imperativo", "subj-imperfecto"],
     "rules": [
@@ -806,7 +806,7 @@
     "id": "condicional",
     "title": "Kondicionál (by)",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (cortesía), B1 (hipótesis)"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2 (cortesía), B1 (hipótesis)" }],
     "intro": "Hovorí, čo by sa stalo alebo čo by si urobil. Je to aj zdvorilý spôsob, ako o niečo poprosiť.",
     "related": ["futuro", "si-clauses", "subj-imperfecto"],
     "rules": [
@@ -846,7 +846,7 @@
     "id": "pluscuamperfecto",
     "title": "Pluscuamperfecto (už predtým)",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 1"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1" }, { "source": "uimp-b1", "where": "semana 1" }],
     "intro": "Dej, ktorý sa stal skôr ako iný dej v minulosti: keď som prišiel, film už začal.",
     "related": ["preterito", "imperfecto"],
     "rules": [
@@ -886,7 +886,7 @@
     "id": "subj-imperfecto",
     "title": "Imperfecto de subjuntivo: tvary",
     "level": "B2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B2", "UIMP 2026, Lengua Española B2, módulo 3"],
+    "sources": [{ "source": "pcic", "where": "Gramática B2" }, { "source": "uimp-b2", "where": "módulo 3" }],
     "intro": "Minulý subjuntivo. Potrebuješ ho pri nereálnej podmienke (si tuviera…) a vo vedľajšej vete, keď je hlavná veta v minulosti (quería que vinieras).",
     "related": ["subjuntivo", "si-clauses", "condicional"],
     "rules": [
@@ -920,7 +920,7 @@
     "id": "gustar",
     "title": "gustar, encantar, doler",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 3"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }, { "source": "uimp-a1", "where": "semana 3" }],
     "intro": "Me gusta neznamená „mám rád“, ale „páči sa mi“: to, čo sa páči, je podmet. Preto sa sloveso riadi vecou, nie človekom.",
     "related": ["object-pronouns"],
     "rules": [
@@ -970,7 +970,7 @@
     "id": "hay-estar",
     "title": "hay alebo estar",
     "level": "A1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1" }, { "source": "uimp-a1", "where": "semana 2" }],
     "intro": "Hay hovorí, že niečo existuje alebo je niekde k dispozícii. Estar hovorí, kde sa nachádza konkrétna, známa vec.",
     "related": ["ser-estar", "articles"],
     "rules": [
@@ -1007,7 +1007,7 @@
     "id": "object-pronouns",
     "title": "Zámená predmetu (lo, la, le)",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–B1", "UIMP 2026, Lengua Española A1, semana 4"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1–B1" }, { "source": "uimp-a1", "where": "semana 4" }],
     "intro": "Namiesto opakovania podstatného mena: ¿El pastel? Lo compré. Lo a la sú pre to, koho alebo čo, le pre to, komu.",
     "related": ["gustar", "imperativo", "reflexive"],
     "rules": [
@@ -1057,7 +1057,7 @@
     "id": "comparisons",
     "title": "Porovnávanie",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2"],
+    "sources": [{ "source": "pcic", "where": "Gramática A1–A2" }],
     "intro": "Viac, menej, rovnako a najviac: más alto que, tan caro como, el mejor.",
     "related": ["adjectives"],
     "rules": [
@@ -1107,7 +1107,7 @@
     "id": "obligation",
     "title": "Musieť, mať a môcť",
     "level": "A2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B1", "UIMP 2026, Lengua Española B1, semana 4"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2–B1" }, { "source": "uimp-b1", "where": "semana 4" }],
     "intro": "tener que, hay que, deber a poder sa spájajú s neurčitkom: tengo que trabajar.",
     "related": ["presente", "condicional"],
     "rules": [
@@ -1154,7 +1154,7 @@
     "id": "subjuntivo-wishes",
     "title": "Subjuntivo pri želaní a pocitoch",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 2"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1" }, { "source": "uimp-b1", "where": "semana 2" }],
     "intro": "Keď niekto chce, dúfa alebo cíti niečo o inom človeku, veta s que je v subjuntive: quiero que vengas.",
     "related": ["subjuntivo", "subjuntivo-clauses"],
     "rules": [
@@ -1201,7 +1201,7 @@
     "id": "si-clauses",
     "title": "Podmienky so si",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1 (reales), B2 (irreales)", "UIMP 2026, Lengua Española B1, semana 3", "UIMP 2026, Lengua Española B2, módulo 3"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1 (reales), B2 (irreales)" }, { "source": "uimp-b1", "where": "semana 3" }, { "source": "uimp-b2", "where": "módulo 3" }],
     "intro": "Si znamená „ak“ alebo „keby“. Aký čas nasleduje, závisí od toho, či je podmienka skutočná, alebo len predstava.",
     "related": ["condicional", "subj-imperfecto", "futuro"],
     "rules": [
@@ -1238,7 +1238,7 @@
     "id": "por-para",
     "title": "por alebo para",
     "level": "B1",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B2", "UIMP 2026, Lengua Española B2, módulo 4"],
+    "sources": [{ "source": "pcic", "where": "Gramática A2–B2" }, { "source": "uimp-b2", "where": "módulo 4" }],
     "intro": "Obe často znamenajú „pre“ alebo „za“. Para sa pozerá dopredu, na cieľ. Por sa pozerá na príčinu, cestu a výmenu.",
     "rules": [
       {
@@ -1277,7 +1277,7 @@
     "id": "subjuntivo-clauses",
     "title": "Subjuntivo pri názore a po spojkách",
     "level": "B2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 2 y 5"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1–B2" }, { "source": "uimp-b2", "where": "módulos 2 y 5" }],
     "intro": "Subjuntivo nasleduje aj po zápornom názore, po pochybnosti a po niektorých spojkách, keď ide o niečo, čo ešte nie je isté.",
     "related": ["subjuntivo", "subjuntivo-wishes", "si-clauses"],
     "rules": [
@@ -1327,7 +1327,7 @@
     "id": "relatives",
     "title": "Vzťažné vety (que, donde, lo que)",
     "level": "B2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 4–6"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1–B2" }, { "source": "uimp-b2", "where": "módulos 4–6" }],
     "intro": "Spájajú dve vety do jednej: el libro que leí. Que je najčastejšie a platí pre ľudí aj veci.",
     "related": ["subjuntivo-clauses"],
     "rules": [
@@ -1374,7 +1374,7 @@
     "id": "passive-se",
     "title": "Trpný rod a neosobné se",
     "level": "B2",
-    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 1 y 6"],
+    "sources": [{ "source": "pcic", "where": "Gramática B1–B2" }, { "source": "uimp-b2", "where": "módulos 1 y 6" }],
     "intro": "Keď nie je dôležité, kto dej robí. V bežnej reči sa používa se, trpný rod so ser patrí skôr do správ a úradných textov.",
     "related": ["reflexive", "ser-estar"],
     "rules": [

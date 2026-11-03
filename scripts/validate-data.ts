@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, Tense, Tip,TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 import {
   deriveCondicional,
   deriveImperativo,
@@ -37,6 +37,8 @@ const verbs = loadDir<Verb>('verbs')
 const sentences = loadDir<Sentence>('sentences')
 const tipsUrl = new URL('tips.json', DATA)
 const tips = (existsSync(tipsUrl) ? readJson(tipsUrl) : []) as Tip[]
+const sourcesUrl = new URL('sources.json', DATA)
+const sources = (existsSync(sourcesUrl) ? readJson(sourcesUrl) : []) as Source[]
 
 const errors: string[] = []
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`)
@@ -335,6 +337,19 @@ for (const v of verbs) {
   if (count !== 1) fail(`verbs[${v.id}]`, `needs exactly one word entry (found ${count})`)
 }
 
+// ---------- sources ----------
+
+checkUniqueIds(sources, 'sources')
+const sourceIds = new Set(sources.map((s) => s.id))
+const citedSources = new Set(tips.flatMap((t) => (Array.isArray(t.sources) ? t.sources.map((r) => r.source) : [])))
+for (const s of sources) {
+  const where = `sources[${s.id}]`
+  if (!isNonEmpty(s.short) || !isNonEmpty(s.title) || !isNonEmpty(s.author)) fail(where, 'missing short/title/author')
+  if (!Number.isInteger(s.year) || s.year < 1900 || s.year > 2100) fail(where, `implausible year ${s.year}`)
+  if (s.url !== undefined && !/^https:\/\/\S+$/.test(s.url)) fail(where, 'url must be https')
+  if (!citedSources.has(s.id)) fail(where, 'no tip cites it')
+}
+
 // ---------- grammar tips ----------
 
 const SER_ESTAR = 'ser-estar'
@@ -348,7 +363,11 @@ for (const tip of tips) {
   const where = `tips[${tip.id}]`
   if (!isNonEmpty(tip.title) || !isNonEmpty(tip.intro)) fail(where, 'missing title/intro')
   checkLevel(where, tip.level)
-  if (!Array.isArray(tip.sources) || tip.sources.length === 0 || !tip.sources.every(isNonEmpty)) fail(where, 'needs at least one source')
+  if (!Array.isArray(tip.sources) || tip.sources.length === 0) fail(where, 'needs at least one source')
+  for (const ref of Array.isArray(tip.sources) ? tip.sources : []) {
+    if (!sourceIds.has(ref.source)) fail(where, `unknown source "${ref.source}"`)
+    if (!isNonEmpty(ref.where)) fail(where, `source "${ref.source}" needs where`)
+  }
   if (!Array.isArray(tip.rules) || tip.rules.length === 0) {
     fail(where, 'needs at least one rule')
     continue

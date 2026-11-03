@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { sentenceById, tipById, topicById, verbById, wordById } from '../data'
 import { setLanguage } from './language'
 import {
+  citation,
   clozeHint,
   localizedTip,
   sentenceTranslation,
@@ -83,5 +84,23 @@ describe('in English', () => {
     const presente = tipById.get('presente')!
     expect(localizedTip(presente).title).toBe('Present tense (presente)')
     expect(localizedTip({ ...presente, id: UNKNOWN }).title).toBe(presente.title)
+  })
+
+  it('builds the same citations in both languages, in order', () => {
+    const siClauses = tipById.get('si-clauses')!
+    const expected = [
+      'Plan curricular del Instituto Cervantes (2006), Gramática B1 (reales), B2 (irreales)',
+      'UIMP 2026, Lengua Española B1, semana 3',
+      'UIMP 2026, Lengua Española B2, módulo 3',
+    ]
+    setLanguage('sk')
+    expect(localizedTip(siClauses).sources).toEqual(expected)
+    setLanguage('en')
+    expect(localizedTip(siClauses).sources).toEqual(expected)
+    expect(localizedTip(tipById.get('accents')!).sources).toEqual([
+      'Plan curricular del Instituto Cervantes (2006), Ortografía A1–A2',
+      'RAE y ASALE (2010), Ortografía de la lengua española, tilde diacrítica',
+    ])
+    expect(citation({ source: 'pcic', where: 'Gramática A1' })).toBe('Plan curricular del Instituto Cervantes (2006), Gramática A1')
   })
 })

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "pcic",
+    "short": "Plan curricular del Instituto Cervantes (2006)",
+    "title": "Plan curricular del Instituto Cervantes. Niveles de referencia para el español",
+    "author": "Instituto Cervantes",
+    "year": 2006
+  },
+  {
+    "id": "uimp-a1",
+    "short": "UIMP 2026, Lengua Española A1",
+    "title": "Lengua Española A1. Programa de la asignatura",
+    "author": "Universidad Internacional Menéndez Pelayo",
+    "year": 2026,
+    "url": "https://uimp.es/images/extranjeros/2026_Lengua_Esp_A1_Programa_de_la_asignatura.pdf"
+  },
+  {
+    "id": "uimp-b1",
+    "short": "UIMP 2026, Lengua Española B1",
+    "title": "Lengua Española B1. Programa de la asignatura",
+    "author": "Universidad Internacional Menéndez Pelayo",
+    "year": 2026,
+    "url": "https://www.uimp.es/images/extranjeros/2026_Lengua_Esp_B1_Programa_de_la_asignatura.pdf"
+  },
+  {
+    "id": "uimp-b2",
+    "short": "UIMP 2026, Lengua Española B2",
+    "title": "Lengua Española B2. Programa de la asignatura",
+    "author": "Universidad Internacional Menéndez Pelayo",
+    "year": 2026,
+    "url": "https://www.uimp.es/images/extranjeros/2026_Lengua_Esp_B2_Programa_de_la_asignatura.pdf"
+  },
+  {
+    "id": "rae-ortografia",
+    "short": "RAE y ASALE (2010), Ortografía de la lengua española",
+    "title": "Ortografía de la lengua española",
+    "author": "Real Academia Española y Asociación de Academias de la Lengua Española",
+    "year": 2010
+  }
+]

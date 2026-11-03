@@ -1,5 +1,5 @@
-import { english } from '../data'
-import type { Cloze, Level, Sentence, Tip, Topic, Verb, Word } from '../data/types'
+import { english, sourceById } from '../data'
+import type { Cloze, Level, Sentence, SourceRef, Tip, Topic, Verb, Word } from '../data/types'
 import { getLanguage } from './language'
 
 // The teaching content in the learner's language. The only place that knows there are two:
@@ -63,7 +63,7 @@ export interface LocalTip {
   id: string
   title: string
   level: Level
-  sources: string[]
+  sources: string[] // built citations, see `citation`
   intro: string
   related?: string[]
   rules: LocalRule[]
@@ -83,5 +83,10 @@ export function localizedTip(tip: Tip): LocalTip {
       examples: rule.examples.map((example, i) => ({ es: example.es, text: translated?.examples[i] ?? example.sk })),
     }
   })
-  return { id: tip.id, title: entry?.title ?? tip.title, level: tip.level, sources: tip.sources, intro: entry?.intro ?? tip.intro, related: tip.related, rules }
+  return { id: tip.id, title: entry?.title ?? tip.title, level: tip.level, sources: tip.sources.map(citation), intro: entry?.intro ?? tip.intro, related: tip.related, rules }
+}
+
+/** "Plan curricular del Instituto Cervantes (2006), Gramática B1": the same in every language. */
+export function citation(ref: SourceRef): string {
+  return `${sourceById.get(ref.source)?.short ?? ref.source}, ${ref.where}`
 }
