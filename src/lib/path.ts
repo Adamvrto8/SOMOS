@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { sentences, tipById, topicById, verbById, verbs } from '../data'
-import type { Level, Person, Sentence, Verb, Word } from '../data/types'
+import type { Grammar, Level, Person, Sentence, Verb, Word } from '../data/types'
+import { USAGE_TIPS } from './clozeChecks'
 import { personsOf, type TableTense } from './conjugate'
 import { builderWords, conjugationTask, LESSON_SIZE, seededRandom, taskFromItem, vocabTask, type ExerciseType, type Grade, type Task } from './lesson'
 import { useLessonProgression, type LessonProgressionMap } from './lessonProgress'
@@ -9,7 +10,7 @@ import { getOnboarding, MOTIVATIONS, useOnboarding, type OnboardingState } from 
 import { orderedUnits, pathUnitById, pathUnits, unitMaterial, type PathUnit } from './pathUnits'
 import { useTestResults } from './testProgress'
 import { itemKey, testKey, testToParams, type TestId } from './tests'
-import { tipFor, tipForCloze } from './tips'
+import { tipFor, tipForHint } from './tips'
 
 // The guided path ("Cesta", docs/guided-path-spec.md): every unit is a row of steps, each step a lesson
 // built from the unit's words and sentences, the last one the unit's test. Nothing new is stored: a step
@@ -104,8 +105,10 @@ function clozeFits(unit: PathUnit, sentence: Sentence, index: number): boolean {
   const cloze = sentence.cloze![index]
   if (unit.grammar === 'reflexive') return verbById.get(cloze.lemma)?.reflexive === true
   if (unit.grammar === 'accents') return ACCENTED.has(cloze.answer.toLowerCase())
+  // A usage tip (por/para…) is named by the blank; a tense by its hint, also on a usage blank (quiero que vengas).
+  if (USAGE_TIPS.includes(unit.grammar as Grammar)) return cloze.tip === unit.grammar && ruleFits(unit, cloze.why)
   const found = cachedTip(`${sentence.id}#${index}`, () => {
-    const tip = tipForCloze(sentence, cloze)
+    const tip = tipForHint(sentence, cloze)
     return { tip: tip?.tip.id, rule: tip?.tip.id === 'ser-estar' ? cloze.why : tip?.rule?.id }
   })
   // Which of the two past tenses: blanks of either, the sentence tells which one fits.

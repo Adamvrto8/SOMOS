@@ -5,7 +5,8 @@ import { tipForCloze } from './tips'
 import { nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
 import { MAX_UNIT_WORDS, orderedUnits, pathUnitById, pathUnits, unitMaterial } from './pathUnits'
 import { createTest, hasTest, parseTestKey, testKey } from './tests'
-import type { ConjugationTask } from './lesson'
+import { USAGE_TIPS } from './clozeChecks'
+import { LESSON_SIZE, type ConjugationTask } from './lesson'
 
 const passed = { bestScore: 10, total: 10, passed: true }
 const none = () => false
@@ -27,8 +28,8 @@ describe('path units', () => {
   it('teaches no unit a tense above its level', () => {
     const LEVEL = { imperativo: 'A2', subjuntivo: 'B1', condicional: 'B1', pluscuamperfecto: 'B1', 'subj-imperfecto': 'B2' } as Record<string, string>
     for (const unit of pathUnits) if (LEVEL[unit.grammar]) expect(unit.level >= LEVEL[unit.grammar], unit.id).toBe(true)
-    expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(16)
-    expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(12)
+    expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(11)
+    expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(9)
   })
 
   it('teach every word with a topic exactly once, A1 to B2, the articles in the grammar steps', () => {
@@ -95,6 +96,29 @@ describe('steps', () => {
     expect(tasks.length).toBeGreaterThanOrEqual(4)
     const tips = new Set(tasks.map((t) => (t.kind === 'cloze' || t.kind === 'choice' ? tipForCloze(t.sentence, t.cloze)?.tip.id : t.kind)))
     expect(tips).toEqual(new Set(['preterito', 'imperfecto']))
+  })
+
+  it('give every usage tip two units, each with a full grammar step of its blanks', () => {
+    for (const id of USAGE_TIPS) {
+      const units = pathUnits.filter((u) => u.grammar === id)
+      expect(units, id).toHaveLength(2)
+      for (const unit of units) {
+        const tasks = stepTasks(unit, 'grammar')
+        expect(tasks, unit.id).toHaveLength(LESSON_SIZE)
+        expect(
+          tasks.every((t) => (t.kind === 'cloze' || t.kind === 'choice') && t.cloze.tip === id),
+          unit.id,
+        ).toBe(true)
+      }
+    }
+  })
+
+  it('let a subjuntivo unit practise a wish blank with a full subjunctive hint', () => {
+    const blanks = pathUnits
+      .filter((u) => u.grammar === 'subjuntivo')
+      .flatMap((u) => stepTasks(u, 'grammar'))
+      .filter((t) => (t.kind === 'cloze' || t.kind === 'choice') && t.cloze.tip === 'subjuntivo-wishes')
+    expect(blanks.length).toBeGreaterThan(0)
   })
 
   it('practise the grammar point of the unit', () => {
