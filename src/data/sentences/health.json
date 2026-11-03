@@ -408,7 +408,7 @@
     "sk": "S týmto liekom sa budeš cítiť lepšie.",
     "level": "A2",
     "topics": ["health"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "comparisons"],
     "tokens": ["Con", "esta", "medicina", "te", "sentirás", "mejor", "."],
     "cloze": [
       {
@@ -417,6 +417,15 @@
         "lemma": "sentirse",
         "hint": "sentirse · tú · futuro",
         "distractors": ["sentiremos", "sentiré", "sientes"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["bueno", "buen"]
       }
     ]
   },
@@ -648,8 +657,18 @@
         "lemma": "muleta",
         "hint": "barle",
         "distractors": ["maletas", "mulas", "maletines"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s854",
@@ -710,7 +729,7 @@
     "sk": "Dedo má cukrovku a veľmi si dáva pozor na to, čo je.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "relatives"],
     "tokens": ["Mi", "abuelo", "tiene", "diabetes", "y", "cuida", "mucho", "lo", "que", "come", "."],
     "cloze": [
       {
@@ -719,6 +738,15 @@
         "lemma": "cuidar",
         "hint": "cuidar · él · presente",
         "distractors": ["cuidan", "cuidó", "cuidaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
       }
     ]
   },
@@ -1239,7 +1267,7 @@
     "sk": "Kým som čakal na lekára, začalo mi byť horšie.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "comparisons"],
     "tokens": ["Mientras", "esperaba", "al", "doctor", ",", "empecé", "a", "sentirme", "peor", "."],
     "cloze": [
       {
@@ -1248,6 +1276,15 @@
         "lemma": "esperar",
         "hint": "esperar · yo · imperfecto",
         "distractors": ["esperabas", "espero", "esperamos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "peor",
+        "lemma": "peor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["malo", "mal"]
       }
     ]
   },

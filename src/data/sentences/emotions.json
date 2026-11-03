@@ -681,7 +681,7 @@
     "sk": "Verím ti, viem, že to zvládneš.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "object-pronouns"],
     "tokens": ["Confío", "en", "ti", ",", "sé", "que", "lo", "vas", "a", "hacer", "bien", "."],
     "cloze": [
       {
@@ -690,6 +690,15 @@
         "lemma": "confiar",
         "hint": "confiar · yo · presente",
         "distractors": ["Confía", "Confié", "Confiaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["la", "le"]
       }
     ]
   },
@@ -741,8 +750,18 @@
         "lemma": "coraje",
         "hint": "hnev (MX)",
         "distractors": ["corazón", "garaje", "viaje"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "mientan",
+        "lemma": "mentir",
+        "hint": "mentir · ellos",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["mienten", "mintieron"]
       }
-    ]
+    ],
+    "grammar": ["subjuntivo-wishes"]
   },
   {
     "id": "s938",
@@ -784,7 +803,7 @@
     "sk": "Ľutoval, čo povedal.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "relatives"],
     "tokens": ["Se", "arrepintió", "de", "lo", "que", "dijo", "."],
     "cloze": [
       {
@@ -793,6 +812,15 @@
         "lemma": "arrepentirse",
         "hint": "arrepentirse · él · pretérito",
         "distractors": ["arrepiente", "arrepentía", "arrepentirá"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
       }
     ]
   },
@@ -1233,8 +1261,18 @@
         "lemma": "paciencia",
         "hint": "trpezlivosť",
         "distractors": ["ansiedad", "envidia", "culpa"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["Tiene", "Es"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s1143",
@@ -1296,7 +1334,7 @@
     "sk": "Veľmi ma zabolelo, že si neprišiel na moju svadbu.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "subjuntivo-wishes"],
     "tokens": ["Me", "dio", "mucho", "sentimiento", "que", "no", "vinieras", "a", "mi", "boda", "."],
     "cloze": [
       {
@@ -1305,6 +1343,15 @@
         "lemma": "dar",
         "hint": "dar · él · pretérito",
         "distractors": ["dimos", "da", "daré"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "vinieras",
+        "lemma": "venir",
+        "hint": "venir · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["viniste", "venías", "vengas"]
       }
     ]
   },

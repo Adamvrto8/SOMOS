@@ -714,8 +714,18 @@
         "lemma": "quince",
         "hint": "pätnásť",
         "distractors": ["cinco", "cincuenta", "once"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["están", "está"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s1351",

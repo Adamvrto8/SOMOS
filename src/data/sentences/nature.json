@@ -5,9 +5,26 @@
     "sk": "Zbožňujem zvieratá.",
     "level": "A1",
     "topics": ["nature"],
-    "grammar": ["articles", "gender"],
+    "grammar": ["articles", "gender", "gustar"],
     "tokens": ["Me", "encantan", "los", "animales", "."],
-    "cloze": [{ "tokenIndex": 2, "answer": "los", "lemma": "el", "hint": "člen", "distractors": ["el", "la", "las"] }]
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "los",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "la", "las"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "encantan",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["encanta", "encanto"]
+      }
+    ]
   },
   {
     "id": "s291",
@@ -33,7 +50,7 @@
     "sk": "V záhrade je veľa vtákov.",
     "level": "A1",
     "topics": ["nature"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "hay-estar"],
     "tokens": ["Hay", "muchos", "pájaros", "en", "el", "jardín", "."],
     "cloze": [
       {
@@ -42,6 +59,15 @@
         "lemma": "mucho",
         "hint": "veľa",
         "distractors": ["mucho", "mucha", "muchas"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Están", "Está"]
       }
     ]
   },
@@ -410,7 +436,7 @@
     "sk": "Ak nebudeme chrániť životné prostredie, podnebie sa bude ďalej meniť.",
     "level": "B1",
     "topics": ["nature"],
-    "grammar": ["futuro", "progresivo"],
+    "grammar": ["futuro", "progresivo", "si-clauses"],
     "tokens": ["Si", "no", "cuidamos", "el", "medio", "ambiente", ",", "el", "clima", "seguirá", "cambiando", "."],
     "cloze": [
       {
@@ -426,6 +452,15 @@
         "lemma": "cambiar",
         "hint": "cambiar · gerundio",
         "distractors": ["cambia", "cambiar", "cambian"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "cuidamos",
+        "lemma": "cuidar",
+        "hint": "cuidar · nosotros",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["cuidaremos", "cuidemos"]
       }
     ]
   },
@@ -489,7 +524,7 @@
     "sk": "Treba šetriť vodou, prší čoraz menej.",
     "level": "B1",
     "topics": ["nature", "weather"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "obligation"],
     "tokens": ["Hay", "que", "cuidar", "el", "agua", ";", "cada", "vez", "llueve", "menos", "."],
     "cloze": [
       {
@@ -498,6 +533,15 @@
         "lemma": "menos",
         "hint": "menej",
         "distractors": ["más", "muy", "tanto"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["Tiene", "Es"]
       }
     ]
   },
@@ -921,8 +965,18 @@
         "lemma": "árbol",
         "hint": "strom",
         "distractors": ["cielo", "mar", "sol"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Están"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s1319",
@@ -1305,7 +1359,7 @@
     "sk": "Aj keď je to drahšie, radšej kupujem výrobky, ktoré nepoškodzujú ekosystém.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-clauses"],
     "tokens": ["Aunque", "cueste", "más", ",", "prefiero", "comprar", "productos", "que", "no", "dañen", "el", "ecosistema", "."],
     "cloze": [
       {
@@ -1314,6 +1368,15 @@
         "lemma": "preferir",
         "hint": "preferir · yo · presente",
         "distractors": ["prefieres", "preferí", "prefería"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "cueste",
+        "lemma": "costar",
+        "hint": "costar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["cuesta", "costará"]
       }
     ]
   },

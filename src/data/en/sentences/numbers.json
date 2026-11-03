@@ -38,7 +38,7 @@
   { "id": "s1347", "en": "How many kids do you have?" },
   { "id": "s1348", "en": "A kilo of tomatoes costs thirty pesos.", "hints": ["thirty"] },
   { "id": "s1349", "en": "My number starts with fifty-five." },
-  { "id": "s1350", "en": "There are fifteen students in my class.", "hints": ["fifteen"] },
+  { "id": "s1350", "en": "There are fifteen students in my class.", "hints": ["fifteen", "hay/estar"] },
   { "id": "s1351", "en": "I need six eggs for the cake.", "hints": ["six"] },
   { "id": "s1352", "en": "Today is May first.", "hints": ["first"] },
   { "id": "s1353", "en": "My kids count to ten in Spanish." },

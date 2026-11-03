@@ -1,6 +1,6 @@
 [
   { "id": "s341", "en": "What do you do in your free time?" },
-  { "id": "s342", "en": "I like to read and listen to music.", "hints": ["music"] },
+  { "id": "s342", "en": "I like to read and listen to music.", "hints": ["music", null] },
   { "id": "s343", "en": "On Saturdays I play soccer with my friends." },
   { "id": "s344", "en": "Yesterday we saw a very good movie." },
   { "id": "s345", "en": "My brother plays the guitar very well." },

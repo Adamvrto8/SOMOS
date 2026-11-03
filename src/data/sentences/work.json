@@ -761,8 +761,18 @@
         "lemma": "vacante",
         "hint": "voľné miesto",
         "distractors": ["vacación", "ventaja", "vecina"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Es"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s781",
@@ -796,8 +806,18 @@
         "lemma": "informe",
         "hint": "správa",
         "distractors": ["informal", "uniforme", "información"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Tengo",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["Hay", "Debo"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s783",
@@ -1027,8 +1047,18 @@
         "lemma": "quincena",
         "hint": "dva týždne (výplatné obdobie)",
         "distractors": ["quinceañera", "cuarentena", "docena"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "paga",
+        "lemma": "pagar",
+        "hint": "pagar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["pagan", "pago"]
       }
-    ]
+    ],
+    "grammar": ["passive-se"]
   },
   {
     "id": "s1572",

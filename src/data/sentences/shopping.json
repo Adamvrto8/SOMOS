@@ -536,7 +536,7 @@
     "sk": "Na trhu je všetko lacnejšie než v supermarkete.",
     "level": "B1",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "comparisons"],
     "tokens": ["En", "el", "tianguis", "todo", "es", "más", "barato", "que", "en", "el", "súper", "."],
     "cloze": [
       {
@@ -545,6 +545,15 @@
         "lemma": "barato",
         "hint": "lacný",
         "distractors": ["barata", "baratos", "caro"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["tan", "muy"]
       }
     ]
   },
@@ -554,7 +563,7 @@
     "sk": "Minul som viac, než som si myslel.",
     "level": "B1",
     "topics": ["shopping"],
-    "grammar": ["preterito", "imperfecto"],
+    "grammar": ["preterito", "imperfecto", "comparisons"],
     "tokens": ["Gasté", "más", "de", "lo", "que", "pensaba", "."],
     "cloze": [
       {
@@ -563,6 +572,15 @@
         "lemma": "pensar",
         "hint": "pensar · yo · imperfecto",
         "distractors": ["pienso", "pensará", "pensamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["tan", "muy"]
       }
     ]
   },
@@ -1388,7 +1406,7 @@
     "sk": "Štve ma, že nám predávajú prošlé výrobky.",
     "level": "B2",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-wishes"],
     "tokens": ["Me", "da", "coraje", "que", "nos", "vendan", "productos", "caducados", "."],
     "cloze": [
       {
@@ -1397,6 +1415,15 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["dio", "doy", "darán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "vendan",
+        "lemma": "vender",
+        "hint": "vender · ellos",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["venden", "venderán"]
       }
     ]
   },

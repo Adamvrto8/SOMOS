@@ -406,7 +406,7 @@
     "sk": "Nedá sa nič robiť, skúsime to znova.",
     "level": "B1",
     "topics": ["greetings"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "object-pronouns"],
     "tokens": ["Ni", "modo", ",", "lo", "intentaremos", "otra", "vez", "."],
     "cloze": [
       {
@@ -415,6 +415,15 @@
         "lemma": "intentar",
         "hint": "intentar · nosotros · futuro",
         "distractors": ["intentaré", "intentará", "intentamos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["le", "la"]
       }
     ]
   },
@@ -497,7 +506,7 @@
     "sk": "S dovolením, už musím ísť.",
     "level": "B1",
     "topics": ["greetings"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "obligation"],
     "tokens": ["Con", "permiso", ",", "ya", "me", "tengo", "que", "ir", "."],
     "cloze": [
       {
@@ -506,6 +515,15 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["tiene", "tienes", "tenemos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a"]
       }
     ]
   },
@@ -1227,7 +1245,7 @@
     "sk": "Ak prídeš do mesta, daj mi vedieť a zájdeme na kávu.",
     "level": "B1",
     "topics": ["greetings"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "si-clauses"],
     "tokens": ["Si", "vienes", "a", "la", "ciudad", ",", "avísame", "y", "nos", "tomamos", "un", "café", "."],
     "cloze": [
       {
@@ -1236,6 +1254,15 @@
         "lemma": "tomar",
         "hint": "tomar · nosotros · presente",
         "distractors": ["tomo", "tomaron", "tomábamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "vienes",
+        "lemma": "venir",
+        "hint": "venir · tú",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["vendrás", "vengas"]
       }
     ]
   },

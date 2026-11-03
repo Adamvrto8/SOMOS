@@ -572,7 +572,7 @@
     "sk": "Sestre som daroval knihu.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "object-pronouns"],
     "tokens": ["Le", "regalé", "un", "libro", "a", "mi", "hermana", "."],
     "cloze": [
       {
@@ -581,6 +581,15 @@
         "lemma": "regalar",
         "hint": "regalar · yo · pretérito",
         "distractors": ["regaló", "regalaron", "regalaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["La", "Lo"]
       }
     ]
   },
@@ -626,7 +635,7 @@
     "sk": "Moja mladšia sestra sa budúci rok vydáva.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "comparisons"],
     "tokens": ["Mi", "hermana", "menor", "se", "va", "a", "casar", "el", "próximo", "año", "."],
     "cloze": [
       {
@@ -635,6 +644,15 @@
         "lemma": "ir",
         "hint": "ir · ella · presente",
         "distractors": ["van", "voy", "fue"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "menor",
+        "lemma": "menor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["pequeña", "más"]
       }
     ]
   },
@@ -1069,7 +1087,7 @@
     "sk": "Synovec mal päť rokov, tak sme mu urobili oslavu.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "object-pronouns"],
     "tokens": ["Mi", "sobrino", "cumplió", "cinco", "años", "y", "le", "hicimos", "una", "fiesta", "."],
     "cloze": [
       {
@@ -1078,6 +1096,15 @@
         "lemma": "hacer",
         "hint": "hacer · nosotros · pretérito",
         "distractors": ["hacemos", "hicieron", "hacíamos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["lo", "les"]
       }
     ]
   },
@@ -1248,7 +1275,7 @@
     "sk": "Rodičia chcú, aby som študoval medicínu, ale mňa viac láka umenie.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-wishes"],
     "tokens": ["Mis", "papás", "quieren", "que", "estudie", "medicina", ",", "pero", "yo", "prefiero", "el", "arte", "."],
     "cloze": [
       {
@@ -1257,6 +1284,15 @@
         "lemma": "querer",
         "hint": "querer · ellos · presente",
         "distractors": ["quiere", "quisieron", "querían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "estudie",
+        "lemma": "estudiar",
+        "hint": "estudiar · yo",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["estudio", "estudiaré"]
       }
     ]
   },
@@ -1389,7 +1425,7 @@
     "sk": "Krstný syn ma požiadal, aby som mu bol kmotrom na promócii.",
     "level": "B2",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "subjuntivo-wishes"],
     "tokens": ["Mi", "ahijado", "me", "pidió", "que", "fuera", "su", "padrino", "de", "graduación", "."],
     "cloze": [
       {
@@ -1398,6 +1434,15 @@
         "lemma": "pedir",
         "hint": "pedir · él · pretérito",
         "distractors": ["pide", "pedía", "pedirá"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "fuera",
+        "lemma": "ser",
+        "hint": "ser · yo",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["era", "sea", "fui"]
       }
     ]
   },

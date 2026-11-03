@@ -31,8 +31,18 @@
         "lemma": "música",
         "hint": "hudba",
         "distractors": ["película", "canción", "fiesta"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gusto"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
     "id": "s343",
@@ -1164,7 +1174,7 @@
     "sk": "Ak zajtra nebude pršať, pôjdeme na ryby k jazeru.",
     "level": "B1",
     "topics": ["hobbies"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "si-clauses"],
     "tokens": ["Si", "mañana", "no", "llueve", ",", "saldremos", "a", "pescar", "al", "lago", "."],
     "cloze": [
       {
@@ -1173,6 +1183,15 @@
         "lemma": "salir",
         "hint": "salir · nosotros · futuro",
         "distractors": ["salimos", "saldré", "salieron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "llueve",
+        "lemma": "llover",
+        "hint": "llover · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["lloverá", "llueva"]
       }
     ]
   },

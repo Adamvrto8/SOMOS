@@ -222,7 +222,7 @@
     "sk": "Nemal som peniaze, preto som nešiel.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "por-para"],
     "tokens": ["No", "tenía", "dinero", ";", "por", "eso", "no", "fui", "."],
     "cloze": [
       {
@@ -231,6 +231,15 @@
         "lemma": "tener",
         "hint": "tener · yo · imperfecto",
         "distractors": ["tenían", "tuve", "teníamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "fixed",
+        "distractors": ["para", "de"]
       }
     ]
   },
@@ -380,7 +389,7 @@
     "sk": "Knihu som si prečítal znova, lebo som jej nerozumel.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "object-pronouns"],
     "tokens": ["Volví", "a", "leer", "el", "libro", "porque", "no", "lo", "entendí", "."],
     "cloze": [
       {
@@ -389,6 +398,15 @@
         "lemma": "entender",
         "hint": "entender · yo · pretérito",
         "distractors": ["entiendo", "entendió", "entenderé"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["la", "le"]
       }
     ]
   },
@@ -416,7 +434,7 @@
     "sk": "Aspoň sme prišli načas.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "por-para"],
     "tokens": ["Por", "lo", "menos", "llegamos", "a", "tiempo", "."],
     "cloze": [
       {
@@ -425,6 +443,15 @@
         "lemma": "llegar",
         "hint": "llegar · nosotros · pretérito",
         "distractors": ["llegaron", "llegué", "llegaremos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "fixed",
+        "distractors": ["Para", "De"]
       }
     ]
   },
@@ -596,7 +623,7 @@
     "sk": "Bezpochyby je to najlepšie taco v meste.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "comparisons"],
     "tokens": ["Sin", "duda", ",", "es", "el", "mejor", "taco", "de", "la", "ciudad", "."],
     "cloze": [
       {
@@ -605,6 +632,15 @@
         "lemma": "sin duda",
         "hint": "pochybnosť (sin …)",
         "distractors": ["miedo", "razón", "culpa"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "superlative",
+        "distractors": ["más", "bueno"]
       }
     ]
   },
@@ -1174,8 +1210,18 @@
         "lemma": "alguien",
         "hint": "niekto",
         "distractors": ["nadie", "tampoco", "cada"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "question",
+        "distractors": ["Está", "Están"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s1007",
@@ -1263,8 +1309,18 @@
         "lemma": "además",
         "hint": "okrem",
         "distractors": ["Aunque", "Mientras", "Apenas"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
       }
-    ]
+    ],
+    "grammar": ["por-para"]
   },
   {
     "id": "s1012",
@@ -1404,8 +1460,18 @@
         "lemma": "imprescindible",
         "hint": "nevyhnutný",
         "distractors": ["eficaz", "actual", "propio"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "lleves",
+        "lemma": "llevar",
+        "hint": "llevar · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["llevas", "llevarás"]
       }
-    ]
+    ],
+    "grammar": ["subjuntivo-wishes"]
   },
   {
     "id": "s1020",
@@ -1413,7 +1479,7 @@
     "sk": "Tú vec necháme na budúcu poradu.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "por-para"],
     "tokens": ["Dejaremos", "el", "asunto", "para", "la", "próxima", "junta", "."],
     "cloze": [
       {
@@ -1422,6 +1488,15 @@
         "lemma": "dejar",
         "hint": "dejar · nosotros · futuro",
         "distractors": ["Dejamos", "Dejaré", "Dejaron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "de"]
       }
     ]
   },
@@ -1431,7 +1506,7 @@
     "sk": "Z dlhodobého hľadiska sa naučíš viac, ak budeš cvičiť každý deň.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "si-clauses"],
     "tokens": ["A", "la", "larga", ",", "aprenderás", "más", "si", "practicas", "a", "diario", "."],
     "cloze": [
       {
@@ -1440,6 +1515,15 @@
         "lemma": "aprender",
         "hint": "aprender · tú · futuro",
         "distractors": ["aprendes", "aprenderé", "aprendieron"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "practicas",
+        "lemma": "practicar",
+        "hint": "practicar · tú",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["practicarás", "practiques"]
       }
     ]
   },

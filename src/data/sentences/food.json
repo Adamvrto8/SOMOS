@@ -660,7 +660,7 @@
     "sk": "Ak si hladný, pripravím ti quesadillas.",
     "level": "B1",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "si-clauses"],
     "tokens": ["Si", "tienes", "hambre", ",", "te", "preparo", "unas", "quesadillas", "."],
     "cloze": [
       {
@@ -669,6 +669,15 @@
         "lemma": "preparar",
         "hint": "preparar · yo · presente",
         "distractors": ["prepara", "preparé", "preparaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "tener · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["tendrás", "tengas"]
       }
     ]
   },
@@ -1052,7 +1061,7 @@
     "sk": "Ako malý som nenávidel cibuľu; teraz ju zbožňujem.",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "gustar"],
     "tokens": ["Cuando", "era", "chico", ",", "odiaba", "la", "cebolla", ";", "ahora", "me", "encanta", "."],
     "cloze": [
       {
@@ -1061,6 +1070,15 @@
         "lemma": "odiar",
         "hint": "odiar · yo · imperfecto",
         "distractors": ["odio", "odié", "odiaban"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "encanta",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["encantan", "encanto"]
       }
     ]
   },
@@ -1070,7 +1088,7 @@
     "sk": "Koľko si nechal čašníkovi ako prepitné?",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "object-pronouns"],
     "tokens": ["¿", "Cuánto", "le", "dejaste", "de", "propina", "al", "mesero", "?"],
     "cloze": [
       {
@@ -1079,6 +1097,15 @@
         "lemma": "dejar",
         "hint": "dejar · tú · pretérito",
         "distractors": ["dejas", "dejó", "dejabas"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["lo", "les"]
       }
     ]
   },
@@ -1158,7 +1185,7 @@
     "sk": "Na posadu budeme robiť tamales; pomôžeš nám ich zabaliť?",
     "level": "B1",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "object-pronouns"],
     "tokens": ["Para", "la", "posada", "vamos", "a", "hacer", "tamales", ";", "¿", "nos", "ayudas", "a", "envolverlos", "?"],
     "cloze": [
       {
@@ -1167,6 +1194,15 @@
         "lemma": "ayudar",
         "hint": "ayudar · tú · presente",
         "distractors": ["ayudo", "ayudaste", "ayudabas"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "envolverlos",
+        "lemma": "los",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "position",
+        "distractors": ["envolverlas", "envolverles"]
       }
     ]
   },
@@ -1176,7 +1212,7 @@
     "sk": "Myslím, že nezdravé jedlo by malo stáť viac než ovocie.",
     "level": "B1",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "comparisons"],
     "tokens": ["Creo", "que", "la", "comida", "chatarra", "debería", "costar", "más", "que", "la", "fruta", "."],
     "cloze": [
       {
@@ -1185,6 +1221,15 @@
         "lemma": "creer",
         "hint": "creer · yo · presente",
         "distractors": ["Crees", "Creí", "Creía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["tan", "muy"]
       }
     ]
   },
@@ -1247,7 +1292,7 @@
     "sk": "Ak ma pozveš na obed, ja donesiem dezert.",
     "level": "B2",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "si-clauses"],
     "tokens": ["Si", "me", "invitas", "a", "comer", ",", "yo", "pongo", "el", "postre", "."],
     "cloze": [
       {
@@ -1256,6 +1301,15 @@
         "lemma": "poner",
         "hint": "poner · yo · presente",
         "distractors": ["pones", "puse", "ponía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "invitas",
+        "lemma": "invitar",
+        "hint": "invitar · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["invitarás", "invites"]
       }
     ]
   },
@@ -1326,8 +1380,18 @@
         "lemma": "fama",
         "hint": "povesť",
         "distractors": ["pizca", "olla", "cuchara"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
       }
-    ]
+    ],
+    "grammar": ["relatives"]
   },
   {
     "id": "s1195",

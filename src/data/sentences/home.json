@@ -799,8 +799,18 @@
         "lemma": "cucaracha",
         "hint": "šváb",
         "distractors": ["cuchara", "cucharada", "mariposa"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Están"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s710",
@@ -869,7 +879,7 @@
     "sk": "Ohrievač nefunguje a nie je teplá voda.",
     "level": "B1",
     "topics": ["home"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "hay-estar"],
     "tokens": ["El", "calentador", "no", "funciona", "y", "no", "hay", "agua", "caliente", "."],
     "cloze": [
       {
@@ -878,6 +888,15 @@
         "lemma": "funcionar",
         "hint": "funcionar · él · presente",
         "distractors": ["funcionan", "funcionó", "funcioné"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["está", "es"]
       }
     ]
   },
@@ -1038,8 +1057,18 @@
         "lemma": "condominio",
         "hint": "obytný komplex",
         "distractors": ["consultorio", "comedor", "condimento"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["tiene", "es"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s1292",

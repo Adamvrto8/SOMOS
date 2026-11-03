@@ -149,7 +149,7 @@
     "sk": "Páčia sa mi tvoje nové okuliare.",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "gustar"],
     "tokens": ["Me", "gustan", "tus", "lentes", "nuevos", "."],
     "cloze": [
       {
@@ -158,6 +158,15 @@
         "lemma": "nuevo",
         "hint": "prídavné meno: nuevo",
         "distractors": ["nuevo", "nueva", "nuevas"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas"]
       }
     ]
   },
@@ -672,7 +681,7 @@
     "sk": "Na cestovanie mám radšej voľné oblečenie.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "por-para"],
     "tokens": ["Prefiero", "la", "ropa", "holgada", "para", "viajar", "."],
     "cloze": [
       {
@@ -681,6 +690,15 @@
         "lemma": "preferir",
         "hint": "preferir · yo · presente",
         "distractors": ["Prefiere", "Preferí", "Prefería"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "de"]
       }
     ]
   },
@@ -762,7 +780,7 @@
     "sk": "Na pohovor som si vybral formálne oblečenie.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "por-para"],
     "tokens": ["Para", "la", "entrevista", "elegí", "un", "atuendo", "formal", "."],
     "cloze": [
       {
@@ -771,6 +789,15 @@
         "lemma": "elegir",
         "hint": "elegir · yo · pretérito",
         "distractors": ["elige", "eligió", "elegía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["Por", "De"]
       }
     ]
   },
@@ -912,8 +939,18 @@
         "lemma": "morado",
         "hint": "fialový",
         "distractors": ["morado", "negros", "grises"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
     "id": "s1096",
@@ -1028,7 +1065,7 @@
     "sk": "Táto bunda sa mi veľmi páči, ale nemám na ňu dosť peňazí.",
     "level": "B1",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "object-pronouns"],
     "tokens": ["Me", "encanta", "esta", "chamarra", ",", "pero", "no", "me", "alcanza", "el", "dinero", "para", "comprarla", "."],
     "cloze": [
       {
@@ -1037,6 +1074,15 @@
         "lemma": "alcanzar",
         "hint": "alcanzar · él · presente",
         "distractors": ["alcanzo", "alcanzó", "alcanzaba"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "comprarla",
+        "lemma": "la",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "position",
+        "distractors": ["comprarlo", "comprarle"]
       }
     ]
   },
@@ -1090,8 +1136,18 @@
         "lemma": "calidad",
         "hint": "kvalita",
         "distractors": ["manga", "pijama", "cintura"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "cueste",
+        "lemma": "costar",
+        "hint": "costar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["cuesta", "costó"]
       }
-    ]
+    ],
+    "grammar": ["subjuntivo-clauses"]
   },
   {
     "id": "s1106",
@@ -1116,7 +1172,7 @@
     "sk": "Kedysi som sa hanbila nosiť výrazné farby, ale teraz ich zbožňujem.",
     "level": "B1",
     "topics": ["clothes"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "gustar"],
     "tokens": ["Antes", "me", "daba", "pena", "usar", "colores", "fuertes", ",", "pero", "ahora", "me", "encantan", "."],
     "cloze": [
       {
@@ -1125,6 +1181,15 @@
         "lemma": "dar",
         "hint": "dar · él · imperfecto",
         "distractors": ["da", "dio", "dará"]
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "encantan",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["encanta", "encanto"]
       }
     ]
   },
@@ -1134,7 +1199,7 @@
     "sk": "Požiadala som predavačku o väčšiu veľkosť, ale už nemali.",
     "level": "B1",
     "topics": ["clothes"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "object-pronouns"],
     "tokens": ["Le", "pedí", "a", "la", "vendedora", "una", "talla", "más", "grande", ",", "pero", "ya", "no", "tenían", "."],
     "cloze": [
       {
@@ -1143,6 +1208,15 @@
         "lemma": "pedir",
         "hint": "pedir · yo · pretérito",
         "distractors": ["pido", "pidió", "pedía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["La", "Lo"]
       }
     ]
   },
@@ -1364,7 +1438,7 @@
     "sk": "Rýchla móda veľmi znečisťuje životné prostredie, preto sa snažím kupovať menej oblečenia.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "por-para"],
     "tokens": ["La", "moda", "rápida", "contamina", "muchísimo", ",", "por", "eso", "intento", "comprar", "menos", "ropa", "."],
     "cloze": [
       {
@@ -1373,6 +1447,15 @@
         "lemma": "contaminar",
         "hint": "contaminar · ella · presente",
         "distractors": ["contaminan", "contaminó", "contaminaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "fixed",
+        "distractors": ["para", "de"]
       }
     ]
   },

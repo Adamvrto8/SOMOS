@@ -473,7 +473,7 @@
     "sk": "Dostal som najlepšiu známku v triede.",
     "level": "B1",
     "topics": ["school"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "comparisons"],
     "tokens": ["Saqué", "la", "mejor", "calificación", "de", "la", "clase", "."],
     "cloze": [
       {
@@ -482,6 +482,15 @@
         "lemma": "sacar",
         "hint": "sacar · yo · pretérito",
         "distractors": ["Sacó", "Sacaron", "Sacaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "superlative",
+        "distractors": ["más", "buena"]
       }
     ]
   },
@@ -731,8 +740,18 @@
         "lemma": "ensayo",
         "hint": "esej",
         "distractors": ["ensalada", "enojo", "ejemplo"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Tenemos",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["Debemos", "Hay"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s915",
@@ -783,8 +802,18 @@
         "lemma": "servicio social",
         "hint": "služba (… social)",
         "distractors": ["servidor", "silencio", "sitio"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tienes",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["hay", "debes"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s918",
@@ -968,7 +997,7 @@
     "sk": "Ako sa povie gracias po anglicky?",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "passive-se"],
     "tokens": ["¿", "Cómo", "se", "dice", "gracias", "en", "inglés", "?"],
     "cloze": [
       {
@@ -977,6 +1006,15 @@
         "lemma": "decir",
         "hint": "decir · él · presente",
         "distractors": ["decimos", "dijo", "decía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["te", "le"]
       }
     ]
   },
@@ -1102,8 +1140,18 @@
         "lemma": "materia",
         "hint": "predmet",
         "distractors": ["fruta", "ciudad", "película"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
     "id": "s1400",
@@ -1209,8 +1257,18 @@
         "lemma": "resumen",
         "hint": "zhrnutie",
         "distractors": ["promedio", "título", "nivel"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tenemos",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["hay", "debemos"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s1406",

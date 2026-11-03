@@ -33,7 +33,7 @@
   { "id": "s984", "en": "Algorithms decide what news we see." },
   { "id": "s985", "en": "I'm worried about the privacy of my data.", "hints": ["privacy"] },
   { "id": "s986", "en": "My nephew is addicted to video games.", "hints": ["addiction"] },
-  { "id": "s987", "en": "Smart devices listen to everything we say." },
+  { "id": "s987", "en": "Smart devices listen to everything we say.", "hints": [null, "relative word"] },
   { "id": "s988", "en": "My mom's account got hacked and she had to change her password." },
   { "id": "s989", "en": "As soon as I saw the news, I called you." },
   { "id": "s990", "en": "We watch shows on several streaming platforms.", "hints": ["platforms"] },

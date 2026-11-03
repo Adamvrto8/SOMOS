@@ -237,8 +237,18 @@
         "lemma": "nieve",
         "hint": "sneh",
         "distractors": ["lluvia", "nube", "viento"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["está", "es"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s286",
@@ -470,8 +480,18 @@
         "lemma": "charco",
         "hint": "mláky",
         "distractors": ["chorros", "charlas", "cerros"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Están", "Está"]
       }
-    ]
+    ],
+    "grammar": ["hay-estar"]
   },
   {
     "id": "s872",
@@ -628,8 +648,18 @@
         "lemma": "frente frío",
         "hint": "front (… frío)",
         "distractors": ["fuente", "fondo", "fiesta"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "espera",
+        "lemma": "esperar",
+        "hint": "esperar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["esperan", "espero"]
       }
-    ]
+    ],
+    "grammar": ["passive-se"]
   },
   {
     "id": "s881",
@@ -820,8 +850,18 @@
         "lemma": "sol",
         "hint": "slnko",
         "distractors": ["nube", "lluvia", "tormenta"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gusto"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
     "id": "s1539",
@@ -1383,7 +1423,7 @@
     "sk": "Len mrholí, myslím, že dáždnik netreba.",
     "level": "B2",
     "topics": ["weather"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-clauses"],
     "tokens": ["Está", "chispeando", ",", "no", "creo", "que", "haga", "falta", "el", "paraguas", "."],
     "cloze": [
       {
@@ -1392,6 +1432,15 @@
         "lemma": "creer",
         "hint": "creer · yo · presente",
         "distractors": ["creí", "creía", "creeré"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "haga",
+        "lemma": "hacer",
+        "hint": "hacer · él",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["hace", "hará"]
       }
     ]
   },

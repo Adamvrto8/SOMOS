@@ -851,7 +851,7 @@
     "sk": "Prosíme vás, aby ste nám čím skôr odpovedali.",
     "level": "B2",
     "topics": ["time", "work"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-wishes"],
     "tokens": ["Le", "pedimos", "que", "nos", "conteste", "a", "la", "brevedad", "."],
     "cloze": [
       {
@@ -860,6 +860,15 @@
         "lemma": "pedir",
         "hint": "pedir · nosotros · presente",
         "distractors": ["piden", "pidió", "pedíamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "conteste",
+        "lemma": "contestar",
+        "hint": "contestar · usted",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["contesta", "contestará"]
       }
     ]
   },
@@ -894,8 +903,18 @@
         "lemma": "antelación",
         "hint": "predstih (con …)",
         "distractors": ["atención", "elección", "relación"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["Tiene", "Es"]
       }
-    ]
+    ],
+    "grammar": ["obligation"]
   },
   {
     "id": "s771",

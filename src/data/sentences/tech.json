@@ -617,7 +617,7 @@
     "sk": "Inteligentné zariadenia počúvajú všetko, čo hovoríme.",
     "level": "B2",
     "topics": ["tech"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "relatives"],
     "tokens": ["Los", "dispositivos", "inteligentes", "escuchan", "todo", "lo", "que", "decimos", "."],
     "cloze": [
       {
@@ -626,6 +626,15 @@
         "lemma": "escuchar",
         "hint": "escuchar · ellos · presente",
         "distractors": ["escucha", "escucharon", "escuchaban"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
       }
     ]
   },

@@ -69,7 +69,7 @@
     "sk": "Bežal som päť kilometrov a bolia ma nohy.",
     "level": "A2",
     "topics": ["body"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "gustar"],
     "tokens": ["Corrí", "cinco", "kilómetros", "y", "me", "duelen", "las", "piernas", "."],
     "cloze": [
       {
@@ -78,6 +78,15 @@
         "lemma": "correr",
         "hint": "correr · yo · pretérito",
         "distractors": ["Corrió", "Corrieron", "Corro"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "duelen",
+        "lemma": "doler",
+        "hint": "doler",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["duele", "duelo"]
       }
     ]
   },
@@ -158,8 +167,18 @@
         "lemma": "espalda",
         "hint": "chrbát",
         "distractors": ["cabeza", "pierna", "panza"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "duele",
+        "lemma": "doler",
+        "hint": "doler",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["duelen", "dueles"]
       }
-    ]
+    ],
+    "grammar": ["gustar"]
   },
   {
     "id": "s253",
@@ -662,8 +681,18 @@
         "lemma": "postura",
         "hint": "držanie tela",
         "distractors": ["pastura", "costura", "pintura"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
       }
-    ]
+    ],
+    "grammar": ["por-para"]
   },
   {
     "id": "s848",
@@ -1045,7 +1074,7 @@
     "sk": "Odkedy som prestal fajčiť, dýcham oveľa lepšie.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "comparisons"],
     "tokens": ["Desde", "que", "dejé", "de", "fumar", ",", "respiro", "mucho", "mejor", "."],
     "cloze": [
       {
@@ -1054,6 +1083,15 @@
         "lemma": "respirar",
         "hint": "respirar · yo · presente",
         "distractors": ["respiras", "respiré", "respiraba"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["bueno", "buen"]
       }
     ]
   },
@@ -1114,7 +1152,7 @@
     "sk": "Babka hovorievala, že mrkva je dobrá na oči.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "por-para"],
     "tokens": ["Mi", "abuela", "decía", "que", "las", "zanahorias", "son", "buenas", "para", "los", "ojos", "."],
     "cloze": [
       {
@@ -1123,6 +1161,15 @@
         "lemma": "decir",
         "hint": "decir · ella · imperfecto",
         "distractors": ["dice", "dijo", "dirá"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "de"]
       }
     ]
   },
@@ -1150,7 +1197,7 @@
     "sk": "Ak chceš mať zdravú pleť, musíš sa chrániť pred slnkom.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "si-clauses"],
     "tokens": ["Si", "quieres", "tener", "la", "piel", "sana", ",", "tienes", "que", "protegerte", "del", "sol", "."],
     "cloze": [
       {
@@ -1159,6 +1206,15 @@
         "lemma": "tener",
         "hint": "tener · tú · presente",
         "distractors": ["tengo", "tuviste", "tenían"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "quieres",
+        "lemma": "querer",
+        "hint": "querer · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["querrás", "quieras"]
       }
     ]
   },
@@ -1204,7 +1260,7 @@
     "sk": "Ostala som s otvorenými ústami, keď som videla, koľko to stojí.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "relatives"],
     "tokens": ["Me", "quedé", "con", "la", "boca", "abierta", "cuando", "vi", "lo", "que", "costaba", "."],
     "cloze": [
       {
@@ -1213,6 +1269,15 @@
         "lemma": "quedarse",
         "hint": "quedarse · yo · pretérito",
         "distractors": ["quedo", "quedó", "quedaba"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
       }
     ]
   },
@@ -1329,7 +1394,7 @@
     "sk": "Hoci to nerád priznávam, už nemám takú kondíciu ako kedysi.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-clauses"],
     "tokens": ["Aunque", "me", "duela", "admitirlo", ",", "ya", "no", "tengo", "la", "condición", "de", "antes", "."],
     "cloze": [
       {
@@ -1338,6 +1403,15 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["tienes", "tuve", "tendrán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "duela",
+        "lemma": "doler",
+        "hint": "doler · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["duele", "dolerá"]
       }
     ]
   },
@@ -1365,7 +1439,7 @@
     "sk": "Mám takú bolesť zubov, že ani nemôžem spať.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "relatives"],
     "tokens": ["Ando", "con", "un", "dolor", "de", "muelas", "que", "no", "me", "deja", "ni", "dormir", "."],
     "cloze": [
       {
@@ -1374,6 +1448,15 @@
         "lemma": "dejar",
         "hint": "dejar · él · presente",
         "distractors": ["dejo", "dejó", "dejaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },

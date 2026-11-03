@@ -782,7 +782,7 @@
     "sk": "Na Reformu sme sa dostali metrobusom.",
     "level": "B1",
     "topics": ["city"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "por-para"],
     "tokens": ["Tomamos", "el", "metrobús", "para", "llegar", "a", "Reforma", "."],
     "cloze": [
       {
@@ -791,6 +791,15 @@
         "lemma": "tomar",
         "hint": "tomar · nosotros · pretérito",
         "distractors": ["Toman", "Tomé", "Tomaban"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
       }
     ]
   },
@@ -1155,7 +1164,7 @@
     "sk": "Zdá sa mi, že spomaľovacie prahy ľudí nedonútia jazdiť pomaly.",
     "level": "B1",
     "topics": ["city"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "subjuntivo-clauses"],
     "tokens": ["Me", "parece", "que", "los", "topes", "no", "sirven", "para", "que", "la", "gente", "maneje", "despacio", "."],
     "cloze": [
       {
@@ -1164,6 +1173,15 @@
         "lemma": "servir",
         "hint": "servir · ellos · presente",
         "distractors": ["sirve", "sirvieron", "servían"]
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "maneje",
+        "lemma": "manejar",
+        "hint": "manejar · ella",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["maneja", "manejará"]
       }
     ]
   },
@@ -1271,8 +1289,18 @@
         "lemma": "inseguridad",
         "hint": "nebezpečnosť, kriminalita",
         "distractors": ["alumbrado", "vialidad", "banqueta"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
       }
-    ]
+    ],
+    "grammar": ["por-para"]
   },
   {
     "id": "s1080",
@@ -1280,7 +1308,7 @@
     "sk": "Susedia sa sťažovali na úrade mestskej časti na výtlky na ulici.",
     "level": "B2",
     "topics": ["city"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "por-para"],
     "tokens": ["Los", "vecinos", "se", "quejaron", "con", "la", "alcaldía", "por", "los", "baches", "de", "la", "calle", "."],
     "cloze": [
       {
@@ -1289,6 +1317,15 @@
         "lemma": "quejarse",
         "hint": "quejarse · ellos · pretérito",
         "distractors": ["quejo", "quejó", "quejaban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
       }
     ]
   },
@@ -1306,8 +1343,18 @@
         "lemma": "tráfico",
         "hint": "premávka",
         "distractors": ["zócalo", "alumbrado", "puente"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "iría",
+        "lemma": "ir",
+        "hint": "ir · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["iba", "voy", "fuera"]
       }
-    ]
+    ],
+    "grammar": ["si-clauses"]
   },
   {
     "id": "s1082",
