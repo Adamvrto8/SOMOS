@@ -58,6 +58,19 @@ describe('corrupt', () => {
   })
 })
 
+describe('stale and empty input', () => {
+  const cloze = { tokenIndex: 1, answer: 'perro', lemma: 'perro', hint: 'x', distractors: ['gato', 'lobo', 'oso'] }
+  it('refuses a blank whose token is out of range or no longer the answer', () => {
+    expect(corrupt(make({ tokens: ['El', 'perro', 'ladra', '.'], cloze: [{ ...cloze, tokenIndex: 9 }] }), 0, 0)).toBeUndefined()
+    expect(corrupt(make({ tokens: ['El', 'gato', 'ladra', '.'], cloze: [cloze] }), 0, 0)).toBeUndefined()
+    expect(corrupt(make({ tokens: ['El', 'perro', 'ladra', '.'], cloze: [cloze] }), 0, 0)).toBeDefined()
+  })
+
+  it('ignores empty and whitespace-only distractors', () => {
+    expect(swappableDistractors({ ...cloze, distractors: ['', '  ', 'gato', 'lobo'] })).toEqual([2, 3])
+  })
+})
+
 describe('eligibility', () => {
   const base = { tokens: ['Voy', 'a', 'casa', '.'] }
   it('needs two one-word distractors that differ from the answer', () => {

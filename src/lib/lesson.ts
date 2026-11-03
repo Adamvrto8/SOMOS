@@ -463,6 +463,16 @@ const builderTask = (sentence: Sentence, random: Random): BuilderTask => {
   return { kind: 'builder', itemId: sentence.id, sentence, expected, tiles: shuffleTiles(expected, random) }
 }
 
+/** Answer counts per "sentence#blank": the ":suffix" of a truefalse / findmistake item id is dropped. */
+function foldSeen(seen: Map<string, number>): Map<string, number> {
+  const out = new Map<string, number>()
+  for (const [id, count] of seen) {
+    const key = id.includes('#') ? id.replace(/:.*$/, '') : id
+    out.set(key, (out.get(key) ?? 0) + count)
+  }
+  return out
+}
+
 /**
  * A lesson for the filter. `seen` (answers per itemId) makes items practised least come
  * first, so lessons don't keep repeating the same sentences; ties stay random.
@@ -473,9 +483,11 @@ export function createLesson(
   random: Random = Math.random,
   seen?: Map<string, number>,
 ): Task[] {
+  // truefalse / findmistake answers are stored as "s123#0:t", "s123#0:f2", "s123#0:2": one sentence blank, however it was shown.
+  const folded = seen && (filter.type === 'truefalse' || filter.type === 'findmistake') ? foldSeen(seen) : seen
   const order = <T>(items: T[], itemId: (item: T) => string) => {
     const shuffled = shuffle(items, random)
-    return seen ? shuffled.sort((a, b) => (seen.get(itemId(a)) ?? 0) - (seen.get(itemId(b)) ?? 0)) : shuffled
+    return folded ? shuffled.sort((a, b) => (folded.get(itemId(a)) ?? 0) - (folded.get(itemId(b)) ?? 0)) : shuffled
   }
 
   switch (filter.type) {

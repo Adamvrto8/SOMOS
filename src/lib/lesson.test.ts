@@ -44,6 +44,29 @@ function seeded(seed: number) {
 
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
+describe('createLesson seen counts for truefalse / findmistake', () => {
+  it.each([
+    ['truefalse', (id: string) => `${id}:t`],
+    ['findmistake', (id: string) => `${id}:2`],
+  ] as const)('puts an unseen sentence of a %s lesson before the seen ones', (type, suffixed) => {
+    const filter = { type, level: 'A1' as const }
+    const all = createLesson(filter, Number.MAX_SAFE_INTEGER, seeded(5))
+    const keys = [...new Set(all.map((t) => t.itemId.replace(/:.*$/, '')))]
+    expect(keys.length).toBeGreaterThan(3)
+    const unseen = keys[0]
+    // every blank of every other sentence counts as seen (one sentence can offer several blanks)
+    const seen = new Map<string, number>()
+    for (const sentence of sentences) {
+      if (sentence.id === unseen.split('#')[0]) continue
+      sentence.cloze?.forEach((_, i) => seen.set(suffixed(`${sentence.id}#${i}`), 3))
+    }
+    for (const seed of [1, 2, 3]) {
+      const first = createLesson(filter, 1, seeded(seed), seen)[0]
+      expect(first.itemId.replace(/:.*$/, '')).toBe(unseen)
+    }
+  })
+})
+
 describe('createLesson', () => {
   it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'matching'] as const)('builds a %s lesson of lessonSizeOf unique items', (type) => {
     const size = lessonSizeOf(type)

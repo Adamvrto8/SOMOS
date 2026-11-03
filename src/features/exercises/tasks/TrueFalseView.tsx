@@ -65,14 +65,14 @@ export function TrueFalseView({ task, onAnswer, onSubmit, status }: TrueFalseVie
       >
         <span
           aria-hidden
-          className="absolute top-3 right-3 rounded-lg border-2 border-leaf px-2 py-0.5 text-sm font-bold tracking-widest text-leaf uppercase"
+          className="absolute top-3 left-3 rounded-lg border-2 border-leaf px-2 py-0.5 text-sm font-bold tracking-widest text-leaf uppercase"
           style={{ opacity: dx > 0 ? stamp : 0 }}
         >
           {text.tfTrue}
         </span>
         <span
           aria-hidden
-          className="absolute top-3 left-3 rounded-lg border-2 border-error px-2 py-0.5 text-sm font-bold tracking-widest text-error uppercase"
+          className="absolute top-3 right-3 rounded-lg border-2 border-error px-2 py-0.5 text-sm font-bold tracking-widest text-error uppercase"
           style={{ opacity: dx < 0 ? stamp : 0 }}
         >
           {text.tfFalse}

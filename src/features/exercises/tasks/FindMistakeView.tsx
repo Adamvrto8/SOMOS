@@ -46,13 +46,14 @@ export function FindMistakeView({ task, onSubmit, status }: FindMistakeViewProps
           <Fragment key={i}>
             {spaceBefore(tokens, i) && ' '}
             {PUNCTUATION.test(token) ? (
-              token
+              <span className="-ml-1.5">{token}</span>
             ) : (
               <button
                 type="button"
                 onClick={() => tap(i)}
                 disabled={graded && i !== index}
-                className={`min-h-11 rounded-lg px-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-brick ${
+                aria-pressed={i === index ? found || graded : missed.includes(i)}
+                className={`min-h-11 min-w-11 rounded-lg px-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-brick ${
                   i === index && (found || graded) ? 'bg-error/15 font-semibold text-error underline' : missed.includes(i) ? 'text-ink-muted line-through' : 'hover:bg-surface-2'
                 }`}
               >

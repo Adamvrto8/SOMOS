@@ -21,7 +21,7 @@ export const rebuild = (tokens: string[]): string => tokens.map((t, i) => (space
 export function swappableDistractors(cloze: Cloze): number[] {
   const out: number[] = []
   ;(cloze.distractors ?? []).forEach((d, i) => {
-    if (!/\s/.test(d) && d.toLowerCase() !== cloze.answer.toLowerCase()) out.push(i)
+    if (d.trim() !== '' && !/\s/.test(d) && d.toLowerCase() !== cloze.answer.toLowerCase()) out.push(i)
   })
   return out
 }
@@ -49,6 +49,7 @@ export function corrupt(sentence: Sentence, clozeIndex: number, distractorIndex:
   const cloze = sentence.cloze?.[clozeIndex]
   if (!cloze || !swappableDistractors(cloze).includes(distractorIndex)) return undefined
   const right = sentence.tokens[cloze.tokenIndex]
+  if (right === undefined || right !== cloze.answer) return undefined // a stale id: the blank no longer sits there
   const wrong = matchCapital(right, cloze.distractors![distractorIndex])
   const tokens = sentence.tokens.map((token, i) => (i === cloze.tokenIndex ? wrong : token))
   return { tokens, index: cloze.tokenIndex, wrong, right, es: rebuild(tokens) }

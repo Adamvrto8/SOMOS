@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useT } from '../../../i18n'
 import { useLanguage } from '../../../lib/language'
 import type { Answer, MatchingTask } from '../../../lib/lesson'
@@ -26,6 +26,8 @@ export function MatchingView({ task, onAnswer, onSubmit, status }: MatchingViewP
   const [flash, setFlash] = useState<{ es: number; sk: number } | null>(null)
   const [wrong, setWrong] = useState<string[]>([]) // the word of every wrong pairing
   const graded = status !== undefined
+  const flashTimer = useRef<number>(undefined)
+  useEffect(() => () => window.clearTimeout(flashTimer.current), [])
 
   const choose = (side: Side, pair: number) => {
     if (graded || flash || done.includes(pair)) return
@@ -51,11 +53,11 @@ export function MatchingView({ task, onAnswer, onSubmit, status }: MatchingViewP
     playSound('almost')
     setWrong([...wrong, task.pairs[es].word.id])
     setFlash({ es, sk })
-    window.setTimeout(() => setFlash(null), 500)
+    flashTimer.current = window.setTimeout(() => setFlash(null), 500)
   }
 
   const style = (side: Side, pair: number) => {
-    if (done.includes(pair)) return 'border-leaf bg-leaf/15 opacity-70'
+    if (done.includes(pair)) return 'border-leaf bg-leaf/15'
     if (flash && flash[side] === pair) return 'border-error bg-error/10'
     if (pick?.side === side && pick.pair === pair) return 'border-brick bg-brick/10 ring-1 ring-brick'
     return 'border-line bg-surface hover:border-ink-muted'
