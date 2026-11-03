@@ -64,6 +64,8 @@ export default defineConfig({
       workbox: {
         // Precache the whole app shell (and JSON content once it exists in the build).
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,json}'],
+        // The content is bundled into the main chunk (2.3 MB with the B1–B2 sentences); offline needs all of it.
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api\//],
         // Practice reminders (api/reminder.ts): shows the push notification, handles the tap.

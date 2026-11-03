@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { button, field, status } from './helpers.ts'
+import { button, field, status, tips } from './helpers.ts'
 
 // The guided path (src/lib/path.ts): units of steps, each step a lesson, the unit's test the last one.
 
@@ -127,4 +127,26 @@ test('a passed topic test closes its unit, and Domov goes on with the next one',
 test('a step that is not open yet does not open from its address', async ({ page }) => {
   await page.goto('/practice/lesson?path=a1-basics-1&step=words')
   await expect(page.getByText('Lekcia je zamknutá')).toBeVisible()
+})
+
+test('a usage unit practises its blanks, "Prečo?" names the rule of the blank', async ({ page }) => {
+  // b1-shopping-1 teaches por/para (a usage tip): its grammar step is blanks only, each naming its rule.
+  // Open up to it: the exams of A1 and A2, the B1 topics before it, its own new words.
+  const before = ['greetings', 'basics', 'family', 'food', 'home', 'work', 'time', 'city', 'travel', 'emotions', 'health']
+  const results = { bestScore: 15, total: 15, passed: true, attempts: 1, lastAt: 1 }
+  await seed(
+    page,
+    { 'path:b1-shopping-1:words': passed, 'path:b1-shopping-1:words2': passed },
+    Object.fromEntries([['A1', results], ['A2', results], ...before.map((topic) => [`${topic}:B1`, results])]),
+  )
+  await page.goto('/practice/lesson?path=b1-shopping-1&step=grammar')
+  await expect(page.getByRole('heading', { name: 'por alebo para' })).toBeVisible()
+  await button(page, 'Rozumiem, začať').tap()
+  await button(page, 'Vzdať sa').tap()
+  await button(page, 'Prečo?').tap()
+  const tip = page.getByRole('dialog')
+  await expect(tip.getByRole('heading', { level: 1 })).toHaveText('por alebo para')
+  const reasons = tips.find((t) => t.id === 'por-para')!.rules.map((r) => r.because!)
+  const here = await tip.getByLabel('V tejto vete').innerText()
+  expect(reasons.some((reason) => here.includes(reason))).toBe(true)
 })

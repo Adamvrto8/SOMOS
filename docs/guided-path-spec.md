@@ -195,6 +195,10 @@ Fázy:
   imperfektum, futúrum. B1 a B2 striedajú body (pretérit × imperfektum, nepravidelné futúrum, ser/estar
   výsledok a výrazy, zvratné slovesá, prízvuky…), lebo vety týchto úrovní nemajú nové gramatické javy.
 - Bod **pretérit × imperfektum** nemá časovanie, krok Gramatika berie doplňovačky oboch časov.
+- **Tipy na použitie** (gustar, hay/estar, zámená, porovnávanie, povinnosť, subjuntivo pri želaní a po spojkách,
+  si, por/para, vzťažné vety, se; 2026-11-03) majú po 2 jednotky (prevzali 22 jednotiek bodov, ktorých bolo
+  najviac). Ich krok Gramatika nemá časovanie: 10 doplňovačiek, ktoré tip a pravidlo uvádzajú samy (`cloze.tip`,
+  `cloze.why`). Jednotka času berie aj doplňovačku na použitie s plnou nápovedou (quiero que **vengas**).
 - **Štart podľa uvítania**: kto zvolil A2 alebo B1, začína prvou jednotkou tej úrovne. Nižšie úrovne sú otvorené
   (nie hotové) a cesta sa k nim vráti, až keď je zvyšok prejdený. Téma z dôvodu ide za prvé dve jednotky
   štartovej úrovne. Domov ukazuje cestu každému (starú kartu „Pokračovať“ už nikto nemá).
