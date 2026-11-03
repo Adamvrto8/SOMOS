@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { sentences, tipById, topicById, verbById, verbs } from '../data'
 import type { Level, Person, Sentence, Verb, Word } from '../data/types'
-import { PERSONS, type TableTense } from './conjugate'
+import { personsOf, type TableTense } from './conjugate'
 import { builderWords, conjugationTask, LESSON_SIZE, seededRandom, taskFromItem, vocabTask, type ExerciseType, type Grade, type Task } from './lesson'
 import { useLessonProgression, type LessonProgressionMap } from './lessonProgress'
 import { localizedTip, topicName } from './localized'
@@ -68,6 +68,11 @@ const TENSE_TIPS: Record<string, TableTense> = {
   preterito: 'preterito',
   imperfecto: 'imperfecto',
   futuro: 'futuro',
+  imperativo: 'imperativo',
+  subjuntivo: 'subjuntivo',
+  condicional: 'condicional',
+  pluscuamperfecto: 'pluscuamperfecto',
+  'subj-imperfecto': 'subjImperfecto',
 }
 
 // The accented words whose accent makes another word (CLAUDE.md §4).
@@ -135,8 +140,9 @@ function grammarConjugations(unit: PathUnit): Task[] {
   for (const verb of list) {
     if (out.length === GRAMMAR_CONJUGATIONS) break
     // The persons take turns from task to task; the first one the point explains is asked.
-    for (let k = 0; k < PERSONS.length; k++) {
-      const person = PERSONS[(out.length + k) % PERSONS.length]
+    const persons = personsOf(tense)
+    for (let k = 0; k < persons.length; k++) {
+      const person = persons[(out.length + k) % persons.length]
       if (fits(verb, person)) {
         out.push(conjugationTask(verb, tense, person))
         break

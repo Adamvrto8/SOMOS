@@ -5,11 +5,32 @@ import { tipForCloze } from './tips'
 import { nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
 import { MAX_UNIT_WORDS, orderedUnits, pathUnitById, pathUnits, unitMaterial } from './pathUnits'
 import { createTest, hasTest, parseTestKey, testKey } from './tests'
+import type { ConjugationTask } from './lesson'
 
 const passed = { bestScore: 10, total: 10, passed: true }
 const none = () => false
 
 describe('path units', () => {
+  it.each([
+    ['b1-basics-1', 'imperativo'],
+    ['b1-city-1', 'subjuntivo'],
+    ['b1-health-1', 'condicional'],
+    ['b1-weather-1', 'pluscuamperfecto'],
+    ['b2-family-1', 'subjImperfecto'],
+  ])('%s practises the forms of its new tip: %s', (unitId, tense) => {
+    const conjugations = stepTasks(pathUnitById.get(unitId)!, 'grammar').filter((t): t is ConjugationTask => t.kind === 'conjugation')
+    expect(conjugations).toHaveLength(4)
+    expect(conjugations.every((t) => t.tense === tense)).toBe(true)
+    expect(conjugations.some((t) => t.person === 'yo' && t.tense === 'imperativo')).toBe(false)
+  })
+
+  it('teaches no unit a tense above its level', () => {
+    const LEVEL = { imperativo: 'A2', subjuntivo: 'B1', condicional: 'B1', pluscuamperfecto: 'B1', 'subj-imperfecto': 'B2' } as Record<string, string>
+    for (const unit of pathUnits) if (LEVEL[unit.grammar]) expect(unit.level >= LEVEL[unit.grammar], unit.id).toBe(true)
+    expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(16)
+    expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(12)
+  })
+
   it('teach every word with a topic exactly once, A1 to B2, the articles in the grammar steps', () => {
     const taught = pathUnits.flatMap((unit) => unitMaterial(unit).words.map((w) => w.id))
     expect(new Set(taught).size).toBe(taught.length)
