@@ -8,7 +8,7 @@ import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { useT } from '../../i18n'
 import { levelAbove, TABLE_TENSES, TENSE_LABELS, TENSE_LEVEL, type TableTense } from '../../lib/conjugate'
-import { getStablePool, LESSON_SIZE, type ExerciseType, type LessonFilter } from '../../lib/lesson'
+import { getStablePool, lessonSizeOf, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
   getActiveLesson,
   getFirstUnpassedLesson,
@@ -53,8 +53,9 @@ export function ExercisePage() {
 
   const progGroup = progressionGroup(group, filter.level)
   const poolSize = getStablePool(filter).length
-  const totalLessons = Math.ceil(poolSize / LESSON_SIZE)
-  const lessonSize = Math.min(poolSize, LESSON_SIZE)
+  const size = lessonSizeOf(filter.type)
+  const totalLessons = Math.ceil(poolSize / size)
+  const lessonSize = Math.min(poolSize, size)
   const current = getFirstUnpassedLesson(filter.type, progGroup, totalLessons, progression)
   let passedCount = 0
   for (let n = 1; n <= totalLessons; n++) if (getLessonRecord(filter.type, progGroup, n, progression)?.passed) passedCount++

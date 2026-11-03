@@ -45,6 +45,8 @@ function reference(task: Task): Reference {
         correctLang: 'es',
         speak: task.answer,
       }
+    case 'matching':
+      return { correct: task.pairs.map((p) => `${p.es} = ${p.sk}`).join('\n'), correctLang: 'es' }
     case 'builder':
     case 'translation':
     case 'dictation':
@@ -131,15 +133,20 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
   if (grade.speech && grade.verdict === 'typo') notes.push(<>{text.speechAlmost}</>)
   if (task.kind === 'conjugation' && task.irregular) notes.push(<>{text.irregularNote}</>)
   if ((task.kind === 'truefalse' || task.kind === 'findmistake') && task.corrupted) notes.push(<>{text.changedWord(task.corrupted.wrong, task.corrupted.right)}</>)
+  if (task.kind === 'matching' && grade.misplaced?.length) {
+    notes.push(<>{text.matchWrongNote(task.pairs.filter((p) => grade.misplaced?.includes(p.word.id)).map((p) => p.es).join(', '))}</>)
+  }
   if (!grade.correct) notes.push(<>{mistakeChoice ? text.staysInMistakes : text.savedToMistakes}</>)
 
   // ⭐ saves the verb or vocab word, the whole sentence otherwise.
   const star =
-    task.kind === 'conjugation'
-      ? ({ type: 'word', id: wordIdByVerb.get(task.verb.id) ?? task.verb.id } as const)
-      : task.kind === 'vocab'
-        ? ({ type: 'word', id: task.word.id } as const)
-        : ({ type: 'sentence', id: task.sentence.id } as const)
+    task.kind === 'matching'
+      ? null
+      : task.kind === 'conjugation'
+        ? ({ type: 'word', id: wordIdByVerb.get(task.verb.id) ?? task.verb.id } as const)
+        : task.kind === 'vocab'
+          ? ({ type: 'word', id: task.word.id } as const)
+          : ({ type: 'sentence', id: task.sentence.id } as const)
 
   return (
     // Opaque base + tinted layer: the sheet covers the task underneath.
@@ -152,7 +159,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
           </p>
           <div className="flex items-center gap-2">
             <ReportButton subject={taskSubject(task)} answer={!grade.correct && learnerAnswer ? learnerAnswer : null} />
-            <SaveButton type={star.type} id={star.id} size="pill" />
+            {star && <SaveButton type={star.type} id={star.id} size="pill" />}
           </div>
         </div>
 
@@ -160,7 +167,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
           {grade.verdict === 'wrong' && <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">{text.correctAnswer}</p>}
           {ref.label && <p className="text-sm text-ink-muted">{ref.label}</p>}
           <div className="flex items-start gap-1">
-            <p lang={ref.correctLang} className="min-w-0 flex-1 pt-1.5 font-serif text-xl leading-snug">
+            <p lang={ref.correctLang} className="min-w-0 flex-1 whitespace-pre-line pt-1.5 font-serif text-xl leading-snug">
               {ref.correct}
             </p>
             {ref.correctLang === 'es' && ref.speak && <SpeakButton text={ref.speak} />}

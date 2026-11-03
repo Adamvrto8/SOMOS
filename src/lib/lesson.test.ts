@@ -15,6 +15,10 @@ import {
   getStablePool,
   gradeTask,
   LESSON_SIZE,
+  lessonSizeOf,
+  matchingTask,
+  MATCHING_MAX_WRONG,
+  MATCHING_SIZE,
   mistakesLesson,
   retryTasks,
   skipSpeaking,
@@ -40,10 +44,11 @@ function seeded(seed: number) {
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
 describe('createLesson', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
-    const tasks = createLesson({ type }, LESSON_SIZE, seeded(1))
-    expect(tasks).toHaveLength(LESSON_SIZE)
-    expect(new Set(itemIds(tasks)).size).toBe(LESSON_SIZE)
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'matching'] as const)('builds a %s lesson of lessonSizeOf unique items', (type) => {
+    const size = lessonSizeOf(type)
+    const tasks = createLesson({ type }, size, seeded(1))
+    expect(tasks).toHaveLength(size)
+    expect(new Set(itemIds(tasks)).size).toBe(size)
     expect(tasks.every((t) => t.kind === type)).toBe(true)
   })
 
@@ -724,5 +729,75 @@ describe('findmistake', () => {
       expect(subject.detail).toMatch(/^[a-z0-9:-]{0,40}$/)
       if (t.kind === 'findmistake') expect(subject.shown.es).toBe(t.corrupted.es)
     }
+  })
+})
+
+describe('matching', () => {
+  const round = () => ['casa', 'perro', 'agua', 'libro', 'mesa'].map((id) => wordById.get(id)!)
+
+  it('has 5 pairs, a left and a right column in different orders, and a sorted item id', () => {
+    const t = matchingTask(round(), seeded(2))
+    expect(t.pairs).toHaveLength(MATCHING_SIZE)
+    expect([...t.rightOrder].sort()).toEqual([0, 1, 2, 3, 4])
+    expect(t.itemId).toBe(`m:${round().map((w) => w.id).sort().join(',')}`)
+    expect(t.pairs.every((p) => p.sk.length > 0 && p.es.endsWith(p.word.es))).toBe(true)
+  })
+
+  it('is right with at most two wrong pairings and lists the words that were paired wrong', () => {
+    const t = matchingTask(round(), seeded(3))
+    expect(gradeTask(t, 'm:').correct).toBe(true)
+    const two = gradeTask(t, 'm:casa,casa')
+    expect(two.correct).toBe(true)
+    expect(two.misplaced).toEqual(['casa'])
+    const three = gradeTask(t, 'm:casa,perro,agua')
+    expect(three.correct).toBe(false)
+    expect(three.misplaced).toEqual(['casa', 'perro', 'agua'])
+    expect(MATCHING_MAX_WRONG).toBe(2)
+    expect(gradeTask(t, '').correct).toBe(false) // not an answer of this type
+  })
+
+  it('has no second try and reshuffles on retry', () => {
+    const t = matchingTask(round(), seeded(4))
+    expect(canRetry(t)).toBe(false)
+    const again = retryTasks([t], seeded(5))[0]
+    expect(again.itemId).toBe(t.itemId)
+    expect(again.kind === 'matching' && again.pairs.map((p) => p.word.id).sort()).toEqual(t.pairs.map((p) => p.word.id).sort())
+  })
+
+  it('is rebuilt from its item id, and a stale id gives nothing', () => {
+    const t = matchingTask(round(), seeded(6))
+    expect(taskFromItem('matching', t.itemId)?.itemId).toBe(t.itemId)
+    for (const stale of ['m:', 'm:casa', 'm:casa,nope', 'casa,perro', '', 'm:nope1,nope2']) {
+      expect(taskFromItem('matching', stale), stale).toBeUndefined()
+    }
+  })
+
+  it('makes rounds of 5 distinct words with different first translations, from one level and topic', () => {
+    const pool = getStablePool({ type: 'matching', topic: 'all' })
+    expect(pool.length).toBeGreaterThan(20)
+    for (const t of pool) {
+      if (t.kind !== 'matching') throw new Error('wrong kind')
+      const words = t.pairs.map((p) => p.word)
+      expect(new Set(words.map((w) => w.id)).size).toBe(MATCHING_SIZE)
+      expect(new Set(words.map((w) => w.sk[0].toLowerCase())).size).toBe(MATCHING_SIZE)
+      expect(new Set(words.map((w) => w.level)).size).toBe(1)
+      expect(new Set(words.map((w) => w.topics[0])).size).toBe(1)
+    }
+  })
+
+  it('gives lessons of 4 rounds and survives a topic with too few words', () => {
+    const filter = { type: 'matching', topic: 'food', level: 'A1' } as const
+    const pool = getStablePool(filter)
+    expect(createNumberedLesson(filter, 1).length).toBe(Math.min(pool.length, lessonSizeOf('matching')))
+    expect(getNumberedLessonCount(filter)).toBe(Math.ceil(pool.length / lessonSizeOf('matching')) || 0)
+    expect(getStablePool({ type: 'matching', topic: 'nope' })).toEqual([])
+    expect(getNumberedLessonCount({ type: 'matching', topic: 'nope' })).toBe(0)
+  })
+
+  it('is reported by its first word, with a detail the server accepts', () => {
+    const subject = taskSubject(matchingTask(round(), seeded(7)))
+    expect(subject.exercise).toBe('matching')
+    expect(subject.target).toMatch(/^word:[a-z0-9ñ-]{1,60}$/)
+    expect(subject.detail).toMatch(/^[a-z0-9:-]{0,40}$/)
   })
 })

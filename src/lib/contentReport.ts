@@ -59,6 +59,13 @@ export function taskSubject(task: Task): ReportSubject {
         exercise: task.kind,
         shown: { es: task.corrupted.es, translation: sentenceTranslation(task.sentence) },
       }
+    case 'matching':
+      return {
+        target: `word:${task.pairs[0].word.id}`,
+        detail: '',
+        exercise: task.kind,
+        shown: { es: task.pairs.map((p) => p.es).join(', '), translation: task.pairs.map((p) => p.sk).join(', ') },
+      }
     case 'builder':
     case 'translation':
     case 'dictation':

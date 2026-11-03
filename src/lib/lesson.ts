@@ -9,9 +9,14 @@ import { wordTranslations } from './localized'
 import { lookupUpTo } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
 
-export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking' | 'truefalse' | 'findmistake'
+export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking' | 'truefalse' | 'findmistake' | 'matching'
 
 export const LESSON_SIZE = 10
+export const MATCHING_SIZE = 5 // pairs in a round
+export const MATCHING_MAX_WRONG = 2 // wrong pairings a round may have and still count as right
+
+/** A matching lesson is 4 rounds of 5 pairs; every other lesson is LESSON_SIZE tasks. */
+export const lessonSizeOf = (type: ExerciseType) => (type === 'matching' ? 4 : LESSON_SIZE)
 
 export interface LessonFilter {
   type: ExerciseType
@@ -94,6 +99,19 @@ export interface FindMistakeTask {
   options: string[] // the right word and up to 3 others, shuffled
 }
 
+export interface MatchingPair {
+  word: Word
+  es: string // with its article: "la casa"
+  sk: string // the first translation
+}
+
+export interface MatchingTask {
+  kind: 'matching'
+  itemId: string // "m:" + the word ids, sorted
+  pairs: MatchingPair[] // the left column, shuffled
+  rightOrder: number[] // the right column: indices into pairs, shuffled
+}
+
 export interface VocabTask {
   kind: 'vocab'
   itemId: string
@@ -104,7 +122,7 @@ export interface VocabTask {
   acceptable: string[]
 }
 
-export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask | TrueFalseTask | FindMistakeTask
+export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask | TrueFalseTask | FindMistakeTask | MatchingTask
 
 /** Typed text or chosen option, or tile ids slot by slot (builder; '' = a slot left open in the middle). */
 export type Answer = string | string[]
@@ -227,6 +245,8 @@ export function availableCount(filter: LessonFilter): number {
     case 'truefalse':
     case 'findmistake':
       return corruptItems(filter).length
+    case 'matching':
+      return matchingRounds(matchingWords(filter), filter.topic).length
     case 'vocab':
       return vocabWords.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length
   }
@@ -283,6 +303,60 @@ const withArticle = (word: Word) => (word.gender ? `${word.gender === 'm' ? 'el'
 
 /** The first translation, the one two words can share ("otec": padre, papá). */
 const translationKey = (word: Word) => wordTranslations(word)[0].toLowerCase()
+
+function matchingWords(filter: LessonFilter): Word[] {
+  const all = !filter.topic || filter.topic === 'all'
+  return vocabWords.filter((w) => {
+    const sk = wordTranslations(w)[0]
+    // Long phrases do not fit a chip.
+    return (all || w.topics.includes(filter.topic!)) && (!filter.level || w.level === filter.level) && w.es.length <= 24 && !!sk && sk.length <= 28
+  })
+}
+
+/** Rounds of MATCHING_SIZE words of one level and topic, no two with the same first translation. */
+function matchingRounds(words: Word[], topic?: string): Word[][] {
+  const groups = new Map<string, Word[]>()
+  for (const word of words) {
+    const key = `${word.level}|${topic && topic !== 'all' ? topic : word.topics[0]}`
+    groups.set(key, [...(groups.get(key) ?? []), word])
+  }
+  const rounds: Word[][] = []
+  for (const key of [...groups.keys()].sort()) {
+    let rest = groups.get(key)!
+    while (rest.length >= MATCHING_SIZE) {
+      const round: Word[] = []
+      const taken = new Set<string>()
+      const left: Word[] = []
+      for (const word of rest) {
+        const first = translationKey(word)
+        if (round.length < MATCHING_SIZE && !taken.has(first)) {
+          round.push(word)
+          taken.add(first)
+        } else left.push(word)
+      }
+      if (round.length < MATCHING_SIZE) break
+      rounds.push(round)
+      rest = left
+    }
+  }
+  return rounds
+}
+
+export function matchingTask(words: Word[], random: Random): MatchingTask {
+  const pairs = shuffle(
+    words.map((word): MatchingPair => ({ word, es: withArticle(word), sk: wordTranslations(word)[0] })),
+    random,
+  )
+  return {
+    kind: 'matching',
+    itemId: `m:${words.map((w) => w.id).sort().join(',')}`,
+    pairs,
+    rightOrder: shuffle(
+      pairs.map((_, i) => i),
+      random,
+    ),
+  }
+}
 
 let synonymIndex: { language: string; byKey: Map<string, Word[]> } | undefined
 
@@ -388,7 +462,7 @@ const builderTask = (sentence: Sentence, random: Random): BuilderTask => {
  */
 export function createLesson(
   filter: LessonFilter,
-  size = LESSON_SIZE,
+  size = lessonSizeOf(filter.type),
   random: Random = Math.random,
   seen?: Map<string, number>,
 ): Task[] {
@@ -441,6 +515,10 @@ export function createLesson(
         const task = d === undefined ? undefined : findMistakeTask(i.sentence, i.index, d, random)
         return task ? [task] : []
       })
+    case 'matching': {
+      const rounds = matchingRounds(shuffle(matchingWords(filter), random), filter.topic).map((words) => matchingTask(words, random))
+      return order(rounds, (t) => t.itemId).slice(0, size)
+    }
     case 'vocab': {
       // One word of a translation per lesson: "otec" once, not as padre and then as papá.
       const pool = getStablePool(filter).filter((t): t is VocabTask => t.kind === 'vocab')
@@ -473,6 +551,7 @@ export function spreadSameTranslations(tasks: Task[]): Task[] {
 }
 
 const LEVEL_ORDER: Record<Level, number> = { A1: 1, A2: 2, B1: 3, B2: 4 }
+const LEVEL_NAMES: Level[] = ['A1', 'A2', 'B1', 'B2']
 
 function seedFor(type: ExerciseType): number {
   switch (type) {
@@ -486,6 +565,7 @@ function seedFor(type: ExerciseType): number {
     case 'speaking': return 271828182
     case 'truefalse': return 161803398
     case 'findmistake': return 577215664
+    case 'matching': return 141421356
   }
 }
 
@@ -596,6 +676,15 @@ export function getStablePool(filter: LessonFilter): Task[] {
         return task ? [task] : []
       })
     }
+    case 'matching': {
+      const ordered = LEVEL_NAMES.flatMap((level) =>
+        shuffle(
+          matchingWords(filter).filter((w) => w.level === level).sort((a, b) => a.id.localeCompare(b.id)),
+          seededRandom(seedFor('matching') + LEVEL_ORDER[level]),
+        ),
+      )
+      return matchingRounds(ordered, filter.topic).map((words) => matchingTask(words, () => 0.5))
+    }
     case 'vocab': {
       const isAll = !filter.topic || filter.topic === 'all'
       const matching = vocabWords.filter(
@@ -626,10 +715,11 @@ export function getStablePool(filter: LessonFilter): Task[] {
 }
 
 export function getNumberedLessonCount(filter: LessonFilter): number {
+  const size = lessonSizeOf(filter.type)
   const pool = getStablePool(filter)
   if (pool.length === 0) return 0
-  if (pool.length <= LESSON_SIZE) return 1
-  return Math.ceil(pool.length / LESSON_SIZE)
+  if (pool.length <= size) return 1
+  return Math.ceil(pool.length / size)
 }
 
 export function createNumberedLesson(
@@ -637,19 +727,20 @@ export function createNumberedLesson(
   lessonNumber: number,
   random: Random = Math.random,
 ): Task[] {
+  const size = lessonSizeOf(filter.type)
   const pool = getStablePool(filter)
   if (pool.length === 0) return []
-  if (pool.length <= LESSON_SIZE) return retryTasks(pool, random)
+  if (pool.length <= size) return retryTasks(pool, random)
 
-  const totalLessons = Math.ceil(pool.length / LESSON_SIZE)
+  const totalLessons = Math.ceil(pool.length / size)
   const clampedNum = Math.max(1, Math.min(lessonNumber, totalLessons))
 
   let slice: Task[]
   if (clampedNum < totalLessons) {
-    const start = (clampedNum - 1) * LESSON_SIZE
-    slice = pool.slice(start, start + LESSON_SIZE)
+    const start = (clampedNum - 1) * size
+    slice = pool.slice(start, start + size)
   } else {
-    slice = pool.slice(Math.max(0, pool.length - LESSON_SIZE))
+    slice = pool.slice(Math.max(0, pool.length - size))
   }
 
   return retryTasks(slice, random)
@@ -700,6 +791,12 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
       if (!found || !sentence) return undefined
       return findMistakeTask(sentence, Number(found[2]), Number(found[3]), random)
     }
+    case 'matching': {
+      if (!itemId.startsWith('m:')) return undefined
+      const words = itemId.slice(2).split(',').map((id) => wordById.get(id))
+      if (words.length < 2 || words.some((w) => !w || w.drill === false)) return undefined
+      return matchingTask(words as Word[], random)
+    }
     case 'vocab': {
       const [wordId, direction] = itemId.split(':')
       const word = wordById.get(wordId)
@@ -717,7 +814,7 @@ export interface MistakeRef {
   lastWrongAt: number
 }
 
-const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake']
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'matching']
 
 /**
  * A lesson from the mistakes list: most-missed first, then the ones not seen for longest.
@@ -745,6 +842,7 @@ export function retryTasks(tasks: Task[], random: Random = Math.random): Task[] 
     if (task.kind === 'choice') return { ...task, options: shuffle(task.options, random) }
     if (task.kind === 'builder') return { ...task, tiles: shuffleTiles(task.expected, random) }
     if (task.kind === 'findmistake') return { ...task, options: shuffle(task.options, random) }
+    if (task.kind === 'matching') return matchingTask(task.pairs.map((p) => p.word), random)
     return task
   })
 }
@@ -767,7 +865,7 @@ function typed(text: string, expected: string, options: CheckOptions): Grade {
 }
 
 /** Tasks that are answered once: Vyslovovanie has its own three recordings, a swipe is not tried twice. */
-const NO_RETRY: Task['kind'][] = ['speaking', 'truefalse', 'findmistake']
+const NO_RETRY: Task['kind'][] = ['speaking', 'truefalse', 'findmistake', 'matching']
 
 /** A wrong answer may be fixed and checked again; the task counts as wrong only when the learner gives up. */
 export function canRetry(task: Task): boolean {
@@ -781,6 +879,8 @@ function taskLevel(task: Task): Level {
       return TENSE_LEVEL[task.tense]
     case 'vocab':
       return task.word.level
+    case 'matching':
+      return task.pairs[0].word.level
     default:
       return task.sentence.level
   }
@@ -818,6 +918,12 @@ export function gradeTask(task: Task, answer: Answer): Grade {
     case 'findmistake': {
       const [tapped = '', fix = ''] = Array.isArray(answer) ? answer : []
       return exact(Number(tapped) === task.corrupted.index && tapped !== '' && fix === task.corrupted.right, task.sentence.es)
+    }
+    case 'matching': {
+      const wrong = text.startsWith('m:') ? text.slice(2).split(',').filter(Boolean) : []
+      const expected = task.pairs.map((p) => `${p.es} = ${p.sk}`).join('\n')
+      const grade = exact(text.startsWith('m:') && wrong.length <= MATCHING_MAX_WRONG, expected)
+      return wrong.length === 0 ? grade : { ...grade, misplaced: [...new Set(wrong)] }
     }
     case 'dictation':
       // "8" is what was heard as much as "ocho".

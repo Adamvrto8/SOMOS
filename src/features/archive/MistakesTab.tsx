@@ -17,6 +17,7 @@ import { useArchiveFilter } from './useArchiveFilter'
 const taskTopics = (task: Task): string[] => {
   if (task.kind === 'conjugation') return []
   if (task.kind === 'vocab') return task.word.topics
+  if (task.kind === 'matching') return task.pairs[0].word.topics.slice(0, 1)
   return task.sentence.topics
 }
 

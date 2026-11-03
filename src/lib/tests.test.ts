@@ -184,7 +184,7 @@ describe('exercise tests', () => {
       expect(new Set(tasks.map((t) => t.itemId)).size).toBe(EXERCISE_TEST_SIZE)
       for (const task of tasks) {
         expect(task.kind).toBe(type)
-        const level = task.kind === 'vocab' ? task.word.level : task.kind === 'conjugation' ? task.verb.level : task.sentence.level
+        const level = task.kind === 'vocab' ? task.word.level : task.kind === 'conjugation' ? task.verb.level : task.kind === 'matching' ? task.pairs[0].word.level : task.sentence.level
         expect(level).toBe('A1')
       }
     },
@@ -217,5 +217,6 @@ describe('isExerciseType', () => {
     expect(isExerciseType('cloze')).toBe(true)
     expect(isExerciseType('truefalse')).toBe(false)
     expect(isExerciseType('findmistake')).toBe(false)
+    expect(isExerciseType('matching')).toBe(false)
   })
 })

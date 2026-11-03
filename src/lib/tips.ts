@@ -283,6 +283,7 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
     case 'speaking':
       return tipForSentence(task.sentence)
     case 'vocab':
+    case 'matching':
       return undefined
   }
 }

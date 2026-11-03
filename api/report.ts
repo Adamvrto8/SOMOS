@@ -32,7 +32,7 @@ export interface ReportDeps {
 }
 
 // Mirrors src/lib/contentReport.ts (ExerciseType + word, ReportReason, TARGET_PATTERN).
-const EXERCISES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'word']
+const EXERCISES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'matching', 'word']
 const REASONS = ['spanish', 'translation', 'answer', 'other']
 const KEYS = ['target', 'detail', 'exercise', 'reason', 'note', 'answer', 'shown', 'version', 'language']
 

@@ -14,6 +14,7 @@ import {
   getNumberedLessonCount,
   gradeTask,
   LESSON_SIZE,
+  lessonSizeOf,
   mistakesLesson,
   retryTasks,
   skipSpeaking,
@@ -58,7 +59,7 @@ import { learnerAnswerText } from '../../lib/contentReport'
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' || task?.kind === 'findmistake' ? [] : '')
 
 /** Tasks that submit by themselves (a swipe, a tap): no "Skontrolovať" under them. */
-const AUTO_SUBMIT: Task['kind'][] = ['truefalse', 'findmistake']
+const AUTO_SUBMIT: Task['kind'][] = ['truefalse', 'findmistake', 'matching']
 
 /**
  * What the tasks on screen are: the whole lesson, the mistakes of the previous round again ('fix'),
@@ -98,7 +99,7 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
     return spreadSameTranslations(prepareLesson(test, mistakes, await loadTestSeenCounts()))
   }
   if (lessonNumber) return createNumberedLesson(filter, lessonNumber)
-  return createLesson(filter, LESSON_SIZE, Math.random, await loadSeenCounts(filter.type))
+  return createLesson(filter, lessonSizeOf(filter.type), Math.random, await loadSeenCounts(filter.type))
 }
 
 /**

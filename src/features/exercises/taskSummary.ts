@@ -16,6 +16,8 @@ export function taskSummary(task: Task): { prompt: string; answer: string } {
             : task.word.es
       return { prompt: task.prompt, answer: expectedAnswer }
     }
+    case 'matching':
+      return { prompt: task.pairs.map((p) => p.sk).join(' · '), answer: task.pairs.map((p) => p.es).join(' · ') }
     default:
       return { prompt: sentenceTranslation(task.sentence), answer: task.sentence.es }
   }

@@ -7,6 +7,7 @@ import { ChoiceOptions } from './ChoiceOptions'
 import { DictationView } from './DictationView'
 import { FindMistakeView } from './FindMistakeView'
 import { SentenceWithBlank } from './SentenceWithBlank'
+import { MatchingView } from './MatchingView'
 import { SpeakingView } from './SpeakingView'
 import { statusOf } from './status'
 import { TileBuilder } from './TileBuilder'
@@ -132,6 +133,9 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
 
     case 'findmistake':
       return <FindMistakeView task={task} onSubmit={onSubmit} status={status} />
+
+    case 'matching':
+      return <MatchingView task={task} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
 
     case 'vocab': {
       const isToSpanish = task.direction === 'sk-es'
