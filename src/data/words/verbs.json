@@ -3066,5 +3066,138 @@
       { "es": "Trata de descansar.", "sk": "Skús si oddýchnuť." }
     ],
     "note": "Tratar de + infinitív = snažiť sa: Trato de dormir más."
+  },
+  {
+    "id": "gustar",
+    "es": "gustar",
+    "sk": ["páčiť sa", "chutiť"],
+    "pos": "verb",
+    "verbId": "gustar",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "examples": [{ "es": "Me gusta mucho bailar.", "sk": "Veľmi rád tancujem." }],
+    "note": "Me gusta = páči sa mi: podmetom je vec, ktorá sa páči (me gustan los tacos)."
+  },
+  {
+    "id": "encantar",
+    "es": "encantar",
+    "sk": ["veľmi sa páčiť", "zbožňovať"],
+    "pos": "verb",
+    "verbId": "encantar",
+    "level": "A1",
+    "topics": ["food"],
+    "examples": [{ "es": "Me encantan los tacos al pastor.", "sk": "Zbožňujem tacos al pastor." }],
+    "note": "Ako gustar: me encanta, me encantan."
+  },
+  {
+    "id": "deber",
+    "es": "deber",
+    "sk": ["mať (povinnosť)", "dlhovať"],
+    "pos": "verb",
+    "verbId": "deber",
+    "level": "A2",
+    "topics": ["work"],
+    "examples": [{ "es": "Debes descansar más.", "sk": "Mal by si viac odpočívať." }]
+  },
+  {
+    "id": "interesar",
+    "es": "interesar",
+    "sk": ["zaujímať"],
+    "pos": "verb",
+    "verbId": "interesar",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Te interesa la historia?", "sk": "Zaujíma ťa história?" }],
+    "note": "Ako gustar: me interesa, me interesan."
+  },
+  {
+    "id": "importar",
+    "es": "importar",
+    "sk": ["záležať", "dovážať"],
+    "pos": "verb",
+    "verbId": "importar",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "No me importa lo que digan.", "sk": "Nezáleží mi na tom, čo hovoria." }]
+  },
+  {
+    "id": "molestar",
+    "es": "molestar",
+    "sk": ["vadiť", "obťažovať"],
+    "pos": "verb",
+    "verbId": "molestar",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "¿Te molesta si abro la ventana?", "sk": "Vadí ti, ak otvorím okno?" }]
+  },
+  {
+    "id": "faltar",
+    "es": "faltar",
+    "sk": ["chýbať"],
+    "pos": "verb",
+    "verbId": "faltar",
+    "level": "B1",
+    "topics": ["food"],
+    "examples": [{ "es": "Nos falta leche para el pastel.", "sk": "Chýba nám mlieko na koláč." }]
+  },
+  {
+    "id": "alegrar",
+    "es": "alegrar",
+    "sk": ["tešiť"],
+    "pos": "verb",
+    "verbId": "alegrar",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Me alegra que estés aquí.", "sk": "Teší ma, že si tu." }]
+  },
+  {
+    "id": "preocupar",
+    "es": "preocupar",
+    "sk": ["robiť starosti", "znepokojovať"],
+    "pos": "verb",
+    "verbId": "preocupar",
+    "level": "B1",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Me preocupa tu salud.", "sk": "Robí mi starosti tvoje zdravie." }]
+  },
+  {
+    "id": "recomendar",
+    "es": "recomendar",
+    "sk": ["odporučiť", "odporúčať"],
+    "pos": "verb",
+    "verbId": "recomendar",
+    "level": "B1",
+    "topics": ["travel"],
+    "examples": [{ "es": "Te recomiendo este restaurante.", "sk": "Odporúčam ti túto reštauráciu." }]
+  },
+  {
+    "id": "dudar",
+    "es": "dudar",
+    "sk": ["pochybovať"],
+    "pos": "verb",
+    "verbId": "dudar",
+    "level": "B1",
+    "topics": ["work"],
+    "examples": [{ "es": "Dudo que llegue a tiempo.", "sk": "Pochybujem, že príde načas." }]
+  },
+  {
+    "id": "aconsejar",
+    "es": "aconsejar",
+    "sk": ["radiť", "poradiť"],
+    "pos": "verb",
+    "verbId": "aconsejar",
+    "level": "B2",
+    "topics": ["health"],
+    "examples": [{ "es": "El doctor me aconsejó que caminara más.", "sk": "Lekár mi poradil, aby som viac chodil." }]
+  },
+  {
+    "id": "sorprender",
+    "es": "sorprender",
+    "sk": ["prekvapiť", "prekvapovať"],
+    "pos": "verb",
+    "verbId": "sorprender",
+    "level": "B2",
+    "topics": ["emotions"],
+    "examples": [{ "es": "Me sorprende que no sepas nadar.", "sk": "Prekvapuje ma, že nevieš plávať." }]
   }
 ]

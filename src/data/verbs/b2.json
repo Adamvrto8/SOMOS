@@ -2053,5 +2053,39 @@
     "participle": "pertenecido",
     "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
+  },
+  {
+    "id": "aconsejar",
+    "sk": ["radiť", "poradiť"],
+    "group": "ar",
+    "regular": true,
+    "gerund": "aconsejando",
+    "presente": { "yo": "aconsejo", "tu": "aconsejas", "el": "aconseja", "nosotros": "aconsejamos", "ellos": "aconsejan" },
+    "preterito": { "yo": "aconsejé", "tu": "aconsejaste", "el": "aconsejó", "nosotros": "aconsejamos", "ellos": "aconsejaron" },
+    "imperfecto": { "yo": "aconsejaba", "tu": "aconsejabas", "el": "aconsejaba", "nosotros": "aconsejábamos", "ellos": "aconsejaban" },
+    "futuro": { "yo": "aconsejaré", "tu": "aconsejarás", "el": "aconsejará", "nosotros": "aconsejaremos", "ellos": "aconsejarán" },
+    "subjuntivo": { "yo": "aconseje", "tu": "aconsejes", "el": "aconseje", "nosotros": "aconsejemos", "ellos": "aconsejen" },
+    "subjImperfecto": { "yo": "aconsejara", "tu": "aconsejaras", "el": "aconsejara", "nosotros": "aconsejáramos", "ellos": "aconsejaran" },
+    "condicional": { "yo": "aconsejaría", "tu": "aconsejarías", "el": "aconsejaría", "nosotros": "aconsejaríamos", "ellos": "aconsejarían" },
+    "imperativo": { "tu": "aconseja", "el": "aconseje", "nosotros": "aconsejemos", "ellos": "aconsejen" },
+    "participle": "aconsejado",
+    "level": "B2"
+  },
+  {
+    "id": "sorprender",
+    "sk": ["prekvapiť", "prekvapovať"],
+    "group": "er",
+    "regular": true,
+    "gerund": "sorprendiendo",
+    "presente": { "yo": "sorprendo", "tu": "sorprendes", "el": "sorprende", "nosotros": "sorprendemos", "ellos": "sorprenden" },
+    "preterito": { "yo": "sorprendí", "tu": "sorprendiste", "el": "sorprendió", "nosotros": "sorprendimos", "ellos": "sorprendieron" },
+    "imperfecto": { "yo": "sorprendía", "tu": "sorprendías", "el": "sorprendía", "nosotros": "sorprendíamos", "ellos": "sorprendían" },
+    "futuro": { "yo": "sorprenderé", "tu": "sorprenderás", "el": "sorprenderá", "nosotros": "sorprenderemos", "ellos": "sorprenderán" },
+    "subjuntivo": { "yo": "sorprenda", "tu": "sorprendas", "el": "sorprenda", "nosotros": "sorprendamos", "ellos": "sorprendan" },
+    "subjImperfecto": { "yo": "sorprendiera", "tu": "sorprendieras", "el": "sorprendiera", "nosotros": "sorprendiéramos", "ellos": "sorprendieran" },
+    "condicional": { "yo": "sorprendería", "tu": "sorprenderías", "el": "sorprendería", "nosotros": "sorprenderíamos", "ellos": "sorprenderían" },
+    "imperativo": { "tu": "sorprende", "el": "sorprenda", "nosotros": "sorprendamos", "ellos": "sorprendan" },
+    "participle": "sorprendido",
+    "level": "B2"
   }
 ]

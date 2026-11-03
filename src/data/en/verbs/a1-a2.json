@@ -127,5 +127,9 @@
   { "id": "romper", "en": ["to break"] },
   { "id": "cortar", "en": ["to cut", "to chop"] },
   { "id": "revisar", "en": ["to check", "to look over"] },
-  { "id": "tratar", "en": ["to try", "to treat"] }
+  { "id": "tratar", "en": ["to try", "to treat"] },
+  { "id": "gustar", "en": ["to like"] },
+  { "id": "encantar", "en": ["to love"] },
+  { "id": "deber", "en": ["should", "must", "to owe"] },
+  { "id": "interesar", "en": ["to interest"] }
 ]

@@ -47,5 +47,7 @@
   { "id": "presumir", "en": ["to show off", "to brag"] },
   { "id": "apapachar", "en": ["to cuddle", "to pamper"] },
   { "id": "chambear", "en": ["to work (slang)"] },
-  { "id": "pertenecer", "en": ["to belong"] }
+  { "id": "pertenecer", "en": ["to belong"] },
+  { "id": "aconsejar", "en": ["to advise"] },
+  { "id": "sorprender", "en": ["to surprise"] }
 ]

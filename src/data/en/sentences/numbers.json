@@ -31,7 +31,7 @@
   { "id": "s660", "en": "We split the bill four ways." },
   { "id": "s661", "en": "Most Mexicans live in cities.", "hints": ["majority"] },
   { "id": "s662", "en": "Seven is an odd number.", "hints": ["odd"] },
-  { "id": "s663", "en": "I miscalculated and was two hundred pesos short.", "hints": ["to be missing"] },
+  { "id": "s663", "en": "I miscalculated and was two hundred pesos short." },
   { "id": "s664", "en": "The company sold a billion pesos' worth last year.", "hints": ["millions (mil … = a billion)"] },
   { "id": "s665", "en": "According to the statistics, unemployment went down this year." },
   { "id": "s666", "en": "I did the math twice and it doesn't add up." },

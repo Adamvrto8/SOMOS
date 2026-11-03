@@ -513,5 +513,18 @@
   { "id": "romper", "en": ["to break"], "examples": ["The glass broke."], "note": "Romper con alguien = to break up with someone. The participle is irregular: roto (broken)." },
   { "id": "cortar", "en": ["to cut", "to chop"], "examples": ["Will you help me cut the cake?"] },
   { "id": "revisar", "en": ["to check", "to look over"], "examples": ["Check your email."], "note": "Revisar = to check, to look over (revisar el correo, revisar la tarea), not to revise." },
-  { "id": "tratar", "en": ["to try", "to treat"], "examples": ["Try to get some rest."], "note": "Tratar de + infinitive = to try to: Trato de dormir más." }
+  { "id": "tratar", "en": ["to try", "to treat"], "examples": ["Try to get some rest."], "note": "Tratar de + infinitive = to try to: Trato de dormir más." },
+  { "id": "gustar", "en": ["to like"], "examples": ["I really like dancing."] },
+  { "id": "encantar", "en": ["to love"], "examples": ["I love tacos al pastor."] },
+  { "id": "deber", "en": ["should", "must", "to owe"], "examples": ["You should rest more."] },
+  { "id": "interesar", "en": ["to interest"], "examples": ["Are you interested in history?"] },
+  { "id": "importar", "en": ["to matter", "to import"], "examples": ["I don't care what they say."] },
+  { "id": "molestar", "en": ["to bother"], "examples": ["Do you mind if I open the window?"] },
+  { "id": "faltar", "en": ["to be missing", "to lack"], "examples": ["We're missing milk for the cake."] },
+  { "id": "alegrar", "en": ["to make happy", "to be glad"], "examples": ["I'm glad you're here."] },
+  { "id": "preocupar", "en": ["to worry"], "examples": ["Your health worries me."] },
+  { "id": "recomendar", "en": ["to recommend"], "examples": ["I recommend this restaurant."] },
+  { "id": "dudar", "en": ["to doubt"], "examples": ["I doubt he'll arrive on time."] },
+  { "id": "aconsejar", "en": ["to advise"], "examples": ["The doctor advised me to walk more."] },
+  { "id": "sorprender", "en": ["to surprise"], "examples": ["It surprises me that you can't swim."] }
 ]

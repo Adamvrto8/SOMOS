@@ -70,5 +70,12 @@
   { "id": "multiplicar", "en": ["to multiply"] },
   { "id": "dividir", "en": ["to divide", "to split"] },
   { "id": "medir", "en": ["to measure"] },
-  { "id": "confiar", "en": ["to trust"] }
+  { "id": "confiar", "en": ["to trust"] },
+  { "id": "importar", "en": ["to matter", "to import"] },
+  { "id": "molestar", "en": ["to bother"] },
+  { "id": "faltar", "en": ["to be missing", "to lack"] },
+  { "id": "alegrar", "en": ["to make happy", "to be glad"] },
+  { "id": "preocupar", "en": ["to worry"] },
+  { "id": "recomendar", "en": ["to recommend"] },
+  { "id": "dudar", "en": ["to doubt"] }
 ]
