@@ -2,15 +2,22 @@ import { ArrowRight, Check, Lock, Repeat, RotateCcw } from 'lucide-react'
 import { Button } from '../../components/Button'
 import { SectionTitle } from '../../components/SectionTitle'
 import { Azulejos } from '../../components/Azulejos'
-import type { Grade, Task } from '../../lib/lesson'
+import type { Grade, Task, TrueFalseTask } from '../../lib/lesson'
 import { passThreshold as calcPassThreshold } from '../../lib/lessonProgress'
 import { useT } from '../../i18n'
 import { TaskAnswerList } from './TaskAnswerList'
+import { TrueFalseSummary } from './TrueFalseSummary'
 
 export interface LessonAnswer {
   task: Task
   grade: Grade
   correct: boolean
+}
+
+/** The pravda/nepravda cards among the answers, when every answer is one; else undefined. */
+function trueFalseCards(answers: LessonAnswer[]): { task: TrueFalseTask; correct: boolean }[] | undefined {
+  const cards = answers.flatMap(({ task, correct }) => (task.kind === 'truefalse' ? [{ task, correct }] : []))
+  return answers.length > 0 && cards.length === answers.length ? cards : undefined
 }
 
 /** The Spanish cheer and which line of the dictionary goes under it. */
@@ -28,6 +35,8 @@ interface LessonResultProps {
   // Numbered lesson score: right in the full run or in a correction round.
   lessonScore?: { score: number; total: number }
   isRetry?: boolean // `answers` are a correction round
+  /** The tasks were answered without a verdict (a pravda/nepravda lesson): every answer is shown. */
+  verdictsWaited?: boolean
   totalLessons?: number
   /** A step of the path (src/lib/path.ts) instead of a numbered lesson: its name, and the step after it. */
   step?: { name: string; next?: { name: string; onGo: () => void } }
@@ -44,6 +53,7 @@ export function LessonResult({
   lessonNumber,
   lessonScore,
   isRetry = false,
+  verdictsWaited = false,
   totalLessons = 1,
   step,
   onRetryMistakes,
@@ -53,6 +63,8 @@ export function LessonResult({
   onExit,
 }: LessonResultProps) {
   const mistakes = answers.filter((a) => !a.correct)
+  // A lesson of only pravda/nepravda cards showed no verdicts: all of them come here.
+  const cards = verdictsWaited ? trueFalseCards(answers) : undefined
   // A step of the path is scored like a numbered lesson.
   const isNumbered = (typeof lessonNumber === 'number' || step !== undefined) && lessonScore !== undefined
   const score = isNumbered ? lessonScore.score : answers.length - mistakes.length
@@ -123,7 +135,15 @@ export function LessonResult({
         </div>
       </div>
 
-      {mistakes.length > 0 && (
+      {cards ? (
+        <section aria-labelledby="answers-heading">
+          <SectionTitle id="answers-heading">{text.tfAnswers}</SectionTitle>
+          <TrueFalseSummary answers={cards} />
+          {mistakes.length > 0 && !fromMistakes && (
+            <p className="mt-2 text-sm text-ink-muted">{isNumbered ? text.mistakesStay : text.mistakesSaved}</p>
+          )}
+        </section>
+      ) : mistakes.length > 0 && (
         <section aria-labelledby="mistakes-heading">
           <SectionTitle id="mistakes-heading">{isNumbered ? text.toFix : text.toRepeat}</SectionTitle>
           <TaskAnswerList tasks={mistakes.map((a) => a.task)} />

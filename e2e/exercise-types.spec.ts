@@ -7,38 +7,44 @@ const PUNCTUATION = /^[¿?¡!.,;:]$/
 const withArticle = (w: { es: string; gender?: 'm' | 'f' }) => (w.gender ? `${w.gender === 'm' ? 'el' : 'la'} ${w.es}` : w.es)
 
 test.describe('pravda / nepravda', () => {
-  test('is answered by swiping the card, and the verdict follows the sentence', async ({ page }) => {
+  test('a swipe gives no verdict, the next card comes at once', async ({ page }) => {
     await page.goto(lesson('truefalse'))
     const card = page.getByRole('group', { name: 'Veta na posúdenie' })
     await expect(card).toBeVisible()
-    const shown = await card.locator('p[lang="es"]').innerText()
-    const truth = sentences.some((s) => s.es === shown)
+    await expect(page.getByRole('button', { name: 'Pravda' })).toHaveCount(0)
+    await expect(page.getByRole('button', { name: 'Nepravda' })).toHaveCount(0)
 
     const box = (await card.boundingBox())!
     const y = box.y + box.height / 2
     const x = box.x + box.width / 2
+    await swipe(page, { x, y }, { x: x - 30, y }) // too short
+    await expect(page.locator('header')).toContainText('1/10')
+
     await swipe(page, { x, y }, { x: x + 140, y }) // right = pravda
-    await expect(status(page)).toContainText(truth ? 'Správne!' : 'Nesprávne')
-    // click, not tap: a tap right after the raw CDP touch sequence of `swipe` is often swallowed by Chrome's touch state
-    await button(page, 'Pokračovať').click()
     await expect(page.locator('header')).toContainText('2/10')
+    await expect(status(page)).toHaveCount(0)
+    await expect(button(page, 'Pokračovať')).toHaveCount(0)
   })
 
-  test('is answered by the buttons, and a short drag does nothing', async ({ page }) => {
+  test('ten cards by the arrow keys, then every verdict on the result screen', async ({ page }) => {
     await page.goto(lesson('truefalse'))
     const card = page.getByRole('group', { name: 'Veta na posúdenie' })
-    const shown = await card.locator('p[lang="es"]').innerText()
-    const truth = sentences.some((s) => s.es === shown)
-
-    const box = (await card.boundingBox())!
-    const y = box.y + box.height / 2
-    const x = box.x + box.width / 2
-    await swipe(page, { x, y }, { x: x - 30, y })
-    await expect(status(page)).toHaveCount(0)
-
-    await button(page, 'Nepravda').click() // click, not tap: see above
-    await expect(status(page)).toContainText(truth ? 'Nesprávne' : 'Správne!')
-    await button(page, 'Pokračovať').click()
+    let right = 0
+    for (let n = 1; n <= 10; n++) {
+      await expect(page.locator('header')).toContainText(`${n}/10`)
+      const shown = await card.locator('p[lang="es"]').innerText()
+      const truth = sentences.some((s) => s.es === shown)
+      // Every other card is judged the wrong way, so both verdicts show up.
+      const sayTrue = n % 2 === 0 ? truth : !truth
+      if (sayTrue === truth) right++
+      await page.keyboard.press(sayTrue ? 'ArrowRight' : 'ArrowLeft')
+      if (n < 10) await expect(page.locator('header')).toContainText(`${n + 1}/10`)
+    }
+    const answers = page.getByRole('region', { name: 'Tvoje odpovede' })
+    await expect(answers.locator('li')).toHaveCount(10)
+    await expect(answers.locator('li svg[aria-label="Správne"]')).toHaveCount(right)
+    await expect(answers.locator('li svg[aria-label="Nesprávne"]')).toHaveCount(10 - right)
+    await expect(answers.getByText(/Tvoja odpoveď: (Pravda|Nepravda)/)).toHaveCount(10)
   })
 })
 
