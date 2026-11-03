@@ -3,7 +3,7 @@ import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, personsOf, TABLE_TENSES, TENSE_LEVEL, tensesUpTo, type TableTense } from './conjugate'
-import { corrupt, distractorFor, eligibleClozes, stableHash, type Corrupted } from './corrupt'
+import { corrupt, distractorFor, eligibleClozes, matchCapital, stableHash, type Corrupted } from './corrupt'
 import { getLanguage } from './language'
 import { wordTranslations } from './localized'
 import { lookupUpTo } from './knownForms'
@@ -336,7 +336,14 @@ export function findMistakeTask(sentence: Sentence, clozeIndex: number, distract
   const cloze = sentence.cloze?.[clozeIndex]
   const corrupted = cloze && corrupt(sentence, clozeIndex, distractorIndex)
   if (!cloze || !corrupted) return undefined
-  const others = (cloze.distractors ?? []).filter((_, i) => i !== distractorIndex)
+  const seen = new Set([corrupted.right.toLowerCase()])
+  const others: string[] = []
+  ;(cloze.distractors ?? []).forEach((d, i) => {
+    const word = matchCapital(corrupted.right, d)
+    if (i === distractorIndex || seen.has(word.toLowerCase())) return
+    seen.add(word.toLowerCase())
+    others.push(word)
+  })
   return {
     kind: 'findmistake',
     itemId: `${sentence.id}#${clozeIndex}:${distractorIndex}`,

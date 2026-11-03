@@ -664,6 +664,28 @@ describe('findmistake', () => {
     expect(t.options.length).toBeLessThanOrEqual(4)
   })
 
+  it('keeps the options in one casing and free of duplicates', () => {
+    const pool = getStablePool({ type: 'findmistake' }).filter((t) => t.kind === 'findmistake')
+    expect(pool.length).toBeGreaterThan(100)
+    const initial = pool.find((t) => t.kind === 'findmistake' && /^\p{Lu}/u.test(t.corrupted.right))
+    expect(initial).toBeDefined()
+    for (const t of pool) {
+      if (t.kind !== 'findmistake') continue
+      const capitals = t.options.filter((o) => /^\p{Lu}/u.test(o)).length
+      expect(capitals === 0 || capitals === t.options.length, t.itemId).toBe(true)
+      expect(new Set(t.options.map((o) => o.toLowerCase())).size, t.itemId).toBe(t.options.length)
+    }
+  })
+
+  it('drops a distractor that repeats the answer or another distractor', () => {
+    const base = sentenceById.get('s372')!
+    const cloze = base.cloze![0]
+    const dup = { ...base, cloze: [{ ...cloze, distractors: ['con', 'Sin', 'para', 'PARA', 'por'] }, ...base.cloze!.slice(1)] }
+    const t = findMistakeTask(dup, 0, 0, () => 0.5)!
+    expect(t.options.filter((o) => o === 'sin')).toHaveLength(1)
+    expect(new Set(t.options.map((o) => o.toLowerCase())).size).toBe(t.options.length)
+  })
+
   it('is right only with the right word and the right fix', () => {
     const t = task()
     expect(gradeTask(t, ['3', 'sin']).correct).toBe(true)

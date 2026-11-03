@@ -40,13 +40,16 @@ export function distractorFor(sentence: Sentence, clozeIndex: number, r: number)
   return options[Math.min(options.length - 1, Math.floor(r * options.length))]
 }
 
+/** A capital stays in a capital slot: the sentence-initial blank. */
+export function matchCapital(right: string, word: string): string {
+  return /^\p{Lu}/u.test(right) && /^\p{Ll}/u.test(word) ? word.charAt(0).toUpperCase() + word.slice(1) : word
+}
+
 export function corrupt(sentence: Sentence, clozeIndex: number, distractorIndex: number): Corrupted | undefined {
   const cloze = sentence.cloze?.[clozeIndex]
   if (!cloze || !swappableDistractors(cloze).includes(distractorIndex)) return undefined
   const right = sentence.tokens[cloze.tokenIndex]
-  let wrong = cloze.distractors![distractorIndex]
-  // A capital stays in a capital slot: the sentence-initial blank.
-  if (/^\p{Lu}/u.test(right) && /^\p{Ll}/u.test(wrong)) wrong = wrong.charAt(0).toUpperCase() + wrong.slice(1)
+  const wrong = matchCapital(right, cloze.distractors![distractorIndex])
   const tokens = sentence.tokens.map((token, i) => (i === cloze.tokenIndex ? wrong : token))
   return { tokens, index: cloze.tokenIndex, wrong, right, es: rebuild(tokens) }
 }
