@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, topics, verbById, verbs, wordById } from '../data'
+import type { Level } from '../data/types'
+import { checkAnswer } from './checkAnswer'
 import {
   availableCount,
   builderWords,
@@ -8,6 +10,7 @@ import {
   createLesson,
   createNumberedLesson,
   getNumberedLessonCount,
+  getStablePool,
   gradeTask,
   LESSON_SIZE,
   mistakesLesson,
@@ -17,9 +20,10 @@ import {
   synonymsOf,
   taskFromItem,
   vocabTask,
+  type ConjugationTask,
   type Task,
 } from './lesson'
-import { TABLE_TENSES } from './conjugate'
+import { personsOf, TABLE_TENSES } from './conjugate'
 import { lookupForm } from './knownForms'
 
 // Deterministic pseudo-random generator for reproducible lessons.
@@ -83,7 +87,35 @@ describe('createLesson', () => {
   })
 
   it('counts every conjugation combination', () => {
-    expect(availableCount({ type: 'conjugation' })).toBe(verbs.length * TABLE_TENSES.length * 5)
+    const perVerb = TABLE_TENSES.reduce((n, t) => n + personsOf(t).length, 0)
+    expect(availableCount({ type: 'conjugation' })).toBe(verbs.length * perVerb)
+  })
+
+  it('asks "all tenses" only up to the level', () => {
+    const tensesOf = (level: Level) => new Set(getStablePool({ type: 'conjugation', tense: 'all', level }).map((t) => (t as ConjugationTask).tense))
+    expect([...tensesOf('A1')].sort()).toEqual(['futuro', 'imperfecto', 'presente', 'preterito', 'progresivo'])
+    expect(tensesOf('A2').has('imperativo')).toBe(true)
+    expect(tensesOf('B1').has('subjuntivo')).toBe(true)
+    expect(tensesOf('B1').has('subjImperfecto')).toBe(false)
+    expect(tensesOf('B2').has('subjImperfecto')).toBe(true)
+  })
+
+  it('keeps the A1 drill as it was: five tenses, five persons', () => {
+    const pool = getStablePool({ type: 'conjugation', tense: 'all', level: 'A1' })
+    expect(pool).toHaveLength(verbs.filter((v) => v.level === 'A1').length * 5 * 5)
+  })
+
+  it('drills a chosen tense at any level', () => {
+    const pool = getStablePool({ type: 'conjugation', tense: 'subjuntivo', level: 'A1' }) as ConjugationTask[]
+    expect(pool.length).toBeGreaterThan(0)
+    expect(pool.every((t) => t.tense === 'subjuntivo')).toBe(true)
+  })
+
+  it('drills the imperative without yo, and rebuilds its tasks from ids', () => {
+    const pool = getStablePool({ type: 'conjugation', tense: 'imperativo', level: 'A1' }) as ConjugationTask[]
+    expect(pool.length).toBeGreaterThan(0)
+    expect(pool.some((t) => t.person === 'yo')).toBe(false)
+    expect(taskFromItem('conjugation', 'decir:imperativo:tu')).toMatchObject({ answer: 'di' })
   })
 
   it('offers the answer plus distractors, shuffled, without duplicates', () => {
@@ -304,7 +336,8 @@ describe('taskFromItem', () => {
     expect(taskFromItem('cloze', 's9999#0')).toBeUndefined()
     expect(taskFromItem('cloze', 's001#9')).toBeUndefined()
     expect(taskFromItem('conjugation', 'volar:presente:yo')).toBeUndefined()
-    expect(taskFromItem('conjugation', 'tener:condicional:yo')).toBeUndefined()
+    expect(taskFromItem('conjugation', 'tener:pasado:yo')).toBeUndefined()
+    expect(taskFromItem('conjugation', 'decir:imperativo:yo')).toBeUndefined()
   })
 })
 
@@ -359,6 +392,15 @@ describe('lookupForm', () => {
     expect(lookupForm('fui')).toContain('alebo')
     expect(lookupForm('papa')).toBe('zemiak')
     expect(lookupForm('cafe')).toBeUndefined()
+  })
+
+  it('knows the B1–B2 forms, so an accent that makes another form is wrong', () => {
+    expect(lookupForm('tenga')).toContain('subjuntivo')
+    expect(lookupForm('levántate')).toContain('imperativo')
+    expect(lookupForm('hecho')).toContain('participio')
+    expect(checkAnswer('hablé', 'hable', { lookup: lookupForm }).verdict).toBe('wrong')
+    expect(checkAnswer('este', 'esté', { lookup: lookupForm }).verdict).toBe('wrong')
+    expect(checkAnswer('tuvieramos', 'tuviéramos', { lookup: lookupForm }).verdict).not.toBe('wrong')
   })
 })
 

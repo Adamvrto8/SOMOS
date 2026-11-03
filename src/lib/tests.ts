@@ -1,6 +1,6 @@
 import { sentences, topicById, verbById, verbs, words } from '../data'
 import type { Level, Sentence, Verb } from '../data/types'
-import { PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
+import { personsOf, tensesUpTo, type TableTense } from './conjugate'
 import { conjugationTask, createLesson, getNumberedLessonCount, LESSON_SIZE, type ExerciseType, type LessonFilter, type Task } from './lesson'
 import { getLessonRecord, progressionGroup, type LessonProgressionMap } from './lessonProgress'
 import { pathUnitById, unitId, unitMaterial } from './pathUnits'
@@ -99,9 +99,9 @@ export function isTestUnlocked(id: TestId, map: LessonProgressionMap): boolean {
   return total > 0 && passed === total
 }
 
-/** The tenses a level's conjugation asks: imperfecto and futuro come with A2. */
+/** The tenses a level's conjugation asks: A1 the first three, from A2 on every tense up to the level. */
 export function testTenses(level: TestLevel): TableTense[] {
-  return level === 'A1' ? ['presente', 'progresivo', 'preterito'] : TABLE_TENSES
+  return level === 'A1' ? ['presente', 'progresivo', 'preterito'] : tensesUpTo(level)
 }
 
 /** The level itself first, then the ones below it (topic tests top up from them; a part's test does not). */
@@ -169,7 +169,8 @@ function conjugationCandidates(id: TestId, random: Random): Task[] {
   for (let round = 0; round < 3; round++) {
     for (const verb of verbList) {
       const tense = tenses[Math.floor(random() * tenses.length)]
-      const person = PERSONS[Math.floor(random() * PERSONS.length)]
+      const persons = personsOf(tense)
+      const person = persons[Math.floor(random() * persons.length)]
       const task = conjugationTask(verb, tense, person)
       if (seen.has(task.itemId)) continue
       seen.add(task.itemId)

@@ -27,7 +27,7 @@ const MAX_RESULTS = 50
 function verbForms(word: Word): string[] {
   const verb = word.verbId ? verbById.get(word.verbId) : undefined
   if (!verb) return []
-  const forms = [...TENSES.flatMap((t) => Object.values(verb[t])), verb.gerund]
+  const forms = [...TENSES.flatMap((t) => Object.values(verb[t])), ...Object.values(verb.imperativo), verb.gerund, verb.participle]
   return [...new Set(forms.map((f) => f.split(' ').at(-1)!))]
 }
 

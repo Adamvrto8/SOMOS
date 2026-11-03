@@ -84,6 +84,14 @@ describe('createTest', () => {
     expect(groups).toEqual(['vocab', 'choice', 'cloze', 'conjugation', 'builder', 'dictation', 'translation'])
   })
 
+  it('asks the tenses of the level in a conjugation test', () => {
+    expect(testTenses('A1')).toEqual(['presente', 'progresivo', 'preterito'])
+    expect(testTenses('A2')).toContain('imperativo')
+    expect(testTenses('A2')).not.toContain('subjuntivo')
+    expect(testTenses('B1')).toContain('subjuntivo')
+    expect(testTenses('B2')).toContain('subjImperfecto')
+  })
+
   it('asks only the tenses of the level', () => {
     expect(testTenses('A1')).not.toContain('futuro')
     for (let seed = 1; seed < 10; seed++) {

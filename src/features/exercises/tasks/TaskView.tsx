@@ -1,4 +1,4 @@
-import { PERSON_LABELS, TENSE_LABELS } from '../../../lib/conjugate'
+import { personLabel, TENSE_LABELS } from '../../../lib/conjugate'
 import { useT } from '../../../i18n'
 import { useLanguage } from '../../../lib/language'
 import type { Answer, Grade, Task } from '../../../lib/lesson'
@@ -68,7 +68,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
             </p>
             <p className="mt-1 text-ink-muted">{verbTranslations(task.verb).join(', ')}</p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <Pill>{PERSON_LABELS[task.person]}</Pill>
+              <Pill>{personLabel(task.tense, task.person)}</Pill>
               <Pill>{TENSE_LABELS[task.tense]}</Pill>
             </div>
             {task.verb.reflexive && <p className="mt-3 text-sm text-ink-muted">{labels.reflexiveHint}</p>}

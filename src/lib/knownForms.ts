@@ -1,6 +1,7 @@
 import { sentences, verbs, words } from '../data'
 import { t } from '../i18n'
-import { PERSON_LABELS, PERSONS, TENSE_LABELS, TENSES } from './conjugate'
+import { PERSON_LABELS, personLabel, PERSONS, TENSE_LABELS, TENSES } from './conjugate'
+import { IMPERATIVE_PERSONS } from './verbForms'
 import { getLanguage, type Language } from './language'
 import { wordTranslations } from './localized'
 
@@ -34,7 +35,9 @@ function buildIndex(): Map<string, Set<string>> {
         add(form, `${v.id} · ${PERSON_LABELS[person]} · ${TENSE_LABELS[tense]}`)
       }
     }
+    for (const person of IMPERATIVE_PERSONS) add(v.imperativo[person], `${v.id} · ${personLabel('imperativo', person)} · ${TENSE_LABELS.imperativo}`)
     add(v.gerund, `${v.id} · gerundio`)
+    add(v.participle, `${v.id} · participio`)
   }
   // Remaining words from sentences are known, just without a description.
   for (const s of sentences) for (const token of s.tokens) add(token, '')

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { sentences, tipById, verbById, verbs } from '../data'
-import { PERSONS, TABLE_TENSES } from './conjugate'
+import { personsOf, TABLE_TENSES } from './conjugate'
 import { conjugationTask, gradeTask, taskFromItem, type ExerciseType, type Grade, type Task } from './lesson'
 import { tipFor, tipLabel } from './tips'
 
@@ -74,7 +74,7 @@ describe('tipFor', () => {
   it('has a rule and a reason for every form of every verb', () => {
     for (const verb of verbs) {
       for (const tense of TABLE_TENSES) {
-        for (const person of PERSONS) {
+        for (const person of personsOf(tense)) {
           const found = tipFor(conjugationTask(verb, tense, person), WRONG)
           expect(found?.rule, `${verb.id} ${tense} ${person}`).toBeDefined()
           expect(found?.because, `${verb.id} ${tense} ${person}`).toBeTruthy()

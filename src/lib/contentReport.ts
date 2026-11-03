@@ -1,5 +1,5 @@
 import type { Sentence, Word } from '../data/types'
-import { PERSON_LABELS, TENSE_LABELS } from './conjugate'
+import { personLabel, TENSE_LABELS } from './conjugate'
 import { dayKey } from './dates'
 import { getLanguage, type Language } from './language'
 import type { ExerciseType, Task } from './lesson'
@@ -56,7 +56,7 @@ export function taskSubject(task: Task): ReportSubject {
         target: `verb:${task.verb.id}`,
         detail: `${task.tense}:${task.person}`,
         exercise: 'conjugation',
-        shown: { es: task.answer, translation: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}` },
+        shown: { es: task.answer, translation: `${task.verb.id} · ${personLabel(task.tense, task.person)} · ${TENSE_LABELS[task.tense]}` },
       }
   }
 }

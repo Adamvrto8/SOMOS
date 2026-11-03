@@ -5,7 +5,7 @@ import { SpeakButton } from '../../components/SpeakButton'
 import { wordIdByVerb } from '../../data'
 import { t, useT } from '../../i18n'
 import type { Verdict } from '../../lib/checkAnswer'
-import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
+import { personLabel, TENSE_LABELS } from '../../lib/conjugate'
 import { getLanguage, type Language } from '../../lib/language'
 import type { Grade, Task } from '../../lib/lesson'
 import { sentenceTranslation, wordTranslations } from '../../lib/localized'
@@ -38,7 +38,7 @@ function reference(task: Task): Reference {
       return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: getLanguage(), speak: task.sentence.es }
     case 'conjugation':
       return {
-        label: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`,
+        label: `${task.verb.id} · ${personLabel(task.tense, task.person)} · ${TENSE_LABELS[task.tense]}`,
         correct: task.answer,
         correctLang: 'es',
         speak: task.answer,

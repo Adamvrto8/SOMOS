@@ -2,7 +2,7 @@ import { sentenceById, sentences, verbById, verbs, vocabWords, wordById } from '
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
-import { conjugate, formText, PERSONS, TABLE_TENSES, type TableTense } from './conjugate'
+import { conjugate, formText, personsOf, TABLE_TENSES, tensesUpTo, type TableTense } from './conjugate'
 import { getLanguage } from './language'
 import { wordTranslations } from './localized'
 import { lookupForm } from './knownForms'
@@ -164,10 +164,10 @@ function choiceItems(filter: LessonFilter) {
 }
 
 function conjugationItems({ level, tense }: LessonFilter) {
-  const tenses = tense && tense !== 'all' ? [tense] : TABLE_TENSES
+  const tenses = tense && tense !== 'all' ? [tense] : tensesUpTo(level)
   return verbs
     .filter((v) => !level || v.level === level)
-    .flatMap((verb) => tenses.flatMap((t) => PERSONS.map((person) => ({ verb, tense: t, person }))))
+    .flatMap((verb) => tenses.flatMap((t) => personsOf(t).map((person) => ({ verb, tense: t, person }))))
 }
 
 function builderSentences(filter: LessonFilter) {
@@ -468,16 +468,15 @@ export function getStablePool(filter: LessonFilter): Task[] {
     }
     case 'conjugation': {
       const isAll = !filter.tense || filter.tense === 'all'
-      const tenses: TableTense[] = isAll ? TABLE_TENSES : [filter.tense as TableTense]
+      const tenses: TableTense[] = isAll ? tensesUpTo(filter.level) : [filter.tense as TableTense]
       const matchingVerbs = verbs.filter((v) => !filter.level || v.level === filter.level)
       matchingVerbs.sort((a, b) => (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1) || a.id.localeCompare(b.id))
       // Round r asks verb i for person i + r: a lesson of 10 verbs has every person twice,
       // and after 5 rounds each verb has been through all of them.
-      const allTasks = tenses.flatMap((tense) =>
-        PERSONS.flatMap((_, round) =>
-          matchingVerbs.map((verb, i) => conjugationTask(verb, tense, PERSONS[(i + round) % PERSONS.length])),
-        ),
-      )
+      const allTasks = tenses.flatMap((tense) => {
+        const persons = personsOf(tense)
+        return persons.flatMap((_, round) => matchingVerbs.map((verb, i) => conjugationTask(verb, tense, persons[(i + round) % persons.length])))
+      })
       if (isAll) {
         allTasks.sort((a, b) => a.itemId.localeCompare(b.itemId))
         return shuffle(allTasks, seededRandom(seedFor('conjugation')))
@@ -579,7 +578,7 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
     case 'conjugation': {
       const [verbId, tense, person] = itemId.split(':')
       const verb = verbById.get(verbId)
-      if (!verb || !TABLE_TENSES.includes(tense as TableTense) || !PERSONS.includes(person as Person)) return undefined
+      if (!verb || !TABLE_TENSES.includes(tense as TableTense) || !personsOf(tense as TableTense).includes(person as Person)) return undefined
       return conjugationTask(verb, tense as TableTense, person as Person)
     }
     case 'builder': {

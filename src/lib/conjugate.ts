@@ -1,4 +1,5 @@
-import type { Person, Tense, Verb } from '../data/types'
+import type { ImperativePerson, Level, Person, Tense, Verb } from '../data/types'
+import { IMPERATIVE_PERSONS } from './verbForms'
 
 export const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos']
 
@@ -10,13 +11,24 @@ export const PERSON_LABELS: Record<Person, string> = {
   ellos: 'ellos / ellas / ustedes',
 }
 
-export type TableTense = Tense | 'progresivo'
+export type TableTense = Tense | 'progresivo' | 'pluscuamperfecto' | 'imperativo'
 
-/** Tenses stored on every verb. */
-export const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro']
+/** Tenses stored on every verb, all five persons. */
+export const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro', 'subjuntivo', 'subjImperfecto', 'condicional']
 
-/** Conjugation tabs and the drill's tense filter, in teaching order. */
-export const TABLE_TENSES: TableTense[] = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro']
+/** Conjugation tabs, the drill's tense filter and task ids: indicative, then subjunctive, then imperative. */
+export const TABLE_TENSES: TableTense[] = [
+  'presente',
+  'progresivo',
+  'preterito',
+  'imperfecto',
+  'futuro',
+  'condicional',
+  'pluscuamperfecto',
+  'subjuntivo',
+  'subjImperfecto',
+  'imperativo',
+]
 
 export const TENSE_LABELS: Record<TableTense, string> = {
   presente: 'presente',
@@ -24,10 +36,41 @@ export const TENSE_LABELS: Record<TableTense, string> = {
   preterito: 'pretérito',
   imperfecto: 'imperfecto',
   futuro: 'futuro',
+  condicional: 'condicional',
+  pluscuamperfecto: 'pluscuamperfecto',
   subjuntivo: 'subjuntivo',
   subjImperfecto: 'subj. imperfecto',
-  condicional: 'condicional',
+  imperativo: 'imperativo',
 }
+
+/** The level a tense is asked from: "Všetky časy", level tests and the path take the ones up to theirs. */
+export const TENSE_LEVEL: Record<TableTense, Level> = {
+  presente: 'A1',
+  progresivo: 'A1',
+  preterito: 'A1',
+  imperfecto: 'A1',
+  futuro: 'A1',
+  imperativo: 'A2',
+  condicional: 'B1',
+  pluscuamperfecto: 'B1',
+  subjuntivo: 'B1',
+  subjImperfecto: 'B2',
+}
+
+const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
+/** Whether a tense is taught above the level (its drill chip says from which level). */
+export const levelAbove = (tense: TableTense, level: Level) => LEVELS.indexOf(TENSE_LEVEL[tense]) > LEVELS.indexOf(level)
+export const tensesUpTo = (level?: Level): TableTense[] => (level ? TABLE_TENSES.filter((t) => !levelAbove(t, level)) : TABLE_TENSES)
+
+/** The persons a tense has: the imperative has no yo. */
+export const personsOf = (tense: TableTense): Person[] => (tense === 'imperativo' ? IMPERATIVE_PERSONS : PERSONS)
+
+const IMPERATIVE_LABELS: Record<ImperativePerson, string> = { tu: 'tú', el: 'usted', nosotros: 'nosotros', ellos: 'ustedes' }
+export const personLabel = (tense: TableTense, person: Person) =>
+  tense === 'imperativo' && person !== 'yo' ? IMPERATIVE_LABELS[person] : PERSON_LABELS[person]
+
+/** haber is not a verb of the data: only its imperfecto is needed, for pluscuamperfecto. */
+export const HABER_IMPERFECTO: Record<Person, string> = { yo: 'había', tu: 'habías', el: 'había', nosotros: 'habíamos', ellos: 'habían' }
 
 const REFLEXIVE_PRONOUN: Record<Person, string> = { yo: 'me', tu: 'te', el: 'se', nosotros: 'nos', ellos: 'se' }
 
@@ -37,23 +80,37 @@ export interface FormPart {
   irregular: boolean
 }
 
-export function isIrregular(verb: Verb, tense: Tense, person: Person): boolean {
+export function isIrregular(verb: Verb, tense: Tense | 'imperativo', person: Person): boolean {
   const forms = verb.irregularForms ?? []
   return forms.includes(`${tense}.${person}`) || forms.includes(`${tense}.*`)
 }
 
 /**
- * Conjugated form split into parts. Progresivo is derived from estar + gerund
- * ("estoy hablando"); reflexive verbs put the pronoun first ("me estoy llamando").
+ * Conjugated form split into parts. Progresivo is estar + gerund ("estoy hablando"), pluscuamperfecto
+ * haber + participle ("había salido"); reflexive verbs put the pronoun first ("me estoy llamando").
+ * The imperative has no yo: callers ask only `personsOf('imperativo')`.
  */
 export function conjugate(verb: Verb, tense: TableTense, person: Person, estar: Verb): FormPart[] {
-  if (tense !== 'progresivo') {
-    return [{ text: verb[tense][person], irregular: isIrregular(verb, tense, person) }]
+  if (tense === 'imperativo') {
+    if (person === 'yo') throw new Error('the imperative has no yo')
+    return [{ text: verb.imperativo[person], irregular: isIrregular(verb, tense, person) }]
   }
-  const aux = estar.presente[person]
+  if (tense === 'progresivo' || tense === 'pluscuamperfecto') {
+    const aux = tense === 'progresivo' ? estar.presente[person] : HABER_IMPERFECTO[person]
+    const [main, irregular] = tense === 'progresivo' ? [verb.gerund, verb.gerundIrregular] : [verb.participle, verb.participleIrregular]
+    return [
+      { text: verb.reflexive ? `${REFLEXIVE_PRONOUN[person]} ${aux}` : aux, irregular: false },
+      { text: main, irregular: Boolean(irregular) },
+    ]
+  }
+  return [{ text: verb[tense][person], irregular: isIrregular(verb, tense, person) }]
+}
+
+/** "no tengas", "no te levantes": no + the subjunctive of the same person. */
+export function negativeImperative(verb: Verb, person: ImperativePerson): FormPart[] {
   return [
-    { text: verb.reflexive ? `${REFLEXIVE_PRONOUN[person]} ${aux}` : aux, irregular: false },
-    { text: verb.gerund, irregular: Boolean(verb.gerundIrregular) },
+    { text: 'no', irregular: false },
+    { text: verb.subjuntivo[person], irregular: isIrregular(verb, 'subjuntivo', person) },
   ]
 }
 

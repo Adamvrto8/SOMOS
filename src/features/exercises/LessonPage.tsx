@@ -6,7 +6,7 @@ import { tipById } from '../../data'
 import { useT } from '../../i18n'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
 import { playSound, soundForVerdict } from '../../lib/sound'
-import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
+import { personLabel, TENSE_LABELS } from '../../lib/conjugate'
 import {
   canRetry,
   createLesson,
@@ -66,7 +66,7 @@ type Round = 'full' | 'fix' | 'resume'
 /** What the task asked, as the tip repeats it above its reason. */
 function askedIn(task: Task): TipHere['asked'] {
   if (task.kind === 'cloze' || task.kind === 'choice') return { sentence: task.sentence, cloze: task.cloze }
-  if (task.kind === 'conjugation') return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
+  if (task.kind === 'conjugation') return { prompt: `${task.verb.id} · ${personLabel(task.tense, task.person)} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
   return undefined
 }
 

@@ -1,4 +1,4 @@
-import { PERSON_LABELS, TENSE_LABELS } from '../../lib/conjugate'
+import { personLabel, TENSE_LABELS } from '../../lib/conjugate'
 import { sentenceTranslation, wordTranslations } from '../../lib/localized'
 import type { Task } from '../../lib/lesson'
 
@@ -6,7 +6,7 @@ import type { Task } from '../../lib/lesson'
 export function taskSummary(task: Task): { prompt: string; answer: string } {
   switch (task.kind) {
     case 'conjugation':
-      return { prompt: `${task.verb.id} · ${PERSON_LABELS[task.person]} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
+      return { prompt: `${task.verb.id} · ${personLabel(task.tense, task.person)} · ${TENSE_LABELS[task.tense]}`, answer: task.answer }
     case 'vocab': {
       const expectedAnswer =
         task.direction === 'es-sk'

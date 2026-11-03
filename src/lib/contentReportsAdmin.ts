@@ -1,6 +1,6 @@
 import { sentenceById, verbById, wordById } from '../data'
 import type { Person } from '../data/types'
-import { conjugate, formText, PERSON_LABELS, TENSE_LABELS, type TableTense } from './conjugate'
+import { conjugate, formText, personLabel, personsOf, TENSE_LABELS, type TableTense } from './conjugate'
 import type { ReportReason } from './contentReport'
 import { sentenceTranslation, wordTranslations } from './localized'
 
@@ -55,10 +55,10 @@ export function currentContent(target: string, detail: string): { es: string; tr
     const estar = verbById.get('estar')
     if (!verb || !estar) return null
     const [tense, person] = detail.split(':')
-    if (!Object.hasOwn(TENSE_LABELS, tense) || !Object.hasOwn(PERSON_LABELS, person)) return { es: verb.id, translation: verb.sk.join(', ') }
+    if (!Object.hasOwn(TENSE_LABELS, tense) || !personsOf(tense as TableTense).includes(person as Person)) return { es: verb.id, translation: verb.sk.join(', ') }
     return {
       es: formText(conjugate(verb, tense as TableTense, person as Person, estar)),
-      translation: `${verb.id} · ${PERSON_LABELS[person as Person]} · ${TENSE_LABELS[tense as TableTense]}`,
+      translation: `${verb.id} · ${personLabel(tense as TableTense, person as Person)} · ${TENSE_LABELS[tense as TableTense]}`,
     }
   }
   return null
