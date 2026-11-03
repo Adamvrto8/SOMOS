@@ -119,7 +119,7 @@ export interface TipRule {
   text?: string // Slovak, one or two sentences
   examples: Example[] // 1–3
   verb?: 'ser' | 'estar' // ser-estar only: groups the rules, must equal the lemma of a cloze pointing here
-  because?: string // ser-estar only, shown for one sentence: "Ide o pôvod, preto ser."
+  because?: string // ser-estar and the usage tips, shown for one blank: "Ide o pôvod, preto ser."
 }
 
 export interface Tip {

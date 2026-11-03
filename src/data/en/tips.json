@@ -655,24 +655,28 @@
         "id": "how",
         "title": "The thing liked is the subject",
         "text": "Me gusta el café = I like coffee (coffee pleases me). Before an infinitive it is always gusta: me gusta bailar.",
+        "because": "What is liked is the subject, so gustar agrees with it.",
         "examples": ["I like café de olla.", "We like dancing."]
       },
       {
         "id": "plural",
         "title": "Several things: gustan",
         "text": "When several things are liked, the verb is plural: me gustan los tacos.",
+        "because": "More than one thing is liked, so gustan.",
         "examples": ["I like tacos al pastor.", "Do you like dogs?"]
       },
       {
         "id": "people",
         "title": "Who likes it",
         "text": "me, te, le, nos, les. For emphasis or clarity add a mí, a ti, a ella, a mis papás.",
+        "because": "Who likes it is said by me, te, le, nos, les.",
         "examples": ["My sister likes soccer.", "I don't like spicy food."]
       },
       {
         "id": "similar",
         "title": "Likewise encantar, doler, interesar",
         "text": "me encanta (I love it), me duele (it hurts), me interesa, me importa, me molesta.",
+        "because": "This verb works like gustar: it agrees with the thing, not the person.",
         "examples": ["My head hurts.", "I love your earrings."]
       }
     ]
@@ -686,18 +690,21 @@
         "id": "hay",
         "title": "Hay: there is",
         "text": "Hay never changes. Before the thing comes un, una, a number or nothing: hay un Oxxo, hay dos camiones, no hay leche.",
+        "because": "It says that something is there (un, una, a number or nothing), so hay.",
         "examples": ["There's an Oxxo on the corner.", "There's no milk in the fridge."]
       },
       {
         "id": "estar",
         "title": "Estar: where the known thing is",
         "text": "Before the thing comes el, la, mi, tu or a name: el Oxxo está, mi celular está, Ana está.",
+        "because": "It says where a known thing is (el, la, mi, a name), so estar.",
         "examples": ["The Oxxo is on the corner.", "Where are my keys?"]
       },
       {
         "id": "question",
         "title": "In a question",
         "text": "¿Hay un banco por aquí? = is there a bank around here? ¿Dónde está el banco? = where is the bank?",
+        "because": "In a question too: whether something is there → hay, where a known thing is → estar.",
         "examples": ["Is there a pharmacy around here?"]
       }
     ]
@@ -711,24 +718,28 @@
         "id": "direct",
         "title": "lo, la, los, las: whom, what",
         "text": "They follow the gender and number of the thing: el libro → lo, la casa → la, los boletos → los, las llaves → las.",
+        "because": "The pronoun stands for the thing or person (whom, what) and agrees with it.",
         "examples": ["The cake? I bought it yesterday.", "Do you have the keys? Yes, I have them."]
       },
       {
         "id": "indirect",
         "title": "le, les: to whom",
         "text": "Le for one person (usted too), les for several. The person is often named as well: le di el libro a Ana.",
+        "because": "It is about to whom: le for one, les for more.",
         "examples": ["I gave Ana the book.", "Did you write to your parents?"]
       },
       {
         "id": "position",
         "title": "Where they go",
         "text": "Before a conjugated verb: lo compro. Attached to an infinitive, a gerund and an affirmative imperative: voy a comprarlo, estoy haciéndolo, cómpralo.",
+        "because": "The pronoun goes before the conjugated verb or joins the infinitive, gerund or imperative.",
         "examples": ["I'll call her tomorrow.", "Buy it, it's cheap."]
       },
       {
         "id": "se-lo",
         "title": "Two pronouns: se lo",
         "text": "First to whom, then what. Le and les become se before lo, la: le doy el libro → se lo doy. This is B1.",
+        "because": "Two pronouns: le, les turns into se before lo, la.",
         "examples": ["The present? I gave it to Marta.", "Tell me."]
       }
     ]
@@ -742,24 +753,28 @@
         "id": "more-less",
         "title": "más / menos … que",
         "text": "Más barato que, menos caro que. Before a number de: más de cien pesos.",
+        "because": "More or less is compared: más / menos … que.",
         "examples": ["My brother is taller than me.", "The bus is cheaper than a taxi."]
       },
       {
         "id": "equal",
         "title": "tan … como, tanto … como",
         "text": "With an adjective tan: tan caro como. With a noun tanto, tanta, tantos, tantas: tantos libros como tú.",
+        "because": "Sameness is compared: tan … como (tanto before a noun).",
         "examples": ["This phone is as good as the other one.", "I don't have as much time as you."]
       },
       {
         "id": "irregular",
         "title": "mejor, peor, mayor, menor",
         "text": "bueno → mejor, malo → peor. For age mayor (older) and menor (younger). Nobody says más bueno.",
+        "because": "Bueno and malo have forms of their own: mejor, peor (age: mayor, menor).",
         "examples": ["This salsa is better than the other one.", "My younger sister lives in Monterrey."]
       },
       {
         "id": "superlative",
         "title": "The most: el más, -ísimo",
         "text": "el / la más … de: la más alta de la clase. Very: -ísimo (carísimo, riquísimo).",
+        "because": "It is the most: el / la más … de, or -ísimo.",
         "examples": ["It's the most famous restaurant in the city.", "The tacos were delicious."]
       }
     ]
@@ -773,24 +788,28 @@
         "id": "tener-que",
         "title": "tener que: I have to",
         "text": "An obligation of a particular person. Tener is conjugated, the infinitive does not change.",
+        "because": "A particular person has to, so tener que.",
         "examples": ["I have to work on Saturday.", "We had to wait an hour."]
       },
       {
         "id": "hay-que",
         "title": "hay que: one has to",
         "text": "No person: it applies to everyone.",
+        "because": "It has to be done in general, with no person, so hay que.",
         "examples": ["You have to pay in cash."]
       },
       {
         "id": "deber",
         "title": "deber: I should",
         "text": "Advice or duty. Debería (conditional) sounds softer.",
+        "because": "It is advice or a duty (should), so deber.",
         "examples": ["You should rest more.", "You should call your mom."]
       },
       {
         "id": "poder",
         "title": "poder: I can",
         "text": "Ability and permission. Politely podría, podrías.",
+        "because": "It is ability or permission, so poder.",
         "examples": ["May I come in?", "I can't sleep."]
       }
     ]
@@ -804,24 +823,28 @@
         "id": "wish",
         "title": "Wanting: quiero que",
         "text": "Two different subjects → que + subjunctive (quiero que vengas). The same subject → infinitive (quiero venir).",
+        "because": "Someone wants someone else to do something: que + subjunctive.",
         "examples": ["I want you to come to the party.", "I want to go to the party."]
       },
       {
         "id": "feelings",
         "title": "Feelings: me alegra que, espero que",
         "text": "me alegra que, me molesta que, me preocupa que, espero que, tengo miedo de que.",
+        "because": "After a feeling (me alegra, espero, me preocupa) comes que + subjunctive.",
         "examples": ["I'm glad you're here.", "I hope you like it."]
       },
       {
         "id": "advice",
         "title": "Advice and need",
         "text": "te recomiendo que, te pido que, es importante que, es mejor que, es necesario que.",
+        "because": "After advice or need (es importante, te recomiendo) comes que + subjunctive.",
         "examples": ["I recommend you try the mole.", "It's important that you arrive on time."]
       },
       {
         "id": "ojala",
         "title": "Ojalá",
         "text": "Ojalá (let’s hope) always takes the subjunctive.",
+        "because": "Ojalá is always followed by the subjunctive.",
         "examples": ["Let's hope it doesn't rain tomorrow."]
       }
     ]
@@ -835,18 +858,21 @@
         "id": "real",
         "title": "Real: si + present",
         "text": "Si llueve, me quedo en casa. The second part can be in the present, the future or the imperative.",
+        "because": "The condition can be true: si + present.",
         "examples": ["If it rains, I stay home.", "If you have time, call me."]
       },
       {
         "id": "unreal",
         "title": "Unreal: si + imperfect subjunctive",
         "text": "Something imagined that is not true now: si tuviera dinero, compraría un carro. The conditional follows. This is B2.",
+        "because": "The condition is not true now: si + imperfect subjunctive, then the conditional.",
         "examples": ["If I had money, I would buy a car.", "If we lived closer, we would see each other more."]
       },
       {
         "id": "never",
         "title": "What never follows si",
         "text": "No future, conditional or present subjunctive after si. Not si vendrás, but si vienes.",
+        "because": "After si there is no future or conditional, but the present.",
         "examples": ["If you come tomorrow, I'll show you the photos."]
       }
     ]
@@ -860,18 +886,21 @@
         "id": "para",
         "title": "para: the goal",
         "text": "Purpose (para aprender), recipient (para ti), deadline (para el lunes), direction (salgo para Monterrey), opinion (para mí).",
+        "because": "It is a goal: a purpose, for whom, a deadline or a direction, so para.",
         "examples": ["This present is for you.", "I need the report by Monday."]
       },
       {
         "id": "por",
         "title": "por: cause and way",
         "text": "Cause (por el tráfico), through (por el parque), exchange and price (por cien pesos), means (por teléfono), part of the day (por la mañana).",
+        "because": "It is a cause, a way through, an exchange or a means, so por.",
         "examples": ["I was late because of the traffic.", "I bought it for a hundred pesos."]
       },
       {
         "id": "fixed",
         "title": "Set phrases",
         "text": "por favor, por fin, por ejemplo, por eso, por supuesto; para nada, para siempre.",
+        "because": "It is a set phrase, learnt as a whole.",
         "examples": ["Friday's finally here.", "Does it bother you? Not at all."]
       }
     ]
@@ -885,24 +914,28 @@
         "id": "opinion",
         "title": "Opinion: creo que, no creo que",
         "text": "creo que, pienso que, me parece que + indicative. Their negative (no creo que) and doubt (dudo que, es posible que, puede que) + subjunctive.",
+        "because": "A denied opinion or doubt (no creo que, dudo que) takes the subjunctive, an opinion (creo que) does not.",
         "examples": ["I think he's right.", "I don't think he's right."]
       },
       {
         "id": "cuando",
         "title": "cuando about the future",
         "text": "cuando, en cuanto, hasta que + subjunctive about the future (cuando llegues). About a habit or the past, the indicative (cuando llego, cuando llegué).",
+        "because": "Cuando about the future takes the subjunctive, about habits or the past it does not.",
         "examples": ["When you get there, let me know.", "When I get home, I take a shower."]
       },
       {
         "id": "para-que",
         "title": "para que: so that",
         "text": "para que always takes the subjunctive. With the same subject para + infinitive is enough.",
+        "because": "Para que (so that) always takes the subjunctive.",
         "examples": ["I'll explain it so you understand it.", "I'm saving to buy a house."]
       },
       {
         "id": "aunque",
         "title": "aunque: although, even if",
         "text": "aunque + indicative = it is so (aunque llueve, salgo). aunque + subjunctive = maybe, it does not matter (aunque llueva, salgo).",
+        "because": "Aunque + subjunctive: maybe, it does not matter; + indicative: it is so.",
         "examples": ["Although he's tired, he keeps working.", "Even if it rains, we'll go."]
       }
     ]
@@ -916,24 +949,28 @@
         "id": "que",
         "title": "que: who, which, that",
         "text": "For people and things, without a preposition: la señora que vive arriba, el libro que me prestaste.",
+        "because": "Without a preposition, people and things take que.",
         "examples": ["The lady who lives upstairs is very kind.", "Have you read the book I lent you yet?"]
       },
       {
         "id": "donde",
         "title": "donde: where",
         "text": "A place: la casa donde vivo, el pueblo donde nací.",
+        "because": "It is a place, so donde.",
         "examples": ["This is the market where I buy fruit."]
       },
       {
         "id": "lo-que",
         "title": "lo que: what",
         "text": "When it is not a particular thing: lo que dices, todo lo que quieras.",
+        "because": "It is not a particular thing but \"what\", so lo que.",
         "examples": ["I don't understand what you're saying.", "Do whatever you want."]
       },
       {
         "id": "el-que",
         "title": "After a preposition: el que, la que, quien",
         "text": "After a preposition the article is added: la persona con la que hablé, el tema del que te hablé. For people also quien: la chava con quien salgo.",
+        "because": "After a preposition the article comes in: el que, la que (for people also quien).",
         "examples": ["That's the girl I work with.", "It's the topic I told you about."]
       }
     ]
@@ -947,24 +984,28 @@
         "id": "se",
         "title": "se + verb",
         "text": "se vende, se rentan departamentos, aquí se habla español. The verb agrees with the thing: se vende casa, se venden casas.",
+        "because": "Se + verb: an action with no doer, the verb agrees with the thing.",
         "examples": ["Apartments for rent.", "Spanish is spoken here."]
       },
       {
         "id": "impersonal",
         "title": "Impersonal se",
         "text": "With no thing, about people in general: ¿cómo se dice…?, aquí se vive bien.",
+        "because": "Impersonal se: it speaks about people in general.",
         "examples": ["How do you say this in Spanish?"]
       },
       {
         "id": "ser-passive",
         "title": "ser + participle",
         "text": "The passive with ser: el puente fue construido en 1990. The participle agrees with the subject. It sounds formal; in speech se or the active replace it.",
+        "because": "The passive: ser + a participle that agrees with the subject.",
         "examples": ["The bridge was built in 1990.", "The news was published yesterday."]
       },
       {
         "id": "estar-result",
         "title": "estar + participle: a state",
         "text": "Estar with a participle does not describe an action but its result: la tienda está cerrada.",
+        "because": "Estar + participle describes the state after the action, not the action.",
         "examples": ["The store is closed."]
       }
     ]

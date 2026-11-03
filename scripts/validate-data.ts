@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 import {
   deriveCondicional,
   deriveImperativo,
@@ -13,6 +13,8 @@ import {
   regularNew,
   regularParticiple,
 } from '../src/lib/verbForms.ts'
+
+import { usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -362,11 +364,13 @@ for (const tip of tips) {
       if (!isNonEmpty(ex.es) || !isNonEmpty(ex.sk)) fail(`${rw}.examples[${i}]`, 'missing es/sk')
       checkSpanish(`${rw}.examples[${i}]`, ex.es)
     })
-    // The reason shown for one sentence ("Ide o pôvod, preto ser.") exists only for ser/estar.
+    // The reason shown for one blank ("Ide o pôvod, preto ser."): ser/estar and the usage tips, whose blanks name a rule.
     if (tip.id === SER_ESTAR) {
       if (rule.verb !== 'ser' && rule.verb !== 'estar') fail(rw, 'needs verb "ser" or "estar"')
-      if (!isNonEmpty(rule.because)) fail(rw, 'needs because')
-    } else if (rule.verb !== undefined || rule.because !== undefined) fail(rw, `verb/because are only for the "${SER_ESTAR}" tip`)
+    } else if (rule.verb !== undefined) fail(rw, `verb is only for the "${SER_ESTAR}" tip`)
+    const saysWhy = tip.id === SER_ESTAR || USAGE_TIPS.includes(tip.id as Grammar)
+    if (saysWhy && !isNonEmpty(rule.because)) fail(rw, 'needs because (shown for a blank)')
+    else if (!saysWhy && rule.because !== undefined) fail(rw, 'because is only for ser-estar and the usage tips')
   }
   for (const id of tip.related ?? []) {
     if (id === tip.id) fail(where, 'related to itself')
@@ -460,18 +464,22 @@ for (const s of sentences) {
     if (s.tokens[c.tokenIndex] !== c.answer) fail(cw, `tokens[${c.tokenIndex}] is "${s.tokens[c.tokenIndex]}", not "${c.answer}"`)
     if (!isNonEmpty(c.lemma)) fail(cw, 'missing lemma')
 
-    const result = expectedFromHint(c)
-    if (result && 'error' in result) fail(cw, result.error)
-    if (result && 'expected' in result && result.expected.toLowerCase() !== c.answer.toLowerCase()) {
-      fail(cw, `hint "${c.hint}" gives "${result.expected}", answer is "${c.answer}"`)
+    // "leer · yo" and "gustar" leave the tense (and person) to the sentence: clozeChecks.ts checks those.
+    if (usageHint(c, verbById).kind === 'other') {
+      const result = expectedFromHint(c)
+      if (result && 'error' in result) fail(cw, result.error)
+      if (result && 'expected' in result && result.expected.toLowerCase() !== c.answer.toLowerCase()) {
+        fail(cw, `hint "${c.hint}" gives "${result.expected}", answer is "${c.answer}"`)
+      }
     }
+    for (const error of usageClozeErrors(s, c, tipById, verbById)) fail(cw, error)
 
     // A ser/estar cloze says why it is that verb: the tip shows this reason for the sentence.
     if (c.hint?.startsWith('ser/estar ·')) {
       if (!c.why) fail(cw, 'ser/estar cloze needs `why` (a rule of the ser-estar tip)')
       else if (!serEstarRules.has(c.why)) fail(cw, `why "${c.why}" is not a rule of the ser-estar tip`)
       else if (serEstarRules.get(c.why) !== c.lemma) fail(cw, `why "${c.why}" is a rule for ${serEstarRules.get(c.why)}, the answer is ${c.lemma}`)
-    } else if (c.why !== undefined) fail(cw, '`why` is only for ser/estar clozes')
+    } else if (c.why !== undefined && c.tip === undefined) fail(cw, '`why` is only for ser/estar clozes and blanks with `tip`')
 
     const distractors = c.distractors ?? []
     const lower = distractors.map((d) => d.toLowerCase())
@@ -615,7 +623,7 @@ for (const entry of enTips) {
     if (!isTextList(rule.examples) || rule.examples.length !== base.examples.length) {
       fail(rw, `examples must translate the rule's ${base.examples.length} example(s), in order`)
     }
-    if (Boolean(base.because) !== isNonEmpty(rule.because)) fail(rw, base.because ? 'needs because' : 'because is only for ser-estar rules')
+    if (Boolean(base.because) !== isNonEmpty(rule.because)) fail(rw, base.because ? 'needs because' : 'because is only where the Slovak rule has one')
   })
 }
 
