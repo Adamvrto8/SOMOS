@@ -28,6 +28,18 @@ interface Why {
 // A sentence can carry several tags; the one a learner most needs explained comes first.
 const TAG_PRIORITY: Grammar[] = [
   'ser-estar',
+  'por-para',
+  'gustar',
+  'hay-estar',
+  'relatives',
+  'passive-se',
+  'comparisons',
+  'obligation',
+  'object-pronouns',
+  // a si-sentence is about the si-clause before its tenses
+  'si-clauses',
+  'subjuntivo-clauses',
+  'subjuntivo-wishes',
   'subj-imperfecto',
   'subjuntivo',
   'condicional',
@@ -215,8 +227,17 @@ function accentWhy(meanings: Meaning[]): Why {
 
 // ---------- tasks ----------
 
-/** The tip a blank's hint points at: "tener · yo · pretérito", "hacer · gerundio", "člen"… */
+/** The tip a blank practises: the usage tip it names ("por-para"), else the one its hint points at. */
 export function tipForCloze(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
+  if (!cloze.tip) return tipForHint(sentence, cloze)
+  const tip = tipById.get(cloze.tip)
+  // The reason is said in the learner's language; the rule is found by its id in either.
+  const rule = tip && localizedTip(tip).rules.find((r) => r.id === cloze.why)
+  return targeted(cloze.tip, rule?.because ? { rule: rule.id, because: rule.because } : undefined)
+}
+
+/** The tip a blank's hint points at: "tener · yo · pretérito", "hacer · gerundio", "člen"… */
+export function tipForHint(sentence: Sentence, cloze: Cloze): TaskTip | undefined {
   const hint = cloze.hint ?? ''
   if (hint.startsWith('ser/estar ·')) {
     const tip = tipById.get('ser-estar')

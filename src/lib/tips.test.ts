@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { sentences, tipById, verbById, verbs } from '../data'
 import { personsOf, TABLE_TENSES } from './conjugate'
 import { conjugationTask, gradeTask, taskFromItem, type ExerciseType, type Grade, type Task } from './lesson'
-import { tipFor, tipIdOfTense, tipLabel } from './tips'
+import type { Cloze, Sentence } from '../data/types'
+import { tipFor, tipForCloze, tipForHint, tipIdOfTense, tipLabel } from './tips'
 
 const WRONG: Grade = { correct: false, verdict: 'wrong', expected: '' }
 
@@ -179,5 +180,40 @@ describe('tipLabel', () => {
   it('asks "Prečo?" only when the tip is about the thing that was asked', () => {
     expect(tipLabel(tipOf('cloze', 's063#0')!)).toBe('Prečo?')
     expect(tipLabel(tipOf('translation', 's378')!)).toBe('Gramatika k vete')
+  })
+})
+
+describe('usage blanks', () => {
+  const blank: Cloze = { tokenIndex: 2, answer: 'para', lemma: 'para', hint: 'por/para', tip: 'por-para', why: 'para', distractors: ['por', 'de'] }
+  const sentence: Sentence = {
+    id: 's9999',
+    es: 'Estudio mucho para aprender.',
+    sk: 'x',
+    level: 'B1',
+    topics: ['school'],
+    grammar: ['por-para', 'presente'],
+    tokens: ['Estudio', 'mucho', 'para', 'aprender', '.'],
+    cloze: [blank],
+  }
+
+  it('open their tip at their rule with its reason', () => {
+    const found = tipForCloze(sentence, blank)
+    expect(found?.tip.id).toBe('por-para')
+    expect(found?.rule?.id).toBe('para')
+    expect(found?.because).toBeTruthy()
+    expect(found?.targeted).toBe(true)
+  })
+
+  it('a subjunctive with a full hint explains the use, its hint still the form', () => {
+    const wish: Cloze = { tokenIndex: 2, answer: 'vengas', lemma: 'venir', hint: 'venir · tú · subjuntivo', tip: 'subjuntivo-wishes', why: 'wish', distractors: ['vienes', 'vendrás'] }
+    const s: Sentence = { ...sentence, es: 'Quiero que vengas.', grammar: ['subjuntivo-wishes', 'subjuntivo'], tokens: ['Quiero', 'que', 'vengas', '.'], cloze: [wish] }
+    expect(tipForCloze(s, wish)?.tip.id).toBe('subjuntivo-wishes')
+    expect(tipForHint(s, wish)?.tip.id).toBe('subjuntivo')
+  })
+
+  it('a hint without tense points nowhere by itself', () => {
+    const si: Cloze = { tokenIndex: 0, answer: 'leería', lemma: 'leer', hint: 'leer · yo', tip: 'si-clauses', why: 'unreal' }
+    expect(tipForHint({ ...sentence, cloze: [si] }, si)).toBeUndefined()
+    expect(tipForCloze({ ...sentence, cloze: [si] }, si)?.rule?.id).toBe('unreal')
   })
 })
