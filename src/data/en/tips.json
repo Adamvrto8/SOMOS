@@ -3,7 +3,7 @@
     "id": "ser-estar",
     "title": "ser and estar",
     "intro": "Both verbs mean “to be”. Ser says what something is or what it is like. Estar says where it is and what state it is in right now.",
-    "variants": { "mx": "The same in Mexico as elsewhere. In everyday speech estar often gets bien as an intensifier (está bien bonito = it is really nice)." },
+    "variants": { "mx": "Mexicans often put bien before an adjective as an intensifier (está bien bonito = it is really nice, es bien fácil = it is really easy)." },
     "rules": [
       {
         "id": "identity",
@@ -209,7 +209,7 @@
     "id": "preterito-imperfecto",
     "title": "Preterite or imperfect?",
     "intro": "Both are past tenses. The preterite says what happened. The imperfect says what things were like at the time, or what happened again and again.",
-    "variants": { "mx": "Mexico uses the pretérito for today and the recent past too (hoy comí tarde), where Spain often says he comido." },
+    "variants": { "mx": "The same in Mexico as elsewhere: pretérito for a finished event, imperfecto for description and habit." },
     "rules": [
       {
         "id": "event",
@@ -609,7 +609,7 @@
     "id": "pluscuamperfecto",
     "title": "Pluperfect (had done)",
     "intro": "An action that happened before another past action: when I arrived, the movie had already started.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The pluscuamperfecto is the same as elsewhere. Mexico uses he comido less, see the rule on the pretérito perfecto." },
     "rules": [
       {
         "id": "form",
@@ -732,7 +732,7 @@
     "id": "object-pronouns",
     "title": "Object pronouns (lo, la, le)",
     "intro": "Instead of repeating the noun: ¿El pastel? Lo compré. Lo and la are for whom or what, le for to whom.",
-    "variants": { "mx": "Mexico keeps lo/la for a person as the direct object (lo vi ayer); le as in Madrid (le vi) sounds foreign." },
+    "variants": { "mx": "When the person is the direct object, Mexico says lo/la (lo vi ayer = I saw him); le vi sounds like Spain. Le for “to whom” (le doy) and the polite le with usted (¿le ayudo?) are common." },
     "rules": [
       {
         "id": "direct",

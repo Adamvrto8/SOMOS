@@ -4,7 +4,7 @@ import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
-import type { PathEntry, Sentence, SentenceEn, Source, Tip,TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
+import type { PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
 // Vite bundles every file matched here; order = file name, then order inside the file.

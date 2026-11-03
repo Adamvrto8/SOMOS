@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, SpanishVariant, Tense, Tip,TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, SpanishVariant, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 import {
   deriveCondicional,
   deriveImperativo,
