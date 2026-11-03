@@ -692,7 +692,7 @@
     "level": "A2",
     "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (kladný), B1 (záporný)", "UIMP 2026, Lengua Española B1, semana 3"],
     "intro": "Prosby, rady a pokyny: ven, siéntate, no te preocupes. Tvar pre tú je jednoduchý, ostatné osoby si berú tvar zo subjuntivu.",
-    "related": ["subjuntivo", "reflexive", "presente"],
+    "related": ["subjuntivo", "reflexive", "object-pronouns"],
     "rules": [
       {
         "id": "tu",
@@ -747,7 +747,7 @@
     "level": "B1",
     "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 2"],
     "intro": "Subjuntivo je spôsob pre to, čo si niekto želá, čo cíti alebo čo nie je isté. Tvorí sa z prítomného času s „opačnou“ samohláskou: -ar dostane koncovky s -e, -er a -ir koncovky s -a.",
-    "related": ["imperativo", "subj-imperfecto", "presente"],
+    "related": ["subjuntivo-wishes", "subjuntivo-clauses", "imperativo", "subj-imperfecto"],
     "rules": [
       {
         "id": "ar",
@@ -808,7 +808,7 @@
     "level": "B1",
     "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (cortesía), B1 (hipótesis)"],
     "intro": "Hovorí, čo by sa stalo alebo čo by si urobil. Je to aj zdvorilý spôsob, ako o niečo poprosiť.",
-    "related": ["futuro", "subj-imperfecto"],
+    "related": ["futuro", "si-clauses", "subj-imperfecto"],
     "rules": [
       {
         "id": "endings",
@@ -888,7 +888,7 @@
     "level": "B2",
     "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B2", "UIMP 2026, Lengua Española B2, módulo 3"],
     "intro": "Minulý subjuntivo. Potrebuješ ho pri nereálnej podmienke (si tuviera…) a vo vedľajšej vete, keď je hlavná veta v minulosti (quería que vinieras).",
-    "related": ["subjuntivo", "condicional", "preterito"],
+    "related": ["subjuntivo", "si-clauses", "condicional"],
     "rules": [
       {
         "id": "formation",
@@ -913,6 +913,463 @@
           { "es": "Mis papás querían que estudiara medicina.", "sk": "Rodičia chceli, aby som študoval medicínu." },
           { "es": "Si fuera tú, no le diría nada.", "sk": "Byť tebou, nič by som mu nepovedal." }
         ]
+      }
+    ]
+  },
+  {
+    "id": "gustar",
+    "title": "gustar, encantar, doler",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 3"],
+    "intro": "Me gusta neznamená „mám rád“, ale „páči sa mi“: to, čo sa páči, je podmet. Preto sa sloveso riadi vecou, nie človekom.",
+    "related": ["object-pronouns"],
+    "rules": [
+      {
+        "id": "how",
+        "title": "Čo sa páči, je podmet",
+        "text": "Me gusta el café = káva sa mi páči. Pred neurčitkom je vždy gusta: me gusta bailar.",
+        "examples": [
+          { "es": "Me gusta el café de olla.", "sk": "Chutí mi káva de olla." },
+          { "es": "Nos gusta bailar.", "sk": "Radi tancujeme." }
+        ]
+      },
+      {
+        "id": "plural",
+        "title": "Viac vecí: gustan",
+        "text": "Keď sa páči viac vecí, sloveso je v množnom čísle: me gustan los tacos.",
+        "examples": [
+          { "es": "Me gustan los tacos al pastor.", "sk": "Chutia mi tacos al pastor." },
+          { "es": "¿Te gustan los perros?", "sk": "Máš rád psov?" }
+        ]
+      },
+      {
+        "id": "people",
+        "title": "Komu sa páči",
+        "text": "me, te, le, nos, les. Pre dôraz alebo jasnosť sa pridáva a mí, a ti, a ella, a mis papás.",
+        "examples": [
+          { "es": "A mi hermana le gusta el fútbol.", "sk": "Moja sestra má rada futbal." },
+          { "es": "A mí no me gusta el picante.", "sk": "Mne pálivé nechutí." }
+        ]
+      },
+      {
+        "id": "similar",
+        "title": "Rovnako encantar, doler, interesar",
+        "text": "me encanta (veľmi sa mi páči), me duele (bolí ma), me interesa, me importa, me molesta.",
+        "examples": [
+          { "es": "Me duele la cabeza.", "sk": "Bolí ma hlava." },
+          { "es": "Me encantan tus aretes.", "sk": "Strašne sa mi páčia tvoje náušnice." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hay-estar",
+    "title": "hay alebo estar",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 2"],
+    "intro": "Hay hovorí, že niečo existuje alebo je niekde k dispozícii. Estar hovorí, kde sa nachádza konkrétna, známa vec.",
+    "related": ["ser-estar", "articles"],
+    "rules": [
+      {
+        "id": "hay",
+        "title": "Hay: niečo tam je",
+        "text": "Hay sa nemení. Stojí pred ním un, una, číslo alebo nič: hay un Oxxo, hay dos camiones, no hay leche.",
+        "examples": [
+          { "es": "Hay un Oxxo en la esquina.", "sk": "Na rohu je Oxxo." },
+          { "es": "No hay leche en el refri.", "sk": "V chladničke nie je mlieko." }
+        ]
+      },
+      {
+        "id": "estar",
+        "title": "Estar: kde je tá známa vec",
+        "text": "Pred vecou je el, la, mi, tu alebo meno: el Oxxo está, mi celular está, Ana está.",
+        "examples": [
+          { "es": "El Oxxo está en la esquina.", "sk": "Ten Oxxo je na rohu." },
+          { "es": "¿Dónde están mis llaves?", "sk": "Kde sú moje kľúče?" }
+        ]
+      },
+      {
+        "id": "question",
+        "title": "V otázke",
+        "text": "¿Hay un banco por aquí? = je tu nejaká banka? ¿Dónde está el banco? = kde je tá banka?",
+        "examples": [{ "es": "¿Hay una farmacia por aquí?", "sk": "Je tu niekde lekáreň?" }]
+      }
+    ]
+  },
+  {
+    "id": "object-pronouns",
+    "title": "Zámená predmetu (lo, la, le)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–B1", "UIMP 2026, Lengua Española A1, semana 4"],
+    "intro": "Namiesto opakovania podstatného mena: ¿El pastel? Lo compré. Lo a la sú pre to, koho alebo čo, le pre to, komu.",
+    "related": ["gustar", "imperativo", "reflexive"],
+    "rules": [
+      {
+        "id": "direct",
+        "title": "lo, la, los, las: koho, čo",
+        "text": "Riadia sa rodom a číslom veci: el libro → lo, la casa → la, los boletos → los, las llaves → las.",
+        "examples": [
+          { "es": "¿El pastel? Lo compré ayer.", "sk": "Tortu? Kúpil som ju včera." },
+          { "es": "¿Tienes las llaves? Sí, las tengo.", "sk": "Máš kľúče? Áno, mám ich." }
+        ]
+      },
+      {
+        "id": "indirect",
+        "title": "le, les: komu",
+        "text": "Le pre jedného človeka (aj usted), les pre viacerých. Často sa pridáva aj samotný človek: le di el libro a Ana.",
+        "examples": [
+          { "es": "Le di el libro a Ana.", "sk": "Dal som Ane knihu." },
+          { "es": "¿Les escribiste a tus papás?", "sk": "Napísal si rodičom?" }
+        ]
+      },
+      {
+        "id": "position",
+        "title": "Kde stoja",
+        "text": "Pred časovaným slovesom: lo compro. K neurčitku, gerundiu a kladnému imperativu sa pripájajú: voy a comprarlo, estoy haciéndolo, cómpralo.",
+        "examples": [
+          { "es": "Voy a llamarla mañana.", "sk": "Zajtra jej zavolám." },
+          { "es": "Cómpralo, está barato.", "sk": "Kúp si to, je to lacné." }
+        ]
+      },
+      {
+        "id": "se-lo",
+        "title": "Dve zámená: se lo",
+        "text": "Najprv komu, potom čo. Le a les sa pred lo, la menia na se: le doy el libro → se lo doy. To je už B1.",
+        "examples": [
+          { "es": "¿El regalo? Se lo di a Marta.", "sk": "Darček? Dal som ho Marte." },
+          { "es": "Dímelo.", "sk": "Povedz mi to." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "comparisons",
+    "title": "Porovnávanie",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2"],
+    "intro": "Viac, menej, rovnako a najviac: más alto que, tan caro como, el mejor.",
+    "related": ["adjectives"],
+    "rules": [
+      {
+        "id": "more-less",
+        "title": "más / menos … que",
+        "text": "Más barato que, menos caro que. Pred číslom de: más de cien pesos.",
+        "examples": [
+          { "es": "Mi hermano es más alto que yo.", "sk": "Môj brat je vyšší ako ja." },
+          { "es": "El camión es menos caro que el taxi.", "sk": "Autobus je lacnejší ako taxík." }
+        ]
+      },
+      {
+        "id": "equal",
+        "title": "tan … como, tanto … como",
+        "text": "S prídavným menom tan: tan caro como. S podstatným menom tanto, tanta, tantos, tantas: tantos libros como tú.",
+        "examples": [
+          { "es": "Este celular es tan bueno como el otro.", "sk": "Tento mobil je rovnako dobrý ako ten druhý." },
+          { "es": "No tengo tanto tiempo como tú.", "sk": "Nemám toľko času ako ty." }
+        ]
+      },
+      {
+        "id": "irregular",
+        "title": "mejor, peor, mayor, menor",
+        "text": "bueno → mejor, malo → peor. Pri veku mayor (starší) a menor (mladší). Más bueno sa nehovorí.",
+        "examples": [
+          { "es": "Esta salsa es mejor que la otra.", "sk": "Táto salsa je lepšia ako tá druhá." },
+          { "es": "Mi hermana menor vive en Monterrey.", "sk": "Moja mladšia sestra býva v Monterrey." }
+        ]
+      },
+      {
+        "id": "superlative",
+        "title": "Najviac: el más, -ísimo",
+        "text": "el / la más … de: la más alta de la clase. Veľmi: -ísimo (carísimo, riquísimo).",
+        "examples": [
+          { "es": "Es el restaurante más famoso de la ciudad.", "sk": "Je to najznámejšia reštaurácia v meste." },
+          { "es": "Los tacos estaban riquísimos.", "sk": "Tacos boli strašne dobré." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "obligation",
+    "title": "Musieť, mať a môcť",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B1", "UIMP 2026, Lengua Española B1, semana 4"],
+    "intro": "tener que, hay que, deber a poder sa spájajú s neurčitkom: tengo que trabajar.",
+    "related": ["presente", "condicional"],
+    "rules": [
+      {
+        "id": "tener-que",
+        "title": "tener que: musím",
+        "text": "Povinnosť konkrétneho človeka. Tener sa časuje, neurčitok sa nemení.",
+        "examples": [
+          { "es": "Tengo que trabajar el sábado.", "sk": "V sobotu musím pracovať." },
+          { "es": "Tuvimos que esperar una hora.", "sk": "Museli sme čakať hodinu." }
+        ]
+      },
+      {
+        "id": "hay-que",
+        "title": "hay que: treba",
+        "text": "Bez osoby, platí pre všetkých.",
+        "examples": [{ "es": "Hay que pagar en efectivo.", "sk": "Treba platiť v hotovosti." }]
+      },
+      {
+        "id": "deber",
+        "title": "deber: mal by som",
+        "text": "Rada alebo povinnosť. Jemnejšie znie debería (kondicionál).",
+        "examples": [
+          { "es": "Debes descansar más.", "sk": "Mal by si viac odpočívať." },
+          { "es": "Deberías llamar a tu mamá.", "sk": "Mal by si zavolať mame." }
+        ]
+      },
+      {
+        "id": "poder",
+        "title": "poder: môžem",
+        "text": "Schopnosť aj dovolenie. Zdvorilo podría, podrías.",
+        "examples": [
+          { "es": "¿Puedo pasar?", "sk": "Môžem ísť ďalej?" },
+          { "es": "No puedo dormir.", "sk": "Nemôžem zaspať." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subjuntivo-wishes",
+    "title": "Subjuntivo pri želaní a pocitoch",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 2"],
+    "intro": "Keď niekto chce, dúfa alebo cíti niečo o inom človeku, veta s que je v subjuntive: quiero que vengas.",
+    "related": ["subjuntivo", "subjuntivo-clauses"],
+    "rules": [
+      {
+        "id": "wish",
+        "title": "Želanie: quiero que",
+        "text": "Dva rôzne podmety → que + subjuntivo (quiero que vengas). Ten istý podmet → neurčitok (quiero venir).",
+        "examples": [
+          { "es": "Quiero que vengas a la fiesta.", "sk": "Chcem, aby si prišiel na oslavu." },
+          { "es": "Quiero ir a la fiesta.", "sk": "Chcem ísť na oslavu." }
+        ]
+      },
+      {
+        "id": "feelings",
+        "title": "Pocity: me alegra que, espero que",
+        "text": "me alegra que, me molesta que, me preocupa que, espero que, tengo miedo de que.",
+        "examples": [
+          { "es": "Me alegra que estés aquí.", "sk": "Teší ma, že si tu." },
+          { "es": "Espero que te guste.", "sk": "Dúfam, že sa ti to bude páčiť." }
+        ]
+      },
+      {
+        "id": "advice",
+        "title": "Rada a potreba",
+        "text": "te recomiendo que, te pido que, es importante que, es mejor que, es necesario que.",
+        "examples": [
+          { "es": "Te recomiendo que pruebes el mole.", "sk": "Odporúčam ti ochutnať mole." },
+          { "es": "Es importante que llegues a tiempo.", "sk": "Je dôležité, aby si prišiel načas." }
+        ]
+      },
+      {
+        "id": "ojala",
+        "title": "Ojalá",
+        "text": "Ojalá (kiež) je vždy so subjuntivom.",
+        "examples": [{ "es": "Ojalá no llueva mañana.", "sk": "Kiež by zajtra nepršalo." }]
+      }
+    ]
+  },
+  {
+    "id": "si-clauses",
+    "title": "Podmienky so si",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1 (reales), B2 (irreales)", "UIMP 2026, Lengua Española B1, semana 3", "UIMP 2026, Lengua Española B2, módulo 3"],
+    "intro": "Si znamená „ak“ alebo „keby“. Aký čas nasleduje, závisí od toho, či je podmienka skutočná, alebo len predstava.",
+    "related": ["condicional", "subj-imperfecto", "futuro"],
+    "rules": [
+      {
+        "id": "real",
+        "title": "Reálna: si + prítomný čas",
+        "text": "Si llueve, me quedo en casa. Druhá časť môže byť v prítomnom čase, v budúcom čase alebo v imperative.",
+        "examples": [
+          { "es": "Si llueve, me quedo en casa.", "sk": "Ak bude pršať, ostanem doma." },
+          { "es": "Si tienes tiempo, llámame.", "sk": "Ak budeš mať čas, zavolaj mi." }
+        ]
+      },
+      {
+        "id": "unreal",
+        "title": "Nereálna: si + imperfecto de subjuntivo",
+        "text": "Predstava, ktorá teraz neplatí: si tuviera dinero, compraría un carro. Po nej nasleduje kondicionál. To je už B2.",
+        "examples": [
+          { "es": "Si tuviera dinero, compraría un carro.", "sk": "Keby som mal peniaze, kúpil by som si auto." },
+          { "es": "Si viviéramos más cerca, nos veríamos más.", "sk": "Keby sme bývali bližšie, videli by sme sa častejšie." }
+        ]
+      },
+      {
+        "id": "never",
+        "title": "Čo po si nikdy nie je",
+        "text": "Po si nestojí budúci čas, kondicionál ani presente de subjuntivo. Nie si vendrás, ale si vienes.",
+        "examples": [{ "es": "Si vienes mañana, te enseño las fotos.", "sk": "Ak zajtra prídeš, ukážem ti fotky." }]
+      }
+    ]
+  },
+  {
+    "id": "por-para",
+    "title": "por alebo para",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B2", "UIMP 2026, Lengua Española B2, módulo 4"],
+    "intro": "Obe často znamenajú „pre“ alebo „za“. Para sa pozerá dopredu, na cieľ. Por sa pozerá na príčinu, cestu a výmenu.",
+    "rules": [
+      {
+        "id": "para",
+        "title": "para: cieľ",
+        "text": "Účel (para aprender), komu (para ti), termín (para el lunes), smer (salgo para Monterrey), názor (para mí).",
+        "examples": [
+          { "es": "Este regalo es para ti.", "sk": "Tento darček je pre teba." },
+          { "es": "Necesito el reporte para el lunes.", "sk": "Tú správu potrebujem do pondelka." }
+        ]
+      },
+      {
+        "id": "por",
+        "title": "por: príčina a cesta",
+        "text": "Príčina (por el tráfico), cez kade (por el parque), výmena a cena (por cien pesos), prostriedok (por teléfono), časť dňa (por la mañana).",
+        "examples": [
+          { "es": "Llegué tarde por el tráfico.", "sk": "Prišiel som neskoro kvôli zápche." },
+          { "es": "Lo compré por cien pesos.", "sk": "Kúpil som to za sto pesos." }
+        ]
+      },
+      {
+        "id": "fixed",
+        "title": "Ustálené spojenia",
+        "text": "por favor, por fin, por ejemplo, por eso, por supuesto; para nada, para siempre.",
+        "examples": [
+          { "es": "Por fin llegó el viernes.", "sk": "Konečne je piatok." },
+          { "es": "¿Te molesta? Para nada.", "sk": "Vadí ti to? Vôbec nie." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subjuntivo-clauses",
+    "title": "Subjuntivo pri názore a po spojkách",
+    "level": "B2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 2 y 5"],
+    "intro": "Subjuntivo nasleduje aj po zápornom názore, po pochybnosti a po niektorých spojkách, keď ide o niečo, čo ešte nie je isté.",
+    "related": ["subjuntivo", "subjuntivo-wishes", "si-clauses"],
+    "rules": [
+      {
+        "id": "opinion",
+        "title": "Názor: creo que, no creo que",
+        "text": "creo que, pienso que, me parece que + indikatív. Ich zápor (no creo que) a pochybnosť (dudo que, es posible que, puede que) + subjuntivo.",
+        "examples": [
+          { "es": "Creo que tiene razón.", "sk": "Myslím, že má pravdu." },
+          { "es": "No creo que tenga razón.", "sk": "Nemyslím si, že má pravdu." }
+        ]
+      },
+      {
+        "id": "cuando",
+        "title": "cuando o budúcnosti",
+        "text": "cuando, en cuanto, hasta que + subjuntivo, keď ide o budúcnosť (cuando llegues). O zvyku alebo minulosti indikatív (cuando llego, cuando llegué).",
+        "examples": [
+          { "es": "Cuando llegues, avísame.", "sk": "Keď prídeš, daj mi vedieť." },
+          { "es": "Cuando llego a casa, me baño.", "sk": "Keď prídem domov, osprchujem sa." }
+        ]
+      },
+      {
+        "id": "para-que",
+        "title": "para que: aby",
+        "text": "para que je vždy so subjuntivom. S tým istým podmetom stačí para + neurčitok.",
+        "examples": [
+          { "es": "Te lo explico para que lo entiendas.", "sk": "Vysvetlím ti to, aby si to pochopil." },
+          { "es": "Ahorro para comprar una casa.", "sk": "Šetrím si na dom." }
+        ]
+      },
+      {
+        "id": "aunque",
+        "title": "aunque: hoci, aj keby",
+        "text": "aunque + indikatív = je to tak (aunque llueve, salgo). aunque + subjuntivo = možno, na tom nezáleží (aunque llueva, salgo).",
+        "examples": [
+          { "es": "Aunque está cansado, sigue trabajando.", "sk": "Hoci je unavený, pracuje ďalej." },
+          { "es": "Aunque llueva, vamos a ir.", "sk": "Aj keby pršalo, pôjdeme." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "relatives",
+    "title": "Vzťažné vety (que, donde, lo que)",
+    "level": "B2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 4–6"],
+    "intro": "Spájajú dve vety do jednej: el libro que leí. Que je najčastejšie a platí pre ľudí aj veci.",
+    "related": ["subjuntivo-clauses"],
+    "rules": [
+      {
+        "id": "que",
+        "title": "que: ktorý, ktorá, ktoré",
+        "text": "Pre ľudí aj veci, bez predložky: la señora que vive arriba, el libro que me prestaste.",
+        "examples": [
+          { "es": "La señora que vive arriba es muy amable.", "sk": "Pani, ktorá býva nad nami, je veľmi milá." },
+          { "es": "¿Ya leíste el libro que te presté?", "sk": "Už si prečítal knihu, ktorú som ti požičal?" }
+        ]
+      },
+      {
+        "id": "donde",
+        "title": "donde: kde",
+        "text": "Miesto: la casa donde vivo, el pueblo donde nací.",
+        "examples": [{ "es": "Este es el mercado donde compro la fruta.", "sk": "Toto je trh, kde kupujem ovocie." }]
+      },
+      {
+        "id": "lo-que",
+        "title": "lo que: to, čo",
+        "text": "Keď nejde o konkrétnu vec: lo que dices, todo lo que quieras.",
+        "examples": [
+          { "es": "No entiendo lo que dices.", "sk": "Nerozumiem tomu, čo hovoríš." },
+          { "es": "Haz lo que quieras.", "sk": "Rob, čo chceš." }
+        ]
+      },
+      {
+        "id": "el-que",
+        "title": "Po predložke: el que, la que, quien",
+        "text": "Po predložke sa pridáva člen: la persona con la que hablé, el tema del que te hablé. Pri ľuďoch aj quien: la chava con quien salgo.",
+        "examples": [
+          { "es": "Esa es la chava con la que trabajo.", "sk": "To je to dievča, s ktorým pracujem." },
+          { "es": "Es el tema del que te hablé.", "sk": "To je tá téma, o ktorej som ti hovoril." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "passive-se",
+    "title": "Trpný rod a neosobné se",
+    "level": "B2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1–B2", "UIMP 2026, Lengua Española B2, módulos 1 y 6"],
+    "intro": "Keď nie je dôležité, kto dej robí. V bežnej reči sa používa se, trpný rod so ser patrí skôr do správ a úradných textov.",
+    "related": ["reflexive", "ser-estar"],
+    "rules": [
+      {
+        "id": "se",
+        "title": "se + sloveso",
+        "text": "se vende, se rentan departamentos, aquí se habla español. Sloveso sa riadi vecou: se vende casa, se venden casas.",
+        "examples": [
+          { "es": "Se rentan departamentos.", "sk": "Prenajímajú sa byty." },
+          { "es": "Aquí se habla español.", "sk": "Tu sa hovorí po španielsky." }
+        ]
+      },
+      {
+        "id": "impersonal",
+        "title": "Neosobné se",
+        "text": "Bez veci, o ľuďoch všeobecne: ¿cómo se dice…?, aquí se vive bien.",
+        "examples": [{ "es": "¿Cómo se dice esto en español?", "sk": "Ako sa toto povie po španielsky?" }]
+      },
+      {
+        "id": "ser-passive",
+        "title": "ser + príčastie",
+        "text": "Trpný rod so ser: el puente fue construido en 1990. Príčastie sa zhoduje s podmetom. Pôsobí formálne, v reči ho nahradí se alebo činný rod.",
+        "examples": [
+          { "es": "El puente fue construido en 1990.", "sk": "Most bol postavený v roku 1990." },
+          { "es": "La noticia fue publicada ayer.", "sk": "Správa bola zverejnená včera." }
+        ]
+      },
+      {
+        "id": "estar-result",
+        "title": "estar + príčastie: stav",
+        "text": "Estar s príčastím neopisuje dej, ale výsledok: la tienda está cerrada.",
+        "examples": [{ "es": "La tienda está cerrada.", "sk": "Obchod je zatvorený." }]
       }
     ]
   }

@@ -114,7 +114,7 @@ test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Gramatika')
   const list = page.getByRole('main').getByRole('listitem')
   await expect(list).toHaveCount(tips.length)
-  expect(tips.length).toBe(17)
+  expect(tips.length).toBe(28)
 
   await list.getByRole('link', { name: /^ser a estar/ }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')

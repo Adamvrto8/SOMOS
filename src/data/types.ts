@@ -27,6 +27,17 @@ export type Grammar =
   | 'condicional'
   | 'pluscuamperfecto'
   | 'subj-imperfecto'
+  | 'gustar'
+  | 'hay-estar'
+  | 'object-pronouns'
+  | 'comparisons'
+  | 'obligation'
+  | 'subjuntivo-wishes'
+  | 'si-clauses'
+  | 'por-para'
+  | 'subjuntivo-clauses'
+  | 'relatives'
+  | 'passive-se'
 
 export interface Example {
   es: string
