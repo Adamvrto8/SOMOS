@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { tipById, verbById } from '../data'
 import type { Cloze, Sentence } from '../data/types'
-import { formsFor, usageClozeErrors, usageHint, USAGE_TIPS } from './clozeChecks'
+import { checksOwnHint, formsFor, usageClozeErrors, usageHint, USAGE_TIPS } from './clozeChecks'
 
 const sentence = (cloze: Cloze, grammar: Sentence['grammar'] = ['si-clauses']): Sentence => ({
   id: 's9999',
@@ -54,6 +54,14 @@ describe('usageClozeErrors', () => {
     expect(errors(blank({ hint: 'doler', lemma: 'doler', answer: 'dolemos', tip: 'gustar', why: 'how' }), ['gustar'])).toEqual([])
     expect(errors(blank({ hint: 'doler', lemma: 'doler', answer: 'duelo', tip: 'gustar', why: 'how' }), ['gustar'])).toEqual([])
     expect(errors(blank({ hint: 'doler', lemma: 'doler', answer: 'dolón', tip: 'gustar', why: 'how' }), ['gustar'])).toContain('"dolón" is not a form of doler')
+  })
+
+  it('lets a Slovak hint stand on a verb of a usage blank, the answer still a form of it', () => {
+    expect(errors(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'está', tip: 'hay-estar', why: 'estar' }), ['hay-estar'])).toEqual([])
+    expect(errors(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'esto', tip: 'hay-estar', why: 'estar' }), ['hay-estar'])).toContain('"esto" is not a form of estar')
+    expect(checksOwnHint(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'está', tip: 'hay-estar' }), verbById)).toBe(true)
+    expect(checksOwnHint(blank({ hint: 'estar · él · presente', lemma: 'estar', answer: 'está', tip: 'hay-estar' }), verbById)).toBe(false)
+    expect(checksOwnHint(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'está', tip: undefined }), verbById)).toBe(false)
   })
 
   it('names eleven usage tips, each a tip with rules', () => {

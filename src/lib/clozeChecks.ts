@@ -52,6 +52,13 @@ export function formsFor(verb: Verb, person?: Person): string[] {
   return out.map((form) => form.split(' ').at(-1)!.toLowerCase())
 }
 
+// A Slovak hint on a verb ("hay/estar" on está, "musieť" on debes): the hint must not give the verb away.
+const slovakOnVerb = (cloze: Cloze, verbs: Map<string, Verb>) =>
+  cloze.tip !== undefined && verbs.has(cloze.lemma) && cloze.hint !== cloze.lemma && !(cloze.hint ?? '').includes(' · ')
+
+/** Whether these checks stand in for the verb hint check of the validator (the hint has no person and tense). */
+export const checksOwnHint = (cloze: Cloze, verbs: Map<string, Verb>) => usageHint(cloze, verbs).kind !== 'other' || slovakOnVerb(cloze, verbs)
+
 export function usageClozeErrors(sentence: Sentence, cloze: Cloze, tips: Map<string, Tip>, verbs: Map<string, Verb>): string[] {
   const hint = usageHint(cloze, verbs)
   if (!cloze.tip) return hint.kind === 'person' ? ['a hint without tense needs `tip`'] : []
@@ -67,6 +74,6 @@ export function usageClozeErrors(sentence: Sentence, cloze: Cloze, tips: Map<str
       errors.push(`"${cloze.answer}" is not a form of ${hint.lemma} for ${cloze.hint!.split(' · ')[1]}`)
     }
   }
-  if (hint.kind === 'lemma' && !formsFor(verbs.get(cloze.lemma)!).includes(answer)) errors.push(`"${cloze.answer}" is not a form of ${cloze.lemma}`)
+  if ((hint.kind === 'lemma' || slovakOnVerb(cloze, verbs)) && !formsFor(verbs.get(cloze.lemma)!).includes(answer)) errors.push(`"${cloze.answer}" is not a form of ${cloze.lemma}`)
   return errors
 }

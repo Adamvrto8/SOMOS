@@ -13,7 +13,7 @@ import {
   regularNew,
   regularParticiple,
 } from '../src/lib/verbForms.ts'
-import { usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
+import { checksOwnHint, usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -463,8 +463,8 @@ for (const s of sentences) {
     if (s.tokens[c.tokenIndex] !== c.answer) fail(cw, `tokens[${c.tokenIndex}] is "${s.tokens[c.tokenIndex]}", not "${c.answer}"`)
     if (!isNonEmpty(c.lemma)) fail(cw, 'missing lemma')
 
-    // "leer · yo" and "gustar" leave the tense (and person) to the sentence: clozeChecks.ts checks those.
-    if (usageHint(c, verbById).kind === 'other') {
+    // "leer · yo", "gustar" and "hay/estar" leave the tense (and person) to the sentence: clozeChecks.ts checks those.
+    if (!checksOwnHint(c, verbById)) {
       const result = expectedFromHint(c)
       if (result && 'error' in result) fail(cw, result.error)
       if (result && 'expected' in result && result.expected.toLowerCase() !== c.answer.toLowerCase()) {
