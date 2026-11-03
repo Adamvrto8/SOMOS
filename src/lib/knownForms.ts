@@ -1,23 +1,29 @@
 import { sentences, verbs, words } from '../data'
 import { t } from '../i18n'
-import { PERSON_LABELS, personLabel, PERSONS, TENSE_LABELS, TENSES } from './conjugate'
+import type { Level } from '../data/types'
+import { levelAbove, PERSON_LABELS, personLabel, PERSONS, TENSE_LABELS, TENSES, type TableTense } from './conjugate'
 import { IMPERATIVE_PERSONS } from './verbForms'
 import { getLanguage, type Language } from './language'
 import { wordTranslations } from './localized'
 
 // Every single-word Spanish form in the dataset → its meaning in the learner's language, or its grammar.
 // checkAnswer uses it to tell a different real word from a typo or a missing accent.
+// A form of a tense is known from that tense's level: on A1, estudiara (subj. imperfecto, B2)
+// is not another word but estudiará without its accent.
 
-const indexes = new Map<Language, Map<string, Set<string>>>()
+/** The descriptions of a form, each with the tense whose level it counts from (none: always known). */
+type Entry = { description: string; tense?: TableTense }
 
-function buildIndex(): Map<string, Set<string>> {
-  const map = new Map<string, Set<string>>()
-  const add = (form: string, description: string) => {
+const indexes = new Map<Language, Map<string, Entry[]>>()
+
+function buildIndex(): Map<string, Entry[]> {
+  const map = new Map<string, Entry[]>()
+  const add = (form: string, description: string, tense?: TableTense) => {
     const key = form.toLowerCase()
     if (key.includes(' ')) return
-    const set = map.get(key) ?? new Set<string>()
-    if (description) set.add(description)
-    map.set(key, set)
+    const entries = map.get(key) ?? []
+    entries.push({ description, tense })
+    map.set(key, entries)
   }
 
   for (const w of words) {
@@ -32,12 +38,12 @@ function buildIndex(): Map<string, Set<string>> {
       for (const person of PERSONS) {
         // Reflexive forms carry the pronoun ("me llamo"): index the verb itself.
         const form = v[tense][person].split(' ').at(-1)!
-        add(form, `${v.id} · ${PERSON_LABELS[person]} · ${TENSE_LABELS[tense]}`)
+        add(form, `${v.id} · ${PERSON_LABELS[person]} · ${TENSE_LABELS[tense]}`, tense)
       }
     }
-    for (const person of IMPERATIVE_PERSONS) add(v.imperativo[person], `${v.id} · ${personLabel('imperativo', person)} · ${TENSE_LABELS.imperativo}`)
+    for (const person of IMPERATIVE_PERSONS) add(v.imperativo[person], `${v.id} · ${personLabel('imperativo', person)} · ${TENSE_LABELS.imperativo}`, 'imperativo')
     add(v.gerund, `${v.id} · gerundio`)
-    add(v.participle, `${v.id} · participio`)
+    add(v.participle, `${v.id} · participio`, 'pluscuamperfecto')
   }
   // Remaining words from sentences are known, just without a description.
   for (const s of sentences) for (const token of s.tokens) add(token, '')
@@ -45,11 +51,15 @@ function buildIndex(): Map<string, Set<string>> {
   return map
 }
 
-/** Description of a known form ('' if known without one), undefined if unknown. */
-export function lookupForm(word: string): string | undefined {
+/** Description of a known form ('' if known without one), undefined if unknown. With `level`, only forms of tenses taught up to it count. */
+export function lookupForm(word: string, level?: Level): string | undefined {
   const language = getLanguage()
   let index = indexes.get(language)
   if (!index) indexes.set(language, (index = buildIndex()))
-  const descriptions = index.get(word.toLowerCase())
-  return descriptions ? [...descriptions].join(` ${t().lesson.or} `) : undefined
+  const entries = index.get(word.toLowerCase())?.filter((e) => !level || !e.tense || !levelAbove(e.tense, level))
+  if (!entries?.length) return undefined
+  return [...new Set(entries.map((e) => e.description).filter(Boolean))].join(` ${t().lesson.or} `)
 }
+
+/** lookupForm limited to the tenses of a level, for checkAnswer. */
+export const lookupUpTo = (level?: Level) => (word: string) => lookupForm(word, level)

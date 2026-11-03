@@ -402,6 +402,18 @@ describe('lookupForm', () => {
     expect(checkAnswer('este', 'esté', { lookup: lookupForm }).verdict).toBe('wrong')
     expect(checkAnswer('tuvieramos', 'tuviéramos', { lookup: lookupForm }).verdict).not.toBe('wrong')
   })
+
+  it('knows a form only from the level of its tense, so A1 keeps the accent warning', () => {
+    expect(lookupForm('estudiara', 'A1')).toBeUndefined()
+    expect(lookupForm('estudiara', 'B2')).toContain('subj. imperfecto')
+    expect(lookupForm('estudiara')).toContain('subj. imperfecto')
+    const futuro = conjugationTask(verbById.get('estudiar')!, 'futuro', 'el')
+    expect(gradeTask(futuro, 'estudiara').verdict).toBe('accent')
+    const preterito = conjugationTask(verbById.get('hablar')!, 'preterito', 'yo')
+    expect(gradeTask(preterito, 'hable').verdict).toBe('accent')
+    const subjuntivo = conjugationTask(verbById.get('hablar')!, 'subjuntivo', 'yo')
+    expect(gradeTask(subjuntivo, 'hablé').verdict).toBe('wrong')
+  })
 })
 
 describe('createNumberedLesson', () => {

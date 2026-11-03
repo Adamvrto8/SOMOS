@@ -2,10 +2,10 @@ import { sentenceById, sentences, verbById, verbs, vocabWords, wordById } from '
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
-import { conjugate, formText, personsOf, TABLE_TENSES, tensesUpTo, type TableTense } from './conjugate'
+import { conjugate, formText, personsOf, TABLE_TENSES, TENSE_LEVEL, tensesUpTo, type TableTense } from './conjugate'
 import { getLanguage } from './language'
 import { wordTranslations } from './localized'
-import { lookupForm } from './knownForms'
+import { lookupUpTo } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
 
 export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking'
@@ -667,8 +667,21 @@ export function canRetry(task: Task): boolean {
   return task.kind !== 'speaking' // has its own three recordings
 }
 
+/** The level a task is asked at: forms of tenses above it are no other words in its answer. */
+function taskLevel(task: Task): Level {
+  switch (task.kind) {
+    case 'conjugation':
+      return TENSE_LEVEL[task.tense]
+    case 'vocab':
+      return task.word.level
+    default:
+      return task.sentence.level
+  }
+}
+
 export function gradeTask(task: Task, answer: Answer): Grade {
   const text = typeof answer === 'string' ? answer : ''
+  const lookupForm = lookupUpTo(taskLevel(task))
   switch (task.kind) {
     case 'cloze':
       return typed(text, task.cloze.answer, { lookup: lookupForm })
