@@ -114,7 +114,7 @@ test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Gramatika')
   const list = page.getByRole('main').getByRole('listitem')
   await expect(list).toHaveCount(tips.length)
-  expect(tips.length).toBe(12)
+  expect(tips.length).toBe(17)
 
   await list.getByRole('link', { name: /^ser a estar/ }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')
@@ -161,4 +161,11 @@ test('there is no link without a tip or after a right answer', async ({ page }) 
   await button(page, 'Skontrolovať').tap()
   await expect(status(page)).toContainText('Správne!')
   await expect(tipLink(page)).toHaveCount(0)
+})
+
+test('the grammar handbook is ordered by level and a tip names its source', async ({ page }) => {
+  await page.goto('/practice/grammar')
+  for (const level of ['A1', 'A2', 'B1', 'B2']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible()
+  await page.getByRole('link', { name: /Subjuntivo presente/ }).tap()
+  await expect(page.getByText(/^Podľa: Plan curricular del Instituto Cervantes/)).toBeVisible()
 })

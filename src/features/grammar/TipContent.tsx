@@ -145,6 +145,10 @@ export function TipContent({ tip: base, here, focus, onOpenTip }: TipContentProp
           </div>
         </section>
       )}
+
+      <p className="text-sm text-ink-muted">
+        {text.basedOn} {tip.sources.join(' · ')}
+      </p>
     </div>
   )
 }

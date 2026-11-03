@@ -1,5 +1,5 @@
 import { english } from '../data'
-import type { Cloze, Sentence, Tip, Topic, Verb, Word } from '../data/types'
+import type { Cloze, Level, Sentence, Tip, Topic, Verb, Word } from '../data/types'
 import { getLanguage } from './language'
 
 // The teaching content in the learner's language. The only place that knows there are two:
@@ -62,6 +62,8 @@ export interface LocalRule {
 export interface LocalTip {
   id: string
   title: string
+  level: Level
+  sources: string[]
   intro: string
   related?: string[]
   rules: LocalRule[]
@@ -81,5 +83,5 @@ export function localizedTip(tip: Tip): LocalTip {
       examples: rule.examples.map((example, i) => ({ es: example.es, text: translated?.examples[i] ?? example.sk })),
     }
   })
-  return { id: tip.id, title: entry?.title ?? tip.title, intro: entry?.intro ?? tip.intro, related: tip.related, rules }
+  return { id: tip.id, title: entry?.title ?? tip.title, level: tip.level, sources: tip.sources, intro: entry?.intro ?? tip.intro, related: tip.related, rules }
 }

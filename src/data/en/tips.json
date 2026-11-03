@@ -472,5 +472,178 @@
         "examples": ["My dad buys potatoes.", "I'm thirty years old."]
       }
     ]
+  },
+  {
+    "id": "imperativo",
+    "title": "The imperative",
+    "intro": "Requests, advice and instructions: ven, siéntate, no te preocupes. The tú form is simple; the other persons take the subjunctive.",
+    "rules": [
+      {
+        "id": "tu",
+        "title": "For tú: the él form",
+        "text": "The affirmative tú imperative is the present él form: habla, come, escribe, piensa, duerme.",
+        "examples": ["Speak more slowly, please.", "Eat something before you go."]
+      },
+      {
+        "id": "tu-irregular",
+        "title": "Short tú forms",
+        "text": "ven (venir), di (decir), sal (salir), haz (hacer), ten (tener), ve (ir), pon (poner), sé (ser). Compounds get an accent: mantén, propón, prevén.",
+        "examples": ["Come here.", "Watch out for the dog."]
+      },
+      {
+        "id": "usted",
+        "title": "For usted, nosotros and ustedes: the subjunctive",
+        "text": "hable, hablemos, hablen; tenga, tengamos, tengan; vaya, vayan (for nosotros people mostly say vamos).",
+        "examples": ["Come in, please.", "Be careful on the road."]
+      },
+      {
+        "id": "negative",
+        "title": "Negative imperative: no + subjunctive",
+        "text": "The same for every person: no hables, no vengas, no hagas eso, no se preocupe.",
+        "examples": ["Don't worry.", "Don't make noise, the baby is asleep."]
+      },
+      {
+        "id": "pronouns",
+        "title": "Pronouns",
+        "text": "With an affirmative imperative the pronoun goes on the end. The stress stays on the same syllable, so it is written: siéntate, levántense, dímelo. With a negative one it goes before the verb: no te sientes, no me lo digas.",
+        "examples": ["Sit here.", "Tell me again."]
+      }
+    ]
+  },
+  {
+    "id": "subjuntivo",
+    "title": "Present subjunctive: forms",
+    "intro": "The subjunctive is the mood for what someone wants or feels, or what is not certain. It is built from the present with the “opposite” vowel: -ar verbs take endings with -e, -er and -ir verbs endings with -a.",
+    "rules": [
+      {
+        "id": "ar",
+        "title": "-ar verbs: endings with -e",
+        "text": "hablar: hable, hables, hable, hablemos, hablen.",
+        "examples": ["I hope you talk to her."]
+      },
+      {
+        "id": "er-ir",
+        "title": "-er and -ir verbs: endings with -a",
+        "text": "comer: coma, comas, coma, comamos, coman. vivir: viva, vivas, viva, vivamos, vivan.",
+        "examples": ["I want you to eat something."]
+      },
+      {
+        "id": "yo-stem",
+        "title": "The stem of the yo form",
+        "text": "Take the present yo form, drop -o and add the ending: tengo → tenga, hago → haga, conozco → conozca, salgo → salga, digo → diga. The stem stays in every person: tengamos, hagamos.",
+        "examples": ["Good luck.", "It's better if we do it today."]
+      },
+      {
+        "id": "stem",
+        "title": "Stem change",
+        "text": "The stem changes as in the present: pueda, quiera, duerma, pida. In the nosotros form -ar and -er verbs keep their stem (podamos, queramos); -ir verbs change e to i and o to u (sintamos, durmamos, pidamos).",
+        "examples": ["I don't think she can come.", "It's important that we sleep well."]
+      },
+      {
+        "id": "spelling",
+        "title": "Spelling change",
+        "text": "Verbs in -car, -gar, -zar change their spelling before -e to keep their sound: buscar → busque, llegar → llegue, empezar → empiece.",
+        "examples": ["Let me know when you get there."]
+      },
+      {
+        "id": "irregular",
+        "title": "Irregular verbs",
+        "text": "ser: sea · ir: vaya · estar: esté · saber: sepa · dar: dé · haber: haya.",
+        "examples": ["I hope you are well.", "Let's hope there's no traffic."]
+      },
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "After verbs of wishing and feeling when the second clause has another subject (quiero que vengas), after ojalá, after para que and with a negative opinion (no creo que).",
+        "examples": ["I'm calling so you know the news."]
+      }
+    ]
+  },
+  {
+    "id": "condicional",
+    "title": "The conditional (would)",
+    "intro": "It says what would happen or what you would do. It is also the polite way to ask for something.",
+    "rules": [
+      {
+        "id": "endings",
+        "title": "Infinitive + -ía",
+        "text": "hablar: hablaría, hablarías, hablaría, hablaríamos, hablarían. Likewise comería, viviría.",
+        "examples": ["I would talk to the boss."]
+      },
+      {
+        "id": "stems",
+        "title": "The same stem as the future",
+        "text": "tener → tendría, poder → podría, salir → saldría, venir → vendría, poner → pondría, decir → diría, hacer → haría, querer → querría, saber → sabría, haber → habría.",
+        "examples": ["What would you do?", "We could go to the movies."]
+      },
+      {
+        "id": "politeness",
+        "title": "A polite request",
+        "text": "Me gustaría, ¿podría…?, ¿te importaría…? sound more polite than the present.",
+        "examples": ["I'd like a coffee, please.", "Could you help me with this?"]
+      },
+      {
+        "id": "advice",
+        "title": "Advice and imagining",
+        "text": "Yo que tú… means “if I were you”. The unreal condition (if I had…) is in the tip on the imperfect subjunctive.",
+        "examples": ["If I were you, I'd take the bus."]
+      }
+    ]
+  },
+  {
+    "id": "pluscuamperfecto",
+    "title": "Pluperfect (had done)",
+    "intro": "An action that happened before another past action: when I arrived, the movie had already started.",
+    "rules": [
+      {
+        "id": "form",
+        "title": "había + participle",
+        "text": "haber in the imperfect (había, habías, había, habíamos, habían) and the participle, which does not change: hablar → hablado, comer → comido, vivir → vivido. After a vowel -ído: leído, traído.",
+        "examples": ["We had already eaten.", "I had never seen the sea."]
+      },
+      {
+        "id": "participle",
+        "title": "Irregular participles",
+        "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "examples": ["I told him I had already done it."]
+      },
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "When you talk about the past and need to say what happened even earlier. Often with ya (already) and nunca (never).",
+        "examples": ["When I arrived, the movie had already started."]
+      },
+      {
+        "id": "perfecto",
+        "title": "What about he comido?",
+        "text": "The present perfect (he comido, has ido) exists in Mexico too, but mostly for “ever” and “not yet”. A finished action, even today’s, takes the preterite: Hoy comí tacos.",
+        "examples": ["Have you ever been to Oaxaca?", "I haven't finished yet."]
+      }
+    ]
+  },
+  {
+    "id": "subj-imperfecto",
+    "title": "Imperfect subjunctive: forms",
+    "intro": "The past subjunctive. You need it in an unreal condition (si tuviera…) and in a second clause when the main clause is in the past (quería que vinieras).",
+    "rules": [
+      {
+        "id": "formation",
+        "title": "From the preterite ellos form",
+        "text": "Take the preterite ellos form and change -ron to -ra: hablaron → hablara, tuvieron → tuviera, fueron → fuera, pidieron → pidiera. So the preterite’s irregularities carry over. The nosotros form gets an accent: habláramos, tuviéramos.",
+        "examples": ["If I had more time, I would travel more.", "She asked me to go with her."]
+      },
+      {
+        "id": "se",
+        "title": "The -se form",
+        "text": "Spain also uses hablase, tuviese. In Mexico you hardly hear it, so there is no need to learn it.",
+        "examples": ["I wish I could help you."]
+      },
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "In an unreal condition (si + imperfect subjunctive, then the conditional), in a wish that will probably not come true (ojalá pudiera), and in a second clause after a past tense (quería que, me pidió que).",
+        "examples": ["My parents wanted me to study medicine.", "If I were you, I wouldn't tell him anything."]
+      }
+    ]
   }
 ]

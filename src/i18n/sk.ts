@@ -732,6 +732,7 @@ export const sk = {
 
   grammar: {
     title: 'Gramatika',
+    basedOn: 'Podľa:',
     intro: 'Krátke pravidlá s príkladmi. K tipu sa dostaneš aj z lekcie: po zlej odpovedi ťukni na „Prečo?“.',
     notFound: 'Tip sa nenašiel',
     seeBefore: 'Pozri si',
@@ -762,6 +763,22 @@ export const sk = {
     preteritoAccent: (verb: string) => `Tento tvar slovesa ${verb} sa od pravidelného líši len prízvukom, treba si ho zapamätať.`,
     imperfectoIrregular: (verb: string) => `${verb} je jedno z troch slovies, ktoré sú v imperfecte nepravidelné.`,
     futuroStems: (verb: string) => `${verb} má v budúcom čase nepravidelný kmeň, koncovky ostávajú.`,
+    subjuntivoIrregular: (verb: string) => `${verb} je v subjuntive nepravidelné, tvary sa treba naučiť.`,
+    subjuntivoYo: (verb: string, yo: string) => `Subjuntivo slovesa ${verb} vychádza z tvaru yo v prítomnom čase: ${yo}, bez -o a s opačnou koncovkou.`,
+    subjuntivoStem: (verb: string) => `V slovese ${verb} sa kmeň mení rovnako ako v prítomnom čase.`,
+    subjuntivoEndings: (verb: string, group: string) =>
+      `${verb} je sloveso na -${group}: v subjuntive dostane ${group === 'ar' ? 'koncovky s -e' : 'koncovky s -a'}.`,
+    subjuntivoSpelling: (verb: string) => `V slovese ${verb} sa pred koncovkou -e mení pravopis, aby ostala výslovnosť.`,
+    subjImperfecto: (verb: string, ellos: string) => `Imperfecto de subjuntivo slovesa ${verb} vychádza z pretérita ellos: ${ellos}, -ron sa zmení na -ra.`,
+    condicionalStems: (verb: string) => `${verb} má v kondicionáli ten istý nepravidelný kmeň ako v budúcom čase.`,
+    condicionalEndings: (verb: string) => `Pri slovese ${verb} sa koncovka -ía pridáva k celému neurčitku.`,
+    imperativoShort: (verb: string, form: string) => `${verb} má v imperative pre tú krátky tvar: ${form}.`,
+    imperativoTu: (verb: string) => `Imperativ pre tú sa pri slovese ${verb} rovná tvaru él v prítomnom čase.`,
+    imperativoUsted: (verb: string) => `Imperativ pre usted, nosotros a ustedes je pri slovese ${verb} rovnaký ako subjuntivo.`,
+    imperativoPronoun: (verb: string) =>
+      `Pri zvratnom slovese ${verb} sa zámeno pripája na koniec a prízvuk ostáva na tej istej slabike, preto sa píše.`,
+    participleIrregular: (verb: string, participle: string) => `${verb} má nepravidelné príčastie: ${participle}.`,
+    pluscuamperfecto: (verb: string, participle: string) => `Pri slovese ${verb} sa časuje len haber v imperfekte, príčastie ${participle} sa nemení.`,
     futuroEndings: (verb: string) => `Pri slovese ${verb} sa koncovka pridáva k celému neurčitku.`,
     articleForms: {
       el: 'mužský rod, jednotné číslo',

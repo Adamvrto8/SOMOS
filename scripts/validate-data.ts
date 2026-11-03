@@ -48,7 +48,7 @@ const DERIVED_TENSES = ['subjuntivo', 'subjImperfecto', 'condicional'] as const
 type StoredTense = Exclude<Tense, (typeof DERIVED_TENSES)[number]>
 const isDerived = (tense: Tense): tense is (typeof DERIVED_TENSES)[number] => (DERIVED_TENSES as readonly string[]).includes(tense)
 const POS = ['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'conj', 'phrase', 'other']
-const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles']
+const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles', 'imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto', 'subj-imperfecto']
 
 // ---------- helpers ----------
 
@@ -346,6 +346,8 @@ for (const g of GRAMMAR) if (!tipById.has(g)) fail('tips', `no tip for the gramm
 for (const tip of tips) {
   const where = `tips[${tip.id}]`
   if (!isNonEmpty(tip.title) || !isNonEmpty(tip.intro)) fail(where, 'missing title/intro')
+  checkLevel(where, tip.level)
+  if (!Array.isArray(tip.sources) || tip.sources.length === 0 || !tip.sources.every(isNonEmpty)) fail(where, 'needs at least one source')
   if (!Array.isArray(tip.rules) || tip.rules.length === 0) {
     fail(where, 'needs at least one rule')
     continue

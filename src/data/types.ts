@@ -13,7 +13,20 @@ export type ImperativePerson = 'tu' | 'el' | 'nosotros' | 'ellos'
 
 export type PartOfSpeech = 'noun' | 'verb' | 'adj' | 'adv' | 'prep' | 'pron' | 'conj' | 'phrase' | 'other'
 
-export type Grammar = 'presente' | 'progresivo' | 'preterito' | 'imperfecto' | 'futuro' | 'ser-estar' | 'gender' | 'articles'
+export type Grammar =
+  | 'presente'
+  | 'progresivo'
+  | 'preterito'
+  | 'imperfecto'
+  | 'futuro'
+  | 'ser-estar'
+  | 'gender'
+  | 'articles'
+  | 'imperativo'
+  | 'subjuntivo'
+  | 'condicional'
+  | 'pluscuamperfecto'
+  | 'subj-imperfecto'
 
 export interface Example {
   es: string
@@ -100,9 +113,11 @@ export interface TipRule {
 export interface Tip {
   id: string // a Grammar tag where one exists ("preterito"), else its own ("accents")
   title: string
+  level: Level // the level it is taught at, after the Plan curricular del Instituto Cervantes
   intro: string
   rules: TipRule[]
   related?: string[] // tip ids, "Pozri aj"
+  sources: string[] // citations: "Plan curricular del Instituto Cervantes (2006), Gramática B1"
 }
 
 // The guided path ("Cesta", docs/guided-path-spec.md): src/data/path.json, units in the order they are learned.

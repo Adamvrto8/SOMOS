@@ -685,6 +685,7 @@ export const en: Dictionary = {
 
   grammar: {
     title: 'Grammar',
+    basedOn: 'Based on:',
     intro: 'Short rules with examples. You can also reach a tip from a lesson: after a wrong answer, tap “Why?”.',
     notFound: 'Tip not found',
     seeBefore: 'See',
@@ -713,6 +714,22 @@ export const en: Dictionary = {
     preteritoAccent: (verb) => `This form of ${verb} differs from the regular one only by an accent; it is worth remembering.`,
     imperfectoIrregular: (verb) => `${verb} is one of the three verbs that are irregular in the imperfecto.`,
     futuroStems: (verb) => `${verb} has an irregular stem in the future tense; the endings stay the same.`,
+    subjuntivoIrregular: (verb: string) => `${verb} is irregular in the subjunctive: its forms have to be learned.`,
+    subjuntivoYo: (verb: string, yo: string) => `The subjunctive of ${verb} comes from the present yo form: ${yo}, drop -o and add the opposite ending.`,
+    subjuntivoStem: (verb: string) => `${verb} changes its stem here just as in the present.`,
+    subjuntivoEndings: (verb: string, group: string) =>
+      `${verb} is an -${group} verb: in the subjunctive it takes ${group === 'ar' ? 'endings with -e' : 'endings with -a'}.`,
+    subjuntivoSpelling: (verb: string) => `${verb} changes its spelling before the ending -e to keep its sound.`,
+    subjImperfecto: (verb: string, ellos: string) => `The imperfect subjunctive of ${verb} comes from the preterite ellos form: ${ellos}, -ron becomes -ra.`,
+    condicionalStems: (verb: string) => `${verb} has the same irregular stem in the conditional as in the future.`,
+    condicionalEndings: (verb: string) => `For ${verb} the ending -ía is added to the whole infinitive.`,
+    imperativoShort: (verb: string, form: string) => `${verb} has a short tú imperative: ${form}.`,
+    imperativoTu: (verb: string) => `The tú imperative of ${verb} is the same as its present él form.`,
+    imperativoUsted: (verb: string) => `The usted, nosotros and ustedes imperative of ${verb} is the subjunctive.`,
+    imperativoPronoun: (verb: string) =>
+      `With the reflexive verb ${verb} the pronoun goes on the end and the stress stays put, so it gets a written accent.`,
+    participleIrregular: (verb: string, participle: string) => `${verb} has an irregular participle: ${participle}.`,
+    pluscuamperfecto: (verb: string, participle: string) => `With ${verb} only haber changes (imperfect); the participle ${participle} stays.`,
     futuroEndings: (verb) => `With ${verb} the ending is added to the whole infinitive.`,
     articleForms: {
       el: 'masculine singular',

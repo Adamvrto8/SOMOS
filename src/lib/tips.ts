@@ -6,6 +6,7 @@ import { isIrregular, type TableTense } from './conjugate'
 import type { Grade, Task } from './lesson'
 import { localizedTip } from './localized'
 import { fold } from './text'
+import { bare } from './verbForms'
 
 // Grammar tips ("Prečo?"): which tip explains a task that was answered wrong, which of its rules
 // applies there, and why in this very task. Without the last two the tip is just a handbook page.
@@ -25,9 +26,38 @@ interface Why {
 }
 
 // A sentence can carry several tags; the one a learner most needs explained comes first.
-const TAG_PRIORITY: Grammar[] = ['ser-estar', 'imperfecto', 'preterito', 'futuro', 'progresivo', 'gender', 'articles', 'presente']
+const TAG_PRIORITY: Grammar[] = [
+  'ser-estar',
+  'subj-imperfecto',
+  'subjuntivo',
+  'condicional',
+  'pluscuamperfecto',
+  'imperativo',
+  'imperfecto',
+  'preterito',
+  'futuro',
+  'progresivo',
+  'gender',
+  'articles',
+  'presente',
+]
 
-const HINT_TENSES: Record<string, TableTense> = { presente: 'presente', pretérito: 'preterito', imperfecto: 'imperfecto', futuro: 'futuro' }
+const HINT_TENSES: Record<string, TableTense> = {
+  presente: 'presente',
+  pretérito: 'preterito',
+  imperfecto: 'imperfecto',
+  futuro: 'futuro',
+  subjuntivo: 'subjuntivo',
+  'subjuntivo imperfecto': 'subjImperfecto',
+  condicional: 'condicional',
+  imperativo: 'imperativo',
+}
+
+/** A tense's tip has the tense's id, except subjImperfecto (tip ids are kebab-case). */
+export const tipIdOfTense = (tense: TableTense) => (tense === 'subjImperfecto' ? 'subj-imperfecto' : tense)
+
+// Irregular in the subjunctive beyond the yo stem of the present (src/lib/verbForms.ts).
+const SUBJ_IRREGULAR = new Set(['ser', 'ir', 'estar', 'saber', 'dar', 'haber'])
 const HINT_PERSONS: Record<string, Person> = {
   yo: 'yo',
   tú: 'tu',
@@ -109,9 +139,40 @@ function verbWhy(verb: Verb, tense: TableTense, person: Person): Why {
         : { rule: 'endings', because: t().tips.futuroEndings(verb.id) }
     case 'progresivo':
       return gerundWhy(verb, 'form')
-    default:
-      return regularWhy(verb)
+    case 'subjuntivo':
+      return subjuntivoWhy(verb, person)
+    case 'subjImperfecto':
+      return { rule: 'formation', because: t().tips.subjImperfecto(verb.id, verb.preterito.ellos) }
+    case 'condicional':
+      return isIrregular(verb, 'condicional', person)
+        ? { rule: 'stems', because: t().tips.condicionalStems(verb.id) }
+        : { rule: 'endings', because: t().tips.condicionalEndings(verb.id) }
+    case 'imperativo':
+      if (verb.reflexive) return { rule: 'pronouns', because: t().tips.imperativoPronoun(verb.id) }
+      if (person !== 'tu') return { rule: 'usted', because: t().tips.imperativoUsted(verb.id) }
+      // piensa is just él of the present; ten, mantén are short forms of their own
+      return verb.imperativo.tu !== bare(verb.presente.el)
+        ? { rule: 'tu-irregular', because: t().tips.imperativoShort(verb.id, verb.imperativo.tu) }
+        : { rule: 'tu', because: t().tips.imperativoTu(verb.id) }
+    case 'pluscuamperfecto':
+      return participleWhy(verb)
   }
+}
+
+/** tengo → tenga (the yo stem differs from él: tiene), pienso → piense (a stem change), busco → busque (spelling). */
+function subjuntivoWhy(verb: Verb, person: Person): Why {
+  if (SUBJ_IRREGULAR.has(verb.id)) return { rule: 'irregular', because: t().tips.subjuntivoIrregular(verb.id) }
+  const yo = bare(verb.presente.yo)
+  if (yo.slice(0, -1) !== bare(verb.presente.el).slice(0, -1)) return { rule: 'yo-stem', because: t().tips.subjuntivoYo(verb.id, yo) }
+  if (isIrregular(verb, 'presente', 'yo')) return { rule: 'stem', because: t().tips.subjuntivoStem(verb.id) }
+  if (isIrregular(verb, 'subjuntivo', person)) return { rule: 'spelling', because: t().tips.subjuntivoSpelling(verb.id) }
+  return { rule: groupRule(verb), because: t().tips.subjuntivoEndings(verb.id, verb.group) }
+}
+
+function participleWhy(verb: Verb): Why {
+  return verb.participleIrregular
+    ? { rule: 'participle', because: t().tips.participleIrregular(verb.id, verb.participle) }
+    : { rule: 'form', because: t().tips.pluscuamperfecto(verb.id, verb.participle) }
 }
 
 // ---------- articles, adjectives, accents ----------
@@ -168,9 +229,10 @@ export function tipForCloze(sentence: Sentence, cloze: Cloze): TaskTip | undefin
   if (parts.length === 3 && HINT_TENSES[parts[2]]) {
     const tense = HINT_TENSES[parts[2]]
     const person = HINT_PERSONS[parts[1]]
-    return targeted(tense, verb && person ? verbWhy(verb, tense, person) : undefined)
+    return targeted(tipIdOfTense(tense), verb && person ? verbWhy(verb, tense, person) : undefined)
   }
   if (parts.length === 2 && parts[1] === 'gerundio') return targeted('progresivo', verb && gerundWhy(verb, 'gerund'))
+  if (parts.length === 2 && parts[1] === 'participio') return targeted('pluscuamperfecto', verb && participleWhy(verb))
   if (hint === 'člen' || hint === 'neurčitý člen') return feminineWithEl(sentence, cloze) ?? targeted('articles', articleWhy(cloze.answer))
   if (hint.startsWith('prídavné meno')) return targeted('adjectives', adjectiveWhy(hint, cloze.answer))
   return undefined
@@ -191,7 +253,7 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
     case 'choice':
       return tipForCloze(task.sentence, task.cloze)
     case 'conjugation':
-      return targeted(task.tense, verbWhy(task.verb, task.tense, task.person))
+      return targeted(tipIdOfTense(task.tense), verbWhy(task.verb, task.tense, task.person))
     case 'builder':
     case 'translation':
     case 'dictation':

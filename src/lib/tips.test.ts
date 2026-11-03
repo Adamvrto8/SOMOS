@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { sentences, tipById, verbById, verbs } from '../data'
 import { personsOf, TABLE_TENSES } from './conjugate'
 import { conjugationTask, gradeTask, taskFromItem, type ExerciseType, type Grade, type Task } from './lesson'
-import { tipFor, tipLabel } from './tips'
+import { tipFor, tipIdOfTense, tipLabel } from './tips'
 
 const WRONG: Grade = { correct: false, verdict: 'wrong', expected: '' }
 
@@ -95,9 +95,41 @@ describe('tipFor', () => {
   })
 
   it.each(TABLE_TENSES)('gives a conjugation task the tip of its tense: %s', (tense) => {
-    const found = tipFor(conjugationTask(verbById.get('hablar')!, tense, 'yo'), WRONG)
-    expect(found?.tip.id).toBe(tense)
+    const found = tipFor(conjugationTask(verbById.get('hablar')!, tense, personsOf(tense)[0]), WRONG)
+    expect(found?.tip.id).toBe(tipIdOfTense(tense))
     expect(found?.targeted).toBe(true)
+  })
+
+  it.each([
+    ['tener', 'subjuntivo', 'yo', 'yo-stem'],
+    ['pensar', 'subjuntivo', 'el', 'stem'],
+    ['ser', 'subjuntivo', 'yo', 'irregular'],
+    ['hablar', 'subjuntivo', 'tu', 'ar'],
+    ['comer', 'subjuntivo', 'tu', 'er-ir'],
+    ['buscar', 'subjuntivo', 'yo', 'spelling'],
+    ['dormir', 'subjuntivo', 'nosotros', 'stem'],
+    ['pensar', 'imperativo', 'tu', 'tu'],
+    ['tener', 'condicional', 'yo', 'stems'],
+    ['hablar', 'condicional', 'yo', 'endings'],
+    ['decir', 'imperativo', 'tu', 'tu-irregular'],
+    ['mantener', 'imperativo', 'tu', 'tu-irregular'],
+    ['hablar', 'imperativo', 'tu', 'tu'],
+    ['hablar', 'imperativo', 'el', 'usted'],
+    ['levantarse', 'imperativo', 'tu', 'pronouns'],
+    ['hacer', 'pluscuamperfecto', 'yo', 'participle'],
+    ['hablar', 'pluscuamperfecto', 'yo', 'form'],
+    ['tener', 'subjImperfecto', 'yo', 'formation'],
+  ] as const)('explains %s · %s · %s by the rule %s', (verbId, tense, person, rule) => {
+    const found = tipFor(conjugationTask(verbById.get(verbId)!, tense, person), WRONG)
+    expect(found?.rule?.id).toBe(rule)
+    expect(found?.because).toContain(verbId)
+  })
+
+  it('gives every tip a level and a source', () => {
+    for (const tip of tipById.values()) {
+      expect(tip.level, tip.id).toMatch(/^(A1|A2|B1|B2)$/)
+      expect(tip.sources.length, tip.id).toBeGreaterThan(0)
+    }
   })
 
   it('gives a whole sentence its main grammar topic, without claiming to explain the mistake', () => {

@@ -2,6 +2,8 @@
   {
     "id": "ser-estar",
     "title": "ser a estar",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2", "UIMP 2026, Lengua Española A1, semana 2"],
     "intro": "Obe slovesá znamenajú „byť“. Ser hovorí, čo alebo aké niečo je. Estar hovorí, kde to je a v akom stave je práve teraz.",
     "related": ["progresivo", "adjectives"],
     "rules": [
@@ -141,6 +143,8 @@
   {
     "id": "presente",
     "title": "Prítomný čas (presente)",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 1"],
     "intro": "Hovorí o tom, čo robíš bežne alebo práve teraz. Koncovka sa mení podľa osoby, zámeno (yo, tú…) sa väčšinou vynecháva.",
     "related": ["reflexive", "progresivo"],
     "rules": [
@@ -191,6 +195,8 @@
   {
     "id": "preterito",
     "title": "Pretérito (dokončený minulý čas)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
     "intro": "Hovorí o deji, ktorý sa stal a skončil: včera, minulý týždeň, raz. V Mexiku je to bežný minulý čas aj pre nedávne udalosti.",
     "related": ["imperfecto", "preterito-imperfecto"],
     "rules": [
@@ -254,6 +260,8 @@
   {
     "id": "imperfecto",
     "title": "Imperfecto (priebehový minulý čas)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
     "intro": "Opisuje, čo sa dialo opakovane alebo ako veci vyzerali: čo si robieval, aké to bolo, koľko si mal rokov.",
     "related": ["preterito", "preterito-imperfecto"],
     "rules": [
@@ -290,6 +298,8 @@
   {
     "id": "preterito-imperfecto",
     "title": "Pretérito alebo imperfecto?",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2–B1"],
     "intro": "Oba sú minulé časy. Pretérito hovorí, čo sa stalo. Imperfecto hovorí, ako to vtedy vyzeralo alebo čo sa dialo opakovane.",
     "related": ["preterito", "imperfecto"],
     "rules": [
@@ -328,6 +338,8 @@
   {
     "id": "futuro",
     "title": "Budúci čas (futuro)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2"],
     "intro": "Koncovky sa pridávajú k celému neurčitku a sú rovnaké pre všetky slovesá.",
     "related": ["presente"],
     "rules": [
@@ -369,6 +381,8 @@
   {
     "id": "progresivo",
     "title": "Priebehový čas (estar + gerundio)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1–A2"],
     "intro": "Hovorí o tom, čo sa deje práve v tejto chvíli. Skladá sa zo slovesa estar a gerundia.",
     "related": ["ser-estar", "presente"],
     "rules": [
@@ -410,6 +424,8 @@
   {
     "id": "gender",
     "title": "Rod podstatných mien",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
     "intro": "Každé podstatné meno je mužského (el) alebo ženského (la) rodu. Rod sa často dá odhadnúť podľa koncovky, ale so slovenčinou sa nezhoduje.",
     "related": ["articles", "adjectives"],
     "rules": [
@@ -472,6 +488,8 @@
   {
     "id": "articles",
     "title": "Členy (el, la, un, una)",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
     "intro": "Slovenčina členy nemá, španielčina ich používa takmer vždy. Člen sa zhoduje s podstatným menom v rode a čísle.",
     "related": ["gender", "adjectives"],
     "rules": [
@@ -525,6 +543,8 @@
   {
     "id": "adjectives",
     "title": "Zhoda prídavných mien",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1"],
     "intro": "Prídavné meno má rovnaký rod a číslo ako podstatné meno a zvyčajne stojí za ním.",
     "related": ["gender", "articles", "ser-estar"],
     "rules": [
@@ -578,6 +598,8 @@
   {
     "id": "reflexive",
     "title": "Zvratné slovesá",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A1", "UIMP 2026, Lengua Española A1, semana 3"],
     "intro": "Neurčitok sa končí na -se (levantarse). Zámeno sa mení podľa osoby: me, te, se, nos, se.",
     "related": ["presente"],
     "rules": [
@@ -619,6 +641,8 @@
   {
     "id": "accents",
     "title": "Prízvuk, ktorý mení význam",
+    "level": "A1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Ortografía A1–A2", "RAE y ASALE (2010), Ortografía de la lengua española: tilde diacrítica"],
     "intro": "Čiarka nad samohláskou (á, é, í, ó, ú) ukazuje prízvuk. Pri niektorých slovách rozlišuje dve rôzne slová, preto ju vtedy aplikácia neodpustí.",
     "related": ["preterito"],
     "rules": [
@@ -658,6 +682,236 @@
         "examples": [
           { "es": "Mi papá compra papas.", "sk": "Otec kupuje zemiaky." },
           { "es": "Tengo treinta años.", "sk": "Mám tridsať rokov." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "imperativo",
+    "title": "Imperativ (rozkazovací spôsob)",
+    "level": "A2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (kladný), B1 (záporný)", "UIMP 2026, Lengua Española B1, semana 3"],
+    "intro": "Prosby, rady a pokyny: ven, siéntate, no te preocupes. Tvar pre tú je jednoduchý, ostatné osoby si berú tvar zo subjuntivu.",
+    "related": ["subjuntivo", "reflexive", "presente"],
+    "rules": [
+      {
+        "id": "tu",
+        "title": "Pre tú: tvar él",
+        "text": "Kladný imperativ pre tú je rovnaký ako tvar él v prítomnom čase: habla, come, escribe, piensa, duerme.",
+        "examples": [
+          { "es": "Habla más despacio, por favor.", "sk": "Hovor pomalšie, prosím." },
+          { "es": "Come algo antes de salir.", "sk": "Zjedz niečo, kým odídeš." }
+        ]
+      },
+      {
+        "id": "tu-irregular",
+        "title": "Krátke tvary pre tú",
+        "text": "ven (venir), di (decir), sal (salir), haz (hacer), ten (tener), ve (ir), pon (poner), sé (ser). Zložené slovesá dostanú prízvuk: mantén, propón, prevén.",
+        "examples": [
+          { "es": "Ven acá.", "sk": "Poď sem." },
+          { "es": "Ten cuidado con el perro.", "sk": "Daj si pozor na psa." }
+        ]
+      },
+      {
+        "id": "usted",
+        "title": "Pre usted, nosotros a ustedes: subjuntivo",
+        "text": "hable, hablemos, hablen; tenga, tengamos, tengan; vaya, vayan (pre nosotros sa v reči hovorí skôr vamos).",
+        "examples": [
+          { "es": "Pase, por favor.", "sk": "Poďte ďalej, prosím." },
+          { "es": "Tengan cuidado en la carretera.", "sk": "Dávajte si pozor na ceste." }
+        ]
+      },
+      {
+        "id": "negative",
+        "title": "Záporný imperativ: no + subjuntivo",
+        "text": "Pre všetky osoby rovnako: no hables, no vengas, no hagas eso, no se preocupe.",
+        "examples": [
+          { "es": "No te preocupes.", "sk": "Neboj sa." },
+          { "es": "No hagas ruido, el bebé está dormido.", "sk": "Nerob hluk, bábätko spí." }
+        ]
+      },
+      {
+        "id": "pronouns",
+        "title": "Zámená",
+        "text": "Pri kladnom imperative sa zámeno pripája na koniec. Prízvuk ostáva na tej istej slabike, preto sa píše: siéntate, levántense, dímelo. Pri zápornom stojí zámeno pred slovesom: no te sientes, no me lo digas.",
+        "examples": [
+          { "es": "Siéntate aquí.", "sk": "Sadni si sem." },
+          { "es": "Dímelo otra vez.", "sk": "Povedz mi to ešte raz." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subjuntivo",
+    "title": "Subjuntivo presente: tvary",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 2"],
+    "intro": "Subjuntivo je spôsob pre to, čo si niekto želá, čo cíti alebo čo nie je isté. Tvorí sa z prítomného času s „opačnou“ samohláskou: -ar dostane koncovky s -e, -er a -ir koncovky s -a.",
+    "related": ["imperativo", "subj-imperfecto", "presente"],
+    "rules": [
+      {
+        "id": "ar",
+        "title": "Slovesá na -ar: koncovky s -e",
+        "text": "hablar: hable, hables, hable, hablemos, hablen.",
+        "examples": [{ "es": "Espero que hables con ella.", "sk": "Dúfam, že sa s ňou porozprávaš." }]
+      },
+      {
+        "id": "er-ir",
+        "title": "Slovesá na -er a -ir: koncovky s -a",
+        "text": "comer: coma, comas, coma, comamos, coman. vivir: viva, vivas, viva, vivamos, vivan.",
+        "examples": [{ "es": "Quiero que comas algo.", "sk": "Chcem, aby si niečo zjedol." }]
+      },
+      {
+        "id": "yo-stem",
+        "title": "Kmeň z tvaru yo",
+        "text": "Vezmi tvar yo v prítomnom čase, odober -o a pridaj koncovku: tengo → tenga, hago → haga, conozco → conozca, salgo → salga, digo → diga. Kmeň ostáva vo všetkých osobách: tengamos, hagamos.",
+        "examples": [
+          { "es": "Ojalá tengas suerte.", "sk": "Nech máš šťastie." },
+          { "es": "Es mejor que lo hagamos hoy.", "sk": "Bude lepšie, keď to urobíme dnes." }
+        ]
+      },
+      {
+        "id": "stem",
+        "title": "Zmena kmeňa",
+        "text": "Kmeň sa mení ako v prítomnom čase: pueda, quiera, duerma, pida. V tvare nosotros sa pri -ar a -er nemení (podamos, queramos), pri -ir sa e mení na i a o na u (sintamos, durmamos, pidamos).",
+        "examples": [
+          { "es": "No creo que pueda venir.", "sk": "Nemyslím si, že bude môcť prísť." },
+          { "es": "Es importante que durmamos bien.", "sk": "Je dôležité, aby sme sa dobre vyspali." }
+        ]
+      },
+      {
+        "id": "spelling",
+        "title": "Zmena pravopisu",
+        "text": "Pri slovesách na -car, -gar, -zar sa pred -e mení pravopis, aby ostala výslovnosť: buscar → busque, llegar → llegue, empezar → empiece.",
+        "examples": [{ "es": "Avísame cuando llegues.", "sk": "Daj mi vedieť, keď prídeš." }]
+      },
+      {
+        "id": "irregular",
+        "title": "Nepravidelné slovesá",
+        "text": "ser: sea · ir: vaya · estar: esté · saber: sepa · dar: dé · haber: haya.",
+        "examples": [
+          { "es": "Espero que estés bien.", "sk": "Dúfam, že sa máš dobre." },
+          { "es": "Ojalá no haya tráfico.", "sk": "Kiež by nebola zápcha." }
+        ]
+      },
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Po slovesách želania a citu, keď má vedľajšia veta iný podmet (quiero que vengas), po ojalá, po para que a pri zápornom názore (no creo que).",
+        "examples": [{ "es": "Te llamo para que sepas la noticia.", "sk": "Volám ti, aby si vedel tú novinu." }]
+      }
+    ]
+  },
+  {
+    "id": "condicional",
+    "title": "Kondicionál (by)",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática A2 (cortesía), B1 (hipótesis)"],
+    "intro": "Hovorí, čo by sa stalo alebo čo by si urobil. Je to aj zdvorilý spôsob, ako o niečo poprosiť.",
+    "related": ["futuro", "subj-imperfecto"],
+    "rules": [
+      {
+        "id": "endings",
+        "title": "Neurčitok + -ía",
+        "text": "hablar: hablaría, hablarías, hablaría, hablaríamos, hablarían. Rovnako comería, viviría.",
+        "examples": [{ "es": "Yo hablaría con el jefe.", "sk": "Ja by som sa porozprával so šéfom." }]
+      },
+      {
+        "id": "stems",
+        "title": "Rovnaký kmeň ako v budúcom čase",
+        "text": "tener → tendría, poder → podría, salir → saldría, venir → vendría, poner → pondría, decir → diría, hacer → haría, querer → querría, saber → sabría, haber → habría.",
+        "examples": [
+          { "es": "¿Qué harías tú?", "sk": "Čo by si urobil ty?" },
+          { "es": "Podríamos ir al cine.", "sk": "Mohli by sme ísť do kina." }
+        ]
+      },
+      {
+        "id": "politeness",
+        "title": "Zdvorilá prosba",
+        "text": "Me gustaría, ¿podría…?, ¿te importaría…? znie zdvorilejšie ako prítomný čas.",
+        "examples": [
+          { "es": "Me gustaría un café, por favor.", "sk": "Dal by som si kávu, prosím." },
+          { "es": "¿Podrías ayudarme con esto?", "sk": "Mohol by si mi s tým pomôcť?" }
+        ]
+      },
+      {
+        "id": "advice",
+        "title": "Rada a predstava",
+        "text": "Yo que tú… znamená „na tvojom mieste“. Nereálnu podmienku (keby…) vysvetľuje tip o imperfecte de subjuntivo.",
+        "examples": [{ "es": "Yo que tú, tomaría el camión.", "sk": "Na tvojom mieste by som išiel autobusom." }]
+      }
+    ]
+  },
+  {
+    "id": "pluscuamperfecto",
+    "title": "Pluscuamperfecto (už predtým)",
+    "level": "B1",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B1", "UIMP 2026, Lengua Española B1, semana 1"],
+    "intro": "Dej, ktorý sa stal skôr ako iný dej v minulosti: keď som prišiel, film už začal.",
+    "related": ["preterito", "imperfecto"],
+    "rules": [
+      {
+        "id": "form",
+        "title": "había + príčastie",
+        "text": "haber v imperfekte (había, habías, había, habíamos, habían) a príčastie, ktoré sa nemení: hablar → hablado, comer → comido, vivir → vivido. Po samohláske -ído: leído, traído.",
+        "examples": [
+          { "es": "Ya habíamos comido.", "sk": "Už sme mali po jedle." },
+          { "es": "Nunca había visto el mar.", "sk": "Nikdy predtým som nevidel more." }
+        ]
+      },
+      {
+        "id": "participle",
+        "title": "Nepravidelné príčastia",
+        "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "examples": [{ "es": "Le dije que ya lo había hecho.", "sk": "Povedal som mu, že som to už urobil." }]
+      },
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Keď rozprávaš o minulosti a potrebuješ povedať, čo sa stalo ešte predtým. Často s ya (už) a nunca (nikdy).",
+        "examples": [{ "es": "Cuando llegué, la película ya había empezado.", "sk": "Keď som prišiel, film už začal." }]
+      },
+      {
+        "id": "perfecto",
+        "title": "A čo he comido?",
+        "text": "Pretérito perfecto (he comido, has ido) existuje aj v Mexiku, ale používa sa najmä pre „už niekedy“ a „ešte nie“. O ukončenom deji, aj dnešnom, sa hovorí pretéritom: Hoy comí tacos.",
+        "examples": [
+          { "es": "¿Has ido a Oaxaca?", "sk": "Bol si už niekedy v Oaxace?" },
+          { "es": "Todavía no he terminado.", "sk": "Ešte som neskončil." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subj-imperfecto",
+    "title": "Imperfecto de subjuntivo: tvary",
+    "level": "B2",
+    "sources": ["Plan curricular del Instituto Cervantes (2006), Gramática B2", "UIMP 2026, Lengua Española B2, módulo 3"],
+    "intro": "Minulý subjuntivo. Potrebuješ ho pri nereálnej podmienke (si tuviera…) a vo vedľajšej vete, keď je hlavná veta v minulosti (quería que vinieras).",
+    "related": ["subjuntivo", "condicional", "preterito"],
+    "rules": [
+      {
+        "id": "formation",
+        "title": "Z pretérita ellos",
+        "text": "Vezmi tvar ellos v pretérite a -ron zmeň na -ra: hablaron → hablara, tuvieron → tuviera, fueron → fuera, pidieron → pidiera. Nepravidelnosti pretérita sa teda prenesú. V tvare nosotros pribudne prízvuk: habláramos, tuviéramos.",
+        "examples": [
+          { "es": "Si tuviera más tiempo, viajaría más.", "sk": "Keby som mal viac času, viac by som cestoval." },
+          { "es": "Me pidió que fuera con él.", "sk": "Požiadal ma, aby som išiel s ním." }
+        ]
+      },
+      {
+        "id": "se",
+        "title": "Tvar na -se",
+        "text": "V Španielsku sa používa aj tvar hablase, tuviese. V Mexiku ho takmer nepočuť, preto sa ho netreba učiť.",
+        "examples": [{ "es": "Ojalá pudiera ayudarte.", "sk": "Kiež by som ti mohol pomôcť." }]
+      },
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Pri nereálnej podmienke (si + imperfecto de subjuntivo, potom kondicionál), pri želaní, ktoré sa asi nesplní (ojalá pudiera), a vo vedľajšej vete po minulom čase (quería que, me pidió que).",
+        "examples": [
+          { "es": "Mis papás querían que estudiara medicina.", "sk": "Rodičia chceli, aby som študoval medicínu." },
+          { "es": "Si fuera tú, no le diría nada.", "sk": "Byť tebou, nič by som mu nepovedal." }
         ]
       }
     ]
