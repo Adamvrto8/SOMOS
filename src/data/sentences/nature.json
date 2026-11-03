@@ -36,6 +36,13 @@
     "tokens": ["Este", "cerro", "es", "pequeño", ",", "pero", "ese", "volcán", "es", "más", "alto", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "ese",
+        "lemma": "ese",
+        "hint": "ten",
+        "distractors": ["este", "esta", "estos"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "más",
         "lemma": "más",
@@ -343,6 +350,13 @@
     "tokens": ["Esta", "playa", "es", "mejor", "que", "la", "otra", ":", "el", "agua", "es", "más", "limpia", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["estos", "estas", "ese"]
+      },
+      {
         "tokenIndex": 3,
         "answer": "mejor",
         "lemma": "mejor",
@@ -576,6 +590,13 @@
         "lemma": "nadar",
         "hint": "nadar · nosotros · pretérito",
         "distractors": ["Nadé", "Nadó", "Nadaste"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -711,6 +732,13 @@
     "grammar": ["presente"],
     "tokens": ["En", "esta", "playa", "protegen", "los", "huevos", "de", "tortuga", "."],
     "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["este", "estos", "estas"]
+      },
       {
         "tokenIndex": 3,
         "answer": "protegen",
@@ -1228,6 +1256,13 @@
     "tokens": ["Este", "año", "casi", "no", "llovió", ",", "por", "eso", "la", "sequía", "es", "tan", "grave", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["estas", "ese", "esa"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "sequía",
         "lemma": "sequía",
@@ -1414,6 +1449,13 @@
     "tokens": ["Hace", "unos", "años", "nadie", "separaba", "los", "residuos", ";", "hoy", "ya", "es", "costumbre", "."],
     "cloze": [
       {
+        "tokenIndex": 3,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "residuos",
         "lemma": "residuo",
@@ -1472,6 +1514,13 @@
         "lemma": "hacer",
         "hint": "hacer · ellas · pretérito",
         "distractors": ["hacen", "hizo", "hacían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["nadie"]
       }
     ]
   },
@@ -1686,6 +1735,13 @@
         "lemma": "salir",
         "hint": "salir · yo · condicional",
         "distractors": ["saldré", "salía", "salgo"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["para", "con", "de"]
       }
     ]
   },
@@ -1698,6 +1754,13 @@
     "grammar": ["condicional", "presente"],
     "tokens": ["Según", "el", "guía", ",", "tardaríamos", "tres", "horas", "en", "llegar", "a", "la", "cascada", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Según",
+        "lemma": "según",
+        "hint": "podľa",
+        "distractors": ["sin", "con", "de"]
+      },
       {
         "tokenIndex": 4,
         "answer": "tardaríamos",

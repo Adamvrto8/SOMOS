@@ -387,6 +387,13 @@
     "tokens": ["Según", "el", "pronóstico", ",", "mañana", "hará", "mucho", "calor", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Según",
+        "lemma": "según",
+        "hint": "podľa",
+        "distractors": ["en", "a", "para"]
+      },
+      {
         "tokenIndex": 5,
         "answer": "hará",
         "lemma": "hacer",
@@ -428,6 +435,13 @@
         "lemma": "traer",
         "hint": "traer · yo · pretérito",
         "distractors": ["Traigo", "Trajo", "Traeré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["cuando", "pero", "si"]
       }
     ]
   },
@@ -927,6 +941,13 @@
     "tokens": ["Cuando", "era", "niña", ",", "nevaba", "en", "mi", "pueblo", "cada", "invierno", "."],
     "cloze": [
       {
+        "tokenIndex": 8,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["nada", "alguien", "algo"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "invierno",
         "lemma": "invierno",
@@ -1075,6 +1096,13 @@
         "lemma": "poder",
         "hint": "poder · él · presente",
         "distractors": ["pudo", "podía", "podrá"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["para", "con", "de"]
       }
     ]
   },

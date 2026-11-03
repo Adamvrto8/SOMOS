@@ -202,6 +202,13 @@
         "lemma": "celular",
         "hint": "mobil",
         "distractors": ["cargador", "teclado", "archivo"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "durante",
+        "lemma": "durante",
+        "hint": "počas",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -396,6 +403,13 @@
     "tokens": ["Todos", "mis", "amigos", "compartieron", "la", "noticia", "."],
     "cloze": [
       {
+        "tokenIndex": 1,
+        "answer": "mis",
+        "lemma": "mis",
+        "hint": "moje",
+        "distractors": ["tus", "su", "sus"]
+      },
+      {
         "tokenIndex": 3,
         "answer": "compartieron",
         "lemma": "compartir",
@@ -449,6 +463,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Cuando", "no", "había", "internet", ",", "escribíamos", "cartas", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["porque", "si", "que"]
+      },
       {
         "tokenIndex": 5,
         "answer": "escribíamos",
@@ -508,6 +529,13 @@
         "lemma": "estafa",
         "hint": "podvod",
         "distractors": ["estufa", "estación", "tarifa"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "mis",
+        "lemma": "mis",
+        "hint": "moje",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -537,6 +565,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Cancelé", "la", "suscripción", "porque", "casi", "no", "la", "usaba", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["que", "cuando", "pero"]
+      },
       {
         "tokenIndex": 7,
         "answer": "usaba",
@@ -1120,6 +1155,13 @@
     "tokens": ["Mientras", "cocinaba", ",", "escuchaba", "la", "radio", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["porque", "si", "que"]
+      },
+      {
         "tokenIndex": 3,
         "answer": "escuchaba",
         "lemma": "escuchar",
@@ -1402,6 +1444,13 @@
     "grammar": ["comparisons", "presente"],
     "tokens": ["Yo", "tengo", "veinte", "aplicaciones", "y", "mi", "hermano", "cien", ";", "tengo", "menos", "que", "él", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Yo",
+        "lemma": "yo",
+        "hint": "ja",
+        "distractors": ["ustedes", "él", "tú"]
+      },
       {
         "tokenIndex": 10,
         "answer": "menos",

@@ -455,6 +455,13 @@
         "lemma": "decir",
         "hint": "decir · él · presente",
         "distractors": ["dicen", "dices", "dijo"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["nadie"]
       }
     ]
   },
@@ -467,6 +474,13 @@
     "grammar": ["presente"],
     "tokens": ["Desde", "que", "hago", "ejercicio", ",", "tengo", "menos", "estrés", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["a", "para", "sin"]
+      },
       {
         "tokenIndex": 2,
         "answer": "hago",
@@ -503,6 +517,13 @@
     "grammar": ["preterito", "imperfecto"],
     "tokens": ["Fui", "al", "doctor", "porque", "tenía", "mucha", "tos", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["cuando", "pero", "si"]
+      },
       {
         "tokenIndex": 4,
         "answer": "tenía",
@@ -557,6 +578,13 @@
     "grammar": ["presente"],
     "tokens": ["Desde", "que", "duermo", "ocho", "horas", ",", "me", "siento", "con", "más", "energía", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["sin", "con", "de"]
+      },
       {
         "tokenIndex": 2,
         "answer": "duermo",
@@ -619,6 +647,13 @@
     "topics": ["health"],
     "tokens": ["Esta", "pomada", "es", "para", "las", "quemaduras", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esas", "este", "estos"]
+      },
       {
         "tokenIndex": 1,
         "answer": "pomada",
@@ -699,6 +734,13 @@
     "topics": ["health"],
     "tokens": ["No", "tomes", "antibióticos", "sin", "receta", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["en", "a", "para"]
+      },
       {
         "tokenIndex": 4,
         "answer": "receta",
@@ -796,6 +838,13 @@
     "tokens": ["Esta", "pastilla", "tiene", "efectos", "secundarios", ",", "como", "el", "sueño", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esa", "esos", "esas"]
+      },
+      {
         "tokenIndex": 4,
         "answer": "secundarios",
         "lemma": "secundario",
@@ -865,6 +914,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Durante", "la", "pandemia", "todos", "usábamos", "cubrebocas", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Durante",
+        "lemma": "durante",
+        "hint": "počas",
+        "distractors": ["con", "de", "en"]
+      },
       {
         "tokenIndex": 4,
         "answer": "usábamos",
@@ -1201,6 +1257,13 @@
         "lemma": "dieta",
         "hint": "diéta",
         "distractors": ["cirugía", "lesión", "presión"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -1219,6 +1282,13 @@
         "lemma": "creer",
         "hint": "creer · yo · presente",
         "distractors": ["Crees", "Creí", "Creíamos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "mis",
+        "lemma": "mis",
+        "hint": "moje",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -1353,6 +1423,13 @@
         "lemma": "checar",
         "hint": "checar · yo · presente",
         "distractors": ["checas", "chequé", "checábamos"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["nada", "alguien", "algo"]
       }
     ]
   },
@@ -1571,6 +1648,13 @@
         "lemma": "vacuna",
         "hint": "očkovanie",
         "distractors": ["cita", "receta", "herida"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "contra",
+        "lemma": "contra",
+        "hint": "proti",
+        "distractors": ["sin", "con", "de"]
       }
     ]
   },
@@ -1708,6 +1792,13 @@
     "grammar": ["condicional", "presente"],
     "tokens": ["Yo", "en", "tu", "lugar", "iría", "al", "médico", "."],
     "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "distractors": ["sus", "mi", "mis"]
+      },
       {
         "tokenIndex": 4,
         "answer": "iría",

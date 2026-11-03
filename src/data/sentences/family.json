@@ -27,6 +27,13 @@
     "tokens": ["Mi", "abuela", "tiene", "ochenta", "años", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
+      {
         "tokenIndex": 2,
         "answer": "tiene",
         "lemma": "tener",
@@ -50,6 +57,13 @@
         "lemma": "vivir",
         "hint": "vivir · ellos · presente",
         "distractors": ["vive", "vivimos", "vivieron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -86,6 +100,13 @@
         "lemma": "comer",
         "hint": "comer · nosotros · pretérito",
         "distractors": ["comemos", "comieron", "comí"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "de"]
       }
     ]
   },
@@ -98,6 +119,13 @@
     "grammar": ["presente"],
     "tokens": ["Mi", "hijo", "quiere", "un", "perro", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["su", "sus", "mis"]
+      },
       {
         "tokenIndex": 2,
         "answer": "quiere",
@@ -153,6 +181,13 @@
     "tokens": ["Mi", "hermana", "mayor", "vive", "en", "Estados", "Unidos", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
+      {
         "tokenIndex": 3,
         "answer": "vive",
         "lemma": "vivir",
@@ -176,6 +211,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["Tiene", "Tienen", "Tuve"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "de"]
       }
     ]
   },
@@ -188,6 +230,13 @@
     "grammar": ["presente", "ser-estar"],
     "tokens": ["Mis", "papás", "están", "casados", "desde", "hace", "treinta", "años", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mis",
+        "lemma": "mis",
+        "hint": "moje",
+        "distractors": ["mi", "tu", "tus"]
+      },
       {
         "tokenIndex": 2,
         "answer": "están",
@@ -213,6 +262,13 @@
         "lemma": "dormir",
         "hint": "dormir · gerundio",
         "distractors": ["duerme", "dormir", "duermen"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -231,6 +287,13 @@
         "lemma": "visitar",
         "hint": "visitar · nosotros · pretérito",
         "distractors": ["visité", "visitó", "visitaste"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "hasta"]
       }
     ]
   },
@@ -243,6 +306,13 @@
     "grammar": ["presente", "ser-estar"],
     "tokens": ["Mi", "tío", "es", "muy", "divertido", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
       {
         "tokenIndex": 2,
         "answer": "es",
@@ -268,6 +338,13 @@
         "lemma": "tener",
         "hint": "tener · él · presente",
         "distractors": ["tienen", "tienes", "tuvo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "distractors": ["mi", "mis", "tus"]
       }
     ]
   },
@@ -280,6 +357,13 @@
     "grammar": ["presente"],
     "tokens": ["Mi", "abuela", "cocina", "el", "mejor", "mole", "del", "mundo", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["tus", "su", "sus"]
+      },
       {
         "tokenIndex": 2,
         "answer": "cocina",
@@ -304,6 +388,13 @@
         "lemma": "comer",
         "hint": "comer · nosotros · presente",
         "distractors": ["como", "come", "comimos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "en"]
       }
     ]
   },
@@ -386,6 +477,13 @@
         "lemma": "llegar",
         "hint": "llegar · ellos · pretérito",
         "distractors": ["llegaste", "llegamos", "llegan"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "hasta"]
       }
     ]
   },
@@ -404,6 +502,13 @@
         "lemma": "jugar",
         "hint": "jugar · gerundio",
         "distractors": ["juega", "jugar", "juegan"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["sin", "de", "en"]
       }
     ]
   },
@@ -422,6 +527,13 @@
         "lemma": "pequeño",
         "hint": "prídavné meno: pequeño",
         "distractors": ["pequeño", "pequeños", "pequeñas"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -520,6 +632,13 @@
         "lemma": "crecer",
         "hint": "crecer · yo · pretérito",
         "distractors": ["Creció", "Crecieron", "Crecía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["que", "cuando", "porque"]
       }
     ]
   },
@@ -532,6 +651,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Cuando", "éramos", "niños", ",", "mi", "hermano", "y", "yo", "siempre", "nos", "peleábamos", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
+      },
       {
         "tokenIndex": 10,
         "answer": "peleábamos",
@@ -621,6 +747,13 @@
     "tokens": ["Cuando", "mi", "abuelo", "era", "joven", ",", "trabajaba", "en", "el", "campo", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "trabajaba",
         "lemma": "trabajar",
@@ -666,6 +799,13 @@
     "tokens": ["Desde", "que", "nació", "el", "bebé", ",", "casi", "no", "dormimos", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["de", "en", "a"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "dormimos",
         "lemma": "dormir",
@@ -689,6 +829,13 @@
         "lemma": "traer",
         "hint": "traer · ella · presente",
         "distractors": ["traen", "traigo", "trajo"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
       }
     ]
   },
@@ -796,6 +943,13 @@
         "lemma": "gemelo",
         "hint": "dvojčatá",
         "distractors": ["gemelas", "padrinos", "viudos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -807,6 +961,13 @@
     "topics": ["family"],
     "tokens": ["Mi", "tía", "es", "viuda", "desde", "hace", "cinco", "años", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
       {
         "tokenIndex": 3,
         "answer": "viuda",
@@ -902,6 +1063,13 @@
         "lemma": "mantener",
         "hint": "mantener · él · presente",
         "distractors": ["mantienen", "mantuvo", "mantenía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -1024,6 +1192,13 @@
         "lemma": "apapachar",
         "hint": "apapachar · ella · imperfecto",
         "distractors": ["apapachó", "apapacha", "apapacharán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["si", "que", "pero"]
       }
     ]
   },
@@ -1060,6 +1235,13 @@
         "lemma": "ayudar",
         "hint": "ayudar · él · pretérito",
         "distractors": ["ayuda", "ayudaba", "ayudará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["sin", "de", "en"]
       }
     ]
   },
@@ -1123,6 +1305,13 @@
         "lemma": "venir",
         "hint": "venir · ellos · futuro",
         "distractors": ["Vienen", "Vinieron", "Venían"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "tus",
+        "lemma": "tus",
+        "hint": "tvoje",
+        "distractors": ["mi", "mis", "tu"]
       }
     ]
   },
@@ -1141,6 +1330,13 @@
         "lemma": "buscar",
         "hint": "buscar · gerundio",
         "distractors": ["busca", "buscó", "buscaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["para", "sin", "de"]
       }
     ]
   },
@@ -1207,6 +1403,13 @@
     "grammar": ["presente"],
     "tokens": ["Aunque", "vivimos", "lejos", ",", "hablo", "con", "mi", "mamá", "todos", "los", "días", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "hoci",
+        "distractors": ["porque", "si", "que"]
+      },
       {
         "tokenIndex": 4,
         "answer": "hablo",
@@ -1327,6 +1530,13 @@
         "lemma": "convivencia",
         "hint": "spolužitie",
         "distractors": ["herencia", "generación", "quinceañera"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["sin", "de", "en"]
       }
     ]
   },
@@ -1375,6 +1585,13 @@
     "grammar": ["presente"],
     "tokens": ["Cada", "generación", "cree", "que", "la", "siguiente", "la", "tiene", "más", "fácil", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["nada", "alguien", "algo"]
+      },
       {
         "tokenIndex": 2,
         "answer": "cree",
@@ -1491,6 +1708,13 @@
     "grammar": ["presente"],
     "tokens": ["Mis", "hijos", "siempre", "rompen", "los", "juguetes", "nuevos", "en", "un", "día", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mis",
+        "lemma": "mis",
+        "hint": "moje",
+        "distractors": ["sus", "mi", "tu"]
+      },
       {
         "tokenIndex": 3,
         "answer": "rompen",

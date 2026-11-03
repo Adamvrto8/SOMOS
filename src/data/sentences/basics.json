@@ -278,6 +278,13 @@
         "lemma": "poner",
         "hint": "poner · nosotros · imperativo",
         "distractors": ["Pongan", "Ponemos", "Pon"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["sin", "con", "de"]
       }
     ]
   },
@@ -537,6 +544,13 @@
         "lemma": "durante",
         "hint": "počas",
         "distractors": ["Según", "Hacia", "Entre"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["nadie"]
       }
     ]
   },
@@ -755,6 +769,13 @@
     "tokens": ["Por", "lo", "visto", ",", "nadie", "sabía", "que", "la", "tienda", "había", "cerrado", "."],
     "cloze": [
       {
+        "tokenIndex": 4,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
+      },
+      {
         "tokenIndex": 5,
         "answer": "sabía",
         "lemma": "saber",
@@ -814,6 +835,13 @@
         "lemma": "mientras que",
         "hint": "zatiaľ čo (… que)",
         "distractors": ["aunque", "porque", "cuando"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["mis", "tu", "tus"]
       }
     ]
   },
@@ -1100,6 +1128,13 @@
     "tokens": ["Te", "esperé", "desde", "las", "cinco", "hasta", "las", "seis", "."],
     "cloze": [
       {
+        "tokenIndex": 2,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["con", "de", "en"]
+      },
+      {
         "tokenIndex": 5,
         "answer": "hasta",
         "lemma": "hasta",
@@ -1117,6 +1152,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Cada", "mañana", "mi", "abuelo", "leía", "el", "periódico", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["algo", "todo", "nadie"]
+      },
       {
         "tokenIndex": 4,
         "answer": "leía",
@@ -1256,6 +1298,13 @@
         "lemma": "vivir",
         "hint": "vivir · nosotros · imperfecto",
         "distractors": ["vivimos", "vivía", "viven"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "entre",
+        "lemma": "entre",
+        "hint": "medzi",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -1391,6 +1440,13 @@
         "lemma": "respecto a",
         "hint": "čo sa týka (… a)",
         "distractors": ["Acerca", "Según", "Durante"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "distractors": ["mis", "tus", "su"]
       }
     ]
   },
@@ -1831,6 +1887,13 @@
     "tokens": ["Desde", "mi", "punto", "de", "vista", ",", "es", "un", "reto", "muy", "interesante", "."],
     "cloze": [
       {
+        "tokenIndex": 1,
+        "answer": "mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["su", "sus", "mis"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "reto",
         "lemma": "reto",
@@ -1848,6 +1911,13 @@
     "grammar": ["preterito"],
     "tokens": ["Es", "evidente", "que", "nadie", "leyó", "las", "instrucciones", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
+      },
       {
         "tokenIndex": 4,
         "answer": "leyó",
@@ -1902,6 +1972,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Dado", "que", "nadie", "contestaba", ",", "decidimos", "irnos", "."],
     "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
+      },
       {
         "tokenIndex": 3,
         "answer": "contestaba",

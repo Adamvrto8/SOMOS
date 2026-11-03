@@ -549,6 +549,13 @@
     "tokens": ["Cuando", "estaba", "en", "la", "prepa", ",", "odiaba", "las", "matemáticas", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["que", "pero", "porque"]
+      },
+      {
         "tokenIndex": 1,
         "answer": "estaba",
         "lemma": "estar",
@@ -573,6 +580,13 @@
         "lemma": "entender",
         "hint": "entender · yo · presente",
         "distractors": ["entiende", "entendí", "entendemos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "entre",
+        "lemma": "entre",
+        "hint": "medzi",
+        "distractors": ["en", "a", "para"]
       }
     ]
   },
@@ -645,6 +659,13 @@
         "lemma": "entender",
         "hint": "entender · yo · imperfecto",
         "distractors": ["entendían", "entendí", "entendíamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["nadie"]
       }
     ]
   },
@@ -928,6 +949,13 @@
         "lemma": "rendimiento",
         "hint": "výkon; výsledky",
         "distractors": ["rendición", "reglamento", "sentimiento"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -964,6 +992,13 @@
         "lemma": "distinguir",
         "hint": "distinguir · yo · presente",
         "distractors": ["distingue", "distinguí", "distinguía"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "entre",
+        "lemma": "entre",
+        "hint": "medzi",
+        "distractors": ["sin", "con", "de"]
       }
     ]
   },
@@ -1238,6 +1273,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Mi", "promedio", "bajó", "este", "semestre", "porque", "trabajaba", "mientras", "estudiaba", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esta", "estos", "estas"]
+      },
       {
         "tokenIndex": 6,
         "answer": "trabajaba",

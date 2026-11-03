@@ -65,6 +65,13 @@
     "tokens": ["¿", "A", "qué", "hora", "sales", "del", "trabajo", "?"],
     "cloze": [
       {
+        "tokenIndex": 1,
+        "answer": "A",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["hasta", "sin", "en"]
+      },
+      {
         "tokenIndex": 4,
         "answer": "sales",
         "lemma": "salir",
@@ -102,6 +109,13 @@
     "grammar": ["presente", "ser-estar"],
     "tokens": ["Mi", "jefe", "está", "en", "una", "junta", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
       {
         "tokenIndex": 2,
         "answer": "está",
@@ -236,6 +250,13 @@
         "lemma": "platicar",
         "hint": "platicar · gerundio",
         "distractors": ["platicado", "platican", "platicar"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "de"]
       }
     ]
   },
@@ -326,6 +347,13 @@
         "lemma": "ganar",
         "hint": "ganar · yo · presente",
         "distractors": ["Gana", "Ganan", "Gané"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["que", "cuando", "porque"]
       }
     ]
   },
@@ -774,6 +802,13 @@
         "hint": "ser/estar · yo · imperfecto",
         "why": "profession",
         "distractors": ["estaba", "soy", "seré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["que", "cuando", "porque"]
       }
     ]
   },
@@ -1394,6 +1429,13 @@
         "lemma": "renunciar",
         "hint": "renunciar · él · pretérito",
         "distractors": ["Renuncia", "Renuncié", "Renunciaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "si", "que"]
       }
     ]
   },
@@ -1577,6 +1619,13 @@
         "lemma": "llamar",
         "hint": "llamar · yo · futuro",
         "distractors": ["llamará", "llamarán", "llamo"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
       }
     ]
   },
@@ -1820,6 +1869,13 @@
         "lemma": "desempeño",
         "hint": "výkon",
         "distractors": ["desempleo", "descanso", "desayuno"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["estas", "ese", "esa"]
       }
     ]
   },
@@ -1910,6 +1966,13 @@
         "lemma": "merecer",
         "hint": "merecer · yo · presente",
         "distractors": ["mereces", "merecí", "merecía"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["ese", "esa", "esos"]
       }
     ]
   },

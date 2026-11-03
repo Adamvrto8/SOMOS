@@ -74,6 +74,13 @@
         "lemma": "salir",
         "hint": "salir · él · presente",
         "distractors": ["salgo", "salen", "salió"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -86,6 +93,13 @@
     "grammar": ["presente"],
     "tokens": ["¿", "A", "qué", "hora", "llega", "el", "camión", "?"],
     "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "A",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "hasta"]
+      },
       {
         "tokenIndex": 4,
         "answer": "llega",
@@ -130,6 +144,13 @@
         "lemma": "llegar",
         "hint": "llegar · nosotros · pretérito",
         "distractors": ["Llegaron", "Llegué", "Llegaste"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["sin", "en", "de"]
       }
     ]
   },
@@ -148,6 +169,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["van", "voy", "fuimos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["hasta", "sin", "en"]
       }
     ]
   },
@@ -185,6 +213,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · pretérito",
         "distractors": ["vamos", "fueron", "fui"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "hasta"]
       }
     ]
   },
@@ -239,6 +274,13 @@
         "lemma": "hacer",
         "hint": "hacer · tú · pretérito",
         "distractors": ["haces", "hizo", "haciste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "de"]
       }
     ]
   },
@@ -421,6 +463,13 @@
         "lemma": "volver",
         "hint": "volver · ellos · pretérito",
         "distractors": ["volviste", "volvimos", "vuelven"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "hasta", "sin"]
       }
     ]
   },
@@ -475,6 +524,13 @@
         "lemma": "manejar",
         "hint": "manejar · nosotros · pretérito",
         "distractors": ["Manejé", "Manejó", "Manejaste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do, po",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -504,7 +560,22 @@
     "topics": ["travel"],
     "grammar": ["articles", "gender"],
     "tokens": ["El", "guía", "nos", "explicó", "la", "historia", "de", "la", "ciudad", "."],
-    "cloze": [{ "tokenIndex": 4, "answer": "la", "lemma": "el", "hint": "člen", "distractors": ["el", "los", "las"] }]
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "los", "las"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "en"]
+      }
+    ]
   },
   {
     "id": "s169",
@@ -552,6 +623,13 @@
     "tokens": ["Mientras", "esperábamos", "el", "vuelo", ",", "comimos", "tacos", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["si", "que", "pero"]
+      },
+      {
         "tokenIndex": 1,
         "answer": "esperábamos",
         "lemma": "esperar",
@@ -587,6 +665,13 @@
     "grammar": ["imperfecto", "ser-estar"],
     "tokens": ["Cuando", "llegamos", ",", "el", "hotel", "ya", "estaba", "lleno", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
+      },
       {
         "tokenIndex": 6,
         "answer": "estaba",
@@ -659,6 +744,13 @@
     "grammar": ["preterito", "imperfecto"],
     "tokens": ["Cuando", "llegamos", "a", "Mérida", ",", "hacía", "un", "calor", "horrible", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["que", "pero", "porque"]
+      },
       {
         "tokenIndex": 5,
         "answer": "hacía",
@@ -834,6 +926,13 @@
         "lemma": "aterrizar",
         "hint": "aterrizar · él · pretérito",
         "distractors": ["aterriza", "aterrizaba", "aterrizará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["sin", "de", "en"]
       }
     ]
   },
@@ -1201,6 +1300,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Mientras", "yo", "documentaba", "las", "maletas", ",", "mi", "esposa", "cambiaba", "dinero", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["si", "que", "pero"]
+      },
       {
         "tokenIndex": 8,
         "answer": "cambiaba",

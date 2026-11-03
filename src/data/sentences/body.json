@@ -231,6 +231,13 @@
         "lemma": "rodilla",
         "hint": "koleno",
         "distractors": ["cabeza", "espalda", "mano"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -330,6 +337,13 @@
     "grammar": ["imperfecto", "preterito", "ser-estar"],
     "tokens": ["Cuando", "era", "niño", ",", "me", "rompí", "el", "brazo", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["si", "que", "pero"]
+      },
       {
         "tokenIndex": 1,
         "answer": "era",
@@ -524,6 +538,13 @@
     "tokens": ["Me", "duele", "la", "cadera", "cuando", "camino", "mucho", "."],
     "cloze": [
       {
+        "tokenIndex": 4,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
+      },
+      {
         "tokenIndex": 5,
         "answer": "camino",
         "lemma": "caminar",
@@ -563,6 +584,13 @@
         "lemma": "pelón",
         "hint": "plešatý",
         "distractors": ["pelona", "pelo", "peludo"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["que", "cuando", "porque"]
       }
     ]
   },
@@ -660,6 +688,13 @@
     "topics": ["body"],
     "tokens": ["Con", "la", "edad", "duelen", "más", "las", "articulaciones", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "a", "para"]
+      },
       {
         "tokenIndex": 6,
         "answer": "articulaciones",
@@ -854,6 +889,13 @@
         "lemma": "dormir",
         "hint": "dormir · yo · pretérito",
         "distractors": ["duermo", "durmió", "dormía"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -943,6 +985,13 @@
         "lemma": "ir",
         "hint": "ir · yo · futuro",
         "distractors": ["voy", "fui", "iba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["cuando", "pero", "si"]
       }
     ]
   },
@@ -1112,6 +1161,13 @@
         "lemma": "cuello",
         "hint": "krk",
         "distractors": ["pelo", "talón", "lunar"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -1249,6 +1305,13 @@
     "tokens": ["Antes", "me", "mordía", "las", "uñas", ",", "pero", "ya", "dejé", "esa", "costumbre", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["porque", "si", "que"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "dejé",
         "lemma": "dejar",
@@ -1329,6 +1392,13 @@
     "grammar": ["presente"],
     "tokens": ["Desde", "que", "me", "operaron", "la", "rodilla", ",", "ando", "con", "mucho", "cuidado", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["para", "sin", "con"]
+      },
       {
         "tokenIndex": 7,
         "answer": "ando",
@@ -1428,6 +1498,13 @@
     "tokens": ["Mi", "tío", "es", "bien", "panzón", ",", "pero", "dice", "que", "es", "pura", "masa", "muscular", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["si", "que", "cuando"]
+      },
+      {
         "tokenIndex": 7,
         "answer": "dice",
         "lemma": "decir",
@@ -1512,6 +1589,13 @@
         "lemma": "doler",
         "hint": "doler · ellos · imperfecto",
         "distractors": ["duelen", "dolieron", "dolerán"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["todo", "nadie", "nada"]
       }
     ]
   },

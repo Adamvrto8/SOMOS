@@ -187,6 +187,13 @@
         "lemma": "jugar",
         "hint": "jugar · yo · pretérito",
         "distractors": ["Jugó", "Jugaron", "Juego"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "a", "para"]
       }
     ]
   },
@@ -450,6 +457,13 @@
     "grammar": ["preterito"],
     "tokens": ["Mi", "equipo", "ganó", "el", "torneo", "después", "de", "diez", "años", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["tus", "su", "sus"]
+      },
       {
         "tokenIndex": 2,
         "answer": "ganó",
@@ -1115,6 +1129,13 @@
         "lemma": "pensar",
         "hint": "pensar · nosotros · presente",
         "distractors": ["Pienso", "Piensan", "Pensarán"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esos", "esas", "esta"]
       }
     ]
   },
@@ -1212,6 +1233,13 @@
         "lemma": "dejar",
         "hint": "dejar · yo · pretérito",
         "distractors": ["Dejo", "Dejamos", "Dejaban"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -1246,6 +1274,13 @@
         "lemma": "porra",
         "hint": "povzbudzovanie",
         "distractors": ["medallas", "goleadas", "premiaciones"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do, po",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -1265,6 +1300,13 @@
         "hint": "ser/estar · él · pretérito",
         "why": "expression",
         "distractors": ["fue", "estaba", "estuvieron"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
       }
     ]
   },
@@ -1348,6 +1390,13 @@
     "grammar": ["preterito"],
     "tokens": ["Aunque", "perdieron", ",", "los", "jugadores", "dejaron", "el", "alma", "en", "la", "cancha", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "hoci",
+        "distractors": ["pero", "porque", "si"]
+      },
       {
         "tokenIndex": 1,
         "answer": "perdieron",

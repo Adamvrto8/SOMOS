@@ -15,6 +15,13 @@
         "hint": "ser/estar · ellas · presente",
         "why": "time",
         "distractors": ["Es", "Están", "Somos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "hasta", "sin"]
       }
     ]
   },
@@ -69,6 +76,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["tiene", "tienes", "tuve"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -87,6 +101,13 @@
         "lemma": "hacer",
         "hint": "hacer · tú · presente",
         "distractors": ["hago", "hace", "hiciste"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["hasta", "sin", "a"]
       }
     ]
   },
@@ -122,6 +143,13 @@
         "lemma": "mañana",
         "hint": "zajtra",
         "distractors": ["hoy", "ayer", "tarde"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hasta"]
       }
     ]
   },
@@ -609,6 +637,13 @@
         "lemma": "levantarse",
         "hint": "levantarse · yo · imperfecto",
         "distractors": ["levanto", "levanté", "levantaré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -997,6 +1032,13 @@
     "tokens": ["Este", "trimestre", "las", "ventas", "aumentaron", "un", "diez", "por", "ciento", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esa", "esos", "esas"]
+      },
+      {
         "tokenIndex": 4,
         "answer": "aumentaron",
         "lemma": "aumentar",
@@ -1120,6 +1162,13 @@
     "grammar": ["progresivo"],
     "tokens": ["Mientras", "tanto", ",", "yo", "voy", "preparando", "la", "comida", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "yo",
+        "lemma": "yo",
+        "hint": "ja",
+        "distractors": ["ellos", "ustedes", "él"]
+      },
       {
         "tokenIndex": 5,
         "answer": "preparando",

@@ -74,6 +74,13 @@
         "lemma": "vivir",
         "hint": "vivir · yo · presente",
         "distractors": ["Vive", "Vives", "Viví"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hasta"]
       }
     ]
   },
@@ -113,6 +120,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "place",
         "distractors": ["es", "están", "estás"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "hasta", "sin"]
       }
     ]
   },
@@ -379,6 +393,13 @@
         "lemma": "subir",
         "hint": "subir · ella · presente",
         "distractors": ["suben", "subes", "subió"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["nada", "alguien", "algo"]
       }
     ]
   },
@@ -499,6 +520,13 @@
         "lemma": "quedarse",
         "hint": "quedarse · yo · presente",
         "distractors": ["queda", "quedan", "quedé"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "hasta"]
       }
     ]
   },
@@ -530,6 +558,13 @@
     "tokens": ["Nuestra", "casa", "es", "vieja", "pero", "muy", "cómoda", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Nuestra",
+        "lemma": "nuestra",
+        "hint": "naša",
+        "distractors": ["mis", "tu", "tus"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "cómoda",
         "lemma": "cómodo",
@@ -553,6 +588,13 @@
         "lemma": "sentarse",
         "hint": "sentarse · él · pretérito",
         "distractors": ["sentaron", "sentaste", "sienta"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hasta"]
       }
     ]
   },
@@ -681,6 +723,13 @@
     "tokens": ["Cuando", "llegué", "a", "casa", ",", "los", "niños", "ya", "estaban", "dormidos", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "porque", "si"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "estaban",
         "lemma": "estar",
@@ -777,6 +826,13 @@
         "lemma": "ser",
         "hint": "ser · él · imperfecto",
         "distractors": ["eran", "eras", "fue"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -1207,6 +1263,13 @@
         "lemma": "tener",
         "hint": "tener · nosotros · presente",
         "distractors": ["tengo", "tuvieron", "teníamos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -1327,6 +1390,13 @@
     "tokens": ["Desde", "que", "remodelamos", "el", "baño", ",", "la", "casa", "se", "ve", "mucho", "más", "amplia", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["sin", "con", "de"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "ve",
         "lemma": "ver",
@@ -1415,6 +1485,13 @@
     "grammar": ["futuro"],
     "tokens": ["Aunque", "el", "departamento", "está", "amueblado", ",", "traeremos", "nuestra", "propia", "cama", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "hoci",
+        "distractors": ["porque", "si", "que"]
+      },
       {
         "tokenIndex": 6,
         "answer": "traeremos",

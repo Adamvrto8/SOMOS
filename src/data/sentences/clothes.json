@@ -239,6 +239,13 @@
         "lemma": "comprar",
         "hint": "comprar · tú · pretérito",
         "distractors": ["compramos", "compré", "compras"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["estos", "estas", "ese"]
       }
     ]
   },
@@ -420,6 +427,13 @@
     "tokens": ["Esta", "chamarra", "me", "queda", "grande", ";", "necesito", "una", "talla", "más", "chica", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esas", "este", "estos"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "necesito",
         "lemma": "necesitar",
@@ -456,6 +470,13 @@
     "tokens": ["Antes", "me", "vestía", "de", "negro", ",", "pero", "ahora", "prefiero", "la", "ropa", "de", "colores", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["porque", "si", "que"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "prefiero",
         "lemma": "preferir",
@@ -479,6 +500,13 @@
         "lemma": "cambiar",
         "hint": "cambiar · yo · pretérito",
         "distractors": ["Cambio", "Cambió", "Cambiaré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["que", "cuando", "pero"]
       }
     ]
   },
@@ -497,6 +525,13 @@
         "lemma": "ponerse",
         "hint": "ponerse · yo · presente",
         "distractors": ["pone", "puse", "ponía"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -544,6 +579,13 @@
     "topics": ["clothes"],
     "tokens": ["Esta", "sudadera", "es", "de", "algodón", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["ese", "esa", "esos"]
+      },
       {
         "tokenIndex": 4,
         "answer": "algodón",
@@ -668,6 +710,13 @@
     "topics": ["clothes"],
     "tokens": ["Estos", "jeans", "me", "quedan", "muy", "ajustados", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "distractors": ["esas", "este", "esta"]
+      },
       {
         "tokenIndex": 5,
         "answer": "ajustados",
@@ -1044,6 +1093,13 @@
     "tokens": ["Este", "anillo", "es", "de", "oro", "y", "era", "de", "mi", "abuela", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["ese", "esa", "esos"]
+      },
+      {
         "tokenIndex": 1,
         "answer": "anillo",
         "lemma": "anillo",
@@ -1258,6 +1314,13 @@
     "tokens": ["La", "tela", "de", "esta", "blusa", "es", "de", "lana", ",", "por", "eso", "pica", "un", "poco", "."],
     "cloze": [
       {
+        "tokenIndex": 3,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esa", "esos", "esas"]
+      },
+      {
         "tokenIndex": 7,
         "answer": "lana",
         "lemma": "lana",
@@ -1292,6 +1355,13 @@
     "topics": ["clothes"],
     "tokens": ["No", "sé", "si", "esta", "corbata", "combina", "con", "el", "traje", "gris", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esos", "esas", "este"]
+      },
       {
         "tokenIndex": 8,
         "answer": "traje",
@@ -1334,6 +1404,13 @@
         "lemma": "andar",
         "hint": "andar · él · presente",
         "distractors": ["ando", "anduvo", "andaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -1498,6 +1575,13 @@
     "tokens": ["Esa", "blusa", "bordada", "la", "hicieron", "a", "mano", "artesanas", "de", "Chiapas", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["estos", "estas", "ese"]
+      },
+      {
         "tokenIndex": 4,
         "answer": "hicieron",
         "lemma": "hacer",
@@ -1515,6 +1599,13 @@
     "grammar": ["presente"],
     "tokens": ["Esa", "camisa", "te", "queda", "muy", "bien", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["esos", "esas", "este"]
+      },
       {
         "tokenIndex": 3,
         "answer": "queda",

@@ -251,6 +251,13 @@
         "lemma": "ahorrar",
         "hint": "ahorrar · yo · imperfecto",
         "distractors": ["Ahorro", "Ahorró", "Ahorraré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["nada", "alguien", "algo"]
       }
     ]
   },
@@ -429,6 +436,13 @@
         "lemma": "pesar",
         "hint": "pesar · él · presente",
         "distractors": ["pesas", "pesan", "pesó"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "distractors": ["tus", "su", "sus"]
       }
     ]
   },
@@ -620,6 +634,13 @@
     "grammar": ["preterito"],
     "tokens": ["Según", "las", "estadísticas", ",", "el", "desempleo", "disminuyó", "este", "año", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Según",
+        "lemma": "según",
+        "hint": "podľa",
+        "distractors": ["a", "para", "sin"]
+      },
       {
         "tokenIndex": 6,
         "answer": "disminuyó",
@@ -952,6 +973,13 @@
         "lemma": "pasar",
         "hint": "pasar · él · imperfecto",
         "distractors": ["pasa", "pasó", "pasarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["alguien", "algo", "todo"]
       }
     ]
   },
@@ -1488,6 +1516,13 @@
         "lemma": "contar",
         "hint": "contar · tú · subjuntivo",
         "distractors": ["cuentas", "contarás", "contaste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do, po",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -1506,6 +1541,13 @@
         "lemma": "sumar",
         "hint": "sumar · nosotros · subjuntivo",
         "distractors": ["sumamos", "sumaremos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["de", "en", "a"]
       }
     ]
   }

@@ -872,6 +872,13 @@
         "lemma": "achicopalado",
         "hint": "skleslý (MX)",
         "distractors": ["achicopalada", "acompañado", "apapachado"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -1219,6 +1226,13 @@
         "lemma": "enojarse",
         "hint": "enojarse · ella · pretérito",
         "distractors": ["enoja", "enojé", "enojará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["que", "cuando", "pero"]
       }
     ]
   },
@@ -1253,6 +1267,13 @@
         "lemma": "aliviado",
         "hint": "s úľavou",
         "distractors": ["aliviada", "alineado", "olvidado"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["si", "que", "pero"]
       }
     ]
   },
@@ -1605,6 +1626,13 @@
     "tokens": ["Gracias", "por", "tus", "palabras", ",", "me", "dejaste", "muy", "conmovido", "."],
     "cloze": [
       {
+        "tokenIndex": 2,
+        "answer": "tus",
+        "lemma": "tus",
+        "hint": "tvoje",
+        "distractors": ["mi", "mis", "tu"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "conmovido",
         "lemma": "conmovido",
@@ -1628,6 +1656,13 @@
         "lemma": "andar",
         "hint": "andar · yo · presente",
         "distractors": ["Andas", "Anduve", "Andábamos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["a", "para", "sin"]
       }
     ]
   },
@@ -1782,6 +1817,13 @@
         "lemma": "platicar",
         "hint": "platicar · ella · imperfecto",
         "distractors": ["platicábamos", "platica", "platico"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["para", "sin", "de"]
       }
     ]
   },

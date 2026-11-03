@@ -167,6 +167,13 @@
     "tokens": ["Mi", "carro", "está", "en", "el", "estacionamiento", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "distractors": ["sus", "mis", "tu"]
+      },
+      {
         "tokenIndex": 2,
         "answer": "está",
         "lemma": "estar",
@@ -191,6 +198,13 @@
         "lemma": "venir",
         "hint": "venir · tú · presente",
         "distractors": ["Vengo", "Viene", "Vienen"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -229,6 +243,13 @@
         "lemma": "ir",
         "hint": "ir · yo · presente",
         "distractors": ["Va", "Vamos", "Fui"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["sin", "en", "de"]
       }
     ]
   },
@@ -240,7 +261,22 @@
     "topics": ["city", "time"],
     "grammar": ["articles", "gender"],
     "tokens": ["La", "tienda", "cierra", "a", "las", "nueve", "."],
-    "cloze": [{ "tokenIndex": 0, "answer": "La", "lemma": "el", "hint": "člen", "distractors": ["El", "Los", "Las"] }]
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "La",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["El", "Los", "Las"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["hasta", "sin", "en"]
+      }
+    ]
   },
   {
     "id": "s038",
@@ -275,6 +311,13 @@
         "lemma": "comprar",
         "hint": "comprar · yo · pretérito",
         "distractors": ["compro", "compró", "compraste"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -348,6 +391,13 @@
         "lemma": "encontrar",
         "hint": "encontrar · yo · presente",
         "distractors": ["encuentra", "encuentran", "encontré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "en"]
       }
     ]
   },
@@ -471,6 +521,13 @@
         "lemma": "estacionar",
         "hint": "estacionar · yo · pretérito",
         "distractors": ["Estacionó", "Estacionaron", "Estaciono"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "hasta"]
       }
     ]
   },
@@ -529,6 +586,13 @@
         "lemma": "subir",
         "hint": "subir · nosotros · pretérito",
         "distractors": ["Subí", "Subió", "Subiste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "hasta", "sin"]
       }
     ]
   },
@@ -618,6 +682,13 @@
         "lemma": "tanto",
         "hint": "toľko",
         "distractors": ["tanta", "tantos", "muy"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esa", "esos", "esas"]
       }
     ]
   },
@@ -654,6 +725,13 @@
         "lemma": "perder",
         "hint": "perder · nosotros · pretérito",
         "distractors": ["perdemos", "perdieron", "perderemos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "si", "que"]
       }
     ]
   },
@@ -684,6 +762,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Cuando", "vivía", "en", "la", "Ciudad", "de", "México", ",", "tomaba", "el", "metro", "todos", "los", "días", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["si", "que", "pero"]
+      },
       {
         "tokenIndex": 8,
         "answer": "tomaba",
@@ -890,6 +975,13 @@
     "tokens": ["En", "esta", "colonia", "bajó", "mucho", "la", "delincuencia", "."],
     "cloze": [
       {
+        "tokenIndex": 1,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["esa", "esos", "esas"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "delincuencia",
         "lemma": "delincuencia",
@@ -941,6 +1033,13 @@
     "topics": ["city"],
     "tokens": ["La", "vida", "urbana", "es", "estresante", ",", "pero", "tiene", "muchas", "ventajas", "."],
     "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["si", "que", "cuando"]
+      },
       {
         "tokenIndex": 9,
         "answer": "ventajas",
@@ -1072,6 +1171,13 @@
         "lemma": "pueblo",
         "hint": "dedina, mestečko",
         "distractors": ["semáforo", "puente", "tope"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -1126,6 +1232,13 @@
         "lemma": "mudarse",
         "hint": "mudarse · nosotros · pretérito",
         "distractors": ["mudo", "mudaron", "mudábamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["si", "que", "cuando"]
       }
     ]
   },
@@ -1254,6 +1367,13 @@
     "grammar": ["preterito"],
     "tokens": ["Desde", "que", "abrieron", "la", "nueva", "línea", "del", "metrobús", ",", "llego", "al", "trabajo", "en", "media", "hora", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["para", "sin", "con"]
+      },
       {
         "tokenIndex": 2,
         "answer": "abrieron",
@@ -1407,6 +1527,13 @@
     "grammar": ["presente"],
     "tokens": ["Dicen", "que", "van", "a", "ampliar", "el", "metro", "hasta", "el", "aeropuerto", ",", "pero", "nadie", "les", "cree", "."],
     "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "distractors": ["nada"]
+      },
       {
         "tokenIndex": 14,
         "answer": "cree",

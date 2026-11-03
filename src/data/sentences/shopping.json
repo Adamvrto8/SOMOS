@@ -62,6 +62,13 @@
     "tokens": ["Esa", "chamarra", "es", "muy", "bonita", ";", "la", "voy", "a", "comprar", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["estas", "ese", "esos"]
+      },
+      {
         "tokenIndex": 6,
         "answer": "la",
         "lemma": "la",
@@ -155,6 +162,13 @@
     "grammar": ["object-pronouns", "presente", "imperativo"],
     "tokens": ["Estos", "zapatos", "son", "baratos", ";", "cómpralos", "hoy", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "distractors": ["ese", "esa", "esos"]
+      },
       {
         "tokenIndex": 5,
         "answer": "cómpralos",
@@ -251,6 +265,13 @@
     "grammar": ["object-pronouns", "imperfecto", "preterito"],
     "tokens": ["Mi", "hermano", "quería", "esa", "camisa", "y", "se", "la", "compré", "ayer", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["esos", "esas", "este"]
+      },
       {
         "tokenIndex": 6,
         "answer": "se",
@@ -445,6 +466,13 @@
         "lemma": "querer",
         "hint": "querer · yo · presente",
         "distractors": ["Quiere", "Quieren", "Quise"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "distractors": ["este", "esta", "estas"]
       }
     ]
   },
@@ -650,6 +678,13 @@
         "lemma": "subir",
         "hint": "subir · ellos · pretérito",
         "distractors": ["subiste", "subimos", "suben"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esos", "esas", "esta"]
       }
     ]
   },
@@ -751,6 +786,13 @@
     "tokens": ["Compramos", "el", "carro", "a", "plazos", ",", "con", "un", "enganche", "del", "veinte", "por", "ciento", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "a"]
+      },
+      {
         "tokenIndex": 8,
         "answer": "enganche",
         "lemma": "enganche",
@@ -784,6 +826,13 @@
     "topics": ["shopping", "food"],
     "tokens": ["Ese", "yogur", "ya", "está", "caducado", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ese",
+        "lemma": "ese",
+        "hint": "ten",
+        "distractors": ["esas", "este", "esta"]
+      },
       {
         "tokenIndex": 4,
         "answer": "caducado",
@@ -1212,6 +1261,13 @@
     "topics": ["shopping"],
     "tokens": ["Me", "parece", "que", "esa", "ganga", "era", "demasiado", "buena", "para", "ser", "verdad", "."],
     "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["esas", "este", "esta"]
+      },
       {
         "tokenIndex": 4,
         "answer": "ganga",
@@ -1690,6 +1746,13 @@
     "grammar": ["pluscuamperfecto", "imperfecto"],
     "tokens": ["Quería", "esa", "chamarra", ",", "pero", "ya", "la", "habían", "vendido", "."],
     "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "distractors": ["ese", "esos", "esas"]
+      },
       {
         "tokenIndex": 8,
         "answer": "vendido",

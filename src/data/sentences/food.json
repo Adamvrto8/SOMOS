@@ -191,6 +191,13 @@
         "lemma": "jugo",
         "hint": "džús",
         "distractors": ["agua", "café", "refresco"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["sin", "a", "en"]
       }
     ]
   },
@@ -253,6 +260,13 @@
         "lemma": "hacer",
         "hint": "hacer · ella · pretérito",
         "distractors": ["hace", "hice", "hació"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["para", "sin", "de"]
       }
     ]
   },
@@ -271,6 +285,13 @@
         "lemma": "probar",
         "hint": "probar · yo · pretérito",
         "distractors": ["probó", "probaron", "pruebo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hasta"]
       }
     ]
   },
@@ -378,6 +399,13 @@
         "lemma": "preferir",
         "hint": "preferir · yo · presente",
         "distractors": ["Prefiere", "Prefieren", "Preferí"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -396,6 +424,13 @@
         "lemma": "ir",
         "hint": "ir · tú · presente",
         "distractors": ["vamos", "voy", "fuiste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["hasta", "sin", "en"]
       }
     ]
   },
@@ -514,6 +549,13 @@
         "lemma": "desayunar",
         "hint": "desayunar · yo · presente",
         "distractors": ["Desayuna", "Desayunan", "Desayuné"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -532,6 +574,13 @@
         "lemma": "comprar",
         "hint": "comprar · yo · pretérito",
         "distractors": ["Compró", "Compraron", "Compro"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hasta"]
       }
     ]
   },
@@ -550,6 +599,13 @@
         "lemma": "traer",
         "hint": "traer · yo · presente",
         "distractors": ["Trae", "Traen", "Traje"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "algo",
+        "lemma": "algo",
+        "hint": "niečo",
+        "distractors": ["todo", "alguien"]
       }
     ]
   },
@@ -562,6 +618,13 @@
     "grammar": ["presente"],
     "tokens": ["Este", "puesto", "vende", "los", "mejores", "tacos", "de", "la", "colonia", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esos", "esas", "esta"]
+      },
       {
         "tokenIndex": 2,
         "answer": "vende",
@@ -676,6 +739,13 @@
         "lemma": "cocinar",
         "hint": "cocinar · nosotros · imperativo",
         "distractors": ["Cocinen", "Cocinamos", "Cocina"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "algo",
+        "lemma": "algo",
+        "hint": "niečo",
+        "distractors": ["alguien", "todo"]
       }
     ]
   },
@@ -688,6 +758,13 @@
     "grammar": ["condicional", "presente"],
     "tokens": ["Yo", "pediría", "el", "pescado", ",", "se", "ve", "delicioso", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Yo",
+        "lemma": "yo",
+        "hint": "ja",
+        "distractors": ["nosotros", "ellos", "ustedes"]
+      },
       {
         "tokenIndex": 1,
         "answer": "pediría",
@@ -932,6 +1009,13 @@
     "tokens": ["Este", "pastel", "está", "demasiado", "empalagoso", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esta", "estos", "estas"]
+      },
+      {
         "tokenIndex": 4,
         "answer": "empalagoso",
         "lemma": "empalagoso",
@@ -948,6 +1032,13 @@
     "topics": ["food"],
     "tokens": ["Sin", "sal", ",", "la", "comida", "queda", "desabrida", "."],
     "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["en", "a", "para"]
+      },
       {
         "tokenIndex": 6,
         "answer": "desabrida",
@@ -1484,6 +1575,13 @@
     "tokens": ["El", "chile", "habanero", "es", "tan", "picoso", "que", "hasta", "me", "hizo", "llorar", "."],
     "cloze": [
       {
+        "tokenIndex": 7,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do, po",
+        "distractors": ["con", "de", "en"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "hizo",
         "lemma": "hacer",
@@ -1814,6 +1912,13 @@
     "tokens": ["Yo", "corto", "la", "cebolla", "y", "tú", "pelas", "las", "papas", "."],
     "cloze": [
       {
+        "tokenIndex": 0,
+        "answer": "Yo",
+        "lemma": "yo",
+        "hint": "ja",
+        "distractors": ["ustedes", "él", "tú"]
+      },
+      {
         "tokenIndex": 1,
         "answer": "corto",
         "lemma": "cortar",
@@ -1931,6 +2036,13 @@
     "tokens": ["La", "comida", "chatarra", "es", "barata", ",", "pero", "no", "es", "nutritiva", "."],
     "cloze": [
       {
+        "tokenIndex": 6,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["cuando", "porque", "si"]
+      },
+      {
         "tokenIndex": 9,
         "answer": "nutritiva",
         "lemma": "nutritivo",
@@ -1984,6 +2096,13 @@
     "tokens": ["Prefiero", "cocinar", "en", "casa", "porque", "en", "los", "restaurantes", "todo", "es", "muy", "grasoso", "."],
     "cloze": [
       {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "si", "que"]
+      },
+      {
         "tokenIndex": 11,
         "answer": "grasoso",
         "lemma": "grasoso",
@@ -2001,6 +2120,13 @@
     "grammar": ["imperfecto"],
     "tokens": ["Mientras", "mi", "mamá", "hacía", "las", "tortillas", ",", "yo", "preparaba", "la", "salsa", "."],
     "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "yo",
+        "lemma": "yo",
+        "hint": "ja",
+        "distractors": ["tú", "nosotros", "ellos"]
+      },
       {
         "tokenIndex": 8,
         "answer": "preparaba",
