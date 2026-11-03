@@ -24,6 +24,9 @@ export const TENSE_LABELS: Record<TableTense, string> = {
   preterito: 'pretérito',
   imperfecto: 'imperfecto',
   futuro: 'futuro',
+  subjuntivo: 'subjuntivo',
+  subjImperfecto: 'subj. imperfecto',
+  condicional: 'condicional',
 }
 
 const REFLEXIVE_PRONOUN: Record<Person, string> = { yo: 'me', tu: 'te', el: 'se', nosotros: 'nos', ellos: 'se' }

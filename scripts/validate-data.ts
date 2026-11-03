@@ -1,7 +1,18 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import {
+  deriveCondicional,
+  deriveImperativo,
+  deriveParticiple,
+  deriveSubjImperfecto,
+  deriveSubjuntivo,
+  IMPERATIVE_PERSONS,
+  regularImperativo,
+  regularNew,
+  regularParticiple,
+} from '../src/lib/verbForms.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -31,7 +42,11 @@ const fail = (where: string, message: string) => errors.push(`${where}: ${messag
 
 const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos']
-const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro']
+const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro', 'subjuntivo', 'subjImperfecto', 'condicional']
+// The B1–B2 tenses follow from the others by the rules of src/lib/verbForms.ts.
+const DERIVED_TENSES = ['subjuntivo', 'subjImperfecto', 'condicional'] as const
+type StoredTense = Exclude<Tense, (typeof DERIVED_TENSES)[number]>
+const isDerived = (tense: Tense): tense is (typeof DERIVED_TENSES)[number] => (DERIVED_TENSES as readonly string[]).includes(tense)
 const POS = ['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'conj', 'phrase', 'other']
 const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles']
 
@@ -105,7 +120,7 @@ function checkSpanish(where: string, text: unknown) {
 
 // ---------- verb conjugation (regular pattern) ----------
 
-const ENDINGS: Record<Tense, Record<Verb['group'], string[]>> = {
+const ENDINGS: Record<StoredTense, Record<Verb['group'], string[]>> = {
   presente: {
     ar: ['o', 'as', 'a', 'amos', 'an'],
     er: ['o', 'es', 'e', 'emos', 'en'],
@@ -135,6 +150,7 @@ function baseInfinitive(verb: Verb) {
 }
 
 function regularForm(verb: Verb, tense: Tense, person: Person) {
+  if (isDerived(tense)) return regularNew(verb, tense, person)
   const base = baseInfinitive(verb)
   const stem = tense === 'futuro' ? base : base.slice(0, -2)
   const form = stem + ENDINGS[tense][verb.group][PERSONS.indexOf(person)]
@@ -149,12 +165,14 @@ function regularGerund(verb: Verb) {
 function expandIrregular(entries: string[], where: string): Set<string> {
   const out = new Set<string>()
   for (const entry of entries) {
-    const match = /^(presente|preterito|imperfecto|futuro)\.(yo|tu|el|nosotros|ellos|\*)$/.exec(entry)
+    const match = /^(presente|preterito|imperfecto|futuro|subjuntivo|subjImperfecto|condicional|imperativo)\.(yo|tu|el|nosotros|ellos|\*)$/.exec(entry)
     if (!match) {
       fail(where, `invalid irregularForms entry "${entry}"`)
       continue
     }
-    const persons = match[2] === '*' ? PERSONS : [match[2] as Person]
+    if (match[1] === 'imperativo' && match[2] === 'yo') fail(where, 'the imperative has no yo')
+    const all: Person[] = match[1] === 'imperativo' ? IMPERATIVE_PERSONS : PERSONS
+    const persons = match[2] === '*' ? all : [match[2] as Person]
     for (const p of persons) out.add(`${match[1]}.${p}`)
   }
   return out
@@ -208,6 +226,40 @@ for (const v of verbs) {
       }
       checkSpanish(`${where}.${tense}.${p}`, form)
       if (form !== regularForm(v, tense, p)) irregular.add(`${tense}.${p}`)
+    }
+  }
+
+  // The B1–B2 forms must be what the rules derive from the verb's own forms (src/lib/verbForms.ts):
+  // a form typed or generated wrong shows up here.
+  const derived = { subjuntivo: deriveSubjuntivo(v), subjImperfecto: deriveSubjImperfecto(v), condicional: deriveCondicional(v) }
+  for (const tense of DERIVED_TENSES) {
+    for (const p of PERSONS) {
+      const form = v[tense]?.[p]
+      if (form !== undefined && form !== derived[tense][p]) fail(`${where}.${tense}.${p}`, `"${form}", the rules give "${derived[tense][p]}"`)
+    }
+  }
+  const imperativo = v.imperativo
+  if (!imperativo || typeof imperativo !== 'object') fail(where, 'missing imperativo')
+  else {
+    const extra = Object.keys(imperativo).filter((k) => !IMPERATIVE_PERSONS.includes(k as ImperativePerson))
+    if (extra.length) fail(`${where}.imperativo`, `unexpected persons: ${extra.join(', ')}`)
+    const expected = deriveImperativo(v, v.subjuntivo ?? derived.subjuntivo)
+    for (const p of IMPERATIVE_PERSONS) {
+      const form = imperativo[p]
+      if (!isNonEmpty(form)) {
+        fail(`${where}.imperativo`, `missing form for "${p}"`)
+        continue
+      }
+      checkSpanish(`${where}.imperativo.${p}`, form)
+      if (form !== expected[p]) fail(`${where}.imperativo.${p}`, `"${form}", the rules give "${expected[p]}"`)
+      if (form !== regularImperativo(v, p)) irregular.add(`imperativo.${p}`)
+    }
+  }
+  if (!isNonEmpty(v.participle)) fail(where, 'missing participle')
+  else {
+    if (v.participle !== deriveParticiple(v)) fail(where, `participle "${v.participle}", the rules give "${deriveParticiple(v)}"`)
+    if (Boolean(v.participleIrregular) !== (v.participle !== regularParticiple(v))) {
+      fail(where, `participleIrregular should be ${v.participle !== regularParticiple(v)} (regular: "${regularParticiple(v)}")`)
     }
   }
 
@@ -334,11 +386,15 @@ const PERSON_LABELS: Record<string, Person> = {
   ellas: 'ellos',
   ustedes: 'ellos',
 }
-const TENSE_LABELS: Record<string, Tense> = {
+const TENSE_LABELS: Record<string, Tense | 'imperativo'> = {
   presente: 'presente',
   pretérito: 'preterito',
   imperfecto: 'imperfecto',
   futuro: 'futuro',
+  subjuntivo: 'subjuntivo',
+  'subjuntivo imperfecto': 'subjImperfecto',
+  condicional: 'condicional',
+  imperativo: 'imperativo',
 }
 
 // Rebuilds the sentence from tokens: no space before .,?!;: and after ¿¡
@@ -351,8 +407,8 @@ const joinTokens = (tokens: string[]) =>
 // Returns the expected answer for a verb hint, or an error message.
 function expectedFromHint(cloze: Cloze): { expected: string } | { error: string } | null {
   const hint = cloze.hint ?? ''
-  const conj = /^(\S+) · (\S+) · (\S+)$/.exec(hint)
-  const ger = /^(\S+) · gerundio$/.exec(hint)
+  const conj = /^(\S+) · (\S+) · (.+)$/.exec(hint)
+  const ger = /^(\S+) · (gerundio|participio)$/.exec(hint)
   const options = (conj?.[1] ?? ger?.[1])?.split('/')
   const isVerbHint = Boolean(options?.every((o) => verbById.has(o)))
 
@@ -361,12 +417,16 @@ function expectedFromHint(cloze: Cloze): { expected: string } | { error: string 
   }
   if (!options!.includes(cloze.lemma)) return { error: `lemma "${cloze.lemma}" not in hint "${hint}"` }
   const verb = verbById.get(cloze.lemma)!
-  if (ger) return { expected: verb.gerund }
+  if (ger) return { expected: ger[2] === 'gerundio' ? verb.gerund : verb.participle }
 
   const person = PERSON_LABELS[conj![2]]
   const tense = TENSE_LABELS[conj![3]]
   if (!person) return { error: `unknown person "${conj![2]}" in hint` }
   if (!tense) return { error: `unknown tense "${conj![3]}" in hint` }
+  if (tense === 'imperativo') {
+    if (person === 'yo') return { error: 'the imperative has no yo' }
+    return { expected: verb.imperativo[person] } // the pronoun is part of the word: levántate
+  }
   const form = verb[tense][person]
   // Reflexive forms carry the pronoun ("me llamo"); the blank is just the verb token.
   return { expected: verb.reflexive ? form.split(' ').at(-1)! : form }

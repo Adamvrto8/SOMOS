@@ -1,10 +1,10 @@
-import type { Person, Verb } from '../data/types'
+import type { ImperativePerson, Person, Verb } from '../data/types.ts'
 
 // The rules that derive the B1–B2 verb forms from the forms every verb already has (CLAUDE.md §3).
 // The validator checks every stored form against them. No runtime imports: the validator runs
 // this file under plain node.
 
-export type ImperativePerson = 'tu' | 'el' | 'nosotros' | 'ellos'
+export type { ImperativePerson }
 export const IMPERATIVE_PERSONS: ImperativePerson[] = ['tu', 'el', 'nosotros', 'ellos']
 
 type FormVerb = Pick<Verb, 'id' | 'group' | 'reflexive' | 'presente' | 'preterito' | 'futuro'>

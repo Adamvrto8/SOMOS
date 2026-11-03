@@ -5,7 +5,11 @@ export type Level = 'A1' | 'A2' | 'B1' | 'B2'
 // el = él/ella/usted, ellos = ellos/ellas/ustedes. No vosotros (Mexican Spanish).
 export type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos'
 
-export type Tense = 'presente' | 'preterito' | 'imperfecto' | 'futuro'
+// Tenses stored on every verb with all five persons.
+export type Tense = 'presente' | 'preterito' | 'imperfecto' | 'futuro' | 'subjuntivo' | 'subjImperfecto' | 'condicional'
+
+// tú, usted, nosotros, ustedes: the imperative has no yo (el = usted, ellos = ustedes).
+export type ImperativePerson = 'tu' | 'el' | 'nosotros' | 'ellos'
 
 export type PartOfSpeech = 'noun' | 'verb' | 'adj' | 'adv' | 'prep' | 'pron' | 'conj' | 'phrase' | 'other'
 
@@ -46,10 +50,19 @@ export interface Verb {
   preterito: Record<Person, string>
   imperfecto: Record<Person, string>
   futuro: Record<Person, string> // futuro simple: infinitive + é/ás/á/emos/án
-  irregularForms?: string[] // "presente.yo", "preterito.*", "futuro.*" → highlighted in UI
+  // The B1–B2 forms follow from the ones above by the rules of src/lib/verbForms.ts (checked by the validator).
+  subjuntivo: Record<Person, string> // presente de subjuntivo: tenga
+  subjImperfecto: Record<Person, string> // imperfecto de subjuntivo, -ra only (Mexico): tuviera
+  condicional: Record<Person, string> // futuro stem + ía: tendría
+  imperativo: Record<ImperativePerson, string> // affirmative, pronoun attached (levántate); negative = "no " + subjuntivo
+  participle: string // without pronoun, like the gerund: "levantado"
+  participleIrregular?: boolean
+  // "presente.yo", "preterito.*", "subjuntivo.*", "imperativo.tu" → highlighted in UI
+  irregularForms?: string[]
   level: Level
 }
 // presente progresivo is derived: estar.presente[person] + " " + gerund
+// pluscuamperfecto likewise: haber.imperfecto[person] + " " + participle ("había salido")
 // (reflexive: pronoun + estar + gerund → "me estoy llamando")
 
 export interface Cloze {

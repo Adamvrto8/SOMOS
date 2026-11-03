@@ -109,6 +109,8 @@ function verbWhy(verb: Verb, tense: TableTense, person: Person): Why {
         : { rule: 'endings', because: t().tips.futuroEndings(verb.id) }
     case 'progresivo':
       return gerundWhy(verb, 'form')
+    default:
+      return regularWhy(verb)
   }
 }
 

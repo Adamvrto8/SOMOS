@@ -33,7 +33,12 @@
       "nosotros": "adquiriremos",
       "ellos": "adquirirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "subjuntivo": { "yo": "adquiera", "tu": "adquieras", "el": "adquiera", "nosotros": "adquiramos", "ellos": "adquieran" },
+    "subjImperfecto": { "yo": "adquiriera", "tu": "adquirieras", "el": "adquiriera", "nosotros": "adquiriéramos", "ellos": "adquirieran" },
+    "condicional": { "yo": "adquiriría", "tu": "adquirirías", "el": "adquiriría", "nosotros": "adquiriríamos", "ellos": "adquirirían" },
+    "imperativo": { "tu": "adquiere", "el": "adquiera", "nosotros": "adquiramos", "ellos": "adquieran" },
+    "participle": "adquirido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "subjuntivo.yo", "subjuntivo.tu", "subjuntivo.el", "subjuntivo.ellos", "imperativo.tu", "imperativo.el", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -71,7 +76,12 @@
       "nosotros": "advertiremos",
       "ellos": "advertirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "advierta", "tu": "adviertas", "el": "advierta", "nosotros": "advirtamos", "ellos": "adviertan" },
+    "subjImperfecto": { "yo": "advirtiera", "tu": "advirtieras", "el": "advirtiera", "nosotros": "advirtiéramos", "ellos": "advirtieran" },
+    "condicional": { "yo": "advertiría", "tu": "advertirías", "el": "advertiría", "nosotros": "advertiríamos", "ellos": "advertirían" },
+    "imperativo": { "tu": "advierte", "el": "advierta", "nosotros": "advirtamos", "ellos": "adviertan" },
+    "participle": "advertido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -108,7 +118,12 @@
       "nosotros": "amenazaremos",
       "ellos": "amenazarán"
     },
-    "irregularForms": ["preterito.yo"],
+    "subjuntivo": { "yo": "amenace", "tu": "amenaces", "el": "amenace", "nosotros": "amenacemos", "ellos": "amenacen" },
+    "subjImperfecto": { "yo": "amenazara", "tu": "amenazaras", "el": "amenazara", "nosotros": "amenazáramos", "ellos": "amenazaran" },
+    "condicional": { "yo": "amenazaría", "tu": "amenazarías", "el": "amenazaría", "nosotros": "amenazaríamos", "ellos": "amenazarían" },
+    "imperativo": { "tu": "amenaza", "el": "amenace", "nosotros": "amenacemos", "ellos": "amenacen" },
+    "participle": "amenazado",
+    "irregularForms": ["preterito.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -145,6 +160,11 @@
       "nosotros": "apoyaremos",
       "ellos": "apoyarán"
     },
+    "subjuntivo": { "yo": "apoye", "tu": "apoyes", "el": "apoye", "nosotros": "apoyemos", "ellos": "apoyen" },
+    "subjImperfecto": { "yo": "apoyara", "tu": "apoyaras", "el": "apoyara", "nosotros": "apoyáramos", "ellos": "apoyaran" },
+    "condicional": { "yo": "apoyaría", "tu": "apoyarías", "el": "apoyaría", "nosotros": "apoyaríamos", "ellos": "apoyarían" },
+    "imperativo": { "tu": "apoya", "el": "apoye", "nosotros": "apoyemos", "ellos": "apoyen" },
+    "participle": "apoyado",
     "level": "B2"
   },
   {
@@ -181,6 +201,11 @@
       "nosotros": "aportaremos",
       "ellos": "aportarán"
     },
+    "subjuntivo": { "yo": "aporte", "tu": "aportes", "el": "aporte", "nosotros": "aportemos", "ellos": "aporten" },
+    "subjImperfecto": { "yo": "aportara", "tu": "aportaras", "el": "aportara", "nosotros": "aportáramos", "ellos": "aportaran" },
+    "condicional": { "yo": "aportaría", "tu": "aportarías", "el": "aportaría", "nosotros": "aportaríamos", "ellos": "aportarían" },
+    "imperativo": { "tu": "aporta", "el": "aporte", "nosotros": "aportemos", "ellos": "aporten" },
+    "participle": "aportado",
     "level": "B2"
   },
   {
@@ -218,6 +243,11 @@
       "nosotros": "nos atreveremos",
       "ellos": "se atreverán"
     },
+    "subjuntivo": { "yo": "me atreva", "tu": "te atrevas", "el": "se atreva", "nosotros": "nos atrevamos", "ellos": "se atrevan" },
+    "subjImperfecto": { "yo": "me atreviera", "tu": "te atrevieras", "el": "se atreviera", "nosotros": "nos atreviéramos", "ellos": "se atrevieran" },
+    "condicional": { "yo": "me atrevería", "tu": "te atreverías", "el": "se atrevería", "nosotros": "nos atreveríamos", "ellos": "se atreverían" },
+    "imperativo": { "tu": "atrévete", "el": "atrévase", "nosotros": "atrevámonos", "ellos": "atrévanse" },
+    "participle": "atrevido",
     "level": "B2"
   },
   {
@@ -254,7 +284,12 @@
       "nosotros": "comprobaremos",
       "ellos": "comprobarán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "subjuntivo": { "yo": "compruebe", "tu": "compruebes", "el": "compruebe", "nosotros": "comprobemos", "ellos": "comprueben" },
+    "subjImperfecto": { "yo": "comprobara", "tu": "comprobaras", "el": "comprobara", "nosotros": "comprobáramos", "ellos": "comprobaran" },
+    "condicional": { "yo": "comprobaría", "tu": "comprobarías", "el": "comprobaría", "nosotros": "comprobaríamos", "ellos": "comprobarían" },
+    "imperativo": { "tu": "comprueba", "el": "compruebe", "nosotros": "comprobemos", "ellos": "comprueben" },
+    "participle": "comprobado",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "subjuntivo.yo", "subjuntivo.tu", "subjuntivo.el", "subjuntivo.ellos", "imperativo.tu", "imperativo.el", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -291,7 +326,12 @@
       "nosotros": "convenceremos",
       "ellos": "convencerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "convenza", "tu": "convenzas", "el": "convenza", "nosotros": "convenzamos", "ellos": "convenzan" },
+    "subjImperfecto": { "yo": "convenciera", "tu": "convencieras", "el": "convenciera", "nosotros": "convenciéramos", "ellos": "convencieran" },
+    "condicional": { "yo": "convencería", "tu": "convencerías", "el": "convencería", "nosotros": "convenceríamos", "ellos": "convencerían" },
+    "imperativo": { "tu": "convence", "el": "convenza", "nosotros": "convenzamos", "ellos": "convenzan" },
+    "participle": "convencido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -328,6 +368,11 @@
       "nosotros": "desarrollaremos",
       "ellos": "desarrollarán"
     },
+    "subjuntivo": { "yo": "desarrolle", "tu": "desarrolles", "el": "desarrolle", "nosotros": "desarrollemos", "ellos": "desarrollen" },
+    "subjImperfecto": { "yo": "desarrollara", "tu": "desarrollaras", "el": "desarrollara", "nosotros": "desarrolláramos", "ellos": "desarrollaran" },
+    "condicional": { "yo": "desarrollaría", "tu": "desarrollarías", "el": "desarrollaría", "nosotros": "desarrollaríamos", "ellos": "desarrollarían" },
+    "imperativo": { "tu": "desarrolla", "el": "desarrolle", "nosotros": "desarrollemos", "ellos": "desarrollen" },
+    "participle": "desarrollado",
     "level": "B2"
   },
   {
@@ -364,7 +409,12 @@
       "nosotros": "destacaremos",
       "ellos": "destacarán"
     },
-    "irregularForms": ["preterito.yo"],
+    "subjuntivo": { "yo": "destaque", "tu": "destaques", "el": "destaque", "nosotros": "destaquemos", "ellos": "destaquen" },
+    "subjImperfecto": { "yo": "destacara", "tu": "destacaras", "el": "destacara", "nosotros": "destacáramos", "ellos": "destacaran" },
+    "condicional": { "yo": "destacaría", "tu": "destacarías", "el": "destacaría", "nosotros": "destacaríamos", "ellos": "destacarían" },
+    "imperativo": { "tu": "destaca", "el": "destaque", "nosotros": "destaquemos", "ellos": "destaquen" },
+    "participle": "destacado",
+    "irregularForms": ["preterito.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -401,6 +451,11 @@
       "nosotros": "enfrentaremos",
       "ellos": "enfrentarán"
     },
+    "subjuntivo": { "yo": "enfrente", "tu": "enfrentes", "el": "enfrente", "nosotros": "enfrentemos", "ellos": "enfrenten" },
+    "subjImperfecto": { "yo": "enfrentara", "tu": "enfrentaras", "el": "enfrentara", "nosotros": "enfrentáramos", "ellos": "enfrentaran" },
+    "condicional": { "yo": "enfrentaría", "tu": "enfrentarías", "el": "enfrentaría", "nosotros": "enfrentaríamos", "ellos": "enfrentarían" },
+    "imperativo": { "tu": "enfrenta", "el": "enfrente", "nosotros": "enfrentemos", "ellos": "enfrenten" },
+    "participle": "enfrentado",
     "level": "B2"
   },
   {
@@ -437,7 +492,12 @@
       "nosotros": "exigiremos",
       "ellos": "exigirán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "exija", "tu": "exijas", "el": "exija", "nosotros": "exijamos", "ellos": "exijan" },
+    "subjImperfecto": { "yo": "exigiera", "tu": "exigieras", "el": "exigiera", "nosotros": "exigiéramos", "ellos": "exigieran" },
+    "condicional": { "yo": "exigiría", "tu": "exigirías", "el": "exigiría", "nosotros": "exigiríamos", "ellos": "exigirían" },
+    "imperativo": { "tu": "exige", "el": "exija", "nosotros": "exijamos", "ellos": "exijan" },
+    "participle": "exigido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -474,6 +534,11 @@
       "nosotros": "fomentaremos",
       "ellos": "fomentarán"
     },
+    "subjuntivo": { "yo": "fomente", "tu": "fomentes", "el": "fomente", "nosotros": "fomentemos", "ellos": "fomenten" },
+    "subjImperfecto": { "yo": "fomentara", "tu": "fomentaras", "el": "fomentara", "nosotros": "fomentáramos", "ellos": "fomentaran" },
+    "condicional": { "yo": "fomentaría", "tu": "fomentarías", "el": "fomentaría", "nosotros": "fomentaríamos", "ellos": "fomentarían" },
+    "imperativo": { "tu": "fomenta", "el": "fomente", "nosotros": "fomentemos", "ellos": "fomenten" },
+    "participle": "fomentado",
     "level": "B2"
   },
   {
@@ -511,7 +576,12 @@
       "nosotros": "impediremos",
       "ellos": "impedirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "impida", "tu": "impidas", "el": "impida", "nosotros": "impidamos", "ellos": "impidan" },
+    "subjImperfecto": { "yo": "impidiera", "tu": "impidieras", "el": "impidiera", "nosotros": "impidiéramos", "ellos": "impidieran" },
+    "condicional": { "yo": "impediría", "tu": "impedirías", "el": "impediría", "nosotros": "impediríamos", "ellos": "impedirían" },
+    "imperativo": { "tu": "impide", "el": "impida", "nosotros": "impidamos", "ellos": "impidan" },
+    "participle": "impedido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -549,7 +619,12 @@
       "nosotros": "influiremos",
       "ellos": "influirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "influya", "tu": "influyas", "el": "influya", "nosotros": "influyamos", "ellos": "influyan" },
+    "subjImperfecto": { "yo": "influyera", "tu": "influyeras", "el": "influyera", "nosotros": "influyéramos", "ellos": "influyeran" },
+    "condicional": { "yo": "influiría", "tu": "influirías", "el": "influiría", "nosotros": "influiríamos", "ellos": "influirían" },
+    "imperativo": { "tu": "influye", "el": "influya", "nosotros": "influyamos", "ellos": "influyan" },
+    "participle": "influido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -586,6 +661,11 @@
       "nosotros": "negociaremos",
       "ellos": "negociarán"
     },
+    "subjuntivo": { "yo": "negocie", "tu": "negocies", "el": "negocie", "nosotros": "negociemos", "ellos": "negocien" },
+    "subjImperfecto": { "yo": "negociara", "tu": "negociaras", "el": "negociara", "nosotros": "negociáramos", "ellos": "negociaran" },
+    "condicional": { "yo": "negociaría", "tu": "negociarías", "el": "negociaría", "nosotros": "negociaríamos", "ellos": "negociarían" },
+    "imperativo": { "tu": "negocia", "el": "negocie", "nosotros": "negociemos", "ellos": "negocien" },
+    "participle": "negociado",
     "level": "B2"
   },
   {
@@ -622,6 +702,11 @@
       "nosotros": "plantearemos",
       "ellos": "plantearán"
     },
+    "subjuntivo": { "yo": "plantee", "tu": "plantees", "el": "plantee", "nosotros": "planteemos", "ellos": "planteen" },
+    "subjImperfecto": { "yo": "planteara", "tu": "plantearas", "el": "planteara", "nosotros": "planteáramos", "ellos": "plantearan" },
+    "condicional": { "yo": "plantearía", "tu": "plantearías", "el": "plantearía", "nosotros": "plantearíamos", "ellos": "plantearían" },
+    "imperativo": { "tu": "plantea", "el": "plantee", "nosotros": "planteemos", "ellos": "planteen" },
+    "participle": "planteado",
     "level": "B2"
   },
   {
@@ -658,7 +743,12 @@
       "nosotros": "rechazaremos",
       "ellos": "rechazarán"
     },
-    "irregularForms": ["preterito.yo"],
+    "subjuntivo": { "yo": "rechace", "tu": "rechaces", "el": "rechace", "nosotros": "rechacemos", "ellos": "rechacen" },
+    "subjImperfecto": { "yo": "rechazara", "tu": "rechazaras", "el": "rechazara", "nosotros": "rechazáramos", "ellos": "rechazaran" },
+    "condicional": { "yo": "rechazaría", "tu": "rechazarías", "el": "rechazaría", "nosotros": "rechazaríamos", "ellos": "rechazarían" },
+    "imperativo": { "tu": "rechaza", "el": "rechace", "nosotros": "rechacemos", "ellos": "rechacen" },
+    "participle": "rechazado",
+    "irregularForms": ["preterito.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -695,6 +785,11 @@
       "nosotros": "reclamaremos",
       "ellos": "reclamarán"
     },
+    "subjuntivo": { "yo": "reclame", "tu": "reclames", "el": "reclame", "nosotros": "reclamemos", "ellos": "reclamen" },
+    "subjImperfecto": { "yo": "reclamara", "tu": "reclamaras", "el": "reclamara", "nosotros": "reclamáramos", "ellos": "reclamaran" },
+    "condicional": { "yo": "reclamaría", "tu": "reclamarías", "el": "reclamaría", "nosotros": "reclamaríamos", "ellos": "reclamarían" },
+    "imperativo": { "tu": "reclama", "el": "reclame", "nosotros": "reclamemos", "ellos": "reclamen" },
+    "participle": "reclamado",
     "level": "B2"
   },
   {
@@ -731,7 +826,12 @@
       "nosotros": "reduciremos",
       "ellos": "reducirán"
     },
-    "irregularForms": ["presente.yo", "preterito.*"],
+    "subjuntivo": { "yo": "reduzca", "tu": "reduzcas", "el": "reduzca", "nosotros": "reduzcamos", "ellos": "reduzcan" },
+    "subjImperfecto": { "yo": "redujera", "tu": "redujeras", "el": "redujera", "nosotros": "redujéramos", "ellos": "redujeran" },
+    "condicional": { "yo": "reduciría", "tu": "reducirías", "el": "reduciría", "nosotros": "reduciríamos", "ellos": "reducirían" },
+    "imperativo": { "tu": "reduce", "el": "reduzca", "nosotros": "reduzcamos", "ellos": "reduzcan" },
+    "participle": "reducido",
+    "irregularForms": ["presente.yo", "preterito.*", "subjuntivo.*", "subjImperfecto.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -768,6 +868,11 @@
       "nosotros": "renunciaremos",
       "ellos": "renunciarán"
     },
+    "subjuntivo": { "yo": "renuncie", "tu": "renuncies", "el": "renuncie", "nosotros": "renunciemos", "ellos": "renuncien" },
+    "subjImperfecto": { "yo": "renunciara", "tu": "renunciaras", "el": "renunciara", "nosotros": "renunciáramos", "ellos": "renunciaran" },
+    "condicional": { "yo": "renunciaría", "tu": "renunciarías", "el": "renunciaría", "nosotros": "renunciaríamos", "ellos": "renunciarían" },
+    "imperativo": { "tu": "renuncia", "el": "renuncie", "nosotros": "renunciemos", "ellos": "renuncien" },
+    "participle": "renunciado",
     "level": "B2"
   },
   {
@@ -804,6 +909,11 @@
       "nosotros": "superaremos",
       "ellos": "superarán"
     },
+    "subjuntivo": { "yo": "supere", "tu": "superes", "el": "supere", "nosotros": "superemos", "ellos": "superen" },
+    "subjImperfecto": { "yo": "superara", "tu": "superaras", "el": "superara", "nosotros": "superáramos", "ellos": "superaran" },
+    "condicional": { "yo": "superaría", "tu": "superarías", "el": "superaría", "nosotros": "superaríamos", "ellos": "superarían" },
+    "imperativo": { "tu": "supera", "el": "supere", "nosotros": "superemos", "ellos": "superen" },
+    "participle": "superado",
     "level": "B2"
   },
   {
@@ -841,7 +951,12 @@
       "nosotros": "sustituiremos",
       "ellos": "sustituirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "sustituya", "tu": "sustituyas", "el": "sustituya", "nosotros": "sustituyamos", "ellos": "sustituyan" },
+    "subjImperfecto": { "yo": "sustituyera", "tu": "sustituyeras", "el": "sustituyera", "nosotros": "sustituyéramos", "ellos": "sustituyeran" },
+    "condicional": { "yo": "sustituiría", "tu": "sustituirías", "el": "sustituiría", "nosotros": "sustituiríamos", "ellos": "sustituirían" },
+    "imperativo": { "tu": "sustituye", "el": "sustituya", "nosotros": "sustituyamos", "ellos": "sustituyan" },
+    "participle": "sustituido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -878,6 +993,11 @@
       "nosotros": "valoraremos",
       "ellos": "valorarán"
     },
+    "subjuntivo": { "yo": "valore", "tu": "valores", "el": "valore", "nosotros": "valoremos", "ellos": "valoren" },
+    "subjImperfecto": { "yo": "valorara", "tu": "valoraras", "el": "valorara", "nosotros": "valoráramos", "ellos": "valoraran" },
+    "condicional": { "yo": "valoraría", "tu": "valorarías", "el": "valoraría", "nosotros": "valoraríamos", "ellos": "valorarían" },
+    "imperativo": { "tu": "valora", "el": "valore", "nosotros": "valoremos", "ellos": "valoren" },
+    "participle": "valorado",
     "level": "B2"
   },
   {
@@ -916,7 +1036,12 @@
       "nosotros": "nos arrepentiremos",
       "ellos": "se arrepentirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "me arrepienta", "tu": "te arrepientas", "el": "se arrepienta", "nosotros": "nos arrepintamos", "ellos": "se arrepientan" },
+    "subjImperfecto": { "yo": "me arrepintiera", "tu": "te arrepintieras", "el": "se arrepintiera", "nosotros": "nos arrepintiéramos", "ellos": "se arrepintieran" },
+    "condicional": { "yo": "me arrepentiría", "tu": "te arrepentirías", "el": "se arrepentiría", "nosotros": "nos arrepentiríamos", "ellos": "se arrepentirían" },
+    "imperativo": { "tu": "arrepiéntete", "el": "arrepiéntase", "nosotros": "arrepintámonos", "ellos": "arrepiéntanse" },
+    "participle": "arrepentido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -954,6 +1079,11 @@
       "nosotros": "nos comprometeremos",
       "ellos": "se comprometerán"
     },
+    "subjuntivo": { "yo": "me comprometa", "tu": "te comprometas", "el": "se comprometa", "nosotros": "nos comprometamos", "ellos": "se comprometan" },
+    "subjImperfecto": { "yo": "me comprometiera", "tu": "te comprometieras", "el": "se comprometiera", "nosotros": "nos comprometiéramos", "ellos": "se comprometieran" },
+    "condicional": { "yo": "me comprometería", "tu": "te comprometerías", "el": "se comprometería", "nosotros": "nos comprometeríamos", "ellos": "se comprometerían" },
+    "imperativo": { "tu": "comprométete", "el": "comprométase", "nosotros": "comprometámonos", "ellos": "comprométanse" },
+    "participle": "comprometido",
     "level": "B2"
   },
   {
@@ -990,7 +1120,13 @@
       "nosotros": "supondremos",
       "ellos": "supondrán"
     },
-    "irregularForms": ["presente.yo", "preterito.*", "futuro.*"],
+    "subjuntivo": { "yo": "suponga", "tu": "supongas", "el": "suponga", "nosotros": "supongamos", "ellos": "supongan" },
+    "subjImperfecto": { "yo": "supusiera", "tu": "supusieras", "el": "supusiera", "nosotros": "supusiéramos", "ellos": "supusieran" },
+    "condicional": { "yo": "supondría", "tu": "supondrías", "el": "supondría", "nosotros": "supondríamos", "ellos": "supondrían" },
+    "imperativo": { "tu": "supón", "el": "suponga", "nosotros": "supongamos", "ellos": "supongan" },
+    "participle": "supuesto",
+    "participleIrregular": true,
+    "irregularForms": ["presente.yo", "preterito.*", "futuro.*", "subjuntivo.*", "subjImperfecto.*", "condicional.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1028,7 +1164,12 @@
       "nosotros": "contribuiremos",
       "ellos": "contribuirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "contribuya", "tu": "contribuyas", "el": "contribuya", "nosotros": "contribuyamos", "ellos": "contribuyan" },
+    "subjImperfecto": { "yo": "contribuyera", "tu": "contribuyeras", "el": "contribuyera", "nosotros": "contribuyéramos", "ellos": "contribuyeran" },
+    "condicional": { "yo": "contribuiría", "tu": "contribuirías", "el": "contribuiría", "nosotros": "contribuiríamos", "ellos": "contribuirían" },
+    "imperativo": { "tu": "contribuye", "el": "contribuya", "nosotros": "contribuyamos", "ellos": "contribuyan" },
+    "participle": "contribuido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1066,7 +1207,12 @@
       "nosotros": "prevendremos",
       "ellos": "prevendrán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
+    "subjuntivo": { "yo": "prevenga", "tu": "prevengas", "el": "prevenga", "nosotros": "prevengamos", "ellos": "prevengan" },
+    "subjImperfecto": { "yo": "previniera", "tu": "previnieras", "el": "previniera", "nosotros": "previniéramos", "ellos": "previnieran" },
+    "condicional": { "yo": "prevendría", "tu": "prevendrías", "el": "prevendría", "nosotros": "prevendríamos", "ellos": "prevendrían" },
+    "imperativo": { "tu": "prevén", "el": "prevenga", "nosotros": "prevengamos", "ellos": "prevengan" },
+    "participle": "prevenido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*", "subjuntivo.*", "subjImperfecto.*", "condicional.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1103,7 +1249,12 @@
       "nosotros": "distinguiremos",
       "ellos": "distinguirán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "distinga", "tu": "distingas", "el": "distinga", "nosotros": "distingamos", "ellos": "distingan" },
+    "subjImperfecto": { "yo": "distinguiera", "tu": "distinguieras", "el": "distinguiera", "nosotros": "distinguiéramos", "ellos": "distinguieran" },
+    "condicional": { "yo": "distinguiría", "tu": "distinguirías", "el": "distinguiría", "nosotros": "distinguiríamos", "ellos": "distinguirían" },
+    "imperativo": { "tu": "distingue", "el": "distinga", "nosotros": "distingamos", "ellos": "distingan" },
+    "participle": "distinguido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1140,6 +1291,11 @@
       "nosotros": "señalaremos",
       "ellos": "señalarán"
     },
+    "subjuntivo": { "yo": "señale", "tu": "señales", "el": "señale", "nosotros": "señalemos", "ellos": "señalen" },
+    "subjImperfecto": { "yo": "señalara", "tu": "señalaras", "el": "señalara", "nosotros": "señaláramos", "ellos": "señalaran" },
+    "condicional": { "yo": "señalaría", "tu": "señalarías", "el": "señalaría", "nosotros": "señalaríamos", "ellos": "señalarían" },
+    "imperativo": { "tu": "señala", "el": "señale", "nosotros": "señalemos", "ellos": "señalen" },
+    "participle": "señalado",
     "level": "B2"
   },
   {
@@ -1176,7 +1332,12 @@
       "nosotros": "agradeceremos",
       "ellos": "agradecerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "agradezca", "tu": "agradezcas", "el": "agradezca", "nosotros": "agradezcamos", "ellos": "agradezcan" },
+    "subjImperfecto": { "yo": "agradeciera", "tu": "agradecieras", "el": "agradeciera", "nosotros": "agradeciéramos", "ellos": "agradecieran" },
+    "condicional": { "yo": "agradecería", "tu": "agradecerías", "el": "agradecería", "nosotros": "agradeceríamos", "ellos": "agradecerían" },
+    "imperativo": { "tu": "agradece", "el": "agradezca", "nosotros": "agradezcamos", "ellos": "agradezcan" },
+    "participle": "agradecido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1213,7 +1374,12 @@
       "nosotros": "fortaleceremos",
       "ellos": "fortalecerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "fortalezca", "tu": "fortalezcas", "el": "fortalezca", "nosotros": "fortalezcamos", "ellos": "fortalezcan" },
+    "subjImperfecto": { "yo": "fortaleciera", "tu": "fortalecieras", "el": "fortaleciera", "nosotros": "fortaleciéramos", "ellos": "fortalecieran" },
+    "condicional": { "yo": "fortalecería", "tu": "fortalecerías", "el": "fortalecería", "nosotros": "fortaleceríamos", "ellos": "fortalecerían" },
+    "imperativo": { "tu": "fortalece", "el": "fortalezca", "nosotros": "fortalezcamos", "ellos": "fortalezcan" },
+    "participle": "fortalecido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1250,7 +1416,12 @@
       "nosotros": "desapareceremos",
       "ellos": "desaparecerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "desaparezca", "tu": "desaparezcas", "el": "desaparezca", "nosotros": "desaparezcamos", "ellos": "desaparezcan" },
+    "subjImperfecto": { "yo": "desapareciera", "tu": "desaparecieras", "el": "desapareciera", "nosotros": "desapareciéramos", "ellos": "desaparecieran" },
+    "condicional": { "yo": "desaparecería", "tu": "desaparecerías", "el": "desaparecería", "nosotros": "desapareceríamos", "ellos": "desaparecerían" },
+    "imperativo": { "tu": "desaparece", "el": "desaparezca", "nosotros": "desaparezcamos", "ellos": "desaparezcan" },
+    "participle": "desaparecido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1288,7 +1459,12 @@
       "nosotros": "disminuiremos",
       "ellos": "disminuirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "disminuya", "tu": "disminuyas", "el": "disminuya", "nosotros": "disminuyamos", "ellos": "disminuyan" },
+    "subjImperfecto": { "yo": "disminuyera", "tu": "disminuyeras", "el": "disminuyera", "nosotros": "disminuyéramos", "ellos": "disminuyeran" },
+    "condicional": { "yo": "disminuiría", "tu": "disminuirías", "el": "disminuiría", "nosotros": "disminuiríamos", "ellos": "disminuirían" },
+    "imperativo": { "tu": "disminuye", "el": "disminuya", "nosotros": "disminuyamos", "ellos": "disminuyan" },
+    "participle": "disminuido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1325,6 +1501,11 @@
       "nosotros": "aumentaremos",
       "ellos": "aumentarán"
     },
+    "subjuntivo": { "yo": "aumente", "tu": "aumentes", "el": "aumente", "nosotros": "aumentemos", "ellos": "aumenten" },
+    "subjImperfecto": { "yo": "aumentara", "tu": "aumentaras", "el": "aumentara", "nosotros": "aumentáramos", "ellos": "aumentaran" },
+    "condicional": { "yo": "aumentaría", "tu": "aumentarías", "el": "aumentaría", "nosotros": "aumentaríamos", "ellos": "aumentarían" },
+    "imperativo": { "tu": "aumenta", "el": "aumente", "nosotros": "aumentemos", "ellos": "aumenten" },
+    "participle": "aumentado",
     "level": "B2"
   },
   {
@@ -1361,7 +1542,12 @@
       "nosotros": "investigaremos",
       "ellos": "investigarán"
     },
-    "irregularForms": ["preterito.yo"],
+    "subjuntivo": { "yo": "investigue", "tu": "investigues", "el": "investigue", "nosotros": "investiguemos", "ellos": "investiguen" },
+    "subjImperfecto": { "yo": "investigara", "tu": "investigaras", "el": "investigara", "nosotros": "investigáramos", "ellos": "investigaran" },
+    "condicional": { "yo": "investigaría", "tu": "investigarías", "el": "investigaría", "nosotros": "investigaríamos", "ellos": "investigarían" },
+    "imperativo": { "tu": "investiga", "el": "investigue", "nosotros": "investiguemos", "ellos": "investiguen" },
+    "participle": "investigado",
+    "irregularForms": ["preterito.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1399,6 +1585,11 @@
       "nosotros": "nos involucraremos",
       "ellos": "se involucrarán"
     },
+    "subjuntivo": { "yo": "me involucre", "tu": "te involucres", "el": "se involucre", "nosotros": "nos involucremos", "ellos": "se involucren" },
+    "subjImperfecto": { "yo": "me involucrara", "tu": "te involucraras", "el": "se involucrara", "nosotros": "nos involucráramos", "ellos": "se involucraran" },
+    "condicional": { "yo": "me involucraría", "tu": "te involucrarías", "el": "se involucraría", "nosotros": "nos involucraríamos", "ellos": "se involucrarían" },
+    "imperativo": { "tu": "involúcrate", "el": "involúcrese", "nosotros": "involucrémonos", "ellos": "involúcrense" },
+    "participle": "involucrado",
     "level": "B2"
   },
   {
@@ -1435,7 +1626,12 @@
       "nosotros": "promoveremos",
       "ellos": "promoverán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos"],
+    "subjuntivo": { "yo": "promueva", "tu": "promuevas", "el": "promueva", "nosotros": "promovamos", "ellos": "promuevan" },
+    "subjImperfecto": { "yo": "promoviera", "tu": "promovieras", "el": "promoviera", "nosotros": "promoviéramos", "ellos": "promovieran" },
+    "condicional": { "yo": "promovería", "tu": "promoverías", "el": "promovería", "nosotros": "promoveríamos", "ellos": "promoverían" },
+    "imperativo": { "tu": "promueve", "el": "promueva", "nosotros": "promovamos", "ellos": "promuevan" },
+    "participle": "promovido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "subjuntivo.yo", "subjuntivo.tu", "subjuntivo.el", "subjuntivo.ellos", "imperativo.tu", "imperativo.el", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1472,6 +1668,11 @@
       "nosotros": "sobreviviremos",
       "ellos": "sobrevivirán"
     },
+    "subjuntivo": { "yo": "sobreviva", "tu": "sobrevivas", "el": "sobreviva", "nosotros": "sobrevivamos", "ellos": "sobrevivan" },
+    "subjImperfecto": { "yo": "sobreviviera", "tu": "sobrevivieras", "el": "sobreviviera", "nosotros": "sobreviviéramos", "ellos": "sobrevivieran" },
+    "condicional": { "yo": "sobreviviría", "tu": "sobrevivirías", "el": "sobreviviría", "nosotros": "sobreviviríamos", "ellos": "sobrevivirían" },
+    "imperativo": { "tu": "sobrevive", "el": "sobreviva", "nosotros": "sobrevivamos", "ellos": "sobrevivan" },
+    "participle": "sobrevivido",
     "level": "B2"
   },
   {
@@ -1508,7 +1709,12 @@
       "nosotros": "estableceremos",
       "ellos": "establecerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "establezca", "tu": "establezcas", "el": "establezca", "nosotros": "establezcamos", "ellos": "establezcan" },
+    "subjImperfecto": { "yo": "estableciera", "tu": "establecieras", "el": "estableciera", "nosotros": "estableciéramos", "ellos": "establecieran" },
+    "condicional": { "yo": "establecería", "tu": "establecerías", "el": "establecería", "nosotros": "estableceríamos", "ellos": "establecerían" },
+    "imperativo": { "tu": "establece", "el": "establezca", "nosotros": "establezcamos", "ellos": "establezcan" },
+    "participle": "establecido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1545,7 +1751,12 @@
       "nosotros": "mantendremos",
       "ellos": "mantendrán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*"],
+    "subjuntivo": { "yo": "mantenga", "tu": "mantengas", "el": "mantenga", "nosotros": "mantengamos", "ellos": "mantengan" },
+    "subjImperfecto": { "yo": "mantuviera", "tu": "mantuvieras", "el": "mantuviera", "nosotros": "mantuviéramos", "ellos": "mantuvieran" },
+    "condicional": { "yo": "mantendría", "tu": "mantendrías", "el": "mantendría", "nosotros": "mantendríamos", "ellos": "mantendrían" },
+    "imperativo": { "tu": "mantén", "el": "mantenga", "nosotros": "mantengamos", "ellos": "mantengan" },
+    "participle": "mantenido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.*", "futuro.*", "subjuntivo.*", "subjImperfecto.*", "condicional.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1583,7 +1794,13 @@
       "nosotros": "atraeremos",
       "ellos": "atraerán"
     },
-    "irregularForms": ["presente.yo", "preterito.*"],
+    "subjuntivo": { "yo": "atraiga", "tu": "atraigas", "el": "atraiga", "nosotros": "atraigamos", "ellos": "atraigan" },
+    "subjImperfecto": { "yo": "atrajera", "tu": "atrajeras", "el": "atrajera", "nosotros": "atrajéramos", "ellos": "atrajeran" },
+    "condicional": { "yo": "atraería", "tu": "atraerías", "el": "atraería", "nosotros": "atraeríamos", "ellos": "atraerían" },
+    "imperativo": { "tu": "atrae", "el": "atraiga", "nosotros": "atraigamos", "ellos": "atraigan" },
+    "participle": "atraído",
+    "participleIrregular": true,
+    "irregularForms": ["presente.yo", "preterito.*", "subjuntivo.*", "subjImperfecto.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1620,7 +1837,12 @@
       "nosotros": "averiguaremos",
       "ellos": "averiguarán"
     },
-    "irregularForms": ["preterito.yo"],
+    "subjuntivo": { "yo": "averigüe", "tu": "averigües", "el": "averigüe", "nosotros": "averigüemos", "ellos": "averigüen" },
+    "subjImperfecto": { "yo": "averiguara", "tu": "averiguaras", "el": "averiguara", "nosotros": "averiguáramos", "ellos": "averiguaran" },
+    "condicional": { "yo": "averiguaría", "tu": "averiguarías", "el": "averiguaría", "nosotros": "averiguaríamos", "ellos": "averiguarían" },
+    "imperativo": { "tu": "averigua", "el": "averigüe", "nosotros": "averigüemos", "ellos": "averigüen" },
+    "participle": "averiguado",
+    "irregularForms": ["preterito.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   },
   {
@@ -1659,7 +1881,12 @@
       "nosotros": "nos rendiremos",
       "ellos": "se rendirán"
     },
-    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos"],
+    "subjuntivo": { "yo": "me rinda", "tu": "te rindas", "el": "se rinda", "nosotros": "nos rindamos", "ellos": "se rindan" },
+    "subjImperfecto": { "yo": "me rindiera", "tu": "te rindieras", "el": "se rindiera", "nosotros": "nos rindiéramos", "ellos": "se rindieran" },
+    "condicional": { "yo": "me rendiría", "tu": "te rendirías", "el": "se rendiría", "nosotros": "nos rendiríamos", "ellos": "se rendirían" },
+    "imperativo": { "tu": "ríndete", "el": "ríndase", "nosotros": "rindámonos", "ellos": "ríndanse" },
+    "participle": "rendido",
+    "irregularForms": ["presente.yo", "presente.tu", "presente.el", "presente.ellos", "preterito.el", "preterito.ellos", "subjuntivo.*", "subjImperfecto.*", "imperativo.*"],
     "level": "B2"
   },
   {
@@ -1696,6 +1923,11 @@
       "nosotros": "presumiremos",
       "ellos": "presumirán"
     },
+    "subjuntivo": { "yo": "presuma", "tu": "presumas", "el": "presuma", "nosotros": "presumamos", "ellos": "presuman" },
+    "subjImperfecto": { "yo": "presumiera", "tu": "presumieras", "el": "presumiera", "nosotros": "presumiéramos", "ellos": "presumieran" },
+    "condicional": { "yo": "presumiría", "tu": "presumirías", "el": "presumiría", "nosotros": "presumiríamos", "ellos": "presumirían" },
+    "imperativo": { "tu": "presume", "el": "presuma", "nosotros": "presumamos", "ellos": "presuman" },
+    "participle": "presumido",
     "level": "B2"
   },
   {
@@ -1732,6 +1964,11 @@
       "nosotros": "apapacharemos",
       "ellos": "apapacharán"
     },
+    "subjuntivo": { "yo": "apapache", "tu": "apapaches", "el": "apapache", "nosotros": "apapachemos", "ellos": "apapachen" },
+    "subjImperfecto": { "yo": "apapachara", "tu": "apapacharas", "el": "apapachara", "nosotros": "apapacháramos", "ellos": "apapacharan" },
+    "condicional": { "yo": "apapacharía", "tu": "apapacharías", "el": "apapacharía", "nosotros": "apapacharíamos", "ellos": "apapacharían" },
+    "imperativo": { "tu": "apapacha", "el": "apapache", "nosotros": "apapachemos", "ellos": "apapachen" },
+    "participle": "apapachado",
     "level": "B2"
   },
   {
@@ -1768,6 +2005,11 @@
       "nosotros": "chambearemos",
       "ellos": "chambearán"
     },
+    "subjuntivo": { "yo": "chambee", "tu": "chambees", "el": "chambee", "nosotros": "chambeemos", "ellos": "chambeen" },
+    "subjImperfecto": { "yo": "chambeara", "tu": "chambearas", "el": "chambeara", "nosotros": "chambeáramos", "ellos": "chambearan" },
+    "condicional": { "yo": "chambearía", "tu": "chambearías", "el": "chambearía", "nosotros": "chambearíamos", "ellos": "chambearían" },
+    "imperativo": { "tu": "chambea", "el": "chambee", "nosotros": "chambeemos", "ellos": "chambeen" },
+    "participle": "chambeado",
     "level": "B2"
   },
   {
@@ -1804,7 +2046,12 @@
       "nosotros": "perteneceremos",
       "ellos": "pertenecerán"
     },
-    "irregularForms": ["presente.yo"],
+    "subjuntivo": { "yo": "pertenezca", "tu": "pertenezcas", "el": "pertenezca", "nosotros": "pertenezcamos", "ellos": "pertenezcan" },
+    "subjImperfecto": { "yo": "perteneciera", "tu": "pertenecieras", "el": "perteneciera", "nosotros": "perteneciéramos", "ellos": "pertenecieran" },
+    "condicional": { "yo": "pertenecería", "tu": "pertenecerías", "el": "pertenecería", "nosotros": "perteneceríamos", "ellos": "pertenecerían" },
+    "imperativo": { "tu": "pertenece", "el": "pertenezca", "nosotros": "pertenezcamos", "ellos": "pertenezcan" },
+    "participle": "pertenecido",
+    "irregularForms": ["presente.yo", "subjuntivo.*", "imperativo.el", "imperativo.nosotros", "imperativo.ellos"],
     "level": "B2"
   }
 ]
