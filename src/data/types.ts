@@ -130,6 +130,8 @@ export interface Tip {
   rules: TipRule[]
   related?: string[] // tip ids, "Pozri aj"
   sources: SourceRef[] // what the tip is based on, shown as "Podľa: …"
+  variants: Partial<Record<SpanishVariant, string>> // how a variant of Spanish uses the point, in the learner's language; `mx` required
+  ideas: string[] // 1–3 exercise ideas for later content work, English working notes, never shown
 }
 
 // The works the tips cite, src/data/sources.json.
@@ -199,5 +201,6 @@ export interface TipEn {
   id: string
   title: string
   intro: string
+  variants: Partial<Record<SpanishVariant, string>>
   rules: { id: string; title: string; text?: string; because?: string; examples: string[] }[] // examples: translations, in order
 }

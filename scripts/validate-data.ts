@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, Tense, Tip,TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, SpanishVariant, Tense, Tip,TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 import {
   deriveCondicional,
   deriveImperativo,
@@ -368,6 +368,13 @@ for (const tip of tips) {
     if (!sourceIds.has(ref.source)) fail(where, `unknown source "${ref.source}"`)
     if (!isNonEmpty(ref.where)) fail(where, `source "${ref.source}" needs where`)
   }
+  // A Slovak note may name Spain-only forms (vosotros, coche), so it is not checked as Spanish.
+  if (!isNonEmpty(tip.variants?.mx)) fail(where, 'needs variants.mx (how Mexico uses it)')
+  for (const key of Object.keys(tip.variants ?? {})) {
+    if (key !== 'mx' && key !== 'es') fail(where, `unknown Spanish variant "${key}"`)
+    else if (!isNonEmpty(tip.variants[key as SpanishVariant])) fail(where, `empty variants.${key}`)
+  }
+  if (!Array.isArray(tip.ideas) || tip.ideas.length < 1 || tip.ideas.length > 3 || !tip.ideas.every(isNonEmpty)) fail(where, 'needs 1–3 ideas')
   if (!Array.isArray(tip.rules) || tip.rules.length === 0) {
     fail(where, 'needs at least one rule')
     continue
@@ -628,6 +635,12 @@ for (const entry of enTips) {
     continue
   }
   if (!isNonEmpty(entry.title) || !isNonEmpty(entry.intro)) fail(where, 'missing title/intro')
+  for (const key of Object.keys(tip.variants ?? {}) as SpanishVariant[]) {
+    if (!isNonEmpty(entry.variants?.[key])) fail(where, `needs variants.${key}, like the Slovak tip`)
+  }
+  for (const key of Object.keys(entry.variants ?? {})) {
+    if (!(key in (tip.variants ?? {}))) fail(where, `variants.${key} has no Slovak note`)
+  }
   const ruleIds = (entry.rules ?? []).map((r) => r.id).join(', ')
   if (ruleIds !== tip.rules.map((r) => r.id).join(', ')) {
     fail(where, `rules must be the tip's own, in its order: ${tip.rules.map((r) => r.id).join(', ')}`)
