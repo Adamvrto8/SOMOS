@@ -13,7 +13,6 @@ import {
   regularNew,
   regularParticiple,
 } from '../src/lib/verbForms.ts'
-
 import { usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
@@ -589,8 +588,8 @@ for (const entry of enSentences) {
   clozes.forEach((cloze, i) => {
     const hint = entry.hints?.[i]
     if (hint !== undefined && hint !== null && !isNonEmpty(hint)) fail(where, `hints[${i}] is empty`)
-    // "tener · yo · pretérito" reads the same in any language; "člen" or "leto" does not.
-    const slovak = cloze.hint !== undefined && !cloze.hint.includes(' · ')
+    // "tener · yo · pretérito" and "gustar" read the same in any language; "člen" or "leto" does not.
+    const slovak = cloze.hint !== undefined && !cloze.hint.includes(' · ') && usageHint(cloze, verbById).kind === 'other'
     if (slovak && !isNonEmpty(hint)) fail(where, `the hint "${cloze.hint}" of cloze ${i} needs an English one in hints[${i}]`)
   })
 }
