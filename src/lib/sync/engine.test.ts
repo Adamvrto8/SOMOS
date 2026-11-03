@@ -95,7 +95,8 @@ describe('a sync round', () => {
     await syncOnce(server)
     expect(server.pushes).toBe(3)
     expect(await pendingChanges()).toBe(0)
-  })
+    // 1200 rows through fake IndexedDB take ~2 s alone and more than the default 5 s in a full parallel run.
+  }, 15_000)
 
   it('keeps everything to send when the push fails', async () => {
     await db.savedItems.put(star('casa'))
