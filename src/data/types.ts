@@ -96,7 +96,8 @@ export interface Cloze {
   // Verbs: "tener · yo · pretérito", "hablar · gerundio", "ser/estar · él · presente".
   // Otherwise a short Slovak hint ("člen", "zajtra").
   hint?: string
-  why?: string // ser/estar clozes: the rule of the "ser-estar" tip that applies here ("origin")
+  tip?: Grammar // a usage tip the blank practises ("por-para"); a verb hint leads to the tense tips by itself
+  why?: string // ser/estar blanks: the rule of the "ser-estar" tip that applies here ("origin"); blanks with `tip`: a rule of that tip
   distractors?: string[] // for multiple choice
 }
 
