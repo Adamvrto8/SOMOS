@@ -244,7 +244,7 @@ test('Cvičiť is a hub: where to go on, the shortcuts and every exercise', asyn
   await expect(page.getByRole('link', { name: /Gramatika/ })).toBeVisible()
   // Chyby only once there are some.
   await expect(page.getByRole('link', { name: /Chyby/ })).toHaveCount(0)
-  await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(8)
+  await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(11)
 
   // A tile opens its exercise; the tab bar leads back to the hub from there.
   await page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ }).tap()
