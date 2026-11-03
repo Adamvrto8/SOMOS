@@ -443,6 +443,7 @@ export const en: Dictionary = {
     tense: 'Tense',
     play: 'Play',
     progresivoNote: 'estar + gerund',
+    pluscuamperfectoNote: 'Only haber changes, the participle stays:',
     imperfectoBefore: 'A repeated or ongoing action in the past, and description:',
     imperfectoAfter: 'A single finished action is pretérito.',
     futuroNote: 'In everyday speech Mexicans more often say ir a + infinitive:',

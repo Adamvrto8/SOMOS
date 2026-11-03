@@ -482,6 +482,7 @@ export const sk = {
     tense: 'Čas',
     play: 'Prehrať',
     progresivoNote: 'estar + gerundium',
+    pluscuamperfectoNote: 'Časuje sa len haber, príčastie sa nemení:',
     imperfectoBefore: 'Opakovaný alebo prebiehajúci dej v minulosti a opis:',
     imperfectoAfter: 'Jednorazový ukončený dej je pretérito.',
     futuroNote: 'V bežnej reči sa v Mexiku častejšie povie ir a + infinitív:',

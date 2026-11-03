@@ -4,10 +4,20 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import type { Verb } from '../../data/types'
 import { useT } from '../../i18n'
-import { conjugate, formText, PERSON_LABELS, PERSONS, TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
+import { conjugate, formText, negativeImperative, personLabel, personsOf, TABLE_TENSES, TENSE_LABELS, type FormPart, type TableTense } from '../../lib/conjugate'
 import { speak, ttsSupported } from '../../lib/tts'
 
 const IRREGULAR = 'rounded-md bg-amber/30 px-1 font-semibold'
+
+/** A conjugated form, its irregular parts highlighted. */
+function Forms({ parts }: { parts: FormPart[] }) {
+  return parts.map((part, i) => (
+    <Fragment key={i}>
+      {i > 0 && ' '}
+      <span className={part.irregular ? IRREGULAR : undefined}>{part.text}</span>
+    </Fragment>
+  ))
+}
 
 interface ConjugationTableProps {
   verb: Verb
@@ -17,8 +27,14 @@ interface ConjugationTableProps {
 export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
   const [tense, setTense] = useState<TableTense>('presente')
   const labels = useT().word
-  const rows = PERSONS.map((person) => ({ person, parts: conjugate(verb, tense, person, estar) }))
-  const hasIrregular = rows.some((row) => row.parts.some((p) => p.irregular))
+  const imperative = tense === 'imperativo'
+  const rows = personsOf(tense).map((person) => ({
+    person,
+    parts: conjugate(verb, tense, person, estar),
+    // The imperative shows the negative (no + subjuntivo) under the affirmative: two columns do not fit 375 px.
+    negative: imperative && person !== 'yo' ? negativeImperative(verb, person) : undefined,
+  }))
+  const hasIrregular = rows.some((row) => [...row.parts, ...(row.negative ?? [])].some((p) => p.irregular))
 
   return (
     <section aria-labelledby="conjugation-heading">
@@ -37,25 +53,25 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
 
       <div role="tabpanel" id="conjugation-panel" aria-labelledby={`tab-${tense}`} className="mt-3">
         <ul className="divide-y divide-line rounded-card border border-line bg-surface">
-          {rows.map(({ person, parts }) => {
-            const text = formText(parts)
+          {rows.map(({ person, parts, negative }) => {
+            const text = negative ? `${formText(parts)}, ${formText(negative)}` : formText(parts)
             return (
               <li key={person}>
                 <button
                   type="button"
                   onClick={() => speak(text)}
                   disabled={!ttsSupported}
-                  aria-label={ttsSupported ? `${PERSON_LABELS[person]}: ${text}. ${labels.play}` : undefined}
+                  aria-label={ttsSupported ? `${personLabel(tense, person)}: ${text}. ${labels.play}` : undefined}
                   className="flex min-h-13 w-full items-center gap-3 px-4 py-2 text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brick active:bg-surface-2 disabled:active:bg-transparent"
                 >
-                  <span className="w-24 shrink-0 text-sm leading-tight text-ink-muted">{PERSON_LABELS[person]}</span>
-                  <span lang="es" className="flex-1 font-serif text-lg">
-                    {parts.map((part, i) => (
-                      <Fragment key={i}>
-                        {i > 0 && ' '}
-                        <span className={part.irregular ? IRREGULAR : undefined}>{part.text}</span>
-                      </Fragment>
-                    ))}
+                  <span className="w-24 shrink-0 text-sm leading-tight text-ink-muted">{personLabel(tense, person)}</span>
+                  <span lang="es" className="min-w-0 flex-1 font-serif text-lg">
+                    <Forms parts={parts} />
+                    {negative && (
+                      <span className="block text-base text-ink-muted">
+                        <Forms parts={negative} />
+                      </span>
+                    )}
                   </span>
                   {ttsSupported && <Volume2 size={16} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />}
                 </button>
@@ -67,6 +83,14 @@ export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
         {tense === 'progresivo' && (
           <p className="mt-3 text-sm text-ink-muted">
             {labels.progresivoNote} <span lang="es" className={`font-serif text-ink ${verb.gerundIrregular ? IRREGULAR : ''}`}>{verb.gerund}</span>
+          </p>
+        )}
+        {tense === 'pluscuamperfecto' && (
+          <p className="mt-3 text-sm text-ink-muted">
+            {labels.pluscuamperfectoNote}{' '}
+            <span lang="es" className={`font-serif text-ink ${verb.participleIrregular ? IRREGULAR : ''}`}>
+              {verb.participle}
+            </span>
           </p>
         )}
         {tense === 'imperfecto' && (

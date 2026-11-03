@@ -7,7 +7,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { useT } from '../../i18n'
-import { TABLE_TENSES, TENSE_LABELS, type TableTense } from '../../lib/conjugate'
+import { levelAbove, TABLE_TENSES, TENSE_LABELS, TENSE_LEVEL, type TableTense } from '../../lib/conjugate'
 import { getStablePool, LESSON_SIZE, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
   getActiveLesson,
@@ -92,6 +92,8 @@ export function ExercisePage() {
             {TABLE_TENSES.map((t) => (
               <Chip key={t} selected={group === t} onClick={() => updateParams({ tense: t })}>
                 {TENSE_LABELS[t]}
+                {/* A tense of a higher level still works here; the badge says from where it is taught. */}
+                {filter.level && levelAbove(t, filter.level) && <span className="ml-1.5 rounded-full border border-current px-1.5 text-xs">{TENSE_LEVEL[t]}</span>}
               </Chip>
             ))}
           </div>
