@@ -81,5 +81,6 @@
   { "id": "s1061", "en": "Stress shows up in your body: I broke out in a rash on my neck.", "hints": ["neck"] },
   { "id": "s1601", "en": "My feet hurt after walking all day." },
   { "id": "s1603", "en": "As a girl, my ears used to hurt every winter." },
-  { "id": "s1618", "en": "My mom used to cut my hair when I was little." }
+  { "id": "s1618", "en": "My mom used to cut my hair when I was little." },
+  { "id": "s1640", "en": "My feet hurt." }
 ]

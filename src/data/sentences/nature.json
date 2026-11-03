@@ -1503,5 +1503,366 @@
         "distractors": ["nieva", "nevó", "nevaba"]
       }
     ]
+  },
+  {
+    "id": "s1690",
+    "es": "Este cerro es pequeño, pero ese volcán es más alto.",
+    "sk": "Tento kopec je malý, ale tamtá sopka je vyššia.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Este", "cerro", "es", "pequeño", ",", "pero", "ese", "volcán", "es", "más", "alto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["menos", "tan", "muy"]
+      }
+    ]
+  },
+  {
+    "id": "s1691",
+    "es": "Hace más frío en el norte que en el sur.",
+    "sk": "Na severe je väčšia zima ako na juhu.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Hace", "más", "frío", "en", "el", "norte", "que", "en", "el", "sur", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["como", "de", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s1692",
+    "es": "Este lago es tan bonito como una playa.",
+    "sk": "Toto jazero je také krásne ako pláž.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Este", "lago", "es", "tan", "bonito", "como", "una", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["muy", "tanto", "más"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["que", "tan", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1693",
+    "es": "Ayer había muchas nubes, pero hoy hay menos.",
+    "sk": "Včera bolo veľa oblakov, ale dnes ich je menej.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "imperfecto", "presente"],
+    "tokens": ["Ayer", "había", "muchas", "nubes", ",", "pero", "hoy", "hay", "menos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "menos",
+        "lemma": "menos",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["más", "tan", "poco"]
+      }
+    ]
+  },
+  {
+    "id": "s1694",
+    "es": "Esta playa es mejor que la otra: el agua es más limpia.",
+    "sk": "Táto pláž je lepšia ako tá druhá, voda je čistejšia.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Esta", "playa", "es", "mejor", "que", "la", "otra", ":", "el", "agua", "es", "más", "limpia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["peor", "más", "mayor"]
+      }
+    ]
+  },
+  {
+    "id": "s1695",
+    "es": "La lluvia de hoy es peor que la de ayer: no podemos salir.",
+    "sk": "Dnešný dážď je horší ako včerajší, nemôžeme von.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["La", "lluvia", "de", "hoy", "es", "peor", "que", "la", "de", "ayer", ":", "no", "podemos", "salir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "peor",
+        "lemma": "peor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["mejor", "menor", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s1696",
+    "es": "El Amazonas es el río más largo de América del Sur.",
+    "sk": "Amazonka je najdlhšia rieka Južnej Ameriky.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["El", "Amazonas", "es", "el", "río", "más", "largo", "de", "América", "del", "Sur", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "superlative",
+        "distractors": ["menos", "tan", "mayor"]
+      }
+    ]
+  },
+  {
+    "id": "s1806",
+    "es": "Me encantaría ver las ballenas algún día.",
+    "sk": "Rád by som niekedy videl veľryby.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "encantaría", "ver", "las", "ballenas", "algún", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encantaría",
+        "lemma": "encantar",
+        "hint": "encantar · él · condicional",
+        "distractors": ["encantará", "encantaba", "encanta"]
+      }
+    ]
+  },
+  {
+    "id": "s1807",
+    "es": "Con este frío, yo no saldría al bosque sin chamarra.",
+    "sk": "Pri takejto zime by som do lesa bez bundy nevyšiel.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Con", "este", "frío", ",", "yo", "no", "saldría", "al", "bosque", "sin", "chamarra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "saldría",
+        "lemma": "salir",
+        "hint": "salir · yo · condicional",
+        "distractors": ["saldré", "salía", "salgo"]
+      }
+    ]
+  },
+  {
+    "id": "s1808",
+    "es": "Según el guía, tardaríamos tres horas en llegar a la cascada.",
+    "sk": "Podľa sprievodcu by nám cesta k vodopádu trvala tri hodiny.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Según", "el", "guía", ",", "tardaríamos", "tres", "horas", "en", "llegar", "a", "la", "cascada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tardaríamos",
+        "lemma": "tardar",
+        "hint": "tardar · nosotros · condicional",
+        "distractors": ["tardaremos", "tardábamos", "tardamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1809",
+    "es": "En tu lugar, yo no tocaría a los animales salvajes.",
+    "sk": "Na tvojom mieste by som sa nedotýkal divokých zvierat.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["En", "tu", "lugar", ",", "yo", "no", "tocaría", "a", "los", "animales", "salvajes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tocaría",
+        "lemma": "tocar",
+        "hint": "tocar · yo · condicional",
+        "distractors": ["tocaré", "tocaba", "toco"]
+      }
+    ]
+  },
+  {
+    "id": "s1935",
+    "es": "El río que cruza el valle nace en la sierra.",
+    "sk": "Rieka, ktorá preteká údolím, pramení v pohorí.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "río", "que", "cruza", "el", "valle", "nace", "en", "la", "sierra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1936",
+    "es": "Este es el bosque donde vimos al venado.",
+    "sk": "Toto je les, kde sme videli jeleňa.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente", "preterito"],
+    "tokens": ["Este", "es", "el", "bosque", "donde", "vimos", "al", "venado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s1937",
+    "es": "Lo que más me gusta del campo es el silencio.",
+    "sk": "Na vidieku sa mi najviac páči ticho.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Lo", "que", "más", "me", "gusta", "del", "campo", "es", "el", "silencio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["El", "La"]
+      }
+    ]
+  },
+  {
+    "id": "s1938",
+    "es": "El sendero por el que subimos al volcán es muy difícil.",
+    "sk": "Chodník, ktorým sme vystúpili na sopku, je veľmi náročný.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "sendero", "por", "el", "que", "subimos", "al", "volcán", "es", "muy", "difícil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "el-que",
+        "distractors": ["lo", "la"]
+      }
+    ]
+  },
+  {
+    "id": "s1939",
+    "es": "Esta es la cueva donde viven miles de murciélagos.",
+    "sk": "Toto je jaskyňa, kde žijú tisíce netopierov.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Esta", "es", "la", "cueva", "donde", "viven", "miles", "de", "murciélagos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s1940",
+    "es": "Los animales que viven en el desierto aguantan el calor.",
+    "sk": "Zvieratá, ktoré žijú na púšti, znášajú horúčavu.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "animales", "que", "viven", "en", "el", "desierto", "aguantan", "el", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1941",
+    "es": "No sabemos lo que pasará con los glaciares.",
+    "sk": "Nevieme, čo sa stane s ľadovcami.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente", "futuro"],
+    "tokens": ["No", "sabemos", "lo", "que", "pasará", "con", "los", "glaciares", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
+      }
+    ]
   }
 ]

@@ -1502,5 +1502,115 @@
         "distractors": ["tardo", "tardé", "tardaba"]
       }
     ]
+  },
+  {
+    "id": "s1742",
+    "es": "Levántate temprano si quieres llegar a tiempo.",
+    "sk": "Vstaň skoro, ak chceš prísť načas.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Levántate", "temprano", "si", "quieres", "llegar", "a", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Levántate",
+        "lemma": "levantarse",
+        "hint": "levantarse · tú · imperativo",
+        "distractors": ["Levántese", "Levántense", "Levantas"]
+      }
+    ]
+  },
+  {
+    "id": "s1743",
+    "es": "Aproveche el tiempo libre para descansar.",
+    "sk": "Využite voľný čas na odpočinok.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperativo"],
+    "tokens": ["Aproveche", "el", "tiempo", "libre", "para", "descansar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aproveche",
+        "lemma": "aprovechar",
+        "hint": "aprovechar · usted · imperativo",
+        "distractors": ["Aprovecha", "Aprovechen", "Aprovecho"]
+      }
+    ]
+  },
+  {
+    "id": "s1744",
+    "es": "No pierdas tiempo; empieza ahora.",
+    "sk": "Nestrácaj čas, začni hneď.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["No", "pierdas", "tiempo", ";", "empieza", "ahora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "empieza",
+        "lemma": "empezar",
+        "hint": "empezar · tú · imperativo",
+        "distractors": ["empiece", "empiezan", "empiezo"]
+      }
+    ]
+  },
+  {
+    "id": "s1745",
+    "es": "Acuéstense temprano, mañana hay que madrugar.",
+    "sk": "Choďte skoro spať, zajtra treba vstávať za svitania.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Acuéstense", "temprano", ",", "mañana", "hay", "que", "madrugar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Acuéstense",
+        "lemma": "acostarse",
+        "hint": "acostarse · ustedes · imperativo",
+        "distractors": ["Acuéstese", "Acuéstate", "Acostamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1746",
+    "es": "Esperemos hasta el lunes antes de decidir.",
+    "sk": "Počkajme do pondelka, kým sa rozhodneme.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["imperativo"],
+    "tokens": ["Esperemos", "hasta", "el", "lunes", "antes", "de", "decidir", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esperemos",
+        "lemma": "esperar",
+        "hint": "esperar · nosotros · imperativo",
+        "distractors": ["Esperen", "Esperamos", "Espere"]
+      }
+    ]
+  },
+  {
+    "id": "s1904",
+    "es": "Por fin llegó el fin de semana.",
+    "sk": "Konečne prišiel víkend.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Por", "fin", "llegó", "el", "fin", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "fixed",
+        "distractors": ["Para", "De"]
+      }
+    ]
   }
 ]

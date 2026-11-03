@@ -79,5 +79,20 @@
   { "id": "s1175", "en": "My godson asked me to be his graduation sponsor." },
   { "id": "s1176", "en": "My aunts are super nosy and always ask when I'm getting married." },
   { "id": "s1177", "en": "The siblings fought over the inheritance and stopped speaking to each other." },
-  { "id": "s1615", "en": "My kids always break new toys within a day." }
+  { "id": "s1615", "en": "My kids always break new toys within a day." },
+  { "id": "s1684", "en": "My sister lent me her car and I gave it back to her on Monday.", "hints": ["pronoun: to her"] },
+  { "id": "s1704", "en": "My brother is twenty and I am fifteen: he is older than I am.", "hints": ["comparison"] },
+  { "id": "s1729", "en": "My sister has to take care of my grandmother on Saturdays.", "hints": ["must"] },
+  { "id": "s1750", "en": "Help your brother with his homework." },
+  { "id": "s1770", "en": "When I was born, my parents had already moved to Puebla." },
+  { "id": "s1819", "en": "My grandmother wanted us to live near her." },
+  { "id": "s1820", "en": "If I had more siblings, the house would be more fun." },
+  { "id": "s1821", "en": "My parents asked me to take care of my little brother." },
+  { "id": "s1822", "en": "I wish my cousin would come to the wedding." },
+  { "id": "s1823", "en": "My uncle talked as if he owned everything." },
+  { "id": "s1824", "en": "It was important that the whole family be present." },
+  { "id": "s1883", "en": "If my grandparents lived nearby, we would visit them every Sunday." },
+  { "id": "s1921", "en": "My parents do not believe that I can live alone." },
+  { "id": "s1943", "en": "My sister, who I talk to every day, lives in Monterrey.", "hints": ["relative word"] },
+  { "id": "s1971", "en": "In my family we eat together on Sundays.", "hints": ["pronoun"] }
 ]

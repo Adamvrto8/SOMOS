@@ -1544,5 +1544,487 @@
         "distractors": ["traté", "trataba", "trataré"]
       }
     ]
+  },
+  {
+    "id": "s1633",
+    "es": "Me gusta mucho este lugar.",
+    "sk": "Toto miesto sa mi veľmi páči.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "mucho", "este", "lugar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1634",
+    "es": "¿Te gustan los perros o los gatos?",
+    "sk": "Máš rád psov alebo mačky?",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["¿", "Te", "gustan", "los", "perros", "o", "los", "gatos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas", "gustamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1635",
+    "es": "A ella le gusta el color azul.",
+    "sk": "Ona má rada modrú farbu.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "ella", "le", "gusta", "el", "color", "azul", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1636",
+    "es": "Nos gusta hablar español.",
+    "sk": "Radi hovoríme po španielsky.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Nos", "gusta", "hablar", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustamos", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1637",
+    "es": "A mi papá le gustan los carros grandes.",
+    "sk": "Môj otec má rád veľké autá.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "mi", "papá", "le", "gustan", "los", "carros", "grandes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas", "gustamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1638",
+    "es": "Me encanta esta canción.",
+    "sk": "Táto pieseň sa mi veľmi páči.",
+    "level": "A1",
+    "topics": ["basics"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "encanta", "esta", "canción", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encanta",
+        "lemma": "encantar",
+        "hint": "encantar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["encantan", "gusta", "duele"]
+      }
+    ]
+  },
+  {
+    "id": "s1732",
+    "es": "Ven aquí un momento, por favor.",
+    "sk": "Poď sem na chvíľu, prosím.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperativo"],
+    "tokens": ["Ven", "aquí", "un", "momento", ",", "por", "favor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ven",
+        "lemma": "venir",
+        "hint": "venir · tú · imperativo",
+        "distractors": ["Vas", "Ve", "Vengo"]
+      }
+    ]
+  },
+  {
+    "id": "s1733",
+    "es": "Espere un momento, por favor; ya lo atiendo.",
+    "sk": "Počkajte chvíľu, prosím, hneď sa vám budem venovať.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Espere", "un", "momento", ",", "por", "favor", ";", "ya", "lo", "atiendo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Espere",
+        "lemma": "esperar",
+        "hint": "esperar · usted · imperativo",
+        "distractors": ["Espera", "Esperen", "Espero"]
+      }
+    ]
+  },
+  {
+    "id": "s1734",
+    "es": "Escuchen bien las instrucciones antes de empezar.",
+    "sk": "Dobre počúvajte pokyny, než začnete.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperativo"],
+    "tokens": ["Escuchen", "bien", "las", "instrucciones", "antes", "de", "empezar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Escuchen",
+        "lemma": "escuchar",
+        "hint": "escuchar · ustedes · imperativo",
+        "distractors": ["Escuche", "Escucha", "Escuchamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1735",
+    "es": "Haz lo que puedas y no te preocupes.",
+    "sk": "Urob, čo môžeš, a netrap sa.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperativo", "presente", "subjuntivo"],
+    "tokens": ["Haz", "lo", "que", "puedas", "y", "no", "te", "preocupes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Haz",
+        "lemma": "hacer",
+        "hint": "hacer · tú · imperativo",
+        "distractors": ["Hace", "Hagan", "Hago"]
+      }
+    ]
+  },
+  {
+    "id": "s1736",
+    "es": "Pongamos las cosas claras desde el principio.",
+    "sk": "Ujasnime si veci hneď od začiatku.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["imperativo"],
+    "tokens": ["Pongamos", "las", "cosas", "claras", "desde", "el", "principio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pongamos",
+        "lemma": "poner",
+        "hint": "poner · nosotros · imperativo",
+        "distractors": ["Pongan", "Ponemos", "Pon"]
+      }
+    ]
+  },
+  {
+    "id": "s1780",
+    "es": "Es necesario que ustedes tengan paciencia.",
+    "sk": "Je potrebné, aby ste mali trpezlivosť.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "necesario", "que", "ustedes", "tengan", "paciencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tengan",
+        "lemma": "tener",
+        "hint": "tener · ustedes · subjuntivo",
+        "distractors": ["tienen", "tendrán", "tuvieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1781",
+    "es": "Espero que sepas la respuesta.",
+    "sk": "Dúfam, že poznáš odpoveď.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Espero", "que", "sepas", "la", "respuesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sepas",
+        "lemma": "saber",
+        "hint": "saber · tú · subjuntivo",
+        "distractors": ["sabes", "sabrás", "supiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1782",
+    "es": "Quiero que seas honesto conmigo.",
+    "sk": "Chcem, aby si bol ku mne úprimný.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Quiero", "que", "seas", "honesto", "conmigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "seas",
+        "lemma": "ser",
+        "hint": "ser · tú · subjuntivo",
+        "distractors": ["eres", "serás", "fuiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1783",
+    "es": "Ojalá que todo salga bien.",
+    "sk": "Kiežby všetko dopadlo dobre.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Ojalá", "que", "todo", "salga", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él · subjuntivo",
+        "distractors": ["sale", "saldrá", "salió"]
+      }
+    ]
+  },
+  {
+    "id": "s1788",
+    "es": "Es poco probable que cambien de opinión.",
+    "sk": "Je nepravdepodobné, že zmenia názor.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "poco", "probable", "que", "cambien", "de", "opinión", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cambien",
+        "lemma": "cambiar",
+        "hint": "cambiar · ellos · subjuntivo",
+        "distractors": ["cambian", "cambiarán", "cambiaron"]
+      }
+    ]
+  },
+  {
+    "id": "s1789",
+    "es": "Es increíble que todavía recuerdes mi nombre.",
+    "sk": "Je neuveriteľné, že si ešte pamätáš moje meno.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "increíble", "que", "todavía", "recuerdes", "mi", "nombre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "recuerdes",
+        "lemma": "recordar",
+        "hint": "recordar · tú · subjuntivo",
+        "distractors": ["recuerdas", "recordarás", "recordaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1790",
+    "es": "No es que no quiera ayudarte, es que no puedo.",
+    "sk": "Nie je to tak, že ti nechcem pomôcť, ja jednoducho nemôžem.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["No", "es", "que", "no", "quiera", "ayudarte", ",", "es", "que", "no", "puedo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quiera",
+        "lemma": "querer",
+        "hint": "querer · yo · subjuntivo",
+        "distractors": ["quiero", "querré", "quise"]
+      }
+    ]
+  },
+  {
+    "id": "s1791",
+    "es": "Te lo explico otra vez para que lo entiendas bien.",
+    "sk": "Vysvetlím ti to ešte raz, aby si tomu dobre porozumel.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Te", "lo", "explico", "otra", "vez", "para", "que", "lo", "entiendas", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "entiendas",
+        "lemma": "entender",
+        "hint": "entender · tú · subjuntivo",
+        "distractors": ["entiendes", "entenderás", "entendiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1833",
+    "es": "Si supiera la respuesta, te la diría.",
+    "sk": "Keby som poznal odpoveď, povedal by som ti ju.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Si", "supiera", "la", "respuesta", ",", "te", "la", "diría", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "supiera",
+        "lemma": "saber",
+        "hint": "saber · yo · subjuntivo imperfecto",
+        "distractors": ["sepa", "sabía", "sabría"]
+      }
+    ]
+  },
+  {
+    "id": "s1834",
+    "es": "Me pidió que le dijera la verdad.",
+    "sk": "Poprosil ma, aby som mu povedal pravdu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "preterito"],
+    "tokens": ["Me", "pidió", "que", "le", "dijera", "la", "verdad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dijera",
+        "lemma": "decir",
+        "hint": "decir · yo · subjuntivo imperfecto",
+        "distractors": ["diga", "decía", "diría"]
+      }
+    ]
+  },
+  {
+    "id": "s1835",
+    "es": "Buscábamos un lugar donde pudiéramos platicar tranquilos.",
+    "sk": "Hľadali sme miesto, kde by sme sa mohli v pokoji porozprávať.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Buscábamos", "un", "lugar", "donde", "pudiéramos", "platicar", "tranquilos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pudiéramos",
+        "lemma": "poder",
+        "hint": "poder · nosotros · subjuntivo imperfecto",
+        "distractors": ["podamos", "podíamos", "podríamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1836",
+    "es": "No conocía a nadie que hiciera eso.",
+    "sk": "Nepoznal som nikoho, kto by niečo také robil.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["No", "conocía", "a", "nadie", "que", "hiciera", "eso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hiciera",
+        "lemma": "hacer",
+        "hint": "hacer · él · subjuntivo imperfecto",
+        "distractors": ["haga", "hacía", "haría"]
+      }
+    ]
+  },
+  {
+    "id": "s1837",
+    "es": "Si tuvieras que elegir, ¿qué elegirías?",
+    "sk": "Keby si si musel vybrať, čo by si vybral?",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuvieras", "que", "elegir", ",", "¿", "qué", "elegirías", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuvieras",
+        "lemma": "tener",
+        "hint": "tener · tú · subjuntivo imperfecto",
+        "distractors": ["tengas", "tenías", "tendrías"]
+      }
+    ]
+  },
+  {
+    "id": "s1838",
+    "es": "Era necesario que todos entendieran las reglas.",
+    "sk": "Bolo nevyhnutné, aby všetci rozumeli pravidlám.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Era", "necesario", "que", "todos", "entendieran", "las", "reglas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "entendieran",
+        "lemma": "entender",
+        "hint": "entender · ellos · subjuntivo imperfecto",
+        "distractors": ["entiendan", "entendían", "entenderían"]
+      }
+    ]
+  },
+  {
+    "id": "s1905",
+    "es": "Para mí, el español no es tan difícil.",
+    "sk": "Podľa mňa španielčina nie je až taká ťažká.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Para", "mí", ",", "el", "español", "no", "es", "tan", "difícil", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["Por", "A"]
+      }
+    ]
   }
 ]

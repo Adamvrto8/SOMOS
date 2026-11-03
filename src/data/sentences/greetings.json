@@ -1464,5 +1464,43 @@
         "distractors": ["permiso", "viaje", "provecho"]
       }
     ]
+  },
+  {
+    "id": "s1689",
+    "es": "Mis amigos llegan hoy y los voy a recibir en el aeropuerto.",
+    "sk": "Priatelia dnes prídu a ja ich privítam na letisku.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Mis", "amigos", "llegan", "hoy", "y", "los", "voy", "a", "recibir", "en", "el", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["les", "lo", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s1753",
+    "es": "Pásale y siéntate como en tu casa.",
+    "sk": "Poď ďalej a sadni si ako doma.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["imperativo"],
+    "tokens": ["Pásale", "y", "siéntate", "como", "en", "tu", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "siéntate",
+        "lemma": "sentarse",
+        "hint": "sentarse · tú · imperativo",
+        "distractors": ["siéntese", "siéntense", "sientas"]
+      }
+    ]
   }
 ]

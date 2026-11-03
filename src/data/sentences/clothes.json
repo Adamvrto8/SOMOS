@@ -1548,5 +1548,25 @@
         "distractors": ["quedan", "quedaban", "quedarán"]
       }
     ]
+  },
+  {
+    "id": "s1645",
+    "es": "Me gustan estos zapatos.",
+    "sk": "Tieto topánky sa mi páčia.",
+    "level": "A1",
+    "topics": ["clothes"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gustan", "estos", "zapatos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gustan",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "plural",
+        "distractors": ["gusta", "gustas", "gusto"]
+      }
+    ]
   }
 ]

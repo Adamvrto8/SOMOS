@@ -1467,5 +1467,523 @@
         "distractors": ["revisan", "revisaban", "revisarán"]
       }
     ]
+  },
+  {
+    "id": "s1644",
+    "es": "¿Te gusta viajar en avión?",
+    "sk": "Rád cestuješ lietadlom?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["¿", "Te", "gusta", "viajar", "en", "avión", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1663",
+    "es": "¿Hay un camión al aeropuerto?",
+    "sk": "Ide autobus na letisko?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["¿", "Hay", "un", "camión", "al", "aeropuerto", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "question",
+        "distractors": ["Está", "Están", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s1664",
+    "es": "El hotel está cerca de la playa.",
+    "sk": "Hotel je blízko pláže.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["El", "hotel", "está", "cerca", "de", "la", "playa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "estar",
+        "distractors": ["hay", "es", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1687",
+    "es": "Los boletos están en mi bolsa; ahorita te los doy.",
+    "sk": "Lístky sú v mojej taške, hneď ti ich dám.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Los", "boletos", "están", "en", "mi", "bolsa", ";", "ahorita", "te", "los", "doy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["las", "lo", "les"]
+      }
+    ]
+  },
+  {
+    "id": "s1726",
+    "es": "Para viajar a otro país hay que tener pasaporte.",
+    "sk": "Na cestu do inej krajiny treba mať pas.",
+    "level": "A2",
+    "topics": ["travel"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Para", "viajar", "a", "otro", "país", "hay", "que", "tener", "pasaporte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1771",
+    "es": "Cuando llegué al aeropuerto, el avión ya había despegado.",
+    "sk": "Keď som prišiel na letisko, lietadlo už odletelo.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "llegué", "al", "aeropuerto", ",", "el", "avión", "ya", "había", "despegado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "despegado",
+        "lemma": "despegar",
+        "hint": "despegar · participio",
+        "distractors": ["despegando", "despegó", "despegar"]
+      }
+    ]
+  },
+  {
+    "id": "s1854",
+    "es": "Te aconsejo que compres los boletos con anticipación.",
+    "sk": "Radím ti, aby si kúpil lístky vopred.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Te", "aconsejo", "que", "compres", "los", "boletos", "con", "anticipación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "compres",
+        "lemma": "comprar",
+        "hint": "comprar · tú",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["compras", "comprarás", "compraste"]
+      }
+    ]
+  },
+  {
+    "id": "s1860",
+    "es": "Ojalá que el avión salga a tiempo.",
+    "sk": "Kiežby lietadlo odletelo načas.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Ojalá", "que", "el", "avión", "salga", "a", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él",
+        "tip": "subjuntivo-wishes",
+        "why": "ojala",
+        "distractors": ["sale", "saldrá", "salió"]
+      }
+    ]
+  },
+  {
+    "id": "s1862",
+    "es": "Si pierdes el avión, tendrás que comprar otro boleto.",
+    "sk": "Ak zmeškáš lietadlo, budeš si musieť kúpiť iný lístok.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "pierdes", "el", "avión", ",", "tendrás", "que", "comprar", "otro", "boleto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pierdes",
+        "lemma": "perder",
+        "hint": "perder · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["perderás", "perdiste", "perdías"]
+      }
+    ]
+  },
+  {
+    "id": "s1863",
+    "es": "Si el tren sale tarde, llegaremos a las ocho.",
+    "sk": "Ak vlak odíde neskoro, prídeme o ôsmej.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "el", "tren", "sale", "tarde", ",", "llegaremos", "a", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sale",
+        "lemma": "salir",
+        "hint": "salir · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["saldrá", "salió", "salía"]
+      }
+    ]
+  },
+  {
+    "id": "s1864",
+    "es": "Si necesitas ayuda con las maletas, avísame.",
+    "sk": "Ak potrebuješ pomoc s kuframi, daj mi vedieť.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "presente", "imperativo"],
+    "tokens": ["Si", "necesitas", "ayuda", "con", "las", "maletas", ",", "avísame", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "necesitas",
+        "lemma": "necesitar",
+        "hint": "necesitar · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["necesitarás", "necesitaste", "necesitabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1865",
+    "es": "Si viajamos en septiembre, los hoteles costarán menos.",
+    "sk": "Ak budeme cestovať v septembri, hotely budú lacnejšie.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "viajamos", "en", "septiembre", ",", "los", "hoteles", "costarán", "menos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "viajamos",
+        "lemma": "viajar",
+        "hint": "viajar · nosotros",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["viajaremos", "viajábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1866",
+    "es": "Si tuviera más vacaciones, viajaría a Oaxaca cada mes.",
+    "sk": "Keby som mal viac dovolenky, cestoval by som do Oaxaky každý mesiac.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "más", "vacaciones", ",", "viajaría", "a", "Oaxaca", "cada", "mes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviera",
+        "lemma": "tener",
+        "hint": "tener · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["tenga", "tenía", "tendría"]
+      }
+    ]
+  },
+  {
+    "id": "s1867",
+    "es": "Si tuviéramos más tiempo, visitaríamos Chiapas.",
+    "sk": "Keby sme mali viac času, navštívili by sme Chiapas.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviéramos", "más", "tiempo", ",", "visitaríamos", "Chiapas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "visitaríamos",
+        "lemma": "visitar",
+        "hint": "visitar · nosotros",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["visitaremos", "visitábamos", "visitamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1868",
+    "es": "Si fueras a Cancún, ¿qué harías primero?",
+    "sk": "Keby si išiel do Cancúnu, čo by si urobil ako prvé?",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "fueras", "a", "Cancún", ",", "¿", "qué", "harías", "primero", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "harías",
+        "lemma": "hacer",
+        "hint": "hacer · tú",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["harás", "hacías", "haces"]
+      }
+    ]
+  },
+  {
+    "id": "s1898",
+    "es": "Salimos para Guadalajara mañana temprano.",
+    "sk": "Zajtra zavčasu odchádzame do Guadalajary.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Salimos", "para", "Guadalajara", "mañana", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1899",
+    "es": "Viajamos por la costa en carro.",
+    "sk": "Cestovali sme autom pozdĺž pobrežia.",
+    "level": "B1",
+    "topics": ["travel"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Viajamos", "por", "la", "costa", "en", "carro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1920",
+    "es": "Cuando lleguemos a Mérida, te llamo.",
+    "sk": "Keď dorazíme do Méridy, zavolám ti.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Cuando", "lleguemos", "a", "Mérida", ",", "te", "llamo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["llegamos", "llegaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1928",
+    "es": "El hotel donde nos quedamos tenía vista al mar.",
+    "sk": "Hotel, v ktorom sme boli ubytovaní, mal výhľad na more.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["El", "hotel", "donde", "nos", "quedamos", "tenía", "vista", "al", "mar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s1929",
+    "es": "Esta es la playa que me recomendaste.",
+    "sk": "Toto je pláž, ktorú si mi odporučil.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente", "preterito"],
+    "tokens": ["Esta", "es", "la", "playa", "que", "me", "recomendaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1930",
+    "es": "No entendí lo que dijo el guía.",
+    "sk": "Nerozumel som tomu, čo povedal sprievodca.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["No", "entendí", "lo", "que", "dijo", "el", "guía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
+      }
+    ]
+  },
+  {
+    "id": "s1931",
+    "es": "La ruta por la que pasamos tenía paisajes increíbles.",
+    "sk": "Trasa, ktorou sme išli, mala úžasné výhľady.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["La", "ruta", "por", "la", "que", "pasamos", "tenía", "paisajes", "increíbles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "el-que",
+        "distractors": ["lo", "el"]
+      }
+    ]
+  },
+  {
+    "id": "s1932",
+    "es": "El pueblo donde nació mi abuelo está cerca de Morelia.",
+    "sk": "Dedina, kde sa narodil môj starý otec, je blízko Morelie.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente", "preterito"],
+    "tokens": ["El", "pueblo", "donde", "nació", "mi", "abuelo", "está", "cerca", "de", "Morelia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s1933",
+    "es": "Todo lo que necesitas está en la mochila.",
+    "sk": "Všetko, čo potrebuješ, je v batohu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Todo", "lo", "que", "necesitas", "está", "en", "la", "mochila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
+      }
+    ]
+  },
+  {
+    "id": "s1934",
+    "es": "Los turistas que llegan en verano pagan más.",
+    "sk": "Turisti, ktorí prichádzajú v lete, platia viac.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "turistas", "que", "llegan", "en", "verano", "pagan", "más", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1970",
+    "es": "En el aeropuerto se habla inglés y español.",
+    "sk": "Na letisku sa hovorí po anglicky a španielsky.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "el", "aeropuerto", "se", "habla", "inglés", "y", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
   }
 ]

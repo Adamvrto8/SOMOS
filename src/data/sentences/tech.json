@@ -1318,5 +1318,493 @@
         "distractors": ["bajo", "bajaba", "bajaré"]
       }
     ]
+  },
+  {
+    "id": "s1686",
+    "es": "No encuentro mi celular. ¿Lo viste en la sala?",
+    "sk": "Nemôžem nájsť mobil. Videl si ho v obývačke?",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["object-pronouns", "presente", "preterito"],
+    "tokens": ["No", "encuentro", "mi", "celular", ".", "¿", "Lo", "viste", "en", "la", "sala", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "Lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["La", "Le", "Los"]
+      }
+    ]
+  },
+  {
+    "id": "s1697",
+    "es": "Mi celular es de hace cinco años; el tuyo es más nuevo.",
+    "sk": "Môj mobil je päť rokov starý, tvoj je novší.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Mi", "celular", "es", "de", "hace", "cinco", "años", ";", "el", "tuyo", "es", "más", "nuevo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["menos", "tan", "mejor"]
+      }
+    ]
+  },
+  {
+    "id": "s1698",
+    "es": "Esta computadora es tan rápida como la de mi trabajo.",
+    "sk": "Tento počítač je taký rýchly ako ten v mojej práci.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Esta", "computadora", "es", "tan", "rápida", "como", "la", "de", "mi", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["muy", "tanto", "más"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["que", "tan", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1699",
+    "es": "Yo tengo veinte aplicaciones y mi hermano cien; tengo menos que él.",
+    "sk": "Ja mám dvadsať aplikácií a brat sto, mám ich menej ako on.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Yo", "tengo", "veinte", "aplicaciones", "y", "mi", "hermano", "cien", ";", "tengo", "menos", "que", "él", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "menos",
+        "lemma": "menos",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["más", "tan", "tanto"]
+      }
+    ]
+  },
+  {
+    "id": "s1700",
+    "es": "Esta cámara es mejor que la de mi celular.",
+    "sk": "Tento fotoaparát je lepší ako ten v mojom mobile.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Esta", "cámara", "es", "mejor", "que", "la", "de", "mi", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["peor", "más", "mayor"]
+      }
+    ]
+  },
+  {
+    "id": "s1701",
+    "es": "El internet de mi casa es peor que el de la oficina: siempre se corta.",
+    "sk": "Internet u mňa doma je horší ako v kancelárii, stále vypadáva.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["El", "internet", "de", "mi", "casa", "es", "peor", "que", "el", "de", "la", "oficina", ":", "siempre", "se", "corta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "peor",
+        "lemma": "peor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["mejor", "menor", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s1702",
+    "es": "La computadora más barata de la tienda cuesta cinco mil pesos.",
+    "sk": "Najlacnejší počítač v obchode stojí päťtisíc pesos.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["La", "computadora", "más", "barata", "de", "la", "tienda", "cuesta", "cinco", "mil", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "más",
+        "lemma": "más",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "superlative",
+        "distractors": ["menos", "tan", "mejor"]
+      }
+    ]
+  },
+  {
+    "id": "s1703",
+    "es": "No tengo tantos mensajes como tú.",
+    "sk": "Nemám toľko správ ako ty.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["No", "tengo", "tantos", "mensajes", "como", "tú", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tantos",
+        "lemma": "tantos",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["tanto", "tan", "muchos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "equal",
+        "distractors": ["que", "tan", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1730",
+    "es": "Los niños no pueden usar el celular en la escuela.",
+    "sk": "Deti nesmú používať mobil v škole.",
+    "level": "A2",
+    "topics": ["tech"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Los", "niños", "no", "pueden", "usar", "el", "celular", "en", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pueden",
+        "lemma": "poder",
+        "hint": "môcť",
+        "tip": "obligation",
+        "why": "poder",
+        "distractors": ["deben", "tienen", "podemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1772",
+    "es": "Perdí mi tarea porque no había guardado el archivo.",
+    "sk": "Stratil som úlohu, lebo som si neuložil súbor.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Perdí", "mi", "tarea", "porque", "no", "había", "guardado", "el", "archivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "guardado",
+        "lemma": "guardar",
+        "hint": "guardar · participio",
+        "distractors": ["guardando", "guardó", "guardar"]
+      }
+    ]
+  },
+  {
+    "id": "s1802",
+    "es": "¿Podrías prestarme tu celular un momento?",
+    "sk": "Mohol by si mi na chvíľu požičať svoj mobil?",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["¿", "Podrías", "prestarme", "tu", "celular", "un", "momento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podrías",
+        "lemma": "poder",
+        "hint": "poder · tú · condicional",
+        "distractors": ["Podrás", "Podías", "Puedes"]
+      }
+    ]
+  },
+  {
+    "id": "s1803",
+    "es": "Yo compraría una computadora nueva, pero está muy cara.",
+    "sk": "Kúpil by som si nový počítač, ale je veľmi drahý.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Yo", "compraría", "una", "computadora", "nueva", ",", "pero", "está", "muy", "cara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compraría",
+        "lemma": "comprar",
+        "hint": "comprar · yo · condicional",
+        "distractors": ["compraré", "compraba", "compro"]
+      }
+    ]
+  },
+  {
+    "id": "s1804",
+    "es": "Me dijo que me mandaría el archivo por correo.",
+    "sk": "Povedal mi, že mi pošle súbor e-mailom.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "dijo", "que", "me", "mandaría", "el", "archivo", "por", "correo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "mandaría",
+        "lemma": "mandar",
+        "hint": "mandar · él · condicional",
+        "distractors": ["mandará", "mandaba", "manda"]
+      }
+    ]
+  },
+  {
+    "id": "s1805",
+    "es": "Sería más fácil usar la aplicación del celular.",
+    "sk": "Bolo by jednoduchšie použiť aplikáciu v mobile.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Sería", "más", "fácil", "usar", "la", "aplicación", "del", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Sería",
+        "lemma": "ser",
+        "hint": "ser · él · condicional",
+        "distractors": ["Será", "Era", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s1903",
+    "es": "Te mando el archivo por correo.",
+    "sk": "Pošlem ti súbor e-mailom.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Te", "mando", "el", "archivo", "por", "correo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1924",
+    "es": "Aunque la aplicación es gratis, tiene muchos anuncios.",
+    "sk": "Hoci je aplikácia zadarmo, má veľa reklám.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "presente"],
+    "tokens": ["Aunque", "la", "aplicación", "es", "gratis", ",", "tiene", "muchos", "anuncios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · ella",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["sea", "será", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s1948",
+    "es": "La aplicación que descargué no funciona.",
+    "sk": "Aplikácia, ktorú som si stiahol, nefunguje.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "presente", "preterito"],
+    "tokens": ["La", "aplicación", "que", "descargué", "no", "funciona", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1957",
+    "es": "Se descargan millones de aplicaciones cada día.",
+    "sk": "Každý deň sa stiahnu milióny aplikácií.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Se", "descargan", "millones", "de", "aplicaciones", "cada", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "descargan",
+        "lemma": "descargar",
+        "hint": "descargar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["descarga", "descargaban", "descargarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1958",
+    "es": "El programa fue desarrollado por estudiantes mexicanos.",
+    "sk": "Program vyvinuli mexickí študenti.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "preterito"],
+    "tokens": ["El", "programa", "fue", "desarrollado", "por", "estudiantes", "mexicanos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "desarrollado",
+        "lemma": "desarrollar",
+        "hint": "desarrollar · participio",
+        "tip": "passive-se",
+        "why": "ser-passive",
+        "distractors": ["desarrollada", "desarrollando", "desarrolló"]
+      }
+    ]
+  },
+  {
+    "id": "s1959",
+    "es": "¿Cómo se abre este archivo?",
+    "sk": "Ako sa otvára tento súbor?",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["¿", "Cómo", "se", "abre", "este", "archivo", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s1960",
+    "es": "El archivo está guardado en la nube.",
+    "sk": "Súbor je uložený v cloude.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "archivo", "está", "guardado", "en", "la", "nube", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "guardado",
+        "lemma": "guardar",
+        "hint": "guardar · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["guardada", "guardando", "guardó"]
+      }
+    ]
+  },
+  {
+    "id": "s1961",
+    "es": "En el avión no se puede usar el celular.",
+    "sk": "V lietadle sa nesmie používať mobil.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "el", "avión", "no", "se", "puede", "usar", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "poder",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["pueden", "podía", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s1962",
+    "es": "El sistema está apagado desde las ocho.",
+    "sk": "Systém je vypnutý od ôsmej.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "sistema", "está", "apagado", "desde", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "apagado",
+        "lemma": "apagar",
+        "hint": "apagar · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["apagada", "apagando", "apagó"]
+      }
+    ]
+  },
+  {
+    "id": "s1963",
+    "es": "Se reciben mensajes de todo el mundo.",
+    "sk": "Správy prichádzajú z celého sveta.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Se", "reciben", "mensajes", "de", "todo", "el", "mundo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "reciben",
+        "lemma": "recibir",
+        "hint": "recibir",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["recibe", "recibían", "recibirán"]
+      }
+    ]
   }
 ]

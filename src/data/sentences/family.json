@@ -1499,5 +1499,289 @@
         "distractors": ["rompieron", "rompían", "romperán"]
       }
     ]
+  },
+  {
+    "id": "s1684",
+    "es": "Mi hermana me prestó su carro y se lo regresé el lunes.",
+    "sk": "Sestra mi požičala auto a ja som jej ho vrátil v pondelok.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["Mi", "hermana", "me", "prestó", "su", "carro", "y", "se", "lo", "regresé", "el", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno: jej",
+        "tip": "object-pronouns",
+        "why": "se-lo",
+        "distractors": ["le", "la", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s1704",
+    "es": "Mi hermano tiene veinte años y yo quince: él es mayor que yo.",
+    "sk": "Brat má dvadsať rokov a ja pätnásť, je starší ako ja.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Mi", "hermano", "tiene", "veinte", "años", "y", "yo", "quince", ":", "él", "es", "mayor", "que", "yo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "mayor",
+        "lemma": "mayor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["más", "menor", "mejor"]
+      }
+    ]
+  },
+  {
+    "id": "s1729",
+    "es": "Mi hermana tiene que cuidar a mi abuela los sábados.",
+    "sk": "Moja sestra sa musí v sobotu starať o babku.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mi", "hermana", "tiene", "que", "cuidar", "a", "mi", "abuela", "los", "sábados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tiene",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["debe", "puede", "tienes"]
+      }
+    ]
+  },
+  {
+    "id": "s1750",
+    "es": "Ayuda a tu hermano con la tarea.",
+    "sk": "Pomôž bratovi s úlohou.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["imperativo"],
+    "tokens": ["Ayuda", "a", "tu", "hermano", "con", "la", "tarea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ayuda",
+        "lemma": "ayudar",
+        "hint": "ayudar · tú · imperativo",
+        "distractors": ["Ayude", "Ayudan", "Ayudo"]
+      }
+    ]
+  },
+  {
+    "id": "s1770",
+    "es": "Cuando nací, mis papás ya se habían mudado a Puebla.",
+    "sk": "Keď som sa narodil, moji rodičia sa už presťahovali do Puebly.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "nací", ",", "mis", "papás", "ya", "se", "habían", "mudado", "a", "Puebla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "mudado",
+        "lemma": "mudarse",
+        "hint": "mudarse · participio",
+        "distractors": ["mudando", "mudó", "mudar"]
+      }
+    ]
+  },
+  {
+    "id": "s1819",
+    "es": "Mi abuela quería que viviéramos cerca de ella.",
+    "sk": "Moja babka chcela, aby sme bývali blízko nej.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Mi", "abuela", "quería", "que", "viviéramos", "cerca", "de", "ella", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "viviéramos",
+        "lemma": "vivir",
+        "hint": "vivir · nosotros · subjuntivo imperfecto",
+        "distractors": ["vivamos", "vivíamos", "viviríamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1820",
+    "es": "Si tuviera más hermanos, la casa sería más divertida.",
+    "sk": "Keby som mal viac súrodencov, dom by bol zábavnejší.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "más", "hermanos", ",", "la", "casa", "sería", "más", "divertida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviera",
+        "lemma": "tener",
+        "hint": "tener · yo · subjuntivo imperfecto",
+        "distractors": ["tenga", "tenía", "tendría"]
+      }
+    ]
+  },
+  {
+    "id": "s1821",
+    "es": "Mis papás me pidieron que cuidara a mi hermanito.",
+    "sk": "Rodičia ma poprosili, aby som sa postaral o brata.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto", "preterito"],
+    "tokens": ["Mis", "papás", "me", "pidieron", "que", "cuidara", "a", "mi", "hermanito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cuidara",
+        "lemma": "cuidar",
+        "hint": "cuidar · yo · subjuntivo imperfecto",
+        "distractors": ["cuide", "cuidaba", "cuidaría"]
+      }
+    ]
+  },
+  {
+    "id": "s1822",
+    "es": "Ojalá mi primo viniera a la boda.",
+    "sk": "Kiežby môj bratranec prišiel na svadbu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto"],
+    "tokens": ["Ojalá", "mi", "primo", "viniera", "a", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viniera",
+        "lemma": "venir",
+        "hint": "venir · él · subjuntivo imperfecto",
+        "distractors": ["venga", "venía", "vendría"]
+      }
+    ]
+  },
+  {
+    "id": "s1823",
+    "es": "Mi tío hablaba como si fuera el dueño de todo.",
+    "sk": "Môj strýko hovoril, akoby bol majiteľom všetkého.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Mi", "tío", "hablaba", "como", "si", "fuera", "el", "dueño", "de", "todo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "fuera",
+        "lemma": "ser",
+        "hint": "ser · él · subjuntivo imperfecto",
+        "distractors": ["sea", "era", "sería"]
+      }
+    ]
+  },
+  {
+    "id": "s1824",
+    "es": "Era importante que toda la familia estuviera presente.",
+    "sk": "Bolo dôležité, aby bola prítomná celá rodina.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Era", "importante", "que", "toda", "la", "familia", "estuviera", "presente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estuviera",
+        "lemma": "estar",
+        "hint": "estar · ella · subjuntivo imperfecto",
+        "distractors": ["esté", "estaba", "estaría"]
+      }
+    ]
+  },
+  {
+    "id": "s1883",
+    "es": "Si mis abuelos vivieran cerca, los visitaríamos cada domingo.",
+    "sk": "Keby moji starí rodičia bývali blízko, navštevovali by sme ich každú nedeľu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "mis", "abuelos", "vivieran", "cerca", ",", "los", "visitaríamos", "cada", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vivieran",
+        "lemma": "vivir",
+        "hint": "vivir · ellos",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["vivan", "vivían", "vivirían"]
+      }
+    ]
+  },
+  {
+    "id": "s1921",
+    "es": "Mis papás no creen que yo pueda vivir solo.",
+    "sk": "Moji rodičia neveria, že by som mohol bývať sám.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Mis", "papás", "no", "creen", "que", "yo", "pueda", "vivir", "solo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · yo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["puedo", "podré", "pude"]
+      }
+    ]
+  },
+  {
+    "id": "s1943",
+    "es": "Mi hermana, con la que hablo todos los días, vive en Monterrey.",
+    "sk": "Moja sestra, s ktorou sa rozprávam každý deň, býva v Monterrey.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mi", "hermana", ",", "con", "la", "que", "hablo", "todos", "los", "días", ",", "vive", "en", "Monterrey", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "el-que",
+        "distractors": ["lo", "el"]
+      }
+    ]
+  },
+  {
+    "id": "s1971",
+    "es": "En mi familia se come juntos los domingos.",
+    "sk": "V mojej rodine sa v nedeľu jedáva spolu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "mi", "familia", "se", "come", "juntos", "los", "domingos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
   }
 ]

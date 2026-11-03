@@ -1530,5 +1530,25 @@
         "distractors": ["corta", "cortó", "cortará"]
       }
     ]
+  },
+  {
+    "id": "s1640",
+    "es": "Me duelen los pies.",
+    "sk": "Bolia ma nohy.",
+    "level": "A1",
+    "topics": ["body"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "duelen", "los", "pies", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "duelen",
+        "lemma": "doler",
+        "hint": "doler",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["duele", "gustan", "encantan"]
+      }
+    ]
   }
 ]

@@ -1480,5 +1480,603 @@
         "distractors": ["bajaron", "bajaban", "bajarán"]
       }
     ]
+  },
+  {
+    "id": "s1667",
+    "es": "En el mercado hay frutas muy frescas.",
+    "sk": "Na trhu je veľmi čerstvé ovocie.",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["En", "el", "mercado", "hay", "frutas", "muy", "frescas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["está", "están", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s1668",
+    "es": "¿Dónde están las naranjas?",
+    "sk": "Kde sú pomaranče?",
+    "level": "A1",
+    "topics": ["shopping"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["¿", "Dónde", "están", "las", "naranjas", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "question",
+        "distractors": ["hay", "son", "está"]
+      }
+    ]
+  },
+  {
+    "id": "s1669",
+    "es": "Esa chamarra es muy bonita; la voy a comprar.",
+    "sk": "Tá bunda je veľmi pekná, kúpim si ju.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Esa", "chamarra", "es", "muy", "bonita", ";", "la", "voy", "a", "comprar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "zámeno: ju",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["lo", "le", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s1670",
+    "es": "Tengo el recibo y lo guardo en la bolsa.",
+    "sk": "Mám účtenku a uložím si ju do tašky.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Tengo", "el", "recibo", "y", "lo", "guardo", "en", "la", "bolsa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["la", "le", "los"]
+      }
+    ]
+  },
+  {
+    "id": "s1671",
+    "es": "Estos zapatos son baratos; cómpralos hoy.",
+    "sk": "Tieto topánky sú lacné, kúp ich ešte dnes.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "presente", "imperativo"],
+    "tokens": ["Estos", "zapatos", "son", "baratos", ";", "cómpralos", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cómpralos",
+        "lemma": "cómpralos",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "position",
+        "distractors": ["cómprales", "cómpralo"]
+      }
+    ]
+  },
+  {
+    "id": "s1672",
+    "es": "La vendedora le dio un descuento a mi mamá.",
+    "sk": "Predavačka dala mojej mame zľavu.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["La", "vendedora", "le", "dio", "un", "descuento", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno: jej",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["la", "lo", "les"]
+      }
+    ]
+  },
+  {
+    "id": "s1673",
+    "es": "Compré unos regalos y les di uno a mis primos.",
+    "sk": "Kúpil som darčeky a jeden som dal bratrancom.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["Compré", "unos", "regalos", "y", "les", "di", "uno", "a", "mis", "primos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "les",
+        "lemma": "les",
+        "hint": "zámeno: im",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["los", "le", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s1674",
+    "es": "Mi hermano quería esa camisa y se la compré ayer.",
+    "sk": "Brat chcel tú košeľu a ja som mu ju včera kúpil.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "imperfecto", "preterito"],
+    "tokens": ["Mi", "hermano", "quería", "esa", "camisa", "y", "se", "la", "compré", "ayer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno: mu",
+        "tip": "object-pronouns",
+        "why": "se-lo",
+        "distractors": ["le", "lo", "te"]
+      }
+    ]
+  },
+  {
+    "id": "s1675",
+    "es": "¿Dónde compraste esos lentes? Los compré en el centro.",
+    "sk": "Kde si kúpil tie okuliare? — Kúpil som ich v centre.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["¿", "Dónde", "compraste", "esos", "lentes", "?", "Los", "compré", "en", "el", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "Los",
+        "lemma": "los",
+        "hint": "zámeno: ich",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["Las", "Lo", "Les"]
+      }
+    ]
+  },
+  {
+    "id": "s1731",
+    "es": "Usted debe guardar el recibo para cambiar la ropa.",
+    "sk": "Mali by ste si odložiť účtenku, aby ste mohli vymeniť oblečenie.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Usted", "debe", "guardar", "el", "recibo", "para", "cambiar", "la", "ropa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "debe",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["puede", "tiene", "debo"]
+      }
+    ]
+  },
+  {
+    "id": "s1773",
+    "es": "Quería esa chamarra, pero ya la habían vendido.",
+    "sk": "Chcel som tú bundu, ale už ju predali.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["pluscuamperfecto", "imperfecto"],
+    "tokens": ["Quería", "esa", "chamarra", ",", "pero", "ya", "la", "habían", "vendido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "vendido",
+        "lemma": "vender",
+        "hint": "vender · participio",
+        "distractors": ["vendiendo", "vendió", "vender"]
+      }
+    ]
+  },
+  {
+    "id": "s1861",
+    "es": "Queremos que nos atiendan rápido.",
+    "sk": "Chceme, aby nás obslúžili rýchlo.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Queremos", "que", "nos", "atiendan", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "atiendan",
+        "lemma": "atender",
+        "hint": "atender · ellos",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["atienden", "atenderán", "atendieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1880",
+    "es": "Si compras dos, el tercero es gratis.",
+    "sk": "Ak kúpiš dva, tretí je zadarmo.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["si-clauses", "presente"],
+    "tokens": ["Si", "compras", "dos", ",", "el", "tercero", "es", "gratis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compras",
+        "lemma": "comprar",
+        "hint": "comprar · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["comprarás", "compraste", "comprabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1882",
+    "es": "Si encontrara un descuento, compraría dos.",
+    "sk": "Keby som našiel zľavu, kúpil by som dva.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "encontrara", "un", "descuento", ",", "compraría", "dos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encontrara",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["encuentre", "encontraba", "encontraría"]
+      }
+    ]
+  },
+  {
+    "id": "s1884",
+    "es": "Compré estos zapatos para mi mamá.",
+    "sk": "Kúpil som tieto topánky pre mamu.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Compré", "estos", "zapatos", "para", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1885",
+    "es": "Pagué mil pesos por la chamarra.",
+    "sk": "Zaplatil som tisíc pesos za bundu.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Pagué", "mil", "pesos", "por", "la", "chamarra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1886",
+    "es": "Necesito el vestido para el sábado.",
+    "sk": "Potrebujem tie šaty do soboty.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Necesito", "el", "vestido", "para", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1887",
+    "es": "Compré todo por internet.",
+    "sk": "Všetko som kúpil cez internet.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Compré", "todo", "por", "internet", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1888",
+    "es": "¿Me puede dar una bolsa, por favor?",
+    "sk": "Môžete mi dať tašku, prosím?",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["¿", "Me", "puede", "dar", "una", "bolsa", ",", "por", "favor", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "fixed",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1889",
+    "es": "Hay una oferta especial para los clientes nuevos.",
+    "sk": "Pre nových zákazníkov je špeciálna ponuka.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Hay", "una", "oferta", "especial", "para", "los", "clientes", "nuevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1890",
+    "es": "Cambié la camisa por una más grande.",
+    "sk": "Vymenil som košeľu za väčšiu.",
+    "level": "B1",
+    "topics": ["shopping"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["Cambié", "la", "camisa", "por", "una", "más", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1925",
+    "es": "Cuando voy al mercado, siempre compro fruta.",
+    "sk": "Keď idem na trh, vždy kupujem ovocie.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-clauses", "presente"],
+    "tokens": ["Cuando", "voy", "al", "mercado", ",", "siempre", "compro", "fruta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["vaya", "iré", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s1947",
+    "es": "No encuentro lo que busco en esta tienda.",
+    "sk": "V tomto obchode nenachádzam, čo hľadám.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["No", "encuentro", "lo", "que", "busco", "en", "esta", "tienda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["el", "la"]
+      }
+    ]
+  },
+  {
+    "id": "s1950",
+    "es": "Aquí se venden zapatos de piel.",
+    "sk": "Tu sa predávajú kožené topánky.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Aquí", "se", "venden", "zapatos", "de", "piel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "venden",
+        "lemma": "vender",
+        "hint": "vender",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["vende", "vendió", "vendían"]
+      }
+    ]
+  },
+  {
+    "id": "s1951",
+    "es": "En esta tienda se aceptan tarjetas.",
+    "sk": "V tomto obchode sa prijímajú karty.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "esta", "tienda", "se", "aceptan", "tarjetas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s1952",
+    "es": "En México se paga mucho en efectivo.",
+    "sk": "V Mexiku sa veľa platí v hotovosti.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "México", "se", "paga", "mucho", "en", "efectivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s1953",
+    "es": "Este modelo fue vendido en más de cien tiendas.",
+    "sk": "Tento model bol predaný vo viac ako sto obchodoch.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "preterito"],
+    "tokens": ["Este", "modelo", "fue", "vendido", "en", "más", "de", "cien", "tiendas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vendido",
+        "lemma": "vender",
+        "hint": "vender · participio",
+        "tip": "passive-se",
+        "why": "ser-passive",
+        "distractors": ["vendida", "vendiendo", "vendió"]
+      }
+    ]
+  },
+  {
+    "id": "s1954",
+    "es": "El centro comercial está cerrado por remodelación.",
+    "sk": "Nákupné centrum je zatvorené kvôli rekonštrukcii.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "centro", "comercial", "está", "cerrado", "por", "remodelación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cerrado",
+        "lemma": "cerrar",
+        "hint": "cerrar · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["cerrada", "cerrando", "cerró"]
+      }
+    ]
+  },
+  {
+    "id": "s1955",
+    "es": "Se necesitan vendedores con experiencia.",
+    "sk": "Hľadajú sa predavači so skúsenosťami.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Se", "necesitan", "vendedores", "con", "experiencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "necesitan",
+        "lemma": "necesitar",
+        "hint": "necesitar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["necesita", "necesitaban", "necesitarán"]
+      }
+    ]
+  },
+  {
+    "id": "s1956",
+    "es": "Aquí no se puede pagar con cheque.",
+    "sk": "Tu sa nedá platiť šekom.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Aquí", "no", "se", "puede", "pagar", "con", "cheque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["te", "le", "me"]
+      }
+    ]
   }
 ]

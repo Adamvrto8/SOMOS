@@ -1500,5 +1500,455 @@
         "distractors": ["revisa", "revisó", "revisaba"]
       }
     ]
+  },
+  {
+    "id": "s1639",
+    "es": "Me duele la garganta.",
+    "sk": "Bolí ma hrdlo.",
+    "level": "A1",
+    "topics": ["health"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "duele", "la", "garganta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "duele",
+        "lemma": "doler",
+        "hint": "doler",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["duelen", "gusta", "encanta"]
+      }
+    ]
+  },
+  {
+    "id": "s1710",
+    "es": "Hoy me siento peor que ayer: ahora tengo fiebre.",
+    "sk": "Dnes sa cítim horšie ako včera, teraz mám horúčku.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Hoy", "me", "siento", "peor", "que", "ayer", ":", "ahora", "tengo", "fiebre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "peor",
+        "lemma": "peor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["mejor", "menor", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s1718",
+    "es": "Si tienes tos, tienes que ir al doctor.",
+    "sk": "Ak kašleš, musíš ísť k lekárovi.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Si", "tienes", "tos", ",", "tienes", "que", "ir", "al", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1719",
+    "es": "Para estar sano hay que comer bien y dormir ocho horas.",
+    "sk": "Aby človek bol zdravý, treba dobre jesť a spať osem hodín.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Para", "estar", "sano", "hay", "que", "comer", "bien", "y", "dormir", "ocho", "horas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1720",
+    "es": "Debes tomar mucha agua cuando tienes fiebre.",
+    "sk": "Mal by si piť veľa vody, keď máš horúčku.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Debes", "tomar", "mucha", "agua", "cuando", "tienes", "fiebre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Debes",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["Puedes", "Tienes", "Debo"]
+      }
+    ]
+  },
+  {
+    "id": "s1721",
+    "es": "Mi mamá está enferma y no puede trabajar hoy.",
+    "sk": "Moja mama je chorá a dnes nemôže pracovať.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mi", "mamá", "está", "enferma", "y", "no", "puede", "trabajar", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "puede",
+        "lemma": "poder",
+        "hint": "môcť",
+        "tip": "obligation",
+        "why": "poder",
+        "distractors": ["debe", "tiene", "pueden"]
+      }
+    ]
+  },
+  {
+    "id": "s1722",
+    "es": "Tiene que tomar esta medicina tres veces al día.",
+    "sk": "Tento liek musí užívať trikrát denne.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Tiene", "que", "tomar", "esta", "medicina", "tres", "veces", "al", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Tiene",
+        "lemma": "tener",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["Debe", "Puede", "Tienes"]
+      }
+    ]
+  },
+  {
+    "id": "s1723",
+    "es": "En caso de fiebre hay que quedarse en casa.",
+    "sk": "Pri horúčke treba zostať doma.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["En", "caso", "de", "fiebre", "hay", "que", "quedarse", "en", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1724",
+    "es": "¿Puedo pasar, doctor?",
+    "sk": "Môžem ďalej, pán doktor?",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["¿", "Puedo", "pasar", ",", "doctor", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Puedo",
+        "lemma": "poder",
+        "hint": "môcť",
+        "tip": "obligation",
+        "why": "poder",
+        "distractors": ["Debo", "Tengo", "Puede"]
+      }
+    ]
+  },
+  {
+    "id": "s1797",
+    "es": "¿Podría usted darme una cita con el doctor para mañana?",
+    "sk": "Mohli by ste mi dať termín u lekára na zajtra?",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["¿", "Podría", "usted", "darme", "una", "cita", "con", "el", "doctor", "para", "mañana", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podría",
+        "lemma": "poder",
+        "hint": "poder · usted · condicional",
+        "distractors": ["Podrá", "Podía", "Puede"]
+      }
+    ]
+  },
+  {
+    "id": "s1798",
+    "es": "Yo en tu lugar iría al médico.",
+    "sk": "Na tvojom mieste by som šiel k lekárovi.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Yo", "en", "tu", "lugar", "iría", "al", "médico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "iría",
+        "lemma": "ir",
+        "hint": "ir · yo · condicional",
+        "distractors": ["iré", "iba", "voy"]
+      }
+    ]
+  },
+  {
+    "id": "s1799",
+    "es": "Con más ejercicio te sentirías mejor.",
+    "sk": "S viac pohybu by si sa cítil lepšie.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Con", "más", "ejercicio", "te", "sentirías", "mejor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sentirías",
+        "lemma": "sentirse",
+        "hint": "sentirse · tú · condicional",
+        "distractors": ["sentirás", "sentías", "sientes"]
+      }
+    ]
+  },
+  {
+    "id": "s1800",
+    "es": "Me dijeron que el doctor llegaría a las cinco.",
+    "sk": "Povedali mi, že lekár príde o piatej.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "dijeron", "que", "el", "doctor", "llegaría", "a", "las", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llegaría",
+        "lemma": "llegar",
+        "hint": "llegar · él · condicional",
+        "distractors": ["llegará", "llegaba", "llega"]
+      }
+    ]
+  },
+  {
+    "id": "s1801",
+    "es": "Me gustaría pedir una cita con el dentista.",
+    "sk": "Rád by som si objednal termín u zubára.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "gustaría", "pedir", "una", "cita", "con", "el", "dentista", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gustaría",
+        "lemma": "gustar",
+        "hint": "gustar · él · condicional",
+        "distractors": ["gustará", "gustaba", "gusta"]
+      }
+    ]
+  },
+  {
+    "id": "s1855",
+    "es": "El doctor recomienda que bebamos más agua.",
+    "sk": "Lekár odporúča, aby sme pili viac vody.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["El", "doctor", "recomienda", "que", "bebamos", "más", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "bebamos",
+        "lemma": "beber",
+        "hint": "beber · nosotros",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["bebemos", "beberemos", "bebimos"]
+      }
+    ]
+  },
+  {
+    "id": "s1879",
+    "es": "Si te duele la cabeza, toma una pastilla.",
+    "sk": "Ak ťa bolí hlava, vezmi si tabletku.",
+    "level": "B1",
+    "topics": ["health"],
+    "grammar": ["si-clauses", "presente", "imperativo"],
+    "tokens": ["Si", "te", "duele", "la", "cabeza", ",", "toma", "una", "pastilla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "duele",
+        "lemma": "doler",
+        "hint": "doler · él",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["dolerá", "dolió", "dolía"]
+      }
+    ]
+  },
+  {
+    "id": "s1913",
+    "es": "No creo que sea grave, pero ve al doctor.",
+    "sk": "Nemyslím si, že je to vážne, ale choď k lekárovi.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente", "imperativo"],
+    "tokens": ["No", "creo", "que", "sea", "grave", ",", "pero", "ve", "al", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sea",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["es", "será", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s1914",
+    "es": "Cuando te sientas mejor, puedes volver al trabajo.",
+    "sk": "Keď sa budeš cítiť lepšie, môžeš sa vrátiť do práce.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Cuando", "te", "sientas", "mejor", ",", "puedes", "volver", "al", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "sientas",
+        "lemma": "sentirse",
+        "hint": "sentirse · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["sientes", "sentirás", "sentiste"]
+      }
+    ]
+  },
+  {
+    "id": "s1915",
+    "es": "Come más verduras para que tengas más energía.",
+    "sk": "Jedz viac zeleniny, aby si mal viac energie.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente", "imperativo"],
+    "tokens": ["Come", "más", "verduras", "para", "que", "tengas", "más", "energía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tengas",
+        "lemma": "tener",
+        "hint": "tener · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["tienes", "tendrás", "tuviste"]
+      }
+    ]
+  },
+  {
+    "id": "s1916",
+    "es": "Aunque hace frío, salgo a correr cada mañana.",
+    "sk": "Aj keď je zima, každé ráno chodím behať.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "presente"],
+    "tokens": ["Aunque", "hace", "frío", ",", "salgo", "a", "correr", "cada", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["haga", "hará", "hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s1917",
+    "es": "Es posible que necesites una radiografía.",
+    "sk": "Je možné, že budeš potrebovať röntgen.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Es", "posible", "que", "necesites", "una", "radiografía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "necesites",
+        "lemma": "necesitar",
+        "hint": "necesitar · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["necesitas", "necesitarás", "necesitaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1918",
+    "es": "Hasta que no baje la fiebre, no puedes ir a la escuela.",
+    "sk": "Kým neklesne horúčka, nemôžeš ísť do školy.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Hasta", "que", "no", "baje", "la", "fiebre", ",", "no", "puedes", "ir", "a", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "baje",
+        "lemma": "bajar",
+        "hint": "bajar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["baja", "bajará", "bajó"]
+      }
+    ]
+  },
+  {
+    "id": "s1919",
+    "es": "El doctor habla despacio para que el paciente entienda.",
+    "sk": "Lekár hovorí pomaly, aby pacient rozumel.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["El", "doctor", "habla", "despacio", "para", "que", "el", "paciente", "entienda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "entienda",
+        "lemma": "entender",
+        "hint": "entender · él",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["entiende", "entenderá", "entendió"]
+      }
+    ]
   }
 ]

@@ -79,5 +79,7 @@
   { "id": "s1228", "en": "Say hi to your mom for me and tell her I'll visit soon." },
   { "id": "s1229", "en": "Come on, seriously? You stood me up again." },
   { "id": "s1230", "en": "You're leaving already? It's only ten." },
-  { "id": "s1231", "en": "It was great chatting with you, let's grab a coffee sometime.", "hints": ["pleasure"] }
+  { "id": "s1231", "en": "It was great chatting with you, let's grab a coffee sometime.", "hints": ["pleasure"] },
+  { "id": "s1689", "en": "My friends arrive today and I'm going to pick them up at the airport.", "hints": ["pronoun: them"] },
+  { "id": "s1753", "en": "Come in and sit down, make yourself at home." }
 ]

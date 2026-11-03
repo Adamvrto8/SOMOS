@@ -79,5 +79,14 @@
   { "id": "s1289", "en": "I've been training for the 10K for three months." },
   { "id": "s1290", "en": "The swimmer set a national record at just nineteen." },
   { "id": "s1291", "en": "Going to a charreada is like diving headfirst into Mexican tradition.", "hints": ["Mexican rodeo"] },
-  { "id": "s1607", "en": "We agreed to meet at six at the café." }
+  { "id": "s1607", "en": "We agreed to meet at six at the café." },
+  { "id": "s1641", "en": "I like dancing with my friends." },
+  { "id": "s1761", "en": "When I got to the movies, the film had already ended." },
+  { "id": "s1762", "en": "I had never played the guitar until my uncle taught me." },
+  { "id": "s1763", "en": "Before that trip, I had never swum in the sea." },
+  { "id": "s1764", "en": "My team had already won two games when I arrived." },
+  { "id": "s1765", "en": "We had practiced all week, but we lost the tournament." },
+  { "id": "s1766", "en": "She had already read the book before seeing the movie." },
+  { "id": "s1767", "en": "When they invited me to the dance, I had already learned to dance salsa." },
+  { "id": "s1853", "en": "I want you to play with us." }
 ]

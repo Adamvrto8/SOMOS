@@ -1504,5 +1504,653 @@
         "distractors": ["trató", "trataba", "tratará"]
       }
     ]
+  },
+  {
+    "id": "s1685",
+    "es": "Mi jefe nos mandó el informe y lo revisamos juntos.",
+    "sk": "Šéf nám poslal správu a skontrolovali sme ju spolu.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["Mi", "jefe", "nos", "mandó", "el", "informe", "y", "lo", "revisamos", "juntos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["le", "la", "los"]
+      }
+    ]
+  },
+  {
+    "id": "s1708",
+    "es": "Mi trabajo nuevo es mejor que el anterior: gano más y trabajo menos.",
+    "sk": "Moja nová práca je lepšia ako predošlá, zarábam viac a pracujem menej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Mi", "trabajo", "nuevo", "es", "mejor", "que", "el", "anterior", ":", "gano", "más", "y", "trabajo", "menos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "irregular",
+        "distractors": ["peor", "más", "mayor"]
+      }
+    ]
+  },
+  {
+    "id": "s1711",
+    "es": "Tengo que terminar el informe antes de las cinco.",
+    "sk": "Musím dokončiť správu pred piatou.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Tengo", "que", "terminar", "el", "informe", "antes", "de", "las", "cinco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1712",
+    "es": "Mañana tenemos que llegar temprano a la oficina.",
+    "sk": "Zajtra musíme prísť do kancelárie skoro.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mañana", "tenemos", "que", "llegar", "temprano", "a", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1713",
+    "es": "En esta empresa hay que usar el uniforme.",
+    "sk": "V tejto firme treba nosiť uniformu.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["En", "esta", "empresa", "hay", "que", "usar", "el", "uniforme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1714",
+    "es": "Para entrar a la bodega hay que pedir permiso.",
+    "sk": "Do skladu treba požiadať o povolenie.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Para", "entrar", "a", "la", "bodega", "hay", "que", "pedir", "permiso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "treba",
+        "tip": "obligation",
+        "why": "hay-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1715",
+    "es": "Usted debe llamar a su jefe hoy.",
+    "sk": "Mali by ste dnes zavolať šéfovi.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Usted", "debe", "llamar", "a", "su", "jefe", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "debe",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["puede", "tiene", "debo"]
+      }
+    ]
+  },
+  {
+    "id": "s1716",
+    "es": "¿Puedo usar su computadora un momento?",
+    "sk": "Môžem si na chvíľu požičať váš počítač?",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["¿", "Puedo", "usar", "su", "computadora", "un", "momento", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Puedo",
+        "lemma": "poder",
+        "hint": "môcť",
+        "tip": "obligation",
+        "why": "poder",
+        "distractors": ["Debo", "Tengo", "Puede"]
+      }
+    ]
+  },
+  {
+    "id": "s1717",
+    "es": "Los empleados deben llegar a las ocho.",
+    "sk": "Zamestnanci by mali prísť o ôsmej.",
+    "level": "A2",
+    "topics": ["work"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Los", "empleados", "deben", "llegar", "a", "las", "ocho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "deben",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["pueden", "tienen", "debemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1768",
+    "es": "Mi jefe ya se había ido cuando llegué a la oficina.",
+    "sk": "Šéf už odišiel, keď som prišiel do kancelárie.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Mi", "jefe", "ya", "se", "había", "ido", "cuando", "llegué", "a", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ido",
+        "lemma": "ir",
+        "hint": "ir · participio",
+        "distractors": ["yendo", "fue", "ir"]
+      }
+    ]
+  },
+  {
+    "id": "s1792",
+    "es": "Es esencial que los empleados cumplan con el horario.",
+    "sk": "Je nevyhnutné, aby zamestnanci dodržiavali pracovný čas.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "esencial", "que", "los", "empleados", "cumplan", "con", "el", "horario", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cumplan",
+        "lemma": "cumplir",
+        "hint": "cumplir · ellos · subjuntivo",
+        "distractors": ["cumplen", "cumplirán", "cumplieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1793",
+    "es": "Mi jefa espera que terminemos el proyecto antes de diciembre.",
+    "sk": "Moja šéfka dúfa, že projekt dokončíme pred decembrom.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Mi", "jefa", "espera", "que", "terminemos", "el", "proyecto", "antes", "de", "diciembre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "terminemos",
+        "lemma": "terminar",
+        "hint": "terminar · nosotros · subjuntivo",
+        "distractors": ["terminamos", "terminaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1794",
+    "es": "Es una lástima que no te den el ascenso.",
+    "sk": "Je škoda, že ti nedajú povýšenie.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "una", "lástima", "que", "no", "te", "den", "el", "ascenso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "den",
+        "lemma": "dar",
+        "hint": "dar · ellos · subjuntivo",
+        "distractors": ["dan", "darán", "dieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1795",
+    "es": "Prefiero que negocies tú el contrato con el cliente.",
+    "sk": "Radšej by som chcel, aby si zmluvu s klientom vyjednal ty.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Prefiero", "que", "negocies", "tú", "el", "contrato", "con", "el", "cliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "negocies",
+        "lemma": "negociar",
+        "hint": "negociar · tú · subjuntivo",
+        "distractors": ["negocias", "negociarás", "negociaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1839",
+    "es": "Mi jefe quería que trabajáramos los sábados.",
+    "sk": "Môj šéf chcel, aby sme pracovali aj v soboty.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subj-imperfecto", "imperfecto"],
+    "tokens": ["Mi", "jefe", "quería", "que", "trabajáramos", "los", "sábados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "trabajáramos",
+        "lemma": "trabajar",
+        "hint": "trabajar · nosotros · subjuntivo imperfecto",
+        "distractors": ["trabajemos", "trabajábamos", "trabajaríamos"]
+      }
+    ]
+  },
+  {
+    "id": "s1856",
+    "es": "Mi jefa pide que lleguemos temprano mañana.",
+    "sk": "Moja šéfka žiada, aby sme zajtra prišli skoro.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Mi", "jefa", "pide", "que", "lleguemos", "temprano", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "advice",
+        "distractors": ["llegamos", "llegaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1869",
+    "es": "Si terminas el reporte hoy, puedes irte temprano.",
+    "sk": "Ak dnes dokončíš správu, môžeš odísť skôr.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "presente"],
+    "tokens": ["Si", "terminas", "el", "reporte", "hoy", ",", "puedes", "irte", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "terminas",
+        "lemma": "terminar",
+        "hint": "terminar · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["terminarás", "terminaste", "terminabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1870",
+    "es": "Si mi jefe aprueba el plan, empezaremos el lunes.",
+    "sk": "Ak môj šéf schváli plán, začneme v pondelok.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "mi", "jefe", "aprueba", "el", "plan", ",", "empezaremos", "el", "lunes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprueba",
+        "lemma": "aprobar",
+        "hint": "aprobar · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["aprobará", "aprobó", "aprobaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1871",
+    "es": "Si no entiendes algo, pregúntame.",
+    "sk": "Ak niečomu nerozumieš, opýtaj sa ma.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "presente", "imperativo"],
+    "tokens": ["Si", "no", "entiendes", "algo", ",", "pregúntame", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entiendes",
+        "lemma": "entender",
+        "hint": "entender · tú",
+        "tip": "si-clauses",
+        "why": "real",
+        "distractors": ["entenderás", "entendiste", "entendías"]
+      }
+    ]
+  },
+  {
+    "id": "s1872",
+    "es": "Si la junta termina pronto, comeremos juntos.",
+    "sk": "Ak porada skončí skoro, pôjdeme spolu na obed.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "la", "junta", "termina", "pronto", ",", "comeremos", "juntos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "termina",
+        "lemma": "terminar",
+        "hint": "terminar · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["terminará", "terminó", "terminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s1873",
+    "es": "Si ganara más dinero, cambiaría de departamento.",
+    "sk": "Keby som zarábal viac, presťahoval by som sa do iného bytu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "ganara", "más", "dinero", ",", "cambiaría", "de", "departamento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ganara",
+        "lemma": "ganar",
+        "hint": "ganar · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["gane", "ganaba", "ganaría"]
+      }
+    ]
+  },
+  {
+    "id": "s1874",
+    "es": "Si trabajáramos desde casa, ahorraríamos tiempo.",
+    "sk": "Keby sme pracovali z domu, ušetrili by sme čas.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "trabajáramos", "desde", "casa", ",", "ahorraríamos", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ahorraríamos",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · nosotros",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["ahorraremos", "ahorrábamos", "ahorramos"]
+      }
+    ]
+  },
+  {
+    "id": "s1875",
+    "es": "Si mi jefa me ofreciera un ascenso, lo aceptaría.",
+    "sk": "Keby mi šéfka ponúkla povýšenie, prijal by som ho.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "mi", "jefa", "me", "ofreciera", "un", "ascenso", ",", "lo", "aceptaría", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "aceptaría",
+        "lemma": "aceptar",
+        "hint": "aceptar · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["aceptaré", "aceptaba", "acepto"]
+      }
+    ]
+  },
+  {
+    "id": "s1900",
+    "es": "Trabajo para una empresa de tecnología.",
+    "sk": "Pracujem pre technologickú firmu.",
+    "level": "B1",
+    "topics": ["work"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Trabajo", "para", "una", "empresa", "de", "tecnología", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1906",
+    "es": "No creo que mi jefe acepte la propuesta.",
+    "sk": "Neverím, že môj šéf návrh prijme.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "mi", "jefe", "acepte", "la", "propuesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "acepte",
+        "lemma": "aceptar",
+        "hint": "aceptar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["acepta", "aceptará", "aceptó"]
+      }
+    ]
+  },
+  {
+    "id": "s1907",
+    "es": "Cuando termine el proyecto, tomaré vacaciones.",
+    "sk": "Keď dokončím projekt, vezmem si dovolenku.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente", "futuro"],
+    "tokens": ["Cuando", "termine", "el", "proyecto", ",", "tomaré", "vacaciones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "termine",
+        "lemma": "terminar",
+        "hint": "terminar · yo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["termino", "terminaré", "terminé"]
+      }
+    ]
+  },
+  {
+    "id": "s1908",
+    "es": "Te explico el sistema para que trabajes más rápido.",
+    "sk": "Vysvetlím ti systém, aby si pracoval rýchlejšie.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Te", "explico", "el", "sistema", "para", "que", "trabajes", "más", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "trabajes",
+        "lemma": "trabajar",
+        "hint": "trabajar · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["trabajas", "trabajarás", "trabajaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1909",
+    "es": "Aunque tenga mucho trabajo mañana, iré a la fiesta.",
+    "sk": "Aj keď budem mať zajtra veľa práce, pôjdem na oslavu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente", "futuro"],
+    "tokens": ["Aunque", "tenga", "mucho", "trabajo", "mañana", ",", "iré", "a", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenga",
+        "lemma": "tener",
+        "hint": "tener · yo",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["tengo", "tendré", "tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s1910",
+    "es": "Dudo que la empresa contrate más gente este año.",
+    "sk": "Pochybujem, že firma tento rok najme viac ľudí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Dudo", "que", "la", "empresa", "contrate", "más", "gente", "este", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "contrate",
+        "lemma": "contratar",
+        "hint": "contratar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["contrata", "contratará", "contrató"]
+      }
+    ]
+  },
+  {
+    "id": "s1911",
+    "es": "En cuanto reciba el pago, te mando la factura.",
+    "sk": "Hneď ako dostanem platbu, pošlem ti faktúru.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["En", "cuanto", "reciba", "el", "pago", ",", "te", "mando", "la", "factura", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "reciba",
+        "lemma": "recibir",
+        "hint": "recibir · yo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["recibo", "recibiré", "recibí"]
+      }
+    ]
+  },
+  {
+    "id": "s1912",
+    "es": "Creo que la reunión empieza a las diez.",
+    "sk": "Myslím, že porada začína o desiatej.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "presente"],
+    "tokens": ["Creo", "que", "la", "reunión", "empieza", "a", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "empieza",
+        "lemma": "empezar",
+        "hint": "empezar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["empiece", "empezará", "empezó"]
+      }
+    ]
+  },
+  {
+    "id": "s1944",
+    "es": "El proyecto que presentamos ayer fue aprobado.",
+    "sk": "Projekt, ktorý sme včera predstavili, bol schválený.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "proyecto", "que", "presentamos", "ayer", "fue", "aprobado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1969",
+    "es": "El contrato fue aprobado por la directora.",
+    "sk": "Zmluvu schválila riaditeľka.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["passive-se", "preterito"],
+    "tokens": ["El", "contrato", "fue", "aprobado", "por", "la", "directora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprobado",
+        "lemma": "aprobar",
+        "hint": "aprobar · participio",
+        "tip": "passive-se",
+        "why": "ser-passive",
+        "distractors": ["aprobada", "aprobando", "aprobó"]
+      }
+    ]
   }
 ]

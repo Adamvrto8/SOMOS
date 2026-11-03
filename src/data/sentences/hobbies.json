@@ -1462,5 +1462,171 @@
         "distractors": ["Quedábamos", "Quedaremos", "Quedaron"]
       }
     ]
+  },
+  {
+    "id": "s1641",
+    "es": "Me gusta bailar con mis amigos.",
+    "sk": "Rád tancujem s kamarátmi.",
+    "level": "A1",
+    "topics": ["hobbies"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "bailar", "con", "mis", "amigos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1761",
+    "es": "Cuando llegué al cine, la película ya había terminado.",
+    "sk": "Keď som prišiel do kina, film už skončil.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "llegué", "al", "cine", ",", "la", "película", "ya", "había", "terminado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "terminado",
+        "lemma": "terminar",
+        "hint": "terminar · participio",
+        "distractors": ["terminando", "terminó", "terminar"]
+      }
+    ]
+  },
+  {
+    "id": "s1762",
+    "es": "Nunca había tocado la guitarra hasta que mi tío me enseñó.",
+    "sk": "Nikdy predtým som nehral na gitaru, kým ma strýko nenaučil.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Nunca", "había", "tocado", "la", "guitarra", "hasta", "que", "mi", "tío", "me", "enseñó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tocado",
+        "lemma": "tocar",
+        "hint": "tocar · participio",
+        "distractors": ["tocando", "tocó", "tocar"]
+      }
+    ]
+  },
+  {
+    "id": "s1763",
+    "es": "Antes de ese viaje, nunca había nadado en el mar.",
+    "sk": "Pred tou cestou som nikdy neplával v mori.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "presente"],
+    "tokens": ["Antes", "de", "ese", "viaje", ",", "nunca", "había", "nadado", "en", "el", "mar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "nadado",
+        "lemma": "nadar",
+        "hint": "nadar · participio",
+        "distractors": ["nadando", "nadó", "nadar"]
+      }
+    ]
+  },
+  {
+    "id": "s1764",
+    "es": "Mi equipo ya había ganado dos partidos cuando llegué.",
+    "sk": "Môj tím už vyhral dva zápasy, keď som prišiel.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Mi", "equipo", "ya", "había", "ganado", "dos", "partidos", "cuando", "llegué", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ganado",
+        "lemma": "ganar",
+        "hint": "ganar · participio",
+        "distractors": ["ganando", "ganó", "ganar"]
+      }
+    ]
+  },
+  {
+    "id": "s1765",
+    "es": "Habíamos practicado toda la semana, pero perdimos el torneo.",
+    "sk": "Celý týždeň sme trénovali, ale turnaj sme prehrali.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Habíamos", "practicado", "toda", "la", "semana", ",", "pero", "perdimos", "el", "torneo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "practicado",
+        "lemma": "practicar",
+        "hint": "practicar · participio",
+        "distractors": ["practicando", "practicó", "practicar"]
+      }
+    ]
+  },
+  {
+    "id": "s1766",
+    "es": "Ella ya había leído el libro antes de ver la película.",
+    "sk": "Ona už knihu prečítala skôr, než videla film.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto"],
+    "tokens": ["Ella", "ya", "había", "leído", "el", "libro", "antes", "de", "ver", "la", "película", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "leído",
+        "lemma": "leer",
+        "hint": "leer · participio",
+        "distractors": ["leyendo", "leyó", "leer"]
+      }
+    ]
+  },
+  {
+    "id": "s1767",
+    "es": "Cuando me invitaron al baile, ya había aprendido a bailar salsa.",
+    "sk": "Keď ma pozvali na tanec, už som sa naučil tancovať salsu.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "me", "invitaron", "al", "baile", ",", "ya", "había", "aprendido", "a", "bailar", "salsa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "aprendido",
+        "lemma": "aprender",
+        "hint": "aprender · participio",
+        "distractors": ["aprendiendo", "aprendió", "aprender"]
+      }
+    ]
+  },
+  {
+    "id": "s1853",
+    "es": "Quiero que juegues con nosotros.",
+    "sk": "Chcem, aby si sa hral s nami.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Quiero", "que", "juegues", "con", "nosotros", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "juegues",
+        "lemma": "jugar",
+        "hint": "jugar · tú · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["juegas", "jugarás", "jugaste"]
+      }
+    ]
   }
 ]

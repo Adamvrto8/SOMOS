@@ -81,5 +81,19 @@
   { "id": "s1314", "en": "My roommate never does the dishes and I'm fed up with it." },
   { "id": "s1613", "en": "The elevator isn't working, so we're taking the stairs down." },
   { "id": "s1614", "en": "The dog broke my favorite mug." },
-  { "id": "s1619", "en": "They cut off our power because we forgot to pay the bill." }
+  { "id": "s1619", "en": "They cut off our power because we forgot to pay the bill." },
+  { "id": "s1642", "en": "I like my bedroom." },
+  { "id": "s1660", "en": "My apartment has two bedrooms.", "hints": ["hay/estar"] },
+  { "id": "s1661", "en": "The kitchen is next to the living room.", "hints": ["hay/estar"] },
+  { "id": "s1662", "en": "Is there hot water in the bathroom?", "hints": ["hay/estar"] },
+  { "id": "s1683", "en": "My grandmother has a cat and gives it milk every day.", "hints": ["pronoun: to him/it"] },
+  { "id": "s1727", "en": "You should clean your bedroom today.", "hints": ["should"] },
+  { "id": "s1752", "en": "Close the door, please, it's cold." },
+  { "id": "s1810", "en": "Would you mind taking off your shoes when you come in?" },
+  { "id": "s1811", "en": "I would put a big armchair next to the living room window." },
+  { "id": "s1812", "en": "My parents said they would fix the roof in October." },
+  { "id": "s1813", "en": "We would have more space in a bigger apartment." },
+  { "id": "s1881", "en": "If I lived closer to work, I would go by bike." },
+  { "id": "s1942", "en": "The house where I grew up had a very big garden.", "hints": ["relative word"] },
+  { "id": "s1966", "en": "Apartments near the metro are for rent." }
 ]

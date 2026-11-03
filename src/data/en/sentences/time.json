@@ -80,5 +80,11 @@
   { "id": "s1508", "en": "Every time the deadline gets close, I get all nervous." },
   { "id": "s1509", "en": "You have to make the most of your time while you're young." },
   { "id": "s1609", "en": "The bus took an hour because there was a lot of traffic." },
-  { "id": "s1610", "en": "I won't be long, I'm just going to get bread." }
+  { "id": "s1610", "en": "I won't be long, I'm just going to get bread." },
+  { "id": "s1742", "en": "Get up early if you want to arrive on time." },
+  { "id": "s1743", "en": "Make use of your free time to rest." },
+  { "id": "s1744", "en": "Don't waste time; start now." },
+  { "id": "s1745", "en": "Go to bed early, tomorrow we have to get up at dawn." },
+  { "id": "s1746", "en": "Let's wait until Monday before deciding." },
+  { "id": "s1904", "en": "The weekend has finally arrived.", "hints": ["por/para"] }
 ]

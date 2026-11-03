@@ -1535,5 +1535,275 @@
         "distractors": ["cortan", "cortaban", "cortarán"]
       }
     ]
+  },
+  {
+    "id": "s1642",
+    "es": "Me gusta mi recámara.",
+    "sk": "Moja spálňa sa mi páči.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["Me", "gusta", "mi", "recámara", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1660",
+    "es": "En mi departamento hay dos recámaras.",
+    "sk": "V mojom byte sú dve spálne.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["En", "mi", "departamento", "hay", "dos", "recámaras", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["está", "están", "es"]
+      }
+    ]
+  },
+  {
+    "id": "s1661",
+    "es": "La cocina está al lado de la sala.",
+    "sk": "Kuchyňa je vedľa obývačky.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["La", "cocina", "está", "al", "lado", "de", "la", "sala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "estar",
+        "distractors": ["hay", "es", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1662",
+    "es": "¿Hay agua caliente en el baño?",
+    "sk": "Je v kúpeľni teplá voda?",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["¿", "Hay", "agua", "caliente", "en", "el", "baño", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "question",
+        "distractors": ["Está", "Están", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s1683",
+    "es": "Mi abuela tiene un gato y le da leche todos los días.",
+    "sk": "Babka má mačku a každý deň jej dáva mlieko.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["object-pronouns", "presente"],
+    "tokens": ["Mi", "abuela", "tiene", "un", "gato", "y", "le", "da", "leche", "todos", "los", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno: mu",
+        "tip": "object-pronouns",
+        "why": "indirect",
+        "distractors": ["lo", "la", "les"]
+      }
+    ]
+  },
+  {
+    "id": "s1727",
+    "es": "Ustedes deben limpiar su recámara hoy.",
+    "sk": "Mali by ste si dnes upratať spálňu.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Ustedes", "deben", "limpiar", "su", "recámara", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "deben",
+        "lemma": "deber",
+        "hint": "mal by",
+        "tip": "obligation",
+        "why": "deber",
+        "distractors": ["pueden", "tienen", "debemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1752",
+    "es": "Cierre la puerta, por favor, hace frío.",
+    "sk": "Zatvorte dvere, prosím, je zima.",
+    "level": "A2",
+    "topics": ["home"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Cierre", "la", "puerta", ",", "por", "favor", ",", "hace", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cierre",
+        "lemma": "cerrar",
+        "hint": "cerrar · usted · imperativo",
+        "distractors": ["Cierra", "Cierren", "Cierro"]
+      }
+    ]
+  },
+  {
+    "id": "s1810",
+    "es": "¿Les importaría quitarse los zapatos al entrar?",
+    "sk": "Neprekážalo by vám, keby ste si pri vchode vyzuli topánky?",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["¿", "Les", "importaría", "quitarse", "los", "zapatos", "al", "entrar", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "importaría",
+        "lemma": "importar",
+        "hint": "importar · él · condicional",
+        "distractors": ["importará", "importaba", "importa"]
+      }
+    ]
+  },
+  {
+    "id": "s1811",
+    "es": "Yo pondría un sillón grande junto a la ventana de la sala.",
+    "sk": "Ja by som dal veľké kreslo k oknu v obývačke.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Yo", "pondría", "un", "sillón", "grande", "junto", "a", "la", "ventana", "de", "la", "sala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "pondría",
+        "lemma": "poner",
+        "hint": "poner · yo · condicional",
+        "distractors": ["pondré", "ponía", "pongo"]
+      }
+    ]
+  },
+  {
+    "id": "s1812",
+    "es": "Mis papás dijeron que arreglarían el techo en octubre.",
+    "sk": "Rodičia povedali, že strechu opravia v októbri.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Mis", "papás", "dijeron", "que", "arreglarían", "el", "techo", "en", "octubre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "arreglarían",
+        "lemma": "arreglar",
+        "hint": "arreglar · ellos · condicional",
+        "distractors": ["arreglarán", "arreglaban", "arreglan"]
+      }
+    ]
+  },
+  {
+    "id": "s1813",
+    "es": "Nosotros tendríamos más espacio en un departamento más grande.",
+    "sk": "Vo väčšom byte by sme mali viac miesta.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Nosotros", "tendríamos", "más", "espacio", "en", "un", "departamento", "más", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tendríamos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · condicional",
+        "distractors": ["tendremos", "teníamos", "tenemos"]
+      }
+    ]
+  },
+  {
+    "id": "s1881",
+    "es": "Si viviera más cerca del trabajo, iría en bicicleta.",
+    "sk": "Keby som býval bližšie k práci, chodil by som na bicykli.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "viviera", "más", "cerca", "del", "trabajo", ",", "iría", "en", "bicicleta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "viviera",
+        "lemma": "vivir",
+        "hint": "vivir · yo",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["viva", "vivía", "viviría"]
+      }
+    ]
+  },
+  {
+    "id": "s1942",
+    "es": "La casa donde crecí tenía un jardín muy grande.",
+    "sk": "Dom, v ktorom som vyrastal, mal veľmi veľkú záhradu.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["La", "casa", "donde", "crecí", "tenía", "un", "jardín", "muy", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s1966",
+    "es": "Se rentan departamentos cerca del metro.",
+    "sk": "Prenajímajú sa byty blízko metra.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Se", "rentan", "departamentos", "cerca", "del", "metro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "rentan",
+        "lemma": "rentar",
+        "hint": "rentar",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["renta", "rentaban", "rentarán"]
+      }
+    ]
   }
 ]

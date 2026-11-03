@@ -78,5 +78,20 @@
   { "id": "s1414", "en": "I'm close to finishing my degree; I only owe two classes.", "hints": ["degree"] },
   { "id": "s1415", "en": "The teacher warned us that she wouldn't tolerate plagiarism." },
   { "id": "s1416", "en": "I burned the midnight oil all week studying for the final." },
-  { "id": "s1417", "en": "Hopefully the education reform will raise the standard of public schools.", "hints": ["level"] }
+  { "id": "s1417", "en": "Hopefully the education reform will raise the standard of public schools.", "hints": ["level"] },
+  { "id": "s1643", "en": "Luis likes the English class." },
+  { "id": "s1647", "en": "Are you interested in the history of Mexico?" },
+  { "id": "s1665", "en": "There are twenty students in my class.", "hints": ["hay/estar"] },
+  { "id": "s1666", "en": "The teacher is in the office.", "hints": ["hay/estar"] },
+  { "id": "s1688", "en": "The teacher explained the homework to us and we understood it.", "hints": ["pronoun: her/it"] },
+  { "id": "s1725", "en": "There's an exam tomorrow and I have to study.", "hints": ["must"] },
+  { "id": "s1751", "en": "Open the book to page ten." },
+  { "id": "s1769", "en": "The teacher asked us if we had done the homework." },
+  { "id": "s1852", "en": "My parents want me to study more." },
+  { "id": "s1859", "en": "I hope they give me the scholarship." },
+  { "id": "s1878", "en": "If you study a lot, you will get good grades." },
+  { "id": "s1901", "en": "I study Spanish in order to travel to Mexico.", "hints": ["por/para"] },
+  { "id": "s1922", "en": "I study a lot so that my parents feel proud." },
+  { "id": "s1945", "en": "The students who study more get better grades.", "hints": ["relative word"] },
+  { "id": "s1968", "en": "The classroom has been open since early morning." }
 ]

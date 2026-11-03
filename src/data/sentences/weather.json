@@ -1551,5 +1551,341 @@
         "distractors": ["nieva", "nevó", "nevará"]
       }
     ]
+  },
+  {
+    "id": "s1646",
+    "es": "No me gusta la lluvia.",
+    "sk": "Nemám rád dážď.",
+    "level": "A1",
+    "topics": ["weather"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["No", "me", "gusta", "la", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1707",
+    "es": "Ayer hacía diez grados y hoy veinte: hoy hace menos frío.",
+    "sk": "Včera bolo desať stupňov a dnes dvadsať, dnes je menej zima.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["comparisons", "imperfecto", "presente"],
+    "tokens": ["Ayer", "hacía", "diez", "grados", "y", "hoy", "veinte", ":", "hoy", "hace", "menos", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "menos",
+        "lemma": "menos",
+        "hint": "porovnanie",
+        "tip": "comparisons",
+        "why": "more-less",
+        "distractors": ["más", "tan", "poco"]
+      }
+    ]
+  },
+  {
+    "id": "s1754",
+    "es": "Cuando salimos, ya había empezado a llover.",
+    "sk": "Keď sme vyšli, už začalo pršať.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "salimos", ",", "ya", "había", "empezado", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "empezado",
+        "lemma": "empezar",
+        "hint": "empezar · participio",
+        "distractors": ["empezando", "empezó", "empiece"]
+      }
+    ]
+  },
+  {
+    "id": "s1755",
+    "es": "El pronóstico había dicho que no iba a llover, pero llovió toda la tarde.",
+    "sk": "Predpoveď povedala, že pršať nebude, ale celé popoludnie pršalo.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "imperfecto", "preterito"],
+    "tokens": ["El", "pronóstico", "había", "dicho", "que", "no", "iba", "a", "llover", ",", "pero", "llovió", "toda", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dicho",
+        "lemma": "decir",
+        "hint": "decir · participio",
+        "distractors": ["dicha", "dijo", "diciendo"]
+      }
+    ]
+  },
+  {
+    "id": "s1756",
+    "es": "Cuando llegamos a la playa, la tormenta ya había pasado.",
+    "sk": "Keď sme prišli na pláž, búrka už prešla.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "llegamos", "a", "la", "playa", ",", "la", "tormenta", "ya", "había", "pasado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "pasado",
+        "lemma": "pasar",
+        "hint": "pasar · participio",
+        "distractors": ["pasando", "pasó", "pase"]
+      }
+    ]
+  },
+  {
+    "id": "s1757",
+    "es": "Había nevado toda la noche, así que las calles estaban blancas.",
+    "sk": "Celú noc snežilo, takže ulice boli biele.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "imperfecto"],
+    "tokens": ["Había", "nevado", "toda", "la", "noche", ",", "así", "que", "las", "calles", "estaban", "blancas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "nevado",
+        "lemma": "nevar",
+        "hint": "nevar · participio",
+        "distractors": ["nevando", "nevó", "nieva"]
+      }
+    ]
+  },
+  {
+    "id": "s1758",
+    "es": "Nunca había visto tanta nieve hasta que viajé al norte.",
+    "sk": "Nikdy predtým som nevidel toľko snehu, kým som necestoval na sever.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Nunca", "había", "visto", "tanta", "nieve", "hasta", "que", "viajé", "al", "norte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "visto",
+        "lemma": "ver",
+        "hint": "ver · participio",
+        "distractors": ["viendo", "vio", "vista"]
+      }
+    ]
+  },
+  {
+    "id": "s1759",
+    "es": "Cuando desperté, el viento ya había roto la ventana.",
+    "sk": "Keď som sa zobudil, vietor už rozbil okno.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["Cuando", "desperté", ",", "el", "viento", "ya", "había", "roto", "la", "ventana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "roto",
+        "lemma": "romper",
+        "hint": "romper · participio",
+        "distractors": ["rompe", "rompió", "rompiendo"]
+      }
+    ]
+  },
+  {
+    "id": "s1760",
+    "es": "Hacía mucho calor y no habíamos llevado agua.",
+    "sk": "Bolo veľmi teplo a nemali sme so sebou vodu.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["pluscuamperfecto", "imperfecto"],
+    "tokens": ["Hacía", "mucho", "calor", "y", "no", "habíamos", "llevado", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llevado",
+        "lemma": "llevar",
+        "hint": "llevar · participio",
+        "distractors": ["llevando", "llevó", "llevar"]
+      }
+    ]
+  },
+  {
+    "id": "s1796",
+    "es": "Ojalá que mañana no llueva.",
+    "sk": "Kiežby zajtra nepršalo.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Ojalá", "que", "mañana", "no", "llueva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llueva",
+        "lemma": "llover",
+        "hint": "llover · él · subjuntivo",
+        "distractors": ["llueve", "lloverá", "llovió"]
+      }
+    ]
+  },
+  {
+    "id": "s1814",
+    "es": "El pronóstico decía que nevaría en la sierra.",
+    "sk": "Predpoveď hovorila, že v horách bude snežiť.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["El", "pronóstico", "decía", "que", "nevaría", "en", "la", "sierra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "nevaría",
+        "lemma": "nevar",
+        "hint": "nevar · él · condicional",
+        "distractors": ["nevará", "nevaba", "nieva"]
+      }
+    ]
+  },
+  {
+    "id": "s1815",
+    "es": "Con tanto calor, yo no cocinaría hoy.",
+    "sk": "Pri takom teple by som dnes nevaril.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Con", "tanto", "calor", ",", "yo", "no", "cocinaría", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "cocinaría",
+        "lemma": "cocinar",
+        "hint": "cocinar · yo · condicional",
+        "distractors": ["cocinaré", "cocinaba", "cocino"]
+      }
+    ]
+  },
+  {
+    "id": "s1816",
+    "es": "Me dijeron que haría frío por la noche.",
+    "sk": "Povedali mi, že v noci bude zima.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["Me", "dijeron", "que", "haría", "frío", "por", "la", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "haría",
+        "lemma": "hacer",
+        "hint": "hacer · él · condicional",
+        "distractors": ["hará", "hacía", "hace"]
+      }
+    ]
+  },
+  {
+    "id": "s1817",
+    "es": "¿Podrían cerrar la ventana? Entra mucho aire frío.",
+    "sk": "Mohli by ste zatvoriť okno? Fúka sem studený vzduch.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["condicional", "presente"],
+    "tokens": ["¿", "Podrían", "cerrar", "la", "ventana", "?", "Entra", "mucho", "aire", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podrían",
+        "lemma": "poder",
+        "hint": "poder · ustedes · condicional",
+        "distractors": ["Podrán", "Podían", "Pueden"]
+      }
+    ]
+  },
+  {
+    "id": "s1858",
+    "es": "Espero que haga buen tiempo en el viaje.",
+    "sk": "Dúfam, že bude na výlete pekné počasie.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Espero", "que", "haga", "buen", "tiempo", "en", "el", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "haga",
+        "lemma": "hacer",
+        "hint": "hacer · él",
+        "tip": "subjuntivo-wishes",
+        "why": "feelings",
+        "distractors": ["hace", "hará", "hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s1877",
+    "es": "Si llueve mañana, nos quedaremos en casa.",
+    "sk": "Ak zajtra bude pršať, ostaneme doma.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "llueve", "mañana", ",", "nos", "quedaremos", "en", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llueve",
+        "lemma": "llover",
+        "hint": "llover · él",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["lloverá", "llovió", "llovía"]
+      }
+    ]
+  },
+  {
+    "id": "s1902",
+    "es": "No salí por la lluvia.",
+    "sk": "Nevyšiel som kvôli dažďu.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["por-para", "preterito"],
+    "tokens": ["No", "salí", "por", "la", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "por",
+        "distractors": ["para", "de"]
+      }
+    ]
+  },
+  {
+    "id": "s1923",
+    "es": "Aunque llueva, vamos a ir al parque.",
+    "sk": "Aj keby pršalo, pôjdeme do parku.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Aunque", "llueva", ",", "vamos", "a", "ir", "al", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llueva",
+        "lemma": "llover",
+        "hint": "llover · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["llueve", "lloverá", "llovió"]
+      }
+    ]
   }
 ]

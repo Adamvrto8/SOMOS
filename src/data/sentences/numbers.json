@@ -1436,5 +1436,77 @@
         "distractors": ["gana", "ganaba", "ganará"]
       }
     ]
+  },
+  {
+    "id": "s1784",
+    "es": "Necesito que me des el cambio de cien pesos.",
+    "sk": "Potrebujem, aby si mi vrátil drobné zo sto pesos.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Necesito", "que", "me", "des", "el", "cambio", "de", "cien", "pesos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "des",
+        "lemma": "dar",
+        "hint": "dar · tú · subjuntivo",
+        "distractors": ["das", "darás", "diste"]
+      }
+    ]
+  },
+  {
+    "id": "s1785",
+    "es": "Es mejor que paguemos la mitad ahora.",
+    "sk": "Je lepšie, keď zaplatíme polovicu teraz.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Es", "mejor", "que", "paguemos", "la", "mitad", "ahora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "paguemos",
+        "lemma": "pagar",
+        "hint": "pagar · nosotros · subjuntivo",
+        "distractors": ["pagamos", "pagaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s1786",
+    "es": "Quiero que cuentes hasta veinte conmigo.",
+    "sk": "Chcem, aby si so mnou počítal do dvadsať.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["Quiero", "que", "cuentes", "hasta", "veinte", "conmigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuentes",
+        "lemma": "contar",
+        "hint": "contar · tú · subjuntivo",
+        "distractors": ["cuentas", "contarás", "contaste"]
+      }
+    ]
+  },
+  {
+    "id": "s1787",
+    "es": "La maestra pide que sumemos estos números sin calculadora.",
+    "sk": "Učiteľka žiada, aby sme tieto čísla sčítali bez kalkulačky.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo", "presente"],
+    "tokens": ["La", "maestra", "pide", "que", "sumemos", "estos", "números", "sin", "calculadora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sumemos",
+        "lemma": "sumar",
+        "hint": "sumar · nosotros · subjuntivo",
+        "distractors": ["sumamos", "sumaremos"]
+      }
+    ]
   }
 ]

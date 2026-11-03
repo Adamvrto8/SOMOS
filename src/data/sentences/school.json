@@ -1483,5 +1483,301 @@
         "distractors": ["ruido", "precio", "clima"]
       }
     ]
+  },
+  {
+    "id": "s1643",
+    "es": "A Luis le gusta la clase de inglés.",
+    "sk": "Luisovi sa páči hodina angličtiny.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["A", "Luis", "le", "gusta", "la", "clase", "de", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "gusta",
+        "lemma": "gustar",
+        "hint": "gustar",
+        "tip": "gustar",
+        "why": "how",
+        "distractors": ["gustan", "gustas", "gusto"]
+      }
+    ]
+  },
+  {
+    "id": "s1647",
+    "es": "¿Te interesa la historia de México?",
+    "sk": "Zaujíma ťa história Mexika?",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["gustar", "presente"],
+    "tokens": ["¿", "Te", "interesa", "la", "historia", "de", "México", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "interesa",
+        "lemma": "interesar",
+        "hint": "interesar",
+        "tip": "gustar",
+        "why": "similar",
+        "distractors": ["interesan", "gusta", "importa"]
+      }
+    ]
+  },
+  {
+    "id": "s1665",
+    "es": "Hay veinte alumnos en mi clase.",
+    "sk": "V mojej triede je dvadsať žiakov.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["Hay", "veinte", "alumnos", "en", "mi", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hay",
+        "lemma": "hay",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "hay",
+        "distractors": ["Está", "Están", "Es"]
+      }
+    ]
+  },
+  {
+    "id": "s1666",
+    "es": "El maestro está en la oficina.",
+    "sk": "Učiteľ je v kancelárii.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["hay-estar", "presente"],
+    "tokens": ["El", "maestro", "está", "en", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "hay/estar",
+        "tip": "hay-estar",
+        "why": "estar",
+        "distractors": ["hay", "es", "están"]
+      }
+    ]
+  },
+  {
+    "id": "s1688",
+    "es": "La maestra nos explicó la tarea y la entendimos.",
+    "sk": "Učiteľka nám vysvetlila úlohu a pochopili sme ju.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["object-pronouns", "preterito"],
+    "tokens": ["La", "maestra", "nos", "explicó", "la", "tarea", "y", "la", "entendimos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "zámeno: ju",
+        "tip": "object-pronouns",
+        "why": "direct",
+        "distractors": ["lo", "le", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s1725",
+    "es": "Mañana hay examen y tengo que estudiar.",
+    "sk": "Zajtra je skúška a musím sa učiť.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["obligation", "presente"],
+    "tokens": ["Mañana", "hay", "examen", "y", "tengo", "que", "estudiar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "tip": "obligation",
+        "why": "tener-que",
+        "distractors": ["de", "a", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s1751",
+    "es": "Abran el libro en la página diez.",
+    "sk": "Otvorte knihu na desiatej strane.",
+    "level": "A2",
+    "topics": ["school"],
+    "grammar": ["imperativo"],
+    "tokens": ["Abran", "el", "libro", "en", "la", "página", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Abran",
+        "lemma": "abrir",
+        "hint": "abrir · ustedes · imperativo",
+        "distractors": ["Abra", "Abre", "Abrimos"]
+      }
+    ]
+  },
+  {
+    "id": "s1769",
+    "es": "El maestro nos preguntó si habíamos hecho la tarea.",
+    "sk": "Učiteľ sa nás spýtal, či sme urobili úlohu.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["pluscuamperfecto", "preterito"],
+    "tokens": ["El", "maestro", "nos", "preguntó", "si", "habíamos", "hecho", "la", "tarea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "hecho",
+        "lemma": "hacer",
+        "hint": "hacer · participio",
+        "distractors": ["hace", "hizo", "haciendo"]
+      }
+    ]
+  },
+  {
+    "id": "s1852",
+    "es": "Mis papás quieren que estudie más.",
+    "sk": "Rodičia chcú, aby som sa viac učil.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Mis", "papás", "quieren", "que", "estudie", "más", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estudie",
+        "lemma": "estudiar",
+        "hint": "estudiar · yo",
+        "tip": "subjuntivo-wishes",
+        "why": "wish",
+        "distractors": ["estudio", "estudiaré", "estudié"]
+      }
+    ]
+  },
+  {
+    "id": "s1859",
+    "es": "Ojalá que me den la beca.",
+    "sk": "Kiežby mi dali štipendium.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "tokens": ["Ojalá", "que", "me", "den", "la", "beca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "den",
+        "lemma": "dar",
+        "hint": "dar · ellos · subjuntivo",
+        "tip": "subjuntivo-wishes",
+        "why": "ojala",
+        "distractors": ["dan", "darán", "dieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1878",
+    "es": "Si estudias mucho, sacarás buenas notas.",
+    "sk": "Ak sa budeš veľa učiť, dostaneš dobré známky.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["si-clauses", "presente", "futuro"],
+    "tokens": ["Si", "estudias", "mucho", ",", "sacarás", "buenas", "notas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estudias",
+        "lemma": "estudiar",
+        "hint": "estudiar · tú",
+        "tip": "si-clauses",
+        "why": "never",
+        "distractors": ["estudiarás", "estudiaste", "estudiabas"]
+      }
+    ]
+  },
+  {
+    "id": "s1901",
+    "es": "Estudio español para viajar a México.",
+    "sk": "Učím sa španielsky, aby som mohol cestovať do Mexika.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["por-para", "presente"],
+    "tokens": ["Estudio", "español", "para", "viajar", "a", "México", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s1922",
+    "es": "Estudio mucho para que mis papás se sientan orgullosos.",
+    "sk": "Veľa sa učím, aby sa moji rodičia cítili hrdí.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Estudio", "mucho", "para", "que", "mis", "papás", "se", "sientan", "orgullosos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "sientan",
+        "lemma": "sentirse",
+        "hint": "sentirse · ellos",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["sienten", "sentirán", "sintieron"]
+      }
+    ]
+  },
+  {
+    "id": "s1945",
+    "es": "Los alumnos que estudian más sacan mejores notas.",
+    "sk": "Žiaci, ktorí sa učia viac, dostávajú lepšie známky.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "alumnos", "que", "estudian", "más", "sacan", "mejores", "notas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1968",
+    "es": "El salón está abierto desde temprano.",
+    "sk": "Trieda je otvorená od rána.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "salón", "está", "abierto", "desde", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "abierto",
+        "lemma": "abrir",
+        "hint": "abrir · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["abierta", "abriendo", "abrió"]
+      }
+    ]
   }
 ]
