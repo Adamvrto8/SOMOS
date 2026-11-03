@@ -10,10 +10,11 @@ const passed = { bestScore: 10, total: 10, passed: true }
 const none = () => false
 
 describe('path units', () => {
-  it('teach every word with a topic exactly once, A1 to B2', () => {
+  it('teach every word with a topic exactly once, A1 to B2, the articles in the grammar steps', () => {
     const taught = pathUnits.flatMap((unit) => unitMaterial(unit).words.map((w) => w.id))
     expect(new Set(taught).size).toBe(taught.length)
-    expect(taught.length).toBe(words.filter((w) => w.topics.length > 0).length)
+    expect(taught.length).toBe(words.filter((w) => w.topics.length > 0 && w.drill !== false).length)
+    expect(taught).not.toContain('el')
     expect(new Set(pathUnits.map((unit) => unit.level))).toEqual(new Set(['A1', 'A2', 'B1', 'B2']))
   })
 

@@ -251,6 +251,8 @@ for (const w of words) {
     if (!w.plural && !w.uncountable && /[^aeiouáéíóús]$/.test(w.es)) fail(where, 'noun ending in a consonant needs plural (or uncountable: true)')
     if (w.plural && w.uncountable) fail(where, 'uncountable noun cannot have a plural')
   } else if (w.gender) fail(where, 'gender is only for nouns')
+  // Articles are practised by the grammar steps, not as vocab tasks (CLAUDE.md §3).
+  if (w.drill !== undefined && (w.drill !== false || w.pos !== 'other')) fail(where, 'drill: false is only for articles (pos "other")')
   if (w.plural) checkSpanish(`${where}.plural`, w.plural)
 
   if (w.pos === 'adj' && w.es.endsWith('o') && !w.feminine) fail(where, 'adjective in -o needs feminine')
@@ -443,7 +445,7 @@ for (const [key, parts] of partsOf) {
   const sorted = [...parts].sort((a, b) => a - b)
   if (sorted.some((part, i) => part !== i + 1)) fail(`path ${key}`, `parts must be 1…${parts.length} once each, not ${parts.join(', ')}`)
   const [topic, level] = key.split(':')
-  const count = words.filter((w) => w.level === level && w.topics[0] === topic).length
+  const count = words.filter((w) => w.level === level && w.topics[0] === topic && w.drill !== false).length
   // pathUnits.ts splits the words evenly: the biggest part has ceil(count / parts).
   if (Math.ceil(count / parts.length) > MAX_UNIT_WORDS) fail(`path ${key}`, `${count} words in ${parts.length} part(s): more than ${MAX_UNIT_WORDS} in a unit, add a part`)
 }

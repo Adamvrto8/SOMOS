@@ -1,7 +1,7 @@
 [
   {
     "id": "ser",
-    "sk": ["byť"],
+    "sk": ["byť (kto, čo)"],
     "group": "er",
     "regular": false,
     "gerund": "siendo",
@@ -14,7 +14,7 @@
   },
   {
     "id": "estar",
-    "sk": ["byť"],
+    "sk": ["byť (kde, ako)"],
     "group": "ar",
     "regular": false,
     "gerund": "estando",

@@ -1,4 +1,4 @@
-import { sentenceById, sentences, verbById, verbs, wordById, words } from '../data'
+import { sentenceById, sentences, verbById, verbs, vocabWords, wordById } from '../data'
 import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
@@ -199,7 +199,7 @@ export function availableCount(filter: LessonFilter): number {
     case 'dictation':
       return listeningSentences(filter).length
     case 'vocab':
-      return words.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length
+      return vocabWords.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length
   }
 }
 
@@ -249,16 +249,32 @@ export function nativeAnswers(word: Word): string[] {
   return [...out]
 }
 
+/** A noun with its article ("la casa"), any other word as it is. */
+const withArticle = (word: Word) => (word.gender ? `${word.gender === 'm' ? 'el' : 'la'} ${word.es}` : word.es)
+
+/** The first translation, the one two words can share ("otec": padre, papá). */
+const translationKey = (word: Word) => wordTranslations(word)[0].toLowerCase()
+
+let synonymIndex: { language: string; byKey: Map<string, Word[]> } | undefined
+
+/** The other words with the same first translation: right answers to each other's prompt. */
+export function synonymsOf(word: Word): Word[] {
+  const language = getLanguage()
+  if (synonymIndex?.language !== language) {
+    const byKey = new Map<string, Word[]>()
+    for (const w of vocabWords) byKey.set(translationKey(w), [...(byKey.get(translationKey(w)) ?? []), w])
+    synonymIndex = { language, byKey }
+  }
+  return (synonymIndex.byKey.get(translationKey(word)) ?? []).filter((w) => w !== word)
+}
+
 export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
   const isToSpanish = direction === 'sk-es'
-  const prompt = isToSpanish
-    ? wordTranslations(word).join(', ')
-    : word.gender
-      ? `${word.gender === 'm' ? 'el' : 'la'} ${word.es}`
-      : word.es
+  const prompt = isToSpanish ? wordTranslations(word).join(', ') : withArticle(word)
   const expected = isToSpanish ? word.es : wordTranslations(word)[0]
+  // "otec" is padre as much as papá.
   const acceptable = isToSpanish
-    ? [word.es, ...(word.gender ? [`${word.gender === 'm' ? 'el' : 'la'} ${word.es}`] : [])]
+    ? [word, ...synonymsOf(word)].flatMap((w) => (w.gender ? [w.es, withArticle(w)] : [w.es]))
     : nativeAnswers(word)
 
   return {
@@ -354,18 +370,38 @@ export function createLesson(
       return order(listeningSentences(filter), (s) => s.id)
         .slice(0, size)
         .map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
-    case 'vocab':
-      return order(getStablePool(filter), (t) => t.itemId).slice(0, size)
+    case 'vocab': {
+      // One word of a translation per lesson: "otec" once, not as padre and then as papá.
+      const pool = getStablePool(filter).filter((t): t is VocabTask => t.kind === 'vocab')
+      return takeLimited(order(pool, (t) => t.itemId), size, (t) => translationKey(t.word), 1)
+    }
   }
 }
 
-const LEVEL_ORDER: Record<Level, number> = { A1: 1, A2: 2, B1: 3, B2: 4 }
+const sameTranslation = (a: Task, b: Task) => a.kind === 'vocab' && b.kind === 'vocab' && translationKey(a.word) === translationKey(b.word)
 
-function compareSentences(a: Sentence, b: Sentence): number {
-  const levelDiff = (LEVEL_ORDER[a.level] ?? 1) - (LEVEL_ORDER[b.level] ?? 1)
-  if (levelDiff !== 0) return levelDiff
-  return a.id.localeCompare(b.id, undefined, { numeric: true })
+/**
+ * Two vocab tasks with the same translation (después and luego: "potom") never come one after the
+ * other: the second moves to the first place free of its kind. A lesson of nothing else stays as it is.
+ */
+export function spreadSameTranslations(tasks: Task[]): Task[] {
+  const out = [...tasks]
+  const fits = (task: Task, at: number) => !(at > 0 && sameTranslation(out[at - 1], task)) && !(at < out.length && sameTranslation(out[at], task))
+  // Taking a task out can join two others, so the scan starts over after a move; at most one move per task.
+  for (let i = 1, moves = 0; i < out.length && moves < tasks.length; i++) {
+    if (!sameTranslation(out[i - 1], out[i])) continue
+    const [task] = out.splice(i, 1)
+    const at = [...out.keys(), out.length].find((p) => p !== i && fits(task, p))
+    out.splice(at ?? i, 0, task)
+    if (at !== undefined) {
+      moves++
+      i = 0
+    }
+  }
+  return out
 }
+
+const LEVEL_ORDER: Record<Level, number> = { A1: 1, A2: 2, B1: 3, B2: 4 }
 
 function seedFor(type: ExerciseType): number {
   switch (type) {
@@ -389,12 +425,11 @@ export function seededRandom(seed: number): () => number {
   }
 }
 
-function orderSentences(items: Sentence[], type: ExerciseType, isAllTopics: boolean): Sentence[] {
-  if (!isAllTopics) {
-    const sorted = [...items]
-    sorted.sort(compareSentences)
-    return sorted
-  }
+/**
+ * Level by level, each level in an order of its own for every exercise type: lesson 1 of Doplňovanie
+ * and lesson 1 of Skladanie viet ask different sentences of a topic, not the same ones in another form.
+ */
+function orderSentences(items: Sentence[], type: ExerciseType): Sentence[] {
   const byLevel = new Map<Level, Sentence[]>()
   for (const s of items) {
     const list = byLevel.get(s.level) ?? []
@@ -418,7 +453,7 @@ export function getStablePool(filter: LessonFilter): Task[] {
   switch (filter.type) {
     case 'cloze': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.length ?? 0) > 0)
-      const ordered = orderSentences(matching, 'cloze', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(matching, 'cloze')
       return ordered.map((sentence): ClozeTask => ({
         kind: 'cloze',
         itemId: `${sentence.id}#0`,
@@ -428,7 +463,7 @@ export function getStablePool(filter: LessonFilter): Task[] {
     }
     case 'choice': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.[0].distractors?.length ?? 0) >= 2)
-      const ordered = orderSentences(matching, 'choice', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(matching, 'choice')
       return ordered.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5))
     }
     case 'conjugation': {
@@ -451,12 +486,12 @@ export function getStablePool(filter: LessonFilter): Task[] {
     }
     case 'builder': {
       const matching = builderSentences(filter)
-      const ordered = orderSentences(matching, 'builder', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(matching, 'builder')
       return ordered.map((sentence) => builderTask(sentence, () => 0.5))
     }
     case 'translation': {
       const matching = translationSentences(filter)
-      const ordered = orderSentences(matching, 'translation', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(matching, 'translation')
       return ordered.map((sentence): TranslationTask => ({
         kind: 'translation',
         itemId: sentence.id,
@@ -464,16 +499,16 @@ export function getStablePool(filter: LessonFilter): Task[] {
       }))
     }
     case 'dictation': {
-      const ordered = orderSentences(listeningSentences(filter), 'dictation', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(listeningSentences(filter), 'dictation')
       return ordered.map((sentence): DictationTask => ({ kind: 'dictation', itemId: sentence.id, sentence }))
     }
     case 'speaking': {
-      const ordered = orderSentences(listeningSentences(filter), 'speaking', !filter.topic || filter.topic === 'all')
+      const ordered = orderSentences(listeningSentences(filter), 'speaking')
       return ordered.map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
     }
     case 'vocab': {
       const isAll = !filter.topic || filter.topic === 'all'
-      const matching = words.filter(
+      const matching = vocabWords.filter(
         (w) => (isAll || w.topics.includes(filter.topic!)) && (!filter.level || w.level === filter.level),
       )
       if (isAll) {
@@ -566,7 +601,8 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
     case 'vocab': {
       const [wordId, direction] = itemId.split(':')
       const word = wordById.get(wordId)
-      if (!word || (direction !== 'sk-es' && direction !== 'es-sk')) return undefined
+      // An article is no vocab task any more, not even one on the mistakes list.
+      if (!word || word.drill === false || (direction !== 'sk-es' && direction !== 'es-sk')) return undefined
       return vocabTask(word, direction)
     }
   }
@@ -603,7 +639,7 @@ export function skipSpeaking(tasks: Task[], index: number): Task[] {
 
 /** The same tasks again (e.g. "repeat mistakes") with options and tiles reshuffled. */
 export function retryTasks(tasks: Task[], random: Random = Math.random): Task[] {
-  return shuffle(tasks, random).map((task) => {
+  return spreadSameTranslations(shuffle(tasks, random)).map((task) => {
     if (task.kind === 'choice') return { ...task, options: shuffle(task.options, random) }
     if (task.kind === 'builder') return { ...task, tiles: shuffleTiles(task.expected, random) }
     return task

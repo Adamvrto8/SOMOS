@@ -21,6 +21,9 @@ export const words = collect<Word>(import.meta.glob('./words/*.json', { eager: t
 export const verbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
 export const sentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))
 
+/** The words vocab tasks ask: all but the articles (`drill: false`). */
+export const vocabWords = words.filter((w) => w.drill !== false)
+
 export const wordById = new Map(words.map((w) => [w.id, w]))
 export const verbById = new Map(verbs.map((v) => [v.id, v]))
 export const topicById = new Map(topics.map((t) => [t.id, t]))

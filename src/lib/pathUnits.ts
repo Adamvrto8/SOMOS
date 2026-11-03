@@ -1,4 +1,4 @@
-import { path, sentences, words } from '../data'
+import { path, sentences, vocabWords } from '../data'
 import type { Level, PathEntry, Sentence, Word } from '../data/types'
 
 // The units of the guided path ("Cesta", docs/guided-path-spec.md) and what each one teaches. No other
@@ -40,7 +40,7 @@ export function unitMaterial(unit: Pick<PathEntry, 'level' | 'topic' | 'part'>):
   if (!material) {
     const parts = partCount(unit.level, unit.topic)
     material = {
-      words: partOf(words.filter((w) => ofTopic(w, unit.level, unit.topic)), unit.part, parts),
+      words: partOf(vocabWords.filter((w) => ofTopic(w, unit.level, unit.topic)), unit.part, parts),
       sentences: partOf(sentences.filter((s) => ofTopic(s, unit.level, unit.topic)), unit.part, parts),
     }
     materialCache.set(id, material)

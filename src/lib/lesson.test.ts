@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { sentences, verbById, verbs } from '../data'
+import { sentences, topics, verbById, verbs, wordById } from '../data'
 import {
   availableCount,
   builderWords,
@@ -13,7 +13,10 @@ import {
   mistakesLesson,
   retryTasks,
   skipSpeaking,
+  spreadSameTranslations,
+  synonymsOf,
   taskFromItem,
+  vocabTask,
   type Task,
 } from './lesson'
 import { TABLE_TENSES } from './conjugate'
@@ -451,3 +454,68 @@ describe('createNumberedLesson', () => {
   })
 })
 
+
+describe('articles', () => {
+  it('are never vocab tasks, not even from the mistakes list', () => {
+    const all = createLesson({ type: 'vocab', topic: 'basics', level: 'A1' }, Number.MAX_SAFE_INTEGER, seeded(1))
+    expect(all.map((t) => (t.kind === 'vocab' ? t.word.id : '')).filter((id) => ['el', 'la', 'un', 'una'].includes(id))).toEqual([])
+    expect(taskFromItem('vocab', 'el:es-sk')).toBeUndefined()
+    expect(taskFromItem('vocab', 'un:sk-es')).toBeUndefined()
+  })
+})
+
+describe('same translation', () => {
+  const word = (id: string) => {
+    const w = wordById.get(id)
+    if (!w) throw new Error(`no word ${id}`)
+    return w
+  }
+
+  it('accepts a synonym towards Spanish ("otec": padre, papá)', () => {
+    expect(synonymsOf(word('padre')).map((w) => w.id)).toContain('papa-2')
+    const task = vocabTask(word('padre'), 'sk-es')
+    expect(gradeTask(task, 'papá').correct).toBe(true)
+    expect(gradeTask(task, 'el papá').correct).toBe(true)
+    expect(gradeTask(task, 'madre').correct).toBe(false)
+  })
+
+  it('tells ser and estar apart in the prompt', () => {
+    expect(vocabTask(word('ser'), 'sk-es').prompt).not.toBe(vocabTask(word('estar'), 'sk-es').prompt)
+    expect(synonymsOf(word('ser'))).toEqual([])
+  })
+
+  it('never puts two of them one after the other', () => {
+    const tasks = [vocabTask(word('despues'), 'es-sk'), vocabTask(word('luego'), 'es-sk'), vocabTask(word('perro'), 'es-sk')]
+    expect(spreadSameTranslations(tasks).map((t) => t.itemId)).toEqual(['despues:es-sk', 'perro:es-sk', 'luego:es-sk'])
+  })
+
+  it('keeps only one of them in a vocab lesson', () => {
+    const lesson = createLesson({ type: 'vocab', topic: 'time', level: 'A1' }, Number.MAX_SAFE_INTEGER, seeded(3))
+    const ids = lesson.map((t) => (t.kind === 'vocab' ? t.word.id : ''))
+    expect(ids.includes('despues') && ids.includes('luego')).toBe(false)
+  })
+
+  it('stay apart after a retry shuffle', () => {
+    const tasks = [vocabTask(word('despues'), 'es-sk'), vocabTask(word('luego'), 'es-sk'), vocabTask(word('perro'), 'es-sk'), vocabTask(word('gato'), 'es-sk')]
+    for (let seed = 1; seed < 30; seed++) {
+      const ids = retryTasks(tasks, seeded(seed)).map((t) => t.itemId)
+      expect(Math.abs(ids.indexOf('despues:es-sk') - ids.indexOf('luego:es-sk'))).toBeGreaterThan(1)
+    }
+  })
+})
+
+describe('numbered lessons of different exercise types', () => {
+  // A topic has about 20 sentences of a level, so some are shared; before, lesson 1 was the same 10 in every type.
+  it('ask mostly different sentences of a topic, not the same ones in another form', () => {
+    for (const type of ['choice', 'builder', 'translation', 'dictation'] as const) {
+      let shared = 0
+      for (const topic of topics) {
+        const ids = (t: typeof type | 'cloze') =>
+          createNumberedLesson({ type: t, topic: topic.id, level: 'A1' }, 1, seeded(1)).map((task) => ('sentence' in task ? task.sentence.id : ''))
+        const cloze = new Set(ids('cloze'))
+        shared += ids(type).filter((id) => cloze.has(id)).length
+      }
+      expect(shared / topics.length, type).toBeLessThan(LESSON_SIZE * 0.7)
+    }
+  })
+})

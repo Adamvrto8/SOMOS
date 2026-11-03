@@ -24,6 +24,7 @@ export interface Word {
   gender?: 'm' | 'f' // nouns only
   plural?: string // nouns/adjs if not trivial (+s)
   uncountable?: boolean // no plural in normal use (el fútbol, la salud): skips the plural check
+  drill?: false // never asked as a vocab task: the articles (el, un…), which the grammar steps practise
   feminine?: string // adjs: "bonito" → "bonita"
   level: Level
   topics: string[] // topic ids

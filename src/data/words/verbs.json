@@ -2,7 +2,7 @@
   {
     "id": "ser",
     "es": "ser",
-    "sk": ["byť"],
+    "sk": ["byť (kto, čo)"],
     "pos": "verb",
     "verbId": "ser",
     "level": "A1",
@@ -16,7 +16,7 @@
   {
     "id": "estar",
     "es": "estar",
-    "sk": ["byť"],
+    "sk": ["byť (kde, ako)"],
     "pos": "verb",
     "verbId": "estar",
     "level": "A1",
