@@ -36,6 +36,7 @@ function reference(task: Task): Reference {
     case 'cloze':
     case 'choice':
     case 'truefalse':
+    case 'findmistake':
       return { correct: task.sentence.es, correctLang: 'es', detail: sentenceTranslation(task.sentence), detailLang: getLanguage(), speak: task.sentence.es }
     case 'conjugation':
       return {
@@ -129,7 +130,7 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
   }
   if (grade.speech && grade.verdict === 'typo') notes.push(<>{text.speechAlmost}</>)
   if (task.kind === 'conjugation' && task.irregular) notes.push(<>{text.irregularNote}</>)
-  if (task.kind === 'truefalse' && task.corrupted) notes.push(<>{text.changedWord(task.corrupted.wrong, task.corrupted.right)}</>)
+  if ((task.kind === 'truefalse' || task.kind === 'findmistake') && task.corrupted) notes.push(<>{text.changedWord(task.corrupted.wrong, task.corrupted.right)}</>)
   if (!grade.correct) notes.push(<>{mistakeChoice ? text.staysInMistakes : text.savedToMistakes}</>)
 
   // ⭐ saves the verb or vocab word, the whole sentence otherwise.

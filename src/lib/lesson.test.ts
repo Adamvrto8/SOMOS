@@ -10,6 +10,7 @@ import {
   conjugationTask,
   createLesson,
   createNumberedLesson,
+  findMistakeTask,
   getNumberedLessonCount,
   getStablePool,
   gradeTask,
@@ -39,7 +40,7 @@ function seeded(seed: number) {
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
 describe('createLesson', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
     const tasks = createLesson({ type }, LESSON_SIZE, seeded(1))
     expect(tasks).toHaveLength(LESSON_SIZE)
     expect(new Set(itemIds(tasks)).size).toBe(LESSON_SIZE)
@@ -645,5 +646,61 @@ describe('truefalse', () => {
     const task = createLesson({ type: 'truefalse' }, 1, seeded(8))[0]
     const lesson = mistakesLesson([{ exercise: 'truefalse', itemId: task.itemId, wrongCount: 1, lastWrongAt: 1 }])
     expect(itemIds(lesson)).toEqual([task.itemId])
+  })
+})
+
+describe('findmistake', () => {
+  const sentence = sentenceById.get('s372')! // Quiero un café sin azúcar. (sin: con, para, por)
+  const task = () => findMistakeTask(sentence, 0, 0, () => 0.5)!
+
+  it('swaps one word and offers the right one among the options', () => {
+    const t = task()
+    expect(t.itemId).toBe('s372#0:0')
+    expect(t.corrupted.index).toBe(3)
+    expect(t.corrupted.right).toBe('sin')
+    expect(t.options).toContain('sin')
+    expect(t.options).not.toContain('con') // the word that stands in the sentence now
+    expect(new Set(t.options).size).toBe(t.options.length)
+    expect(t.options.length).toBeLessThanOrEqual(4)
+  })
+
+  it('is right only with the right word and the right fix', () => {
+    const t = task()
+    expect(gradeTask(t, ['3', 'sin']).correct).toBe(true)
+    expect(gradeTask(t, ['3', 'para']).correct).toBe(false)
+    expect(gradeTask(t, ['1', 'sin']).correct).toBe(false)
+    expect(gradeTask(t, ['1', '']).correct).toBe(false) // gave up after two wrong taps
+    expect(gradeTask(t, '').correct).toBe(false)
+    expect(gradeTask(t, ['3', 'sin']).expected).toBe(sentence.es)
+  })
+
+  it('has no second try and reshuffles its options', () => {
+    const t = task()
+    expect(canRetry(t)).toBe(false)
+    const again = retryTasks([t], seeded(3))[0]
+    expect(again.kind === 'findmistake' && [...again.options].sort()).toEqual([...t.options].sort())
+  })
+
+  it('is rebuilt from its item id, and a stale id gives nothing', () => {
+    for (const t of createLesson({ type: 'findmistake' }, 30, seeded(9))) {
+      const again = taskFromItem('findmistake', t.itemId)
+      expect(again?.itemId).toBe(t.itemId)
+      if (t.kind === 'findmistake' && again?.kind === 'findmistake') expect(again.corrupted.es).toBe(t.corrupted.es)
+    }
+    for (const stale of ['nope#0:0', 's372#9:0', 's372#0:9', 's372#0', 'garbage', '', 's372#0:t']) {
+      expect(taskFromItem('findmistake', stale), stale).toBeUndefined()
+    }
+  })
+
+  it('has a stable pool and is reported with a detail the server accepts', () => {
+    const a = getStablePool({ type: 'findmistake', level: 'A1' })
+    expect(itemIds(a)).toEqual(itemIds(getStablePool({ type: 'findmistake', level: 'A1' })))
+    expect(a.length).toBeGreaterThan(10)
+    for (const t of createLesson({ type: 'findmistake' }, 20, seeded(10))) {
+      const subject = taskSubject(t)
+      expect(subject.exercise).toBe('findmistake')
+      expect(subject.detail).toMatch(/^[a-z0-9:-]{0,40}$/)
+      if (t.kind === 'findmistake') expect(subject.shown.es).toBe(t.corrupted.es)
+    }
   })
 })

@@ -52,6 +52,13 @@ export function taskSubject(task: Task): ReportSubject {
         exercise: task.kind,
         shown: { es: task.corrupted?.es ?? task.sentence.es, translation: sentenceTranslation(task.sentence) },
       }
+    case 'findmistake':
+      return {
+        target: `sentence:${task.sentence.id}`,
+        detail: task.itemId.split('#')[1] ?? '',
+        exercise: task.kind,
+        shown: { es: task.corrupted.es, translation: sentenceTranslation(task.sentence) },
+      }
     case 'builder':
     case 'translation':
     case 'dictation':
@@ -75,6 +82,7 @@ export function wordSubject(word: Word): ReportSubject {
 
 /** The learner's answer in a lesson as text: a builder answer holds tile ids, reported as the tiles' words. */
 export function learnerAnswerText(task: Task, answer: string | string[]): string {
+  if (task.kind === 'findmistake' && Array.isArray(answer)) return `${task.corrupted.tokens[Number(answer[0])] ?? ''} → ${answer[1] ?? ''}`.trim()
   if (task.kind === 'builder' && Array.isArray(answer)) {
     return answer
       .map((id) => task.tiles.find((t) => t.id === id)?.text ?? '')

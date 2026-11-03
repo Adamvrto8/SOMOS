@@ -55,10 +55,10 @@ import { TaskView } from './tasks/TaskView'
 import { createLessonRun, lessonUsage, type LessonRun, type LessonSource } from './lessonUsage'
 import { learnerAnswerText } from '../../lib/contentReport'
 
-const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
+const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' || task?.kind === 'findmistake' ? [] : '')
 
 /** Tasks that submit by themselves (a swipe, a tap): no "Skontrolovať" under them. */
-const AUTO_SUBMIT: Task['kind'][] = ['truefalse']
+const AUTO_SUBMIT: Task['kind'][] = ['truefalse', 'findmistake']
 
 /**
  * What the tasks on screen are: the whole lesson, the mistakes of the previous round again ('fix'),
@@ -265,7 +265,9 @@ export function LessonPage() {
     task
       ? task.kind === 'builder'
         ? Array.isArray(value) && value.length === task.tiles.length && value.every(Boolean)
-        : typeof value === 'string' && value.trim() !== ''
+        : task.kind === 'findmistake'
+          ? Array.isArray(value) && value.length === 2 && value[0] !== ''
+          : typeof value === 'string' && value.trim() !== ''
       : false
   const canCheck = isAnswered(answer)
 

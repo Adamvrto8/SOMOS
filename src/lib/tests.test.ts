@@ -213,8 +213,9 @@ describe('exercise tests', () => {
 })
 
 describe('isExerciseType', () => {
-  it('knows the exam types, not truefalse', () => {
+  it('knows the exam types, not truefalse or findmistake', () => {
     expect(isExerciseType('cloze')).toBe(true)
     expect(isExerciseType('truefalse')).toBe(false)
+    expect(isExerciseType('findmistake')).toBe(false)
   })
 })

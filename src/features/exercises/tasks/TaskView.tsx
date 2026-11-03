@@ -5,6 +5,7 @@ import type { Answer, Grade, Task } from '../../../lib/lesson'
 import { clozeHint, sentenceTranslation, verbTranslations } from '../../../lib/localized'
 import { ChoiceOptions } from './ChoiceOptions'
 import { DictationView } from './DictationView'
+import { FindMistakeView } from './FindMistakeView'
 import { SentenceWithBlank } from './SentenceWithBlank'
 import { SpeakingView } from './SpeakingView'
 import { statusOf } from './status'
@@ -128,6 +129,9 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
 
     case 'truefalse':
       return <TrueFalseView task={task} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
+
+    case 'findmistake':
+      return <FindMistakeView task={task} onSubmit={onSubmit} status={status} />
 
     case 'vocab': {
       const isToSpanish = task.direction === 'sk-es'
