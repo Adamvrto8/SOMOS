@@ -9,6 +9,7 @@ import { SentenceWithBlank } from './SentenceWithBlank'
 import { SpeakingView } from './SpeakingView'
 import { statusOf } from './status'
 import { TileBuilder } from './TileBuilder'
+import { TrueFalseView } from './TrueFalseView'
 import { TypedAnswer } from './TypedAnswer'
 
 interface TaskViewProps {
@@ -124,6 +125,9 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
           status={status}
         />
       )
+
+    case 'truefalse':
+      return <TrueFalseView task={task} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
 
     case 'vocab': {
       const isToSpanish = task.direction === 'sk-es'

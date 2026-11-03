@@ -57,6 +57,9 @@ import { learnerAnswerText } from '../../lib/contentReport'
 
 const emptyAnswer = (task?: Task): Answer => (task?.kind === 'builder' ? [] : '')
 
+/** Tasks that submit by themselves (a swipe, a tap): no "Skontrolovať" under them. */
+const AUTO_SUBMIT: Task['kind'][] = ['truefalse']
+
 /**
  * What the tasks on screen are: the whole lesson, the mistakes of the previous round again ('fix'),
  * or what was left of a numbered lesson when it was last quit ('resume').
@@ -533,7 +536,7 @@ export function LessonPage() {
                 why={taskTip && { label: tipLabel(taskTip), onOpen: () => showTip(taskTip.tip.id) }}
                 learnerAnswer={learnerAnswerText(task, answer)}
               />
-            ) : (
+            ) : AUTO_SUBMIT.includes(task.kind) ? null : (
               // Rides on top of the open phone keyboard and drops back to the bottom without it (src/lib/keyboard.ts).
               <div className="flex gap-3 border-t border-line bg-bg/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur">
                 {canRetry(task) && (

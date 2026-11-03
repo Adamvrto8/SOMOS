@@ -3,12 +3,13 @@ import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
 import { conjugate, formText, personsOf, TABLE_TENSES, TENSE_LEVEL, tensesUpTo, type TableTense } from './conjugate'
+import { corrupt, distractorFor, eligibleClozes, stableHash, type Corrupted } from './corrupt'
 import { getLanguage } from './language'
 import { wordTranslations } from './localized'
 import { lookupUpTo } from './knownForms'
 import { matchSpeech, spokenForm, type SpeechMatch } from './speechMatch'
 
-export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking'
+export type ExerciseType = 'cloze' | 'choice' | 'conjugation' | 'builder' | 'translation' | 'vocab' | 'dictation' | 'speaking' | 'truefalse'
 
 export const LESSON_SIZE = 10
 
@@ -75,6 +76,15 @@ export interface SpeakingTask {
   sentence: Sentence
 }
 
+export interface TrueFalseTask {
+  kind: 'truefalse'
+  itemId: string // "s123#0:t" (as it is) or "s123#0:f2" (the 3rd distractor swapped in)
+  sentence: Sentence
+  cloze: Cloze
+  truth: boolean // whether the sentence on screen is the original
+  corrupted?: Corrupted // set when truth is false
+}
+
 export interface VocabTask {
   kind: 'vocab'
   itemId: string
@@ -85,7 +95,7 @@ export interface VocabTask {
   acceptable: string[]
 }
 
-export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask
+export type Task = ClozeTask | ChoiceTask | ConjugationTask | BuilderTask | TranslationTask | VocabTask | DictationTask | SpeakingTask | TrueFalseTask
 
 /** Typed text or chosen option, or tile ids slot by slot (builder; '' = a slot left open in the middle). */
 export type Answer = string | string[]
@@ -183,6 +193,13 @@ function listeningSentences(filter: LessonFilter) {
   return sentences.filter((s) => matchesSentence(s, filter) && !/\d/.test(s.es))
 }
 
+/** Blanks whose answer can be swapped for a distractor (src/lib/corrupt.ts). */
+function corruptItems(filter: LessonFilter) {
+  return sentences
+    .filter((s) => matchesSentence(s, filter))
+    .flatMap((sentence) => eligibleClozes(sentence).map((index) => ({ sentence, index, itemId: `${sentence.id}#${index}` })))
+}
+
 export function availableCount(filter: LessonFilter): number {
   switch (filter.type) {
     case 'cloze':
@@ -198,6 +215,8 @@ export function availableCount(filter: LessonFilter): number {
     case 'speaking':
     case 'dictation':
       return listeningSentences(filter).length
+    case 'truefalse':
+      return corruptItems(filter).length
     case 'vocab':
       return vocabWords.filter((w) => (!filter.topic || filter.topic === 'all' || w.topics.includes(filter.topic)) && (!filter.level || w.level === filter.level)).length
   }
@@ -294,6 +313,15 @@ export function vocabTask(word: Word, direction: 'sk-es' | 'es-sk'): VocabTask {
  */
 const alternateDirection = (word: Word, i: number): VocabTask => vocabTask(word, i % 2 === 0 ? 'sk-es' : 'es-sk')
 
+export function trueFalseTask(sentence: Sentence, clozeIndex: number, truth: boolean, distractorIndex = 0): TrueFalseTask | undefined {
+  const cloze = sentence.cloze?.[clozeIndex]
+  if (!cloze) return undefined
+  const base = `${sentence.id}#${clozeIndex}`
+  if (truth) return { kind: 'truefalse', itemId: `${base}:t`, sentence, cloze, truth }
+  const corrupted = corrupt(sentence, clozeIndex, distractorIndex)
+  return corrupted && { kind: 'truefalse', itemId: `${base}:f${distractorIndex}`, sentence, cloze, truth, corrupted }
+}
+
 // ---------- lesson ----------
 
 export function conjugationTask(verb: Verb, tense: TableTense, person: Person): ConjugationTask {
@@ -370,6 +398,11 @@ export function createLesson(
       return order(listeningSentences(filter), (s) => s.id)
         .slice(0, size)
         .map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
+    case 'truefalse':
+      return takeLimited(order(corruptItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).flatMap((i) => {
+        const task = trueFalseTask(i.sentence, i.index, random() < 0.5, distractorFor(i.sentence, i.index, random()))
+        return task ? [task] : []
+      })
     case 'vocab': {
       // One word of a translation per lesson: "otec" once, not as padre and then as papá.
       const pool = getStablePool(filter).filter((t): t is VocabTask => t.kind === 'vocab')
@@ -413,6 +446,7 @@ function seedFor(type: ExerciseType): number {
     case 'conjugation': return 7777777
     case 'dictation': return 314159265
     case 'speaking': return 271828182
+    case 'truefalse': return 161803398
   }
 }
 
@@ -504,6 +538,15 @@ export function getStablePool(filter: LessonFilter): Task[] {
     case 'speaking': {
       const ordered = orderSentences(listeningSentences(filter), 'speaking')
       return ordered.map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
+    }
+    case 'truefalse': {
+      const matching = sentences.filter((s) => matchesSentence(s, filter) && eligibleClozes(s).length > 0)
+      return orderSentences(matching, 'truefalse').flatMap((sentence) => {
+        const index = eligibleClozes(sentence)[0]
+        const truth = stableHash(sentence.id) % 2 === 0
+        const task = trueFalseTask(sentence, index, truth, distractorFor(sentence, index, stableHash(`${sentence.id}d`) / 2 ** 32))
+        return task ? [task] : []
+      })
     }
     case 'vocab': {
       const isAll = !filter.topic || filter.topic === 'all'
@@ -597,6 +640,12 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
       const sentence = sentenceById.get(itemId)
       return sentence ? { kind: 'speaking', itemId, sentence } : undefined
     }
+    case 'truefalse': {
+      const found = /^([^#]+)#(\d+):(t|f(\d+))$/.exec(itemId)
+      const sentence = found && sentenceById.get(found[1])
+      if (!found || !sentence) return undefined
+      return trueFalseTask(sentence, Number(found[2]), found[3] === 't', found[4] === undefined ? 0 : Number(found[4]))
+    }
     case 'vocab': {
       const [wordId, direction] = itemId.split(':')
       const word = wordById.get(wordId)
@@ -614,7 +663,7 @@ export interface MistakeRef {
   lastWrongAt: number
 }
 
-const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking']
+const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse']
 
 /**
  * A lesson from the mistakes list: most-missed first, then the ones not seen for longest.
@@ -662,9 +711,12 @@ function typed(text: string, expected: string, options: CheckOptions): Grade {
   return grade.correct ? grade : { ...grade, diff: diffWords(text, expected, options) }
 }
 
+/** Tasks that are answered once: Vyslovovanie has its own three recordings, a swipe is not tried twice. */
+const NO_RETRY: Task['kind'][] = ['speaking', 'truefalse']
+
 /** A wrong answer may be fixed and checked again; the task counts as wrong only when the learner gives up. */
 export function canRetry(task: Task): boolean {
-  return task.kind !== 'speaking' // has its own three recordings
+  return !NO_RETRY.includes(task.kind)
 }
 
 /** The level a task is asked at: forms of tenses above it are no other words in its answer. */
@@ -706,6 +758,8 @@ export function gradeTask(task: Task, answer: Answer): Grade {
       const grade = fromCheck(checkAnswer(text, task.acceptable, task.direction === 'sk-es' ? { lookup: lookupForm } : {}))
       return grade.correct ? grade : { ...grade, diff: wrongAsWhole(text) }
     }
+    case 'truefalse':
+      return exact((text === 'true') === task.truth, task.sentence.es)
     case 'dictation':
       // "8" is what was heard as much as "ocho".
       return typed(spokenForm(text), task.sentence.es, { lookup: lookupForm })

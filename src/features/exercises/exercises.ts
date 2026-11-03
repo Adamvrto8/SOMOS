@@ -1,4 +1,4 @@
-import { Blocks, BookOpen, Headphones, Languages, ListChecks, Mic, PencilLine, Repeat2, type LucideIcon } from 'lucide-react'
+import { Blocks, BookOpen, Headphones, Languages, ListChecks, Mic, PencilLine, Repeat2, ThumbsUp, type LucideIcon } from 'lucide-react'
 import { topicById } from '../../data'
 import type { Level } from '../../data/types'
 import { t } from '../../i18n'
@@ -44,6 +44,7 @@ export const EXERCISES: ExerciseInfo[] = [
   exercise('translation', Languages),
   exercise('dictation', Headphones),
   exercise('speaking', Mic, speechSupported),
+  exercise('truefalse', ThumbsUp),
 ]
 
 export const exerciseInfo = (type: ExerciseType) => EXERCISES.find((e) => e.type === type)!

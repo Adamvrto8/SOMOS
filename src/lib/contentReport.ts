@@ -44,6 +44,14 @@ export function taskSubject(task: Task): ReportSubject {
     case 'cloze':
     case 'choice':
       return { target: `sentence:${task.sentence.id}`, detail: task.itemId.split('#')[1] ?? '', exercise: task.kind, shown: sentenceShown(task.sentence) }
+    case 'truefalse':
+      // What was on screen: the swapped sentence for a false one.
+      return {
+        target: `sentence:${task.sentence.id}`,
+        detail: task.itemId.split('#')[1] ?? '',
+        exercise: task.kind,
+        shown: { es: task.corrupted?.es ?? task.sentence.es, translation: sentenceTranslation(task.sentence) },
+      }
     case 'builder':
     case 'translation':
     case 'dictation':

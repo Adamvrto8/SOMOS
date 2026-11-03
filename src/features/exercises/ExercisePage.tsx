@@ -19,7 +19,7 @@ import {
 } from '../../lib/lessonProgress'
 import { topicName } from '../../lib/localized'
 import { useTestResults } from '../../lib/testProgress'
-import { TEST_LEVELS, testKey, type TestId, type TestLevel } from '../../lib/tests'
+import { isExerciseType, TEST_LEVELS, testKey, type TestId, type TestLevel } from '../../lib/tests'
 import { useUpdateParams } from '../../lib/useUrlQuery'
 import { testHref } from '../tests/testTitle'
 import { ExerciseTestCard } from './ExerciseTestCard'
@@ -63,7 +63,7 @@ export function ExercisePage() {
 
   // Všetko × a level: the lessons end with a test of the exercise.
   const exerciseTest: TestId | undefined =
-    group === 'all' && TEST_LEVELS.includes(filter.level as TestLevel) && totalLessons > 0
+    group === 'all' && isExerciseType(filter.type) && TEST_LEVELS.includes(filter.level as TestLevel) && totalLessons > 0
       ? { level: filter.level as TestLevel, type: filter.type }
       : undefined
   const exerciseTestRecord = exerciseTest ? testResults[testKey(exerciseTest)] : undefined

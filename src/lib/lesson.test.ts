@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { sentences, topics, verbById, verbs, wordById } from '../data'
+import { sentenceById, sentences, topics, verbById, verbs, wordById } from '../data'
 import type { Level } from '../data/types'
 import { checkAnswer } from './checkAnswer'
+import { taskSubject } from './contentReport'
 import {
   availableCount,
   builderWords,
@@ -19,6 +20,7 @@ import {
   spreadSameTranslations,
   synonymsOf,
   taskFromItem,
+  trueFalseTask,
   vocabTask,
   type ConjugationTask,
   type Task,
@@ -37,7 +39,7 @@ function seeded(seed: number) {
 const itemIds = (tasks: Task[]) => tasks.map((t) => t.itemId)
 
 describe('createLesson', () => {
-  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
+  it.each(['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse'] as const)('builds a %s lesson of LESSON_SIZE unique items', (type) => {
     const tasks = createLesson({ type }, LESSON_SIZE, seeded(1))
     expect(tasks).toHaveLength(LESSON_SIZE)
     expect(new Set(itemIds(tasks)).size).toBe(LESSON_SIZE)
@@ -571,5 +573,77 @@ describe('numbered lessons of different exercise types', () => {
       }
       expect(shared / topics.length, type).toBeLessThan(LESSON_SIZE * 0.7)
     }
+  })
+})
+
+describe('truefalse', () => {
+  it('shows the sentence as it is, or with one word swapped', () => {
+    const sentence = sentenceById.get('s372')! // Quiero un café sin azúcar.
+    const real = trueFalseTask(sentence, 0, true)!
+    const fake = trueFalseTask(sentence, 0, false, 0)!
+    expect(real.itemId).toBe('s372#0:t')
+    expect(real.corrupted).toBeUndefined()
+    expect(fake.itemId).toBe('s372#0:f0')
+    expect(fake.corrupted!.es).toBe('Quiero un café con azúcar.')
+  })
+
+  it('is graded by the swipe: right = pravda, left = nepravda', () => {
+    const sentence = sentenceById.get('s372')!
+    const real = trueFalseTask(sentence, 0, true)!
+    const fake = trueFalseTask(sentence, 0, false, 0)!
+    expect(gradeTask(real, 'true').correct).toBe(true)
+    expect(gradeTask(real, 'false').correct).toBe(false)
+    expect(gradeTask(fake, 'false').correct).toBe(true)
+    expect(gradeTask(fake, 'true').correct).toBe(false)
+    expect(gradeTask(fake, 'true').expected).toBe(sentence.es)
+  })
+
+  it('has no second try', () => {
+    expect(canRetry(trueFalseTask(sentenceById.get('s372')!, 0, true)!)).toBe(false)
+  })
+
+  it('gives both truths in a lesson and one blank per sentence', () => {
+    const tasks = createLesson({ type: 'truefalse' }, 40, seeded(5))
+    const truths = tasks.map((t) => (t.kind === 'truefalse' ? t.truth : undefined))
+    expect(truths).toContain(true)
+    expect(truths).toContain(false)
+    const ids = tasks.map((t) => (t.kind === 'truefalse' ? t.sentence.id : ''))
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it('is rebuilt from its item id, and a stale id gives nothing', () => {
+    for (const task of createLesson({ type: 'truefalse' }, 30, seeded(6))) {
+      const again = taskFromItem('truefalse', task.itemId)
+      expect(again?.itemId).toBe(task.itemId)
+      if (task.kind === 'truefalse' && again?.kind === 'truefalse') expect(again.corrupted?.es).toBe(task.corrupted?.es)
+    }
+    for (const stale of ['nope#0:t', 's372#9:t', 's372#0:f9', 's372#0:x', 'garbage', '', 's372#0:f-1']) {
+      expect(taskFromItem('truefalse', stale), stale).toBeUndefined()
+    }
+  })
+
+  it('has a stable pool for numbered lessons, with both truths', () => {
+    const a = getStablePool({ type: 'truefalse', level: 'A1' })
+    const b = getStablePool({ type: 'truefalse', level: 'A1' })
+    expect(itemIds(a)).toEqual(itemIds(b))
+    const truths = new Set(a.map((t) => t.kind === 'truefalse' && t.truth))
+    expect(truths.size).toBe(2)
+    expect(availableCount({ type: 'truefalse', level: 'A1' })).toBeGreaterThanOrEqual(a.length)
+  })
+
+  it('is reported with a detail the server accepts', () => {
+    for (const task of createLesson({ type: 'truefalse' }, 20, seeded(7))) {
+      const subject = taskSubject(task)
+      expect(subject.exercise).toBe('truefalse')
+      expect(subject.target).toMatch(/^sentence:[a-z0-9ñ-]{1,60}$/)
+      expect(subject.detail).toMatch(/^[a-z0-9:-]{0,40}$/)
+      if (task.kind === 'truefalse') expect(subject.shown.es).toBe(task.corrupted?.es ?? task.sentence.es)
+    }
+  })
+
+  it('is rebuilt from mistakes like any other type', () => {
+    const task = createLesson({ type: 'truefalse' }, 1, seeded(8))[0]
+    const lesson = mistakesLesson([{ exercise: 'truefalse', itemId: task.itemId, wrongCount: 1, lastWrongAt: 1 }])
+    expect(itemIds(lesson)).toEqual([task.itemId])
   })
 })

@@ -272,6 +272,7 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
   switch (task.kind) {
     case 'cloze':
     case 'choice':
+    case 'truefalse':
       return tipForCloze(task.sentence, task.cloze)
     case 'conjugation':
       return targeted(tipIdOfTense(task.tense), verbWhy(task.verb, task.tense, task.person))
