@@ -273,7 +273,7 @@
     "id": "progresivo",
     "title": "Present progressive (estar + gerundio)",
     "intro": "It says what is happening at this very moment. It is made of the verb estar and a gerund, like English “I am working”.",
-    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now)." },
+    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now). Careful: in Mexico ahorita also means “later, at some point” (ahorita lo hago = I will do it when I get to it)." },
     "rules": [
       {
         "id": "form",
@@ -305,7 +305,7 @@
     "id": "gender",
     "title": "Gender of nouns",
     "intro": "Every noun is masculine (el) or feminine (la), things included. English has nothing like it, but the ending often tells you which it is.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "Some words have a different gender in Mexico than in Spain: el radio (also the broadcast, la radio in Spain), el sartén (la sartén in Spain)." },
     "rules": [
       {
         "id": "o-a",
@@ -349,7 +349,7 @@
     "id": "articles",
     "title": "Articles (el, la, un, una)",
     "intro": "Spanish uses articles more often than English does. The article agrees with its noun in gender and number.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "In everyday Mexican speech a name often takes an article (la María, el Juan). In writing the name stands alone." },
     "rules": [
       {
         "id": "definite",
@@ -667,7 +667,7 @@
     "id": "gustar",
     "title": "gustar, encantar, doler",
     "intro": "Me gusta does not mean “I like” but “it pleases me”: the thing liked is the subject. So the verb agrees with the thing, not the person.",
-    "variants": { "mx": "In everyday Mexican speech you also hear me late (= I like it, I feel like it), but gustar is always right." },
+    "variants": { "mx": "In everyday Mexican speech you also hear me late (= I have a hunch: me late que va a llover; also = I like it: me late tu carro), but gustar is always right." },
     "rules": [
       {
         "id": "how",
