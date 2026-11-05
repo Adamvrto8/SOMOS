@@ -1,3 +1,6 @@
+import { variant } from '../../data'
+import { writeVariant } from '../../data/variant'
+import type { Variant } from '../../data/applyVariant'
 import { dictionaries, useT } from '../../i18n'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
 import { LANGUAGES, setLanguage, useLanguage } from '../../lib/language'
@@ -10,6 +13,7 @@ import { SettingsHint, SettingsPart, SettingsSubpage } from './SettingsSubpage'
 
 // The settings that are one pick from a few options, each on its own page.
 
+const VARIANTS: Variant[] = ['mx', 'es']
 const THEME_PREFS: ThemePref[] = ['system', 'light', 'dark']
 
 export function GoalSettings() {
@@ -47,6 +51,29 @@ export function LanguageSettings() {
         // Each language under its own name, whatever the current one is.
         options={LANGUAGES.map((id) => ({ id, label: dictionaries[id].languageName }))}
       />
+    </SettingsSubpage>
+  )
+}
+
+export function VariantSettings() {
+  const text = useT().settings
+  return (
+    <SettingsSubpage title={text.variant}>
+      <div>
+        <ChoiceList
+          name="variant"
+          legend={text.variant}
+          value={variant}
+          onChange={(next) => {
+            if (next === variant) return
+            writeVariant(next)
+            // The content is laid out once when the app loads: a reload shows the other Spanish. Progress is kept (same ids).
+            window.location.reload()
+          }}
+          options={VARIANTS.map((id) => ({ id, label: text.variantOptions[id] }))}
+        />
+        <SettingsHint>{text.variantHint}</SettingsHint>
+      </div>
     </SettingsSubpage>
   )
 }

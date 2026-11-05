@@ -4,7 +4,7 @@ import { useDevMode } from '../../lib/devMode'
 import { AutoReviewSettings } from './AutoReviewSettings'
 import { BackupSettings } from './BackupSettings'
 import { ContentReports } from './ContentReports'
-import { GoalSettings, LanguageSettings, LookSettings, SoundSettings } from './ChoiceSettings'
+import { GoalSettings, LanguageSettings, LookSettings, SoundSettings, VariantSettings } from './ChoiceSettings'
 import { DevSettings } from './DevSettings'
 import { ReminderSettings } from './ReminderSettings'
 import { UsageSettings } from './UsageSettings'
@@ -19,6 +19,7 @@ const SECTIONS: Record<string, () => ReactNode> = {
   review: () => <AutoReviewSettings />,
   reminder: () => <ReminderSettings />,
   language: () => <LanguageSettings />,
+  variant: () => <VariantSettings />,
   look: () => <LookSettings />,
   sound: () => <SoundSettings />,
   voice: () => <VoiceSettings />,

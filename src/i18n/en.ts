@@ -43,6 +43,9 @@ export const en: Dictionary = {
   settings: {
     title: 'Settings',
     language: 'Language',
+    variant: 'Spanish',
+    variantOptions: { mx: 'Mexican', es: 'From Spain' },
+    variantHint: 'The app reloads after a change. Your progress is kept. The Spain version is still in progress: some words and sentences are still Mexican.',
     appearance: 'Appearance',
     theme: 'Theme',
     themeOptions: { system: 'System', light: 'Light', dark: 'Dark' },

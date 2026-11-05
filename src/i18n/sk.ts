@@ -55,6 +55,9 @@ export const sk = {
   settings: {
     title: 'Nastavenia',
     language: 'Jazyk',
+    variant: 'Španielčina',
+    variantOptions: { mx: 'Mexická', es: 'Zo Španielska' },
+    variantHint: 'Po zmene sa aplikácia znova načíta. Tvoj pokrok ostáva. Španielska verzia je zatiaľ rozpracovaná: časť slov a viet je ešte mexická.',
     appearance: 'Vzhľad',
     theme: 'Téma',
     themeOptions: { system: 'Podľa systému', light: 'Svetlá', dark: 'Tmavá' },
