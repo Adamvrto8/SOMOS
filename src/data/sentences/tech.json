@@ -1974,5 +1974,167 @@
         "distractors": ["recibe", "recibían", "recibirán"]
       }
     ]
+  },
+  {
+    "id": "s2119",
+    "es": "Si mi computadora no fuera tan lenta, trabajaría mucho más rápido.",
+    "sk": "Keby nebol môj počítač taký pomalý, pracoval by som oveľa rýchlejšie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "mi", "computadora", "no", "fuera", "tan", "lenta", ",", "trabajaría", "mucho", "más", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "fuera",
+        "lemma": "ser",
+        "hint": "ser · ella · subjuntivo imperfecto",
+        "distractors": ["es", "fue", "será"]
+      }
+    ]
+  },
+  {
+    "id": "s2120",
+    "es": "El programa que descargué anoche borró todas las fotos que tenía guardadas.",
+    "sk": "Program, ktorý som včera večer stiahol, vymazal všetky fotky, ktoré som mal uložené.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "programa", "que", "descargué", "anoche", "borró", "todas", "las", "fotos", "que", "tenía", "guardadas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2121",
+    "es": "En cuanto llegue a casa y abra la computadora, te mando el archivo.",
+    "sk": "Hneď ako prídem domov a otvorím počítač, pošlem ti súbor.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["En", "cuanto", "llegue", "a", "casa", "y", "abra", "la", "computadora", ",", "te", "mando", "el", "archivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "abra",
+        "lemma": "abrir",
+        "hint": "abrir · yo · subjuntivo",
+        "distractors": ["abro", "abrí", "abriré"]
+      }
+    ]
+  },
+  {
+    "id": "s2122",
+    "es": "Aunque la batería dure todo el día, siempre llevo el cargador en la mochila.",
+    "sk": "Aj keď batéria vydrží celý deň, nabíjačku nosím vždy v ruksaku.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "la", "batería", "dure", "todo", "el", "día", ",", "siempre", "llevo", "el", "cargador", "en", "la", "mochila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2123",
+    "es": "No conozco a nadie que sepa programar tan bien como mi primo Luis.",
+    "sk": "Nepoznám nikoho, kto vie programovať tak dobre ako môj bratranec Luis.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "subjuntivo", "comparisons"],
+    "tokens": ["No", "conozco", "a", "nadie", "que", "sepa", "programar", "tan", "bien", "como", "mi", "primo", "Luis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sepa",
+        "lemma": "saber",
+        "hint": "saber · él · subjuntivo",
+        "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2124",
+    "es": "Ya que todos trabajamos desde casa, necesitamos una conexión más estable.",
+    "sk": "Keďže všetci pracujeme z domu, potrebujeme stabilnejšie pripojenie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Ya", "que", "todos", "trabajamos", "desde", "casa", ",", "necesitamos", "una", "conexión", "más", "estable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trabajamos",
+        "lemma": "trabajar",
+        "hint": "trabajar · nosotros · presente",
+        "distractors": ["trabajemos", "trabajaremos", "trabajaran"]
+      }
+    ]
+  },
+  {
+    "id": "s2125",
+    "es": "Me pidieron que cambiara mi contraseña porque alguien intentó entrar a mi cuenta.",
+    "sk": "Požiadali ma, aby som zmenil heslo, lebo sa niekto pokúsil vstúpiť do môjho účtu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["Me", "pidieron", "que", "cambiara", "mi", "contraseña", "porque", "alguien", "intentó", "entrar", "a", "mi", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cambiara",
+        "lemma": "cambiar",
+        "hint": "cambiar · yo · subjuntivo imperfecto",
+        "distractors": ["cambié", "cambio", "cambiaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2126",
+    "es": "Mientras se descarga la actualización, no apagues el celular ni cierres la aplicación.",
+    "sk": "Kým sa sťahuje aktualizácia, nevypínaj mobil ani nezatváraj aplikáciu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Mientras", "se", "descarga", "la", "actualización", ",", "no", "apagues", "el", "celular", "ni", "cierres", "la", "aplicación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["Porque", "Sino", "Para"]
+      }
+    ]
+  },
+  {
+    "id": "s2127",
+    "es": "Hay una aplicación con la que puedes traducir lo que dice la gente en tiempo real.",
+    "sk": "Existuje aplikácia, s ktorou môžeš prekladať to, čo ľudia hovoria, v reálnom čase.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Hay", "una", "aplicación", "con", "la", "que", "puedes", "traducir", "lo", "que", "dice", "la", "gente", "en", "tiempo", "real", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "distractors": ["el", "los", "las"]
+      }
+    ]
   }
 ]

@@ -2015,5 +2015,185 @@
         "distractors": ["renta", "rentaban", "rentarán"]
       }
     ]
+  },
+  {
+    "id": "s2070",
+    "es": "Ojalá que podamos mudarnos a un departamento donde haya más luz.",
+    "sk": "Dúfam, že sa budeme môcť presťahovať do bytu, kde bude viac svetla.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "que", "podamos", "mudarnos", "a", "un", "departamento", "donde", "haya", "más", "luz", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "podamos",
+        "lemma": "poder",
+        "hint": "poder · nosotros · subjuntivo",
+        "distractors": ["podemos", "pudimos", "podremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2071",
+    "es": "Si tuviera más espacio en la cocina, compraría un horno más grande.",
+    "sk": "Keby som mal v kuchyni viac miesta, kúpil by som väčšiu rúru.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "más", "espacio", "en", "la", "cocina", ",", "compraría", "un", "horno", "más", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviera",
+        "lemma": "tener",
+        "hint": "tener · yo · subjuntivo imperfecto",
+        "distractors": ["tengo", "tendría", "tuve"]
+      }
+    ]
+  },
+  {
+    "id": "s2072",
+    "es": "El plomero que vino ayer me dijo que la tubería estaba muy vieja.",
+    "sk": "Inštalatér, ktorý včera prišiel, mi povedal, že rúry sú veľmi staré.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "plomero", "que", "vino", "ayer", "me", "dijo", "que", "la", "tubería", "estaba", "muy", "vieja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2073",
+    "es": "Aunque llueva mucho esta noche, el techo nuevo no dejará pasar el agua.",
+    "sk": "Aj keď dnes v noci poriadne prší, nová strecha vodu nepustí.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "llueva", "mucho", "esta", "noche", ",", "el", "techo", "nuevo", "no", "dejará", "pasar", "el", "agua", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Pero", "Donde"]
+      }
+    ]
+  },
+  {
+    "id": "s2074",
+    "es": "Mis vecinos, a quienes les prestamos la escalera, nos trajeron pan dulce.",
+    "sk": "Susedia, ktorým sme požičali rebrík, nám priniesli sladké pečivo.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Mis", "vecinos", ",", "a", "quienes", "les", "prestamos", "la", "escalera", ",", "nos", "trajeron", "pan", "dulce", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quienes",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoby)",
+        "distractors": ["donde", "cuyos", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2075",
+    "es": "Cuando termine de pintar la sala, vamos a mover los muebles.",
+    "sk": "Keď dokončím maľovanie obývačky, presunieme nábytok.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "termine", "de", "pintar", "la", "sala", ",", "vamos", "a", "mover", "los", "muebles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "termine",
+        "lemma": "terminar",
+        "hint": "terminar · yo · subjuntivo",
+        "distractors": ["termino", "terminé", "terminaba"]
+      }
+    ]
+  },
+  {
+    "id": "s2076",
+    "es": "Mi mamá quiere que limpiemos la casa antes de que lleguen los invitados.",
+    "sk": "Mama chce, aby sme upratali dom skôr, než prídu hostia.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "mamá", "quiere", "que", "limpiemos", "la", "casa", "antes", "de", "que", "lleguen", "los", "invitados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "lleguen",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · subjuntivo",
+        "distractors": ["llegan", "llegaron", "llegarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2077",
+    "es": "Mientras mi esposo cocina, yo acomodo los libros en el estante nuevo.",
+    "sk": "Kým manžel varí, ja uskladňujem knihy do novej police.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["presente"],
+    "tokens": ["Mientras", "mi", "esposo", "cocina", ",", "yo", "acomodo", "los", "libros", "en", "el", "estante", "nuevo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2078",
+    "es": "No me gustaría que el casero subiera la renta sin avisarnos antes.",
+    "sk": "Nechcel by som, aby domáci zvýšil nájom bez toho, aby nás upozornil.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["No", "me", "gustaría", "que", "el", "casero", "subiera", "la", "renta", "sin", "avisarnos", "antes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "subiera",
+        "lemma": "subir",
+        "hint": "subir · él · subjuntivo imperfecto",
+        "distractors": ["sube", "subirá", "subió"]
+      }
+    ]
+  },
+  {
+    "id": "s2079",
+    "es": "Si hubiéramos revisado el contrato, no tendríamos que pagar la reparación del boiler.",
+    "sk": "Keby sme boli skontrolovali zmluvu, nemuseli by sme platiť opravu bojlera.",
+    "level": "B2",
+    "topics": ["home"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "hubiéramos", "revisado", "el", "contrato", ",", "no", "tendríamos", "que", "pagar", "la", "reparación", "del", "boiler", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tendríamos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · condicional",
+        "distractors": ["tenemos", "tuvimos", "tendremos"]
+      }
+    ]
   }
 ]

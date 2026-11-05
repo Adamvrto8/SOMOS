@@ -2072,5 +2072,185 @@
         "distractors": ["a", "en", "por"]
       }
     ]
+  },
+  {
+    "id": "s2012",
+    "es": "Me da gusto que por fin hables con tu papá después de tantos años.",
+    "sk": "Teší ma, že sa konečne rozprávaš s otcom po toľkých rokoch.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Me", "da", "gusto", "que", "por", "fin", "hables", "con", "tu", "papá", "después", "de", "tantos", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "hables",
+        "lemma": "hablar",
+        "hint": "hablar · tú · subjuntivo",
+        "distractors": ["hablas", "hablaste", "hablarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2013",
+    "es": "Si no estuviera tan nervioso, disfrutaría mucho más la entrevista de mañana.",
+    "sk": "Keby som nebol taký nervózny, zajtrajší pohovor by som si užil oveľa viac.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "no", "estuviera", "tan", "nervioso", ",", "disfrutaría", "mucho", "más", "la", "entrevista", "de", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estuviera",
+        "lemma": "estar",
+        "hint": "estar · yo · subjuntivo imperfecto",
+        "distractors": ["estoy", "estuve", "estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2014",
+    "es": "Mi mamá lloró de alegría cuando le dije que había conseguido la beca.",
+    "sk": "Mama sa rozplakala od radosti, keď som jej povedal, že som získal štipendium.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito", "pluscuamperfecto"],
+    "tokens": ["Mi", "mamá", "lloró", "de", "alegría", "cuando", "le", "dije", "que", "había", "conseguido", "la", "beca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["donde", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2015",
+    "es": "Me da vergüenza que mis amigos vean lo desordenada que está mi casa.",
+    "sk": "Hanbím sa, že moji priatelia vidia, aký neporiadok mám doma.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Me", "da", "vergüenza", "que", "mis", "amigos", "vean", "lo", "desordenada", "que", "está", "mi", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "vean",
+        "lemma": "ver",
+        "hint": "ver · ellos · subjuntivo",
+        "distractors": ["ven", "vieron", "verán"]
+      }
+    ]
+  },
+  {
+    "id": "s2016",
+    "es": "Tengo una amiga con quien puedo llorar sin sentir que me juzga.",
+    "sk": "Mám kamarátku, pri ktorej môžem plakať bez pocitu, že ma súdi.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Tengo", "una", "amiga", "con", "quien", "puedo", "llorar", "sin", "sentir", "que", "me", "juzga", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné slovo (osoba)",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2017",
+    "es": "Me puse a llorar en cuanto vi a mi hermana en el aeropuerto.",
+    "sk": "Rozplakal som sa hneď, ako som uvidel sestru na letisku.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["preterito"],
+    "tokens": ["Me", "puse", "a", "llorar", "en", "cuanto", "vi", "a", "mi", "hermana", "en", "el", "aeropuerto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "vi",
+        "lemma": "ver",
+        "hint": "ver · yo · pretérito",
+        "distractors": ["veo", "vea", "vería"]
+      }
+    ]
+  },
+  {
+    "id": "s2018",
+    "es": "Se sentía tan feliz que no le importó que lloviera durante toda la boda.",
+    "sk": "Cítila sa taká šťastná, že jej nevadilo, že počas celej svadby pršalo.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["Se", "sentía", "tan", "feliz", "que", "no", "le", "importó", "que", "lloviera", "durante", "toda", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "lloviera",
+        "lemma": "llover",
+        "hint": "llover · él · subjuntivo imperfecto",
+        "distractors": ["llueve", "llovía", "lloverá"]
+      }
+    ]
+  },
+  {
+    "id": "s2019",
+    "es": "Lo que me da miedo no es fracasar, sino quedarme sin intentarlo.",
+    "sk": "Bojím sa nie toho, že zlyhám, ale že to ani neskúsim.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["relatives"],
+    "tokens": ["Lo", "que", "me", "da", "miedo", "no", "es", "fracasar", ",", "sino", "quedarme", "sin", "intentarlo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "sino",
+        "lemma": "sino",
+        "hint": "ale (po zápore)",
+        "distractors": ["pero", "aunque", "porque"]
+      }
+    ]
+  },
+  {
+    "id": "s2020",
+    "es": "A pesar de que estaba nervioso, hablé con calma frente a todos.",
+    "sk": "Napriek tomu, že som bol nervózny, hovoril som pokojne pred všetkými.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["A", "pesar", "de", "que", "estaba", "nervioso", ",", "hablé", "con", "calma", "frente", "a", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "estar · yo · imperfecto",
+        "distractors": ["esté", "estaría", "estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2021",
+    "es": "Siempre me emociona ver que mis alumnos aprenden más de lo que esperaba.",
+    "sk": "Vždy ma dojme, keď vidím, že sa moji žiaci naučia viac, než som čakal.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["comparisons", "imperfecto"],
+    "tokens": ["Siempre", "me", "emociona", "ver", "que", "mis", "alumnos", "aprenden", "más", "de", "lo", "que", "esperaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "esperaba",
+        "lemma": "esperar",
+        "hint": "esperar · yo · imperfecto",
+        "distractors": ["espero", "esperé", "esperaré"]
+      }
+    ]
   }
 ]

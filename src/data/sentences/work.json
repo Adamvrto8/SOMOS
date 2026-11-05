@@ -2369,5 +2369,185 @@
         "distractors": ["hago", "hicieron", "harás"]
       }
     ]
+  },
+  {
+    "id": "s2158",
+    "es": "Mi jefa quiere que terminemos el informe antes de que acabe la semana.",
+    "sk": "Šéfka chce, aby sme dokončili správu skôr, než skončí týždeň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "jefa", "quiere", "que", "terminemos", "el", "informe", "antes", "de", "que", "acabe", "la", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "terminemos",
+        "lemma": "terminar",
+        "hint": "terminar · nosotros · subjuntivo",
+        "distractors": ["terminamos", "terminaremos", "terminábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2159",
+    "es": "Si me ofrecieran un mejor sueldo, aceptaría el puesto de inmediato.",
+    "sk": "Keby mi ponúkli lepší plat, to miesto by som okamžite prijal.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "me", "ofrecieran", "un", "mejor", "sueldo", ",", "aceptaría", "el", "puesto", "de", "inmediato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "aceptaría",
+        "lemma": "aceptar",
+        "hint": "aceptar · yo · condicional",
+        "distractors": ["acepto", "acepté", "aceptaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2160",
+    "es": "La empresa donde trabaja mi esposa busca ingenieros que hablen inglés.",
+    "sk": "Firma, kde pracuje moja manželka, hľadá inžinierov, ktorí hovoria po anglicky.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["La", "empresa", "donde", "trabaja", "mi", "esposa", "busca", "ingenieros", "que", "hablen", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "hablen",
+        "lemma": "hablar",
+        "hint": "hablar · ellos · subjuntivo",
+        "distractors": ["hablan", "hablaron", "hablarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2161",
+    "es": "Cuando me paguen la quincena, voy a mandarle dinero a mi mamá.",
+    "sk": "Keď mi vyplatia dvojtýždennú výplatu, pošlem mame peniaze.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "me", "paguen", "la", "quincena", ",", "voy", "a", "mandarle", "dinero", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "paguen",
+        "lemma": "pagar",
+        "hint": "pagar · ellos · subjuntivo",
+        "distractors": ["pagan", "pagaron", "pagarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2162",
+    "es": "Aunque trabajo mucho, no me quejo, ya que me gusta lo que hago.",
+    "sk": "Aj keď veľa pracujem, nesťažujem sa, pretože ma baví to, čo robím.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "presente", "gustar"],
+    "tokens": ["Aunque", "trabajo", "mucho", ",", "no", "me", "quejo", ",", "ya", "que", "me", "gusta", "lo", "que", "hago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": ["haga", "hice", "haré"]
+      }
+    ]
+  },
+  {
+    "id": "s2163",
+    "es": "El gerente nos pidió que llegáramos temprano porque tendríamos una reunión con los clientes.",
+    "sk": "Manažér nás požiadal, aby sme prišli skoro, lebo budeme mať stretnutie s klientmi.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["El", "gerente", "nos", "pidió", "que", "llegáramos", "temprano", "porque", "tendríamos", "una", "reunión", "con", "los", "clientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llegáramos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo imperfecto",
+        "distractors": ["llegamos", "llegaremos", "llegábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2164",
+    "es": "Busco un empleo que me deje tiempo libre para estudiar por las tardes.",
+    "sk": "Hľadám prácu, ktorá mi necháva voľný čas na štúdium poobede.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Busco", "un", "empleo", "que", "me", "deje", "tiempo", "libre", "para", "estudiar", "por", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "deje",
+        "lemma": "dejar",
+        "hint": "dejar · él · subjuntivo",
+        "distractors": ["deja", "dejó", "dejará"]
+      }
+    ]
+  },
+  {
+    "id": "s2165",
+    "es": "Si hubiera renunciado antes, ahora estaría trabajando en mi propio negocio.",
+    "sk": "Keby som bol odišiel skôr, teraz by som pracoval vo vlastnom podniku.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "hubiera", "renunciado", "antes", ",", "ahora", "estaría", "trabajando", "en", "mi", "propio", "negocio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estaría",
+        "lemma": "estar",
+        "hint": "estar · yo · condicional",
+        "distractors": ["estoy", "estuve", "estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2166",
+    "es": "Mi compañero, a quien ascendieron el mes pasado, ahora tiene su propia oficina.",
+    "sk": "Kolega, ktorého minulý mesiac povýšili, má teraz vlastnú kanceláriu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Mi", "compañero", ",", "a", "quien", "ascendieron", "el", "mes", "pasado", ",", "ahora", "tiene", "su", "propia", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoba)",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2167",
+    "es": "Es probable que la empresa contrate más personal en cuanto termine el año.",
+    "sk": "Je pravdepodobné, že firma najme viac ľudí hneď po konci roka.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "probable", "que", "la", "empresa", "contrate", "más", "personal", "en", "cuanto", "termine", "el", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "contrate",
+        "lemma": "contratar",
+        "hint": "contratar · ella · subjuntivo",
+        "distractors": ["contrata", "contrató", "contratará"]
+      }
+    ]
   }
 ]

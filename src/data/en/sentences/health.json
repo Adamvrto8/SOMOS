@@ -103,5 +103,13 @@
   { "id": "s1916", "en": "Although it is cold, I go running every morning." },
   { "id": "s1917", "en": "It is possible that you need an X-ray." },
   { "id": "s1918", "en": "Until the fever goes down, you cannot go to school." },
-  { "id": "s1919", "en": "The doctor speaks slowly so that the patient understands." }
+  { "id": "s1919", "en": "The doctor speaks slowly so that the patient understands." },
+  { "id": "s2052", "en": "You need to drink a lot of water if you want the fever to go down." },
+  { "id": "s2053", "en": "If you slept eight hours every day, you would have much more energy." },
+  { "id": "s2054", "en": "The doctor prescribed me some pills that I must take every eight hours with food.", "hints": ["relative pronoun"] },
+  { "id": "s2055", "en": "I hope the medicine works fast, because I can no longer stand this sore throat." },
+  { "id": "s2056", "en": "The nurse told me not to eat anything six hours before the tests." },
+  { "id": "s2057", "en": "I quit smoking so my kids do not grow up breathing smoke." },
+  { "id": "s2058", "en": "The hospital where my daughter was born has just opened a clinic for children." },
+  { "id": "s2059", "en": "If I drank as much coffee as before, I could not sleep a single night." }
 ]

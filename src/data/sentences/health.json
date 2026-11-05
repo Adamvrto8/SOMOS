@@ -2146,5 +2146,149 @@
         "distractors": ["entiende", "entenderá", "entendió"]
       }
     ]
+  },
+  {
+    "id": "s2052",
+    "es": "Es necesario que tomes mucha agua si quieres que baje la fiebre.",
+    "sk": "Je potrebné, aby si pil veľa vody, ak chceš, aby klesla horúčka.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "necesario", "que", "tomes", "mucha", "agua", "si", "quieres", "que", "baje", "la", "fiebre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tomes",
+        "lemma": "tomar",
+        "hint": "tomar · tú · subjuntivo",
+        "distractors": ["tomas", "tomaste", "tomarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2053",
+    "es": "Si durmieras ocho horas todos los días, tendrías mucha más energía.",
+    "sk": "Keby si spal osem hodín denne, mal by si oveľa viac energie.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "durmieras", "ocho", "horas", "todos", "los", "días", ",", "tendrías", "mucha", "más", "energía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "durmieras",
+        "lemma": "dormir",
+        "hint": "dormir · tú · subjuntivo imperfecto",
+        "distractors": ["duermes", "dormiste", "dormirás"]
+      }
+    ]
+  },
+  {
+    "id": "s2054",
+    "es": "El doctor me recetó unas pastillas que debo tomar cada ocho horas con comida.",
+    "sk": "Lekár mi predpísal tabletky, ktoré mám brať každých osem hodín s jedlom.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["relatives", "obligation"],
+    "tokens": ["El", "doctor", "me", "recetó", "unas", "pastillas", "que", "debo", "tomar", "cada", "ocho", "horas", "con", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2055",
+    "es": "Ojalá la medicina funcione rápido, porque ya no aguanto este dolor de garganta.",
+    "sk": "Kiežby liek zabral rýchlo, lebo túto bolesť hrdla už nevydržím.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "la", "medicina", "funcione", "rápido", ",", "porque", "ya", "no", "aguanto", "este", "dolor", "de", "garganta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "funcione",
+        "lemma": "funcionar",
+        "hint": "funcionar · él · subjuntivo",
+        "distractors": ["funciona", "funcionó", "funcionará"]
+      }
+    ]
+  },
+  {
+    "id": "s2056",
+    "es": "Me dijo la enfermera que no comiera nada seis horas antes de los análisis.",
+    "sk": "Sestra mi povedala, aby som šesť hodín pred rozbormi nič nejedol.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["Me", "dijo", "la", "enfermera", "que", "no", "comiera", "nada", "seis", "horas", "antes", "de", "los", "análisis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "comiera",
+        "lemma": "comer",
+        "hint": "comer · yo · subjuntivo imperfecto",
+        "distractors": ["comí", "como", "comeré"]
+      }
+    ]
+  },
+  {
+    "id": "s2057",
+    "es": "Dejé de fumar para que mis hijos no crezcan respirando humo.",
+    "sk": "Prestal som fajčiť, aby moje deti nerástli s dymom v pľúcach.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Dejé", "de", "fumar", "para", "que", "mis", "hijos", "no", "crezcan", "respirando", "humo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "crezcan",
+        "lemma": "crecer",
+        "hint": "crecer · ellos · subjuntivo",
+        "distractors": ["crecen", "crecieron", "crecerán"]
+      }
+    ]
+  },
+  {
+    "id": "s2058",
+    "es": "El hospital donde nació mi hija acaba de abrir una clínica para niños.",
+    "sk": "Nemocnica, kde sa narodila moja dcéra, práve otvorila detskú kliniku.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "hospital", "donde", "nació", "mi", "hija", "acaba", "de", "abrir", "una", "clínica", "para", "niños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nació",
+        "lemma": "nacer",
+        "hint": "nacer · ella · pretérito",
+        "distractors": ["nace", "nazca", "nacerá"]
+      }
+    ]
+  },
+  {
+    "id": "s2059",
+    "es": "Si tomara tanto café como antes, no podría dormir ni una sola noche.",
+    "sk": "Keby som pil toľko kávy ako predtým, nezaspal by som ani jednu noc.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tomara", "tanto", "café", "como", "antes", ",", "no", "podría", "dormir", "ni", "una", "sola", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tomara",
+        "lemma": "tomar",
+        "hint": "tomar · yo · subjuntivo imperfecto",
+        "distractors": ["tomo", "tomé", "tomaré"]
+      }
+    ]
   }
 ]

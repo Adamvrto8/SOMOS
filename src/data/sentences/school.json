@@ -1898,5 +1898,167 @@
         "distractors": ["abierta", "abriendo", "abrió"]
       }
     ]
+  },
+  {
+    "id": "s2100",
+    "es": "La escuela donde estudié la secundaria cerró el año pasado por falta de alumnos.",
+    "sk": "Škola, kde som chodil na strednú, sa minulý rok zatvorila pre nedostatok žiakov.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["La", "escuela", "donde", "estudié", "la", "secundaria", "cerró", "el", "año", "pasado", "por", "falta", "de", "alumnos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (miesto)",
+        "distractors": ["cuando", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2101",
+    "es": "Aunque estudies toda la noche, no vas a aprender nada si no descansas.",
+    "sk": "Aj keď sa budeš učiť celú noc, nič sa nenaučíš, ak si neodpočinieš.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "estudies", "toda", "la", "noche", ",", "no", "vas", "a", "aprender", "nada", "si", "no", "descansas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2102",
+    "es": "Mi compañera me dijo que la biblioteca abriría más temprano durante los exámenes.",
+    "sk": "Spolužiačka mi povedala, že knižnica sa počas skúšok otvorí skôr.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["condicional", "preterito"],
+    "tokens": ["Mi", "compañera", "me", "dijo", "que", "la", "biblioteca", "abriría", "más", "temprano", "durante", "los", "exámenes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "abriría",
+        "lemma": "abrir",
+        "hint": "abrir · ella · condicional",
+        "distractors": ["abriera", "abra", "abrió"]
+      }
+    ]
+  },
+  {
+    "id": "s2103",
+    "es": "No hay ningún alumno que no entienda esta regla después de la explicación.",
+    "sk": "Niet žiaka, ktorý by po vysvetlení toto pravidlo nepochopil.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "hay", "ningún", "alumno", "que", "no", "entienda", "esta", "regla", "después", "de", "la", "explicación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "entienda",
+        "lemma": "entender",
+        "hint": "entender · él · subjuntivo",
+        "distractors": ["entiende", "entendió", "entenderá"]
+      }
+    ]
+  },
+  {
+    "id": "s2104",
+    "es": "Los estudiantes con quienes hice el proyecto sacaron diez en la exposición.",
+    "sk": "Spolužiaci, s ktorými som robil projekt, dostali z prezentácie desiatku.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Los", "estudiantes", "con", "quienes", "hice", "el", "proyecto", "sacaron", "diez", "en", "la", "exposición", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quienes",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoby)",
+        "distractors": ["donde", "cuyos", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2105",
+    "es": "Cuando salga de la universidad, quiero trabajar en una escuela primaria.",
+    "sk": "Keď skončím univerzitu, chcem pracovať na základnej škole.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "salga", "de", "la", "universidad", ",", "quiero", "trabajar", "en", "una", "escuela", "primaria", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · yo · subjuntivo",
+        "distractors": ["salgo", "salí", "saldré"]
+      }
+    ]
+  },
+  {
+    "id": "s2106",
+    "es": "Me alegra que la maestra nos deje salir al recreo diez minutos antes hoy.",
+    "sk": "Teší ma, že nás učiteľka dnes pustí na prestávku o desať minút skôr.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Me", "alegra", "que", "la", "maestra", "nos", "deje", "salir", "al", "recreo", "diez", "minutos", "antes", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "deje",
+        "lemma": "dejar",
+        "hint": "dejar · ella · subjuntivo",
+        "distractors": ["deja", "dejó", "dejará"]
+      }
+    ]
+  },
+  {
+    "id": "s2107",
+    "es": "Estudio inglés para que mis hijos puedan tener mejores oportunidades en el futuro.",
+    "sk": "Učím sa anglicky, aby mali moje deti v budúcnosti lepšie možnosti.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["por-para", "subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Estudio", "inglés", "para", "que", "mis", "hijos", "puedan", "tener", "mejores", "oportunidades", "en", "el", "futuro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "puedan",
+        "lemma": "poder",
+        "hint": "poder · ellos · subjuntivo",
+        "distractors": ["pueden", "podrán", "pudieron"]
+      }
+    ]
+  },
+  {
+    "id": "s2108",
+    "es": "Si la escuela tuviera más computadoras, los niños aprenderían programación más rápido.",
+    "sk": "Keby mala škola viac počítačov, deti by sa programovať učili rýchlejšie.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "la", "escuela", "tuviera", "más", "computadoras", ",", "los", "niños", "aprenderían", "programación", "más", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "aprenderían",
+        "lemma": "aprender",
+        "hint": "aprender · ellos · condicional",
+        "distractors": ["aprenden", "aprenderán", "aprendieron"]
+      }
+    ]
   }
 ]

@@ -2259,5 +2259,185 @@
         "distractors": ["te", "le", "me"]
       }
     ]
+  },
+  {
+    "id": "s2138",
+    "es": "Cuando lleguemos a Oaxaca, quiero probar el mole que preparan en el mercado.",
+    "sk": "Keď prídeme do Oaxacy, chcem ochutnať mole, ktoré pripravujú na trhu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "lleguemos", "a", "Oaxaca", ",", "quiero", "probar", "el", "mole", "que", "preparan", "en", "el", "mercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo",
+        "distractors": ["llegamos", "llegaremos", "llegábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2139",
+    "es": "Si tuviéramos más vacaciones, viajaríamos por toda la costa del Pacífico.",
+    "sk": "Keby sme mali viac dovolenky, cestovali by sme po celom pobreží Pacifiku.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviéramos", "más", "vacaciones", ",", "viajaríamos", "por", "toda", "la", "costa", "del", "Pacífico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "viajaríamos",
+        "lemma": "viajar",
+        "hint": "viajar · nosotros · condicional",
+        "distractors": ["viajamos", "viajaremos", "viajábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2140",
+    "es": "El hotel donde nos quedamos tenía una vista increíble que nunca olvidaré.",
+    "sk": "Hotel, v ktorom sme boli ubytovaní, mal neuveriteľný výhľad, na ktorý nikdy nezabudnem.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["El", "hotel", "donde", "nos", "quedamos", "tenía", "una", "vista", "increíble", "que", "nunca", "olvidaré", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (miesto)",
+        "distractors": ["cuando", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2141",
+    "es": "Te llamaré en cuanto aterrice el avión para que no te preocupes.",
+    "sk": "Zavolám ti hneď, ako pristane lietadlo, aby si sa nebál.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Te", "llamaré", "en", "cuanto", "aterrice", "el", "avión", "para", "que", "no", "te", "preocupes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aterrice",
+        "lemma": "aterrizar",
+        "hint": "aterrizar · él · subjuntivo",
+        "distractors": ["aterriza", "aterrizó", "aterrizará"]
+      }
+    ]
+  },
+  {
+    "id": "s2142",
+    "es": "Es mejor que compremos los boletos hoy porque mañana subirán los precios.",
+    "sk": "Je lepšie kúpiť lístky dnes, pretože zajtra ceny stúpnu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "mejor", "que", "compremos", "los", "boletos", "hoy", "porque", "mañana", "subirán", "los", "precios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "compremos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · subjuntivo",
+        "distractors": ["compramos", "compraremos", "comprábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2143",
+    "es": "Mis amigos que viven en Mérida nos invitaron a quedarnos con ellos una semana.",
+    "sk": "Priatelia, ktorí bývajú v Méride, nás pozvali, aby sme u nich zostali týždeň.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mis", "amigos", "que", "viven", "en", "Mérida", "nos", "invitaron", "a", "quedarnos", "con", "ellos", "una", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2144",
+    "es": "Mientras esperábamos en el aeropuerto, nos avisaron que el vuelo salía con retraso.",
+    "sk": "Kým sme čakali na letisku, oznámili nám, že let odchádza s meškaním.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["Mientras", "esperábamos", "en", "el", "aeropuerto", ",", "nos", "avisaron", "que", "el", "vuelo", "salía", "con", "retraso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "avisaron",
+        "lemma": "avisar",
+        "hint": "avisar · ellos · pretérito",
+        "distractors": ["avisan", "avisarán", "avisen"]
+      }
+    ]
+  },
+  {
+    "id": "s2145",
+    "es": "Si hubiéramos reservado con tiempo, ahora no estaríamos esperando en la terminal.",
+    "sk": "Keby sme si boli rezervovali včas, teraz by sme nečakali na termináli.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "hubiéramos", "reservado", "con", "tiempo", ",", "ahora", "no", "estaríamos", "esperando", "en", "la", "terminal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaríamos",
+        "lemma": "estar",
+        "hint": "estar · nosotros · condicional",
+        "distractors": ["estamos", "estaremos", "estuvimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2146",
+    "es": "Busco un hostal que esté cerca de la playa y que no cueste mucho.",
+    "sk": "Hľadám hostel, ktorý je blízko pláže a nestojí veľa.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Busco", "un", "hostal", "que", "esté", "cerca", "de", "la", "playa", "y", "que", "no", "cueste", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "esté",
+        "lemma": "estar",
+        "hint": "estar · él · subjuntivo",
+        "distractors": ["está", "estuvo", "estará"]
+      }
+    ]
+  },
+  {
+    "id": "s2147",
+    "es": "El guía nos dijo que no tomáramos fotos dentro de la pirámide.",
+    "sk": "Sprievodca nám povedal, aby sme vnútri pyramídy nefotili.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["El", "guía", "nos", "dijo", "que", "no", "tomáramos", "fotos", "dentro", "de", "la", "pirámide", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tomáramos",
+        "lemma": "tomar",
+        "hint": "tomar · nosotros · subjuntivo imperfecto",
+        "distractors": ["tomamos", "tomaremos", "tomábamos"]
+      }
+    ]
   }
 ]

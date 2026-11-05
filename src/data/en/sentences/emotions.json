@@ -101,5 +101,15 @@
   { "id": "s1848", "en": "I recommend that you talk to someone you trust." },
   { "id": "s1849", "en": "It is better that you breathe deeply before answering." },
   { "id": "s1850", "en": "My psychologist asks me to write down what I feel." },
-  { "id": "s1851", "en": "I hope we're always happy." }
+  { "id": "s1851", "en": "I hope we're always happy." },
+  { "id": "s2012", "en": "I am glad that you are finally talking to your dad after so many years." },
+  { "id": "s2013", "en": "If I were not so nervous, I would enjoy tomorrow's interview much more." },
+  { "id": "s2014", "en": "My mom cried with joy when I told her I had gotten the scholarship.", "hints": ["when"] },
+  { "id": "s2015", "en": "I am embarrassed that my friends see how messy my house is." },
+  { "id": "s2016", "en": "I have a friend with whom I can cry without feeling judged.", "hints": ["relative pronoun"] },
+  { "id": "s2017", "en": "I started crying as soon as I saw my sister at the airport." },
+  { "id": "s2018", "en": "She felt so happy that she did not mind that it rained during the whole wedding." },
+  { "id": "s2019", "en": "What scares me is not failing, but staying put without trying.", "hints": ["but rather"] },
+  { "id": "s2020", "en": "Even though I was nervous, I spoke calmly in front of everyone." },
+  { "id": "s2021", "en": "It always moves me to see my students learn more than I expected." }
 ]

@@ -82,5 +82,15 @@
   { "id": "s1784", "en": "I need you to give me the change from one hundred pesos." },
   { "id": "s1785", "en": "It is better that we pay half now." },
   { "id": "s1786", "en": "I want you to count to twenty with me.", "hints": [null, "until, up to"] },
-  { "id": "s1787", "en": "The teacher asks that we add these numbers without a calculator.", "hints": [null, "without"] }
+  { "id": "s1787", "en": "The teacher asks that we add these numbers without a calculator.", "hints": [null, "without"] },
+  { "id": "s2090", "en": "When I have ten thousand pesos saved, I'm going to buy a new laptop." },
+  { "id": "s2091", "en": "If I won a million pesos in the lottery, I would pay all my debts." },
+  { "id": "s2092", "en": "The number that appears on the screen is the code you need to get in.", "hints": ["relative pronoun"] },
+  { "id": "s2093", "en": "The teacher asked us to add up all the numbers before the bell rang." },
+  { "id": "s2094", "en": "Although there are forty of us in the group, there are only twenty chairs in the room.", "hints": ["although"] },
+  { "id": "s2095", "en": "My brother, who turns thirty on Monday, wants a small party.", "hints": ["relative pronoun (person)"] },
+  { "id": "s2096", "en": "I doubt the third floor has enough space for so many people." },
+  { "id": "s2097", "en": "The cashier told me the total was four hundred fifty pesos with the discount." },
+  { "id": "s2098", "en": "The more calculations you do, the fewer mistakes you make on math exams.", "hints": ["the more"] },
+  { "id": "s2099", "en": "I need a phone number I can call if I lose my card." }
 ]

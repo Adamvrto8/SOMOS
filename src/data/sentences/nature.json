@@ -2039,5 +2039,185 @@
         "distractors": ["el", "la"]
       }
     ]
+  },
+  {
+    "id": "s2080",
+    "es": "Es importante que protejamos los bosques para que sigan dando oxígeno.",
+    "sk": "Je dôležité, aby sme chránili lesy, aby naďalej dávali kyslík.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "importante", "que", "protejamos", "los", "bosques", "para", "que", "sigan", "dando", "oxígeno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "protejamos",
+        "lemma": "proteger",
+        "hint": "proteger · nosotros · subjuntivo",
+        "distractors": ["protegemos", "protegimos", "protegeremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2081",
+    "es": "Si no lloviera tan poco en esta región, los ríos no se secarían cada verano.",
+    "sk": "Keby v tomto regióne nepršalo tak málo, rieky by každé leto nevyschli.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "no", "lloviera", "tan", "poco", "en", "esta", "región", ",", "los", "ríos", "no", "se", "secarían", "cada", "verano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lloviera",
+        "lemma": "llover",
+        "hint": "llover · él · subjuntivo imperfecto",
+        "distractors": ["llueve", "llovió", "lloverá"]
+      }
+    ]
+  },
+  {
+    "id": "s2082",
+    "es": "Los científicos que estudian los volcanes dicen que el Popocatépetl sigue activo.",
+    "sk": "Vedci, ktorí skúmajú sopky, hovoria, že Popocatépetl je stále aktívny.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "científicos", "que", "estudian", "los", "volcanes", "dicen", "que", "el", "Popocatépetl", "sigue", "activo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2083",
+    "es": "Nos quedaremos en el campamento hasta que deje de llover y salga el sol.",
+    "sk": "V kempe zostaneme, kým neprestane pršať a nevyjde slnko.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Nos", "quedaremos", "en", "el", "campamento", "hasta", "que", "deje", "de", "llover", "y", "salga", "el", "sol", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "kým",
+        "distractors": ["desde", "porque", "después"]
+      }
+    ]
+  },
+  {
+    "id": "s2084",
+    "es": "Vimos un colibrí cuyo pico era tan largo que llegaba al fondo de la flor.",
+    "sk": "Videli sme kolibríka, ktorého zobák bol taký dlhý, že siahal až na dno kvetu.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["Vimos", "un", "colibrí", "cuyo", "pico", "era", "tan", "largo", "que", "llegaba", "al", "fondo", "de", "la", "flor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cuyo",
+        "lemma": "cuyo",
+        "hint": "vzťažné slovo (ktorého)",
+        "distractors": ["quien", "donde", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2085",
+    "es": "Ojalá que este año no haya incendios forestales en la sierra.",
+    "sk": "Dúfam, že tento rok nebudú v horách lesné požiare.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "que", "este", "año", "no", "haya", "incendios", "forestales", "en", "la", "sierra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ojalá",
+        "lemma": "ojalá",
+        "hint": "želanie",
+        "distractors": ["Porque", "Pero", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2086",
+    "es": "Mientras caminábamos por la playa, vimos a una tortuga que salía del mar.",
+    "sk": "Keď sme sa prechádzali po pláži, videli sme korytnačku vychádzať z mora.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["Mientras", "caminábamos", "por", "la", "playa", ",", "vimos", "a", "una", "tortuga", "que", "salía", "del", "mar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "salía",
+        "lemma": "salir",
+        "hint": "salir · ella · imperfecto",
+        "distractors": ["salga", "saldrá", "salgo"]
+      }
+    ]
+  },
+  {
+    "id": "s2087",
+    "es": "Debemos cuidar los ríos porque de ellos depende toda la vida del valle.",
+    "sk": "Musíme sa starať o rieky, pretože od nich závisí všetok život v údolí.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["presente"],
+    "tokens": ["Debemos", "cuidar", "los", "ríos", "porque", "de", "ellos", "depende", "toda", "la", "vida", "del", "valle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["sino", "para", "mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2088",
+    "es": "Aunque ya cayó la nieve, queremos subir al volcán en cuanto abran el camino.",
+    "sk": "Hoci už napadol sneh, chceme vyjsť na sopku hneď, ako otvoria cestu.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "ya", "cayó", "la", "nieve", ",", "queremos", "subir", "al", "volcán", "en", "cuanto", "abran", "el", "camino", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "abran",
+        "lemma": "abrir",
+        "hint": "abrir · ellos · subjuntivo",
+        "distractors": ["abren", "abrieron", "abrirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2089",
+    "es": "Si encontráramos un cenote más tranquilo, nadaríamos ahí toda la tarde.",
+    "sk": "Keby sme našli pokojnejší cenote, plávali by sme tam celé popoludnie.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "encontráramos", "un", "cenote", "más", "tranquilo", ",", "nadaríamos", "ahí", "toda", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "nadaríamos",
+        "lemma": "nadar",
+        "hint": "nadar · nosotros · condicional",
+        "distractors": ["nadamos", "nadaremos", "nadábamos"]
+      }
+    ]
   }
 ]

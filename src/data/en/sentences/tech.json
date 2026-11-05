@@ -95,5 +95,14 @@
   { "id": "s1960", "en": "The file is saved in the cloud." },
   { "id": "s1961", "en": "You cannot use a cell phone on the plane." },
   { "id": "s1962", "en": "The system has been off since eight." },
-  { "id": "s1963", "en": "Messages are received from all over the world." }
+  { "id": "s1963", "en": "Messages are received from all over the world." },
+  { "id": "s2119", "en": "If my computer weren't so slow, I would work much faster." },
+  { "id": "s2120", "en": "The program I downloaded last night deleted all the photos I had saved.", "hints": ["relative pronoun"] },
+  { "id": "s2121", "en": "As soon as I get home and open the computer, I'll send you the file." },
+  { "id": "s2122", "en": "Even if the battery lasts all day, I always carry the charger in my backpack.", "hints": ["even if"] },
+  { "id": "s2123", "en": "I don't know anyone who can program as well as my cousin Luis." },
+  { "id": "s2124", "en": "Since we all work from home, we need a more stable connection." },
+  { "id": "s2125", "en": "They asked me to change my password because someone tried to get into my account." },
+  { "id": "s2126", "en": "While the update downloads, don't turn off the phone or close the app.", "hints": ["while"] },
+  { "id": "s2127", "en": "There's an app you can use to translate what people say in real time.", "hints": ["neuter pronoun"] }
 ]

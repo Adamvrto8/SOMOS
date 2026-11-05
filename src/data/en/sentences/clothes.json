@@ -81,5 +81,15 @@
   { "id": "s1124", "en": "That embroidered blouse was handmade by artisans from Chiapas.", "hints": ["that (f.)", null] },
   { "id": "s1604", "en": "That shirt looks great on you.", "hints": ["that (f.)", null] },
   { "id": "s1605", "en": "After the vacation my pants were too small for me." },
-  { "id": "s1645", "en": "I like these shoes." }
+  { "id": "s1645", "en": "I like these shoes." },
+  { "id": "s2002", "en": "My mom wants me to bring a sweater to the party, because it gets cool at night." },
+  { "id": "s2003", "en": "If I had enough money, I would buy that wool coat for the winter." },
+  { "id": "s2004", "en": "I cannot find any pants that fit me well, neither in the waist nor in the length." },
+  { "id": "s2005", "en": "When the temperature drops, we will take the coats and scarves out of the wardrobe." },
+  { "id": "s2006", "en": "I know a designer whose embroidered shirts are sold all over the country.", "hints": ["relative pronoun (whose)"] },
+  { "id": "s2007", "en": "The saleswoman assured me the shirt would not shrink even if I washed it in hot water." },
+  { "id": "s2008", "en": "I hope the skirt I bought online without trying it on fits me well." },
+  { "id": "s2009", "en": "I ran late because I could not find the tie my wife had ironed.", "hints": ["because"] },
+  { "id": "s2010", "en": "I am not leaving the store until I find a dress for the wedding." },
+  { "id": "s2011", "en": "You can take the scarf as long as you give it back to me next week." }
 ]
