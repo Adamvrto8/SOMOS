@@ -1,0 +1,74 @@
+[
+  {
+    "id": "playera",
+    "es": "camiseta",
+    "note": null,
+    "examples": [
+      {
+        "es": "Llevo una camiseta blanca.",
+        "sk": "Mám na sebe biele tričko."
+      }
+    ]
+  },
+  {
+    "id": "chamarra",
+    "es": "chaqueta",
+    "note": null,
+    "examples": [
+      {
+        "es": "Lleva una chaqueta, hace frío.",
+        "sk": "Vezmi si bundu, je zima."
+      }
+    ]
+  },
+  {
+    "id": "lentes",
+    "es": "gafas",
+    "plural": "gafas",
+    "note": null,
+    "examples": [
+      {
+        "es": "No veo nada sin mis gafas.",
+        "sk": "Bez okuliarov nevidím nič."
+      }
+    ]
+  },
+  {
+    "id": "negro",
+    "examples": [
+      {
+        "es": "Quiero la camiseta negra.",
+        "sk": "Chcem to čierne tričko."
+      }
+    ]
+  },
+  {
+    "id": "arete",
+    "es": "pendiente",
+    "note": null,
+    "examples": [
+      {
+        "es": "Me regalaron unos pendientes.",
+        "sk": "Dostala som náušnice."
+      }
+    ]
+  },
+  {
+    "id": "algodon",
+    "examples": [
+      {
+        "es": "Esta camiseta es de algodón.",
+        "sk": "Toto tričko je z bavlny."
+      }
+    ]
+  },
+  {
+    "id": "guante",
+    "examples": [
+      {
+        "es": "Perdí un guante en el autobús.",
+        "sk": "V autobuse som stratil rukavicu."
+      }
+    ]
+  }
+]

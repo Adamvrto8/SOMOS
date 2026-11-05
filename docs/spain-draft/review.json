@@ -1,0 +1,20 @@
+{
+  "generated": "2026-11-05",
+  "base": {
+    "words": 1681,
+    "sentences": 1971
+  },
+  "words": {
+    "listed": 174,
+    "replace": 41,
+    "hideInEs": 58,
+    "examplesOnly": 57,
+    "noteOnly": 18,
+    "manual": 19
+  },
+  "sentences": {
+    "listed": 178,
+    "manual": 60,
+    "withClozeChange": 13
+  }
+}

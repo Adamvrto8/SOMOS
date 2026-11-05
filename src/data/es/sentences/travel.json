@@ -1,0 +1,239 @@
+[
+  {
+    "id": "s1663",
+    "es": "¿Hay un autobús al aeropuerto?",
+    "tokens": [
+      "¿",
+      "Hay",
+      "un",
+      "autobús",
+      "al",
+      "aeropuerto",
+      "?"
+    ]
+  },
+  {
+    "id": "s1687",
+    "es": "Los billetes están en mi bolsa; ahora te los doy.",
+    "tokens": [
+      "Los",
+      "billetes",
+      "están",
+      "en",
+      "mi",
+      "bolsa",
+      ";",
+      "ahora",
+      "te",
+      "los",
+      "doy",
+      "."
+    ]
+  },
+  {
+    "id": "s041",
+    "es": "¿A qué hora llega el autobús?",
+    "tokens": [
+      "¿",
+      "A",
+      "qué",
+      "hora",
+      "llega",
+      "el",
+      "autobús",
+      "?"
+    ]
+  },
+  {
+    "id": "s047",
+    "es": "Estamos esperando el autobús.",
+    "tokens": [
+      "Estamos",
+      "esperando",
+      "el",
+      "autobús",
+      "."
+    ]
+  },
+  {
+    "id": "s154",
+    "es": "Tengo una reserva para tres noches.",
+    "tokens": [
+      "Tengo",
+      "una",
+      "reserva",
+      "para",
+      "tres",
+      "noches",
+      "."
+    ]
+  },
+  {
+    "id": "s160",
+    "es": "El hotel tiene una piscina enorme.",
+    "tokens": [
+      "El",
+      "hotel",
+      "tiene",
+      "una",
+      "piscina",
+      "enorme",
+      "."
+    ]
+  },
+  {
+    "id": "s588",
+    "es": "Perdimos el autobús y tuvimos que esperar dos horas.",
+    "tokens": [
+      "Perdimos",
+      "el",
+      "autobús",
+      "y",
+      "tuvimos",
+      "que",
+      "esperar",
+      "dos",
+      "horas",
+      "."
+    ]
+  },
+  {
+    "id": "s741",
+    "es": "El autobús sale de la terminal a las seis.",
+    "tokens": [
+      "El",
+      "autobús",
+      "sale",
+      "de",
+      "la",
+      "terminal",
+      "a",
+      "las",
+      "seis",
+      "."
+    ]
+  },
+  {
+    "id": "s753",
+    "es": "Me mareo en los autobuses con tantas curvas.",
+    "tokens": [
+      "Me",
+      "mareo",
+      "en",
+      "los",
+      "autobuses",
+      "con",
+      "tantas",
+      "curvas",
+      "."
+    ]
+  },
+  {
+    "id": "s168",
+    "es": "¿Cuánto cuesta el billete a Puebla?",
+    "tokens": [
+      "¿",
+      "Cuánto",
+      "cuesta",
+      "el",
+      "billete",
+      "a",
+      "Puebla",
+      "?"
+    ]
+  },
+  {
+    "id": "s1525",
+    "es": "Alquilar un coche allá cuesta una lana; mejor nos movemos en autobús.",
+    "tokens": [
+      "Alquilar",
+      "un",
+      "coche",
+      "allá",
+      "cuesta",
+      "una",
+      "lana",
+      ";",
+      "mejor",
+      "nos",
+      "movemos",
+      "en",
+      "autobús",
+      "."
+    ]
+  },
+  {
+    "id": "s1622",
+    "es": "Los mecánicos revisaron los frenos del coche antes del viaje.",
+    "tokens": [
+      "Los",
+      "mecánicos",
+      "revisaron",
+      "los",
+      "frenos",
+      "del",
+      "coche",
+      "antes",
+      "del",
+      "viaje",
+      "."
+    ]
+  },
+  {
+    "id": "s1512",
+    "es": "¿Dónde compramos los billetes?",
+    "tokens": [
+      "¿",
+      "Dónde",
+      "compramos",
+      "los",
+      "billetes",
+      "?"
+    ]
+  },
+  {
+    "id": "s1854",
+    "es": "Te aconsejo que compres los billetes con anticipación.",
+    "tokens": [
+      "Te",
+      "aconsejo",
+      "que",
+      "compres",
+      "los",
+      "billetes",
+      "con",
+      "anticipación",
+      "."
+    ]
+  },
+  {
+    "id": "s1862",
+    "es": "Si pierdes el avión, tendrás que comprar otro billete.",
+    "tokens": [
+      "Si",
+      "pierdes",
+      "el",
+      "avión",
+      ",",
+      "tendrás",
+      "que",
+      "comprar",
+      "otro",
+      "billete",
+      "."
+    ]
+  },
+  {
+    "id": "s1899",
+    "es": "Viajamos por la costa en coche.",
+    "tokens": [
+      "Viajamos",
+      "por",
+      "la",
+      "costa",
+      "en",
+      "coche",
+      "."
+    ]
+  }
+]

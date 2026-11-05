@@ -1,0 +1,33 @@
+[
+  {
+    "id": "gripa",
+    "es": "gripe",
+    "note": null,
+    "examples": [
+      {
+        "es": "Tengo gripe.",
+        "sk": "Mám chrípku."
+      }
+    ]
+  },
+  {
+    "id": "curita",
+    "es": "tirita",
+    "note": null,
+    "examples": [
+      {
+        "es": "¿Tienes una tirita?",
+        "sk": "Máš náplasť?"
+      }
+    ]
+  },
+  {
+    "id": "contagioso",
+    "examples": [
+      {
+        "es": "La gripe es muy contagiosa.",
+        "sk": "Chrípka je veľmi nákazlivá."
+      }
+    ]
+  }
+]

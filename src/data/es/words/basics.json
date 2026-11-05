@@ -1,0 +1,104 @@
+[
+  {
+    "id": "el",
+    "examples": [
+      {
+        "es": "El coche es nuevo.",
+        "sk": "To auto je nové."
+      }
+    ]
+  },
+  {
+    "id": "nuestro",
+    "examples": [
+      {
+        "es": "Nuestro piso es pequeño.",
+        "sk": "Náš byt je malý."
+      }
+    ]
+  },
+  {
+    "id": "que",
+    "examples": [
+      {
+        "es": "Creo que va a llover.",
+        "sk": "Myslím, že bude pršať."
+      },
+      {
+        "es": "El coche que compré es rojo.",
+        "sk": "Auto, ktoré som kúpil, je červené."
+      }
+    ]
+  },
+  {
+    "id": "de",
+    "examples": [
+      {
+        "es": "Soy de Bratislava.",
+        "sk": "Som z Bratislavy."
+      },
+      {
+        "es": "Es el coche de mi papá.",
+        "sk": "To je otcovo auto."
+      }
+    ]
+  },
+  {
+    "id": "sobre",
+    "examples": [
+      {
+        "es": "Tu móvil está sobre la cama.",
+        "sk": "Tvoj mobil je na posteli."
+      },
+      {
+        "es": "Hablamos sobre el viaje.",
+        "sk": "Rozprávali sme sa o výlete."
+      }
+    ]
+  },
+  {
+    "id": "otra-vez",
+    "examples": [
+      {
+        "es": "Perdí el autobús otra vez.",
+        "sk": "Zase mi ušiel autobus."
+      }
+    ]
+  },
+  {
+    "id": "mismo",
+    "examples": [
+      {
+        "es": "Tenemos el mismo móvil.",
+        "sk": "Máme rovnaký mobil."
+      }
+    ]
+  },
+  {
+    "id": "durante",
+    "examples": [
+      {
+        "es": "Durante la clase no se usa el móvil.",
+        "sk": "Počas hodiny sa mobil nepoužíva."
+      }
+    ]
+  },
+  {
+    "id": "hoy-en-dia",
+    "examples": [
+      {
+        "es": "Hoy en día todos tienen móvil.",
+        "sk": "V dnešnej dobe má každý mobil."
+      }
+    ]
+  },
+  {
+    "id": "evidente",
+    "examples": [
+      {
+        "es": "Es evidente que está enfadado.",
+        "sk": "Je zrejmé, že sa hnevá."
+      }
+    ]
+  }
+]

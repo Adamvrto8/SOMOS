@@ -1,0 +1,66 @@
+[
+  {
+    "id": "s1835",
+    "es": "Buscábamos un lugar donde pudiéramos charlar tranquilos.",
+    "tokens": [
+      "Buscábamos",
+      "un",
+      "lugar",
+      "donde",
+      "pudiéramos",
+      "charlar",
+      "tranquilos",
+      "."
+    ]
+  },
+  {
+    "id": "s1637",
+    "es": "A mi papá le gustan los coches grandes.",
+    "tokens": [
+      "A",
+      "mi",
+      "papá",
+      "le",
+      "gustan",
+      "los",
+      "coches",
+      "grandes",
+      "."
+    ]
+  },
+  {
+    "id": "s610",
+    "es": "Hoy en día casi todo se paga con el móvil.",
+    "tokens": [
+      "Hoy",
+      "en",
+      "día",
+      "casi",
+      "todo",
+      "se",
+      "paga",
+      "con",
+      "el",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1016",
+    "es": "Siempre y cuando me avises antes, puedes usar mi coche.",
+    "tokens": [
+      "Siempre",
+      "y",
+      "cuando",
+      "me",
+      "avises",
+      "antes",
+      ",",
+      "puedes",
+      "usar",
+      "mi",
+      "coche",
+      "."
+    ]
+  }
+]

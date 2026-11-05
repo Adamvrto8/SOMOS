@@ -1,0 +1,91 @@
+[
+  {
+    "id": "departamento",
+    "es": "piso",
+    "note": null,
+    "examples": [
+      {
+        "es": "Vivo en un piso pequeño.",
+        "sk": "Bývam v malom byte."
+      }
+    ]
+  },
+  {
+    "id": "regadera",
+    "es": "ducha",
+    "note": null,
+    "examples": [
+      {
+        "es": "La ducha no tiene agua caliente.",
+        "sk": "V sprche netečie teplá voda."
+      }
+    ]
+  },
+  {
+    "id": "cobija",
+    "es": "manta",
+    "note": null,
+    "examples": [
+      {
+        "es": "Hace frío, ¿me pasas una manta?",
+        "sk": "Je zima, podáš mi deku?"
+      }
+    ]
+  },
+  {
+    "id": "dueno",
+    "examples": [
+      {
+        "es": "El dueño del piso vive arriba.",
+        "sk": "Majiteľ bytu býva nad nami."
+      }
+    ]
+  },
+  {
+    "id": "plomero",
+    "es": "fontanero",
+    "note": null,
+    "examples": [
+      {
+        "es": "Hay que llamar al fontanero.",
+        "sk": "Treba zavolať inštalatéra."
+      }
+    ]
+  },
+  {
+    "id": "cochera",
+    "examples": [
+      {
+        "es": "El coche no cabe en la cochera.",
+        "sk": "Auto sa nezmestí do garáže."
+      }
+    ]
+  },
+  {
+    "id": "aval",
+    "examples": [
+      {
+        "es": "Para alquilar te piden un aval.",
+        "sk": "Pri prenájme od teba chcú ručiteľa."
+      }
+    ]
+  },
+  {
+    "id": "amueblado",
+    "examples": [
+      {
+        "es": "Buscamos un piso amueblado.",
+        "sk": "Hľadáme zariadený byt."
+      }
+    ]
+  },
+  {
+    "id": "condominio",
+    "examples": [
+      {
+        "es": "Vivimos en un condominio con piscina.",
+        "sk": "Bývame v obytnom komplexe s bazénom."
+      }
+    ]
+  }
+]

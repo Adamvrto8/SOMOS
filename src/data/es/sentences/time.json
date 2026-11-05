@@ -1,0 +1,67 @@
+[
+  {
+    "id": "s183",
+    "es": "Ahora no puedo, estoy en una junta.",
+    "tokens": [
+      "Ahora",
+      "no",
+      "puedo",
+      ",",
+      "estoy",
+      "en",
+      "una",
+      "junta",
+      "."
+    ]
+  },
+  {
+    "id": "s1499",
+    "es": "Cuando un mexicano dice ahora, puede significar en cinco minutos o nunca.",
+    "tokens": [
+      "Cuando",
+      "un",
+      "mexicano",
+      "dice",
+      "ahora",
+      ",",
+      "puede",
+      "significar",
+      "en",
+      "cinco",
+      "minutos",
+      "o",
+      "nunca",
+      "."
+    ]
+  },
+  {
+    "id": "s1507",
+    "es": "En aquel entonces no existían los móviles.",
+    "tokens": [
+      "En",
+      "aquel",
+      "entonces",
+      "no",
+      "existían",
+      "los",
+      "móviles",
+      "."
+    ]
+  },
+  {
+    "id": "s1609",
+    "es": "El autobús tardó una hora porque había mucho tráfico.",
+    "tokens": [
+      "El",
+      "autobús",
+      "tardó",
+      "una",
+      "hora",
+      "porque",
+      "había",
+      "mucho",
+      "tráfico",
+      "."
+    ]
+  }
+]

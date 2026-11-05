@@ -1,0 +1,54 @@
+[
+  {
+    "id": "carro",
+    "es": "coche",
+    "note": null,
+    "examples": [
+      {
+        "es": "Mi coche es rojo.",
+        "sk": "Moje auto je červené."
+      }
+    ]
+  },
+  {
+    "id": "camion",
+    "es": "autobús",
+    "plural": "autobuses",
+    "note": null,
+    "examples": [
+      {
+        "es": "¿Qué autobús va al centro?",
+        "sk": "Ktorý autobus ide do centra?"
+      }
+    ]
+  },
+  {
+    "id": "banqueta",
+    "es": "acera",
+    "note": null,
+    "examples": [
+      {
+        "es": "Camina por la acera.",
+        "sk": "Choď po chodníku."
+      }
+    ]
+  },
+  {
+    "id": "puesto",
+    "examples": [
+      {
+        "es": "Compramos zumo en un puesto del mercado.",
+        "sk": "Kúpili sme džús v stánku na trhu."
+      }
+    ]
+  },
+  {
+    "id": "asalto",
+    "examples": [
+      {
+        "es": "Hubo un asalto en el autobús.",
+        "sk": "V autobuse bolo prepadnutie."
+      }
+    ]
+  }
+]

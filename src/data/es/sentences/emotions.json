@@ -1,0 +1,24 @@
+[
+  {
+    "id": "s1126",
+    "es": "¿Estás enfadado conmigo?",
+    "tokens": [
+      "¿",
+      "Estás",
+      "enfadado",
+      "conmigo",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "enfadado",
+        "distractors": [
+          "abierto",
+          "barato",
+          "rojo"
+        ]
+      }
+    ]
+  }
+]

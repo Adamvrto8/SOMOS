@@ -1,0 +1,79 @@
+[
+  {
+    "id": "s257",
+    "es": "Me enfermé de gripe.",
+    "tokens": [
+      "Me",
+      "enfermé",
+      "de",
+      "gripe",
+      "."
+    ]
+  },
+  {
+    "id": "s851",
+    "es": "Tengo gripe y no puedo respirar bien.",
+    "tokens": [
+      "Tengo",
+      "gripe",
+      "y",
+      "no",
+      "puedo",
+      "respirar",
+      "bien",
+      "."
+    ]
+  },
+  {
+    "id": "s1249",
+    "es": "La gripe es muy contagiosa, así que mejor quédate en casa.",
+    "tokens": [
+      "La",
+      "gripe",
+      "es",
+      "muy",
+      "contagiosa",
+      ",",
+      "así",
+      "que",
+      "mejor",
+      "quédate",
+      "en",
+      "casa",
+      "."
+    ]
+  },
+  {
+    "id": "s1240",
+    "es": "La enfermera me puso la vacuna contra la gripe.",
+    "tokens": [
+      "La",
+      "enfermera",
+      "me",
+      "puso",
+      "la",
+      "vacuna",
+      "contra",
+      "la",
+      "gripe",
+      "."
+    ]
+  },
+  {
+    "id": "s1242",
+    "es": "Mi esposo está tosiendo mucho, creo que tiene gripe.",
+    "tokens": [
+      "Mi",
+      "esposo",
+      "está",
+      "tosiendo",
+      "mucho",
+      ",",
+      "creo",
+      "que",
+      "tiene",
+      "gripe",
+      "."
+    ]
+  }
+]

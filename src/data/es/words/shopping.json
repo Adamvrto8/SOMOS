@@ -1,0 +1,38 @@
+[
+  {
+    "id": "caro",
+    "examples": [
+      {
+        "es": "Este móvil es muy caro.",
+        "sk": "Tento mobil je veľmi drahý."
+      }
+    ]
+  },
+  {
+    "id": "nuevo",
+    "examples": [
+      {
+        "es": "Compré un móvil nuevo.",
+        "sk": "Kúpil som si nový mobil."
+      }
+    ]
+  },
+  {
+    "id": "viejo",
+    "examples": [
+      {
+        "es": "Mi coche es muy viejo.",
+        "sk": "Moje auto je veľmi staré."
+      }
+    ]
+  },
+  {
+    "id": "marca",
+    "examples": [
+      {
+        "es": "¿De qué marca es tu móvil?",
+        "sk": "Akej značky je tvoj mobil?"
+      }
+    ]
+  }
+]

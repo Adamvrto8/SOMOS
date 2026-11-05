@@ -1,0 +1,6993 @@
+[
+  {
+    "id": "s1008",
+    "file": "basics.json",
+    "level": "A2",
+    "sk": "Teraz sa učím šoférovať.",
+    "es_mx": "Ahorita estoy aprendiendo a manejar.",
+    "es_es": "Ahora estoy aprendiendo a manejar.",
+    "tokens_es": [
+      "Ahora",
+      "estoy",
+      "aprendiendo",
+      "a",
+      "manejar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "aprendiendo",
+        "answer_es": "aprendiendo",
+        "lemma_mx": "aprender",
+        "hint": "aprender · gerundio",
+        "distractors_es": [
+          "aprende",
+          "aprender",
+          "aprendió"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejar\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1835",
+    "file": "basics.json",
+    "level": "B2",
+    "sk": "Hľadali sme miesto, kde by sme sa mohli v pokoji porozprávať.",
+    "es_mx": "Buscábamos un lugar donde pudiéramos platicar tranquilos.",
+    "es_es": "Buscábamos un lugar donde pudiéramos charlar tranquilos.",
+    "tokens_es": [
+      "Buscábamos",
+      "un",
+      "lugar",
+      "donde",
+      "pudiéramos",
+      "charlar",
+      "tranquilos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "pudiéramos",
+        "answer_es": "pudiéramos",
+        "lemma_mx": "poder",
+        "hint": "poder · nosotros · subjuntivo imperfecto",
+        "distractors_es": [
+          "podamos",
+          "podíamos",
+          "podríamos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1637",
+    "file": "basics.json",
+    "level": "A1",
+    "sk": "Môj otec má rád veľké autá.",
+    "es_mx": "A mi papá le gustan los carros grandes.",
+    "es_es": "A mi papá le gustan los coches grandes.",
+    "tokens_es": [
+      "A",
+      "mi",
+      "papá",
+      "le",
+      "gustan",
+      "los",
+      "coches",
+      "grandes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "gustan",
+        "answer_es": "gustan",
+        "lemma_mx": "gustar",
+        "hint": "gustar",
+        "distractors_es": [
+          "gusta",
+          "gustas",
+          "gustamos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s610",
+    "file": "basics.json",
+    "level": "B1",
+    "sk": "V dnešnej dobe sa skoro všetko platí mobilom.",
+    "es_mx": "Hoy en día casi todo se paga con el celular.",
+    "es_es": "Hoy en día casi todo se paga con el móvil.",
+    "tokens_es": [
+      "Hoy",
+      "en",
+      "día",
+      "casi",
+      "todo",
+      "se",
+      "paga",
+      "con",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "paga",
+        "answer_es": "paga",
+        "lemma_mx": "pagar",
+        "hint": "pagar · él · presente",
+        "distractors_es": [
+          "pagan",
+          "pagó",
+          "pagaba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1016",
+    "file": "basics.json",
+    "level": "B2",
+    "sk": "Pokiaľ mi dáš vopred vedieť, môžeš si zobrať moje auto.",
+    "es_mx": "Siempre y cuando me avises antes, puedes usar mi carro.",
+    "es_es": "Siempre y cuando me avises antes, puedes usar mi coche.",
+    "tokens_es": [
+      "Siempre",
+      "y",
+      "cuando",
+      "me",
+      "avises",
+      "antes",
+      ",",
+      "puedes",
+      "usar",
+      "mi",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "puedes",
+        "answer_es": "puedes",
+        "lemma_mx": "poder",
+        "hint": "poder · tú · presente",
+        "distractors_es": [
+          "pudiste",
+          "puedo",
+          "podrán"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "avises",
+        "answer_es": "avises",
+        "lemma_mx": "avisar",
+        "hint": "avisar · tú · subjuntivo",
+        "distractors_es": [
+          "avisas",
+          "avisaste",
+          "avisarás"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1043",
+    "file": "body.json",
+    "level": "B1",
+    "sk": "Bolí ma krk, lebo celý deň presedím pri počítači.",
+    "es_mx": "Me duele el cuello porque paso todo el día frente a la computadora.",
+    "es_es": "Me duele el cuello porque paso todo el día frente al ordenador.",
+    "tokens_es": [
+      "Me",
+      "duele",
+      "el",
+      "cuello",
+      "porque",
+      "paso",
+      "todo",
+      "el",
+      "día",
+      "frente",
+      "a",
+      "el",
+      "ordenador",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "cuello",
+        "answer_es": "cuello",
+        "lemma_mx": "cuello",
+        "hint": "krk",
+        "distractors_es": [
+          "pelo",
+          "talón",
+          "lunar"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "si",
+          "que",
+          "cuando"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)",
+      "tokens do not rebuild the sentence (multi-word swap): rebuild tokens by hand"
+    ]
+  },
+  {
+    "id": "s032",
+    "file": "city.json",
+    "level": "A1",
+    "sk": "Do práce chodím autobusom.",
+    "es_mx": "Tomo el camión para ir al trabajo.",
+    "es_es": "Tomo el autobús para ir al trabajo.",
+    "tokens_es": [
+      "Tomo",
+      "el",
+      "autobús",
+      "para",
+      "ir",
+      "al",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Tomo",
+        "answer_es": "Tomo",
+        "lemma_mx": "tomar",
+        "hint": "tomar · yo · presente",
+        "distractors_es": [
+          "Toma",
+          "Tomé",
+          "Tomas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s033",
+    "file": "city.json",
+    "level": "A1",
+    "sk": "Moje auto je na parkovisku.",
+    "es_mx": "Mi carro está en el estacionamiento.",
+    "es_es": "Mi coche está en el estacionamiento.",
+    "tokens_es": [
+      "Mi",
+      "coche",
+      "está",
+      "en",
+      "el",
+      "estacionamiento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Mi",
+        "answer_es": "Mi",
+        "lemma_mx": "mi",
+        "hint": "môj",
+        "distractors_es": [
+          "sus",
+          "mis",
+          "tu"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "está",
+        "answer_es": "está",
+        "lemma_mx": "estar",
+        "hint": "ser/estar · él · presente",
+        "distractors_es": [
+          "es",
+          "están",
+          "estoy"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1728",
+    "file": "city.json",
+    "level": "A2",
+    "sk": "Môžem tu zaparkovať auto?",
+    "es_mx": "¿Puedo estacionar el carro aquí?",
+    "es_es": "¿Puedo aparcar el coche aquí?",
+    "tokens_es": [
+      "¿",
+      "Puedo",
+      "aparcar",
+      "el",
+      "coche",
+      "aquí",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Puedo",
+        "answer_es": "Puedo",
+        "lemma_mx": "poder",
+        "hint": "môcť",
+        "distractors_es": [
+          "Debo",
+          "Tengo",
+          "Puede"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s142",
+    "file": "city.json",
+    "level": "A2",
+    "sk": "Auto som zaparkoval pred kostolom.",
+    "es_mx": "Estacioné el carro enfrente de la iglesia.",
+    "es_es": "Estacioné el coche enfrente de la iglesia.",
+    "tokens_es": [
+      "Estacioné",
+      "el",
+      "coche",
+      "enfrente",
+      "de",
+      "la",
+      "iglesia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Estacioné",
+        "answer_es": "Estacioné",
+        "lemma_mx": "estacionar",
+        "hint": "estacionar · yo · pretérito",
+        "distractors_es": [
+          "Estacionó",
+          "Estacionaron",
+          "Estaciono"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "de",
+        "answer_es": "de",
+        "lemma_mx": "de",
+        "hint": "predložka",
+        "distractors_es": [
+          "a",
+          "en",
+          "hasta"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s526",
+    "file": "city.json",
+    "level": "B1",
+    "sk": "Stratili sme sa, lebo mobil nemal signál.",
+    "es_mx": "Nos perdimos porque el celular no tenía señal.",
+    "es_es": "Nos perdimos porque el móvil no tenía señal.",
+    "tokens_es": [
+      "Nos",
+      "perdimos",
+      "porque",
+      "el",
+      "móvil",
+      "no",
+      "tenía",
+      "señal",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "perdimos",
+        "answer_es": "perdimos",
+        "lemma_mx": "perder",
+        "hint": "perder · nosotros · pretérito",
+        "distractors_es": [
+          "perdemos",
+          "perdieron",
+          "perderemos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "pero",
+          "si",
+          "que"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s723",
+    "file": "city.json",
+    "level": "A2",
+    "sk": "Kde je zastávka autobusu?",
+    "es_mx": "¿Dónde está la parada del camión?",
+    "es_es": "¿Dónde está la parada del autobús?",
+    "tokens_es": [
+      "¿",
+      "Dónde",
+      "está",
+      "la",
+      "parada",
+      "del",
+      "autobús",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "parada",
+        "answer_es": "parada",
+        "lemma_mx": "parada",
+        "hint": "zastávka",
+        "distractors_es": [
+          "parado",
+          "partida",
+          "pared"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s738",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Pouliční predavači zaberajú celý chodník.",
+    "es_mx": "Los vendedores ambulantes ocupan toda la banqueta.",
+    "es_es": "Los vendedores ambulantes ocupan toda la acera.",
+    "tokens_es": [
+      "Los",
+      "vendedores",
+      "ambulantes",
+      "ocupan",
+      "toda",
+      "la",
+      "acera",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "banqueta",
+        "answer_es": "acera",
+        "lemma_mx": "banqueta",
+        "hint": "chodník",
+        "distractors_es": [
+          "banca",
+          "bandeja",
+          "carretera"
+        ],
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "s1065",
+    "file": "city.json",
+    "level": "A2",
+    "sk": "Šoféruješ? Veľmi zle ťa počujem.",
+    "es_mx": "¿Estás manejando? Te escucho muy mal.",
+    "es_es": "¿Estás manejando? Te escucho muy mal.",
+    "tokens_es": [
+      "¿",
+      "Estás",
+      "manejando",
+      "?",
+      "Te",
+      "escucho",
+      "muy",
+      "mal",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "manejando",
+        "answer_es": "manejando",
+        "lemma_mx": "manejar",
+        "hint": "manejar · gerundio",
+        "distractors_es": [
+          "manejas",
+          "manejaste",
+          "manejabas"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejando\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1068",
+    "file": "city.json",
+    "level": "B1",
+    "sk": "Podľa mňa mesto potrebuje viac cyklotrás a menej áut.",
+    "es_mx": "En mi opinión, la ciudad necesita más ciclovías y menos carros.",
+    "es_es": "En mi opinión, la ciudad necesita más ciclovías y menos coches.",
+    "tokens_es": [
+      "En",
+      "mi",
+      "opinión",
+      ",",
+      "la",
+      "ciudad",
+      "necesita",
+      "más",
+      "ciclovías",
+      "y",
+      "menos",
+      "coches",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "necesita",
+        "answer_es": "necesita",
+        "lemma_mx": "necesitar",
+        "hint": "necesitar · ella · presente",
+        "distractors_es": [
+          "necesito",
+          "necesitó",
+          "necesitaba"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 0,
+        "answer_mx": "En",
+        "answer_es": "En",
+        "lemma_mx": "en",
+        "hint": "predložka",
+        "distractors_es": [
+          "Con",
+          "Por",
+          "Sobre"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1074",
+    "file": "city.json",
+    "level": "B1",
+    "sk": "Zaplatil som parkovné na dve hodiny, ale vrátil som sa neskoro a dostal som pokutu.",
+    "es_mx": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
+    "es_es": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
+    "tokens_es": [
+      "Pagué",
+      "el",
+      "parquímetro",
+      "por",
+      "dos",
+      "horas",
+      ",",
+      "pero",
+      "regresé",
+      "tarde",
+      "y",
+      "me",
+      "multaron",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "regresé",
+        "answer_es": "regresé",
+        "lemma_mx": "regresar",
+        "hint": "regresar · yo · pretérito",
+        "distractors_es": [
+          "regreso",
+          "regresó",
+          "regresaba"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"regresé\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1075",
+    "file": "city.json",
+    "level": "B1",
+    "sk": "Mestská časť nám budúci mesiac opraví chodník na ulici.",
+    "es_mx": "La alcaldía va a arreglar la banqueta de nuestra calle el próximo mes.",
+    "es_es": "La alcaldía va a arreglar la acera de nuestra calle el próximo mes.",
+    "tokens_es": [
+      "La",
+      "alcaldía",
+      "va",
+      "a",
+      "arreglar",
+      "la",
+      "acera",
+      "de",
+      "nuestra",
+      "calle",
+      "el",
+      "próximo",
+      "mes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "alcaldía",
+        "answer_es": "alcaldía",
+        "lemma_mx": "alcaldía",
+        "hint": "úrad mestskej časti",
+        "distractors_es": [
+          "glorieta",
+          "esquina",
+          "parada"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1085",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Gentrifikácia zvyšuje nájomné v štvrtiach ako Roma a Condesa.",
+    "es_mx": "La gentrificación está subiendo las rentas en colonias como la Roma y la Condesa.",
+    "es_es": "La gentrificación está subiendo los alquileres en colonias como la Roma y la Condesa.",
+    "tokens_es": [
+      "La",
+      "gentrificación",
+      "está",
+      "subiendo",
+      "los",
+      "alquileres",
+      "en",
+      "colonias",
+      "como",
+      "la",
+      "Roma",
+      "y",
+      "la",
+      "Condesa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "subiendo",
+        "answer_es": "subiendo",
+        "lemma_mx": "subir",
+        "hint": "subir · gerundio",
+        "distractors_es": [
+          "sube",
+          "subió",
+          "subía"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 8,
+        "answer_mx": "como",
+        "answer_es": "como",
+        "lemma_mx": "como",
+        "hint": "ako",
+        "distractors_es": [
+          "donde",
+          "cuando",
+          "mientras"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "rentas → alquileres (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s141",
+    "file": "city.json",
+    "level": "A1",
+    "sk": "Autobus chodí každých pätnásť minút.",
+    "es_mx": "El camión pasa cada quince minutos.",
+    "es_es": "El autobús pasa cada quince minutos.",
+    "tokens_es": [
+      "El",
+      "autobús",
+      "pasa",
+      "cada",
+      "quince",
+      "minutos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "pasa",
+        "answer_es": "pasa",
+        "lemma_mx": "pasar",
+        "hint": "pasar · él · presente",
+        "distractors_es": [
+          "pasan",
+          "pasas",
+          "pasó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s150",
+    "file": "city.json",
+    "level": "A1",
+    "sk": "Vieš šoférovať v Mexiko City?",
+    "es_mx": "¿Sabes manejar en la Ciudad de México?",
+    "es_es": "¿Sabes manejar en la Ciudad de México?",
+    "tokens_es": [
+      "¿",
+      "Sabes",
+      "manejar",
+      "en",
+      "la",
+      "Ciudad",
+      "de",
+      "México",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Sabes",
+        "answer_es": "Sabes",
+        "lemma_mx": "saber",
+        "hint": "saber · tú · presente",
+        "distractors_es": [
+          "Sabemos",
+          "Sé",
+          "Supiste"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejar\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1775",
+    "file": "city.json",
+    "level": "B1",
+    "sk": "Je dôležité, aby autobus prišiel načas.",
+    "es_mx": "Es importante que el camión llegue a tiempo.",
+    "es_es": "Es importante que el autobús llegue a tiempo.",
+    "tokens_es": [
+      "Es",
+      "importante",
+      "que",
+      "el",
+      "autobús",
+      "llegue",
+      "a",
+      "tiempo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "llegue",
+        "answer_es": "llegue",
+        "lemma_mx": "llegar",
+        "hint": "llegar · él · subjuntivo",
+        "distractors_es": [
+          "llega",
+          "llegará",
+          "llegó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s227",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Dnes mám na sebe modré tričko.",
+    "es_mx": "Hoy llevo una playera azul.",
+    "es_es": "Hoy llevo una camiseta azul.",
+    "tokens_es": [
+      "Hoy",
+      "llevo",
+      "una",
+      "camiseta",
+      "azul",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "llevo",
+        "answer_es": "llevo",
+        "lemma_mx": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors_es": [
+          "lleva",
+          "llevan",
+          "llevé"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s231",
+    "file": "clothes.json",
+    "level": "A2",
+    "sk": "Kúpil som si nové tenisky.",
+    "es_mx": "Compré unos tenis nuevos.",
+    "es_es": "Compré unas zapatillas nuevos.",
+    "tokens_es": [
+      "Compré",
+      "unas",
+      "zapatillas",
+      "nuevos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "unos",
+        "answer_es": "unas",
+        "lemma_mx": "un",
+        "hint": "neurčitý člen",
+        "distractors_es": [
+          "un",
+          "una",
+          "unas"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s234",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Akej farby je tvoja bunda?",
+    "es_mx": "¿De qué color es tu chamarra?",
+    "es_es": "¿De qué color es tu chaqueta?",
+    "tokens_es": [
+      "¿",
+      "De",
+      "qué",
+      "color",
+      "es",
+      "tu",
+      "chaqueta",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "es",
+        "answer_es": "es",
+        "lemma_mx": "ser",
+        "hint": "ser/estar · ella · presente",
+        "distractors_es": [
+          "está",
+          "son",
+          "eres"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s235",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Páčia sa mi tvoje nové okuliare.",
+    "es_mx": "Me gustan tus lentes nuevos.",
+    "es_es": "Me gustan tus gafas nuevos.",
+    "tokens_es": [
+      "Me",
+      "gustan",
+      "tus",
+      "gafas",
+      "nuevos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "nuevos",
+        "answer_es": "nuevos",
+        "lemma_mx": "nuevo",
+        "hint": "prídavné meno: nuevo",
+        "distractors_es": [
+          "nuevo",
+          "nueva",
+          "nuevas"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 1,
+        "answer_mx": "gustan",
+        "answer_es": "gustan",
+        "lemma_mx": "gustar",
+        "hint": "gustar",
+        "distractors_es": [
+          "gusta",
+          "gustas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s237",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Je zima, obleč si bundu.",
+    "es_mx": "Hace frío, ponte la chamarra.",
+    "es_es": "Hace frío, ponte la chaqueta.",
+    "tokens_es": [
+      "Hace",
+      "frío",
+      ",",
+      "ponte",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "frío",
+        "answer_es": "frío",
+        "lemma_mx": "frío",
+        "hint": "zima (chlad)",
+        "distractors_es": [
+          "calor",
+          "sol",
+          "viento"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s528",
+    "file": "clothes.json",
+    "level": "B1",
+    "sk": "Táto bunda mi je veľká, potrebujem o číslo menšiu.",
+    "es_mx": "Esta chamarra me queda grande; necesito una talla más chica.",
+    "es_es": "Esta chaqueta me queda grande; necesito una talla más chica.",
+    "tokens_es": [
+      "Esta",
+      "chaqueta",
+      "me",
+      "queda",
+      "grande",
+      ";",
+      "necesito",
+      "una",
+      "talla",
+      "más",
+      "chica",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Esta",
+        "answer_es": "Esta",
+        "lemma_mx": "esta",
+        "hint": "táto",
+        "distractors_es": [
+          "esas",
+          "este",
+          "estos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "necesito",
+        "answer_es": "necesito",
+        "lemma_mx": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors_es": [
+          "necesita",
+          "necesitamos",
+          "necesitaba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s531",
+    "file": "clothes.json",
+    "level": "B1",
+    "sk": "Vymenil som tenisky, lebo mi boli malé.",
+    "es_mx": "Cambié los tenis porque me quedaban chicos.",
+    "es_es": "Cambié las zapatillas porque me quedaban chicos.",
+    "tokens_es": [
+      "Cambié",
+      "las",
+      "zapatillas",
+      "porque",
+      "me",
+      "quedaban",
+      "chicos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Cambié",
+        "answer_es": "Cambié",
+        "lemma_mx": "cambiar",
+        "hint": "cambiar · yo · pretérito",
+        "distractors_es": [
+          "Cambio",
+          "Cambió",
+          "Cambiaré"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "que",
+          "cuando",
+          "pero"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s813",
+    "file": "clothes.json",
+    "level": "A2",
+    "sk": "Obliekam si bundu, lebo je zima.",
+    "es_mx": "Me pongo la chamarra porque hace frío.",
+    "es_es": "Me pongo la chaqueta porque hace frío.",
+    "tokens_es": [
+      "Me",
+      "pongo",
+      "la",
+      "chaqueta",
+      "porque",
+      "hace",
+      "frío",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "pongo",
+        "answer_es": "pongo",
+        "lemma_mx": "ponerse",
+        "hint": "ponerse · yo · presente",
+        "distractors_es": [
+          "pone",
+          "puse",
+          "ponía"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "si",
+          "que",
+          "cuando"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s818",
+    "file": "clothes.json",
+    "level": "B1",
+    "sk": "Pokazil sa mi zips na bunde.",
+    "es_mx": "Se me rompió el cierre de la chamarra.",
+    "es_es": "Se me rompió la cremallera de la chaqueta.",
+    "tokens_es": [
+      "Se",
+      "me",
+      "rompió",
+      "la",
+      "cremallera",
+      "de",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "cierre",
+        "answer_es": "cremallera",
+        "lemma_mx": "cierre",
+        "hint": "zips",
+        "distractors_es": [
+          "cielo",
+          "cine",
+          "cerro"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "cierre → cremallera (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s827",
+    "file": "clothes.json",
+    "level": "B2",
+    "sk": "Tričko som opral v horúcej vode a vyblednelo.",
+    "es_mx": "Lavé la playera con agua caliente y se destiñó.",
+    "es_es": "Lavé la camiseta con agua caliente y se destiñó.",
+    "tokens_es": [
+      "Lavé",
+      "la",
+      "camiseta",
+      "con",
+      "agua",
+      "caliente",
+      "y",
+      "se",
+      "destiñó",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Lavé",
+        "answer_es": "Lavé",
+        "lemma_mx": "lavar",
+        "hint": "lavar · yo · pretérito",
+        "distractors_es": [
+          "Lava",
+          "Lavó",
+          "Lavaba"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 7,
+        "answer_mx": "se",
+        "answer_es": "se",
+        "lemma_mx": "se",
+        "hint": "zámeno",
+        "distractors_es": [
+          "me",
+          "te",
+          "nos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1089",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Brat vždy nosí biele tenisky.",
+    "es_mx": "Mi hermano siempre lleva tenis blancos.",
+    "es_es": "Mi hermano siempre lleva zapatillas blancos.",
+    "tokens_es": [
+      "Mi",
+      "hermano",
+      "siempre",
+      "lleva",
+      "zapatillas",
+      "blancos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "blancos",
+        "answer_es": "blancos",
+        "lemma_mx": "blanco",
+        "hint": "biely",
+        "distractors_es": [
+          "roja",
+          "bonita",
+          "corta"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1102",
+    "file": "clothes.json",
+    "level": "B1",
+    "sk": "Táto bunda sa mi veľmi páči, ale nemám na ňu dosť peňazí.",
+    "es_mx": "Me encanta esta chamarra, pero no me alcanza el dinero para comprarla.",
+    "es_es": "Me encanta esta chaqueta, pero no me alcanza el dinero para comprarla.",
+    "tokens_es": [
+      "Me",
+      "encanta",
+      "esta",
+      "chaqueta",
+      ",",
+      "pero",
+      "no",
+      "me",
+      "alcanza",
+      "el",
+      "dinero",
+      "para",
+      "comprarla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "alcanza",
+        "answer_es": "alcanza",
+        "lemma_mx": "alcanzar",
+        "hint": "alcanzar · él · presente",
+        "distractors_es": [
+          "alcanzo",
+          "alcanzó",
+          "alcanzaba"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 12,
+        "answer_mx": "comprarla",
+        "answer_es": "comprarla",
+        "lemma_mx": "la",
+        "hint": "comprar + zámeno",
+        "distractors_es": [
+          "comprarlo",
+          "comprarle"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1116",
+    "file": "clothes.json",
+    "level": "B2",
+    "sk": "Vo decembrových výpredajoch som zohnal značkové tenisky za polovičnú cenu.",
+    "es_mx": "En las ofertas de diciembre conseguí unos tenis de marca a mitad de precio.",
+    "es_es": "En las ofertas de diciembre conseguí unas zapatillas de marca a mitad de precio.",
+    "tokens_es": [
+      "En",
+      "las",
+      "ofertas",
+      "de",
+      "diciembre",
+      "conseguí",
+      "unas",
+      "zapatillas",
+      "de",
+      "marca",
+      "a",
+      "mitad",
+      "de",
+      "precio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "conseguí",
+        "answer_es": "conseguí",
+        "lemma_mx": "conseguir",
+        "hint": "conseguir · yo · pretérito",
+        "distractors_es": [
+          "consigo",
+          "consiguió",
+          "conseguía"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 10,
+        "answer_mx": "a",
+        "answer_es": "a",
+        "lemma_mx": "a",
+        "hint": "predložka",
+        "distractors_es": [
+          "con",
+          "sobre",
+          "contra"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1119",
+    "file": "clothes.json",
+    "level": "B2",
+    "sk": "Tá kožená bunda je strašne drahá, ale vydrží ti celý život.",
+    "es_mx": "Esa chamarra de piel está carísima, pero te va a durar toda la vida.",
+    "es_es": "Esa chaqueta de piel está carísima, pero te va a durar toda la vida.",
+    "tokens_es": [
+      "Esa",
+      "chaqueta",
+      "de",
+      "piel",
+      "está",
+      "carísima",
+      ",",
+      "pero",
+      "te",
+      "va",
+      "a",
+      "durar",
+      "toda",
+      "la",
+      "vida",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "carísima",
+        "answer_es": "carísima",
+        "lemma_mx": "carísimo",
+        "hint": "veľmi drahý",
+        "distractors_es": [
+          "baratísima",
+          "regalada",
+          "económica"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1095",
+    "file": "clothes.json",
+    "level": "A1",
+    "sk": "Páči sa ti moje fialové tričko?",
+    "es_mx": "¿Te gusta mi playera morada?",
+    "es_es": "¿Te gusta mi camiseta morada?",
+    "tokens_es": [
+      "¿",
+      "Te",
+      "gusta",
+      "mi",
+      "camiseta",
+      "morada",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "morada",
+        "answer_es": "morada",
+        "lemma_mx": "morado",
+        "hint": "fialový",
+        "distractors_es": [
+          "morado",
+          "negros",
+          "grises"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "gusta",
+        "answer_es": "gusta",
+        "lemma_mx": "gustar",
+        "hint": "gustar",
+        "distractors_es": [
+          "gustan",
+          "gustas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s326",
+    "file": "emotions.json",
+    "level": "A2",
+    "sk": "Šéf sa na mňa nahneval.",
+    "es_mx": "Mi jefe se enojó conmigo.",
+    "es_es": "Mi jefe se enojó conmigo.",
+    "tokens_es": [
+      "Mi",
+      "jefe",
+      "se",
+      "enojó",
+      "conmigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "enojó",
+        "answer_es": "enojó",
+        "lemma_mx": "enojarse",
+        "hint": "enojarse · él · pretérito",
+        "distractors_es": [
+          "enojaron",
+          "enojaste",
+          "enoja"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s398",
+    "file": "emotions.json",
+    "level": "A2",
+    "sk": "Priateľka sa na mňa nahnevala.",
+    "es_mx": "Mi novia se enojó conmigo.",
+    "es_es": "Mi novia se enojó conmigo.",
+    "tokens_es": [
+      "Mi",
+      "novia",
+      "se",
+      "enojó",
+      "conmigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "enojó",
+        "answer_es": "enojó",
+        "lemma_mx": "enojarse",
+        "hint": "enojarse · ella · pretérito",
+        "distractors_es": [
+          "enojaron",
+          "enojaste",
+          "enoja"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1126",
+    "file": "emotions.json",
+    "level": "A1",
+    "sk": "Hneváš sa na mňa?",
+    "es_mx": "¿Estás enojado conmigo?",
+    "es_es": "¿Estás enfadado conmigo?",
+    "tokens_es": [
+      "¿",
+      "Estás",
+      "enfadado",
+      "conmigo",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "enojado",
+        "answer_es": "enfadado",
+        "lemma_mx": "enojado",
+        "hint": "nahnevaný",
+        "distractors_es": [
+          "abierto",
+          "barato",
+          "rojo"
+        ],
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "s535",
+    "file": "emotions.json",
+    "level": "B1",
+    "sk": "Nahnevala sa na mňa, lebo som zabudol na jej narodeniny.",
+    "es_mx": "Se enojó conmigo porque olvidé su cumpleaños.",
+    "es_es": "Se enojó conmigo porque olvidé su cumpleaños.",
+    "tokens_es": [
+      "Se",
+      "enojó",
+      "conmigo",
+      "porque",
+      "olvidé",
+      "su",
+      "cumpleaños",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "enojó",
+        "answer_es": "enojó",
+        "lemma_mx": "enojarse",
+        "hint": "enojarse · ella · pretérito",
+        "distractors_es": [
+          "enoja",
+          "enojé",
+          "enojará"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "que",
+          "cuando",
+          "pero"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s016",
+    "file": "family.json",
+    "level": "A2",
+    "sk": "S manželom sa rozprávame každý večer.",
+    "es_mx": "Mi esposo y yo platicamos todas las noches.",
+    "es_es": "Mi esposo y yo charlamos todas las noches.",
+    "tokens_es": [
+      "Mi",
+      "esposo",
+      "y",
+      "yo",
+      "charlamos",
+      "todas",
+      "las",
+      "noches",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "platicamos",
+        "answer_es": "charlamos",
+        "lemma_mx": "platicar",
+        "hint": "platicar · nosotros · presente",
+        "distractors_es": [
+          "charlan",
+          "charlo",
+          "platiqué"
+        ],
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "s1684",
+    "file": "family.json",
+    "level": "A2",
+    "sk": "Sestra mi požičala auto a ja som jej ho vrátil v pondelok.",
+    "es_mx": "Mi hermana me prestó su carro y se lo regresé el lunes.",
+    "es_es": "Mi hermana me prestó su coche y se lo regresé el lunes.",
+    "tokens_es": [
+      "Mi",
+      "hermana",
+      "me",
+      "prestó",
+      "su",
+      "coche",
+      "y",
+      "se",
+      "lo",
+      "regresé",
+      "el",
+      "lunes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "se",
+        "answer_es": "se",
+        "lemma_mx": "se",
+        "hint": "zámeno: jej",
+        "distractors_es": [
+          "le",
+          "la",
+          "me"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"regresé\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1629",
+    "file": "food.json",
+    "level": "A1",
+    "sk": "Nechutia nám hranolky.",
+    "es_mx": "No nos gustan las papas fritas.",
+    "es_es": "No nos gustan las patatas fritas.",
+    "tokens_es": [
+      "No",
+      "nos",
+      "gustan",
+      "las",
+      "patatas",
+      "fritas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "gustan",
+        "answer_es": "gustan",
+        "lemma_mx": "gustar",
+        "hint": "gustar",
+        "distractors_es": [
+          "gusta",
+          "gustas",
+          "gustamos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s017",
+    "file": "food.json",
+    "level": "A1",
+    "sk": "Môžete mi dať pomarančový džús, prosím?",
+    "es_mx": "¿Me da un jugo de naranja, por favor?",
+    "es_es": "¿Me da un zumo de naranja, por favor?",
+    "tokens_es": [
+      "¿",
+      "Me",
+      "da",
+      "un",
+      "zumo",
+      "de",
+      "naranja",
+      ",",
+      "por",
+      "favor",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "jugo",
+        "answer_es": "zumo",
+        "lemma_mx": "jugo",
+        "hint": "džús",
+        "distractors_es": [
+          "agua",
+          "café",
+          "refresco"
+        ],
+        "changed": true
+      },
+      {
+        "tokenIndex": 5,
+        "answer_mx": "de",
+        "answer_es": "de",
+        "lemma_mx": "de",
+        "hint": "predložka",
+        "distractors_es": [
+          "sin",
+          "a",
+          "en"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s095",
+    "file": "food.json",
+    "level": "A2",
+    "sk": "Čašník priniesol účet.",
+    "es_mx": "El mesero trajo la cuenta.",
+    "es_es": "El camarero trajo la cuenta.",
+    "tokens_es": [
+      "El",
+      "camarero",
+      "trajo",
+      "la",
+      "cuenta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "trajo",
+        "answer_es": "trajo",
+        "lemma_mx": "traer",
+        "hint": "traer · él · pretérito",
+        "distractors_es": [
+          "trajeron",
+          "trajiste",
+          "trae"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1892",
+    "file": "food.json",
+    "level": "B1",
+    "sk": "Išiel som na trh kúpiť paradajky.",
+    "es_mx": "Fui al mercado para comprar jitomates.",
+    "es_es": "Fui al mercado para comprar tomates.",
+    "tokens_es": [
+      "Fui",
+      "al",
+      "mercado",
+      "para",
+      "comprar",
+      "tomates",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "para",
+        "answer_es": "para",
+        "lemma_mx": "para",
+        "hint": "por/para",
+        "distractors_es": [
+          "por",
+          "a"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1180",
+    "file": "food.json",
+    "level": "A2",
+    "sk": "Koľko si nechal čašníkovi ako prepitné?",
+    "es_mx": "¿Cuánto le dejaste de propina al mesero?",
+    "es_es": "¿Cuánto le dejaste de propina al camarero?",
+    "tokens_es": [
+      "¿",
+      "Cuánto",
+      "le",
+      "dejaste",
+      "de",
+      "propina",
+      "al",
+      "camarero",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "dejaste",
+        "answer_es": "dejaste",
+        "lemma_mx": "dejar",
+        "hint": "dejar · tú · pretérito",
+        "distractors_es": [
+          "dejas",
+          "dejó",
+          "dejabas"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "le",
+        "answer_es": "le",
+        "lemma_mx": "le",
+        "hint": "zámeno",
+        "distractors_es": [
+          "lo",
+          "les"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1617",
+    "file": "food.json",
+    "level": "A2",
+    "sk": "Ja nakrájam cibuľu a ty ošúpeš zemiaky.",
+    "es_mx": "Yo corto la cebolla y tú pelas las papas.",
+    "es_es": "Yo corto la cebolla y tú pelas las patatas.",
+    "tokens_es": [
+      "Yo",
+      "corto",
+      "la",
+      "cebolla",
+      "y",
+      "tú",
+      "pelas",
+      "las",
+      "patatas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Yo",
+        "answer_es": "Yo",
+        "lemma_mx": "yo",
+        "hint": "ja",
+        "distractors_es": [
+          "ustedes",
+          "él",
+          "tú"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 1,
+        "answer_mx": "corto",
+        "answer_es": "corto",
+        "lemma_mx": "cortar",
+        "hint": "cortar · yo · presente",
+        "distractors_es": [
+          "corté",
+          "cortaba",
+          "cortaré"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s632",
+    "file": "greetings.json",
+    "level": "B1",
+    "sk": "O chvíľu ti zavolám, teraz šoférujem.",
+    "es_mx": "Al rato te marco, ahorita estoy manejando.",
+    "es_es": "Al rato te marco, ahora estoy manejando.",
+    "tokens_es": [
+      "Al",
+      "rato",
+      "te",
+      "marco",
+      ",",
+      "ahora",
+      "estoy",
+      "manejando",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "manejando",
+        "answer_es": "manejando",
+        "lemma_mx": "manejar",
+        "hint": "manejar · gerundio",
+        "distractors_es": [
+          "manejar",
+          "manejo",
+          "manejé"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "te",
+        "answer_es": "te",
+        "lemma_mx": "te",
+        "hint": "zámeno",
+        "distractors_es": [
+          "me",
+          "se",
+          "nos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejando\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s640",
+    "file": "greetings.json",
+    "level": "B2",
+    "sk": "Nečudo, že si nedvíhal, zabudol si si mobil.",
+    "es_mx": "Con razón no contestabas, se te olvidó el celular.",
+    "es_es": "Con razón no contestabas, se te olvidó el móvil.",
+    "tokens_es": [
+      "Con",
+      "razón",
+      "no",
+      "contestabas",
+      ",",
+      "se",
+      "te",
+      "olvidó",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "contestabas",
+        "answer_es": "contestabas",
+        "lemma_mx": "contestar",
+        "hint": "contestar · tú · imperfecto",
+        "distractors_es": [
+          "contestas",
+          "contestaste",
+          "contestarás"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "te",
+        "answer_es": "te",
+        "lemma_mx": "te",
+        "hint": "zámeno",
+        "distractors_es": [
+          "me",
+          "nos",
+          "lo"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s644",
+    "file": "greetings.json",
+    "level": "B2",
+    "sk": "Poďakoval som čašníkovi za jeho milý prístup.",
+    "es_mx": "Le agradecí al mesero su amabilidad.",
+    "es_es": "Le agradecí al camarero su amabilidad.",
+    "tokens_es": [
+      "Le",
+      "agradecí",
+      "al",
+      "camarero",
+      "su",
+      "amabilidad",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "agradecí",
+        "answer_es": "agradecí",
+        "lemma_mx": "agradecer",
+        "hint": "agradecer · yo · pretérito",
+        "distractors_es": [
+          "agradece",
+          "agradeció",
+          "agradecía"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Le",
+        "answer_es": "Le",
+        "lemma_mx": "le",
+        "hint": "zámeno: mu",
+        "distractors_es": [
+          "Lo",
+          "La",
+          "Les"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1206",
+    "file": "greetings.json",
+    "level": "A2",
+    "sk": "Prepáč, že meškám, autobus stále nechodil.",
+    "es_mx": "Perdón por la tardanza, el camión no llegaba.",
+    "es_es": "Perdón por la tardanza, el autobús no llegaba.",
+    "tokens_es": [
+      "Perdón",
+      "por",
+      "la",
+      "tardanza",
+      ",",
+      "el",
+      "autobús",
+      "no",
+      "llegaba",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "llegaba",
+        "answer_es": "llegaba",
+        "lemma_mx": "llegar",
+        "hint": "llegar · él · imperfecto",
+        "distractors_es": [
+          "llega",
+          "llegó",
+          "llegaban"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1231",
+    "file": "greetings.json",
+    "level": "B2",
+    "sk": "Rád som s tebou pokecal, uvidíme, kedy si dáme kávu.",
+    "es_mx": "Fue un gusto platicar contigo, a ver cuándo nos echamos un café.",
+    "es_es": "Fue un gusto charlar contigo, a ver cuándo nos echamos un café.",
+    "tokens_es": [
+      "Fue",
+      "un",
+      "gusto",
+      "charlar",
+      "contigo",
+      ",",
+      "a",
+      "ver",
+      "cuándo",
+      "nos",
+      "echamos",
+      "un",
+      "café",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "gusto",
+        "answer_es": "gusto",
+        "lemma_mx": "gusto",
+        "hint": "potešenie",
+        "distractors_es": [
+          "permiso",
+          "viaje",
+          "provecho"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s257",
+    "file": "health.json",
+    "level": "A2",
+    "sk": "Ochorel som na chrípku.",
+    "es_mx": "Me enfermé de gripa.",
+    "es_es": "Me enfermé de gripe.",
+    "tokens_es": [
+      "Me",
+      "enfermé",
+      "de",
+      "gripe",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "enfermé",
+        "answer_es": "enfermé",
+        "lemma_mx": "enfermarse",
+        "hint": "enfermarse · yo · pretérito",
+        "distractors_es": [
+          "enfermó",
+          "enfermaron",
+          "enfermo"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s851",
+    "file": "health.json",
+    "level": "A2",
+    "sk": "Mám chrípku a nemôžem poriadne dýchať.",
+    "es_mx": "Tengo gripa y no puedo respirar bien.",
+    "es_es": "Tengo gripe y no puedo respirar bien.",
+    "tokens_es": [
+      "Tengo",
+      "gripe",
+      "y",
+      "no",
+      "puedo",
+      "respirar",
+      "bien",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "puedo",
+        "answer_es": "puedo",
+        "lemma_mx": "poder",
+        "hint": "poder · yo · presente",
+        "distractors_es": [
+          "puede",
+          "pude",
+          "podía"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s864",
+    "file": "health.json",
+    "level": "B2",
+    "sk": "Počas pandémie sme všetci nosili rúško.",
+    "es_mx": "Durante la pandemia todos usábamos cubrebocas.",
+    "es_es": "Durante la pandemia todos usábamos mascarilla.",
+    "tokens_es": [
+      "Durante",
+      "la",
+      "pandemia",
+      "todos",
+      "usábamos",
+      "mascarilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Durante",
+        "answer_es": "Durante",
+        "lemma_mx": "durante",
+        "hint": "počas",
+        "distractors_es": [
+          "con",
+          "de",
+          "en"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "usábamos",
+        "answer_es": "usábamos",
+        "lemma_mx": "usar",
+        "hint": "usar · nosotros · imperfecto",
+        "distractors_es": [
+          "usamos",
+          "usaban",
+          "usaremos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1249",
+    "file": "health.json",
+    "level": "B1",
+    "sk": "Chrípka je veľmi nákazlivá, takže radšej zostaň doma.",
+    "es_mx": "La gripa es muy contagiosa, así que mejor quédate en casa.",
+    "es_es": "La gripe es muy contagiosa, así que mejor quédate en casa.",
+    "tokens_es": [
+      "La",
+      "gripe",
+      "es",
+      "muy",
+      "contagiosa",
+      ",",
+      "así",
+      "que",
+      "mejor",
+      "quédate",
+      "en",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "contagiosa",
+        "answer_es": "contagiosa",
+        "lemma_mx": "contagioso",
+        "hint": "nákazlivý",
+        "distractors_es": [
+          "sana",
+          "barata",
+          "divertida"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1253",
+    "file": "health.json",
+    "level": "B2",
+    "sk": "Mám chronickú chorobu, takže chodím na kontroly každé tri mesiace.",
+    "es_mx": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
+    "es_es": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
+    "tokens_es": [
+      "Tengo",
+      "una",
+      "enfermedad",
+      "crónica",
+      ",",
+      "así",
+      "que",
+      "me",
+      "checo",
+      "cada",
+      "tres",
+      "meses",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "checo",
+        "answer_es": "checo",
+        "lemma_mx": "checar",
+        "hint": "checar · yo · presente",
+        "distractors_es": [
+          "checas",
+          "chequé",
+          "checábamos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 9,
+        "answer_mx": "cada",
+        "answer_es": "cada",
+        "lemma_mx": "cada",
+        "hint": "každý (cada …)",
+        "distractors_es": [
+          "nada",
+          "alguien",
+          "algo"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"checo\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1259",
+    "file": "health.json",
+    "level": "B2",
+    "sk": "V kancelárii sme sa nakazili všetci, lebo sme nenosili rúška.",
+    "es_mx": "Nos contagiamos todos en la oficina por no usar cubrebocas.",
+    "es_es": "Nos contagiamos todos en la oficina por no usar mascarilla.",
+    "tokens_es": [
+      "Nos",
+      "contagiamos",
+      "todos",
+      "en",
+      "la",
+      "oficina",
+      "por",
+      "no",
+      "usar",
+      "mascarilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer_mx": "cubrebocas",
+        "answer_es": "mascarilla",
+        "lemma_mx": "cubrebocas",
+        "hint": "rúško",
+        "distractors_es": [
+          "tirita",
+          "yeso",
+          "jarabe"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1240",
+    "file": "health.json",
+    "level": "A2",
+    "sk": "Sestrička ma zaočkovala proti chrípke.",
+    "es_mx": "La enfermera me puso la vacuna contra la gripa.",
+    "es_es": "La enfermera me puso la vacuna contra la gripe.",
+    "tokens_es": [
+      "La",
+      "enfermera",
+      "me",
+      "puso",
+      "la",
+      "vacuna",
+      "contra",
+      "la",
+      "gripe",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "vacuna",
+        "answer_es": "vacuna",
+        "lemma_mx": "vacuna",
+        "hint": "očkovanie",
+        "distractors_es": [
+          "cita",
+          "receta",
+          "herida"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "contra",
+        "answer_es": "contra",
+        "lemma_mx": "contra",
+        "hint": "proti",
+        "distractors_es": [
+          "sin",
+          "con",
+          "de"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1242",
+    "file": "health.json",
+    "level": "A2",
+    "sk": "Manžel veľa kašle, myslím, že má chrípku.",
+    "es_mx": "Mi esposo está tosiendo mucho, creo que tiene gripa.",
+    "es_es": "Mi esposo está tosiendo mucho, creo que tiene gripe.",
+    "tokens_es": [
+      "Mi",
+      "esposo",
+      "está",
+      "tosiendo",
+      "mucho",
+      ",",
+      "creo",
+      "que",
+      "tiene",
+      "gripe",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "tosiendo",
+        "answer_es": "tosiendo",
+        "lemma_mx": "toser",
+        "hint": "toser · gerundio",
+        "distractors_es": [
+          "tose",
+          "toser",
+          "tosen"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s350",
+    "file": "hobbies.json",
+    "level": "A2",
+    "sk": "Hral som tenis s bratrancom.",
+    "es_mx": "Jugué tenis con mi primo.",
+    "es_es": "Jugué zapatillas con mi primo.",
+    "tokens_es": [
+      "Jugué",
+      "zapatillas",
+      "con",
+      "mi",
+      "primo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Jugué",
+        "answer_es": "Jugué",
+        "lemma_mx": "jugar",
+        "hint": "jugar · yo · pretérito",
+        "distractors_es": [
+          "Jugó",
+          "Jugaron",
+          "Juego"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "con",
+        "answer_es": "con",
+        "lemma_mx": "con",
+        "hint": "s, so",
+        "distractors_es": [
+          "en",
+          "a",
+          "para"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s356",
+    "file": "hobbies.json",
+    "level": "A2",
+    "sk": "Deti plávajú v bazéne.",
+    "es_mx": "Mis hijos están nadando en la alberca.",
+    "es_es": "Mis hijos están nadando en la piscina.",
+    "tokens_es": [
+      "Mis",
+      "hijos",
+      "están",
+      "nadando",
+      "en",
+      "la",
+      "piscina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "nadando",
+        "answer_es": "nadando",
+        "lemma_mx": "nadar",
+        "hint": "nadar · gerundio",
+        "distractors_es": [
+          "nada",
+          "nadar",
+          "nadan"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s355",
+    "file": "hobbies.json",
+    "level": "A1",
+    "sk": "V aute počúvame mexickú hudbu.",
+    "es_mx": "Escuchamos música mexicana en el carro.",
+    "es_es": "Escuchamos música mexicana en el coche.",
+    "tokens_es": [
+      "Escuchamos",
+      "música",
+      "mexicana",
+      "en",
+      "el",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Escuchamos",
+        "answer_es": "Escuchamos",
+        "lemma_mx": "escuchar",
+        "hint": "escuchar · nosotros · presente",
+        "distractors_es": [
+          "Escucho",
+          "Escucha",
+          "Escuchas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1269",
+    "file": "hobbies.json",
+    "level": "A2",
+    "sk": "Minulý rok som sa naučil plávať na verejnom kúpalisku.",
+    "es_mx": "El año pasado aprendí a nadar en una alberca pública.",
+    "es_es": "El año pasado aprendí a nadar en una piscina pública.",
+    "tokens_es": [
+      "El",
+      "año",
+      "pasado",
+      "aprendí",
+      "a",
+      "nadar",
+      "en",
+      "una",
+      "piscina",
+      "pública",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "aprendí",
+        "answer_es": "aprendí",
+        "lemma_mx": "aprender",
+        "hint": "aprender · yo · pretérito",
+        "distractors_es": [
+          "aprendo",
+          "aprendimos",
+          "aprendían"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1276",
+    "file": "hobbies.json",
+    "level": "B1",
+    "sk": "Deti majú radšej spoločenské hry, lebo sa pri nich viac rozprávame.",
+    "es_mx": "Mis hijos prefieren los juegos de mesa porque así platicamos más.",
+    "es_es": "Mis hijos prefieren los juegos de mesa porque así charlamos más.",
+    "tokens_es": [
+      "Mis",
+      "hijos",
+      "prefieren",
+      "los",
+      "juegos",
+      "de",
+      "mesa",
+      "porque",
+      "así",
+      "charlamos",
+      "más",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "prefieren",
+        "answer_es": "prefieren",
+        "lemma_mx": "preferir",
+        "hint": "preferir · ellos · presente",
+        "distractors_es": [
+          "prefirieron",
+          "prefiero",
+          "preferiremos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 7,
+        "answer_mx": "porque",
+        "answer_es": "porque",
+        "lemma_mx": "porque",
+        "hint": "pretože",
+        "distractors_es": [
+          "aunque",
+          "pero",
+          "sino"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1642",
+    "file": "home.json",
+    "level": "A1",
+    "sk": "Moja spálňa sa mi páči.",
+    "es_mx": "Me gusta mi recámara.",
+    "es_es": "Me gusta mi dormitorio.",
+    "tokens_es": [
+      "Me",
+      "gusta",
+      "mi",
+      "dormitorio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "gusta",
+        "answer_es": "gusta",
+        "lemma_mx": "gustar",
+        "hint": "gustar",
+        "distractors_es": [
+          "gustan",
+          "gustas",
+          "gusto"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "recámara → dormitorio (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1660",
+    "file": "home.json",
+    "level": "A1",
+    "sk": "V mojom byte sú dve spálne.",
+    "es_mx": "En mi departamento hay dos recámaras.",
+    "es_es": "En mi piso hay dos dormitorios.",
+    "tokens_es": [
+      "En",
+      "mi",
+      "piso",
+      "hay",
+      "dos",
+      "dormitorios",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "hay",
+        "answer_es": "hay",
+        "lemma_mx": "hay",
+        "hint": "hay/estar",
+        "distractors_es": [
+          "está",
+          "están",
+          "es"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s025",
+    "file": "home.json",
+    "level": "A1",
+    "sk": "Bývam v malom byte.",
+    "es_mx": "Vivo en un departamento pequeño.",
+    "es_es": "Vivo en un piso pequeño.",
+    "tokens_es": [
+      "Vivo",
+      "en",
+      "un",
+      "piso",
+      "pequeño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Vivo",
+        "answer_es": "Vivo",
+        "lemma_mx": "vivir",
+        "hint": "vivir · yo · presente",
+        "distractors_es": [
+          "Vive",
+          "Vives",
+          "Viví"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 1,
+        "answer_mx": "en",
+        "answer_es": "en",
+        "lemma_mx": "en",
+        "hint": "predložka",
+        "distractors_es": [
+          "a",
+          "de",
+          "hasta"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s112",
+    "file": "home.json",
+    "level": "A1",
+    "sk": "Bývame v byte s dvoma spálňami.",
+    "es_mx": "Vivimos en un departamento de dos recámaras.",
+    "es_es": "Vivimos en un piso de dos dormitorios.",
+    "tokens_es": [
+      "Vivimos",
+      "en",
+      "un",
+      "piso",
+      "de",
+      "dos",
+      "dormitorios",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Vivimos",
+        "answer_es": "Vivimos",
+        "lemma_mx": "vivir",
+        "hint": "vivir · nosotros · presente",
+        "distractors_es": [
+          "Vivo",
+          "Vive",
+          "Vives"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1727",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "Mali by ste si dnes upratať spálňu.",
+    "es_mx": "Ustedes deben limpiar su recámara hoy.",
+    "es_es": "Ustedes deben limpiar su dormitorio hoy.",
+    "tokens_es": [
+      "Ustedes",
+      "deben",
+      "limpiar",
+      "su",
+      "dormitorio",
+      "hoy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "deben",
+        "answer_es": "deben",
+        "lemma_mx": "deber",
+        "hint": "mal by",
+        "distractors_es": [
+          "pueden",
+          "tienen",
+          "debemos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "recámara → dormitorio (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1752",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "Zatvorte dvere, prosím, je zima.",
+    "es_mx": "Cierre la puerta, por favor, hace frío.",
+    "es_es": "Cremallera la puerta, por favor, hace frío.",
+    "tokens_es": [
+      "Cremallera",
+      "la",
+      "puerta",
+      ",",
+      "por",
+      "favor",
+      ",",
+      "hace",
+      "frío",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Cierre",
+        "answer_es": "Cremallera",
+        "lemma_mx": "cerrar",
+        "hint": "cerrar · usted · imperativo",
+        "distractors_es": [
+          "Cierra",
+          "Cierren",
+          "Cierro"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "Cierre → cremallera (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s117",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "Nájom každý rok stúpa.",
+    "es_mx": "La renta sube cada año.",
+    "es_es": "El alquiler sube cada año.",
+    "tokens_es": [
+      "El",
+      "alquiler",
+      "sube",
+      "cada",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "sube",
+        "answer_es": "sube",
+        "lemma_mx": "subir",
+        "hint": "subir · ella · presente",
+        "distractors_es": [
+          "suben",
+          "subes",
+          "subió"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "cada",
+        "answer_es": "cada",
+        "lemma_mx": "cada",
+        "hint": "každý (cada …)",
+        "distractors_es": [
+          "nada",
+          "alguien",
+          "algo"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s487",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Presťahujeme sa do väčšieho bytu.",
+    "es_mx": "Nos mudaremos a un departamento más grande.",
+    "es_es": "Nos mudaremos a un piso más grande.",
+    "tokens_es": [
+      "Nos",
+      "mudaremos",
+      "a",
+      "un",
+      "piso",
+      "más",
+      "grande",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "mudaremos",
+        "answer_es": "mudaremos",
+        "lemma_mx": "mudarse",
+        "hint": "mudarse · nosotros · futuro",
+        "distractors_es": [
+          "mudaré",
+          "mudará",
+          "mudamos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "a",
+        "answer_es": "a",
+        "lemma_mx": "a",
+        "hint": "predložka",
+        "distractors_es": [
+          "en",
+          "de",
+          "por"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s490",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Inštalatér príde zajtra ráno.",
+    "es_mx": "El plomero vendrá mañana en la mañana.",
+    "es_es": "El fontanero vendrá mañana en la mañana.",
+    "tokens_es": [
+      "El",
+      "fontanero",
+      "vendrá",
+      "mañana",
+      "en",
+      "la",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "vendrá",
+        "answer_es": "vendrá",
+        "lemma_mx": "venir",
+        "hint": "venir · él · futuro",
+        "distractors_es": [
+          "vendrán",
+          "vendrás",
+          "viene"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s561",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Majiteľ bytu nám zvýši nájomné.",
+    "es_mx": "El dueño del departamento nos va a subir la renta.",
+    "es_es": "El dueño del piso nos va a subir el alquiler.",
+    "tokens_es": [
+      "El",
+      "dueño",
+      "del",
+      "piso",
+      "nos",
+      "va",
+      "a",
+      "subir",
+      "el",
+      "alquiler",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer_mx": "renta",
+        "answer_es": "alquiler",
+        "lemma_mx": "renta",
+        "hint": "nájomné",
+        "distractors_es": [
+          "recibo",
+          "sueldo",
+          "dinero"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s413",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "Predtým sme bývali v malom byte.",
+    "es_mx": "Antes vivíamos en un departamento pequeño.",
+    "es_es": "Antes vivíamos en un piso pequeño.",
+    "tokens_es": [
+      "Antes",
+      "vivíamos",
+      "en",
+      "un",
+      "piso",
+      "pequeño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "vivíamos",
+        "answer_es": "vivíamos",
+        "lemma_mx": "vivir",
+        "hint": "vivir · nosotros · imperfecto",
+        "distractors_es": [
+          "vivía",
+          "vivimos",
+          "vivías"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s414",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "Byt bol starý, ale veľmi pekný.",
+    "es_mx": "El departamento era viejo, pero muy bonito.",
+    "es_es": "El piso era viejo, pero muy bonito.",
+    "tokens_es": [
+      "El",
+      "piso",
+      "era",
+      "viejo",
+      ",",
+      "pero",
+      "muy",
+      "bonito",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "era",
+        "answer_es": "era",
+        "lemma_mx": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors_es": [
+          "eran",
+          "eras",
+          "fue"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 5,
+        "answer_mx": "pero",
+        "answer_es": "pero",
+        "lemma_mx": "pero",
+        "hint": "ale",
+        "distractors_es": [
+          "si",
+          "que",
+          "cuando"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s707",
+    "file": "home.json",
+    "level": "A2",
+    "sk": "V kúpeľni praskla žiarovka.",
+    "es_mx": "Se fundió el foco del baño.",
+    "es_es": "Se fundió la bombilla del baño.",
+    "tokens_es": [
+      "Se",
+      "fundió",
+      "la",
+      "bombilla",
+      "del",
+      "baño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "foco",
+        "answer_es": "bombilla",
+        "lemma_mx": "foco",
+        "hint": "žiarovka",
+        "distractors_es": [
+          "fuego",
+          "foto",
+          "faro"
+        ],
+        "changed": true
+      }
+    ],
+    "manual": [
+      "foco → bombilla (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s712",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Auto som nechal v garáži.",
+    "es_mx": "Dejé el carro en la cochera.",
+    "es_es": "Dejé el coche en la cochera.",
+    "tokens_es": [
+      "Dejé",
+      "el",
+      "coche",
+      "en",
+      "la",
+      "cochera",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Dejé",
+        "answer_es": "Dejé",
+        "lemma_mx": "dejar",
+        "hint": "dejar · yo · pretérito",
+        "distractors_es": [
+          "Dejó",
+          "Dejo",
+          "Dejaba"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "en",
+        "answer_es": "en",
+        "lemma_mx": "en",
+        "hint": "predložka",
+        "distractors_es": [
+          "de",
+          "sin",
+          "contra"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s714",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Nestúpaj tam, práve som vytrel.",
+    "es_mx": "No pises, acabo de trapear.",
+    "es_es": "No pises, acabo de trapear.",
+    "tokens_es": [
+      "No",
+      "pises",
+      ",",
+      "acabo",
+      "de",
+      "trapear",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "acabo",
+        "answer_es": "acabo",
+        "lemma_mx": "acabar",
+        "hint": "acabar · yo · presente",
+        "distractors_es": [
+          "acaba",
+          "acabé",
+          "acababa"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "de",
+        "answer_es": "de",
+        "lemma_mx": "de",
+        "hint": "predložka",
+        "distractors_es": [
+          "a",
+          "en",
+          "por"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"trapear\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s715",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Pri prenájme bytu od nás chceli ručiteľa.",
+    "es_mx": "Para rentar el departamento nos pidieron un aval.",
+    "es_es": "Para alquilar el piso nos pidieron un aval.",
+    "tokens_es": [
+      "Para",
+      "alquilar",
+      "el",
+      "piso",
+      "nos",
+      "pidieron",
+      "un",
+      "aval",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "aval",
+        "answer_es": "aval",
+        "lemma_mx": "aval",
+        "hint": "ručiteľ",
+        "distractors_es": [
+          "aviso",
+          "anuncio",
+          "dueño"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s719",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Prenajali sme si zariadený byt blízko centra.",
+    "es_mx": "Rentamos un departamento amueblado cerca del centro.",
+    "es_es": "Rentamos un piso amueblado cerca del centro.",
+    "tokens_es": [
+      "Rentamos",
+      "un",
+      "piso",
+      "amueblado",
+      "cerca",
+      "del",
+      "centro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "amueblado",
+        "answer_es": "amueblado",
+        "lemma_mx": "amueblado",
+        "hint": "zariadený",
+        "distractors_es": [
+          "amueblada",
+          "amarillo",
+          "alumbrado"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1302",
+    "file": "home.json",
+    "level": "B1",
+    "sk": "Zapni ohrievač vody pol hodiny predtým, ako sa pôjdeš osprchovať.",
+    "es_mx": "Prende el calentador media hora antes de bañarte.",
+    "es_es": "Prende el calentador media hora antes de bañarte.",
+    "tokens_es": [
+      "Prende",
+      "el",
+      "calentador",
+      "media",
+      "hora",
+      "antes",
+      "de",
+      "bañarte",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "calentador",
+        "answer_es": "calentador",
+        "lemma_mx": "calentador",
+        "hint": "ohrievač vody",
+        "distractors_es": [
+          "tinaco",
+          "trapeador",
+          "fraccionamiento"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"prende\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1303",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Zase nám zvýšili nájom a už na to nemáme.",
+    "es_mx": "Nos subieron la renta otra vez y ya no nos alcanza.",
+    "es_es": "Nos subieron el alquiler otra vez y ya no nos alcanza.",
+    "tokens_es": [
+      "Nos",
+      "subieron",
+      "el",
+      "alquiler",
+      "otra",
+      "vez",
+      "y",
+      "ya",
+      "no",
+      "nos",
+      "alcanza",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "subieron",
+        "answer_es": "subieron",
+        "lemma_mx": "subir",
+        "hint": "subir · ellos · pretérito",
+        "distractors_es": [
+          "suben",
+          "subían",
+          "subirán"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1308",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Aby sme ušetrili elektrinu, vymenili sme všetky žiarovky za úsporné.",
+    "es_mx": "Para ahorrar luz, cambiamos todos los focos por unos de bajo consumo.",
+    "es_es": "Para ahorrar luz, cambiamos todos las bombillas por unos de bajo consumo.",
+    "tokens_es": [
+      "Para",
+      "ahorrar",
+      "luz",
+      ",",
+      "cambiamos",
+      "todos",
+      "las",
+      "bombillas",
+      "por",
+      "unos",
+      "de",
+      "bajo",
+      "consumo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "cambiamos",
+        "answer_es": "cambiamos",
+        "lemma_mx": "cambiar",
+        "hint": "cambiar · nosotros · pretérito",
+        "distractors_es": [
+          "cambio",
+          "cambiaron",
+          "cambiábamos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 8,
+        "answer_mx": "por",
+        "answer_es": "por",
+        "lemma_mx": "por",
+        "hint": "predložka",
+        "distractors_es": [
+          "para",
+          "sobre",
+          "contra"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "focos → bombillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1310",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Hoci je byt zariadený, prinesieme si vlastnú posteľ.",
+    "es_mx": "Aunque el departamento está amueblado, traeremos nuestra propia cama.",
+    "es_es": "Aunque el piso está amueblado, traeremos nuestra propia cama.",
+    "tokens_es": [
+      "Aunque",
+      "el",
+      "piso",
+      "está",
+      "amueblado",
+      ",",
+      "traeremos",
+      "nuestra",
+      "propia",
+      "cama",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Aunque",
+        "answer_es": "Aunque",
+        "lemma_mx": "aunque",
+        "hint": "hoci",
+        "distractors_es": [
+          "porque",
+          "si",
+          "que"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "traeremos",
+        "answer_es": "traeremos",
+        "lemma_mx": "traer",
+        "hint": "traer · nosotros · futuro",
+        "distractors_es": [
+          "traemos",
+          "trajeron",
+          "traíamos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s128",
+    "file": "home.json",
+    "level": "A1",
+    "sk": "Hľadáme byt blízko metra.",
+    "es_mx": "Estamos buscando un departamento cerca del metro.",
+    "es_es": "Estamos buscando un piso cerca del metro.",
+    "tokens_es": [
+      "Estamos",
+      "buscando",
+      "un",
+      "piso",
+      "cerca",
+      "del",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "buscando",
+        "answer_es": "buscando",
+        "lemma_mx": "buscar",
+        "hint": "buscar · gerundio",
+        "distractors_es": [
+          "busca",
+          "buscar",
+          "buscan"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1813",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Vo väčšom byte by sme mali viac miesta.",
+    "es_mx": "Nosotros tendríamos más espacio en un departamento más grande.",
+    "es_es": "Nosotros tendríamos más espacio en un piso más grande.",
+    "tokens_es": [
+      "Nosotros",
+      "tendríamos",
+      "más",
+      "espacio",
+      "en",
+      "un",
+      "piso",
+      "más",
+      "grande",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "tendríamos",
+        "answer_es": "tendríamos",
+        "lemma_mx": "tener",
+        "hint": "tener · nosotros · condicional",
+        "distractors_es": [
+          "tendremos",
+          "teníamos",
+          "tenemos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1966",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Prenajímajú sa byty blízko metra.",
+    "es_mx": "Se rentan departamentos cerca del metro.",
+    "es_es": "Se rentan pisos cerca del metro.",
+    "tokens_es": [
+      "Se",
+      "rentan",
+      "pisos",
+      "cerca",
+      "del",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "rentan",
+        "answer_es": "rentan",
+        "lemma_mx": "rentar",
+        "hint": "rentar",
+        "distractors_es": [
+          "alquiler",
+          "rentaban",
+          "rentarán"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"rentan\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s900",
+    "file": "nature.json",
+    "level": "B2",
+    "sk": "Chceme udržateľnejšiu ekonomiku.",
+    "es_mx": "Queremos una economía más sustentable.",
+    "es_es": "Queremos una economía más sostenible.",
+    "tokens_es": [
+      "Queremos",
+      "una",
+      "economía",
+      "más",
+      "sostenible",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "sustentable",
+        "answer_es": "sostenible",
+        "lemma_mx": "sustentable",
+        "hint": "udržateľný",
+        "distractors_es": [
+          "sostenido",
+          "sustantivo",
+          "soportable"
+        ],
+        "changed": true
+      }
+    ]
+  },
+  {
+    "id": "s1327",
+    "file": "nature.json",
+    "level": "A2",
+    "sk": "Vlny boli veľmi silné, tak sme sa vrátili do hotela.",
+    "es_mx": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+    "es_es": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+    "tokens_es": [
+      "Las",
+      "olas",
+      "estaban",
+      "muy",
+      "fuertes",
+      ",",
+      "así",
+      "que",
+      "regresamos",
+      "al",
+      "hotel",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "regresamos",
+        "answer_es": "regresamos",
+        "lemma_mx": "regresar",
+        "hint": "regresar · nosotros · pretérito",
+        "distractors_es": [
+          "regreso",
+          "regresaron",
+          "regresábamos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"regresamos\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1807",
+    "file": "nature.json",
+    "level": "B1",
+    "sk": "Pri takejto zime by som do lesa bez bundy nevyšiel.",
+    "es_mx": "Con este frío, yo no saldría al bosque sin chamarra.",
+    "es_es": "Con este frío, yo no saldría al bosque sin chaqueta.",
+    "tokens_es": [
+      "Con",
+      "este",
+      "frío",
+      ",",
+      "yo",
+      "no",
+      "saldría",
+      "al",
+      "bosque",
+      "sin",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "saldría",
+        "answer_es": "saldría",
+        "lemma_mx": "salir",
+        "hint": "salir · yo · condicional",
+        "distractors_es": [
+          "saldré",
+          "salía",
+          "salgo"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 9,
+        "answer_mx": "sin",
+        "answer_es": "sin",
+        "lemma_mx": "sin",
+        "hint": "bez",
+        "distractors_es": [
+          "para",
+          "con",
+          "de"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s361",
+    "file": "numbers.json",
+    "level": "A1",
+    "sk": "Môj mobil stojí päťtisíc pesos.",
+    "es_mx": "Mi celular cuesta cinco mil pesos.",
+    "es_es": "Mi móvil cuesta cinco mil pesos.",
+    "tokens_es": [
+      "Mi",
+      "móvil",
+      "cuesta",
+      "cinco",
+      "mil",
+      "pesos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "cuesta",
+        "answer_es": "cuesta",
+        "lemma_mx": "costar",
+        "hint": "costar · él · presente",
+        "distractors_es": [
+          "cuestan",
+          "cuestas",
+          "costó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s568",
+    "file": "numbers.json",
+    "level": "B1",
+    "sk": "Byt stojí dva milióny pesos.",
+    "es_mx": "El departamento cuesta dos millones de pesos.",
+    "es_es": "El piso cuesta dos millones de pesos.",
+    "tokens_es": [
+      "El",
+      "piso",
+      "cuesta",
+      "dos",
+      "millones",
+      "de",
+      "pesos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "millones",
+        "answer_es": "millones",
+        "lemma_mx": "millón",
+        "hint": "milióny",
+        "distractors_es": [
+          "millón",
+          "mil",
+          "miles"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1363",
+    "file": "numbers.json",
+    "level": "A2",
+    "sk": "Autobus chodil každých dvadsať minút.",
+    "es_mx": "El camión pasaba cada veinte minutos.",
+    "es_es": "El autobús pasaba cada veinte minutos.",
+    "tokens_es": [
+      "El",
+      "autobús",
+      "pasaba",
+      "cada",
+      "veinte",
+      "minutos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "pasaba",
+        "answer_es": "pasaba",
+        "lemma_mx": "pasar",
+        "hint": "pasar · él · imperfecto",
+        "distractors_es": [
+          "pasa",
+          "pasó",
+          "pasarán"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "cada",
+        "answer_es": "cada",
+        "lemma_mx": "cada",
+        "hint": "každý (cada …)",
+        "distractors_es": [
+          "alguien",
+          "algo",
+          "todo"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1368",
+    "file": "numbers.json",
+    "level": "B1",
+    "sk": "Takmer tridsať percent výplaty mi ide na nájom.",
+    "es_mx": "Casi el treinta por ciento de mi sueldo se va en la renta.",
+    "es_es": "Casi el treinta por ciento de mi sueldo se va en el alquiler.",
+    "tokens_es": [
+      "Casi",
+      "el",
+      "treinta",
+      "por",
+      "ciento",
+      "de",
+      "mi",
+      "sueldo",
+      "se",
+      "va",
+      "en",
+      "el",
+      "alquiler",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "treinta",
+        "answer_es": "treinta",
+        "lemma_mx": "treinta",
+        "hint": "tridsať",
+        "distractors_es": [
+          "trece",
+          "tres",
+          "trescientos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1372",
+    "file": "numbers.json",
+    "level": "B1",
+    "sk": "V Mexiku majú čísla mobilov desať číslic.",
+    "es_mx": "En México, los números de celular tienen diez dígitos.",
+    "es_es": "En México, los números de móvil tienen diez dígitos.",
+    "tokens_es": [
+      "En",
+      "México",
+      ",",
+      "los",
+      "números",
+      "de",
+      "móvil",
+      "tienen",
+      "diez",
+      "dígitos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "tienen",
+        "answer_es": "tienen",
+        "lemma_mx": "tener",
+        "hint": "tener · ellos · presente",
+        "distractors_es": [
+          "tiene",
+          "tuvieron",
+          "tenían"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1375",
+    "file": "numbers.json",
+    "level": "B1",
+    "sk": "Tento rok si mením mobil už tretíkrát.",
+    "es_mx": "Es la tercera vez que cambio de celular este año.",
+    "es_es": "Es la tercera vez que cambio de móvil este año.",
+    "tokens_es": [
+      "Es",
+      "la",
+      "tercera",
+      "vez",
+      "que",
+      "cambio",
+      "de",
+      "móvil",
+      "este",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "tercera",
+        "answer_es": "tercera",
+        "lemma_mx": "tercero",
+        "hint": "tretí",
+        "distractors_es": [
+          "primera",
+          "segunda",
+          "última"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1393",
+    "file": "school.json",
+    "level": "A1",
+    "sk": "Potrebujem pero a zošit.",
+    "es_mx": "Necesito una pluma y un cuaderno.",
+    "es_es": "Necesito un bolígrafo y un cuaderno.",
+    "tokens_es": [
+      "Necesito",
+      "un",
+      "bolígrafo",
+      "y",
+      "un",
+      "cuaderno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "un",
+        "answer_es": "un",
+        "lemma_mx": "el",
+        "hint": "člen",
+        "distractors_es": [
+          "una",
+          "la",
+          "los"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "pluma → bolígrafo (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1410",
+    "file": "school.json",
+    "level": "B2",
+    "sk": "Hoci som mal štipendium, sotva mi vystačilo na nájom.",
+    "es_mx": "Aunque tenía beca, apenas me alcanzaba para la renta.",
+    "es_es": "Aunque tenía beca, apenas me alcanzaba para el alquiler.",
+    "tokens_es": [
+      "Aunque",
+      "tenía",
+      "beca",
+      ",",
+      "apenas",
+      "me",
+      "alcanzaba",
+      "para",
+      "el",
+      "alquiler",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "alcanzaba",
+        "answer_es": "alcanzaba",
+        "lemma_mx": "alcanzar",
+        "hint": "alcanzar · él · imperfecto",
+        "distractors_es": [
+          "alcanzábamos",
+          "alcanza",
+          "alcanzo"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 7,
+        "answer_mx": "para",
+        "answer_es": "para",
+        "lemma_mx": "para",
+        "hint": "por/para",
+        "distractors_es": [
+          "por",
+          "de",
+          "sin"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s208",
+    "file": "shopping.json",
+    "level": "A1",
+    "sk": "Beriem si túto bundu.",
+    "es_mx": "Me llevo esta chamarra.",
+    "es_es": "Me llevo esta chaqueta.",
+    "tokens_es": [
+      "Me",
+      "llevo",
+      "esta",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "llevo",
+        "answer_es": "llevo",
+        "lemma_mx": "llevar",
+        "hint": "llevar · yo · presente",
+        "distractors_es": [
+          "lleva",
+          "llevan",
+          "llevé"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1669",
+    "file": "shopping.json",
+    "level": "A2",
+    "sk": "Tá bunda je veľmi pekná, kúpim si ju.",
+    "es_mx": "Esa chamarra es muy bonita; la voy a comprar.",
+    "es_es": "Esa chaqueta es muy bonita; la voy a comprar.",
+    "tokens_es": [
+      "Esa",
+      "chaqueta",
+      "es",
+      "muy",
+      "bonita",
+      ";",
+      "la",
+      "voy",
+      "a",
+      "comprar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Esa",
+        "answer_es": "Esa",
+        "lemma_mx": "esa",
+        "hint": "tá",
+        "distractors_es": [
+          "estas",
+          "ese",
+          "esos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "la",
+        "answer_es": "la",
+        "lemma_mx": "la",
+        "hint": "zámeno: ju",
+        "distractors_es": [
+          "lo",
+          "le",
+          "las"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1675",
+    "file": "shopping.json",
+    "level": "A2",
+    "sk": "Kde si kúpil tie okuliare? — Kúpil som ich v centre.",
+    "es_mx": "¿Dónde compraste esos lentes? Los compré en el centro.",
+    "es_es": "¿Dónde compraste esos gafas? Los compré en el centro.",
+    "tokens_es": [
+      "¿",
+      "Dónde",
+      "compraste",
+      "esos",
+      "gafas",
+      "?",
+      "Los",
+      "compré",
+      "en",
+      "el",
+      "centro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "Los",
+        "answer_es": "Los",
+        "lemma_mx": "los",
+        "hint": "zámeno: ich",
+        "distractors_es": [
+          "Las",
+          "Lo",
+          "Les"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s804",
+    "file": "shopping.json",
+    "level": "B2",
+    "sk": "Auto sme kúpili na splátky, s akontáciou dvadsať percent.",
+    "es_mx": "Compramos el carro a plazos, con un enganche del veinte por ciento.",
+    "es_es": "Compramos el coche a plazos, con un enganche del veinte por ciento.",
+    "tokens_es": [
+      "Compramos",
+      "el",
+      "coche",
+      "a",
+      "plazos",
+      ",",
+      "con",
+      "un",
+      "enganche",
+      "del",
+      "veinte",
+      "por",
+      "ciento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "con",
+        "answer_es": "con",
+        "lemma_mx": "con",
+        "hint": "s, so",
+        "distractors_es": [
+          "de",
+          "en",
+          "a"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 8,
+        "answer_mx": "enganche",
+        "answer_es": "enganche",
+        "lemma_mx": "enganche",
+        "hint": "akontácia",
+        "distractors_es": [
+          "enchufe",
+          "engaño",
+          "anticipo"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s223",
+    "file": "shopping.json",
+    "level": "A2",
+    "sk": "Predal som svoje staré auto.",
+    "es_mx": "Vendí mi carro viejo.",
+    "es_es": "Vendí mi coche viejo.",
+    "tokens_es": [
+      "Vendí",
+      "mi",
+      "coche",
+      "viejo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Vendí",
+        "answer_es": "Vendí",
+        "lemma_mx": "vender",
+        "hint": "vender · yo · pretérito",
+        "distractors_es": [
+          "Vendió",
+          "Vendieron",
+          "Vendo"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s441",
+    "file": "shopping.json",
+    "level": "A2",
+    "sk": "Zajtra kúpim lístky.",
+    "es_mx": "Mañana compraré los boletos.",
+    "es_es": "Mañana compraré los billetes.",
+    "tokens_es": [
+      "Mañana",
+      "compraré",
+      "los",
+      "billetes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "compraré",
+        "answer_es": "compraré",
+        "lemma_mx": "comprar",
+        "hint": "comprar · yo · futuro",
+        "distractors_es": [
+          "comprará",
+          "comprarán",
+          "compro"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s798",
+    "file": "shopping.json",
+    "level": "A2",
+    "sk": "Koľko vám dám za tie dve tričká?",
+    "es_mx": "¿Cuánto me cobra por las dos playeras?",
+    "es_es": "¿Cuánto me cobra por las dos camisetas?",
+    "tokens_es": [
+      "¿",
+      "Cuánto",
+      "me",
+      "cobra",
+      "por",
+      "las",
+      "dos",
+      "camisetas",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "cobra",
+        "answer_es": "cobra",
+        "lemma_mx": "cobrar",
+        "hint": "cobrar · usted · presente",
+        "distractors_es": [
+          "cobras",
+          "cobran",
+          "cobró"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1438",
+    "file": "shopping.json",
+    "level": "B1",
+    "sk": "Manžel vrátil bundu, lebo mu bola malá.",
+    "es_mx": "Mi esposo devolvió la chamarra porque le quedaba chica.",
+    "es_es": "Mi esposo devolvió la chaqueta porque le quedaba chica.",
+    "tokens_es": [
+      "Mi",
+      "esposo",
+      "devolvió",
+      "la",
+      "chaqueta",
+      "porque",
+      "le",
+      "quedaba",
+      "chica",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "devolvió",
+        "answer_es": "devolvió",
+        "lemma_mx": "devolver",
+        "hint": "devolver · él · pretérito",
+        "distractors_es": [
+          "devuelve",
+          "devolví",
+          "devolvían"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 6,
+        "answer_mx": "le",
+        "answer_es": "le",
+        "lemma_mx": "le",
+        "hint": "zámeno",
+        "distractors_es": [
+          "te",
+          "nos",
+          "les"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1439",
+    "file": "shopping.json",
+    "level": "B2",
+    "sk": "Počkám na výpredaje Buen Fin, lebo teraz je všetko strašne drahé.",
+    "es_mx": "Esperaré al Buen Fin, porque ahorita todo está carísimo.",
+    "es_es": "Esperaré al Buen Fin, porque ahora todo está carísimo.",
+    "tokens_es": [
+      "Esperaré",
+      "al",
+      "Buen",
+      "Fin",
+      ",",
+      "porque",
+      "ahora",
+      "todo",
+      "está",
+      "carísimo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Esperaré",
+        "answer_es": "Esperaré",
+        "lemma_mx": "esperar",
+        "hint": "esperar · yo · futuro",
+        "distractors_es": [
+          "Espero",
+          "Esperaremos",
+          "Esperaron"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 1,
+        "answer_mx": "al",
+        "answer_es": "al",
+        "lemma_mx": "a",
+        "hint": "predložka",
+        "distractors_es": [
+          "del",
+          "con",
+          "por"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1773",
+    "file": "shopping.json",
+    "level": "B1",
+    "sk": "Chcel som tú bundu, ale už ju predali.",
+    "es_mx": "Quería esa chamarra, pero ya la habían vendido.",
+    "es_es": "Quería esa chaqueta, pero ya la habían vendido.",
+    "tokens_es": [
+      "Quería",
+      "esa",
+      "chaqueta",
+      ",",
+      "pero",
+      "ya",
+      "la",
+      "habían",
+      "vendido",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "esa",
+        "answer_es": "esa",
+        "lemma_mx": "esa",
+        "hint": "tá",
+        "distractors_es": [
+          "ese",
+          "esos",
+          "esas"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 8,
+        "answer_mx": "vendido",
+        "answer_es": "vendido",
+        "lemma_mx": "vender",
+        "hint": "vender · participio",
+        "distractors_es": [
+          "vendiendo",
+          "vendió",
+          "vender"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1885",
+    "file": "shopping.json",
+    "level": "B1",
+    "sk": "Zaplatil som tisíc pesos za bundu.",
+    "es_mx": "Pagué mil pesos por la chamarra.",
+    "es_es": "Pagué mil pesos por la chaqueta.",
+    "tokens_es": [
+      "Pagué",
+      "mil",
+      "pesos",
+      "por",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "por",
+        "answer_es": "por",
+        "lemma_mx": "por",
+        "hint": "por/para",
+        "distractors_es": [
+          "para",
+          "de"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1802",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Mohol by si mi na chvíľu požičať svoj mobil?",
+    "es_mx": "¿Podrías prestarme tu celular un momento?",
+    "es_es": "¿Podrías prestarme tu móvil un momento?",
+    "tokens_es": [
+      "¿",
+      "Podrías",
+      "prestarme",
+      "tu",
+      "móvil",
+      "un",
+      "momento",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Podrías",
+        "answer_es": "Podrías",
+        "lemma_mx": "poder",
+        "hint": "poder · tú · condicional",
+        "distractors_es": [
+          "Podrás",
+          "Podías",
+          "Puedes"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1803",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Kúpil by som si nový počítač, ale je veľmi drahý.",
+    "es_mx": "Yo compraría una computadora nueva, pero está muy cara.",
+    "es_es": "Yo compraría un ordenador nueva, pero está muy cara.",
+    "tokens_es": [
+      "Yo",
+      "compraría",
+      "un",
+      "ordenador",
+      "nueva",
+      ",",
+      "pero",
+      "está",
+      "muy",
+      "cara",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "compraría",
+        "answer_es": "compraría",
+        "lemma_mx": "comprar",
+        "hint": "comprar · yo · condicional",
+        "distractors_es": [
+          "compraré",
+          "compraba",
+          "compro"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1805",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Bolo by jednoduchšie použiť aplikáciu v mobile.",
+    "es_mx": "Sería más fácil usar la aplicación del celular.",
+    "es_es": "Sería más fácil usar la aplicación del móvil.",
+    "tokens_es": [
+      "Sería",
+      "más",
+      "fácil",
+      "usar",
+      "la",
+      "aplicación",
+      "del",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Sería",
+        "answer_es": "Sería",
+        "lemma_mx": "ser",
+        "hint": "ser · él · condicional",
+        "distractors_es": [
+          "Será",
+          "Era",
+          "Es"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s451",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Počas filmu vypni mobil, prosím.",
+    "es_mx": "Apaga el celular durante la película, por favor.",
+    "es_es": "Apaga el móvil durante la película, por favor.",
+    "tokens_es": [
+      "Apaga",
+      "el",
+      "móvil",
+      "durante",
+      "la",
+      "película",
+      ",",
+      "por",
+      "favor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "celular",
+        "answer_es": "móvil",
+        "lemma_mx": "celular",
+        "hint": "mobil",
+        "distractors_es": [
+          "cargador",
+          "teclado",
+          "archivo"
+        ],
+        "changed": true
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "durante",
+        "answer_es": "durante",
+        "lemma_mx": "durante",
+        "hint": "počas",
+        "distractors_es": [
+          "con",
+          "de",
+          "en"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s971",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Odfotil som ho mobilom.",
+    "es_mx": "Le tomé una foto con la cámara del celular.",
+    "es_es": "Le tomé una foto con la cámara del móvil.",
+    "tokens_es": [
+      "Le",
+      "tomé",
+      "una",
+      "foto",
+      "con",
+      "la",
+      "cámara",
+      "del",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "tomé",
+        "answer_es": "tomé",
+        "lemma_mx": "tomar",
+        "hint": "tomar · yo · pretérito",
+        "distractors_es": [
+          "toma",
+          "tomó",
+          "tomaba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s455",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Tlačiareň je zase pokazená.",
+    "es_mx": "La impresora está descompuesta otra vez.",
+    "es_es": "La impresora está estropeada otra vez.",
+    "tokens_es": [
+      "La",
+      "impresora",
+      "está",
+      "estropeada",
+      "otra",
+      "vez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "está",
+        "answer_es": "está",
+        "lemma_mx": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors_es": [
+          "es",
+          "están",
+          "estás"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s579",
+    "file": "tech.json",
+    "level": "B1",
+    "sk": "Pokazil sa mi počítač a stratil som všetky súbory.",
+    "es_mx": "Se me descompuso la computadora y perdí todos mis archivos.",
+    "es_es": "Se me descompuso el ordenador y perdí todos mis archivos.",
+    "tokens_es": [
+      "Se",
+      "me",
+      "descompuso",
+      "el",
+      "ordenador",
+      "y",
+      "perdí",
+      "todos",
+      "mis",
+      "archivos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "perdí",
+        "answer_es": "perdí",
+        "lemma_mx": "perder",
+        "hint": "perder · yo · pretérito",
+        "distractors_es": [
+          "pierdo",
+          "perdió",
+          "perderé"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 7,
+        "answer_mx": "todos",
+        "answer_es": "todos",
+        "lemma_mx": "todo",
+        "hint": "všetky",
+        "distractors_es": [
+          "todo",
+          "toda",
+          "todas"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1450",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Potrebujem nabíjačku na mobil.",
+    "es_mx": "Necesito un cargador para mi celular.",
+    "es_es": "Necesito un cargador para mi móvil.",
+    "tokens_es": [
+      "Necesito",
+      "un",
+      "cargador",
+      "para",
+      "mi",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Necesito",
+        "answer_es": "Necesito",
+        "lemma_mx": "necesitar",
+        "hint": "necesitar · yo · presente",
+        "distractors_es": [
+          "Necesitas",
+          "Necesitamos",
+          "Necesité"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1453",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Počítač je v mojej izbe.",
+    "es_mx": "La computadora está en mi cuarto.",
+    "es_es": "El ordenador está en mi cuarto.",
+    "tokens_es": [
+      "El",
+      "ordenador",
+      "está",
+      "en",
+      "mi",
+      "cuarto",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "está",
+        "answer_es": "está",
+        "lemma_mx": "estar",
+        "hint": "ser/estar · ella · presente",
+        "distractors_es": [
+          "es",
+          "son",
+          "están"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1455",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Vždy fotím mobilom.",
+    "es_mx": "Siempre tomo fotos con el celular.",
+    "es_es": "Siempre tomo fotos con el móvil.",
+    "tokens_es": [
+      "Siempre",
+      "tomo",
+      "fotos",
+      "con",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "tomo",
+        "answer_es": "tomo",
+        "lemma_mx": "tomar",
+        "hint": "tomar · yo · presente",
+        "distractors_es": [
+          "tomas",
+          "toman",
+          "tomé"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1459",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Správy čítam v mobile.",
+    "es_mx": "Leo las noticias en el celular.",
+    "es_es": "Leo las noticias en el móvil.",
+    "tokens_es": [
+      "Leo",
+      "las",
+      "noticias",
+      "en",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Leo",
+        "answer_es": "Leo",
+        "lemma_mx": "leer",
+        "hint": "leer · yo · presente",
+        "distractors_es": [
+          "Lees",
+          "Leen",
+          "Leí"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1460",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Obrazovka môjho počítača je veľmi veľká.",
+    "es_mx": "La pantalla de mi computadora es muy grande.",
+    "es_es": "La pantalla de mi ordenador es muy grande.",
+    "tokens_es": [
+      "La",
+      "pantalla",
+      "de",
+      "mi",
+      "ordenador",
+      "es",
+      "muy",
+      "grande",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "es",
+        "answer_es": "es",
+        "lemma_mx": "ser",
+        "hint": "ser/estar · ella · presente",
+        "distractors_es": [
+          "está",
+          "son",
+          "están"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1461",
+    "file": "tech.json",
+    "level": "A1",
+    "sk": "Môžem na chvíľu použiť tvoj počítač?",
+    "es_mx": "¿Puedo usar tu computadora un momento?",
+    "es_es": "¿Puedo usar tu ordenador un momento?",
+    "tokens_es": [
+      "¿",
+      "Puedo",
+      "usar",
+      "tu",
+      "ordenador",
+      "un",
+      "momento",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Puedo",
+        "answer_es": "Puedo",
+        "lemma_mx": "poder",
+        "hint": "poder · yo · presente",
+        "distractors_es": [
+          "Puedes",
+          "Pueden",
+          "Pude"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1462",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Včera som zabudol mobil v autobuse.",
+    "es_mx": "Ayer se me olvidó el celular en el camión.",
+    "es_es": "Ayer se me olvidó el móvil en el autobús.",
+    "tokens_es": [
+      "Ayer",
+      "se",
+      "me",
+      "olvidó",
+      "el",
+      "móvil",
+      "en",
+      "el",
+      "autobús",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "olvidó",
+        "answer_es": "olvidó",
+        "lemma_mx": "olvidar",
+        "hint": "olvidar · él · pretérito",
+        "distractors_es": [
+          "olvida",
+          "olvidaron",
+          "olvidaba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1463",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Babka predtým nevedela pracovať s počítačom.",
+    "es_mx": "Antes mi abuela no sabía usar la computadora.",
+    "es_es": "Antes mi abuela no sabía usar el ordenador.",
+    "tokens_es": [
+      "Antes",
+      "mi",
+      "abuela",
+      "no",
+      "sabía",
+      "usar",
+      "el",
+      "ordenador",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "sabía",
+        "answer_es": "sabía",
+        "lemma_mx": "saber",
+        "hint": "saber · ella · imperfecto",
+        "distractors_es": [
+          "sabe",
+          "supo",
+          "sabían"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1464",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Nabíjam mobil, už je skoro vybitý.",
+    "es_mx": "Estoy cargando el celular, ya casi no tiene batería.",
+    "es_es": "Estoy cargando el móvil, ya casi no tiene batería.",
+    "tokens_es": [
+      "Estoy",
+      "cargando",
+      "el",
+      "móvil",
+      ",",
+      "ya",
+      "casi",
+      "no",
+      "tiene",
+      "batería",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer_mx": "batería",
+        "answer_es": "batería",
+        "lemma_mx": "batería",
+        "hint": "batéria",
+        "distractors_es": [
+          "pantalla",
+          "contraseña",
+          "página"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1466",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Zajtra si kúpim nový počítač.",
+    "es_mx": "Mañana compraré una computadora nueva.",
+    "es_es": "Mañana compraré un ordenador nueva.",
+    "tokens_es": [
+      "Mañana",
+      "compraré",
+      "un",
+      "ordenador",
+      "nueva",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "compraré",
+        "answer_es": "compraré",
+        "lemma_mx": "comprar",
+        "hint": "comprar · yo · futuro",
+        "distractors_es": [
+          "compro",
+          "compré",
+          "comprarás"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1470",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Vymazal som z mobilu všetky staré fotky.",
+    "es_mx": "Borré todas las fotos viejas del celular.",
+    "es_es": "Borré todas las fotos viejas del móvil.",
+    "tokens_es": [
+      "Borré",
+      "todas",
+      "las",
+      "fotos",
+      "viejas",
+      "del",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Borré",
+        "answer_es": "Borré",
+        "lemma_mx": "borrar",
+        "hint": "borrar · yo · pretérito",
+        "distractors_es": [
+          "Borro",
+          "Borró",
+          "Borraron"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1472",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Brat mi pomôže s počítačom.",
+    "es_mx": "Mi hermano me ayudará con la computadora.",
+    "es_es": "Mi hermano me ayudará con el ordenador.",
+    "tokens_es": [
+      "Mi",
+      "hermano",
+      "me",
+      "ayudará",
+      "con",
+      "el",
+      "ordenador",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "ayudará",
+        "answer_es": "ayudará",
+        "lemma_mx": "ayudar",
+        "hint": "ayudar · él · futuro",
+        "distractors_es": [
+          "ayuda",
+          "ayudó",
+          "ayudarán"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1475",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Včera som stratil mobil a našiel som ho v aute.",
+    "es_mx": "Ayer perdí mi celular y lo encontré en el carro.",
+    "es_es": "Ayer perdí mi móvil y lo encontré en el coche.",
+    "tokens_es": [
+      "Ayer",
+      "perdí",
+      "mi",
+      "móvil",
+      "y",
+      "lo",
+      "encontré",
+      "en",
+      "el",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "encontré",
+        "answer_es": "encontré",
+        "lemma_mx": "encontrar",
+        "hint": "encontrar · yo · pretérito",
+        "distractors_es": [
+          "encuentro",
+          "encontró",
+          "encontraba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1476",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Počítač mi zamrzol presne vo chvíli, keď som chcel odoslať prácu.",
+    "es_mx": "Se me trabó la computadora justo cuando iba a mandar el trabajo.",
+    "es_es": "Se me trabó el ordenador justo cuando iba a mandar el trabajo.",
+    "tokens_es": [
+      "Se",
+      "me",
+      "trabó",
+      "el",
+      "ordenador",
+      "justo",
+      "cuando",
+      "iba",
+      "a",
+      "mandar",
+      "el",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "iba",
+        "answer_es": "iba",
+        "lemma_mx": "ir",
+        "hint": "ir · yo · imperfecto",
+        "distractors_es": [
+          "voy",
+          "fui",
+          "iban"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1479",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Ľutoval som, že som si pred aktualizáciou neurobil zálohu.",
+    "es_mx": "Me arrepentí de no haber hecho un respaldo antes de la actualización.",
+    "es_es": "Me arrepentí de no haber hecho un copia de seguridad antes de la actualización.",
+    "tokens_es": [
+      "Me",
+      "arrepentí",
+      "de",
+      "no",
+      "haber",
+      "hecho",
+      "un",
+      "copia de seguridad",
+      "antes",
+      "de",
+      "la",
+      "actualización",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "arrepentí",
+        "answer_es": "arrepentí",
+        "lemma_mx": "arrepentirse",
+        "hint": "arrepentirse · yo · pretérito",
+        "distractors_es": [
+          "arrepiento",
+          "arrepintió",
+          "arrepentía"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 9,
+        "answer_mx": "de",
+        "answer_es": "de",
+        "lemma_mx": "de",
+        "hint": "predložka",
+        "distractors_es": [
+          "a",
+          "en",
+          "con"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1482",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Syn je stále prilepený k mobilu a skoro sa s nami nerozpráva.",
+    "es_mx": "Mi hijo se la pasa pegado al celular y casi no platica con nosotros.",
+    "es_es": "Mi hijo se la pasa pegado al móvil y casi no charla con nosotros.",
+    "tokens_es": [
+      "Mi",
+      "hijo",
+      "se",
+      "la",
+      "pasa",
+      "pegado",
+      "al",
+      "móvil",
+      "y",
+      "casi",
+      "no",
+      "charla",
+      "con",
+      "nosotros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer_mx": "platica",
+        "answer_es": "charla",
+        "lemma_mx": "platicar",
+        "hint": "platicar · él · presente",
+        "distractors_es": [
+          "charlo",
+          "platicó",
+          "platicaba"
+        ],
+        "changed": true
+      },
+      {
+        "tokenIndex": 2,
+        "answer_mx": "se",
+        "answer_es": "se",
+        "lemma_mx": "se",
+        "hint": "zámeno",
+        "distractors_es": [
+          "me",
+          "te",
+          "nos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1686",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Nemôžem nájsť mobil. Videl si ho v obývačke?",
+    "es_mx": "No encuentro mi celular. ¿Lo viste en la sala?",
+    "es_es": "No encuentro mi móvil. ¿Lo viste en la sala?",
+    "tokens_es": [
+      "No",
+      "encuentro",
+      "mi",
+      "móvil",
+      ".",
+      "¿",
+      "Lo",
+      "viste",
+      "en",
+      "la",
+      "sala",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "Lo",
+        "answer_es": "Lo",
+        "lemma_mx": "lo",
+        "hint": "zámeno: ho",
+        "distractors_es": [
+          "La",
+          "Le",
+          "Los"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1697",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Môj mobil je päť rokov starý, tvoj je novší.",
+    "es_mx": "Mi celular es de hace cinco años; el tuyo es más nuevo.",
+    "es_es": "Mi móvil es de hace cinco años; el tuyo es más nuevo.",
+    "tokens_es": [
+      "Mi",
+      "móvil",
+      "es",
+      "de",
+      "hace",
+      "cinco",
+      "años",
+      ";",
+      "el",
+      "tuyo",
+      "es",
+      "más",
+      "nuevo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer_mx": "más",
+        "answer_es": "más",
+        "lemma_mx": "más",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "menos",
+          "tan",
+          "mejor"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1698",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Tento počítač je taký rýchly ako ten v mojej práci.",
+    "es_mx": "Esta computadora es tan rápida como la de mi trabajo.",
+    "es_es": "Este ordenador es tan rápida como la de mi trabajo.",
+    "tokens_es": [
+      "Este",
+      "ordenador",
+      "es",
+      "tan",
+      "rápida",
+      "como",
+      "la",
+      "de",
+      "mi",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "tan",
+        "answer_es": "tan",
+        "lemma_mx": "tan",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "muy",
+          "tanto",
+          "más"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 5,
+        "answer_mx": "como",
+        "answer_es": "como",
+        "lemma_mx": "como",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "que",
+          "tan",
+          "de"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1700",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Tento fotoaparát je lepší ako ten v mojom mobile.",
+    "es_mx": "Esta cámara es mejor que la de mi celular.",
+    "es_es": "Esta cámara es mejor que la de mi móvil.",
+    "tokens_es": [
+      "Esta",
+      "cámara",
+      "es",
+      "mejor",
+      "que",
+      "la",
+      "de",
+      "mi",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "mejor",
+        "answer_es": "mejor",
+        "lemma_mx": "mejor",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "peor",
+          "más",
+          "mayor"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1702",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Najlacnejší počítač v obchode stojí päťtisíc pesos.",
+    "es_mx": "La computadora más barata de la tienda cuesta cinco mil pesos.",
+    "es_es": "El ordenador más barata de la tienda cuesta cinco mil pesos.",
+    "tokens_es": [
+      "El",
+      "ordenador",
+      "más",
+      "barata",
+      "de",
+      "la",
+      "tienda",
+      "cuesta",
+      "cinco",
+      "mil",
+      "pesos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "más",
+        "answer_es": "más",
+        "lemma_mx": "más",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "menos",
+          "tan",
+          "mejor"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1730",
+    "file": "tech.json",
+    "level": "A2",
+    "sk": "Deti nesmú používať mobil v škole.",
+    "es_mx": "Los niños no pueden usar el celular en la escuela.",
+    "es_es": "Los niños no pueden usar el móvil en la escuela.",
+    "tokens_es": [
+      "Los",
+      "niños",
+      "no",
+      "pueden",
+      "usar",
+      "el",
+      "móvil",
+      "en",
+      "la",
+      "escuela",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "pueden",
+        "answer_es": "pueden",
+        "lemma_mx": "poder",
+        "hint": "môcť",
+        "distractors_es": [
+          "deben",
+          "tienen",
+          "podemos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1961",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "V lietadle sa nesmie používať mobil.",
+    "es_mx": "En el avión no se puede usar el celular.",
+    "es_es": "En el avión no se puede usar el móvil.",
+    "tokens_es": [
+      "En",
+      "el",
+      "avión",
+      "no",
+      "se",
+      "puede",
+      "usar",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "puede",
+        "answer_es": "puede",
+        "lemma_mx": "poder",
+        "hint": "poder",
+        "distractors_es": [
+          "pueden",
+          "podía",
+          "podrá"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s183",
+    "file": "time.json",
+    "level": "A1",
+    "sk": "Teraz nemôžem, som na porade.",
+    "es_mx": "Ahorita no puedo, estoy en una junta.",
+    "es_es": "Ahora no puedo, estoy en una junta.",
+    "tokens_es": [
+      "Ahora",
+      "no",
+      "puedo",
+      ",",
+      "estoy",
+      "en",
+      "una",
+      "junta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "puedo",
+        "answer_es": "puedo",
+        "lemma_mx": "poder",
+        "hint": "poder · yo · presente",
+        "distractors_es": [
+          "puede",
+          "pueden",
+          "pude"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1499",
+    "file": "time.json",
+    "level": "B2",
+    "sk": "Keď Mexičan povie ahorita, môže to znamenať o päť minút alebo nikdy.",
+    "es_mx": "Cuando un mexicano dice ahorita, puede significar en cinco minutos o nunca.",
+    "es_es": "Cuando un mexicano dice ahora, puede significar en cinco minutos o nunca.",
+    "tokens_es": [
+      "Cuando",
+      "un",
+      "mexicano",
+      "dice",
+      "ahora",
+      ",",
+      "puede",
+      "significar",
+      "en",
+      "cinco",
+      "minutos",
+      "o",
+      "nunca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "dice",
+        "answer_es": "dice",
+        "lemma_mx": "decir",
+        "hint": "decir · él · presente",
+        "distractors_es": [
+          "decimos",
+          "dijo",
+          "decía"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1501",
+    "file": "time.json",
+    "level": "B2",
+    "sk": "Hneď zrána si skontrolujem poštu a dám ti vedieť.",
+    "es_mx": "A primera hora checo el correo y te aviso.",
+    "es_es": "A primera hora checo el correo y te aviso.",
+    "tokens_es": [
+      "A",
+      "primera",
+      "hora",
+      "checo",
+      "el",
+      "correo",
+      "y",
+      "te",
+      "aviso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "aviso",
+        "answer_es": "aviso",
+        "lemma_mx": "avisar",
+        "hint": "avisar · yo · presente",
+        "distractors_es": [
+          "avisas",
+          "avisé",
+          "avisábamos"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"checo\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1507",
+    "file": "time.json",
+    "level": "B2",
+    "sk": "V tých časoch ešte neexistovali mobily.",
+    "es_mx": "En aquel entonces no existían los celulares.",
+    "es_es": "En aquel entonces no existían los móviles.",
+    "tokens_es": [
+      "En",
+      "aquel",
+      "entonces",
+      "no",
+      "existían",
+      "los",
+      "móviles",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "entonces",
+        "answer_es": "entonces",
+        "lemma_mx": "entonces",
+        "hint": "vtedy",
+        "distractors_es": [
+          "mientras",
+          "pronto",
+          "todavía"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1609",
+    "file": "time.json",
+    "level": "A2",
+    "sk": "Autobusu to trvalo hodinu, lebo bola hustá premávka.",
+    "es_mx": "El camión tardó una hora porque había mucho tráfico.",
+    "es_es": "El autobús tardó una hora porque había mucho tráfico.",
+    "tokens_es": [
+      "El",
+      "autobús",
+      "tardó",
+      "una",
+      "hora",
+      "porque",
+      "había",
+      "mucho",
+      "tráfico",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "tardó",
+        "answer_es": "tardó",
+        "lemma_mx": "tardar",
+        "hint": "tardar · él · pretérito",
+        "distractors_es": [
+          "tarda",
+          "tardaba",
+          "tardará"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1663",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Ide autobus na letisko?",
+    "es_mx": "¿Hay un camión al aeropuerto?",
+    "es_es": "¿Hay un autobús al aeropuerto?",
+    "tokens_es": [
+      "¿",
+      "Hay",
+      "un",
+      "autobús",
+      "al",
+      "aeropuerto",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Hay",
+        "answer_es": "Hay",
+        "lemma_mx": "hay",
+        "hint": "hay/estar",
+        "distractors_es": [
+          "Está",
+          "Están",
+          "Es"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1687",
+    "file": "travel.json",
+    "level": "A2",
+    "sk": "Lístky sú v mojej taške, hneď ti ich dám.",
+    "es_mx": "Los boletos están en mi bolsa; ahorita te los doy.",
+    "es_es": "Los billetes están en mi bolsa; ahora te los doy.",
+    "tokens_es": [
+      "Los",
+      "billetes",
+      "están",
+      "en",
+      "mi",
+      "bolsa",
+      ";",
+      "ahora",
+      "te",
+      "los",
+      "doy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer_mx": "los",
+        "answer_es": "los",
+        "lemma_mx": "los",
+        "hint": "zámeno: ich",
+        "distractors_es": [
+          "las",
+          "lo",
+          "les"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s041",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "O koľkej príde autobus?",
+    "es_mx": "¿A qué hora llega el camión?",
+    "es_es": "¿A qué hora llega el autobús?",
+    "tokens_es": [
+      "¿",
+      "A",
+      "qué",
+      "hora",
+      "llega",
+      "el",
+      "autobús",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "A",
+        "answer_es": "A",
+        "lemma_mx": "a",
+        "hint": "predložka",
+        "distractors_es": [
+          "en",
+          "de",
+          "hasta"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "llega",
+        "answer_es": "llega",
+        "lemma_mx": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors_es": [
+          "llego",
+          "llegan",
+          "llegó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s047",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Čakáme na autobus.",
+    "es_mx": "Estamos esperando el camión.",
+    "es_es": "Estamos esperando el autobús.",
+    "tokens_es": [
+      "Estamos",
+      "esperando",
+      "el",
+      "autobús",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Estamos",
+        "answer_es": "Estamos",
+        "lemma_mx": "estar",
+        "hint": "estar · nosotros · presente",
+        "distractors_es": [
+          "Somos",
+          "Están",
+          "Estoy"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s154",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Mám rezerváciu na tri noci.",
+    "es_mx": "Tengo una reservación para tres noches.",
+    "es_es": "Tengo una reserva para tres noches.",
+    "tokens_es": [
+      "Tengo",
+      "una",
+      "reserva",
+      "para",
+      "tres",
+      "noches",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Tengo",
+        "answer_es": "Tengo",
+        "lemma_mx": "tener",
+        "hint": "tener · yo · presente",
+        "distractors_es": [
+          "Tiene",
+          "Tienen",
+          "Tuve"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s157",
+    "file": "travel.json",
+    "level": "A2",
+    "sk": "Prenajali sme si auto na cestu po Yucatáne.",
+    "es_mx": "Rentamos un carro para viajar por Yucatán.",
+    "es_es": "Rentamos un coche para viajar por Yucatán.",
+    "tokens_es": [
+      "Rentamos",
+      "un",
+      "coche",
+      "para",
+      "viajar",
+      "por",
+      "Yucatán",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Rentamos",
+        "answer_es": "Rentamos",
+        "lemma_mx": "rentar",
+        "hint": "rentar · nosotros · pretérito",
+        "distractors_es": [
+          "Renté",
+          "Rentó",
+          "Rentaste"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s159",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Kedy sa vraciaš na Slovensko?",
+    "es_mx": "¿Cuándo regresas a Eslovaquia?",
+    "es_es": "¿Cuándo regresas a Eslovaquia?",
+    "tokens_es": [
+      "¿",
+      "Cuándo",
+      "regresas",
+      "a",
+      "Eslovaquia",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "regresas",
+        "answer_es": "regresas",
+        "lemma_mx": "regresar",
+        "hint": "regresar · tú · presente",
+        "distractors_es": [
+          "regresamos",
+          "regreso",
+          "regresaste"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"regresas\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s160",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Hotel má obrovský bazén.",
+    "es_mx": "El hotel tiene una alberca enorme.",
+    "es_es": "El hotel tiene una piscina enorme.",
+    "tokens_es": [
+      "El",
+      "hotel",
+      "tiene",
+      "una",
+      "piscina",
+      "enorme",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "una",
+        "answer_es": "una",
+        "lemma_mx": "un",
+        "hint": "neurčitý člen",
+        "distractors_es": [
+          "un",
+          "unos",
+          "unas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s166",
+    "file": "travel.json",
+    "level": "A2",
+    "sk": "Do Guanajuata sme šoférovali šesť hodín.",
+    "es_mx": "Manejamos seis horas hasta Guanajuato.",
+    "es_es": "Manejamos seis horas hasta Guanajuato.",
+    "tokens_es": [
+      "Manejamos",
+      "seis",
+      "horas",
+      "hasta",
+      "Guanajuato",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Manejamos",
+        "answer_es": "Manejamos",
+        "lemma_mx": "manejar",
+        "hint": "manejar · nosotros · pretérito",
+        "distractors_es": [
+          "Manejé",
+          "Manejó",
+          "Manejaste"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 3,
+        "answer_mx": "hasta",
+        "answer_es": "hasta",
+        "lemma_mx": "hasta",
+        "hint": "až do, po",
+        "distractors_es": [
+          "de",
+          "en",
+          "a"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejamos\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s588",
+    "file": "travel.json",
+    "level": "B1",
+    "sk": "Ušiel nám autobus a museli sme čakať dve hodiny.",
+    "es_mx": "Perdimos el camión y tuvimos que esperar dos horas.",
+    "es_es": "Perdimos el autobús y tuvimos que esperar dos horas.",
+    "tokens_es": [
+      "Perdimos",
+      "el",
+      "autobús",
+      "y",
+      "tuvimos",
+      "que",
+      "esperar",
+      "dos",
+      "horas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "tuvimos",
+        "answer_es": "tuvimos",
+        "lemma_mx": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors_es": [
+          "tenemos",
+          "tenían",
+          "tendremos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 5,
+        "answer_mx": "que",
+        "answer_es": "que",
+        "lemma_mx": "que",
+        "hint": "musieť",
+        "distractors_es": [
+          "de",
+          "a",
+          "para"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s434",
+    "file": "travel.json",
+    "level": "A2",
+    "sk": "Kým som šoféroval, manželka spala.",
+    "es_mx": "Mientras manejaba, mi esposa dormía.",
+    "es_es": "Mientras manejaba, mi esposa dormía.",
+    "tokens_es": [
+      "Mientras",
+      "manejaba",
+      ",",
+      "mi",
+      "esposa",
+      "dormía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "manejaba",
+        "answer_es": "manejaba",
+        "lemma_mx": "manejar",
+        "hint": "manejar · yo · imperfecto",
+        "distractors_es": [
+          "manejaban",
+          "manejé",
+          "manejábamos"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 5,
+        "answer_mx": "dormía",
+        "answer_es": "dormía",
+        "lemma_mx": "dormir",
+        "hint": "dormir · ella · imperfecto",
+        "distractors_es": [
+          "dormían",
+          "dormías",
+          "durmió"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"manejaba\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s741",
+    "file": "travel.json",
+    "level": "A2",
+    "sk": "Autobus odchádza z terminálu o šiestej.",
+    "es_mx": "El camión sale de la terminal a las seis.",
+    "es_es": "El autobús sale de la terminal a las seis.",
+    "tokens_es": [
+      "El",
+      "autobús",
+      "sale",
+      "de",
+      "la",
+      "terminal",
+      "a",
+      "las",
+      "seis",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "sale",
+        "answer_es": "sale",
+        "lemma_mx": "salir",
+        "hint": "salir · él · presente",
+        "distractors_es": [
+          "salen",
+          "salió",
+          "salía"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s753",
+    "file": "travel.json",
+    "level": "B2",
+    "sk": "Pri toľkých zákrutách mi je v autobuse zle.",
+    "es_mx": "Me mareo en los camiones con tantas curvas.",
+    "es_es": "Me mareo en los autobuses con tantas curvas.",
+    "tokens_es": [
+      "Me",
+      "mareo",
+      "en",
+      "los",
+      "autobuses",
+      "con",
+      "tantas",
+      "curvas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "curvas",
+        "answer_es": "curvas",
+        "lemma_mx": "curva",
+        "hint": "zákruty",
+        "distractors_es": [
+          "cuervos",
+          "cuevas",
+          "cuerdas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s168",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Koľko stojí lístok do Puebly?",
+    "es_mx": "¿Cuánto cuesta el boleto a Puebla?",
+    "es_es": "¿Cuánto cuesta el billete a Puebla?",
+    "tokens_es": [
+      "¿",
+      "Cuánto",
+      "cuesta",
+      "el",
+      "billete",
+      "a",
+      "Puebla",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "cuesta",
+        "answer_es": "cuesta",
+        "lemma_mx": "costar",
+        "hint": "costar · él · presente",
+        "distractors_es": [
+          "cuestan",
+          "cuestas",
+          "costó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1525",
+    "file": "travel.json",
+    "level": "B2",
+    "sk": "Prenajať si tam auto stojí kopu peňazí, radšej sa budeme presúvať autobusom.",
+    "es_mx": "Rentar un carro allá cuesta una lana; mejor nos movemos en camión.",
+    "es_es": "Alquilar un coche allá cuesta una lana; mejor nos movemos en autobús.",
+    "tokens_es": [
+      "Alquilar",
+      "un",
+      "coche",
+      "allá",
+      "cuesta",
+      "una",
+      "lana",
+      ";",
+      "mejor",
+      "nos",
+      "movemos",
+      "en",
+      "autobús",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer_mx": "movemos",
+        "answer_es": "movemos",
+        "lemma_mx": "mover",
+        "hint": "mover · nosotros · presente",
+        "distractors_es": [
+          "movimos",
+          "muevo",
+          "moverán"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 8,
+        "answer_mx": "mejor",
+        "answer_es": "mejor",
+        "lemma_mx": "mejor",
+        "hint": "porovnanie",
+        "distractors_es": [
+          "peor",
+          "más",
+          "menos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1622",
+    "file": "travel.json",
+    "level": "B1",
+    "sk": "Mechanici pred cestou skontrolovali brzdy auta.",
+    "es_mx": "Los mecánicos revisaron los frenos del carro antes del viaje.",
+    "es_es": "Los mecánicos revisaron los frenos del coche antes del viaje.",
+    "tokens_es": [
+      "Los",
+      "mecánicos",
+      "revisaron",
+      "los",
+      "frenos",
+      "del",
+      "coche",
+      "antes",
+      "del",
+      "viaje",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "revisaron",
+        "answer_es": "revisaron",
+        "lemma_mx": "revisar",
+        "hint": "revisar · ellos · pretérito",
+        "distractors_es": [
+          "revisan",
+          "revisaban",
+          "revisarán"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1512",
+    "file": "travel.json",
+    "level": "A1",
+    "sk": "Kde si kúpime lístky?",
+    "es_mx": "¿Dónde compramos los boletos?",
+    "es_es": "¿Dónde compramos los billetes?",
+    "tokens_es": [
+      "¿",
+      "Dónde",
+      "compramos",
+      "los",
+      "billetes",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "compramos",
+        "answer_es": "compramos",
+        "lemma_mx": "comprar",
+        "hint": "comprar · nosotros · presente",
+        "distractors_es": [
+          "compro",
+          "compran",
+          "comprarán"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1854",
+    "file": "travel.json",
+    "level": "B1",
+    "sk": "Radím ti, aby si kúpil lístky vopred.",
+    "es_mx": "Te aconsejo que compres los boletos con anticipación.",
+    "es_es": "Te aconsejo que compres los billetes con anticipación.",
+    "tokens_es": [
+      "Te",
+      "aconsejo",
+      "que",
+      "compres",
+      "los",
+      "billetes",
+      "con",
+      "anticipación",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "compres",
+        "answer_es": "compres",
+        "lemma_mx": "comprar",
+        "hint": "comprar · tú",
+        "distractors_es": [
+          "compras",
+          "comprarás",
+          "compraste"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1862",
+    "file": "travel.json",
+    "level": "B1",
+    "sk": "Ak zmeškáš lietadlo, budeš si musieť kúpiť iný lístok.",
+    "es_mx": "Si pierdes el avión, tendrás que comprar otro boleto.",
+    "es_es": "Si pierdes el avión, tendrás que comprar otro billete.",
+    "tokens_es": [
+      "Si",
+      "pierdes",
+      "el",
+      "avión",
+      ",",
+      "tendrás",
+      "que",
+      "comprar",
+      "otro",
+      "billete",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "pierdes",
+        "answer_es": "pierdes",
+        "lemma_mx": "perder",
+        "hint": "perder · tú",
+        "distractors_es": [
+          "perderás",
+          "perdiste",
+          "perdías"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1899",
+    "file": "travel.json",
+    "level": "B1",
+    "sk": "Cestovali sme autom pozdĺž pobrežia.",
+    "es_mx": "Viajamos por la costa en carro.",
+    "es_es": "Viajamos por la costa en coche.",
+    "tokens_es": [
+      "Viajamos",
+      "por",
+      "la",
+      "costa",
+      "en",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "por",
+        "answer_es": "por",
+        "lemma_mx": "por",
+        "hint": "por/para",
+        "distractors_es": [
+          "para",
+          "de"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1537",
+    "file": "weather.json",
+    "level": "A1",
+    "sk": "Berieš si bundu? Je zima.",
+    "es_mx": "¿Llevas una chamarra? Hace frío.",
+    "es_es": "¿Llevas una chaqueta? Hace frío.",
+    "tokens_es": [
+      "¿",
+      "Llevas",
+      "una",
+      "chaqueta",
+      "?",
+      "Hace",
+      "frío",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Llevas",
+        "answer_es": "Llevas",
+        "lemma_mx": "llevar",
+        "hint": "llevar · tú · presente",
+        "distractors_es": [
+          "Llevo",
+          "Llevaste",
+          "Llevabas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1546",
+    "file": "weather.json",
+    "level": "A2",
+    "sk": "Včera v noci padali krúpy a rozbili sklo na aute.",
+    "es_mx": "Anoche cayó granizo y rompió el vidrio del carro.",
+    "es_es": "Anoche cayó granizo y rompió el vidrio del coche.",
+    "tokens_es": [
+      "Anoche",
+      "cayó",
+      "granizo",
+      "y",
+      "rompió",
+      "el",
+      "vidrio",
+      "del",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "granizo",
+        "answer_es": "granizo",
+        "lemma_mx": "granizo",
+        "hint": "krúpy",
+        "distractors_es": [
+          "arcoíris",
+          "pronóstico",
+          "paraguas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s196",
+    "file": "work.json",
+    "level": "A2",
+    "sk": "Môžeš skontrolovať mail od klienta?",
+    "es_mx": "¿Puedes checar el correo del cliente?",
+    "es_es": "¿Puedes checar el correo del cliente?",
+    "tokens_es": [
+      "¿",
+      "Puedes",
+      "checar",
+      "el",
+      "correo",
+      "del",
+      "cliente",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Puedes",
+        "answer_es": "Puedes",
+        "lemma_mx": "poder",
+        "hint": "poder · tú · presente",
+        "distractors_es": [
+          "Podemos",
+          "Puedo",
+          "Pudiste"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"checar\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s203",
+    "file": "work.json",
+    "level": "A2",
+    "sk": "Tento počítač používame na navrhovanie.",
+    "es_mx": "Usamos esta computadora para diseñar.",
+    "es_es": "Usamos este ordenador para diseñar.",
+    "tokens_es": [
+      "Usamos",
+      "este",
+      "ordenador",
+      "para",
+      "diseñar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Usamos",
+        "answer_es": "Usamos",
+        "lemma_mx": "usar",
+        "hint": "usar · nosotros · presente",
+        "distractors_es": [
+          "Uso",
+          "Usa",
+          "Usas"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s470",
+    "file": "work.json",
+    "level": "B1",
+    "sk": "Ak si každý mesiac trochu odložím, budem si môcť kúpiť auto.",
+    "es_mx": "Si ahorro un poco cada mes, podré comprar un carro.",
+    "es_es": "Si ahorro un poco cada mes, podré comprar un coche.",
+    "tokens_es": [
+      "Si",
+      "ahorro",
+      "un",
+      "poco",
+      "cada",
+      "mes",
+      ",",
+      "podré",
+      "comprar",
+      "un",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "ahorro",
+        "answer_es": "ahorro",
+        "lemma_mx": "ahorrar",
+        "hint": "ahorrar · yo · presente",
+        "distractors_es": [
+          "ahorra",
+          "ahorran",
+          "ahorré"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 7,
+        "answer_mx": "podré",
+        "answer_es": "podré",
+        "lemma_mx": "poder",
+        "hint": "poder · yo · futuro",
+        "distractors_es": [
+          "podrá",
+          "podrán",
+          "puedo"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "cada",
+        "answer_es": "cada",
+        "lemma_mx": "cada",
+        "hint": "každý (cada …)",
+        "distractors_es": [
+          "todo",
+          "todos",
+          "ambos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s598",
+    "file": "work.json",
+    "level": "B1",
+    "sk": "Predtým som bol čašník, ale teraz mám vlastný podnik.",
+    "es_mx": "Antes era mesero, pero ahora tengo mi propio negocio.",
+    "es_es": "Antes era camarero, pero ahora tengo mi propio negocio.",
+    "tokens_es": [
+      "Antes",
+      "era",
+      "camarero",
+      ",",
+      "pero",
+      "ahora",
+      "tengo",
+      "mi",
+      "propio",
+      "negocio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "era",
+        "answer_es": "era",
+        "lemma_mx": "ser",
+        "hint": "ser/estar · yo · imperfecto",
+        "distractors_es": [
+          "estaba",
+          "soy",
+          "seré"
+        ],
+        "changed": false
+      },
+      {
+        "tokenIndex": 4,
+        "answer_mx": "pero",
+        "answer_es": "pero",
+        "lemma_mx": "pero",
+        "hint": "ale",
+        "distractors_es": [
+          "que",
+          "cuando",
+          "porque"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1873",
+    "file": "work.json",
+    "level": "B2",
+    "sk": "Keby som zarábal viac, presťahoval by som sa do iného bytu.",
+    "es_mx": "Si ganara más dinero, cambiaría de departamento.",
+    "es_es": "Si ganara más dinero, cambiaría de piso.",
+    "tokens_es": [
+      "Si",
+      "ganara",
+      "más",
+      "dinero",
+      ",",
+      "cambiaría",
+      "de",
+      "piso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "ganara",
+        "answer_es": "ganara",
+        "lemma_mx": "ganar",
+        "hint": "ganar · yo",
+        "distractors_es": [
+          "gane",
+          "ganaba",
+          "ganaría"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1575",
+    "file": "work.json",
+    "level": "A1",
+    "sk": "Počítač mi dnes nefunguje.",
+    "es_mx": "Mi computadora no funciona hoy.",
+    "es_es": "Mi ordenador no funciona hoy.",
+    "tokens_es": [
+      "Mi",
+      "ordenador",
+      "no",
+      "funciona",
+      "hoy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "funciona",
+        "answer_es": "funciona",
+        "lemma_mx": "funcionar",
+        "hint": "funcionar · ella · presente",
+        "distractors_es": [
+          "funcionan",
+          "funcionó",
+          "funcionaba"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1577",
+    "file": "work.json",
+    "level": "A1",
+    "sk": "Otec je šofér, jazdí na taxíku.",
+    "es_mx": "Mi papá es chofer y maneja un taxi.",
+    "es_es": "Mi papá es chofer y maneja un taxi.",
+    "tokens_es": [
+      "Mi",
+      "papá",
+      "es",
+      "chofer",
+      "y",
+      "maneja",
+      "un",
+      "taxi",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "maneja",
+        "answer_es": "maneja",
+        "lemma_mx": "manejar",
+        "hint": "manejar · él · presente",
+        "distractors_es": [
+          "manejo",
+          "manejó",
+          "manejaba"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "verb form \"maneja\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s1716",
+    "file": "work.json",
+    "level": "A2",
+    "sk": "Môžem si na chvíľu požičať váš počítač?",
+    "es_mx": "¿Puedo usar su computadora un momento?",
+    "es_es": "¿Puedo usar su ordenador un momento?",
+    "tokens_es": [
+      "¿",
+      "Puedo",
+      "usar",
+      "su",
+      "ordenador",
+      "un",
+      "momento",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "Puedo",
+        "answer_es": "Puedo",
+        "lemma_mx": "poder",
+        "hint": "môcť",
+        "distractors_es": [
+          "Debo",
+          "Tengo",
+          "Puede"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s1593",
+    "file": "work.json",
+    "level": "B2",
+    "sk": "S týmto platom mi sotva vystačí na nájom a jedlo.",
+    "es_mx": "Con este sueldo apenas me alcanza para la renta y la comida.",
+    "es_es": "Con este sueldo apenas me alcanza para el alquiler y la comida.",
+    "tokens_es": [
+      "Con",
+      "este",
+      "sueldo",
+      "apenas",
+      "me",
+      "alcanza",
+      "para",
+      "el",
+      "alquiler",
+      "y",
+      "la",
+      "comida",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "sueldo",
+        "answer_es": "sueldo",
+        "lemma_mx": "sueldo",
+        "hint": "plat",
+        "distractors_es": [
+          "horario",
+          "descanso",
+          "escritorio"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  }
+]

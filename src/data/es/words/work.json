@@ -1,0 +1,23 @@
+[
+  {
+    "id": "celular",
+    "es": "móvil",
+    "plural": "móviles",
+    "note": null,
+    "examples": [
+      {
+        "es": "¿Me pasas tu número de móvil?",
+        "sk": "Dáš mi číslo na mobil?"
+      }
+    ]
+  },
+  {
+    "id": "escritorio",
+    "examples": [
+      {
+        "es": "Mi móvil está en el escritorio.",
+        "sk": "Mobil mám na stole."
+      }
+    ]
+  }
+]

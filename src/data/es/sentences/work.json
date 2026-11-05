@@ -1,0 +1,52 @@
+[
+  {
+    "id": "s470",
+    "es": "Si ahorro un poco cada mes, podré comprar un coche.",
+    "tokens": [
+      "Si",
+      "ahorro",
+      "un",
+      "poco",
+      "cada",
+      "mes",
+      ",",
+      "podré",
+      "comprar",
+      "un",
+      "coche",
+      "."
+    ]
+  },
+  {
+    "id": "s598",
+    "es": "Antes era camarero, pero ahora tengo mi propio negocio.",
+    "tokens": [
+      "Antes",
+      "era",
+      "camarero",
+      ",",
+      "pero",
+      "ahora",
+      "tengo",
+      "mi",
+      "propio",
+      "negocio",
+      "."
+    ]
+  },
+  {
+    "id": "s1873",
+    "es": "Si ganara más dinero, cambiaría de piso.",
+    "tokens": [
+      "Si",
+      "ganara",
+      "más",
+      "dinero",
+      ",",
+      "cambiaría",
+      "de",
+      "piso",
+      "."
+    ]
+  }
+]

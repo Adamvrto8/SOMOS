@@ -1,0 +1,22 @@
+[
+  {
+    "id": "alberca",
+    "es": "piscina",
+    "note": null,
+    "examples": [
+      {
+        "es": "El hotel tiene piscina.",
+        "sk": "Hotel má bazén."
+      }
+    ]
+  },
+  {
+    "id": "revista",
+    "examples": [
+      {
+        "es": "Leo una revista en el autobús.",
+        "sk": "V autobuse čítam časopis."
+      }
+    ]
+  }
+]

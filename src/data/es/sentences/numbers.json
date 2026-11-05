@@ -1,0 +1,76 @@
+[
+  {
+    "id": "s361",
+    "es": "Mi móvil cuesta cinco mil pesos.",
+    "tokens": [
+      "Mi",
+      "móvil",
+      "cuesta",
+      "cinco",
+      "mil",
+      "pesos",
+      "."
+    ]
+  },
+  {
+    "id": "s568",
+    "es": "El piso cuesta dos millones de pesos.",
+    "tokens": [
+      "El",
+      "piso",
+      "cuesta",
+      "dos",
+      "millones",
+      "de",
+      "pesos",
+      "."
+    ]
+  },
+  {
+    "id": "s1363",
+    "es": "El autobús pasaba cada veinte minutos.",
+    "tokens": [
+      "El",
+      "autobús",
+      "pasaba",
+      "cada",
+      "veinte",
+      "minutos",
+      "."
+    ]
+  },
+  {
+    "id": "s1372",
+    "es": "En México, los números de móvil tienen diez dígitos.",
+    "tokens": [
+      "En",
+      "México",
+      ",",
+      "los",
+      "números",
+      "de",
+      "móvil",
+      "tienen",
+      "diez",
+      "dígitos",
+      "."
+    ]
+  },
+  {
+    "id": "s1375",
+    "es": "Es la tercera vez que cambio de móvil este año.",
+    "tokens": [
+      "Es",
+      "la",
+      "tercera",
+      "vez",
+      "que",
+      "cambio",
+      "de",
+      "móvil",
+      "este",
+      "año",
+      "."
+    ]
+  }
+]

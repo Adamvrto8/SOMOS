@@ -1,0 +1,68 @@
+[
+  {
+    "id": "s640",
+    "es": "Con razón no contestabas, se te olvidó el móvil.",
+    "tokens": [
+      "Con",
+      "razón",
+      "no",
+      "contestabas",
+      ",",
+      "se",
+      "te",
+      "olvidó",
+      "el",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s644",
+    "es": "Le agradecí al camarero su amabilidad.",
+    "tokens": [
+      "Le",
+      "agradecí",
+      "al",
+      "camarero",
+      "su",
+      "amabilidad",
+      "."
+    ]
+  },
+  {
+    "id": "s1206",
+    "es": "Perdón por la tardanza, el autobús no llegaba.",
+    "tokens": [
+      "Perdón",
+      "por",
+      "la",
+      "tardanza",
+      ",",
+      "el",
+      "autobús",
+      "no",
+      "llegaba",
+      "."
+    ]
+  },
+  {
+    "id": "s1231",
+    "es": "Fue un gusto charlar contigo, a ver cuándo nos echamos un café.",
+    "tokens": [
+      "Fue",
+      "un",
+      "gusto",
+      "charlar",
+      "contigo",
+      ",",
+      "a",
+      "ver",
+      "cuándo",
+      "nos",
+      "echamos",
+      "un",
+      "café",
+      "."
+    ]
+  }
+]

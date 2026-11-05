@@ -1,0 +1,177 @@
+[
+  {
+    "id": "s032",
+    "es": "Tomo el autobús para ir al trabajo.",
+    "tokens": [
+      "Tomo",
+      "el",
+      "autobús",
+      "para",
+      "ir",
+      "al",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s033",
+    "es": "Mi coche está en el estacionamiento.",
+    "tokens": [
+      "Mi",
+      "coche",
+      "está",
+      "en",
+      "el",
+      "estacionamiento",
+      "."
+    ]
+  },
+  {
+    "id": "s1728",
+    "es": "¿Puedo aparcar el coche aquí?",
+    "tokens": [
+      "¿",
+      "Puedo",
+      "aparcar",
+      "el",
+      "coche",
+      "aquí",
+      "?"
+    ]
+  },
+  {
+    "id": "s142",
+    "es": "Estacioné el coche enfrente de la iglesia.",
+    "tokens": [
+      "Estacioné",
+      "el",
+      "coche",
+      "enfrente",
+      "de",
+      "la",
+      "iglesia",
+      "."
+    ]
+  },
+  {
+    "id": "s526",
+    "es": "Nos perdimos porque el móvil no tenía señal.",
+    "tokens": [
+      "Nos",
+      "perdimos",
+      "porque",
+      "el",
+      "móvil",
+      "no",
+      "tenía",
+      "señal",
+      "."
+    ]
+  },
+  {
+    "id": "s723",
+    "es": "¿Dónde está la parada del autobús?",
+    "tokens": [
+      "¿",
+      "Dónde",
+      "está",
+      "la",
+      "parada",
+      "del",
+      "autobús",
+      "?"
+    ]
+  },
+  {
+    "id": "s738",
+    "es": "Los vendedores ambulantes ocupan toda la acera.",
+    "tokens": [
+      "Los",
+      "vendedores",
+      "ambulantes",
+      "ocupan",
+      "toda",
+      "la",
+      "acera",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "acera",
+        "distractors": [
+          "banca",
+          "bandeja",
+          "carretera"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1068",
+    "es": "En mi opinión, la ciudad necesita más ciclovías y menos coches.",
+    "tokens": [
+      "En",
+      "mi",
+      "opinión",
+      ",",
+      "la",
+      "ciudad",
+      "necesita",
+      "más",
+      "ciclovías",
+      "y",
+      "menos",
+      "coches",
+      "."
+    ]
+  },
+  {
+    "id": "s1075",
+    "es": "La alcaldía va a arreglar la acera de nuestra calle el próximo mes.",
+    "tokens": [
+      "La",
+      "alcaldía",
+      "va",
+      "a",
+      "arreglar",
+      "la",
+      "acera",
+      "de",
+      "nuestra",
+      "calle",
+      "el",
+      "próximo",
+      "mes",
+      "."
+    ]
+  },
+  {
+    "id": "s141",
+    "es": "El autobús pasa cada quince minutos.",
+    "tokens": [
+      "El",
+      "autobús",
+      "pasa",
+      "cada",
+      "quince",
+      "minutos",
+      "."
+    ]
+  },
+  {
+    "id": "s1775",
+    "es": "Es importante que el autobús llegue a tiempo.",
+    "tokens": [
+      "Es",
+      "importante",
+      "que",
+      "el",
+      "autobús",
+      "llegue",
+      "a",
+      "tiempo",
+      "."
+    ]
+  }
+]

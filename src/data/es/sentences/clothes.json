@@ -1,0 +1,156 @@
+[
+  {
+    "id": "s227",
+    "es": "Hoy llevo una camiseta azul.",
+    "tokens": [
+      "Hoy",
+      "llevo",
+      "una",
+      "camiseta",
+      "azul",
+      "."
+    ]
+  },
+  {
+    "id": "s234",
+    "es": "¿De qué color es tu chaqueta?",
+    "tokens": [
+      "¿",
+      "De",
+      "qué",
+      "color",
+      "es",
+      "tu",
+      "chaqueta",
+      "?"
+    ]
+  },
+  {
+    "id": "s235",
+    "es": "Me gustan tus gafas nuevos.",
+    "tokens": [
+      "Me",
+      "gustan",
+      "tus",
+      "gafas",
+      "nuevos",
+      "."
+    ]
+  },
+  {
+    "id": "s237",
+    "es": "Hace frío, ponte la chaqueta.",
+    "tokens": [
+      "Hace",
+      "frío",
+      ",",
+      "ponte",
+      "la",
+      "chaqueta",
+      "."
+    ]
+  },
+  {
+    "id": "s528",
+    "es": "Esta chaqueta me queda grande; necesito una talla más chica.",
+    "tokens": [
+      "Esta",
+      "chaqueta",
+      "me",
+      "queda",
+      "grande",
+      ";",
+      "necesito",
+      "una",
+      "talla",
+      "más",
+      "chica",
+      "."
+    ]
+  },
+  {
+    "id": "s813",
+    "es": "Me pongo la chaqueta porque hace frío.",
+    "tokens": [
+      "Me",
+      "pongo",
+      "la",
+      "chaqueta",
+      "porque",
+      "hace",
+      "frío",
+      "."
+    ]
+  },
+  {
+    "id": "s827",
+    "es": "Lavé la camiseta con agua caliente y se destiñó.",
+    "tokens": [
+      "Lavé",
+      "la",
+      "camiseta",
+      "con",
+      "agua",
+      "caliente",
+      "y",
+      "se",
+      "destiñó",
+      "."
+    ]
+  },
+  {
+    "id": "s1102",
+    "es": "Me encanta esta chaqueta, pero no me alcanza el dinero para comprarla.",
+    "tokens": [
+      "Me",
+      "encanta",
+      "esta",
+      "chaqueta",
+      ",",
+      "pero",
+      "no",
+      "me",
+      "alcanza",
+      "el",
+      "dinero",
+      "para",
+      "comprarla",
+      "."
+    ]
+  },
+  {
+    "id": "s1119",
+    "es": "Esa chaqueta de piel está carísima, pero te va a durar toda la vida.",
+    "tokens": [
+      "Esa",
+      "chaqueta",
+      "de",
+      "piel",
+      "está",
+      "carísima",
+      ",",
+      "pero",
+      "te",
+      "va",
+      "a",
+      "durar",
+      "toda",
+      "la",
+      "vida",
+      "."
+    ]
+  },
+  {
+    "id": "s1095",
+    "es": "¿Te gusta mi camiseta morada?",
+    "tokens": [
+      "¿",
+      "Te",
+      "gusta",
+      "mi",
+      "camiseta",
+      "morada",
+      "?"
+    ]
+  }
+]

@@ -3,6 +3,8 @@ import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
+import { applySentences, applyWords, type SentenceEs, type WordEs } from './applyVariant'
+import { readVariant } from './variant'
 import type { PathEntry, Sentence, SentenceEn, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
@@ -17,9 +19,14 @@ const collect = <T>(modules: Record<string, unknown>): T[] =>
 export const topics = topicsJson as Topic[]
 export const tips = tipsJson as Tip[]
 export const path = pathJson as PathEntry[]
-export const words = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
+/** Which Spanish is studied (Mexico by default); Spain lays src/data/es/ over the Mexican base, by id. */
+export const variant = readVariant()
+const baseWords = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
+export const words = variant === 'es' ? applyWords(baseWords, collect<WordEs>(import.meta.glob('./es/words/*.json', { eager: true, import: 'default' }))) : baseWords
 export const verbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
-export const sentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))
+const baseSentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))
+export const sentences =
+  variant === 'es' ? applySentences(baseSentences, collect<SentenceEs>(import.meta.glob('./es/sentences/*.json', { eager: true, import: 'default' }))) : baseSentences
 
 /** The words vocab tasks ask: all but the articles (`drill: false`). */
 export const vocabWords = words.filter((w) => w.drill !== false)

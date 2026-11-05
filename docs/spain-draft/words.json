@@ -1,0 +1,2708 @@
+[
+  {
+    "id": "el",
+    "file": "basics.json",
+    "sk": "(určitý člen, mužský rod)",
+    "pos": "other",
+    "es_mx": "el",
+    "es_es": "el",
+    "action": "examples-only",
+    "note_mx": "el (m), la (ž), los (m. mn. č.), las (ž. mn. č.). S prízvukom „él“ = on. a + el = al, de + el = del.",
+    "examples": [
+      {
+        "es_mx": "El carro es nuevo.",
+        "es_es": "El coche es nuevo.",
+        "sk": "To auto je nové."
+      }
+    ]
+  },
+  {
+    "id": "nuestro",
+    "file": "basics.json",
+    "sk": "náš",
+    "pos": "pron",
+    "es_mx": "nuestro",
+    "es_es": "nuestro",
+    "action": "examples-only",
+    "note_mx": "nuestra, nuestros, nuestras podľa podstatného mena.",
+    "examples": [
+      {
+        "es_mx": "Nuestro departamento es pequeño.",
+        "es_es": "Nuestro piso es pequeño.",
+        "sk": "Náš byt je malý."
+      }
+    ]
+  },
+  {
+    "id": "nada",
+    "file": "basics.json",
+    "sk": "nič",
+    "pos": "pron",
+    "es_mx": "nada",
+    "es_es": "nada",
+    "action": "note-only",
+    "note_mx": "Dvojitý zápor je v španielčine správne: no… nada = nič.",
+    "note_es": ""
+  },
+  {
+    "id": "que",
+    "file": "basics.json",
+    "sk": "že",
+    "pos": "conj",
+    "es_mx": "que",
+    "es_es": "que",
+    "action": "examples-only",
+    "note_mx": "Bez prízvuku = že / ktorý; s prízvukom „qué“ = čo.",
+    "examples": [
+      {
+        "es_mx": "Creo que va a llover.",
+        "es_es": "Creo que va a llover.",
+        "sk": "Myslím, že bude pršať."
+      },
+      {
+        "es_mx": "El carro que compré es rojo.",
+        "es_es": "El coche que compré es rojo.",
+        "sk": "Auto, ktoré som kúpil, je červené."
+      }
+    ]
+  },
+  {
+    "id": "de",
+    "file": "basics.json",
+    "sk": "z",
+    "pos": "prep",
+    "es_mx": "de",
+    "es_es": "de",
+    "action": "examples-only",
+    "note_mx": "de + el = del (la casa del vecino).",
+    "examples": [
+      {
+        "es_mx": "Soy de Bratislava.",
+        "es_es": "Soy de Bratislava.",
+        "sk": "Som z Bratislavy."
+      },
+      {
+        "es_mx": "Es el carro de mi papá.",
+        "es_es": "Es el coche de mi papá.",
+        "sk": "To je otcovo auto."
+      }
+    ]
+  },
+  {
+    "id": "sobre",
+    "file": "basics.json",
+    "sk": "na",
+    "pos": "prep",
+    "es_mx": "sobre",
+    "es_es": "sobre",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Tu celular está sobre la cama.",
+        "es_es": "Tu móvil está sobre la cama.",
+        "sk": "Tvoj mobil je na posteli."
+      },
+      {
+        "es_mx": "Hablamos sobre el viaje.",
+        "es_es": "Hablamos sobre el viaje.",
+        "sk": "Rozprávali sme sa o výlete."
+      }
+    ]
+  },
+  {
+    "id": "otra-vez",
+    "file": "basics.json",
+    "sk": "znova",
+    "pos": "phrase",
+    "es_mx": "otra vez",
+    "es_es": "otra vez",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Perdí el camión otra vez.",
+        "es_es": "Perdí el autobús otra vez.",
+        "sk": "Zase mi ušiel autobus."
+      }
+    ]
+  },
+  {
+    "id": "mismo",
+    "file": "basics.json",
+    "sk": "ten istý",
+    "pos": "adj",
+    "es_mx": "mismo",
+    "es_es": "mismo",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Tenemos el mismo celular.",
+        "es_es": "Tenemos el mismo móvil.",
+        "sk": "Máme rovnaký mobil."
+      }
+    ]
+  },
+  {
+    "id": "durante",
+    "file": "basics.json",
+    "sk": "počas",
+    "pos": "prep",
+    "es_mx": "durante",
+    "es_es": "durante",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Durante la clase no se usa el celular.",
+        "es_es": "Durante la clase no se usa el móvil.",
+        "sk": "Počas hodiny sa mobil nepoužíva."
+      }
+    ]
+  },
+  {
+    "id": "hoy-en-dia",
+    "file": "basics.json",
+    "sk": "v dnešnej dobe",
+    "pos": "adv",
+    "es_mx": "hoy en día",
+    "es_es": "hoy en día",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Hoy en día todos tienen celular.",
+        "es_es": "Hoy en día todos tienen móvil.",
+        "sk": "V dnešnej dobe má každý mobil."
+      }
+    ]
+  },
+  {
+    "id": "evidente",
+    "file": "basics.json",
+    "sk": "zrejmý",
+    "pos": "adj",
+    "es_mx": "evidente",
+    "es_es": "evidente",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Es evidente que está enojado.",
+        "es_es": "Es evidente que está enfadado.",
+        "sk": "Je zrejmé, že sa hnevá."
+      }
+    ]
+  },
+  {
+    "id": "guero",
+    "file": "body.json",
+    "sk": "svetlovlasý",
+    "pos": "adj",
+    "es_mx": "güero",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: svetlé vlasy alebo pleť. Na trhu tak často oslovujú cudzincov: ¿Qué le damos, güero?",
+    "note_es": ""
+  },
+  {
+    "id": "pelon",
+    "file": "body.json",
+    "sk": "plešatý",
+    "pos": "adj",
+    "es_mx": "pelón",
+    "es_es": null,
+    "plural_mx": "pelones",
+    "plural_es": "pelones",
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové.",
+    "note_es": ""
+  },
+  {
+    "id": "carro",
+    "file": "city.json",
+    "sk": "auto",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "carro",
+    "es_es": "coche",
+    "action": "replace",
+    "note_mx": "Mexické slovo pre auto (v Španielsku „coche“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Mi carro es rojo.",
+        "es_es": "Mi coche es rojo.",
+        "sk": "Moje auto je červené."
+      }
+    ]
+  },
+  {
+    "id": "camion",
+    "file": "city.json",
+    "sk": "autobus",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "camión",
+    "es_es": "autobús",
+    "plural_mx": "camiones",
+    "plural_es": "autobuses",
+    "action": "replace",
+    "note_mx": "V Mexiku „camión“ znamená hlavne mestský autobus.",
+    "examples": [
+      {
+        "es_mx": "¿Qué camión va al centro?",
+        "es_es": "¿Qué autobús va al centro?",
+        "sk": "Ktorý autobus ide do centra?"
+      }
+    ]
+  },
+  {
+    "id": "plaza",
+    "file": "city.json",
+    "sk": "námestie",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "plaza",
+    "es_es": "plaza",
+    "action": "note-only",
+    "note_mx": "Hlavné námestie mexického mesta sa volá „el zócalo“.",
+    "note_es": ""
+  },
+  {
+    "id": "banqueta",
+    "file": "city.json",
+    "sk": "chodník",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "banqueta",
+    "es_es": "acera",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „acera“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Camina por la banqueta.",
+        "es_es": "Camina por la acera.",
+        "sk": "Choď po chodníku."
+      }
+    ]
+  },
+  {
+    "id": "zocalo",
+    "file": "city.json",
+    "sk": "hlavné námestie",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "zócalo",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Tak sa v Mexiku volá hlavné námestie mesta."
+  },
+  {
+    "id": "tope",
+    "file": "city.json",
+    "sk": "spomaľovací retardér",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tope",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Veľmi mexické: v Mexiku sú retardéry takmer všade.",
+    "note_es": ""
+  },
+  {
+    "id": "puesto",
+    "file": "city.json",
+    "sk": "stánok",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "puesto",
+    "es_es": "puesto",
+    "action": "examples-only",
+    "note_mx": "Aj: pracovné miesto (un puesto de trabajo).",
+    "examples": [
+      {
+        "es_mx": "Compramos jugo en un puesto del mercado.",
+        "es_es": "Compramos zumo en un puesto del mercado.",
+        "sk": "Kúpili sme džús v stánku na trhu."
+      }
+    ]
+  },
+  {
+    "id": "asalto",
+    "file": "city.json",
+    "sk": "prepadnutie",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "asalto",
+    "es_es": "asalto",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Hubo un asalto en el camión.",
+        "es_es": "Hubo un asalto en el autobús.",
+        "sk": "V autobuse bolo prepadnutie."
+      }
+    ]
+  },
+  {
+    "id": "playera",
+    "file": "clothes.json",
+    "sk": "tričko",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "playera",
+    "es_es": "camiseta",
+    "action": "replace",
+    "note_mx": "V Mexiku „playera“ (v Španielsku „camiseta“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Llevo una playera blanca.",
+        "es_es": "Llevo una camiseta blanca.",
+        "sk": "Mám na sebe biele tričko."
+      }
+    ]
+  },
+  {
+    "id": "tenis",
+    "file": "clothes.json",
+    "sk": "tenisky",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tenis",
+    "es_es": "zapatillas",
+    "plural_mx": "tenis",
+    "plural_es": "zapatillas",
+    "action": "replace",
+    "note_mx": "V Mexiku „los tenis“ = športové topánky (v Španielsku „zapatillas“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Siempre uso tenis.",
+        "es_es": "Siempre uso zapatillas.",
+        "sk": "Vždy nosím tenisky."
+      }
+    ],
+    "manual": [
+      "tenis → zapatillas (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "chamarra",
+    "file": "clothes.json",
+    "sk": "bunda",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "chamarra",
+    "es_es": "chaqueta",
+    "action": "replace",
+    "note_mx": "Typicky mexické (v Španielsku „chaqueta“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Lleva una chamarra, hace frío.",
+        "es_es": "Lleva una chaqueta, hace frío.",
+        "sk": "Vezmi si bundu, je zima."
+      }
+    ]
+  },
+  {
+    "id": "lentes",
+    "file": "clothes.json",
+    "sk": "okuliare",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "lentes",
+    "es_es": "gafas",
+    "plural_mx": "lentes",
+    "plural_es": "gafas",
+    "action": "replace",
+    "note_mx": "V Mexiku „lentes“ (v Španielsku „gafas“). Lentes de sol = slnečné okuliare.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "No veo nada sin mis lentes.",
+        "es_es": "No veo nada sin mis gafas.",
+        "sk": "Bez okuliarov nevidím nič."
+      }
+    ]
+  },
+  {
+    "id": "negro",
+    "file": "clothes.json",
+    "sk": "čierny",
+    "pos": "adj",
+    "es_mx": "negro",
+    "es_es": "negro",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Quiero la playera negra.",
+        "es_es": "Quiero la camiseta negra.",
+        "sk": "Chcem to čierne tričko."
+      }
+    ]
+  },
+  {
+    "id": "arete",
+    "file": "clothes.json",
+    "sk": "náušnica",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "arete",
+    "es_es": "pendiente",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „pendiente“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Me regalaron unos aretes.",
+        "es_es": "Me regalaron unos pendientes.",
+        "sk": "Dostala som náušnice."
+      }
+    ]
+  },
+  {
+    "id": "algodon",
+    "file": "clothes.json",
+    "sk": "bavlna",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "algodón",
+    "es_es": "algodón",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Esta playera es de algodón.",
+        "es_es": "Esta camiseta es de algodón.",
+        "sk": "Toto tričko je z bavlny."
+      }
+    ]
+  },
+  {
+    "id": "lana",
+    "file": "clothes.json",
+    "sk": "vlna",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "lana",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "V Mexiku hovorovo aj „peniaze“."
+  },
+  {
+    "id": "guante",
+    "file": "clothes.json",
+    "sk": "rukavica",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "guante",
+    "es_es": "guante",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Perdí un guante en el camión.",
+        "es_es": "Perdí un guante en el autobús.",
+        "sk": "V autobuse som stratil rukavicu."
+      }
+    ]
+  },
+  {
+    "id": "cierre",
+    "file": "clothes.json",
+    "sk": "zips",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "cierre",
+    "es_es": "cremallera",
+    "action": "replace",
+    "note_mx": "Mexické: el cierre = zips (v Španielsku la cremallera).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Se rompió el cierre de mi chamarra.",
+        "es_es": "Se rompió la cremallera de mi chaqueta.",
+        "sk": "Pokazil sa mi zips na bunde."
+      }
+    ],
+    "manual": [
+      "cierre → cremallera (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "mezclilla",
+    "file": "clothes.json",
+    "sk": "rifľovina",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "mezclilla",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: pantalones de mezclilla = rifle (aj „jeans“).",
+    "note_es": ""
+  },
+  {
+    "id": "ropa-de-paca",
+    "file": "clothes.json",
+    "sk": "oblečenie zo second handu",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "ropa de paca",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: ropa de paca = lacné použité oblečenie (dovážané v balíkoch, „pacas“).",
+    "note_es": ""
+  },
+  {
+    "id": "enojado",
+    "file": "emotions.json",
+    "sk": "nahnevaný",
+    "pos": "adj",
+    "es_mx": "enojado",
+    "es_es": "enfadado",
+    "action": "replace",
+    "note_mx": "V Mexiku „enojado“ (v Španielsku skôr „enfadado“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Mi mamá está enojada conmigo.",
+        "es_es": "Mi mamá está enfadada conmigo.",
+        "sk": "Mama sa na mňa hnevá."
+      }
+    ]
+  },
+  {
+    "id": "apenado",
+    "file": "emotions.json",
+    "sk": "zahanbený",
+    "pos": "adj",
+    "es_mx": "apenado",
+    "es_es": "apenado",
+    "action": "note-only",
+    "note_mx": "Mexické: apenado = zahanbený (od „dar pena“).",
+    "note_es": ""
+  },
+  {
+    "id": "achicopalado",
+    "file": "emotions.json",
+    "sk": "skleslý",
+    "pos": "adj",
+    "es_mx": "achicopalado",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové.",
+    "note_es": ""
+  },
+  {
+    "id": "chavo",
+    "file": "family.json",
+    "sk": "chalan",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "chavo",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické; dievča = chava.",
+    "note_es": ""
+  },
+  {
+    "id": "cuate",
+    "file": "family.json",
+    "sk": "kamoš",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "cuate",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické; cuates = aj dvojčatá.",
+    "note_es": ""
+  },
+  {
+    "id": "quinceanera",
+    "file": "family.json",
+    "sk": "pätnástiny (oslava)",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "quinceañera",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Veľká mexická oslava 15. narodenín dievčaťa. Aj samotné dievča je „la quinceañera“.",
+    "note_es": ""
+  },
+  {
+    "id": "chamaco",
+    "file": "family.json",
+    "sk": "chlapec",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "chamaco",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové. Chamaca = dievča.",
+    "note_es": ""
+  },
+  {
+    "id": "apapacho",
+    "file": "family.json",
+    "sk": "objatie",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "apapacho",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické (z jazyka nahuatl).",
+    "note_es": ""
+  },
+  {
+    "id": "jugo",
+    "file": "food.json",
+    "sk": "džús",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "jugo",
+    "es_es": "zumo",
+    "action": "replace",
+    "note_mx": "V Španielsku „zumo“, v Mexiku vždy „jugo“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Un jugo de naranja, por favor.",
+        "es_es": "Un zumo de naranja, por favor.",
+        "sk": "Pomarančový džús, prosím."
+      }
+    ]
+  },
+  {
+    "id": "tortilla",
+    "file": "food.json",
+    "sk": "tortilla (kukuričná placka)",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "tortilla",
+    "es_es": "tortilla",
+    "action": "note-only",
+    "note_mx": "V Mexiku je tortilla tenká placka z kukurice alebo pšenice, nie zemiaková omeleta ako v Španielsku.",
+    "note_es": ""
+  },
+  {
+    "id": "papa",
+    "file": "food.json",
+    "sk": "zemiak",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "papa",
+    "es_es": "patata",
+    "action": "replace",
+    "note_mx": "V Španielsku „patata“. Pozor: papá (s prízvukom) = otec. Papas fritas = hranolky alebo čipsy.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Quiero una hamburguesa con papas.",
+        "es_es": "Quiero una hamburguesa con patatas.",
+        "sk": "Chcem hamburger s hranolkami."
+      }
+    ]
+  },
+  {
+    "id": "pan",
+    "file": "food.json",
+    "sk": "chlieb",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "pan",
+    "es_es": null,
+    "plural_mx": "panes",
+    "plural_es": "panes",
+    "action": "hide-in-es",
+    "note_mx": "pan dulce = sladké mexické pečivo k raňajkám.",
+    "note_es": ""
+  },
+  {
+    "id": "naranja",
+    "file": "food.json",
+    "sk": "pomaranč",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "naranja",
+    "es_es": "naranja",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Me gusta el jugo de naranja.",
+        "es_es": "Me gusta el zumo de naranja.",
+        "sk": "Mám rád pomarančový džús."
+      }
+    ]
+  },
+  {
+    "id": "jitomate",
+    "file": "food.json",
+    "sk": "paradajka",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "jitomate",
+    "es_es": "tomate",
+    "action": "replace",
+    "note_mx": "V Mexiku „jitomate“ = červená paradajka; „tomate“ tu často znamená zelenú paradajku (tomatillo).",
+    "examples": [
+      {
+        "es_mx": "Necesito tres jitomates para la salsa.",
+        "es_es": "Necesito tres tomates para la salsa.",
+        "sk": "Na salsu potrebujem tri paradajky."
+      }
+    ]
+  },
+  {
+    "id": "mesero",
+    "file": "food.json",
+    "sk": "čašník",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "mesero",
+    "es_es": "camarero",
+    "action": "replace",
+    "note_mx": "mesera = čašníčka. V Mexiku „mesero“ (v Španielsku „camarero“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "El mesero nos trae la cuenta.",
+        "es_es": "El camarero nos trae la cuenta.",
+        "sk": "Čašník nám nesie účet."
+      }
+    ]
+  },
+  {
+    "id": "elote",
+    "file": "food.json",
+    "sk": "kukurica (klas)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "elote",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Elote = varený klas kukurice s majonézou, syrom a čili; esquites = to isté v pohári."
+  },
+  {
+    "id": "tequila",
+    "file": "food.json",
+    "sk": "tequila",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tequila",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "V španielčine je mužského rodu: el tequila.",
+    "note_es": ""
+  },
+  {
+    "id": "antojo",
+    "file": "food.json",
+    "sk": "chuť (na niečo)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "antojo",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Antojitos = mexické pouličné jedlá (tacos, quesadillas, sopes…).",
+    "note_es": ""
+  },
+  {
+    "id": "tamal",
+    "file": "food.json",
+    "sk": "tamal (kukuričné cesto v šúpolí)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tamal",
+    "es_es": null,
+    "plural_mx": "tamales",
+    "plural_es": "tamales",
+    "action": "hide-in-es"
+  },
+  {
+    "id": "licuado",
+    "file": "food.json",
+    "sk": "ovocný koktail (s mliekom)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "licuado",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: mixovaný nápoj z ovocia s mliekom alebo vodou.",
+    "note_es": ""
+  },
+  {
+    "id": "antojito",
+    "file": "food.json",
+    "sk": "mexické jedlo z ulice",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "antojito",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: drobné jedlá z kukuričného cesta (sopes, gorditas, quesadillas…).",
+    "note_es": ""
+  },
+  {
+    "id": "botana",
+    "file": "food.json",
+    "sk": "niečo na zahryznutie",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "botana",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické slovo.",
+    "note_es": ""
+  },
+  {
+    "id": "mande",
+    "file": "greetings.json",
+    "sk": "prosím? (keď si nepočul)",
+    "pos": "phrase",
+    "es_mx": "¿mande?",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Typicky mexické. Zdvorilá reakcia, keď niekoho nepočuješ alebo keď ťa niekto osloví. Samotné „¿Qué?“ znie menej zdvorilo.",
+    "note_es": ""
+  },
+  {
+    "id": "que-onda",
+    "file": "greetings.json",
+    "sk": "čau, čo nové?",
+    "pos": "phrase",
+    "es_mx": "¿qué onda?",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorový mexický pozdrav medzi kamarátmi.",
+    "note_es": ""
+  },
+  {
+    "id": "que-padre",
+    "file": "greetings.json",
+    "sk": "to je super!",
+    "pos": "phrase",
+    "es_mx": "¡qué padre!",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexický hovorový výraz. Podobne „¡Qué chido!“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¡Qué padre tu departamento!",
+        "es_es": "¡Qué padre tu piso!",
+        "sk": "Máš super byt!"
+      }
+    ]
+  },
+  {
+    "id": "orale",
+    "file": "greetings.json",
+    "sk": "dobre",
+    "pos": "phrase",
+    "es_mx": "órale",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické citoslovce: súhlas, povzbudenie aj údiv podľa tónu.",
+    "note_es": ""
+  },
+  {
+    "id": "sale",
+    "file": "greetings.json",
+    "sk": "platí",
+    "pos": "phrase",
+    "es_mx": "sale",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické „ok“. Inak je to tvar slovesa salir (él sale = on odchádza).",
+    "note_es": ""
+  },
+  {
+    "id": "aguas",
+    "file": "greetings.json",
+    "sk": "pozor!",
+    "pos": "phrase",
+    "es_mx": "¡aguas!",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické varovanie.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¡Aguas! Viene un carro.",
+        "es_es": "¡Aguas! Viene un coche.",
+        "sk": "Pozor! Ide auto."
+      }
+    ]
+  },
+  {
+    "id": "neta",
+    "file": "greetings.json",
+    "sk": "naozaj?",
+    "pos": "phrase",
+    "es_mx": "¿neta?",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické: la neta = pravda (la neta, no sé = úprimne, neviem).",
+    "note_es": ""
+  },
+  {
+    "id": "chido",
+    "file": "greetings.json",
+    "sk": "super",
+    "pos": "adj",
+    "es_mx": "chido",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické, podobne ako „padre“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Tu carro está bien chido.",
+        "es_es": "Tu coche está bien chido.",
+        "sk": "Tvoje auto je fakt super."
+      }
+    ]
+  },
+  {
+    "id": "no-manches",
+    "file": "greetings.json",
+    "sk": "no nie!",
+    "pos": "phrase",
+    "es_mx": "¡no manches!",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické prekvapenie (slušnejšia verzia hrubšieho výrazu).",
+    "note_es": ""
+  },
+  {
+    "id": "ni-modo",
+    "file": "greetings.json",
+    "sk": "nedá sa nič robiť",
+    "pos": "phrase",
+    "es_mx": "ni modo",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Veľmi mexické.",
+    "note_es": ""
+  },
+  {
+    "id": "a-poco",
+    "file": "greetings.json",
+    "sk": "fakt?",
+    "pos": "phrase",
+    "es_mx": "a poco",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické: vyjadruje prekvapenie alebo neveru.",
+    "note_es": ""
+  },
+  {
+    "id": "buen-fin",
+    "file": "greetings.json",
+    "sk": "pekný víkend!",
+    "pos": "phrase",
+    "es_mx": "¡buen fin!",
+    "es_es": "¡buen fin!",
+    "action": "note-only",
+    "note_mx": "Skratka z „buen fin de semana“. El Buen Fin je aj mexický výpredajový víkend v novembri.",
+    "note_es": ""
+  },
+  {
+    "id": "echale-ganas",
+    "file": "greetings.json",
+    "sk": "daj do toho všetko!",
+    "pos": "phrase",
+    "es_mx": "¡échale ganas!",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Veľmi mexické povzbudenie.",
+    "note_es": ""
+  },
+  {
+    "id": "no-hay-bronca",
+    "file": "greetings.json",
+    "sk": "v pohode",
+    "pos": "phrase",
+    "es_mx": "no hay bronca",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Hovorové mexické; bronca = problém, hádka.",
+    "note_es": ""
+  },
+  {
+    "id": "andale",
+    "file": "greetings.json",
+    "sk": "no tak!",
+    "pos": "other",
+    "es_mx": "ándale",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické citoslovce: popohnanie (¡ándale, apúrate!) aj súhlas (¡ándale! = presne tak).",
+    "note_es": ""
+  },
+  {
+    "id": "al-rato",
+    "file": "greetings.json",
+    "sk": "o chvíľu",
+    "pos": "adv",
+    "es_mx": "al rato",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: al rato = neskôr (môže to byť aj o pár hodín).",
+    "note_es": ""
+  },
+  {
+    "id": "buena-onda",
+    "file": "greetings.json",
+    "sk": "fajn",
+    "pos": "phrase",
+    "es_mx": "buena onda",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické. Opak: mala onda = nepríjemný, zlý.",
+    "note_es": ""
+  },
+  {
+    "id": "que-oso",
+    "file": "greetings.json",
+    "sk": "to je ale trápne!",
+    "pos": "phrase",
+    "es_mx": "¡qué oso!",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové. Hacer el oso = strápniť sa.",
+    "note_es": ""
+  },
+  {
+    "id": "me-late",
+    "file": "greetings.json",
+    "sk": "páči sa mi",
+    "pos": "phrase",
+    "es_mx": "me late",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové (doslova „bije mi“).",
+    "note_es": ""
+  },
+  {
+    "id": "echar-la-mano",
+    "file": "greetings.json",
+    "sk": "pomôcť",
+    "pos": "phrase",
+    "es_mx": "echar la mano",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: echar la mano = pomôcť.",
+    "note_es": ""
+  },
+  {
+    "id": "quedar-de",
+    "file": "greetings.json",
+    "sk": "dohodnúť sa (že)",
+    "pos": "phrase",
+    "es_mx": "quedar de",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: quedar de + infinitív. Inde: quedar en.",
+    "note_es": ""
+  },
+  {
+    "id": "de-plano",
+    "file": "greetings.json",
+    "sk": "naozaj",
+    "pos": "adv",
+    "es_mx": "de plano",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické, hovorové.",
+    "note_es": ""
+  },
+  {
+    "id": "ahi-nos-vidrios",
+    "file": "greetings.json",
+    "sk": "tak sa uvidíme",
+    "pos": "phrase",
+    "es_mx": "ahí nos vidrios",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexický vtip: „vidrios“ (sklá) znie ako „vemos“ (uvidíme sa).",
+    "note_es": ""
+  },
+  {
+    "id": "gripa",
+    "file": "health.json",
+    "sk": "chrípka",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "gripa",
+    "es_es": "gripe",
+    "action": "replace",
+    "note_mx": "V Mexiku „gripa“ (v Španielsku „gripe“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Tengo gripa.",
+        "es_es": "Tengo gripe.",
+        "sk": "Mám chrípku."
+      }
+    ]
+  },
+  {
+    "id": "curita",
+    "file": "health.json",
+    "sk": "náplasť",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "curita",
+    "es_es": "tirita",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „tirita“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¿Tienes una curita?",
+        "es_es": "¿Tienes una tirita?",
+        "sk": "Máš náplasť?"
+      }
+    ]
+  },
+  {
+    "id": "contagioso",
+    "file": "health.json",
+    "sk": "nákazlivý",
+    "pos": "adj",
+    "es_mx": "contagioso",
+    "es_es": "contagioso",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "La gripa es muy contagiosa.",
+        "es_es": "La gripe es muy contagiosa.",
+        "sk": "Chrípka je veľmi nákazlivá."
+      }
+    ]
+  },
+  {
+    "id": "cubrebocas",
+    "file": "health.json",
+    "sk": "rúško",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "cubrebocas",
+    "es_es": "mascarilla",
+    "action": "replace",
+    "note_mx": "Mexické slovo (inde mascarilla, barbijo).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "En el hospital todavía piden cubrebocas.",
+        "es_es": "En el hospital todavía piden mascarilla.",
+        "sk": "V nemocnici ešte stále chcú rúško."
+      }
+    ],
+    "manual": [
+      "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "mariachi",
+    "file": "hobbies.json",
+    "sk": "mariachi (skupina, muzikant)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "mariachi",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Tradičná mexická hudba a jej muzikanti; hrávajú na oslavách aj na námestí Garibaldi v Mexico City.",
+    "note_es": ""
+  },
+  {
+    "id": "alberca",
+    "file": "hobbies.json",
+    "sk": "bazén",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "alberca",
+    "es_es": "piscina",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „piscina“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "El hotel tiene alberca.",
+        "es_es": "El hotel tiene piscina.",
+        "sk": "Hotel má bazén."
+      }
+    ]
+  },
+  {
+    "id": "lucha-libre",
+    "file": "hobbies.json",
+    "sk": "lucha libre (mexický wrestling)",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "lucha libre",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Zápasníci v maskách, typická mexická zábava.",
+    "note_es": ""
+  },
+  {
+    "id": "revista",
+    "file": "hobbies.json",
+    "sk": "časopis",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "revista",
+    "es_es": "revista",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Leo una revista en el camión.",
+        "es_es": "Leo una revista en el autobús.",
+        "sk": "V autobuse čítam časopis."
+      }
+    ]
+  },
+  {
+    "id": "porra",
+    "file": "hobbies.json",
+    "sk": "fanúšikovia",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "porra",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: echarle porras a alguien = povzbudzovať niekoho.",
+    "note_es": ""
+  },
+  {
+    "id": "departamento",
+    "file": "home.json",
+    "sk": "byt",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "departamento",
+    "es_es": "piso",
+    "action": "replace",
+    "note_mx": "V Mexiku „departamento“, v Španielsku „piso“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Vivo en un departamento pequeño.",
+        "es_es": "Vivo en un piso pequeño.",
+        "sk": "Bývam v malom byte."
+      }
+    ]
+  },
+  {
+    "id": "recamara",
+    "file": "home.json",
+    "sk": "spálňa",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "recámara",
+    "es_es": "dormitorio",
+    "action": "replace",
+    "note_mx": "Typicky mexické slovo pre spálňu.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "El departamento tiene dos recámaras.",
+        "es_es": "El piso tiene dos dormitorios.",
+        "sk": "Byt má dve spálne."
+      }
+    ],
+    "manual": [
+      "recámara → dormitorio (gender/number: check adjectives after the noun)",
+      "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "regadera",
+    "file": "home.json",
+    "sk": "sprcha",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "regadera",
+    "es_es": "ducha",
+    "action": "replace",
+    "note_mx": "V Mexiku „regadera“ (v Španielsku „ducha“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "La regadera no tiene agua caliente.",
+        "es_es": "La ducha no tiene agua caliente.",
+        "sk": "V sprche netečie teplá voda."
+      }
+    ]
+  },
+  {
+    "id": "renta",
+    "file": "home.json",
+    "sk": "nájom",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "renta",
+    "es_es": "alquiler",
+    "action": "replace",
+    "note_mx": "V Mexiku „la renta“ (v Španielsku „el alquiler“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "La renta es muy cara en el centro.",
+        "es_es": "El alquiler es muy cara en el centro.",
+        "sk": "Nájom v centre je veľmi drahý."
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "cobija",
+    "file": "home.json",
+    "sk": "deka",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "cobija",
+    "es_es": "manta",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „manta“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Hace frío, ¿me pasas una cobija?",
+        "es_es": "Hace frío, ¿me pasas una manta?",
+        "sk": "Je zima, podáš mi deku?"
+      }
+    ]
+  },
+  {
+    "id": "azotea",
+    "file": "home.json",
+    "sk": "plochá strecha",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "azotea",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Na plochých mexických strechách sa suší prádlo aj oslavuje.",
+    "note_es": ""
+  },
+  {
+    "id": "dueno",
+    "file": "home.json",
+    "sk": "majiteľ",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "dueño",
+    "es_es": "dueño",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El dueño del departamento vive arriba.",
+        "es_es": "El dueño del piso vive arriba.",
+        "sk": "Majiteľ bytu býva nad nami."
+      }
+    ]
+  },
+  {
+    "id": "fraccionamiento",
+    "file": "home.json",
+    "sk": "obytný komplex",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "fraccionamiento",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: štvrť rodinných domov, často s bránou a strážnikom.",
+    "note_es": ""
+  },
+  {
+    "id": "tinaco",
+    "file": "home.json",
+    "sk": "nádrž na vodu (na streche)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tinaco",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: typická čierna nádrž na streche domu.",
+    "note_es": ""
+  },
+  {
+    "id": "plomero",
+    "file": "home.json",
+    "sk": "inštalatér",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "plomero",
+    "es_es": "fontanero",
+    "action": "replace",
+    "note_mx": "Mexické; v Španielsku „fontanero“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Hay que llamar al plomero.",
+        "es_es": "Hay que llamar al fontanero.",
+        "sk": "Treba zavolať inštalatéra."
+      }
+    ]
+  },
+  {
+    "id": "foco",
+    "file": "home.json",
+    "sk": "žiarovka",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "foco",
+    "es_es": "bombilla",
+    "action": "replace",
+    "note_mx": "Mexické: el foco = žiarovka.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Se fundió el foco del baño.",
+        "es_es": "Se fundió la bombilla del baño.",
+        "sk": "V kúpeľni praskla žiarovka."
+      }
+    ],
+    "manual": [
+      "foco → bombilla (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "cochera",
+    "file": "home.json",
+    "sk": "garáž",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "cochera",
+    "es_es": "cochera",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El carro no cabe en la cochera.",
+        "es_es": "El coche no cabe en la cochera.",
+        "sk": "Auto sa nezmestí do garáže."
+      }
+    ]
+  },
+  {
+    "id": "aval",
+    "file": "home.json",
+    "sk": "ručiteľ",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "aval",
+    "es_es": "aval",
+    "plural_mx": "avales",
+    "plural_es": "avales",
+    "action": "examples-only",
+    "note_mx": "V Mexiku pri prenájme bytu často chcú „aval“: osobu s nehnuteľnosťou, ktorá ručí.",
+    "examples": [
+      {
+        "es_mx": "Para rentar te piden un aval.",
+        "es_es": "Para alquilar te piden un aval.",
+        "sk": "Pri prenájme od teba chcú ručiteľa."
+      }
+    ]
+  },
+  {
+    "id": "casero",
+    "file": "home.json",
+    "sk": "domáci (prenajímateľ)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "casero",
+    "es_es": "casero",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El casero viene a cobrar la renta.",
+        "es_es": "El casero viene a cobrar el alquiler.",
+        "sk": "Domáci prichádza vybrať nájomné."
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "amueblado",
+    "file": "home.json",
+    "sk": "zariadený (nábytkom)",
+    "pos": "adj",
+    "es_mx": "amueblado",
+    "es_es": "amueblado",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Buscamos un departamento amueblado.",
+        "es_es": "Buscamos un piso amueblado.",
+        "sk": "Hľadáme zariadený byt."
+      }
+    ]
+  },
+  {
+    "id": "condominio",
+    "file": "home.json",
+    "sk": "obytný komplex",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "condominio",
+    "es_es": "condominio",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Vivimos en un condominio con alberca.",
+        "es_es": "Vivimos en un condominio con piscina.",
+        "sk": "Bývame v obytnom komplexe s bazénom."
+      }
+    ]
+  },
+  {
+    "id": "planta",
+    "file": "nature.json",
+    "sk": "rastlina",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "planta",
+    "es_es": "planta",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Tengo muchas plantas en mi departamento.",
+        "es_es": "Tengo muchas plantas en mi piso.",
+        "sk": "V byte mám veľa kvetín."
+      }
+    ]
+  },
+  {
+    "id": "nopal",
+    "file": "nature.json",
+    "sk": "opuncia (kaktus)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "nopal",
+    "es_es": null,
+    "plural_mx": "nopales",
+    "plural_es": "nopales",
+    "action": "hide-in-es",
+    "note_mx": "Nopal s orlom je aj na mexickej vlajke.",
+    "note_es": ""
+  },
+  {
+    "id": "raiz",
+    "file": "nature.json",
+    "sk": "koreň",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "raíz",
+    "es_es": "raíz",
+    "plural_mx": "raíces",
+    "plural_es": "raíces",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Las raíces del árbol rompieron la banqueta.",
+        "es_es": "Las raíces del árbol rompieron la acera.",
+        "sk": "Korene stromu rozbili chodník."
+      }
+    ]
+  },
+  {
+    "id": "sustentable",
+    "file": "nature.json",
+    "sk": "udržateľný",
+    "pos": "adj",
+    "es_mx": "sustentable",
+    "es_es": "sostenible",
+    "action": "replace",
+    "note_mx": "V Mexiku sa hovorí „sustentable“ (v Španielsku skôr „sostenible“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Queremos un turismo más sustentable.",
+        "es_es": "Queremos un turismo más sostenible.",
+        "sk": "Chceme udržateľnejší turizmus."
+      }
+    ]
+  },
+  {
+    "id": "numero",
+    "file": "numbers.json",
+    "sk": "číslo",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "número",
+    "es_es": "número",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "¿Cuál es tu número de celular?",
+        "es_es": "¿Cuál es tu número de móvil?",
+        "sk": "Aké máš číslo na mobil?"
+      }
+    ]
+  },
+  {
+    "id": "mil",
+    "file": "numbers.json",
+    "sk": "tisíc",
+    "pos": "other",
+    "es_mx": "mil",
+    "es_es": "mil",
+    "action": "examples-only",
+    "note_mx": "Nemení sa: dos mil = dvetisíc.",
+    "examples": [
+      {
+        "es_mx": "El boleto cuesta mil pesos.",
+        "es_es": "El billete cuesta mil pesos.",
+        "sk": "Lístok stojí tisíc pesos."
+      }
+    ]
+  },
+  {
+    "id": "ultimo",
+    "file": "numbers.json",
+    "sk": "posledný",
+    "pos": "adj",
+    "es_mx": "último",
+    "es_es": "último",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Es el último camión de la noche.",
+        "es_es": "Es el último autobús de la noche.",
+        "sk": "To je posledný nočný autobus."
+      }
+    ]
+  },
+  {
+    "id": "escuela",
+    "file": "school.json",
+    "sk": "škola",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "escuela",
+    "es_es": "escuela",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Mis hijos van a la escuela en camión.",
+        "es_es": "Mis hijos van a la escuela en autobús.",
+        "sk": "Moje deti chodia do školy autobusom."
+      }
+    ]
+  },
+  {
+    "id": "pluma",
+    "file": "school.json",
+    "sk": "pero",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "pluma",
+    "es_es": "bolígrafo",
+    "action": "replace",
+    "note_mx": "V Mexiku „pluma“ (v Španielsku „bolígrafo“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¿Me prestas una pluma?",
+        "es_es": "¿Me prestas un bolígrafo?",
+        "sk": "Požičiaš mi pero?"
+      }
+    ],
+    "manual": [
+      "pluma → bolígrafo (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "licenciatura",
+    "file": "school.json",
+    "sk": "vysokoškolské štúdium",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "licenciatura",
+    "es_es": "licenciatura",
+    "action": "note-only",
+    "note_mx": "Mexická licenciatura trvá zvyčajne 4–5 rokov a je to základný vysokoškolský titul.",
+    "note_es": ""
+  },
+  {
+    "id": "boleta",
+    "file": "school.json",
+    "sk": "vysvedčenie",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "boleta",
+    "es_es": "boleta",
+    "action": "note-only",
+    "note_mx": "Mexické: boleta de calificaciones.",
+    "note_es": ""
+  },
+  {
+    "id": "extraordinario",
+    "file": "school.json",
+    "sk": "opravná skúška",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "extraordinario",
+    "es_es": "extraordinario",
+    "action": "note-only",
+    "note_mx": "V mexických školách: un extraordinario = opravná skúška.",
+    "note_es": ""
+  },
+  {
+    "id": "caro",
+    "file": "shopping.json",
+    "sk": "drahý",
+    "pos": "adj",
+    "es_mx": "caro",
+    "es_es": "caro",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Este celular es muy caro.",
+        "es_es": "Este móvil es muy caro.",
+        "sk": "Tento mobil je veľmi drahý."
+      }
+    ]
+  },
+  {
+    "id": "tianguis",
+    "file": "shopping.json",
+    "sk": "trh pod holým nebom",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "tianguis",
+    "es_es": null,
+    "plural_mx": "tianguis",
+    "plural_es": "tianguis",
+    "action": "hide-in-es",
+    "note_mx": "Typicky mexické: pouličný trh, raz týždenne na tom istom mieste.",
+    "note_es": ""
+  },
+  {
+    "id": "nuevo",
+    "file": "shopping.json",
+    "sk": "nový",
+    "pos": "adj",
+    "es_mx": "nuevo",
+    "es_es": "nuevo",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Compré un celular nuevo.",
+        "es_es": "Compré un móvil nuevo.",
+        "sk": "Kúpil som si nový mobil."
+      }
+    ]
+  },
+  {
+    "id": "viejo",
+    "file": "shopping.json",
+    "sk": "starý",
+    "pos": "adj",
+    "es_mx": "viejo",
+    "es_es": "viejo",
+    "action": "examples-only",
+    "note_mx": "O ľuďoch je zdvorilejšie „mayor“: una persona mayor.",
+    "examples": [
+      {
+        "es_mx": "Mi carro es muy viejo.",
+        "es_es": "Mi coche es muy viejo.",
+        "sk": "Moje auto je veľmi staré."
+      }
+    ]
+  },
+  {
+    "id": "marca",
+    "file": "shopping.json",
+    "sk": "značka",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "marca",
+    "es_es": "marca",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "¿De qué marca es tu celular?",
+        "es_es": "¿De qué marca es tu móvil?",
+        "sk": "Akej značky je tvoj mobil?"
+      }
+    ]
+  },
+  {
+    "id": "mayoreo",
+    "file": "shopping.json",
+    "sk": "veľkoobchod",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "mayoreo",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: al mayoreo = vo veľkom, al menudeo = v malom.",
+    "note_es": ""
+  },
+  {
+    "id": "enganche",
+    "file": "shopping.json",
+    "sk": "akontácia",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "enganche",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické slovo pre prvú platbu pri kúpe na splátky.",
+    "note_es": ""
+  },
+  {
+    "id": "pantalla",
+    "file": "tech.json",
+    "sk": "obrazovka",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "pantalla",
+    "es_es": "pantalla",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Se me rompió la pantalla del celular.",
+        "es_es": "Se me rompió la pantalla del móvil.",
+        "sk": "Rozbil sa mi displej na mobile."
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "file": "tech.json",
+    "sk": "video",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "video",
+    "es_es": "video",
+    "action": "note-only",
+    "note_mx": "V Mexiku bez prízvuku: video (v Španielsku vídeo).",
+    "note_es": ""
+  },
+  {
+    "id": "radio",
+    "file": "tech.json",
+    "sk": "rádio",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "radio",
+    "es_es": "radio",
+    "action": "examples-only",
+    "note_mx": "V Mexiku sa o prístroji často hovorí „el radio“.",
+    "examples": [
+      {
+        "es_mx": "Escucho la radio en el carro.",
+        "es_es": "Escucho la radio en el coche.",
+        "sk": "V aute počúvam rádio."
+      }
+    ]
+  },
+  {
+    "id": "audifono",
+    "file": "tech.json",
+    "sk": "slúchadlo",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "audífono",
+    "es_es": "auricular",
+    "action": "replace",
+    "note_mx": "Mexické slovo; v Španielsku „auriculares“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Siempre llevo mis audífonos.",
+        "es_es": "Siempre llevo mis auriculares.",
+        "sk": "Vždy mám pri sebe slúchadlá."
+      }
+    ]
+  },
+  {
+    "id": "descompuesto",
+    "file": "tech.json",
+    "sk": "pokazený",
+    "pos": "adj",
+    "es_mx": "descompuesto",
+    "es_es": "estropeado",
+    "action": "replace",
+    "note_mx": "Mexické; v Španielsku „estropeado“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "La impresora está descompuesta.",
+        "es_es": "La impresora está estropeada.",
+        "sk": "Tlačiareň je pokazená."
+      }
+    ]
+  },
+  {
+    "id": "actualizacion",
+    "file": "tech.json",
+    "sk": "aktualizácia",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "actualización",
+    "es_es": "actualización",
+    "plural_mx": "actualizaciones",
+    "plural_es": "actualizaciones",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El celular necesita una actualización.",
+        "es_es": "El móvil necesita una actualización.",
+        "sk": "Mobil potrebuje aktualizáciu."
+      }
+    ]
+  },
+  {
+    "id": "respaldo",
+    "file": "tech.json",
+    "sk": "záloha (dát)",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "respaldo",
+    "es_es": "copia de seguridad",
+    "action": "replace",
+    "note_mx": "V Mexiku sa hovorí respaldo, v Španielsku copia de seguridad.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Haz un respaldo de tus fotos.",
+        "es_es": "Haz un copia de seguridad de tus fotos.",
+        "sk": "Zálohuj si fotky."
+      }
+    ]
+  },
+  {
+    "id": "camara",
+    "file": "tech.json",
+    "sk": "fotoaparát",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "cámara",
+    "es_es": "cámara",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "La cámara de mi celular es muy buena.",
+        "es_es": "La cámara de mi móvil es muy buena.",
+        "sk": "Fotoaparát v mojom mobile je veľmi dobrý."
+      }
+    ]
+  },
+  {
+    "id": "manana",
+    "file": "time.json",
+    "sk": "zajtra",
+    "pos": "adv",
+    "es_mx": "mañana",
+    "es_es": "mañana",
+    "action": "note-only",
+    "note_mx": "mañana = zajtra, la mañana = ráno, dopoludnie. V Mexiku sa hovorí „en la mañana“ (v Španielsku „por la mañana“).",
+    "note_es": ""
+  },
+  {
+    "id": "ahorita",
+    "file": "time.json",
+    "sk": "hneď",
+    "pos": "adv",
+    "es_mx": "ahorita",
+    "es_es": "ahora",
+    "action": "replace",
+    "note_mx": "Typicky mexické. Znamená „hneď“, v praxi často „o chvíľu“ alebo aj „niekedy neskôr“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Ahorita vengo.",
+        "es_es": "Ahora vengo.",
+        "sk": "Hneď som späť."
+      }
+    ]
+  },
+  {
+    "id": "rato",
+    "file": "time.json",
+    "sk": "chvíľa",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "rato",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Veľmi mexické: al rato = o chvíľu, neskôr (a niekedy aj oveľa neskôr).",
+    "note_es": ""
+  },
+  {
+    "id": "boleto",
+    "file": "travel.json",
+    "sk": "lístok",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "boleto",
+    "es_es": "billete",
+    "action": "replace",
+    "note_mx": "V Mexiku „boleto“ (v Španielsku „billete“). Boleto de avión = letenka.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Ya compré los boletos de avión.",
+        "es_es": "Ya compré los billetes de avión.",
+        "sk": "Letenky už mám kúpené."
+      }
+    ]
+  },
+  {
+    "id": "reservacion",
+    "file": "travel.json",
+    "sk": "rezervácia",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "reservación",
+    "es_es": "reserva",
+    "plural_mx": "reservaciones",
+    "plural_es": "reservas",
+    "action": "replace",
+    "note_mx": "V Mexiku „reservación“ (v Španielsku „reserva“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Tengo una reservación a nombre de Adam.",
+        "es_es": "Tengo una reserva a nombre de Adam.",
+        "sk": "Mám rezerváciu na meno Adam."
+      }
+    ]
+  },
+  {
+    "id": "pueblo-magico",
+    "file": "travel.json",
+    "sk": "„čarovné mestečko“",
+    "pos": "phrase",
+    "es_mx": "pueblo mágico",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Oficiálny titul pre malebné mexické mestečká.",
+    "note_es": ""
+  },
+  {
+    "id": "ida-y-vuelta",
+    "file": "travel.json",
+    "sk": "spiatočný (lístok)",
+    "pos": "phrase",
+    "es_mx": "ida y vuelta",
+    "es_es": "ida y vuelta",
+    "action": "examples-only",
+    "note_mx": "Jednosmerný = sencillo.",
+    "examples": [
+      {
+        "es_mx": "Un boleto de ida y vuelta, por favor.",
+        "es_es": "Un billete de ida y vuelta, por favor.",
+        "sk": "Spiatočný lístok, prosím."
+      }
+    ]
+  },
+  {
+    "id": "terminal",
+    "file": "travel.json",
+    "sk": "terminál",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "terminal",
+    "es_es": "terminal",
+    "plural_mx": "terminales",
+    "plural_es": "terminales",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El camión sale de la terminal del norte.",
+        "es_es": "El autobús sale de la terminal del norte.",
+        "sk": "Autobus odchádza zo severného terminálu."
+      }
+    ]
+  },
+  {
+    "id": "pase-de-abordar",
+    "file": "travel.json",
+    "sk": "palubný lístok",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "pase de abordar",
+    "es_es": "pase de abordar",
+    "plural_mx": "pases de abordar",
+    "plural_es": "pases de abordar",
+    "action": "note-only",
+    "note_mx": "Mexické. Abordar = nastúpiť (do lietadla).",
+    "note_es": ""
+  },
+  {
+    "id": "vivir",
+    "file": "verbs.json",
+    "sk": "bývať",
+    "pos": "verb",
+    "es_mx": "vivir",
+    "es_es": "vivir",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Vivimos en un departamento en el centro.",
+        "es_es": "Vivimos en un piso en el centro.",
+        "sk": "Bývame v byte v centre."
+      }
+    ]
+  },
+  {
+    "id": "llegar",
+    "file": "verbs.json",
+    "sk": "prísť",
+    "pos": "verb",
+    "es_mx": "llegar",
+    "es_es": "llegar",
+    "action": "examples-only",
+    "note_mx": "V pretérite sa mení pravopis: llegué (aby sa zachovala výslovnosť „g“).",
+    "examples": [
+      {
+        "es_mx": "¿A qué hora llega el camión?",
+        "es_es": "¿A qué hora llega el autobús?",
+        "sk": "O koľkej príde autobus?"
+      },
+      {
+        "es_mx": "Llegué tarde al trabajo.",
+        "es_es": "Llegué tarde al trabajo.",
+        "sk": "Prišiel som neskoro do práce."
+      }
+    ]
+  },
+  {
+    "id": "platicar",
+    "file": "verbs.json",
+    "sk": "rozprávať sa",
+    "pos": "verb",
+    "es_mx": "platicar",
+    "es_es": "charlar",
+    "action": "replace",
+    "note_mx": "Typicky mexické slovo pre „rozprávať sa, kecať“. V Španielsku skôr „charlar“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Me gusta platicar con mi abuela.",
+        "es_es": "Me gusta charlar con mi abuela.",
+        "sk": "Rád sa rozprávam s babkou."
+      }
+    ]
+  },
+  {
+    "id": "escuchar",
+    "file": "verbs.json",
+    "sk": "počúvať",
+    "pos": "verb",
+    "es_mx": "escuchar",
+    "es_es": "escuchar",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Me gusta escuchar música en el camión.",
+        "es_es": "Me gusta escuchar música en el autobús.",
+        "sk": "Rád počúvam hudbu v autobuse."
+      }
+    ]
+  },
+  {
+    "id": "manejar",
+    "file": "verbs.json",
+    "sk": "šoférovať",
+    "pos": "verb",
+    "es_mx": "manejar",
+    "es_es": "manejar",
+    "action": "note-only",
+    "note_mx": "V Mexiku „manejar“ (v Španielsku „conducir“).",
+    "note_es": "",
+    "manual": [
+      "verb form \"manejar\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "usar",
+    "file": "verbs.json",
+    "sk": "používať",
+    "pos": "verb",
+    "es_mx": "usar",
+    "es_es": "usar",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "¿Puedo usar tu computadora?",
+        "es_es": "¿Puedo usar tu ordenador?",
+        "sk": "Môžem použiť tvoj počítač?"
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "llevar",
+    "file": "verbs.json",
+    "sk": "niesť",
+    "pos": "verb",
+    "es_mx": "llevar",
+    "es_es": "llevar",
+    "action": "examples-only",
+    "note_mx": "V obchode „Me lo llevo“ = Beriem si to.",
+    "examples": [
+      {
+        "es_mx": "Me llevo esta camisa.",
+        "es_es": "Me llevo esta camisa.",
+        "sk": "Vezmem si túto košeľu."
+      },
+      {
+        "es_mx": "Hoy llevo una chamarra.",
+        "es_es": "Hoy llevo una chaqueta.",
+        "sk": "Dnes mám na sebe bundu."
+      }
+    ]
+  },
+  {
+    "id": "regresar",
+    "file": "verbs.json",
+    "sk": "vrátiť sa",
+    "pos": "verb",
+    "es_mx": "regresar",
+    "es_es": "volver",
+    "action": "replace",
+    "note_mx": "V Mexiku bežne „regresar“ (v Španielsku skôr „volver“).",
+    "note_es": "",
+    "manual": [
+      "verb form \"regreso\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "rentar",
+    "file": "verbs.json",
+    "sk": "prenajať (si)",
+    "pos": "verb",
+    "es_mx": "rentar",
+    "es_es": "alquilar",
+    "action": "replace",
+    "note_mx": "V Mexiku „rentar“ (v Španielsku „alquilar“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Queremos rentar un departamento cerca de la playa.",
+        "es_es": "Queremos alquilar un piso cerca de la playa.",
+        "sk": "Chceme si prenajať byt blízko pláže."
+      }
+    ]
+  },
+  {
+    "id": "dejar",
+    "file": "verbs.json",
+    "sk": "nechať",
+    "pos": "verb",
+    "es_mx": "dejar",
+    "es_es": "dejar",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Dejé mi celular en la casa.",
+        "es_es": "Dejé mi móvil en la casa.",
+        "sk": "Mobil som nechal doma."
+      }
+    ]
+  },
+  {
+    "id": "estacionar",
+    "file": "verbs.json",
+    "sk": "zaparkovať",
+    "pos": "verb",
+    "es_mx": "estacionar",
+    "es_es": "aparcar",
+    "action": "replace",
+    "note_mx": "V Mexiku „estacionar“ (v Španielsku „aparcar“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¿Dónde puedo estacionar el carro?",
+        "es_es": "¿Dónde puedo aparcar el coche?",
+        "sk": "Kde môžem zaparkovať auto?"
+      }
+    ]
+  },
+  {
+    "id": "buscar",
+    "file": "verbs.json",
+    "sk": "hľadať",
+    "pos": "verb",
+    "es_mx": "buscar",
+    "es_es": "buscar",
+    "action": "examples-only",
+    "note_mx": "Pretérito: busqué.",
+    "examples": [
+      {
+        "es_mx": "Estoy buscando mis lentes.",
+        "es_es": "Estoy buscando mis gafas.",
+        "sk": "Hľadám okuliare."
+      }
+    ]
+  },
+  {
+    "id": "checar",
+    "file": "verbs.json",
+    "sk": "skontrolovať",
+    "pos": "verb",
+    "es_mx": "checar",
+    "es_es": "checar",
+    "action": "note-only",
+    "note_mx": "Typicky mexické (z angl. check). Pretérito: chequé.",
+    "note_es": "",
+    "manual": [
+      "verb form \"checar\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "enojarse",
+    "file": "verbs.json",
+    "sk": "nahnevať sa",
+    "pos": "verb",
+    "es_mx": "enojarse",
+    "es_es": "enfadarse",
+    "action": "replace",
+    "note_mx": "V Mexiku „enojarse“ (v Španielsku skôr „enfadarse“).",
+    "note_es": "",
+    "manual": [
+      "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "perder",
+    "file": "verbs.json",
+    "sk": "stratiť",
+    "pos": "verb",
+    "es_mx": "perder",
+    "es_es": "perder",
+    "action": "examples-only",
+    "note_mx": "perder el camión = zmeškať autobus; perder el partido = prehrať zápas.",
+    "examples": [
+      {
+        "es_mx": "Perdí mi celular.",
+        "es_es": "Perdí mi móvil.",
+        "sk": "Stratil som mobil."
+      }
+    ]
+  },
+  {
+    "id": "subir",
+    "file": "verbs.json",
+    "sk": "ísť hore",
+    "pos": "verb",
+    "es_mx": "subir",
+    "es_es": "subir",
+    "action": "examples-only",
+    "note_mx": "subir = ísť hore, nastúpiť; bajar = zísť, vystúpiť.",
+    "examples": [
+      {
+        "es_mx": "Subimos al camión en la esquina.",
+        "es_es": "Subimos al autobús en la esquina.",
+        "sk": "Do autobusu nastupujeme na rohu."
+      }
+    ]
+  },
+  {
+    "id": "cambiar",
+    "file": "verbs.json",
+    "sk": "zmeniť",
+    "pos": "verb",
+    "es_mx": "cambiar",
+    "es_es": "cambiar",
+    "action": "examples-only",
+    "note_mx": "cambiar dinero = zameniť peniaze; cambiarse = prezliecť sa.",
+    "examples": [
+      {
+        "es_mx": "¿Puedo cambiar esta playera por otra talla?",
+        "es_es": "¿Puedo cambiar esta camiseta por otra talla?",
+        "sk": "Môžem si vymeniť toto tričko za inú veľkosť?"
+      }
+    ]
+  },
+  {
+    "id": "compartir",
+    "file": "verbs.json",
+    "sk": "zdieľať",
+    "pos": "verb",
+    "es_mx": "compartir",
+    "es_es": "compartir",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Comparto el departamento con dos amigos.",
+        "es_es": "Comparto el piso con dos amigos.",
+        "sk": "Byt zdieľam s dvoma kamarátmi."
+      }
+    ]
+  },
+  {
+    "id": "ahorrar",
+    "file": "verbs.json",
+    "sk": "šetriť",
+    "pos": "verb",
+    "es_mx": "ahorrar",
+    "es_es": "ahorrar",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Estoy ahorrando para un carro.",
+        "es_es": "Estoy ahorrando para un coche.",
+        "sk": "Šetrím na auto."
+      }
+    ]
+  },
+  {
+    "id": "prender",
+    "file": "verbs.json",
+    "sk": "zapnúť",
+    "pos": "verb",
+    "es_mx": "prender",
+    "es_es": "encender",
+    "action": "replace",
+    "note_mx": "Mexické; v Španielsku „encender“.",
+    "note_es": "",
+    "manual": [
+      "verb form \"prende\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "voltear",
+    "file": "verbs.json",
+    "sk": "otočiť (sa)",
+    "pos": "verb",
+    "es_mx": "voltear",
+    "es_es": "voltear",
+    "action": "note-only",
+    "note_mx": "Mexické. voltear a ver = obzrieť sa.",
+    "note_es": "",
+    "manual": [
+      "verb form \"voltear\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "reconocer",
+    "file": "verbs.json",
+    "sk": "spoznať",
+    "pos": "verb",
+    "es_mx": "reconocer",
+    "es_es": "reconocer",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "No te reconocí con lentes.",
+        "es_es": "No te reconocí con gafas.",
+        "sk": "S okuliarmi som ťa nespoznal."
+      }
+    ]
+  },
+  {
+    "id": "presumir",
+    "file": "verbs.json",
+    "sk": "chváliť sa",
+    "pos": "verb",
+    "es_mx": "presumir",
+    "es_es": "presumir",
+    "action": "examples-only",
+    "note_mx": "V Mexiku často „chváliť sa niečím“: presumir su carro nuevo.",
+    "examples": [
+      {
+        "es_mx": "Le encanta presumir su carro nuevo.",
+        "es_es": "Le encanta presumir su coche nuevo.",
+        "sk": "Strašne rád sa chváli novým autom."
+      }
+    ]
+  },
+  {
+    "id": "apapachar",
+    "file": "verbs.json",
+    "sk": "túliť",
+    "pos": "verb",
+    "es_mx": "apapachar",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické slovo (z jazyka nahuatl): objať, pomaznať, potešiť niekoho. Apapacho = objatie, pohladenie.",
+    "note_es": ""
+  },
+  {
+    "id": "chambear",
+    "file": "verbs.json",
+    "sk": "makať",
+    "pos": "verb",
+    "es_mx": "chambear",
+    "es_es": "chambear",
+    "action": "note-only",
+    "note_mx": "Hovorové mexické sloveso od „chamba“ (robota).",
+    "note_es": "",
+    "manual": [
+      "verb form \"chambear\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "ponerse",
+    "file": "verbs.json",
+    "sk": "obliecť si",
+    "pos": "verb",
+    "es_mx": "ponerse",
+    "es_es": "ponerse",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Ponte la chamarra, hace frío.",
+        "es_es": "Ponte la chaqueta, hace frío.",
+        "sk": "Obleč si bundu, je zima."
+      }
+    ]
+  },
+  {
+    "id": "trapear",
+    "file": "verbs.json",
+    "sk": "vytrieť (podlahu)",
+    "pos": "verb",
+    "es_mx": "trapear",
+    "es_es": "trapear",
+    "action": "note-only",
+    "note_mx": "Mexické slovo: trapear = vytierať mopom, el trapeador = mop.",
+    "note_es": "",
+    "manual": [
+      "verb form \"trapear\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "reprobar",
+    "file": "verbs.json",
+    "sk": "neurobiť (skúšku)",
+    "pos": "verb",
+    "es_mx": "reprobar",
+    "es_es": "reprobar",
+    "action": "note-only",
+    "note_mx": "V Mexiku: reprobar un examen = neurobiť skúšku (v Španielsku suspender).",
+    "note_es": ""
+  },
+  {
+    "id": "jefe",
+    "file": "work.json",
+    "sk": "šéf",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "jefe",
+    "es_es": "jefe",
+    "action": "note-only",
+    "note_mx": "jefa = šéfka. „Buena onda“ je mexický hovorový výraz pre „v pohode, fajn“.",
+    "note_es": ""
+  },
+  {
+    "id": "computadora",
+    "file": "work.json",
+    "sk": "počítač",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "computadora",
+    "es_es": "ordenador",
+    "action": "replace",
+    "note_mx": "V Mexiku „computadora“, v Španielsku „ordenador“.",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "Mi computadora es muy lenta.",
+        "es_es": "Mi ordenador es muy lenta.",
+        "sk": "Môj počítač je strašne pomalý."
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "celular",
+    "file": "work.json",
+    "sk": "mobil",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "celular",
+    "es_es": "móvil",
+    "plural_mx": "celulares",
+    "plural_es": "móviles",
+    "action": "replace",
+    "note_mx": "V Mexiku „celular“ (v Španielsku „móvil“).",
+    "note_es": "",
+    "examples": [
+      {
+        "es_mx": "¿Me pasas tu número de celular?",
+        "es_es": "¿Me pasas tu número de móvil?",
+        "sk": "Dáš mi číslo na mobil?"
+      }
+    ]
+  },
+  {
+    "id": "chamba",
+    "file": "work.json",
+    "sk": "robota",
+    "pos": "noun",
+    "gender": "f",
+    "es_mx": "chamba",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexický hovorový výraz. Chambear = pracovať.",
+    "note_es": ""
+  },
+  {
+    "id": "escritorio",
+    "file": "work.json",
+    "sk": "písací stôl",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "escritorio",
+    "es_es": "escritorio",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "Mi celular está en el escritorio.",
+        "es_es": "Mi móvil está en el escritorio.",
+        "sk": "Mobil mám na stole."
+      }
+    ]
+  },
+  {
+    "id": "chofer",
+    "file": "work.json",
+    "sk": "šofér",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "chofer",
+    "es_es": "chofer",
+    "plural_mx": "choferes",
+    "plural_es": "choferes",
+    "action": "examples-only",
+    "examples": [
+      {
+        "es_mx": "El chofer del camión maneja muy rápido.",
+        "es_es": "El chofer del autobús maneja muy rápido.",
+        "sk": "Šofér autobusu jazdí veľmi rýchlo."
+      }
+    ],
+    "manual": [
+      "verb form \"maneja\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "finiquito",
+    "file": "work.json",
+    "sk": "odstupné",
+    "pos": "noun",
+    "gender": "m",
+    "es_mx": "finiquito",
+    "es_es": null,
+    "action": "hide-in-es",
+    "note_mx": "Mexické: peniaze, ktoré firma vyplatí pri odchode zamestnanca.",
+    "note_es": ""
+  }
+]

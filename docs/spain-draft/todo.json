@@ -1,0 +1,1230 @@
+{
+  "words": [
+    {
+      "id": "nada",
+      "action": "note-only",
+      "es": "nada",
+      "note": "Dvojitý zápor je v španielčine správne: no… nada = nič."
+    },
+    {
+      "id": "guero",
+      "action": "hide-in-es",
+      "es": "güero",
+      "note": "Mexické: svetlé vlasy alebo pleť. Na trhu tak často oslovujú cudzincov: ¿Qué le damos, güero?"
+    },
+    {
+      "id": "pelon",
+      "action": "hide-in-es",
+      "es": "pelón",
+      "note": "Mexické, hovorové."
+    },
+    {
+      "id": "plaza",
+      "action": "note-only",
+      "es": "plaza",
+      "note": "Hlavné námestie mexického mesta sa volá „el zócalo“."
+    },
+    {
+      "id": "zocalo",
+      "action": "hide-in-es",
+      "es": "zócalo",
+      "note": "Tak sa v Mexiku volá hlavné námestie mesta."
+    },
+    {
+      "id": "tope",
+      "action": "hide-in-es",
+      "es": "tope",
+      "note": "Veľmi mexické: v Mexiku sú retardéry takmer všade."
+    },
+    {
+      "id": "tenis",
+      "action": "replace",
+      "es_mx": "tenis",
+      "proposal": "zapatillas",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "lana",
+      "action": "hide-in-es",
+      "es": "lana",
+      "note": "V Mexiku hovorovo aj „peniaze“."
+    },
+    {
+      "id": "cierre",
+      "action": "replace",
+      "es_mx": "cierre",
+      "proposal": "cremallera",
+      "manual": [
+        "cierre → cremallera (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "mezclilla",
+      "action": "hide-in-es",
+      "es": "mezclilla",
+      "note": "Mexické: pantalones de mezclilla = rifle (aj „jeans“)."
+    },
+    {
+      "id": "ropa-de-paca",
+      "action": "hide-in-es",
+      "es": "ropa de paca",
+      "note": "Mexické: ropa de paca = lacné použité oblečenie (dovážané v balíkoch, „pacas“)."
+    },
+    {
+      "id": "apenado",
+      "action": "note-only",
+      "es": "apenado",
+      "note": "Mexické: apenado = zahanbený (od „dar pena“)."
+    },
+    {
+      "id": "achicopalado",
+      "action": "hide-in-es",
+      "es": "achicopalado",
+      "note": "Mexické, hovorové."
+    },
+    {
+      "id": "chavo",
+      "action": "hide-in-es",
+      "es": "chavo",
+      "note": "Hovorové mexické; dievča = chava."
+    },
+    {
+      "id": "cuate",
+      "action": "hide-in-es",
+      "es": "cuate",
+      "note": "Hovorové mexické; cuates = aj dvojčatá."
+    },
+    {
+      "id": "quinceanera",
+      "action": "hide-in-es",
+      "es": "quinceañera",
+      "note": "Veľká mexická oslava 15. narodenín dievčaťa. Aj samotné dievča je „la quinceañera“."
+    },
+    {
+      "id": "chamaco",
+      "action": "hide-in-es",
+      "es": "chamaco",
+      "note": "Mexické, hovorové. Chamaca = dievča."
+    },
+    {
+      "id": "apapacho",
+      "action": "hide-in-es",
+      "es": "apapacho",
+      "note": "Mexické (z jazyka nahuatl)."
+    },
+    {
+      "id": "tortilla",
+      "action": "note-only",
+      "es": "tortilla",
+      "note": "V Mexiku je tortilla tenká placka z kukurice alebo pšenice, nie zemiaková omeleta ako v Španielsku."
+    },
+    {
+      "id": "pan",
+      "action": "hide-in-es",
+      "es": "pan",
+      "note": "pan dulce = sladké mexické pečivo k raňajkám."
+    },
+    {
+      "id": "elote",
+      "action": "hide-in-es",
+      "es": "elote",
+      "note": "Elote = varený klas kukurice s majonézou, syrom a čili; esquites = to isté v pohári."
+    },
+    {
+      "id": "tequila",
+      "action": "hide-in-es",
+      "es": "tequila",
+      "note": "V španielčine je mužského rodu: el tequila."
+    },
+    {
+      "id": "antojo",
+      "action": "hide-in-es",
+      "es": "antojo",
+      "note": "Antojitos = mexické pouličné jedlá (tacos, quesadillas, sopes…)."
+    },
+    {
+      "id": "tamal",
+      "action": "hide-in-es",
+      "es": "tamal"
+    },
+    {
+      "id": "licuado",
+      "action": "hide-in-es",
+      "es": "licuado",
+      "note": "Mexické: mixovaný nápoj z ovocia s mliekom alebo vodou."
+    },
+    {
+      "id": "antojito",
+      "action": "hide-in-es",
+      "es": "antojito",
+      "note": "Mexické: drobné jedlá z kukuričného cesta (sopes, gorditas, quesadillas…)."
+    },
+    {
+      "id": "botana",
+      "action": "hide-in-es",
+      "es": "botana",
+      "note": "Mexické slovo."
+    },
+    {
+      "id": "mande",
+      "action": "hide-in-es",
+      "es": "¿mande?",
+      "note": "Typicky mexické. Zdvorilá reakcia, keď niekoho nepočuješ alebo keď ťa niekto osloví. Samotné „¿Qué?“ znie menej zdvorilo."
+    },
+    {
+      "id": "que-onda",
+      "action": "hide-in-es",
+      "es": "¿qué onda?",
+      "note": "Hovorový mexický pozdrav medzi kamarátmi."
+    },
+    {
+      "id": "que-padre",
+      "action": "hide-in-es",
+      "es": "¡qué padre!",
+      "note": "Mexický hovorový výraz. Podobne „¡Qué chido!“."
+    },
+    {
+      "id": "orale",
+      "action": "hide-in-es",
+      "es": "órale",
+      "note": "Mexické citoslovce: súhlas, povzbudenie aj údiv podľa tónu."
+    },
+    {
+      "id": "sale",
+      "action": "hide-in-es",
+      "es": "sale",
+      "note": "Hovorové mexické „ok“. Inak je to tvar slovesa salir (él sale = on odchádza)."
+    },
+    {
+      "id": "aguas",
+      "action": "hide-in-es",
+      "es": "¡aguas!",
+      "note": "Hovorové mexické varovanie."
+    },
+    {
+      "id": "neta",
+      "action": "hide-in-es",
+      "es": "¿neta?",
+      "note": "Hovorové mexické: la neta = pravda (la neta, no sé = úprimne, neviem)."
+    },
+    {
+      "id": "chido",
+      "action": "hide-in-es",
+      "es": "chido",
+      "note": "Hovorové mexické, podobne ako „padre“."
+    },
+    {
+      "id": "no-manches",
+      "action": "hide-in-es",
+      "es": "¡no manches!",
+      "note": "Hovorové mexické prekvapenie (slušnejšia verzia hrubšieho výrazu)."
+    },
+    {
+      "id": "ni-modo",
+      "action": "hide-in-es",
+      "es": "ni modo",
+      "note": "Veľmi mexické."
+    },
+    {
+      "id": "a-poco",
+      "action": "hide-in-es",
+      "es": "a poco",
+      "note": "Hovorové mexické: vyjadruje prekvapenie alebo neveru."
+    },
+    {
+      "id": "buen-fin",
+      "action": "note-only",
+      "es": "¡buen fin!",
+      "note": "Skratka z „buen fin de semana“. El Buen Fin je aj mexický výpredajový víkend v novembri."
+    },
+    {
+      "id": "echale-ganas",
+      "action": "hide-in-es",
+      "es": "¡échale ganas!",
+      "note": "Veľmi mexické povzbudenie."
+    },
+    {
+      "id": "no-hay-bronca",
+      "action": "hide-in-es",
+      "es": "no hay bronca",
+      "note": "Hovorové mexické; bronca = problém, hádka."
+    },
+    {
+      "id": "andale",
+      "action": "hide-in-es",
+      "es": "ándale",
+      "note": "Mexické citoslovce: popohnanie (¡ándale, apúrate!) aj súhlas (¡ándale! = presne tak)."
+    },
+    {
+      "id": "al-rato",
+      "action": "hide-in-es",
+      "es": "al rato",
+      "note": "Mexické: al rato = neskôr (môže to byť aj o pár hodín)."
+    },
+    {
+      "id": "buena-onda",
+      "action": "hide-in-es",
+      "es": "buena onda",
+      "note": "Mexické. Opak: mala onda = nepríjemný, zlý."
+    },
+    {
+      "id": "que-oso",
+      "action": "hide-in-es",
+      "es": "¡qué oso!",
+      "note": "Mexické, hovorové. Hacer el oso = strápniť sa."
+    },
+    {
+      "id": "me-late",
+      "action": "hide-in-es",
+      "es": "me late",
+      "note": "Mexické, hovorové (doslova „bije mi“)."
+    },
+    {
+      "id": "echar-la-mano",
+      "action": "hide-in-es",
+      "es": "echar la mano",
+      "note": "Mexické: echar la mano = pomôcť."
+    },
+    {
+      "id": "quedar-de",
+      "action": "hide-in-es",
+      "es": "quedar de",
+      "note": "Mexické: quedar de + infinitív. Inde: quedar en."
+    },
+    {
+      "id": "de-plano",
+      "action": "hide-in-es",
+      "es": "de plano",
+      "note": "Mexické, hovorové."
+    },
+    {
+      "id": "ahi-nos-vidrios",
+      "action": "hide-in-es",
+      "es": "ahí nos vidrios",
+      "note": "Mexický vtip: „vidrios“ (sklá) znie ako „vemos“ (uvidíme sa)."
+    },
+    {
+      "id": "cubrebocas",
+      "action": "replace",
+      "es_mx": "cubrebocas",
+      "proposal": "mascarilla",
+      "manual": [
+        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "mariachi",
+      "action": "hide-in-es",
+      "es": "mariachi",
+      "note": "Tradičná mexická hudba a jej muzikanti; hrávajú na oslavách aj na námestí Garibaldi v Mexico City."
+    },
+    {
+      "id": "lucha-libre",
+      "action": "hide-in-es",
+      "es": "lucha libre",
+      "note": "Zápasníci v maskách, typická mexická zábava."
+    },
+    {
+      "id": "porra",
+      "action": "hide-in-es",
+      "es": "porra",
+      "note": "Mexické: echarle porras a alguien = povzbudzovať niekoho."
+    },
+    {
+      "id": "recamara",
+      "action": "replace",
+      "es_mx": "recámara",
+      "proposal": "dormitorio",
+      "manual": [
+        "recámara → dormitorio (gender/number: check adjectives after the noun)",
+        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "renta",
+      "action": "replace",
+      "es_mx": "renta",
+      "proposal": "alquiler",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "azotea",
+      "action": "hide-in-es",
+      "es": "azotea",
+      "note": "Na plochých mexických strechách sa suší prádlo aj oslavuje."
+    },
+    {
+      "id": "fraccionamiento",
+      "action": "hide-in-es",
+      "es": "fraccionamiento",
+      "note": "Mexické: štvrť rodinných domov, často s bránou a strážnikom."
+    },
+    {
+      "id": "tinaco",
+      "action": "hide-in-es",
+      "es": "tinaco",
+      "note": "Mexické: typická čierna nádrž na streche domu."
+    },
+    {
+      "id": "foco",
+      "action": "replace",
+      "es_mx": "foco",
+      "proposal": "bombilla",
+      "manual": [
+        "foco → bombilla (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "casero",
+      "action": "examples-only",
+      "es_mx": "casero",
+      "proposal": "casero",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "nopal",
+      "action": "hide-in-es",
+      "es": "nopal",
+      "note": "Nopal s orlom je aj na mexickej vlajke."
+    },
+    {
+      "id": "pluma",
+      "action": "replace",
+      "es_mx": "pluma",
+      "proposal": "bolígrafo",
+      "manual": [
+        "pluma → bolígrafo (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "licenciatura",
+      "action": "note-only",
+      "es": "licenciatura",
+      "note": "Mexická licenciatura trvá zvyčajne 4–5 rokov a je to základný vysokoškolský titul."
+    },
+    {
+      "id": "boleta",
+      "action": "note-only",
+      "es": "boleta",
+      "note": "Mexické: boleta de calificaciones."
+    },
+    {
+      "id": "extraordinario",
+      "action": "note-only",
+      "es": "extraordinario",
+      "note": "V mexických školách: un extraordinario = opravná skúška."
+    },
+    {
+      "id": "tianguis",
+      "action": "hide-in-es",
+      "es": "tianguis",
+      "note": "Typicky mexické: pouličný trh, raz týždenne na tom istom mieste."
+    },
+    {
+      "id": "mayoreo",
+      "action": "hide-in-es",
+      "es": "mayoreo",
+      "note": "Mexické: al mayoreo = vo veľkom, al menudeo = v malom."
+    },
+    {
+      "id": "enganche",
+      "action": "hide-in-es",
+      "es": "enganche",
+      "note": "Mexické slovo pre prvú platbu pri kúpe na splátky."
+    },
+    {
+      "id": "video",
+      "action": "note-only",
+      "es": "video",
+      "note": "V Mexiku bez prízvuku: video (v Španielsku vídeo)."
+    },
+    {
+      "id": "manana",
+      "action": "note-only",
+      "es": "mañana",
+      "note": "mañana = zajtra, la mañana = ráno, dopoludnie. V Mexiku sa hovorí „en la mañana“ (v Španielsku „por la mañana“)."
+    },
+    {
+      "id": "rato",
+      "action": "hide-in-es",
+      "es": "rato",
+      "note": "Veľmi mexické: al rato = o chvíľu, neskôr (a niekedy aj oveľa neskôr)."
+    },
+    {
+      "id": "pueblo-magico",
+      "action": "hide-in-es",
+      "es": "pueblo mágico",
+      "note": "Oficiálny titul pre malebné mexické mestečká."
+    },
+    {
+      "id": "pase-de-abordar",
+      "action": "note-only",
+      "es": "pase de abordar",
+      "note": "Mexické. Abordar = nastúpiť (do lietadla)."
+    },
+    {
+      "id": "vivir",
+      "action": "examples-only",
+      "es_mx": "vivir",
+      "proposal": "vivir",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "llegar",
+      "action": "examples-only",
+      "es_mx": "llegar",
+      "proposal": "llegar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "platicar",
+      "action": "replace",
+      "es_mx": "platicar",
+      "proposal": "charlar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "escuchar",
+      "action": "examples-only",
+      "es_mx": "escuchar",
+      "proposal": "escuchar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "manejar",
+      "action": "note-only",
+      "es": "manejar",
+      "note": "V Mexiku „manejar“ (v Španielsku „conducir“)."
+    },
+    {
+      "id": "usar",
+      "action": "examples-only",
+      "es_mx": "usar",
+      "proposal": "usar",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "llevar",
+      "action": "examples-only",
+      "es_mx": "llevar",
+      "proposal": "llevar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "regresar",
+      "action": "replace",
+      "es_mx": "regresar",
+      "proposal": "volver",
+      "manual": [
+        "verb form \"regreso\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "rentar",
+      "action": "replace",
+      "es_mx": "rentar",
+      "proposal": "alquilar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "dejar",
+      "action": "examples-only",
+      "es_mx": "dejar",
+      "proposal": "dejar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "estacionar",
+      "action": "replace",
+      "es_mx": "estacionar",
+      "proposal": "aparcar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "buscar",
+      "action": "examples-only",
+      "es_mx": "buscar",
+      "proposal": "buscar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "checar",
+      "action": "note-only",
+      "es": "checar",
+      "note": "Typicky mexické (z angl. check). Pretérito: chequé."
+    },
+    {
+      "id": "enojarse",
+      "action": "replace",
+      "es_mx": "enojarse",
+      "proposal": "enfadarse",
+      "manual": [
+        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "perder",
+      "action": "examples-only",
+      "es_mx": "perder",
+      "proposal": "perder",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "subir",
+      "action": "examples-only",
+      "es_mx": "subir",
+      "proposal": "subir",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "cambiar",
+      "action": "examples-only",
+      "es_mx": "cambiar",
+      "proposal": "cambiar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "compartir",
+      "action": "examples-only",
+      "es_mx": "compartir",
+      "proposal": "compartir",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "ahorrar",
+      "action": "examples-only",
+      "es_mx": "ahorrar",
+      "proposal": "ahorrar",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "prender",
+      "action": "replace",
+      "es_mx": "prender",
+      "proposal": "encender",
+      "manual": [
+        "verb form \"prende\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "voltear",
+      "action": "note-only",
+      "es": "voltear",
+      "note": "Mexické. voltear a ver = obzrieť sa."
+    },
+    {
+      "id": "reconocer",
+      "action": "examples-only",
+      "es_mx": "reconocer",
+      "proposal": "reconocer",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "presumir",
+      "action": "examples-only",
+      "es_mx": "presumir",
+      "proposal": "presumir",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "apapachar",
+      "action": "hide-in-es",
+      "es": "apapachar",
+      "note": "Mexické slovo (z jazyka nahuatl): objať, pomaznať, potešiť niekoho. Apapacho = objatie, pohladenie."
+    },
+    {
+      "id": "chambear",
+      "action": "note-only",
+      "es": "chambear",
+      "note": "Hovorové mexické sloveso od „chamba“ (robota)."
+    },
+    {
+      "id": "ponerse",
+      "action": "examples-only",
+      "es_mx": "ponerse",
+      "proposal": "ponerse",
+      "manual": [
+        "verb: conjugations differ"
+      ]
+    },
+    {
+      "id": "trapear",
+      "action": "note-only",
+      "es": "trapear",
+      "note": "Mexické slovo: trapear = vytierať mopom, el trapeador = mop."
+    },
+    {
+      "id": "reprobar",
+      "action": "note-only",
+      "es": "reprobar",
+      "note": "V Mexiku: reprobar un examen = neurobiť skúšku (v Španielsku suspender)."
+    },
+    {
+      "id": "jefe",
+      "action": "note-only",
+      "es": "jefe",
+      "note": "jefa = šéfka. „Buena onda“ je mexický hovorový výraz pre „v pohode, fajn“."
+    },
+    {
+      "id": "computadora",
+      "action": "replace",
+      "es_mx": "computadora",
+      "proposal": "ordenador",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "chamba",
+      "action": "hide-in-es",
+      "es": "chamba",
+      "note": "Mexický hovorový výraz. Chambear = pracovať."
+    },
+    {
+      "id": "chofer",
+      "action": "examples-only",
+      "es_mx": "chofer",
+      "proposal": "chofer",
+      "manual": [
+        "verb form \"maneja\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "finiquito",
+      "action": "hide-in-es",
+      "es": "finiquito",
+      "note": "Mexické: peniaze, ktoré firma vyplatí pri odchode zamestnanca."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1008",
+      "es_mx": "Ahorita estoy aprendiendo a manejar.",
+      "proposal": "Ahora estoy aprendiendo a manejar.",
+      "manual": [
+        "verb form \"manejar\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1043",
+      "es_mx": "Me duele el cuello porque paso todo el día frente a la computadora.",
+      "proposal": "Me duele el cuello porque paso todo el día frente al ordenador.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)",
+        "tokens do not rebuild the sentence (multi-word swap): rebuild tokens by hand"
+      ]
+    },
+    {
+      "id": "s1065",
+      "es_mx": "¿Estás manejando? Te escucho muy mal.",
+      "proposal": "¿Estás manejando? Te escucho muy mal.",
+      "manual": [
+        "verb form \"manejando\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1074",
+      "es_mx": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
+      "proposal": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
+      "manual": [
+        "verb form \"regresé\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1085",
+      "es_mx": "La gentrificación está subiendo las rentas en colonias como la Roma y la Condesa.",
+      "proposal": "La gentrificación está subiendo los alquileres en colonias como la Roma y la Condesa.",
+      "manual": [
+        "rentas → alquileres (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s150",
+      "es_mx": "¿Sabes manejar en la Ciudad de México?",
+      "proposal": "¿Sabes manejar en la Ciudad de México?",
+      "manual": [
+        "verb form \"manejar\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s231",
+      "es_mx": "Compré unos tenis nuevos.",
+      "proposal": "Compré unas zapatillas nuevos.",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s531",
+      "es_mx": "Cambié los tenis porque me quedaban chicos.",
+      "proposal": "Cambié las zapatillas porque me quedaban chicos.",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s818",
+      "es_mx": "Se me rompió el cierre de la chamarra.",
+      "proposal": "Se me rompió la cremallera de la chaqueta.",
+      "manual": [
+        "cierre → cremallera (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1089",
+      "es_mx": "Mi hermano siempre lleva tenis blancos.",
+      "proposal": "Mi hermano siempre lleva zapatillas blancos.",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1116",
+      "es_mx": "En las ofertas de diciembre conseguí unos tenis de marca a mitad de precio.",
+      "proposal": "En las ofertas de diciembre conseguí unas zapatillas de marca a mitad de precio.",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s326",
+      "es_mx": "Mi jefe se enojó conmigo.",
+      "proposal": "Mi jefe se enojó conmigo.",
+      "manual": [
+        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s398",
+      "es_mx": "Mi novia se enojó conmigo.",
+      "proposal": "Mi novia se enojó conmigo.",
+      "manual": [
+        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s535",
+      "es_mx": "Se enojó conmigo porque olvidé su cumpleaños.",
+      "proposal": "Se enojó conmigo porque olvidé su cumpleaños.",
+      "manual": [
+        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1684",
+      "es_mx": "Mi hermana me prestó su carro y se lo regresé el lunes.",
+      "proposal": "Mi hermana me prestó su coche y se lo regresé el lunes.",
+      "manual": [
+        "verb form \"regresé\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s632",
+      "es_mx": "Al rato te marco, ahorita estoy manejando.",
+      "proposal": "Al rato te marco, ahora estoy manejando.",
+      "manual": [
+        "verb form \"manejando\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s864",
+      "es_mx": "Durante la pandemia todos usábamos cubrebocas.",
+      "proposal": "Durante la pandemia todos usábamos mascarilla.",
+      "manual": [
+        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1253",
+      "es_mx": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
+      "proposal": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
+      "manual": [
+        "verb form \"checo\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1259",
+      "es_mx": "Nos contagiamos todos en la oficina por no usar cubrebocas.",
+      "proposal": "Nos contagiamos todos en la oficina por no usar mascarilla.",
+      "manual": [
+        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s350",
+      "es_mx": "Jugué tenis con mi primo.",
+      "proposal": "Jugué zapatillas con mi primo.",
+      "manual": [
+        "tenis → zapatillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1642",
+      "es_mx": "Me gusta mi recámara.",
+      "proposal": "Me gusta mi dormitorio.",
+      "manual": [
+        "recámara → dormitorio (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1660",
+      "es_mx": "En mi departamento hay dos recámaras.",
+      "proposal": "En mi piso hay dos dormitorios.",
+      "manual": [
+        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s112",
+      "es_mx": "Vivimos en un departamento de dos recámaras.",
+      "proposal": "Vivimos en un piso de dos dormitorios.",
+      "manual": [
+        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1727",
+      "es_mx": "Ustedes deben limpiar su recámara hoy.",
+      "proposal": "Ustedes deben limpiar su dormitorio hoy.",
+      "manual": [
+        "recámara → dormitorio (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1752",
+      "es_mx": "Cierre la puerta, por favor, hace frío.",
+      "proposal": "Cremallera la puerta, por favor, hace frío.",
+      "manual": [
+        "Cierre → cremallera (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s117",
+      "es_mx": "La renta sube cada año.",
+      "proposal": "El alquiler sube cada año.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s561",
+      "es_mx": "El dueño del departamento nos va a subir la renta.",
+      "proposal": "El dueño del piso nos va a subir el alquiler.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s707",
+      "es_mx": "Se fundió el foco del baño.",
+      "proposal": "Se fundió la bombilla del baño.",
+      "manual": [
+        "foco → bombilla (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s714",
+      "es_mx": "No pises, acabo de trapear.",
+      "proposal": "No pises, acabo de trapear.",
+      "manual": [
+        "verb form \"trapear\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s719",
+      "es_mx": "Rentamos un departamento amueblado cerca del centro.",
+      "proposal": "Rentamos un piso amueblado cerca del centro.",
+      "manual": [
+        "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1302",
+      "es_mx": "Prende el calentador media hora antes de bañarte.",
+      "proposal": "Prende el calentador media hora antes de bañarte.",
+      "manual": [
+        "verb form \"prende\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1303",
+      "es_mx": "Nos subieron la renta otra vez y ya no nos alcanza.",
+      "proposal": "Nos subieron el alquiler otra vez y ya no nos alcanza.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1308",
+      "es_mx": "Para ahorrar luz, cambiamos todos los focos por unos de bajo consumo.",
+      "proposal": "Para ahorrar luz, cambiamos todos las bombillas por unos de bajo consumo.",
+      "manual": [
+        "focos → bombillas (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1966",
+      "es_mx": "Se rentan departamentos cerca del metro.",
+      "proposal": "Se rentan pisos cerca del metro.",
+      "manual": [
+        "verb form \"rentan\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1327",
+      "es_mx": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+      "proposal": "Las olas estaban muy fuertes, así que regresamos al hotel.",
+      "manual": [
+        "verb form \"regresamos\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1368",
+      "es_mx": "Casi el treinta por ciento de mi sueldo se va en la renta.",
+      "proposal": "Casi el treinta por ciento de mi sueldo se va en el alquiler.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1393",
+      "es_mx": "Necesito una pluma y un cuaderno.",
+      "proposal": "Necesito un bolígrafo y un cuaderno.",
+      "manual": [
+        "pluma → bolígrafo (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1410",
+      "es_mx": "Aunque tenía beca, apenas me alcanzaba para la renta.",
+      "proposal": "Aunque tenía beca, apenas me alcanzaba para el alquiler.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1803",
+      "es_mx": "Yo compraría una computadora nueva, pero está muy cara.",
+      "proposal": "Yo compraría un ordenador nueva, pero está muy cara.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s579",
+      "es_mx": "Se me descompuso la computadora y perdí todos mis archivos.",
+      "proposal": "Se me descompuso el ordenador y perdí todos mis archivos.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1453",
+      "es_mx": "La computadora está en mi cuarto.",
+      "proposal": "El ordenador está en mi cuarto.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1460",
+      "es_mx": "La pantalla de mi computadora es muy grande.",
+      "proposal": "La pantalla de mi ordenador es muy grande.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1461",
+      "es_mx": "¿Puedo usar tu computadora un momento?",
+      "proposal": "¿Puedo usar tu ordenador un momento?",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1463",
+      "es_mx": "Antes mi abuela no sabía usar la computadora.",
+      "proposal": "Antes mi abuela no sabía usar el ordenador.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1466",
+      "es_mx": "Mañana compraré una computadora nueva.",
+      "proposal": "Mañana compraré un ordenador nueva.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1472",
+      "es_mx": "Mi hermano me ayudará con la computadora.",
+      "proposal": "Mi hermano me ayudará con el ordenador.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1476",
+      "es_mx": "Se me trabó la computadora justo cuando iba a mandar el trabajo.",
+      "proposal": "Se me trabó el ordenador justo cuando iba a mandar el trabajo.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1698",
+      "es_mx": "Esta computadora es tan rápida como la de mi trabajo.",
+      "proposal": "Este ordenador es tan rápida como la de mi trabajo.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1702",
+      "es_mx": "La computadora más barata de la tienda cuesta cinco mil pesos.",
+      "proposal": "El ordenador más barata de la tienda cuesta cinco mil pesos.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1501",
+      "es_mx": "A primera hora checo el correo y te aviso.",
+      "proposal": "A primera hora checo el correo y te aviso.",
+      "manual": [
+        "verb form \"checo\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s157",
+      "es_mx": "Rentamos un carro para viajar por Yucatán.",
+      "proposal": "Rentamos un coche para viajar por Yucatán.",
+      "manual": [
+        "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s159",
+      "es_mx": "¿Cuándo regresas a Eslovaquia?",
+      "proposal": "¿Cuándo regresas a Eslovaquia?",
+      "manual": [
+        "verb form \"regresas\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s166",
+      "es_mx": "Manejamos seis horas hasta Guanajuato.",
+      "proposal": "Manejamos seis horas hasta Guanajuato.",
+      "manual": [
+        "verb form \"manejamos\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s434",
+      "es_mx": "Mientras manejaba, mi esposa dormía.",
+      "proposal": "Mientras manejaba, mi esposa dormía.",
+      "manual": [
+        "verb form \"manejaba\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s196",
+      "es_mx": "¿Puedes checar el correo del cliente?",
+      "proposal": "¿Puedes checar el correo del cliente?",
+      "manual": [
+        "verb form \"checar\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s203",
+      "es_mx": "Usamos esta computadora para diseñar.",
+      "proposal": "Usamos este ordenador para diseñar.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1575",
+      "es_mx": "Mi computadora no funciona hoy.",
+      "proposal": "Mi ordenador no funciona hoy.",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1577",
+      "es_mx": "Mi papá es chofer y maneja un taxi.",
+      "proposal": "Mi papá es chofer y maneja un taxi.",
+      "manual": [
+        "verb form \"maneja\" (conduzco/charlo/…): check by hand"
+      ]
+    },
+    {
+      "id": "s1716",
+      "es_mx": "¿Puedo usar su computadora un momento?",
+      "proposal": "¿Puedo usar su ordenador un momento?",
+      "manual": [
+        "computadora → ordenador (gender/number: check adjectives after the noun)"
+      ]
+    },
+    {
+      "id": "s1593",
+      "es_mx": "Con este sueldo apenas me alcanza para la renta y la comida.",
+      "proposal": "Con este sueldo apenas me alcanza para el alquiler y la comida.",
+      "manual": [
+        "renta → alquiler (gender/number: check adjectives after the noun)",
+        "verb form \"renta\" (conduzco/charlo/…): check by hand"
+      ]
+    }
+  ]
+}

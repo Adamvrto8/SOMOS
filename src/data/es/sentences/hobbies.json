@@ -1,0 +1,64 @@
+[
+  {
+    "id": "s356",
+    "es": "Mis hijos están nadando en la piscina.",
+    "tokens": [
+      "Mis",
+      "hijos",
+      "están",
+      "nadando",
+      "en",
+      "la",
+      "piscina",
+      "."
+    ]
+  },
+  {
+    "id": "s355",
+    "es": "Escuchamos música mexicana en el coche.",
+    "tokens": [
+      "Escuchamos",
+      "música",
+      "mexicana",
+      "en",
+      "el",
+      "coche",
+      "."
+    ]
+  },
+  {
+    "id": "s1269",
+    "es": "El año pasado aprendí a nadar en una piscina pública.",
+    "tokens": [
+      "El",
+      "año",
+      "pasado",
+      "aprendí",
+      "a",
+      "nadar",
+      "en",
+      "una",
+      "piscina",
+      "pública",
+      "."
+    ]
+  },
+  {
+    "id": "s1276",
+    "es": "Mis hijos prefieren los juegos de mesa porque así charlamos más.",
+    "tokens": [
+      "Mis",
+      "hijos",
+      "prefieren",
+      "los",
+      "juegos",
+      "de",
+      "mesa",
+      "porque",
+      "así",
+      "charlamos",
+      "más",
+      "."
+    ]
+  }
+]
