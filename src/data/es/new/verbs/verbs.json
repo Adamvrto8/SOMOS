@@ -1,0 +1,433 @@
+[
+  {
+    "id": "conducir",
+    "sk": [
+      "šoférovať",
+      "riadiť"
+    ],
+    "group": "ir",
+    "regular": false,
+    "gerund": "conduciendo",
+    "presente": {
+      "yo": "conduzco",
+      "tu": "conduces",
+      "el": "conduce",
+      "nosotros": "conducimos",
+      "ellos": "conducen"
+    },
+    "preterito": {
+      "yo": "conduje",
+      "tu": "condujiste",
+      "el": "condujo",
+      "nosotros": "condujimos",
+      "ellos": "condujeron"
+    },
+    "imperfecto": {
+      "yo": "conducía",
+      "tu": "conducías",
+      "el": "conducía",
+      "nosotros": "conducíamos",
+      "ellos": "conducían"
+    },
+    "futuro": {
+      "yo": "conduciré",
+      "tu": "conducirás",
+      "el": "conducirá",
+      "nosotros": "conduciremos",
+      "ellos": "conducirán"
+    },
+    "subjuntivo": {
+      "yo": "conduzca",
+      "tu": "conduzcas",
+      "el": "conduzca",
+      "nosotros": "conduzcamos",
+      "ellos": "conduzcan"
+    },
+    "subjImperfecto": {
+      "yo": "condujera",
+      "tu": "condujeras",
+      "el": "condujera",
+      "nosotros": "condujéramos",
+      "ellos": "condujeran"
+    },
+    "condicional": {
+      "yo": "conduciría",
+      "tu": "conducirías",
+      "el": "conduciría",
+      "nosotros": "conduciríamos",
+      "ellos": "conducirían"
+    },
+    "imperativo": {
+      "tu": "conduce",
+      "el": "conduzca",
+      "nosotros": "conduzcamos",
+      "ellos": "conduzcan"
+    },
+    "participle": "conducido",
+    "irregularForms": [
+      "presente.yo",
+      "preterito.*",
+      "subjuntivo.*",
+      "subjImperfecto.*",
+      "imperativo.el",
+      "imperativo.nosotros",
+      "imperativo.ellos"
+    ],
+    "level": "A1"
+  },
+  {
+    "id": "alquilar",
+    "sk": [
+      "prenajať (si)"
+    ],
+    "group": "ar",
+    "regular": true,
+    "gerund": "alquilando",
+    "presente": {
+      "yo": "alquilo",
+      "tu": "alquilas",
+      "el": "alquila",
+      "nosotros": "alquilamos",
+      "ellos": "alquilan"
+    },
+    "preterito": {
+      "yo": "alquilé",
+      "tu": "alquilaste",
+      "el": "alquiló",
+      "nosotros": "alquilamos",
+      "ellos": "alquilaron"
+    },
+    "imperfecto": {
+      "yo": "alquilaba",
+      "tu": "alquilabas",
+      "el": "alquilaba",
+      "nosotros": "alquilábamos",
+      "ellos": "alquilaban"
+    },
+    "futuro": {
+      "yo": "alquilaré",
+      "tu": "alquilarás",
+      "el": "alquilará",
+      "nosotros": "alquilaremos",
+      "ellos": "alquilarán"
+    },
+    "subjuntivo": {
+      "yo": "alquile",
+      "tu": "alquiles",
+      "el": "alquile",
+      "nosotros": "alquilemos",
+      "ellos": "alquilen"
+    },
+    "subjImperfecto": {
+      "yo": "alquilara",
+      "tu": "alquilaras",
+      "el": "alquilara",
+      "nosotros": "alquiláramos",
+      "ellos": "alquilaran"
+    },
+    "condicional": {
+      "yo": "alquilaría",
+      "tu": "alquilarías",
+      "el": "alquilaría",
+      "nosotros": "alquilaríamos",
+      "ellos": "alquilarían"
+    },
+    "imperativo": {
+      "tu": "alquila",
+      "el": "alquile",
+      "nosotros": "alquilemos",
+      "ellos": "alquilen"
+    },
+    "participle": "alquilado",
+    "level": "A2"
+  },
+  {
+    "id": "aparcar",
+    "sk": [
+      "zaparkovať",
+      "parkovať"
+    ],
+    "group": "ar",
+    "regular": false,
+    "gerund": "aparcando",
+    "presente": {
+      "yo": "aparco",
+      "tu": "aparcas",
+      "el": "aparca",
+      "nosotros": "aparcamos",
+      "ellos": "aparcan"
+    },
+    "preterito": {
+      "yo": "aparqué",
+      "tu": "aparcaste",
+      "el": "aparcó",
+      "nosotros": "aparcamos",
+      "ellos": "aparcaron"
+    },
+    "imperfecto": {
+      "yo": "aparcaba",
+      "tu": "aparcabas",
+      "el": "aparcaba",
+      "nosotros": "aparcábamos",
+      "ellos": "aparcaban"
+    },
+    "futuro": {
+      "yo": "aparcaré",
+      "tu": "aparcarás",
+      "el": "aparcará",
+      "nosotros": "aparcaremos",
+      "ellos": "aparcarán"
+    },
+    "subjuntivo": {
+      "yo": "aparque",
+      "tu": "aparques",
+      "el": "aparque",
+      "nosotros": "aparquemos",
+      "ellos": "aparquen"
+    },
+    "subjImperfecto": {
+      "yo": "aparcara",
+      "tu": "aparcaras",
+      "el": "aparcara",
+      "nosotros": "aparcáramos",
+      "ellos": "aparcaran"
+    },
+    "condicional": {
+      "yo": "aparcaría",
+      "tu": "aparcarías",
+      "el": "aparcaría",
+      "nosotros": "aparcaríamos",
+      "ellos": "aparcarían"
+    },
+    "imperativo": {
+      "tu": "aparca",
+      "el": "aparque",
+      "nosotros": "aparquemos",
+      "ellos": "aparquen"
+    },
+    "participle": "aparcado",
+    "irregularForms": [
+      "preterito.yo",
+      "subjuntivo.*",
+      "imperativo.el",
+      "imperativo.nosotros",
+      "imperativo.ellos"
+    ],
+    "level": "A2"
+  },
+  {
+    "id": "charlar",
+    "sk": [
+      "rozprávať sa",
+      "pokecať si"
+    ],
+    "group": "ar",
+    "regular": true,
+    "gerund": "charlando",
+    "presente": {
+      "yo": "charlo",
+      "tu": "charlas",
+      "el": "charla",
+      "nosotros": "charlamos",
+      "ellos": "charlan"
+    },
+    "preterito": {
+      "yo": "charlé",
+      "tu": "charlaste",
+      "el": "charló",
+      "nosotros": "charlamos",
+      "ellos": "charlaron"
+    },
+    "imperfecto": {
+      "yo": "charlaba",
+      "tu": "charlabas",
+      "el": "charlaba",
+      "nosotros": "charlábamos",
+      "ellos": "charlaban"
+    },
+    "futuro": {
+      "yo": "charlaré",
+      "tu": "charlarás",
+      "el": "charlará",
+      "nosotros": "charlaremos",
+      "ellos": "charlarán"
+    },
+    "subjuntivo": {
+      "yo": "charle",
+      "tu": "charles",
+      "el": "charle",
+      "nosotros": "charlemos",
+      "ellos": "charlen"
+    },
+    "subjImperfecto": {
+      "yo": "charlara",
+      "tu": "charlaras",
+      "el": "charlara",
+      "nosotros": "charláramos",
+      "ellos": "charlaran"
+    },
+    "condicional": {
+      "yo": "charlaría",
+      "tu": "charlarías",
+      "el": "charlaría",
+      "nosotros": "charlaríamos",
+      "ellos": "charlarían"
+    },
+    "imperativo": {
+      "tu": "charla",
+      "el": "charle",
+      "nosotros": "charlemos",
+      "ellos": "charlen"
+    },
+    "participle": "charlado",
+    "level": "A2"
+  },
+  {
+    "id": "enfadarse",
+    "sk": [
+      "nahnevať sa",
+      "hnevať sa"
+    ],
+    "group": "ar",
+    "regular": true,
+    "reflexive": true,
+    "gerund": "enfadando",
+    "presente": {
+      "yo": "me enfado",
+      "tu": "te enfadas",
+      "el": "se enfada",
+      "nosotros": "nos enfadamos",
+      "ellos": "se enfadan"
+    },
+    "preterito": {
+      "yo": "me enfadé",
+      "tu": "te enfadaste",
+      "el": "se enfadó",
+      "nosotros": "nos enfadamos",
+      "ellos": "se enfadaron"
+    },
+    "imperfecto": {
+      "yo": "me enfadaba",
+      "tu": "te enfadabas",
+      "el": "se enfadaba",
+      "nosotros": "nos enfadábamos",
+      "ellos": "se enfadaban"
+    },
+    "futuro": {
+      "yo": "me enfadaré",
+      "tu": "te enfadarás",
+      "el": "se enfadará",
+      "nosotros": "nos enfadaremos",
+      "ellos": "se enfadarán"
+    },
+    "subjuntivo": {
+      "yo": "me enfade",
+      "tu": "te enfades",
+      "el": "se enfade",
+      "nosotros": "nos enfademos",
+      "ellos": "se enfaden"
+    },
+    "subjImperfecto": {
+      "yo": "me enfadara",
+      "tu": "te enfadaras",
+      "el": "se enfadara",
+      "nosotros": "nos enfadáramos",
+      "ellos": "se enfadaran"
+    },
+    "condicional": {
+      "yo": "me enfadaría",
+      "tu": "te enfadarías",
+      "el": "se enfadaría",
+      "nosotros": "nos enfadaríamos",
+      "ellos": "se enfadarían"
+    },
+    "imperativo": {
+      "tu": "enfádate",
+      "el": "enfádese",
+      "nosotros": "enfadémonos",
+      "ellos": "enfádense"
+    },
+    "participle": "enfadado",
+    "level": "A2"
+  },
+  {
+    "id": "encender",
+    "sk": [
+      "zapnúť",
+      "zapáliť"
+    ],
+    "group": "er",
+    "regular": false,
+    "gerund": "encendiendo",
+    "presente": {
+      "yo": "enciendo",
+      "tu": "enciendes",
+      "el": "enciende",
+      "nosotros": "encendemos",
+      "ellos": "encienden"
+    },
+    "preterito": {
+      "yo": "encendí",
+      "tu": "encendiste",
+      "el": "encendió",
+      "nosotros": "encendimos",
+      "ellos": "encendieron"
+    },
+    "imperfecto": {
+      "yo": "encendía",
+      "tu": "encendías",
+      "el": "encendía",
+      "nosotros": "encendíamos",
+      "ellos": "encendían"
+    },
+    "futuro": {
+      "yo": "encenderé",
+      "tu": "encenderás",
+      "el": "encenderá",
+      "nosotros": "encenderemos",
+      "ellos": "encenderán"
+    },
+    "subjuntivo": {
+      "yo": "encienda",
+      "tu": "enciendas",
+      "el": "encienda",
+      "nosotros": "encendamos",
+      "ellos": "enciendan"
+    },
+    "subjImperfecto": {
+      "yo": "encendiera",
+      "tu": "encendieras",
+      "el": "encendiera",
+      "nosotros": "encendiéramos",
+      "ellos": "encendieran"
+    },
+    "condicional": {
+      "yo": "encendería",
+      "tu": "encenderías",
+      "el": "encendería",
+      "nosotros": "encenderíamos",
+      "ellos": "encenderían"
+    },
+    "imperativo": {
+      "tu": "enciende",
+      "el": "encienda",
+      "nosotros": "encendamos",
+      "ellos": "enciendan"
+    },
+    "participle": "encendido",
+    "irregularForms": [
+      "presente.yo",
+      "presente.tu",
+      "presente.el",
+      "presente.ellos",
+      "subjuntivo.yo",
+      "subjuntivo.tu",
+      "subjuntivo.el",
+      "subjuntivo.ellos",
+      "imperativo.tu",
+      "imperativo.el",
+      "imperativo.ellos"
+    ],
+    "level": "B1"
+  }
+]

@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "icons": "node scripts/generate-icons.ts",
     "validate:data": "node scripts/validate-data.ts",
-    "validate:es": "node scripts/validate-es.ts",
+    "validate:es": "node scripts/validate-es.ts && node scripts/validate-data.ts --es",
     "store:screenshots": "node scripts/store-screenshots.ts",
     "test": "vitest run",
     "test:e2e": "playwright test"

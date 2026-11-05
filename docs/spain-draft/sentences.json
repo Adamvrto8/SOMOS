@@ -5257,57 +5257,6 @@
     ]
   },
   {
-    "id": "s1479",
-    "file": "tech.json",
-    "level": "B2",
-    "sk": "Ľutoval som, že som si pred aktualizáciou neurobil zálohu.",
-    "es_mx": "Me arrepentí de no haber hecho un respaldo antes de la actualización.",
-    "es_es": "Me arrepentí de no haber hecho un copia de seguridad antes de la actualización.",
-    "tokens_es": [
-      "Me",
-      "arrepentí",
-      "de",
-      "no",
-      "haber",
-      "hecho",
-      "un",
-      "copia de seguridad",
-      "antes",
-      "de",
-      "la",
-      "actualización",
-      "."
-    ],
-    "cloze": [
-      {
-        "tokenIndex": 1,
-        "answer_mx": "arrepentí",
-        "answer_es": "arrepentí",
-        "lemma_mx": "arrepentirse",
-        "hint": "arrepentirse · yo · pretérito",
-        "distractors_es": [
-          "arrepiento",
-          "arrepintió",
-          "arrepentía"
-        ],
-        "changed": false
-      },
-      {
-        "tokenIndex": 9,
-        "answer_mx": "de",
-        "answer_es": "de",
-        "lemma_mx": "de",
-        "hint": "predložka",
-        "distractors_es": [
-          "a",
-          "en",
-          "con"
-        ],
-        "changed": false
-      }
-    ]
-  },
-  {
     "id": "s1482",
     "file": "tech.json",
     "level": "B2",

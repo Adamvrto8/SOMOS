@@ -17,12 +17,33 @@
       {
         "tokenIndex": 4,
         "answer": "charlamos",
+        "lemma": "charlar",
+        "hint": "charlar · nosotros · presente",
         "distractors": [
-          "charlan",
           "charlo",
-          "platiqué"
+          "charlas",
+          "charla"
         ]
       }
+    ]
+  },
+  {
+    "id": "s1684",
+    "es": "Mi hermana me prestó su coche y se lo devolví el lunes.",
+    "tokens": [
+      "Mi",
+      "hermana",
+      "me",
+      "prestó",
+      "su",
+      "coche",
+      "y",
+      "se",
+      "lo",
+      "devolví",
+      "el",
+      "lunes",
+      "."
     ]
   }
 ]

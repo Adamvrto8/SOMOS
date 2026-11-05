@@ -7,5 +7,17 @@
         "sk": "Moje deti chodia do školy autobusom."
       }
     ]
+  },
+  {
+    "id": "pluma",
+    "es": "bolígrafo",
+    "gender": "m",
+    "plural": "bolígrafos",
+    "examples": [
+      {
+        "es": "¿Me prestas un bolígrafo?",
+        "sk": "Požičiaš mi pero?"
+      }
+    ]
   }
 ]

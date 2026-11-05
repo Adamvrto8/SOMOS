@@ -39,5 +39,36 @@
       "chaqueta",
       "."
     ]
+  },
+  {
+    "id": "s1327",
+    "es": "Las olas estaban muy fuertes, así que volvimos al hotel.",
+    "tokens": [
+      "Las",
+      "olas",
+      "estaban",
+      "muy",
+      "fuertes",
+      ",",
+      "así",
+      "que",
+      "volvimos",
+      "al",
+      "hotel",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "volvimos",
+        "lemma": "volver",
+        "hint": "volver · nosotros · pretérito",
+        "distractors": [
+          "volví",
+          "volviste",
+          "volvió"
+        ]
+      }
+    ]
   }
 ]

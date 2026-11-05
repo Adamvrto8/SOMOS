@@ -188,25 +188,6 @@
     ]
   },
   {
-    "id": "s1479",
-    "es": "Me arrepentí de no haber hecho un copia de seguridad antes de la actualización.",
-    "tokens": [
-      "Me",
-      "arrepentí",
-      "de",
-      "no",
-      "haber",
-      "hecho",
-      "un",
-      "copia de seguridad",
-      "antes",
-      "de",
-      "la",
-      "actualización",
-      "."
-    ]
-  },
-  {
     "id": "s1482",
     "es": "Mi hijo se la pasa pegado al móvil y casi no charla con nosotros.",
     "tokens": [
@@ -230,11 +211,17 @@
       {
         "tokenIndex": 11,
         "answer": "charla",
+        "lemma": "charlar",
+        "hint": "charlar · él · presente",
         "distractors": [
           "charlo",
-          "platicó",
-          "platicaba"
+          "charlas",
+          "charlamos"
         ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se"
       }
     ]
   },
@@ -323,6 +310,205 @@
       "el",
       "móvil",
       "."
+    ]
+  },
+  {
+    "id": "s1803",
+    "es": "Yo compraría un ordenador nuevo, pero es muy caro.",
+    "tokens": [
+      "Yo",
+      "compraría",
+      "un",
+      "ordenador",
+      "nuevo",
+      ",",
+      "pero",
+      "es",
+      "muy",
+      "caro",
+      "."
+    ]
+  },
+  {
+    "id": "s579",
+    "es": "Se me estropeó el ordenador y perdí todos mis archivos.",
+    "tokens": [
+      "Se",
+      "me",
+      "estropeó",
+      "el",
+      "ordenador",
+      "y",
+      "perdí",
+      "todos",
+      "mis",
+      "archivos",
+      "."
+    ]
+  },
+  {
+    "id": "s1453",
+    "es": "El ordenador está en mi habitación.",
+    "tokens": [
+      "El",
+      "ordenador",
+      "está",
+      "en",
+      "mi",
+      "habitación",
+      "."
+    ]
+  },
+  {
+    "id": "s1460",
+    "es": "La pantalla de mi ordenador es muy grande.",
+    "tokens": [
+      "La",
+      "pantalla",
+      "de",
+      "mi",
+      "ordenador",
+      "es",
+      "muy",
+      "grande",
+      "."
+    ]
+  },
+  {
+    "id": "s1461",
+    "es": "¿Puedo usar tu ordenador un momento?",
+    "tokens": [
+      "¿",
+      "Puedo",
+      "usar",
+      "tu",
+      "ordenador",
+      "un",
+      "momento",
+      "?"
+    ]
+  },
+  {
+    "id": "s1463",
+    "es": "Antes mi abuela no sabía usar el ordenador.",
+    "tokens": [
+      "Antes",
+      "mi",
+      "abuela",
+      "no",
+      "sabía",
+      "usar",
+      "el",
+      "ordenador",
+      "."
+    ]
+  },
+  {
+    "id": "s1466",
+    "es": "Mañana compraré un ordenador nuevo.",
+    "tokens": [
+      "Mañana",
+      "compraré",
+      "un",
+      "ordenador",
+      "nuevo",
+      "."
+    ]
+  },
+  {
+    "id": "s1472",
+    "es": "Mi hermano me ayudará con el ordenador.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "me",
+      "ayudará",
+      "con",
+      "el",
+      "ordenador",
+      "."
+    ]
+  },
+  {
+    "id": "s1476",
+    "es": "Se me colgó el ordenador justo cuando iba a mandar el trabajo.",
+    "tokens": [
+      "Se",
+      "me",
+      "colgó",
+      "el",
+      "ordenador",
+      "justo",
+      "cuando",
+      "iba",
+      "a",
+      "mandar",
+      "el",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s1698",
+    "es": "Este ordenador es tan rápido como el de mi trabajo.",
+    "tokens": [
+      "Este",
+      "ordenador",
+      "es",
+      "tan",
+      "rápido",
+      "como",
+      "el",
+      "de",
+      "mi",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s1702",
+    "es": "El ordenador más barato de la tienda cuesta cinco mil pesos.",
+    "tokens": [
+      "El",
+      "ordenador",
+      "más",
+      "barato",
+      "de",
+      "la",
+      "tienda",
+      "cuesta",
+      "cinco",
+      "mil",
+      "pesos",
+      "."
+    ]
+  },
+  {
+    "id": "s1479",
+    "es": "Me arrepentí de no haber hecho una copia de seguridad antes de la actualización.",
+    "tokens": [
+      "Me",
+      "arrepentí",
+      "de",
+      "no",
+      "haber",
+      "hecho",
+      "una",
+      "copia",
+      "de",
+      "seguridad",
+      "antes",
+      "de",
+      "la",
+      "actualización",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "newIndex": 11,
+        "answer": "de"
+      }
     ]
   }
 ]

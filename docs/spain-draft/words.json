@@ -1968,17 +1968,10 @@
     "pos": "noun",
     "gender": "m",
     "es_mx": "respaldo",
-    "es_es": "copia de seguridad",
-    "action": "replace",
+    "es_es": "respaldo",
+    "action": "note-only",
     "note_mx": "V Mexiku sa hovorí respaldo, v Španielsku copia de seguridad.",
-    "note_es": "",
-    "examples": [
-      {
-        "es_mx": "Haz un respaldo de tus fotos.",
-        "es_es": "Haz un copia de seguridad de tus fotos.",
-        "sk": "Zálohuj si fotky."
-      }
-    ]
+    "note_es": ""
   },
   {
     "id": "camara",

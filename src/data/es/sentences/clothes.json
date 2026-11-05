@@ -152,5 +152,150 @@
       "morada",
       "?"
     ]
+  },
+  {
+    "id": "s231",
+    "es": "Compré unas zapatillas nuevas.",
+    "tokens": [
+      "Compré",
+      "unas",
+      "zapatillas",
+      "nuevas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "unas",
+        "distractors": [
+          "un",
+          "una",
+          "unos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s531",
+    "es": "Cambié las zapatillas porque me quedaban pequeñas.",
+    "tokens": [
+      "Cambié",
+      "las",
+      "zapatillas",
+      "porque",
+      "me",
+      "quedaban",
+      "pequeñas",
+      "."
+    ]
+  },
+  {
+    "id": "s818",
+    "es": "Se me rompió la cremallera de la chaqueta.",
+    "tokens": [
+      "Se",
+      "me",
+      "rompió",
+      "la",
+      "cremallera",
+      "de",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cremallera"
+      }
+    ]
+  },
+  {
+    "id": "s1089",
+    "es": "Mi hermano siempre lleva zapatillas blancas.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "siempre",
+      "lleva",
+      "zapatillas",
+      "blancas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "blancas"
+      }
+    ]
+  },
+  {
+    "id": "s1116",
+    "es": "En las ofertas de diciembre conseguí unas zapatillas de marca a mitad de precio.",
+    "tokens": [
+      "En",
+      "las",
+      "ofertas",
+      "de",
+      "diciembre",
+      "conseguí",
+      "unas",
+      "zapatillas",
+      "de",
+      "marca",
+      "a",
+      "mitad",
+      "de",
+      "precio",
+      "."
+    ]
+  },
+  {
+    "id": "s1103",
+    "es": "Creo que la moda de los noventa está volviendo.",
+    "tokens": [
+      "Creo",
+      "que",
+      "la",
+      "moda",
+      "de",
+      "los",
+      "noventa",
+      "está",
+      "volviendo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "volviendo",
+        "lemma": "volver",
+        "hint": "volver · gerundio",
+        "distractors": [
+          "volver",
+          "vuelto",
+          "vuelve"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1106",
+    "es": "Esta prenda no se puede meter en la secadora porque se encoge.",
+    "tokens": [
+      "Esta",
+      "prenda",
+      "no",
+      "se",
+      "puede",
+      "meter",
+      "en",
+      "la",
+      "secadora",
+      "porque",
+      "se",
+      "encoge",
+      "."
+    ]
   }
 ]

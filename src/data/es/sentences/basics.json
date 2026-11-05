@@ -62,5 +62,17 @@
       "coche",
       "."
     ]
+  },
+  {
+    "id": "s1008",
+    "es": "Ahora estoy aprendiendo a conducir.",
+    "tokens": [
+      "Ahora",
+      "estoy",
+      "aprendiendo",
+      "a",
+      "conducir",
+      "."
+    ]
   }
 ]

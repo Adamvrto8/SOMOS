@@ -60,5 +60,25 @@
       "más",
       "."
     ]
+  },
+  {
+    "id": "s350",
+    "es": "Jugué al tenis con mi primo.",
+    "tokens": [
+      "Jugué",
+      "al",
+      "tenis",
+      "con",
+      "mi",
+      "primo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "con"
+      }
+    ]
   }
 ]

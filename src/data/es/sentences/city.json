@@ -15,14 +15,14 @@
   },
   {
     "id": "s033",
-    "es": "Mi coche está en el estacionamiento.",
+    "es": "Mi coche está en el aparcamiento.",
     "tokens": [
       "Mi",
       "coche",
       "está",
       "en",
       "el",
-      "estacionamiento",
+      "aparcamiento",
       "."
     ]
   },
@@ -41,9 +41,9 @@
   },
   {
     "id": "s142",
-    "es": "Estacioné el coche enfrente de la iglesia.",
+    "es": "Aparqué el coche enfrente de la iglesia.",
     "tokens": [
-      "Estacioné",
+      "Aparqué",
       "el",
       "coche",
       "enfrente",
@@ -51,6 +51,19 @@
       "la",
       "iglesia",
       "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aparqué",
+        "lemma": "aparcar",
+        "hint": "aparcar · yo · pretérito",
+        "distractors": [
+          "Aparcaste",
+          "Aparcó",
+          "Aparcamos"
+        ]
+      }
     ]
   },
   {
@@ -172,6 +185,192 @@
       "a",
       "tiempo",
       "."
+    ]
+  },
+  {
+    "id": "s1065",
+    "es": "¿Estás conduciendo? Te escucho muy mal.",
+    "tokens": [
+      "¿",
+      "Estás",
+      "conduciendo",
+      "?",
+      "Te",
+      "escucho",
+      "muy",
+      "mal",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "conduciendo",
+        "lemma": "conducir",
+        "hint": "conducir · gerundio",
+        "distractors": [
+          "conducir",
+          "conducido",
+          "conduce"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1074",
+    "es": "Pagué el parquímetro por dos horas, pero volví tarde y me multaron.",
+    "tokens": [
+      "Pagué",
+      "el",
+      "parquímetro",
+      "por",
+      "dos",
+      "horas",
+      ",",
+      "pero",
+      "volví",
+      "tarde",
+      "y",
+      "me",
+      "multaron",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "volví",
+        "lemma": "volver",
+        "hint": "volver · yo · pretérito",
+        "distractors": [
+          "volviste",
+          "volvió",
+          "volvimos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1085",
+    "es": "La gentrificación está subiendo los alquileres en barrios como Malasaña y Lavapiés.",
+    "tokens": [
+      "La",
+      "gentrificación",
+      "está",
+      "subiendo",
+      "los",
+      "alquileres",
+      "en",
+      "barrios",
+      "como",
+      "Malasaña",
+      "y",
+      "Lavapiés",
+      "."
+    ]
+  },
+  {
+    "id": "s150",
+    "es": "¿Sabes conducir en la Ciudad de México?",
+    "tokens": [
+      "¿",
+      "Sabes",
+      "conducir",
+      "en",
+      "la",
+      "Ciudad",
+      "de",
+      "México",
+      "?"
+    ]
+  },
+  {
+    "id": "s739",
+    "es": "El policía nos señaló dónde aparcar.",
+    "tokens": [
+      "El",
+      "policía",
+      "nos",
+      "señaló",
+      "dónde",
+      "aparcar",
+      "."
+    ]
+  },
+  {
+    "id": "s1073",
+    "es": "Me parece que los topes no sirven para que la gente conduzca despacio.",
+    "tokens": [
+      "Me",
+      "parece",
+      "que",
+      "los",
+      "topes",
+      "no",
+      "sirven",
+      "para",
+      "que",
+      "la",
+      "gente",
+      "conduzca",
+      "despacio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "conduzca",
+        "lemma": "conducir",
+        "hint": "conducir · ella",
+        "distractors": [
+          "conduzcas",
+          "conduzcamos",
+          "conduzcan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1777",
+    "es": "Ojalá que encontremos aparcamiento cerca del mercado.",
+    "tokens": [
+      "Ojalá",
+      "que",
+      "encontremos",
+      "aparcamiento",
+      "cerca",
+      "del",
+      "mercado",
+      "."
+    ]
+  },
+  {
+    "id": "s1779",
+    "es": "Mi tía no quiere que conduzcamos de noche por la ciudad.",
+    "tokens": [
+      "Mi",
+      "tía",
+      "no",
+      "quiere",
+      "que",
+      "conduzcamos",
+      "de",
+      "noche",
+      "por",
+      "la",
+      "ciudad",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "conduzcamos",
+        "lemma": "conducir",
+        "hint": "conducir · nosotros · subjuntivo",
+        "distractors": [
+          "conduzca",
+          "conduzcas",
+          "conduzcan"
+        ]
+      }
     ]
   }
 ]

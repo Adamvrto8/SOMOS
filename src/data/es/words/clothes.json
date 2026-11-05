@@ -70,5 +70,29 @@
         "sk": "V autobuse som stratil rukavicu."
       }
     ]
+  },
+  {
+    "id": "cierre",
+    "es": "cremallera",
+    "gender": "f",
+    "plural": "cremalleras",
+    "examples": [
+      {
+        "es": "Se rompió la cremallera de mi chaqueta.",
+        "sk": "Pokazil sa mi zips na bunde."
+      }
+    ]
+  },
+  {
+    "id": "tenis",
+    "es": "zapatillas",
+    "gender": "f",
+    "plural": "zapatillas",
+    "examples": [
+      {
+        "es": "Siempre uso zapatillas.",
+        "sk": "Vždy nosím tenisky."
+      }
+    ]
   }
 ]

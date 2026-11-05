@@ -63,5 +63,51 @@
       "tráfico",
       "."
     ]
+  },
+  {
+    "id": "s1501",
+    "es": "A primera hora miro el correo y te aviso.",
+    "tokens": [
+      "A",
+      "primera",
+      "hora",
+      "miro",
+      "el",
+      "correo",
+      "y",
+      "te",
+      "aviso",
+      "."
+    ]
+  },
+  {
+    "id": "s1506",
+    "es": "Llevamos años charlando de ese viaje y nunca lo hacemos.",
+    "tokens": [
+      "Llevamos",
+      "años",
+      "charlando",
+      "de",
+      "ese",
+      "viaje",
+      "y",
+      "nunca",
+      "lo",
+      "hacemos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "charlando",
+        "lemma": "charlar",
+        "hint": "charlar · gerundio",
+        "distractors": [
+          "charlar",
+          "charlado",
+          "charla"
+        ]
+      }
+    ]
   }
 ]

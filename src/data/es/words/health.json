@@ -29,5 +29,16 @@
         "sk": "Chrípka je veľmi nákazlivá."
       }
     ]
+  },
+  {
+    "id": "cubrebocas",
+    "es": "mascarilla",
+    "gender": "f",
+    "examples": [
+      {
+        "es": "En el hospital todavía piden mascarilla.",
+        "sk": "V nemocnici ešte stále chcú rúško."
+      }
+    ]
   }
 ]

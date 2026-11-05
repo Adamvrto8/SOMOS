@@ -215,11 +215,26 @@ nesúhlasíš; potom sa koncept vygeneruje znova.
 ## 9. Stav 2026-11-05 (vetva content-es)
 
 Hotové:
-- Prekrytie slov a viet (§8), `npm run validate:es`.
-- **Vosotros** (`src/lib/vosotros.ts`): odvodený zo slovies, ktoré už existujú, nič sa neukladá a mexická verzia ho nevidí.
-  Všetky časy a imperatív (hablad, levantaos, no habléis). Riadok v tabuľke slovesa sa zobrazí, keď je `somos.variant` = `es`.
-- **Pretérito perfecto compuesto** (`perfecto`): nový čas v tabuľke slovies pre obe varianty, spolu s tipom `perfecto`
-  (SK aj EN). Cvičenia na časy ho nadobudli automaticky, úroveň A2.
+- **Prekrytie slov a viet** (`src/data/es/`): 79 slov a 135 viet. Automatická časť (`spain-overlay.mjs`) plus ručná
+  (`spain-manual.mjs`, 78 viet s vlastným španielskym textom a presmerovanými cvičeniami).
+- **Španielske slovesá** (`src/data/es/new/`): conducir, alquilar, aparcar, charlar, enfadarse, encender, s tvarmi
+  odvodenými podľa pravidiel a overenými existujúcim validátorom. Mexické manejar, rentar, estacionar, platicar,
+  enojarse, prender a regresar sa v španielskej verzii skrývajú (`hidden`), vety používajú nové slovesá alebo volver.
+- **Vosotros** (`src/lib/vosotros.ts`): odvodený, nič sa neukladá. Riadok v tabuľke, vosotros v nápovede cvičenia
+  (`deber · vosotros · presente`) a v kontrole dát.
+- **Pretérito perfecto compuesto**: nový čas pre obe varianty, s tipom (SK aj EN).
+- **Nastavenia → Španielčina**: prepínač Mexická / Zo Španielska, po zmene sa appka znova načíta, pokrok ostáva.
+- **Angličtina** pre nové slová a slovesá; anglické poznámky o Mexiku sa v španielskej verzii vypúšťajú.
+- **Kontrola**: `npm run validate:es` skontroluje španielske dáta tak, ako ich dostane používateľ (prekrytie nad
+  základom), vrátane cloze nápovedí a tvarov slovies, a že v texte nezostalo mexické slovo.
 
-Zostáva: vosotros v cvičení na časovanie (drill) a v ukladaní odpovedí; leísmo/ceceo poznámky; ručný zoznam
-`docs/spain-draft/todo.json`; prepínač variantu v Nastaveniach; nové španielske slová a vety; kontrola rodeným hovorcom.
+Zostáva:
+- 92 slov v `docs/spain-draft/todo.json`: španielske poznámky k nim a rozhodnutie, ktoré mexické slová (mariachi,
+  tianguis…) skryť. Veta s1752 nepotrebuje zmenu.
+- Vosotros v samotnom cvičení na časovanie (je len v tabuľke a v nápovedi viet).
+- Nové španielske slová a vety (vale, guay, tío…).
+- Hlas `es-ES` v TTS a ceceo/leísmo poznámky.
+- Kontrola rodeným hovorcom.
+
+Postup, keď sa zmení mexický základ: `node scripts/spain-diff.mjs && node scripts/spain-overlay.mjs && node scripts/spain-manual.mjs`
+(ručné veci ostanú v `spain-manual.mjs`).

@@ -18,7 +18,7 @@ const SAFE = {
   jitomate: 'tomate', jitomates: 'tomates', gripa: 'gripe', curita: 'tirita', camión: 'autobús', camiones: 'autobuses',
   estacionar: 'aparcar', rentar: 'alquilar', platicar: 'charlar', platico: 'charlo', platica: 'charla',
   platicamos: 'charlamos', platican: 'charlan', platicas: 'charlas', enojado: 'enfadado', enojada: 'enfadada',
-  enojarse: 'enfadarse', regresar: 'volver', ahorita: 'ahora', respaldo: 'copia de seguridad', descompuesto: 'estropeado',
+  enojarse: 'enfadarse', regresar: 'volver', ahorita: 'ahora', descompuesto: 'estropeado',
   descompuesta: 'estropeada', audífonos: 'auriculares', audífono: 'auricular', arete: 'pendiente', aretes: 'pendientes',
   sustentable: 'sostenible', reservación: 'reserva', reservaciones: 'reservas', prender: 'encender', plomería: 'fontanería',
 }

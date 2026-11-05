@@ -1,0 +1,124 @@
+[
+  {
+    "id": "conducir",
+    "es": "conducir",
+    "sk": [
+      "šoférovať",
+      "riadiť"
+    ],
+    "pos": "verb",
+    "verbId": "conducir",
+    "level": "A1",
+    "topics": [
+      "travel",
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "¿Sabes conducir?",
+        "sk": "Vieš šoférovať?"
+      }
+    ]
+  },
+  {
+    "id": "alquilar",
+    "es": "alquilar",
+    "sk": [
+      "prenajať (si)"
+    ],
+    "pos": "verb",
+    "verbId": "alquilar",
+    "level": "A2",
+    "topics": [
+      "home",
+      "travel"
+    ],
+    "examples": [
+      {
+        "es": "Queremos alquilar un piso cerca de la playa.",
+        "sk": "Chceme si prenajať byt blízko pláže."
+      }
+    ]
+  },
+  {
+    "id": "aparcar",
+    "es": "aparcar",
+    "sk": [
+      "zaparkovať",
+      "parkovať"
+    ],
+    "pos": "verb",
+    "verbId": "aparcar",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "¿Dónde puedo aparcar el coche?",
+        "sk": "Kde môžem zaparkovať auto?"
+      }
+    ]
+  },
+  {
+    "id": "charlar",
+    "es": "charlar",
+    "sk": [
+      "rozprávať sa",
+      "pokecať si"
+    ],
+    "pos": "verb",
+    "verbId": "charlar",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "examples": [
+      {
+        "es": "Me gusta charlar con mi abuela.",
+        "sk": "Rád sa rozprávam s babkou."
+      }
+    ]
+  },
+  {
+    "id": "enfadarse",
+    "es": "enfadarse",
+    "sk": [
+      "nahnevať sa",
+      "hnevať sa"
+    ],
+    "pos": "verb",
+    "verbId": "enfadarse",
+    "level": "A2",
+    "topics": [
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "Mi jefe se enfadó mucho.",
+        "sk": "Šéf sa veľmi nahneval."
+      }
+    ]
+  },
+  {
+    "id": "encender",
+    "es": "encender",
+    "sk": [
+      "zapnúť",
+      "zapáliť"
+    ],
+    "pos": "verb",
+    "verbId": "encender",
+    "level": "B1",
+    "topics": [
+      "home",
+      "tech"
+    ],
+    "examples": [
+      {
+        "es": "Enciende la luz, por favor.",
+        "sk": "Zapni svetlo, prosím."
+      }
+    ]
+  }
+]

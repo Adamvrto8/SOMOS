@@ -6,14 +6,14 @@
   },
   "words": {
     "listed": 174,
-    "replace": 41,
+    "replace": 40,
     "hideInEs": 58,
     "examplesOnly": 57,
-    "noteOnly": 18,
+    "noteOnly": 19,
     "manual": 19
   },
   "sentences": {
-    "listed": 178,
+    "listed": 177,
     "manual": 60,
     "withClozeChange": 13
   }

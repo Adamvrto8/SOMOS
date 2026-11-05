@@ -235,5 +235,108 @@
       "coche",
       "."
     ]
+  },
+  {
+    "id": "s157",
+    "es": "Alquilamos un coche para viajar por Yucatán.",
+    "tokens": [
+      "Alquilamos",
+      "un",
+      "coche",
+      "para",
+      "viajar",
+      "por",
+      "Yucatán",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Alquilamos",
+        "lemma": "alquilar",
+        "hint": "alquilar · nosotros · pretérito",
+        "distractors": [
+          "Alquilé",
+          "Alquilaste",
+          "Alquiló"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s159",
+    "es": "¿Cuándo vuelves a Eslovaquia?",
+    "tokens": [
+      "¿",
+      "Cuándo",
+      "vuelves",
+      "a",
+      "Eslovaquia",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vuelves",
+        "lemma": "volver",
+        "hint": "volver · tú · presente",
+        "distractors": [
+          "vuelvo",
+          "vuelve",
+          "volvemos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s166",
+    "es": "Condujimos seis horas hasta Guanajuato.",
+    "tokens": [
+      "Condujimos",
+      "seis",
+      "horas",
+      "hasta",
+      "Guanajuato",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Condujimos",
+        "lemma": "conducir",
+        "hint": "conducir · nosotros · pretérito",
+        "distractors": [
+          "Conduje",
+          "Condujiste",
+          "Condujo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s434",
+    "es": "Mientras conducía, mi esposa dormía.",
+    "tokens": [
+      "Mientras",
+      "conducía",
+      ",",
+      "mi",
+      "esposa",
+      "dormía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "conducía",
+        "lemma": "conducir",
+        "hint": "conducir · yo · imperfecto",
+        "distractors": [
+          "conducías",
+          "conducíamos",
+          "conducían"
+        ]
+      }
+    ]
   }
 ]

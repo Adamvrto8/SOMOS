@@ -35,12 +35,10 @@ for (const w of applyWords(words, esWords).filter((w) => esWords.some((o) => o.i
   check(`es/words[${w.id}]`, [w.es, w.plural ?? '', ...w.examples.map((e) => e.es)].join(' '))
 }
 
-const baseSentence = new Map(sentences.map((s) => [s.id, s]))
 for (const s of applySentences(sentences, esSentences).filter((s) => esSentences.some((o) => o.id === s.id))) {
   const where = `es/sentences[${s.id}]`
   const rebuilt = s.tokens.join(' ').replace(/ ([.,?!;:])/g, '$1').replace(/([¿¡]) /g, '$1')
   if (rebuilt !== s.es) fail(where, `tokens rebuild "${rebuilt}", not "${s.es}"`)
-  if (s.tokens.length !== baseSentence.get(s.id)!.tokens.length) fail(where, 'token count differs from the base (indices would move)')
   check(where, s.es)
   for (const c of s.cloze ?? []) {
     if (s.tokens[c.tokenIndex] !== c.answer) fail(where, `cloze ${c.tokenIndex}: token "${s.tokens[c.tokenIndex]}" is not the answer "${c.answer}"`)

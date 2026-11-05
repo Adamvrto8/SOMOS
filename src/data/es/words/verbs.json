@@ -1,0 +1,30 @@
+[
+  {
+    "id": "manejar",
+    "hidden": true
+  },
+  {
+    "id": "rentar",
+    "hidden": true
+  },
+  {
+    "id": "estacionar",
+    "hidden": true
+  },
+  {
+    "id": "platicar",
+    "hidden": true
+  },
+  {
+    "id": "enojarse",
+    "hidden": true
+  },
+  {
+    "id": "prender",
+    "hidden": true
+  },
+  {
+    "id": "regresar",
+    "hidden": true
+  }
+]

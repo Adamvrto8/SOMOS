@@ -9,14 +9,20 @@ export interface WordEs {
   es?: string
   plural?: string
   feminine?: string
+  gender?: 'm' | 'f'
   examples?: Example[]
+  /** Not taught in Spain (a Mexican verb, mariachi): left out of the words, and its verb too. */
+  hidden?: boolean
   /** `null` removes the Mexican note (it would be wrong for Spain); a string replaces it. */
   note?: string | null
 }
 
 export interface ClozeEs {
-  tokenIndex: number
+  tokenIndex: number // of the Mexican sentence: names the blank
+  newIndex?: number // where it sits in the Spain sentence, when the words before it changed in number
   answer: string
+  lemma?: string
+  hint?: string
   distractors?: string[]
 }
 
@@ -27,12 +33,16 @@ export interface SentenceEs {
   cloze?: ClozeEs[]
 }
 
+/** The verb ids whose Word the overlay hides (a word with `verbId` is its verb's dictionary entry). */
+export const hiddenVerbIds = (base: Word[], overlay: WordEs[]): Set<string> =>
+  new Set(overlay.filter((o) => o.hidden).flatMap((o) => base.find((w) => w.id === o.id)?.verbId ?? []))
+
 export function applyWords(base: Word[], overlay: WordEs[]): Word[] {
   const byId = new Map(overlay.map((o) => [o.id, o]))
-  return base.map((word) => {
+  return base.filter((word) => !byId.get(word.id)?.hidden).map((word) => {
     const o = byId.get(word.id)
     if (!o) return word
-    const { note, ...rest } = o
+    const { note, hidden: _hidden, ...rest } = o
     const merged: Word = { ...word, ...stripUndefined(rest) }
     if (note === null) delete merged.note
     else if (note !== undefined) merged.note = note
@@ -47,7 +57,9 @@ export function applySentences(base: Sentence[], overlay: SentenceEs[]): Sentenc
     if (!o) return sentence
     const cloze: Cloze[] | undefined = sentence.cloze?.map((c) => {
       const patch = o.cloze?.find((p) => p.tokenIndex === c.tokenIndex)
-      return patch ? { ...c, ...stripUndefined(patch) } : c
+      if (!patch) return c
+      const { newIndex, ...rest } = patch
+      return { ...c, ...stripUndefined(rest), tokenIndex: newIndex ?? patch.tokenIndex }
     })
     return { ...sentence, es: o.es, tokens: o.tokens, ...(cloze ? { cloze } : {}) }
   })

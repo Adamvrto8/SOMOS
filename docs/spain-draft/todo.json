@@ -37,28 +37,10 @@
       "note": "Veľmi mexické: v Mexiku sú retardéry takmer všade."
     },
     {
-      "id": "tenis",
-      "action": "replace",
-      "es_mx": "tenis",
-      "proposal": "zapatillas",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
       "id": "lana",
       "action": "hide-in-es",
       "es": "lana",
       "note": "V Mexiku hovorovo aj „peniaze“."
-    },
-    {
-      "id": "cierre",
-      "action": "replace",
-      "es_mx": "cierre",
-      "proposal": "cremallera",
-      "manual": [
-        "cierre → cremallera (gender/number: check adjectives after the noun)"
-      ]
     },
     {
       "id": "mezclilla",
@@ -306,15 +288,6 @@
       "note": "Mexický vtip: „vidrios“ (sklá) znie ako „vemos“ (uvidíme sa)."
     },
     {
-      "id": "cubrebocas",
-      "action": "replace",
-      "es_mx": "cubrebocas",
-      "proposal": "mascarilla",
-      "manual": [
-        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
       "id": "mariachi",
       "action": "hide-in-es",
       "es": "mariachi",
@@ -331,26 +304,6 @@
       "action": "hide-in-es",
       "es": "porra",
       "note": "Mexické: echarle porras a alguien = povzbudzovať niekoho."
-    },
-    {
-      "id": "recamara",
-      "action": "replace",
-      "es_mx": "recámara",
-      "proposal": "dormitorio",
-      "manual": [
-        "recámara → dormitorio (gender/number: check adjectives after the noun)",
-        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "renta",
-      "action": "replace",
-      "es_mx": "renta",
-      "proposal": "alquiler",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
     },
     {
       "id": "azotea",
@@ -371,15 +324,6 @@
       "note": "Mexické: typická čierna nádrž na streche domu."
     },
     {
-      "id": "foco",
-      "action": "replace",
-      "es_mx": "foco",
-      "proposal": "bombilla",
-      "manual": [
-        "foco → bombilla (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
       "id": "casero",
       "action": "examples-only",
       "es_mx": "casero",
@@ -394,15 +338,6 @@
       "action": "hide-in-es",
       "es": "nopal",
       "note": "Nopal s orlom je aj na mexickej vlajke."
-    },
-    {
-      "id": "pluma",
-      "action": "replace",
-      "es_mx": "pluma",
-      "proposal": "bolígrafo",
-      "manual": [
-        "pluma → bolígrafo (gender/number: check adjectives after the noun)"
-      ]
     },
     {
       "id": "licenciatura",
@@ -489,15 +424,6 @@
       ]
     },
     {
-      "id": "platicar",
-      "action": "replace",
-      "es_mx": "platicar",
-      "proposal": "charlar",
-      "manual": [
-        "verb: conjugations differ"
-      ]
-    },
-    {
       "id": "escuchar",
       "action": "examples-only",
       "es_mx": "escuchar",
@@ -505,12 +431,6 @@
       "manual": [
         "verb: conjugations differ"
       ]
-    },
-    {
-      "id": "manejar",
-      "action": "note-only",
-      "es": "manejar",
-      "note": "V Mexiku „manejar“ (v Španielsku „conducir“)."
     },
     {
       "id": "usar",
@@ -531,37 +451,10 @@
       ]
     },
     {
-      "id": "regresar",
-      "action": "replace",
-      "es_mx": "regresar",
-      "proposal": "volver",
-      "manual": [
-        "verb form \"regreso\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "rentar",
-      "action": "replace",
-      "es_mx": "rentar",
-      "proposal": "alquilar",
-      "manual": [
-        "verb: conjugations differ"
-      ]
-    },
-    {
       "id": "dejar",
       "action": "examples-only",
       "es_mx": "dejar",
       "proposal": "dejar",
-      "manual": [
-        "verb: conjugations differ"
-      ]
-    },
-    {
-      "id": "estacionar",
-      "action": "replace",
-      "es_mx": "estacionar",
-      "proposal": "aparcar",
       "manual": [
         "verb: conjugations differ"
       ]
@@ -580,15 +473,6 @@
       "action": "note-only",
       "es": "checar",
       "note": "Typicky mexické (z angl. check). Pretérito: chequé."
-    },
-    {
-      "id": "enojarse",
-      "action": "replace",
-      "es_mx": "enojarse",
-      "proposal": "enfadarse",
-      "manual": [
-        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
-      ]
     },
     {
       "id": "perder",
@@ -633,15 +517,6 @@
       "proposal": "ahorrar",
       "manual": [
         "verb: conjugations differ"
-      ]
-    },
-    {
-      "id": "prender",
-      "action": "replace",
-      "es_mx": "prender",
-      "proposal": "encender",
-      "manual": [
-        "verb form \"prende\" (conduzco/charlo/…): check by hand"
       ]
     },
     {
@@ -708,15 +583,6 @@
       "note": "jefa = šéfka. „Buena onda“ je mexický hovorový výraz pre „v pohode, fajn“."
     },
     {
-      "id": "computadora",
-      "action": "replace",
-      "es_mx": "computadora",
-      "proposal": "ordenador",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
       "id": "chamba",
       "action": "hide-in-es",
       "es": "chamba",
@@ -740,490 +606,11 @@
   ],
   "sentences": [
     {
-      "id": "s1008",
-      "es_mx": "Ahorita estoy aprendiendo a manejar.",
-      "proposal": "Ahora estoy aprendiendo a manejar.",
-      "manual": [
-        "verb form \"manejar\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1043",
-      "es_mx": "Me duele el cuello porque paso todo el día frente a la computadora.",
-      "proposal": "Me duele el cuello porque paso todo el día frente al ordenador.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)",
-        "tokens do not rebuild the sentence (multi-word swap): rebuild tokens by hand"
-      ]
-    },
-    {
-      "id": "s1065",
-      "es_mx": "¿Estás manejando? Te escucho muy mal.",
-      "proposal": "¿Estás manejando? Te escucho muy mal.",
-      "manual": [
-        "verb form \"manejando\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1074",
-      "es_mx": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
-      "proposal": "Pagué el parquímetro por dos horas, pero regresé tarde y me multaron.",
-      "manual": [
-        "verb form \"regresé\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1085",
-      "es_mx": "La gentrificación está subiendo las rentas en colonias como la Roma y la Condesa.",
-      "proposal": "La gentrificación está subiendo los alquileres en colonias como la Roma y la Condesa.",
-      "manual": [
-        "rentas → alquileres (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s150",
-      "es_mx": "¿Sabes manejar en la Ciudad de México?",
-      "proposal": "¿Sabes manejar en la Ciudad de México?",
-      "manual": [
-        "verb form \"manejar\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s231",
-      "es_mx": "Compré unos tenis nuevos.",
-      "proposal": "Compré unas zapatillas nuevos.",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s531",
-      "es_mx": "Cambié los tenis porque me quedaban chicos.",
-      "proposal": "Cambié las zapatillas porque me quedaban chicos.",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s818",
-      "es_mx": "Se me rompió el cierre de la chamarra.",
-      "proposal": "Se me rompió la cremallera de la chaqueta.",
-      "manual": [
-        "cierre → cremallera (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1089",
-      "es_mx": "Mi hermano siempre lleva tenis blancos.",
-      "proposal": "Mi hermano siempre lleva zapatillas blancos.",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1116",
-      "es_mx": "En las ofertas de diciembre conseguí unos tenis de marca a mitad de precio.",
-      "proposal": "En las ofertas de diciembre conseguí unas zapatillas de marca a mitad de precio.",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s326",
-      "es_mx": "Mi jefe se enojó conmigo.",
-      "proposal": "Mi jefe se enojó conmigo.",
-      "manual": [
-        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s398",
-      "es_mx": "Mi novia se enojó conmigo.",
-      "proposal": "Mi novia se enojó conmigo.",
-      "manual": [
-        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s535",
-      "es_mx": "Se enojó conmigo porque olvidé su cumpleaños.",
-      "proposal": "Se enojó conmigo porque olvidé su cumpleaños.",
-      "manual": [
-        "verb form \"enojó\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1684",
-      "es_mx": "Mi hermana me prestó su carro y se lo regresé el lunes.",
-      "proposal": "Mi hermana me prestó su coche y se lo regresé el lunes.",
-      "manual": [
-        "verb form \"regresé\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s632",
-      "es_mx": "Al rato te marco, ahorita estoy manejando.",
-      "proposal": "Al rato te marco, ahora estoy manejando.",
-      "manual": [
-        "verb form \"manejando\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s864",
-      "es_mx": "Durante la pandemia todos usábamos cubrebocas.",
-      "proposal": "Durante la pandemia todos usábamos mascarilla.",
-      "manual": [
-        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1253",
-      "es_mx": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
-      "proposal": "Tengo una enfermedad crónica, así que me checo cada tres meses.",
-      "manual": [
-        "verb form \"checo\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1259",
-      "es_mx": "Nos contagiamos todos en la oficina por no usar cubrebocas.",
-      "proposal": "Nos contagiamos todos en la oficina por no usar mascarilla.",
-      "manual": [
-        "cubrebocas → mascarilla (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s350",
-      "es_mx": "Jugué tenis con mi primo.",
-      "proposal": "Jugué zapatillas con mi primo.",
-      "manual": [
-        "tenis → zapatillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1642",
-      "es_mx": "Me gusta mi recámara.",
-      "proposal": "Me gusta mi dormitorio.",
-      "manual": [
-        "recámara → dormitorio (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1660",
-      "es_mx": "En mi departamento hay dos recámaras.",
-      "proposal": "En mi piso hay dos dormitorios.",
-      "manual": [
-        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s112",
-      "es_mx": "Vivimos en un departamento de dos recámaras.",
-      "proposal": "Vivimos en un piso de dos dormitorios.",
-      "manual": [
-        "recámaras → dormitorios (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1727",
-      "es_mx": "Ustedes deben limpiar su recámara hoy.",
-      "proposal": "Ustedes deben limpiar su dormitorio hoy.",
-      "manual": [
-        "recámara → dormitorio (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
       "id": "s1752",
       "es_mx": "Cierre la puerta, por favor, hace frío.",
       "proposal": "Cremallera la puerta, por favor, hace frío.",
       "manual": [
         "Cierre → cremallera (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s117",
-      "es_mx": "La renta sube cada año.",
-      "proposal": "El alquiler sube cada año.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s561",
-      "es_mx": "El dueño del departamento nos va a subir la renta.",
-      "proposal": "El dueño del piso nos va a subir el alquiler.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s707",
-      "es_mx": "Se fundió el foco del baño.",
-      "proposal": "Se fundió la bombilla del baño.",
-      "manual": [
-        "foco → bombilla (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s714",
-      "es_mx": "No pises, acabo de trapear.",
-      "proposal": "No pises, acabo de trapear.",
-      "manual": [
-        "verb form \"trapear\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s719",
-      "es_mx": "Rentamos un departamento amueblado cerca del centro.",
-      "proposal": "Rentamos un piso amueblado cerca del centro.",
-      "manual": [
-        "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1302",
-      "es_mx": "Prende el calentador media hora antes de bañarte.",
-      "proposal": "Prende el calentador media hora antes de bañarte.",
-      "manual": [
-        "verb form \"prende\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1303",
-      "es_mx": "Nos subieron la renta otra vez y ya no nos alcanza.",
-      "proposal": "Nos subieron el alquiler otra vez y ya no nos alcanza.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1308",
-      "es_mx": "Para ahorrar luz, cambiamos todos los focos por unos de bajo consumo.",
-      "proposal": "Para ahorrar luz, cambiamos todos las bombillas por unos de bajo consumo.",
-      "manual": [
-        "focos → bombillas (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1966",
-      "es_mx": "Se rentan departamentos cerca del metro.",
-      "proposal": "Se rentan pisos cerca del metro.",
-      "manual": [
-        "verb form \"rentan\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1327",
-      "es_mx": "Las olas estaban muy fuertes, así que regresamos al hotel.",
-      "proposal": "Las olas estaban muy fuertes, así que regresamos al hotel.",
-      "manual": [
-        "verb form \"regresamos\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1368",
-      "es_mx": "Casi el treinta por ciento de mi sueldo se va en la renta.",
-      "proposal": "Casi el treinta por ciento de mi sueldo se va en el alquiler.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1393",
-      "es_mx": "Necesito una pluma y un cuaderno.",
-      "proposal": "Necesito un bolígrafo y un cuaderno.",
-      "manual": [
-        "pluma → bolígrafo (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1410",
-      "es_mx": "Aunque tenía beca, apenas me alcanzaba para la renta.",
-      "proposal": "Aunque tenía beca, apenas me alcanzaba para el alquiler.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1803",
-      "es_mx": "Yo compraría una computadora nueva, pero está muy cara.",
-      "proposal": "Yo compraría un ordenador nueva, pero está muy cara.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s579",
-      "es_mx": "Se me descompuso la computadora y perdí todos mis archivos.",
-      "proposal": "Se me descompuso el ordenador y perdí todos mis archivos.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1453",
-      "es_mx": "La computadora está en mi cuarto.",
-      "proposal": "El ordenador está en mi cuarto.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1460",
-      "es_mx": "La pantalla de mi computadora es muy grande.",
-      "proposal": "La pantalla de mi ordenador es muy grande.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1461",
-      "es_mx": "¿Puedo usar tu computadora un momento?",
-      "proposal": "¿Puedo usar tu ordenador un momento?",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1463",
-      "es_mx": "Antes mi abuela no sabía usar la computadora.",
-      "proposal": "Antes mi abuela no sabía usar el ordenador.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1466",
-      "es_mx": "Mañana compraré una computadora nueva.",
-      "proposal": "Mañana compraré un ordenador nueva.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1472",
-      "es_mx": "Mi hermano me ayudará con la computadora.",
-      "proposal": "Mi hermano me ayudará con el ordenador.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1476",
-      "es_mx": "Se me trabó la computadora justo cuando iba a mandar el trabajo.",
-      "proposal": "Se me trabó el ordenador justo cuando iba a mandar el trabajo.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1698",
-      "es_mx": "Esta computadora es tan rápida como la de mi trabajo.",
-      "proposal": "Este ordenador es tan rápida como la de mi trabajo.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1702",
-      "es_mx": "La computadora más barata de la tienda cuesta cinco mil pesos.",
-      "proposal": "El ordenador más barata de la tienda cuesta cinco mil pesos.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1501",
-      "es_mx": "A primera hora checo el correo y te aviso.",
-      "proposal": "A primera hora checo el correo y te aviso.",
-      "manual": [
-        "verb form \"checo\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s157",
-      "es_mx": "Rentamos un carro para viajar por Yucatán.",
-      "proposal": "Rentamos un coche para viajar por Yucatán.",
-      "manual": [
-        "verb form \"rentamos\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s159",
-      "es_mx": "¿Cuándo regresas a Eslovaquia?",
-      "proposal": "¿Cuándo regresas a Eslovaquia?",
-      "manual": [
-        "verb form \"regresas\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s166",
-      "es_mx": "Manejamos seis horas hasta Guanajuato.",
-      "proposal": "Manejamos seis horas hasta Guanajuato.",
-      "manual": [
-        "verb form \"manejamos\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s434",
-      "es_mx": "Mientras manejaba, mi esposa dormía.",
-      "proposal": "Mientras manejaba, mi esposa dormía.",
-      "manual": [
-        "verb form \"manejaba\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s196",
-      "es_mx": "¿Puedes checar el correo del cliente?",
-      "proposal": "¿Puedes checar el correo del cliente?",
-      "manual": [
-        "verb form \"checar\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s203",
-      "es_mx": "Usamos esta computadora para diseñar.",
-      "proposal": "Usamos este ordenador para diseñar.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1575",
-      "es_mx": "Mi computadora no funciona hoy.",
-      "proposal": "Mi ordenador no funciona hoy.",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1577",
-      "es_mx": "Mi papá es chofer y maneja un taxi.",
-      "proposal": "Mi papá es chofer y maneja un taxi.",
-      "manual": [
-        "verb form \"maneja\" (conduzco/charlo/…): check by hand"
-      ]
-    },
-    {
-      "id": "s1716",
-      "es_mx": "¿Puedo usar su computadora un momento?",
-      "proposal": "¿Puedo usar su ordenador un momento?",
-      "manual": [
-        "computadora → ordenador (gender/number: check adjectives after the noun)"
-      ]
-    },
-    {
-      "id": "s1593",
-      "es_mx": "Con este sueldo apenas me alcanza para la renta y la comida.",
-      "proposal": "Con este sueldo apenas me alcanza para el alquiler y la comida.",
-      "manual": [
-        "renta → alquiler (gender/number: check adjectives after the noun)",
-        "verb form \"renta\" (conduzco/charlo/…): check by hand"
       ]
     }
   ]

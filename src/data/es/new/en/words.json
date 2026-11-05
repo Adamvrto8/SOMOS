@@ -1,0 +1,59 @@
+[
+  {
+    "id": "conducir",
+    "en": [
+      "to drive"
+    ],
+    "examples": [
+      "Do you know how to drive?"
+    ]
+  },
+  {
+    "id": "alquilar",
+    "en": [
+      "to rent"
+    ],
+    "examples": [
+      "We want to rent a flat near the beach."
+    ]
+  },
+  {
+    "id": "aparcar",
+    "en": [
+      "to park"
+    ],
+    "examples": [
+      "Where can I park the car?"
+    ]
+  },
+  {
+    "id": "charlar",
+    "en": [
+      "to chat",
+      "to talk"
+    ],
+    "examples": [
+      "I like chatting with my grandma."
+    ]
+  },
+  {
+    "id": "enfadarse",
+    "en": [
+      "to get angry",
+      "to get mad"
+    ],
+    "examples": [
+      "My boss got very angry."
+    ]
+  },
+  {
+    "id": "encender",
+    "en": [
+      "to turn on",
+      "to light"
+    ],
+    "examples": [
+      "Turn on the light, please."
+    ]
+  }
+]

@@ -19,5 +19,17 @@
         "sk": "Mobil mám na stole."
       }
     ]
+  },
+  {
+    "id": "computadora",
+    "es": "ordenador",
+    "gender": "m",
+    "plural": "ordenadores",
+    "examples": [
+      {
+        "es": "Mi ordenador es muy lento.",
+        "sk": "Môj počítač je strašne pomalý."
+      }
+    ]
   }
 ]

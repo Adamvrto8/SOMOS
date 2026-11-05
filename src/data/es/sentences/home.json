@@ -141,5 +141,249 @@
       "grande",
       "."
     ]
+  },
+  {
+    "id": "s1642",
+    "es": "Me gusta mi dormitorio.",
+    "tokens": [
+      "Me",
+      "gusta",
+      "mi",
+      "dormitorio",
+      "."
+    ]
+  },
+  {
+    "id": "s1660",
+    "es": "En mi piso hay dos dormitorios.",
+    "tokens": [
+      "En",
+      "mi",
+      "piso",
+      "hay",
+      "dos",
+      "dormitorios",
+      "."
+    ]
+  },
+  {
+    "id": "s112",
+    "es": "Vivimos en un piso de dos dormitorios.",
+    "tokens": [
+      "Vivimos",
+      "en",
+      "un",
+      "piso",
+      "de",
+      "dos",
+      "dormitorios",
+      "."
+    ]
+  },
+  {
+    "id": "s1727",
+    "es": "Vosotros debéis limpiar vuestro dormitorio hoy.",
+    "tokens": [
+      "Vosotros",
+      "debéis",
+      "limpiar",
+      "vuestro",
+      "dormitorio",
+      "hoy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "debéis",
+        "distractors": [
+          "podéis",
+          "tenéis",
+          "debemos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s117",
+    "es": "El alquiler sube cada año.",
+    "tokens": [
+      "El",
+      "alquiler",
+      "sube",
+      "cada",
+      "año",
+      "."
+    ]
+  },
+  {
+    "id": "s561",
+    "es": "El dueño del piso nos va a subir el alquiler.",
+    "tokens": [
+      "El",
+      "dueño",
+      "del",
+      "piso",
+      "nos",
+      "va",
+      "a",
+      "subir",
+      "el",
+      "alquiler",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "alquiler"
+      }
+    ]
+  },
+  {
+    "id": "s707",
+    "es": "Se fundió la bombilla del baño.",
+    "tokens": [
+      "Se",
+      "fundió",
+      "la",
+      "bombilla",
+      "del",
+      "baño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "bombilla"
+      }
+    ]
+  },
+  {
+    "id": "s714",
+    "es": "No pises, acabo de fregar.",
+    "tokens": [
+      "No",
+      "pises",
+      ",",
+      "acabo",
+      "de",
+      "fregar",
+      "."
+    ]
+  },
+  {
+    "id": "s719",
+    "es": "Alquilamos un piso amueblado cerca del centro.",
+    "tokens": [
+      "Alquilamos",
+      "un",
+      "piso",
+      "amueblado",
+      "cerca",
+      "del",
+      "centro",
+      "."
+    ]
+  },
+  {
+    "id": "s1302",
+    "es": "Enciende el calentador media hora antes de bañarte.",
+    "tokens": [
+      "Enciende",
+      "el",
+      "calentador",
+      "media",
+      "hora",
+      "antes",
+      "de",
+      "bañarte",
+      "."
+    ]
+  },
+  {
+    "id": "s1303",
+    "es": "Nos subieron el alquiler otra vez y ya no nos alcanza.",
+    "tokens": [
+      "Nos",
+      "subieron",
+      "el",
+      "alquiler",
+      "otra",
+      "vez",
+      "y",
+      "ya",
+      "no",
+      "nos",
+      "alcanza",
+      "."
+    ]
+  },
+  {
+    "id": "s1308",
+    "es": "Para ahorrar luz, cambiamos todas las bombillas por otras de bajo consumo.",
+    "tokens": [
+      "Para",
+      "ahorrar",
+      "luz",
+      ",",
+      "cambiamos",
+      "todas",
+      "las",
+      "bombillas",
+      "por",
+      "otras",
+      "de",
+      "bajo",
+      "consumo",
+      "."
+    ]
+  },
+  {
+    "id": "s1966",
+    "es": "Se alquilan pisos cerca del metro.",
+    "tokens": [
+      "Se",
+      "alquilan",
+      "pisos",
+      "cerca",
+      "del",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "alquilan",
+        "lemma": "alquilar",
+        "hint": "alquilar"
+      }
+    ]
+  },
+  {
+    "id": "s491",
+    "es": "Encendí la luz porque no veía nada.",
+    "tokens": [
+      "Encendí",
+      "la",
+      "luz",
+      "porque",
+      "no",
+      "veía",
+      "nada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Encendí",
+        "lemma": "encender",
+        "hint": "encender · yo · pretérito",
+        "distractors": [
+          "Encendiste",
+          "Encendió",
+          "Encendimos"
+        ]
+      }
+    ]
   }
 ]

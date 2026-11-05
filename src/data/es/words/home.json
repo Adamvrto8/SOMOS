@@ -87,5 +87,41 @@
         "sk": "Bývame v obytnom komplexe s bazénom."
       }
     ]
+  },
+  {
+    "id": "renta",
+    "es": "alquiler",
+    "gender": "m",
+    "plural": "alquileres",
+    "examples": [
+      {
+        "es": "El alquiler es muy caro en el centro.",
+        "sk": "Nájom v centre je veľmi drahý."
+      }
+    ]
+  },
+  {
+    "id": "recamara",
+    "es": "dormitorio",
+    "gender": "m",
+    "plural": "dormitorios",
+    "examples": [
+      {
+        "es": "El piso tiene dos dormitorios.",
+        "sk": "Byt má dve spálne."
+      }
+    ]
+  },
+  {
+    "id": "foco",
+    "es": "bombilla",
+    "gender": "f",
+    "plural": "bombillas",
+    "examples": [
+      {
+        "es": "Se fundió la bombilla del baño.",
+        "sk": "V kúpeľni praskla žiarovka."
+      }
+    ]
   }
 ]

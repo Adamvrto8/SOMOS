@@ -72,5 +72,25 @@
       "año",
       "."
     ]
+  },
+  {
+    "id": "s1368",
+    "es": "Casi el treinta por ciento de mi sueldo se va en el alquiler.",
+    "tokens": [
+      "Casi",
+      "el",
+      "treinta",
+      "por",
+      "ciento",
+      "de",
+      "mi",
+      "sueldo",
+      "se",
+      "va",
+      "en",
+      "el",
+      "alquiler",
+      "."
+    ]
   }
 ]

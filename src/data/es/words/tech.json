@@ -26,7 +26,8 @@
         "es": "Siempre llevo mis auriculares.",
         "sk": "Vždy mám pri sebe slúchadlá."
       }
-    ]
+    ],
+    "plural": "auriculares"
   },
   {
     "id": "descompuesto",
@@ -49,17 +50,6 @@
     ]
   },
   {
-    "id": "respaldo",
-    "es": "copia de seguridad",
-    "note": null,
-    "examples": [
-      {
-        "es": "Haz un copia de seguridad de tus fotos.",
-        "sk": "Zálohuj si fotky."
-      }
-    ]
-  },
-  {
     "id": "camara",
     "examples": [
       {
@@ -67,5 +57,11 @@
         "sk": "Fotoaparát v mojom mobile je veľmi dobrý."
       }
     ]
+  },
+  {
+    "id": "respaldo",
+    "es": "copia de seguridad",
+    "plural": "copias de seguridad",
+    "gender": "f"
   }
 ]

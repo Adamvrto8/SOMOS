@@ -35,7 +35,7 @@ for (const s of draftSents) {
   put('sentences', s.file, entry)
 }
 
-fs.rmSync('src/data/es', { recursive: true, force: true })
+for (const d of ['words', 'sentences']) fs.rmSync(`src/data/es/${d}`, { recursive: true, force: true }) // not es/new
 for (const [kind, files] of Object.entries(byFile)) {
   fs.mkdirSync(`src/data/es/${kind}`, { recursive: true })
   for (const [file, entries] of Object.entries(files)) fs.writeFileSync(`src/data/es/${kind}/${file}`, JSON.stringify(entries, null, 2) + '\n')

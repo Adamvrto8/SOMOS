@@ -64,5 +64,53 @@
       "café",
       "."
     ]
+  },
+  {
+    "id": "s632",
+    "es": "Luego te llamo, ahora estoy conduciendo.",
+    "tokens": [
+      "Luego",
+      "te",
+      "llamo",
+      ",",
+      "ahora",
+      "estoy",
+      "conduciendo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 6,
+        "answer": "conduciendo",
+        "lemma": "conducir",
+        "hint": "conducir · gerundio",
+        "distractors": [
+          "conducir",
+          "conducido",
+          "conduce"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "newIndex": 1,
+        "answer": "te"
+      }
+    ]
+  },
+  {
+    "id": "s1205",
+    "es": "¡Buen viaje! Nos vemos cuando vuelvas.",
+    "tokens": [
+      "¡",
+      "Buen",
+      "viaje",
+      "!",
+      "Nos",
+      "vemos",
+      "cuando",
+      "vuelvas",
+      "."
+    ]
   }
 ]

@@ -75,5 +75,80 @@
       "gripe",
       "."
     ]
+  },
+  {
+    "id": "s864",
+    "es": "Durante la pandemia todos usábamos mascarilla.",
+    "tokens": [
+      "Durante",
+      "la",
+      "pandemia",
+      "todos",
+      "usábamos",
+      "mascarilla",
+      "."
+    ]
+  },
+  {
+    "id": "s1253",
+    "es": "Tengo una enfermedad crónica, así que me hago una revisión cada tres meses.",
+    "tokens": [
+      "Tengo",
+      "una",
+      "enfermedad",
+      "crónica",
+      ",",
+      "así",
+      "que",
+      "me",
+      "hago",
+      "una",
+      "revisión",
+      "cada",
+      "tres",
+      "meses",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": [
+          "haces",
+          "hace",
+          "hacemos"
+        ]
+      },
+      {
+        "tokenIndex": 9,
+        "newIndex": 11,
+        "answer": "cada"
+      }
+    ]
+  },
+  {
+    "id": "s1259",
+    "es": "Nos contagiamos todos en la oficina por no usar mascarilla.",
+    "tokens": [
+      "Nos",
+      "contagiamos",
+      "todos",
+      "en",
+      "la",
+      "oficina",
+      "por",
+      "no",
+      "usar",
+      "mascarilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "mascarilla"
+      }
+    ]
   }
 ]

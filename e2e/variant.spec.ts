@@ -23,4 +23,11 @@ test('Spanish from Spain: vosotros row, perfecto, Spain words; Mexican stays the
 
   await page.goto('/word/carro')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('coche')
+
+  // Spain's own verb is there, with its forms; the Mexican one is gone.
+  await page.goto('/word/conducir')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('conducir')
+  await expect(page.getByRole('tabpanel')).toContainText('conduzco')
+  await page.goto('/word/manejar')
+  await expect(page.getByRole('heading', { level: 1 })).not.toContainText('manejar')
 })
