@@ -2098,5 +2098,185 @@
         "distractors": ["te", "le", "me"]
       }
     ]
+  },
+  {
+    "id": "s2022",
+    "es": "Mi abuelo me contó que, cuando era joven, caminaba cinco kilómetros hasta la escuela.",
+    "sk": "Dedo mi rozprával, že keď bol mladý, chodil do školy päť kilometrov pešo.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mi", "abuelo", "me", "contó", "que", ",", "cuando", "era", "joven", ",", "caminaba", "cinco", "kilómetros", "hasta", "la", "escuela", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "caminaba",
+        "lemma": "caminar",
+        "hint": "caminar · él · imperfecto",
+        "distractors": ["camina", "caminara", "caminaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2023",
+    "es": "Mis papás quieren que nos mudemos más cerca de ellos antes de que nazca el bebé.",
+    "sk": "Rodičia chcú, aby sme sa presťahovali bližšie k nim, skôr než sa narodí bábätko.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mis", "papás", "quieren", "que", "nos", "mudemos", "más", "cerca", "de", "ellos", "antes", "de", "que", "nazca", "el", "bebé", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "nazca",
+        "lemma": "nacer",
+        "hint": "nacer · él · subjuntivo",
+        "distractors": ["nace", "nació", "nacerá"]
+      }
+    ]
+  },
+  {
+    "id": "s2024",
+    "es": "Si mi suegra supiera cocinar mole, no pediríamos comida cada domingo.",
+    "sk": "Keby moja svokra vedela variť mole, neobjednávali by sme si jedlo každú nedeľu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "mi", "suegra", "supiera", "cocinar", "mole", ",", "no", "pediríamos", "comida", "cada", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "pediríamos",
+        "lemma": "pedir",
+        "hint": "pedir · nosotros · condicional",
+        "distractors": ["pedimos", "pidamos", "pediremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2025",
+    "es": "Mi tía, que vive en Guadalajara, nos visita cada Navidad con regalos para todos.",
+    "sk": "Teta, ktorá býva v Guadalajare, nás navštevuje každé Vianoce s darčekmi pre všetkých.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mi", "tía", ",", "que", "vive", "en", "Guadalajara", ",", "nos", "visita", "cada", "Navidad", "con", "regalos", "para", "todos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuanto"]
+      }
+    ]
+  },
+  {
+    "id": "s2026",
+    "es": "Mi papá insiste en que cenemos juntos aunque cada quien llegue a una hora distinta.",
+    "sk": "Otec trvá na tom, aby sme večerali spolu, aj keď každý príde v inú hodinu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "papá", "insiste", "en", "que", "cenemos", "juntos", "aunque", "cada", "quien", "llegue", "a", "una", "hora", "distinta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cenemos",
+        "lemma": "cenar",
+        "hint": "cenar · nosotros · subjuntivo",
+        "distractors": ["cenamos", "cenábamos", "cenaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2027",
+    "es": "Cuando mi hijo cumpla dieciocho años, le regalaremos el reloj de su abuelo.",
+    "sk": "Keď môj syn dovŕši osemnásť rokov, darujeme mu hodinky po dedovi.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "mi", "hijo", "cumpla", "dieciocho", "años", ",", "le", "regalaremos", "el", "reloj", "de", "su", "abuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cumpla",
+        "lemma": "cumplir",
+        "hint": "cumplir · él · subjuntivo",
+        "distractors": ["cumple", "cumplió", "cumplirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2028",
+    "es": "Mi hermana me pidió que no le contara a nadie que estaba embarazada.",
+    "sk": "Sestra ma poprosila, aby som nikomu nepovedal, že je tehotná.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["Mi", "hermana", "me", "pidió", "que", "no", "le", "contara", "a", "nadie", "que", "estaba", "embarazada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "contara",
+        "lemma": "contar",
+        "hint": "contar · yo · subjuntivo imperfecto",
+        "distractors": ["conté", "cuento", "contaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2029",
+    "es": "Mi abuela me enseñó recetas que ya casi nadie en la familia sabe preparar.",
+    "sk": "Babka ma naučila recepty, ktoré už skoro nikto v rodine nevie pripraviť.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mi", "abuela", "me", "enseñó", "recetas", "que", "ya", "casi", "nadie", "en", "la", "familia", "sabe", "preparar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2030",
+    "es": "Mis primos y yo jugábamos en el patio mientras los adultos platicaban en la sobremesa.",
+    "sk": "S bratrancami sme sa hrali na dvore, kým dospelí po obede sedeli pri stole a rozprávali sa.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mis", "primos", "y", "yo", "jugábamos", "en", "el", "patio", "mientras", "los", "adultos", "platicaban", "en", "la", "sobremesa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "platicaban",
+        "lemma": "platicar",
+        "hint": "platicar · ellos · imperfecto",
+        "distractors": ["platican", "platicaron", "platicarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2031",
+    "es": "No hay nadie en mi familia que no sepa bailar cumbia desde chiquito.",
+    "sk": "V mojej rodine niet nikoho, kto by od malička nevedel tancovať kumbiu.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "hay", "nadie", "en", "mi", "familia", "que", "no", "sepa", "bailar", "cumbia", "desde", "chiquito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "sepa",
+        "lemma": "saber",
+        "hint": "saber · él · subjuntivo",
+        "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
   }
 ]

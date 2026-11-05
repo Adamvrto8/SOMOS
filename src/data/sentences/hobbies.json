@@ -1810,5 +1810,185 @@
         "distractors": ["juegas", "jugarás", "jugaste"]
       }
     ]
+  },
+  {
+    "id": "s2060",
+    "es": "Si ganara la lotería, me dedicaría a viajar y a tomar fotografías.",
+    "sk": "Keby som vyhral v lotérii, venoval by som sa cestovaniu a fotografovaniu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "ganara", "la", "lotería", ",", "me", "dedicaría", "a", "viajar", "y", "a", "tomar", "fotografías", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ganara",
+        "lemma": "ganar",
+        "hint": "ganar · yo · subjuntivo imperfecto",
+        "distractors": ["gano", "gané", "ganaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2061",
+    "es": "Antes de que empiece el partido, compremos unas botanas para verlo con calma.",
+    "sk": "Skôr než začne zápas, kúpme si nejaké pochutiny, aby sme ho pozerali v pokoji.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Antes", "de", "que", "empiece", "el", "partido", ",", "compremos", "unas", "botanas", "para", "verlo", "con", "calma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empiece",
+        "lemma": "empezar",
+        "hint": "empezar · él · subjuntivo",
+        "distractors": ["empieza", "empezó", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s2062",
+    "es": "Necesito un pasatiempo que me ayude a olvidarme del trabajo por un rato.",
+    "sk": "Potrebujem koníček, ktorý mi pomôže na chvíľu zabudnúť na prácu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Necesito", "un", "pasatiempo", "que", "me", "ayude", "a", "olvidarme", "del", "trabajo", "por", "un", "rato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ayude",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · subjuntivo",
+        "distractors": ["ayuda", "ayudó", "ayudará"]
+      }
+    ]
+  },
+  {
+    "id": "s2063",
+    "es": "Mi papá dijo que, cuando se jubilara, aprendería a tocar el acordeón.",
+    "sk": "Otec povedal, že keď pôjde do dôchodku, naučí sa hrať na akordeón.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Mi", "papá", "dijo", "que", ",", "cuando", "se", "jubilara", ",", "aprendería", "a", "tocar", "el", "acordeón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "aprendería",
+        "lemma": "aprender",
+        "hint": "aprender · él · condicional",
+        "distractors": ["aprende", "aprendió", "aprenderá"]
+      }
+    ]
+  },
+  {
+    "id": "s2064",
+    "es": "A pesar de que llovía, la gente no se movió del estadio hasta el final.",
+    "sk": "Napriek tomu, že pršalo, ľudia sa zo štadióna nepohli až do konca.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["A", "pesar", "de", "que", "llovía", ",", "la", "gente", "no", "se", "movió", "del", "estadio", "hasta", "el", "final", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llovía",
+        "lemma": "llover",
+        "hint": "llover · él · imperfecto",
+        "distractors": ["llueve", "lloverá", "llovería"]
+      }
+    ]
+  },
+  {
+    "id": "s2065",
+    "es": "Quiero que me enseñes a jugar ajedrez para que podamos competir algún día.",
+    "sk": "Chcem, aby si ma naučil hrať šach, aby sme raz mohli súťažiť.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Quiero", "que", "me", "enseñes", "a", "jugar", "ajedrez", "para", "que", "podamos", "competir", "algún", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enseñes",
+        "lemma": "enseñar",
+        "hint": "enseñar · tú · subjuntivo",
+        "distractors": ["enseñas", "enseñaste", "enseñarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2066",
+    "es": "Cuando íbamos a la playa, mi abuelo siempre cargaba la hielera que nadie quería llevar.",
+    "sk": "Keď sme chodili na pláž, dedo vždy nosil chladiaci box, ktorý nikto nechcel niesť.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto", "relatives"],
+    "tokens": ["Cuando", "íbamos", "a", "la", "playa", ",", "mi", "abuelo", "siempre", "cargaba", "la", "hielera", "que", "nadie", "quería", "llevar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["vamos", "fuimos", "iremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2067",
+    "es": "Mi equipo ganará el torneo siempre que entrenemos con disciplina y sin faltar.",
+    "sk": "Náš tím vyhrá turnaj, pokiaľ budeme trénovať disciplinovane a bez vynechávania.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "equipo", "ganará", "el", "torneo", "siempre", "que", "entrenemos", "con", "disciplina", "y", "sin", "faltar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "entrenemos",
+        "lemma": "entrenar",
+        "hint": "entrenar · nosotros · subjuntivo",
+        "distractors": ["entrenamos", "entrenábamos", "entrenaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2068",
+    "es": "Me dijo mi vecino que, si me gustaba el ajedrez, me invitaba a su club.",
+    "sk": "Sused mi povedal, že ak ma baví šach, pozve ma do svojho klubu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["si-clauses", "imperfecto", "gustar"],
+    "tokens": ["Me", "dijo", "mi", "vecino", "que", ",", "si", "me", "gustaba", "el", "ajedrez", ",", "me", "invitaba", "a", "su", "club", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gustaría"]
+      }
+    ]
+  },
+  {
+    "id": "s2069",
+    "es": "No hay quien le gane a mi tío cuando juega dominó con los vecinos.",
+    "sk": "Nikto neporazí môjho strýka, keď hrá domino so susedmi.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "hay", "quien", "le", "gane", "a", "mi", "tío", "cuando", "juega", "dominó", "con", "los", "vecinos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "gane",
+        "lemma": "ganar",
+        "hint": "ganar · él · subjuntivo",
+        "distractors": ["gana", "ganó", "ganará"]
+      }
+    ]
   }
 ]

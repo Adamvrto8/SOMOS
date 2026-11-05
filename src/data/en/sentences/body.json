@@ -82,5 +82,15 @@
   { "id": "s1601", "en": "My feet hurt after walking all day." },
   { "id": "s1603", "en": "As a girl, my ears used to hurt every winter.", "hints": [null, "each, every"] },
   { "id": "s1618", "en": "My mom used to cut my hair when I was little." },
-  { "id": "s1640", "en": "My feet hurt." }
+  { "id": "s1640", "en": "My feet hurt." },
+  { "id": "s1982", "en": "While the doctor was checking my throat, I tried not to cough.", "hints": ["while"] },
+  { "id": "s1983", "en": "It is important that you rest your eyes when you spend hours in front of the screen." },
+  { "id": "s1984", "en": "If I had stronger legs, I would run the city marathon." },
+  { "id": "s1985", "en": "The doctor, who treated me yesterday, says the bone is healing well.", "hints": ["relative pronoun"] },
+  { "id": "s1986", "en": "I hope my head does not hurt tomorrow, because I have an important exam.", "hints": ["I hope"] },
+  { "id": "s1987", "en": "When I leave the hospital, the first thing I will do is hug my kids." },
+  { "id": "s1988", "en": "He told me his stomach had hurt since he ate on the street." },
+  { "id": "s1989", "en": "I use a special pillow so my neck does not hurt when I wake up.", "hints": ["so that"] },
+  { "id": "s1990", "en": "If they had told me smoking damaged the lungs so much, I would have quit sooner.", "hints": ["if"] },
+  { "id": "s1991", "en": "They took an X-ray to see whether the fracture had healed completely.", "hints": ["whether"] }
 ]

@@ -93,5 +93,14 @@
   { "id": "s1901", "en": "I study Spanish in order to travel to Mexico.", "hints": ["por/para"] },
   { "id": "s1922", "en": "I study a lot so that my parents feel proud." },
   { "id": "s1945", "en": "The students who study more get better grades.", "hints": ["relative word"] },
-  { "id": "s1968", "en": "The classroom has been open since early morning." }
+  { "id": "s1968", "en": "The classroom has been open since early morning." },
+  { "id": "s2100", "en": "The school where I attended middle school closed last year for lack of students.", "hints": ["relative word (place)"] },
+  { "id": "s2101", "en": "Even if you study all night, you won't learn anything if you don't rest.", "hints": ["even if"] },
+  { "id": "s2102", "en": "My classmate told me the library would open earlier during exams." },
+  { "id": "s2103", "en": "There is no student who doesn't understand this rule after the explanation." },
+  { "id": "s2104", "en": "The students I did the project with got a ten on the presentation.", "hints": ["relative pronoun (people)"] },
+  { "id": "s2105", "en": "When I finish university, I want to work at an elementary school." },
+  { "id": "s2106", "en": "I'm glad the teacher lets us go out to recess ten minutes early today." },
+  { "id": "s2107", "en": "I study English so that my kids can have better opportunities in the future." },
+  { "id": "s2108", "en": "If the school had more computers, the kids would learn programming faster." }
 ]

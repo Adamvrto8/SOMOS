@@ -109,5 +109,15 @@
   { "id": "s1953", "en": "This model was sold in more than a hundred stores." },
   { "id": "s1954", "en": "The mall is closed for remodeling." },
   { "id": "s1955", "en": "Salespeople with experience are needed." },
-  { "id": "s1956", "en": "You cannot pay by check here.", "hints": ["pronoun"] }
+  { "id": "s1956", "en": "You cannot pay by check here.", "hints": ["pronoun"] },
+  { "id": "s2109", "en": "When the sale comes, I'm going to buy the shoes I saw yesterday." },
+  { "id": "s2110", "en": "If I had more money, I would buy that coat that's on sale." },
+  { "id": "s2111", "en": "The saleswoman told me I could return the shirt if I kept the receipt.", "hints": ["that"] },
+  { "id": "s2112", "en": "Even if the price is high, it's worth buying a good-quality mattress.", "hints": ["even if"] },
+  { "id": "s2113", "en": "I'm looking for a store near here that sells sportswear at a good price." },
+  { "id": "s2114", "en": "While we waited in line, my mom found the coupon she had lost." },
+  { "id": "s2115", "en": "I hope they have my size, because this dress is the only one I like." },
+  { "id": "s2116", "en": "The customer who complained yesterday got a refund because the product arrived damaged.", "hints": ["because"] },
+  { "id": "s2117", "en": "As soon as they open the store, we'll run to ask for a refund for the coat." },
+  { "id": "s2118", "en": "Don't buy anything you don't really need, even if it's on sale." }
 ]

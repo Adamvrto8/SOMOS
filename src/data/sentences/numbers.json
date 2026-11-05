@@ -1683,5 +1683,185 @@
         "distractors": ["de", "en", "a"]
       }
     ]
+  },
+  {
+    "id": "s2090",
+    "es": "Cuando tenga ahorrados diez mil pesos, voy a comprar una laptop nueva.",
+    "sk": "Keď budem mať našetrených desaťtisíc pesos, kúpim si nový notebook.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "tenga", "ahorrados", "diez", "mil", "pesos", ",", "voy", "a", "comprar", "una", "laptop", "nueva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenga",
+        "lemma": "tener",
+        "hint": "tener · yo · subjuntivo",
+        "distractors": ["tengo", "tuve", "tendré"]
+      }
+    ]
+  },
+  {
+    "id": "s2091",
+    "es": "Si ganara un millón de pesos en la lotería, pagaría todas mis deudas.",
+    "sk": "Keby som vyhral milión pesos v lotérii, splatil by som všetky dlhy.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "ganara", "un", "millón", "de", "pesos", "en", "la", "lotería", ",", "pagaría", "todas", "mis", "deudas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "pagaría",
+        "lemma": "pagar",
+        "hint": "pagar · yo · condicional",
+        "distractors": ["pago", "pagué", "pagaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2092",
+    "es": "El número que aparece en la pantalla es el código que necesitas para entrar.",
+    "sk": "Číslo, ktoré sa zobrazí na obrazovke, je kód, ktorý potrebuješ na vstup.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "número", "que", "aparece", "en", "la", "pantalla", "es", "el", "código", "que", "necesitas", "para", "entrar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2093",
+    "es": "La maestra nos pidió que sumáramos todos los números antes de que sonara el timbre.",
+    "sk": "Učiteľka nás požiadala, aby sme sčítali všetky čísla skôr, než zazvoní.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["La", "maestra", "nos", "pidió", "que", "sumáramos", "todos", "los", "números", "antes", "de", "que", "sonara", "el", "timbre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sumáramos",
+        "lemma": "sumar",
+        "hint": "sumar · nosotros · subjuntivo imperfecto",
+        "distractors": ["sumamos", "sumaremos", "sumábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2094",
+    "es": "Aunque somos cuarenta en el grupo, solo hay veinte sillas en el salón.",
+    "sk": "Hoci nás je v skupine štyridsať, v triede je len dvadsať stoličiek.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["presente"],
+    "tokens": ["Aunque", "somos", "cuarenta", "en", "el", "grupo", ",", "solo", "hay", "veinte", "sillas", "en", "el", "salón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2095",
+    "es": "Mi hermano, quien cumple treinta años el lunes, quiere una fiesta pequeña.",
+    "sk": "Brat, ktorý má v pondelok tridsiatku, chce malú oslavu.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mi", "hermano", ",", "quien", "cumple", "treinta", "años", "el", "lunes", ",", "quiere", "una", "fiesta", "pequeña", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoba)",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2096",
+    "es": "Dudo que el tercer piso tenga suficiente espacio para tantas personas.",
+    "sk": "Pochybujem, že tretie poschodie má dosť miesta pre toľko ľudí.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Dudo", "que", "el", "tercer", "piso", "tenga", "suficiente", "espacio", "para", "tantas", "personas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tenga",
+        "lemma": "tener",
+        "hint": "tener · él · subjuntivo",
+        "distractors": ["tiene", "tendrá", "tuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2097",
+    "es": "El cajero me dijo que el total era cuatrocientos cincuenta pesos con descuento.",
+    "sk": "Pokladník mi povedal, že spolu to bolo štyristopäťdesiat pesos so zľavou.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["El", "cajero", "me", "dijo", "que", "el", "total", "era", "cuatrocientos", "cincuenta", "pesos", "con", "descuento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "era",
+        "lemma": "ser",
+        "hint": "ser · él · imperfecto",
+        "distractors": ["sea", "será", "soy"]
+      }
+    ]
+  },
+  {
+    "id": "s2098",
+    "es": "Mientras más cuentas haces, menos errores cometes en los exámenes de matemáticas.",
+    "sk": "Čím viac príkladov počítaš, tým menej chýb robíš na písomkách z matematiky.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["comparisons", "presente"],
+    "tokens": ["Mientras", "más", "cuentas", "haces", ",", "menos", "errores", "cometes", "en", "los", "exámenes", "de", "matemáticas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "čím",
+        "distractors": ["Aunque", "Porque", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2099",
+    "es": "Necesito un número de teléfono al que pueda llamar si pierdo mi tarjeta.",
+    "sk": "Potrebujem telefónne číslo, na ktoré môžem zavolať, ak stratím kartu.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Necesito", "un", "número", "de", "teléfono", "al", "que", "pueda", "llamar", "si", "pierdo", "mi", "tarjeta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · yo · subjuntivo",
+        "distractors": ["puedo", "pude", "podré"]
+      }
+    ]
   }
 ]

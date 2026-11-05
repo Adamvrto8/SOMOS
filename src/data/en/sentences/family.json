@@ -94,5 +94,15 @@
   { "id": "s1883", "en": "If my grandparents lived nearby, we would visit them every Sunday." },
   { "id": "s1921", "en": "My parents do not believe that I can live alone." },
   { "id": "s1943", "en": "My sister, who I talk to every day, lives in Monterrey.", "hints": ["relative word"] },
-  { "id": "s1971", "en": "In my family we eat together on Sundays.", "hints": ["pronoun"] }
+  { "id": "s1971", "en": "In my family we eat together on Sundays.", "hints": ["pronoun"] },
+  { "id": "s2022", "en": "My grandfather told me that when he was young he walked five kilometers to school." },
+  { "id": "s2023", "en": "My parents want us to move closer to them before the baby is born." },
+  { "id": "s2024", "en": "If my mother-in-law knew how to cook mole, we would not order food every Sunday." },
+  { "id": "s2025", "en": "My aunt, who lives in Guadalajara, visits us every Christmas with gifts for everyone.", "hints": ["relative pronoun"] },
+  { "id": "s2026", "en": "My dad insists that we have dinner together even if everyone arrives at a different time." },
+  { "id": "s2027", "en": "When my son turns eighteen, we will give him his grandfather's watch." },
+  { "id": "s2028", "en": "My sister asked me not to tell anyone that she was pregnant." },
+  { "id": "s2029", "en": "My grandma taught me recipes that almost no one in the family knows how to make anymore.", "hints": ["relative pronoun"] },
+  { "id": "s2030", "en": "My cousins and I played in the yard while the adults chatted at the table after the meal." },
+  { "id": "s2031", "en": "There is nobody in my family who cannot dance cumbia from childhood." }
 ]

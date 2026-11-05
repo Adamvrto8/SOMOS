@@ -1782,5 +1782,185 @@
         "distractors": ["vienes", "vino", "venías"]
       }
     ]
+  },
+  {
+    "id": "s2042",
+    "es": "Cuando conozcas a mis papás, no olvides saludarlos de beso y con una sonrisa.",
+    "sk": "Keď spoznáš moju mamu a otca, nezabudni ich pozdraviť bozkom a s úsmevom.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Cuando", "conozcas", "a", "mis", "papás", ",", "no", "olvides", "saludarlos", "de", "beso", "y", "con", "una", "sonrisa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "conozcas",
+        "lemma": "conocer",
+        "hint": "conocer · tú · subjuntivo",
+        "distractors": ["conoces", "conociste", "conocerás"]
+      }
+    ]
+  },
+  {
+    "id": "s2043",
+    "es": "Te escribo para que sepas que pienso en ti y que te mando un abrazo.",
+    "sk": "Píšem ti, aby si vedel, že na teba myslím a posielam ti objatie.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Te", "escribo", "para", "que", "sepas", "que", "pienso", "en", "ti", "y", "que", "te", "mando", "un", "abrazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "aby",
+        "distractors": ["porque", "sino", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s2044",
+    "es": "Si nos vemos pronto, te invito un café para ponernos al corriente.",
+    "sk": "Ak sa čoskoro uvidíme, pozvem ťa na kávu, aby sme si dohnali novinky.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["si-clauses", "presente"],
+    "tokens": ["Si", "nos", "vemos", "pronto", ",", "te", "invito", "un", "café", "para", "ponernos", "al", "corriente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vemos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · presente",
+        "distractors": ["veamos", "viéramos", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2045",
+    "es": "Me dijo que pasaría a saludarte en cuanto terminara su turno en el hospital.",
+    "sk": "Povedal mi, že ťa príde pozdraviť, hneď ako mu skončí zmena v nemocnici.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Me", "dijo", "que", "pasaría", "a", "saludarte", "en", "cuanto", "terminara", "su", "turno", "en", "el", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "terminara",
+        "lemma": "terminar",
+        "hint": "terminar · él · subjuntivo imperfecto",
+        "distractors": ["terminó", "termina", "terminará"]
+      }
+    ]
+  },
+  {
+    "id": "s2046",
+    "es": "Es la señora que me ayudó cuando llegué a vivir a este edificio.",
+    "sk": "To je pani, ktorá mi pomohla, keď som sa nasťahoval do tejto budovy.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Es", "la", "señora", "que", "me", "ayudó", "cuando", "llegué", "a", "vivir", "a", "este", "edificio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuanto"]
+      }
+    ]
+  },
+  {
+    "id": "s2047",
+    "es": "Ojalá nos veamos pronto, aunque sea solo para tomar un café y platicar.",
+    "sk": "Kiežby sme sa čoskoro videli, aj keby len na kávu a rozhovor.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "nos", "veamos", "pronto", ",", "aunque", "sea", "solo", "para", "tomar", "un", "café", "y", "platicar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "veamos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · subjuntivo",
+        "distractors": ["vemos", "vimos", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2048",
+    "es": "Saluda a tu hermano de mi parte y dile que me llame cuando pueda.",
+    "sk": "Pozdravuj brata odo mňa a povedz mu, nech mi zavolá, keď bude môcť.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Saluda", "a", "tu", "hermano", "de", "mi", "parte", "y", "dile", "que", "me", "llame", "cuando", "pueda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · él · subjuntivo",
+        "distractors": ["pudo", "podía", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2049",
+    "es": "Aunque nunca nos habíamos visto, me recibió como si fuéramos amigos de toda la vida.",
+    "sk": "Aj keď sme sa nikdy predtým nevideli, prijal ma, akoby sme boli celoživotní priatelia.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subj-imperfecto", "pluscuamperfecto"],
+    "tokens": ["Aunque", "nunca", "nos", "habíamos", "visto", ",", "me", "recibió", "como", "si", "fuéramos", "amigos", "de", "toda", "la", "vida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "fuéramos",
+        "lemma": "ser",
+        "hint": "ser · nosotros · subjuntivo imperfecto",
+        "distractors": ["somos", "fuimos", "seremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2050",
+    "es": "Espero que tengas un excelente fin de semana y que descanses mucho.",
+    "sk": "Dúfam, že budeš mať skvelý víkend a poriadne si odpočiniš.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Espero", "que", "tengas", "un", "excelente", "fin", "de", "semana", "y", "que", "descanses", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tengas",
+        "lemma": "tener",
+        "hint": "tener · tú · subjuntivo",
+        "distractors": ["tienes", "tuviste", "tendrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2051",
+    "es": "Mi abuelo saluda a todos los que pasan por su calle, sean conocidos o no.",
+    "sk": "Dedo pozdraví každého, kto prejde po jeho ulici, či ho pozná, alebo nie.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Mi", "abuelo", "saluda", "a", "todos", "los", "que", "pasan", "por", "su", "calle", ",", "sean", "conocidos", "o", "no", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "sean",
+        "lemma": "ser",
+        "hint": "ser · ellos · subjuntivo",
+        "distractors": ["son", "fueron", "serán"]
+      }
+    ]
   }
 ]

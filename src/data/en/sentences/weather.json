@@ -101,5 +101,15 @@
   { "id": "s1858", "en": "I hope the weather is nice on the trip." },
   { "id": "s1877", "en": "If it rains tomorrow, we will stay home." },
   { "id": "s1902", "en": "I did not go out because of the rain.", "hints": ["por/para"] },
-  { "id": "s1923", "en": "Even if it rains, we are going to the park." }
+  { "id": "s1923", "en": "Even if it rains, we are going to the park." },
+  { "id": "s2148", "en": "If it were less hot, we would go for a walk in the park after lunch." },
+  { "id": "s2149", "en": "I hope it stops raining before the game starts." },
+  { "id": "s2150", "en": "The news said there will be a storm as soon as the cold front arrives." },
+  { "id": "s2151", "en": "When it's very hot tomorrow, we'll go swimming at the cenote near the town." },
+  { "id": "s2152", "en": "Don't go out without an umbrella, because they say it's going to rain all afternoon.", "hints": ["because"] },
+  { "id": "s2153", "en": "Even if it's very sunny, you'd better bring a jacket in case the temperature drops." },
+  { "id": "s2154", "en": "The day it snowed in the mountains, all the kids went out to play.", "hints": ["relative word"] },
+  { "id": "s2155", "en": "It's so windy that you can't open the umbrella without it breaking." },
+  { "id": "s2156", "en": "The lady who sells tamales on the corner said tomorrow will dawn cloudy.", "hints": ["relative pronoun"] },
+  { "id": "s2157", "en": "I love the climate of Cuernavaca, where it's never too cold or too hot.", "hints": ["relative word (place)"] }
 ]

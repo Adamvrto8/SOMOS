@@ -114,5 +114,15 @@
   { "id": "s1927", "en": "I cook without spice so that the kids eat." },
   { "id": "s1946", "en": "This is the recipe that my grandmother gave me.", "hints": ["relative word"] },
   { "id": "s1964", "en": "Tortillas are made with corn." },
-  { "id": "s1965", "en": "Pozole is served hot.", "hints": ["pronoun"] }
+  { "id": "s1965", "en": "Pozole is served hot.", "hints": ["pronoun"] },
+  { "id": "s2032", "en": "Make the salsa carefully so that it does not turn out too spicy or too watery." },
+  { "id": "s2033", "en": "If you knew how good the café de olla smells, you would come to my house." },
+  { "id": "s2034", "en": "I do not know anyone who makes tamales as well as my aunt." },
+  { "id": "s2035", "en": "The waiter told us they no longer had pozole, so we ordered some tacos." },
+  { "id": "s2036", "en": "Leave the soup on the heat until it boils and then lower the flame." },
+  { "id": "s2037", "en": "He asked me whether I wanted hibiscus water or horchata and I said either one." },
+  { "id": "s2038", "en": "My sister wants a cake that has no sugar or flour and still tastes good." },
+  { "id": "s2039", "en": "Since I tried my mother-in-law's mole, no other one seems as good to me.", "hints": ["since"] },
+  { "id": "s2040", "en": "I bought more tomatoes than I needed, so I made salsa to freeze.", "hints": ["article"] },
+  { "id": "s2041", "en": "You had better taste the soup before adding more salt, so it does not end up too salty." }
 ]

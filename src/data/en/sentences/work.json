@@ -113,5 +113,15 @@
   { "id": "s1911", "en": "As soon as I receive the payment, I will send you the invoice." },
   { "id": "s1912", "en": "I think the meeting starts at ten." },
   { "id": "s1944", "en": "The project that we presented yesterday was approved.", "hints": ["relative word"] },
-  { "id": "s1969", "en": "The contract was approved by the director." }
+  { "id": "s1969", "en": "The contract was approved by the director." },
+  { "id": "s2158", "en": "My boss wants us to finish the report before the week ends." },
+  { "id": "s2159", "en": "If they offered me a better salary, I would accept the position right away." },
+  { "id": "s2160", "en": "The company where my wife works is looking for engineers who speak English." },
+  { "id": "s2161", "en": "When they pay me my biweekly paycheck, I'm going to send my mom some money." },
+  { "id": "s2162", "en": "Although I work a lot, I don't complain, since I like what I do." },
+  { "id": "s2163", "en": "The manager asked us to arrive early because we would have a meeting with the clients." },
+  { "id": "s2164", "en": "I'm looking for a job that leaves me free time to study in the afternoons." },
+  { "id": "s2165", "en": "If I had quit earlier, I would be working in my own business now." },
+  { "id": "s2166", "en": "My coworker, who was promoted last month, now has his own office.", "hints": ["relative pronoun (person)"] },
+  { "id": "s2167", "en": "It's likely that the company will hire more staff as soon as the year ends." }
 ]

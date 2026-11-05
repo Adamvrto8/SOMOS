@@ -1778,5 +1778,185 @@
       }
     ],
     "grammar": ["gustar"]
+  },
+  {
+    "id": "s2002",
+    "es": "Mi mamá quiere que lleve un suéter a la fiesta, porque en la noche refresca.",
+    "sk": "Mama chce, aby som si na oslavu zobral sveter, lebo večer sa ochladí.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "mamá", "quiere", "que", "lleve", "un", "suéter", "a", "la", "fiesta", ",", "porque", "en", "la", "noche", "refresca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "lleve",
+        "lemma": "llevar",
+        "hint": "llevar · yo · subjuntivo",
+        "distractors": ["llevo", "llevé", "llevaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2003",
+    "es": "Si me alcanzara el dinero, compraría ese abrigo de lana para el invierno.",
+    "sk": "Keby mi stačili peniaze, kúpil by som si ten vlnený kabát na zimu.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "me", "alcanzara", "el", "dinero", ",", "compraría", "ese", "abrigo", "de", "lana", "para", "el", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "alcanzara",
+        "lemma": "alcanzar",
+        "hint": "alcanzar · él · subjuntivo imperfecto",
+        "distractors": ["alcanza", "alcanzó", "alcanzará"]
+      }
+    ]
+  },
+  {
+    "id": "s2004",
+    "es": "No encuentro ningún pantalón que me sirva bien ni de la cintura ni del largo.",
+    "sk": "Nenachádzam žiadne nohavice, ktoré by mi sedeli ani v páse, ani na dĺžku.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "encuentro", "ningún", "pantalón", "que", "me", "sirva", "bien", "ni", "de", "la", "cintura", "ni", "del", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sirva",
+        "lemma": "servir",
+        "hint": "servir · él · subjuntivo",
+        "distractors": ["sirve", "sirvió", "servirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2005",
+    "es": "Cuando baje la temperatura, sacaremos los abrigos y las bufandas del ropero.",
+    "sk": "Keď klesne teplota, vytiahneme zo skrine kabáty a šály.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "baje", "la", "temperatura", ",", "sacaremos", "los", "abrigos", "y", "las", "bufandas", "del", "ropero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "baje",
+        "lemma": "bajar",
+        "hint": "bajar · él · subjuntivo",
+        "distractors": ["baja", "bajó", "bajará"]
+      }
+    ]
+  },
+  {
+    "id": "s2006",
+    "es": "Conozco a una diseñadora cuyas camisas bordadas se venden en todo el país.",
+    "sk": "Poznám dizajnérku, ktorej vyšívané košele sa predávajú v celej krajine.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives", "passive-se"],
+    "tokens": ["Conozco", "a", "una", "diseñadora", "cuyas", "camisas", "bordadas", "se", "venden", "en", "todo", "el", "país", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuyas",
+        "lemma": "cuyas",
+        "hint": "vzťažné slovo (jej)",
+        "distractors": ["quienes", "donde", "cuantas"]
+      }
+    ]
+  },
+  {
+    "id": "s2007",
+    "es": "La vendedora me aseguró que la camisa no se encogería aunque la lavara con agua caliente.",
+    "sk": "Predavačka ma ubezpečila, že sa košeľa nezrazí, aj keby som ju prala v horúcej vode.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["La", "vendedora", "me", "aseguró", "que", "la", "camisa", "no", "se", "encogería", "aunque", "la", "lavara", "con", "agua", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "lavara",
+        "lemma": "lavar",
+        "hint": "lavar · yo · subjuntivo imperfecto",
+        "distractors": ["lavé", "lavo", "lavaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2008",
+    "es": "Ojalá me quede bien la falda que compré por internet sin probarla.",
+    "sk": "Kiežby mi dobre sedela sukňa, čo som kúpil cez internet bez vyskúšania.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "me", "quede", "bien", "la", "falda", "que", "compré", "por", "internet", "sin", "probarla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quede",
+        "lemma": "quedar",
+        "hint": "quedar · él · subjuntivo",
+        "distractors": ["queda", "quedó", "quedará"]
+      }
+    ]
+  },
+  {
+    "id": "s2009",
+    "es": "Se me hizo tarde porque no encontraba la corbata que mi esposa había planchado.",
+    "sk": "Zmeškal som čas, lebo som nevedel nájsť kravatu, ktorú moja žena vyžehlila.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["imperfecto", "pluscuamperfecto"],
+    "tokens": ["Se", "me", "hizo", "tarde", "porque", "no", "encontraba", "la", "corbata", "que", "mi", "esposa", "había", "planchado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["donde", "cuyo", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2010",
+    "es": "No voy a salir de la tienda hasta que encuentre un vestido para la boda.",
+    "sk": "Neodídem z obchodu, kým nenájdem šaty na svadbu.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["No", "voy", "a", "salir", "de", "la", "tienda", "hasta", "que", "encuentre", "un", "vestido", "para", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "encuentre",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · subjuntivo",
+        "distractors": ["encuentro", "encontré", "encontraré"]
+      }
+    ]
+  },
+  {
+    "id": "s2011",
+    "es": "Puedes llevarte la bufanda con tal de que me la devuelvas la próxima semana.",
+    "sk": "Môžeš si zobrať šál, pokiaľ mi ho vrátiš budúci týždeň.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "object-pronouns"],
+    "tokens": ["Puedes", "llevarte", "la", "bufanda", "con", "tal", "de", "que", "me", "la", "devuelvas", "la", "próxima", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "devuelvas",
+        "lemma": "devolver",
+        "hint": "devolver · tú · subjuntivo",
+        "distractors": ["devuelves", "devolviste", "devolverás"]
+      }
+    ]
   }
 ]

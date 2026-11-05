@@ -2229,5 +2229,185 @@
         "distractors": ["con", "en", "por"]
       }
     ]
+  },
+  {
+    "id": "s1972",
+    "es": "Aunque llueva mañana, vamos a ir al mercado como lo habíamos planeado.",
+    "sk": "Aj keď zajtra bude pršať, pôjdeme na trh, ako sme plánovali.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "llueva", "mañana", ",", "vamos", "a", "ir", "al", "mercado", "como", "lo", "habíamos", "planeado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Sino", "Donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1973",
+    "es": "Terminaré este informe antes de que llegue el director de la oficina.",
+    "sk": "Dokončím túto správu skôr, než príde riaditeľ kancelárie.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Terminaré", "este", "informe", "antes", "de", "que", "llegue", "el", "director", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llegue",
+        "lemma": "llegar",
+        "hint": "llegar · él · subjuntivo",
+        "distractors": ["llega", "llegó", "llegará"]
+      }
+    ]
+  },
+  {
+    "id": "s1974",
+    "es": "Si tuviera más tiempo libre, aprendería a tocar la guitarra y el piano.",
+    "sk": "Keby som mal viac voľného času, naučil by som sa hrať na gitaru aj na klavír.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "más", "tiempo", "libre", ",", "aprendería", "a", "tocar", "la", "guitarra", "y", "el", "piano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviera",
+        "lemma": "tener",
+        "hint": "tener · yo · subjuntivo imperfecto",
+        "distractors": ["tengo", "tuve", "tendré"]
+      }
+    ]
+  },
+  {
+    "id": "s1975",
+    "es": "Mi jefe me dijo que mañana empezaríamos temprano para terminar el proyecto.",
+    "sk": "Šéf mi povedal, že zajtra začneme skoro, aby sme dokončili projekt.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["condicional", "preterito"],
+    "tokens": ["Mi", "jefe", "me", "dijo", "que", "mañana", "empezaríamos", "temprano", "para", "terminar", "el", "proyecto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["quien", "donde", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s1976",
+    "es": "Esa es la persona de quien te hablé ayer en la reunión de vecinos.",
+    "sk": "To je ten človek, o ktorom som ti včera hovoril na schôdzi susedov.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Esa", "es", "la", "persona", "de", "quien", "te", "hablé", "ayer", "en", "la", "reunión", "de", "vecinos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s1977",
+    "es": "Ojalá me den la respuesta antes del viernes, porque necesito decidir pronto.",
+    "sk": "Kiežby mi dali odpoveď pred piatkom, lebo sa musím rýchlo rozhodnúť.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "me", "den", "la", "respuesta", "antes", "del", "viernes", ",", "porque", "necesito", "decidir", "pronto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "den",
+        "lemma": "dar",
+        "hint": "dar · ellos · subjuntivo",
+        "distractors": ["dan", "dieron", "darán"]
+      }
+    ]
+  },
+  {
+    "id": "s1978",
+    "es": "Cuando tengas un momento, mándame un mensaje para que sepa que llegaste bien.",
+    "sk": "Keď budeš mať chvíľu, pošli mi správu, aby som vedel, že si dorazil v poriadku.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "tengas", "un", "momento", ",", "mándame", "un", "mensaje", "para", "que", "sepa", "que", "llegaste", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "sepa",
+        "lemma": "saber",
+        "hint": "saber · yo · subjuntivo",
+        "distractors": ["sé", "supe", "sabía"]
+      }
+    ]
+  },
+  {
+    "id": "s1979",
+    "es": "Mientras no me digas la verdad, no voy a poder ayudarte con esto.",
+    "sk": "Kým mi nepovieš pravdu, nebudem ti s tým môcť pomôcť.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mientras", "no", "me", "digas", "la", "verdad", ",", "no", "voy", "a", "poder", "ayudarte", "con", "esto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "kým",
+        "distractors": ["Sino", "Porque", "Cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s1980",
+    "es": "Como nadie quiso hablar primero, empecé yo para romper el hielo.",
+    "sk": "Keďže nikto nechcel hovoriť prvý, začal som ja, aby som prelomil ľady.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["preterito"],
+    "tokens": ["Como", "nadie", "quiso", "hablar", "primero", ",", "empecé", "yo", "para", "romper", "el", "hielo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Como",
+        "lemma": "como",
+        "hint": "keďže",
+        "distractors": ["Donde", "Quien", "Cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s1981",
+    "es": "No hay nada que me guste más que platicar con ustedes un domingo.",
+    "sk": "Nič ma nebaví viac než sa s vami v nedeľu porozprávať.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "hay", "nada", "que", "me", "guste", "más", "que", "platicar", "con", "ustedes", "un", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "guste",
+        "lemma": "gustar",
+        "hint": "gustar · él · subjuntivo",
+        "distractors": ["gusta", "gustó", "gustaba"]
+      }
+    ]
   }
 ]

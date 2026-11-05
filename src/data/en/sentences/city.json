@@ -105,5 +105,15 @@
   { "id": "s1779", "en": "My aunt does not want us to drive through the city at night." },
   { "id": "s1926", "en": "I don't think downtown is that far." },
   { "id": "s1949", "en": "The street where I work is always full of people.", "hints": ["relative word"] },
-  { "id": "s1967", "en": "The bridge was built in 1990." }
+  { "id": "s1967", "en": "The bridge was built in 1990." },
+  { "id": "s1992", "en": "It is a shame they are closing the park just when the weather is finally nice." },
+  { "id": "s1993", "en": "I am looking for an apartment that is near the metro and does not cost too much." },
+  { "id": "s1994", "en": "If there were more bike lanes, many people would leave the car at home." },
+  { "id": "s1995", "en": "I live in the neighborhood where my parents grew up, near a huge market.", "hints": ["relative adverb (where)"] },
+  { "id": "s1996", "en": "As soon as they open the new metro line, I will no longer have to get up so early." },
+  { "id": "s1997", "en": "I am not going to stop until they fix the pothole in front of my house.", "hints": ["until"] },
+  { "id": "s1998", "en": "If the bus does not come soon, we will take a taxi so as not to miss the appointment." },
+  { "id": "s1999", "en": "That is the street the parade goes along every year in September.", "hints": ["relative pronoun"] },
+  { "id": "s2000", "en": "The neighbors asked them to remove the stalls from the sidewalk so people could pass." },
+  { "id": "s2001", "en": "I wish they would build more parks in the neighborhoods where there is nowhere to play." }
 ]

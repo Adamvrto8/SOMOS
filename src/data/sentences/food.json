@@ -2448,5 +2448,185 @@
         "distractors": ["te", "le", "me"]
       }
     ]
+  },
+  {
+    "id": "s2032",
+    "es": "Prepara la salsa con cuidado para que no salga ni muy picante ni muy aguada.",
+    "sk": "Pripravuj salsu opatrne, aby nevyšla ani príliš štipľavá, ani príliš riedka.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Prepara", "la", "salsa", "con", "cuidado", "para", "que", "no", "salga", "ni", "muy", "picante", "ni", "muy", "aguada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él · subjuntivo",
+        "distractors": ["sale", "salió", "saldrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2033",
+    "es": "Si supieras lo rico que huele el café de olla, vendrías a mi casa.",
+    "sk": "Keby si vedel, ako dobre vonia káva de olla, prišiel by si ku mne.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "supieras", "lo", "rico", "que", "huele", "el", "café", "de", "olla", ",", "vendrías", "a", "mi", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "supieras",
+        "lemma": "saber",
+        "hint": "saber · tú · subjuntivo imperfecto",
+        "distractors": ["sabes", "supiste", "sabrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2034",
+    "es": "No conozco a nadie que prepare los tamales tan bien como mi tía.",
+    "sk": "Nepoznám nikoho, kto by pripravoval tamales tak dobre ako moja teta.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["relatives", "subjuntivo", "comparisons"],
+    "tokens": ["No", "conozco", "a", "nadie", "que", "prepare", "los", "tamales", "tan", "bien", "como", "mi", "tía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "prepare",
+        "lemma": "preparar",
+        "hint": "preparar · él · subjuntivo",
+        "distractors": ["prepara", "preparó", "preparará"]
+      }
+    ]
+  },
+  {
+    "id": "s2035",
+    "es": "El mesero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "sk": "Čašník nám povedal, že už nemajú pozole, tak sme si objednali tacos.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["El", "mesero", "nos", "avisó", "que", "ya", "no", "tenían", "pozole", ",", "así", "que", "pedimos", "unos", "tacos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tenían",
+        "lemma": "tener",
+        "hint": "tener · ellos · imperfecto",
+        "distractors": ["tienen", "tengan", "tendrán"]
+      }
+    ]
+  },
+  {
+    "id": "s2036",
+    "es": "Deja la sopa en la lumbre hasta que hierva y luego baja el fuego.",
+    "sk": "Nechaj polievku na ohni, kým nezovrie, a potom stíš plameň.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Deja", "la", "sopa", "en", "la", "lumbre", "hasta", "que", "hierva", "y", "luego", "baja", "el", "fuego", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hierva",
+        "lemma": "hervir",
+        "hint": "hervir · él · subjuntivo",
+        "distractors": ["hierve", "hirvió", "hervirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2037",
+    "es": "Me preguntó si quería agua de jamaica o de horchata y le dije que cualquiera.",
+    "sk": "Opýtal sa ma, či chcem vodu z ibišteka alebo horchatu, a povedal som, že hocijakú.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto", "object-pronouns"],
+    "tokens": ["Me", "preguntó", "si", "quería", "agua", "de", "jamaica", "o", "de", "horchata", "y", "le", "dije", "que", "cualquiera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quería",
+        "lemma": "querer",
+        "hint": "querer · yo · imperfecto",
+        "distractors": ["quiero", "querré", "quiera"]
+      }
+    ]
+  },
+  {
+    "id": "s2038",
+    "es": "Mi hermana quiere un pastel que no tenga azúcar ni harina y que sepa rico.",
+    "sk": "Sestra chce tortu, ktorá nemá cukor ani múku a je pritom chutná.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Mi", "hermana", "quiere", "un", "pastel", "que", "no", "tenga", "azúcar", "ni", "harina", "y", "que", "sepa", "rico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tenga",
+        "lemma": "tener",
+        "hint": "tener · él · subjuntivo",
+        "distractors": ["tiene", "tuvo", "tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2039",
+    "es": "Desde que probé el mole de mi suegra, ningún otro me parece tan rico.",
+    "sk": "Odkedy som ochutnal svokrin mole, žiadne iné mi nepripadá také dobré.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito", "comparisons"],
+    "tokens": ["Desde", "que", "probé", "el", "mole", "de", "mi", "suegra", ",", "ningún", "otro", "me", "parece", "tan", "rico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "odkedy",
+        "distractors": ["Hacia", "Entre", "Sobre"]
+      }
+    ]
+  },
+  {
+    "id": "s2040",
+    "es": "Compré más jitomates de los que necesitaba, así que hice salsa para congelar.",
+    "sk": "Kúpil som viac paradajok, než som potreboval, tak som urobil salsu na zamrazenie.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["comparisons", "relatives"],
+    "tokens": ["Compré", "más", "jitomates", "de", "los", "que", "necesitaba", ",", "así", "que", "hice", "salsa", "para", "congelar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "člen",
+        "distractors": ["las", "lo", "el"]
+      }
+    ]
+  },
+  {
+    "id": "s2041",
+    "es": "Es mejor que pruebes la sopa antes de ponerle más sal, no vaya a quedar salada.",
+    "sk": "Radšej ochutnaj polievku, než do nej dáš viac soli, aby nebola prisolená.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "mejor", "que", "pruebes", "la", "sopa", "antes", "de", "ponerle", "más", "sal", ",", "no", "vaya", "a", "quedar", "salada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pruebes",
+        "lemma": "probar",
+        "hint": "probar · tú · subjuntivo",
+        "distractors": ["pruebas", "probaste", "probarás"]
+      }
+    ]
   }
 ]

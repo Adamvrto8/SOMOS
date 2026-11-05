@@ -2295,5 +2295,185 @@
         "distractors": ["te", "le", "me"]
       }
     ]
+  },
+  {
+    "id": "s2109",
+    "es": "Cuando llegue la oferta, voy a comprar los zapatos que vi ayer.",
+    "sk": "Keď príde akcia, kúpim si topánky, ktoré som včera videl.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "llegue", "la", "oferta", ",", "voy", "a", "comprar", "los", "zapatos", "que", "vi", "ayer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llegue",
+        "lemma": "llegar",
+        "hint": "llegar · ella · subjuntivo",
+        "distractors": ["llega", "llegó", "llegará"]
+      }
+    ]
+  },
+  {
+    "id": "s2110",
+    "es": "Si tuviera más dinero, compraría ese abrigo que está en rebaja.",
+    "sk": "Keby som mal viac peňazí, kúpil by som ten kabát, ktorý je v zľave.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "más", "dinero", ",", "compraría", "ese", "abrigo", "que", "está", "en", "rebaja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "compraría",
+        "lemma": "comprar",
+        "hint": "comprar · yo · condicional",
+        "distractors": ["compro", "compré", "compraré"]
+      }
+    ]
+  },
+  {
+    "id": "s2111",
+    "es": "La vendedora me dijo que podía devolver la camisa si guardaba el ticket.",
+    "sk": "Predavačka mi povedala, že môžem košeľu vrátiť, ak si ponechám pokladničný doklad.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["si-clauses", "imperfecto"],
+    "tokens": ["La", "vendedora", "me", "dijo", "que", "podía", "devolver", "la", "camisa", "si", "guardaba", "el", "ticket", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["cuyo", "quien", "mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2112",
+    "es": "Aunque el precio sea alto, vale la pena comprar un colchón de buena calidad.",
+    "sk": "Aj keď je cena vysoká, oplatí sa kúpiť kvalitný matrac.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "el", "precio", "sea", "alto", ",", "vale", "la", "pena", "comprar", "un", "colchón", "de", "buena", "calidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2113",
+    "es": "Busco una tienda donde vendan ropa deportiva a buen precio cerca de aquí.",
+    "sk": "Hľadám obchod, kde predávajú športové oblečenie za dobrú cenu blízko odtiaľto.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Busco", "una", "tienda", "donde", "vendan", "ropa", "deportiva", "a", "buen", "precio", "cerca", "de", "aquí", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vendan",
+        "lemma": "vender",
+        "hint": "vender · ellos · subjuntivo",
+        "distractors": ["venden", "vendieron", "venderán"]
+      }
+    ]
+  },
+  {
+    "id": "s2114",
+    "es": "Mientras esperábamos en la fila, mi mamá encontró el cupón que había perdido.",
+    "sk": "Kým sme čakali v rade, mama našla kupón, ktorý stratila.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["imperfecto", "relatives"],
+    "tokens": ["Mientras", "esperábamos", "en", "la", "fila", ",", "mi", "mamá", "encontró", "el", "cupón", "que", "había", "perdido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esperábamos",
+        "lemma": "esperar",
+        "hint": "esperar · nosotros · imperfecto",
+        "distractors": ["esperamos", "esperemos", "esperaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2115",
+    "es": "Ojalá que tengan mi talla, porque este vestido es el único que me gusta.",
+    "sk": "Dúfam, že majú moju veľkosť, lebo tieto šaty sú jediné, ktoré sa mi páčia.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "que", "tengan", "mi", "talla", ",", "porque", "este", "vestido", "es", "el", "único", "que", "me", "gusta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tengan",
+        "lemma": "tener",
+        "hint": "tener · ellos · subjuntivo",
+        "distractors": ["tienen", "tuvieron", "tendrán"]
+      }
+    ]
+  },
+  {
+    "id": "s2116",
+    "es": "El cliente que reclamó ayer recibió un reembolso porque el producto venía dañado.",
+    "sk": "Zákazník, ktorý včera reklamoval, dostal peniaze späť, pretože produkt bol poškodený.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "cliente", "que", "reclamó", "ayer", "recibió", "un", "reembolso", "porque", "el", "producto", "venía", "dañado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["aunque", "mientras", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s2117",
+    "es": "En cuanto abran la tienda, correremos a pedir el reembolso del abrigo.",
+    "sk": "Hneď ako otvoria obchod, pobežíme požiadať o vrátenie peňazí za kabát.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["En", "cuanto", "abran", "la", "tienda", ",", "correremos", "a", "pedir", "el", "reembolso", "del", "abrigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abran",
+        "lemma": "abrir",
+        "hint": "abrir · ellos · subjuntivo",
+        "distractors": ["abren", "abrieron", "abrirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2118",
+    "es": "No compres nada que no necesites de verdad, aunque esté de oferta.",
+    "sk": "Nekupuj nič, čo naozaj nepotrebuješ, aj keď je to v akcii.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["imperativo", "relatives", "subjuntivo"],
+    "tokens": ["No", "compres", "nada", "que", "no", "necesites", "de", "verdad", ",", "aunque", "esté", "de", "oferta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "necesites",
+        "lemma": "necesitar",
+        "hint": "necesitar · tú · subjuntivo",
+        "distractors": ["necesitas", "necesitaste", "necesitarás"]
+      }
+    ]
   }
 ]
