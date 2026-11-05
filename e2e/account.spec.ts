@@ -82,6 +82,10 @@ async function signInWithCode(page: Page, code = '123456') {
   await button(page, 'Prihlásiť sa').tap()
 }
 
+// Not getByText(EMAIL): the code step shows the e-mail too, and a reload before the sign-in has finished
+// leaves the page signed out. Back on Profil, the account is stored.
+const signedIn = (page: Page) => expect(page).toHaveURL(/\/profile$/)
+
 test('signing in with an e-mail code shows the account and syncs', async ({ page }) => {
   const calls = await fakeSupabase(page)
   await signInWithCode(page)
@@ -162,7 +166,7 @@ const USAGE_REPORT = {
 test('Štatistiky používania show the numbers to an admin, and say no to any other account', async ({ page }) => {
   await fakeSupabase(page, { usageReport: USAGE_REPORT })
   await signInWithCode(page)
-  await expect(page.getByText(EMAIL)).toBeVisible()
+  await signedIn(page)
   await page.goto('/profile/dev')
   await button(page, 'Štatistiky používania').tap()
   await expect(page).toHaveURL(/\/profile\/usage-stats$/)
@@ -182,7 +186,7 @@ test('Štatistiky používania show the numbers to an admin, and say no to any o
 test('Štatistiky používania: an account not in usage_admins has no access', async ({ page }) => {
   await fakeSupabase(page, { usageReport: 'forbidden' })
   await signInWithCode(page)
-  await expect(page.getByText(EMAIL)).toBeVisible()
+  await signedIn(page)
   await page.goto('/profile/usage-stats')
   await expect(page.getByText('Tento účet nemá prístup.')).toBeVisible()
 })
@@ -212,7 +216,7 @@ const OPEN_REPORTS = [
 test('Nahlásený obsah lists the reports by what they name, and Opravené handles the whole group', async ({ page }) => {
   const calls = await fakeSupabase(page, { contentReports: { open: OPEN_REPORTS, handled: [] } })
   await signInWithCode(page)
-  await expect(page.getByText(EMAIL)).toBeVisible()
+  await signedIn(page)
   await page.goto('/profile/dev')
   await button(page, 'Nahlásený obsah').tap()
   await expect(page).toHaveURL(/\/profile\/content-reports$/)
@@ -234,7 +238,7 @@ test('Nahlásený obsah lists the reports by what they name, and Opravené handl
 test('Nahlásený obsah: an account not in usage_admins has no access', async ({ page }) => {
   await fakeSupabase(page, { contentReports: 'forbidden' })
   await signInWithCode(page)
-  await expect(page.getByText(EMAIL)).toBeVisible()
+  await signedIn(page)
   await page.goto('/profile/content-reports')
   await expect(page.getByText('Tento účet nemá prístup.')).toBeVisible()
 })
