@@ -435,6 +435,13 @@
         "lemma": "tener",
         "hint": "tener · tú · presente",
         "distractors": ["tenemos", "tengo", "tuviste"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -453,6 +460,13 @@
         "lemma": "andar",
         "hint": "andar · tú · presente",
         "distractors": ["andamos", "ando", "anduviste"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "desde", "porque"]
       }
     ]
   },
@@ -499,6 +513,13 @@
         "hint": "ser/estar · yo · presente",
         "why": "expression",
         "distractors": ["Soy", "Está", "Están"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "contigo",
+        "lemma": "contigo",
+        "hint": "s tebou",
+        "distractors": ["conmigo", "consigo", "ti"]
       }
     ]
   },
@@ -517,6 +538,13 @@
         "lemma": "ver",
         "hint": "ver · nosotros · presente",
         "distractors": ["ven", "veo", "veremos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -560,6 +588,13 @@
         "lemma": "dar",
         "hint": "dar · él · pretérito",
         "distractors": ["di", "dimos", "dieron"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mucho",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucha", "muy", "muchos"]
       }
     ]
   },
@@ -731,6 +766,13 @@
         "lemma": "manejar",
         "hint": "manejar · gerundio",
         "distractors": ["manejar", "manejo", "manejé"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },
@@ -775,6 +817,13 @@
         "lemma": "tener",
         "hint": "tener · tú · presente",
         "distractors": ["tiene", "tengo", "tenías"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
       }
     ]
   },
@@ -834,6 +883,13 @@
         "lemma": "caerse",
         "hint": "caerse · yo · pretérito",
         "distractors": ["cae", "cayó", "caía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["por", "sin", "para"]
       }
     ]
   },
@@ -852,6 +908,13 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["doy", "dan", "dio"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -887,6 +950,13 @@
         "lemma": "contestar",
         "hint": "contestar · tú · imperfecto",
         "distractors": ["contestas", "contestaste", "contestarás"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "nos", "lo"]
       }
     ]
   },
@@ -905,6 +975,13 @@
         "lemma": "poder",
         "hint": "poder · yo · presente",
         "distractors": ["puede", "pude", "podía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "mucha",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "muchas", "muy"]
       }
     ]
   },
@@ -923,6 +1000,13 @@
         "lemma": "hacer",
         "hint": "hacer · tú · presente",
         "distractors": ["hace", "hago", "hiciste"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["Te", "Se", "Nos"]
       }
     ]
   },
@@ -958,6 +1042,13 @@
         "lemma": "agradecer",
         "hint": "agradecer · yo · pretérito",
         "distractors": ["agradece", "agradeció", "agradecía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno: mu",
+        "distractors": ["Lo", "La", "Les"]
       }
     ]
   },
@@ -1229,6 +1320,13 @@
         "lemma": "esperar",
         "hint": "esperar · yo · imperfecto",
         "distractors": ["espero", "esperé", "esperabas"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "vinieras",
+        "lemma": "venir",
+        "hint": "venir · tú · subjuntivo imperfecto",
+        "distractors": ["vienes", "vendrás", "viniste"]
       }
     ]
   },
@@ -1247,6 +1345,13 @@
         "lemma": "ir",
         "hint": "ir · tú · presente",
         "distractors": ["voy", "fuiste", "ibas"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1265,6 +1370,13 @@
         "lemma": "olvidar",
         "hint": "olvidar · él · presente",
         "distractors": ["olvido", "olvidó", "olvidaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1300,6 +1412,13 @@
         "lemma": "llegar",
         "hint": "llegar · yo · pretérito",
         "distractors": ["llego", "llegó", "llegaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "estaban",
+        "lemma": "estar",
+        "hint": "estar · ellos · imperfecto",
+        "distractors": ["están", "estarán", "estén"]
       }
     ]
   },
@@ -1336,6 +1455,13 @@
         "lemma": "preparar",
         "hint": "preparar · ella · pretérito",
         "distractors": ["prepara", "prepararon", "preparaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1382,6 +1508,13 @@
         "hint": "ser/estar · tú · presente",
         "why": "state",
         "distractors": ["eres", "está", "estabas"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -1400,6 +1533,13 @@
         "lemma": "madrugar",
         "hint": "madrugar · yo · presente",
         "distractors": ["madrugas", "madrugué", "madrugaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -1418,6 +1558,13 @@
         "lemma": "conocer",
         "hint": "conocer · él · imperfecto",
         "distractors": ["conoce", "conoció", "conocían"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -1461,6 +1608,13 @@
         "lemma": "pasar",
         "hint": "pasar · yo · presente",
         "distractors": ["pasas", "pasé", "pasaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1497,6 +1651,13 @@
         "lemma": "acordarse",
         "hint": "acordarse · yo · imperfecto",
         "distractors": ["acuerdo", "acordé", "acordabas"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1515,6 +1676,13 @@
         "lemma": "visitar",
         "hint": "visitar · yo · presente",
         "distractors": ["visitas", "visité", "visitaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "hacia"]
       }
     ]
   },
@@ -1612,6 +1780,186 @@
         "lemma": "venir",
         "hint": "venir · tú · pretérito",
         "distractors": ["vienes", "vino", "venías"]
+      }
+    ]
+  },
+  {
+    "id": "s2042",
+    "es": "Cuando conozcas a mis papás, no olvides saludarlos de beso y con una sonrisa.",
+    "sk": "Keď spoznáš moju mamu a otca, nezabudni ich pozdraviť bozkom a s úsmevom.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Cuando", "conozcas", "a", "mis", "papás", ",", "no", "olvides", "saludarlos", "de", "beso", "y", "con", "una", "sonrisa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "conozcas",
+        "lemma": "conocer",
+        "hint": "conocer · tú · subjuntivo",
+        "distractors": ["conoces", "conociste", "conocerás"]
+      }
+    ]
+  },
+  {
+    "id": "s2043",
+    "es": "Te escribo para que sepas que pienso en ti y que te mando un abrazo.",
+    "sk": "Píšem ti, aby si vedel, že na teba myslím a posielam ti objatie.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Te", "escribo", "para", "que", "sepas", "que", "pienso", "en", "ti", "y", "que", "te", "mando", "un", "abrazo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "aby",
+        "distractors": ["porque", "sino", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s2044",
+    "es": "Si nos vemos pronto, te invito un café para ponernos al corriente.",
+    "sk": "Ak sa čoskoro uvidíme, pozvem ťa na kávu, aby sme si dohnali novinky.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["si-clauses", "presente"],
+    "tokens": ["Si", "nos", "vemos", "pronto", ",", "te", "invito", "un", "café", "para", "ponernos", "al", "corriente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vemos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · presente",
+        "distractors": ["veamos", "viéramos", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2045",
+    "es": "Me dijo que pasaría a saludarte en cuanto terminara su turno en el hospital.",
+    "sk": "Povedal mi, že ťa príde pozdraviť, hneď ako mu skončí zmena v nemocnici.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Me", "dijo", "que", "pasaría", "a", "saludarte", "en", "cuanto", "terminara", "su", "turno", "en", "el", "hospital", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "terminara",
+        "lemma": "terminar",
+        "hint": "terminar · él · subjuntivo imperfecto",
+        "distractors": ["terminó", "termina", "terminará"]
+      }
+    ]
+  },
+  {
+    "id": "s2046",
+    "es": "Es la señora que me ayudó cuando llegué a vivir a este edificio.",
+    "sk": "To je pani, ktorá mi pomohla, keď som sa nasťahoval do tejto budovy.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Es", "la", "señora", "que", "me", "ayudó", "cuando", "llegué", "a", "vivir", "a", "este", "edificio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuanto"]
+      }
+    ]
+  },
+  {
+    "id": "s2047",
+    "es": "Ojalá nos veamos pronto, aunque sea solo para tomar un café y platicar.",
+    "sk": "Kiežby sme sa čoskoro videli, aj keby len na kávu a rozhovor.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "nos", "veamos", "pronto", ",", "aunque", "sea", "solo", "para", "tomar", "un", "café", "y", "platicar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "veamos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · subjuntivo",
+        "distractors": ["vemos", "vimos", "veremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2048",
+    "es": "Saluda a tu hermano de mi parte y dile que me llame cuando pueda.",
+    "sk": "Pozdravuj brata odo mňa a povedz mu, nech mi zavolá, keď bude môcť.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Saluda", "a", "tu", "hermano", "de", "mi", "parte", "y", "dile", "que", "me", "llame", "cuando", "pueda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · él · subjuntivo",
+        "distractors": ["pudo", "podía", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2049",
+    "es": "Aunque nunca nos habíamos visto, me recibió como si fuéramos amigos de toda la vida.",
+    "sk": "Aj keď sme sa nikdy predtým nevideli, prijal ma, akoby sme boli celoživotní priatelia.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subj-imperfecto", "pluscuamperfecto"],
+    "tokens": ["Aunque", "nunca", "nos", "habíamos", "visto", ",", "me", "recibió", "como", "si", "fuéramos", "amigos", "de", "toda", "la", "vida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "fuéramos",
+        "lemma": "ser",
+        "hint": "ser · nosotros · subjuntivo imperfecto",
+        "distractors": ["somos", "fuimos", "seremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2050",
+    "es": "Espero que tengas un excelente fin de semana y que descanses mucho.",
+    "sk": "Dúfam, že budeš mať skvelý víkend a poriadne si odpočiniš.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Espero", "que", "tengas", "un", "excelente", "fin", "de", "semana", "y", "que", "descanses", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tengas",
+        "lemma": "tener",
+        "hint": "tener · tú · subjuntivo",
+        "distractors": ["tienes", "tuviste", "tendrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2051",
+    "es": "Mi abuelo saluda a todos los que pasan por su calle, sean conocidos o no.",
+    "sk": "Dedo pozdraví každého, kto prejde po jeho ulici, či ho pozná, alebo nie.",
+    "level": "B2",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Mi", "abuelo", "saluda", "a", "todos", "los", "que", "pasan", "por", "su", "calle", ",", "sean", "conocidos", "o", "no", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "sean",
+        "lemma": "ser",
+        "hint": "ser · ellos · subjuntivo",
+        "distractors": ["son", "fueron", "serán"]
       }
     ]
   }

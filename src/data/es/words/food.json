@@ -1,0 +1,55 @@
+[
+  {
+    "id": "jugo",
+    "es": "zumo",
+    "note": null,
+    "examples": [
+      {
+        "es": "Un zumo de naranja, por favor.",
+        "sk": "Pomarančový džús, prosím."
+      }
+    ]
+  },
+  {
+    "id": "papa",
+    "es": "patata",
+    "note": null,
+    "examples": [
+      {
+        "es": "Quiero una hamburguesa con patatas.",
+        "sk": "Chcem hamburger s hranolkami."
+      }
+    ]
+  },
+  {
+    "id": "naranja",
+    "examples": [
+      {
+        "es": "Me gusta el zumo de naranja.",
+        "sk": "Mám rád pomarančový džús."
+      }
+    ]
+  },
+  {
+    "id": "jitomate",
+    "es": "tomate",
+    "note": null,
+    "examples": [
+      {
+        "es": "Necesito tres tomates para la salsa.",
+        "sk": "Na salsu potrebujem tri paradajky."
+      }
+    ]
+  },
+  {
+    "id": "mesero",
+    "es": "camarero",
+    "note": null,
+    "examples": [
+      {
+        "es": "El camarero nos trae la cuenta.",
+        "sk": "Čašník nám nesie účet."
+      }
+    ]
+  }
+]

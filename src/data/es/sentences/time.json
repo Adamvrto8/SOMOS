@@ -1,0 +1,152 @@
+[
+  {
+    "id": "s183",
+    "es": "Ahora no puedo, estoy en una junta.",
+    "tokens": [
+      "Ahora",
+      "no",
+      "puedo",
+      ",",
+      "estoy",
+      "en",
+      "una",
+      "junta",
+      "."
+    ]
+  },
+  {
+    "id": "s1499",
+    "es": "Cuando un mexicano dice ahora, puede significar en cinco minutos o nunca.",
+    "tokens": [
+      "Cuando",
+      "un",
+      "mexicano",
+      "dice",
+      "ahora",
+      ",",
+      "puede",
+      "significar",
+      "en",
+      "cinco",
+      "minutos",
+      "o",
+      "nunca",
+      "."
+    ]
+  },
+  {
+    "id": "s1507",
+    "es": "En aquel entonces no existían los móviles.",
+    "tokens": [
+      "En",
+      "aquel",
+      "entonces",
+      "no",
+      "existían",
+      "los",
+      "móviles",
+      "."
+    ]
+  },
+  {
+    "id": "s1609",
+    "es": "El autobús tardó una hora porque había mucho tráfico.",
+    "tokens": [
+      "El",
+      "autobús",
+      "tardó",
+      "una",
+      "hora",
+      "porque",
+      "había",
+      "mucho",
+      "tráfico",
+      "."
+    ]
+  },
+  {
+    "id": "s2128",
+    "es": "Cuando tengas tiempo, charlamos de lo que pasó la semana pasada.",
+    "tokens": [
+      "Cuando",
+      "tengas",
+      "tiempo",
+      ",",
+      "charlamos",
+      "de",
+      "lo",
+      "que",
+      "pasó",
+      "la",
+      "semana",
+      "pasada",
+      "."
+    ]
+  },
+  {
+    "id": "s2132",
+    "es": "Mi hermano llegó tarde porque tuvo que esperar al autobús que nunca pasaba.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "llegó",
+      "tarde",
+      "porque",
+      "tuvo",
+      "que",
+      "esperar",
+      "al",
+      "autobús",
+      "que",
+      "nunca",
+      "pasaba",
+      "."
+    ]
+  },
+  {
+    "id": "s1501",
+    "es": "A primera hora miro el correo y te aviso.",
+    "tokens": [
+      "A",
+      "primera",
+      "hora",
+      "miro",
+      "el",
+      "correo",
+      "y",
+      "te",
+      "aviso",
+      "."
+    ]
+  },
+  {
+    "id": "s1506",
+    "es": "Llevamos años charlando de ese viaje y nunca lo hacemos.",
+    "tokens": [
+      "Llevamos",
+      "años",
+      "charlando",
+      "de",
+      "ese",
+      "viaje",
+      "y",
+      "nunca",
+      "lo",
+      "hacemos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "charlando",
+        "lemma": "charlar",
+        "hint": "charlar · gerundio",
+        "distractors": [
+          "charlar",
+          "charlado",
+          "charla"
+        ]
+      }
+    ]
+  }
+]

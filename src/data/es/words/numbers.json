@@ -1,0 +1,29 @@
+[
+  {
+    "id": "numero",
+    "examples": [
+      {
+        "es": "¿Cuál es tu número de móvil?",
+        "sk": "Aké máš číslo na mobil?"
+      }
+    ]
+  },
+  {
+    "id": "mil",
+    "examples": [
+      {
+        "es": "El billete cuesta mil pesos.",
+        "sk": "Lístok stojí tisíc pesos."
+      }
+    ]
+  },
+  {
+    "id": "ultimo",
+    "examples": [
+      {
+        "es": "Es el último autobús de la noche.",
+        "sk": "To je posledný nočný autobus."
+      }
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "pantalla",
+    "examples": [
+      {
+        "es": "Se me rompió la pantalla del móvil.",
+        "sk": "Rozbil sa mi displej na mobile."
+      }
+    ]
+  },
+  {
+    "id": "radio",
+    "examples": [
+      {
+        "es": "Escucho la radio en el coche.",
+        "sk": "V aute počúvam rádio."
+      }
+    ]
+  },
+  {
+    "id": "audifono",
+    "es": "auricular",
+    "note": null,
+    "examples": [
+      {
+        "es": "Siempre llevo mis auriculares.",
+        "sk": "Vždy mám pri sebe slúchadlá."
+      }
+    ],
+    "plural": "auriculares"
+  },
+  {
+    "id": "descompuesto",
+    "es": "estropeado",
+    "note": null,
+    "examples": [
+      {
+        "es": "La impresora está estropeada.",
+        "sk": "Tlačiareň je pokazená."
+      }
+    ]
+  },
+  {
+    "id": "actualizacion",
+    "examples": [
+      {
+        "es": "El móvil necesita una actualización.",
+        "sk": "Mobil potrebuje aktualizáciu."
+      }
+    ]
+  },
+  {
+    "id": "camara",
+    "examples": [
+      {
+        "es": "La cámara de mi móvil es muy buena.",
+        "sk": "Fotoaparát v mojom mobile je veľmi dobrý."
+      }
+    ]
+  },
+  {
+    "id": "respaldo",
+    "es": "copia de seguridad",
+    "plural": "copias de seguridad",
+    "gender": "f"
+  }
+]

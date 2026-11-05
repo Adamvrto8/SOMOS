@@ -1,0 +1,142 @@
+[
+  {
+    "id": "s1629",
+    "es": "No nos gustan las patatas fritas.",
+    "tokens": [
+      "No",
+      "nos",
+      "gustan",
+      "las",
+      "patatas",
+      "fritas",
+      "."
+    ]
+  },
+  {
+    "id": "s017",
+    "es": "¿Me da un zumo de naranja, por favor?",
+    "tokens": [
+      "¿",
+      "Me",
+      "da",
+      "un",
+      "zumo",
+      "de",
+      "naranja",
+      ",",
+      "por",
+      "favor",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "zumo",
+        "distractors": [
+          "agua",
+          "café",
+          "refresco"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s095",
+    "es": "El camarero trajo la cuenta.",
+    "tokens": [
+      "El",
+      "camarero",
+      "trajo",
+      "la",
+      "cuenta",
+      "."
+    ]
+  },
+  {
+    "id": "s1892",
+    "es": "Fui al mercado para comprar tomates.",
+    "tokens": [
+      "Fui",
+      "al",
+      "mercado",
+      "para",
+      "comprar",
+      "tomates",
+      "."
+    ]
+  },
+  {
+    "id": "s1180",
+    "es": "¿Cuánto le dejaste de propina al camarero?",
+    "tokens": [
+      "¿",
+      "Cuánto",
+      "le",
+      "dejaste",
+      "de",
+      "propina",
+      "al",
+      "camarero",
+      "?"
+    ]
+  },
+  {
+    "id": "s1617",
+    "es": "Yo corto la cebolla y tú pelas las patatas.",
+    "tokens": [
+      "Yo",
+      "corto",
+      "la",
+      "cebolla",
+      "y",
+      "tú",
+      "pelas",
+      "las",
+      "patatas",
+      "."
+    ]
+  },
+  {
+    "id": "s2035",
+    "es": "El camarero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "tokens": [
+      "El",
+      "camarero",
+      "nos",
+      "avisó",
+      "que",
+      "ya",
+      "no",
+      "tenían",
+      "pozole",
+      ",",
+      "así",
+      "que",
+      "pedimos",
+      "unos",
+      "tacos",
+      "."
+    ]
+  },
+  {
+    "id": "s2040",
+    "es": "Compré más tomates de los que necesitaba, así que hice salsa para congelar.",
+    "tokens": [
+      "Compré",
+      "más",
+      "tomates",
+      "de",
+      "los",
+      "que",
+      "necesitaba",
+      ",",
+      "así",
+      "que",
+      "hice",
+      "salsa",
+      "para",
+      "congelar",
+      "."
+    ]
+  }
+]

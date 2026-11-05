@@ -13,6 +13,8 @@ import {
   regularNew,
   regularParticiple,
 } from '../src/lib/verbForms.ts'
+import { applySentences, applyWords, hiddenVerbIds, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
+import { bareVosotros } from '../src/lib/vosotros.ts'
 import { checksOwnHint, usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
@@ -32,9 +34,16 @@ function loadDir<T>(dir: string): T[] {
 }
 
 const topics = readJson(new URL('topics.json', DATA)) as Topic[]
-const words = loadDir<Word>('words')
-const verbs = loadDir<Verb>('verbs')
-const sentences = loadDir<Sentence>('sentences')
+// --es (npm run validate:es) also checks the verbs and words that only the Spain variant adds.
+const withEs = process.argv.includes('--es')
+const spainNewIds = new Set(withEs ? loadDir<Word>('es/new/words').map((w) => w.id) : [])
+const words0 = [...loadDir<Word>('words'), ...(withEs ? loadDir<Word>('es/new/words') : [])]
+const hiddenVerbs = withEs ? hiddenVerbIds(words0, loadDir<WordEs>('es/words')) : new Set<string>()
+const verbs = [...loadDir<Verb>('verbs').filter((v) => !hiddenVerbs.has(v.id)), ...(withEs ? loadDir<Verb>('es/new/verbs') : [])]
+const sentences0 = loadDir<Sentence>('sentences')
+// --es checks the Spain text as the learner gets it: the overlay laid over the Mexican base.
+const words = withEs ? [...applyWords(words0.filter((w) => !spainNewIds.has(w.id)), loadDir<WordEs>('es/words')), ...words0.filter((w) => spainNewIds.has(w.id))] : words0
+const sentences = withEs ? applySentences(sentences0, loadDir<SentenceEs>('es/sentences')) : sentences0
 const tipsUrl = new URL('tips.json', DATA)
 const tips = (existsSync(tipsUrl) ? readJson(tipsUrl) : []) as Tip[]
 const sourcesUrl = new URL('sources.json', DATA)
@@ -112,7 +121,8 @@ const VOSOTROS_ENDING = /(áis|éis|asteis|isteis)$/
 const NOT_VOSOTROS = new Set(['dieciséis', 'veintiséis'])
 
 function checkSpanish(where: string, text: unknown) {
-  if (typeof text !== 'string') return
+  // Spain text legitimately has vosotros forms and coche, conducir…: validate-es.ts checks it for leftover Mexican words instead.
+  if (typeof text !== 'string' || withEs) return
   for (const word of text.toLowerCase().split(/[^\p{L}]+/u)) {
     if (!word) continue
     if (VOSOTROS_WORDS.has(word) || (VOSOTROS_ENDING.test(word) && !NOT_VOSOTROS.has(word))) fail(where, `vosotros form "${word}"`)
@@ -294,7 +304,8 @@ for (const w of words) {
     continue
   }
   const slug = slugify(w.es)
-  if (w.id !== slug && !new RegExp(`^${slug}-\\d+$`).test(w.id)) fail(where, `id should be "${slug}" (or "${slug}-2"…)`)
+  // Spain keeps the Mexican id so progress carries over (carro stays "carro" while es is coche).
+  if (!withEs && w.id !== slug && !new RegExp(`^${slug}-\\d+$`).test(w.id)) fail(where, `id should be "${slug}" (or "${slug}-2"…)`)
   if (!Array.isArray(w.sk) || w.sk.length === 0 || !w.sk.every(isNonEmpty)) fail(where, 'sk must be a non-empty list')
   if (!POS.includes(w.pos)) fail(where, `invalid pos "${w.pos}"`)
   checkLevel(where, w.level)
@@ -405,7 +416,7 @@ for (const tip of tips) {
 
 // ---------- sentences ----------
 
-const PERSON_LABELS: Record<string, Person> = {
+const PERSON_LABELS: Record<string, Person | 'vosotros'> = {
   yo: 'yo',
   tú: 'tu',
   él: 'el',
@@ -416,6 +427,9 @@ const PERSON_LABELS: Record<string, Person> = {
   ellos: 'ellos',
   ellas: 'ellos',
   ustedes: 'ellos',
+  // Spain only: the 6th person is derived (src/lib/vosotros.ts), never stored.
+  vosotros: 'vosotros',
+  vosotras: 'vosotros',
 }
 const TENSE_LABELS: Record<string, Tense | 'imperativo'> = {
   presente: 'presente',
@@ -454,6 +468,10 @@ function expectedFromHint(cloze: Cloze): { expected: string } | { error: string 
   const tense = TENSE_LABELS[conj![3]]
   if (!person) return { error: `unknown person "${conj![2]}" in hint` }
   if (!tense) return { error: `unknown tense "${conj![3]}" in hint` }
+  if (person === 'vosotros') {
+    if (!withEs) return { error: 'vosotros belongs to the Spain variant (--es)' }
+    return { expected: bareVosotros(verb, tense) }
+  }
   if (tense === 'imperativo') {
     if (person === 'yo') return { error: 'the imperative has no yo' }
     return { expected: verb.imperativo[person] } // the pronoun is part of the word: levántate
@@ -556,6 +574,7 @@ for (const level of pathLevels) {
 // Matched to the base data by id. Missing English is not an error (the app shows Slovak);
 // English that points at nothing, or does not fit what it translates, is.
 
+const readEnEs = <T,>(name: string) => readJson(new URL(`es/new/en/${name}.json`, DATA)) as T[]
 function loadEnDir<T>(dir: string): T[] {
   return existsSync(new URL(`en/${dir}/`, DATA)) ? loadDir<T>(`en/${dir}`) : []
 }
@@ -564,8 +583,10 @@ function loadEnFile<T>(file: string): T[] {
   return existsSync(url) ? (readJson(url) as T[]) : []
 }
 
-const enWords = loadEnDir<WordEn>('words')
-const enVerbs = loadEnDir<VerbEn>('verbs')
+// Spain: the English of the words and verbs it hides is not needed; its own new ones add theirs.
+const wordIds0 = new Set(words.map((w) => w.id))
+const enWords = [...loadEnDir<WordEn>('words').filter((e) => !withEs || wordIds0.has(e.id)), ...(withEs ? readEnEs<WordEn>('words') : [])]
+const enVerbs = [...loadEnDir<VerbEn>('verbs').filter((e) => !withEs || !hiddenVerbs.has(e.id)), ...(withEs ? readEnEs<VerbEn>('verbs') : [])]
 const enSentences = loadEnDir<SentenceEn>('sentences')
 const enTopics = loadEnFile<TopicEn>('topics.json')
 const enTips = loadEnFile<TipEn>('tips.json')

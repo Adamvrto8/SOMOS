@@ -1,0 +1,55 @@
+[
+  {
+    "id": "s1537",
+    "es": "¿Llevas una chaqueta? Hace frío.",
+    "tokens": [
+      "¿",
+      "Llevas",
+      "una",
+      "chaqueta",
+      "?",
+      "Hace",
+      "frío",
+      "."
+    ]
+  },
+  {
+    "id": "s1546",
+    "es": "Anoche cayó granizo y rompió el vidrio del coche.",
+    "tokens": [
+      "Anoche",
+      "cayó",
+      "granizo",
+      "y",
+      "rompió",
+      "el",
+      "vidrio",
+      "del",
+      "coche",
+      "."
+    ]
+  },
+  {
+    "id": "s2153",
+    "es": "Aunque haya mucho sol, es mejor que lleves una chaqueta por si baja la temperatura.",
+    "tokens": [
+      "Aunque",
+      "haya",
+      "mucho",
+      "sol",
+      ",",
+      "es",
+      "mejor",
+      "que",
+      "lleves",
+      "una",
+      "chaqueta",
+      "por",
+      "si",
+      "baja",
+      "la",
+      "temperatura",
+      "."
+    ]
+  }
+]

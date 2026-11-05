@@ -1,0 +1,49 @@
+[
+  {
+    "id": "s016",
+    "es": "Mi esposo y yo charlamos todas las noches.",
+    "tokens": [
+      "Mi",
+      "esposo",
+      "y",
+      "yo",
+      "charlamos",
+      "todas",
+      "las",
+      "noches",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "charlamos",
+        "lemma": "charlar",
+        "hint": "charlar · nosotros · presente",
+        "distractors": [
+          "charlo",
+          "charlas",
+          "charla"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1684",
+    "es": "Mi hermana me prestó su coche y se lo devolví el lunes.",
+    "tokens": [
+      "Mi",
+      "hermana",
+      "me",
+      "prestó",
+      "su",
+      "coche",
+      "y",
+      "se",
+      "lo",
+      "devolví",
+      "el",
+      "lunes",
+      "."
+    ]
+  }
+]

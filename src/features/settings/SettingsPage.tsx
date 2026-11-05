@@ -1,5 +1,6 @@
-import { AudioLines, Bell, ChartNoAxesColumn, DatabaseBackup, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
+import { AudioLines, Bell, ChartNoAxesColumn, DatabaseBackup, Globe, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
 import { useRef, useState } from 'react'
+import { variant } from '../../data'
 import { dictionaries, useT } from '../../i18n'
 import { useAutoReviewSettings } from '../../lib/autoReview'
 import { useDailyGoal } from '../../lib/dailyGoal'
@@ -61,6 +62,7 @@ export function SettingsPage() {
 
       <SettingsGroup id="settings-app" title={text.groups.app}>
         <SettingsRow to="/profile/language" icon={Languages} title={text.language} value={dictionaries[language].languageName} />
+        <SettingsRow to="/profile/variant" icon={Globe} title={text.variant} value={text.variantOptions[variant]} />
         <SettingsRow to="/profile/look" icon={Palette} title={text.appearance} value={themePref === 'system' ? text.lookOptions[look] : `${text.lookOptions[look]} · ${text.themeOptions[themePref]}`} />
         <SettingsRow to="/profile/sound" icon={Volume2} title={text.sound} value={text.soundOptions[soundSet]} />
         <SettingsRow to="/profile/voice" icon={AudioLines} title={text.voice.title} value={voice} />

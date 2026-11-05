@@ -457,6 +457,13 @@
         "lemma": "poner",
         "hint": "poner · yo · pretérito",
         "distractors": ["pongo", "puso", "pondré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "sino", "si"]
       }
     ]
   },
@@ -644,6 +651,13 @@
         "lemma": "usar",
         "hint": "usar · yo · presente",
         "distractors": ["usa", "usé", "usaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "sobre", "contra"]
       }
     ]
   },
@@ -663,6 +677,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "state",
         "distractors": ["es", "son", "están"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Tu",
+        "lemma": "tu",
+        "hint": "tvoja",
+        "distractors": ["Mi", "Su", "Nuestra"]
       }
     ]
   },
@@ -699,6 +720,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · pretérito",
         "distractors": ["Llevo", "Llevó", "Llevaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["durante", "desde", "hasta"]
       }
     ]
   },
@@ -768,6 +796,13 @@
         "lemma": "regalar",
         "hint": "regalar · ella · pretérito",
         "distractors": ["regala", "regalé", "regalaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -786,6 +821,13 @@
         "lemma": "comprar",
         "hint": "comprar · yo · presente",
         "distractors": ["Compra", "Compré", "Compraba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "toda",
+        "lemma": "todo",
+        "hint": "celá",
+        "distractors": ["todo", "todos", "todas"]
       }
     ]
   },
@@ -804,6 +846,13 @@
         "lemma": "lavar",
         "hint": "lavar · yo · pretérito",
         "distractors": ["Lava", "Lavó", "Lavaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -822,6 +871,13 @@
         "lemma": "usar",
         "hint": "usar · ellas · presente",
         "distractors": ["usa", "usaron", "usaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Las",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["Los", "Un", "La"]
       }
     ]
   },
@@ -1150,6 +1206,13 @@
         "lemma": "regresar",
         "hint": "regresar · gerundio",
         "distractors": ["regresa", "regresó", "regresaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -1168,6 +1231,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · imperfecto",
         "distractors": ["llevo", "llevé", "llevará"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1284,6 +1354,13 @@
         "lemma": "empacar",
         "hint": "empacar · yo · futuro",
         "distractors": ["empaco", "empaqué", "empacaba"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["sin", "con", "hasta"]
       }
     ]
   },
@@ -1302,6 +1379,13 @@
         "lemma": "guardar",
         "hint": "guardar · ella · imperfecto",
         "distractors": ["guarda", "guardó", "guardará"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "toda",
+        "lemma": "todo",
+        "hint": "všetok",
+        "distractors": ["todo", "todos", "todas"]
       }
     ]
   },
@@ -1344,6 +1428,13 @@
         "lemma": "probarse",
         "hint": "probarse · yo · imperfecto",
         "distractors": ["pruebo", "probé", "probará"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "cayó",
+        "lemma": "caerse",
+        "hint": "caerse · él · pretérito",
+        "distractors": ["caerá", "caería", "caiga"]
       }
     ]
   },
@@ -1386,6 +1477,13 @@
         "lemma": "parecer",
         "hint": "parecer · tú · presente",
         "distractors": ["parezco", "pareció", "parecía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "le", "nos"]
       }
     ]
   },
@@ -1429,6 +1527,13 @@
         "lemma": "conseguir",
         "hint": "conseguir · yo · pretérito",
         "distractors": ["consigo", "consiguió", "conseguía"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["con", "sobre", "contra"]
       }
     ]
   },
@@ -1465,6 +1570,13 @@
         "lemma": "dar",
         "hint": "dar · él · pretérito",
         "distractors": ["da", "di", "daba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1544,6 +1656,13 @@
         "lemma": "enseñar",
         "hint": "enseñar · ella · pretérito",
         "distractors": ["enseña", "enseñé", "enseñaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -1659,5 +1778,185 @@
       }
     ],
     "grammar": ["gustar"]
+  },
+  {
+    "id": "s2002",
+    "es": "Mi mamá quiere que lleve un suéter a la fiesta, porque en la noche refresca.",
+    "sk": "Mama chce, aby som si na oslavu zobral sveter, lebo večer sa ochladí.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "mamá", "quiere", "que", "lleve", "un", "suéter", "a", "la", "fiesta", ",", "porque", "en", "la", "noche", "refresca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "lleve",
+        "lemma": "llevar",
+        "hint": "llevar · yo · subjuntivo",
+        "distractors": ["llevo", "llevé", "llevaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2003",
+    "es": "Si me alcanzara el dinero, compraría ese abrigo de lana para el invierno.",
+    "sk": "Keby mi stačili peniaze, kúpil by som si ten vlnený kabát na zimu.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "me", "alcanzara", "el", "dinero", ",", "compraría", "ese", "abrigo", "de", "lana", "para", "el", "invierno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "alcanzara",
+        "lemma": "alcanzar",
+        "hint": "alcanzar · él · subjuntivo imperfecto",
+        "distractors": ["alcanza", "alcanzó", "alcanzará"]
+      }
+    ]
+  },
+  {
+    "id": "s2004",
+    "es": "No encuentro ningún pantalón que me sirva bien ni de la cintura ni del largo.",
+    "sk": "Nenachádzam žiadne nohavice, ktoré by mi sedeli ani v páse, ani na dĺžku.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "encuentro", "ningún", "pantalón", "que", "me", "sirva", "bien", "ni", "de", "la", "cintura", "ni", "del", "largo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sirva",
+        "lemma": "servir",
+        "hint": "servir · él · subjuntivo",
+        "distractors": ["sirve", "sirvió", "servirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2005",
+    "es": "Cuando baje la temperatura, sacaremos los abrigos y las bufandas del ropero.",
+    "sk": "Keď klesne teplota, vytiahneme zo skrine kabáty a šály.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "baje", "la", "temperatura", ",", "sacaremos", "los", "abrigos", "y", "las", "bufandas", "del", "ropero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "baje",
+        "lemma": "bajar",
+        "hint": "bajar · él · subjuntivo",
+        "distractors": ["baja", "bajó", "bajará"]
+      }
+    ]
+  },
+  {
+    "id": "s2006",
+    "es": "Conozco a una diseñadora cuyas camisas bordadas se venden en todo el país.",
+    "sk": "Poznám dizajnérku, ktorej vyšívané košele sa predávajú v celej krajine.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives", "passive-se"],
+    "tokens": ["Conozco", "a", "una", "diseñadora", "cuyas", "camisas", "bordadas", "se", "venden", "en", "todo", "el", "país", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuyas",
+        "lemma": "cuyas",
+        "hint": "vzťažné slovo (jej)",
+        "distractors": ["quienes", "donde", "cuantas"]
+      }
+    ]
+  },
+  {
+    "id": "s2007",
+    "es": "La vendedora me aseguró que la camisa no se encogería aunque la lavara con agua caliente.",
+    "sk": "Predavačka ma ubezpečila, že sa košeľa nezrazí, aj keby som ju prala v horúcej vode.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["La", "vendedora", "me", "aseguró", "que", "la", "camisa", "no", "se", "encogería", "aunque", "la", "lavara", "con", "agua", "caliente", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "lavara",
+        "lemma": "lavar",
+        "hint": "lavar · yo · subjuntivo imperfecto",
+        "distractors": ["lavé", "lavo", "lavaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2008",
+    "es": "Ojalá me quede bien la falda que compré por internet sin probarla.",
+    "sk": "Kiežby mi dobre sedela sukňa, čo som kúpil cez internet bez vyskúšania.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "me", "quede", "bien", "la", "falda", "que", "compré", "por", "internet", "sin", "probarla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "quede",
+        "lemma": "quedar",
+        "hint": "quedar · él · subjuntivo",
+        "distractors": ["queda", "quedó", "quedará"]
+      }
+    ]
+  },
+  {
+    "id": "s2009",
+    "es": "Se me hizo tarde porque no encontraba la corbata que mi esposa había planchado.",
+    "sk": "Zmeškal som čas, lebo som nevedel nájsť kravatu, ktorú moja žena vyžehlila.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["imperfecto", "pluscuamperfecto"],
+    "tokens": ["Se", "me", "hizo", "tarde", "porque", "no", "encontraba", "la", "corbata", "que", "mi", "esposa", "había", "planchado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["donde", "cuyo", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2010",
+    "es": "No voy a salir de la tienda hasta que encuentre un vestido para la boda.",
+    "sk": "Neodídem z obchodu, kým nenájdem šaty na svadbu.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["No", "voy", "a", "salir", "de", "la", "tienda", "hasta", "que", "encuentre", "un", "vestido", "para", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "encuentre",
+        "lemma": "encontrar",
+        "hint": "encontrar · yo · subjuntivo",
+        "distractors": ["encuentro", "encontré", "encontraré"]
+      }
+    ]
+  },
+  {
+    "id": "s2011",
+    "es": "Puedes llevarte la bufanda con tal de que me la devuelvas la próxima semana.",
+    "sk": "Môžeš si zobrať šál, pokiaľ mi ho vrátiš budúci týždeň.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["subjuntivo-clauses", "object-pronouns"],
+    "tokens": ["Puedes", "llevarte", "la", "bufanda", "con", "tal", "de", "que", "me", "la", "devuelvas", "la", "próxima", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "devuelvas",
+        "lemma": "devolver",
+        "hint": "devolver · tú · subjuntivo",
+        "distractors": ["devuelves", "devolviste", "devolverás"]
+      }
+    ]
   }
 ]

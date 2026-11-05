@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gripa",
+    "es": "gripe",
+    "note": null,
+    "examples": [
+      {
+        "es": "Tengo gripe.",
+        "sk": "Mám chrípku."
+      }
+    ]
+  },
+  {
+    "id": "curita",
+    "es": "tirita",
+    "note": null,
+    "examples": [
+      {
+        "es": "¿Tienes una tirita?",
+        "sk": "Máš náplasť?"
+      }
+    ]
+  },
+  {
+    "id": "contagioso",
+    "examples": [
+      {
+        "es": "La gripe es muy contagiosa.",
+        "sk": "Chrípka je veľmi nákazlivá."
+      }
+    ]
+  },
+  {
+    "id": "cubrebocas",
+    "es": "mascarilla",
+    "gender": "f",
+    "examples": [
+      {
+        "es": "En el hospital todavía piden mascarilla.",
+        "sk": "V nemocnici ešte stále chcú rúško."
+      }
+    ]
+  }
+]

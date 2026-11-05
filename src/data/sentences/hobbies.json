@@ -488,6 +488,13 @@
         "lemma": "aprovechar",
         "hint": "aprovechar · nosotros · pretérito",
         "distractors": ["Aproveché", "Aprovechó", "Aprovechábamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["por", "con", "sin"]
       }
     ]
   },
@@ -506,6 +513,13 @@
         "lemma": "jugar",
         "hint": "jugar · yo · imperfecto",
         "distractors": ["juego", "jugaron", "jugaré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "todas",
+        "lemma": "todo",
+        "hint": "všetky",
+        "distractors": ["todos", "toda", "todo"]
       }
     ]
   },
@@ -524,6 +538,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · futuro",
         "distractors": ["fuimos", "irán", "iré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -542,6 +563,13 @@
         "lemma": "empezar",
         "hint": "empezar · yo · pretérito",
         "distractors": ["Empiezo", "Empezó", "Empezaré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -560,6 +588,13 @@
         "lemma": "divertirse",
         "hint": "divertirse · nosotros · pretérito",
         "distractors": ["divierten", "divertí", "divertiremos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["Me", "Se", "Te"]
       }
     ]
   },
@@ -685,6 +720,13 @@
         "lemma": "entrenar",
         "hint": "entrenar · nosotros · presente",
         "distractors": ["Entrenan", "Entrené", "Entrenaban"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["a", "de", "con"]
       }
     ]
   },
@@ -738,6 +780,13 @@
         "lemma": "ver",
         "hint": "ver · él · pretérito",
         "distractors": ["ve", "veía", "verá"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "los", "las"]
       }
     ]
   },
@@ -756,6 +805,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["van", "fuimos", "íbamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "por", "hacia"]
       }
     ]
   },
@@ -793,6 +849,13 @@
         "lemma": "ganar",
         "hint": "ganar · ellos · pretérito",
         "distractors": ["Ganan", "Ganó", "Ganaban"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["por", "de", "con"]
       }
     ]
   },
@@ -811,6 +874,13 @@
         "lemma": "dejar",
         "hint": "dejar · ella · pretérito",
         "distractors": ["deja", "dejaron", "dejaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1111,6 +1181,13 @@
         "lemma": "entrenar",
         "hint": "entrenar · yo · presente",
         "distractors": ["entrené", "entrenamos", "entrenarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gusten"]
       }
     ]
   },
@@ -1188,6 +1265,13 @@
         "lemma": "preferir",
         "hint": "preferir · ellos · presente",
         "distractors": ["prefirieron", "prefiero", "preferiremos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["aunque", "pero", "sino"]
       }
     ]
   },
@@ -1325,6 +1409,13 @@
         "lemma": "pasar",
         "hint": "pasar · él · presente",
         "distractors": ["pasó", "paso", "pasarán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1343,6 +1434,13 @@
         "lemma": "ver",
         "hint": "ver · yo · pretérito",
         "distractors": ["veo", "vimos", "veían"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "puso",
+        "lemma": "ponerse",
+        "hint": "ponerse · ella · pretérito",
+        "distractors": ["pone", "pondrá", "ponga"]
       }
     ]
   },
@@ -1378,6 +1476,13 @@
         "lemma": "jubilarse",
         "hint": "jubilarse · yo · pretérito",
         "distractors": ["jubilo", "jubilamos", "jubilaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["Antes", "Con", "Para"]
       }
     ]
   },
@@ -1421,6 +1526,13 @@
         "lemma": "atreverse",
         "hint": "atreverse · yo · pretérito",
         "distractors": ["atrevo", "atrevimos", "atrevían"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1440,6 +1552,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "trait",
         "distractors": ["está", "son", "estaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -1458,6 +1577,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Llevé", "Llevamos", "Llevarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "entrenando",
+        "lemma": "entrenar",
+        "hint": "entrenar · gerundio",
+        "distractors": ["entrenado", "entrenar", "entreno"]
       }
     ]
   },
@@ -1511,6 +1637,13 @@
         "lemma": "quedar",
         "hint": "quedar · nosotros · pretérito",
         "distractors": ["Quedábamos", "Quedaremos", "Quedaron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "por", "con"]
       }
     ]
   },
@@ -1675,6 +1808,186 @@
         "tip": "subjuntivo-wishes",
         "why": "wish",
         "distractors": ["juegas", "jugarás", "jugaste"]
+      }
+    ]
+  },
+  {
+    "id": "s2060",
+    "es": "Si ganara la lotería, me dedicaría a viajar y a tomar fotografías.",
+    "sk": "Keby som vyhral v lotérii, venoval by som sa cestovaniu a fotografovaniu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "ganara", "la", "lotería", ",", "me", "dedicaría", "a", "viajar", "y", "a", "tomar", "fotografías", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "ganara",
+        "lemma": "ganar",
+        "hint": "ganar · yo · subjuntivo imperfecto",
+        "distractors": ["gano", "gané", "ganaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2061",
+    "es": "Antes de que empiece el partido, compremos unas botanas para verlo con calma.",
+    "sk": "Skôr než začne zápas, kúpme si nejaké pochutiny, aby sme ho pozerali v pokoji.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Antes", "de", "que", "empiece", "el", "partido", ",", "compremos", "unas", "botanas", "para", "verlo", "con", "calma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empiece",
+        "lemma": "empezar",
+        "hint": "empezar · él · subjuntivo",
+        "distractors": ["empieza", "empezó", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s2062",
+    "es": "Necesito un pasatiempo que me ayude a olvidarme del trabajo por un rato.",
+    "sk": "Potrebujem koníček, ktorý mi pomôže na chvíľu zabudnúť na prácu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Necesito", "un", "pasatiempo", "que", "me", "ayude", "a", "olvidarme", "del", "trabajo", "por", "un", "rato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "ayude",
+        "lemma": "ayudar",
+        "hint": "ayudar · él · subjuntivo",
+        "distractors": ["ayuda", "ayudó", "ayudará"]
+      }
+    ]
+  },
+  {
+    "id": "s2063",
+    "es": "Mi papá dijo que, cuando se jubilara, aprendería a tocar el acordeón.",
+    "sk": "Otec povedal, že keď pôjde do dôchodku, naučí sa hrať na akordeón.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subj-imperfecto", "condicional"],
+    "tokens": ["Mi", "papá", "dijo", "que", ",", "cuando", "se", "jubilara", ",", "aprendería", "a", "tocar", "el", "acordeón", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "aprendería",
+        "lemma": "aprender",
+        "hint": "aprender · él · condicional",
+        "distractors": ["aprende", "aprendió", "aprenderá"]
+      }
+    ]
+  },
+  {
+    "id": "s2064",
+    "es": "A pesar de que llovía, la gente no se movió del estadio hasta el final.",
+    "sk": "Napriek tomu, že pršalo, ľudia sa zo štadióna nepohli až do konca.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["A", "pesar", "de", "que", "llovía", ",", "la", "gente", "no", "se", "movió", "del", "estadio", "hasta", "el", "final", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llovía",
+        "lemma": "llover",
+        "hint": "llover · él · imperfecto",
+        "distractors": ["llueve", "lloverá", "llovería"]
+      }
+    ]
+  },
+  {
+    "id": "s2065",
+    "es": "Quiero que me enseñes a jugar ajedrez para que podamos competir algún día.",
+    "sk": "Chcem, aby si ma naučil hrať šach, aby sme raz mohli súťažiť.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Quiero", "que", "me", "enseñes", "a", "jugar", "ajedrez", "para", "que", "podamos", "competir", "algún", "día", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enseñes",
+        "lemma": "enseñar",
+        "hint": "enseñar · tú · subjuntivo",
+        "distractors": ["enseñas", "enseñaste", "enseñarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2066",
+    "es": "Cuando íbamos a la playa, mi abuelo siempre cargaba la hielera que nadie quería llevar.",
+    "sk": "Keď sme chodili na pláž, dedo vždy nosil chladiaci box, ktorý nikto nechcel niesť.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["imperfecto", "relatives"],
+    "tokens": ["Cuando", "íbamos", "a", "la", "playa", ",", "mi", "abuelo", "siempre", "cargaba", "la", "hielera", "que", "nadie", "quería", "llevar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · imperfecto",
+        "distractors": ["vamos", "fuimos", "iremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2067",
+    "es": "Mi equipo ganará el torneo siempre que entrenemos con disciplina y sin faltar.",
+    "sk": "Náš tím vyhrá turnaj, pokiaľ budeme trénovať disciplinovane a bez vynechávania.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "equipo", "ganará", "el", "torneo", "siempre", "que", "entrenemos", "con", "disciplina", "y", "sin", "faltar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "entrenemos",
+        "lemma": "entrenar",
+        "hint": "entrenar · nosotros · subjuntivo",
+        "distractors": ["entrenamos", "entrenábamos", "entrenaremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2068",
+    "es": "Me dijo mi vecino que, si me gustaba el ajedrez, me invitaba a su club.",
+    "sk": "Sused mi povedal, že ak ma baví šach, pozve ma do svojho klubu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["si-clauses", "imperfecto", "gustar"],
+    "tokens": ["Me", "dijo", "mi", "vecino", "que", ",", "si", "me", "gustaba", "el", "ajedrez", ",", "me", "invitaba", "a", "su", "club", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gustaría"]
+      }
+    ]
+  },
+  {
+    "id": "s2069",
+    "es": "No hay quien le gane a mi tío cuando juega dominó con los vecinos.",
+    "sk": "Nikto neporazí môjho strýka, keď hrá domino so susedmi.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["No", "hay", "quien", "le", "gane", "a", "mi", "tío", "cuando", "juega", "dominó", "con", "los", "vecinos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "gane",
+        "lemma": "ganar",
+        "hint": "ganar · él · subjuntivo",
+        "distractors": ["gana", "ganó", "ganará"]
       }
     ]
   }

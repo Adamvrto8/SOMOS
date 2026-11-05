@@ -166,8 +166,9 @@ function verbWhy(verb: Verb, tense: TableTense, person: Person): Why {
       return verb.imperativo.tu !== bare(verb.presente.el)
         ? { rule: 'tu-irregular', because: t().tips.imperativoShort(verb.id, verb.imperativo.tu) }
         : { rule: 'tu', because: t().tips.imperativoTu(verb.id) }
+    case 'perfecto':
     case 'pluscuamperfecto':
-      return participleWhy(verb)
+      return participleWhy(verb, tense)
   }
 }
 
@@ -181,10 +182,10 @@ function subjuntivoWhy(verb: Verb, person: Person): Why {
   return { rule: groupRule(verb), because: t().tips.subjuntivoEndings(verb.id, verb.group) }
 }
 
-function participleWhy(verb: Verb): Why {
+function participleWhy(verb: Verb, tense: 'perfecto' | 'pluscuamperfecto' = 'pluscuamperfecto'): Why {
   return verb.participleIrregular
     ? { rule: 'participle', because: t().tips.participleIrregular(verb.id, verb.participle) }
-    : { rule: 'form', because: t().tips.pluscuamperfecto(verb.id, verb.participle) }
+    : { rule: 'form', because: t().tips[tense](verb.id, verb.participle) }
 }
 
 // ---------- articles, adjectives, accents ----------

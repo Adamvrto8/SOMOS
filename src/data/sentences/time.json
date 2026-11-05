@@ -583,6 +583,13 @@
         "lemma": "acabar",
         "hint": "acabar · yo · presente",
         "distractors": ["Acaba", "Acaban", "Acabé"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -619,6 +626,13 @@
         "lemma": "esperar",
         "hint": "esperar · gerundio",
         "distractors": ["esperado", "espero", "esperar"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "desde", "porque"]
       }
     ]
   },
@@ -680,6 +694,13 @@
         "lemma": "salir",
         "hint": "salir · nosotros · futuro",
         "distractors": ["saldrán", "salíamos", "saldré"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Dentro",
+        "lemma": "dentro",
+        "hint": "o (časovo)",
+        "distractors": ["Durante", "Desde", "Hasta"]
       }
     ]
   },
@@ -789,6 +810,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["van", "fuimos", "íbamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "por", "con"]
       }
     ]
   },
@@ -825,6 +853,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["tiene", "tuve", "tenía"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["a", "de", "hacia"]
       }
     ]
   },
@@ -860,6 +895,13 @@
         "lemma": "vivir",
         "hint": "vivir · ellos · imperfecto",
         "distractors": ["viven", "vivieron", "vivirán"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["Con", "Sin", "Contra"]
       }
     ]
   },
@@ -966,6 +1008,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · presente",
         "distractors": ["manda", "mandé", "mandaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },
@@ -1019,6 +1068,13 @@
         "lemma": "terminar",
         "hint": "terminar · ella · presente",
         "distractors": ["terminan", "terminó", "terminaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -1194,6 +1250,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "time",
         "distractors": ["está", "era", "son"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["por", "sin", "con"]
       }
     ]
   },
@@ -1212,6 +1275,13 @@
         "lemma": "llegar",
         "hint": "llegar · yo · imperfecto",
         "distractors": ["llegabas", "llego", "llegamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "vivía",
+        "lemma": "vivir",
+        "hint": "vivir · yo · imperfecto",
+        "distractors": ["vivo", "viviré", "viva"]
       }
     ]
   },
@@ -1247,6 +1317,13 @@
         "lemma": "nacer",
         "hint": "nacer · él · pretérito",
         "distractors": ["nacimos", "nace", "naceré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "por"]
       }
     ]
   },
@@ -1282,6 +1359,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Llevas", "Llevé", "Llevábamos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "viviendo",
+        "lemma": "vivir",
+        "hint": "vivir · gerundio",
+        "distractors": ["vivido", "vivir", "vivo"]
       }
     ]
   },
@@ -1407,6 +1491,13 @@
         "lemma": "aprender",
         "hint": "aprender · yo · pretérito",
         "distractors": ["aprendiste", "aprendo", "aprenderemos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1459,6 +1550,13 @@
         "lemma": "platicar",
         "hint": "platicar · gerundio",
         "distractors": ["platica", "platicar", "platican"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "con", "por"]
       }
     ]
   },
@@ -1494,6 +1592,13 @@
         "lemma": "ponerse",
         "hint": "ponerse · yo · presente",
         "distractors": ["pones", "puse", "poníamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["cuando", "si", "donde"]
       }
     ]
   },
@@ -1549,6 +1654,13 @@
         "lemma": "tardar",
         "hint": "tardar · yo · futuro",
         "distractors": ["tardo", "tardé", "tardaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "a", "con"]
       }
     ]
   },
@@ -1659,6 +1771,186 @@
         "tip": "por-para",
         "why": "fixed",
         "distractors": ["Para", "De"]
+      }
+    ]
+  },
+  {
+    "id": "s2128",
+    "es": "Cuando tengas tiempo, platicamos de lo que pasó la semana pasada.",
+    "sk": "Keď budeš mať čas, porozprávame sa o tom, čo sa stalo minulý týždeň.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "tengas", "tiempo", ",", "platicamos", "de", "lo", "que", "pasó", "la", "semana", "pasada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengas",
+        "lemma": "tener",
+        "hint": "tener · tú · subjuntivo",
+        "distractors": ["tienes", "tuviste", "tendrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2129",
+    "es": "Si salieras más temprano de casa, llegarías a tiempo a la oficina.",
+    "sk": "Keby si vychádzal z domu skôr, prišiel by si do kancelárie načas.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "salieras", "más", "temprano", "de", "casa", ",", "llegarías", "a", "tiempo", "a", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "llegarías",
+        "lemma": "llegar",
+        "hint": "llegar · tú · condicional",
+        "distractors": ["llegas", "llegaste", "llegarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2130",
+    "es": "Mi abuela siempre dice que el tiempo vuela cuando uno se divierte.",
+    "sk": "Moja stará mama vždy hovorí, že čas letí, keď sa človek zabáva.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["presente"],
+    "tokens": ["Mi", "abuela", "siempre", "dice", "que", "el", "tiempo", "vuela", "cuando", "uno", "se", "divierte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["cuyo", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2131",
+    "es": "Antes de que salga el último tren, tenemos que llegar a la estación.",
+    "sk": "Skôr, než odíde posledný vlak, musíme dôjsť na stanicu.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Antes", "de", "que", "salga", "el", "último", "tren", ",", "tenemos", "que", "llegar", "a", "la", "estación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él · subjuntivo",
+        "distractors": ["sale", "salió", "saldrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2132",
+    "es": "Mi hermano llegó tarde porque tuvo que esperar al camión que nunca pasaba.",
+    "sk": "Brat prišiel neskoro, lebo musel čakať na autobus, ktorý nikdy neprišiel.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["Mi", "hermano", "llegó", "tarde", "porque", "tuvo", "que", "esperar", "al", "camión", "que", "nunca", "pasaba", "."],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "pasaba",
+        "lemma": "pasar",
+        "hint": "pasar · él · imperfecto",
+        "distractors": ["pase", "pasará", "pasamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2133",
+    "es": "Ojalá tuviéramos más horas en el día para hacer todo lo que queremos.",
+    "sk": "Škoda, že nemáme v dni viac hodín, aby sme stihli všetko, čo chceme.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-wishes", "subj-imperfecto"],
+    "tokens": ["Ojalá", "tuviéramos", "más", "horas", "en", "el", "día", "para", "hacer", "todo", "lo", "que", "queremos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviéramos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · subjuntivo imperfecto",
+        "distractors": ["tenemos", "tuvimos", "tendremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2134",
+    "es": "Mientras trabajé en Guadalajara, salía de casa a las seis para evitar el tráfico.",
+    "sk": "Keď som pracoval v Guadalajare, vychádzal som z domu o šiestej, aby som sa vyhol zápche.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["imperfecto", "preterito", "por-para"],
+    "tokens": ["Mientras", "trabajé", "en", "Guadalajara", ",", "salía", "de", "casa", "a", "las", "seis", "para", "evitar", "el", "tráfico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "salía",
+        "lemma": "salir",
+        "hint": "salir · yo · imperfecto",
+        "distractors": ["salgo", "salí", "saldré"]
+      }
+    ]
+  },
+  {
+    "id": "s2135",
+    "es": "En cuanto terminemos la reunión, te llamo para que cerremos la fecha del viaje.",
+    "sk": "Hneď ako skončíme schôdzu, zavolám ti, aby sme dohodli termín cesty.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["En", "cuanto", "terminemos", "la", "reunión", ",", "te", "llamo", "para", "que", "cerremos", "la", "fecha", "del", "viaje", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "cerremos",
+        "lemma": "cerrar",
+        "hint": "cerrar · nosotros · subjuntivo",
+        "distractors": ["cerramos", "cerraremos", "cerrábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2136",
+    "es": "Ya que el tiempo se acaba, conviene que empecemos el proyecto hoy mismo.",
+    "sk": "Keďže čas ubieha, hodí sa začať projekt ešte dnes.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Ya", "que", "el", "tiempo", "se", "acaba", ",", "conviene", "que", "empecemos", "el", "proyecto", "hoy", "mismo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "empecemos",
+        "lemma": "empezar",
+        "hint": "empezar · nosotros · subjuntivo",
+        "distractors": ["empezamos", "empezaremos", "empezábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2137",
+    "es": "Mi mamá me recordó que la cita con el dentista era a las cuatro.",
+    "sk": "Mama mi pripomenula, že stretnutie u zubára je o štvrtej.",
+    "level": "B2",
+    "topics": ["time"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["Mi", "mamá", "me", "recordó", "que", "la", "cita", "con", "el", "dentista", "era", "a", "las", "cuatro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "recordó",
+        "lemma": "recordar",
+        "hint": "recordar · ella · pretérito",
+        "distractors": ["recuerda", "recordará", "recuerde"]
       }
     ]
   }

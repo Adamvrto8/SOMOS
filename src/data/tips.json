@@ -873,6 +873,42 @@
     ]
   },
   {
+    "id": "perfecto",
+    "title": "Pretérito perfecto (he hablado)",
+    "level": "A2",
+    "sources": [{ "source": "pcic", "where": "Gramática A2" }],
+    "variants": { "mx": "V Mexiku sa he hablado používa menej: pre dnešok aj nedávnu minulosť sa hovorí pretéritom (hoy comí tacos, ya terminé). Perfecto zaznie skôr pri skúsenosti a pri tom, čo trvá dodnes (¿has ido a Oaxaca?, he vivido aquí diez años)." },
+    "ideas": ["sort time expressions: hoy, ayer, esta semana, ya, alguna vez", "rewrite a Spain sentence with he + participle the Mexican way, in the pretérito"],
+    "intro": "Dej, ktorý sa skončil v čase, ktorý ešte trvá (dnes, tento týždeň), alebo má dosah na prítomnosť: hoy he comido tacos. V Španielsku je to bežný minulý čas, v Mexiku sa používa menej.",
+    "related": ["preterito", "pluscuamperfecto"],
+    "rules": [
+      {
+        "id": "form",
+        "title": "he + príčastie",
+        "text": "haber v prítomnom čase (he, has, ha, hemos, habéis, han) a príčastie, ktoré sa nemení: hablar → hablado, comer → comido, vivir → vivido. Po samohláske -ído: leído, traído.",
+        "examples": [
+          { "es": "Hoy he comido muy tarde.", "sk": "Dnes som jedol veľmi neskoro." },
+          { "es": "¿Ya has visto la película?", "sk": "Videl si už ten film?" }
+        ]
+      },
+      {
+        "id": "participle",
+        "title": "Nepravidelné príčastia",
+        "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "examples": [{ "es": "No he hecho nada todavía.", "sk": "Ešte som nič neurobil." }]
+      },
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "V Španielsku pre dej v čase, ktorý ešte trvá: hoy, esta semana, este año, a s ya, todavía no, alguna vez. Pre dej včera a skôr sa používa pretérito: ayer comí. V Mexiku sa vo všetkých týchto prípadoch bežne hovorí pretéritom.",
+        "examples": [
+          { "es": "Esta semana he trabajado mucho.", "sk": "Tento týždeň som veľa pracoval." },
+          { "es": "Ayer trabajé mucho.", "sk": "Včera som veľa pracoval." }
+        ]
+      }
+    ]
+  },
+  {
     "id": "pluscuamperfecto",
     "title": "Pluscuamperfecto (už predtým)",
     "level": "B1",

@@ -4,6 +4,8 @@ import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
+import { applySentences, applyWords, hiddenVerbIds, type SentenceEs, type WordEs } from './applyVariant'
+import { readVariant } from './variant'
 import type { PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
@@ -19,9 +21,27 @@ export const topics = topicsJson as Topic[]
 export const tips = tipsJson as Tip[]
 export const sources = sourcesJson as Source[]
 export const path = pathJson as PathEntry[]
-export const words = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
-export const verbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
-export const sentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))
+/** Which Spanish is studied (Mexico by default); Spain lays src/data/es/ over the Mexican base, by id. */
+export const variant = readVariant()
+const baseWords = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
+const esWords = collect<WordEs>(import.meta.glob('./es/words/*.json', { eager: true, import: 'default' }))
+export const words =
+  variant === 'es'
+    ? [
+        ...applyWords(baseWords, esWords),
+        // Words and verbs only Spain says (conducir, aparcar…).
+        ...collect<Word>(import.meta.glob('./es/new/words/*.json', { eager: true, import: 'default' })),
+      ]
+    : baseWords
+const baseVerbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
+const hiddenVerbs = hiddenVerbIds(baseWords, esWords)
+export const verbs =
+  variant === 'es'
+    ? [...baseVerbs.filter((v) => !hiddenVerbs.has(v.id)), ...collect<Verb>(import.meta.glob('./es/new/verbs/*.json', { eager: true, import: 'default' }))]
+    : baseVerbs
+const baseSentences = collect<Sentence>(import.meta.glob('./sentences/*.json', { eager: true, import: 'default' }))
+export const sentences =
+  variant === 'es' ? applySentences(baseSentences, collect<SentenceEs>(import.meta.glob('./es/sentences/*.json', { eager: true, import: 'default' }))) : baseSentences
 
 /** The words vocab tasks ask: all but the articles (`drill: false`). */
 export const vocabWords = words.filter((w) => w.drill !== false)
@@ -37,9 +57,13 @@ export const wordIdByVerb = new Map(words.flatMap((w) => (w.verbId ? [[w.verbId,
 
 // The English overlay, by id (see types.ts). Only src/lib/localized.ts reads it.
 const byId = <T extends { id: string }>(items: T[]) => new Map(items.map((item) => [item.id, item]))
+// Spain adds English for its own words and drops the English notes that talk about Mexico (the overlay removed the Slovak ones).
+const esNewEnWords = variant === 'es' ? collect<WordEn>(import.meta.glob('./es/new/en/words.json', { eager: true, import: 'default' })) : []
+const esNewEnVerbs = variant === 'es' ? collect<VerbEn>(import.meta.glob('./es/new/en/verbs.json', { eager: true, import: 'default' })) : []
+const dropMexicanNotes = (items: WordEn[]) => (variant === 'es' ? items.map((w) => (esWords.some((o) => o.id === w.id && o.note === null) ? { ...w, note: undefined } : w)) : items)
 export const english = {
-  words: byId(collect<WordEn>(import.meta.glob('./en/words/*.json', { eager: true, import: 'default' }))),
-  verbs: byId(collect<VerbEn>(import.meta.glob('./en/verbs/*.json', { eager: true, import: 'default' }))),
+  words: byId([...dropMexicanNotes(collect<WordEn>(import.meta.glob('./en/words/*.json', { eager: true, import: 'default' }))), ...esNewEnWords]),
+  verbs: byId([...collect<VerbEn>(import.meta.glob('./en/verbs/*.json', { eager: true, import: 'default' })), ...esNewEnVerbs]),
   sentences: byId(collect<SentenceEn>(import.meta.glob('./en/sentences/*.json', { eager: true, import: 'default' }))),
   topics: byId(enTopicsJson as TopicEn[]),
   tips: byId(enTipsJson as TipEn[]),

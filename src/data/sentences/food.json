@@ -703,6 +703,13 @@
         "lemma": "preparar",
         "hint": "preparar · tú · imperativo",
         "distractors": ["Prepare", "Preparan", "Preparo"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "lleguen",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · subjuntivo",
+        "distractors": ["llegan", "llegaron", "llegarán"]
       }
     ]
   },
@@ -925,6 +932,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["Tiene", "Tienen", "Tuve"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -961,6 +975,13 @@
         "lemma": "comer",
         "hint": "comer · yo · imperfecto",
         "distractors": ["comían", "como", "comeré"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "sobre"]
       }
     ]
   },
@@ -979,6 +1000,13 @@
         "lemma": "olvidar",
         "hint": "olvidar · él · pretérito",
         "distractors": ["olvidé", "olvida", "olvidará"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["la", "lo", "los"]
       }
     ]
   },
@@ -997,6 +1025,13 @@
         "lemma": "probar",
         "hint": "probar · yo · pretérito",
         "distractors": ["Pruebo", "Probó", "Probaré"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["que", "por", "con"]
       }
     ]
   },
@@ -1063,6 +1098,13 @@
         "lemma": "evitar",
         "hint": "evitar · yo · presente",
         "distractors": ["evita", "evité", "evitaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "distractors": ["tan", "más", "mismo"]
       }
     ]
   },
@@ -1098,6 +1140,13 @@
         "lemma": "comer",
         "hint": "comer · nosotros · presente",
         "distractors": ["comen", "como", "comerán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1255,6 +1304,13 @@
         "lemma": "comer",
         "hint": "comer · yo · presente",
         "distractors": ["come", "comí", "comemos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["hasta", "durante", "para"]
       }
     ]
   },
@@ -1273,6 +1329,13 @@
         "lemma": "calentar",
         "hint": "calentar · ella · presente",
         "distractors": ["calientan", "calentó", "calentaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "las",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["los", "la", "el"]
       }
     ]
   },
@@ -1309,6 +1372,13 @@
         "lemma": "llevar",
         "hint": "llevar · él · presente",
         "distractors": ["llevan", "llevó", "llevaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "porovnanie",
+        "distractors": ["que", "a", "por"]
       }
     ]
   },
@@ -1367,6 +1437,13 @@
         "lemma": "poder",
         "hint": "poder · yo · imperfecto",
         "distractors": ["puedo", "pude", "podían"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "o", "pero"]
       }
     ]
   },
@@ -1429,6 +1506,13 @@
         "lemma": "servir",
         "hint": "servir · ellos · pretérito",
         "distractors": ["sirven", "sirvió", "servían"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cual"]
       }
     ]
   },
@@ -1464,6 +1548,13 @@
         "lemma": "sugerir",
         "hint": "sugerir · él · pretérito",
         "distractors": ["sugiere", "sugirieron", "sugería"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "evitara",
+        "lemma": "evitar",
+        "hint": "evitar · yo · subjuntivo imperfecto",
+        "distractors": ["evitaba", "evitaré", "evitar"]
       }
     ]
   },
@@ -1509,6 +1600,13 @@
         "lemma": "destacar",
         "hint": "destacar · ella · presente",
         "distractors": ["destaco", "destacó", "destacaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "a", "de"]
       }
     ]
   },
@@ -1527,6 +1625,13 @@
         "lemma": "quedarse",
         "hint": "quedarse · él · pretérito",
         "distractors": ["queda", "quedaron", "quedaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "De",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["Por", "Con", "En"]
       }
     ]
   },
@@ -1562,6 +1667,13 @@
         "lemma": "intentar",
         "hint": "intentar · yo · presente",
         "distractors": ["intentas", "intenté", "intentaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["Para", "Con", "De"]
       }
     ]
   },
@@ -2066,6 +2178,13 @@
         "lemma": "hervir",
         "hint": "hervir · gerundio",
         "distractors": ["hirvió", "hierve", "hervir"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "El",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["La", "Las", "Los"]
       }
     ]
   },
@@ -2240,6 +2359,13 @@
         "lemma": "acostumbrarse",
         "hint": "acostumbrarse · yo · pretérito",
         "distractors": ["acostumbro", "acostumbró", "acostumbraba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gusten"]
       }
     ]
   },
@@ -2320,6 +2446,186 @@
         "tip": "passive-se",
         "why": "se",
         "distractors": ["te", "le", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s2032",
+    "es": "Prepara la salsa con cuidado para que no salga ni muy picante ni muy aguada.",
+    "sk": "Pripravuj salsu opatrne, aby nevyšla ani príliš štipľavá, ani príliš riedka.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Prepara", "la", "salsa", "con", "cuidado", "para", "que", "no", "salga", "ni", "muy", "picante", "ni", "muy", "aguada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él · subjuntivo",
+        "distractors": ["sale", "salió", "saldrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2033",
+    "es": "Si supieras lo rico que huele el café de olla, vendrías a mi casa.",
+    "sk": "Keby si vedel, ako dobre vonia káva de olla, prišiel by si ku mne.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "supieras", "lo", "rico", "que", "huele", "el", "café", "de", "olla", ",", "vendrías", "a", "mi", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "supieras",
+        "lemma": "saber",
+        "hint": "saber · tú · subjuntivo imperfecto",
+        "distractors": ["sabes", "supiste", "sabrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2034",
+    "es": "No conozco a nadie que prepare los tamales tan bien como mi tía.",
+    "sk": "Nepoznám nikoho, kto by pripravoval tamales tak dobre ako moja teta.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["relatives", "subjuntivo", "comparisons"],
+    "tokens": ["No", "conozco", "a", "nadie", "que", "prepare", "los", "tamales", "tan", "bien", "como", "mi", "tía", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "prepare",
+        "lemma": "preparar",
+        "hint": "preparar · él · subjuntivo",
+        "distractors": ["prepara", "preparó", "preparará"]
+      }
+    ]
+  },
+  {
+    "id": "s2035",
+    "es": "El mesero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "sk": "Čašník nám povedal, že už nemajú pozole, tak sme si objednali tacos.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["El", "mesero", "nos", "avisó", "que", "ya", "no", "tenían", "pozole", ",", "así", "que", "pedimos", "unos", "tacos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tenían",
+        "lemma": "tener",
+        "hint": "tener · ellos · imperfecto",
+        "distractors": ["tienen", "tengan", "tendrán"]
+      }
+    ]
+  },
+  {
+    "id": "s2036",
+    "es": "Deja la sopa en la lumbre hasta que hierva y luego baja el fuego.",
+    "sk": "Nechaj polievku na ohni, kým nezovrie, a potom stíš plameň.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "imperativo"],
+    "tokens": ["Deja", "la", "sopa", "en", "la", "lumbre", "hasta", "que", "hierva", "y", "luego", "baja", "el", "fuego", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hierva",
+        "lemma": "hervir",
+        "hint": "hervir · él · subjuntivo",
+        "distractors": ["hierve", "hirvió", "hervirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2037",
+    "es": "Me preguntó si quería agua de jamaica o de horchata y le dije que cualquiera.",
+    "sk": "Opýtal sa ma, či chcem vodu z ibišteka alebo horchatu, a povedal som, že hocijakú.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["imperfecto", "object-pronouns"],
+    "tokens": ["Me", "preguntó", "si", "quería", "agua", "de", "jamaica", "o", "de", "horchata", "y", "le", "dije", "que", "cualquiera", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quería",
+        "lemma": "querer",
+        "hint": "querer · yo · imperfecto",
+        "distractors": ["quiero", "querré", "quiera"]
+      }
+    ]
+  },
+  {
+    "id": "s2038",
+    "es": "Mi hermana quiere un pastel que no tenga azúcar ni harina y que sepa rico.",
+    "sk": "Sestra chce tortu, ktorá nemá cukor ani múku a je pritom chutná.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Mi", "hermana", "quiere", "un", "pastel", "que", "no", "tenga", "azúcar", "ni", "harina", "y", "que", "sepa", "rico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tenga",
+        "lemma": "tener",
+        "hint": "tener · él · subjuntivo",
+        "distractors": ["tiene", "tuvo", "tendrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2039",
+    "es": "Desde que probé el mole de mi suegra, ningún otro me parece tan rico.",
+    "sk": "Odkedy som ochutnal svokrin mole, žiadne iné mi nepripadá také dobré.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["preterito", "comparisons"],
+    "tokens": ["Desde", "que", "probé", "el", "mole", "de", "mi", "suegra", ",", "ningún", "otro", "me", "parece", "tan", "rico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "odkedy",
+        "distractors": ["Hacia", "Entre", "Sobre"]
+      }
+    ]
+  },
+  {
+    "id": "s2040",
+    "es": "Compré más jitomates de los que necesitaba, así que hice salsa para congelar.",
+    "sk": "Kúpil som viac paradajok, než som potreboval, tak som urobil salsu na zamrazenie.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["comparisons", "relatives"],
+    "tokens": ["Compré", "más", "jitomates", "de", "los", "que", "necesitaba", ",", "así", "que", "hice", "salsa", "para", "congelar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "los",
+        "lemma": "los",
+        "hint": "člen",
+        "distractors": ["las", "lo", "el"]
+      }
+    ]
+  },
+  {
+    "id": "s2041",
+    "es": "Es mejor que pruebes la sopa antes de ponerle más sal, no vaya a quedar salada.",
+    "sk": "Radšej ochutnaj polievku, než do nej dáš viac soli, aby nebola prisolená.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "mejor", "que", "pruebes", "la", "sopa", "antes", "de", "ponerle", "más", "sal", ",", "no", "vaya", "a", "quedar", "salada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pruebes",
+        "lemma": "probar",
+        "hint": "probar · tú · subjuntivo",
+        "distractors": ["pruebas", "probaste", "probarás"]
       }
     ]
   }

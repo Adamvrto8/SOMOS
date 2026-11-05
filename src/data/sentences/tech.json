@@ -131,6 +131,13 @@
         "lemma": "poder",
         "hint": "poder · yo · pretérito",
         "distractors": ["pudo", "pudieron", "podía"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "nos", "les"]
       }
     ]
   },
@@ -149,6 +156,13 @@
         "lemma": "mandar",
         "hint": "mandar · tú · presente",
         "distractors": ["mandamos", "mando", "mandaste"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "sobre", "desde"]
       }
     ]
   },
@@ -227,6 +241,13 @@
         "lemma": "pasar",
         "hint": "pasar · él · presente",
         "distractors": ["pasan", "pasas", "pasó"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["sobre", "hacia", "para"]
       }
     ]
   },
@@ -245,6 +266,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · presente",
         "distractors": ["manda", "mandan", "mandé"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },
@@ -433,6 +461,13 @@
         "lemma": "perder",
         "hint": "perder · yo · pretérito",
         "distractors": ["pierdo", "perdió", "perderé"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "todos",
+        "lemma": "todo",
+        "hint": "všetky",
+        "distractors": ["todo", "toda", "todas"]
       }
     ]
   },
@@ -494,6 +529,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · futuro",
         "distractors": ["mandé", "manda", "mandaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["este", "estas", "estos"]
       }
     ]
   },
@@ -512,6 +554,13 @@
         "lemma": "cambiar",
         "hint": "cambiar · gerundio",
         "distractors": ["cambia", "cambió", "cambiar"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "muchos",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "mucha", "muchas"]
       }
     ]
   },
@@ -596,6 +645,13 @@
         "lemma": "comprobar",
         "hint": "comprobar · yo · presente",
         "distractors": ["comprueba", "comprobé", "comprobaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["durante", "desde", "hasta"]
       }
     ]
   },
@@ -614,6 +670,13 @@
         "lemma": "decidir",
         "hint": "decidir · ellos · presente",
         "distractors": ["decide", "decidieron", "decidían"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "qué",
+        "lemma": "qué",
+        "hint": "opytovacie slovo",
+        "distractors": ["quién", "cuál", "dónde"]
       }
     ]
   },
@@ -693,6 +756,13 @@
         "lemma": "tener",
         "hint": "tener · ella · pretérito",
         "distractors": ["tiene", "tenía", "tendrá"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -711,6 +781,13 @@
         "lemma": "llamar",
         "hint": "llamar · yo · pretérito",
         "distractors": ["llama", "llamó", "llamaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "cuanto",
+        "lemma": "cuanto",
+        "hint": "hneď ako",
+        "distractors": ["tanto", "cuando", "mucho"]
       }
     ]
   },
@@ -1256,6 +1333,13 @@
         "lemma": "compartir",
         "hint": "compartir · él · presente",
         "distractors": ["comparto", "compartió", "compartían"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "distractors": ["porque", "aunque", "pero"]
       }
     ]
   },
@@ -1274,6 +1358,13 @@
         "lemma": "arrepentirse",
         "hint": "arrepentirse · yo · pretérito",
         "distractors": ["arrepiento", "arrepintió", "arrepentía"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1310,6 +1401,13 @@
         "lemma": "aprovechar",
         "hint": "aprovechar · ellas · presente",
         "distractors": ["aprovecho", "aprovechó", "aprovechaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "a"]
       }
     ]
   },
@@ -1328,6 +1426,13 @@
         "lemma": "platicar",
         "hint": "platicar · él · presente",
         "distractors": ["platico", "platicó", "platicaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1603,6 +1708,13 @@
         "lemma": "hacer",
         "hint": "hacer · nosotros · pretérito",
         "distractors": ["Hacemos", "Hicieron", "Hacíamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unas", "unos"]
       }
     ]
   },
@@ -1621,6 +1733,13 @@
         "lemma": "tener",
         "hint": "tener · ella · pretérito",
         "distractors": ["tiene", "tenía", "tendrá"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "muchos",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "mucha", "muchas"]
       }
     ]
   },
@@ -1853,6 +1972,168 @@
         "tip": "passive-se",
         "why": "se",
         "distractors": ["recibe", "recibían", "recibirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2119",
+    "es": "Si mi computadora no fuera tan lenta, trabajaría mucho más rápido.",
+    "sk": "Keby nebol môj počítač taký pomalý, pracoval by som oveľa rýchlejšie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "mi", "computadora", "no", "fuera", "tan", "lenta", ",", "trabajaría", "mucho", "más", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "fuera",
+        "lemma": "ser",
+        "hint": "ser · ella · subjuntivo imperfecto",
+        "distractors": ["es", "fue", "será"]
+      }
+    ]
+  },
+  {
+    "id": "s2120",
+    "es": "El programa que descargué anoche borró todas las fotos que tenía guardadas.",
+    "sk": "Program, ktorý som včera večer stiahol, vymazal všetky fotky, ktoré som mal uložené.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "programa", "que", "descargué", "anoche", "borró", "todas", "las", "fotos", "que", "tenía", "guardadas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2121",
+    "es": "En cuanto llegue a casa y abra la computadora, te mando el archivo.",
+    "sk": "Hneď ako prídem domov a otvorím počítač, pošlem ti súbor.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["En", "cuanto", "llegue", "a", "casa", "y", "abra", "la", "computadora", ",", "te", "mando", "el", "archivo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "abra",
+        "lemma": "abrir",
+        "hint": "abrir · yo · subjuntivo",
+        "distractors": ["abro", "abrí", "abriré"]
+      }
+    ]
+  },
+  {
+    "id": "s2122",
+    "es": "Aunque la batería dure todo el día, siempre llevo el cargador en la mochila.",
+    "sk": "Aj keď batéria vydrží celý deň, nabíjačku nosím vždy v ruksaku.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "la", "batería", "dure", "todo", "el", "día", ",", "siempre", "llevo", "el", "cargador", "en", "la", "mochila", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque",
+        "lemma": "aunque",
+        "hint": "aj keď",
+        "distractors": ["Porque", "Para", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s2123",
+    "es": "No conozco a nadie que sepa programar tan bien como mi primo Luis.",
+    "sk": "Nepoznám nikoho, kto vie programovať tak dobre ako môj bratranec Luis.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "subjuntivo", "comparisons"],
+    "tokens": ["No", "conozco", "a", "nadie", "que", "sepa", "programar", "tan", "bien", "como", "mi", "primo", "Luis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sepa",
+        "lemma": "saber",
+        "hint": "saber · él · subjuntivo",
+        "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2124",
+    "es": "Ya que todos trabajamos desde casa, necesitamos una conexión más estable.",
+    "sk": "Keďže všetci pracujeme z domu, potrebujeme stabilnejšie pripojenie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["presente"],
+    "tokens": ["Ya", "que", "todos", "trabajamos", "desde", "casa", ",", "necesitamos", "una", "conexión", "más", "estable", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trabajamos",
+        "lemma": "trabajar",
+        "hint": "trabajar · nosotros · presente",
+        "distractors": ["trabajemos", "trabajaremos", "trabajaran"]
+      }
+    ]
+  },
+  {
+    "id": "s2125",
+    "es": "Me pidieron que cambiara mi contraseña porque alguien intentó entrar a mi cuenta.",
+    "sk": "Požiadali ma, aby som zmenil heslo, lebo sa niekto pokúsil vstúpiť do môjho účtu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["Me", "pidieron", "que", "cambiara", "mi", "contraseña", "porque", "alguien", "intentó", "entrar", "a", "mi", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cambiara",
+        "lemma": "cambiar",
+        "hint": "cambiar · yo · subjuntivo imperfecto",
+        "distractors": ["cambié", "cambio", "cambiaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2126",
+    "es": "Mientras se descarga la actualización, no apagues el celular ni cierres la aplicación.",
+    "sk": "Kým sa sťahuje aktualizácia, nevypínaj mobil ani nezatváraj aplikáciu.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["imperativo", "presente"],
+    "tokens": ["Mientras", "se", "descarga", "la", "actualización", ",", "no", "apagues", "el", "celular", "ni", "cierres", "la", "aplicación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["Porque", "Sino", "Para"]
+      }
+    ]
+  },
+  {
+    "id": "s2127",
+    "es": "Hay una aplicación con la que puedes traducir lo que dice la gente en tiempo real.",
+    "sk": "Existuje aplikácia, s ktorou môžeš prekladať to, čo ľudia hovoria, v reálnom čase.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Hay", "una", "aplicación", "con", "la", "que", "puedes", "traducir", "lo", "que", "dice", "la", "gente", "en", "tiempo", "real", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "distractors": ["el", "los", "las"]
       }
     ]
   }

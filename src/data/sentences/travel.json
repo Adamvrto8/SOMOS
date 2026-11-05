@@ -653,6 +653,13 @@
         "lemma": "tener",
         "hint": "tener · él · pretérito",
         "distractors": ["tuvieron", "tuviste", "tenía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "para"]
       }
     ]
   },
@@ -714,6 +721,13 @@
         "lemma": "perder",
         "hint": "perder · ellos · pretérito",
         "distractors": ["Perdiste", "Perdimos", "Perdían"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "hasta", "contra"]
       }
     ]
   },
@@ -732,6 +746,13 @@
         "lemma": "andar",
         "hint": "andar · nosotros · futuro",
         "distractors": ["andaré", "andará", "andamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "a", "hasta"]
       }
     ]
   },
@@ -775,6 +796,13 @@
         "lemma": "tener",
         "hint": "tener · nosotros · pretérito",
         "distractors": ["tenemos", "tenían", "tendremos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -793,6 +821,13 @@
         "lemma": "ir",
         "hint": "ir · tú · pretérito",
         "distractors": ["vas", "fui", "irás"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -811,6 +846,13 @@
         "lemma": "salir",
         "hint": "salir · él · presente",
         "distractors": ["salen", "salgo", "salimos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "para", "por"]
       }
     ]
   },
@@ -951,6 +993,13 @@
         "lemma": "cambiar",
         "hint": "cambiar · nosotros · pretérito",
         "distractors": ["Cambian", "Cambié", "Cambiaban"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "a", "hacia"]
       }
     ]
   },
@@ -987,6 +1036,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["lleva", "llevé", "llevaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1005,6 +1061,13 @@
         "lemma": "contratar",
         "hint": "contratar · yo · presente",
         "distractors": ["contrata", "contraté", "contrataba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "con", "sin"]
       }
     ]
   },
@@ -1023,6 +1086,13 @@
         "lemma": "perder",
         "hint": "perder · nosotros · pretérito",
         "distractors": ["pierden", "perdió", "perdíamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -1041,6 +1111,13 @@
         "lemma": "costar",
         "hint": "costar · ellos · presente",
         "distractors": ["cuesta", "costaron", "costaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["De", "Por", "Sin"]
       }
     ]
   },
@@ -1093,6 +1170,13 @@
         "lemma": "atraer",
         "hint": "atraer · ellos · presente",
         "distractors": ["atrae", "atrajeron", "atraían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1235,6 +1319,13 @@
         "lemma": "tomar",
         "hint": "tomar · él · pretérito",
         "distractors": ["toma", "tomé", "tomaban"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "porovnanie",
+        "distractors": ["que", "a", "con"]
       }
     ]
   },
@@ -1270,6 +1361,13 @@
         "lemma": "ir",
         "hint": "ir · él · imperfecto",
         "distractors": ["fue", "iban", "van"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Ya",
+        "lemma": "ya",
+        "hint": "spojka",
+        "distractors": ["Así", "Pero", "Sino"]
       }
     ]
   },
@@ -1288,6 +1386,13 @@
         "lemma": "enseñar",
         "hint": "enseñar · él · presente",
         "distractors": ["enseñó", "enseño", "enseñarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -1331,6 +1436,13 @@
         "lemma": "decidir",
         "hint": "decidir · nosotros · pretérito",
         "distractors": ["decidí", "decidieron", "decidían"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -1349,6 +1461,13 @@
         "lemma": "agarrar",
         "hint": "agarrar · ella · pretérito",
         "distractors": ["agarra", "agarré", "agarraban"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors": ["tenemos", "tendremos", "tengamos"]
       }
     ]
   },
@@ -1386,6 +1505,13 @@
         "hint": "ser/estar · él · pretérito",
         "why": "identity",
         "distractors": ["estuvo", "era", "fueron"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1404,6 +1530,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · imperfecto",
         "distractors": ["Fuimos", "Iba", "Van"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1422,6 +1555,13 @@
         "lemma": "mover",
         "hint": "mover · nosotros · presente",
         "distractors": ["movimos", "muevo", "moverán"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "distractors": ["peor", "más", "menos"]
       }
     ]
   },
@@ -1440,6 +1580,13 @@
         "lemma": "disfrutar",
         "hint": "disfrutar · yo · pretérito",
         "distractors": ["disfruto", "disfrutamos", "disfrutaban"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "a", "si"]
       }
     ]
   },
@@ -1458,6 +1605,13 @@
         "lemma": "ayudar",
         "hint": "ayudar · él · pretérito",
         "distractors": ["ayuda", "ayudé", "ayudaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1476,6 +1630,13 @@
         "lemma": "dejar",
         "hint": "dejar · él · pretérito",
         "distractors": ["deja", "dejé", "dejaban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "les"]
       }
     ]
   },
@@ -1511,6 +1672,13 @@
         "lemma": "dar",
         "hint": "dar · nosotros · pretérito",
         "distractors": ["damos", "di", "daban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -2089,6 +2257,186 @@
         "tip": "passive-se",
         "why": "se",
         "distractors": ["te", "le", "me"]
+      }
+    ]
+  },
+  {
+    "id": "s2138",
+    "es": "Cuando lleguemos a Oaxaca, quiero probar el mole que preparan en el mercado.",
+    "sk": "Keď prídeme do Oaxacy, chcem ochutnať mole, ktoré pripravujú na trhu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "lleguemos", "a", "Oaxaca", ",", "quiero", "probar", "el", "mole", "que", "preparan", "en", "el", "mercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo",
+        "distractors": ["llegamos", "llegaremos", "llegábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2139",
+    "es": "Si tuviéramos más vacaciones, viajaríamos por toda la costa del Pacífico.",
+    "sk": "Keby sme mali viac dovolenky, cestovali by sme po celom pobreží Pacifiku.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviéramos", "más", "vacaciones", ",", "viajaríamos", "por", "toda", "la", "costa", "del", "Pacífico", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "viajaríamos",
+        "lemma": "viajar",
+        "hint": "viajar · nosotros · condicional",
+        "distractors": ["viajamos", "viajaremos", "viajábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2140",
+    "es": "El hotel donde nos quedamos tenía una vista increíble que nunca olvidaré.",
+    "sk": "Hotel, v ktorom sme boli ubytovaní, mal neuveriteľný výhľad, na ktorý nikdy nezabudnem.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["El", "hotel", "donde", "nos", "quedamos", "tenía", "una", "vista", "increíble", "que", "nunca", "olvidaré", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (miesto)",
+        "distractors": ["cuando", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2141",
+    "es": "Te llamaré en cuanto aterrice el avión para que no te preocupes.",
+    "sk": "Zavolám ti hneď, ako pristane lietadlo, aby si sa nebál.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Te", "llamaré", "en", "cuanto", "aterrice", "el", "avión", "para", "que", "no", "te", "preocupes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "aterrice",
+        "lemma": "aterrizar",
+        "hint": "aterrizar · él · subjuntivo",
+        "distractors": ["aterriza", "aterrizó", "aterrizará"]
+      }
+    ]
+  },
+  {
+    "id": "s2142",
+    "es": "Es mejor que compremos los boletos hoy porque mañana subirán los precios.",
+    "sk": "Je lepšie kúpiť lístky dnes, pretože zajtra ceny stúpnu.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "mejor", "que", "compremos", "los", "boletos", "hoy", "porque", "mañana", "subirán", "los", "precios", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "compremos",
+        "lemma": "comprar",
+        "hint": "comprar · nosotros · subjuntivo",
+        "distractors": ["compramos", "compraremos", "comprábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2143",
+    "es": "Mis amigos que viven en Mérida nos invitaron a quedarnos con ellos una semana.",
+    "sk": "Priatelia, ktorí bývajú v Méride, nás pozvali, aby sme u nich zostali týždeň.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Mis", "amigos", "que", "viven", "en", "Mérida", "nos", "invitaron", "a", "quedarnos", "con", "ellos", "una", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2144",
+    "es": "Mientras esperábamos en el aeropuerto, nos avisaron que el vuelo salía con retraso.",
+    "sk": "Kým sme čakali na letisku, oznámili nám, že let odchádza s meškaním.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["imperfecto", "preterito"],
+    "tokens": ["Mientras", "esperábamos", "en", "el", "aeropuerto", ",", "nos", "avisaron", "que", "el", "vuelo", "salía", "con", "retraso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "avisaron",
+        "lemma": "avisar",
+        "hint": "avisar · ellos · pretérito",
+        "distractors": ["avisan", "avisarán", "avisen"]
+      }
+    ]
+  },
+  {
+    "id": "s2145",
+    "es": "Si hubiéramos reservado con tiempo, ahora no estaríamos esperando en la terminal.",
+    "sk": "Keby sme si boli rezervovali včas, teraz by sme nečakali na termináli.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "hubiéramos", "reservado", "con", "tiempo", ",", "ahora", "no", "estaríamos", "esperando", "en", "la", "terminal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaríamos",
+        "lemma": "estar",
+        "hint": "estar · nosotros · condicional",
+        "distractors": ["estamos", "estaremos", "estuvimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2146",
+    "es": "Busco un hostal que esté cerca de la playa y que no cueste mucho.",
+    "sk": "Hľadám hostel, ktorý je blízko pláže a nestojí veľa.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Busco", "un", "hostal", "que", "esté", "cerca", "de", "la", "playa", "y", "que", "no", "cueste", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "esté",
+        "lemma": "estar",
+        "hint": "estar · él · subjuntivo",
+        "distractors": ["está", "estuvo", "estará"]
+      }
+    ]
+  },
+  {
+    "id": "s2147",
+    "es": "El guía nos dijo que no tomáramos fotos dentro de la pirámide.",
+    "sk": "Sprievodca nám povedal, aby sme vnútri pyramídy nefotili.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["El", "guía", "nos", "dijo", "que", "no", "tomáramos", "fotos", "dentro", "de", "la", "pirámide", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tomáramos",
+        "lemma": "tomar",
+        "hint": "tomar · nosotros · subjuntivo imperfecto",
+        "distractors": ["tomamos", "tomaremos", "tomábamos"]
       }
     ]
   }

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "s470",
+    "es": "Si ahorro un poco cada mes, podré comprar un coche.",
+    "tokens": [
+      "Si",
+      "ahorro",
+      "un",
+      "poco",
+      "cada",
+      "mes",
+      ",",
+      "podré",
+      "comprar",
+      "un",
+      "coche",
+      "."
+    ]
+  },
+  {
+    "id": "s598",
+    "es": "Antes era camarero, pero ahora tengo mi propio negocio.",
+    "tokens": [
+      "Antes",
+      "era",
+      "camarero",
+      ",",
+      "pero",
+      "ahora",
+      "tengo",
+      "mi",
+      "propio",
+      "negocio",
+      "."
+    ]
+  },
+  {
+    "id": "s1873",
+    "es": "Si ganara más dinero, cambiaría de piso.",
+    "tokens": [
+      "Si",
+      "ganara",
+      "más",
+      "dinero",
+      ",",
+      "cambiaría",
+      "de",
+      "piso",
+      "."
+    ]
+  },
+  {
+    "id": "s196",
+    "es": "¿Puedes mirar el correo del cliente?",
+    "tokens": [
+      "¿",
+      "Puedes",
+      "mirar",
+      "el",
+      "correo",
+      "del",
+      "cliente",
+      "?"
+    ]
+  },
+  {
+    "id": "s203",
+    "es": "Usamos este ordenador para diseñar.",
+    "tokens": [
+      "Usamos",
+      "este",
+      "ordenador",
+      "para",
+      "diseñar",
+      "."
+    ]
+  },
+  {
+    "id": "s1575",
+    "es": "Mi ordenador no funciona hoy.",
+    "tokens": [
+      "Mi",
+      "ordenador",
+      "no",
+      "funciona",
+      "hoy",
+      "."
+    ]
+  },
+  {
+    "id": "s1577",
+    "es": "Mi papá es chófer y conduce un taxi.",
+    "tokens": [
+      "Mi",
+      "papá",
+      "es",
+      "chófer",
+      "y",
+      "conduce",
+      "un",
+      "taxi",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "conduce",
+        "lemma": "conducir",
+        "hint": "conducir · él · presente",
+        "distractors": [
+          "conduzco",
+          "conduces",
+          "conducimos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1716",
+    "es": "¿Puedo usar su ordenador un momento?",
+    "tokens": [
+      "¿",
+      "Puedo",
+      "usar",
+      "su",
+      "ordenador",
+      "un",
+      "momento",
+      "?"
+    ]
+  },
+  {
+    "id": "s1593",
+    "es": "Con este sueldo apenas me alcanza para el alquiler y la comida.",
+    "tokens": [
+      "Con",
+      "este",
+      "sueldo",
+      "apenas",
+      "me",
+      "alcanza",
+      "para",
+      "el",
+      "alquiler",
+      "y",
+      "la",
+      "comida",
+      "."
+    ]
+  },
+  {
+    "id": "s060",
+    "es": "Mis compañeros están charlando en la cocina.",
+    "tokens": [
+      "Mis",
+      "compañeros",
+      "están",
+      "charlando",
+      "en",
+      "la",
+      "cocina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "charlando",
+        "lemma": "charlar",
+        "hint": "charlar · gerundio",
+        "distractors": [
+          "charlar",
+          "charlado",
+          "charla"
+        ]
+      }
+    ]
+  }
+]

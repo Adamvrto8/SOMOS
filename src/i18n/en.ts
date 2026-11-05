@@ -43,6 +43,9 @@ export const en: Dictionary = {
   settings: {
     title: 'Settings',
     language: 'Language',
+    variant: 'Spanish',
+    variantOptions: { mx: 'Mexican', es: 'From Spain' },
+    variantHint: 'The app reloads after a change. Your progress is kept. The Spain version is still in progress: some words and sentences are still Mexican.',
     appearance: 'Appearance',
     theme: 'Theme',
     themeOptions: { system: 'System', light: 'Light', dark: 'Dark' },
@@ -446,6 +449,7 @@ export const en: Dictionary = {
     tense: 'Tense',
     play: 'Play',
     progresivoNote: 'estar + gerund',
+    perfectoNote: 'Only haber changes (present), the participle stays:',
     pluscuamperfectoNote: 'Only haber changes, the participle stays:',
     imperfectoBefore: 'A repeated or ongoing action in the past, and description:',
     imperfectoAfter: 'A single finished action is pretérito.',
@@ -591,6 +595,10 @@ export const en: Dictionary = {
       fixHint: 'Fix the mistakes: every fixed answer counts toward the lesson.',
       toFix: 'To fix',
       toRepeat: 'To repeat',
+      tfAnswers: 'Your answers',
+      tfSaid: (verdict) => `Your answer: ${verdict}`,
+      tfRight: 'Correct',
+      tfWrong: 'Wrong',
       mistakesStay: 'Mistakes you do not fix stay in Archive → Mistakes; you can come back to them anytime.',
       mistakesSaved: 'The mistakes were saved to Archive → Mistakes; you can come back to them anytime.',
       fixMistakes: (n) => `Fix ${counted(n, 'mistake', 'mistakes')}`,
@@ -745,6 +753,7 @@ export const en: Dictionary = {
     imperativoPronoun: (verb: string) =>
       `With the reflexive verb ${verb} the pronoun goes on the end and the stress stays put, so it gets a written accent.`,
     participleIrregular: (verb: string, participle: string) => `${verb} has an irregular participle: ${participle}.`,
+    perfecto: (verb: string, participle: string) => `With ${verb} only haber changes (present); the participle ${participle} stays.`,
     pluscuamperfecto: (verb: string, participle: string) => `With ${verb} only haber changes (imperfect); the participle ${participle} stays.`,
     futuroEndings: (verb) => `With ${verb} the ending is added to the whole infinitive.`,
     articleForms: {

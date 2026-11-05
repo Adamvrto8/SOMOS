@@ -1,6 +1,4 @@
-import { Check, X } from 'lucide-react'
-import { useRef, useState } from 'react'
-import { Button } from '../../../components/Button'
+import { useEffect, useRef, useState } from 'react'
 import { useT } from '../../../i18n'
 import type { Answer, TrueFalseTask } from '../../../lib/lesson'
 import { sentenceTranslation } from '../../../lib/localized'
@@ -12,6 +10,8 @@ interface TrueFalseViewProps {
   onAnswer: (answer: Answer) => void
   onSubmit: (value?: Answer) => void
   status?: Status
+  /** A lesson of only these cards: the card flies off and the next one comes, the verdicts wait for the end. */
+  flow?: boolean
 }
 
 const BORDER: Record<Status | 'open', string> = {
@@ -21,27 +21,54 @@ const BORDER: Record<Status | 'open', string> = {
   wrong: 'border-error bg-error/10',
 }
 
-/** The sentence is a card: swipe it right for pravda, left for nepravda, or press a button. */
-export function TrueFalseView({ task, onAnswer, onSubmit, status }: TrueFalseViewProps) {
+/** How long the card takes to fly off the screen (ms). */
+const FLY = 200
+
+/** The sentence fills the screen as a card: swipe it right for pravda, left for nepravda (← → on a keyboard). */
+export function TrueFalseView({ task, onAnswer, onSubmit, status, flow = false }: TrueFalseViewProps) {
   const text = useT().lesson.task
   const [dx, setDx] = useState(0)
+  const [leaving, setLeaving] = useState<'left' | 'right' | null>(null)
   const start = useRef<{ x: number; at: number } | null>(null)
-  const locked = status !== undefined
+  const locked = status !== undefined || leaving !== null
 
-  const answer = (value: 'true' | 'false') => {
-    onAnswer(value)
-    onSubmit(value)
+  const decide = (direction: 'left' | 'right') => {
+    const value = direction === 'right' ? 'true' : 'false'
+    if (!flow) {
+      onAnswer(value)
+      onSubmit(value)
+      return
+    }
+    setLeaving(direction)
+    window.setTimeout(() => {
+      onAnswer(value)
+      onSubmit(value)
+    }, FLY)
   }
+
+  useEffect(() => {
+    if (locked) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') decide('right')
+      else if (e.key === 'ArrowLeft') decide('left')
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  })
+
   const stamp = Math.min(Math.abs(dx) / SWIPE_DISTANCE, 1)
+  const transform = leaving
+    ? `translateX(${leaving === 'right' ? '' : '-'}120vw) rotate(${leaving === 'right' ? '' : '-'}20deg)`
+    : `translateX(${dx}px) rotate(${dx / 25}deg)`
 
   return (
-    <div className="space-y-5">
+    <div className="flex min-h-[calc(100dvh-10.5rem)] flex-col gap-4">
       <p className="text-ink-muted">{text.tfQuestion}</p>
       <div
         role="group"
         aria-label={text.tfCard}
-        className={`relative touch-pan-y rounded-card border-2 bg-surface p-5 select-none ${BORDER[status ?? 'open']}`}
-        style={{ transform: `translateX(${dx}px) rotate(${dx / 25}deg)`, transition: dx === 0 ? 'transform 150ms' : undefined }}
+        className={`relative flex flex-1 touch-pan-y flex-col justify-center rounded-card border-2 bg-surface p-6 select-none ${BORDER[status ?? 'open']}`}
+        style={{ transform, transition: leaving ? `transform ${FLY}ms ease-in` : dx === 0 ? 'transform 150ms' : undefined }}
         onPointerDown={(e) => {
           if (locked) return
           start.current = { x: e.clientX, at: e.timeStamp }
@@ -56,41 +83,34 @@ export function TrueFalseView({ task, onAnswer, onSubmit, status }: TrueFalseVie
           setDx(0)
           if (!from) return
           const direction = swipeDirection(e.clientX - from.x, e.timeStamp - from.at)
-          if (direction) answer(direction === 'right' ? 'true' : 'false')
+          if (direction) decide(direction)
         }}
         onPointerCancel={() => {
           start.current = null
           setDx(0)
         }}
       >
+        {/* Each stamp trails the card on the side that stays on the screen. */}
         <span
           aria-hidden
-          className="absolute top-3 left-3 rounded-lg border-2 border-leaf px-2 py-0.5 text-sm font-bold tracking-widest text-leaf uppercase"
-          style={{ opacity: dx > 0 ? stamp : 0 }}
+          className="absolute top-4 left-4 rounded-lg border-2 border-leaf px-2 py-0.5 text-sm font-bold tracking-widest text-leaf uppercase"
+          style={{ opacity: leaving === 'right' ? 1 : dx > 0 ? stamp : 0 }}
         >
           {text.tfTrue}
         </span>
         <span
           aria-hidden
-          className="absolute top-3 right-3 rounded-lg border-2 border-error px-2 py-0.5 text-sm font-bold tracking-widest text-error uppercase"
-          style={{ opacity: dx < 0 ? stamp : 0 }}
+          className="absolute top-4 right-4 rounded-lg border-2 border-error px-2 py-0.5 text-sm font-bold tracking-widest text-error uppercase"
+          style={{ opacity: leaving === 'left' ? 1 : dx < 0 ? stamp : 0 }}
         >
           {text.tfFalse}
         </span>
-        <p lang="es" className="pt-6 font-serif text-2xl leading-snug">
+        <p lang="es" className="font-serif text-3xl leading-snug">
           {task.corrupted?.es ?? task.sentence.es}
         </p>
-        <p className="mt-3 text-ink-muted">{sentenceTranslation(task.sentence)}</p>
+        <p className="mt-4 text-lg text-ink-muted">{sentenceTranslation(task.sentence)}</p>
       </div>
-      {!locked && <p className="text-center text-sm text-ink-muted">{text.tfHint}</p>}
-      <div className="grid grid-cols-2 gap-3">
-        <Button variant="secondary" icon={X} onClick={() => answer('false')} disabled={locked}>
-          {text.tfFalse}
-        </Button>
-        <Button variant="secondary" icon={Check} onClick={() => answer('true')} disabled={locked}>
-          {text.tfTrue}
-        </Button>
-      </div>
+      {status === undefined && <p className="pb-2 text-center text-sm text-ink-muted">{text.tfHint}</p>}
     </div>
   )
 }

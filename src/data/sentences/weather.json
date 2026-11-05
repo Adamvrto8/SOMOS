@@ -374,6 +374,13 @@
         "lemma": "salir",
         "hint": "salir · nosotros · pretérito",
         "distractors": ["salen", "salí", "saldremos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "toľko",
+        "distractors": ["tan", "muy", "mucho"]
       }
     ]
   },
@@ -417,6 +424,13 @@
         "lemma": "llevar",
         "hint": "llevar · nosotros · presente",
         "distractors": ["Llevo", "Llevan", "Llevaremos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["por", "para", "hacia"]
       }
     ]
   },
@@ -592,6 +606,13 @@
         "hint": "ser/estar · él · presente",
         "why": "state",
         "distractors": ["es", "son", "están"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "o", "sino"]
       }
     ]
   },
@@ -610,6 +631,13 @@
         "lemma": "morir",
         "hint": "morir · ellas · pretérito",
         "distractors": ["mueren", "murió", "morían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -628,6 +656,13 @@
         "lemma": "agarrar",
         "hint": "agarrar · él · pretérito",
         "distractors": ["agarra", "agarraron", "agarraba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Se"]
       }
     ]
   },
@@ -1060,6 +1095,13 @@
         "lemma": "ponerse",
         "hint": "ponerse · él · presente",
         "distractors": ["puso", "ponía", "pondrá"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1078,6 +1120,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["fuimos", "íbamos", "van"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "llueva",
+        "lemma": "llover",
+        "hint": "llover · él · subjuntivo",
+        "distractors": ["llueve", "lloverá", "llovía"]
       }
     ]
   },
@@ -1138,6 +1187,13 @@
         "lemma": "hacer",
         "hint": "hacer · él · imperfecto",
         "distractors": ["hace", "hizo", "hará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "porovnanie",
+        "distractors": ["tan", "muy", "tanta"]
       }
     ]
   },
@@ -1156,6 +1212,13 @@
         "lemma": "empezar",
         "hint": "empezar · él · pretérito",
         "distractors": ["empieza", "empezaba", "empezará"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1174,6 +1237,13 @@
         "lemma": "perder",
         "hint": "perder · ellas · pretérito",
         "distractors": ["pierden", "perdían", "perderán"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1192,6 +1262,13 @@
         "lemma": "preferir",
         "hint": "preferir · yo · presente",
         "distractors": ["Prefieres", "Preferí", "Prefería"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "pero", "sino"]
       }
     ]
   },
@@ -1210,6 +1287,13 @@
         "lemma": "decir",
         "hint": "decir · ellos · presente",
         "distractors": ["Digo", "Dijimos", "Decía"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1228,6 +1312,13 @@
         "lemma": "seguir",
         "hint": "seguir · él · presente",
         "distractors": ["siguió", "seguía", "seguirá"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1283,6 +1374,13 @@
         "lemma": "esperar",
         "hint": "esperar · nosotros · presente",
         "distractors": ["espero", "esperaron", "esperábamos"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "pase",
+        "lemma": "pasar",
+        "hint": "pasar · él · subjuntivo",
+        "distractors": ["pasa", "pasó", "pasará"]
       }
     ]
   },
@@ -1301,6 +1399,13 @@
         "lemma": "hacer",
         "hint": "hacer · él · presente",
         "distractors": ["hizo", "hacía", "hará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuyo"]
       }
     ]
   },
@@ -1442,6 +1547,13 @@
         "lemma": "salir",
         "hint": "salir · ellos · pretérito",
         "distractors": ["salen", "salían", "saldrán"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1487,6 +1599,13 @@
         "lemma": "construir",
         "hint": "construir · nosotros · presente",
         "distractors": ["construyo", "construyeron", "construíamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1913,6 +2032,186 @@
         "tip": "subjuntivo-clauses",
         "why": "aunque",
         "distractors": ["llueve", "lloverá", "llovió"]
+      }
+    ]
+  },
+  {
+    "id": "s2148",
+    "es": "Si hiciera menos calor, saldríamos a caminar por el parque después de comer.",
+    "sk": "Keby bolo menej horúco, išli by sme sa po obede prejsť do parku.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "hiciera", "menos", "calor", ",", "saldríamos", "a", "caminar", "por", "el", "parque", "después", "de", "comer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hiciera",
+        "lemma": "hacer",
+        "hint": "hacer · él · subjuntivo imperfecto",
+        "distractors": ["hace", "hizo", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s2149",
+    "es": "Ojalá que deje de llover antes de que empiece el partido.",
+    "sk": "Dúfam, že prestane pršať skôr, než sa začne zápas.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "que", "deje", "de", "llover", "antes", "de", "que", "empiece", "el", "partido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "empiece",
+        "lemma": "empezar",
+        "hint": "empezar · él · subjuntivo",
+        "distractors": ["empieza", "empezó", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s2150",
+    "es": "El noticiero dijo que habrá tormenta en cuanto llegue el frente frío.",
+    "sk": "V správach povedali, že bude búrka hneď, ako príde studený front.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["El", "noticiero", "dijo", "que", "habrá", "tormenta", "en", "cuanto", "llegue", "el", "frente", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "llegue",
+        "lemma": "llegar",
+        "hint": "llegar · él · subjuntivo",
+        "distractors": ["llega", "llegó", "llegará"]
+      }
+    ]
+  },
+  {
+    "id": "s2151",
+    "es": "Cuando haga mucho calor mañana, iremos a nadar al cenote que está cerca del pueblo.",
+    "sk": "Keď bude zajtra veľmi horúco, pôjdeme plávať do cenote neďaleko dediny.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "haga", "mucho", "calor", "mañana", ",", "iremos", "a", "nadar", "al", "cenote", "que", "está", "cerca", "del", "pueblo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haga",
+        "lemma": "hacer",
+        "hint": "hacer · él · subjuntivo",
+        "distractors": ["hace", "hizo", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s2152",
+    "es": "No salgas sin paraguas, porque dicen que va a llover toda la tarde.",
+    "sk": "Nevychádzaj bez dáždnika, lebo vraj bude pršať celé popoludnie.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["imperativo", "futuro"],
+    "tokens": ["No", "salgas", "sin", "paraguas", ",", "porque", "dicen", "que", "va", "a", "llover", "toda", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["sino", "para", "mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2153",
+    "es": "Aunque haya mucho sol, es mejor que lleves una chamarra por si baja la temperatura.",
+    "sk": "Aj keď je veľa slnka, radšej si zober bundu pre prípad, že klesne teplota.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Aunque", "haya", "mucho", "sol", ",", "es", "mejor", "que", "lleves", "una", "chamarra", "por", "si", "baja", "la", "temperatura", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "lleves",
+        "lemma": "llevar",
+        "hint": "llevar · tú · subjuntivo",
+        "distractors": ["llevas", "llevaste", "llevarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2154",
+    "es": "El día que nevó en la sierra, todos los niños salieron a jugar.",
+    "sk": "V deň, keď v horách snežilo, vyšli všetky deti von hrať sa.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["El", "día", "que", "nevó", "en", "la", "sierra", ",", "todos", "los", "niños", "salieron", "a", "jugar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2155",
+    "es": "Hace tanto viento que no se puede abrir el paraguas sin que se rompa.",
+    "sk": "Fúka taký vietor, že dáždnik sa nedá otvoriť bez toho, aby sa zlomil.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Hace", "tanto", "viento", "que", "no", "se", "puede", "abrir", "el", "paraguas", "sin", "que", "se", "rompa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "answer": "rompa",
+        "lemma": "romper",
+        "hint": "romper · él · subjuntivo",
+        "distractors": ["rompe", "rompió", "romperá"]
+      }
+    ]
+  },
+  {
+    "id": "s2156",
+    "es": "La señora que vende tamales en la esquina dijo que mañana amanecerá nublado.",
+    "sk": "Pani, ktorá predáva tamales na rohu, povedala, že zajtra bude ráno zamračené.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["La", "señora", "que", "vende", "tamales", "en", "la", "esquina", "dijo", "que", "mañana", "amanecerá", "nublado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2157",
+    "es": "Me encanta el clima de Cuernavaca, donde nunca hace demasiado frío ni demasiado calor.",
+    "sk": "Milujem podnebie Cuernavacy, kde nikdy nie je príliš zima ani príliš horúco.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["relatives", "gustar"],
+    "tokens": ["Me", "encanta", "el", "clima", "de", "Cuernavaca", ",", "donde", "nunca", "hace", "demasiado", "frío", "ni", "demasiado", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (miesto)",
+        "distractors": ["cuando", "quien", "cuyo"]
       }
     ]
   }

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "conducir",
+    "en": [
+      "to drive"
+    ]
+  },
+  {
+    "id": "alquilar",
+    "en": [
+      "to rent"
+    ]
+  },
+  {
+    "id": "aparcar",
+    "en": [
+      "to park"
+    ]
+  },
+  {
+    "id": "charlar",
+    "en": [
+      "to chat",
+      "to talk"
+    ]
+  },
+  {
+    "id": "enfadarse",
+    "en": [
+      "to get angry",
+      "to get mad"
+    ]
+  },
+  {
+    "id": "encender",
+    "en": [
+      "to turn on",
+      "to light"
+    ]
+  }
+]

@@ -592,6 +592,13 @@
         "lemma": "conseguir",
         "hint": "conseguir · yo · pretérito",
         "distractors": ["consiguió", "consiguieron", "conseguía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["Para", "En", "Con"]
       }
     ]
   },
@@ -610,6 +617,13 @@
         "lemma": "ofrecer",
         "hint": "ofrecer · él · pretérito",
         "distractors": ["ofrecieron", "ofreciste", "ofrecía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -635,6 +649,13 @@
         "lemma": "poder",
         "hint": "poder · yo · futuro",
         "distractors": ["podrá", "podrán", "puedo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["todo", "todos", "ambos"]
       }
     ]
   },
@@ -653,6 +674,13 @@
         "lemma": "dormir",
         "hint": "dormir · yo · imperfecto",
         "distractors": ["dormían", "dormí", "dormíamos"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "sin"]
       }
     ]
   },
@@ -671,6 +699,13 @@
         "lemma": "lograr",
         "hint": "lograr · nosotros · pretérito",
         "distractors": ["Logré", "Logró", "Lográbamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["después", "durante", "hasta"]
       }
     ]
   },
@@ -706,6 +741,13 @@
         "lemma": "trabajar",
         "hint": "trabajar · gerundio",
         "distractors": ["trabajado", "trabajo", "trabajar"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["este", "estas", "estos"]
       }
     ]
   },
@@ -765,6 +807,13 @@
         "hint": "ser/estar · yo · presente",
         "why": "state",
         "distractors": ["soy", "estaba", "estuve"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unas", "unos"]
       }
     ]
   },
@@ -783,6 +832,13 @@
         "lemma": "dar",
         "hint": "dar · ellos · futuro",
         "distractors": ["dieron", "daban", "daremos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -827,6 +883,13 @@
         "lemma": "trabajar",
         "hint": "trabajar · yo · presente",
         "distractors": ["Trabaja", "Trabajé", "Trabajaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "todos",
+        "lemma": "todo",
+        "hint": "všetky",
+        "distractors": ["todo", "toda", "todas"]
       }
     ]
   },
@@ -1346,6 +1409,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · pretérito",
         "distractors": ["Mandó", "Mando", "Mandaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1489,6 +1559,13 @@
         "lemma": "plantear",
         "hint": "plantear · yo · pretérito",
         "distractors": ["plantea", "planteó", "planteaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1525,6 +1602,13 @@
         "lemma": "abrir",
         "hint": "abrir · ella · pretérito",
         "distractors": ["abre", "abría", "abrirá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "jej",
+        "distractors": ["mi", "tu", "nuestra"]
       }
     ]
   },
@@ -1581,6 +1665,13 @@
         "lemma": "contratar",
         "hint": "contratar · ellos · pretérito",
         "distractors": ["Contrata", "Contraté", "Contrataban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "ako",
+        "distractors": ["con", "sin", "hasta"]
       }
     ]
   },
@@ -1894,6 +1985,13 @@
         "lemma": "despedir",
         "hint": "despedir · ellos · pretérito",
         "distractors": ["Despiden", "Despidió", "Despedían"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1912,6 +2010,13 @@
         "lemma": "jubilarse",
         "hint": "jubilarse · él · pretérito",
         "distractors": ["jubila", "jubilaba", "jubilará"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1930,6 +2035,13 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["doy", "dio", "daba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1948,6 +2060,13 @@
         "lemma": "atender",
         "hint": "atender · ellos · imperfecto",
         "distractors": ["atiende", "atendieron", "atenderán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "preparaba",
+        "lemma": "preparar",
+        "hint": "preparar · yo · imperfecto",
+        "distractors": ["preparo", "prepararé", "prepare"]
       }
     ]
   },
@@ -1991,6 +2110,13 @@
         "lemma": "rechazar",
         "hint": "rechazar · él · pretérito",
         "distractors": ["rechaza", "rechazaba", "rechazará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "las", "los"]
       }
     ]
   },
@@ -2009,6 +2135,13 @@
         "lemma": "chambear",
         "hint": "chambear · él · presente",
         "distractors": ["chambean", "chambeó", "chambeaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "desde"]
       }
     ]
   },
@@ -2054,6 +2187,13 @@
         "lemma": "tratar",
         "hint": "tratar · él · presente",
         "distractors": ["trató", "trataba", "tratará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -2089,6 +2229,13 @@
         "lemma": "cerrar",
         "hint": "cerrar · ella · pretérito",
         "distractors": ["cierra", "cerré", "cerraba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["hasta", "durante", "sobre"]
       }
     ]
   },
@@ -2107,6 +2254,13 @@
         "lemma": "reconocer",
         "hint": "reconocer · ellos · pretérito",
         "distractors": ["reconoce", "reconocí", "reconocían"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Nos"]
       }
     ]
   },
@@ -2213,6 +2367,186 @@
         "lemma": "hacer",
         "hint": "hacer · él · presente",
         "distractors": ["hago", "hicieron", "harás"]
+      }
+    ]
+  },
+  {
+    "id": "s2158",
+    "es": "Mi jefa quiere que terminemos el informe antes de que acabe la semana.",
+    "sk": "Šéfka chce, aby sme dokončili správu skôr, než skončí týždeň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Mi", "jefa", "quiere", "que", "terminemos", "el", "informe", "antes", "de", "que", "acabe", "la", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "terminemos",
+        "lemma": "terminar",
+        "hint": "terminar · nosotros · subjuntivo",
+        "distractors": ["terminamos", "terminaremos", "terminábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2159",
+    "es": "Si me ofrecieran un mejor sueldo, aceptaría el puesto de inmediato.",
+    "sk": "Keby mi ponúkli lepší plat, to miesto by som okamžite prijal.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "me", "ofrecieran", "un", "mejor", "sueldo", ",", "aceptaría", "el", "puesto", "de", "inmediato", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "aceptaría",
+        "lemma": "aceptar",
+        "hint": "aceptar · yo · condicional",
+        "distractors": ["acepto", "acepté", "aceptaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2160",
+    "es": "La empresa donde trabaja mi esposa busca ingenieros que hablen inglés.",
+    "sk": "Firma, kde pracuje moja manželka, hľadá inžinierov, ktorí hovoria po anglicky.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["La", "empresa", "donde", "trabaja", "mi", "esposa", "busca", "ingenieros", "que", "hablen", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "hablen",
+        "lemma": "hablar",
+        "hint": "hablar · ellos · subjuntivo",
+        "distractors": ["hablan", "hablaron", "hablarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2161",
+    "es": "Cuando me paguen la quincena, voy a mandarle dinero a mi mamá.",
+    "sk": "Keď mi vyplatia dvojtýždennú výplatu, pošlem mame peniaze.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "me", "paguen", "la", "quincena", ",", "voy", "a", "mandarle", "dinero", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "paguen",
+        "lemma": "pagar",
+        "hint": "pagar · ellos · subjuntivo",
+        "distractors": ["pagan", "pagaron", "pagarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2162",
+    "es": "Aunque trabajo mucho, no me quejo, ya que me gusta lo que hago.",
+    "sk": "Aj keď veľa pracujem, nesťažujem sa, pretože ma baví to, čo robím.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "presente", "gustar"],
+    "tokens": ["Aunque", "trabajo", "mucho", ",", "no", "me", "quejo", ",", "ya", "que", "me", "gusta", "lo", "que", "hago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": ["haga", "hice", "haré"]
+      }
+    ]
+  },
+  {
+    "id": "s2163",
+    "es": "El gerente nos pidió que llegáramos temprano porque tendríamos una reunión con los clientes.",
+    "sk": "Manažér nás požiadal, aby sme prišli skoro, lebo budeme mať stretnutie s klientmi.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subj-imperfecto"],
+    "tokens": ["El", "gerente", "nos", "pidió", "que", "llegáramos", "temprano", "porque", "tendríamos", "una", "reunión", "con", "los", "clientes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llegáramos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo imperfecto",
+        "distractors": ["llegamos", "llegaremos", "llegábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2164",
+    "es": "Busco un empleo que me deje tiempo libre para estudiar por las tardes.",
+    "sk": "Hľadám prácu, ktorá mi necháva voľný čas na štúdium poobede.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "subjuntivo"],
+    "tokens": ["Busco", "un", "empleo", "que", "me", "deje", "tiempo", "libre", "para", "estudiar", "por", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "deje",
+        "lemma": "dejar",
+        "hint": "dejar · él · subjuntivo",
+        "distractors": ["deja", "dejó", "dejará"]
+      }
+    ]
+  },
+  {
+    "id": "s2165",
+    "es": "Si hubiera renunciado antes, ahora estaría trabajando en mi propio negocio.",
+    "sk": "Keby som bol odišiel skôr, teraz by som pracoval vo vlastnom podniku.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "hubiera", "renunciado", "antes", ",", "ahora", "estaría", "trabajando", "en", "mi", "propio", "negocio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estaría",
+        "lemma": "estar",
+        "hint": "estar · yo · condicional",
+        "distractors": ["estoy", "estuve", "estaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2166",
+    "es": "Mi compañero, a quien ascendieron el mes pasado, ahora tiene su propia oficina.",
+    "sk": "Kolega, ktorého minulý mesiac povýšili, má teraz vlastnú kanceláriu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Mi", "compañero", ",", "a", "quien", "ascendieron", "el", "mes", "pasado", ",", "ahora", "tiene", "su", "propia", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoba)",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2167",
+    "es": "Es probable que la empresa contrate más personal en cuanto termine el año.",
+    "sk": "Je pravdepodobné, že firma najme viac ľudí hneď po konci roka.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "probable", "que", "la", "empresa", "contrate", "más", "personal", "en", "cuanto", "termine", "el", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "contrate",
+        "lemma": "contratar",
+        "hint": "contratar · ella · subjuntivo",
+        "distractors": ["contrata", "contrató", "contratará"]
       }
     ]
   }

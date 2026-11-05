@@ -1,3 +1,4 @@
+import { bareVosotros } from './vosotros.ts'
 import type { Cloze, Grammar, Person, Sentence, Tip, Verb } from '../data/types.ts'
 
 // The blanks of the usage tips (por/para, si…): a blank names its tip and rule, since no verb hint leads there.
@@ -49,6 +50,8 @@ export function formsFor(verb: Verb, person?: Person): string[] {
     for (const tense of SIMPLE) out.push(verb[tense][p])
     if (p !== 'yo') out.push(verb.imperativo[p])
   }
+  // Spain's vosotros is derived, not stored: for "any form of this verb" it counts too (a Mexican blank never has one).
+  if (!person) for (const tense of [...SIMPLE, 'imperativo'] as const) out.push(bareVosotros(verb, tense))
   return out.map((form) => form.split(' ').at(-1)!.toLowerCase())
 }
 

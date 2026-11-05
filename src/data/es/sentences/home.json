@@ -1,0 +1,446 @@
+[
+  {
+    "id": "s025",
+    "es": "Vivo en un piso pequeño.",
+    "tokens": [
+      "Vivo",
+      "en",
+      "un",
+      "piso",
+      "pequeño",
+      "."
+    ]
+  },
+  {
+    "id": "s487",
+    "es": "Nos mudaremos a un piso más grande.",
+    "tokens": [
+      "Nos",
+      "mudaremos",
+      "a",
+      "un",
+      "piso",
+      "más",
+      "grande",
+      "."
+    ]
+  },
+  {
+    "id": "s490",
+    "es": "El fontanero vendrá mañana en la mañana.",
+    "tokens": [
+      "El",
+      "fontanero",
+      "vendrá",
+      "mañana",
+      "en",
+      "la",
+      "mañana",
+      "."
+    ]
+  },
+  {
+    "id": "s413",
+    "es": "Antes vivíamos en un piso pequeño.",
+    "tokens": [
+      "Antes",
+      "vivíamos",
+      "en",
+      "un",
+      "piso",
+      "pequeño",
+      "."
+    ]
+  },
+  {
+    "id": "s414",
+    "es": "El piso era viejo, pero muy bonito.",
+    "tokens": [
+      "El",
+      "piso",
+      "era",
+      "viejo",
+      ",",
+      "pero",
+      "muy",
+      "bonito",
+      "."
+    ]
+  },
+  {
+    "id": "s712",
+    "es": "Dejé el coche en la cochera.",
+    "tokens": [
+      "Dejé",
+      "el",
+      "coche",
+      "en",
+      "la",
+      "cochera",
+      "."
+    ]
+  },
+  {
+    "id": "s715",
+    "es": "Para alquilar el piso nos pidieron un aval.",
+    "tokens": [
+      "Para",
+      "alquilar",
+      "el",
+      "piso",
+      "nos",
+      "pidieron",
+      "un",
+      "aval",
+      "."
+    ]
+  },
+  {
+    "id": "s1310",
+    "es": "Aunque el piso está amueblado, traeremos nuestra propia cama.",
+    "tokens": [
+      "Aunque",
+      "el",
+      "piso",
+      "está",
+      "amueblado",
+      ",",
+      "traeremos",
+      "nuestra",
+      "propia",
+      "cama",
+      "."
+    ]
+  },
+  {
+    "id": "s128",
+    "es": "Estamos buscando un piso cerca del metro.",
+    "tokens": [
+      "Estamos",
+      "buscando",
+      "un",
+      "piso",
+      "cerca",
+      "del",
+      "metro",
+      "."
+    ]
+  },
+  {
+    "id": "s1813",
+    "es": "Nosotros tendríamos más espacio en un piso más grande.",
+    "tokens": [
+      "Nosotros",
+      "tendríamos",
+      "más",
+      "espacio",
+      "en",
+      "un",
+      "piso",
+      "más",
+      "grande",
+      "."
+    ]
+  },
+  {
+    "id": "s2070",
+    "es": "Ojalá que podamos mudarnos a un piso donde haya más luz.",
+    "tokens": [
+      "Ojalá",
+      "que",
+      "podamos",
+      "mudarnos",
+      "a",
+      "un",
+      "piso",
+      "donde",
+      "haya",
+      "más",
+      "luz",
+      "."
+    ]
+  },
+  {
+    "id": "s2072",
+    "es": "El fontanero que vino ayer me dijo que la tubería estaba muy vieja.",
+    "tokens": [
+      "El",
+      "fontanero",
+      "que",
+      "vino",
+      "ayer",
+      "me",
+      "dijo",
+      "que",
+      "la",
+      "tubería",
+      "estaba",
+      "muy",
+      "vieja",
+      "."
+    ]
+  },
+  {
+    "id": "s1642",
+    "es": "Me gusta mi dormitorio.",
+    "tokens": [
+      "Me",
+      "gusta",
+      "mi",
+      "dormitorio",
+      "."
+    ]
+  },
+  {
+    "id": "s1660",
+    "es": "En mi piso hay dos dormitorios.",
+    "tokens": [
+      "En",
+      "mi",
+      "piso",
+      "hay",
+      "dos",
+      "dormitorios",
+      "."
+    ]
+  },
+  {
+    "id": "s112",
+    "es": "Vivimos en un piso de dos dormitorios.",
+    "tokens": [
+      "Vivimos",
+      "en",
+      "un",
+      "piso",
+      "de",
+      "dos",
+      "dormitorios",
+      "."
+    ]
+  },
+  {
+    "id": "s1727",
+    "es": "Vosotros debéis limpiar vuestro dormitorio hoy.",
+    "tokens": [
+      "Vosotros",
+      "debéis",
+      "limpiar",
+      "vuestro",
+      "dormitorio",
+      "hoy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "debéis",
+        "distractors": [
+          "podéis",
+          "tenéis",
+          "debemos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s117",
+    "es": "El alquiler sube cada año.",
+    "tokens": [
+      "El",
+      "alquiler",
+      "sube",
+      "cada",
+      "año",
+      "."
+    ]
+  },
+  {
+    "id": "s561",
+    "es": "El dueño del piso nos va a subir el alquiler.",
+    "tokens": [
+      "El",
+      "dueño",
+      "del",
+      "piso",
+      "nos",
+      "va",
+      "a",
+      "subir",
+      "el",
+      "alquiler",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "alquiler"
+      }
+    ]
+  },
+  {
+    "id": "s707",
+    "es": "Se fundió la bombilla del baño.",
+    "tokens": [
+      "Se",
+      "fundió",
+      "la",
+      "bombilla",
+      "del",
+      "baño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "bombilla"
+      }
+    ]
+  },
+  {
+    "id": "s714",
+    "es": "No pises, acabo de fregar.",
+    "tokens": [
+      "No",
+      "pises",
+      ",",
+      "acabo",
+      "de",
+      "fregar",
+      "."
+    ]
+  },
+  {
+    "id": "s719",
+    "es": "Alquilamos un piso amueblado cerca del centro.",
+    "tokens": [
+      "Alquilamos",
+      "un",
+      "piso",
+      "amueblado",
+      "cerca",
+      "del",
+      "centro",
+      "."
+    ]
+  },
+  {
+    "id": "s1302",
+    "es": "Enciende el calentador media hora antes de bañarte.",
+    "tokens": [
+      "Enciende",
+      "el",
+      "calentador",
+      "media",
+      "hora",
+      "antes",
+      "de",
+      "bañarte",
+      "."
+    ]
+  },
+  {
+    "id": "s1303",
+    "es": "Nos subieron el alquiler otra vez y ya no nos alcanza.",
+    "tokens": [
+      "Nos",
+      "subieron",
+      "el",
+      "alquiler",
+      "otra",
+      "vez",
+      "y",
+      "ya",
+      "no",
+      "nos",
+      "alcanza",
+      "."
+    ]
+  },
+  {
+    "id": "s1308",
+    "es": "Para ahorrar luz, cambiamos todas las bombillas por otras de bajo consumo.",
+    "tokens": [
+      "Para",
+      "ahorrar",
+      "luz",
+      ",",
+      "cambiamos",
+      "todas",
+      "las",
+      "bombillas",
+      "por",
+      "otras",
+      "de",
+      "bajo",
+      "consumo",
+      "."
+    ]
+  },
+  {
+    "id": "s1966",
+    "es": "Se alquilan pisos cerca del metro.",
+    "tokens": [
+      "Se",
+      "alquilan",
+      "pisos",
+      "cerca",
+      "del",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "alquilan",
+        "lemma": "alquilar",
+        "hint": "alquilar"
+      }
+    ]
+  },
+  {
+    "id": "s491",
+    "es": "Encendí la luz porque no veía nada.",
+    "tokens": [
+      "Encendí",
+      "la",
+      "luz",
+      "porque",
+      "no",
+      "veía",
+      "nada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Encendí",
+        "lemma": "encender",
+        "hint": "encender · yo · pretérito",
+        "distractors": [
+          "Encendiste",
+          "Encendió",
+          "Encendimos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s2078",
+    "es": "No me gustaría que el casero subiera el alquiler sin avisarnos antes.",
+    "tokens": [
+      "No",
+      "me",
+      "gustaría",
+      "que",
+      "el",
+      "casero",
+      "subiera",
+      "el",
+      "alquiler",
+      "sin",
+      "avisarnos",
+      "antes",
+      "."
+    ]
+  }
+]

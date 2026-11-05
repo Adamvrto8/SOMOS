@@ -1,0 +1,301 @@
+[
+  {
+    "id": "s227",
+    "es": "Hoy llevo una camiseta azul.",
+    "tokens": [
+      "Hoy",
+      "llevo",
+      "una",
+      "camiseta",
+      "azul",
+      "."
+    ]
+  },
+  {
+    "id": "s234",
+    "es": "¿De qué color es tu chaqueta?",
+    "tokens": [
+      "¿",
+      "De",
+      "qué",
+      "color",
+      "es",
+      "tu",
+      "chaqueta",
+      "?"
+    ]
+  },
+  {
+    "id": "s235",
+    "es": "Me gustan tus gafas nuevos.",
+    "tokens": [
+      "Me",
+      "gustan",
+      "tus",
+      "gafas",
+      "nuevos",
+      "."
+    ]
+  },
+  {
+    "id": "s237",
+    "es": "Hace frío, ponte la chaqueta.",
+    "tokens": [
+      "Hace",
+      "frío",
+      ",",
+      "ponte",
+      "la",
+      "chaqueta",
+      "."
+    ]
+  },
+  {
+    "id": "s528",
+    "es": "Esta chaqueta me queda grande; necesito una talla más chica.",
+    "tokens": [
+      "Esta",
+      "chaqueta",
+      "me",
+      "queda",
+      "grande",
+      ";",
+      "necesito",
+      "una",
+      "talla",
+      "más",
+      "chica",
+      "."
+    ]
+  },
+  {
+    "id": "s813",
+    "es": "Me pongo la chaqueta porque hace frío.",
+    "tokens": [
+      "Me",
+      "pongo",
+      "la",
+      "chaqueta",
+      "porque",
+      "hace",
+      "frío",
+      "."
+    ]
+  },
+  {
+    "id": "s827",
+    "es": "Lavé la camiseta con agua caliente y se destiñó.",
+    "tokens": [
+      "Lavé",
+      "la",
+      "camiseta",
+      "con",
+      "agua",
+      "caliente",
+      "y",
+      "se",
+      "destiñó",
+      "."
+    ]
+  },
+  {
+    "id": "s1102",
+    "es": "Me encanta esta chaqueta, pero no me alcanza el dinero para comprarla.",
+    "tokens": [
+      "Me",
+      "encanta",
+      "esta",
+      "chaqueta",
+      ",",
+      "pero",
+      "no",
+      "me",
+      "alcanza",
+      "el",
+      "dinero",
+      "para",
+      "comprarla",
+      "."
+    ]
+  },
+  {
+    "id": "s1119",
+    "es": "Esa chaqueta de piel está carísima, pero te va a durar toda la vida.",
+    "tokens": [
+      "Esa",
+      "chaqueta",
+      "de",
+      "piel",
+      "está",
+      "carísima",
+      ",",
+      "pero",
+      "te",
+      "va",
+      "a",
+      "durar",
+      "toda",
+      "la",
+      "vida",
+      "."
+    ]
+  },
+  {
+    "id": "s1095",
+    "es": "¿Te gusta mi camiseta morada?",
+    "tokens": [
+      "¿",
+      "Te",
+      "gusta",
+      "mi",
+      "camiseta",
+      "morada",
+      "?"
+    ]
+  },
+  {
+    "id": "s231",
+    "es": "Compré unas zapatillas nuevas.",
+    "tokens": [
+      "Compré",
+      "unas",
+      "zapatillas",
+      "nuevas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "unas",
+        "distractors": [
+          "un",
+          "una",
+          "unos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s531",
+    "es": "Cambié las zapatillas porque me quedaban pequeñas.",
+    "tokens": [
+      "Cambié",
+      "las",
+      "zapatillas",
+      "porque",
+      "me",
+      "quedaban",
+      "pequeñas",
+      "."
+    ]
+  },
+  {
+    "id": "s818",
+    "es": "Se me rompió la cremallera de la chaqueta.",
+    "tokens": [
+      "Se",
+      "me",
+      "rompió",
+      "la",
+      "cremallera",
+      "de",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cremallera"
+      }
+    ]
+  },
+  {
+    "id": "s1089",
+    "es": "Mi hermano siempre lleva zapatillas blancas.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "siempre",
+      "lleva",
+      "zapatillas",
+      "blancas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "blancas"
+      }
+    ]
+  },
+  {
+    "id": "s1116",
+    "es": "En las ofertas de diciembre conseguí unas zapatillas de marca a mitad de precio.",
+    "tokens": [
+      "En",
+      "las",
+      "ofertas",
+      "de",
+      "diciembre",
+      "conseguí",
+      "unas",
+      "zapatillas",
+      "de",
+      "marca",
+      "a",
+      "mitad",
+      "de",
+      "precio",
+      "."
+    ]
+  },
+  {
+    "id": "s1103",
+    "es": "Creo que la moda de los noventa está volviendo.",
+    "tokens": [
+      "Creo",
+      "que",
+      "la",
+      "moda",
+      "de",
+      "los",
+      "noventa",
+      "está",
+      "volviendo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "volviendo",
+        "lemma": "volver",
+        "hint": "volver · gerundio",
+        "distractors": [
+          "volver",
+          "vuelto",
+          "vuelve"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1106",
+    "es": "Esta prenda no se puede meter en la secadora porque se encoge.",
+    "tokens": [
+      "Esta",
+      "prenda",
+      "no",
+      "se",
+      "puede",
+      "meter",
+      "en",
+      "la",
+      "secadora",
+      "porque",
+      "se",
+      "encoge",
+      "."
+    ]
+  }
+]

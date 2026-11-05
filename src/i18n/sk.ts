@@ -55,6 +55,9 @@ export const sk = {
   settings: {
     title: 'Nastavenia',
     language: 'Jazyk',
+    variant: 'Španielčina',
+    variantOptions: { mx: 'Mexická', es: 'Zo Španielska' },
+    variantHint: 'Po zmene sa aplikácia znova načíta. Tvoj pokrok ostáva. Španielska verzia je zatiaľ rozpracovaná: časť slov a viet je ešte mexická.',
     appearance: 'Vzhľad',
     theme: 'Téma',
     themeOptions: { system: 'Podľa systému', light: 'Svetlá', dark: 'Tmavá' },
@@ -485,6 +488,7 @@ export const sk = {
     tense: 'Čas',
     play: 'Prehrať',
     progresivoNote: 'estar + gerundium',
+    perfectoNote: 'Časuje sa len haber v prézente, príčastie sa nemení:',
     pluscuamperfectoNote: 'Časuje sa len haber, príčastie sa nemení:',
     imperfectoBefore: 'Opakovaný alebo prebiehajúci dej v minulosti a opis:',
     imperfectoAfter: 'Jednorazový ukončený dej je pretérito.',
@@ -637,6 +641,10 @@ export const sk = {
       fixHint: 'Oprav chyby: každá opravená odpoveď sa ti započíta do lekcie.',
       toFix: 'Na opravu',
       toRepeat: 'Na zopakovanie',
+      tfAnswers: 'Tvoje odpovede',
+      tfSaid: (verdict: string) => `Tvoja odpoveď: ${verdict}`,
+      tfRight: 'Správne',
+      tfWrong: 'Nesprávne',
       mistakesStay: 'Chyby, ktoré neopravíš, ostanú v Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
       mistakesSaved: 'Chyby sa uložili do Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
       fixMistakes: (n: number) => `Opraviť ${n} ${pluralSk(n, ['chybu', 'chyby', 'chýb'])}`,
@@ -794,6 +802,7 @@ export const sk = {
     imperativoPronoun: (verb: string) =>
       `Pri zvratnom slovese ${verb} sa zámeno pripája na koniec a prízvuk ostáva na tej istej slabike, preto sa píše.`,
     participleIrregular: (verb: string, participle: string) => `${verb} má nepravidelné príčastie: ${participle}.`,
+    perfecto: (verb: string, participle: string) => `Pri slovese ${verb} sa časuje len haber v prézente, príčastie ${participle} sa nemení.`,
     pluscuamperfecto: (verb: string, participle: string) => `Pri slovese ${verb} sa časuje len haber v imperfekte, príčastie ${participle} sa nemení.`,
     futuroEndings: (verb: string) => `Pri slovese ${verb} sa koncovka pridáva k celému neurčitku.`,
     articleForms: {

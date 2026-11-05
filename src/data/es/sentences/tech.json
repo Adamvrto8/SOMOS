@@ -1,0 +1,582 @@
+[
+  {
+    "id": "s1802",
+    "es": "¿Podrías prestarme tu móvil un momento?",
+    "tokens": [
+      "¿",
+      "Podrías",
+      "prestarme",
+      "tu",
+      "móvil",
+      "un",
+      "momento",
+      "?"
+    ]
+  },
+  {
+    "id": "s1805",
+    "es": "Sería más fácil usar la aplicación del móvil.",
+    "tokens": [
+      "Sería",
+      "más",
+      "fácil",
+      "usar",
+      "la",
+      "aplicación",
+      "del",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s451",
+    "es": "Apaga el móvil durante la película, por favor.",
+    "tokens": [
+      "Apaga",
+      "el",
+      "móvil",
+      "durante",
+      "la",
+      "película",
+      ",",
+      "por",
+      "favor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "móvil",
+        "distractors": [
+          "cargador",
+          "teclado",
+          "archivo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s971",
+    "es": "Le tomé una foto con la cámara del móvil.",
+    "tokens": [
+      "Le",
+      "tomé",
+      "una",
+      "foto",
+      "con",
+      "la",
+      "cámara",
+      "del",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s455",
+    "es": "La impresora está estropeada otra vez.",
+    "tokens": [
+      "La",
+      "impresora",
+      "está",
+      "estropeada",
+      "otra",
+      "vez",
+      "."
+    ]
+  },
+  {
+    "id": "s1450",
+    "es": "Necesito un cargador para mi móvil.",
+    "tokens": [
+      "Necesito",
+      "un",
+      "cargador",
+      "para",
+      "mi",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1455",
+    "es": "Siempre tomo fotos con el móvil.",
+    "tokens": [
+      "Siempre",
+      "tomo",
+      "fotos",
+      "con",
+      "el",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1459",
+    "es": "Leo las noticias en el móvil.",
+    "tokens": [
+      "Leo",
+      "las",
+      "noticias",
+      "en",
+      "el",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1462",
+    "es": "Ayer se me olvidó el móvil en el autobús.",
+    "tokens": [
+      "Ayer",
+      "se",
+      "me",
+      "olvidó",
+      "el",
+      "móvil",
+      "en",
+      "el",
+      "autobús",
+      "."
+    ]
+  },
+  {
+    "id": "s1464",
+    "es": "Estoy cargando el móvil, ya casi no tiene batería.",
+    "tokens": [
+      "Estoy",
+      "cargando",
+      "el",
+      "móvil",
+      ",",
+      "ya",
+      "casi",
+      "no",
+      "tiene",
+      "batería",
+      "."
+    ]
+  },
+  {
+    "id": "s1470",
+    "es": "Borré todas las fotos viejas del móvil.",
+    "tokens": [
+      "Borré",
+      "todas",
+      "las",
+      "fotos",
+      "viejas",
+      "del",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1475",
+    "es": "Ayer perdí mi móvil y lo encontré en el coche.",
+    "tokens": [
+      "Ayer",
+      "perdí",
+      "mi",
+      "móvil",
+      "y",
+      "lo",
+      "encontré",
+      "en",
+      "el",
+      "coche",
+      "."
+    ]
+  },
+  {
+    "id": "s1482",
+    "es": "Mi hijo se la pasa pegado al móvil y casi no charla con nosotros.",
+    "tokens": [
+      "Mi",
+      "hijo",
+      "se",
+      "la",
+      "pasa",
+      "pegado",
+      "al",
+      "móvil",
+      "y",
+      "casi",
+      "no",
+      "charla",
+      "con",
+      "nosotros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "charla",
+        "lemma": "charlar",
+        "hint": "charlar · él · presente",
+        "distractors": [
+          "charlo",
+          "charlas",
+          "charlamos"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se"
+      }
+    ]
+  },
+  {
+    "id": "s1686",
+    "es": "No encuentro mi móvil. ¿Lo viste en la sala?",
+    "tokens": [
+      "No",
+      "encuentro",
+      "mi",
+      "móvil",
+      ".",
+      "¿",
+      "Lo",
+      "viste",
+      "en",
+      "la",
+      "sala",
+      "?"
+    ]
+  },
+  {
+    "id": "s1697",
+    "es": "Mi móvil es de hace cinco años; el tuyo es más nuevo.",
+    "tokens": [
+      "Mi",
+      "móvil",
+      "es",
+      "de",
+      "hace",
+      "cinco",
+      "años",
+      ";",
+      "el",
+      "tuyo",
+      "es",
+      "más",
+      "nuevo",
+      "."
+    ]
+  },
+  {
+    "id": "s1700",
+    "es": "Esta cámara es mejor que la de mi móvil.",
+    "tokens": [
+      "Esta",
+      "cámara",
+      "es",
+      "mejor",
+      "que",
+      "la",
+      "de",
+      "mi",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1730",
+    "es": "Los niños no pueden usar el móvil en la escuela.",
+    "tokens": [
+      "Los",
+      "niños",
+      "no",
+      "pueden",
+      "usar",
+      "el",
+      "móvil",
+      "en",
+      "la",
+      "escuela",
+      "."
+    ]
+  },
+  {
+    "id": "s1961",
+    "es": "En el avión no se puede usar el móvil.",
+    "tokens": [
+      "En",
+      "el",
+      "avión",
+      "no",
+      "se",
+      "puede",
+      "usar",
+      "el",
+      "móvil",
+      "."
+    ]
+  },
+  {
+    "id": "s1803",
+    "es": "Yo compraría un ordenador nuevo, pero es muy caro.",
+    "tokens": [
+      "Yo",
+      "compraría",
+      "un",
+      "ordenador",
+      "nuevo",
+      ",",
+      "pero",
+      "es",
+      "muy",
+      "caro",
+      "."
+    ]
+  },
+  {
+    "id": "s579",
+    "es": "Se me estropeó el ordenador y perdí todos mis archivos.",
+    "tokens": [
+      "Se",
+      "me",
+      "estropeó",
+      "el",
+      "ordenador",
+      "y",
+      "perdí",
+      "todos",
+      "mis",
+      "archivos",
+      "."
+    ]
+  },
+  {
+    "id": "s1453",
+    "es": "El ordenador está en mi habitación.",
+    "tokens": [
+      "El",
+      "ordenador",
+      "está",
+      "en",
+      "mi",
+      "habitación",
+      "."
+    ]
+  },
+  {
+    "id": "s1460",
+    "es": "La pantalla de mi ordenador es muy grande.",
+    "tokens": [
+      "La",
+      "pantalla",
+      "de",
+      "mi",
+      "ordenador",
+      "es",
+      "muy",
+      "grande",
+      "."
+    ]
+  },
+  {
+    "id": "s1461",
+    "es": "¿Puedo usar tu ordenador un momento?",
+    "tokens": [
+      "¿",
+      "Puedo",
+      "usar",
+      "tu",
+      "ordenador",
+      "un",
+      "momento",
+      "?"
+    ]
+  },
+  {
+    "id": "s1463",
+    "es": "Antes mi abuela no sabía usar el ordenador.",
+    "tokens": [
+      "Antes",
+      "mi",
+      "abuela",
+      "no",
+      "sabía",
+      "usar",
+      "el",
+      "ordenador",
+      "."
+    ]
+  },
+  {
+    "id": "s1466",
+    "es": "Mañana compraré un ordenador nuevo.",
+    "tokens": [
+      "Mañana",
+      "compraré",
+      "un",
+      "ordenador",
+      "nuevo",
+      "."
+    ]
+  },
+  {
+    "id": "s1472",
+    "es": "Mi hermano me ayudará con el ordenador.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "me",
+      "ayudará",
+      "con",
+      "el",
+      "ordenador",
+      "."
+    ]
+  },
+  {
+    "id": "s1476",
+    "es": "Se me colgó el ordenador justo cuando iba a mandar el trabajo.",
+    "tokens": [
+      "Se",
+      "me",
+      "colgó",
+      "el",
+      "ordenador",
+      "justo",
+      "cuando",
+      "iba",
+      "a",
+      "mandar",
+      "el",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s1698",
+    "es": "Este ordenador es tan rápido como el de mi trabajo.",
+    "tokens": [
+      "Este",
+      "ordenador",
+      "es",
+      "tan",
+      "rápido",
+      "como",
+      "el",
+      "de",
+      "mi",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s1702",
+    "es": "El ordenador más barato de la tienda cuesta cinco mil pesos.",
+    "tokens": [
+      "El",
+      "ordenador",
+      "más",
+      "barato",
+      "de",
+      "la",
+      "tienda",
+      "cuesta",
+      "cinco",
+      "mil",
+      "pesos",
+      "."
+    ]
+  },
+  {
+    "id": "s2119",
+    "es": "Si mi ordenador no fuera tan lento, trabajaría mucho más rápido.",
+    "tokens": [
+      "Si",
+      "mi",
+      "ordenador",
+      "no",
+      "fuera",
+      "tan",
+      "lento",
+      ",",
+      "trabajaría",
+      "mucho",
+      "más",
+      "rápido",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "fuera",
+        "hint": "ser · él · subjuntivo imperfecto"
+      }
+    ]
+  },
+  {
+    "id": "s2121",
+    "es": "En cuanto llegue a casa y abra el ordenador, te mando el archivo.",
+    "tokens": [
+      "En",
+      "cuanto",
+      "llegue",
+      "a",
+      "casa",
+      "y",
+      "abra",
+      "el",
+      "ordenador",
+      ",",
+      "te",
+      "mando",
+      "el",
+      "archivo",
+      "."
+    ]
+  },
+  {
+    "id": "s2126",
+    "es": "Mientras se descarga la actualización, no apagues el móvil ni cierres la aplicación.",
+    "tokens": [
+      "Mientras",
+      "se",
+      "descarga",
+      "la",
+      "actualización",
+      ",",
+      "no",
+      "apagues",
+      "el",
+      "móvil",
+      "ni",
+      "cierres",
+      "la",
+      "aplicación",
+      "."
+    ]
+  },
+  {
+    "id": "s1479",
+    "es": "Me arrepentí de no haber hecho una copia de seguridad antes de la actualización.",
+    "tokens": [
+      "Me",
+      "arrepentí",
+      "de",
+      "no",
+      "haber",
+      "hecho",
+      "una",
+      "copia",
+      "de",
+      "seguridad",
+      "antes",
+      "de",
+      "la",
+      "actualización",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "newIndex": 11,
+        "answer": "de"
+      }
+    ]
+  }
+]

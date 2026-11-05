@@ -5,6 +5,7 @@ import { Button } from '../../components/Button'
 import { tipById } from '../../data'
 import { useT } from '../../i18n'
 import { loadSeenCounts, recordAttempt } from '../../lib/attempts'
+import { holdCelebrations } from '../../lib/celebration'
 import { playSound, soundForVerdict } from '../../lib/sound'
 import { personLabel, TENSE_LABELS } from '../../lib/conjugate'
 import {
@@ -230,6 +231,11 @@ export function LessonPage() {
   const task: Task | undefined = tasks?.[index]
   const total = tasks?.length ?? 0
   const finished = total > 0 && index >= total
+  // A lesson of only pravda/nepravda cards runs without verdicts: they all come on the result screen.
+  const flow = filter.type === 'truefalse' && !fromMistakes && !pathStep
+
+  // A daily goal reached by a card would give its verdict away: it is celebrated on the result screen.
+  useEffect(() => (flow && !finished ? holdCelebrations() : undefined), [flow, finished])
 
   // The result screen ends the lesson (a correction round's result: it has ended already).
   useEffect(() => {
@@ -290,6 +296,12 @@ export function LessonPage() {
     if (!task || grade || !isAnswered(value)) return
     setAnswer(value)
     const result = gradeTask(task, value)
+    if (flow && task.kind === 'truefalse') {
+      // No verdict yet: the card is counted and the next one comes.
+      if (result.correct) void recordAttempt(task.kind, task.itemId, true)
+      next({}, result)
+      return
+    }
     // A wrong answer can be fixed and checked again, as often as it takes:
     // it sounds like "not yet", the sound of a wrong answer is kept for the one that stands.
     if (!result.correct && canRetry(task)) {
@@ -322,11 +334,15 @@ export function LessonPage() {
     setAnswer(emptyAnswer(rest[index]))
   }
 
-  /** Records the answer (a right one already counted when it was shown) and moves on. `resolve` drops the item from the mistakes list. */
-  const next = ({ override, resolve }: { override?: boolean; resolve?: boolean } = {}) => {
-    if (!task || !grade || !tasks) return
-    const correct = override ?? grade.correct
-    if (!grade.correct) void recordAttempt(task.kind, task.itemId, correct)
+  /**
+   * Records the answer (a right one already counted when it was shown) and moves on. `resolve` drops the item from the mistakes list.
+   * `given` is the verdict of a card that was never shown (a pravda/nepravda lesson).
+   */
+  const next = ({ override, resolve }: { override?: boolean; resolve?: boolean } = {}, given?: Grade) => {
+    const verdict = given ?? grade
+    if (!task || !verdict || !tasks) return
+    const correct = override ?? verdict.correct
+    if (!verdict.correct) void recordAttempt(task.kind, task.itemId, correct)
     void recordPractice(task.kind, task.itemId, correct)
     run.current?.answered()
     if (!correct) void recordMistake(task.kind, task.itemId)
@@ -334,7 +350,7 @@ export function LessonPage() {
     // stay there. (The mistakes list itself asks "Nechať / Odstrániť" instead.)
     // Preparing for a test puts the mistakes first: one answered right is fixed too.
     if (resolve || ((round !== 'full' || preparing) && correct && !fromMistakes)) void removeMistake(task.kind, task.itemId)
-    setAnswers([...answers, { task, grade, correct }])
+    setAnswers([...answers, { task, grade: verdict, correct }])
     if (runLesson !== undefined || pathStep) {
       const nextSolved = correct ? new Set(solved).add(task.itemId) : solved
       setSolved(nextSolved)
@@ -402,7 +418,8 @@ export function LessonPage() {
         </span>
       </header>
 
-      <main className="px-4 pt-4 pb-80">
+      {/* A pravda/nepravda card fills the screen; everything else leaves room for the feedback sheet. */}
+      <main className={`px-4 pt-4 ${task?.kind === 'truefalse' && !grade && !finished && !overview && !intro ? 'pb-4' : 'pb-80'}`}>
         {locked ? (
           <div className="pt-10 text-center">
             <p className="font-serif text-2xl font-semibold">{text.locked}</p>
@@ -440,6 +457,7 @@ export function LessonPage() {
               lessonNumber={runLesson}
               lessonScore={scored ? { score: solved.size, total: lessonTotal } : undefined}
               isRetry={round === 'fix'}
+              verdictsWaited={flow}
               totalLessons={totalLessons}
               step={
                 pathStep && {
@@ -489,7 +507,7 @@ export function LessonPage() {
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">
-                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} />
+                <TaskView key={`${index}-${task.itemId}`} task={task} answer={answer} onAnswer={setAnswer} onSubmit={check} onSkipRest={skipRest} onRecordingChange={setRecording} grade={grade} hint={hint} flow={flow} />
               </div>
             </>
           )

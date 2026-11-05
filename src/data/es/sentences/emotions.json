@@ -1,0 +1,200 @@
+[
+  {
+    "id": "s1126",
+    "es": "¿Estás enfadado conmigo?",
+    "tokens": [
+      "¿",
+      "Estás",
+      "enfadado",
+      "conmigo",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "enfadado",
+        "distractors": [
+          "abierto",
+          "barato",
+          "rojo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s326",
+    "es": "Mi jefe se enfadó conmigo.",
+    "tokens": [
+      "Mi",
+      "jefe",
+      "se",
+      "enfadó",
+      "conmigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enfadó",
+        "lemma": "enfadarse",
+        "hint": "enfadarse · él · pretérito",
+        "distractors": [
+          "enfadé",
+          "enfadaste",
+          "enfadamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s398",
+    "es": "Mi novia se enfadó conmigo.",
+    "tokens": [
+      "Mi",
+      "novia",
+      "se",
+      "enfadó",
+      "conmigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enfadó",
+        "lemma": "enfadarse",
+        "hint": "enfadarse · ella · pretérito",
+        "distractors": [
+          "enfadé",
+          "enfadaste",
+          "enfadamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s535",
+    "es": "Se enfadó conmigo porque olvidé su cumpleaños.",
+    "tokens": [
+      "Se",
+      "enfadó",
+      "conmigo",
+      "porque",
+      "olvidé",
+      "su",
+      "cumpleaños",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "enfadó",
+        "lemma": "enfadarse",
+        "hint": "enfadarse · ella · pretérito",
+        "distractors": [
+          "enfadé",
+          "enfadaste",
+          "enfadamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1842",
+    "es": "No quiero que te enfades conmigo.",
+    "tokens": [
+      "No",
+      "quiero",
+      "que",
+      "te",
+      "enfades",
+      "conmigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "enfades",
+        "lemma": "enfadarse",
+        "hint": "enfadarse · tú",
+        "distractors": [
+          "enfade",
+          "enfademos",
+          "enfaden"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1138",
+    "es": "Mi abuelo se enfadará si llegamos tarde.",
+    "tokens": [
+      "Mi",
+      "abuelo",
+      "se",
+      "enfadará",
+      "si",
+      "llegamos",
+      "tarde",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "enfadará",
+        "lemma": "enfadarse",
+        "hint": "enfadarse · él · futuro",
+        "distractors": [
+          "enfadaré",
+          "enfadarás",
+          "enfadaremos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1828",
+    "es": "Si fueras más paciente, no te enfadarías tanto.",
+    "tokens": [
+      "Si",
+      "fueras",
+      "más",
+      "paciente",
+      ",",
+      "no",
+      "te",
+      "enfadarías",
+      "tanto",
+      "."
+    ]
+  },
+  {
+    "id": "s1140",
+    "es": "Estaba celoso porque mi novia charlaba mucho con su ex.",
+    "tokens": [
+      "Estaba",
+      "celoso",
+      "porque",
+      "mi",
+      "novia",
+      "charlaba",
+      "mucho",
+      "con",
+      "su",
+      "ex",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "charlaba",
+        "lemma": "charlar",
+        "hint": "charlar · ella · imperfecto",
+        "distractors": [
+          "charlabas",
+          "charlábamos",
+          "charlaban"
+        ]
+      }
+    ]
+  }
+]

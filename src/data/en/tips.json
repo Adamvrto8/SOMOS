@@ -606,6 +606,32 @@
     ]
   },
   {
+    "id": "perfecto",
+    "variants": { "mx": "In Mexico he hablado is used less: for today and the recent past people say the pretérito (hoy comí tacos, ya terminé). The perfecto is heard rather for experience and for what lasts until now (¿has ido a Oaxaca?, he vivido aquí diez años)." },
+    "title": "Present perfect (he hablado)",
+    "intro": "An action in a period that is not over yet (today, this week) or that matters now: hoy he comido tacos. In Spain it is an everyday past tense; in Mexico it is used less.",
+    "rules": [
+      {
+        "id": "form",
+        "title": "he + participle",
+        "text": "haber in the present (he, has, ha, hemos, habéis, han) and the participle, which does not change: hablar → hablado, comer → comido, vivir → vivido. After a vowel -ído: leído, traído.",
+        "examples": ["Today I ate very late.", "Have you already seen the movie?"]
+      },
+      {
+        "id": "participle",
+        "title": "Irregular participles",
+        "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "examples": ["I haven't done anything yet."]
+      },
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "In Spain for an action in a period that is not over: hoy, esta semana, este año, and with ya, todavía no, alguna vez. For yesterday and earlier it takes the preterite: ayer comí. In Mexico the preterite is normal in all these cases.",
+        "examples": ["This week I have worked a lot.", "Yesterday I worked a lot."]
+      }
+    ]
+  },
+  {
     "id": "pluscuamperfecto",
     "title": "Pluperfect (had done)",
     "intro": "An action that happened before another past action: when I arrived, the movie had already started.",

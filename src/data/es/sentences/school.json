@@ -1,0 +1,59 @@
+[
+  {
+    "id": "s1393",
+    "es": "Necesito un bolígrafo y un cuaderno.",
+    "tokens": [
+      "Necesito",
+      "un",
+      "bolígrafo",
+      "y",
+      "un",
+      "cuaderno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 1,
+        "answer": "un"
+      }
+    ]
+  },
+  {
+    "id": "s1410",
+    "es": "Aunque tenía beca, apenas me alcanzaba para el alquiler.",
+    "tokens": [
+      "Aunque",
+      "tenía",
+      "beca",
+      ",",
+      "apenas",
+      "me",
+      "alcanzaba",
+      "para",
+      "el",
+      "alquiler",
+      "."
+    ]
+  },
+  {
+    "id": "s2108",
+    "es": "Si la escuela tuviera más ordenadores, los niños aprenderían programación más rápido.",
+    "tokens": [
+      "Si",
+      "la",
+      "escuela",
+      "tuviera",
+      "más",
+      "ordenadores",
+      ",",
+      "los",
+      "niños",
+      "aprenderían",
+      "programación",
+      "más",
+      "rápido",
+      "."
+    ]
+  }
+]

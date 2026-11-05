@@ -369,6 +369,13 @@
         "lemma": "parecer",
         "hint": "parecer · ella · presente",
         "distractors": ["parecen", "parezco", "parecerán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -387,6 +394,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Lleva", "Llevamos", "Llevaré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "hacia", "sobre"]
       }
     ]
   },
@@ -405,6 +419,13 @@
         "lemma": "caerse",
         "hint": "caerse · él · pretérito",
         "distractors": ["cae", "caí", "caerá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -508,6 +529,13 @@
         "lemma": "medir",
         "hint": "medir · tú · presente",
         "distractors": ["mide", "mediste", "medías"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuánto",
+        "lemma": "cuánto",
+        "hint": "opytovacie slovo",
+        "distractors": ["Cuándo", "Quién", "Dónde"]
       }
     ]
   },
@@ -643,6 +671,13 @@
         "lemma": "salir",
         "hint": "salir · gerundio",
         "distractors": ["salen", "salió", "salir"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -1362,6 +1397,13 @@
         "lemma": "tomar",
         "hint": "tomar · gerundio",
         "distractors": ["toma", "tomó", "tomaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "hagas",
+        "lemma": "hacer",
+        "hint": "hacer · tú · subjuntivo",
+        "distractors": ["haz", "hagan", "haga"]
       }
     ]
   },
@@ -1380,6 +1422,13 @@
         "lemma": "costar",
         "hint": "costar · él · pretérito",
         "distractors": ["cuesta", "costaban", "costará"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1423,6 +1472,13 @@
         "lemma": "usar",
         "hint": "usar · yo · presente",
         "distractors": ["usas", "usé", "usaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1458,6 +1514,13 @@
         "lemma": "escuchar",
         "hint": "escuchar · yo · pretérito",
         "distractors": ["escucho", "escuchó", "escuchaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "sino", "aunque"]
       }
     ]
   },
@@ -1632,6 +1695,186 @@
         "lemma": "doler",
         "hint": "doler · ellos · presente",
         "distractors": ["duele", "dolieron", "dolían"]
+      }
+    ]
+  },
+  {
+    "id": "s1982",
+    "es": "Mientras el doctor me revisaba la garganta, yo trataba de no toser.",
+    "sk": "Kým mi lekár vyšetroval hrdlo, snažil som sa nekašľať.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["imperfecto"],
+    "tokens": ["Mientras", "el", "doctor", "me", "revisaba", "la", "garganta", ",", "yo", "trataba", "de", "no", "toser", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors": ["Porque", "Sino", "Donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1983",
+    "es": "Es importante que descanses los ojos cuando pasas horas frente a la pantalla.",
+    "sk": "Je dôležité, aby si oddychoval očiam, keď trávite hodiny pred obrazovkou.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Es", "importante", "que", "descanses", "los", "ojos", "cuando", "pasas", "horas", "frente", "a", "la", "pantalla", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "descanses",
+        "lemma": "descansar",
+        "hint": "descansar · tú · subjuntivo",
+        "distractors": ["descansas", "descansaste", "descansarás"]
+      }
+    ]
+  },
+  {
+    "id": "s1984",
+    "es": "Si tuviera las piernas más fuertes, correría el maratón de la ciudad.",
+    "sk": "Keby som mal silnejšie nohy, bežal by som mestský maratón.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "tokens": ["Si", "tuviera", "las", "piernas", "más", "fuertes", ",", "correría", "el", "maratón", "de", "la", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "correría",
+        "lemma": "correr",
+        "hint": "correr · yo · condicional",
+        "distractors": ["corro", "corrí", "correré"]
+      }
+    ]
+  },
+  {
+    "id": "s1985",
+    "es": "La doctora, quien me atendió ayer, dice que el hueso está sanando bien.",
+    "sk": "Lekárka, ktorá ma včera ošetrila, hovorí, že kosť sa hojí dobre.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["La", "doctora", ",", "quien", "me", "atendió", "ayer", ",", "dice", "que", "el", "hueso", "está", "sanando", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s1986",
+    "es": "Ojalá no me duela la cabeza mañana, porque tengo un examen importante.",
+    "sk": "Kiežby ma zajtra nebolela hlava, lebo mám dôležitú skúšku.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "tokens": ["Ojalá", "no", "me", "duela", "la", "cabeza", "mañana", ",", "porque", "tengo", "un", "examen", "importante", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ojalá",
+        "lemma": "ojalá",
+        "hint": "kiež",
+        "distractors": ["Mientras", "Porque", "Sino"]
+      }
+    ]
+  },
+  {
+    "id": "s1987",
+    "es": "Cuando salga del hospital, lo primero que haré será abrazar a mis hijos.",
+    "sk": "Keď vyjdem z nemocnice, prvé, čo urobím, bude objať svoje deti.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "salga", "del", "hospital", ",", "lo", "primero", "que", "haré", "será", "abrazar", "a", "mis", "hijos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · yo · subjuntivo",
+        "distractors": ["salgo", "salí", "saldré"]
+      }
+    ]
+  },
+  {
+    "id": "s1988",
+    "es": "Me dijo que le dolía el estómago desde que había comido en la calle.",
+    "sk": "Povedal mi, že ho bolí žalúdok odvtedy, čo jedol na ulici.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["imperfecto", "pluscuamperfecto"],
+    "tokens": ["Me", "dijo", "que", "le", "dolía", "el", "estómago", "desde", "que", "había", "comido", "en", "la", "calle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dolía",
+        "lemma": "doler",
+        "hint": "doler · él · imperfecto",
+        "distractors": ["duele", "dolió", "dolerá"]
+      }
+    ]
+  },
+  {
+    "id": "s1989",
+    "es": "Uso una almohada especial para que el cuello no me duela al despertar.",
+    "sk": "Používam špeciálny vankúš, aby ma po zobudení nebolel krk.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Uso", "una", "almohada", "especial", "para", "que", "el", "cuello", "no", "me", "duela", "al", "despertar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "aby",
+        "distractors": ["porque", "sino", "donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1990",
+    "es": "Si me hubieran dicho que fumar dañaba tanto los pulmones, lo habría dejado antes.",
+    "sk": "Keby mi povedali, ako veľmi fajčenie škodí pľúcam, bol by som s ním prestal skôr.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "tokens": ["Si", "me", "hubieran", "dicho", "que", "fumar", "dañaba", "tanto", "los", "pulmones", ",", "lo", "habría", "dejado", "antes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Si",
+        "lemma": "si",
+        "hint": "ak",
+        "distractors": ["Porque", "Sino", "Donde"]
+      }
+    ]
+  },
+  {
+    "id": "s1991",
+    "es": "Me hicieron una radiografía para ver si la fractura había sanado por completo.",
+    "sk": "Urobili mi röntgen, aby zistili, či sa zlomenina úplne zahojila.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["pluscuamperfecto"],
+    "tokens": ["Me", "hicieron", "una", "radiografía", "para", "ver", "si", "la", "fractura", "había", "sanado", "por", "completo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "distractors": ["quien", "donde", "cuyo"]
       }
     ]
   }

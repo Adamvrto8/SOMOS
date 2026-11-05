@@ -1,0 +1,127 @@
+[
+  {
+    "id": "departamento",
+    "es": "piso",
+    "note": null,
+    "examples": [
+      {
+        "es": "Vivo en un piso pequeño.",
+        "sk": "Bývam v malom byte."
+      }
+    ]
+  },
+  {
+    "id": "regadera",
+    "es": "ducha",
+    "note": null,
+    "examples": [
+      {
+        "es": "La ducha no tiene agua caliente.",
+        "sk": "V sprche netečie teplá voda."
+      }
+    ]
+  },
+  {
+    "id": "cobija",
+    "es": "manta",
+    "note": null,
+    "examples": [
+      {
+        "es": "Hace frío, ¿me pasas una manta?",
+        "sk": "Je zima, podáš mi deku?"
+      }
+    ]
+  },
+  {
+    "id": "dueno",
+    "examples": [
+      {
+        "es": "El dueño del piso vive arriba.",
+        "sk": "Majiteľ bytu býva nad nami."
+      }
+    ]
+  },
+  {
+    "id": "plomero",
+    "es": "fontanero",
+    "note": null,
+    "examples": [
+      {
+        "es": "Hay que llamar al fontanero.",
+        "sk": "Treba zavolať inštalatéra."
+      }
+    ]
+  },
+  {
+    "id": "cochera",
+    "examples": [
+      {
+        "es": "El coche no cabe en la cochera.",
+        "sk": "Auto sa nezmestí do garáže."
+      }
+    ]
+  },
+  {
+    "id": "aval",
+    "examples": [
+      {
+        "es": "Para alquilar te piden un aval.",
+        "sk": "Pri prenájme od teba chcú ručiteľa."
+      }
+    ]
+  },
+  {
+    "id": "amueblado",
+    "examples": [
+      {
+        "es": "Buscamos un piso amueblado.",
+        "sk": "Hľadáme zariadený byt."
+      }
+    ]
+  },
+  {
+    "id": "condominio",
+    "examples": [
+      {
+        "es": "Vivimos en un condominio con piscina.",
+        "sk": "Bývame v obytnom komplexe s bazénom."
+      }
+    ]
+  },
+  {
+    "id": "renta",
+    "es": "alquiler",
+    "gender": "m",
+    "plural": "alquileres",
+    "examples": [
+      {
+        "es": "El alquiler es muy caro en el centro.",
+        "sk": "Nájom v centre je veľmi drahý."
+      }
+    ]
+  },
+  {
+    "id": "recamara",
+    "es": "dormitorio",
+    "gender": "m",
+    "plural": "dormitorios",
+    "examples": [
+      {
+        "es": "El piso tiene dos dormitorios.",
+        "sk": "Byt má dve spálne."
+      }
+    ]
+  },
+  {
+    "id": "foco",
+    "es": "bombilla",
+    "gender": "f",
+    "plural": "bombillas",
+    "examples": [
+      {
+        "es": "Se fundió la bombilla del baño.",
+        "sk": "V kúpeľni praskla žiarovka."
+      }
+    ]
+  }
+]

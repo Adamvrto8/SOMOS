@@ -1,0 +1,154 @@
+[
+  {
+    "id": "s257",
+    "es": "Me enfermé de gripe.",
+    "tokens": [
+      "Me",
+      "enfermé",
+      "de",
+      "gripe",
+      "."
+    ]
+  },
+  {
+    "id": "s851",
+    "es": "Tengo gripe y no puedo respirar bien.",
+    "tokens": [
+      "Tengo",
+      "gripe",
+      "y",
+      "no",
+      "puedo",
+      "respirar",
+      "bien",
+      "."
+    ]
+  },
+  {
+    "id": "s1249",
+    "es": "La gripe es muy contagiosa, así que mejor quédate en casa.",
+    "tokens": [
+      "La",
+      "gripe",
+      "es",
+      "muy",
+      "contagiosa",
+      ",",
+      "así",
+      "que",
+      "mejor",
+      "quédate",
+      "en",
+      "casa",
+      "."
+    ]
+  },
+  {
+    "id": "s1240",
+    "es": "La enfermera me puso la vacuna contra la gripe.",
+    "tokens": [
+      "La",
+      "enfermera",
+      "me",
+      "puso",
+      "la",
+      "vacuna",
+      "contra",
+      "la",
+      "gripe",
+      "."
+    ]
+  },
+  {
+    "id": "s1242",
+    "es": "Mi esposo está tosiendo mucho, creo que tiene gripe.",
+    "tokens": [
+      "Mi",
+      "esposo",
+      "está",
+      "tosiendo",
+      "mucho",
+      ",",
+      "creo",
+      "que",
+      "tiene",
+      "gripe",
+      "."
+    ]
+  },
+  {
+    "id": "s864",
+    "es": "Durante la pandemia todos usábamos mascarilla.",
+    "tokens": [
+      "Durante",
+      "la",
+      "pandemia",
+      "todos",
+      "usábamos",
+      "mascarilla",
+      "."
+    ]
+  },
+  {
+    "id": "s1253",
+    "es": "Tengo una enfermedad crónica, así que me hago una revisión cada tres meses.",
+    "tokens": [
+      "Tengo",
+      "una",
+      "enfermedad",
+      "crónica",
+      ",",
+      "así",
+      "que",
+      "me",
+      "hago",
+      "una",
+      "revisión",
+      "cada",
+      "tres",
+      "meses",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": [
+          "haces",
+          "hace",
+          "hacemos"
+        ]
+      },
+      {
+        "tokenIndex": 9,
+        "newIndex": 11,
+        "answer": "cada"
+      }
+    ]
+  },
+  {
+    "id": "s1259",
+    "es": "Nos contagiamos todos en la oficina por no usar mascarilla.",
+    "tokens": [
+      "Nos",
+      "contagiamos",
+      "todos",
+      "en",
+      "la",
+      "oficina",
+      "por",
+      "no",
+      "usar",
+      "mascarilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "mascarilla"
+      }
+    ]
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "s208",
+    "es": "Me llevo esta chaqueta.",
+    "tokens": [
+      "Me",
+      "llevo",
+      "esta",
+      "chaqueta",
+      "."
+    ]
+  },
+  {
+    "id": "s1669",
+    "es": "Esa chaqueta es muy bonita; la voy a comprar.",
+    "tokens": [
+      "Esa",
+      "chaqueta",
+      "es",
+      "muy",
+      "bonita",
+      ";",
+      "la",
+      "voy",
+      "a",
+      "comprar",
+      "."
+    ]
+  },
+  {
+    "id": "s1675",
+    "es": "¿Dónde compraste esos gafas? Los compré en el centro.",
+    "tokens": [
+      "¿",
+      "Dónde",
+      "compraste",
+      "esos",
+      "gafas",
+      "?",
+      "Los",
+      "compré",
+      "en",
+      "el",
+      "centro",
+      "."
+    ]
+  },
+  {
+    "id": "s804",
+    "es": "Compramos el coche a plazos, con un enganche del veinte por ciento.",
+    "tokens": [
+      "Compramos",
+      "el",
+      "coche",
+      "a",
+      "plazos",
+      ",",
+      "con",
+      "un",
+      "enganche",
+      "del",
+      "veinte",
+      "por",
+      "ciento",
+      "."
+    ]
+  },
+  {
+    "id": "s223",
+    "es": "Vendí mi coche viejo.",
+    "tokens": [
+      "Vendí",
+      "mi",
+      "coche",
+      "viejo",
+      "."
+    ]
+  },
+  {
+    "id": "s441",
+    "es": "Mañana compraré los billetes.",
+    "tokens": [
+      "Mañana",
+      "compraré",
+      "los",
+      "billetes",
+      "."
+    ]
+  },
+  {
+    "id": "s798",
+    "es": "¿Cuánto me cobra por las dos camisetas?",
+    "tokens": [
+      "¿",
+      "Cuánto",
+      "me",
+      "cobra",
+      "por",
+      "las",
+      "dos",
+      "camisetas",
+      "?"
+    ]
+  },
+  {
+    "id": "s1438",
+    "es": "Mi esposo devolvió la chaqueta porque le quedaba chica.",
+    "tokens": [
+      "Mi",
+      "esposo",
+      "devolvió",
+      "la",
+      "chaqueta",
+      "porque",
+      "le",
+      "quedaba",
+      "chica",
+      "."
+    ]
+  },
+  {
+    "id": "s1439",
+    "es": "Esperaré al Buen Fin, porque ahora todo está carísimo.",
+    "tokens": [
+      "Esperaré",
+      "al",
+      "Buen",
+      "Fin",
+      ",",
+      "porque",
+      "ahora",
+      "todo",
+      "está",
+      "carísimo",
+      "."
+    ]
+  },
+  {
+    "id": "s1773",
+    "es": "Quería esa chaqueta, pero ya la habían vendido.",
+    "tokens": [
+      "Quería",
+      "esa",
+      "chaqueta",
+      ",",
+      "pero",
+      "ya",
+      "la",
+      "habían",
+      "vendido",
+      "."
+    ]
+  },
+  {
+    "id": "s1885",
+    "es": "Pagué mil pesos por la chaqueta.",
+    "tokens": [
+      "Pagué",
+      "mil",
+      "pesos",
+      "por",
+      "la",
+      "chaqueta",
+      "."
+    ]
+  }
+]

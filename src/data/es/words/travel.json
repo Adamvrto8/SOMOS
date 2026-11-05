@@ -1,0 +1,43 @@
+[
+  {
+    "id": "boleto",
+    "es": "billete",
+    "note": null,
+    "examples": [
+      {
+        "es": "Ya compré los billetes de avión.",
+        "sk": "Letenky už mám kúpené."
+      }
+    ]
+  },
+  {
+    "id": "reservacion",
+    "es": "reserva",
+    "plural": "reservas",
+    "note": null,
+    "examples": [
+      {
+        "es": "Tengo una reserva a nombre de Adam.",
+        "sk": "Mám rezerváciu na meno Adam."
+      }
+    ]
+  },
+  {
+    "id": "ida-y-vuelta",
+    "examples": [
+      {
+        "es": "Un billete de ida y vuelta, por favor.",
+        "sk": "Spiatočný lístok, prosím."
+      }
+    ]
+  },
+  {
+    "id": "terminal",
+    "examples": [
+      {
+        "es": "El autobús sale de la terminal del norte.",
+        "sk": "Autobus odchádza zo severného terminálu."
+      }
+    ]
+  }
+]

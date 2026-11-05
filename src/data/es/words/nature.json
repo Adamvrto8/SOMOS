@@ -1,0 +1,31 @@
+[
+  {
+    "id": "planta",
+    "examples": [
+      {
+        "es": "Tengo muchas plantas en mi piso.",
+        "sk": "V byte mám veľa kvetín."
+      }
+    ]
+  },
+  {
+    "id": "raiz",
+    "examples": [
+      {
+        "es": "Las raíces del árbol rompieron la acera.",
+        "sk": "Korene stromu rozbili chodník."
+      }
+    ]
+  },
+  {
+    "id": "sustentable",
+    "es": "sostenible",
+    "note": null,
+    "examples": [
+      {
+        "es": "Queremos un turismo más sostenible.",
+        "sk": "Chceme udržateľnejší turizmus."
+      }
+    ]
+  }
+]

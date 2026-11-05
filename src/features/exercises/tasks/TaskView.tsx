@@ -25,13 +25,15 @@ interface TaskViewProps {
   grade: Grade | null
   /** A wrong try the learner may still fix. */
   hint?: Grade | null
+  /** Pravda/nepravda cards follow each other without a verdict (a lesson of only them). */
+  flow?: boolean
 }
 
 const Pill = ({ children }: { children: string }) => (
   <span className="rounded-full bg-surface-2 px-3 py-1 text-sm font-medium">{children}</span>
 )
 
-export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint }: TaskViewProps) {
+export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecordingChange, grade, hint, flow }: TaskViewProps) {
   const dictionary = useT()
   const labels = dictionary.lesson.task
   const language = useLanguage()
@@ -129,7 +131,7 @@ export function TaskView({ task, answer, onAnswer, onSubmit, onSkipRest, onRecor
       )
 
     case 'truefalse':
-      return <TrueFalseView task={task} onAnswer={onAnswer} onSubmit={onSubmit} status={status} />
+      return <TrueFalseView task={task} onAnswer={onAnswer} onSubmit={onSubmit} status={status} flow={flow} />
 
     case 'findmistake':
       return <FindMistakeView task={task} onSubmit={onSubmit} status={status} />
