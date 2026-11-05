@@ -149,6 +149,16 @@
     "related": ["reflexive", "progresivo"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Čo robíš bežne (siempre, todos los días, los lunes), čo platí vždy, a v Mexiku často aj blízka budúcnosť: Mañana te llamo.",
+        "examples": [
+          { "es": "Todos los días tomo el camión.", "sk": "Každý deň chodím autobusom." },
+          { "es": "Mi hermana vive en Monterrey.", "sk": "Moja sestra býva v Monterrey." },
+          { "es": "Mañana te llamo.", "sk": "Zajtra ti zavolám." }
+        ]
+      },
+      {
         "id": "ar",
         "title": "Slovesá na -ar",
         "text": "hablar: hablo, hablas, habla, hablamos, hablan.",
@@ -200,6 +210,16 @@
     "intro": "Hovorí o deji, ktorý sa stal a skončil: včera, minulý týždeň, raz. V Mexiku je to bežný minulý čas aj pre nedávne udalosti.",
     "related": ["imperfecto", "preterito-imperfecto"],
     "rules": [
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Dej, ktorý sa stal a skončil v určitom čase: ayer, anoche, el lunes, la semana pasada, en 2020, una vez. Na opis a zvyky v minulosti je imperfecto.",
+        "examples": [
+          { "es": "Ayer platiqué con mi abuela.", "sk": "Včera som sa rozprával s babkou." },
+          { "es": "El año pasado fuimos a Oaxaca.", "sk": "Minulý rok sme boli v Oaxace." },
+          { "es": "Anoche no dormí bien.", "sk": "Včera v noci som zle spal." }
+        ]
+      },
       {
         "id": "ar",
         "title": "Slovesá na -ar",
@@ -266,6 +286,16 @@
     "related": ["preterito", "preterito-imperfecto"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Zvyk (siempre, todos los días, antes), opis v minulosti, vek a čas.",
+        "examples": [
+          { "es": "Antes trabajaba en un banco.", "sk": "Predtým som pracoval v banke." },
+          { "es": "Tenía diez años.", "sk": "Mal som desať rokov." },
+          { "es": "Eran las ocho.", "sk": "Bolo osem hodín." }
+        ]
+      },
+      {
         "id": "ar",
         "title": "Slovesá na -ar",
         "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablaban. Tvar pre yo a él je rovnaký.",
@@ -282,16 +312,6 @@
         "title": "Len tri nepravidelné slovesá",
         "text": "ser: era, eras, era, éramos, eran. ir: iba, ibas, iba, íbamos, iban. ver: veía, veías, veía, veíamos, veían.",
         "examples": [{ "es": "Cuando era niño, iba a la escuela a pie.", "sk": "Keď som bol malý, chodil som do školy pešo." }]
-      },
-      {
-        "id": "use",
-        "title": "Kedy sa používa",
-        "text": "Zvyk (siempre, todos los días, antes), opis v minulosti, vek a čas.",
-        "examples": [
-          { "es": "Antes trabajaba en un banco.", "sk": "Predtým som pracoval v banke." },
-          { "es": "Tenía diez años.", "sk": "Mal som desať rokov." },
-          { "es": "Eran las ocho.", "sk": "Bolo osem hodín." }
-        ]
       }
     ]
   },
@@ -344,6 +364,16 @@
     "related": ["presente"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Plány a predpovede na neskôr (mañana, el próximo año, algún día) a sľuby. V bežnej reči sa častejšie povie ir a + neurčitok.",
+        "examples": [
+          { "es": "El próximo año viviré en Guadalajara.", "sk": "Budúci rok budem bývať v Guadalajare." },
+          { "es": "Mañana lloverá en la tarde.", "sk": "Zajtra poobede bude pršať." },
+          { "es": "Te lo prometo, llegaré a tiempo.", "sk": "Sľubujem, prídem načas." }
+        ]
+      },
+      {
         "id": "endings",
         "title": "Neurčitok + koncovka",
         "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablarán. Rovnako comeré, viviré.",
@@ -387,6 +417,15 @@
     "related": ["ser-estar", "presente"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy stačí presente",
+        "text": "Na zvyky a blízku budúcnosť sa používa presente, nie priebehový čas.",
+        "examples": [
+          { "es": "Trabajo en un banco.", "sk": "Pracujem v banke." },
+          { "es": "Mañana trabajo.", "sk": "Zajtra pracujem." }
+        ]
+      },
+      {
         "id": "form",
         "title": "estar + gerundium",
         "text": "Časuje sa len estar: estoy, estás, está, estamos, están. Gerundium sa nemení.",
@@ -408,15 +447,6 @@
         "examples": [
           { "es": "El niño está durmiendo.", "sk": "Dieťa práve spí." },
           { "es": "Estoy leyendo un libro.", "sk": "Čítam knihu." }
-        ]
-      },
-      {
-        "id": "use",
-        "title": "Kedy stačí presente",
-        "text": "Na zvyky a blízku budúcnosť sa používa presente, nie priebehový čas.",
-        "examples": [
-          { "es": "Trabajo en un banco.", "sk": "Pracujem v banke." },
-          { "es": "Mañana trabajo.", "sk": "Zajtra pracujem." }
         ]
       }
     ]
@@ -695,6 +725,16 @@
     "related": ["subjuntivo", "reflexive", "object-pronouns"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Keď niekoho o niečo žiadaš, radíš mu alebo dávaš pokyny: recept, cesta, ponuka. S por favor to znie zdvorilo.",
+        "examples": [
+          { "es": "Pásame la sal, por favor.", "sk": "Podaj mi, prosím, soľ." },
+          { "es": "Siga derecho y dé vuelta a la derecha.", "sk": "Choďte rovno a odbočte doprava." },
+          { "es": "Pasa, estás en tu casa.", "sk": "Poď ďalej, cíť sa ako doma." }
+        ]
+      },
+      {
         "id": "tu",
         "title": "Pre tú: tvar él",
         "text": "Kladný imperativ pre tú je rovnaký ako tvar él v prítomnom čase: habla, come, escribe, piensa, duerme.",
@@ -750,6 +790,12 @@
     "related": ["subjuntivo-wishes", "subjuntivo-clauses", "imperativo", "subj-imperfecto"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Po slovesách želania a citu, keď má vedľajšia veta iný podmet (quiero que vengas), po ojalá, po para que a pri zápornom názore (no creo que).",
+        "examples": [{ "es": "Te llamo para que sepas la noticia.", "sk": "Volám ti, aby si vedel tú novinu." }]
+      },
+      {
         "id": "ar",
         "title": "Slovesá na -ar: koncovky s -e",
         "text": "hablar: hable, hables, hable, hablemos, hablen.",
@@ -793,12 +839,6 @@
           { "es": "Espero que estés bien.", "sk": "Dúfam, že sa máš dobre." },
           { "es": "Ojalá no haya tráfico.", "sk": "Kiež by nebola zápcha." }
         ]
-      },
-      {
-        "id": "use",
-        "title": "Kedy sa používa",
-        "text": "Po slovesách želania a citu, keď má vedľajšia veta iný podmet (quiero que vengas), po ojalá, po para que a pri zápornom názore (no creo que).",
-        "examples": [{ "es": "Te llamo para que sepas la noticia.", "sk": "Volám ti, aby si vedel tú novinu." }]
       }
     ]
   },
@@ -851,6 +891,15 @@
     "related": ["preterito", "pluscuamperfecto"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "V Španielsku pre dej v čase, ktorý ešte trvá: hoy, esta semana, este año, a s ya, todavía no, alguna vez. Pre dej včera a skôr sa používa pretérito: ayer comí. V Mexiku sa vo všetkých týchto prípadoch bežne hovorí pretéritom.",
+        "examples": [
+          { "es": "Esta semana he trabajado mucho.", "sk": "Tento týždeň som veľa pracoval." },
+          { "es": "Ayer trabajé mucho.", "sk": "Včera som veľa pracoval." }
+        ]
+      },
+      {
         "id": "form",
         "title": "he + príčastie",
         "text": "haber v prítomnom čase (he, has, ha, hemos, habéis, han) a príčastie, ktoré sa nemení: hablar → hablado, comer → comido, vivir → vivido. Po samohláske -ído: leído, traído.",
@@ -864,15 +913,6 @@
         "title": "Nepravidelné príčastia",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
         "examples": [{ "es": "No he hecho nada todavía.", "sk": "Ešte som nič neurobil." }]
-      },
-      {
-        "id": "use",
-        "title": "Kedy sa používa",
-        "text": "V Španielsku pre dej v čase, ktorý ešte trvá: hoy, esta semana, este año, a s ya, todavía no, alguna vez. Pre dej včera a skôr sa používa pretérito: ayer comí. V Mexiku sa vo všetkých týchto prípadoch bežne hovorí pretéritom.",
-        "examples": [
-          { "es": "Esta semana he trabajado mucho.", "sk": "Tento týždeň som veľa pracoval." },
-          { "es": "Ayer trabajé mucho.", "sk": "Včera som veľa pracoval." }
-        ]
       }
     ]
   },
@@ -884,6 +924,12 @@
     "intro": "Dej, ktorý sa stal skôr ako iný dej v minulosti: keď som prišiel, film už začal.",
     "related": ["preterito", "imperfecto"],
     "rules": [
+      {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Keď rozprávaš o minulosti a potrebuješ povedať, čo sa stalo ešte predtým. Často s ya (už) a nunca (nikdy).",
+        "examples": [{ "es": "Cuando llegué, la película ya había empezado.", "sk": "Keď som prišiel, film už začal." }]
+      },
       {
         "id": "form",
         "title": "había + príčastie",
@@ -898,12 +944,6 @@
         "title": "Nepravidelné príčastia",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
         "examples": [{ "es": "Le dije que ya lo había hecho.", "sk": "Povedal som mu, že som to už urobil." }]
-      },
-      {
-        "id": "use",
-        "title": "Kedy sa používa",
-        "text": "Keď rozprávaš o minulosti a potrebuješ povedať, čo sa stalo ešte predtým. Často s ya (už) a nunca (nikdy).",
-        "examples": [{ "es": "Cuando llegué, la película ya había empezado.", "sk": "Keď som prišiel, film už začal." }]
       },
       {
         "id": "perfecto",
@@ -925,6 +965,15 @@
     "related": ["subjuntivo", "si-clauses", "condicional"],
     "rules": [
       {
+        "id": "use",
+        "title": "Kedy sa používa",
+        "text": "Pri nereálnej podmienke (si + imperfecto de subjuntivo, potom kondicionál), pri želaní, ktoré sa asi nesplní (ojalá pudiera), a vo vedľajšej vete po minulom čase (quería que, me pidió que).",
+        "examples": [
+          { "es": "Mis papás querían que estudiara medicina.", "sk": "Rodičia chceli, aby som študoval medicínu." },
+          { "es": "Si fuera tú, no le diría nada.", "sk": "Byť tebou, nič by som mu nepovedal." }
+        ]
+      },
+      {
         "id": "formation",
         "title": "Z pretérita ellos",
         "text": "Vezmi tvar ellos v pretérite a -ron zmeň na -ra: hablaron → hablara, tuvieron → tuviera, fueron → fuera, pidieron → pidiera. Nepravidelnosti pretérita sa teda prenesú. V tvare nosotros pribudne prízvuk: habláramos, tuviéramos.",
@@ -938,15 +987,6 @@
         "title": "Tvar na -se",
         "text": "V Španielsku sa používa aj tvar hablase, tuviese. V Mexiku ho takmer nepočuť, preto sa ho netreba učiť.",
         "examples": [{ "es": "Ojalá pudiera ayudarte.", "sk": "Kiež by som ti mohol pomôcť." }]
-      },
-      {
-        "id": "use",
-        "title": "Kedy sa používa",
-        "text": "Pri nereálnej podmienke (si + imperfecto de subjuntivo, potom kondicionál), pri želaní, ktoré sa asi nesplní (ojalá pudiera), a vo vedľajšej vete po minulom čase (quería que, me pidió que).",
-        "examples": [
-          { "es": "Mis papás querían que estudiara medicina.", "sk": "Rodičia chceli, aby som študoval medicínu." },
-          { "es": "Si fuera tú, no le diría nada.", "sk": "Byť tebou, nič by som mu nepovedal." }
-        ]
       }
     ]
   },

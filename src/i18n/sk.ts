@@ -545,6 +545,9 @@ export const sk = {
     title: 'Cvičiť',
     grammar: 'Gramatika',
     tense: 'Čas',
+    /** The card under the tenses of the conjugation drill: the tense's grammar tip. */
+    tenseGrammar: (tense: string) => `Rýchle opakovanie: ${tense}`,
+    tenseGrammarHint: 'Čo to je, kedy sa používa a ako sa tvorí',
     topic: 'Téma',
     all: 'Všetko',
     level: 'Úroveň',

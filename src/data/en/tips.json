@@ -96,6 +96,12 @@
     "intro": "It covers what you do regularly and what you are doing right now. The ending changes with the person, and the pronoun (yo, tú…) is usually left out.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "What you do regularly (siempre, todos los días, los lunes), what is always true, and in Mexico often the near future too: Mañana te llamo.",
+        "examples": ["I take the bus every day.", "My sister lives in Monterrey.", "I'll call you tomorrow."]
+      },
+      {
         "id": "ar",
         "title": "Verbs in -ar",
         "text": "hablar: hablo, hablas, habla, hablamos, hablan.",
@@ -132,6 +138,16 @@
     "title": "Preterite (pretérito)",
     "intro": "It tells of something that happened and is over: yesterday, last week, once. In Mexico it's the everyday past tense for recent events too, where English might say “I have eaten”.",
     "rules": [
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "Something that happened and finished at a set time: ayer, anoche, el lunes, la semana pasada, en 2020, una vez. Descriptions and habits in the past take the imperfecto.",
+        "examples": [
+          "Yesterday I chatted with my grandma.",
+          "Last year we went to Oaxaca.",
+          "I didn't sleep well last night."
+        ]
+      },
       {
         "id": "ar",
         "title": "Verbs in -ar",
@@ -176,6 +192,12 @@
     "intro": "It describes what used to happen or what things were like: what you used to do, how it was, how old you were.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "A habit (siempre, todos los días, antes), a description in the past, age and time. English often says “used to” or “was …ing”.",
+        "examples": ["I used to work at a bank.", "I was ten years old.", "It was eight o'clock."]
+      },
+      {
         "id": "ar",
         "title": "Verbs in -ar",
         "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablaban. The yo and él forms are the same.",
@@ -192,12 +214,6 @@
         "title": "Only three irregular verbs",
         "text": "ser: era, eras, era, éramos, eran. ir: iba, ibas, iba, íbamos, iban. ver: veía, veías, veía, veíamos, veían.",
         "examples": ["When I was a kid, I walked to school."]
-      },
-      {
-        "id": "use",
-        "title": "When it is used",
-        "text": "A habit (siempre, todos los días, antes), a description in the past, age and time. English often says “used to” or “was …ing”.",
-        "examples": ["I used to work at a bank.", "I was ten years old.", "It was eight o'clock."]
       }
     ]
   },
@@ -238,6 +254,16 @@
     "intro": "The endings are added to the whole infinitive and are the same for all verbs.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "Plans and predictions for later (mañana, el próximo año, algún día) and promises. Everyday speech more often says ir a + infinitive.",
+        "examples": [
+          "Next year I will live in Guadalajara.",
+          "Tomorrow it will rain in the afternoon.",
+          "I promise, I will be on time."
+        ]
+      },
+      {
         "id": "endings",
         "title": "Infinitive + ending",
         "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablarán. Likewise comeré, viviré.",
@@ -269,6 +295,12 @@
     "intro": "It says what is happening at this very moment. It is made of the verb estar and a gerund, like English “I am working”.",
     "rules": [
       {
+        "id": "use",
+        "title": "When the present is enough",
+        "text": "Spanish uses it less than English does: for habits and for the near future it's the plain present, not the progressive.",
+        "examples": ["I work at a bank.", "I'm working tomorrow."]
+      },
+      {
         "id": "form",
         "title": "estar + gerund",
         "text": "Only estar is conjugated: estoy, estás, está, estamos, están. The gerund doesn't change.",
@@ -285,12 +317,6 @@
         "title": "Irregular gerunds",
         "text": "leer → leyendo, ir → yendo, dormir → durmiendo, pedir → pidiendo, decir → diciendo.",
         "examples": ["The child is sleeping.", "I'm reading a book."]
-      },
-      {
-        "id": "use",
-        "title": "When the present is enough",
-        "text": "Spanish uses it less than English does: for habits and for the near future it's the plain present, not the progressive.",
-        "examples": ["I work at a bank.", "I'm working tomorrow."]
       }
     ]
   },
@@ -479,6 +505,16 @@
     "intro": "Requests, advice and instructions: ven, siéntate, no te preocupes. The tú form is simple; the other persons take the subjunctive.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "When you ask someone to do something, give advice or directions: a recipe, the way somewhere, an offer. With por favor it sounds polite.",
+        "examples": [
+          "Pass me the salt, please.",
+          "Go straight ahead and turn right.",
+          "Come in, make yourself at home."
+        ]
+      },
+      {
         "id": "tu",
         "title": "For tú: the él form",
         "text": "The affirmative tú imperative is the present él form: habla, come, escribe, piensa, duerme.",
@@ -516,6 +552,12 @@
     "intro": "The subjunctive is the mood for what someone wants or feels, or what is not certain. It is built from the present with the “opposite” vowel: -ar verbs take endings with -e, -er and -ir verbs endings with -a.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "After verbs of wishing and feeling when the second clause has another subject (quiero que vengas), after ojalá, after para que and with a negative opinion (no creo que).",
+        "examples": ["I'm calling so you know the news."]
+      },
+      {
         "id": "ar",
         "title": "-ar verbs: endings with -e",
         "text": "hablar: hable, hables, hable, hablemos, hablen.",
@@ -550,12 +592,6 @@
         "title": "Irregular verbs",
         "text": "ser: sea · ir: vaya · estar: esté · saber: sepa · dar: dé · haber: haya.",
         "examples": ["I hope you are well.", "Let's hope there's no traffic."]
-      },
-      {
-        "id": "use",
-        "title": "When it is used",
-        "text": "After verbs of wishing and feeling when the second clause has another subject (quiero que vengas), after ojalá, after para que and with a negative opinion (no creo que).",
-        "examples": ["I'm calling so you know the news."]
       }
     ]
   },
@@ -596,6 +632,12 @@
     "intro": "An action in a period that is not over yet (today, this week) or that matters now: hoy he comido tacos. In Spain it is an everyday past tense; in Mexico it is used less.",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "In Spain for an action in a period that is not over: hoy, esta semana, este año, and with ya, todavía no, alguna vez. For yesterday and earlier it takes the preterite: ayer comí. In Mexico the preterite is normal in all these cases.",
+        "examples": ["This week I have worked a lot.", "Yesterday I worked a lot."]
+      },
+      {
         "id": "form",
         "title": "he + participle",
         "text": "haber in the present (he, has, ha, hemos, habéis, han) and the participle, which does not change: hablar → hablado, comer → comido, vivir → vivido. After a vowel -ído: leído, traído.",
@@ -606,12 +648,6 @@
         "title": "Irregular participles",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
         "examples": ["I haven't done anything yet."]
-      },
-      {
-        "id": "use",
-        "title": "When it is used",
-        "text": "In Spain for an action in a period that is not over: hoy, esta semana, este año, and with ya, todavía no, alguna vez. For yesterday and earlier it takes the preterite: ayer comí. In Mexico the preterite is normal in all these cases.",
-        "examples": ["This week I have worked a lot.", "Yesterday I worked a lot."]
       }
     ]
   },
@@ -620,6 +656,12 @@
     "title": "Pluperfect (had done)",
     "intro": "An action that happened before another past action: when I arrived, the movie had already started.",
     "rules": [
+      {
+        "id": "use",
+        "title": "When it is used",
+        "text": "When you talk about the past and need to say what happened even earlier. Often with ya (already) and nunca (never).",
+        "examples": ["When I arrived, the movie had already started."]
+      },
       {
         "id": "form",
         "title": "había + participle",
@@ -631,12 +673,6 @@
         "title": "Irregular participles",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
         "examples": ["I told him I had already done it."]
-      },
-      {
-        "id": "use",
-        "title": "When it is used",
-        "text": "When you talk about the past and need to say what happened even earlier. Often with ya (already) and nunca (never).",
-        "examples": ["When I arrived, the movie had already started."]
       },
       {
         "id": "perfecto",
@@ -652,6 +688,12 @@
     "intro": "The past subjunctive. You need it in an unreal condition (si tuviera…) and in a second clause when the main clause is in the past (quería que vinieras).",
     "rules": [
       {
+        "id": "use",
+        "title": "When it is used",
+        "text": "In an unreal condition (si + imperfect subjunctive, then the conditional), in a wish that will probably not come true (ojalá pudiera), and in a second clause after a past tense (quería que, me pidió que).",
+        "examples": ["My parents wanted me to study medicine.", "If I were you, I wouldn't tell him anything."]
+      },
+      {
         "id": "formation",
         "title": "From the preterite ellos form",
         "text": "Take the preterite ellos form and change -ron to -ra: hablaron → hablara, tuvieron → tuviera, fueron → fuera, pidieron → pidiera. So the preterite’s irregularities carry over. The nosotros form gets an accent: habláramos, tuviéramos.",
@@ -662,12 +704,6 @@
         "title": "The -se form",
         "text": "Spain also uses hablase, tuviese. In Mexico you hardly hear it, so there is no need to learn it.",
         "examples": ["I wish I could help you."]
-      },
-      {
-        "id": "use",
-        "title": "When it is used",
-        "text": "In an unreal condition (si + imperfect subjunctive, then the conditional), in a wish that will probably not come true (ojalá pudiera), and in a second clause after a past tense (quería que, me pidió que).",
-        "examples": ["My parents wanted me to study medicine.", "If I were you, I wouldn't tell him anything."]
       }
     ]
   },

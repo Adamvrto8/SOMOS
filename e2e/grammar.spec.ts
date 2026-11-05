@@ -169,3 +169,26 @@ test('the grammar handbook is ordered by level and a tip names its source', asyn
   await page.getByRole('link', { name: /Subjuntivo presente/ }).tap()
   await expect(page.getByText(/^Podľa: Plan curricular del Instituto Cervantes/)).toBeVisible()
 })
+
+test('a tense of the conjugation drill opens its grammar before the lesson, and the back button closes it', async ({ page }) => {
+  await page.goto('/practice?type=conjugation&tense=all')
+  // "Všetky časy" has no single tense to explain.
+  await expect(page.getByRole('button', { name: /^Rýchle opakovanie:/ })).toHaveCount(0)
+
+  await page.getByRole('button', { name: 'pretérito', exact: true }).tap()
+  await page.getByRole('button', { name: /^Rýchle opakovanie: pretérito/ }).tap()
+  const sheet = page.getByRole('dialog')
+  await expect(sheet.getByRole('heading', { level: 1 })).toHaveText('Pretérito (dokončený minulý čas)')
+  // What the tense is for comes first, before how it is formed.
+  await expect(sheet.getByRole('heading', { level: 3 }).first()).toHaveText('Kedy sa používa')
+  await expect(sheet).toContainText('la semana pasada')
+
+  await page.goBack()
+  await expect(sheet).toHaveCount(0)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Časovanie')
+
+  await page.getByRole('button', { name: /^Rýchle opakovanie: pretérito/ }).tap()
+  await button(page, 'Zavrieť').tap()
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await expect(page).toHaveURL(/tense=preterito/)
+})

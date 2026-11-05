@@ -78,7 +78,7 @@ describe('in English', () => {
     const tip = localizedTip(base)
     expect(tip.title).toBe('Future tense (futuro)')
     expect(tip.rules.map((r) => r.id)).toEqual(base.rules.map((r) => r.id))
-    expect(tip.rules[0].examples[0]).toEqual({ es: base.rules[0].examples[0].es, text: 'Tomorrow I will talk to the boss.' })
+    expect(tip.rules[0].examples[0]).toEqual({ es: base.rules[0].examples[0].es, text: 'Next year I will live in Guadalajara.' })
     expect(tip.related).toEqual(base.related)
     const presente = tipById.get('presente')!
     expect(localizedTip(presente).title).toBe('Present tense (presente)')

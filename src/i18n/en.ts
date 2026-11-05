@@ -505,6 +505,8 @@ export const en: Dictionary = {
     title: 'Practice',
     grammar: 'Grammar',
     tense: 'Tense',
+    tenseGrammar: (tense: string) => `Quick recap: ${tense}`,
+    tenseGrammarHint: 'What it is, when it is used and how it is formed',
     topic: 'Topic',
     all: 'All',
     level: 'Level',

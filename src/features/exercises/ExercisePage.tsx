@@ -25,6 +25,7 @@ import { testHref } from '../tests/testTitle'
 import { ExerciseTestCard } from './ExerciseTestCard'
 import { exerciseInfo, filterFromParams, filterToParams, isLessonGroup, LEVELS } from './exercises'
 import { LessonGrid } from './LessonGrid'
+import { TenseGrammarCard } from './TenseGrammarCard'
 
 /** The topic (or tense) of an exercise's last played lesson, so coming back finds it picked. */
 function rememberedGroup(type: ExerciseType): string {
@@ -105,6 +106,7 @@ export function ExercisePage() {
               </Chip>
             ))}
           </div>
+          {tense && <TenseGrammarCard tense={tense} />}
         </section>
       ) : (
         <section aria-labelledby="topic-heading">
