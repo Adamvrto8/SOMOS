@@ -653,6 +653,13 @@
         "lemma": "tener",
         "hint": "tener · él · pretérito",
         "distractors": ["tuvieron", "tuviste", "tenía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "para"]
       }
     ]
   },
@@ -714,6 +721,13 @@
         "lemma": "perder",
         "hint": "perder · ellos · pretérito",
         "distractors": ["Perdiste", "Perdimos", "Perdían"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "hasta", "contra"]
       }
     ]
   },
@@ -732,6 +746,13 @@
         "lemma": "andar",
         "hint": "andar · nosotros · futuro",
         "distractors": ["andaré", "andará", "andamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "a", "hasta"]
       }
     ]
   },
@@ -775,6 +796,13 @@
         "lemma": "tener",
         "hint": "tener · nosotros · pretérito",
         "distractors": ["tenemos", "tenían", "tendremos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -793,6 +821,13 @@
         "lemma": "ir",
         "hint": "ir · tú · pretérito",
         "distractors": ["vas", "fui", "irás"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -811,6 +846,13 @@
         "lemma": "salir",
         "hint": "salir · él · presente",
         "distractors": ["salen", "salgo", "salimos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "para", "por"]
       }
     ]
   },
@@ -951,6 +993,13 @@
         "lemma": "cambiar",
         "hint": "cambiar · nosotros · pretérito",
         "distractors": ["Cambian", "Cambié", "Cambiaban"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "a", "hacia"]
       }
     ]
   },
@@ -987,6 +1036,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["lleva", "llevé", "llevaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1005,6 +1061,13 @@
         "lemma": "contratar",
         "hint": "contratar · yo · presente",
         "distractors": ["contrata", "contraté", "contrataba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "con", "sin"]
       }
     ]
   },
@@ -1023,6 +1086,13 @@
         "lemma": "perder",
         "hint": "perder · nosotros · pretérito",
         "distractors": ["pierden", "perdió", "perdíamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -1041,6 +1111,13 @@
         "lemma": "costar",
         "hint": "costar · ellos · presente",
         "distractors": ["cuesta", "costaron", "costaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["De", "Por", "Sin"]
       }
     ]
   },
@@ -1093,6 +1170,13 @@
         "lemma": "atraer",
         "hint": "atraer · ellos · presente",
         "distractors": ["atrae", "atrajeron", "atraían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1235,6 +1319,13 @@
         "lemma": "tomar",
         "hint": "tomar · él · pretérito",
         "distractors": ["toma", "tomé", "tomaban"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "porovnanie",
+        "distractors": ["que", "a", "con"]
       }
     ]
   },
@@ -1270,6 +1361,13 @@
         "lemma": "ir",
         "hint": "ir · él · imperfecto",
         "distractors": ["fue", "iban", "van"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Ya",
+        "lemma": "ya",
+        "hint": "spojka",
+        "distractors": ["Así", "Pero", "Sino"]
       }
     ]
   },
@@ -1288,6 +1386,13 @@
         "lemma": "enseñar",
         "hint": "enseñar · él · presente",
         "distractors": ["enseñó", "enseño", "enseñarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -1331,6 +1436,13 @@
         "lemma": "decidir",
         "hint": "decidir · nosotros · pretérito",
         "distractors": ["decidí", "decidieron", "decidían"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -1349,6 +1461,13 @@
         "lemma": "agarrar",
         "hint": "agarrar · ella · pretérito",
         "distractors": ["agarra", "agarré", "agarraban"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · pretérito",
+        "distractors": ["tenemos", "tendremos", "tengamos"]
       }
     ]
   },
@@ -1386,6 +1505,13 @@
         "hint": "ser/estar · él · pretérito",
         "why": "identity",
         "distractors": ["estuvo", "era", "fueron"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1404,6 +1530,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · imperfecto",
         "distractors": ["Fuimos", "Iba", "Van"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1422,6 +1555,13 @@
         "lemma": "mover",
         "hint": "mover · nosotros · presente",
         "distractors": ["movimos", "muevo", "moverán"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "distractors": ["peor", "más", "menos"]
       }
     ]
   },
@@ -1440,6 +1580,13 @@
         "lemma": "disfrutar",
         "hint": "disfrutar · yo · pretérito",
         "distractors": ["disfruto", "disfrutamos", "disfrutaban"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "a", "si"]
       }
     ]
   },
@@ -1458,6 +1605,13 @@
         "lemma": "ayudar",
         "hint": "ayudar · él · pretérito",
         "distractors": ["ayuda", "ayudé", "ayudaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1476,6 +1630,13 @@
         "lemma": "dejar",
         "hint": "dejar · él · pretérito",
         "distractors": ["deja", "dejé", "dejaban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "les"]
       }
     ]
   },
@@ -1511,6 +1672,13 @@
         "lemma": "dar",
         "hint": "dar · nosotros · pretérito",
         "distractors": ["damos", "di", "daban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },

@@ -583,6 +583,13 @@
         "lemma": "acabar",
         "hint": "acabar · yo · presente",
         "distractors": ["Acaba", "Acaban", "Acabé"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -619,6 +626,13 @@
         "lemma": "esperar",
         "hint": "esperar · gerundio",
         "distractors": ["esperado", "espero", "esperar"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "desde", "porque"]
       }
     ]
   },
@@ -680,6 +694,13 @@
         "lemma": "salir",
         "hint": "salir · nosotros · futuro",
         "distractors": ["saldrán", "salíamos", "saldré"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Dentro",
+        "lemma": "dentro",
+        "hint": "o (časovo)",
+        "distractors": ["Durante", "Desde", "Hasta"]
       }
     ]
   },
@@ -789,6 +810,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["van", "fuimos", "íbamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "por", "con"]
       }
     ]
   },
@@ -825,6 +853,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["tiene", "tuve", "tenía"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["a", "de", "hacia"]
       }
     ]
   },
@@ -860,6 +895,13 @@
         "lemma": "vivir",
         "hint": "vivir · ellos · imperfecto",
         "distractors": ["viven", "vivieron", "vivirán"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["Con", "Sin", "Contra"]
       }
     ]
   },
@@ -966,6 +1008,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · presente",
         "distractors": ["manda", "mandé", "mandaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },
@@ -1019,6 +1068,13 @@
         "lemma": "terminar",
         "hint": "terminar · ella · presente",
         "distractors": ["terminan", "terminó", "terminaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -1194,6 +1250,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "time",
         "distractors": ["está", "era", "son"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["por", "sin", "con"]
       }
     ]
   },
@@ -1212,6 +1275,13 @@
         "lemma": "llegar",
         "hint": "llegar · yo · imperfecto",
         "distractors": ["llegabas", "llego", "llegamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "vivía",
+        "lemma": "vivir",
+        "hint": "vivir · yo · imperfecto",
+        "distractors": ["vivo", "viviré", "viva"]
       }
     ]
   },
@@ -1247,6 +1317,13 @@
         "lemma": "nacer",
         "hint": "nacer · él · pretérito",
         "distractors": ["nacimos", "nace", "naceré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "por"]
       }
     ]
   },
@@ -1282,6 +1359,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Llevas", "Llevé", "Llevábamos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "viviendo",
+        "lemma": "vivir",
+        "hint": "vivir · gerundio",
+        "distractors": ["vivido", "vivir", "vivo"]
       }
     ]
   },
@@ -1407,6 +1491,13 @@
         "lemma": "aprender",
         "hint": "aprender · yo · pretérito",
         "distractors": ["aprendiste", "aprendo", "aprenderemos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1459,6 +1550,13 @@
         "lemma": "platicar",
         "hint": "platicar · gerundio",
         "distractors": ["platica", "platicar", "platican"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "con", "por"]
       }
     ]
   },
@@ -1494,6 +1592,13 @@
         "lemma": "ponerse",
         "hint": "ponerse · yo · presente",
         "distractors": ["pones", "puse", "poníamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["cuando", "si", "donde"]
       }
     ]
   },
@@ -1549,6 +1654,13 @@
         "lemma": "tardar",
         "hint": "tardar · yo · futuro",
         "distractors": ["tardo", "tardé", "tardaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["para", "a", "con"]
       }
     ]
   },

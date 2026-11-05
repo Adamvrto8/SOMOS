@@ -629,6 +629,13 @@
         "lemma": "construir",
         "hint": "construir · gerundio",
         "distractors": ["construye", "construir", "construyen"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
       }
     ]
   },
@@ -664,6 +671,13 @@
         "lemma": "ser",
         "hint": "ser · él · imperfecto",
         "distractors": ["eran", "eras", "fue"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": ["esta", "estos", "estas"]
       }
     ]
   },
@@ -864,6 +878,13 @@
         "lemma": "tener",
         "hint": "tener · ellos · presente",
         "distractors": ["tiene", "tuvieron", "tenemos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Los",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["Las", "El", "Un"]
       }
     ]
   },
@@ -962,6 +983,13 @@
         "lemma": "cerrar",
         "hint": "cerrar · ellos · pretérito",
         "distractors": ["cierran", "cerró", "cerraban"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unas", "unos"]
       }
     ]
   },
@@ -1004,6 +1032,13 @@
         "lemma": "salir",
         "hint": "salir · gerundio",
         "distractors": ["salió", "sale", "salir"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno: ho",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -1081,6 +1116,13 @@
         "lemma": "señalar",
         "hint": "señalar · él · pretérito",
         "distractors": ["señala", "señalaba", "señalará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "dónde",
+        "lemma": "dónde",
+        "hint": "opytovacie slovo",
+        "distractors": ["quién", "cuánto", "cuál"]
       }
     ]
   },
@@ -1214,6 +1256,13 @@
         "lemma": "necesitar",
         "hint": "necesitar · ella · presente",
         "distractors": ["necesito", "necesitó", "necesitaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["Con", "Por", "Sobre"]
       }
     ]
   },
@@ -1293,6 +1342,13 @@
         "hint": "ser/estar · yo · imperfecto",
         "why": "profession",
         "distractors": ["estaba", "soy", "seré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1398,6 +1454,13 @@
         "lemma": "dar",
         "hint": "dar · tú · presente",
         "distractors": ["doy", "diste", "daba"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "a"]
       }
     ]
   },
@@ -1417,6 +1480,13 @@
         "hint": "ser/estar · él · imperfecto",
         "why": "state",
         "distractors": ["era", "están", "estoy"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "por"]
       }
     ]
   },
@@ -1558,6 +1628,13 @@
         "lemma": "agarrar",
         "hint": "agarrar · nosotros · presente",
         "distractors": ["agarro", "agarraron", "agarrábamos"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "mejor",
+        "lemma": "mejor",
+        "hint": "porovnanie",
+        "distractors": ["peor", "más", "menos"]
       }
     ]
   },
@@ -1576,6 +1653,13 @@
         "lemma": "subir",
         "hint": "subir · gerundio",
         "distractors": ["sube", "subió", "subía"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "ako",
+        "distractors": ["donde", "cuando", "mientras"]
       }
     ]
   },
@@ -1594,6 +1678,13 @@
         "lemma": "poder",
         "hint": "poder · él · imperfecto",
         "distractors": ["puede", "pudo", "podrán"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1612,6 +1703,13 @@
         "lemma": "vender",
         "hint": "vender · él · pretérito",
         "distractors": ["vende", "vendí", "vendía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "del",
+        "lemma": "del",
+        "hint": "predložka",
+        "distractors": ["con", "por", "sin"]
       }
     ]
   },
@@ -1630,6 +1728,13 @@
         "lemma": "perderse",
         "hint": "perderse · ellos · presente",
         "distractors": ["pierdo", "perdieron", "perdían"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "porovnanie",
+        "distractors": ["muy", "más", "tanto"]
       }
     ]
   },

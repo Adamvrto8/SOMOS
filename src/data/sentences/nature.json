@@ -509,6 +509,13 @@
         "lemma": "subir",
         "hint": "subir · nosotros · pretérito",
         "distractors": ["suben", "subí", "subiremos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -545,6 +552,13 @@
         "lemma": "ver",
         "hint": "ver · nosotros · pretérito",
         "distractors": ["vemos", "vieron", "veremos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "kým",
+        "distractors": ["Porque", "Aunque", "Sino"]
       }
     ]
   },
@@ -763,6 +777,13 @@
         "lemma": "contaminar",
         "hint": "contaminar · ellas · imperfecto",
         "distractors": ["contaminan", "contaminaron", "contaminarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -798,6 +819,13 @@
         "lemma": "proteger",
         "hint": "proteger · ellos · presente",
         "distractors": ["protege", "protegieron", "protegerán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "hacia"]
       }
     ]
   },
@@ -816,6 +844,13 @@
         "lemma": "amenazar",
         "hint": "amenazar · ella · presente",
         "distractors": ["amenazan", "amenazó", "amenazaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "los", "las"]
       }
     ]
   },
@@ -834,6 +869,13 @@
         "lemma": "desaparecer",
         "hint": "desaparecer · ellas · presente",
         "distractors": ["desaparece", "desaparecieron", "desaparecían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -886,6 +928,13 @@
         "lemma": "hacer",
         "hint": "hacer · nosotros · presente",
         "distractors": ["hacen", "hicimos", "hacíamos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["Sin", "Contra", "Hacia"]
       }
     ]
   },
@@ -904,6 +953,13 @@
         "lemma": "contribuir",
         "hint": "contribuir · nosotros · presente",
         "distractors": ["contribuyen", "contribuyó", "contribuía"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "nuestra",
+        "lemma": "nuestro",
+        "hint": "naša",
+        "distractors": ["nuestro", "nuestras", "nuestros"]
       }
     ]
   },
@@ -922,6 +978,13 @@
         "lemma": "sobrevivir",
         "hint": "sobrevivir · ellos · presente",
         "distractors": ["sobrevive", "sobrevivieron", "sobrevivían"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "por", "sin"]
       }
     ]
   },
@@ -1207,6 +1270,13 @@
         "lemma": "contaminar",
         "hint": "contaminar · ella · presente",
         "distractors": ["contamino", "contaminó", "contaminaban"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "aunque", "sino"]
       }
     ]
   },
@@ -1226,6 +1296,13 @@
         "hint": "ser/estar · él · imperfecto",
         "why": "state",
         "distractors": ["era", "está", "estuvo"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "éramos",
+        "lemma": "ser",
+        "hint": "ser · nosotros · imperfecto",
+        "distractors": ["somos", "seremos", "seamos"]
       }
     ]
   },
@@ -1244,6 +1321,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · imperfecto",
         "distractors": ["Vamos", "Fuimos", "Iban"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros · pretérito",
+        "distractors": ["vemos", "veremos", "veamos"]
       }
     ]
   },
@@ -1357,6 +1441,13 @@
         "lemma": "dejar",
         "hint": "dejar · nosotros · pretérito",
         "distractors": ["Dejo", "Dejaron", "Dejábamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1375,6 +1466,13 @@
         "lemma": "seguir",
         "hint": "seguir · nosotros · presente",
         "distractors": ["sigo", "siguieron", "seguíamos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1410,6 +1508,13 @@
         "lemma": "acabar",
         "hint": "acabar · él · pretérito",
         "distractors": ["acaba", "acababa", "acabaron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "predložka",
+        "distractors": ["de", "a", "en"]
       }
     ]
   },
@@ -1575,6 +1680,13 @@
         "lemma": "nevar",
         "hint": "nevar · él · futuro",
         "distractors": ["nieva", "nevó", "nevaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "con", "hacia"]
       }
     ]
   },

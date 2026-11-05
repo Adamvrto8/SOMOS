@@ -260,6 +260,13 @@
         "lemma": "hacer",
         "hint": "hacer · tú · imperativo",
         "distractors": ["Hace", "Hagan", "Hago"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "puedas",
+        "lemma": "poder",
+        "hint": "poder · tú · subjuntivo",
+        "distractors": ["pueda", "puedan", "podrías"]
       }
     ]
   },
@@ -375,6 +382,13 @@
         "lemma": "creer",
         "hint": "creer · yo · presente",
         "distractors": ["Cree", "Creen", "Creí"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "distractors": ["tan", "más", "mismo"]
       }
     ]
   },
@@ -400,6 +414,13 @@
         "lemma": "ver",
         "hint": "ver · ellos · imperfecto",
         "distractors": ["veías", "veíamos", "vieron"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "kým",
+        "distractors": ["Porque", "Pero", "Sino"]
       }
     ]
   },
@@ -418,6 +439,13 @@
         "lemma": "seguir",
         "hint": "seguir · yo · presente",
         "distractors": ["Sigue", "Siguen", "Seguí"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["con", "sobre", "para"]
       }
     ]
   },
@@ -436,6 +464,13 @@
         "lemma": "acordarse",
         "hint": "acordarse · tú · presente",
         "distractors": ["acordamos", "acuerdo", "acordaste"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -630,6 +665,13 @@
         "lemma": "contestar",
         "hint": "contestar · tú · pretérito",
         "distractors": ["contestamos", "contesté", "contestabas"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "pero",
+        "lemma": "pero",
+        "hint": "ale",
+        "distractors": ["sino", "si", "que"]
       }
     ]
   },
@@ -648,6 +690,13 @@
         "lemma": "ver",
         "hint": "ver · yo · presente",
         "distractors": ["ve", "vemos", "ven"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -666,6 +715,13 @@
         "lemma": "saber",
         "hint": "saber · yo · presente",
         "distractors": ["sabe", "sabes", "sabemos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "distractors": ["que", "porque", "aunque"]
       }
     ]
   },
@@ -799,6 +855,13 @@
         "lemma": "llegar",
         "hint": "llegar · tú · pretérito",
         "distractors": ["llegas", "llegó", "llegabas"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Puesto",
+        "lemma": "puesto",
+        "hint": "pretože, keďže",
+        "distractors": ["Aunque", "Antes", "Mientras"]
       }
     ]
   },
@@ -817,6 +880,13 @@
         "lemma": "decir",
         "hint": "decir · él · pretérito",
         "distractors": ["dice", "decía", "dirá"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["No", "Ya", "Y"]
       }
     ]
   },
@@ -860,6 +930,13 @@
         "lemma": "pasar",
         "hint": "pasar · ellos · imperfecto",
         "distractors": ["pasaron", "pasan", "pasarán"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "medida",
+        "lemma": "medida",
+        "hint": "a … que: postupne ako",
+        "distractors": ["manera", "causa", "parte"]
       }
     ]
   },
@@ -878,6 +955,13 @@
         "lemma": "agradecer",
         "hint": "agradecer · yo · presente",
         "distractors": ["agradece", "agradecí", "agradeceré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "con"]
       }
     ]
   },
@@ -932,6 +1016,13 @@
         "lemma": "suponer",
         "hint": "suponer · yo · presente",
         "distractors": ["Supone", "Supuse", "Supondré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["si", "como", "de"]
       }
     ]
   },
@@ -1821,6 +1912,13 @@
         "lemma": "correr",
         "hint": "correr · ellos · pretérito",
         "distractors": ["corren", "corrí", "corríamos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1856,6 +1954,13 @@
         "lemma": "tener",
         "hint": "tener · yo · imperfecto",
         "distractors": ["tuve", "teníamos", "tienen"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "ya",
+        "lemma": "ya",
+        "hint": "keďže",
+        "distractors": ["tan", "más", "aún"]
       }
     ]
   },
@@ -1942,6 +2047,13 @@
         "lemma": "averiguar",
         "hint": "averiguar · yo · pretérito",
         "distractors": ["Averiguó", "Averiguo", "Averiguaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -1960,6 +2072,13 @@
         "lemma": "poder",
         "hint": "poder · tú · presente",
         "distractors": ["pudiste", "puedo", "podrán"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "avises",
+        "lemma": "avisar",
+        "hint": "avisar · tú · subjuntivo",
+        "distractors": ["avisas", "avisaste", "avisarás"]
       }
     ]
   },
@@ -2101,6 +2220,13 @@
         "lemma": "salir",
         "hint": "salir · nosotros · pretérito",
         "distractors": ["salí", "salieron", "salían"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   }

@@ -592,6 +592,13 @@
         "lemma": "conseguir",
         "hint": "conseguir · yo · pretérito",
         "distractors": ["consiguió", "consiguieron", "conseguía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["Para", "En", "Con"]
       }
     ]
   },
@@ -610,6 +617,13 @@
         "lemma": "ofrecer",
         "hint": "ofrecer · él · pretérito",
         "distractors": ["ofrecieron", "ofreciste", "ofrecía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -635,6 +649,13 @@
         "lemma": "poder",
         "hint": "poder · yo · futuro",
         "distractors": ["podrá", "podrán", "puedo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "cada",
+        "lemma": "cada",
+        "hint": "každý (cada …)",
+        "distractors": ["todo", "todos", "ambos"]
       }
     ]
   },
@@ -653,6 +674,13 @@
         "lemma": "dormir",
         "hint": "dormir · yo · imperfecto",
         "distractors": ["dormían", "dormí", "dormíamos"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "sin"]
       }
     ]
   },
@@ -671,6 +699,13 @@
         "lemma": "lograr",
         "hint": "lograr · nosotros · pretérito",
         "distractors": ["Logré", "Logró", "Lográbamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["después", "durante", "hasta"]
       }
     ]
   },
@@ -706,6 +741,13 @@
         "lemma": "trabajar",
         "hint": "trabajar · gerundio",
         "distractors": ["trabajado", "trabajo", "trabajar"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["este", "estas", "estos"]
       }
     ]
   },
@@ -765,6 +807,13 @@
         "hint": "ser/estar · yo · presente",
         "why": "state",
         "distractors": ["soy", "estaba", "estuve"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "una",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["un", "unas", "unos"]
       }
     ]
   },
@@ -783,6 +832,13 @@
         "lemma": "dar",
         "hint": "dar · ellos · futuro",
         "distractors": ["dieron", "daban", "daremos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -827,6 +883,13 @@
         "lemma": "trabajar",
         "hint": "trabajar · yo · presente",
         "distractors": ["Trabaja", "Trabajé", "Trabajaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "todos",
+        "lemma": "todo",
+        "hint": "všetky",
+        "distractors": ["todo", "toda", "todas"]
       }
     ]
   },
@@ -1346,6 +1409,13 @@
         "lemma": "mandar",
         "hint": "mandar · yo · pretérito",
         "distractors": ["Mandó", "Mando", "Mandaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1489,6 +1559,13 @@
         "lemma": "plantear",
         "hint": "plantear · yo · pretérito",
         "distractors": ["plantea", "planteó", "planteaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1525,6 +1602,13 @@
         "lemma": "abrir",
         "hint": "abrir · ella · pretérito",
         "distractors": ["abre", "abría", "abrirá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "jej",
+        "distractors": ["mi", "tu", "nuestra"]
       }
     ]
   },
@@ -1581,6 +1665,13 @@
         "lemma": "contratar",
         "hint": "contratar · ellos · pretérito",
         "distractors": ["Contrata", "Contraté", "Contrataban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "como",
+        "lemma": "como",
+        "hint": "ako",
+        "distractors": ["con", "sin", "hasta"]
       }
     ]
   },
@@ -1894,6 +1985,13 @@
         "lemma": "despedir",
         "hint": "despedir · ellos · pretérito",
         "distractors": ["Despiden", "Despidió", "Despedían"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1912,6 +2010,13 @@
         "lemma": "jubilarse",
         "hint": "jubilarse · él · pretérito",
         "distractors": ["jubila", "jubilaba", "jubilará"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1930,6 +2035,13 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["doy", "dio", "daba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1948,6 +2060,13 @@
         "lemma": "atender",
         "hint": "atender · ellos · imperfecto",
         "distractors": ["atiende", "atendieron", "atenderán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "preparaba",
+        "lemma": "preparar",
+        "hint": "preparar · yo · imperfecto",
+        "distractors": ["preparo", "prepararé", "prepare"]
       }
     ]
   },
@@ -1991,6 +2110,13 @@
         "lemma": "rechazar",
         "hint": "rechazar · él · pretérito",
         "distractors": ["rechaza", "rechazaba", "rechazará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "las", "los"]
       }
     ]
   },
@@ -2009,6 +2135,13 @@
         "lemma": "chambear",
         "hint": "chambear · él · presente",
         "distractors": ["chambean", "chambeó", "chambeaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "por", "desde"]
       }
     ]
   },
@@ -2054,6 +2187,13 @@
         "lemma": "tratar",
         "hint": "tratar · él · presente",
         "distractors": ["trató", "trataba", "tratará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -2089,6 +2229,13 @@
         "lemma": "cerrar",
         "hint": "cerrar · ella · pretérito",
         "distractors": ["cierra", "cerré", "cerraba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["hasta", "durante", "sobre"]
       }
     ]
   },
@@ -2107,6 +2254,13 @@
         "lemma": "reconocer",
         "hint": "reconocer · ellos · pretérito",
         "distractors": ["reconoce", "reconocí", "reconocían"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Nos"]
       }
     ]
   },

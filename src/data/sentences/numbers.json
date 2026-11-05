@@ -197,6 +197,13 @@
         "lemma": "cumplir",
         "hint": "cumplir · ella · pretérito",
         "distractors": ["cumple", "cumplí", "cumplirá"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "hasta", "contra"]
       }
     ]
   },
@@ -532,6 +539,13 @@
         "lemma": "multiplicar",
         "hint": "multiplicar · tú · presente",
         "distractors": ["multiplica", "multipliqué", "multiplicabas"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "krát",
+        "distractors": ["entre", "para", "con"]
       }
     ]
   },
@@ -550,6 +564,13 @@
         "lemma": "dividir",
         "hint": "dividir · nosotros · pretérito",
         "distractors": ["Dividieron", "Dividí", "Dividía"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "entre",
+        "lemma": "entre",
+        "hint": "medzi",
+        "distractors": ["contra", "hacia", "desde"]
       }
     ]
   },
@@ -604,6 +625,13 @@
         "lemma": "faltar",
         "hint": "faltar · ellos · pretérito",
         "distractors": ["faltó", "falta", "faltará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -665,6 +693,13 @@
         "lemma": "hacer",
         "hint": "hacer · yo · pretérito",
         "distractors": ["Hizo", "Hago", "Hacía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -1052,6 +1087,13 @@
         "lemma": "tener",
         "hint": "tener · yo · futuro",
         "distractors": ["tengo", "tuve", "tenía"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "ahorro",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · yo · presente",
+        "distractors": ["ahorraré", "ahorraría", "ahorrara"]
       }
     ]
   },
@@ -1087,6 +1129,13 @@
         "lemma": "entender",
         "hint": "entender · yo · imperfecto",
         "distractors": ["entiendo", "entendí", "entenderé"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "llegué",
+        "lemma": "llegar",
+        "hint": "llegar · yo · pretérito",
+        "distractors": ["llego", "llegaré", "llegue"]
       }
     ]
   },
@@ -1105,6 +1154,13 @@
         "lemma": "medir",
         "hint": "medir · nosotros · pretérito",
         "distractors": ["Mido", "Midieron", "Medíamos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "con", "de"]
       }
     ]
   },
@@ -1123,6 +1179,13 @@
         "lemma": "venir",
         "hint": "venir · ellos · futuro",
         "distractors": ["vienen", "vinieron", "venían"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -1159,6 +1222,13 @@
         "lemma": "preferir",
         "hint": "preferir · él · presente",
         "distractors": ["prefieren", "prefirió", "prefería"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "otra",
+        "lemma": "otro",
+        "hint": "iný",
+        "distractors": ["otro", "otros", "otras"]
       }
     ]
   },
@@ -1177,6 +1247,13 @@
         "lemma": "cobrar",
         "hint": "cobrar · ellos · pretérito",
         "distractors": ["cobran", "cobraban", "cobrarán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "eran",
+        "lemma": "ser",
+        "hint": "ser · ellos · imperfecto",
+        "distractors": ["son", "serán", "sean"]
       }
     ]
   },
@@ -1230,6 +1307,13 @@
         "lemma": "costar",
         "hint": "costar · ella · pretérito",
         "distractors": ["cuesta", "costaba", "costarán"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1265,6 +1349,13 @@
         "lemma": "sentirse",
         "hint": "sentirse · él · presente",
         "distractors": ["siento", "sintió", "sentía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Nos"]
       }
     ]
   },
@@ -1300,6 +1391,13 @@
         "lemma": "equivocarse",
         "hint": "equivocarse · él · pretérito",
         "distractors": ["equivoca", "equivocaba", "equivocará"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1318,6 +1416,13 @@
         "lemma": "decir",
         "hint": "decir · yo · presente",
         "distractors": ["dije", "decía", "diré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "en", "a"]
       }
     ]
   },
@@ -1336,6 +1441,13 @@
         "lemma": "aumentar",
         "hint": "aumentar · ella · pretérito",
         "distractors": ["aumenta", "aumentaba", "aumentará"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "de", "con"]
       }
     ]
   },
@@ -1354,6 +1466,13 @@
         "lemma": "pagar",
         "hint": "pagar · nosotros · pretérito",
         "distractors": ["pago", "pagaron", "pagábamos"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "distractors": ["la", "le", "los"]
       }
     ]
   },
@@ -1372,6 +1491,13 @@
         "lemma": "alcanzar",
         "hint": "alcanzar · él · presente",
         "distractors": ["alcanzó", "alcanzaba", "alcanzará"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1444,6 +1570,13 @@
         "lemma": "dejar",
         "hint": "dejar · yo · pretérito",
         "distractors": ["dejo", "dejaba", "dejaré"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["lo", "la", "los"]
       }
     ]
   },

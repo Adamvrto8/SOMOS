@@ -703,6 +703,13 @@
         "lemma": "preparar",
         "hint": "preparar · tú · imperativo",
         "distractors": ["Prepare", "Preparan", "Preparo"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "lleguen",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · subjuntivo",
+        "distractors": ["llegan", "llegaron", "llegarán"]
       }
     ]
   },
@@ -925,6 +932,13 @@
         "lemma": "tener",
         "hint": "tener · yo · presente",
         "distractors": ["Tiene", "Tienen", "Tuve"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -961,6 +975,13 @@
         "lemma": "comer",
         "hint": "comer · yo · imperfecto",
         "distractors": ["comían", "como", "comeré"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "sobre"]
       }
     ]
   },
@@ -979,6 +1000,13 @@
         "lemma": "olvidar",
         "hint": "olvidar · él · pretérito",
         "distractors": ["olvidé", "olvida", "olvidará"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["la", "lo", "los"]
       }
     ]
   },
@@ -997,6 +1025,13 @@
         "lemma": "probar",
         "hint": "probar · yo · pretérito",
         "distractors": ["Pruebo", "Probó", "Probaré"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["que", "por", "con"]
       }
     ]
   },
@@ -1063,6 +1098,13 @@
         "lemma": "evitar",
         "hint": "evitar · yo · presente",
         "distractors": ["evita", "evité", "evitaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "distractors": ["tan", "más", "mismo"]
       }
     ]
   },
@@ -1098,6 +1140,13 @@
         "lemma": "comer",
         "hint": "comer · nosotros · presente",
         "distractors": ["comen", "como", "comerán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1255,6 +1304,13 @@
         "lemma": "comer",
         "hint": "comer · yo · presente",
         "distractors": ["come", "comí", "comemos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["hasta", "durante", "para"]
       }
     ]
   },
@@ -1273,6 +1329,13 @@
         "lemma": "calentar",
         "hint": "calentar · ella · presente",
         "distractors": ["calientan", "calentó", "calentaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "las",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["los", "la", "el"]
       }
     ]
   },
@@ -1309,6 +1372,13 @@
         "lemma": "llevar",
         "hint": "llevar · él · presente",
         "distractors": ["llevan", "llevó", "llevaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "porovnanie",
+        "distractors": ["que", "a", "por"]
       }
     ]
   },
@@ -1367,6 +1437,13 @@
         "lemma": "poder",
         "hint": "poder · yo · imperfecto",
         "distractors": ["puedo", "pude", "podían"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "o", "pero"]
       }
     ]
   },
@@ -1429,6 +1506,13 @@
         "lemma": "servir",
         "hint": "servir · ellos · pretérito",
         "distractors": ["sirven", "sirvió", "servían"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cual"]
       }
     ]
   },
@@ -1464,6 +1548,13 @@
         "lemma": "sugerir",
         "hint": "sugerir · él · pretérito",
         "distractors": ["sugiere", "sugirieron", "sugería"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "evitara",
+        "lemma": "evitar",
+        "hint": "evitar · yo · subjuntivo imperfecto",
+        "distractors": ["evitaba", "evitaré", "evitar"]
       }
     ]
   },
@@ -1509,6 +1600,13 @@
         "lemma": "destacar",
         "hint": "destacar · ella · presente",
         "distractors": ["destaco", "destacó", "destacaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "a", "de"]
       }
     ]
   },
@@ -1527,6 +1625,13 @@
         "lemma": "quedarse",
         "hint": "quedarse · él · pretérito",
         "distractors": ["queda", "quedaron", "quedaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "De",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["Por", "Con", "En"]
       }
     ]
   },
@@ -1562,6 +1667,13 @@
         "lemma": "intentar",
         "hint": "intentar · yo · presente",
         "distractors": ["intentas", "intenté", "intentaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["Para", "Con", "De"]
       }
     ]
   },
@@ -2066,6 +2178,13 @@
         "lemma": "hervir",
         "hint": "hervir · gerundio",
         "distractors": ["hirvió", "hierve", "hervir"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "El",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["La", "Las", "Los"]
       }
     ]
   },
@@ -2240,6 +2359,13 @@
         "lemma": "acostumbrarse",
         "hint": "acostumbrarse · yo · pretérito",
         "distractors": ["acostumbro", "acostumbró", "acostumbraba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gusten"]
       }
     ]
   },

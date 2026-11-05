@@ -457,6 +457,13 @@
         "lemma": "poner",
         "hint": "poner · yo · pretérito",
         "distractors": ["pongo", "puso", "pondré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["pero", "sino", "si"]
       }
     ]
   },
@@ -644,6 +651,13 @@
         "lemma": "usar",
         "hint": "usar · yo · presente",
         "distractors": ["usa", "usé", "usaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "sobre", "contra"]
       }
     ]
   },
@@ -663,6 +677,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "state",
         "distractors": ["es", "son", "están"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Tu",
+        "lemma": "tu",
+        "hint": "tvoja",
+        "distractors": ["Mi", "Su", "Nuestra"]
       }
     ]
   },
@@ -699,6 +720,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · pretérito",
         "distractors": ["Llevo", "Llevó", "Llevaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["durante", "desde", "hasta"]
       }
     ]
   },
@@ -768,6 +796,13 @@
         "lemma": "regalar",
         "hint": "regalar · ella · pretérito",
         "distractors": ["regala", "regalé", "regalaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -786,6 +821,13 @@
         "lemma": "comprar",
         "hint": "comprar · yo · presente",
         "distractors": ["Compra", "Compré", "Compraba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "toda",
+        "lemma": "todo",
+        "hint": "celá",
+        "distractors": ["todo", "todos", "todas"]
       }
     ]
   },
@@ -804,6 +846,13 @@
         "lemma": "lavar",
         "hint": "lavar · yo · pretérito",
         "distractors": ["Lava", "Lavó", "Lavaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -822,6 +871,13 @@
         "lemma": "usar",
         "hint": "usar · ellas · presente",
         "distractors": ["usa", "usaron", "usaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Las",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["Los", "Un", "La"]
       }
     ]
   },
@@ -1150,6 +1206,13 @@
         "lemma": "regresar",
         "hint": "regresar · gerundio",
         "distractors": ["regresa", "regresó", "regresaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -1168,6 +1231,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · imperfecto",
         "distractors": ["llevo", "llevé", "llevará"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1284,6 +1354,13 @@
         "lemma": "empacar",
         "hint": "empacar · yo · futuro",
         "distractors": ["empaco", "empaqué", "empacaba"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["sin", "con", "hasta"]
       }
     ]
   },
@@ -1302,6 +1379,13 @@
         "lemma": "guardar",
         "hint": "guardar · ella · imperfecto",
         "distractors": ["guarda", "guardó", "guardará"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "toda",
+        "lemma": "todo",
+        "hint": "všetok",
+        "distractors": ["todo", "todos", "todas"]
       }
     ]
   },
@@ -1344,6 +1428,13 @@
         "lemma": "probarse",
         "hint": "probarse · yo · imperfecto",
         "distractors": ["pruebo", "probé", "probará"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "cayó",
+        "lemma": "caerse",
+        "hint": "caerse · él · pretérito",
+        "distractors": ["caerá", "caería", "caiga"]
       }
     ]
   },
@@ -1386,6 +1477,13 @@
         "lemma": "parecer",
         "hint": "parecer · tú · presente",
         "distractors": ["parezco", "pareció", "parecía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "le", "nos"]
       }
     ]
   },
@@ -1429,6 +1527,13 @@
         "lemma": "conseguir",
         "hint": "conseguir · yo · pretérito",
         "distractors": ["consigo", "consiguió", "conseguía"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["con", "sobre", "contra"]
       }
     ]
   },
@@ -1465,6 +1570,13 @@
         "lemma": "dar",
         "hint": "dar · él · pretérito",
         "distractors": ["da", "di", "daba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1544,6 +1656,13 @@
         "lemma": "enseñar",
         "hint": "enseñar · ella · pretérito",
         "distractors": ["enseña", "enseñé", "enseñaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },

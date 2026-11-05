@@ -488,6 +488,13 @@
         "lemma": "aprovechar",
         "hint": "aprovechar · nosotros · pretérito",
         "distractors": ["Aproveché", "Aprovechó", "Aprovechábamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["por", "con", "sin"]
       }
     ]
   },
@@ -506,6 +513,13 @@
         "lemma": "jugar",
         "hint": "jugar · yo · imperfecto",
         "distractors": ["juego", "jugaron", "jugaré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "todas",
+        "lemma": "todo",
+        "hint": "všetky",
+        "distractors": ["todos", "toda", "todo"]
       }
     ]
   },
@@ -524,6 +538,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · futuro",
         "distractors": ["fuimos", "irán", "iré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "con"]
       }
     ]
   },
@@ -542,6 +563,13 @@
         "lemma": "empezar",
         "hint": "empezar · yo · pretérito",
         "distractors": ["Empiezo", "Empezó", "Empezaré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -560,6 +588,13 @@
         "lemma": "divertirse",
         "hint": "divertirse · nosotros · pretérito",
         "distractors": ["divierten", "divertí", "divertiremos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["Me", "Se", "Te"]
       }
     ]
   },
@@ -685,6 +720,13 @@
         "lemma": "entrenar",
         "hint": "entrenar · nosotros · presente",
         "distractors": ["Entrenan", "Entrené", "Entrenaban"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["a", "de", "con"]
       }
     ]
   },
@@ -738,6 +780,13 @@
         "lemma": "ver",
         "hint": "ver · él · pretérito",
         "distractors": ["ve", "veía", "verá"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "la",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["el", "los", "las"]
       }
     ]
   },
@@ -756,6 +805,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["van", "fuimos", "íbamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "por", "hacia"]
       }
     ]
   },
@@ -793,6 +849,13 @@
         "lemma": "ganar",
         "hint": "ganar · ellos · pretérito",
         "distractors": ["Ganan", "Ganó", "Ganaban"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["por", "de", "con"]
       }
     ]
   },
@@ -811,6 +874,13 @@
         "lemma": "dejar",
         "hint": "dejar · ella · pretérito",
         "distractors": ["deja", "dejaron", "dejaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1111,6 +1181,13 @@
         "lemma": "entrenar",
         "hint": "entrenar · yo · presente",
         "distractors": ["entrené", "entrenamos", "entrenarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "gustaba",
+        "lemma": "gustar",
+        "hint": "gustar · él · imperfecto",
+        "distractors": ["gusta", "gustará", "gusten"]
       }
     ]
   },
@@ -1188,6 +1265,13 @@
         "lemma": "preferir",
         "hint": "preferir · ellos · presente",
         "distractors": ["prefirieron", "prefiero", "preferiremos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["aunque", "pero", "sino"]
       }
     ]
   },
@@ -1325,6 +1409,13 @@
         "lemma": "pasar",
         "hint": "pasar · él · presente",
         "distractors": ["pasó", "paso", "pasarán"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1343,6 +1434,13 @@
         "lemma": "ver",
         "hint": "ver · yo · pretérito",
         "distractors": ["veo", "vimos", "veían"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "puso",
+        "lemma": "ponerse",
+        "hint": "ponerse · ella · pretérito",
+        "distractors": ["pone", "pondrá", "ponga"]
       }
     ]
   },
@@ -1378,6 +1476,13 @@
         "lemma": "jubilarse",
         "hint": "jubilarse · yo · pretérito",
         "distractors": ["jubilo", "jubilamos", "jubilaban"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Desde",
+        "lemma": "desde",
+        "hint": "od",
+        "distractors": ["Antes", "Con", "Para"]
       }
     ]
   },
@@ -1421,6 +1526,13 @@
         "lemma": "atreverse",
         "hint": "atreverse · yo · pretérito",
         "distractors": ["atrevo", "atrevimos", "atrevían"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1440,6 +1552,13 @@
         "hint": "ser/estar · ella · presente",
         "why": "trait",
         "distractors": ["está", "son", "estaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "con", "por"]
       }
     ]
   },
@@ -1458,6 +1577,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Llevé", "Llevamos", "Llevarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "entrenando",
+        "lemma": "entrenar",
+        "hint": "entrenar · gerundio",
+        "distractors": ["entrenado", "entrenar", "entreno"]
       }
     ]
   },
@@ -1511,6 +1637,13 @@
         "lemma": "quedar",
         "hint": "quedar · nosotros · pretérito",
         "distractors": ["Quedábamos", "Quedaremos", "Quedaron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "por", "con"]
       }
     ]
   },

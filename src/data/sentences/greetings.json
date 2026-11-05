@@ -435,6 +435,13 @@
         "lemma": "tener",
         "hint": "tener · tú · presente",
         "distractors": ["tenemos", "tengo", "tuviste"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "že",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -453,6 +460,13 @@
         "lemma": "andar",
         "hint": "andar · tú · presente",
         "distractors": ["andamos", "ando", "anduviste"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["de", "desde", "porque"]
       }
     ]
   },
@@ -499,6 +513,13 @@
         "hint": "ser/estar · yo · presente",
         "why": "expression",
         "distractors": ["Soy", "Está", "Están"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "contigo",
+        "lemma": "contigo",
+        "hint": "s tebou",
+        "distractors": ["conmigo", "consigo", "ti"]
       }
     ]
   },
@@ -517,6 +538,13 @@
         "lemma": "ver",
         "hint": "ver · nosotros · presente",
         "distractors": ["ven", "veo", "veremos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -560,6 +588,13 @@
         "lemma": "dar",
         "hint": "dar · él · pretérito",
         "distractors": ["di", "dimos", "dieron"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mucho",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucha", "muy", "muchos"]
       }
     ]
   },
@@ -731,6 +766,13 @@
         "lemma": "manejar",
         "hint": "manejar · gerundio",
         "distractors": ["manejar", "manejo", "manejé"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },
@@ -775,6 +817,13 @@
         "lemma": "tener",
         "hint": "tener · tú · presente",
         "distractors": ["tiene", "tengo", "tenías"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "un",
+        "lemma": "un",
+        "hint": "neurčitý člen",
+        "distractors": ["una", "unos", "unas"]
       }
     ]
   },
@@ -834,6 +883,13 @@
         "lemma": "caerse",
         "hint": "caerse · yo · pretérito",
         "distractors": ["cae", "cayó", "caía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["por", "sin", "para"]
       }
     ]
   },
@@ -852,6 +908,13 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["doy", "dan", "dio"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -887,6 +950,13 @@
         "lemma": "contestar",
         "hint": "contestar · tú · imperfecto",
         "distractors": ["contestas", "contestaste", "contestarás"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "nos", "lo"]
       }
     ]
   },
@@ -905,6 +975,13 @@
         "lemma": "poder",
         "hint": "poder · yo · presente",
         "distractors": ["puede", "pude", "podía"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "mucha",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "muchas", "muy"]
       }
     ]
   },
@@ -923,6 +1000,13 @@
         "lemma": "hacer",
         "hint": "hacer · tú · presente",
         "distractors": ["hace", "hago", "hiciste"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["Te", "Se", "Nos"]
       }
     ]
   },
@@ -958,6 +1042,13 @@
         "lemma": "agradecer",
         "hint": "agradecer · yo · pretérito",
         "distractors": ["agradece", "agradeció", "agradecía"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno: mu",
+        "distractors": ["Lo", "La", "Les"]
       }
     ]
   },
@@ -1229,6 +1320,13 @@
         "lemma": "esperar",
         "hint": "esperar · yo · imperfecto",
         "distractors": ["espero", "esperé", "esperabas"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "vinieras",
+        "lemma": "venir",
+        "hint": "venir · tú · subjuntivo imperfecto",
+        "distractors": ["vienes", "vendrás", "viniste"]
       }
     ]
   },
@@ -1247,6 +1345,13 @@
         "lemma": "ir",
         "hint": "ir · tú · presente",
         "distractors": ["voy", "fuiste", "ibas"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1265,6 +1370,13 @@
         "lemma": "olvidar",
         "hint": "olvidar · él · presente",
         "distractors": ["olvido", "olvidó", "olvidaban"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1300,6 +1412,13 @@
         "lemma": "llegar",
         "hint": "llegar · yo · pretérito",
         "distractors": ["llego", "llegó", "llegaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "estaban",
+        "lemma": "estar",
+        "hint": "estar · ellos · imperfecto",
+        "distractors": ["están", "estarán", "estén"]
       }
     ]
   },
@@ -1336,6 +1455,13 @@
         "lemma": "preparar",
         "hint": "preparar · ella · pretérito",
         "distractors": ["prepara", "prepararon", "preparaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1382,6 +1508,13 @@
         "hint": "ser/estar · tú · presente",
         "why": "state",
         "distractors": ["eres", "está", "estabas"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["cuando", "porque", "si"]
       }
     ]
   },
@@ -1400,6 +1533,13 @@
         "lemma": "madrugar",
         "hint": "madrugar · yo · presente",
         "distractors": ["madrugas", "madrugué", "madrugaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -1418,6 +1558,13 @@
         "lemma": "conocer",
         "hint": "conocer · él · imperfecto",
         "distractors": ["conoce", "conoció", "conocían"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "zámeno",
+        "distractors": ["la", "los", "las"]
       }
     ]
   },
@@ -1461,6 +1608,13 @@
         "lemma": "pasar",
         "hint": "pasar · yo · presente",
         "distractors": ["pasas", "pasé", "pasaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1497,6 +1651,13 @@
         "lemma": "acordarse",
         "hint": "acordarse · yo · imperfecto",
         "distractors": ["acuerdo", "acordé", "acordabas"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1515,6 +1676,13 @@
         "lemma": "visitar",
         "hint": "visitar · yo · presente",
         "distractors": ["visitas", "visité", "visitaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "hacia"]
       }
     ]
   },

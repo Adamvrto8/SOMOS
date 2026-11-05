@@ -374,6 +374,13 @@
         "lemma": "salir",
         "hint": "salir · nosotros · pretérito",
         "distractors": ["salen", "salí", "saldremos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "toľko",
+        "distractors": ["tan", "muy", "mucho"]
       }
     ]
   },
@@ -417,6 +424,13 @@
         "lemma": "llevar",
         "hint": "llevar · nosotros · presente",
         "distractors": ["Llevo", "Llevan", "Llevaremos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "sin",
+        "lemma": "sin",
+        "hint": "bez",
+        "distractors": ["por", "para", "hacia"]
       }
     ]
   },
@@ -592,6 +606,13 @@
         "hint": "ser/estar · él · presente",
         "why": "state",
         "distractors": ["es", "son", "están"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "o", "sino"]
       }
     ]
   },
@@ -610,6 +631,13 @@
         "lemma": "morir",
         "hint": "morir · ellas · pretérito",
         "distractors": ["mueren", "murió", "morían"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -628,6 +656,13 @@
         "lemma": "agarrar",
         "hint": "agarrar · él · pretérito",
         "distractors": ["agarra", "agarraron", "agarraba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Se"]
       }
     ]
   },
@@ -1060,6 +1095,13 @@
         "lemma": "ponerse",
         "hint": "ponerse · él · presente",
         "distractors": ["puso", "ponía", "pondrá"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1078,6 +1120,13 @@
         "lemma": "ir",
         "hint": "ir · nosotros · presente",
         "distractors": ["fuimos", "íbamos", "van"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "llueva",
+        "lemma": "llover",
+        "hint": "llover · él · subjuntivo",
+        "distractors": ["llueve", "lloverá", "llovía"]
       }
     ]
   },
@@ -1138,6 +1187,13 @@
         "lemma": "hacer",
         "hint": "hacer · él · imperfecto",
         "distractors": ["hace", "hizo", "hará"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "porovnanie",
+        "distractors": ["tan", "muy", "tanta"]
       }
     ]
   },
@@ -1156,6 +1212,13 @@
         "lemma": "empezar",
         "hint": "empezar · él · pretérito",
         "distractors": ["empieza", "empezaba", "empezará"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1174,6 +1237,13 @@
         "lemma": "perder",
         "hint": "perder · ellas · pretérito",
         "distractors": ["pierden", "perdían", "perderán"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1192,6 +1262,13 @@
         "lemma": "preferir",
         "hint": "preferir · yo · presente",
         "distractors": ["Prefieres", "Preferí", "Prefería"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "ni",
+        "lemma": "ni",
+        "hint": "ani",
+        "distractors": ["y", "pero", "sino"]
       }
     ]
   },
@@ -1210,6 +1287,13 @@
         "lemma": "decir",
         "hint": "decir · ellos · presente",
         "distractors": ["Digo", "Dijimos", "Decía"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1228,6 +1312,13 @@
         "lemma": "seguir",
         "hint": "seguir · él · presente",
         "distractors": ["siguió", "seguía", "seguirá"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1283,6 +1374,13 @@
         "lemma": "esperar",
         "hint": "esperar · nosotros · presente",
         "distractors": ["espero", "esperaron", "esperábamos"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "pase",
+        "lemma": "pasar",
+        "hint": "pasar · él · subjuntivo",
+        "distractors": ["pasa", "pasó", "pasará"]
       }
     ]
   },
@@ -1301,6 +1399,13 @@
         "lemma": "hacer",
         "hint": "hacer · él · presente",
         "distractors": ["hizo", "hacía", "hará"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuyo"]
       }
     ]
   },
@@ -1442,6 +1547,13 @@
         "lemma": "salir",
         "hint": "salir · ellos · pretérito",
         "distractors": ["salen", "salían", "saldrán"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1487,6 +1599,13 @@
         "lemma": "construir",
         "hint": "construir · nosotros · presente",
         "distractors": ["construyo", "construyeron", "construíamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },

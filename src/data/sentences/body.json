@@ -369,6 +369,13 @@
         "lemma": "parecer",
         "hint": "parecer · ella · presente",
         "distractors": ["parecen", "parezco", "parecerán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["con", "de", "en"]
       }
     ]
   },
@@ -387,6 +394,13 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["Lleva", "Llevamos", "Llevaré"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["en", "hacia", "sobre"]
       }
     ]
   },
@@ -405,6 +419,13 @@
         "lemma": "caerse",
         "hint": "caerse · él · pretérito",
         "distractors": ["cae", "caí", "caerá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "se",
+        "lemma": "se",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -508,6 +529,13 @@
         "lemma": "medir",
         "hint": "medir · tú · presente",
         "distractors": ["mide", "mediste", "medías"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuánto",
+        "lemma": "cuánto",
+        "hint": "opytovacie slovo",
+        "distractors": ["Cuándo", "Quién", "Dónde"]
       }
     ]
   },
@@ -643,6 +671,13 @@
         "lemma": "salir",
         "hint": "salir · gerundio",
         "distractors": ["salen", "salió", "salir"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -1362,6 +1397,13 @@
         "lemma": "tomar",
         "hint": "tomar · gerundio",
         "distractors": ["toma", "tomó", "tomaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "hagas",
+        "lemma": "hacer",
+        "hint": "hacer · tú · subjuntivo",
+        "distractors": ["haz", "hagan", "haga"]
       }
     ]
   },
@@ -1380,6 +1422,13 @@
         "lemma": "costar",
         "hint": "costar · él · pretérito",
         "distractors": ["cuesta", "costaban", "costará"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["con", "en", "por"]
       }
     ]
   },
@@ -1423,6 +1472,13 @@
         "lemma": "usar",
         "hint": "usar · yo · presente",
         "distractors": ["usas", "usé", "usaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "spojka",
+        "distractors": ["pero", "aunque", "porque"]
       }
     ]
   },
@@ -1458,6 +1514,13 @@
         "lemma": "escuchar",
         "hint": "escuchar · yo · pretérito",
         "distractors": ["escucho", "escuchó", "escuchaba"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "distractors": ["pero", "sino", "aunque"]
       }
     ]
   },

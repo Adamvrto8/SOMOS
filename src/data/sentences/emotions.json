@@ -623,6 +623,13 @@
         "lemma": "quejarse",
         "hint": "quejarse · él · presente",
         "distractors": ["quejan", "quejas", "quejó"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "hacia"]
       }
     ]
   },
@@ -649,6 +656,13 @@
         "lemma": "decir",
         "hint": "decir · ellos · pretérito",
         "distractors": ["dijiste", "dijimos", "decían"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "distractors": ["nadie", "algo", "ninguno"]
       }
     ]
   },
@@ -667,6 +681,13 @@
         "lemma": "ir",
         "hint": "ir · yo · presente",
         "distractors": ["va", "van", "fui"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -685,6 +706,13 @@
         "lemma": "poder",
         "hint": "poder · yo · pretérito",
         "distractors": ["puedo", "pudo", "podré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "tak",
+        "distractors": ["muy", "tanto", "más"]
       }
     ]
   },
@@ -703,6 +731,13 @@
         "lemma": "dar",
         "hint": "dar · él · presente",
         "distractors": ["doy", "dio", "dan"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mucha",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucho", "muchos", "muchas"]
       }
     ]
   },
@@ -722,6 +757,13 @@
         "hint": "ser/estar · yo · presente",
         "why": "state",
         "distractors": ["Soy", "Está", "Estaré"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "con", "por"]
       }
     ]
   },
@@ -1292,6 +1334,13 @@
         "lemma": "acostumbrarse",
         "hint": "acostumbrarse · yo · pretérito",
         "distractors": ["acostumbra", "acostumbró", "acostumbraba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1310,6 +1359,13 @@
         "lemma": "aguantar",
         "hint": "aguantar · yo · presente",
         "distractors": ["aguanta", "aguanté", "aguantaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuando"]
       }
     ]
   },
@@ -1368,6 +1424,13 @@
         "lemma": "atreverse",
         "hint": "atreverse · yo · pretérito",
         "distractors": ["atreve", "atrevió", "atrevía"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "por/para",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1614,6 +1677,13 @@
         "lemma": "ver",
         "hint": "ver · yo · pretérito",
         "distractors": ["viste", "veo", "veremos"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1682,6 +1752,13 @@
         "hint": "ser/estar · él · presente",
         "why": "state",
         "distractors": ["es", "estoy", "era"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -1700,6 +1777,13 @@
         "lemma": "querer",
         "hint": "querer · él · presente",
         "distractors": ["queremos", "quiso", "quería"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["Me", "Te", "Nos"]
       }
     ]
   },
@@ -1718,6 +1802,13 @@
         "lemma": "arrepentirse",
         "hint": "arrepentirse · yo · presente",
         "distractors": ["arrepientes", "arrepentí", "arrepentíamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1904,6 +1995,13 @@
         "lemma": "evitar",
         "hint": "evitar · ella · presente",
         "distractors": ["evitamos", "evitó", "evitaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "hacia", "contra"]
       }
     ]
   },
@@ -1940,6 +2038,13 @@
         "lemma": "romper",
         "hint": "romper · nosotros · pretérito",
         "distractors": ["Rompemos", "Rompíamos", "Romperemos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "hace",
+        "lemma": "hace",
+        "hint": "pred časom",
+        "distractors": ["desde", "hasta", "antes"]
       }
     ]
   },
@@ -1958,6 +2063,13 @@
         "lemma": "tratar",
         "hint": "tratar · yo · pretérito",
         "distractors": ["Trato", "Trataba", "Trataré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   }

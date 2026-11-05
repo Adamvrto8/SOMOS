@@ -437,6 +437,13 @@
         "lemma": "caerse",
         "hint": "caerse · yo · pretérito",
         "distractors": ["cayó", "cayeron", "caía"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["te", "se", "nos"]
       }
     ]
   },
@@ -505,6 +512,13 @@
         "lemma": "comer",
         "hint": "comer · él · presente",
         "distractors": ["comen", "comes", "comió"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["con", "en", "sin"]
       }
     ]
   },
@@ -548,6 +562,13 @@
         "lemma": "decir",
         "hint": "decir · él · pretérito",
         "distractors": ["dije", "dijeron", "digo"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -566,6 +587,13 @@
         "lemma": "comer",
         "hint": "comer · gerundio",
         "distractors": ["comido", "comer", "come"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tantos",
+        "lemma": "tanto",
+        "hint": "toľko",
+        "distractors": ["tanto", "tantas", "tan"]
       }
     ]
   },
@@ -723,6 +751,13 @@
         "lemma": "hacer",
         "hint": "hacer · ellos · pretérito",
         "distractors": ["hacen", "hizo", "hacían"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["Lo", "La", "Les"]
       }
     ]
   },
@@ -765,6 +800,13 @@
         "lemma": "toser",
         "hint": "toser · yo · presente",
         "distractors": ["Tose", "Tosí", "Tosía"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "mucho",
+        "lemma": "mucho",
+        "hint": "veľa",
+        "distractors": ["mucha", "muchos", "muy"]
       }
     ]
   },
@@ -945,6 +987,13 @@
         "lemma": "tener",
         "hint": "tener · él · pretérito",
         "distractors": ["Tiene", "Tenía", "Tendrá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -998,6 +1047,13 @@
         "lemma": "disminuir",
         "hint": "disminuir · ella · pretérito",
         "distractors": ["disminuye", "disminuía", "disminuirá"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["Sin", "Hacia", "Desde"]
       }
     ]
   },
@@ -1307,6 +1363,13 @@
         "lemma": "dejar",
         "hint": "dejar · yo · pretérito",
         "distractors": ["dejaste", "dejo", "dejaremos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "hace",
+        "lemma": "hace",
+        "hint": "pred časom",
+        "distractors": ["desde", "hasta", "antes"]
       }
     ]
   },
@@ -1325,6 +1388,13 @@
         "lemma": "tener",
         "hint": "tener · él · pretérito",
         "distractors": ["tuvimos", "tiene", "tendré"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -1387,6 +1457,13 @@
         "lemma": "calentar",
         "hint": "calentar · yo · presente",
         "distractors": ["calientas", "calenté", "calentábamos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "con"]
       }
     ]
   },
@@ -1465,6 +1542,13 @@
         "lemma": "decir",
         "hint": "decir · yo · presente",
         "distractors": ["dices", "dije", "decíamos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "porovnanie",
+        "distractors": ["como", "de", "a"]
       }
     ]
   },
@@ -1500,6 +1584,13 @@
         "lemma": "mandar",
         "hint": "mandar · ella · pretérito",
         "distractors": ["mandamos", "manda", "mandaré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -1518,6 +1609,13 @@
         "lemma": "cuidar",
         "hint": "cuidar · él · presente",
         "distractors": ["cuidamos", "cuidó", "cuidaba"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "le",
+        "lemma": "le",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "nos"]
       }
     ]
   },
@@ -1553,6 +1651,13 @@
         "lemma": "poder",
         "hint": "poder · ella · presente",
         "distractors": ["podemos", "pudo", "podía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "te",
+        "lemma": "te",
+        "hint": "zámeno",
+        "distractors": ["me", "se", "nos"]
       }
     ]
   },

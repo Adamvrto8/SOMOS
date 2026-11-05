@@ -448,6 +448,13 @@
         "lemma": "explicar",
         "hint": "explicar · ella · pretérito",
         "distractors": ["explicaron", "explicaste", "explicaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -473,6 +480,13 @@
         "lemma": "estudiar",
         "hint": "estudiar · yo · futuro",
         "distractors": ["estudiará", "estudiarán", "estudio"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["a", "de", "hacia"]
       }
     ]
   },
@@ -518,6 +532,13 @@
         "lemma": "estudiar",
         "hint": "estudiar · tú · presente",
         "distractors": ["estudia", "estudiaste", "estudiamos"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -536,6 +557,13 @@
         "lemma": "pedir",
         "hint": "pedir · ella · pretérito",
         "distractors": ["pide", "pedí", "pedirá"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["me", "te", "se"]
       }
     ]
   },
@@ -721,6 +749,13 @@
         "lemma": "reprobar",
         "hint": "reprobar · él · pretérito",
         "distractors": ["Reprueba", "Reprobé", "Reprobaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -914,6 +949,13 @@
         "lemma": "aprender",
         "hint": "aprender · él · pretérito",
         "distractors": ["aprende", "aprendía", "aprenderá"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -932,6 +974,13 @@
         "lemma": "investigar",
         "hint": "investigar · yo · pretérito",
         "distractors": ["Investigó", "Investigo", "Investigaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "antes",
+        "lemma": "antes",
+        "hint": "pred (časovo)",
+        "distractors": ["durante", "desde", "hasta"]
       }
     ]
   },
@@ -1017,6 +1066,13 @@
         "lemma": "encontrar",
         "hint": "encontrar · ellos · presente",
         "distractors": ["encuentra", "encontraron", "encontraban"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "distractors": ["este", "estos", "estas"]
       }
     ]
   },
@@ -1385,6 +1441,13 @@
         "lemma": "ir",
         "hint": "ir · yo · pretérito",
         "distractors": ["fuiste", "voy", "iremos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "s, so",
+        "distractors": ["contra", "hacia", "sobre"]
       }
     ]
   },
@@ -1403,6 +1466,13 @@
         "lemma": "alcanzar",
         "hint": "alcanzar · él · imperfecto",
         "distractors": ["alcanzábamos", "alcanza", "alcanzo"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "distractors": ["por", "de", "sin"]
       }
     ]
   },
@@ -1439,6 +1509,13 @@
         "lemma": "hacer",
         "hint": "hacer · yo · pretérito",
         "distractors": ["Hiciste", "Hago", "Haremos"]
+      },
+      {
+        "tokenIndex": 13,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["quien", "donde", "cuyo"]
       }
     ]
   },

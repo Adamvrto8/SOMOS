@@ -613,6 +613,13 @@
         "lemma": "mudarse",
         "hint": "mudarse · nosotros · futuro",
         "distractors": ["mudaré", "mudará", "mudamos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["en", "de", "por"]
       }
     ]
   },
@@ -631,6 +638,13 @@
         "lemma": "tener",
         "hint": "tener · nosotros · pretérito",
         "distractors": ["tuve", "tuvo", "teníamos"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "musieť",
+        "distractors": ["de", "a", "para"]
       }
     ]
   },
@@ -649,6 +663,13 @@
         "lemma": "ir",
         "hint": "ir · ella · pretérito",
         "distractors": ["fueron", "fuiste", "iba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "De",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["En", "Por", "Con"]
       }
     ]
   },
@@ -710,6 +731,13 @@
         "lemma": "mudarse",
         "hint": "mudarse · nosotros · pretérito",
         "distractors": ["mudaron", "mudé", "mudaremos"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos",
+        "lemma": "nos",
+        "hint": "zámeno",
+        "distractors": ["Me", "Se", "Te"]
       }
     ]
   },
@@ -754,6 +782,13 @@
         "lemma": "olvidar",
         "hint": "olvidar · él · presente",
         "distractors": ["olvido", "olvidan", "olvidé"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "me",
+        "lemma": "me",
+        "hint": "zámeno",
+        "distractors": ["la", "lo", "los"]
       }
     ]
   },
@@ -913,6 +948,13 @@
         "lemma": "regar",
         "hint": "regar · yo · presente",
         "distractors": ["riega", "regué", "regaba"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Los",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["Las", "El", "Un"]
       }
     ]
   },
@@ -931,6 +973,13 @@
         "lemma": "dejar",
         "hint": "dejar · yo · pretérito",
         "distractors": ["Dejó", "Dejo", "Dejaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "sin", "contra"]
       }
     ]
   },
@@ -976,6 +1025,13 @@
         "lemma": "acabar",
         "hint": "acabar · yo · presente",
         "distractors": ["acaba", "acabé", "acababa"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1047,6 +1103,13 @@
         "lemma": "estar",
         "hint": "estar · ella · presente",
         "distractors": ["están", "es", "estaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "las",
+        "lemma": "el",
+        "hint": "člen",
+        "distractors": ["los", "la", "el"]
       }
     ]
   },
@@ -1083,6 +1146,13 @@
         "lemma": "estar",
         "hint": "estar · nosotros · presente",
         "distractors": ["Están", "Estoy", "Estaba"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "todo",
+        "lemma": "todo",
+        "hint": "všetko",
+        "distractors": ["todos", "toda", "todas"]
       }
     ]
   },
@@ -1227,6 +1297,13 @@
         "lemma": "pensar",
         "hint": "pensar · gerundio",
         "distractors": ["pensamos", "pensó", "pensaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -1245,6 +1322,13 @@
         "lemma": "avisar",
         "hint": "avisar · yo · pretérito",
         "distractors": ["aviso", "avisaba", "avisaré"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "spojka",
+        "distractors": ["si", "como", "donde"]
       }
     ]
   },
@@ -1324,6 +1408,13 @@
         "lemma": "pagar",
         "hint": "pagar · él · imperfecto",
         "distractors": ["paga", "pagó", "pagará"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "éramos",
+        "lemma": "ser",
+        "hint": "ser · nosotros · imperfecto",
+        "distractors": ["somos", "seremos", "seamos"]
       }
     ]
   },
@@ -1377,6 +1468,13 @@
         "lemma": "arreglar",
         "hint": "arreglar · ellos · presente",
         "distractors": ["arreglo", "arreglaron", "arreglaban"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1420,6 +1518,13 @@
         "lemma": "poner",
         "hint": "poner · él · presente",
         "distractors": ["puso", "ponía", "pondrá"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
   },
@@ -1455,6 +1560,13 @@
         "lemma": "cambiar",
         "hint": "cambiar · nosotros · pretérito",
         "distractors": ["cambio", "cambiaron", "cambiábamos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "distractors": ["para", "sobre", "contra"]
       }
     ]
   },
@@ -1473,6 +1585,13 @@
         "lemma": "gastar",
         "hint": "gastar · ellos · presente",
         "distractors": ["gasta", "gastaron", "gastaban"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "porovnanie",
+        "distractors": ["de", "como", "a"]
       }
     ]
   },
@@ -1533,6 +1652,13 @@
         "lemma": "devolver",
         "hint": "devolver · ellos · pretérito",
         "distractors": ["devuelven", "devolvían", "devolverán"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["aunque", "pero", "sino"]
       }
     ]
   },
@@ -1624,6 +1750,13 @@
         "lemma": "cortar",
         "hint": "cortar · ellos · pretérito",
         "distractors": ["cortan", "cortaban", "cortarán"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "distractors": ["aunque", "pero", "sino"]
       }
     ]
   },
