@@ -446,6 +446,7 @@ export const en: Dictionary = {
     tense: 'Tense',
     play: 'Play',
     progresivoNote: 'estar + gerund',
+    perfectoNote: 'Only haber changes (present), the participle stays:',
     pluscuamperfectoNote: 'Only haber changes, the participle stays:',
     imperfectoBefore: 'A repeated or ongoing action in the past, and description:',
     imperfectoAfter: 'A single finished action is pretérito.',
@@ -749,6 +750,7 @@ export const en: Dictionary = {
     imperativoPronoun: (verb: string) =>
       `With the reflexive verb ${verb} the pronoun goes on the end and the stress stays put, so it gets a written accent.`,
     participleIrregular: (verb: string, participle: string) => `${verb} has an irregular participle: ${participle}.`,
+    perfecto: (verb: string, participle: string) => `With ${verb} only haber changes (present); the participle ${participle} stays.`,
     pluscuamperfecto: (verb: string, participle: string) => `With ${verb} only haber changes (imperfect); the participle ${participle} stays.`,
     futuroEndings: (verb) => `With ${verb} the ending is added to the whole infinitive.`,
     articleForms: {

@@ -211,3 +211,15 @@ viacslovné náhrady (copia de seguridad) a hovorové slová. Všetky `note_es` 
 Ďalší krok po tvojom schválení: z tohto konceptu urobiť skutočné prekrytie `src/data/es/` a validátor pre es.
 Zoznam náhrad (`SAFE`, `GENDER`, `MX_ONLY`) v skripte je jediné miesto, ktoré treba opraviť, ak s niektorou voľbou
 nesúhlasíš; potom sa koncept vygeneruje znova.
+
+## 9. Stav 2026-11-05 (vetva content-es)
+
+Hotové:
+- Prekrytie slov a viet (§8), `npm run validate:es`.
+- **Vosotros** (`src/lib/vosotros.ts`): odvodený zo slovies, ktoré už existujú, nič sa neukladá a mexická verzia ho nevidí.
+  Všetky časy a imperatív (hablad, levantaos, no habléis). Riadok v tabuľke slovesa sa zobrazí, keď je `somos.variant` = `es`.
+- **Pretérito perfecto compuesto** (`perfecto`): nový čas v tabuľke slovies pre obe varianty, spolu s tipom `perfecto`
+  (SK aj EN). Cvičenia na časy ho nadobudli automaticky, úroveň A2.
+
+Zostáva: vosotros v cvičení na časovanie (drill) a v ukladaní odpovedí; leísmo/ceceo poznámky; ručný zoznam
+`docs/spain-draft/todo.json`; prepínač variantu v Nastaveniach; nové španielske slová a vety; kontrola rodeným hovorcom.

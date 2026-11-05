@@ -1,5 +1,6 @@
 import type { ImperativePerson, Level, Person, Tense, Verb } from '../data/types'
 import { IMPERATIVE_PERSONS } from './verbForms'
+import { vosotrosForm, vosotrosIrregular, vosotrosNegative } from './vosotros'
 
 export const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos']
 
@@ -11,7 +12,7 @@ export const PERSON_LABELS: Record<Person, string> = {
   ellos: 'ellos / ellas / ustedes',
 }
 
-export type TableTense = Tense | 'progresivo' | 'pluscuamperfecto' | 'imperativo'
+export type TableTense = Tense | 'progresivo' | 'perfecto' | 'pluscuamperfecto' | 'imperativo'
 
 /** Tenses stored on every verb, all five persons. */
 export const TENSES: Tense[] = ['presente', 'preterito', 'imperfecto', 'futuro', 'subjuntivo', 'subjImperfecto', 'condicional']
@@ -21,6 +22,7 @@ export const TABLE_TENSES: TableTense[] = [
   'presente',
   'progresivo',
   'preterito',
+  'perfecto',
   'imperfecto',
   'futuro',
   'condicional',
@@ -34,6 +36,7 @@ export const TENSE_LABELS: Record<TableTense, string> = {
   presente: 'presente',
   progresivo: 'progresivo',
   preterito: 'pretérito',
+  perfecto: 'perfecto',
   imperfecto: 'imperfecto',
   futuro: 'futuro',
   condicional: 'condicional',
@@ -48,6 +51,7 @@ export const TENSE_LEVEL: Record<TableTense, Level> = {
   presente: 'A1',
   progresivo: 'A1',
   preterito: 'A1',
+  perfecto: 'A2',
   imperfecto: 'A1',
   futuro: 'A1',
   imperativo: 'A2',
@@ -69,7 +73,8 @@ const IMPERATIVE_LABELS: Record<ImperativePerson, string> = { tu: 'tú', el: 'us
 export const personLabel = (tense: TableTense, person: Person) =>
   tense === 'imperativo' && person !== 'yo' ? IMPERATIVE_LABELS[person] : PERSON_LABELS[person]
 
-/** haber is not a verb of the data: only its imperfecto is needed, for pluscuamperfecto. */
+/** haber is not a verb of the data: only its presente (perfecto) and imperfecto (pluscuamperfecto) are needed. */
+export const HABER_PRESENTE: Record<Person, string> = { yo: 'he', tu: 'has', el: 'ha', nosotros: 'hemos', ellos: 'han' }
 export const HABER_IMPERFECTO: Record<Person, string> = { yo: 'había', tu: 'habías', el: 'había', nosotros: 'habíamos', ellos: 'habían' }
 
 const REFLEXIVE_PRONOUN: Record<Person, string> = { yo: 'me', tu: 'te', el: 'se', nosotros: 'nos', ellos: 'se' }
@@ -95,8 +100,8 @@ export function conjugate(verb: Verb, tense: TableTense, person: Person, estar: 
     if (person === 'yo') throw new Error('the imperative has no yo')
     return [{ text: verb.imperativo[person], irregular: isIrregular(verb, tense, person) }]
   }
-  if (tense === 'progresivo' || tense === 'pluscuamperfecto') {
-    const aux = tense === 'progresivo' ? estar.presente[person] : HABER_IMPERFECTO[person]
+  if (tense === 'progresivo' || tense === 'perfecto' || tense === 'pluscuamperfecto') {
+    const aux = tense === 'progresivo' ? estar.presente[person] : tense === 'perfecto' ? HABER_PRESENTE[person] : HABER_IMPERFECTO[person]
     const [main, irregular] = tense === 'progresivo' ? [verb.gerund, verb.gerundIrregular] : [verb.participle, verb.participleIrregular]
     return [
       { text: verb.reflexive ? `${REFLEXIVE_PRONOUN[person]} ${aux}` : aux, irregular: false },
@@ -115,3 +120,26 @@ export function negativeImperative(verb: Verb, person: ImperativePerson): FormPa
 }
 
 export const formText = (parts: FormPart[]) => parts.map((p) => p.text).join(' ')
+
+const VOSOTROS_AUX: Partial<Record<TableTense, string>> = { progresivo: 'estáis', perfecto: 'habéis', pluscuamperfecto: 'habíais' }
+
+/** The vosotros row of a table (Spain only): derived, see vosotros.ts. The Mexican variant never asks for it. */
+export function conjugateVosotros(verb: Verb, tense: TableTense): FormPart[] {
+  const aux = VOSOTROS_AUX[tense]
+  if (aux) {
+    const [main, irregular] = tense === 'progresivo' ? [verb.gerund, verb.gerundIrregular] : [verb.participle, verb.participleIrregular]
+    return [
+      { text: verb.reflexive ? `os ${aux}` : aux, irregular: false },
+      { text: main, irregular: Boolean(irregular) },
+    ]
+  }
+  return [{ text: vosotrosForm(verb, tense as Tense | 'imperativo'), irregular: vosotrosIrregular(verb, tense as Tense | 'imperativo') }]
+}
+
+export function negativeVosotros(verb: Verb): FormPart[] {
+  const [, form] = vosotrosNegative(verb).split(/ (.+)/)
+  return [
+    { text: 'no', irregular: false },
+    { text: form, irregular: vosotrosIrregular(verb, 'subjuntivo') },
+  ]
+}

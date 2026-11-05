@@ -485,6 +485,7 @@ export const sk = {
     tense: 'Čas',
     play: 'Prehrať',
     progresivoNote: 'estar + gerundium',
+    perfectoNote: 'Časuje sa len haber v prézente, príčastie sa nemení:',
     pluscuamperfectoNote: 'Časuje sa len haber, príčastie sa nemení:',
     imperfectoBefore: 'Opakovaný alebo prebiehajúci dej v minulosti a opis:',
     imperfectoAfter: 'Jednorazový ukončený dej je pretérito.',
@@ -798,6 +799,7 @@ export const sk = {
     imperativoPronoun: (verb: string) =>
       `Pri zvratnom slovese ${verb} sa zámeno pripája na koniec a prízvuk ostáva na tej istej slabike, preto sa píše.`,
     participleIrregular: (verb: string, participle: string) => `${verb} má nepravidelné príčastie: ${participle}.`,
+    perfecto: (verb: string, participle: string) => `Pri slovese ${verb} sa časuje len haber v prézente, príčastie ${participle} sa nemení.`,
     pluscuamperfecto: (verb: string, participle: string) => `Pri slovese ${verb} sa časuje len haber v imperfekte, príčastie ${participle} sa nemení.`,
     futuroEndings: (verb: string) => `Pri slovese ${verb} sa koncovka pridáva k celému neurčitku.`,
     articleForms: {

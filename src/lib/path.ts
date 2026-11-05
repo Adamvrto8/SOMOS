@@ -72,6 +72,7 @@ const TENSE_TIPS: Record<string, TableTense> = {
   imperativo: 'imperativo',
   subjuntivo: 'subjuntivo',
   condicional: 'condicional',
+  perfecto: 'perfecto',
   pluscuamperfecto: 'pluscuamperfecto',
   'subj-imperfecto': 'subjImperfecto',
 }
