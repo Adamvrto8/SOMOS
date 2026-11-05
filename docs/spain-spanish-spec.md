@@ -212,29 +212,48 @@ viacslovné náhrady (copia de seguridad) a hovorové slová. Všetky `note_es` 
 Zoznam náhrad (`SAFE`, `GENDER`, `MX_ONLY`) v skripte je jediné miesto, ktoré treba opraviť, ak s niektorou voľbou
 nesúhlasíš; potom sa koncept vygeneruje znova.
 
-## 9. Stav 2026-11-05 (vetva content-es)
+## 9. Stav a čo zostáva (2026-11-05, zlúčené do main)
 
-Hotové:
-- **Prekrytie slov a viet** (`src/data/es/`): 79 slov a 135 viet. Automatická časť (`spain-overlay.mjs`) plus ručná
-  (`spain-manual.mjs`, 78 viet s vlastným španielskym textom a presmerovanými cvičeniami).
-- **Španielske slovesá** (`src/data/es/new/`): conducir, alquilar, aparcar, charlar, enfadarse, encender, s tvarmi
-  odvodenými podľa pravidiel a overenými existujúcim validátorom. Mexické manejar, rentar, estacionar, platicar,
-  enojarse, prender a regresar sa v španielskej verzii skrývajú (`hidden`), vety používajú nové slovesá alebo volver.
-- **Vosotros** (`src/lib/vosotros.ts`): odvodený, nič sa neukladá. Riadok v tabuľke, vosotros v nápovede cvičenia
-  (`deber · vosotros · presente`) a v kontrole dát.
-- **Pretérito perfecto compuesto**: nový čas pre obe varianty, s tipom (SK aj EN).
-- **Nastavenia → Španielčina**: prepínač Mexická / Zo Španielska, po zmene sa appka znova načíta, pokrok ostáva.
-- **Angličtina** pre nové slová a slovesá; anglické poznámky o Mexiku sa v španielskej verzii vypúšťajú.
-- **Kontrola**: `npm run validate:es` skontroluje španielske dáta tak, ako ich dostane používateľ (prekrytie nad
-  základom), vrátane cloze nápovedí a tvarov slovies, a že v texte nezostalo mexické slovo.
+### Hotové
+- **Prekrytie slov a viet** (`src/data/es/`): približne 80 slov a 140 viet. Automatická časť (`scripts/spain-overlay.mjs`)
+  plus ručná (`scripts/spain-manual.mjs`, 83 viet s vlastným španielskym textom, presmerované cvičenia).
+- **Španielske slovesá** (`src/data/es/new/`): conducir, alquilar, aparcar, charlar, enfadarse, encender, s tvarmi odvodenými
+  podľa pravidiel a overenými validátorom, plus anglické preklady. Mexické manejar, rentar, estacionar, platicar,
+  enojarse, prender a regresar sa v španielskej verzii skrývajú (`hidden`).
+- **Vosotros** (`src/lib/vosotros.ts`): odvodený zo slovies, nič sa neukladá. Riadok v tabuľke slovesa, v nápovedi
+  cvičenia (`deber · vosotros · presente`) a v kontrole dát.
+- **Pretérito perfecto compuesto**: nový čas v tabuľke slovies pre obe varianty, s tipom (SK aj EN), úroveň A2.
+- **Nastavenia → Španielčina**: Mexická / Zo Španielska, po zmene reload, pokrok ostáva (rovnaké `id`).
+- **Kontrola** `npm run validate:es`: španielske dáta tak, ako ich dostane používateľ (prekrytie nad základom), vrátane
+  nápovedí cvičení, tvarov slovies a „žiadne mexické slovo v španielskom texte“. Test `e2e/variant.spec.ts`.
+- **Generátory**: `spain-diff.mjs` (porovná základ), `spain-overlay.mjs` (bezpečné výmeny), `spain-manual.mjs` (ručné
+  vety a opravy slov), `spain-verbs.mjs` (nové slovesá).
 
-Zostáva:
-- 92 slov v `docs/spain-draft/todo.json`: španielske poznámky k nim a rozhodnutie, ktoré mexické slová (mariachi,
-  tianguis…) skryť. Veta s1752 nepotrebuje zmenu.
-- Vosotros v samotnom cvičení na časovanie (je len v tabuľke a v nápovedi viet).
-- Nové španielske slová a vety (vale, guay, tío…).
-- Hlas `es-ES` v TTS a ceceo/leísmo poznámky.
-- Kontrola rodeným hovorcom.
+### Ako to funguje po zmene mexického základu
+`node scripts/spain-diff.mjs && node scripts/spain-overlay.mjs && node scripts/spain-manual.mjs`, potom
+`npm run validate:es`. Ručné vety ostávajú v `spain-manual.mjs`, nové mexické vety s lexikou sa objavia v
+`docs/spain-draft/todo.json` a v `sentences.json`. Pravidlo: nová veta s „computadora, celular, carro, renta…“ potrebuje
+záznam v `MANUAL` alebo úpravu `SAFE`/`GENDER` v `spain-diff.mjs`.
 
-Postup, keď sa zmení mexický základ: `node scripts/spain-diff.mjs && node scripts/spain-overlay.mjs && node scripts/spain-manual.mjs`
-(ručné veci ostanú v `spain-manual.mjs`).
+### Čo ešte treba na dokončenie (podľa dôležitosti)
+1. **Kontrola rodeným hovorcom zo Španielska.** Nič z obsahu (ani mexického) nikto nekontroloval. Bez toho španielsku
+   verziu nezapínať pre všetkých, ostáva rozpracovaná (text v Nastaveniach to hovorí).
+2. **Nový španielsky obsah**: bežné slová a vety, ktoré v dátach nie sú (vale, guay, tío/tía, molar, flipar, curro,
+   quedar = dohodnúť sa, ¿qué tal?, ¡anda!, ¡venga!, tarjeta de embarque, grifo…). Odhad 60–100 slov a asi 100 viet,
+   vrátane viet s perfectom a vosotros (aby sa v cvičeniach nevyskytol len mexický rozsah).
+3. **Vosotros v samotnom cvičení na časovanie** (teraz je v tabuľke a v nápovedi viet). `Person` ostáva 5-osobový,
+   vosotros sa pridá ako voliteľná osoba podľa variantu (úlohy `tener:preterito:vosotros`, `lesson.taskFromItem`).
+4. **Perfecto v cvičeniach**: tab a tip sú, cloze vety s „he/has/ha + príčastie“ chýbajú (0 viet), tiež úloha pre
+   hoy/ayer (perfecto vs. pretérito).
+5. **Zvuk**: `PREFERRED_LANGS` v `src/lib/tts.ts` podľa variantu (`es-es` a potom `es-*`). Ceceo (c/z = [θ]) a leísmo
+   ako poznámky v tipoch.
+6. **Zvyšných 92 slov v `docs/spain-draft/todo.json`**: španielske poznámky k nim (`note`) a rozhodnutie, ktoré
+   typicky mexické slová (mariachi, tianguis, tamal, quinceañera, mande, no manches…) v španielskej verzii skryť
+   (`hidden: true` v `src/data/es/words/`), nechať vo vyhľadávaní s poznámkou „Mexiko“.
+7. **Poznámky k nahradeným slovám** (`note: null` ich zatiaľ len odstránilo): napísať „V Španielsku … (v Mexiku …)“.
+8. **Ostatné mexikanizmy mimo slov a viet**: tipy (`tips.json`) majú mexické príklady (ustedes, pretérito ako
+   predvolený čas), poznámky o regresar/volver, anglické poznámky; cesta (`path.json`) a testy používajú mexické
+   slovenské texty; „Mexická španielčina“ v uvítaní a v Google Play popise.
+9. **Hľadanie**: index má obe formy iba tam, kde je prekrytie; hľadať „coche“ v mexickej verzii a „carro“ v španielskej
+   nájde len aktuálny tvar. Doplniť alternatívne tvary do vyhľadávania.
+10. **Rozhodnutie o príslušnom názve**: kým sa nerozhodne verejné vydanie, ponechať „Zo Španielska“ ako rozpracované.

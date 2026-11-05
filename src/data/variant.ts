@@ -1,4 +1,4 @@
-import type { Variant } from './applyVariant'
+import type { Variant } from './applyVariant.ts'
 
 // Which Spanish the learner studies. Read once when the data loads (src/data/index.ts), so a change needs a reload.
 export const VARIANT_KEY = 'somos.variant'

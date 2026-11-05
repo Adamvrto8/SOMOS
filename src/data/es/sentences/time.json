@@ -65,6 +65,45 @@
     ]
   },
   {
+    "id": "s2128",
+    "es": "Cuando tengas tiempo, charlamos de lo que pasó la semana pasada.",
+    "tokens": [
+      "Cuando",
+      "tengas",
+      "tiempo",
+      ",",
+      "charlamos",
+      "de",
+      "lo",
+      "que",
+      "pasó",
+      "la",
+      "semana",
+      "pasada",
+      "."
+    ]
+  },
+  {
+    "id": "s2132",
+    "es": "Mi hermano llegó tarde porque tuvo que esperar al autobús que nunca pasaba.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "llegó",
+      "tarde",
+      "porque",
+      "tuvo",
+      "que",
+      "esperar",
+      "al",
+      "autobús",
+      "que",
+      "nunca",
+      "pasaba",
+      "."
+    ]
+  },
+  {
     "id": "s1501",
     "es": "A primera hora miro el correo y te aviso.",
     "tokens": [

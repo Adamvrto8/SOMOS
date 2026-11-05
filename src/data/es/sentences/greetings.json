@@ -66,6 +66,27 @@
     ]
   },
   {
+    "id": "s2047",
+    "es": "Ojalá nos veamos pronto, aunque sea solo para tomar un café y charlar.",
+    "tokens": [
+      "Ojalá",
+      "nos",
+      "veamos",
+      "pronto",
+      ",",
+      "aunque",
+      "sea",
+      "solo",
+      "para",
+      "tomar",
+      "un",
+      "café",
+      "y",
+      "charlar",
+      "."
+    ]
+  },
+  {
     "id": "s632",
     "es": "Luego te llamo, ahora estoy conduciendo.",
     "tokens": [

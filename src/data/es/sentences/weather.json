@@ -28,5 +28,28 @@
       "coche",
       "."
     ]
+  },
+  {
+    "id": "s2153",
+    "es": "Aunque haya mucho sol, es mejor que lleves una chaqueta por si baja la temperatura.",
+    "tokens": [
+      "Aunque",
+      "haya",
+      "mucho",
+      "sol",
+      ",",
+      "es",
+      "mejor",
+      "que",
+      "lleves",
+      "una",
+      "chaqueta",
+      "por",
+      "si",
+      "baja",
+      "la",
+      "temperatura",
+      "."
+    ]
   }
 ]

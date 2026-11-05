@@ -95,5 +95,48 @@
       "patatas",
       "."
     ]
+  },
+  {
+    "id": "s2035",
+    "es": "El camarero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "tokens": [
+      "El",
+      "camarero",
+      "nos",
+      "avisó",
+      "que",
+      "ya",
+      "no",
+      "tenían",
+      "pozole",
+      ",",
+      "así",
+      "que",
+      "pedimos",
+      "unos",
+      "tacos",
+      "."
+    ]
+  },
+  {
+    "id": "s2040",
+    "es": "Compré más tomates de los que necesitaba, así que hice salsa para congelar.",
+    "tokens": [
+      "Compré",
+      "más",
+      "tomates",
+      "de",
+      "los",
+      "que",
+      "necesitaba",
+      ",",
+      "así",
+      "que",
+      "hice",
+      "salsa",
+      "para",
+      "congelar",
+      "."
+    ]
   }
 ]

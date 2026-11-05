@@ -35,5 +35,25 @@
       "alquiler",
       "."
     ]
+  },
+  {
+    "id": "s2108",
+    "es": "Si la escuela tuviera más ordenadores, los niños aprenderían programación más rápido.",
+    "tokens": [
+      "Si",
+      "la",
+      "escuela",
+      "tuviera",
+      "más",
+      "ordenadores",
+      ",",
+      "los",
+      "niños",
+      "aprenderían",
+      "programación",
+      "más",
+      "rápido",
+      "."
+    ]
   }
 ]

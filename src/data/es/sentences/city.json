@@ -188,6 +188,89 @@
     ]
   },
   {
+    "id": "s1993",
+    "es": "Busco un piso que esté cerca del metro y que no cueste demasiado.",
+    "tokens": [
+      "Busco",
+      "un",
+      "piso",
+      "que",
+      "esté",
+      "cerca",
+      "del",
+      "metro",
+      "y",
+      "que",
+      "no",
+      "cueste",
+      "demasiado",
+      "."
+    ]
+  },
+  {
+    "id": "s1994",
+    "es": "Si hubiera más ciclovías, mucha gente dejaría el coche en casa.",
+    "tokens": [
+      "Si",
+      "hubiera",
+      "más",
+      "ciclovías",
+      ",",
+      "mucha",
+      "gente",
+      "dejaría",
+      "el",
+      "coche",
+      "en",
+      "casa",
+      "."
+    ]
+  },
+  {
+    "id": "s1998",
+    "es": "Si el autobús no llega pronto, tomaremos un taxi para no perder la cita.",
+    "tokens": [
+      "Si",
+      "el",
+      "autobús",
+      "no",
+      "llega",
+      "pronto",
+      ",",
+      "tomaremos",
+      "un",
+      "taxi",
+      "para",
+      "no",
+      "perder",
+      "la",
+      "cita",
+      "."
+    ]
+  },
+  {
+    "id": "s2000",
+    "es": "Los vecinos pidieron que quitaran los puestos de la acera para que la gente pasara.",
+    "tokens": [
+      "Los",
+      "vecinos",
+      "pidieron",
+      "que",
+      "quitaran",
+      "los",
+      "puestos",
+      "de",
+      "la",
+      "acera",
+      "para",
+      "que",
+      "la",
+      "gente",
+      "pasara",
+      "."
+    ]
+  },
+  {
     "id": "s1065",
     "es": "¿Estás conduciendo? Te escucho muy mal.",
     "tokens": [

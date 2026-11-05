@@ -187,6 +187,45 @@
     ]
   },
   {
+    "id": "s1981",
+    "file": "basics.json",
+    "level": "B2",
+    "sk": "Nič ma nebaví viac než sa s vami v nedeľu porozprávať.",
+    "es_mx": "No hay nada que me guste más que platicar con ustedes un domingo.",
+    "es_es": "No hay nada que me guste más que charlar con ustedes un domingo.",
+    "tokens_es": [
+      "No",
+      "hay",
+      "nada",
+      "que",
+      "me",
+      "guste",
+      "más",
+      "que",
+      "charlar",
+      "con",
+      "ustedes",
+      "un",
+      "domingo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer_mx": "guste",
+        "answer_es": "guste",
+        "lemma_mx": "gustar",
+        "hint": "gustar · él · subjuntivo",
+        "distractors_es": [
+          "gusta",
+          "gustó",
+          "gustaba"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
     "id": "s1043",
     "file": "body.json",
     "level": "B1",
@@ -834,6 +873,165 @@
           "llega",
           "llegará",
           "llegó"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1993",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Hľadám byt, ktorý bude blízko metra a nebude stáť priveľa.",
+    "es_mx": "Busco un departamento que esté cerca del metro y que no cueste demasiado.",
+    "es_es": "Busco un piso que esté cerca del metro y que no cueste demasiado.",
+    "tokens_es": [
+      "Busco",
+      "un",
+      "piso",
+      "que",
+      "esté",
+      "cerca",
+      "del",
+      "metro",
+      "y",
+      "que",
+      "no",
+      "cueste",
+      "demasiado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "esté",
+        "answer_es": "esté",
+        "lemma_mx": "estar",
+        "hint": "estar · él · subjuntivo",
+        "distractors_es": [
+          "está",
+          "estuvo",
+          "estará"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1994",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Keby bolo viac cyklotrás, veľa ľudí by nechalo auto doma.",
+    "es_mx": "Si hubiera más ciclovías, mucha gente dejaría el carro en casa.",
+    "es_es": "Si hubiera más ciclovías, mucha gente dejaría el coche en casa.",
+    "tokens_es": [
+      "Si",
+      "hubiera",
+      "más",
+      "ciclovías",
+      ",",
+      "mucha",
+      "gente",
+      "dejaría",
+      "el",
+      "coche",
+      "en",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "dejaría",
+        "answer_es": "dejaría",
+        "lemma_mx": "dejar",
+        "hint": "dejar · ella · condicional",
+        "distractors_es": [
+          "deja",
+          "dejó",
+          "dejará"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s1998",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Ak autobus čoskoro nepríde, vezmeme taxík, aby sme nezmeškali stretnutie.",
+    "es_mx": "Si el camión no llega pronto, tomaremos un taxi para no perder la cita.",
+    "es_es": "Si el autobús no llega pronto, tomaremos un taxi para no perder la cita.",
+    "tokens_es": [
+      "Si",
+      "el",
+      "autobús",
+      "no",
+      "llega",
+      "pronto",
+      ",",
+      "tomaremos",
+      "un",
+      "taxi",
+      "para",
+      "no",
+      "perder",
+      "la",
+      "cita",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "llega",
+        "answer_es": "llega",
+        "lemma_mx": "llegar",
+        "hint": "llegar · él · presente",
+        "distractors_es": [
+          "llegara",
+          "llegue",
+          "llegaría"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2000",
+    "file": "city.json",
+    "level": "B2",
+    "sk": "Susedia požiadali, aby odstránili stánky z chodníka, aby ľudia mohli prejsť.",
+    "es_mx": "Los vecinos pidieron que quitaran los puestos de la banqueta para que la gente pasara.",
+    "es_es": "Los vecinos pidieron que quitaran los puestos de la acera para que la gente pasara.",
+    "tokens_es": [
+      "Los",
+      "vecinos",
+      "pidieron",
+      "que",
+      "quitaran",
+      "los",
+      "puestos",
+      "de",
+      "la",
+      "acera",
+      "para",
+      "que",
+      "la",
+      "gente",
+      "pasara",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 14,
+        "answer_mx": "pasara",
+        "answer_es": "pasara",
+        "lemma_mx": "pasar",
+        "hint": "pasar · ella · subjuntivo imperfecto",
+        "distractors_es": [
+          "pasa",
+          "pasó",
+          "pasará"
         ],
         "changed": false
       }
@@ -1928,6 +2126,87 @@
     ]
   },
   {
+    "id": "s2035",
+    "file": "food.json",
+    "level": "B2",
+    "sk": "Čašník nám povedal, že už nemajú pozole, tak sme si objednali tacos.",
+    "es_mx": "El mesero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "es_es": "El camarero nos avisó que ya no tenían pozole, así que pedimos unos tacos.",
+    "tokens_es": [
+      "El",
+      "camarero",
+      "nos",
+      "avisó",
+      "que",
+      "ya",
+      "no",
+      "tenían",
+      "pozole",
+      ",",
+      "así",
+      "que",
+      "pedimos",
+      "unos",
+      "tacos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer_mx": "tenían",
+        "answer_es": "tenían",
+        "lemma_mx": "tener",
+        "hint": "tener · ellos · imperfecto",
+        "distractors_es": [
+          "tienen",
+          "tengan",
+          "tendrán"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2040",
+    "file": "food.json",
+    "level": "B2",
+    "sk": "Kúpil som viac paradajok, než som potreboval, tak som urobil salsu na zamrazenie.",
+    "es_mx": "Compré más jitomates de los que necesitaba, así que hice salsa para congelar.",
+    "es_es": "Compré más tomates de los que necesitaba, así que hice salsa para congelar.",
+    "tokens_es": [
+      "Compré",
+      "más",
+      "tomates",
+      "de",
+      "los",
+      "que",
+      "necesitaba",
+      ",",
+      "así",
+      "que",
+      "hice",
+      "salsa",
+      "para",
+      "congelar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "los",
+        "answer_es": "los",
+        "lemma_mx": "los",
+        "hint": "člen",
+        "distractors_es": [
+          "las",
+          "lo",
+          "el"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
     "id": "s632",
     "file": "greetings.json",
     "level": "B1",
@@ -2140,6 +2419,46 @@
           "permiso",
           "viaje",
           "provecho"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2047",
+    "file": "greetings.json",
+    "level": "B2",
+    "sk": "Kiežby sme sa čoskoro videli, aj keby len na kávu a rozhovor.",
+    "es_mx": "Ojalá nos veamos pronto, aunque sea solo para tomar un café y platicar.",
+    "es_es": "Ojalá nos veamos pronto, aunque sea solo para tomar un café y charlar.",
+    "tokens_es": [
+      "Ojalá",
+      "nos",
+      "veamos",
+      "pronto",
+      ",",
+      "aunque",
+      "sea",
+      "solo",
+      "para",
+      "tomar",
+      "un",
+      "café",
+      "y",
+      "charlar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "veamos",
+        "answer_es": "veamos",
+        "lemma_mx": "ver",
+        "hint": "ver · nosotros · subjuntivo",
+        "distractors_es": [
+          "vemos",
+          "vimos",
+          "veremos"
         ],
         "changed": false
       }
@@ -3620,6 +3939,124 @@
     ]
   },
   {
+    "id": "s2070",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Dúfam, že sa budeme môcť presťahovať do bytu, kde bude viac svetla.",
+    "es_mx": "Ojalá que podamos mudarnos a un departamento donde haya más luz.",
+    "es_es": "Ojalá que podamos mudarnos a un piso donde haya más luz.",
+    "tokens_es": [
+      "Ojalá",
+      "que",
+      "podamos",
+      "mudarnos",
+      "a",
+      "un",
+      "piso",
+      "donde",
+      "haya",
+      "más",
+      "luz",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "podamos",
+        "answer_es": "podamos",
+        "lemma_mx": "poder",
+        "hint": "poder · nosotros · subjuntivo",
+        "distractors_es": [
+          "podemos",
+          "pudimos",
+          "podremos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2072",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Inštalatér, ktorý včera prišiel, mi povedal, že rúry sú veľmi staré.",
+    "es_mx": "El plomero que vino ayer me dijo que la tubería estaba muy vieja.",
+    "es_es": "El fontanero que vino ayer me dijo que la tubería estaba muy vieja.",
+    "tokens_es": [
+      "El",
+      "fontanero",
+      "que",
+      "vino",
+      "ayer",
+      "me",
+      "dijo",
+      "que",
+      "la",
+      "tubería",
+      "estaba",
+      "muy",
+      "vieja",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer_mx": "que",
+        "answer_es": "que",
+        "lemma_mx": "que",
+        "hint": "vzťažné slovo",
+        "distractors_es": [
+          "donde",
+          "cuyo",
+          "cuando"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2078",
+    "file": "home.json",
+    "level": "B2",
+    "sk": "Nechcel by som, aby domáci zvýšil nájom bez toho, aby nás upozornil.",
+    "es_mx": "No me gustaría que el casero subiera la renta sin avisarnos antes.",
+    "es_es": "No me gustaría que el casero subiera el alquiler sin avisarnos antes.",
+    "tokens_es": [
+      "No",
+      "me",
+      "gustaría",
+      "que",
+      "el",
+      "casero",
+      "subiera",
+      "el",
+      "alquiler",
+      "sin",
+      "avisarnos",
+      "antes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "subiera",
+        "answer_es": "subiera",
+        "lemma_mx": "subir",
+        "hint": "subir · él · subjuntivo imperfecto",
+        "distractors_es": [
+          "sube",
+          "subirá",
+          "subió"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "renta → alquiler (gender/number: check adjectives after the noun)",
+      "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
     "id": "s900",
     "file": "nature.json",
     "level": "B2",
@@ -4051,6 +4488,48 @@
     "manual": [
       "renta → alquiler (gender/number: check adjectives after the noun)",
       "verb form \"renta\" (conduzco/charlo/…): check by hand"
+    ]
+  },
+  {
+    "id": "s2108",
+    "file": "school.json",
+    "level": "B2",
+    "sk": "Keby mala škola viac počítačov, deti by sa programovať učili rýchlejšie.",
+    "es_mx": "Si la escuela tuviera más computadoras, los niños aprenderían programación más rápido.",
+    "es_es": "Si la escuela tuviera más ordenadores, los niños aprenderían programación más rápido.",
+    "tokens_es": [
+      "Si",
+      "la",
+      "escuela",
+      "tuviera",
+      "más",
+      "ordenadores",
+      ",",
+      "los",
+      "niños",
+      "aprenderían",
+      "programación",
+      "más",
+      "rápido",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer_mx": "aprenderían",
+        "answer_es": "aprenderían",
+        "lemma_mx": "aprender",
+        "hint": "aprender · ellos · condicional",
+        "distractors_es": [
+          "aprenden",
+          "aprenderán",
+          "aprendieron"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadoras → ordenadores (gender/number: check adjectives after the noun)"
     ]
   },
   {
@@ -5584,6 +6063,133 @@
     ]
   },
   {
+    "id": "s2119",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Keby nebol môj počítač taký pomalý, pracoval by som oveľa rýchlejšie.",
+    "es_mx": "Si mi computadora no fuera tan lenta, trabajaría mucho más rápido.",
+    "es_es": "Si mi ordenador no fuera tan lenta, trabajaría mucho más rápido.",
+    "tokens_es": [
+      "Si",
+      "mi",
+      "ordenador",
+      "no",
+      "fuera",
+      "tan",
+      "lenta",
+      ",",
+      "trabajaría",
+      "mucho",
+      "más",
+      "rápido",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer_mx": "fuera",
+        "answer_es": "fuera",
+        "lemma_mx": "ser",
+        "hint": "ser · ella · subjuntivo imperfecto",
+        "distractors_es": [
+          "es",
+          "fue",
+          "será"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s2121",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Hneď ako prídem domov a otvorím počítač, pošlem ti súbor.",
+    "es_mx": "En cuanto llegue a casa y abra la computadora, te mando el archivo.",
+    "es_es": "En cuanto llegue a casa y abra el ordenador, te mando el archivo.",
+    "tokens_es": [
+      "En",
+      "cuanto",
+      "llegue",
+      "a",
+      "casa",
+      "y",
+      "abra",
+      "el",
+      "ordenador",
+      ",",
+      "te",
+      "mando",
+      "el",
+      "archivo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer_mx": "abra",
+        "answer_es": "abra",
+        "lemma_mx": "abrir",
+        "hint": "abrir · yo · subjuntivo",
+        "distractors_es": [
+          "abro",
+          "abrí",
+          "abriré"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "computadora → ordenador (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
+    "id": "s2126",
+    "file": "tech.json",
+    "level": "B2",
+    "sk": "Kým sa sťahuje aktualizácia, nevypínaj mobil ani nezatváraj aplikáciu.",
+    "es_mx": "Mientras se descarga la actualización, no apagues el celular ni cierres la aplicación.",
+    "es_es": "Mientras se descarga la actualización, no apagues el móvil ni cremalleras la aplicación.",
+    "tokens_es": [
+      "Mientras",
+      "se",
+      "descarga",
+      "la",
+      "actualización",
+      ",",
+      "no",
+      "apagues",
+      "el",
+      "móvil",
+      "ni",
+      "cremalleras",
+      "la",
+      "aplicación",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer_mx": "Mientras",
+        "answer_es": "Mientras",
+        "lemma_mx": "mientras",
+        "hint": "zatiaľ čo",
+        "distractors_es": [
+          "Porque",
+          "Sino",
+          "Para"
+        ],
+        "changed": false
+      }
+    ],
+    "manual": [
+      "cierres → cremalleras (gender/number: check adjectives after the noun)"
+    ]
+  },
+  {
     "id": "s183",
     "file": "time.json",
     "level": "A1",
@@ -5757,6 +6363,83 @@
           "tarda",
           "tardaba",
           "tardará"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2128",
+    "file": "time.json",
+    "level": "B2",
+    "sk": "Keď budeš mať čas, porozprávame sa o tom, čo sa stalo minulý týždeň.",
+    "es_mx": "Cuando tengas tiempo, platicamos de lo que pasó la semana pasada.",
+    "es_es": "Cuando tengas tiempo, charlamos de lo que pasó la semana pasada.",
+    "tokens_es": [
+      "Cuando",
+      "tengas",
+      "tiempo",
+      ",",
+      "charlamos",
+      "de",
+      "lo",
+      "que",
+      "pasó",
+      "la",
+      "semana",
+      "pasada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer_mx": "tengas",
+        "answer_es": "tengas",
+        "lemma_mx": "tener",
+        "hint": "tener · tú · subjuntivo",
+        "distractors_es": [
+          "tienes",
+          "tuviste",
+          "tendrás"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2132",
+    "file": "time.json",
+    "level": "B2",
+    "sk": "Brat prišiel neskoro, lebo musel čakať na autobus, ktorý nikdy neprišiel.",
+    "es_mx": "Mi hermano llegó tarde porque tuvo que esperar al camión que nunca pasaba.",
+    "es_es": "Mi hermano llegó tarde porque tuvo que esperar al autobús que nunca pasaba.",
+    "tokens_es": [
+      "Mi",
+      "hermano",
+      "llegó",
+      "tarde",
+      "porque",
+      "tuvo",
+      "que",
+      "esperar",
+      "al",
+      "autobús",
+      "que",
+      "nunca",
+      "pasaba",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer_mx": "pasaba",
+        "answer_es": "pasaba",
+        "lemma_mx": "pasar",
+        "hint": "pasar · él · imperfecto",
+        "distractors_es": [
+          "pase",
+          "pasará",
+          "pasamos"
         ],
         "changed": false
       }
@@ -6507,6 +7190,44 @@
     ]
   },
   {
+    "id": "s2142",
+    "file": "travel.json",
+    "level": "B2",
+    "sk": "Je lepšie kúpiť lístky dnes, pretože zajtra ceny stúpnu.",
+    "es_mx": "Es mejor que compremos los boletos hoy porque mañana subirán los precios.",
+    "es_es": "Es mejor que compremos los billetes hoy porque mañana subirán los precios.",
+    "tokens_es": [
+      "Es",
+      "mejor",
+      "que",
+      "compremos",
+      "los",
+      "billetes",
+      "hoy",
+      "porque",
+      "mañana",
+      "subirán",
+      "los",
+      "precios",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer_mx": "compremos",
+        "answer_es": "compremos",
+        "lemma_mx": "comprar",
+        "hint": "comprar · nosotros · subjuntivo",
+        "distractors_es": [
+          "compramos",
+          "compraremos",
+          "comprábamos"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
     "id": "s1537",
     "file": "weather.json",
     "level": "A1",
@@ -6569,6 +7290,48 @@
           "arcoíris",
           "pronóstico",
           "paraguas"
+        ],
+        "changed": false
+      }
+    ]
+  },
+  {
+    "id": "s2153",
+    "file": "weather.json",
+    "level": "B2",
+    "sk": "Aj keď je veľa slnka, radšej si zober bundu pre prípad, že klesne teplota.",
+    "es_mx": "Aunque haya mucho sol, es mejor que lleves una chamarra por si baja la temperatura.",
+    "es_es": "Aunque haya mucho sol, es mejor que lleves una chaqueta por si baja la temperatura.",
+    "tokens_es": [
+      "Aunque",
+      "haya",
+      "mucho",
+      "sol",
+      ",",
+      "es",
+      "mejor",
+      "que",
+      "lleves",
+      "una",
+      "chaqueta",
+      "por",
+      "si",
+      "baja",
+      "la",
+      "temperatura",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer_mx": "lleves",
+        "answer_es": "lleves",
+        "lemma_mx": "llevar",
+        "hint": "llevar · tú · subjuntivo",
+        "distractors_es": [
+          "llevas",
+          "llevaste",
+          "llevarás"
         ],
         "changed": false
       }

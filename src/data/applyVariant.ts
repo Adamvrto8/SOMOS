@@ -1,4 +1,4 @@
-import type { Cloze, Example, Sentence, Word } from './types'
+import type { Cloze, Example, Sentence, Word } from './types.ts'
 
 // The es-ES overlay (Spain) over the Mexican base data, matched by id. The base stays the single source of truth:
 // an overlay entry lists only what differs. Ids never change, so progress carries over when the variant is switched.

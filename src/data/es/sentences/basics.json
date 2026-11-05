@@ -64,6 +64,26 @@
     ]
   },
   {
+    "id": "s1981",
+    "es": "No hay nada que me guste más que charlar con ustedes un domingo.",
+    "tokens": [
+      "No",
+      "hay",
+      "nada",
+      "que",
+      "me",
+      "guste",
+      "más",
+      "que",
+      "charlar",
+      "con",
+      "ustedes",
+      "un",
+      "domingo",
+      "."
+    ]
+  },
+  {
     "id": "s1008",
     "es": "Ahora estoy aprendiendo a conducir.",
     "tokens": [

@@ -143,6 +143,44 @@
     ]
   },
   {
+    "id": "s2070",
+    "es": "Ojalá que podamos mudarnos a un piso donde haya más luz.",
+    "tokens": [
+      "Ojalá",
+      "que",
+      "podamos",
+      "mudarnos",
+      "a",
+      "un",
+      "piso",
+      "donde",
+      "haya",
+      "más",
+      "luz",
+      "."
+    ]
+  },
+  {
+    "id": "s2072",
+    "es": "El fontanero que vino ayer me dijo que la tubería estaba muy vieja.",
+    "tokens": [
+      "El",
+      "fontanero",
+      "que",
+      "vino",
+      "ayer",
+      "me",
+      "dijo",
+      "que",
+      "la",
+      "tubería",
+      "estaba",
+      "muy",
+      "vieja",
+      "."
+    ]
+  },
+  {
     "id": "s1642",
     "es": "Me gusta mi dormitorio.",
     "tokens": [
@@ -384,6 +422,25 @@
           "Encendimos"
         ]
       }
+    ]
+  },
+  {
+    "id": "s2078",
+    "es": "No me gustaría que el casero subiera el alquiler sin avisarnos antes.",
+    "tokens": [
+      "No",
+      "me",
+      "gustaría",
+      "que",
+      "el",
+      "casero",
+      "subiera",
+      "el",
+      "alquiler",
+      "sin",
+      "avisarnos",
+      "antes",
+      "."
     ]
   }
 ]

@@ -2,7 +2,7 @@
   "generated": "2026-11-05",
   "base": {
     "words": 1681,
-    "sentences": 1971
+    "sentences": 2167
   },
   "words": {
     "listed": 174,
@@ -13,8 +13,8 @@
     "manual": 19
   },
   "sentences": {
-    "listed": 177,
-    "manual": 60,
+    "listed": 196,
+    "manual": 65,
     "withClozeChange": 13
   }
 }

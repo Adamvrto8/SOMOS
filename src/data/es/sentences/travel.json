@@ -237,6 +237,25 @@
     ]
   },
   {
+    "id": "s2142",
+    "es": "Es mejor que compremos los billetes hoy porque mañana subirán los precios.",
+    "tokens": [
+      "Es",
+      "mejor",
+      "que",
+      "compremos",
+      "los",
+      "billetes",
+      "hoy",
+      "porque",
+      "mañana",
+      "subirán",
+      "los",
+      "precios",
+      "."
+    ]
+  },
+  {
     "id": "s157",
     "es": "Alquilamos un coche para viajar por Yucatán.",
     "tokens": [

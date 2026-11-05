@@ -92,6 +92,11 @@ const MANUAL = {
   s491: { es: 'Encendí la luz porque no veía nada.', blank: { Prendí: V('encender', 'preterito', 'yo') } },
   s1506: { es: 'Llevamos años charlando de ese viaje y nunca lo hacemos.', blank: { platicando: G('charlar') } },
   s060: { es: 'Mis compañeros están charlando en la cocina.', blank: { platicando: G('charlar') } },
+  s2078: { es: 'No me gustaría que el casero subiera el alquiler sin avisarnos antes.' },
+  s2108: { es: 'Si la escuela tuviera más ordenadores, los niños aprenderían programación más rápido.' },
+  s2119: { es: 'Si mi ordenador no fuera tan lento, trabajaría mucho más rápido.', blank: { fuera: { answer: 'fuera', hint: 'ser · él · subjuntivo imperfecto' } } },
+  s2121: { es: 'En cuanto llegue a casa y abra el ordenador, te mando el archivo.' },
+  s2126: { es: 'Mientras se descarga la actualización, no apagues el móvil ni cierres la aplicación.' },
   // Auto-swapped by spain-overlay.mjs, but the blank is on platicar, whose Spain verb is charlar:
   s1479: { es: 'Me arrepentí de no haber hecho una copia de seguridad antes de la actualización.', blank: { de: { answer: 'de', newIndex: 11 } } },
   s016: { es: null, blank: { platicamos: V('charlar', 'presente', 'nosotros') } },
