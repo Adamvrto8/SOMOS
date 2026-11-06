@@ -31,13 +31,13 @@ e2e 110/110. SQL schéma bola overená na Postgres 17 (PGlite) 18 kontrolami vr�
 | Nález | Stav | Čo sa zmenilo |
 |---|---|---|
 | B2 hlavičky | ✅ kód · ⏳ ty | `vercel.json`: nosniff, `X-Frame-Options: DENY`, Referrer-Policy, Permissions-Policy, CSP **zatiaľ Report-Only**, `immutable` cache pre `/assets`. Skript témy presunutý do `public/theme-init.js`. **Ty:** po nasadení týždeň sleduj konzolu (Chrome na PC, appka cez `chrome://inspect` z telefónu). Ak nevidíš hlásenia CSP, premenuj `Content-Security-Policy-Report-Only` na `Content-Security-Policy` |
-| B3 limity DB | ✅ kód · ⏳ ty | `schema.sql`: do `records` sa dá písať iba cez `push_records` (security definer). Funkcia preskočí neznámy `kind`, kľúč nad 200 znakov a dáta nad 64 kB, odmietne dávku nad 500 a účet nad 200 000 záznamov. Check constrainty sú záloha. `push_cleanup` maže nespustené duelové miestnosti po 24 h (okrem odkazov na odvetu). **Ty: spusti celý `supabase/schema.sql` v Supabase SQL editore** (dá sa spustiť opakovane; stará aj nová verzia appky s ním fungujú) |
+| B3 limity DB | ✅ (SQL spustené 2026-11-06) | `schema.sql`: do `records` sa dá písať iba cez `push_records` (security definer). Funkcia preskočí neznámy `kind`, kľúč nad 200 znakov a dáta nad 64 kB, odmietne dávku nad 500 a účet nad 200 000 záznamov. Check constrainty sú záloha. `push_cleanup` maže nespustené duelové miestnosti po 24 h (okrem odkazov na odvetu). **Ty: spusti celý `supabase/schema.sql` v Supabase SQL editore** (dá sa spustiť opakovane; stará aj nová verzia appky s ním fungujú) |
 | O1 kľúč `sb_secret_` | ✅ | `translate`, `report`, `usage` posielajú kľúč ako `reminder.ts`, s testami pre oba typy kľúča |
 | O4 precache 4 MB | ✅ | `npm run check:build` (`scripts/check-build.ts`) v CI zlyhá, keď niečo nie je v precache alebo keď chunk prekročí 3,5 MB |
 | O6 štatistiky | ✅ | limit aj na blok adries (`BATCHES_PER_BLOCK = 360`) |
 | O8 dev závislosti | ✅ čiastočne | vite 8.3.6, vitest 5.1.0, sharp 0.35.5: **0 high**. Zostáva 6 moderate a 2 low v `vite-plugin-pwa` (workbox-build) a v Sentry build plugine, iba počas buildu a bez opravy, ktorá by nebola downgrade |
 | O9 CI | ✅ | `npm ci` vo Verceli; CI pridáva `validate:es`, `npm audit --omit=dev --audit-level=high`, `check:build` |
-| O10 `.env` | ✅ lokálne · ⏳ ty | doplnené do `.gitignore`, **necommitnuté** (máš v ňom vlastné zmeny). Commitni ho sám |
+| O10 `.env` | ✅ | doplnené do `.gitignore` (3e415b4) |
 | `CRON_SECRET` | ✅ | porovnanie v konštantnom čase (`timingSafeEqual`) |
 | e2e workery | ✅ | `workers: 4` lokálne. Pozor: keď beží iná session, spúšťaj `E2E_PORT=5299 npm run test:e2e`, inak Playwright „požičia“ jej server na 5199 a padne, keď ho vypne (stalo sa pri tejto kontrole: 84 falošných zlyhaní) |
 | Text zásad | ✅ | „Profil → Záloha“ (SK aj EN) |
