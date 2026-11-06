@@ -25,9 +25,10 @@ create policy "own records" on public.records
   with check (user_id = (select auth.uid()));
 
 -- The app reads its records straight from the table and writes only through push_records, which holds the limits.
-revoke all on public.records from anon;
-revoke insert, update, delete on public.records from authenticated;
-revoke usage on sequence public.records_rev from authenticated;
+-- Supabase grants anon and authenticated every privilege on a new table (TRUNCATE too, which skips row level
+-- security): take them all, then give back only what is needed. The same for every table below.
+revoke all on public.records from anon, authenticated;
+revoke all on sequence public.records_rev from anon, authenticated;
 grant select on public.records to authenticated;
 
 -- What a record may be (docs/launch-audit-2026-11-05.md, B3): one account must not fill the database for everyone.
@@ -106,6 +107,7 @@ create policy "own nickname" on public.profiles for insert to authenticated with
 drop policy if exists "own nickname changes" on public.profiles;
 create policy "own nickname changes" on public.profiles for update to authenticated
   using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+revoke all on public.profiles from anon, authenticated;
 grant select, insert, update on public.profiles to authenticated;
 
 create table if not exists public.duels (
@@ -126,6 +128,7 @@ alter table public.duels enable row level security;
 drop policy if exists "players see their duels" on public.duels;
 create policy "players see their duels" on public.duels for select to authenticated
   using ((select auth.uid()) in (host, guest));
+revoke all on public.duels from anon, authenticated;
 grant select on public.duels to authenticated; -- changes only through the functions below
 
 create table if not exists public.duel_answers (
@@ -142,6 +145,7 @@ alter table public.duel_answers enable row level security;
 drop policy if exists "players see the answers of their duels" on public.duel_answers;
 create policy "players see the answers of their duels" on public.duel_answers for select to authenticated
   using (exists (select 1 from public.duels d where d.id = duel_id and (select auth.uid()) in (d.host, d.guest)));
+revoke all on public.duel_answers from anon, authenticated;
 grant select on public.duel_answers to authenticated;
 
 -- Both players get rooms and answers the moment they change (Supabase Realtime).
