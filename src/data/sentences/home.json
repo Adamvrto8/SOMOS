@@ -2066,6 +2066,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
@@ -2085,6 +2087,15 @@
         "lemma": "aunque",
         "hint": "aj keď",
         "distractors": ["Porque", "Pero", "Donde"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "llueva",
+        "lemma": "llover",
+        "hint": "llover · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["llover", "lloviendo"]
       }
     ]
   },
@@ -2102,6 +2113,8 @@
         "answer": "quienes",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoby)",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["donde", "cuyos", "cuando"]
       }
     ]

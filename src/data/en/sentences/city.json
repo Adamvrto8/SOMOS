@@ -111,7 +111,7 @@
   { "id": "s1994", "en": "If there were more bike lanes, many people would leave the car at home." },
   { "id": "s1995", "en": "I live in the neighborhood where my parents grew up, near a huge market.", "hints": ["relative adverb (where)"] },
   { "id": "s1996", "en": "As soon as they open the new metro line, I will no longer have to get up so early." },
-  { "id": "s1997", "en": "I am not going to stop until they fix the pothole in front of my house.", "hints": ["until"] },
+  { "id": "s1997", "en": "I am not going to stop until they fix the pothole in front of my house.", "hints": ["until", null] },
   { "id": "s1998", "en": "If the bus does not come soon, we will take a taxi so as not to miss the appointment." },
   { "id": "s1999", "en": "That is the street the parade goes along every year in September.", "hints": ["relative pronoun"] },
   { "id": "s2000", "en": "The neighbors asked them to remove the stalls from the sidewalk so people could pass." },

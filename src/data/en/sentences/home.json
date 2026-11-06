@@ -99,7 +99,7 @@
   { "id": "s2070", "en": "I hope we can move to an apartment with more light." },
   { "id": "s2071", "en": "If I had more room in the kitchen, I would buy a bigger oven." },
   { "id": "s2072", "en": "The plumber who came yesterday told me the pipes were very old.", "hints": ["relative pronoun"] },
-  { "id": "s2073", "en": "Even if it rains a lot tonight, the new roof will not let the water through.", "hints": ["even if"] },
+  { "id": "s2073", "en": "Even if it rains a lot tonight, the new roof will not let the water through.", "hints": ["even if", null] },
   { "id": "s2074", "en": "Our neighbors, to whom we lent the ladder, brought us pan dulce.", "hints": ["relative pronoun (people)"] },
   { "id": "s2075", "en": "When I finish painting the living room, we are going to move the furniture." },
   { "id": "s2076", "en": "My mom wants us to clean the house before the guests arrive." },

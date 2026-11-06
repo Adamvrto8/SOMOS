@@ -110,6 +110,6 @@
   { "id": "s2055", "en": "I hope the medicine works fast, because I can no longer stand this sore throat." },
   { "id": "s2056", "en": "The nurse told me not to eat anything six hours before the tests." },
   { "id": "s2057", "en": "I quit smoking so my kids do not grow up breathing smoke." },
-  { "id": "s2058", "en": "The hospital where my daughter was born has just opened a clinic for children." },
+  { "id": "s2058", "en": "The hospital where my daughter was born has just opened a clinic for children.", "hints": [null, "relative word"] },
   { "id": "s2059", "en": "If I drank as much coffee as before, I could not sleep a single night." }
 ]

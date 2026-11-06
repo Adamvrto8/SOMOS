@@ -2457,6 +2457,15 @@
         "lemma": "hacer",
         "hint": "hacer · yo · presente",
         "distractors": ["haga", "hice", "haré"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "cuyo"]
       }
     ]
   },
@@ -2528,6 +2537,8 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoba)",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]

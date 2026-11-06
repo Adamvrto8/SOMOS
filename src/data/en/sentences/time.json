@@ -91,9 +91,9 @@
   { "id": "s2129", "en": "If you left home earlier, you would get to the office on time." },
   { "id": "s2130", "en": "My grandmother always says that time flies when you're having fun.", "hints": ["that"] },
   { "id": "s2131", "en": "Before the last train leaves, we have to get to the station." },
-  { "id": "s2132", "en": "My brother arrived late because he had to wait for the bus that never came." },
+  { "id": "s2132", "en": "My brother arrived late because he had to wait for the bus that never came.", "hints": [null, "relative word"] },
   { "id": "s2133", "en": "I wish we had more hours in the day to do everything we want." },
-  { "id": "s2134", "en": "While I worked in Guadalajara, I left home at six to avoid traffic." },
+  { "id": "s2134", "en": "While I worked in Guadalajara, I left home at six to avoid traffic.", "hints": [null, "por/para"] },
   { "id": "s2135", "en": "As soon as we finish the meeting, I'll call you so we can settle the date of the trip." },
   { "id": "s2136", "en": "Since time is running out, we should start the project today." },
   { "id": "s2137", "en": "My mom reminded me that the dentist appointment was at four." }

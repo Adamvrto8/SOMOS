@@ -1143,7 +1143,7 @@
     "sk": "Myslím, že by si mal ísť k lekárovi, ak ťa chrbát stále bolí.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "condicional"],
     "tokens": ["Creo", "que", "deberías", "ir", "al", "médico", "si", "te", "sigue", "doliendo", "la", "espalda", "."],
     "cloze": [
       {
@@ -1152,6 +1152,13 @@
         "lemma": "seguir",
         "hint": "seguir · él · presente",
         "distractors": ["sigo", "siguió", "seguía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "deberías",
+        "lemma": "deber",
+        "hint": "deber · tú · condicional",
+        "distractors": ["debiste", "deber", "debiendo"]
       }
     ]
   },
@@ -1766,6 +1773,8 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
@@ -1785,6 +1794,15 @@
         "lemma": "ojalá",
         "hint": "kiež",
         "distractors": ["Mientras", "Porque", "Sino"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "duela",
+        "lemma": "doler",
+        "hint": "doler · él",
+        "tip": "subjuntivo-wishes",
+        "why": "ojala",
+        "distractors": ["duele", "dolerá"]
       }
     ]
   },
@@ -1821,6 +1839,13 @@
         "lemma": "doler",
         "hint": "doler · él · imperfecto",
         "distractors": ["duele", "dolió", "dolerá"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "comido",
+        "lemma": "comer",
+        "hint": "comer · participio",
+        "distractors": ["comía", "comió", "comiendo"]
       }
     ]
   },
@@ -1839,6 +1864,15 @@
         "lemma": "para",
         "hint": "aby",
         "distractors": ["porque", "sino", "donde"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "duela",
+        "lemma": "doler",
+        "hint": "doler · él",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["duele", "dolerá"]
       }
     ]
   },
@@ -1857,17 +1891,26 @@
         "lemma": "si",
         "hint": "ak",
         "distractors": ["Porque", "Sino", "Donde"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "hubieran",
+        "lemma": "haber",
+        "hint": "haber · ellos",
+        "tip": "si-clauses",
+        "why": "unreal",
+        "distractors": ["habían", "habrían", "han"]
       }
     ]
   },
   {
     "id": "s1991",
-    "es": "Me hicieron una radiografía para ver si la fractura había sanado por completo.",
-    "sk": "Urobili mi röntgen, aby zistili, či sa zlomenina úplne zahojila.",
+    "es": "Me hicieron una radiografía para ver si el hueso había quedado bien.",
+    "sk": "Urobili mi röntgen, aby zistili, či kosť zrástla dobre.",
     "level": "B2",
     "topics": ["body"],
     "grammar": ["pluscuamperfecto"],
-    "tokens": ["Me", "hicieron", "una", "radiografía", "para", "ver", "si", "la", "fractura", "había", "sanado", "por", "completo", "."],
+    "tokens": ["Me", "hicieron", "una", "radiografía", "para", "ver", "si", "el", "hueso", "había", "quedado", "bien", "."],
     "cloze": [
       {
         "tokenIndex": 6,
@@ -1875,6 +1918,13 @@
         "lemma": "si",
         "hint": "či",
         "distractors": ["quien", "donde", "cuyo"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "quedado",
+        "lemma": "quedar",
+        "hint": "quedar · participio",
+        "distractors": ["quedando", "quedó", "quedaba"]
       }
     ]
   }

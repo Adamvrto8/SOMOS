@@ -2167,6 +2167,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuanto"]
       }
     ]
@@ -2239,6 +2241,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["quien", "donde", "cuyo"]
       }
     ]

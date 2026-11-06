@@ -101,10 +101,10 @@
   { "id": "s2080", "en": "It is important that we protect the forests so that they keep giving oxygen." },
   { "id": "s2081", "en": "If it didn't rain so little in this region, the rivers wouldn't dry up every summer." },
   { "id": "s2082", "en": "The scientists who study volcanoes say that Popocatépetl is still active.", "hints": ["relative pronoun"] },
-  { "id": "s2083", "en": "We will stay at the campsite until it stops raining and the sun comes out.", "hints": ["until"] },
+  { "id": "s2083", "en": "We will stay at the campsite until it stops raining and the sun comes out.", "hints": ["until", null] },
   { "id": "s2084", "en": "We saw a hummingbird whose beak was so long it reached the bottom of the flower.", "hints": ["relative word (whose)"] },
-  { "id": "s2085", "en": "I hope there are no forest fires in the mountains this year.", "hints": ["wish word"] },
-  { "id": "s2086", "en": "While we walked along the beach, we saw a turtle coming out of the sea." },
+  { "id": "s2085", "en": "I hope there are no forest fires in the mountains this year.", "hints": ["wish word", "haber (hay)"] },
+  { "id": "s2086", "en": "While we walked along the beach, we saw a turtle coming out of the sea.", "hints": [null, "relative word"] },
   { "id": "s2087", "en": "We must take care of the rivers because all life in the valley depends on them.", "hints": ["because"] },
   { "id": "s2088", "en": "Although the snow has already fallen, we want to climb the volcano as soon as they open the road." },
   { "id": "s2089", "en": "If we found a quieter cenote, we would swim there all afternoon." }

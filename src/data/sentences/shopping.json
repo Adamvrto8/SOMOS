@@ -2338,7 +2338,7 @@
     "sk": "Predavačka mi povedala, že môžem košeľu vrátiť, ak si ponechám pokladničný doklad.",
     "level": "B2",
     "topics": ["shopping"],
-    "grammar": ["si-clauses", "imperfecto"],
+    "grammar": ["imperfecto"],
     "tokens": ["La", "vendedora", "me", "dijo", "que", "podía", "devolver", "la", "camisa", "si", "guardaba", "el", "ticket", "."],
     "cloze": [
       {
@@ -2365,6 +2365,15 @@
         "lemma": "aunque",
         "hint": "aj keď",
         "distractors": ["Porque", "Para", "Sino"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "sea",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["ser", "siendo"]
       }
     ]
   },
@@ -2401,6 +2410,15 @@
         "lemma": "esperar",
         "hint": "esperar · nosotros · imperfecto",
         "distractors": ["esperamos", "esperemos", "esperaremos"]
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },
@@ -2437,6 +2455,15 @@
         "lemma": "porque",
         "hint": "pretože",
         "distractors": ["aunque", "mientras", "para"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },

@@ -1734,6 +1734,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "quien", "cuyo"]
       }
     ]
@@ -1788,6 +1790,8 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoba)",
+        "tip": "relatives",
+        "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]

@@ -106,14 +106,14 @@
   { "id": "s1837", "en": "If you had to choose, what would you choose?" },
   { "id": "s1838", "en": "It was necessary that everyone understand the rules." },
   { "id": "s1905", "en": "For me, Spanish is not that difficult.", "hints": ["por/para"] },
-  { "id": "s1972", "en": "Even if it rains tomorrow, we are going to the market as we had planned.", "hints": ["although / even if"] },
+  { "id": "s1972", "en": "Even if it rains tomorrow, we are going to the market as we had planned.", "hints": ["although / even if", null] },
   { "id": "s1973", "en": "I will finish this report before the office director arrives." },
   { "id": "s1974", "en": "If I had more free time, I would learn to play the guitar and the piano." },
-  { "id": "s1975", "en": "My boss told me that tomorrow we would start early to finish the project.", "hints": ["that"] },
+  { "id": "s1975", "en": "My boss told me that tomorrow we would start early to finish the project.", "hints": ["that", null] },
   { "id": "s1976", "en": "That is the person I told you about yesterday at the neighbors' meeting.", "hints": ["relative pronoun"] },
   { "id": "s1977", "en": "I hope they give me an answer before Friday, because I need to decide soon." },
   { "id": "s1978", "en": "When you have a moment, send me a message so I know you arrived safely." },
-  { "id": "s1979", "en": "As long as you do not tell me the truth, I will not be able to help you with this.", "hints": ["as long as / until"] },
+  { "id": "s1979", "en": "As long as you do not tell me the truth, I will not be able to help you with this.", "hints": ["as long as / until", null] },
   { "id": "s1980", "en": "Since nobody wanted to speak first, I started to break the ice.", "hints": ["since / as"] },
   { "id": "s1981", "en": "There is nothing I like more than chatting with you all on a Sunday." }
 ]

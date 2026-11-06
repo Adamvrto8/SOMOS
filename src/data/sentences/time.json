@@ -1861,6 +1861,15 @@
         "lemma": "pasar",
         "hint": "pasar · él · imperfecto",
         "distractors": ["pase", "pasará", "pasamos"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },
@@ -1897,6 +1906,15 @@
         "lemma": "salir",
         "hint": "salir · yo · imperfecto",
         "distractors": ["salgo", "salí", "saldré"]
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "para",
+        "lemma": "para",
+        "hint": "por/para",
+        "tip": "por-para",
+        "why": "para",
+        "distractors": ["por"]
       }
     ]
   },

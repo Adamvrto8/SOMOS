@@ -2283,6 +2283,8 @@
         "answer": "donde",
         "lemma": "donde",
         "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
         "distractors": ["quien", "cuyo", "cuanto"]
       }
     ]
@@ -2320,6 +2322,15 @@
         "lemma": "hasta",
         "hint": "až (kým)",
         "distractors": ["desde", "por", "entre"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "arreglen",
+        "lemma": "arreglar",
+        "hint": "arreglar · ellos",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["arreglan", "arreglarán"]
       }
     ]
   },
@@ -2337,6 +2348,8 @@
         "answer": "llega",
         "lemma": "llegar",
         "hint": "llegar · él · presente",
+        "tip": "si-clauses",
+        "why": "real",
         "distractors": ["llegara", "llegue", "llegaría"]
       }
     ]
@@ -2355,6 +2368,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["quien", "donde", "cuyo"]
       }
     ]

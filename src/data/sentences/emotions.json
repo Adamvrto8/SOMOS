@@ -2124,6 +2124,13 @@
         "lemma": "cuando",
         "hint": "keď",
         "distractors": ["donde", "quien", "cuyo"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "conseguido",
+        "lemma": "conseguir",
+        "hint": "conseguir · participio",
+        "distractors": ["conseguía", "consiguió", "consiguiendo"]
       }
     ]
   },
@@ -2159,6 +2166,8 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné slovo (osoba)",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
@@ -2214,6 +2223,15 @@
         "lemma": "sino",
         "hint": "ale (po zápore)",
         "distractors": ["pero", "aunque", "porque"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Lo",
+        "lemma": "lo",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["Cual", "Quien"]
       }
     ]
   },

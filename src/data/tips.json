@@ -1497,6 +1497,24 @@
           { "es": "Esa es la chava con la que trabajo.", "sk": "To je to dievča, s ktorým pracujem." },
           { "es": "Es el tema del que te hablé.", "sk": "To je tá téma, o ktorej som ti hovoril." }
         ]
+      },
+      {
+        "id": "quien",
+        "title": "quien, quienes: ktorý (o ľuďoch)",
+        "text": "Iba o ľuďoch, keď je veta vsunutá medzi čiarky: mi hermano, quien vive en Puebla. Ide aj que. Bez čiarky a bez predložky sa hovorí iba que.",
+        "because": "Ide o človeka vo vsuvke medzi čiarkami, preto quien (dá sa aj que).",
+        "examples": [
+          { "es": "Mi hermano, quien vive en Puebla, viene mañana.", "sk": "Môj brat, ktorý býva v Pueble, príde zajtra." }
+        ]
+      },
+      {
+        "id": "cuyo",
+        "title": "cuyo, cuya: ktorého, ktorej",
+        "text": "Vyjadruje, komu niečo patrí: la vecina cuyo perro ladra (suseda, ktorej pes šteká). Zhoduje sa s tým, čo patrí, nie s majiteľom. Znie skôr knižne.",
+        "because": "Ide o to, komu niečo patrí, preto cuyo; zhoduje sa s tým, čo patrí.",
+        "examples": [
+          { "es": "Tengo un amigo cuya hermana vive en Mérida.", "sk": "Mám kamaráta, ktorého sestra býva v Méride." }
+        ]
       }
     ]
   },

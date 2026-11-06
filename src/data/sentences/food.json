@@ -2607,6 +2607,8 @@
         "answer": "los",
         "lemma": "los",
         "hint": "člen",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["las", "lo", "el"]
       }
     ]

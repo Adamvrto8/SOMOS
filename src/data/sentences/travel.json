@@ -2310,6 +2310,8 @@
         "answer": "donde",
         "lemma": "donde",
         "hint": "vzťažné slovo (miesto)",
+        "tip": "relatives",
+        "why": "donde",
         "distractors": ["cuando", "quien", "cuyo"]
       }
     ]
@@ -2364,6 +2366,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]

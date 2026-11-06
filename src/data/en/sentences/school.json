@@ -95,7 +95,7 @@
   { "id": "s1945", "en": "The students who study more get better grades.", "hints": ["relative word"] },
   { "id": "s1968", "en": "The classroom has been open since early morning." },
   { "id": "s2100", "en": "The school where I attended middle school closed last year for lack of students.", "hints": ["relative word (place)"] },
-  { "id": "s2101", "en": "Even if you study all night, you won't learn anything if you don't rest.", "hints": ["even if"] },
+  { "id": "s2101", "en": "Even if you study all night, you won't learn anything if you don't rest.", "hints": ["even if", null] },
   { "id": "s2102", "en": "My classmate told me the library would open earlier during exams." },
   { "id": "s2103", "en": "There is no student who doesn't understand this rule after the explanation." },
   { "id": "s2104", "en": "The students I did the project with got a ten on the presentation.", "hints": ["relative pronoun (people)"] },

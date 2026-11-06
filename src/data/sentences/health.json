@@ -2197,6 +2197,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["quien", "donde", "cuyo"]
       }
     ]
@@ -2270,6 +2272,15 @@
         "lemma": "nacer",
         "hint": "nacer · ella · pretérito",
         "distractors": ["nace", "nazca", "nacerá"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "quien"]
       }
     ]
   },

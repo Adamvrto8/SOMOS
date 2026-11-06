@@ -1816,6 +1816,15 @@
         "lemma": "para",
         "hint": "aby",
         "distractors": ["porque", "sino", "donde"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "sepas",
+        "lemma": "saber",
+        "hint": "saber · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["sabes", "sabrás"]
       }
     ]
   },
@@ -1833,6 +1842,8 @@
         "answer": "vemos",
         "lemma": "ver",
         "hint": "ver · nosotros · presente",
+        "tip": "si-clauses",
+        "why": "real",
         "distractors": ["veamos", "viéramos", "veremos"]
       }
     ]
@@ -1869,6 +1880,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuanto"]
       }
     ]

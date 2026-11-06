@@ -83,7 +83,7 @@
   { "id": "s1689", "en": "My friends arrive today and I'm going to pick them up at the airport.", "hints": ["pronoun: them"] },
   { "id": "s1753", "en": "Come in and sit down, make yourself at home." },
   { "id": "s2042", "en": "When you meet my parents, do not forget to greet them with a kiss and a smile." },
-  { "id": "s2043", "en": "I am writing to you so you know I am thinking of you and sending you a hug.", "hints": ["so that"] },
+  { "id": "s2043", "en": "I am writing to you so you know I am thinking of you and sending you a hug.", "hints": ["so that", null] },
   { "id": "s2044", "en": "If we see each other soon, I will buy you a coffee to catch up." },
   { "id": "s2045", "en": "He told me he would stop by to say hi as soon as his shift at the hospital ended." },
   { "id": "s2046", "en": "She is the lady who helped me when I moved into this building.", "hints": ["relative pronoun"] },

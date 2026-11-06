@@ -1061,6 +1061,20 @@
         "text": "After a preposition the article is added: la persona con la que hablé, el tema del que te hablé. For people also quien: la chava con quien salgo.",
         "because": "After a preposition the article comes in: el que, la que (for people also quien).",
         "examples": ["That's the girl I work with.", "It's the topic I told you about."]
+      },
+      {
+        "id": "quien",
+        "title": "quien, quienes: who (people)",
+        "text": "Only for people, when the clause sits between commas: mi hermano, quien vive en Puebla. Que works too. Without a comma and without a preposition only que.",
+        "because": "It is a person in a clause between commas, so quien (que works too).",
+        "examples": ["My brother, who lives in Puebla, is coming tomorrow."]
+      },
+      {
+        "id": "cuyo",
+        "title": "cuyo, cuya: whose",
+        "text": "Says whom something belongs to: la vecina cuyo perro ladra (the neighbour whose dog barks). It agrees with what is owned, not with the owner. Sounds rather bookish.",
+        "because": "It says whom something belongs to, so cuyo; it agrees with what is owned.",
+        "examples": ["I have a friend whose sister lives in Mérida."]
       }
     ]
   },

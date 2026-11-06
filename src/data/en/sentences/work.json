@@ -118,7 +118,7 @@
   { "id": "s2159", "en": "If they offered me a better salary, I would accept the position right away." },
   { "id": "s2160", "en": "The company where my wife works is looking for engineers who speak English." },
   { "id": "s2161", "en": "When they pay me my biweekly paycheck, I'm going to send my mom some money." },
-  { "id": "s2162", "en": "Although I work a lot, I don't complain, since I like what I do." },
+  { "id": "s2162", "en": "Although I work a lot, I don't complain, since I like what I do.", "hints": [null, "relative word"] },
   { "id": "s2163", "en": "The manager asked us to arrive early because we would have a meeting with the clients." },
   { "id": "s2164", "en": "I'm looking for a job that leaves me free time to study in the afternoons." },
   { "id": "s2165", "en": "If I had quit earlier, I would be working in my own business now." },

@@ -1308,7 +1308,7 @@
     "sk": "Rád by som si urobil magisterské štúdium, ale ešte neviem z čoho.",
     "level": "B1",
     "topics": ["school"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "condicional"],
     "tokens": ["Me", "gustaría", "estudiar", "una", "maestría", ",", "pero", "todavía", "no", "sé", "en", "qué", "."],
     "cloze": [
       {
@@ -1317,6 +1317,13 @@
         "lemma": "saber",
         "hint": "saber · yo · presente",
         "distractors": ["sabes", "supe", "sabíamos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "gustaría",
+        "lemma": "gustar",
+        "hint": "gustar · él · condicional",
+        "distractors": ["gustan", "gustó", "gustar"]
       }
     ]
   },
@@ -1913,6 +1920,8 @@
         "answer": "donde",
         "lemma": "donde",
         "hint": "vzťažné slovo (miesto)",
+        "tip": "relatives",
+        "why": "donde",
         "distractors": ["cuando", "quien", "cuyo"]
       }
     ]
@@ -1932,6 +1941,15 @@
         "lemma": "aunque",
         "hint": "aj keď",
         "distractors": ["Porque", "Para", "Sino"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "estudies",
+        "lemma": "estudiar",
+        "hint": "estudiar · tú",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["estudiar", "estudiando"]
       }
     ]
   },
@@ -1985,6 +2003,8 @@
         "answer": "quienes",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoby)",
+        "tip": "relatives",
+        "why": "el-que",
         "distractors": ["donde", "cuyos", "cuando"]
       }
     ]

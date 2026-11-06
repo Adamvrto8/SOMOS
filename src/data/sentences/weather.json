@@ -1328,7 +1328,7 @@
     "sk": "Keď sa film skončil, už prestalo pršať.",
     "level": "B1",
     "topics": ["weather"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "pluscuamperfecto"],
     "tokens": ["Cuando", "terminó", "la", "película", ",", "ya", "había", "dejado", "de", "llover", "."],
     "cloze": [
       {
@@ -1337,6 +1337,13 @@
         "lemma": "terminar",
         "hint": "terminar · ella · pretérito",
         "distractors": ["termina", "terminaba", "terminará"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "dejado",
+        "lemma": "dejar",
+        "hint": "dejar · participio",
+        "distractors": ["dejaba", "dejó", "dejando"]
       }
     ]
   },
@@ -2157,6 +2164,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "quien", "cuyo"]
       }
     ]
@@ -2193,6 +2202,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
@@ -2211,6 +2222,8 @@
         "answer": "donde",
         "lemma": "donde",
         "hint": "vzťažné slovo (miesto)",
+        "tip": "relatives",
+        "why": "donde",
         "distractors": ["cuando", "quien", "cuyo"]
       }
     ]

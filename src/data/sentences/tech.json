@@ -2007,6 +2007,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "quien", "cuyo"]
       }
     ]
@@ -2044,6 +2046,15 @@
         "lemma": "aunque",
         "hint": "aj keď",
         "distractors": ["Porque", "Para", "Sino"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "dure",
+        "lemma": "durar",
+        "hint": "durar · ella",
+        "tip": "subjuntivo-clauses",
+        "why": "aunque",
+        "distractors": ["durar", "durando"]
       }
     ]
   },
@@ -2133,6 +2144,8 @@
         "answer": "lo",
         "lemma": "lo",
         "hint": "zámeno",
+        "tip": "relatives",
+        "why": "lo-que",
         "distractors": ["el", "los", "las"]
       }
     ]

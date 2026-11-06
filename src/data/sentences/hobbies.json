@@ -1934,6 +1934,15 @@
         "lemma": "ir",
         "hint": "ir · nosotros · imperfecto",
         "distractors": ["vamos", "fuimos", "iremos"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },
@@ -1961,7 +1970,7 @@
     "sk": "Sused mi povedal, že ak ma baví šach, pozve ma do svojho klubu.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["si-clauses", "imperfecto", "gustar"],
+    "grammar": ["imperfecto", "gustar"],
     "tokens": ["Me", "dijo", "mi", "vecino", "que", ",", "si", "me", "gustaba", "el", "ajedrez", ",", "me", "invitaba", "a", "su", "club", "."],
     "cloze": [
       {

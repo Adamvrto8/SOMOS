@@ -1865,6 +1865,8 @@
         "answer": "cuyas",
         "lemma": "cuyas",
         "hint": "vzťažné slovo (jej)",
+        "tip": "relatives",
+        "why": "cuyo",
         "distractors": ["quienes", "donde", "cuantas"]
       }
     ]
@@ -1920,6 +1922,13 @@
         "lemma": "porque",
         "hint": "pretože",
         "distractors": ["donde", "cuyo", "quien"]
+      },
+      {
+        "tokenIndex": 13,
+        "answer": "planchado",
+        "lemma": "planchar",
+        "hint": "planchar · participio",
+        "distractors": ["planchaba", "planchó", "planchando"]
       }
     ]
   },

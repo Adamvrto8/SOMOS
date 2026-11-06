@@ -89,7 +89,7 @@
   { "id": "s2006", "en": "I know a designer whose embroidered shirts are sold all over the country.", "hints": ["relative pronoun (whose)"] },
   { "id": "s2007", "en": "The saleswoman assured me the shirt would not shrink even if I washed it in hot water." },
   { "id": "s2008", "en": "I hope the skirt I bought online without trying it on fits me well." },
-  { "id": "s2009", "en": "I ran late because I could not find the tie my wife had ironed.", "hints": ["because"] },
+  { "id": "s2009", "en": "I ran late because I could not find the tie my wife had ironed.", "hints": ["because", null] },
   { "id": "s2010", "en": "I am not leaving the store until I find a dress for the wedding." },
   { "id": "s2011", "en": "You can take the scarf as long as you give it back to me next week." }
 ]

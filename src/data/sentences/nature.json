@@ -2090,6 +2090,8 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
     ]
@@ -2109,6 +2111,15 @@
         "lemma": "hasta",
         "hint": "kým",
         "distractors": ["desde", "porque", "después"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "deje",
+        "lemma": "dejar",
+        "hint": "dejar · él",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["deja", "dejará"]
       }
     ]
   },
@@ -2126,6 +2137,8 @@
         "answer": "cuyo",
         "lemma": "cuyo",
         "hint": "vzťažné slovo (ktorého)",
+        "tip": "relatives",
+        "why": "cuyo",
         "distractors": ["quien", "donde", "cual"]
       }
     ]
@@ -2145,6 +2158,15 @@
         "lemma": "ojalá",
         "hint": "želanie",
         "distractors": ["Porque", "Pero", "Sino"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "haya",
+        "lemma": "haber",
+        "hint": "haber (hay)",
+        "tip": "subjuntivo-wishes",
+        "why": "ojala",
+        "distractors": ["hay", "habrá", "había"]
       }
     ]
   },
@@ -2163,6 +2185,15 @@
         "lemma": "salir",
         "hint": "salir · ella · imperfecto",
         "distractors": ["salga", "saldrá", "salgo"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien"]
       }
     ]
   },
