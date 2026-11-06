@@ -26,3 +26,11 @@ dist-ssr
 # PWA dev build, Vercel CLI
 dev-dist
 .vercel
+
+
+
+
+# Secrets: never in git (vercel env pull writes .env.local, other tools .env)
+.env
+.env.*
+!.env.example
