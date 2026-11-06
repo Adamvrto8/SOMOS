@@ -3,7 +3,22 @@ import { sentences, tipById, topicById, verbById, verbs } from '../data'
 import type { Grammar, Level, Person, Sentence, Verb, Word } from '../data/types'
 import { USAGE_TIPS } from './clozeChecks'
 import { personsOf, type TableTense } from './conjugate'
-import { builderWords, conjugationTask, LESSON_SIZE, seededRandom, taskFromItem, vocabTask, type ExerciseType, type Grade, type Task } from './lesson'
+import {
+  builderWords,
+  conjugationTask,
+  fitsUsed,
+  LESSON_SIZE,
+  markUsed,
+  noneUsed,
+  pickVaried,
+  seededRandom,
+  taskFromItem,
+  taskKeys,
+  vocabTask,
+  type ExerciseType,
+  type Grade,
+  type Task,
+} from './lesson'
 import { useLessonProgression, type LessonProgressionMap } from './lessonProgress'
 import { localizedTip, topicName } from './localized'
 import { getOnboarding, MOTIVATIONS, useOnboarding, type OnboardingState } from './onboarding'
@@ -102,7 +117,7 @@ function cachedTip(key: string, find: () => TipOf): TipOf {
 }
 
 /** Whether a blank practises the unit's grammar point (the tip "Prečo?" would open for it). */
-function clozeFits(unit: PathUnit, sentence: Sentence, index: number): boolean {
+export function clozeFits(unit: PathUnit, sentence: Sentence, index: number): boolean {
   const cloze = sentence.cloze![index]
   if (unit.grammar === 'reflexive') return verbById.get(cloze.lemma)?.reflexive === true
   if (unit.grammar === 'accents') return ACCENTED.has(cloze.answer.toLowerCase())
@@ -156,8 +171,8 @@ function grammarConjugations(unit: PathUnit): Task[] {
   return out
 }
 
-/** Blanks that practise the point, from the unit's sentences first, then any of the level and below. */
-function grammarClozes(unit: PathUnit, size: number): { sentence: Sentence; index: number }[] {
+/** Blanks that practise the point (at most `size`), from the unit's sentences first, then any of the level and below. */
+function grammarClozes(unit: PathUnit, size = Infinity): { sentence: Sentence; index: number }[] {
   const own = new Set(unitMaterial(unit).sentences)
   const levels = levelsUpTo(unit.level)
   const pool = firstThose(
@@ -188,24 +203,33 @@ function sentenceTask(kind: ExerciseType, sentence: Sentence, random: Random): T
 }
 
 /**
- * One task per sentence, the kinds taking turns in `kinds` (each sentence the first kind it allows),
- * then a second kind for the sentences until the lesson is full.
+ * One task per sentence, the kinds taking turns in `kinds`: each sentence the first kind it allows whose word
+ * the lesson does not have yet (a builder asks no single word), else the first it allows. A unit with fewer
+ * sentences than a lesson is filled with `known` ones, never with a sentence again.
  */
-function sentenceLesson(list: Sentence[], kinds: ExerciseType[], random: Random): Task[] {
+function sentenceLesson(list: Sentence[], kinds: ExerciseType[], random: Random, known: Sentence[]): Task[] {
   const out: Task[] = []
-  const used = new Set<string>()
-  const add = (task: Task | undefined) => {
-    if (!task || out.length === LESSON_SIZE || used.has(`${task.kind}|${task.itemId}`)) return false
-    used.add(`${task.kind}|${task.itemId}`)
+  const used = noneUsed()
+  const place = (sentence: Sentence, i: number) => {
+    if (out.length === LESSON_SIZE || used.sentences.has(sentence.id)) return
+    const tasks = kinds.flatMap((_, k) => sentenceTask(kinds[(i + k) % kinds.length], sentence, random) ?? [])
+    const task = tasks.find((t) => fitsUsed(used, taskKeys(t), true)) ?? tasks[0]
+    if (!task) return
+    markUsed(used, taskKeys(task))
     out.push(task)
-    return true
   }
-  list.forEach((sentence, i) => {
-    for (let k = 0; k < kinds.length; k++) if (add(sentenceTask(kinds[(i + k) % kinds.length], sentence, random))) break
-  })
-  list.forEach((sentence, i) => {
-    for (let k = 1; k < kinds.length; k++) if (add(sentenceTask(kinds[(i + k) % kinds.length], sentence, random))) break
-  })
+  list.forEach(place)
+  known.forEach((sentence, i) => place(sentence, list.length + i))
+  return out
+}
+
+/** Sentences of the unit's topic met before it: the earlier parts of its level (the latest first), then the levels below. */
+function knownSentences(unit: PathUnit): Sentence[] {
+  const out: Sentence[] = []
+  for (let part = unit.part - 1; part >= 1; part--) out.push(...unitMaterial({ level: unit.level, topic: unit.topic, part }).sentences)
+  for (const level of levelsUpTo(unit.level).slice(0, -1).reverse()) {
+    out.push(...sentences.filter((s) => s.level === level && s.topics[0] === unit.topic))
+  }
   return out
 }
 
@@ -231,8 +255,17 @@ export function stepTasks(unit: PathUnit, step: FixedStep, random: Random = Math
         : [...second.map((word) => vocabTask(word, 'es-sk')), ...first.slice(0, Math.max(0, LESSON_SIZE - second.length)).map((word) => vocabTask(word, 'sk-es'))]
     case 'grammar': {
       const conjugations = grammarConjugations(unit)
+      // A blank of a verb conjugated above, or of a word another blank has, only when no other blank is left.
+      const used = noneUsed()
+      for (const task of conjugations) markUsed(used, taskKeys(task))
+      const picked = pickVaried(
+        grammarClozes(unit),
+        LESSON_SIZE - conjugations.length,
+        ({ sentence, index }) => ({ sentence: sentence.id, words: [sentence.cloze![index].lemma.toLowerCase()] }),
+        used,
+      )
       // Picking and typing take turns.
-      const clozes = grammarClozes(unit, LESSON_SIZE - conjugations.length).flatMap(({ sentence, index }, i) => {
+      const clozes = picked.flatMap(({ sentence, index }, i) => {
         const kind = i % 2 === 0 && (sentence.cloze![index].distractors?.length ?? 0) >= 2 ? 'choice' : 'cloze'
         return taskFromItem(kind, `${sentence.id}#${index}`, random) ?? []
       })
@@ -240,10 +273,10 @@ export function stepTasks(unit: PathUnit, step: FixedStep, random: Random = Math
       return tasks.length >= MIN_GRAMMAR_TASKS ? tasks : []
     }
     case 'sentences':
-      return sentenceLesson(unitSentences, ['choice', 'cloze', 'builder'], random)
+      return sentenceLesson(unitSentences, ['choice', 'cloze', 'builder'], random, knownSentences(unit))
     case 'listening':
       // The unit's last sentences first: a topic with many sentences hears others than it built.
-      return sentenceLesson([...unitSentences].reverse(), ['dictation', 'translation'], random)
+      return sentenceLesson([...unitSentences].reverse(), ['dictation', 'translation'], random, knownSentences(unit))
   }
 }
 
@@ -292,17 +325,17 @@ export function reviewTasks(
 ): Task[] {
   const key = (task: Task) => itemKey(task.kind, task.itemId)
   const out: Task[] = []
-  const usedSentences = new Set<string>()
-  const add = (task: Task) => {
-    const sentence = 'sentence' in task ? task.sentence.id : undefined
-    if (out.some((t) => key(t) === key(task)) || (sentence && usedSentences.has(sentence))) return false
-    if (sentence) usedSentences.add(sentence)
+  const used = noneUsed()
+  // Never a sentence twice; a word twice (a vocab word, then a blank of it) only once nothing else is left.
+  const add = (task: Task, strict = true) => {
+    if (out.length === LESSON_SIZE || out.some((t) => key(t) === key(task)) || !fitsUsed(used, taskKeys(task), strict)) return false
+    markUsed(used, taskKeys(task))
     out.push(task)
     return true
   }
 
   const ownMistakes = FIXED_STEPS.flatMap((step) => stepTasks(unit, step, random)).filter((task) => mistakes.has(key(task)))
-  for (const task of ownMistakes) if (out.length < LESSON_SIZE / 2) add(task)
+  for (const task of ownMistakes) if (out.length < LESSON_SIZE / 2) add(task, false)
 
   const at = units.indexOf(unit)
   const learnt = at < 0 ? [unit] : units.slice(0, at + 1)
@@ -321,7 +354,7 @@ export function reviewTasks(
     }
   }
   // A type that ran short leaves its places to the others.
-  for (const [pool] of pools) for (const task of pool) if (out.length < LESSON_SIZE) add(task)
+  for (const strict of [true, false]) for (const [pool] of pools) for (const task of pool) if (out.length < LESSON_SIZE) add(task, strict)
   return out
 }
 

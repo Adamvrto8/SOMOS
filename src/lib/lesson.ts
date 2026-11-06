@@ -140,7 +140,85 @@ export interface Grade {
 type Random = () => number
 
 const PUNCTUATION = /^[¿?¡!.,;:]$/
-const MAX_TASKS_PER_VERB = 2
+
+// ---------- variety: a lesson asks a sentence once, and a word once while it can ----------
+
+/** What a task practises: its sentence, and its words (a vocab word, a conjugated verb, a blank's lemma, matching words). */
+export interface TaskKeys {
+  sentence?: string
+  words: string[]
+}
+
+const wordKey = (word: Word) => (word.verbId ?? word.es).toLowerCase()
+const blankKeys = (sentence: Sentence, cloze: Cloze): TaskKeys => ({ sentence: sentence.id, words: [cloze.lemma.toLowerCase()] })
+
+export function taskKeys(task: Task): TaskKeys {
+  switch (task.kind) {
+    case 'vocab':
+      return { words: [wordKey(task.word)] }
+    case 'conjugation':
+      return { words: [task.verb.id] }
+    case 'matching':
+      return { words: task.pairs.map((p) => wordKey(p.word)) }
+    case 'cloze':
+    case 'choice':
+    case 'truefalse':
+    case 'findmistake':
+      return blankKeys(task.sentence, task.cloze)
+    default:
+      return { sentence: task.sentence.id, words: [] }
+  }
+}
+
+/** The sentences and words a lesson already has. */
+export interface Used {
+  sentences: Set<string>
+  words: Set<string>
+}
+export const noneUsed = (): Used => ({ sentences: new Set(), words: new Set() })
+
+/** Notes a task's sentence and words as used. */
+export function markUsed(used: Used, { sentence, words }: TaskKeys) {
+  if (sentence !== undefined) used.sentences.add(sentence)
+  for (const w of words) used.words.add(w)
+}
+
+/** Whether an item may join: never a sentence again; a word again only when `strict` is off. */
+export const fitsUsed = (used: Used, { sentence, words }: TaskKeys, strict: boolean) =>
+  !(sentence !== undefined && used.sentences.has(sentence)) && !(strict && words.some((w) => used.words.has(w)))
+
+/**
+ * Up to `size` items in their order: none whose sentence is already in, and, while the items allow it,
+ * none whose word is (a second pass then lets a word come again). `used` holds what the lesson has already
+ * and is updated.
+ */
+export function pickVaried<T>(items: readonly T[], size: number, keysOf: (item: T) => TaskKeys, used: Used = noneUsed()): T[] {
+  const out: T[] = []
+  const taken = new Set<number>()
+  for (const strict of [true, false]) {
+    for (let i = 0; i < items.length && out.length < size; i++) {
+      if (taken.has(i)) continue
+      const keys = keysOf(items[i])
+      if (!fitsUsed(used, keys, strict)) continue
+      taken.add(i)
+      out.push(items[i])
+      markUsed(used, keys)
+    }
+  }
+  return out
+}
+
+/** A stable pool cut into lessons of `size`, each as varied as pickVaried makes it; the order kept otherwise. */
+function variedChunks(pool: Task[], size: number): Task[] {
+  let rest = pool
+  const out: Task[] = []
+  while (rest.length > 0) {
+    const chunk = new Set(pickVaried(rest, size, taskKeys))
+    out.push(...chunk)
+    rest = rest.filter((task) => !chunk.has(task))
+  }
+  return out
+}
 
 // ---------- helpers ----------
 
@@ -492,21 +570,18 @@ export function createLesson(
 
   switch (filter.type) {
     case 'cloze':
-      // One cloze per sentence, so a lesson never shows the same sentence twice.
-      return takeLimited(order(clozeItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).map(
+      // One cloze per sentence, so a lesson never shows the same sentence twice; and a word once while it can.
+      return pickVaried(order(clozeItems(filter), (i) => i.itemId), size, (i) => blankKeys(i.sentence, i.cloze)).map(
         (i): ClozeTask => ({ kind: 'cloze', ...i }),
       )
     case 'choice':
-      return takeLimited(order(choiceItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).map((i) =>
+      return pickVaried(order(choiceItems(filter), (i) => i.itemId), size, (i) => blankKeys(i.sentence, i.cloze)).map((i) =>
         choiceTask(i.sentence, i.cloze, i.itemId, random),
       )
     case 'conjugation':
-      return takeLimited(
-        order(conjugationItems(filter), (i) => `${i.verb.id}:${i.tense}:${i.person}`),
-        size,
-        (i) => i.verb.id,
-        MAX_TASKS_PER_VERB,
-      ).map(({ verb, tense, person }) => conjugationTask(verb, tense, person))
+      return pickVaried(order(conjugationItems(filter), (i) => `${i.verb.id}:${i.tense}:${i.person}`), size, (i) => ({
+        words: [i.verb.id],
+      })).map(({ verb, tense, person }) => conjugationTask(verb, tense, person))
     case 'builder':
       return order(builderSentences(filter), (s) => s.id)
         .slice(0, size)
@@ -524,12 +599,12 @@ export function createLesson(
         .slice(0, size)
         .map((sentence): SpeakingTask => ({ kind: 'speaking', itemId: sentence.id, sentence }))
     case 'truefalse':
-      return takeLimited(order(corruptItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).flatMap((i) => {
+      return pickVaried(order(corruptItems(filter), (i) => i.itemId), size, (i) => blankKeys(i.sentence, i.sentence.cloze![i.index])).flatMap((i) => {
         const task = trueFalseTask(i.sentence, i.index, random() < 0.5, distractorFor(i.sentence, i.index, random()))
         return task ? [task] : []
       })
     case 'findmistake':
-      return takeLimited(order(corruptItems(filter), (i) => i.itemId), size, (i) => i.sentence.id, 1).flatMap((i) => {
+      return pickVaried(order(corruptItems(filter), (i) => i.itemId), size, (i) => blankKeys(i.sentence, i.sentence.cloze![i.index])).flatMap((i) => {
         const d = distractorFor(i.sentence, i.index, random())
         const task = d === undefined ? undefined : findMistakeTask(i.sentence, i.index, d, random)
         return task ? [task] : []
@@ -548,16 +623,25 @@ export function createLesson(
 
 const sameTranslation = (a: Task, b: Task) => a.kind === 'vocab' && b.kind === 'vocab' && translationKey(a.word) === translationKey(b.word)
 
+/** Two tasks that should not come one after the other: one sentence, one word, or one translation. */
+function clash(a: Task, b: Task): boolean {
+  if (sameTranslation(a, b)) return true
+  const ka = taskKeys(a)
+  const kb = taskKeys(b)
+  return (ka.sentence !== undefined && ka.sentence === kb.sentence) || ka.words.some((w) => kb.words.includes(w))
+}
+
 /**
- * Two vocab tasks with the same translation (después and luego: "potom") never come one after the
- * other: the second moves to the first place free of its kind. A lesson of nothing else stays as it is.
+ * Two tasks of one sentence, one word (tener conjugated, then a blank of tener) or one translation (después
+ * and luego: "potom") never come one after the other: the second moves to the first place where it clashes
+ * with neither neighbour. A lesson where no such place is left stays as it is.
  */
-export function spreadSameTranslations(tasks: Task[]): Task[] {
+export function spreadRepeats(tasks: Task[]): Task[] {
   const out = [...tasks]
-  const fits = (task: Task, at: number) => !(at > 0 && sameTranslation(out[at - 1], task)) && !(at < out.length && sameTranslation(out[at], task))
+  const fits = (task: Task, at: number) => !(at > 0 && clash(out[at - 1], task)) && !(at < out.length && clash(out[at], task))
   // Taking a task out can join two others, so the scan starts over after a move; at most one move per task.
   for (let i = 1, moves = 0; i < out.length && moves < tasks.length; i++) {
-    if (!sameTranslation(out[i - 1], out[i])) continue
+    if (!clash(out[i - 1], out[i])) continue
     const [task] = out.splice(i, 1)
     const at = [...out.keys(), out.length].find((p) => p !== i && fits(task, p))
     out.splice(at ?? i, 0, task)
@@ -622,21 +706,40 @@ function orderSentences(items: Sentence[], type: ExerciseType): Sentence[] {
 
 /** Deterministic list of all candidate items for a topic/tense filter, sorted stably. */
 export function getStablePool(filter: LessonFilter): Task[] {
+  // Made once per filter and language (the data does not change while the app runs); a copy, since callers shuffle it.
+  const key = `${getLanguage()}|${filter.type}|${filter.topic ?? ''}|${filter.level ?? ''}|${filter.tense ?? ''}`
+  let pool = poolCache.get(key)
+  if (!pool) {
+    pool = buildStablePool(filter)
+    poolCache.set(key, pool)
+  }
+  return [...pool]
+}
+
+const poolCache = new Map<string, Task[]>()
+
+function buildStablePool(filter: LessonFilter): Task[] {
   switch (filter.type) {
     case 'cloze': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.length ?? 0) > 0)
       const ordered = orderSentences(matching, 'cloze')
-      return ordered.map((sentence): ClozeTask => ({
-        kind: 'cloze',
-        itemId: `${sentence.id}#0`,
-        sentence,
-        cloze: sentence.cloze![0],
-      }))
+      return variedChunks(
+        ordered.map((sentence): ClozeTask => ({
+          kind: 'cloze',
+          itemId: `${sentence.id}#0`,
+          sentence,
+          cloze: sentence.cloze![0],
+        })),
+        LESSON_SIZE,
+      )
     }
     case 'choice': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && (s.cloze?.[0].distractors?.length ?? 0) >= 2)
       const ordered = orderSentences(matching, 'choice')
-      return ordered.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5))
+      return variedChunks(
+        ordered.map((sentence) => choiceTask(sentence, sentence.cloze![0], `${sentence.id}#0`, () => 0.5)),
+        LESSON_SIZE,
+      )
     }
     case 'conjugation': {
       const isAll = !filter.tense || filter.tense === 'all'
@@ -651,9 +754,9 @@ export function getStablePool(filter: LessonFilter): Task[] {
       })
       if (isAll) {
         allTasks.sort((a, b) => a.itemId.localeCompare(b.itemId))
-        return shuffle(allTasks, seededRandom(seedFor('conjugation')))
+        return variedChunks(shuffle(allTasks, seededRandom(seedFor('conjugation'))), LESSON_SIZE)
       }
-      return allTasks
+      return variedChunks(allTasks, LESSON_SIZE)
     }
     case 'builder': {
       const matching = builderSentences(filter)
@@ -679,21 +782,23 @@ export function getStablePool(filter: LessonFilter): Task[] {
     }
     case 'truefalse': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && eligibleClozes(s).length > 0)
-      return orderSentences(matching, 'truefalse').flatMap((sentence) => {
+      const pool = orderSentences(matching, 'truefalse').flatMap((sentence) => {
         const index = eligibleClozes(sentence)[0]
         const truth = stableHash(sentence.id) % 2 === 0
         const task = trueFalseTask(sentence, index, truth, distractorFor(sentence, index, stableHash(`${sentence.id}d`) / 2 ** 32))
         return task ? [task] : []
       })
+      return variedChunks(pool, LESSON_SIZE)
     }
     case 'findmistake': {
       const matching = sentences.filter((s) => matchesSentence(s, filter) && eligibleClozes(s).length > 0)
-      return orderSentences(matching, 'findmistake').flatMap((sentence) => {
+      const pool = orderSentences(matching, 'findmistake').flatMap((sentence) => {
         const index = eligibleClozes(sentence)[0]
         const d = distractorFor(sentence, index, stableHash(`${sentence.id}d`) / 2 ** 32)
         const task = d === undefined ? undefined : findMistakeTask(sentence, index, d, () => 0.5)
         return task ? [task] : []
       })
+      return variedChunks(pool, LESSON_SIZE)
     }
     case 'matching': {
       const ordered = LEVEL_NAMES.flatMap((level) =>
@@ -759,7 +864,9 @@ export function createNumberedLesson(
     const start = (clampedNum - 1) * size
     slice = pool.slice(start, start + size)
   } else {
-    slice = pool.slice(Math.max(0, pool.length - size))
+    // The last lesson: the rest of the pool, filled from the lessons before it, as varied as they allow.
+    const start = (clampedNum - 1) * size
+    slice = pickVaried([...pool.slice(start), ...pool.slice(0, start).reverse()], size, taskKeys)
   }
 
   return retryTasks(slice, random)
@@ -840,14 +947,15 @@ const EXERCISE_TYPES: ExerciseType[] = ['cloze', 'choice', 'conjugation', 'build
  * `canSpeak` false (no speech recognition) leaves Vyslovovanie mistakes out.
  */
 export function mistakesLesson(mistakes: MistakeRef[], size = LESSON_SIZE, random: Random = Math.random, canSpeak = true): Task[] {
-  return [...mistakes]
+  const tasks = [...mistakes]
     .filter((m) => canSpeak || m.exercise !== 'speaking')
     .sort((a, b) => b.wrongCount - a.wrongCount || a.lastWrongAt - b.lastWrongAt)
     .flatMap((m) => {
       const task = EXERCISE_TYPES.includes(m.exercise as ExerciseType) ? taskFromItem(m.exercise as ExerciseType, m.itemId, random) : undefined
       return task ? [task] : []
     })
-    .slice(0, size)
+  // Two mistakes of one sentence (its blank and its building): one now, the other in the next lesson.
+  return spreadRepeats(pickVaried(tasks, size, taskKeys))
 }
 
 /** "Teraz nemôžem hovoriť": the answered tasks stay, the speaking ones ahead go (a mistakes lesson mixes types). */
@@ -857,7 +965,7 @@ export function skipSpeaking(tasks: Task[], index: number): Task[] {
 
 /** The same tasks again (e.g. "repeat mistakes") with options and tiles reshuffled. */
 export function retryTasks(tasks: Task[], random: Random = Math.random): Task[] {
-  return spreadSameTranslations(shuffle(tasks, random)).map((task) => {
+  return spreadRepeats(shuffle(tasks, random)).map((task) => {
     if (task.kind === 'choice') return { ...task, options: shuffle(task.options, random) }
     if (task.kind === 'builder') return { ...task, tiles: shuffleTiles(task.expected, random) }
     if (task.kind === 'findmistake') return { ...task, options: shuffle(task.options, random) }

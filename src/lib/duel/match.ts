@@ -1,6 +1,6 @@
 import type { Level } from '../../data/types'
 import type { Verdict } from '../checkAnswer'
-import { getStablePool, seededRandom, taskFromItem, type ExerciseType, type Task } from '../lesson'
+import { getStablePool, noneUsed, pickVaried, seededRandom, taskFromItem, taskKeys, type ExerciseType, type Task } from '../lesson'
 
 // A duel: 3 rounds × 5 tasks, both players get the same tasks at the same moment (docs/duel-spec.md).
 // Everything here is pure: both phones compute the same match, schedule and score from the same data.
@@ -29,28 +29,19 @@ export function roundTypes(seed: number): ExerciseType[] {
   return ['choice', seed % 2 === 0 ? 'conjugation' : 'vocab', 'builder']
 }
 
-const sentenceOf = (type: ExerciseType, itemId: string) => (type === 'choice' ? itemId.split('#')[0] : type === 'builder' ? itemId : undefined)
-
-/** The tasks of a new duel: five of each round's type from the level, no sentence twice. */
+/** The tasks of a new duel: five of each round's type from the level, no sentence twice, no word twice while others are left. */
 export function buildRounds(level: Level, seed: number): DuelRound[] {
   const random = seededRandom(seed)
-  const usedSentences = new Set<string>()
+  const used = noneUsed()
   return roundTypes(seed).map((type) => {
     const filter = type === 'conjugation' ? { type, level, tense: 'all' as const } : { type, level, topic: 'all' }
-    const pool = getStablePool(filter).map((task) => task.itemId)
+    const pool = getStablePool(filter)
     // Fisher–Yates with the duel's own numbers: the same seed, the same pick.
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(random() * (i + 1))
       ;[pool[i], pool[j]] = [pool[j], pool[i]]
     }
-    const items: string[] = []
-    for (const itemId of pool) {
-      if (items.length === TASKS_PER_ROUND) break
-      const sentence = sentenceOf(type, itemId)
-      if (sentence && usedSentences.has(sentence)) continue
-      if (sentence) usedSentences.add(sentence)
-      items.push(itemId)
-    }
+    const items = pickVaried(pool, TASKS_PER_ROUND, taskKeys, used).map((task) => task.itemId)
     return { type, seconds: DUEL_SECONDS[type] ?? 15, items }
   })
 }

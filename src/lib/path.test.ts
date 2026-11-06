@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { words } from '../data'
+import { sentences, words } from '../data'
 import type { Grammar } from '../data/types'
 import type { LessonProgressionMap } from './lessonProgress'
 import { tipForCloze } from './tips'
-import { nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
+import { clozeFits, nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
 import { MAX_UNIT_WORDS, orderedUnits, pathUnitById, pathUnits, unitMaterial } from './pathUnits'
 import { createTest, hasTest, parseTestKey, testKey } from './tests'
 import { USAGE_TIPS } from './clozeChecks'
@@ -122,11 +122,10 @@ describe('steps', () => {
   })
 
   it('let a subjuntivo unit practise a wish blank with a full subjunctive hint', () => {
-    const blanks = pathUnits
-      .filter((u) => u.grammar === 'subjuntivo')
-      .flatMap((u) => stepTasks(u, 'grammar'))
-      .filter((t) => (t.kind === 'cloze' || t.kind === 'choice') && t.cloze.tip === 'subjuntivo-wishes')
-    expect(blanks.length).toBeGreaterThan(0)
+    const unit = pathUnits.find((u) => u.grammar === 'subjuntivo')!
+    const wishes = sentences.flatMap((s) => (s.cloze ?? []).flatMap((c, i) => (c.tip === 'subjuntivo-wishes' && c.hint?.endsWith(' · subjuntivo') ? [{ s, i }] : [])))
+    expect(wishes.length).toBeGreaterThan(0)
+    expect(wishes.some(({ s, i }) => clozeFits(unit, s, i))).toBe(true)
   })
 
   it('practise the grammar point of the unit', () => {

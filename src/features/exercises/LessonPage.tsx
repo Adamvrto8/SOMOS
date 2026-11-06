@@ -19,7 +19,7 @@ import {
   mistakesLesson,
   retryTasks,
   skipSpeaking,
-  spreadSameTranslations,
+  spreadRepeats,
   type Answer,
   type Grade,
   type LessonFilter,
@@ -91,13 +91,13 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
   if (fromMistakes) return mistakesLesson(await loadMistakes(), LESSON_SIZE, Math.random, speechSupported)
   if (path?.step === 'review') {
     const mistakes = new Set((await loadMistakes()).map((m) => itemKey(m.exercise, m.itemId)))
-    return spreadSameTranslations(reviewTasks(path.unit, learnerUnits(), mistakes, await loadTestSeenCounts()))
+    return spreadRepeats(reviewTasks(path.unit, learnerUnits(), mistakes, await loadTestSeenCounts()))
   }
   if (path) return retryTasks(stepTasks(path.unit, path.step))
   const test = parseTestKey(prepareKey ?? null)
   if (test) {
     const mistakes = new Set((await loadMistakes()).map((m) => itemKey(m.exercise, m.itemId)))
-    return spreadSameTranslations(prepareLesson(test, mistakes, await loadTestSeenCounts()))
+    return spreadRepeats(prepareLesson(test, mistakes, await loadTestSeenCounts()))
   }
   if (lessonNumber) return createNumberedLesson(filter, lessonNumber)
   return createLesson(filter, lessonSizeOf(filter.type), Math.random, await loadSeenCounts(filter.type))

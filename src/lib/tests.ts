@@ -1,7 +1,20 @@
 import { sentences, topicById, verbById, verbs, words } from '../data'
 import type { Level, Sentence, Verb } from '../data/types'
 import { personsOf, tensesUpTo, type TableTense } from './conjugate'
-import { conjugationTask, createLesson, getNumberedLessonCount, LESSON_SIZE, type ExerciseType, type LessonFilter, type Task } from './lesson'
+import {
+  conjugationTask,
+  createLesson,
+  fitsUsed,
+  getNumberedLessonCount,
+  LESSON_SIZE,
+  markUsed,
+  noneUsed,
+  pickVaried,
+  taskKeys,
+  type ExerciseType,
+  type LessonFilter,
+  type Task,
+} from './lesson'
 import { getLessonRecord, progressionGroup, type LessonProgressionMap } from './lessonProgress'
 import { pathUnitById, unitId, unitMaterial } from './pathUnits'
 
@@ -200,53 +213,42 @@ function candidates(id: TestId, type: ExerciseType, random: Random): Candidate[]
 
 const sentenceOf = (task: Task): Sentence | undefined => ('sentence' in task ? task.sentence : undefined)
 
-/** The verb (or word) a task asks to put in shape: a cloze's lemma, a conjugated verb. */
-const lemmaOf = (task: Task): string | undefined =>
-  task.kind === 'cloze' || task.kind === 'choice' ? task.cloze.lemma : task.kind === 'conjugation' ? task.verb.id : undefined
-
 /**
- * Fills the mix from the candidates: no sentence twice (a builder would give away a cloze), no verb
- * both in a cloze and conjugated ("comer · nosotros · progresivo" would answer "Estamos ___ tacos"),
- * a type that runs short leaves its places to the others. Tasks come grouped by type.
+ * Fills the mix from the candidates: no sentence twice (a builder would give away a cloze), and no word
+ * twice while others are left: not a verb both in a cloze and conjugated ("comer · nosotros · progresivo"
+ * would answer "Estamos ___ tacos"), not a vocab word and then a blank of it. A type that runs short leaves
+ * its places to the others. Tasks come grouped by type.
  */
 function compose(mix: Mix, lists: Map<ExerciseType, Candidate[]>): Task[] {
-  const usedSentences = new Set<string>()
-  const usedLemmas = new Set<string>()
+  const used = noneUsed()
+  const taken = new Set<Task>()
   const picked = new Map<ExerciseType, Task[]>(mix.map(([type]) => [type, []]))
-  const position = new Map<ExerciseType, number>(mix.map(([type]) => [type, 0]))
 
-  const takeOne = (type: ExerciseType): boolean => {
-    const list = lists.get(type) ?? []
-    for (let i = position.get(type)!; i < list.length; i++) {
-      const { task } = list[i]
-      const sentence = sentenceOf(task)
-      const lemma = lemmaOf(task)
-      if (sentence && usedSentences.has(sentence.id)) continue
-      if (lemma && usedLemmas.has(lemma)) continue
-      if (sentence) usedSentences.add(sentence.id)
-      if (lemma) usedLemmas.add(lemma)
-      picked.get(type)!.push(task)
-      position.set(type, i + 1)
-      return true
-    }
-    position.set(type, list.length)
-    return false
+  const takeOne = (type: ExerciseType, strict: boolean): boolean => {
+    const found = (lists.get(type) ?? []).find(({ task }) => !taken.has(task) && fitsUsed(used, taskKeys(task), strict))
+    if (!found) return false
+    taken.add(found.task)
+    markUsed(used, taskKeys(found.task))
+    picked.get(type)!.push(found.task)
+    return true
   }
 
   let missing = 0
   for (const [type, n] of mix) {
-    for (let i = 0; i < n; i++) if (!takeOne(type)) missing++
+    for (let i = 0; i < n; i++) if (!takeOne(type, true)) missing++
   }
-  // Round by round over the types that still have tasks.
-  while (missing > 0) {
-    let took = false
-    for (const [type] of mix) {
-      if (missing > 0 && takeOne(type)) {
-        missing--
-        took = true
+  // Round by round over the types that still have tasks; a word again only when no type has a new one.
+  for (const strict of [true, false]) {
+    while (missing > 0) {
+      let took = false
+      for (const [type] of mix) {
+        if (missing > 0 && takeOne(type, strict)) {
+          missing--
+          took = true
+        }
       }
+      if (!took) break
     }
-    if (!took) break
   }
   return mix.flatMap(([type]) => picked.get(type)!)
 }
@@ -283,9 +285,7 @@ export function prepareLesson(
   }
   if (id.type) {
     const all = createLesson(exerciseFilter(id.type, id.level), Number.MAX_SAFE_INTEGER, random).map((task) => ({ task, rank: 0 }))
-    return order(all)
-      .slice(0, LESSON_SIZE)
-      .map(({ task }) => task)
+    return pickVaried(order(all), LESSON_SIZE, ({ task }) => taskKeys(task)).map(({ task }) => task)
   }
   const tasks = compose(PREPARE_MIX, new Map(PREPARE_MIX.map(([type]) => [type, order(candidates(id, type, random))])))
   return tasks.slice(0, LESSON_SIZE)

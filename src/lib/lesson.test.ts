@@ -23,7 +23,7 @@ import {
   mistakesLesson,
   retryTasks,
   skipSpeaking,
-  spreadSameTranslations,
+  spreadRepeats,
   synonymsOf,
   taskFromItem,
   trueFalseTask,
@@ -572,7 +572,7 @@ describe('same translation', () => {
 
   it('never puts two of them one after the other', () => {
     const tasks = [vocabTask(word('despues'), 'es-sk'), vocabTask(word('luego'), 'es-sk'), vocabTask(word('perro'), 'es-sk')]
-    expect(spreadSameTranslations(tasks).map((t) => t.itemId)).toEqual(['despues:es-sk', 'perro:es-sk', 'luego:es-sk'])
+    expect(spreadRepeats(tasks).map((t) => t.itemId)).toEqual(['despues:es-sk', 'perro:es-sk', 'luego:es-sk'])
   })
 
   it('keeps only one of them in a vocab lesson', () => {
