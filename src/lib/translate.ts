@@ -1,5 +1,6 @@
 import { db, type Lookup } from './db'
 import { lookupForm } from './knownForms'
+import { readVariant } from '../data/variant'
 import { getLanguage } from './language'
 
 // Online lookup for words outside the dataset: POST /api/translate (Vercel function → DeepL).
@@ -31,9 +32,12 @@ const isTranslateError = (value: unknown): value is TranslateError => TRANSLATE_
 
 // Accents stay in the key: "papa" and "papá" are different words.
 // The Slovak pair keeps its old key ("sk:…", "es:…"), so what is cached stays; the English pair names both sides.
+// A lookup into Spain's Spanish is its own ("sk@es-ES:…"): the Mexican answer would be wrong there (carro, coche).
+const spain = () => readVariant() === 'es'
 const lookupKey = (text: string, from: Lang) => {
   const to = targetOf(from)
-  const pair = from === 'sk' || to === 'sk' ? from : `${from}>${to}`
+  const base = from === 'sk' || to === 'sk' ? from : `${from}>${to}`
+  const pair = to === 'es' && spain() ? `${base}@es-ES` : base
   return `${pair}:${text.trim().toLowerCase().replace(/\s+/g, ' ')}`
 }
 
@@ -52,7 +56,7 @@ export async function translateOnline(text: string, from: Lang): Promise<Lookup>
     res = await fetch('/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text.trim(), from, to: targetOf(from) }),
+      body: JSON.stringify({ text: text.trim(), from, to: targetOf(from), spanish: spain() ? 'es' : 'mx' }),
     })
   } catch {
     throw new TranslateFailure('offline')

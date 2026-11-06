@@ -1,4 +1,4 @@
-import type { Dictionary, ImportSummary } from './sk'
+import { spain, type Dictionary, type ImportSummary } from './sk'
 
 // Interface texts in American English. The shape is sk.ts's: a missing key does not compile.
 
@@ -167,7 +167,7 @@ export const en: Dictionary = {
       installSteps: [
         'Settings → search for “Text-to-speech”.',
         'Next to the Google engine, tap the gear → Install voice data.',
-        'Download Español (Estados Unidos), or México if it is offered.',
+        spain ? 'Download Español (España).' : 'Download Español (Estados Unidos), or México if it is offered.',
         'Close SOMOS and open it again.',
       ],
     },
@@ -374,13 +374,14 @@ export const en: Dictionary = {
     previousTopic: 'Previous topic',
     nextTopic: 'Next topic',
     form: 'form',
+    otherForm: { mx: 'in Mexico', es: 'in Spain' },
     saved: 'Saved',
     online: {
       title: 'Translate online',
       source: 'DeepL · needs the internet',
       hint: 'For words and sentences that are not in the dictionary.',
       direction: 'Direction',
-      machine: 'Machine translation: it may be neither Mexican nor exact.',
+      machine: spain ? 'Machine translation: it may not be exact.' : 'Machine translation: it may be neither Mexican nor exact.',
       add: 'Add to My words',
       translating: 'Translating…',
       translate: 'Translate',
@@ -453,7 +454,7 @@ export const en: Dictionary = {
     pluscuamperfectoNote: 'Only haber changes, the participle stays:',
     imperfectoBefore: 'A repeated or ongoing action in the past, and description:',
     imperfectoAfter: 'A single finished action is pretérito.',
-    futuroNote: 'In everyday speech Mexicans more often say ir a + infinitive:',
+    futuroNote: spain ? 'In everyday speech people more often say ir a + infinitive:' : 'In everyday speech Mexicans more often say ir a + infinitive:',
     irregularForm: 'irregular form',
   },
 
@@ -722,6 +723,7 @@ export const en: Dictionary = {
     rule: 'Rule',
     overview: 'Full overview',
     related: 'See also',
+    variantNote: { mx: 'In Mexico', es: 'In Spain' },
   },
 
   tips: {
@@ -1010,7 +1012,7 @@ export const en: Dictionary = {
     skip: 'Skip',
     next: 'Continue',
     welcome: {
-      tagline: 'Mexican Spanish from English',
+      tagline: spain ? 'Spanish as it is spoken in Spain' : 'Mexican Spanish from English',
       points: [
         'Short lessons that start where you are',
         'A dictionary with pronunciation and verb tables',

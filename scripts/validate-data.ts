@@ -381,6 +381,7 @@ for (const tip of tips) {
   }
   // A Slovak note may name Spain-only forms (vosotros, coche), so it is not checked as Spanish.
   if (!isNonEmpty(tip.variants?.mx)) fail(where, 'needs variants.mx (how Mexico uses it)')
+  if (!isNonEmpty(tip.variants?.es)) fail(where, 'needs variants.es (how Spain uses it)')
   for (const key of Object.keys(tip.variants ?? {})) {
     if (key !== 'mx' && key !== 'es') fail(where, `unknown Spanish variant "${key}"`)
     else if (!isNonEmpty(tip.variants[key as SpanishVariant])) fail(where, `empty variants.${key}`)

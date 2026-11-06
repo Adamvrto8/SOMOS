@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { SectionTitle } from '../../components/SectionTitle'
 import { SpeakButton } from '../../components/SpeakButton'
-import { tipById } from '../../data'
+import { tipById, variant } from '../../data'
 import { useT } from '../../i18n'
 import type { Cloze, Sentence, Tip, TipRule } from '../../data/types'
 import { clozeHint, localizedTip, type LocalRule } from '../../lib/localized'
@@ -127,6 +127,15 @@ export function TipContent({ tip: base, here, focus, onOpenTip }: TipContentProp
           </ul>
         </section>
       ))}
+
+      {tip.variantNote && (
+        <aside aria-labelledby="variant-heading" className="rounded-card border border-line bg-surface-2 p-4">
+          <h2 id="variant-heading" className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
+            {text.variantNote[variant]}
+          </h2>
+          <p className="mt-1 text-sm leading-relaxed">{tip.variantNote}</p>
+        </aside>
+      )}
 
       {related.length > 0 && (
         <section aria-labelledby="related-heading">

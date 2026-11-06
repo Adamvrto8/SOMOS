@@ -4,7 +4,8 @@ import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
-import { applySentences, applyWords, hiddenVerbIds, type SentenceEs, type WordEs } from './applyVariant'
+import esTipsJson from './es/tips.json'
+import { applySentences, applyTips, applyTipsEn, applyWords, hiddenVerbIds, otherVariantForms, type SentenceEs, type TipEs, type WordEs } from './applyVariant'
 import { readVariant } from './variant'
 import type { PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
@@ -18,21 +19,19 @@ const collect = <T>(modules: Record<string, unknown>): T[] =>
 // JSON imports are typed loosely (string instead of literal unions);
 // shape and content are enforced by `npm run validate:data`.
 export const topics = topicsJson as Topic[]
-export const tips = tipsJson as Tip[]
 export const sources = sourcesJson as Source[]
 export const path = pathJson as PathEntry[]
 /** Which Spanish is studied (Mexico by default); Spain lays src/data/es/ over the Mexican base, by id. */
 export const variant = readVariant()
+const esTips = esTipsJson as TipEs[]
+export const tips = variant === 'es' ? applyTips(tipsJson as Tip[], esTips) : (tipsJson as Tip[])
 const baseWords = collect<Word>(import.meta.glob('./words/*.json', { eager: true, import: 'default' }))
 const esWords = collect<WordEs>(import.meta.glob('./es/words/*.json', { eager: true, import: 'default' }))
-export const words =
-  variant === 'es'
-    ? [
-        ...applyWords(baseWords, esWords),
-        // Words and verbs only Spain says (conducir, aparcar…).
-        ...collect<Word>(import.meta.glob('./es/new/words/*.json', { eager: true, import: 'default' })),
-      ]
-    : baseWords
+// Words and verbs only Spain says (conducir, aparcar…).
+const esNewWords = collect<Word>(import.meta.glob('./es/new/words/*.json', { eager: true, import: 'default' }))
+export const words = variant === 'es' ? [...applyWords(baseWords, esWords), ...esNewWords] : baseWords
+/** Word id → the other variant's Spanish for it (coche ↔ carro), which the search finds too. */
+export const otherForms = otherVariantForms(variant, baseWords, esWords, esNewWords)
 const baseVerbs = collect<Verb>(import.meta.glob('./verbs/*.json', { eager: true, import: 'default' }))
 const hiddenVerbs = hiddenVerbIds(baseWords, esWords)
 export const verbs =
@@ -66,5 +65,5 @@ export const english = {
   verbs: byId([...collect<VerbEn>(import.meta.glob('./en/verbs/*.json', { eager: true, import: 'default' })), ...esNewEnVerbs]),
   sentences: byId(collect<SentenceEn>(import.meta.glob('./en/sentences/*.json', { eager: true, import: 'default' }))),
   topics: byId(enTopicsJson as TopicEn[]),
-  tips: byId(enTipsJson as TipEn[]),
+  tips: byId(variant === 'es' ? applyTipsEn(enTipsJson as TipEn[], esTips) : (enTipsJson as TipEn[])),
 }

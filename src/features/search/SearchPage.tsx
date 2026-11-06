@@ -63,7 +63,7 @@ export function SearchPage() {
           {hits.length > 0 ? (
             <ul className="divide-y divide-line">
               {hits.map((hit) => (
-                <WordRow key={hit.word.id} word={hit.word} matchedForm={hit.matchedForm} saved={savedIds.has(hit.word.id)} list={hitIds} />
+                <WordRow key={hit.word.id} word={hit.word} matchedForm={hit.matchedForm} otherForm={hit.otherForm} saved={savedIds.has(hit.word.id)} list={hitIds} />
               ))}
             </ul>
           ) : (

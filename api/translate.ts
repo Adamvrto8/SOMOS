@@ -1,5 +1,5 @@
-// Vercel function: POST /api/translate { text, from, to } → { translation, from, to }; Spanish is one of the two.
-// `to` may be left out (older app versions): Slovak ↔ Spanish.
+// Vercel function: POST /api/translate { text, from, to, spanish } → { translation, from, to }; Spanish is one of the two.
+// `to` may be left out (older app versions): Slovak ↔ Spanish. `spanish: 'es'` asks for Spain's Spanish, else Latin American.
 // The DeepL key lives only here (DEEPL_API_KEY in the Vercel project settings); the app never sees it.
 // One key for everyone: a learner may look up LOOKUPS_PER_HOUR words an hour and IP_DAILY_CHARS characters a day,
 // and all of them together DEEPL_DAILY_CHARS characters a day (the Free plan's 500 000 a month over 31 days),
@@ -31,8 +31,9 @@ export interface TranslateLimits {
   blockKey(request: Request): string
 }
 
-// Latin American Spanish when the DeepL account offers it, plain Spanish otherwise.
+// Latin American Spanish when the DeepL account offers it, plain Spanish otherwise. DeepL's ES is Spain's Spanish.
 const TARGETS: Record<Lang, string[]> = { es: ['ES-419', 'ES'], sk: ['SK'], en: ['EN-US'] }
+const SPAIN_TARGETS = ['ES']
 
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } })
 
@@ -47,15 +48,15 @@ function sameOrigin(request: Request): boolean {
   }
 }
 
-function parseBody(body: unknown): { text: string; from: Lang; to: Lang } | undefined {
+function parseBody(body: unknown): { text: string; from: Lang; to: Lang; spain: boolean } | undefined {
   if (!body || typeof body !== 'object') return undefined
-  const { text, from, to = from === 'es' ? 'sk' : 'es' } = body as Record<string, unknown>
+  const { text, from, to = from === 'es' ? 'sk' : 'es', spanish } = body as Record<string, unknown>
   if (typeof text !== 'string' || !isLang(from) || !isLang(to)) return undefined
   // Spanish on exactly one side: this is a Spanish dictionary, not a general translator.
   if ((from === 'es') === (to === 'es')) return undefined
   const trimmed = text.trim()
   if (!trimmed || trimmed.length > MAX_CHARS) return undefined
-  return { text: trimmed, from, to }
+  return { text: trimmed, from, to, spain: spanish === 'es' }
 }
 
 /** Which limit stops this lookup, if any. Supabase down: the lookup goes through (DeepL's own quota still holds). */
@@ -80,7 +81,7 @@ export async function translate(request: Request, key: string | undefined, fetch
 
   // Free-plan keys end in ":fx" and use their own host.
   const host = key.endsWith(':fx') ? 'api-free.deepl.com' : 'api.deepl.com'
-  const targets = TARGETS[input.to]
+  const targets = input.to === 'es' && input.spain ? SPAIN_TARGETS : TARGETS[input.to]
   for (const [i, target] of targets.entries()) {
     const res = await fetchImpl(`https://${host}/v2/translate`, {
       method: 'POST',

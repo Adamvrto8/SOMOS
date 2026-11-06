@@ -37,6 +37,13 @@ describe('api/translate', () => {
     expect(JSON.parse((fetchImpl.mock.calls[1] as unknown as [string, RequestInit])[1].body as string).target_lang).toBe('ES')
   })
 
+  it("asks for Spain's Spanish when the learner studies it", async () => {
+    const fetchImpl = deepl([200, { translations: [{ text: 'camarero' }] }])
+    const res = await translate(request({ text: 'čašník', from: 'sk', spanish: 'es' }), KEY, fetchImpl)
+    expect(await res.json()).toEqual({ translation: 'camarero', from: 'sk', to: 'es' })
+    expect(JSON.parse((fetchImpl.mock.calls[0] as unknown as [string, RequestInit])[1].body as string).target_lang).toBe('ES')
+  })
+
   it('translates Spanish to Slovak with a paid key on the paid host', async () => {
     const fetchImpl = deepl([200, { translations: [{ text: 'zmrzlinár' }] }])
     const res = await translate(request({ text: 'heladero', from: 'es' }), 'paid-key', fetchImpl)

@@ -1,0 +1,653 @@
+[
+  {
+    "id": "ser-estar",
+    "rules": [
+      {
+        "id": "profession",
+        "examples": [
+          null,
+          {
+            "es": "Antes era camarero.",
+            "sk": "Predtým som bol čašník."
+          }
+        ]
+      },
+      {
+        "id": "trait",
+        "examples": [
+          null,
+          null,
+          {
+            "es": "El coche es rojo.",
+            "sk": "Auto je červené."
+          }
+        ]
+      },
+      {
+        "id": "possession",
+        "examples": [
+          {
+            "es": "El móvil es de Ana.",
+            "sk": "Mobil je Anin."
+          },
+          null
+        ]
+      },
+      {
+        "id": "event",
+        "text": "Udalosť (fiesta, examen, reunión) sa „koná“, preto ser, aj keď ide o miesto."
+      },
+      {
+        "id": "result",
+        "examples": [
+          null,
+          {
+            "es": "Mis padres están casados.",
+            "sk": "Rodičia sú manželia."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "event",
+          "text": "An event (fiesta, examen, reunión) “takes place”, so it’s ser even though it’s about a place."
+        }
+      ]
+    }
+  },
+  {
+    "id": "presente",
+    "rules": [
+      {
+        "id": "use",
+        "text": "Čo robíš bežne (siempre, todos los días, los lunes), čo platí vždy, a často aj blízka budúcnosť: Mañana te llamo.",
+        "examples": [
+          {
+            "es": "Todos los días cojo el autobús.",
+            "sk": "Každý deň chodím autobusom."
+          },
+          null,
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "use",
+          "text": "What you do regularly (siempre, todos los días, los lunes), what is always true, and often the near future too: Mañana te llamo."
+        }
+      ]
+    }
+  },
+  {
+    "id": "preterito",
+    "intro": "Hovorí o deji, ktorý sa stal a skončil: včera, minulý týždeň, raz. Pre dnešok a nedávnu minulosť (hoy, esta semana, ya) sa v Španielsku používa pretérito perfecto: hoy he comido.",
+    "rules": [
+      {
+        "id": "use",
+        "examples": [
+          {
+            "es": "Ayer charlé con mi abuela.",
+            "sk": "Včera som sa rozprával s babkou."
+          },
+          null,
+          null
+        ]
+      }
+    ],
+    "en": {
+      "intro": "It tells of something that happened and is over: yesterday, last week, once. For today and the recent past (hoy, esta semana, ya) Spain uses the present perfect: hoy he comido."
+    }
+  },
+  {
+    "id": "preterito-imperfecto",
+    "rules": [
+      {
+        "id": "event",
+        "examples": [
+          {
+            "es": "Ayer fui al médico.",
+            "sk": "Včera som bol u lekára."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "futuro",
+    "rules": [
+      {
+        "id": "use",
+        "examples": [
+          null,
+          {
+            "es": "Mañana lloverá por la tarde.",
+            "sk": "Zajtra poobede bude pršať."
+          },
+          null
+        ]
+      },
+      {
+        "id": "ir-a",
+        "text": "O blízkej budúcnosti sa v bežnej reči hovorí najčastejšie takto: voy a, vas a, va a, vamos a, vais a, van a."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "ir-a",
+          "text": "For the near future, everyday speech most often says it this way: voy a, vas a, va a, vamos a, vais a, van a."
+        }
+      ]
+    }
+  },
+  {
+    "id": "articles",
+    "rules": [
+      {
+        "id": "contractions",
+        "examples": [
+          null,
+          {
+            "es": "Es el coche del vecino.",
+            "sk": "To je susedovo auto."
+          }
+        ]
+      },
+      {
+        "id": "days",
+        "examples": [
+          {
+            "es": "El lunes tengo una reunión.",
+            "sk": "V pondelok mám poradu."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adjectives",
+    "rules": [
+      {
+        "id": "o-a",
+        "examples": [
+          {
+            "es": "un coche nuevo",
+            "sk": "nové auto"
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accents",
+    "rules": [
+      {
+        "id": "pairs",
+        "examples": [
+          null,
+          {
+            "es": "Tú tienes tu móvil.",
+            "sk": "Ty máš svoj mobil."
+          },
+          null
+        ]
+      },
+      {
+        "id": "nouns",
+        "text": "papa = pápež, papá = otec. Ani ñ sa nedá vždy vynechať: año = rok.",
+        "examples": [
+          {
+            "es": "Mi papá vio al papa en Roma.",
+            "sk": "Otec videl pápeža v Ríme."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "nouns",
+          "text": "papa = pope, papá = dad. The ñ can’t always be dropped either: año = year.",
+          "examples": [
+            "My dad saw the Pope in Rome.",
+            null
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "imperativo",
+    "rules": [
+      {
+        "id": "use",
+        "examples": [
+          null,
+          {
+            "es": "Siga recto y gire a la derecha.",
+            "sk": "Choďte rovno a odbočte doprava."
+          },
+          null
+        ]
+      },
+      {
+        "id": "tu-irregular",
+        "examples": [
+          {
+            "es": "Ven aquí.",
+            "sk": "Poď sem."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "condicional",
+    "rules": [
+      {
+        "id": "advice",
+        "examples": [
+          {
+            "es": "Yo que tú, cogería el autobús.",
+            "sk": "Na tvojom mieste by som išiel autobusom."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "perfecto",
+    "intro": "Dej, ktorý sa skončil v čase, ktorý ešte trvá (dnes, tento týždeň), alebo má dosah na prítomnosť: hoy he comido paella. V Španielsku je to bežný minulý čas pre dnešok a nedávnu minulosť.",
+    "rules": [
+      {
+        "id": "use",
+        "text": "Pre dej v čase, ktorý ešte trvá: hoy, esta semana, este año, a s ya, todavía no, alguna vez. Pre dej včera a skôr sa používa pretérito: ayer comí."
+      }
+    ],
+    "en": {
+      "intro": "An action in a period that is not over yet (today, this week) or that matters now: hoy he comido paella. In Spain it is the everyday past tense for today and the recent past.",
+      "rules": [
+        {
+          "id": "use",
+          "text": "For an action in a period that is not over: hoy, esta semana, este año, and with ya, todavía no, alguna vez. For yesterday and earlier it takes the preterite: ayer comí."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pluscuamperfecto",
+    "rules": [
+      {
+        "id": "perfecto",
+        "text": "Pretérito perfecto (he comido, has ido) je v Španielsku bežný čas pre dnešok, pre „už niekedy“ a „ešte nie“. Pre včera a skôr sa hovorí pretéritom: Ayer comí paella.",
+        "examples": [
+          {
+            "es": "¿Has estado alguna vez en Granada?",
+            "sk": "Bol si už niekedy v Granade?"
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "perfecto",
+          "text": "The present perfect (he comido, has ido) is Spain’s usual tense for today, for “ever” and for “not yet”. Yesterday and earlier take the preterite: Ayer comí paella.",
+          "examples": [
+            "Have you ever been to Granada?",
+            null
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "subj-imperfecto",
+    "rules": [
+      {
+        "id": "use",
+        "examples": [
+          {
+            "es": "Mis padres querían que estudiara medicina.",
+            "sk": "Rodičia chceli, aby som študoval medicínu."
+          },
+          null
+        ]
+      },
+      {
+        "id": "se",
+        "text": "V Španielsku sa používa aj tvar na -se: hablase, tuviese, pudiese. Znamená to isté ako hablara, tuviera, pudiera. Stačí vedieť tvoriť tvar na -ra, ten na -se treba spoznať.",
+        "examples": [
+          {
+            "es": "Ojalá pudiese ayudarte.",
+            "sk": "Kiež by som ti mohol pomôcť."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "se",
+          "text": "Spain also uses the -se form: hablase, tuviese, pudiese. It means the same as hablara, tuviera, pudiera. Being able to form the -ra form is enough; the -se form just needs recognizing."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gustar",
+    "rules": [
+      {
+        "id": "how",
+        "examples": [
+          {
+            "es": "Me gusta el café con leche.",
+            "sk": "Mám rád kávu s mliekom."
+          },
+          null
+        ]
+      },
+      {
+        "id": "people",
+        "text": "me, te, le, nos, os, les. Pre dôraz alebo jasnosť sa pridáva a mí, a ti, a ella, a mis padres."
+      },
+      {
+        "id": "similar",
+        "examples": [
+          null,
+          {
+            "es": "Me encantan tus pendientes.",
+            "sk": "Strašne sa mi páčia tvoje náušnice."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "how",
+          "examples": [
+            "I like coffee with milk.",
+            null
+          ]
+        },
+        {
+          "id": "people",
+          "text": "me, te, le, nos, os, les. For emphasis or clarity add a mí, a ti, a ella, a mis padres."
+        }
+      ]
+    }
+  },
+  {
+    "id": "hay-estar",
+    "rules": [
+      {
+        "id": "hay",
+        "text": "Hay sa nemení. Stojí pred ním un, una, číslo alebo nič: hay un súper, hay dos autobuses, no hay leche.",
+        "examples": [
+          {
+            "es": "Hay un súper en la esquina.",
+            "sk": "Na rohu je obchod."
+          },
+          {
+            "es": "No hay leche en la nevera.",
+            "sk": "V chladničke nie je mlieko."
+          }
+        ]
+      },
+      {
+        "id": "estar",
+        "text": "Pred vecou je el, la, mi, tu alebo meno: el súper está, mi móvil está, Ana está.",
+        "examples": [
+          {
+            "es": "El súper está en la esquina.",
+            "sk": "Obchod je na rohu."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "hay",
+          "text": "Hay never changes. Before the thing comes un, una, a number or nothing: hay un súper, hay dos autobuses, no hay leche.",
+          "examples": [
+            "There is a supermarket on the corner.",
+            null
+          ]
+        },
+        {
+          "id": "estar",
+          "text": "Before the thing comes el, la, mi, tu or a name: el súper está, mi móvil está, Ana está.",
+          "examples": [
+            "The supermarket is on the corner.",
+            null
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "object-pronouns",
+    "rules": [
+      {
+        "id": "direct",
+        "text": "Riadia sa rodom a číslom veci: el libro → lo, la casa → la, los billetes → los, las llaves → las."
+      },
+      {
+        "id": "indirect",
+        "examples": [
+          null,
+          {
+            "es": "¿Les has escrito a tus padres?",
+            "sk": "Napísal si rodičom?"
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "direct",
+          "text": "They follow the gender and number of the thing: el libro → lo, la casa → la, los billetes → los, las llaves → las."
+        }
+      ]
+    }
+  },
+  {
+    "id": "comparisons",
+    "rules": [
+      {
+        "id": "more-less",
+        "text": "Más barato que, menos caro que. Pred číslom de: más de cien euros.",
+        "examples": [
+          null,
+          {
+            "es": "El autobús es menos caro que el taxi.",
+            "sk": "Autobus je lacnejší ako taxík."
+          }
+        ]
+      },
+      {
+        "id": "equal",
+        "examples": [
+          {
+            "es": "Este móvil es tan bueno como el otro.",
+            "sk": "Tento mobil je rovnako dobrý ako ten druhý."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "more-less",
+          "text": "Más barato que, menos caro que. Before a number de: más de cien euros."
+        }
+      ]
+    }
+  },
+  {
+    "id": "subjuntivo-wishes",
+    "rules": [
+      {
+        "id": "advice",
+        "examples": [
+          {
+            "es": "Te recomiendo que pruebes la paella.",
+            "sk": "Odporúčam ti ochutnať paellu."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "advice",
+          "examples": [
+            "I recommend you try the paella.",
+            null
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "si-clauses",
+    "rules": [
+      {
+        "id": "unreal",
+        "text": "Predstava, ktorá teraz neplatí: si tuviera dinero, compraría un coche. Po nej nasleduje kondicionál. To je už B2.",
+        "examples": [
+          {
+            "es": "Si tuviera dinero, compraría un coche.",
+            "sk": "Keby som mal peniaze, kúpil by som si auto."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "unreal",
+          "text": "Something imagined that is not true now: si tuviera dinero, compraría un coche. The conditional follows. This is B2."
+        }
+      ]
+    }
+  },
+  {
+    "id": "por-para",
+    "rules": [
+      {
+        "id": "para",
+        "text": "Účel (para aprender), komu (para ti), termín (para el lunes), smer (salgo para Madrid), názor (para mí).",
+        "examples": [
+          null,
+          {
+            "es": "Necesito el informe para el lunes.",
+            "sk": "Tú správu potrebujem do pondelka."
+          }
+        ]
+      },
+      {
+        "id": "por",
+        "text": "Príčina (por el tráfico), cez kade (por el parque), výmena a cena (por cien euros), prostriedok (por teléfono), časť dňa (por la mañana).",
+        "examples": [
+          null,
+          {
+            "es": "Lo compré por cien euros.",
+            "sk": "Kúpil som to za sto eur."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "para",
+          "text": "Purpose (para aprender), recipient (para ti), deadline (para el lunes), direction (salgo para Madrid), opinion (para mí)."
+        },
+        {
+          "id": "por",
+          "text": "Cause (por el tráfico), through (por el parque), exchange and price (por cien euros), means (por teléfono), part of the day (por la mañana).",
+          "examples": [
+            null,
+            "I bought it for a hundred euros."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "relatives",
+    "rules": [
+      {
+        "id": "que",
+        "examples": [
+          null,
+          {
+            "es": "¿Ya has leído el libro que te presté?",
+            "sk": "Už si prečítal knihu, ktorú som ti požičal?"
+          }
+        ]
+      },
+      {
+        "id": "el-que",
+        "text": "Po predložke sa pridáva člen: la persona con la que hablé, el tema del que te hablé. Pri ľuďoch aj quien: la chica con quien salgo.",
+        "examples": [
+          {
+            "es": "Esa es la chica con la que trabajo.",
+            "sk": "To je to dievča, s ktorým pracujem."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "el-que",
+          "text": "After a preposition the article is added: la persona con la que hablé, el tema del que te hablé. For people also quien: la chica con quien salgo."
+        }
+      ]
+    }
+  },
+  {
+    "id": "passive-se",
+    "rules": [
+      {
+        "id": "se",
+        "text": "se vende, se alquilan pisos, aquí se habla español. Sloveso sa riadi vecou: se vende casa, se venden casas.",
+        "examples": [
+          {
+            "es": "Se alquilan pisos.",
+            "sk": "Prenajímajú sa byty."
+          },
+          null
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "se",
+          "text": "se vende, se alquilan pisos, aquí se habla español. The verb agrees with the thing: se vende casa, se venden casas."
+        }
+      ]
+    }
+  }
+]

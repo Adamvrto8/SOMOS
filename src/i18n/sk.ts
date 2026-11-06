@@ -1,8 +1,12 @@
+import { readVariant } from '../data/variant'
 import { pluralSk } from '../lib/text'
 
 // Interface texts in Slovak, the model for every other language: en.ts has to have this shape.
 // Texts with a number are functions, because the languages count differently.
 // Spanish and the teaching content (src/data) are not here.
+
+/** Spain's Spanish is studied: a few texts that speak of Mexico say it for Spain (read once, a change reloads). */
+export const spain = readVariant() === 'es'
 
 /** What a restored backup brought, for the line under "Obnoviť zo zálohy". */
 export interface ImportSummary {
@@ -188,7 +192,7 @@ export const sk = {
       installSteps: [
         'Nastavenia → vyhľadaj „Prevod textu na reč“.',
         'Pri nástroji Google ťukni na ozubené koliesko → Inštalovať hlasové údaje.',
-        'Stiahni Español (Estados Unidos), prípadne México, ak je v ponuke.',
+        spain ? 'Stiahni Español (España).' : 'Stiahni Español (Estados Unidos), prípadne México, ak je v ponuke.',
         'Zatvor a znova otvor SOMOS.',
       ],
     },
@@ -412,13 +416,15 @@ export const sk = {
     nextTopic: 'Ďalšia téma',
     /** A hit on a conjugated form: tvar „tengo“ · mať */
     form: 'tvar',
+    /** Before the other variant's word that matched: „v Mexiku „carro“ · auto“. Keyed by that variant. */
+    otherForm: { mx: 'v Mexiku', es: 'v Španielsku' },
     saved: 'Uložené',
     online: {
       title: 'Preložiť online',
       source: 'DeepL · potrebuje internet',
       hint: 'Pre slová a vety, ktoré v slovníku nie sú.',
       direction: 'Smer prekladu',
-      machine: 'Strojový preklad, nemusí byť mexický ani presný.',
+      machine: spain ? 'Strojový preklad, nemusí byť presný.' : 'Strojový preklad, nemusí byť mexický ani presný.',
       add: 'Pridať do Moje slová',
       translating: 'Prekladám…',
       translate: 'Preložiť',
@@ -492,7 +498,7 @@ export const sk = {
     pluscuamperfectoNote: 'Časuje sa len haber, príčastie sa nemení:',
     imperfectoBefore: 'Opakovaný alebo prebiehajúci dej v minulosti a opis:',
     imperfectoAfter: 'Jednorazový ukončený dej je pretérito.',
-    futuroNote: 'V bežnej reči sa v Mexiku častejšie povie ir a + infinitív:',
+    futuroNote: spain ? 'V bežnej reči sa častejšie povie ir a + infinitív:' : 'V bežnej reči sa v Mexiku častejšie povie ir a + infinitív:',
     irregularForm: 'nepravidelný tvar',
   },
 
@@ -770,6 +776,8 @@ export const sk = {
     rule: 'Pravidlo',
     overview: 'Celý prehľad',
     related: 'Pozri aj',
+    /** The heading of a tip's regional note, by the Spanish being learned. */
+    variantNote: { mx: 'V Mexiku', es: 'V Španielsku' },
   },
 
   /** The reasons "Prečo?" gives for one task (src/lib/tips.ts picks which). */
@@ -1084,7 +1092,7 @@ export const sk = {
     skip: 'Preskočiť',
     next: 'Pokračovať',
     welcome: {
-      tagline: 'Mexická španielčina zo slovenčiny',
+      tagline: spain ? 'Španielčina, ako sa hovorí v Španielsku' : 'Mexická španielčina zo slovenčiny',
       points: [
         'Krátke lekcie podľa toho, čo už vieš',
         'Slovník s výslovnosťou a časovaním slovies',

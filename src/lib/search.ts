@@ -1,5 +1,5 @@
 import MiniSearch from 'minisearch'
-import { verbById, wordById, words } from '../data'
+import { otherForms, verbById, wordById, words } from '../data'
 import type { Word } from '../data/types'
 import { TENSES } from './conjugate'
 import { getLanguage, type Language } from './language'
@@ -12,6 +12,8 @@ export interface WordHit {
   word: Word
   /** Set when only a conjugated form matched, e.g. "fui" → ser / ir. */
   matchedForm?: string
+  /** Set when only the other variant's word matched: "carro" → coche in Spain, "coche" → carro in Mexico. */
+  otherForm?: string
 }
 
 interface SearchDoc {
@@ -19,6 +21,7 @@ interface SearchDoc {
   es: string
   native: string // the translations in the learner's language
   forms: string
+  other: string // the other variant's Spanish (data/index.ts otherForms)
 }
 
 const MAX_RESULTS = 50
@@ -40,10 +43,10 @@ function getIndex(): MiniSearch<SearchDoc> {
   if (index && indexLanguage === language) return index
   indexLanguage = language
   index = new MiniSearch<SearchDoc>({
-    fields: ['es', 'native', 'forms'],
+    fields: ['es', 'native', 'forms', 'other'],
     processTerm: (term) => fold(term) || null,
     searchOptions: {
-      boost: { es: 3, native: 3 },
+      boost: { es: 3, native: 3, other: 2 },
       prefix: true,
       fuzzy: (term) => (term.length >= 4 ? 0.2 : false),
       combineWith: 'AND',
@@ -55,6 +58,7 @@ function getIndex(): MiniSearch<SearchDoc> {
       es: [w.es, w.plural, w.feminine].filter(Boolean).join(' '),
       native: wordTranslations(w).join(' '),
       forms: verbForms(w).join(' '),
+      other: (otherForms.get(w.id) ?? []).join(' '),
     })),
   )
   return index
@@ -69,6 +73,7 @@ function exactness(word: Word, raw: string, folded: string): number {
   const candidates = [word.es.replace(/[¿?¡!]/g, ''), ...wordTranslations(word)]
   if (candidates.some((c) => c.toLowerCase() === raw)) return 3
   if (candidates.some((c) => fold(c) === folded)) return 2
+  if (otherForms.get(word.id)?.some((f) => fold(f) === folded)) return 2
   if (verbForms(word).some((f) => fold(f) === folded)) return 1
   return 0
 }
@@ -88,13 +93,14 @@ export function searchWords(query: string, filter: SearchFilter): WordHit[] {
       const word = wordById.get(result.id as string)
       if (!word || !matchesFilter(word, filter)) return []
       const fields = new Set(Object.values(result.match).flat())
-      const matchedForm =
-        fields.has('es') || fields.has('native') ? undefined : verbForms(word).find((f) => result.terms.includes(fold(f)))
-      return [{ word, matchedForm, score: result.score, exact: exactness(word, raw, folded) }]
+      const own = fields.has('es') || fields.has('native')
+      const matchedForm = own ? undefined : verbForms(word).find((f) => result.terms.includes(fold(f)))
+      const otherForm = own || matchedForm ? undefined : otherForms.get(word.id)?.find((f) => fold(f).split(' ').some((t) => result.terms.includes(t)))
+      return [{ word, matchedForm, otherForm, score: result.score, exact: exactness(word, raw, folded) }]
     })
 
   hits.sort((a, b) => b.exact - a.exact || b.score - a.score)
-  return hits.slice(0, MAX_RESULTS).map(({ word, matchedForm }) => ({ word, matchedForm }))
+  return hits.slice(0, MAX_RESULTS).map(({ word, matchedForm, otherForm }) => ({ word, matchedForm, otherForm }))
 }
 
 export function wordsInTopic(topicId: string): Word[] {

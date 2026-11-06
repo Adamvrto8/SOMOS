@@ -226,6 +226,19 @@ nesúhlasíš; potom sa koncept vygeneruje znova.
 - **Nastavenia → Španielčina**: Mexická / Zo Španielska, po zmene reload, pokrok ostáva (rovnaké `id`).
 - **Kontrola** `npm run validate:es`: španielske dáta tak, ako ich dostane používateľ (prekrytie nad základom), vrátane
   nápovedí cvičení, tvarov slovies a „žiadne mexické slovo v španielskom texte“. Test `e2e/variant.spec.ts`.
+- **Španielčina: texty** (2026-11-06, branch `content-es-texts`):
+  - Každý tip končí rámikom „V Mexiku“ alebo „V Španielsku“ podľa variantu (`variants.mx` / `variants.es`, SK aj EN,
+    `validate:data` vyžaduje obe).
+  - Prekrytie tipov `src/data/es/tips.json` (22 tipov, 34 príkladov, 19 textov): coche, móvil, autobús, camarero, súper,
+    euros, padres, billetes, pisos…; pretérito a perfecto hovoria, že Španielsko používa he comido pre dnešok.
+    `applyTips` / `applyTipsEn` v `applyVariant.ts`. Mexické mestá a jedlá (Puebla, tacos) ostali, nie sú chybou.
+  - `validate:es` kontroluje aj tipy: rovnaké id pravidiel, počet príkladov, nový význam ⇒ anglický preklad, žiadne
+    mexické slovo v príkladoch a žiadny text „v Mexiku“ mimo rámika.
+  - Hlas: pri Španielsku `es-ES` najprv (`preferredLangs` v `tts.ts`), rozpoznávanie reči `es-ES`; ručne vybraný hlas má prednosť.
+  - Hľadanie oboch tvarov (`otherForms` v `data/index.ts`): 35 nahradených slov a 6 dvojíc slovies (`SPAIN_VERB_PAIRS`),
+    v Španielsku aj regresar → volver. Riadok výsledku ukáže „v Mexiku „carro““ / „v Španielsku „coche““.
+  - Online preklad: pri Španielsku cieľ DeepL `ES` (nie `ES-419`), vlastný kľúč v cache (`sk@es-ES:…`).
+  - Texty appky so zmienkou o Mexiku (futuro v tabuľke, online preklad, inštalácia hlasu, uvítanie) majú španielske znenie.
 - **Generátory**: `spain-diff.mjs` (porovná základ), `spain-overlay.mjs` (bezpečné výmeny), `spain-manual.mjs` (ručné
   vety a opravy slov), `spain-verbs.mjs` (nové slovesá).
 
@@ -245,15 +258,13 @@ záznam v `MANUAL` alebo úpravu `SAFE`/`GENDER` v `spain-diff.mjs`.
    vosotros sa pridá ako voliteľná osoba podľa variantu (úlohy `tener:preterito:vosotros`, `lesson.taskFromItem`).
 4. **Perfecto v cvičeniach**: tab a tip sú, cloze vety s „he/has/ha + príčastie“ chýbajú (0 viet), tiež úloha pre
    hoy/ayer (perfecto vs. pretérito).
-5. **Zvuk**: `PREFERRED_LANGS` v `src/lib/tts.ts` podľa variantu (`es-es` a potom `es-*`). Ceceo (c/z = [θ]) a leísmo
-   ako poznámky v tipoch.
+5. ~~Zvuk~~: hotové (es-ES najprv, ceceo v poznámke tipu accents, leísmo v object-pronouns).
 6. **Zvyšných 92 slov v `docs/spain-draft/todo.json`**: španielske poznámky k nim (`note`) a rozhodnutie, ktoré
    typicky mexické slová (mariachi, tianguis, tamal, quinceañera, mande, no manches…) v španielskej verzii skryť
    (`hidden: true` v `src/data/es/words/`), nechať vo vyhľadávaní s poznámkou „Mexiko“.
 7. **Poznámky k nahradeným slovám** (`note: null` ich zatiaľ len odstránilo): napísať „V Španielsku … (v Mexiku …)“.
-8. **Ostatné mexikanizmy mimo slov a viet**: tipy (`tips.json`) majú mexické príklady (ustedes, pretérito ako
-   predvolený čas), poznámky o regresar/volver, anglické poznámky; cesta (`path.json`) a testy používajú mexické
-   slovenské texty; „Mexická španielčina“ v uvítaní a v Google Play popise.
-9. **Hľadanie**: index má obe formy iba tam, kde je prekrytie; hľadať „coche“ v mexickej verzii a „carro“ v španielskej
-   nájde len aktuálny tvar. Doplniť alternatívne tvary do vyhľadávania.
+8. **Ostatné mexikanizmy mimo slov a viet**: tipy a texty appky sú hotové (pozri vyššie). Ostáva: pravidlá tipov
+   s piatimi osobami (hablo… hablan, bez habláis; vosotros je zatiaľ len v rámiku), cesta (`path.json`) a testy
+   s mexickými slovenskými textami, popis v Google Play (patrí k vydaniu).
+9. ~~Hľadanie~~: hotové (oba tvary, pozri vyššie).
 10. **Rozhodnutie o príslušnom názve**: kým sa nerozhodne verejné vydanie, ponechať „Zo Španielska“ ako rozpracované.

@@ -6,6 +6,10 @@ test('Spanish from Spain: vosotros row, perfecto, Spain words; Mexican stays the
   await expect(page.getByRole('tabpanel')).not.toContainText('vosotros')
   await page.goto('/word/carro')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('carro')
+  // A tip ends with how Mexico uses the point.
+  await page.goto('/practice/grammar/hay-estar')
+  await expect(page.getByRole('complementary', { name: 'V Mexiku' })).toBeVisible()
+  await expect(page.getByText('Hay un Oxxo en la esquina.')).toBeVisible()
 
   // The setting reloads the app into the other Spanish.
   await page.goto('/profile/variant')
@@ -30,4 +34,15 @@ test('Spanish from Spain: vosotros row, perfecto, Spain words; Mexican stays the
   await expect(page.getByRole('tabpanel')).toContainText('conduzco')
   await page.goto('/word/manejar')
   await expect(page.getByRole('heading', { level: 1 })).not.toContainText('manejar')
+
+  // Tips speak of Spain: its own examples and its own note.
+  await page.goto('/practice/grammar/hay-estar')
+  await expect(page.getByText('Hay un súper en la esquina.')).toBeVisible()
+  await expect(page.getByText('Hay un Oxxo en la esquina.')).toHaveCount(0)
+  await expect(page.getByRole('complementary', { name: 'V Španielsku' })).toBeVisible()
+
+  // The Mexican word still finds Spain's.
+  await page.goto('/search')
+  await page.getByRole('searchbox').fill('carro')
+  await expect(page.getByRole('link', { name: /coche/ }).first()).toContainText('v Mexiku „carro“')
 })

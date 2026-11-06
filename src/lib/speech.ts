@@ -1,5 +1,6 @@
-// Speech recognition for Vyslovovanie: Chrome's built-in SpeechRecognition (free, Mexican
-// Spanish). Chrome sends the audio to Google, so it needs internet.
+// Speech recognition for Vyslovovanie: Chrome's built-in SpeechRecognition (free, the Spanish being
+// learned: Mexican or Spain's). Chrome sends the audio to Google, so it needs internet.
+import { readVariant } from '../data/variant'
 
 export type SpeechError = 'denied' | 'offline' | 'no-speech' | 'aborted' | 'failed'
 
@@ -74,7 +75,7 @@ export function startRecording(): Recording {
   if (!navigator.onLine) return { result: Promise.reject(new SpeechFailure('offline')), stop() {}, abort() {} }
 
   const recognition = new Recognizer()
-  recognition.lang = 'es-MX'
+  recognition.lang = readVariant() === 'es' ? 'es-ES' : 'es-MX'
   recognition.interimResults = false
   recognition.maxAlternatives = 3
   recognition.continuous = false

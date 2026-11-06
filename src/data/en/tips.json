@@ -3,7 +3,7 @@
     "id": "ser-estar",
     "title": "ser and estar",
     "intro": "Both verbs mean “to be”. Ser says what something is or what it is like. Estar says where it is and what state it is in right now.",
-    "variants": { "mx": "Mexicans often put bien before an adjective as an intensifier (está bien bonito = it is really nice, es bien fácil = it is really easy)." },
+    "variants": { "mx": "Mexicans often put bien before an adjective as an intensifier (está bien bonito = it is really nice, es bien fácil = it is really easy).", "es": "Ser and estar work the same in Spain. To intensify an adjective Spain rather uses muy or, colloquially, súper (está muy bonito, es súper fácil); bien in this sense sounds Latin American." },
     "rules": [
       {
         "id": "identity",
@@ -95,7 +95,7 @@
     "id": "presente",
     "title": "Present tense (presente)",
     "intro": "It covers what you do regularly and what you are doing right now. The ending changes with the person, and the pronoun (yo, tú…) is usually left out.",
-    "variants": { "mx": "Mexico always uses ustedes for several people (ustedes hablan); the vosotros form (habláis) is not heard there." },
+    "variants": { "mx": "Mexico always uses ustedes for several people (ustedes hablan); the vosotros form (habláis) is not heard there.", "es": "In Spain several people you would call tú are vosotros (vosotros habláis, coméis, vivís). Ustedes (ustedes hablan) is the polite form, for people you would call usted. Every verb table shows the vosotros form." },
     "rules": [
       {
         "id": "use",
@@ -139,7 +139,7 @@
     "id": "preterito",
     "title": "Preterite (pretérito)",
     "intro": "It tells of something that happened and is over: yesterday, last week, once. In Mexico it's the everyday past tense for recent events too, where English might say “I have eaten”.",
-    "variants": { "mx": "In Mexico the pretérito is the usual tense for today and the recent past too (hoy desayuné temprano), where Spain often says he desayunado." },
+    "variants": { "mx": "In Mexico the pretérito is the usual tense for today and the recent past too (hoy desayuné temprano), where Spain often says he desayunado.", "es": "In Spain the pretérito is the tense for yesterday and earlier (ayer desayuné temprano). For today and the recent past Spain says the present perfect: hoy he desayunado temprano. The vosotros form: hablasteis, comisteis." },
     "rules": [
       {
         "id": "use",
@@ -193,7 +193,7 @@
     "id": "imperfecto",
     "title": "Imperfect (imperfecto)",
     "intro": "It describes what used to happen or what things were like: what you used to do, how it was, how old you were.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere. The vosotros form: hablabais, comíais, erais, ibais." },
     "rules": [
       {
         "id": "use",
@@ -225,7 +225,7 @@
     "id": "preterito-imperfecto",
     "title": "Preterite or imperfect?",
     "intro": "Both are past tenses. The preterite says what happened. The imperfect says what things were like at the time, or what happened again and again.",
-    "variants": { "mx": "The same in Mexico as elsewhere: pretérito for a finished event, imperfecto for description and habit." },
+    "variants": { "mx": "The same in Mexico as elsewhere: pretérito for a finished event, imperfecto for description and habit.", "es": "The same in Spain as elsewhere: pretérito for a finished event, imperfecto for description and habit. For today Spain adds he comido, see the present perfect." },
     "rules": [
       {
         "id": "event",
@@ -257,7 +257,7 @@
     "id": "futuro",
     "title": "Future tense (futuro)",
     "intro": "The endings are added to the whole infinitive and are the same for all verbs.",
-    "variants": { "mx": "Mexicans talk about plans mostly with ir a (voy a viajar). The futuro is often used for a guess (¿qué hora será? = what time might it be?)." },
+    "variants": { "mx": "Mexicans talk about plans mostly with ir a (voy a viajar). The futuro is often used for a guess (¿qué hora será? = what time might it be?).", "es": "Spain too talks about plans mostly with ir a (voy a viajar), and the futuro is also used for a guess (¿qué hora será?). The vosotros form: hablaréis, tendréis." },
     "rules": [
       {
         "id": "use",
@@ -299,7 +299,7 @@
     "id": "progresivo",
     "title": "Present progressive (estar + gerundio)",
     "intro": "It says what is happening at this very moment. It is made of the verb estar and a gerund, like English “I am working”.",
-    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now). Careful: in Mexico ahorita also means “later, at some point” (ahorita lo hago = I will do it when I get to it)." },
+    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now). Careful: in Mexico ahorita also means “later, at some point” (ahorita lo hago = I will do it when I get to it).", "es": "Spain uses the progressive somewhat less than Mexico. Ahorita is not heard there; Spain says ahora mismo (ahora mismo estoy comiendo = I am eating right now)." },
     "rules": [
       {
         "id": "use",
@@ -331,7 +331,7 @@
     "id": "gender",
     "title": "Gender of nouns",
     "intro": "Every noun is masculine (el) or feminine (la), things included. English has nothing like it, but the ending often tells you which it is.",
-    "variants": { "mx": "Some words have a different gender in Mexico than in Spain: el radio (also the broadcast, la radio in Spain), el sartén (la sartén in Spain)." },
+    "variants": { "mx": "Some words have a different gender in Mexico than in Spain: el radio (also the broadcast, la radio in Spain), el sartén (la sartén in Spain).", "es": "Some words have a different gender in Spain than in Mexico: la radio (the broadcast and the set), la sartén (frying pan)." },
     "rules": [
       {
         "id": "o-a",
@@ -375,7 +375,7 @@
     "id": "articles",
     "title": "Articles (el, la, un, una)",
     "intro": "Spanish uses articles more often than English does. The article agrees with its noun in gender and number.",
-    "variants": { "mx": "In everyday Mexican speech a name often takes an article (la María, el Juan). In writing the name stands alone." },
+    "variants": { "mx": "In everyday Mexican speech a name often takes an article (la María, el Juan). In writing the name stands alone.", "es": "In Spain a name usually stands without an article (María, Juan). La María, el Juan sounds colloquial; in some regions (Catalonia, for one) it is common." },
     "rules": [
       {
         "id": "definite",
@@ -413,7 +413,7 @@
     "id": "adjectives",
     "title": "Adjective agreement",
     "intro": "An adjective takes the gender and number of its noun and usually comes after it. In English it never changes; in Spanish it almost always does.",
-    "variants": { "mx": "Mexicans use diminutives in -ito/-ita a lot, with adjectives and adverbs too (chiquito, despacito, ahorita)." },
+    "variants": { "mx": "Mexicans use diminutives in -ito/-ita a lot, with adjectives and adverbs too (chiquito, despacito, ahorita).", "es": "Spain uses diminutives too (un momentito, un cafecito), in some regions also in -illo, -ín (un poquillo, pequeñín). Ahorita is not used there." },
     "rules": [
       {
         "id": "o-a",
@@ -451,7 +451,7 @@
     "id": "reflexive",
     "title": "Reflexive verbs",
     "intro": "The infinitive ends in -se (levantarse). The pronoun changes with the person: me, te, se, nos, se.",
-    "variants": { "mx": "Some verbs are reflexive more often in Mexico than elsewhere (regresarse = to go back, tardarse = to take long)." },
+    "variants": { "mx": "Some verbs are reflexive more often in Mexico than elsewhere (regresarse = to go back, tardarse = to take long).", "es": "Spain says volver instead of regresar(se) (vuelvo a casa = I am going back home), and tardar has no se (tardo diez minutos = I will take ten minutes)." },
     "rules": [
       {
         "id": "forms",
@@ -483,7 +483,7 @@
     "id": "accents",
     "title": "Accents that change the meaning",
     "intro": "The mark over a vowel (á, é, í, ó, ú) shows the stress. In some words it is the only difference between two words, which is why the app doesn't let it pass there.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "Accents are written the same in Spain. The pronunciation differs: in most of Spain z, and c before e and i, sound like English th (gracias, cerveza, cinco)." },
     "rules": [
       {
         "id": "pairs",
@@ -515,7 +515,7 @@
     "id": "imperativo",
     "title": "The imperative",
     "intro": "Requests, advice and instructions: ven, siéntate, no te preocupes. The tú form is simple; the other persons take the subjunctive.",
-    "variants": { "mx": "Mexico does not use vosotros: an order to several people takes the ustedes form (vengan, siéntense), among friends too." },
+    "variants": { "mx": "Mexico does not use vosotros: an order to several people takes the ustedes form (vengan, siéntense), among friends too.", "es": "In Spain an order to several people you would call tú takes the vosotros form: the -r of the infinitive becomes -d (hablad, comed, venid). Before os the -d drops: sentaos. Ustedes (vengan, siéntense) is the polite form." },
     "rules": [
       {
         "id": "use",
@@ -563,7 +563,7 @@
     "id": "subjuntivo",
     "title": "Present subjunctive: forms",
     "intro": "The subjunctive is the mood for what someone wants or feels, or what is not certain. It is built from the present with the “opposite” vowel: -ar verbs take endings with -e, -er and -ir verbs endings with -a.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere. The vosotros form: habléis, comáis, tengáis." },
     "rules": [
       {
         "id": "use",
@@ -613,7 +613,7 @@
     "id": "condicional",
     "title": "The conditional (would)",
     "intro": "It says what would happen or what you would do. It is also the polite way to ask for something.",
-    "variants": { "mx": "In Mexico the conditional is used a lot to be polite, often together with usted (¿me podría ayudar?)." },
+    "variants": { "mx": "In Mexico the conditional is used a lot to be polite, often together with usted (¿me podría ayudar?).", "es": "Spain too uses the conditional to be polite (¿me podría ayudar?, me gustaría un café). In a shop or a café people often use the imperfecto as well: quería un café = I would like a coffee." },
     "rules": [
       {
         "id": "endings",
@@ -643,7 +643,7 @@
   },
   {
     "id": "perfecto",
-    "variants": { "mx": "In Mexico he hablado is used less: for today and the recent past people say the pretérito (hoy comí tacos, ya terminé). The perfecto is heard rather for experience and for what lasts until now (¿has ido a Oaxaca?, he vivido aquí diez años)." },
+    "variants": { "mx": "In Mexico he hablado is used less: for today and the recent past people say the pretérito (hoy comí tacos, ya terminé). The perfecto is heard rather for experience and for what lasts until now (¿has ido a Oaxaca?, he vivido aquí diez años).", "es": "In Spain it is the everyday past tense for today and for a period that is not over (hoy he comido paella, esta semana he trabajado mucho), also with ya and todavía no (ya he terminado). The pretérito stays for yesterday and earlier (ayer comí paella)." },
     "title": "Present perfect (he hablado)",
     "intro": "An action in a period that is not over yet (today, this week) or that matters now: hoy he comido tacos. In Spain it is an everyday past tense; in Mexico it is used less.",
     "rules": [
@@ -671,7 +671,7 @@
     "id": "pluscuamperfecto",
     "title": "Pluperfect (had done)",
     "intro": "An action that happened before another past action: when I arrived, the movie had already started.",
-    "variants": { "mx": "The pluscuamperfecto is the same as elsewhere. Mexico uses he comido less, see the rule on the pretérito perfecto." },
+    "variants": { "mx": "The pluscuamperfecto is the same as elsewhere. Mexico uses he comido less, see the rule on the pretérito perfecto.", "es": "The pluscuamperfecto is the same as elsewhere; the vosotros form: habíais comido. He comido is Spain’s usual tense for today, see the rule on the pretérito perfecto." },
     "rules": [
       {
         "id": "use",
@@ -703,7 +703,7 @@
     "id": "subj-imperfecto",
     "title": "Imperfect subjunctive: forms",
     "intro": "The past subjunctive. You need it in an unreal condition (si tuviera…) and in a second clause when the main clause is in the past (quería que vinieras).",
-    "variants": { "mx": "Mexico uses the -ra form (hablara, tuviera); the -se form (hablase) is hardly heard there." },
+    "variants": { "mx": "Mexico uses the -ra form (hablara, tuviera); the -se form (hablase) is hardly heard there.", "es": "Spain uses both the -ra form (hablara, tuviera) and the -se form (hablase, tuviese); they mean the same. Forming the -ra one is enough, the -se one needs recognizing." },
     "rules": [
       {
         "id": "use",
@@ -729,7 +729,7 @@
     "id": "gustar",
     "title": "gustar, encantar, doler",
     "intro": "Me gusta does not mean “I like” but “it pleases me”: the thing liked is the subject. So the verb agrees with the thing, not the person.",
-    "variants": { "mx": "In everyday Mexican speech you also hear me late (= I have a hunch: me late que va a llover; also = I like it: me late tu carro), but gustar is always right." },
+    "variants": { "mx": "In everyday Mexican speech you also hear me late (= I have a hunch: me late que va a llover; also = I like it: me late tu carro), but gustar is always right.", "es": "In everyday speech Spain also says me mola (= I like it, it is cool: me mola tu coche) or me flipa, but gustar is always right." },
     "rules": [
       {
         "id": "how",
@@ -765,7 +765,7 @@
     "id": "hay-estar",
     "title": "hay or estar",
     "intro": "Hay says that something exists or is available somewhere. Estar says where a specific, known thing is.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
         "id": "hay",
@@ -794,7 +794,7 @@
     "id": "object-pronouns",
     "title": "Object pronouns (lo, la, le)",
     "intro": "Instead of repeating the noun: ¿El pastel? Lo compré. Lo and la are for whom or what, le for to whom.",
-    "variants": { "mx": "When the person is the direct object, Mexico says lo/la (lo vi ayer = I saw him); le vi sounds like Spain. Le for “to whom” (le doy) and the polite le with usted (¿le ayudo?) are common." },
+    "variants": { "mx": "When the person is the direct object, Mexico says lo/la (lo vi ayer = I saw him); le vi sounds like Spain. Le for “to whom” (le doy) and the polite le with usted (¿le ayudo?) are common.", "es": "When the direct object is a man, Spain often says le instead of lo (le vi ayer = I saw him), mostly in the centre and the north. It is accepted as correct. For things it stays lo (¿el libro? lo tengo)." },
     "rules": [
       {
         "id": "direct",
@@ -830,7 +830,7 @@
     "id": "comparisons",
     "title": "Comparing",
     "intro": "More, less, as much, the most: más alto que, tan caro como, el mejor.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
         "id": "more-less",
@@ -866,7 +866,7 @@
     "id": "obligation",
     "title": "Have to, should, can",
     "intro": "tener que, hay que, deber and poder go with an infinitive: tengo que trabajar.",
-    "variants": { "mx": "The same in Mexico as elsewhere, most often with tener que (tengo que trabajar)." },
+    "variants": { "mx": "The same in Mexico as elsewhere, most often with tener que (tengo que trabajar).", "es": "The same in Spain as elsewhere, most often with tener que (tengo que trabajar)." },
     "rules": [
       {
         "id": "tener-que",
@@ -902,7 +902,7 @@
     "id": "subjuntivo-wishes",
     "title": "The subjunctive for wishes and feelings",
     "intro": "When someone wants, hopes or feels something about another person, the que clause is in the subjunctive: quiero que vengas.",
-    "variants": { "mx": "Ojalá is very common in everyday Mexican conversation (ojalá que llueva)." },
+    "variants": { "mx": "Ojalá is very common in everyday Mexican conversation (ojalá que llueva).", "es": "Ojalá is common in Spain too, with or without que (ojalá llueva, ojalá que apruebes = I hope you pass the exam)." },
     "rules": [
       {
         "id": "wish",
@@ -938,7 +938,7 @@
     "id": "si-clauses",
     "title": "Conditions with si",
     "intro": "Si means “if”. Which tense follows depends on whether the condition is real or only imagined.",
-    "variants": { "mx": "In Mexico an if-clause takes the -ra form (si tuviera tiempo…); the -se form (si tuviese) is hardly heard." },
+    "variants": { "mx": "In Mexico an if-clause takes the -ra form (si tuviera tiempo…); the -se form (si tuviese) is hardly heard.", "es": "In Spain an if-clause takes the -ra or the -se form (si tuviera tiempo… / si tuviese tiempo…); both are right." },
     "rules": [
       {
         "id": "real",
@@ -967,7 +967,7 @@
     "id": "por-para",
     "title": "por or para",
     "intro": "Both often mean “for”. Para looks ahead, to a goal. Por looks at the cause, the way and the exchange.",
-    "variants": { "mx": "In everyday Mexican speech para is often shortened to pa’ (pa’ que sepas); in writing it is spelled out." },
+    "variants": { "mx": "In everyday Mexican speech para is often shortened to pa’ (pa’ que sepas); in writing it is spelled out.", "es": "In everyday speech Spain too shortens para to pa’ (me voy pa’ casa); in writing it is spelled out." },
     "rules": [
       {
         "id": "para",
@@ -996,7 +996,7 @@
     "id": "subjuntivo-clauses",
     "title": "The subjunctive after opinions and conjunctions",
     "intro": "The subjunctive also follows a negative opinion, doubt and some conjunctions, when something is not certain yet.",
-    "variants": { "mx": "The same in Mexico as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
         "id": "opinion",
@@ -1032,7 +1032,7 @@
     "id": "relatives",
     "title": "Relative clauses (que, donde, lo que)",
     "intro": "They join two sentences into one: el libro que leí. Que is the most common and works for people and things.",
-    "variants": { "mx": "The same in Mexico as elsewhere; in speech que is the most common, el cual sounds bookish." },
+    "variants": { "mx": "The same in Mexico as elsewhere; in speech que is the most common, el cual sounds bookish.", "es": "The same in Spain as elsewhere; in speech que is the most common, el cual sounds bookish." },
     "rules": [
       {
         "id": "que",
@@ -1082,7 +1082,7 @@
     "id": "passive-se",
     "title": "The passive and impersonal se",
     "intro": "When who does it does not matter. Everyday speech uses se; the passive with ser belongs to the news and official texts.",
-    "variants": { "mx": "The same in Mexico as elsewhere; typical on signs and in ads (se vende, se renta = for rent)." },
+    "variants": { "mx": "The same in Mexico as elsewhere; typical on signs and in ads (se vende, se renta = for rent).", "es": "The same in Spain as elsewhere; typical on signs and in ads (se vende, se alquila = for rent)." },
     "rules": [
       {
         "id": "se",

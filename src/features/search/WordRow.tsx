@@ -1,5 +1,6 @@
 import { ChevronRight, Star } from 'lucide-react'
 import { Link } from 'react-router'
+import { variant } from '../../data'
 import type { Word } from '../../data/types'
 import { useT } from '../../i18n'
 import { articleFor } from '../../lib/grammar'
@@ -9,12 +10,14 @@ import type { WordNavState } from '../word/wordNav'
 interface WordRowProps {
   word: Word
   matchedForm?: string
+  /** The other variant's word that matched ("carro" for coche in Spain). */
+  otherForm?: string
   saved?: boolean
   /** Ids of the list this row is in: the detail can then swipe to neighbours. */
   list?: string[]
 }
 
-export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
+export function WordRow({ word, matchedForm, otherForm, saved, list }: WordRowProps) {
   const article = articleFor(word)
   const dictionary = useT()
   const text = dictionary.search
@@ -35,6 +38,11 @@ export function WordRow({ word, matchedForm, saved, list }: WordRowProps) {
             {matchedForm && (
               <span className="text-ink">
                 {text.form} <span lang="es">{dictionary.common.quote(matchedForm)}</span> ·{' '}
+              </span>
+            )}
+            {otherForm && (
+              <span className="text-ink">
+                {text.otherForm[variant === 'es' ? 'mx' : 'es']} <span lang="es">{dictionary.common.quote(otherForm)}</span> ·{' '}
               </span>
             )}
             {wordTranslations(word).join(', ')}

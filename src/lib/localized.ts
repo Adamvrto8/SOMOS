@@ -1,4 +1,4 @@
-import { english, sourceById } from '../data'
+import { english, sourceById, variant } from '../data'
 import type { Cloze, Level, Sentence, SourceRef, Tip, Topic, Verb, Word } from '../data/types'
 import { getLanguage } from './language'
 
@@ -67,6 +67,8 @@ export interface LocalTip {
   intro: string
   related?: string[]
   rules: LocalRule[]
+  /** How the Spanish being learned (Mexico or Spain) uses the point. */
+  variantNote?: string
 }
 
 /** The tip in the learner's language. All or nothing: a tip without an English version is Slovak. */
@@ -83,7 +85,16 @@ export function localizedTip(tip: Tip): LocalTip {
       examples: rule.examples.map((example, i) => ({ es: example.es, text: translated?.examples[i] ?? example.sk })),
     }
   })
-  return { id: tip.id, title: entry?.title ?? tip.title, level: tip.level, sources: tip.sources.map(citation), intro: entry?.intro ?? tip.intro, related: tip.related, rules }
+  return {
+    id: tip.id,
+    title: entry?.title ?? tip.title,
+    level: tip.level,
+    sources: tip.sources.map(citation),
+    intro: entry?.intro ?? tip.intro,
+    related: tip.related,
+    rules,
+    variantNote: (entry ? entry.variants : tip.variants)[variant],
+  }
 }
 
 /** "Plan curricular del Instituto Cervantes (2006), Gramática B1": the same in every language. */

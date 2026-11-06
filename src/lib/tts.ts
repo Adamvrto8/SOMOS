@@ -1,4 +1,6 @@
 import { useSyncExternalStore } from 'react'
+import type { Variant } from '../data/applyVariant'
+import { readVariant } from '../data/variant'
 
 // Spanish pronunciation via the browser's built-in speech synthesis (free, offline
 // when the device has the voice installed).
@@ -9,8 +11,12 @@ export const ttsSupported = Boolean(synth)
 
 const VOICE_KEY = 'somos-voice'
 
-// Mexican first, then other Latin American voices, which sound closer than es-ES.
-const PREFERRED_LANGS = ['es-mx', 'es-us', 'es-419']
+/** The voices to look for first, best first: the Spanish being learned, then the closest ones. */
+export const preferredLangs = (variant: Variant): string[] =>
+  // Mexico: Mexican, then other Latin American voices, which sound closer than es-ES. Spain: es-ES first.
+  variant === 'es' ? ['es-es', 'es-mx', 'es-us', 'es-419'] : ['es-mx', 'es-us', 'es-419']
+
+const PREFERRED_LANGS = preferredLangs(readVariant())
 
 const normalizeLang = (lang: string) => lang.toLowerCase().replace('_', '-')
 

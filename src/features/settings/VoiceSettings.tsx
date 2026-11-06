@@ -6,7 +6,7 @@ import { ChoiceList } from './ChoiceList'
 import { SettingsHint, SettingsSubpage } from './SettingsSubpage'
 
 const SAMPLE = '¡Hola! ¿Cómo estás?'
-/** The choice that leaves the voice to the app: the best Mexican one there is. */
+/** The choice that leaves the voice to the app: the best one for the Spanish being learned (tts.ts). */
 const AUTO = 'auto'
 
 /** Nastavenia → Výslovnosť: which Spanish voice of the phone reads the words. */

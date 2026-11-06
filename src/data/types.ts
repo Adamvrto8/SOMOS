@@ -130,7 +130,7 @@ export interface Tip {
   rules: TipRule[]
   related?: string[] // tip ids, "Pozri aj"
   sources: SourceRef[] // what the tip is based on, shown as "Podľa: …"
-  variants: Partial<Record<SpanishVariant, string>> // how a variant of Spanish uses the point, in the learner's language; `mx` required
+  variants: Partial<Record<SpanishVariant, string>> // how a variant of Spanish uses the point, in the learner's language, shown at the end of the tip; `mx` and `es` required
   ideas: string[] // 1–3 exercise ideas for later content work, English working notes, never shown
 }
 
