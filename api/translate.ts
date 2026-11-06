@@ -124,6 +124,9 @@ export function ipBlock(ip: string): string {
   return ipNetwork(ip).split(':').slice(0, 3).join(':') + '::/48'
 }
 
+/** A new secret key (sb_secret_…) goes only in `apikey`; a legacy one is a JWT and also the bearer (as in api/reminder.ts). */
+export const supabaseAuth = (key: string): Record<string, string> => ({ apikey: key, ...(key.startsWith('eyJ') ? { Authorization: `Bearer ${key}` } : {}) })
+
 /** The limits through Supabase (SUPABASE_URL or VITE_SUPABASE_URL, the service role key); none without them. */
 export function limitsFromEnv(env: Record<string, string | undefined>, fetchImpl: typeof fetch = fetch): TranslateLimits | undefined {
   const url = (env.SUPABASE_URL ?? env.VITE_SUPABASE_URL)?.replace(/\/+$/, '')
@@ -137,7 +140,7 @@ export function limitsFromEnv(env: Record<string, string | undefined>, fetchImpl
     allow: async ({ ip, block, chars }) => {
       const res = await fetchImpl(`${url}/rest/v1/rpc/translate_allow`, {
         method: 'POST',
-        headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+        headers: { ...supabaseAuth(key), 'Content-Type': 'application/json' },
         body: JSON.stringify({
           p_ip: ip,
           p_block: block,

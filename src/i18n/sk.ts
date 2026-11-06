@@ -1213,7 +1213,7 @@ export const sk = {
       },
       {
         heading: 'Tvoje práva',
-        body: 'Máš právo na prístup k svojim údajom (Nastavenia → Záloha ich uloží do súboru), na ich opravu a výmaz a na podanie sťažnosti dozornému orgánu (na Slovensku Úrad na ochranu osobných údajov).',
+        body: 'Máš právo na prístup k svojim údajom (Profil → Záloha ich uloží do súboru), na ich opravu a výmaz a na podanie sťažnosti dozornému orgánu (na Slovensku Úrad na ochranu osobných údajov).',
       },
     ],
   },

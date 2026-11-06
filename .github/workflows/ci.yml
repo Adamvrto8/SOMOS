@@ -26,8 +26,12 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run validate:data
+      - run: npm run validate:es
+      # Only what ships to phones and the functions; dev tools are updated by hand (docs/launch-audit-2026-11-05.md, O8).
+      - run: npm audit --omit=dev --audit-level=high
       - run: npm test
       - run: npm run build # tsc -b included
+      - run: npm run check:build # everything precached: offline must not break silently
 
   e2e:
     runs-on: ubuntu-24.04

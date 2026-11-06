@@ -4,7 +4,7 @@ import { parseLook, type Look } from './look'
 export type ThemePref = 'system' | 'light' | 'dark'
 export type Theme = 'light' | 'dark'
 
-// Keep in sync with the inline script in index.html.
+// Keep in sync with public/theme-init.js (runs before first paint).
 const STORAGE_KEY = 'somos-theme'
 const LOOK_KEY = 'somos-look'
 /** The page background of each style: what the phone paints its status bar with. */

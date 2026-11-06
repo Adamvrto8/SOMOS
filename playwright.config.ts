@@ -14,6 +14,9 @@ export default defineConfig({
   forbidOnly: true,
   // GitHub's runner is slower than a desktop: one more try there before a timing test counts as failed.
   retries: process.env.CI ? 1 : 0,
+  // One Vite dev server serves every worker: on a 24-thread desktop the default (half the threads) made 40 of
+  // 110 tests time out in page.goto on a cold start (docs/launch-audit-2026-11-05.md). CI keeps the default.
+  workers: process.env.CI ? undefined : 4,
   // On GitHub a failure also becomes a note on the commit, readable without the run's log.
   reporter: process.env.CI ? [['list'], ['github']] : 'list',
   use: {

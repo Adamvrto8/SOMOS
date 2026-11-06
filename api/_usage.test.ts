@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { BATCHES_PER_HOUR, handleUsage, MAX_EVENTS, parseBatch, depsFromEnv as limitDeps, type UsageDeps, type UsageRow } from './usage.ts'
+import { BATCHES_PER_BLOCK, BATCHES_PER_HOUR, handleUsage, supabaseAuth, MAX_EVENTS, parseBatch, depsFromEnv as limitDeps, type UsageDeps, type UsageRow } from './usage.ts'
 
 const DEVICE = '0b6f3a52-5c1e-4d7a-9a51-2f0d1c9e8b11'
 const OPEN = { name: 'open', day: '2026-10-25', at: 1, props: {} }
@@ -15,6 +15,7 @@ function deps(over: Partial<UsageDeps> = {}) {
     insert: vi.fn(async (r: UsageRow[]) => void rows.push(...r)),
     rateHit: vi.fn(async () => true),
     ipKey: () => 'usage:x',
+    blockKey: () => 'usage-block:x',
     ...over,
   }
   return { d, rows }
@@ -83,6 +84,13 @@ describe('handleUsage', () => {
     expect(d.insert).not.toHaveBeenCalled()
   })
 
+  it('stops at the limit of a block of addresses too', async () => {
+    const { d } = deps({ rateHit: vi.fn(async (key: string) => key !== 'usage-block:x') })
+    expect((await handleUsage(post(batch()), d)).status).toBe(429)
+    expect(d.rateHit).toHaveBeenCalledWith('usage-block:x', BATCHES_PER_BLOCK)
+    expect(d.insert).not.toHaveBeenCalled()
+  })
+
   it('answers 500 when Supabase fails, and 503 without configuration', async () => {
     const { d } = deps({ insert: vi.fn(async () => Promise.reject(new Error('down'))) })
     vi.spyOn(console, 'error').mockImplementation(() => {})
@@ -102,5 +110,20 @@ describe('the hourly limit key', () => {
   it('keeps IPv4 addresses apart, and never contains the address', () => {
     expect(keyOf('81.2.3.4')).not.toBe(keyOf('81.2.3.5'))
     expect(keyOf('81.2.3.4')).not.toContain('81.2.3.4')
+  })
+
+  it('counts a block by its /24 or /48', () => {
+    const blockOf = (ip: string) => limitDeps({ SUPABASE_URL: 'https://x.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'secret' })!.blockKey(new Request('https://somos.app', { headers: { 'x-forwarded-for': ip } }))
+    expect(blockOf('81.2.3.4')).toBe(blockOf('81.2.3.200'))
+    expect(blockOf('81.2.3.4')).not.toBe(blockOf('81.2.4.4'))
+    expect(blockOf('2a02:ab88:1234:5678::1')).toBe(blockOf('2a02:ab88:1234:ffff::1'))
+    expect(blockOf('81.2.3.4')).not.toContain('81.2.3')
+  })
+})
+
+describe('the Supabase key', () => {
+  it('goes only as apikey when it is a new secret key, also as the bearer when it is a legacy JWT', () => {
+    expect(supabaseAuth('sb_secret_abc')).toEqual({ apikey: 'sb_secret_abc' })
+    expect(supabaseAuth('eyJhbGciOi.legacy')).toEqual({ apikey: 'eyJhbGciOi.legacy', Authorization: 'Bearer eyJhbGciOi.legacy' })
   })
 })

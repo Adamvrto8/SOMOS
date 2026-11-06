@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "check:build": "node scripts/check-build.ts",
     "lint": "oxlint",
     "preview": "vite preview",
     "icons": "node scripts/generate-icons.ts",

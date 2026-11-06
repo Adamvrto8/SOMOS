@@ -7,6 +7,8 @@ import { createHmac } from 'node:crypto'
 export const MAX_EVENTS = 100
 export const MAX_BODY = 32_000
 export const BATCHES_PER_HOUR = 120
+/** Per /24 (IPv4) or /48 (IPv6): one source with many addresses must not fill usage_events. */
+export const BATCHES_PER_BLOCK = 360
 const REQUEST_TIMEOUT_MS = 8000
 
 type Props = Record<string, string | number | boolean | null>
@@ -36,6 +38,7 @@ export interface UsageDeps {
   insert(rows: UsageRow[]): Promise<void>
   rateHit(key: string, limit: number): Promise<boolean>
   ipKey(request: Request): string
+  blockKey(request: Request): string
 }
 
 // The lists mirror src/lib/lesson.ts (ExerciseType, plus 'mixed' from src/features/exercises/lessonUsage.ts),
@@ -121,6 +124,7 @@ export async function handleUsage(request: Request, deps: UsageDeps | undefined)
     const batch = parseBatch(body)
     if (!batch) return json({ error: 'bad-request' }, 400)
     if (!(await deps.rateHit(deps.ipKey(request), BATCHES_PER_HOUR))) return json({ error: 'too-many' }, 429)
+    if (!(await deps.rateHit(deps.blockKey(request), BATCHES_PER_BLOCK))) return json({ error: 'too-many' }, 429)
     await deps.insert(
       batch.events.map((e) => ({ device: batch.device, day: e.day, name: e.name, props: e.props, version: batch.version, language: batch.language })),
     )
@@ -129,6 +133,12 @@ export async function handleUsage(request: Request, deps: UsageDeps | undefined)
     console.error('usage failed', error)
     return json({ error: 'failed' }, 500)
   }
+}
+
+/** The /24 of an IPv4 address, the /48 of an IPv6 one (as ipBlock() in api/reminder.ts). */
+export function ipBlock(ip: string): string {
+  if (!ip.includes(':')) return /^\d+\.\d+\.\d+\.\d+$/.test(ip) ? `${ip.split('.').slice(0, 3).join('.')}.0/24` : ip
+  return ipNetwork(ip).split(':').slice(0, 3).join(':') + '::/48'
 }
 
 /** An IPv6 address counts by its /64: one connection gets a whole /64 and can pick any address in it.
@@ -145,6 +155,12 @@ export function ipNetwork(ip: string): string {
     .join(':')}::/64`
 }
 
+const clientIp = (request: Request) =>
+  request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
+
+/** A new secret key (sb_secret_…) goes only in `apikey`; a legacy one is a JWT and also the bearer (as in api/reminder.ts). */
+export const supabaseAuth = (key: string): Record<string, string> => ({ apikey: key, ...(key.startsWith('eyJ') ? { Authorization: `Bearer ${key}` } : {}) })
+
 /** SUPABASE_URL, or the app's own VITE_SUPABASE_URL (Vercel gives functions every variable). */
 export function depsFromEnv(env: Record<string, string | undefined>): UsageDeps | undefined {
   const url = (env.SUPABASE_URL ?? env.VITE_SUPABASE_URL)?.replace(/\/+$/, '')
@@ -153,23 +169,22 @@ export function depsFromEnv(env: Record<string, string | undefined>): UsageDeps 
   const call = async (path: string, body: unknown, prefer?: string) => {
     const res = await fetch(`${url}/rest/v1/${path}`, {
       method: 'POST',
-      headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(prefer ? { Prefer: prefer } : {}) },
+      headers: { ...supabaseAuth(key), 'Content-Type': 'application/json', ...(prefer ? { Prefer: prefer } : {}) },
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     })
     if (!res.ok) throw new Error(`Supabase ${path} failed: ${res.status}`)
     return res
   }
+  const hash = (value: string) => createHmac('sha256', `somos-usage:${key}`).update(value).digest('hex').slice(0, 32)
   return {
     insert: async (rows) => {
       await call('usage_events', rows, 'return=minimal')
     },
     rateHit: async (rateKey, limit) => (await (await call('rpc/push_rate_hit', { p_key: rateKey, p_limit: limit })).json()) === true,
-    // A keyed hash: the address cannot be got back from push_rate by trying every address.
-    ipKey: (request) => {
-      const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || request.headers.get('x-real-ip') || 'unknown'
-      return `usage:${createHmac('sha256', `somos-usage:${key}`).update(ipNetwork(ip)).digest('hex').slice(0, 32)}`
-    },
+    // Keyed hashes: the address cannot be got back from push_rate by trying every address.
+    ipKey: (request) => `usage:${hash(ipNetwork(clientIp(request)))}`,
+    blockKey: (request) => `usage-block:${hash(ipBlock(clientIp(request)))}`,
   }
 }
 

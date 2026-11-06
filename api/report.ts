@@ -125,6 +125,9 @@ export function ipNetwork(ip: string): string {
     .join(':')}::/64`
 }
 
+/** A new secret key (sb_secret_…) goes only in `apikey`; a legacy one is a JWT and also the bearer (as in api/reminder.ts). */
+export const supabaseAuth = (key: string): Record<string, string> => ({ apikey: key, ...(key.startsWith('eyJ') ? { Authorization: `Bearer ${key}` } : {}) })
+
 /** SUPABASE_URL, or the app's own VITE_SUPABASE_URL (Vercel gives functions every variable). */
 export function depsFromEnv(env: Record<string, string | undefined>): ReportDeps | undefined {
   const url = (env.SUPABASE_URL ?? env.VITE_SUPABASE_URL)?.replace(/\/+$/, '')
@@ -133,7 +136,7 @@ export function depsFromEnv(env: Record<string, string | undefined>): ReportDeps
   const call = async (path: string, body: unknown, prefer?: string) => {
     const res = await fetch(`${url}/rest/v1/${path}`, {
       method: 'POST',
-      headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', ...(prefer ? { Prefer: prefer } : {}) },
+      headers: { ...supabaseAuth(key), 'Content-Type': 'application/json', ...(prefer ? { Prefer: prefer } : {}) },
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     })

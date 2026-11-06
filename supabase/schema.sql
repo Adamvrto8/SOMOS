@@ -24,16 +24,46 @@ create policy "own records" on public.records
   using (user_id = (select auth.uid()))
   with check (user_id = (select auth.uid()));
 
-grant select, insert, update, delete on public.records to authenticated;
-grant usage on sequence public.records_rev to authenticated;
+-- The app reads its records straight from the table and writes only through push_records, which holds the limits.
+revoke all on public.records from anon;
+revoke insert, update, delete on public.records from authenticated;
+revoke usage on sequence public.records_rev from authenticated;
+grant select on public.records to authenticated;
+
+-- What a record may be (docs/launch-audit-2026-11-05.md, B3): one account must not fill the database for everyone.
+-- The largest real record (a card, a lesson, the settings) is well under 2 kB.
+do $$ begin
+  if not exists (select 1 from pg_constraint where conname = 'records_kind') then
+    alter table public.records add constraint records_kind
+      check (kind in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'lesson', 'test', 'settings'));
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'records_key_len') then
+    alter table public.records add constraint records_key_len check (char_length(key) between 1 and 200);
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'records_data_size') then
+    alter table public.records add constraint records_data_size check (data is null or pg_column_size(data) <= 65536);
+  end if;
+end $$;
 
 -- Stores a batch. On the same key the newer change wins, except lessons and tests: the device has merged
 -- them by the better result already. Every write takes a new rev, so the other devices pull it.
+-- A record that breaks the limits above is skipped, not refused: one bad record must not stop the sync for good.
+-- Security definer (the table takes no direct writes), so the account is always auth.uid(), never the caller's choice.
 create or replace function public.push_records(items jsonb) returns void
-language sql security invoker set search_path = '' as $$
+language plpgsql security definer set search_path = '' as $$
+declare me uuid := (select auth.uid());
+begin
+  if me is null then raise exception 'not-signed-in'; end if;
+  if jsonb_typeof(items) is distinct from 'array' or jsonb_array_length(items) > 500 then raise exception 'batch-too-big'; end if;
+  -- Years of daily practice (about 70 000 attempts a year at 200 a day); beyond it, abuse.
+  if (select count(*) from public.records where user_id = me) > 200000 then raise exception 'account-full'; end if;
   insert into public.records (user_id, kind, key, data, deleted, changed_at)
-  select (select auth.uid()), i->>'kind', i->>'key', i->'data', coalesce((i->>'deleted')::boolean, false), (i->>'changedAt')::bigint
+  select me, i->>'kind', i->>'key', i->'data', coalesce((i->>'deleted')::boolean, false), (i->>'changedAt')::bigint
   from jsonb_array_elements(items) as i
+  where i->>'kind' in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'lesson', 'test', 'settings')
+    and char_length(i->>'key') between 1 and 200
+    and (i->'data' is null or pg_column_size(i->'data') <= 65536)
+    and jsonb_typeof(i->'changedAt') = 'number'
   on conflict (user_id, kind, key) do update
     set data = excluded.data,
         deleted = excluded.deleted,
@@ -41,7 +71,7 @@ language sql security invoker set search_path = '' as $$
         rev = nextval('public.records_rev')
     where public.records.changed_at <= excluded.changed_at
        or excluded.kind in ('lesson', 'test');
-$$;
+end $$;
 
 revoke execute on function public.push_records(jsonb) from public, anon;
 grant execute on function public.push_records(jsonb) to authenticated;
@@ -489,9 +519,12 @@ begin
 end $$;
 
 -- Once a day from the tick: devices silent for 60 days, old dropped endpoints and rate rows, usage events after 13 months,
--- handled content reports after 12 months, lookup counts after 40 days.
+-- handled content reports after 12 months, lookup counts after 40 days, duel rooms never started after a day
+-- (finished duels stay: they are the players' history).
 create or replace function public.push_cleanup() returns void
 language sql set search_path = '' as $$
+  delete from public.duels d where d.status = 'lobby' and d.created_at < public.now_ms() - 24 * 60 * 60 * 1000
+    and not exists (select 1 from public.duels o where o.rematch = d.code); -- an Odveta link keeps its room
   delete from public.push_devices where seen_at < now() - interval '60 days';
   delete from public.push_gone where at < now() - interval '30 days';
   delete from public.push_rate where hour < now() - interval '1 day';

@@ -133,13 +133,23 @@ describe('api/translate limits in Supabase', () => {
   const ENV = { SUPABASE_URL: 'https://x.supabase.co/', SUPABASE_SERVICE_ROLE_KEY: 'secret' }
   const reply = (status: number, body: unknown) => vi.fn(async () => Response.json(body, { status }))
 
+  it('sends a new secret key only as apikey, a legacy JWT key also as the bearer (as api/reminder.ts)', async () => {
+    const fetchImpl = reply(200, 'ok')
+    await limitsFromEnv({ ...ENV, SUPABASE_SERVICE_ROLE_KEY: 'sb_secret_abc' }, fetchImpl)!.allow({ ip: 'a', block: 'b', chars: 1 })
+    await limitsFromEnv({ ...ENV, SUPABASE_SERVICE_ROLE_KEY: 'eyJhbGciOi.legacy' }, fetchImpl)!.allow({ ip: 'a', block: 'b', chars: 1 })
+    const headers = fetchImpl.mock.calls.map((call) => new Headers((call as unknown as [string, RequestInit])[1].headers))
+    expect(headers[0].get('apikey')).toBe('sb_secret_abc')
+    expect(headers[0].get('authorization')).toBeNull()
+    expect(headers[1].get('authorization')).toBe('Bearer eyJhbGciOi.legacy')
+  })
+
   it('is one call of translate_allow with every limit, under a short timeout', async () => {
     const fetchImpl = reply(200, 'ok')
     const l = limitsFromEnv(ENV, fetchImpl)!
     expect(await l.allow({ ip: 'a', block: 'b', chars: 9 })).toBe('ok')
     const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
     expect(url).toBe('https://x.supabase.co/rest/v1/rpc/translate_allow')
-    expect(new Headers(init.headers).get('authorization')).toBe('Bearer secret')
+    expect(new Headers(init.headers).get('apikey')).toBe('secret')
     expect(JSON.parse(init.body as string)).toEqual({
       p_ip: 'a',
       p_block: 'b',

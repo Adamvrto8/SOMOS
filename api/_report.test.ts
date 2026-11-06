@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { handleReport, parseReport, REPORTS_PER_BLOCK, REPORTS_PER_HOUR, depsFromEnv as limitDeps, type ReportDeps, type ReportRow } from './report.ts'
+import { handleReport, parseReport, supabaseAuth, REPORTS_PER_BLOCK, REPORTS_PER_HOUR, depsFromEnv as limitDeps, type ReportDeps, type ReportRow } from './report.ts'
 
 const REPORT = {
   target: 'sentence:s001',
@@ -126,5 +126,12 @@ describe('the block limit key', () => {
     expect(blockOf('2a02:ab88:1234::1')).not.toBe(blockOf('2a02:ab88:1235::1'))
     expect(blockOf('81.2.3.4')).toBe(blockOf('81.2.3.200'))
     expect(blockOf('81.2.3.4')).not.toBe(blockOf('81.2.4.4'))
+  })
+})
+
+describe('the Supabase key', () => {
+  it('goes only as apikey when it is a new secret key, also as the bearer when it is a legacy JWT', () => {
+    expect(supabaseAuth('sb_secret_abc')).toEqual({ apikey: 'sb_secret_abc' })
+    expect(supabaseAuth('eyJhbGciOi.legacy')).toEqual({ apikey: 'eyJhbGciOi.legacy', Authorization: 'Bearer eyJhbGciOi.legacy' })
   })
 })

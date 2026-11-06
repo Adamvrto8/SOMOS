@@ -1139,7 +1139,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'Your rights',
-        body: 'You have the right to access your data (Settings → Backup saves it to a file), to have it corrected and deleted, and to lodge a complaint with a supervisory authority.',
+        body: 'You have the right to access your data (Profile → Backup saves it to a file), to have it corrected and deleted, and to lodge a complaint with a supervisory authority.',
       },
     ],
   },

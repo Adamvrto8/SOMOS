@@ -5,7 +5,7 @@
 // Design: docs/superpowers/specs/2026-09-27-push-reminders-design.md; one row per device in Supabase
 // (push_devices in supabase/schema.sql) since docs/superpowers/specs/2026-10-24-reminders-for-everyone-design.md.
 // Kept free of local imports so Vercel can deploy it as a single file.
-import { createHmac } from 'node:crypto'
+import { createHmac, timingSafeEqual } from 'node:crypto'
 import webpush from 'web-push'
 
 // ---------- types (ReminderProgress mirrors src/lib/reminderProgress.ts) ----------
@@ -625,6 +625,13 @@ function sameOrigin(request: Request): boolean {
   }
 }
 
+/** The cron's Authorization header, compared in constant time. */
+function isCron(request: Request, secret: string): boolean {
+  const given = Buffer.from(request.headers.get('authorization') ?? '')
+  const expected = Buffer.from(`Bearer ${secret}`)
+  return given.length === expected.length && timingSafeEqual(given, expected)
+}
+
 const bearer = (request: Request) => /^Bearer (\S+)$/.exec(request.headers.get('authorization') ?? '')?.[1]
 
 /** One device in a tick: a test asked for later, then today's reminder. */
@@ -820,7 +827,7 @@ export async function handleReminder(request: Request, deps: Deps | undefined): 
   if (!deps) return json({ error: 'not-configured' }, 503)
   try {
     if (request.method === 'GET') {
-      if (request.headers.get('authorization') !== `Bearer ${deps.cronSecret}`) return json({ error: 'unauthorized' }, 401)
+      if (!isCron(request, deps.cronSecret)) return json({ error: 'unauthorized' }, 401)
       return await tick(deps)
     }
     return await handlePost(request, deps)
