@@ -129,8 +129,29 @@ export interface Tip {
   intro: string
   rules: TipRule[]
   related?: string[] // tip ids, "Pozri aj"
-  sources: string[] // citations: "Plan curricular del Instituto Cervantes (2006), Gramática B1"
+  sources: SourceRef[] // what the tip is based on, shown as "Podľa: …"
+  variants: Partial<Record<SpanishVariant, string>> // how a variant of Spanish uses the point, in the learner's language; `mx` required
+  ideas: string[] // 1–3 exercise ideas for later content work, English working notes, never shown
 }
+
+// The works the tips cite, src/data/sources.json.
+export interface Source {
+  id: string // "pcic", "uimp-b1"
+  short: string // how a citation starts: "Plan curricular del Instituto Cervantes (2006)"
+  title: string
+  author: string
+  year: number
+  url?: string // https, written only when checked to load
+}
+
+/** A tip's citation: a Source and where in it, in the source's own language ("Gramática B1", "semana 3"). */
+export interface SourceRef {
+  source: string
+  where: string
+}
+
+/** The Spanish a regional note is about: Mexico now, Spain later. */
+export type SpanishVariant = 'mx' | 'es'
 
 // The guided path ("Cesta", docs/guided-path-spec.md): src/data/path.json, units in the order they are learned.
 export interface PathEntry {
@@ -180,5 +201,6 @@ export interface TipEn {
   id: string
   title: string
   intro: string
+  variants: Partial<Record<SpanishVariant, string>>
   rules: { id: string; title: string; text?: string; because?: string; examples: string[] }[] // examples: translations, in order
 }

@@ -1,11 +1,12 @@
 import pathJson from './path.json'
+import sourcesJson from './sources.json'
 import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
 import enTopicsJson from './en/topics.json'
 import { applySentences, applyWords, hiddenVerbIds, type SentenceEs, type WordEs } from './applyVariant'
 import { readVariant } from './variant'
-import type { PathEntry, Sentence, SentenceEn, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
+import type { PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
 // Vite bundles every file matched here; order = file name, then order inside the file.
@@ -18,6 +19,7 @@ const collect = <T>(modules: Record<string, unknown>): T[] =>
 // shape and content are enforced by `npm run validate:data`.
 export const topics = topicsJson as Topic[]
 export const tips = tipsJson as Tip[]
+export const sources = sourcesJson as Source[]
 export const path = pathJson as PathEntry[]
 /** Which Spanish is studied (Mexico by default); Spain lays src/data/es/ over the Mexican base, by id. */
 export const variant = readVariant()
@@ -49,6 +51,7 @@ export const verbById = new Map(verbs.map((v) => [v.id, v]))
 export const topicById = new Map(topics.map((t) => [t.id, t]))
 export const sentenceById = new Map(sentences.map((s) => [s.id, s]))
 export const tipById = new Map(tips.map((t) => [t.id, t]))
+export const sourceById = new Map(sources.map((s) => [s.id, s]))
 /** Verb id (infinitive) → its dictionary word id (a slug: "extrañar" → "extranar"). */
 export const wordIdByVerb = new Map(words.flatMap((w) => (w.verbId ? [[w.verbId, w.id] as const] : [])))
 
