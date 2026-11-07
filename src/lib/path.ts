@@ -495,9 +495,18 @@ export interface LevelOffer {
   level: Level
 }
 
-/** The lesson the level offer belongs to: step 1 of the first unit of the start level, on a device with a welcome, not offered yet. */
+/**
+ * The lesson the level offer belongs to: step 1 of the first unit of the start level, not offered yet, on a device
+ * whose learner picked a level in the welcome (old devices and "Už mám účet" are marked as welcomed without one).
+ */
 export function isLevelOfferLesson(unit: PathUnit, step: StepId, onboarding: OnboardingState | null): boolean {
-  return onboarding !== null && onboarding.levelOffered !== true && firstUnit(onboarding)?.id === unit.id && unitSteps(unit)[0] === step
+  return (
+    onboarding?.done === true &&
+    onboarding.level !== undefined &&
+    onboarding.levelOffered !== true &&
+    firstUnit(onboarding)?.id === unit.id &&
+    unitSteps(unit)[0] === step
+  )
 }
 
 /** All right in the first full round: the level above; at most 40 %: the level below; anything else: nothing. */

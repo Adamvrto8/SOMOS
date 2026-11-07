@@ -231,6 +231,9 @@ describe('level offer', () => {
     expect(isLevelOfferLesson(pathUnits[1], unitSteps(pathUnits[1])[0], welcome('A1'))).toBe(false)
     expect(isLevelOfferLesson(a1, unitSteps(a1)[0], welcome('A1', true))).toBe(false)
     expect(isLevelOfferLesson(a1, unitSteps(a1)[0], null)).toBe(false)
+    // Old devices with progress, and "Už mám účet", are marked as welcomed without a level: no offer.
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[0], { done: true, at: 1 })).toBe(false)
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[0], { done: false, level: 'A1' })).toBe(false)
     expect(isLevelOfferLesson(firstOf('A2'), unitSteps(firstOf('A2'))[0], welcome('A2'))).toBe(true)
   })
 

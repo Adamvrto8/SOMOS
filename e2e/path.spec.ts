@@ -166,7 +166,23 @@ test('an open unit offers its test as "Viem to", a finished level has a check', 
 
 /** The welcome's answers as the app stores them: a learner who started at `level`. */
 async function welcomed(page: Page, level: string) {
-  await page.addInitScript((data) => localStorage.setItem('somos-onboarding', data), JSON.stringify({ done: true, at: 1, motivation: 'fun', level }))
+  // Once per tab (the config seeds a bare welcome for every test): later navigations keep what the app stored since.
+  await page.addInitScript((data) => {
+    if (sessionStorage.getItem('welcomed')) return
+    localStorage.setItem('somos-onboarding', data)
+    sessionStorage.setItem('welcomed', '1')
+  }, JSON.stringify({ done: true, at: 1, motivation: 'fun', level }))
+}
+
+/** Plays a step of new words with every answer counted as right ("Moja odpoveď bola tiež správna" after giving up). */
+async function allRight(page: Page) {
+  const total = Number((await page.locator('header').innerText()).match(/\/(\d+)/)![1])
+  for (let i = 0; i < total; i++) {
+    await field(page).fill('zzzz')
+    await button(page, 'Skontrolovať').tap()
+    await button(page, 'Vzdať sa').tap()
+    await button(page, 'Moja odpoveď bola tiež správna').tap()
+  }
 }
 
 test('all right in the first lesson offers the level above, once', async ({ page }) => {
@@ -174,22 +190,21 @@ test('all right in the first lesson offers the level above, once', async ({ page
   await page.goto('/practice/lesson?path=a1-greetings-1&step=words')
   await button(page, 'Preskočiť').tap()
   await expect(page.getByText(/^Jednotka 1 · Nové slová · /)).toBeVisible()
-  const total = Number((await page.locator('header').innerText()).match(/\/(\d+)/)![1])
-  for (let i = 0; i < total; i++) {
-    // Every answer counted as right: "Moja odpoveď bola tiež správna" after giving up.
-    await field(page).fill('zzzz')
-    await button(page, 'Skontrolovať').tap()
-    await button(page, 'Vzdať sa').tap()
-    await button(page, 'Moja odpoveď bola tiež správna').tap()
-  }
+  await allRight(page)
   await expect(page.getByRole('heading', { name: 'Išlo ti to výborne. Chceš začať na A2?' })).toBeVisible()
   await button(page, 'Áno, na A2').tap()
   await expect(page).toHaveURL(/path=a2-[a-z]+-1&step=words$/)
+  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('somos-onboarding') ?? '{}') as Record<string, unknown>)
+  expect(stored).toMatchObject({ level: 'A2', levelOffered: true })
 
-  await page.goto('/practice/path')
-  await expect(page.getByText(/^A2 · 0 z \d+ jednotiek$/)).toBeVisible()
-  // The offer was made: the first lesson of A1 played again offers nothing.
+  // Back at A1 and all right again: the offer was made, nothing is offered twice.
+  await page.evaluate(() => {
+    const state = JSON.parse(localStorage.getItem('somos-onboarding')!) as Record<string, unknown>
+    localStorage.setItem('somos-onboarding', JSON.stringify({ ...state, level: 'A1' }))
+  })
   await page.goto('/practice/lesson?path=a1-greetings-1&step=words')
-  await expect(page.getByText(/^Jednotka \d+ · Nové slová · /)).toBeVisible()
+  await expect(page.getByText(/^Jednotka 1 · Nové slová · /)).toBeVisible()
+  await allRight(page)
+  await expect(page.getByRole('heading', { name: 'Nové slová: splnené' })).toBeVisible()
   await expect(page.getByRole('heading', { name: /Chceš/ })).toHaveCount(0)
 })
