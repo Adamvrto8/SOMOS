@@ -43,3 +43,18 @@ export async function loadSeenCounts(exercise: ExerciseType): Promise<Map<string
   for (const a of attempts) seen.set(a.itemId, (seen.get(a.itemId) ?? 0) + 1)
   return seen
 }
+
+/**
+ * When each exercise type was last answered (its latest attempt), for the order in Cvičiť. Attempts synced from
+ * another device get new ids, so the max `at` of the latest few is taken, not just the last one.
+ */
+export async function loadLastPlayed(types: readonly ExerciseType[]): Promise<Map<ExerciseType, number>> {
+  const out = new Map<ExerciseType, number>()
+  await Promise.all(
+    types.map(async (type) => {
+      const latest = await db.attempts.where('exercise').equals(type).reverse().limit(50).toArray()
+      if (latest.length) out.set(type, Math.max(...latest.map((a) => a.at)))
+    }),
+  )
+  return out
+}

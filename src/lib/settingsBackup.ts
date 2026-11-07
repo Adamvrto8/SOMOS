@@ -1,5 +1,6 @@
 import { AUTO_REVIEW_LIMITS, type AutoReviewSettings } from './autoReview'
 import { GOAL_OPTIONS } from './dailyGoal'
+import { parseExerciseOrder, type ExerciseOrder } from './exerciseOrder'
 import { parseLanguage, type Language } from './language'
 import { parseLook, type Look } from './look'
 import { parseSoundSet, type SoundSet } from './sound'
@@ -18,6 +19,7 @@ export interface SettingsBackup {
   reminder?: { enabled: boolean; time: string }
   language?: Language // missing in backups made before 2026-10-04
   sound?: SoundSet // missing in backups made before 2026-10-07
+  exerciseOrder?: ExerciseOrder // the order in Cvičiť; missing in backups made before 2026-11-07
 }
 
 const TIME = /^([01]\d|2[0-3]):[0-5]\d$/
@@ -27,7 +29,7 @@ const isRec = (x: unknown): x is Record<string, unknown> => typeof x === 'object
 export function parseSettingsBackup(data: unknown): SettingsBackup {
   const settings: SettingsBackup = {}
   if (!isRec(data)) return settings
-  const { theme, look, dailyGoal, autoReview, reminder, language, sound } = data
+  const { theme, look, dailyGoal, autoReview, reminder, language, sound, exerciseOrder } = data
   if (theme === 'system' || theme === 'light' || theme === 'dark') settings.theme = theme
   const parsedLook = parseLook(look)
   if (parsedLook) settings.look = parsedLook
@@ -42,5 +44,7 @@ export function parseSettingsBackup(data: unknown): SettingsBackup {
   if (parsedLanguage) settings.language = parsedLanguage
   const parsedSound = parseSoundSet(sound)
   if (parsedSound) settings.sound = parsedSound
+  const parsedOrder = parseExerciseOrder(exerciseOrder)
+  if (parsedOrder) settings.exerciseOrder = parsedOrder
   return settings
 }

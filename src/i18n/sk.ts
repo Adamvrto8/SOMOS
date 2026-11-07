@@ -572,6 +572,16 @@ export const sk = {
     allDoneTopic: 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓',
     /** The hub: the exercise types as a grid. */
     exercises: 'Cvičenia',
+    /** How the exercises of the hub are ordered: by the last played, or the learner's own order. */
+    order: {
+      label: 'Poradie cvičení',
+      recent: 'Naposledy',
+      custom: 'Moje',
+      edit: 'Upraviť poradie',
+      done: 'Hotovo',
+      up: (name: string) => `Posunúť vyššie: ${name}`,
+      down: (name: string) => `Posunúť nižšie: ${name}`,
+    },
     mistakes: 'Chyby',
     duel: 'Duel',
     /** How a lesson of the grid is read out: Lekcia 12, aktuálna */

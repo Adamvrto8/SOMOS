@@ -24,6 +24,15 @@ describe('parseSettingsBackup', () => {
     expect(parseSettingsBackup({ sound: 'guitarra' }).sound).toBeUndefined()
   })
 
+  it('carries the order of the exercises, without types it does not know', () => {
+    expect(parseSettingsBackup({ exerciseOrder: { mode: 'custom', custom: ['matching', 'cloze', 'karaoke', 'cloze'] } }).exerciseOrder).toEqual({
+      mode: 'custom',
+      custom: ['matching', 'cloze'],
+    })
+    expect(parseSettingsBackup({ exerciseOrder: { mode: 'recent' } }).exerciseOrder).toEqual({ mode: 'recent', custom: [] })
+    expect(parseSettingsBackup({ exerciseOrder: { mode: 'alphabet', custom: [] } }).exerciseOrder).toBeUndefined()
+  })
+
   it('has nothing for a backup made before settings were part of it', () => {
     expect(parseSettingsBackup(undefined)).toEqual({})
     expect(parseSettingsBackup('dark')).toEqual({})

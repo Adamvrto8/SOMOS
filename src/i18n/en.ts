@@ -524,6 +524,15 @@ export const en: Dictionary = {
     allDone: 'All lessons passed! ✓',
     allDoneTopic: 'All lessons in this topic passed! ✓',
     exercises: 'Exercises',
+    order: {
+      label: 'Order of the exercises',
+      recent: 'Recent',
+      custom: 'Mine',
+      edit: 'Change the order',
+      done: 'Done',
+      up: (name: string) => `Move up: ${name}`,
+      down: (name: string) => `Move down: ${name}`,
+    },
     mistakes: 'Mistakes',
     duel: 'Duel',
     lessonState: {

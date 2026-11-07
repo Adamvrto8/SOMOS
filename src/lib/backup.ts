@@ -2,6 +2,7 @@ import { getAutoReview, setAutoReview } from './autoReview'
 import { t } from '../i18n'
 import { getDailyGoal, setDailyGoal } from './dailyGoal'
 import { getLanguage, setLanguage } from './language'
+import { getExerciseOrder, setExerciseOrder } from './exerciseOrder'
 import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
@@ -46,7 +47,7 @@ export interface ImportResult {
 
 export function currentSettings(): SettingsBackup {
   const { enabled, time } = getReminderSettings()
-  return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage(), sound: getSoundSet() }
+  return { theme: getThemePref(), look: getLook(), dailyGoal: getDailyGoal(), autoReview: getAutoReview(), reminder: { enabled, time }, language: getLanguage(), sound: getSoundSet(), exerciseOrder: getExerciseOrder() }
 }
 
 /** The settings of a backup replace the ones on this device. Resolves to ImportResult's `reminderOff`. */
@@ -57,6 +58,7 @@ export async function applySettings(settings: SettingsBackup): Promise<boolean> 
   if (settings.autoReview) setAutoReview(settings.autoReview)
   if (settings.language) setLanguage(settings.language)
   if (settings.sound) setSoundSet(settings.sound)
+  if (settings.exerciseOrder) setExerciseOrder(settings.exerciseOrder)
   if (!settings.reminder) return false
   const here = getReminderSettings()
   if (here.enabled) return false // a reminder that runs here keeps its own time

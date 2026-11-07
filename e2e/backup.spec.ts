@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { button } from './helpers.ts'
 
 test('a backup carries the settings to another device', async ({ page }) => {
-  const settings = { theme: 'dark', look: 'talavera', dailyGoal: 50, autoReview: { enabled: false, limit: 10 }, reminder: { enabled: true, time: '07:30' }, sound: 'marimba' }
+  const settings = { theme: 'dark', look: 'talavera', dailyGoal: 50, autoReview: { enabled: false, limit: 10 }, reminder: { enabled: true, time: '07:30' }, sound: 'marimba', exerciseOrder: { mode: 'custom', custom: ['matching', 'cloze'] } }
   const backup = {
     app: 'somos',
     version: 1,
@@ -27,6 +27,11 @@ test('a backup carries the settings to another device', async ({ page }) => {
   await expect(result).toContainText('Pripomienku treba na tomto zariadení zapnúť znova.')
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
   await expect(page.locator('html')).toHaveAttribute('data-look', 'talavera')
+  // The own order of the exercises came over: Priraďovanie first in Cvičiť.
+  await page.goto('/practice')
+  await expect(button(page, 'Moje')).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.getByRole('region', { name: 'Cvičenia' }).getByRole('listitem').first()).toContainText('Priraďovanie')
+  await page.goto('/profile/backup')
 
   // The next backup from this device holds what now applies here.
   const [download] = await Promise.all([page.waitForEvent('download'), button(page, 'Stiahnuť zálohu').tap()])

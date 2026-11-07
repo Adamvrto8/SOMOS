@@ -1,14 +1,19 @@
-import { Award, BookOpen, ChevronRight, Dumbbell, Play, Route, Swords, type LucideIcon } from 'lucide-react'
+import { useLiveQuery } from 'dexie-react-hooks'
+import { ArrowDown, ArrowUp, Award, BookOpen, ChevronRight, Dumbbell, Pencil, Play, Route, Swords, type LucideIcon } from 'lucide-react'
+import { useState } from 'react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
+import { Button } from '../../components/Button'
+import { loadLastPlayed } from '../../lib/attempts'
 import type { TableTense } from '../../lib/conjugate'
+import { EXERCISE_TYPES, moveExercise, orderExercises, setExerciseOrder, useExerciseOrder, type ExerciseOrderMode } from '../../lib/exerciseOrder'
 import { getNumberedLessonCount, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import { getLessonRecord, getRememberedLesson, progressionGroup, useLessonProgression, type LessonProgressionMap } from '../../lib/lessonProgress'
 import { duelsAvailable } from '../../lib/duel/backend'
 import { useMistakes } from '../../lib/mistakes'
 import { nextStep, unitTitle, usePathState } from '../../lib/path'
 import { continueLesson } from '../home/continueLesson'
-import { EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
+import { exerciseInfo, EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
 
 /** Where an exercise's tile leads: its last picked topic (or tense) and level, or Všetko · A1. */
 function exerciseFilter(type: ExerciseType): LessonFilter {
@@ -65,6 +70,120 @@ function PathCard() {
   )
 }
 
+const SEGMENT = 'min-h-11 rounded-full px-3 text-sm font-medium transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-brick'
+const ICON_BUTTON =
+  'flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-brick'
+
+/** The exercises, by the last played or in the learner's own order (arranged with arrows, no dragging). */
+function ExerciseList() {
+  const text = useT().practice
+  const progression = useLessonProgression()
+  const order = useExerciseOrder()
+  const lastPlayed = useLiveQuery(() => loadLastPlayed(EXERCISE_TYPES), [])
+  const [editing, setEditing] = useState(false)
+  // By recency the list waits for the attempts, so it does not jump into place.
+  if (order.mode === 'recent' && !lastPlayed) return null
+  const shown = orderExercises(
+    EXERCISES.map((e) => e.type),
+    order,
+    lastPlayed ?? new Map(),
+  )
+
+  const pick = (mode: ExerciseOrderMode) => {
+    if (mode === order.mode) return
+    if (mode === 'recent') setEditing(false)
+    // The first time, the learner's order starts as the list shown now and opens for arranging.
+    if (mode === 'custom' && order.custom.length === 0) setEditing(true)
+    setExerciseOrder({ mode, custom: mode === 'custom' && order.custom.length === 0 ? shown : order.custom })
+  }
+  const move = (type: ExerciseType, by: -1 | 1) => setExerciseOrder({ mode: 'custom', custom: moveExercise(shown, type, by) })
+
+  return (
+    <section aria-labelledby="exercises-heading">
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <h2 id="exercises-heading" className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
+          {text.exercises}
+        </h2>
+        <div className="flex items-center gap-1">
+          {order.mode === 'custom' && !editing && (
+            <button type="button" onClick={() => setEditing(true)} aria-label={text.order.edit} className={ICON_BUTTON}>
+              <Pencil size={16} strokeWidth={1.75} aria-hidden />
+            </button>
+          )}
+          <div role="group" aria-label={text.order.label} className="flex rounded-full bg-surface-2 p-0.5">
+            {(['recent', 'custom'] as const).map((mode) => (
+              <button
+                key={mode}
+                type="button"
+                aria-pressed={order.mode === mode}
+                onClick={() => pick(mode)}
+                className={`${SEGMENT} ${order.mode === mode ? 'bg-surface text-ink shadow-sm' : 'text-ink-muted hover:text-ink'}`}
+              >
+                {text.order[mode]}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <ul className="space-y-2">
+        {shown.map((type, at) => {
+          const { label, description, icon: Icon, unavailable } = exerciseInfo(type)
+          const filter = exerciseFilter(type)
+          const played = getRememberedLesson(type) !== undefined
+          const { passed, total } = passedOf(filter, progression)
+          const info = (
+            <>
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-brick">
+                <Icon size={20} strokeWidth={1.75} aria-hidden />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block font-medium">{label}</span>
+                <span className="block text-sm text-ink-muted">
+                  {unavailable ?? (played ? selectionLabel(filter, text.everyLevel) : description)}
+                </span>
+              </span>
+            </>
+          )
+          return (
+            <li key={type}>
+              {editing ? (
+                <div className={`${TILE} flex items-center gap-2 p-3 pr-1`}>
+                  {info}
+                  <button type="button" onClick={() => move(type, -1)} disabled={at === 0} aria-label={text.order.up(label)} className={ICON_BUTTON}>
+                    <ArrowUp size={18} strokeWidth={1.75} aria-hidden />
+                  </button>
+                  <button type="button" onClick={() => move(type, 1)} disabled={at === shown.length - 1} aria-label={text.order.down(label)} className={ICON_BUTTON}>
+                    <ArrowDown size={18} strokeWidth={1.75} aria-hidden />
+                  </button>
+                </div>
+              ) : unavailable ? (
+                <div aria-disabled="true" className={`${TILE} flex items-center gap-3 p-3 opacity-50`}>
+                  {info}
+                </div>
+              ) : (
+                <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex items-center gap-3 p-3 active:bg-surface-2`}>
+                  {info}
+                  {total > 0 && (
+                    <span className="shrink-0 text-xs text-ink-muted tabular-nums">
+                      {passed}/{total}
+                    </span>
+                  )}
+                  <ChevronRight size={18} strokeWidth={1.75} className="-ml-1 shrink-0 text-ink-muted" aria-hidden />
+                </Link>
+              )}
+            </li>
+          )
+        })}
+      </ul>
+      {editing && (
+        <Button onClick={() => setEditing(false)} className="mt-3 w-full">
+          {text.order.done}
+        </Button>
+      )}
+    </section>
+  )
+}
+
 /** Cvičiť: the path, where to go on, the shortcuts (mistakes, tests, grammar) and the exercises as a grid. */
 export function PracticeHub() {
   const dictionary = useT()
@@ -100,50 +219,7 @@ export function PracticeHub() {
         <Shortcut to="/practice/grammar" icon={BookOpen} label={text.grammar} />
       </div>
 
-      <section aria-labelledby="exercises-heading">
-        <h2 id="exercises-heading" className="mb-2 text-xs font-semibold tracking-widest text-ink-muted uppercase">
-          {text.exercises}
-        </h2>
-        <ul className="space-y-2">
-          {EXERCISES.map(({ type, label, description, icon: Icon, unavailable }) => {
-            const filter = exerciseFilter(type)
-            const played = getRememberedLesson(type) !== undefined
-            const { passed, total } = passedOf(filter, progression)
-            const body = (
-              <>
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-brick">
-                  <Icon size={20} strokeWidth={1.75} aria-hidden />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-medium">{label}</span>
-                  <span className="block text-sm text-ink-muted">
-                    {unavailable ?? (played ? selectionLabel(filter, text.everyLevel) : description)}
-                  </span>
-                </span>
-                {!unavailable && total > 0 && (
-                  <span className="shrink-0 text-xs text-ink-muted tabular-nums">
-                    {passed}/{total}
-                  </span>
-                )}
-                {!unavailable && <ChevronRight size={18} strokeWidth={1.75} className="-ml-1 shrink-0 text-ink-muted" aria-hidden />}
-              </>
-            )
-            return (
-              <li key={type}>
-                {unavailable ? (
-                  <div aria-disabled="true" className={`${TILE} flex items-center gap-3 p-3 opacity-50`}>
-                    {body}
-                  </div>
-                ) : (
-                  <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex items-center gap-3 p-3 active:bg-surface-2`}>
-                    {body}
-                  </Link>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-      </section>
+      <ExerciseList />
     </div>
   )
 }

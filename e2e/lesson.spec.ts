@@ -244,14 +244,45 @@ test('Cvičiť is a hub: where to go on, the shortcuts and every exercise', asyn
   await expect(page.getByRole('link', { name: /Gramatika/ })).toBeVisible()
   // Chyby only once there are some.
   await expect(page.getByRole('link', { name: /Chyby/ })).toHaveCount(0)
-  await expect(page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul > li')).toHaveCount(11)
+  await expect(page.getByRole('region', { name: 'Cvičenia' }).getByRole('listitem')).toHaveCount(11)
 
   // A tile opens its exercise; the tab bar leads back to the hub from there.
-  await page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ }).tap()
+  await page.getByRole('region', { name: 'Cvičenia' }).getByRole('link', { name: /Doplňovačka/ }).tap()
   await expect(page).toHaveURL(/\/practice\?type=cloze&topic=all&level=A1/)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Doplňovačka')
   await page.getByRole('navigation').getByRole('link', { name: 'Cvičiť' }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Cvičiť')
+})
+
+test('the exercises in Cvičiť: by the last played, or arranged by hand and kept', async ({ page }) => {
+  await page.goto('/practice')
+  const list = page.getByRole('region', { name: 'Cvičenia' })
+  const items = list.getByRole('listitem')
+  // Nothing played yet: the default order.
+  await expect(button(page, 'Naposledy')).toHaveAttribute('aria-pressed', 'true')
+  await expect(items.first()).toContainText('Doplňovačka')
+
+  // The first time "Moje" opens the arrows; the order moves one place a tap.
+  await button(page, 'Moje').tap()
+  await expect(list.getByRole('link')).toHaveCount(0)
+  await expect(button(page, 'Posunúť vyššie: Doplňovačka')).toBeDisabled()
+  await button(page, 'Posunúť nižšie: Doplňovačka').tap()
+  await expect(items.nth(0)).toContainText('Výber z možností')
+  await expect(items.nth(1)).toContainText('Doplňovačka')
+  for (const name of ['Posunúť vyššie: Doplňovačka', 'Posunúť nižšie: Doplňovačka'])
+    expect((await button(page, name).boundingBox())!.width).toBeGreaterThanOrEqual(44)
+  await button(page, 'Hotovo').tap()
+  await expect(list.getByRole('link', { name: /Výber z možností/ })).toBeVisible()
+
+  // Kept after a reload; "Naposledy" brings the recency order back without losing the own one.
+  await page.reload()
+  await expect(button(page, 'Moje')).toHaveAttribute('aria-pressed', 'true')
+  await expect(items.first()).toContainText('Výber z možností')
+  await button(page, 'Naposledy').tap()
+  await expect(items.first()).toContainText('Doplňovačka')
+  await button(page, 'Moje').tap()
+  await expect(items.first()).toContainText('Výber z možností')
+  await expect(button(page, 'Hotovo')).toHaveCount(0)
 })
 
 test('an exercise shows its lessons as a grid; the picked topic and level come back on its tile', async ({ page }) => {
@@ -288,7 +319,7 @@ test('an exercise shows its lessons as a grid; the picked topic and level come b
   // The lesson remembers its pick once it is on screen: leaving earlier (a slow runner) would leave nothing behind.
   await expect(field(page)).toBeVisible()
   await page.goto('/practice')
-  const tile = page.getByRole('heading', { name: 'Cvičenia' }).locator('+ ul').getByRole('link', { name: /Doplňovačka/ })
+  const tile = page.getByRole('region', { name: 'Cvičenia' }).getByRole('link', { name: /Doplňovačka/ })
   await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne')
   await expect(tile).toContainText(/0\/\d+/)
   await tile.tap()

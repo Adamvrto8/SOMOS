@@ -123,6 +123,21 @@ test.describe('priraďovanie', () => {
     await expect(page.locator('header')).toContainText('2/4')
   })
 
+  test('the chips fill the screen, and the exercise played comes first in Cvičiť', async ({ page }) => {
+    await page.goto(lesson('matching'))
+    const es = page.getByRole('group', { name: 'Španielsky' }).getByRole('button')
+    await expect(es).toHaveCount(5)
+    const last = (await es.last().boundingBox())!
+    // The fifth row ends near the bottom of the 800 px screen, not halfway down.
+    expect(last.y + last.height).toBeGreaterThan(800 * 0.85)
+    expect(last.height).toBeGreaterThanOrEqual(56)
+
+    await play(page, 0)
+    await expect(status(page)).toContainText('Správne!')
+    await page.goto('/practice')
+    await expect(page.getByRole('region', { name: 'Cvičenia' }).getByRole('listitem').first()).toContainText('Priraďovanie')
+  })
+
   test('three wrong pairings make the round wrong and name the words', async ({ page }) => {
     await page.goto(lesson('matching'))
     await play(page, 3)
