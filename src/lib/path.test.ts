@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { sentences, words } from '../data'
 import type { Grammar } from '../data/types'
 import type { LessonProgressionMap } from './lessonProgress'
+import type { OnboardingState } from './onboarding'
 import { tipForCloze } from './tips'
-import { clozeFits, nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
+import { clozeFits, isLevelOfferLesson, levelDone, levelOffer, levelSummary, nextStep, parsePathStep, pathState, reviewTasks, stepHref, stepKey, stepNewWords, stepTasks, unitOfTest, unitSteps, unitTest, type StepId } from './path'
 import { MAX_UNIT_WORDS, orderedUnits, pathUnitById, pathUnits, unitMaterial } from './pathUnits'
 import { createTest, hasTest, parseTestKey, testKey } from './tests'
 import { USAGE_TIPS } from './clozeChecks'
@@ -216,5 +217,58 @@ describe('path state', () => {
     expect(unitOfTest(states, 'food:A1:2')?.unit.id).toBe('a1-food-2')
     expect(unitOfTest(states, 'work:A1')?.unit.id).toBe('a1-work-1')
     expect(unitOfTest(states, 'food:A1')).toBeUndefined()
+  })
+})
+
+describe('level offer', () => {
+  const welcome = (level: OnboardingState['level'], levelOffered = false): OnboardingState => ({ done: true, level, levelOffered })
+  const firstOf = (level: string) => pathUnits.find((u) => u.level === level)!
+  const a1 = firstOf('A1')
+
+  it('belongs to step 1 of the first unit of the start level, once, on a device with a welcome', () => {
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[0], welcome('A1'))).toBe(true)
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[1], welcome('A1'))).toBe(false)
+    expect(isLevelOfferLesson(pathUnits[1], unitSteps(pathUnits[1])[0], welcome('A1'))).toBe(false)
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[0], welcome('A1', true))).toBe(false)
+    expect(isLevelOfferLesson(a1, unitSteps(a1)[0], null)).toBe(false)
+    expect(isLevelOfferLesson(firstOf('A2'), unitSteps(firstOf('A2'))[0], welcome('A2'))).toBe(true)
+  })
+
+  it('offers the level above after all right, the one below after 40 % or less, else nothing', () => {
+    const a2 = firstOf('A2')
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1'), true, 10, 10)).toEqual({ direction: 'up', level: 'A2' })
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1'), true, 9, 10)).toBeUndefined()
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1'), true, 2, 10)).toBeUndefined() // A1 has nothing below
+    expect(levelOffer(a2, unitSteps(a2)[0], welcome('A2'), true, 4, 10)).toEqual({ direction: 'down', level: 'A1' })
+    expect(levelOffer(a2, unitSteps(a2)[0], welcome('A2'), true, 5, 10)).toBeUndefined()
+  })
+
+  it('has nothing above B2, nothing in a correction round, nothing once offered', () => {
+    const b2 = firstOf('B2')
+    expect(levelOffer(b2, unitSteps(b2)[0], welcome('B2'), true, 10, 10)).toBeUndefined()
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1'), false, 10, 10)).toBeUndefined()
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1', true), true, 10, 10)).toBeUndefined()
+    expect(levelOffer(a1, unitSteps(a1)[0], welcome('A1'), true, 0, 0)).toBeUndefined()
+  })
+})
+
+describe('level end', () => {
+  it('is reached when every unit of the level is done, by their tests or the exam', () => {
+    expect(levelDone(pathState(pathUnits, {}, none), 'A1')).toBe(false)
+    expect(levelDone(pathState(pathUnits, {}, (key) => key === 'A1'), 'A1')).toBe(true)
+    const a1 = pathUnits.filter((u) => u.level === 'A1')
+    const allButLast = new Set(a1.slice(0, -1).map((u) => testKey(unitTest(u))))
+    expect(levelDone(pathState(pathUnits, {}, (key) => allButLast.has(key)), 'A1')).toBe(false)
+    allButLast.add(testKey(unitTest(a1.at(-1)!)))
+    expect(levelDone(pathState(pathUnits, {}, (key) => allButLast.has(key)), 'A1')).toBe(true)
+  })
+
+  it('sums up the units, words and grammar points of a level', () => {
+    const a1 = pathUnits.filter((u) => u.level === 'A1')
+    expect(levelSummary('A1')).toEqual({
+      units: a1.length,
+      words: a1.reduce((n, u) => n + unitMaterial(u).words.length, 0),
+      grammar: new Set(a1.map((u) => u.grammar)).size,
+    })
   })
 })

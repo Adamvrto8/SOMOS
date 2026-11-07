@@ -488,6 +488,52 @@ export function usePathState(): UnitState[] {
 /** The unit whose test this is (a unit's own test, not a topic test that closes several). */
 export const unitOfTest = (states: readonly UnitState[], key: string) => states.find((s) => testKey(unitTest(s.unit)) === key)
 
+// ---------- level offer and level end (docs/guided-path-spec.md §10c) ----------
+
+export interface LevelOffer {
+  direction: 'up' | 'down'
+  level: Level
+}
+
+/** The lesson the level offer belongs to: step 1 of the first unit of the start level, on a device with a welcome, not offered yet. */
+export function isLevelOfferLesson(unit: PathUnit, step: StepId, onboarding: OnboardingState | null): boolean {
+  return onboarding !== null && onboarding.levelOffered !== true && firstUnit(onboarding)?.id === unit.id && unitSteps(unit)[0] === step
+}
+
+/** All right in the first full round: the level above; at most 40 %: the level below; anything else: nothing. */
+export function levelOffer(
+  unit: PathUnit,
+  step: StepId,
+  onboarding: OnboardingState | null,
+  firstRound: boolean,
+  score: number,
+  total: number,
+): LevelOffer | undefined {
+  if (!firstRound || total <= 0 || !isLevelOfferLesson(unit, step, onboarding)) return undefined
+  const at = LEVEL_ORDER.indexOf(startLevelOf(onboarding))
+  const up = LEVEL_ORDER[at + 1]
+  const down = at > 0 ? LEVEL_ORDER[at - 1] : undefined
+  if (score === total && up && pathCovers(up)) return { direction: 'up', level: up }
+  if (score <= total * 0.4 && down && pathCovers(down)) return { direction: 'down', level: down }
+  return undefined
+}
+
+/** Every unit of the level done (its test, the topic test or the level exam). */
+export function levelDone(states: readonly UnitState[], level: Level): boolean {
+  const units = states.filter((s) => s.unit.level === level)
+  return units.length > 0 && units.every((s) => s.done)
+}
+
+/** What a level brought, for its celebration: units, words (each taught once) and grammar points. */
+export function levelSummary(level: Level): { units: number; words: number; grammar: number } {
+  const units = pathUnits.filter((u) => u.level === level)
+  return {
+    units: units.length,
+    words: units.reduce((n, u) => n + unitMaterial(u).words.length, 0),
+    grammar: new Set(units.map((u) => u.grammar)).size,
+  }
+}
+
 // ---------- names ----------
 
 /** "Jedlo a pitie 2" for the second part of a topic. */
