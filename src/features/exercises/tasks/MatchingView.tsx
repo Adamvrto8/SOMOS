@@ -15,7 +15,7 @@ interface MatchingViewProps {
 type Side = 'es' | 'sk'
 
 const CHIP =
-  'min-h-14 w-full min-w-0 overflow-hidden rounded-2xl border-2 px-2 py-2 text-base leading-tight break-words hyphens-auto transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+  'min-h-14 w-full flex-1 min-w-0 overflow-hidden rounded-2xl border-2 px-2 py-2 text-lg leading-tight break-words hyphens-auto transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
 
 /** Tap a Spanish word and its translation; a right pair locks green, a wrong one flashes red. */
 export function MatchingView({ task, onAnswer, onSubmit, status }: MatchingViewProps) {
@@ -64,17 +64,18 @@ export function MatchingView({ task, onAnswer, onSubmit, status }: MatchingViewP
   }
 
   return (
-    <div className="space-y-4">
+    // Fills the screen like a pravda/nepravda card: the chips grow to share the height.
+    <div className="flex min-h-[calc(100dvh-10.5rem)] flex-col gap-4">
       <p className="text-sm text-ink-muted">{text.matchHint}</p>
-      <div className="grid grid-cols-2 gap-3">
-        <div role="group" aria-label={text.matchEs} className="space-y-3">
+      <div className="grid flex-1 grid-cols-2 gap-3">
+        <div role="group" aria-label={text.matchEs} className="flex flex-col gap-3">
           {task.pairs.map((p, i) => (
             <button key={p.word.id} type="button" lang="es" disabled={graded || done.includes(i)} onClick={() => choose('es', i)} className={`${CHIP} font-serif ${style('es', i)}`}>
               {p.es}
             </button>
           ))}
         </div>
-        <div role="group" aria-label={text.matchSk} className="space-y-3">
+        <div role="group" aria-label={text.matchSk} className="flex flex-col gap-3">
           {task.rightOrder.map((i) => (
             <button key={task.pairs[i].word.id} type="button" lang={language} disabled={graded || done.includes(i)} onClick={() => choose('sk', i)} className={`${CHIP} ${style('sk', i)}`}>
               {task.pairs[i].sk}

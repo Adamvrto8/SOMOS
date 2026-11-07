@@ -419,8 +419,8 @@ export function LessonPage() {
         </span>
       </header>
 
-      {/* A pravda/nepravda card fills the screen; everything else leaves room for the feedback sheet. */}
-      <main className={`px-4 pt-4 ${task?.kind === 'truefalse' && !grade && !finished && !overview && !intro ? 'pb-4' : 'pb-80'}`}>
+      {/* A pravda/nepravda card and the matching chips fill the screen; everything else leaves room for the feedback sheet. */}
+      <main className={`px-4 pt-4 ${(task?.kind === 'truefalse' || task?.kind === 'matching') && !grade && !finished && !overview && !intro ? 'pb-4' : 'pb-80'}`}>
         {locked ? (
           <div className="pt-10 text-center">
             <p className="font-serif text-2xl font-semibold">{text.locked}</p>
