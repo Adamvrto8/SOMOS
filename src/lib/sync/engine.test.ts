@@ -14,6 +14,7 @@ vi.mock('../backup', async () => {
 })
 
 import { db } from '../db'
+import { saveDiaryEntry } from '../diary'
 import { getProgressionSnapshot, recordLessonAttempt } from '../lessonProgress'
 import { adoptDevice, pendingChanges, syncOnce, wipeLearnerData } from './engine'
 import { installSyncHooks, setRecording } from './outbox'
@@ -131,6 +132,24 @@ describe('a sync round', () => {
     await syncOnce(server)
     expect(getProgressionSnapshot()['cloze:all:A1:1'].bestScore).toBe(9)
     expect(server.get('lesson', 'cloze:all:A1:1')?.data).toMatchObject({ bestScore: 9 })
+  })
+})
+
+describe('diary', () => {
+  it('an entry goes to the account, an edit and a removal from another device come back', async () => {
+    await saveDiaryEntry('2026-11-07', { learned: '', es: 'Hoy fui al mercado.' }, 100)
+    await settle()
+    await syncOnce(server)
+    expect(server.get('diary', '2026-11-07')?.data).toMatchObject({ es: 'Hoy fui al mercado.' })
+
+    const edited = { date: '2026-11-07', learned: '', es: 'Hoy fui al mercado con Ana.', createdAt: 100, updatedAt: 500 }
+    await fromOtherDevice(server, 'diary', '2026-11-07', edited, Date.now() + 1000)
+    await syncOnce(server)
+    expect((await db.diary.get('2026-11-07'))?.es).toBe('Hoy fui al mercado con Ana.')
+
+    await fromOtherDevice(server, 'diary', '2026-11-07', null, Date.now() + 2000, true)
+    await syncOnce(server)
+    expect(await db.diary.get('2026-11-07')).toBeUndefined()
   })
 })
 

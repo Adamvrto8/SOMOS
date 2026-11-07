@@ -59,9 +59,18 @@ export interface Lookup {
   at: number
 }
 
+/** One day of the diary (Denník), keyed by the local date. */
+export interface DiaryEntry {
+  date: string // "2026-11-07", local time
+  learned: string // Čo som sa dnes naučil
+  es: string // Po španielsky
+  createdAt: number
+  updatedAt: number
+}
+
 /** A change of the learner's tables not sent to the account yet (src/lib/sync). */
 export interface OutboxEntry {
-  kind: 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake'
+  kind: 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake' | 'diary'
   key: string
   at: number // when it changed; 0 = taken over at the first sign-in (the server's version wins)
 }
@@ -75,6 +84,7 @@ export class SomosDB extends Dexie {
   mistakes!: Table<Mistake, [string, string]>
   lookups!: EntityTable<Lookup, 'key'>
   outbox!: Table<OutboxEntry, [string, string]>
+  diary!: EntityTable<DiaryEntry, 'date'>
 
   constructor() {
     super('somos')
@@ -92,6 +102,9 @@ export class SomosDB extends Dexie {
     })
     this.version(4).stores({
       outbox: '[kind+key]',
+    })
+    this.version(5).stores({
+      diary: 'date, updatedAt',
     })
   }
 }

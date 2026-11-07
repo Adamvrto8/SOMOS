@@ -1,10 +1,10 @@
 import type { Table } from 'dexie'
-import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from '../db'
+import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from '../db'
 
 // What syncs between the devices of an account, record by record (docs/superpowers/specs/2026-10-19-accounts-design.md).
 
 /** Rows of the learner's Dexie tables. */
-export type TableKind = 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake'
+export type TableKind = 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake' | 'diary'
 /** The localStorage stores: numbered lessons, tests, settings. */
 export type StoreKind = 'lesson' | 'test' | 'settings'
 export type SyncKind = TableKind | StoreKind
@@ -22,7 +22,7 @@ export interface RemoteRecord extends SyncRecord {
   rev: number
 }
 
-export const TABLE_KINDS: TableKind[] = ['customWord', 'saved', 'card', 'attempt', 'mistake']
+export const TABLE_KINDS: TableKind[] = ['customWord', 'saved', 'card', 'attempt', 'mistake', 'diary']
 export const isTableKind = (kind: string): kind is TableKind => (TABLE_KINDS as string[]).includes(kind)
 
 /** "word:casa" → ["word", "casa"]; ids after the first colon may have colons of their own ("tener:preterito:yo"). */
@@ -56,6 +56,8 @@ export function keyOf(kind: TableKind, row: unknown): string {
     }
     case 'attempt':
       return attemptKey(row as Attempt)
+    case 'diary':
+      return (row as DiaryEntry).date
   }
 }
 
@@ -71,12 +73,14 @@ export function tableOf(kind: TableKind): Table {
       return db.attempts
     case 'mistake':
       return db.mistakes
+    case 'diary':
+      return db.diary
   }
 }
 
 /** The Dexie primary key of a record (attempts have none to share). */
 function primaryKey(kind: Exclude<TableKind, 'attempt'>, key: string): string | [string, string] {
-  return kind === 'customWord' ? key : splitFirst(key, ':')
+  return kind === 'customWord' || kind === 'diary' ? key : splitFirst(key, ':')
 }
 
 async function findAttempt(key: string): Promise<Attempt | undefined> {

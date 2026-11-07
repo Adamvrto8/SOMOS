@@ -33,11 +33,11 @@ grant select on public.records to authenticated;
 
 -- What a record may be (docs/launch-audit-2026-11-05.md, B3): one account must not fill the database for everyone.
 -- The largest real record (a card, a lesson, the settings) is well under 2 kB.
+-- The kinds: re-created on every run, so a new kind (diary, 2026-11-07) reaches a database that has the constraint already.
+alter table public.records drop constraint if exists records_kind;
+alter table public.records add constraint records_kind
+  check (kind in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'diary', 'lesson', 'test', 'settings'));
 do $$ begin
-  if not exists (select 1 from pg_constraint where conname = 'records_kind') then
-    alter table public.records add constraint records_kind
-      check (kind in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'lesson', 'test', 'settings'));
-  end if;
   if not exists (select 1 from pg_constraint where conname = 'records_key_len') then
     alter table public.records add constraint records_key_len check (char_length(key) between 1 and 200);
   end if;
@@ -61,7 +61,7 @@ begin
   insert into public.records (user_id, kind, key, data, deleted, changed_at)
   select me, i->>'kind', i->>'key', i->'data', coalesce((i->>'deleted')::boolean, false), (i->>'changedAt')::bigint
   from jsonb_array_elements(items) as i
-  where i->>'kind' in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'lesson', 'test', 'settings')
+  where i->>'kind' in ('customWord', 'saved', 'card', 'attempt', 'mistake', 'diary', 'lesson', 'test', 'settings')
     and char_length(i->>'key') between 1 and 200
     and (i->'data' is null or pg_column_size(i->'data') <= 65536)
     and jsonb_typeof(i->'changedAt') = 'number'
