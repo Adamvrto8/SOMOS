@@ -199,6 +199,7 @@ export const en: Dictionary = {
         if (r.reviewCards) parts.push(`review cards: ${r.reviewCards}`)
         if (r.attempts) parts.push(`new exercise results: ${r.attempts}`)
         if (r.mistakes) parts.push(`mistakes: ${r.mistakes}`)
+        if (r.diary) parts.push(`diary entries: ${r.diary}`)
         if (r.lessons) parts.push(`lessons: ${r.lessons}`)
         const skipped = r.skipped ? ` Invalid records skipped: ${r.skipped}.` : ''
         const settings = r.settings ? ' The settings were restored too.' : ''

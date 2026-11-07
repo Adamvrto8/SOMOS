@@ -15,6 +15,7 @@ export interface ImportSummary {
   reviewCards: number
   attempts: number
   mistakes: number
+  diary: number
   lessons: number
   skipped: number
   settings: boolean
@@ -224,6 +225,7 @@ export const sk = {
         const parts = [`uložené: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
         if (r.reviewCards) parts.push(`karty na opakovanie: ${r.reviewCards}`)
         if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
+        if (r.diary) parts.push(`zápisy v denníku: ${r.diary}`)
         if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
         if (r.lessons) parts.push(`lekcie: ${r.lessons}`)
         const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''

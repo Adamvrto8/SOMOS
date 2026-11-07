@@ -3,7 +3,8 @@ import { t } from '../i18n'
 import { getDailyGoal, setDailyGoal } from './dailyGoal'
 import { getLanguage, setLanguage } from './language'
 import { getExerciseOrder, setExerciseOrder } from './exerciseOrder'
-import { db, type Attempt, type CustomWord, type Mistake, type ReviewCard, type SavedItem } from './db'
+import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from './db'
+import { isDiaryEntry, newerDiaryEntries } from './diary'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
 import { getReminderSettings, setReminderTime } from './reminder'
@@ -31,6 +32,7 @@ export interface Backup {
   lessons?: LessonProgressionMap // passed lessons and best scores; missing in backups made before 2026-10-01
   settings?: SettingsBackup // missing in backups made before 2026-10-02
   tests?: TestResultsMap // test results; missing in backups made before 2026-10-18
+  diary?: DiaryEntry[] // missing in backups made before 2026-11-07
 }
 
 export interface ImportResult {
@@ -39,6 +41,7 @@ export interface ImportResult {
   reviewCards: number
   attempts: number
   mistakes: number
+  diary: number
   lessons: number // numbered lessons and tests
   skipped: number
   settings: boolean // the backup had settings and they now apply here
@@ -68,12 +71,13 @@ export async function applySettings(settings: SettingsBackup): Promise<boolean> 
 }
 
 export async function createBackup(): Promise<Backup> {
-  const [customWords, savedItems, reviewCards, attempts, mistakes] = await Promise.all([
+  const [customWords, savedItems, reviewCards, attempts, mistakes, diary] = await Promise.all([
     db.customWords.toArray(),
     db.savedItems.toArray(),
     db.reviewCards.toArray(),
     db.attempts.toArray(),
     db.mistakes.toArray(),
+    db.diary.toArray(),
   ])
   return {
     app: APP,
@@ -84,6 +88,7 @@ export async function createBackup(): Promise<Backup> {
     reviewCards,
     attempts,
     mistakes,
+    diary,
     lessons: getProgressionSnapshot(),
     tests: getTestResults(),
     settings: currentSettings(),
@@ -158,6 +163,7 @@ export function parseBackup(text: string): ParseResult {
     reviewCards: pick(data.reviewCards, isReviewCard),
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
+    diary: pick(data.diary, isDiaryEntry),
     lessons: lessons.records,
     tests: tests.records,
     settings: parseSettingsBackup(data.settings),
@@ -170,7 +176,7 @@ export function parseBackup(text: string): ParseResult {
  * items with the same key are replaced by the backup version.
  */
 export async function importBackup(backup: Backup, skipped: number): Promise<ImportResult> {
-  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts, db.mistakes], async () => {
+  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts, db.mistakes, db.diary], async () => {
     await db.customWords.bulkPut(backup.customWords)
     await db.savedItems.bulkPut(backup.savedItems)
     await db.reviewCards.bulkPut(backup.reviewCards)
@@ -184,12 +190,17 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       .map(({ exercise, itemId, correct, at }) => ({ exercise, itemId, correct, at }))
     await db.attempts.bulkAdd(newAttempts)
 
+    // A day edited on both devices: the later edit stays.
+    const newDiary = newerDiaryEntries(await db.diary.toArray(), backup.diary ?? [])
+    await db.diary.bulkPut(newDiary)
+
     return {
       customWords: backup.customWords.length,
       savedItems: backup.savedItems.length,
       reviewCards: backup.reviewCards.length,
       attempts: newAttempts.length,
       mistakes: backup.mistakes.length,
+      diary: newDiary.length,
       lessons: 0,
       skipped,
       settings: false,

@@ -15,6 +15,10 @@ test('a backup carries the settings to another device', async ({ page }) => {
     mistakes: [],
     lessons: {},
     settings,
+    diary: [
+      { date: '2026-11-01', learned: '', es: 'Fui al cine.', createdAt: 1, updatedAt: 2 },
+      { date: 'broken', learned: '', es: 'x', createdAt: 1, updatedAt: 2 },
+    ],
   }
 
   await page.goto('/profile/backup')
@@ -23,6 +27,9 @@ test('a backup carries the settings to another device', async ({ page }) => {
 
   const result = page.getByRole('status').filter({ hasText: 'Obnovené' })
   await expect(result).toContainText('Obnovené sú aj nastavenia.')
+  // The diary came over; its broken row is skipped, nothing else.
+  await expect(result).toContainText('zápisy v denníku: 1')
+  await expect(result).toContainText('Preskočené neplatné záznamy: 1.')
   // Notifications have to be allowed on each device: only the reminder's time comes over.
   await expect(result).toContainText('Pripomienku treba na tomto zariadení zapnúť znova.')
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
@@ -35,7 +42,8 @@ test('a backup carries the settings to another device', async ({ page }) => {
 
   // The next backup from this device holds what now applies here.
   const [download] = await Promise.all([page.waitForEvent('download'), button(page, 'Stiahnuť zálohu').tap()])
-  const saved = JSON.parse(readFileSync(await download.path(), 'utf8')) as { settings: unknown }
+  const saved = JSON.parse(readFileSync(await download.path(), 'utf8')) as { settings: unknown; diary: unknown }
+  expect(saved.diary).toEqual([backup.diary[0]])
   // The backup had no language (made before there were two): this device keeps its own.
   expect(saved.settings).toEqual({ ...settings, reminder: { enabled: false, time: '07:30' }, language: 'sk' })
 })
