@@ -69,3 +69,42 @@ test('the Domov card: the day’s prompt and "Napísať", then ✓ and the first
   await card.getByRole('link', { name: 'Všetky zápisy' }).tap()
   await expect(page).toHaveURL(/\/diary$/)
 })
+
+test('going from one day to another in the history shows that day’s own text', async ({ page }) => {
+  await page.goto('/diary')
+  await today(page).tap()
+  await spanish(page).fill('Hoy comí tacos.')
+  await expect(page.getByText('Uložené')).toBeVisible()
+  // Yesterday, reached inside the app (as the history does), not by a fresh load.
+  await page.evaluate(() => {
+    const d = new Date()
+    d.setDate(d.getDate() - 1)
+    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    window.history.pushState({}, '', `/diary/${key}`)
+    window.dispatchEvent(new PopStateEvent('popstate'))
+  })
+  await expect(spanish(page)).toHaveValue('')
+})
+
+test('the app going to the background saves what was typed at once', async ({ page }) => {
+  await page.goto('/diary')
+  await today(page).tap()
+  await spanish(page).fill('Hoy fui al parque.')
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' })
+    document.dispatchEvent(new Event('visibilitychange'))
+  })
+  // Well before the 800 ms of the typing pause: only the background save can have stored it.
+  await page.waitForTimeout(250)
+  const stored = await page.evaluate(
+    () =>
+      new Promise<string | undefined>((resolve) => {
+        const open = indexedDB.open('somos')
+        open.onsuccess = () => {
+          const rows = open.result.transaction('diary').objectStore('diary').getAll()
+          rows.onsuccess = () => resolve((rows.result as { es: string }[])[0]?.es)
+        }
+      }),
+  )
+  expect(stored).toBe('Hoy fui al parque.')
+})

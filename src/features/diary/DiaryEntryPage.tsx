@@ -21,7 +21,8 @@ export function DiaryEntryPage() {
   const valid = isDiaryDate(date)
   const entry = useDiaryEntry(valid ? date : '')
   if (!valid) return <Navigate to="/diary" replace />
-  if (entry === undefined) return null // loading from IndexedDB
+  // Loading from IndexedDB; the live query also hands back the previous day's row for a moment after a date change.
+  if (entry === undefined || (entry && entry.date !== date)) return null
   return <EntryForm key={date} date={date} entry={entry} />
 }
 
@@ -56,9 +57,15 @@ function EntryForm({ date, entry }: { date: string; entry: DiaryEntry | null }) 
 
   // Leaving the page (back, tab bar, closing the app) saves what was typed last.
   useEffect(() => {
+    // A phone sends an app to the background (and may kill it there) with only a visibilitychange.
+    const onHidden = () => {
+      if (document.visibilityState === 'hidden') flush()
+    }
     window.addEventListener('pagehide', flush)
+    document.addEventListener('visibilitychange', onHidden)
     return () => {
       window.removeEventListener('pagehide', flush)
+      document.removeEventListener('visibilitychange', onHidden)
       flush()
       window.clearTimeout(savedTimer.current)
     }
