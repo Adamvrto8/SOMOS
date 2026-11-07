@@ -1,7 +1,7 @@
 # Cesta – riadený kurz (návrh)
 
-Stav: **fázy 1 a 2 postavené** (2026-10-27 a 2026-10-28, osnova A1 – B2), rozhodnutia v časti 10. Fáza 3 navrhnutá
-(2026-11-07, časť 10c).
+Stav: **fázy 1 – 3 postavené** (2026-10-27, 2026-10-28, 2026-11-07, osnova A1 – B2), rozhodnutia v časti 10, fáza 3
+v časti 10c.
 
 Cieľ: appka každý deň povie **„dnes toto“**. Učiaci sa nevyberá typ cvičenia, tému a úroveň. Ide po jednej
 ceste, kde sa striedajú nové slová, gramatika a typy cvičení, a za ním chodí opakovanie. Cvičiť zostáva ako
@@ -215,7 +215,7 @@ Fázy:
 - Kroky jednotky sa počítajú, až keď ich niečo potrebuje (Domov a Cesta len aktuálnu a otvorené jednotky):
   stav 121 jednotiek trvá ~8 ms namiesto ~140 ms.
 
-## 10c. Fáza 3: doladenie (návrh odsúhlasený 2026-11-07)
+## 10c. Fáza 3: doladenie (odsúhlasené a postavené 2026-11-07)
 
 Tri veci: viditeľné preskočenie jednotky, ponuka inej úrovne po prvej lekcii a oslava úrovne. Nič nové na serveri,
 žiadny rozraďovací test.
@@ -277,8 +277,9 @@ Lacná náhrada rozraďovacieho testu: kto si v uvítaní zvolil úroveň zle, d
 - `src/lib/path.test.ts`: `levelOffer` (10/10 hore, 4/10 dole, 5/10 nič, A1 bez nižšej, B2 bez vyššej, už ponúknuté,
   iný krok alebo iná jednotka, kolo opravy, bez stavu uvítania), `levelDone`.
 - `e2e/path.spec.ts`: tlačidlo „Viem to“ vedie na test jednotky; 10/10 v prvej lekcii A1 → ponuka → „Áno, na A2“ →
-  krok 1 prvej jednotky A2 a Cesta ukazuje A2; oslava úrovne s vopred nahratým pokrokom (všetky jednotky úrovne okrem
-  poslednej hotové, splnenie jej testu).
+  krok 1 prvej jednotky A2 a Cesta ukazuje A2; ✓ pri úrovni so splnenou skúškou.
+- Oslava úrovne: rozhodnutie `levelDone` v unit testoch, karta skontrolovaná ručne (zložiť zmiešaný test v e2e by
+  vyžadovalo správne odpovede všetkých druhov úloh).
 
 ## 11. Mimo rozsahu
 

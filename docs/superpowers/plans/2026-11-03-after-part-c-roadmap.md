@@ -15,6 +15,8 @@ Sizes: **S** = one session inline, **M** = a plan of 3–6 tasks, **L** = severa
 - §3.2: done in 4d4a68c (2026-11-05): 196 longer B2 sentences, B2 average 10.2 words, 59 % with a subordinate clause.
 - Adam's direction (2026-11-06): product first, no deadline; publishing and the release track (§6) wait. His scope for the
   complete product: content quality, guided path + duel round 2 (his design), the Spain variant. §5 not chosen for now.
+- 2026-11-07: Cesta phase 3 (Viem to button, level offer after the first lesson, level celebration) built on branch
+  `path-phase-3` (docs/guided-path-spec.md §10c).
 
 ## 0. State today
 
