@@ -956,6 +956,13 @@ export const sk = {
     unitWords: (n: number) => `+${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     nextUnit: (title: string) => `Ďalej: ${title}`,
     backToPath: 'Späť na cestu',
+    /** The other start level, offered once on the result of the path's first lesson. */
+    offerUp: (level: string) => `Išlo ti to výborne. Chceš začať na ${level}?`,
+    offerUpHint: 'Nižšie úrovne ostanú otvorené, kedykoľvek sa k nim vrátiš.',
+    offerDown: (level: string) => `Chceš radšej začať na ${level}?`,
+    offerDownHint: 'Začneš od základov. Splnené kroky ostávajú.',
+    offerYes: (level: string) => `Áno, na ${level}`,
+    offerStay: (level: string) => `Ostanem na ${level}`,
   },
 
   tests: {

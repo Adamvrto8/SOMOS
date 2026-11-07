@@ -889,6 +889,12 @@ export const en: Dictionary = {
     unitWords: (n) => `+${counted(n, 'word', 'words')}`,
     nextUnit: (title) => `Next: ${title}`,
     backToPath: 'Back to the path',
+    offerUp: (level) => `Well done. Want to start at ${level}?`,
+    offerUpHint: 'The levels below stay open, come back to them any time.',
+    offerDown: (level) => `Would you rather start at ${level}?`,
+    offerDownHint: 'You start from the basics. The steps you passed stay.',
+    offerYes: (level) => `Yes, ${level}`,
+    offerStay: (level) => `Stay at ${level}`,
   },
 
   tests: {

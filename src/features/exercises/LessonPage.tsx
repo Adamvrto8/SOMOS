@@ -51,6 +51,7 @@ import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
 import { SaveProgressCard } from '../onboarding/SaveProgressCard'
+import { LevelOffer } from '../path/LevelOffer'
 import { MeetCards } from '../path/MeetCards'
 import { TipIntro } from '../path/TipIntro'
 import { TaskView } from './tasks/TaskView'
@@ -450,6 +451,9 @@ export function LessonPage() {
           <LessonOverview lessonNumber={runLesson} record={overview} tasks={tasks} />
         ) : finished ? (
           <>
+            {pathStep && (
+              <LevelOffer unit={pathStep.unit} step={pathStep.step} firstRound={round === 'full'} score={solved.size} total={lessonTotal} />
+            )}
             {firstLesson && <SaveProgressCard />}
             <LessonResult
               answers={answers}
