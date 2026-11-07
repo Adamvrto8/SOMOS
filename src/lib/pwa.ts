@@ -1,8 +1,8 @@
 import { registerSW } from 'virtual:pwa-register'
 
-// Screens whose state lives only in memory (a lesson, a review session, an unsaved form):
+// Screens whose state lives only in memory (a lesson, a review session, an unsaved form, a diary day being typed):
 // a reload there would throw the learner's progress away.
-const BUSY_PATHS = /^\/(practice\/lesson|review|archive\/(new|custom\/))/
+const BUSY_PATHS = /^\/(practice\/lesson|review|archive\/(new|custom\/)|diary\/)/
 
 const isBusy = () => BUSY_PATHS.test(window.location.pathname)
 

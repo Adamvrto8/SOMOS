@@ -3,6 +3,8 @@ import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
 import { ErrorBoundary, RouteErrorScreen } from './components/ErrorScreen'
 import { PrivacyPage } from './features/account/PrivacyPage'
+import { DiaryEntryPage } from './features/diary/DiaryEntryPage'
+import { DiaryPage } from './features/diary/DiaryPage'
 import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
 import { ArchivePage } from './features/archive/ArchivePage'
@@ -64,6 +66,8 @@ const routes = [
       { path: 'archive', element: <ArchivePage /> },
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },
+      { path: 'diary', element: <DiaryPage /> },
+      { path: 'diary/:date', element: <DiaryEntryPage /> },
       { path: 'profile', element: <SettingsPage /> },
       { path: 'profile/sign-in', element: <SignInPage /> },
       { path: 'profile/:section', element: <SettingsSectionPage /> },
