@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import { sentences, tipById, topicById, verbById, verbs } from '../data'
-import type { Grammar, Level, Person, Sentence, Verb, Word } from '../data/types'
+import type { Grammar, Level, Sentence, Verb, Word } from '../data/types'
 import { USAGE_TIPS } from './clozeChecks'
-import { personsOf, type TableTense } from './conjugate'
+import { drillPersonsOf, type DrillPerson, type TableTense } from './conjugate'
 import {
   builderWords,
   conjugationTask,
@@ -147,7 +147,7 @@ function grammarConjugations(unit: PathUnit): Task[] {
     ),
     (v) => own.has(v.id),
   )
-  const fits = (verb: Verb, person: Person) => {
+  const fits = (verb: Verb, person: DrillPerson) => {
     if (unit.grammar === 'reflexive') return verb.reflexive === true
     const found = cachedTip(`${verb.id}:${tense}:${person}`, () => {
       const tip = tipFor(conjugationTask(verb, tense, person), RIGHT)
@@ -159,7 +159,7 @@ function grammarConjugations(unit: PathUnit): Task[] {
   for (const verb of list) {
     if (out.length === GRAMMAR_CONJUGATIONS) break
     // The persons take turns from task to task; the first one the point explains is asked.
-    const persons = personsOf(tense)
+    const persons = drillPersonsOf(tense)
     for (let k = 0; k < persons.length; k++) {
       const person = persons[(out.length + k) % persons.length]
       if (fits(verb, person)) {

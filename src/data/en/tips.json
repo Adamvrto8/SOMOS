@@ -651,19 +651,29 @@
         "id": "use",
         "title": "When it is used",
         "text": "In Spain for an action in a period that is not over: hoy, esta semana, este año, and with ya, todavía no, alguna vez. For yesterday and earlier it takes the preterite: ayer comí. In Mexico the preterite is normal in all these cases.",
+        "because": "The period is not over (hoy, esta semana, ya…), so he + participle.",
         "examples": ["This week I have worked a lot.", "Yesterday I worked a lot."]
       },
       {
         "id": "form",
         "title": "he + participle",
         "text": "haber in the present (he, has, ha, hemos, habéis, han) and the participle, which does not change: hablar → hablado, comer → comido, vivir → vivido. After a vowel -ído: leído, traído.",
+        "because": "The perfect is haber in the present (he, has, ha, hemos, habéis, han) and a participle in -ado / -ido.",
         "examples": ["Today I ate very late.", "Have you already seen the movie?"]
       },
       {
         "id": "participle",
         "title": "Irregular participles",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "because": "This verb has an irregular participle.",
         "examples": ["I haven't done anything yet."]
+      },
+      {
+        "id": "finished",
+        "title": "Ayer, el año pasado: preterite",
+        "text": "When the period is over (ayer, anoche, la semana pasada, el año pasado, en 2020), Spain says the preterite too: ayer comí paella, but hoy he comido pescado.",
+        "because": "The period is over (ayer, la semana pasada…), so the preterite, not he + participle.",
+        "examples": ["Last night we watched a film.", "This morning I saw your brother."]
       }
     ]
   },

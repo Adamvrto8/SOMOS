@@ -1,6 +1,6 @@
 // Validates the es-ES overlay (src/data/es/) against the Mexican base. Run with `npm run validate:es`.
-import { readdirSync, readFileSync } from 'node:fs'
-import { applySentences, applyTips, applyTipsEn, applyWords, SPAIN_VERB_PAIRS, type SentenceEs, type TipEs, type WordEs } from '../src/data/applyVariant.ts'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { applySentences, applyTips, applyTipsEn, applyWords, mergeById, SPAIN_VERB_PAIRS, type SentenceEs, type TipEs, type WordEs } from '../src/data/applyVariant.ts'
 import type { Sentence, Tip, TipEn, Word } from '../src/data/types.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
@@ -10,23 +10,37 @@ const load = <T>(dir: string): T[] =>
 
 const words = load<Word>('words')
 const sentences = load<Sentence>('sentences')
-const esWords = load<WordEs>('es/words')
-const esSentences = load<SentenceEs>('es/sentences')
+const loadIf = <T>(dir: string): T[] => (existsSync(new URL(`${dir}/`, DATA)) ? load<T>(dir) : [])
+// The generated overlay and the hand-written one (src/data/es/hand/, never regenerated), merged as the app does.
+const handWords = loadIf<WordEs>('es/hand/words')
+const handSentences = loadIf<SentenceEs>('es/hand/sentences')
+const esWords = mergeById(load<WordEs>('es/words'), handWords)
+const esSentences = mergeById(load<SentenceEs>('es/sentences'), handSentences)
 const readJson = <T>(file: string): T => JSON.parse(readFileSync(new URL(file, DATA), 'utf8')) as T
 const tips = readJson<Tip[]>('tips.json')
 const enTips = readJson<TipEn[]>('en/tips.json')
 const esTips = readJson<TipEs[]>('es/tips.json')
 const esNewWords = load<Word>('es/new/words')
+const esNewSentences = load<Sentence>('es/new/sentences')
+const esNewEn = (name: string): { id: string }[] => {
+  const url = new URL(`es/new/en/${name}.json`, DATA)
+  try { return JSON.parse(readFileSync(url, 'utf8')) as { id: string }[] } catch { return [] }
+}
 const errors: string[] = []
 const fail = (where: string, msg: string) => errors.push(`${where}: ${msg}`)
 
 // Mexican-only everyday words that must not survive in the Spain text of an overlay entry.
-const MEXICAN = new Set(['carro', 'carros', 'computadora', 'computadoras', 'celular', 'celulares', 'jugo', 'papa', 'papas', 'boleto', 'boletos', 'lentes', 'departamento', 'chamarra', 'playera', 'alberca', 'banqueta', 'regadera', 'cobija', 'plomero', 'mesero', 'jitomate', 'gripa', 'curita', 'pluma', 'foco', 'recámara', 'cierre', 'ahorita', 'camión'])
+const MEXICAN = new Set(['carro', 'carros', 'computadora', 'computadoras', 'celular', 'celulares', 'jugo', 'papa', 'papas', 'boleto', 'boletos', 'lentes', 'departamento', 'chamarra', 'playera', 'alberca', 'banqueta', 'regadera', 'cobija', 'plomero', 'mesero', 'jitomate', 'gripa', 'curita', 'pluma', 'foco', 'recámara', 'cierre', 'ahorita', 'camión',
+  // Everyday Mexican words and slang Spain does not say (found in sentences outside the first overlay).
+  'pesos', 'tianguis', 'zócalo', 'chamba', 'chambear', 'chambea', 'chido', 'padrísimo', 'órale', 'ándale', 'güey', 'neta', 'refri', 'popote', 'papás',
+  'bloqueador', 'aventón', 'cajuela', 'llanta', 'llantas', 'prepa', 'pizarrón', 'plática', 'platicar', 'platicamos', 'platiqué', 'renta', 'rentar', 'rentamos',
+  'elote', 'elotes', 'ejotes', 'chícharos', 'betabel', 'durazno', 'duraznos', 'cacahuates', 'camote', 'frijoles', 'abuelita', 'chinita', 'apapacho', 'achicopalado',
+  'mezclilla', 'tinaco', 'fraccionamiento', 'mayoreo', 'enganche', 'finiquito', 'licuado', 'botana', 'manejar', 'manejo', 'maneja', 'estacionar', 'enojado', 'enojada', 'enojó'])
 const check = (where: string, text: string) => {
   for (const w of text.toLowerCase().split(/[^\p{L}]+/u)) if (MEXICAN.has(w)) fail(where, `Mexican word "${w}" left in Spain text`)
 }
 
-for (const [dir, items, base] of [['words', esWords, words], ['sentences', esSentences, sentences]] as const) {
+for (const [dir, items, base] of [['words', load<WordEs>('es/words'), words], ['sentences', load<SentenceEs>('es/sentences'), sentences], ['hand/words', handWords, words], ['hand/sentences', handSentences, sentences]] as const) {
   const ids = new Set(base.map((b) => b.id))
   const seen = new Set<string>()
   for (const item of items) {
@@ -50,6 +64,32 @@ for (const s of applySentences(sentences, esSentences).filter((s) => esSentences
     for (const d of c.distractors ?? []) if (d === c.answer) fail(where, `cloze ${c.tokenIndex}: distractor equals the answer`)
   }
 }
+
+// A new meaning or note needs its English too (the base English says the Mexican one).
+for (const w of esWords) if (typeof w.note === 'string' && !w.noteEn?.trim()) fail(`es/words[${w.id}]`, 'a Spain note needs noteEn')
+for (const o of esSentences) {
+  if (o.sk !== undefined && !o.sk.trim()) fail(`es/sentences[${o.id}]`, 'empty sk')
+  if (o.sk !== undefined && !o.en?.trim()) fail(`es/sentences[${o.id}]`, 'a new Slovak meaning needs its English (en)')
+}
+
+// Spain's own sentences: ids from s9001 (the base grows from s001 and must never meet them), English for each, and
+// none of the Mexican words. The rest (tokens, blanks, hints) is checked by validate-data --es with the others.
+const baseSentenceIds = new Set(sentences.map((s) => s.id))
+const newEnSentences = new Set(esNewEn('sentences').map((e) => e.id))
+for (const s of esNewSentences) {
+  const where = `es/new/sentences[${s.id}]`
+  if (!/^s9\d{3}$/.test(s.id)) fail(where, 'Spain-only sentence ids are s9001…s9999')
+  if (baseSentenceIds.has(s.id)) fail(where, 'id taken by a base sentence')
+  if (!newEnSentences.has(s.id)) fail(where, 'needs its English in es/new/en/sentences.json')
+  check(where, s.es)
+}
+const newEnWords = new Set(esNewEn('words').map((e) => e.id))
+for (const w of esNewWords) {
+  if (!newEnWords.has(w.id)) fail(`es/new/words[${w.id}]`, 'needs its English in es/new/en/words.json')
+  check(`es/new/words[${w.id}]`, [w.es, w.plural ?? '', ...w.examples.map((e) => e.es)].join(' '))
+}
+// Every sentence as Spain gets it, overlay or not: a Mexican word left in the base text is a miss of the overlay.
+for (const s of applySentences(sentences, esSentences)) check(`sentences[${s.id}] (es)`, s.es)
 
 // ---------- tips: es/tips.json over tips.json and en/tips.json ----------
 const tipById = new Map(tips.map((t) => [t.id, t]))
@@ -126,4 +166,4 @@ if (errors.length) {
   console.error(`\n${errors.length} problem(s) in the es overlay`)
   process.exit(1)
 }
-console.log(`es overlay OK: ${esWords.length} words, ${esSentences.length} sentences, ${esTips.length} tips`)
+console.log(`es overlay OK: ${esWords.length} words, ${esSentences.length} sentences, ${esTips.length} tips; Spain's own: ${esNewWords.length} words, ${esNewSentences.length} sentences`)

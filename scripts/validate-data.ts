@@ -13,7 +13,7 @@ import {
   regularNew,
   regularParticiple,
 } from '../src/lib/verbForms.ts'
-import { applySentences, applyWords, hiddenVerbIds, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
+import { applySentences, applyWords, hiddenVerbIds, mergeById, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
 import { bareVosotros } from '../src/lib/vosotros.ts'
 import { checksOwnHint, usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
 
@@ -38,12 +38,14 @@ const topics = readJson(new URL('topics.json', DATA)) as Topic[]
 const withEs = process.argv.includes('--es')
 const spainNewIds = new Set(withEs ? loadDir<Word>('es/new/words').map((w) => w.id) : [])
 const words0 = [...loadDir<Word>('words'), ...(withEs ? loadDir<Word>('es/new/words') : [])]
-const hiddenVerbs = withEs ? hiddenVerbIds(words0, loadDir<WordEs>('es/words')) : new Set<string>()
+const esDir = <T extends { id: string }>(kind: string): T[] =>
+  mergeById(loadDir<T>(`es/${kind}`), existsSync(new URL(`es/hand/${kind}/`, DATA)) ? loadDir<T>(`es/hand/${kind}`) : [])
+const hiddenVerbs = withEs ? hiddenVerbIds(words0, esDir<WordEs>('words')) : new Set<string>()
 const verbs = [...loadDir<Verb>('verbs').filter((v) => !hiddenVerbs.has(v.id)), ...(withEs ? loadDir<Verb>('es/new/verbs') : [])]
 const sentences0 = loadDir<Sentence>('sentences')
 // --es checks the Spain text as the learner gets it: the overlay laid over the Mexican base.
-const words = withEs ? [...applyWords(words0.filter((w) => !spainNewIds.has(w.id)), loadDir<WordEs>('es/words')), ...words0.filter((w) => spainNewIds.has(w.id))] : words0
-const sentences = withEs ? applySentences(sentences0, loadDir<SentenceEs>('es/sentences')) : sentences0
+const words = withEs ? [...applyWords(words0.filter((w) => !spainNewIds.has(w.id)), esDir<WordEs>('words')), ...words0.filter((w) => spainNewIds.has(w.id))] : words0
+const sentences = withEs ? [...applySentences(sentences0, esDir<SentenceEs>('sentences')), ...loadDir<Sentence>('es/new/sentences')] : sentences0
 const tipsUrl = new URL('tips.json', DATA)
 const tips = (existsSync(tipsUrl) ? readJson(tipsUrl) : []) as Tip[]
 const sourcesUrl = new URL('sources.json', DATA)
@@ -60,7 +62,7 @@ const DERIVED_TENSES = ['subjuntivo', 'subjImperfecto', 'condicional'] as const
 type StoredTense = Exclude<Tense, (typeof DERIVED_TENSES)[number]>
 const isDerived = (tense: Tense): tense is (typeof DERIVED_TENSES)[number] => (DERIVED_TENSES as readonly string[]).includes(tense)
 const POS = ['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'conj', 'phrase', 'other']
-const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles', 'imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto', 'subj-imperfecto', 'gustar', 'hay-estar', 'object-pronouns', 'comparisons', 'obligation', 'subjuntivo-wishes', 'si-clauses', 'por-para', 'subjuntivo-clauses', 'relatives', 'passive-se']
+const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles', 'imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto', 'subj-imperfecto', 'gustar', 'hay-estar', 'object-pronouns', 'comparisons', 'obligation', 'subjuntivo-wishes', 'si-clauses', 'por-para', 'subjuntivo-clauses', 'relatives', 'passive-se', 'perfecto']
 
 // ---------- helpers ----------
 
@@ -588,7 +590,7 @@ function loadEnFile<T>(file: string): T[] {
 const wordIds0 = new Set(words.map((w) => w.id))
 const enWords = [...loadEnDir<WordEn>('words').filter((e) => !withEs || wordIds0.has(e.id)), ...(withEs ? readEnEs<WordEn>('words') : [])]
 const enVerbs = [...loadEnDir<VerbEn>('verbs').filter((e) => !withEs || !hiddenVerbs.has(e.id)), ...(withEs ? readEnEs<VerbEn>('verbs') : [])]
-const enSentences = loadEnDir<SentenceEn>('sentences')
+const enSentences = [...loadEnDir<SentenceEn>('sentences'), ...(withEs && existsSync(new URL('es/new/en/sentences.json', DATA)) ? readEnEs<SentenceEn>('sentences') : [])]
 const enTopics = loadEnFile<TopicEn>('topics.json')
 const enTips = loadEnFile<TipEn>('tips.json')
 

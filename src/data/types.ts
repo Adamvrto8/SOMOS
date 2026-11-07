@@ -38,6 +38,7 @@ export type Grammar =
   | 'subjuntivo-clauses'
   | 'relatives'
   | 'passive-se'
+  | 'perfecto'
 
 export interface Example {
   es: string

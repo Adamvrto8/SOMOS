@@ -1,4 +1,5 @@
 import type { ImperativePerson, Level, Person, Tense, Verb } from '../data/types'
+import { readVariant } from '../data/variant'
 import { IMPERATIVE_PERSONS } from './verbForms'
 import { vosotrosForm, vosotrosIrregular, vosotrosNegative } from './vosotros'
 
@@ -69,9 +70,25 @@ export const tensesUpTo = (level?: Level): TableTense[] => (level ? TABLE_TENSES
 /** The persons a tense has: the imperative has no yo. */
 export const personsOf = (tense: TableTense): Person[] => (tense === 'imperativo' ? IMPERATIVE_PERSONS : PERSONS)
 
+/** A person a task can ask: Spain's vosotros is derived (vosotros.ts), so it is not a `Person` of the stored forms. */
+export type DrillPerson = Person | 'vosotros'
+
+const SPAIN = readVariant() === 'es'
+
+/**
+ * The persons the drill, the path and the tests ask: Spain adds vosotros after nosotros. Tables keep `personsOf`
+ * (they show vosotros in a row of their own), and duels too, since the two players may study different variants.
+ */
+export function drillPersonsOf(tense: TableTense, spain = SPAIN): DrillPerson[] {
+  const persons = personsOf(tense)
+  if (!spain) return persons
+  const at = persons.indexOf('nosotros') + 1
+  return [...persons.slice(0, at), 'vosotros', ...persons.slice(at)]
+}
+
 const IMPERATIVE_LABELS: Record<ImperativePerson, string> = { tu: 'tú', el: 'usted', nosotros: 'nosotros', ellos: 'ustedes' }
-export const personLabel = (tense: TableTense, person: Person) =>
-  tense === 'imperativo' && person !== 'yo' ? IMPERATIVE_LABELS[person] : PERSON_LABELS[person]
+export const personLabel = (tense: TableTense, person: DrillPerson) =>
+  person === 'vosotros' ? 'vosotros' : tense === 'imperativo' && person !== 'yo' ? IMPERATIVE_LABELS[person] : PERSON_LABELS[person]
 
 /** haber is not a verb of the data: only its presente (perfecto) and imperfecto (pluscuamperfecto) are needed. */
 export const HABER_PRESENTE: Record<Person, string> = { yo: 'he', tu: 'has', el: 'ha', nosotros: 'hemos', ellos: 'han' }

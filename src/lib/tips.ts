@@ -2,7 +2,7 @@ import { tipById, verbById, words } from '../data'
 import { t } from '../i18n'
 import type { Cloze, Grammar, Person, Sentence, Tip, TipRule, Verb } from '../data/types'
 import type { Meaning } from './checkAnswer'
-import { isIrregular, type TableTense } from './conjugate'
+import { isIrregular, type DrillPerson, type TableTense } from './conjugate'
 import type { Grade, Task } from './lesson'
 import { localizedTip } from './localized'
 import { fold } from './text'
@@ -81,6 +81,12 @@ const HINT_PERSONS: Record<string, Person> = {
   ellas: 'ellos',
   ustedes: 'ellos',
 }
+
+/**
+ * The stored person whose reason holds for Spain's vosotros: like nosotros it keeps the stem (pensáis, dormís) and takes
+ * the subjunctive's nosotros stem; an irregular pretérito, futuro… stem is the same in every person.
+ */
+const whyPerson = (person: DrillPerson): Person => (person === 'vosotros' ? 'nosotros' : person)
 
 const targeted = (id: string, why?: Why): TaskTip | undefined => {
   const tip = tipById.get(id)
@@ -250,7 +256,7 @@ export function tipForHint(sentence: Sentence, cloze: Cloze): TaskTip | undefine
   const verb = verbById.get(cloze.lemma) ?? verbById.get(parts[0])
   if (parts.length === 3 && HINT_TENSES[parts[2]]) {
     const tense = HINT_TENSES[parts[2]]
-    const person = HINT_PERSONS[parts[1]]
+    const person = parts[1] === 'vosotros' || parts[1] === 'vosotras' ? 'nosotros' : HINT_PERSONS[parts[1]]
     return targeted(tipIdOfTense(tense), verb && person ? verbWhy(verb, tense, person) : undefined)
   }
   if (parts.length === 2 && parts[1] === 'gerundio') return targeted('progresivo', verb && gerundWhy(verb, 'gerund'))
@@ -277,7 +283,7 @@ export function tipFor(task: Task, grade: Grade): TaskTip | undefined {
     case 'findmistake':
       return tipForCloze(task.sentence, task.cloze)
     case 'conjugation':
-      return targeted(tipIdOfTense(task.tense), verbWhy(task.verb, task.tense, task.person))
+      return targeted(tipIdOfTense(task.tense), verbWhy(task.verb, task.tense, whyPerson(task.person)))
     case 'builder':
     case 'translation':
     case 'dictation':

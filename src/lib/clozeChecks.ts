@@ -16,6 +16,7 @@ export const USAGE_TIPS: readonly Grammar[] = [
   'subjuntivo-clauses',
   'relatives',
   'passive-se',
+  'perfecto',
 ]
 
 const PERSON_LABELS: Record<string, Person> = {

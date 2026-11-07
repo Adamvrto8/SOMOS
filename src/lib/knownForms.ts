@@ -1,8 +1,9 @@
-import { sentences, verbs, words } from '../data'
+import { sentences, variant, verbs, words } from '../data'
 import { t } from '../i18n'
 import type { Level } from '../data/types'
 import { levelAbove, PERSON_LABELS, personLabel, PERSONS, TENSE_LABELS, TENSES, type TableTense } from './conjugate'
 import { IMPERATIVE_PERSONS } from './verbForms'
+import { bareVosotros } from './vosotros'
 import { getLanguage, type Language } from './language'
 import { wordTranslations } from './localized'
 
@@ -42,6 +43,11 @@ function buildIndex(): Map<string, Entry[]> {
       }
     }
     for (const person of IMPERATIVE_PERSONS) add(v.imperativo[person], `${v.id} · ${personLabel('imperativo', person)} · ${TENSE_LABELS.imperativo}`, 'imperativo')
+    // Spain: vosotros is a person of its own (habláis for hablan is another form, not a typo).
+    if (variant === 'es') {
+      for (const tense of TENSES) add(bareVosotros(v, tense), `${v.id} · vosotros · ${TENSE_LABELS[tense]}`, tense)
+      add(bareVosotros(v, 'imperativo'), `${v.id} · vosotros · ${TENSE_LABELS.imperativo}`, 'imperativo')
+    }
     add(v.gerund, `${v.id} · gerundio`)
     add(v.participle, `${v.id} · participio`, 'pluscuamperfecto')
   }

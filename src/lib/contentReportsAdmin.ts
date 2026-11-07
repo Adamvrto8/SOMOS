@@ -1,6 +1,6 @@
 import { sentenceById, verbById, wordById } from '../data'
 import type { Person } from '../data/types'
-import { conjugate, formText, personLabel, personsOf, TENSE_LABELS, type TableTense } from './conjugate'
+import { conjugate, conjugateVosotros, drillPersonsOf, formText, personLabel, TENSE_LABELS, type DrillPerson, type TableTense } from './conjugate'
 import type { ReportReason } from './contentReport'
 import { sentenceTranslation, wordTranslations } from './localized'
 
@@ -55,10 +55,12 @@ export function currentContent(target: string, detail: string): { es: string; tr
     const estar = verbById.get('estar')
     if (!verb || !estar) return null
     const [tense, person] = detail.split(':')
-    if (!Object.hasOwn(TENSE_LABELS, tense) || !personsOf(tense as TableTense).includes(person as Person)) return { es: verb.id, translation: verb.sk.join(', ') }
+    // A report from a Spain device may name vosotros, whatever variant the admin studies.
+    if (!Object.hasOwn(TENSE_LABELS, tense) || !drillPersonsOf(tense as TableTense, true).includes(person as DrillPerson)) return { es: verb.id, translation: verb.sk.join(', ') }
+    const parts = person === 'vosotros' ? conjugateVosotros(verb, tense as TableTense) : conjugate(verb, tense as TableTense, person as Person, estar)
     return {
-      es: formText(conjugate(verb, tense as TableTense, person as Person, estar)),
-      translation: `${verb.id} · ${personLabel(tense as TableTense, person as Person)} · ${TENSE_LABELS[tense as TableTense]}`,
+      es: formText(parts),
+      translation: `${verb.id} · ${personLabel(tense as TableTense, person as DrillPerson)} · ${TENSE_LABELS[tense as TableTense]}`,
     }
   }
   return null

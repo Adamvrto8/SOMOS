@@ -1,8 +1,8 @@
 import { sentenceById, sentences, verbById, verbs, vocabWords, wordById } from '../data'
-import type { Cloze, Level, Person, Sentence, Verb, Word } from '../data/types'
+import type { Cloze, Level, Sentence, Verb, Word } from '../data/types'
 import { t } from '../i18n'
 import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult, type DiffPart, type Verdict } from './checkAnswer'
-import { conjugate, formText, personsOf, TABLE_TENSES, TENSE_LEVEL, tensesUpTo, type TableTense } from './conjugate'
+import { conjugate, conjugateVosotros, drillPersonsOf, formText, TABLE_TENSES, TENSE_LEVEL, tensesUpTo, type DrillPerson, type TableTense } from './conjugate'
 import { corrupt, distractorFor, eligibleClozes, matchCapital, stableHash, type Corrupted } from './corrupt'
 import { getLanguage } from './language'
 import { wordTranslations } from './localized'
@@ -45,7 +45,7 @@ export interface ConjugationTask {
   itemId: string
   verb: Verb
   tense: TableTense
-  person: Person
+  person: DrillPerson
   answer: string
   irregular: boolean
 }
@@ -282,7 +282,7 @@ function conjugationItems({ level, tense }: LessonFilter) {
   const tenses = tense && tense !== 'all' ? [tense] : tensesUpTo(level)
   return verbs
     .filter((v) => !level || v.level === level)
-    .flatMap((verb) => tenses.flatMap((t) => personsOf(t).map((person) => ({ verb, tense: t, person }))))
+    .flatMap((verb) => tenses.flatMap((t) => drillPersonsOf(t).map((person) => ({ verb, tense: t, person }))))
 }
 
 function builderSentences(filter: LessonFilter) {
@@ -515,8 +515,8 @@ export function findMistakeTask(sentence: Sentence, clozeIndex: number, distract
 
 // ---------- lesson ----------
 
-export function conjugationTask(verb: Verb, tense: TableTense, person: Person): ConjugationTask {
-  const parts = conjugate(verb, tense, person, verbById.get('estar')!)
+export function conjugationTask(verb: Verb, tense: TableTense, person: DrillPerson): ConjugationTask {
+  const parts = person === 'vosotros' ? conjugateVosotros(verb, tense) : conjugate(verb, tense, person, verbById.get('estar')!)
   return {
     kind: 'conjugation',
     itemId: `${verb.id}:${tense}:${person}`,
@@ -749,7 +749,7 @@ function buildStablePool(filter: LessonFilter): Task[] {
       // Round r asks verb i for person i + r: a lesson of 10 verbs has every person twice,
       // and after 5 rounds each verb has been through all of them.
       const allTasks = tenses.flatMap((tense) => {
-        const persons = personsOf(tense)
+        const persons = drillPersonsOf(tense)
         return persons.flatMap((_, round) => matchingVerbs.map((verb, i) => conjugationTask(verb, tense, persons[(i + round) % persons.length])))
       })
       if (isAll) {
@@ -886,8 +886,8 @@ export function taskFromItem(exercise: ExerciseType, itemId: string, random: Ran
     case 'conjugation': {
       const [verbId, tense, person] = itemId.split(':')
       const verb = verbById.get(verbId)
-      if (!verb || !TABLE_TENSES.includes(tense as TableTense) || !personsOf(tense as TableTense).includes(person as Person)) return undefined
-      return conjugationTask(verb, tense as TableTense, person as Person)
+      if (!verb || !TABLE_TENSES.includes(tense as TableTense) || !drillPersonsOf(tense as TableTense).includes(person as DrillPerson)) return undefined
+      return conjugationTask(verb, tense as TableTense, person as DrillPerson)
     }
     case 'builder': {
       const sentence = sentenceById.get(itemId)

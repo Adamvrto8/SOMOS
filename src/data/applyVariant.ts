@@ -15,6 +15,8 @@ export interface WordEs {
   hidden?: boolean
   /** `null` removes the Mexican note (it would be wrong for Spain); a string replaces it. */
   note?: string | null
+  /** The English of a new `note` (src/data/en/words has the Mexican one). */
+  noteEn?: string
 }
 
 export interface ClozeEs {
@@ -31,6 +33,19 @@ export interface SentenceEs {
   es: string
   tokens: string[]
   cloze?: ClozeEs[]
+  /** When Spain says something a little different (euros, Madrid, padres): the Slovak and English for it. */
+  sk?: string
+  en?: string
+}
+
+/**
+ * The overlay as one list: the generated files (src/data/es/words, sentences: scripts/spain-*.mjs rewrite them) and the
+ * hand-written ones (src/data/es/hand/: never regenerated), the hand's fields last, so they win field by field.
+ */
+export function mergeById<T extends { id: string }>(...lists: T[][]): T[] {
+  const byId = new Map<string, T>()
+  for (const item of lists.flat()) byId.set(item.id, { ...byId.get(item.id), ...item })
+  return [...byId.values()]
 }
 
 /** The verb ids whose Word the overlay hides (a word with `verbId` is its verb's dictionary entry). */
@@ -42,7 +57,7 @@ export function applyWords(base: Word[], overlay: WordEs[]): Word[] {
   return base.filter((word) => !byId.get(word.id)?.hidden).map((word) => {
     const o = byId.get(word.id)
     if (!o) return word
-    const { note, hidden: _hidden, ...rest } = o
+    const { note, hidden: _hidden, noteEn: _noteEn, ...rest } = o
     const merged: Word = { ...word, ...stripUndefined(rest) }
     if (note === null) delete merged.note
     else if (note !== undefined) merged.note = note
@@ -61,7 +76,7 @@ export function applySentences(base: Sentence[], overlay: SentenceEs[]): Sentenc
       const { newIndex, ...rest } = patch
       return { ...c, ...stripUndefined(rest), tokenIndex: newIndex ?? patch.tokenIndex }
     })
-    return { ...sentence, es: o.es, tokens: o.tokens, ...(cloze ? { cloze } : {}) }
+    return { ...sentence, es: o.es, tokens: o.tokens, ...(o.sk ? { sk: o.sk } : {}), ...(cloze ? { cloze } : {}) }
   })
 }
 

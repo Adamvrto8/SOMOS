@@ -926,6 +926,7 @@
         "id": "use",
         "title": "Kedy sa používa",
         "text": "V Španielsku pre dej v čase, ktorý ešte trvá: hoy, esta semana, este año, a s ya, todavía no, alguna vez. Pre dej včera a skôr sa používa pretérito: ayer comí. V Mexiku sa vo všetkých týchto prípadoch bežne hovorí pretéritom.",
+        "because": "Čas ešte trvá (hoy, esta semana, ya…), preto he + príčastie.",
         "examples": [
           { "es": "Esta semana he trabajado mucho.", "sk": "Tento týždeň som veľa pracoval." },
           { "es": "Ayer trabajé mucho.", "sk": "Včera som veľa pracoval." }
@@ -935,6 +936,7 @@
         "id": "form",
         "title": "he + príčastie",
         "text": "haber v prítomnom čase (he, has, ha, hemos, habéis, han) a príčastie, ktoré sa nemení: hablar → hablado, comer → comido, vivir → vivido. Po samohláske -ído: leído, traído.",
+        "because": "Perfecto je haber v prítomnom čase (he, has, ha, hemos, habéis, han) a príčastie na -ado / -ido.",
         "examples": [
           { "es": "Hoy he comido muy tarde.", "sk": "Dnes som jedol veľmi neskoro." },
           { "es": "¿Ya has visto la película?", "sk": "Videl si už ten film?" }
@@ -944,7 +946,18 @@
         "id": "participle",
         "title": "Nepravidelné príčastia",
         "text": "hacer → hecho, decir → dicho, ver → visto, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, resolver → resuelto.",
+        "because": "Toto sloveso má nepravidelné príčastie.",
         "examples": [{ "es": "No he hecho nada todavía.", "sk": "Ešte som nič neurobil." }]
+      },
+      {
+        "id": "finished",
+        "title": "Ayer, el año pasado: pretérito",
+        "text": "Keď je čas už uzavretý (ayer, anoche, la semana pasada, el año pasado, en 2020), aj v Španielsku sa povie pretérito: ayer comí paella, ale hoy he comido pescado.",
+        "because": "Čas je už uzavretý (ayer, la semana pasada…), preto pretérito, nie he + príčastie.",
+        "examples": [
+          { "es": "Anoche vimos una película.", "sk": "Včera večer sme pozreli film." },
+          { "es": "Esta mañana he visto a tu hermano.", "sk": "Dnes ráno som videl tvojho brata." }
+        ]
       }
     ]
   },

@@ -1,6 +1,6 @@
 import { sentences, topicById, verbById, verbs, words } from '../data'
 import type { Level, Sentence, Verb } from '../data/types'
-import { personsOf, tensesUpTo, type TableTense } from './conjugate'
+import { drillPersonsOf, tensesUpTo, type TableTense } from './conjugate'
 import {
   conjugationTask,
   createLesson,
@@ -182,7 +182,7 @@ function conjugationCandidates(id: TestId, random: Random): Task[] {
   for (let round = 0; round < 3; round++) {
     for (const verb of verbList) {
       const tense = tenses[Math.floor(random() * tenses.length)]
-      const persons = personsOf(tense)
+      const persons = drillPersonsOf(tense)
       const person = persons[Math.floor(random() * persons.length)]
       const task = conjugationTask(verb, tense, person)
       if (seen.has(task.itemId)) continue

@@ -35,7 +35,8 @@ export function buildRounds(level: Level, seed: number): DuelRound[] {
   const used = noneUsed()
   return roundTypes(seed).map((type) => {
     const filter = type === 'conjugation' ? { type, level, tense: 'all' as const } : { type, level, topic: 'all' }
-    const pool = getStablePool(filter)
+    // No vosotros task: the opponent may study Mexican Spanish, which has none.
+    const pool = getStablePool(filter).filter((task) => task.kind !== 'conjugation' || task.person !== 'vosotros')
     // Fisher–Yates with the duel's own numbers: the same seed, the same pick.
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(random() * (i + 1))
