@@ -1,4 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
+import { diaryPrompts } from '../data'
+import type { DiaryPrompt } from '../data/types'
 import { dayKey } from './dates'
 import { db, type DiaryEntry } from './db'
 
@@ -48,6 +50,13 @@ export async function saveDiaryEntry(date: string, fields: { learned: string; es
 export function newerDiaryEntries(local: DiaryEntry[], incoming: DiaryEntry[]): DiaryEntry[] {
   const here = new Map(local.map((e) => [e.date, e.updatedAt]))
   return incoming.filter((e) => e.updatedAt > (here.get(e.date) ?? -Infinity))
+}
+
+/** The prompt on the Domov card: one per day of the year, round the list. */
+export function promptOfDay(date: string): DiaryPrompt {
+  const [y, m, d] = date.split('-').map(Number)
+  const dayOfYear = Math.round((Date.UTC(y, m - 1, d) - Date.UTC(y, 0, 1)) / 86_400_000)
+  return diaryPrompts[dayOfYear % diaryPrompts.length]
 }
 
 /** `null` = no entry that day, `undefined` = still loading. */

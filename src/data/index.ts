@@ -1,5 +1,6 @@
 import pathJson from './path.json'
 import sourcesJson from './sources.json'
+import diaryPromptsJson from './diaryPrompts.json'
 import tipsJson from './tips.json'
 import topicsJson from './topics.json'
 import enTipsJson from './en/tips.json'
@@ -7,7 +8,7 @@ import enTopicsJson from './en/topics.json'
 import esTipsJson from './es/tips.json'
 import { applySentences, applyTips, applyTipsEn, applyWords, hiddenVerbIds, mergeById, otherVariantForms, type SentenceEs, type TipEs, type WordEs } from './applyVariant'
 import { readVariant } from './variant'
-import type { PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
+import type { DiaryPrompt, PathEntry, Sentence, SentenceEn, Source, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from './types'
 
 // Content is split into one file per topic (words/, sentences/) and per batch (verbs/).
 // Vite bundles every file matched here; order = file name, then order inside the file.
@@ -20,6 +21,7 @@ const collect = <T>(modules: Record<string, unknown>): T[] =>
 // shape and content are enforced by `npm run validate:data`.
 export const topics = topicsJson as Topic[]
 export const sources = sourcesJson as Source[]
+export const diaryPrompts = diaryPromptsJson as DiaryPrompt[]
 export const path = pathJson as PathEntry[]
 /** Which Spanish is studied (Mexico by default); Spain lays src/data/es/ over the Mexican base, by id. */
 export const variant = readVariant()

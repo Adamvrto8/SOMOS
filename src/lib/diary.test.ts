@@ -1,7 +1,8 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
+import { diaryPrompts } from '../data'
 import { db } from './db'
-import { DIARY_MAX, isDiaryDate, isDiaryEntry, newerDiaryEntries, saveDiaryEntry } from './diary'
+import { DIARY_MAX, isDiaryDate, isDiaryEntry, newerDiaryEntries, promptOfDay, saveDiaryEntry } from './diary'
 
 beforeEach(() => db.diary.clear())
 
@@ -54,5 +55,13 @@ describe('isDiaryEntry', () => {
     expect(isDiaryEntry({ date: '2026-11-07', learned: '', es: 'Hola', createdAt: 1, updatedAt: 2 })).toBe(true)
     expect(isDiaryEntry({ date: 'nope', learned: '', es: 'Hola', createdAt: 1, updatedAt: 2 })).toBe(false)
     expect(isDiaryEntry({ date: '2026-11-07', es: 'Hola', createdAt: 1, updatedAt: 2 })).toBe(false)
+  })
+})
+
+describe('promptOfDay', () => {
+  it('changes with the day and starts the list on 1 January', () => {
+    expect(promptOfDay('2026-11-07')).not.toEqual(promptOfDay('2026-11-08'))
+    expect(promptOfDay('2026-01-01')).toEqual(diaryPrompts[0])
+    expect(promptOfDay('2026-01-31')).toEqual(diaryPrompts[30 % diaryPrompts.length])
   })
 })

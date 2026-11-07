@@ -1,7 +1,7 @@
 // Validates static content in src/data. Run with `npm run validate:data`.
 // Exits with code 1 and lists every problem if anything is wrong.
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import type { Cloze, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, SpanishVariant, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
+import type { Cloze, DiaryPrompt, Grammar, ImperativePerson, Level, PathEntry, Person, Sentence, SentenceEn, Source, SpanishVariant, Tense, Tip, TipEn, Topic, TopicEn, Verb, VerbEn, Word, WordEn } from '../src/data/types.ts'
 import {
   deriveCondicional,
   deriveImperativo,
@@ -50,6 +50,8 @@ const tipsUrl = new URL('tips.json', DATA)
 const tips = (existsSync(tipsUrl) ? readJson(tipsUrl) : []) as Tip[]
 const sourcesUrl = new URL('sources.json', DATA)
 const sources = (existsSync(sourcesUrl) ? readJson(sourcesUrl) : []) as Source[]
+const diaryPromptsUrl = new URL('diaryPrompts.json', DATA)
+const diaryPrompts = (existsSync(diaryPromptsUrl) ? readJson(diaryPromptsUrl) : []) as DiaryPrompt[]
 
 const errors: string[] = []
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`)
@@ -348,6 +350,16 @@ for (const w of words) {
 for (const v of verbs) {
   const count = wordsByVerb.get(v.id) ?? 0
   if (count !== 1) fail(`verbs[${v.id}]`, `needs exactly one word entry (found ${count})`)
+}
+
+// ---------- diary prompts (the Domov diary card) ----------
+
+checkUniqueIds(diaryPrompts, 'diaryPrompts')
+for (const p of diaryPrompts) {
+  const where = `diaryPrompts[${p.id}]`
+  if (!/^p\d{2}$/.test(p.id)) fail(where, 'id must be p01…p99')
+  for (const field of ['es', 'sk', 'en'] as const) if (typeof p[field] !== 'string' || !p[field].trim()) fail(where, `needs ${field}`)
+  checkSpanish(where, p.es)
 }
 
 // ---------- sources ----------

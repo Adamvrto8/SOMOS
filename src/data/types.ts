@@ -205,3 +205,11 @@ export interface TipEn {
   variants: Partial<Record<SpanishVariant, string>>
   rules: { id: string; title: string; text?: string; because?: string; examples: string[] }[] // examples: translations, in order
 }
+
+/** A question on the Domov diary card (src/data/diaryPrompts.json), one per day. */
+export interface DiaryPrompt {
+  id: string // p01…
+  es: string
+  sk: string
+  en: string
+}
