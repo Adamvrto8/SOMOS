@@ -1217,7 +1217,7 @@ export const sk = {
   },
   privacy: {
     title: 'Ochrana súkromia',
-    updated: 'Platné od 25. 10. 2026',
+    updated: 'Platné od 7. 11. 2026',
     sections: [
       {
         heading: 'Kto sme',
@@ -1229,7 +1229,7 @@ export const sk = {
       },
       {
         heading: 'S účtom',
-        body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
+        body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov, zápisy v denníku a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
       },
       {
         heading: 'Duely',

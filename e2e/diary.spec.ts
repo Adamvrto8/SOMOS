@@ -52,3 +52,20 @@ test('a wrong or future date goes back to the diary', async ({ page }) => {
   await page.goto('/diary/2999-01-01')
   await expect(page).toHaveURL(/\/diary$/)
 })
+
+test('the Domov card: the day’s prompt and "Napísať", then ✓ and the first line of the entry', async ({ page }) => {
+  await page.goto('/')
+  const card = page.getByRole('region', { name: 'Dnešný zápis' })
+  await expect(card.locator('[lang="es"]').first()).toHaveText(/\?$|\.$/)
+  await card.getByRole('link', { name: 'Napísať' }).tap()
+  await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
+  await spanish(page).fill('Hoy comí tacos.\nDespués fui al parque.')
+  await expect(page.getByText('Uložené')).toBeVisible()
+
+  await page.goto('/')
+  await expect(card).toContainText('Hoy comí tacos.')
+  await expect(card).not.toContainText('Después fui al parque.')
+  await expect(card.getByRole('link', { name: 'Napísať' })).toHaveCount(0)
+  await card.getByRole('link', { name: 'Všetky zápisy' }).tap()
+  await expect(page).toHaveURL(/\/diary$/)
+})

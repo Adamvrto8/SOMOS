@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { Azulejos } from '../../components/Azulejos'
 import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
+import { DiaryCard } from '../diary/DiaryCard'
 import { useLessonProgression } from '../../lib/lessonProgress'
 import { useMistakes } from '../../lib/mistakes'
 import { useOnboarding } from '../../lib/onboarding'
@@ -64,6 +65,8 @@ export function HomePage() {
       {activity && <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />}
 
       <NextGoalCard />
+
+      <DiaryCard />
 
       <WordOfDayCard />
 

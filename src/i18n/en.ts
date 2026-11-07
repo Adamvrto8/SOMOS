@@ -1133,7 +1133,7 @@ export const en: Dictionary = {
   },
   privacy: {
     title: 'Privacy',
-    updated: 'Effective October 25, 2026',
+    updated: 'Effective November 7, 2026',
     sections: [
       {
         heading: 'Who we are',
@@ -1145,7 +1145,7 @@ export const en: Dictionary = {
       },
       {
         heading: 'With an account',
-        body: 'We store your e-mail (and, when you sign in with Google, your Google account identifier) and your progress: answers in exercises, saved and own words, reviews, mistakes, lesson and test results and settings. It is used only to keep your progress safe and on each of your devices.',
+        body: 'We store your e-mail (and, when you sign in with Google, your Google account identifier) and your progress: answers in exercises, saved and own words, reviews, mistakes, lesson and test results, diary entries and settings. It is used only to keep your progress safe and on each of your devices.',
       },
       {
         heading: 'Duels',
