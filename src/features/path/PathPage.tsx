@@ -2,7 +2,7 @@ import { Award, BookOpen, Check, ChevronDown, Lock } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
-import { grammarLabel, nextStep, stepHref, unitTitle, usePathState, type StepState, type UnitState } from '../../lib/path'
+import { grammarLabel, levelDone, nextStep, stepHref, unitTitle, usePathState, type StepState, type UnitState } from '../../lib/path'
 import { testHref } from '../tests/testTitle'
 
 const TILE = 'rounded-card border border-line bg-surface'
@@ -106,7 +106,18 @@ function UnitCard({ state, current, open, onToggle }: { state: UnitState; curren
               <StepRow key={step.id} unit={state} step={step} next={next?.index === i} />
             ))}
           </ol>
-          {!state.done && <p className="px-2 pt-1 text-xs text-ink-muted">{text.testOpen}</p>}
+          {!state.done && (
+            <div className="px-2 pt-2">
+              <Link
+                to={stepHref(state.unit, 'test')}
+                className={`flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-line bg-surface px-5 font-semibold transition duration-150 hover:bg-surface-2 active:scale-[0.98] ${FOCUS}`}
+              >
+                <Award size={18} strokeWidth={1.75} aria-hidden />
+                {text.skipTest}
+              </Link>
+              <p className="pt-1.5 text-center text-xs text-ink-muted">{text.skipHint}</p>
+            </div>
+          )}
         </div>
       )}
     </li>
@@ -115,7 +126,8 @@ function UnitCard({ state, current, open, onToggle }: { state: UnitState; curren
 
 /** Cesta: the units of the path level by level, the level and unit to do opened on its steps. */
 export function PathPage() {
-  const text = useT().path
+  const dictionary = useT()
+  const text = dictionary.path
   const states = usePathState()
   const next = nextStep(states)?.unit.unit
   const current = next?.id
@@ -145,7 +157,12 @@ export function PathPage() {
                 aria-expanded={levelOpen}
                 className={`flex min-h-11 w-full items-center justify-between gap-2 rounded-xl text-left text-xs font-semibold tracking-widest text-ink-muted uppercase ${FOCUS}`}
               >
-                {text.levelProgress(level, done, units.length)}
+                <span className="flex items-center gap-1.5">
+                  {levelDone(states, level) && (
+                    <Check size={14} strokeWidth={2.5} className="text-leaf" role="img" aria-label={dictionary.tests.levelDone(level)} />
+                  )}
+                  {text.levelProgress(level, done, units.length)}
+                </span>
                 <ChevronDown
                   size={18}
                   strokeWidth={1.75}

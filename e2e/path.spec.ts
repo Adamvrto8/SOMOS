@@ -150,3 +150,16 @@ test('a usage unit practises its blanks, "Prečo?" names the rule of the blank',
   const here = await tip.getByLabel('V tejto vete').innerText()
   expect(reasons.some((reason) => here.includes(reason))).toBe(true)
 })
+
+test('an open unit offers its test as "Viem to", a finished level has a check', async ({ page }) => {
+  await page.goto('/practice/path')
+  await expect(page.getByRole('link', { name: 'Viem to – urobiť test' })).toHaveAttribute('href', '/practice/test?level=A1&topic=greetings&part=1')
+  await expect(page.getByText('Keď ho splníš, jednotka je hotová.')).toBeVisible()
+  await expect(page.getByLabel('A1 zvládnutá')).toHaveCount(0)
+
+  await seed(page, {}, { A1: { bestScore: 15, total: 15, passed: true, attempts: 1, lastAt: 1 } })
+  await page.goto('/practice/path')
+  await expect(page.getByLabel('A1 zvládnutá')).toBeVisible()
+  // The path goes on in A2: its first unit offers its own test.
+  await expect(page.getByRole('link', { name: 'Viem to – urobiť test' })).toHaveAttribute('href', /level=A2/)
+})
