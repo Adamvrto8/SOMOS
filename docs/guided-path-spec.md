@@ -1,6 +1,7 @@
 # Cesta – riadený kurz (návrh)
 
-Stav: **fázy 1 a 2 postavené** (2026-10-27 a 2026-10-28, osnova A1 – B2), rozhodnutia v časti 10. Fáza 3 čaká.
+Stav: **fázy 1 a 2 postavené** (2026-10-27 a 2026-10-28, osnova A1 – B2), rozhodnutia v časti 10. Fáza 3 navrhnutá
+(2026-11-07, časť 10c).
 
 Cieľ: appka každý deň povie **„dnes toto“**. Učiaci sa nevyberá typ cvičenia, tému a úroveň. Ide po jednej
 ceste, kde sa striedajú nové slová, gramatika a typy cvičení, a za ním chodí opakovanie. Cvičiť zostáva ako
@@ -213,6 +214,71 @@ Fázy:
 - Obrazovka Cesta: úrovne sa dajú zbaliť, otvorená je tá, kde je ďalší krok.
 - Kroky jednotky sa počítajú, až keď ich niečo potrebuje (Domov a Cesta len aktuálnu a otvorené jednotky):
   stav 121 jednotiek trvá ~8 ms namiesto ~140 ms.
+
+## 10c. Fáza 3: doladenie (návrh odsúhlasený 2026-11-07)
+
+Tri veci: viditeľné preskočenie jednotky, ponuka inej úrovne po prvej lekcii a oslava úrovne. Nič nové na serveri,
+žiadny rozraďovací test.
+
+### Preskočenie testom („Viem to“)
+
+- Test jednotky je otvorený hneď už od fázy 1 (časť 10, bod 1). Dnes o tom hovorí len drobná veta pod krokmi.
+- Na rozbalenej jednotke, ktorá je **otvorená a nehotová**, je pod krokmi tlačidlo (secondary) **„Viem to – urobiť
+  test“** → `stepHref(unit, 'test')`. Pod ním krátka veta „Keď ho splníš, jednotka je hotová.“ (nahrádza `testOpen`).
+- Zámky sa nemenia: zamknutá jednotka sa preskočiť nedá, dopredu sa skáče len skúškou úrovne.
+- Splnený test ukáže doterajší koniec jednotky (`UnitDone`).
+
+### Ponuka inej úrovne po prvej lekcii
+
+Lacná náhrada rozraďovacieho testu: kto si v uvítaní zvolil úroveň zle, dostane raz ponuku ju zmeniť.
+
+- **Kedy**: na výsledku lekcie, ktorá je
+  - krok `words` **prvej jednotky štartovej úrovne** (`firstUnit(onboarding)`),
+  - **prvé kolo** (`round === 'full'`), nie oprava chýb ani „Zopakovať“ po nej,
+  - a ponuka ešte nebola (`onboarding.levelOffered !== true`).
+  Bez stavu uvítania (staré zariadenia s pokrokom) sa ponuka neukazuje.
+- **Smer** (skóre = `solved.size` z `lessonTotal`, ako na výsledku lekcie):
+  - všetko správne (10/10) a nad štartovou úrovňou je ďalšia → **vyššia** („Išlo ti to výborne. Chceš začať na A2?“,
+    „Áno, na A2“ / „Ostanem na A1“),
+  - najviac 40 % (4/10) a štartová úroveň nie je A1 → **nižšia** („Chceš radšej začať na A1?“, „Áno, na A1“ /
+    „Ostanem na A2“),
+  - inak nič. B2 nemá vyššiu, A1 nemá nižšiu.
+- **Raz**: keď sa výsledok tejto lekcie zobrazí, uloží sa `levelOffered: true` bez ohľadu na skóre a odpoveď. Kto má
+  6/10, ponuku už nedostane.
+- **Prijatie**: `updateOnboarding({ level })` a `navigate(stepHref(prvá jednotka novej úrovne, 'words'), { replace: true })`.
+  Nižšie úrovne ostávajú otvorené (`belowStart`), ako keď sa úroveň zvolí v uvítaní. Splnený krok pôvodnej úrovne
+  ostáva uložený. Téma z dôvodu ide za prvé dve jednotky novej štartovej úrovne (`orderedUnits`).
+- **Odmietnutie**: karta zmizne, nič iné sa nemení.
+- Karta je na výsledku nad všetkým ostatným (aj nad „Ulož si pokrok“ z uvítania, `&first=1`).
+- Uložená úroveň po novom prijme aj **B2** (`parse` v `onboarding.ts` berie všetky úrovne), výber v uvítaní ostáva
+  A1 – B1 (`START_LEVELS`).
+- Stav uvítania je len na zariadení (nie v zálohe ani v synchronizácii), takže štartová úroveň na druhom zariadení
+  chýba ako dnes.
+- Rozhodnutie je čistá funkcia `levelOffer({ unit, step, round, score, total, onboarding }): 'up' | 'down' | undefined`
+  v `src/lib/path.ts` (vracia aj cieľovú úroveň), karta je `src/features/path/LevelOffer.tsx`.
+
+### Oslava úrovne
+
+- **Kedy**: na výsledku splneného testu, ktorý úroveň **práve uzavrel**: test poslednej nehotovej jednotky úrovne
+  alebo skúška úrovne (aj test témy, ktorý uzavrie posledné jednotky). „Práve“ = úroveň nebola hotová, keď sa test
+  začal (TestPage si to zapamätá pri štarte), a po ňom hotová je (všetky jej jednotky `done`). Opakovaný test už
+  hotovej úrovne neoslavuje.
+- **Karta** `src/features/path/LevelDone.tsx` (väčšia ako `UnitDone`, rovnaké animácie): „¡Nivel A1 completado!“,
+  počet jednotiek, slov (`unitMaterial` všetkých jednotiek úrovne, bez opakovaní) a gramatických bodov úrovne,
+  tlačidlo „Ďalej: <úroveň> · <jednotka>“ na ďalší krok cesty (`nextStep`; kto začal vyššie, po B2 ide na nižšie
+  úrovne). Keď ďalší krok nie je, namiesto tlačidla veta `walked` („Celú cestu máš za sebou…“).
+- Keď úroveň uzavrie test jednotky, `LevelDone` **nahradí** `UnitDone` (nie obe naraz).
+- Obrazovka Cesta: nadpis hotovej úrovne má ✓ (počet jednotiek ostáva).
+- Funkcia `levelDone(states, level): boolean` v `path.ts`.
+
+### Texty, testy
+
+- Všetky nové texty v `sk.ts` aj `en.ts` (sekcia `path`).
+- `src/lib/path.test.ts`: `levelOffer` (10/10 hore, 4/10 dole, 5/10 nič, A1 bez nižšej, B2 bez vyššej, už ponúknuté,
+  iný krok alebo iná jednotka, kolo opravy, bez stavu uvítania), `levelDone`.
+- `e2e/path.spec.ts`: tlačidlo „Viem to“ vedie na test jednotky; 10/10 v prvej lekcii A1 → ponuka → „Áno, na A2“ →
+  krok 1 prvej jednotky A2 a Cesta ukazuje A2; oslava úrovne s vopred nahratým pokrokom (všetky jednotky úrovne okrem
+  poslednej hotové, splnenie jej testu).
 
 ## 11. Mimo rozsahu
 
