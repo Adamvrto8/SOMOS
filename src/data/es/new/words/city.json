@@ -1,0 +1,134 @@
+[
+  {
+    "id": "aparcamiento",
+    "es": "aparcamiento",
+    "sk": [
+      "parkovisko",
+      "parkovacie miesto"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "aparcamientos",
+    "level": "A2",
+    "topics": [
+      "city",
+      "travel"
+    ],
+    "examples": [
+      {
+        "es": "Hay un aparcamiento cerca del museo.",
+        "sk": "Pri múzeu je parkovisko."
+      },
+      {
+        "es": "No encuentro aparcamiento.",
+        "sk": "Nemôžem nájsť parkovacie miesto."
+      }
+    ],
+    "note": "V Mexiku „estacionamiento“."
+  },
+  {
+    "id": "ayuntamiento",
+    "es": "ayuntamiento",
+    "sk": [
+      "radnica",
+      "mestský úrad"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "ayuntamientos",
+    "level": "B1",
+    "topics": [
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "El ayuntamiento está en la plaza.",
+        "sk": "Radnica je na námestí."
+      },
+      {
+        "es": "Fui al ayuntamiento a pedir un permiso.",
+        "sk": "Išiel som na mestský úrad požiadať o povolenie."
+      }
+    ],
+    "note": "V Mexiku „palacio municipal“."
+  },
+  {
+    "id": "estanco",
+    "es": "estanco",
+    "sk": [
+      "trafika"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "estancos",
+    "level": "B1",
+    "topics": [
+      "city",
+      "shopping"
+    ],
+    "examples": [
+      {
+        "es": "Compro los sellos en el estanco.",
+        "sk": "Známky kupujem v trafike."
+      },
+      {
+        "es": "El estanco abre a las nueve.",
+        "sk": "Trafika otvára o deviatej."
+      }
+    ],
+    "note": "Štátom licencovaný obchod s tabakom, známkami a cestovnými lístkami."
+  },
+  {
+    "id": "quiosco",
+    "es": "quiosco",
+    "sk": [
+      "stánok s novinami",
+      "kiosk"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "quioscos",
+    "level": "A2",
+    "topics": [
+      "city",
+      "shopping"
+    ],
+    "examples": [
+      {
+        "es": "Compro el periódico en el quiosco.",
+        "sk": "Noviny kupujem v stánku."
+      },
+      {
+        "es": "El quiosco de la esquina vende revistas.",
+        "sk": "Stánok na rohu predáva časopisy."
+      }
+    ]
+  },
+  {
+    "id": "terraza",
+    "es": "terraza",
+    "sk": [
+      "terasa",
+      "vonkajšie posedenie"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "terrazas",
+    "level": "A2",
+    "topics": [
+      "city",
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Cenamos en una terraza.",
+        "sk": "Večeriame na terase."
+      },
+      {
+        "es": "En verano las terrazas están llenas.",
+        "sk": "V lete sú terasy plné."
+      }
+    ],
+    "note": "Vonkajšie posedenie pred barom je v Španielsku súčasťou života."
+  }
+]

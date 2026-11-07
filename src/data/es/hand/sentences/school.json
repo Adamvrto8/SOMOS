@@ -1,0 +1,1023 @@
+[
+  {
+    "id": "s1647",
+    "es": "¿Te interesa la historia de España?",
+    "tokens": [
+      "¿",
+      "Te",
+      "interesa",
+      "la",
+      "historia",
+      "de",
+      "España",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "interesa"
+      }
+    ],
+    "sk": "Zaujíma ťa história Španielska?",
+    "en": "Are you interested in the history of Spain?"
+  },
+  {
+    "id": "s1688",
+    "es": "La profesora nos explicó la tarea y la entendimos.",
+    "tokens": [
+      "La",
+      "profesora",
+      "nos",
+      "explicó",
+      "la",
+      "tarea",
+      "y",
+      "la",
+      "entendimos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "la"
+      }
+    ]
+  },
+  {
+    "id": "s1751",
+    "es": "Abrid el libro por la página diez.",
+    "tokens": [
+      "Abrid",
+      "el",
+      "libro",
+      "por",
+      "la",
+      "página",
+      "diez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Abrid",
+        "hint": "abrir · vosotros · imperativo",
+        "distractors": [
+          "Abran",
+          "Abre",
+          "Abro"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s307",
+    "es": "La profesora explica muy bien.",
+    "tokens": [
+      "La",
+      "profesora",
+      "explica",
+      "muy",
+      "bien",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "La"
+      }
+    ]
+  },
+  {
+    "id": "s313",
+    "es": "Mi hijo hace los deberes después de comer.",
+    "tokens": [
+      "Mi",
+      "hijo",
+      "hace",
+      "los",
+      "deberes",
+      "después",
+      "de",
+      "comer",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hace"
+      }
+    ]
+  },
+  {
+    "id": "s404",
+    "es": "El profesor escribió los deberes en la pizarra.",
+    "tokens": [
+      "El",
+      "profesor",
+      "escribió",
+      "los",
+      "deberes",
+      "en",
+      "la",
+      "pizarra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "escribió"
+      }
+    ]
+  },
+  {
+    "id": "s504",
+    "es": "La profesora nos explicó el imperfecto otra vez.",
+    "tokens": [
+      "La",
+      "profesora",
+      "nos",
+      "explicó",
+      "el",
+      "imperfecto",
+      "otra",
+      "vez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "explicó"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "nos"
+      }
+    ]
+  },
+  {
+    "id": "s505",
+    "es": "Si consigo la beca, estudiaré en Salamanca.",
+    "tokens": [
+      "Si",
+      "consigo",
+      "la",
+      "beca",
+      ",",
+      "estudiaré",
+      "en",
+      "Salamanca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "consigo"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "estudiaré"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "en"
+      }
+    ],
+    "sk": "Ak získam štipendium, budem študovať v Salamanke.",
+    "en": "If I get the scholarship, I'll study in Salamanca."
+  },
+  {
+    "id": "s506",
+    "es": "Saqué la mejor nota de la clase.",
+    "tokens": [
+      "Saqué",
+      "la",
+      "mejor",
+      "nota",
+      "de",
+      "la",
+      "clase",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Saqué"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mejor"
+      }
+    ]
+  },
+  {
+    "id": "s405",
+    "es": "Saqué una buena nota en el examen.",
+    "tokens": [
+      "Saqué",
+      "una",
+      "buena",
+      "nota",
+      "en",
+      "el",
+      "examen",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "buena"
+      }
+    ]
+  },
+  {
+    "id": "s570",
+    "es": "Si estudias todos los días, vas a aprobar el examen.",
+    "tokens": [
+      "Si",
+      "estudias",
+      "todos",
+      "los",
+      "días",
+      ",",
+      "vas",
+      "a",
+      "aprobar",
+      "el",
+      "examen",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estudias"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a"
+      }
+    ]
+  },
+  {
+    "id": "s571",
+    "es": "La profesora nos pidió los deberes dos veces.",
+    "tokens": [
+      "La",
+      "profesora",
+      "nos",
+      "pidió",
+      "los",
+      "deberes",
+      "dos",
+      "veces",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pidió"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "nos"
+      }
+    ]
+  },
+  {
+    "id": "s572",
+    "es": "Cuando estaba en el instituto, odiaba las matemáticas.",
+    "tokens": [
+      "Cuando",
+      "estaba",
+      "en",
+      "el",
+      "instituto",
+      ",",
+      "odiaba",
+      "las",
+      "matemáticas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "estaba"
+      }
+    ]
+  },
+  {
+    "id": "s574",
+    "es": "El próximo semestre haré un curso de francés.",
+    "tokens": [
+      "El",
+      "próximo",
+      "semestre",
+      "haré",
+      "un",
+      "curso",
+      "de",
+      "francés",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "haré",
+        "lemma": "hacer",
+        "hint": "hacer · yo · futuro",
+        "distractors": [
+          "hago",
+          "hice",
+          "haría"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s422",
+    "es": "En el colegio tenía un profesor muy estricto.",
+    "tokens": [
+      "En",
+      "el",
+      "colegio",
+      "tenía",
+      "un",
+      "profesor",
+      "muy",
+      "estricto",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tenía"
+      }
+    ]
+  },
+  {
+    "id": "s911",
+    "es": "Suspendió dos asignaturas y tiene que presentarse a la recuperación.",
+    "tokens": [
+      "Suspendió",
+      "dos",
+      "asignaturas",
+      "y",
+      "tiene",
+      "que",
+      "presentarse",
+      "a",
+      "la",
+      "recuperación",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Suspendió",
+        "lemma": "suspender",
+        "hint": "suspender · él · pretérito",
+        "distractors": [
+          "Suspende",
+          "Suspendía",
+          "Suspenderá"
+        ]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s913",
+    "es": "Me inscribí en un curso de francés.",
+    "tokens": [
+      "Me",
+      "inscribí",
+      "en",
+      "un",
+      "curso",
+      "de",
+      "francés",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "inscribí"
+      }
+    ]
+  },
+  {
+    "id": "s915",
+    "es": "Mañana nos entregan el boletín de notas.",
+    "tokens": [
+      "Mañana",
+      "nos",
+      "entregan",
+      "el",
+      "boletín",
+      "de",
+      "notas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "boletín",
+        "lemma": "boletín",
+        "hint": "vysvedčenie",
+        "distractors": [
+          "boleto",
+          "botella",
+          "bolsillo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s917",
+    "es": "Antes de titularte tienes que hacer tus prácticas.",
+    "tokens": [
+      "Antes",
+      "de",
+      "titularte",
+      "tienes",
+      "que",
+      "hacer",
+      "tus",
+      "prácticas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "prácticas",
+        "lemma": "prácticas",
+        "hint": "prax",
+        "distractors": [
+          "práctica",
+          "prácticos",
+          "precios"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tienes"
+      }
+    ],
+    "sk": "Pred ukončením štúdia musíš absolvovať prax.",
+    "en": "Before you graduate you have to do your internship.",
+    "enHints": [
+      "work placement",
+      null
+    ]
+  },
+  {
+    "id": "s918",
+    "es": "La matrícula de esa universidad es carísima.",
+    "tokens": [
+      "La",
+      "matrícula",
+      "de",
+      "esa",
+      "universidad",
+      "es",
+      "carísima",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "matrícula",
+        "lemma": "matrícula",
+        "hint": "školné",
+        "distractors": [
+          "materia",
+          "matemáticas",
+          "multa"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s920",
+    "es": "Quiero hacer un máster en el extranjero.",
+    "tokens": [
+      "Quiero",
+      "hacer",
+      "un",
+      "máster",
+      "en",
+      "el",
+      "extranjero",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "máster",
+        "lemma": "máster",
+        "hint": "postgraduálne štúdium",
+        "distractors": [
+          "maestro",
+          "mástil",
+          "mapa"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1396",
+    "es": "La clase de historia es en el aula cinco.",
+    "tokens": [
+      "La",
+      "clase",
+      "de",
+      "historia",
+      "es",
+      "en",
+      "el",
+      "aula",
+      "cinco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "es"
+      }
+    ]
+  },
+  {
+    "id": "s906",
+    "es": "Mi hija va a tercero de primaria.",
+    "tokens": [
+      "Mi",
+      "hija",
+      "va",
+      "a",
+      "tercero",
+      "de",
+      "primaria",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "primaria"
+      }
+    ]
+  },
+  {
+    "id": "s909",
+    "es": "Mi hijo entra en el instituto en septiembre.",
+    "tokens": [
+      "Mi",
+      "hijo",
+      "entra",
+      "en",
+      "el",
+      "instituto",
+      "en",
+      "septiembre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entra"
+      }
+    ]
+  },
+  {
+    "id": "s1403",
+    "es": "Me gustaría estudiar un máster, pero todavía no sé en qué.",
+    "tokens": [
+      "Me",
+      "gustaría",
+      "estudiar",
+      "un",
+      "máster",
+      ",",
+      "pero",
+      "todavía",
+      "no",
+      "sé",
+      "en",
+      "qué",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "sé"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "gustaría"
+      }
+    ]
+  },
+  {
+    "id": "s1404",
+    "es": "Mi nota media ha bajado este semestre porque trabajaba mientras estudiaba.",
+    "tokens": [
+      "Mi",
+      "nota",
+      "media",
+      "ha",
+      "bajado",
+      "este",
+      "semestre",
+      "porque",
+      "trabajaba",
+      "mientras",
+      "estudiaba",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 5,
+        "answer": "este"
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 8,
+        "answer": "trabajaba"
+      }
+    ]
+  },
+  {
+    "id": "s1406",
+    "es": "El profe nos puso muchos deberes para las vacaciones.",
+    "tokens": [
+      "El",
+      "profe",
+      "nos",
+      "puso",
+      "muchos",
+      "deberes",
+      "para",
+      "las",
+      "vacaciones",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "puso",
+        "lemma": "poner",
+        "hint": "poner · él · pretérito",
+        "distractors": [
+          "pone",
+          "ponía",
+          "pondrá"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1408",
+    "es": "Le puse muchas ganas a la tesis y por fin me titulé.",
+    "tokens": [
+      "Le",
+      "puse",
+      "muchas",
+      "ganas",
+      "a",
+      "la",
+      "tesis",
+      "y",
+      "por",
+      "fin",
+      "me",
+      "titulé",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ganas"
+      }
+    ]
+  },
+  {
+    "id": "s1409",
+    "es": "Hice novillos con mis amigos y me pillaron.",
+    "tokens": [
+      "Hice",
+      "novillos",
+      "con",
+      "mis",
+      "amigos",
+      "y",
+      "me",
+      "pillaron",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "newIndex": 0,
+        "answer": "Hice",
+        "lemma": "hacer",
+        "hint": "hacer · yo · pretérito",
+        "distractors": [
+          "Hago",
+          "Hizo",
+          "Haría"
+        ]
+      },
+      {
+        "tokenIndex": 4,
+        "newIndex": 2,
+        "answer": "con"
+      }
+    ]
+  },
+  {
+    "id": "s1411",
+    "es": "Mis padres me exigían sacar solo sobresalientes.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "me",
+      "exigían",
+      "sacar",
+      "solo",
+      "sobresalientes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "exigían"
+      }
+    ]
+  },
+  {
+    "id": "s1412",
+    "es": "Hice la selectividad y entré en la carrera que quería.",
+    "tokens": [
+      "Hice",
+      "la",
+      "selectividad",
+      "y",
+      "entré",
+      "en",
+      "la",
+      "carrera",
+      "que",
+      "quería",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hice"
+      },
+      {
+        "tokenIndex": 13,
+        "newIndex": 8,
+        "answer": "que"
+      }
+    ],
+    "sk": "Robil som prijímačky a dostal som sa na odbor, ktorý som chcel.",
+    "en": "I took the university entrance exam and got into the degree I wanted."
+  },
+  {
+    "id": "s1414",
+    "es": "Me falta poco para terminar la carrera; solo me quedan dos asignaturas.",
+    "tokens": [
+      "Me",
+      "falta",
+      "poco",
+      "para",
+      "terminar",
+      "la",
+      "carrera",
+      ";",
+      "solo",
+      "me",
+      "quedan",
+      "dos",
+      "asignaturas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "carrera"
+      }
+    ]
+  },
+  {
+    "id": "s1416",
+    "es": "Toda la semana me quemé las pestañas estudiando para el examen final.",
+    "tokens": [
+      "Toda",
+      "la",
+      "semana",
+      "me",
+      "quemé",
+      "las",
+      "pestañas",
+      "estudiando",
+      "para",
+      "el",
+      "examen",
+      "final",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "estudiando"
+      }
+    ]
+  },
+  {
+    "id": "s1402",
+    "es": "El próximo año mi hija estudiará en el instituto.",
+    "tokens": [
+      "El",
+      "próximo",
+      "año",
+      "mi",
+      "hija",
+      "estudiará",
+      "en",
+      "el",
+      "instituto",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "estudiará"
+      }
+    ]
+  },
+  {
+    "id": "s1852",
+    "es": "Mis padres quieren que estudie más.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "quieren",
+      "que",
+      "estudie",
+      "más",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estudie"
+      }
+    ]
+  },
+  {
+    "id": "s1922",
+    "es": "Estudio mucho para que mis padres se sientan orgullosos.",
+    "tokens": [
+      "Estudio",
+      "mucho",
+      "para",
+      "que",
+      "mis",
+      "padres",
+      "se",
+      "sientan",
+      "orgullosos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "sientan"
+      }
+    ]
+  },
+  {
+    "id": "s1968",
+    "es": "El colegio está abierto desde temprano.",
+    "tokens": [
+      "El",
+      "colegio",
+      "está",
+      "abierto",
+      "desde",
+      "temprano",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "abierto"
+      }
+    ],
+    "sk": "Škola je otvorená od rána.",
+    "en": "The school is open from early on."
+  },
+  {
+    "id": "s2100",
+    "es": "El colegio donde estudié la ESO cerró el año pasado por falta de alumnos.",
+    "tokens": [
+      "El",
+      "colegio",
+      "donde",
+      "estudié",
+      "la",
+      "ESO",
+      "cerró",
+      "el",
+      "año",
+      "pasado",
+      "por",
+      "falta",
+      "de",
+      "alumnos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde"
+      }
+    ]
+  },
+  {
+    "id": "s2106",
+    "es": "Me alegra que la profesora nos deje salir al recreo diez minutos antes hoy.",
+    "tokens": [
+      "Me",
+      "alegra",
+      "que",
+      "la",
+      "profesora",
+      "nos",
+      "deje",
+      "salir",
+      "al",
+      "recreo",
+      "diez",
+      "minutos",
+      "antes",
+      "hoy",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "deje"
+      }
+    ]
+  },
+  {
+    "id": "s1666",
+    "es": "El profesor está en el despacho.",
+    "tokens": [
+      "El",
+      "profesor",
+      "está",
+      "en",
+      "el",
+      "despacho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está"
+      }
+    ]
+  },
+  {
+    "id": "s1769",
+    "es": "El profesor nos preguntó si habíamos hecho los deberes.",
+    "tokens": [
+      "El",
+      "profesor",
+      "nos",
+      "preguntó",
+      "si",
+      "habíamos",
+      "hecho",
+      "los",
+      "deberes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "hecho"
+      }
+    ]
+  }
+]

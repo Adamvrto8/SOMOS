@@ -1,0 +1,757 @@
+[
+  {
+    "id": "s008",
+    "es": "Mi amigo Carlos es de Sevilla.",
+    "tokens": [
+      "Mi",
+      "amigo",
+      "Carlos",
+      "es",
+      "de",
+      "Sevilla",
+      "."
+    ],
+    "sk": "Môj kamarát Carlos je zo Sevilly.",
+    "en": "My friend Carlos is from Seville."
+  },
+  {
+    "id": "s064",
+    "es": "¿Cómo estáis?",
+    "tokens": [
+      "¿",
+      "Cómo",
+      "estáis",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estáis",
+        "hint": "ser/estar · vosotros · presente"
+      }
+    ]
+  },
+  {
+    "id": "s465",
+    "es": "¿Qué tal estás? Hace mucho que no te veo.",
+    "tokens": [
+      "¿",
+      "Qué",
+      "tal",
+      "estás",
+      "?",
+      "Hace",
+      "mucho",
+      "que",
+      "no",
+      "te",
+      "veo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "estar · tú · presente",
+        "distractors": [
+          "estamos",
+          "estoy",
+          "estuviste"
+        ]
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 7
+      }
+    ]
+  },
+  {
+    "id": "s466",
+    "es": "Qué le vamos a hacer, lo intentaremos otra vez.",
+    "tokens": [
+      "Qué",
+      "le",
+      "vamos",
+      "a",
+      "hacer",
+      ",",
+      "lo",
+      "intentaremos",
+      "otra",
+      "vez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 7
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 6
+      }
+    ]
+  },
+  {
+    "id": "s546",
+    "es": "¡Cuánto tiempo! Hace años que no nos vemos.",
+    "tokens": [
+      "¡",
+      "Cuánto",
+      "tiempo",
+      "!",
+      "Hace",
+      "años",
+      "que",
+      "no",
+      "nos",
+      "vemos",
+      "."
+    ],
+    "sk": "Ako dávno! Nevideli sme sa celé roky.",
+    "en": "Long time no see! We haven't seen each other in years."
+  },
+  {
+    "id": "s548",
+    "es": "Me alegró mucho conocerte.",
+    "tokens": [
+      "Me",
+      "alegró",
+      "mucho",
+      "conocerte",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "alegró",
+        "lemma": "alegrar",
+        "hint": "alegrar · él · pretérito",
+        "distractors": [
+          "alegra",
+          "alegraba",
+          "alegrará"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1753",
+    "es": "Pasa y siéntate como en tu casa.",
+    "tokens": [
+      "Pasa",
+      "y",
+      "siéntate",
+      "como",
+      "en",
+      "tu",
+      "casa",
+      "."
+    ]
+  },
+  {
+    "id": "s625",
+    "es": "¡Por supuesto! Con mucho gusto te ayudo.",
+    "tokens": [
+      "¡",
+      "Por",
+      "supuesto",
+      "!",
+      "Con",
+      "mucho",
+      "gusto",
+      "te",
+      "ayudo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 8
+      }
+    ]
+  },
+  {
+    "id": "s627",
+    "es": "Gracias por invitarme, lo pasé muy bien.",
+    "tokens": [
+      "Gracias",
+      "por",
+      "invitarme",
+      ",",
+      "lo",
+      "pasé",
+      "muy",
+      "bien",
+      "."
+    ]
+  },
+  {
+    "id": "s633",
+    "es": "Tu hermano es muy majo.",
+    "tokens": [
+      "Tu",
+      "hermano",
+      "es",
+      "muy",
+      "majo",
+      "."
+    ]
+  },
+  {
+    "id": "s636",
+    "es": "¿Me echas una mano con la mudanza?",
+    "tokens": [
+      "¿",
+      "Me",
+      "echas",
+      "una",
+      "mano",
+      "con",
+      "la",
+      "mudanza",
+      "?"
+    ]
+  },
+  {
+    "id": "s637",
+    "es": "¡Qué vergüenza! Me caí delante de todos.",
+    "tokens": [
+      "¡",
+      "Qué",
+      "vergüenza",
+      "!",
+      "Me",
+      "caí",
+      "delante",
+      "de",
+      "todos",
+      "."
+    ]
+  },
+  {
+    "id": "s638",
+    "es": "Me da vergüenza pedirle dinero a mi padre.",
+    "tokens": [
+      "Me",
+      "da",
+      "vergüenza",
+      "pedirle",
+      "dinero",
+      "a",
+      "mi",
+      "padre",
+      "."
+    ]
+  },
+  {
+    "id": "s639",
+    "es": "Quedamos en vernos a las cinco en la plaza Mayor.",
+    "tokens": [
+      "Quedamos",
+      "en",
+      "vernos",
+      "a",
+      "las",
+      "cinco",
+      "en",
+      "la",
+      "plaza",
+      "Mayor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "plaza",
+        "lemma": "plaza",
+        "distractors": [
+          "mercadillo",
+          "recreo",
+          "cajero"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s641",
+    "es": "Me temo que no puedo ir, tengo mucho trabajo.",
+    "tokens": [
+      "Me",
+      "temo",
+      "que",
+      "no",
+      "puedo",
+      "ir",
+      ",",
+      "tengo",
+      "mucho",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 4
+      },
+      {
+        "tokenIndex": 7,
+        "newIndex": 8,
+        "answer": "mucho",
+        "distractors": [
+          "mucha",
+          "muchas",
+          "muy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s643",
+    "es": "Me mola la idea de ir a la playa.",
+    "tokens": [
+      "Me",
+      "mola",
+      "la",
+      "idea",
+      "de",
+      "ir",
+      "a",
+      "la",
+      "playa",
+      "."
+    ]
+  },
+  {
+    "id": "s1200",
+    "es": "¿Qué tal? ¿Cómo te fue en el examen?",
+    "tokens": [
+      "¿",
+      "Qué",
+      "tal",
+      "?",
+      "¿",
+      "Cómo",
+      "te",
+      "fue",
+      "en",
+      "el",
+      "examen",
+      "?"
+    ]
+  },
+  {
+    "id": "s1201",
+    "es": "Ayer conocí a tus padres, son muy amables.",
+    "tokens": [
+      "Ayer",
+      "conocí",
+      "a",
+      "tus",
+      "padres",
+      ",",
+      "son",
+      "muy",
+      "amables",
+      "."
+    ]
+  },
+  {
+    "id": "s1208",
+    "es": "Estamos esperando a tus padres para saludarlos.",
+    "tokens": [
+      "Estamos",
+      "esperando",
+      "a",
+      "tus",
+      "padres",
+      "para",
+      "saludarlos",
+      "."
+    ]
+  },
+  {
+    "id": "s1209",
+    "es": "¡Vaya! No sabía que hablabas español.",
+    "tokens": [
+      "¡",
+      "Vaya",
+      "!",
+      "No",
+      "sabía",
+      "que",
+      "hablabas",
+      "español",
+      "."
+    ]
+  },
+  {
+    "id": "s1210",
+    "es": "Vale, te veré mañana a las nueve.",
+    "tokens": [
+      "Vale",
+      ",",
+      "te",
+      "veré",
+      "mañana",
+      "a",
+      "las",
+      "nueve",
+      "."
+    ]
+  },
+  {
+    "id": "s1212",
+    "es": "¡Qué bueno que viniste! Te echábamos mucho de menos.",
+    "tokens": [
+      "¡",
+      "Qué",
+      "bueno",
+      "que",
+      "viniste",
+      "!",
+      "Te",
+      "echábamos",
+      "mucho",
+      "de",
+      "menos",
+      "."
+    ]
+  },
+  {
+    "id": "s1214",
+    "es": "¿En serio te vas a vivir a Barcelona? ¡Te vamos a echar de menos!",
+    "tokens": [
+      "¿",
+      "En",
+      "serio",
+      "te",
+      "vas",
+      "a",
+      "vivir",
+      "a",
+      "Barcelona",
+      "?",
+      "¡",
+      "Te",
+      "vamos",
+      "a",
+      "echar",
+      "de",
+      "menos",
+      "!"
+    ],
+    "sk": "Fakt sa sťahuješ do Barcelony? Budeš nám chýbať!",
+    "en": "Are you really moving to Barcelona? We are going to miss you!"
+  },
+  {
+    "id": "s1216",
+    "es": "Depende de la región, pero en España casi todos se saludan con dos besos.",
+    "tokens": [
+      "Depende",
+      "de",
+      "la",
+      "región",
+      ",",
+      "pero",
+      "en",
+      "España",
+      "casi",
+      "todos",
+      "se",
+      "saludan",
+      "con",
+      "dos",
+      "besos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 13,
+        "newIndex": 14,
+        "answer": "besos",
+        "distractors": [
+          "nombres",
+          "gustos",
+          "permisos"
+        ]
+      }
+    ],
+    "sk": "Záleží na regióne, ale v Španielsku sa skoro všetci zdravia dvoma bozkami.",
+    "en": "It depends on the region, but in Spain almost everyone greets each other with two kisses."
+  },
+  {
+    "id": "s1217",
+    "es": "Cuando llegué a la oficina, todos estaban cantando el cumpleaños feliz.",
+    "tokens": [
+      "Cuando",
+      "llegué",
+      "a",
+      "la",
+      "oficina",
+      ",",
+      "todos",
+      "estaban",
+      "cantando",
+      "el",
+      "cumpleaños",
+      "feliz",
+      "."
+    ],
+    "sk": "Keď som prišiel do kancelárie, všetci spievali Cumpleaños feliz.",
+    "en": "When I got to the office, everyone was singing happy birthday."
+  },
+  {
+    "id": "s1219",
+    "es": "Venga, quédate a cenar, mi madre ha preparado mucha comida.",
+    "tokens": [
+      "Venga",
+      ",",
+      "quédate",
+      "a",
+      "cenar",
+      ",",
+      "mi",
+      "madre",
+      "ha",
+      "preparado",
+      "mucha",
+      "comida",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "newIndex": 9,
+        "answer": "preparado",
+        "hint": "preparar · participio",
+        "distractors": [
+          "preparó",
+          "preparando",
+          "preparaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1221",
+    "es": "¡No me lo puedo creer! Hace siglos que no te veía, estás igualito.",
+    "tokens": [
+      "¡",
+      "No",
+      "me",
+      "lo",
+      "puedo",
+      "creer",
+      "!",
+      "Hace",
+      "siglos",
+      "que",
+      "no",
+      "te",
+      "veía",
+      ",",
+      "estás",
+      "igualito",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "newIndex": 14
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 9
+      }
+    ]
+  },
+  {
+    "id": "s1223",
+    "es": "Hizo como si no me conociera cuando lo saludé.",
+    "tokens": [
+      "Hizo",
+      "como",
+      "si",
+      "no",
+      "me",
+      "conociera",
+      "cuando",
+      "lo",
+      "saludé",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 5,
+        "answer": "conociera",
+        "hint": "conocer · él · subjuntivo imperfecto",
+        "distractors": [
+          "conocía",
+          "conoció",
+          "conocerá"
+        ]
+      },
+      {
+        "tokenIndex": 8,
+        "newIndex": 7
+      }
+    ]
+  },
+  {
+    "id": "s1224",
+    "es": "Se me hizo tarde y ni me despedí de tus padres.",
+    "tokens": [
+      "Se",
+      "me",
+      "hizo",
+      "tarde",
+      "y",
+      "ni",
+      "me",
+      "despedí",
+      "de",
+      "tus",
+      "padres",
+      "."
+    ]
+  },
+  {
+    "id": "s1225",
+    "es": "Luego paso a saludar a tu abuela, si no es molestia.",
+    "tokens": [
+      "Luego",
+      "paso",
+      "a",
+      "saludar",
+      "a",
+      "tu",
+      "abuela",
+      ",",
+      "si",
+      "no",
+      "es",
+      "molestia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 1
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "s1226",
+    "es": "Ponle ganas en tu nuevo trabajo, ya verás que te irá bien.",
+    "tokens": [
+      "Ponle",
+      "ganas",
+      "en",
+      "tu",
+      "nuevo",
+      "trabajo",
+      ",",
+      "ya",
+      "verás",
+      "que",
+      "te",
+      "irá",
+      "bien",
+      "."
+    ]
+  },
+  {
+    "id": "s1227",
+    "es": "Ay, qué vergüenza, no me acordaba de tu nombre.",
+    "tokens": [
+      "Ay",
+      ",",
+      "qué",
+      "vergüenza",
+      ",",
+      "no",
+      "me",
+      "acordaba",
+      "de",
+      "tu",
+      "nombre",
+      "."
+    ]
+  },
+  {
+    "id": "s1229",
+    "es": "Ya está bien, me dejaste plantado otra vez.",
+    "tokens": [
+      "Ya",
+      "está",
+      "bien",
+      ",",
+      "me",
+      "dejaste",
+      "plantado",
+      "otra",
+      "vez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s1230",
+    "es": "¿Ya te vas? Si son solo las diez.",
+    "tokens": [
+      "¿",
+      "Ya",
+      "te",
+      "vas",
+      "?",
+      "Si",
+      "son",
+      "solo",
+      "las",
+      "diez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "newIndex": 6
+      }
+    ]
+  },
+  {
+    "id": "s2042",
+    "es": "Cuando conozcas a mis padres, no olvides saludarlos con dos besos y con una sonrisa.",
+    "tokens": [
+      "Cuando",
+      "conozcas",
+      "a",
+      "mis",
+      "padres",
+      ",",
+      "no",
+      "olvides",
+      "saludarlos",
+      "con",
+      "dos",
+      "besos",
+      "y",
+      "con",
+      "una",
+      "sonrisa",
+      "."
+    ]
+  }
+]

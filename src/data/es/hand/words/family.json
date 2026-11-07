@@ -1,0 +1,32 @@
+[
+  {
+    "id": "chavo",
+    "hidden": true
+  },
+  {
+    "id": "cuate",
+    "hidden": true
+  },
+  {
+    "id": "quinceanera",
+    "hidden": true
+  },
+  {
+    "id": "chamaco",
+    "hidden": true
+  },
+  {
+    "id": "apapacho",
+    "hidden": true
+  },
+  {
+    "id": "tio",
+    "note": "Hovorovo aj „chlap, kámoš“: ¡Qué tío más majo! La tía = baba, kámoška.",
+    "noteEn": "Colloquially also “guy, mate”: ¡Qué tío más majo! La tía = girl, mate."
+  },
+  {
+    "id": "hombre",
+    "note": "V Španielsku aj zvolanie: ¡Hombre, qué sorpresa! = No to je prekvapenie!",
+    "noteEn": "In Spain also an interjection: ¡Hombre, qué sorpresa! = Well, what a surprise!"
+  }
+]

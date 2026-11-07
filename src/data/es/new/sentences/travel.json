@@ -1,0 +1,349 @@
+[
+  {
+    "id": "s9005",
+    "es": "Este año hemos viajado a Sevilla dos veces.",
+    "sk": "Tento rok sme cestovali do Sevilly dvakrát.",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "año",
+      "hemos",
+      "viajado",
+      "a",
+      "Sevilla",
+      "dos",
+      "veces",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hemos",
+        "lemma": "haber",
+        "hint": "haber · nosotros",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hubimos",
+          "habíamos",
+          "hayamos"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "viajado",
+        "lemma": "viajar",
+        "hint": "viajar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "viajamos",
+          "viajando",
+          "viajábamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9007",
+    "es": "¿Ya habéis comprado los billetes de tren?",
+    "sk": "Už ste kúpili lístky na vlak?",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Ya",
+      "habéis",
+      "comprado",
+      "los",
+      "billetes",
+      "de",
+      "tren",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "comprado",
+        "lemma": "comprar",
+        "hint": "comprar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "comprasteis",
+          "comprando",
+          "comprabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9008",
+    "es": "Nunca he estado en Valencia.",
+    "sk": "Nikdy som nebol vo Valencii.",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Nunca",
+      "he",
+      "estado",
+      "en",
+      "Valencia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estado",
+        "lemma": "estar",
+        "hint": "estar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "estuve",
+          "estando",
+          "estaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9053",
+    "es": "La semana pasada fuiste a Sevilla, ¿verdad?",
+    "sk": "Minulý týždeň si bol v Seville, však?",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "La",
+      "semana",
+      "pasada",
+      "fuiste",
+      "a",
+      "Sevilla",
+      ",",
+      "¿",
+      "verdad",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fuiste",
+        "lemma": "ir",
+        "hint": "ir · tú",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "has ido",
+          "vas",
+          "ibas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9055",
+    "es": "En 2019 fuimos a Italia en tren.",
+    "sk": "V roku 2019 sme išli do Talianska vlakom.",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "En",
+      "2019",
+      "fuimos",
+      "a",
+      "Italia",
+      "en",
+      "tren",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fuimos",
+        "lemma": "ir",
+        "hint": "ir · nosotros",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "hemos ido",
+          "vamos",
+          "íbamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9063",
+    "es": "El verano pasado estuve en Cádiz con mis primos.",
+    "sk": "Minulé leto som bol v Cádize s bratrancami.",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "verano",
+      "pasado",
+      "estuve",
+      "en",
+      "Cádiz",
+      "con",
+      "mis",
+      "primos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estuve",
+        "lemma": "estar",
+        "hint": "estar · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he estado",
+          "estoy",
+          "estaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9079",
+    "es": "Este año hemos viajado mucho.",
+    "sk": "Tento rok sme veľa cestovali.",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "año",
+      "hemos",
+      "viajado",
+      "mucho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hemos",
+        "lemma": "haber",
+        "hint": "haber · nosotros",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubimos",
+          "habíamos",
+          "hayamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9081",
+    "es": "¿Alguna vez has estado en México?",
+    "sk": "Bol si niekedy v Mexiku?",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Alguna",
+      "vez",
+      "has",
+      "estado",
+      "en",
+      "México",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "has",
+        "lemma": "haber",
+        "hint": "haber · tú",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubiste",
+          "habías",
+          "hayas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9105",
+    "es": "¿Cuándo vendréis a Madrid?",
+    "sk": "Kedy prídete do Madridu?",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "grammar": [
+      "futuro"
+    ],
+    "tokens": [
+      "¿",
+      "Cuándo",
+      "vendréis",
+      "a",
+      "Madrid",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vendréis",
+        "lemma": "venir",
+        "hint": "venir · vosotros · futuro",
+        "distractors": [
+          "vendrán",
+          "vendremos",
+          "veníais"
+        ]
+      }
+    ]
+  }
+]

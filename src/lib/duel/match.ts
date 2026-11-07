@@ -1,3 +1,4 @@
+import { variantOnly } from '../../data'
 import type { Level } from '../../data/types'
 import type { Verdict } from '../checkAnswer'
 import { getStablePool, noneUsed, pickVaried, seededRandom, taskFromItem, taskKeys, type ExerciseType, type Task } from '../lesson'
@@ -24,6 +25,20 @@ export interface DuelRound {
   items: string[] // itemIds as in Chyby: "s001#0", "tener:preterito:yo", "casa:sk-es"
 }
 
+/** Whether the opponent has this task whatever Spanish they study: no vosotros, nothing only Spain or only Mexico has. */
+export function inBothVariants(task: Task): boolean {
+  switch (task.kind) {
+    case 'conjugation':
+      return task.person !== 'vosotros' && !variantOnly.verbs.has(task.verb.id)
+    case 'vocab':
+      return !variantOnly.words.has(task.word.id)
+    case 'matching':
+      return task.pairs.every((p) => !variantOnly.words.has(p.word.id))
+    default:
+      return !variantOnly.sentence(task.sentence.id)
+  }
+}
+
 /** Round 2 takes turns between Časovanie and Slovná zásoba, from one duel to the next. */
 export function roundTypes(seed: number): ExerciseType[] {
   return ['choice', seed % 2 === 0 ? 'conjugation' : 'vocab', 'builder']
@@ -35,8 +50,7 @@ export function buildRounds(level: Level, seed: number): DuelRound[] {
   const used = noneUsed()
   return roundTypes(seed).map((type) => {
     const filter = type === 'conjugation' ? { type, level, tense: 'all' as const } : { type, level, topic: 'all' }
-    // No vosotros task: the opponent may study Mexican Spanish, which has none.
-    const pool = getStablePool(filter).filter((task) => task.kind !== 'conjugation' || task.person !== 'vosotros')
+    const pool = getStablePool(filter).filter(inBothVariants)
     // Fisher–Yates with the duel's own numbers: the same seed, the same pick.
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(random() * (i + 1))

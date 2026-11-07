@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fraccionamiento",
+    "hidden": true
+  },
+  {
+    "id": "tinaco",
+    "hidden": true
+  },
+  {
+    "id": "azotea",
+    "note": "Plochá strecha alebo strešná terasa, kde sa často suší bielizeň.",
+    "noteEn": "A flat roof or roof terrace, often used for drying laundry."
+  },
+  {
+    "id": "casero",
+    "examples": [
+      {
+        "es": "El casero viene a cobrar el alquiler.",
+        "sk": "Domáci prichádza vybrať nájomné."
+      }
+    ]
+  },
+  {
+    "id": "departamento",
+    "note": "V Mexiku: departamento.",
+    "noteEn": "In Mexico: departamento."
+  },
+  {
+    "id": "regadera",
+    "note": "V Mexiku: regadera.",
+    "noteEn": "In Mexico: regadera."
+  },
+  {
+    "id": "cobija",
+    "note": "V Mexiku: cobija.",
+    "noteEn": "In Mexico: cobija."
+  },
+  {
+    "id": "plomero",
+    "note": "V Mexiku: plomero.",
+    "noteEn": "In Mexico: plomero."
+  }
+]

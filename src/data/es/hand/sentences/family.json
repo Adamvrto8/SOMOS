@@ -1,0 +1,678 @@
+[
+  {
+    "id": "s011",
+    "es": "Mis padres viven en Valencia.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "viven",
+      "en",
+      "Valencia",
+      "."
+    ],
+    "sk": "Moji rodičia bývajú vo Valencii.",
+    "en": "My parents live in Valencia."
+  },
+  {
+    "id": "s076",
+    "es": "Mis padres están casados desde hace treinta años.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "están",
+      "casados",
+      "desde",
+      "hace",
+      "treinta",
+      "años",
+      "."
+    ]
+  },
+  {
+    "id": "s075",
+    "es": "Tengo tres primos en Sevilla.",
+    "tokens": [
+      "Tengo",
+      "tres",
+      "primos",
+      "en",
+      "Sevilla",
+      "."
+    ],
+    "sk": "V Seville mám troch bratrancov.",
+    "en": "I have three cousins in Seville."
+  },
+  {
+    "id": "s081",
+    "es": "Mi abuela cocina la mejor tortilla de patatas del mundo.",
+    "tokens": [
+      "Mi",
+      "abuela",
+      "cocina",
+      "la",
+      "mejor",
+      "tortilla",
+      "de",
+      "patatas",
+      "del",
+      "mundo",
+      "."
+    ],
+    "sk": "Moja babka varí najlepšiu tortillu na svete.",
+    "en": "My grandma makes the best tortilla de patatas in the world."
+  },
+  {
+    "id": "s082",
+    "es": "Los domingos comemos juntos en casa de mis padres.",
+    "tokens": [
+      "Los",
+      "domingos",
+      "comemos",
+      "juntos",
+      "en",
+      "casa",
+      "de",
+      "mis",
+      "padres",
+      "."
+    ]
+  },
+  {
+    "id": "s084",
+    "es": "Te echo mucho de menos, mamá.",
+    "tokens": [
+      "Te",
+      "echo",
+      "mucho",
+      "de",
+      "menos",
+      ",",
+      "mamá",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "echo",
+        "lemma": "echar",
+        "hint": "echar · yo · presente",
+        "distractors": [
+          "echa",
+          "echan",
+          "eché"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s087",
+    "es": "Mis padres llegaron ayer de Bilbao.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "llegaron",
+      "ayer",
+      "de",
+      "Bilbao",
+      "."
+    ],
+    "sk": "Rodičia včera prišli z Bilbaa.",
+    "en": "My parents arrived yesterday from Bilbao."
+  },
+  {
+    "id": "s408",
+    "es": "Mis padres siempre nos llevaban a la playa en verano.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "siempre",
+      "nos",
+      "llevaban",
+      "a",
+      "la",
+      "playa",
+      "en",
+      "verano",
+      "."
+    ]
+  },
+  {
+    "id": "s536",
+    "es": "Mis padres se conocieron en la universidad.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "se",
+      "conocieron",
+      "en",
+      "la",
+      "universidad",
+      "."
+    ]
+  },
+  {
+    "id": "s667",
+    "es": "Mis abuelos viven en Granada.",
+    "tokens": [
+      "Mis",
+      "abuelos",
+      "viven",
+      "en",
+      "Granada",
+      "."
+    ],
+    "sk": "Moji starí rodičia bývajú v Granade.",
+    "en": "My grandparents live in Granada."
+  },
+  {
+    "id": "s674",
+    "es": "Para la comunión de mi sobrina invitaron a doscientas personas.",
+    "tokens": [
+      "Para",
+      "la",
+      "comunión",
+      "de",
+      "mi",
+      "sobrina",
+      "invitaron",
+      "a",
+      "doscientas",
+      "personas",
+      "."
+    ],
+    "sk": "Na prvé sväté prijímanie mojej netere pozvali dvesto ľudí.",
+    "en": "For my niece's first communion they invited two hundred people."
+  },
+  {
+    "id": "s676",
+    "es": "Mis padres siempre me apoyaron en todo.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "siempre",
+      "me",
+      "apoyaron",
+      "en",
+      "todo",
+      "."
+    ]
+  },
+  {
+    "id": "s678",
+    "es": "Él mantiene a sus padres desde que se jubilaron.",
+    "tokens": [
+      "Él",
+      "mantiene",
+      "a",
+      "sus",
+      "padres",
+      "desde",
+      "que",
+      "se",
+      "jubilaron",
+      "."
+    ]
+  },
+  {
+    "id": "s683",
+    "es": "A los niños les encanta romper la piñata.",
+    "tokens": [
+      "A",
+      "los",
+      "niños",
+      "les",
+      "encanta",
+      "romper",
+      "la",
+      "piñata",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "niños",
+        "lemma": "niño",
+        "hint": "deti",
+        "distractors": [
+          "niñas",
+          "padres",
+          "abuelos"
+        ]
+      }
+    ],
+    "enHints": [
+      "children"
+    ]
+  },
+  {
+    "id": "s684",
+    "es": "Nuestros antepasados llegaron de Francia hace siglos.",
+    "tokens": [
+      "Nuestros",
+      "antepasados",
+      "llegaron",
+      "de",
+      "Francia",
+      "hace",
+      "siglos",
+      "."
+    ],
+    "sk": "Naši predkovia prišli z Francúzska pred stáročiami.",
+    "en": "Our ancestors came from France centuries ago."
+  },
+  {
+    "id": "s685",
+    "es": "Mi abuela siempre nos mimaba cuando estábamos tristes.",
+    "tokens": [
+      "Mi",
+      "abuela",
+      "siempre",
+      "nos",
+      "mimaba",
+      "cuando",
+      "estábamos",
+      "tristes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "mimaba",
+        "lemma": "mimar",
+        "hint": "mimar · ella · imperfecto",
+        "distractors": [
+          "mimó",
+          "mima",
+          "mimará"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1156",
+    "es": "De niña, pasaba los veranos en el pueblo de mis abuelos.",
+    "tokens": [
+      "De",
+      "niña",
+      ",",
+      "pasaba",
+      "los",
+      "veranos",
+      "en",
+      "el",
+      "pueblo",
+      "de",
+      "mis",
+      "abuelos",
+      "."
+    ],
+    "sk": "Ako dievča som trávila letá v dedine starých rodičov.",
+    "en": "As a girl, I spent the summers in my grandparents' village."
+  },
+  {
+    "id": "s1158",
+    "es": "¿Vendrán tus padres a la boda?",
+    "tokens": [
+      "¿",
+      "Vendrán",
+      "tus",
+      "padres",
+      "a",
+      "la",
+      "boda",
+      "?"
+    ]
+  },
+  {
+    "id": "s1160",
+    "es": "Mi abuela siempre me contaba historias de la Guerra Civil.",
+    "tokens": [
+      "Mi",
+      "abuela",
+      "siempre",
+      "me",
+      "contaba",
+      "historias",
+      "de",
+      "la",
+      "Guerra",
+      "Civil",
+      "."
+    ],
+    "sk": "Babka mi vždy rozprávala príbehy z občianskej vojny.",
+    "en": "My grandma always told me stories about the Civil War."
+  },
+  {
+    "id": "s1165",
+    "es": "Mi mejor amigo y yo nos conocimos cuando trabajábamos en la misma fábrica.",
+    "tokens": [
+      "Mi",
+      "mejor",
+      "amigo",
+      "y",
+      "yo",
+      "nos",
+      "conocimos",
+      "cuando",
+      "trabajábamos",
+      "en",
+      "la",
+      "misma",
+      "fábrica",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 8
+      }
+    ],
+    "sk": "S najlepším kamarátom sme sa spoznali, keď sme robili v tej istej fabrike.",
+    "en": "My best friend and I met when we worked at the same factory."
+  },
+  {
+    "id": "s1167",
+    "es": "Mis padres quieren que estudie medicina, pero yo prefiero el arte.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "quieren",
+      "que",
+      "estudie",
+      "medicina",
+      ",",
+      "pero",
+      "yo",
+      "prefiero",
+      "el",
+      "arte",
+      "."
+    ]
+  },
+  {
+    "id": "s1174",
+    "es": "Los abrazos de la abuela lo curan todo.",
+    "tokens": [
+      "Los",
+      "abrazos",
+      "de",
+      "la",
+      "abuela",
+      "lo",
+      "curan",
+      "todo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "abrazos",
+        "lemma": "abrazo",
+        "distractors": [
+          "compromisos",
+          "divorcios",
+          "antepasados"
+        ]
+      }
+    ],
+    "sk": "Babkine objatia vyliečia všetko.",
+    "en": "Grandma's hugs cure everything."
+  },
+  {
+    "id": "s1176",
+    "es": "Mis tías son muy cotillas y siempre preguntan cuándo me voy a casar.",
+    "tokens": [
+      "Mis",
+      "tías",
+      "son",
+      "muy",
+      "cotillas",
+      "y",
+      "siempre",
+      "preguntan",
+      "cuándo",
+      "me",
+      "voy",
+      "a",
+      "casar",
+      "."
+    ]
+  },
+  {
+    "id": "s1750",
+    "es": "Ayuda a tu hermano con los deberes.",
+    "tokens": [
+      "Ayuda",
+      "a",
+      "tu",
+      "hermano",
+      "con",
+      "los",
+      "deberes",
+      "."
+    ]
+  },
+  {
+    "id": "s1770",
+    "es": "Cuando nací, mis padres ya se habían mudado a Valencia.",
+    "tokens": [
+      "Cuando",
+      "nací",
+      ",",
+      "mis",
+      "padres",
+      "ya",
+      "se",
+      "habían",
+      "mudado",
+      "a",
+      "Valencia",
+      "."
+    ],
+    "sk": "Keď som sa narodil, moji rodičia sa už presťahovali do Valencie.",
+    "en": "When I was born, my parents had already moved to Valencia."
+  },
+  {
+    "id": "s1821",
+    "es": "Mis padres me pidieron que cuidara a mi hermanito.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "me",
+      "pidieron",
+      "que",
+      "cuidara",
+      "a",
+      "mi",
+      "hermanito",
+      "."
+    ]
+  },
+  {
+    "id": "s1921",
+    "es": "Mis padres no creen que yo pueda vivir solo.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "no",
+      "creen",
+      "que",
+      "yo",
+      "pueda",
+      "vivir",
+      "solo",
+      "."
+    ]
+  },
+  {
+    "id": "s1943",
+    "es": "Mi hermana, con la que hablo todos los días, vive en Bilbao.",
+    "tokens": [
+      "Mi",
+      "hermana",
+      ",",
+      "con",
+      "la",
+      "que",
+      "hablo",
+      "todos",
+      "los",
+      "días",
+      ",",
+      "vive",
+      "en",
+      "Bilbao",
+      "."
+    ],
+    "sk": "Moja sestra, s ktorou sa rozprávam každý deň, býva v Bilbau.",
+    "en": "My sister, with whom I talk every day, lives in Bilbao."
+  },
+  {
+    "id": "s2023",
+    "es": "Mis padres quieren que nos mudemos más cerca de ellos antes de que nazca el bebé.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "quieren",
+      "que",
+      "nos",
+      "mudemos",
+      "más",
+      "cerca",
+      "de",
+      "ellos",
+      "antes",
+      "de",
+      "que",
+      "nazca",
+      "el",
+      "bebé",
+      "."
+    ]
+  },
+  {
+    "id": "s2024",
+    "es": "Si mi suegra supiera cocinar paella, no pediríamos comida cada domingo.",
+    "tokens": [
+      "Si",
+      "mi",
+      "suegra",
+      "supiera",
+      "cocinar",
+      "paella",
+      ",",
+      "no",
+      "pediríamos",
+      "comida",
+      "cada",
+      "domingo",
+      "."
+    ],
+    "sk": "Keby moja svokra vedela variť paellu, neobjednávali by sme si jedlo každú nedeľu.",
+    "en": "If my mother-in-law knew how to cook paella, we wouldn't order food every Sunday."
+  },
+  {
+    "id": "s2025",
+    "es": "Mi tía, que vive en Sevilla, nos visita cada Navidad con regalos para todos.",
+    "tokens": [
+      "Mi",
+      "tía",
+      ",",
+      "que",
+      "vive",
+      "en",
+      "Sevilla",
+      ",",
+      "nos",
+      "visita",
+      "cada",
+      "Navidad",
+      "con",
+      "regalos",
+      "para",
+      "todos",
+      "."
+    ],
+    "sk": "Teta, ktorá býva v Seville, nás navštevuje každé Vianoce s darčekmi pre všetkých.",
+    "en": "My aunt, who lives in Seville, visits us every Christmas with gifts for everyone."
+  },
+  {
+    "id": "s2026",
+    "es": "Mi papá insiste en que cenemos juntos aunque cada uno llegue a una hora distinta.",
+    "tokens": [
+      "Mi",
+      "papá",
+      "insiste",
+      "en",
+      "que",
+      "cenemos",
+      "juntos",
+      "aunque",
+      "cada",
+      "uno",
+      "llegue",
+      "a",
+      "una",
+      "hora",
+      "distinta",
+      "."
+    ]
+  },
+  {
+    "id": "s2030",
+    "es": "Mis primos y yo jugábamos en el patio mientras los adultos charlaban en la sobremesa.",
+    "tokens": [
+      "Mis",
+      "primos",
+      "y",
+      "yo",
+      "jugábamos",
+      "en",
+      "el",
+      "patio",
+      "mientras",
+      "los",
+      "adultos",
+      "charlaban",
+      "en",
+      "la",
+      "sobremesa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "charlaban",
+        "lemma": "charlar",
+        "hint": "charlar · ellos · imperfecto",
+        "distractors": [
+          "charlan",
+          "charlaron",
+          "charlarán"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s2031",
+    "es": "No hay nadie en mi familia que no sepa bailar sevillanas desde pequeño.",
+    "tokens": [
+      "No",
+      "hay",
+      "nadie",
+      "en",
+      "mi",
+      "familia",
+      "que",
+      "no",
+      "sepa",
+      "bailar",
+      "sevillanas",
+      "desde",
+      "pequeño",
+      "."
+    ],
+    "sk": "V mojej rodine niet nikoho, kto by od malička nevedel tancovať sevillany.",
+    "en": "There is no one in my family who can't dance sevillanas from childhood."
+  }
+]

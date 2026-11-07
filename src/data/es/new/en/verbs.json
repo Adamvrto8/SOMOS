@@ -37,5 +37,53 @@
       "to turn on",
       "to light"
     ]
+  },
+  {
+    "id": "coger",
+    "en": [
+      "to take",
+      "to catch",
+      "to grab"
+    ]
+  },
+  {
+    "id": "apetecer",
+    "en": [
+      "to feel like",
+      "to fancy"
+    ]
+  },
+  {
+    "id": "molar",
+    "en": [
+      "to be cool",
+      "to like (colloquial)"
+    ]
+  },
+  {
+    "id": "suspender",
+    "en": [
+      "to fail (an exam)",
+      "to call off"
+    ]
+  },
+  {
+    "id": "girar",
+    "en": [
+      "to turn"
+    ]
+  },
+  {
+    "id": "fregar",
+    "en": [
+      "to wash up",
+      "to mop"
+    ]
+  },
+  {
+    "id": "currar",
+    "en": [
+      "to work (colloquial)"
+    ]
   }
 ]

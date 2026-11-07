@@ -1,0 +1,28 @@
+[
+  {
+    "id": "boleta",
+    "hidden": true
+  },
+  {
+    "id": "licenciatura",
+    "examples": [
+      {
+        "es": "Mi hermana estudia la carrera de Derecho.",
+        "sk": "Sestra študuje na vysokej škole právo."
+      }
+    ],
+    "note": "V Španielsku sa vysokoškolské štúdium volá „carrera“ alebo „grado“. „Licenciatura“ je starší titul.",
+    "noteEn": "In Spain a university degree is called “carrera” or “grado”. “Licenciatura” is the older title."
+  },
+  {
+    "id": "extraordinario",
+    "examples": [
+      {
+        "es": "Suspendí y tengo que presentarme a la recuperación.",
+        "sk": "Neurobil som to a musím ísť na opravku."
+      }
+    ],
+    "note": "V Španielsku sa opravná skúška volá „la recuperación“.",
+    "noteEn": "In Spain a resit exam is called “la recuperación”."
+  }
+]

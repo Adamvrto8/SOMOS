@@ -1,0 +1,921 @@
+[
+  {
+    "id": "s1709",
+    "es": "La calle Mayor es la más larga de la ciudad.",
+    "tokens": [
+      "La",
+      "calle",
+      "Mayor",
+      "es",
+      "la",
+      "más",
+      "larga",
+      "de",
+      "la",
+      "ciudad",
+      "."
+    ],
+    "sk": "Ulica Mayor je najdlhšia v meste.",
+    "en": "Calle Mayor is the longest in the city."
+  },
+  {
+    "id": "s1658",
+    "es": "La biblioteca está en la calle Mayor.",
+    "tokens": [
+      "La",
+      "biblioteca",
+      "está",
+      "en",
+      "la",
+      "calle",
+      "Mayor",
+      "."
+    ],
+    "sk": "Knižnica je na ulici Mayor.",
+    "en": "The library is on Calle Mayor."
+  },
+  {
+    "id": "s039",
+    "es": "Estoy buscando la calle Mayor.",
+    "tokens": [
+      "Estoy",
+      "buscando",
+      "la",
+      "calle",
+      "Mayor",
+      "."
+    ],
+    "sk": "Hľadám ulicu Mayor.",
+    "en": "I'm looking for Calle Mayor."
+  },
+  {
+    "id": "s038",
+    "es": "¿Dónde compráis el pan?",
+    "tokens": [
+      "¿",
+      "Dónde",
+      "compráis",
+      "el",
+      "pan",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compráis",
+        "hint": "comprar · vosotros · presente"
+      }
+    ],
+    "sk": "Kde kupujete chlieb?",
+    "en": "Where do you all buy bread?"
+  },
+  {
+    "id": "s135",
+    "es": "Hay mucho tráfico por la mañana.",
+    "tokens": [
+      "Hay",
+      "mucho",
+      "tráfico",
+      "por",
+      "la",
+      "mañana",
+      "."
+    ]
+  },
+  {
+    "id": "s136",
+    "es": "La farmacia está a dos manzanas.",
+    "tokens": [
+      "La",
+      "farmacia",
+      "está",
+      "a",
+      "dos",
+      "manzanas",
+      "."
+    ]
+  },
+  {
+    "id": "s140",
+    "es": "Cogimos un taxi para ir al museo.",
+    "tokens": [
+      "Cogimos",
+      "un",
+      "taxi",
+      "para",
+      "ir",
+      "al",
+      "museo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cogimos",
+        "lemma": "coger",
+        "hint": "coger · nosotros · pretérito",
+        "distractors": [
+          "Cogí",
+          "Cogió",
+          "Cogiste"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s147",
+    "es": "Subimos al metro en la estación de Sol.",
+    "tokens": [
+      "Subimos",
+      "al",
+      "metro",
+      "en",
+      "la",
+      "estación",
+      "de",
+      "Sol",
+      "."
+    ],
+    "sk": "Do metra sme nastúpili na stanici Sol.",
+    "en": "We got on the metro at Sol station."
+  },
+  {
+    "id": "s149",
+    "es": "Entramos en el museo sin pagar.",
+    "tokens": [
+      "Entramos",
+      "en",
+      "el",
+      "museo",
+      "sin",
+      "pagar",
+      "."
+    ]
+  },
+  {
+    "id": "s493",
+    "es": "Sigue recto y gira a la izquierda en el semáforo.",
+    "tokens": [
+      "Sigue",
+      "recto",
+      "y",
+      "gira",
+      "a",
+      "la",
+      "izquierda",
+      "en",
+      "el",
+      "semáforo",
+      "."
+    ]
+  },
+  {
+    "id": "s525",
+    "es": "Si sigues recto, vas a encontrar el museo a la izquierda.",
+    "tokens": [
+      "Si",
+      "sigues",
+      "recto",
+      ",",
+      "vas",
+      "a",
+      "encontrar",
+      "el",
+      "museo",
+      "a",
+      "la",
+      "izquierda",
+      "."
+    ]
+  },
+  {
+    "id": "s429",
+    "es": "Cuando vivía en Madrid, cogía el metro todos los días.",
+    "tokens": [
+      "Cuando",
+      "vivía",
+      "en",
+      "Madrid",
+      ",",
+      "cogía",
+      "el",
+      "metro",
+      "todos",
+      "los",
+      "días",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "newIndex": 5,
+        "answer": "cogía",
+        "lemma": "coger",
+        "hint": "coger · yo · imperfecto",
+        "distractors": [
+          "cogían",
+          "cogí",
+          "cogíamos"
+        ]
+      }
+    ],
+    "sk": "Keď som býval v Madride, každý deň som jazdil metrom.",
+    "en": "When I lived in Madrid, I took the metro every day."
+  },
+  {
+    "id": "s725",
+    "es": "Nos perdimos en el centro de Sevilla.",
+    "tokens": [
+      "Nos",
+      "perdimos",
+      "en",
+      "el",
+      "centro",
+      "de",
+      "Sevilla",
+      "."
+    ],
+    "sk": "Stratili sme sa v centre Sevilly.",
+    "en": "We got lost in downtown Seville."
+  },
+  {
+    "id": "s729",
+    "es": "Me multó un policía de tráfico.",
+    "tokens": [
+      "Me",
+      "multó",
+      "un",
+      "policía",
+      "de",
+      "tráfico",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tráfico",
+        "lemma": "tráfico"
+      }
+    ]
+  },
+  {
+    "id": "s730",
+    "es": "Tomamos el autobús para llegar a la Gran Vía.",
+    "tokens": [
+      "Tomamos",
+      "el",
+      "autobús",
+      "para",
+      "llegar",
+      "a",
+      "la",
+      "Gran",
+      "Vía",
+      "."
+    ],
+    "sk": "Na Gran Vía sme sa dostali autobusom.",
+    "en": "We took the bus to get to Gran Vía."
+  },
+  {
+    "id": "s731",
+    "es": "Vivimos en un barrio muy tranquilo.",
+    "tokens": [
+      "Vivimos",
+      "en",
+      "un",
+      "barrio",
+      "muy",
+      "tranquilo",
+      "."
+    ]
+  },
+  {
+    "id": "s733",
+    "es": "Hubo una manifestación y cerraron la M-30.",
+    "tokens": [
+      "Hubo",
+      "una",
+      "manifestación",
+      "y",
+      "cerraron",
+      "la",
+      "M-30",
+      "."
+    ],
+    "sk": "Bola demonštrácia a zavreli M-30.",
+    "en": "There was a demonstration and they closed the M-30."
+  },
+  {
+    "id": "s734",
+    "es": "En este barrio bajó mucho la delincuencia.",
+    "tokens": [
+      "En",
+      "este",
+      "barrio",
+      "bajó",
+      "mucho",
+      "la",
+      "delincuencia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "este",
+        "lemma": "este",
+        "distractors": [
+          "ese",
+          "estos",
+          "estas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s726",
+    "es": "La catedral está en la plaza Mayor.",
+    "tokens": [
+      "La",
+      "catedral",
+      "está",
+      "en",
+      "la",
+      "plaza",
+      "Mayor",
+      "."
+    ]
+  },
+  {
+    "id": "s727",
+    "es": "Compramos castañas asadas en un puesto de la esquina.",
+    "tokens": [
+      "Compramos",
+      "castañas",
+      "asadas",
+      "en",
+      "un",
+      "puesto",
+      "de",
+      "la",
+      "esquina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 5
+      }
+    ],
+    "sk": "Kúpili sme pečené gaštany v stánku na rohu.",
+    "en": "We bought roasted chestnuts at a stand on the corner."
+  },
+  {
+    "id": "s1069",
+    "es": "Nos mudamos a este barrio porque está cerca de la escuela de los niños.",
+    "tokens": [
+      "Nos",
+      "mudamos",
+      "a",
+      "este",
+      "barrio",
+      "porque",
+      "está",
+      "cerca",
+      "de",
+      "la",
+      "escuela",
+      "de",
+      "los",
+      "niños",
+      "."
+    ]
+  },
+  {
+    "id": "s1070",
+    "es": "El transporte público es barato, pero en hora punta va lleno.",
+    "tokens": [
+      "El",
+      "transporte",
+      "público",
+      "es",
+      "barato",
+      ",",
+      "pero",
+      "en",
+      "hora",
+      "punta",
+      "va",
+      "lleno",
+      "."
+    ]
+  },
+  {
+    "id": "s1071",
+    "es": "Había un atasco enorme, así que decidimos irnos en metro.",
+    "tokens": [
+      "Había",
+      "un",
+      "atasco",
+      "enorme",
+      ",",
+      "así",
+      "que",
+      "decidimos",
+      "irnos",
+      "en",
+      "metro",
+      "."
+    ]
+  },
+  {
+    "id": "s1072",
+    "es": "Cuando era estudiante, siempre me bajaba del autobús una parada antes.",
+    "tokens": [
+      "Cuando",
+      "era",
+      "estudiante",
+      ",",
+      "siempre",
+      "me",
+      "bajaba",
+      "del",
+      "autobús",
+      "una",
+      "parada",
+      "antes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "del",
+        "lemma": "del",
+        "distractors": [
+          "en",
+          "al",
+          "con"
+        ]
+      }
+    ],
+    "sk": "Keď som bol študent, vždy som z autobusu vystupoval o zastávku skôr.",
+    "en": "When I was a student, I always got off the bus one stop early."
+  },
+  {
+    "id": "s1076",
+    "es": "Desde que abrieron la nueva línea de metro, llego al trabajo en media hora.",
+    "tokens": [
+      "Desde",
+      "que",
+      "abrieron",
+      "la",
+      "nueva",
+      "línea",
+      "de",
+      "metro",
+      ",",
+      "llego",
+      "al",
+      "trabajo",
+      "en",
+      "media",
+      "hora",
+      "."
+    ],
+    "sk": "Odkedy otvorili novú linku metra, do práce sa dostanem za pol hodiny.",
+    "en": "Since they opened the new metro line, I get to work in half an hour."
+  },
+  {
+    "id": "s1077",
+    "es": "¿Me llevas en coche al centro? Te pilla de paso, ¿no?",
+    "tokens": [
+      "¿",
+      "Me",
+      "llevas",
+      "en",
+      "coche",
+      "al",
+      "centro",
+      "?",
+      "Te",
+      "pilla",
+      "de",
+      "paso",
+      ",",
+      "¿",
+      "no",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llevas",
+        "lemma": "llevar",
+        "hint": "llevar · tú · presente",
+        "distractors": [
+          "llevo",
+          "llevaste",
+          "llevaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1078",
+    "es": "El tráfico en la M-30 estaba imposible; tardé dos horas en llegar.",
+    "tokens": [
+      "El",
+      "tráfico",
+      "en",
+      "la",
+      "M-30",
+      "estaba",
+      "imposible",
+      ";",
+      "tardé",
+      "dos",
+      "horas",
+      "en",
+      "llegar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "newIndex": 11
+      }
+    ],
+    "sk": "Premávka na M-30 bola nemožná, cesta mi trvala dve hodiny.",
+    "en": "Traffic on the M-30 was impossible; it took me two hours to get there."
+  },
+  {
+    "id": "s1079",
+    "es": "En este barrio ya no se puede salir de noche por la inseguridad.",
+    "tokens": [
+      "En",
+      "este",
+      "barrio",
+      "ya",
+      "no",
+      "se",
+      "puede",
+      "salir",
+      "de",
+      "noche",
+      "por",
+      "la",
+      "inseguridad",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "distractors": [
+          "alumbrado",
+          "tráfico",
+          "acera"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1080",
+    "es": "Los vecinos se quejaron al ayuntamiento por los baches de la calle.",
+    "tokens": [
+      "Los",
+      "vecinos",
+      "se",
+      "quejaron",
+      "al",
+      "ayuntamiento",
+      "por",
+      "los",
+      "baches",
+      "de",
+      "la",
+      "calle",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 6
+      }
+    ],
+    "sk": "Susedia sa sťažovali na radnici na výtlky na ulici.",
+    "en": "The neighbors complained to the city council about the potholes on the street."
+  },
+  {
+    "id": "s1081",
+    "es": "Si no hubiera tanto tráfico, iría al trabajo en bici.",
+    "tokens": [
+      "Si",
+      "no",
+      "hubiera",
+      "tanto",
+      "tráfico",
+      ",",
+      "iría",
+      "al",
+      "trabajo",
+      "en",
+      "bici",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "distractors": [
+          "plaza",
+          "alumbrado",
+          "puente"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1082",
+    "es": "Me mola mucho vivir en el centro histórico, aunque es muy ruidoso.",
+    "tokens": [
+      "Me",
+      "mola",
+      "mucho",
+      "vivir",
+      "en",
+      "el",
+      "centro",
+      "histórico",
+      ",",
+      "aunque",
+      "es",
+      "muy",
+      "ruidoso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "distractors": [
+          "bonito",
+          "caro",
+          "tranquilo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1084",
+    "es": "A esta hora el metro va a reventar; mejor cogemos un taxi.",
+    "tokens": [
+      "A",
+      "esta",
+      "hora",
+      "el",
+      "metro",
+      "va",
+      "a",
+      "reventar",
+      ";",
+      "mejor",
+      "cogemos",
+      "un",
+      "taxi",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "newIndex": 10,
+        "answer": "cogemos",
+        "lemma": "coger",
+        "hint": "coger · nosotros · presente",
+        "distractors": [
+          "cojo",
+          "cogieron",
+          "cogíamos"
+        ]
+      },
+      {
+        "tokenIndex": 10,
+        "newIndex": 9
+      }
+    ]
+  },
+  {
+    "id": "s1087",
+    "es": "Al salir del metro, un vendedor ambulante me vendió un paraguas carísimo.",
+    "tokens": [
+      "Al",
+      "salir",
+      "del",
+      "metro",
+      ",",
+      "un",
+      "vendedor",
+      "ambulante",
+      "me",
+      "vendió",
+      "un",
+      "paraguas",
+      "carísimo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "newIndex": 9
+      }
+    ]
+  },
+  {
+    "id": "s1088",
+    "es": "Las calles están tan mal planificadas que hasta los taxistas se pierden.",
+    "tokens": [
+      "Las",
+      "calles",
+      "están",
+      "tan",
+      "mal",
+      "planificadas",
+      "que",
+      "hasta",
+      "los",
+      "taxistas",
+      "se",
+      "pierden",
+      "."
+    ]
+  },
+  {
+    "id": "s137",
+    "es": "Gira a la izquierda en la esquina.",
+    "tokens": [
+      "Gira",
+      "a",
+      "la",
+      "izquierda",
+      "en",
+      "la",
+      "esquina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 3
+      }
+    ]
+  },
+  {
+    "id": "s139",
+    "es": "¿Me puede decir dónde está la plaza Mayor?",
+    "tokens": [
+      "¿",
+      "Me",
+      "puede",
+      "decir",
+      "dónde",
+      "está",
+      "la",
+      "plaza",
+      "Mayor",
+      "?"
+    ]
+  },
+  {
+    "id": "s143",
+    "es": "Este barrio es muy tranquilo.",
+    "tokens": [
+      "Este",
+      "barrio",
+      "es",
+      "muy",
+      "tranquilo",
+      "."
+    ]
+  },
+  {
+    "id": "s1749",
+    "es": "Bajad en la próxima estación y esperad mi llamada.",
+    "tokens": [
+      "Bajad",
+      "en",
+      "la",
+      "próxima",
+      "estación",
+      "y",
+      "esperad",
+      "mi",
+      "llamada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Bajad",
+        "hint": "bajar · vosotros · imperativo"
+      }
+    ]
+  },
+  {
+    "id": "s1992",
+    "es": "Es una lástima que cierren el parque justo cuando por fin hace buen tiempo.",
+    "tokens": [
+      "Es",
+      "una",
+      "lástima",
+      "que",
+      "cierren",
+      "el",
+      "parque",
+      "justo",
+      "cuando",
+      "por",
+      "fin",
+      "hace",
+      "buen",
+      "tiempo",
+      "."
+    ]
+  },
+  {
+    "id": "s1995",
+    "es": "Vivo en el barrio donde crecieron mis padres, cerca de un mercado enorme.",
+    "tokens": [
+      "Vivo",
+      "en",
+      "el",
+      "barrio",
+      "donde",
+      "crecieron",
+      "mis",
+      "padres",
+      ",",
+      "cerca",
+      "de",
+      "un",
+      "mercado",
+      "enorme",
+      "."
+    ]
+  },
+  {
+    "id": "s1999",
+    "es": "Esa es la calle por la que pasa la procesión todos los años en Semana Santa.",
+    "tokens": [
+      "Esa",
+      "es",
+      "la",
+      "calle",
+      "por",
+      "la",
+      "que",
+      "pasa",
+      "la",
+      "procesión",
+      "todos",
+      "los",
+      "años",
+      "en",
+      "Semana",
+      "Santa",
+      "."
+    ],
+    "sk": "To je ulica, ktorou každý rok počas Veľkého týždňa prechádza procesia.",
+    "en": "That is the street the procession goes along every year during Holy Week."
+  },
+  {
+    "id": "s2001",
+    "es": "Ojalá construyeran más parques en los barrios donde no hay ningún lugar para jugar.",
+    "tokens": [
+      "Ojalá",
+      "construyeran",
+      "más",
+      "parques",
+      "en",
+      "los",
+      "barrios",
+      "donde",
+      "no",
+      "hay",
+      "ningún",
+      "lugar",
+      "para",
+      "jugar",
+      "."
+    ]
+  },
+  {
+    "id": "s150",
+    "es": "¿Sabes conducir en Madrid?",
+    "tokens": [
+      "¿",
+      "Sabes",
+      "conducir",
+      "en",
+      "Madrid",
+      "?"
+    ],
+    "sk": "Vieš šoférovať v Madride?",
+    "en": "Do you know how to drive in Madrid?"
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "video",
+    "es": "vídeo",
+    "plural": "vídeos",
+    "examples": [
+      {
+        "es": "Mira este vídeo.",
+        "sk": "Pozri si toto video."
+      }
+    ],
+    "note": "V Mexiku bez prízvuku: video.",
+    "noteEn": "In Mexico without the accent: video."
+  },
+  {
+    "id": "audifono",
+    "note": "V Mexiku: audífono.",
+    "noteEn": "In Mexico: audífono."
+  },
+  {
+    "id": "descompuesto",
+    "note": "V Mexiku: descompuesto.",
+    "noteEn": "In Mexico: descompuesto."
+  }
+]

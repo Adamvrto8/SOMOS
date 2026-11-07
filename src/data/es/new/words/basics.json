@@ -1,0 +1,181 @@
+[
+  {
+    "id": "vale",
+    "es": "vale",
+    "sk": [
+      "dobre",
+      "ok",
+      "platí"
+    ],
+    "pos": "other",
+    "level": "A1",
+    "topics": [
+      "greetings",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "—¿Quedamos a las ocho? —Vale.",
+        "sk": "— Stretneme sa o ôsmej? — Dobre."
+      },
+      {
+        "es": "Vale, lo hago ahora mismo.",
+        "sk": "Dobre, urobím to hneď."
+      }
+    ],
+    "note": "Hovorové, v Španielsku nesmierne časté. V Mexiku skôr „okey“."
+  },
+  {
+    "id": "guay",
+    "es": "guay",
+    "sk": [
+      "super",
+      "skvelý"
+    ],
+    "pos": "adj",
+    "plural": "guais",
+    "level": "A2",
+    "topics": [
+      "basics",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "La fiesta fue muy guay.",
+        "sk": "Párty bola super."
+      },
+      {
+        "es": "Tu casa nueva es guay.",
+        "sk": "Tvoj nový dom je skvelý."
+      }
+    ],
+    "note": "Hovorové; nemení tvar: un plan guay, una casa guay."
+  },
+  {
+    "id": "mogollon",
+    "es": "mogollón",
+    "sk": [
+      "kopa",
+      "hŕba"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "mogollones",
+    "level": "B1",
+    "topics": [
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "Había un mogollón de gente en el concierto.",
+        "sk": "Na koncerte bolo kopa ľudí."
+      },
+      {
+        "es": "Tengo un mogollón de cosas que hacer.",
+        "sk": "Mám kopu vecí na robenie."
+      }
+    ],
+    "note": "Hovorové: un mogollón de = strašne veľa."
+  },
+  {
+    "id": "chulo",
+    "es": "chulo",
+    "sk": [
+      "pekný",
+      "fajný"
+    ],
+    "pos": "adj",
+    "feminine": "chula",
+    "level": "A2",
+    "topics": [
+      "basics",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "¡Qué chulo es tu piso!",
+        "sk": "Aký fajný je tvoj byt!"
+      },
+      {
+        "es": "Llevas una camiseta muy chula.",
+        "sk": "Máš na sebe veľmi pekné tričko."
+      }
+    ],
+    "note": "Hovorové. Pozor: o človeku môže znamenať aj „namyslený, drzý“."
+  },
+  {
+    "id": "cutre",
+    "es": "cutre",
+    "sk": [
+      "biedny",
+      "otrepaný"
+    ],
+    "pos": "adj",
+    "level": "B1",
+    "topics": [
+      "basics",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "El hotel era un poco cutre.",
+        "sk": "Hotel bol trochu otrepaný."
+      },
+      {
+        "es": "Es un bar cutre, pero la comida es buena.",
+        "sk": "Je to biedny bar, ale jedlo je dobré."
+      }
+    ],
+    "note": "Hovorové; nemení tvar v rode."
+  },
+  {
+    "id": "pijo",
+    "es": "pijo",
+    "sk": [
+      "naparený",
+      "namyslený"
+    ],
+    "pos": "adj",
+    "feminine": "pija",
+    "level": "B1",
+    "topics": [
+      "basics",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "Mi primo es un poco pijo.",
+        "sk": "Môj bratranec je trochu naparený."
+      },
+      {
+        "es": "Va a un colegio muy pijo.",
+        "sk": "Chodí do veľmi elitnej školy."
+      }
+    ],
+    "note": "Hovorové, trochu posmešné: bohatý a naparený."
+  },
+  {
+    "id": "en-plan",
+    "es": "en plan",
+    "sk": [
+      "tak nejako",
+      "typu"
+    ],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": [
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "Fuimos de fiesta, en plan relajado.",
+        "sk": "Išli sme na párty, takú pohodovú."
+      },
+      {
+        "es": "Me habló en plan borde.",
+        "sk": "Rozprával sa so mnou dosť odseknuto."
+      }
+    ],
+    "note": "Hovorové, hlavne u mladých; podobné ako „akože“."
+  }
+]

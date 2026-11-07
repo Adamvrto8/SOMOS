@@ -1,0 +1,475 @@
+[
+  {
+    "id": "s050",
+    "es": "Ayer fui al médico.",
+    "tokens": [
+      "Ayer",
+      "fui",
+      "al",
+      "médico",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "fui"
+      }
+    ]
+  },
+  {
+    "id": "s051",
+    "es": "El lunes tengo una reunión a las diez.",
+    "tokens": [
+      "El",
+      "lunes",
+      "tengo",
+      "una",
+      "reunión",
+      "a",
+      "las",
+      "diez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tengo"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a"
+      }
+    ]
+  },
+  {
+    "id": "s054",
+    "es": "Nos vemos mañana por la mañana.",
+    "tokens": [
+      "Nos",
+      "vemos",
+      "mañana",
+      "por",
+      "la",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mañana"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "distractors": [
+          "en",
+          "de",
+          "a"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s179",
+    "es": "Todavía no he terminado los deberes.",
+    "tokens": [
+      "Todavía",
+      "no",
+      "he",
+      "terminado",
+      "los",
+      "deberes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "terminado",
+        "lemma": "terminar",
+        "hint": "terminar · participio",
+        "distractors": [
+          "termino",
+          "terminé",
+          "terminando"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s180",
+    "es": "¿Ya has comido?",
+    "tokens": [
+      "¿",
+      "Ya",
+      "has",
+      "comido",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "comido",
+        "lemma": "comer",
+        "hint": "comer · participio",
+        "distractors": [
+          "comiste",
+          "comiendo",
+          "comía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s183",
+    "es": "Ahora no puedo, estoy en una reunión.",
+    "tokens": [
+      "Ahora",
+      "no",
+      "puedo",
+      ",",
+      "estoy",
+      "en",
+      "una",
+      "reunión",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puedo"
+      }
+    ]
+  },
+  {
+    "id": "s185",
+    "es": "¿Qué hiciste ayer por la noche?",
+    "tokens": [
+      "¿",
+      "Qué",
+      "hiciste",
+      "ayer",
+      "por",
+      "la",
+      "noche",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hiciste"
+      }
+    ]
+  },
+  {
+    "id": "s188",
+    "es": "Estuvimos en Sevilla dos semanas.",
+    "tokens": [
+      "Estuvimos",
+      "en",
+      "Sevilla",
+      "dos",
+      "semanas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estuvimos"
+      }
+    ],
+    "sk": "V Seville sme boli dva týždne.",
+    "en": "We were in Seville for two weeks."
+  },
+  {
+    "id": "s757",
+    "es": "Anoche cenamos en casa de mis padres.",
+    "tokens": [
+      "Anoche",
+      "cenamos",
+      "en",
+      "casa",
+      "de",
+      "mis",
+      "padres",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cenamos"
+      }
+    ]
+  },
+  {
+    "id": "s766",
+    "es": "En la década de los ochenta mis padres vivían en Vigo.",
+    "tokens": [
+      "En",
+      "la",
+      "década",
+      "de",
+      "los",
+      "ochenta",
+      "mis",
+      "padres",
+      "vivían",
+      "en",
+      "Vigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "vivían"
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "En"
+      }
+    ],
+    "sk": "V osemdesiatych rokoch moji rodičia bývali vo Vigu.",
+    "en": "In the eighties my parents lived in Vigo."
+  },
+  {
+    "id": "s775",
+    "es": "Este trimestre las ventas han aumentado un diez por ciento.",
+    "tokens": [
+      "Este",
+      "trimestre",
+      "las",
+      "ventas",
+      "han",
+      "aumentado",
+      "un",
+      "diez",
+      "por",
+      "ciento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este"
+      },
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "aumentado",
+        "lemma": "aumentar",
+        "hint": "aumentar · participio",
+        "distractors": [
+          "aumentaron",
+          "aumentando",
+          "aumentaban"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1492",
+    "es": "Cuando vivía en Sevilla, siempre llegaba tarde a todos lados.",
+    "tokens": [
+      "Cuando",
+      "vivía",
+      "en",
+      "Sevilla",
+      ",",
+      "siempre",
+      "llegaba",
+      "tarde",
+      "a",
+      "todos",
+      "lados",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "llegaba"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "vivía"
+      }
+    ],
+    "sk": "Keď som býval v Seville, všade som chodil neskoro.",
+    "en": "When I lived in Seville, I was always late everywhere."
+  },
+  {
+    "id": "s1496",
+    "es": "Llevo dos años viviendo en España y todavía me sorprende.",
+    "tokens": [
+      "Llevo",
+      "dos",
+      "años",
+      "viviendo",
+      "en",
+      "España",
+      "y",
+      "todavía",
+      "me",
+      "sorprende",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevo"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "viviendo"
+      }
+    ],
+    "sk": "V Španielsku žijem už dva roky a stále ma prekvapuje.",
+    "en": "I have been living in Spain for two years and it still surprises me."
+  },
+  {
+    "id": "s1499",
+    "es": "Cuando un español dice mañana, puede significar la semana que viene o nunca.",
+    "tokens": [
+      "Cuando",
+      "un",
+      "español",
+      "dice",
+      "mañana",
+      ",",
+      "puede",
+      "significar",
+      "la",
+      "semana",
+      "que",
+      "viene",
+      "o",
+      "nunca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dice"
+      }
+    ],
+    "sk": "Keď Španiel povie mañana, môže to znamenať budúci týždeň alebo nikdy.",
+    "en": "When a Spaniard says tomorrow, it can mean next week or never."
+  },
+  {
+    "id": "s1508",
+    "es": "Cada vez que se acerca la fecha límite, me pongo nervioso.",
+    "tokens": [
+      "Cada",
+      "vez",
+      "que",
+      "se",
+      "acerca",
+      "la",
+      "fecha",
+      "límite",
+      ",",
+      "me",
+      "pongo",
+      "nervioso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "pongo"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s1745",
+    "es": "Acostaos temprano, mañana hay que madrugar.",
+    "tokens": [
+      "Acostaos",
+      "temprano",
+      ",",
+      "mañana",
+      "hay",
+      "que",
+      "madrugar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Acostaos",
+        "hint": "acostarse · vosotros · imperativo",
+        "distractors": [
+          "Acuéstense",
+          "Acuéstate",
+          "Acuéstese"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s2134",
+    "es": "Mientras trabajé en Valencia, salía de casa a las seis para evitar el tráfico.",
+    "tokens": [
+      "Mientras",
+      "trabajé",
+      "en",
+      "Valencia",
+      ",",
+      "salía",
+      "de",
+      "casa",
+      "a",
+      "las",
+      "seis",
+      "para",
+      "evitar",
+      "el",
+      "tráfico",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "salía"
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "para"
+      }
+    ],
+    "sk": "Keď som pracoval vo Valencii, vychádzal som z domu o šiestej, aby som sa vyhol zápche.",
+    "en": "While I worked in Valencia, I left home at six to avoid the traffic."
+  },
+  {
+    "id": "s2137",
+    "es": "Mi madre me recordó que la cita con el dentista era a las cuatro.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "me",
+      "recordó",
+      "que",
+      "la",
+      "cita",
+      "con",
+      "el",
+      "dentista",
+      "era",
+      "a",
+      "las",
+      "cuatro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "recordó"
+      }
+    ]
+  }
+]

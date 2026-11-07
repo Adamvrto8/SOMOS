@@ -1,0 +1,381 @@
+[
+  {
+    "id": "s9006",
+    "es": "Todavía no he terminado los deberes.",
+    "sk": "Ešte som neskončil domáce úlohy.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Todavía",
+      "no",
+      "he",
+      "terminado",
+      "los",
+      "deberes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "terminado",
+        "lemma": "terminar",
+        "hint": "terminar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "terminé",
+          "terminando",
+          "terminaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9012",
+    "es": "Hoy he llegado tarde a clase.",
+    "sk": "Dnes som prišiel neskoro na hodinu.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "llegado",
+      "tarde",
+      "a",
+      "clase",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "he",
+        "lemma": "haber",
+        "hint": "haber · yo",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hube",
+          "había",
+          "haya"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "llegado",
+        "lemma": "llegar",
+        "hint": "llegar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "llegué",
+          "llegando",
+          "llegaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9022",
+    "es": "Esta semana hemos aprendido veinte palabras nuevas.",
+    "sk": "Tento týždeň sme sa naučili dvadsať nových slov.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "hemos",
+      "aprendido",
+      "veinte",
+      "palabras",
+      "nuevas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprendido",
+        "lemma": "aprender",
+        "hint": "aprender · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "aprendimos",
+          "aprendiendo",
+          "aprendíamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9048",
+    "es": "¿Habéis devuelto ya los libros a la biblioteca?",
+    "sk": "Vrátili ste už knihy do knižnice?",
+    "level": "B1",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Habéis",
+      "devuelto",
+      "ya",
+      "los",
+      "libros",
+      "a",
+      "la",
+      "biblioteca",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "devuelto",
+        "lemma": "devolver",
+        "hint": "devolver · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "devolvisteis",
+          "devolviendo",
+          "devolvíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9054",
+    "es": "El año pasado mi hermano aprobó el examen.",
+    "sk": "Minulý rok môj brat urobil skúšku.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "año",
+      "pasado",
+      "mi",
+      "hermano",
+      "aprobó",
+      "el",
+      "examen",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "aprobó",
+        "lemma": "aprobar",
+        "hint": "aprobar · él",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "ha aprobado",
+          "aprueba",
+          "aprobaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9059",
+    "es": "Ayer los niños comieron en el colegio.",
+    "sk": "Včera deti obedovali v škole.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "los",
+      "niños",
+      "comieron",
+      "en",
+      "el",
+      "colegio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "comieron",
+        "lemma": "comer",
+        "hint": "comer · ellos",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "han comido",
+          "comen",
+          "comían"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9077",
+    "es": "¿Ya has hecho los deberes?",
+    "sk": "Urobil si už domáce úlohy?",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Ya",
+      "has",
+      "hecho",
+      "los",
+      "deberes",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "has",
+        "lemma": "haber",
+        "hint": "haber · tú",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubiste",
+          "habías",
+          "hayas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9091",
+    "es": "¿A qué hora salís de clase?",
+    "sk": "Kedy vychádzate z hodiny?",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "A",
+      "qué",
+      "hora",
+      "salís",
+      "de",
+      "clase",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "salís",
+        "lemma": "salir",
+        "hint": "salir · vosotros · presente",
+        "distractors": [
+          "salen",
+          "salimos",
+          "salíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9104",
+    "es": "Esta semana habéis estudiado mucho.",
+    "sk": "Tento týždeň ste sa veľa učili.",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "habéis",
+      "estudiado",
+      "mucho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estudiado",
+        "lemma": "estudiar",
+        "hint": "estudiar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "estudiasteis",
+          "estudiando",
+          "estudiabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9125",
+    "es": "Anoche quedé con mis compañeros de clase.",
+    "sk": "Včera večer som sa dohodol so spolužiakmi.",
+    "level": "B1",
+    "topics": [
+      "school"
+    ],
+    "grammar": [
+      "preterito"
+    ],
+    "tokens": [
+      "Anoche",
+      "quedé",
+      "con",
+      "mis",
+      "compañeros",
+      "de",
+      "clase",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quedé",
+        "lemma": "quedar",
+        "hint": "quedar · yo · pretérito",
+        "distractors": [
+          "quedo",
+          "quedaré",
+          "quedan"
+        ]
+      }
+    ]
+  }
+]

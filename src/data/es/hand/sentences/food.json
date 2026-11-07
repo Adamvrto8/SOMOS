@@ -1,0 +1,1451 @@
+[
+  {
+    "id": "s1626",
+    "es": "Me gustan las croquetas de pollo.",
+    "tokens": [
+      "Me",
+      "gustan",
+      "las",
+      "croquetas",
+      "de",
+      "pollo",
+      "."
+    ],
+    "sk": "Mám rád kuracie krokety.",
+    "en": "I like chicken croquettes."
+  },
+  {
+    "id": "s1630",
+    "es": "A mis padres les encanta la tarta de chocolate.",
+    "tokens": [
+      "A",
+      "mis",
+      "padres",
+      "les",
+      "encanta",
+      "la",
+      "tarta",
+      "de",
+      "chocolate",
+      "."
+    ]
+  },
+  {
+    "id": "s1705",
+    "es": "Una tapa cuesta tres euros y un bocadillo, cinco: el bocadillo es más caro.",
+    "tokens": [
+      "Una",
+      "tapa",
+      "cuesta",
+      "tres",
+      "euros",
+      "y",
+      "un",
+      "bocadillo",
+      ",",
+      "cinco",
+      ":",
+      "el",
+      "bocadillo",
+      "es",
+      "más",
+      "caro",
+      "."
+    ],
+    "sk": "Tapa stojí tri eurá a bageta päť: bageta je drahšia.",
+    "en": "A tapa costs three euros and a sandwich, five: the sandwich is more expensive."
+  },
+  {
+    "id": "s1631",
+    "es": "Nos encantan las lentejas con arroz.",
+    "tokens": [
+      "Nos",
+      "encantan",
+      "las",
+      "lentejas",
+      "con",
+      "arroz",
+      "."
+    ],
+    "sk": "Zbožňujeme šošovicu s ryžou.",
+    "en": "We love lentils with rice."
+  },
+  {
+    "id": "s1632",
+    "es": "Me gusta comer fruta por la mañana.",
+    "tokens": [
+      "Me",
+      "gusta",
+      "comer",
+      "fruta",
+      "por",
+      "la",
+      "mañana",
+      "."
+    ]
+  },
+  {
+    "id": "s018",
+    "es": "Las croquetas están muy ricas.",
+    "tokens": [
+      "Las",
+      "croquetas",
+      "están",
+      "muy",
+      "ricas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ricas",
+        "distractors": [
+          "rico",
+          "rica",
+          "ricos"
+        ]
+      }
+    ],
+    "sk": "Krokety sú veľmi chutné.",
+    "en": "The croquettes are very tasty."
+  },
+  {
+    "id": "s094",
+    "es": "Ayer probé el pulpo a la gallega.",
+    "tokens": [
+      "Ayer",
+      "probé",
+      "el",
+      "pulpo",
+      "a",
+      "la",
+      "gallega",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "distractors": [
+          "en",
+          "de",
+          "hasta"
+        ]
+      }
+    ],
+    "sk": "Včera som ochutnal chobotnicu po galícijsky.",
+    "en": "Yesterday I tried the Galician-style octopus."
+  },
+  {
+    "id": "s020",
+    "es": "Estamos comiendo bocadillos en el mercado.",
+    "tokens": [
+      "Estamos",
+      "comiendo",
+      "bocadillos",
+      "en",
+      "el",
+      "mercado",
+      "."
+    ],
+    "sk": "Jeme bagety na trhu.",
+    "en": "We're eating sandwiches at the market."
+  },
+  {
+    "id": "s091",
+    "es": "Mi esposa siempre pide tortilla de patatas.",
+    "tokens": [
+      "Mi",
+      "esposa",
+      "siempre",
+      "pide",
+      "tortilla",
+      "de",
+      "patatas",
+      "."
+    ],
+    "sk": "Moja manželka si vždy objednáva zemiakovú tortillu.",
+    "en": "My wife always orders tortilla de patatas."
+  },
+  {
+    "id": "s101",
+    "es": "¿Quién ha cocinado hoy?",
+    "tokens": [
+      "¿",
+      "Quién",
+      "ha",
+      "cocinado",
+      "hoy",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "cocinado",
+        "hint": "cocinar · participio",
+        "distractors": [
+          "cocinó",
+          "cocinando",
+          "cocinaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s098",
+    "es": "Desayuno tostadas con tomate todos los días.",
+    "tokens": [
+      "Desayuno",
+      "tostadas",
+      "con",
+      "tomate",
+      "todos",
+      "los",
+      "días",
+      "."
+    ],
+    "sk": "Každý deň raňajkujem hrianky s paradajkou.",
+    "en": "I have toast with tomato for breakfast every day."
+  },
+  {
+    "id": "s111",
+    "es": "Este puesto vende los mejores bocadillos del barrio.",
+    "tokens": [
+      "Este",
+      "puesto",
+      "vende",
+      "los",
+      "mejores",
+      "bocadillos",
+      "del",
+      "barrio",
+      "."
+    ],
+    "sk": "Tento stánok predáva najlepšie bagety v štvrti.",
+    "en": "This stand sells the best sandwiches in the neighborhood."
+  },
+  {
+    "id": "s1737",
+    "es": "Prueba este cocido; lo hizo mi abuela.",
+    "tokens": [
+      "Prueba",
+      "este",
+      "cocido",
+      ";",
+      "lo",
+      "hizo",
+      "mi",
+      "abuela",
+      "."
+    ],
+    "sk": "Ochutnaj tento cocido, urobila ho moja babka.",
+    "en": "Try this cocido; my grandma made it."
+  },
+  {
+    "id": "s1738",
+    "es": "Pida la paella, está muy rica.",
+    "tokens": [
+      "Pida",
+      "la",
+      "paella",
+      ",",
+      "está",
+      "muy",
+      "rica",
+      "."
+    ],
+    "sk": "Objednajte si paellu, je veľmi chutná.",
+    "en": "Order the paella, it is very good."
+  },
+  {
+    "id": "s1740",
+    "es": "Comed despacio, que la sopa está caliente.",
+    "tokens": [
+      "Comed",
+      "despacio",
+      ",",
+      "que",
+      "la",
+      "sopa",
+      "está",
+      "caliente",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Comed",
+        "hint": "comer · vosotros · imperativo"
+      }
+    ]
+  },
+  {
+    "id": "s439",
+    "es": "Esta noche cenaremos en casa de mis padres.",
+    "tokens": [
+      "Esta",
+      "noche",
+      "cenaremos",
+      "en",
+      "casa",
+      "de",
+      "mis",
+      "padres",
+      "."
+    ]
+  },
+  {
+    "id": "s686",
+    "es": "Quiero un batido de plátano.",
+    "tokens": [
+      "Quiero",
+      "un",
+      "batido",
+      "de",
+      "plátano",
+      "."
+    ]
+  },
+  {
+    "id": "s1677",
+    "es": "Mi madre preparó el cocido y se lo llevó a mi abuela.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "preparó",
+      "el",
+      "cocido",
+      "y",
+      "se",
+      "lo",
+      "llevó",
+      "a",
+      "mi",
+      "abuela",
+      "."
+    ],
+    "sk": "Mama pripravila cocido a odniesla ho babke.",
+    "en": "My mom made the cocido and took it to my grandma."
+  },
+  {
+    "id": "s1678",
+    "es": "Las lentejas están ricas; mi madre las prepara con chorizo.",
+    "tokens": [
+      "Las",
+      "lentejas",
+      "están",
+      "ricas",
+      ";",
+      "mi",
+      "madre",
+      "las",
+      "prepara",
+      "con",
+      "chorizo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "las",
+        "lemma": "las",
+        "distractors": [
+          "los",
+          "lo",
+          "les"
+        ]
+      }
+    ],
+    "sk": "Šošovica je výborná; mama ju pripravuje s chorizom.",
+    "en": "The lentils are tasty; my mom makes them with chorizo."
+  },
+  {
+    "id": "s509",
+    "es": "Tengo antojo de unas croquetas.",
+    "tokens": [
+      "Tengo",
+      "antojo",
+      "de",
+      "unas",
+      "croquetas",
+      "."
+    ],
+    "sk": "Mám chuť na krokety.",
+    "en": "I'm craving some croquettes."
+  },
+  {
+    "id": "s510",
+    "es": "En Nochebuena siempre servimos cordero.",
+    "tokens": [
+      "En",
+      "Nochebuena",
+      "siempre",
+      "servimos",
+      "cordero",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "newIndex": 3
+      }
+    ],
+    "sk": "Na Štedrý večer vždy podávame jahňacinu.",
+    "en": "On Christmas Eve we always serve lamb."
+  },
+  {
+    "id": "s541",
+    "es": "Cuando vivía en Valencia, comía paella cada domingo.",
+    "tokens": [
+      "Cuando",
+      "vivía",
+      "en",
+      "Valencia",
+      ",",
+      "comía",
+      "paella",
+      "cada",
+      "domingo",
+      "."
+    ],
+    "sk": "Keď som býval vo Valencii, každú nedeľu som jedol paellu.",
+    "en": "When I lived in Valencia, I ate paella every Sunday."
+  },
+  {
+    "id": "s542",
+    "es": "Se me olvidó comprar pan.",
+    "tokens": [
+      "Se",
+      "me",
+      "olvidó",
+      "comprar",
+      "pan",
+      "."
+    ],
+    "sk": "Zabudol som kúpiť chlieb.",
+    "en": "I forgot to buy bread."
+  },
+  {
+    "id": "s543",
+    "es": "He probado la guindilla más picante de mi vida.",
+    "tokens": [
+      "He",
+      "probado",
+      "la",
+      "guindilla",
+      "más",
+      "picante",
+      "de",
+      "mi",
+      "vida",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "newIndex": 1,
+        "answer": "probado",
+        "hint": "probar · participio",
+        "distractors": [
+          "probé",
+          "probando",
+          "probaba"
+        ]
+      },
+      {
+        "tokenIndex": 5,
+        "newIndex": 6
+      }
+    ]
+  },
+  {
+    "id": "s697",
+    "es": "Esta tarta está demasiado empalagosa.",
+    "tokens": [
+      "Esta",
+      "tarta",
+      "está",
+      "demasiado",
+      "empalagosa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "distractors": [
+          "Este",
+          "Estas",
+          "Estos"
+        ]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "empalagosa",
+        "distractors": [
+          "empalagoso",
+          "amarga",
+          "desabrida"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s698",
+    "es": "Sin sal, la comida queda sosa.",
+    "tokens": [
+      "Sin",
+      "sal",
+      ",",
+      "la",
+      "comida",
+      "queda",
+      "sosa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sosa",
+        "lemma": "soso",
+        "distractors": [
+          "soso",
+          "sabrosa",
+          "salada"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s700",
+    "es": "Puedes sustituir la nata por yogur.",
+    "tokens": [
+      "Puedes",
+      "sustituir",
+      "la",
+      "nata",
+      "por",
+      "yogur",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nata",
+        "lemma": "nata"
+      }
+    ]
+  },
+  {
+    "id": "s701",
+    "es": "El día después de Navidad comemos las sobras.",
+    "tokens": [
+      "El",
+      "día",
+      "después",
+      "de",
+      "Navidad",
+      "comemos",
+      "las",
+      "sobras",
+      "."
+    ],
+    "sk": "Deň po Vianociach jeme zvyšky.",
+    "en": "The day after Christmas we eat the leftovers."
+  },
+  {
+    "id": "s702",
+    "es": "Mi abuela machacaba los ajos en el mortero.",
+    "tokens": [
+      "Mi",
+      "abuela",
+      "machacaba",
+      "los",
+      "ajos",
+      "en",
+      "el",
+      "mortero",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "mortero",
+        "lemma": "mortero",
+        "distractors": [
+          "cazo",
+          "cuchillo",
+          "tenedor"
+        ]
+      }
+    ],
+    "sk": "Moja babka drvila cesnak v mažiari.",
+    "en": "My grandma used to crush garlic in the mortar."
+  },
+  {
+    "id": "s704",
+    "es": "La dieta mediterránea es patrimonio cultural de la humanidad.",
+    "tokens": [
+      "La",
+      "dieta",
+      "mediterránea",
+      "es",
+      "patrimonio",
+      "cultural",
+      "de",
+      "la",
+      "humanidad",
+      "."
+    ],
+    "sk": "Stredomorská strava je kultúrne dedičstvo ľudstva.",
+    "en": "The Mediterranean diet is cultural heritage of humanity."
+  },
+  {
+    "id": "s544",
+    "es": "Si tienes hambre, te preparo un bocadillo.",
+    "tokens": [
+      "Si",
+      "tienes",
+      "hambre",
+      ",",
+      "te",
+      "preparo",
+      "un",
+      "bocadillo",
+      "."
+    ],
+    "sk": "Ak máš hlad, pripravím ti bagetu.",
+    "en": "If you're hungry, I'll make you a sandwich."
+  },
+  {
+    "id": "s691",
+    "es": "Mi madre calienta el pan en el horno.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "calienta",
+      "el",
+      "pan",
+      "en",
+      "el",
+      "horno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "el",
+        "distractors": [
+          "los",
+          "la",
+          "las"
+        ]
+      }
+    ],
+    "sk": "Mama ohrieva chlieb v rúre.",
+    "en": "My mom heats the bread in the oven."
+  },
+  {
+    "id": "s692",
+    "es": "De aperitivo pedimos patatas bravas y croquetas.",
+    "tokens": [
+      "De",
+      "aperitivo",
+      "pedimos",
+      "patatas",
+      "bravas",
+      "y",
+      "croquetas",
+      "."
+    ],
+    "sk": "Ako predjedlo sme si objednali patatas bravas a krokety.",
+    "en": "As a starter we ordered patatas bravas and croquettes."
+  },
+  {
+    "id": "s693",
+    "es": "El cocido de mi abuela lleva más de diez ingredientes.",
+    "tokens": [
+      "El",
+      "cocido",
+      "de",
+      "mi",
+      "abuela",
+      "lleva",
+      "más",
+      "de",
+      "diez",
+      "ingredientes",
+      "."
+    ],
+    "sk": "Babkin cocido obsahuje viac ako desať ingrediencií.",
+    "en": "My grandma's cocido has more than ten ingredients."
+  },
+  {
+    "id": "s1188",
+    "es": "Me llené de croquetas y luego no podía ni moverme.",
+    "tokens": [
+      "Me",
+      "llené",
+      "de",
+      "croquetas",
+      "y",
+      "luego",
+      "no",
+      "podía",
+      "ni",
+      "moverme",
+      "."
+    ],
+    "sk": "Napchal som sa krokety a potom som sa nevládal ani pohnúť.",
+    "en": "I stuffed myself with croquettes and then couldn't even move."
+  },
+  {
+    "id": "s1189",
+    "es": "Échale un poco más de picante, que esto no pica nada.",
+    "tokens": [
+      "Échale",
+      "un",
+      "poco",
+      "más",
+      "de",
+      "picante",
+      ",",
+      "que",
+      "esto",
+      "no",
+      "pica",
+      "nada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "newIndex": 2,
+        "answer": "poco",
+        "lemma": "poco"
+      }
+    ]
+  },
+  {
+    "id": "s1191",
+    "es": "En la boda sirvieron un cordero asado que estaba para chuparse los dedos.",
+    "tokens": [
+      "En",
+      "la",
+      "boda",
+      "sirvieron",
+      "un",
+      "cordero",
+      "asado",
+      "que",
+      "estaba",
+      "para",
+      "chuparse",
+      "los",
+      "dedos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 7
+      }
+    ],
+    "sk": "Na svadbe podávali pečené jahňa, až by si človek prsty oblizoval.",
+    "en": "At the wedding they served roast lamb that was finger-licking good."
+  },
+  {
+    "id": "s1192",
+    "es": "Nunca había probado los caracoles, y la verdad me sorprendieron.",
+    "tokens": [
+      "Nunca",
+      "había",
+      "probado",
+      "los",
+      "caracoles",
+      ",",
+      "y",
+      "la",
+      "verdad",
+      "me",
+      "sorprendieron",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "caracoles",
+        "lemma": "caracol",
+        "hint": "slimáky",
+        "distractors": [
+          "cuchillos",
+          "tenedores",
+          "cucharas"
+        ]
+      }
+    ],
+    "sk": "Nikdy predtým som neochutnal slimáky a úprimne ma prekvapili.",
+    "en": "I had never tried snails, and honestly they surprised me.",
+    "enHints": [
+      "snails"
+    ]
+  },
+  {
+    "id": "s1194",
+    "es": "Ese restaurante tiene fama, pero la verdad no vale lo que cuesta.",
+    "tokens": [
+      "Ese",
+      "restaurante",
+      "tiene",
+      "fama",
+      ",",
+      "pero",
+      "la",
+      "verdad",
+      "no",
+      "vale",
+      "lo",
+      "que",
+      "cuesta",
+      "."
+    ]
+  },
+  {
+    "id": "s1195",
+    "es": "La gastronomía andaluza destaca por sus frituras de pescado.",
+    "tokens": [
+      "La",
+      "gastronomía",
+      "andaluza",
+      "destaca",
+      "por",
+      "sus",
+      "frituras",
+      "de",
+      "pescado",
+      "."
+    ],
+    "sk": "Andalúzska gastronómia vyniká vyprážanými rybami.",
+    "en": "Andalusian cuisine stands out for its fried fish."
+  },
+  {
+    "id": "s1196",
+    "es": "De tanto recalentar el guisado, se quedó muy seco.",
+    "tokens": [
+      "De",
+      "tanto",
+      "recalentar",
+      "el",
+      "guisado",
+      ",",
+      "se",
+      "quedó",
+      "muy",
+      "seco",
+      "."
+    ]
+  },
+  {
+    "id": "s1197",
+    "es": "Me rugían las tripas, así que paramos en un puesto de churros.",
+    "tokens": [
+      "Me",
+      "rugían",
+      "las",
+      "tripas",
+      ",",
+      "así",
+      "que",
+      "paramos",
+      "en",
+      "un",
+      "puesto",
+      "de",
+      "churros",
+      "."
+    ],
+    "sk": "Škvŕkalo mi v bruchu, tak sme sa zastavili pri stánku s churros.",
+    "en": "My stomach was growling, so we stopped at a churros stand."
+  },
+  {
+    "id": "s1198",
+    "es": "Por más que lo intento, mis croquetas nunca quedan como las de mi abuela.",
+    "tokens": [
+      "Por",
+      "más",
+      "que",
+      "lo",
+      "intento",
+      ",",
+      "mis",
+      "croquetas",
+      "nunca",
+      "quedan",
+      "como",
+      "las",
+      "de",
+      "mi",
+      "abuela",
+      "."
+    ],
+    "sk": "Nech sa snažím akokoľvek, moje krokety nikdy nevyjdú ako babkine.",
+    "en": "No matter how hard I try, my croquettes never turn out like my grandma's."
+  },
+  {
+    "id": "s1199",
+    "es": "La guindilla es tan picante que hasta me hizo llorar.",
+    "tokens": [
+      "La",
+      "guindilla",
+      "es",
+      "tan",
+      "picante",
+      "que",
+      "hasta",
+      "me",
+      "hizo",
+      "llorar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 6
+      },
+      {
+        "tokenIndex": 9,
+        "newIndex": 8
+      }
+    ],
+    "sk": "Feferónka je taká štipľavá, že mi z nej až vyhŕkli slzy.",
+    "en": "The chili pepper is so hot that it even made me cry."
+  },
+  {
+    "id": "s1681",
+    "es": "Los niños tienen hambre; dales un bocadillo.",
+    "tokens": [
+      "Los",
+      "niños",
+      "tienen",
+      "hambre",
+      ";",
+      "dales",
+      "un",
+      "bocadillo",
+      "."
+    ],
+    "sk": "Deti majú hlad, daj im bagetu.",
+    "en": "The kids are hungry; give them a sandwich."
+  },
+  {
+    "id": "s104",
+    "es": "¿Quieres más pan?",
+    "tokens": [
+      "¿",
+      "Quieres",
+      "más",
+      "pan",
+      "?"
+    ],
+    "sk": "Chceš ešte chleba?",
+    "en": "Do you want more bread?"
+  },
+  {
+    "id": "s107",
+    "es": "La horchata es muy refrescante.",
+    "tokens": [
+      "La",
+      "horchata",
+      "es",
+      "muy",
+      "refrescante",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "La",
+        "lemma": "la",
+        "distractors": [
+          "El",
+          "Los",
+          "Las"
+        ]
+      }
+    ],
+    "sk": "Horchata je veľmi osviežujúca.",
+    "en": "Horchata is very refreshing."
+  },
+  {
+    "id": "s109",
+    "es": "Mi madre está haciendo croquetas.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "está",
+      "haciendo",
+      "croquetas",
+      "."
+    ],
+    "sk": "Mama robí krokety.",
+    "en": "My mom is making croquettes."
+  },
+  {
+    "id": "s1894",
+    "es": "Por la mañana siempre tomo café con un cruasán.",
+    "tokens": [
+      "Por",
+      "la",
+      "mañana",
+      "siempre",
+      "tomo",
+      "café",
+      "con",
+      "un",
+      "cruasán",
+      "."
+    ],
+    "sk": "Ráno si vždy dám kávu s croissantom.",
+    "en": "In the morning I always have coffee with a croissant."
+  },
+  {
+    "id": "s1895",
+    "es": "La tarta es para el cumpleaños de Ana.",
+    "tokens": [
+      "La",
+      "tarta",
+      "es",
+      "para",
+      "el",
+      "cumpleaños",
+      "de",
+      "Ana",
+      "."
+    ]
+  },
+  {
+    "id": "s1896",
+    "es": "Por ejemplo, el gazpacho se toma frío.",
+    "tokens": [
+      "Por",
+      "ejemplo",
+      ",",
+      "el",
+      "gazpacho",
+      "se",
+      "toma",
+      "frío",
+      "."
+    ],
+    "sk": "Napríklad gazpacho sa pije studené.",
+    "en": "For example, gazpacho is eaten cold."
+  },
+  {
+    "id": "s1897",
+    "es": "Pagamos cuarenta euros por persona.",
+    "tokens": [
+      "Pagamos",
+      "cuarenta",
+      "euros",
+      "por",
+      "persona",
+      "."
+    ],
+    "sk": "Zaplatili sme štyridsať eur na osobu.",
+    "en": "We paid forty euros per person."
+  },
+  {
+    "id": "s694",
+    "es": "La comida basura es barata, pero no es nutritiva.",
+    "tokens": [
+      "La",
+      "comida",
+      "basura",
+      "es",
+      "barata",
+      ",",
+      "pero",
+      "no",
+      "es",
+      "nutritiva",
+      "."
+    ]
+  },
+  {
+    "id": "s696",
+    "es": "El cocido se prepara en una olla.",
+    "tokens": [
+      "El",
+      "cocido",
+      "se",
+      "prepara",
+      "en",
+      "una",
+      "olla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 6
+      }
+    ],
+    "sk": "Cocido sa pripravuje v hrnci.",
+    "en": "Cocido is prepared in a pot."
+  },
+  {
+    "id": "s1181",
+    "es": "Prefiero cocinar en casa porque en los restaurantes todo es muy graso.",
+    "tokens": [
+      "Prefiero",
+      "cocinar",
+      "en",
+      "casa",
+      "porque",
+      "en",
+      "los",
+      "restaurantes",
+      "todo",
+      "es",
+      "muy",
+      "graso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "graso",
+        "lemma": "graso"
+      }
+    ]
+  },
+  {
+    "id": "s1182",
+    "es": "Mientras mi madre hacía la tortilla, yo preparaba la salsa.",
+    "tokens": [
+      "Mientras",
+      "mi",
+      "madre",
+      "hacía",
+      "la",
+      "tortilla",
+      ",",
+      "yo",
+      "preparaba",
+      "la",
+      "salsa",
+      "."
+    ],
+    "sk": "Kým mama robila tortillu, ja som pripravoval omáčku.",
+    "en": "While my mom was making the omelette, I was preparing the sauce."
+  },
+  {
+    "id": "s1184",
+    "es": "Pedí el cocido sin saber que llevaba tanto chorizo.",
+    "tokens": [
+      "Pedí",
+      "el",
+      "cocido",
+      "sin",
+      "saber",
+      "que",
+      "llevaba",
+      "tanto",
+      "chorizo",
+      "."
+    ],
+    "sk": "Objednal som si cocido bez toho, aby som vedel, že obsahuje toľko chorizo.",
+    "en": "I ordered the cocido without knowing it had so much chorizo in it."
+  },
+  {
+    "id": "s1185",
+    "es": "Para Nochebuena vamos a hacer croquetas; ¿nos ayudas a rebozarlas?",
+    "tokens": [
+      "Para",
+      "Nochebuena",
+      "vamos",
+      "a",
+      "hacer",
+      "croquetas",
+      ";",
+      "¿",
+      "nos",
+      "ayudas",
+      "a",
+      "rebozarlas",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "newIndex": 9
+      },
+      {
+        "tokenIndex": 12,
+        "newIndex": 11,
+        "answer": "rebozarlas",
+        "lemma": "las",
+        "hint": "rebozar + zámeno",
+        "distractors": [
+          "rebozarlos",
+          "rebozarles"
+        ]
+      }
+    ],
+    "sk": "Na Štedrý večer budeme robiť krokety, pomôžeš nám obaliť ich?",
+    "en": "For Christmas Eve we are going to make croquettes; will you help us coat them?",
+    "enHints": [
+      null,
+      "rebozar + pronoun"
+    ]
+  },
+  {
+    "id": "s1186",
+    "es": "Creo que la comida basura debería costar más que la fruta.",
+    "tokens": [
+      "Creo",
+      "que",
+      "la",
+      "comida",
+      "basura",
+      "debería",
+      "costar",
+      "más",
+      "que",
+      "la",
+      "fruta",
+      "."
+    ]
+  },
+  {
+    "id": "s1964",
+    "es": "La tortilla se hace con huevos y patatas.",
+    "tokens": [
+      "La",
+      "tortilla",
+      "se",
+      "hace",
+      "con",
+      "huevos",
+      "y",
+      "patatas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hace",
+        "distractors": [
+          "hacen",
+          "hacían",
+          "harán"
+        ]
+      }
+    ],
+    "sk": "Tortilla sa robí z vajec a zemiakov.",
+    "en": "Tortilla is made with eggs and potatoes."
+  },
+  {
+    "id": "s1965",
+    "es": "El cocido se sirve caliente.",
+    "tokens": [
+      "El",
+      "cocido",
+      "se",
+      "sirve",
+      "caliente",
+      "."
+    ],
+    "sk": "Cocido sa podáva horúci.",
+    "en": "Cocido is served hot."
+  },
+  {
+    "id": "s2033",
+    "es": "Si supieras lo rico que huele el café recién hecho, vendrías a mi casa.",
+    "tokens": [
+      "Si",
+      "supieras",
+      "lo",
+      "rico",
+      "que",
+      "huele",
+      "el",
+      "café",
+      "recién",
+      "hecho",
+      ",",
+      "vendrías",
+      "a",
+      "mi",
+      "casa",
+      "."
+    ],
+    "sk": "Keby si vedel, ako dobre vonia čerstvo uvarená káva, prišiel by si ku mne.",
+    "en": "If you knew how good freshly made coffee smells, you'd come to my house."
+  },
+  {
+    "id": "s2034",
+    "es": "No conozco a nadie que prepare las croquetas tan bien como mi tía.",
+    "tokens": [
+      "No",
+      "conozco",
+      "a",
+      "nadie",
+      "que",
+      "prepare",
+      "las",
+      "croquetas",
+      "tan",
+      "bien",
+      "como",
+      "mi",
+      "tía",
+      "."
+    ],
+    "sk": "Nepoznám nikoho, kto by pripravoval krokety tak dobre ako moja teta.",
+    "en": "I don't know anyone who makes croquettes as well as my aunt."
+  },
+  {
+    "id": "s2036",
+    "es": "Deja la sopa en el fuego hasta que hierva y luego baja la llama.",
+    "tokens": [
+      "Deja",
+      "la",
+      "sopa",
+      "en",
+      "el",
+      "fuego",
+      "hasta",
+      "que",
+      "hierva",
+      "y",
+      "luego",
+      "baja",
+      "la",
+      "llama",
+      "."
+    ]
+  },
+  {
+    "id": "s2037",
+    "es": "Me preguntó si quería horchata o limonada y le dije que cualquiera.",
+    "tokens": [
+      "Me",
+      "preguntó",
+      "si",
+      "quería",
+      "horchata",
+      "o",
+      "limonada",
+      "y",
+      "le",
+      "dije",
+      "que",
+      "cualquiera",
+      "."
+    ],
+    "sk": "Spýtal sa ma, či chcem horchatu alebo limonádu, a ja som povedal, že hocijakú.",
+    "en": "He asked me if I wanted horchata or lemonade and I said either."
+  },
+  {
+    "id": "s2039",
+    "es": "Desde que probé el cocido de mi suegra, ningún otro me parece tan rico.",
+    "tokens": [
+      "Desde",
+      "que",
+      "probé",
+      "el",
+      "cocido",
+      "de",
+      "mi",
+      "suegra",
+      ",",
+      "ningún",
+      "otro",
+      "me",
+      "parece",
+      "tan",
+      "rico",
+      "."
+    ],
+    "sk": "Odkedy som ochutnal svokrin cocido, žiadny iný mi nechutí tak dobre.",
+    "en": "Since I tried my mother-in-law's cocido, no other seems as tasty to me."
+  },
+  {
+    "id": "s1679",
+    "es": "¿Ya le has traído el café a tu padre?",
+    "tokens": [
+      "¿",
+      "Ya",
+      "le",
+      "has",
+      "traído",
+      "el",
+      "café",
+      "a",
+      "tu",
+      "padre",
+      "?"
+    ]
+  },
+  {
+    "id": "s2038",
+    "es": "Mi hermana quiere una tarta que no tenga azúcar ni harina y que sepa rico.",
+    "tokens": [
+      "Mi",
+      "hermana",
+      "quiere",
+      "una",
+      "tarta",
+      "que",
+      "no",
+      "tenga",
+      "azúcar",
+      "ni",
+      "harina",
+      "y",
+      "que",
+      "sepa",
+      "rico",
+      "."
+    ]
+  },
+  {
+    "id": "s687",
+    "es": "¿Ya quieren pedir?",
+    "tokens": [
+      "¿",
+      "Ya",
+      "quieren",
+      "pedir",
+      "?"
+    ]
+  },
+  {
+    "id": "s2035",
+    "es": "El camarero nos avisó que ya no tenían cocido, así que pedimos unas croquetas.",
+    "tokens": [
+      "El",
+      "camarero",
+      "nos",
+      "avisó",
+      "que",
+      "ya",
+      "no",
+      "tenían",
+      "cocido",
+      ",",
+      "así",
+      "que",
+      "pedimos",
+      "unas",
+      "croquetas",
+      "."
+    ],
+    "sk": "Čašník nám povedal, že už nemajú cocido, tak sme si objednali krokety.",
+    "en": "The waiter told us they no longer had cocido, so we ordered some croquettes."
+  }
+]

@@ -1,0 +1,583 @@
+[
+  {
+    "id": "s303",
+    "es": "¿Conoces las playas de Cádiz?",
+    "tokens": [
+      "¿",
+      "Conoces",
+      "las",
+      "playas",
+      "de",
+      "Cádiz",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Conoces"
+      }
+    ],
+    "sk": "Poznáš pláže v Cádize?",
+    "en": "Do you know the beaches of Cádiz?"
+  },
+  {
+    "id": "s297",
+    "es": "Vimos muchos peces en Tenerife.",
+    "tokens": [
+      "Vimos",
+      "muchos",
+      "peces",
+      "en",
+      "Tenerife",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vimos"
+      }
+    ],
+    "sk": "V Tenerife sme videli veľa rýb.",
+    "en": "We saw lots of fish in Tenerife."
+  },
+  {
+    "id": "s392",
+    "es": "En Doñana hay miles de flamencos.",
+    "tokens": [
+      "En",
+      "Doñana",
+      "hay",
+      "miles",
+      "de",
+      "flamencos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hay"
+      }
+    ],
+    "sk": "V Doñane sú tisíce plameniakov.",
+    "en": "In Doñana there are thousands of flamingos."
+  },
+  {
+    "id": "s891",
+    "es": "El oso es el símbolo de Madrid.",
+    "tokens": [
+      "El",
+      "oso",
+      "es",
+      "el",
+      "símbolo",
+      "de",
+      "Madrid",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "oso",
+        "lemma": "oso",
+        "hint": "medveď",
+        "distractors": [
+          "lobo",
+          "toro",
+          "oro"
+        ]
+      }
+    ],
+    "sk": "Medveď je symbolom Madridu.",
+    "en": "The bear is the symbol of Madrid.",
+    "enHints": [
+      "bear"
+    ]
+  },
+  {
+    "id": "s892",
+    "es": "Las ballenas llegan a las Islas Canarias en invierno.",
+    "tokens": [
+      "Las",
+      "ballenas",
+      "llegan",
+      "a",
+      "las",
+      "Islas",
+      "Canarias",
+      "en",
+      "invierno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegan"
+      }
+    ],
+    "sk": "Veľryby priplávajú ku Kanárskym ostrovom v zime.",
+    "en": "Whales arrive at the Canary Islands in winter."
+  },
+  {
+    "id": "s896",
+    "es": "El lince ibérico está en peligro de extinción.",
+    "tokens": [
+      "El",
+      "lince",
+      "ibérico",
+      "está",
+      "en",
+      "peligro",
+      "de",
+      "extinción",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "peligro"
+      }
+    ],
+    "sk": "Rys iberský je ohrozený vyhynutím.",
+    "en": "The Iberian lynx is in danger of extinction."
+  },
+  {
+    "id": "s898",
+    "es": "La deforestación amenaza la selva amazónica.",
+    "tokens": [
+      "La",
+      "deforestación",
+      "amenaza",
+      "la",
+      "selva",
+      "amazónica",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "amenaza"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "la"
+      }
+    ],
+    "sk": "Odlesňovanie ohrozuje amazonský prales.",
+    "en": "Deforestation threatens the Amazon rainforest."
+  },
+  {
+    "id": "s902",
+    "es": "Con los residuos orgánicos hacemos compost.",
+    "tokens": [
+      "Con",
+      "los",
+      "residuos",
+      "orgánicos",
+      "hacemos",
+      "compost",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hacemos"
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Con"
+      }
+    ]
+  },
+  {
+    "id": "s1338",
+    "es": "Me da rabia ver cómo la gente tira basura en la playa.",
+    "tokens": [
+      "Me",
+      "da",
+      "rabia",
+      "ver",
+      "cómo",
+      "la",
+      "gente",
+      "tira",
+      "basura",
+      "en",
+      "la",
+      "playa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "rabia",
+        "lemma": "rabia",
+        "hint": "zlosť",
+        "distractors": [
+          "risa",
+          "ropa",
+          "raza"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1342",
+    "es": "Los linces ibéricos solo viven en la península ibérica, y cada vez quedan menos.",
+    "tokens": [
+      "Los",
+      "linces",
+      "ibéricos",
+      "solo",
+      "viven",
+      "en",
+      "la",
+      "península",
+      "ibérica",
+      ",",
+      "y",
+      "cada",
+      "vez",
+      "quedan",
+      "menos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 4,
+        "answer": "viven"
+      }
+    ],
+    "sk": "Iberské rysy žijú len na Pyrenejskom polostrove a je ich čoraz menej.",
+    "en": "Iberian lynxes only live on the Iberian Peninsula, and fewer and fewer are left."
+  },
+  {
+    "id": "s1600",
+    "es": "Dicen que mañana nevará en la Sierra Nevada.",
+    "tokens": [
+      "Dicen",
+      "que",
+      "mañana",
+      "nevará",
+      "en",
+      "la",
+      "Sierra",
+      "Nevada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nevará"
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "en"
+      }
+    ],
+    "sk": "Vraj zajtra bude snežiť v Sierra Nevade.",
+    "en": "They say it will snow in the Sierra Nevada tomorrow."
+  },
+  {
+    "id": "s2082",
+    "es": "Los científicos que estudian los volcanes dicen que el Etna sigue activo.",
+    "tokens": [
+      "Los",
+      "científicos",
+      "que",
+      "estudian",
+      "los",
+      "volcanes",
+      "dicen",
+      "que",
+      "el",
+      "Etna",
+      "sigue",
+      "activo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que"
+      }
+    ],
+    "sk": "Vedci, ktorí skúmajú sopky, hovoria, že Etna je stále aktívna.",
+    "en": "The scientists who study volcanoes say that Etna is still active."
+  },
+  {
+    "id": "s445",
+    "es": "Algún día conoceré el desierto de Tabernas.",
+    "tokens": [
+      "Algún",
+      "día",
+      "conoceré",
+      "el",
+      "desierto",
+      "de",
+      "Tabernas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "conoceré"
+      }
+    ],
+    "sk": "Raz spoznám púšť Tabernas.",
+    "en": "Someday I will see the Tabernas desert."
+  },
+  {
+    "id": "s1323",
+    "es": "El próximo verano visitaremos una isla del Mediterráneo.",
+    "tokens": [
+      "El",
+      "próximo",
+      "verano",
+      "visitaremos",
+      "una",
+      "isla",
+      "del",
+      "Mediterráneo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visitaremos"
+      }
+    ],
+    "sk": "Budúce leto navštívime ostrov v Stredozemnom mori.",
+    "en": "Next summer we will visit an island in the Mediterranean."
+  },
+  {
+    "id": "s1322",
+    "es": "Cuando vivía en el pueblo, tenía dos burros.",
+    "tokens": [
+      "Cuando",
+      "vivía",
+      "en",
+      "el",
+      "pueblo",
+      ",",
+      "tenía",
+      "dos",
+      "burros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tenía"
+      }
+    ],
+    "sk": "Keď som býval v dedine, mal som dva osly.",
+    "en": "When I lived in the village, I had two donkeys."
+  },
+  {
+    "id": "s1324",
+    "es": "El terremoto de anoche despertó a todos.",
+    "tokens": [
+      "El",
+      "terremoto",
+      "de",
+      "anoche",
+      "despertó",
+      "a",
+      "todos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "terremoto",
+        "lemma": "terremoto",
+        "hint": "zemetrasenie",
+        "distractors": [
+          "terreno",
+          "territorio",
+          "tormenta"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s887",
+    "es": "Subimos al monte para ver el atardecer.",
+    "tokens": [
+      "Subimos",
+      "al",
+      "monte",
+      "para",
+      "ver",
+      "el",
+      "atardecer",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Subimos"
+      }
+    ]
+  },
+  {
+    "id": "s1690",
+    "es": "Este monte es pequeño, pero ese volcán es más alto.",
+    "tokens": [
+      "Este",
+      "monte",
+      "es",
+      "pequeño",
+      ",",
+      "pero",
+      "ese",
+      "volcán",
+      "es",
+      "más",
+      "alto",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "ese"
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "más"
+      }
+    ]
+  },
+  {
+    "id": "s1330",
+    "es": "Íbamos por la carretera cuando vimos un incendio en el monte.",
+    "tokens": [
+      "Íbamos",
+      "por",
+      "la",
+      "carretera",
+      "cuando",
+      "vimos",
+      "un",
+      "incendio",
+      "en",
+      "el",
+      "monte",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Íbamos"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "vimos"
+      }
+    ]
+  },
+  {
+    "id": "s890",
+    "es": "Las hormigas entraron en la cocina.",
+    "tokens": [
+      "Las",
+      "hormigas",
+      "entraron",
+      "en",
+      "la",
+      "cocina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "entraron"
+      }
+    ]
+  },
+  {
+    "id": "s1936",
+    "es": "Este es el bosque donde vimos al ciervo.",
+    "tokens": [
+      "Este",
+      "es",
+      "el",
+      "bosque",
+      "donde",
+      "vimos",
+      "al",
+      "ciervo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "donde"
+      }
+    ]
+  },
+  {
+    "id": "s1331",
+    "es": "Este año casi no ha llovido, por eso la sequía es tan grave.",
+    "tokens": [
+      "Este",
+      "año",
+      "casi",
+      "no",
+      "ha",
+      "llovido",
+      ",",
+      "por",
+      "eso",
+      "la",
+      "sequía",
+      "es",
+      "tan",
+      "grave",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este"
+      },
+      {
+        "tokenIndex": 9,
+        "newIndex": 10,
+        "answer": "sequía"
+      }
+    ]
+  },
+  {
+    "id": "s2088",
+    "es": "Aunque ya ha caído la nieve, queremos subir al volcán en cuanto abran el camino.",
+    "tokens": [
+      "Aunque",
+      "ya",
+      "ha",
+      "caído",
+      "la",
+      "nieve",
+      ",",
+      "queremos",
+      "subir",
+      "al",
+      "volcán",
+      "en",
+      "cuanto",
+      "abran",
+      "el",
+      "camino",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "newIndex": 13,
+        "answer": "abran"
+      }
+    ]
+  }
+]

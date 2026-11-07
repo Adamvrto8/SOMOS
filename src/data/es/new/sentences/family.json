@@ -1,0 +1,434 @@
+[
+  {
+    "id": "s9003",
+    "es": "¿Has hablado hoy con tu madre?",
+    "sk": "Hovoril si dnes s mamou?",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Has",
+      "hablado",
+      "hoy",
+      "con",
+      "tu",
+      "madre",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Has",
+        "lemma": "haber",
+        "hint": "haber · tú",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "Hubiste",
+          "Habías",
+          "Hayas"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "hablado",
+        "lemma": "hablar",
+        "hint": "hablar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hablaste",
+          "hablando",
+          "hablabas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9014",
+    "es": "Esta tarde mis padres han cocinado para todos.",
+    "sk": "Dnes popoludní rodičia varili pre všetkých.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "tarde",
+      "mis",
+      "padres",
+      "han",
+      "cocinado",
+      "para",
+      "todos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cocinado",
+        "lemma": "cocinar",
+        "hint": "cocinar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "cocinaron",
+          "cocinando",
+          "cocinaban"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9028",
+    "es": "Hoy los niños han jugado en el parque.",
+    "sk": "Dnes sa deti hrali v parku.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "los",
+      "niños",
+      "han",
+      "jugado",
+      "en",
+      "el",
+      "parque",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "han",
+        "lemma": "haber",
+        "hint": "haber · ellos",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hubieron",
+          "habían",
+          "hayan"
+        ]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "jugado",
+        "lemma": "jugar",
+        "hint": "jugar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "jugaron",
+          "jugando",
+          "jugaban"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9044",
+    "es": "Mi hermana ha vuelto hoy de Madrid.",
+    "sk": "Moja sestra sa dnes vrátila z Madridu.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Mi",
+      "hermana",
+      "ha",
+      "vuelto",
+      "hoy",
+      "de",
+      "Madrid",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "vuelto",
+        "lemma": "volver",
+        "hint": "volver · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "volvió",
+          "volviendo",
+          "volvía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9046",
+    "es": "Su abuelo ha muerto este año.",
+    "sk": "Jeho dedo tento rok zomrel.",
+    "level": "B1",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Su",
+      "abuelo",
+      "ha",
+      "muerto",
+      "este",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "muerto",
+        "lemma": "morir",
+        "hint": "morir · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "murió",
+          "muriendo",
+          "moría"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9056",
+    "es": "Hace dos días llamé a mi madre.",
+    "sk": "Pred dvoma dňami som volal mame.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Hace",
+      "dos",
+      "días",
+      "llamé",
+      "a",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llamé",
+        "lemma": "llamar",
+        "hint": "llamar · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he llamado",
+          "llamo",
+          "llamaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9072",
+    "es": "El domingo pasado mis abuelos cocinaron para toda la familia.",
+    "sk": "Minulú nedeľu varili starí rodičia pre celú rodinu.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "domingo",
+      "pasado",
+      "mis",
+      "abuelos",
+      "cocinaron",
+      "para",
+      "toda",
+      "la",
+      "familia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cocinaron",
+        "lemma": "cocinar",
+        "hint": "cocinar · ellos",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "han cocinado",
+          "cocinan",
+          "cocinaban"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9078",
+    "es": "Esta mañana mi madre ha llamado dos veces.",
+    "sk": "Dnes ráno volala moja mama dvakrát.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "mañana",
+      "mi",
+      "madre",
+      "ha",
+      "llamado",
+      "dos",
+      "veces",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ha",
+        "lemma": "haber",
+        "hint": "haber · él",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubo",
+          "había",
+          "haya"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9086",
+    "es": "¿Vosotros habláis español en casa?",
+    "sk": "Hovoríte doma po španielsky?",
+    "level": "A1",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Vosotros",
+      "habláis",
+      "español",
+      "en",
+      "casa",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "habláis",
+        "lemma": "hablar",
+        "hint": "hablar · vosotros · presente",
+        "distractors": [
+          "hablan",
+          "hablamos",
+          "hablabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9090",
+    "es": "¿Tenéis hermanos?",
+    "sk": "Máte súrodencov?",
+    "level": "A1",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Tenéis",
+      "hermanos",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tenéis",
+        "lemma": "tener",
+        "hint": "tener · vosotros · presente",
+        "distractors": [
+          "Tienen",
+          "Tenemos",
+          "Teníais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9097",
+    "es": "No habléis tan alto, que el bebé duerme.",
+    "sk": "Nehovorte tak nahlas, dieťa spí.",
+    "level": "A2",
+    "topics": [
+      "family"
+    ],
+    "grammar": [
+      "subjuntivo",
+      "imperativo"
+    ],
+    "tokens": [
+      "No",
+      "habléis",
+      "tan",
+      "alto",
+      ",",
+      "que",
+      "el",
+      "bebé",
+      "duerme",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "habléis",
+        "lemma": "hablar",
+        "hint": "hablar · vosotros · subjuntivo",
+        "distractors": [
+          "hablen",
+          "hablemos",
+          "habláis"
+        ]
+      }
+    ]
+  }
+]

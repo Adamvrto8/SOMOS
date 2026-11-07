@@ -1,0 +1,363 @@
+[
+  {
+    "id": "s9021",
+    "es": "Hoy nos hemos divertido muchísimo en la fiesta.",
+    "sk": "Dnes sme sa na večierku veľmi zabavili.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "nos",
+      "hemos",
+      "divertido",
+      "muchísimo",
+      "en",
+      "la",
+      "fiesta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "divertido",
+        "lemma": "divertirse",
+        "hint": "divertirse · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "divertimos",
+          "divirtiendo",
+          "divertía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9027",
+    "es": "Esta tarde mi vecina ha tocado el piano.",
+    "sk": "Dnes popoludní hrala moja susedka na klavíri.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "tarde",
+      "mi",
+      "vecina",
+      "ha",
+      "tocado",
+      "el",
+      "piano",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tocado",
+        "lemma": "tocar",
+        "hint": "tocar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "tocó",
+          "tocando",
+          "tocaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9032",
+    "es": "Todavía no ha empezado la película.",
+    "sk": "Film sa ešte nezačal.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Todavía",
+      "no",
+      "ha",
+      "empezado",
+      "la",
+      "película",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "empezado",
+        "lemma": "empezar",
+        "hint": "empezar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "empezó",
+          "empezando",
+          "empezaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9040",
+    "es": "¿Ya has visto la nueva serie?",
+    "sk": "Videl si už ten nový seriál?",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Ya",
+      "has",
+      "visto",
+      "la",
+      "nueva",
+      "serie",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visto",
+        "lemma": "ver",
+        "hint": "ver · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "viste",
+          "viendo",
+          "veías"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9042",
+    "es": "Este año ha escrito dos libros.",
+    "sk": "Tento rok napísal dve knihy.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "año",
+      "ha",
+      "escrito",
+      "dos",
+      "libros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "escrito",
+        "lemma": "escribir",
+        "hint": "escribir · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "escribió",
+          "escribiendo",
+          "escribía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9051",
+    "es": "Anoche vimos una película muy buena.",
+    "sk": "Včera večer sme pozreli veľmi dobrý film.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "vimos",
+      "una",
+      "película",
+      "muy",
+      "buena",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vimos",
+        "lemma": "ver",
+        "hint": "ver · nosotros",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "hemos visto",
+          "vemos",
+          "veíamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9074",
+    "es": "Anoche vi a Lucía en la fiesta.",
+    "sk": "Včera večer som videl Lucíu na večierku.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "vi",
+      "a",
+      "Lucía",
+      "en",
+      "la",
+      "fiesta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "vi",
+        "lemma": "ver",
+        "hint": "ver · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he visto",
+          "veo",
+          "veía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9100",
+    "es": "Ayer fuisteis al cine sin mí.",
+    "sk": "Včera ste išli do kina bezo mňa.",
+    "level": "A2",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "preterito"
+    ],
+    "tokens": [
+      "Ayer",
+      "fuisteis",
+      "al",
+      "cine",
+      "sin",
+      "mí",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "fuisteis",
+        "lemma": "ir",
+        "hint": "ir · vosotros · pretérito",
+        "distractors": [
+          "fueron",
+          "fuimos",
+          "ibais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9109",
+    "es": "Vosotros jugáis muy bien al fútbol.",
+    "sk": "Hráte futbal veľmi dobre.",
+    "level": "A1",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Vosotros",
+      "jugáis",
+      "muy",
+      "bien",
+      "al",
+      "fútbol",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "jugáis",
+        "lemma": "jugar",
+        "hint": "jugar · vosotros · presente",
+        "distractors": [
+          "juegan",
+          "jugamos",
+          "jugabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9115",
+    "es": "Me mola mucho esta canción.",
+    "sk": "Táto pesnička sa mi veľmi páči.",
+    "level": "B1",
+    "topics": [
+      "hobbies"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Me",
+      "mola",
+      "mucho",
+      "esta",
+      "canción",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mola",
+        "lemma": "molar",
+        "hint": "molar · él · presente",
+        "distractors": [
+          "molan",
+          "molaron",
+          "molabas"
+        ]
+      }
+    ]
+  }
+]

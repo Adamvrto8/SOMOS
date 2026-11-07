@@ -1,0 +1,550 @@
+[
+  {
+    "id": "s114",
+    "es": "Mi hermano se baña por la noche.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "se",
+      "baña",
+      "por",
+      "la",
+      "noche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "baña"
+      }
+    ]
+  },
+  {
+    "id": "s125",
+    "es": "La nevera está vacía.",
+    "tokens": [
+      "La",
+      "nevera",
+      "está",
+      "vacía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está"
+      }
+    ]
+  },
+  {
+    "id": "s490",
+    "es": "El fontanero vendrá mañana por la mañana.",
+    "tokens": [
+      "El",
+      "fontanero",
+      "vendrá",
+      "mañana",
+      "por",
+      "la",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vendrá"
+      }
+    ]
+  },
+  {
+    "id": "s716",
+    "es": "El casero no quiere devolvernos la fianza.",
+    "tokens": [
+      "El",
+      "casero",
+      "no",
+      "quiere",
+      "devolvernos",
+      "la",
+      "fianza",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "fianza",
+        "lemma": "fianza",
+        "hint": "záloha",
+        "distractors": [
+          "fábrica",
+          "fecha",
+          "fila"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1312",
+    "es": "Nos devolvieron la fianza completa porque dejamos todo impecable.",
+    "tokens": [
+      "Nos",
+      "devolvieron",
+      "la",
+      "fianza",
+      "completa",
+      "porque",
+      "dejamos",
+      "todo",
+      "impecable",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "devolvieron"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "porque"
+      }
+    ]
+  },
+  {
+    "id": "s722",
+    "es": "En la comunidad de vecinos hay que pagar una cuota de mantenimiento.",
+    "tokens": [
+      "En",
+      "la",
+      "comunidad",
+      "de",
+      "vecinos",
+      "hay",
+      "que",
+      "pagar",
+      "una",
+      "cuota",
+      "de",
+      "mantenimiento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comunidad",
+        "lemma": "comunidad",
+        "hint": "spoločenstvo vlastníkov",
+        "distractors": [
+          "comedor",
+          "consultorio",
+          "comunicado"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 5,
+        "answer": "hay"
+      }
+    ],
+    "sk": "V spoločenstve vlastníkov sa platí poplatok za údržbu.",
+    "en": "In the homeowners' association you have to pay a maintenance fee.",
+    "enHints": [
+      "residents' association",
+      null
+    ]
+  },
+  {
+    "id": "s1298",
+    "es": "El depósito se vació y no tenemos agua desde la mañana.",
+    "tokens": [
+      "El",
+      "depósito",
+      "se",
+      "vació",
+      "y",
+      "no",
+      "tenemos",
+      "agua",
+      "desde",
+      "la",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tenemos"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "desde"
+      }
+    ]
+  },
+  {
+    "id": "s1299",
+    "es": "Vivimos en una urbanización tranquila, lejos del ruido del centro.",
+    "tokens": [
+      "Vivimos",
+      "en",
+      "una",
+      "urbanización",
+      "tranquila",
+      ",",
+      "lejos",
+      "del",
+      "ruido",
+      "del",
+      "centro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "urbanización",
+        "lemma": "urbanización",
+        "hint": "obytná štvrť",
+        "distractors": [
+          "inquilino",
+          "fontanero",
+          "fregona"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1302",
+    "es": "Enciende el calentador media hora antes de bañarte.",
+    "tokens": [
+      "Enciende",
+      "el",
+      "calentador",
+      "media",
+      "hora",
+      "antes",
+      "de",
+      "bañarte",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calentador",
+        "distractors": [
+          "depósito",
+          "fregona",
+          "urbanización"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1307",
+    "es": "La humedad se metió en el armario y se llenó todo de moho.",
+    "tokens": [
+      "La",
+      "humedad",
+      "se",
+      "metió",
+      "en",
+      "el",
+      "armario",
+      "y",
+      "se",
+      "llenó",
+      "todo",
+      "de",
+      "moho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "humedad"
+      }
+    ]
+  },
+  {
+    "id": "s1311",
+    "es": "El inquilino anterior dejó la casa hecha una pocilga.",
+    "tokens": [
+      "El",
+      "inquilino",
+      "anterior",
+      "dejó",
+      "la",
+      "casa",
+      "hecha",
+      "una",
+      "pocilga",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "pocilga",
+        "lemma": "pocilga",
+        "hint": "chliev, neporiadok",
+        "distractors": [
+          "comunidad",
+          "fianza",
+          "aval"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1313",
+    "es": "Llevamos meses buscando piso y todo está carísimo o lejísimos.",
+    "tokens": [
+      "Llevamos",
+      "meses",
+      "buscando",
+      "piso",
+      "y",
+      "todo",
+      "está",
+      "carísimo",
+      "o",
+      "lejísimos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llevamos"
+      }
+    ]
+  },
+  {
+    "id": "s1314",
+    "es": "Mi compañera de piso nunca lava los platos y ya me tiene harta.",
+    "tokens": [
+      "Mi",
+      "compañera",
+      "de",
+      "piso",
+      "nunca",
+      "lava",
+      "los",
+      "platos",
+      "y",
+      "ya",
+      "me",
+      "tiene",
+      "harta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 5,
+        "answer": "lava"
+      }
+    ]
+  },
+  {
+    "id": "s1294",
+    "es": "Cuando vivía con mis padres, mi cuarto estaba en la azotea.",
+    "tokens": [
+      "Cuando",
+      "vivía",
+      "con",
+      "mis",
+      "padres",
+      ",",
+      "mi",
+      "cuarto",
+      "estaba",
+      "en",
+      "la",
+      "azotea",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "estaba"
+      }
+    ]
+  },
+  {
+    "id": "s1613",
+    "es": "El ascensor no funciona, así que estamos bajando por las escaleras.",
+    "tokens": [
+      "El",
+      "ascensor",
+      "no",
+      "funciona",
+      ",",
+      "así",
+      "que",
+      "estamos",
+      "bajando",
+      "por",
+      "las",
+      "escaleras",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "bajando"
+      }
+    ]
+  },
+  {
+    "id": "s1810",
+    "es": "¿Os importaría quitaros los zapatos al entrar?",
+    "tokens": [
+      "¿",
+      "Os",
+      "importaría",
+      "quitaros",
+      "los",
+      "zapatos",
+      "al",
+      "entrar",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "importaría"
+      }
+    ]
+  },
+  {
+    "id": "s1812",
+    "es": "Mis padres dijeron que arreglarían el techo en octubre.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "dijeron",
+      "que",
+      "arreglarían",
+      "el",
+      "techo",
+      "en",
+      "octubre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "arreglarían"
+      }
+    ]
+  },
+  {
+    "id": "s2074",
+    "es": "Mis vecinos, a quienes les prestamos la escalera, nos trajeron un bizcocho.",
+    "tokens": [
+      "Mis",
+      "vecinos",
+      ",",
+      "a",
+      "quienes",
+      "les",
+      "prestamos",
+      "la",
+      "escalera",
+      ",",
+      "nos",
+      "trajeron",
+      "un",
+      "bizcocho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quienes"
+      }
+    ],
+    "sk": "Susedia, ktorým sme požičali rebrík, nám priniesli koláč.",
+    "en": "Our neighbors, to whom we lent the ladder, brought us a sponge cake."
+  },
+  {
+    "id": "s2077",
+    "es": "Mientras mi marido cocina, yo coloco los libros en la estantería nueva.",
+    "tokens": [
+      "Mientras",
+      "mi",
+      "marido",
+      "cocina",
+      ",",
+      "yo",
+      "coloco",
+      "los",
+      "libros",
+      "en",
+      "la",
+      "estantería",
+      "nueva",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras"
+      }
+    ]
+  },
+  {
+    "id": "s2079",
+    "es": "Si hubiéramos revisado el contrato, no tendríamos que pagar la reparación del calentador.",
+    "tokens": [
+      "Si",
+      "hubiéramos",
+      "revisado",
+      "el",
+      "contrato",
+      ",",
+      "no",
+      "tendríamos",
+      "que",
+      "pagar",
+      "la",
+      "reparación",
+      "del",
+      "calentador",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tendríamos"
+      }
+    ]
+  },
+  {
+    "id": "s1752",
+    "es": "Cierra la puerta, por favor, hace frío.",
+    "tokens": [
+      "Cierra",
+      "la",
+      "puerta",
+      ",",
+      "por",
+      "favor",
+      ",",
+      "hace",
+      "frío",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cierra",
+        "hint": "cerrar · tú · imperativo",
+        "distractors": [
+          "Cierre",
+          "Cierran",
+          "Cierro"
+        ]
+      }
+    ],
+    "sk": "Zatvor dvere, prosím, je zima.",
+    "en": "Close the door, please, it's cold."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "s9023",
+    "es": "Últimamente me he sentido muy cansado.",
+    "sk": "V poslednom čase som sa cítil veľmi unavený.",
+    "level": "B1",
+    "topics": [
+      "emotions"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Últimamente",
+      "me",
+      "he",
+      "sentido",
+      "muy",
+      "cansado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sentido",
+        "lemma": "sentirse",
+        "hint": "sentirse · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "sentí",
+          "sintiendo",
+          "sentía"
+        ]
+      }
+    ]
+  }
+]

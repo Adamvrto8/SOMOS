@@ -55,5 +55,82 @@
     "examples": [
       "Turn on the light, please."
     ]
+  },
+  {
+    "id": "coger",
+    "en": [
+      "to take",
+      "to catch",
+      "to grab"
+    ],
+    "examples": [
+      "I take the bus at eight.",
+      "Take an umbrella, it's going to rain."
+    ],
+    "note": "An everyday verb in Spain: coger el metro, coger un taxi, coger el teléfono. In Mexico it is vulgar; there people say tomar or agarrar."
+  },
+  {
+    "id": "apetecer",
+    "en": [
+      "to feel like",
+      "to fancy"
+    ],
+    "examples": [
+      "Do you fancy a coffee?",
+      "I don't feel like going out today."
+    ],
+    "note": "Like gustar: me apetece, te apetece, nos apetecen las vacaciones."
+  },
+  {
+    "id": "molar",
+    "en": [
+      "to be cool",
+      "to like (colloquial)"
+    ],
+    "examples": [
+      "I really like your jacket."
+    ],
+    "note": "Colloquial, like gustar: me mola, nos molan los conciertos. ¡Mola! = That is cool!"
+  },
+  {
+    "id": "suspender",
+    "en": [
+      "to fail (an exam)",
+      "to call off"
+    ],
+    "examples": [
+      "I've failed my driving test."
+    ],
+    "note": "suspender un examen = to fail an exam, the opposite is aprobar. It also means to call off: han suspendido el partido."
+  },
+  {
+    "id": "girar",
+    "en": [
+      "to turn"
+    ],
+    "examples": [
+      "Turn right at the traffic lights."
+    ]
+  },
+  {
+    "id": "fregar",
+    "en": [
+      "to wash up",
+      "to mop"
+    ],
+    "examples": [
+      "Who's washing up today?"
+    ],
+    "note": "fregar los platos = to do the dishes, fregar el suelo = to mop the floor, la fregona = mop."
+  },
+  {
+    "id": "currar",
+    "en": [
+      "to work (colloquial)"
+    ],
+    "examples": [
+      "Tomorrow I'm working until eight."
+    ],
+    "note": "Colloquial: el curro = job, work."
   }
 ]

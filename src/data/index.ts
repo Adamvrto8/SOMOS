@@ -53,6 +53,16 @@ const esSentences =
 const esNewSentences = variant === 'es' ? collect<Sentence>(import.meta.glob('./es/new/sentences/*.json', { eager: true, import: 'default' })) : []
 export const sentences = variant === 'es' ? [...applySentences(baseSentences, esSentences), ...esNewSentences] : baseSentences
 
+/**
+ * What only one variant has: Spain's own words, verbs and sentences (ids s9001…) and the Mexican words and verbs Spain
+ * hides. A duel leaves them out, since the two players may study different variants.
+ */
+export const variantOnly = {
+  words: new Set([...esNewWords.map((w) => w.id), ...esWords.filter((o) => o.hidden).map((o) => o.id)]),
+  verbs: new Set([...esNewWords.flatMap((w) => (w.verbId ? [w.verbId] : [])), ...hiddenVerbs]),
+  sentence: (id: string) => /^s9\d{3}$/.test(id),
+}
+
 /** The words vocab tasks ask: all but the articles (`drill: false`). */
 export const vocabWords = words.filter((w) => w.drill !== false)
 
@@ -68,25 +78,29 @@ export const wordIdByVerb = new Map(words.flatMap((w) => (w.verbId ? [[w.verbId,
 // The English overlay, by id (see types.ts). Only src/lib/localized.ts reads it.
 const byId = <T extends { id: string }>(items: T[]) => new Map(items.map((item) => [item.id, item]))
 // Spain adds English for its own words and drops the English notes that talk about Mexico (the overlay removed the Slovak ones).
-const esNewEnWords = variant === 'es' ? collect<WordEn>(import.meta.glob('./es/new/en/words.json', { eager: true, import: 'default' })) : []
+const esNewEnWords = variant === 'es' ? collect<WordEn>(import.meta.glob('./es/new/en/words*.json', { eager: true, import: 'default' })) : []
 const esNewEnVerbs = variant === 'es' ? collect<VerbEn>(import.meta.glob('./es/new/en/verbs.json', { eager: true, import: 'default' })) : []
 const esWordById = new Map(esWords.map((o) => [o.id, o]))
 const dropMexicanNotes = (items: WordEn[]) =>
   variant === 'es'
     ? items.map((w) => {
         const o = esWordById.get(w.id)
-        if (o?.noteEn) return { ...w, note: o.noteEn }
-        return o?.note === null || (o?.note && !o.noteEn) ? { ...w, note: undefined } : w
+        if (!o) return w
+        const examples = o.examplesEn && w.examples ? w.examples.map((e, i) => o.examplesEn?.[i] ?? e) : w.examples
+        const note = o.noteEn ?? (o.note === null || o.note ? undefined : w.note)
+        return { ...w, examples, note }
       })
     : items
-const esSentenceEn = new Map(esSentences.flatMap((o) => (o.en ? [[o.id, o.en] as const] : [])))
+const esSentenceById = new Map(esSentences.map((o) => [o.id, o]))
 export const english = {
   words: byId([...dropMexicanNotes(collect<WordEn>(import.meta.glob('./en/words/*.json', { eager: true, import: 'default' }))), ...esNewEnWords]),
   verbs: byId([...collect<VerbEn>(import.meta.glob('./en/verbs/*.json', { eager: true, import: 'default' })), ...esNewEnVerbs]),
   sentences: byId([
     ...collect<SentenceEn>(import.meta.glob('./en/sentences/*.json', { eager: true, import: 'default' })).map((s) => {
-      const en = esSentenceEn.get(s.id)
-      return en ? { ...s, en } : s
+      const o = esSentenceById.get(s.id)
+      if (!o?.en && !o?.enHints) return s
+      const hints = o.enHints ? o.enHints.map((h, i) => h ?? s.hints?.[i] ?? null) : s.hints
+      return { ...s, ...(o.en ? { en: o.en } : {}), ...(hints ? { hints } : {}) }
     }),
     ...(variant === 'es' ? collect<SentenceEn>(import.meta.glob('./es/new/en/sentences.json', { eager: true, import: 'default' })) : []),
   ]),

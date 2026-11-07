@@ -1,0 +1,169 @@
+[
+  {
+    "id": "s600",
+    "es": "No tengo nada en la nevera.",
+    "tokens": [
+      "No",
+      "tengo",
+      "nada",
+      "en",
+      "la",
+      "nevera",
+      "."
+    ]
+  },
+  {
+    "id": "s462",
+    "es": "¿Te acuerdas de la profesora de inglés?",
+    "tokens": [
+      "¿",
+      "Te",
+      "acuerdas",
+      "de",
+      "la",
+      "profesora",
+      "de",
+      "inglés",
+      "?"
+    ]
+  },
+  {
+    "id": "s613",
+    "es": "Puesto que llegaste tarde, ya no hay sitio.",
+    "tokens": [
+      "Puesto",
+      "que",
+      "llegaste",
+      "tarde",
+      ",",
+      "ya",
+      "no",
+      "hay",
+      "sitio",
+      "."
+    ]
+  },
+  {
+    "id": "s608",
+    "es": "Sin duda, es la mejor tortilla de patatas de la ciudad.",
+    "tokens": [
+      "Sin",
+      "duda",
+      ",",
+      "es",
+      "la",
+      "mejor",
+      "tortilla",
+      "de",
+      "patatas",
+      "de",
+      "la",
+      "ciudad",
+      "."
+    ],
+    "sk": "Bezpochyby je to najlepšia španielska tortilla v meste.",
+    "en": "Without a doubt, it's the best Spanish omelette in town."
+  },
+  {
+    "id": "s1012",
+    "es": "De repente empezó a llover y todos corrieron a casa.",
+    "tokens": [
+      "De",
+      "repente",
+      "empezó",
+      "a",
+      "llover",
+      "y",
+      "todos",
+      "corrieron",
+      "a",
+      "casa",
+      "."
+    ]
+  },
+  {
+    "id": "s1020",
+    "es": "Dejaremos el asunto para la próxima reunión.",
+    "tokens": [
+      "Dejaremos",
+      "el",
+      "asunto",
+      "para",
+      "la",
+      "próxima",
+      "reunión",
+      "."
+    ]
+  },
+  {
+    "id": "s1734",
+    "es": "Escuchad bien las instrucciones antes de empezar.",
+    "tokens": [
+      "Escuchad",
+      "bien",
+      "las",
+      "instrucciones",
+      "antes",
+      "de",
+      "empezar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Escuchad",
+        "hint": "escuchar · vosotros · imperativo",
+        "distractors": [
+          "Escuchen",
+          "Escucha",
+          "Escuchamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1780",
+    "es": "Es necesario que vosotros tengáis paciencia.",
+    "tokens": [
+      "Es",
+      "necesario",
+      "que",
+      "vosotros",
+      "tengáis",
+      "paciencia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "tengáis",
+        "hint": "tener · vosotros · subjuntivo",
+        "distractors": [
+          "tenéis",
+          "tendréis",
+          "tuvisteis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1981",
+    "es": "No hay nada que me guste más que charlar con vosotros un domingo.",
+    "tokens": [
+      "No",
+      "hay",
+      "nada",
+      "que",
+      "me",
+      "guste",
+      "más",
+      "que",
+      "charlar",
+      "con",
+      "vosotros",
+      "un",
+      "domingo",
+      "."
+    ]
+  }
+]

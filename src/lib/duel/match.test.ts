@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { sentenceById, verbById, wordById } from '../../data'
+import { sentenceById, variantOnly, verbById, wordById } from '../../data'
+import { conjugationTask } from '../lesson'
 import {
   buildRounds,
+  inBothVariants,
   COUNTDOWN_MS,
   duelTask,
   phaseAt,
@@ -173,5 +175,17 @@ describe('scoreOf', () => {
     expect(score.players[A].points).toBe(0)
     expect(score.players[A].ms).toBe(slots.reduce((n, s) => n + s.seconds * 1000, 0))
     expect(score.players[A].tasks.every((t) => t.result === null)).toBe(true)
+  })
+})
+
+describe('inBothVariants', () => {
+  it('leaves out what only one Spanish has: vosotros, Spain verbs, hidden Mexican verbs', () => {
+    const tener = verbById.get('tener')!
+    expect(inBothVariants(conjugationTask(tener, 'presente', 'yo'))).toBe(true)
+    expect(inBothVariants(conjugationTask(tener, 'presente', 'vosotros'))).toBe(false)
+    expect(variantOnly.verbs.has('manejar')).toBe(true)
+    expect(variantOnly.verbs.has('coger')).toBe(true)
+    expect(variantOnly.sentence('s9001')).toBe(true)
+    expect(variantOnly.sentence('s901')).toBe(false)
   })
 })

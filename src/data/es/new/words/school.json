@@ -1,0 +1,126 @@
+[
+  {
+    "id": "instituto",
+    "es": "instituto",
+    "sk": [
+      "stredná škola"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "institutos",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Mi hermano estudia en el instituto.",
+        "sk": "Brat študuje na strednej škole."
+      },
+      {
+        "es": "Mi instituto estaba cerca de casa.",
+        "sk": "Moja stredná škola bola blízko domu."
+      }
+    ],
+    "note": "Stredná škola pre 12–18-ročných; v Mexiku „secundaria“ a „preparatoria“."
+  },
+  {
+    "id": "selectividad",
+    "es": "selectividad",
+    "sk": [
+      "skúška na univerzitu"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Estudio mucho para la selectividad.",
+        "sk": "Veľa sa učím na skúšku na univerzitu."
+      },
+      {
+        "es": "Mi hermana sacó buena nota en la selectividad.",
+        "sk": "Sestra dostala v selektivite dobrú známku."
+      }
+    ],
+    "note": "Celoštátna skúška po strednej škole, od ktorej závisí prijatie na univerzitu (oficiálne EBAU/PAU)."
+  },
+  {
+    "id": "aprobado",
+    "es": "aprobado",
+    "sk": [
+      "dostatočná (známka)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "aprobados",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Saqué un aprobado en matemáticas.",
+        "sk": "Z matematiky som dostal dostatočnú."
+      },
+      {
+        "es": "Con un aprobado me conformo.",
+        "sk": "Stačí mi dostatočná."
+      }
+    ],
+    "note": "Známky: suspenso (0–4,9), aprobado (5), notable (7), sobresaliente (9–10)."
+  },
+  {
+    "id": "suspenso",
+    "es": "suspenso",
+    "sk": [
+      "nedostatočná (známka)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "suspensos",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Tengo un suspenso en inglés.",
+        "sk": "Mám z angličtiny nedostatočnú."
+      },
+      {
+        "es": "Un suspenso no es el fin del mundo.",
+        "sk": "Nedostatočná nie je koniec sveta."
+      }
+    ]
+  },
+  {
+    "id": "sobresaliente",
+    "es": "sobresaliente",
+    "sk": [
+      "výborná (známka)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "sobresalientes",
+    "level": "B1",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Saqué un sobresaliente en historia.",
+        "sk": "Z dejepisu som dostal výbornú."
+      },
+      {
+        "es": "Necesitas un sobresaliente para la beca.",
+        "sk": "Na štipendium potrebuješ výbornú."
+      }
+    ],
+    "note": "Najlepšia známka (9–10)."
+  }
+]

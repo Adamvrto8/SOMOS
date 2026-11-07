@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cercanias",
+    "es": "cercanías",
+    "sk": [
+      "prímestský vlak"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A2",
+    "topics": [
+      "travel",
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "Voy al trabajo en cercanías.",
+        "sk": "Do práce chodím prímestským vlakom."
+      },
+      {
+        "es": "Cercanías sale cada quince minutos.",
+        "sk": "Prímestský vlak ide každých pätnásť minút."
+      }
+    ],
+    "note": "Prímestské vlaky RENFE okolo veľkých miest; používa sa v množnom čísle."
+  },
+  {
+    "id": "autovia",
+    "es": "autovía",
+    "sk": [
+      "štvorprúdová cesta"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "autovías",
+    "level": "B1",
+    "topics": [
+      "travel"
+    ],
+    "examples": [
+      {
+        "es": "Tomamos la autovía hasta Valencia.",
+        "sk": "Do Valencie pôjdeme po rýchlostnej ceste."
+      },
+      {
+        "es": "La autovía es gratis, la autopista no.",
+        "sk": "Autovía je zadarmo, autopista nie."
+      }
+    ],
+    "note": "Rýchlostná cesta bez poplatku; „autopista“ je spoplatnená diaľnica."
+  },
+  {
+    "id": "tarjeta-de-embarque",
+    "es": "tarjeta de embarque",
+    "sk": [
+      "palubný lístok"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "tarjetas de embarque",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "examples": [
+      {
+        "es": "Enséñeme su tarjeta de embarque, por favor.",
+        "sk": "Ukážte mi palubný lístok, prosím."
+      },
+      {
+        "es": "Perdí la tarjeta de embarque.",
+        "sk": "Stratil som palubný lístok."
+      }
+    ],
+    "note": "V Mexiku „pase de abordar“."
+  },
+  {
+    "id": "consigna",
+    "es": "consigna",
+    "sk": [
+      "úschovňa batožiny"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "consignas",
+    "level": "A2",
+    "topics": [
+      "travel"
+    ],
+    "examples": [
+      {
+        "es": "Dejamos las maletas en la consigna.",
+        "sk": "Kufre sme nechali v úschovni."
+      },
+      {
+        "es": "La consigna de la estación cierra a las diez.",
+        "sk": "Úschovňa na stanici zatvára o desiatej."
+      }
+    ]
+  }
+]

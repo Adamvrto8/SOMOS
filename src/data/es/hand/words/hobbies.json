@@ -1,0 +1,19 @@
+[
+  {
+    "id": "lucha-libre",
+    "hidden": true
+  },
+  {
+    "id": "porra",
+    "hidden": true
+  },
+  {
+    "id": "mariachi",
+    "hidden": true
+  },
+  {
+    "id": "alberca",
+    "note": "V Mexiku: alberca.",
+    "noteEn": "In Mexico: alberca."
+  }
+]

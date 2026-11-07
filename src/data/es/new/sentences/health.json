@@ -1,0 +1,143 @@
+[
+  {
+    "id": "s9013",
+    "es": "Esta noche no he dormido bien.",
+    "sk": "Dnes v noci som nespal dobre.",
+    "level": "A2",
+    "topics": [
+      "health"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "noche",
+      "no",
+      "he",
+      "dormido",
+      "bien",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dormido",
+        "lemma": "dormir",
+        "hint": "dormir · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "dormí",
+          "durmiendo",
+          "dormía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9033",
+    "es": "Esta semana he descansado muy poco.",
+    "sk": "Tento týždeň som oddychoval veľmi málo.",
+    "level": "A2",
+    "topics": [
+      "health"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "he",
+      "descansado",
+      "muy",
+      "poco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "descansado",
+        "lemma": "descansar",
+        "hint": "descansar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "descansé",
+          "descansando",
+          "descansaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9058",
+    "es": "Anoche dormí fatal.",
+    "sk": "Včera v noci som spal strašne.",
+    "level": "A2",
+    "topics": [
+      "health"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "dormí",
+      "fatal",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dormí",
+        "lemma": "dormir",
+        "hint": "dormir · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he dormido",
+          "duermo",
+          "dormía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9122",
+    "es": "¡Vaya semana! Estoy hecho polvo.",
+    "sk": "Aký týždeň! Som úplne vyčerpaný.",
+    "level": "B1",
+    "topics": [
+      "health"
+    ],
+    "grammar": [
+      "ser-estar"
+    ],
+    "tokens": [
+      "¡",
+      "Vaya",
+      "semana",
+      "!",
+      "Estoy",
+      "hecho",
+      "polvo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "polvo",
+        "lemma": "polvo",
+        "hint": "unavený (hovorovo)",
+        "distractors": [
+          "agua",
+          "pan",
+          "sal"
+        ]
+      }
+    ]
+  }
+]

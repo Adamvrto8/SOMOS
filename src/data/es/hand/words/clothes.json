@@ -1,0 +1,49 @@
+[
+  {
+    "id": "mezclilla",
+    "hidden": true
+  },
+  {
+    "id": "ropa-de-paca",
+    "hidden": true
+  },
+  {
+    "id": "lana",
+    "examples": [
+      {
+        "es": "Es un jersey de lana.",
+        "sk": "Je to vlnený sveter."
+      },
+      {
+        "es": "Esta bufanda es de lana.",
+        "sk": "Tento šál je z vlny."
+      }
+    ],
+    "note": "V Španielsku znamená len „vlna“. Peniaze sa hovorovo povedia „pasta“.",
+    "noteEn": "In Spain it only means “wool”. The slang word for money is “pasta”.",
+    "examplesEn": [
+      null,
+      "This scarf is made of wool."
+    ]
+  },
+  {
+    "id": "playera",
+    "note": "V Mexiku: playera.",
+    "noteEn": "In Mexico: playera."
+  },
+  {
+    "id": "chamarra",
+    "note": "V Mexiku: chamarra.",
+    "noteEn": "In Mexico: chamarra."
+  },
+  {
+    "id": "lentes",
+    "note": "V Mexiku: lentes. Slnečné okuliare = gafas de sol.",
+    "noteEn": "In Mexico: lentes. Sunglasses = gafas de sol."
+  },
+  {
+    "id": "arete",
+    "note": "V Mexiku: arete.",
+    "noteEn": "In Mexico: arete."
+  }
+]

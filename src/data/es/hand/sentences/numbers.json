@@ -1,0 +1,853 @@
+[
+  {
+    "id": "s361",
+    "es": "Mi móvil cuesta cuatrocientos euros.",
+    "tokens": [
+      "Mi",
+      "móvil",
+      "cuesta",
+      "cuatrocientos",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuesta"
+      }
+    ],
+    "sk": "Môj mobil stojí štyristo eur.",
+    "en": "My phone costs four hundred euros."
+  },
+  {
+    "id": "s363",
+    "es": "Compré dos kilos de naranjas.",
+    "tokens": [
+      "Compré",
+      "dos",
+      "kilos",
+      "de",
+      "naranjas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Compré"
+      }
+    ],
+    "sk": "Kúpil som dve kilá pomarančov.",
+    "en": "I bought two kilos of oranges."
+  },
+  {
+    "id": "s365",
+    "es": "Es la primera vez que vengo a España.",
+    "tokens": [
+      "Es",
+      "la",
+      "primera",
+      "vez",
+      "que",
+      "vengo",
+      "a",
+      "España",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "primera"
+      }
+    ],
+    "sk": "V Španielsku som prvýkrát.",
+    "en": "It's the first time I've come to Spain."
+  },
+  {
+    "id": "s567",
+    "es": "Casi la mitad de los estudiantes suspendió el examen.",
+    "tokens": [
+      "Casi",
+      "la",
+      "mitad",
+      "de",
+      "los",
+      "estudiantes",
+      "suspendió",
+      "el",
+      "examen",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mitad"
+      }
+    ]
+  },
+  {
+    "id": "s568",
+    "es": "El ático cuesta dos millones de euros.",
+    "tokens": [
+      "El",
+      "ático",
+      "cuesta",
+      "dos",
+      "millones",
+      "de",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "millones"
+      }
+    ],
+    "sk": "Podkrovný byt stojí dva milióny eur.",
+    "en": "The penthouse costs two million euros."
+  },
+  {
+    "id": "s569",
+    "es": "Ahorraba doscientos euros cada mes.",
+    "tokens": [
+      "Ahorraba",
+      "doscientos",
+      "euros",
+      "cada",
+      "mes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ahorraba"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "cada"
+      }
+    ],
+    "sk": "Každý mesiac som si odkladal dvesto eur.",
+    "en": "I used to save two hundred euros every month."
+  },
+  {
+    "id": "s646",
+    "es": "Son dieciocho euros, por favor.",
+    "tokens": [
+      "Son",
+      "dieciocho",
+      "euros",
+      ",",
+      "por",
+      "favor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dieciocho"
+      }
+    ],
+    "sk": "Bude to osemnásť eur, prosím.",
+    "en": "That's eighteen euros, please."
+  },
+  {
+    "id": "s649",
+    "es": "La entrada cuesta quince euros.",
+    "tokens": [
+      "La",
+      "entrada",
+      "cuesta",
+      "quince",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quince",
+        "lemma": "quince",
+        "hint": "pätnásť",
+        "distractors": [
+          "quinientos",
+          "cincuenta",
+          "cinco"
+        ]
+      }
+    ],
+    "sk": "Vstupné stojí pätnásť eur.",
+    "en": "The ticket costs fifteen euros.",
+    "enHints": [
+      "fifteen"
+    ]
+  },
+  {
+    "id": "s661",
+    "es": "La mayoría de los españoles vive en ciudades.",
+    "tokens": [
+      "La",
+      "mayoría",
+      "de",
+      "los",
+      "españoles",
+      "vive",
+      "en",
+      "ciudades",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "mayoría"
+      }
+    ],
+    "sk": "Väčšina Španielov žije v mestách.",
+    "en": "Most Spaniards live in cities."
+  },
+  {
+    "id": "s663",
+    "es": "Calculé mal y me faltaron veinte euros.",
+    "tokens": [
+      "Calculé",
+      "mal",
+      "y",
+      "me",
+      "faltaron",
+      "veinte",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "faltaron"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "me"
+      }
+    ],
+    "sk": "Zle som to vyrátal a chýbalo mi dvadsať eur.",
+    "en": "I miscalculated and I was twenty euros short."
+  },
+  {
+    "id": "s664",
+    "es": "La empresa vendió mil millones de euros el año pasado.",
+    "tokens": [
+      "La",
+      "empresa",
+      "vendió",
+      "mil",
+      "millones",
+      "de",
+      "euros",
+      "el",
+      "año",
+      "pasado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "millones"
+      }
+    ],
+    "sk": "Firma minulý rok predala za miliardu eur.",
+    "en": "The company sold a billion euros last year."
+  },
+  {
+    "id": "s665",
+    "es": "Según las estadísticas, el desempleo ha disminuido este año.",
+    "tokens": [
+      "Según",
+      "las",
+      "estadísticas",
+      ",",
+      "el",
+      "desempleo",
+      "ha",
+      "disminuido",
+      "este",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Según"
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 7,
+        "answer": "disminuido",
+        "lemma": "disminuir",
+        "hint": "disminuir · participio",
+        "distractors": [
+          "disminuyó",
+          "disminuyendo",
+          "disminuía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1347",
+    "es": "¿Cuántos hijos tenéis?",
+    "tokens": [
+      "¿",
+      "Cuántos",
+      "hijos",
+      "tenéis",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tenéis",
+        "hint": "tener · vosotros · presente",
+        "distractors": [
+          "tienen",
+          "tienes",
+          "tenemos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1348",
+    "es": "Un kilo de tomates cuesta tres euros.",
+    "tokens": [
+      "Un",
+      "kilo",
+      "de",
+      "tomates",
+      "cuesta",
+      "tres",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tres",
+        "lemma": "tres",
+        "hint": "tri",
+        "distractors": [
+          "treinta",
+          "trece",
+          "seis"
+        ]
+      }
+    ],
+    "sk": "Kilo paradajok stojí tri eurá.",
+    "en": "A kilo of tomatoes costs three euros.",
+    "enHints": [
+      "three"
+    ]
+  },
+  {
+    "id": "s1355",
+    "es": "Pagué veinte euros por el taxi.",
+    "tokens": [
+      "Pagué",
+      "veinte",
+      "euros",
+      "por",
+      "el",
+      "taxi",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Pagué"
+      }
+    ],
+    "sk": "Za taxík som zaplatil dvadsať eur.",
+    "en": "I paid twenty euros for the taxi."
+  },
+  {
+    "id": "s1361",
+    "es": "Ayer gasté cien euros en el súper.",
+    "tokens": [
+      "Ayer",
+      "gasté",
+      "cien",
+      "euros",
+      "en",
+      "el",
+      "súper",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "gasté"
+      }
+    ],
+    "sk": "Včera som v obchode minul sto eur.",
+    "en": "Yesterday I spent a hundred euros at the supermarket."
+  },
+  {
+    "id": "s1366",
+    "es": "Vendimos la bicicleta en trescientos euros.",
+    "tokens": [
+      "Vendimos",
+      "la",
+      "bicicleta",
+      "en",
+      "trescientos",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Vendimos"
+      }
+    ],
+    "sk": "Bicykel sme predali za tristo eur.",
+    "en": "We sold the bike for three hundred euros."
+  },
+  {
+    "id": "s1367",
+    "es": "Si ahorro cincuenta euros a la semana, en un año tendré más de dos mil.",
+    "tokens": [
+      "Si",
+      "ahorro",
+      "cincuenta",
+      "euros",
+      "a",
+      "la",
+      "semana",
+      ",",
+      "en",
+      "un",
+      "año",
+      "tendré",
+      "más",
+      "de",
+      "dos",
+      "mil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "tendré"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "ahorro"
+      }
+    ],
+    "sk": "Ak budem šetriť päťdesiat eur týždenne, za rok budem mať viac ako dvetisíc.",
+    "en": "If I save fifty euros a week, in a year I'll have more than two thousand."
+  },
+  {
+    "id": "s1369",
+    "es": "Cuando llegué a Inglaterra, no entendía los precios en libras.",
+    "tokens": [
+      "Cuando",
+      "llegué",
+      "a",
+      "Inglaterra",
+      ",",
+      "no",
+      "entendía",
+      "los",
+      "precios",
+      "en",
+      "libras",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "entendía"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "llegué"
+      }
+    ],
+    "sk": "Keď som prišiel do Anglicka, nerozumel som cenám v librách.",
+    "en": "When I arrived in England, I didn't understand the prices in pounds."
+  },
+  {
+    "id": "s1372",
+    "es": "En España, los números de móvil tienen nueve dígitos.",
+    "tokens": [
+      "En",
+      "España",
+      ",",
+      "los",
+      "números",
+      "de",
+      "móvil",
+      "tienen",
+      "nueve",
+      "dígitos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tienen"
+      }
+    ],
+    "sk": "V Španielsku majú čísla mobilov deväť číslic.",
+    "en": "In Spain, mobile numbers have nine digits."
+  },
+  {
+    "id": "s1374",
+    "es": "Pensaba que eran cincuenta euros, pero me cobraron el doble.",
+    "tokens": [
+      "Pensaba",
+      "que",
+      "eran",
+      "cincuenta",
+      "euros",
+      ",",
+      "pero",
+      "me",
+      "cobraron",
+      "el",
+      "doble",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "cobraron"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "eran"
+      }
+    ],
+    "sk": "Myslel som si, že to bude päťdesiat eur, ale zobrali mi dvojnásobok.",
+    "en": "I thought it was fifty euros, but they charged me double."
+  },
+  {
+    "id": "s1377",
+    "es": "Esa cena nos costó un ojo de la cara: casi doscientos euros.",
+    "tokens": [
+      "Esa",
+      "cena",
+      "nos",
+      "costó",
+      "un",
+      "ojo",
+      "de",
+      "la",
+      "cara",
+      ":",
+      "casi",
+      "doscientos",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "costó"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de"
+      }
+    ],
+    "sk": "Tá večera nás stála majland, skoro dvesto eur.",
+    "en": "That dinner cost us an arm and a leg: almost two hundred euros."
+  },
+  {
+    "id": "s1384",
+    "es": "Dimos el cuarenta por ciento de entrada y el resto lo pagamos a plazos.",
+    "tokens": [
+      "Dimos",
+      "el",
+      "cuarenta",
+      "por",
+      "ciento",
+      "de",
+      "entrada",
+      "y",
+      "el",
+      "resto",
+      "lo",
+      "pagamos",
+      "a",
+      "plazos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "pagamos"
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "lo"
+      }
+    ]
+  },
+  {
+    "id": "s1386",
+    "es": "Según el último censo, en España viven unos cuarenta y ocho millones de personas.",
+    "tokens": [
+      "Según",
+      "el",
+      "último",
+      "censo",
+      ",",
+      "en",
+      "España",
+      "viven",
+      "unos",
+      "cuarenta",
+      "y",
+      "ocho",
+      "millones",
+      "de",
+      "personas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "viven"
+      }
+    ],
+    "sk": "Podľa posledného sčítania žije v Španielsku asi štyridsaťosem miliónov ľudí.",
+    "en": "According to the last census, about forty-eight million people live in Spain."
+  },
+  {
+    "id": "s1388",
+    "es": "Ni de broma llego a fin de mes con mil euros al mes.",
+    "tokens": [
+      "Ni",
+      "de",
+      "broma",
+      "llego",
+      "a",
+      "fin",
+      "de",
+      "mes",
+      "con",
+      "mil",
+      "euros",
+      "al",
+      "mes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llego"
+      }
+    ],
+    "sk": "S tisíc eurami mesačne ani náhodou nevydržím do konca mesiaca.",
+    "en": "No way I make it to the end of the month on a thousand euros a month."
+  },
+  {
+    "id": "s1389",
+    "es": "Redondeé la cuenta a cincuenta y le dejé el resto de propina.",
+    "tokens": [
+      "Redondeé",
+      "la",
+      "cuenta",
+      "a",
+      "cincuenta",
+      "y",
+      "le",
+      "dejé",
+      "el",
+      "resto",
+      "de",
+      "propina",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "dejé"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "le"
+      }
+    ],
+    "sk": "Účet som zaokrúhlil na päťdesiat a zvyšok som mu nechal ako sprepitné.",
+    "en": "I rounded the bill up to fifty and left him the rest as a tip."
+  },
+  {
+    "id": "s1784",
+    "es": "Necesito que me des el cambio de veinte euros.",
+    "tokens": [
+      "Necesito",
+      "que",
+      "me",
+      "des",
+      "el",
+      "cambio",
+      "de",
+      "veinte",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "des"
+      }
+    ],
+    "sk": "Potrebujem, aby si mi vrátil drobné z dvadsiatich eur.",
+    "en": "I need you to give me the change from twenty euros."
+  },
+  {
+    "id": "s2090",
+    "es": "Cuando tenga ahorrados mil euros, voy a comprar un portátil nuevo.",
+    "tokens": [
+      "Cuando",
+      "tenga",
+      "ahorrados",
+      "mil",
+      "euros",
+      ",",
+      "voy",
+      "a",
+      "comprar",
+      "un",
+      "portátil",
+      "nuevo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tenga"
+      }
+    ],
+    "sk": "Keď budem mať našetrený tisíc eur, kúpim si nový notebook.",
+    "en": "When I have a thousand euros saved up, I'm going to buy a new laptop."
+  },
+  {
+    "id": "s2091",
+    "es": "Si ganara un millón de euros en la lotería, pagaría todas mis deudas.",
+    "tokens": [
+      "Si",
+      "ganara",
+      "un",
+      "millón",
+      "de",
+      "euros",
+      "en",
+      "la",
+      "lotería",
+      ",",
+      "pagaría",
+      "todas",
+      "mis",
+      "deudas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "pagaría"
+      }
+    ],
+    "sk": "Keby som vyhral milión eur v lotérii, splatil by som všetky dlhy.",
+    "en": "If I won a million euros in the lottery, I would pay off all my debts."
+  },
+  {
+    "id": "s2094",
+    "es": "Aunque somos cuarenta en el grupo, solo hay veinte sillas en el aula.",
+    "tokens": [
+      "Aunque",
+      "somos",
+      "cuarenta",
+      "en",
+      "el",
+      "grupo",
+      ",",
+      "solo",
+      "hay",
+      "veinte",
+      "sillas",
+      "en",
+      "el",
+      "aula",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aunque"
+      }
+    ]
+  },
+  {
+    "id": "s2097",
+    "es": "El cajero me dijo que el total era cuarenta y cinco euros con descuento.",
+    "tokens": [
+      "El",
+      "cajero",
+      "me",
+      "dijo",
+      "que",
+      "el",
+      "total",
+      "era",
+      "cuarenta",
+      "y",
+      "cinco",
+      "euros",
+      "con",
+      "descuento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "era"
+      }
+    ],
+    "sk": "Pokladník mi povedal, že spolu to bolo štyridsaťpäť eur so zľavou.",
+    "en": "The cashier told me the total was forty-five euros with the discount."
+  },
+  {
+    "id": "s2098",
+    "es": "Cuantas más cuentas haces, menos errores cometes en los exámenes de matemáticas.",
+    "tokens": [
+      "Cuantas",
+      "más",
+      "cuentas",
+      "haces",
+      ",",
+      "menos",
+      "errores",
+      "cometes",
+      "en",
+      "los",
+      "exámenes",
+      "de",
+      "matemáticas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuantas",
+        "lemma": "cuanto",
+        "hint": "čím",
+        "distractors": [
+          "Cuántas",
+          "Cuando",
+          "Cuanto"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,181 @@
+[
+  {
+    "id": "jersey",
+    "es": "jersey",
+    "sk": [
+      "sveter"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "jerséis",
+    "level": "A1",
+    "topics": [
+      "clothes"
+    ],
+    "examples": [
+      {
+        "es": "Hoy hace frío, ponte un jersey.",
+        "sk": "Dnes je zima, obleč si sveter."
+      },
+      {
+        "es": "Este jersey es de lana.",
+        "sk": "Tento sveter je vlnený."
+      }
+    ],
+    "note": "V Mexiku „suéter“."
+  },
+  {
+    "id": "vaqueros",
+    "es": "vaqueros",
+    "sk": [
+      "rifle"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "uncountable": true,
+    "level": "A1",
+    "topics": [
+      "clothes"
+    ],
+    "examples": [
+      {
+        "es": "Llevo unos vaqueros azules.",
+        "sk": "Mám na sebe modré rifle."
+      },
+      {
+        "es": "Estos vaqueros me quedan grandes.",
+        "sk": "Tieto rifle mi sú veľké."
+      }
+    ],
+    "note": "Vždy v množnom čísle. V Mexiku „pantalones de mezclilla“ alebo „jeans“."
+  },
+  {
+    "id": "banador",
+    "es": "bañador",
+    "sk": [
+      "plavky"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "bañadores",
+    "level": "A1",
+    "topics": [
+      "clothes",
+      "hobbies"
+    ],
+    "examples": [
+      {
+        "es": "Olvidé el bañador en casa.",
+        "sk": "Plavky som zabudol doma."
+      },
+      {
+        "es": "Necesito un bañador nuevo.",
+        "sk": "Potrebujem nové plavky."
+      }
+    ],
+    "note": "V Mexiku „traje de baño“."
+  },
+  {
+    "id": "chandal",
+    "es": "chándal",
+    "sk": [
+      "tepláková súprava",
+      "tepláky"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "chándales",
+    "level": "A2",
+    "topics": [
+      "clothes"
+    ],
+    "examples": [
+      {
+        "es": "Voy al gimnasio en chándal.",
+        "sk": "Do posilňovne chodím v teplákoch."
+      },
+      {
+        "es": "Me puse el chándal y salí a correr.",
+        "sk": "Obliekol som si tepláky a išiel som behať."
+      }
+    ],
+    "note": "V Mexiku „ropa deportiva“."
+  },
+  {
+    "id": "americana",
+    "es": "americana",
+    "sk": [
+      "sako"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "americanas",
+    "level": "B1",
+    "topics": [
+      "clothes",
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "Lleva una americana azul para la entrevista.",
+        "sk": "Na pohovor si berie modré sako."
+      },
+      {
+        "es": "Esta americana te queda muy bien.",
+        "sk": "Toto sako ti veľmi pristane."
+      }
+    ],
+    "note": "V Mexiku „saco“ alebo „blazer“."
+  },
+  {
+    "id": "cazadora",
+    "es": "cazadora",
+    "sk": [
+      "krátka bunda"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "cazadoras",
+    "level": "B1",
+    "topics": [
+      "clothes"
+    ],
+    "examples": [
+      {
+        "es": "Ponte la cazadora, que hace viento.",
+        "sk": "Obleč si bundu, fúka."
+      },
+      {
+        "es": "Me compré una cazadora de cuero.",
+        "sk": "Kúpil som si koženú bundu."
+      }
+    ],
+    "note": "Krátka bunda (kožená, džínsová…)."
+  },
+  {
+    "id": "zapatilla",
+    "es": "zapatilla",
+    "sk": [
+      "tenisky",
+      "papuča"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "zapatillas",
+    "level": "A1",
+    "topics": [
+      "clothes"
+    ],
+    "examples": [
+      {
+        "es": "Llevo zapatillas para caminar.",
+        "sk": "Nosím tenisky na chodenie."
+      },
+      {
+        "es": "Estas zapatillas son muy cómodas.",
+        "sk": "Tieto tenisky sú veľmi pohodlné."
+      }
+    ],
+    "note": "„Zapatillas de casa“ = papuče. V Mexiku „tenis“."
+  }
+]

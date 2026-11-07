@@ -1,0 +1,152 @@
+[
+  {
+    "id": "s9015",
+    "es": "Hoy ha llovido todo el día en Valencia.",
+    "sk": "Dnes celý deň pršalo vo Valencii.",
+    "level": "A2",
+    "topics": [
+      "weather"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "ha",
+      "llovido",
+      "todo",
+      "el",
+      "día",
+      "en",
+      "Valencia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llovido",
+        "lemma": "llover",
+        "hint": "llover · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "llovió",
+          "lloviendo",
+          "llovía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9016",
+    "es": "Este invierno ha nevado mucho en la sierra.",
+    "sk": "Tejto zimy veľa snežilo v pohorí.",
+    "level": "A2",
+    "topics": [
+      "weather"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "invierno",
+      "ha",
+      "nevado",
+      "mucho",
+      "en",
+      "la",
+      "sierra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nevado",
+        "lemma": "nevar",
+        "hint": "nevar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "nevó",
+          "nevando",
+          "nevaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9057",
+    "es": "Ayer por la tarde hizo mucho calor.",
+    "sk": "Včera popoludní bolo veľmi horúco.",
+    "level": "A2",
+    "topics": [
+      "weather"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "por",
+      "la",
+      "tarde",
+      "hizo",
+      "mucho",
+      "calor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "hizo",
+        "lemma": "hacer",
+        "hint": "hacer · él",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "ha hecho",
+          "hace",
+          "hacía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9085",
+    "es": "Esta tarde ha empezado a llover.",
+    "sk": "Dnes popoludní začalo pršať.",
+    "level": "A2",
+    "topics": [
+      "weather"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "tarde",
+      "ha",
+      "empezado",
+      "a",
+      "llover",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ha",
+        "lemma": "haber",
+        "hint": "haber · él",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubo",
+          "había",
+          "haya"
+        ]
+      }
+    ]
+  }
+]

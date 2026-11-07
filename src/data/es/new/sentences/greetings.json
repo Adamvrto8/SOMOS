@@ -1,0 +1,354 @@
+[
+  {
+    "id": "s9025",
+    "es": "Este verano he conocido a mucha gente en Madrid.",
+    "sk": "Tohto leta som v Madride spoznal veľa ľudí.",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "verano",
+      "he",
+      "conocido",
+      "a",
+      "mucha",
+      "gente",
+      "en",
+      "Madrid",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "conocido",
+        "lemma": "conocer",
+        "hint": "conocer · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "conocí",
+          "conociendo",
+          "conocía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9039",
+    "es": "Esta mañana me ha dicho que llega tarde.",
+    "sk": "Dnes ráno mi povedal, že príde neskoro.",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "mañana",
+      "me",
+      "ha",
+      "dicho",
+      "que",
+      "llega",
+      "tarde",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dicho",
+        "lemma": "decir",
+        "hint": "decir · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "dijo",
+          "diciendo",
+          "decía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9069",
+    "es": "Hace tres años conocí a mi mejor amigo.",
+    "sk": "Pred tromi rokmi som spoznal svojho najlepšieho kamaráta.",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Hace",
+      "tres",
+      "años",
+      "conocí",
+      "a",
+      "mi",
+      "mejor",
+      "amigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "conocí",
+        "lemma": "conocer",
+        "hint": "conocer · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he conocido",
+          "conozco",
+          "conocía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9080",
+    "es": "Mis amigos todavía no han llegado.",
+    "sk": "Moji priatelia ešte neprišli.",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Mis",
+      "amigos",
+      "todavía",
+      "no",
+      "han",
+      "llegado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "han",
+        "lemma": "haber",
+        "hint": "haber · ellos",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubieron",
+          "habían",
+          "hayan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9089",
+    "es": "Vosotros sois mis mejores amigos.",
+    "sk": "Vy ste moji najlepší priatelia.",
+    "level": "A1",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Vosotros",
+      "sois",
+      "mis",
+      "mejores",
+      "amigos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sois",
+        "lemma": "ser",
+        "hint": "ser · vosotros · presente",
+        "distractors": [
+          "son",
+          "somos",
+          "erais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9094",
+    "es": "Hablad más despacio, por favor.",
+    "sk": "Hovorte pomalšie, prosím.",
+    "level": "A2",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "imperativo"
+    ],
+    "tokens": [
+      "Hablad",
+      "más",
+      "despacio",
+      ",",
+      "por",
+      "favor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hablad",
+        "lemma": "hablar",
+        "hint": "hablar · vosotros · imperativo",
+        "distractors": [
+          "Hablen",
+          "Hablemos",
+          "Hablabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9108",
+    "es": "¿Cómo os llamáis?",
+    "sk": "Ako sa voláte?",
+    "level": "A1",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Cómo",
+      "os",
+      "llamáis",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llamáis",
+        "lemma": "llamarse",
+        "hint": "llamarse · vosotros · presente",
+        "distractors": [
+          "llaman",
+          "llamamos",
+          "llamabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9112",
+    "es": "¿Vamos a la playa? ¡Vale!",
+    "sk": "Ideme na pláž? Dobre!",
+    "level": "A1",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [],
+    "tokens": [
+      "¿",
+      "Vamos",
+      "a",
+      "la",
+      "playa",
+      "?",
+      "¡",
+      "Vale",
+      "!"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "Vale",
+        "lemma": "vale",
+        "hint": "súhlas",
+        "distractors": [
+          "Hola",
+          "Perdón",
+          "Adiós"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9113",
+    "es": "Hola, Marta, ¿qué tal?",
+    "sk": "Ahoj, Marta, ako sa máš?",
+    "level": "A1",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [],
+    "tokens": [
+      "Hola",
+      ",",
+      "Marta",
+      ",",
+      "¿",
+      "qué",
+      "tal",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "tal",
+        "lemma": "tal",
+        "hint": "ako sa máš",
+        "distractors": [
+          "bien",
+          "mal",
+          "hay"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9121",
+    "es": "Tío, ¡venga, que llegamos tarde!",
+    "sk": "Kámo, no tak, meškáme!",
+    "level": "B1",
+    "topics": [
+      "greetings"
+    ],
+    "grammar": [],
+    "tokens": [
+      "Tío",
+      ",",
+      "¡",
+      "venga",
+      ",",
+      "que",
+      "llegamos",
+      "tarde",
+      "!"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "venga",
+        "lemma": "venga",
+        "hint": "no tak",
+        "distractors": [
+          "viniste",
+          "vendrán",
+          "vengan"
+        ]
+      }
+    ]
+  }
+]

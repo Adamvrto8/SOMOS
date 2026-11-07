@@ -1,0 +1,29 @@
+[
+  {
+    "id": "pasta",
+    "es": "pasta",
+    "sk": [
+      "prachy (hovor.)",
+      "cestoviny"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "A2",
+    "topics": [
+      "shopping",
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "No tengo pasta para el viaje.",
+        "sk": "Nemám prachy na cestu."
+      },
+      {
+        "es": "Me encanta la pasta con tomate.",
+        "sk": "Milujem cestoviny s paradajkami."
+      }
+    ],
+    "note": "Hovorovo „prachy“. V Mexiku „lana“."
+  }
+]

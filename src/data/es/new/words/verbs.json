@@ -120,5 +120,163 @@
         "sk": "Zapni svetlo, prosím."
       }
     ]
+  },
+  {
+    "id": "coger",
+    "es": "coger",
+    "sk": [
+      "vziať",
+      "chytiť",
+      "ísť (autobusom, metrom)"
+    ],
+    "pos": "verb",
+    "verbId": "coger",
+    "level": "A1",
+    "topics": [
+      "travel",
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "Cojo el autobús a las ocho.",
+        "sk": "O ôsmej idem autobusom."
+      },
+      {
+        "es": "Coge un paraguas, va a llover.",
+        "sk": "Vezmi si dáždnik, bude pršať."
+      }
+    ],
+    "note": "V Španielsku bežné sloveso: coger el metro, coger un taxi, coger el teléfono. V Mexiku je hrubé, tam sa povie tomar alebo agarrar."
+  },
+  {
+    "id": "apetecer",
+    "es": "apetecer",
+    "sk": [
+      "mať chuť (na niečo)",
+      "chcieť sa"
+    ],
+    "pos": "verb",
+    "verbId": "apetecer",
+    "level": "B1",
+    "topics": [
+      "food",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "¿Te apetece un café?",
+        "sk": "Dáš si kávu?"
+      },
+      {
+        "es": "Hoy no me apetece salir.",
+        "sk": "Dnes sa mi nechce ísť von."
+      }
+    ],
+    "note": "Ako gustar: me apetece, te apetece, nos apetecen las vacaciones."
+  },
+  {
+    "id": "molar",
+    "es": "molar",
+    "sk": [
+      "páčiť sa (hovor.)",
+      "byť super"
+    ],
+    "pos": "verb",
+    "verbId": "molar",
+    "level": "B1",
+    "topics": [
+      "hobbies",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "Me mola mucho tu chaqueta.",
+        "sk": "Strašne sa mi páči tvoja bunda."
+      }
+    ],
+    "note": "Hovorové, ako gustar: me mola, nos molan los conciertos. ¡Mola! = To je super!"
+  },
+  {
+    "id": "suspender",
+    "es": "suspender",
+    "sk": [
+      "neurobiť (skúšku)",
+      "zrušiť"
+    ],
+    "pos": "verb",
+    "verbId": "suspender",
+    "level": "A2",
+    "topics": [
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "He suspendido el examen de conducir.",
+        "sk": "Neurobil som vodičské skúšky."
+      }
+    ],
+    "note": "suspender un examen = neurobiť skúšku, opak je aprobar. Suspender je aj zrušiť: han suspendido el partido."
+  },
+  {
+    "id": "girar",
+    "es": "girar",
+    "sk": [
+      "odbočiť",
+      "otočiť (sa)"
+    ],
+    "pos": "verb",
+    "verbId": "girar",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "Gira a la derecha en el semáforo.",
+        "sk": "Na semafore odboč doprava."
+      }
+    ]
+  },
+  {
+    "id": "fregar",
+    "es": "fregar",
+    "sk": [
+      "umyť (riad)",
+      "vytrieť (podlahu)"
+    ],
+    "pos": "verb",
+    "verbId": "fregar",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "¿Quién friega los platos hoy?",
+        "sk": "Kto dnes umýva riad?"
+      }
+    ],
+    "note": "fregar los platos = umývať riad, fregar el suelo = vytrieť podlahu, la fregona = mop."
+  },
+  {
+    "id": "currar",
+    "es": "currar",
+    "sk": [
+      "makať",
+      "pracovať (hovor.)"
+    ],
+    "pos": "verb",
+    "verbId": "currar",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "Mañana curro hasta las ocho.",
+        "sk": "Zajtra makám do ôsmej."
+      }
+    ],
+    "note": "Hovorové: el curro = robota, práca."
   }
 ]

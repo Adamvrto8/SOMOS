@@ -1,0 +1,88 @@
+[
+  {
+    "id": "s856",
+    "es": "Toso mucho por las noches.",
+    "tokens": [
+      "Toso",
+      "mucho",
+      "por",
+      "las",
+      "noches",
+      "."
+    ]
+  },
+  {
+    "id": "s1234",
+    "es": "La consulta abre a las nueve.",
+    "tokens": [
+      "La",
+      "consulta",
+      "abre",
+      "a",
+      "las",
+      "nueve",
+      "."
+    ]
+  },
+  {
+    "id": "s1236",
+    "es": "Mis padres comen muy sano.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "comen",
+      "muy",
+      "sano",
+      "."
+    ]
+  },
+  {
+    "id": "s1254",
+    "es": "El agotamiento lo obligó a pedir la baja en el trabajo.",
+    "tokens": [
+      "El",
+      "agotamiento",
+      "lo",
+      "obligó",
+      "a",
+      "pedir",
+      "la",
+      "baja",
+      "en",
+      "el",
+      "trabajo",
+      "."
+    ]
+  },
+  {
+    "id": "s1256",
+    "es": "Tengo una resaca horrible; anoche bebí demasiado.",
+    "tokens": [
+      "Tengo",
+      "una",
+      "resaca",
+      "horrible",
+      ";",
+      "anoche",
+      "bebí",
+      "demasiado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "resaca",
+        "lemma": "resaca",
+        "hint": "opica",
+        "distractors": [
+          "receta",
+          "fiebre",
+          "tos"
+        ]
+      }
+    ],
+    "enHints": [
+      "hangover"
+    ]
+  }
+]

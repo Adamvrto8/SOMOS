@@ -172,6 +172,10 @@ describe('createLesson', () => {
     expect(llamarse.answer).toBe('me estoy llamando')
     expect(llamarse.irregular).toBe(false)
     expect(conjugationTask(verbById.get('tener')!, 'preterito', 'el')).toMatchObject({ answer: 'tuvo', irregular: true })
+    // Spain's vosotros (the drill asks it only there; the task itself works from the stored forms).
+    expect(conjugationTask(verbById.get('tener')!, 'preterito', 'vosotros')).toMatchObject({ itemId: 'tener:preterito:vosotros', answer: 'tuvisteis', irregular: true })
+    expect(conjugationTask(verbById.get('levantarse')!, 'perfecto', 'vosotros').answer).toBe('os habéis levantado')
+    expect(conjugationTask(verbById.get('sentarse')!, 'imperativo', 'vosotros').answer).toBe('sentaos')
     expect(conjugationTask(verbById.get('ir')!, 'progresivo', 'yo')).toMatchObject({ answer: 'estoy yendo', irregular: true })
   })
 

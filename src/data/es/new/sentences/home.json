@@ -1,0 +1,533 @@
+[
+  {
+    "id": "s9017",
+    "es": "Esta mañana me he levantado a las siete.",
+    "sk": "Dnes ráno som vstal o siedmej.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "mañana",
+      "me",
+      "he",
+      "levantado",
+      "a",
+      "las",
+      "siete",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "levantado",
+        "lemma": "levantarse",
+        "hint": "levantarse · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "levanté",
+          "levantando",
+          "levantaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9026",
+    "es": "Hoy he perdido las llaves del piso.",
+    "sk": "Dnes som stratil kľúče od bytu.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "perdido",
+      "las",
+      "llaves",
+      "del",
+      "piso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "perdido",
+        "lemma": "perder",
+        "hint": "perder · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "perdí",
+          "perdiendo",
+          "perdía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9031",
+    "es": "¿Has pagado ya el alquiler de este mes?",
+    "sk": "Zaplatil si už nájom za tento mesiac?",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Has",
+      "pagado",
+      "ya",
+      "el",
+      "alquiler",
+      "de",
+      "este",
+      "mes",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pagado",
+        "lemma": "pagar",
+        "hint": "pagar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "pagaste",
+          "pagando",
+          "pagabas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9038",
+    "es": "Hoy no he hecho nada en casa.",
+    "sk": "Dnes som doma nič neurobil.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "no",
+      "he",
+      "hecho",
+      "nada",
+      "en",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "he",
+        "lemma": "haber",
+        "hint": "haber · yo",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hube",
+          "había",
+          "haya"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hecho",
+        "lemma": "hacer",
+        "hint": "hacer · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "hice",
+          "haciendo",
+          "hacía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9041",
+    "es": "Esta semana he puesto la mesa todos los días.",
+    "sk": "Tento týždeň som každý deň prestieral stôl.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "he",
+      "puesto",
+      "la",
+      "mesa",
+      "todos",
+      "los",
+      "días",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "puesto",
+        "lemma": "poner",
+        "hint": "poner · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "puse",
+          "poniendo",
+          "ponía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9060",
+    "es": "El sábado pasado tuvimos una cena en casa.",
+    "sk": "Minulú sobotu sme mali doma večeru.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "sábado",
+      "pasado",
+      "tuvimos",
+      "una",
+      "cena",
+      "en",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tuvimos",
+        "lemma": "tener",
+        "hint": "tener · nosotros",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "hemos tenido",
+          "tenemos",
+          "teníamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9064",
+    "es": "Anoche mi padre llegó tarde a casa.",
+    "sk": "Včera večer prišiel môj otec neskoro domov.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "mi",
+      "padre",
+      "llegó",
+      "tarde",
+      "a",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llegó",
+        "lemma": "llegar",
+        "hint": "llegar · él",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "ha llegado",
+          "llega",
+          "llegaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9083",
+    "es": "Hoy mi hermano no ha salido de casa.",
+    "sk": "Dnes môj brat nevyšiel z domu.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "mi",
+      "hermano",
+      "no",
+      "ha",
+      "salido",
+      "de",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "ha",
+        "lemma": "haber",
+        "hint": "haber · él",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubo",
+          "había",
+          "haya"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9084",
+    "es": "Este mes hemos pagado el alquiler a tiempo.",
+    "sk": "Tento mesiac sme zaplatili nájom načas.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "mes",
+      "hemos",
+      "pagado",
+      "el",
+      "alquiler",
+      "a",
+      "tiempo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hemos",
+        "lemma": "haber",
+        "hint": "haber · nosotros",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubimos",
+          "habíamos",
+          "hayamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9095",
+    "es": "Sentaos aquí, chicos.",
+    "sk": "Sadnite si sem, chlapci.",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "imperativo"
+    ],
+    "tokens": [
+      "Sentaos",
+      "aquí",
+      ",",
+      "chicos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Sentaos",
+        "lemma": "sentarse",
+        "hint": "sentarse · vosotros · imperativo",
+        "distractors": [
+          "Siéntense",
+          "Sentémonos",
+          "Sentabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9107",
+    "es": "¿Os levantáis temprano los domingos?",
+    "sk": "Vstávate v nedeľu skoro?",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Os",
+      "levantáis",
+      "temprano",
+      "los",
+      "domingos",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "levantáis",
+        "lemma": "levantarse",
+        "hint": "levantarse · vosotros · presente",
+        "distractors": [
+          "levantan",
+          "levantamos",
+          "levantabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9110",
+    "es": "¿Podéis ayudarme con la mudanza?",
+    "sk": "Môžete mi pomôcť so sťahovaním?",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Podéis",
+      "ayudarme",
+      "con",
+      "la",
+      "mudanza",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Podéis",
+        "lemma": "poder",
+        "hint": "poder · vosotros · presente",
+        "distractors": [
+          "Pueden",
+          "Podemos",
+          "Podíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9120",
+    "es": "¡Qué guay! Me encanta tu piso nuevo.",
+    "sk": "To je skvelé! Tvoj nový byt sa mi páči.",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "gustar"
+    ],
+    "tokens": [
+      "¡",
+      "Qué",
+      "guay",
+      "!",
+      "Me",
+      "encanta",
+      "tu",
+      "piso",
+      "nuevo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "guay",
+        "lemma": "guay",
+        "hint": "skvelé (hovorovo)",
+        "distractors": [
+          "guaya",
+          "guayos",
+          "guaye"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9124",
+    "es": "El piso de Lucía es pequeño, pero muy chulo.",
+    "sk": "Luciin byt je malý, ale veľmi fajn.",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "grammar": [
+      "ser-estar"
+    ],
+    "tokens": [
+      "El",
+      "piso",
+      "de",
+      "Lucía",
+      "es",
+      "pequeño",
+      ",",
+      "pero",
+      "muy",
+      "chulo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "chulo",
+        "lemma": "chulo",
+        "hint": "fajn (hovorovo)",
+        "distractors": [
+          "chula",
+          "chulos",
+          "chulas"
+        ]
+      }
+    ]
+  }
+]

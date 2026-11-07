@@ -1,0 +1,40 @@
+[
+  {
+    "id": "s9020",
+    "es": "Esta semana me ha dolido mucho la cabeza.",
+    "sk": "Tento týždeň ma veľmi bolela hlava.",
+    "level": "A2",
+    "topics": [
+      "body"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "me",
+      "ha",
+      "dolido",
+      "mucho",
+      "la",
+      "cabeza",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "dolido",
+        "lemma": "doler",
+        "hint": "doler · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "dolió",
+          "doliendo",
+          "dolía"
+        ]
+      }
+    ]
+  }
+]

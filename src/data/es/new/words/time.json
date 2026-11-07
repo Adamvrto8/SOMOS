@@ -1,0 +1,77 @@
+[
+  {
+    "id": "nochevieja",
+    "es": "Nochevieja",
+    "sk": [
+      "Silvester"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B1",
+    "topics": [
+      "time"
+    ],
+    "examples": [
+      {
+        "es": "En Nochevieja tomamos doce uvas.",
+        "sk": "Na Silvestra jeme dvanásť hroznových bobúľ."
+      },
+      {
+        "es": "Pasamos la Nochevieja con la familia.",
+        "sk": "Silvestra trávime s rodinou."
+      }
+    ],
+    "note": "O polnoci sa na každý úder zvonov zje jedna hroznová bobuľa."
+  },
+  {
+    "id": "finde",
+    "es": "finde",
+    "sk": [
+      "víkend (hovor.)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "findes",
+    "level": "B1",
+    "topics": [
+      "time"
+    ],
+    "examples": [
+      {
+        "es": "¿Qué haces este finde?",
+        "sk": "Čo robíš tento víkend?"
+      },
+      {
+        "es": "El finde nos vamos a la playa.",
+        "sk": "Cez víkend ideme na pláž."
+      }
+    ],
+    "note": "Hovorová skratka z „fin de semana“."
+  },
+  {
+    "id": "siesta",
+    "es": "siesta",
+    "sk": [
+      "siesta",
+      "popoludňajší spánok"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "siestas",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "examples": [
+      {
+        "es": "Después de comer duermo la siesta.",
+        "sk": "Po obede spím siestu."
+      },
+      {
+        "es": "En verano la siesta es sagrada.",
+        "sk": "V lete je siesta posvätná."
+      }
+    ]
+  }
+]

@@ -1,0 +1,385 @@
+[
+  {
+    "id": "s9009",
+    "es": "Este mes han subido el precio del metro.",
+    "sk": "Tento mesiac zdvihli cenu metra.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "mes",
+      "han",
+      "subido",
+      "el",
+      "precio",
+      "del",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "subido",
+        "lemma": "subir",
+        "hint": "subir · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "subieron",
+          "subiendo",
+          "subían"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9011",
+    "es": "¿Has visitado alguna vez el Museo del Prado?",
+    "sk": "Navštívil si niekedy múzeum Prado?",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Has",
+      "visitado",
+      "alguna",
+      "vez",
+      "el",
+      "Museo",
+      "del",
+      "Prado",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "visitado",
+        "lemma": "visitar",
+        "hint": "visitar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "visitaste",
+          "visitando",
+          "visitabas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9036",
+    "es": "Hoy he leído el periódico en el metro.",
+    "sk": "Dnes som čítal noviny v metre.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "leído",
+      "el",
+      "periódico",
+      "en",
+      "el",
+      "metro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "leído",
+        "lemma": "leer",
+        "hint": "leer · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "leí",
+          "leyendo",
+          "leía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9037",
+    "es": "Nunca he aparcado en el centro de Madrid.",
+    "sk": "Nikdy som neparkoval v centre Madridu.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Nunca",
+      "he",
+      "aparcado",
+      "en",
+      "el",
+      "centro",
+      "de",
+      "Madrid",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "aparcado",
+        "lemma": "aparcar",
+        "hint": "aparcar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "aparqué",
+          "aparcando",
+          "aparcaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9065",
+    "es": "Ayer no pudimos entrar al museo.",
+    "sk": "Včera sme nemohli vstúpiť do múzea.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "no",
+      "pudimos",
+      "entrar",
+      "al",
+      "museo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pudimos",
+        "lemma": "poder",
+        "hint": "poder · nosotros",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "hemos podido",
+          "podemos",
+          "podíamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9066",
+    "es": "La semana pasada perdiste el autobús dos veces.",
+    "sk": "Minulý týždeň si zmeškal autobus dvakrát.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "La",
+      "semana",
+      "pasada",
+      "perdiste",
+      "el",
+      "autobús",
+      "dos",
+      "veces",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "perdiste",
+        "lemma": "perder",
+        "hint": "perder · tú",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "has perdido",
+          "pierdes",
+          "perdías"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9087",
+    "es": "¿Dónde vivís vosotros?",
+    "sk": "Kde bývate?",
+    "level": "A1",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Dónde",
+      "vivís",
+      "vosotros",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vivís",
+        "lemma": "vivir",
+        "hint": "vivir · vosotros · presente",
+        "distractors": [
+          "viven",
+          "vivimos",
+          "vivíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9096",
+    "es": "Id por la derecha y girad en la segunda calle.",
+    "sk": "Choďte vpravo a na druhej ulici odbočte.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "imperativo"
+    ],
+    "tokens": [
+      "Id",
+      "por",
+      "la",
+      "derecha",
+      "y",
+      "girad",
+      "en",
+      "la",
+      "segunda",
+      "calle",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Id",
+        "lemma": "ir",
+        "hint": "ir · vosotros · imperativo",
+        "distractors": [
+          "Vayan",
+          "Vamos",
+          "Ibais"
+        ]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "girad",
+        "lemma": "girar",
+        "hint": "girar · vosotros · imperativo",
+        "distractors": [
+          "giren",
+          "giremos",
+          "girabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9103",
+    "es": "¿Ya habéis visto la exposición?",
+    "sk": "Videli ste už výstavu?",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Ya",
+      "habéis",
+      "visto",
+      "la",
+      "exposición",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visto",
+        "lemma": "ver",
+        "hint": "ver · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "visteis",
+          "viendo",
+          "veíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9116",
+    "es": "Cogemos el metro en Sol y bajamos en Atocha.",
+    "sk": "Nastúpime na metro na Sol a vystúpime na Atocha.",
+    "level": "A2",
+    "topics": [
+      "city"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Cogemos",
+      "el",
+      "metro",
+      "en",
+      "Sol",
+      "y",
+      "bajamos",
+      "en",
+      "Atocha",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cogemos",
+        "lemma": "coger",
+        "hint": "coger · nosotros · presente",
+        "distractors": [
+          "Cogen",
+          "Cogías",
+          "Cogerán"
+        ]
+      }
+    ]
+  }
+]

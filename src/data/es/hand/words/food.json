@@ -1,0 +1,71 @@
+[
+  {
+    "id": "elote",
+    "hidden": true
+  },
+  {
+    "id": "antojito",
+    "hidden": true
+  },
+  {
+    "id": "botana",
+    "hidden": true
+  },
+  {
+    "id": "licuado",
+    "hidden": true
+  },
+  {
+    "id": "tamal",
+    "hidden": true
+  },
+  {
+    "id": "pan",
+    "note": "Typický španielsky chlieb je „barra de pan“, dlhý biely bochník. „Pan integral“ = celozrnný chlieb.",
+    "noteEn": "The typical Spanish bread is the “barra de pan”, a long white loaf. “Pan integral” is wholemeal bread."
+  },
+  {
+    "id": "tequila",
+    "note": "V španielčine je mužského rodu: el tequila.",
+    "noteEn": "In Spanish it is masculine: el tequila."
+  },
+  {
+    "id": "antojo",
+    "examples": [
+      {
+        "es": "Tengo antojo de unos churros.",
+        "sk": "Mám chuť na churros."
+      }
+    ],
+    "note": "Tener antojo de algo = mať náhlu chuť na niečo (typicky v tehotenstve).",
+    "noteEn": "Tener antojo de algo = to have a sudden craving for something (typically in pregnancy).",
+    "examplesEn": [
+      "I am craving some churros."
+    ]
+  },
+  {
+    "id": "tortilla",
+    "note": "Bez prívlastku je „tortilla“ v Španielsku zemiaková omeleta (tortilla de patatas). Placka sa volá „tortilla de maíz / de trigo“.",
+    "noteEn": "Without a qualifier, “tortilla” in Spain is the potato omelette (tortilla de patatas). The flatbread is “tortilla de maíz / de trigo”."
+  },
+  {
+    "id": "jugo",
+    "note": "V Mexiku: jugo.",
+    "noteEn": "In Mexico: jugo."
+  },
+  {
+    "id": "papa",
+    "note": "V Mexiku: papa. Pozor: el Papa = pápež.",
+    "noteEn": "In Mexico: papa. Careful: el Papa = the Pope."
+  },
+  {
+    "id": "jitomate",
+    "note": "V Mexiku: jitomate.",
+    "noteEn": "In Mexico: jitomate."
+  },
+  {
+    "id": "mesero",
+    "note": "V Mexiku: mesero.",
+    "noteEn": "In Mexico: mesero."
+  }
+]

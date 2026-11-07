@@ -71,6 +71,22 @@
           null,
           null
         ]
+      },
+      {
+        "id": "ar",
+        "text": "hablar: hablo, hablas, habla, hablamos, habláis, hablan."
+      },
+      {
+        "id": "er-ir",
+        "text": "comer: como, comes, come, comemos, coméis, comen. vivir: vivo, vives, vive, vivimos, vivís, viven."
+      },
+      {
+        "id": "irregular",
+        "text": "ser: soy, eres, es, somos, sois, son. estar: estoy, estás, está, estamos, estáis, están. ir: voy, vas, va, vamos, vais, van."
+      },
+      {
+        "id": "stem",
+        "text": "V niektorých slovesách sa mení samohláska: e → ie (querer: quiero), o → ue (poder: puedo), e → i (pedir: pido). V tvare nosotros sa nemení: queremos, podemos, pedimos. V tvare vosotros sa nemení tiež: queréis, podéis, pedís."
       }
     ],
     "en": {
@@ -78,6 +94,22 @@
         {
           "id": "use",
           "text": "What you do regularly (siempre, todos los días, los lunes), what is always true, and often the near future too: Mañana te llamo."
+        },
+        {
+          "id": "ar",
+          "text": "hablar: hablo, hablas, habla, hablamos, habláis, hablan."
+        },
+        {
+          "id": "er-ir",
+          "text": "comer: como, comes, come, comemos, coméis, comen. vivir: vivo, vives, vive, vivimos, vivís, viven."
+        },
+        {
+          "id": "irregular",
+          "text": "ser: soy, eres, es, somos, sois, son. estar: estoy, estás, está, estamos, estáis, están. ir: voy, vas, va, vamos, vais, van."
+        },
+        {
+          "id": "stem",
+          "text": "In some verbs the vowel changes: e → ie (querer: quiero), o → ue (poder: puedo), e → i (pedir: pido). It doesn't change in the nosotros form: queremos, podemos, pedimos. Nor in the vosotros form: queréis, podéis, pedís."
         }
       ]
     }
@@ -96,10 +128,44 @@
           null,
           null
         ]
+      },
+      {
+        "id": "ar",
+        "text": "hablar: hablé, hablaste, habló, hablamos, hablasteis, hablaron. Prízvuk na konci je dôležitý: hablo = hovorím, habló = hovoril."
+      },
+      {
+        "id": "er-ir",
+        "text": "comer: comí, comiste, comió, comimos, comisteis, comieron. vivir: viví, viviste, vivió, vivimos, vivisteis, vivieron."
+      },
+      {
+        "id": "stems",
+        "text": "Tieto slovesá majú iný kmeň a koncovky bez prízvuku (-e, -iste, -o, -imos, -isteis, -ieron): tener → tuve, estar → estuve, poder → pude, hacer → hice (hizo), venir → vine, decir → dije (dijeron)."
+      },
+      {
+        "id": "ser-ir",
+        "text": "fui, fuiste, fue, fuimos, fuisteis, fueron. Význam určí zvyšok vety."
       }
     ],
     "en": {
-      "intro": "It tells of something that happened and is over: yesterday, last week, once. For today and the recent past (hoy, esta semana, ya) Spain uses the present perfect: hoy he comido."
+      "intro": "It tells of something that happened and is over: yesterday, last week, once. For today and the recent past (hoy, esta semana, ya) Spain uses the present perfect: hoy he comido.",
+      "rules": [
+        {
+          "id": "ar",
+          "text": "hablar: hablé, hablaste, habló, hablamos, hablasteis, hablaron. The accent on the ending matters: hablo = I speak, habló = he spoke."
+        },
+        {
+          "id": "er-ir",
+          "text": "comer: comí, comiste, comió, comimos, comisteis, comieron. vivir: viví, viviste, vivió, vivimos, vivisteis, vivieron."
+        },
+        {
+          "id": "stems",
+          "text": "These verbs have a different stem and endings without an accent (-e, -iste, -o, -imos, -isteis, -ieron): tener → tuve, estar → estuve, poder → pude, hacer → hice (hizo), venir → vine, decir → dije (dijeron)."
+        },
+        {
+          "id": "ser-ir",
+          "text": "fui, fuiste, fue, fuimos, fuisteis, fueron. The rest of the sentence tells you which one it is."
+        }
+      ]
     }
   },
   {
@@ -134,6 +200,10 @@
       {
         "id": "ir-a",
         "text": "O blízkej budúcnosti sa v bežnej reči hovorí najčastejšie takto: voy a, vas a, va a, vamos a, vais a, van a."
+      },
+      {
+        "id": "endings",
+        "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablaréis, hablarán. Rovnako comeré, viviré."
       }
     ],
     "en": {
@@ -141,6 +211,10 @@
         {
           "id": "ir-a",
           "text": "For the near future, everyday speech most often says it this way: voy a, vas a, va a, vamos a, vais a, van a."
+        },
+        {
+          "id": "endings",
+          "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablaréis, hablarán. Likewise comeré, viviré."
         }
       ]
     }
@@ -247,8 +321,20 @@
           },
           null
         ]
+      },
+      {
+        "id": "usted",
+        "text": "hable, hablemos, hablen; tenga, tengamos, tengan; vaya, vayan (pre nosotros sa v reči hovorí skôr vamos). Pre vosotros (kamaráti, rodina) je kladný imperativ neurčitok s -d namiesto -r: hablad, comed, venid; so zámenom os bez -d: sentaos, levantaos. Záporný: no habléis, no os sentéis."
       }
-    ]
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "usted",
+          "text": "hable, hablemos, hablen; tenga, tengamos, tengan; vaya, vayan (for nosotros people mostly say vamos). For vosotros (friends, family) the affirmative is the infinitive with -d instead of -r: hablad, comed, venid; with os the -d drops: sentaos, levantaos. Negative: no habléis, no os sentéis."
+        }
+      ]
+    }
   },
   {
     "id": "condicional",
@@ -261,8 +347,20 @@
             "sk": "Na tvojom mieste by som išiel autobusom."
           }
         ]
+      },
+      {
+        "id": "endings",
+        "text": "hablar: hablaría, hablarías, hablaría, hablaríamos, hablaríais, hablarían. Rovnako comería, viviría."
       }
-    ]
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "endings",
+          "text": "hablar: hablaría, hablarías, hablaría, hablaríamos, hablaríais, hablarían. Likewise comería, viviría."
+        }
+      ]
+    }
   },
   {
     "id": "perfecto",
@@ -296,6 +394,10 @@
           },
           null
         ]
+      },
+      {
+        "id": "form",
+        "text": "haber v imperfekte (había, habías, había, habíamos, habíais, habían) a príčastie, ktoré sa nemení: hablar → hablado, comer → comido, vivir → vivido. Po samohláske -ído: leído, traído."
       }
     ],
     "en": {
@@ -307,6 +409,10 @@
             "Have you ever been to Granada?",
             null
           ]
+        },
+        {
+          "id": "form",
+          "text": "haber in the imperfect (había, habías, había, habíamos, habíais, habían) and the participle, which does not change: hablar → hablado, comer → comido, vivir → vivido. After a vowel -ído: leído, traído."
         }
       ]
     }
@@ -646,6 +752,98 @@
         {
           "id": "se",
           "text": "se vende, se alquilan pisos, aquí se habla español. The verb agrees with the thing: se vende casa, se venden casas."
+        }
+      ]
+    }
+  },
+  {
+    "id": "imperfecto",
+    "rules": [
+      {
+        "id": "ar",
+        "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablabais, hablaban. Tvar pre yo a él je rovnaký."
+      },
+      {
+        "id": "er-ir",
+        "text": "comer: comía, comías, comía, comíamos, comíais, comían. vivir: vivía, vivías, vivía, vivíamos, vivíais, vivían."
+      },
+      {
+        "id": "irregular",
+        "text": "ser: era, eras, era, éramos, erais, eran. ir: iba, ibas, iba, íbamos, ibais, iban. ver: veía, veías, veía, veíamos, veíais, veían."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "ar",
+          "text": "hablar: hablaba, hablabas, hablaba, hablábamos, hablabais, hablaban. The yo and él forms are the same."
+        },
+        {
+          "id": "er-ir",
+          "text": "comer: comía, comías, comía, comíamos, comíais, comían. vivir: vivía, vivías, vivía, vivíamos, vivíais, vivían."
+        },
+        {
+          "id": "irregular",
+          "text": "ser: era, eras, era, éramos, erais, eran. ir: iba, ibas, iba, íbamos, ibais, iban. ver: veía, veías, veía, veíamos, veíais, veían."
+        }
+      ]
+    }
+  },
+  {
+    "id": "subjuntivo",
+    "rules": [
+      {
+        "id": "ar",
+        "text": "hablar: hable, hables, hable, hablemos, habléis, hablen."
+      },
+      {
+        "id": "er-ir",
+        "text": "comer: coma, comas, coma, comamos, comáis, coman. vivir: viva, vivas, viva, vivamos, viváis, vivan."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "ar",
+          "text": "hablar: hable, hables, hable, hablemos, habléis, hablen."
+        },
+        {
+          "id": "er-ir",
+          "text": "comer: coma, comas, coma, comamos, comáis, coman. vivir: viva, vivas, viva, vivamos, viváis, vivan."
+        }
+      ]
+    }
+  },
+  {
+    "id": "reflexive",
+    "rules": [
+      {
+        "id": "forms",
+        "text": "levantarse: me levanto, te levantas, se levanta, nos levantamos, os levantáis, se levantan."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "forms",
+          "text": "levantarse: me levanto, te levantas, se levanta, nos levantamos, os levantáis, se levantan."
+        }
+      ]
+    }
+  },
+  {
+    "id": "progresivo",
+    "rules": [
+      {
+        "id": "form",
+        "text": "Časuje sa len estar: estoy, estás, está, estamos, estáis, están. Gerundium sa nemení."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "form",
+          "text": "Only estar is conjugated: estoy, estás, está, estamos, estáis, están. The gerund doesn't change."
         }
       ]
     }

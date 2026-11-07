@@ -1,0 +1,429 @@
+[
+  {
+    "id": "tapa",
+    "es": "tapa",
+    "sk": [
+      "tapa (malé jedlo k pitiu)"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "tapas",
+    "level": "A1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Pedimos unas tapas y una caña.",
+        "sk": "Objednáme si pár tapas a pivo."
+      },
+      {
+        "es": "Esta tapa de jamón está riquísima.",
+        "sk": "Táto tapa so šunkou je výborná."
+      }
+    ],
+    "note": "V niektorých mestách (napr. v Granade) dostaneš tapu zadarmo k nápoju."
+  },
+  {
+    "id": "cana-2",
+    "es": "caña",
+    "sk": [
+      "malé čapované pivo"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "cañas",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Una caña, por favor.",
+        "sk": "Jedno malé pivo, prosím."
+      },
+      {
+        "es": "Nos tomamos unas cañas después del trabajo.",
+        "sk": "Po práci si dáme pivko."
+      }
+    ],
+    "note": "Pivo sa v Španielsku objednáva ako „una caña“. Pozor: cana = šedivý vlas."
+  },
+  {
+    "id": "bocadillo",
+    "es": "bocadillo",
+    "sk": [
+      "bageta (obložená)",
+      "sendvič"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "bocadillos",
+    "level": "A1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Quiero un bocadillo de jamón.",
+        "sk": "Dám si bagetu so šunkou."
+      },
+      {
+        "es": "Mi bocadillo favorito es el de tortilla.",
+        "sk": "Moja obľúbená bageta je s omeletou."
+      }
+    ],
+    "note": "Obložená bageta, typický obed alebo desiata. V Mexiku „torta“."
+  },
+  {
+    "id": "tortilla-de-patatas",
+    "es": "tortilla de patatas",
+    "sk": [
+      "zemiaková omeleta"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "tortillas de patatas",
+    "level": "A1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "La tortilla de patatas de mi abuela es la mejor.",
+        "sk": "Babkina zemiaková omeleta je najlepšia."
+      },
+      {
+        "es": "Pedimos una tortilla de patatas para compartir.",
+        "sk": "Objednáme si zemiakovú omeletu na zdieľanie."
+      }
+    ],
+    "note": "Najtypickejšie španielske jedlo: vajcia, zemiaky a niekedy cibuľa."
+  },
+  {
+    "id": "gazpacho",
+    "es": "gazpacho",
+    "sk": [
+      "gazpacho"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "gazpachos",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "En verano tomamos gazpacho.",
+        "sk": "V lete jeme gazpacho."
+      },
+      {
+        "es": "El gazpacho se toma frío.",
+        "sk": "Gazpacho sa podáva studené."
+      }
+    ],
+    "note": "Studená polievka z paradajok, uhorky a papriky."
+  },
+  {
+    "id": "croqueta",
+    "es": "croqueta",
+    "sk": [
+      "krokieta"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "croquetas",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Las croquetas de jamón están riquísimas.",
+        "sk": "Šunkové krokety sú výborné."
+      },
+      {
+        "es": "Mi madre hace unas croquetas muy buenas.",
+        "sk": "Mama robí veľmi dobré krokety."
+      }
+    ]
+  },
+  {
+    "id": "churro",
+    "es": "churro",
+    "sk": [
+      "churro"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "churros",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Desayunamos chocolate con churros.",
+        "sk": "Na raňajky máme čokoládu s churros."
+      },
+      {
+        "es": "Los churros están recién hechos.",
+        "sk": "Churros sú čerstvo urobené."
+      }
+    ],
+    "note": "Tradične s hustou horúcou čokoládou."
+  },
+  {
+    "id": "sangria",
+    "es": "sangría",
+    "sk": [
+      "sangria"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "sangrías",
+    "level": "B1",
+    "topics": [
+      "food",
+      "hobbies"
+    ],
+    "examples": [
+      {
+        "es": "En verano bebemos mucha sangría.",
+        "sk": "V lete pijeme veľa sangrie."
+      },
+      {
+        "es": "¿Una jarra de sangría para compartir?",
+        "sk": "Džbán sangrie na zdieľanie?"
+      }
+    ],
+    "note": "Víno s ovocím a ľadom."
+  },
+  {
+    "id": "vermu",
+    "es": "vermú",
+    "sk": [
+      "vermút"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "vermús",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Los domingos tomamos un vermú antes de comer.",
+        "sk": "V nedeľu si dávame vermút pred obedom."
+      },
+      {
+        "es": "Un vermú con aceituna, por favor.",
+        "sk": "Vermút s olivou, prosím."
+      }
+    ],
+    "note": "„Tomar el vermú“ je nedeľný aperitív pred obedom."
+  },
+  {
+    "id": "magdalena",
+    "es": "magdalena",
+    "sk": [
+      "magdalénka",
+      "muffin"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "magdalenas",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Desayuno café con una magdalena.",
+        "sk": "Na raňajky mám kávu s magdalénkou."
+      },
+      {
+        "es": "Mi abuela hace magdalenas de limón.",
+        "sk": "Babka robí citrónové magdalénky."
+      }
+    ]
+  },
+  {
+    "id": "melocoton",
+    "es": "melocotón",
+    "sk": [
+      "broskyňa"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "melocotones",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Este melocotón está muy dulce.",
+        "sk": "Táto broskyňa je veľmi sladká."
+      },
+      {
+        "es": "En verano comemos muchos melocotones.",
+        "sk": "V lete jeme veľa broskýň."
+      }
+    ],
+    "note": "V Mexiku „durazno“."
+  },
+  {
+    "id": "cacahuete",
+    "es": "cacahuete",
+    "sk": [
+      "arašid"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "cacahuetes",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "¿Quieres cacahuetes con la cerveza?",
+        "sk": "Chceš arašidy k pivu?"
+      },
+      {
+        "es": "Soy alérgico a los cacahuetes.",
+        "sk": "Mám alergiu na arašidy."
+      }
+    ],
+    "note": "V Mexiku „cacahuate“."
+  },
+  {
+    "id": "guisante",
+    "es": "guisante",
+    "sk": [
+      "zelený hrášok"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "guisantes",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "No me gustan los guisantes.",
+        "sk": "Nemám rád hrášok."
+      },
+      {
+        "es": "Ponme un poco de arroz con guisantes.",
+        "sk": "Nalož mi trochu ryže s hráškom."
+      }
+    ],
+    "note": "V Mexiku „chícharo“."
+  },
+  {
+    "id": "judia-verde",
+    "es": "judía verde",
+    "sk": [
+      "zelená fazuľka"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "judías verdes",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "De primero, judías verdes con jamón.",
+        "sk": "Ako predjedlo fazuľky so šunkou."
+      },
+      {
+        "es": "Las judías verdes se cuecen diez minutos.",
+        "sk": "Zelené fazuľky sa varia desať minút."
+      }
+    ],
+    "note": "V Mexiku „ejote“."
+  },
+  {
+    "id": "alubia",
+    "es": "alubia",
+    "sk": [
+      "fazuľa (sušená)"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "alubias",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "Las alubias con chorizo son un plato típico.",
+        "sk": "Fazuľa s chorizom je typické jedlo."
+      },
+      {
+        "es": "Mi abuela hace unas alubias buenísimas.",
+        "sk": "Babka robí výbornú fazuľu."
+      }
+    ],
+    "note": "Sušená biela fazuľa; v Mexiku „frijoles“."
+  },
+  {
+    "id": "nevera",
+    "es": "nevera",
+    "sk": [
+      "chladnička"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "neveras",
+    "level": "A1",
+    "topics": [
+      "home",
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "La leche está en la nevera.",
+        "sk": "Mlieko je v chladničke."
+      },
+      {
+        "es": "Hay que limpiar la nevera.",
+        "sk": "Treba vyčistiť chladničku."
+      }
+    ],
+    "note": "V Mexiku „refrigerador“ alebo „refri“."
+  },
+  {
+    "id": "menu-del-dia",
+    "es": "menú del día",
+    "sk": [
+      "denné menu"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "menús del día",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "examples": [
+      {
+        "es": "El menú del día cuesta doce euros.",
+        "sk": "Denné menu stojí dvanásť eur."
+      },
+      {
+        "es": "En este bar el menú del día incluye postre.",
+        "sk": "V tomto bare je v dennom menu aj dezert."
+      }
+    ],
+    "note": "Obedový set (predjedlo, hlavné jedlo, dezert, nápoj) za pevnú cenu; v Mexiku „comida corrida“."
+  }
+]

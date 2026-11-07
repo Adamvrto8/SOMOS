@@ -1,0 +1,37 @@
+[
+  {
+    "id": "rato",
+    "examples": [
+      {
+        "es": "Espérame un rato.",
+        "sk": "Počkaj chvíľu."
+      },
+      {
+        "es": "Luego te veo.",
+        "sk": "Uvidíme sa neskôr."
+      }
+    ],
+    "note": "Un rato = chvíľa. „Luego“ alebo „dentro de un rato“ = o chvíľu, neskôr.",
+    "noteEn": "Un rato = a while. “Luego” or “dentro de un rato” = in a while, later."
+  },
+  {
+    "id": "manana",
+    "examples": [
+      {
+        "es": "Nos vemos mañana.",
+        "sk": "Uvidíme sa zajtra."
+      },
+      {
+        "es": "Trabajo por la mañana.",
+        "sk": "Pracujem dopoludnia."
+      }
+    ],
+    "note": "mañana = zajtra, la mañana = ráno, dopoludnie. V Španielsku „por la mañana“ (v Mexiku „en la mañana“).",
+    "noteEn": "mañana = tomorrow, la mañana = morning. In Spain you say “por la mañana” (in Mexico “en la mañana”)."
+  },
+  {
+    "id": "ahorita",
+    "note": "V Mexiku: ahorita (hneď, často aj „o chvíľu“).",
+    "noteEn": "In Mexico: ahorita (right now, often “in a moment”)."
+  }
+]

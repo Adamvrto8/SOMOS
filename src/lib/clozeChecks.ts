@@ -16,8 +16,13 @@ export const USAGE_TIPS: readonly Grammar[] = [
   'subjuntivo-clauses',
   'relatives',
   'passive-se',
-  'perfecto',
 ]
+
+/**
+ * Tips a blank may name besides the usage tips: Spain's perfecto blanks ("Ayer ___ (comer · yo)" → comí, "Hoy ___ comido"
+ * → he). Not a usage tip of the path (path.json has no perfecto units: Mexico does not need them).
+ */
+export const BLANK_TIPS: readonly Grammar[] = [...USAGE_TIPS, 'perfecto']
 
 const PERSON_LABELS: Record<string, Person> = {
   yo: 'yo',
@@ -67,7 +72,7 @@ export function usageClozeErrors(sentence: Sentence, cloze: Cloze, tips: Map<str
   const hint = usageHint(cloze, verbs)
   if (!cloze.tip) return hint.kind === 'person' ? ['a hint without tense needs `tip`'] : []
   const errors: string[] = []
-  if (!USAGE_TIPS.includes(cloze.tip)) errors.push(`tip "${cloze.tip}" is not a usage tip`)
+  if (!BLANK_TIPS.includes(cloze.tip)) errors.push(`tip "${cloze.tip}" is not a usage tip`)
   if (!sentence.grammar?.includes(cloze.tip)) errors.push(`the sentence is not tagged "${cloze.tip}"`)
   if (!cloze.why) errors.push('a blank with `tip` needs `why`')
   else if (!tips.get(cloze.tip)?.rules.some((r) => r.id === cloze.why)) errors.push(`why "${cloze.why}" is not a rule of the tip "${cloze.tip}"`)

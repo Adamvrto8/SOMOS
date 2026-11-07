@@ -1,0 +1,406 @@
+[
+  {
+    "id": "s9004",
+    "es": "Esta semana mi hermano ha trabajado mucho.",
+    "sk": "Tento týždeň môj brat veľa pracoval.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "mi",
+      "hermano",
+      "ha",
+      "trabajado",
+      "mucho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "trabajado",
+        "lemma": "trabajar",
+        "hint": "trabajar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "trabajó",
+          "trabajando",
+          "trabajaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9034",
+    "es": "Hoy hemos cerrado la oficina antes.",
+    "sk": "Dnes sme kanceláriu zatvorili skôr.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "hemos",
+      "cerrado",
+      "la",
+      "oficina",
+      "antes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cerrado",
+        "lemma": "cerrar",
+        "hint": "cerrar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "cerramos",
+          "cerrando",
+          "cerrábamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9047",
+    "es": "Todavía no hemos resuelto el problema.",
+    "sk": "Problém sme ešte nevyriešili.",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Todavía",
+      "no",
+      "hemos",
+      "resuelto",
+      "el",
+      "problema",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "resuelto",
+        "lemma": "resolver",
+        "hint": "resolver · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "resolvimos",
+          "resolviendo",
+          "resolvíamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9049",
+    "es": "Esta semana han propuesto un horario nuevo.",
+    "sk": "Tento týždeň navrhli nový rozvrh.",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "han",
+      "propuesto",
+      "un",
+      "horario",
+      "nuevo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "propuesto",
+        "lemma": "proponer",
+        "hint": "proponer · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "propusieron",
+          "proponiendo",
+          "proponían"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9052",
+    "es": "El lunes pasado trabajé hasta las diez.",
+    "sk": "Minulý pondelok som pracoval do desiatej.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "lunes",
+      "pasado",
+      "trabajé",
+      "hasta",
+      "las",
+      "diez",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "trabajé",
+        "lemma": "trabajar",
+        "hint": "trabajar · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he trabajado",
+          "trabajo",
+          "trabajaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9062",
+    "es": "Ayer no dijiste nada en la reunión.",
+    "sk": "Včera si na porade nič nepovedal.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "no",
+      "dijiste",
+      "nada",
+      "en",
+      "la",
+      "reunión",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dijiste",
+        "lemma": "decir",
+        "hint": "decir · tú",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "has dicho",
+          "dices",
+          "decías"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9070",
+    "es": "El año pasado mi tío abrió un bar.",
+    "sk": "Minulý rok otvoril môj strýko bar.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "El",
+      "año",
+      "pasado",
+      "mi",
+      "tío",
+      "abrió",
+      "un",
+      "bar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "abrió",
+        "lemma": "abrir",
+        "hint": "abrir · él",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "ha abierto",
+          "abre",
+          "abría"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9075",
+    "es": "Esta semana has trabajado mucho.",
+    "sk": "Tento týždeň si veľa pracoval.",
+    "level": "A2",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "semana",
+      "has",
+      "trabajado",
+      "mucho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "has",
+        "lemma": "haber",
+        "hint": "haber · tú",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hubiste",
+          "habías",
+          "hayas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9117",
+    "es": "Mañana tengo que ir al curro muy temprano.",
+    "sk": "Zajtra musím ísť do roboty veľmi skoro.",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "obligation"
+    ],
+    "tokens": [
+      "Mañana",
+      "tengo",
+      "que",
+      "ir",
+      "al",
+      "curro",
+      "muy",
+      "temprano",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "curro",
+        "lemma": "curro",
+        "hint": "práca (hovorovo)",
+        "distractors": [
+          "queso",
+          "pelo",
+          "dedo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9118",
+    "es": "Mi jefa es muy maja.",
+    "sk": "Moja šéfka je veľmi milá.",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "ser-estar"
+    ],
+    "tokens": [
+      "Mi",
+      "jefa",
+      "es",
+      "muy",
+      "maja",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "maja",
+        "lemma": "majo",
+        "hint": "milá (hovorovo)",
+        "distractors": [
+          "majo",
+          "majos",
+          "majas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9123",
+    "es": "Este fin de semana no curro, tengo plan con Lucía.",
+    "sk": "Tento víkend nerobím, mám plány s Luciou.",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Este",
+      "fin",
+      "de",
+      "semana",
+      "no",
+      "curro",
+      ",",
+      "tengo",
+      "plan",
+      "con",
+      "Lucía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "curro",
+        "lemma": "currar",
+        "hint": "currar · yo · presente",
+        "distractors": [
+          "curras",
+          "currábamos",
+          "curró"
+        ]
+      }
+    ]
+  }
+]

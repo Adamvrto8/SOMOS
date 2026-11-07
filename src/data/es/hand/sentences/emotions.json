@@ -1,0 +1,361 @@
+[
+  {
+    "id": "s329",
+    "es": "Echo mucho de menos a mi familia.",
+    "tokens": [
+      "Echo",
+      "mucho",
+      "de",
+      "menos",
+      "a",
+      "mi",
+      "familia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Echo",
+        "lemma": "echar",
+        "hint": "echar · yo · presente",
+        "distractors": [
+          "Echa",
+          "Echan",
+          "Eché"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s485",
+    "es": "Mis padres estaban decepcionados, pero no dijeron nada.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "estaban",
+      "decepcionados",
+      ",",
+      "pero",
+      "no",
+      "dijeron",
+      "nada",
+      "."
+    ]
+  },
+  {
+    "id": "s937",
+    "es": "Me da mucha rabia que me mientan.",
+    "tokens": [
+      "Me",
+      "da",
+      "mucha",
+      "rabia",
+      "que",
+      "me",
+      "mientan",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rabia",
+        "lemma": "rabia",
+        "hint": "hnev",
+        "distractors": [
+          "rápido",
+          "rabo",
+          "ropa"
+        ]
+      }
+    ],
+    "enHints": [
+      "anger",
+      null
+    ]
+  },
+  {
+    "id": "s938",
+    "es": "El niño hizo una rabieta en el supermercado.",
+    "tokens": [
+      "El",
+      "niño",
+      "hizo",
+      "una",
+      "rabieta",
+      "en",
+      "el",
+      "supermercado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "rabieta",
+        "lemma": "rabieta",
+        "distractors": [
+          "rabia",
+          "rebaja",
+          "ratón"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s939",
+    "es": "Estoy un poco decaído desde que se fue mi novia.",
+    "tokens": [
+      "Estoy",
+      "un",
+      "poco",
+      "decaído",
+      "desde",
+      "que",
+      "se",
+      "fue",
+      "mi",
+      "novia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "decaído",
+        "lemma": "decaído",
+        "hint": "skleslý",
+        "distractors": [
+          "decaída",
+          "deseado",
+          "dormido"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 4
+      }
+    ],
+    "enHints": [
+      "down",
+      null
+    ]
+  },
+  {
+    "id": "s946",
+    "es": "Estoy muy avergonzado por llegar tarde.",
+    "tokens": [
+      "Estoy",
+      "muy",
+      "avergonzado",
+      "por",
+      "llegar",
+      "tarde",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "avergonzado",
+        "lemma": "avergonzado",
+        "hint": "zahanbený",
+        "distractors": [
+          "avergonzada",
+          "avanzado",
+          "agradecido"
+        ]
+      }
+    ],
+    "enHints": [
+      "embarrassed"
+    ]
+  },
+  {
+    "id": "s1146",
+    "es": "Me dolió mucho que no vinieras a mi boda.",
+    "tokens": [
+      "Me",
+      "dolió",
+      "mucho",
+      "que",
+      "no",
+      "vinieras",
+      "a",
+      "mi",
+      "boda",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "dolió",
+        "lemma": "doler",
+        "hint": "doler · él · pretérito",
+        "distractors": [
+          "duele",
+          "dolía",
+          "dolerá"
+        ]
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s1147",
+    "es": "Me cae gordo cuando presume de su dinero.",
+    "tokens": [
+      "Me",
+      "cae",
+      "gordo",
+      "cuando",
+      "presume",
+      "de",
+      "su",
+      "dinero",
+      "."
+    ]
+  },
+  {
+    "id": "s1150",
+    "es": "Estoy de mal humor desde la mañana, mejor no me hables.",
+    "tokens": [
+      "Estoy",
+      "de",
+      "mal",
+      "humor",
+      "desde",
+      "la",
+      "mañana",
+      ",",
+      "mejor",
+      "no",
+      "me",
+      "hables",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "estar · yo · presente",
+        "distractors": [
+          "Estás",
+          "Estuve",
+          "Estaba"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 4
+      }
+    ]
+  },
+  {
+    "id": "s1151",
+    "es": "Me da la sensación de que está celoso de su hermano pequeño.",
+    "tokens": [
+      "Me",
+      "da",
+      "la",
+      "sensación",
+      "de",
+      "que",
+      "está",
+      "celoso",
+      "de",
+      "su",
+      "hermano",
+      "pequeño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 6
+      },
+      {
+        "tokenIndex": 2,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s2012",
+    "es": "Me alegra que por fin hables con tu padre después de tantos años.",
+    "tokens": [
+      "Me",
+      "alegra",
+      "que",
+      "por",
+      "fin",
+      "hables",
+      "con",
+      "tu",
+      "padre",
+      "después",
+      "de",
+      "tantos",
+      "años",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s1139",
+    "es": "Tengo mucha confianza con mi hermano mayor.",
+    "tokens": [
+      "Tengo",
+      "mucha",
+      "confianza",
+      "con",
+      "mi",
+      "hermano",
+      "mayor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 2
+      }
+    ]
+  },
+  {
+    "id": "s932",
+    "es": "Ya me he acostumbrado a vivir sola.",
+    "tokens": [
+      "Ya",
+      "me",
+      "he",
+      "acostumbrado",
+      "a",
+      "vivir",
+      "sola",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "acostumbrado",
+        "hint": "acostumbrarse · participio",
+        "distractors": [
+          "acostumbré",
+          "acostumbrando",
+          "acostumbraba"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "newIndex": 4
+      }
+    ]
+  }
+]

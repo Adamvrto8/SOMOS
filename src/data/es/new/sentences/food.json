@@ -1,0 +1,512 @@
+[
+  {
+    "id": "s9001",
+    "es": "Hoy he comido paella en un bar del centro.",
+    "sk": "Dnes som jedol paellu v bare v centre.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "comido",
+      "paella",
+      "en",
+      "un",
+      "bar",
+      "del",
+      "centro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "comido",
+        "lemma": "comer",
+        "hint": "comer · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "comí",
+          "comiendo",
+          "comía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9002",
+    "es": "Esta mañana he desayunado tostadas con aceite.",
+    "sk": "Dnes ráno som raňajkoval hrianky s olejom.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "mañana",
+      "he",
+      "desayunado",
+      "tostadas",
+      "con",
+      "aceite",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "desayunado",
+        "lemma": "desayunar",
+        "hint": "desayunar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "desayuné",
+          "desayunando",
+          "desayunaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9019",
+    "es": "¿Has probado ya el jamón ibérico?",
+    "sk": "Ochutnal si už iberskú šunku?",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Has",
+      "probado",
+      "ya",
+      "el",
+      "jamón",
+      "ibérico",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Has",
+        "lemma": "haber",
+        "hint": "haber · tú",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "Hubiste",
+          "Habías",
+          "Hayas"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "probado",
+        "lemma": "probar",
+        "hint": "probar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "probaste",
+          "probando",
+          "probabas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9024",
+    "es": "¿Habéis cenado ya?",
+    "sk": "Už ste večerali?",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Habéis",
+      "cenado",
+      "ya",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cenado",
+        "lemma": "cenar",
+        "hint": "cenar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "cenasteis",
+          "cenando",
+          "cenabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9050",
+    "es": "Ayer comí paella en casa de mi tía.",
+    "sk": "Včera som jedol paellu u mojej tety.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "comí",
+      "paella",
+      "en",
+      "casa",
+      "de",
+      "mi",
+      "tía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comí",
+        "lemma": "comer",
+        "hint": "comer · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he comido",
+          "como",
+          "comía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9076",
+    "es": "Hoy he comido demasiado.",
+    "sk": "Dnes som zjedol priveľa.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "comido",
+      "demasiado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "he",
+        "lemma": "haber",
+        "hint": "haber · yo",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hube",
+          "había",
+          "haya"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9082",
+    "es": "Nunca he probado el pulpo.",
+    "sk": "Nikdy som neochutnal chobotnicu.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Nunca",
+      "he",
+      "probado",
+      "el",
+      "pulpo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "he",
+        "lemma": "haber",
+        "hint": "haber · yo",
+        "tip": "perfecto",
+        "why": "use",
+        "distractors": [
+          "hube",
+          "había",
+          "haya"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9088",
+    "es": "¿Qué queréis comer?",
+    "sk": "Čo chcete jesť?",
+    "level": "A1",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Qué",
+      "queréis",
+      "comer",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "queréis",
+        "lemma": "querer",
+        "hint": "querer · vosotros · presente",
+        "distractors": [
+          "quieren",
+          "queremos",
+          "queríais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9092",
+    "es": "Venid a cenar a casa esta noche.",
+    "sk": "Poďte dnes večer k nám na večeru.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "imperativo"
+    ],
+    "tokens": [
+      "Venid",
+      "a",
+      "cenar",
+      "a",
+      "casa",
+      "esta",
+      "noche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Venid",
+        "lemma": "venir",
+        "hint": "venir · vosotros · imperativo",
+        "distractors": [
+          "Vengan",
+          "Vengamos",
+          "Veníais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9093",
+    "es": "Comed algo antes de salir.",
+    "sk": "Zjedzte niečo pred odchodom.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "imperativo"
+    ],
+    "tokens": [
+      "Comed",
+      "algo",
+      "antes",
+      "de",
+      "salir",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Comed",
+        "lemma": "comer",
+        "hint": "comer · vosotros · imperativo",
+        "distractors": [
+          "Coman",
+          "Comamos",
+          "Comíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9098",
+    "es": "No comáis tanto dulce antes de cenar.",
+    "sk": "Nejedzte toľko sladkého pred večerou.",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "subjuntivo",
+      "imperativo"
+    ],
+    "tokens": [
+      "No",
+      "comáis",
+      "tanto",
+      "dulce",
+      "antes",
+      "de",
+      "cenar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comáis",
+        "lemma": "comer",
+        "hint": "comer · vosotros · subjuntivo",
+        "distractors": [
+          "coman",
+          "comamos",
+          "coméis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9101",
+    "es": "Anoche cenasteis fuera, ¿verdad?",
+    "sk": "Včera večer ste večerali vonku, však?",
+    "level": "A2",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "preterito"
+    ],
+    "tokens": [
+      "Anoche",
+      "cenasteis",
+      "fuera",
+      ",",
+      "¿",
+      "verdad",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "cenasteis",
+        "lemma": "cenar",
+        "hint": "cenar · vosotros · pretérito",
+        "distractors": [
+          "cenaron",
+          "cenamos",
+          "cenabais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9114",
+    "es": "Me apetece un café con leche ahora mismo.",
+    "sk": "Chce sa mi kávy s mliekom hneď teraz.",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "Me",
+      "apetece",
+      "un",
+      "café",
+      "con",
+      "leche",
+      "ahora",
+      "mismo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "apetece",
+        "lemma": "apetecer",
+        "hint": "apetecer · él · presente",
+        "distractors": [
+          "apetecen",
+          "apeteció",
+          "apetecía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9119",
+    "es": "Anoche había mogollón de gente en el bar.",
+    "sk": "Včera večer bolo v bare strašne veľa ľudí.",
+    "level": "B1",
+    "topics": [
+      "food"
+    ],
+    "grammar": [
+      "imperfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "había",
+      "mogollón",
+      "de",
+      "gente",
+      "en",
+      "el",
+      "bar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "mogollón",
+        "lemma": "mogollón",
+        "hint": "veľa (hovorovo)",
+        "distractors": [
+          "poco",
+          "nadie",
+          "tampoco"
+        ]
+      }
+    ]
+  }
+]

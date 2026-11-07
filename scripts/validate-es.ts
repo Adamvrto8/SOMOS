@@ -22,10 +22,10 @@ const enTips = readJson<TipEn[]>('en/tips.json')
 const esTips = readJson<TipEs[]>('es/tips.json')
 const esNewWords = load<Word>('es/new/words')
 const esNewSentences = load<Sentence>('es/new/sentences')
-const esNewEn = (name: string): { id: string }[] => {
-  const url = new URL(`es/new/en/${name}.json`, DATA)
-  try { return JSON.parse(readFileSync(url, 'utf8')) as { id: string }[] } catch { return [] }
-}
+const esNewEn = (name: string): { id: string }[] =>
+  readdirSync(new URL('es/new/en/', DATA))
+    .filter((f) => f === `${name}.json` || (f.startsWith(`${name}-`) && f.endsWith('.json')))
+    .flatMap((f) => JSON.parse(readFileSync(new URL(`es/new/en/${f}`, DATA), 'utf8')) as { id: string }[])
 const errors: string[] = []
 const fail = (where: string, msg: string) => errors.push(`${where}: ${msg}`)
 
@@ -35,7 +35,7 @@ const MEXICAN = new Set(['carro', 'carros', 'computadora', 'computadoras', 'celu
   'pesos', 'tianguis', 'zócalo', 'chamba', 'chambear', 'chambea', 'chido', 'padrísimo', 'órale', 'ándale', 'güey', 'neta', 'refri', 'popote', 'papás',
   'bloqueador', 'aventón', 'cajuela', 'llanta', 'llantas', 'prepa', 'pizarrón', 'plática', 'platicar', 'platicamos', 'platiqué', 'renta', 'rentar', 'rentamos',
   'elote', 'elotes', 'ejotes', 'chícharos', 'betabel', 'durazno', 'duraznos', 'cacahuates', 'camote', 'frijoles', 'abuelita', 'chinita', 'apapacho', 'achicopalado',
-  'mezclilla', 'tinaco', 'fraccionamiento', 'mayoreo', 'enganche', 'finiquito', 'licuado', 'botana', 'manejar', 'manejo', 'maneja', 'estacionar', 'enojado', 'enojada', 'enojó'])
+  'mezclilla', 'tinaco', 'fraccionamiento', 'mayoreo', 'enganche', 'licuado', 'botana', 'manejar', 'manejo', 'maneja', 'estacionar', 'enojado', 'enojada', 'enojó'])
 const check = (where: string, text: string) => {
   for (const w of text.toLowerCase().split(/[^\p{L}]+/u)) if (MEXICAN.has(w)) fail(where, `Mexican word "${w}" left in Spain text`)
 }
@@ -67,9 +67,29 @@ for (const s of applySentences(sentences, esSentences).filter((s) => esSentences
 
 // A new meaning or note needs its English too (the base English says the Mexican one).
 for (const w of esWords) if (typeof w.note === 'string' && !w.noteEn?.trim()) fail(`es/words[${w.id}]`, 'a Spain note needs noteEn')
+// An example whose Slovak changed means something new: its English must change too.
+const enWordExamples = new Map(load<{ id: string; examples?: string[] }>('en/words').map((e) => [e.id, e.examples]))
+for (const o of esWords) {
+  const base = words.find((w) => w.id === o.id)
+  o.examples?.forEach((ex, i) => {
+    if (base && enWordExamples.get(o.id)?.[i] && ex.sk !== base.examples[i]?.sk && !o.examplesEn?.[i]) fail(`es/words[${o.id}]`, `example ${i} means something new: needs examplesEn[${i}]`)
+  })
+}
 for (const o of esSentences) {
   if (o.sk !== undefined && !o.sk.trim()) fail(`es/sentences[${o.id}]`, 'empty sk')
   if (o.sk !== undefined && !o.en?.trim()) fail(`es/sentences[${o.id}]`, 'a new Slovak meaning needs its English (en)')
+}
+
+// A blank whose Slovak hint Spain changed needs the English for it too, if the base blank had an English hint.
+const enSentenceHints = new Map(load<{ id: string; hints?: (string | null)[] }>('en/sentences').map((e) => [e.id, e.hints]))
+for (const o of esSentences) {
+  const base = sentences.find((s) => s.id === o.id)
+  for (const p of o.cloze ?? []) {
+    const i = base?.cloze?.findIndex((c) => c.tokenIndex === p.tokenIndex) ?? -1
+    const before = base?.cloze?.[i]?.hint
+    if (i < 0 || !p.hint || p.hint === before || p.hint.includes(' · ')) continue
+    if (enSentenceHints.get(o.id)?.[i] && !o.enHints?.[i]) fail(`es/sentences[${o.id}]`, `blank ${i}: new hint "${p.hint}" needs enHints[${i}]`)
+  }
 }
 
 // Spain's own sentences: ids from s9001 (the base grows from s001 and must never meet them), English for each, and

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "chaval",
+    "es": "chaval",
+    "sk": [
+      "chalan",
+      "mladík"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "chavales",
+    "level": "A2",
+    "topics": [
+      "family",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "Ese chaval toca muy bien la guitarra.",
+        "sk": "Ten chalan hrá veľmi dobre na gitare."
+      },
+      {
+        "es": "Los chavales juegan al fútbol en la plaza.",
+        "sk": "Chalani hrajú futbal na námestí."
+      }
+    ],
+    "note": "Hovorové. Chavala = dievča."
+  }
+]

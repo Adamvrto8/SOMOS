@@ -429,5 +429,505 @@
       "imperativo.ellos"
     ],
     "level": "B1"
+  },
+  {
+    "id": "coger",
+    "sk": [
+      "vziať",
+      "chytiť",
+      "ísť (autobusom, metrom)"
+    ],
+    "group": "er",
+    "regular": false,
+    "gerund": "cogiendo",
+    "presente": {
+      "yo": "cojo",
+      "tu": "coges",
+      "el": "coge",
+      "nosotros": "cogemos",
+      "ellos": "cogen"
+    },
+    "preterito": {
+      "yo": "cogí",
+      "tu": "cogiste",
+      "el": "cogió",
+      "nosotros": "cogimos",
+      "ellos": "cogieron"
+    },
+    "imperfecto": {
+      "yo": "cogía",
+      "tu": "cogías",
+      "el": "cogía",
+      "nosotros": "cogíamos",
+      "ellos": "cogían"
+    },
+    "futuro": {
+      "yo": "cogeré",
+      "tu": "cogerás",
+      "el": "cogerá",
+      "nosotros": "cogeremos",
+      "ellos": "cogerán"
+    },
+    "subjuntivo": {
+      "yo": "coja",
+      "tu": "cojas",
+      "el": "coja",
+      "nosotros": "cojamos",
+      "ellos": "cojan"
+    },
+    "subjImperfecto": {
+      "yo": "cogiera",
+      "tu": "cogieras",
+      "el": "cogiera",
+      "nosotros": "cogiéramos",
+      "ellos": "cogieran"
+    },
+    "condicional": {
+      "yo": "cogería",
+      "tu": "cogerías",
+      "el": "cogería",
+      "nosotros": "cogeríamos",
+      "ellos": "cogerían"
+    },
+    "imperativo": {
+      "tu": "coge",
+      "el": "coja",
+      "nosotros": "cojamos",
+      "ellos": "cojan"
+    },
+    "participle": "cogido",
+    "irregularForms": [
+      "presente.yo",
+      "subjuntivo.*",
+      "imperativo.el",
+      "imperativo.nosotros",
+      "imperativo.ellos"
+    ],
+    "level": "A1"
+  },
+  {
+    "id": "apetecer",
+    "sk": [
+      "mať chuť (na niečo)",
+      "chcieť sa"
+    ],
+    "group": "er",
+    "regular": false,
+    "gerund": "apeteciendo",
+    "presente": {
+      "yo": "apetezco",
+      "tu": "apeteces",
+      "el": "apetece",
+      "nosotros": "apetecemos",
+      "ellos": "apetecen"
+    },
+    "preterito": {
+      "yo": "apetecí",
+      "tu": "apeteciste",
+      "el": "apeteció",
+      "nosotros": "apetecimos",
+      "ellos": "apetecieron"
+    },
+    "imperfecto": {
+      "yo": "apetecía",
+      "tu": "apetecías",
+      "el": "apetecía",
+      "nosotros": "apetecíamos",
+      "ellos": "apetecían"
+    },
+    "futuro": {
+      "yo": "apeteceré",
+      "tu": "apetecerás",
+      "el": "apetecerá",
+      "nosotros": "apeteceremos",
+      "ellos": "apetecerán"
+    },
+    "subjuntivo": {
+      "yo": "apetezca",
+      "tu": "apetezcas",
+      "el": "apetezca",
+      "nosotros": "apetezcamos",
+      "ellos": "apetezcan"
+    },
+    "subjImperfecto": {
+      "yo": "apeteciera",
+      "tu": "apetecieras",
+      "el": "apeteciera",
+      "nosotros": "apeteciéramos",
+      "ellos": "apetecieran"
+    },
+    "condicional": {
+      "yo": "apetecería",
+      "tu": "apetecerías",
+      "el": "apetecería",
+      "nosotros": "apeteceríamos",
+      "ellos": "apetecerían"
+    },
+    "imperativo": {
+      "tu": "apetece",
+      "el": "apetezca",
+      "nosotros": "apetezcamos",
+      "ellos": "apetezcan"
+    },
+    "participle": "apetecido",
+    "irregularForms": [
+      "presente.yo",
+      "subjuntivo.*",
+      "imperativo.el",
+      "imperativo.nosotros",
+      "imperativo.ellos"
+    ],
+    "level": "B1"
+  },
+  {
+    "id": "molar",
+    "sk": [
+      "páčiť sa (hovor.)",
+      "byť super"
+    ],
+    "group": "ar",
+    "regular": true,
+    "gerund": "molando",
+    "presente": {
+      "yo": "molo",
+      "tu": "molas",
+      "el": "mola",
+      "nosotros": "molamos",
+      "ellos": "molan"
+    },
+    "preterito": {
+      "yo": "molé",
+      "tu": "molaste",
+      "el": "moló",
+      "nosotros": "molamos",
+      "ellos": "molaron"
+    },
+    "imperfecto": {
+      "yo": "molaba",
+      "tu": "molabas",
+      "el": "molaba",
+      "nosotros": "molábamos",
+      "ellos": "molaban"
+    },
+    "futuro": {
+      "yo": "molaré",
+      "tu": "molarás",
+      "el": "molará",
+      "nosotros": "molaremos",
+      "ellos": "molarán"
+    },
+    "subjuntivo": {
+      "yo": "mole",
+      "tu": "moles",
+      "el": "mole",
+      "nosotros": "molemos",
+      "ellos": "molen"
+    },
+    "subjImperfecto": {
+      "yo": "molara",
+      "tu": "molaras",
+      "el": "molara",
+      "nosotros": "moláramos",
+      "ellos": "molaran"
+    },
+    "condicional": {
+      "yo": "molaría",
+      "tu": "molarías",
+      "el": "molaría",
+      "nosotros": "molaríamos",
+      "ellos": "molarían"
+    },
+    "imperativo": {
+      "tu": "mola",
+      "el": "mole",
+      "nosotros": "molemos",
+      "ellos": "molen"
+    },
+    "participle": "molado",
+    "level": "B1"
+  },
+  {
+    "id": "suspender",
+    "sk": [
+      "neurobiť (skúšku)",
+      "zrušiť"
+    ],
+    "group": "er",
+    "regular": true,
+    "gerund": "suspendiendo",
+    "presente": {
+      "yo": "suspendo",
+      "tu": "suspendes",
+      "el": "suspende",
+      "nosotros": "suspendemos",
+      "ellos": "suspenden"
+    },
+    "preterito": {
+      "yo": "suspendí",
+      "tu": "suspendiste",
+      "el": "suspendió",
+      "nosotros": "suspendimos",
+      "ellos": "suspendieron"
+    },
+    "imperfecto": {
+      "yo": "suspendía",
+      "tu": "suspendías",
+      "el": "suspendía",
+      "nosotros": "suspendíamos",
+      "ellos": "suspendían"
+    },
+    "futuro": {
+      "yo": "suspenderé",
+      "tu": "suspenderás",
+      "el": "suspenderá",
+      "nosotros": "suspenderemos",
+      "ellos": "suspenderán"
+    },
+    "subjuntivo": {
+      "yo": "suspenda",
+      "tu": "suspendas",
+      "el": "suspenda",
+      "nosotros": "suspendamos",
+      "ellos": "suspendan"
+    },
+    "subjImperfecto": {
+      "yo": "suspendiera",
+      "tu": "suspendieras",
+      "el": "suspendiera",
+      "nosotros": "suspendiéramos",
+      "ellos": "suspendieran"
+    },
+    "condicional": {
+      "yo": "suspendería",
+      "tu": "suspenderías",
+      "el": "suspendería",
+      "nosotros": "suspenderíamos",
+      "ellos": "suspenderían"
+    },
+    "imperativo": {
+      "tu": "suspende",
+      "el": "suspenda",
+      "nosotros": "suspendamos",
+      "ellos": "suspendan"
+    },
+    "participle": "suspendido",
+    "level": "A2"
+  },
+  {
+    "id": "girar",
+    "sk": [
+      "odbočiť",
+      "otočiť (sa)"
+    ],
+    "group": "ar",
+    "regular": true,
+    "gerund": "girando",
+    "presente": {
+      "yo": "giro",
+      "tu": "giras",
+      "el": "gira",
+      "nosotros": "giramos",
+      "ellos": "giran"
+    },
+    "preterito": {
+      "yo": "giré",
+      "tu": "giraste",
+      "el": "giró",
+      "nosotros": "giramos",
+      "ellos": "giraron"
+    },
+    "imperfecto": {
+      "yo": "giraba",
+      "tu": "girabas",
+      "el": "giraba",
+      "nosotros": "girábamos",
+      "ellos": "giraban"
+    },
+    "futuro": {
+      "yo": "giraré",
+      "tu": "girarás",
+      "el": "girará",
+      "nosotros": "giraremos",
+      "ellos": "girarán"
+    },
+    "subjuntivo": {
+      "yo": "gire",
+      "tu": "gires",
+      "el": "gire",
+      "nosotros": "giremos",
+      "ellos": "giren"
+    },
+    "subjImperfecto": {
+      "yo": "girara",
+      "tu": "giraras",
+      "el": "girara",
+      "nosotros": "giráramos",
+      "ellos": "giraran"
+    },
+    "condicional": {
+      "yo": "giraría",
+      "tu": "girarías",
+      "el": "giraría",
+      "nosotros": "giraríamos",
+      "ellos": "girarían"
+    },
+    "imperativo": {
+      "tu": "gira",
+      "el": "gire",
+      "nosotros": "giremos",
+      "ellos": "giren"
+    },
+    "participle": "girado",
+    "level": "A2"
+  },
+  {
+    "id": "fregar",
+    "sk": [
+      "umyť (riad)",
+      "vytrieť (podlahu)"
+    ],
+    "group": "ar",
+    "regular": false,
+    "gerund": "fregando",
+    "presente": {
+      "yo": "friego",
+      "tu": "friegas",
+      "el": "friega",
+      "nosotros": "fregamos",
+      "ellos": "friegan"
+    },
+    "preterito": {
+      "yo": "fregué",
+      "tu": "fregaste",
+      "el": "fregó",
+      "nosotros": "fregamos",
+      "ellos": "fregaron"
+    },
+    "imperfecto": {
+      "yo": "fregaba",
+      "tu": "fregabas",
+      "el": "fregaba",
+      "nosotros": "fregábamos",
+      "ellos": "fregaban"
+    },
+    "futuro": {
+      "yo": "fregaré",
+      "tu": "fregarás",
+      "el": "fregará",
+      "nosotros": "fregaremos",
+      "ellos": "fregarán"
+    },
+    "subjuntivo": {
+      "yo": "friegue",
+      "tu": "friegues",
+      "el": "friegue",
+      "nosotros": "freguemos",
+      "ellos": "frieguen"
+    },
+    "subjImperfecto": {
+      "yo": "fregara",
+      "tu": "fregaras",
+      "el": "fregara",
+      "nosotros": "fregáramos",
+      "ellos": "fregaran"
+    },
+    "condicional": {
+      "yo": "fregaría",
+      "tu": "fregarías",
+      "el": "fregaría",
+      "nosotros": "fregaríamos",
+      "ellos": "fregarían"
+    },
+    "imperativo": {
+      "tu": "friega",
+      "el": "friegue",
+      "nosotros": "freguemos",
+      "ellos": "frieguen"
+    },
+    "participle": "fregado",
+    "irregularForms": [
+      "presente.yo",
+      "presente.tu",
+      "presente.el",
+      "presente.ellos",
+      "subjuntivo.yo",
+      "subjuntivo.tu",
+      "subjuntivo.el",
+      "subjuntivo.ellos",
+      "imperativo.tu",
+      "imperativo.el",
+      "imperativo.ellos",
+      "preterito.yo",
+      "subjuntivo.nosotros",
+      "imperativo.nosotros"
+    ],
+    "level": "A2"
+  },
+  {
+    "id": "currar",
+    "sk": [
+      "makať",
+      "pracovať (hovor.)"
+    ],
+    "group": "ar",
+    "regular": true,
+    "gerund": "currando",
+    "presente": {
+      "yo": "curro",
+      "tu": "curras",
+      "el": "curra",
+      "nosotros": "curramos",
+      "ellos": "curran"
+    },
+    "preterito": {
+      "yo": "curré",
+      "tu": "curraste",
+      "el": "curró",
+      "nosotros": "curramos",
+      "ellos": "curraron"
+    },
+    "imperfecto": {
+      "yo": "curraba",
+      "tu": "currabas",
+      "el": "curraba",
+      "nosotros": "currábamos",
+      "ellos": "curraban"
+    },
+    "futuro": {
+      "yo": "curraré",
+      "tu": "currarás",
+      "el": "currará",
+      "nosotros": "curraremos",
+      "ellos": "currarán"
+    },
+    "subjuntivo": {
+      "yo": "curre",
+      "tu": "curres",
+      "el": "curre",
+      "nosotros": "curremos",
+      "ellos": "curren"
+    },
+    "subjImperfecto": {
+      "yo": "currara",
+      "tu": "curraras",
+      "el": "currara",
+      "nosotros": "curráramos",
+      "ellos": "curraran"
+    },
+    "condicional": {
+      "yo": "curraría",
+      "tu": "currarías",
+      "el": "curraría",
+      "nosotros": "curraríamos",
+      "ellos": "currarían"
+    },
+    "imperativo": {
+      "tu": "curra",
+      "el": "curre",
+      "nosotros": "curremos",
+      "ellos": "curren"
+    },
+    "participle": "currado",
+    "level": "B1"
   }
 ]

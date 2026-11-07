@@ -1,0 +1,217 @@
+[
+  {
+    "id": "s9010",
+    "es": "Últimamente hemos salido poco por la noche.",
+    "sk": "V poslednom čase sme večer chodili von málo.",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Últimamente",
+      "hemos",
+      "salido",
+      "poco",
+      "por",
+      "la",
+      "noche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "salido",
+        "lemma": "salir",
+        "hint": "salir · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "salimos",
+          "saliendo",
+          "salíamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9068",
+    "es": "Anoche ellos volvieron a las dos de la mañana.",
+    "sk": "Včera v noci sa vrátili o druhej ráno.",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Anoche",
+      "ellos",
+      "volvieron",
+      "a",
+      "las",
+      "dos",
+      "de",
+      "la",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "volvieron",
+        "lemma": "volver",
+        "hint": "volver · ellos",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "han vuelto",
+          "vuelven",
+          "volvían"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9099",
+    "es": "¿Qué hicisteis el fin de semana?",
+    "sk": "Čo ste robili cez víkend?",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "preterito"
+    ],
+    "tokens": [
+      "¿",
+      "Qué",
+      "hicisteis",
+      "el",
+      "fin",
+      "de",
+      "semana",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hicisteis",
+        "lemma": "hacer",
+        "hint": "hacer · vosotros · pretérito",
+        "distractors": [
+          "hicieron",
+          "hicimos",
+          "hacíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9102",
+    "es": "¿Qué habéis hecho hoy?",
+    "sk": "Čo ste dnes robili?",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "¿",
+      "Qué",
+      "habéis",
+      "hecho",
+      "hoy",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hecho",
+        "lemma": "hacer",
+        "hint": "hacer · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "hicisteis",
+          "haciendo",
+          "hacíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9106",
+    "es": "Mañana saldréis temprano, ¿no?",
+    "sk": "Zajtra odídete skoro, však?",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "futuro"
+    ],
+    "tokens": [
+      "Mañana",
+      "saldréis",
+      "temprano",
+      ",",
+      "¿",
+      "no",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "saldréis",
+        "lemma": "salir",
+        "hint": "salir · vosotros · futuro",
+        "distractors": [
+          "saldrán",
+          "saldremos",
+          "salíais"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9111",
+    "es": "¿Quedamos mañana a las ocho?",
+    "sk": "Dohodneme sa zajtra o ôsmej?",
+    "level": "A2",
+    "topics": [
+      "time"
+    ],
+    "grammar": [
+      "presente"
+    ],
+    "tokens": [
+      "¿",
+      "Quedamos",
+      "mañana",
+      "a",
+      "las",
+      "ocho",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Quedamos",
+        "lemma": "quedar",
+        "hint": "quedar · nosotros · presente",
+        "distractors": [
+          "Quedan",
+          "Quedó",
+          "Quedabas"
+        ]
+      }
+    ]
+  }
+]

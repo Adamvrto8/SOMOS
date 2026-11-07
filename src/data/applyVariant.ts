@@ -17,6 +17,8 @@ export interface WordEs {
   note?: string | null
   /** The English of a new `note` (src/data/en/words has the Mexican one). */
   noteEn?: string
+  /** English for examples that mean something new in Spain (euros, wool), one per example; null keeps the base English. */
+  examplesEn?: (string | null)[]
 }
 
 export interface ClozeEs {
@@ -36,6 +38,8 @@ export interface SentenceEs {
   /** When Spain says something a little different (euros, Madrid, padres): the Slovak and English for it. */
   sk?: string
   en?: string
+  /** English for the blanks' Slovak hints Spain changed, one per base blank in order; null keeps the base English. */
+  enHints?: (string | null)[]
 }
 
 /**
@@ -57,7 +61,7 @@ export function applyWords(base: Word[], overlay: WordEs[]): Word[] {
   return base.filter((word) => !byId.get(word.id)?.hidden).map((word) => {
     const o = byId.get(word.id)
     if (!o) return word
-    const { note, hidden: _hidden, noteEn: _noteEn, ...rest } = o
+    const { note, hidden: _hidden, noteEn: _noteEn, examplesEn: _examplesEn, ...rest } = o
     const merged: Word = { ...word, ...stripUndefined(rest) }
     if (note === null) delete merged.note
     else if (note !== undefined) merged.note = note

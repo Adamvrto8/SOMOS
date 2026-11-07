@@ -15,7 +15,7 @@ import {
 } from '../src/lib/verbForms.ts'
 import { applySentences, applyWords, hiddenVerbIds, mergeById, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
 import { bareVosotros } from '../src/lib/vosotros.ts'
-import { checksOwnHint, usageClozeErrors, usageHint, USAGE_TIPS } from '../src/lib/clozeChecks.ts'
+import { BLANK_TIPS, checksOwnHint, usageClozeErrors, usageHint } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
 const readJson = (url: URL) => JSON.parse(readFileSync(url, 'utf8')) as unknown
@@ -407,7 +407,7 @@ for (const tip of tips) {
     if (tip.id === SER_ESTAR) {
       if (rule.verb !== 'ser' && rule.verb !== 'estar') fail(rw, 'needs verb "ser" or "estar"')
     } else if (rule.verb !== undefined) fail(rw, `verb is only for the "${SER_ESTAR}" tip`)
-    const saysWhy = tip.id === SER_ESTAR || USAGE_TIPS.includes(tip.id as Grammar)
+    const saysWhy = tip.id === SER_ESTAR || BLANK_TIPS.includes(tip.id as Grammar)
     if (saysWhy && !isNonEmpty(rule.because)) fail(rw, 'needs because (shown for a blank)')
     else if (!saysWhy && rule.because !== undefined) fail(rw, 'because is only for ser-estar and the usage tips')
   }
@@ -577,7 +577,12 @@ for (const level of pathLevels) {
 // Matched to the base data by id. Missing English is not an error (the app shows Slovak);
 // English that points at nothing, or does not fit what it translates, is.
 
-const readEnEs = <T,>(name: string) => readJson(new URL(`es/new/en/${name}.json`, DATA)) as T[]
+// es/new/en/<name>.json and <name>-*.json (words.json is written by spain-verbs.mjs, words-more.json by hand).
+const readEnEs = <T,>(name: string) =>
+  readdirSync(new URL('es/new/en/', DATA))
+    .filter((f) => f === `${name}.json` || (f.startsWith(`${name}-`) && f.endsWith('.json')))
+    .sort()
+    .flatMap((f) => readJson(new URL(`es/new/en/${f}`, DATA)) as T[])
 function loadEnDir<T>(dir: string): T[] {
   return existsSync(new URL(`en/${dir}/`, DATA)) ? loadDir<T>(`en/${dir}`) : []
 }

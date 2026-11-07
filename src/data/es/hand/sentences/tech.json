@@ -1,0 +1,362 @@
+[
+  {
+    "id": "s1452",
+    "es": "Le escribo un mensaje a mi madre.",
+    "tokens": [
+      "Le",
+      "escribo",
+      "un",
+      "mensaje",
+      "a",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "escribo"
+      }
+    ]
+  },
+  {
+    "id": "s1471",
+    "es": "Mi padre siempre veía las noticias en la tele.",
+    "tokens": [
+      "Mi",
+      "padre",
+      "siempre",
+      "veía",
+      "las",
+      "noticias",
+      "en",
+      "la",
+      "tele",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "noticias"
+      }
+    ]
+  },
+  {
+    "id": "s988",
+    "es": "Hackearon la cuenta de mi madre y tuvo que cambiar la contraseña.",
+    "tokens": [
+      "Hackearon",
+      "la",
+      "cuenta",
+      "de",
+      "mi",
+      "madre",
+      "y",
+      "tuvo",
+      "que",
+      "cambiar",
+      "la",
+      "contraseña",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tuvo"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s1702",
+    "es": "El ordenador más barato de la tienda cuesta trescientos euros.",
+    "tokens": [
+      "El",
+      "ordenador",
+      "más",
+      "barato",
+      "de",
+      "la",
+      "tienda",
+      "cuesta",
+      "trescientos",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "más"
+      }
+    ],
+    "sk": "Najlacnejší počítač v obchode stojí tristo eur.",
+    "en": "The cheapest computer in the store costs three hundred euros."
+  },
+  {
+    "id": "s1483",
+    "es": "Ojalá la inteligencia artificial no nos deje sin curro.",
+    "tokens": [
+      "Ojalá",
+      "la",
+      "inteligencia",
+      "artificial",
+      "no",
+      "nos",
+      "deje",
+      "sin",
+      "curro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "curro",
+        "lemma": "curro",
+        "hint": "robota",
+        "distractors": [
+          "cuna",
+          "curva",
+          "curso"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1958",
+    "es": "El programa fue desarrollado por estudiantes españoles.",
+    "tokens": [
+      "El",
+      "programa",
+      "fue",
+      "desarrollado",
+      "por",
+      "estudiantes",
+      "españoles",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "desarrollado"
+      }
+    ],
+    "sk": "Program vyvinuli španielski študenti.",
+    "en": "The program was developed by Spanish students."
+  },
+  {
+    "id": "s1467",
+    "es": "Los niños están viendo un vídeo en la tableta.",
+    "tokens": [
+      "Los",
+      "niños",
+      "están",
+      "viendo",
+      "un",
+      "vídeo",
+      "en",
+      "la",
+      "tableta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viendo"
+      }
+    ]
+  },
+  {
+    "id": "s1477",
+    "es": "Me tienen harto los anuncios que salen en cada vídeo.",
+    "tokens": [
+      "Me",
+      "tienen",
+      "harto",
+      "los",
+      "anuncios",
+      "que",
+      "salen",
+      "en",
+      "cada",
+      "vídeo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "anuncios"
+      }
+    ]
+  },
+  {
+    "id": "s1482",
+    "es": "Mi hijo se pasa el día pegado al móvil y casi no charla con nosotros.",
+    "tokens": [
+      "Mi",
+      "hijo",
+      "se",
+      "pasa",
+      "el",
+      "día",
+      "pegado",
+      "al",
+      "móvil",
+      "y",
+      "casi",
+      "no",
+      "charla",
+      "con",
+      "nosotros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "newIndex": 12,
+        "answer": "charla",
+        "lemma": "charlar",
+        "hint": "charlar · él · presente",
+        "distractors": [
+          "charlo",
+          "charlas",
+          "charlamos"
+        ]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "se"
+      }
+    ]
+  },
+  {
+    "id": "s2125",
+    "es": "Me pidieron que cambiara mi contraseña porque alguien intentó entrar en mi cuenta.",
+    "tokens": [
+      "Me",
+      "pidieron",
+      "que",
+      "cambiara",
+      "mi",
+      "contraseña",
+      "porque",
+      "alguien",
+      "intentó",
+      "entrar",
+      "en",
+      "mi",
+      "cuenta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cambiara"
+      }
+    ]
+  },
+  {
+    "id": "s977",
+    "es": "El concierto se retransmitió en directo.",
+    "tokens": [
+      "El",
+      "concierto",
+      "se",
+      "retransmitió",
+      "en",
+      "directo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "directo",
+        "lemma": "en directo",
+        "distractors": [
+          "directa",
+          "dirección",
+          "director"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s580",
+    "es": "¿Ya has descargado la aplicación del banco?",
+    "tokens": [
+      "¿",
+      "Ya",
+      "has",
+      "descargado",
+      "la",
+      "aplicación",
+      "del",
+      "banco",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "aplicación"
+      }
+    ]
+  },
+  {
+    "id": "s971",
+    "es": "Le hice una foto con la cámara del móvil.",
+    "tokens": [
+      "Le",
+      "hice",
+      "una",
+      "foto",
+      "con",
+      "la",
+      "cámara",
+      "del",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hice",
+        "lemma": "hacer",
+        "hint": "hacer · yo · pretérito",
+        "distractors": [
+          "hago",
+          "hizo",
+          "haría"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1455",
+    "es": "Siempre hago fotos con el móvil.",
+    "tokens": [
+      "Siempre",
+      "hago",
+      "fotos",
+      "con",
+      "el",
+      "móvil",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hago",
+        "lemma": "hacer",
+        "hint": "hacer · yo · presente",
+        "distractors": [
+          "haces",
+          "hice",
+          "hacía"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "zocalo",
+    "hidden": true
+  },
+  {
+    "id": "tope",
+    "hidden": true
+  },
+  {
+    "id": "plaza",
+    "note": "Hlavné námestie mnohých miest sa volá „Plaza Mayor“.",
+    "noteEn": "The main square of many towns is called “Plaza Mayor”."
+  },
+  {
+    "id": "carro",
+    "note": "V Mexiku: carro.",
+    "noteEn": "In Mexico: carro."
+  },
+  {
+    "id": "camion",
+    "note": "Pozor: el camión = nákladiak. V Mexiku camión = autobus.",
+    "noteEn": "Careful: el camión = truck. In Mexico camión = bus."
+  },
+  {
+    "id": "banqueta",
+    "note": "V Mexiku: banqueta.",
+    "noteEn": "In Mexico: banqueta."
+  }
+]

@@ -1,0 +1,799 @@
+[
+  {
+    "id": "s272",
+    "es": "Hace mucho calor en Sevilla.",
+    "tokens": [
+      "Hace",
+      "mucho",
+      "calor",
+      "en",
+      "Sevilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hace"
+      }
+    ],
+    "sk": "V Seville je veľké teplo.",
+    "en": "It is very hot in Seville."
+  },
+  {
+    "id": "s275",
+    "es": "En diciembre hace frío por la noche.",
+    "tokens": [
+      "En",
+      "diciembre",
+      "hace",
+      "frío",
+      "por",
+      "la",
+      "noche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "frío"
+      }
+    ]
+  },
+  {
+    "id": "s282",
+    "es": "La temperatura bajó mucho por la noche.",
+    "tokens": [
+      "La",
+      "temperatura",
+      "bajó",
+      "mucho",
+      "por",
+      "la",
+      "noche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "La"
+      }
+    ]
+  },
+  {
+    "id": "s286",
+    "es": "Mi madre siempre sabe si va a llover.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "siempre",
+      "sabe",
+      "si",
+      "va",
+      "a",
+      "llover",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "sabe"
+      }
+    ]
+  },
+  {
+    "id": "s1534",
+    "es": "En primavera hace calor en Madrid.",
+    "tokens": [
+      "En",
+      "primavera",
+      "hace",
+      "calor",
+      "en",
+      "Madrid",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "primavera"
+      }
+    ],
+    "sk": "Na jar je v Madride teplo.",
+    "en": "In spring it is warm in Madrid."
+  },
+  {
+    "id": "s1544",
+    "es": "La borrasca llegará a la costa el jueves.",
+    "tokens": [
+      "La",
+      "borrasca",
+      "llegará",
+      "a",
+      "la",
+      "costa",
+      "el",
+      "jueves",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegará"
+      }
+    ],
+    "sk": "Búrka dorazí k pobrežiu vo štvrtok.",
+    "en": "The storm will reach the coast on Thursday."
+  },
+  {
+    "id": "s1569",
+    "es": "Los pescadores no salieron al mar porque se acercaba un temporal.",
+    "tokens": [
+      "Los",
+      "pescadores",
+      "no",
+      "salieron",
+      "al",
+      "mar",
+      "porque",
+      "se",
+      "acercaba",
+      "un",
+      "temporal",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salieron"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "se"
+      }
+    ],
+    "sk": "Rybári nevyplávali na more, lebo sa blížila búrka.",
+    "en": "The fishermen did not go out to sea because a storm was coming."
+  },
+  {
+    "id": "s878",
+    "es": "Nos sorprendió un chaparrón en la calle.",
+    "tokens": [
+      "Nos",
+      "sorprendió",
+      "un",
+      "chaparrón",
+      "en",
+      "la",
+      "calle",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sorprendió",
+        "lemma": "sorprender",
+        "hint": "sorprender · él · pretérito",
+        "distractors": [
+          "sorprende",
+          "sorprendía",
+          "sorprenderá"
+        ]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Nos"
+      }
+    ]
+  },
+  {
+    "id": "s1560",
+    "es": "Está cayendo un chaparrón; mejor esperamos a que pase.",
+    "tokens": [
+      "Está",
+      "cayendo",
+      "un",
+      "chaparrón",
+      ";",
+      "mejor",
+      "esperamos",
+      "a",
+      "que",
+      "pase",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "esperamos"
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "pase"
+      }
+    ]
+  },
+  {
+    "id": "s1549",
+    "es": "Ojalá no llueva mañana, porque vamos a ir a la Alhambra.",
+    "tokens": [
+      "Ojalá",
+      "no",
+      "llueva",
+      "mañana",
+      ",",
+      "porque",
+      "vamos",
+      "a",
+      "ir",
+      "a",
+      "la",
+      "Alhambra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "vamos"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "llueva"
+      }
+    ],
+    "sk": "Dúfam, že zajtra nebude pršať, lebo ideme do Alhambry.",
+    "en": "I hope it does not rain tomorrow, because we are going to the Alhambra."
+  },
+  {
+    "id": "s1552",
+    "es": "Antes no hacía tanto calor en Sevilla; ahora es insoportable.",
+    "tokens": [
+      "Antes",
+      "no",
+      "hacía",
+      "tanto",
+      "calor",
+      "en",
+      "Sevilla",
+      ";",
+      "ahora",
+      "es",
+      "insoportable",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hacía"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "tanto"
+      }
+    ],
+    "sk": "Predtým v Seville nebývalo také teplo, teraz je to neznesiteľné.",
+    "en": "It used to not be so hot in Seville; now it is unbearable."
+  },
+  {
+    "id": "s1555",
+    "es": "Prefiero el clima de Granada porque no es ni muy húmedo ni muy seco.",
+    "tokens": [
+      "Prefiero",
+      "el",
+      "clima",
+      "de",
+      "Granada",
+      "porque",
+      "no",
+      "es",
+      "ni",
+      "muy",
+      "húmedo",
+      "ni",
+      "muy",
+      "seco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "ni"
+      }
+    ],
+    "sk": "Radšej mám podnebie v Granade, lebo nie je ani veľmi vlhké, ani veľmi suché.",
+    "en": "I prefer the climate of Granada because it is neither very humid nor very dry."
+  },
+  {
+    "id": "s1557",
+    "es": "Si sigue lloviendo así, se va a inundar el barrio.",
+    "tokens": [
+      "Si",
+      "sigue",
+      "lloviendo",
+      "así",
+      ",",
+      "se",
+      "va",
+      "a",
+      "inundar",
+      "el",
+      "barrio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sigue"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a"
+      }
+    ]
+  },
+  {
+    "id": "s1556",
+    "es": "Dicen que mañana va a estar fresco, así que llévate un jersey.",
+    "tokens": [
+      "Dicen",
+      "que",
+      "mañana",
+      "va",
+      "a",
+      "estar",
+      "fresco",
+      ",",
+      "así",
+      "que",
+      "llévate",
+      "un",
+      "jersey",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Dicen"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "así"
+      }
+    ]
+  },
+  {
+    "id": "s1562",
+    "es": "Con este calorazo, lo único que se me antoja es una granizada de limón.",
+    "tokens": [
+      "Con",
+      "este",
+      "calorazo",
+      ",",
+      "lo",
+      "único",
+      "que",
+      "se",
+      "me",
+      "antoja",
+      "es",
+      "una",
+      "granizada",
+      "de",
+      "limón",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "calorazo",
+        "lemma": "calorazo",
+        "hint": "horúčava",
+        "distractors": [
+          "colorado",
+          "calorías",
+          "calefacción"
+        ]
+      }
+    ],
+    "sk": "V takejto horúčave mám chuť len na citrónovú granitu.",
+    "en": "In this heat, all I fancy is a lemon granita."
+  },
+  {
+    "id": "s1564",
+    "es": "Se desató una tormenta tan fuerte que se fue la luz en todo el barrio.",
+    "tokens": [
+      "Se",
+      "desató",
+      "una",
+      "tormenta",
+      "tan",
+      "fuerte",
+      "que",
+      "se",
+      "fue",
+      "la",
+      "luz",
+      "en",
+      "todo",
+      "el",
+      "barrio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tormenta"
+      }
+    ]
+  },
+  {
+    "id": "s1567",
+    "es": "Qué le vamos a hacer, con este clima tan loco siempre llevo el paraguas en la mochila.",
+    "tokens": [
+      "Qué",
+      "le",
+      "vamos",
+      "a",
+      "hacer",
+      ",",
+      "con",
+      "este",
+      "clima",
+      "tan",
+      "loco",
+      "siempre",
+      "llevo",
+      "el",
+      "paraguas",
+      "en",
+      "la",
+      "mochila",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "newIndex": 12,
+        "answer": "llevo"
+      }
+    ]
+  },
+  {
+    "id": "s1595",
+    "es": "En Santiago de Compostela llueve casi todas las tardes en otoño.",
+    "tokens": [
+      "En",
+      "Santiago",
+      "de",
+      "Compostela",
+      "llueve",
+      "casi",
+      "todas",
+      "las",
+      "tardes",
+      "en",
+      "otoño",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "newIndex": 4,
+        "answer": "llueve"
+      }
+    ],
+    "sk": "V Santiagu de Compostela prší na jeseň takmer každé popoludnie.",
+    "en": "In Santiago de Compostela it rains almost every afternoon in autumn."
+  },
+  {
+    "id": "s1598",
+    "es": "En el norte de España a veces nieva en invierno.",
+    "tokens": [
+      "En",
+      "el",
+      "norte",
+      "de",
+      "España",
+      "a",
+      "veces",
+      "nieva",
+      "en",
+      "invierno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "nieva"
+      }
+    ],
+    "sk": "Na severe Španielska v zime niekedy sneží.",
+    "en": "In the north of Spain it sometimes snows in winter."
+  },
+  {
+    "id": "s882",
+    "es": "El clima de las Canarias es templado todo el año.",
+    "tokens": [
+      "El",
+      "clima",
+      "de",
+      "las",
+      "Canarias",
+      "es",
+      "templado",
+      "todo",
+      "el",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "newIndex": 6,
+        "answer": "templado"
+      }
+    ],
+    "sk": "Podnebie na Kanárskych ostrovoch je celý rok mierne.",
+    "en": "The climate of the Canary Islands is mild all year round."
+  },
+  {
+    "id": "s2151",
+    "es": "Cuando haga mucho calor mañana, iremos a nadar al río que está cerca del pueblo.",
+    "tokens": [
+      "Cuando",
+      "haga",
+      "mucho",
+      "calor",
+      "mañana",
+      ",",
+      "iremos",
+      "a",
+      "nadar",
+      "al",
+      "río",
+      "que",
+      "está",
+      "cerca",
+      "del",
+      "pueblo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haga"
+      }
+    ],
+    "sk": "Keď bude zajtra veľmi horúco, pôjdeme plávať do rieky neďaleko dediny.",
+    "en": "When it is very hot tomorrow, we will go swimming in the river near the village."
+  },
+  {
+    "id": "s2156",
+    "es": "La señora que vende churros en la esquina dijo que mañana amanecerá nublado.",
+    "tokens": [
+      "La",
+      "señora",
+      "que",
+      "vende",
+      "churros",
+      "en",
+      "la",
+      "esquina",
+      "dijo",
+      "que",
+      "mañana",
+      "amanecerá",
+      "nublado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que"
+      }
+    ],
+    "sk": "Pani, ktorá predáva churros na rohu, povedala, že zajtra bude ráno zamračené.",
+    "en": "The woman who sells churros on the corner said it will be cloudy tomorrow morning."
+  },
+  {
+    "id": "s2157",
+    "es": "Me encanta el clima de Canarias, donde nunca hace demasiado frío ni demasiado calor.",
+    "tokens": [
+      "Me",
+      "encanta",
+      "el",
+      "clima",
+      "de",
+      "Canarias",
+      ",",
+      "donde",
+      "nunca",
+      "hace",
+      "demasiado",
+      "frío",
+      "ni",
+      "demasiado",
+      "calor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "donde"
+      }
+    ],
+    "sk": "Milujem podnebie Kanárskych ostrovov, kde nikdy nie je príliš zima ani príliš horúco.",
+    "en": "I love the climate of the Canary Islands, where it is never too cold or too hot."
+  },
+  {
+    "id": "s1547",
+    "es": "¿Viste la previsión del tiempo para el fin de semana?",
+    "tokens": [
+      "¿",
+      "Viste",
+      "la",
+      "previsión",
+      "del",
+      "tiempo",
+      "para",
+      "el",
+      "fin",
+      "de",
+      "semana",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Viste"
+      }
+    ]
+  },
+  {
+    "id": "s592",
+    "es": "Según la previsión, mañana hará mucho calor.",
+    "tokens": [
+      "Según",
+      "la",
+      "previsión",
+      ",",
+      "mañana",
+      "hará",
+      "mucho",
+      "calor",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Según"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "hará"
+      }
+    ]
+  },
+  {
+    "id": "s1755",
+    "es": "La previsión había dicho que no iba a llover, pero llovió toda la tarde.",
+    "tokens": [
+      "La",
+      "previsión",
+      "había",
+      "dicho",
+      "que",
+      "no",
+      "iba",
+      "a",
+      "llover",
+      ",",
+      "pero",
+      "llovió",
+      "toda",
+      "la",
+      "tarde",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dicho"
+      }
+    ]
+  },
+  {
+    "id": "s1814",
+    "es": "La previsión decía que nevaría en la sierra.",
+    "tokens": [
+      "La",
+      "previsión",
+      "decía",
+      "que",
+      "nevaría",
+      "en",
+      "la",
+      "sierra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "nevaría"
+      }
+    ]
+  },
+  {
+    "id": "s2150",
+    "es": "El telediario dijo que habrá tormenta en cuanto llegue el frente frío.",
+    "tokens": [
+      "El",
+      "telediario",
+      "dijo",
+      "que",
+      "habrá",
+      "tormenta",
+      "en",
+      "cuanto",
+      "llegue",
+      "el",
+      "frente",
+      "frío",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "llegue"
+      }
+    ]
+  },
+  {
+    "id": "s1545",
+    "es": "Estaba haciendo mucho calor, así que nos quedamos dentro.",
+    "tokens": [
+      "Estaba",
+      "haciendo",
+      "mucho",
+      "calor",
+      ",",
+      "así",
+      "que",
+      "nos",
+      "quedamos",
+      "dentro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haciendo"
+      }
+    ]
+  },
+  {
+    "id": "s1546",
+    "es": "Anoche cayó granizo y rompió el cristal del coche.",
+    "tokens": [
+      "Anoche",
+      "cayó",
+      "granizo",
+      "y",
+      "rompió",
+      "el",
+      "cristal",
+      "del",
+      "coche",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "granizo"
+      }
+    ]
+  }
+]

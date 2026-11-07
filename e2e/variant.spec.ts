@@ -46,3 +46,21 @@ test('Spanish from Spain: vosotros row, perfecto, Spain words; Mexican stays the
   await page.getByRole('searchbox').fill('carro')
   await expect(page.getByRole('link', { name: /coche/ }).first()).toContainText('v Mexiku „carro“')
 })
+
+test.describe('a new device', () => {
+  // No welcome done yet (the other tests start with it done, playwright.config.ts).
+  test.use({ storageState: { cookies: [], origins: [] } })
+
+  test('the welcome asks which Spanish: Spain reloads into it', async ({ page }) => {
+    await page.goto('/welcome')
+    const spain = page.getByRole('radiogroup', { name: 'Akú španielčinu sa učíš?' }).getByRole('radio', { name: 'Zo Španielska' })
+    await expect(page.getByRole('radio', { name: 'Mexická' })).toBeChecked()
+    await spain.tap()
+    await page.waitForLoadState('load')
+    await expect(spain).toBeChecked()
+    await expect(page.getByText('Španielčina, ako sa hovorí v Španielsku')).toBeVisible()
+    // The tense tips list vosotros in Spain.
+    await page.goto('/practice/grammar/presente')
+    await expect(page.getByText('hablamos, habláis, hablan')).toBeVisible()
+  })
+})

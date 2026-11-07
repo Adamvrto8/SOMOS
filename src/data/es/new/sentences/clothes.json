@@ -1,0 +1,114 @@
+[
+  {
+    "id": "s9030",
+    "es": "Hoy he llevado el abrigo nuevo al trabajo.",
+    "sk": "Dnes som mal do práce nový kabát.",
+    "level": "A2",
+    "topics": [
+      "clothes"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "he",
+      "llevado",
+      "el",
+      "abrigo",
+      "nuevo",
+      "al",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llevado",
+        "lemma": "llevar",
+        "hint": "llevar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "llevé",
+          "llevando",
+          "llevaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9061",
+    "es": "Hace una semana compré un abrigo.",
+    "sk": "Pred týždňom som si kúpil kabát.",
+    "level": "A2",
+    "topics": [
+      "clothes"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Hace",
+      "una",
+      "semana",
+      "compré",
+      "un",
+      "abrigo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he comprado",
+          "compro",
+          "compraba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9073",
+    "es": "Ayer me puse el abrigo nuevo.",
+    "sk": "Včera som si obliekol nový kabát.",
+    "level": "A2",
+    "topics": [
+      "clothes"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "me",
+      "puse",
+      "el",
+      "abrigo",
+      "nuevo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puse",
+        "lemma": "ponerse",
+        "hint": "ponerse · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he puesto",
+          "pongo",
+          "ponía"
+        ]
+      }
+    ]
+  }
+]

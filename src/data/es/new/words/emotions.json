@@ -1,0 +1,53 @@
+[
+  {
+    "id": "estar-hecho-polvo",
+    "es": "estar hecho polvo",
+    "sk": [
+      "byť vyšťavený",
+      "byť hotový"
+    ],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": [
+      "emotions",
+      "health"
+    ],
+    "examples": [
+      {
+        "es": "Estoy hecho polvo después del viaje.",
+        "sk": "Som úplne vyšťavený po ceste."
+      },
+      {
+        "es": "Después del partido, todos estábamos hechos polvo.",
+        "sk": "Po zápase sme boli všetci hotoví."
+      }
+    ],
+    "note": "Hovorové; „hecho“ sa zhoduje s osobou: hecha polvo, hechos polvo."
+  },
+  {
+    "id": "majo",
+    "es": "majo",
+    "sk": [
+      "milý",
+      "fajn"
+    ],
+    "pos": "adj",
+    "feminine": "maja",
+    "level": "A2",
+    "topics": [
+      "emotions",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "Tu hermana es muy maja.",
+        "sk": "Tvoja sestra je veľmi milá."
+      },
+      {
+        "es": "Tienes unos vecinos muy majos.",
+        "sk": "Máš veľmi milých susedov."
+      }
+    ],
+    "note": "Hovorové: milý, sympatický. V Mexiku skôr „simpático“."
+  }
+]

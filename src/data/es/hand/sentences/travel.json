@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "s042",
+    "es": "Llegamos a Palma el sábado.",
+    "tokens": [
+      "Llegamos",
+      "a",
+      "Palma",
+      "el",
+      "sábado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Llegamos"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a"
+      }
+    ],
+    "sk": "V sobotu sme dorazili do Palmy.",
+    "en": "We arrived in Palma on Saturday."
+  },
+  {
+    "id": "s045",
+    "es": "El año pasado fuimos a Sevilla.",
+    "tokens": [
+      "El",
+      "año",
+      "pasado",
+      "fuimos",
+      "a",
+      "Sevilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "fuimos"
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a"
+      }
+    ],
+    "sk": "Minulý rok sme boli v Seville.",
+    "en": "Last year we went to Seville."
+  },
+  {
+    "id": "s152",
+    "es": "Nuestro vuelo llega a Palma a las tres.",
+    "tokens": [
+      "Nuestro",
+      "vuelo",
+      "llega",
+      "a",
+      "Palma",
+      "a",
+      "las",
+      "tres",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llega"
+      }
+    ],
+    "sk": "Náš let prilieta do Palmy o tretej.",
+    "en": "Our flight arrives in Palma at three."
+  },
+  {
+    "id": "s153",
+    "es": "Viajamos a Valencia el mes pasado.",
+    "tokens": [
+      "Viajamos",
+      "a",
+      "Valencia",
+      "el",
+      "mes",
+      "pasado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Viajamos"
+      }
+    ],
+    "sk": "Minulý mesiac sme cestovali do Valencie.",
+    "en": "We traveled to Valencia last month."
+  },
+  {
+    "id": "s157",
+    "es": "Alquilamos un coche para viajar por Andalucía.",
+    "tokens": [
+      "Alquilamos",
+      "un",
+      "coche",
+      "para",
+      "viajar",
+      "por",
+      "Andalucía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Alquilamos",
+        "lemma": "alquilar",
+        "hint": "alquilar · nosotros · pretérito",
+        "distractors": [
+          "Alquilé",
+          "Alquilaste",
+          "Alquiló"
+        ]
+      }
+    ],
+    "sk": "Prenajali sme si auto na cestu po Andalúzii.",
+    "en": "We rented a car to travel around Andalusia."
+  },
+  {
+    "id": "s158",
+    "es": "Los turistas están visitando la Alhambra.",
+    "tokens": [
+      "Los",
+      "turistas",
+      "están",
+      "visitando",
+      "la",
+      "Alhambra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "visitando"
+      }
+    ],
+    "sk": "Turisti si prezerajú Alhambru.",
+    "en": "The tourists are visiting the Alhambra."
+  },
+  {
+    "id": "s161",
+    "es": "Mis amigos volvieron de Granada muy contentos.",
+    "tokens": [
+      "Mis",
+      "amigos",
+      "volvieron",
+      "de",
+      "Granada",
+      "muy",
+      "contentos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "volvieron"
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de"
+      }
+    ],
+    "sk": "Kamaráti sa vrátili z Granady veľmi spokojní.",
+    "en": "My friends came back from Granada very happy."
+  },
+  {
+    "id": "s162",
+    "es": "Estamos esperando el vuelo a Bilbao.",
+    "tokens": [
+      "Estamos",
+      "esperando",
+      "el",
+      "vuelo",
+      "a",
+      "Bilbao",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estamos"
+      }
+    ],
+    "sk": "Čakáme na let do Bilbaa.",
+    "en": "We are waiting for the flight to Bilbao."
+  },
+  {
+    "id": "s166",
+    "es": "Condujimos seis horas hasta Salamanca.",
+    "tokens": [
+      "Condujimos",
+      "seis",
+      "horas",
+      "hasta",
+      "Salamanca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Condujimos",
+        "lemma": "conducir",
+        "hint": "conducir · nosotros · pretérito",
+        "distractors": [
+          "Conduje",
+          "Condujiste",
+          "Condujo"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "hasta"
+      }
+    ],
+    "sk": "Do Salamanky sme šoférovali šesť hodín.",
+    "en": "We drove six hours to Salamanca."
+  },
+  {
+    "id": "s433",
+    "es": "Mientras esperábamos el vuelo, comimos bocadillos.",
+    "tokens": [
+      "Mientras",
+      "esperábamos",
+      "el",
+      "vuelo",
+      ",",
+      "comimos",
+      "bocadillos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "esperábamos"
+      }
+    ],
+    "sk": "Kým sme čakali na let, dali sme si bagety.",
+    "en": "While we waited for the flight, we ate sandwiches."
+  },
+  {
+    "id": "s497",
+    "es": "Vale la pena visitar las playas de Menorca.",
+    "tokens": [
+      "Vale",
+      "la",
+      "pena",
+      "visitar",
+      "las",
+      "playas",
+      "de",
+      "Menorca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "playas",
+        "lemma": "playa",
+        "hint": "pláže",
+        "distractors": [
+          "plazas",
+          "plantas",
+          "pizzas"
+        ]
+      }
+    ],
+    "sk": "Oplatí sa navštíviť pláže na Menorke.",
+    "en": "It is worth visiting the beaches of Menorca.",
+    "enHints": [
+      "beaches"
+    ]
+  },
+  {
+    "id": "s499",
+    "es": "El próximo verano andaremos por todo el sur de España.",
+    "tokens": [
+      "El",
+      "próximo",
+      "verano",
+      "andaremos",
+      "por",
+      "todo",
+      "el",
+      "sur",
+      "de",
+      "España",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "andaremos"
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "por"
+      }
+    ],
+    "sk": "Budúce leto budeme cestovať po celom juhu Španielska.",
+    "en": "Next summer we will travel around the whole south of Spain."
+  },
+  {
+    "id": "s587",
+    "es": "Cuando llegamos a Sevilla, hacía un calor horrible.",
+    "tokens": [
+      "Cuando",
+      "llegamos",
+      "a",
+      "Sevilla",
+      ",",
+      "hacía",
+      "un",
+      "calor",
+      "horrible",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cuando"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "hacía"
+      }
+    ],
+    "sk": "Keď sme prišli do Sevilly, bola strašná horúčava.",
+    "en": "When we arrived in Seville, it was horribly hot."
+  },
+  {
+    "id": "s589",
+    "es": "¿Alguna vez has ido a Asturias?",
+    "tokens": [
+      "¿",
+      "Alguna",
+      "vez",
+      "has",
+      "ido",
+      "a",
+      "Asturias",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "newIndex": 4,
+        "answer": "ido",
+        "lemma": "ir",
+        "hint": "ir · participio",
+        "distractors": [
+          "fuiste",
+          "yendo",
+          "ibas"
+        ]
+      },
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "a"
+      }
+    ],
+    "sk": "Bol si už niekedy v Astúrii?",
+    "en": "Have you ever been to Asturias?"
+  },
+  {
+    "id": "s435",
+    "es": "El próximo año viajaré a Granada.",
+    "tokens": [
+      "El",
+      "próximo",
+      "año",
+      "viajaré",
+      "a",
+      "Granada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "viajaré"
+      }
+    ],
+    "sk": "Budúci rok pocestujem do Granady.",
+    "en": "Next year I will travel to Granada."
+  },
+  {
+    "id": "s740",
+    "es": "¿Ya has metido la crema solar en la maleta?",
+    "tokens": [
+      "¿",
+      "Ya",
+      "has",
+      "metido",
+      "la",
+      "crema",
+      "solar",
+      "en",
+      "la",
+      "maleta",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "metido",
+        "lemma": "meter",
+        "hint": "meter · participio",
+        "distractors": [
+          "metiste",
+          "metiendo",
+          "metía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s744",
+    "es": "No encuentro mi tarjeta de embarque.",
+    "tokens": [
+      "No",
+      "encuentro",
+      "mi",
+      "tarjeta",
+      "de",
+      "embarque",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "encuentro"
+      }
+    ]
+  },
+  {
+    "id": "s746",
+    "es": "Cambiamos dinero en una oficina de cambio del aeropuerto.",
+    "tokens": [
+      "Cambiamos",
+      "dinero",
+      "en",
+      "una",
+      "oficina",
+      "de",
+      "cambio",
+      "del",
+      "aeropuerto",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Cambiamos"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "en"
+      }
+    ]
+  },
+  {
+    "id": "s747",
+    "es": "Cancelaron el vuelo por la tormenta.",
+    "tokens": [
+      "Cancelaron",
+      "el",
+      "vuelo",
+      "por",
+      "la",
+      "tormenta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "tormenta",
+        "lemma": "tormenta",
+        "hint": "búrka",
+        "distractors": [
+          "tormento",
+          "temporada",
+          "torre"
+        ]
+      }
+    ],
+    "sk": "Let zrušili kvôli búrke.",
+    "en": "They cancelled the flight because of the storm.",
+    "enHints": [
+      "storm"
+    ]
+  },
+  {
+    "id": "s752",
+    "es": "El trayecto de Granada a la costa es largo y lleno de curvas.",
+    "tokens": [
+      "El",
+      "trayecto",
+      "de",
+      "Granada",
+      "a",
+      "la",
+      "costa",
+      "es",
+      "largo",
+      "y",
+      "lleno",
+      "de",
+      "curvas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "trayecto"
+      }
+    ],
+    "sk": "Cesta z Granady na pobrežie je dlhá a plná zákrut.",
+    "en": "The trip from Granada to the coast is long and full of curves."
+  },
+  {
+    "id": "s754",
+    "es": "Las ruinas romanas atraen a turistas de todo el mundo.",
+    "tokens": [
+      "Las",
+      "ruinas",
+      "romanas",
+      "atraen",
+      "a",
+      "turistas",
+      "de",
+      "todo",
+      "el",
+      "mundo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "atraen"
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a"
+      }
+    ],
+    "sk": "Rímske ruiny lákajú turistov z celého sveta.",
+    "en": "The Roman ruins attract tourists from all over the world."
+  },
+  {
+    "id": "s168",
+    "es": "¿Cuánto cuesta el billete a Valencia?",
+    "tokens": [
+      "¿",
+      "Cuánto",
+      "cuesta",
+      "el",
+      "billete",
+      "a",
+      "Valencia",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "cuesta"
+      }
+    ],
+    "sk": "Koľko stojí lístok do Valencie?",
+    "en": "How much is the ticket to Valencia?"
+  },
+  {
+    "id": "s1516",
+    "es": "Mi itinerario incluye tres días en Granada y dos en Córdoba.",
+    "tokens": [
+      "Mi",
+      "itinerario",
+      "incluye",
+      "tres",
+      "días",
+      "en",
+      "Granada",
+      "y",
+      "dos",
+      "en",
+      "Córdoba",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "itinerario"
+      }
+    ],
+    "sk": "Môj plán cesty zahŕňa tri dni v Granade a dva v Córdobe.",
+    "en": "My itinerary includes three days in Granada and two in Córdoba."
+  },
+  {
+    "id": "s1519",
+    "es": "Mientras yo facturaba las maletas, mi esposa cambiaba dinero.",
+    "tokens": [
+      "Mientras",
+      "yo",
+      "facturaba",
+      "las",
+      "maletas",
+      ",",
+      "mi",
+      "esposa",
+      "cambiaba",
+      "dinero",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "cambiaba"
+      }
+    ]
+  },
+  {
+    "id": "s1520",
+    "es": "Al final decidimos quedarnos una noche más en Menorca.",
+    "tokens": [
+      "Al",
+      "final",
+      "decidimos",
+      "quedarnos",
+      "una",
+      "noche",
+      "más",
+      "en",
+      "Menorca",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "decidimos"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "en"
+      }
+    ],
+    "sk": "Nakoniec sme sa rozhodli zostať na Menorke ešte jednu noc.",
+    "en": "In the end we decided to stay one more night in Menorca."
+  },
+  {
+    "id": "s1521",
+    "es": "Nos sorprendió la noche en la carretera y tuvimos que parar en un pueblo.",
+    "tokens": [
+      "Nos",
+      "sorprendió",
+      "la",
+      "noche",
+      "en",
+      "la",
+      "carretera",
+      "y",
+      "tuvimos",
+      "que",
+      "parar",
+      "en",
+      "un",
+      "pueblo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "sorprendió",
+        "lemma": "sorprender",
+        "hint": "sorprender · ella · pretérito",
+        "distractors": [
+          "sorprende",
+          "sorprendía",
+          "sorprenderá"
+        ]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "tuvimos"
+      }
+    ]
+  },
+  {
+    "id": "s1525",
+    "es": "Alquilar un coche allí cuesta un dineral; mejor nos movemos en autobús.",
+    "tokens": [
+      "Alquilar",
+      "un",
+      "coche",
+      "allí",
+      "cuesta",
+      "un",
+      "dineral",
+      ";",
+      "mejor",
+      "nos",
+      "movemos",
+      "en",
+      "autobús",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "movemos"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "mejor"
+      }
+    ]
+  },
+  {
+    "id": "s1530",
+    "es": "Ya estando allí, nos dimos cuenta de que el hotel no existía.",
+    "tokens": [
+      "Ya",
+      "estando",
+      "allí",
+      ",",
+      "nos",
+      "dimos",
+      "cuenta",
+      "de",
+      "que",
+      "el",
+      "hotel",
+      "no",
+      "existía",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "dimos"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s1515",
+    "es": "Pasar la aduana nos llevó más de una hora.",
+    "tokens": [
+      "Pasar",
+      "la",
+      "aduana",
+      "nos",
+      "llevó",
+      "más",
+      "de",
+      "una",
+      "hora",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llevó",
+        "lemma": "llevar",
+        "hint": "llevar · él · pretérito",
+        "distractors": [
+          "lleva",
+          "llevaba",
+          "llevará"
+        ]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s1513",
+    "es": "Los turistas hacen fotos del mar.",
+    "tokens": [
+      "Los",
+      "turistas",
+      "hacen",
+      "fotos",
+      "del",
+      "mar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hacen",
+        "lemma": "hacer",
+        "hint": "hacer · ellos · presente",
+        "distractors": [
+          "hace",
+          "hicieron",
+          "hacían"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s743",
+    "es": "Hicimos una excursión a la sierra de Guadarrama.",
+    "tokens": [
+      "Hicimos",
+      "una",
+      "excursión",
+      "a",
+      "la",
+      "sierra",
+      "de",
+      "Guadarrama",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hicimos"
+      }
+    ],
+    "sk": "Boli sme na výlete v pohorí Guadarrama.",
+    "en": "We went on a trip to the Guadarrama mountains."
+  },
+  {
+    "id": "s1866",
+    "es": "Si tuviera más vacaciones, viajaría a Granada cada mes.",
+    "tokens": [
+      "Si",
+      "tuviera",
+      "más",
+      "vacaciones",
+      ",",
+      "viajaría",
+      "a",
+      "Granada",
+      "cada",
+      "mes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tuviera"
+      }
+    ],
+    "sk": "Keby som mal viac dovolenky, cestoval by som do Granady každý mesiac.",
+    "en": "If I had more vacation, I would travel to Granada every month."
+  },
+  {
+    "id": "s1867",
+    "es": "Si tuviéramos más tiempo, visitaríamos Asturias.",
+    "tokens": [
+      "Si",
+      "tuviéramos",
+      "más",
+      "tiempo",
+      ",",
+      "visitaríamos",
+      "Asturias",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "visitaríamos"
+      }
+    ],
+    "sk": "Keby sme mali viac času, navštívili by sme Astúriu.",
+    "en": "If we had more time, we would visit Asturias."
+  },
+  {
+    "id": "s1868",
+    "es": "Si fueras a Ibiza, ¿qué harías primero?",
+    "tokens": [
+      "Si",
+      "fueras",
+      "a",
+      "Ibiza",
+      ",",
+      "¿",
+      "qué",
+      "harías",
+      "primero",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "harías"
+      }
+    ],
+    "sk": "Keby si išiel na Ibizu, čo by si urobil ako prvé?",
+    "en": "If you went to Ibiza, what would you do first?"
+  },
+  {
+    "id": "s1898",
+    "es": "Salimos para Barcelona mañana temprano.",
+    "tokens": [
+      "Salimos",
+      "para",
+      "Barcelona",
+      "mañana",
+      "temprano",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "para"
+      }
+    ],
+    "sk": "Zajtra zavčasu odchádzame do Barcelony.",
+    "en": "We leave for Barcelona early tomorrow."
+  },
+  {
+    "id": "s1920",
+    "es": "Cuando lleguemos a Valencia, te llamo.",
+    "tokens": [
+      "Cuando",
+      "lleguemos",
+      "a",
+      "Valencia",
+      ",",
+      "te",
+      "llamo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lleguemos"
+      }
+    ],
+    "sk": "Keď dorazíme do Valencie, zavolám ti.",
+    "en": "When we get to Valencia, I'll call you."
+  },
+  {
+    "id": "s1932",
+    "es": "El pueblo donde nació mi abuelo está cerca de Toledo.",
+    "tokens": [
+      "El",
+      "pueblo",
+      "donde",
+      "nació",
+      "mi",
+      "abuelo",
+      "está",
+      "cerca",
+      "de",
+      "Toledo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde"
+      }
+    ],
+    "sk": "Dedina, kde sa narodil môj starý otec, je blízko Toleda.",
+    "en": "The town where my grandfather was born is near Toledo."
+  },
+  {
+    "id": "s2138",
+    "es": "Cuando lleguemos a Córdoba, quiero probar el salmorejo que preparan en el mercado.",
+    "tokens": [
+      "Cuando",
+      "lleguemos",
+      "a",
+      "Córdoba",
+      ",",
+      "quiero",
+      "probar",
+      "el",
+      "salmorejo",
+      "que",
+      "preparan",
+      "en",
+      "el",
+      "mercado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lleguemos"
+      }
+    ],
+    "sk": "Keď prídeme do Córdoby, chcem ochutnať salmorejo, ktoré pripravujú na trhu.",
+    "en": "When we get to Córdoba, I want to try the salmorejo they make at the market."
+  },
+  {
+    "id": "s2139",
+    "es": "Si tuviéramos más vacaciones, viajaríamos por toda la costa mediterránea.",
+    "tokens": [
+      "Si",
+      "tuviéramos",
+      "más",
+      "vacaciones",
+      ",",
+      "viajaríamos",
+      "por",
+      "toda",
+      "la",
+      "costa",
+      "mediterránea",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "viajaríamos"
+      }
+    ],
+    "sk": "Keby sme mali viac dovolenky, cestovali by sme po celom stredomorskom pobreží.",
+    "en": "If we had more vacation, we would travel along the whole Mediterranean coast."
+  },
+  {
+    "id": "s2143",
+    "es": "Mis amigos que viven en Valencia nos invitaron a quedarnos con ellos una semana.",
+    "tokens": [
+      "Mis",
+      "amigos",
+      "que",
+      "viven",
+      "en",
+      "Valencia",
+      "nos",
+      "invitaron",
+      "a",
+      "quedarnos",
+      "con",
+      "ellos",
+      "una",
+      "semana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que"
+      }
+    ],
+    "sk": "Priatelia, ktorí bývajú vo Valencii, nás pozvali, aby sme u nich zostali týždeň.",
+    "en": "My friends who live in Valencia invited us to stay with them for a week."
+  }
+]

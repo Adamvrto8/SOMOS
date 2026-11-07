@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pueblo-magico",
+    "hidden": true
+  },
+  {
+    "id": "pase-de-abordar",
+    "hidden": true
+  },
+  {
+    "id": "boleto",
+    "note": "V Mexiku: boleto.",
+    "noteEn": "In Mexico: boleto."
+  },
+  {
+    "id": "reservacion",
+    "note": "V Mexiku: reservación.",
+    "noteEn": "In Mexico: reservación."
+  }
+]

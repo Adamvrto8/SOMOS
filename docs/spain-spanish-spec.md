@@ -212,7 +212,7 @@ viacslovné náhrady (copia de seguridad) a hovorové slová. Všetky `note_es` 
 Zoznam náhrad (`SAFE`, `GENDER`, `MX_ONLY`) v skripte je jediné miesto, ktoré treba opraviť, ak s niektorou voľbou
 nesúhlasíš; potom sa koncept vygeneruje znova.
 
-## 9. Stav a čo zostáva (2026-11-05, zlúčené do main)
+## 9. Stav (2026-11-07: obsah aj funkcie hotové, chýba len kontrola rodeným hovorcom)
 
 ### Hotové
 - **Prekrytie slov a viet** (`src/data/es/`): približne 80 slov a 140 viet. Automatická časť (`scripts/spain-overlay.mjs`)
@@ -241,30 +241,39 @@ nesúhlasíš; potom sa koncept vygeneruje znova.
   - Texty appky so zmienkou o Mexiku (futuro v tabuľke, online preklad, inštalácia hlasu, uvítanie) majú španielske znenie.
 - **Generátory**: `spain-diff.mjs` (porovná základ), `spain-overlay.mjs` (bezpečné výmeny), `spain-manual.mjs` (ručné
   vety a opravy slov), `spain-verbs.mjs` (nové slovesá).
+- **Dokončenie** (2026-11-07, branch `content-es-complete`):
+  - **Všetky vety prejdené**: ručné prekrytie `src/data/es/hand/sentences/` (≈560 viet): mexické slová a slang, miesta,
+    peniaze (eurá), jedlá a sviatky, neformálne ustedes → vosotros, pretérito → perfecto pri hoy / ya / este año.
+    Pri zmene významu má veta vlastné `sk` + `en` (a `enHints` pre zmenené slovenské nápovede).
+  - **Slová**: `src/data/es/hand/words/`: 58 mexických slov skrytých (slang, tianguis, mariachi…, aj slovesá checar,
+    voltear, chambear, trapear, reprobar, apapachar), španielske poznámky (`note` + `noteEn`) pri ostatných a pri 26
+    nahradených slovách, príklady bez mexických slov (`examplesEn` pri zmene významu), vídeo, chófer.
+  - **Nové slová**: 72 v `src/data/es/new/words/<téma>.json` (vale, guay, tío, caña, grifo, nevera, instituto, nómina…,
+    angličtina v `es/new/en/words-more.json`) a 7 slovies v `spain-verbs.mjs`: coger, apetecer, molar, suspender, girar,
+    fregar, currar.
+  - **Nové vety**: 125 v `src/data/es/new/sentences/` (s9001–s9125, angličtina v `es/new/en/sentences.json`):
+    perfecto s príčastím a s pomocným slovesom, kontrast ayer → pretérito (nápoveda bez času, `tip: perfecto`,
+    `why: finished`), vosotros vo všetkých časoch, hovorová španielčina.
+  - **Perfecto** ako tip pre blanky (`BLANK_TIPS` v `clozeChecks.ts`, nie usage tip Cesty), nové pravidlo `finished`
+    a `because` v tipe (SK aj EN).
+  - **Vosotros v cvičeniach**: `drillPersonsOf` (Časovanie, Cesta, testy), úlohy `tener:preterito:vosotros`, kontrola
+    odpovedí pozná tvary vosotros, tipy časov vypisujú 6 osôb (prekrytie `es/tips.json`). Duely vynechávajú vosotros
+    a všetko, čo má len jeden variant (`variantOnly`, `inBothVariants`).
+  - **Uvítanie**: na prvej obrazovke „Akú španielčinu sa učíš?“ (Mexická / Zo Španielska). Text „rozpracovaná“ z
+    Nastavení preč.
+  - **Kontroly**: `validate:es` odmieta mexické slová v každej španielskej vete (aj bez prekrytia), vyžaduje angličtinu
+    pri novom obsahu a pri zmene významu. Pomôcky `scripts/spain-view.mjs <téma>` a `scripts/spain-check.mjs <témy…>`.
 
 ### Ako to funguje po zmene mexického základu
 `node scripts/spain-diff.mjs && node scripts/spain-overlay.mjs && node scripts/spain-manual.mjs`, potom
-`npm run validate:es`. Ručné vety ostávajú v `spain-manual.mjs`, nové mexické vety s lexikou sa objavia v
-`docs/spain-draft/todo.json` a v `sentences.json`. Pravidlo: nová veta s „computadora, celular, carro, renta…“ potrebuje
-záznam v `MANUAL` alebo úpravu `SAFE`/`GENDER` v `spain-diff.mjs`.
+`npm run validate:es`. Generované prekrytie (`es/words`, `es/sentences`) sa pri tom prepíše, ručné (`es/hand/`) nikdy:
+jeho polia sa aplikujú posledné. Novú mexickú vetu s „computadora, celular, carro, chamba, pesos…“ `validate:es`
+odmietne; oprava patrí do `es/hand/sentences/<téma>.json` (`node scripts/spain-view.mjs <téma>` ukáže vetu, ako ju
+dostane Španielsko).
 
-### Čo ešte treba na dokončenie (podľa dôležitosti)
-1. **Kontrola rodeným hovorcom zo Španielska.** Nič z obsahu (ani mexického) nikto nekontroloval. Bez toho španielsku
-   verziu nezapínať pre všetkých, ostáva rozpracovaná (text v Nastaveniach to hovorí).
-2. **Nový španielsky obsah**: bežné slová a vety, ktoré v dátach nie sú (vale, guay, tío/tía, molar, flipar, curro,
-   quedar = dohodnúť sa, ¿qué tal?, ¡anda!, ¡venga!, tarjeta de embarque, grifo…). Odhad 60–100 slov a asi 100 viet,
-   vrátane viet s perfectom a vosotros (aby sa v cvičeniach nevyskytol len mexický rozsah).
-3. **Vosotros v samotnom cvičení na časovanie** (teraz je v tabuľke a v nápovedi viet). `Person` ostáva 5-osobový,
-   vosotros sa pridá ako voliteľná osoba podľa variantu (úlohy `tener:preterito:vosotros`, `lesson.taskFromItem`).
-4. **Perfecto v cvičeniach**: tab a tip sú, cloze vety s „he/has/ha + príčastie“ chýbajú (0 viet), tiež úloha pre
-   hoy/ayer (perfecto vs. pretérito).
-5. ~~Zvuk~~: hotové (es-ES najprv, ceceo v poznámke tipu accents, leísmo v object-pronouns).
-6. **Zvyšných 92 slov v `docs/spain-draft/todo.json`**: španielske poznámky k nim (`note`) a rozhodnutie, ktoré
-   typicky mexické slová (mariachi, tianguis, tamal, quinceañera, mande, no manches…) v španielskej verzii skryť
-   (`hidden: true` v `src/data/es/words/`), nechať vo vyhľadávaní s poznámkou „Mexiko“.
-7. **Poznámky k nahradeným slovám** (`note: null` ich zatiaľ len odstránilo): napísať „V Španielsku … (v Mexiku …)“.
-8. **Ostatné mexikanizmy mimo slov a viet**: tipy a texty appky sú hotové (pozri vyššie). Ostáva: pravidlá tipov
-   s piatimi osobami (hablo… hablan, bez habláis; vosotros je zatiaľ len v rámiku), cesta (`path.json`) a testy
-   s mexickými slovenskými textami, popis v Google Play (patrí k vydaniu).
-9. ~~Hľadanie~~: hotové (oba tvary, pozri vyššie).
-10. **Rozhodnutie o príslušnom názve**: kým sa nerozhodne verejné vydanie, ponechať „Zo Španielska“ ako rozpracované.
+### Čo zostáva
+1. **Kontrola rodeným hovorcom zo Španielska** (aj mexickej verzie): pred verejným vydaním. Ručne písané výmeny jedál,
+   miest a hovorové slová (guay, tío, mola, curro) sú najväčšie riziko.
+2. Cesta nemá jednotku pre perfecto (`path.json` je spoločný pre oba varianty); perfecto sa precvičuje v Časovaní,
+   v lekciách tém (vety s9xxx) a v tipe.
+3. Popis v Google Play (patrí k vydaniu) a rozhodnutie o názve variantu.

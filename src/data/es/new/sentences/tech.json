@@ -1,0 +1,114 @@
+[
+  {
+    "id": "s9045",
+    "es": "Se me ha roto el móvil esta mañana.",
+    "sk": "Dnes ráno sa mi pokazil mobil.",
+    "level": "A2",
+    "topics": [
+      "tech"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Se",
+      "me",
+      "ha",
+      "roto",
+      "el",
+      "móvil",
+      "esta",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "roto",
+        "lemma": "romper",
+        "hint": "romper · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "rompió",
+          "rompiendo",
+          "rompía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9067",
+    "es": "Ayer leí un artículo muy interesante.",
+    "sk": "Včera som čítal veľmi zaujímavý článok.",
+    "level": "A2",
+    "topics": [
+      "tech"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "leí",
+      "un",
+      "artículo",
+      "muy",
+      "interesante",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "leí",
+        "lemma": "leer",
+        "hint": "leer · yo",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "he leído",
+          "leo",
+          "leía"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9071",
+    "es": "Ayer escribiste un mensaje muy bonito.",
+    "sk": "Včera si napísal veľmi peknú správu.",
+    "level": "A2",
+    "topics": [
+      "tech"
+    ],
+    "grammar": [
+      "preterito",
+      "perfecto"
+    ],
+    "tokens": [
+      "Ayer",
+      "escribiste",
+      "un",
+      "mensaje",
+      "muy",
+      "bonito",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "escribiste",
+        "lemma": "escribir",
+        "hint": "escribir · tú",
+        "tip": "perfecto",
+        "why": "finished",
+        "distractors": [
+          "has escrito",
+          "escribes",
+          "escribías"
+        ]
+      }
+    ]
+  }
+]

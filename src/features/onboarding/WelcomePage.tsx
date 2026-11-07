@@ -4,7 +4,10 @@ import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react
 import { Azulejos } from '../../components/Azulejos'
 import { Button } from '../../components/Button'
 import { Segmented } from '../../components/Segmented'
+import { variant } from '../../data'
+import type { Variant } from '../../data/applyVariant'
 import type { Level } from '../../data/types'
+import { writeVariant } from '../../data/variant'
 import { dictionaries, useT } from '../../i18n'
 import { accountsAvailable, SIGN_IN_PATH } from '../../lib/account'
 import { GOAL_OPTIONS, setDailyGoal, useDailyGoal } from '../../lib/dailyGoal'
@@ -99,8 +102,11 @@ interface StepProps {
   onNext: () => void
 }
 
+const VARIANTS: Variant[] = ['mx', 'es']
+
 function WelcomeStep({ onStart }: { onStart: () => void }) {
   const text = useT().onboarding.welcome
+  const variantOptions = useT().settings.variantOptions
   const language = useLanguage()
   const navigate = useNavigate()
 
@@ -139,6 +145,24 @@ function WelcomeStep({ onStart }: { onStart: () => void }) {
             </li>
           ))}
         </ul>
+        <p className="mt-6 text-sm font-semibold">
+          {text.variant}
+        </p>
+        <div className="mt-2">
+          <Segmented<Variant>
+            options={VARIANTS.map((id) => ({ id, label: variantOptions[id] }))}
+            value={variant}
+            onChange={(next) => {
+              if (next === variant) return
+              writeVariant(next)
+              // The content is laid out once when the app loads (src/data/index.ts): a reload shows the other Spanish.
+              window.location.reload()
+            }}
+            label={text.variant}
+            mode="radio"
+            idPrefix="welcome-variant"
+          />
+        </div>
       </div>
 
       <div className="relative mt-10 flex flex-col gap-3">

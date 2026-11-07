@@ -1,0 +1,40 @@
+[
+  {
+    "id": "s9018",
+    "es": "Esta tarde nos hemos bañado en la playa.",
+    "sk": "Dnes popoludní sme sa kúpali na pláži.",
+    "level": "A2",
+    "topics": [
+      "nature"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Esta",
+      "tarde",
+      "nos",
+      "hemos",
+      "bañado",
+      "en",
+      "la",
+      "playa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "bañado",
+        "lemma": "bañarse",
+        "hint": "bañarse · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "bañamos",
+          "bañando",
+          "bañábamos"
+        ]
+      }
+    ]
+  }
+]

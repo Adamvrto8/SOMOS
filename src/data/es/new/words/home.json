@@ -1,0 +1,258 @@
+[
+  {
+    "id": "grifo",
+    "es": "grifo",
+    "sk": [
+      "kohútik"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "grifos",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "El grifo del baño gotea.",
+        "sk": "Kohútik v kúpeľni kvapká."
+      },
+      {
+        "es": "Cierra el grifo, por favor.",
+        "sk": "Zatvor kohútik, prosím."
+      }
+    ],
+    "note": "V Mexiku „llave“."
+  },
+  {
+    "id": "fregona",
+    "es": "fregona",
+    "sk": [
+      "mop"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "fregonas",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "Pasa la fregona por la cocina.",
+        "sk": "Poumývaj kuchyňu mopom."
+      },
+      {
+        "es": "La fregona está en el balcón.",
+        "sk": "Mop je na balkóne."
+      }
+    ],
+    "note": "V Mexiku „trapeador“."
+  },
+  {
+    "id": "mechero",
+    "es": "mechero",
+    "sk": [
+      "zapaľovač"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "mecheros",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "¿Tienes un mechero?",
+        "sk": "Máš zapaľovač?"
+      },
+      {
+        "es": "Perdí el mechero.",
+        "sk": "Stratil som zapaľovač."
+      }
+    ],
+    "note": "V Mexiku „encendedor“."
+  },
+  {
+    "id": "aseo",
+    "es": "aseo",
+    "sk": [
+      "toaleta",
+      "malá toaleta"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "aseos",
+    "level": "B1",
+    "topics": [
+      "home",
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "¿Dónde está el aseo?",
+        "sk": "Kde je toaleta?"
+      },
+      {
+        "es": "La casa tiene dos aseos y un baño.",
+        "sk": "Dom má dve toalety a kúpeľňu."
+      }
+    ],
+    "note": "Malá toaleta bez vane; vo verejných priestoroch „los aseos“."
+  },
+  {
+    "id": "atico",
+    "es": "ático",
+    "sk": [
+      "podkrovný byt"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "áticos",
+    "level": "B2",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "Vive en un ático con terraza.",
+        "sk": "Býva v podkrovnom byte s terasou."
+      },
+      {
+        "es": "Los áticos suelen ser caros.",
+        "sk": "Podkrovné byty bývajú drahé."
+      }
+    ],
+    "note": "Byt na poslednom poschodí, často s terasou."
+  },
+  {
+    "id": "portal",
+    "es": "portal",
+    "sk": [
+      "vchod do domu"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "portales",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "Te espero en el portal.",
+        "sk": "Počkám ťa pri vchode."
+      },
+      {
+        "es": "El portal está cerrado con llave.",
+        "sk": "Vchod je zamknutý."
+      }
+    ],
+    "note": "Spoločný vchod bytového domu."
+  },
+  {
+    "id": "buzon",
+    "es": "buzón",
+    "sk": [
+      "poštová schránka"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "buzones",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "Hay una carta en el buzón.",
+        "sk": "V schránke je list."
+      },
+      {
+        "es": "El buzón está lleno de publicidad.",
+        "sk": "Schránka je plná reklamy."
+      }
+    ]
+  },
+  {
+    "id": "urbanizacion",
+    "es": "urbanización",
+    "sk": [
+      "rezidenčný komplex",
+      "sídlisko"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "plural": "urbanizaciones",
+    "level": "B1",
+    "topics": [
+      "home",
+      "city"
+    ],
+    "examples": [
+      {
+        "es": "Vivimos en una urbanización con piscina.",
+        "sk": "Bývame v rezidenčnom komplexe s bazénom."
+      },
+      {
+        "es": "La urbanización está a las afueras.",
+        "sk": "Komplex je na okraji mesta."
+      }
+    ],
+    "note": "Obytný komplex domov alebo bytov, často so spoločným bazénom; v Mexiku „fraccionamiento“."
+  },
+  {
+    "id": "chale",
+    "es": "chalé",
+    "sk": [
+      "rodinný dom",
+      "vila",
+      "chata"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "chalés",
+    "level": "B1",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "Tienen un chalé en la sierra.",
+        "sk": "Majú chatu v horách."
+      },
+      {
+        "es": "Alquilamos un chalé para el verano.",
+        "sk": "Na leto si prenajímame vilu."
+      }
+    ],
+    "note": "Samostatný dom, vila alebo chata; píše sa aj „chalet“."
+  },
+  {
+    "id": "alquiler",
+    "es": "alquiler",
+    "sk": [
+      "nájom",
+      "prenájom"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "alquileres",
+    "level": "A2",
+    "topics": [
+      "home"
+    ],
+    "examples": [
+      {
+        "es": "El alquiler del piso es muy caro.",
+        "sk": "Nájom bytu je veľmi drahý."
+      },
+      {
+        "es": "Pago el alquiler el día uno.",
+        "sk": "Nájom platím prvého."
+      }
+    ],
+    "note": "V Mexiku „renta“."
+  }
+]

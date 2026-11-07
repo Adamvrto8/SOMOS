@@ -1,0 +1,160 @@
+[
+  {
+    "id": "colega",
+    "es": "colega",
+    "sk": [
+      "kámoš",
+      "kolega"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "colegas",
+    "level": "A2",
+    "topics": [
+      "work",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "Quedo con mis colegas el sábado.",
+        "sk": "V sobotu sa stretnem s kámošmi."
+      },
+      {
+        "es": "Es un colega del trabajo.",
+        "sk": "Je to kolega z práce."
+      }
+    ],
+    "note": "Hovorové, platí aj pre ženy: la colega. V Mexiku skôr „amigo“."
+  },
+  {
+    "id": "curro",
+    "es": "curro",
+    "sk": [
+      "robota",
+      "práca (hovor.)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "curros",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "Mañana tengo mucho curro.",
+        "sk": "Zajtra mám veľa roboty."
+      },
+      {
+        "es": "Estoy buscando curro.",
+        "sk": "Hľadám robotu."
+      }
+    ],
+    "note": "Hovorové. Sloveso: currar. V Mexiku „chamba“."
+  },
+  {
+    "id": "paro",
+    "es": "paro",
+    "sk": [
+      "nezamestnanosť",
+      "dávky v nezamestnanosti"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "paros",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "El paro ha bajado este año.",
+        "sk": "Nezamestnanosť tento rok klesla."
+      },
+      {
+        "es": "Estoy en el paro desde marzo.",
+        "sk": "Som nezamestnaný od marca."
+      }
+    ],
+    "note": "„Estar en el paro“ = byť nezamestnaný."
+  },
+  {
+    "id": "autonomo",
+    "es": "autónomo",
+    "sk": [
+      "živnostník",
+      "samostatne zárobkovo činná osoba"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "autónomos",
+    "level": "B1",
+    "topics": [
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "Mi padre es autónomo.",
+        "sk": "Otec je živnostník."
+      },
+      {
+        "es": "Los autónomos pagan una cuota mensual.",
+        "sk": "Živnostníci platia mesačný odvod."
+      }
+    ],
+    "note": "Žena: la autónoma."
+  },
+  {
+    "id": "oposiciones",
+    "es": "oposiciones",
+    "sk": [
+      "štátny konkurz"
+    ],
+    "pos": "noun",
+    "gender": "f",
+    "uncountable": true,
+    "level": "B2",
+    "topics": [
+      "work",
+      "school"
+    ],
+    "examples": [
+      {
+        "es": "Mi prima prepara oposiciones de maestra.",
+        "sk": "Sesternica sa pripravuje na konkurz na učiteľku."
+      },
+      {
+        "es": "Aprobó las oposiciones y ahora es funcionaria.",
+        "sk": "Uspela v konkurze a teraz je štátnou zamestnankyňou."
+      }
+    ],
+    "note": "Náročná súťažná skúška do štátnej služby (učiteľ, sudca…). Používa sa v množnom čísle."
+  },
+  {
+    "id": "enchufe",
+    "es": "enchufe",
+    "sk": [
+      "zásuvka",
+      "známosti (hovor.)"
+    ],
+    "pos": "noun",
+    "gender": "m",
+    "plural": "enchufes",
+    "level": "B1",
+    "topics": [
+      "tech",
+      "work"
+    ],
+    "examples": [
+      {
+        "es": "No hay ningún enchufe cerca.",
+        "sk": "Nikde nie je zásuvka."
+      },
+      {
+        "es": "Consiguió el trabajo por enchufe.",
+        "sk": "Prácu dostal cez známosti."
+      }
+    ],
+    "note": "Hovorovo: conseguir algo por enchufe = získať niečo cez známosti."
+  }
+]

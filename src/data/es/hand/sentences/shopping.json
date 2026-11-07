@@ -1,0 +1,832 @@
+[
+  {
+    "id": "s217",
+    "es": "¿Tiene cambio de cincuenta?",
+    "tokens": [
+      "¿",
+      "Tiene",
+      "cambio",
+      "de",
+      "cincuenta",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Tiene"
+      }
+    ],
+    "sk": "Máte vydať z päťdesiat?",
+    "en": "Do you have change for fifty?"
+  },
+  {
+    "id": "s1672",
+    "es": "La vendedora le dio un descuento a mi madre.",
+    "tokens": [
+      "La",
+      "vendedora",
+      "le",
+      "dio",
+      "un",
+      "descuento",
+      "a",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "le"
+      }
+    ]
+  },
+  {
+    "id": "s1422",
+    "es": "Mis padres compran fruta en el mercado.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "compran",
+      "fruta",
+      "en",
+      "el",
+      "mercado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "compran"
+      }
+    ]
+  },
+  {
+    "id": "s1884",
+    "es": "Compré estos zapatos para mi madre.",
+    "tokens": [
+      "Compré",
+      "estos",
+      "zapatos",
+      "para",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "para"
+      }
+    ]
+  },
+  {
+    "id": "s2114",
+    "es": "Mientras esperábamos en la fila, mi madre encontró el cupón que había perdido.",
+    "tokens": [
+      "Mientras",
+      "esperábamos",
+      "en",
+      "la",
+      "fila",
+      ",",
+      "mi",
+      "madre",
+      "encontró",
+      "el",
+      "cupón",
+      "que",
+      "había",
+      "perdido",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "esperábamos"
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s225",
+    "es": "Los domingos voy al mercadillo con mi madre.",
+    "tokens": [
+      "Los",
+      "domingos",
+      "voy",
+      "al",
+      "mercadillo",
+      "con",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "voy"
+      }
+    ]
+  },
+  {
+    "id": "s212",
+    "es": "En el mercadillo venden de todo.",
+    "tokens": [
+      "En",
+      "el",
+      "mercadillo",
+      "venden",
+      "de",
+      "todo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "venden"
+      }
+    ]
+  },
+  {
+    "id": "s577",
+    "es": "En el mercadillo todo es más barato que en el súper.",
+    "tokens": [
+      "En",
+      "el",
+      "mercadillo",
+      "todo",
+      "es",
+      "más",
+      "barato",
+      "que",
+      "en",
+      "el",
+      "súper",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "barato"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "más"
+      }
+    ]
+  },
+  {
+    "id": "s1449",
+    "es": "Siempre que voy al mercadillo termino gastando más de la cuenta.",
+    "tokens": [
+      "Siempre",
+      "que",
+      "voy",
+      "al",
+      "mercadillo",
+      "termino",
+      "gastando",
+      "más",
+      "de",
+      "la",
+      "cuenta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "termino"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "de"
+      }
+    ],
+    "sk": "Vždy, keď idem na trh, nakoniec minem viac, než som chcel.",
+    "en": "Whenever I go to the flea market I end up spending more than I should."
+  },
+  {
+    "id": "s1675",
+    "es": "¿Dónde compraste esas gafas? Las compré en el centro.",
+    "tokens": [
+      "¿",
+      "Dónde",
+      "compraste",
+      "esas",
+      "gafas",
+      "?",
+      "Las",
+      "compré",
+      "en",
+      "el",
+      "centro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "Las",
+        "lemma": "las",
+        "distractors": [
+          "Los",
+          "La",
+          "Lo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s478",
+    "es": "Lo compré a plazos sin intereses.",
+    "tokens": [
+      "Lo",
+      "compré",
+      "a",
+      "plazos",
+      "sin",
+      "intereses",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compré"
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "sin"
+      }
+    ]
+  },
+  {
+    "id": "s801",
+    "es": "El envío es gratis en compras superiores a cincuenta euros.",
+    "tokens": [
+      "El",
+      "envío",
+      "es",
+      "gratis",
+      "en",
+      "compras",
+      "superiores",
+      "a",
+      "cincuenta",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "envío"
+      }
+    ],
+    "sk": "Doprava je zadarmo pri nákupe nad päťdesiat eur.",
+    "en": "Shipping is free on purchases over fifty euros."
+  },
+  {
+    "id": "s804",
+    "es": "Compramos el coche a plazos, con una entrada del veinte por ciento.",
+    "tokens": [
+      "Compramos",
+      "el",
+      "coche",
+      "a",
+      "plazos",
+      ",",
+      "con",
+      "una",
+      "entrada",
+      "del",
+      "veinte",
+      "por",
+      "ciento",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "con"
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "entrada",
+        "lemma": "entrada",
+        "hint": "akontácia",
+        "distractors": [
+          "entrar",
+          "entero",
+          "entrenador"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s807",
+    "es": "Fui a reclamar porque la batidora salió defectuosa.",
+    "tokens": [
+      "Fui",
+      "a",
+      "reclamar",
+      "porque",
+      "la",
+      "batidora",
+      "salió",
+      "defectuosa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "defectuosa"
+      }
+    ]
+  },
+  {
+    "id": "s1433",
+    "es": "Esta batidora tiene un año de garantía, así que no te preocupes.",
+    "tokens": [
+      "Esta",
+      "batidora",
+      "tiene",
+      "un",
+      "año",
+      "de",
+      "garantía",
+      ",",
+      "así",
+      "que",
+      "no",
+      "te",
+      "preocupes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "garantía"
+      }
+    ]
+  },
+  {
+    "id": "s1421",
+    "es": "¿Venden bollos aquí?",
+    "tokens": [
+      "¿",
+      "Venden",
+      "bollos",
+      "aquí",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Venden"
+      }
+    ]
+  },
+  {
+    "id": "s1427",
+    "es": "La señora de la tienda de la esquina siempre nos regalaba caramelos.",
+    "tokens": [
+      "La",
+      "señora",
+      "de",
+      "la",
+      "tienda",
+      "de",
+      "la",
+      "esquina",
+      "siempre",
+      "nos",
+      "regalaba",
+      "caramelos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 10,
+        "answer": "regalaba"
+      }
+    ]
+  },
+  {
+    "id": "s1431",
+    "es": "Antes comprábamos todo en el mercado del barrio.",
+    "tokens": [
+      "Antes",
+      "comprábamos",
+      "todo",
+      "en",
+      "el",
+      "mercado",
+      "del",
+      "barrio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "comprábamos"
+      }
+    ]
+  },
+  {
+    "id": "s1434",
+    "es": "Si compras al por mayor, te sale mucho más barato.",
+    "tokens": [
+      "Si",
+      "compras",
+      "al",
+      "por",
+      "mayor",
+      ",",
+      "te",
+      "sale",
+      "mucho",
+      "más",
+      "barato",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compras"
+      }
+    ]
+  },
+  {
+    "id": "s1436",
+    "es": "Cuando llegué a la caja, me di cuenta de que no llevaba la cartera.",
+    "tokens": [
+      "Cuando",
+      "llegué",
+      "a",
+      "la",
+      "caja",
+      ",",
+      "me",
+      "di",
+      "cuenta",
+      "de",
+      "que",
+      "no",
+      "llevaba",
+      "la",
+      "cartera",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "answer": "llevaba",
+        "lemma": "llevar",
+        "hint": "llevar · yo · imperfecto",
+        "distractors": [
+          "llevo",
+          "llevé",
+          "llevaría"
+        ]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s1437",
+    "es": "Prefiero comprar por internet porque no tengo que hacer cola.",
+    "tokens": [
+      "Prefiero",
+      "comprar",
+      "por",
+      "internet",
+      "porque",
+      "no",
+      "tengo",
+      "que",
+      "hacer",
+      "cola",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Prefiero"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s1425",
+    "es": "Ayer hice una cola larguísima en el banco.",
+    "tokens": [
+      "Ayer",
+      "hice",
+      "una",
+      "cola",
+      "larguísima",
+      "en",
+      "el",
+      "banco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hice"
+      }
+    ]
+  },
+  {
+    "id": "s1438",
+    "es": "Mi marido devolvió la chaqueta porque le quedaba pequeña.",
+    "tokens": [
+      "Mi",
+      "marido",
+      "devolvió",
+      "la",
+      "chaqueta",
+      "porque",
+      "le",
+      "quedaba",
+      "pequeña",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "devolvió"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "le"
+      }
+    ]
+  },
+  {
+    "id": "s1439",
+    "es": "Esperaré al Black Friday, porque ahora todo está carísimo.",
+    "tokens": [
+      "Esperaré",
+      "al",
+      "Black",
+      "Friday",
+      ",",
+      "porque",
+      "ahora",
+      "todo",
+      "está",
+      "carísimo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esperaré"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "al"
+      }
+    ],
+    "sk": "Počkám na Black Friday, lebo teraz je všetko strašne drahé.",
+    "en": "I'll wait for Black Friday, because everything is super expensive now."
+  },
+  {
+    "id": "s1441",
+    "es": "Le pedí al vendedor que me hiciera un descuento y aceptó.",
+    "tokens": [
+      "Le",
+      "pedí",
+      "al",
+      "vendedor",
+      "que",
+      "me",
+      "hiciera",
+      "un",
+      "descuento",
+      "y",
+      "aceptó",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "aceptó"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "hiciera"
+      }
+    ]
+  },
+  {
+    "id": "s1443",
+    "es": "Todavía estoy pagando el sofá que compramos a plazos.",
+    "tokens": [
+      "Todavía",
+      "estoy",
+      "pagando",
+      "el",
+      "sofá",
+      "que",
+      "compramos",
+      "a",
+      "plazos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pagando"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "que"
+      }
+    ],
+    "sk": "Ešte stále splácam sedačku, ktorú sme kúpili na splátky.",
+    "en": "I'm still paying off the sofa we bought on installments."
+  },
+  {
+    "id": "s1446",
+    "es": "Ahorramos durante meses para darnos ese capricho.",
+    "tokens": [
+      "Ahorramos",
+      "durante",
+      "meses",
+      "para",
+      "darnos",
+      "ese",
+      "capricho",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ahorramos"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "durante"
+      }
+    ]
+  },
+  {
+    "id": "s1447",
+    "es": "Me da rabia que nos vendan productos caducados.",
+    "tokens": [
+      "Me",
+      "da",
+      "rabia",
+      "que",
+      "nos",
+      "vendan",
+      "productos",
+      "caducados",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "da"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "vendan"
+      }
+    ]
+  },
+  {
+    "id": "s1448",
+    "es": "Reclamé ante Consumo porque no me quisieron respetar el precio.",
+    "tokens": [
+      "Reclamé",
+      "ante",
+      "Consumo",
+      "porque",
+      "no",
+      "me",
+      "quisieron",
+      "respetar",
+      "el",
+      "precio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reclamé"
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "ante"
+      }
+    ]
+  },
+  {
+    "id": "s1429",
+    "es": "Estamos haciendo la lista de la compra.",
+    "tokens": [
+      "Estamos",
+      "haciendo",
+      "la",
+      "lista",
+      "de",
+      "la",
+      "compra",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "haciendo"
+      }
+    ]
+  },
+  {
+    "id": "s1885",
+    "es": "Pagué cien euros por la chaqueta.",
+    "tokens": [
+      "Pagué",
+      "cien",
+      "euros",
+      "por",
+      "la",
+      "chaqueta",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "por"
+      }
+    ],
+    "sk": "Zaplatil som sto eur za bundu.",
+    "en": "I paid a hundred euros for the jacket."
+  },
+  {
+    "id": "s1952",
+    "es": "En España se paga mucho en efectivo.",
+    "tokens": [
+      "En",
+      "España",
+      "se",
+      "paga",
+      "mucho",
+      "en",
+      "efectivo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "se"
+      }
+    ],
+    "sk": "V Španielsku sa veľa platí v hotovosti.",
+    "en": "In Spain people pay a lot in cash."
+  },
+  {
+    "id": "s216",
+    "es": "Los precios han subido mucho este año.",
+    "tokens": [
+      "Los",
+      "precios",
+      "han",
+      "subido",
+      "mucho",
+      "este",
+      "año",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3,
+        "answer": "subido",
+        "lemma": "subir",
+        "hint": "subir · participio",
+        "distractors": [
+          "subieron",
+          "subiendo",
+          "subían"
+        ]
+      },
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "este"
+      }
+    ]
+  }
+]

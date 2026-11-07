@@ -1,0 +1,737 @@
+[
+  {
+    "id": "s056",
+    "es": "Mi jefe está en una reunión.",
+    "tokens": [
+      "Mi",
+      "jefe",
+      "está",
+      "en",
+      "una",
+      "reunión",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "está"
+      }
+    ]
+  },
+  {
+    "id": "s059",
+    "es": "El jefe dijo que la reunión es mañana.",
+    "tokens": [
+      "El",
+      "jefe",
+      "dijo",
+      "que",
+      "la",
+      "reunión",
+      "es",
+      "mañana",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "dijo"
+      }
+    ]
+  },
+  {
+    "id": "s199",
+    "es": "La reunión empezó a las nueve.",
+    "tokens": [
+      "La",
+      "reunión",
+      "empezó",
+      "a",
+      "las",
+      "nueve",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "empezó"
+      }
+    ]
+  },
+  {
+    "id": "s205",
+    "es": "Hoy tengo mucho trabajo.",
+    "tokens": [
+      "Hoy",
+      "tengo",
+      "mucho",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengo"
+      }
+    ]
+  },
+  {
+    "id": "s206",
+    "es": "Mi hermana es maestra en un colegio.",
+    "tokens": [
+      "Mi",
+      "hermana",
+      "es",
+      "maestra",
+      "en",
+      "un",
+      "colegio",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es"
+      }
+    ]
+  },
+  {
+    "id": "s426",
+    "es": "Mi padre siempre llegaba tarde a casa.",
+    "tokens": [
+      "Mi",
+      "padre",
+      "siempre",
+      "llegaba",
+      "tarde",
+      "a",
+      "casa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "llegaba"
+      }
+    ]
+  },
+  {
+    "id": "s1572",
+    "es": "Mi madre es enfermera en un hospital.",
+    "tokens": [
+      "Mi",
+      "madre",
+      "es",
+      "enfermera",
+      "en",
+      "un",
+      "hospital",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es"
+      }
+    ]
+  },
+  {
+    "id": "s1576",
+    "es": "Los lunes tenemos reunión con el jefe.",
+    "tokens": [
+      "Los",
+      "lunes",
+      "tenemos",
+      "reunión",
+      "con",
+      "el",
+      "jefe",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "tenemos"
+      }
+    ]
+  },
+  {
+    "id": "s1577",
+    "es": "Mi padre es chófer y conduce un taxi.",
+    "tokens": [
+      "Mi",
+      "padre",
+      "es",
+      "chófer",
+      "y",
+      "conduce",
+      "un",
+      "taxi",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "conduce",
+        "lemma": "conducir",
+        "hint": "conducir · él · presente",
+        "distractors": [
+          "conduzco",
+          "conduces",
+          "conducimos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1620",
+    "es": "Reviso mi correo antes de cada reunión.",
+    "tokens": [
+      "Reviso",
+      "mi",
+      "correo",
+      "antes",
+      "de",
+      "cada",
+      "reunión",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Reviso"
+      }
+    ]
+  },
+  {
+    "id": "s1586",
+    "es": "Estoy hasta el gorro de tantas reuniones que no sirven para nada.",
+    "tokens": [
+      "Estoy",
+      "hasta",
+      "el",
+      "gorro",
+      "de",
+      "tantas",
+      "reuniones",
+      "que",
+      "no",
+      "sirven",
+      "para",
+      "nada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "reuniones",
+        "lemma": "reunión",
+        "hint": "porady",
+        "distractors": [
+          "reunidos",
+          "renuncias",
+          "reuniendo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1872",
+    "es": "Si la reunión termina pronto, comeremos juntos.",
+    "tokens": [
+      "Si",
+      "la",
+      "reunión",
+      "termina",
+      "pronto",
+      ",",
+      "comeremos",
+      "juntos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "termina"
+      }
+    ]
+  },
+  {
+    "id": "s789",
+    "es": "En la reunión planteé la necesidad de contratar a más gente.",
+    "tokens": [
+      "En",
+      "la",
+      "reunión",
+      "planteé",
+      "la",
+      "necesidad",
+      "de",
+      "contratar",
+      "a",
+      "más",
+      "gente",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "planteé"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s1587",
+    "es": "Mi cuñado anda sin trabajo desde que cerró la fábrica.",
+    "tokens": [
+      "Mi",
+      "cuñado",
+      "anda",
+      "sin",
+      "trabajo",
+      "desde",
+      "que",
+      "cerró",
+      "la",
+      "fábrica",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "cerró"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "desde"
+      }
+    ]
+  },
+  {
+    "id": "s1588",
+    "es": "Le puse muchas ganas al proyecto y al final me lo reconocieron.",
+    "tokens": [
+      "Le",
+      "puse",
+      "muchas",
+      "ganas",
+      "al",
+      "proyecto",
+      "y",
+      "al",
+      "final",
+      "me",
+      "lo",
+      "reconocieron",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "reconocieron"
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Le"
+      }
+    ]
+  },
+  {
+    "id": "s1589",
+    "es": "La paga extra llega en diciembre y casi todo se me va en regalos.",
+    "tokens": [
+      "La",
+      "paga",
+      "extra",
+      "llega",
+      "en",
+      "diciembre",
+      "y",
+      "casi",
+      "todo",
+      "se",
+      "me",
+      "va",
+      "en",
+      "regalos",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "newIndex": 2,
+        "answer": "extra",
+        "lemma": "paga extra",
+        "hint": "vianočný príplatok (paga …)",
+        "distractors": [
+          "extraño",
+          "exacta",
+          "excelente"
+        ]
+      }
+    ],
+    "enHints": [
+      "Christmas bonus (paga …)"
+    ]
+  },
+  {
+    "id": "s1590",
+    "es": "Trabajar desde casa me ahorra tiempo, aunque a veces echo de menos a mis compañeros.",
+    "tokens": [
+      "Trabajar",
+      "desde",
+      "casa",
+      "me",
+      "ahorra",
+      "tiempo",
+      ",",
+      "aunque",
+      "a",
+      "veces",
+      "echo",
+      "de",
+      "menos",
+      "a",
+      "mis",
+      "compañeros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "echo",
+        "lemma": "echar",
+        "hint": "echar · yo · presente",
+        "distractors": [
+          "echa",
+          "eché",
+          "echaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1592",
+    "es": "Si la empresa no valora tu trabajo, mejor busca otro curro.",
+    "tokens": [
+      "Si",
+      "la",
+      "empresa",
+      "no",
+      "valora",
+      "tu",
+      "trabajo",
+      ",",
+      "mejor",
+      "busca",
+      "otro",
+      "curro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "valora"
+      }
+    ]
+  },
+  {
+    "id": "s794",
+    "es": "Mi hermano curra de lunes a sábado.",
+    "tokens": [
+      "Mi",
+      "hermano",
+      "curra",
+      "de",
+      "lunes",
+      "a",
+      "sábado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "curra",
+        "lemma": "currar",
+        "hint": "currar · él · presente",
+        "distractors": [
+          "curran",
+          "curré",
+          "curraba"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s795",
+    "es": "La nómina se paga cada mes.",
+    "tokens": [
+      "La",
+      "nómina",
+      "se",
+      "paga",
+      "cada",
+      "mes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "mes",
+        "lemma": "mes",
+        "hint": "mesiac",
+        "distractors": [
+          "más",
+          "mesa",
+          "meses"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "paga"
+      }
+    ],
+    "sk": "Výplaty sa vyplácajú každý mesiac.",
+    "en": "Payroll is paid every month.",
+    "enHints": [
+      "month",
+      null
+    ]
+  },
+  {
+    "id": "s2161",
+    "es": "Cuando me paguen la nómina, voy a mandarle dinero a mi madre.",
+    "tokens": [
+      "Cuando",
+      "me",
+      "paguen",
+      "la",
+      "nómina",
+      ",",
+      "voy",
+      "a",
+      "mandarle",
+      "dinero",
+      "a",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "paguen"
+      }
+    ],
+    "sk": "Keď mi vyplatia výplatu, pošlem mame peniaze.",
+    "en": "When they pay me my salary, I am going to send some money to my mother."
+  },
+  {
+    "id": "s1714",
+    "es": "Para entrar en el almacén hay que pedir permiso.",
+    "tokens": [
+      "Para",
+      "entrar",
+      "en",
+      "el",
+      "almacén",
+      "hay",
+      "que",
+      "pedir",
+      "permiso",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "que"
+      }
+    ]
+  },
+  {
+    "id": "s1585",
+    "es": "Creo que merezco un aumento porque este año he trabajado muchísimo.",
+    "tokens": [
+      "Creo",
+      "que",
+      "merezco",
+      "un",
+      "aumento",
+      "porque",
+      "este",
+      "año",
+      "he",
+      "trabajado",
+      "muchísimo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "merezco"
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "este"
+      }
+    ]
+  },
+  {
+    "id": "s792",
+    "es": "Su desempeño este año ha sido excelente.",
+    "tokens": [
+      "Su",
+      "desempeño",
+      "este",
+      "año",
+      "ha",
+      "sido",
+      "excelente",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "desempeño"
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "este"
+      }
+    ]
+  },
+  {
+    "id": "s597",
+    "es": "Si terminamos el proyecto a tiempo, nos darán una prima.",
+    "tokens": [
+      "Si",
+      "terminamos",
+      "el",
+      "proyecto",
+      "a",
+      "tiempo",
+      ",",
+      "nos",
+      "darán",
+      "una",
+      "prima",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "darán"
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "nos"
+      }
+    ]
+  },
+  {
+    "id": "s784",
+    "es": "Mi padre se jubiló después de treinta años en el banco.",
+    "tokens": [
+      "Mi",
+      "padre",
+      "se",
+      "jubiló",
+      "después",
+      "de",
+      "treinta",
+      "años",
+      "en",
+      "el",
+      "banco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "jubiló"
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de"
+      }
+    ]
+  },
+  {
+    "id": "s204",
+    "es": "¿Terminaste el informe?",
+    "tokens": [
+      "¿",
+      "Terminaste",
+      "el",
+      "informe",
+      "?"
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Terminaste"
+      }
+    ]
+  },
+  {
+    "id": "s1869",
+    "es": "Si terminas el informe hoy, puedes irte temprano.",
+    "tokens": [
+      "Si",
+      "terminas",
+      "el",
+      "informe",
+      "hoy",
+      ",",
+      "puedes",
+      "irte",
+      "temprano",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "terminas"
+      }
+    ]
+  },
+  {
+    "id": "s787",
+    "es": "Después del despido le pagaron su liquidación.",
+    "tokens": [
+      "Después",
+      "del",
+      "despido",
+      "le",
+      "pagaron",
+      "su",
+      "liquidación",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "liquidación",
+        "lemma": "liquidación",
+        "hint": "odstupné",
+        "distractors": [
+          "liquidez",
+          "limitación",
+          "licencia"
+        ]
+      }
+    ]
+  }
+]

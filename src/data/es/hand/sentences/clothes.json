@@ -1,0 +1,423 @@
+[
+  {
+    "id": "s236",
+    "es": "Mi mamá me regaló un jersey.",
+    "tokens": [
+      "Mi",
+      "mamá",
+      "me",
+      "regaló",
+      "un",
+      "jersey",
+      "."
+    ]
+  },
+  {
+    "id": "s529",
+    "es": "Me puse el jersey porque empezaba a hacer frío.",
+    "tokens": [
+      "Me",
+      "puse",
+      "el",
+      "jersey",
+      "porque",
+      "empezaba",
+      "a",
+      "hacer",
+      "frío",
+      "."
+    ]
+  },
+  {
+    "id": "s819",
+    "es": "Siempre uso pantalones de pana.",
+    "tokens": [
+      "Siempre",
+      "uso",
+      "pantalones",
+      "de",
+      "pana",
+      "."
+    ],
+    "sk": "Vždy nosím menšestrové nohavice.",
+    "en": "I always wear corduroy trousers."
+  },
+  {
+    "id": "s823",
+    "es": "Estos vaqueros me quedan muy ajustados.",
+    "tokens": [
+      "Estos",
+      "vaqueros",
+      "me",
+      "quedan",
+      "muy",
+      "ajustados",
+      "."
+    ]
+  },
+  {
+    "id": "s825",
+    "es": "Mi abuela me regaló un chal bordado a mano.",
+    "tokens": [
+      "Mi",
+      "abuela",
+      "me",
+      "regaló",
+      "un",
+      "chal",
+      "bordado",
+      "a",
+      "mano",
+      "."
+    ],
+    "sk": "Babka mi darovala ručne vyšívaný šál.",
+    "en": "My grandma gave me a hand-embroidered shawl."
+  },
+  {
+    "id": "s826",
+    "es": "Compro casi toda mi ropa de segunda mano.",
+    "tokens": [
+      "Compro",
+      "casi",
+      "toda",
+      "mi",
+      "ropa",
+      "de",
+      "segunda",
+      "mano",
+      "."
+    ]
+  },
+  {
+    "id": "s828",
+    "es": "Las mujeres de Andalucía usan trajes de flamenca de muchos colores.",
+    "tokens": [
+      "Las",
+      "mujeres",
+      "de",
+      "Andalucía",
+      "usan",
+      "trajes",
+      "de",
+      "flamenca",
+      "de",
+      "muchos",
+      "colores",
+      "."
+    ],
+    "sk": "Ženy v Andalúzii nosia pestrofarebné flamenkové šaty.",
+    "en": "Women in Andalusia wear colorful flamenco dresses."
+  },
+  {
+    "id": "s1092",
+    "es": "El pijama es de mi hermana.",
+    "tokens": [
+      "El",
+      "pijama",
+      "es",
+      "de",
+      "mi",
+      "hermana",
+      "."
+    ]
+  },
+  {
+    "id": "s1099",
+    "es": "Se me olvidó el bañador en el hotel.",
+    "tokens": [
+      "Se",
+      "me",
+      "olvidó",
+      "el",
+      "bañador",
+      "en",
+      "el",
+      "hotel",
+      "."
+    ]
+  },
+  {
+    "id": "s1100",
+    "es": "Mañana me pondré las alpargatas que compré en Valencia.",
+    "tokens": [
+      "Mañana",
+      "me",
+      "pondré",
+      "las",
+      "alpargatas",
+      "que",
+      "compré",
+      "en",
+      "Valencia",
+      "."
+    ],
+    "sk": "Zajtra si obujem espadrilky, ktoré som si kúpil vo Valencii.",
+    "en": "Tomorrow I'll wear the espadrilles I bought in Valencia."
+  },
+  {
+    "id": "s1107",
+    "es": "Antes me daba vergüenza usar colores fuertes, pero ahora me encantan.",
+    "tokens": [
+      "Antes",
+      "me",
+      "daba",
+      "vergüenza",
+      "usar",
+      "colores",
+      "fuertes",
+      ",",
+      "pero",
+      "ahora",
+      "me",
+      "encantan",
+      "."
+    ]
+  },
+  {
+    "id": "s1108",
+    "es": "Le pedí a la dependienta una talla más grande, pero ya no tenían.",
+    "tokens": [
+      "Le",
+      "pedí",
+      "a",
+      "la",
+      "dependienta",
+      "una",
+      "talla",
+      "más",
+      "grande",
+      ",",
+      "pero",
+      "ya",
+      "no",
+      "tenían",
+      "."
+    ]
+  },
+  {
+    "id": "s1109",
+    "es": "Para el viaje empacaré ropa ligera y un jersey por si hace frío.",
+    "tokens": [
+      "Para",
+      "el",
+      "viaje",
+      "empacaré",
+      "ropa",
+      "ligera",
+      "y",
+      "un",
+      "jersey",
+      "por",
+      "si",
+      "hace",
+      "frío",
+      "."
+    ]
+  },
+  {
+    "id": "s1114",
+    "es": "Ese vestido te sienta genial; pareces artista de cine.",
+    "tokens": [
+      "Ese",
+      "vestido",
+      "te",
+      "sienta",
+      "genial",
+      ";",
+      "pareces",
+      "artista",
+      "de",
+      "cine",
+      "."
+    ]
+  },
+  {
+    "id": "s1115",
+    "es": "Siempre va hecho un desastre, con la ropa toda arrugada.",
+    "tokens": [
+      "Siempre",
+      "va",
+      "hecho",
+      "un",
+      "desastre",
+      ",",
+      "con",
+      "la",
+      "ropa",
+      "toda",
+      "arrugada",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "distractors": [
+          "voy",
+          "fue",
+          "iba"
+        ]
+      },
+      {
+        "tokenIndex": 5,
+        "newIndex": 6
+      }
+    ]
+  },
+  {
+    "id": "s1117",
+    "es": "Para la boda en la playa, la invitación pedía camisa de lino y pantalón claro.",
+    "tokens": [
+      "Para",
+      "la",
+      "boda",
+      "en",
+      "la",
+      "playa",
+      ",",
+      "la",
+      "invitación",
+      "pedía",
+      "camisa",
+      "de",
+      "lino",
+      "y",
+      "pantalón",
+      "claro",
+      "."
+    ]
+  },
+  {
+    "id": "s1118",
+    "es": "Me dio pereza planchar, así que me puse la camisa arrugada.",
+    "tokens": [
+      "Me",
+      "dio",
+      "pereza",
+      "planchar",
+      ",",
+      "así",
+      "que",
+      "me",
+      "puse",
+      "la",
+      "camisa",
+      "arrugada",
+      "."
+    ]
+  },
+  {
+    "id": "s1124",
+    "es": "Esa blusa bordada la hicieron a mano artesanas de Lagartera.",
+    "tokens": [
+      "Esa",
+      "blusa",
+      "bordada",
+      "la",
+      "hicieron",
+      "a",
+      "mano",
+      "artesanas",
+      "de",
+      "Lagartera",
+      "."
+    ],
+    "sk": "Tú vyšívanú blúzku ručne vyrobili remeselníčky z Lagartery.",
+    "en": "That embroidered blouse was handmade by artisans from Lagartera."
+  },
+  {
+    "id": "s1605",
+    "es": "Los pantalones me quedaron pequeños después de las vacaciones.",
+    "tokens": [
+      "Los",
+      "pantalones",
+      "me",
+      "quedaron",
+      "pequeños",
+      "después",
+      "de",
+      "las",
+      "vacaciones",
+      "."
+    ]
+  },
+  {
+    "id": "s2002",
+    "es": "Mi mamá quiere que lleve un jersey a la fiesta, porque por la noche refresca.",
+    "tokens": [
+      "Mi",
+      "mamá",
+      "quiere",
+      "que",
+      "lleve",
+      "un",
+      "jersey",
+      "a",
+      "la",
+      "fiesta",
+      ",",
+      "porque",
+      "por",
+      "la",
+      "noche",
+      "refresca",
+      "."
+    ]
+  },
+  {
+    "id": "s2003",
+    "es": "Si me llegara el dinero, compraría ese abrigo de lana para el invierno.",
+    "tokens": [
+      "Si",
+      "me",
+      "llegara",
+      "el",
+      "dinero",
+      ",",
+      "compraría",
+      "ese",
+      "abrigo",
+      "de",
+      "lana",
+      "para",
+      "el",
+      "invierno",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "llegara",
+        "lemma": "llegar",
+        "hint": "llegar · él · subjuntivo imperfecto",
+        "distractors": [
+          "llega",
+          "llegó",
+          "llegará"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s2005",
+    "es": "Cuando baje la temperatura, sacaremos los abrigos y las bufandas del armario.",
+    "tokens": [
+      "Cuando",
+      "baje",
+      "la",
+      "temperatura",
+      ",",
+      "sacaremos",
+      "los",
+      "abrigos",
+      "y",
+      "las",
+      "bufandas",
+      "del",
+      "armario",
+      "."
+    ]
+  }
+]

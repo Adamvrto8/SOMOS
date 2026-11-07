@@ -1,0 +1,127 @@
+[
+  {
+    "id": "s9029",
+    "es": "Este año hemos ahorrado trescientos euros.",
+    "sk": "Tento rok sme ušetrili tristo eur.",
+    "level": "A2",
+    "topics": [
+      "shopping"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "año",
+      "hemos",
+      "ahorrado",
+      "trescientos",
+      "euros",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ahorrado",
+        "lemma": "ahorrar",
+        "hint": "ahorrar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "ahorramos",
+          "ahorrando",
+          "ahorrábamos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9035",
+    "es": "Este mes he gastado mucho dinero en comida.",
+    "sk": "Tento mesiac som minul veľa peňazí na jedlo.",
+    "level": "A2",
+    "topics": [
+      "shopping"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Este",
+      "mes",
+      "he",
+      "gastado",
+      "mucho",
+      "dinero",
+      "en",
+      "comida",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "he",
+        "lemma": "haber",
+        "hint": "haber · yo",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "hube",
+          "había",
+          "haya"
+        ]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "gastado",
+        "lemma": "gastar",
+        "hint": "gastar · participio",
+        "tip": "perfecto",
+        "why": "form",
+        "distractors": [
+          "gasté",
+          "gastando",
+          "gastaba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s9043",
+    "es": "Hoy hemos abierto la tienda a las nueve.",
+    "sk": "Dnes sme obchod otvorili o deviatej.",
+    "level": "A2",
+    "topics": [
+      "shopping"
+    ],
+    "grammar": [
+      "perfecto"
+    ],
+    "tokens": [
+      "Hoy",
+      "hemos",
+      "abierto",
+      "la",
+      "tienda",
+      "a",
+      "las",
+      "nueve",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "abierto",
+        "lemma": "abrir",
+        "hint": "abrir · participio",
+        "tip": "perfecto",
+        "why": "participle",
+        "distractors": [
+          "abrimos",
+          "abriendo",
+          "abríamos"
+        ]
+      }
+    ]
+  }
+]

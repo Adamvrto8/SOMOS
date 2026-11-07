@@ -1,0 +1,831 @@
+[
+  {
+    "id": "vale",
+    "en": [
+      "OK",
+      "alright"
+    ],
+    "examples": [
+      "\"Shall we meet at eight?\" \"OK.\"",
+      "OK, I'll do it right now."
+    ],
+    "note": "Colloquial and extremely common in Spain. In Mexico more often “okey”."
+  },
+  {
+    "id": "guay",
+    "en": [
+      "cool",
+      "great"
+    ],
+    "examples": [
+      "The party was really cool.",
+      "Your new house is great."
+    ],
+    "note": "Colloquial; it does not change form: un plan guay, una casa guay."
+  },
+  {
+    "id": "chaval",
+    "en": [
+      "lad",
+      "kid"
+    ],
+    "examples": [
+      "That lad plays the guitar really well.",
+      "The kids play football in the square."
+    ],
+    "note": "Colloquial. Chavala = girl."
+  },
+  {
+    "id": "colega",
+    "en": [
+      "mate",
+      "colleague"
+    ],
+    "examples": [
+      "I'm meeting my mates on Saturday.",
+      "He's a colleague from work."
+    ],
+    "note": "Colloquial, also for women: la colega. In Mexico more often “amigo”."
+  },
+  {
+    "id": "mogollon",
+    "en": [
+      "loads",
+      "heaps"
+    ],
+    "examples": [
+      "There were loads of people at the concert.",
+      "I have heaps of things to do."
+    ],
+    "note": "Colloquial: un mogollón de = a huge amount of."
+  },
+  {
+    "id": "venga",
+    "en": [
+      "come on!",
+      "OK then"
+    ],
+    "examples": [
+      "Come on, we're going to be late!",
+      "Right then, see you later."
+    ],
+    "note": "Colloquial: encouragement, agreement or a goodbye."
+  },
+  {
+    "id": "anda",
+    "en": [
+      "no way!",
+      "wow!",
+      "come on"
+    ],
+    "examples": [
+      "Wow! I didn't know you lived here.",
+      "Come on, help me with this."
+    ],
+    "note": "A colloquial exclamation of surprise or a gentle request."
+  },
+  {
+    "id": "vaya",
+    "en": [
+      "wow!",
+      "oh dear",
+      "what a…!"
+    ],
+    "examples": [
+      "What a surprise!",
+      "Oh dear, I forgot my phone!"
+    ],
+    "note": "An exclamation of surprise, annoyance or admiration."
+  },
+  {
+    "id": "que-pasada",
+    "en": [
+      "that's amazing!",
+      "that's crazy!"
+    ],
+    "examples": [
+      "What amazing views!",
+      "My sister ran a marathon. That's amazing!"
+    ],
+    "note": "Colloquial; admiration or astonishment."
+  },
+  {
+    "id": "estar-hecho-polvo",
+    "en": [
+      "to be exhausted",
+      "to be wrecked"
+    ],
+    "examples": [
+      "I'm wrecked after the trip.",
+      "After the match we were all exhausted."
+    ],
+    "note": "Colloquial; “hecho” agrees with the person: hecha polvo, hechos polvo."
+  },
+  {
+    "id": "majo",
+    "en": [
+      "nice",
+      "lovely"
+    ],
+    "examples": [
+      "Your sister is very nice.",
+      "You have very nice neighbours."
+    ],
+    "note": "Colloquial: nice, likeable. In Mexico more often “simpático”."
+  },
+  {
+    "id": "chulo",
+    "en": [
+      "cool",
+      "pretty"
+    ],
+    "examples": [
+      "What a cool flat you have!",
+      "You're wearing a really nice T-shirt."
+    ],
+    "note": "Colloquial. Careful: about a person it can also mean “cocky, cheeky”."
+  },
+  {
+    "id": "cutre",
+    "en": [
+      "shabby",
+      "tacky"
+    ],
+    "examples": [
+      "The hotel was a bit shabby.",
+      "It's a shabby bar, but the food is good."
+    ],
+    "note": "Colloquial; it does not change with gender."
+  },
+  {
+    "id": "pijo",
+    "en": [
+      "posh",
+      "stuck-up"
+    ],
+    "examples": [
+      "My cousin is a bit posh.",
+      "He goes to a very posh school."
+    ],
+    "note": "Colloquial, a little mocking: rich and showy."
+  },
+  {
+    "id": "curro",
+    "en": [
+      "work",
+      "job (slang)"
+    ],
+    "examples": [
+      "Tomorrow I have a lot of work.",
+      "I'm looking for a job."
+    ],
+    "note": "Colloquial. Verb: currar. In Mexico “chamba”."
+  },
+  {
+    "id": "pasta",
+    "en": [
+      "money (slang)",
+      "pasta"
+    ],
+    "examples": [
+      "I haven't got the money for the trip.",
+      "I love pasta with tomato."
+    ],
+    "note": "Colloquially “money”. In Mexico “lana”."
+  },
+  {
+    "id": "en-plan",
+    "en": [
+      "kind of",
+      "like"
+    ],
+    "examples": [
+      "We went partying, in a relaxed kind of way.",
+      "He spoke to me in a rude kind of way."
+    ],
+    "note": "Colloquial, mostly young people; similar to “like”."
+  },
+  {
+    "id": "tapa",
+    "en": [
+      "tapa",
+      "small snack"
+    ],
+    "examples": [
+      "We order a few tapas and a beer.",
+      "This ham tapa is delicious."
+    ],
+    "note": "In some cities (e.g. Granada) you get a free tapa with your drink."
+  },
+  {
+    "id": "cana-2",
+    "en": [
+      "small draught beer"
+    ],
+    "examples": [
+      "A small beer, please.",
+      "We have a few beers after work."
+    ],
+    "note": "In Spain you order a beer as “una caña”. Careful: cana = grey hair."
+  },
+  {
+    "id": "bocadillo",
+    "en": [
+      "baguette sandwich",
+      "sandwich"
+    ],
+    "examples": [
+      "I'd like a ham sandwich.",
+      "My favourite sandwich is the omelette one."
+    ],
+    "note": "A filled baguette, a typical lunch or snack. In Mexico “torta”."
+  },
+  {
+    "id": "tortilla-de-patatas",
+    "en": [
+      "potato omelette",
+      "Spanish omelette"
+    ],
+    "examples": [
+      "My grandmother's potato omelette is the best.",
+      "We order a potato omelette to share."
+    ],
+    "note": "The most typical Spanish dish: eggs, potatoes and sometimes onion."
+  },
+  {
+    "id": "gazpacho",
+    "en": [
+      "gazpacho"
+    ],
+    "examples": [
+      "In summer we have gazpacho.",
+      "Gazpacho is served cold."
+    ],
+    "note": "A cold soup made of tomatoes, cucumber and peppers."
+  },
+  {
+    "id": "croqueta",
+    "en": [
+      "croquette"
+    ],
+    "examples": [
+      "The ham croquettes are delicious.",
+      "My mother makes very good croquettes."
+    ]
+  },
+  {
+    "id": "churro",
+    "en": [
+      "churro"
+    ],
+    "examples": [
+      "For breakfast we have chocolate with churros.",
+      "The churros are freshly made."
+    ],
+    "note": "Traditionally with thick hot chocolate."
+  },
+  {
+    "id": "sangria",
+    "en": [
+      "sangria"
+    ],
+    "examples": [
+      "In summer we drink a lot of sangria.",
+      "A jug of sangria to share?"
+    ],
+    "note": "Wine with fruit and ice."
+  },
+  {
+    "id": "vermu",
+    "en": [
+      "vermouth"
+    ],
+    "examples": [
+      "On Sundays we have a vermouth before lunch.",
+      "A vermouth with an olive, please."
+    ],
+    "note": "“Tomar el vermú” is a Sunday aperitif before lunch."
+  },
+  {
+    "id": "magdalena",
+    "en": [
+      "madeleine",
+      "small sponge cake"
+    ],
+    "examples": [
+      "For breakfast I have coffee with a magdalena.",
+      "My grandmother makes lemon magdalenas."
+    ]
+  },
+  {
+    "id": "melocoton",
+    "en": [
+      "peach"
+    ],
+    "examples": [
+      "This peach is very sweet.",
+      "In summer we eat lots of peaches."
+    ],
+    "note": "In Mexico “durazno”."
+  },
+  {
+    "id": "cacahuete",
+    "en": [
+      "peanut"
+    ],
+    "examples": [
+      "Do you want peanuts with your beer?",
+      "I'm allergic to peanuts."
+    ],
+    "note": "In Mexico “cacahuate”."
+  },
+  {
+    "id": "guisante",
+    "en": [
+      "pea"
+    ],
+    "examples": [
+      "I don't like peas.",
+      "Give me a little rice with peas."
+    ],
+    "note": "In Mexico “chícharo”."
+  },
+  {
+    "id": "judia-verde",
+    "en": [
+      "green bean"
+    ],
+    "examples": [
+      "To start, green beans with ham.",
+      "Green beans are boiled for ten minutes."
+    ],
+    "note": "In Mexico “ejote”."
+  },
+  {
+    "id": "alubia",
+    "en": [
+      "bean",
+      "haricot bean"
+    ],
+    "examples": [
+      "Beans with chorizo is a typical dish.",
+      "My grandmother makes really good beans."
+    ],
+    "note": "Dried white beans; in Mexico “frijoles”."
+  },
+  {
+    "id": "nevera",
+    "en": [
+      "fridge"
+    ],
+    "examples": [
+      "The milk is in the fridge.",
+      "The fridge needs cleaning."
+    ],
+    "note": "In Mexico “refrigerador” or “refri”."
+  },
+  {
+    "id": "menu-del-dia",
+    "en": [
+      "set menu of the day"
+    ],
+    "examples": [
+      "The set menu costs twelve euros.",
+      "In this bar the set menu includes dessert."
+    ],
+    "note": "A lunch set (starter, main, dessert, drink) at a fixed price; in Mexico “comida corrida”."
+  },
+  {
+    "id": "grifo",
+    "en": [
+      "tap"
+    ],
+    "examples": [
+      "The bathroom tap is dripping.",
+      "Turn off the tap, please."
+    ],
+    "note": "In Mexico “llave”."
+  },
+  {
+    "id": "fregona",
+    "en": [
+      "mop"
+    ],
+    "examples": [
+      "Mop the kitchen floor.",
+      "The mop is on the balcony."
+    ],
+    "note": "In Mexico “trapeador”."
+  },
+  {
+    "id": "mechero",
+    "en": [
+      "lighter"
+    ],
+    "examples": [
+      "Do you have a lighter?",
+      "I lost my lighter."
+    ],
+    "note": "In Mexico “encendedor”."
+  },
+  {
+    "id": "aseo",
+    "en": [
+      "toilet",
+      "restroom"
+    ],
+    "examples": [
+      "Where is the toilet?",
+      "The house has two toilets and a bathroom."
+    ],
+    "note": "A small toilet without a bath; in public places “los aseos”."
+  },
+  {
+    "id": "atico",
+    "en": [
+      "penthouse",
+      "attic flat"
+    ],
+    "examples": [
+      "He lives in a penthouse with a terrace.",
+      "Penthouses are usually expensive."
+    ],
+    "note": "A flat on the top floor, often with a terrace."
+  },
+  {
+    "id": "portal",
+    "en": [
+      "building entrance",
+      "doorway"
+    ],
+    "examples": [
+      "I'll wait for you at the entrance.",
+      "The entrance is locked."
+    ],
+    "note": "The shared entrance of an apartment building."
+  },
+  {
+    "id": "buzon",
+    "en": [
+      "mailbox"
+    ],
+    "examples": [
+      "There is a letter in the mailbox.",
+      "The mailbox is full of junk mail."
+    ]
+  },
+  {
+    "id": "urbanizacion",
+    "en": [
+      "housing development",
+      "gated community"
+    ],
+    "examples": [
+      "We live in a housing development with a pool.",
+      "The development is on the outskirts."
+    ],
+    "note": "A residential complex of houses or flats, often with a shared pool; in Mexico “fraccionamiento”."
+  },
+  {
+    "id": "chale",
+    "en": [
+      "detached house",
+      "villa",
+      "cottage"
+    ],
+    "examples": [
+      "They have a cottage in the mountains.",
+      "We rent a villa for the summer."
+    ],
+    "note": "A detached house, villa or cottage; also spelled “chalet”."
+  },
+  {
+    "id": "alquiler",
+    "en": [
+      "rent"
+    ],
+    "examples": [
+      "The rent for the flat is very expensive.",
+      "I pay the rent on the first."
+    ],
+    "note": "In Mexico “renta”."
+  },
+  {
+    "id": "jersey",
+    "en": [
+      "jumper",
+      "sweater"
+    ],
+    "examples": [
+      "It's cold today, put on a jumper.",
+      "This jumper is made of wool."
+    ],
+    "note": "In Mexico “suéter”."
+  },
+  {
+    "id": "vaqueros",
+    "en": [
+      "jeans"
+    ],
+    "examples": [
+      "I'm wearing blue jeans.",
+      "These jeans are too big for me."
+    ],
+    "note": "Always plural. In Mexico “pantalones de mezclilla” or “jeans”."
+  },
+  {
+    "id": "banador",
+    "en": [
+      "swimsuit",
+      "swimming trunks"
+    ],
+    "examples": [
+      "I forgot my swimming trunks at home.",
+      "I need new swimming trunks."
+    ],
+    "note": "In Mexico “traje de baño”."
+  },
+  {
+    "id": "chandal",
+    "en": [
+      "tracksuit"
+    ],
+    "examples": [
+      "I go to the gym in a tracksuit.",
+      "I put on my tracksuit and went running."
+    ],
+    "note": "In Mexico “ropa deportiva”."
+  },
+  {
+    "id": "americana",
+    "en": [
+      "blazer",
+      "jacket"
+    ],
+    "examples": [
+      "He is wearing a blue blazer for the interview.",
+      "This blazer suits you very well."
+    ],
+    "note": "In Mexico “saco” or “blazer”."
+  },
+  {
+    "id": "cazadora",
+    "en": [
+      "jacket"
+    ],
+    "examples": [
+      "Put your jacket on, it's windy.",
+      "I bought a leather jacket."
+    ],
+    "note": "A short jacket (leather, denim…)."
+  },
+  {
+    "id": "zapatilla",
+    "en": [
+      "trainer",
+      "sneaker",
+      "slipper"
+    ],
+    "examples": [
+      "I wear trainers for walking.",
+      "These trainers are very comfortable."
+    ],
+    "note": "“Zapatillas de casa” = slippers. In Mexico “tenis”."
+  },
+  {
+    "id": "aparcamiento",
+    "en": [
+      "car park",
+      "parking space"
+    ],
+    "examples": [
+      "There is a car park near the museum.",
+      "I can't find a parking space."
+    ],
+    "note": "In Mexico “estacionamiento”."
+  },
+  {
+    "id": "ayuntamiento",
+    "en": [
+      "town hall",
+      "city council"
+    ],
+    "examples": [
+      "The town hall is in the square.",
+      "I went to the town hall to ask for a permit."
+    ],
+    "note": "In Mexico “palacio municipal”."
+  },
+  {
+    "id": "estanco",
+    "en": [
+      "tobacconist's"
+    ],
+    "examples": [
+      "I buy stamps at the tobacconist's.",
+      "The tobacconist's opens at nine."
+    ],
+    "note": "A state-licensed shop selling tobacco, stamps and transport tickets."
+  },
+  {
+    "id": "quiosco",
+    "en": [
+      "newsstand",
+      "kiosk"
+    ],
+    "examples": [
+      "I buy the newspaper at the newsstand.",
+      "The kiosk on the corner sells magazines."
+    ]
+  },
+  {
+    "id": "cercanias",
+    "en": [
+      "commuter train"
+    ],
+    "examples": [
+      "I go to work by commuter train.",
+      "The commuter train leaves every fifteen minutes."
+    ],
+    "note": "RENFE commuter trains around big cities; used in the plural."
+  },
+  {
+    "id": "autovia",
+    "en": [
+      "dual carriageway"
+    ],
+    "examples": [
+      "We take the dual carriageway to Valencia.",
+      "The autovía is free, the autopista is not."
+    ],
+    "note": "A toll-free fast road; an “autopista” is a toll motorway."
+  },
+  {
+    "id": "tarjeta-de-embarque",
+    "en": [
+      "boarding pass"
+    ],
+    "examples": [
+      "Show me your boarding pass, please.",
+      "I lost my boarding pass."
+    ],
+    "note": "In Mexico “pase de abordar”."
+  },
+  {
+    "id": "consigna",
+    "en": [
+      "left-luggage office"
+    ],
+    "examples": [
+      "We left our suitcases in the left-luggage office.",
+      "The station left-luggage office closes at ten."
+    ]
+  },
+  {
+    "id": "terraza",
+    "en": [
+      "terrace",
+      "outdoor seating"
+    ],
+    "examples": [
+      "We have dinner on a terrace.",
+      "In summer the terraces are full."
+    ],
+    "note": "Outdoor seating in front of a bar is part of daily life in Spain."
+  },
+  {
+    "id": "instituto",
+    "en": [
+      "secondary school"
+    ],
+    "examples": [
+      "My brother studies at secondary school.",
+      "My secondary school was near home."
+    ],
+    "note": "Secondary school for ages 12–18; in Mexico “secundaria” and “preparatoria”."
+  },
+  {
+    "id": "selectividad",
+    "en": [
+      "university entrance exam"
+    ],
+    "examples": [
+      "I study a lot for the university entrance exam.",
+      "My sister got a good mark in the entrance exam."
+    ],
+    "note": "The national exam after secondary school that decides university admission (officially EBAU/PAU)."
+  },
+  {
+    "id": "aprobado",
+    "en": [
+      "pass mark"
+    ],
+    "examples": [
+      "I got a pass in maths.",
+      "A pass is good enough for me."
+    ],
+    "note": "Marks: suspenso (0–4.9), aprobado (5), notable (7), sobresaliente (9–10)."
+  },
+  {
+    "id": "suspenso",
+    "en": [
+      "fail mark"
+    ],
+    "examples": [
+      "I have a fail in English.",
+      "A fail is not the end of the world."
+    ]
+  },
+  {
+    "id": "sobresaliente",
+    "en": [
+      "top mark",
+      "distinction"
+    ],
+    "examples": [
+      "I got a top mark in history.",
+      "You need a top mark for the scholarship."
+    ],
+    "note": "The top mark (9–10)."
+  },
+  {
+    "id": "paro",
+    "en": [
+      "unemployment",
+      "unemployment benefit"
+    ],
+    "examples": [
+      "Unemployment has fallen this year.",
+      "I have been unemployed since March."
+    ],
+    "note": "“Estar en el paro” = to be unemployed."
+  },
+  {
+    "id": "autonomo",
+    "en": [
+      "self-employed person",
+      "freelancer"
+    ],
+    "examples": [
+      "My father is self-employed.",
+      "The self-employed pay a monthly fee."
+    ],
+    "note": "Woman: la autónoma."
+  },
+  {
+    "id": "oposiciones",
+    "en": [
+      "competitive public-sector exam"
+    ],
+    "examples": [
+      "My cousin is preparing the exam to become a teacher.",
+      "She passed the exam and is now a civil servant."
+    ],
+    "note": "A demanding competitive exam for public service (teacher, judge…). Used in the plural."
+  },
+  {
+    "id": "enchufe",
+    "en": [
+      "socket",
+      "connections (slang)"
+    ],
+    "examples": [
+      "There is no socket nearby.",
+      "He got the job through connections."
+    ],
+    "note": "Colloquially: conseguir algo por enchufe = to get something through connections."
+  },
+  {
+    "id": "nochevieja",
+    "en": [
+      "New Year's Eve"
+    ],
+    "examples": [
+      "On New Year's Eve we eat twelve grapes.",
+      "We spend New Year's Eve with the family."
+    ],
+    "note": "At midnight you eat one grape at each chime of the bells."
+  },
+  {
+    "id": "finde",
+    "en": [
+      "weekend"
+    ],
+    "examples": [
+      "What are you doing this weekend?",
+      "At the weekend we are going to the beach."
+    ],
+    "note": "Colloquial short form of “fin de semana”."
+  },
+  {
+    "id": "siesta",
+    "en": [
+      "siesta",
+      "afternoon nap"
+    ],
+    "examples": [
+      "After lunch I take a siesta.",
+      "In summer the siesta is sacred."
+    ]
+  }
+]

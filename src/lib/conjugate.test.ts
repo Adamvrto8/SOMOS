@@ -1,10 +1,19 @@
 import { describe, expect, it } from 'vitest'
 import { verbById } from '../data'
 import type { Person } from '../data/types'
-import { conjugate, formText, negativeImperative, personLabel, personsOf, TABLE_TENSES, tensesUpTo, type TableTense } from './conjugate'
+import { conjugate, drillPersonsOf, formText, negativeImperative, personLabel, personsOf, TABLE_TENSES, tensesUpTo, type TableTense } from './conjugate'
 
 const estar = verbById.get('estar')!
 const form = (id: string, tense: TableTense, person: Person) => formText(conjugate(verbById.get(id)!, tense, person, estar))
+
+describe('drillPersonsOf', () => {
+  it('asks vosotros after nosotros only in Spain, the imperative without yo', () => {
+    expect(drillPersonsOf('presente', false)).toEqual(personsOf('presente'))
+    expect(drillPersonsOf('presente', true)).toEqual(['yo', 'tu', 'el', 'nosotros', 'vosotros', 'ellos'])
+    expect(drillPersonsOf('imperativo', true)).toEqual(['tu', 'el', 'nosotros', 'vosotros', 'ellos'])
+    expect(personLabel('imperativo', 'vosotros')).toBe('vosotros')
+  })
+})
 
 describe('conjugate', () => {
   it('reads the stored B1–B2 tenses', () => {

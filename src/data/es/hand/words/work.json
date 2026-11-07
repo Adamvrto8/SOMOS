@@ -1,0 +1,40 @@
+[
+  {
+    "id": "chamba",
+    "hidden": true
+  },
+  {
+    "id": "jefe",
+    "examples": [
+      {
+        "es": "Mi jefe es muy majo.",
+        "sk": "Môj šéf je fakt v pohode."
+      }
+    ],
+    "note": "jefa = šéfka.",
+    "noteEn": "jefa = female boss."
+  },
+  {
+    "id": "finiquito",
+    "note": "Vyúčtovanie, ktoré firma vyplatí zamestnancovi pri odchode.",
+    "noteEn": "The settlement a company pays an employee on leaving."
+  },
+  {
+    "id": "chofer",
+    "es": "chófer",
+    "plural": "chóferes",
+    "examples": [
+      {
+        "es": "El chófer del autobús conduce muy rápido.",
+        "sk": "Šofér autobusu jazdí veľmi rýchlo."
+      }
+    ],
+    "note": "V Mexiku chofer (bez prízvuku).",
+    "noteEn": "In Mexico chofer (no accent)."
+  },
+  {
+    "id": "celular",
+    "note": "V Mexiku: celular.",
+    "noteEn": "In Mexico: celular."
+  }
+]

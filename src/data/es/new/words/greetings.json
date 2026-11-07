@@ -1,0 +1,104 @@
+[
+  {
+    "id": "venga",
+    "es": "¡venga!",
+    "sk": [
+      "no tak!",
+      "dobre",
+      "do toho!"
+    ],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": [
+      "greetings",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "¡Venga, que llegamos tarde!",
+        "sk": "No tak, meškáme!"
+      },
+      {
+        "es": "Venga, hasta luego.",
+        "sk": "Tak sa maj."
+      }
+    ],
+    "note": "Hovorové: povzbudenie, súhlas aj rozlúčka."
+  },
+  {
+    "id": "anda",
+    "es": "¡anda!",
+    "sk": [
+      "no nie!",
+      "ale choď!"
+    ],
+    "pos": "phrase",
+    "level": "B1",
+    "topics": [
+      "greetings",
+      "basics"
+    ],
+    "examples": [
+      {
+        "es": "¡Anda! No sabía que vivías aquí.",
+        "sk": "No nie! Nevedel som, že tu bývaš."
+      },
+      {
+        "es": "Anda, ayúdame con esto.",
+        "sk": "No tak, pomôž mi s tým."
+      }
+    ],
+    "note": "Hovorové zvolanie prekvapenia alebo jemná výzva."
+  },
+  {
+    "id": "vaya",
+    "es": "¡vaya!",
+    "sk": [
+      "no teda!",
+      "ach jaj",
+      "to je ale!"
+    ],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": [
+      "greetings",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "¡Vaya sorpresa!",
+        "sk": "To je ale prekvapenie!"
+      },
+      {
+        "es": "¡Vaya, olvidé el móvil!",
+        "sk": "Ach jaj, zabudol som mobil!"
+      }
+    ],
+    "note": "Zvolanie prekvapenia, zlosti či obdivu."
+  },
+  {
+    "id": "que-pasada",
+    "es": "¡qué pasada!",
+    "sk": [
+      "to je úžasné!",
+      "to je šialené!"
+    ],
+    "pos": "phrase",
+    "level": "A2",
+    "topics": [
+      "greetings",
+      "emotions"
+    ],
+    "examples": [
+      {
+        "es": "¡Qué pasada de vistas!",
+        "sk": "Aké úžasné výhľady!"
+      },
+      {
+        "es": "Mi hermana corrió un maratón. ¡Qué pasada!",
+        "sk": "Sestra zabehla maratón. To je úžasné!"
+      }
+    ],
+    "note": "Hovorové; obdiv aj údiv."
+  }
+]

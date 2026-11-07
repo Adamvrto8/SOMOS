@@ -1,0 +1,257 @@
+[
+  {
+    "id": "s243",
+    "es": "Tengo los ojos marrones.",
+    "tokens": [
+      "Tengo",
+      "los",
+      "ojos",
+      "marrones",
+      "."
+    ]
+  },
+  {
+    "id": "s834",
+    "es": "En España se saluda con dos besos, uno en cada mejilla.",
+    "tokens": [
+      "En",
+      "España",
+      "se",
+      "saluda",
+      "con",
+      "dos",
+      "besos",
+      ",",
+      "uno",
+      "en",
+      "cada",
+      "mejilla",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "newIndex": 11
+      }
+    ],
+    "sk": "V Španielsku sa zdraví dvoma bozkami, jedným na každé líce.",
+    "en": "In Spain people greet each other with two kisses, one on each cheek."
+  },
+  {
+    "id": "s840",
+    "es": "Mi abuelo está calvo, pero tiene barba.",
+    "tokens": [
+      "Mi",
+      "abuelo",
+      "está",
+      "calvo",
+      ",",
+      "pero",
+      "tiene",
+      "barba",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "calvo",
+        "lemma": "calvo",
+        "distractors": [
+          "calva",
+          "pelo",
+          "peludo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s841",
+    "es": "Tengo el pelo rizado como mi madre.",
+    "tokens": [
+      "Tengo",
+      "el",
+      "pelo",
+      "rizado",
+      "como",
+      "mi",
+      "madre",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "rizado",
+        "lemma": "rizado",
+        "distractors": [
+          "rizada",
+          "liso",
+          "largo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1052",
+    "es": "No le hagas caso, solo te está tomando el pelo.",
+    "tokens": [
+      "No",
+      "le",
+      "hagas",
+      "caso",
+      ",",
+      "solo",
+      "te",
+      "está",
+      "tomando",
+      "el",
+      "pelo",
+      "."
+    ]
+  },
+  {
+    "id": "s1054",
+    "es": "Desde que me operaron la rodilla, voy con mucho cuidado.",
+    "tokens": [
+      "Desde",
+      "que",
+      "me",
+      "operaron",
+      "la",
+      "rodilla",
+      ",",
+      "voy",
+      "con",
+      "mucho",
+      "cuidado",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "distractors": [
+          "va",
+          "fui",
+          "iba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1055",
+    "es": "Tengo la piel muy sensible, así que siempre uso protector solar.",
+    "tokens": [
+      "Tengo",
+      "la",
+      "piel",
+      "muy",
+      "sensible",
+      ",",
+      "así",
+      "que",
+      "siempre",
+      "uso",
+      "protector",
+      "solar",
+      "."
+    ]
+  },
+  {
+    "id": "s1057",
+    "es": "Se me puso la piel de gallina cuando escuché la noticia.",
+    "tokens": [
+      "Se",
+      "me",
+      "puso",
+      "la",
+      "piel",
+      "de",
+      "gallina",
+      "cuando",
+      "escuché",
+      "la",
+      "noticia",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 8
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 7
+      }
+    ]
+  },
+  {
+    "id": "s1058",
+    "es": "Aunque me duela admitirlo, ya no tengo la forma física de antes.",
+    "tokens": [
+      "Aunque",
+      "me",
+      "duela",
+      "admitirlo",
+      ",",
+      "ya",
+      "no",
+      "tengo",
+      "la",
+      "forma",
+      "física",
+      "de",
+      "antes",
+      "."
+    ]
+  },
+  {
+    "id": "s1059",
+    "es": "Mi tío es muy barrigón, pero dice que es pura masa muscular.",
+    "tokens": [
+      "Mi",
+      "tío",
+      "es",
+      "muy",
+      "barrigón",
+      ",",
+      "pero",
+      "dice",
+      "que",
+      "es",
+      "pura",
+      "masa",
+      "muscular",
+      "."
+    ]
+  },
+  {
+    "id": "s1060",
+    "es": "Tengo un dolor de muelas que no me deja ni dormir.",
+    "tokens": [
+      "Tengo",
+      "un",
+      "dolor",
+      "de",
+      "muelas",
+      "que",
+      "no",
+      "me",
+      "deja",
+      "ni",
+      "dormir",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "newIndex": 8
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ]
+  }
+]

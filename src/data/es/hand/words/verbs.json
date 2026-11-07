@@ -1,0 +1,173 @@
+[
+  {
+    "id": "apapachar",
+    "hidden": true
+  },
+  {
+    "id": "checar",
+    "hidden": true
+  },
+  {
+    "id": "voltear",
+    "hidden": true
+  },
+  {
+    "id": "chambear",
+    "hidden": true
+  },
+  {
+    "id": "trapear",
+    "hidden": true
+  },
+  {
+    "id": "reprobar",
+    "hidden": true
+  },
+  {
+    "id": "vivir",
+    "examples": [
+      {
+        "es": "Vivimos en un piso en el centro.",
+        "sk": "Bývame v byte v centre."
+      }
+    ]
+  },
+  {
+    "id": "llegar",
+    "examples": [
+      {
+        "es": "¿A qué hora llega el autobús?",
+        "sk": "O koľkej príde autobus?"
+      },
+      {
+        "es": "Llegué tarde al trabajo.",
+        "sk": "Prišiel som neskoro do práce."
+      }
+    ]
+  },
+  {
+    "id": "escuchar",
+    "examples": [
+      {
+        "es": "Me gusta escuchar música en el autobús.",
+        "sk": "Rád počúvam hudbu v autobuse."
+      }
+    ]
+  },
+  {
+    "id": "usar",
+    "examples": [
+      {
+        "es": "¿Puedo usar tu ordenador?",
+        "sk": "Môžem použiť tvoj počítač?"
+      }
+    ]
+  },
+  {
+    "id": "llevar",
+    "examples": [
+      {
+        "es": "Me llevo esta camisa.",
+        "sk": "Vezmem si túto košeľu."
+      },
+      {
+        "es": "Hoy llevo una chaqueta.",
+        "sk": "Dnes mám na sebe bundu."
+      }
+    ]
+  },
+  {
+    "id": "dejar",
+    "examples": [
+      {
+        "es": "Me dejé el móvil en casa.",
+        "sk": "Mobil som nechal doma."
+      }
+    ]
+  },
+  {
+    "id": "buscar",
+    "examples": [
+      {
+        "es": "Estoy buscando mis gafas.",
+        "sk": "Hľadám okuliare."
+      }
+    ]
+  },
+  {
+    "id": "perder",
+    "examples": [
+      {
+        "es": "Perdí mi móvil.",
+        "sk": "Stratil som mobil."
+      }
+    ],
+    "note": "perder el autobús = zmeškať autobus; perder el partido = prehrať zápas.",
+    "noteEn": "perder el autobús = to miss the bus; perder el partido = to lose the match."
+  },
+  {
+    "id": "subir",
+    "examples": [
+      {
+        "es": "Subimos al autobús en la esquina.",
+        "sk": "Do autobusu nastupujeme na rohu."
+      }
+    ]
+  },
+  {
+    "id": "cambiar",
+    "examples": [
+      {
+        "es": "¿Puedo cambiar esta camiseta por otra talla?",
+        "sk": "Môžem si vymeniť toto tričko za inú veľkosť?"
+      }
+    ]
+  },
+  {
+    "id": "compartir",
+    "examples": [
+      {
+        "es": "Comparto el piso con dos amigos.",
+        "sk": "Byt zdieľam s dvoma kamarátmi."
+      }
+    ]
+  },
+  {
+    "id": "ahorrar",
+    "examples": [
+      {
+        "es": "Estoy ahorrando para un coche.",
+        "sk": "Šetrím na auto."
+      }
+    ]
+  },
+  {
+    "id": "reconocer",
+    "examples": [
+      {
+        "es": "No te reconocí con gafas.",
+        "sk": "S okuliarmi som ťa nespoznal."
+      }
+    ]
+  },
+  {
+    "id": "presumir",
+    "examples": [
+      {
+        "es": "Le encanta presumir de coche nuevo.",
+        "sk": "Strašne rád sa chváli novým autom."
+      }
+    ],
+    "note": "Chváliť sa niečím: presumir de coche nuevo.",
+    "noteEn": "To show off something: presumir de coche nuevo."
+  },
+  {
+    "id": "ponerse",
+    "examples": [
+      {
+        "es": "Ponte la chaqueta, hace frío.",
+        "sk": "Obleč si bundu, je zima."
+      }
+    ]
+  }
+]

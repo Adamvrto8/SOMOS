@@ -1,0 +1,754 @@
+[
+  {
+    "id": "s343",
+    "es": "Los sábados juego al fútbol con mis amigos.",
+    "tokens": [
+      "Los",
+      "sábados",
+      "juego",
+      "al",
+      "fútbol",
+      "con",
+      "mis",
+      "amigos",
+      "."
+    ]
+  },
+  {
+    "id": "s348",
+    "es": "Estoy viendo una serie española.",
+    "tokens": [
+      "Estoy",
+      "viendo",
+      "una",
+      "serie",
+      "española",
+      "."
+    ],
+    "sk": "Pozerám španielsky seriál.",
+    "en": "I'm watching a Spanish series."
+  },
+  {
+    "id": "s353",
+    "es": "Mis amigos cantaron sevillanas toda la noche.",
+    "tokens": [
+      "Mis",
+      "amigos",
+      "cantaron",
+      "sevillanas",
+      "toda",
+      "la",
+      "noche",
+      "."
+    ],
+    "sk": "Kamaráti celú noc spievali sevillany.",
+    "en": "My friends sang sevillanas all night."
+  },
+  {
+    "id": "s358",
+    "es": "Hice muchas fotos en la playa.",
+    "tokens": [
+      "Hice",
+      "muchas",
+      "fotos",
+      "en",
+      "la",
+      "playa",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Hice",
+        "lemma": "hacer",
+        "hint": "hacer · yo · pretérito",
+        "distractors": [
+          "Hizo",
+          "Hicieron",
+          "Hago"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s402",
+    "es": "Mi equipo favorito es el Real Madrid.",
+    "tokens": [
+      "Mi",
+      "equipo",
+      "favorito",
+      "es",
+      "el",
+      "Real",
+      "Madrid",
+      "."
+    ],
+    "sk": "Môj obľúbený tím je Real Madrid.",
+    "en": "My favorite team is Real Madrid."
+  },
+  {
+    "id": "s410",
+    "es": "De niño jugaba al fútbol todos los días.",
+    "tokens": [
+      "De",
+      "niño",
+      "jugaba",
+      "al",
+      "fútbol",
+      "todos",
+      "los",
+      "días",
+      "."
+    ]
+  },
+  {
+    "id": "s412",
+    "es": "Este sábado jugaremos al fútbol en el parque.",
+    "tokens": [
+      "Este",
+      "sábado",
+      "jugaremos",
+      "al",
+      "fútbol",
+      "en",
+      "el",
+      "parque",
+      "."
+    ]
+  },
+  {
+    "id": "s554",
+    "es": "De niño jugaba al fútbol todas las tardes.",
+    "tokens": [
+      "De",
+      "niño",
+      "jugaba",
+      "al",
+      "fútbol",
+      "todas",
+      "las",
+      "tardes",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s555",
+    "es": "El sábado iremos a un concierto de flamenco en el Albaicín.",
+    "tokens": [
+      "El",
+      "sábado",
+      "iremos",
+      "a",
+      "un",
+      "concierto",
+      "de",
+      "flamenco",
+      "en",
+      "el",
+      "Albaicín",
+      "."
+    ],
+    "sk": "V sobotu pôjdeme na flamencový koncert v Albaicíne.",
+    "en": "On Saturday we're going to a flamenco concert in the Albaicín."
+  },
+  {
+    "id": "s948",
+    "es": "Los domingos jugamos al fútbol en el campo del parque.",
+    "tokens": [
+      "Los",
+      "domingos",
+      "jugamos",
+      "al",
+      "fútbol",
+      "en",
+      "el",
+      "campo",
+      "del",
+      "parque",
+      "."
+    ]
+  },
+  {
+    "id": "s951",
+    "es": "Montamos un puzle de mil piezas.",
+    "tokens": [
+      "Montamos",
+      "un",
+      "puzle",
+      "de",
+      "mil",
+      "piezas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "puzle",
+        "lemma": "puzle"
+      }
+    ]
+  },
+  {
+    "id": "s954",
+    "es": "Entrenamos para el maratón de Madrid.",
+    "tokens": [
+      "Entrenamos",
+      "para",
+      "el",
+      "maratón",
+      "de",
+      "Madrid",
+      "."
+    ],
+    "sk": "Trénujeme na maratón v Madride.",
+    "en": "We are training for the Madrid marathon."
+  },
+  {
+    "id": "s959",
+    "es": "La pelota vasca es un deporte tradicional del País Vasco.",
+    "tokens": [
+      "La",
+      "pelota",
+      "vasca",
+      "es",
+      "un",
+      "deporte",
+      "tradicional",
+      "del",
+      "País",
+      "Vasco",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "newIndex": 3
+      }
+    ],
+    "sk": "Baskická pelota je tradičný šport Baskicka.",
+    "en": "Basque pelota is a traditional sport of the Basque Country."
+  },
+  {
+    "id": "s961",
+    "es": "La afición del equipo no dejó de cantar en todo el partido.",
+    "tokens": [
+      "La",
+      "afición",
+      "del",
+      "equipo",
+      "no",
+      "dejó",
+      "de",
+      "cantar",
+      "en",
+      "todo",
+      "el",
+      "partido",
+      "."
+    ]
+  },
+  {
+    "id": "s962",
+    "es": "Mi afición por la fotografía empezó en el instituto.",
+    "tokens": [
+      "Mi",
+      "afición",
+      "por",
+      "la",
+      "fotografía",
+      "empezó",
+      "en",
+      "el",
+      "instituto",
+      "."
+    ]
+  },
+  {
+    "id": "s963",
+    "es": "Me apunté a un taller de cerámica para desestresarme.",
+    "tokens": [
+      "Me",
+      "apunté",
+      "a",
+      "un",
+      "taller",
+      "de",
+      "cerámica",
+      "para",
+      "desestresarme",
+      "."
+    ]
+  },
+  {
+    "id": "s964",
+    "es": "En la entrega de premios le dieron una medalla de oro.",
+    "tokens": [
+      "En",
+      "la",
+      "entrega",
+      "de",
+      "premios",
+      "le",
+      "dieron",
+      "una",
+      "medalla",
+      "de",
+      "oro",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 8
+      }
+    ]
+  },
+  {
+    "id": "s966",
+    "es": "Me encanta el flamenco: los bailaores son unos artistas.",
+    "tokens": [
+      "Me",
+      "encanta",
+      "el",
+      "flamenco",
+      ":",
+      "los",
+      "bailaores",
+      "son",
+      "unos",
+      "artistas",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "newIndex": 6,
+        "answer": "bailaores",
+        "lemma": "bailaor",
+        "hint": "tanečníci",
+        "distractors": [
+          "bailaor",
+          "jugadores",
+          "lectores"
+        ]
+      }
+    ],
+    "sk": "Zbožňujem flamenco: tanečníci sú skutoční umelci.",
+    "en": "I love flamenco: the dancers are real artists.",
+    "enHints": [
+      "flamenco dancers"
+    ]
+  },
+  {
+    "id": "s403",
+    "es": "Los domingos jugamos al ajedrez con el abuelo.",
+    "tokens": [
+      "Los",
+      "domingos",
+      "jugamos",
+      "al",
+      "ajedrez",
+      "con",
+      "el",
+      "abuelo",
+      "."
+    ]
+  },
+  {
+    "id": "s1261",
+    "es": "Mi hijo ve dibujos animados todas las tardes.",
+    "tokens": [
+      "Mi",
+      "hijo",
+      "ve",
+      "dibujos",
+      "animados",
+      "todas",
+      "las",
+      "tardes",
+      "."
+    ]
+  },
+  {
+    "id": "s1262",
+    "es": "El concierto es el viernes por la noche.",
+    "tokens": [
+      "El",
+      "concierto",
+      "es",
+      "el",
+      "viernes",
+      "por",
+      "la",
+      "noche",
+      "."
+    ]
+  },
+  {
+    "id": "s1265",
+    "es": "Los domingos montamos en bicicleta.",
+    "tokens": [
+      "Los",
+      "domingos",
+      "montamos",
+      "en",
+      "bicicleta",
+      "."
+    ]
+  },
+  {
+    "id": "s1271",
+    "es": "Me encanta ir a la bolera con mis compañeros del trabajo.",
+    "tokens": [
+      "Me",
+      "encanta",
+      "ir",
+      "a",
+      "la",
+      "bolera",
+      "con",
+      "mis",
+      "compañeros",
+      "del",
+      "trabajo",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 5,
+        "answer": "bolera",
+        "lemma": "bolera"
+      }
+    ]
+  },
+  {
+    "id": "s1273",
+    "es": "Pensamos apuntarnos a clases de baile este cuatrimestre.",
+    "tokens": [
+      "Pensamos",
+      "apuntarnos",
+      "a",
+      "clases",
+      "de",
+      "baile",
+      "este",
+      "cuatrimestre",
+      "."
+    ]
+  },
+  {
+    "id": "s1274",
+    "es": "La exposición de Dalí estuvo increíble.",
+    "tokens": [
+      "La",
+      "exposición",
+      "de",
+      "Dalí",
+      "estuvo",
+      "increíble",
+      "."
+    ],
+    "sk": "Výstava Dalího bola úžasná.",
+    "en": "The Dalí exhibition was incredible."
+  },
+  {
+    "id": "s1280",
+    "es": "Le dimos ánimos al equipo hasta quedarnos sin voz.",
+    "tokens": [
+      "Le",
+      "dimos",
+      "ánimos",
+      "al",
+      "equipo",
+      "hasta",
+      "quedarnos",
+      "sin",
+      "voz",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ánimos",
+        "lemma": "ánimo",
+        "distractors": [
+          "medallas",
+          "goleadas",
+          "premios"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s1281",
+    "es": "El partido estuvo aburridísimo; nadie metió ni un gol.",
+    "tokens": [
+      "El",
+      "partido",
+      "estuvo",
+      "aburridísimo",
+      ";",
+      "nadie",
+      "metió",
+      "ni",
+      "un",
+      "gol",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ]
+  },
+  {
+    "id": "s1282",
+    "es": "Mi suegro se pasa todo el domingo viendo fútbol.",
+    "tokens": [
+      "Mi",
+      "suegro",
+      "se",
+      "pasa",
+      "todo",
+      "el",
+      "domingo",
+      "viendo",
+      "fútbol",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "newIndex": 3
+      }
+    ]
+  },
+  {
+    "id": "s1284",
+    "es": "Se me olvidó por completo que hoy era la ceremonia de premios.",
+    "tokens": [
+      "Se",
+      "me",
+      "olvidó",
+      "por",
+      "completo",
+      "que",
+      "hoy",
+      "era",
+      "la",
+      "ceremonia",
+      "de",
+      "premios",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "ceremonia",
+        "lemma": "ceremonia"
+      }
+    ]
+  },
+  {
+    "id": "s1286",
+    "es": "Aunque perdieron, los jugadores dejaron el alma en el campo.",
+    "tokens": [
+      "Aunque",
+      "perdieron",
+      ",",
+      "los",
+      "jugadores",
+      "dejaron",
+      "el",
+      "alma",
+      "en",
+      "el",
+      "campo",
+      "."
+    ]
+  },
+  {
+    "id": "s1288",
+    "es": "La afición del Athletic es de las más fieles del país.",
+    "tokens": [
+      "La",
+      "afición",
+      "del",
+      "Athletic",
+      "es",
+      "de",
+      "las",
+      "más",
+      "fieles",
+      "del",
+      "país",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "newIndex": 4
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 5
+      }
+    ],
+    "sk": "Fanúšikovia Athleticu patria k najvernejším v krajine.",
+    "en": "Athletic's fans are among the most loyal in the country."
+  },
+  {
+    "id": "s1291",
+    "es": "Ir a una feria andaluza es como meterte de lleno en la tradición del sur.",
+    "tokens": [
+      "Ir",
+      "a",
+      "una",
+      "feria",
+      "andaluza",
+      "es",
+      "como",
+      "meterte",
+      "de",
+      "lleno",
+      "en",
+      "la",
+      "tradición",
+      "del",
+      "sur",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "feria",
+        "lemma": "feria",
+        "hint": "slávnosť"
+      }
+    ],
+    "sk": "Ísť na andalúzsky jarmok je ako ponoriť sa priamo do tradície juhu.",
+    "en": "Going to an Andalusian fair is like diving headfirst into southern tradition.",
+    "enHints": [
+      "fair"
+    ]
+  },
+  {
+    "id": "s1607",
+    "es": "Quedamos en vernos a las seis en el café.",
+    "tokens": [
+      "Quedamos",
+      "en",
+      "vernos",
+      "a",
+      "las",
+      "seis",
+      "en",
+      "el",
+      "café",
+      "."
+    ]
+  },
+  {
+    "id": "s2060",
+    "es": "Si ganara la lotería, me dedicaría a viajar y a hacer fotografías.",
+    "tokens": [
+      "Si",
+      "ganara",
+      "la",
+      "lotería",
+      ",",
+      "me",
+      "dedicaría",
+      "a",
+      "viajar",
+      "y",
+      "a",
+      "hacer",
+      "fotografías",
+      "."
+    ]
+  },
+  {
+    "id": "s2061",
+    "es": "Antes de que empiece el partido, compremos unas patatas fritas para verlo con calma.",
+    "tokens": [
+      "Antes",
+      "de",
+      "que",
+      "empiece",
+      "el",
+      "partido",
+      ",",
+      "compremos",
+      "unas",
+      "patatas",
+      "fritas",
+      "para",
+      "verlo",
+      "con",
+      "calma",
+      "."
+    ],
+    "sk": "Skôr než začne zápas, kúpme si nejaké chipsy, aby sme ho pozerali v pokoji.",
+    "en": "Before the match starts, let's buy some crisps to watch it calmly."
+  },
+  {
+    "id": "s2065",
+    "es": "Quiero que me enseñes a jugar al ajedrez para que podamos competir algún día.",
+    "tokens": [
+      "Quiero",
+      "que",
+      "me",
+      "enseñes",
+      "a",
+      "jugar",
+      "al",
+      "ajedrez",
+      "para",
+      "que",
+      "podamos",
+      "competir",
+      "algún",
+      "día",
+      "."
+    ]
+  },
+  {
+    "id": "s2066",
+    "es": "Cuando íbamos a la playa, mi abuelo siempre cargaba la nevera portátil que nadie quería llevar.",
+    "tokens": [
+      "Cuando",
+      "íbamos",
+      "a",
+      "la",
+      "playa",
+      ",",
+      "mi",
+      "abuelo",
+      "siempre",
+      "cargaba",
+      "la",
+      "nevera",
+      "portátil",
+      "que",
+      "nadie",
+      "quería",
+      "llevar",
+      "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 12,
+        "newIndex": 13
+      }
+    ]
+  }
+]
