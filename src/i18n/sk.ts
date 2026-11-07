@@ -963,6 +963,10 @@ export const sk = {
     offerDownHint: 'Začneš od základov. Splnené kroky ostávajú.',
     offerYes: (level: string) => `Áno, na ${level}`,
     offerStay: (level: string) => `Ostanem na ${level}`,
+    /** The end of a level, on the result of the test that closed it. */
+    levelDoneLine: (level: string) => `Úroveň ${level} je hotová`,
+    levelUnits: (n: number) => `${n} ${pluralSk(n, ['jednotka', 'jednotky', 'jednotiek'])}`,
+    levelGrammar: (n: number) => `${n} ${pluralSk(n, ['gramatický bod', 'gramatické body', 'gramatických bodov'])}`,
   },
 
   tests: {

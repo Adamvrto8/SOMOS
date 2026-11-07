@@ -895,6 +895,9 @@ export const en: Dictionary = {
     offerDownHint: 'You start from the basics. The steps you passed stay.',
     offerYes: (level) => `Yes, ${level}`,
     offerStay: (level) => `Stay at ${level}`,
+    levelDoneLine: (level) => `Level ${level} is done`,
+    levelUnits: (n) => counted(n, 'unit', 'units'),
+    levelGrammar: (n) => counted(n, 'grammar point', 'grammar points'),
   },
 
   tests: {

@@ -9,7 +9,7 @@ import { recordMistake, removeMistake } from '../../lib/mistakes'
 import { recordPractice } from '../../lib/practice'
 import { playSound } from '../../lib/sound'
 import { useLessonProgression } from '../../lib/lessonProgress'
-import { unitOfTest, usePathState } from '../../lib/path'
+import { levelDone, unitOfTest, usePathState } from '../../lib/path'
 import { recordTestResult } from '../../lib/testProgress'
 import { createTest, exerciseFilter, isTestUnlocked, testFromParams, testKey, type TestId } from '../../lib/tests'
 import { exerciseInfo, filterToParams } from '../exercises/exercises'
@@ -64,6 +64,8 @@ export function TestPage() {
   const [confirmExit, setConfirmExit] = useState(false)
   const [recording, setRecording] = useState(false) // Vyslovovanie: the mic is open
   const progression = useLessonProgression()
+  // Whether the test's level of the path was finished when the test began: only a test that finishes it is celebrated.
+  const [levelWasDone, setLevelWasDone] = useState(true)
 
   const task: Task | undefined = tasks[index]
   const total = tasks.length
@@ -79,6 +81,7 @@ export function TestPage() {
 
   const start = () => {
     if (!test) return
+    setLevelWasDone(levelDone(pathStates, test.level))
     const next = createTest(test)
     setTasks(next)
     setIndex(0)
@@ -147,6 +150,7 @@ export function TestPage() {
   }
 
   const running = phase === 'test' && task !== undefined
+  const closedLevel = phase === 'result' && !levelWasDone && levelDone(pathStates, test.level) ? { level: test.level, states: pathStates } : undefined
   const progress = total ? (answers.length / total) * 100 : 0
 
   return (
@@ -194,6 +198,7 @@ export function TestPage() {
             onPrepare={() => void navigate(`/practice/lesson?prepare=${testKey(test)}`)}
             onExit={() => void navigate(pathUnit ? '/practice/path' : backTo(test), { replace: true })}
             pathUnit={pathUnit && { unit: pathUnit, states: pathStates }}
+            closedLevel={closedLevel}
           />
         ) : (
           task && (
