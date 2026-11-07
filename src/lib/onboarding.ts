@@ -23,6 +23,8 @@ export const MOTIVATIONS: { id: Motivation; topic: string }[] = [
 ]
 
 export const START_LEVELS: Level[] = ['A1', 'A2', 'B1']
+/** What the stored level may be: the welcome offers START_LEVELS, the level offer of the path can reach B2. */
+const STORED_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 
 export interface OnboardingState {
   done: boolean
@@ -31,24 +33,30 @@ export interface OnboardingState {
   level?: Level
   /** "Ulož si pokrok" after the first lesson is offered once. */
   accountOffered?: boolean
+  /** The other start level after the first lesson of the path is offered once (docs/guided-path-spec.md §10c). */
+  levelOffered?: boolean
 }
 
 function parse(raw: string | null): OnboardingState | null {
   try {
     const data: unknown = raw ? JSON.parse(raw) : null
     if (typeof data !== 'object' || data === null) return null
-    const { done, at, motivation, level, accountOffered } = data as Record<string, unknown>
+    const { done, at, motivation, level, accountOffered, levelOffered } = data as Record<string, unknown>
     return {
       done: done === true,
       at: typeof at === 'number' ? at : undefined,
       motivation: MOTIVATIONS.some((m) => m.id === motivation) ? (motivation as Motivation) : undefined,
-      level: START_LEVELS.includes(level as Level) ? (level as Level) : undefined,
+      level: STORED_LEVELS.includes(level as Level) ? (level as Level) : undefined,
       accountOffered: accountOffered === true,
+      levelOffered: levelOffered === true,
     }
   } catch {
     return null
   }
 }
+
+/** Unit tests: the state as a reload reads it back. */
+export const parseOnboardingForTesting = (raw: string | null) => parse(raw)
 
 function read(): OnboardingState | null {
   try {

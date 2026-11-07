@@ -8,6 +8,7 @@ import {
   forgetOnboardingForTesting,
   getOnboarding,
   MOTIVATIONS,
+  parseOnboardingForTesting,
   shouldOnboard,
   START_LEVELS,
   startFilter,
@@ -82,5 +83,14 @@ describe('the first lessons', () => {
     const next = continueLesson(getProgressionSnapshot(), startFilter({ done: true, motivation: 'travel', level: 'A1' }))
     expect(next.href).toBe('/practice/lesson?type=vocab&topic=travel&level=A1&lesson=1')
     expect(next.started).toBe(false)
+  })
+})
+
+describe('the stored welcome', () => {
+  it('keeps B2 (reached through the level offer) and the offer made, after a reload', () => {
+    const state = parseOnboardingForTesting(JSON.stringify({ done: true, level: 'B2', levelOffered: true }))
+    expect(state).toMatchObject({ done: true, level: 'B2', levelOffered: true })
+    expect(parseOnboardingForTesting(JSON.stringify({ done: true, level: 'C1' }))?.level).toBeUndefined()
+    expect(parseOnboardingForTesting(JSON.stringify({ done: true }))?.levelOffered).toBe(false)
   })
 })
