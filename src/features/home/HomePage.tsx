@@ -5,7 +5,6 @@ import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
 import { DiaryCard } from '../diary/DiaryCard'
 import { useLessonProgression } from '../../lib/lessonProgress'
-import { useMistakes } from '../../lib/mistakes'
 import { useOnboarding } from '../../lib/onboarding'
 import { usePathState } from '../../lib/path'
 import { useReminderProblem } from '../../lib/reminder'
@@ -21,7 +20,6 @@ import { WordOfDayCard } from './WordOfDayCard'
 export function HomePage() {
   const goal = useDailyGoal()
   const activity = useActivity(goal)
-  const mistakes = useMistakes()
   const reminderProblem = useReminderProblem()
   const next = pathOrLesson(usePathState(), useLessonProgression(), useOnboarding())
   const text = useT()
@@ -66,24 +64,9 @@ export function HomePage() {
 
       <NextGoalCard />
 
-      <DiaryCard />
-
       <WordOfDayCard />
 
-      {mistakes && mistakes.length > 0 && (
-        <Link
-          to="/practice/lesson?mistakes=1"
-          className="flex items-center gap-3 rounded-card border border-line bg-surface px-5 py-4 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
-        >
-          <span className="min-w-0 flex-1">
-            <span className="block font-semibold">{text.home.practiceMistakes}</span>
-            <span className="block text-sm text-ink-muted">
-              {text.home.mistakesWaiting(mistakes.length)}
-            </span>
-          </span>
-          <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
-        </Link>
-      )}
+      <DiaryCard />
 
       {activity && <WeekChart activity={activity} goal={goal} />}
     </div>

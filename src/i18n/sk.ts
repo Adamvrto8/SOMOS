@@ -311,7 +311,6 @@ export const sk = {
 
   home: {
     practiceMistakes: 'Precvičiť chyby',
-    mistakesWaiting: (n: number) => `${n} ${pluralSk(n, ['úloha čaká', 'úlohy čakajú', 'úloh čaká'])}`,
     streak: 'Séria',
     /** Under the big number of days. */
     streakDays: (n: number) => `${pluralSk(n, ['deň', 'dni', 'dní'])} v rade`,

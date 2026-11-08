@@ -278,7 +278,6 @@ export const en: Dictionary = {
 
   home: {
     practiceMistakes: 'Practice mistakes',
-    mistakesWaiting: (n) => `${counted(n, 'task', 'tasks')} waiting`,
     streak: 'Streak',
     streakDays: (n) => `${pluralEn(n, 'day', 'days')} in a row`,
     freezes: (n) => pluralEn(n, 'streak freeze', 'streak freezes'),
