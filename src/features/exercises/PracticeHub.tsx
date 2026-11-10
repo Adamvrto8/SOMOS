@@ -1,9 +1,10 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { ArrowDown, ArrowUp, Award, BookOpen, ChevronRight, Dumbbell, Pencil, Play, Route, Swords, type LucideIcon } from 'lucide-react'
+import { ArrowDown, ArrowUp, Award, BookOpen, ChevronRight, Dumbbell, Play, Shuffle, Swords, type LucideIcon } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import { Button } from '../../components/Button'
+import type { Level } from '../../data/types'
 import { loadLastPlayed } from '../../lib/attempts'
 import type { TableTense } from '../../lib/conjugate'
 import { EXERCISE_TYPES, moveExercise, orderExercises, setExerciseOrder, useExerciseOrder, type ExerciseOrderMode } from '../../lib/exerciseOrder'
@@ -11,7 +12,8 @@ import { getNumberedLessonCount, type ExerciseType, type LessonFilter } from '..
 import { getLessonRecord, getRememberedLesson, progressionGroup, useLessonProgression, type LessonProgressionMap } from '../../lib/lessonProgress'
 import { duelsAvailable } from '../../lib/duel/backend'
 import { useMistakes } from '../../lib/mistakes'
-import { nextStep, unitTitle, usePathState } from '../../lib/path'
+import { useOnboarding } from '../../lib/onboarding'
+import { nextStep, usePathState } from '../../lib/path'
 import { continueLesson } from '../home/continueLesson'
 import { exerciseInfo, EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
 
@@ -31,8 +33,8 @@ function passedOf(filter: LessonFilter, map: LessonProgressionMap): { passed: nu
   return { passed, total }
 }
 
-const TILE =
-  'rounded-card border border-line bg-surface transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+const FOCUS = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick'
+const TILE = `rounded-card border border-line bg-surface transition-colors duration-150 hover:border-ink-muted ${FOCUS}`
 
 function Shortcut({ to, icon: Icon, label, badge, tone = 'brick' }: { to: string; icon: LucideIcon; label: string; badge?: number; tone?: 'brick' | 'error' }) {
   return (
@@ -48,24 +50,30 @@ function Shortcut({ to, icon: Icon, label, badge, tone = 'brick' }: { to: string
   )
 }
 
-/** The path (Cesta): its unit to do, or the level walked. */
-function PathCard() {
-  const text = useT().path
-  const states = usePathState()
-  const next = nextStep(states)
-  const level = next?.unit.unit.level ?? states[states.length - 1]?.unit.level ?? 'A1'
-  const ofLevel = states.filter((s) => s.unit.level === level)
+/** The level Zmiešané cvičenie draws from: the next step of Cesta's, else the welcome's, else A1. */
+function useMixedLevel(): Level {
+  const next = nextStep(usePathState())
+  const onboarding = useOnboarding()
+  return next?.unit.unit.level ?? onboarding?.level ?? 'A1'
+}
+
+/** Zmiešané cvičenie: the one filled card of Cvičiť, every exercise type at the learner's level, mistakes first. */
+function MixedCard({ hasMistakes }: { hasMistakes: boolean }) {
+  const text = useT().practice
+  const level = useMixedLevel()
   return (
-    <Link to="/practice/path" className={`${TILE} flex items-center gap-4 p-4`}>
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)]">
-        <Route size={22} strokeWidth={1.75} aria-hidden />
+    <Link
+      to={`/practice/lesson?mixed=${level}`}
+      className={`flex items-center gap-4 rounded-card bg-brick p-4 text-on-accent shadow-[0_6px_20px_-8px_var(--brick)] transition duration-150 hover:brightness-110 active:scale-[0.99] ${FOCUS}`}
+    >
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-on-accent/15">
+        <Shuffle size={22} strokeWidth={1.75} aria-hidden />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-sm text-ink-muted">{text.title}</span>
-        <span className="block font-serif text-xl leading-snug font-semibold">{next ? unitTitle(next.unit.unit) : text.cardDone(level)}</span>
-        {next && <span className="block truncate text-sm text-ink-muted">{text.cardLine(level, next.unit.number, ofLevel.length)}</span>}
+        <span className="block font-serif text-xl leading-snug font-semibold">{text.mixed}</span>
+        <span className="block text-sm opacity-90">{text.mixedLine(level, hasMistakes)}</span>
       </span>
-      <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+      <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 opacity-80" aria-hidden />
     </Link>
   )
 }
@@ -74,7 +82,10 @@ const SEGMENT = 'min-h-11 rounded-full px-3 text-sm font-medium transition-color
 const ICON_BUTTON =
   'flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-brick'
 
-/** The exercises, by the last played or in the learner's own order (arranged with arrows, no dragging). */
+/**
+ * The exercises, by the last played or in the learner's own order. Ordering is out of the way:
+ * "Upraviť poradie" under the list opens the choice and the arrows (no dragging).
+ */
 function ExerciseList() {
   const text = useT().practice
   const progression = useLessonProgression()
@@ -91,25 +102,19 @@ function ExerciseList() {
 
   const pick = (mode: ExerciseOrderMode) => {
     if (mode === order.mode) return
-    if (mode === 'recent') setEditing(false)
-    // The first time, the learner's order starts as the list shown now and opens for arranging.
-    if (mode === 'custom' && order.custom.length === 0) setEditing(true)
+    // The first time, the learner's order starts as the list shown now.
     setExerciseOrder({ mode, custom: mode === 'custom' && order.custom.length === 0 ? shown : order.custom })
   }
   const move = (type: ExerciseType, by: -1 | 1) => setExerciseOrder({ mode: 'custom', custom: moveExercise(shown, type, by) })
+  const arranging = editing && order.mode === 'custom'
 
   return (
     <section aria-labelledby="exercises-heading">
-      <div className="mb-2 flex items-center justify-between gap-2">
+      <div className="mb-2 flex min-h-11 items-center justify-between gap-2">
         <h2 id="exercises-heading" className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
           {text.exercises}
         </h2>
-        <div className="flex items-center gap-1">
-          {order.mode === 'custom' && !editing && (
-            <button type="button" onClick={() => setEditing(true)} aria-label={text.order.edit} className={ICON_BUTTON}>
-              <Pencil size={16} strokeWidth={1.75} aria-hidden />
-            </button>
-          )}
+        {editing && (
           <div role="group" aria-label={text.order.label} className="flex rounded-full bg-surface-2 p-0.5">
             {(['recent', 'custom'] as const).map((mode) => (
               <button
@@ -123,7 +128,7 @@ function ExerciseList() {
               </button>
             ))}
           </div>
-        </div>
+        )}
       </div>
       <ul className="space-y-2">
         {shown.map((type, at) => {
@@ -137,16 +142,24 @@ function ExerciseList() {
                 <Icon size={20} strokeWidth={1.75} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block font-medium">{label}</span>
+                <span className="flex items-baseline justify-between gap-2">
+                  <span className="font-medium">{label}</span>
+                  {total > 0 && !unavailable && <span className="shrink-0 text-xs text-ink-muted tabular-nums">{text.lessonsPassed(passed, total)}</span>}
+                </span>
                 <span className="block text-sm text-ink-muted">
                   {unavailable ?? (played ? selectionLabel(filter, text.everyLevel) : description)}
                 </span>
+                {total > 0 && !unavailable && (
+                  <span className="mt-1.5 block h-1 overflow-hidden rounded-full bg-surface-2" aria-hidden>
+                    <span className="block h-full rounded-full bg-leaf" style={{ width: `${(passed / total) * 100}%` }} />
+                  </span>
+                )}
               </span>
             </>
           )
           return (
             <li key={type}>
-              {editing ? (
+              {arranging ? (
                 <div className={`${TILE} flex items-center gap-2 p-3 pr-1`}>
                   {info}
                   <button type="button" onClick={() => move(type, -1)} disabled={at === 0} aria-label={text.order.up(label)} className={ICON_BUTTON}>
@@ -163,11 +176,6 @@ function ExerciseList() {
               ) : (
                 <Link to={`/practice?${filterToParams(filter)}`} className={`${TILE} flex items-center gap-3 p-3 active:bg-surface-2`}>
                   {info}
-                  {total > 0 && (
-                    <span className="shrink-0 text-xs text-ink-muted tabular-nums">
-                      {passed}/{total}
-                    </span>
-                  )}
                   <ChevronRight size={18} strokeWidth={1.75} className="-ml-1 shrink-0 text-ink-muted" aria-hidden />
                 </Link>
               )}
@@ -175,16 +183,20 @@ function ExerciseList() {
           )
         })}
       </ul>
-      {editing && (
+      {editing ? (
         <Button onClick={() => setEditing(false)} className="mt-3 w-full">
           {text.order.done}
         </Button>
+      ) : (
+        <button type="button" onClick={() => setEditing(true)} className={`mx-auto mt-2 flex min-h-11 items-center rounded-xl px-3 text-sm font-medium text-brick hover:bg-surface-2 ${FOCUS}`}>
+          {text.order.edit}
+        </button>
       )}
     </section>
   )
 }
 
-/** Cvičiť: the path, where to go on, the shortcuts (mistakes, tests, grammar) and the exercises as a grid. */
+/** Cvičiť: Zmiešané cvičenie, where to go on, the shortcuts (mistakes, duel, tests, grammar) and the exercises. Cesta has its own tab. */
 export function PracticeHub() {
   const dictionary = useT()
   const text = dictionary.practice
@@ -192,31 +204,36 @@ export function PracticeHub() {
   const mistakes = useMistakes()
   const next = continueLesson(progression)
   const mistakeCount = mistakes?.length ?? 0
-  const shortcutCount = 2 + (mistakeCount > 0 ? 1 : 0) + (duelsAvailable ? 1 : 0)
+  const shortcutCount = 2 + (duelsAvailable ? 1 : 0)
 
   return (
     <div className="space-y-6">
       <h1 className="font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
 
-      <PathCard />
+      <div className="space-y-3">
+        <MixedCard hasMistakes={mistakeCount > 0} />
 
-      <Link to={next.href} className={`${TILE} flex items-center gap-4 p-4`}>
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brick text-on-accent shadow-[0_6px_20px_-6px_var(--brick)]">
-          <Play size={22} strokeWidth={1.75} className="translate-x-px" aria-hidden />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm text-ink-muted">{next.started ? dictionary.home.continueLesson : dictionary.home.firstLesson}</span>
-          <span className="block font-serif text-xl leading-snug font-semibold">{text.lesson(next.lesson)}</span>
-          <span className="block truncate text-sm text-ink-muted">{next.label}</span>
-        </span>
-      </Link>
+        <Link to={next.href} className={`${TILE} flex items-center gap-4 p-4`}>
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-surface-2 text-ink">
+            <Play size={22} strokeWidth={1.75} className="translate-x-px" aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm text-ink-muted">{next.started ? dictionary.home.continueLesson : dictionary.home.firstLesson}</span>
+            <span className="block truncate font-semibold">{next.label}</span>
+            <span className="block truncate text-sm text-ink-muted">{text.lesson(next.lesson)}</span>
+          </span>
+          <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+        </Link>
+      </div>
 
-      {/* Three in a row; two or four as 2 × 2. */}
-      <div className={`grid gap-2 ${shortcutCount === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+      <div className="space-y-2">
+        {/* Waiting mistakes get a whole row: the same number is on the tab. */}
         {mistakeCount > 0 && <Shortcut to="/practice/lesson?mistakes=1" icon={Dumbbell} label={text.mistakes} badge={mistakeCount} tone="error" />}
-        {duelsAvailable && <Shortcut to="/duel" icon={Swords} label={text.duel} />}
-        <Shortcut to="/practice/tests" icon={Award} label={dictionary.tests.title} />
-        <Shortcut to="/practice/grammar" icon={BookOpen} label={text.grammar} />
+        <div className={`grid gap-2 ${shortcutCount === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+          {duelsAvailable && <Shortcut to="/duel" icon={Swords} label={text.duel} />}
+          <Shortcut to="/practice/tests" icon={Award} label={dictionary.tests.title} />
+          <Shortcut to="/practice/grammar" icon={BookOpen} label={text.grammar} />
+        </div>
       </div>
 
       <ExerciseList />

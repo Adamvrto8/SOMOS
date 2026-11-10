@@ -165,8 +165,8 @@ export function ExercisePage() {
         )}
       </section>
 
-      {/* Above the tab bar while the lessons scroll. */}
-      <div className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 bg-bg/95 px-4 pt-2 pb-3 backdrop-blur">
+      {/* Above the tab bar while the lessons scroll; the room below the button is where Cesta's raised tab sits. */}
+      <div className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 bg-bg/95 px-4 pt-2 pb-9 backdrop-blur">
         <Button
           icon={Play}
           disabled={totalLessons === 0}

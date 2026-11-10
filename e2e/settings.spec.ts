@@ -5,7 +5,7 @@ test('Profil lists what is set; a row opens its own page and the change shows ba
   await page.goto('/profile')
   const goal = page.getByRole('link', { name: /^Denný cieľ/ })
   await expect(goal).toContainText('20')
-  await expect(page.getByRole('link', { name: /^Opakovanie slov/ })).toContainText('20 denne')
+  await expect(page.getByRole('link', { name: /^Kartičky z cvičení/ })).toContainText('20 denne')
   await expect(page.getByRole('link', { name: /^Pripomienka/ })).toContainText('Vypnuté')
   await expect(page.getByRole('link', { name: /^Vzhľad/ })).toContainText('Pôvodný')
 
@@ -52,10 +52,10 @@ test('a learner sees no developer tools until the version is tapped seven times'
   await expect(tools).toHaveCount(0)
 })
 
-test('the tab bar ends with Profil, its numbers there without an account; Archív opens from Hľadať', async ({ page }) => {
+test('the tab bar has Cesta in the middle and ends with Profil, its numbers there without an account; Môj slovník opens from Profil', async ({ page }) => {
   await page.goto('/')
   const bar = page.getByRole('navigation', { name: 'Hlavná navigácia' })
-  await expect(bar.getByRole('link')).toHaveText(['Domov', 'Hľadať', 'Cvičiť', 'Profil'])
+  await expect(bar.getByRole('link')).toHaveText(['Domov', 'Hľadať', 'Cesta', 'Cvičiť', 'Profil'])
   await bar.getByRole('link', { name: 'Profil' }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profil')
   await expect(page.getByRole('heading', { name: 'Moje štatistiky' })).toBeVisible()
@@ -63,11 +63,10 @@ test('the tab bar ends with Profil, its numbers there without an account; Archí
   // Without an account there is nothing to sign out of.
   await expect(button(page, 'Odhlásiť sa')).toHaveCount(0)
 
-  await bar.getByRole('link', { name: 'Hľadať' }).tap()
-  await page.getByRole('link', { name: /^Môj archív/ }).tap()
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Archív')
-  // Still under Hľadať in the bar.
-  await expect(bar.getByRole('link', { name: 'Hľadať' })).toHaveAttribute('aria-current', 'page')
+  await page.getByRole('region', { name: 'Môj slovník' }).getByRole('link', { name: /^Uložené/ }).tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Môj slovník')
+  // Still under Profil in the bar.
+  await expect(bar.getByRole('link', { name: 'Profil' })).toHaveAttribute('aria-current', 'page')
 
   // Old addresses of Nastavenia lead to Profil.
   await page.goto('/archive/settings/sound')

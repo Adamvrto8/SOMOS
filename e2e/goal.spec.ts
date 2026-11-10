@@ -132,7 +132,7 @@ test('in a review the card that completes the goal waits under the sun', async (
   await expect(sun(page)).toContainText('Denný cieľ splnený · 10/10')
   await expect(card).toHaveText(word)
   await sun(page).tap()
-  await expect(page.getByText(/^Zopakoval si 1 kartu/)).toBeVisible()
+  await expect(page.getByText(/^Prešiel si 1 kartičku/)).toBeVisible()
 })
 
 test('Nastavenia can show the sun without an answer, each time with another streak, and nothing is counted', async ({ page }) => {

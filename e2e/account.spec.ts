@@ -140,8 +140,8 @@ test('the privacy policy opens from the sign-in page', async ({ page }) => {
 test('the first sign-in takes the progress already on the device to the account', async ({ page }) => {
   const calls = await fakeSupabase(page)
   await page.goto('/word/casa')
-  await page.getByRole('button', { name: 'Uložiť do archívu' }).first().tap()
-  await expect(page.getByRole('button', { name: 'Odstrániť z archívu' }).first()).toBeVisible()
+  await page.getByRole('button', { name: 'Uložiť do môjho slovníka' }).first().tap()
+  await expect(page.getByRole('button', { name: 'Odstrániť z môjho slovníka' }).first()).toBeVisible()
   await signInWithCode(page)
   await expect(page.getByRole('status').filter({ hasText: 'Synchronizované práve teraz' })).toBeVisible()
   expect(calls.pushed).toContainEqual({ kind: 'saved', key: 'word:casa' })
@@ -179,7 +179,7 @@ test('Štatistiky používania show the numbers to an admin, and say no to any o
   await expect(rows.nth(2)).toContainText('60 %')
   await expect(rows.nth(2)).toContainText('4')
   await expect(page.getByText('Všetky úrovne')).toBeVisible()
-  await expect(rows.nth(3)).toContainText('Zmiešané (chyby, príprava na test)')
+  await expect(rows.nth(3)).toContainText('Zmiešané druhy (Cesta, chyby, testy, Zmiešané cvičenie)')
   if (process.env.USAGE_SCREENSHOT) await page.screenshot({ path: process.env.USAGE_SCREENSHOT, fullPage: true })
 })
 

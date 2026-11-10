@@ -196,7 +196,7 @@ export function TestPage() {
             onAccept={accept}
             onAgain={start}
             onPrepare={() => void navigate(`/practice/lesson?prepare=${testKey(test)}`)}
-            onExit={() => void navigate(pathUnit ? '/practice/path' : backTo(test), { replace: true })}
+            onExit={() => void navigate(pathUnit ? '/path' : backTo(test), { replace: true })}
             pathUnit={pathUnit && { unit: pathUnit, states: pathStates }}
             closedLevel={closedLevel}
           />

@@ -1,4 +1,4 @@
-import { ArrowRight, CircleCheck } from 'lucide-react'
+import { ArrowRight, ChevronRight, CircleCheck, Play, Route } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import { useReviewOverview } from '../../lib/srs'
@@ -60,6 +60,24 @@ export function ReviewCard({ next }: { next: ContinueLesson }) {
           <CircleCheck size={16} strokeWidth={1.75} className="shrink-0 text-leaf" aria-hidden />
           {text.reviewDone}
         </p>
+      )}
+      {/* While flashcards lead, the next step stays one tap away, quietly. */}
+      {reviewing && (
+        <Link
+          to={next.href}
+          className="mt-5 flex items-center gap-3 rounded-card border border-line bg-surface/90 px-4 py-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick active:bg-surface-2"
+        >
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-surface-2">
+            {next.path ? <Route size={18} strokeWidth={1.75} aria-hidden /> : <Play size={18} strokeWidth={1.75} className="translate-x-px" aria-hidden />}
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate font-semibold">{next.path ? pathText.homeRow(next.label) : heading}</span>
+            <span className="block truncate text-sm text-ink-muted">
+              {next.path && step ? `${step} · ${pathText.stepOf(next.path.stepNo, next.path.steps)}` : text.lessonLine(next.lesson, next.label)}
+            </span>
+          </span>
+          <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+        </Link>
       )}
     </section>
   )

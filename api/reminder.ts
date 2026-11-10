@@ -266,7 +266,7 @@ function composeEnglish({ done, goal, due, streak }: TodayView): Message {
     const streakPart = streak > 0 ? ` · ${streak}-day streak 🔥` : ''
     return { title: `${goal - done} to go for the daily goal`, body: `Today ${done}/${goal}${streakPart}` }
   }
-  const waiting = due ? `To review: ${plural(due, 'card', 'cards')}` : `Daily goal: ${plural(goal, 'correct answer', 'correct answers')}`
+  const waiting = due ? `Flashcards for today: ${due}` : `Daily goal: ${plural(goal, 'correct answer', 'correct answers')}`
   if (streak > 0) return { title: `🔥 A ${streak}-day streak is waiting for today`, body: `${waiting} · a few minutes is enough` }
   return { title: '¿Practicamos? 🇲🇽', body: waiting }
 }
@@ -279,7 +279,7 @@ export function composeMessage(view: TodayView, language?: 'sk' | 'en'): Message
     return { title: `Ešte ${goal - done} do denného cieľa`, body: `Dnes ${done}/${goal}${streakPart}` }
   }
   const waiting = due
-    ? `Na zopakovanie: ${due} ${pluralSk(due, ['kartička', 'kartičky', 'kartičiek'])}`
+    ? `Kartičky na dnes: ${due}`
     : `Denný cieľ: ${goal} ${pluralSk(goal, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`
   if (streak > 0) return { title: `🔥 Séria ${days(streak)} čaká na dnešok`, body: `${waiting} · stačí pár minút` }
   return { title: '¿Practicamos? 🇲🇽', body: waiting }

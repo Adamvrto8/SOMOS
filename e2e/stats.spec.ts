@@ -45,7 +45,7 @@ test('the week chart on Domov opens the overview: streaks, a longer history, wha
   await expect(history).not.toContainText('cieľ splnený')
 
   const practised = page.getByRole('region', { name: /^Čo si cvičil/ })
-  await expect(practised.getByRole('listitem')).toHaveText([/^Slovná zásoba/, /^Opakovanie/])
+  await expect(practised.getByRole('listitem')).toHaveText([/^Slovná zásoba/, /^Kartičky/])
 
   await page.getByRole('button', { name: 'Späť' }).tap()
   await expect(page).toHaveURL(/\/$/)

@@ -53,10 +53,10 @@ test('the screens are in English: search, a lesson with its feedback, review and
   await page.getByRole('button', { name: 'Continue', exact: true }).tap()
 
   await page.goto('/review')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Nothing to review')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('No flashcards for today')
 
   await page.goto('/archive')
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Archive')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('My dictionary')
   await expect(page.getByRole('tab', { name: /^Mistakes/ })).toBeVisible()
   await context.close()
 })

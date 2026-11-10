@@ -110,6 +110,7 @@ async function buildLesson(filter: LessonFilter, fromMistakes: boolean, lessonNu
  * `?lesson=X` plays the fixed, numbered lesson X.
  * `?prepare=food:A1` (a test key) practises the material of that test ("Pripraviť sa").
  * `?path=a1-food-1&step=words` plays a step of the path (src/lib/path.ts), scored like a numbered lesson.
+ * `?mixed=A1` is Zmiešané cvičenie of Cvičiť: the level exam's preparation (mistakes first, then the least practised).
  */
 export function LessonPage() {
   const dictionary = useT()
@@ -120,14 +121,18 @@ export function LessonPage() {
   // The lesson the welcome ends in: closing it goes to Domov, and its result offers an account.
   const firstLesson = params.get('first') === '1'
   const pathStep = useMemo(() => (fromMistakes ? undefined : parsePathStep(params.get('path'), params.get('step'))), [fromMistakes, params])
-  const prepareKey = fromMistakes || pathStep ? null : params.get('prepare')
+  // Zmiešané cvičenie is played as the preparation for its level's exam; only its name and way back differ.
+  const mixedParam = fromMistakes || pathStep ? null : params.get('mixed')
+  const mixedTest = parseTestKey(mixedParam)
+  const mixing = mixedTest !== undefined && !mixedTest.topic && !mixedTest.type
+  const prepareKey = fromMistakes || pathStep ? null : mixing ? mixedParam : params.get('prepare')
   const preparing = parseTestKey(prepareKey) !== undefined
   const lessonParam = fromMistakes || preparing || pathStep ? null : params.get('lesson')
   const lessonNumber = lessonParam === null ? undefined : Number(lessonParam)
   const rawGroup = filter.type === 'conjugation' ? (filter.tense ?? 'all') : (filter.topic ?? 'all')
   const group = progressionGroup(rawGroup, filter.level)
   // Usage statistics (lessonUsage.ts): the lesson on screen, started once and ended once.
-  const source: LessonSource = firstLesson ? 'first' : fromMistakes ? 'mistakes' : preparing ? 'test' : pathStep ? 'path' : 'lesson'
+  const source: LessonSource = firstLesson ? 'first' : fromMistakes ? 'mistakes' : mixing ? 'mixed' : preparing ? 'test' : pathStep ? 'path' : 'lesson'
   const usage = useMemo(() => lessonUsage(filter, source, parseTestKey(prepareKey), pathStep?.unit), [filter, source, prepareKey, pathStep])
   const run = useRef<LessonRun | null>(null)
   /** A fresh lesson (not a correction round, not a passed lesson's overview). */
@@ -260,8 +265,10 @@ export function LessonPage() {
       const test = parseTestKey(prepareKey)
       const fallback = fromMistakes
         ? '/archive?tab=mistakes'
-        : pathStep
-          ? '/practice/path'
+        : mixing
+          ? '/practice'
+          : pathStep
+          ? '/path'
           : test
             ? `/practice/test?${testToParams(test)}`
             : `/practice?${filterToParams(filter)}`
@@ -507,7 +514,7 @@ export function LessonPage() {
                   ? `${dictionary.archive.tabs.mistakes} · `
                   : pathStep
                     ? `${pathText.unit(pathUnit?.number ?? 1)} · ${pathText.steps[pathStep.step]}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · `
-                    : preparing ? `${dictionary.tests.preparing} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
+                    : mixing ? `${dictionary.practice.mixed} · ` : preparing ? `${dictionary.tests.preparing} · ` : runLesson ? `${dictionary.practice.lesson(runLesson)}${round === 'fix' ? ` · ${text.fixing}` : round === 'resume' ? ` · ${text.resuming}` : ''} · ` : ''}
                 {exerciseInfo(task.kind).instruction}
               </p>
               <div className="mt-4">

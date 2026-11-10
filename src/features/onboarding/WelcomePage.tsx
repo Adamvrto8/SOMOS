@@ -1,4 +1,4 @@
-import { Bell, Briefcase, CircleUser, GraduationCap, House, Palette, PencilLine, Plane, Search, Smile, Sprout, TreeDeciduous, Users, Flower2 } from 'lucide-react'
+import { Bell, Briefcase, CircleUser, GraduationCap, House, Palette, PencilLine, Plane, Route, Search, Smile, Sprout, TreeDeciduous, Users, Flower2 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Azulejos } from '../../components/Azulejos'
@@ -374,6 +374,7 @@ function ReadyStep({ frame }: { frame: StepProps['frame'] }) {
   const tabs = [
     { key: 'home', icon: House },
     { key: 'search', icon: Search },
+    { key: 'path', icon: Route },
     { key: 'practice', icon: PencilLine },
     { key: 'profile', icon: CircleUser },
   ] as const

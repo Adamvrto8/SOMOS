@@ -42,7 +42,7 @@ const SCREENS: [RegExp, Screen][] = [
   [/^\/word\//, 'word'],
   [/^\/topic\//, 'topic'],
   [/^\/practice\/?$/, 'practice'],
-  [/^\/practice\/path\/?$/, 'path'],
+  [/^\/path\/?$/, 'path'],
   [/^\/practice\/grammar(\/|$)/, 'grammar'],
   [/^\/practice\/tests\/?$/, 'tests'],
   [/^\/practice\/test\/?$/, 'test'],

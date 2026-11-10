@@ -36,7 +36,6 @@ test('a backup carries the settings to another device', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('data-look', 'talavera')
   // The own order of the exercises came over: Priraďovanie first in Cvičiť.
   await page.goto('/practice')
-  await expect(button(page, 'Moje')).toHaveAttribute('aria-pressed', 'true')
   await expect(page.getByRole('region', { name: 'Cvičenia' }).getByRole('listitem').first()).toContainText('Priraďovanie')
   await page.goto('/profile/backup')
 

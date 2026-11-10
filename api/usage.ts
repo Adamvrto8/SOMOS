@@ -47,7 +47,7 @@ const TYPES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'voca
 const LEVELS = ['A1', 'A2', 'B1', 'B2']
 const STEPS = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done']
 const SCREENS = ['home', 'search', 'word', 'topic', 'practice', 'path', 'grammar', 'tests', 'test', 'duel', 'archive', 'profile', 'review', 'stats']
-const SOURCES = ['lesson', 'mistakes', 'test', 'first', 'path']
+const SOURCES = ['lesson', 'mistakes', 'test', 'first', 'path', 'mixed']
 
 type Check = (value: unknown) => boolean
 const oneOf =

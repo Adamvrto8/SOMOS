@@ -193,7 +193,7 @@ test('a passed lesson opens on its overview', async ({ page }) => {
   await expect(page.getByText('Splnená (9/10)')).toBeVisible()
   await expect(page.getByRole('listitem')).toHaveCount(10)
 
-  await button(page, 'Zopakovať lekciu').tap()
+  await button(page, 'Ešte raz celú lekciu').tap()
   await expect(field(page)).toBeVisible()
   await expect(page.locator('header')).toContainText('1/10')
 })
@@ -258,11 +258,13 @@ test('the exercises in Cvičiť: by the last played, or arranged by hand and kep
   await page.goto('/practice')
   const list = page.getByRole('region', { name: 'Cvičenia' })
   const items = list.getByRole('listitem')
-  // Nothing played yet: the default order.
-  await expect(button(page, 'Naposledy')).toHaveAttribute('aria-pressed', 'true')
+  // Nothing played yet: the default order, the choice out of the way under the list.
   await expect(items.first()).toContainText('Doplňovačka')
+  await expect(button(page, 'Naposledy')).toHaveCount(0)
+  await button(page, 'Upraviť poradie').tap()
+  await expect(button(page, 'Naposledy')).toHaveAttribute('aria-pressed', 'true')
 
-  // The first time "Moje" opens the arrows; the order moves one place a tap.
+  // "Moje" opens the arrows; the order moves one place a tap.
   await button(page, 'Moje').tap()
   await expect(list.getByRole('link')).toHaveCount(0)
   await expect(button(page, 'Posunúť vyššie: Doplňovačka')).toBeDisabled()
@@ -276,13 +278,15 @@ test('the exercises in Cvičiť: by the last played, or arranged by hand and kep
 
   // Kept after a reload; "Naposledy" brings the recency order back without losing the own one.
   await page.reload()
-  await expect(button(page, 'Moje')).toHaveAttribute('aria-pressed', 'true')
   await expect(items.first()).toContainText('Výber z možností')
+  await button(page, 'Upraviť poradie').tap()
+  await expect(button(page, 'Moje')).toHaveAttribute('aria-pressed', 'true')
   await button(page, 'Naposledy').tap()
   await expect(items.first()).toContainText('Doplňovačka')
   await button(page, 'Moje').tap()
   await expect(items.first()).toContainText('Výber z možností')
-  await expect(button(page, 'Hotovo')).toHaveCount(0)
+  await button(page, 'Hotovo').tap()
+  await expect(button(page, 'Moje')).toHaveCount(0)
 })
 
 test('an exercise shows its lessons as a grid; the picked topic and level come back on its tile', async ({ page }) => {
@@ -321,7 +325,7 @@ test('an exercise shows its lessons as a grid; the picked topic and level come b
   await page.goto('/practice')
   const tile = page.getByRole('region', { name: 'Cvičenia' }).getByRole('link', { name: /Doplňovačka/ })
   await expect(tile).toContainText('Jedlo a pitie · Všetky úrovne')
-  await expect(tile).toContainText(/0\/\d+/)
+  await expect(tile).toContainText(/0 z \d+ lekcií/)
   await tile.tap()
   await expect(page).toHaveURL(/\/practice\?type=cloze&topic=food/)
   await expect(page.getByRole('button', { name: 'Jedlo a pitie', exact: true })).toHaveAttribute('aria-pressed', 'true')

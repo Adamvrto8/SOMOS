@@ -52,7 +52,12 @@ export const sk = {
     home: 'Domov',
     search: 'Hľadať',
     practice: 'Cvičiť',
-    /** The fourth tab: the learner's numbers, account and Nastavenia. */
+    /** The middle tab: the guided path (src/features/path). */
+    path: 'Cesta',
+    /** The numbers on the tabs: flashcards due today (Domov), mistakes waiting (Cvičiť). */
+    dueBadge: (n: number) => `${n} ${pluralSk(n, ['kartička', 'kartičky', 'kartičiek'])} na dnes`,
+    mistakesBadge: (n: number) => `${n} ${pluralSk(n, ['chyba', 'chyby', 'chýb'])} na opravu`,
+    /** The fifth tab: the learner's numbers, account and Nastavenia. */
     profile: 'Profil',
     searchWord: 'Hľadať slovo',
   },
@@ -69,17 +74,17 @@ export const sk = {
     look: 'Štýl',
     lookOptions: { classic: 'Pôvodný', talavera: 'Talavera', barragan: 'Barragán', agave: 'Agáve' },
     dailyGoal: 'Denný cieľ',
-    dailyGoalHint: 'Počet správnych odpovedí za deň – v lekciách aj pri opakovaní.',
+    dailyGoalHint: 'Počet správnych odpovedí za deň – v lekciách aj v kartičkách.',
     sound: 'Zvuky',
     soundOptions: { off: 'Vypnuté', suave: 'Suave', marimba: 'Marimba' },
     soundHint: 'Pri odpovedi, na konci lekcie a pri splnení denného cieľa. Hlasitosť sa riadi hlasitosťou médií v telefóne.',
     version: 'Verzia',
     /** The groups of rows on the main page. */
-    groups: { learning: 'Učenie', app: 'Aplikácia', data: 'Údaje', dev: 'Vývoj' },
+    groups: { mine: 'Môj slovník', learning: 'Učenie', app: 'Aplikácia', data: 'Údaje', dev: 'Vývoj' },
     /** Profil, above the settings: the learner's numbers. */
     stats: 'Moje štatistiky',
     goalOption: (n: number) => `${n} ${pluralSk(n, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`,
-    /** The value of a switched-off row: Automatické opakovanie · Vypnuté */
+    /** The value of a switched-off row: Kartičky z cvičení · Vypnuté */
     off: 'Vypnuté',
     /** The value of a switched-on row: Anonymné štatistiky · Zapnuté */
     on: 'Zapnuté',
@@ -121,12 +126,12 @@ export const sk = {
         exercises: 'Cvičenia',
         levels: 'Úrovne',
         allLevels: 'Všetky úrovne',
-        mixed: 'Zmiešané (chyby, príprava na test)',
+        mixed: 'Zmiešané druhy (Cesta, chyby, testy, Zmiešané cvičenie)',
         started: 'Začaté',
         finished: 'Dokončené',
         usualStop: 'Odchod pri úlohe',
         screens: 'Obrazovky',
-        screenNames: { home: 'Domov', search: 'Hľadať', word: 'Detail slova', topic: 'Téma', practice: 'Cvičiť', grammar: 'Gramatika', tests: 'Testy', test: 'Test', duel: 'Duel', archive: 'Archív', profile: 'Profil', review: 'Opakovanie', stats: 'Štatistiky' } as Record<string, string>,
+        screenNames: { home: 'Domov', search: 'Hľadať', word: 'Detail slova', topic: 'Téma', practice: 'Cvičiť', path: 'Cesta', grammar: 'Gramatika', tests: 'Testy', test: 'Test', duel: 'Duel', archive: 'Môj slovník', profile: 'Profil', review: 'Kartičky', stats: 'Štatistiky' } as Record<string, string>,
         tooFew: 'Zatiaľ málo údajov, percentá sa neukazujú.',
         forbidden: 'Tento účet nemá prístup.',
         failed: 'Štatistiky sa nepodarilo načítať.',
@@ -170,11 +175,11 @@ export const sk = {
     },
 
     autoReview: {
-      title: 'Automatické opakovanie',
+      title: 'Kartičky z cvičení',
       /** Its row in the list, where the full name does not fit next to "20 denne". */
-      row: 'Opakovanie slov',
-      toggle: 'Opakovať precvičené slová',
-      toggleHint: 'Slová zo Slovnej zásoby a Časovania sa vrátia na zopakovanie.',
+      row: 'Kartičky z cvičení',
+      toggle: 'Robiť kartičky z precvičených slov',
+      toggleHint: 'Slová zo Slovnej zásoby a Časovania pribudnú medzi kartičky.',
       limit: 'Najviac za deň',
       limitLabel: 'Najviac precvičených slov za deň',
       limitHint: 'Tvoje ⭐ a vlastné slová prídu na rad vždy, limit platí len pre precvičené slová.',
@@ -223,7 +228,7 @@ export const sk = {
       badVersion: (version: string) => `Nepodporovaná verzia zálohy (${version}).`,
       restored: (r: ImportSummary) => {
         const parts = [`uložené: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
-        if (r.reviewCards) parts.push(`karty na opakovanie: ${r.reviewCards}`)
+        if (r.reviewCards) parts.push(`kartičky: ${r.reviewCards}`)
         if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
         if (r.diary) parts.push(`zápisy v denníku: ${r.diary}`)
         if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
@@ -310,7 +315,7 @@ export const sk = {
   },
 
   home: {
-    practiceMistakes: 'Precvičiť chyby',
+    practiceMistakes: 'Opraviť chyby',
     streak: 'Séria',
     /** Under the big number of days. */
     streakDays: (n: number) => `${pluralSk(n, ['deň', 'dni', 'dní'])} v rade`,
@@ -333,18 +338,18 @@ export const sk = {
     /** Under "¡Meta cumplida!", the moment the goal is reached. */
     goalReachedOf: (goal: number) => `Denný cieľ splnený · ${goal}/${goal}`,
     goalLeft: (left: number) => `denný cieľ · ešte ${left}`,
-    dueToday: 'Na zopakovanie dnes',
+    dueToday: 'Kartičky na dnes',
     continueLesson: 'Pokračuj v lekcii',
     firstLesson: 'Začni prvou lekciou',
     words: (n: number) => `${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     sentences: (n: number) => `${n} ${pluralSk(n, ['veta', 'vety', 'viet'])}`,
     minutes: (n: number) => `asi ${n} min`,
-    reviewAria: (n: number) => `Zopakovať ${n}`,
+    reviewAria: (n: number) => `Prejsť kartičky (${n})`,
     lessonAria: (lesson: number, label: string) => `Lekcia ${lesson}: ${label}`,
     lessonLine: (lesson: number, label: string) => `Lekcia ${lesson} · ${label}`,
-    reviewDone: 'Opakovanie na dnes hotové',
+    reviewDone: 'Kartičky na dnes hotové',
     week: 'Posledných 7 dní',
-    noActivity: 'Zatiaľ žiadna aktivita. Každá správna odpoveď v lekcii aj pri opakovaní sa ráta.',
+    noActivity: 'Zatiaľ žiadna aktivita. Každá správna odpoveď v lekcii aj v kartičkách sa ráta.',
     answers: (n: number) => `${n} ${pluralSk(n, ['odpoveď', 'odpovede', 'odpovedí'])}`,
     percentCorrect: (percent: number) => `${percent} % správne`,
     goalLegend: (goal: number, days: number) => `denný cieľ ${goal} · splnený ${days} z 7 dní`,
@@ -374,7 +379,7 @@ export const sk = {
     nextDay: 'Nasledujúci deň',
     goalMet: 'cieľ splnený',
     byExercise: (n: number) => `Čo si cvičil · ${n} dní`,
-    review: 'Opakovanie',
+    review: 'Kartičky',
     nothing: 'V tomto období žiadne odpovede.',
   },
 
@@ -407,10 +412,6 @@ export const sk = {
     nothing: (query: string) => `Nenašli sme nič pre „${query}“.`,
     nothingHint: 'Skús iný tvar slova alebo slovenský výraz.',
     topics: 'Témy',
-    /** The card above the topics that opens Archív. */
-    archive: 'Môj archív',
-    archiveCounts: (saved: number, mine: number) =>
-      `${saved} ${pluralSk(saved, ['uložené', 'uložené', 'uložených'])} · ${mine} ${pluralSk(mine, ['moje slovo', 'moje slová', 'mojich slov'])}`,
     words: (n: number) => `${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     topicNotFound: 'Téma sa nenašla',
     previousTopic: 'Predchádzajúca téma',
@@ -426,7 +427,7 @@ export const sk = {
       hint: 'Pre slová a vety, ktoré v slovníku nie sú.',
       direction: 'Smer prekladu',
       machine: spain ? 'Strojový preklad, nemusí byť presný.' : 'Strojový preklad, nemusí byť mexický ani presný.',
-      add: 'Pridať do Moje slová',
+      add: 'Pridať do môjho slovníka',
       translating: 'Prekladám…',
       translate: 'Preložiť',
       tooLong: (max: number) => `Najviac ${max} znakov.`,
@@ -487,8 +488,8 @@ export const sk = {
     note: 'Poznámka',
     examples: 'Príklady',
     topics: 'Témy',
-    save: 'Uložiť do archívu',
-    unsave: 'Odstrániť z archívu',
+    save: 'Uložiť do môjho slovníka',
+    unsave: 'Odstrániť z môjho slovníka',
     saved: 'Uložené',
     saveShort: 'Uložiť',
     conjugation: 'Časovanie',
@@ -504,22 +505,22 @@ export const sk = {
   },
 
   archive: {
-    title: 'Archív',
-    reviewToday: (n: number) => `Zopakovať dnes (${n})`,
-    tabs: { saved: 'Uložené', mine: 'Moje slová', mistakes: 'Chyby' },
-    searchLabel: 'Hľadať v archíve',
+    title: 'Môj slovník',
+    reviewToday: (n: number) => `Prejsť kartičky (${n})`,
+    tabs: { saved: 'Uložené', mine: 'Pridané', mistakes: 'Chyby' },
+    searchLabel: 'Hľadať v mojom slovníku',
     topic: 'Téma',
     noMatches: 'Nič nezodpovedá hľadaniu.',
     savedEmptyTitle: 'Zatiaľ nič uložené',
-    savedEmptyText: 'Na detaile slova alebo po odpovedi v cvičení ťukni na hviezdičku. Uložené sa ti budú vracať na zopakovanie.',
+    savedEmptyText: 'Na detaile slova alebo po odpovedi v cvičení ťukni na hviezdičku. Uložené slová sa ti budú vracať ako kartičky.',
     searchWords: 'Hľadať slová',
     words: 'Slová',
     sentences: 'Vety',
-    customEmptyTitle: 'Zatiaľ žiadne vlastné slová',
+    customEmptyTitle: 'Zatiaľ žiadne pridané slová',
     customEmptyText: 'Počul si niekde slovo, ktoré v slovníku nie je? Pridaj si ho aj s prekladom a poznámkou.',
     addWord: 'Pridať slovo',
     mistakesEmptyTitle: 'Žiadne chyby',
-    mistakesEmptyText: 'Keď v lekcii odpovieš zle, úloha sa uloží sem. Precvičíš si ju, kedy chceš, a keď ju budeš vedieť, odstrániš ju.',
+    mistakesEmptyText: 'Keď v lekcii odpovieš zle, úloha sa uloží sem. Opravíš si ju, kedy chceš, a keď ju budeš vedieť, odstrániš ju.',
     timesWrong: (n: number) => `${n}× zle`,
     removeMistake: 'Odstrániť z chýb',
     clearAll: 'Vymazať všetky chyby',
@@ -553,7 +554,7 @@ export const sk = {
     grammar: 'Gramatika',
     tense: 'Čas',
     /** The card under the tenses of the conjugation drill: the tense's grammar tip. */
-    tenseGrammar: (tense: string) => `Rýchle opakovanie: ${tense}`,
+    tenseGrammar: (tense: string) => `Ťahák: ${tense}`,
     tenseGrammarHint: 'Čo to je, kedy sa používa a ako sa tvorí',
     topic: 'Téma',
     all: 'Všetko',
@@ -567,7 +568,7 @@ export const sk = {
     lesson: (n: number) => `Lekcia ${n}`,
     best: (score: number, total: number, needed: number) => `Najlepšie: ${score}/${total} (potrebuješ aspoň ${needed}/${total})`,
     ready: (n: number) => `${n} ${pluralSk(n, ['úloha', 'úlohy', 'úloh'])} · pripravené`,
-    repeatFirst: 'Zopakovať Lekciu 1',
+    repeatFirst: 'Ešte raz od Lekcie 1',
     continueWith: (n: number) => `Pokračovať (Lekcia ${n})`,
     allDone: 'Všetky lekcie sú úspešne zvládnuté! ✓',
     allDoneTopic: 'Všetky lekcie v tejto téme sú úspešne zvládnuté! ✓',
@@ -583,8 +584,13 @@ export const sk = {
       up: (name: string) => `Posunúť vyššie: ${name}`,
       down: (name: string) => `Posunúť nižšie: ${name}`,
     },
-    mistakes: 'Chyby',
+    mistakes: 'Opraviť chyby',
     duel: 'Duel',
+    /** The first card of Cvičiť: tasks of every type at the learner's level, mistakes first. */
+    mixed: 'Zmiešané cvičenie',
+    mixedLine: (level: string, mistakes: boolean) => (mistakes ? `10 úloh z ${level} a z tvojich chýb` : `10 úloh z celej úrovne ${level}`),
+    /** Under an exercise of the hub: 2 z 6 lekcií */
+    lessonsPassed: (passed: number, total: number) => `${passed} z ${total} ${pluralSk(total, ['lekcie', 'lekcií', 'lekcií'])}`,
     /** How a lesson of the grid is read out: Lekcia 12, aktuálna */
     lessonState: {
       passed: 'splnená',
@@ -607,7 +613,7 @@ export const sk = {
     noTasks: 'Žiadne úlohy',
     noMistakesHint: 'V zozname chýb nič nie je. Zlé odpovede z lekcií sa sem ukladajú automaticky.',
     noTasksHint: 'Pre tento výber zatiaľ nie sú úlohy. Skús inú tému alebo úroveň.',
-    repeat: 'Zopakovať lekciu',
+    repeat: 'Ešte raz celú lekciu',
     quitQuestion: 'Ukončiť lekciu?',
     quitHint: 'Odpovede, ktoré si už dal, ostanú uložené.',
     carryOn: 'Pokračovať',
@@ -631,10 +637,10 @@ export const sk = {
     meaningNote: 'Prízvuk mení význam:',
     speechAlmost: 'Takmer — jedno slovo som nepočul.',
     irregularNote: 'Nepravidelný tvar – oplatí sa ho zapamätať.',
-    staysInMistakes: 'Ostáva v Chybách, zopakuješ si to neskôr.',
+    staysInMistakes: 'Ostáva v Chybách, opravíš si to neskôr.',
     matchWrongNote: (words: string) => `Pomýlil si sa pri: ${words}.`,
     changedWord: (wrong: string, right: string) => `Vo vete bolo „${wrong}“ namiesto „${right}“.`,
-    savedToMistakes: 'Uložené do Archív → Chyby, zopakuješ si to neskôr.',
+    savedToMistakes: 'Uložené do Môj slovník → Chyby, opravíš si to neskôr.',
     correctAnswer: 'Správna odpoveď',
     heard: 'Čo som počul',
     knewIt: 'Vedel si to. Odstrániť z Chýb, alebo nechať na neskôr?',
@@ -653,26 +659,26 @@ export const sk = {
       praise: {
         perfect: 'Všetko správne.',
         great: 'Skvelá práca.',
-        good: 'Ide ti to. Chyby si zopakuj, kým sú čerstvé.',
-        low: 'Nevadí – chyby si môžeš hneď zopakovať.',
+        good: 'Ide ti to. Chyby si oprav, kým sú čerstvé.',
+        low: 'Nevadí – chyby si môžeš hneď opraviť.',
       },
       passedLine: (score: number, total: number, hasNext: boolean) => `Splnené (${score}/${total})${hasNext ? ' · Ďalšia lekcia odomknutá!' : ''}`,
       needed: (needed: number, total: number, missing: number) => `Potrebuješ aspoň ${needed}/${total} (80 %) – chýba ešte ${missing}`,
       fixHint: 'Oprav chyby: každá opravená odpoveď sa ti započíta do lekcie.',
       toFix: 'Na opravu',
-      toRepeat: 'Na zopakovanie',
+      toRepeat: 'Na opravu',
       tfAnswers: 'Tvoje odpovede',
       tfSaid: (verdict: string) => `Tvoja odpoveď: ${verdict}`,
       tfRight: 'Správne',
       tfWrong: 'Nesprávne',
-      mistakesStay: 'Chyby, ktoré neopravíš, ostanú v Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
-      mistakesSaved: 'Chyby sa uložili do Archív → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
+      mistakesStay: 'Chyby, ktoré neopravíš, ostanú v Môj slovník → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
+      mistakesSaved: 'Chyby sa uložili do Môj slovník → Chyby, môžeš sa k nim vrátiť kedykoľvek.',
       fixMistakes: (n: number) => `Opraviť ${n} ${pluralSk(n, ['chybu', 'chyby', 'chýb'])}`,
-      repeatMistakes: (n: number) => `Zopakovať ${n} ${pluralSk(n, ['chybu', 'chyby', 'chýb'])}`,
-      repeatLesson: (n: number) => `Zopakovať celú Lekciu ${n}`,
+      repeatMistakes: (n: number) => `Opraviť ${n} ${pluralSk(n, ['chybu', 'chyby', 'chýb'])}`,
+      repeatLesson: (n: number) => `Ešte raz celú Lekciu ${n}`,
       nextLocked: 'Ďalšia lekcia (zamknutá)',
       next: (n: number) => `Ďalšia lekcia (Lekcia ${n})`,
-      repeatAll: 'Zopakovať celú lekciu',
+      repeatAll: 'Ešte raz celú lekciu',
       moreMistakes: 'Ďalšie chyby',
       newLesson: 'Nová lekcia',
     },
@@ -745,8 +751,8 @@ export const sk = {
   },
 
   review: {
-    quit: 'Ukončiť opakovanie',
-    progress: 'Priebeh opakovania',
+    quit: 'Ukončiť kartičky',
+    progress: 'Priebeh kartičiek',
     remaining: (n: number) => `Zostáva ${n}`,
     howInSpanish: 'Ako sa to povie po španielsky?',
     remember: 'Pamätáš si?',
@@ -757,11 +763,11 @@ export const sk = {
     correctAfterFix: 'Správne po oprave',
     typoNote: (word: string) => `Preklep v slove ${word}.`,
     accentNote: (words: string) => `Pozor na prízvuk: ${words}.`,
-    nextReview: (interval: string) => `Ďalšie opakovanie: ${interval}.`,
+    nextReview: (interval: string) => `Znova príde o ${interval}.`,
     doneTitle: 'Hotovo na dnes',
-    done: (n: number) => `Zopakoval si ${n} ${pluralSk(n, ['kartu', 'karty', 'kariet'])}. Ďalšie prídu na rad, keď ich začneš zabúdať.`,
-    nothingTitle: 'Nič na zopakovanie',
-    nothing: 'Dnes máš všetko zopakované. Pribudnú sem slová, ktoré precvičíš v lekciách, a tie, ktoré si uložíš hviezdičkou.',
+    done: (n: number) => `Prešiel si ${n} ${pluralSk(n, ['kartičku', 'kartičky', 'kartičiek'])}. Ďalšie prídu na rad, keď ich začneš zabúdať.`,
+    nothingTitle: 'Žiadne kartičky na dnes',
+    nothing: 'Na dnes máš všetko hotové. Kartičky pribudnú zo slov, ktoré precvičíš v lekciách, a zo slov, ktoré si uložíš hviezdičkou.',
     practiceInLesson: 'Precvičiť v lekcii',
     /** When a card comes back: "< 1 min", "10 min", "3 h", "1 deň", "2 mes.", "1,5 r." */
     interval: {
@@ -926,7 +932,7 @@ export const sk = {
 
   path: {
     title: 'Cesta',
-    intro: 'Krok za krokom: nové slová, gramatika, vety a test. Vždy vieš, čo je na rade.',
+    intro: 'Tvoj pokrok jednotku po jednotke: nové slová, gramatika, vety a test. Ďalší krok je vždy označený.',
     levelProgress: (level: string, done: number, total: number) => `${level} · ${done} z ${total} ${pluralSk(total, ['jednotky', 'jednotiek', 'jednotiek'])}`,
     unit: (n: number) => `Jednotka ${n}`,
     steps: {
@@ -951,6 +957,8 @@ export const sk = {
     homeContinue: 'Tvoja cesta',
     homeLine: (unit: number, title: string, step: string, n: number, total: number) => `Jednotka ${unit} · ${title} · ${step} (${n}/${total})`,
     homeAria: (unit: number, step: string) => `Jednotka ${unit}: ${step}`,
+    /** Domov, under the flashcards of the day. */
+    homeRow: (title: string) => `Ďalej na Ceste: ${title}`,
     /** Cvičiť, the card on top. */
     cardLine: (level: string, unit: number, total: number) => `${level} · jednotka ${unit} z ${total}`,
     cardDone: (level: string) => `${level} · hotovo`,
@@ -959,7 +967,7 @@ export const sk = {
     stepNotPassed: (step: string) => `${step}: zatiaľ nesplnené`,
     passedLine: (score: number, total: number, hasNext: boolean) => `Splnené (${score}/${total})${hasNext ? ' · Ďalší krok odomknutý!' : ''}`,
     nextStep: (step: string) => `Ďalej: ${step}`,
-    repeatStep: 'Zopakovať celý krok',
+    repeatStep: 'Ešte raz celý krok',
     nextLocked: 'Ďalší krok (zamknutý)',
     /** The cards that bring in a step's new words. */
     meetLabel: (n: number, total: number) => `Nové slovo · ${n} z ${total}`,
@@ -1051,7 +1059,7 @@ export const sk = {
     yourAnswer: 'Tvoja odpoveď',
     noAnswer: '(bez odpovede)',
     accepted: 'Uznané',
-    mistakesSaved: 'Chyby sa uložili do Archív → Chyby.',
+    mistakesSaved: 'Chyby sa uložili do Môj slovník → Chyby.',
     backToTests: 'Späť na testy',
 
     // Domov
@@ -1128,7 +1136,7 @@ export const sk = {
       points: [
         'Krátke lekcie podľa toho, čo už vieš',
         'Slovník s výslovnosťou a časovaním slovies',
-        'Opakovanie v pravý čas, aby slová ostali v hlave',
+        'Kartičky v pravý čas, aby slová ostali v hlave',
       ],
       language: 'Jazyk aplikácie',
       variant: 'Akú španielčinu sa učíš?',
@@ -1182,10 +1190,11 @@ export const sk = {
       title: 'Všetko je pripravené',
       hint: 'Takto sa v aplikácii vyznáš:',
       tabs: {
-        home: 'Čo ťa dnes čaká, séria a denný cieľ',
-        search: 'Slovník, témy a tvoje uložené slová',
-        practice: 'Lekcie, testy, chyby a duely',
-        profile: 'Štatistiky, účet a nastavenia',
+        home: 'Kartičky na dnes, séria a denný cieľ',
+        search: 'Slovník a témy',
+        path: 'Tvoj pokrok jednotku po jednotke',
+        practice: 'Cvičenia, chyby, testy a duely',
+        profile: 'Môj slovník, štatistiky a nastavenia',
       },
       start: 'Začať prvú lekciu',
       first: (what: string) => `Prvá lekcia: ${what}`,
@@ -1237,7 +1246,7 @@ export const sk = {
       },
       {
         heading: 'S účtom',
-        body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a vlastné slová, opakovanie, chyby, výsledky lekcií a testov, zápisy v denníku a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
+        body: 'Ukladáme tvoj e-mail (pri prihlásení cez Google aj identifikátor účtu Google) a tvoj progres: odpovede v cvičeniach, uložené a pridané slová, kartičky, chyby, výsledky lekcií a testov, zápisy v denníku a nastavenia. Slúži to iba na to, aby si mal progres v bezpečí a na každom svojom zariadení.',
       },
       {
         heading: 'Duely',

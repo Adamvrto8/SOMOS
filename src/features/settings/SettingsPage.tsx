@@ -1,5 +1,7 @@
-import { AudioLines, Bell, ChartNoAxesColumn, DatabaseBackup, Globe, Languages, Palette, Repeat, ShieldCheck, Target, Volume2, Wrench } from 'lucide-react'
+import { AudioLines, Bell, ChartNoAxesColumn, CircleAlert, DatabaseBackup, Globe, Languages, Layers, Palette, Plus, ShieldCheck, Star, Target, Volume2, Wrench } from 'lucide-react'
 import { useRef, useState } from 'react'
+import { useCustomWords, useSavedItems } from '../../lib/archive'
+import { useMistakes } from '../../lib/mistakes'
 import { variant } from '../../data'
 import { dictionaries, useT } from '../../i18n'
 import { useAutoReviewSettings } from '../../lib/autoReview'
@@ -21,6 +23,22 @@ function useVoiceName(): string | undefined {
   const text = useT().settings.voice
   if (!ttsSupported || voices.length === 0) return undefined
   return voices.find((v) => v.voiceURI === preferredURI)?.name ?? text.auto
+}
+
+/** Môj slovník (`/archive`): the learner's own words and mistakes, each tab with its count. */
+function MyDictionary() {
+  const dictionary = useT()
+  const tabs = dictionary.archive.tabs
+  const saved = useSavedItems()?.filter((i) => i.itemType === 'word' || i.itemType === 'sentence').length
+  const added = useCustomWords()?.length
+  const mistakes = useMistakes()?.length
+  return (
+    <SettingsGroup id="settings-mine" title={dictionary.settings.groups.mine}>
+      <SettingsRow to="/archive" icon={Star} title={tabs.saved} value={saved?.toString()} />
+      <SettingsRow to="/archive?tab=mine" icon={Plus} title={tabs.mine} value={added?.toString()} />
+      <SettingsRow to="/archive?tab=mistakes" icon={CircleAlert} title={tabs.mistakes} value={mistakes?.toString()} />
+    </SettingsGroup>
+  )
 }
 
 /** Taps on the version line that start the countdown toward developer mode, as in Android. */
@@ -47,13 +65,15 @@ export function SettingsPage() {
 
       <AccountRow />
 
+      <MyDictionary />
+
       <ProfileStats />
 
       <SettingsGroup id="settings-learning" title={text.groups.learning}>
         <SettingsRow to="/profile/goal" icon={Target} title={text.dailyGoal} value={String(goal)} />
         <SettingsRow
           to="/profile/review"
-          icon={Repeat}
+          icon={Layers}
           title={text.autoReview.row}
           value={autoReview.enabled ? text.perDay(autoReview.limit) : text.off}
         />

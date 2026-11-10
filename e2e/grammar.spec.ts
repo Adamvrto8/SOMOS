@@ -198,10 +198,10 @@ test('the grammar handbook is grouped by area and a tip names its source', async
 test('a tense of the conjugation drill opens its grammar before the lesson, and the back button closes it', async ({ page }) => {
   await page.goto('/practice?type=conjugation&tense=all')
   // "Všetky časy" has no single tense to explain.
-  await expect(page.getByRole('button', { name: /^Rýchle opakovanie:/ })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: /^Ťahák:/ })).toHaveCount(0)
 
   await page.getByRole('button', { name: 'pretérito', exact: true }).tap()
-  await page.getByRole('button', { name: /^Rýchle opakovanie: pretérito/ }).tap()
+  await page.getByRole('button', { name: /^Ťahák: pretérito/ }).tap()
   const sheet = page.getByRole('dialog')
   await expect(sheet.getByRole('heading', { level: 1 })).toHaveText('Pretérito (dokončený minulý čas)')
   // What the tense is for comes first, before how it is formed.
@@ -212,7 +212,7 @@ test('a tense of the conjugation drill opens its grammar before the lesson, and 
   await expect(sheet).toHaveCount(0)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Časovanie')
 
-  await page.getByRole('button', { name: /^Rýchle opakovanie: pretérito/ }).tap()
+  await page.getByRole('button', { name: /^Ťahák: pretérito/ }).tap()
   await button(page, 'Zavrieť').tap()
   await expect(page.getByRole('dialog')).toHaveCount(0)
   await expect(page).toHaveURL(/tense=preterito/)

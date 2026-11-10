@@ -30,7 +30,7 @@ export function AppLayout() {
       </header>
 
       {/* Bottom padding keeps content clear of the fixed tab bar (h-16 + safe area). */}
-      <main className="flex-1 px-4 pt-6 pb-[calc(5.5rem+env(safe-area-inset-bottom))]">
+      <main className="flex-1 px-4 pt-6 pb-[calc(6.5rem+env(safe-area-inset-bottom))]">
         <Outlet />
       </main>
 

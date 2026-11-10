@@ -16,10 +16,10 @@ async function seed(page: Page, lessons: Record<string, object>, tests: Record<s
   )
 }
 
-test('Cvičiť leads to the path, its first unit open on its steps', async ({ page }) => {
+test('the Cesta tab leads to the path, its first unit open on its steps', async ({ page }) => {
   await page.goto('/practice')
-  await page.getByRole('link', { name: /Cesta/ }).tap()
-  await expect(page).toHaveURL(/\/practice\/path$/)
+  await page.getByRole('navigation', { name: 'Hlavná navigácia' }).getByRole('link', { name: 'Cesta' }).tap()
+  await expect(page).toHaveURL(/\/path$/)
   await expect(page.getByRole('heading', { name: 'Cesta' })).toBeVisible()
   await expect(page.getByText(/^A1 · 0 z \d+ jednotiek$/)).toBeVisible()
 
@@ -38,7 +38,7 @@ test('Cvičiť leads to the path, its first unit open on its steps', async ({ pa
 })
 
 test('a step is a lesson of the unit, scored like a numbered lesson', async ({ page }) => {
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await page.getByRole('link', { name: 'Nové slová', exact: true }).tap()
   await expect(page).toHaveURL(/\/practice\/lesson\?path=a1-greetings-1&step=words$/)
 
@@ -66,16 +66,16 @@ test('a step is a lesson of the unit, scored like a numbered lesson', async ({ p
 
   // ✕ goes back to the path, where the step is still the one to do.
   await page.getByRole('button', { name: 'Ukončiť lekciu' }).tap()
-  await expect(page).toHaveURL(/\/practice\/path$/)
+  await expect(page).toHaveURL(/\/path$/)
 })
 
 test('a passed step opens the next one, which the result leads to', async ({ page }) => {
   await seed(page, { 'path:a1-greetings-1:words': { bestScore: 9, total: 10, passed: false, solved: [] } })
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await expect(page.getByRole('link', { name: 'Nové slová II' })).toHaveCount(0)
 
   await seed(page, { 'path:a1-greetings-1:words': passed })
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await page.getByRole('link', { name: 'Nové slová II' }).tap()
   await expect(page).toHaveURL(/step=words2$/)
   await expect(page.getByText(/^Nové slovo · 1 z \d+$/)).toBeVisible()
@@ -85,7 +85,7 @@ test('a passed step opens the next one, which the result leads to', async ({ pag
 
 test('the grammar step opens on its tip, the rules of the unit named', async ({ page }) => {
   await seed(page, { 'path:a1-greetings-1:words': passed, 'path:a1-greetings-1:words2': passed })
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await page.getByRole('link', { name: 'Gramatika', exact: true }).tap()
   await expect(page).toHaveURL(/step=grammar$/)
   await expect(page.getByText('Gramatika jednotky')).toBeVisible()
@@ -107,7 +107,7 @@ test('a unit test leads back to the path', async ({ page }) => {
   await expect(page.getByText('Zatiaľ nezložený')).toBeVisible()
   await expect(page.getByText('¡Unidad completada!')).toHaveCount(0)
   await button(page, 'Späť na cestu').tap()
-  await expect(page).toHaveURL(/\/practice\/path$/)
+  await expect(page).toHaveURL(/\/path$/)
 })
 
 test('a passed topic test closes its unit, and Domov goes on with the next one', async ({ page }) => {
@@ -118,7 +118,7 @@ test('a passed topic test closes its unit, and Domov goes on with the next one',
   await page.getByRole('link', { name: 'Jednotka 2: Nové slová II' }).tap()
   await expect(page).toHaveURL(/path=a1-basics-1&step=words2$/)
 
-  await page.goto('/practice/path')
+  await page.goto('/path')
   // The topic test closes both units of the topic.
   await expect(page.getByText(/^A1 · 2 z \d+ jednotiek$/)).toBeVisible()
   await expect(page.getByRole('button', { name: /Základné slová 1/ })).toHaveAttribute('aria-expanded', 'true')
@@ -152,13 +152,13 @@ test('a usage unit practises its blanks, "Prečo?" names the rule of the blank',
 })
 
 test('an open unit offers its test as "Viem to", a finished level has a check', async ({ page }) => {
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await expect(page.getByRole('link', { name: 'Viem to – urobiť test' })).toHaveAttribute('href', '/practice/test?level=A1&topic=greetings&part=1')
   await expect(page.getByText('Keď ho splníš, jednotka je hotová.')).toBeVisible()
   await expect(page.getByLabel('A1 zvládnutá')).toHaveCount(0)
 
   await seed(page, {}, { A1: { bestScore: 15, total: 15, passed: true, attempts: 1, lastAt: 1 } })
-  await page.goto('/practice/path')
+  await page.goto('/path')
   await expect(page.getByLabel('A1 zvládnutá')).toBeVisible()
   // The path goes on in A2: its first unit offers its own test.
   await expect(page.getByRole('link', { name: 'Viem to – urobiť test' })).toHaveAttribute('href', /level=A2/)

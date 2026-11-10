@@ -132,17 +132,17 @@ describe('composeMessage', () => {
   it('nudges a running streak with the cards waiting', () => {
     expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 })).toEqual({
       title: '🔥 Séria 12 dní čaká na dnešok',
-      body: 'Na zopakovanie: 14 kartičiek · stačí pár minút',
+      body: 'Kartičky na dnes: 14 · stačí pár minút',
     })
   })
 
   it('uses Slovak plural forms', () => {
     expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 1 })).toEqual({
       title: '🔥 Séria 1 deň čaká na dnešok',
-      body: 'Na zopakovanie: 1 kartička · stačí pár minút',
+      body: 'Kartičky na dnes: 1 · stačí pár minút',
     })
     expect(composeMessage({ done: 0, goal: 20, due: 3, streak: 3 }).title).toBe('🔥 Séria 3 dni čaká na dnešok')
-    expect(composeMessage({ done: 0, goal: 20, due: 3, streak: 0 }).body).toBe('Na zopakovanie: 3 kartičky')
+    expect(composeMessage({ done: 0, goal: 20, due: 3, streak: 0 }).body).toBe('Kartičky na dnes: 3')
   })
 
   it('falls back to the daily goal without cards to review', () => {
@@ -158,9 +158,9 @@ describe('composeMessage', () => {
   it('composes the message in English', () => {
     expect(composeMessage({ done: 0, goal: 20, due: 14, streak: 12 }, 'en')).toEqual({
       title: '🔥 A 12-day streak is waiting for today',
-      body: 'To review: 14 cards · a few minutes is enough',
+      body: 'Flashcards for today: 14 · a few minutes is enough',
     })
-    expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('To review: 1 card')
+    expect(composeMessage({ done: 0, goal: 20, due: 1, streak: 0 }, 'en').body).toBe('Flashcards for today: 1')
     expect(composeMessage({ done: 0, goal: 1, due: null, streak: 0 }, 'en')).toEqual({ title: '¿Practicamos? 🇲🇽', body: 'Daily goal: 1 correct answer' })
     expect(composeMessage({ done: 12, goal: 20, due: 3, streak: 1 }, 'en')).toEqual({ title: '8 to go for the daily goal', body: 'Today 12/20 · 1-day streak 🔥' })
   })
@@ -174,7 +174,7 @@ describe('decide', () => {
     expect(decide(SUMMER_1910, SUB, progress({ day: '2026-06-30', activeToday: true }), null)).toEqual({
       send: true,
       day: '2026-07-01',
-      message: { title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút' },
+      message: { title: '🔥 Séria 12 dní čaká na dnešok', body: 'Kartičky na dnes: 17 · stačí pár minút' },
     })
   })
 
@@ -646,7 +646,7 @@ describe('api/reminder: cron tick', () => {
     expect(await tickJson(store, send)).toEqual({ sent: 1, reason: 'done' })
     expect(send).toHaveBeenCalledWith(
       SUB.subscription,
-      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Na zopakovanie: 17 kartičiek · stačí pár minút', url: '/', id: '2026-07-01T17:10:00.000Z' }),
+      JSON.stringify({ title: '🔥 Séria 12 dní čaká na dnešok', body: 'Kartičky na dnes: 17 · stačí pár minút', url: '/', id: '2026-07-01T17:10:00.000Z' }),
       { ttl: 14_400, topic: 'reminder', urgency: 'high' },
     )
     expect(store.rows.get(PHONE)).toMatchObject({

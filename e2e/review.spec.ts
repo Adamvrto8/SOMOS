@@ -54,7 +54,7 @@ test('a word card can be typed, fixed after a hint, and rates itself', async ({ 
   await field(page).fill(answer)
   await button(page, 'Skontrolovať').tap()
   await expect(status(page)).toContainText('Správne po oprave')
-  await expect(status(page)).toContainText('Ďalšie opakovanie')
+  await expect(status(page)).toContainText('Znova príde o')
   await expect(button(page, 'Pokračovať')).toBeVisible()
 })
 

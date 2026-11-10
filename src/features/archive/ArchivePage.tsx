@@ -32,9 +32,9 @@ export function ArchivePage() {
 
   return (
     <div className="space-y-4">
-      {/* Opened from Hľadať: the learner's own dictionary. */}
+      {/* Opened from Profil: the learner's own dictionary. */}
       <div>
-        <BackButton fallback="/search" />
+        <BackButton fallback="/profile" />
         <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
       </div>
 
