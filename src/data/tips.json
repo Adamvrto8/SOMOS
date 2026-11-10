@@ -3,6 +3,7 @@
     "id": "ser-estar",
     "title": "ser a estar",
     "level": "A1",
+    "area": "verbs",
     "sources": [{ "source": "pcic", "where": "Gramática 12.1 (A1–A2); 9.4.3 (A1–A2); 12.1 (B2)" }, { "source": "ngle", "where": "§ 37.7–37.9" }, { "source": "uimp-a1", "where": "semana 2" }],
     "variants": { "mx": "Pred prídavné meno sa v Mexiku často dáva bien na zosilnenie (está bien bonito = je fakt pekné, es bien fácil = je to úplne ľahké).", "es": "Ser a estar sa v Španielsku používajú rovnako. Na zosilnenie sa pred prídavné meno dáva skôr muy alebo hovorovo súper (está muy bonito, es súper fácil), bien v tomto zmysle znie latinskoamericky." },
     "ideas": ["choose ser or estar for a short description", "an adjective that changes meaning with ser/estar (es listo / está listo)"],
@@ -146,6 +147,7 @@
     "id": "presente",
     "title": "Prítomný čas (presente)",
     "level": "A1",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.1 (A1–A2)" }, { "source": "ngle", "where": "§ 23.5–23.6" }, { "source": "uimp-a1", "where": "semana 1" }],
     "variants": { "mx": "Pre viacerých ľudí sa v Mexiku vždy používa ustedes (ustedes hablan), tvar vosotros (habláis) tam nepočuť. Jednému človeku sa tyká tvarom tú; voseo (vos hablás) sa drží len v niektorých južných štátoch, napríklad v Chiapase. Mexičania tiež častejšie povedia podmet (Yo estudio español).", "es": "V Španielsku sa viacerým ľuďom, ktorým tykáš, hovorí vosotros (vosotros habláis, coméis, vivís). Ustedes (ustedes hablan) je zdvorilé, pre ľudí, ktorým vykáš. Tvar vosotros je v tabuľke každého slovesa." },
     "ideas": ["conjugate a verb for a person given by a picture or a name", "turn a sentence about yo into one about ustedes"],
@@ -210,6 +212,7 @@
     "id": "preterito",
     "title": "Pretérito (dokončený minulý čas)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.3 (A2–B1)" }, { "source": "ngle", "where": "§ 23.9" }],
     "variants": { "mx": "V Mexiku je pretérito bežný čas aj pre dnešok a nedávnu minulosť (hoy desayuné temprano), kde Španielsko často povie he desayunado.", "es": "V Španielsku je pretérito čas pre včera a skôr (ayer desayuné temprano). Pre dnešok a nedávnu minulosť sa povie pretérito perfecto: hoy he desayunado temprano. Tvar vosotros: hablasteis, comisteis." },
     "ideas": ["retell a day in the past from a list of activities", "spot the irregular stem (tuve, hice, fui)"],
@@ -287,6 +290,7 @@
     "id": "imperfecto",
     "title": "Imperfecto (priebehový minulý čas)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.2 (A2)" }, { "source": "ngle", "where": "§ 23.10–23.13" }],
     "variants": { "mx": "V Mexiku rovnako ako inde.", "es": "V Španielsku rovnako ako inde. Tvar vosotros: hablabais, comíais, erais, ibais." },
     "ideas": ["describe a childhood habit (cuando era niño…)", "describe a scene in the past: weather, time, feelings"],
@@ -327,6 +331,7 @@
     "id": "preterito-imperfecto",
     "title": "Pretérito alebo imperfecto?",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.2 (A2–B1); 9.1.3 (A2); 15.3.1 (B1)" }, { "source": "ngle", "where": "§ 23.9–23.13" }],
     "variants": { "mx": "V Mexiku rovnako ako inde: pretérito pre ukončený dej, imperfecto pre opis a zvyk.", "es": "V Španielsku rovnako ako inde: pretérito pre ukončený dej, imperfecto pre opis a zvyk. Pre dnešok k nim pribúda he comido, pozri pretérito perfecto." },
     "ideas": ["pick pretérito or imperfecto in a short story", "mark the time words that decide the tense"],
@@ -369,6 +374,7 @@
     "id": "ir-a",
     "title": "Ir a + neurčitok (budem robiť)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 12.1 (A2); 9.1.1 (A1–A2)" }, { "source": "ngle", "where": "§ 23.14; 28.8" }],
     "variants": { "mx": "V Mexiku je to bežný spôsob, ako hovoriť o budúcnosti, aj o vzdialenejšej (el próximo año voy a vivir en Monterrey). Niekedy znamená aj to, čo práve idem urobiť (voy a hablar con él = idem sa s ním porozprávať).", "es": "V Španielsku sa ir a + neurčitok používa tiež bežne, futuro na -ré tam však v reči počuť častejšie než v Latinskej Amerike. Tvar vosotros: vais a (vais a comer)." },
     "ideas": ["say tomorrow's plan with ir a (voy a + infinitive)", "move the pronoun: lo voy a hacer / voy a hacerlo"],
@@ -411,6 +417,7 @@
     "id": "futuro",
     "title": "Budúci čas (futuro)",
     "level": "B1",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.4 (B1–B2)" }, { "source": "ngle", "where": "§ 23.14" }],
     "variants": { "mx": "O plánoch sa v Mexiku hovorí skôr s ir a (voy a viajar). Futuro sa často používa na odhad (¿qué hora será? = koľko môže byť hodín?).", "es": "Aj v Španielsku sa o plánoch hovorí najčastejšie s ir a (voy a viajar) a futuro slúži aj na odhad (¿qué hora será?). Tvar vosotros: hablaréis, tendréis." },
     "ideas": ["rewrite a plan with ir a as futuro and back", "a guess about the present with the futuro (estará en casa)"],
@@ -457,6 +464,7 @@
     "id": "progresivo",
     "title": "Priebehový čas (estar + gerundio)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.4.2 (A2); 12.1 (A2)" }, { "source": "ngle", "where": "§ 28.12" }],
     "variants": { "mx": "V Mexiku sa priebehový čas používa veľmi často, neraz so slovom ahorita (ahorita estoy comiendo = práve jem). Pozor: ahorita v Mexiku znamená aj „neskôr, niekedy“ (ahorita lo hago = urobím to, keď sa dostanem). Priebehový čas sa dáva aj na okamih: está viniendo = práve prichádza (v Španielsku viene).", "es": "V Španielsku sa priebehový čas používa o niečo menej ako v Mexiku. Ahorita tam nepočuť, povie sa ahora mismo (ahora mismo estoy comiendo = práve jem)." },
     "ideas": ["say what people in a picture are doing right now", "presente or progresivo for a habit vs. this moment"],
@@ -502,6 +510,7 @@
     "id": "gender",
     "title": "Rod podstatných mien",
     "level": "A1",
+    "area": "nouns",
     "sources": [{ "source": "pcic", "where": "Gramática 1.2 (A1–A2); 3.1 (A2); 1.2 (B2)" }, { "source": "ngle", "where": "cap. 2" }],
     "variants": { "mx": "V americkej španielčine sa niektoré slová používajú aj v inom rode: el sartén popri la sartén, el radio popri la radio (RAE uvádza pri oboch slovách oba rody), v časti Mexika aj el costumbre. Keď si neistý, drž sa rodu zo slovníka.", "es": "Niektoré slová majú v Španielsku iný rod ako v Mexiku: la radio (rozhlas aj prijímač), la sartén (panvica)." },
     "ideas": ["el or la for a new noun, then check the ending rule", "make the adjective agree with a noun of the other gender"],
@@ -568,6 +577,7 @@
     "id": "articles",
     "title": "Členy (el, la, un, una)",
     "level": "A1",
+    "area": "nouns",
     "sources": [{ "source": "pcic", "where": "Gramática 3.1 (A1–A2); 3.2 (A1–A2); 3.3 (A1)" }, { "source": "ngle", "where": "cap. 14–15" }],
     "variants": { "mx": "V Mexiku sa člen dáva pred casa aj tam, kde sa Španielsko zaobíde bez neho: Vamos a la casa (v Španielsku skôr Vamos a casa). Pred meno sa v písanom texte člen nedáva (María, Juan).", "es": "Pred meno sa v Španielsku člen bežne nedáva (María, Juan). La María, el Juan znie hovorovo, v niektorých krajoch (napríklad v Katalánsku) je to bežné." },
     "ideas": ["el or la before a noun", "a noun with and without an article (me gusta el café / quiero café)"],
@@ -625,6 +635,7 @@
     "id": "adjectives",
     "title": "Zhoda prídavných mien",
     "level": "A1",
+    "area": "nouns",
     "sources": [{ "source": "pcic", "where": "Gramática 2.1 (A1); 2.2 (A1–A2); 2.3 (A1); 2.4 (A1–B1)" }, { "source": "ngle", "where": "cap. 13" }],
     "variants": { "mx": "V Mexiku sa často používajú zdrobneniny na -ito/-ita, aj pri prídavných menách a príslovkách (chiquito, despacito, ahorita).", "es": "Aj v Španielsku sú zdrobneniny bežné (un momentito, un cafecito), v niektorých krajoch aj na -illo, -ín (un poquillo, pequeñín). Ahorita sa tam nepoužíva." },
     "ideas": ["make an adjective agree in gender and number", "put the adjective after the noun, then the few that go before (buen, gran)"],
@@ -682,6 +693,7 @@
     "id": "reflexive",
     "title": "Zvratné slovesá",
     "level": "A1",
+    "area": "pronouns",
     "sources": [{ "source": "pcic", "where": "Gramática 7.1.4 (A1); 13.3 (A2); 7.1.2 (A2)" }, { "source": "ngle", "where": "§ 16.4; 41.13" }, { "source": "uimp-a1", "where": "semana 3" }],
     "variants": { "mx": "Niektoré slovesá sú v Mexiku zvratné častejšie ako inde (regresarse = vrátiť sa, tardarse = zdržať sa). Podobne desayunarse (naraňajkovať sa) a amanecerse (zostať hore do rána).", "es": "V Španielsku sa namiesto regresar(se) hovorí volver (vuelvo a casa = vrátim sa domov) a tardar je bez se (tardo diez minutos = zdržím sa desať minút)." },
     "ideas": ["put the pronoun in the right place (me levanto / voy a levantarme)", "a daily routine told with reflexive verbs"],
@@ -727,6 +739,7 @@
     "id": "accents",
     "title": "Prízvuk, ktorý mení význam",
     "level": "A1",
+    "area": "spelling",
     "sources": [{ "source": "pcic", "where": "Ortografía 2.2 (A1–A2); 2.2 (B1); 2.1 (B1)" }, { "source": "rae-ortografia", "where": "tilde diacrítica" }],
     "variants": { "mx": "V Mexiku rovnako ako inde.", "es": "Prízvuky sa v Španielsku píšu rovnako. Líši sa výslovnosť: z a c pred e, i sa vo väčšine Španielska vyslovujú ako anglické th (gracias, cerveza, cinco)." },
     "ideas": ["add the missing accent to a question word (qué, cómo, dónde)", "pairs that change meaning (tu/tú, el/él, si/sí)"],
@@ -777,6 +790,7 @@
     "id": "imperativo",
     "title": "Imperativ (rozkazovací spôsob)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.3 (A2); 9.3 (B1); 7.1.5 (B1)" }, { "source": "ngle", "where": "§ 42.3–42.5" }, { "source": "uimp-b1", "where": "semana 3" }],
     "variants": { "mx": "V Mexiku sa vosotros nepoužíva: viacerým ľuďom sa rozkazuje tvarom ustedes (vengan, siéntense), aj medzi kamarátmi. Voseo rozkaz (hablá, comé) počuť len v niektorých južných štátoch, napríklad v Chiapase.", "es": "V Španielsku sa viacerým ľuďom, ktorým tykáš, rozkazuje tvarom vosotros: v neurčitku sa -r zmení na -d (hablad, comed, venid). So zámenom os sa -d stratí: sentaos. Ustedes (vengan, siéntense) je zdvorilé." },
     "ideas": ["turn a statement into an order (tú, usted, ustedes)", "negate an order and move the pronoun (dámelo → no me lo des)"],
@@ -844,6 +858,7 @@
     "id": "subjuntivo",
     "title": "Subjuntivo presente: tvary",
     "level": "B1",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 9.2.1 (B1)" }, { "source": "ngle", "where": "cap. 4; cap. 24" }, { "source": "uimp-b1", "where": "semana 2" }],
     "variants": { "mx": "V Mexiku rovnako ako inde.", "es": "V Španielsku rovnako ako inde. Tvar vosotros: habléis, comáis, tengáis." },
     "ideas": ["form the subjuntivo from the yo form of the presente (tengo → tenga)", "spot the irregular ones (sea, vaya, haya, sepa)"],
@@ -907,6 +922,7 @@
     "id": "condicional",
     "title": "Kondicionál (by)",
     "level": "B1",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.5 (B1); 9.1.5 (B2); Funciones 3.8 (A2); 4.18 (B1)" }, { "source": "ngle", "where": "§ 23.15" }],
     "variants": { "mx": "V Mexiku sa kondicionál veľa používa zo zdvorilosti, často spolu s usted (¿me podría ayudar?). V nepriamej reči Mexiko radšej povie iba a + infinitív: Me dijo que iba a venir (namiesto vendría).", "es": "Aj v Španielsku sa kondicionál používa zo zdvorilosti (¿me podría ayudar?, me gustaría un café). V obchode či v kaviarni sa často povie aj imperfecto: quería un café = chcel by som kávu." },
     "ideas": ["make a request more polite (puedes → podrías)", "say what you would do in a given situation"],
@@ -949,6 +965,7 @@
     "id": "perfecto",
     "title": "Pretérito perfecto (he hablado)",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.6 (A2); 9.4.3 (A2)" }, { "source": "ngle", "where": "§ 23.7–23.8" }],
     "variants": { "mx": "V Mexiku sa he hablado používa menej: pre dnešok aj nedávnu minulosť sa hovorí pretéritom (hoy comí tacos, ya terminé). Perfecto zaznie skôr pri skúsenosti a pri tom, čo trvá dodnes (¿has ido a Oaxaca?, he vivido aquí diez años).", "es": "V Španielsku je to bežný minulý čas pre dnešok a pre čas, ktorý ešte trvá (hoy he comido paella, esta semana he trabajado mucho), aj s ya a todavía no (ya he terminado). Pretérito ostáva pre včera a skôr (ayer comí paella)." },
     "ideas": ["sort time expressions: hoy, ayer, esta semana, ya, alguna vez", "rewrite a Spain sentence with he + participle the Mexican way, in the pretérito"],
@@ -998,6 +1015,7 @@
     "id": "pluscuamperfecto",
     "title": "Pluscuamperfecto (už predtým)",
     "level": "B1",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 9.1.8 (B1)" }, { "source": "ngle", "where": "§ 23.16" }, { "source": "uimp-b1", "where": "semana 1" }],
     "variants": { "mx": "Pluscuamperfecto rovnako ako inde. He comido sa v Mexiku používa menej, pozri pravidlo o pretérito perfecto.", "es": "Pluscuamperfecto rovnako ako inde, tvar vosotros: habíais comido. He comido je v Španielsku bežný čas pre dnešok, pozri pravidlo o pretérito perfecto." },
     "ideas": ["order two past events: which one had already happened", "join two sentences with cuando and the pluscuamperfecto"],
@@ -1040,6 +1058,7 @@
     "id": "subj-imperfecto",
     "title": "Imperfecto de subjuntivo: tvary",
     "level": "B2",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 9.2.2 (B2); 15.3.6 (B2)" }, { "source": "ngle", "where": "cap. 24" }, { "source": "uimp-b2", "where": "módulo 3" }],
     "variants": { "mx": "V Mexiku sa používa tvar na -ra (hablara, tuviera), tvar na -se (hablase) tam takmer nepočuť.", "es": "V Španielsku sa používa tvar na -ra (hablara, tuviera) aj na -se (hablase, tuviese), oba znamenajú to isté. Tvoriť stačí tvar na -ra, ten na -se treba spoznať." },
     "ideas": ["form it from the ellos form of the pretérito (tuvieron → tuviera)", "a past wish or request (quería que vinieras)"],
@@ -1076,6 +1095,7 @@
     "id": "gustar",
     "title": "gustar, encantar, doler",
     "level": "A1",
+    "area": "verbs",
     "sources": [{ "source": "pcic", "where": "Gramática 12.1 (A1–A2); 7.1.3 (A1–A2); 7.1.6 (A2); Funciones 3.2 (A1)" }, { "source": "ngle", "where": "cap. 35" }, { "source": "uimp-a1", "where": "semana 3" }],
     "variants": { "mx": "V hovorovej reči sa v Mexiku hovorí aj me late (= tuším, niečo mi hovorí: me late que va a llover; aj = páči sa mi: me late tu carro), ale gustar je vždy správne.", "es": "V hovorovej reči sa v Španielsku povie aj me mola (= páči sa mi, je to super: me mola tu coche) alebo me flipa, ale gustar je vždy správne." },
     "ideas": ["gusta or gustan by what is liked", "the right pronoun for the person (me, te, le, nos, les)"],
@@ -1128,6 +1148,7 @@
     "id": "hay-estar",
     "title": "hay alebo estar",
     "level": "A1",
+    "area": "verbs",
     "sources": [{ "source": "pcic", "where": "Gramática 3.1 (A1); 3.3 (A1); 13.3 (A1)" }, { "source": "ngle", "where": "§ 41.6" }, { "source": "uimp-a1", "where": "semana 2" }],
     "variants": { "mx": "V Mexiku rovnako ako inde. V Latinskej Amerike sa občas počuje habían cajas alebo hubieron cajas; správne je hay, había, hubo cajas, vždy v jednotnom čísle.", "es": "V Španielsku rovnako ako inde." },
     "ideas": ["hay or está/están in a description of a room or a town", "a question about where something is vs. whether there is one"],
@@ -1167,6 +1188,7 @@
     "id": "object-pronouns",
     "title": "Zámená predmetu (lo, la, le)",
     "level": "A2",
+    "area": "pronouns",
     "sources": [{ "source": "pcic", "where": "Gramática 7.1.2 (A2); 7.1.3 (A2); 12.2.2 (A2); 7.1.5 (B1)" }, { "source": "ngle", "where": "§ 16.7–16.11" }, { "source": "uimp-a1", "where": "semana 4" }],
     "variants": { "mx": "Keď je osoba v otázke „koho“, Mexiko hovorí lo/la (lo vi ayer = videl som ho); le vi by znelo ako v Španielsku. Le pre „komu“ (le doy) a zdvorilé le pri usted (¿le ayudo?) sú bežné. Mexiko pridáva le aj ako dôraz (¡Ándale! = no tak, dávaj; ¿Qué le haces? = čo tam robíš?). Na „prežili sme to dobre“ sa povie la pasamos bien (v Španielsku lo pasamos bien).", "es": "Keď je osoba v otázke „koho“ muž, v Španielsku sa často povie le namiesto lo (le vi ayer = videl som ho), najmä v strede a na severe krajiny. Je to uznané ako správne. Pri veciach ostáva lo (¿el libro? lo tengo)." },
     "ideas": ["rewrite the object as lo/la/los/las", "join two pronouns (se lo doy)"],
@@ -1219,6 +1241,7 @@
     "id": "comparisons",
     "title": "Porovnávanie",
     "level": "A2",
+    "area": "nouns",
     "sources": [{ "source": "pcic", "where": "Gramática 2.5 (A2); 6.1 (A2); 15.3.8 (A2); 2.5 (B1)" }, { "source": "ngle", "where": "§ 45.1–45.3" }],
     "variants": { "mx": "V Mexiku rovnako ako inde.", "es": "V Španielsku rovnako ako inde." },
     "ideas": ["compare two things with más/menos … que", "the irregular ones (mejor, peor, mayor, menor)"],
@@ -1271,6 +1294,7 @@
     "id": "obligation",
     "title": "Musieť, mať a môcť",
     "level": "A2",
+    "area": "tenses",
     "sources": [{ "source": "pcic", "where": "Gramática 12.1 (A2); 9.1.5 (B1); Funciones 4.18 (A2)" }, { "source": "ngle", "where": "§ 28.6–28.7" }, { "source": "uimp-b1", "where": "semana 4" }],
     "variants": { "mx": "V Mexiku rovnako ako inde, najčastejšie s tener que (tengo que trabajar).", "es": "V Španielsku rovnako ako inde, najčastejšie s tener que (tengo que trabajar)." },
     "ideas": ["tener que, deber or hay que for a given situation", "turn an order into an obligation (¡estudia! → tienes que estudiar)"],
@@ -1320,6 +1344,7 @@
     "id": "subjuntivo-wishes",
     "title": "Subjuntivo pri želaní a pocitoch",
     "level": "B1",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 9.2.1 (B1); 15.1.2 (B1); 13.3 (B1)" }, { "source": "ngle", "where": "§ 25.3–25.8; 25.14" }, { "source": "uimp-b1", "where": "semana 2" }],
     "variants": { "mx": "Ojalá je v Mexiku veľmi bežné aj v obyčajnom rozhovore (ojalá que llueva).", "es": "Ojalá je bežné aj v Španielsku, s que aj bez neho (ojalá llueva, ojalá que apruebes = kiež by si spravil skúšku)." },
     "ideas": ["a wish for someone (que te vaya bien)", "quiero + infinitive or quiero que + subjuntivo by who does it"],
@@ -1369,6 +1394,7 @@
     "id": "si-clauses",
     "title": "Podmienky so si",
     "level": "B1",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 15.3.6 (A2–B2); 9.1.1 (B1)" }, { "source": "ngle", "where": "§ 47.1; 47.8" }, { "source": "uimp-b1", "where": "semana 3" }, { "source": "uimp-b2", "where": "módulo 3" }],
     "variants": { "mx": "Vo vete s si sa v Mexiku používa tvar na -ra (si tuviera tiempo…), tvar na -se (si tuviese) takmer nepočuť.", "es": "Vo vete s si sa v Španielsku používa tvar na -ra aj na -se (si tuviera tiempo… / si tuviese tiempo…), oba sú správne." },
     "ideas": ["finish an if-sentence: real (si llueve…) or unreal (si lloviera…)", "match the two halves of if-sentences"],
@@ -1408,6 +1434,7 @@
     "id": "por-para",
     "title": "por alebo para",
     "level": "B1",
+    "area": "sentences",
     "sources": [{ "source": "pcic", "where": "Gramática 15.3.5 (A1–B1); 15.3.4 (A2–B1); 12.1 (A2)" }, { "source": "ngle", "where": "§ 29.8" }, { "source": "uimp-b2", "where": "módulo 4" }],
     "variants": { "mx": "V hovorovej reči sa v Mexiku para často skracuje na pa’ (pa’ que sepas), v písanom texte sa píše celé.", "es": "V hovorovej reči sa aj v Španielsku para skracuje na pa’ (me voy pa’ casa), v písanom texte sa píše celé." },
     "ideas": ["por or para in a short sentence, with the reason shown", "sort uses: cause, purpose, deadline, exchange, through"],
@@ -1449,6 +1476,7 @@
     "id": "subjuntivo-clauses",
     "title": "Subjuntivo pri názore a po spojkách",
     "level": "B1",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 9.2.1 (B1); 15.1.2 (B1); 15.3.1 (B1); 15.3.5 (B1)" }, { "source": "ngle", "where": "§ 25.3–25.8; 25.13" }],
     "variants": { "mx": "V Mexiku sa často počuje capaz que + subjunktív v zmysle „možno“ (capaz que llueva = možno bude pršať).", "es": "V Španielsku rovnako ako inde." },
     "ideas": ["indicative or subjuntivo after cuando", "an opinion: creo que + indicative, no creo que + subjuntivo"],
@@ -1491,6 +1519,7 @@
     "id": "subjuntivo-aunque",
     "title": "Subjuntivo po aunque a hasta que",
     "level": "B2",
+    "area": "moods",
     "sources": [{ "source": "pcic", "where": "Gramática 9.2.1 (B2); 15.3.9 (B2); 15.3.1 (B2)" }, { "source": "ngle", "where": "§ 25.13; 47.12" }, { "source": "uimp-b2", "where": "módulos 2 y 5" }],
     "variants": { "mx": "V Mexiku rovnako ako inde.", "es": "V Španielsku rovnako ako inde." },
     "ideas": ["aunque + indicative or subjuntivo: a fact or it does not matter", "hasta que / en cuanto about the future"],
@@ -1533,6 +1562,7 @@
     "id": "relatives",
     "title": "Vzťažné vety (que, donde, lo que)",
     "level": "B1",
+    "area": "pronouns",
     "sources": [{ "source": "pcic", "where": "Gramática 7.2 (A1–B1); 15.2 (A1–B1); 8.8 (B1)" }, { "source": "ngle", "where": "cap. 44" }],
     "variants": { "mx": "V Mexiku rovnako ako inde; v reči sa najviac používa que, el cual znie knižne.", "es": "V Španielsku rovnako ako inde; v reči sa najviac používa que, el cual znie knižne." },
     "ideas": ["join two sentences with que or donde", "lo que vs. que"],
@@ -1572,6 +1602,7 @@
     "id": "relatives-prep",
     "title": "Vzťažné vety po predložke (con la que, quien, cuyo)",
     "level": "B2",
+    "area": "pronouns",
     "sources": [{ "source": "pcic", "where": "Gramática 7.2 (B2); 15.2 (B2)" }, { "source": "ngle", "where": "cap. 22; cap. 44" }, { "source": "uimp-b2", "where": "módulos 4–6" }],
     "variants": { "mx": "V Mexiku rovnako ako inde; cuyo patrí skôr do písaného a formálneho jazyka.", "es": "V Španielsku rovnako ako inde; cuyo patrí skôr do písaného a formálneho jazyka." },
     "ideas": ["join two sentences with a preposition + el que / la que", "cuyo / cuya agreeing with what is owned"],
@@ -1612,6 +1643,7 @@
     "id": "passive-se",
     "title": "Neosobné a trpné se",
     "level": "B1",
+    "area": "verbs",
     "sources": [{ "source": "pcic", "where": "Gramática 7.1.4 (B1); 13.3 (B1); 9.4.3 (A2)" }, { "source": "ngle", "where": "§ 41.10–41.12" }],
     "variants": { "mx": "V Mexiku rovnako ako inde; typicky na tabuliach a v inzerátoch (se vende, se renta = prenajíma sa).", "es": "V Španielsku rovnako ako inde; typicky na tabuliach a v inzerátoch (se vende, se alquila = prenajíma sa)." },
     "ideas": ["turn an active sentence into a se-sentence (venden casas → se venden casas)", "se vende or se venden by the noun"],
@@ -1648,6 +1680,7 @@
     "id": "ser-passive",
     "title": "Trpný rod so ser (fue construido)",
     "level": "B2",
+    "area": "verbs",
     "sources": [{ "source": "pcic", "where": "Gramática 12.1 (B2); 13.3 (B2)" }, { "source": "ngle", "where": "§ 41.2–41.3" }, { "source": "uimp-b2", "where": "módulos 1 y 6" }],
     "variants": { "mx": "V Mexiku rovnako ako inde: v správach a úradných textoch, v reči skôr se alebo činný rod.", "es": "V Španielsku rovnako ako inde: v správach a úradných textoch, v reči skôr se alebo činný rod." },
     "ideas": ["turn a news sentence into the active (fue construido por → construyeron)", "agree the participle with the subject (fueron publicadas)"],
@@ -1680,6 +1713,7 @@
     "id": "demonstratives",
     "title": "este, ese, aquel",
     "level": "A1",
+    "area": "nouns",
     "sources": [
       {
         "source": "pcic",
@@ -1761,6 +1795,7 @@
     "id": "possessives",
     "title": "mi, tu, su… mío, tuyo",
     "level": "A1",
+    "area": "nouns",
     "sources": [
       {
         "source": "pcic",
@@ -1852,6 +1887,7 @@
     "id": "interrogatives",
     "title": "Otázky: qué, quién, dónde…",
     "level": "A1",
+    "area": "pronouns",
     "sources": [
       {
         "source": "pcic",
@@ -1924,6 +1960,7 @@
     "id": "negation",
     "title": "Zápor: no, nunca, nada, nadie",
     "level": "A2",
+    "area": "sentences",
     "sources": [
       {
         "source": "pcic",
@@ -1996,6 +2033,7 @@
     "id": "personal-a",
     "title": "a pred osobou",
     "level": "A2",
+    "area": "pronouns",
     "sources": [
       {
         "source": "pcic",
@@ -2068,6 +2106,7 @@
     "id": "periphrases",
     "title": "Perifrázy: acabar de, volver a, soler…",
     "level": "B1",
+    "area": "tenses",
     "sources": [
       {
         "source": "pcic",
@@ -2195,6 +2234,7 @@
     "id": "temporal",
     "title": "Časové vety: cuando, mientras, antes de que",
     "level": "B1",
+    "area": "sentences",
     "sources": [
       {
         "source": "pcic",
@@ -2307,6 +2347,7 @@
     "id": "cause",
     "title": "Príčina a dôsledok: como, así que, por eso",
     "level": "B1",
+    "area": "sentences",
     "sources": [
       {
         "source": "pcic",
@@ -2403,6 +2444,7 @@
     "id": "reported",
     "title": "Nepriama reč: dijo que…",
     "level": "B1",
+    "area": "sentences",
     "sources": [
       {
         "source": "pcic",
@@ -2499,6 +2541,7 @@
     "id": "doubt",
     "title": "Možno: quizá, tal vez, a lo mejor, capaz que",
     "level": "B1",
+    "area": "moods",
     "sources": [
       {
         "source": "pcic",
@@ -2595,6 +2638,7 @@
     "id": "verb-prep",
     "title": "Slovesá s predložkou: pensar en, darse cuenta de",
     "level": "B2",
+    "area": "verbs",
     "sources": [
       {
         "source": "pcic",
@@ -2707,6 +2751,7 @@
     "id": "ser-estar-meaning",
     "title": "ser listo, estar listo: zmena významu",
     "level": "B2",
+    "area": "verbs",
     "sources": [
       {
         "source": "pcic",
@@ -2791,6 +2836,7 @@
     "id": "cambio",
     "title": "Verbos de cambio: ponerse, quedarse, hacerse, volverse",
     "level": "B2",
+    "area": "verbs",
     "sources": [
       {
         "source": "pcic",
@@ -2887,6 +2933,7 @@
     "id": "conditional-perfect",
     "title": "Čo by bolo, keby: habría ido, si hubiera sabido",
     "level": "B2",
+    "area": "tenses",
     "sources": [
       {
         "source": "pcic",
@@ -2983,6 +3030,7 @@
     "id": "cond-connectors",
     "title": "Podmienky: siempre que, a no ser que, por si",
     "level": "B2",
+    "area": "moods",
     "sources": [
       {
         "source": "pcic",
@@ -3079,6 +3127,7 @@
     "id": "relatives-mood",
     "title": "Vzťažné vety a spôsob: Busco un libro que sea…",
     "level": "B2",
+    "area": "pronouns",
     "sources": [
       {
         "source": "pcic",

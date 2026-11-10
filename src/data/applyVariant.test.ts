@@ -32,7 +32,7 @@ describe('applySentences', () => {
 
 describe('applyTips', () => {
   const tip = (): Tip => ({
-    id: 'hay-estar', title: 'hay', level: 'A1', intro: 'Úvod.', sources: [], ideas: ['x'], variants: { mx: 'V Mexiku.', es: 'V Španielsku.' },
+    id: 'hay-estar', title: 'hay', level: 'A1', area: 'verbs', intro: 'Úvod.', sources: [], ideas: ['x'], variants: { mx: 'V Mexiku.', es: 'V Španielsku.' },
     rules: [
       { id: 'hay', title: 'Hay', text: 'hay un Oxxo', examples: [{ es: 'Hay un Oxxo.', sk: 'Je tam Oxxo.' }, { es: 'No hay leche.', sk: 'Nie je mlieko.' }] },
       { id: 'estar', title: 'Estar', examples: [{ es: 'Está aquí.', sk: 'Je tu.' }] },

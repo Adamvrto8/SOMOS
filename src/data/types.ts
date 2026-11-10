@@ -143,10 +143,15 @@ export interface TipRule {
   because?: string // ser-estar and the usage tips, shown for one blank: "Ide o pôvod, preto ser."
 }
 
+/** Where a tip sits on the grammar screen (src/features/grammar/GrammarPage.tsx). */
+export const TIP_AREAS = ['tenses', 'moods', 'verbs', 'nouns', 'pronouns', 'sentences', 'spelling'] as const
+export type TipArea = (typeof TIP_AREAS)[number]
+
 export interface Tip {
   id: string // a Grammar tag where one exists ("preterito"), else its own ("accents")
   title: string
   level: Level // the level it is taught at, after the Plan curricular del Instituto Cervantes
+  area: TipArea // the group it is listed under
   intro: string
   rules: TipRule[]
   related?: string[] // tip ids, "Pozri aj"

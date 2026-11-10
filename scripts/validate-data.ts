@@ -15,6 +15,7 @@ import {
 } from '../src/lib/verbForms.ts'
 import { applySentences, applyWords, hiddenVerbIds, mergeById, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
 import { bareVosotros } from '../src/lib/vosotros.ts'
+import { TIP_AREAS } from '../src/data/types.ts'
 import { BLANK_TIPS, checksOwnHint, usageClozeErrors, usageHint } from '../src/lib/clozeChecks.ts'
 
 const DATA = new URL('../src/data/', import.meta.url)
@@ -388,6 +389,7 @@ for (const tip of tips) {
   const where = `tips[${tip.id}]`
   if (!isNonEmpty(tip.title) || !isNonEmpty(tip.intro)) fail(where, 'missing title/intro')
   checkLevel(where, tip.level)
+  if (!(TIP_AREAS as readonly string[]).includes(tip.area)) fail(where, `needs an area, one of ${TIP_AREAS.join(', ')}`)
   if (!Array.isArray(tip.sources) || tip.sources.length === 0) fail(where, 'needs at least one source')
   for (const ref of Array.isArray(tip.sources) ? tip.sources : []) {
     if (!sourceIds.has(ref.source)) fail(where, `unknown source "${ref.source}"`)
@@ -428,6 +430,8 @@ for (const tip of tips) {
     else if (!tipById.has(id)) fail(where, `unknown related tip "${id}"`)
   }
 }
+
+for (const area of TIP_AREAS) if (!tips.some((tip) => tip.area === area)) fail('tips', `no tip in the area "${area}"`)
 
 // ---------- sentences ----------
 

@@ -115,6 +115,29 @@ test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {
   const list = page.getByRole('main').getByRole('listitem')
   await expect(list).toHaveCount(tips.length)
   expect(tips.length).toBe(49)
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+
+  // The level chips narrow the list, "Všetko" brings it back.
+  const levels = page.getByRole('group', { name: 'Úroveň' })
+  await levels.getByRole('button', { name: 'B2', exact: true }).tap()
+  await expect(list).toHaveCount(tips.filter((tip) => tip.level === 'B2').length)
+  await levels.getByRole('button', { name: 'Všetko', exact: true }).tap()
+  await expect(list).toHaveCount(tips.length)
+
+  // The search ignores accents; Back from a tip returns to the same query.
+  const doubt = tips.find((tip) => tip.id === 'doubt')!
+  const field = page.getByRole('searchbox', { name: 'Hľadať v gramatike' })
+  await field.fill('quiza')
+  await expect(list.first()).toContainText(doubt.title)
+  await list.first().getByRole('link').tap()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(doubt.title)
+  await button(page, 'Späť').tap()
+  await expect(field).toHaveValue('quiza')
+  await expect(list.first()).toContainText(doubt.title)
+  await field.fill('zzzzz')
+  await expect(page.getByText('Nenašli sme nič pre „zzzzz“.')).toBeVisible()
+  await field.fill('')
+  await expect(list).toHaveCount(tips.length)
 
   await list.getByRole('link', { name: /^ser a estar/ }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')
@@ -163,9 +186,11 @@ test('there is no link without a tip or after a right answer', async ({ page }) 
   await expect(tipLink(page)).toHaveCount(0)
 })
 
-test('the grammar handbook is ordered by level and a tip names its source', async ({ page }) => {
+test('the grammar handbook is grouped by area and a tip names its source', async ({ page }) => {
   await page.goto('/practice/grammar')
-  for (const level of ['A1', 'A2', 'B1', 'B2']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible()
+  for (const area of ['Slovesá a časy', 'Spôsoby a podmienky', 'Ser, estar a iné slovesá', 'Podstatné a prídavné mená', 'Zámená', 'Vety a spojky', 'Pravopis']) {
+    await expect(page.getByRole('heading', { name: new RegExp(`^${area} · [0-9]+$`) })).toBeVisible()
+  }
   await page.getByRole('link', { name: /Subjuntivo presente/ }).tap()
   await expect(page.getByText(/^Podľa: Plan curricular del Instituto Cervantes/)).toBeVisible()
 })

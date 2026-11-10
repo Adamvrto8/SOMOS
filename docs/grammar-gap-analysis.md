@@ -342,3 +342,11 @@ Gaps V2+V3 (merged), V4, PP1+PP2, S1, S2, A3, C2, SU1, SU2, SU4 and SU5 of §3 a
 10. `desde` and `antes de + inf.` (A2) inside `temporal`; `ya que` and `tan… que` (B2) inside `cause`; `dijo que + subjuntivo` (B2) inside `reported`.
 11. `verb-prep` is B2 (PCIC 12.2.5 B1–B2): the B1 level had no more path units to give.
 12. `conditional-perfect` merges V2 and V3; the pluscuamperfecto de subjuntivo is taught through *hubiera* only.
+
+## 10. Part B applied on 2026-11-10 (uncommitted): the grammar screen
+
+Spec `docs/superpowers/specs/2026-11-10-grammar-screen-design.md`, plan `docs/superpowers/plans/2026-11-10-grammar-screen.md`.
+
+- `Tip.area` (7 areas: tenses, moods, verbs, nouns, pronouns, sentences, spelling) in `tips.json`, checked by `validate:data`.
+- `src/lib/tipSearch.ts`: accent-insensitive search over title, intro, rules, Spanish examples and `ideas`; title matches rank first.
+- `/practice/grammar`: search field, level chips, tips grouped by area (A1 → B2 inside an area), query and level in the URL.

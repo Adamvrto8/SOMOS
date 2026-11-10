@@ -787,6 +787,15 @@ export const sk = {
     rule: 'Pravidlo',
     overview: 'Celý prehľad',
     related: 'Pozri aj',
+    searchLabel: 'Hľadať v gramatike',
+    searchPlaceholder: 'Hľadať v gramatike…',
+    levelLabel: 'Úroveň',
+    all: 'Všetko',
+    /** The groups of the grammar screen, by Tip.area. */
+    areas: { tenses: 'Slovesá a časy', moods: 'Spôsoby a podmienky', verbs: 'Ser, estar a iné slovesá', nouns: 'Podstatné a prídavné mená', pronouns: 'Zámená', sentences: 'Vety a spojky', spelling: 'Pravopis' },
+    results: (n: number) => `Výsledky · ${n}`,
+    nothing: (query: string) => `Nenašli sme nič pre „${query}“.`,
+    nothingHint: 'Skús kratšie slovo, alebo zruš filter úrovne.',
     /** The heading of a tip's regional note, by the Spanish being learned. */
     variantNote: { mx: 'V Mexiku', es: 'V Španielsku' },
   },
