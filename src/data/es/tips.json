@@ -184,6 +184,41 @@
     ]
   },
   {
+    "id": "ir-a",
+    "rules": [
+      {
+        "id": "forms",
+        "text": "Mení sa len ir (voy, vas, va, vamos, vais, van), a a neurčitok ostávajú: voy a comer, vamos a salir."
+      },
+      {
+        "id": "use",
+        "text": "O tom, čo mám v pláne alebo čo sa čoskoro stane: mañana voy a trabajar, va a llover."
+      },
+      {
+        "id": "pronouns",
+        "examples": [
+          null,
+          {
+            "es": "Voy a llamarte por la noche.",
+            "sk": "Zavolám ti večer."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "forms",
+          "text": "Only ir changes (voy, vas, va, vamos, vais, van); a and the infinitive stay: voy a comer, vamos a salir."
+        },
+        {
+          "id": "use",
+          "text": "What I plan or what is about to happen: mañana voy a trabajar, va a llover."
+        }
+      ]
+    }
+  },
+  {
     "id": "futuro",
     "rules": [
       {
@@ -198,20 +233,12 @@
         ]
       },
       {
-        "id": "ir-a",
-        "text": "O blízkej budúcnosti sa v bežnej reči hovorí najčastejšie takto: voy a, vas a, va a, vamos a, vais a, van a."
-      },
-      {
         "id": "endings",
         "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablaréis, hablarán. Rovnako comeré, viviré."
       }
     ],
     "en": {
       "rules": [
-        {
-          "id": "ir-a",
-          "text": "For the near future, everyday speech most often says it this way: voy a, vas a, va a, vamos a, vais a, van a."
-        },
         {
           "id": "endings",
           "text": "hablar: hablaré, hablarás, hablará, hablaremos, hablaréis, hablarán. Likewise comeré, viviré."
@@ -710,7 +737,12 @@
             "sk": "Už si prečítal knihu, ktorú som ti požičal?"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "relatives-prep",
+    "rules": [
       {
         "id": "el-que",
         "text": "Po predložke sa pridáva člen: la persona con la que hablé, el tema del que te hablé. Pri ľuďoch aj quien: la chica con quien salgo.",
@@ -844,6 +876,143 @@
         {
           "id": "form",
           "text": "Only estar is conjugated: estoy, estás, está, estamos, estáis, están. The gerund doesn't change."
+        }
+      ]
+    }
+  },
+  {
+    "id": "demonstratives",
+    "rules": [
+      {
+        "id": "near",
+        "examples": [
+          null,
+          {
+            "es": "Este coche es de mi padre.",
+            "sk": "Toto auto je otcovo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "possessives",
+    "rules": [
+      {
+        "id": "short",
+        "text": "mi casa, mis amigos; tu coche, tus llaves. Rod sa nemení: mi hermano aj mi hermana. Pozor: tu (tvoj) je bez prízvuku, tú (ty) s ním."
+      },
+      {
+        "id": "nuestro",
+        "text": "nuestro piso, nuestra casa, nuestros hijos, nuestras amigas. Zhoduje sa s vecou, nie s tými, čo ju majú."
+      },
+      {
+        "id": "svoj",
+        "examples": [
+          {
+            "es": "Olvidé mi paraguas en el autobús.",
+            "sk": "Zabudol som svoj dáždnik v autobuse."
+          },
+          null
+        ]
+      },
+      {
+        "id": "long",
+        "examples": [
+          null,
+          {
+            "es": "Tu coche es rojo y el mío es azul.",
+            "sk": "Tvoje auto je červené a moje modré."
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "examples": [
+          null,
+          {
+            "es": "Ponte la chaqueta, hace frío.",
+            "sk": "Obleč si bundu, je zima."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "short",
+          "text": "mi casa, mis amigos; tu coche, tus llaves. Gender does not change: mi hermano and mi hermana. Careful: tu (your) has no accent, tú (you) has one."
+        },
+        {
+          "id": "nuestro",
+          "text": "nuestro piso, nuestra casa, nuestros hijos, nuestras amigas. It agrees with the thing, not with its owners."
+        }
+      ]
+    }
+  },
+  {
+    "id": "interrogatives",
+    "rules": [
+      {
+        "id": "prep",
+        "examples": [
+          null,
+          {
+            "es": "¿A qué hora sale el autobús?",
+            "sk": "O koľkej ide autobus?"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "negation",
+    "rules": [
+      {
+        "id": "double",
+        "examples": [
+          {
+            "es": "No hay nada en la nevera.",
+            "sk": "V chladničke nič nie je."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "personal-a",
+    "rules": [
+      {
+        "id": "person",
+        "examples": [
+          null,
+          {
+            "es": "Echo mucho de menos a mi perro.",
+            "sk": "Veľmi mi chýba môj pes."
+          }
+        ]
+      },
+      {
+        "id": "thing",
+        "examples": [
+          {
+            "es": "Busco un piso cerca del centro.",
+            "sk": "Hľadám byt blízko centra."
+          },
+          {
+            "es": "Vemos la tele por la noche.",
+            "sk": "Večer pozeráme telku."
+          }
+        ],
+        "text": "Pri veciach a miestach sa a nedáva: veo la tele, busco un piso, visito la ciudad."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "thing",
+          "text": "Before things and places there is no a: veo la tele, busco un piso, visito la ciudad."
         }
       ]
     }

@@ -5,7 +5,7 @@
     "sk": "Koľko stoja tieto topánky?",
     "level": "A1",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives", "interrogatives"],
     "tokens": ["¿", "Cuánto", "cuestan", "estos", "zapatos", "?"],
     "cloze": [
       {
@@ -14,6 +14,24 @@
         "lemma": "costar",
         "hint": "costar · ellos · presente",
         "distractors": ["cuestas", "costamos", "costaron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["estas", "este", "esto"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuánto",
+        "lemma": "cuánto",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántos", "Qué", "Cuándo"]
       }
     ]
   },
@@ -23,7 +41,7 @@
     "sk": "Beriem si túto bundu.",
     "level": "A1",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Me", "llevo", "esta", "chamarra", "."],
     "cloze": [
       {
@@ -32,6 +50,15 @@
         "lemma": "llevar",
         "hint": "llevar · yo · presente",
         "distractors": ["lleva", "llevan", "llevé"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "esa"]
       }
     ]
   },
@@ -58,7 +85,7 @@
     "sk": "Tá bunda je veľmi pekná, kúpim si ju.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["object-pronouns", "presente"],
+    "grammar": ["object-pronouns", "presente", "demonstratives"],
     "tokens": ["Esa", "chamarra", "es", "muy", "bonita", ";", "la", "voy", "a", "comprar", "."],
     "cloze": [
       {
@@ -66,6 +93,8 @@
         "answer": "Esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["estas", "ese", "esos"]
       },
       {
@@ -159,7 +188,7 @@
     "sk": "Tieto topánky sú lacné, kúp ich ešte dnes.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["object-pronouns", "presente", "imperativo"],
+    "grammar": ["object-pronouns", "presente", "imperativo", "demonstratives"],
     "tokens": ["Estos", "zapatos", "son", "baratos", ";", "cómpralos", "hoy", "."],
     "cloze": [
       {
@@ -167,6 +196,8 @@
         "answer": "Estos",
         "lemma": "estos",
         "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["ese", "esa", "esos"]
       },
       {
@@ -262,7 +293,7 @@
     "sk": "Brat chcel tú košeľu a ja som mu ju včera kúpil.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["object-pronouns", "imperfecto", "preterito"],
+    "grammar": ["object-pronouns", "imperfecto", "preterito", "demonstratives"],
     "tokens": ["Mi", "hermano", "quería", "esa", "camisa", "y", "se", "la", "compré", "ayer", "."],
     "cloze": [
       {
@@ -270,6 +301,8 @@
         "answer": "esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["esos", "esas", "este"]
       },
       {
@@ -307,7 +340,7 @@
     "sk": "Tieto jablká sú veľmi drahé.",
     "level": "A1",
     "topics": ["shopping"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "demonstratives"],
     "tokens": ["Estas", "manzanas", "están", "muy", "caras", "."],
     "cloze": [
       {
@@ -316,6 +349,15 @@
         "lemma": "caro",
         "hint": "prídavné meno: caro",
         "distractors": ["caro", "cara", "caros"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Estas",
+        "lemma": "estas",
+        "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Estos", "Esta", "Esto"]
       }
     ]
   },
@@ -439,7 +481,7 @@
     "sk": "V tomto obchode ťa veľmi dobre obslúžia.",
     "level": "B1",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["En", "esta", "tienda", "te", "atienden", "muy", "bien", "."],
     "cloze": [
       {
@@ -454,6 +496,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "estos", "estas"]
       }
     ]
@@ -464,7 +508,7 @@
     "sk": "Chcem vymeniť tieto topánky za inú veľkosť.",
     "level": "B1",
     "topics": ["shopping"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Quiero", "cambiar", "estos", "zapatos", "por", "otra", "talla", "."],
     "cloze": [
       {
@@ -479,6 +523,8 @@
         "answer": "estos",
         "lemma": "estos",
         "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "esta", "estas"]
       }
     ]
@@ -711,7 +757,7 @@
     "sk": "Ceny tento rok veľmi stúpli.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "demonstratives"],
     "tokens": ["Los", "precios", "subieron", "mucho", "este", "año", "."],
     "cloze": [
       {
@@ -726,6 +772,8 @@
         "answer": "este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["esos", "esas", "esta"]
       }
     ]
@@ -887,6 +935,8 @@
         "answer": "Ese",
         "lemma": "ese",
         "hint": "ten",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["esas", "este", "esta"]
       },
       {
@@ -896,7 +946,8 @@
         "hint": "po záruke",
         "distractors": ["caducada", "cansado", "cuidado"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s807",
@@ -1207,19 +1258,21 @@
   },
   {
     "id": "s441",
-    "es": "Mañana compraré los boletos.",
+    "es": "Mañana voy a comprar los boletos.",
     "sk": "Zajtra kúpim lístky.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "compraré", "los", "boletos", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "voy", "a", "comprar", "los", "boletos", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "compraré",
-        "lemma": "comprar",
-        "hint": "comprar · yo · futuro",
-        "distractors": ["comprará", "comprarán", "compro"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1343,6 +1396,8 @@
         "answer": "esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["esas", "este", "esta"]
       },
       {
@@ -1352,7 +1407,8 @@
         "hint": "výhodná kúpa",
         "distractors": ["queja", "factura", "devolución"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s1436",
@@ -1735,7 +1791,7 @@
     "sk": "Kde sú pomaranče?",
     "level": "A1",
     "topics": ["shopping"],
-    "grammar": ["hay-estar", "presente"],
+    "grammar": ["hay-estar", "presente", "interrogatives"],
     "tokens": ["¿", "Dónde", "están", "las", "naranjas", "?"],
     "cloze": [
       {
@@ -1746,6 +1802,15 @@
         "tip": "hay-estar",
         "why": "question",
         "distractors": ["hay", "son", "está"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuándo", "Cómo", "Qué"]
       }
     ]
   },
@@ -1822,19 +1887,21 @@
   },
   {
     "id": "s1428",
-    "es": "Mañana pasaré por la panadería.",
+    "es": "Mañana voy a pasar por la panadería.",
     "sk": "Zajtra sa zastavím v pekárni.",
     "level": "A2",
     "topics": ["shopping"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "pasaré", "por", "la", "panadería", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "voy", "a", "pasar", "por", "la", "panadería", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "pasaré",
-        "lemma": "pasar",
-        "hint": "pasar · yo · futuro",
-        "distractors": ["paso", "pasaremos", "pasaron"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1897,7 +1964,7 @@
     "sk": "Chcel som tú bundu, ale už ju predali.",
     "level": "B1",
     "topics": ["shopping"],
-    "grammar": ["pluscuamperfecto", "imperfecto"],
+    "grammar": ["pluscuamperfecto", "imperfecto", "demonstratives"],
     "tokens": ["Quería", "esa", "chamarra", ",", "pero", "ya", "la", "habían", "vendido", "."],
     "cloze": [
       {
@@ -1905,6 +1972,8 @@
         "answer": "esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["ese", "esos", "esas"]
       },
       {
@@ -2222,7 +2291,7 @@
     "sk": "Tento model bol predaný vo viac ako sto obchodoch.",
     "level": "B2",
     "topics": ["shopping"],
-    "grammar": ["passive-se", "preterito"],
+    "grammar": ["ser-passive", "preterito"],
     "tokens": ["Este", "modelo", "fue", "vendido", "en", "más", "de", "cien", "tiendas", "."],
     "cloze": [
       {
@@ -2230,7 +2299,7 @@
         "answer": "vendido",
         "lemma": "vender",
         "hint": "vender · participio",
-        "tip": "passive-se",
+        "tip": "ser-passive",
         "why": "ser-passive",
         "distractors": ["vendida", "vendiendo", "vendió"]
       }
@@ -2356,7 +2425,7 @@
     "sk": "Aj keď je cena vysoká, oplatí sa kúpiť kvalitný matrac.",
     "level": "B2",
     "topics": ["shopping"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
     "tokens": ["Aunque", "el", "precio", "sea", "alto", ",", "vale", "la", "pena", "comprar", "un", "colchón", "de", "buena", "calidad", "."],
     "cloze": [
       {
@@ -2371,7 +2440,7 @@
         "answer": "sea",
         "lemma": "ser",
         "hint": "ser · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["ser", "siendo"]
       }
@@ -2500,6 +2569,146 @@
         "lemma": "necesitar",
         "hint": "necesitar · tú · subjuntivo",
         "distractors": ["necesitas", "necesitaste", "necesitarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2248",
+    "es": "Estos productos fueron importados desde Asia por una empresa de Monterrey.",
+    "sk": "Tieto výrobky dovážala z Ázie spoločnosť z Monterrey.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["ser-passive", "preterito"],
+    "tokens": ["Estos", "productos", "fueron", "importados", "desde", "Asia", "por", "una", "empresa", "de", "Monterrey", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fueron",
+        "lemma": "ser",
+        "hint": "ser · ellos · pretérito",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["son", "eran", "serán"]
+      }
+    ]
+  },
+  {
+    "id": "s2249",
+    "es": "La nueva tienda será inaugurada por el alcalde el próximo viernes.",
+    "sk": "Nový obchod otvorí starosta budúci piatok.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["ser-passive", "futuro"],
+    "tokens": ["La", "nueva", "tienda", "será", "inaugurada", "por", "el", "alcalde", "el", "próximo", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "será",
+        "lemma": "ser",
+        "hint": "ser · él · futuro",
+        "tip": "ser-passive",
+        "why": "register",
+        "distractors": ["es", "fue", "sería"]
+      }
+    ]
+  },
+  {
+    "id": "s2250",
+    "es": "Las ofertas del fin de semana son anunciadas por radio y por internet.",
+    "sk": "Víkendové zľavy sa oznamujú v rádiu aj na internete.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["ser-passive", "presente"],
+    "tokens": ["Las", "ofertas", "del", "fin", "de", "semana", "son", "anunciadas", "por", "radio", "y", "por", "internet", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "son",
+        "lemma": "ser",
+        "hint": "ser · ellos · presente",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["es", "fueron", "serán"]
+      }
+    ]
+  },
+  {
+    "id": "s2251",
+    "es": "El centro comercial fue cerrado por la policía después de la alerta.",
+    "sk": "Nákupné centrum políci po upozornení zatvorili.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["ser-passive", "preterito"],
+    "tokens": ["El", "centro", "comercial", "fue", "cerrado", "por", "la", "policía", "después", "de", "la", "alerta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cerrado",
+        "lemma": "cerrar",
+        "hint": "cerrar · participio",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["cerrada", "cerrando", "cerró"]
+      }
+    ]
+  },
+  {
+    "id": "s2252",
+    "es": "Los pedidos serán entregados por mensajeros en un plazo de tres días.",
+    "sk": "Objednávky doručia kuriéri do troch dní.",
+    "level": "B2",
+    "topics": ["shopping"],
+    "grammar": ["ser-passive", "futuro"],
+    "tokens": ["Los", "pedidos", "serán", "entregados", "por", "mensajeros", "en", "un", "plazo", "de", "tres", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "serán",
+        "lemma": "ser",
+        "hint": "ser · ellos · futuro",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["son", "fueron", "sean"]
+      }
+    ]
+  },
+  {
+    "id": "s2276",
+    "es": "No compro nada en línea.",
+    "sk": "Online si nič nekupujem.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["No", "compro", "nada", "en", "línea", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nadie", "nunca", "algo"]
+      }
+    ]
+  },
+  {
+    "id": "s2289",
+    "es": "Ayer no vi a nadie en la tienda.",
+    "sk": "Včera som v obchode nikoho nevidel.",
+    "level": "A2",
+    "topics": ["shopping"],
+    "grammar": ["personal-a", "preterito"],
+    "tokens": ["Ayer", "no", "vi", "a", "nadie", "en", "la", "tienda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "nadie",
+        "distractors": ["de", "en", "con"]
       }
     ]
   }

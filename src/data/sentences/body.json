@@ -52,7 +52,7 @@
     "sk": "Môj syn je na svoj vek veľmi vysoký.",
     "level": "A1",
     "topics": ["body"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "possessives"],
     "tokens": ["Mi", "hijo", "es", "muy", "alto", "para", "su", "edad", "."],
     "cloze": [
       {
@@ -62,6 +62,15 @@
         "hint": "ser/estar · él · presente",
         "why": "trait",
         "distractors": ["está", "son", "eres"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoj",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -520,7 +529,7 @@
     "sk": "Aký si vysoký?",
     "level": "B1",
     "topics": ["body", "numbers"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cuánto", "mides", "?"],
     "cloze": [
       {
@@ -535,6 +544,8 @@
         "answer": "Cuánto",
         "lemma": "cuánto",
         "hint": "opytovacie slovo",
+        "tip": "interrogatives",
+        "why": "words",
         "distractors": ["Cuándo", "Quién", "Dónde"]
       }
     ]
@@ -993,7 +1004,7 @@
     "sk": "Starám sa o otca, lebo si poranil rameno.",
     "level": "A2",
     "topics": ["body"],
-    "grammar": ["progresivo"],
+    "grammar": ["progresivo", "personal-a"],
     "tokens": ["Estoy", "cuidando", "a", "mi", "papá", "porque", "se", "lastimó", "el", "hombro", "."],
     "cloze": [
       {
@@ -1002,27 +1013,38 @@
         "lemma": "cuidar",
         "hint": "cuidar · gerundio",
         "distractors": ["cuido", "cuidé", "cuidaba"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["por", "en", "con"]
       }
     ]
   },
   {
     "id": "s1034",
-    "es": "Mañana iré al dentista porque me duele una muela.",
+    "es": "Mañana voy a ir al dentista porque me duele una muela.",
     "sk": "Zajtra pôjdem k zubárovi, lebo ma bolí zub.",
     "level": "A2",
     "topics": ["body"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "iré", "al", "dentista", "porque", "me", "duele", "una", "muela", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "voy", "a", "ir", "al", "dentista", "porque", "me", "duele", "una", "muela", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "iré",
+        "answer": "voy",
         "lemma": "ir",
-        "hint": "ir · yo · futuro",
-        "distractors": ["voy", "fui", "iba"]
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       },
       {
-        "tokenIndex": 4,
+        "tokenIndex": 6,
         "answer": "porque",
         "lemma": "porque",
         "hint": "pretože",
@@ -1537,7 +1559,7 @@
     "sk": "Hoci to nerád priznávam, už nemám takú kondíciu ako kedysi.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["presente", "subjuntivo-clauses"],
+    "grammar": ["presente", "subjuntivo-aunque"],
     "tokens": ["Aunque", "me", "duela", "admitirlo", ",", "ya", "no", "tengo", "la", "condición", "de", "antes", "."],
     "cloze": [
       {
@@ -1552,7 +1574,7 @@
         "answer": "duela",
         "lemma": "doler",
         "hint": "doler · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["duele", "dolerá"]
       }
@@ -1641,8 +1663,18 @@
         "lemma": "dedo",
         "hint": "prsty",
         "distractors": ["ojos", "dientes", "pies"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuántos",
+        "lemma": "cuántos",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántas", "Cuánto", "Qué"]
       }
-    ]
+    ],
+    "grammar": ["interrogatives"]
   },
   {
     "id": "s1603",
@@ -1765,7 +1797,7 @@
     "sk": "Lekárka, ktorá ma včera ošetrila, hovorí, že kosť sa hojí dobre.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["relatives", "preterito"],
+    "grammar": ["relatives-prep", "preterito"],
     "tokens": ["La", "doctora", ",", "quien", "me", "atendió", "ayer", ",", "dice", "que", "el", "hueso", "está", "sanando", "bien", "."],
     "cloze": [
       {
@@ -1773,7 +1805,7 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
       }
@@ -1925,6 +1957,226 @@
         "lemma": "quedar",
         "hint": "quedar · participio",
         "distractors": ["quedando", "quedó", "quedaba"]
+      }
+    ]
+  },
+  {
+    "id": "s2212",
+    "es": "En esta farmacia se venden vitaminas para los niños.",
+    "sk": "V tejto lekárni sa predávajú vitamíny pre deti.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "esta", "farmacia", "se", "venden", "vitaminas", "para", "los", "niños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "venden",
+        "lemma": "vender",
+        "hint": "vender · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["vende", "vendían", "venderán"]
+      }
+    ]
+  },
+  {
+    "id": "s2213",
+    "es": "Con la ventana abierta se duerme mejor.",
+    "sk": "Pri otvorenom okne sa spí lepšie.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Con", "la", "ventana", "abierta", "se", "duerme", "mejor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "duerme",
+        "lemma": "dormir",
+        "hint": "dormir · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["duermen", "dormía", "dormirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2214",
+    "es": "¿Cómo se dice la palabra codo en inglés?",
+    "sk": "Ako sa povie slovo „lakeť“ po anglicky?",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["¿", "Cómo", "se", "dice", "la", "palabra", "codo", "en", "inglés", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "dice",
+        "lemma": "decir",
+        "hint": "decir · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["dicen", "decía", "dirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2215",
+    "es": "Mi brazo está roto desde el sábado.",
+    "sk": "Mám zlomenú ruku od soboty.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Mi", "brazo", "está", "roto", "desde", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "roto",
+        "lemma": "romper",
+        "hint": "romper · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["rota", "rompiendo", "rompió"]
+      }
+    ]
+  },
+  {
+    "id": "s2216",
+    "es": "Las manos se lavan con agua y jabón antes de comer.",
+    "sk": "Ruky sa umývajú vodou a mydlom pred jedlom.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Las", "manos", "se", "lavan", "con", "agua", "y", "jabón", "antes", "de", "comer", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "lavan",
+        "lemma": "lavar",
+        "hint": "lavar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["lava", "lavaban", "lavarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2217",
+    "es": "En este gimnasio se entrena muy bien por las mañanas.",
+    "sk": "V tejto posilňovni sa ráno trénuje veľmi dobre.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "este", "gimnasio", "se", "entrena", "muy", "bien", "por", "las", "mañanas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "entrena",
+        "lemma": "entrenar",
+        "hint": "entrenar · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["entrenan", "entrenaba", "entrenará"]
+      }
+    ]
+  },
+  {
+    "id": "s2218",
+    "es": "Los dientes se cepillan después de cada comida.",
+    "sk": "Zuby sa čistia po každom jedle.",
+    "level": "B1",
+    "topics": ["body"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Los", "dientes", "se", "cepillan", "después", "de", "cada", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cepillan",
+        "lemma": "cepillar",
+        "hint": "cepillar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["cepilla", "cepillaban", "cepillarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2282",
+    "es": "Llevo a mi abuela al doctor.",
+    "sk": "Beriem babku k lekárovi.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Llevo", "a", "mi", "abuela", "al", "doctor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2283",
+    "es": "Cuido a mi hermano cuando está enfermo.",
+    "sk": "Starám sa o brata, keď je chorý.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Cuido", "a", "mi", "hermano", "cuando", "está", "enfermo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["por", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2284",
+    "es": "Ayer vi al dentista en el supermercado.",
+    "sk": "Včera som videl zubára v supermarkete.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["personal-a", "preterito"],
+    "tokens": ["Ayer", "vi", "al", "dentista", "en", "el", "supermercado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "al",
+        "lemma": "al",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["del", "el", "en el"]
+      }
+    ]
+  },
+  {
+    "id": "s2285",
+    "es": "Escucho al doctor con atención.",
+    "sk": "Pozorne počúvam lekára.",
+    "level": "A2",
+    "topics": ["body"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Escucho", "al", "doctor", "con", "atención", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "al",
+        "lemma": "al",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["del", "el", "en el"]
       }
     ]
   }

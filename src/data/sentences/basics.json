@@ -12,9 +12,12 @@
         "answer": "Dónde",
         "lemma": "dónde",
         "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
         "distractors": ["Cuándo", "Cómo", "Qué"]
       }
-    ]
+    ],
+    "grammar": ["interrogatives"]
   },
   {
     "id": "s370",
@@ -47,9 +50,12 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada", "alguien", "algo"]
       }
-    ]
+    ],
+    "grammar": ["negation"]
   },
   {
     "id": "s372",
@@ -82,8 +88,18 @@
         "lemma": "para",
         "hint": "pre",
         "distractors": ["por", "con", "de"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Esta", "Ese", "Esto"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s374",
@@ -175,19 +191,21 @@
   },
   {
     "id": "s446",
-    "es": "¿Podrás ayudarme mañana?",
+    "es": "¿Vas a poder ayudarme mañana?",
     "sk": "Budeš mi môcť zajtra pomôcť?",
     "level": "A2",
     "topics": ["basics"],
-    "grammar": ["futuro"],
-    "tokens": ["¿", "Podrás", "ayudarme", "mañana", "?"],
+    "grammar": ["ir-a"],
+    "tokens": ["¿", "Vas", "a", "poder", "ayudarme", "mañana", "?"],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "Podrás",
-        "lemma": "poder",
-        "hint": "poder · tú · futuro",
-        "distractors": ["Podremos", "Podré", "Puedes"]
+        "answer": "Vas",
+        "lemma": "ir",
+        "hint": "ir · tú · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["Va", "Voy", "Fuiste"]
       }
     ]
   },
@@ -480,7 +498,7 @@
     "sk": "Toto je pre teba.",
     "level": "A1",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Esto", "es", "para", "ti", "."],
     "cloze": [
       {
@@ -489,6 +507,15 @@
         "lemma": "para",
         "hint": "pre",
         "distractors": ["con", "en", "a"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Esto",
+        "lemma": "esto",
+        "hint": "toto",
+        "tip": "demonstratives",
+        "why": "neutral",
+        "distractors": ["Este", "Esta", "Eso"]
       }
     ]
   },
@@ -534,7 +561,7 @@
     "sk": "Kto chce ešte kávu?",
     "level": "A1",
     "topics": ["basics", "food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Quién", "quiere", "más", "café", "?"],
     "cloze": [
       {
@@ -543,6 +570,15 @@
         "lemma": "querer",
         "hint": "querer · él · presente",
         "distractors": ["quieres", "quieren", "quiero"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Quién",
+        "lemma": "quién",
+        "hint": "kto",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Qué", "Cuál", "Cómo"]
       }
     ]
   },
@@ -570,7 +606,7 @@
     "sk": "Počas filmu nikto nič nepovedal.",
     "level": "A2",
     "topics": ["basics"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "negation"],
     "tokens": ["Durante", "la", "película", ",", "nadie", "dijo", "nada", "."],
     "cloze": [
       {
@@ -585,7 +621,18 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "alguien", "nunca"]
       }
     ]
   },
@@ -595,7 +642,7 @@
     "sk": "Niekto nechal otvorené dvere.",
     "level": "A2",
     "topics": ["basics"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "negation"],
     "tokens": ["Alguien", "dejó", "la", "puerta", "abierta", "."],
     "cloze": [
       {
@@ -603,6 +650,8 @@
         "answer": "Alguien",
         "lemma": "alguien",
         "hint": "niekto",
+        "tip": "negation",
+        "why": "pairs",
         "distractors": ["Algo", "Cada", "Mismo"]
       }
     ]
@@ -681,7 +730,7 @@
     "sk": "Bratrancov som nevidel už dva roky.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "personal-a"],
     "tokens": ["Hace", "dos", "años", "que", "no", "veo", "a", "mis", "primos", "."],
     "cloze": [
       {
@@ -696,6 +745,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["de", "en", "con"]
       }
     ]
@@ -821,7 +872,7 @@
     "sk": "Zrejme nikto nevedel, že obchod zavrel.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "negation"],
     "tokens": ["Por", "lo", "visto", ",", "nadie", "sabía", "que", "la", "tienda", "había", "cerrado", "."],
     "cloze": [
       {
@@ -829,6 +880,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       },
       {
@@ -896,7 +949,7 @@
     "sk": "Zvyčajne raňajkujem doma, zatiaľ čo moja žena raňajkuje v práci.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Por", "lo", "general", "desayuno", "en", "casa", ",", "mientras", "que", "mi", "esposa", "desayuna", "en", "el", "trabajo", "."],
     "cloze": [
       {
@@ -911,6 +964,8 @@
         "answer": "mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mis", "tu", "tus"]
       }
     ]
@@ -1039,9 +1094,12 @@
         "answer": "Cuál",
         "lemma": "cuál",
         "hint": "ktorý",
+        "tip": "interrogatives",
+        "why": "cual",
         "distractors": ["Quién", "Dónde", "Cuándo"]
       }
-    ]
+    ],
+    "grammar": ["interrogatives"]
   },
   {
     "id": "s992",
@@ -1085,7 +1143,7 @@
     "sk": "Pracuje s otcom v obchode.",
     "level": "A1",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Ella", "trabaja", "con", "su", "papá", "en", "la", "tienda", "."],
     "cloze": [
       {
@@ -1094,6 +1152,15 @@
         "lemma": "trabajar",
         "hint": "trabajar · ella · presente",
         "distractors": ["trabajó", "trabajo", "trabajarán"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoj",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -1122,7 +1189,7 @@
     "sk": "Toto miesto sa mi veľmi páči.",
     "level": "A1",
     "topics": ["basics"],
-    "grammar": ["gustar", "presente"],
+    "grammar": ["gustar", "presente", "demonstratives"],
     "tokens": ["Me", "gusta", "mucho", "este", "lugar", "."],
     "cloze": [
       {
@@ -1133,6 +1200,15 @@
         "tip": "gustar",
         "why": "how",
         "distractors": ["gustan", "gustas", "gusto"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "este",
+        "lemma": "este",
+        "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["esta", "esto", "ese"]
       }
     ]
   },
@@ -1189,9 +1265,12 @@
         "answer": "tampoco",
         "lemma": "tampoco",
         "hint": "tiež nie",
+        "tip": "negation",
+        "why": "tambien",
         "distractors": ["nadie", "nada", "alguien"]
       }
-    ]
+    ],
+    "grammar": ["negation"]
   },
   {
     "id": "s1000",
@@ -1324,6 +1403,8 @@
         "answer": "alguien",
         "lemma": "alguien",
         "hint": "niekto",
+        "tip": "negation",
+        "why": "pairs",
         "distractors": ["nadie", "tampoco", "cada"]
       },
       {
@@ -1336,23 +1417,25 @@
         "distractors": ["Está", "Están"]
       }
     ],
-    "grammar": ["hay-estar"]
+    "grammar": ["hay-estar", "negation"]
   },
   {
     "id": "s1007",
-    "es": "Según mi mamá, el doctor llegará a las diez.",
+    "es": "Según mi mamá, el doctor va a llegar a las diez.",
     "sk": "Podľa mamy príde lekár o desiatej.",
     "level": "A2",
     "topics": ["basics"],
-    "grammar": ["futuro"],
-    "tokens": ["Según", "mi", "mamá", ",", "el", "doctor", "llegará", "a", "las", "diez", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Según", "mi", "mamá", ",", "el", "doctor", "va", "a", "llegar", "a", "las", "diez", "."],
     "cloze": [
       {
         "tokenIndex": 6,
-        "answer": "llegará",
-        "lemma": "llegar",
-        "hint": "llegar · él · futuro",
-        "distractors": ["llega", "llegaré", "llegaron"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1522,7 +1605,7 @@
     "sk": "Čo sa týka tvojej otázky, ešte nemám odpoveď.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Respecto", "a", "tu", "pregunta", ",", "todavía", "no", "tengo", "respuesta", "."],
     "cloze": [
       {
@@ -1537,6 +1620,8 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mis", "tus", "su"]
       }
     ]
@@ -1695,7 +1780,7 @@
     "sk": "Táto pieseň sa mi veľmi páči.",
     "level": "A1",
     "topics": ["basics"],
-    "grammar": ["gustar", "presente"],
+    "grammar": ["gustar", "presente", "demonstratives"],
     "tokens": ["Me", "encanta", "esta", "canción", "."],
     "cloze": [
       {
@@ -1706,6 +1791,15 @@
         "tip": "gustar",
         "why": "similar",
         "distractors": ["encantan", "gusta", "duele"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "estas", "esto"]
       }
     ]
   },
@@ -1988,7 +2082,7 @@
     "sk": "Z môjho pohľadu je to veľmi zaujímavá výzva.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Desde", "mi", "punto", "de", "vista", ",", "es", "un", "reto", "muy", "interesante", "."],
     "cloze": [
       {
@@ -1996,6 +2090,8 @@
         "answer": "mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["su", "sus", "mis"]
       },
       {
@@ -2013,7 +2109,7 @@
     "sk": "Je zrejmé, že nikto nečítal návod.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "negation"],
     "tokens": ["Es", "evidente", "que", "nadie", "leyó", "las", "instrucciones", "."],
     "cloze": [
       {
@@ -2021,6 +2117,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       },
       {
@@ -2088,7 +2186,7 @@
     "sk": "Keďže nikto nedvíhal, rozhodli sme sa odísť.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "negation"],
     "tokens": ["Dado", "que", "nadie", "contestaba", ",", "decidimos", "irnos", "."],
     "cloze": [
       {
@@ -2096,6 +2194,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       },
       {
@@ -2236,7 +2336,7 @@
     "sk": "Aj keď zajtra bude pršať, pôjdeme na trh, ako sme plánovali.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
     "tokens": ["Aunque", "llueva", "mañana", ",", "vamos", "a", "ir", "al", "mercado", "como", "lo", "habíamos", "planeado", "."],
     "cloze": [
       {
@@ -2251,7 +2351,7 @@
         "answer": "llueva",
         "lemma": "llover",
         "hint": "llover · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["llover", "lloviendo"]
       }
@@ -2324,7 +2424,7 @@
     "sk": "To je ten človek, o ktorom som ti včera hovoril na schôdzi susedov.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["relatives", "preterito"],
+    "grammar": ["relatives-prep", "preterito"],
     "tokens": ["Esa", "es", "la", "persona", "de", "quien", "te", "hablé", "ayer", "en", "la", "reunión", "de", "vecinos", "."],
     "cloze": [
       {
@@ -2332,7 +2432,7 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
@@ -2434,6 +2534,46 @@
         "lemma": "gustar",
         "hint": "gustar · él · subjuntivo",
         "distractors": ["gusta", "gustó", "gustaba"]
+      }
+    ]
+  },
+  {
+    "id": "s2208",
+    "es": "El libro que me prestaste está sobre la mesa.",
+    "sk": "Kniha, ktorú si mi požičal, je na stole.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "libro", "que", "me", "prestaste", "está", "sobre", "la", "mesa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2209",
+    "es": "Eso es lo que necesito para empezar mi proyecto.",
+    "sk": "To je to, čo potrebujem na začiatok svojho projektu.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Eso", "es", "lo", "que", "necesito", "para", "empezar", "mi", "proyecto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "quien", "que"]
       }
     ]
   }

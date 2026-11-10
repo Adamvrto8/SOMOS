@@ -86,7 +86,9 @@ describe('createTest', () => {
   })
 
   it('asks the tenses of the level in a conjugation test', () => {
-    expect(testTenses('A1')).toEqual(['presente', 'progresivo', 'preterito'])
+    expect(testTenses('A1')).toEqual(['presente', 'progresivo'])
+    expect(testTenses('A2')).not.toContain('futuro')
+    expect(testTenses('B1')).toContain('futuro')
     expect(testTenses('A2')).toContain('imperativo')
     expect(testTenses('A2')).not.toContain('subjuntivo')
     expect(testTenses('B1')).toContain('subjuntivo')

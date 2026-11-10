@@ -103,11 +103,13 @@
   },
   {
     "id": "s1544",
-    "es": "La borrasca llegará a la costa el jueves.",
+    "es": "La borrasca va a llegar a la costa el jueves.",
     "tokens": [
       "La",
       "borrasca",
-      "llegará",
+      "va",
+      "a",
+      "llegar",
       "a",
       "la",
       "costa",
@@ -115,14 +117,8 @@
       "jueves",
       "."
     ],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "llegará"
-      }
-    ],
     "sk": "Búrka dorazí k pobrežiu vo štvrtok.",
-    "en": "The storm will reach the coast on Thursday."
+    "en": "The storm is going to reach the coast on Thursday."
   },
   {
     "id": "s1569",

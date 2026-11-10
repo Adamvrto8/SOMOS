@@ -389,12 +389,14 @@
   },
   {
     "id": "s1210",
-    "es": "Vale, te veré mañana a las nueve.",
+    "es": "Vale, te voy a ver mañana a las nueve.",
     "tokens": [
       "Vale",
       ",",
       "te",
-      "veré",
+      "voy",
+      "a",
+      "ver",
       "mañana",
       "a",
       "las",
@@ -751,6 +753,24 @@
       "con",
       "una",
       "sonrisa",
+      "."
+    ]
+  },
+  {
+    "id": "s2181",
+    "es": "Antes de que salgas, dale un abrazo a tu abuela.",
+    "tokens": [
+      "Antes",
+      "de",
+      "que",
+      "salgas",
+      ",",
+      "dale",
+      "un",
+      "abrazo",
+      "a",
+      "tu",
+      "abuela",
       "."
     ]
   }

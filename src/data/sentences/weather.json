@@ -23,7 +23,7 @@
     "sk": "Aké je počasie na Slovensku?",
     "level": "A1",
     "topics": ["weather"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "interrogatives"],
     "tokens": ["¿", "Cómo", "está", "el", "clima", "en", "Eslovaquia", "?"],
     "cloze": [
       {
@@ -33,6 +33,15 @@
         "hint": "ser/estar · él · presente",
         "why": "state",
         "distractors": ["es", "están", "estás"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cómo",
+        "lemma": "cómo",
+        "hint": "aký",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Qué", "Cuál", "Dónde"]
       }
     ]
   },
@@ -343,19 +352,21 @@
   },
   {
     "id": "s417",
-    "es": "Mañana hará mucho calor.",
+    "es": "Mañana va a hacer mucho calor.",
     "sk": "Zajtra bude veľké teplo.",
     "level": "A2",
     "topics": ["weather"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "hará", "mucho", "calor", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "va", "a", "hacer", "mucho", "calor", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "hará",
-        "lemma": "hacer",
-        "hint": "hacer · él · futuro",
-        "distractors": ["harán", "harás", "hace"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -950,20 +961,21 @@
   },
   {
     "id": "s1541",
-    "es": "Mañana estará nublado todo el día.",
+    "es": "Mañana va a estar nublado todo el día.",
     "sk": "Zajtra bude celý deň zamračené.",
     "level": "A2",
     "topics": ["weather"],
-    "grammar": ["ser-estar", "futuro"],
-    "tokens": ["Mañana", "estará", "nublado", "todo", "el", "día", "."],
+    "grammar": ["ser-estar", "ir-a"],
+    "tokens": ["Mañana", "va", "a", "estar", "nublado", "todo", "el", "día", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "estará",
-        "lemma": "estar",
-        "hint": "ser/estar · él · futuro",
-        "why": "state",
-        "distractors": ["será", "estaba", "estuvo"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1011,19 +1023,21 @@
   },
   {
     "id": "s1544",
-    "es": "El huracán llegará a la costa el jueves.",
+    "es": "El huracán va a llegar a la costa el jueves.",
     "sk": "Hurikán dorazí k pobrežiu vo štvrtok.",
     "level": "A2",
     "topics": ["weather"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "huracán", "llegará", "a", "la", "costa", "el", "jueves", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "huracán", "va", "a", "llegar", "a", "la", "costa", "el", "jueves", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "llegará",
-        "lemma": "llegar",
-        "hint": "llegar · él · futuro",
-        "distractors": ["llega", "llegó", "llegaban"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -2028,7 +2042,7 @@
     "sk": "Aj keby pršalo, pôjdeme do parku.",
     "level": "B2",
     "topics": ["weather"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo", "presente"],
     "tokens": ["Aunque", "llueva", ",", "vamos", "a", "ir", "al", "parque", "."],
     "cloze": [
       {
@@ -2036,7 +2050,7 @@
         "answer": "llueva",
         "lemma": "llover",
         "hint": "llover · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["llueve", "lloverá", "llovió"]
       }
@@ -2225,6 +2239,126 @@
         "tip": "relatives",
         "why": "donde",
         "distractors": ["cuando", "quien", "cuyo"]
+      }
+    ]
+  },
+  {
+    "id": "s2229",
+    "es": "El balcón está abierto por el calor.",
+    "sk": "Balkón je otvorený pre horúčavu.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "balcón", "está", "abierto", "por", "el", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "abierto",
+        "lemma": "abrir",
+        "hint": "abrir · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["abierta", "abriendo", "abrió"]
+      }
+    ]
+  },
+  {
+    "id": "s2230",
+    "es": "En el norte se vive con mucho calor en verano.",
+    "sk": "Na severe sa v lete žije vo veľkej horúčave.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "el", "norte", "se", "vive", "con", "mucho", "calor", "en", "verano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vive",
+        "lemma": "vivir",
+        "hint": "vivir · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["viven", "vivía", "vivirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2231",
+    "es": "Cuando llueve fuerte, se cancelan muchos vuelos.",
+    "sk": "Keď silno prší, ruší sa veľa letov.",
+    "level": "B1",
+    "topics": ["weather"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Cuando", "llueve", "fuerte", ",", "se", "cancelan", "muchos", "vuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cancelan",
+        "lemma": "cancelar",
+        "hint": "cancelar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["cancela", "cancelaban", "cancelarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2262",
+    "es": "Lleva tu paraguas, en la tarde va a llover.",
+    "sk": "Vezmi si dáždnik, poobede bude pršať.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["ir-a"],
+    "tokens": ["Lleva", "tu", "paraguas", ",", "en", "la", "tarde", "va", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2263",
+    "es": "Si hace sol, vamos a ir a la playa el sábado.",
+    "sk": "Ak bude slnečno, v sobotu pôjdeme na pláž.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["ir-a"],
+    "tokens": ["Si", "hace", "sol", ",", "vamos", "a", "ir", "a", "la", "playa", "el", "sábado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["van", "voy", "fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2300",
+    "es": "Este fin de semana va a llover.",
+    "sk": "Tento víkend bude pršať.",
+    "level": "A2",
+    "topics": ["weather"],
+    "grammar": ["demonstratives", "ir-a"],
+    "tokens": ["Este", "fin", "de", "semana", "va", "a", "llover", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
+        "distractors": ["Esta", "Ese", "Esto"]
       }
     ]
   }

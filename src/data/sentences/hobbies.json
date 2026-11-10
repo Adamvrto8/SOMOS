@@ -25,7 +25,7 @@
     "sk": "Čo robíš vo voľnom čase?",
     "level": "A1",
     "topics": ["hobbies"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Qué", "haces", "en", "tu", "tiempo", "libre", "?"],
     "cloze": [
       {
@@ -34,6 +34,15 @@
         "lemma": "hacer",
         "hint": "hacer · tú · presente",
         "distractors": ["hacemos", "hago", "hiciste"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Qué",
+        "lemma": "qué",
+        "hint": "čo",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuál", "Cómo", "Quién"]
       }
     ]
   },
@@ -63,6 +72,86 @@
       }
     ],
     "grammar": ["gustar"]
+  },
+  {
+    "id": "s2264",
+    "es": "Yo nunca juego videojuegos de noche.",
+    "sk": "Ja nikdy nehrám videohry v noci.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Yo", "nunca", "juego", "videojuegos", "de", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "nunca",
+        "lemma": "nunca",
+        "hint": "nikdy",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "nadie", "tampoco"]
+      }
+    ]
+  },
+  {
+    "id": "s2265",
+    "es": "Hoy no hay nadie en el parque.",
+    "sk": "Dnes v parku nikto nie je.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Hoy", "no", "hay", "nadie", "en", "el", "parque", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "alguien", "nunca"]
+      }
+    ]
+  },
+  {
+    "id": "s2266",
+    "es": "A mi hermano tampoco le gusta correr.",
+    "sk": "Môj brat tiež nerád behá.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["A", "mi", "hermano", "tampoco", "le", "gusta", "correr", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tampoco",
+        "lemma": "tampoco",
+        "hint": "tiež nie",
+        "tip": "negation",
+        "why": "tambien",
+        "distractors": ["también", "nunca", "nada"]
+      }
+    ]
+  },
+  {
+    "id": "s2267",
+    "es": "No tengo ningún pasatiempo caro.",
+    "sk": "Nemám žiadny drahý koníček.",
+    "level": "A2",
+    "topics": ["hobbies"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["No", "tengo", "ningún", "pasatiempo", "caro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ningún",
+        "lemma": "ningún",
+        "hint": "žiadny",
+        "tip": "negation",
+        "why": "pairs",
+        "distractors": ["algún", "ninguna", "nada"]
+      }
+    ]
   },
   {
     "id": "s344",
@@ -432,19 +521,21 @@
   },
   {
     "id": "s412",
-    "es": "Este sábado jugaremos fútbol en el parque.",
+    "es": "Este sábado vamos a jugar fútbol en el parque.",
     "sk": "Túto sobotu budeme hrať futbal v parku.",
     "level": "A2",
     "topics": ["hobbies"],
-    "grammar": ["futuro"],
-    "tokens": ["Este", "sábado", "jugaremos", "fútbol", "en", "el", "parque", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Este", "sábado", "vamos", "a", "jugar", "fútbol", "en", "el", "parque", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "jugaremos",
-        "lemma": "jugar",
-        "hint": "jugar · nosotros · futuro",
-        "distractors": ["jugaré", "jugará", "jugamos"]
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fuimos"]
       }
     ]
   },
@@ -454,7 +545,7 @@
     "sk": "Môj tím vyhral turnaj po desiatich rokoch.",
     "level": "B1",
     "topics": ["hobbies"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "possessives"],
     "tokens": ["Mi", "equipo", "ganó", "el", "torneo", "después", "de", "diez", "años", "."],
     "cloze": [
       {
@@ -462,6 +553,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
       },
       {
@@ -1197,7 +1290,7 @@
     "sk": "Tento semester sa chceme prihlásiť na tanečné.",
     "level": "B1",
     "topics": ["hobbies"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Pensamos", "inscribirnos", "a", "clases", "de", "baile", "este", "semestre", "."],
     "cloze": [
       {
@@ -1212,6 +1305,8 @@
         "answer": "este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["esos", "esas", "esta"]
       }
     ]
@@ -1374,7 +1469,7 @@
     "sk": "Zápas bol na zaspanie, nikto nedal ani gól.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["preterito", "ser-estar"],
+    "grammar": ["preterito", "ser-estar", "negation"],
     "tokens": ["El", "partido", "estuvo", "de", "flojera", ";", "nadie", "metió", "ni", "un", "gol", "."],
     "cloze": [
       {
@@ -1390,6 +1485,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       }
     ]
@@ -1997,6 +2094,46 @@
         "lemma": "ganar",
         "hint": "ganar · él · subjuntivo",
         "distractors": ["gana", "ganó", "ganará"]
+      }
+    ]
+  },
+  {
+    "id": "s2206",
+    "es": "Conozco una cancha donde jugamos fútbol todos los sábados.",
+    "sk": "Poznám ihrisko, kde každú sobotu hrávame futbal.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Conozco", "una", "cancha", "donde", "jugamos", "fútbol", "todos", "los", "sábados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2207",
+    "es": "Lo que más disfruto los domingos es andar en bicicleta.",
+    "sk": "V nedeľu si najviac užívam jazdu na bicykli.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Lo", "que", "más", "disfruto", "los", "domingos", "es", "andar", "en", "bicicleta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "quien", "que"]
       }
     ]
   }

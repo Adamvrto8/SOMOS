@@ -1,11 +1,71 @@
 [
   {
+    "id": "s2302",
+    "es": "Mi cuarto es pequeño.",
+    "sk": "Moja izba je malá.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["possessives", "presente"],
+    "tokens": ["Mi", "cuarto", "es", "pequeño", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mi",
+        "lemma": "mi",
+        "hint": "moja",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["Mis", "Tu", "Su"]
+      }
+    ]
+  },
+  {
+    "id": "s2303",
+    "es": "Nuestra cocina es grande.",
+    "sk": "Naša kuchyňa je veľká.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["possessives", "presente"],
+    "tokens": ["Nuestra", "cocina", "es", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Nuestra",
+        "lemma": "nuestra",
+        "hint": "naša",
+        "tip": "possessives",
+        "why": "nuestro",
+        "distractors": ["Nuestro", "Nuestras", "Mi"]
+      }
+    ]
+  },
+  {
+    "id": "s2304",
+    "es": "Cada niño tiene su cuarto.",
+    "sk": "Každé dieťa má svoju izbu.",
+    "level": "A1",
+    "topics": ["home"],
+    "grammar": ["possessives", "presente"],
+    "tokens": ["Cada", "niño", "tiene", "su", "cuarto", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoju",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
+      }
+    ]
+  },
+  {
     "id": "s1642",
     "es": "Me gusta mi recámara.",
     "sk": "Moja spálňa sa mi páči.",
     "level": "A1",
     "topics": ["home"],
-    "grammar": ["gustar", "presente"],
+    "grammar": ["gustar", "presente", "possessives"],
     "tokens": ["Me", "gusta", "mi", "recámara", "."],
     "cloze": [
       {
@@ -16,6 +76,15 @@
         "tip": "gustar",
         "why": "how",
         "distractors": ["gustan", "gustas", "gusto"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "mi",
+        "lemma": "mi",
+        "hint": "moja",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["mis", "tu", "su"]
       }
     ]
   },
@@ -25,7 +94,7 @@
     "sk": "V mojom byte sú dve spálne.",
     "level": "A1",
     "topics": ["home"],
-    "grammar": ["hay-estar", "presente"],
+    "grammar": ["hay-estar", "presente", "possessives"],
     "tokens": ["En", "mi", "departamento", "hay", "dos", "recámaras", "."],
     "cloze": [
       {
@@ -36,6 +105,15 @@
         "tip": "hay-estar",
         "why": "hay",
         "distractors": ["está", "están", "es"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "mi",
+        "lemma": "mi",
+        "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["mis", "tu", "su"]
       }
     ]
   },
@@ -554,7 +632,7 @@
     "sk": "Náš dom je starý, ale veľmi pohodlný.",
     "level": "A2",
     "topics": ["home"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "possessives"],
     "tokens": ["Nuestra", "casa", "es", "vieja", "pero", "muy", "cómoda", "."],
     "cloze": [
       {
@@ -562,6 +640,8 @@
         "answer": "Nuestra",
         "lemma": "nuestra",
         "hint": "naša",
+        "tip": "possessives",
+        "why": "nuestro",
         "distractors": ["mis", "tu", "tus"]
       },
       {
@@ -595,6 +675,146 @@
         "lemma": "en",
         "hint": "predložka",
         "distractors": ["a", "de", "hasta"]
+      }
+    ]
+  },
+  {
+    "id": "s2190",
+    "es": "El departamento que rentamos tiene una cocina muy amplia.",
+    "sk": "Byt, ktorý si prenajímame, má veľmi priestrannú kuchyňu.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "departamento", "que", "rentamos", "tiene", "una", "cocina", "muy", "amplia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2191",
+    "es": "Esta es la recámara donde duerme mi hermanito.",
+    "sk": "Toto je izba, v ktorej spí môj malý brat.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Esta", "es", "la", "recámara", "donde", "duerme", "mi", "hermanito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2192",
+    "es": "No entiendo lo que dice el plomero sobre la tubería.",
+    "sk": "Nerozumiem tomu, čo inštalatér hovorí o potrubí.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["No", "entiendo", "lo", "que", "dice", "el", "plomero", "sobre", "la", "tubería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["quien", "cual", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2193",
+    "es": "Los vecinos que viven arriba hacen mucho ruido por las noches.",
+    "sk": "Susedia, ktorí bývajú hore, robia v noci veľa hluku.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "vecinos", "que", "viven", "arriba", "hacen", "mucho", "ruido", "por", "las", "noches", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2194",
+    "es": "Quiero una casa donde mis perros puedan correr en el patio.",
+    "sk": "Chcem dom, kde by mohli moje psy behať na dvore.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Quiero", "una", "casa", "donde", "mis", "perros", "puedan", "correr", "en", "el", "patio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2195",
+    "es": "Lo que más me gusta de mi casa es la terraza.",
+    "sk": "Na našom dome sa mi najviac páči terasa.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Lo", "que", "más", "me", "gusta", "de", "mi", "casa", "es", "la", "terraza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "quien", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2196",
+    "es": "Ya arreglaron la lavadora que se descompuso en la mañana.",
+    "sk": "Práčku, ktorá sa ráno pokazila, už opravili.",
+    "level": "B1",
+    "topics": ["home"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Ya", "arreglaron", "la", "lavadora", "que", "se", "descompuso", "en", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
       }
     ]
   },
@@ -816,7 +1036,7 @@
     "sk": "O koľkej sa budíš?",
     "level": "A1",
     "topics": ["home"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "A", "qué", "hora", "te", "despiertas", "?"],
     "cloze": [
       {
@@ -825,6 +1045,15 @@
         "lemma": "despertarse",
         "hint": "despertarse · tú · presente",
         "distractors": ["despertamos", "despierto", "despertaste"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "qué",
+        "lemma": "qué",
+        "hint": "aký",
+        "tip": "interrogatives",
+        "why": "prep",
+        "distractors": ["cuál", "cuándo", "cómo"]
       }
     ]
   },
@@ -873,19 +1102,21 @@
   },
   {
     "id": "s415",
-    "es": "Limpiaremos la casa el fin de semana.",
+    "es": "Vamos a limpiar la casa el fin de semana.",
     "sk": "Cez víkend upraceme dom.",
     "level": "A2",
     "topics": ["home"],
-    "grammar": ["futuro"],
-    "tokens": ["Limpiaremos", "la", "casa", "el", "fin", "de", "semana", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Vamos", "a", "limpiar", "la", "casa", "el", "fin", "de", "semana", "."],
     "cloze": [
       {
         "tokenIndex": 0,
-        "answer": "Limpiaremos",
-        "lemma": "limpiar",
-        "hint": "limpiar · nosotros · futuro",
-        "distractors": ["Limpiaré", "Limpiará", "Limpiamos"]
+        "answer": "Vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["Van", "Voy", "Fuimos"]
       }
     ]
   },
@@ -1832,19 +2063,21 @@
   },
   {
     "id": "s1295",
-    "es": "Mañana pondré las cortinas nuevas en la sala.",
+    "es": "Mañana voy a poner las cortinas nuevas en la sala.",
     "sk": "Zajtra zavesím nové závesy v obývačke.",
     "level": "A2",
     "topics": ["home"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "pondré", "las", "cortinas", "nuevas", "en", "la", "sala", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "voy", "a", "poner", "las", "cortinas", "nuevas", "en", "la", "sala", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "pondré",
-        "lemma": "poner",
-        "hint": "poner · yo · futuro",
-        "distractors": ["pongo", "puse", "ponía"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -2078,7 +2311,7 @@
     "sk": "Aj keď dnes v noci poriadne prší, nová strecha vodu nepustí.",
     "level": "B2",
     "topics": ["home"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
     "tokens": ["Aunque", "llueva", "mucho", "esta", "noche", ",", "el", "techo", "nuevo", "no", "dejará", "pasar", "el", "agua", "."],
     "cloze": [
       {
@@ -2093,7 +2326,7 @@
         "answer": "llueva",
         "lemma": "llover",
         "hint": "llover · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["llover", "lloviendo"]
       }
@@ -2105,7 +2338,7 @@
     "sk": "Susedia, ktorým sme požičali rebrík, nám priniesli sladké pečivo.",
     "level": "B2",
     "topics": ["home"],
-    "grammar": ["relatives", "preterito"],
+    "grammar": ["relatives-prep", "preterito"],
     "tokens": ["Mis", "vecinos", ",", "a", "quienes", "les", "prestamos", "la", "escalera", ",", "nos", "trajeron", "pan", "dulce", "."],
     "cloze": [
       {
@@ -2113,7 +2346,7 @@
         "answer": "quienes",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoby)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["donde", "cuyos", "cuando"]
       }

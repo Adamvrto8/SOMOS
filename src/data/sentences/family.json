@@ -23,7 +23,7 @@
     "sk": "Moja babka má osemdesiat rokov.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "abuela", "tiene", "ochenta", "años", "."],
     "cloze": [
       {
@@ -31,6 +31,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mis", "tu"]
       },
       {
@@ -116,7 +118,7 @@
     "sk": "Môj syn chce psa.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "hijo", "quiere", "un", "perro", "."],
     "cloze": [
       {
@@ -124,6 +126,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["su", "sus", "mis"]
       },
       {
@@ -177,7 +181,7 @@
     "sk": "Moja staršia sestra žije v USA.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "hermana", "mayor", "vive", "en", "Estados", "Unidos", "."],
     "cloze": [
       {
@@ -185,6 +189,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mis", "tu"]
       },
       {
@@ -227,7 +233,7 @@
     "sk": "Moji rodičia sú manželia už tridsať rokov.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "possessives"],
     "tokens": ["Mis", "papás", "están", "casados", "desde", "hace", "treinta", "años", "."],
     "cloze": [
       {
@@ -235,6 +241,8 @@
         "answer": "Mis",
         "lemma": "mis",
         "hint": "moje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mi", "tu", "tus"]
       },
       {
@@ -253,7 +261,7 @@
     "sk": "Bábätko spí vo svojej izbe.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["progresivo"],
+    "grammar": ["progresivo", "possessives"],
     "tokens": ["El", "bebé", "está", "durmiendo", "en", "su", "cuarto", "."],
     "cloze": [
       {
@@ -269,6 +277,15 @@
         "lemma": "en",
         "hint": "predložka",
         "distractors": ["de", "hasta", "sin"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoj",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -278,7 +295,7 @@
     "sk": "Včera sme navštívili starých rodičov.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "personal-a"],
     "tokens": ["Ayer", "visitamos", "a", "mis", "abuelos", "."],
     "cloze": [
       {
@@ -293,6 +310,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["en", "de", "hasta"]
       }
     ]
@@ -303,7 +322,7 @@
     "sk": "Môj strýko je veľmi zábavný.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "possessives"],
     "tokens": ["Mi", "tío", "es", "muy", "divertido", "."],
     "cloze": [
       {
@@ -311,6 +330,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mis", "tu"]
       },
       {
@@ -329,7 +350,7 @@
     "sk": "Koľko rokov má tvoj syn?",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["¿", "Cuántos", "años", "tiene", "tu", "hijo", "?"],
     "cloze": [
       {
@@ -344,6 +365,8 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mi", "mis", "tus"]
       }
     ]
@@ -354,7 +377,7 @@
     "sk": "Moja babka varí najlepšie mole na svete.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "abuela", "cocina", "el", "mejor", "mole", "del", "mundo", "."],
     "cloze": [
       {
@@ -362,6 +385,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
       },
       {
@@ -379,7 +404,7 @@
     "sk": "V nedeľu obedujeme spolu u rodičov.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Los", "domingos", "comemos", "juntos", "en", "casa", "de", "mis", "papás", "."],
     "cloze": [
       {
@@ -395,6 +420,15 @@
         "lemma": "de",
         "hint": "predložka",
         "distractors": ["sin", "a", "en"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "mis",
+        "lemma": "mis",
+        "hint": "moji",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["mi", "tus", "sus"]
       }
     ]
   },
@@ -404,7 +438,7 @@
     "sk": "Brat a jeho žena majú dve dievčatá.",
     "level": "A1",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "hermano", "y", "su", "esposa", "tienen", "dos", "niñas", "."],
     "cloze": [
       {
@@ -413,6 +447,15 @@
         "lemma": "tener",
         "hint": "tener · ellos · presente",
         "distractors": ["tienes", "tenemos", "tuvieron"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "jeho",
+        "tip": "possessives",
+        "why": "su",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -583,19 +626,21 @@
   },
   {
     "id": "s409",
-    "es": "Mi hermana tendrá un bebé en marzo.",
+    "es": "Mi hermana va a tener un bebé en marzo.",
     "sk": "Sestra bude mať v marci bábätko.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["futuro"],
-    "tokens": ["Mi", "hermana", "tendrá", "un", "bebé", "en", "marzo", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mi", "hermana", "va", "a", "tener", "un", "bebé", "en", "marzo", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "tendrá",
-        "lemma": "tener",
-        "hint": "tener · ella · futuro",
-        "distractors": ["tendrán", "tendrás", "tiene"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · ella · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -920,7 +965,7 @@
     "sk": "Objal som starého otca, keď prišiel.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "personal-a"],
     "tokens": ["Abracé", "a", "mi", "abuelo", "cuando", "llegó", "."],
     "cloze": [
       {
@@ -929,6 +974,15 @@
         "lemma": "abrazar",
         "hint": "abrazar · yo · pretérito",
         "distractors": ["Abrazó", "Abrazo", "Abrazaba"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -987,6 +1041,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mis", "tu"]
       },
       {
@@ -996,7 +1052,8 @@
         "hint": "vdova",
         "distractors": ["viudo", "casada", "soltera"]
       }
-    ]
+    ],
+    "grammar": ["possessives"]
   },
   {
     "id": "s674",
@@ -1004,7 +1061,7 @@
     "sk": "Na pätnástiny mojej netere pozvali dvesto ľudí.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "personal-a"],
     "tokens": ["Para", "la", "quinceañera", "de", "mi", "sobrina", "invitaron", "a", "doscientas", "personas", "."],
     "cloze": [
       {
@@ -1019,6 +1076,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["de", "en", "por"]
       }
     ]
@@ -1348,25 +1407,29 @@
   },
   {
     "id": "s1158",
-    "es": "¿Vendrán tus papás a la boda?",
+    "es": "¿Van a venir tus papás a la boda?",
     "sk": "Prídu tvoji rodičia na svadbu?",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["futuro"],
-    "tokens": ["¿", "Vendrán", "tus", "papás", "a", "la", "boda", "?"],
+    "grammar": ["ir-a", "possessives"],
+    "tokens": ["¿", "Van", "a", "venir", "tus", "papás", "a", "la", "boda", "?"],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "Vendrán",
-        "lemma": "venir",
-        "hint": "venir · ellos · futuro",
-        "distractors": ["Vienen", "Vinieron", "Venían"]
+        "answer": "Van",
+        "lemma": "ir",
+        "hint": "ir · ellos · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["Va", "Vamos", "Fueron"]
       },
       {
-        "tokenIndex": 2,
+        "tokenIndex": 4,
         "answer": "tus",
         "lemma": "tus",
         "hint": "tvoje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mi", "mis", "tu"]
       }
     ]
@@ -1416,19 +1479,21 @@
   },
   {
     "id": "s1161",
-    "es": "En Navidad visitaremos a la familia de mi esposa.",
+    "es": "En Navidad vamos a visitar a la familia de mi esposa.",
     "sk": "Na Vianoce navštívime manželkinu rodinu.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["futuro"],
-    "tokens": ["En", "Navidad", "visitaremos", "a", "la", "familia", "de", "mi", "esposa", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["En", "Navidad", "vamos", "a", "visitar", "a", "la", "familia", "de", "mi", "esposa", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "visitaremos",
-        "lemma": "visitar",
-        "hint": "visitar · nosotros · futuro",
-        "distractors": ["visitamos", "visitaron", "visitábamos"]
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["van", "voy", "fuimos"]
       }
     ]
   },
@@ -1796,7 +1861,7 @@
     "sk": "Moje deti vždy pokazia nové hračky za jeden deň.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mis", "hijos", "siempre", "rompen", "los", "juguetes", "nuevos", "en", "un", "día", "."],
     "cloze": [
       {
@@ -1804,6 +1869,8 @@
         "answer": "Mis",
         "lemma": "mis",
         "hint": "moje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "tu"]
       },
       {
@@ -1861,7 +1928,7 @@
     "sk": "Moja sestra sa musí v sobotu starať o babku.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["obligation", "presente"],
+    "grammar": ["obligation", "presente", "personal-a"],
     "tokens": ["Mi", "hermana", "tiene", "que", "cuidar", "a", "mi", "abuela", "los", "sábados", "."],
     "cloze": [
       {
@@ -1872,6 +1939,15 @@
         "tip": "obligation",
         "why": "tener-que",
         "distractors": ["debe", "puede", "tienes"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["por", "en", "con"]
       }
     ]
   },
@@ -1881,7 +1957,7 @@
     "sk": "Pomôž bratovi s úlohou.",
     "level": "A2",
     "topics": ["family"],
-    "grammar": ["imperativo"],
+    "grammar": ["imperativo", "personal-a"],
     "tokens": ["Ayuda", "a", "tu", "hermano", "con", "la", "tarea", "."],
     "cloze": [
       {
@@ -1890,6 +1966,15 @@
         "lemma": "ayudar",
         "hint": "ayudar · tú · imperativo",
         "distractors": ["Ayude", "Ayudan", "Ayudo"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -2065,7 +2150,7 @@
     "sk": "Moja sestra, s ktorou sa rozprávam každý deň, býva v Monterrey.",
     "level": "B2",
     "topics": ["family"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["Mi", "hermana", ",", "con", "la", "que", "hablo", "todos", "los", "días", ",", "vive", "en", "Monterrey", "."],
     "cloze": [
       {
@@ -2073,7 +2158,7 @@
         "answer": "la",
         "lemma": "la",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["lo", "el"]
       }
@@ -2280,6 +2365,226 @@
         "lemma": "saber",
         "hint": "saber · él · subjuntivo",
         "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2168",
+    "es": "No creo que mi abuela quiera mudarse a otra ciudad.",
+    "sk": "Neverím, že by sa moja babka chcela presťahovať do iného mesta.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "mi", "abuela", "quiera", "mudarse", "a", "otra", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "quiera",
+        "lemma": "querer",
+        "hint": "querer · ella · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["quiere", "querrá", "quería"]
+      }
+    ]
+  },
+  {
+    "id": "s2169",
+    "es": "Cuando mis primos lleguen el sábado, haremos una carne asada.",
+    "sk": "Keď moji bratranci v sobotu prídu, urobíme si grilovačku.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "futuro"],
+    "tokens": ["Cuando", "mis", "primos", "lleguen", "el", "sábado", ",", "haremos", "una", "carne", "asada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "lleguen",
+        "lemma": "llegar",
+        "hint": "llegar · ellos · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["llegan", "llegaron", "llegarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2170",
+    "es": "Mi mamá nos llama temprano para que no lleguemos tarde a la comida.",
+    "sk": "Mama nás volá skoro, aby sme neprišli neskoro na obed.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Mi", "mamá", "nos", "llama", "temprano", "para", "que", "no", "lleguemos", "tarde", "a", "la", "comida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "lleguemos",
+        "lemma": "llegar",
+        "hint": "llegar · nosotros · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["llegamos", "llegaremos", "lleguen"]
+      }
+    ]
+  },
+  {
+    "id": "s2171",
+    "es": "Dudo que mi hermano pueda venir a la boda de mi prima.",
+    "sk": "Pochybujem, že môj brat bude môcť prísť na svadbu mojej sesternice.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Dudo", "que", "mi", "hermano", "pueda", "venir", "a", "la", "boda", "de", "mi", "prima", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["puede", "podrá", "pudo"]
+      }
+    ]
+  },
+  {
+    "id": "s2172",
+    "es": "Antes de que mi papá regrese del trabajo, vamos a preparar la cena.",
+    "sk": "Skôr než sa otec vráti z práce, pripravíme večeru.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Antes", "de", "que", "mi", "papá", "regrese", "del", "trabajo", ",", "vamos", "a", "preparar", "la", "cena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "regrese",
+        "lemma": "regresar",
+        "hint": "regresar · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["regresa", "regresó", "regresará"]
+      }
+    ]
+  },
+  {
+    "id": "s2173",
+    "es": "Mis papás ahorran para que yo estudie en el extranjero.",
+    "sk": "Rodičia šetria, aby som mohol študovať v zahraničí.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Mis", "papás", "ahorran", "para", "que", "yo", "estudie", "en", "el", "extranjero", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estudie",
+        "lemma": "estudiar",
+        "hint": "estudiar · yo · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["estudio", "estudiaré", "estudié"]
+      }
+    ]
+  },
+  {
+    "id": "s2174",
+    "es": "No pienso que mis tíos vendan la casa del rancho.",
+    "sk": "Nemyslím si, že moji strýkovia predajú dom na ranči.",
+    "level": "B1",
+    "topics": ["family"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "pienso", "que", "mis", "tíos", "vendan", "la", "casa", "del", "rancho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "vendan",
+        "lemma": "vender",
+        "hint": "vender · ellos · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["venden", "vendieron", "venderán"]
+      }
+    ]
+  },
+  {
+    "id": "s2260",
+    "es": "El domingo vamos a comer en casa de mis abuelos.",
+    "sk": "V nedeľu budeme obedovať u starých rodičov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "domingo", "vamos", "a", "comer", "en", "casa", "de", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["van", "voy", "fuimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2261",
+    "es": "Mi papá va a cumplir cincuenta años la próxima semana.",
+    "sk": "Môj otec bude mať budúci týždeň päťdesiat rokov.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["ir-a"],
+    "tokens": ["Mi", "papá", "va", "a", "cumplir", "cincuenta", "años", "la", "próxima", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2273",
+    "es": "Mi papá no cocina y mi mamá tampoco.",
+    "sk": "Otec nevarí a mama tiež nie.",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Mi", "papá", "no", "cocina", "y", "mi", "mamá", "tampoco", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "tampoco",
+        "lemma": "tampoco",
+        "hint": "tiež nie",
+        "tip": "negation",
+        "why": "tambien",
+        "distractors": ["también", "nunca", "nada"]
+      }
+    ]
+  },
+  {
+    "id": "s2286",
+    "es": "¿A quién visitas los domingos?",
+    "sk": "Koho navštevuješ v nedeľu?",
+    "level": "A2",
+    "topics": ["family"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["¿", "A", "quién", "visitas", "los", "domingos", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "A",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "nadie",
+        "distractors": ["De", "En", "Con"]
       }
     ]
   }

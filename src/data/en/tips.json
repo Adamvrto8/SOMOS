@@ -254,15 +254,44 @@
     ]
   },
   {
+    "id": "ir-a",
+    "title": "Ir a + infinitive (going to)",
+    "intro": "The most common way to say what I am going to do: a form of ir + a + infinitive. Voy a estudiar = I am going to study.",
+    "variants": { "mx": "In Mexico it is the usual way to talk about the future, even the more distant one (el próximo año voy a vivir en Monterrey). Sometimes it also means what I am about to do right now (voy a hablar con él = I'm going to talk to him).", "es": "Spain uses ir a + infinitive a lot too, but the -ré future is heard more often in speech there than in Latin America. The vosotros form: vais a (vais a comer)." },
+    "rules": [
+      {
+        "id": "forms",
+        "title": "voy a, vas a, va a…",
+        "text": "Only ir changes (voy, vas, va, vamos, van); a and the infinitive stay: voy a comer, vamos a salir.",
+        "because": "Ir is conjugated for the person, followed by a + infinitive: voy a, vas a, va a, vamos a, van a.",
+        "examples": ["I'm going to eat.", "What are you going to do on Saturday?"]
+      },
+      {
+        "id": "use",
+        "title": "Plans and the near future",
+        "text": "What I plan or what is about to happen: mañana voy a trabajar, va a llover. In Mexico it is also used for the more distant future.",
+        "because": "It is a plan or something about to happen, so ir a + infinitive.",
+        "examples": ["We're going to travel in May.", "Look at those clouds, it's going to rain."]
+      },
+      {
+        "id": "pronouns",
+        "title": "The pronoun before ir or at the end",
+        "text": "The pronoun can go before the form of ir or be attached to the infinitive: lo voy a hacer = voy a hacerlo.",
+        "because": "The pronoun goes before the form of ir or is attached to the end of the infinitive.",
+        "examples": ["I'm going to do it tomorrow.", "I'm going to call you tonight."]
+      }
+    ]
+  },
+  {
     "id": "futuro",
     "title": "Future tense (futuro)",
-    "intro": "The endings are added to the whole infinitive and are the same for all verbs.",
+    "intro": "The endings are added to the whole infinitive and are the same for all verbs. Plans are more often said with ir a + infinitive in speech (tip Ir a + infinitive).",
     "variants": { "mx": "Mexicans talk about plans mostly with ir a (voy a viajar). The futuro is often used for a guess (¿qué hora será? = what time might it be?).", "es": "Spain too talks about plans mostly with ir a (voy a viajar), and the futuro is also used for a guess (¿qué hora será?). The vosotros form: hablaréis, tendréis." },
     "rules": [
       {
         "id": "use",
         "title": "When it is used",
-        "text": "Plans and predictions for later (mañana, el próximo año, algún día) and promises. Everyday speech more often says ir a + infinitive.",
+        "text": "Predictions, promises and plans for later (el próximo año, algún día). It sounds surer and more formal than ir a + infinitive.",
         "examples": [
           "Next year I will live in Guadalajara.",
           "Tomorrow it will rain in the afternoon.",
@@ -280,12 +309,6 @@
         "title": "Irregular stem",
         "text": "The endings stay, the stem changes: tener → tendré, poder → podré, salir → saldré, venir → vendré, poner → pondré, decir → diré, hacer → haré, querer → querré, saber → sabré.",
         "examples": ["I will have time on Saturday.", "What will you do tomorrow?"]
-      },
-      {
-        "id": "ir-a",
-        "title": "In everyday speech: ir a + infinitive",
-        "text": "For the near future, Mexicans most often say it this way: voy a, vas a, va a, vamos a, van a.",
-        "examples": ["I'm going to eat.", "We're going to travel in May."]
       },
       {
         "id": "guess",
@@ -1005,7 +1028,7 @@
   {
     "id": "subjuntivo-clauses",
     "title": "The subjunctive after opinions and conjunctions",
-    "intro": "The subjunctive also follows a negative opinion, doubt and some conjunctions, when something is not certain yet.",
+    "intro": "The subjunctive follows a negative opinion, doubt and the conjunctions cuando, antes de que and para que, when something is not certain yet.",
     "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
@@ -1018,7 +1041,7 @@
       {
         "id": "cuando",
         "title": "cuando about the future",
-        "text": "cuando, en cuanto, hasta que + subjunctive about the future (cuando llegues). About a habit or the past, the indicative (cuando llego, cuando llegué).",
+        "text": "cuando, antes de que, después de que + subjunctive about the future (cuando llegues, antes de que llueva). Cuando about a habit or the past takes the indicative (cuando llego, cuando llegué).",
         "because": "Cuando about the future takes the subjunctive, about habits or the past it does not.",
         "examples": ["When you get there, let me know.", "When I get home, I take a shower."]
       },
@@ -1028,13 +1051,35 @@
         "text": "para que always takes the subjunctive. With the same subject para + infinitive is enough.",
         "because": "Para que (so that) always takes the subjunctive.",
         "examples": ["I'll explain it so you understand it.", "I'm saving to buy a house."]
-      },
+      }
+    ]
+  },
+  {
+    "id": "subjuntivo-aunque",
+    "title": "The subjunctive after aunque and hasta que",
+    "intro": "With aunque it depends on whether it is a fact or something possible that does not matter. The time conjunctions hasta que, en cuanto and una vez que take the subjunctive about the future.",
+    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
+    "rules": [
       {
         "id": "aunque",
         "title": "aunque: although, even if",
         "text": "aunque + indicative = it is so (aunque llueve, salgo). aunque + subjunctive = maybe, it does not matter (aunque llueva, salgo).",
         "because": "Aunque + subjunctive: maybe, it does not matter; + indicative: it is so.",
         "examples": ["Although he's tired, he keeps working.", "Even if it rains, we'll go."]
+      },
+      {
+        "id": "a-pesar-de",
+        "title": "a pesar de que: despite the fact that",
+        "text": "Like aunque: with the indicative it is a fact (a pesar de que llueve), with the subjunctive it is possible or does not matter (a pesar de que llueva). Before a noun without que: a pesar del frío.",
+        "because": "A pesar de que works like aunque: a fact takes the indicative, something possible or unimportant the subjunctive.",
+        "examples": ["Although he was sick, he went to work.", "I'm going to try it, even if it turns out to be hard."]
+      },
+      {
+        "id": "hasta-que",
+        "title": "hasta que, en cuanto, una vez que",
+        "text": "About the future the subjunctive follows: espera hasta que llegue, en cuanto sepa algo, te aviso. About the past or a habit, the indicative: esperé hasta que llegó.",
+        "because": "Hasta que, en cuanto and una vez que about the future take the subjunctive.",
+        "examples": ["As soon as I know something, I will let you know.", "I'll stay here until you finish."]
       }
     ]
   },
@@ -1064,7 +1109,15 @@
         "text": "When it is not a particular thing: lo que dices, todo lo que quieras.",
         "because": "It is not a particular thing but \"what\", so lo que.",
         "examples": ["I don't understand what you're saying.", "Do whatever you want."]
-      },
+      }
+    ]
+  },
+  {
+    "id": "relatives-prep",
+    "title": "Relative clauses after a preposition (con la que, quien, cuyo)",
+    "intro": "When the relative word follows a preposition, an article is added: la persona con la que hablé. For people quien works too, and cuyo says whom something belongs to.",
+    "variants": { "mx": "The same in Mexico as elsewhere; cuyo belongs rather to written and formal language.", "es": "The same in Spain as elsewhere; cuyo belongs rather to written and formal language." },
+    "rules": [
       {
         "id": "el-que",
         "title": "After a preposition: el que, la que, quien",
@@ -1090,8 +1143,8 @@
   },
   {
     "id": "passive-se",
-    "title": "The passive and impersonal se",
-    "intro": "When who does it does not matter. Everyday speech uses se; the passive with ser belongs to the news and official texts.",
+    "title": "Impersonal and passive se",
+    "intro": "When who does it does not matter, se is used: se vende, aquí se habla español. It is common in speech as well as on signs and in ads.",
     "variants": { "mx": "The same in Mexico as elsewhere; typical on signs and in ads (se vende, se renta = for rent).", "es": "The same in Spain as elsewhere; typical on signs and in ads (se vende, se alquila = for rent)." },
     "rules": [
       {
@@ -1109,18 +1162,319 @@
         "examples": ["How do you say this in Spanish?"]
       },
       {
-        "id": "ser-passive",
-        "title": "ser + participle",
-        "text": "The passive with ser: el puente fue construido en 1990. The participle agrees with the subject. It sounds formal; in speech se or the active replace it.",
-        "because": "The passive: ser + a participle that agrees with the subject.",
-        "examples": ["The bridge was built in 1990.", "The news was published yesterday."]
-      },
-      {
         "id": "estar-result",
         "title": "estar + participle: a state",
         "text": "Estar with a participle does not describe an action but its result: la tienda está cerrada.",
         "because": "Estar + participle describes the state after the action, not the action.",
         "examples": ["The store is closed."]
+      }
+    ]
+  },
+  {
+    "id": "ser-passive",
+    "title": "The passive with ser (fue construido)",
+    "intro": "The passive with ser tells an action from the side of what it happens to: el puente fue construido. It belongs to the news, textbooks and official texts.",
+    "variants": { "mx": "The same in Mexico as elsewhere: in the news and official texts; speech prefers se or the active.", "es": "The same in Spain as elsewhere: in the news and official texts; speech prefers se or the active." },
+    "rules": [
+      {
+        "id": "ser-passive",
+        "title": "ser + participle",
+        "text": "ser + participle: el puente fue construido en 1990. The participle agrees with the subject (la casa fue vendida, los libros fueron publicados). Who did it is added with por: fue escrito por Octavio Paz.",
+        "because": "The passive: ser + a participle that agrees with the subject.",
+        "examples": ["The bridge was built in 1990.", "The news was published yesterday."]
+      },
+      {
+        "id": "register",
+        "title": "Where it is used",
+        "text": "In the news, in textbooks and in official texts. In everyday speech the same is said with se or in the active: se construyó el puente, construyeron el puente.",
+        "because": "The passive with ser belongs to the news and official texts; speech would use se or the active.",
+        "examples": ["The results will be announced on Monday.", "The museum was opened by the president."]
+      }
+    ]
+  },
+  {
+    "id": "demonstratives",
+    "title": "este, ese, aquel",
+    "intro": "Demonstratives have three degrees of distance: este (this, by me), ese (that, by you), aquel (that over there, far from us both). They change for gender and number like adjectives.",
+    "variants": {
+      "mx": "In Mexico ese is by far the most common in speech; aquel is for something really far away or long ago (en aquel entonces = back then). Instead of aquí and allí, Mexicans more often say acá and allá: ven acá.",
+      "es": "In Spain aquí and allí are more common than acá and allá; este, ese and aquel work as in Mexico."
+    },
+    "rules": [
+      {
+        "id": "near",
+        "title": "este: by me",
+        "text": "este libro, esta mesa, estos zapatos, estas llaves. It goes before the noun, without an article (not el este libro).",
+        "because": "The thing is close to the speaker, so este (esta, estos, estas).",
+        "examples": [
+          "How much is this shirt?",
+          "This car is my dad’s."
+        ]
+      },
+      {
+        "id": "far",
+        "title": "ese, aquel: further away",
+        "text": "ese (esa, esos, esas) is by you or a bit further, aquel (aquella, aquellos, aquellas) far from both of you. In everyday speech ese is usually enough.",
+        "because": "The thing is further from the speaker, so ese or aquel.",
+        "examples": [
+          "Can you pass me that cup?",
+          "Do you see that mountain over there?"
+        ]
+      },
+      {
+        "id": "neutral",
+        "title": "esto, eso: an unknown thing or an idea",
+        "text": "When you don’t know what something is, or you mean a whole situation, use esto, eso, aquello. They have no plural and never stand before a noun.",
+        "because": "It is an unknown thing or a whole idea, so esto or eso.",
+        "examples": [
+          "What’s that?",
+          "That isn’t true."
+        ]
+      },
+      {
+        "id": "time",
+        "title": "With time: esta tarde, aquel año",
+        "text": "With time, este points to now (esta tarde = this afternoon, este fin de semana), ese and aquel to the past (aquel verano = that summer).",
+        "because": "It is about time: este is now, ese and aquel the past.",
+        "examples": [
+          "This afternoon I’m going to the movies.",
+          "That summer we went to the beach."
+        ]
+      },
+      {
+        "id": "alone",
+        "title": "Without a noun: este no, ese sí",
+        "text": "A demonstrative can stand alone when it is clear what it refers to. Under today’s rules it has no written accent (este, not éste).",
+        "because": "The noun is clear from the context, so the demonstrative stands alone.",
+        "examples": [
+          "I don’t like that one, I prefer this one.",
+          "Which one do you want? —That one."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "possessives",
+    "title": "mi, tu, su… mío, tuyo",
+    "intro": "A possessive agrees with the thing owned, not with the owner. Before a noun it is the short form (mi, tu, su), after ser the long one (mío, tuyo, suyo).",
+    "variants": {
+      "mx": "In Mexico people often say la casa de nosotros instead of nuestra casa. Su also means your for several people (ustedes), since vosotros is not used.",
+      "es": "In Spain vuestro is used for several people you address informally (vuestra casa, vuestros hijos); su for ustedes is only formal there."
+    },
+    "rules": [
+      {
+        "id": "short",
+        "title": "mi, tu, su: only number changes",
+        "text": "mi casa, mis amigos; tu carro, tus llaves. Gender does not change: mi hermano and mi hermana. Careful: tu (your) has no accent, tú (you) has one.",
+        "because": "Before a noun comes the short form mi, tu, su; for several things mis, tus, sus.",
+        "examples": [
+          "My sister lives in Monterrey.",
+          "Where are your keys?"
+        ]
+      },
+      {
+        "id": "nuestro",
+        "title": "nuestro, nuestra: gender too",
+        "text": "nuestro departamento, nuestra casa, nuestros hijos, nuestras amigas. It agrees with the thing, not with its owners.",
+        "because": "nuestro agrees with the thing in gender and number.",
+        "examples": [
+          "Our teacher is very good.",
+          "Our neighbors are from Puebla."
+        ]
+      },
+      {
+        "id": "su",
+        "title": "su: his, her, your, their",
+        "text": "su means his, her, their and also your (formal: usted, ustedes). When it is unclear whose, say de él, de ella, de ellos: la casa de ella.",
+        "because": "The owner is he, she, usted or they, so su (sus).",
+        "examples": [
+          "Ana and her boyfriend live together.",
+          "Sir, is this your suitcase?"
+        ]
+      },
+      {
+        "id": "svoj",
+        "title": "Slovak “svoj”",
+        "text": "Spanish has no word like Slovak svoj (one’s own): the possessive follows the person. I have my umbrella = tengo mi paraguas, you have yours = tienes tu paraguas, each has their own = cada uno tiene su paraguas.",
+        "because": "Slovak svoj is translated by the person: mi, tu, su, nuestro.",
+        "examples": [
+          "I left my umbrella on the bus.",
+          "Everyone brings their own food."
+        ]
+      },
+      {
+        "id": "long",
+        "title": "mío, tuyo: after ser and alone",
+        "text": "After ser or after a noun comes the long form: es mío, un amigo mío. With an article it replaces the whole noun: el mío, la tuya.",
+        "because": "After ser or without a noun comes the long form mío, tuyo, suyo.",
+        "examples": [
+          "This backpack is mine.",
+          "Your car is red and mine is blue."
+        ]
+      },
+      {
+        "id": "body",
+        "title": "Body and clothes: the article is enough",
+        "text": "With body parts and clothes Spanish usually uses the article, not a possessive: me duele la cabeza, me lavo las manos.",
+        "because": "With a body part it is clear whose it is, so the article is enough.",
+        "examples": [
+          "My back hurts.",
+          "Put your jacket on, it’s cold."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interrogatives",
+    "title": "Questions: qué, quién, dónde…",
+    "intro": "Question words come first in a question and always carry a written accent: qué, quién, dónde, cuándo, cómo, cuánto, cuál. A question opens with an upside-down question mark ¿.",
+    "variants": {
+      "mx": "In Mexico, when you didn’t catch something or someone calls you, you say ¿Mande? (pardon?), not ¿Qué?, which can sound rude. Also common: ¿Qué tanto? (how much) and ¿A poco? (really?).",
+      "es": "In Spain instead of ¿Mande? people say ¿Perdona? or ¿Cómo?; instead of ¿Qué tanto? they say ¿Cuánto?"
+    },
+    "rules": [
+      {
+        "id": "words",
+        "title": "qué, quién, dónde, cuándo, cómo, cuánto",
+        "text": "qué (what), quién (who, for several quiénes), dónde (where), cuándo (when), cómo (how), cuánto (how much / many). Cuánto agrees with the noun: cuántos años, cuántas hermanas.",
+        "because": "You ask about a thing, a person, a place, a time, a manner or an amount, so this question word.",
+        "examples": [
+          "Where do you live?",
+          "How many sisters do you have?",
+          "Who is that girl?"
+        ]
+      },
+      {
+        "id": "prep",
+        "title": "The preposition comes first",
+        "text": "The preposition stands before the question word, never at the end: ¿De dónde eres? (where are you from), ¿Con quién vives?, ¿A qué hora empieza?, ¿Para qué sirve?",
+        "because": "The preposition belongs before the question word, at the start of the question.",
+        "examples": [
+          "Where are you from?",
+          "What time does the bus leave?"
+        ]
+      },
+      {
+        "id": "por-que",
+        "title": "¿Por qué? and porque",
+        "text": "In a question it is two words and qué has an accent: ¿por qué? (why). In an answer it is one word without an accent: porque (because).",
+        "because": "In a question it is por qué, in an answer porque.",
+        "examples": [
+          "Why didn’t you come?",
+          "I didn’t come because I was sick."
+        ]
+      },
+      {
+        "id": "cual",
+        "title": "¿Qué? or ¿cuál?",
+        "text": "Before a noun it is qué: ¿Qué libro lees? Before es and when choosing among options it is cuál: ¿Cuál es tu número?, ¿Cuál prefieres? ¿Qué es…? asks what something is: ¿Qué es un tamal?",
+        "because": "You ask for one of several options or for a piece of data (name, number, address), so cuál.",
+        "examples": [
+          "What’s your email?",
+          "What movie do you want to see?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "negation",
+    "title": "Negation: no, nunca, nada, nadie",
+    "intro": "No before the verb makes a sentence negative. Nunca, nada, nadie, tampoco and ningún mean never, nothing, nobody, neither and no (none). Unlike in English, a double negative is required, but only when they come after the verb.",
+    "variants": {
+      "mx": "In Mexico you often hear ni modo (oh well, nothing to be done) and para nada (not at all). In some Latin American countries también no is heard instead of tampoco, but tampoco is correct.",
+      "es": "In Spain instead of ni modo people rather say qué le vamos a hacer; para nada is common there too."
+    },
+    "rules": [
+      {
+        "id": "no",
+        "title": "no before the verb",
+        "text": "no comes right before the verb. When the verb has a pronoun (lo, me, se), no goes before the pronoun: No lo sé.",
+        "because": "No goes before the verb and before its pronouns.",
+        "examples": [
+          "I’m not hungry.",
+          "I don’t like coffee."
+        ]
+      },
+      {
+        "id": "double",
+        "title": "nadie, nada, nunca: where they stand",
+        "text": "After the verb you also need no: No veo a nadie (I don’t see anybody). When they come before the verb, no is left out: Nadie vino, Nunca como carne.",
+        "because": "The negative word comes after the verb, so no as well; before the verb there would be no no.",
+        "examples": [
+          "There’s nothing in the fridge.",
+          "I’m never late."
+        ]
+      },
+      {
+        "id": "tambien",
+        "title": "también and tampoco",
+        "text": "también = too, tampoco = neither. To agree with a negative sentence say tampoco: —No tengo hambre. —Yo tampoco. With gustar: a mí también, a mí tampoco.",
+        "because": "You agree with a negative sentence, so tampoco (with a positive one también).",
+        "examples": [
+          "—I don’t like spicy food. —Me neither.",
+          "My brother doesn’t speak English either."
+        ]
+      },
+      {
+        "id": "pairs",
+        "title": "algo – nada, alguien – nadie, algún – ningún",
+        "text": "A positive word has a negative partner: algo (something) – nada (nothing), alguien (somebody) – nadie (nobody), algún (some) – ningún (no, none). Ningún is singular only: no tengo ningún problema.",
+        "because": "In a negative sentence the negative partner is used: nada, nadie, ningún.",
+        "examples": [
+          "Do you want anything? —No, nothing, thanks.",
+          "I don’t have any problem."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "personal-a",
+    "title": "Personal a",
+    "intro": "When the object of a verb is a specific person, Spanish puts a before it: Veo a María. Not before things: Veo la tele. This a is not translated.",
+    "variants": {
+      "mx": "In Mexico the same as in Spain. Common verbs with a person: extrañar a alguien (to miss someone), invitar a alguien, llevar a alguien.",
+      "es": "The same in Spain; instead of extrañar people say echar de menos a alguien."
+    },
+    "rules": [
+      {
+        "id": "person",
+        "title": "A person: a",
+        "text": "When you see, know, call, look for or wait for someone, a goes before the person (a + el = al). It also goes before a pet you are close to.",
+        "because": "The object of the verb is a person, so a goes before it.",
+        "examples": [
+          "I know your brother.",
+          "I really miss my dog."
+        ]
+      },
+      {
+        "id": "thing",
+        "title": "A thing: no a",
+        "text": "Before things and places there is no a: veo la tele, busco un departamento, visito la ciudad.",
+        "because": "The object is a thing, so no a.",
+        "examples": [
+          "I’m looking for an apartment near downtown.",
+          "We watch TV at night."
+        ]
+      },
+      {
+        "id": "tener",
+        "title": "tener and hay: no a",
+        "text": "After tener and hay there is no a, even before a person: Tengo dos hermanos, Hay mucha gente.",
+        "because": "After tener and hay there is no a, even before a person.",
+        "examples": [
+          "I have three cousins in Guadalajara.",
+          "There’s a man at the door."
+        ]
+      },
+      {
+        "id": "nadie",
+        "title": "a quién, a alguien, a nadie",
+        "text": "a also goes before quién, alguien and nadie when they are the object: ¿A quién buscas?, ¿Conoces a alguien aquí?, No conozco a nadie.",
+        "because": "Quién, alguien and nadie stand for a person, so a goes before them.",
+        "examples": [
+          "Who are you waiting for?",
+          "I don’t know anybody in this city."
+        ]
       }
     ]
   }

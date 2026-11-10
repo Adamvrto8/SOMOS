@@ -96,7 +96,7 @@
     "sk": "Veľmi mi chýba rodina.",
     "level": "A2",
     "topics": ["emotions"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "personal-a"],
     "tokens": ["Extraño", "mucho", "a", "mi", "familia", "."],
     "cloze": [
       {
@@ -105,6 +105,15 @@
         "lemma": "extrañar",
         "hint": "extrañar · yo · presente",
         "distractors": ["Extraña", "Extrañan", "Extrañé"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -302,8 +311,18 @@
         "lemma": "ganas",
         "hint": "chuť",
         "distractors": ["hambre", "miedo", "sed"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
-    ]
+    ],
+    "grammar": ["personal-a"]
   },
   {
     "id": "s397",
@@ -399,19 +418,21 @@
   },
   {
     "id": "s432",
-    "es": "No te preocupes, todo saldrá bien.",
+    "es": "No te preocupes, todo va a salir bien.",
     "sk": "Neboj sa, všetko dobre dopadne.",
     "level": "A2",
     "topics": ["emotions"],
-    "grammar": ["futuro"],
-    "tokens": ["No", "te", "preocupes", ",", "todo", "saldrá", "bien", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["No", "te", "preocupes", ",", "todo", "va", "a", "salir", "bien", "."],
     "cloze": [
       {
         "tokenIndex": 5,
-        "answer": "saldrá",
-        "lemma": "salir",
-        "hint": "salir · él · futuro",
-        "distractors": ["saldrán", "saldrás", "sale"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -639,7 +660,7 @@
     "sk": "Rodičia boli sklamaní, ale nič nepovedali.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["imperfecto", "ser-estar", "preterito"],
+    "grammar": ["imperfecto", "ser-estar", "preterito", "negation"],
     "tokens": ["Mis", "papás", "estaban", "decepcionados", ",", "pero", "no", "dijeron", "nada", "."],
     "cloze": [
       {
@@ -662,6 +683,8 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie", "algo", "ninguno"]
       }
     ]
@@ -1117,7 +1140,7 @@
     "sk": "Usmieva sa, keď vidí syna.",
     "level": "A1",
     "topics": ["emotions"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Ella", "sonríe", "cuando", "ve", "a", "su", "hijo", "."],
     "cloze": [
       {
@@ -1126,6 +1149,15 @@
         "lemma": "ver",
         "hint": "ver · ella · presente",
         "distractors": ["vemos", "vio", "veía"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoj",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -1237,19 +1269,21 @@
   },
   {
     "id": "s1138",
-    "es": "Mi abuelo se enojará si llegamos tarde.",
+    "es": "Mi abuelo se va a enojar si llegamos tarde.",
     "sk": "Dedko sa nahnevá, ak prídeme neskoro.",
     "level": "A2",
     "topics": ["emotions"],
-    "grammar": ["futuro"],
-    "tokens": ["Mi", "abuelo", "se", "enojará", "si", "llegamos", "tarde", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mi", "abuelo", "se", "va", "a", "enojar", "si", "llegamos", "tarde", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "enojará",
-        "lemma": "enojarse",
-        "hint": "enojarse · él · futuro",
-        "distractors": ["enojaremos", "enoja", "enojé"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1668,7 +1702,7 @@
     "sk": "Keď som uvidel otca, stislo mi hrdlo.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "personal-a"],
     "tokens": ["Se", "me", "hizo", "un", "nudo", "en", "la", "garganta", "cuando", "vi", "a", "mi", "papá", "."],
     "cloze": [
       {
@@ -1683,6 +1717,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["de", "en", "con"]
       }
     ]
@@ -1700,6 +1736,8 @@
         "answer": "tus",
         "lemma": "tus",
         "hint": "tvoje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mi", "mis", "tu"]
       },
       {
@@ -1709,7 +1747,8 @@
         "hint": "dojatý",
         "distractors": ["harto", "agotado", "celoso"]
       }
-    ]
+    ],
+    "grammar": ["possessives"]
   },
   {
     "id": "s1150",
@@ -2158,7 +2197,7 @@
     "sk": "Mám kamarátku, pri ktorej môžem plakať bez pocitu, že ma súdi.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["Tengo", "una", "amiga", "con", "quien", "puedo", "llorar", "sin", "sentir", "que", "me", "juzga", "."],
     "cloze": [
       {
@@ -2166,7 +2205,7 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné slovo (osoba)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["donde", "cuyo", "cuando"]
       }
@@ -2268,6 +2307,106 @@
         "lemma": "esperar",
         "hint": "esperar · yo · imperfecto",
         "distractors": ["espero", "esperé", "esperaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2185",
+    "es": "Cuando estés más tranquila, platicamos de lo que pasó.",
+    "sk": "Keď budeš pokojnejšia, porozprávame sa o tom, čo sa stalo.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Cuando", "estés", "más", "tranquila", ",", "platicamos", "de", "lo", "que", "pasó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estés",
+        "lemma": "estar",
+        "hint": "estar · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["estás", "estuviste", "estarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2186",
+    "es": "No creo que tengas motivo para estar tan enojado.",
+    "sk": "Neverím, že máš dôvod byť taký nahnevaný.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "tengas", "motivo", "para", "estar", "tan", "enojado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tengas",
+        "lemma": "tener",
+        "hint": "tener · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["tienes", "tuviste", "tendrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2187",
+    "es": "Hablo despacio para que entiendas que no estoy molesto contigo.",
+    "sk": "Hovorím pomaly, aby si pochopil, že sa na teba nehnevám.",
+    "level": "B1",
+    "topics": ["emotions"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Hablo", "despacio", "para", "que", "entiendas", "que", "no", "estoy", "molesto", "contigo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "entiendas",
+        "lemma": "entender",
+        "hint": "entender · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["entiendes", "entendiste", "entenderás"]
+      }
+    ]
+  },
+  {
+    "id": "s2272",
+    "es": "Hoy estoy muy triste y mi amiga también.",
+    "sk": "Dnes som veľmi smutný a moja kamarátka tiež.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Hoy", "estoy", "muy", "triste", "y", "mi", "amiga", "también", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "también",
+        "lemma": "también",
+        "hint": "tiež",
+        "tip": "negation",
+        "why": "tambien",
+        "distractors": ["tampoco", "nunca", "nada"]
+      }
+    ]
+  },
+  {
+    "id": "s2277",
+    "es": "No lloro nunca en las películas.",
+    "sk": "Pri filmoch nikdy neplačem.",
+    "level": "A2",
+    "topics": ["emotions"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["No", "lloro", "nunca", "en", "las", "películas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nunca",
+        "lemma": "nunca",
+        "hint": "nikdy",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "nadie", "tampoco"]
       }
     ]
   }

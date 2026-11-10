@@ -142,7 +142,7 @@ describe('tipFor', () => {
       expect(found?.rule).toBeUndefined()
     }
     expect(tipOf('translation', 's378')?.tip.id).toBe('preterito')
-    expect(tipOf('translation', 's369')).toBeUndefined() // no grammar tags
+    expect(tipOf('translation', 's372')).toBeUndefined() // no grammar tags
   })
 
   it('has no tip for vocabulary', () => {
@@ -209,6 +209,49 @@ describe('usage blanks', () => {
     const s: Sentence = { ...sentence, es: 'Quiero que vengas.', grammar: ['subjuntivo-wishes', 'subjuntivo'], tokens: ['Quiero', 'que', 'vengas', '.'], cloze: [wish] }
     expect(tipForCloze(s, wish)?.tip.id).toBe('subjuntivo-wishes')
     expect(tipForHint(s, wish)?.tip.id).toBe('subjuntivo')
+  })
+
+  it('an ir a blank opens the ir-a tip, not the presente its hint names', () => {
+    const voy: Cloze = { tokenIndex: 1, answer: 'voy', lemma: 'ir', hint: 'ir · yo · presente', tip: 'ir-a', why: 'forms', distractors: ['va', 'vamos'] }
+    const s: Sentence = { ...sentence, es: 'Mañana voy a estudiar.', level: 'A2', grammar: ['ir-a'], tokens: ['Mañana', 'voy', 'a', 'estudiar', '.'], cloze: [voy] }
+    expect(tipForCloze(s, voy)?.tip.id).toBe('ir-a')
+    expect(tipForCloze(s, voy)?.rule?.id).toBe('forms')
+  })
+
+  it('a nadie blank opens negation, an a before a person opens personal-a', () => {
+    const nadie: Cloze = { tokenIndex: 1, answer: 'veo', lemma: 'ver', hint: 'ver · yo · presente' }
+    const blank: Cloze = { tokenIndex: 3, answer: 'nadie', lemma: 'nadie', hint: 'nikto', tip: 'negation', why: 'double', distractors: ['nada', 'alguien'] }
+    const s: Sentence = { ...sentence, es: 'No veo a nadie.', level: 'A2', grammar: ['presente', 'negation'], tokens: ['No', 'veo', 'a', 'nadie', '.'], cloze: [nadie, blank] }
+    expect(tipForCloze(s, blank)?.tip.id).toBe('negation')
+    expect(tipForCloze(s, blank)?.rule?.id).toBe('double')
+    const a: Cloze = { tokenIndex: 2, answer: 'a', lemma: 'a', hint: 'predložka', tip: 'personal-a', why: 'person', distractors: ['de', 'en'] }
+    const t: Sentence = { ...s, grammar: ['presente', 'personal-a'], cloze: [a] }
+    expect(tipForCloze(t, a)?.tip.id).toBe('personal-a')
+    expect(tipForCloze(t, a)?.rule?.id).toBe('person')
+  })
+
+  it('every blank on the new A1–A2 tips names a rule of its tip', () => {
+    for (const s of sentences)
+      for (const c of s.cloze ?? [])
+        if (c.tip && ['demonstratives', 'possessives', 'interrogatives', 'negation', 'personal-a'].includes(c.tip))
+          expect(tipForCloze(s, c)?.rule?.id, `${s.id} ${c.answer}`).toBe(c.why)
+  })
+
+  it('an aunque blank opens the B2 tip it moved to', () => {
+    const aunque: Cloze = { tokenIndex: 1, answer: 'llueva', lemma: 'llover', hint: 'llover · él · subjuntivo', tip: 'subjuntivo-aunque', why: 'aunque' }
+    const s: Sentence = { ...sentence, es: 'Aunque llueva, salgo.', level: 'B2', grammar: ['subjuntivo-aunque', 'subjuntivo'], tokens: ['Aunque', 'llueva', ',', 'salgo', '.'], cloze: [aunque] }
+    expect(tipForCloze(s, aunque)?.tip.id).toBe('subjuntivo-aunque')
+    expect(tipForCloze(s, aunque)?.tip.level).toBe('B2')
+  })
+
+  it('sends every blank of a split tip to the tip that now holds its rule', () => {
+    for (const s of sentences)
+      for (const c of s.cloze ?? []) {
+        if (!c.tip || !c.why) continue
+        const found = tipForCloze(s, c)
+        expect(found?.tip.id, s.id).toBe(c.tip)
+        expect(found?.rule?.id, s.id).toBe(c.why)
+      }
   })
 
   it('a hint without tense points nowhere by itself', () => {

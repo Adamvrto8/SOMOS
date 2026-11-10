@@ -5,7 +5,7 @@
     "sk": "Tieto topánky sa mi páčia.",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["gustar", "presente"],
+    "grammar": ["gustar", "presente", "demonstratives"],
     "tokens": ["Me", "gustan", "estos", "zapatos", "."],
     "cloze": [
       {
@@ -16,6 +16,15 @@
         "tip": "gustar",
         "why": "plural",
         "distractors": ["gusta", "gustas", "gusto"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["estas", "este", "esto"]
       }
     ]
   },
@@ -96,7 +105,7 @@
     "sk": "Môžem si vyskúšať tieto nohavice?",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "demonstratives"],
     "tokens": ["¿", "Me", "puedo", "probar", "estos", "pantalones", "?"],
     "cloze": [
       {
@@ -104,6 +113,8 @@
         "answer": "estos",
         "lemma": "este",
         "hint": "tento, tieto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "esta", "estas"]
       }
     ]
@@ -230,7 +241,7 @@
     "sk": "Kde si kúpil tú šiltovku?",
     "level": "A2",
     "topics": ["clothes"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "demonstratives"],
     "tokens": ["¿", "Dónde", "compraste", "esa", "gorra", "?"],
     "cloze": [
       {
@@ -245,6 +256,8 @@
         "answer": "esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["estos", "estas", "ese"]
       }
     ]
@@ -255,7 +268,7 @@
     "sk": "Tieto topánky sú veľmi pohodlné.",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Estos", "zapatos", "son", "muy", "cómodos", "."],
     "cloze": [
       {
@@ -264,6 +277,15 @@
         "lemma": "ser",
         "hint": "ser · ellos · presente",
         "distractors": ["eres", "somos", "fueron"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Estos",
+        "lemma": "estos",
+        "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Estas", "Este", "Esto"]
       }
     ]
   },
@@ -369,7 +391,7 @@
     "sk": "Máte túto blúzku v ružovej farbe?",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["¿", "Tiene", "esta", "blusa", "en", "color", "rosa", "?"],
     "cloze": [
       {
@@ -378,6 +400,15 @@
         "lemma": "tener",
         "hint": "tener · usted · presente",
         "distractors": ["Tienen", "Tienes", "Tuvo"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "estas"]
       }
     ]
   },
@@ -401,19 +432,21 @@
   },
   {
     "id": "s443",
-    "es": "Me pondré el vestido nuevo para la boda.",
+    "es": "Me voy a poner el vestido nuevo para la boda.",
     "sk": "Na svadbu si oblečiem nové šaty.",
     "level": "A2",
     "topics": ["clothes"],
-    "grammar": ["futuro"],
-    "tokens": ["Me", "pondré", "el", "vestido", "nuevo", "para", "la", "boda", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Me", "voy", "a", "poner", "el", "vestido", "nuevo", "para", "la", "boda", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "pondré",
-        "lemma": "poner",
-        "hint": "poner · yo · futuro",
-        "distractors": ["pondrá", "pondrán", "pongo"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -423,7 +456,7 @@
     "sk": "Táto bunda mi je veľká, potrebujem o číslo menšiu.",
     "level": "B1",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Esta", "chamarra", "me", "queda", "grande", ";", "necesito", "una", "talla", "más", "chica", "."],
     "cloze": [
       {
@@ -431,6 +464,8 @@
         "answer": "Esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esas", "este", "estos"]
       },
       {
@@ -548,7 +583,7 @@
     "sk": "Vyskúšala som si tri šaty a nekúpila som žiadne.",
     "level": "A2",
     "topics": ["clothes"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "negation"],
     "tokens": ["Me", "probé", "tres", "vestidos", "y", "no", "compré", "ninguno", "."],
     "cloze": [
       {
@@ -557,6 +592,15 @@
         "lemma": "probarse",
         "hint": "probarse · yo · pretérito",
         "distractors": ["prueba", "probó", "probaba"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "ninguno",
+        "lemma": "ninguno",
+        "hint": "žiadny",
+        "tip": "negation",
+        "why": "pairs",
+        "distractors": ["alguno", "ninguna", "nada"]
       }
     ]
   },
@@ -591,6 +635,8 @@
         "answer": "Esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["ese", "esa", "esos"]
       },
       {
@@ -600,7 +646,8 @@
         "hint": "bavlna",
         "distractors": ["lana", "seda", "mezclilla"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s817",
@@ -667,7 +714,7 @@
     "sk": "Košeľu máš veľmi pokrčenú.",
     "level": "B1",
     "topics": ["clothes"],
-    "grammar": ["ser-estar"],
+    "grammar": ["ser-estar", "possessives"],
     "tokens": ["Tu", "camisa", "está", "muy", "arrugada", "."],
     "cloze": [
       {
@@ -683,6 +730,8 @@
         "answer": "Tu",
         "lemma": "tu",
         "hint": "tvoja",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["Mi", "Su", "Nuestra"]
       }
     ]
@@ -743,6 +792,8 @@
         "answer": "Estos",
         "lemma": "estos",
         "hint": "tieto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esas", "este", "esta"]
       },
       {
@@ -752,7 +803,8 @@
         "hint": "tesný",
         "distractors": ["ajustadas", "asustados", "holgado"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s824",
@@ -966,7 +1018,7 @@
     "sk": "Koľko stojí táto sukňa?",
     "level": "A1",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["¿", "Cuánto", "cuesta", "esta", "falda", "?"],
     "cloze": [
       {
@@ -975,6 +1027,15 @@
         "lemma": "costar",
         "hint": "costar · ella · presente",
         "distractors": ["cuestan", "costó", "costaba"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "estas"]
       }
     ]
   },
@@ -1153,6 +1214,8 @@
         "answer": "Este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["ese", "esa", "esos"]
       },
       {
@@ -1162,7 +1225,8 @@
         "hint": "prsteň",
         "distractors": ["blusa", "falda", "chamarra"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s1102",
@@ -1260,13 +1324,10 @@
         "tokenIndex": 7,
         "answer": "cueste",
         "lemma": "costar",
-        "hint": "costar · él",
-        "tip": "subjuntivo-clauses",
-        "why": "aunque",
+        "hint": "costar · él · subjuntivo",
         "distractors": ["cuesta", "costó"]
       }
-    ],
-    "grammar": ["subjuntivo-clauses"]
+    ]
   },
   {
     "id": "s1106",
@@ -1402,6 +1463,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esa", "esos", "esas"]
       },
       {
@@ -1411,7 +1474,8 @@
         "hint": "vlna",
         "distractors": ["botón", "cierre", "bolsillo"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s1112",
@@ -1451,6 +1515,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esos", "esas", "este"]
       },
       {
@@ -1460,7 +1526,8 @@
         "hint": "oblek",
         "distractors": ["calcetín", "huarache", "bolsillo"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s1114",
@@ -1690,7 +1757,7 @@
     "sk": "Tú vyšívanú blúzku ručne vyrobili remeselníčky z Chiapasu.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "demonstratives"],
     "tokens": ["Esa", "blusa", "bordada", "la", "hicieron", "a", "mano", "artesanas", "de", "Chiapas", "."],
     "cloze": [
       {
@@ -1698,6 +1765,8 @@
         "answer": "Esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["estos", "estas", "ese"]
       },
       {
@@ -1715,7 +1784,7 @@
     "sk": "Tá košeľa ti veľmi pristane.",
     "level": "A2",
     "topics": ["clothes"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Esa", "camisa", "te", "queda", "muy", "bien", "."],
     "cloze": [
       {
@@ -1723,6 +1792,8 @@
         "answer": "Esa",
         "lemma": "esa",
         "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["esos", "esas", "este"]
       },
       {
@@ -1857,7 +1928,7 @@
     "sk": "Poznám dizajnérku, ktorej vyšívané košele sa predávajú v celej krajine.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["relatives", "passive-se"],
+    "grammar": ["relatives-prep", "passive-se"],
     "tokens": ["Conozco", "a", "una", "diseñadora", "cuyas", "camisas", "bordadas", "se", "venden", "en", "todo", "el", "país", "."],
     "cloze": [
       {
@@ -1865,7 +1936,7 @@
         "answer": "cuyas",
         "lemma": "cuyas",
         "hint": "vzťažné slovo (jej)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "cuyo",
         "distractors": ["quienes", "donde", "cuantas"]
       }
@@ -1965,6 +2036,106 @@
         "lemma": "devolver",
         "hint": "devolver · tú · subjuntivo",
         "distractors": ["devuelves", "devolviste", "devolverás"]
+      }
+    ]
+  },
+  {
+    "id": "s2226",
+    "es": "Los zapatos se limpian con un trapo húmedo.",
+    "sk": "Topánky sa čistia vlhkou handrou.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Los", "zapatos", "se", "limpian", "con", "un", "trapo", "húmedo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "limpian",
+        "lemma": "limpiar",
+        "hint": "limpiar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["limpia", "limpiaban", "limpiarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2227",
+    "es": "El probador de la tienda está ocupado ahora.",
+    "sk": "Skúšobná kabínka v obchode je teraz obsadená.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "probador", "de", "la", "tienda", "está", "ocupado", "ahora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "ocupado",
+        "lemma": "ocupar",
+        "hint": "ocupar · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["ocupada", "ocupando", "ocupó"]
+      }
+    ]
+  },
+  {
+    "id": "s2228",
+    "es": "En invierno se usan chamarras gruesas y bufandas.",
+    "sk": "V zime sa nosia hrubé bundy a šály.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "invierno", "se", "usan", "chamarras", "gruesas", "y", "bufandas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "usan",
+        "lemma": "usar",
+        "hint": "usar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["usa", "usaban", "usarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2298",
+    "es": "Esta tarde compro unos zapatos nuevos.",
+    "sk": "Dnes poobede kúpim nové topánky.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Esta", "tarde", "compro", "unos", "zapatos", "nuevos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "time",
+        "distractors": ["Este", "Esa", "Aquella"]
+      }
+    ]
+  },
+  {
+    "id": "s2301",
+    "es": "Esa falda no, prefiero esta.",
+    "sk": "Tá sukňa nie, radšej táto.",
+    "level": "A2",
+    "topics": ["clothes"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Esa", "falda", "no", ",", "prefiero", "esta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "alone",
+        "distractors": ["este", "esa", "eso"]
       }
     ]
   }

@@ -1,6 +1,6 @@
 [
   { "id": "s272", "en": "It's very hot in Monterrey." },
-  { "id": "s273", "en": "What's the weather like in Slovakia?" },
+  { "id": "s273", "en": "What's the weather like in Slovakia?", "hints": [null, "how / what"] },
   { "id": "s274", "en": "It's raining a lot." },
   { "id": "s275", "en": "In December it's cold at night.", "hints": ["cold"] },
   { "id": "s276", "en": "It was very windy yesterday." },
@@ -18,7 +18,7 @@
   { "id": "s288", "en": "We planned to go to the beach, but it rained." },
   { "id": "s289", "en": "Is it hot in your city?" },
   { "id": "s416", "en": "It was very cold in the mountains." },
-  { "id": "s417", "en": "Tomorrow it will be very hot." },
+  { "id": "s417", "en": "Tomorrow it's going to be very hot." },
   { "id": "s591", "en": "It was raining so much that we didn't leave the house.", "hints": [null, "so much"] },
   { "id": "s592", "en": "According to the forecast, it will be very hot tomorrow.", "hints": ["according to", null] },
   { "id": "s593", "en": "We've gone three months without rain.", "hints": [null, "without"] },
@@ -48,10 +48,10 @@
   { "id": "s1538", "en": "I really like the sun.", "hints": ["sun", null] },
   { "id": "s1539", "en": "When it's sunny, we eat in the garden." },
   { "id": "s1540", "en": "It rained on Saturday and we didn't go to the park." },
-  { "id": "s1541", "en": "It'll be cloudy all day tomorrow." },
+  { "id": "s1541", "en": "It's going to be cloudy all day tomorrow." },
   { "id": "s1542", "en": "When I was a little girl, it snowed in my town every winter.", "hints": ["each, every", "winter"] },
   { "id": "s1543", "en": "I forgot my umbrella and got completely soaked." },
-  { "id": "s1544", "en": "The hurricane will reach the coast on Thursday." },
+  { "id": "s1544", "en": "The hurricane is going to reach the coast on Thursday." },
   { "id": "s1545", "en": "It was really hot, so we stayed inside." },
   { "id": "s1546", "en": "Last night it hailed and broke the car window.", "hints": ["hail"] },
   { "id": "s1547", "en": "Did you see the forecast for the weekend?" },
@@ -111,5 +111,11 @@
   { "id": "s2154", "en": "The day it snowed in the mountains, all the kids went out to play.", "hints": ["relative word"] },
   { "id": "s2155", "en": "It's so windy that you can't open the umbrella without it breaking." },
   { "id": "s2156", "en": "The lady who sells tamales on the corner said tomorrow will dawn cloudy.", "hints": ["relative pronoun"] },
-  { "id": "s2157", "en": "I love the climate of Cuernavaca, where it's never too cold or too hot.", "hints": ["relative word (place)"] }
+  { "id": "s2157", "en": "I love the climate of Cuernavaca, where it's never too cold or too hot.", "hints": ["relative word (place)"] },
+  { "id": "s2229", "en": "The balcony is open because of the heat." },
+  { "id": "s2230", "en": "In the north people live with a lot of heat in summer." },
+  { "id": "s2231", "en": "When it rains hard, many flights are canceled." },
+  { "id": "s2262", "en": "Take your umbrella, it's going to rain in the afternoon." },
+  { "id": "s2263", "en": "If it's sunny, we're going to go to the beach on Saturday." },
+  { "id": "s2300", "en": "This weekend it is going to rain.", "hints": ["this"] }
 ]

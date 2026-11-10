@@ -103,11 +103,13 @@
   },
   {
     "id": "s412",
-    "es": "Este sábado jugaremos al fútbol en el parque.",
+    "es": "Este sábado vamos a jugar al fútbol en el parque.",
     "tokens": [
       "Este",
       "sábado",
-      "jugaremos",
+      "vamos",
+      "a",
+      "jugar",
       "al",
       "fútbol",
       "en",

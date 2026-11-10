@@ -78,10 +78,12 @@
   },
   {
     "id": "s441",
-    "es": "Mañana compraré los billetes.",
+    "es": "Mañana voy a comprar los billetes.",
     "tokens": [
       "Mañana",
-      "compraré",
+      "voy",
+      "a",
+      "comprar",
       "los",
       "billetes",
       "."

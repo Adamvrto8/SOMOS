@@ -427,7 +427,7 @@
     "sk": "Všetci moji kamaráti zdieľali tú správu.",
     "level": "B1",
     "topics": ["tech"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "possessives"],
     "tokens": ["Todos", "mis", "amigos", "compartieron", "la", "noticia", "."],
     "cloze": [
       {
@@ -435,6 +435,8 @@
         "answer": "mis",
         "lemma": "mis",
         "hint": "moje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
       },
       {
@@ -520,7 +522,7 @@
     "sk": "Ten súbor ti pošlem dnes večer.",
     "level": "B1",
     "topics": ["tech", "work"],
-    "grammar": ["futuro"],
+    "grammar": ["futuro", "demonstratives"],
     "tokens": ["Te", "mandaré", "el", "archivo", "esta", "noche", "."],
     "cloze": [
       {
@@ -535,6 +537,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["este", "estas", "estos"]
       }
     ]
@@ -584,9 +588,12 @@
         "answer": "mis",
         "lemma": "mis",
         "hint": "moje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "tu"]
       }
-    ]
+    ],
+    "grammar": ["possessives"]
   },
   {
     "id": "s981",
@@ -950,8 +957,18 @@
         "lemma": "contraseña",
         "hint": "heslo",
         "distractors": ["pantalla", "batería", "página"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuál",
+        "lemma": "cuál",
+        "hint": "ktorý",
+        "tip": "interrogatives",
+        "why": "cual",
+        "distractors": ["Qué", "Cuánto", "Dónde"]
       }
-    ]
+    ],
+    "grammar": ["interrogatives"]
   },
   {
     "id": "s1458",
@@ -1099,19 +1116,21 @@
   },
   {
     "id": "s1466",
-    "es": "Mañana compraré una computadora nueva.",
+    "es": "Mañana voy a comprar una computadora nueva.",
     "sk": "Zajtra si kúpim nový počítač.",
     "level": "A2",
     "topics": ["tech"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "compraré", "una", "computadora", "nueva", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "voy", "a", "comprar", "una", "computadora", "nueva", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "compraré",
-        "lemma": "comprar",
-        "hint": "comprar · yo · futuro",
-        "distractors": ["compro", "compré", "comprarás"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1206,19 +1225,21 @@
   },
   {
     "id": "s1472",
-    "es": "Mi hermano me ayudará con la computadora.",
+    "es": "Mi hermano me va a ayudar con la computadora.",
     "sk": "Brat mi pomôže s počítačom.",
     "level": "A2",
     "topics": ["tech"],
-    "grammar": ["futuro"],
-    "tokens": ["Mi", "hermano", "me", "ayudará", "con", "la", "computadora", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mi", "hermano", "me", "va", "a", "ayudar", "con", "la", "computadora", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "ayudará",
-        "lemma": "ayudar",
-        "hint": "ayudar · él · futuro",
-        "distractors": ["ayuda", "ayudó", "ayudarán"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1801,7 +1822,7 @@
     "sk": "Hoci je aplikácia zadarmo, má veľa reklám.",
     "level": "B2",
     "topics": ["tech"],
-    "grammar": ["subjuntivo-clauses", "presente"],
+    "grammar": ["subjuntivo-aunque", "presente"],
     "tokens": ["Aunque", "la", "aplicación", "es", "gratis", ",", "tiene", "muchos", "anuncios", "."],
     "cloze": [
       {
@@ -1809,7 +1830,7 @@
         "answer": "es",
         "lemma": "ser",
         "hint": "ser · ella",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["sea", "será", "fue"]
       }
@@ -1861,7 +1882,7 @@
     "sk": "Program vyvinuli mexickí študenti.",
     "level": "B2",
     "topics": ["tech"],
-    "grammar": ["passive-se", "preterito"],
+    "grammar": ["ser-passive", "preterito"],
     "tokens": ["El", "programa", "fue", "desarrollado", "por", "estudiantes", "mexicanos", "."],
     "cloze": [
       {
@@ -1869,7 +1890,7 @@
         "answer": "desarrollado",
         "lemma": "desarrollar",
         "hint": "desarrollar · participio",
-        "tip": "passive-se",
+        "tip": "ser-passive",
         "why": "ser-passive",
         "distractors": ["desarrollada", "desarrollando", "desarrolló"]
       }
@@ -2037,7 +2058,7 @@
     "sk": "Aj keď batéria vydrží celý deň, nabíjačku nosím vždy v ruksaku.",
     "level": "B2",
     "topics": ["tech"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
     "tokens": ["Aunque", "la", "batería", "dure", "todo", "el", "día", ",", "siempre", "llevo", "el", "cargador", "en", "la", "mochila", "."],
     "cloze": [
       {
@@ -2052,7 +2073,7 @@
         "answer": "dure",
         "lemma": "durar",
         "hint": "durar · ella",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["durar", "durando"]
       }
@@ -2147,6 +2168,106 @@
         "tip": "relatives",
         "why": "lo-que",
         "distractors": ["el", "los", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s2253",
+    "es": "La aplicación fue descargada más de un millón de veces en una semana.",
+    "sk": "Aplikáciu si za týždeň stiahli viac než miliónkrát.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["ser-passive", "preterito"],
+    "tokens": ["La", "aplicación", "fue", "descargada", "más", "de", "un", "millón", "de", "veces", "en", "una", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "fue",
+        "lemma": "ser",
+        "hint": "ser · él · pretérito",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["es", "era", "será"]
+      }
+    ]
+  },
+  {
+    "id": "s2254",
+    "es": "Los datos de los clientes eran guardados en un servidor viejo y poco seguro.",
+    "sk": "Údaje zákazníkov sa ukladali na starom a málo bezpečnom serveri.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["ser-passive", "imperfecto"],
+    "tokens": ["Los", "datos", "de", "los", "clientes", "eran", "guardados", "en", "un", "servidor", "viejo", "y", "poco", "seguro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "eran",
+        "lemma": "ser",
+        "hint": "ser · ellos · imperfecto",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["son", "fueron", "serán"]
+      }
+    ]
+  },
+  {
+    "id": "s2255",
+    "es": "El nuevo sistema operativo fue presentado por la empresa en una conferencia.",
+    "sk": "Nový operačný systém predstavila firma na konferencii.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["ser-passive", "preterito"],
+    "tokens": ["El", "nuevo", "sistema", "operativo", "fue", "presentado", "por", "la", "empresa", "en", "una", "conferencia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "presentado",
+        "lemma": "presentar",
+        "hint": "presentar · participio",
+        "tip": "ser-passive",
+        "why": "register",
+        "distractors": ["presentada", "presentando", "presentó"]
+      }
+    ]
+  },
+  {
+    "id": "s2256",
+    "es": "Los primeros celulares con pantalla táctil fueron vendidos hace más de quince años.",
+    "sk": "Prvé mobily s dotykovým displejom sa predávali pred viac než pätnástimi rokmi.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["ser-passive", "preterito"],
+    "tokens": ["Los", "primeros", "celulares", "con", "pantalla", "táctil", "fueron", "vendidos", "hace", "más", "de", "quince", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "fueron",
+        "lemma": "ser",
+        "hint": "ser · ellos · pretérito",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["son", "eran", "serán"]
+      }
+    ]
+  },
+  {
+    "id": "s2257",
+    "es": "El error será corregido por los ingenieros antes del lanzamiento de la aplicación.",
+    "sk": "Chybu opravia inžinieri pred spustením aplikácie.",
+    "level": "B2",
+    "topics": ["tech"],
+    "grammar": ["ser-passive", "futuro"],
+    "tokens": ["El", "error", "será", "corregido", "por", "los", "ingenieros", "antes", "del", "lanzamiento", "de", "la", "aplicación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "corregido",
+        "lemma": "corregir",
+        "hint": "corregir · participio",
+        "tip": "ser-passive",
+        "why": "ser-passive",
+        "distractors": ["corregida", "corrigiendo", "corrigió"]
       }
     ]
   }

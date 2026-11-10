@@ -64,7 +64,7 @@ const DERIVED_TENSES = ['subjuntivo', 'subjImperfecto', 'condicional'] as const
 type StoredTense = Exclude<Tense, (typeof DERIVED_TENSES)[number]>
 const isDerived = (tense: Tense): tense is (typeof DERIVED_TENSES)[number] => (DERIVED_TENSES as readonly string[]).includes(tense)
 const POS = ['noun', 'verb', 'adj', 'adv', 'prep', 'pron', 'conj', 'phrase', 'other']
-const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles', 'imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto', 'subj-imperfecto', 'gustar', 'hay-estar', 'object-pronouns', 'comparisons', 'obligation', 'subjuntivo-wishes', 'si-clauses', 'por-para', 'subjuntivo-clauses', 'relatives', 'passive-se', 'perfecto']
+const GRAMMAR = ['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro', 'ser-estar', 'gender', 'articles', 'imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto', 'subj-imperfecto', 'gustar', 'hay-estar', 'object-pronouns', 'comparisons', 'obligation', 'subjuntivo-wishes', 'si-clauses', 'por-para', 'subjuntivo-clauses', 'relatives', 'passive-se', 'perfecto', 'ir-a', 'subjuntivo-aunque', 'relatives-prep', 'ser-passive', 'demonstratives', 'possessives', 'interrogatives', 'negation', 'personal-a']
 
 // ---------- helpers ----------
 

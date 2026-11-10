@@ -161,8 +161,18 @@
         "lemma": "número",
         "hint": "číslo",
         "distractors": ["nombre", "cuenta", "hora"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuál",
+        "lemma": "cuál",
+        "hint": "ktorý",
+        "tip": "interrogatives",
+        "why": "cual",
+        "distractors": ["Qué", "Cuánto", "Dónde"]
       }
-    ]
+    ],
+    "grammar": ["interrogatives"]
   },
   {
     "id": "s368",
@@ -434,7 +444,7 @@
     "sk": "Koľko váži tvoj kufor?",
     "level": "A2",
     "topics": ["numbers", "travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["¿", "Cuánto", "pesa", "tu", "maleta", "?"],
     "cloze": [
       {
@@ -449,6 +459,8 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
       }
     ]
@@ -709,7 +721,7 @@
     "sk": "Koľko máte detí?",
     "level": "A1",
     "topics": ["numbers"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cuántos", "hijos", "tienen", "ustedes", "?"],
     "cloze": [
       {
@@ -718,6 +730,15 @@
         "lemma": "tener",
         "hint": "tener · ustedes · presente",
         "distractors": ["tenemos", "tuvieron", "tenían"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuántos",
+        "lemma": "cuántos",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántas", "Cuánto", "Qué"]
       }
     ]
   },
@@ -872,19 +893,21 @@
   },
   {
     "id": "s1356",
-    "es": "Mi abuelo cumplirá setenta y cinco años en junio.",
+    "es": "Mi abuelo va a cumplir setenta y cinco años en junio.",
     "sk": "Dedko bude mať v júni sedemdesiatpäť rokov.",
     "level": "A2",
     "topics": ["numbers"],
-    "grammar": ["futuro"],
-    "tokens": ["Mi", "abuelo", "cumplirá", "setenta", "y", "cinco", "años", "en", "junio", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mi", "abuelo", "va", "a", "cumplir", "setenta", "y", "cinco", "años", "en", "junio", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "cumplirá",
-        "lemma": "cumplir",
-        "hint": "cumplir · él · futuro",
-        "distractors": ["cumplió", "cumple", "cumplirán"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1038,19 +1061,21 @@
   },
   {
     "id": "s1365",
-    "es": "Te llamaré a las nueve y media.",
+    "es": "Te voy a llamar a las nueve y media.",
     "sk": "Zavolám ti o pol desiatej.",
     "level": "A2",
     "topics": ["numbers"],
-    "grammar": ["futuro"],
-    "tokens": ["Te", "llamaré", "a", "las", "nueve", "y", "media", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Te", "voy", "a", "llamar", "a", "las", "nueve", "y", "media", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "llamaré",
-        "lemma": "llamar",
-        "hint": "llamar · yo · futuro",
-        "distractors": ["llamo", "llamé", "llamarás"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1782,7 +1807,7 @@
     "sk": "Brat, ktorý má v pondelok tridsiatku, chce malú oslavu.",
     "level": "B2",
     "topics": ["numbers"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["Mi", "hermano", ",", "quien", "cumple", "treinta", "años", "el", "lunes", ",", "quiere", "una", "fiesta", "pequeña", "."],
     "cloze": [
       {
@@ -1790,7 +1815,7 @@
         "answer": "quien",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoba)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
       }
@@ -1865,6 +1890,126 @@
         "lemma": "poder",
         "hint": "poder · yo · subjuntivo",
         "distractors": ["puedo", "pude", "podré"]
+      }
+    ]
+  },
+  {
+    "id": "s2210",
+    "es": "Anoté el número en la libreta donde guardo mis contraseñas.",
+    "sk": "Číslo som si zapísal do zošita, kde mám uložené heslá.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Anoté", "el", "número", "en", "la", "libreta", "donde", "guardo", "mis", "contraseñas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2211",
+    "es": "Los dos boletos que compré cuestan quinientos pesos en total.",
+    "sk": "Dva lístky, ktoré som kúpil, stoja spolu päťsto pesos.",
+    "level": "B1",
+    "topics": ["numbers"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Los", "dos", "boletos", "que", "compré", "cuestan", "quinientos", "pesos", "en", "total", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2305",
+    "es": "¿Cuántos años tienes?",
+    "sk": "Koľko máš rokov?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["interrogatives", "presente"],
+    "tokens": ["¿", "Cuántos", "años", "tienes", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Cuántos",
+        "lemma": "cuántos",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántas", "Cuánto", "Qué"]
+      }
+    ]
+  },
+  {
+    "id": "s2306",
+    "es": "¿Cuántas personas hay aquí?",
+    "sk": "Koľko ľudí je tu?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["interrogatives", "presente"],
+    "tokens": ["¿", "Cuántas", "personas", "hay", "aquí", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Cuántas",
+        "lemma": "cuántas",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántos", "Cuánto", "Qué"]
+      }
+    ]
+  },
+  {
+    "id": "s2307",
+    "es": "¿Cuál es tu código postal?",
+    "sk": "Aké je tvoje PSČ?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["interrogatives", "presente"],
+    "tokens": ["¿", "Cuál", "es", "tu", "código", "postal", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Cuál",
+        "lemma": "cuál",
+        "hint": "aký",
+        "tip": "interrogatives",
+        "why": "cual",
+        "distractors": ["Qué", "Cuánto", "Dónde"]
+      }
+    ]
+  },
+  {
+    "id": "s2308",
+    "es": "¿Cuál es tu dirección?",
+    "sk": "Aká je tvoja adresa?",
+    "level": "A1",
+    "topics": ["numbers"],
+    "grammar": ["interrogatives", "presente"],
+    "tokens": ["¿", "Cuál", "es", "tu", "dirección", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Cuál",
+        "lemma": "cuál",
+        "hint": "aký",
+        "tip": "interrogatives",
+        "why": "cual",
+        "distractors": ["Qué", "Cuánto", "Dónde"]
       }
     ]
   }

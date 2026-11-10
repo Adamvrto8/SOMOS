@@ -65,7 +65,7 @@
     "sk": "Je na tejto ulici nejaká reštaurácia?",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["hay-estar", "presente"],
+    "grammar": ["hay-estar", "presente", "demonstratives"],
     "tokens": ["¿", "Hay", "un", "restaurante", "en", "esta", "calle", "?"],
     "cloze": [
       {
@@ -76,6 +76,15 @@
         "tip": "hay-estar",
         "why": "question",
         "distractors": ["Está", "Están", "Es"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "estas"]
       }
     ]
   },
@@ -85,7 +94,7 @@
     "sk": "Na tomto rohu nie je semafor.",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["hay-estar", "presente"],
+    "grammar": ["hay-estar", "presente", "demonstratives"],
     "tokens": ["No", "hay", "semáforo", "en", "esta", "esquina", "."],
     "cloze": [
       {
@@ -96,6 +105,15 @@
         "tip": "hay-estar",
         "why": "hay",
         "distractors": ["está", "están", "es"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "esa"]
       }
     ]
   },
@@ -163,7 +181,7 @@
     "sk": "Moje auto je na parkovisku.",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "possessives"],
     "tokens": ["Mi", "carro", "está", "en", "el", "estacionamiento", "."],
     "cloze": [
       {
@@ -171,6 +189,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mis", "tu"]
       },
       {
@@ -363,7 +383,7 @@
     "sk": "Kde je najbližšia banka?",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "interrogatives"],
     "tokens": ["¿", "Dónde", "está", "el", "banco", "más", "cercano", "?"],
     "cloze": [
       {
@@ -373,6 +393,15 @@
         "hint": "ser/estar · él · presente",
         "why": "place",
         "distractors": ["es", "están", "estás"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuándo", "Cómo", "Qué"]
       }
     ]
   },
@@ -662,7 +691,7 @@
     "sk": "Predtým bola táto štvrť veľmi nebezpečná.",
     "level": "B1",
     "topics": ["city"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "demonstratives"],
     "tokens": ["Antes", "este", "barrio", "era", "muy", "peligroso", "."],
     "cloze": [
       {
@@ -677,6 +706,8 @@
         "answer": "este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esta", "estos", "estas"]
       }
     ]
@@ -687,7 +718,7 @@
     "sk": "Predtým nebolo na tejto triede toľko premávky.",
     "level": "B1",
     "topics": ["city"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "demonstratives"],
     "tokens": ["Antes", "no", "había", "tanto", "tráfico", "en", "esta", "avenida", "."],
     "cloze": [
       {
@@ -702,6 +733,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esa", "esos", "esas"]
       }
     ]
@@ -794,19 +827,21 @@
   },
   {
     "id": "s430",
-    "es": "El nuevo metro abrirá en diciembre.",
+    "es": "El nuevo metro va a abrir en diciembre.",
     "sk": "Nové metro otvoria v decembri.",
     "level": "A2",
     "topics": ["city"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "nuevo", "metro", "abrirá", "en", "diciembre", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "nuevo", "metro", "va", "a", "abrir", "en", "diciembre", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "abrirá",
-        "lemma": "abrir",
-        "hint": "abrir · él · futuro",
-        "distractors": ["abrirán", "abrirás", "abre"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -999,7 +1034,7 @@
     "sk": "V tejto štvrti veľmi klesla kriminalita.",
     "level": "B2",
     "topics": ["city"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "demonstratives"],
     "tokens": ["En", "esta", "colonia", "bajó", "mucho", "la", "delincuencia", "."],
     "cloze": [
       {
@@ -1007,6 +1042,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esa", "esos", "esas"]
       },
       {
@@ -1183,19 +1220,21 @@
   },
   {
     "id": "s1063",
-    "es": "Mañana visitaremos la catedral y el museo de arte.",
+    "es": "Mañana vamos a visitar la catedral y el museo de arte.",
     "sk": "Zajtra navštívime katedrálu a múzeum umenia.",
     "level": "A2",
     "topics": ["city"],
-    "grammar": ["futuro"],
-    "tokens": ["Mañana", "visitaremos", "la", "catedral", "y", "el", "museo", "de", "arte", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Mañana", "vamos", "a", "visitar", "la", "catedral", "y", "el", "museo", "de", "arte", "."],
     "cloze": [
       {
         "tokenIndex": 1,
-        "answer": "visitaremos",
-        "lemma": "visitar",
-        "hint": "visitar · nosotros · futuro",
-        "distractors": ["visitan", "visité", "visitábamos"]
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["van", "voy", "fuimos"]
       }
     ]
   },
@@ -1594,7 +1633,7 @@
     "sk": "Hovorí sa, že metro predĺžia až na letisko, ale nikto im neverí.",
     "level": "B2",
     "topics": ["city"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "negation"],
     "tokens": ["Dicen", "que", "van", "a", "ampliar", "el", "metro", "hasta", "el", "aeropuerto", ",", "pero", "nadie", "les", "cree", "."],
     "cloze": [
       {
@@ -1602,6 +1641,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       },
       {
@@ -1762,7 +1803,7 @@
     "sk": "Kde sú toalety?",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["hay-estar", "presente"],
+    "grammar": ["hay-estar", "presente", "interrogatives"],
     "tokens": ["¿", "Dónde", "están", "los", "baños", "?"],
     "cloze": [
       {
@@ -1773,6 +1814,15 @@
         "tip": "hay-estar",
         "why": "question",
         "distractors": ["hay", "son", "está"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuándo", "Cómo", "Quién"]
       }
     ]
   },
@@ -1855,7 +1905,7 @@
     "sk": "Táto štvrť je veľmi pokojná.",
     "level": "A1",
     "topics": ["city"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Esta", "colonia", "es", "muy", "tranquila", "."],
     "cloze": [
       {
@@ -1864,6 +1914,15 @@
         "lemma": "ser",
         "hint": "ser · ella · presente",
         "distractors": ["son", "eres", "fue"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Este", "Esto", "Estas"]
       }
     ]
   },
@@ -2201,7 +2260,7 @@
     "sk": "Most bol postavený v roku 1990.",
     "level": "B2",
     "topics": ["city"],
-    "grammar": ["passive-se", "preterito"],
+    "grammar": ["ser-passive", "preterito"],
     "tokens": ["El", "puente", "fue", "construido", "en", "mil", "novecientos", "noventa", "."],
     "cloze": [
       {
@@ -2209,7 +2268,7 @@
         "answer": "construido",
         "lemma": "construir",
         "hint": "construir · participio",
-        "tip": "passive-se",
+        "tip": "ser-passive",
         "why": "ser-passive",
         "distractors": ["construida", "construyendo", "construyó"]
       }
@@ -2360,7 +2419,7 @@
     "sk": "To je ulica, ktorou každý rok v septembri prechádza sprievod.",
     "level": "B2",
     "topics": ["city"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["Esa", "es", "la", "calle", "por", "la", "que", "pasa", "el", "desfile", "todos", "los", "años", "en", "septiembre", "."],
     "cloze": [
       {
@@ -2368,7 +2427,7 @@
         "answer": "que",
         "lemma": "que",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["quien", "donde", "cuyo"]
       }
@@ -2407,6 +2466,86 @@
         "lemma": "construir",
         "hint": "construir · ellos · subjuntivo imperfecto",
         "distractors": ["construyen", "construyeron", "construirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2204",
+    "es": "La plaza donde vendían elotes ya no existe.",
+    "sk": "Námestie, kde predávali kukuricu, už neexistuje.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["relatives", "imperfecto"],
+    "tokens": ["La", "plaza", "donde", "vendían", "elotes", "ya", "no", "existe", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2205",
+    "es": "El camión que pasa por mi calle tarda mucho.",
+    "sk": "Autobus, ktorý chodí po mojej ulici, mešká dlho.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "camión", "que", "pasa", "por", "mi", "calle", "tarda", "mucho", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2274",
+    "es": "No hay ningún banco cerca de aquí.",
+    "sk": "Neďaleko odtiaľto nie je žiadna banka.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["No", "hay", "ningún", "banco", "cerca", "de", "aquí", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "ningún",
+        "lemma": "ningún",
+        "hint": "žiadny",
+        "tip": "negation",
+        "why": "pairs",
+        "distractors": ["algún", "ninguna", "nada"]
+      }
+    ]
+  },
+  {
+    "id": "s2287",
+    "es": "No conozco a nadie en esta ciudad.",
+    "sk": "V tomto meste nikoho nepoznám.",
+    "level": "A2",
+    "topics": ["city"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["No", "conozco", "a", "nadie", "en", "esta", "ciudad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "nadie",
+        "distractors": ["de", "en", "con"]
       }
     ]
   }

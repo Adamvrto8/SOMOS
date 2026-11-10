@@ -843,24 +843,20 @@
   },
   {
     "id": "s1402",
-    "es": "El próximo año mi hija estudiará en el instituto.",
+    "es": "El próximo año mi hija va a estudiar en el instituto.",
     "tokens": [
       "El",
       "próximo",
       "año",
       "mi",
       "hija",
-      "estudiará",
+      "va",
+      "a",
+      "estudiar",
       "en",
       "el",
       "instituto",
       "."
-    ],
-    "cloze": [
-      {
-        "tokenIndex": 5,
-        "answer": "estudiará"
-      }
     ]
   },
   {
@@ -1018,6 +1014,22 @@
         "tokenIndex": 6,
         "answer": "hecho"
       }
+    ]
+  },
+  {
+    "id": "s2224",
+    "es": "En clase se aprende mejor sin usar el móvil.",
+    "tokens": [
+      "En",
+      "clase",
+      "se",
+      "aprende",
+      "mejor",
+      "sin",
+      "usar",
+      "el",
+      "móvil",
+      "."
     ]
   }
 ]

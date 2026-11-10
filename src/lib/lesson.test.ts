@@ -125,16 +125,18 @@ describe('createLesson', () => {
 
   it('asks "all tenses" only up to the level', () => {
     const tensesOf = (level: Level) => new Set(getStablePool({ type: 'conjugation', tense: 'all', level }).map((t) => (t as ConjugationTask).tense))
-    expect([...tensesOf('A1')].sort()).toEqual(['futuro', 'imperfecto', 'presente', 'preterito', 'progresivo'])
+    expect([...tensesOf('A1')].sort()).toEqual(['presente', 'progresivo'])
+    expect(tensesOf('A2').has('futuro')).toBe(false)
+    expect(tensesOf('B1').has('futuro')).toBe(true)
     expect(tensesOf('A2').has('imperativo')).toBe(true)
     expect(tensesOf('B1').has('subjuntivo')).toBe(true)
     expect(tensesOf('B1').has('subjImperfecto')).toBe(false)
     expect(tensesOf('B2').has('subjImperfecto')).toBe(true)
   })
 
-  it('keeps the A1 drill as it was: five tenses, five persons', () => {
+  it('drills A1 in its two tenses (presente, progresivo), five persons', () => {
     const pool = getStablePool({ type: 'conjugation', tense: 'all', level: 'A1' })
-    expect(pool).toHaveLength(verbs.filter((v) => v.level === 'A1').length * 5 * 5)
+    expect(pool).toHaveLength(verbs.filter((v) => v.level === 'A1').length * 2 * 5)
   })
 
   it('drills a chosen tense at any level', () => {
@@ -446,7 +448,8 @@ describe('lookupForm', () => {
     const futuro = conjugationTask(verbById.get('estudiar')!, 'futuro', 'el')
     expect(gradeTask(futuro, 'estudiara').verdict).toBe('accent')
     const preterito = conjugationTask(verbById.get('hablar')!, 'preterito', 'yo')
-    expect(gradeTask(preterito, 'hable').verdict).toBe('accent')
+    // The pretérito is A2 now, where hable is a known form (the usted imperative): a different word, not an accent slip.
+    expect(gradeTask(preterito, 'hable').verdict).toBe('wrong')
     const subjuntivo = conjugationTask(verbById.get('hablar')!, 'subjuntivo', 'yo')
     expect(gradeTask(subjuntivo, 'hablé').verdict).toBe('wrong')
   })

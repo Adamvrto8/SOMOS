@@ -373,24 +373,20 @@
   },
   {
     "id": "s435",
-    "es": "El próximo año viajaré a Granada.",
+    "es": "El próximo año voy a viajar a Granada.",
     "tokens": [
       "El",
       "próximo",
       "año",
-      "viajaré",
+      "voy",
+      "a",
+      "viajar",
       "a",
       "Granada",
       "."
     ],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "viajaré"
-      }
-    ],
     "sk": "Budúci rok pocestujem do Granady.",
-    "en": "Next year I will travel to Granada."
+    "en": "Next year I'm going to travel to Granada."
   },
   {
     "id": "s740",
@@ -1060,5 +1056,27 @@
     ],
     "sk": "Priatelia, ktorí bývajú vo Valencii, nás pozvali, aby sme u nich zostali týždeň.",
     "en": "My friends who live in Valencia invited us to stay with them for a week."
+  },
+  {
+    "id": "s2242",
+    "es": "Mi tío, quien trabaja en una agencia de viajes, nos consiguió billetes baratos.",
+    "tokens": [
+      "Mi",
+      "tío",
+      ",",
+      "quien",
+      "trabaja",
+      "en",
+      "una",
+      "agencia",
+      "de",
+      "viajes",
+      ",",
+      "nos",
+      "consiguió",
+      "billetes",
+      "baratos",
+      "."
+    ]
   }
 ]

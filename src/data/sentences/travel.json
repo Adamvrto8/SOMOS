@@ -1,5 +1,85 @@
 [
   {
+    "id": "s2290",
+    "es": "¿Ese tren va al centro?",
+    "sk": "Ide ten vlak do centra?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["¿", "Ese", "tren", "va", "al", "centro", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "Ese",
+        "lemma": "ese",
+        "hint": "ten",
+        "tip": "demonstratives",
+        "why": "far",
+        "distractors": ["Este", "Esa", "Eso"]
+      }
+    ]
+  },
+  {
+    "id": "s2291",
+    "es": "Aquella bolsa es muy pesada.",
+    "sk": "Tamtá taška je veľmi ťažká.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Aquella", "bolsa", "es", "muy", "pesada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aquella",
+        "lemma": "aquella",
+        "hint": "tamtá",
+        "tip": "demonstratives",
+        "why": "far",
+        "distractors": ["Aquel", "Esa", "Esta"]
+      }
+    ]
+  },
+  {
+    "id": "s2292",
+    "es": "Este hotel es muy bonito.",
+    "sk": "Tento hotel je veľmi pekný.",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Este", "hotel", "es", "muy", "bonito", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Ese", "Esta", "Esto"]
+      }
+    ]
+  },
+  {
+    "id": "s2293",
+    "es": "¿Qué es eso?",
+    "sk": "Čo je to?",
+    "level": "A1",
+    "topics": ["travel"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["¿", "Qué", "es", "eso", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "eso",
+        "lemma": "eso",
+        "hint": "to",
+        "tip": "demonstratives",
+        "why": "neutral",
+        "distractors": ["este", "esa", "ese"]
+      }
+    ]
+  },
+  {
     "id": "s1644",
     "es": "¿Te gusta viajar en avión?",
     "sk": "Rád cestuješ lietadlom?",
@@ -185,7 +265,7 @@
     "sk": "Máš pri sebe pas?",
     "level": "A1",
     "topics": ["travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["¿", "Tienes", "tu", "pasaporte", "?"],
     "cloze": [
       {
@@ -195,7 +275,15 @@
         "hint": "tener · tú · presente",
         "distractors": ["Tengo", "Tiene", "Tuviste"]
       },
-      { "tokenIndex": 2, "answer": "tu", "lemma": "tu", "hint": "tvoj", "distractors": ["tú", "mi", "su"] }
+      {
+        "tokenIndex": 2,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["tú", "mi", "su"]
+      }
     ]
   },
   {
@@ -380,7 +468,7 @@
     "sk": "Kedy sa vraciaš na Slovensko?",
     "level": "A1",
     "topics": ["travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cuándo", "regresas", "a", "Eslovaquia", "?"],
     "cloze": [
       {
@@ -389,6 +477,15 @@
         "lemma": "regresar",
         "hint": "regresar · tú · presente",
         "distractors": ["regresamos", "regreso", "regresaste"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuándo",
+        "lemma": "cuándo",
+        "hint": "kedy",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Dónde", "Cómo", "Cuánto"]
       }
     ]
   },
@@ -883,19 +980,21 @@
   },
   {
     "id": "s435",
-    "es": "El próximo año viajaré a Oaxaca.",
+    "es": "El próximo año voy a viajar a Oaxaca.",
     "sk": "Budúci rok pocestujem do Oaxacy.",
     "level": "A2",
     "topics": ["travel"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "próximo", "año", "viajaré", "a", "Oaxaca", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "próximo", "año", "voy", "a", "viajar", "a", "Oaxaca", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "viajaré",
-        "lemma": "viajar",
-        "hint": "viajar · yo · futuro",
-        "distractors": ["viajará", "viajarán", "viajo"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1161,7 +1260,7 @@
     "sk": "Mayské ruiny lákajú turistov z celého sveta.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "personal-a"],
     "tokens": ["Las", "ruinas", "mayas", "atraen", "a", "turistas", "de", "todo", "el", "mundo", "."],
     "cloze": [
       {
@@ -1176,6 +1275,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["de", "en", "con"]
       }
     ]
@@ -1238,7 +1339,7 @@
     "sk": "Koľko stojí lístok do Puebly?",
     "level": "A1",
     "topics": ["travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cuánto", "cuesta", "el", "boleto", "a", "Puebla", "?"],
     "cloze": [
       {
@@ -1247,6 +1348,15 @@
         "lemma": "costar",
         "hint": "costar · él · presente",
         "distractors": ["cuestan", "cuestas", "costó"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuánto",
+        "lemma": "cuánto",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántos", "Qué", "Cuándo"]
       }
     ]
   },
@@ -1759,7 +1869,7 @@
     "sk": "Kde si kúpime lístky?",
     "level": "A1",
     "topics": ["travel"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Dónde", "compramos", "los", "boletos", "?"],
     "cloze": [
       {
@@ -1768,6 +1878,15 @@
         "lemma": "comprar",
         "hint": "comprar · nosotros · presente",
         "distractors": ["compro", "compran", "comprarán"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuándo", "Cómo", "Qué"]
       }
     ]
   },
@@ -2166,7 +2285,7 @@
     "sk": "Trasa, ktorou sme išli, mala úžasné výhľady.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["La", "ruta", "por", "la", "que", "pasamos", "tenía", "paisajes", "increíbles", "."],
     "cloze": [
       {
@@ -2174,7 +2293,7 @@
         "answer": "la",
         "lemma": "la",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["lo", "el"]
       }
@@ -2441,6 +2560,86 @@
         "lemma": "tomar",
         "hint": "tomar · nosotros · subjuntivo imperfecto",
         "distractors": ["tomamos", "tomaremos", "tomábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2240",
+    "es": "El hotel en el que nos quedamos tenía una vista preciosa al mar.",
+    "sk": "Hotel, v ktorom sme sa ubytovali, mal krásny výhľad na more.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["El", "hotel", "en", "el", "que", "nos", "quedamos", "tenía", "una", "vista", "preciosa", "al", "mar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "vzťažné slovo",
+        "tip": "relatives-prep",
+        "why": "el-que",
+        "distractors": ["la", "lo", "los"]
+      }
+    ]
+  },
+  {
+    "id": "s2241",
+    "es": "La guía con la que recorrimos el centro histórico sabía muchísimo de historia.",
+    "sk": "Sprievodkyňa, s ktorou sme prešli historické centrum, vedela veľmi veľa o histórii.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["La", "guía", "con", "la", "que", "recorrimos", "el", "centro", "histórico", "sabía", "muchísimo", "de", "historia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "vzťažné slovo",
+        "tip": "relatives-prep",
+        "why": "el-que",
+        "distractors": ["el", "lo", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s2242",
+    "es": "Mi tío, quien trabaja en una agencia de viajes, nos consiguió boletos baratos.",
+    "sk": "Môj strýko, ktorý pracuje v cestovnej kancelárii, nám zohnal lacné letenky.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["Mi", "tío", ",", "quien", "trabaja", "en", "una", "agencia", "de", "viajes", ",", "nos", "consiguió", "boletos", "baratos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quien",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoba)",
+        "tip": "relatives-prep",
+        "why": "quien",
+        "distractors": ["donde", "cuyo", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2243",
+    "es": "Visitamos un pueblo cuyas calles están pintadas de colores brillantes.",
+    "sk": "Navštívili sme dedinu, ktorej ulice sú namaľované žiarivými farbami.",
+    "level": "B2",
+    "topics": ["travel"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["Visitamos", "un", "pueblo", "cuyas", "calles", "están", "pintadas", "de", "colores", "brillantes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cuyas",
+        "lemma": "cuyas",
+        "hint": "vzťažné slovo (jej)",
+        "tip": "relatives-prep",
+        "why": "cuyo",
+        "distractors": ["quienes", "donde", "cuantas"]
       }
     ]
   }

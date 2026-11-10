@@ -358,5 +358,25 @@
         ]
       }
     ]
+  },
+  {
+    "id": "s2256",
+    "es": "Los primeros móviles con pantalla táctil fueron vendidos hace más de quince años.",
+    "tokens": [
+      "Los",
+      "primeros",
+      "móviles",
+      "con",
+      "pantalla",
+      "táctil",
+      "fueron",
+      "vendidos",
+      "hace",
+      "más",
+      "de",
+      "quince",
+      "años",
+      "."
+    ]
   }
 ]

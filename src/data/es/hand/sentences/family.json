@@ -311,10 +311,12 @@
   },
   {
     "id": "s1158",
-    "es": "¿Vendrán tus padres a la boda?",
+    "es": "¿Van a venir tus padres a la boda?",
     "tokens": [
       "¿",
-      "Vendrán",
+      "Van",
+      "a",
+      "venir",
       "tus",
       "padres",
       "a",
@@ -674,5 +676,22 @@
     ],
     "sk": "V mojej rodine niet nikoho, kto by od malička nevedel tancovať sevillany.",
     "en": "There is no one in my family who can't dance sevillanas from childhood."
+  },
+  {
+    "id": "s2173",
+    "es": "Mis padres ahorran para que yo estudie en el extranjero.",
+    "tokens": [
+      "Mis",
+      "padres",
+      "ahorran",
+      "para",
+      "que",
+      "yo",
+      "estudie",
+      "en",
+      "el",
+      "extranjero",
+      "."
+    ]
   }
 ]

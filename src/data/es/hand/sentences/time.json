@@ -185,9 +185,9 @@
   },
   {
     "id": "s757",
-    "es": "Anoche cenamos en casa de mis padres.",
+    "es": "Hoy cenamos en casa de mis padres.",
     "tokens": [
-      "Anoche",
+      "Hoy",
       "cenamos",
       "en",
       "casa",
@@ -470,6 +470,25 @@
         "tokenIndex": 3,
         "answer": "recordó"
       }
+    ]
+  },
+  {
+    "id": "s2182",
+    "es": "No creo que alcancemos el último autobús si salimos a las diez.",
+    "tokens": [
+      "No",
+      "creo",
+      "que",
+      "alcancemos",
+      "el",
+      "último",
+      "autobús",
+      "si",
+      "salimos",
+      "a",
+      "las",
+      "diez",
+      "."
     ]
   }
 ]

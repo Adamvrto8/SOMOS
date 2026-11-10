@@ -45,8 +45,9 @@ describe('conjugate', () => {
 
 describe('tenses and persons', () => {
   it('asks each tense from its level', () => {
-    expect(tensesUpTo('A1')).toEqual(['presente', 'progresivo', 'preterito', 'imperfecto', 'futuro'])
-    expect(tensesUpTo('A2')).toEqual(['presente', 'progresivo', 'preterito', 'perfecto', 'imperfecto', 'futuro', 'imperativo'])
+    expect(tensesUpTo('A1')).toEqual(['presente', 'progresivo'])
+    expect(tensesUpTo('A2')).toEqual(['presente', 'progresivo', 'preterito', 'perfecto', 'imperfecto', 'imperativo'])
+    expect(tensesUpTo('B1')).toContain('futuro')
     expect(tensesUpTo('B1')).not.toContain('subjImperfecto')
     expect(tensesUpTo('B2')).toEqual(TABLE_TENSES)
     expect(tensesUpTo()).toEqual(TABLE_TENSES)

@@ -23,7 +23,7 @@
     "sk": "Ako sa dnes cítiš?",
     "level": "A1",
     "topics": ["health"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cómo", "te", "sientes", "hoy", "?"],
     "cloze": [
       {
@@ -32,6 +32,15 @@
         "lemma": "sentirse",
         "hint": "sentirse · tú · presente",
         "distractors": ["sentimos", "siento", "sentiste"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cómo",
+        "lemma": "cómo",
+        "hint": "ako",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Qué", "Cuál", "Dónde"]
       }
     ]
   },
@@ -453,7 +462,7 @@
     "sk": "Lekár hovorí, že to nie je nič vážne.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "negation"],
     "tokens": ["El", "doctor", "dice", "que", "no", "es", "nada", "grave", "."],
     "cloze": [
       {
@@ -468,6 +477,8 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie"]
       }
     ]
@@ -624,22 +635,24 @@
   },
   {
     "id": "s437",
-    "es": "Con esta medicina te sentirás mejor.",
+    "es": "Con esta medicina te vas a sentir mejor.",
     "sk": "S týmto liekom sa budeš cítiť lepšie.",
     "level": "A2",
     "topics": ["health"],
-    "grammar": ["futuro", "comparisons"],
-    "tokens": ["Con", "esta", "medicina", "te", "sentirás", "mejor", "."],
+    "grammar": ["ir-a", "comparisons"],
+    "tokens": ["Con", "esta", "medicina", "te", "vas", "a", "sentir", "mejor", "."],
     "cloze": [
       {
         "tokenIndex": 4,
-        "answer": "sentirás",
-        "lemma": "sentirse",
-        "hint": "sentirse · tú · futuro",
-        "distractors": ["sentiremos", "sentiré", "sientes"]
+        "answer": "vas",
+        "lemma": "ir",
+        "hint": "ir · tú · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["va", "voy", "fuiste"]
       },
       {
-        "tokenIndex": 5,
+        "tokenIndex": 7,
         "answer": "mejor",
         "lemma": "mejor",
         "hint": "porovnanie",
@@ -680,6 +693,8 @@
         "answer": "Esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esas", "este", "estos"]
       },
       {
@@ -689,7 +704,8 @@
         "hint": "masť",
         "distractors": ["manzana", "pintura", "almohada"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s851",
@@ -884,6 +900,8 @@
         "answer": "Esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esa", "esos", "esas"]
       },
       {
@@ -893,7 +911,8 @@
         "hint": "vedľajší",
         "distractors": ["secundaria", "segundos", "secretarios"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s861",
@@ -1329,7 +1348,7 @@
     "sk": "Myslím, že za mojimi bolesťami hlavy je stres.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Creo", "que", "el", "estrés", "es", "la", "causa", "de", "mis", "dolores", "de", "cabeza", "."],
     "cloze": [
       {
@@ -1344,6 +1363,8 @@
         "answer": "mis",
         "lemma": "mis",
         "hint": "moje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "tu"]
       }
     ]
@@ -1804,7 +1825,7 @@
     "sk": "Keď som bol malý, nikdy som nebol chorý.",
     "level": "A2",
     "topics": ["health"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "negation"],
     "tokens": ["Cuando", "era", "niño", ",", "nunca", "me", "enfermaba", "."],
     "cloze": [
       {
@@ -1813,24 +1834,35 @@
         "lemma": "enfermarse",
         "hint": "enfermarse · yo · imperfecto",
         "distractors": ["enfermabas", "enfermo", "enfermamos"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "nunca",
+        "lemma": "nunca",
+        "hint": "nikdy",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "nadie", "siempre"]
       }
     ]
   },
   {
     "id": "s1244",
-    "es": "Esta noche descansaré y mañana estaré mejor.",
+    "es": "Esta noche voy a descansar y mañana voy a estar mejor.",
     "sk": "Dnes večer si oddýchnem a zajtra mi bude lepšie.",
     "level": "A2",
     "topics": ["health"],
-    "grammar": ["futuro"],
-    "tokens": ["Esta", "noche", "descansaré", "y", "mañana", "estaré", "mejor", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Esta", "noche", "voy", "a", "descansar", "y", "mañana", "voy", "a", "estar", "mejor", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "descansaré",
-        "lemma": "descansar",
-        "hint": "descansar · yo · futuro",
-        "distractors": ["descansarás", "descanso", "descansamos"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1854,19 +1886,21 @@
   },
   {
     "id": "s1621",
-    "es": "El dentista me revisará los dientes el lunes.",
+    "es": "El dentista me va a revisar los dientes el lunes.",
     "sk": "Zubár mi v pondelok skontroluje zuby.",
     "level": "A2",
     "topics": ["health"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "dentista", "me", "revisará", "los", "dientes", "el", "lunes", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "dentista", "me", "va", "a", "revisar", "los", "dientes", "el", "lunes", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "revisará",
-        "lemma": "revisar",
-        "hint": "revisar · él · futuro",
-        "distractors": ["revisa", "revisó", "revisaba"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1894,7 +1928,7 @@
     "sk": "Na tvojom mieste by som šiel k lekárovi.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["condicional", "presente"],
+    "grammar": ["condicional", "presente", "possessives"],
     "tokens": ["Yo", "en", "tu", "lugar", "iría", "al", "médico", "."],
     "cloze": [
       {
@@ -1902,6 +1936,8 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "mis"]
       },
       {
@@ -2073,7 +2109,7 @@
     "sk": "Aj keď je zima, každé ráno chodím behať.",
     "level": "B2",
     "topics": ["health"],
-    "grammar": ["subjuntivo-clauses", "presente"],
+    "grammar": ["subjuntivo-aunque", "presente"],
     "tokens": ["Aunque", "hace", "frío", ",", "salgo", "a", "correr", "cada", "mañana", "."],
     "cloze": [
       {
@@ -2081,7 +2117,7 @@
         "answer": "hace",
         "lemma": "hacer",
         "hint": "hacer · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["haga", "hará", "hizo"]
       }
@@ -2299,6 +2335,126 @@
         "lemma": "tomar",
         "hint": "tomar · yo · subjuntivo imperfecto",
         "distractors": ["tomo", "tomé", "tomaré"]
+      }
+    ]
+  },
+  {
+    "id": "s2236",
+    "es": "A pesar de que el médico se lo prohibió, mi tío sigue fumando a escondidas.",
+    "sk": "Napriek tomu, že mu to lekár zakázal, môj strýko ďalej tajne fajčí.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-aunque", "preterito"],
+    "tokens": ["A", "pesar", "de", "que", "el", "médico", "se", "lo", "prohibió", ",", "mi", "tío", "sigue", "fumando", "a", "escondidas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "prohibió",
+        "lemma": "prohibir",
+        "hint": "prohibir · él · pretérito",
+        "tip": "subjuntivo-aunque",
+        "why": "a-pesar-de",
+        "distractors": ["prohíba", "prohibía", "prohibirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2237",
+    "es": "Aunque tomes muchas vitaminas, tu cuerpo necesita dormir bien cada noche.",
+    "sk": "Aj keby si užíval veľa vitamínov, tvoje telo potrebuje každú noc dobre spať.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
+    "tokens": ["Aunque", "tomes", "muchas", "vitaminas", ",", "tu", "cuerpo", "necesita", "dormir", "bien", "cada", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tomes",
+        "lemma": "tomar",
+        "hint": "tomar · tú · subjuntivo",
+        "tip": "subjuntivo-aunque",
+        "why": "aunque",
+        "distractors": ["tomas", "tomaste", "tomarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2238",
+    "es": "No voy a descansar hasta que me digan que los resultados salieron bien.",
+    "sk": "Nebudem odpočívať, kým mi nepovedia, že výsledky dopadli dobre.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
+    "tokens": ["No", "voy", "a", "descansar", "hasta", "que", "me", "digan", "que", "los", "resultados", "salieron", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "digan",
+        "lemma": "decir",
+        "hint": "decir · ellos · subjuntivo",
+        "tip": "subjuntivo-aunque",
+        "why": "hasta-que",
+        "distractors": ["dicen", "dijeron", "dirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2239",
+    "es": "Aunque me duele la espalda todo el día, prefiero caminar que quedarme acostado.",
+    "sk": "Hoci ma celý deň bolí chrbát, radšej chodím, než aby som ležal.",
+    "level": "B2",
+    "topics": ["health"],
+    "grammar": ["subjuntivo-aunque", "presente"],
+    "tokens": ["Aunque", "me", "duele", "la", "espalda", "todo", "el", "día", ",", "prefiero", "caminar", "que", "quedarme", "acostado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "duele",
+        "lemma": "doler",
+        "hint": "doler · él · presente",
+        "tip": "subjuntivo-aunque",
+        "why": "aunque",
+        "distractors": ["duela", "dolió", "dolerá"]
+      }
+    ]
+  },
+  {
+    "id": "s2275",
+    "es": "En mi familia nadie tiene alergia.",
+    "sk": "V mojej rodine nikto nemá alergiu.",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["En", "mi", "familia", "nadie", "tiene", "alergia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "nadie",
+        "lemma": "nadie",
+        "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["alguien", "nada", "nunca"]
+      }
+    ]
+  },
+  {
+    "id": "s2288",
+    "es": "¿Viste a alguien en la sala de espera?",
+    "sk": "Videl si niekoho v čakárni?",
+    "level": "A2",
+    "topics": ["health"],
+    "grammar": ["personal-a", "preterito"],
+    "tokens": ["¿", "Viste", "a", "alguien", "en", "la", "sala", "de", "espera", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "nadie",
+        "distractors": ["de", "en", "con"]
       }
     ]
   }

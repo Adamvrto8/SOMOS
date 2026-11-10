@@ -51,10 +51,10 @@ export const TENSE_LABELS: Record<TableTense, string> = {
 export const TENSE_LEVEL: Record<TableTense, Level> = {
   presente: 'A1',
   progresivo: 'A1',
-  preterito: 'A1',
+  preterito: 'A2',
   perfecto: 'A2',
-  imperfecto: 'A1',
-  futuro: 'A1',
+  imperfecto: 'A2',
+  futuro: 'B1',
   imperativo: 'A2',
   condicional: 'B1',
   pluscuamperfecto: 'B1',

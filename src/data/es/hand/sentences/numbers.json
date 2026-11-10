@@ -849,5 +849,24 @@
         ]
       }
     ]
+  },
+  {
+    "id": "s2211",
+    "es": "Las dos entradas que compré cuestan cincuenta euros en total.",
+    "tokens": [
+      "Las",
+      "dos",
+      "entradas",
+      "que",
+      "compré",
+      "cuestan",
+      "cincuenta",
+      "euros",
+      "en",
+      "total",
+      "."
+    ],
+    "sk": "Dva lístky, ktoré som kúpil, stoja spolu päťdesiat eur.",
+    "en": "The two tickets I bought cost fifty euros in total."
   }
 ]

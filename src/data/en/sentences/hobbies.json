@@ -1,5 +1,5 @@
 [
-  { "id": "s341", "en": "What do you do in your free time?" },
+  { "id": "s341", "en": "What do you do in your free time?", "hints": [null, "what"] },
   { "id": "s342", "en": "I like to read and listen to music.", "hints": ["music", null] },
   { "id": "s343", "en": "On Saturdays I play soccer with my friends." },
   { "id": "s344", "en": "Yesterday we saw a very good movie." },
@@ -22,7 +22,7 @@
   { "id": "s403", "en": "On Sundays we play chess with Grandpa." },
   { "id": "s410", "en": "As a kid I played soccer every day." },
   { "id": "s411", "en": "My sister danced very well when she was young." },
-  { "id": "s412", "en": "This Saturday we'll play soccer in the park." },
+  { "id": "s412", "en": "This Saturday we're going to play soccer in the park." },
   { "id": "s513", "en": "My team won the tournament after ten years.", "hints": ["my", null] },
   { "id": "s514", "en": "We took advantage of the weekend to go hiking.", "hints": [null, "por/para"] },
   { "id": "s554", "en": "As a kid I played soccer every afternoon.", "hints": [null, "all"] },
@@ -98,5 +98,11 @@
   { "id": "s2066", "en": "When we went to the beach, my grandfather always carried the cooler nobody wanted to carry.", "hints": [null, "relative word"] },
   { "id": "s2067", "en": "My team will win the tournament as long as we train with discipline and without missing sessions." },
   { "id": "s2068", "en": "My neighbor told me that if I liked chess, he would invite me to his club." },
-  { "id": "s2069", "en": "Nobody can beat my uncle when he plays dominoes with the neighbors." }
+  { "id": "s2069", "en": "Nobody can beat my uncle when he plays dominoes with the neighbors." },
+  { "id": "s2206", "en": "I know a field where we play soccer every Saturday.", "hints": ["relative word (where)"] },
+  { "id": "s2207", "en": "What I enjoy most on Sundays is riding my bike.", "hints": ["relative word (what, the thing that)"] },
+  { "id": "s2264", "en": "I never play video games at night.", "hints": ["never"] },
+  { "id": "s2265", "en": "Today there is nobody in the park.", "hints": ["nobody"] },
+  { "id": "s2266", "en": "My brother does not like running either.", "hints": ["neither"] },
+  { "id": "s2267", "en": "I do not have any expensive hobby.", "hints": ["none"] }
 ]

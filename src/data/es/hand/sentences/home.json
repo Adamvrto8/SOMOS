@@ -546,5 +546,53 @@
     ],
     "sk": "Zatvor dvere, prosím, je zima.",
     "en": "Close the door, please, it's cold."
+  },
+  {
+    "id": "s2190",
+    "es": "El piso que alquilamos tiene una cocina muy amplia.",
+    "tokens": [
+      "El",
+      "piso",
+      "que",
+      "alquilamos",
+      "tiene",
+      "una",
+      "cocina",
+      "muy",
+      "amplia",
+      "."
+    ]
+  },
+  {
+    "id": "s2191",
+    "es": "Esta es la habitación donde duerme mi hermanito.",
+    "tokens": [
+      "Esta",
+      "es",
+      "la",
+      "habitación",
+      "donde",
+      "duerme",
+      "mi",
+      "hermanito",
+      "."
+    ]
+  },
+  {
+    "id": "s2192",
+    "es": "No entiendo lo que dice el fontanero sobre la tubería.",
+    "tokens": [
+      "No",
+      "entiendo",
+      "lo",
+      "que",
+      "dice",
+      "el",
+      "fontanero",
+      "sobre",
+      "la",
+      "tubería",
+      "."
+    ]
   }
 ]

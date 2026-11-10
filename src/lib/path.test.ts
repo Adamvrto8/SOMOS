@@ -28,7 +28,7 @@ describe('path units', () => {
   })
 
   it('teaches no unit a tense above its level', () => {
-    const LEVEL = { imperativo: 'A2', subjuntivo: 'B1', condicional: 'B1', pluscuamperfecto: 'B1', 'subj-imperfecto': 'B2' } as Record<string, string>
+    const LEVEL = { imperativo: 'A2', futuro: 'B1', subjuntivo: 'B1', condicional: 'B1', pluscuamperfecto: 'B1', 'subj-imperfecto': 'B2' } as Record<string, string>
     for (const unit of pathUnits) if (LEVEL[unit.grammar]) expect(unit.level >= LEVEL[unit.grammar], unit.id).toBe(true)
     expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(11)
     expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(9)

@@ -791,6 +791,23 @@
       "muy",
       "tranquilo",
       "."
+    ],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Este",
+        "lemma": "este",
+        "hint": "tento",
+        "distractors": [
+          "Esta",
+          "Esto",
+          "Estos"
+        ]
+      }
+    ],
+    "enHints": [
+      null,
+      "this"
     ]
   },
   {
@@ -917,5 +934,36 @@
     ],
     "sk": "Vieš šoférovať v Madride?",
     "en": "Do you know how to drive in Madrid?"
+  },
+  {
+    "id": "s2204",
+    "es": "La plaza donde vendían mazorcas ya no existe.",
+    "tokens": [
+      "La",
+      "plaza",
+      "donde",
+      "vendían",
+      "mazorcas",
+      "ya",
+      "no",
+      "existe",
+      "."
+    ]
+  },
+  {
+    "id": "s2205",
+    "es": "El autobús que pasa por mi calle tarda mucho.",
+    "tokens": [
+      "El",
+      "autobús",
+      "que",
+      "pasa",
+      "por",
+      "mi",
+      "calle",
+      "tarda",
+      "mucho",
+      "."
+    ]
   }
 ]

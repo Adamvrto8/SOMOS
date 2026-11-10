@@ -112,9 +112,9 @@ export function isTestUnlocked(id: TestId, map: LessonProgressionMap): boolean {
   return total > 0 && passed === total
 }
 
-/** The tenses a level's conjugation asks: A1 the first three, from A2 on every tense up to the level. */
+/** The tenses a level's conjugation asks: every tense up to the level (A1: presente and progresivo). */
 export function testTenses(level: TestLevel): TableTense[] {
-  return level === 'A1' ? ['presente', 'progresivo', 'preterito'] : tensesUpTo(level)
+  return tensesUpTo(level)
 }
 
 /** The level itself first, then the ones below it (topic tests top up from them; a part's test does not). */

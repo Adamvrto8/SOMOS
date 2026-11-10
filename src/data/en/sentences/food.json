@@ -1,7 +1,7 @@
 [
   { "id": "s017", "en": "Could I have an orange juice, please? (formal)", "hints": ["juice", "preposition"] },
   { "id": "s018", "en": "The tacos are really good.", "hints": [null, "adjective: rico"] },
-  { "id": "s019", "en": "What do you want to drink?" },
+  { "id": "s019", "en": "What do you want to drink?", "hints": [null, "what"] },
   { "id": "s020", "en": "We're eating tacos at the market." },
   { "id": "s021", "en": "The check, please.", "hints": ["article"] },
   { "id": "s022", "en": "Yesterday I drank a lot of water." },
@@ -30,7 +30,7 @@
   { "id": "s110", "en": "Should I bring something for the party?", "hints": [null, "something"] },
   { "id": "s111", "en": "This stand sells the best tacos in the neighborhood.", "hints": ["this (m.)", null] },
   { "id": "s438", "en": "As a kid I used to eat a lot of candy." },
-  { "id": "s439", "en": "Tonight we'll have dinner at my parents' house." },
+  { "id": "s439", "en": "Tonight we're going to have dinner at my parents' house." },
   { "id": "s509", "en": "I'm craving some tacos al pastor.", "hints": [null, "preposition"] },
   { "id": "s510", "en": "On Independence Day we always serve pozole." },
   { "id": "s541", "en": "When I lived in Oaxaca, I ate mole every Sunday.", "hints": [null, "preposition"] },
@@ -124,5 +124,11 @@
   { "id": "s2038", "en": "My sister wants a cake that has no sugar or flour and still tastes good." },
   { "id": "s2039", "en": "Since I tried my mother-in-law's mole, no other one seems as good to me.", "hints": ["since"] },
   { "id": "s2040", "en": "I bought more tomatoes than I needed, so I made salsa to freeze.", "hints": ["article"] },
-  { "id": "s2041", "en": "You had better taste the soup before adding more salt, so it does not end up too salty." }
+  { "id": "s2041", "en": "You had better taste the soup before adding more salt, so it does not end up too salty." },
+  { "id": "s2188", "en": "When the water boils, add the pasta and lower the heat." },
+  { "id": "s2189", "en": "I don't think this mole has chocolate in it, because it tastes very spicy." },
+  { "id": "s2268", "en": "I never drink coffee in the afternoon.", "hints": ["never"] },
+  { "id": "s2269", "en": "I do not want anything for dessert.", "hints": ["nothing"] },
+  { "id": "s2270", "en": "Do you want something to drink?", "hints": ["something"] },
+  { "id": "s2271", "en": "I do not eat it because it is very spicy.", "hints": ["no"] }
 ]

@@ -283,11 +283,13 @@
   },
   {
     "id": "s439",
-    "es": "Esta noche cenaremos en casa de mis padres.",
+    "es": "Esta noche vamos a cenar en casa de mis padres.",
     "tokens": [
       "Esta",
       "noche",
-      "cenaremos",
+      "vamos",
+      "a",
+      "cenar",
       "en",
       "casa",
       "de",

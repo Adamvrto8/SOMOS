@@ -14,6 +14,11 @@
     ],
     "cloze": [
       {
+        "tokenIndex": 2,
+        "newIndex": 4,
+        "answer": "a"
+      },
+      {
         "tokenIndex": 0,
         "answer": "Echo",
         "lemma": "echar",
@@ -356,6 +361,39 @@
         "tokenIndex": 3,
         "newIndex": 4
       }
+    ]
+  },
+  {
+    "id": "s2185",
+    "es": "Cuando estés más tranquila, hablamos de lo que pasó.",
+    "tokens": [
+      "Cuando",
+      "estés",
+      "más",
+      "tranquila",
+      ",",
+      "hablamos",
+      "de",
+      "lo",
+      "que",
+      "pasó",
+      "."
+    ]
+  },
+  {
+    "id": "s2186",
+    "es": "No creo que tengas motivo para estar tan enfadado.",
+    "tokens": [
+      "No",
+      "creo",
+      "que",
+      "tengas",
+      "motivo",
+      "para",
+      "estar",
+      "tan",
+      "enfadado",
+      "."
     ]
   }
 ]

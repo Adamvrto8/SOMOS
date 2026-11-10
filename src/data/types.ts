@@ -38,6 +38,15 @@ export type Grammar =
   | 'subjuntivo-clauses'
   | 'relatives'
   | 'passive-se'
+  | 'ir-a'
+  | 'subjuntivo-aunque'
+  | 'relatives-prep'
+  | 'ser-passive'
+  | 'demonstratives'
+  | 'possessives'
+  | 'interrogatives'
+  | 'negation'
+  | 'personal-a'
   | 'perfecto'
 
 export interface Example {

@@ -100,6 +100,86 @@
     ]
   },
   {
+    "id": "s2268",
+    "es": "Yo nunca tomo café en la tarde.",
+    "sk": "Poobede nikdy nepijem kávu.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Yo", "nunca", "tomo", "café", "en", "la", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "nunca",
+        "lemma": "nunca",
+        "hint": "nikdy",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "nadie", "tampoco"]
+      }
+    ]
+  },
+  {
+    "id": "s2269",
+    "es": "No quiero nada de postre.",
+    "sk": "Na dezert nechcem nič.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["No", "quiero", "nada", "de", "postre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "nada",
+        "lemma": "nada",
+        "hint": "nič",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nadie", "nunca", "algo"]
+      }
+    ]
+  },
+  {
+    "id": "s2270",
+    "es": "¿Quieres algo de tomar?",
+    "sk": "Chceš niečo na pitie?",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["¿", "Quieres", "algo", "de", "tomar", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "algo",
+        "lemma": "algo",
+        "hint": "niečo",
+        "tip": "negation",
+        "why": "pairs",
+        "distractors": ["nada", "alguien", "nadie"]
+      }
+    ]
+  },
+  {
+    "id": "s2271",
+    "es": "Yo no lo como porque es muy picante.",
+    "sk": "Nejem to, lebo je to veľmi pálivé.",
+    "level": "A2",
+    "topics": ["food"],
+    "grammar": ["negation", "presente"],
+    "tokens": ["Yo", "no", "lo", "como", "porque", "es", "muy", "picante", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "no",
+        "lemma": "no",
+        "hint": "nie",
+        "tip": "negation",
+        "why": "no",
+        "distractors": ["ni", "nada", "nunca"]
+      }
+    ]
+  },
+  {
     "id": "s1705",
     "es": "Un taco cuesta quince pesos y una torta, veinte: la torta es más cara.",
     "sk": "Taco stojí pätnásť pesos a torta dvadsať, torta je drahšia.",
@@ -233,7 +313,7 @@
     "sk": "Čo si dáš na pitie?",
     "level": "A1",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Qué", "quieres", "tomar", "?"],
     "cloze": [
       {
@@ -242,6 +322,15 @@
         "lemma": "querer",
         "hint": "querer · tú · presente",
         "distractors": ["quiero", "quiere", "quieren"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Qué",
+        "lemma": "qué",
+        "hint": "čo",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuál", "Cómo", "Quién"]
       }
     ]
   },
@@ -590,7 +679,7 @@
     "sk": "Mám niečo priniesť na párty?",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "negation"],
     "tokens": ["¿", "Traigo", "algo", "para", "la", "fiesta", "?"],
     "cloze": [
       {
@@ -605,6 +694,8 @@
         "answer": "algo",
         "lemma": "algo",
         "hint": "niečo",
+        "tip": "negation",
+        "why": "pairs",
         "distractors": ["todo", "alguien"]
       }
     ]
@@ -615,7 +706,7 @@
     "sk": "Tento stánok predáva najlepšie tacos v štvrti.",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Este", "puesto", "vende", "los", "mejores", "tacos", "de", "la", "colonia", "."],
     "cloze": [
       {
@@ -623,6 +714,8 @@
         "answer": "Este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esos", "esas", "esta"]
       },
       {
@@ -737,7 +830,7 @@
     "sk": "Uvarme niečo dobré na večeru.",
     "level": "B1",
     "topics": ["food"],
-    "grammar": ["imperativo"],
+    "grammar": ["imperativo", "negation"],
     "tokens": ["Cocinemos", "algo", "rico", "para", "la", "cena", "."],
     "cloze": [
       {
@@ -752,6 +845,8 @@
         "answer": "algo",
         "lemma": "algo",
         "hint": "niečo",
+        "tip": "negation",
+        "why": "pairs",
         "distractors": ["alguien", "todo"]
       }
     ]
@@ -803,19 +898,21 @@
   },
   {
     "id": "s439",
-    "es": "Esta noche cenaremos en casa de mis papás.",
+    "es": "Esta noche vamos a cenar en casa de mis papás.",
     "sk": "Dnes večer budeme večerať u mojich rodičov.",
     "level": "A2",
     "topics": ["food"],
-    "grammar": ["futuro"],
-    "tokens": ["Esta", "noche", "cenaremos", "en", "casa", "de", "mis", "papás", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Esta", "noche", "vamos", "a", "cenar", "en", "casa", "de", "mis", "papás", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "cenaremos",
-        "lemma": "cenar",
-        "hint": "cenar · nosotros · futuro",
-        "distractors": ["cenaré", "cenará", "cenamos"]
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fuimos"]
       }
     ]
   },
@@ -1048,6 +1145,8 @@
         "answer": "Este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["esta", "estos", "estas"]
       },
       {
@@ -1057,7 +1156,8 @@
         "hint": "presladený",
         "distractors": ["empalagosa", "amargo", "desabrido"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s698",
@@ -2599,7 +2699,7 @@
     "sk": "Kúpil som viac paradajok, než som potreboval, tak som urobil salsu na zamrazenie.",
     "level": "B2",
     "topics": ["food"],
-    "grammar": ["comparisons", "relatives"],
+    "grammar": ["comparisons", "relatives-prep"],
     "tokens": ["Compré", "más", "jitomates", "de", "los", "que", "necesitaba", ",", "así", "que", "hice", "salsa", "para", "congelar", "."],
     "cloze": [
       {
@@ -2607,7 +2707,7 @@
         "answer": "los",
         "lemma": "los",
         "hint": "člen",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["las", "lo", "el"]
       }
@@ -2628,6 +2728,46 @@
         "lemma": "probar",
         "hint": "probar · tú · subjuntivo",
         "distractors": ["pruebas", "probaste", "probarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2188",
+    "es": "Cuando hierva el agua, agrega la pasta y baja la lumbre.",
+    "sk": "Keď voda zovrie, pridaj cestoviny a zníž plameň.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Cuando", "hierva", "el", "agua", ",", "agrega", "la", "pasta", "y", "baja", "la", "lumbre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hierva",
+        "lemma": "hervir",
+        "hint": "hervir · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["hierve", "hirvió", "hervirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2189",
+    "es": "No creo que este mole lleve chocolate, porque sabe muy picoso.",
+    "sk": "Neverím, že toto mole obsahuje čokoládu, lebo je veľmi pálivé.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "este", "mole", "lleve", "chocolate", ",", "porque", "sabe", "muy", "picoso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "lleve",
+        "lemma": "llevar",
+        "hint": "llevar · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["lleva", "llevó", "llevará"]
       }
     ]
   }

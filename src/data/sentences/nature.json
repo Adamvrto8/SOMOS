@@ -29,10 +29,10 @@
   {
     "id": "s1690",
     "es": "Este cerro es pequeño, pero ese volcán es más alto.",
-    "sk": "Tento kopec je malý, ale tamtá sopka je vyššia.",
+    "sk": "Tento kopec je malý, ale tá sopka je vyššia.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
+    "grammar": ["comparisons", "presente", "demonstratives"],
     "tokens": ["Este", "cerro", "es", "pequeño", ",", "pero", "ese", "volcán", "es", "más", "alto", "."],
     "cloze": [
       {
@@ -40,6 +40,8 @@
         "answer": "ese",
         "lemma": "ese",
         "hint": "ten",
+        "tip": "demonstratives",
+        "why": "far",
         "distractors": ["este", "esta", "estos"]
       },
       {
@@ -346,7 +348,7 @@
     "sk": "Táto pláž je lepšia ako tá druhá, voda je čistejšia.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["comparisons", "presente"],
+    "grammar": ["comparisons", "presente", "demonstratives"],
     "tokens": ["Esta", "playa", "es", "mejor", "que", "la", "otra", ":", "el", "agua", "es", "más", "limpia", "."],
     "cloze": [
       {
@@ -354,6 +356,8 @@
         "answer": "Esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["estos", "estas", "ese"]
       },
       {
@@ -743,7 +747,7 @@
     "sk": "Na tejto pláži chránia korytnačie vajcia.",
     "level": "B1",
     "topics": ["nature"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["En", "esta", "playa", "protegen", "los", "huevos", "de", "tortuga", "."],
     "cloze": [
       {
@@ -751,6 +755,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "estos", "estas"]
       },
       {
@@ -944,7 +950,7 @@
     "sk": "Všetci prispievame k znižovaniu našej uhlíkovej stopy.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Todos", "contribuimos", "a", "reducir", "nuestra", "huella", "de", "carbono", "."],
     "cloze": [
       {
@@ -959,6 +965,8 @@
         "answer": "nuestra",
         "lemma": "nuestro",
         "hint": "naša",
+        "tip": "possessives",
+        "why": "nuestro",
         "distractors": ["nuestro", "nuestras", "nuestros"]
       }
     ]
@@ -1047,7 +1055,7 @@
     "sk": "Dedko sa každé ráno stará o svoje rastliny.",
     "level": "A1",
     "topics": ["nature"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "abuelo", "cuida", "sus", "plantas", "cada", "mañana", "."],
     "cloze": [
       {
@@ -1056,6 +1064,15 @@
         "lemma": "cuidar",
         "hint": "cuidar · él · presente",
         "distractors": ["cuido", "cuidan", "cuidó"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "sus",
+        "lemma": "sus",
+        "hint": "svoje",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["su", "mis", "tus"]
       }
     ]
   },
@@ -1151,19 +1168,30 @@
   },
   {
     "id": "s445",
-    "es": "Algún día conoceré el desierto de Sonora.",
+    "es": "Algún día voy a conocer el desierto de Sonora.",
     "sk": "Raz spoznám púšť Sonora.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["futuro"],
-    "tokens": ["Algún", "día", "conoceré", "el", "desierto", "de", "Sonora", "."],
+    "grammar": ["ir-a", "negation"],
+    "tokens": ["Algún", "día", "voy", "a", "conocer", "el", "desierto", "de", "Sonora", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "conoceré",
-        "lemma": "conocer",
-        "hint": "conocer · yo · futuro",
-        "distractors": ["conocerá", "conocerán", "conozco"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["va", "vas", "fui"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Algún",
+        "lemma": "algún",
+        "hint": "nejaký",
+        "tip": "negation",
+        "why": "pairs",
+        "distractors": ["Ningún", "Alguno", "Algo"]
       }
     ]
   },
@@ -1344,6 +1372,8 @@
         "answer": "Este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["estas", "ese", "esa"]
       },
       {
@@ -1353,7 +1383,8 @@
         "hint": "sucho",
         "distractors": ["cueva", "semilla", "raíz"]
       }
-    ]
+    ],
+    "grammar": ["demonstratives"]
   },
   {
     "id": "s1332",
@@ -1524,7 +1555,7 @@
     "sk": "Aj keď je to drahšie, radšej kupujem výrobky, ktoré nepoškodzujú ekosystém.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["presente", "subjuntivo-clauses"],
+    "grammar": ["presente", "subjuntivo-aunque"],
     "tokens": ["Aunque", "cueste", "más", ",", "prefiero", "comprar", "productos", "que", "no", "dañen", "el", "ecosistema", "."],
     "cloze": [
       {
@@ -1539,7 +1570,7 @@
         "answer": "cueste",
         "lemma": "costar",
         "hint": "costar · él",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["cuesta", "costará"]
       }
@@ -1558,6 +1589,8 @@
         "answer": "nadie",
         "lemma": "nadie",
         "hint": "nikto",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nada"]
       },
       {
@@ -1567,7 +1600,8 @@
         "hint": "odpad",
         "distractors": ["arrecifes", "manglares", "ajolotes"]
       }
-    ]
+    ],
+    "grammar": ["negation"]
   },
   {
     "id": "s1342",
@@ -1610,7 +1644,7 @@
     "sk": "Úrady neurobili nič, aby zastavili odlesňovanie.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "negation"],
     "tokens": ["Las", "autoridades", "no", "hicieron", "nada", "para", "frenar", "la", "deforestación", "."],
     "cloze": [
       {
@@ -1625,6 +1659,8 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie"]
       }
     ]
@@ -1727,19 +1763,21 @@
   },
   {
     "id": "s1323",
-    "es": "El próximo verano visitaremos una isla en el Caribe.",
+    "es": "El próximo verano vamos a visitar una isla en el Caribe.",
     "sk": "Budúce leto navštívime ostrov v Karibiku.",
     "level": "A2",
     "topics": ["nature"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "próximo", "verano", "visitaremos", "una", "isla", "en", "el", "Caribe", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "próximo", "verano", "vamos", "a", "visitar", "una", "isla", "en", "el", "Caribe", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "visitaremos",
-        "lemma": "visitar",
-        "hint": "visitar · nosotros · futuro",
-        "distractors": ["visitamos", "visitaron", "visitábamos"]
+        "answer": "vamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fuimos"]
       }
     ]
   },
@@ -1966,7 +2004,7 @@
     "sk": "Chodník, ktorým sme vystúpili na sopku, je veľmi náročný.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives-prep", "presente"],
     "tokens": ["El", "sendero", "por", "el", "que", "subimos", "al", "volcán", "es", "muy", "difícil", "."],
     "cloze": [
       {
@@ -1974,7 +2012,7 @@
         "answer": "el",
         "lemma": "el",
         "hint": "vzťažné slovo",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["lo", "la"]
       }
@@ -2129,7 +2167,7 @@
     "sk": "Videli sme kolibríka, ktorého zobák bol taký dlhý, že siahal až na dno kvetu.",
     "level": "B2",
     "topics": ["nature"],
-    "grammar": ["relatives", "imperfecto"],
+    "grammar": ["relatives-prep", "imperfecto"],
     "tokens": ["Vimos", "un", "colibrí", "cuyo", "pico", "era", "tan", "largo", "que", "llegaba", "al", "fondo", "de", "la", "flor", "."],
     "cloze": [
       {
@@ -2137,7 +2175,7 @@
         "answer": "cuyo",
         "lemma": "cuyo",
         "hint": "vzťažné slovo (ktorého)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "cuyo",
         "distractors": ["quien", "donde", "cual"]
       }
@@ -2248,6 +2286,106 @@
         "lemma": "nadar",
         "hint": "nadar · nosotros · condicional",
         "distractors": ["nadamos", "nadaremos", "nadábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2244",
+    "es": "La cueva en la que vimos murciélagos está cerca del lago.",
+    "sk": "Jaskyňa, v ktorej sme videli netopiere, je blízko jazera.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["La", "cueva", "en", "la", "que", "vimos", "murciélagos", "está", "cerca", "del", "lago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "la",
+        "lemma": "la",
+        "hint": "vzťažné slovo",
+        "tip": "relatives-prep",
+        "why": "el-que",
+        "distractors": ["el", "lo", "las"]
+      }
+    ]
+  },
+  {
+    "id": "s2245",
+    "es": "Este es el bosque por el que caminamos durante horas bajo la lluvia.",
+    "sk": "Toto je les, ktorým sme hodiny kráčali v daždi.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["Este", "es", "el", "bosque", "por", "el", "que", "caminamos", "durante", "horas", "bajo", "la", "lluvia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "el",
+        "lemma": "el",
+        "hint": "vzťažné slovo",
+        "tip": "relatives-prep",
+        "why": "el-que",
+        "distractors": ["la", "lo", "los"]
+      }
+    ]
+  },
+  {
+    "id": "s2246",
+    "es": "Los científicos con quienes hablamos dicen que el lago se está secando rápido.",
+    "sk": "Vedci, s ktorými sme sa rozprávali, hovoria, že jazero rýchlo vysychá.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["Los", "científicos", "con", "quienes", "hablamos", "dicen", "que", "el", "lago", "se", "está", "secando", "rápido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "quienes",
+        "lemma": "quien",
+        "hint": "vzťažné zámeno (osoby)",
+        "tip": "relatives-prep",
+        "why": "el-que",
+        "distractors": ["donde", "cuyos", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2247",
+    "es": "Hay una planta cuyas hojas sirven para curar el dolor de estómago.",
+    "sk": "Existuje rastlina, ktorej listy slúžia na liečenie bolesti žalúdka.",
+    "level": "B2",
+    "topics": ["nature"],
+    "grammar": ["relatives-prep", "preterito"],
+    "tokens": ["Hay", "una", "planta", "cuyas", "hojas", "sirven", "para", "curar", "el", "dolor", "de", "estómago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "cuyas",
+        "lemma": "cuyas",
+        "hint": "vzťažné slovo (jej)",
+        "tip": "relatives-prep",
+        "why": "cuyo",
+        "distractors": ["quienes", "donde", "cuantas"]
+      }
+    ]
+  },
+  {
+    "id": "s2299",
+    "es": "Aquel verano vimos muchas estrellas en el campo.",
+    "sk": "V tamto leto sme videli veľa hviezd na vidieku.",
+    "level": "A2",
+    "topics": ["nature"],
+    "grammar": ["demonstratives", "preterito"],
+    "tokens": ["Aquel", "verano", "vimos", "muchas", "estrellas", "en", "el", "campo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aquel",
+        "lemma": "aquel",
+        "hint": "tamten",
+        "tip": "demonstratives",
+        "why": "time",
+        "distractors": ["Este", "Esa", "Aquella"]
       }
     ]
   }

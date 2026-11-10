@@ -89,7 +89,8 @@ describe('in English', () => {
   it('builds the same citations in both languages, in order', () => {
     const siClauses = tipById.get('si-clauses')!
     const expected = [
-      'Plan curricular del Instituto Cervantes (2006), Gramática B1 (reales), B2 (irreales)',
+      'Plan curricular del Instituto Cervantes (2006), Gramática 15.3.6 (A2–B2); 9.1.1 (B1)',
+      'RAE y ASALE (2009), Nueva gramática de la lengua española, § 47.1; 47.8',
       'UIMP 2026, Lengua Española B1, semana 3',
       'UIMP 2026, Lengua Española B2, módulo 3',
     ]
@@ -98,7 +99,7 @@ describe('in English', () => {
     setLanguage('en')
     expect(localizedTip(siClauses).sources).toEqual(expected)
     expect(localizedTip(tipById.get('accents')!).sources).toEqual([
-      'Plan curricular del Instituto Cervantes (2006), Ortografía A1–A2',
+      'Plan curricular del Instituto Cervantes (2006), Ortografía 2.2 (A1–A2); 2.2 (B1); 2.1 (B1)',
       'RAE y ASALE (2010), Ortografía de la lengua española, tilde diacrítica',
     ])
     expect(citation({ source: 'pcic', where: 'Gramática A1' })).toBe('Plan curricular del Instituto Cervantes (2006), Gramática A1')

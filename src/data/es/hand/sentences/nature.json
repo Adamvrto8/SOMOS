@@ -308,48 +308,40 @@
   },
   {
     "id": "s445",
-    "es": "Algún día conoceré el desierto de Tabernas.",
+    "es": "Algún día voy a conocer el desierto de Tabernas.",
     "tokens": [
       "Algún",
       "día",
-      "conoceré",
+      "voy",
+      "a",
+      "conocer",
       "el",
       "desierto",
       "de",
       "Tabernas",
       "."
     ],
-    "cloze": [
-      {
-        "tokenIndex": 2,
-        "answer": "conoceré"
-      }
-    ],
     "sk": "Raz spoznám púšť Tabernas.",
-    "en": "Someday I will see the Tabernas desert."
+    "en": "Someday I'm going to see the Tabernas desert."
   },
   {
     "id": "s1323",
-    "es": "El próximo verano visitaremos una isla del Mediterráneo.",
+    "es": "El próximo verano vamos a visitar una isla del Mediterráneo.",
     "tokens": [
       "El",
       "próximo",
       "verano",
-      "visitaremos",
+      "vamos",
+      "a",
+      "visitar",
       "una",
       "isla",
       "del",
       "Mediterráneo",
       "."
     ],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "visitaremos"
-      }
-    ],
     "sk": "Budúce leto navštívime ostrov v Stredozemnom mori.",
-    "en": "Next summer we will visit an island in the Mediterranean."
+    "en": "Next summer we're going to visit an island in the Mediterranean."
   },
   {
     "id": "s1322",

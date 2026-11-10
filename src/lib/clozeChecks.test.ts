@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { tipById, verbById } from '../data'
+import { sentences, tipById, verbById } from '../data'
 import type { Cloze, Sentence } from '../data/types'
+import { TENSE_LEVEL, type TableTense } from './conjugate'
 import { checksOwnHint, formsFor, usageClozeErrors, usageHint, USAGE_TIPS } from './clozeChecks'
 
 const sentence = (cloze: Cloze, grammar: Sentence['grammar'] = ['si-clauses']): Sentence => ({
@@ -64,8 +65,54 @@ describe('usageClozeErrors', () => {
     expect(checksOwnHint(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'está', tip: undefined }), verbById)).toBe(false)
   })
 
-  it('names eleven usage tips, each a tip with rules', () => {
-    expect(USAGE_TIPS).toHaveLength(11)
+  it('names twenty usage tips, each a tip with rules', () => {
+    expect(USAGE_TIPS).toHaveLength(20)
     for (const id of USAGE_TIPS) expect(tipById.get(id)?.rules.length).toBeGreaterThan(0)
+  })
+})
+
+describe('blank levels', () => {
+  const TENSE_OF_LABEL: Record<string, TableTense> = {
+    presente: 'presente',
+    pretérito: 'preterito',
+    imperfecto: 'imperfecto',
+    futuro: 'futuro',
+    condicional: 'condicional',
+    subjuntivo: 'subjuntivo',
+    'subjuntivo imperfecto': 'subjImperfecto',
+    imperativo: 'imperativo',
+  }
+  const LEVELS = ['A1', 'A2', 'B1', 'B2']
+
+  it('asks no sentence for a tense taught above its level', () => {
+    const above: string[] = []
+    for (const s of sentences)
+      for (const c of s.cloze ?? []) {
+        const tense = TENSE_OF_LABEL[c.hint?.split(' · ')[2] ?? '']
+        if (tense && LEVELS.indexOf(TENSE_LEVEL[tense]) > LEVELS.indexOf(s.level)) above.push(`${s.id} ${c.hint}`)
+      }
+    expect(above).toEqual([])
+  })
+
+  it('offers no distractor that is right in its sentence too', () => {
+    // cuidar de alguien is as right as cuidar a alguien; ¿Qué es esto? as right as ¿Qué es eso?
+    const alsoRight: string[] = []
+    for (const s of sentences)
+      for (const c of s.cloze ?? []) {
+        const before = s.tokens[c.tokenIndex - 1]?.toLowerCase() ?? ''
+        if (c.tip === 'personal-a' && /^cuid/.test(before) && c.distractors?.includes('de')) alsoRight.push(s.id)
+        if (c.tip === 'demonstratives' && c.answer === 'eso' && s.tokens.join(' ') === '¿ Qué es eso ?' && c.distractors?.includes('esto')) alsoRight.push(s.id)
+      }
+    expect(alsoRight).toEqual([])
+  })
+
+  it('names no tip above the sentence’s level', () => {
+    const above: string[] = []
+    for (const s of sentences)
+      for (const c of s.cloze ?? []) {
+        const tip = c.tip && tipById.get(c.tip)
+        if (tip && LEVELS.indexOf(tip.level) > LEVELS.indexOf(s.level)) above.push(`${s.id} ${c.tip}`)
+      }
+    expect(above).toEqual([])
   })
 })

@@ -313,7 +313,7 @@
     "sk": "Čo znamená toto slovo?",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "demonstratives", "interrogatives"],
     "tokens": ["¿", "Qué", "significa", "esta", "palabra", "?"],
     "cloze": [
       {
@@ -321,7 +321,18 @@
         "answer": "esta",
         "lemma": "este",
         "hint": "tento, táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "estos", "estas"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Qué",
+        "lemma": "qué",
+        "hint": "čo",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuál", "Cómo", "Quién"]
       }
     ]
   },
@@ -678,7 +689,7 @@
     "sk": "Na hodine matematiky som ničomu nerozumel.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "negation"],
     "tokens": ["No", "entendía", "nada", "en", "la", "clase", "de", "matemáticas", "."],
     "cloze": [
       {
@@ -693,26 +704,29 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie"]
       }
     ]
   },
   {
     "id": "s424",
-    "es": "El examen será el lunes.",
+    "es": "El examen va a ser el lunes.",
     "sk": "Skúška bude v pondelok.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["futuro", "ser-estar"],
-    "tokens": ["El", "examen", "será", "el", "lunes", "."],
+    "grammar": ["ir-a", "ser-estar"],
+    "tokens": ["El", "examen", "va", "a", "ser", "el", "lunes", "."],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "será",
-        "lemma": "ser",
-        "hint": "ser/estar · él · futuro",
-        "why": "event",
-        "distractors": ["estará", "serán", "serás"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · él · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1057,7 +1071,7 @@
     "sk": "Absolventi tohto odboru rýchlo nájdu prácu.",
     "level": "B2",
     "topics": ["school", "work"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "demonstratives"],
     "tokens": ["Los", "egresados", "de", "esta", "carrera", "encuentran", "trabajo", "rápido", "."],
     "cloze": [
       {
@@ -1072,6 +1086,8 @@
         "answer": "esta",
         "lemma": "esta",
         "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
         "distractors": ["este", "estos", "estas"]
       }
     ]
@@ -1082,7 +1098,7 @@
     "sk": "S touto appkou sa veľa učím.",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["progresivo"],
+    "grammar": ["progresivo", "demonstratives"],
     "tokens": ["Estoy", "aprendiendo", "mucho", "con", "esta", "app", "."],
     "cloze": [
       {
@@ -1091,6 +1107,15 @@
         "lemma": "aprender",
         "hint": "aprender · gerundio",
         "distractors": ["aprende", "aprender", "aprenden"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["este", "esto", "estas"]
       }
     ]
   },
@@ -1156,7 +1181,7 @@
     "sk": "Ako sa povie gracias po anglicky?",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["presente", "passive-se"],
+    "grammar": ["presente"],
     "tokens": ["¿", "Cómo", "se", "dice", "gracias", "en", "inglés", "?"],
     "cloze": [
       {
@@ -1171,8 +1196,6 @@
         "answer": "se",
         "lemma": "se",
         "hint": "zámeno",
-        "tip": "passive-se",
-        "why": "impersonal",
         "distractors": ["te", "le"]
       }
     ]
@@ -1333,7 +1356,7 @@
     "sk": "Tento semester sa mi zhoršil priemer, lebo som popri štúdiu pracoval.",
     "level": "B1",
     "topics": ["school"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "demonstratives"],
     "tokens": ["Mi", "promedio", "bajó", "este", "semestre", "porque", "trabajaba", "mientras", "estudiaba", "."],
     "cloze": [
       {
@@ -1341,6 +1364,8 @@
         "answer": "este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["esta", "estos", "estas"]
       },
       {
@@ -1655,7 +1680,7 @@
     "sk": "Dcéra na svoj vek číta veľmi dobre.",
     "level": "A1",
     "topics": ["school"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["Mi", "hija", "lee", "muy", "bien", "para", "su", "edad", "."],
     "cloze": [
       {
@@ -1664,6 +1689,15 @@
         "lemma": "leer",
         "hint": "leer · ella · presente",
         "distractors": ["leemos", "leyó", "leía"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "su",
+        "lemma": "su",
+        "hint": "svoj",
+        "tip": "possessives",
+        "why": "svoj",
+        "distractors": ["sus", "mi", "tu"]
       }
     ]
   },
@@ -1732,19 +1766,21 @@
   },
   {
     "id": "s1402",
-    "es": "El próximo año mi hija estudiará en la prepa.",
+    "es": "El próximo año mi hija va a estudiar en la prepa.",
     "sk": "Budúci rok bude dcéra študovať na strednej škole.",
     "level": "A2",
     "topics": ["school"],
-    "grammar": ["futuro"],
-    "tokens": ["El", "próximo", "año", "mi", "hija", "estudiará", "en", "la", "prepa", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["El", "próximo", "año", "mi", "hija", "va", "a", "estudiar", "en", "la", "prepa", "."],
     "cloze": [
       {
         "tokenIndex": 5,
-        "answer": "estudiará",
-        "lemma": "estudiar",
-        "hint": "estudiar · ella · futuro",
-        "distractors": ["estudiaremos", "estudia", "estudié"]
+        "answer": "va",
+        "lemma": "ir",
+        "hint": "ir · ella · presente",
+        "tip": "ir-a",
+        "why": "use",
+        "distractors": ["van", "voy", "fue"]
       }
     ]
   },
@@ -1932,7 +1968,7 @@
     "sk": "Aj keď sa budeš učiť celú noc, nič sa nenaučíš, ak si neodpočinieš.",
     "level": "B2",
     "topics": ["school"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-aunque", "subjuntivo"],
     "tokens": ["Aunque", "estudies", "toda", "la", "noche", ",", "no", "vas", "a", "aprender", "nada", "si", "no", "descansas", "."],
     "cloze": [
       {
@@ -1947,7 +1983,7 @@
         "answer": "estudies",
         "lemma": "estudiar",
         "hint": "estudiar · tú",
-        "tip": "subjuntivo-clauses",
+        "tip": "subjuntivo-aunque",
         "why": "aunque",
         "distractors": ["estudiar", "estudiando"]
       }
@@ -1995,7 +2031,7 @@
     "sk": "Spolužiaci, s ktorými som robil projekt, dostali z prezentácie desiatku.",
     "level": "B2",
     "topics": ["school"],
-    "grammar": ["relatives", "preterito"],
+    "grammar": ["relatives-prep", "preterito"],
     "tokens": ["Los", "estudiantes", "con", "quienes", "hice", "el", "proyecto", "sacaron", "diez", "en", "la", "exposición", "."],
     "cloze": [
       {
@@ -2003,7 +2039,7 @@
         "answer": "quienes",
         "lemma": "quien",
         "hint": "vzťažné zámeno (osoby)",
-        "tip": "relatives",
+        "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["donde", "cuyos", "cuando"]
       }
@@ -2078,6 +2114,226 @@
         "lemma": "aprender",
         "hint": "aprender · ellos · condicional",
         "distractors": ["aprenden", "aprenderán", "aprendieron"]
+      }
+    ]
+  },
+  {
+    "id": "s2219",
+    "es": "En esta escuela se habla inglés y español.",
+    "sk": "V tejto škole sa hovorí po anglicky a po španielsky.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "esta", "escuela", "se", "habla", "inglés", "y", "español", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "habla",
+        "lemma": "hablar",
+        "hint": "hablar · él · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["hablan", "hablaba", "hablará"]
+      }
+    ]
+  },
+  {
+    "id": "s2220",
+    "es": "Los exámenes se entregan en el salón de clase.",
+    "sk": "Testy sa odovzdávajú v triede.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Los", "exámenes", "se", "entregan", "en", "el", "salón", "de", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "entregan",
+        "lemma": "entregar",
+        "hint": "entregar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["entrega", "entregaban", "entregarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2221",
+    "es": "Aquí se estudia mucho antes de los exámenes.",
+    "sk": "Tu sa pred skúškami veľa študuje.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["Aquí", "se", "estudia", "mucho", "antes", "de", "los", "exámenes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estudia",
+        "lemma": "estudiar",
+        "hint": "estudiar · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["estudian", "estudiaba", "estudiará"]
+      }
+    ]
+  },
+  {
+    "id": "s2222",
+    "es": "El laboratorio de química está cerrado los domingos.",
+    "sk": "Chemické laboratórium je v nedeľu zatvorené.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["El", "laboratorio", "de", "química", "está", "cerrado", "los", "domingos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "cerrado",
+        "lemma": "cerrar",
+        "hint": "cerrar · participio",
+        "tip": "passive-se",
+        "why": "estar-result",
+        "distractors": ["cerrada", "cerrando", "cerró"]
+      }
+    ]
+  },
+  {
+    "id": "s2223",
+    "es": "¿Dónde se pagan las colegiaturas de la universidad?",
+    "sk": "Kde sa platí školné na univerzite?",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["¿", "Dónde", "se", "pagan", "las", "colegiaturas", "de", "la", "universidad", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pagan",
+        "lemma": "pagar",
+        "hint": "pagar · ellos · presente",
+        "tip": "passive-se",
+        "why": "se",
+        "distractors": ["paga", "pagaban", "pagarán"]
+      }
+    ]
+  },
+  {
+    "id": "s2224",
+    "es": "En clase se aprende mejor sin usar el celular.",
+    "sk": "V triede sa učí lepšie bez používania mobilu.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "clase", "se", "aprende", "mejor", "sin", "usar", "el", "celular", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "aprende",
+        "lemma": "aprender",
+        "hint": "aprender · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["aprenden", "aprendía", "aprenderá"]
+      }
+    ]
+  },
+  {
+    "id": "s2225",
+    "es": "En la universidad se trabaja mucho en equipo.",
+    "sk": "Na univerzite sa veľa pracuje v tíme.",
+    "level": "B1",
+    "topics": ["school"],
+    "grammar": ["passive-se", "presente"],
+    "tokens": ["En", "la", "universidad", "se", "trabaja", "mucho", "en", "equipo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "trabaja",
+        "lemma": "trabajar",
+        "hint": "trabajar · él · presente",
+        "tip": "passive-se",
+        "why": "impersonal",
+        "distractors": ["trabajan", "trabajaba", "trabajará"]
+      }
+    ]
+  },
+  {
+    "id": "s2294",
+    "es": "¿Cómo se llama esa maestra?",
+    "sk": "Ako sa volá tá učiteľka?",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["¿", "Cómo", "se", "llama", "esa", "maestra", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "esa",
+        "lemma": "esa",
+        "hint": "tá",
+        "tip": "demonstratives",
+        "why": "far",
+        "distractors": ["ese", "esta", "eso"]
+      }
+    ]
+  },
+  {
+    "id": "s2295",
+    "es": "Aquellos alumnos hablan inglés.",
+    "sk": "Tamtí žiaci hovoria po anglicky.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Aquellos", "alumnos", "hablan", "inglés", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Aquellos",
+        "lemma": "aquellos",
+        "hint": "tamtí",
+        "tip": "demonstratives",
+        "why": "far",
+        "distractors": ["Aquel", "Esos", "Estos"]
+      }
+    ]
+  },
+  {
+    "id": "s2296",
+    "es": "Esta clase es muy divertida.",
+    "sk": "Táto hodina je veľmi zábavná.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Esta", "clase", "es", "muy", "divertida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esta",
+        "lemma": "esta",
+        "hint": "táto",
+        "tip": "demonstratives",
+        "why": "near",
+        "distractors": ["Este", "Esa", "Esto"]
+      }
+    ]
+  },
+  {
+    "id": "s2297",
+    "es": "Esto es un cuaderno.",
+    "sk": "Toto je zošit.",
+    "level": "A1",
+    "topics": ["school"],
+    "grammar": ["demonstratives", "presente"],
+    "tokens": ["Esto", "es", "un", "cuaderno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Esto",
+        "lemma": "esto",
+        "hint": "toto",
+        "tip": "demonstratives",
+        "why": "neutral",
+        "distractors": ["Este", "Eso", "Esta"]
       }
     ]
   }

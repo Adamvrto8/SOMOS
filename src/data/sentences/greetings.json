@@ -31,7 +31,7 @@
     "sk": "Ako sa voláš?",
     "level": "A1",
     "topics": ["greetings"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cómo", "te", "llamas", "?"],
     "cloze": [
       {
@@ -40,6 +40,15 @@
         "lemma": "llamarse",
         "hint": "llamarse · tú · presente",
         "distractors": ["llamo", "llama", "llaman"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cómo",
+        "lemma": "cómo",
+        "hint": "ako",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Qué", "Cuál", "Dónde"]
       }
     ]
   },
@@ -93,7 +102,7 @@
     "sk": "Prepáčte, kde je tu záchod?",
     "level": "A1",
     "topics": ["greetings", "home"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "interrogatives"],
     "tokens": ["Perdón", ",", "¿", "dónde", "está", "el", "baño", "?"],
     "cloze": [
       {
@@ -103,6 +112,15 @@
         "hint": "ser/estar · él · presente",
         "why": "place",
         "distractors": ["es", "están", "estás"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["cuándo", "cómo", "qué"]
       }
     ]
   },
@@ -130,7 +148,7 @@
     "sk": "Môj kamarát Carlos je z Monterrey.",
     "level": "A1",
     "topics": ["greetings", "family"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "possessives"],
     "tokens": ["Mi", "amigo", "Carlos", "es", "de", "Monterrey", "."],
     "cloze": [
       {
@@ -138,6 +156,8 @@
         "answer": "Mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tu", "tus", "su"]
       },
       {
@@ -174,7 +194,7 @@
     "sk": "Odkiaľ si?",
     "level": "A1",
     "topics": ["greetings"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "interrogatives"],
     "tokens": ["¿", "De", "dónde", "eres", "?"],
     "cloze": [
       {
@@ -184,6 +204,15 @@
         "hint": "ser/estar · tú · presente",
         "why": "origin",
         "distractors": ["estás", "somos", "soy"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "dónde",
+        "lemma": "dónde",
+        "hint": "kde",
+        "tip": "interrogatives",
+        "why": "prep",
+        "distractors": ["qué", "quién", "cuándo"]
       }
     ]
   },
@@ -296,9 +325,12 @@
         "answer": "mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tu", "tus", "su"]
       }
-    ]
+    ],
+    "grammar": ["possessives"]
   },
   {
     "id": "s068",
@@ -386,7 +418,18 @@
     "level": "A1",
     "topics": ["greetings"],
     "tokens": ["Muchas", "gracias", "por", "tu", "ayuda", "."],
-    "cloze": [{ "tokenIndex": 3, "answer": "tu", "lemma": "tu", "hint": "tvoj", "distractors": ["tú", "mi", "su"] }]
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tu",
+        "lemma": "tu",
+        "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
+        "distractors": ["tú", "mi", "su"]
+      }
+    ],
+    "grammar": ["possessives"]
   },
   {
     "id": "s073",
@@ -394,7 +437,7 @@
     "sk": "Ako sa volá tvoja mama?",
     "level": "A1",
     "topics": ["greetings"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "possessives"],
     "tokens": ["¿", "Cómo", "se", "llama", "tu", "mamá", "?"],
     "cloze": [
       {
@@ -409,7 +452,149 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
+      }
+    ]
+  },
+  {
+    "id": "s2175",
+    "es": "No creo que ellos sepan que hoy es tu cumpleaños.",
+    "sk": "Neverím, že vedia, že dnes máš narodeniny.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "ellos", "sepan", "que", "hoy", "es", "tu", "cumpleaños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sepan",
+        "lemma": "saber",
+        "hint": "saber · ellos · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["saben", "sabrán", "supieron"]
+      }
+    ]
+  },
+  {
+    "id": "s2176",
+    "es": "Cuando te veas con Laura, salúdala de mi parte.",
+    "sk": "Keď sa uvidíš s Laurou, pozdravuj ju odo mňa.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Cuando", "te", "veas", "con", "Laura", ",", "salúdala", "de", "mi", "parte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "veas",
+        "lemma": "ver",
+        "hint": "ver · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["ves", "viste", "verás"]
+      }
+    ]
+  },
+  {
+    "id": "s2177",
+    "es": "Te mando un mensaje para que sepas que llegué bien.",
+    "sk": "Posielam ti správu, aby si vedel, že som dorazil v poriadku.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "preterito"],
+    "tokens": ["Te", "mando", "un", "mensaje", "para", "que", "sepas", "que", "llegué", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sepas",
+        "lemma": "saber",
+        "hint": "saber · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["sabes", "sabrás", "supiste"]
+      }
+    ]
+  },
+  {
+    "id": "s2178",
+    "es": "Después de que conozcas a mis amigos, ya no te vas a sentir tan nervioso.",
+    "sk": "Keď spoznáš moje kamarátky a kamarátov, už nebudeš taký nervózny.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Después", "de", "que", "conozcas", "a", "mis", "amigos", ",", "ya", "no", "te", "vas", "a", "sentir", "tan", "nervioso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "conozcas",
+        "lemma": "conocer",
+        "hint": "conocer · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["conoces", "conociste", "conocerás"]
+      }
+    ]
+  },
+  {
+    "id": "s2179",
+    "es": "Dudo que Marcos venga a la fiesta, pero lo invité de todos modos.",
+    "sk": "Pochybujem, že Marcos príde na oslavu, ale aj tak som ho pozval.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "preterito"],
+    "tokens": ["Dudo", "que", "Marcos", "venga", "a", "la", "fiesta", ",", "pero", "lo", "invité", "de", "todos", "modos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "venga",
+        "lemma": "venir",
+        "hint": "venir · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["viene", "vendrá", "vino"]
+      }
+    ]
+  },
+  {
+    "id": "s2180",
+    "es": "Abrazo a todos para que sientan que son bienvenidos.",
+    "sk": "Objímem všetkých, aby cítili, že sú vítaní.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Abrazo", "a", "todos", "para", "que", "sientan", "que", "son", "bienvenidos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sientan",
+        "lemma": "sentir",
+        "hint": "sentir · ellos · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["sienten", "sintieron", "sentirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2181",
+    "es": "Antes de que salgas, dale un abrazo a tu abuelita.",
+    "sk": "Skôr než odídeš, objím svoju babičku.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Antes", "de", "que", "salgas", ",", "dale", "un", "abrazo", "a", "tu", "abuelita", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "salgas",
+        "lemma": "salir",
+        "hint": "salir · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["sales", "saliste", "saldrás"]
       }
     ]
   },
@@ -554,7 +739,7 @@
     "sk": "Vďaka, že si mi dal vedieť, nič som nevedel.",
     "level": "B1",
     "topics": ["greetings"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "negation"],
     "tokens": ["Gracias", "por", "avisarme", ",", "no", "sabía", "nada", "."],
     "cloze": [
       {
@@ -569,6 +754,8 @@
         "answer": "nada",
         "lemma": "nada",
         "hint": "nič",
+        "tip": "negation",
+        "why": "double",
         "distractors": ["nadie"]
       }
     ]
@@ -782,7 +969,7 @@
     "sk": "Tvoj brat je veľmi fajn.",
     "level": "B1",
     "topics": ["greetings"],
-    "grammar": ["ser-estar"],
+    "grammar": ["ser-estar", "possessives"],
     "tokens": ["Tu", "hermano", "es", "muy", "buena", "onda", "."],
     "cloze": [
       {
@@ -790,6 +977,8 @@
         "answer": "Tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "mis"]
       },
       {
@@ -1058,7 +1247,7 @@
     "sk": "Toto je moja kamarátka Sofía.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["gender"],
+    "grammar": ["gender", "possessives", "personal-a"],
     "tokens": ["Te", "presento", "a", "mi", "amiga", "Sofía", "."],
     "cloze": [
       {
@@ -1066,6 +1255,8 @@
         "answer": "mi",
         "lemma": "mi",
         "hint": "môj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["tus", "su", "sus"]
       },
       {
@@ -1074,6 +1265,15 @@
         "lemma": "amigo",
         "hint": "kamarátka",
         "distractors": ["amigo", "amigas", "amigos"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1118,7 +1318,7 @@
     "sk": "Včera som spoznal tvojich rodičov, sú veľmi milí.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "personal-a"],
     "tokens": ["Ayer", "conocí", "a", "tus", "papás", ",", "son", "muy", "amables", "."],
     "cloze": [
       {
@@ -1127,6 +1327,15 @@
         "lemma": "conocer",
         "hint": "conocer · yo · pretérito",
         "distractors": ["conozco", "conoció", "conocía"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1168,26 +1377,39 @@
   },
   {
     "id": "s1204",
-    "es": "Gracias por todo, nunca olvidaré tu ayuda.",
+    "es": "Gracias por todo, nunca voy a olvidar tu ayuda.",
     "sk": "Vďaka za všetko, na tvoju pomoc nikdy nezabudnem.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["futuro"],
-    "tokens": ["Gracias", "por", "todo", ",", "nunca", "olvidaré", "tu", "ayuda", "."],
+    "grammar": ["ir-a", "possessives", "negation"],
+    "tokens": ["Gracias", "por", "todo", ",", "nunca", "voy", "a", "olvidar", "tu", "ayuda", "."],
     "cloze": [
       {
         "tokenIndex": 5,
-        "answer": "olvidaré",
-        "lemma": "olvidar",
-        "hint": "olvidar · yo · futuro",
-        "distractors": ["olvido", "olvidé", "olvidarás"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "vas", "fui"]
       },
       {
-        "tokenIndex": 6,
+        "tokenIndex": 8,
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mis", "tus", "su"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "nunca",
+        "lemma": "nunca",
+        "hint": "nikdy",
+        "tip": "negation",
+        "why": "double",
+        "distractors": ["nada", "nadie", "siempre"]
       }
     ]
   },
@@ -1250,7 +1472,7 @@
     "sk": "Čakáme na tvojich rodičov, aby sme ich pozdravili.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["progresivo"],
+    "grammar": ["progresivo", "possessives", "personal-a"],
     "tokens": ["Estamos", "esperando", "a", "tus", "papás", "para", "saludarlos", "."],
     "cloze": [
       {
@@ -1265,7 +1487,18 @@
         "answer": "tus",
         "lemma": "tus",
         "hint": "tvoje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["mis", "tu", "su"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1289,19 +1522,21 @@
   },
   {
     "id": "s1210",
-    "es": "Sale, te veré mañana a las nueve.",
+    "es": "Sale, te voy a ver mañana a las nueve.",
     "sk": "Dobre, uvidíme sa zajtra o deviatej.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["futuro"],
-    "tokens": ["Sale", ",", "te", "veré", "mañana", "a", "las", "nueve", "."],
+    "grammar": ["ir-a"],
+    "tokens": ["Sale", ",", "te", "voy", "a", "ver", "mañana", "a", "las", "nueve", "."],
     "cloze": [
       {
         "tokenIndex": 3,
-        "answer": "veré",
-        "lemma": "ver",
-        "hint": "ver · yo · futuro",
-        "distractors": ["veo", "vi", "verás"]
+        "answer": "voy",
+        "lemma": "ir",
+        "hint": "ir · yo · presente",
+        "tip": "ir-a",
+        "why": "pronouns",
+        "distractors": ["va", "vas", "fui"]
       }
     ]
   },
@@ -1320,13 +1555,6 @@
         "lemma": "esperar",
         "hint": "esperar · yo · imperfecto",
         "distractors": ["espero", "esperé", "esperabas"]
-      },
-      {
-        "tokenIndex": 6,
-        "answer": "vinieras",
-        "lemma": "venir",
-        "hint": "venir · tú · subjuntivo imperfecto",
-        "distractors": ["vienes", "vendrás", "viniste"]
       }
     ]
   },
@@ -1574,7 +1802,7 @@
     "sk": "Zdržal som sa a ani som sa nerozlúčil s tvojimi rodičmi.",
     "level": "B2",
     "topics": ["greetings"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "possessives"],
     "tokens": ["Se", "me", "hizo", "tarde", "y", "ni", "me", "despedí", "de", "tus", "papás", "."],
     "cloze": [
       {
@@ -1589,6 +1817,8 @@
         "answer": "tus",
         "lemma": "tus",
         "hint": "tvoje",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "mis"]
       }
     ]
@@ -1667,7 +1897,7 @@
     "sk": "Pozdravuj mamu a povedz jej, že ju čoskoro navštívim.",
     "level": "B2",
     "topics": ["greetings"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "personal-a"],
     "tokens": ["Salúdame", "a", "tu", "jefa", "y", "dile", "que", "pronto", "la", "visito", "."],
     "cloze": [
       {
@@ -1682,6 +1912,8 @@
         "answer": "a",
         "lemma": "a",
         "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
         "distractors": ["de", "en", "hacia"]
       }
     ]
@@ -1746,7 +1978,7 @@
     "sk": "Prepáč, nemohol som prísť na tvoju oslavu.",
     "level": "A2",
     "topics": ["greetings"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "possessives"],
     "tokens": ["Lo", "siento", ",", "no", "pude", "ir", "a", "tu", "fiesta", "."],
     "cloze": [
       {
@@ -1761,6 +1993,8 @@
         "answer": "tu",
         "lemma": "tu",
         "hint": "tvoj",
+        "tip": "possessives",
+        "why": "short",
         "distractors": ["sus", "mi", "mis"]
       }
     ]
@@ -1973,6 +2207,226 @@
         "lemma": "ser",
         "hint": "ser · ellos · subjuntivo",
         "distractors": ["son", "fueron", "serán"]
+      }
+    ]
+  },
+  {
+    "id": "s2197",
+    "es": "La chava que me saludó en la fiesta es prima de Daniel.",
+    "sk": "Dievča, ktoré ma pozdravilo na oslave, je Danielova sesternica.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["La", "chava", "que", "me", "saludó", "en", "la", "fiesta", "es", "prima", "de", "Daniel", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["quien", "donde", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2198",
+    "es": "Te espero en la esquina donde nos despedimos la otra vez.",
+    "sk": "Počkám ťa na rohu, kde sme sa naposledy lúčili.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Te", "espero", "en", "la", "esquina", "donde", "nos", "despedimos", "la", "otra", "vez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2199",
+    "es": "Gracias por lo que hiciste por mí el fin de semana.",
+    "sk": "Ďakujem za to, čo si pre mňa urobil cez víkend.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Gracias", "por", "lo", "que", "hiciste", "por", "mí", "el", "fin", "de", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "quien", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2200",
+    "es": "Los amigos que conocí en Puebla me mandaron un abrazo grande.",
+    "sk": "Kamaráti, ktorých som spoznal v Puebla, mi poslali veľké objatie.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "preterito"],
+    "tokens": ["Los", "amigos", "que", "conocí", "en", "Puebla", "me", "mandaron", "un", "abrazo", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2201",
+    "es": "Este es el café donde siempre nos encontramos los viernes.",
+    "sk": "Toto je kaviareň, kde sa vždy stretávame v piatok.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Este", "es", "el", "café", "donde", "siempre", "nos", "encontramos", "los", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "donde",
+        "lemma": "donde",
+        "hint": "vzťažné slovo (kde)",
+        "tip": "relatives",
+        "why": "donde",
+        "distractors": ["que", "cuando", "quien"]
+      }
+    ]
+  },
+  {
+    "id": "s2202",
+    "es": "Dime lo que piensas antes de que nos despidamos.",
+    "sk": "Povedz mi, čo si myslíš, skôr než sa rozlúčime.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["Dime", "lo", "que", "piensas", "antes", "de", "que", "nos", "despidamos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "lo",
+        "lemma": "lo que",
+        "hint": "vzťažné slovo (to, čo)",
+        "tip": "relatives",
+        "why": "lo-que",
+        "distractors": ["cual", "quien", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2203",
+    "es": "El señor que vende periódicos siempre me dice buenos días.",
+    "sk": "Pán, ktorý predáva noviny, mi vždy zaželá dobré ráno.",
+    "level": "B1",
+    "topics": ["greetings"],
+    "grammar": ["relatives", "presente"],
+    "tokens": ["El", "señor", "que", "vende", "periódicos", "siempre", "me", "dice", "buenos", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "que",
+        "lemma": "que",
+        "hint": "vzťažné slovo (ktorý)",
+        "tip": "relatives",
+        "why": "que",
+        "distractors": ["donde", "quien", "cual"]
+      }
+    ]
+  },
+  {
+    "id": "s2278",
+    "es": "Siempre saludo a mis vecinos en la mañana.",
+    "sk": "Ráno vždy pozdravím susedov.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Siempre", "saludo", "a", "mis", "vecinos", "en", "la", "mañana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2279",
+    "es": "Quiero conocer a tu hermana.",
+    "sk": "Chcem spoznať tvoju sestru.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Quiero", "conocer", "a", "tu", "hermana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2280",
+    "es": "Ayer invité a mis primos.",
+    "sk": "Včera som pozval bratrancov a sesternice.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["personal-a", "preterito"],
+    "tokens": ["Ayer", "invité", "a", "mis", "primos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2281",
+    "es": "Esperamos a la maestra en la puerta.",
+    "sk": "Čakáme učiteľku pri dverách.",
+    "level": "A2",
+    "topics": ["greetings"],
+    "grammar": ["personal-a", "presente"],
+    "tokens": ["Esperamos", "a", "la", "maestra", "en", "la", "puerta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
     ]
   }

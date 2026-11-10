@@ -126,29 +126,18 @@
   },
   {
     "id": "s1138",
-    "es": "Mi abuelo se enfadará si llegamos tarde.",
+    "es": "Mi abuelo se va a enfadar si llegamos tarde.",
     "tokens": [
       "Mi",
       "abuelo",
       "se",
-      "enfadará",
+      "va",
+      "a",
+      "enfadar",
       "si",
       "llegamos",
       "tarde",
       "."
-    ],
-    "cloze": [
-      {
-        "tokenIndex": 3,
-        "answer": "enfadará",
-        "lemma": "enfadarse",
-        "hint": "enfadarse · él · futuro",
-        "distractors": [
-          "enfadaré",
-          "enfadarás",
-          "enfadaremos"
-        ]
-      }
     ]
   },
   {

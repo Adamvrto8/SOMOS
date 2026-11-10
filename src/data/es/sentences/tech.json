@@ -405,10 +405,12 @@
   },
   {
     "id": "s1466",
-    "es": "Mañana compraré un ordenador nuevo.",
+    "es": "Mañana voy a comprar un ordenador nuevo.",
     "tokens": [
       "Mañana",
-      "compraré",
+      "voy",
+      "a",
+      "comprar",
       "un",
       "ordenador",
       "nuevo",
@@ -417,12 +419,14 @@
   },
   {
     "id": "s1472",
-    "es": "Mi hermano me ayudará con el ordenador.",
+    "es": "Mi hermano me va a ayudar con el ordenador.",
     "tokens": [
       "Mi",
       "hermano",
       "me",
-      "ayudará",
+      "va",
+      "a",
+      "ayudar",
       "con",
       "el",
       "ordenador",

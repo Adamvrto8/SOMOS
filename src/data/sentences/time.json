@@ -159,7 +159,7 @@
     "sk": "Aký je dnes deň?",
     "level": "A1",
     "topics": ["time"],
-    "grammar": ["presente", "ser-estar"],
+    "grammar": ["presente", "ser-estar", "interrogatives"],
     "tokens": ["¿", "Qué", "día", "es", "hoy", "?"],
     "cloze": [
       {
@@ -169,6 +169,15 @@
         "hint": "ser/estar · él · presente",
         "why": "time",
         "distractors": ["está", "son", "eres"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Qué",
+        "lemma": "qué",
+        "hint": "aký",
+        "tip": "interrogatives",
+        "why": "cual",
+        "distractors": ["Cuál", "Cuándo", "Cómo"]
       }
     ]
   },
@@ -469,7 +478,7 @@
     "sk": "Koľko hodín spíš?",
     "level": "A1",
     "topics": ["time"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "interrogatives"],
     "tokens": ["¿", "Cuántas", "horas", "duermes", "?"],
     "cloze": [
       {
@@ -478,6 +487,15 @@
         "lemma": "dormir",
         "hint": "dormir · tú · presente",
         "distractors": ["dormimos", "duermo", "dormiste"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "Cuántas",
+        "lemma": "cuántas",
+        "hint": "koľko",
+        "tip": "interrogatives",
+        "why": "words",
+        "distractors": ["Cuántos", "Cuánto", "Qué"]
       }
     ]
   },
@@ -552,19 +570,21 @@
   },
   {
     "id": "s421",
-    "es": "¿Qué harás en las vacaciones?",
+    "es": "¿Qué vas a hacer en las vacaciones?",
     "sk": "Čo budeš robiť cez prázdniny?",
     "level": "A2",
     "topics": ["time"],
-    "grammar": ["futuro"],
-    "tokens": ["¿", "Qué", "harás", "en", "las", "vacaciones", "?"],
+    "grammar": ["ir-a"],
+    "tokens": ["¿", "Qué", "vas", "a", "hacer", "en", "las", "vacaciones", "?"],
     "cloze": [
       {
         "tokenIndex": 2,
-        "answer": "harás",
-        "lemma": "hacer",
-        "hint": "hacer · tú · futuro",
-        "distractors": ["haremos", "haré", "haces"]
+        "answer": "vas",
+        "lemma": "ir",
+        "hint": "ir · tú · presente",
+        "tip": "ir-a",
+        "why": "forms",
+        "distractors": ["va", "voy", "fuiste"]
       }
     ]
   },
@@ -706,19 +726,19 @@
   },
   {
     "id": "s757",
-    "es": "Anoche cenamos en casa de mis papás.",
-    "sk": "Včera večer sme večerali u rodičov.",
+    "es": "Hoy cenamos en casa de mis papás.",
+    "sk": "Dnes večeriame u rodičov.",
     "level": "A1",
     "topics": ["time"],
-    "grammar": ["preterito"],
-    "tokens": ["Anoche", "cenamos", "en", "casa", "de", "mis", "papás", "."],
+    "grammar": ["presente"],
+    "tokens": ["Hoy", "cenamos", "en", "casa", "de", "mis", "papás", "."],
     "cloze": [
       {
         "tokenIndex": 1,
         "answer": "cenamos",
         "lemma": "cenar",
-        "hint": "cenar · nosotros · pretérito",
-        "distractors": ["cenan", "cené", "cenábamos"]
+        "hint": "cenar · nosotros · presente",
+        "distractors": ["cenan", "ceno", "cenas"]
       }
     ]
   },
@@ -1084,7 +1104,7 @@
     "sk": "Tento štvrťrok predaj stúpol o desať percent.",
     "level": "B2",
     "topics": ["time", "work"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "demonstratives"],
     "tokens": ["Este", "trimestre", "las", "ventas", "aumentaron", "un", "diez", "por", "ciento", "."],
     "cloze": [
       {
@@ -1092,6 +1112,8 @@
         "answer": "Este",
         "lemma": "este",
         "hint": "tento",
+        "tip": "demonstratives",
+        "why": "time",
         "distractors": ["esa", "esos", "esas"]
       },
       {
@@ -1206,8 +1228,18 @@
         "lemma": "próximo",
         "hint": "budúci",
         "distractors": ["pasado", "último", "antiguo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "personal-a",
+        "why": "person",
+        "distractors": ["de", "en", "con"]
       }
-    ]
+    ],
+    "grammar": ["personal-a"]
   },
   {
     "id": "s1490",
@@ -1969,6 +2001,66 @@
         "lemma": "recordar",
         "hint": "recordar · ella · pretérito",
         "distractors": ["recuerda", "recordará", "recuerde"]
+      }
+    ]
+  },
+  {
+    "id": "s2182",
+    "es": "No creo que alcancemos el último camión si salimos a las diez.",
+    "sk": "Neverím, že stihneme posledný autobus, ak vyjdeme o desiatej.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["No", "creo", "que", "alcancemos", "el", "último", "camión", "si", "salimos", "a", "las", "diez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "alcancemos",
+        "lemma": "alcanzar",
+        "hint": "alcanzar · nosotros · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "opinion",
+        "distractors": ["alcanzamos", "alcanzaremos", "alcanzaron"]
+      }
+    ]
+  },
+  {
+    "id": "s2183",
+    "es": "Cuando termine el mes, te devuelvo el dinero que me prestaste.",
+    "sk": "Keď sa skončí mesiac, vrátim ti peniaze, ktoré si mi požičal.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
+    "tokens": ["Cuando", "termine", "el", "mes", ",", "te", "devuelvo", "el", "dinero", "que", "me", "prestaste", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "termine",
+        "lemma": "terminar",
+        "hint": "terminar · él · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "cuando",
+        "distractors": ["termina", "terminó", "terminará"]
+      }
+    ]
+  },
+  {
+    "id": "s2184",
+    "es": "Pon la alarma a las seis para que no pierdas el vuelo.",
+    "sk": "Nastav si budík na šiestu, aby si nezmeškal let.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "tokens": ["Pon", "la", "alarma", "a", "las", "seis", "para", "que", "no", "pierdas", "el", "vuelo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "pierdas",
+        "lemma": "perder",
+        "hint": "perder · tú · subjuntivo",
+        "tip": "subjuntivo-clauses",
+        "why": "para-que",
+        "distractors": ["pierdes", "perdiste", "perderás"]
       }
     ]
   }
