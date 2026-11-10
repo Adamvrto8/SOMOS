@@ -125,7 +125,7 @@
     "pos": "phrase",
     "level": "A1",
     "topics": ["greetings"],
-    "examples": [{ "es": "Mucho gusto, soy Adam.", "sk": "Teší ma, som Adam." }]
+    "examples": [{ "es": "Mucho gusto, soy Mateo.", "sk": "Teší ma, som Mateo." }]
   },
   {
     "id": "igualmente",

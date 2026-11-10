@@ -2146,12 +2146,12 @@
   },
   {
     "id": "s1943",
-    "es": "Mi hermana, con la que hablo todos los días, vive en Monterrey.",
-    "sk": "Moja sestra, s ktorou sa rozprávam každý deň, býva v Monterrey.",
+    "es": "Mi hermana, con la que hablo todos los días, vive en Guadalajara.",
+    "sk": "Moja sestra, s ktorou sa rozprávam každý deň, býva v Guadalajara.",
     "level": "B2",
     "topics": ["family"],
     "grammar": ["relatives-prep", "presente"],
-    "tokens": ["Mi", "hermana", ",", "con", "la", "que", "hablo", "todos", "los", "días", ",", "vive", "en", "Monterrey", "."],
+    "tokens": ["Mi", "hermana", ",", "con", "la", "que", "hablo", "todos", "los", "días", ",", "vive", "en", "Guadalajara", "."],
     "cloze": [
       {
         "tokenIndex": 4,

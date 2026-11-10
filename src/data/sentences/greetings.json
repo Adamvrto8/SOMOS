@@ -1,12 +1,12 @@
 [
   {
     "id": "s001",
-    "es": "Me llamo Adam y soy de Eslovaquia.",
-    "sk": "Volám sa Adam a som zo Slovenska.",
+    "es": "Me llamo Diego y soy de Eslovaquia.",
+    "sk": "Volám sa Diego a som zo Slovenska.",
     "level": "A1",
     "topics": ["greetings"],
     "grammar": ["presente", "ser-estar"],
-    "tokens": ["Me", "llamo", "Adam", "y", "soy", "de", "Eslovaquia", "."],
+    "tokens": ["Me", "llamo", "Diego", "y", "soy", "de", "Eslovaquia", "."],
     "cloze": [
       {
         "tokenIndex": 4,
@@ -172,12 +172,12 @@
   },
   {
     "id": "s061",
-    "es": "Mucho gusto, me llamo Laura.",
-    "sk": "Teší ma, volám sa Laura.",
+    "es": "Mucho gusto, me llamo Sofía.",
+    "sk": "Teší ma, volám sa Sofia.",
     "level": "A1",
     "topics": ["greetings"],
     "grammar": ["presente"],
-    "tokens": ["Mucho", "gusto", ",", "me", "llamo", "Laura", "."],
+    "tokens": ["Mucho", "gusto", ",", "me", "llamo", "Sofía", "."],
     "cloze": [
       {
         "tokenIndex": 4,
@@ -480,12 +480,12 @@
   },
   {
     "id": "s2176",
-    "es": "Cuando te veas con Laura, salúdala de mi parte.",
+    "es": "Cuando te veas con Valentina, salúdala de mi parte.",
     "sk": "Keď sa uvidíš s Laurou, pozdravuj ju odo mňa.",
     "level": "B1",
     "topics": ["greetings"],
     "grammar": ["subjuntivo-clauses", "subjuntivo", "presente"],
-    "tokens": ["Cuando", "te", "veas", "con", "Laura", ",", "salúdala", "de", "mi", "parte", "."],
+    "tokens": ["Cuando", "te", "veas", "con", "Valentina", ",", "salúdala", "de", "mi", "parte", "."],
     "cloze": [
       {
         "tokenIndex": 2,
@@ -1893,7 +1893,7 @@
   },
   {
     "id": "s1228",
-    "es": "Salúdame a tu jefa y dile que pronto la visito.",
+    "es": "Salúdame a tu mamá y dile que pronto la visito.",
     "sk": "Pozdravuj mamu a povedz jej, že ju čoskoro navštívim.",
     "level": "B2",
     "topics": ["greetings"],

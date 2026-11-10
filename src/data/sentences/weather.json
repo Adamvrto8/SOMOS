@@ -1188,12 +1188,12 @@
   },
   {
     "id": "s1552",
-    "es": "Antes no hacía tanto calor en Monterrey; ahora es insoportable.",
-    "sk": "Predtým v Monterrey nebývalo také teplo, teraz je to neznesiteľné.",
+    "es": "Antes no hacía tanto calor en Mérida; ahora es insoportable.",
+    "sk": "Predtým v Mérida nebývalo také teplo, teraz je to neznesiteľné.",
     "level": "B1",
     "topics": ["weather"],
     "grammar": ["imperfecto"],
-    "tokens": ["Antes", "no", "hacía", "tanto", "calor", "en", "Monterrey", ";", "ahora", "es", "insoportable", "."],
+    "tokens": ["Antes", "no", "hacía", "tanto", "calor", "en", "Mérida", ";", "ahora", "es", "insoportable", "."],
     "cloze": [
       {
         "tokenIndex": 2,

@@ -59,7 +59,7 @@
   { "id": "s1549", "en": "I hope it doesn't rain tomorrow, because we're going to the pyramids." },
   { "id": "s1550", "en": "With this heat wave, you can't sleep without a fan.", "hints": [null, "without"] },
   { "id": "s1551", "en": "It was so foggy that the plane couldn't land.", "hints": ["fog"] },
-  { "id": "s1552", "en": "It didn't use to be this hot in Monterrey; now it's unbearable.", "hints": [null, "comparison"] },
+  { "id": "s1552", "en": "It didn't use to be this hot in Mérida; now it's unbearable.", "hints": [null, "comparison"] },
   { "id": "s1553", "en": "We were at the beach when it suddenly started to rain.", "hints": [null, "preposition"] },
   { "id": "s1554", "en": "After the flood, many families lost their homes.", "hints": [null, "preposition"] },
   { "id": "s1555", "en": "I prefer Guadalajara's climate because it's neither too humid nor too dry.", "hints": [null, "nor"] },

@@ -38,7 +38,7 @@
     "gender": "m",
     "level": "A1",
     "topics": ["family"],
-    "examples": [{ "es": "Mi hermano vive en Monterrey.", "sk": "Môj brat býva v Monterrey." }],
+    "examples": [{ "es": "Mi hermano vive en Tijuana.", "sk": "Môj brat býva v Tijuane." }],
     "note": "hermana = sestra, hermanos = bratia alebo súrodenci."
   },
   {
@@ -209,7 +209,7 @@
     "gender": "m",
     "level": "A2",
     "topics": ["family"],
-    "examples": [{ "es": "Mi novio es de Monterrey.", "sk": "Môj priateľ je z Monterrey." }],
+    "examples": [{ "es": "Mi novio es de Veracruz.", "sk": "Môj priateľ je z Veracruzu." }],
     "note": "novia = priateľka (partnerka) aj nevesta."
   },
   {
@@ -440,7 +440,7 @@
     "gender": "m",
     "level": "B1",
     "topics": ["family"],
-    "examples": [{ "es": "Después del divorcio se mudó a Monterrey.", "sk": "Po rozvode sa presťahoval do Monterrey." }]
+    "examples": [{ "es": "Después del divorcio se mudó a Toluca.", "sk": "Po rozvode sa presťahoval do Toluky." }]
   },
   {
     "id": "padrino",

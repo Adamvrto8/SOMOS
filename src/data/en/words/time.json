@@ -97,7 +97,7 @@
   { "id": "pasado", "en": ["last", "past"], "examples": ["It rained a lot last week."] },
   { "id": "calendario", "en": ["calendar"], "examples": ["I wrote the date on the calendar."] },
   { "id": "semestre", "en": ["semester"], "examples": ["The semester ends in June."] },
-  { "id": "decada", "en": ["decade"], "examples": ["In the nineties we lived in Monterrey."] },
+  { "id": "decada", "en": ["decade"], "examples": ["In the nineties we lived in Chihuahua."] },
   { "id": "aniversario", "en": ["anniversary"], "examples": ["Today is our wedding anniversary."] },
   { "id": "a-tiempo", "en": ["on time"], "examples": ["We got to the concert on time."] },
   { "id": "de-vez-en-cuando", "en": ["every now and then"], "examples": ["Every now and then we go to the movies."] },

@@ -158,7 +158,7 @@
         "text": "Čo robíš bežne (siempre, todos los días, los lunes), čo platí vždy, a v Mexiku často aj blízka budúcnosť: Mañana te llamo.",
         "examples": [
           { "es": "Todos los días tomo el camión.", "sk": "Každý deň chodím autobusom." },
-          { "es": "Mi hermana vive en Monterrey.", "sk": "Moja sestra býva v Monterrey." },
+          { "es": "Mi hermana vive en Guadalajara.", "sk": "Moja sestra býva v Guadalajare." },
           { "es": "Mañana te llamo.", "sk": "Zajtra ti zavolám." }
         ]
       },
@@ -1252,7 +1252,7 @@
         "because": "Bueno a malo majú vlastné tvary: mejor, peor (vek: mayor, menor).",
         "examples": [
           { "es": "Esta salsa es mejor que la otra.", "sk": "Táto salsa je lepšia ako tá druhá." },
-          { "es": "Mi hermana menor vive en Monterrey.", "sk": "Moja mladšia sestra býva v Monterrey." }
+          { "es": "Mi hermana menor vive en Puebla.", "sk": "Moja mladšia sestra býva v Puebli." }
         ]
       },
       {
@@ -1792,7 +1792,7 @@
         "text": "mi casa, mis amigos; tu carro, tus llaves. Rod sa nemení: mi hermano aj mi hermana. Pozor: tu (tvoj) je bez prízvuku, tú (ty) s ním.",
         "because": "Pred podstatným menom stojí krátky tvar mi, tu, su, pri viacerých veciach mis, tus, sus.",
         "examples": [
-          { "es": "Mi hermana vive en Monterrey.", "sk": "Moja sestra býva v Monterrey." },
+          { "es": "Mi hermana vive en Oaxaca.", "sk": "Moja sestra býva v Oaxace." },
           { "es": "¿Dónde están tus llaves?", "sk": "Kde máš kľúče?" }
         ]
       },

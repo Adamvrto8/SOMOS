@@ -101,7 +101,7 @@
         "id": "use",
         "title": "When it is used",
         "text": "What you do regularly (siempre, todos los días, los lunes), what is always true, and in Mexico often the near future too: Mañana te llamo.",
-        "examples": ["I take the bus every day.", "My sister lives in Monterrey.", "I'll call you tomorrow."]
+        "examples": ["I take the bus every day.", "My sister lives in Guadalajara.", "I'll call you tomorrow."]
       },
       {
         "id": "ar",
@@ -884,7 +884,7 @@
         "title": "mejor, peor, mayor, menor",
         "text": "bueno → mejor, malo → peor. For age mayor (older) and menor (younger). Nobody says más bueno.",
         "because": "Bueno and malo have forms of their own: mejor, peor (age: mayor, menor).",
-        "examples": ["This salsa is better than the other one.", "My younger sister lives in Monterrey."]
+        "examples": ["This salsa is better than the other one.", "My younger sister lives in Puebla."]
       },
       {
         "id": "superlative",
@@ -1268,7 +1268,7 @@
         "text": "mi casa, mis amigos; tu carro, tus llaves. Gender does not change: mi hermano and mi hermana. Careful: tu (your) has no accent, tú (you) has one.",
         "because": "Before a noun comes the short form mi, tu, su; for several things mis, tus, sus.",
         "examples": [
-          "My sister lives in Monterrey.",
+          "My sister lives in Oaxaca.",
           "Where are your keys?"
         ]
       },

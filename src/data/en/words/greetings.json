@@ -31,7 +31,7 @@
   { "id": "hasta-luego", "en": ["see you later", "goodbye"], "examples": ["See you later, take care."] },
   { "id": "que-tal", "en": ["how are things?", "how's it going?"], "examples": ["Hi, how are things?"] },
   { "id": "que-onda", "en": ["what's up?"], "examples": ["What's up? How are you?"], "note": "A casual Mexican greeting among friends." },
-  { "id": "mucho-gusto", "en": ["nice to meet you", "pleased to meet you"], "examples": ["Nice to meet you, I'm Adam."] },
+  { "id": "mucho-gusto", "en": ["nice to meet you", "pleased to meet you"], "examples": ["Nice to meet you, I'm Mateo."] },
   { "id": "igualmente", "en": ["likewise", "same to you", "you too"], "examples": ["“Nice to meet you.” “Likewise.”"] },
   { "id": "bienvenido", "en": ["welcome"], "examples": ["Welcome to Mexico!"] },
   { "id": "adios", "en": ["goodbye", "bye"], "examples": ["Bye, see you tomorrow."] },

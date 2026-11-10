@@ -977,12 +977,12 @@
   },
   {
     "id": "s2232",
-    "es": "Aunque la oferta es buena, todavía no quiero aceptar el puesto en Monterrey.",
-    "sk": "Hoci je ponuka dobrá, zatiaľ nechcem prijať miesto v Monterrey.",
+    "es": "Aunque la oferta es buena, todavía no quiero aceptar el puesto en Querétaro.",
+    "sk": "Hoci je ponuka dobrá, zatiaľ nechcem prijať miesto v Querétaro.",
     "level": "B2",
     "topics": ["work"],
     "grammar": ["subjuntivo-aunque", "presente"],
-    "tokens": ["Aunque", "la", "oferta", "es", "buena", ",", "todavía", "no", "quiero", "aceptar", "el", "puesto", "en", "Monterrey", "."],
+    "tokens": ["Aunque", "la", "oferta", "es", "buena", ",", "todavía", "no", "quiero", "aceptar", "el", "puesto", "en", "Querétaro", "."],
     "cloze": [
       {
         "tokenIndex": 3,

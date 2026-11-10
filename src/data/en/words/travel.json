@@ -24,7 +24,7 @@
   {
     "id": "reservacion",
     "en": ["reservation"],
-    "examples": ["I have a reservation under the name Adam."],
+    "examples": ["I have a reservation under the name Javier."],
     "note": "In Mexico it's “reservación” (in Spain “reserva”)."
   },
   { "id": "habitacion", "en": ["room (in a hotel)"], "examples": ["I'd like a room for two people."] },

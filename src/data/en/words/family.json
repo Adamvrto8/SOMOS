@@ -7,7 +7,7 @@
     "examples": ["My dad works at a bank."],
     "note": "Mind the accent: papá = dad, papa = potato. Mis papás = my parents."
   },
-  { "id": "hermano", "en": ["brother"], "examples": ["My brother lives in Monterrey."], "note": "hermana = sister, hermanos = brothers or siblings." },
+  { "id": "hermano", "en": ["brother"], "examples": ["My brother lives in Tijuana."], "note": "hermana = sister, hermanos = brothers or siblings." },
   { "id": "hijo", "en": ["son"], "examples": ["How many children do you have?"], "note": "hija = daughter, hijos = sons or (one's own) children." },
   { "id": "esposo", "en": ["husband"], "examples": ["My husband's name is Luis."], "note": "esposa = wife." },
   {
@@ -38,7 +38,7 @@
   { "id": "sobrino", "en": ["nephew"], "examples": ["My nephew is five years old."], "note": "sobrina = niece." },
   { "id": "nino", "en": ["child", "boy", "kid"], "examples": ["The children are playing in the yard."], "note": "niña = girl; los niños = children." },
   { "id": "bebe", "en": ["baby"], "examples": ["The baby is sleeping."] },
-  { "id": "novio", "en": ["boyfriend", "groom"], "examples": ["My boyfriend is from Monterrey."], "note": "novia = girlfriend, and also bride." },
+  { "id": "novio", "en": ["boyfriend", "groom"], "examples": ["My boyfriend is from Veracruz."], "note": "novia = girlfriend, and also bride." },
   { "id": "casado", "en": ["married"], "examples": ["Are you married?"], "note": "estar casado / casada = to be married." },
   { "id": "soltero", "en": ["single"], "examples": ["My brother is still single."] },
   { "id": "mayor", "en": ["older", "elder"], "examples": ["My older brother lives in Cancún."] },
@@ -65,7 +65,7 @@
     "note": "Also a way to address a young man, for example in a store: ¡Joven!"
   },
   { "id": "boda", "en": ["wedding"], "examples": ["The wedding is in June."] },
-  { "id": "divorcio", "en": ["divorce"], "examples": ["After the divorce he moved to Monterrey."] },
+  { "id": "divorcio", "en": ["divorce"], "examples": ["After the divorce he moved to Toluca."] },
   {
     "id": "padrino",
     "en": ["godfather"],

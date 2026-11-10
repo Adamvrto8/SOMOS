@@ -2574,12 +2574,12 @@
   },
   {
     "id": "s2248",
-    "es": "Estos productos fueron importados desde Asia por una empresa de Monterrey.",
-    "sk": "Tieto výrobky dovážala z Ázie spoločnosť z Monterrey.",
+    "es": "Estos productos fueron importados desde Asia por una empresa de Puebla.",
+    "sk": "Tieto výrobky dovážala z Ázie spoločnosť z Puebla.",
     "level": "B2",
     "topics": ["shopping"],
     "grammar": ["ser-passive", "preterito"],
-    "tokens": ["Estos", "productos", "fueron", "importados", "desde", "Asia", "por", "una", "empresa", "de", "Monterrey", "."],
+    "tokens": ["Estos", "productos", "fueron", "importados", "desde", "Asia", "por", "una", "empresa", "de", "Puebla", "."],
     "cloze": [
       {
         "tokenIndex": 2,

@@ -590,12 +590,12 @@
   },
   {
     "id": "s162",
-    "es": "Estamos esperando el vuelo a Monterrey.",
-    "sk": "Čakáme na let do Monterrey.",
+    "es": "Estamos esperando el vuelo a Cancún.",
+    "sk": "Čakáme na let do Cancún.",
     "level": "A1",
     "topics": ["travel"],
     "grammar": ["progresivo"],
-    "tokens": ["Estamos", "esperando", "el", "vuelo", "a", "Monterrey", "."],
+    "tokens": ["Estamos", "esperando", "el", "vuelo", "a", "Cancún", "."],
     "cloze": [
       {
         "tokenIndex": 0,

@@ -221,7 +221,7 @@
   { "id": "a-la-larga", "en": ["in the long run"], "examples": ["In the long run, cooking at home is cheaper."] },
   { "id": "en-absoluto", "en": ["not at all"], "examples": ["It doesn't bother me at all."] },
   { "id": "de-antemano", "en": ["in advance"], "examples": ["Thanks in advance for your help."] },
-  { "id": "a-proposito", "en": ["by the way", "on purpose"], "examples": ["By the way, did you see Laura?", "I didn't do it on purpose."] },
+  { "id": "a-proposito", "en": ["by the way", "on purpose"], "examples": ["By the way, did you see Camila?", "I didn't do it on purpose."] },
   { "id": "cuanto-antes", "en": ["as soon as possible"], "examples": ["Call me as soon as possible."] },
   { "id": "ni-siquiera", "en": ["not even"], "examples": ["He didn't even say hi to me."] },
   { "id": "es-mas", "en": ["what's more", "in fact"], "examples": ["I don't like coffee. In fact, I never drink it."] },

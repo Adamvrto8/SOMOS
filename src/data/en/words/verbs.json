@@ -72,7 +72,7 @@
     "examples": ["I like chatting with my grandma."],
     "note": "A typically Mexican word for “to chat”. In Spain more often “charlar”."
   },
-  { "id": "llamarse", "en": ["to be called"], "examples": ["What's your name?", "My name is Adam."] },
+  { "id": "llamarse", "en": ["to be called"], "examples": ["What's your name?", "My name is Luis."] },
   { "id": "dormir", "en": ["to sleep"], "examples": ["I slept very well last night."] },
   {
     "id": "estudiar",
@@ -301,7 +301,7 @@
   },
   { "id": "apagar", "en": ["to turn off", "to put out"], "examples": ["Turn off the TV, it's late."] },
   { "id": "crecer", "en": ["to grow", "to grow up"], "examples": ["I grew up in a small town near Puebla."] },
-  { "id": "ofrecer", "en": ["to offer"], "examples": ["They offered me a job in Monterrey."] },
+  { "id": "ofrecer", "en": ["to offer"], "examples": ["They offered me a job in León."] },
   {
     "id": "parecer",
     "en": ["to seem", "to look"],

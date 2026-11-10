@@ -106,7 +106,7 @@
         "tokenIndex": 3,
         "answer": "nadie",
         "lemma": "nadie",
-        "hint": "nikto",
+        "hint": "nikto (osoba)",
         "tip": "negation",
         "why": "double",
         "distractors": ["nada", "alguien", "nunca"]

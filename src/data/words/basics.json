@@ -1255,7 +1255,7 @@
     "level": "B2",
     "topics": ["basics"],
     "examples": [
-      { "es": "A propósito, ¿viste a Laura?", "sk": "Mimochodom, videl si Lauru?" },
+      { "es": "A propósito, ¿viste a Camila?", "sk": "Mimochodom, videl si Camilu?" },
       { "es": "No lo hice a propósito.", "sk": "Neurobil som to naschvál." }
     ]
   },

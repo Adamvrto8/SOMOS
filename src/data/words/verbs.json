@@ -228,7 +228,7 @@
     "verbId": "llamarse",
     "level": "A1",
     "topics": ["greetings"],
-    "examples": [{ "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?" }, { "es": "Me llamo Adam.", "sk": "Volám sa Adam." }]
+    "examples": [{ "es": "¿Cómo te llamas?", "sk": "Ako sa voláš?" }, { "es": "Me llamo Luis.", "sk": "Volám sa Luis." }]
   },
   {
     "id": "dormir",
@@ -1328,7 +1328,7 @@
     "verbId": "ofrecer",
     "level": "B1",
     "topics": ["shopping", "work"],
-    "examples": [{ "es": "Me ofrecieron un trabajo en Monterrey.", "sk": "Ponúkli mi prácu v Monterrey." }]
+    "examples": [{ "es": "Me ofrecieron un trabajo en León.", "sk": "Ponúkli mi prácu v Leóne." }]
   },
   {
     "id": "parecer",

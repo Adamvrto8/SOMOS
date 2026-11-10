@@ -93,7 +93,7 @@
   { "id": "s1824", "en": "It was important that the whole family be present." },
   { "id": "s1883", "en": "If my grandparents lived nearby, we would visit them every Sunday." },
   { "id": "s1921", "en": "My parents do not believe that I can live alone." },
-  { "id": "s1943", "en": "My sister, who I talk to every day, lives in Monterrey.", "hints": ["relative word"] },
+  { "id": "s1943", "en": "My sister, who I talk to every day, lives in Guadalajara.", "hints": ["relative word"] },
   { "id": "s1971", "en": "In my family we eat together on Sundays.", "hints": ["pronoun"] },
   { "id": "s2022", "en": "My grandfather told me that when he was young he walked five kilometers to school." },
   { "id": "s2023", "en": "My parents want us to move closer to them before the baby is born." },
