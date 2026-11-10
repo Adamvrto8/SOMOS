@@ -91,7 +91,7 @@
   { "id": "s2048", "en": "Say hi to your brother for me and tell him to call me when he can." },
   { "id": "s2049", "en": "Although we had never met, he welcomed me as if we were lifelong friends." },
   { "id": "s2050", "en": "I hope you have a great weekend and that you rest a lot." },
-  { "id": "s2051", "en": "My grandfather greets everyone who walks down his street, whether they are acquaintances or not." },
+  { "id": "s2051", "en": "My grandfather greets everyone who walks down his street, whether they are acquaintances or not.", "hints": [null, null] },
   { "id": "s2175", "en": "I don't think they know that today is your birthday." },
   { "id": "s2176", "en": "When you see Valentina, say hi to her for me." },
   { "id": "s2177", "en": "I'm sending you a message so that you know I arrived safely." },

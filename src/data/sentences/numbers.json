@@ -1390,6 +1390,7 @@
     "sk": "Politickým stranám dôveruje len menšina opýtaných.",
     "level": "B2",
     "topics": ["numbers"],
+    "grammar": ["verb-prep"],
     "tokens": ["Solo", "una", "minoría", "de", "los", "encuestados", "confía", "en", "los", "partidos", "políticos", "."],
     "cloze": [
       {
@@ -1398,6 +1399,15 @@
         "lemma": "minoría",
         "hint": "menšina",
         "distractors": ["cifra", "cantidad", "estadística"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -1807,7 +1817,7 @@
     "sk": "Brat, ktorý má v pondelok tridsiatku, chce malú oslavu.",
     "level": "B2",
     "topics": ["numbers"],
-    "grammar": ["relatives-prep", "presente"],
+    "grammar": ["relatives-prep", "presente", "relatives-mood"],
     "tokens": ["Mi", "hermano", ",", "quien", "cumple", "treinta", "años", "el", "lunes", ",", "quiere", "una", "fiesta", "pequeña", "."],
     "cloze": [
       {
@@ -1818,6 +1828,15 @@
         "tip": "relatives-prep",
         "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "cumple",
+        "lemma": "cumplir",
+        "hint": "cumplir · él",
+        "tip": "relatives-mood",
+        "why": "explicative",
+        "distractors": ["cumpla", "cumplió", "cumplirá"]
       }
     ]
   },
@@ -2010,6 +2029,166 @@
         "tip": "interrogatives",
         "why": "cual",
         "distractors": ["Qué", "Cuánto", "Dónde"]
+      }
+    ]
+  },
+  {
+    "id": "s2313",
+    "es": "Los analistas dependen de los datos del censo para calcular el crecimiento.",
+    "sk": "Analytici závisia od údajov zo sčítania ľudu, aby vypočítali rast.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Los", "analistas", "dependen", "de", "los", "datos", "del", "censo", "para", "calcular", "el", "crecimiento", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2314",
+    "es": "Nadie se dio cuenta de que la cifra estaba mal copiada.",
+    "sk": "Nikto si nevšimol, že číslo bolo zle prepísané.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Nadie", "se", "dio", "cuenta", "de", "que", "la", "cifra", "estaba", "mal", "copiada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2315",
+    "es": "Tardamos más de una hora en sumar todos los totales del trimestre.",
+    "sk": "Sčítanie všetkých súčtov za štvrťrok nám trvalo viac ako hodinu.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Tardamos", "más", "de", "una", "hora", "en", "sumar", "todos", "los", "totales", "del", "trimestre", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2316",
+    "es": "Los economistas hablan de una inflación del cinco por ciento para el próximo año.",
+    "sk": "Ekonómovia hovoria o päťpercentnej inflácii na budúci rok.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Los", "economistas", "hablan", "de", "una", "inflación", "del", "cinco", "por", "ciento", "para", "el", "próximo", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2317",
+    "es": "No confío en esas estadísticas porque nadie explicó cómo se obtuvieron.",
+    "sk": "Tým štatistikám neverím, lebo nikto nevysvetlil, ako vznikli.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["No", "confío", "en", "esas", "estadísticas", "porque", "nadie", "explicó", "cómo", "se", "obtuvieron", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2318",
+    "es": "Los vendedores cuentan con un aumento del diez por ciento en sus comisiones.",
+    "sk": "Predajcovia počítajú s desaťpercentným zvýšením provízií.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Los", "vendedores", "cuentan", "con", "un", "aumento", "del", "diez", "por", "ciento", "en", "sus", "comisiones", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "con",
+        "distractors": ["de", "en", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s2319",
+    "es": "Mi hermano me ayudó a revisar las cuentas de todo el año.",
+    "sk": "Brat mi pomohol skontrolovať účty za celý rok.",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Mi", "hermano", "me", "ayudó", "a", "revisar", "las", "cuentas", "de", "todo", "el", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2320",
+    "es": "¿Qué piensas de estos resultados de la encuesta?",
+    "sk": "Čo si myslíš o týchto výsledkoch prieskumu?",
+    "level": "B2",
+    "topics": ["numbers"],
+    "grammar": ["verb-prep"],
+    "tokens": ["¿", "Qué", "piensas", "de", "estos", "resultados", "de", "la", "encuesta", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "change",
+        "distractors": ["en", "a", "con"]
       }
     ]
   }

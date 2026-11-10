@@ -1034,6 +1034,7 @@
     "sk": "Moja teta je vdova už päť rokov.",
     "level": "B1",
     "topics": ["family"],
+    "grammar": ["possessives", "temporal"],
     "tokens": ["Mi", "tía", "es", "viuda", "desde", "hace", "cinco", "años", "."],
     "cloze": [
       {
@@ -1051,9 +1052,17 @@
         "lemma": "viudo",
         "hint": "vdova",
         "distractors": ["viudo", "casada", "soltera"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["durante", "mientras", "para"]
       }
-    ],
-    "grammar": ["possessives"]
+    ]
   },
   {
     "id": "s674",
@@ -1503,7 +1512,7 @@
     "sk": "Krstný otec mi daroval prvý bicykel, keď som mal osem rokov.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "temporal"],
     "tokens": ["Mi", "padrino", "me", "regaló", "mi", "primera", "bicicleta", "cuando", "cumplí", "ocho", "años", "."],
     "cloze": [
       {
@@ -1512,6 +1521,15 @@
         "lemma": "cumplir",
         "hint": "cumplir · yo · pretérito",
         "distractors": ["cumplo", "cumplía", "cumpliré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["mientras", "hasta", "desde"]
       }
     ]
   },
@@ -1563,7 +1581,7 @@
     "sk": "S kmotrom sme sa spoznali, keď sme robili v tej istej fabrike.",
     "level": "B1",
     "topics": ["family"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "temporal"],
     "tokens": ["Mi", "compadre", "y", "yo", "nos", "conocimos", "cuando", "trabajábamos", "en", "la", "misma", "fábrica", "."],
     "cloze": [
       {
@@ -1572,6 +1590,15 @@
         "lemma": "trabajar",
         "hint": "trabajar · nosotros · imperfecto",
         "distractors": ["trabajamos", "trabajaron", "trabajaré"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["hasta", "desde", "antes"]
       }
     ]
   },
@@ -1633,6 +1660,7 @@
     "sk": "Teta sa o mňa postarala, keď som osirel.",
     "level": "B2",
     "topics": ["family"],
+    "grammar": ["verb-prep"],
     "tokens": ["Mi", "tía", "se", "encargó", "de", "mí", "cuando", "quedé", "huérfano", "."],
     "cloze": [
       {
@@ -1641,6 +1669,15 @@
         "lemma": "huérfano",
         "hint": "sirota",
         "distractors": ["soltero", "divorciado", "casado"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -2264,7 +2301,7 @@
     "sk": "Otec trvá na tom, aby sme večerali spolu, aj keď každý príde v inú hodinu.",
     "level": "B2",
     "topics": ["family"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "verb-prep"],
     "tokens": ["Mi", "papá", "insiste", "en", "que", "cenemos", "juntos", "aunque", "cada", "quien", "llegue", "a", "una", "hora", "distinta", "."],
     "cloze": [
       {
@@ -2273,6 +2310,15 @@
         "lemma": "cenar",
         "hint": "cenar · nosotros · subjuntivo",
         "distractors": ["cenamos", "cenábamos", "cenaremos"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -2585,6 +2631,126 @@
         "tip": "personal-a",
         "why": "nadie",
         "distractors": ["De", "En", "Con"]
+      }
+    ]
+  },
+  {
+    "id": "s2392",
+    "es": "No hay nadie en casa que sepa arreglar la lavadora.",
+    "sk": "Doma nie je nikto, kto by vedel opraviť práčku.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["No", "hay", "nadie", "en", "casa", "que", "sepa", "arreglar", "la", "lavadora", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sepa",
+        "lemma": "saber",
+        "hint": "saber · él · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "negative",
+        "distractors": ["sabe", "supo", "sabrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2393",
+    "es": "Busco a alguien que cuide a mis hijos por las tardes.",
+    "sk": "Hľadám niekoho, kto by sa popoludní staral o moje deti.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Busco", "a", "alguien", "que", "cuide", "a", "mis", "hijos", "por", "las", "tardes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "cuide",
+        "lemma": "cuidar",
+        "hint": "cuidar · él · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["cuida", "cuidó", "cuidará"]
+      }
+    ]
+  },
+  {
+    "id": "s2394",
+    "es": "Conozco a alguien que vive cerca de la escuela y puede llevar a los niños.",
+    "sk": "Poznám niekoho, kto býva blízko školy a môže odviezť deti.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Conozco", "a", "alguien", "que", "vive", "cerca", "de", "la", "escuela", "y", "puede", "llevar", "a", "los", "niños", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vive",
+        "lemma": "vivir",
+        "hint": "vivir · él",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["viva", "vivió", "vivirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2395",
+    "es": "Mi primo, que estudia medicina en Puebla, viene a casa en Navidad.",
+    "sk": "Môj bratranec, ktorý študuje medicínu v Pueble, príde domov na Vianoce.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Mi", "primo", ",", "que", "estudia", "medicina", "en", "Puebla", ",", "viene", "a", "casa", "en", "Navidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "estudia",
+        "lemma": "estudiar",
+        "hint": "estudiar · él",
+        "tip": "relatives-mood",
+        "why": "explicative",
+        "distractors": ["estudie", "estudió", "estudiará"]
+      }
+    ]
+  },
+  {
+    "id": "s2396",
+    "es": "Quiero una casa donde toda la familia pueda reunirse en Navidad.",
+    "sk": "Chcem dom, kde sa celá rodina bude môcť stretnúť na Vianoce.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Quiero", "una", "casa", "donde", "toda", "la", "familia", "pueda", "reunirse", "en", "Navidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · ella · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["puede", "pudo", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2397",
+    "es": "Mi mamá siempre me da todo lo que le pido.",
+    "sk": "Mama mi vždy dá všetko, o čo ju poprosím.",
+    "level": "B2",
+    "topics": ["family"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Mi", "mamá", "siempre", "me", "da", "todo", "lo", "que", "le", "pido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "pido",
+        "lemma": "pedir",
+        "hint": "pedir · yo",
+        "tip": "relatives-mood",
+        "why": "quantity",
+        "distractors": ["pedí", "pediré", "pedimos"]
       }
     ]
   }

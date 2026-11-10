@@ -65,8 +65,8 @@ describe('usageClozeErrors', () => {
     expect(checksOwnHint(blank({ hint: 'hay/estar', lemma: 'estar', answer: 'está', tip: undefined }), verbById)).toBe(false)
   })
 
-  it('names twenty usage tips, each a tip with rules', () => {
-    expect(USAGE_TIPS).toHaveLength(20)
+  it('names thirty-one usage tips, each a tip with rules', () => {
+    expect(USAGE_TIPS).toHaveLength(31)
     for (const id of USAGE_TIPS) expect(tipById.get(id)?.rules.length).toBeGreaterThan(0)
   })
 })

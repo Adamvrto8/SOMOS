@@ -1353,7 +1353,7 @@
     "sk": "Bola obrovská zápcha, tak sme sa rozhodli ísť metrom.",
     "level": "B1",
     "topics": ["city"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "cause"],
     "tokens": ["Había", "un", "embotellamiento", "enorme", ",", "así", "que", "decidimos", "irnos", "en", "metro", "."],
     "cloze": [
       {
@@ -1362,6 +1362,15 @@
         "lemma": "decidir",
         "hint": "decidir · nosotros · pretérito",
         "distractors": ["decido", "decidieron", "decidíamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
       }
     ]
   },
@@ -2546,6 +2555,266 @@
         "tip": "personal-a",
         "why": "nadie",
         "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2374",
+    "es": "Iré en bici al trabajo siempre que no llueva.",
+    "sk": "Do práce pôjdem na bicykli, pokiaľ nebude pršať.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Iré", "en", "bici", "al", "trabajo", "siempre", "que", "no", "llueva", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "siempre",
+        "lemma": "siempre",
+        "hint": "pod podmienkou, že",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["porque", "después", "apenas"]
+      }
+    ]
+  },
+  {
+    "id": "s2375",
+    "es": "Podemos ir al centro en metro, a no ser que haya huelga.",
+    "sk": "Do centra môžeme ísť metrom, ak nebude štrajk.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Podemos", "ir", "al", "centro", "en", "metro", ",", "a", "no", "ser", "que", "haya", "huelga", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "ser",
+        "lemma": "a no ser",
+        "hint": "a no … que",
+        "tip": "cond-connectors",
+        "why": "a-no-ser",
+        "distractors": ["estar", "haber", "tener"]
+      }
+    ]
+  },
+  {
+    "id": "s2376",
+    "es": "Llévate el mapa por si se descompone el GPS.",
+    "sk": "Vezmi si mapu pre prípad, že sa pokazí GPS.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Llévate", "el", "mapa", "por", "si", "se", "descompone", "el", "GPS", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "pre prípad, že",
+        "tip": "cond-connectors",
+        "why": "por-si",
+        "distractors": ["que", "como", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2377",
+    "es": "Como no llegues a tiempo, el bus se va sin ti.",
+    "sk": "Ak neprídeš načas, bus odíde bez teba.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Como", "no", "llegues", "a", "tiempo", ",", "el", "bus", "se", "va", "sin", "ti", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Como",
+        "lemma": "como",
+        "hint": "hrozba: ak",
+        "tip": "cond-connectors",
+        "why": "como",
+        "distractors": ["Porque", "Pues", "Donde"]
+      }
+    ]
+  },
+  {
+    "id": "s2378",
+    "es": "Te presto mi bici siempre que me la devuelvas hoy.",
+    "sk": "Požičiam ti bicykel, pokiaľ mi ho vrátiš ešte dnes.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Te", "presto", "mi", "bici", "siempre", "que", "me", "la", "devuelvas", "hoy", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "devuelvas",
+        "lemma": "devolver",
+        "hint": "devolver · tú · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["devolviste", "devolverás", "devolvías"]
+      }
+    ]
+  },
+  {
+    "id": "s2379",
+    "es": "Salimos a caminar por el centro, salvo que empiece a llover fuerte.",
+    "sk": "Ideme sa prejsť centrom, ibaže by začalo silno pršať.",
+    "level": "B2",
+    "topics": ["city"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Salimos", "a", "caminar", "por", "el", "centro", ",", "salvo", "que", "empiece", "a", "llover", "fuerte", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "empiece",
+        "lemma": "empezar",
+        "hint": "empezar · él · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "a-no-ser",
+        "distractors": ["empieza", "empezó", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s2442",
+    "es": "Un policía me dijo que el museo cerraba a las seis.",
+    "sk": "Policajt mi povedal, že múzeum sa zatvára o šiestej.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["Un", "policía", "me", "dijo", "que", "el", "museo", "cerraba", "a", "las", "seis", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "cerraba",
+        "lemma": "cerrar",
+        "hint": "cerrar · él",
+        "tip": "reported",
+        "why": "que",
+        "distractors": ["cerró", "cierre", "cerrando"]
+      }
+    ]
+  },
+  {
+    "id": "s2443",
+    "es": "La señora preguntó si el bus pasaba por el centro.",
+    "sk": "Pani sa opýtala, či autobus ide cez centrum.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["La", "señora", "preguntó", "si", "el", "bus", "pasaba", "por", "el", "centro", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "tip": "reported",
+        "why": "question",
+        "distractors": ["que", "donde", "porque"]
+      }
+    ]
+  },
+  {
+    "id": "s2444",
+    "es": "El conductor nos dijo que bajáramos en la próxima parada.",
+    "sk": "Vodič nám povedal, aby sme vystúpili na ďalšej zastávke.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["El", "conductor", "nos", "dijo", "que", "bajáramos", "en", "la", "próxima", "parada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "bajáramos",
+        "lemma": "bajar",
+        "hint": "bajar · nosotros",
+        "tip": "reported",
+        "why": "command",
+        "distractors": ["bajamos", "bajaríamos", "bajábamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2445",
+    "es": "Me dijeron que iban a abrir un parque nuevo cerca del río.",
+    "sk": "Povedali mi, že pri rieke otvoria nový park.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["Me", "dijeron", "que", "iban", "a", "abrir", "un", "parque", "nuevo", "cerca", "del", "río", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "iban",
+        "lemma": "ir",
+        "hint": "ir · ellos",
+        "tip": "reported",
+        "why": "mx",
+        "distractors": ["fueron", "irán", "iremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2446",
+    "es": "El taxista dijo que no conocía esa calle.",
+    "sk": "Taxikár povedal, že tú ulicu nepozná.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["El", "taxista", "dijo", "que", "no", "conocía", "esa", "calle", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "conocía",
+        "lemma": "conocer",
+        "hint": "conocer · él",
+        "tip": "reported",
+        "why": "que",
+        "distractors": ["conoció", "conocerá", "conozca"]
+      }
+    ]
+  },
+  {
+    "id": "s2447",
+    "es": "La policía nos dijo que no estacionáramos frente a la entrada.",
+    "sk": "Polícia nám povedala, aby sme nestáli pred vchodom.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["La", "policía", "nos", "dijo", "que", "no", "estacionáramos", "frente", "a", "la", "entrada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estacionáramos",
+        "lemma": "estacionar",
+        "hint": "estacionar · nosotros",
+        "tip": "reported",
+        "why": "command",
+        "distractors": ["estacionamos", "estacionábamos", "estacionaríamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2466",
+    "es": "Me preguntó si sabía dónde estaba la estación.",
+    "sk": "Spýtal sa ma, či viem, kde je stanica.",
+    "level": "B1",
+    "topics": ["city"],
+    "grammar": ["reported"],
+    "tokens": ["Me", "preguntó", "si", "sabía", "dónde", "estaba", "la", "estación", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "tip": "reported",
+        "why": "question",
+        "distractors": ["que", "porque", "cuando"]
       }
     ]
   }

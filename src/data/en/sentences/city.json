@@ -62,7 +62,7 @@
   { "id": "s1068", "en": "In my opinion, the city needs more bike lanes and fewer cars.", "hints": [null, "preposition"] },
   { "id": "s1069", "en": "We moved to this neighborhood because it's close to the kids' school.", "hints": [null, "because"] },
   { "id": "s1070", "en": "Public transportation is cheap, but at rush hour it's packed.", "hints": ["full"] },
-  { "id": "s1071", "en": "There was a huge traffic jam, so we decided to take the subway." },
+  { "id": "s1071", "en": "There was a huge traffic jam, so we decided to take the subway.", "hints": [null, "so"] },
   { "id": "s1072", "en": "When I was a student, I always got off the combi one stop early.", "hints": [null, "preposition"] },
   { "id": "s1073", "en": "It seems to me that speed bumps don't really make people drive slowly." },
   { "id": "s1074", "en": "I paid the meter for two hours, but I got back late and got a ticket." },
@@ -119,5 +119,18 @@
   { "id": "s2204", "en": "The square where they used to sell corn on the cob no longer exists.", "hints": ["relative word (where)"] },
   { "id": "s2205", "en": "The bus that goes down my street takes a long time.", "hints": ["relative word (which, who)"] },
   { "id": "s2274", "en": "There is no bank near here.", "hints": ["none"] },
-  { "id": "s2287", "en": "I do not know anyone in this city.", "hints": ["preposition"] }
+  { "id": "s2287", "en": "I do not know anyone in this city.", "hints": ["preposition"] },
+  { "id": "s2374", "en": "I will bike to work as long as it does not rain.", "hints": ["provided that"] },
+  { "id": "s2375", "en": "We can go downtown by metro, unless there is a strike.", "hints": ["unless (a no … que)"] },
+  { "id": "s2376", "en": "Take the map in case the GPS breaks down.", "hints": ["in case"] },
+  { "id": "s2377", "en": "If you do not arrive on time, the bus leaves without you.", "hints": ["if (threat)"] },
+  { "id": "s2378", "en": "I will lend you my bike as long as you give it back today." },
+  { "id": "s2379", "en": "We go for a walk downtown, unless it starts to rain hard." },
+  { "id": "s2442", "en": "A police officer told me the museum closed at six." },
+  { "id": "s2443", "en": "The woman asked if the bus went through downtown.", "hints": ["if"] },
+  { "id": "s2444", "en": "The driver told us to get off at the next stop." },
+  { "id": "s2445", "en": "They told me they were going to open a new park near the river." },
+  { "id": "s2446", "en": "The taxi driver said he did not know that street." },
+  { "id": "s2447", "en": "The police told us not to park in front of the entrance." },
+  { "id": "s2466", "en": "He asked me whether I knew where the station was.", "hints": ["whether"] }
 ]

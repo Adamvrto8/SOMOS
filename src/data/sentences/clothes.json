@@ -483,7 +483,7 @@
     "sk": "Obliekol som si sveter, lebo sa začínalo ochladzovať.",
     "level": "B1",
     "topics": ["clothes", "weather"],
-    "grammar": ["preterito", "imperfecto"],
+    "grammar": ["preterito", "imperfecto", "periphrases"],
     "tokens": ["Me", "puse", "el", "suéter", "porque", "empezaba", "a", "hacer", "frío", "."],
     "cloze": [
       {
@@ -499,6 +499,15 @@
         "lemma": "porque",
         "hint": "pretože",
         "distractors": ["pero", "sino", "si"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "empezar",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -1456,6 +1465,7 @@
     "sk": "Táto blúzka je z vlny, preto trochu pichá.",
     "level": "B1",
     "topics": ["clothes"],
+    "grammar": ["demonstratives", "cause"],
     "tokens": ["La", "tela", "de", "esta", "blusa", "es", "de", "lana", ",", "por", "eso", "pica", "un", "poco", "."],
     "cloze": [
       {
@@ -1473,9 +1483,17 @@
         "lemma": "lana",
         "hint": "vlna",
         "distractors": ["botón", "cierre", "bolsillo"]
+      },
+      {
+        "tokenIndex": 9,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["sin", "con", "desde"]
       }
-    ],
-    "grammar": ["demonstratives"]
+    ]
   },
   {
     "id": "s1112",
@@ -2027,7 +2045,7 @@
     "sk": "Môžeš si zobrať šál, pokiaľ mi ho vrátiš budúci týždeň.",
     "level": "B2",
     "topics": ["clothes"],
-    "grammar": ["subjuntivo-clauses", "object-pronouns"],
+    "grammar": ["subjuntivo-clauses", "object-pronouns", "cond-connectors"],
     "tokens": ["Puedes", "llevarte", "la", "bufanda", "con", "tal", "de", "que", "me", "la", "devuelvas", "la", "próxima", "semana", "."],
     "cloze": [
       {
@@ -2036,6 +2054,15 @@
         "lemma": "devolver",
         "hint": "devolver · tú · subjuntivo",
         "distractors": ["devuelves", "devolviste", "devolverás"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "tal",
+        "lemma": "tal",
+        "hint": "podmienka (con … de que)",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["cual", "tan", "más"]
       }
     ]
   },
@@ -2136,6 +2163,295 @@
         "tip": "demonstratives",
         "why": "alone",
         "distractors": ["este", "esa", "eso"]
+      }
+    ]
+  },
+  {
+    "id": "s2386",
+    "es": "Busco una chaqueta que no sea demasiado cara y que me quede bien.",
+    "sk": "Hľadám bundu, ktorá nebude príliš drahá a ktorá mi bude dobre sedieť.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Busco", "una", "chaqueta", "que", "no", "sea", "demasiado", "cara", "y", "que", "me", "quede", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "sea",
+        "lemma": "ser",
+        "hint": "ser · ella · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["es", "fue", "será"]
+      },
+      {
+        "tokenIndex": 11,
+        "answer": "quede",
+        "lemma": "quedar",
+        "hint": "quedar · ella · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["queda", "quedó", "quedará"]
+      }
+    ]
+  },
+  {
+    "id": "s2387",
+    "es": "No hay ninguna camisa en la tienda que me guste de verdad.",
+    "sk": "V obchode nie je žiadna košeľa, ktorá by sa mi naozaj páčila.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["No", "hay", "ninguna", "camisa", "en", "la", "tienda", "que", "me", "guste", "de", "verdad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "guste",
+        "lemma": "gustar",
+        "hint": "gustar · ella · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "negative",
+        "distractors": ["gusta", "gustó", "gustará"]
+      }
+    ]
+  },
+  {
+    "id": "s2388",
+    "es": "Tengo un vestido azul que compré en Oaxaca y que uso para las bodas.",
+    "sk": "Mám modré šaty, ktoré som kúpil v Oaxace a nosím ich na svadby.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Tengo", "un", "vestido", "azul", "que", "compré", "en", "Oaxaca", "y", "que", "uso", "para", "las", "bodas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "compré",
+        "lemma": "comprar",
+        "hint": "comprar · yo · pretérito",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["compre", "compro", "compraré"]
+      }
+    ]
+  },
+  {
+    "id": "s2389",
+    "es": "Mi tía, que vive en Mérida, me regaló unos zapatos que me quedan perfectos.",
+    "sk": "Moja teta, ktorá býva v Méride, mi darovala topánky, ktoré mi sedia perfektne.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Mi", "tía", ",", "que", "vive", "en", "Mérida", ",", "me", "regaló", "unos", "zapatos", "que", "me", "quedan", "perfectos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "vive",
+        "lemma": "vivir",
+        "hint": "vivir · ella",
+        "tip": "relatives-mood",
+        "why": "explicative",
+        "distractors": ["viva", "vivió", "vivirá"]
+      }
+    ]
+  },
+  {
+    "id": "s2390",
+    "es": "¿Hay alguien aquí que venda ropa de segunda mano?",
+    "sk": "Je tu niekto, kto predáva použité oblečenie?",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["¿", "Hay", "alguien", "aquí", "que", "venda", "ropa", "de", "segunda", "mano", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "venda",
+        "lemma": "vender",
+        "hint": "vender · él · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "negative",
+        "distractors": ["vende", "vendió", "venderá"]
+      }
+    ]
+  },
+  {
+    "id": "s2391",
+    "es": "Ponte todo lo que quieras, pero no llegues tarde.",
+    "sk": "Obleč si všetko, čo chceš, ale neprídi neskoro.",
+    "level": "B2",
+    "topics": ["clothes"],
+    "grammar": ["relatives-mood"],
+    "tokens": ["Ponte", "todo", "lo", "que", "quieras", ",", "pero", "no", "llegues", "tarde", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quieras",
+        "lemma": "querer",
+        "hint": "querer · tú · subjuntivo",
+        "tip": "relatives-mood",
+        "why": "quantity",
+        "distractors": ["quieres", "quisiste", "querrás"]
+      }
+    ]
+  },
+  {
+    "id": "s2448",
+    "es": "Quizá compre este abrigo si baja el precio.",
+    "sk": "Možno si kúpim tento kabát, ak klesne cena.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Quizá", "compre", "este", "abrigo", "si", "baja", "el", "precio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "compre",
+        "lemma": "comprar",
+        "hint": "comprar · yo · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["compro", "compré", "compraré"]
+      }
+    ]
+  },
+  {
+    "id": "s2449",
+    "es": "Tal vez Laura use el vestido azul en la boda.",
+    "sk": "Možno si Laura na svadbu oblečie modré šaty.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Tal", "vez", "Laura", "use", "el", "vestido", "azul", "en", "la", "boda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "use",
+        "lemma": "usar",
+        "hint": "usar · ella · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["usa", "usó", "usará"]
+      }
+    ]
+  },
+  {
+    "id": "s2450",
+    "es": "A lo mejor te queda grande esa camisa.",
+    "sk": "Možno ti je tá košeľa veľká.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["A", "lo", "mejor", "te", "queda", "grande", "esa", "camisa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "queda",
+        "lemma": "quedar",
+        "hint": "quedar · ella",
+        "tip": "doubt",
+        "why": "lo-mejor",
+        "distractors": ["quede", "quedara", "quedes"]
+      }
+    ]
+  },
+  {
+    "id": "s2451",
+    "es": "Seguramente la tienda tiene tu talla en otro color.",
+    "sk": "Obchod určite má tvoju veľkosť v inej farbe.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Seguramente", "la", "tienda", "tiene", "tu", "talla", "en", "otro", "color", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Seguramente",
+        "lemma": "seguramente",
+        "hint": "určite",
+        "tip": "doubt",
+        "why": "prob",
+        "distractors": ["Apenas", "Aunque", "Mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2452",
+    "es": "Capaz que mi hermana quiera estos zapatos.",
+    "sk": "Možno bude moja sestra chcieť tieto topánky.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Capaz", "que", "mi", "hermana", "quiera", "estos", "zapatos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "quiera",
+        "lemma": "querer",
+        "hint": "querer · ella · subjuntivo",
+        "tip": "doubt",
+        "why": "capaz",
+        "distractors": ["quiere", "quería", "quiso"]
+      }
+    ]
+  },
+  {
+    "id": "s2453",
+    "es": "Quizá necesites una talla más grande.",
+    "sk": "Možno budeš potrebovať väčšiu veľkosť.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Quizá", "necesites", "una", "talla", "más", "grande", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Quizá",
+        "lemma": "quizá",
+        "hint": "možno",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["Siempre", "Nunca", "Apenas"]
+      }
+    ]
+  },
+  {
+    "id": "s2454",
+    "es": "Quizá no te guste este color, pero a mí me encanta.",
+    "sk": "Možno sa ti táto farba nepáči, ale mne sa veľmi páči.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Quizá", "no", "te", "guste", "este", "color", ",", "pero", "a", "mí", "me", "encanta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "guste",
+        "lemma": "gustar",
+        "hint": "gustar · él · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["gusta", "gustó", "gustaba"]
+      }
+    ]
+  },
+  {
+    "id": "s2455",
+    "es": "Probablemente voy a devolver estos pantalones porque me quedan chicos.",
+    "sk": "Pravdepodobne vrátim tieto nohavice, lebo sú mi malé.",
+    "level": "B1",
+    "topics": ["clothes"],
+    "grammar": ["doubt"],
+    "tokens": ["Probablemente", "voy", "a", "devolver", "estos", "pantalones", "porque", "me", "quedan", "chicos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Probablemente",
+        "lemma": "probablemente",
+        "hint": "pravdepodobne",
+        "tip": "doubt",
+        "why": "prob",
+        "distractors": ["Apenas", "Aunque", "Mientras"]
       }
     ]
   }

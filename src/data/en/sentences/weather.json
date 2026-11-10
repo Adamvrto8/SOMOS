@@ -1,6 +1,6 @@
 [
   { "id": "s272", "en": "It's very hot in Monterrey." },
-  { "id": "s273", "en": "What's the weather like in Slovakia?", "hints": [null, "how / what"] },
+  { "id": "s273", "en": "What's the weather like in Slovakia?", "hints": [null, "how"] },
   { "id": "s274", "en": "It's raining a lot." },
   { "id": "s275", "en": "In December it's cold at night.", "hints": ["cold"] },
   { "id": "s276", "en": "It was very windy yesterday." },
@@ -89,7 +89,7 @@
   { "id": "s1754", "en": "When we left, it had already started to rain." },
   { "id": "s1755", "en": "The forecast had said it was not going to rain, but it rained all afternoon." },
   { "id": "s1756", "en": "When we got to the beach, the storm had already passed." },
-  { "id": "s1757", "en": "It had snowed all night, so the streets were white." },
+  { "id": "s1757", "en": "It had snowed all night, so the streets were white.", "hints": [null, "so"] },
   { "id": "s1758", "en": "I had never seen so much snow until I traveled north." },
   { "id": "s1759", "en": "When I woke up, the wind had already broken the window." },
   { "id": "s1760", "en": "It was very hot and we hadn't brought any water." },
@@ -107,7 +107,7 @@
   { "id": "s2150", "en": "The news said there will be a storm as soon as the cold front arrives." },
   { "id": "s2151", "en": "When it's very hot tomorrow, we'll go swimming at the cenote near the town." },
   { "id": "s2152", "en": "Don't go out without an umbrella, because they say it's going to rain all afternoon.", "hints": ["because"] },
-  { "id": "s2153", "en": "Even if it's very sunny, you'd better bring a jacket in case the temperature drops." },
+  { "id": "s2153", "en": "Even if it's very sunny, you'd better bring a jacket in case the temperature drops.", "hints": [null, "in case"] },
   { "id": "s2154", "en": "The day it snowed in the mountains, all the kids went out to play.", "hints": ["relative word"] },
   { "id": "s2155", "en": "It's so windy that you can't open the umbrella without it breaking." },
   { "id": "s2156", "en": "The lady who sells tamales on the corner said tomorrow will dawn cloudy.", "hints": ["relative pronoun"] },
@@ -117,5 +117,11 @@
   { "id": "s2231", "en": "When it rains hard, many flights are canceled." },
   { "id": "s2262", "en": "Take your umbrella, it's going to rain in the afternoon." },
   { "id": "s2263", "en": "If it's sunny, we're going to go to the beach on Saturday." },
-  { "id": "s2300", "en": "This weekend it is going to rain.", "hints": ["this"] }
+  { "id": "s2300", "en": "This weekend it is going to rain.", "hints": ["this"] },
+  { "id": "s2362", "en": "If I had known it was going to snow, I would have left earlier.", "hints": ["auxiliary verb"] },
+  { "id": "s2363", "en": "If only I had brought my coat; now I am freezing.", "hints": ["auxiliary verb"] },
+  { "id": "s2364", "en": "If they had not closed the road because of the snowfall, we would have arrived on time.", "hints": ["if"] },
+  { "id": "s2365", "en": "We would have enjoyed the trip more if it had not been so hot.", "hints": ["auxiliary verb"] },
+  { "id": "s2366", "en": "I would not have gone out without an umbrella, but nobody warned me about the storm.", "hints": ["auxiliary verb"] },
+  { "id": "s2367", "en": "If they had warned me about the hurricane, we would have left earlier.", "hints": ["auxiliary verb"] }
 ]

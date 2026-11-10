@@ -2325,7 +2325,7 @@
     "sk": "Všetko, čo potrebuješ, je v batohu.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives", "presente", "relatives-mood"],
     "tokens": ["Todo", "lo", "que", "necesitas", "está", "en", "la", "mochila", "."],
     "cloze": [
       {
@@ -2336,6 +2336,15 @@
         "tip": "relatives",
         "why": "lo-que",
         "distractors": ["el", "la"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "necesitas",
+        "lemma": "necesitar",
+        "hint": "necesitar · tú",
+        "tip": "relatives-mood",
+        "why": "quantity",
+        "distractors": ["necesites", "necesitaste", "necesitarás"]
       }
     ]
   },
@@ -2477,7 +2486,7 @@
     "sk": "Priatelia, ktorí bývajú v Méride, nás pozvali, aby sme u nich zostali týždeň.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["relatives", "presente"],
+    "grammar": ["relatives", "presente", "verb-prep"],
     "tokens": ["Mis", "amigos", "que", "viven", "en", "Mérida", "nos", "invitaron", "a", "quedarnos", "con", "ellos", "una", "semana", "."],
     "cloze": [
       {
@@ -2488,6 +2497,15 @@
         "tip": "relatives",
         "why": "que",
         "distractors": ["donde", "cuyo", "cuando"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -2515,7 +2533,7 @@
     "sk": "Keby sme si boli rezervovali včas, teraz by sme nečakali na termináli.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional", "conditional-perfect"],
     "tokens": ["Si", "hubiéramos", "reservado", "con", "tiempo", ",", "ahora", "no", "estaríamos", "esperando", "en", "la", "terminal", "."],
     "cloze": [
       {
@@ -2524,6 +2542,15 @@
         "lemma": "estar",
         "hint": "estar · nosotros · condicional",
         "distractors": ["estamos", "estaremos", "estuvimos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "hubiéramos",
+        "lemma": "hubiéramos",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "hubiera",
+        "distractors": ["habíamos", "hayamos", "hubimos"]
       }
     ]
   },
@@ -2609,7 +2636,7 @@
     "sk": "Môj strýko, ktorý pracuje v cestovnej kancelárii, nám zohnal lacné letenky.",
     "level": "B2",
     "topics": ["travel"],
-    "grammar": ["relatives-prep", "preterito"],
+    "grammar": ["relatives-prep", "preterito", "relatives-mood"],
     "tokens": ["Mi", "tío", ",", "quien", "trabaja", "en", "una", "agencia", "de", "viajes", ",", "nos", "consiguió", "boletos", "baratos", "."],
     "cloze": [
       {
@@ -2620,6 +2647,15 @@
         "tip": "relatives-prep",
         "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "trabaja",
+        "lemma": "trabajar",
+        "hint": "trabajar · él",
+        "tip": "relatives-mood",
+        "why": "explicative",
+        "distractors": ["trabaje", "trabajó", "trabajará"]
       }
     ]
   },

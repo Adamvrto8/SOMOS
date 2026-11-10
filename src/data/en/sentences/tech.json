@@ -1,4 +1,10 @@
 [
+  { "id": "s2428", "en": "The video was so heavy that my phone froze.", "hints": ["so"] },
+  { "id": "s2427", "en": "Since you are going to the store, buy me a USB cable.", "hints": ["since"] },
+  { "id": "s2426", "en": "I ran out of data, so I looked for a wifi network.", "hints": ["so"] },
+  { "id": "s2425", "en": "My password expired. That is why I could not log in to the account.", "hints": ["for (por eso)"] },
+  { "id": "s2424", "en": "Since I had no internet at home, I went to work at the library.", "hints": ["since"] },
+  { "id": "s2423", "en": "My laptop shuts off by itself because the battery is already very old.", "hints": ["because"] },
   { "id": "s447", "en": "My battery died and I couldn't call you.", "hints": [null, null, "pronoun"] },
   { "id": "s448", "en": "Can you send me the photo on WhatsApp?", "hints": [null, "por/para"] },
   { "id": "s449", "en": "This charger doesn't work anymore." },
@@ -101,7 +107,7 @@
   { "id": "s2121", "en": "As soon as I get home and open the computer, I'll send you the file." },
   { "id": "s2122", "en": "Even if the battery lasts all day, I always carry the charger in my backpack.", "hints": ["even if", null] },
   { "id": "s2123", "en": "I don't know anyone who can program as well as my cousin Luis." },
-  { "id": "s2124", "en": "Since we all work from home, we need a more stable connection." },
+  { "id": "s2124", "en": "Since we all work from home, we need a more stable connection.", "hints": [null, "since"] },
   { "id": "s2125", "en": "They asked me to change my password because someone tried to get into my account." },
   { "id": "s2126", "en": "While the update downloads, don't turn off the phone or close the app.", "hints": ["while"] },
   { "id": "s2127", "en": "There's an app you can use to translate what people say in real time.", "hints": ["neuter pronoun"] },
@@ -109,5 +115,12 @@
   { "id": "s2254", "en": "The customers' data used to be stored on an old, not very secure server." },
   { "id": "s2255", "en": "The new operating system was presented by the company at a conference." },
   { "id": "s2256", "en": "The first cell phones with a touch screen were sold more than fifteen years ago." },
-  { "id": "s2257", "en": "The error will be corrected by the engineers before the launch of the app." }
+  { "id": "s2257", "en": "The error will be corrected by the engineers before the launch of the app." },
+  { "id": "s2456", "en": "Maybe the problem is the internet connection." },
+  { "id": "s2457", "en": "Maybe we will have to change phones next year." },
+  { "id": "s2458", "en": "Maybe the package with the headphones has already arrived." },
+  { "id": "s2459", "en": "The app might not work without internet." },
+  { "id": "s2460", "en": "The server is surely down; nobody can log in.", "hints": ["surely"] },
+  { "id": "s2461", "en": "Maybe my brother can fix the phone." },
+  { "id": "s2462", "en": "Maybe the password is a different one; try the previous one." }
 ]

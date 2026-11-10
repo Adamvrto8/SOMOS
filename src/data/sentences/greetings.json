@@ -1898,7 +1898,7 @@
     "level": "B2",
     "topics": ["greetings"],
     "grammar": ["presente", "personal-a"],
-    "tokens": ["Salúdame", "a", "tu", "jefa", "y", "dile", "que", "pronto", "la", "visito", "."],
+    "tokens": ["Salúdame", "a", "tu", "mamá", "y", "dile", "que", "pronto", "la", "visito", "."],
     "cloze": [
       {
         "tokenIndex": 9,
@@ -2198,7 +2198,7 @@
     "sk": "Dedo pozdraví každého, kto prejde po jeho ulici, či ho pozná, alebo nie.",
     "level": "B2",
     "topics": ["greetings"],
-    "grammar": ["relatives", "subjuntivo"],
+    "grammar": ["relatives", "subjuntivo", "relatives-mood"],
     "tokens": ["Mi", "abuelo", "saluda", "a", "todos", "los", "que", "pasan", "por", "su", "calle", ",", "sean", "conocidos", "o", "no", "."],
     "cloze": [
       {
@@ -2207,6 +2207,15 @@
         "lemma": "ser",
         "hint": "ser · ellos · subjuntivo",
         "distractors": ["son", "fueron", "serán"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "pasan",
+        "lemma": "pasar",
+        "hint": "pasar · ellos",
+        "tip": "relatives-mood",
+        "why": "quantity",
+        "distractors": ["pasen", "pasaron", "pasarán"]
       }
     ]
   },

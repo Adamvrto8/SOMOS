@@ -2040,7 +2040,7 @@
     "sk": "Radšej by som chcel, aby si zmluvu s klientom vyjednal ty.",
     "level": "B2",
     "topics": ["work"],
-    "grammar": ["subjuntivo", "presente"],
+    "grammar": ["subjuntivo", "presente", "verb-prep"],
     "tokens": ["Prefiero", "que", "negocies", "tú", "el", "contrato", "con", "el", "cliente", "."],
     "cloze": [
       {
@@ -2049,6 +2049,15 @@
         "lemma": "negociar",
         "hint": "negociar · tú · subjuntivo",
         "distractors": ["negocias", "negociarás", "negociaste"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "con",
+        "distractors": ["de", "en", "a"]
       }
     ]
   },
@@ -2644,7 +2653,7 @@
     "sk": "Keby som bol odišiel skôr, teraz by som pracoval vo vlastnom podniku.",
     "level": "B2",
     "topics": ["work"],
-    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional", "conditional-perfect"],
     "tokens": ["Si", "hubiera", "renunciado", "antes", ",", "ahora", "estaría", "trabajando", "en", "mi", "propio", "negocio", "."],
     "cloze": [
       {
@@ -2653,6 +2662,15 @@
         "lemma": "estar",
         "hint": "estar · yo · condicional",
         "distractors": ["estoy", "estuve", "estaré"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "hubiera",
+        "lemma": "hubiera",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["había", "haya", "hubo"]
       }
     ]
   },
@@ -2811,6 +2829,186 @@
         "tip": "interrogatives",
         "why": "por-que",
         "distractors": ["por qué", "pero", "cuando"]
+      }
+    ]
+  },
+  {
+    "id": "s2321",
+    "es": "Mi jefa me enseñó a negociar con los proveedores sin perder la calma.",
+    "sk": "Šéfka ma naučila vyjednávať s dodávateľmi bez straty pokoja.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Mi", "jefa", "me", "enseñó", "a", "negociar", "con", "los", "proveedores", "sin", "perder", "la", "calma", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2322",
+    "es": "Durante la reunión se habló de los despidos, pero nadie quiso dar detalles.",
+    "sk": "Na schôdzi sa hovorilo o prepúšťaní, ale nikto nechcel dať detaily.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Durante", "la", "reunión", "se", "habló", "de", "los", "despidos", ",", "pero", "nadie", "quiso", "dar", "detalles", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2323",
+    "es": "Si logras convencer al cliente, puedes contar con un bono de fin de año.",
+    "sk": "Ak presvedčíš klienta, môžeš počítať s koncoročnou odmenou.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Si", "logras", "convencer", "al", "cliente", ",", "puedes", "contar", "con", "un", "bono", "de", "fin", "de", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "con",
+        "distractors": ["de", "en", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s2324",
+    "es": "Mis compañeros se acuerdan de cada error que cometí en mi primera semana.",
+    "sk": "Kolegovia si pamätajú každú chybu, ktorú som urobil v prvom týždni.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Mis", "compañeros", "se", "acuerdan", "de", "cada", "error", "que", "cometí", "en", "mi", "primera", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2325",
+    "es": "Tardé tres meses en acostumbrarme al ritmo de la oficina.",
+    "sk": "Trvalo mi tri mesiace, kým som si zvykol na tempo v kancelárii.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Tardé", "tres", "meses", "en", "acostumbrarme", "al", "ritmo", "de", "la", "oficina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2326",
+    "es": "Todavía sueño con renunciar y abrir mi propia cafetería.",
+    "sk": "Stále sa mi sníva o tom, že dám výpoveď a otvorím si vlastnú kaviareň.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Todavía", "sueño", "con", "renunciar", "y", "abrir", "mi", "propia", "cafetería", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "con",
+        "lemma": "con",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "con",
+        "distractors": ["de", "en", "a"]
+      }
+    ]
+  },
+  {
+    "id": "s2327",
+    "es": "Pensamos en contratar a dos personas más, pero el presupuesto no alcanza.",
+    "sk": "Uvažujeme o prijatí ďalších dvoch ľudí, ale rozpočet nestačí.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Pensamos", "en", "contratar", "a", "dos", "personas", "más", ",", "pero", "el", "presupuesto", "no", "alcanza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2328",
+    "es": "¿Qué piensan de la nueva política de horarios?",
+    "sk": "Čo si myslíte o novej politike pracovných hodín?",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["¿", "Qué", "piensan", "de", "la", "nueva", "política", "de", "horarios", "?"],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "change",
+        "distractors": ["en", "a", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2329",
+    "es": "Mi socio siempre se queja de que nadie valora su trabajo.",
+    "sk": "Môj spoločník sa vždy sťažuje, že nikto necení jeho prácu.",
+    "level": "B2",
+    "topics": ["work"],
+    "grammar": ["verb-prep"],
+    "tokens": ["Mi", "socio", "siempre", "se", "queja", "de", "que", "nadie", "valora", "su", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
       }
     ]
   }

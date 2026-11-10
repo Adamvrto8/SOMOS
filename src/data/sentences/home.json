@@ -2255,7 +2255,7 @@
     "sk": "Dúfam, že sa budeme môcť presťahovať do bytu, kde bude viac svetla.",
     "level": "B2",
     "topics": ["home"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "relatives-mood"],
     "tokens": ["Ojalá", "que", "podamos", "mudarnos", "a", "un", "departamento", "donde", "haya", "más", "luz", "."],
     "cloze": [
       {
@@ -2264,6 +2264,15 @@
         "lemma": "poder",
         "hint": "poder · nosotros · subjuntivo",
         "distractors": ["podemos", "pudimos", "podremos"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "haya",
+        "lemma": "haya",
+        "hint": "je/sú (subjunktív)",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["hay", "había", "habrá"]
       }
     ]
   },
@@ -2430,7 +2439,7 @@
     "sk": "Keby sme boli skontrolovali zmluvu, nemuseli by sme platiť opravu bojlera.",
     "level": "B2",
     "topics": ["home"],
-    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional", "conditional-perfect"],
     "tokens": ["Si", "hubiéramos", "revisado", "el", "contrato", ",", "no", "tendríamos", "que", "pagar", "la", "reparación", "del", "boiler", "."],
     "cloze": [
       {
@@ -2439,6 +2448,15 @@
         "lemma": "tener",
         "hint": "tener · nosotros · condicional",
         "distractors": ["tenemos", "tuvimos", "tendremos"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "hubiéramos",
+        "lemma": "hubiéramos",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["habíamos", "hayamos", "hubimos"]
       }
     ]
   }

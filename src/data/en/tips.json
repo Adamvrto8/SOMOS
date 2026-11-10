@@ -95,7 +95,7 @@
     "id": "presente",
     "title": "Present tense (presente)",
     "intro": "It covers what you do regularly and what you are doing right now. The ending changes with the person, and the pronoun (yo, tú…) is usually left out.",
-    "variants": { "mx": "Mexico always uses ustedes for several people (ustedes hablan); the vosotros form (habláis) is not heard there.", "es": "In Spain several people you would call tú are vosotros (vosotros habláis, coméis, vivís). Ustedes (ustedes hablan) is the polite form, for people you would call usted. Every verb table shows the vosotros form." },
+    "variants": { "mx": "Mexico always uses ustedes for several people (ustedes hablan); the vosotros form (habláis) is not heard there. For one person it always uses tú; voseo (vos hablás) survives only in a few southern states, for example Chiapas. Mexicans also say the subject pronoun more often (Yo estudio español).", "es": "In Spain several people you would call tú are vosotros (vosotros habláis, coméis, vivís). Ustedes (ustedes hablan) is the polite form, for people you would call usted. Every verb table shows the vosotros form." },
     "rules": [
       {
         "id": "use",
@@ -322,7 +322,7 @@
     "id": "progresivo",
     "title": "Present progressive (estar + gerundio)",
     "intro": "It says what is happening at this very moment. It is made of the verb estar and a gerund, like English “I am working”.",
-    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now). Careful: in Mexico ahorita also means “later, at some point” (ahorita lo hago = I will do it when I get to it).", "es": "Spain uses the progressive somewhat less than Mexico. Ahorita is not heard there; Spain says ahora mismo (ahora mismo estoy comiendo = I am eating right now)." },
+    "variants": { "mx": "Mexicans use the progressive a lot, often with ahorita (ahorita estoy comiendo = I am eating right now). Careful: in Mexico ahorita also means “later, at some point” (ahorita lo hago = I will do it when I get to it). It is also used for a single moment: está viniendo = he is arriving right now (Spain says viene).", "es": "Spain uses the progressive somewhat less than Mexico. Ahorita is not heard there; Spain says ahora mismo (ahora mismo estoy comiendo = I am eating right now)." },
     "rules": [
       {
         "id": "use",
@@ -354,7 +354,7 @@
     "id": "gender",
     "title": "Gender of nouns",
     "intro": "Every noun is masculine (el) or feminine (la), things included. English has nothing like it, but the ending often tells you which it is.",
-    "variants": { "mx": "Some words have a different gender in Mexico than in Spain: el radio (also the broadcast, la radio in Spain), el sartén (la sartén in Spain).", "es": "Some words have a different gender in Spain than in Mexico: la radio (the broadcast and the set), la sartén (frying pan)." },
+    "variants": { "mx": "In American Spanish some words are used in another gender too: el sartén beside la sartén, el radio beside la radio (the RAE lists both genders for both words), in part of Mexico also el costumbre. When unsure, follow the dictionary.", "es": "Some words have a different gender in Spain than in Mexico: la radio (the broadcast and the set), la sartén (frying pan)." },
     "rules": [
       {
         "id": "o-a",
@@ -398,7 +398,7 @@
     "id": "articles",
     "title": "Articles (el, la, un, una)",
     "intro": "Spanish uses articles more often than English does. The article agrees with its noun in gender and number.",
-    "variants": { "mx": "In everyday Mexican speech a name often takes an article (la María, el Juan). In writing the name stands alone.", "es": "In Spain a name usually stands without an article (María, Juan). La María, el Juan sounds colloquial; in some regions (Catalonia, for one) it is common." },
+    "variants": { "mx": "In Mexico the article stands before casa where Spain does without it: Vamos a la casa (Spain rather Vamos a casa). In writing a name takes no article (María, Juan).", "es": "In Spain a name usually stands without an article (María, Juan). La María, el Juan sounds colloquial; in some regions (Catalonia, for one) it is common." },
     "rules": [
       {
         "id": "definite",
@@ -474,7 +474,7 @@
     "id": "reflexive",
     "title": "Reflexive verbs",
     "intro": "The infinitive ends in -se (levantarse). The pronoun changes with the person: me, te, se, nos, se.",
-    "variants": { "mx": "Some verbs are reflexive more often in Mexico than elsewhere (regresarse = to go back, tardarse = to take long).", "es": "Spain says volver instead of regresar(se) (vuelvo a casa = I am going back home), and tardar has no se (tardo diez minutos = I will take ten minutes)." },
+    "variants": { "mx": "Some verbs are reflexive more often in Mexico than elsewhere (regresarse = to go back, tardarse = to take long). Likewise desayunarse (to have breakfast) and amanecerse (to stay up until morning).", "es": "Spain says volver instead of regresar(se) (vuelvo a casa = I am going back home), and tardar has no se (tardo diez minutos = I will take ten minutes)." },
     "rules": [
       {
         "id": "forms",
@@ -538,7 +538,7 @@
     "id": "imperativo",
     "title": "The imperative",
     "intro": "Requests, advice and instructions: ven, siéntate, no te preocupes. The tú form is simple; the other persons take the subjunctive.",
-    "variants": { "mx": "Mexico does not use vosotros: an order to several people takes the ustedes form (vengan, siéntense), among friends too.", "es": "In Spain an order to several people you would call tú takes the vosotros form: the -r of the infinitive becomes -d (hablad, comed, venid). Before os the -d drops: sentaos. Ustedes (vengan, siéntense) is the polite form." },
+    "variants": { "mx": "Mexico does not use vosotros: an order to several people takes the ustedes form (vengan, siéntense), among friends too. The voseo command (hablá, comé) is heard only in some southern states, for example Chiapas.", "es": "In Spain an order to several people you would call tú takes the vosotros form: the -r of the infinitive becomes -d (hablad, comed, venid). Before os the -d drops: sentaos. Ustedes (vengan, siéntense) is the polite form." },
     "rules": [
       {
         "id": "use",
@@ -636,7 +636,7 @@
     "id": "condicional",
     "title": "The conditional (would)",
     "intro": "It says what would happen or what you would do. It is also the polite way to ask for something.",
-    "variants": { "mx": "In Mexico the conditional is used a lot to be polite, often together with usted (¿me podría ayudar?).", "es": "Spain too uses the conditional to be polite (¿me podría ayudar?, me gustaría un café). In a shop or a café people often use the imperfecto as well: quería un café = I would like a coffee." },
+    "variants": { "mx": "In Mexico the conditional is used a lot to be polite, often together with usted (¿me podría ayudar?). In reported speech Mexico prefers iba a + infinitive: Me dijo que iba a venir (instead of vendría).", "es": "Spain too uses the conditional to be polite (¿me podría ayudar?, me gustaría un café). In a shop or a café people often use the imperfecto as well: quería un café = I would like a coffee." },
     "rules": [
       {
         "id": "endings",
@@ -798,7 +798,7 @@
     "id": "hay-estar",
     "title": "hay or estar",
     "intro": "Hay says that something exists or is available somewhere. Estar says where a specific, known thing is.",
-    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
+    "variants": { "mx": "The same in Mexico as elsewhere. In Latin America you sometimes hear habían cajas or hubieron cajas; the correct forms are hay, había, hubo cajas, always singular.", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
         "id": "hay",
@@ -827,7 +827,7 @@
     "id": "object-pronouns",
     "title": "Object pronouns (lo, la, le)",
     "intro": "Instead of repeating the noun: ¿El pastel? Lo compré. Lo and la are for whom or what, le for to whom.",
-    "variants": { "mx": "When the person is the direct object, Mexico says lo/la (lo vi ayer = I saw him); le vi sounds like Spain. Le for “to whom” (le doy) and the polite le with usted (¿le ayudo?) are common.", "es": "When the direct object is a man, Spain often says le instead of lo (le vi ayer = I saw him), mostly in the centre and the north. It is accepted as correct. For things it stays lo (¿el libro? lo tengo)." },
+    "variants": { "mx": "When the person is the direct object, Mexico says lo/la (lo vi ayer = I saw him); le vi sounds like Spain. Le for “to whom” (le doy) and the polite le with usted (¿le ayudo?) are common. Mexico also adds le for emphasis (¡Ándale! = come on; ¿Qué le haces? = what are you doing?). “We had a good time” is la pasamos bien (Spain: lo pasamos bien).", "es": "When the direct object is a man, Spain often says le instead of lo (le vi ayer = I saw him), mostly in the centre and the north. It is accepted as correct. For things it stays lo (¿el libro? lo tengo)." },
     "rules": [
       {
         "id": "direct",
@@ -1029,7 +1029,7 @@
     "id": "subjuntivo-clauses",
     "title": "The subjunctive after opinions and conjunctions",
     "intro": "The subjunctive follows a negative opinion, doubt and the conjunctions cuando, antes de que and para que, when something is not certain yet.",
-    "variants": { "mx": "The same in Mexico as elsewhere.", "es": "The same in Spain as elsewhere." },
+    "variants": { "mx": "In Mexico you often hear capaz que + subjunctive for “maybe” (capaz que llueva = it may rain).", "es": "The same in Spain as elsewhere." },
     "rules": [
       {
         "id": "opinion",
@@ -1381,7 +1381,7 @@
     "title": "Negation: no, nunca, nada, nadie",
     "intro": "No before the verb makes a sentence negative. Nunca, nada, nadie, tampoco and ningún mean never, nothing, nobody, neither and no (none). Unlike in English, a double negative is required, but only when they come after the verb.",
     "variants": {
-      "mx": "In Mexico you often hear ni modo (oh well, nothing to be done) and para nada (not at all). In some Latin American countries también no is heard instead of tampoco, but tampoco is correct.",
+      "mx": "In Mexico you often hear ni modo (oh well, nothing to be done) and para nada (not at all). In some Latin American countries también no is heard instead of tampoco, but tampoco is correct. Colloquially you also hear más nada, más nadie (ya no hay más nada = there is nothing else) and hasta without no: Llega hasta mañana = he arrives only tomorrow.",
       "es": "In Spain instead of ni modo people rather say qué le vamos a hacer; para nada is common there too."
     },
     "rules": [
@@ -1474,6 +1474,598 @@
         "examples": [
           "Who are you waiting for?",
           "I don’t know anybody in this city."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "periphrases",
+    "title": "Verb phrases: acabar de, volver a, soler…",
+    "intro": "A verb phrase is a pair of verbs: the first is conjugated, the second is an infinitive or a gerund. It tells you what stage the action is in: just finished, starting, repeated, habitual, stopping or still going.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere. In casual speech soler is often replaced by normalmente or generalmente (normalmente desayuno a las siete).",
+      "es": "The same in Spain as elsewhere."
+    },
+    "rules": [
+      {
+        "id": "acabar",
+        "title": "acabar de: I just did it",
+        "text": "Acabar de + infinitive means the action has just ended: Acabo de llegar. Acabar is in the present tense even though the action is in the past.",
+        "because": "The action has just ended, so acabar de + infinitive.",
+        "examples": [
+          "I have just arrived at the office.",
+          "She has just left."
+        ]
+      },
+      {
+        "id": "empezar",
+        "title": "empezar a, ponerse a: to start",
+        "text": "Empezar a or ponerse a + infinitive means to start doing something. The a is required.",
+        "because": "It is about the start of the action, so empezar a / ponerse a + infinitive.",
+        "examples": [
+          "I started studying Spanish last year.",
+          "It suddenly started to rain."
+        ]
+      },
+      {
+        "id": "volver",
+        "title": "volver a: to do it again",
+        "text": "Volver a + infinitive means to do something again. English uses “again”, Spanish uses the verb volver.",
+        "because": "The action is repeated, so volver a + infinitive.",
+        "examples": [
+          "Tomorrow I will call you again.",
+          "Do not do it again."
+        ]
+      },
+      {
+        "id": "soler",
+        "title": "soler: to usually do",
+        "text": "Soler + infinitive means you usually do something. It is used almost only in the present and the imperfect.",
+        "because": "It is a habit, so soler + infinitive.",
+        "examples": [
+          "I usually have breakfast at seven.",
+          "As a child I used to play in the street."
+        ]
+      },
+      {
+        "id": "dejar",
+        "title": "dejar de: to stop",
+        "text": "Dejar de + infinitive means to stop doing something: Dejé de fumar.",
+        "because": "The action is stopping, so dejar de + infinitive.",
+        "examples": [
+          "I stopped smoking two years ago.",
+          "Do not stop calling me."
+        ]
+      },
+      {
+        "id": "seguir",
+        "title": "seguir + gerund: still doing",
+        "text": "Seguir + gerund means the action is still going on: Sigo trabajando en el mismo lugar.",
+        "because": "The action is still going on, so seguir + gerund.",
+        "examples": [
+          "I still work in the same place.",
+          "My parents still live in Puebla."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "temporal",
+    "title": "Time clauses: cuando, mientras, antes de que",
+    "intro": "Time clauses say when something happens. The word that opens them decides the verb form: indicative for the past and habits, subjunctive for the future.",
+    "variants": {
+      "mx": "In Mexico hasta without no is also used for a start: Llega hasta mañana = he arrives only tomorrow.",
+      "es": "In Spain that meaning is No llega hasta mañana."
+    },
+    "rules": [
+      {
+        "id": "inf",
+        "title": "antes de, después de + infinitive",
+        "text": "When both verbs have the same subject, antes de or después de + infinitive is used: Antes de salir, apago la luz.",
+        "because": "The subject is the same, so antes de / después de + infinitive.",
+        "examples": [
+          "Before leaving, I turn off all the lights.",
+          "After eating, I have a coffee."
+        ]
+      },
+      {
+        "id": "cuando",
+        "title": "cuando: indicative or subjunctive",
+        "text": "For the past and habits cuando takes the indicative (Cuando llegué, llovía). For the future it takes the subjunctive (Cuando llegues, llámame).",
+        "because": "It is about a future that has not happened yet, so the subjunctive. The past and habits take the indicative.",
+        "examples": [
+          "When I arrived, everyone was already there.",
+          "When you arrive, call me."
+        ]
+      },
+      {
+        "id": "mientras",
+        "title": "mientras: two things at once",
+        "text": "Mientras + indicative means “while”, two actions run at the same time: Mientras cocino, escucho música.",
+        "because": "Two actions run at once, so mientras + indicative.",
+        "examples": [
+          "While I cook, I listen to music.",
+          "While you were sleeping, I was working."
+        ]
+      },
+      {
+        "id": "antes-que",
+        "title": "antes de que + subjunctive",
+        "text": "When the subjects differ, antes de que + subjunctive is used: Llámame antes de que salgas.",
+        "because": "The subjects differ and the action has not happened, so antes de que + subjunctive.",
+        "examples": [
+          "Call me before you leave.",
+          "We will have dinner before the movie starts."
+        ]
+      },
+      {
+        "id": "desde",
+        "title": "desde, desde hace, hasta",
+        "text": "Desde is a point in time (desde 2020), desde hace is a duration (desde hace tres años), hasta is the end (hasta las seis).",
+        "because": "It is about a start, a duration or an end, so desde, desde hace or hasta.",
+        "examples": [
+          "I have lived in Prague for three years.",
+          "I work until six."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cause",
+    "title": "Cause and result: como, así que, por eso",
+    "intro": "You give a cause with porque, como or ya que, and a result with por eso, así que or entonces. The order of the clauses decides which one you use.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere. In casual speech es que often introduces a cause (Es que no tenía tiempo = It is just that I had no time).",
+      "es": "The same in Spain as elsewhere; es que is used there too."
+    },
+    "rules": [
+      {
+        "id": "porque",
+        "title": "porque and como: the cause",
+        "text": "If the cause comes after the main clause, use porque. If it comes before, use como: Llegué tarde porque había tráfico. Como había tráfico, llegué tarde.",
+        "because": "The cause clause comes before the main clause, so como. After it, it would be porque.",
+        "examples": [
+          "I arrived late because there was traffic.",
+          "Since there was traffic, I arrived late."
+        ]
+      },
+      {
+        "id": "por-eso",
+        "title": "por eso, así que, entonces: the result",
+        "text": "A result is joined with por eso, así que or entonces: Hacía frío, así que me puse un suéter.",
+        "because": "It is about a result, so por eso, así que or entonces.",
+        "examples": [
+          "I was tired, so I went to bed early.",
+          "It is cold, so I am wearing a sweater."
+        ]
+      },
+      {
+        "id": "ya-que",
+        "title": "ya que, puesto que: a cause you both know",
+        "text": "Ya que or puesto que gives a cause both people know: Ya que estás aquí, ayúdame. It sounds a bit formal.",
+        "because": "The cause is known to both, so ya que or puesto que.",
+        "examples": [
+          "Since you are here, help me with this.",
+          "Since nobody answered, I hung up."
+        ]
+      },
+      {
+        "id": "tan-que",
+        "title": "tan… que, tanto… que: so… that",
+        "text": "Tan + adjective or adverb + que, tanto + verb + que: Estaba tan cansada que se durmió.",
+        "because": "The result comes from the degree of a quality, so tan… que or tanto… que.",
+        "examples": [
+          "She was so tired that she fell asleep on the bus.",
+          "I ate so much that I cannot move."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reported",
+    "title": "Reported speech: dijo que…",
+    "intro": "When you retell what someone said, the verb moves back in time after “dijo que”. Questions are carried by si or a question word, commands by que + subjunctive.",
+    "variants": {
+      "mx": "In Mexico the future after dijo que is most often iba a (Dijo que iba a venir). The conditional (vendría) is more formal.",
+      "es": "In Spain the conditional (dijo que vendría) is more common than in Mexico."
+    },
+    "rules": [
+      {
+        "id": "que",
+        "title": "dijo que: the tense moves back",
+        "text": "After dijo que the present becomes the imperfect and the pretérito becomes the pluscuamperfecto: “Tengo hambre” → Dijo que tenía hambre.",
+        "because": "It reports what someone said in the past, so the tense moves back.",
+        "examples": [
+          "He said he was hungry.",
+          "He told me he had arrived late."
+        ]
+      },
+      {
+        "id": "question",
+        "title": "preguntó si, qué, dónde: an indirect question",
+        "text": "A yes/no question is carried by si, other questions keep their question word: Me preguntó si tenía tiempo.",
+        "because": "You are reporting a question, so si or the question word, and the tense moves back.",
+        "examples": [
+          "He asked me if I had time.",
+          "He asked where you lived."
+        ]
+      },
+      {
+        "id": "command",
+        "title": "dijo que + subjunctive: a command",
+        "text": "When you report a command or advice, dijo que takes the subjunctive: Me dijo que tuviera cuidado.",
+        "because": "You are reporting a command or advice, so the subjunctive.",
+        "examples": [
+          "He told me to be careful.",
+          "My mom says I should bundle up."
+        ]
+      },
+      {
+        "id": "mx",
+        "title": "The future in reported speech: iba a",
+        "text": "What was going to happen is most often said with iba a + infinitive in Mexico: Dijo que iba a venir. The conditional (vendría) is more formal.",
+        "because": "In speech the future in the past is said with iba a + infinitive.",
+        "examples": [
+          "He said he would call.",
+          "He told me he would come tomorrow."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "doubt",
+    "title": "Maybe: quizá, tal vez, a lo mejor, capaz que",
+    "intro": "Spanish has several ways to say “maybe”. Some take the subjunctive, but a lo mejor always takes the indicative.",
+    "variants": {
+      "mx": "In Mexico capaz que is heard in casual speech (capaz que llueva = it may rain).",
+      "es": "Capaz que is not heard in Spain; people say quizá, tal vez or a lo mejor."
+    },
+    "rules": [
+      {
+        "id": "subj",
+        "title": "quizá, tal vez + subjunctive",
+        "text": "After quizá, quizás and tal vez the subjunctive is used when you are not sure: Quizá venga mañana. If you are surer, the indicative is possible too.",
+        "because": "You are not sure, so quizá and tal vez take the subjunctive.",
+        "examples": [
+          "Maybe it will rain tomorrow.",
+          "Maybe you are right."
+        ]
+      },
+      {
+        "id": "lo-mejor",
+        "title": "a lo mejor + indicative",
+        "text": "A lo mejor means “maybe” and always takes the indicative, never the subjunctive: A lo mejor llego tarde.",
+        "because": "A lo mejor is always followed by the indicative.",
+        "examples": [
+          "Maybe I will be late.",
+          "Maybe he already left."
+        ]
+      },
+      {
+        "id": "prob",
+        "title": "probablemente, seguramente: indicative or subjunctive",
+        "text": "After probablemente, seguramente and posiblemente the indicative (surer) is more common; the subjunctive (less sure) is mostly heard after probablemente and posiblemente: Probablemente está en casa.",
+        "because": "You are fairly sure, so the indicative. With more doubt it would be the subjunctive.",
+        "examples": [
+          "He is probably at home.",
+          "It will probably rain this afternoon."
+        ]
+      },
+      {
+        "id": "capaz",
+        "title": "capaz que + subjunctive",
+        "text": "Capaz que means “maybe” and takes the subjunctive. It is casual Mexican speech: Capaz que llueva.",
+        "because": "Capaz que means “maybe” and takes the subjunctive.",
+        "examples": [
+          "Maybe Ana will not come.",
+          "Maybe it will rain in the afternoon."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "verb-prep",
+    "title": "Verbs with prepositions: pensar en, darse cuenta de",
+    "intro": "Many verbs have a fixed preposition that you learn together with the verb. English or Slovak often uses a different one.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere. Watch out for casual dequeísmo (pienso de que…): the correct form is pienso que.",
+      "es": "The same in Spain as elsewhere."
+    },
+    "rules": [
+      {
+        "id": "de",
+        "title": "de: hablar de, acordarse de, darse cuenta de",
+        "text": "Verbs with de include hablar de, acordarse de, darse cuenta de, depender de.",
+        "because": "The verb goes with the preposition de.",
+        "examples": [
+          "We talked about you yesterday.",
+          "I realized my mistake."
+        ]
+      },
+      {
+        "id": "en",
+        "title": "en: pensar en, confiar en, tardar en",
+        "text": "Verbs with en include pensar en, confiar en, tardar en, fijarse en.",
+        "because": "The verb goes with the preposition en.",
+        "examples": [
+          "I am thinking about my vacation.",
+          "It took me an hour to get there."
+        ]
+      },
+      {
+        "id": "a",
+        "title": "a: aprender a, ayudar a, empezar a",
+        "text": "Verbs with a include aprender a, ayudar a, empezar a, atreverse a.",
+        "because": "The verb goes with the preposition a.",
+        "examples": [
+          "I learned to swim as a child.",
+          "He helped me move the armchair."
+        ]
+      },
+      {
+        "id": "con",
+        "title": "con: contar con, soñar con, casarse con",
+        "text": "Verbs with con include contar con, soñar con, casarse con, encontrarse con.",
+        "because": "The verb goes with the preposition con.",
+        "examples": [
+          "I am counting on you for tomorrow.",
+          "Last night I dreamed about my grandmother."
+        ]
+      },
+      {
+        "id": "change",
+        "title": "The preposition changes the meaning",
+        "text": "With some verbs the preposition changes the meaning: pensar en = to think about, pensar de = to have an opinion on. Pienso en ti, ¿qué piensas de esto?",
+        "because": "The preposition belongs to the meaning, so en for “think about” and de for “have an opinion”.",
+        "examples": [
+          "I think about you every day.",
+          "What do you think of my idea?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ser-estar-meaning",
+    "title": "ser listo, estar listo: a change of meaning",
+    "intro": "Some adjectives change meaning with the verb. With ser it is a trait, with estar a state or a result.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere. With estar a temporary state is often strengthened with bien (está bien cansado).",
+      "es": "The same in Spain as elsewhere; it is strengthened with muy or súper (está súper cansado)."
+    },
+    "rules": [
+      {
+        "id": "listo",
+        "title": "listo, aburrido, malo, abierto",
+        "text": "Es listo = he is clever, está listo = he is ready. Es aburrido = he is boring, está aburrido = he is bored. Es malo = he is bad, está malo = he is sick.",
+        "because": "The verb changes the meaning: ser says a trait, estar a state.",
+        "examples": [
+          "My brother is very clever.",
+          "Are you ready yet?"
+        ]
+      },
+      {
+        "id": "verde",
+        "title": "verde, seguro, rico, vivo",
+        "text": "Es verde = it is green, está verde = it is unripe. Es seguro = it is safe, estoy seguro = I am sure. Es rico = he is rich (for food also tasty), está rico = it is tasty right now.",
+        "because": "The verb changes the meaning: ser says a trait, estar a state.",
+        "examples": [
+          "The avocado is still unripe.",
+          "This street is very safe.",
+          "I am sure he is coming."
+        ]
+      },
+      {
+        "id": "delgado",
+        "title": "es delgado, está delgado",
+        "text": "Es delgado = he is slim by nature. Está delgado = he has lost weight or looks thin now. The same goes for es guapo and está guapo.",
+        "because": "Estar says a change or a current impression, ser a trait.",
+        "examples": [
+          "My uncle is slim.",
+          "You are very thin, are you eating well?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cambio",
+    "title": "Verbs of change: ponerse, quedarse, hacerse, volverse",
+    "intro": "English “to become” has several Spanish verbs. They differ in whether the change is temporary, a result or the outcome of effort.",
+    "variants": {
+      "mx": "In Mexico ponerse is often strengthened with bien: se puso bien contento = he was really pleased.",
+      "es": "The same in Spain as elsewhere; instead of bien people say muy or súper."
+    },
+    "rules": [
+      {
+        "id": "ponerse",
+        "title": "ponerse + adjective: a temporary change",
+        "text": "Ponerse + adjective expresses a temporary change, for example of mood, color or health: Se puso nervioso.",
+        "because": "The change is temporary, so ponerse.",
+        "examples": [
+          "She got very nervous before the exam.",
+          "The sky turned grey."
+        ]
+      },
+      {
+        "id": "quedarse",
+        "title": "quedarse + adjective: a result",
+        "text": "Quedarse + adjective or participle expresses a result, often an unpleasant one: Me quedé dormido.",
+        "because": "It is a result, so quedarse.",
+        "examples": [
+          "I fell asleep on the bus.",
+          "He lost his job in March."
+        ]
+      },
+      {
+        "id": "hacerse",
+        "title": "hacerse + noun: the result of effort",
+        "text": "Hacerse + noun or adjective expresses a change someone achieved by effort or choice: hacerse médico, hacerse rico.",
+        "because": "The change comes from effort or choice, so hacerse.",
+        "examples": [
+          "My cousin became a doctor.",
+          "Over the years he became famous."
+        ]
+      },
+      {
+        "id": "volverse",
+        "title": "volverse + adjective: a marked change",
+        "text": "Volverse + adjective expresses a marked, lasting change, sudden or gradual, often an unfavourable one: volverse loco, volverse desconfiado.",
+        "because": "The change is marked and lasting, so volverse.",
+        "examples": [
+          "He became very distrustful.",
+          "With the stress I am going crazy."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "conditional-perfect",
+    "title": "What would have been: habría ido, si hubiera sabido",
+    "intro": "Things that did not happen in the past use haber + participle. Habría + participle is “would have”, hubiera + participle is “had”.",
+    "variants": {
+      "mx": "In Mexico casual speech puts hubiera in the main clause too (Si hubiera sabido, te hubiera llamado). In writing habría is kept.",
+      "es": "In Spain the main clause keeps habría (te habría llamado)."
+    },
+    "rules": [
+      {
+        "id": "habria",
+        "title": "habría + participle: what would have been",
+        "text": "Habría + participle expresses what would have happened but did not: Yo habría ido.",
+        "because": "It is about something that did not happen in the past, so habría + participle.",
+        "examples": [
+          "I would have gone, but they did not invite me.",
+          "What would you have done?"
+        ]
+      },
+      {
+        "id": "hubiera",
+        "title": "hubiera + participle: if only, had",
+        "text": "Hubiera + participle is the pluperfect subjunctive. It is used for regret and unfulfilled conditions: Ojalá hubiera estudiado más.",
+        "because": "It is about a wish or condition in the past that did not come true, so hubiera + participle.",
+        "examples": [
+          "I wish I had studied more.",
+          "I wish I had not said that."
+        ]
+      },
+      {
+        "id": "si",
+        "title": "si hubiera…, habría…",
+        "text": "An unfulfilled condition in the past: si + hubiera + participle, habría + participle.",
+        "because": "The condition in the past did not come true, so si hubiera + participle and habría + participle.",
+        "examples": [
+          "If I had known, I would have called you.",
+          "If we had left earlier, we would have arrived on time."
+        ]
+      },
+      {
+        "id": "mx",
+        "title": "In speech: hubiera in both clauses",
+        "text": "In casual Mexican speech hubiera is also used in the main clause: Si me hubieras dicho, te hubiera ayudado. It is common and understood.",
+        "because": "In casual speech hubiera stands in both clauses, in writing the main clause takes habría.",
+        "examples": [
+          "If you had told me, I would have helped you.",
+          "If I had arrived earlier, I would have seen him."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cond-connectors",
+    "title": "Conditions: siempre que, a no ser que, por si",
+    "intro": "Besides si there are other conditional connectors. Most take the subjunctive because they are about something that has not happened yet.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere. “Just in case” is also por si las dudas in casual speech.",
+      "es": "The same in Spain as elsewhere."
+    },
+    "rules": [
+      {
+        "id": "siempre-que",
+        "title": "siempre que, con tal de que + subjunctive",
+        "text": "Siempre que and con tal de que mean “as long as, provided that” and take the subjunctive: Voy contigo siempre que me invites. In the sense of “whenever” it takes the indicative: Siempre que llueve, me quedo en casa.",
+        "because": "The condition has not been met yet, so the subjunctive.",
+        "examples": [
+          "I will go with you as long as you invite me.",
+          "I will lend you the car provided you take care of it."
+        ]
+      },
+      {
+        "id": "a-no-ser",
+        "title": "a no ser que, salvo que + subjunctive",
+        "text": "A no ser que and salvo que mean “unless” and take the subjunctive: Iremos, a no ser que llueva.",
+        "because": "The exception is only possible, so the subjunctive.",
+        "examples": [
+          "We will go to the park, unless it rains.",
+          "We leave at eight, unless there is traffic."
+        ]
+      },
+      {
+        "id": "por-si",
+        "title": "por si (acaso): just in case",
+        "text": "Por si or por si acaso means “just in case”. The indicative is most common: Llévate un paraguas por si llueve.",
+        "because": "It is a precaution, so por si.",
+        "examples": [
+          "Take an umbrella in case it rains.",
+          "I will leave you my number just in case."
+        ]
+      },
+      {
+        "id": "como",
+        "title": "como + subjunctive: a threatening condition",
+        "text": "Como + subjunctive expresses a condition with a threat: Como no vengas, me voy.",
+        "because": "The condition carries a threat, so como + subjunctive.",
+        "examples": [
+          "If you do not arrive on time, I am leaving.",
+          "If you lie to me, I will not speak to you again."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "relatives-mood",
+    "title": "Relative clauses and mood: Busco un libro que sea…",
+    "intro": "After “que” in a relative clause the indicative is used when you know what you mean. If you do not know it or it may not exist, the subjunctive is used.",
+    "variants": {
+      "mx": "The same in Mexico as elsewhere.",
+      "es": "The same in Spain as elsewhere."
+    },
+    "rules": [
+      {
+        "id": "exists",
+        "title": "Known and unknown",
+        "text": "If you know what you are looking for or have, the indicative is used: Conozco a alguien que habla francés. If it is unknown or hypothetical, the subjunctive is used: Busco a alguien que hable francés.",
+        "because": "You are looking for something that may not exist, so the subjunctive.",
+        "examples": [
+          "I am looking for a house that has a garden.",
+          "I know someone who speaks French."
+        ]
+      },
+      {
+        "id": "negative",
+        "title": "no hay nadie que… + subjunctive",
+        "text": "After a negation (no hay nadie, no encuentro nada) and in a question (¿hay alguien…?) the next clause takes the subjunctive: No hay nadie que sepa la respuesta.",
+        "because": "After a negation the thing may not exist, so the subjunctive.",
+        "examples": [
+          "There is nobody who knows the answer.",
+          "I cannot find anything I like."
+        ]
+      },
+      {
+        "id": "explicative",
+        "title": "A clause between commas: indicative",
+        "text": "A clause set off by commas only adds information and always takes the indicative: Mi hermana, que vive en Praga, viene mañana.",
+        "because": "A clause between commas only adds information, so always the indicative.",
+        "examples": [
+          "My sister, who lives in Prague, is coming tomorrow.",
+          "The book, which I bought yesterday, is very good."
+        ]
+      },
+      {
+        "id": "quantity",
+        "title": "todo lo que, cuanto",
+        "text": "After todo lo que or cuanto the indicative is used for a known thing and the subjunctive for a wish or the future: Haz todo lo que puedas.",
+        "because": "The choice depends on a known thing (indicative) or a wish (subjunctive).",
+        "examples": [
+          "Do everything you can.",
+          "Everything he said is true."
         ]
       }
     ]

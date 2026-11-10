@@ -68,7 +68,7 @@
   { "id": "s1377", "en": "That dinner cost us an arm and a leg: almost four thousand pesos.", "hints": [null, "preposition"] },
   { "id": "s1378", "en": "About a hundred neighbors signed the petition against the construction.", "hints": ["a hundred or so"] },
   { "id": "s1379", "en": "He's two years shy of forty, but he feels twenty.", "hints": [null, "pronoun"] },
-  { "id": "s1380", "en": "Only a minority of respondents trust political parties.", "hints": ["minority"] },
+  { "id": "s1380", "en": "Only a minority of respondents trust political parties.", "hints": ["minority", "preposition"] },
   { "id": "s1381", "en": "The numbers don't add up: someone made a mistake in the calculation.", "hints": [null, "pronoun"] },
   { "id": "s1382", "en": "I'm telling you for the umpteenth time: it's twelve hundred, not a thousand.", "hints": [null, "preposition"] },
   { "id": "s1383", "en": "Inflation rose almost five percent last year.", "hints": [null, "preposition"] },
@@ -88,7 +88,7 @@
   { "id": "s2092", "en": "The number that appears on the screen is the code you need to get in.", "hints": ["relative pronoun"] },
   { "id": "s2093", "en": "The teacher asked us to add up all the numbers before the bell rang." },
   { "id": "s2094", "en": "Although there are forty of us in the group, there are only twenty chairs in the room.", "hints": ["although"] },
-  { "id": "s2095", "en": "My brother, who turns thirty on Monday, wants a small party.", "hints": ["relative pronoun (person)"] },
+  { "id": "s2095", "en": "My brother, who turns thirty on Monday, wants a small party.", "hints": ["relative pronoun (person)", null] },
   { "id": "s2096", "en": "I doubt the third floor has enough space for so many people." },
   { "id": "s2097", "en": "The cashier told me the total was four hundred fifty pesos with the discount." },
   { "id": "s2098", "en": "The more calculations you do, the fewer mistakes you make on math exams.", "hints": ["the more"] },
@@ -98,5 +98,13 @@
   { "id": "s2305", "en": "How old are you?", "hints": ["how many"] },
   { "id": "s2306", "en": "How many people are here?", "hints": ["how many"] },
   { "id": "s2307", "en": "What’s your zip code?", "hints": ["what (which)"] },
-  { "id": "s2308", "en": "What is your address?", "hints": ["what (which)"] }
+  { "id": "s2308", "en": "What is your address?", "hints": ["what (which)"] },
+  { "id": "s2313", "en": "Analysts depend on the census data to calculate growth.", "hints": ["preposition"] },
+  { "id": "s2314", "en": "Nobody noticed that the figure had been copied wrong.", "hints": ["preposition"] },
+  { "id": "s2315", "en": "It took us more than an hour to add up all the totals for the quarter.", "hints": ["preposition"] },
+  { "id": "s2316", "en": "Economists are talking about five percent inflation for next year.", "hints": ["preposition"] },
+  { "id": "s2317", "en": "I do not trust those statistics because nobody explained how they were obtained.", "hints": ["preposition"] },
+  { "id": "s2318", "en": "The salespeople count on a ten percent increase in their commissions.", "hints": ["preposition"] },
+  { "id": "s2319", "en": "My brother helped me check the accounts for the whole year.", "hints": ["preposition"] },
+  { "id": "s2320", "en": "What do you think of these survey results?", "hints": ["preposition"] }
 ]

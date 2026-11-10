@@ -1911,7 +1911,7 @@
     "sk": "Škoda, že nemáme v dni viac hodín, aby sme stihli všetko, čo chceme.",
     "level": "B2",
     "topics": ["time"],
-    "grammar": ["subjuntivo-wishes", "subj-imperfecto"],
+    "grammar": ["subjuntivo-wishes", "subj-imperfecto", "relatives-mood"],
     "tokens": ["Ojalá", "tuviéramos", "más", "horas", "en", "el", "día", "para", "hacer", "todo", "lo", "que", "queremos", "."],
     "cloze": [
       {
@@ -1920,6 +1920,15 @@
         "lemma": "tener",
         "hint": "tener · nosotros · subjuntivo imperfecto",
         "distractors": ["tenemos", "tuvimos", "tendremos"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "queremos",
+        "lemma": "querer",
+        "hint": "querer · nosotros",
+        "tip": "relatives-mood",
+        "why": "quantity",
+        "distractors": ["queramos", "quisimos", "querremos"]
       }
     ]
   },
@@ -2061,6 +2070,126 @@
         "tip": "subjuntivo-clauses",
         "why": "para-que",
         "distractors": ["pierdes", "perdiste", "perderás"]
+      }
+    ]
+  },
+  {
+    "id": "s2410",
+    "es": "Siempre reviso el calendario antes de acostarme.",
+    "sk": "Vždy si pozriem kalendár, skôr než si ľahnem.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Siempre", "reviso", "el", "calendario", "antes", "de", "acostarme", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "temporal",
+        "why": "inf",
+        "distractors": ["a", "en", "por"]
+      }
+    ]
+  },
+  {
+    "id": "s2411",
+    "es": "Cuando llegues a la estación, llámame por teléfono.",
+    "sk": "Keď prídeš na stanicu, zavolaj mi.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Cuando", "llegues", "a", "la", "estación", ",", "llámame", "por", "teléfono", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llegues",
+        "lemma": "llegar",
+        "hint": "llegar · tú · subjuntivo",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["llegas", "llegaste", "llegarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2412",
+    "es": "Mientras tú preparas la cena, yo pongo la mesa.",
+    "sk": "Kým ty pripravuješ večeru, ja prestriem stôl.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Mientras", "tú", "preparas", "la", "cena", ",", "yo", "pongo", "la", "mesa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "kým",
+        "tip": "temporal",
+        "why": "mientras",
+        "distractors": ["Antes", "Hasta", "Desde"]
+      }
+    ]
+  },
+  {
+    "id": "s2413",
+    "es": "Debemos llegar a la estación antes de que salga el tren.",
+    "sk": "Musíme prísť na stanicu skôr, než vyjde vlak.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Debemos", "llegar", "a", "la", "estación", "antes", "de", "que", "salga", "el", "tren", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "salga",
+        "lemma": "salir",
+        "hint": "salir · él · subjuntivo",
+        "tip": "temporal",
+        "why": "antes-que",
+        "distractors": ["sale", "salió", "saldrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2414",
+    "es": "Estudio español desde hace un año.",
+    "sk": "Španielčinu študujem od roka.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Estudio", "español", "desde", "hace", "un", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["hasta", "en", "por"]
+      }
+    ]
+  },
+  {
+    "id": "s2415",
+    "es": "Ayer trabajé hasta que cerró la tienda.",
+    "sk": "Včera som pracoval, kým sa obchod nezavrel.",
+    "level": "B1",
+    "topics": ["time"],
+    "grammar": ["temporal"],
+    "tokens": ["Ayer", "trabajé", "hasta", "que", "cerró", "la", "tienda", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["desde", "antes", "mientras"]
       }
     ]
   }

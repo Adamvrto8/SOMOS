@@ -1365,6 +1365,7 @@
     "sk": "Tento rok skoro nepršalo, preto je sucho také vážne.",
     "level": "B1",
     "topics": ["nature"],
+    "grammar": ["demonstratives", "cause"],
     "tokens": ["Este", "año", "casi", "no", "llovió", ",", "por", "eso", "la", "sequía", "es", "tan", "grave", "."],
     "cloze": [
       {
@@ -1382,9 +1383,17 @@
         "lemma": "sequía",
         "hint": "sucho",
         "distractors": ["cueva", "semilla", "raíz"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["sin", "con", "desde"]
       }
-    ],
-    "grammar": ["demonstratives"]
+    ]
   },
   {
     "id": "s1332",
@@ -2386,6 +2395,146 @@
         "tip": "demonstratives",
         "why": "time",
         "distractors": ["Este", "Esa", "Aquella"]
+      }
+    ]
+  },
+  {
+    "id": "s2416",
+    "es": "Después de llover, salen caracoles por todas partes.",
+    "sk": "Po daždi sa všade objavia slimáky.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Después", "de", "llover", ",", "salen", "caracoles", "por", "todas", "partes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Después",
+        "lemma": "después",
+        "hint": "po",
+        "tip": "temporal",
+        "why": "inf",
+        "distractors": ["Hasta", "Desde", "Mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2417",
+    "es": "Cuando llegue la primavera, los campos se llenarán de flores.",
+    "sk": "Keď príde jar, polia sa zaplnia kvetmi.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Cuando", "llegue", "la", "primavera", ",", "los", "campos", "se", "llenarán", "de", "flores", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "llegue",
+        "lemma": "llegar",
+        "hint": "llegar · ella · subjuntivo",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["llega", "llegó", "llegará"]
+      }
+    ]
+  },
+  {
+    "id": "s2418",
+    "es": "Cuando hace calor, las tortugas buscan la sombra.",
+    "sk": "Keď je teplo, korytnačky hľadajú tieň.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Cuando", "hace", "calor", ",", "las", "tortugas", "buscan", "la", "sombra", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hace",
+        "lemma": "hacer",
+        "hint": "hacer · él",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["haga", "hizo", "hará"]
+      }
+    ]
+  },
+  {
+    "id": "s2419",
+    "es": "Mientras el sol se ponía, las aves volvían a sus nidos.",
+    "sk": "Kým slnko zapadalo, vtáky sa vracali do hniezd.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Mientras", "el", "sol", "se", "ponía", ",", "las", "aves", "volvían", "a", "sus", "nidos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Mientras",
+        "lemma": "mientras",
+        "hint": "kým",
+        "tip": "temporal",
+        "why": "mientras",
+        "distractors": ["Después", "Hasta", "Desde"]
+      }
+    ]
+  },
+  {
+    "id": "s2420",
+    "es": "Cerremos las ventanas antes de que empiece la tormenta.",
+    "sk": "Zavrime okná skôr, než sa začne búrka.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Cerremos", "las", "ventanas", "antes", "de", "que", "empiece", "la", "tormenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "empiece",
+        "lemma": "empezar",
+        "hint": "empezar · ella · subjuntivo",
+        "tip": "temporal",
+        "why": "antes-que",
+        "distractors": ["empieza", "empezó", "empezará"]
+      }
+    ]
+  },
+  {
+    "id": "s2421",
+    "es": "Seguimos el sendero hasta llegar a la cascada.",
+    "sk": "Išli sme po chodníku, kým sme neprišli k vodopádu.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["Seguimos", "el", "sendero", "hasta", "llegar", "a", "la", "cascada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["desde", "antes", "mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2422",
+    "es": "No llueve en esta región desde hace casi un año.",
+    "sk": "V tejto oblasti neprší už takmer rok.",
+    "level": "B1",
+    "topics": ["nature"],
+    "grammar": ["temporal"],
+    "tokens": ["No", "llueve", "en", "esta", "región", "desde", "hace", "casi", "un", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["hasta", "en", "por"]
       }
     ]
   }

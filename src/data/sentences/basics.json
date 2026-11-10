@@ -1,5 +1,145 @@
 [
   {
+    "id": "s2464",
+    "es": "Mi hermana suele llegar tarde porque vive lejos del trabajo.",
+    "sk": "Moja sestra zvyčajne chodí neskoro, lebo býva ďaleko od práce.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Mi", "hermana", "suele", "llegar", "tarde", "porque", "vive", "lejos", "del", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "suele",
+        "lemma": "soler",
+        "hint": "zvyčajne",
+        "tip": "periphrases",
+        "why": "soler",
+        "distractors": ["suelo", "soler", "solía"]
+      }
+    ]
+  },
+  {
+    "id": "s2409",
+    "es": "Apenas llegó mi hermana, se puso a limpiar la cocina.",
+    "sk": "Sotva prišla moja sestra, dala sa do upratovania kuchyne.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Apenas", "llegó", "mi", "hermana", ",", "se", "puso", "a", "limpiar", "la", "cocina", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "empezar",
+        "distractors": ["de", "en", "por"]
+      }
+    ]
+  },
+  {
+    "id": "s2408",
+    "es": "Aunque llueve mucho, mi hermana sigue yendo en bici al trabajo.",
+    "sk": "Hoci veľa prší, moja sestra stále chodí do práce na bicykli.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Aunque", "llueve", "mucho", ",", "mi", "hermana", "sigue", "yendo", "en", "bici", "al", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "sigue",
+        "lemma": "seguir",
+        "hint": "seguir · ella",
+        "tip": "periphrases",
+        "why": "seguir",
+        "distractors": ["sigo", "siguen", "seguimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2407",
+    "es": "Mi abuelo dejó de trabajar cuando cumplió sesenta años.",
+    "sk": "Môj dedko prestal pracovať, keď mal šesťdesiat rokov.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Mi", "abuelo", "dejó", "de", "trabajar", "cuando", "cumplió", "sesenta", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "dejar",
+        "distractors": ["a", "por", "en"]
+      }
+    ]
+  },
+  {
+    "id": "s2406",
+    "es": "Perdí mi contraseña y tuve que volver a crear la cuenta.",
+    "sk": "Stratil som heslo a musel som účet vytvoriť znova.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Perdí", "mi", "contraseña", "y", "tuve", "que", "volver", "a", "crear", "la", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "volver",
+        "distractors": ["de", "por", "en"]
+      }
+    ]
+  },
+  {
+    "id": "s2405",
+    "es": "Esta semana empecé a estudiar inglés por las mañanas.",
+    "sk": "Tento týždeň som začal ráno študovať angličtinu.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Esta", "semana", "empecé", "a", "estudiar", "inglés", "por", "las", "mañanas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "empezar",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2404",
+    "es": "Mis vecinos acaban de mudarse a la casa de al lado.",
+    "sk": "Moji susedia sa práve nasťahovali do domu vedľa.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["periphrases"],
+    "tokens": ["Mis", "vecinos", "acaban", "de", "mudarse", "a", "la", "casa", "de", "al", "lado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "acabar",
+        "distractors": ["a", "en", "por"]
+      }
+    ]
+  },
+  {
     "id": "s369",
     "es": "¿Dónde está la estación del metro?",
     "sk": "Kde je stanica metra?",
@@ -251,7 +391,7 @@
     "sk": "Dobre počúvajte pokyny, než začnete.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["imperativo"],
+    "grammar": ["imperativo", "temporal"],
     "tokens": ["Escuchen", "bien", "las", "instrucciones", "antes", "de", "empezar", "."],
     "cloze": [
       {
@@ -260,6 +400,15 @@
         "lemma": "escuchar",
         "hint": "escuchar · ustedes · imperativo",
         "distractors": ["Escuche", "Escucha", "Escuchamos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "temporal",
+        "why": "inf",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1578,7 +1727,7 @@
     "sk": "Knihu som si prečítal znova, lebo som jej nerozumel.",
     "level": "B1",
     "topics": ["basics"],
-    "grammar": ["preterito", "object-pronouns"],
+    "grammar": ["preterito", "object-pronouns", "periphrases"],
     "tokens": ["Volví", "a", "leer", "el", "libro", "porque", "no", "lo", "entendí", "."],
     "cloze": [
       {
@@ -1596,6 +1745,15 @@
         "tip": "object-pronouns",
         "why": "direct",
         "distractors": ["la", "le"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "volver",
+        "distractors": ["de", "en", "para"]
       }
     ]
   },
@@ -1934,7 +2092,7 @@
     "sk": "Už dva roky mám vlastnú firmu.",
     "level": "B1",
     "topics": ["basics", "work"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "temporal"],
     "tokens": ["Tengo", "mi", "propio", "negocio", "desde", "hace", "dos", "años", "."],
     "cloze": [
       {
@@ -1943,6 +2101,15 @@
         "lemma": "propio",
         "hint": "vlastný",
         "distractors": ["mismo", "otro", "cada"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["hasta", "durante", "mientras"]
       }
     ]
   },
@@ -2381,7 +2548,7 @@
     "sk": "Keby som mal viac voľného času, naučil by som sa hrať na gitaru aj na klavír.",
     "level": "B2",
     "topics": ["basics"],
-    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional", "verb-prep"],
     "tokens": ["Si", "tuviera", "más", "tiempo", "libre", ",", "aprendería", "a", "tocar", "la", "guitarra", "y", "el", "piano", "."],
     "cloze": [
       {
@@ -2390,6 +2557,15 @@
         "lemma": "tener",
         "hint": "tener · yo · subjuntivo imperfecto",
         "distractors": ["tengo", "tuve", "tendré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -2574,6 +2750,266 @@
         "tip": "relatives",
         "why": "lo-que",
         "distractors": ["cual", "quien", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2368",
+    "es": "Si hubiera estudiado más en la escuela, habría entrado a una mejor universidad.",
+    "sk": "Keby som v škole študoval viac, bol by som sa dostal na lepšiu univerzitu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "hubiera", "estudiado", "más", "en", "la", "escuela", ",", "habría", "entrado", "a", "una", "mejor", "universidad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hubiera",
+        "lemma": "hubiera",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["había", "haya", "hubo"]
+      }
+    ]
+  },
+  {
+    "id": "s2369",
+    "es": "Nunca habría imaginado que ustedes se llevarían tan bien.",
+    "sk": "Nikdy by som si nebol pomyslel, že sa budete tak dobre rozumieť.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Nunca", "habría", "imaginado", "que", "ustedes", "se", "llevarían", "tan", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "habría",
+        "lemma": "habría",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "habria",
+        "distractors": ["habrá", "haya", "hubo"]
+      }
+    ]
+  },
+  {
+    "id": "s2370",
+    "es": "Si me lo hubieras dicho antes, te hubiera ayudado con la mudanza.",
+    "sk": "Keby si mi to bol povedal skôr, bol by som ti pomohol so sťahovaním.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "me", "lo", "hubieras", "dicho", "antes", ",", "te", "hubiera", "ayudado", "con", "la", "mudanza", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hubiera",
+        "lemma": "hubiera",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "mx",
+        "distractors": ["había", "habrá", "hubo"]
+      }
+    ]
+  },
+  {
+    "id": "s2371",
+    "es": "Ojalá hubieras venido a la fiesta; lo habríamos pasado muy bien.",
+    "sk": "Kiežby si bol prišiel na oslavu; bolo by nám super.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Ojalá", "hubieras", "venido", "a", "la", "fiesta", ";", "lo", "habríamos", "pasado", "muy", "bien", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hubieras",
+        "lemma": "hubieras",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "hubiera",
+        "distractors": ["habías", "hayas", "hubiste"]
+      }
+    ]
+  },
+  {
+    "id": "s2372",
+    "es": "Sin tu ayuda, no lo habríamos logrado.",
+    "sk": "Bez tvojej pomoci by sme to boli nezvládli.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Sin", "tu", "ayuda", ",", "no", "lo", "habríamos", "logrado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "habríamos",
+        "lemma": "habríamos",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "habria",
+        "distractors": ["habíamos", "habremos", "hubimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2373",
+    "es": "Si hubieran escuchado al maestro, no habrían cometido ese error.",
+    "sk": "Keby boli počúvali učiteľa, neboli by urobili túto chybu.",
+    "level": "B2",
+    "topics": ["basics"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "hubieran", "escuchado", "al", "maestro", ",", "no", "habrían", "cometido", "ese", "error", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "habrían",
+        "lemma": "habrían",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["habían", "habrán", "hayan"]
+      }
+    ]
+  },
+  {
+    "id": "s2436",
+    "es": "Mi papá me dijo que llegaría tarde porque tenía mucho trabajo.",
+    "sk": "Otec mi povedal, že príde neskoro, lebo má veľa práce.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["Mi", "papá", "me", "dijo", "que", "llegaría", "tarde", "porque", "tenía", "mucho", "trabajo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llegaría",
+        "lemma": "llegar",
+        "hint": "llegar · él · condicional",
+        "tip": "reported",
+        "why": "que",
+        "distractors": ["llegó", "llegue", "llegando"]
+      }
+    ]
+  },
+  {
+    "id": "s2437",
+    "es": "Me dijo que tenía hambre y que quería comer tacos.",
+    "sk": "Povedal mi, že je hladný a že chce jesť tacos.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["Me", "dijo", "que", "tenía", "hambre", "y", "que", "quería", "comer", "tacos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tenía",
+        "lemma": "tener",
+        "hint": "tener · él",
+        "tip": "reported",
+        "why": "que",
+        "distractors": ["tuvo", "tendrá", "tenga"]
+      }
+    ]
+  },
+  {
+    "id": "s2438",
+    "es": "Mi mamá preguntó si ya había comido algo.",
+    "sk": "Mama sa opýtala, či som už niečo jedol.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["Mi", "mamá", "preguntó", "si", "ya", "había", "comido", "algo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "tip": "reported",
+        "why": "question",
+        "distractors": ["que", "como", "porque"]
+      }
+    ]
+  },
+  {
+    "id": "s2439",
+    "es": "El guardia nos preguntó adónde íbamos.",
+    "sk": "Strážnik sa nás opýtal, kam ideme.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["El", "guardia", "nos", "preguntó", "adónde", "íbamos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "íbamos",
+        "lemma": "ir",
+        "hint": "ir · nosotros",
+        "tip": "reported",
+        "why": "question",
+        "distractors": ["fuimos", "iremos", "vayamos"]
+      }
+    ]
+  },
+  {
+    "id": "s2440",
+    "es": "Mi tía me dijo que llamara a mi abuela esta noche.",
+    "sk": "Teta mi povedala, aby som dnes večer zavolal babke.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["Mi", "tía", "me", "dijo", "que", "llamara", "a", "mi", "abuela", "esta", "noche", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "llamara",
+        "lemma": "llamar",
+        "hint": "llamar · yo",
+        "tip": "reported",
+        "why": "command",
+        "distractors": ["llamé", "llamaba", "llamaría"]
+      }
+    ]
+  },
+  {
+    "id": "s2441",
+    "es": "Mi hermano dijo que iba a venir a la cena, pero no llegó.",
+    "sk": "Brat povedal, že príde na večeru, ale neprišiel.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["Mi", "hermano", "dijo", "que", "iba", "a", "venir", "a", "la", "cena", ",", "pero", "no", "llegó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "iba",
+        "lemma": "ir",
+        "hint": "ir · él",
+        "tip": "reported",
+        "why": "mx",
+        "distractors": ["va", "fue", "irá"]
+      }
+    ]
+  },
+  {
+    "id": "s2465",
+    "es": "La maestra dijo que mañana no habría clase.",
+    "sk": "Učiteľka povedala, že zajtra nebude vyučovanie.",
+    "level": "B1",
+    "topics": ["basics"],
+    "grammar": ["reported"],
+    "tokens": ["La", "maestra", "dijo", "que", "mañana", "no", "habría", "clase", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "habría",
+        "lemma": "habría",
+        "hint": "pomocné sloveso",
+        "tip": "reported",
+        "why": "que",
+        "distractors": ["hubiera", "haya", "hubo"]
       }
     ]
   }

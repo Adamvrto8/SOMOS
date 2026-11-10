@@ -47,6 +47,17 @@ export type Grammar =
   | 'interrogatives'
   | 'negation'
   | 'personal-a'
+  | 'periphrases'
+  | 'temporal'
+  | 'cause'
+  | 'reported'
+  | 'doubt'
+  | 'verb-prep'
+  | 'ser-estar-meaning'
+  | 'cambio'
+  | 'conditional-perfect'
+  | 'cond-connectors'
+  | 'relatives-mood'
   | 'perfecto'
 
 export interface Example {

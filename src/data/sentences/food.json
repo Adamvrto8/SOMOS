@@ -1,5 +1,145 @@
 [
   {
+    "id": "s2463",
+    "es": "Los domingos solemos comer en casa de mis abuelos.",
+    "sk": "V nedeľu zvykneme obedovať u starých rodičov.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["Los", "domingos", "solemos", "comer", "en", "casa", "de", "mis", "abuelos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "solemos",
+        "lemma": "soler",
+        "hint": "zvykneme",
+        "tip": "periphrases",
+        "why": "soler",
+        "distractors": ["solimos", "solamos", "soleremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2403",
+    "es": "El camarero acaba de decirnos que ya no hay tacos al pastor.",
+    "sk": "Čašník nám práve povedal, že už nie sú tacos al pastor.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["El", "camarero", "acaba", "de", "decirnos", "que", "ya", "no", "hay", "tacos", "al", "pastor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "acabar",
+        "distractors": ["a", "con", "para"]
+      }
+    ]
+  },
+  {
+    "id": "s2402",
+    "es": "Aunque ya es tarde, mis tíos siguen cocinando para la fiesta.",
+    "sk": "Hoci je už neskoro, moji strýkovia stále varia na oslavu.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["Aunque", "ya", "es", "tarde", ",", "mis", "tíos", "siguen", "cocinando", "para", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "siguen",
+        "lemma": "seguir",
+        "hint": "seguir · ellos",
+        "tip": "periphrases",
+        "why": "seguir",
+        "distractors": ["sigue", "sigo", "seguimos"]
+      }
+    ]
+  },
+  {
+    "id": "s2401",
+    "es": "Mi hermano dejó de comer carne hace un año.",
+    "sk": "Môj brat prestal jesť mäso pred rokom.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["Mi", "hermano", "dejó", "de", "comer", "carne", "hace", "un", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "dejar",
+        "distractors": ["a", "por", "en"]
+      }
+    ]
+  },
+  {
+    "id": "s2400",
+    "es": "La sopa me quedó salada, así que volví a prepararla con menos sal.",
+    "sk": "Polievka mi vyšla slaná, tak som ju pripravil znova s menej soli.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["La", "sopa", "me", "quedó", "salada", ",", "así", "que", "volví", "a", "prepararla", "con", "menos", "sal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "volver",
+        "distractors": ["de", "por", "en"]
+      }
+    ]
+  },
+  {
+    "id": "s2399",
+    "es": "Después del postre, los niños empezaron a pedir más helado.",
+    "sk": "Po dezerte začali deti pýtať ďalšiu zmrzlinu.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["Después", "del", "postre", ",", "los", "niños", "empezaron", "a", "pedir", "más", "helado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "empezar",
+        "distractors": ["de", "en", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2398",
+    "es": "Mi mamá acaba de sacar el pan del horno.",
+    "sk": "Mama práve vybrala chlieb z rúry.",
+    "level": "B1",
+    "topics": ["food"],
+    "grammar": ["periphrases"],
+    "tokens": ["Mi", "mamá", "acaba", "de", "sacar", "el", "pan", "del", "horno", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "acabar",
+        "distractors": ["a", "en", "por"]
+      }
+    ]
+  },
+  {
     "id": "s1626",
     "es": "Me gustan los tacos de pollo.",
     "sk": "Tacos s kuracím mi chutia.",
@@ -175,7 +315,7 @@
         "hint": "nie",
         "tip": "negation",
         "why": "no",
-        "distractors": ["ni", "nada", "nunca"]
+        "distractors": ["ni", "nada", "nadie"]
       }
     ]
   },
@@ -330,7 +470,7 @@
         "hint": "čo",
         "tip": "interrogatives",
         "why": "words",
-        "distractors": ["Cuál", "Cómo", "Quién"]
+        "distractors": ["Cuándo", "Cómo", "Quién"]
       }
     ]
   },
@@ -1570,7 +1710,7 @@
     "sk": "Ak ma pozveš na obed, ja donesiem dezert.",
     "level": "B2",
     "topics": ["food"],
-    "grammar": ["presente", "si-clauses"],
+    "grammar": ["presente", "si-clauses", "verb-prep"],
     "tokens": ["Si", "me", "invitas", "a", "comer", ",", "yo", "pongo", "el", "postre", "."],
     "cloze": [
       {
@@ -1588,6 +1728,15 @@
         "tip": "si-clauses",
         "why": "real",
         "distractors": ["invitarás", "invites"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1783,7 +1932,7 @@
     "sk": "Habanero je také pálivé, že ma až rozplakalo.",
     "level": "B2",
     "topics": ["food"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "cause"],
     "tokens": ["El", "chile", "habanero", "es", "tan", "picoso", "que", "hasta", "me", "hizo", "llorar", "."],
     "cloze": [
       {
@@ -1799,6 +1948,15 @@
         "lemma": "hacer",
         "hint": "hacer · él · pretérito",
         "distractors": ["hace", "hacía", "hicieron"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "taký",
+        "tip": "cause",
+        "why": "tan-que",
+        "distractors": ["tanto", "muy", "más"]
       }
     ]
   },
@@ -2361,6 +2519,7 @@
     "sk": "Po jedle sme ostali sedieť pri stole až do šiestej.",
     "level": "B1",
     "topics": ["food"],
+    "grammar": ["temporal"],
     "tokens": ["Nos", "quedamos", "de", "sobremesa", "hasta", "las", "seis", "."],
     "cloze": [
       {
@@ -2369,6 +2528,15 @@
         "lemma": "sobremesa",
         "hint": "posedenie po jedle",
         "distractors": ["botana", "porción", "cucharada"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "hasta",
+        "lemma": "hasta",
+        "hint": "až do",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["desde", "antes", "mientras"]
       }
     ]
   },
@@ -2768,6 +2936,126 @@
         "tip": "subjuntivo-clauses",
         "why": "opinion",
         "distractors": ["lleva", "llevó", "llevará"]
+      }
+    ]
+  },
+  {
+    "id": "s2380",
+    "es": "Cocino para todos siempre que me ayuden a lavar los platos.",
+    "sk": "Uvarím pre všetkých, pokiaľ mi pomôžete umyť riad.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Cocino", "para", "todos", "siempre", "que", "me", "ayuden", "a", "lavar", "los", "platos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "ayuden",
+        "lemma": "ayudar",
+        "hint": "ayudar · ustedes · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["ayudaron", "ayudarán", "ayudaban"]
+      }
+    ]
+  },
+  {
+    "id": "s2381",
+    "es": "Reserva una mesa por si llegan más invitados.",
+    "sk": "Rezervuj stôl pre prípad, že prídu ďalší hostia.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Reserva", "una", "mesa", "por", "si", "llegan", "más", "invitados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "tip": "cond-connectors",
+        "why": "por-si",
+        "distractors": ["para", "de", "con"]
+      }
+    ]
+  },
+  {
+    "id": "s2382",
+    "es": "Como no pruebes el mole de mi abuela, se va a ofender.",
+    "sk": "Ak neochutnáš babkino mole, urazí sa.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Como", "no", "pruebes", "el", "mole", "de", "mi", "abuela", ",", "se", "va", "a", "ofender", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "pruebes",
+        "lemma": "probar",
+        "hint": "probar · tú · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "como",
+        "distractors": ["pruebas", "probaste", "probarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2383",
+    "es": "Haré la cena a no ser que prefieran pedir comida a domicilio.",
+    "sk": "Navarím večeru, ibaže by ste radšej chceli objednať donášku.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Haré", "la", "cena", "a", "no", "ser", "que", "prefieran", "pedir", "comida", "a", "domicilio", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "prefieran",
+        "lemma": "preferir",
+        "hint": "preferir · ustedes · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "a-no-ser",
+        "distractors": ["prefieren", "prefirieron", "preferirán"]
+      }
+    ]
+  },
+  {
+    "id": "s2384",
+    "es": "Te doy la receta con tal de que no se la cuentes a nadie.",
+    "sk": "Dám ti recept pod podmienkou, že ho nikomu nepovieš.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Te", "doy", "la", "receta", "con", "tal", "de", "que", "no", "se", "la", "cuentes", "a", "nadie", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "cuentes",
+        "lemma": "contar",
+        "hint": "contar · tú · subjuntivo",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["cuentas", "contaste", "contarás"]
+      }
+    ]
+  },
+  {
+    "id": "s2385",
+    "es": "Salvo que el restaurante esté lleno, comeremos ahí.",
+    "sk": "Ak nebude reštaurácia plná, budeme jesť tam.",
+    "level": "B2",
+    "topics": ["food"],
+    "grammar": ["cond-connectors"],
+    "tokens": ["Salvo", "que", "el", "restaurante", "esté", "lleno", ",", "comeremos", "ahí", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Salvo",
+        "lemma": "salvo",
+        "hint": "výnimka",
+        "tip": "cond-connectors",
+        "why": "a-no-ser",
+        "distractors": ["Aunque", "Porque", "Cuando"]
       }
     ]
   }

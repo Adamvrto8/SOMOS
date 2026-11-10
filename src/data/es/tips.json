@@ -1016,5 +1016,136 @@
         }
       ]
     }
+  },
+  {
+    "id": "cause",
+    "rules": [
+      {
+        "id": "tan-que",
+        "examples": [
+          {
+            "es": "Estaba tan cansada que se durmió en el autobús.",
+            "sk": "Bola taká unavená, že zaspala v autobuse."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cond-connectors",
+    "rules": [
+      {
+        "id": "siempre-que",
+        "examples": [
+          null,
+          {
+            "es": "Te presto el coche con tal de que lo cuides.",
+            "sk": "Požičiam ti auto pod podmienkou, že naň dáš pozor."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cambio",
+    "rules": [
+      {
+        "id": "quedarse",
+        "examples": [
+          {
+            "es": "Me quedé dormido en el autobús.",
+            "sk": "Zaspal som v autobuse."
+          },
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "id": "periphrases",
+    "rules": [
+      {
+        "id": "seguir",
+        "examples": [
+          null,
+          {
+            "es": "Mis padres siguen viviendo en Puebla.",
+            "sk": "Moji rodičia stále bývajú v Pueble."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reported",
+    "rules": [
+      {
+        "id": "mx",
+        "text": "To, čo malo prísť, sa po dijo que povie kondicionálom (Dijo que vendría) alebo hovorovo cez iba a + infinitív (Dijo que iba a venir)."
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "mx",
+          "text": "What was going to happen is said after dijo que with the conditional (Dijo que vendría) or, in speech, with iba a + infinitive (Dijo que iba a venir)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "doubt",
+    "rules": [
+      {
+        "id": "capaz",
+        "text": "V Španielsku capaz que nepočuť. Povie sa quizá alebo tal vez + subjunktív: Quizá llueva.",
+        "examples": [
+          {
+            "es": "Quizá Ana no venga.",
+            "sk": "Možno Ana nepríde."
+          },
+          {
+            "es": "Quizá llueva por la tarde.",
+            "sk": "Možno bude popoludní pršať."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "capaz",
+          "text": "Capaz que is not heard in Spain. People say quizá or tal vez + subjunctive: Quizá llueva."
+        }
+      ]
+    }
+  },
+  {
+    "id": "conditional-perfect",
+    "rules": [
+      {
+        "id": "mx",
+        "text": "V hlavnej vete sa v Španielsku drží habría: Si me hubieras dicho, te habría ayudado. Hubiera tam znie hovorovo.",
+        "examples": [
+          {
+            "es": "Si me hubieras dicho, te habría ayudado.",
+            "sk": "Keby si mi to bol povedal, bol by som ti pomohol."
+          },
+          {
+            "es": "Si hubiera llegado antes, lo habría visto.",
+            "sk": "Keby som bol prišiel skôr, bol by som ho videl."
+          }
+        ]
+      }
+    ],
+    "en": {
+      "rules": [
+        {
+          "id": "mx",
+          "text": "In Spain the main clause keeps habría: Si me hubieras dicho, te habría ayudado. Hubiera there sounds casual."
+        }
+      ]
+    }
   }
 ]

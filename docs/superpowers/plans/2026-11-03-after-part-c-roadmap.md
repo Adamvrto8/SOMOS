@@ -37,6 +37,8 @@ Sizes: **S** = one session inline, **M** = a plan of 3–6 tasks, **L** = severa
   Spec 2026-11-09-grammar-levels-design.md. Next parts: A2 (new A1–A2 tips), A3 (B1–B2 gaps), A4 (variants.mx), B (grammar screen).
 - 2026-11-09: §4a.5 part A2 built, uncommitted: 5 new tips (demonstratives, possessives, interrogatives A1; negation,
   personal-a A2), 170 blanks retagged or added, 49 new sentences, 10 Cesta units. Spec 2026-11-09-grammar-a1-a2-tips-design.md.
+- 2026-11-10: §4a.5 parts A3 + A4 built, uncommitted: 11 new B1–B2 tips (49 in all), 158 new sentences, 22 Cesta units, variants.mx notes
+  from the PCIC, seven loose hints. Spec 2026-11-10-grammar-b1-b2-tips-design.md. Next: B (grammar screen).
 
 ## 0. State today
 

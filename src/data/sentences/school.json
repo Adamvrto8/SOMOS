@@ -1790,7 +1790,7 @@
     "sk": "Učiteľ sa nás spýtal, či sme urobili úlohu.",
     "level": "B1",
     "topics": ["school"],
-    "grammar": ["pluscuamperfecto", "preterito"],
+    "grammar": ["pluscuamperfecto", "preterito", "reported"],
     "tokens": ["El", "maestro", "nos", "preguntó", "si", "habíamos", "hecho", "la", "tarea", "."],
     "cloze": [
       {
@@ -1799,6 +1799,15 @@
         "lemma": "hacer",
         "hint": "hacer · participio",
         "distractors": ["hace", "hizo", "haciendo"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "či",
+        "tip": "reported",
+        "why": "question",
+        "distractors": ["que", "porque", "aunque"]
       }
     ]
   },
@@ -1928,7 +1937,7 @@
     "sk": "Trieda je otvorená od rána.",
     "level": "B2",
     "topics": ["school"],
-    "grammar": ["passive-se", "presente"],
+    "grammar": ["passive-se", "presente", "ser-estar-meaning"],
     "tokens": ["El", "salón", "está", "abierto", "desde", "temprano", "."],
     "cloze": [
       {
@@ -1939,6 +1948,15 @@
         "tip": "passive-se",
         "why": "estar-result",
         "distractors": ["abierta", "abriendo", "abrió"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["es", "era", "fue"]
       }
     ]
   },
@@ -2334,6 +2352,186 @@
         "tip": "demonstratives",
         "why": "neutral",
         "distractors": ["Este", "Eso", "Esta"]
+      }
+    ]
+  },
+  {
+    "id": "s2338",
+    "es": "Mi profesor es muy listo: resuelve cualquier problema de cálculo en segundos.",
+    "sk": "Môj učiteľ je veľmi šikovný: vyrieši akýkoľvek príklad z matematickej analýzy za pár sekúnd.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Mi", "profesor", "es", "muy", "listo", ":", "resuelve", "cualquier", "problema", "de", "cálculo", "en", "segundos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2339",
+    "es": "¿Ya estás listo para el examen de química? Faltan solo diez minutos.",
+    "sk": "Si už pripravený na skúšku z chémie? Zostáva len desať minút.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["¿", "Ya", "estás", "listo", "para", "el", "examen", "de", "química", "?", "Faltan", "solo", "diez", "minutos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "estar · tú",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["eres", "eras", "fuiste"]
+      }
+    ]
+  },
+  {
+    "id": "s2340",
+    "es": "Ayer Karla faltó a clase porque estaba mala del estómago.",
+    "sk": "Karla včera chýbala v škole, lebo mala chorý žalúdok.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Ayer", "Karla", "faltó", "a", "clase", "porque", "estaba", "mala", "del", "estómago", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "estaba",
+        "lemma": "estar",
+        "hint": "estar · ella",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["era", "fue", "será"]
+      }
+    ]
+  },
+  {
+    "id": "s2341",
+    "es": "Ese libro de texto es malo: tiene errores en casi todas las páginas.",
+    "sk": "Tá učebnica je zlá: má chyby takmer na každej strane.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Ese", "libro", "de", "texto", "es", "malo", ":", "tiene", "errores", "en", "casi", "todas", "las", "páginas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2342",
+    "es": "Mi maestro es muy abierto y siempre escucha las opiniones de todos los alumnos.",
+    "sk": "Môj učiteľ je veľmi otvorený a vždy si vypočuje názory všetkých žiakov.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Mi", "maestro", "es", "muy", "abierto", "y", "siempre", "escucha", "las", "opiniones", "de", "todos", "los", "alumnos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2343",
+    "es": "Estoy seguro de que aprobé el examen de historia.",
+    "sk": "Som si istý, že som uspel na skúške z dejepisu.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Estoy", "seguro", "de", "que", "aprobé", "el", "examen", "de", "historia", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Estoy",
+        "lemma": "estar",
+        "hint": "estar · yo",
+        "tip": "ser-estar-meaning",
+        "why": "verde",
+        "distractors": ["Soy", "Era", "Fui"]
+      }
+    ]
+  },
+  {
+    "id": "s2344",
+    "es": "El patio de la escuela es seguro, porque tiene cercas y un guardia en la puerta.",
+    "sk": "Školský dvor je bezpečný, lebo má oplotenie a strážnika pri bráne.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["El", "patio", "de", "la", "escuela", "es", "seguro", ",", "porque", "tiene", "cercas", "y", "un", "guardia", "en", "la", "puerta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "verde",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2345",
+    "es": "Pablo está muy delgado desde que se preocupa tanto por los exámenes.",
+    "sk": "Pablo je veľmi chudý, odkedy sa tak trápi kvôli skúškam.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Pablo", "está", "muy", "delgado", "desde", "que", "se", "preocupa", "tanto", "por", "los", "exámenes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · él",
+        "tip": "ser-estar-meaning",
+        "why": "delgado",
+        "distractors": ["es", "era", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2346",
+    "es": "Los alumnos están aburridos porque la clase dura cuatro horas seguidas.",
+    "sk": "Žiaci sa nudia, lebo hodina trvá štyri hodiny v kuse.",
+    "level": "B2",
+    "topics": ["school"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Los", "alumnos", "están", "aburridos", "porque", "la", "clase", "dura", "cuatro", "horas", "seguidas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "están",
+        "lemma": "estar",
+        "hint": "estar · ellos",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["son", "eran", "fueron"]
       }
     ]
   }

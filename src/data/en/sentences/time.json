@@ -92,12 +92,18 @@
   { "id": "s2130", "en": "My grandmother always says that time flies when you're having fun.", "hints": ["that"] },
   { "id": "s2131", "en": "Before the last train leaves, we have to get to the station." },
   { "id": "s2132", "en": "My brother arrived late because he had to wait for the bus that never came.", "hints": [null, "relative word"] },
-  { "id": "s2133", "en": "I wish we had more hours in the day to do everything we want." },
+  { "id": "s2133", "en": "I wish we had more hours in the day to do everything we want.", "hints": [null, null] },
   { "id": "s2134", "en": "While I worked in Guadalajara, I left home at six to avoid traffic.", "hints": [null, "por/para"] },
   { "id": "s2135", "en": "As soon as we finish the meeting, I'll call you so we can settle the date of the trip." },
   { "id": "s2136", "en": "Since time is running out, we should start the project today." },
   { "id": "s2137", "en": "My mom reminded me that the dentist appointment was at four." },
   { "id": "s2182", "en": "I don't think we will catch the last bus if we leave at ten." },
   { "id": "s2183", "en": "When the month ends, I'll pay you back the money you lent me." },
-  { "id": "s2184", "en": "Set the alarm for six so you don't miss the flight." }
+  { "id": "s2184", "en": "Set the alarm for six so you don't miss the flight." },
+  { "id": "s2410", "en": "I always check the calendar before going to bed.", "hints": ["preposition"] },
+  { "id": "s2411", "en": "When you get to the station, call me." },
+  { "id": "s2412", "en": "While you make dinner, I set the table.", "hints": ["while"] },
+  { "id": "s2413", "en": "We must get to the station before the train leaves." },
+  { "id": "s2414", "en": "I have been studying Spanish for a year.", "hints": ["since"] },
+  { "id": "s2415", "en": "Yesterday I worked until the store closed.", "hints": ["until"] }
 ]

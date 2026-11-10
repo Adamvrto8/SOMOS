@@ -38,7 +38,7 @@
         "tokenIndex": 1,
         "answer": "Cómo",
         "lemma": "cómo",
-        "hint": "aký",
+        "hint": "ako",
         "tip": "interrogatives",
         "why": "words",
         "distractors": ["Qué", "Cuál", "Dónde"]
@@ -1820,7 +1820,7 @@
     "sk": "Celú noc snežilo, takže ulice boli biele.",
     "level": "B1",
     "topics": ["weather"],
-    "grammar": ["pluscuamperfecto", "imperfecto"],
+    "grammar": ["pluscuamperfecto", "imperfecto", "cause"],
     "tokens": ["Había", "nevado", "toda", "la", "noche", ",", "así", "que", "las", "calles", "estaban", "blancas", "."],
     "cloze": [
       {
@@ -1829,6 +1829,15 @@
         "lemma": "nevar",
         "hint": "nevar · participio",
         "distractors": ["nevando", "nevó", "nieva"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
       }
     ]
   },
@@ -2152,7 +2161,7 @@
     "sk": "Aj keď je veľa slnka, radšej si zober bundu pre prípad, že klesne teplota.",
     "level": "B2",
     "topics": ["weather"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "cond-connectors"],
     "tokens": ["Aunque", "haya", "mucho", "sol", ",", "es", "mejor", "que", "lleves", "una", "chamarra", "por", "si", "baja", "la", "temperatura", "."],
     "cloze": [
       {
@@ -2161,6 +2170,15 @@
         "lemma": "llevar",
         "hint": "llevar · tú · subjuntivo",
         "distractors": ["llevas", "llevaste", "llevarás"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "si",
+        "lemma": "si",
+        "hint": "pre prípad, že",
+        "tip": "cond-connectors",
+        "why": "por-si",
+        "distractors": ["que", "como", "cuando"]
       }
     ]
   },
@@ -2359,6 +2377,126 @@
         "tip": "demonstratives",
         "why": "time",
         "distractors": ["Esta", "Ese", "Esto"]
+      }
+    ]
+  },
+  {
+    "id": "s2362",
+    "es": "Si hubiera sabido que iba a nevar, habría salido más temprano.",
+    "sk": "Keby som bol vedel, že bude snežiť, bol by som vyšiel skôr.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "hubiera", "sabido", "que", "iba", "a", "nevar", ",", "habría", "salido", "más", "temprano", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "habría",
+        "lemma": "habría",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "habria",
+        "distractors": ["había", "habrá", "hubo"]
+      }
+    ]
+  },
+  {
+    "id": "s2363",
+    "es": "Ojalá hubiera traído mi abrigo; ahora me muero de frío.",
+    "sk": "Kiežby som bol priniesol kabát; teraz mrznem.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Ojalá", "hubiera", "traído", "mi", "abrigo", ";", "ahora", "me", "muero", "de", "frío", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "hubiera",
+        "lemma": "hubiera",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "hubiera",
+        "distractors": ["hubo", "había", "habré"]
+      }
+    ]
+  },
+  {
+    "id": "s2364",
+    "es": "Si no hubieran cerrado la carretera por la nevada, habríamos llegado a tiempo.",
+    "sk": "Keby neboli zatvorili cestu kvôli snehu, boli by sme prišli načas.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "no", "hubieran", "cerrado", "la", "carretera", "por", "la", "nevada", ",", "habríamos", "llegado", "a", "tiempo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Si",
+        "lemma": "si",
+        "hint": "spojka",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["Cuando", "Porque", "Mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2365",
+    "es": "Habríamos disfrutado más el viaje si no hubiera hecho tanto calor.",
+    "sk": "Cestu by sme si boli užili viac, keby nebolo tak horúco.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Habríamos", "disfrutado", "más", "el", "viaje", "si", "no", "hubiera", "hecho", "tanto", "calor", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "hubiera",
+        "lemma": "hubiera",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "si",
+        "distractors": ["había", "habría", "hubo"]
+      }
+    ]
+  },
+  {
+    "id": "s2366",
+    "es": "Yo no habría salido sin paraguas, pero nadie me avisó de la tormenta.",
+    "sk": "Ja by som bez dáždnika nevyšiel, ale nikto ma nevaroval pred búrkou.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Yo", "no", "habría", "salido", "sin", "paraguas", ",", "pero", "nadie", "me", "avisó", "de", "la", "tormenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "habría",
+        "lemma": "habría",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "habria",
+        "distractors": ["había", "habré", "haya"]
+      }
+    ]
+  },
+  {
+    "id": "s2367",
+    "es": "Si me hubieran avisado del huracán, nos hubiéramos ido antes.",
+    "sk": "Keby ma boli upozornili na hurikán, odišli by sme skôr.",
+    "level": "B2",
+    "topics": ["weather"],
+    "grammar": ["conditional-perfect"],
+    "tokens": ["Si", "me", "hubieran", "avisado", "del", "huracán", ",", "nos", "hubiéramos", "ido", "antes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "hubiéramos",
+        "lemma": "hubiéramos",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "mx",
+        "distractors": ["habíamos", "hubimos", "hayamos"]
       }
     ]
   }

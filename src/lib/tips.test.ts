@@ -237,6 +237,18 @@ describe('usage blanks', () => {
           expect(tipForCloze(s, c)?.rule?.id, `${s.id} ${c.answer}`).toBe(c.why)
   })
 
+  it('every blank on the B1–B2 tips of part A3 names a rule of its tip, and each tip has enough blanks', () => {
+    const NEW = ['periphrases', 'temporal', 'cause', 'reported', 'doubt', 'verb-prep', 'ser-estar-meaning', 'cambio', 'conditional-perfect', 'cond-connectors', 'relatives-mood']
+    const count = new Map<string, number>()
+    for (const s of sentences)
+      for (const c of s.cloze ?? [])
+        if (c.tip && NEW.includes(c.tip)) {
+          expect(tipForCloze(s, c)?.rule?.id, `${s.id} ${c.answer}`).toBe(c.why)
+          count.set(c.tip, (count.get(c.tip) ?? 0) + 1)
+        }
+    for (const id of NEW) expect(count.get(id) ?? 0, id).toBeGreaterThanOrEqual(14)
+  })
+
   it('an aunque blank opens the B2 tip it moved to', () => {
     const aunque: Cloze = { tokenIndex: 1, answer: 'llueva', lemma: 'llover', hint: 'llover · él · subjuntivo', tip: 'subjuntivo-aunque', why: 'aunque' }
     const s: Sentence = { ...sentence, es: 'Aunque llueva, salgo.', level: 'B2', grammar: ['subjuntivo-aunque', 'subjuntivo'], tokens: ['Aunque', 'llueva', ',', 'salgo', '.'], cloze: [aunque] }

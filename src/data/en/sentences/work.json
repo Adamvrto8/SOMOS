@@ -94,7 +94,7 @@
   { "id": "s1792", "en": "It is essential that employees keep to the schedule." },
   { "id": "s1793", "en": "My boss hopes we finish the project before December." },
   { "id": "s1794", "en": "It is a pity that they are not giving you the promotion." },
-  { "id": "s1795", "en": "I prefer that you negotiate the contract with the client." },
+  { "id": "s1795", "en": "I prefer that you negotiate the contract with the client.", "hints": [null, "preposition"] },
   { "id": "s1839", "en": "My boss wanted us to work on Saturdays." },
   { "id": "s1856", "en": "My boss asks us to arrive early tomorrow." },
   { "id": "s1869", "en": "If you finish the report today, you can leave early." },
@@ -121,7 +121,7 @@
   { "id": "s2162", "en": "Although I work a lot, I don't complain, since I like what I do.", "hints": [null, "relative word"] },
   { "id": "s2163", "en": "The manager asked us to arrive early because we would have a meeting with the clients." },
   { "id": "s2164", "en": "I'm looking for a job that leaves me free time to study in the afternoons." },
-  { "id": "s2165", "en": "If I had quit earlier, I would be working in my own business now." },
+  { "id": "s2165", "en": "If I had quit earlier, I would be working in my own business now.", "hints": [null, "auxiliary verb"] },
   { "id": "s2166", "en": "My coworker, who was promoted last month, now has his own office.", "hints": ["relative pronoun (person)"] },
   { "id": "s2167", "en": "It's likely that the company will hire more staff as soon as the year ends." },
   { "id": "s2232", "en": "Although the offer is good, I still do not want to accept the position in Querétaro." },
@@ -133,5 +133,14 @@
   { "id": "s2309", "en": "Who do you work with?", "hints": ["who"] },
   { "id": "s2310", "en": "Where does your mom work?", "hints": ["where"] },
   { "id": "s2311", "en": "Why do you work on Saturdays?", "hints": ["why"] },
-  { "id": "s2312", "en": "I work on Saturdays because I need money.", "hints": ["because"] }
+  { "id": "s2312", "en": "I work on Saturdays because I need money.", "hints": ["because"] },
+  { "id": "s2321", "en": "My boss taught me to negotiate with suppliers without losing my calm.", "hints": ["preposition"] },
+  { "id": "s2322", "en": "During the meeting they talked about the layoffs, but nobody wanted to give details.", "hints": ["preposition"] },
+  { "id": "s2323", "en": "If you manage to convince the client, you can count on a year-end bonus.", "hints": ["preposition"] },
+  { "id": "s2324", "en": "My colleagues remember every mistake I made in my first week.", "hints": ["preposition"] },
+  { "id": "s2325", "en": "It took me three months to get used to the pace of the office.", "hints": ["preposition"] },
+  { "id": "s2326", "en": "I still dream of quitting and opening my own café.", "hints": ["preposition"] },
+  { "id": "s2327", "en": "We are thinking about hiring two more people, but the budget is not enough.", "hints": ["preposition"] },
+  { "id": "s2328", "en": "What do you think of the new schedule policy?", "hints": ["preposition"] },
+  { "id": "s2329", "en": "My partner always complains that nobody values his work.", "hints": ["preposition"] }
 ]

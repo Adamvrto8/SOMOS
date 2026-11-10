@@ -1914,7 +1914,7 @@
     "sk": "Keby som vyhral v lotérii, venoval by som sa cestovaniu a fotografovaniu.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["si-clauses", "subj-imperfecto", "condicional"],
+    "grammar": ["si-clauses", "subj-imperfecto", "condicional", "verb-prep"],
     "tokens": ["Si", "ganara", "la", "lotería", ",", "me", "dedicaría", "a", "viajar", "y", "a", "tomar", "fotografías", "."],
     "cloze": [
       {
@@ -1923,6 +1923,15 @@
         "lemma": "ganar",
         "hint": "ganar · yo · subjuntivo imperfecto",
         "distractors": ["gano", "gané", "ganaré"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1950,7 +1959,7 @@
     "sk": "Potrebujem koníček, ktorý mi pomôže na chvíľu zabudnúť na prácu.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["relatives", "subjuntivo"],
+    "grammar": ["relatives", "subjuntivo", "verb-prep"],
     "tokens": ["Necesito", "un", "pasatiempo", "que", "me", "ayude", "a", "olvidarme", "del", "trabajo", "por", "un", "rato", "."],
     "cloze": [
       {
@@ -1959,6 +1968,15 @@
         "lemma": "ayudar",
         "hint": "ayudar · él · subjuntivo",
         "distractors": ["ayuda", "ayudó", "ayudará"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1968,7 +1986,7 @@
     "sk": "Otec povedal, že keď pôjde do dôchodku, naučí sa hrať na akordeón.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["subj-imperfecto", "condicional"],
+    "grammar": ["subj-imperfecto", "condicional", "verb-prep"],
     "tokens": ["Mi", "papá", "dijo", "que", ",", "cuando", "se", "jubilara", ",", "aprendería", "a", "tocar", "el", "acordeón", "."],
     "cloze": [
       {
@@ -1977,6 +1995,15 @@
         "lemma": "aprender",
         "hint": "aprender · él · condicional",
         "distractors": ["aprende", "aprendió", "aprenderá"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -2049,7 +2076,7 @@
     "sk": "Náš tím vyhrá turnaj, pokiaľ budeme trénovať disciplinovane a bez vynechávania.",
     "level": "B2",
     "topics": ["hobbies"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "cond-connectors"],
     "tokens": ["Mi", "equipo", "ganará", "el", "torneo", "siempre", "que", "entrenemos", "con", "disciplina", "y", "sin", "faltar", "."],
     "cloze": [
       {
@@ -2058,6 +2085,15 @@
         "lemma": "entrenar",
         "hint": "entrenar · nosotros · subjuntivo",
         "distractors": ["entrenamos", "entrenábamos", "entrenaremos"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "siempre",
+        "lemma": "siempre",
+        "hint": "pod podmienkou, že",
+        "tip": "cond-connectors",
+        "why": "siempre-que",
+        "distractors": ["cuando", "aunque", "porque"]
       }
     ]
   },
@@ -2134,6 +2170,306 @@
         "tip": "relatives",
         "why": "lo-que",
         "distractors": ["cual", "quien", "que"]
+      }
+    ]
+  },
+  {
+    "id": "s2330",
+    "es": "Ya estoy listo para la excursión: tengo la mochila, el agua y los zapatos.",
+    "sk": "Som pripravený na výlet: mám batoh, vodu aj topánky.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Ya", "estoy", "listo", "para", "la", "excursión", ":", "tengo", "la", "mochila", ",", "el", "agua", "y", "los", "zapatos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "estoy",
+        "lemma": "estar",
+        "hint": "estar · yo",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["soy", "era", "fui"]
+      }
+    ]
+  },
+  {
+    "id": "s2331",
+    "es": "Esa película es tan aburrida que la mitad del público se salió de la sala.",
+    "sk": "Ten film je taký nudný, že polovica publika odišla zo sály.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Esa", "película", "es", "tan", "aburrida", "que", "la", "mitad", "del", "público", "se", "salió", "de", "la", "sala", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · ella",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2332",
+    "es": "Mi tío está aburrido porque ya no tiene con quién jugar dominó.",
+    "sk": "Strýko sa nudí, lebo už nemá s kým hrať domino.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Mi", "tío", "está", "aburrido", "porque", "ya", "no", "tiene", "con", "quién", "jugar", "dominó", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["es", "era", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2333",
+    "es": "No comas ese mango todavía, está verde y te va a caer mal.",
+    "sk": "To mango ešte nejedz, je nezrelé a bude ti zle.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["No", "comas", "ese", "mango", "todavía", ",", "está", "verde", "y", "te", "va", "a", "caer", "mal", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · él",
+        "tip": "ser-estar-meaning",
+        "why": "verde",
+        "distractors": ["es", "era", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2334",
+    "es": "Desde que empezó a correr cada mañana, mi papá está mucho más delgado.",
+    "sk": "Odkedy začal každé ráno behať, je môj otec oveľa chudší.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Desde", "que", "empezó", "a", "correr", "cada", "mañana", ",", "mi", "papá", "está", "mucho", "más", "delgado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 10,
+        "answer": "está",
+        "lemma": "estar",
+        "hint": "estar · él",
+        "tip": "ser-estar-meaning",
+        "why": "delgado",
+        "distractors": ["es", "era", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2335",
+    "es": "Mi abuelo es delgado desde joven y, por más que come, nunca sube de peso.",
+    "sk": "Dedo je štíhly od mladosti a nech zje čokoľvek, nikdy nepriberie.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["Mi", "abuelo", "es", "delgado", "desde", "joven", "y", ",", "por", "más", "que", "come", ",", "nunca", "sube", "de", "peso", "."],
+    "cloze": [
+      {
+        "tokenIndex": 2,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "delgado",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2336",
+    "es": "El dueño del club de golf es muy rico, pero casi nunca juega.",
+    "sk": "Majiteľ golfového klubu je veľmi bohatý, ale takmer nikdy nehrá.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["El", "dueño", "del", "club", "de", "golf", "es", "muy", "rico", ",", "pero", "casi", "nunca", "juega", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "verde",
+        "distractors": ["está", "estaba", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2337",
+    "es": "¡Qué guapo estás con ese traje de charro! Vas a robarte la fiesta.",
+    "sk": "Ako ti to svedčí v tom charro obleku! Ukradneš celú oslavu.",
+    "level": "B2",
+    "topics": ["hobbies"],
+    "grammar": ["ser-estar-meaning", "ser-estar"],
+    "tokens": ["¡", "Qué", "guapo", "estás", "con", "ese", "traje", "de", "charro", "!", "Vas", "a", "robarte", "la", "fiesta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "estás",
+        "lemma": "estar",
+        "hint": "estar · tú",
+        "tip": "ser-estar-meaning",
+        "why": "delgado",
+        "distractors": ["estoy", "están", "estuvo"]
+      }
+    ]
+  },
+  {
+    "id": "s2429",
+    "es": "No fui al concierto porque me enfermé el viernes.",
+    "sk": "Nešiel som na koncert, pretože som v piatok ochorel.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["No", "fui", "al", "concierto", "porque", "me", "enfermé", "el", "viernes", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "tip": "cause",
+        "why": "porque",
+        "distractors": ["como", "aunque", "mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2430",
+    "es": "Como llovió todo el fin de semana, nos quedamos jugando cartas en casa.",
+    "sk": "Keďže celý víkend pršalo, zostali sme doma hrať karty.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Como", "llovió", "todo", "el", "fin", "de", "semana", ",", "nos", "quedamos", "jugando", "cartas", "en", "casa", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Como",
+        "lemma": "como",
+        "hint": "keďže",
+        "tip": "cause",
+        "why": "porque",
+        "distractors": ["Aunque", "Hasta", "Antes"]
+      }
+    ]
+  },
+  {
+    "id": "s2431",
+    "es": "Me encanta nadar; por eso nado tres veces por semana.",
+    "sk": "Milujem plávanie, preto plávam trikrát týždenne.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Me", "encanta", "nadar", ";", "por", "eso", "nado", "tres", "veces", "por", "semana", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "preto",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["sin", "con", "desde"]
+      }
+    ]
+  },
+  {
+    "id": "s2432",
+    "es": "Nos faltaba un jugador, así que invitamos a mi primo al partido.",
+    "sk": "Chýbal nám hráč, takže sme pozvali bratranca na zápas.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Nos", "faltaba", "un", "jugador", ",", "así", "que", "invitamos", "a", "mi", "primo", "al", "partido", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
+      }
+    ]
+  },
+  {
+    "id": "s2433",
+    "es": "Ya que te gusta tanto el senderismo, vamos a ir juntos el domingo.",
+    "sk": "Keďže ťa turistika tak baví, pôjdeme spolu v nedeľu.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Ya", "que", "te", "gusta", "tanto", "el", "senderismo", ",", "vamos", "a", "ir", "juntos", "el", "domingo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ya",
+        "lemma": "ya",
+        "hint": "keďže",
+        "tip": "cause",
+        "why": "ya-que",
+        "distractors": ["Aún", "Todavía", "Apenas"]
+      }
+    ]
+  },
+  {
+    "id": "s2434",
+    "es": "Tocó la guitarra tan bien que todos se quedaron callados.",
+    "sk": "Hral na gitare tak dobre, že všetci stíchli.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Tocó", "la", "guitarra", "tan", "bien", "que", "todos", "se", "quedaron", "callados", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "taký",
+        "tip": "cause",
+        "why": "tan-que",
+        "distractors": ["tanto", "muy", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s2435",
+    "es": "Practicó tanto que ganó el torneo de ajedrez.",
+    "sk": "Trénoval tak veľa, že vyhral šachový turnaj.",
+    "level": "B1",
+    "topics": ["hobbies"],
+    "grammar": ["cause"],
+    "tokens": ["Practicó", "tanto", "que", "ganó", "el", "torneo", "de", "ajedrez", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tanto",
+        "lemma": "tanto",
+        "hint": "tak veľa",
+        "tip": "cause",
+        "why": "tan-que",
+        "distractors": ["tan", "muy", "mucho"]
       }
     ]
   }

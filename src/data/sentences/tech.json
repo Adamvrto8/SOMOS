@@ -1,5 +1,125 @@
 [
   {
+    "id": "s2428",
+    "es": "El video estaba tan pesado que mi teléfono se quedó congelado.",
+    "sk": "Video bolo také ťažké, že sa môj telefón zasekol.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["El", "video", "estaba", "tan", "pesado", "que", "mi", "teléfono", "se", "quedó", "congelado", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "tan",
+        "lemma": "tan",
+        "hint": "taký",
+        "tip": "cause",
+        "why": "tan-que",
+        "distractors": ["tanto", "muy", "más"]
+      }
+    ]
+  },
+  {
+    "id": "s2427",
+    "es": "Ya que vas a la tienda, cómprame un cable USB.",
+    "sk": "Keďže ideš do obchodu, kúp mi USB kábel.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["Ya", "que", "vas", "a", "la", "tienda", ",", "cómprame", "un", "cable", "USB", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Ya",
+        "lemma": "ya",
+        "hint": "keďže",
+        "tip": "cause",
+        "why": "ya-que",
+        "distractors": ["Aún", "Todavía", "Apenas"]
+      }
+    ]
+  },
+  {
+    "id": "s2426",
+    "es": "Se me acabó el plan de datos, así que busqué una red wifi.",
+    "sk": "Minuli sa mi dáta, takže som hľadal wifi sieť.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["Se", "me", "acabó", "el", "plan", "de", "datos", ",", "así", "que", "busqué", "una", "red", "wifi", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
+      }
+    ]
+  },
+  {
+    "id": "s2425",
+    "es": "Mi contraseña caducó. Por eso no pude entrar a la cuenta.",
+    "sk": "Moje heslo vypršalo. Preto som sa nemohol prihlásiť do účtu.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["Mi", "contraseña", "caducó", ".", "Por", "eso", "no", "pude", "entrar", "a", "la", "cuenta", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "Por",
+        "lemma": "por",
+        "hint": "preto",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["Para", "Sin", "Con"]
+      }
+    ]
+  },
+  {
+    "id": "s2424",
+    "es": "Como no tenía internet en casa, fui a trabajar a la biblioteca.",
+    "sk": "Keďže som nemal doma internet, išiel som pracovať do knižnice.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["Como", "no", "tenía", "internet", "en", "casa", ",", "fui", "a", "trabajar", "a", "la", "biblioteca", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Como",
+        "lemma": "como",
+        "hint": "keďže",
+        "tip": "cause",
+        "why": "porque",
+        "distractors": ["Aunque", "Mientras", "Hasta"]
+      }
+    ]
+  },
+  {
+    "id": "s2423",
+    "es": "Mi laptop se apaga sola porque la batería ya está muy vieja.",
+    "sk": "Môj laptop sa sám vypína, pretože batéria je už veľmi stará.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["cause"],
+    "tokens": ["Mi", "laptop", "se", "apaga", "sola", "porque", "la", "batería", "ya", "está", "muy", "vieja", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "porque",
+        "lemma": "porque",
+        "hint": "pretože",
+        "tip": "cause",
+        "why": "porque",
+        "distractors": ["como", "aunque", "mientras"]
+      }
+    ]
+  },
+  {
     "id": "s1772",
     "es": "Perdí mi tarea porque no había guardado el archivo.",
     "sk": "Stratil som úlohu, lebo som si neuložil súbor.",
@@ -2103,7 +2223,7 @@
     "sk": "Keďže všetci pracujeme z domu, potrebujeme stabilnejšie pripojenie.",
     "level": "B2",
     "topics": ["tech"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "cause"],
     "tokens": ["Ya", "que", "todos", "trabajamos", "desde", "casa", ",", "necesitamos", "una", "conexión", "más", "estable", "."],
     "cloze": [
       {
@@ -2112,6 +2232,15 @@
         "lemma": "trabajar",
         "hint": "trabajar · nosotros · presente",
         "distractors": ["trabajemos", "trabajaremos", "trabajaran"]
+      },
+      {
+        "tokenIndex": 0,
+        "answer": "Ya",
+        "lemma": "ya",
+        "hint": "keďže",
+        "tip": "cause",
+        "why": "ya-que",
+        "distractors": ["Aún", "Todavía", "Apenas"]
       }
     ]
   },
@@ -2268,6 +2397,146 @@
         "tip": "ser-passive",
         "why": "ser-passive",
         "distractors": ["corregida", "corrigiendo", "corrigió"]
+      }
+    ]
+  },
+  {
+    "id": "s2456",
+    "es": "Tal vez el problema sea la conexión de internet.",
+    "sk": "Možno je problém v internetovom pripojení.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["Tal", "vez", "el", "problema", "sea", "la", "conexión", "de", "internet", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "sea",
+        "lemma": "ser",
+        "hint": "ser · él · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["es", "fue", "será"]
+      }
+    ]
+  },
+  {
+    "id": "s2457",
+    "es": "Quizá tengamos que cambiar de teléfono el próximo año.",
+    "sk": "Možno budeme musieť budúci rok vymeniť telefón.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["Quizá", "tengamos", "que", "cambiar", "de", "teléfono", "el", "próximo", "año", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "tengamos",
+        "lemma": "tener",
+        "hint": "tener · nosotros · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["tenemos", "tuvimos", "tendremos"]
+      }
+    ]
+  },
+  {
+    "id": "s2458",
+    "es": "A lo mejor ya llegó el paquete con los audífonos.",
+    "sk": "Možno už prišiel balík so slúchadlami.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["A", "lo", "mejor", "ya", "llegó", "el", "paquete", "con", "los", "audífonos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 4,
+        "answer": "llegó",
+        "lemma": "llegar",
+        "hint": "llegar · él",
+        "tip": "doubt",
+        "why": "lo-mejor",
+        "distractors": ["llegue", "llegara", "llegaría"]
+      }
+    ]
+  },
+  {
+    "id": "s2459",
+    "es": "Capaz que la aplicación no funcione sin internet.",
+    "sk": "Možno aplikácia bez internetu nebude fungovať.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["Capaz", "que", "la", "aplicación", "no", "funcione", "sin", "internet", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "funcione",
+        "lemma": "funcionar",
+        "hint": "funcionar · ella · subjuntivo",
+        "tip": "doubt",
+        "why": "capaz",
+        "distractors": ["funciona", "funcionó", "funcionaba"]
+      }
+    ]
+  },
+  {
+    "id": "s2460",
+    "es": "Seguramente el servidor está caído; nadie puede entrar.",
+    "sk": "Server je určite nedostupný, nikto sa nemôže prihlásiť.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["Seguramente", "el", "servidor", "está", "caído", ";", "nadie", "puede", "entrar", "."],
+    "cloze": [
+      {
+        "tokenIndex": 0,
+        "answer": "Seguramente",
+        "lemma": "seguramente",
+        "hint": "určite",
+        "tip": "doubt",
+        "why": "prob",
+        "distractors": ["Apenas", "Aunque", "Mientras"]
+      }
+    ]
+  },
+  {
+    "id": "s2461",
+    "es": "Quizás mi hermano pueda arreglar el teléfono.",
+    "sk": "Možno môj brat dokáže opraviť telefón.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["Quizás", "mi", "hermano", "pueda", "arreglar", "el", "teléfono", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pueda",
+        "lemma": "poder",
+        "hint": "poder · él · subjuntivo",
+        "tip": "doubt",
+        "why": "subj",
+        "distractors": ["puede", "pudo", "podrá"]
+      }
+    ]
+  },
+  {
+    "id": "s2462",
+    "es": "A lo mejor la contraseña es otra; prueba con la anterior.",
+    "sk": "Možno je heslo iné, skús to predošlé.",
+    "level": "B1",
+    "topics": ["tech"],
+    "grammar": ["doubt"],
+    "tokens": ["A", "lo", "mejor", "la", "contraseña", "es", "otra", ";", "prueba", "con", "la", "anterior", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · ella",
+        "tip": "doubt",
+        "why": "lo-mejor",
+        "distractors": ["sea", "fue", "fuera"]
       }
     ]
   }

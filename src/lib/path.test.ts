@@ -15,11 +15,10 @@ const none = () => false
 
 describe('path units', () => {
   it.each([
-    ['b1-basics-1', 'imperativo'],
-    ['b1-city-1', 'subjuntivo'],
+    ['b1-numbers-1', 'subjuntivo'],
     ['b1-health-1', 'condicional'],
     ['b1-weather-1', 'pluscuamperfecto'],
-    ['b2-family-1', 'subjImperfecto'],
+    ['b2-emotions-1', 'subjImperfecto'],
   ])('%s practises the forms of its new tip: %s', (unitId, tense) => {
     const conjugations = stepTasks(pathUnitById.get(unitId)!, 'grammar').filter((t): t is ConjugationTask => t.kind === 'conjugation')
     expect(conjugations).toHaveLength(4)
@@ -30,8 +29,8 @@ describe('path units', () => {
   it('teaches no unit a tense above its level', () => {
     const LEVEL = { imperativo: 'A2', futuro: 'B1', subjuntivo: 'B1', condicional: 'B1', pluscuamperfecto: 'B1', 'subj-imperfecto': 'B2' } as Record<string, string>
     for (const unit of pathUnits) if (LEVEL[unit.grammar]) expect(unit.level >= LEVEL[unit.grammar], unit.id).toBe(true)
-    expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(11)
-    expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(9)
+    expect(pathUnits.filter((u) => u.level === 'B1' && ['imperativo', 'subjuntivo', 'condicional', 'pluscuamperfecto'].includes(u.grammar))).toHaveLength(3)
+    expect(pathUnits.filter((u) => u.level === 'B2' && ['imperativo', 'subjuntivo', 'condicional', 'subj-imperfecto'].includes(u.grammar))).toHaveLength(3)
   })
 
   it('teach every word with a topic exactly once, A1 to B2, the articles in the grammar steps', () => {

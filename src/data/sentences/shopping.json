@@ -972,7 +972,7 @@
     "sk": "Minul sa mi kredit a nemohol som zavolať.",
     "level": "B2",
     "topics": ["shopping", "tech"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "cambio"],
     "tokens": ["Me", "quedé", "sin", "saldo", "y", "no", "pude", "hacer", "la", "llamada", "."],
     "cloze": [
       {
@@ -981,6 +981,15 @@
         "lemma": "saldo",
         "hint": "kredit; zostatok",
         "distractors": ["sueldo", "salto", "sabor"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "quedé",
+        "lemma": "quedarse",
+        "hint": "quedarse · yo",
+        "tip": "cambio",
+        "why": "quedarse",
+        "distractors": ["puse", "hice", "volví"]
       }
     ]
   },
@@ -1354,6 +1363,7 @@
     "sk": "Tento mixér má ročnú záruku, takže sa neboj.",
     "level": "B1",
     "topics": ["shopping"],
+    "grammar": ["cause"],
     "tokens": ["Esta", "licuadora", "tiene", "un", "año", "de", "garantía", ",", "así", "que", "no", "te", "preocupes", "."],
     "cloze": [
       {
@@ -1362,6 +1372,15 @@
         "lemma": "garantía",
         "hint": "záruka",
         "distractors": ["factura", "devolución", "queja"]
+      },
+      {
+        "tokenIndex": 8,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
       }
     ]
   },

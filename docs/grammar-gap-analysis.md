@@ -316,3 +316,29 @@ Gaps D1, D2, P4, D5 (+ part of D4) and C1 of §3 are closed.
 6. `cual` (qué vs cuál, PCIC 7.3 B1) inside the A1 `interrogatives`: a frequent mistake from the first weeks.
 7. `pairs` (algo/alguien/algún ↔ nada/nadie/ningún, PCIC 6.1 B1) inside the A2 `negation`.
 8. `también / tampoco` (PCIC 6.2 A1) taught by the A2 `negation`; A1 blanks on them keep no tip.
+
+## 9. Parts A3 + A4 applied on 2026-11-10 (uncommitted)
+
+Spec `docs/superpowers/specs/2026-11-10-grammar-b1-b2-tips-design.md`, plan `docs/superpowers/plans/2026-11-10-grammar-b1-b2-tips.md`.
+Gaps V2+V3 (merged), V4, PP1+PP2, S1, S2, A3, C2, SU1, SU2, SU4 and SU5 of §3 are closed.
+
+- **Tips (38 → 49):** B1 `periphrases`, `temporal`, `cause`, `reported`, `doubt`; B2 `verb-prep`, `ser-estar-meaning`, `cambio`,
+  `conditional-perfect`, `cond-connectors`, `relatives-mood`. All are usage tips (a blank names `tip` + `why`).
+- **Blanks:** 15–31 per tip; 158 new sentences s2313–s2466 (B1 / B2), blanks added to about 45 existing sentences.
+- **Cesta:** 22 units re-pointed (all B1 imperativo units, two B1 subjuntivo, two B1 condicional, one B1 pluscuamperfecto, B1 accents and
+  reflexive, and B2 units of imperfecto, subjuntivo, condicional, subj-imperfecto, imperativo, preterito, reflexive, accents, ser-estar);
+  the B1 and B2 tense-unit counts in `path.test.ts` are 3 each.
+- **A4 (`variants.mx`):** notes for presente (tuteo, Chiapas voseo, explicit subject), imperativo (Chiapas voseo), progresivo (punctual
+  *está viniendo*), condicional (*iba a*), object-pronouns (*ándale*, *la pasamos bien*), subjuntivo-clauses (*capaz que*), reflexive
+  (*desayunarse*, *amanecerse*), hay-estar (*habían cajas* is wrong), negation (*más nada*, *hasta* without *no*), gender and articles rewritten.
+  Checked in the DLE (dle.rae.es): *sartén* and *radio* have both genders in American Spanish; the old claim that Mexico says *el radio* and
+  Spain *la radio* was not supported and is gone. *la María* (the mx text of `articles`) is replaced by *Vamos a la casa* (PCIC 3.1 B1).
+- **Loose ends:** the hints of s371, s2265, s2271, s019, s836, s273 and s1228 are fixed.
+- NGLE numbers: the rae.es index could not be read in this session; only numbers known from part A1 are cited, the other tips name the chapter topic.
+
+### Recorded deviations from the PCIC (part A3)
+
+9. `acabar de` (A2) inside the B1 `periphrases`; `soler` is not a verb of the app, so its blanks are word blanks.
+10. `desde` and `antes de + inf.` (A2) inside `temporal`; `ya que` and `tan… que` (B2) inside `cause`; `dijo que + subjuntivo` (B2) inside `reported`.
+11. `verb-prep` is B2 (PCIC 12.2.5 B1–B2): the B1 level had no more path units to give.
+12. `conditional-perfect` merges V2 and V3; the pluscuamperfecto de subjuntivo is taught through *hubiera* only.

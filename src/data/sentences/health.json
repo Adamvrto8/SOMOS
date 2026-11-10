@@ -589,7 +589,7 @@
     "sk": "Ak budeš ďalej jesť toľko sladkostí, ochorieš.",
     "level": "B1",
     "topics": ["health", "food"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "periphrases"],
     "tokens": ["Si", "sigues", "comiendo", "tantos", "dulces", ",", "te", "vas", "a", "enfermar", "."],
     "cloze": [
       {
@@ -605,6 +605,15 @@
         "lemma": "tanto",
         "hint": "toľko",
         "distractors": ["tanto", "tantas", "tan"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "sigues",
+        "lemma": "seguir",
+        "hint": "seguir · tú",
+        "tip": "periphrases",
+        "why": "seguir",
+        "distractors": ["sigo", "sigue", "seguiste"]
       }
     ]
   },
@@ -920,6 +929,7 @@
     "sk": "Sedavý spôsob života škodí srdcu.",
     "level": "B2",
     "topics": ["health"],
+    "grammar": ["ser-estar-meaning"],
     "tokens": ["Llevar", "una", "vida", "sedentaria", "es", "malo", "para", "el", "corazón", "."],
     "cloze": [
       {
@@ -928,6 +938,15 @@
         "lemma": "sedentario",
         "hint": "sedavý",
         "distractors": ["sedentario", "secundaria", "solitaria"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "es",
+        "lemma": "ser",
+        "hint": "ser · él",
+        "tip": "ser-estar-meaning",
+        "why": "listo",
+        "distractors": ["está", "estaba", "estuvo"]
       }
     ]
   },
@@ -954,7 +973,7 @@
     "sk": "Umývanie rúk pomáha predchádzať nákaze.",
     "level": "B2",
     "topics": ["health"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "verb-prep"],
     "tokens": ["Lavarse", "las", "manos", "ayuda", "a", "prevenir", "contagios", "."],
     "cloze": [
       {
@@ -963,6 +982,15 @@
         "lemma": "ayudar",
         "hint": "ayudar · él · presente",
         "distractors": ["ayudan", "ayudó", "ayudaba"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1425,6 +1453,7 @@
     "sk": "Chrípka je veľmi nákazlivá, takže radšej zostaň doma.",
     "level": "B1",
     "topics": ["health"],
+    "grammar": ["cause"],
     "tokens": ["La", "gripa", "es", "muy", "contagiosa", ",", "así", "que", "mejor", "quédate", "en", "casa", "."],
     "cloze": [
       {
@@ -1433,6 +1462,15 @@
         "lemma": "contagioso",
         "hint": "nákazlivý",
         "distractors": ["sana", "barata", "divertida"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "así",
+        "lemma": "así",
+        "hint": "takže",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["tan", "tanto", "como"]
       }
     ]
   },
@@ -1442,7 +1480,7 @@
     "sk": "Kým som čakal na lekára, začalo mi byť horšie.",
     "level": "B1",
     "topics": ["health"],
-    "grammar": ["imperfecto", "comparisons"],
+    "grammar": ["imperfecto", "comparisons", "periphrases"],
     "tokens": ["Mientras", "esperaba", "al", "doctor", ",", "empecé", "a", "sentirme", "peor", "."],
     "cloze": [
       {
@@ -1460,6 +1498,15 @@
         "tip": "comparisons",
         "why": "irregular",
         "distractors": ["malo", "mal"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "empezar",
+        "distractors": ["de", "en", "por"]
       }
     ]
   },
@@ -2281,7 +2328,7 @@
     "sk": "Prestal som fajčiť, aby moje deti nerástli s dymom v pľúcach.",
     "level": "B2",
     "topics": ["health"],
-    "grammar": ["subjuntivo-clauses", "subjuntivo"],
+    "grammar": ["subjuntivo-clauses", "subjuntivo", "periphrases"],
     "tokens": ["Dejé", "de", "fumar", "para", "que", "mis", "hijos", "no", "crezcan", "respirando", "humo", "."],
     "cloze": [
       {
@@ -2290,6 +2337,15 @@
         "lemma": "crecer",
         "hint": "crecer · ellos · subjuntivo",
         "distractors": ["crecen", "crecieron", "crecerán"]
+      },
+      {
+        "tokenIndex": 1,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "dejar",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -2299,7 +2355,7 @@
     "sk": "Nemocnica, kde sa narodila moja dcéra, práve otvorila detskú kliniku.",
     "level": "B2",
     "topics": ["health"],
-    "grammar": ["relatives", "preterito"],
+    "grammar": ["relatives", "preterito", "periphrases"],
     "tokens": ["El", "hospital", "donde", "nació", "mi", "hija", "acaba", "de", "abrir", "una", "clínica", "para", "niños", "."],
     "cloze": [
       {
@@ -2317,6 +2373,15 @@
         "tip": "relatives",
         "why": "donde",
         "distractors": ["que", "quien"]
+      },
+      {
+        "tokenIndex": 7,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "acabar",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -2344,7 +2409,7 @@
     "sk": "Napriek tomu, že mu to lekár zakázal, môj strýko ďalej tajne fajčí.",
     "level": "B2",
     "topics": ["health"],
-    "grammar": ["subjuntivo-aunque", "preterito"],
+    "grammar": ["subjuntivo-aunque", "preterito", "periphrases"],
     "tokens": ["A", "pesar", "de", "que", "el", "médico", "se", "lo", "prohibió", ",", "mi", "tío", "sigue", "fumando", "a", "escondidas", "."],
     "cloze": [
       {
@@ -2355,6 +2420,15 @@
         "tip": "subjuntivo-aunque",
         "why": "a-pesar-de",
         "distractors": ["prohíba", "prohibía", "prohibirá"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "sigue",
+        "lemma": "seguir",
+        "hint": "seguir · él",
+        "tip": "periphrases",
+        "why": "seguir",
+        "distractors": ["sigo", "siguen", "sigues"]
       }
     ]
   },

@@ -63,7 +63,7 @@
   { "id": "s1328", "en": "I think we should recycle more, because trash pollutes the rivers.", "hints": [null, "because"] },
   { "id": "s1329", "en": "When we were kids, this river was clean; now it's sad to look at." },
   { "id": "s1330", "en": "We were driving down the highway when we saw a fire on the hill." },
-  { "id": "s1331", "en": "It hardly rained this year, so the drought is really bad.", "hints": ["this (m.)", "drought"] },
+  { "id": "s1331", "en": "It hardly rained this year, so the drought is really bad.", "hints": ["this (m.)", "drought", "preposition"] },
   { "id": "s1332", "en": "I'm planning to spend the weekend at a cabin in the woods." },
   { "id": "s1333", "en": "I love the scenery in the mountains, especially at dawn.", "hints": ["landscape"] },
   { "id": "s1334", "en": "Scientists say many species will disappear if we don't protect the jungle." },
@@ -112,5 +112,12 @@
   { "id": "s2245", "en": "This is the forest we walked through for hours in the rain.", "hints": ["relative word"] },
   { "id": "s2246", "en": "The scientists we spoke with say the lake is drying up fast.", "hints": ["relative pronoun (people)"] },
   { "id": "s2247", "en": "There is a plant whose leaves are used to cure stomachaches.", "hints": ["relative word (whose)"] },
-  { "id": "s2299", "en": "That summer we saw a lot of stars in the countryside.", "hints": ["that"] }
+  { "id": "s2299", "en": "That summer we saw a lot of stars in the countryside.", "hints": ["that"] },
+  { "id": "s2416", "en": "After it rains, snails come out everywhere.", "hints": ["after"] },
+  { "id": "s2417", "en": "When spring comes, the fields will fill with flowers." },
+  { "id": "s2418", "en": "When it is hot, the turtles look for shade." },
+  { "id": "s2419", "en": "While the sun was setting, the birds returned to their nests.", "hints": ["while"] },
+  { "id": "s2420", "en": "Let us close the windows before the storm starts." },
+  { "id": "s2421", "en": "We followed the trail until we reached the waterfall.", "hints": ["until"] },
+  { "id": "s2422", "en": "It has not rained in this region for almost a year.", "hints": ["since"] }
 ]

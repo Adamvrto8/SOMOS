@@ -1449,7 +1449,7 @@
     "sk": "Prvýkrát som sa odvážil hovoriť pred ľuďmi.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "verb-prep"],
     "tokens": ["Me", "atreví", "a", "hablar", "en", "público", "por", "primera", "vez", "."],
     "cloze": [
       {
@@ -1465,6 +1465,15 @@
         "lemma": "por",
         "hint": "por/para",
         "distractors": ["en", "a", "con"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "a",
+        "lemma": "a",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "a",
+        "distractors": ["de", "en", "con"]
       }
     ]
   },
@@ -1474,6 +1483,7 @@
     "sk": "Chýba jej sebavedomie, neverí si.",
     "level": "B2",
     "topics": ["emotions"],
+    "grammar": ["verb-prep"],
     "tokens": ["Le", "falta", "autoestima", ",", "no", "cree", "en", "sí", "misma", "."],
     "cloze": [
       {
@@ -1482,6 +1492,15 @@
         "lemma": "autoestima",
         "hint": "sebavedomie",
         "distractors": ["autobús", "estima", "autopista"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "en",
+        "lemma": "en",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "en",
+        "distractors": ["de", "a", "con"]
       }
     ]
   },
@@ -1637,7 +1656,7 @@
     "sk": "Je lepšie, keď sa pred odpoveďou zhlboka nadýchneš.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente"],
+    "grammar": ["subjuntivo-wishes", "subjuntivo", "presente", "temporal"],
     "tokens": ["Es", "mejor", "que", "respires", "profundo", "antes", "de", "contestar", "."],
     "cloze": [
       {
@@ -1648,6 +1667,15 @@
         "tip": "subjuntivo-wishes",
         "why": "advice",
         "distractors": ["respiras", "respirarás", "respiraste"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "temporal",
+        "why": "inf",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -2025,7 +2053,7 @@
     "sk": "Sestra trpí úzkosťou, preto sa vyhýba miestam, kde je veľa ľudí.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["presente"],
+    "grammar": ["presente", "cause"],
     "tokens": ["Mi", "hermana", "sufre", "de", "ansiedad", ",", "por", "eso", "evita", "los", "lugares", "con", "mucha", "gente", "."],
     "cloze": [
       {
@@ -2041,6 +2069,15 @@
         "lemma": "de",
         "hint": "predložka",
         "distractors": ["a", "hacia", "contra"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "por",
+        "lemma": "por",
+        "hint": "predložka",
+        "tip": "cause",
+        "why": "por-eso",
+        "distractors": ["sin", "con", "desde"]
       }
     ]
   },
@@ -2068,7 +2105,7 @@
     "sk": "Rozišli sme sa pred mesiacom, ale stále sme kamaráti.",
     "level": "B1",
     "topics": ["emotions"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "periphrases"],
     "tokens": ["Rompimos", "hace", "un", "mes", ",", "pero", "seguimos", "siendo", "amigos", "."],
     "cloze": [
       {
@@ -2084,6 +2121,15 @@
         "lemma": "hace",
         "hint": "pred časom",
         "distractors": ["desde", "hasta", "antes"]
+      },
+      {
+        "tokenIndex": 6,
+        "answer": "seguimos",
+        "lemma": "seguir",
+        "hint": "seguir · nosotros",
+        "tip": "periphrases",
+        "why": "seguir",
+        "distractors": ["sigo", "siguen", "sigues"]
       }
     ]
   },
@@ -2197,7 +2243,7 @@
     "sk": "Mám kamarátku, pri ktorej môžem plakať bez pocitu, že ma súdi.",
     "level": "B2",
     "topics": ["emotions"],
-    "grammar": ["relatives-prep", "presente"],
+    "grammar": ["relatives-prep", "presente", "relatives-mood"],
     "tokens": ["Tengo", "una", "amiga", "con", "quien", "puedo", "llorar", "sin", "sentir", "que", "me", "juzga", "."],
     "cloze": [
       {
@@ -2208,6 +2254,15 @@
         "tip": "relatives-prep",
         "why": "el-que",
         "distractors": ["donde", "cuyo", "cuando"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "puedo",
+        "lemma": "poder",
+        "hint": "poder · yo",
+        "tip": "relatives-mood",
+        "why": "exists",
+        "distractors": ["pueda", "podía", "podré"]
       }
     ]
   },
@@ -2407,6 +2462,146 @@
         "tip": "negation",
         "why": "double",
         "distractors": ["nada", "nadie", "tampoco"]
+      }
+    ]
+  },
+  {
+    "id": "s2347",
+    "es": "Se puso roja de vergüenza cuando todos empezaron a cantarle las mañanitas.",
+    "sk": "Zapýrila sa od hanby, keď jej všetci začali spievať Las Mañanitas.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Se", "puso", "roja", "de", "vergüenza", "cuando", "todos", "empezaron", "a", "cantarle", "las", "mañanitas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "puso",
+        "lemma": "ponerse",
+        "hint": "ponerse · ella",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["quedó", "hizo", "volvió"]
+      }
+    ]
+  },
+  {
+    "id": "s2348",
+    "es": "Después de la mala noticia, Rodrigo se quedó callado durante toda la cena.",
+    "sk": "Po zlej správe Rodrigo celú večeru mlčal.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Después", "de", "la", "mala", "noticia", ",", "Rodrigo", "se", "quedó", "callado", "durante", "toda", "la", "cena", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "quedó",
+        "lemma": "quedarse",
+        "hint": "quedarse · él",
+        "tip": "cambio",
+        "why": "quedarse",
+        "distractors": ["hizo", "volvió", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2349",
+    "es": "Con los años mi abuela se volvió muy desconfiada y ya no le abre la puerta a nadie.",
+    "sk": "S rokmi sa babka stala veľmi nedôverčivou a už nikomu neotvára dvere.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Con", "los", "años", "mi", "abuela", "se", "volvió", "muy", "desconfiada", "y", "ya", "no", "le", "abre", "la", "puerta", "a", "nadie", "."],
+    "cloze": [
+      {
+        "tokenIndex": 6,
+        "answer": "volvió",
+        "lemma": "volverse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "volverse",
+        "distractors": ["hizo", "quedó", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2350",
+    "es": "Gracias a su esfuerzo, Daniela se hizo psicóloga y ahora ayuda a niños con ansiedad.",
+    "sk": "Vďaka svojmu úsiliu sa Daniela stala psychologičkou a teraz pomáha deťom s úzkosťou.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Gracias", "a", "su", "esfuerzo", ",", "Daniela", "se", "hizo", "psicóloga", "y", "ahora", "ayuda", "a", "niños", "con", "ansiedad", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "hizo",
+        "lemma": "hacerse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "hacerse",
+        "distractors": ["puso", "quedó", "volvió"]
+      }
+    ]
+  },
+  {
+    "id": "s2351",
+    "es": "Cuando vi mi nombre en la lista, me quedé sin palabras y solo pude abrazar a mi mamá.",
+    "sk": "Keď som uvidel svoje meno na zozname, zostal som bez slov a mohol som len objať mamu.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Cuando", "vi", "mi", "nombre", "en", "la", "lista", ",", "me", "quedé", "sin", "palabras", "y", "solo", "pude", "abrazar", "a", "mi", "mamá", "."],
+    "cloze": [
+      {
+        "tokenIndex": 9,
+        "answer": "quedé",
+        "lemma": "quedarse",
+        "hint": "quedarse · yo",
+        "tip": "cambio",
+        "why": "quedarse",
+        "distractors": ["puse", "hice", "volví"]
+      }
+    ]
+  },
+  {
+    "id": "s2352",
+    "es": "Mis primos se ponen insoportables cuando están celosos.",
+    "sk": "Moji bratranci sú neznesiteľní, keď žiarlia.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Mis", "primos", "se", "ponen", "insoportables", "cuando", "están", "celosos", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "ponen",
+        "lemma": "ponerse",
+        "hint": "ponerse · ellos",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["quedan", "mueven", "dejan"]
+      }
+    ]
+  },
+  {
+    "id": "s2353",
+    "es": "Si sigues tratando mal a la gente, te vas a volver una persona muy amargada.",
+    "sk": "Ak budeš ďalej zle zaobchádzať s ľuďmi, staneš sa veľmi zatrpknutým človekom.",
+    "level": "B2",
+    "topics": ["emotions"],
+    "grammar": ["cambio"],
+    "tokens": ["Si", "sigues", "tratando", "mal", "a", "la", "gente", ",", "te", "vas", "a", "volver", "una", "persona", "muy", "amargada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 11,
+        "answer": "volver",
+        "lemma": "volverse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "volverse",
+        "distractors": ["poner", "quedar", "hacer"]
       }
     ]
   }

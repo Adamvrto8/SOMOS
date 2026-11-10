@@ -543,7 +543,7 @@
         "tokenIndex": 1,
         "answer": "Cuánto",
         "lemma": "cuánto",
-        "hint": "opytovacie slovo",
+        "hint": "koľko",
         "tip": "interrogatives",
         "why": "words",
         "distractors": ["Cuándo", "Quién", "Dónde"]
@@ -1146,7 +1146,7 @@
     "sk": "Behal som v parku, keď som si vytkol členok.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["ser-estar", "imperfecto"],
+    "grammar": ["ser-estar", "imperfecto", "temporal"],
     "tokens": ["Estaba", "corriendo", "en", "el", "parque", "cuando", "me", "torcí", "el", "tobillo", "."],
     "cloze": [
       {
@@ -1156,6 +1156,15 @@
         "hint": "ser/estar · yo · imperfecto",
         "why": "progressive",
         "distractors": ["Era", "Estoy", "Estuve"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["hasta", "desde", "antes"]
       }
     ]
   },
@@ -1190,7 +1199,7 @@
     "sk": "Odkedy som prestal fajčiť, dýcham oveľa lepšie.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["presente", "comparisons"],
+    "grammar": ["presente", "comparisons", "periphrases"],
     "tokens": ["Desde", "que", "dejé", "de", "fumar", ",", "respiro", "mucho", "mejor", "."],
     "cloze": [
       {
@@ -1208,6 +1217,15 @@
         "tip": "comparisons",
         "why": "irregular",
         "distractors": ["bueno", "buen"]
+      },
+      {
+        "tokenIndex": 3,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "periphrases",
+        "why": "dejar",
+        "distractors": ["a", "en", "por"]
       }
     ]
   },
@@ -1241,6 +1259,7 @@
     "sk": "Ako dieťa som si zlomil zápästie a dodnes ma bolí, keď je zima.",
     "level": "B1",
     "topics": ["body"],
+    "grammar": ["temporal"],
     "tokens": ["De", "niño", "me", "fracturé", "la", "muñeca", "y", "todavía", "me", "duele", "cuando", "hace", "frío", "."],
     "cloze": [
       {
@@ -1249,6 +1268,15 @@
         "lemma": "muñeca",
         "hint": "zápästie",
         "distractors": ["cintura", "frente", "mejilla"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "cuando",
+        "lemma": "cuando",
+        "hint": "keď",
+        "tip": "temporal",
+        "why": "cuando",
+        "distractors": ["antes", "hasta", "desde"]
       }
     ]
   },
@@ -1534,7 +1562,7 @@
     "sk": "Keď som počula tú správu, naskočili mi zimomriavky.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["preterito"],
+    "grammar": ["preterito", "cambio"],
     "tokens": ["Se", "me", "puso", "la", "piel", "chinita", "cuando", "escuché", "la", "noticia", "."],
     "cloze": [
       {
@@ -1550,6 +1578,15 @@
         "lemma": "cuando",
         "hint": "keď",
         "distractors": ["pero", "sino", "aunque"]
+      },
+      {
+        "tokenIndex": 2,
+        "answer": "puso",
+        "lemma": "ponerse",
+        "hint": "ponerse · ella",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["quedó", "hizo", "volvió"]
       }
     ]
   },
@@ -1743,7 +1780,7 @@
     "sk": "Kým mi lekár vyšetroval hrdlo, snažil som sa nekašľať.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["imperfecto"],
+    "grammar": ["imperfecto", "verb-prep"],
     "tokens": ["Mientras", "el", "doctor", "me", "revisaba", "la", "garganta", ",", "yo", "trataba", "de", "no", "toser", "."],
     "cloze": [
       {
@@ -1752,6 +1789,15 @@
         "lemma": "mientras",
         "hint": "zatiaľ čo",
         "distractors": ["Porque", "Sino", "Donde"]
+      },
+      {
+        "tokenIndex": 10,
+        "answer": "de",
+        "lemma": "de",
+        "hint": "predložka",
+        "tip": "verb-prep",
+        "why": "de",
+        "distractors": ["en", "a", "con"]
       }
     ]
   },
@@ -1797,7 +1843,7 @@
     "sk": "Lekárka, ktorá ma včera ošetrila, hovorí, že kosť sa hojí dobre.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["relatives-prep", "preterito"],
+    "grammar": ["relatives-prep", "preterito", "relatives-mood"],
     "tokens": ["La", "doctora", ",", "quien", "me", "atendió", "ayer", ",", "dice", "que", "el", "hueso", "está", "sanando", "bien", "."],
     "cloze": [
       {
@@ -1808,6 +1854,15 @@
         "tip": "relatives-prep",
         "why": "quien",
         "distractors": ["donde", "cuyo", "cuando"]
+      },
+      {
+        "tokenIndex": 5,
+        "answer": "atendió",
+        "lemma": "atender",
+        "hint": "atender · ella · pretérito",
+        "tip": "relatives-mood",
+        "why": "explicative",
+        "distractors": ["atienda", "atiende", "atenderá"]
       }
     ]
   },
@@ -1914,7 +1969,7 @@
     "sk": "Keby mi povedali, ako veľmi fajčenie škodí pľúcam, bol by som s ním prestal skôr.",
     "level": "B2",
     "topics": ["body"],
-    "grammar": ["si-clauses", "pluscuamperfecto", "condicional"],
+    "grammar": ["si-clauses", "pluscuamperfecto", "condicional", "conditional-perfect"],
     "tokens": ["Si", "me", "hubieran", "dicho", "que", "fumar", "dañaba", "tanto", "los", "pulmones", ",", "lo", "habría", "dejado", "antes", "."],
     "cloze": [
       {
@@ -1932,6 +1987,15 @@
         "tip": "si-clauses",
         "why": "unreal",
         "distractors": ["habían", "habrían", "han"]
+      },
+      {
+        "tokenIndex": 12,
+        "answer": "habría",
+        "lemma": "habría",
+        "hint": "pomocné sloveso",
+        "tip": "conditional-perfect",
+        "why": "habria",
+        "distractors": ["había", "habrá", "hubo"]
       }
     ]
   },
@@ -2026,7 +2090,7 @@
     "sk": "Mám zlomenú ruku od soboty.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["passive-se", "presente"],
+    "grammar": ["passive-se", "presente", "temporal"],
     "tokens": ["Mi", "brazo", "está", "roto", "desde", "el", "sábado", "."],
     "cloze": [
       {
@@ -2037,6 +2101,15 @@
         "tip": "passive-se",
         "why": "estar-result",
         "distractors": ["rota", "rompiendo", "rompió"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "desde",
+        "lemma": "desde",
+        "hint": "od",
+        "tip": "temporal",
+        "why": "desde",
+        "distractors": ["hace", "mientras", "durante"]
       }
     ]
   },
@@ -2086,7 +2159,7 @@
     "sk": "Zuby sa čistia po každom jedle.",
     "level": "B1",
     "topics": ["body"],
-    "grammar": ["passive-se", "presente"],
+    "grammar": ["passive-se", "presente", "temporal"],
     "tokens": ["Los", "dientes", "se", "cepillan", "después", "de", "cada", "comida", "."],
     "cloze": [
       {
@@ -2097,6 +2170,15 @@
         "tip": "passive-se",
         "why": "se",
         "distractors": ["cepilla", "cepillaban", "cepillarán"]
+      },
+      {
+        "tokenIndex": 4,
+        "answer": "después",
+        "lemma": "después",
+        "hint": "po",
+        "tip": "temporal",
+        "why": "inf",
+        "distractors": ["hasta", "desde", "mientras"]
       }
     ]
   },
@@ -2177,6 +2259,166 @@
         "tip": "personal-a",
         "why": "person",
         "distractors": ["del", "el", "en el"]
+      }
+    ]
+  },
+  {
+    "id": "s2354",
+    "es": "Me quedé dormida en el sillón con la televisión prendida.",
+    "sk": "Zaspala som v kresle so zapnutým televízorom.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Me", "quedé", "dormida", "en", "el", "sillón", "con", "la", "televisión", "prendida", "."],
+    "cloze": [
+      {
+        "tokenIndex": 1,
+        "answer": "quedé",
+        "lemma": "quedarse",
+        "hint": "quedarse · yo",
+        "tip": "cambio",
+        "why": "quedarse",
+        "distractors": ["puse", "hice", "volví"]
+      }
+    ]
+  },
+  {
+    "id": "s2355",
+    "es": "Con el frío, a Lucía se le pusieron las manos moradas.",
+    "sk": "Od zimy Lucii zmodreli ruky.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Con", "el", "frío", ",", "a", "Lucía", "se", "le", "pusieron", "las", "manos", "moradas", "."],
+    "cloze": [
+      {
+        "tokenIndex": 8,
+        "answer": "pusieron",
+        "lemma": "ponerse",
+        "hint": "ponerse · ellas",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["hicieron", "volvieron", "fueron"]
+      }
+    ]
+  },
+  {
+    "id": "s2356",
+    "es": "Tras la caída, mi tío se quedó sin voz por varios días.",
+    "sk": "Po páde stratil môj strýko na niekoľko dní hlas.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Tras", "la", "caída", ",", "mi", "tío", "se", "quedó", "sin", "voz", "por", "varios", "días", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "quedó",
+        "lemma": "quedarse",
+        "hint": "quedarse · él",
+        "tip": "cambio",
+        "why": "quedarse",
+        "distractors": ["puso", "hizo", "volvió"]
+      }
+    ]
+  },
+  {
+    "id": "s2357",
+    "es": "Al verla, Pedro se puso pálido y tuvo que sentarse.",
+    "sk": "Keď ju uvidel, Pedro zbledol a musel si sadnúť.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Al", "verla", ",", "Pedro", "se", "puso", "pálido", "y", "tuvo", "que", "sentarse", "."],
+    "cloze": [
+      {
+        "tokenIndex": 5,
+        "answer": "puso",
+        "lemma": "ponerse",
+        "hint": "ponerse · él",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["hizo", "volvió", "fue"]
+      }
+    ]
+  },
+  {
+    "id": "s2358",
+    "es": "Desde que se hizo vegetariano hace diez años, mi cuñado cuida más su cuerpo.",
+    "sk": "Odkedy sa pred desiatimi rokmi stal vegetariánom, môj švagor sa o telo stará viac.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Desde", "que", "se", "hizo", "vegetariano", "hace", "diez", "años", ",", "mi", "cuñado", "cuida", "más", "su", "cuerpo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hizo",
+        "lemma": "hacerse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "hacerse",
+        "distractors": ["puso", "quedó", "volvió"]
+      }
+    ]
+  },
+  {
+    "id": "s2359",
+    "es": "Con el tiempo, su espalda se volvió tan frágil que ya no puede cargar nada.",
+    "sk": "S časom sa mu chrbát stal taký krehký, že už nič neuniesie.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Con", "el", "tiempo", ",", "su", "espalda", "se", "volvió", "tan", "frágil", "que", "ya", "no", "puede", "cargar", "nada", "."],
+    "cloze": [
+      {
+        "tokenIndex": 7,
+        "answer": "volvió",
+        "lemma": "volverse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "volverse",
+        "distractors": ["puso", "quedó", "hizo"]
+      }
+    ]
+  },
+  {
+    "id": "s2360",
+    "es": "Mi hijo se pone rojo cada vez que le toca hablar frente al grupo.",
+    "sk": "Syn sčervenie zakaždým, keď má hovoriť pred skupinou.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Mi", "hijo", "se", "pone", "rojo", "cada", "vez", "que", "le", "toca", "hablar", "frente", "al", "grupo", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "pone",
+        "lemma": "ponerse",
+        "hint": "ponerse · él",
+        "tip": "cambio",
+        "why": "ponerse",
+        "distractors": ["queda", "hace", "vuelve"]
+      }
+    ]
+  },
+  {
+    "id": "s2361",
+    "es": "Mi vecino se hizo corredor profesional a los cuarenta años, después de entrenar durante años.",
+    "sk": "Môj sused sa v štyridsiatke stal profesionálnym bežcom, po rokoch tréningu.",
+    "level": "B2",
+    "topics": ["body"],
+    "grammar": ["cambio"],
+    "tokens": ["Mi", "vecino", "se", "hizo", "corredor", "profesional", "a", "los", "cuarenta", "años", ",", "después", "de", "entrenar", "durante", "años", "."],
+    "cloze": [
+      {
+        "tokenIndex": 3,
+        "answer": "hizo",
+        "lemma": "hacerse",
+        "hint": "stať sa",
+        "tip": "cambio",
+        "why": "hacerse",
+        "distractors": ["puso", "quedó", "volvió"]
       }
     ]
   }

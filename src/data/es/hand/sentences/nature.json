@@ -539,6 +539,10 @@
         "tokenIndex": 9,
         "newIndex": 10,
         "answer": "sequía"
+      },
+      {
+        "tokenIndex": 6,
+        "newIndex": 7
       }
     ]
   },
