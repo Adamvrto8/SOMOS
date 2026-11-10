@@ -1,0 +1,219 @@
+<!-- Source: Instituto Cervantes, Plan curricular (CVC), archived copy via web.archive.org, page 03_pronunciacion_inventario_a1-a2.htm -->
+
+## Pronunciación. Inventario A1-A2
+
+### 1. La base de articulación
+- Modo normal de fonación
+- Grado de tensión del español (menor al del francés, pero superior al del inglés, por ejemplo)
+  - Pureza de las vocales (timbre nítido: por ejemplo, no hay vocales anteriores redondeadas)
+  - Ausencia de africación en las consonantes
+  - Mantenimiento del timbre en las vocales inacentuadas
+- Movimiento relativamente marcado de los labios
+- Nasalización sin relevancia fonológica y poco constante en las vocales
+- Base articulatoria creciente: tendencia a la sílaba abierta
+- Base central-anterior: predominio de articulaciones alveolares y palatales
+- Precisiones sobre el concepto de acento idiomático:
+  - Noción del concepto de «acento» como conjunto de hábitos articulatorios que indica la procedencia geográfica o sociocultural de los hablantes.
+  - Información sobre la variedad del español en el mundo en cuanto a la articulación de los sonidos
+
+### 2. La entonación
+- 2.1.1. Correspondencia entre las unidades melódicas y el sistema de puntuación
+  - El punto
+  - La coma
+  - Signos de interrogación y exclamación [v. Ortografía 3.1., 3.2., 3.6.]
+- 2.1.2. Extensión de la unidad melódica en la secuencia hablada: irregularidad relativa
+  - Unidad mínima: palabra monosilábica _-¿Quién ha venido?_ _-Yo_ .
+  - Segmentación en unidades más extensas [rasgos característicos del español]:
+    - Unidades de entre cinco y diez sílabas: predominio de unidades de siete y ocho sílabas _Trabaja en un banco_ .
+    - Escasez de unidades inferiores a cinco sílabas y de unidades superiores a diez o quince _¿Qué?_ / _No creo que tengas razón en lo que dices_ .
+- 2.1.3. Contraste con otras lenguas
+  - Francés: unidades más cortas
+  - Italiano: unidades melódicas más largas (frecuencia de unidades superiores a quince sílabas y hasta veinte); entonación más fluctuante que en español, más musical
+  - Inglés: medidas análogas a las del español
+- 2.1.4. Correspondencias sintácticas de la división de unidades melódicas: identificación y producción de patrones melódicos correspondientes a las estructuras sintácticas básicas
+  - Entonación del vocativo _Sara, ¿me dejas tus ejercicios?_
+  - Oraciones simples de no más de siete u ocho sílabas: una sola unidad _Me llamo Pedro_ .
+  - Oraciones simples por encima de las quince sílabas: mínimo dos unidades _Vivo en Madrid_ . vs. _Vivo en Madrid porque mi novio es español y porque me gusta España_ .
+  - Enumeraciones: cada miembro, una unidad _Tengo un lápiz, un cuaderno, un libro de español_ .
+  - Oraciones complejas coordinadas: unidades distintas _Quiero ir // pero no puedo_ .
+- [Español de España, variedad castellana] Moderación de las fluctuaciones e inflexiones más equilibradas
+- [Hispanoamérica] Entonación rica en variantes, mayor frecuencia de subidas y descensos melódicos
+- 2.2.1. Al principio de la unidad enunciativa
+  - Inflexión de la voz: tono grave de las sílabas o palabras átonas iniciales (en comparación con la primera sílaba fuerte del mismo grupo) _Escribo pocas palabras._
+  - Tono medio desde el principio si el inicio es sílaba tónica. _Tengo dos hermanos_ .
+  - Contraste con otras lenguas:
+    - Similitud con el italiano (en este aspecto)
+    - Diferencia con el francés: este presenta tono gradualmente ascendente, no elevación súbita en el primer elemento acentuado
+    - Diferencia con el inglés: tono inicial más alto en esta lengua, aun en sílabas átonas
+    - Diferencia con el alemán: las sílabas iniciales descienden y súbitamente asciende el tono en la tónica.
+- 2.2.2. En el cuerpo de la unidad enunciativa
+  - Entonación uniforme: carácter sobrio de la entonación española
+  - Contraste con otras lenguas:
+    - Francés: tendencia a la elevación
+    - Inglés: tendencia a tono descendente
+    - Alemán: rasgos quebrados ascendentes y descendentes
+    - Italiano: inflexiones muy extensas (elevación en acentuadas y descenso en inacentuadas)
+- 2.2.3. Al final de la unidad enunciativa
+    - Localización de la zona de mayor relevancia significativa (siempre al final) _No te gusta el cine_ . / _¿No te gusta el cine?_
+  - Sílabas finales a partir de la sílaba que lleva el último acento:
+    - Unidad finalizada en palabra aguda: ámbito del final melódico en una sílaba _Es malo para mi corazón_ .
+    - Unidad finalizada en palabra llana: ámbito del final melódico en dos sílabas _Hace mucho que llegué a casa_ .
+    - Unidad finalizada en palabra esdrújula: ámbito del final melódico en tres sílabas _Ese es su comportamiento típico_ .
+  - Producción del tonema de cadencia: terminación absoluta de la enunciativa; tono grave
+  - Tonema de anticadencia (ascenso 4 ó 5 semitonos)
+  - Tonema de suspensión (sin ascenso ni descenso)
+  - Importancia del valor expresivo en la inflexión final: reconocimiento de los tonemas _No es muy bueno_ (cadencia muy marcada: aseveración categórica) / _No es muy bueno_ (semicadencia o cadencia menos marcada: aseveración dubitativa)
+- Sensibilización hacia la gran variedad de entonaciones de las interrogativas españolas
+- Entonación de la interrogativa absoluta frente a la entonación de la interrogativa relativa
+- Entonación de la interrogativa introducida por pronombre interrogativo _¿Quién es tu profesor?_
+- Semejanzas y diferencias entre la entonación de una interrogativa simple y la primera parte de una enunciativa _¿Están estudiando?_ vs. _Están estudiando // desde las tres de la tarde_ .
+- La entonación como exponente de los distintos actos de habla: los orientados hacia el hablante (actos de habla asertivos, exclamativos y expresivos) y los orientados hacia el oyente (actos de habla interrogativos y actos de habla imperativos):
+  - Actos de habla exclamativos y expresivos en sus formas básicas
+  - La entonación en los saludos y expresiones de cortesía básicas: _Muchas gracias_ _Buenas tardes_ _Adiós_ _¿Qué tal?_
+
+### 3. La sílaba y el acento
+- 3.1.1. Características principales del grupo fonético elemental (la sílaba predominante)
+  - Sílabas abiertas o libres (terminadas en vocal) _ho-la_
+  - Sílabas cerradas o trabadas (terminadas en consonante) _nom-bre_
+  - Tendencia del español a la sílaba abierta
+  - Incapacidad de los fonemas consonánticos para constituir núcleo silábico en español
+  - Capacidad de los fonemas vocálicos para constituir núcleo silábico simple y complejo (diptongos y triptongos)
+  - Sílabas monofonemáticas _y_ , _a-é-re-o_
+  - Sílabas polifonemáticas _co-ci-nar_
+  - Estructuras predominantes: _ca-sa_ (CV) _can-tar_ (CVC) _nom-bre_ (CCV) _al-to_ (VC)
+  - Otras estructuras: V, CCVC, VCC, CVCC, CCVCC, CD, CDC, CCD, D, CCDC, DC
+  - Cantidad silábica: inexistencia en español de sílabas largas y breves propiamente dichas
+- 3.1.2. Resilabeo
+  - El principio de delimitación silábica en español
+  - Toma de conciencia de la delimitación silábica _tomar algo (to. má. rál. go)_ _dos amigos (dó. sa. mí. gos)_ _me he levantado (me:. le. van. tá. do)_
+- 3.2.1. Características del acento
+  - Naturaleza multifactorial del acento: tónico, durativo e intensivo
+  - Lengua de acento relativamente libre
+  - Contraste con otras lenguas:
+    - Posición fija del acento en francés: última sílaba
+    - Posición fija del acento en checo: primera sílaba
+    - Posición fija del acento en polaco: penúltima sílaba
+    - Posición libre del acento en inglés, italiano, etc.
+  - Variabilidad del acento léxico de acuerdo con las distintas variedades del español:
+
+### España
+- reúma1
+- omoplato
+- varice
+- Óscar
+- vídeo
+
+### Hispanoamérica
+- reuma
+- omóplato
+- várice
+- Oscar
+- video
+3.2.2. Identificación del acento léxico con valor fonológico
+- Cambios de significación de las palabras _caso_ vs. _casó_
+3.2.3. Clasificación de las palabras por la posición del acento fonético
+- Palabras agudas u oxítonas: última sílaba acentuada _tra-ba-jar_ , _tra-ba-jáis_
+- Palabras llanas o paroxítonas: penúltima sílaba acentuada _ni-ño_ , _a-dul-to_
+- Palabras esdrújulas o proparoxítonas: antepenúltima sílaba acentuada _rá-pi-do_ , _mú-si-ca_
+- Palabras sobresdrújulas o superproparoxítonas: en formas compuestas, sílaba anterior a la penúltima acentuada _pre-gún-ta-se-lo_
+- Palabras con dos acentos: adverbios en _-mente_ _rápidamente (rá-pi-da-mén-te)_
+3.2.4. Esquemas acentuales del español
+- Esquemas acentuales verbales:
+  - Acento penúltimo en el tiempo presente (exceptuando la 2.ª persona del plural) ( _tra-ba-jo_ , _tra-ba-jas_ , _tra-ba-ja_ , _tra-ba-ja-mos_ , _tra-ba-jan_ ) excepto (tra-ba-jáis)
+  - Acento morfológico (en el mismo morfema en el resto de los tiempos) _trabaj-é_ , _trabaj-aba_ , _trabajar-é_ , _he trabaj-ado_
+- Esquemas acentuales no verbales:
+  - Bisílabos llanos y agudos _casa_ , _papel_
+  - Trisílabos esdrújulos, llanos y agudos _plátano_ , _maleta_ , _contestar_
+  - Tetrasílabos sobresdrújulos, esdrújulos, llanos y agudos ( _cuéntaselo_ , _teléfono_ , _cocinero_ , _terminación_ )
+  - Pentasílabos sobresdrújulos, esdrújulos, llanos y agudos ( _repítemelo_ , _frigorífico_ , _laboratorio_ , _comunicación_ )
+
+### 4. El ritmo, las pausas y el tiempo
+- 4.1.1. Características del ritmo (percepción)
+  - Lengua con tendencia al compás silábico (silábicamente acompasada)
+  - Ni ritmo enteramente silábico ni ritmo acentual
+  - Contraste con otras lenguas:
+    - Lenguas silábicamente acompasadas (duración silábica similar): francés, italiano.
+    - Lenguas acentualmente acompasadas (intervalos de tiempo semejantes entre acentos): portugués, inglés, alemán, holandés, ruso, árabe...
+- 4.2.1. Percepción de las pausas obligatorias en español
+  - Exigidas para mantener el significado o la estructura del enunciado _No tenemos que seguir_ . vs. _No, tenemos que seguir_ .
+  - Enumerativas _Era alto, rubio, guapo_ .
+- 4.2.2. Percepción de las pausas virtuales en español _Vino María // con su hijo_ .
+- 4.2.3. Percepción de las pausas llenas. Realizaciones propias de las distintas variedades del español
+  - Vocal de duda: _eeee..._
+  - Consonante de duda nasal: _mmm..._
+  - Demostrativos desemantizados y alargados _esto:_ , _este:_
+  - Marcadores discursivos (a veces alargados) _pues_ , _bueno_
+  - Interjecciones leves _¡a:!_
+- 4.2.4. El concepto de grupo fónico y su extensión
+
+### 5. Los fonemas y sus variantes
+- 5.1.1. Características articulatorias
+  - Cualidad básica o timbre de los fonemas vocálicos del español: /a, e, i, o, u/
+  - Claridad y precisión: dos características fundamentales, en contraste con otras lenguas:
+    - Uniformidad en el timbre y homogeneidad: como en francés y a diferencia del inglés
+    - Pronunciación precisa de las vocales y sin relajación: nunca la imprecisión del inglés
+    - Ausencia de vocales anteriores con redondeamiento labial, a diferencia del francés o del alemán: ö, ü, etc., o de vocales posteriores sin redondeamiento, frente al japonés, por ejemplo
+    - Ausencia en español de vocales mixtas o diptongadas, como en inglés o portugués
+  - Escasa nasalización vocálica: menor que en francés, portugués u otras lenguas
+  - Posición de la lengua en la pronunciación de los sonidos vocálicos:
+    - Vocal _a_ : posición central Elevación del velo del paladar, situación horizontal de la lengua
+    - Vocales palatales _e_ , _i_ : mitad anterior de la cavidad bucal Avance y elevación de la lengua
+    - Vocales velares _o_ , _u_ : mitad posterior de la cavidad bucal Recogimiento y elevación de la lengua
+    - Alteraciones contextuales
+  - Abertura de las mandíbulas:
+    - Vocal más abierta: _a_
+    - Vocales medias: _e_ , _o_
+    - Vocales cerradas: _i_ , _u_
+  - Acción de las cuerdas vocales. Ataque suave: ausencia de ataque fuerte en español, como en francés, a diferencia de lenguas como el alemán
+- 5.1.2. Caracterización comparada de las vocales españolas
+  - A: central. Semejante a la del francés _part_ y al alemán _was_ _caro_ , _rápido_ , _despacio_ ...
+  - Vocales palatales o anteriores:
+    - I: semejante a la _i_ del francés: _vie_ ; del alemán: _sieben_ ; del inglés: _see_ , pero menos cerrada y menos tensa _silla_ , _chico_ , _vida_ , _millón_ ...
+    - E: no tan cerrada como en francés _chanté_ o en alemán _Felhem_ , ni diptongada _ejemplo_ , _mes_ , _beber..._
+  - Vocales velares:
+    - O: menos cerrada que en francés, sin diptongar nunca como en inglés _nota_
+    - U: semejante a la del francés _tout_ y a la del alemán _du_
+- 5.1.3. Diptongos
+  - Grupo fonético formado por la unión de _i_ o de _u_ con otra vocal en la misma sílaba _diente_ , _peine_ , _después_ , _guapo.._ .
+  - Diptongos frente a hiatos _reí_ / _rey_ _cru-el_ / _cruel_
+  - Tipos de diptongos:
+    - Crecientes: semiconsonante + vocal _fiasco_ , _viejo_ , _labio_ , _guante_ , _cuerda_ , _vacuo_
+    - Decrecientes: vocal + semivocal _bailar_ , _aula_ , _ley_ , _euro_ , _voy_ , _estoico_ , _bou_
+  - Grupo fonético formado por la unión de _i_ con _u_ (diptongo o hiato) _ruido_
+- 5.1.4. Triptongos e hiatos
+  - Grupos fonéticos formados por tres vocales: _a/e_ en el centro; _i/u_ a los lados _limpiáis_
+  - Hiatos _confi-áis_
+  - Tendencia del español a reducir vocales agrupadas a una sola sílaba: pronunciación de diptongos y triptongos
+  - La pronunciación del hiato
+  - Paso de una vocal a otra (también en sílabas distintas): gradual, sin interrupción de la sonoridad (de la vibración de las cuerdas vocales). Contraste con el inglés o el alemán con separación por una oclusión (oclusión glotal)
+  - [Hispanoamérica y España] Tendencia antihiática fuerte en el habla coloquial. Secuencias vocálicas que son hiatos (habla culta) se pronuncian como diptongos y se cierra el timbre de la vocal átona: _golp_ [i̯á] _r_ por _golpear_ , _acord_ [i̯ó] _n_ por _acordeón_ , _pel_ [i̯é] por _peleé_ , etc. En algunos países hispanoamericanos, particularmente en México, este cierre vocálico se da también en el nivel culto.
+- 5.2.1. Identificación y reproducción del sistema consonántico español [v. Ortografía 1.3.]
+  - Consonantes oclusivas / fricativas; sordas / sonoras _poca_ / _boca_ , _te_ / _de_ , _casa_ / _gasa_ , _barco_ / _cabo_ , _dato_ / _seda_
+  - Nasal palatal sonora «ñ» _niño_ , _maño_ / _mano_
+  - Palatal africada sorda «ch» _niño_ / _nicho_
+  - Palatal central «y» / lateral palatal «ll»: yeísmo y neutralización _poyo_ / _pollo_
+    - [Hispanoamérica] Yeísmo generalizado (ausencia a nivel fonemático del elemento palatal lateral sonoro «ll» y presencia en su lugar del palatal fricativo sonoro «y»)
+    - [Colombia (cordillera oriental de los Andes, Boyacá, El Cauca), Ecuador (Loja, Azuay, Cañar), Perú (excepto Lima), Bolivia (excepto Tarija), Paraguay, Chile (excepto Chiloé), Uruguay (partes), Argentina (Corrientes, Misiones, la Rioja, Santiago del Estero)]. Conservación de la distinción «y» - «ll»
+  - Líquidas _pelo_ / _pero_
+    - Vibrante simple / vibrante múltiple _pero_ / _perro_
+  - Pronunciación de la [x] _gente_ , _jefe_
+  - Consonantes interdentales: sonido de la «z»:
+    - Semejanza con el inglés «th» ( _think_ ) pero más enérgica e interdental
+    - [Hispanoamérica y centro-sur de España] Seseo (ausencia a nivel fonemático del elemento interdental fricativo sordo /θ/ y presencia en su lugar de /s/). Alcanza todas las regiones y niveles sociales.
+- 5.2.2. Relación entre sonidos y grafías (ortografía) [v. Ortografía 3.]
+- 5.3.1. Enlace de las vocales
+  - Vocales contiguas en la misma palabra: sinéresis / reducción _Raúl_ > _Rául_ (sinéresis); _alcohol_ > _al-col_ (reducción)
+  - Vocales contiguas en la secuencia: sinalefa / reducción _vivo en Málaga_ > _vi-voen-Má-la-ga_ (sinalefa); _se ha sentado_ > _s'asentado_ (reducción)
+- 5.3.2. El sirrema: ausencia de pausa en su interior
+  - Facilidad de unión fonética de los vocablos en español, a diferencia de otras lenguas como el inglés:
+    - El artículo y el sustantivo _el amor_ > _elamor_ , _la casa_ > _lacasa_ , _los libros_ > _loslibros_ , _las mesas_ > _lasmesas_
+    - El adjetivo y el sustantivo y viceversa _el hombre bueno_ > _elhombrebueno_
+    - El sustantivo y su complemento introducido por preposición _casa de Paco_ > _casadepaco_
+    - Los tiempos compuestos _ha salido_ > _hasalido_
+    - El pronombre átono y el elemento siguiente _la vi ayer_ > _lavi ayer_
+    - El adverbio y la palabra a la que complementa _que lo pases bien_ > _que lopasesbien_ , _él es más listo_ > _él es máslisto_
+    - La preposición y el término de la preposición _estoy con gente_ > _estoy congente_
+    - La conjunción y la parte del discurso que introduce _ella y tú_ > _ella ytú_
+    - Perífrasis verbales y locuciones verbales _voy a estudiar_ > _voyaestudiar_
+- (1) Este sustantivo admite ambos géneros: _el/la reuma_ , _el/la reúma_ . La norma culta de la mayor parte del mundo hispánico prefiere el género masculino (Hispanoamérica: algunos países como México lo usan también en femenino). volver
+Centro Virtual Cervantes © Instituto Cervantes, . Reservados todos los derechos. cvc@cervantes.es

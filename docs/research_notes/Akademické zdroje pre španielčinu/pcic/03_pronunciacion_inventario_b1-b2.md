@@ -1,0 +1,247 @@
+<!-- Source: Instituto Cervantes, Plan curricular (CVC), archived copy via web.archive.org, page 03_pronunciacion_inventario_b1-b2.htm -->
+
+## Pronunciación. Inventario B1-B2
+
+### 1. La base de articulación
+- Modo normal de fonación
+- Grado de tensión del español (menor al del francés, pero superior al del inglés, por ejemplo)
+  - Pureza de las vocales (timbre nítido)
+  - Ausencia de africación en las consonantes
+  - Mantenimiento del timbre en las vocales inacentuadas
+- Movimiento relativamente marcado de los labios
+- Nasalización sin relevancia fonológica y poco constante en las vocales
+- Base articulatoria creciente: tendencia a la sílaba abierta
+- Base central-anterior: predominio de articulaciones alveolares y palatales
+- Precisiones sobre el acento idiomático:
+  - Muestras de diferentes acentos de las variedades de la lengua española en España e Hispanoamérica
+  - Información sobre la variedad de las grandes zonas del español en el mundo en cuanto a la articulación de los sonidos
+
+### 2. La entonación
+- 2.1.1. Correspondencia entre las unidades melódicas y el sistema de puntuación
+  - Los dos puntos
+  - El punto y coma
+  - Los puntos suspensivos
+  - El paréntesis y el corchete [v. Ortografía 3.3., 3.4., 3.5., 3.7., 3.8.]
+- 2.1.2. Extensión de la unidad melódica en el diálogo: mayor grado de irregularidad
+- 2.1.3. Correspondencias sintácticas de la división de unidades melódicas: identificación y producción de patrones melódicos correspondientes a ciertas estructuras sintácticas
+  - Anteposición de los complementos: posibilidad de establecer más de una unidad _En el río // se veían barcos_ . vs. _En el río se veían barcos_ .
+  - Anteposición del verbo al sujeto: una unidad _Vino Isabel_ .
+  - Subordinadas (independientemente de su extensión): exigencia de división de unidades entre subordinante y subordinado _Si quieres // puedes venir_ .
+  - Entonación de cláusulas reducidas y construcciones en posiciones parentéticas _La chica, cansada de llevar tacones, se descalzó en la fiesta_ . _Por lo que me dices, sin duda, todo salió muy bien_ .
+- [Español de España, variedad castellana] Moderación de las fluctuaciones e inflexiones más equilibradas
+- [Hispanoamérica] Entonación rica en variantes, mayor frecuencia de subidas y descensos melódicos
+- 2.2.1. Al principio de la unidad enunciativa
+  - Inflexión de la voz: tono bajo o tono alto dependiendo, no ya de que la sílaba inicial sea una sílaba tónica o átona, porque puede ser tanto lo uno como lo otro, sino del valor gramatical de la palabra en cuestión. _Donde está escrito_ . / _Dónde está escrito_ .
+- 2.2.2. En el cuerpo de la unidad enunciativa
+  - Perfil básicamente horizontal del contorno tonal
+- 2.2.3. Al final de la unidad enunciativa
+  - Producción de los tonemas con mayores matizaciones:
+    - Cadencia (descenso 8 semitonos)
+    - Semicadencia (descenso 3 ó 4 semitonos)
+    - Anticadencia (ascenso 4 ó 5 semitonos)
+    - Semianticadencia (ascenso 2 ó 3 semitonos)
+    - Suspensión (sin ascenso ni descenso)
+- 2.2.4. Identificación y producción de los patrones melódicos de la entonación enunciativa correspondiente a los diversos tipos de aseveración: modificaciones en la cadencia
+  - Aseveración ordinaria _Me levanto a las ocho_ .
+  - Aseveración categórica _La pronunciación // es lo más difícil del español_ .
+  - Aseveración insinuativa: relación con la pragmática (intencionalidad, contenidos implícitos) _Es una opinión muy lógica_ .
+  - Aseveración con tono de incertidumbre _Como no sabía qué ibas a hacer tú._
+  - Enumeraciones:
+    - Enumeración completa final de frase _Sé francés, inglés, alemán y español_ .
+    - Enumeración incompleta final de frase _Me pareció que era lenta, aburrida, pesada_ .
+    - Enumeración descriptiva _Me levanto, me ducho, tomo un café y me voy a trabajar_ .
+    - Enumeración distributiva _Corta por aquí este lado del papel, por este otro dóblalo, por el otro lado corta otra vez_ .
+- Entonación de las interrogativas aseverativas _¿A que es muy guapo?_
+- Entonación de las interrogativas aseverativas con el rasgo de cortesía _¿Querrías hacerme el favor de venir?_
+- Entonación de las interrogativas alternativas o disyuntivas _¿Fue sin querer o fue aposta?_
+- La entonación como exponente de los distintos actos de habla: los orientados hacia el hablante (actos de habla asertivos, exclamativos y expresivos) y los orientados hacia el oyente (actos de habla interrogativos y actos de habla imperativos):
+  - Entonación volitiva
+  - El tonema desiderativo
+  - Saludos y expresiones de cortesía: preguntas
+  - Actos de habla interrogativos (diversidad de procedimientos entonativos para marcarlos)
+  - Actos de habla imperativos
+  - Patrones entonativos básicos de mandato _Ven_ . _¡Silencio!_ _Más despacio, por favor_
+  - Exclamaciones de mandato _¡Que te calles de una vez, hombre!_
+  - Entonación exclamativa de urgencia _¡Pasa! ¡Vamos!_
+  - Recomendaciones o mandatos atenuados _No fumes tanto_ .
+  - Exclamaciones de mandato irónico _¡Tú hazle caso!_
+  - Saludos y expresiones de cortesía más complejas _¿Cómo está usted?_ _¿Qué tal te fue?_
+
+### 3. La sílaba y el acento
+- 3.1.1. Silabeo de estructuras silábicas complejas
+  - Consonantes entre dos vocales: agrupación de la consonante con la sílaba siguiente _me-sa_
+  - Dos consonantes entre dos vocales:
+    - Inseparables los grupos formados por bilabiales o labiodentales + líquida (pr, br, pl, bl, fr, fl) _pro-bar_
+    - Inseparables los grupos formados por velares + líquidas (gr, gl, kr, kl) _cla-ro_
+    - Inseparables los grupos formados por dentales + vibrantes (dr, tr) _dra-ma_
+    - Resto de consonantes entre dos vocales: división en sílabas diferentes _an-dar_
+  - Tres o más consonantes entre dos vocales:
+    - Dos últimas forman grupo consonántico (una de ellas líquida) _in-fla-mar_
+    - Dos primeras forman grupo de nasal + fricativa alveolar (ns) _cons-tru-ir_
+  - Contacto de dos vocales no altas o cerradas: separación en sílabas distintas _gol-pe-ar_
+  - Contacto de una vocal baja o media y otra alta o viceversa: una sílaba si se forma diptongo _bue-no_
+  - Contacto de vocal no cerrada átona y vocal cerrada tónica: separación en sílabas distintas _pa-ís_
+  - Triptongo: forma sílaba o parte de sílaba _es-tu-diáis_
+- 3.1.2. Resilabeo
+  - Delimitación silábica _¿Vas a salir?_ > _va.sa.sa.lir_ _¿Va a pagar en efectivo?_ > _va.pa.ga.re.ne.fec.ti.vo_ _Su amistad _> _sua.mis.tad_ _Querido amigo_ > _que.ri.doa.mi.go_ o _que.ri.do.a.mi.go_ _Para Alberto_ > _pa.ra:l.ber.to_
+- 3.2.1. Relación entre el acento prosódico y el acento ortográfico
+  - Realización gráfica (ortografía) de las formas acentuadas:
+    - Palabras agudas u oxítonas terminadas en vocal, -n o -s (tilde en la vocal más abierta en el caso de haber más de una) _autobús_ , _camión_
+    - Palabras llanas o paroxítonas no terminadas en vocal, -n o -s (tilde en la vocal más abierta en el caso de haber más de una) _fácil_ , _césped_
+    - Palabras esdrújulas o proparoxítonas (tilde en la vocal más abierta en el caso de haber más de una) _piénsalo_
+    - Palabras sobresdrújulas o superproparoxítonas (tilde en la vocal más abierta en el caso de haber más de una) _preparándoselo_
+    - Diptongos: forman una sola sílaba y se ajustan a las reglas habituales de acentuación (tilde sobre la vocal más abierta) _estáis_ , _después_ , _náutico_
+    - Triptongos: forman una sola sílaba y se ajustan a las reglas habituales de acentuación (tilde sobre la vocal situada en el centro) _limpiáis_ , _acariciéis_ , _averiguáis_
+    - Hiatos de dos vocales abiertas (siguen la regla general) _León_ (dos sílabas), _aéreo_ (tres sílabas)
+    - Hiatos de vocal abierta o media + cerrada o cerrada + abierta o media, se acentúa la cerrada _país_ , _reír_ , _mío_ , _búho_
+- 3.2.2. Relación entre la expresión fónica y las categorías gramaticales
+  - Categorías gramaticales tónicas: verbos, sustantivos, adjetivos, pronombres tónicos. _Es como un hermano para mí_ .
+  - Categorías gramaticales átonas: artículos, preposiciones, conjunciones. _Es como un hermano para mí_ .
+
+### 4. El ritmo, las pausas y el tiempo
+- 4.1.1. Fenómenos de la secuencia hablada relacionados con el perfil rítmico del español
+  - Inexistencia de reducción vocálica Cualquier enunciado del español con todas sus vocales pronunciadas sin apenas modificación, vayan o no acentuadas: _La casa de los hermanos de Pepe_
+- 4.1.2. Producción de secuencias sencillas especialmente rítmicas
+  - Refranes
+  - Poemas sencillos
+  - Canciones populares
+- 4.2.1. Agrupaciones que habitualmente no admiten pausas
+  - El artículo y el nombre _el niño_
+  - Un nombre y un adjetivo _plato sopero_
+  - Un adjetivo y un nombre _verde hojarasca_
+  - Un verbo y un adverbio _duermo mal_
+  - Un adverbio y un verbo _no estudia_
+  - Un verbo y un pronombre átono o clítico _lo creo_
+  - Un adverbio y un adjetivo _mal avenido_
+  - Un adverbio y otro adverbio _bastante mal_
+  - Los componentes de las formas verbales compuestas _habían cantado_
+  - Los componentes de las perífrasis verbales _se echó a llorar_
+  - La preposición con su término _con mi libro_
+- 4.2.2. Correspondencia entre la distribución de las pausas y la estructura sintáctica e informativa
+  - Distinción entre relativas especificativas y relativas explicativas a partir del empleo de las pausas _La chica, / que es mexicana, / es muy buena_ vs. _La chica que es mexicana / es muy buena_ .
+- 4.2.3. Identificación y producción del tempo predominante en español
+  - Tempo sosegado o «andante»
+
+### 5. Los fonemas y sus variantes
+- 5.1.1. Casos de relajación de las vocales inacentuadas en pronunciación rápida y familiar
+  - Vocal débil, final de grupo, ante pausa _lunes_ > _lún[ə]s_
+  - Penúltima vocal de una palabra esdrújula _capítulo_ > _capít[ŭ]lo_
+  - Vocal pretónica en interior de palabra _temeroso_ > _tem[ə]róso_
+  - Pronunciación de ciertas vocales dependiente de la estructura rítmica del conjunto:
+    - Calle de Goya (la «e» de la preposición se relaja porque va situada entre dos palabras bisílabas y graves, de modo que rompe el ritmo trocaico: ´_ _( ) ´_ _preferido por el español)
+    - [México (altiplanicie) y regiones andinas] Debilitamiento hasta su desaparición de las vocales átonas ante _s_ o consonante sorda: [p's] _pues_
+- 5.1.2. Diptongos
+  - Pronunciación de la «i» y de la «u»:
+    - Como semivocales al final del diptongo _hoy_
+    - Como semiconsonantes al principio del diptongo _huevo_
+  - Detalles articulatorios de la «u» semivocal:
+    - Articulación: movimiento breve de aproximación de los órganos articulatorios para la transición de vocal precedente a la «u» (doble estrechez de los órganos, linguovelar y bilabial; tendencia a la fricación pero manteniendo el timbre vocálico de la _u_ )
+    - Sonido resultante: semejante al alemán _laut_ ; distanciamiento respecto a la pronunciación inglesa
+    - Contextos: diptongos au, eu, ou dentro de palabra o en enlace entre dos palabras _causa_ > _ca[u̯]sa_ , _lo último_ > _lo [u̯]ltimo_
+  - Detalles articulatorios de la «u» semiconsonante, la «wau»:
+    - Articulación: movimiento rápido de órganos articulatorios desde la posición labiovelar más o menos cerrada a la posición de la vocal siguiente. La «u» empieza más cerrada y termina más abierta (al contrario que la semivocal)
+    - Sonido resultante: similar al francés _oui_ y al inglés _we_ . Más marcado que en alemán
+    - Contextos:
+      - En interior de palabra, menos consonantizado _agua_ > _ag[u̯]a_ , _puerta_ > _p[u̯]erta_
+      - En posición inicial absoluta, propiamente como una consonante _hueso_ > _[w]eso_ , _[gw]eso_
+  - [Hispanoamérica] Frecuente pronunciación como diptongo de secuencias formadas por una vocal cerrada átona y una vocal abierta o semiabierta tónica, o por dos vocales cerradas distintas: [ _gi̯ón_ ] _guion_ , [ _xe - su̯i̯ - ta_ ] _jesuita_ (pronunciadas mayoritariamente como hiatos [ _gi - ón_ ], [ _xe - su - í - ta_ ] en el español de España y de algunos países hispanoamericanos: Argentina, Ecuador)
+- 5.1.3. Triptongos e hiatos
+  - Articulación: movimiento inicial de apertura creciente; apertura decreciente al final
+  - Primer elemento semiconsonante; último elemento semivocal
+  - Pronunciación de las vocales:
+    - a-: matiz palatal (especialmente en _iai_ ) _estudiáis_
+    - e-: abierta (no influencia de elementos palatales) _estudiéis_
+  - [Hispanoamérica y España] Tendencia antihiática fuerte en el habla coloquial. Secuencias vocálicas que son hiatos (habla culta) se pronuncian como diptongos y se cierra el timbre de la vocal átona: _golp[i̯á]r_ por _golpear_ , _acord[i̯ó]n_ por _acordeón_ , _pel[i̯é]_ por _peleé_ , etc. En algunos países hispanoamericanos, particularmente en México, este cierre vocálico se da también en el nivel culto.
+- 5.1.4. Casos de sinéresis
+  - Sinéresis: aceptación en el uso de la pronunciación del hiato en una sola sílaba _su-a-ve_ > _s[u̯]á-be_ ; _a-ún_ > _á[u̯]n_ , y también: _jesu-ita_ > _jes[u̯]ita_ [v. Pronunciación y prosodia 5.3.1.]
+  - Contraste entre pronunciación en hiato y pronunciación con sinéresis _baul_ / _ba-úl_
+- 5.1.5. Casos de sinalefa
+  - Dos palabras _la instancia_ > _lains.tan.cia_ _todo eso_ > _to-doe-so_
+  - Tres palabras _vengo a empezar_ > _ven-goaem-pe-zar_
+- 5.2.1. Consonantes oclusivas
+  - Oclusivas puras _padre_ , _dolor_ , _tapa_
+  - No existen en español oclusivas aspiradas: explosión con un ligero soplo sordo, como una breve «h» aspirada, entre la consonante oclusiva y el sonido que la sigue retrasando el inicio de la vibración de la glotis _padre_ > _*phadre_ (error frecuente entre hablantes de lengua materna alemana o inglesa)
+  - Tampoco existen oclusivas sonoras con vibraciones laríngeas demasiado débiles y tardías _bollo_ / _pollo_ (confusión frecuente entre alemanes e ingleses)
+  - Pronunciación española de estos sonidos como en francés, italiano y lenguas neolatinas
+  - [Hispanoamérica] Realizaciones oclusivas de _b_ , _d_ , _g_ tras las sonoras _l_ , _r_ , _s_ , _y_ , _u_ (general en Yucatán, Nicaragua, Puerto Rico y El Salvador; frecuente en Honduras, Costa Rica, Colombia, puntos alejados de México y Lima). La oclusión ante «l» parece extenderse además a Panamá (provincias centrales), Ecuador (sierra), Perú, Argentina y Chile. En regiones bilingües se mantiene la oclusividad intervocálica de _b_ , _d_ , _g_ : _ca[b]allo_ , _sala[d]o_ , _ma[g]o_ .
+- 5.2.2. Consonantes fricativas sonoras en alternancia con oclusivas
+  - Tendencia del español a realizar, en lugar de las oclusivas /b, d, g/, las correspondientes fricativas sonoras (especialmente suaves: aproximantes) a diferencia de lo que es característico en inglés, francés, catalán. _abogado_ , _doblegado_
+- 5.2.3. Consonantes bilabiales
+  - Omisión de la bilabial en el grupo inicial «ps» _psicólogo_ > _sicólogo_
+  - Pronunciación fricativa o aproximante (fricativa sin fricción) de la /b/ siempre que no vaya en inicial absoluta o tras nasal _cabezota_ , _abrazar_
+  - Fricativa relajada en _ab_ , _ob_ , _sub_ + _s_ : articulación muy débil y relajada (similar a la del alemán pronunciado en el sur: _aber_ , _liebe_ ). En ocasiones, relajación extrema hasta la desaparición _absoluto_ , _objetivo_ , _subjetivo_ _obstáculo_ > _ostáculo_
+  - Pronunciación incorrecta de la grafía «v» como /v/ labiodental (a diferencia del inglés, el italiano, el francés...) [ _váso_ ] en lugar de [ _báso_ ]
+  - [Hispanoamérica] Pronunciación labiodental, especie de ultracorrección fonética, en América del Sur (Chile, Colombia) de la «v» en posición inicial y después de nasal: _[v]einte_ , _[v]oto_ .
+  - [Hispanoamérica] Realizaciones oclusivas de «b» tras las sonoras _l_ , _r_ , _s_ , _y_ , _u_ (general en Yucatán, Nicaragua, Puerto Rico y El Salvador; frecuente en Honduras, Costa Rica, Colombia, puntos alejados de México y Lima). La oclusión ante «l» parece extenderse además a Panamá (provincias centrales), Ecuador (sierra), Perú, Argentina y Chile. En regiones bilingües se mantiene la oclusividad intervocálica de «b»: _ca[b]allo_ . [v. Pronunciación y prosodia 5.2.1.]
+- 5.2.4. Consonantes interdentales: sonido de la «z»
+  - Semejanza con el inglés «th» ( _think_ ) pero con articulación más enérgica e interdental
+  - [Hispanoamérica y centro-sur de España] Seseo (ausencia a nivel fonemático del elemento interdental fricativo sordo /θ/ y presencia en su lugar de /s/). Alcanza todas las regiones y niveles sociales.
+- 5.2.5. Consonantes dentales
+  - Pronunciación de la «t»:
+    - Explosión limpia y sonora, sin fricación ni aspiración (contrariamente al inglés, por ejemplo)
+    - Diferencia en la localización con el inglés y el alemán, donde es muy anterior, contra encías y alveolos y con aspiración; también el timbre es muy distinto al del español
+    - Semejanza con el francés, aunque en francés el punto de articulación es más anterior, si bien no tanto como en el inglés y el alemán
+  - Pronunciación de la «d»:
+    - Oclusión plenamente sonora, hecho de especial relevancia para hablantes del inglés o del alemán
+    - Final de palabra: articulación fricativa, debilitamiento y relajación (seguida de pausa) _libertad_ > _libertad_
+    - [Hispanoamérica] Realizaciones oclusivas de «d » tras las sonoras _l_ , _r_ , _s_ , _y_ , _u_ (general en Yucatán, Nicaragua, Puerto Rico y El Salvador; frecuente en Honduras, Costa Rica, Colombia, puntos alejados de México y Lima). La oclusión ante «l » parece extenderse además a Panamá (provincias centrales), Ecuador (sierra), Perú, Argentina y Chile. En regiones bilingües se mantiene la oclusividad intervocálica de «d»: _sala[d]o_ .
+    - [Hispanoamérica] Debilitamiento generalizado de la «d» en posición intervocálica y final (muy frecuente también en España). Las regiones en las que más se documenta son Puerto Rico, Colombia (costa caribeña y Santander), Perú (San Luis), Argentina (habla de los gauchos), Ecuador (costa). Algunas regiones mantienen la tensión de la terminación _-ado_ .
+- 5.2.6. Consonantes alveolares
+  - Pronunciación de la «s»:
+    - Diferencia respecto a la mayoría de las lenguas del entorno: elevación de la punta de la lengua contra los alveolos superiores, frente a la pronunciación del francés, el italiano, el alemán, el inglés, el portugués... donde la articulación se hace con el predorso, no con el ápice.
+    - «s» española: apical, timbre más grave y palatal, sorda
+    - No hay /s/ sonora; solo alófonos contextuales sonoros _isla_ , _desde_ , _asma_
+    - [Hispanoamérica] Variante sonora en final de palabra ante vocal en Ecuador
+    - [Hispanoamérica] Debilitamiento extendido de la «s» implosiva o final de sílaba (aspiración, asimilación y elisión). (El Caribe, Centroamérica, Venezuela, costas de Colombia, costa caribeña y áreas contiguas de Ecuador, costas de México, costa norte del Perú, Chile, región porteña y parte del interior de Argentina y Paraguay). El sonido se debilita hasta elidirse en Panamá, costas de Colombia y Venezuela, centro y oriente de Cuba, Puerto Rico y República Dominicana.
+    - [Hispanoamérica] Conservación de la «s» en Colombia (Santander), México (articulación tensa y larga en la altiplanicie mexicana, Jalisco, Yucatán, Guanajuato, Valle de México), Costa Rica (centro), Ecuador (costa este, Sierra, Quito...), Perú (Lima, casos de aspiración y casos de elisión ante consonante en hablantes jóvenes)
+  - Pronunciación de la consonante «l» : frente a la catalana o la inglesa, es una pronunciación sin resonancia velar.
+  - Pronunciación de la «r» simple:
+    - Intervocálica: una sola vibración o golpe de la lengua en los alveolos _cara_ , _pero_ , _puro_
+    - Presencia de un elemento vocálico al encontrarse al lado de otra consonante: elemento vocálico tan breve que no debe ser percibido como una vocal, a diferencia de lenguas orientales, como por ejemplo el japonés, que por su estructura silábica introduce un elemento vocálico muy definido. _traje_ , _abre_
+    - Posible confusión entre las líquidas «r» simple y «l» relajada: importante en lenguas orientales que carecen de una vibrante como la del español _comel_ por _comer_ , _pelo_ por _pero_
+    - Posible atracción de la «t» o de la «d» hacia la zona alveolar por la influencia de la «r» en grupos consonánticos: error frecuente, por ejemplo, en anglohablantes (inglés _tree_ ) _tres_ , _dramático_
+    - [Hispanoamérica] Neutralización extendida de «l» y «r», percepción del sonido con características vibrantes y a la vez laterales (islas y zonas costeras, Puerto Rico, costas de Colombia y Ecuador, Panamá, Cuba, República Dominicana, costa de Venezuela, costa de Perú, costas de Ecuador y centro de Chile). Se puede dar como una lateralización de la «r», pronunciada como «l» (lambdacismo): _a[l]te_ por _arte_ ; o como articulación vibrante de «l», pronunciada como «r» (rotacismo): _pie[r]_ por _piel_ .
+  - Pronunciación de la «r» múltiple:
+    - Nunca uvular, a diferencia del francés, del alemán o de ciertas variedades del italiano
+    - Sin fricación hueca y cóncava, esto es, retrofleja: problema en la pronunciación para anglohablantes
+- 5.2.7. Consonantes palatales
+  - Pronunciación de la «ch»:
+    - Semejanza con el sonido «t» + «ch» del francés, pero con diferencias notables en la articulación: no hay intervención ni de los dientes ni del ápice de la lengua.
+    - Semejanza con la «c» del italiano ( _ciao_ ), «tx» del catalán ( _cotxe_ ), «ch» del inglés ( _change_ ) y «tsch» del alemán ( _deutsche_ ): fricación más breve del español y más aguda
+  - Pronunciación de la «y»:
+    - Semejanza con la _gi_ , _ge_ del italiano, «g» del inglés en _gentle_
+    - Posición inicial de sílaba escrita y o _hi-_ : africada (en posición inicial absoluta o tras nasal) o bien fricativa, o bien aproximante _inyección_ : _in[ʤ]ección_ _el hielo_ : _el [ʝ]elo_ // _el [j]elo_
+    - Posición inicial acentuada después de pausa: alternancia de fricativa y africada _hierba_ , _yelmo_
+    - También alternancia entre la africada y la fricativa en los casos de yeísmo _lluvia, calle_ : _[ʤ]uvia, ca[ʝ]e_
+    - [Hispanoamérica] Realizaciones del yeísmo hispanoamericano: fricativa palatal sonora; [ʃ] / [ʒ] fricativa, alveopalatal, sonora/sorda, tensa y estridente (rehilada), _ca[ʃ]e_ / _ca[ʒ]e_ por _calle_ ; desaparece en posición intervocálica _ga[í]na_ por _gallina_ .
+  - Pronunciación de la «ñ»:
+    - Semejanza con el sonido del italiano y del francés representado por «gn» ( _regno_ , _vigne_ ) y del portugués representado por «nh» ( _senhor_ )
+    - Inexistencia en muchos idiomas (inglés, alemán...): no equivalencia con «n» + «y», por ser articulación simple
+- 5.2.8. Consonantes velares
+  - [Hispanoamérica] Realizaciones oclusivas de «g» tras las sonoras l, r, s, y, u (general en Yucatán, Nicaragua, Puerto Rico y El Salvador; frecuente en Honduras, Costa Rica, Colombia, puntos alejados de México y Lima). La oclusión ante «l» parece extenderse además a Panamá (provincias centrales), Ecuador (sierra), Perú, Argentina y Chile. En regiones bilingües se mantiene la oclusividad intervocálica de «g»: ma[g]o.
+  - Pronunciación de la «j»:
+    - La más posterior de las articulaciones españolas
+    - Sin aspiración
+    - Similar a «ch» del alemán en _Kuchen_
+    - Tendencia a ser pronunciada por los anglohablantes como demasiado abierta y aspirada
+- 5.3.1. Enlace de las vocales
+  - Vocales iguales:
+    - Vocales iguales inacentuadas en una misma palabra o en palabras diferentes: reducción (con posible alargamiento de la vocal resultante) _alcoholismo_ > _alcolismo_ _ninguna avisó_ > _ninguna:visó_
+    - Vocales iguales, una de ellas acentuada, en una misma palabra _alcohol_ > _alkol_
+      - Caso de _leer_ , _creer_ : Forma bisilábica en posición final, pero reducción a una sola vocal en conversación corriente si están en el interior de un grupo fónico _Voy a leer esto_ . / _Esto lo voy a le-er_ .
+      - En primera persona del plural del presente de subjuntivo: mantenimiento _paseemos_ [v. Pronunciación y prosodia 5.1.4.]
+    - Vocales iguales átona y tónica en palabras diferentes: reducción (con posible alargamiento de la vocal resultante) _la alta_ > _l[a:]lta_
+  - Vocales diferentes:
+    - Vocales diferentes inacentuadas en una misma palabra o en palabras diferentes: se reúnen normalmente en una sola sílaba _cantasteis_ , _todo aquello_
+    - Vocales diferentes, una de ellas acentuada, en diferentes palabras: también tiene lugar la sinéresis o incluso la reducción _de otra cosa_ / _d'otra cosa_
+  - Palabras en las que existe fluctuación entre los hiatos y la sinéresis:
+    - Palabras con preferencia por el diptongo _ruido_
+    - Palabras con preferencia por el hiato _concluido_ , _construimos_ ...
+    - El grupo acentuado «iu»: alternancia entre pronunciación en hiato o en diptongo (incidencia en la pronunciación en diptongo) _triunfo_ / _triúnfo_
+    - Posición acentuada final de grupo fónico: dificulta la sinéresis _cuatro días después_ / _después de cuatro dí-as_
+- 5.3.2. Concurrencia de consonantes
+  - Dos consonantes fricativas alveolares sordas [s]: reducción a una sola «s» de duración como una única consonante intervocálica _los sábados_ > _lo[s]ábados_
+  - Dos consonantes nasales alveolares [n]: reducción a una sola «n» de duración ligeramente mayor a una «n» intervocálica _un café con nata_ > _co[n:]ata_
+  - Dos consonantes vibrantes, una final de palabra y la otra vibrante múltiple inicial de palabra: reducción a una sola vibrante múltiple con el mismo número de vibraciones _un señor respetable_ > _seño[r]espetable_
+  - Dos consonantes laterales alveolares [l]: reducción a una sola «l» larga _el libro_ > _e[l:]ibro_
+Centro Virtual Cervantes © Instituto Cervantes, . Reservados todos los derechos. cvc@cervantes.es
