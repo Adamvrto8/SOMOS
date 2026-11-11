@@ -1,10 +1,17 @@
+import { BookOpen, ChevronRight } from 'lucide-react'
 import { useMemo } from 'react'
-import { useLocation } from 'react-router'
+import { Link, useLocation } from 'react-router'
+import { Badge } from '../../components/Badge'
 import { Chip } from '../../components/Chip'
 import { SearchField } from '../../components/SearchField'
+import { SectionTitle } from '../../components/SectionTitle'
+import { tips } from '../../data'
+import type { Tip } from '../../data/types'
 import { useT } from '../../i18n'
 import { useSavedWordIds } from '../../lib/archive'
+import { localizedTip } from '../../lib/localized'
 import { searchWords, type SearchFilter } from '../../lib/search'
+import { searchTipTitles } from '../../lib/tipSearch'
 import { useUrlParam, useUrlQuery } from '../../lib/useUrlQuery'
 import { OnlineTranslate } from './OnlineTranslate'
 import { TopicGrid } from './TopicGrid'
@@ -13,6 +20,31 @@ import { WordRow } from './WordRow'
 const FILTERS: SearchFilter[] = ['all', 'verb', 'noun', 'phrase']
 
 const isFilter = (value: string | null): value is SearchFilter => FILTERS.some((f) => f === value)
+
+/** "ser estar" in Hľadať: the grammar tips with those words in their title, under the words. */
+function TipHits({ found }: { found: Tip[] }) {
+  const text = useT().search
+  return (
+    <section aria-labelledby="search-tips-heading">
+      <SectionTitle id="search-tips-heading">{text.grammar}</SectionTitle>
+      <ul className="space-y-2">
+        {found.map((tip) => (
+          <li key={tip.id}>
+            <Link
+              to={`/practice/grammar/${tip.id}`}
+              className="flex min-h-12 items-center gap-3 rounded-card border border-line bg-surface px-4 py-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick"
+            >
+              <BookOpen size={18} strokeWidth={1.75} className="shrink-0 text-brick" aria-hidden />
+              <span className="min-w-0 flex-1 truncate font-medium">{localizedTip(tip).title}</span>
+              <Badge>{tip.level}</Badge>
+              <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
 export function SearchPage() {
   const [query, setQuery] = useUrlQuery()
@@ -25,6 +57,8 @@ export function SearchPage() {
   const hits = useMemo(() => searchWords(query, filter), [query, filter])
   const hitIds = useMemo(() => hits.map((h) => h.word.id), [hits])
   const showTopics = query.trim() === '' && filter === 'all'
+  // Tips only with "Všetko": the chips narrow the words to a part of speech.
+  const tipHits = useMemo(() => (filter === 'all' ? searchTipTitles(tips, query) : []), [query, filter])
 
   return (
     <div className="space-y-4">
@@ -63,11 +97,14 @@ export function SearchPage() {
               ))}
             </ul>
           ) : (
-            <div className="rounded-card border border-dashed border-line p-6 text-center">
-              <p className="font-medium">{text.nothing(query.trim())}</p>
-              <p className="mt-1 text-sm text-ink-muted">{text.nothingHint}</p>
-            </div>
+            tipHits.length === 0 && (
+              <div className="rounded-card border border-dashed border-line p-6 text-center">
+                <p className="font-medium">{text.nothing(query.trim())}</p>
+                <p className="mt-1 text-sm text-ink-muted">{text.nothingHint}</p>
+              </div>
+            )
           )}
+          {tipHits.length > 0 && <TipHits found={tipHits} />}
           {query.trim() !== '' && <OnlineTranslate key={query.trim()} query={query} />}
         </>
       )}

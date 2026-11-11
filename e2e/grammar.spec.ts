@@ -217,3 +217,18 @@ test('a tense of the conjugation drill opens its grammar before the lesson, and 
   await expect(page.getByRole('dialog')).toHaveCount(0)
   await expect(page).toHaveURL(/tense=preterito/)
 })
+
+test('Hľadať shows the tips whose title has the query under the words, and Back returns to the search', async ({ page }) => {
+  await page.goto('/search?q=ser%20estar')
+  const fromGrammar = page.getByRole('region', { name: 'Z gramatiky' })
+  await fromGrammar.getByRole('link', { name: /^ser a estar/ }).tap()
+  await expect(page).toHaveURL(/\/practice\/grammar\/ser-estar$/)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('ser a estar')
+  await page.goBack()
+  await expect(page).toHaveURL(/\/search\?q=ser/)
+  // A plain word brings no tips, and the chips for a part of speech hide them.
+  await page.goto('/search?q=casa')
+  await expect(page.getByRole('region', { name: 'Z gramatiky' })).toHaveCount(0)
+  await page.goto('/search?q=ser%20estar&f=verb')
+  await expect(page.getByRole('region', { name: 'Z gramatiky' })).toHaveCount(0)
+})

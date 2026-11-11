@@ -56,7 +56,7 @@ export const sk = {
     path: 'Cesta',
     /** The numbers on the tabs: flashcards due today (Domov), mistakes waiting (Cvičiť). */
     dueBadge: (n: number) => `${n} ${pluralSk(n, ['kartička', 'kartičky', 'kartičiek'])} na dnes`,
-    mistakesBadge: (n: number) => `${n} ${pluralSk(n, ['chyba', 'chyby', 'chýb'])} na opravu`,
+    unfinishedBadge: 'rozrobená lekcia',
     /** The fifth tab: the learner's numbers, account and Nastavenia. */
     profile: 'Profil',
     searchWord: 'Hľadať slovo',
@@ -346,7 +346,8 @@ export const sk = {
     minutes: (n: number) => `asi ${n} min`,
     reviewAria: (n: number) => `Prejsť kartičky (${n})`,
     lessonAria: (lesson: number, label: string) => `Lekcia ${lesson}: ${label}`,
-    lessonLine: (lesson: number, label: string) => `Lekcia ${lesson} · ${label}`,
+    /** What the lesson is first, its number after: "Doplňovačka · Jedlo a pitie · A1 · lekcia 3". */
+    lessonLine: (lesson: number, label: string) => `${label} · lekcia ${lesson}`,
     reviewDone: 'Kartičky na dnes hotové',
     week: 'Posledných 7 dní',
     noActivity: 'Zatiaľ žiadna aktivita. Každá správna odpoveď v lekcii aj v kartičkách sa ráta.',
@@ -381,6 +382,7 @@ export const sk = {
     byExercise: (n: number) => `Čo si cvičil · ${n} dní`,
     review: 'Kartičky',
     nothing: 'V tomto období žiadne odpovede.',
+    nothingHint: 'Každá odpoveď v lekcii a na kartičkách sa započíta sem.',
   },
 
   exercise: {
@@ -411,6 +413,7 @@ export const sk = {
     results: (n: number) => `${n} ${pluralSk(n, ['výsledok', 'výsledky', 'výsledkov'])}`,
     nothing: (query: string) => `Nenašli sme nič pre „${query}“.`,
     nothingHint: 'Skús iný tvar slova alebo slovenský výraz.',
+    grammar: 'Z gramatiky',
     topics: 'Témy',
     words: (n: number) => `${n} ${pluralSk(n, ['slovo', 'slová', 'slov'])}`,
     topicNotFound: 'Téma sa nenašla',
@@ -684,7 +687,7 @@ export const sk = {
     },
 
     overview: {
-      heading: (n: number, exercise: string) => `Lekcia ${n} · ${exercise}`,
+      heading: (n: number, label: string) => `${label} · lekcia ${n}`,
       title: 'Prehľad lekcie',
       passed: (score: number, total: number) => `Splnená (${score}/${total})`,
       answers: 'Správne odpovede',
@@ -999,7 +1002,7 @@ export const sk = {
 
   tests: {
     title: 'Testy',
-    intro: 'Test ukáže, čo už naozaj vieš. Mieša všetky druhy cvičení, počas neho nie je nápoveda a zložený je pri 80 %. Nič sa nezamyká: je to cieľ, na ktorý sa môžeš pripraviť.',
+    intro: 'Test témy overí jednu tému, skúška celú úroveň naraz. Oba miešajú všetky druhy cvičení, nedávajú nápovedu a zložené sú pri 80 %. Nič sa nezamyká: je to cieľ, na ktorý sa môžeš pripraviť.',
     level: 'Úroveň',
     exam: (level: string) => `Skúška ${level}`,
     examHint: (n: number) => `${n} úloh zo všetkého na úrovni`,
@@ -1230,6 +1233,7 @@ export const sk = {
     unknown: (word: string) => `„${word}“ nepoznám.`,
     maybe: (options: string) => `Možno: ${options}`,
     empty: 'Zatiaľ nemáš žiadny zápis.',
+    emptyHint: 'Zapíš si, čo si sa dnes naučil, alebo pár viet o svojom dni po španielsky. Neznáme slová ti podčiarknem.',
     nothingToday: 'Dnes ešte nič',
   },
   privacy: {

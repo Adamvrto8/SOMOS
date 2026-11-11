@@ -48,7 +48,12 @@ export function DiaryPage() {
           </li>
         ))}
       </ul>
-      {entries.length === 0 && <p className="mt-4 text-sm text-ink-muted">{t.empty}</p>}
+      {entries.length === 0 && (
+        <div className="mt-4 text-sm text-ink-muted">
+          <p className="font-medium text-ink">{t.empty}</p>
+          <p className="mt-1">{t.emptyHint}</p>
+        </div>
+      )}
     </div>
   )
 }

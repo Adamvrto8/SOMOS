@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest'
 import { tips } from '../data'
 import { setLanguage } from './language'
-import { searchTips } from './tipSearch'
+import { searchTipTitles, searchTips } from './tipSearch'
 
 afterEach(() => setLanguage('sk'))
 
@@ -50,5 +50,13 @@ describe('searchTips', () => {
 
   it('finds a tip by a Spanish word from its examples', () => {
     expect(ids('acabo')).toContain('periphrases')
+  })
+
+  it('Hľadať takes the few tips whose title has the query, nothing for a short query', () => {
+    const titles = (query: string) => searchTipTitles(tips, query).map((tip) => tip.id)
+    expect(titles('ser estar')).toContain('ser-estar')
+    expect(titles('casa')).toEqual([])
+    expect(titles('el')).toEqual([])
+    expect(titles('cas').length).toBeLessThanOrEqual(3)
   })
 })

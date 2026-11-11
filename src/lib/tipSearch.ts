@@ -41,3 +41,13 @@ export function searchTips(tips: readonly Tip[], query: string): Tip[] {
   })
   return scored.sort((a, b) => b.score - a.score || a.order - b.order).map((s) => s.tip)
 }
+
+/**
+ * Hľadať: the few tips whose title holds every word of the query ("ser" → ser a estar), for a row under the words.
+ * Only titles: a word like "casa" in an example or "čas" in a rule title would bring tips nobody looked for.
+ */
+export function searchTipTitles(tips: readonly Tip[], query: string, limit = 3): Tip[] {
+  const wanted = words(query)
+  if (wanted.join('').length < 3) return []
+  return tips.filter((tip) => wanted.every((word) => starts(entryOf(tip).title, word))).slice(0, limit)
+}

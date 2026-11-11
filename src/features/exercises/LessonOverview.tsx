@@ -4,17 +4,17 @@ import type { Task } from '../../lib/lesson'
 import type { LessonRecord } from '../../lib/lessonProgress'
 import { useT } from '../../i18n'
 import { useMistakes } from '../../lib/mistakes'
-import { exerciseInfo } from './exercises'
 import { TaskAnswerList } from './TaskAnswerList'
 
 interface LessonOverviewProps {
   lessonNumber: number
+  label: string // the exercise, topic and level: "Doplňovačka · Jedlo a pitie · A1"
   record: LessonRecord
   tasks: Task[]
 }
 
 /** A passed lesson opens here first: its tasks with the correct answers, to read through before (or instead of) playing it again. */
-export function LessonOverview({ lessonNumber, record, tasks }: LessonOverviewProps) {
+export function LessonOverview({ lessonNumber, label, record, tasks }: LessonOverviewProps) {
   const mistakes = useMistakes()
   const text = useT().lesson.overview
   const mistakeKeys = new Set(mistakes?.map((m) => `${m.exercise}|${m.itemId}`))
@@ -23,7 +23,7 @@ export function LessonOverview({ lessonNumber, record, tasks }: LessonOverviewPr
     <div className="space-y-6">
       <div>
         <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
-          {text.heading(lessonNumber, exerciseInfo(tasks[0].kind).label)}
+          {text.heading(lessonNumber, label)}
         </p>
         <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight">{text.title}</h1>
         <p className="mt-3 inline-flex items-center gap-2 rounded-xl bg-leaf/10 px-3 py-1.5 text-sm font-medium text-leaf">

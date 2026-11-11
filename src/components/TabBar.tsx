@@ -1,7 +1,8 @@
 import { CircleUser, House, PencilLine, Route, Search, type LucideIcon } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
 import { useT } from '../i18n'
-import { useMistakes } from '../lib/mistakes'
+import { continueLesson } from '../features/home/continueLesson'
+import { useLessonProgression } from '../lib/lessonProgress'
 import { useReviewOverview } from '../lib/srs'
 
 interface Tab {
@@ -30,12 +31,15 @@ function isActive(tab: Tab, pathname: string) {
   return pathname === tab.to || bases.some((base) => isUnder(pathname, base))
 }
 
-/** The number on a tab's icon; screen readers hear it after the tab's name instead. */
-function Badge({ count, tone }: { count: number; tone: 'brick' | 'error' }) {
+/** The number (or, without one, a dot) on a tab's icon; screen readers hear it after the tab's name instead. */
+function Badge({ count }: { count?: number }) {
+  if (count === undefined) {
+    return <span aria-hidden className="absolute -top-0.5 -right-1 size-2.5 rounded-full border-2 border-surface bg-brick" />
+  }
   return (
     <span
       aria-hidden
-      className={`absolute -top-1.5 -right-3 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-surface px-1 text-[0.625rem] leading-none font-semibold text-on-accent tabular-nums ${tone === 'error' ? 'bg-error' : 'bg-brick'}`}
+      className="absolute -top-1.5 -right-3 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-surface bg-brick px-1 text-[0.625rem] leading-none font-semibold text-on-accent tabular-nums"
     >
       {count > 99 ? '99+' : count}
     </span>
@@ -46,7 +50,8 @@ export function TabBar() {
   const { pathname } = useLocation()
   const text = useT().nav
   const due = useReviewOverview()?.dueToday ?? 0
-  const mistakes = useMistakes()?.length ?? 0
+  // Cvičiť shows a calm dot for a lesson left half-way, not the count of mistakes (a long list only stresses).
+  const unfinished = continueLesson(useLessonProgression()).unfinished === true
 
   return (
     // Hidden while the phone keyboard is open: it would otherwise ride on top of it and take the room for typing.
@@ -58,9 +63,9 @@ export function TabBar() {
             const Icon = tab.icon
             const badge =
               tab.key === 'home' && due > 0
-                ? { count: due, tone: 'brick' as const, label: text.dueBadge(due) }
-                : tab.key === 'practice' && mistakes > 0
-                  ? { count: mistakes, tone: 'error' as const, label: text.mistakesBadge(mistakes) }
+                ? { count: due, label: text.dueBadge(due) }
+                : tab.key === 'practice' && unfinished
+                  ? { count: undefined, label: text.unfinishedBadge }
                   : null
             return (
               <li key={tab.to}>
@@ -83,7 +88,7 @@ export function TabBar() {
                   ) : (
                     <span className="relative flex">
                       <Icon size={24} strokeWidth={1.75} aria-hidden />
-                      {badge && <Badge count={badge.count} tone={badge.tone} />}
+                      {badge && <Badge count={badge.count} />}
                     </span>
                   )}
                   {text[tab.key]}

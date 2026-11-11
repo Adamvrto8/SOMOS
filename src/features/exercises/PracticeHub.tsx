@@ -227,7 +227,7 @@ export function PracticeHub() {
       </div>
 
       <div className="space-y-2">
-        {/* Waiting mistakes get a whole row: the same number is on the tab. */}
+        {/* Waiting mistakes get a whole row here (the tab shows only a lesson left half-way). */}
         {mistakeCount > 0 && <Shortcut to="/practice/lesson?mistakes=1" icon={Dumbbell} label={text.mistakes} badge={mistakeCount} tone="error" />}
         <div className={`grid gap-2 ${shortcutCount === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
           {duelsAvailable && <Shortcut to="/duel" icon={Swords} label={text.duel} />}

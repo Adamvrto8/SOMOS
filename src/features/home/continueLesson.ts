@@ -1,7 +1,7 @@
 import type { Level } from '../../data/types'
 import type { TableTense } from '../../lib/conjugate'
 import { getNumberedLessonCount, type LessonFilter } from '../../lib/lesson'
-import { getFirstUnpassedLesson, getLastActiveLesson, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
+import { getFirstUnpassedLesson, getLastActiveLesson, getLessonRecord, progressionGroup, type LessonProgressionMap } from '../../lib/lessonProgress'
 import { startFilter, type OnboardingState } from '../../lib/onboarding'
 import { nextStep, pathCovers, pathStarted, stepHref, unitTitle, type StepId, type UnitState } from '../../lib/path'
 import { filterLabel, filterToParams, isLessonGroup, LEVELS } from '../exercises/exercises'
@@ -11,6 +11,8 @@ export interface ContinueLesson {
   lesson: number
   label: string // "Doplňovačka · Jedlo a pitie · A1"
   started: boolean // false = nothing played yet, this is the suggested first lesson
+  /** The lesson was begun and is not passed yet: the dot on the Cvičiť tab. */
+  unfinished?: boolean
   /** A step of the path: `lesson` is then the unit's number and `label` its title. */
   path?: { step: StepId; stepNo: number; steps: number }
 }
@@ -50,11 +52,13 @@ export function continueLesson(progression: LessonProgressionMap, start: LessonF
   const level = filter.level
   const total = getNumberedLessonCount(filter)
   const lesson = total > 0 ? getFirstUnpassedLesson(type, progressionGroup(group, level), total, progression) : 1
+  const record = getLessonRecord(type, progressionGroup(group, level), lesson, progression)
 
   return {
     href: `/practice/lesson?${filterToParams(filter)}&lesson=${lesson}`,
     lesson,
     label: filterLabel(filter),
     started: last !== undefined,
+    unfinished: record !== undefined && !record.passed,
   }
 }

@@ -49,4 +49,13 @@ describe('continueLesson', () => {
     rememberActiveLesson('conjugation', 'preterito', 1)
     expect(continueLesson(getProgressionSnapshot())).toMatchObject({ lesson: 1, label: 'Časovanie · pretérito' })
   })
+
+  it('marks the lesson unfinished once begun and not passed, and not after it is passed', () => {
+    rememberActiveLesson('cloze', 'food', 1, 'A1')
+    expect(continueLesson(getProgressionSnapshot()).unfinished).toBe(false)
+    recordLessonAttempt('cloze', 'food:A1', 1, 0, 10, [])
+    expect(continueLesson(getProgressionSnapshot())).toMatchObject({ lesson: 1, unfinished: true })
+    recordLessonAttempt('cloze', 'food:A1', 1, 10, 10)
+    expect(continueLesson(getProgressionSnapshot())).toMatchObject({ lesson: 2, unfinished: false })
+  })
 })

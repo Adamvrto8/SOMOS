@@ -38,7 +38,7 @@ export const en: Dictionary = {
     practice: 'Practice',
     path: 'Path',
     dueBadge: (n) => `${counted(n, 'flashcard', 'flashcards')} for today`,
-    mistakesBadge: (n) => `${counted(n, 'mistake', 'mistakes')} to fix`,
+    unfinishedBadge: 'unfinished lesson',
     profile: 'Profile',
     searchWord: 'Search for a word',
   },
@@ -305,7 +305,7 @@ export const en: Dictionary = {
     minutes: (n) => `about ${n} min`,
     reviewAria: (n) => `Go through flashcards (${n})`,
     lessonAria: (lesson, label) => `Lesson ${lesson}: ${label}`,
-    lessonLine: (lesson, label) => `Lesson ${lesson} · ${label}`,
+    lessonLine: (lesson, label) => `${label} · lesson ${lesson}`,
     reviewDone: 'Flashcards done for today',
     week: 'Last 7 days',
     noActivity: 'No activity yet. Every correct answer in a lesson or in flashcards counts.',
@@ -339,6 +339,7 @@ export const en: Dictionary = {
     byExercise: (n) => `What you practiced · ${n} days`,
     review: 'Review',
     nothing: 'No answers in this period.',
+    nothingHint: 'Every answer in a lesson and on flashcards counts here.',
   },
 
   exercise: {
@@ -369,6 +370,7 @@ export const en: Dictionary = {
     results: (n) => counted(n, 'result', 'results'),
     nothing: (query) => `Nothing found for “${query}”.`,
     nothingHint: 'Try another form of the word, or the English word.',
+    grammar: 'From the grammar',
     topics: 'Topics',
     words: (n) => counted(n, 'word', 'words'),
     topicNotFound: 'Topic not found',
@@ -628,7 +630,7 @@ export const en: Dictionary = {
     },
 
     overview: {
-      heading: (n, exercise) => `Lesson ${n} · ${exercise}`,
+      heading: (n, label) => `${label} · lesson ${n}`,
       title: 'Lesson overview',
       passed: (score, total) => `Passed (${score}/${total})`,
       answers: 'Correct answers',
@@ -924,7 +926,7 @@ export const en: Dictionary = {
 
   tests: {
     title: 'Tests',
-    intro: 'A test shows what you really know. It mixes every kind of exercise, gives no hints and is passed at 80 %. Nothing gets locked: it is a goal you can prepare for.',
+    intro: 'A topic test checks one topic, an exam a whole level at once. Both mix every kind of exercise, give no hints and are passed at 80 %. Nothing gets locked: it is a goal you can prepare for.',
     level: 'Level',
     exam: (level) => `${level} exam`,
     examHint: (n) => `${n} tasks from the whole level`,
@@ -1142,6 +1144,7 @@ export const en: Dictionary = {
     unknown: (word: string) => `I don't know “${word}”.`,
     maybe: (options: string) => `Maybe: ${options}`,
     empty: 'No entries yet.',
+    emptyHint: 'Write down what you learned today, or a few sentences about your day in Spanish. I underline the words I do not know.',
     nothingToday: 'Nothing yet today',
   },
   privacy: {

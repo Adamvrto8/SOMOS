@@ -46,7 +46,7 @@ import { itemKey, parseTestKey, prepareLesson, TEST_TYPES, testToParams } from '
 import { tipFor, tipLabel } from '../../lib/tips'
 import { TipContent, type TipHere } from '../grammar/TipContent'
 import { TipSheet } from '../grammar/TipSheet'
-import { exerciseInfo, filterFromParams, filterToParams } from './exercises'
+import { exerciseInfo, filterFromParams, filterLabel, filterToParams } from './exercises'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
@@ -455,7 +455,7 @@ export function LessonPage() {
             <TipIntro unit={pathStep.unit} onDone={() => setIntro(null)} />
           )
         ) : overview && runLesson !== undefined ? (
-          <LessonOverview lessonNumber={runLesson} record={overview} tasks={tasks} />
+          <LessonOverview lessonNumber={runLesson} label={filterLabel(filter)} record={overview} tasks={tasks} />
         ) : finished ? (
           <>
             {pathStep && (

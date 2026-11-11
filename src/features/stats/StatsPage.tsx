@@ -118,7 +118,10 @@ export function StatsPage() {
       <section aria-labelledby="exercises-heading" className="mt-8">
         <SectionTitle id="exercises-heading">{text.byExercise(days.length)}</SectionTitle>
         {split.length === 0 ? (
-          <p className="text-sm text-ink-muted">{text.nothing}</p>
+          <div className="text-sm text-ink-muted">
+            <p>{text.nothing}</p>
+            <p className="mt-1">{text.nothingHint}</p>
+          </div>
         ) : (
           <ul className="divide-y divide-line rounded-card border border-line bg-surface px-4">
             {split.map((s) => (
