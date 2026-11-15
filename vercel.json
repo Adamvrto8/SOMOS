@@ -4,7 +4,7 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "functions": { "api/reminder.ts": { "maxDuration": 60 } },
+  "functions": { "api/reminder.ts": { "maxDuration": 60 }, "api/chat.ts": { "maxDuration": 30 } },
   "rewrites": [{ "source": "/((?!api/|assets/)[^.]*)", "destination": "/index.html" }],
   "headers": [
     {

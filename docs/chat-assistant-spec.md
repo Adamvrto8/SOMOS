@@ -1,7 +1,6 @@
 # Asistent (chat) – pomocník k appke a španielčine (špecifikácia)
 
-Stav: **návrh, nezačaté** (2026-11-15). Nie je to priorita pred dokončením produktu ([[product-first]]); spisuje sa, aby bolo
-rozhodnutie hotové, keď príde na rad. Rozhodnuté: ak sa do toho ide, asistent je **za paywallom** (minimálne má vrátiť náklady na tokeny).
+Stav: **fáza 0 sa rieši podľa `docs/superpowers/specs/2026-11-15-chat-assistant-prototype-design.md`** (2026-11-15): Claude Haiku 5.5, nástroje v appke, prístup cez allowlist. Zvyšok tohto dokumentu (paywall, platby, personalizácia, Gemini) platí ako východisko pre fázy 1 a 2. Nie je to priorita pred dokončením produktu ([[product-first]]). Rozhodnuté: ak sa do toho ide, asistent je **za paywallom** (minimálne má vrátiť náklady na tokeny).
 
 Cieľ: používateľ sa v appke opýta po slovensky (alebo španielsky) a dostane odpoveď o appke alebo o španielčine –
 vysvetlenie slova, času, rozdielu (ser vs. estar), „kde nájdem chyby“, „čo mám dnes robiť“. Asistent je **doplnok
