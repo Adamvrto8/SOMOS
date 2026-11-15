@@ -1,4 +1,4 @@
-import { Bug, ChartNoAxesColumn, Flag, PartyPopper, PowerOff, Sun } from 'lucide-react'
+import { Bug, ChartNoAxesColumn, Flag, MessageCircle, PartyPopper, PowerOff, Sun } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
@@ -78,6 +78,13 @@ export function DevSettings() {
           {text.showWelcome}
         </Button>
         <SettingsHint>{text.showWelcomeHint}</SettingsHint>
+      </SettingsPart>
+
+      <SettingsPart id="dev-assistant" title={text.assistant}>
+        <Button variant="secondary" icon={MessageCircle} onClick={() => void navigate('/assistant')} className="w-full">
+          {text.assistantOpen}
+        </Button>
+        <SettingsHint>{text.assistantHint}</SettingsHint>
       </SettingsPart>
 
       <SettingsPart id="dev-usage" title={text.usageStats}>

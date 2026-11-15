@@ -87,6 +87,9 @@ export const en: Dictionary = {
       welcome: 'Welcome',
       showWelcome: 'Show the welcome again',
       showWelcomeHint: 'Go through it as a new learner. Progress stays; the daily goal and reminder may change in it.',
+      assistant: 'Assistant',
+      assistantOpen: 'Open the assistant',
+      assistantHint: 'Prototype: answers about words, verbs, grammar and the app. Works only for accounts on the server list (docs/chat-assistant-setup.md).',
       usageStats: 'Usage statistics',
       usageStatsHint: 'Anonymous numbers from every device. Only an account listed in usage_admins sees them (docs/usage-stats-setup.md).',
       usage: {
@@ -1129,6 +1132,34 @@ export const en: Dictionary = {
       retry: 'Try again',
       skip: 'Continue without it',
     },
+  },
+
+  /** The assistant (src/features/assistant): a prototype in developer tools. */
+  assistant: {
+    title: 'Assistant',
+    intro: 'Ask about a word, a verb, grammar or where things are in the app.',
+    placeholder: 'Type a question…',
+    send: 'Send',
+    thinking: 'Thinking…',
+    you: 'You',
+    assistant: 'Assistant',
+    copy: 'Copy conversation',
+    copied: 'Copied',
+    retry: 'Try again',
+    truncated: '(the answer was cut short)',
+    calls: (n: number) => `${n} model ${pluralEn(n, 'call', 'calls')}`,
+    needsAccount: 'The assistant needs a signed-in account.',
+    needsInternet: 'The assistant needs the internet.',
+    errors: {
+      offline: 'You are offline. The assistant needs the internet.',
+      'not-signed-in': 'Please sign in.',
+      'not-allowed': 'The assistant is only for selected accounts.',
+      'daily-limit': 'The assistant is used up for today, try later.',
+      busy: 'The model is overloaded right now, try again in a moment.',
+      'not-configured': 'The assistant is not set up on the server.',
+      'too-many-steps': 'The answer could not be finished, try a simpler question.',
+      failed: 'The answer failed.',
+    } as Record<string, string>,
   },
 
   diary: {

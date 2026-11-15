@@ -118,6 +118,9 @@ export const sk = {
       welcome: 'Uvítanie',
       showWelcome: 'Ukázať uvítanie znova',
       showWelcomeHint: 'Prejdeš ním ako nový používateľ. Pokrok ostane, denný cieľ a pripomienku z neho môžeš zmeniť.',
+      assistant: 'Asistent',
+      assistantOpen: 'Otvoriť asistenta',
+      assistantHint: 'Prototyp: odpovedá o slovách, slovesách, gramatike a appke. Funguje len pre účty na zozname na serveri (docs/chat-assistant-setup.md).',
       usageStats: 'Štatistiky používania',
       usageStatsHint: 'Anonymné čísla zo všetkých zariadení. Vidí ich iba účet zapísaný v usage_admins (docs/usage-stats-setup.md).',
       /** Nástroje pre vývoj → Štatistiky používania (src/features/settings/UsageStats.tsx). */
@@ -1223,6 +1226,34 @@ export const sk = {
       retry: 'Skúsiť znova',
       skip: 'Pokračovať bez neho',
     },
+  },
+
+  /** The assistant (src/features/assistant): a prototype in developer tools. */
+  assistant: {
+    title: 'Asistent',
+    intro: 'Opýtaj sa na slovo, sloveso, gramatiku alebo na to, kde čo v appke je.',
+    placeholder: 'Napíš otázku…',
+    send: 'Poslať',
+    thinking: 'Premýšľam…',
+    you: 'Ty',
+    assistant: 'Asistent',
+    copy: 'Kopírovať konverzáciu',
+    copied: 'Skopírované',
+    retry: 'Skúsiť znova',
+    truncated: '(odpoveď bola skrátená)',
+    calls: (n: number) => `${n} ${pluralSk(n, ['volanie', 'volania', 'volaní'])} modelu`,
+    needsAccount: 'Asistent vyžaduje prihlásený účet.',
+    needsInternet: 'Asistent vyžaduje internet.',
+    errors: {
+      offline: 'Si offline. Asistent vyžaduje internet.',
+      'not-signed-in': 'Prihlás sa, prosím.',
+      'not-allowed': 'Asistent je len pre vybrané účty.',
+      'daily-limit': 'Dnes už je asistent vyčerpaný, skús neskôr.',
+      busy: 'Model je práve preťažený, skús o chvíľu.',
+      'not-configured': 'Asistent nie je na serveri nastavený.',
+      'too-many-steps': 'Odpoveď sa nepodarilo dokončiť, skús otázku zjednodušiť.',
+      failed: 'Odpoveď sa nepodarila.',
+    } as Record<string, string>,
   },
 
   diary: {

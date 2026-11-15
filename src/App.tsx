@@ -3,6 +3,7 @@ import { RouterProvider } from 'react-router/dom'
 import { AppLayout } from './components/AppLayout'
 import { ErrorBoundary, RouteErrorScreen } from './components/ErrorScreen'
 import { PrivacyPage } from './features/account/PrivacyPage'
+import { AssistantPage } from './features/assistant/AssistantPage'
 import { DiaryEntryPage } from './features/diary/DiaryEntryPage'
 import { DiaryPage } from './features/diary/DiaryPage'
 import { SignInPage } from './features/account/SignInPage'
@@ -87,6 +88,7 @@ const routes = [
   { path: '/practice/test', element: <TestPage /> },
   { path: '/review', element: <ReviewPage /> },
   { path: '/duel/:code', element: <DuelRoomPage /> },
+  { path: '/assistant', element: <AssistantPage /> },
   { path: '/welcome', element: <WelcomePage /> },
   { path: '/welcome/restore', element: <RestorePage /> },
   ...(import.meta.env.DEV ? [{ path: '/dev/crash', element: <Crash /> }] : []),
