@@ -48,6 +48,7 @@ const SCREENS: [RegExp, Screen][] = [
   [/^\/practice\/test\/?$/, 'test'],
   [/^\/duel(\/|$)/, 'duel'],
   [/^\/archive(\/|$)/, 'archive'],
+  [/^\/profile\/stats\/?$/, 'stats'], // the overview opened from Profil, before the rest of Profil
   [/^\/profile(\/|$)/, 'profile'],
   [/^\/review\/?$/, 'review'],
   [/^\/stats\/?$/, 'stats'],

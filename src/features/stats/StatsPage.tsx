@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, Snowflake } from 'lucide-react'
 import { useMemo, useState, type ReactNode } from 'react'
+import { useLocation } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { Chip } from '../../components/Chip'
 import { SectionTitle } from '../../components/SectionTitle'
@@ -22,6 +23,8 @@ export function StatsPage() {
   const home = dictionary.home
   const goal = useDailyGoal()
   const attempts = useAttempts()
+  // Opened from Profil (/profile/stats) or from the week chart on Domov (/stats): back goes where it came from.
+  const back = useLocation().pathname.startsWith('/profile') ? '/profile' : '/'
   const [range, setRange] = useState<Range>(30)
   // The picked day by its key, so it survives a change of the period; none = today.
   const [pickedKey, setPickedKey] = useState<string | null>(null)
@@ -34,7 +37,7 @@ export function StatsPage() {
     return { history: computeHistory(attempts, now, goal), days, split: byExercise(attempts.filter((a) => a.at >= since)) }
   }, [attempts, range, goal])
 
-  if (!view) return <BackButton fallback="/" />
+  if (!view) return <BackButton fallback={back} />
   const { history, days, split } = view
 
   const picked = days.findIndex((d) => d.key === pickedKey)
@@ -53,7 +56,7 @@ export function StatsPage() {
 
   return (
     <div>
-      <BackButton fallback="/" />
+      <BackButton fallback={back} />
       <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">{text.title}</h1>
 
       <HistoryFigures history={history} className="mt-6" />

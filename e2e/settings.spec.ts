@@ -58,8 +58,16 @@ test('the tab bar has Cesta in the middle and ends with Profil, its numbers ther
   await expect(bar.getByRole('link')).toHaveText(['Domov', 'Hľadať', 'Cesta', 'Cvičiť', 'Profil'])
   await bar.getByRole('link', { name: 'Profil' }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profil')
-  await expect(page.getByRole('heading', { name: 'Moje štatistiky' })).toBeVisible()
+  // The numbers are one short row that opens the whole overview, with Profil still the lit tab.
+  const stats = page.getByRole('region', { name: 'Moje štatistiky' }).getByRole('link', { name: /^Prehľad/ })
+  await expect(stats).toContainText('0 dní v rade · 0 odpovedí')
+  await stats.tap()
+  await expect(page).toHaveURL(/\/profile\/stats$/)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Prehľad')
   await expect(page.getByText('najdlhšia séria')).toBeVisible()
+  await expect(bar.getByRole('link', { name: 'Profil' })).toHaveAttribute('aria-current', 'page')
+  await page.goBack()
+  await expect(page).toHaveURL(/\/profile$/)
   // Without an account there is nothing to sign out of.
   await expect(button(page, 'Odhlásiť sa')).toHaveCount(0)
 

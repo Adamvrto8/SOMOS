@@ -71,6 +71,8 @@ const routes = [
       { path: 'diary/:date', element: <DiaryEntryPage /> },
       { path: 'profile', element: <SettingsPage /> },
       { path: 'profile/sign-in', element: <SignInPage /> },
+      // The same overview as /stats (from Domov), opened from Profil: the Profil tab stays lit.
+      { path: 'profile/stats', element: <StatsPage /> },
       { path: 'profile/:section', element: <SettingsSectionPage /> },
       // Where Nastavenia and the sign-in page were: old bookmarks, and Google returning to an older redirect address.
       { path: 'archive/settings', element: <Navigate to="/profile" replace /> },

@@ -83,6 +83,15 @@ export const sk = {
     groups: { mine: 'Môj slovník', learning: 'Učenie', app: 'Aplikácia', data: 'Údaje', dev: 'Vývoj' },
     /** Profil, above the settings: the learner's numbers. */
     stats: 'Moje štatistiky',
+    /** Under Prehľad in Profil: 12 dní v rade · 340 odpovedí · 86 % správne */
+    statsLine: (streak: number, total: number, percent?: number) =>
+      [
+        `${streak} ${pluralSk(streak, ['deň', 'dni', 'dní'])} v rade`,
+        `${total} ${pluralSk(total, ['odpoveď', 'odpovede', 'odpovedí'])}`,
+        percent !== undefined && `${percent} % správne`,
+      ]
+        .filter(Boolean)
+        .join(' · '),
     goalOption: (n: number) => `${n} ${pluralSk(n, ['správna odpoveď', 'správne odpovede', 'správnych odpovedí'])}`,
     /** The value of a switched-off row: Kartičky z cvičení · Vypnuté */
     off: 'Vypnuté',

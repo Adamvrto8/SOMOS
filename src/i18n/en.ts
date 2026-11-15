@@ -62,6 +62,10 @@ export const en: Dictionary = {
     version: 'Version',
     groups: { mine: 'My dictionary', learning: 'Learning', app: 'App', data: 'Data', dev: 'Development' },
     stats: 'My statistics',
+    statsLine: (streak, total, percent) =>
+      [`${counted(streak, 'day', 'days')} in a row`, counted(total, 'answer', 'answers'), percent !== undefined && `${percent} % right`]
+        .filter(Boolean)
+        .join(' · '),
     goalOption: (n) => counted(n, 'correct answer', 'correct answers'),
     off: 'Off',
     on: 'On',

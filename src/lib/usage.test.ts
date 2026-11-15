@@ -178,6 +178,7 @@ describe('screens', () => {
     expect(screenOf('/profile/goal')).toBe('profile')
     expect(screenOf('/review')).toBe('review')
     expect(screenOf('/stats')).toBe('stats')
+    expect(screenOf('/profile/stats')).toBe('stats')
     expect(screenOf('/practice/lesson')).toBeNull() // lessons have their own events
     expect(screenOf('/welcome')).toBeNull()
     expect(screenOf('/privacy')).toBeNull()
