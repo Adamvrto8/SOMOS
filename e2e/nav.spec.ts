@@ -21,6 +21,8 @@ test('the tabs carry what waits: flashcards on Domov, no mistake count on Cviči
   // A starred word is a flashcard due at once.
   await page.goto('/word/casa')
   await button(page, 'Uložiť do môjho slovníka').tap()
+  // The save is written to IndexedDB after the tap: leaving the page before it lands loses it (failed in CI).
+  await expect(button(page, 'Odstrániť z môjho slovníka')).toBeVisible()
   await page.goto('/')
 
   const bar = page.getByRole('navigation', { name: 'Hlavná navigácia' })
