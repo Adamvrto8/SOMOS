@@ -541,3 +541,34 @@ revoke execute on function public.push_local_time(timestamptz, text), public.rem
   public.push_reports(uuid[]), public.push_rate_hit(text, integer), public.push_cleanup() from public, anon, authenticated;
 grant execute on function public.push_local_time(timestamptz, text), public.reminders_due(timestamptz, integer),
   public.push_reports(uuid[]), public.push_rate_hit(text, integer), public.push_cleanup() to service_role;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- Assistant (api/chat.ts): one row per model call, for the cost per question and the daily cap.
+-- Only the service role reads and writes it (docs/chat-assistant-setup.md).
+
+create table if not exists public.chat_usage (
+  id bigint generated always as identity primary key,
+  at timestamptz not null default now(),
+  user_id uuid not null,
+  model text not null,
+  input_tokens integer not null default 0,
+  output_tokens integer not null default 0,
+  cache_read_tokens integer not null default 0,
+  cache_creation_tokens integer not null default 0,
+  stop_reason text
+);
+
+create index if not exists chat_usage_at_idx on public.chat_usage (at);
+
+alter table public.chat_usage enable row level security;
+revoke all on public.chat_usage from anon, authenticated;
+grant select, insert on public.chat_usage to service_role;
+
+-- Model calls made since UTC midnight, by everyone.
+create or replace function public.chat_calls_today() returns integer
+language sql stable set search_path = '' as $$
+  select count(*)::integer from public.chat_usage where at >= date_trunc('day', now() at time zone 'utc') at time zone 'utc';
+$$;
+
+revoke execute on function public.chat_calls_today() from public, anon, authenticated;
+grant execute on function public.chat_calls_today() to service_role;
