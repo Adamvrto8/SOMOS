@@ -23,7 +23,7 @@ export function NextGoalCard() {
         <Award size={22} strokeWidth={1.75} aria-hidden />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-sm text-ink-muted">{text.nextGoal}</span>
+        <span className="block text-xs font-semibold tracking-widest text-brick uppercase dark:text-amber">{text.nextGoal}</span>
         {goal ? (
           <>
             <span className="block font-semibold">{topic ? text.goalTopic(topicName(topic), goal.level) : text.goalExam(goal.level)}</span>

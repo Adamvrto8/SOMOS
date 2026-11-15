@@ -33,7 +33,8 @@ export function ReviewCard({ next }: { next: ContinueLesson }) {
 
   return (
     <section aria-labelledby="due-heading">
-      <h2 id="due-heading" className="text-sm text-ink-muted">
+      {/* The same eyebrow as Slovo dňa and Denník: the card's name, readable at a glance. */}
+      <h2 id="due-heading" className="text-xs font-semibold tracking-widest text-brick uppercase dark:text-amber">
         {reviewing ? text.dueToday : heading}
       </h2>
       <div className="mt-2 flex items-center justify-between gap-4">
