@@ -61,6 +61,27 @@ describe('ask', () => {
     })
   })
 
+  it('passes thinking blocks back unchanged and leaves them out of the answer', async () => {
+    const thinking = { type: 'thinking', thinking: '', signature: 'sig==' }
+    const redacted = { type: 'redacted_thinking', data: 'opaque' }
+    const withThinking: Reply = [
+      200,
+      {
+        content: [thinking, redacted, { type: 'text', text: 'Pozriem sa.' }, { type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } }],
+        stop_reason: 'tool_use',
+        usage: {},
+      },
+    ]
+    const final: Reply = [200, { content: [{ type: 'thinking', thinking: 'hmm', signature: 's2' }, { type: 'text', text: 'Casa.' }], stop_reason: 'end_turn', usage: {} }]
+    const { d, sent } = deps([withThinking, final])
+    const result = await ask([], 'dom?', d)
+    expect(result.text).toBe('Casa.')
+    expect(sent[1].messages.at(-2)).toEqual({
+      role: 'assistant',
+      content: [thinking, redacted, { type: 'text', text: 'Pozriem sa.' }, { type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } }],
+    })
+  })
+
   it('answers several tool uses of one reply in one user message', async () => {
     const two: Reply = [
       200,
@@ -109,6 +130,11 @@ describe('ask', () => {
     const { d, fetchImpl } = deps(loop)
     expect(await failure(ask([], 'q', d))).toBe('too-many-steps')
     expect(fetchImpl).toHaveBeenCalledTimes(MAX_CALLS)
+  })
+
+  it('reports a refusal as its own code', async () => {
+    const { d } = deps([answer('', 'refusal')])
+    expect(await failure(ask([], 'q', d))).toBe('refused')
   })
 
   it('marks an answer cut off by the token limit as truncated', async () => {

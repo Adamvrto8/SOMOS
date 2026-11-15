@@ -5,7 +5,7 @@ import { runTool, type ToolOutcome } from './tools'
 // is one model call; when the model asks for a tool, the app runs it over its own data and sends the conversation again
 // with the result. The history the screen keeps is plain questions and answers, so no tool traffic piles up in it.
 
-export type ChatErrorCode = 'offline' | 'not-signed-in' | 'not-allowed' | 'daily-limit' | 'busy' | 'not-configured' | 'too-many-steps' | 'failed'
+export type ChatErrorCode = 'offline' | 'not-signed-in' | 'not-allowed' | 'daily-limit' | 'busy' | 'not-configured' | 'too-many-steps' | 'refused' | 'failed'
 
 export class ChatFailure extends Error {
   code: ChatErrorCode
@@ -36,6 +36,9 @@ export const MAX_TURNS_SENT = 6
 
 type Block =
   | { type: 'text'; text: string }
+  // Thinking blocks go back to the server unchanged with the tool results (the model needs them intact).
+  | { type: 'thinking'; thinking: string; signature: string }
+  | { type: 'redacted_thinking'; data: string }
   | { type: 'tool_use'; id: string; name: string; input: unknown }
   | { type: 'tool_result'; tool_use_id: string; content: string; is_error: boolean }
 interface Message {
@@ -114,6 +117,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
 
   for (let calls = 1; calls <= MAX_CALLS; calls++) {
     const reply = await callModel(messages, jwt, fetchImpl, online)
+    if (reply.stop_reason === 'refusal') throw new ChatFailure('refused')
     if (reply.stop_reason !== 'tool_use') {
       const text = textOf(reply.content)
       if (!text) throw new ChatFailure('failed')

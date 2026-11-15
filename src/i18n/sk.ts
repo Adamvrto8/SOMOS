@@ -1252,6 +1252,7 @@ export const sk = {
       busy: 'Model je práve preťažený, skús o chvíľu.',
       'not-configured': 'Asistent nie je na serveri nastavený.',
       'too-many-steps': 'Odpoveď sa nepodarilo dokončiť, skús otázku zjednodušiť.',
+      refused: 'Na toto asistent neodpovie. Skús otázku sformulovať inak.',
       failed: 'Odpoveď sa nepodarila.',
     } as Record<string, string>,
   },

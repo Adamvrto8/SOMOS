@@ -54,17 +54,36 @@ function searchWord(input: Record<string, unknown>): unknown {
 
 const DEFAULT_TENSES: TableTense[] = ['presente', 'preterito', 'imperfecto', 'futuro']
 
-/** The verb for an infinitive, a reflexive infinitive ("levantarse") or a conjugated form ("fui"). */
+const FORM_TENSES = ['presente', 'preterito', 'imperfecto', 'futuro', 'subjuntivo', 'subjImperfecto', 'condicional', 'imperativo'] as const
+const REFLEXIVE_PRONOUN = /^(?:me|te|se|nos) /
+
+/** Every written form of a verb (without reflexive pronouns), folded: what a learner may type for it. */
+function formsOf(verb: Verb): Set<string> {
+  const forms = [verb.id, verb.gerund, verb.participle]
+  for (const tense of FORM_TENSES) forms.push(...Object.values(verb[tense]))
+  return new Set(forms.map((form) => fold(form).replace(REFLEXIVE_PRONOUN, '')))
+}
+
+/**
+ * The verb for an infinitive, a reflexive infinitive ("levantarse") or a conjugated form ("fui"). A search hit counts only
+ * when the query really is one of the verb's forms: a fuzzy match to another verb would be an invented answer.
+ */
 function resolveVerb(query: string): Verb | undefined {
-  const direct = verbById.get(query.toLowerCase())
+  const asked = fold(query).replace(REFLEXIVE_PRONOUN, '')
+  const direct = verbById.get(query.toLowerCase()) ?? verbById.get(asked)
   if (direct) return direct
-  for (const hit of searchWords(query, 'verb')) {
+  const matches: Verb[] = []
+  for (const hit of searchWords(asked, 'verb')) {
     const verb = hit.word.verbId ? verbById.get(hit.word.verbId) : undefined
-    if (verb) return verb
+    if (verb && (formsOf(verb).has(asked) || fold(verb.id) + 'se' === asked)) matches.push(verb)
   }
+  // "me llamo" is llamarse, a bare "llamo" is llamar: the pronoun in the query decides between look-alikes.
+  const reflexive = REFLEXIVE_PRONOUN.test(fold(query))
+  const match = matches.find((verb) => Boolean(verb.reflexive) === reflexive) ?? matches[0]
+  if (match) return match
   // "levantarse" may be stored as "levantarse" or only as "levantar".
-  const base = fold(query).replace(/se$/, '')
-  return base !== fold(query) ? verbById.get(base) : undefined
+  const base = asked.replace(/se$/, '')
+  return base !== asked ? verbById.get(base) : undefined
 }
 
 function getConjugation(input: Record<string, unknown>): unknown {

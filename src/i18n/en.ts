@@ -1158,6 +1158,7 @@ export const en: Dictionary = {
       busy: 'The model is overloaded right now, try again in a moment.',
       'not-configured': 'The assistant is not set up on the server.',
       'too-many-steps': 'The answer could not be finished, try a simpler question.',
+      refused: 'The assistant will not answer this. Try rephrasing the question.',
       failed: 'The answer failed.',
     } as Record<string, string>,
   },

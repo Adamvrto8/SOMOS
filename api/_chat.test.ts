@@ -31,7 +31,7 @@ const request = (body: unknown, { origin = 'https://somos.example', token = 'jwt
 const ask = (text = 'Čo je carro?') => ({ messages: [{ role: 'user', content: text }] })
 
 interface Fakes {
-  user?: { id: string; email: string } | 'invalid' | 'down'
+  user?: { id: string; email: string } | 'invalid' | 'down' | 'error'
   today?: number | 'down'
   anthropic?: [number, unknown]
   log?: number
@@ -44,6 +44,7 @@ function fakes({ user = { id: USER_ID, email: 'adam@example.com' }, today = 0, a
     calls.push({ url, init: init ?? {} })
     if (url.endsWith('/auth/v1/user')) {
       if (user === 'down') throw new Error('network')
+      if (user === 'error') return Response.json({}, { status: 502 })
       return user === 'invalid' ? Response.json({}, { status: 401 }) : Response.json(user)
     }
     if (url.endsWith('/rest/v1/rpc/chat_calls_today')) {
@@ -91,10 +92,13 @@ describe('api/chat checks', () => {
     expect(anthropicCalls(b.calls)).toHaveLength(0)
   })
 
-  it('treats a Supabase outage while checking the token as unauthorized', async () => {
+  it('answers 503 failed, not 401, when Supabase cannot be asked about the token', async () => {
     const { impl } = fakes({ user: 'down' })
     const res = await chat(request(ask()), ENV, impl)
-    expect(res.status).toBe(401)
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ error: 'failed' })
+    const { impl: erroring } = fakes({ user: 'error' })
+    expect((await chat(request(ask()), ENV, erroring)).status).toBe(503)
   })
 
   it('lets only the allowlist in, by e-mail (any case) or id', async () => {
@@ -168,20 +172,46 @@ describe('api/chat body', () => {
     await bad({ messages: [{ role: 'user', content: 'hola' }], padding: 'x'.repeat(61_000) })
   })
 
-  it('accepts a question, a tool use and its result', async () => {
-    const { impl } = fakes()
-    const res = await chat(
-      request({
-        messages: [
-          { role: 'user', content: 'Ako sa povie dom?' },
-          { role: 'assistant', content: [{ type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } }] },
-          { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: '{"found":false}' }] },
-        ],
-      }),
-      ENV,
-      impl,
-    )
+  it('accepts a question, a tool use and its result, and forwards them unchanged', async () => {
+    const { impl, calls } = fakes()
+    const messages = [
+      { role: 'user', content: 'Ako sa povie dom?' },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } }] },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: '{"found":false}' }] },
+    ]
+    const res = await chat(request({ messages }), ENV, impl)
     expect(res.status).toBe(200)
+    expect(JSON.parse(anthropicCalls(calls)[0].init.body as string).messages).toEqual(messages)
+  })
+
+  it('accepts the thinking blocks of an assistant turn and forwards them exactly', async () => {
+    const { impl, calls } = fakes()
+    const messages = [
+      { role: 'user', content: 'Ako sa povie dom?' },
+      {
+        role: 'assistant',
+        content: [
+          { type: 'thinking', thinking: '', signature: 'sig==' },
+          { type: 'redacted_thinking', data: 'opaque' },
+          { type: 'text', text: 'Pozriem sa.' },
+          { type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } },
+        ],
+      },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: '{"found":false}' }] },
+    ]
+    const res = await chat(request({ messages }), ENV, impl)
+    expect(res.status).toBe(200)
+    expect(JSON.parse(anthropicCalls(calls)[0].init.body as string).messages).toEqual(messages)
+  })
+
+  it('rejects thinking blocks in a user turn and malformed ones', async () => {
+    await bad({ messages: [{ role: 'user', content: [{ type: 'thinking', thinking: 'x', signature: 's' }] }] })
+    await bad({ messages: [{ role: 'user', content: [{ type: 'redacted_thinking', data: 'x' }] }] })
+    const user = { role: 'user', content: 'q' }
+    const result = { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: 'x' }] }
+    const use = { type: 'tool_use', id: 't1', name: 'search_word', input: {} }
+    await bad({ messages: [user, { role: 'assistant', content: [{ type: 'thinking', thinking: 'x' }, use] }, result] })
+    await bad({ messages: [user, { role: 'assistant', content: [{ type: 'redacted_thinking' }, use] }, result] })
   })
 })
 
@@ -198,7 +228,7 @@ describe('api/chat model call', () => {
     expect(headers.get('anthropic-version')).toBe('2023-06-01')
     const sent = JSON.parse(call.init.body as string)
     expect(sent.model).toBe('claude-haiku-5-5')
-    expect(sent.max_tokens).toBe(600)
+    expect(sent.max_tokens).toBe(2000)
     expect(sent.messages).toEqual(body.messages)
     expect(sent.system[0].cache_control).toEqual({ type: 'ephemeral' })
     expect(sent.system[0].text).toContain('mexick')

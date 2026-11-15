@@ -82,6 +82,19 @@ describe('get_conjugation', () => {
     expect(out.found).toBe(true)
   })
 
+  it('does not return another verb for a near miss', () => {
+    // Fuzzy search used to resolve these to tener / hablar: an invented answer about a word that does not exist.
+    expect(ok('get_conjugation', { verb: 'tenir' })).toEqual({ found: false })
+    expect(ok('get_conjugation', { verb: 'hablarr' })).toEqual({ found: false })
+  })
+
+  it('still resolves infinitives, reflexive infinitives and forms', () => {
+    expect(ok('get_conjugation', { verb: 'tener' }).verb).toBe('tener')
+    expect(ok('get_conjugation', { verb: 'levantarse' }).found).toBe(true)
+    expect(ok('get_conjugation', { verb: 'estoy' }).verb).toBe('estar')
+    expect(ok('get_conjugation', { verb: 'me llamo' }).verb).toBe('llamarse')
+  })
+
   it('says found:false for an unknown verb', () => {
     expect(ok('get_conjugation', { verb: 'zzzqqq' })).toEqual({ found: false })
   })

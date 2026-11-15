@@ -14,8 +14,8 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 | 8 | Aké sú nepravidelné tvary slovesa hacer v prítomnom čase? | hago, ostatné pravidelné | | |
 | 9 | Ako sa povie „idem do mesta“? | voy a la ciudad / al centro | | |
 | 10 | Ako funguje séria a ochrana série v appke? | zhoda s popisom v appke | | |
-| 11 | Kde nájdem svoje chyby? | Môj slovník / Archív → Chyby | | |
-| 12 | Ako pridám vlastné slovo? | Archív → Moje slová → „+“ | | |
+| 11 | Kde nájdem svoje chyby? | Profil → Môj slovník → Chyby | | |
+| 12 | Ako pridám vlastné slovo? | Profil → Môj slovník → Pridané → „+“ | | |
 | 13 | Ako zapnem pripomienku? | Profil → pripomienka | | |
 | 14 | Čo je „vosotros“ a používa sa v SOMOS? | nie, mexická španielčina | | |
 | 15 | Aké časy sú na úrovni A1? | zhoda s obsahom appky | | |

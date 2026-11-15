@@ -5,13 +5,10 @@ import { BackButton } from '../../components/BackButton'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { ask, ChatFailure, MAX_QUESTION_CHARS, type Turn } from '../../lib/assistant/chat'
+import { plainAnswer } from '../../lib/assistant/answerText'
+import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
+import { addTurn, useTurns } from '../../lib/assistant/history'
 import { useDevMode } from '../../lib/devMode'
-
-interface Shown extends Turn {
-  truncated?: boolean
-  calls?: number
-}
 
 const LINK = /(\/(?:word|practice\/grammar)\/[\w-]+)/g
 
@@ -19,7 +16,7 @@ const LINK = /(\/(?:word|practice\/grammar)\/[\w-]+)/g
 function AnswerText({ text }: { text: string }) {
   return (
     <p className="whitespace-pre-wrap">
-      {text.split(LINK).map((part, i) =>
+      {plainAnswer(text).split(LINK).map((part, i) =>
         // split() with one capture group puts the captured links at the odd indexes.
         i % 2 === 1 ? (
           <Link key={i} to={part} className="underline focus-visible:outline-2 focus-visible:outline-brick">
@@ -33,15 +30,16 @@ function AnswerText({ text }: { text: string }) {
   )
 }
 
-/** /assistant — a prototype chat reachable from developer tools; the history lives in memory only. */
+/** /assistant — a prototype chat reachable from developer tools; the history lives in memory only (src/lib/assistant/history.ts). */
 export function AssistantPage() {
   const text = useT().assistant
   const devMode = useDevMode()
   const account = useAccount()
-  const [turns, setTurns] = useState<Shown[]>([])
+  const turns = useTurns()
   const [draft, setDraft] = useState('')
   const [pending, setPending] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [retryable, setRetryable] = useState(true)
   const [copied, setCopied] = useState(false)
   const busy = useRef(false)
   const end = useRef<HTMLDivElement>(null)
@@ -63,11 +61,13 @@ export function AssistantPage() {
     setDraft('')
     try {
       const answer = await ask(turns, trimmed)
-      setTurns((current) => [...current, { question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls }])
+      addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls })
       setPending(null)
     } catch (failure) {
       // The question stays visible with "Skúsiť znova"; the history is untouched.
       const code = failure instanceof ChatFailure ? failure.code : 'failed'
+      // A refused question is not sent again: the learner types a new one.
+      setRetryable(code !== 'refused')
       setError(text.errors[code] ?? text.errors.failed)
     } finally {
       busy.current = false
@@ -120,9 +120,11 @@ export function AssistantPage() {
                 {error && (
                   <div role="alert" className="flex flex-col gap-2 rounded-card border border-line px-3 py-2">
                     <p>{error}</p>
-                    <Button variant="secondary" onClick={() => void send(pending)}>
-                      {text.retry}
-                    </Button>
+                    {retryable && (
+                      <Button variant="secondary" onClick={() => void send(pending)}>
+                        {text.retry}
+                      </Button>
+                    )}
                   </div>
                 )}
               </section>

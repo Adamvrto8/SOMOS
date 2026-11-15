@@ -14,7 +14,7 @@ Prototyp je **len pre Adama**. Úspech:
    a žiadna nepoužíva španielčinu zo Španielska ani vymyslený tvar slovesa.
 2. **Náklad:** nameraná priemerná spotreba tokenov a cena jednej otázky (z tabuľky `chat_usage`), aby sa dalo rozhodnúť o
    cene predplatného vo fáze 1.
-3. **Rozhodnutie:** Haiku 5.5 vs. lacnejší model sa dá porovnať výmenou jedinej env premennej.
+3. **Rozhodnutie:** Haiku 5.5 je už najlacnejší aktuálny model; výmenou jedinej env premennej (napr. `claude-sonnet-5-5`) sa porovná kvalita, nie nižšia cena.
 
 Mimo rozsahu: paywall, Stripe, denné limity po používateľoch, streaming, hlas, história v Dexie, personalizácia (Chyby, level),
 tlačidlo „uložiť do ⭐“, verejný vstup v Hľadať.
@@ -137,5 +137,5 @@ Anthropic API obchodné podmienky pre vstupné dáta pred širším použitím o
 ## 8. Otvorené (nepotrebné na štart)
 
 - Sada ~20 otázok v `docs/chat-assistant-eval.md`: napíše Adam (alebo navrhnem a on upraví) pred smoke testom.
-- Po meraní: či stačí Haiku 5.5, či prejsť na lacnejší model, a či sa uplatní prompt caching.
+- Po meraní: či stačí Haiku 5.5, či sa oplatí drahší model kvôli kvalite, a či sa uplatní prompt caching.
 - Presun nástrojov na server a limity po používateľoch až vo fáze 1.

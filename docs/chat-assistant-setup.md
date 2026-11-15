@@ -7,19 +7,23 @@ Stav: prototyp pre jeden účet, funkčný až po týchto krokoch. Spec: `docs/s
 2. Vo Vercel (Project → Settings → Environment Variables, Production) pridaj `ANTHROPIC_API_KEY`.
 
 ## 2. Zoznam povolených účtov
-Vo Vercel pridaj `CHAT_ALLOWED_USERS` = tvoj e-mail z prihlásenia do SOMOS (alebo id z Supabase → Authentication → Users), viac hodnôt oddeľ čiarkou.
+Vo Vercel pridaj `CHAT_ALLOWED_USERS` = tvoje id z Supabase → Authentication → Users (odporúčané, e-mail sa môže zmeniť; funguje aj e-mail z prihlásenia do SOMOS), viac hodnôt oddeľ čiarkou.
 
 ## 3. Voliteľné
 - `CHAT_DAILY_CALLS` – denný strop volaní modelu pre všetkých (predvolene 200).
-- `CHAT_MODEL` – iný model než `claude-haiku-5-5`, na porovnanie.
+- `CHAT_MODEL` – iný model než `claude-haiku-5-5`. Haiku 5.5 je už najlacnejší aktuálny model, takže výmena porovnáva kvalitu (napr. `claude-sonnet-5-5`), nie nižšiu cenu.
+
+Zmena premenných vo Verceli sa prejaví až po novom nasadení (redeploy).
 
 ## 4. Supabase
 V SQL editore spusti nový blok z `supabase/schema.sql` (od komentára „Assistant (api/chat.ts)“): tabuľka `chat_usage` a funkcia `chat_calls_today()`. Supabase premenné (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) už vo Verceli sú.
 
 ## 5. Nasadenie a skúška
+Zmena env premenných vo Verceli platí až po redeployi.
+
 Po pushi a zelenom CI: v appke Profil → 7 ťukov na verziu → Nástroje pre vývoj → „Otvoriť asistenta“, prihlásený. Napíš „Ako sa povie dom?“; očakávaš odpoveď s odkazom na slovo `casa`.
 
-`vercel.json` obsahuje `"api/chat.ts": { "maxDuration": 30 }` (volanie Anthropic má vlastný timeout 25 s), vedľa existujúceho `api/reminder.ts`.
+`vercel.json` obsahuje `"api/chat.ts": { "maxDuration": 30 }` (volanie Anthropic má vlastný timeout 22 s), vedľa existujúceho `api/reminder.ts`.
 
 ## 6. Čo sa meria
 Každé volanie modelu je riadok v `chat_usage`. Náklad otázky:
