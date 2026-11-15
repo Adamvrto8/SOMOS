@@ -13,7 +13,7 @@ const SECTIONS: Section[] = [
   {
     id: 'navigacia',
     keywords: ['navigacia', 'menu', 'karty', 'spodna lista', 'kde'],
-    text: 'Dolná lišta má päť kariet: Domov, Hľadať, Cesta (uprostred), Cvičiť a Profil. Archív sa otvára z karty v Hľadať. Môj slovník je v Profile.',
+    text: 'Dolná lišta má päť kariet: Domov, Hľadať, Cesta (uprostred), Cvičiť a Profil. Môj slovník (uložené slová, vlastné slová a chyby) je v Profile.',
   },
   {
     id: 'hladanie',
@@ -32,8 +32,8 @@ const SECTIONS: Section[] = [
   },
   {
     id: 'archiv',
-    keywords: ['archiv', 'ulozene', 'hviezdicka', 'moje slova', 'chyby', 'zalohovanie', 'export'],
-    text: 'Archív (z karty v Hľadať): záložky Uložené (slová s hviezdičkou), Pridané (tvoje vlastné slová) a Chyby. „Zopakovať“ spustí opakovanie podľa odstupňovaného opakovania. Zálohu exportuješ a importuješ v Profile.',
+    keywords: ['archiv', 'moj slovnik', 'ulozene', 'hviezdicka', 'moje slova', 'chyby', 'zalohovanie', 'export'],
+    text: 'Môj slovník (v Profile; dá sa otvoriť aj ako Archív): záložky Uložené (slová s hviezdičkou), Pridané (tvoje vlastné slová) a Chyby. „Zopakovať“ spustí opakovanie podľa odstupňovaného opakovania. Zálohu stiahneš a obnovíš v Profile → Záloha.',
   },
   {
     id: 'opakovanie',
@@ -67,7 +67,9 @@ export function appHelp(topic: string): { found: boolean; topic?: string; text: 
   const topics = SECTIONS.map((section) => section.id)
   const wanted = fold(topic)
   if (wanted) {
-    const section = SECTIONS.find((s) => wanted.includes(s.id) || s.keywords.some((k) => wanted.includes(fold(k)) || fold(k).includes(wanted)))
+    // The longest matching keyword wins, so "moj slovnik" beats the shorter "slovnik" of another section.
+    const score = (s: Section) => Math.max(0, ...[s.id, ...s.keywords].map(fold).filter((k) => wanted.includes(k) || k.includes(wanted)).map((k) => k.length))
+    const section = SECTIONS.reduce<Section | undefined>((best, s) => (score(s) > (best ? score(best) : 0) ? s : best), undefined)
     if (section) return { found: true, topic: section.id, text: section.text, topics }
   }
   return { found: false, text: 'Téma nebola nájdená. Dostupné témy sú v zozname `topics`.', topics }

@@ -123,6 +123,12 @@ describe('app_help', () => {
     expect(ok('app_help', { topic: 'zzzqqq' }).found).toBe(false)
   })
 
+  it('knows Môj slovník as part of Profil', () => {
+    const out = appHelp('môj slovník')
+    expect(out.found).toBe(true)
+    expect(out.text).toContain('Profil')
+  })
+
   it('works without the tool wrapper', () => {
     expect(appHelp('archív').found).toBe(true)
   })
