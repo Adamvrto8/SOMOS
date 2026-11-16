@@ -1,9 +1,11 @@
 import { accessToken } from '../account'
+import { buildChatContext, type ChatContext } from './context'
 import { runTool, type ToolOutcome } from './tools'
 
 // The assistant's conversation (docs/superpowers/specs/2026-11-15-chat-assistant-prototype-design.md): POST /api/chat
 // is one model call; when the model asks for a tool, the app runs it over its own data and sends the conversation again
 // with the result. The history the screen keeps is plain questions and answers, so no tool traffic piles up in it.
+// Every POST also carries `context`: the app map and the learner's profile (context.ts), built once per question.
 
 export type ChatErrorCode = 'offline' | 'not-signed-in' | 'not-allowed' | 'daily-limit' | 'busy' | 'not-configured' | 'too-many-steps' | 'refused' | 'failed'
 
@@ -55,6 +57,7 @@ export interface ChatDeps {
   token?: () => Promise<string | null>
   online?: () => boolean
   tool?: (name: string, input: unknown) => ToolOutcome | Promise<ToolOutcome>
+  context?: () => Promise<ChatContext | undefined>
 }
 
 const isBlockList = (value: unknown): value is Block[] =>
@@ -71,13 +74,19 @@ function codeOf(status: number, error: unknown): ChatErrorCode {
   return 'failed'
 }
 
-async function callModel(messages: Message[], token: string, fetchImpl: typeof fetch, online: () => boolean): Promise<ApiAnswer> {
+async function callModel(
+  messages: Message[],
+  context: ChatContext | undefined,
+  token: string,
+  fetchImpl: typeof fetch,
+  online: () => boolean,
+): Promise<ApiAnswer> {
   let res: Response
   try {
     res = await fetchImpl('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify(context ? { messages, context } : { messages }),
     })
   } catch {
     throw new ChatFailure(online() ? 'failed' : 'offline')
@@ -100,12 +109,14 @@ const textOf = (blocks: Block[]) =>
  * the same question again.
  */
 export async function ask(turns: readonly Turn[], question: string, deps: ChatDeps = {}): Promise<Answer> {
-  const { fetchImpl = fetch, token = accessToken, online = () => navigator.onLine, tool = runTool } = deps
+  const { fetchImpl = fetch, token = accessToken, online = () => navigator.onLine, tool = runTool, context: buildContext = buildChatContext } = deps
   const trimmed = question.trim()
   if (!trimmed || trimmed.length > MAX_QUESTION_CHARS) throw new ChatFailure('failed')
   if (!online()) throw new ChatFailure('offline')
   const jwt = await token()
   if (!jwt) throw new ChatFailure('not-signed-in')
+  // Once per question: the app map and the learner's numbers do not change while the model calls tools.
+  const context = await buildContext().catch(() => undefined)
 
   let messages: Message[] = [
     ...turns.slice(-MAX_TURNS_SENT).flatMap((turn): Message[] => [
@@ -116,7 +127,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
   ]
 
   for (let calls = 1; calls <= MAX_CALLS; calls++) {
-    const reply = await callModel(messages, jwt, fetchImpl, online)
+    const reply = await callModel(messages, context, jwt, fetchImpl, online)
     if (reply.stop_reason === 'refusal') throw new ChatFailure('refused')
     if (reply.stop_reason !== 'tool_use') {
       const text = textOf(reply.content)

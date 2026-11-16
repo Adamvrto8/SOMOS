@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 vi.mock('../account', () => ({ accessToken: async () => null }))
+// The real context reads the device (Dexie, account, settings); the tests pass their own through deps.
+vi.mock('./context', () => ({ buildChatContext: async () => ({ app: '', learner: '' }) }))
 import { ask, ChatFailure, MAX_CALLS, MAX_QUESTION_CHARS, MAX_TURNS_SENT, type ChatDeps, type Turn } from './chat'
 
 type Reply = [number, unknown]
@@ -12,9 +14,10 @@ const toolUse = (id: string, name: string, input: unknown): Reply => [
 
 function deps(replies: (Reply | Error)[], extra: Partial<ChatDeps> = {}) {
   const queue = [...replies]
-  const sent: { messages: any[]; headers: Headers }[] = []
+  const sent: { messages: any[]; context: unknown; headers: Headers }[] = []
   const fetchImpl = vi.fn(async (_url: string | URL | Request, init?: RequestInit) => {
-    sent.push({ messages: JSON.parse(init!.body as string).messages, headers: new Headers(init!.headers) })
+    const body = JSON.parse(init!.body as string)
+    sent.push({ messages: body.messages, context: body.context, headers: new Headers(init!.headers) })
     const next = queue.shift()!
     if (next instanceof Error) throw next
     return Response.json(next[1], { status: next[0] })
@@ -24,6 +27,7 @@ function deps(replies: (Reply | Error)[], extra: Partial<ChatDeps> = {}) {
     token: async () => 'jwt',
     online: () => true,
     tool: (name, input) => ({ content: JSON.stringify({ name, input }), isError: false }),
+    context: async () => ({ app: 'MAPA', learner: 'PROFIL' }),
     ...extra,
   }
   return { d, sent, fetchImpl }
@@ -40,6 +44,32 @@ const failure = async (promise: Promise<unknown>) => {
 }
 
 describe('ask', () => {
+  it('sends the app map and the profile with every call of a question', async () => {
+    const { d, sent } = deps([toolUse('t1', 'search_word', { query: 'dom' }), answer('Casa.')])
+    await ask([], 'dom?', d)
+    expect(sent.map((s) => s.context)).toEqual([{ app: 'MAPA', learner: 'PROFIL' }, { app: 'MAPA', learner: 'PROFIL' }])
+  })
+
+  it('builds the context once per question', async () => {
+    const context = vi.fn(async () => ({ app: 'MAPA', learner: 'PROFIL' }))
+    const { d } = deps([toolUse('t1', 'search_word', { query: 'dom' }), answer('Casa.')], { context })
+    await ask([], 'dom?', d)
+    expect(context).toHaveBeenCalledTimes(1)
+  })
+
+  it('goes without the profile when the context cannot be built', async () => {
+    const { d, sent } = deps([answer('Casa.')], { context: async () => { throw new Error('dexie') } })
+    expect((await ask([], 'dom?', d)).text).toBe('Casa.')
+    expect(sent[0].context).toBeUndefined()
+  })
+
+  it('awaits a tool that answers later', async () => {
+    const tool = vi.fn(async () => ({ content: '{"later":true}', isError: false }))
+    const { d, sent } = deps([toolUse('t1', 'get_my_records', { kind: 'mistakes' }), answer('Ok.')], { tool })
+    await ask([], 'moje chyby?', d)
+    expect(sent[1].messages.at(-1).content[0].content).toBe('{"later":true}')
+  })
+
   it('sends the question with the token and returns the answer', async () => {
     const { d, sent } = deps([answer('Dom je casa.')])
     const result = await ask([], 'Ako sa povie dom?', d)
