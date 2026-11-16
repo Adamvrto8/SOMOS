@@ -51,3 +51,33 @@ export function searchTipTitles(tips: readonly Tip[], query: string, limit = 3):
   if (wanted.join('').length < 3) return []
   return tips.filter((tip) => wanted.every((word) => starts(entryOf(tip).title, word))).slice(0, limit)
 }
+
+/** Question words and fillers the assistant's model puts in a query ("rozdiel medzi por a para"); no tip is about them. */
+const FILLERS = new Set(
+  ['a', 'e', 'i', 'o', 'u', 'y', 'v', 'vs', 'na', 'sa', 'je', 'co', 'ci', 'ako', 'aky', 'aka', 'ake', 'kedy', 'medzi', 'rozdiel',
+    'pouzit', 'pouziva', 'pouzivat', 'pouzitie', 'vysvetli', 'pravidla', 'pravidlo', 'tip', 'gramatika', 'the', 'and', 'or',
+    'when', 'how', 'use', 'difference', 'between'],
+)
+
+/**
+ * The assistant's search (get_grammar_tip): a word no tip holds does not drop a tip, it just adds nothing, so a whole
+ * question still finds its tip. A tip needs at least one word in its title or rule titles, so a word met only in an
+ * example ("saber" in a sentence) brings nothing.
+ */
+export function rankTips(tips: readonly Tip[], query: string): Tip[] {
+  const wanted = words(query).filter((word) => !FILLERS.has(word))
+  if (wanted.length === 0) return []
+  const scored: { tip: Tip; score: number; order: number }[] = []
+  tips.forEach((tip, order) => {
+    const entry = entryOf(tip)
+    let score = 0
+    let headed = false
+    for (const word of wanted) {
+      const points = starts(entry.title, word) ? 3 : starts(entry.rules, word) ? 2 : starts(entry.rest, word) ? 1 : 0
+      score += points
+      if (points >= 2) headed = true
+    }
+    if (headed) scored.push({ tip, score, order })
+  })
+  return scored.sort((a, b) => b.score - a.score || a.order - b.order).map((s) => s.tip)
+}

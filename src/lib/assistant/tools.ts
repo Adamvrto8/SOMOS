@@ -4,7 +4,7 @@ import { conjugate, formText, PERSON_LABELS, personsOf, TABLE_TENSES, type Table
 import { localizedTip, verbTranslations, wordTranslations } from '../localized'
 import { searchWords, type SearchFilter } from '../search'
 import { fold } from '../text'
-import { searchTips } from '../tipSearch'
+import { rankTips } from '../tipSearch'
 import { appHelp } from './appHelp'
 
 // The tools the assistant's model may call (their schemas live in api/chat.ts; the names must match, a test checks it).
@@ -34,8 +34,16 @@ const FILTERS: SearchFilter[] = ['all', 'verb', 'noun', 'phrase']
 function searchWord(input: Record<string, unknown>): unknown {
   const query = required(input, 'query')
   const filter = FILTERS.find((f) => f === input.filter) ?? 'all'
-  const hits = searchWords(query, filter).slice(0, 5)
-  if (hits.length === 0) return { found: false }
+  const all = searchWords(query, filter)
+  if (all.length === 0) return { found: false }
+  // An exact match (the Spanish word, a translation or a form) hides the fuzzy neighbours: "pes" gives perro, not
+  // pesar, peso and pescar, which the model would otherwise list as "similar words".
+  const wanted = fold(query)
+  const exact = all.filter(
+    ({ word, matchedForm }) =>
+      fold(word.es) === wanted || wordTranslations(word).some((t) => fold(t) === wanted) || (matchedForm !== undefined && fold(matchedForm) === wanted),
+  )
+  const hits = (exact.length > 0 ? exact : all).slice(0, 5)
   return {
     found: true,
     results: hits.map(({ word, matchedForm, otherForm }) => ({
@@ -121,9 +129,17 @@ function getConjugation(input: Record<string, unknown>): unknown {
   }
 }
 
+const LEVELS = ['A1', 'A2', 'B1', 'B2'] as const
+
 function getGrammarTip(input: Record<string, unknown>): unknown {
+  // A level alone lists that level's tips by title ("aké časy sú na A1"), without their contents.
+  const level = LEVELS.find((l) => l === text(input.level).toUpperCase())
+  if (level && !text(input.query)) {
+    const atLevel = tips.map(localizedTip).filter((tip) => tip.level === level)
+    return { found: atLevel.length > 0, level, tips: atLevel.map((tip) => ({ title: tip.title, link: `/practice/grammar/${tip.id}` })) }
+  }
   const query = required(input, 'query')
-  const found = searchTips(tips, query).slice(0, 2)
+  const found = rankTips(tips, query).slice(0, 2)
   if (found.length === 0) return { found: false }
   const build = (tipCount: number, ruleCount: number) => ({
     found: true,

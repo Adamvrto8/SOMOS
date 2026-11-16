@@ -26,6 +26,26 @@ const SECTIONS: Section[] = [
     text: 'Cvičiť: vyber typ cvičenia (doplňovanie, výber, skladanie vety, preklad SK→ES, časovanie), tému a úroveň. Lekcia má približne 10 úloh. Nesprávne odpovede idú do Chýb a môžeš ich precvičiť zvlášť.',
   },
   {
+    id: 'dennik',
+    keywords: ['dennik', 'zapis', 'zapisky', 'poznamky', 'poznatky', 'co som sa naucil', 'journal'],
+    text: 'Denník: karta na Domove. Na každý deň jeden zápis s dvoma poliami: „Čo som sa dnes naučil“ (slovíčka, gramatika, čokoľvek) a „Po španielsky“ (pár viet o tvojom dni). Kontrola podčiarkne španielske slová, ktoré appka nepozná (preklep, chýbajúci prízvuk, slovo mimo slovníka). „Všetky zápisy“ ukáže staršie dni. S účtom sa zápisy synchronizujú.',
+  },
+  {
+    id: 'testy',
+    keywords: ['test', 'testy', 'skuska', 'skusky'],
+    text: 'Testy: Cvičiť → Testy. Test témy overí jednu tému, skúška celú úroveň (A1–B2). Miešajú všetky druhy cvičení, nedávajú nápovedu a zložené sú pri 80 %. Nič sa nezamyká.',
+  },
+  {
+    id: 'duel',
+    keywords: ['duel', 'suboj', 'kamarat', 'zapas'],
+    text: 'Duel: Cvičiť → Duel. Ty proti kamarátovi naraz na tie isté úlohy, 3 kolá po 5. Založíš miestnosť a kamarát sa pripojí kódom alebo odkazom. Treba byť prihlásený.',
+  },
+  {
+    id: 'prehlad',
+    keywords: ['prehlad', 'statistiky', 'statistika', 'graf'],
+    text: 'Prehľad (štatistiky): Profil → Prehľad, alebo ťuknutím na týždenný graf na Domove. Ukazuje, koľko a čo si precvičil.',
+  },
+  {
     id: 'cesta',
     keywords: ['cesta', 'plan', 'dnes', 'postup', 'pokrok'],
     text: 'Cesta: ukazuje, kde si v učení a čo je ďalší krok. Nie je to povinný kurz, slúži ako prehľad pokroku.',

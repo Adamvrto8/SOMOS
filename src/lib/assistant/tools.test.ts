@@ -40,6 +40,18 @@ describe('search_word', () => {
     expect(out.results.some((r: { matchedForm?: string }) => r.matchedForm === 'fui')).toBe(true)
   })
 
+  it('gives only the exact match when there is one, not the fuzzy neighbours', () => {
+    const out = ok('search_word', { query: 'pes' })
+    const found = out.results.map((r: { es: string }) => r.es)
+    expect(found).toContain('perro')
+    expect(found).not.toContain('pesar')
+    expect(found).not.toContain('pescar')
+  })
+
+  it('still gives the near matches when nothing matches exactly', () => {
+    expect(ok('search_word', { query: 'perrro' }).found).toBe(true)
+  })
+
   it('says found:false instead of failing for an unknown word', () => {
     expect(ok('search_word', { query: 'zzzqqq' })).toEqual({ found: false })
   })
@@ -119,6 +131,24 @@ describe('get_grammar_tip', () => {
     expect(ok('get_grammar_tip', { query: 'zzzqqq' })).toEqual({ found: false })
   })
 
+  it('finds the tip from a whole question, the words around the topic do not drop it', () => {
+    const first = (query: string) => ok('get_grammar_tip', { query }).tips[0].link
+    expect(first('kedy použiť ser a kedy estar')).toBe('/practice/grammar/ser-estar')
+    expect(first('rozdiel medzi por a para')).toBe('/practice/grammar/por-para')
+    expect(first('por vs para')).toBe('/practice/grammar/por-para')
+  })
+
+  it('does not bring a tip that only mentions the word in an example', () => {
+    expect(ok('get_grammar_tip', { query: 'rozdiel medzi saber a conocer' }).found).toBe(false)
+  })
+
+  it('lists the titles of a level', () => {
+    const out = ok('get_grammar_tip', { level: 'A1' })
+    expect(out.found).toBe(true)
+    expect(out.tips.length).toBeGreaterThan(1)
+    expect(out.tips.some((t: { link: string }) => t.link === '/practice/grammar/presente')).toBe(true)
+  })
+
   it('refuses an empty query rather than listing every tip', () => {
     expect(runTool('get_grammar_tip', { query: '' }).isError).toBe(true)
   })
@@ -140,6 +170,17 @@ describe('app_help', () => {
     const out = appHelp('môj slovník')
     expect(out.found).toBe(true)
     expect(out.text).toContain('Profil')
+  })
+
+  it('knows the diary, also when asked about writing down what was learned', () => {
+    expect(appHelp('denník')).toMatchObject({ found: true, topic: 'dennik' })
+    expect(appHelp('zapísať poznatky z dňa')).toMatchObject({ found: true, topic: 'dennik' })
+  })
+
+  it('knows tests, the duel and the overview', () => {
+    expect(appHelp('testy').topic).toBe('testy')
+    expect(appHelp('duel').topic).toBe('duel')
+    expect(appHelp('štatistiky').topic).toBe('prehlad')
   })
 
   it('works without the tool wrapper', () => {
