@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { chat, MAX_MESSAGES, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, TOOL_NAMES, TOOLS } from './chat.ts'
+import { chat, MAX_APP_CHARS, MAX_BODY_CHARS, MAX_LEARNER_CHARS, MAX_MESSAGES, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, systemBlocks, TOOL_NAMES, TOOLS } from './chat.ts'
 
 const USER_ID = '11111111-1111-4111-8111-111111111111'
 const ENV = {
@@ -169,7 +169,7 @@ describe('api/chat body', () => {
   })
 
   it('rejects a body over the size cap', async () => {
-    await bad({ messages: [{ role: 'user', content: 'hola' }], padding: 'x'.repeat(61_000) })
+    await bad({ messages: [{ role: 'user', content: 'hola' }], padding: 'x'.repeat(MAX_BODY_CHARS + 1) })
   })
 
   it('accepts a question, a tool use and its result, and forwards them unchanged', async () => {
@@ -287,5 +287,42 @@ describe('api/chat model call', () => {
       expect(tool.description.length).toBeGreaterThan(20)
       expect(tool.input_schema.type).toBe('object')
     }
+  })
+})
+
+const withContext = (context: unknown) => ({ ...ask(), context })
+const anthropicBody = (calls: { url: string; init: RequestInit }[]) => JSON.parse(String(anthropicCalls(calls)[0].init.body))
+
+describe('api/chat context', () => {
+  it('puts the app map (cached) and the learner profile (not cached) after the prompt', async () => {
+    const { impl, calls } = fakes()
+    const res = await chat(request(withContext({ app: 'MAPA', learner: 'PROFIL' })), ENV, impl)
+    expect(res.status).toBe(200)
+    const { system } = anthropicBody(calls)
+    expect(system).toHaveLength(3)
+    expect(system[0].cache_control).toBeUndefined()
+    expect(system[1]).toEqual({ type: 'text', text: '<mapa_appky>\nMAPA\n</mapa_appky>', cache_control: { type: 'ephemeral' } })
+    expect(system[2]).toEqual({ type: 'text', text: '<profil_ucenika>\nPROFIL\n</profil_ucenika>' })
+  })
+
+  it('works without context as before: the prompt alone, cached', async () => {
+    const { impl, calls } = fakes()
+    await chat(request(ask()), ENV, impl)
+    const { system } = anthropicBody(calls)
+    expect(system).toHaveLength(1)
+    expect(system[0].cache_control).toEqual({ type: 'ephemeral' })
+  })
+
+  it('refuses an oversized or malformed context without calling the model', async () => {
+    for (const context of [{ app: 'x'.repeat(MAX_APP_CHARS + 1), learner: '' }, { app: '', learner: 'x'.repeat(MAX_LEARNER_CHARS + 1) }, { app: 1, learner: '' }, 'text']) {
+      const { impl, calls } = fakes()
+      const res = await chat(request(withContext(context)), ENV, impl)
+      expect(res.status).toBe(400)
+      expect(anthropicCalls(calls)).toHaveLength(0)
+    }
+  })
+
+  it('leaves out an empty profile block', () => {
+    expect(systemBlocks({ app: 'MAPA', learner: '  ' })).toHaveLength(2)
   })
 })
