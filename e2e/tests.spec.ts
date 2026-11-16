@@ -78,7 +78,8 @@ test('a passed test counts on the tests page and moves the goal on Domov', async
   await expect(page.getByRole('link', { name: /Skúška A1/ })).toContainText('Témy: 1/20 zložených')
 })
 
-const vocabA1Lessons = Math.ceil(words.filter((w) => w.level === 'A1').length / 10)
+// Articles (drill: false) are no vocab tasks, the app leaves them out of the lessons.
+const vocabA1Lessons = Math.ceil(words.filter((w) => w.level === 'A1' && w.drill !== false).length / 10)
 
 test('the lessons of Všetko × A1 end with a test, locked until they are passed', async ({ page }) => {
   await page.goto('/practice?type=vocab&topic=all&level=A1')

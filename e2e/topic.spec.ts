@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { swipe } from './helpers.ts'
+import { swipe, words } from './helpers.ts'
 
 const LEFT = 60
 const RIGHT = 320
@@ -50,5 +50,5 @@ test('a word opened from a swiped-to topic pages through that topic', async ({ p
   await expect(title(page)).toHaveText('Základné slová')
   // Tapped at once: a quick swipe left to Chrome starts a fling, and the tap that follows it is swallowed.
   await page.locator('a[href^="/word/"]').first().tap()
-  await expect(page.getByRole('navigation', { name: 'Slová zo zoznamu' })).toContainText('1 / 153')
+  await expect(page.getByRole('navigation', { name: 'Slová zo zoznamu' })).toContainText(`1 / ${words.filter((w) => w.topics.includes('basics')).length}`)
 })
