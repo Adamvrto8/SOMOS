@@ -233,3 +233,10 @@ describe('search_word for a word the dictionary lacks', () => {
     expect((await ok('search_word', { query: 'casa' })).inTips).toBeUndefined()
   })
 })
+
+describe('search_word topics', () => {
+  it('gives the topic of the word, so the model links the right one (carro is city, eval run 3)', async () => {
+    const out = await ok('search_word', { query: 'carro' })
+    expect(out.results[0].topics).toEqual([{ name: 'Mesto', link: '/topic/city' }])
+  })
+})

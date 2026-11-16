@@ -21,6 +21,8 @@ describe('learnerProfile', () => {
   it('describes a fresh device without numbers that make no sense', () => {
     const text = learnerProfile(empty)
     expect(text).toContain('Spolu: zatiaľ žiadne odpovede')
+    // The model said it had no date and wrote "Hoy es martes" on a Monday (eval run 3).
+    expect(text).toContain('Dnes je: pondelok 16. 11. 2026')
     expect(text).toContain('Dnes: 0/20 (chýba 20)')
     expect(text).toContain('Cesta: hotová alebo nezačatá')
     expect(text).not.toMatch(/NaN|undefined|Infinity/)

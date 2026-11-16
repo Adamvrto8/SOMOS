@@ -1,7 +1,7 @@
-import { tips, verbById, wordIdByVerb } from '../../data'
+import { tips, topicById, verbById, wordIdByVerb } from '../../data'
 import type { Tip, Verb, Word } from '../../data/types'
 import { conjugate, formText, PERSON_LABELS, personsOf, TABLE_TENSES, type TableTense } from '../conjugate'
-import { localizedTip, verbTranslations, wordExamples, wordTranslations } from '../localized'
+import { localizedTip, topicName, verbTranslations, wordExamples, wordTranslations } from '../localized'
 import { searchWords, type SearchFilter } from '../search'
 import { fold } from '../text'
 import { rankTips } from '../tipSearch'
@@ -90,6 +90,11 @@ function searchWord(input: Record<string, unknown>): unknown {
       matchedForm,
       otherForm,
       example: firstExample(word),
+      // The word's own topics: the model once linked carro to travel instead of city.
+      topics: word.topics.flatMap((id) => {
+        const topic = topicById.get(id)
+        return topic ? [{ name: topicName(topic), link: `/topic/${id}` }] : []
+      }),
       link: `/word/${word.id}`,
     })),
   }

@@ -51,7 +51,15 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 - 15: podľa tipov sedí (presente A1); A1 vety však majú aj priebehový čas (22), jeho tip je na A2.
 - Opravené: search_word pri chýbajúcom slove vráti príklady z tipov (inTips), prompt „najprv over, potom píš“, upozornenie len pri odpovedi mimo appky, text o ochrane série. Slová doplnené v main.
 
-### Beh 3
+### Beh 3 (2026-11-16, 9878ecc, Adam na Preview, 16 otázok vrátane nových)
+- Použiteľných odpovedí: 13 / 16 (nie: kto vytvoril appku, aký je dnes deň, hotové cvičenia). Opravy z behu 2 zabrali: problema z tipu bez sebaopravy, „(toto v appke nie je)“ len pri planeta, carro bez „over inde“.
+- Kto vytvoril appku: „neviem, pozri obchod“; mapa o autorovi ani o inštalácii nič nemala.
+- Aký je dnes deň: „dátum nemám“ a príklad „Hoy es martes“ v pondelok; profil nemal dnešný dátum.
+- Hotové cvičenia: nevyžiadaná „oprava“ správnej skoršej odpovede.
+- carro: odkaz /topic/travel namiesto /topic/city (search_word nevracal tému).
+- Opravené: „Dnes je: …“ v profile, téma slova v search_word, sekcia „O appke“ (tím SOMOS, bez mien), prompt bez komentovania skorších odpovedí.
+
+### Beh 4
 - Dátum:
 - Použiteľných odpovedí: __ / 26
 - Namerané tokeny na otázku (input / output / cache_share):

@@ -47,6 +47,11 @@ export const clip = (text: string, max: number) => {
   return flat.length <= max ? flat : `${cutAt(flat, max - 1)}…`
 }
 
+const WEEKDAYS = ['nedeľa', 'pondelok', 'utorok', 'streda', 'štvrtok', 'piatok', 'sobota']
+
+/** "pondelok 16. 11. 2026": the model has no clock, without this it guessed the day (eval run 3). */
+const todayText = (now: Date) => `${WEEKDAYS[now.getDay()]} ${now.getDate()}. ${now.getMonth() + 1}. ${now.getFullYear()}`
+
 const pct = (part: number, all: number) => (all ? `${Math.round((part / all) * 100)} %` : '–')
 
 /** An exercise by the name the app shows ("Časovanie"), not its id: the model repeated the ids to the learner. */
@@ -90,6 +95,7 @@ export function learnerProfile(s: LearnerSnapshot): string {
   const left = Math.max(0, s.goal - today.correct)
 
   const lines = [
+    `Dnes je: ${todayText(s.now)}`,
     `Jazyk appky: ${s.language} · Španielčina: ${s.variant === 'es' ? 'zo Španielska' : 'mexická'} · Účet: ${s.signedIn ? 'prihlásený' : 'bez účtu'}`,
     `Začiatočná úroveň (z uvítania): ${s.startLevel ?? 'neuvedená'}${s.motivation ? ` · Dôvod učenia: ${s.motivation}` : ''} · Denný cieľ: ${s.goal} správnych odpovedí`,
     `Dnes: ${today.correct}/${s.goal} (${left === 0 ? 'cieľ splnený' : `chýba ${left}`}) · Séria: ${streak.days} dní (najdlhšia ${history.longestStreak}) · Ochrana série: ${streak.freezes}/${FREEZE_MAX}`,

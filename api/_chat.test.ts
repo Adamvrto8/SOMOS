@@ -333,6 +333,8 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('<id>')
     expect(SYSTEM_PROMPT).toContain('denník')
     expect(SYSTEM_PROMPT).toContain('v tej istej odpovedi')
+    expect(SYSTEM_PROMPT).toContain('Skoršie odpovede nekomentuj')
+    expect(SYSTEM_PROMPT).toContain('Dnes je')
     expect(SYSTEM_PROMPT).not.toContain('keď si nie si istý, povedz to raz')
   })
 })

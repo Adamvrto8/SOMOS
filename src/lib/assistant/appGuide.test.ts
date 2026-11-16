@@ -41,5 +41,8 @@ describe('app guide', () => {
     // The form of a custom word, so the model does not promise a field that is not there.
     expect(guideText()).toContain('poznámka a téma')
     expect(guideText()).toContain('vynechaný deň spotrebuje jednu ochranu')
+    // Who makes the app: the team, never a person's name (Adam's wish).
+    expect(guideText()).toContain('tím SOMOS')
+    expect(guideText()).not.toMatch(/Vrťo|Adam/)
   })
 })

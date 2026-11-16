@@ -106,6 +106,12 @@ export const GUIDE: GuideSection[] = [
     links: ['/privacy'],
     text: 'Čo appka ukladá a posiela (účet, DeepL, štatistiky, pripomienky) a ako požiadať o výmaz.',
   },
+  {
+    id: 'o-appke',
+    title: 'O appke',
+    links: ['/privacy'],
+    text: 'SOMOS robí tím SOMOS; kontakt je v Ochrane súkromia (/privacy). Appka zatiaľ nie je v obchode s aplikáciami: je to webová appka, ktorá sa inštaluje z prehliadača cez „Pridať na plochu“ a funguje aj bez internetu. Mená ľudí z tímu neuvádzaj.',
+  },
 ]
 
 /** One line per section: "- Title (links): text". */
