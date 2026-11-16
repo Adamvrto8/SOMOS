@@ -282,7 +282,7 @@ describe('api/chat model call', () => {
   })
 
   it('has the four tools of the spec, each with an object schema', () => {
-    expect(TOOL_NAMES).toEqual(['search_word', 'get_conjugation', 'get_grammar_tip', 'app_help'])
+    expect(TOOL_NAMES).toEqual(['search_word', 'get_conjugation', 'get_grammar_tip', 'get_my_records'])
     for (const tool of TOOLS) {
       expect(tool.description.length).toBeGreaterThan(20)
       expect(tool.input_schema.type).toBe('object')

@@ -54,7 +54,7 @@ export interface ChatDeps {
   fetchImpl?: typeof fetch
   token?: () => Promise<string | null>
   online?: () => boolean
-  tool?: (name: string, input: unknown) => ToolOutcome
+  tool?: (name: string, input: unknown) => ToolOutcome | Promise<ToolOutcome>
 }
 
 const isBlockList = (value: unknown): value is Block[] =>
@@ -123,11 +123,12 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
       if (!text) throw new ChatFailure('failed')
       return { text, truncated: reply.stop_reason === 'max_tokens', calls }
     }
-    const results = reply.content.flatMap((block): Block[] => {
-      if (block.type !== 'tool_use') return []
-      const outcome = tool(block.name, block.input)
-      return [{ type: 'tool_result', tool_use_id: block.id, content: outcome.content, is_error: outcome.isError }]
-    })
+    const results: Block[] = []
+    for (const block of reply.content) {
+      if (block.type !== 'tool_use') continue
+      const outcome = await tool(block.name, block.input)
+      results.push({ type: 'tool_result', tool_use_id: block.id, content: outcome.content, is_error: outcome.isError })
+    }
     if (results.length === 0) throw new ChatFailure('failed')
     messages = [...messages, { role: 'assistant', content: reply.content }, { role: 'user', content: results }]
   }

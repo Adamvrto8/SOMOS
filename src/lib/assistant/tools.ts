@@ -1,11 +1,11 @@
 import { tips, verbById, wordIdByVerb } from '../../data'
-import type { Verb } from '../../data/types'
+import type { Tip, Verb, Word } from '../../data/types'
 import { conjugate, formText, PERSON_LABELS, personsOf, TABLE_TENSES, type TableTense } from '../conjugate'
-import { localizedTip, verbTranslations, wordTranslations } from '../localized'
+import { localizedTip, verbTranslations, wordExamples, wordTranslations } from '../localized'
 import { searchWords, type SearchFilter } from '../search'
 import { fold } from '../text'
 import { rankTips } from '../tipSearch'
-import { appHelp } from './appHelp'
+import { loadRecordsInput, RECORD_KINDS, recordsOf, type RecordKind } from './records'
 
 // The tools the assistant's model may call (their schemas live in api/chat.ts; the names must match, a test checks it).
 // They only read the data bundled with the app, in the learner's variant (Mexico / Spain) and language.
@@ -27,6 +27,12 @@ function required(input: Record<string, unknown>, key: string): string {
   const value = text(input[key])
   if (!value) throw new ToolInputError(`"${key}" must be a non-empty string`)
   return value
+}
+
+/** The word's first example from the app ("es – translation"), so the model quotes one instead of making it up. */
+function firstExample(word: Word): string | undefined {
+  const example = wordExamples(word)[0]
+  return example ? `${example.es} – ${example.text}` : undefined
 }
 
 const FILTERS: SearchFilter[] = ['all', 'verb', 'noun', 'phrase']
@@ -55,6 +61,7 @@ function searchWord(input: Record<string, unknown>): unknown {
       level: word.level,
       matchedForm,
       otherForm,
+      example: firstExample(word),
       link: `/word/${word.id}`,
     })),
   }
@@ -129,23 +136,14 @@ function getConjugation(input: Record<string, unknown>): unknown {
   }
 }
 
-const LEVELS = ['A1', 'A2', 'B1', 'B2'] as const
-
-function getGrammarTip(input: Record<string, unknown>): unknown {
-  // A level alone lists that level's tips by title ("aké časy sú na A1"), without their contents.
-  const level = LEVELS.find((l) => l === text(input.level).toUpperCase())
-  if (level && !text(input.query)) {
-    const atLevel = tips.map(localizedTip).filter((tip) => tip.level === level)
-    return { found: atLevel.length > 0, level, tips: atLevel.map((tip) => ({ title: tip.title, link: `/practice/grammar/${tip.id}` })) }
-  }
-  const query = required(input, 'query')
-  const found = rankTips(tips, query).slice(0, 2)
-  if (found.length === 0) return { found: false }
+/** Tips as the model reads them, shrunk until the JSON fits, so it stays valid instead of being cut in the middle. */
+function tipResult(found: Tip[]): unknown {
   const build = (tipCount: number, ruleCount: number) => ({
     found: true,
     tips: found.slice(0, tipCount).map((tip) => {
       const local = localizedTip(tip)
       return {
+        id: tip.id,
         title: local.title,
         level: local.level,
         intro: local.intro,
@@ -160,7 +158,6 @@ function getGrammarTip(input: Record<string, unknown>): unknown {
       }
     }),
   })
-  // Shrink the answer until it fits, so the JSON stays valid instead of being cut in the middle.
   for (const [tipCount, ruleCount] of [[2, 6], [1, 6], [1, 4], [1, 2], [1, 1]]) {
     const result = build(tipCount, ruleCount)
     if (JSON.stringify(result).length <= MAX_TOOL_OUTPUT) return result
@@ -168,26 +165,53 @@ function getGrammarTip(input: Record<string, unknown>): unknown {
   return build(1, 1)
 }
 
-function appHelpTool(input: Record<string, unknown>): unknown {
-  return appHelp(text(input.topic))
+const LEVELS = ['A1', 'A2', 'B1', 'B2'] as const
+
+function getGrammarTip(input: Record<string, unknown>): unknown {
+  // An id from the app map: exact, the way the model should ask.
+  const id = text(input.id)
+  if (id) {
+    const tip = tips.find((candidate) => candidate.id === id)
+    return tip ? tipResult([tip]) : { found: false, hint: 'Tip s týmto id nie je. Id sú v zozname tipov v mape appky; alebo skús query.' }
+  }
+  // A level alone lists that level's tips by title ("aké časy sú na A1"), without their contents.
+  const level = LEVELS.find((l) => l === text(input.level).toUpperCase())
+  const query = text(input.query)
+  if (level && !query) {
+    const atLevel = tips.map(localizedTip).filter((tip) => tip.level === level)
+    return { found: atLevel.length > 0, level, tips: atLevel.map((tip) => ({ id: tip.id, title: tip.title, link: `/practice/grammar/${tip.id}` })) }
+  }
+  if (!query) throw new ToolInputError('give "id", "query" or "level"')
+  const found = rankTips(tips, query).slice(0, 2)
+  return found.length ? tipResult(found) : { found: false }
+}
+
+async function getMyRecords(input: Record<string, unknown>): Promise<unknown> {
+  const kind = RECORD_KINDS.find((k): k is RecordKind => k === input.kind)
+  if (!kind) throw new ToolInputError(`"kind" must be one of: ${RECORD_KINDS.join(', ')}`)
+  const limit = typeof input.limit === 'number' && Number.isInteger(input.limit) ? Math.min(20, Math.max(1, input.limit)) : 10
+  const items = recordsOf(kind, await loadRecordsInput(kind), limit)
+  // Drop the oldest until the JSON fits whole.
+  while (items.length > 1 && JSON.stringify({ kind, count: items.length, items }).length > MAX_TOOL_OUTPUT) items.pop()
+  return { kind, count: items.length, items }
 }
 
 export const TOOL_HANDLERS: Record<string, (input: Record<string, unknown>) => unknown> = {
   search_word: searchWord,
   get_conjugation: getConjugation,
   get_grammar_tip: getGrammarTip,
-  app_help: appHelpTool,
+  get_my_records: getMyRecords,
 }
 
 const cap = (value: string) => (value.length <= MAX_TOOL_OUTPUT ? value : `${value.slice(0, MAX_TOOL_OUTPUT)} …[skrátené]`)
 
 /** Runs one tool call of the model; every failure comes back as an error result the model can read. */
-export function runTool(name: string, input: unknown): ToolOutcome {
+export async function runTool(name: string, input: unknown): Promise<ToolOutcome> {
   const handler = Object.hasOwn(TOOL_HANDLERS, name) ? TOOL_HANDLERS[name] : undefined
   if (!handler) return { content: `Unknown tool: ${name}`, isError: true }
   try {
     if (typeof input !== 'object' || input === null || Array.isArray(input)) throw new ToolInputError('the input must be an object')
-    return { content: cap(JSON.stringify(handler(input as Record<string, unknown>))), isError: false }
+    return { content: cap(JSON.stringify(await handler(input as Record<string, unknown>))), isError: false }
   } catch (error) {
     if (error instanceof ToolInputError) return { content: error.message, isError: true }
     console.error('assistant tool failed', name, error)

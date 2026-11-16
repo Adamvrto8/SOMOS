@@ -37,7 +37,7 @@ export const TOOLS = [
   {
     name: 'search_word',
     description:
-      'Nájde slová v slovníku SOMOS podľa slovenského alebo španielskeho výrazu (aj podľa časovaného tvaru, napr. "fui"). Vráti najviac 5 zhôd: španielske slovo, slovenské preklady, druh, rod, úroveň a odkaz. Použi na otázky "ako sa povie…", "čo znamená…".',
+      'Nájde slová v slovníku SOMOS podľa slovenského alebo španielskeho výrazu (aj podľa časovaného tvaru, napr. "fui"). Pri presnej zhode vráti len ju, inak najviac 5 podobných. Ku každému: španielske slovo, preklady, druh, rod, úroveň, príkladová veta z appky a odkaz.',
     input_schema: {
       type: 'object',
       properties: {
@@ -67,22 +67,27 @@ export const TOOLS = [
   {
     name: 'get_grammar_tip',
     description:
-      'Nájde gramatický tip "Prečo?" zo SOMOS (napr. "ser estar", "pretérito", "por para"). Vráti najviac 2 tipy: úvod, pravidlá s príkladmi, poznámku pre mexickú španielčinu, zdroje a odkaz. S `level` a bez `query` vráti názvy všetkých tipov tej úrovne.',
+      'Gramatický tip "Prečo?" zo SOMOS: úvod, pravidlá s príkladmi, poznámka k variantu, zdroje a odkaz. Najlepšie podľa id zo zoznamu tipov v mape appky; inak podľa query (krátka téma, napr. "por para"). S level a bez id a query vráti názvy všetkých tipov tej úrovne.',
     input_schema: {
       type: 'object',
       properties: {
-        query: { type: 'string', description: 'Téma, krátko (napr. "por para").' },
-        level: { type: 'string', enum: ['A1', 'A2', 'B1', 'B2'], description: 'Voliteľne: zoznam tipov tejto úrovne (bez query).' },
+        id: { type: 'string', description: 'Id tipu z mapy appky, napr. "por-para".' },
+        query: { type: 'string', description: 'Krátka téma, ak id nepoznáš.' },
+        level: { type: 'string', enum: ['A1', 'A2', 'B1', 'B2'], description: 'Zoznam tipov tejto úrovne (bez id a query).' },
       },
     },
   },
   {
-    name: 'app_help',
-    description: 'Vysvetlí, kde čo v appke SOMOS je a ako funguje (hľadanie, cvičenia, archív, séria, pripomienka, účet…). Bez témy vráti zoznam tém.',
+    name: 'get_my_records',
+    description:
+      'Záznamy učiaceho z tohto zariadenia, najnovšie prvé: mistakes (chyby), diary (denník), tests (výsledky testov), lessons (zvládnuté lekcie), saved (uložené s hviezdičkou), custom (vlastné slová). Súhrn je v profile učiaceho; toto použi, keď treba podrobnosti.',
     input_schema: {
       type: 'object',
-      properties: { topic: { type: 'string', description: 'Téma, napr. "archív", "séria", "cvičenia".' } },
-      required: [],
+      properties: {
+        kind: { type: 'string', enum: ['mistakes', 'diary', 'tests', 'lessons', 'saved', 'custom'] },
+        limit: { type: 'integer', minimum: 1, maximum: 20, description: 'Koľko záznamov, predvolene 10.' },
+      },
+      required: ['kind'],
     },
   },
 ] as const
