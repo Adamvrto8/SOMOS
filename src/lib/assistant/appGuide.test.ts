@@ -40,5 +40,6 @@ describe('app guide', () => {
     expect(guideText()).toContain('Denník (/diary)')
     // The form of a custom word, so the model does not promise a field that is not there.
     expect(guideText()).toContain('poznámka a téma')
+    expect(guideText()).toContain('vynechaný deň spotrebuje jednu ochranu')
   })
 })

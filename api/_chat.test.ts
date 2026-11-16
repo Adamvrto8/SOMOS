@@ -332,5 +332,7 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('Si SOMO')
     expect(SYSTEM_PROMPT).toContain('<id>')
     expect(SYSTEM_PROMPT).toContain('denník')
+    expect(SYSTEM_PROMPT).toContain('v tej istej odpovedi')
+    expect(SYSTEM_PROMPT).not.toContain('keď si nie si istý, povedz to raz')
   })
 })

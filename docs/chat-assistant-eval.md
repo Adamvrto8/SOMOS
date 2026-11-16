@@ -43,7 +43,15 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 - Systémové nálezy: id cvičení v profile namiesto názvov; profil pridávaný aj k otázkam o slovách, raz s vymysleným faktom; zástupný znak <id> z mapy v odpovedi; počet tipov rátaný modelom; otázka na obdobie bez dátumov a bez denníka; vlastné pravidlo gramatiky (hacer); odpovede nad 120 slov.
 - Opravené v nasledujúcom commite (názvy cvičení, počty tipov, pravidlá v prompte, polia formulára v mape); ďalší beh ukáže, či zabrali.
 
-### Beh 2
+### Beh 2 (2026-11-16, 4e664ba, Adam na Preview, 15 otázok: 1, 2, 6, 8, 10, 12, 15, 17, 20–26)
+- Použiteľných odpovedí: 14 / 15 (nie: 17 „problema“). Opravy z behu 1 zabrali: obdobie podľa dátumov, 12 tipov, názvy cvičení, polia formulára, hacer, profil len pri otázkach o učiacom.
+- 17: prvá veta „ženský rod“, potom sa opravil; slovo problema v slovníku chýba (aj sistema, tema, programa, planeta, moto), tip gender ho má len v príklade a model ho nezavolal.
+- 2: znova „over si to v inom zdroji“ pri istom fakte (pravidlo o rodenom hovorcovi).
+- 10: pomotaná veta o ochrane série (z textu mapy).
+- 15: podľa tipov sedí (presente A1); A1 vety však majú aj priebehový čas (22), jeho tip je na A2.
+- Opravené: search_word pri chýbajúcom slove vráti príklady z tipov (inTips), prompt „najprv over, potom píš“, upozornenie len pri odpovedi mimo appky, text o ochrane série. Slová doplnené v main.
+
+### Beh 3
 - Dátum:
 - Použiteľných odpovedí: __ / 26
 - Namerané tokeny na otázku (input / output / cache_share):

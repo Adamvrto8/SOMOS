@@ -36,13 +36,37 @@ function firstExample(word: Word): string | undefined {
   return example ? `${example.es} – ${example.text}` : undefined
 }
 
+/**
+ * Tip examples that use a word the dictionary lacks ("problema" → gender, "Mužské koncovky", "el problema"), shortest
+ * first: the model then answers from the app's rule instead of guessing (it once said "la problema", eval run 2).
+ */
+function tipsUsing(query: string): { id: string; title: string; rule: string; example: string; link: string }[] {
+  const wanted = fold(query)
+  const tokens = (text: string) => fold(text).split(/[^a-z0-9ñ]+/)
+  const hits: { id: string; title: string; rule: string; example: string; link: string }[] = []
+  for (const tip of tips) {
+    const local = localizedTip(tip)
+    for (const rule of local.rules) {
+      const example = rule.examples.find((e) => tokens(e.es).some((t) => t === wanted || t === `${wanted}s` || t === `${wanted}es`))
+      if (example) {
+        hits.push({ id: tip.id, title: local.title, rule: rule.title, example: `${example.es} – ${example.text}`, link: `/practice/grammar/${tip.id}` })
+        break
+      }
+    }
+  }
+  return hits.sort((a, b) => a.example.length - b.example.length).slice(0, 3)
+}
+
 const FILTERS: SearchFilter[] = ['all', 'verb', 'noun', 'phrase']
 
 function searchWord(input: Record<string, unknown>): unknown {
   const query = required(input, 'query')
   const filter = FILTERS.find((f) => f === input.filter) ?? 'all'
   const all = searchWords(query, filter)
-  if (all.length === 0) return { found: false }
+  if (all.length === 0) {
+    const inTips = tipsUsing(query)
+    return inTips.length ? { found: false, inTips } : { found: false }
+  }
   // An exact match (the Spanish word, a translation or a form) hides the fuzzy neighbours: "pes" gives perro, not
   // pesar, peso and pescar, which the model would otherwise list as "similar words".
   const wanted = fold(query)
@@ -51,8 +75,11 @@ function searchWord(input: Record<string, unknown>): unknown {
       fold(word.es) === wanted || wordTranslations(word).some((t) => fold(t) === wanted) || (matchedForm !== undefined && fold(matchedForm) === wanted),
   )
   const hits = (exact.length > 0 ? exact : all).slice(0, 5)
+  // No exact word: the neighbours are other words, so say where the app itself uses the asked one.
+  const inTips = exact.length === 0 ? tipsUsing(query) : []
   return {
     found: true,
+    ...(inTips.length ? { inTips } : {}),
     results: hits.map(({ word, matchedForm, otherForm }) => ({
       es: word.es,
       translations: wordTranslations(word),

@@ -221,3 +221,15 @@ describe('get_grammar_tip level list', () => {
     expect(out.count).toBe(out.tips.length)
   })
 })
+
+describe('search_word for a word the dictionary lacks', () => {
+  it('points to the grammar tip that uses it, so the model does not guess (el problema, eval run 2)', async () => {
+    const out = await ok('search_word', { query: 'problema' })
+    expect(out.inTips[0]).toMatchObject({ id: 'gender', rule: 'Mužské koncovky', link: '/practice/grammar/gender' })
+    expect(out.inTips[0].example).toContain('el problema')
+  })
+
+  it('adds nothing for a word the dictionary has', async () => {
+    expect((await ok('search_word', { query: 'casa' })).inTips).toBeUndefined()
+  })
+})

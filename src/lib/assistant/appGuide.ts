@@ -86,7 +86,7 @@ export const GUIDE: GuideSection[] = [
     id: 'seria',
     title: 'Séria a denný cieľ',
     links: [],
-    text: 'Deň sa počíta, keď dosiahneš denný cieľ (počet správnych odpovedí, aj z opakovania kartičiek). Ochrana série: začínaš s jednou, za každých 7 dní v rade získaš ďalšiu, najviac máš dve; vynechaný deň ju spotrebuje a séria ide ďalej, ale nerastie. Denný cieľ sa mení v Profile.',
+    text: 'Deň sa počíta, keď dosiahneš denný cieľ (počet správnych odpovedí, aj z opakovania kartičiek). Ochrana série: začínaš s jednou, za každých 7 dní v rade získaš ďalšiu, najviac máš dve; vynechaný deň spotrebuje jednu ochranu a séria ide ďalej, ale v ten deň nerastie. Denný cieľ sa mení v Profile.',
   },
   {
     id: 'profil',
