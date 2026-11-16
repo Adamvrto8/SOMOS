@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { sentenceById } from '../../data'
 import { addDays } from '../dates'
 import type { Attempt } from '../db'
-import { describeItem, learnerProfile, type LearnerSnapshot } from './learner'
+import { clip, describeItem, learnerProfile, type LearnerSnapshot } from './learner'
 import { MAX_LEARNER_CHARS } from './limits'
 
 const now = new Date(2026, 10, 16, 12)
@@ -68,5 +68,13 @@ describe('describeItem', () => {
     expect(describeItem('s001#0')).toBe(`„${sentenceById.get('s001')!.es}“`)
     expect(describeItem('tener:preterito:yo')).toBe('tener · preterito · yo')
     expect(describeItem('casa')).toBe('casa')
+  })
+})
+
+describe('clip', () => {
+  it('never cuts an emoji in half, a lone surrogate makes the API refuse the question', () => {
+    const out = clip(`${'x'.repeat(158)}\u{1F600} hola`, 160)
+    expect(out).not.toMatch(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/)
+    expect(out.endsWith('…')).toBe(true)
   })
 })

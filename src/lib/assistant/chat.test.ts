@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 vi.mock('../account', () => ({ accessToken: async () => null }))
 // The real context reads the device (Dexie, account, settings); the tests pass their own through deps.
 vi.mock('./context', () => ({ buildChatContext: async () => ({ app: '', learner: '' }) }))
-import { ask, ChatFailure, MAX_CALLS, MAX_QUESTION_CHARS, MAX_TURNS_SENT, type ChatDeps, type Turn } from './chat'
+import { ask, ChatFailure, CONTEXT_TIMEOUT_MS, MAX_CALLS, MAX_QUESTION_CHARS, MAX_TURNS_SENT, type ChatDeps, type Turn } from './chat'
 
 type Reply = [number, unknown]
 
@@ -44,6 +44,19 @@ const failure = async (promise: Promise<unknown>) => {
 }
 
 describe('ask', () => {
+  it('goes without the context when building it hangs (a blocked database)', async () => {
+    vi.useFakeTimers()
+    try {
+      const { d, sent } = deps([answer('Casa.')], { context: () => new Promise(() => {}) })
+      const pending = ask([], 'dom?', d)
+      await vi.advanceTimersByTimeAsync(CONTEXT_TIMEOUT_MS)
+      expect((await pending).text).toBe('Casa.')
+      expect(sent[0].context).toBeUndefined()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
   it('sends the app map and the profile with every call of a question', async () => {
     const { d, sent } = deps([toolUse('t1', 'search_word', { query: 'dom' }), answer('Casa.')])
     await ask([], 'dom?', d)

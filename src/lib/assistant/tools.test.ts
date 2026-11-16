@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { describe, expect, it } from 'vitest'
 import chatSource from '../../../api/chat.ts?raw'
-import { MAX_TOOL_OUTPUT, runTool, TOOL_HANDLERS } from './tools'
+import { cap, MAX_TOOL_OUTPUT, runTool, TOOL_HANDLERS } from './tools'
 
 // Read the server file as text: importing it would pull node types into the app's type-check.
 const TOOL_NAMES = [...chatSource.matchAll(/\bname: '(\w+)'/g)].map((m) => m[1])
@@ -205,5 +205,12 @@ describe('get_my_records', () => {
 
   it('reads an empty table as an empty list', async () => {
     expect(await ok('get_my_records', { kind: 'mistakes' })).toEqual({ kind: 'mistakes', count: 0, items: [] })
+  })
+})
+
+describe('cap', () => {
+  it('never cuts an emoji in half', () => {
+    const out = cap(`${'x'.repeat(MAX_TOOL_OUTPUT - 1)}\u{1F600}\u{1F600}`)
+    expect(out).not.toMatch(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/)
   })
 })

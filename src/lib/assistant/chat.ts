@@ -35,6 +35,8 @@ export const MAX_CALLS = 5
 export const MAX_QUESTION_CHARS = 500
 /** Earlier turns sent along: the newest ones, so the conversation stays cheap. */
 export const MAX_TURNS_SENT = 6
+/** A context that takes longer (a database blocked by another tab) is left out, so the question still goes. */
+export const CONTEXT_TIMEOUT_MS = 2000
 
 type Block =
   | { type: 'text'; text: string }
@@ -116,7 +118,14 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
   const jwt = await token()
   if (!jwt) throw new ChatFailure('not-signed-in')
   // Once per question: the app map and the learner's numbers do not change while the model calls tools.
-  const context = await buildContext().catch(() => undefined)
+  let timer: ReturnType<typeof setTimeout> | undefined
+  const context = await Promise.race([
+    buildContext().catch(() => undefined),
+    new Promise<undefined>((resolve) => {
+      timer = setTimeout(() => resolve(undefined), CONTEXT_TIMEOUT_MS)
+    }),
+  ])
+  clearTimeout(timer)
 
   let messages: Message[] = [
     ...turns.slice(-MAX_TURNS_SENT).flatMap((turn): Message[] => [

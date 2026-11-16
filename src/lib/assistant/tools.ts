@@ -5,6 +5,7 @@ import { localizedTip, verbTranslations, wordExamples, wordTranslations } from '
 import { searchWords, type SearchFilter } from '../search'
 import { fold } from '../text'
 import { rankTips } from '../tipSearch'
+import { cutAt } from './learner'
 import { loadRecordsInput, RECORD_KINDS, recordsOf, type RecordKind } from './records'
 
 // The tools the assistant's model may call (their schemas live in api/chat.ts; the names must match, a test checks it).
@@ -203,7 +204,7 @@ export const TOOL_HANDLERS: Record<string, (input: Record<string, unknown>) => u
   get_my_records: getMyRecords,
 }
 
-const cap = (value: string) => (value.length <= MAX_TOOL_OUTPUT ? value : `${value.slice(0, MAX_TOOL_OUTPUT)} …[skrátené]`)
+export const cap = (value: string) => (value.length <= MAX_TOOL_OUTPUT ? value : `${cutAt(value, MAX_TOOL_OUTPUT)} …[skrátené]`)
 
 /** Runs one tool call of the model; every failure comes back as an error result the model can read. */
 export async function runTool(name: string, input: unknown): Promise<ToolOutcome> {

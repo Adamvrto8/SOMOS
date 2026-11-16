@@ -34,9 +34,15 @@ export interface LearnerSnapshot {
   lastLesson?: { type: string; group: string; lesson: number; level?: string }
 }
 
+/**
+ * The first `length` UTF-16 units, without a half emoji at the end: a lone surrogate makes the JSON sent to the model
+ * invalid, and the API refuses the whole question.
+ */
+export const cutAt = (text: string, length: number) => text.slice(0, length).replace(/[\uD800-\uDBFF]$/, '')
+
 export const clip = (text: string, max: number) => {
   const flat = text.replace(/\s+/g, ' ').trim()
-  return flat.length <= max ? flat : `${flat.slice(0, max - 1)}…`
+  return flat.length <= max ? flat : `${cutAt(flat, max - 1)}…`
 }
 
 const pct = (part: number, all: number) => (all ? `${Math.round((part / all) * 100)} %` : '–')
