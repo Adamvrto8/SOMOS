@@ -1,21 +1,21 @@
-# Asistent (prototyp) – sada otázok na vyhodnotenie
+# SOMO (asistent, prototyp) – sada otázok na vyhodnotenie
 
 Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpoveď použiteľná.
 
 | # | Otázka | Čo očakávam | Použiteľné (áno/nie) | Poznámka |
 |---|---|---|---|---|
-| 1 | Ako sa povie „dom“ po španielsky? | casa, odkaz na slovo | | |
-| 2 | Čo znamená „carro“ a ako sa líši od „coche“? | carro = auto v Mexiku, coche = Španielsko | | |
-| 3 | Vyčasuj sloveso tener v pretérite. | tvary z appky (tuve, tuviste, tuvo, tuvimos, tuvieron) | | |
+| 1 | Ako sa povie „dom“ po španielsky? | casa, odkaz na slovo | áno | casa, /word/casa, /topic/home; vymyslené „casa máš vo viacerých cvičeniach“ |
+| 2 | Čo znamená „carro“ a ako sa líši od „coche“? | carro = auto v Mexiku, coche = Španielsko | áno | správne; posledná veta zmätená |
+| 3 | Vyčasuj sloveso tener v pretérite. | tvary z appky (tuve, tuviste, tuvo, tuvimos, tuvieron) | áno | tvary správne; „skloňujú“ namiesto časujú |
 | 4 | Aký je tvar „fui“, od ktorého slovesa? | ir aj ser, pretérito, yo | | |
 | 5 | Kedy použiť ser a kedy estar? | stručné vysvetlenie, prípadne tip z appky | | |
 | 6 | Vysvetli rozdiel medzi pretérito a imperfecto. | správne vysvetlenie, príklady | | |
-| 7 | Kedy sa používa por a kedy para? | správne vysvetlenie, príklady | | |
-| 8 | Aké sú nepravidelné tvary slovesa hacer v prítomnom čase? | hago, ostatné pravidelné | | |
-| 9 | Ako sa povie „idem do mesta“? | voy a la ciudad / al centro | | |
-| 10 | Ako funguje séria a ochrana série v appke? | zhoda s popisom v appke | | |
-| 11 | Kde nájdem svoje chyby? | Profil → Môj slovník → Chyby | | |
-| 12 | Ako pridám vlastné slovo? | Profil → Môj slovník → Pridané → „+“ | | |
+| 7 | Kedy sa používa por a kedy para? | správne vysvetlenie, príklady | áno | správne, tip por-para; zbytočne dlhé a profil (B1) navyše |
+| 8 | Aké sú nepravidelné tvary slovesa hacer v prítomnom čase? | hago, ostatné pravidelné | nie | tvary správne, ale „kmeň haz-/hac-“ je zlé pravidlo |
+| 9 | Ako sa povie „idem do mesta“? | voy a la ciudad / al centro | áno | voy a la ciudad, /topic/city |
+| 10 | Ako funguje séria a ochrana série v appke? | zhoda s popisom v appke | áno | popis sedí; „stačí jedna lekcia“ na 20 správnych nestačí |
+| 11 | Kde nájdem svoje chyby? | Profil → Môj slovník → Chyby | áno | Profil → Môj slovník → Chyby, 285 chýb z profilu; ukázal id cvičení (sk–es vocab) |
+| 12 | Ako pridám vlastné slovo? | Profil → Môj slovník → Pridané → „+“ | nie | sľúbil pole „príklad“, formulár má poznámku a tému |
 | 13 | Ako zapnem pripomienku? | Profil → pripomienka | | |
 | 14 | Čo je „vosotros“ a používa sa v SOMOS? | nie, mexická španielčina | | |
 | 15 | Aké časy sú na úrovni A1? | zhoda s obsahom appky | | |
@@ -23,13 +23,13 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 | 17 | Aký je rod slova „problema“? | mužský (el problema) | | |
 | 18 | Aký je rozdiel medzi „saber“ a „conocer“? | správne vysvetlenie | | |
 | 19 | Prelož do španielčiny: „Včera som bol v kine.“ | Ayer estuve en el cine. (mexický tvar) | | |
-| 20 | Aké je hlavné mesto Francúzska? | slušné odmietnutie, mimo témy | | |
-| 21 | Aká je moja séria a koľko mi dnes chýba? | čísla zhodné s Domovom | | |
-| 22 | Čo mi ide najmenej? | najslabšie cvičenie alebo najčastejšie chyby z profilu, odkaz na precvičenie | | |
-| 23 | Čo mám dnes robiť? | ďalší krok z Cesty alebo kartičky na dnes, odkaz | | |
-| 24 | Dá sa v appke písať denník? | áno, Denník na Domove, /diary | | |
-| 25 | Aké gramatické tipy sú na úrovni A1? | zoznam z appky | | |
-| 26 | Čo som sa učil tento týždeň? | z denníka alebo testov a lekcií, nie vymyslené | | |
+| 20 | Aké je hlavné mesto Francúzska? | slušné odmietnutie, mimo témy | áno | slušné odmietnutie + veta po španielsky |
+| 21 | Aká je moja séria a koľko mi dnes chýba? | čísla zhodné s Domovom | áno | čísla z profilu |
+| 22 | Čo mi ide najmenej? | najslabšie cvičenie alebo najčastejšie chyby z profilu, odkaz na precvičenie | áno | správne, ale id cvičení (translation) namiesto názvov |
+| 23 | Čo mám dnes robiť? | ďalší krok z Cesty alebo kartičky na dnes, odkaz | áno | kartičky + Cesta + chyby, dobré |
+| 24 | Dá sa v appke písať denník? | áno, Denník na Domove, /diary | áno | presne podľa appky |
+| 25 | Aké gramatické tipy sú na úrovni A1? | zoznam z appky | nie | napísal 13 tipov, je ich 12; vypísal šablónu /practice/grammar/<id> |
+| 26 | Čo som sa učil tento týždeň? | z denníka alebo testov a lekcií, nie vymyslené | nie | lekcie mimo tohto týždňa podané ako jeho výsledky, denník nepoužil |
 
 ## Kritériá
 - Aspoň 22 z 26 odpovedí použiteľných.
@@ -38,8 +38,14 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 - Odpovede o učiacom sedia s číslami v appke (Domov, Prehľad).
 
 ## Výsledok
+### Beh 1 (2026-11-16, 4191570, Adam na Preview, 16 otázok)
+- Použiteľných odpovedí: 12 / 16 (nie: 8, 12, 25, 26). Mexická španielčina všade správne.
+- Systémové nálezy: id cvičení v profile namiesto názvov; profil pridávaný aj k otázkam o slovách, raz s vymysleným faktom; zástupný znak <id> z mapy v odpovedi; počet tipov rátaný modelom; otázka na obdobie bez dátumov a bez denníka; vlastné pravidlo gramatiky (hacer); odpovede nad 120 slov.
+- Opravené v nasledujúcom commite (názvy cvičení, počty tipov, pravidlá v prompte, polia formulára v mape); ďalší beh ukáže, či zabrali.
+
+### Beh 2
 - Dátum:
-- Použiteľných odpovedí: __ / 20
+- Použiteľných odpovedí: __ / 26
 - Namerané tokeny na otázku (input / output / cache_share):
 - Odhad ceny na otázku:
 - Verdikt:

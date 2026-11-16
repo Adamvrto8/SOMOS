@@ -20,8 +20,8 @@ const input: RecordsInput = {
 describe('recordsOf', () => {
   it('gives the newest mistakes first, in words', () => {
     expect(recordsOf('mistakes', input, 10)).toEqual([
-      { item: 'casa', exercise: 'cloze', wrongCount: 1, lastWrong: '2026-11-09' },
-      { item: 'tener · preterito · yo', exercise: 'conjugation', wrongCount: 2, lastWrong: '2026-11-03' },
+      { item: 'casa', exercise: 'Doplňovačka', wrongCount: 1, lastWrong: '2026-11-09' },
+      { item: 'tener · preterito · yo', exercise: 'Časovanie', wrongCount: 2, lastWrong: '2026-11-03' },
     ])
   })
 

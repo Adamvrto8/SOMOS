@@ -3,7 +3,7 @@ import { dayKey } from '../dates'
 import { db, type CustomWord, type DiaryEntry, type Mistake, type SavedItem } from '../db'
 import { getProgressionSnapshot, type LessonProgressionMap } from '../lessonProgress'
 import { getTestResults, type TestResultsMap } from '../testProgress'
-import { clip, describeItem } from './learner'
+import { clip, describeItem, exerciseLabel } from './learner'
 
 // The learner's own records for the assistant's get_my_records tool: the details behind the profile's summary lines.
 
@@ -28,7 +28,7 @@ export function recordsOf(kind: RecordKind, input: RecordsInput, limit: number):
       return [...input.mistakes]
         .sort((a, b) => b.lastWrongAt - a.lastWrongAt)
         .slice(0, limit)
-        .map((m) => ({ item: describeItem(m.itemId), exercise: m.exercise, wrongCount: m.wrongCount, lastWrong: date(m.lastWrongAt) }))
+        .map((m) => ({ item: describeItem(m.itemId), exercise: exerciseLabel(m.exercise), wrongCount: m.wrongCount, lastWrong: date(m.lastWrongAt) }))
     case 'diary':
       return [...input.diary]
         .sort((a, b) => b.date.localeCompare(a.date))

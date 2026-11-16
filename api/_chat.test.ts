@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { chat, MAX_APP_CHARS, MAX_BODY_CHARS, MAX_LEARNER_CHARS, MAX_MESSAGES, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, systemBlocks, TOOL_NAMES, TOOLS } from './chat.ts'
+import { chat, MAX_APP_CHARS, MAX_BODY_CHARS, MAX_LEARNER_CHARS, MAX_MESSAGES, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, SYSTEM_PROMPT, systemBlocks, TOOL_NAMES, TOOLS } from './chat.ts'
 
 const USER_ID = '11111111-1111-4111-8111-111111111111'
 const ENV = {
@@ -324,5 +324,13 @@ describe('api/chat context', () => {
 
   it('leaves out an empty profile block', () => {
     expect(systemBlocks({ app: 'MAPA', learner: '  ' })).toHaveLength(2)
+  })
+})
+
+describe('SYSTEM_PROMPT', () => {
+  it('names the assistant SOMO and covers the rules from the 2026-11-16 eval', () => {
+    expect(SYSTEM_PROMPT).toContain('Si SOMO')
+    expect(SYSTEM_PROMPT).toContain('<id>')
+    expect(SYSTEM_PROMPT).toContain('denník')
   })
 })

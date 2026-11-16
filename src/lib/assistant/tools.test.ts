@@ -214,3 +214,10 @@ describe('cap', () => {
     expect(out).not.toMatch(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/)
   })
 })
+
+describe('get_grammar_tip level list', () => {
+  it('says how many tips the level has, so the model does not count', async () => {
+    const out = await ok('get_grammar_tip', { level: 'A1' })
+    expect(out.count).toBe(out.tips.length)
+  })
+})

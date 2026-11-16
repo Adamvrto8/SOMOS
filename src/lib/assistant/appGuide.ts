@@ -62,7 +62,7 @@ export const GUIDE: GuideSection[] = [
     id: 'slovnik',
     title: 'Môj slovník',
     links: ['/archive', '/archive/new', '/practice/lesson?mistakes=1'],
-    text: 'V Profile. Záložky Uložené (slová a vety s hviezdičkou), Pridané (vlastné slová; nové pridáš cez /archive/new) a Chyby (precvičíš ich cez /practice/lesson?mistakes=1). „Zopakovať“ spustí opakovanie kartičiek.',
+    text: 'V Profile. Záložky Uložené (slová a vety s hviezdičkou), Pridané (vlastné slová; nové pridáš cez /archive/new, formulár má polia španielsky, slovensky, poznámka a téma) a Chyby (precvičíš ich cez /practice/lesson?mistakes=1). „Zopakovať“ spustí opakovanie kartičiek.',
   },
   {
     id: 'opakovanie',

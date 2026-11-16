@@ -36,7 +36,8 @@ describe('learnerProfile', () => {
     expect(text).toContain('Séria: 3 dní (najdlhšia 3)')
     expect(text).toContain('Ochrana série: 1/2')
     expect(text).toContain('Kartičky na zopakovanie: dnes 8, zajtra 3')
-    expect(text).toContain('Najslabšie cvičenie: conjugation (25 %)')
+    expect(text).toContain('Najslabšie cvičenie: Časovanie (25 %)')
+    expect(text).not.toMatch(/\b(cloze|conjugation)\b/)
   })
 
   it('names the most frequent mistakes in words, not ids', () => {
@@ -50,6 +51,7 @@ describe('learnerProfile', () => {
     expect(text).toContain('Chyby na precvičenie: 2')
     expect(text).toContain(sentenceById.get('s001')!.es)
     expect(text).toContain('tener · preterito · yo')
+    expect(text).toContain('[Doplňovačka, 3×]')
   })
 
   it('stays under the limit for a heavy learner', () => {
@@ -68,6 +70,10 @@ describe('describeItem', () => {
     expect(describeItem('s001#0')).toBe(`„${sentenceById.get('s001')!.es}“`)
     expect(describeItem('tener:preterito:yo')).toBe('tener · preterito · yo')
     expect(describeItem('casa')).toBe('casa')
+    expect(describeItem('el:sk-es')).toBe('el (SK → ES)')
+    expect(describeItem('casa:es-sk')).toBe('casa (ES → SK)')
+    expect(describeItem('m:carro,casa')).toBe('carro, casa')
+    expect(describeItem('s001#0:t')).toBe(`„${sentenceById.get('s001')!.es}“`)
   })
 })
 

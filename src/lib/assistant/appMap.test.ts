@@ -22,6 +22,12 @@ describe('app map', () => {
     expect(map).toContain('Duel: áno, pripomienky: nie')
   })
 
+  it('gives the number of tips per level', () => {
+    for (const level of ['A1', 'A2', 'B1', 'B2'] as const) {
+      expect(map).toContain(`## ${level}: ${tips.filter((tip) => tip.level === level).length} tipov`)
+    }
+  })
+
   it('stays under the limit the server accepts', () => {
     expect(map.length).toBeLessThan(MAX_APP_CHARS)
   })

@@ -180,7 +180,7 @@ function getGrammarTip(input: Record<string, unknown>): unknown {
   const query = text(input.query)
   if (level && !query) {
     const atLevel = tips.map(localizedTip).filter((tip) => tip.level === level)
-    return { found: atLevel.length > 0, level, tips: atLevel.map((tip) => ({ id: tip.id, title: tip.title, link: `/practice/grammar/${tip.id}` })) }
+    return { found: atLevel.length > 0, level, count: atLevel.length, tips: atLevel.map((tip) => ({ id: tip.id, title: tip.title, link: `/practice/grammar/${tip.id}` })) }
   }
   if (!query) throw new ToolInputError('give "id", "query" or "level"')
   const found = rankTips(tips, query).slice(0, 2)

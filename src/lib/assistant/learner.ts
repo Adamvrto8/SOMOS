@@ -1,9 +1,11 @@
 import { sentenceById, wordById } from '../../data'
 import type { Level } from '../../data/types'
+import { t } from '../../i18n'
 import { dayKey } from '../dates'
 import type { Attempt, DiaryEntry, Mistake } from '../db'
 import type { Language } from '../language'
 import type { LessonProgressionMap } from '../lessonProgress'
+import { EXERCISE_TYPES } from '../exerciseOrder'
 import type { Motivation } from '../onboarding'
 import { byExercise, computeHistory, FREEZE_MAX, summarizeDays } from '../stats'
 import type { TestResultsMap } from '../testProgress'
@@ -47,12 +49,28 @@ export const clip = (text: string, max: number) => {
 
 const pct = (part: number, all: number) => (all ? `${Math.round((part / all) * 100)} %` : '–')
 
-/** A lesson task's item as the learner saw it: "s001#0" → the sentence, a word id → the word, "tener:preterito:yo" spaced. */
+/** An exercise by the name the app shows ("Časovanie"), not its id: the model repeated the ids to the learner. */
+export function exerciseLabel(exercise: string): string {
+  if (exercise === 'review') return t().assistantContext.review
+  const type = EXERCISE_TYPES.find((candidate) => candidate === exercise)
+  return type ? t().exercise.types[type].label : exercise
+}
+
+const DIRECTIONS: Record<string, string> = { 'sk-es': 'SK → ES', 'es-sk': 'ES → SK' }
+
+/**
+ * A lesson task's item as the learner saw it: "s001#0" (also "s001#0:t") → the sentence, a word id → the word,
+ * "el:sk-es" → "el (SK → ES)", "m:carro,casa" → the words, "tener:preterito:yo" spaced.
+ */
 export function describeItem(itemId: string): string {
   const sentence = sentenceById.get(itemId.split('#')[0])
   if (sentence) return `„${sentence.es}“`
   const word = wordById.get(itemId)
   if (word) return word.es
+  if (itemId.startsWith('m:')) return itemId.slice(2).split(',').map((id) => wordById.get(id)?.es ?? id).join(', ')
+  const [id, direction] = itemId.split(':')
+  const vocab = wordById.get(id)
+  if (vocab && direction in DIRECTIONS) return `${vocab.es} (${DIRECTIONS[direction]})`
   return itemId.replace(/:/g, ' · ')
 }
 
@@ -80,9 +98,9 @@ export function learnerProfile(s: LearnerSnapshot): string {
       ? `Spolu: ${history.total} odpovedí, ${pct(history.correct, history.total)} správne, od ${dayKey(history.firstDay)} · aktívne dni za posledných 30: ${activeDays}`
       : 'Spolu: zatiaľ žiadne odpovede',
     `Posledných 7 dní (dátum odpovede/správne): ${week.map((d) => `${d.key.slice(5)} ${d.count}/${d.correct}`).join(', ')}`,
-    exercises.length ? `Cvičenia (počet, úspešnosť): ${exercises.map((e) => `${e.exercise} ${e.count} (${pct(e.correct, e.count)})`).join(', ')}` : '',
-    weakest ? `Najslabšie cvičenie: ${weakest.exercise} (${pct(weakest.correct, weakest.count)})` : '',
-    `Chyby na precvičenie: ${s.mistakes.length}${topMistakes.length ? `; najčastejšie: ${topMistakes.map((m) => `${clip(describeItem(m.itemId), 90)} [${m.exercise}, ${m.wrongCount}×]`).join('; ')}` : ''}`,
+    exercises.length ? `Cvičenia (počet, úspešnosť): ${exercises.map((e) => `${exerciseLabel(e.exercise)} ${e.count} (${pct(e.correct, e.count)})`).join(', ')}` : '',
+    weakest ? `Najslabšie cvičenie: ${exerciseLabel(weakest.exercise)} (${pct(weakest.correct, weakest.count)})` : '',
+    `Chyby na precvičenie: ${s.mistakes.length}${topMistakes.length ? `; najčastejšie: ${topMistakes.map((m) => `${clip(describeItem(m.itemId), 90)} [${exerciseLabel(m.exercise)}, ${m.wrongCount}×]`).join('; ')}` : ''}`,
     `Môj slovník: ${s.saved} uložených, ${s.customWords} vlastných slov`,
     `Zvládnuté lekcie: ${passedLessons} · Zložené testy: ${passedTests.length}${exams.length ? ` (skúšky úrovne: ${exams.join(', ')})` : ''}`,
     s.next ? `Cesta, ďalší krok: ${s.next.title} · ${s.next.step} → ${s.next.href}` : 'Cesta: hotová alebo nezačatá',

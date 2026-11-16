@@ -25,12 +25,11 @@ export function buildAppMap(flags: AppFlags): string {
     const perLevel = LEVELS.map((level) => `${level} ${words.filter((w) => w.level === level && w.topics.includes(topic.id)).length}`).join(', ')
     return `- ${topic.id}: ${topicName(topic)} (slová ${perLevel}) /topic/${topic.id}`
   })
-  const tipLines = LEVELS.flatMap((level) =>
-    tips
-      .map(localizedTip)
-      .filter((tip) => tip.level === level)
-      .map((tip) => `- ${tip.id} · ${level} · ${tip.title}`),
-  )
+  const tipLines = LEVELS.flatMap((level) => {
+    const atLevel = tips.map(localizedTip).filter((tip) => tip.level === level)
+    // The count is given, the model miscounted a list of 12 as 13.
+    return [`## ${level}: ${atLevel.length} tipov`, ...atLevel.map((tip) => `- ${tip.id} · ${level} · ${tip.title}`)]
+  })
   const perLevel = LEVELS.map((level) => `${level} ${words.filter((w) => w.level === level).length}`).join(', ')
   return [
     '# Obrazovky a funkcie',

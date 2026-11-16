@@ -38,5 +38,7 @@ describe('app guide', () => {
   it('renders one line per section', () => {
     expect(guideText().split('\n')).toHaveLength(GUIDE.length)
     expect(guideText()).toContain('Denník (/diary)')
+    // The form of a custom word, so the model does not promise a field that is not there.
+    expect(guideText()).toContain('poznámka a téma')
   })
 })
