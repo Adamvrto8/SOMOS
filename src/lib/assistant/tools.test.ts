@@ -223,10 +223,11 @@ describe('get_grammar_tip level list', () => {
 })
 
 describe('search_word for a word the dictionary lacks', () => {
-  it('points to the grammar tip that uses it, so the model does not guess (el problema, eval run 2)', async () => {
-    const out = await ok('search_word', { query: 'problema' })
-    expect(out.inTips[0]).toMatchObject({ id: 'gender', rule: 'Mužské koncovky', link: '/practice/grammar/gender' })
-    expect(out.inTips[0].example).toContain('el problema')
+  // Eval run 2 found el problema only in a tip; the dictionary has it since, so la costumbre stands in.
+  it('points to the grammar tip that uses it, so the model does not guess', async () => {
+    const out = await ok('search_word', { query: 'costumbre' })
+    expect(out.inTips[0]).toMatchObject({ id: 'gender', rule: 'Ženské koncovky', link: '/practice/grammar/gender' })
+    expect(out.inTips[0].example).toContain('la costumbre')
   })
 
   it('adds nothing for a word the dictionary has', async () => {
