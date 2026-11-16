@@ -687,5 +687,16 @@
     "examples": [
       { "es": "Su rendimiento escolar mejoró.", "sk": "Jeho výsledky v škole sa zlepšili." }
     ]
+  },
+  {
+    "id": "tema",
+    "es": "tema",
+    "sk": ["téma"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["school"],
+    "examples": [{ "es": "¿Cuál es el tema de la clase de hoy?", "sk": "Aká je téma dnešnej hodiny?" }],
+    "note": "Hoci končí na -a, je mužského rodu: el tema."
   }
 ]

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
 import { Button } from '../../components/Button'
+import { Chip } from '../../components/Chip'
 import type { Level } from '../../data/types'
 import { loadLastPlayed } from '../../lib/attempts'
 import type { TableTense } from '../../lib/conjugate'
@@ -14,6 +15,7 @@ import { duelsAvailable } from '../../lib/duel/backend'
 import { useMistakes } from '../../lib/mistakes'
 import { useOnboarding } from '../../lib/onboarding'
 import { nextStep, usePathState } from '../../lib/path'
+import { setPracticeSkill, SKILL_OF, SKILLS, usePracticeSkill } from '../../lib/skills'
 import { continueLesson } from '../home/continueLesson'
 import { exerciseInfo, EXERCISES, filterToParams, isLessonGroup, LEVELS, selectionLabel } from './exercises'
 
@@ -83,14 +85,16 @@ const ICON_BUTTON =
   'flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-150 hover:bg-surface-2 hover:text-ink disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-brick'
 
 /**
- * The exercises, by the last played or in the learner's own order. Ordering is out of the way:
- * "Upraviť poradie" under the list opens the choice and the arrows (no dragging).
+ * The exercises, by the last played or in the learner's own order, filtered by the picked skill group
+ * (docs/skill-groups-spec.md). Ordering is out of the way: "Upraviť poradie" under the list opens the
+ * choice and the arrows (no dragging), over the whole list.
  */
 function ExerciseList() {
   const text = useT().practice
   const progression = useLessonProgression()
   const order = useExerciseOrder()
   const lastPlayed = useLiveQuery(() => loadLastPlayed(EXERCISE_TYPES), [])
+  const skill = usePracticeSkill()
   const [editing, setEditing] = useState(false)
   // By recency the list waits for the attempts, so it does not jump into place.
   if (order.mode === 'recent' && !lastPlayed) return null
@@ -107,6 +111,8 @@ function ExerciseList() {
   }
   const move = (type: ExerciseType, by: -1 | 1) => setExerciseOrder({ mode: 'custom', custom: moveExercise(shown, type, by) })
   const arranging = editing && order.mode === 'custom'
+  // Ordered first, then filtered: within a group the learner's order holds. Arranging works on the whole list.
+  const visible = editing || skill === 'all' ? shown : shown.filter((type) => SKILL_OF[type] === skill)
 
   return (
     <section aria-labelledby="exercises-heading">
@@ -130,8 +136,17 @@ function ExerciseList() {
           </div>
         )}
       </div>
+      {!editing && (
+        <div role="group" aria-label={text.skills.label} className="mb-3 flex flex-wrap gap-2">
+          {(['all', ...SKILLS] as const).map((s) => (
+            <Chip key={s} selected={skill === s} onClick={() => setPracticeSkill(s)}>
+              {text.skills[s]}
+            </Chip>
+          ))}
+        </div>
+      )}
       <ul className="space-y-2">
-        {shown.map((type, at) => {
+        {visible.map((type, at) => {
           const { label, description, icon: Icon, unavailable } = exerciseInfo(type)
           const filter = exerciseFilter(type)
           const played = getRememberedLesson(type) !== undefined
@@ -142,6 +157,8 @@ function ExerciseList() {
                 <Icon size={20} strokeWidth={1.75} aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
+                {/* The group as an eyebrow, only in Všetko: under a picked group it would repeat on every card. */}
+                {skill === 'all' && <span className="block text-[0.7rem] tracking-wide text-ink-muted uppercase">{text.skills[SKILL_OF[type]]}</span>}
                 <span className="flex items-baseline justify-between gap-2">
                   <span className="font-medium">{label}</span>
                   {total > 0 && !unavailable && <span className="shrink-0 text-xs text-ink-muted tabular-nums">{text.lessonsPassed(passed, total)}</span>}

@@ -241,7 +241,7 @@ test('Cvičiť is a hub: where to go on, the shortcuts and every exercise', asyn
   await page.goto('/practice')
   await expect(page.getByRole('link', { name: /Lekcia 1/ })).toHaveAttribute('href', /\/practice\/lesson\?type=vocab/)
   await expect(page.getByRole('link', { name: /Testy/ })).toBeVisible()
-  await expect(page.getByRole('link', { name: /Gramatika/ })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Gramatika', exact: true })).toBeVisible()
   // Chyby only once there are some.
   await expect(page.getByRole('link', { name: /Chyby/ })).toHaveCount(0)
   await expect(page.getByRole('region', { name: 'Cvičenia' }).getByRole('listitem')).toHaveCount(11)
@@ -287,6 +287,40 @@ test('the exercises in Cvičiť: by the last played, or arranged by hand and kep
   await expect(items.first()).toContainText('Výber z možností')
   await button(page, 'Hotovo').tap()
   await expect(button(page, 'Moje')).toHaveCount(0)
+})
+
+test('the skill chips in Cvičiť filter the exercises, are kept and step aside while arranging', async ({ page }) => {
+  await page.goto('/practice')
+  const list = page.getByRole('region', { name: 'Cvičenia' })
+  const items = list.getByRole('listitem')
+  const chips = page.getByRole('group', { name: 'Skupiny cvičení' })
+  await expect(chips.getByRole('button')).toHaveText(['Všetko', 'Slovná zásoba', 'Gramatika', 'Písanie', 'Počúvanie a hovorenie'])
+  await expect(chips.getByRole('button', { name: 'Všetko' })).toHaveAttribute('aria-pressed', 'true')
+  // In Všetko every card names its group.
+  await expect(items).toHaveCount(11)
+  await expect(items.first()).toContainText('Slovná zásobaDoplňovačka')
+
+  // Gramatika: just its four exercises, in the order of the whole list, without the group on the cards.
+  await chips.getByRole('button', { name: 'Gramatika' }).tap()
+  await expect(chips.getByRole('button', { name: 'Gramatika' })).toHaveAttribute('aria-pressed', 'true')
+  await expect(items).toHaveText([/^Výber z možností/, /^Časovanie/, /^Pravda alebo nie/, /^Nájdi chybu/])
+  for (const chip of await chips.getByRole('button').all()) expect((await chip.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true)
+
+  // Kept after a reload.
+  await page.reload()
+  await expect(items).toHaveCount(4)
+  await expect(chips.getByRole('button', { name: 'Gramatika' })).toHaveAttribute('aria-pressed', 'true')
+
+  // Arranging works on the whole list: the chips step aside and come back after Hotovo.
+  await button(page, 'Upraviť poradie').tap()
+  await expect(chips).toHaveCount(0)
+  await expect(items).toHaveCount(11)
+  await button(page, 'Hotovo').tap()
+  await expect(items).toHaveCount(4)
+
+  await chips.getByRole('button', { name: 'Všetko' }).tap()
+  await expect(items).toHaveCount(11)
 })
 
 test('an exercise shows its lessons as a grid; the picked topic and level come back on its tile', async ({ page }) => {

@@ -1,6 +1,7 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { addDays, dayKey, startOfDay } from './dates'
 import { db, type Attempt } from './db'
+import { SKILLS, skillOfExercise, type Skill } from './skills'
 
 export interface DayStat {
   key: string // "2026-09-25"
@@ -153,6 +154,30 @@ export function byExercise(attempts: Pick<Attempt, 'exercise' | 'correct'>[]): E
     stats.set(a.exercise, stat)
   }
   return [...stats.values()].sort((a, b) => b.count - a.count)
+}
+
+export interface SkillStat {
+  skill: Skill
+  count: number
+  correct: number
+}
+
+/**
+ * Answers split by skill group, most practised first, only groups with an answer. Reviews and unknown
+ * exercises (old data) are left out; lessons of Cesta, tests, mistakes and mixed practice count by their task type.
+ */
+export function bySkill(attempts: Pick<Attempt, 'exercise' | 'correct'>[]): SkillStat[] {
+  const stats = new Map<Skill, SkillStat>()
+  for (const a of attempts) {
+    const skill = skillOfExercise(a.exercise)
+    if (!skill) continue
+    const stat = stats.get(skill) ?? { skill, count: 0, correct: 0 }
+    stat.count++
+    if (a.correct) stat.correct++
+    stats.set(skill, stat)
+  }
+  // Equal counts keep the order of the groups.
+  return [...stats.values()].sort((a, b) => b.count - a.count || SKILLS.indexOf(a.skill) - SKILLS.indexOf(b.skill))
 }
 
 /** Everything since the first answer, for the overview page. */

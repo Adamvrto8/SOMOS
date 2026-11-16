@@ -110,7 +110,7 @@ test('"Prečo?" on a blank that asks for a tense shows the sentence, the reason 
 
 test('the tips can be read as a handbook from Cvičiť', async ({ page }) => {
   await page.goto('/practice')
-  await page.getByRole('link', { name: /Gramatika/ }).tap()
+  await page.getByRole('link', { name: 'Gramatika', exact: true }).tap()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Gramatika')
   const list = page.getByRole('main').getByRole('listitem')
   await expect(list).toHaveCount(tips.length)

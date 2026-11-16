@@ -750,5 +750,16 @@
     "examples": [
       { "es": "Viajar en avión aumenta tu huella de carbono.", "sk": "Lietanie zvyšuje tvoju uhlíkovú stopu." }
     ]
+  },
+  {
+    "id": "planeta",
+    "es": "planeta",
+    "sk": ["planéta"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["nature"],
+    "examples": [{ "es": "La Tierra es nuestro planeta.", "sk": "Zem je naša planéta." }],
+    "note": "Hoci končí na -a, je mužského rodu: el planeta."
   }
 ]

@@ -518,5 +518,27 @@
     "examples": [
       { "es": "Vemos series en varias plataformas.", "sk": "Seriály pozeráme na viacerých platformách." }
     ]
+  },
+  {
+    "id": "sistema",
+    "es": "sistema",
+    "sk": ["systém"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "El sistema no funciona hoy.", "sk": "Systém dnes nefunguje." }],
+    "note": "Hoci končí na -a, je mužského rodu: el sistema."
+  },
+  {
+    "id": "programa",
+    "es": "programa",
+    "sk": ["program",  "relácia"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A2",
+    "topics": ["tech"],
+    "examples": [{ "es": "Este programa de televisión es muy bueno.", "sk": "Tento televízny program je veľmi dobrý." }],
+    "note": "Hoci končí na -a, je mužského rodu: el programa."
   }
 ]

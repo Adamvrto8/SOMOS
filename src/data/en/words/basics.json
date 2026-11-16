@@ -240,5 +240,6 @@
     "examples": ["The current situation is difficult."],
     "note": "False friend: actual = current, not \"real\". Actualmente = currently. \"Actually\" = en realidad."
   },
-  { "id": "eficaz", "en": ["effective", "efficient"], "examples": ["It's a very effective cough remedy."] }
+  { "id": "eficaz", "en": ["effective", "efficient"], "examples": ["It's a very effective cough remedy."] },
+  { "id": "problema", "en": ["problem"], "examples": ["No problem."], "note": "It ends in -a but is masculine: el problema." }
 ]

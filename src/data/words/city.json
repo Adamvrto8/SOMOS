@@ -759,5 +759,16 @@
     "examples": [
       { "es": "Cerraron varias vialidades por el desfile.", "sk": "Kvôli sprievodu uzavreli viacero ciest." }
     ]
+  },
+  {
+    "id": "moto",
+    "es": "moto",
+    "sk": ["motorka"],
+    "pos": "noun",
+    "gender": "f",
+    "level": "A2",
+    "topics": ["city"],
+    "examples": [{ "es": "Mi hermano va al trabajo en moto.", "sk": "Brat chodí do práce na motorke." }],
+    "note": "Skrátené z la motocicleta, preto ženský rod: la moto (ako la foto)."
   }
 ]
