@@ -95,5 +95,6 @@
   { "id": "egresado", "en": ["graduate"], "examples": ["He's a UNAM graduate."] },
   { "id": "autodidacta", "en": ["self-taught"], "examples": ["My cousin is self-taught."] },
   { "id": "aprendizaje", "en": ["learning"], "examples": ["Everyone learns at their own pace."] },
-  { "id": "rendimiento", "en": ["performance", "results"], "examples": ["His school performance improved."] }
+  { "id": "rendimiento", "en": ["performance", "results"], "examples": ["His school performance improved."] },
+  { "id": "tema", "en": ["topic", "subject"], "examples": ["What is the topic of today's class?"], "note": "It ends in -a but is masculine: el tema." }
 ]

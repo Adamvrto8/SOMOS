@@ -1420,5 +1420,16 @@
     "examples": [
       { "es": "Es un remedio muy eficaz contra la tos.", "sk": "Je to veľmi účinný liek na kašeľ." }
     ]
+  },
+  {
+    "id": "problema",
+    "es": "problema",
+    "sk": ["problém"],
+    "pos": "noun",
+    "gender": "m",
+    "level": "A1",
+    "topics": ["basics"],
+    "examples": [{ "es": "No hay problema.", "sk": "Žiadny problém." }],
+    "note": "Hoci končí na -a, je mužského rodu: el problema."
   }
 ]

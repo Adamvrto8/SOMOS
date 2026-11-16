@@ -91,5 +91,6 @@
   { "id": "renovable", "en": ["renewable"], "examples": ["Solar energy is renewable."] },
   { "id": "residuo", "en": ["waste", "residue"], "examples": ["We separate organic waste."] },
   { "id": "composta", "en": ["compost"], "examples": ["We make compost with the peels."] },
-  { "id": "huella-de-carbono", "en": ["carbon footprint"], "examples": ["Flying increases your carbon footprint."] }
+  { "id": "huella-de-carbono", "en": ["carbon footprint"], "examples": ["Flying increases your carbon footprint."] },
+  { "id": "planeta", "en": ["planet"], "examples": ["The Earth is our planet."], "note": "It ends in -a but is masculine: el planeta." }
 ]

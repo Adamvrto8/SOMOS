@@ -54,5 +54,7 @@
   { "id": "suscripcion", "en": ["subscription"], "examples": ["I canceled the subscription."] },
   { "id": "dispositivo", "en": ["device"], "examples": ["You can use the app on several devices."] },
   { "id": "adiccion", "en": ["addiction"], "examples": ["He's addicted to social media."] },
-  { "id": "plataforma", "en": ["platform"], "examples": ["We watch shows on several streaming platforms."] }
+  { "id": "plataforma", "en": ["platform"], "examples": ["We watch shows on several streaming platforms."] },
+  { "id": "sistema", "en": ["system"], "examples": ["The system isn't working today."], "note": "It ends in -a but is masculine: el sistema." },
+  { "id": "programa", "en": ["program", "show"], "examples": ["This TV show is very good."], "note": "It ends in -a but is masculine: el programa." }
 ]

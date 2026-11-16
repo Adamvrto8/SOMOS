@@ -93,5 +93,6 @@
   { "id": "alumbrado", "en": ["street lighting"], "examples": ["They fixed the street lighting."] },
   { "id": "urbano", "en": ["urban", "city"], "examples": ["City transportation is cheap."] },
   { "id": "ambulante", "en": ["street (vendor)", "itinerant"], "examples": ["I bought it from a street vendor."] },
-  { "id": "vialidad", "en": ["road", "roadway"], "examples": ["Several roads were closed for the parade."] }
+  { "id": "vialidad", "en": ["road", "roadway"], "examples": ["Several roads were closed for the parade."] },
+  { "id": "moto", "en": ["motorbike", "motorcycle"], "examples": ["My brother goes to work by motorbike."], "note": "Short for la motocicleta, so it is feminine: la moto (like la foto)." }
 ]
