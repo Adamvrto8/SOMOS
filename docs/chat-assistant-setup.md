@@ -40,5 +40,14 @@ where at > now() - interval '7 days';
 
 Cenu preraz podľa aktuálneho cenníka modelu (Anthropic pricing) × tokeny. `cache_share` > 0 znamená, že prompt caching sa uplatňuje.
 
+## 6a. Čo appka posiela s otázkou
+Okrem konverzácie ide s každou otázkou `context`:
+- `app`: mapa appky (src/lib/assistant/appMap.ts): obrazovky (appGuide.ts), cvičenia, témy, gramatické tipy s id, počty obsahu, čo je dostupné. Rovnaká pre všetky otázky, preto sa cachuje (`cache_share` v `chat_usage`).
+- `learner`: profil učiaceho (src/lib/assistant/learner.ts, zo zariadenia ho číta context.ts): nastavenia, dnešok, séria, kartičky, úspešnosť podľa cvičení, najčastejšie chyby, Cesta, testy, posledné zápisy z denníka (skrátené). Necachuje sa.
+Podrobnosti si model vyžiada nástrojom `get_my_records`: chyby, výsledky testov a lekcií, uložené a vlastné slová (aj s vlastnými poznámkami) a zápisy z denníka vrátane španielskych viet o dni (každé pole skrátené na 300 znakov, najviac 20 záznamov).
+
+Pred verejným spustením: profil a tieto záznamy (aj denník a poznámky k vlastným slovám) odchádzajú do Anthropic, treba to uviesť v ochrane súkromia. Text mapy dnes posiela appka a server ho len obmedzí veľkosťou (20 000 znakov); pre verejnú verziu ho má server skladať sám (pri builde), aby cudzí klient nemohol meniť inštrukcie modelu.
+Nová obrazovka v src/App.tsx potrebuje sekciu v appGuide.ts, inak appGuide.test.ts zlyhá.
+
 ## 7. Vypnutie
 Odober `ANTHROPIC_API_KEY` alebo `CHAT_ALLOWED_USERS` vo Verceli; funkcia potom vráti `not-configured` / `not-allowed`.

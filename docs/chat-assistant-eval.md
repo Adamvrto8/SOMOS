@@ -24,11 +24,18 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 | 18 | Aký je rozdiel medzi „saber“ a „conocer“? | správne vysvetlenie | | |
 | 19 | Prelož do španielčiny: „Včera som bol v kine.“ | Ayer estuve en el cine. (mexický tvar) | | |
 | 20 | Aké je hlavné mesto Francúzska? | slušné odmietnutie, mimo témy | | |
+| 21 | Aká je moja séria a koľko mi dnes chýba? | čísla zhodné s Domovom | | |
+| 22 | Čo mi ide najmenej? | najslabšie cvičenie alebo najčastejšie chyby z profilu, odkaz na precvičenie | | |
+| 23 | Čo mám dnes robiť? | ďalší krok z Cesty alebo kartičky na dnes, odkaz | | |
+| 24 | Dá sa v appke písať denník? | áno, Denník na Domove, /diary | | |
+| 25 | Aké gramatické tipy sú na úrovni A1? | zoznam z appky | | |
+| 26 | Čo som sa učil tento týždeň? | z denníka alebo testov a lekcií, nie vymyslené | | |
 
 ## Kritériá
-- Aspoň 17 z 20 odpovedí použiteľných.
+- Aspoň 22 z 26 odpovedí použiteľných.
 - Žiadna španielčina zo Španielska (vosotros, coche, ordenador, móvil…).
 - Žiadny vymyslený tvar slovesa ani slovo, ktoré v appke nie je.
+- Odpovede o učiacom sedia s číslami v appke (Domov, Prehľad).
 
 ## Výsledok
 - Dátum:
