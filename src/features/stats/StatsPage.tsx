@@ -6,7 +6,7 @@ import { Chip } from '../../components/Chip'
 import { SectionTitle } from '../../components/SectionTitle'
 import { useT } from '../../i18n'
 import { useDailyGoal } from '../../lib/dailyGoal'
-import { byExercise, computeHistory, summarizeDays, useAttempts } from '../../lib/stats'
+import { byExercise, bySkill, computeHistory, summarizeDays, useAttempts } from '../../lib/stats'
 import { DayColumns } from './DayColumns'
 import { HistoryFigures } from './HistoryFigures'
 
@@ -34,23 +34,24 @@ export function StatsPage() {
     const now = new Date()
     const days = summarizeDays(attempts, now, range)
     const since = days[0].date.getTime()
-    return { history: computeHistory(attempts, now, goal), days, split: byExercise(attempts.filter((a) => a.at >= since)) }
+    const inPeriod = attempts.filter((a) => a.at >= since)
+    return { history: computeHistory(attempts, now, goal), days, split: byExercise(inPeriod), skills: bySkill(inPeriod) }
   }, [attempts, range, goal])
 
   if (!view) return <BackButton fallback={back} />
-  const { history, days, split } = view
+  const { history, days, split, skills } = view
 
   const picked = days.findIndex((d) => d.key === pickedKey)
   const selected = picked >= 0 ? picked : days.length - 1
   const day = days[selected]
   const select = (index: number) => setPickedKey(days[index].key)
 
-  const count = (n: number) => n.toLocaleString(dictionary.dateLocale)
   const fullDate = (date: Date) => date.toLocaleDateString(dictionary.dateLocale, { weekday: 'long', day: 'numeric', month: 'numeric' })
   const periodTotal = days.reduce((n, d) => n + d.count, 0)
   const periodCorrect = days.reduce((n, d) => n + d.correct, 0)
   const metDays = days.filter((d) => d.correct >= goal).length
   const mostPractised = Math.max(...split.map((s) => s.count), 1)
+  const mostPractisedSkill = Math.max(...skills.map((s) => s.count), 1)
   const exerciseName = (exercise: string) =>
     exercise === 'review' ? text.review : (dictionary.exercise.types[exercise as keyof typeof dictionary.exercise.types]?.label ?? exercise)
 
@@ -118,6 +119,18 @@ export function StatsPage() {
         </div>
       </section>
 
+      {/* The skill groups of Cvičiť; without answers in them the empty state below speaks for both. */}
+      {skills.length > 0 && (
+        <section aria-labelledby="skills-heading" className="mt-8">
+          <SectionTitle id="skills-heading">{text.bySkill(days.length)}</SectionTitle>
+          <ul className="divide-y divide-line rounded-card border border-line bg-surface px-4">
+            {skills.map((s) => (
+              <ShareRow key={s.skill} name={dictionary.practice.skills[s.skill]} count={s.count} correct={s.correct} most={mostPractisedSkill} />
+            ))}
+          </ul>
+        </section>
+      )}
+
       <section aria-labelledby="exercises-heading" className="mt-8">
         <SectionTitle id="exercises-heading">{text.byExercise(days.length)}</SectionTitle>
         {split.length === 0 ? (
@@ -128,23 +141,31 @@ export function StatsPage() {
         ) : (
           <ul className="divide-y divide-line rounded-card border border-line bg-surface px-4">
             {split.map((s) => (
-              <li key={s.exercise} className="py-3">
-                <p className="flex items-baseline justify-between gap-3">
-                  <span className="min-w-0 truncate font-medium">{exerciseName(s.exercise)}</span>
-                  <span className="shrink-0 text-sm text-ink-muted tabular-nums">
-                    {count(s.count)} · {home.percentCorrect(Math.round((s.correct / s.count) * 100))}
-                  </span>
-                </p>
-                {/* Length = share of the answers; the numbers above carry the exact values. */}
-                <div aria-hidden className="mt-2 h-1.5 rounded-full bg-surface-2">
-                  <div className="h-full rounded-full bg-brick" style={{ width: `${Math.max(2, (s.count / mostPractised) * 100)}%` }} />
-                </div>
-              </li>
+              <ShareRow key={s.exercise} name={exerciseName(s.exercise)} count={s.count} correct={s.correct} most={mostPractised} />
             ))}
           </ul>
         )}
       </section>
     </div>
+  )
+}
+
+/** One line of a split: name · answers · % right, and a bar by the share of the most practised. */
+function ShareRow({ name, count, correct, most }: { name: string; count: number; correct: number; most: number }) {
+  const dictionary = useT()
+  return (
+    <li className="py-3">
+      <p className="flex items-baseline justify-between gap-3">
+        <span className="min-w-0 truncate font-medium">{name}</span>
+        <span className="shrink-0 text-sm text-ink-muted tabular-nums">
+          {count.toLocaleString(dictionary.dateLocale)} · {dictionary.home.percentCorrect(Math.round((correct / count) * 100))}
+        </span>
+      </p>
+      {/* Length = share of the answers; the numbers above carry the exact values. */}
+      <div aria-hidden className="mt-2 h-1.5 rounded-full bg-surface-2">
+        <div className="h-full rounded-full bg-brick" style={{ width: `${Math.max(2, (count / most) * 100)}%` }} />
+      </div>
+    </li>
   )
 }
 

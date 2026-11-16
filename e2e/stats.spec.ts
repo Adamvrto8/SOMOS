@@ -46,6 +46,10 @@ test('the week chart on Domov opens the overview: streaks, a longer history, wha
 
   const practised = page.getByRole('region', { name: /^Čo si cvičil/ })
   await expect(practised.getByRole('listitem')).toHaveText([/^Slovná zásoba/, /^Kartičky/])
+  // By skill, above it: the vocab answers as Slovná zásoba, reviews left out.
+  const bySkill = page.getByRole('region', { name: /^Podľa zručností/ })
+  await expect(bySkill).toContainText('Podľa zručností · 7 dní')
+  await expect(bySkill.getByRole('listitem')).toHaveText([/^Slovná zásoba/])
 
   await page.getByRole('button', { name: 'Späť' }).tap()
   await expect(page).toHaveURL(/\/$/)
@@ -55,4 +59,5 @@ test('the overview is there before the first answer', async ({ page }) => {
   await page.goto('/stats')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Prehľad')
   await expect(page.getByText('V tomto období žiadne odpovede.')).toBeVisible()
+  await expect(page.getByRole('region', { name: /^Podľa zručností/ })).toHaveCount(0)
 })

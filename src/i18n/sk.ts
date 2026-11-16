@@ -388,6 +388,7 @@ export const sk = {
     previousDay: 'Predchádzajúci deň',
     nextDay: 'Nasledujúci deň',
     goalMet: 'cieľ splnený',
+    bySkill: (n: number) => `Podľa zručností · ${n} dní`,
     byExercise: (n: number) => `Čo si cvičil · ${n} dní`,
     review: 'Kartičky',
     nothing: 'V tomto období žiadne odpovede.',
@@ -595,6 +596,15 @@ export const sk = {
       done: 'Hotovo',
       up: (name: string) => `Posunúť vyššie: ${name}`,
       down: (name: string) => `Posunúť nižšie: ${name}`,
+    },
+    /** The skill group chips over the exercises (src/lib/skills.ts); a filter, the pick kept on the device. */
+    skills: {
+      label: 'Skupiny cvičení',
+      all: 'Všetko',
+      vocabulary: 'Slovná zásoba',
+      grammar: 'Gramatika',
+      writing: 'Písanie',
+      listening: 'Počúvanie a hovorenie',
     },
     mistakes: 'Opraviť chyby',
     duel: 'Duel',
