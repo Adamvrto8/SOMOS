@@ -59,7 +59,17 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 - carro: odkaz /topic/travel namiesto /topic/city (search_word nevracal tému).
 - Opravené: „Dnes je: …“ v profile, téma slova v search_word, sekcia „O appke“ (tím SOMOS, bez mien), prompt bez komentovania skorších odpovedí.
 
-### Beh 4
+### Beh 4 (2026-11-17, d7b79bd, Adam na Preview, všetkých 26 otázok)
+- Použiteľných odpovedí: 23 / 26 (nie: 14 vosotros, 16 počítač, 20 Francúzsko). Kritérium 22 / 26 splnené; žiadna španielčina zo Španielska, žiadny vymyslený tvar.
+- Opravy z behu 3 zabrali: deň v týždni (utorok), carro → /topic/city, problema zo slovníka, 12 tipov A1, tento týždeň bez starších lekcií.
+- 16: rod, úroveň a téma, ale bez samotného slova computadora (nástroj ho vrátil).
+- 20: napísal Paríž a potom „nemôžem odpovedať“; tvrdil, že vymyslenú vetu precvičí v Preklade viet.
+- 14: „v appke nie je“, hoci nastavenia majú španielčinu zo Španielska s vosotros (v mape len slovo v zozname nastavení).
+- Drobnosti: „se povie“ (9), „pod priemerom“ bez priemeru (22).
+- Tokeny: počas behu nenamerané, tabuľka chat_usage v Supabase chýbala (aj denný strop preto nefungoval). Vzorka po jej vytvorení (6 otázok, 7 volaní, d7b79bd): na otázku ~2000 input, ~8400 cache read, ~1400 cache write, ~500 output (vrátane thinking); cache_share 0,71. Cena (Haiku 5.5: 0,10 / 0,50 USD za 1M, cache read 0,01, cache write 0,125): ~0,0007 USD na otázku, ~0,71 USD za 1000 otázok.
+- Opravené: pravidlo „slovo vždy napíš“, odmietnutie bez faktu s príkladom, nič o obsahu appky bez nástroja či mapy, žiadne porovnanie s priemerom, spisovná slovenčina, sekcia mapy o variante španielčiny.
+
+### Beh 5
 - Dátum:
 - Použiteľných odpovedí: __ / 26
 - Namerané tokeny na otázku (input / output / cache_share):

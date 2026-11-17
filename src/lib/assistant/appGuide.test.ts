@@ -44,5 +44,7 @@ describe('app guide', () => {
     // Who makes the app: the team, never a person's name (Adam's wish).
     expect(guideText()).toContain('tím SOMOS')
     expect(guideText()).not.toMatch(/Vrťo|Adam/)
+    // The Spain variant has vosotros: eval run 4 said the app has nothing on it.
+    expect(guideText()).toContain('vosotros (vosotros habláis)')
   })
 })

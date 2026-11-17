@@ -95,6 +95,12 @@ export const GUIDE: GuideSection[] = [
     text: 'Prehľad, Môj slovník, účet (voliteľný, Google alebo kód na e-mail; s účtom sa pokrok synchronizuje) a nastavenia ako riadky: denný cieľ, automatické opakovanie, pripomienka, jazyk appky (slovenčina / angličtina), španielčina (mexická / zo Španielska), vzhľad, zvuky, výslovnosť, záloha, anonymné štatistiky, ochrana súkromia.',
   },
   {
+    id: 'variant',
+    title: 'Španielčina: mexická alebo zo Španielska',
+    links: ['/profile'],
+    text: 'Volí sa v Profile → Španielčina (Mexická / Zo Španielska) a pri prvom spustení; po zmene sa appka znova načíta a pokrok ostáva. Mexická je predvolená: bez vosotros (namiesto neho ustedes), slová ako carro, computadora, celular. Zo Španielska: slová zo Španielska (coche, ordenador, móvil…), v časovaní pribudne vosotros (vosotros habláis) a pretérito perfecto (he hablado). Ktorú má učiaci, je v jeho profile.',
+  },
+  {
     id: 'pripomienka',
     title: 'Pripomienka',
     links: ['/profile'],

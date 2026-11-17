@@ -337,4 +337,13 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('Dnes je')
     expect(SYSTEM_PROMPT).not.toContain('keď si nie si istý, povedz to raz')
   })
+
+  it('covers the rules from eval run 4', () => {
+    expect(SYSTEM_PROMPT).toContain('vždy napíš samotné španielske slovo') // počítač without computadora
+    expect(SYSTEM_PROMPT).toContain('nenapíš ani čiastočne') // answered Paris, then declined
+    expect(SYSTEM_PROMPT).toContain('nevydávaj za vetu z appky')
+    expect(SYSTEM_PROMPT).toContain('prejdi celú mapu vrátane nastavení') // vosotros "not in the app"
+    expect(SYSTEM_PROMPT).toContain('Neporovnávaj ich s priemerom')
+    expect(SYSTEM_PROMPT).toContain('sa povie, nie se povie')
+  })
 })
