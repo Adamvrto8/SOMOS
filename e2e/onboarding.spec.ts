@@ -8,6 +8,8 @@ const radio = (page: Page, name: string | RegExp) => page.getByRole('radio', { n
 const next = (page: Page) => button(page, 'Pokračovať')
 
 test('a new learner goes through the welcome into the first step of the path at their level', async ({ page }) => {
+  // The whole welcome and a whole 10-task lesson: ~21 s alone, past 30 s with 4 workers busy.
+  test.slow()
   await page.goto('/')
   await expect(page).toHaveURL(/\/welcome$/)
   await expect(page.getByRole('heading', { name: '¡Hola!' })).toBeVisible()
