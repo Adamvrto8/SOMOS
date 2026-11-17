@@ -346,4 +346,10 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('Neporovnávaj ich s priemerom')
     expect(SYSTEM_PROMPT).toContain('sa povie, nie se povie')
   })
+
+  it('asks for links woven into the sentence, never a bare path', () => {
+    expect(SYSTEM_PROMPT).toContain('vložené priamo do vety ako [text](/cesta)')
+    expect(SYSTEM_PROMPT).toContain('Cestu nikdy nepíš holú')
+    expect(SYSTEM_PROMPT).not.toContain('odkazy píš holé')
+  })
 })

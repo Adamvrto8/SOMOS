@@ -52,6 +52,9 @@ Zamietnuté / odložené: model v prehliadači (Gemini Nano, WebLLM) – slabá 
 
 Rozhodnutie: asistent je platená funkcia; cieľ je pokryť tokeny, nie zarábať.
 
+Rozhodnutie (Adam, 2026-11-17): **SOMO je na začiatku jediná funkcia za paywallom** a paywall slúži hlavne ako poistka
+proti zneužitiu (nikto nemôže vo veľkom míňať tokeny zadarmo), nie ako zdroj zisku. Všetko ostatné v appke ostáva zadarmo.
+
 - **Free používateľ:** asistent vidí, ale nemá prístup (alebo malý skúšobný limit, napr. 5 otázok – otvorené rozhodnutie).
 - **Platený:** denný limit otázok (napr. 30/deň) a limit dĺžky vstupu/výstupu; po limite „dosiahol si denný limit“.
 - Vyžaduje **účet** (Supabase), aby sa dalo spárovať predplatné a limit na používateľa. Bez účtu sa asistent nezobrazí.
@@ -62,7 +65,10 @@ Rozhodnutie: asistent je platená funkcia; cieľ je pokryť tokeny, nie zarába�
 Pozor: Google Play (balík TWA, `docs/google-play-setup.md`) môže pre digitálne služby vyžadovať **Play Billing**
 a províziu – overiť pri rozhodovaní o cene. Vercel Hobby je pre komerčné použitie nevhodný → platený plán.
 
-Orientačná kalkulácia na doplnenie po meraní: priemerná otázka ≈ prompt (~2–3 k tokenov so schémami nástrojov a výsledkami) +
+Namerané (2026-11-17, Haiku 5.5, `docs/chat-assistant-eval.md` beh 4): ~0,0007 USD na otázku, ~0,71 USD za 1000 otázok,
+71 % vstupu z cache. Cena predplatného teda nepokrýva tokeny, ale poplatky platobnej brány, DPH a prípadnú províziu Google Play.
+
+Pôvodná orientačná kalkulácia: priemerná otázka ≈ prompt (~2–3 k tokenov so schémami nástrojov a výsledkami) +
 odpoveď (~300 tokenov). Pri Flash-Lite / Haiku je to rádovo zlomok centu na otázku; cena predplatného sa určí z nameranej
 priemernej spotreby × denný limit × rezerva (poplatky platobnej brány, DPH).
 

@@ -41,6 +41,7 @@
   --animate-sun-rise: sun-rise 520ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
   --animate-sun-turn: sun-turn 2400ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
   --animate-badge-pop: badge-pop 320ms cubic-bezier(0.2, 1.6, 0.4, 1) backwards;
+  --animate-typing-dot: typing-dot 1200ms ease-in-out infinite;
 
   @keyframes pop {
     50% {
@@ -98,6 +99,20 @@
     from {
       transform: scale(0);
       opacity: 0;
+    }
+  }
+
+  /* SOMO is thinking: three dots rise and light up one after another. */
+  @keyframes typing-dot {
+    0%,
+    60%,
+    100% {
+      transform: none;
+      opacity: 0.35;
+    }
+    30% {
+      transform: translateY(-4px);
+      opacity: 1;
     }
   }
 }

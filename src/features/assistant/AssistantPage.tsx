@@ -5,28 +5,46 @@ import { BackButton } from '../../components/BackButton'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { plainAnswer } from '../../lib/assistant/answerText'
+import { answerParts } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { addTurn, useTurns } from '../../lib/assistant/history'
 import { useDevMode } from '../../lib/devMode'
 
-const LINK = /(\/(?:word|practice\/grammar)\/[\w-]+)/g
-
-/** Links in an answer (`/word/casa`, `/practice/grammar/ser-estar`) become in-app links. */
+/** An answer with its links woven into the sentences: "otvor [opakovanie](/review)" shows "opakovanie" as a link. */
 function AnswerText({ text }: { text: string }) {
   return (
     <p className="whitespace-pre-wrap">
-      {plainAnswer(text).split(LINK).map((part, i) =>
-        // split() with one capture group puts the captured links at the odd indexes.
-        i % 2 === 1 ? (
-          <Link key={i} to={part} className="underline focus-visible:outline-2 focus-visible:outline-brick">
-            {part}
-          </Link>
+      {answerParts(text).map((part, i) =>
+        part.type === 'text' ? (
+          part.text
         ) : (
-          part
+          <Link
+            key={i}
+            to={part.to}
+            className="font-medium text-brick underline decoration-brick/40 underline-offset-2 hover:decoration-brick focus-visible:outline-2 focus-visible:outline-brick"
+          >
+            {part.label}
+          </Link>
         ),
       )}
     </p>
+  )
+}
+
+/** Three dots that rise one after another while SOMO thinks; screen readers hear the label once. */
+function Thinking({ label }: { label: string }) {
+  return (
+    <div role="status" className="flex w-fit items-center gap-1.5 rounded-card border border-line px-4 py-3 motion-safe:animate-fade-in">
+      <span className="sr-only">{label}</span>
+      {[0, 150, 300].map((delay) => (
+        <span
+          key={delay}
+          aria-hidden="true"
+          className="size-2 rounded-full bg-ink-muted opacity-35 animate-typing-dot"
+          style={{ animationDelay: `${delay}ms` }}
+        />
+      ))}
+    </div>
   )
 }
 
@@ -116,7 +134,7 @@ export function AssistantPage() {
             {pending !== null && (
               <section className="flex flex-col gap-2">
                 <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{pending}</p>
-                {waiting && <p className="text-ink-muted">{text.thinking}</p>}
+                {waiting && <Thinking label={text.thinking} />}
                 {error && (
                   <div role="alert" className="flex flex-col gap-2 rounded-card border border-line px-3 py-2">
                     <p>{error}</p>
