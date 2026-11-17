@@ -3,7 +3,7 @@ import chatSource from '../../../api/chat.ts?raw'
 import { tips, topics } from '../../data'
 import { EXERCISE_TYPES } from '../exerciseOrder'
 import { buildAppMap } from './appMap'
-import { MAX_APP_CHARS, MAX_LEARNER_CHARS } from './limits'
+import { MAX_APP_CHARS, MAX_LEARNER_CHARS, MAX_PAGE_CHARS } from './limits'
 
 const map = buildAppMap({ duels: true, accounts: true, reminders: false })
 
@@ -36,5 +36,6 @@ describe('app map', () => {
     const server = (name: string) => Number(chatSource.match(new RegExp(`${name} = ([\\d_]+)`))![1].replace(/_/g, ''))
     expect(server('MAX_APP_CHARS')).toBe(MAX_APP_CHARS)
     expect(server('MAX_LEARNER_CHARS')).toBe(MAX_LEARNER_CHARS)
+    expect(server('MAX_PAGE_CHARS')).toBe(MAX_PAGE_CHARS)
   })
 })

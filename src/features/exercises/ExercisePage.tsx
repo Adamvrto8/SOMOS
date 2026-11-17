@@ -7,6 +7,7 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import { topics } from '../../data'
 import { useT } from '../../i18n'
+import { useHideSomo } from '../assistant/somoVisibility'
 import { levelAbove, TABLE_TENSES, TENSE_LABELS, TENSE_LEVEL, type TableTense } from '../../lib/conjugate'
 import { getStablePool, lessonSizeOf, type ExerciseType, type LessonFilter } from '../../lib/lesson'
 import {
@@ -35,6 +36,8 @@ function rememberedGroup(type: ExerciseType): string {
 
 /** One exercise (`/practice?type=…`): topic or tense, level, its numbered lessons and their test. */
 export function ExercisePage() {
+  // Začať lekciu sits at the bottom where SOMO's pill would.
+  useHideSomo()
   const dictionary = useT()
   const text = dictionary.practice
   const [params] = useSearchParams()

@@ -14,6 +14,7 @@ export const MAX_TOOL_RESULT_CHARS = 6000
 export const MAX_BODY_CHARS = 90_000 // was 60_000: the app map and the profile ride along
 export const MAX_APP_CHARS = 20_000 // src/lib/assistant/limits.ts has the same
 export const MAX_LEARNER_CHARS = 6_000
+export const MAX_PAGE_CHARS = 300
 export const DEFAULT_DAILY_CALLS = 200
 const ANTHROPIC_TIMEOUT_MS = 22_000
 const SUPABASE_TIMEOUT_MS = 2000
@@ -21,6 +22,7 @@ const SUPABASE_TIMEOUT_MS = 2000
 export const SYSTEM_PROMPT = `Si SOMO, tútor a sprievodca v appke SOMOS, v ktorej sa učiaci učí španielčinu. Keď sa ťa spýtajú, kto si, predstav sa ako SOMO. Dostávaš:
 - <mapa_appky>: čo appka teraz obsahuje a kde to je (obrazovky, cvičenia, témy, gramatické tipy s id, množstvo obsahu, čo je na zariadení dostupné).
 - <profil_ucenika>: kto sa pýta a ako sa mu darí (jazyk appky, variant španielčiny, úroveň, denný cieľ, séria, kartičky, úspešnosť, chyby, Cesta, testy, denník).
+- <aktualna_stranka> (niekedy): na čo sa učiaci pozeral, keď otvoril chat. Keď sa pýta na "toto", "toto slovo", "tento tip" alebo "tu", myslí to, čo je na nej; inak ju nespomínaj.
 - nástroje: search_word (slovo s príkladom), get_conjugation (tvary slovesa), get_grammar_tip (tip podľa id z mapy), get_my_records (podrobné záznamy učiaceho).
 
 Ako odpovedať:
@@ -191,6 +193,8 @@ function parseMessages(body: unknown): Message[] | undefined {
 export interface ChatContext {
   app: string
   learner: string
+  /** What the learner is looking at when they asked (src/lib/assistant/page.ts); missing on the /assistant page. */
+  page?: string
 }
 
 /** The app map and the learner's profile the app sends along: undefined when missing, 'bad' when it breaks the limits. */
@@ -199,7 +203,8 @@ function parseContext(body: unknown): ChatContext | undefined | 'bad' {
   const context = body.context
   if (!isRecord(context) || typeof context.app !== 'string' || typeof context.learner !== 'string') return 'bad'
   if (context.app.length > MAX_APP_CHARS || context.learner.length > MAX_LEARNER_CHARS) return 'bad'
-  return { app: context.app, learner: context.learner }
+  if (context.page !== undefined && (typeof context.page !== 'string' || context.page.length > MAX_PAGE_CHARS)) return 'bad'
+  return { app: context.app, learner: context.learner, ...(context.page?.trim() ? { page: context.page } : {}) }
 }
 
 type SystemBlock = { type: 'text'; text: string; cache_control?: { type: 'ephemeral' } }
@@ -213,6 +218,7 @@ export function systemBlocks(context?: ChatContext): SystemBlock[] {
   if (context?.app.trim()) blocks.push({ type: 'text', text: `<mapa_appky>\n${context.app}\n</mapa_appky>` })
   blocks[blocks.length - 1].cache_control = { type: 'ephemeral' }
   if (context?.learner.trim()) blocks.push({ type: 'text', text: `<profil_ucenika>\n${context.learner}\n</profil_ucenika>` })
+  if (context?.page) blocks.push({ type: 'text', text: `<aktualna_stranka>\n${context.page}\n</aktualna_stranka>` })
   return blocks
 }
 

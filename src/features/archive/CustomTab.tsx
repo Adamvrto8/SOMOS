@@ -1,6 +1,7 @@
 import { Plus } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
+import { useHideSomo } from '../assistant/somoVisibility'
 import type { CustomWord } from '../../lib/db'
 import { ArchiveFilters, NoMatches } from './ArchiveFilters'
 import { CustomWordRow } from './CustomWordRow'
@@ -9,6 +10,8 @@ import { useArchiveFilter } from './useArchiveFilter'
 
 /** "Moje slová": the learner's own words, newest first, with a floating "+". */
 export function CustomTab({ words }: { words: CustomWord[] }) {
+  // The + button sits where SOMO's pill would.
+  useHideSomo()
   const filter = useArchiveFilter(new Set(words.flatMap((c) => (c.topic ? [c.topic] : []))))
   const text = useT().archive
 

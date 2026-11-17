@@ -1250,6 +1250,8 @@ export const sk = {
     placeholder: 'Napíš otázku…',
     send: 'Poslať',
     thinking: 'Premýšľam…',
+    open: 'Opýtať sa SOMO',
+    close: 'Zavrieť SOMO',
     you: 'Ty',
     assistant: 'SOMO',
     copy: 'Kopírovať konverzáciu',

@@ -20,6 +20,8 @@ import { MAX_APP_CHARS, MAX_LEARNER_CHARS } from './limits'
 export interface ChatContext {
   app: string
   learner: string
+  /** The screen SOMO was opened on (page.ts), when opened from the floating button. */
+  page?: string
 }
 
 export const appFlags = (): AppFlags => ({

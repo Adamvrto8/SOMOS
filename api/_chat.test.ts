@@ -1,6 +1,6 @@
 // Underscore prefix: Vercel does not deploy this file as a function.
 import { describe, expect, it, vi } from 'vitest'
-import { chat, MAX_APP_CHARS, MAX_BODY_CHARS, MAX_LEARNER_CHARS, MAX_MESSAGES, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, SYSTEM_PROMPT, systemBlocks, TOOL_NAMES, TOOLS } from './chat.ts'
+import { chat, MAX_APP_CHARS, MAX_BODY_CHARS, MAX_LEARNER_CHARS, MAX_MESSAGES, MAX_PAGE_CHARS, MAX_TOOL_RESULT_CHARS, MAX_USER_CHARS, SYSTEM_PROMPT, systemBlocks, TOOL_NAMES, TOOLS } from './chat.ts'
 
 const USER_ID = '11111111-1111-4111-8111-111111111111'
 const ENV = {
@@ -325,6 +325,21 @@ describe('api/chat context', () => {
   it('leaves out an empty profile block', () => {
     expect(systemBlocks({ app: 'MAPA', learner: '  ' })).toHaveLength(2)
   })
+
+  it('adds the page the learner is on after the profile, never cached', () => {
+    const blocks = systemBlocks({ app: 'MAPA', learner: 'PROFIL', page: 'Detail slova „casa“, /word/casa' })
+    expect(blocks).toHaveLength(4)
+    expect(blocks[3]).toEqual({ type: 'text', text: '<aktualna_stranka>\nDetail slova „casa“, /word/casa\n</aktualna_stranka>' })
+  })
+
+  it('refuses an oversized or malformed page', async () => {
+    for (const page of ['x'.repeat(MAX_PAGE_CHARS + 1), 5]) {
+      const { impl, calls } = fakes()
+      const res = await chat(request(withContext({ app: '', learner: '', page })), ENV, impl)
+      expect(res.status).toBe(400)
+      expect(anthropicCalls(calls)).toHaveLength(0)
+    }
+  })
 })
 
 describe('SYSTEM_PROMPT', () => {
@@ -351,5 +366,9 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('vložené priamo do vety ako [text](/cesta)')
     expect(SYSTEM_PROMPT).toContain('Cestu nikdy nepíš holú')
     expect(SYSTEM_PROMPT).not.toContain('odkazy píš holé')
+  })
+
+  it('explains the page the learner opened SOMO on', () => {
+    expect(SYSTEM_PROMPT).toContain('<aktualna_stranka>')
   })
 })

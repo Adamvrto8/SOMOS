@@ -76,6 +76,18 @@ describe('ask', () => {
     expect(sent[0].context).toBeUndefined()
   })
 
+  it('sends the page SOMO was opened on with the context', async () => {
+    const { d, sent } = deps([answer('Casa.')], { page: 'Detail slova „casa“, /word/casa' })
+    await ask([], 'čo znamená toto slovo?', d)
+    expect(sent[0].context).toEqual({ app: 'MAPA', learner: 'PROFIL', page: 'Detail slova „casa“, /word/casa' })
+  })
+
+  it('keeps the page even when the rest of the context fails', async () => {
+    const { d, sent } = deps([answer('Casa.')], { page: 'Téma „Mesto“, /topic/city', context: async () => { throw new Error('dexie') } })
+    await ask([], 'čo je tu?', d)
+    expect(sent[0].context).toEqual({ app: '', learner: '', page: 'Téma „Mesto“, /topic/city' })
+  })
+
   it('awaits a tool that answers later', async () => {
     const tool = vi.fn(async () => ({ content: '{"later":true}', isError: false }))
     const { d, sent } = deps([toolUse('t1', 'get_my_records', { kind: 'mistakes' }), answer('Ok.')], { tool })

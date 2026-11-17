@@ -1155,6 +1155,8 @@ export const en: Dictionary = {
     placeholder: 'Type a question…',
     send: 'Send',
     thinking: 'Thinking…',
+    open: 'Ask SOMO',
+    close: 'Close SOMO',
     you: 'You',
     assistant: 'SOMO',
     copy: 'Copy conversation',

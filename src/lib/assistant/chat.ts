@@ -60,6 +60,8 @@ export interface ChatDeps {
   online?: () => boolean
   tool?: (name: string, input: unknown) => ToolOutcome | Promise<ToolOutcome>
   context?: () => Promise<ChatContext | undefined>
+  /** What the learner was looking at when they opened SOMO (page.ts); goes along even when the rest of the context is late. */
+  page?: string
 }
 
 const isBlockList = (value: unknown): value is Block[] =>
@@ -111,7 +113,7 @@ const textOf = (blocks: Block[]) =>
  * the same question again.
  */
 export async function ask(turns: readonly Turn[], question: string, deps: ChatDeps = {}): Promise<Answer> {
-  const { fetchImpl = fetch, token = accessToken, online = () => navigator.onLine, tool = runTool, context: buildContext = buildChatContext } = deps
+  const { fetchImpl = fetch, token = accessToken, online = () => navigator.onLine, tool = runTool, context: buildContext = buildChatContext, page } = deps
   const trimmed = question.trim()
   if (!trimmed || trimmed.length > MAX_QUESTION_CHARS) throw new ChatFailure('failed')
   if (!online()) throw new ChatFailure('offline')
@@ -119,13 +121,14 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
   if (!jwt) throw new ChatFailure('not-signed-in')
   // Once per question: the app map and the learner's numbers do not change while the model calls tools.
   let timer: ReturnType<typeof setTimeout> | undefined
-  const context = await Promise.race([
+  const built = await Promise.race([
     buildContext().catch(() => undefined),
     new Promise<undefined>((resolve) => {
       timer = setTimeout(() => resolve(undefined), CONTEXT_TIMEOUT_MS)
     }),
   ])
   clearTimeout(timer)
+  const context: ChatContext | undefined = page ? { app: built?.app ?? '', learner: built?.learner ?? '', page } : built
 
   let messages: Message[] = [
     ...turns.slice(-MAX_TURNS_SENT).flatMap((turn): Message[] => [
