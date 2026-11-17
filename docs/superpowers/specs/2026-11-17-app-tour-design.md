@@ -1,6 +1,13 @@
 # App tour (spotlight walkthrough) — design
 
-Date: 2026-11-17. Status: awaiting Adam's review.
+Date: 2026-11-17. Status: implemented on branch `app-tour` (plan: `docs/superpowers/plans/2026-11-17-app-tour.md`), not pushed;
+awaiting Adam's phone test.
+
+As built, differing from the text below (see the plan's "Deviations"): Domov has two steps (what's next, then streak and
+goal), so 7 steps in all and 6 without SOMO's pill; usage numbers are new `step` values of the `welcome` event
+(`tour-start`, `tour-declined`, `tour-done`), no new event and no SQL change; only learners who finish the welcome after
+this ships get the offer. The cut-out takes in what sticks out of a target (the raised Cesta button) and has a brick
+outline, so it shows on the dark theme too.
 
 ## Goal
 
