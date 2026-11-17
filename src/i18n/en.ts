@@ -102,7 +102,7 @@ export const en: Dictionary = {
         nextDay: 'Came back the next day',
         withinWeek: 'Came back within 7 days (of those who started a week ago)',
         welcome: 'Welcome',
-        steps: { welcome: 'Intro', motivation: 'Why', level: 'Level', goal: 'Daily goal', reminder: 'Reminder', install: 'Home screen', ready: 'Ready', done: 'Finished' },
+        steps: { welcome: 'Intro', motivation: 'Why', level: 'Level', goal: 'Daily goal', reminder: 'Reminder', install: 'Home screen', ready: 'Ready', done: 'Finished', 'tour-start': 'Tour: yes', 'tour-done': 'Tour: to the end', 'tour-declined': 'Tour: no' },
         exercises: 'Exercises',
         levels: 'Levels',
         allLevels: 'All levels',

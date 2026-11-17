@@ -36,6 +36,11 @@ describe('parseBatch', () => {
     expect(parseBatch(batch(events))?.events).toHaveLength(7)
   })
 
+  it('takes the steps of the tour of the app as welcome steps', () => {
+    const events = ['tour-start', 'tour-declined', 'tour-done'].map((step) => ({ name: 'welcome', day: '2026-11-17', at: 1, props: { step } }))
+    expect(parseBatch(batch(events))?.events).toHaveLength(3)
+  })
+
   it.each([
     ['an unknown event', { name: 'click', day: '2026-10-25', at: 1, props: {} }],
     ['an extra prop', { name: 'open', day: '2026-10-25', at: 1, props: { user: 'x' } }],

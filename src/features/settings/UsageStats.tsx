@@ -9,7 +9,7 @@ import { SettingsHint, SettingsPart, SettingsSubpage } from './SettingsSubpage'
 
 const PERIODS = ['7', '30', '90'] as const
 type Period = (typeof PERIODS)[number]
-const STEP_ORDER = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done']
+const STEP_ORDER = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done', 'tour-start', 'tour-done', 'tour-declined']
 
 /** Rejects with a UsageReportError. */
 async function loadUsageReport(days: number): Promise<UsageReport> {

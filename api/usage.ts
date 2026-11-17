@@ -45,7 +45,7 @@ export interface UsageDeps {
 // src/data/types.ts (Level), the welcome's steps and screenOf() in src/lib/usage.ts.
 const TYPES = ['cloze', 'choice', 'conjugation', 'builder', 'translation', 'vocab', 'dictation', 'speaking', 'truefalse', 'findmistake', 'matching', 'mixed']
 const LEVELS = ['A1', 'A2', 'B1', 'B2']
-const STEPS = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done']
+const STEPS = ['welcome', 'motivation', 'level', 'goal', 'reminder', 'install', 'ready', 'done', 'tour-start', 'tour-declined', 'tour-done']
 const SCREENS = ['home', 'search', 'word', 'topic', 'practice', 'path', 'grammar', 'tests', 'test', 'duel', 'archive', 'profile', 'review', 'stats']
 const SOURCES = ['lesson', 'mistakes', 'test', 'first', 'path', 'mixed']
 

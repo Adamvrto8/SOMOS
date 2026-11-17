@@ -134,7 +134,7 @@ export const sk = {
         nextDay: 'Vrátili sa na druhý deň',
         withinWeek: 'Vrátili sa do 7 dní (z tých, čo začali pred týždňom)',
         welcome: 'Uvítanie',
-        steps: { welcome: 'Úvod', motivation: 'Prečo', level: 'Úroveň', goal: 'Denný cieľ', reminder: 'Pripomienka', install: 'Na plochu', ready: 'Pripravené', done: 'Dokončené' } as Record<string, string>,
+        steps: { welcome: 'Úvod', motivation: 'Prečo', level: 'Úroveň', goal: 'Denný cieľ', reminder: 'Pripomienka', install: 'Na plochu', ready: 'Pripravené', done: 'Dokončené', 'tour-start': 'Zoznámenie: áno', 'tour-done': 'Zoznámenie: do konca', 'tour-declined': 'Zoznámenie: nie' } as Record<string, string>,
         exercises: 'Cvičenia',
         levels: 'Úrovne',
         allLevels: 'Všetky úrovne',
