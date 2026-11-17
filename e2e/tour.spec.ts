@@ -70,6 +70,15 @@ test('the phone Back and Preskočiť end the tour on Domov', async ({ page }) =>
   await expect(page).toHaveURL(/\/$/)
 })
 
+test('the highlight takes in the whole raised Cesta button', async ({ page }) => {
+  await page.goto('/?tour=1')
+  for (let i = 0; i < 3; i++) await button(page, 'Ďalej').tap()
+  await expect(tour(page).getByRole('heading', { name: 'Cesta' })).toBeVisible()
+  const circle = (await page.locator('[data-tour="tab-path"] > span').first().boundingBox())!
+  const spot = page.locator('[data-tour-spotlight]')
+  await expect.poll(async () => (await spot.boundingBox())!.y).toBeLessThanOrEqual(circle.y)
+})
+
 test('Profil takes the tour again', async ({ page }) => {
   await page.goto('/profile')
   await page.getByRole('link', { name: 'Zopakovať zoznámenie' }).tap()
