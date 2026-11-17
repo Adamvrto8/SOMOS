@@ -52,8 +52,10 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
   const closeButton = useRef<HTMLButtonElement>(null)
   // The latest callback, without restarting the animation when it changes.
   const closedRef = useRef(onClosed)
+  const closeRef = useRef(onClose)
   useLayoutEffect(() => {
     closedRef.current = onClosed
+    closeRef.current = onClose
   })
 
   useEffect(() => {
@@ -76,6 +78,12 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
       return
     }
 
+    // Pulled down by a finger: the sheet goes into the pill from where it was let go.
+    const dragged = el.style.transform
+    const dimmed = backdrop.current.style.opacity === '' ? 1 : Number(backdrop.current.style.opacity)
+    el.style.transform = ''
+    backdrop.current.style.opacity = ''
+
     const shape = bubbleOf(el, pill.current)
     Object.assign(label.current.style, { left: `${shape.left}px`, top: `${shape.top}px`, width: `${shape.width}px`, height: `${shape.height}px` })
 
@@ -94,14 +102,19 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
       run(content.current, [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 0, offset: 0.3 }, { opacity: 1, transform: 'none' }], {
         easing: 'linear',
       }),
-      run(backdrop.current, [{ opacity: 0 }, { opacity: 1 }], { easing: 'linear' }),
+      run(backdrop.current, [{ opacity: 0 }, { opacity: dimmed }], { easing: 'linear' }),
     ]
+    if (closing && dragged) animations.push(el.animate([{ transform: dragged }, { transform: 'none' }], { duration, easing, fill: 'both' }))
     let cancelled = false
     void animations[0].finished.then(
       () => {
         if (cancelled) return
         if (closing) closedRef.current()
-        else closeButton.current?.focus({ preventScroll: true })
+        else {
+          // Opened: the end state is the sheet's own style, so the animations can go and a drag can move it.
+          animations.forEach((animation) => animation.cancel())
+          closeButton.current?.focus({ preventScroll: true })
+        }
       },
       () => {},
     )
@@ -120,6 +133,78 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose, closing])
 
+  // Pulled down with a finger, from its top or from a conversation scrolled to its start: far or fast enough closes it,
+  // less springs back. Touch listeners of our own, as only they can stop the page from taking the gesture.
+  useEffect(() => {
+    const el = panel.current
+    const shade = backdrop.current
+    if (!el || !shade || closing) return
+    let startY = 0
+    let startAt = 0
+    let dy = 0
+    let can = false
+    let dragging = false
+
+    const set = (offset: number) => {
+      el.style.transform = offset > 0 ? `translateY(${offset}px)` : ''
+      shade.style.opacity = offset > 0 ? String(Math.max(0, 1 - offset / el.offsetHeight)) : ''
+    }
+    // Only when nothing between the finger and the sheet is scrolled down: then a pull is not a scroll.
+    const atTop = (target: EventTarget | null) => {
+      for (let node = target instanceof Element ? target : null; node && node !== el; node = node.parentElement) {
+        if (node.scrollTop > 0) return false
+      }
+      return true
+    }
+    const onStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return
+      startY = e.touches[0].clientY
+      startAt = e.timeStamp
+      dy = 0
+      can = atTop(e.target)
+      dragging = false
+    }
+    const onMove = (e: TouchEvent) => {
+      if (!can) return
+      dy = e.touches[0].clientY - startY
+      if (!dragging) {
+        if (dy < 0) can = false // an upward move is the conversation scrolling
+        if (dy < 8) return
+        dragging = true
+        el.getAnimations().forEach((animation) => animation.finish())
+      }
+      e.preventDefault()
+      set(Math.max(0, dy - 8))
+    }
+    const onEnd = (e: TouchEvent) => {
+      if (!dragging) return
+      dragging = false
+      const speed = dy / Math.max(1, e.timeStamp - startAt)
+      if (dy > Math.min(140, el.offsetHeight / 4) || (speed > 0.6 && dy > 40)) {
+        closeRef.current()
+        return
+      }
+      // Back up into place.
+      const from = el.style.transform
+      const dim = shade.style.opacity
+      set(0)
+      if (from && typeof el.animate === 'function' && !reducedMotion()) {
+        el.animate([{ transform: from }, { transform: 'none' }], { duration: 200, easing: OPEN_EASING })
+        shade.animate([{ opacity: dim || 1 }, { opacity: 1 }], { duration: 200 })
+      }
+    }
+    el.addEventListener('touchstart', onStart, { passive: true })
+    el.addEventListener('touchmove', onMove, { passive: false })
+    el.addEventListener('touchend', onEnd)
+    el.addEventListener('touchcancel', onEnd)
+    return () => {
+      el.removeEventListener('touchstart', onStart)
+      el.removeEventListener('touchmove', onMove)
+      el.removeEventListener('touchend', onEnd)
+      el.removeEventListener('touchcancel', onEnd)
+    }
+  }, [closing])
+
   // Under the app header (h-14 + safe area), with a little air so the logo stays clear.
   const top = 'top-[calc(3.5rem+0.5rem+env(safe-area-inset-top))]'
   return (
@@ -136,7 +221,9 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
         className="absolute inset-0 mx-auto flex max-w-[480px] flex-col rounded-t-3xl border-t border-line bg-bg px-4 shadow-[0_-12px_40px_-12px_rgb(0_0_0/0.35)] sm:border-x"
       >
         <div ref={content} className="flex min-h-0 flex-1 flex-col">
-          <header className="flex shrink-0 items-center justify-between pt-3">
+          {/* The handle: the sheet can be pulled down to close. */}
+          <span aria-hidden="true" className="mx-auto mt-2 block h-1 w-10 shrink-0 rounded-full bg-line" />
+          <header className="flex shrink-0 items-center justify-between pt-1">
             <h2 className="font-serif text-2xl font-semibold tracking-tight">{text.title}</h2>
             <button
               ref={closeButton}

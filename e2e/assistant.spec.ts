@@ -120,6 +120,38 @@ test('Back, ✕ and Escape close the sheet and leave the learner where they were
   await expect(page).toHaveURL(/\/topic\/city$/)
 })
 
+/** A finger pulling down from (x, y) by `distance` pixels, in steps like a real swipe. */
+async function pullDown(page: Page, x: number, y: number, distance: number) {
+  const cdp = await page.context().newCDPSession(page)
+  const touch = (type: string, at: number) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: type === 'touchEnd' ? [] : [{ x, y: at }] })
+  await touch('touchStart', y)
+  for (let step = 1; step <= 10; step++) {
+    await touch('touchMove', y + (distance * step) / 10)
+    await page.waitForTimeout(16)
+  }
+  await touch('touchEnd', y + distance)
+}
+
+test('pulling the sheet down closes it, a short pull lets it spring back', async ({ page }) => {
+  await signedInDev(page)
+  await page.goto('/topic/city')
+  await pill(page).tap()
+  await expect(sheet(page)).toBeVisible()
+  const title = sheet(page).getByRole('heading', { name: 'SOMO' })
+  await expect(page.getByRole('button', { name: 'Zavrieť SOMO' })).toBeFocused()
+  const box = (await title.boundingBox())!
+
+  await pullDown(page, box.x + 20, box.y + 10, 30)
+  await page.waitForTimeout(400)
+  await expect(sheet(page)).toBeVisible()
+  expect((await title.boundingBox())!.y).toBeCloseTo(box.y, 0)
+
+  await pullDown(page, box.x + 20, box.y + 10, 300)
+  await expect(sheet(page)).toHaveCount(0)
+  await expect(page).toHaveURL(/\/topic\/city$/)
+  await expect(pill(page)).toBeVisible()
+})
+
 test('the pill stays off screens with their own bottom button, and off without developer mode', async ({ page }) => {
   await signedInDev(page)
   await page.goto('/')
