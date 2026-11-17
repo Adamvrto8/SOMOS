@@ -123,7 +123,7 @@ test('Back, ✕ and Escape close the sheet and leave the learner where they were
 /** A finger pulling down from (x, y) by `distance` pixels, in steps like a real swipe. */
 async function pullDown(page: Page, x: number, y: number, distance: number) {
   const cdp = await page.context().newCDPSession(page)
-  const touch = (type: string, at: number) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: type === 'touchEnd' ? [] : [{ x, y: at }] })
+  const touch = (type: 'touchStart' | 'touchMove' | 'touchEnd', at: number) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: type === 'touchEnd' ? [] : [{ x, y: at }] })
   await touch('touchStart', y)
   for (let step = 1; step <= 10; step++) {
     await touch('touchMove', y + (distance * step) / 10)
