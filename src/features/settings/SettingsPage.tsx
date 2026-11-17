@@ -1,4 +1,4 @@
-import { AudioLines, Bell, ChartNoAxesColumn, CircleAlert, DatabaseBackup, Globe, Languages, Layers, Palette, Plus, ShieldCheck, Star, Target, Volume2, Wrench } from 'lucide-react'
+import { AudioLines, Bell, ChartNoAxesColumn, CircleAlert, Compass, DatabaseBackup, Globe, Languages, Layers, Palette, Plus, ShieldCheck, Star, Target, Volume2, Wrench } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useCustomWords, useSavedItems } from '../../lib/archive'
 import { useMistakes } from '../../lib/mistakes'
@@ -86,6 +86,7 @@ export function SettingsPage() {
         <SettingsRow to="/profile/look" icon={Palette} title={text.appearance} value={themePref === 'system' ? text.lookOptions[look] : `${text.lookOptions[look]} · ${text.themeOptions[themePref]}`} />
         <SettingsRow to="/profile/sound" icon={Volume2} title={text.sound} value={text.soundOptions[soundSet]} />
         <SettingsRow to="/profile/voice" icon={AudioLines} title={text.voice.title} value={voice} />
+        <SettingsRow to="/?tour=1" icon={Compass} title={dictionary.tour.replay} />
       </SettingsGroup>
 
       <SettingsGroup id="settings-data" title={text.groups.data}>

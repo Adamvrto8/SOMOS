@@ -68,6 +68,8 @@ test('a new learner goes through the welcome into the first step of the path at 
   await page.getByRole('button', { name: 'Ukončiť lekciu' }).tap()
   await expect(page).toHaveURL(/\/$/)
   await expect(page.getByRole('navigation', { name: 'Hlavná navigácia' })).toBeVisible()
+  // The first Domov after the first lesson offers the tour of the app.
+  await expect(page.getByRole('heading', { name: 'Krátke zoznámenie s appkou?' })).toBeVisible()
   await page.goto('/profile/goal')
   await expect(radio(page, /30/)).toBeChecked()
 

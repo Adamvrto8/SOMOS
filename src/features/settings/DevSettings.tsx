@@ -1,4 +1,4 @@
-import { Bug, ChartNoAxesColumn, Flag, MessageCircle, PartyPopper, PowerOff, Sun } from 'lucide-react'
+import { Bug, ChartNoAxesColumn, Compass, Flag, MessageCircle, PartyPopper, PowerOff, Sun } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/Button'
@@ -9,6 +9,7 @@ import { setDevMode } from '../../lib/devMode'
 import { errorReportsOn, reportError } from '../../lib/errorReports'
 import { resetOnboarding } from '../../lib/onboarding'
 import { reminderSupport } from '../../lib/reminder'
+import { offerTourAgain } from '../../lib/tour'
 import { playSound } from '../../lib/sound'
 import { StorageInfo } from './BackupSettings'
 import { ReminderDevTools } from './ReminderSettings'
@@ -78,6 +79,21 @@ export function DevSettings() {
           {text.showWelcome}
         </Button>
         <SettingsHint>{text.showWelcomeHint}</SettingsHint>
+      </SettingsPart>
+
+      <SettingsPart id="dev-tour" title={text.tour}>
+        <Button
+          variant="secondary"
+          icon={Compass}
+          onClick={() => {
+            offerTourAgain()
+            void navigate('/')
+          }}
+          className="w-full"
+        >
+          {text.showTour}
+        </Button>
+        <SettingsHint>{text.showTourHint}</SettingsHint>
       </SettingsPart>
 
       <SettingsPart id="dev-assistant" title={text.assistant}>

@@ -70,6 +70,16 @@ test('the phone Back and Preskočiť end the tour on Domov', async ({ page }) =>
   await expect(page).toHaveURL(/\/$/)
 })
 
+test('Profil takes the tour again', async ({ page }) => {
+  await page.goto('/profile')
+  await page.getByRole('link', { name: 'Zopakovať zoznámenie' }).tap()
+  await expect(page).toHaveURL(/\/$/)
+  await expect(tour(page)).toContainText('Tu začneš')
+  await page.goBack()
+  await expect(tour(page)).toHaveCount(0)
+  await expect(page).toHaveURL(/\/$/)
+})
+
 test('the text bubble stays on screen for the tab bar', async ({ page }) => {
   await page.goto('/?tour=1')
   await expect(tour(page)).toContainText('Krok 1 z 6')
