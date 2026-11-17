@@ -1235,6 +1235,30 @@ export const sk = {
     },
   },
 
+  /** The tour of the app on Domov (src/features/tour). */
+  tour: {
+    offerTitle: 'Krátke zoznámenie s appkou?',
+    offerHint: 'Za minútu ti ukážem, čo kde nájdeš. Preskočiť ho môžeš kedykoľvek.',
+    offerYes: 'Áno, ukáž mi',
+    offerNo: 'Nie, vďaka',
+    progress: (n: number, total: number) => `Krok ${n} z ${total}`,
+    next: 'Ďalej',
+    back: 'Späť',
+    done: 'Hotovo',
+    skip: 'Preskočiť',
+    /** Profil → Aplikácia: the tour once more. */
+    replay: 'Zopakovať zoznámenie',
+    steps: {
+      next: { title: 'Tu začneš', body: 'Každý deň tu nájdeš, čo je na rade: ďalšiu lekciu a kartičky na zopakovanie. Ťukni a pokračuj.' },
+      progress: { title: 'Tvoj pokrok', body: 'Séria dní a dnešný cieľ. Nižšie je slovo dňa a denník. Každú kartu môžeš rozkliknúť.' },
+      somo: { title: 'SOMO', body: 'Tvoj pomocník. Opýtaj sa ho na slovo, gramatiku alebo na to, kde čo v appke nájdeš.' },
+      search: { title: 'Hľadať', body: 'Slovník v oboch smeroch: preklad, výslovnosť, príklady a časovanie slovies. Aj slovíčka podľa tém.' },
+      path: { title: 'Cesta', body: 'Tvoj postup po úrovniach A1 až B2. Ukáže, čo je na rade, ale môžeš ísť aj inde.' },
+      practice: { title: 'Cvičiť', body: 'Všetky typy cvičení, gramatika a testy. Tému a úroveň si vyberieš sám.' },
+      profile: { title: 'Profil', body: 'Štatistiky, uložené slová a nastavenia: denný cieľ, pripomienka, hlas, záloha a účet. Aj toto zoznámenie tu nájdeš znova.' },
+    },
+  },
+
   /** Words the assistant's context (src/lib/assistant) needs beyond the screens' own. */
   assistantContext: {
     review: 'Opakovanie kartičiek',

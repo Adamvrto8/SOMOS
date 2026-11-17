@@ -71,6 +71,7 @@ export function TabBar() {
               <li key={tab.to}>
                 <Link
                   to={tab.to}
+                  data-tour={`tab-${tab.key}`}
                   aria-current={active ? 'page' : undefined}
                   // The number is heard after the tab's name: "Domov, 3 kartičky na dnes".
                   aria-label={badge ? `${text[tab.key]}, ${badge.label}` : undefined}

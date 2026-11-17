@@ -292,6 +292,7 @@ export function Somo() {
             <button
               ref={pill}
               type="button"
+              data-tour="somo"
               onClick={openSheet}
               aria-label={text.open}
               className="pointer-events-auto h-11 rounded-full bg-brick px-5 text-sm font-semibold tracking-[0.08em] text-on-accent shadow-[0_6px_20px_-6px_var(--brick)] transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick motion-safe:animate-fade-in"

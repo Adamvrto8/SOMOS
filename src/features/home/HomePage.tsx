@@ -9,6 +9,10 @@ import { useOnboarding } from '../../lib/onboarding'
 import { usePathState } from '../../lib/path'
 import { useReminderProblem } from '../../lib/reminder'
 import { useActivity } from '../../lib/stats'
+import { finishTour } from '../../lib/tour'
+import { TourOffer } from '../tour/TourOffer'
+import { TourOverlay } from '../tour/TourOverlay'
+import { useTour } from '../tour/useTour'
 import { pathOrLesson } from './continueLesson'
 import { NextGoalCard } from './NextGoalCard'
 import { ProgressTiles } from './ProgressTiles'
@@ -23,6 +27,7 @@ export function HomePage() {
   const reminderProblem = useReminderProblem()
   const next = pathOrLesson(usePathState(), useLessonProgression(), useOnboarding())
   const text = useT()
+  const tour = useTour()
   const today = new Date().toLocaleDateString(text.dateLocale, { weekday: 'long', day: 'numeric', month: 'long' })
 
   return (
@@ -37,7 +42,8 @@ export function HomePage() {
             </h1>
             <p className="mt-1 text-ink-muted first-letter:uppercase">{today}</p>
           </header>
-          <div className="mt-7">
+          <TourOffer onStart={tour.start} />
+          <div className="mt-7" data-tour="home-next">
             <ReviewCard next={next} />
           </div>
         </div>
@@ -60,7 +66,11 @@ export function HomePage() {
 
       {activity && <StreakSavedCard streak={activity.streak} />}
 
-      {activity && <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />}
+      {activity && (
+        <div data-tour="home-progress">
+          <ProgressTiles activity={activity} goal={goal} practiceHref={next.href} />
+        </div>
+      )}
 
       <NextGoalCard />
 
@@ -69,6 +79,17 @@ export function HomePage() {
       <DiaryCard />
 
       {activity && <WeekChart activity={activity} goal={goal} />}
+
+      {/* Started once Domov's numbers are there, so the progress step has its target. Rendered on <body>. */}
+      {tour.touring && activity && (
+        <TourOverlay
+          onClose={tour.close}
+          onFinish={() => {
+            finishTour()
+            tour.close()
+          }}
+        />
+      )}
     </div>
   )
 }
