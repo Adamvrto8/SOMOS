@@ -2,11 +2,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
-import { bubbleSide, visibleSteps, type TourStep } from '../../lib/tour'
+import { bubbleTop, visibleSteps, type TourStep } from '../../lib/tour'
 
-/** Air around the highlighted target, and the gap to the text bubble, in px. */
+/** Air around the highlighted target, in px. */
 const PAD = 6
-const GAP = 12
 /** The dark layer: the same in both themes, dark enough that the highlight stands out on the dark one too. */
 const SHADE = 'rgb(0 0 0 / 0.72)'
 
@@ -39,9 +38,24 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
   const [steps, setSteps] = useState<TourStep[] | null>(null)
   const [index, setIndex] = useState(0)
   const [rect, setRect] = useState<DOMRect | null>(null)
+  // The bubble's own height, to keep it and its buttons on screen; 0 until measured (it is hidden meanwhile).
+  const [height, setHeight] = useState(0)
   const bubble = useRef<HTMLDivElement>(null)
+  const placer = useRef<HTMLDivElement>(null)
   const step = steps?.[index]
   const last = steps !== null && index === steps.length - 1
+
+  // Once only: a double tap or Escape twice must not step back in the history twice (and out of the app).
+  const ended = useRef(false)
+  const end = (then: () => void) => {
+    if (ended.current) return
+    ended.current = true
+    then()
+  }
+  const endRef = useRef({ close: () => end(onClose) })
+  useLayoutEffect(() => {
+    endRef.current.close = () => end(onClose)
+  })
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => setSteps(visibleSteps((target) => find(target) !== null)))
@@ -49,8 +63,16 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
   }, [])
 
   useEffect(() => {
-    if (steps?.length === 0) onClose() // nothing to show
-  }, [steps, onClose])
+    if (steps?.length === 0) endRef.current.close() // nothing to show
+  }, [steps])
+
+  useEffect(() => {
+    const el = placer.current
+    if (!el) return
+    const observer = new ResizeObserver(() => setHeight(el.offsetHeight))
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [steps])
 
   useEffect(() => {
     const root = document.getElementById('root')
@@ -89,19 +111,15 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') endRef.current.close()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+  }, [])
 
   if (!steps || !step) return null
   const content = text.steps[step.id]
-  const side = rect ? bubbleSide(rect, window.innerHeight) : 'below'
-  const place =
-    side === 'below'
-      ? { top: (rect ? rect.bottom : 96) + PAD + GAP }
-      : { bottom: window.innerHeight - (rect ? rect.top : window.innerHeight) + PAD + GAP }
+  const top = bubbleTop(rect, height, window.innerHeight)
 
   return createPortal(
     // touch-none: a finger on the dark part does not scroll the page behind.
@@ -124,7 +142,7 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
       ) : (
         <div aria-hidden className="absolute inset-0" style={{ background: SHADE }} />
       )}
-      <div className="fixed inset-x-0 px-4" style={place}>
+      <div ref={placer} className="fixed inset-x-0 px-4" style={{ top, visibility: height ? 'visible' : 'hidden' }}>
         <div
           ref={bubble}
           key={step.id}
@@ -144,7 +162,7 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
           <div className="mt-4 flex items-center gap-2">
             <button
               type="button"
-              onClick={onClose}
+              onClick={() => end(onClose)}
               className="-ml-2 h-11 rounded-full px-3 text-sm font-semibold text-ink-muted transition-colors duration-150 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
             >
               {text.skip}
@@ -155,7 +173,7 @@ export function TourOverlay({ onClose, onFinish }: TourOverlayProps) {
                 {text.back}
               </Button>
             )}
-            <Button data-primary onClick={() => (last ? onFinish() : setIndex(index + 1))}>
+            <Button data-primary onClick={() => (last ? end(onFinish) : setIndex(index + 1))}>
               {last ? text.done : text.next}
             </Button>
           </div>

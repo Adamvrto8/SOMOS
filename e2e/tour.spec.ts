@@ -79,6 +79,30 @@ test('the highlight takes in the whole raised Cesta button', async ({ page }) =>
   await expect.poll(async () => (await spot.boundingBox())!.y).toBeLessThanOrEqual(circle.y)
 })
 
+test('on a short screen the buttons of the bubble stay on screen', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 460 })
+  await page.goto('/?tour=1')
+  for (const title of ['Tu začneš', 'Tvoj pokrok']) {
+    await expect(tour(page).getByRole('heading', { name: title })).toBeVisible()
+    await expect(button(page, 'Ďalej')).toBeInViewport({ ratio: 1 })
+    await expect(button(page, 'Preskočiť')).toBeInViewport({ ratio: 1 })
+    await button(page, 'Ďalej').tap()
+  }
+})
+
+test('a double tap on Preskočiť stays on Domov', async ({ page }) => {
+  await page.goto('/')
+  await page.goto('/?tour=1')
+  await expect(tour(page)).toBeVisible()
+  await button(page, 'Preskočiť').dblclick()
+  await expect(tour(page)).toHaveCount(0)
+  await expect(page).toHaveURL(/\/$/)
+  await expect(page.getByRole('heading', { name: '¡Hola!' })).toBeVisible()
+  // One step back still leads to the Domov opened before: nothing more was taken off the history.
+  await page.goBack()
+  await expect(page).toHaveURL(/\/$/)
+})
+
 test('Profil takes the tour again', async ({ page }) => {
   await page.goto('/profile')
   await page.getByRole('link', { name: 'Zopakovať zoznámenie' }).tap()

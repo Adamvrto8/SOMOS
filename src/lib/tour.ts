@@ -50,7 +50,19 @@ export function offerTourAgain() {
   updateOnboarding({ done: true, tour: 'pending' })
 }
 
-/** Where the text goes: under a target in the upper half of the screen, above one in the lower half (the tab bar). */
-export function bubbleSide(target: { top: number; bottom: number }, viewportHeight: number): 'above' | 'below' {
-  return (target.top + target.bottom) / 2 > viewportHeight / 2 ? 'above' : 'below'
+/** Space between the bubble and the target (the target's air + a gap), and the least between it and the screen edge. */
+const BUBBLE_GAP = 18
+const EDGE = 8
+
+/**
+ * The top of the text bubble: under the target when it fits there (or there is more room there), else above it. Always
+ * kept on the screen, over the target if it must be: the buttons of the tour matter more than seeing all of the target.
+ */
+export function bubbleTop(target: { top: number; bottom: number } | null, bubbleHeight: number, viewportHeight: number): number {
+  const lowest = Math.max(EDGE, viewportHeight - bubbleHeight - EDGE)
+  if (!target) return Math.min(lowest, Math.max(EDGE, (viewportHeight - bubbleHeight) / 2))
+  const below = viewportHeight - target.bottom - BUBBLE_GAP
+  const above = target.top - BUBBLE_GAP
+  const top = below >= bubbleHeight || below >= above ? target.bottom + BUBBLE_GAP : target.top - BUBBLE_GAP - bubbleHeight
+  return Math.min(lowest, Math.max(EDGE, top))
 }

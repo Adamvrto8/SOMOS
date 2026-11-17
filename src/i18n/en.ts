@@ -1146,7 +1146,7 @@ export const en: Dictionary = {
 
   tour: {
     offerTitle: 'A quick tour of the app?',
-    offerHint: 'In a minute I’ll show you what is where. You can skip it at any time.',
+    offerHint: 'In a minute you’ll see what is where. You can skip it at any time.',
     offerYes: 'Yes, show me',
     offerNo: 'No, thanks',
     progress: (n: number, total: number) => `Step ${n} of ${total}`,
@@ -1156,7 +1156,7 @@ export const en: Dictionary = {
     skip: 'Skip',
     replay: 'Take the tour again',
     steps: {
-      next: { title: 'Start here', body: 'Every day this shows what’s next: your next lesson and the cards to review. Tap it to go on.' },
+      next: { title: 'Start here', body: 'Every day this shows what’s next: your next lesson and the cards to review. Tapping the card takes you on.' },
       progress: { title: 'Your progress', body: 'Your streak and today’s goal. Below are the word of the day and your diary. Every card opens.' },
       somo: { title: 'SOMO', body: 'Your helper. Ask it about a word, grammar or where to find something in the app.' },
       search: { title: 'Search', body: 'A dictionary both ways: translation, pronunciation, examples and verb conjugation. Words by topic too.' },

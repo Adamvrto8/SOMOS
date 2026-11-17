@@ -1241,7 +1241,7 @@ export const sk = {
   /** The tour of the app on Domov (src/features/tour). */
   tour: {
     offerTitle: 'Krátke zoznámenie s appkou?',
-    offerHint: 'Za minútu ti ukážem, čo kde nájdeš. Preskočiť ho môžeš kedykoľvek.',
+    offerHint: 'Za minútu uvidíš, čo kde nájdeš. Preskočiť ho môžeš kedykoľvek.',
     offerYes: 'Áno, ukáž mi',
     offerNo: 'Nie, vďaka',
     progress: (n: number, total: number) => `Krok ${n} z ${total}`,
@@ -1252,7 +1252,7 @@ export const sk = {
     /** Profil → Aplikácia: the tour once more. */
     replay: 'Zopakovať zoznámenie',
     steps: {
-      next: { title: 'Tu začneš', body: 'Každý deň tu nájdeš, čo je na rade: ďalšiu lekciu a kartičky na zopakovanie. Ťukni a pokračuj.' },
+      next: { title: 'Tu začneš', body: 'Každý deň tu nájdeš, čo je na rade: ďalšiu lekciu a kartičky na zopakovanie. Ťuknutím na kartu pokračuješ v učení.' },
       progress: { title: 'Tvoj pokrok', body: 'Séria dní a dnešný cieľ. Nižšie je slovo dňa a denník. Každú kartu môžeš rozkliknúť.' },
       somo: { title: 'SOMO', body: 'Tvoj pomocník. Opýtaj sa ho na slovo, gramatiku alebo na to, kde čo v appke nájdeš.' },
       search: { title: 'Hľadať', body: 'Slovník v oboch smeroch: preklad, výslovnosť, príklady a časovanie slovies. Aj slovíčka podľa tém.' },

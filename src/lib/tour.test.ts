@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { finishOnboarding, forgetOnboardingForTesting, getOnboarding, parseOnboardingForTesting } from './onboarding'
-import { acceptTour, bubbleSide, declineTour, finishTour, offerTourAgain, shouldOfferTour, TOUR_STEPS, visibleSteps } from './tour'
+import { acceptTour, bubbleTop, declineTour, finishTour, offerTourAgain, shouldOfferTour, TOUR_STEPS, visibleSteps } from './tour'
 
 const storage = new Map<string, string>()
 Object.defineProperty(globalThis, 'localStorage', {
@@ -74,10 +74,27 @@ describe('the tour steps', () => {
   })
 })
 
-describe('the text bubble', () => {
-  it('goes under a target in the upper half and above one in the lower half', () => {
-    expect(bubbleSide({ top: 100, bottom: 280 }, 800)).toBe('below')
-    expect(bubbleSide({ top: 736, bottom: 800 }, 800)).toBe('above') // the tab bar
-    expect(bubbleSide({ top: 310, bottom: 490 }, 800)).toBe('below') // centred: below
+describe('where the text bubble goes', () => {
+  it('goes under a target when it fits there', () => {
+    expect(bubbleTop({ top: 100, bottom: 280 }, 230, 800)).toBe(298)
+  })
+
+  it('goes above a target at the bottom (the tab bar)', () => {
+    expect(bubbleTop({ top: 736, bottom: 800 }, 230, 800)).toBe(736 - 18 - 230)
+  })
+
+  it('stays on a short screen with its buttons, over the target if it must', () => {
+    // 375×560: the tiles centred, room on neither side for a 230px bubble.
+    const top = bubbleTop({ top: 215, bottom: 345 }, 230, 560)
+    expect(top).toBeGreaterThanOrEqual(8)
+    expect(top + 230).toBeLessThanOrEqual(560 - 8)
+  })
+
+  it('never starts above the screen in landscape', () => {
+    expect(bubbleTop({ top: 180, bottom: 360 }, 230, 380)).toBe(8)
+  })
+
+  it('sits in the middle without a target', () => {
+    expect(bubbleTop(null, 200, 800)).toBe(300)
   })
 })
