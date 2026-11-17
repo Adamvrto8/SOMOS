@@ -380,7 +380,8 @@ function ReadyStep({ frame }: { frame: StepProps['frame'] }) {
   ] as const
 
   const start = () => {
-    finishOnboarding()
+    // Only here, not on "Už mám účet": a learner who went through the welcome is offered the tour on Domov.
+    finishOnboarding({ tour: 'pending' })
     const lesson = unit && firstStep ? stepHref(unit, firstStep) : `/practice/lesson?${filterToParams(filter)}&lesson=1`
     // In place of the welcome: closing the lesson goes to Domov, not back into the questions.
     void navigate(`${lesson}&first=1`, { replace: true })

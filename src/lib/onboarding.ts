@@ -26,6 +26,13 @@ export const START_LEVELS: Level[] = ['A1', 'A2', 'B1']
 /** What the stored level may be: the welcome offers START_LEVELS, the level offer of the path can reach B2. */
 const STORED_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2']
 
+/**
+ * The tour of Domov (src/features/tour): 'pending' is set by the welcome's last step, so only learners who went through
+ * the welcome get the offer, on their first Domov after the first lesson. 'started' = taken (finished or not).
+ */
+export type TourStatus = 'pending' | 'declined' | 'started' | 'finished'
+const TOUR_STATUSES: TourStatus[] = ['pending', 'declined', 'started', 'finished']
+
 export interface OnboardingState {
   done: boolean
   at?: number
@@ -35,13 +42,15 @@ export interface OnboardingState {
   accountOffered?: boolean
   /** The other start level after the first lesson of the path is offered once (docs/guided-path-spec.md §10c). */
   levelOffered?: boolean
+  /** The offer of the tour of the app (src/lib/tour.ts). */
+  tour?: TourStatus
 }
 
 function parse(raw: string | null): OnboardingState | null {
   try {
     const data: unknown = raw ? JSON.parse(raw) : null
     if (typeof data !== 'object' || data === null) return null
-    const { done, at, motivation, level, accountOffered, levelOffered } = data as Record<string, unknown>
+    const { done, at, motivation, level, accountOffered, levelOffered, tour } = data as Record<string, unknown>
     return {
       done: done === true,
       at: typeof at === 'number' ? at : undefined,
@@ -49,6 +58,7 @@ function parse(raw: string | null): OnboardingState | null {
       level: STORED_LEVELS.includes(level as Level) ? (level as Level) : undefined,
       accountOffered: accountOffered === true,
       levelOffered: levelOffered === true,
+      tour: TOUR_STATUSES.includes(tour as TourStatus) ? (tour as TourStatus) : undefined,
     }
   } catch {
     return null
@@ -96,9 +106,10 @@ export function updateOnboarding(change: Partial<OnboardingState>) {
   save({ done: false, ...state, ...change })
 }
 
-export function finishOnboarding() {
+/** `change`: what the end of the welcome adds (its last step offers the tour). */
+export function finishOnboarding(change: Partial<OnboardingState> = {}) {
   track('welcome', { step: 'done' })
-  save({ ...state, done: true, at: Date.now() })
+  save({ ...state, ...change, done: true, at: Date.now() })
 }
 
 /** Nástroje pre vývoj: the welcome once more, as a new learner sees it (the progress stays). */
