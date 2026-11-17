@@ -969,7 +969,6 @@ export const sk = {
       review: 'Opakovanie',
       test: 'Test jednotky',
     },
-    stepOf: (n: number, total: number) => `krok ${n} z ${total}`,
     skipTest: 'Viem to – urobiť test',
     skipHint: 'Keď ho splníš, jednotka je hotová.',
     tip: 'Tip',
@@ -982,8 +981,6 @@ export const sk = {
     homeContinue: 'Tvoja cesta',
     homeLine: (unit: number, title: string, step: string, n: number, total: number) => `Jednotka ${unit} · ${title} · ${step} (${n}/${total})`,
     homeAria: (unit: number, step: string) => `Jednotka ${unit}: ${step}`,
-    /** Domov, under the flashcards of the day. */
-    homeRow: (title: string) => `Ďalej na Ceste: ${title}`,
     /** Cvičiť, the card on top. */
     cardLine: (level: string, unit: number, total: number) => `${level} · jednotka ${unit} z ${total}`,
     cardDone: (level: string) => `${level} · hotovo`,

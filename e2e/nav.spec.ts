@@ -16,7 +16,7 @@ test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('somos-onboarding', JSON.stringify({ done: true, level: 'A1' })))
 })
 
-test('the tabs carry what waits: flashcards on Domov, no mistake count on Cvičiť; Domov keeps the next step of Cesta in reach', async ({ page }) => {
+test('the tabs carry what waits: flashcards on Domov, no mistake count on Cvičiť; Cesta has its tab, no row on Domov', async ({ page }) => {
   await missOneWord(page)
   // A starred word is a flashcard due at once.
   await page.goto('/word/casa')
@@ -32,9 +32,7 @@ test('the tabs carry what waits: flashcards on Domov, no mistake count on Cviči
   await expect(bar.getByRole('link', { name: 'Cesta', exact: true })).toBeVisible()
 
   await expect(page.getByRole('heading', { name: 'Kartičky na dnes' })).toBeVisible()
-  const pathRow = page.getByRole('link', { name: /^Ďalej na Ceste:/ })
-  await pathRow.tap()
-  await expect(page).toHaveURL(/\/practice\/lesson\?path=/)
+  await expect(page.getByRole('link', { name: /^Ďalej na Ceste:/ })).toHaveCount(0)
 
   // Môj slovník is in Profil, with its numbers.
   await page.goto('/profile')
