@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { db } from '../db'
-import { addTurn, askInNewChat, deleteChat, forgetChat, getChat, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
+import { addTurn, askInNewChat, rateTurn, deleteChat, forgetChat, getChat, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
 
 beforeEach(async () => {
   await db.chats.clear()
@@ -78,5 +78,15 @@ describe('SOMO conversations', () => {
     expect(getChat()).toMatchObject({ id: null, turns: [], ready: true, queued: 'Prečo je moja odpoveď zlá?' })
     expect(takeQueued()).toBe('Prečo je moja odpoveď zlá?')
     expect(takeQueued()).toBeNull()
+  })
+
+  it('keeps a rating on the turn, also in the stored conversation', async () => {
+    await addTurn({ question: 'a', answer: 'b' })
+    await addTurn({ question: 'c', answer: 'd' })
+    await rateTurn(1, 'down', 'unclear')
+    expect(getChat().turns[1]).toMatchObject({ rating: 'down', reason: 'unclear' })
+    expect(getChat().turns[0].rating).toBeUndefined()
+    const [stored] = await listChats()
+    expect(stored.turns[1]).toMatchObject({ rating: 'down', reason: 'unclear' })
   })
 })

@@ -18,6 +18,11 @@ Zmena premenných vo Verceli sa prejaví až po novom nasadení (redeploy).
 ## 4. Supabase
 V SQL editore spusti nový blok z `supabase/schema.sql` (od komentára „Assistant (api/chat.ts)“): tabuľka `chat_usage` a funkcia `chat_calls_today()`. Supabase premenné (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) už vo Verceli sú.
 
+Pre 👍 / 👎 pod odpoveďami (2026-11-18) spusti aj blok „Assistant feedback“ z konca `supabase/schema.sql`: tabuľka
+`chat_feedback`, do ktorej prihlásený učiaci vkladá len vlastné riadky a cez API ju nikto nečíta. Hodnotenia sú v
+Supabase → Table Editor → `chat_feedback`. Kým tabuľka nie je, pod odpoveďou sa po ťuknutí ukáže „Hodnotenie sa
+nepodarilo odoslať“.
+
 ## 5. Nasadenie a skúška
 Zmena env premenných vo Verceli platí až po redeployi.
 

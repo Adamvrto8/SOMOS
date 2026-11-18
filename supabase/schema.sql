@@ -572,3 +572,31 @@ $$;
 
 revoke execute on function public.chat_calls_today() from public, anon, authenticated;
 grant execute on function public.chat_calls_today() to service_role;
+
+-- Assistant feedback (src/lib/assistant/feedback.ts): 👍 / 👎 under a SOMO answer, with the question, the answer as
+-- the model wrote it, the tools it called and the page it was asked on. A signed-in learner inserts their own rows;
+-- nobody reads them through the API (Adam reads them in the dashboard), docs/chat-assistant-eval.md.
+
+create table if not exists public.chat_feedback (
+  id bigint generated always as identity primary key,
+  at timestamptz not null default now(),
+  user_id uuid not null default auth.uid(),
+  rating text not null check (rating in ('up', 'down')),
+  reason text check (reason in ('wrong', 'unclear', 'long', 'other')),
+  question text not null check (char_length(question) <= 600),
+  answer text not null check (char_length(answer) <= 6000),
+  tools jsonb not null default '[]'::jsonb check (pg_column_size(tools) <= 8000),
+  page text check (char_length(page) <= 300),
+  app_version text check (char_length(app_version) <= 40)
+);
+
+create index if not exists chat_feedback_at_idx on public.chat_feedback (at);
+
+alter table public.chat_feedback enable row level security;
+revoke all on public.chat_feedback from anon, authenticated;
+grant insert (rating, reason, question, answer, tools, page, app_version) on public.chat_feedback to authenticated;
+grant select on public.chat_feedback to service_role;
+
+drop policy if exists "chat_feedback insert own" on public.chat_feedback;
+create policy "chat_feedback insert own" on public.chat_feedback
+  for insert to authenticated with check (user_id = (select auth.uid()));

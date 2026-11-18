@@ -32,6 +32,13 @@ export interface Answer {
   truncated: boolean
   /** Model calls this question took (for the screen's cost hint). */
   calls: number
+  /** The tools the model called and with what, in order: sent along with 👍 / 👎 (feedback.ts). */
+  tools: ToolCall[]
+}
+
+export interface ToolCall {
+  name: string
+  input: unknown
 }
 
 /** Same as the server (api/chat.ts) where they must be. */
@@ -161,6 +168,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
   ]
 
   let checked = false
+  const used: ToolCall[] = []
   for (let calls = 1; calls <= MAX_CALLS; calls++) {
     const reply = await callModel(messages, context, jwt, fetchImpl, online)
     if (reply.stop_reason === 'refusal') throw new ChatFailure('refused')
@@ -170,7 +178,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
       const truncated = reply.stop_reason === 'max_tokens'
       // One second try per question, and only while a call is left for it.
       const notes = checked || truncated || calls === MAX_CALLS ? [] : check(text, trimmed)
-      if (notes.length === 0) return { text, truncated, calls }
+      if (notes.length === 0) return { text, truncated, calls, tools: used }
       checked = true
       messages = [...messages, { role: 'assistant', content: reply.content }, { role: 'user', content: checkNote(notes) }]
       continue
@@ -178,6 +186,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
     const results: Block[] = []
     for (const block of reply.content) {
       if (block.type !== 'tool_use') continue
+      used.push({ name: block.name, input: block.input })
       const outcome = await tool(block.name, block.input)
       results.push({ type: 'tool_result', tool_use_id: block.id, content: outcome.content, is_error: outcome.isError })
     }

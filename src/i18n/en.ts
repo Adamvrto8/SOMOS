@@ -1205,6 +1205,12 @@ export const en: Dictionary = {
     tip: 'Grammar tip',
     openTip: 'Open the tip',
     suggestionsLabel: 'Suggested questions',
+    rateUp: 'Good answer',
+    rateDown: 'Bad answer',
+    reasonsLabel: 'What was wrong?',
+    reasons: { wrong: 'Wrong', unclear: 'Unclear', long: 'Too long', other: 'Other' } as Record<string, string>,
+    rated: 'Thanks for the rating.',
+    rateFailed: 'The rating could not be sent, try again.',
     askWhy: 'Why? Ask SOMO',
     askAbout: (task: string) => `Ask SOMO about the task: ${task}`,
     explain: {

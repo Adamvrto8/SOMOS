@@ -1301,6 +1301,12 @@ export const sk = {
     tip: 'Gramatický tip',
     openTip: 'Otvoriť tip',
     suggestionsLabel: 'Navrhnuté otázky',
+    rateUp: 'Dobrá odpoveď',
+    rateDown: 'Zlá odpoveď',
+    reasonsLabel: 'Čo bolo zle?',
+    reasons: { wrong: 'Nesprávne', unclear: 'Nejasné', long: 'Príliš dlhé', other: 'Iné' } as Record<string, string>,
+    rated: 'Ďakujem za hodnotenie.',
+    rateFailed: 'Hodnotenie sa nepodarilo odoslať, skús znova.',
     askWhy: 'Prečo? Opýtaj sa SOMO',
     askAbout: (task: string) => `Opýtať sa SOMO na úlohu: ${task}`,
     explain: {

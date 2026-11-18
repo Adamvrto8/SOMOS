@@ -22,10 +22,13 @@ interface Chat {
   answer: string
   /** The newest question of every call. */
   questions: string[]
+  /** Rows sent to chat_feedback (👍 / 👎). */
+  feedback: Record<string, unknown>[]
 }
 
 /** Signs in with a faked Supabase in developer mode; /api/chat holds its answer until `release`. */
 async function signedInDev(page: Page): Promise<Chat> {
+  const feedback: Record<string, unknown>[] = []
   await page.addInitScript(() => localStorage.setItem('somos-dev-mode', 'on'))
   await page.route(`${SUPABASE}/**`, async (route) => {
     const request = route.request()
@@ -35,11 +38,15 @@ async function signedInDev(page: Page): Promise<Chat> {
     if (pathname === '/auth/v1/verify') return json(route, { access_token: jwt(), token_type: 'bearer', expires_in: 3600, expires_at: exp(), refresh_token: 'refresh', user: USER })
     if (pathname === '/rest/v1/records') return json(route, [])
     if (pathname === '/rest/v1/rpc/push_records') return route.fulfill({ status: 204, headers: cors })
+    if (pathname === '/rest/v1/chat_feedback') {
+      feedback.push(request.postDataJSON() as Record<string, unknown>)
+      return route.fulfill({ status: 201, headers: cors })
+    }
     return json(route, { message: `not faked: ${pathname}` }, 404)
   })
   let release: () => void = () => {}
   const released = new Promise<void>((resolve) => (release = resolve))
-  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER, questions: [] }
+  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER, questions: [], feedback }
   await page.route('**/api/chat', async (route) => {
     const body = route.request().postDataJSON() as { context?: { page?: string }; messages: { content: unknown }[] }
     chat.contexts.push(body.context ?? {})
@@ -283,4 +290,25 @@ test('"Prečo? Opýtaj sa SOMO" in a lesson explains the task over it, and Back 
   await page.getByRole('button', { name: /^Opýtať sa SOMO na úlohu:/ }).first().tap()
   await expect.poll(() => chat.questions.length).toBe(2)
   expect(chat.questions[1]).toMatch(/^Vysvetli mi túto úlohu/)
+})
+
+test('👍 / 👎 under an answer is sent with the question, the answer and the page, and stays after a reload', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  await page.goto('/word/casa')
+  await pill(page).tap()
+  await askQuestion(page, 'Ako sa toto slovo používa?')
+  await sheet(page).getByRole('button', { name: 'Zlá odpoveď' }).tap()
+  await sheet(page).getByRole('group', { name: 'Čo bolo zle?' }).getByRole('button', { name: 'Nejasné' }).tap()
+  await expect(sheet(page).getByText('Ďakujem za hodnotenie.')).toBeVisible()
+  expect(chat.feedback).toHaveLength(1)
+  expect(chat.feedback[0]).toMatchObject({ rating: 'down', reason: 'unclear', question: 'Ako sa toto slovo používa?', answer: ANSWER, tools: [] })
+  expect(chat.feedback[0].page).toContain('/word/casa')
+
+  await page.keyboard.press('Escape')
+  await expect(sheet(page)).toHaveCount(0)
+  await page.reload()
+  await pill(page).tap()
+  await expect(sheet(page).getByText('Ďakujem za hodnotenie.')).toBeVisible()
+  await expect(sheet(page).getByRole('button', { name: 'Zlá odpoveď' })).toHaveCount(0)
 })

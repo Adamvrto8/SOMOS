@@ -1,4 +1,4 @@
-import { History, MessageSquarePlus, Send, Trash2, Volume2 } from 'lucide-react'
+import { History, MessageSquarePlus, Send, ThumbsDown, ThumbsUp, Trash2, Volume2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
@@ -6,9 +6,10 @@ import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
 import { answerBlocks, followUpsOf, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
-import { addTurn, deleteChat, listChats, openChat, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
+import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
+import { addTurn, deleteChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
 import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
-import type { ChatThread } from '../../lib/db'
+import type { ChatThread, ChatTurn, FeedbackReason } from '../../lib/db'
 import { speak, ttsSupported } from '../../lib/tts'
 import { AnswerCardView } from './AnswerCards'
 
@@ -121,6 +122,81 @@ function Thinking({ label }: { label: string }) {
           style={{ animationDelay: `${delay}ms` }}
         />
       ))}
+    </div>
+  )
+}
+
+const RATE_BUTTON =
+  'flex size-11 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick disabled:opacity-50'
+
+/** 👍 / 👎 under an answer; 👎 asks what was wrong. Sent to the server, kept on the turn once it got there. */
+function Rating({ turn, index }: { turn: ChatTurn; index: number }) {
+  const text = useT().assistant
+  const [asking, setAsking] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [failed, setFailed] = useState(false)
+
+  const rate = async (rating: 'up' | 'down', reason?: FeedbackReason) => {
+    setSending(true)
+    setFailed(false)
+    try {
+      await sendFeedback(feedbackRow(turn, rating, reason))
+      await rateTurn(index, rating, reason)
+      setAsking(false)
+    } catch (error) {
+      console.error('SOMO: the rating was not sent', error)
+      setFailed(true)
+    } finally {
+      setSending(false)
+    }
+  }
+
+  if (turn.rating) {
+    const Icon = turn.rating === 'up' ? ThumbsUp : ThumbsDown
+    return (
+      <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-muted">
+        <Icon size={14} strokeWidth={1.75} aria-hidden />
+        {text.rated}
+      </p>
+    )
+  }
+  return (
+    <div className="mt-1">
+      <div className="-ml-2 flex items-center">
+        <button type="button" onClick={() => void rate('up')} disabled={sending} aria-label={text.rateUp} className={RATE_BUTTON}>
+          <ThumbsUp size={18} strokeWidth={1.75} aria-hidden />
+        </button>
+        <button
+          type="button"
+          onClick={() => setAsking(!asking)}
+          disabled={sending}
+          aria-label={text.rateDown}
+          aria-expanded={asking}
+          className={`${RATE_BUTTON} ${asking ? 'bg-surface-2 text-ink' : ''}`}
+        >
+          <ThumbsDown size={18} strokeWidth={1.75} aria-hidden />
+        </button>
+      </div>
+      {asking && (
+        <div role="group" aria-label={text.reasonsLabel} className="mt-1 flex flex-wrap gap-2">
+          {FEEDBACK_REASONS.map((reason) => (
+            <button
+              key={reason}
+              type="button"
+              onClick={() => void rate('down', reason)}
+              disabled={sending}
+              className="min-h-11 rounded-full border border-line bg-surface px-4 text-sm font-medium text-ink hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick disabled:opacity-50"
+            >
+              {text.reasons[reason]}
+            </button>
+          ))}
+        </div>
+      )}
+      {failed && (
+        <p role="alert" className="mt-1 text-sm text-error">
+          {text.rateFailed}
+        </p>
+      )}
     </div>
   )
 }
@@ -249,7 +325,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
     setDraft('')
     try {
       const answer = await ask(turns, trimmed, { page })
-      await addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls })
+      await addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls, tools: answer.tools, page })
       setPending(null)
     } catch (failure) {
       // The question stays visible with "Skúsiť znova"; the conversation is untouched.
@@ -345,6 +421,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
               <AnswerView text={turn.answer} />
               {turn.truncated && <p className="mt-1 text-sm text-ink-muted">{text.truncated}</p>}
               {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
+              <Rating turn={turn} index={i} />
             </div>
           </section>
         ))}

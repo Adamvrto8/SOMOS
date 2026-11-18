@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { db, type ChatThread, type ChatTurn } from '../db'
+import { db, type ChatThread, type ChatTurn, type FeedbackReason } from '../db'
 
 // SOMO's conversations. The one on screen lives in this module, so it survives in-app navigation (a link in an answer
 // closes the sheet) and both the sheet and /assistant show it. Every finished turn is also stored in Dexie `chats`, so
@@ -71,6 +71,21 @@ export async function addTurn(turn: Shown, now = Date.now()): Promise<void> {
   } catch (error) {
     // Not stored: the conversation still goes on in memory.
     console.error('SOMO: the conversation could not be stored', error)
+  }
+}
+
+/** Keeps 👍 / 👎 on a turn of the conversation on screen, also in its stored copy. */
+export async function rateTurn(index: number, rating: 'up' | 'down', reason?: FeedbackReason): Promise<void> {
+  const turn = state.turns[index]
+  if (!turn) return
+  const turns = state.turns.map((t, i) => (i === index ? { ...t, rating, reason } : t))
+  set({ turns })
+  const id = state.id
+  if (!id) return
+  try {
+    await db.chats.update(id, { turns: [...turns] })
+  } catch (error) {
+    console.error('SOMO: the rating could not be stored', error)
   }
 }
 

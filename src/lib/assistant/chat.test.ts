@@ -98,7 +98,7 @@ describe('ask', () => {
   it('sends the question with the token and returns the answer', async () => {
     const { d, sent } = deps([answer('Dom je casa.')])
     const result = await ask([], 'Ako sa povie dom?', d)
-    expect(result).toEqual({ text: 'Dom je casa.', truncated: false, calls: 1 })
+    expect(result).toEqual({ text: 'Dom je casa.', truncated: false, calls: 1, tools: [] })
     expect(sent[0].messages).toEqual([{ role: 'user', content: 'Ako sa povie dom?' }])
     expect(sent[0].headers.get('authorization')).toBe('Bearer jwt')
   })
@@ -259,7 +259,7 @@ describe('ask: errors', () => {
     const check = vi.fn((text: string) => (text.includes('coche') ? ['V odpovedi je "coche".'] : []))
     const { d, sent } = deps([answer('Auto je el coche.'), answer('Auto je el carro.')], { check })
     const result = await ask([], 'Ako sa povie auto?', d)
-    expect(result).toEqual({ text: 'Auto je el carro.', truncated: false, calls: 2 })
+    expect(result).toEqual({ text: 'Auto je el carro.', truncated: false, calls: 2, tools: [] })
     const second = sent[1].messages
     expect(second.at(-2)).toEqual({ role: 'assistant', content: [{ type: 'text', text: 'Auto je el coche.' }] })
     expect(second.at(-1).role).toBe('user')
@@ -279,5 +279,13 @@ describe('ask: errors', () => {
     const { d } = deps([answer('Dlhé…', 'max_tokens')], { check })
     expect((await ask([], 'q', d)).truncated).toBe(true)
     expect(check).not.toHaveBeenCalled()
+  })
+
+  it('lists the tools the model called, in order', async () => {
+    const { d } = deps([toolUse('t1', 'search_word', { query: 'auto' }), toolUse('t2', 'get_conjugation', { verb: 'tener' }), answer('Hotovo.')])
+    expect((await ask([], 'q', d)).tools).toEqual([
+      { name: 'search_word', input: { query: 'auto' } },
+      { name: 'get_conjugation', input: { verb: 'tener' } },
+    ])
   })
 })

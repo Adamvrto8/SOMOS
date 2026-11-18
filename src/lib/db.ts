@@ -74,7 +74,15 @@ export interface ChatTurn {
   answer: string
   truncated?: boolean
   calls?: number
+  /** The tools the model called for it, and the page it was asked on: they go along with 👍 / 👎. */
+  tools?: { name: string; input: unknown }[]
+  page?: string
+  /** 👍 / 👎 given to the answer (src/lib/assistant/feedback.ts). */
+  rating?: 'up' | 'down'
+  reason?: FeedbackReason
 }
+
+export type FeedbackReason = 'wrong' | 'unclear' | 'long' | 'other'
 
 /** One conversation with SOMO, kept on this device only (not synced, not backed up, gone on sign-out). */
 export interface ChatThread {

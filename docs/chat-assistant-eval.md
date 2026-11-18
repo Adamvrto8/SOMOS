@@ -69,9 +69,46 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 - Tokeny: počas behu nenamerané, tabuľka chat_usage v Supabase chýbala (aj denný strop preto nefungoval). Vzorka po jej vytvorení (6 otázok, 7 volaní, d7b79bd): na otázku ~2000 input, ~8400 cache read, ~1400 cache write, ~500 output (vrátane thinking); cache_share 0,71. Cena (Haiku 5.5: 0,10 / 0,50 USD za 1M, cache read 0,01, cache write 0,125): ~0,0007 USD na otázku, ~0,71 USD za 1000 otázok.
 - Opravené: pravidlo „slovo vždy napíš“, odmietnutie bez faktu s príkladom, nič o obsahu appky bez nástroja či mapy, žiadne porovnanie s priemerom, spisovná slovenčina, sekcia mapy o variante španielčiny.
 
-### Beh 5
+### Beh 5 (pripravený 2026-11-18, po kartách, kontrolách, typoch otázok a „Prečo?“)
+Prvý beh s bodmi po osiach namiesto áno / nie a s otázkami, na ktoré appka odpoveď nemá alebo sú chytákom.
+Spúšťa sa v appke (režim vývojára, prihlásený účet), odpovede vlož do chatu cez „Kopírovať konverzáciu“
+(karty sa skopírujú ako značky `{{…}}`, Claude ich overí v dátach).
+
+**Body**: každá odpoveď dostane na každej osi 0, 1 alebo 2, spolu najviac 8.
+
+| Os | 2 | 1 | 0 |
+|---|---|---|---|
+| S – správnosť | všetko správne | drobná chyba, ktorá nemýli | zlý tvar, význam alebo pravidlo |
+| V – vernosť appke | nič vymyslené o obsahu, učiacom ani funkciách | nejasné tvrdenie o appke | vymyslené slovo, tvar, číslo alebo funkcia |
+| F – formát | karta namiesto vypísaných tvarov, dĺžka podľa typu, odkazy vo vete | dlhšie alebo bez karty, ale čitateľné | jeden dlhý odsek, holé cesty, nič klikateľné |
+| J – jazyk | spisovná slovenčina, mexická španielčina | drobnosť (čeština, slovosled) | Španielsko (vosotros, coche…) pri mexickom variante |
+
+**Kritériá behu 5**: priemer aspoň 7 / 8, žiadna 0 v S ani vo V, chytáky 27–33 všetky aspoň 6.
+Otázky 1–26 hore sa v tomto behu hodnotia tiež bodmi (stačí zapísať S/V/F/J do poznámky).
+
+| # | Otázka alebo kroky | Čo očakávam | S | V | F | J | Poznámka |
+|---|---|---|---|---|---|---|---|
+| 27 | Čo znamená „flarpo“? | prizná, že také slovo nepozná a appka ho nemá; nič nevymyslí | | | | | |
+| 28 | Čo je „zumo“? | v Španielsku džús, v Mexiku jugo; karta slova jugo | | | | | |
+| 29 | Ako sa povie „mobil“? | el celular (nie móvil), karta slova | | | | | |
+| 30 | Vyčasuj „conducir“. | v Mexiku manejar; karta časovania manejar, žiadne tvary conducir vypísané ako mexické | | | | | |
+| 31 | Čo je „fue“? | ser aj ir, pretérito, él / ella / usted | | | | | |
+| 32 | Dá sa so SOMO rozprávať hlasom? | nie, appka to nemá; najbližšia možnosť (Vyslovovanie, 🔊) | | | | | |
+| 33 | Koľko vlastných slov mám pridaných? | číslo z profilu alebo get_my_records, nič odhadnuté | | | | | |
+| 34 | Ako sa povie „pes“? | el perro, bez „podobných“ slov pesar, peso | | | | | |
+| 35 | Lekcia Časovanie → zlá odpoveď → „Prečo? Opýtaj sa SOMO“ | otázka odíde sama; vysvetlí rozdiel medzi mojou a správnou odpoveďou podľa tipu, správny tvar tučne, karta tipu; Späť vráti do lekcie | | | | | |
+| 36 | Lekcia Doplň slovo → „Vzdať sa“ → „Prečo? …“ | „Prečo je správne práve toto?“, vysvetlenie vety s medzerou a nápovedou | | | | | |
+| 37 | Chyby → ikona SOMO pri úlohe | „Vysvetli mi túto úlohu“, vysvetlenie bez vymyslenej „mojej odpovede“ | | | | | |
+| 38 | Detail slova → čip „Použi … vo vete“ | veta s tým slovom, nevydávaná za vetu z appky | | | | | |
+| 39 | Čip s ďalšou otázkou pod odpoveďou | zmysluplná otázka, na ktorú SOMO odpovie z appky | | | | | |
+| 40 | Polož otázku, zavri appku, otvor SOMO; potom „Nový rozhovor“ | rozhovor tam je; prázdny chat ponúkne „Pokračovať v poslednom rozhovore“ | | | | | |
+
+Pri každej odpovedi, ktorá nesedí, daj aj 👎 s dôvodom: riadok v Supabase `chat_feedback` má otázku, odpoveď,
+volané nástroje aj stránku, takže sa dá dohľadať bez kopírovania.
+
 - Dátum:
-- Použiteľných odpovedí: __ / 26
+- Commit:
+- Body (priemer / najnižšia):
 - Namerané tokeny na otázku (input / output / cache_share):
 - Odhad ceny na otázku:
 - Verdikt:
