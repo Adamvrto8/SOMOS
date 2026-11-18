@@ -1,7 +1,7 @@
 import { tipById, topicById, verbById, wordById } from '../../data'
 import { TABLE_TENSES, type TableTense } from '../conjugate'
 
-export type AnswerPart = { type: 'text'; text: string } | { type: 'link'; label: string; to: string }
+export type AnswerPart = { type: 'text'; text: string } | { type: 'strong'; text: string } | { type: 'link'; label: string; to: string }
 
 /**
  * A card the app draws from its own data where the model wrote a marker (docs/chat-assistant-improvements.md S1): the
@@ -12,7 +12,10 @@ export type AnswerCard =
   | { type: 'word'; id: string }
   | { type: 'tip'; id: string }
 
-export type AnswerBlock = { type: 'text'; parts: AnswerPart[] } | { type: 'card'; card: AnswerCard }
+/** A line "- Tengo un carro. – Mám auto." is an example: Spanish above, the translation under it; any other is an item. */
+export type ListItem = { type: 'example'; es: string; text: string } | { type: 'item'; parts: AnswerPart[] }
+
+export type AnswerBlock = { type: 'text'; parts: AnswerPart[] } | { type: 'list'; items: ListItem[] } | { type: 'card'; card: AnswerCard }
 
 // The prompt asks for links woven into the sentence as `[label](/path)`. A bare path the model still writes
 // (`/word/casa`) becomes a link too, so nothing in-app is left untappable. A path is an app path: one slash,
@@ -21,8 +24,13 @@ const MARKDOWN_LINK = String.raw`\[([^\]\n]+)\]\((\/(?!\/)[\w\-/?=&%]*)\)`
 const BARE_PATH = String.raw`(?<![\w/])(\/(?:word|topic|practice|review|diary|search|archive|profile|stats|path|privacy|duel)(?![\w-])[\w\-/?=&%]*)`
 const LINKS = new RegExp(`${MARKDOWN_LINK}|${BARE_PATH}`, 'g')
 
-/** `{{conj:tener:preterito}}`, `{{word:casa}}`, `{{tip:por-para}}`; anything else in double braces is a marker gone wrong. */
+/** `{{conj:tener:preterito}}`, `{{word:casa}}`, `{{tip:por-para}}`, `{{dalej:…}}`; anything else is a marker gone wrong. */
 export const MARKER = /\{\{\s*([^{}\n]*?)\s*\}\}/g
+
+/** Follow-up questions the model may offer at the end, `{{dalej:…}}`, shown as chips under the newest answer. */
+export const MAX_FOLLOW_UPS = 2
+const MAX_FOLLOW_UP_CHARS = 120
+const FOLLOW_UP = /^dalej\s*:\s*(.+)$/
 
 /** The screens of src/App.tsx a link may open; an id must exist in the data (a made-up one opened an empty page). */
 const STATIC_PATHS = new Set([
@@ -72,13 +80,28 @@ export function cardOf(marker: string): AnswerCard | undefined {
   return undefined
 }
 
-/** Bold markers go: the prompt asks for no Markdown, but a model slips. */
-const unbold = (text: string) => text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/__([^_]+)__/g, '$1')
+/** A marker that is a follow-up question: its question, else undefined. */
+export function followUpOf(marker: string): string | undefined {
+  const question = FOLLOW_UP.exec(marker)?.[1].trim()
+  return question && question.length <= MAX_FOLLOW_UP_CHARS ? question : undefined
+}
 
-/** An answer as text and in-app links, in order. A link to a page that does not exist stays its label. */
-export function answerParts(text: string): AnswerPart[] {
-  const plain = unbold(text)
-  const parts: AnswerPart[] = []
+/** The follow-up questions of an answer, at most MAX_FOLLOW_UPS. */
+export function followUpsOf(text: string): string[] {
+  const questions: string[] = []
+  for (const match of text.matchAll(MARKER)) {
+    const question = followUpOf(match[1])
+    if (question && !questions.includes(question)) questions.push(question)
+  }
+  return questions.slice(0, MAX_FOLLOW_UPS)
+}
+
+/** **bold** (or __bold__): the prompt keeps it for Spanish words in a sentence. */
+const BOLD = /\*\*([^*\n]+)\*\*|__([^_\n]+)__/g
+const unbold = (text: string) => text.replace(BOLD, (_whole, a?: string, b?: string) => a ?? b ?? '')
+
+/** Text with its in-app links; a link to a page that does not exist stays its label. */
+function linkParts(plain: string, parts: AnswerPart[]) {
   const push = (piece: string) => {
     const previous = parts.at(-1)
     if (previous?.type === 'text') previous.text += piece
@@ -94,26 +117,71 @@ export function answerParts(text: string): AnswerPart[] {
     last = match.index + whole.length
   }
   if (last < plain.length) push(plain.slice(last))
+}
+
+/** A piece of an answer as text, bold Spanish (**tuve**) and in-app links, in order. */
+export function answerParts(text: string): AnswerPart[] {
+  const parts: AnswerPart[] = []
+  let last = 0
+  for (const match of text.matchAll(BOLD)) {
+    if (match.index > last) linkParts(text.slice(last, match.index), parts)
+    parts.push({ type: 'strong', text: match[1] ?? match[2] })
+    last = match.index + match[0].length
+  }
+  if (last < text.length) linkParts(text.slice(last), parts)
   return parts
 }
 
+const LIST_LINE = /^\s*[-•*]\s+(.*)$/
+const EXAMPLE = /^(.+?)\s+[–—]\s+(.+)$/
+
+function listItem(line: string): ListItem {
+  const example = EXAMPLE.exec(line)
+  if (example && !example[1].includes('](')) return { type: 'example', es: unbold(example[1]).trim(), text: unbold(example[2]).trim() }
+  return { type: 'item', parts: answerParts(line) }
+}
+
+/** Plain text of an answer as paragraphs and lists: lines starting with "- " make a list, the rest stays as written. */
+function textBlocks(piece: string, blocks: AnswerBlock[]) {
+  let paragraph: string[] = []
+  let items: ListItem[] = []
+  const flushParagraph = () => {
+    const text = paragraph.join('\n').trim()
+    if (text) blocks.push({ type: 'text', parts: answerParts(text) })
+    paragraph = []
+  }
+  const flushList = () => {
+    if (items.length) blocks.push({ type: 'list', items })
+    items = []
+  }
+  for (const line of piece.split('\n')) {
+    const item = LIST_LINE.exec(line)
+    if (item && item[1].trim()) {
+      flushParagraph()
+      items.push(listItem(item[1].trim()))
+    } else {
+      flushList()
+      paragraph.push(line)
+    }
+  }
+  flushParagraph()
+  flushList()
+}
+
 /**
- * An answer as paragraphs and cards, in the order the model wrote them. A marker that names nothing is left out (the
- * check in answerCheck.ts has already asked the model once to fix it); the text around it stays.
+ * An answer as paragraphs, lists of examples and cards, in the order the model wrote them. A marker that names nothing
+ * is left out (the check in answerCheck.ts has already asked the model once to fix it); the text around it stays.
+ * Follow-up questions are not part of it: followUpsOf.
  */
 export function answerBlocks(text: string): AnswerBlock[] {
   const blocks: AnswerBlock[] = []
-  const pushText = (piece: string) => {
-    const trimmed = piece.trim()
-    if (trimmed) blocks.push({ type: 'text', parts: answerParts(trimmed) })
-  }
   let last = 0
   for (const match of text.matchAll(MARKER)) {
-    pushText(text.slice(last, match.index))
+    textBlocks(text.slice(last, match.index), blocks)
     const card = cardOf(match[1])
     if (card) blocks.push({ type: 'card', card })
     last = match.index + match[0].length
   }
-  pushText(text.slice(last))
+  textBlocks(text.slice(last), blocks)
   return blocks
 }

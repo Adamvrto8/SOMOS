@@ -1,9 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import { answerBlocks, answerParts, appPathExists, cardOf } from './answerText'
+import { answerBlocks, answerParts, appPathExists, cardOf, followUpsOf } from './answerText'
 
 describe('answerParts', () => {
-  it('removes bold markers', () => {
-    expect(answerParts('To je **casa** a __carro__.')).toEqual([{ type: 'text', text: 'To je casa a carro.' }])
+  it('keeps bold Spanish as its own part', () => {
+    expect(answerParts('To je **casa** a __carro__.')).toEqual([
+      { type: 'text', text: 'To je ' },
+      { type: 'strong', text: 'casa' },
+      { type: 'text', text: ' a ' },
+      { type: 'strong', text: 'carro' },
+      { type: 'text', text: '.' },
+    ])
   })
 
   it('turns a link woven into the sentence into a labelled in-app link', () => {
@@ -57,7 +63,7 @@ describe('links to pages that do not exist', () => {
 describe('answerBlocks', () => {
   it('splits an answer into paragraphs and the cards the app has', () => {
     const blocks = answerBlocks('Minulý čas od tener:\n{{conj:tener:preterito}}\nSlovo:\n{{word:casa}}\n{{ tip:por-para }}')
-    expect(blocks.map((b) => (b.type === 'card' ? b.card : b.parts))).toEqual([
+    expect(blocks.map((b) => (b.type === 'card' ? b.card : b.type === 'text' ? b.parts : b.items))).toEqual([
       [{ type: 'text', text: 'Minulý čas od tener:' }],
       { type: 'conj', verbId: 'tener', tense: 'preterito' },
       [{ type: 'text', text: 'Slovo:' }],
@@ -79,5 +85,28 @@ describe('answerBlocks', () => {
     expect(cardOf('word:casa:x')).toBeUndefined()
     expect(cardOf('conj:tener')).toBeUndefined()
     expect(cardOf('conj:tener:imperativo')).toEqual({ type: 'conj', verbId: 'tener', tense: 'imperativo' })
+  })
+})
+
+describe('examples, lists and follow-up questions', () => {
+  it('reads "- es – sk" lines as examples and other list lines as items', () => {
+    const blocks = answerBlocks('Pozri:\n- Este regalo es **para** ti. – Tento darček je pre teba.\n- iný bod [tu](/review)\nKoniec.')
+    expect(blocks).toEqual([
+      { type: 'text', parts: [{ type: 'text', text: 'Pozri:' }] },
+      {
+        type: 'list',
+        items: [
+          { type: 'example', es: 'Este regalo es para ti.', text: 'Tento darček je pre teba.' },
+          { type: 'item', parts: [{ type: 'text', text: 'iný bod ' }, { type: 'link', label: 'tu', to: '/review' }] },
+        ],
+      },
+      { type: 'text', parts: [{ type: 'text', text: 'Koniec.' }] },
+    ])
+  })
+
+  it('takes up to two follow-up questions out of the answer', () => {
+    const text = 'Casa je dom.\n{{dalej:Ako sa povie byt?}}\n{{dalej: Použi casa vo vete }}\n{{dalej:Tretia?}}'
+    expect(followUpsOf(text)).toEqual(['Ako sa povie byt?', 'Použi casa vo vete'])
+    expect(answerBlocks(text)).toEqual([{ type: 'text', parts: [{ type: 'text', text: 'Casa je dom.' }] }])
   })
 })

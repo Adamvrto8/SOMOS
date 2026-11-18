@@ -1,13 +1,15 @@
-import { History, MessageSquarePlus, Send, Trash2 } from 'lucide-react'
+import { History, MessageSquarePlus, Send, Trash2, Volume2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { answerBlocks, type AnswerPart } from '../../lib/assistant/answerText'
+import { answerBlocks, followUpsOf, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { addTurn, deleteChat, listChats, openChat, restoreLastChat, startNewChat, useChat } from '../../lib/assistant/history'
+import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
 import type { ChatThread } from '../../lib/db'
+import { speak, ttsSupported } from '../../lib/tts'
 import { AnswerCardView } from './AnswerCards'
 
 /** Text with its links woven into the sentences: "otvor [opakovanie](/review)" shows "opakovanie" as a link. */
@@ -17,6 +19,10 @@ function Paragraph({ parts }: { parts: AnswerPart[] }) {
       {parts.map((part, i) =>
         part.type === 'text' ? (
           part.text
+        ) : part.type === 'strong' ? (
+          <strong key={i} className="font-semibold">
+            {part.text}
+          </strong>
         ) : (
           <Link
             key={i}
@@ -31,13 +37,73 @@ function Paragraph({ parts }: { parts: AnswerPart[] }) {
   )
 }
 
-/** An answer: its paragraphs, and the cards the app draws from its data where the model put a marker. */
+/** Examples as on a word's page: the Spanish to hear, the translation under it; other items as a plain list. */
+function List({ items }: { items: ListItem[] }) {
+  const text = useT().assistant
+  return (
+    <ul className="flex flex-col gap-2">
+      {items.map((item, i) =>
+        item.type === 'example' ? (
+          <li key={i} className="flex items-start gap-1 border-l-2 border-line pl-3">
+            <div className="min-w-0 flex-1">
+              <p lang="es" className="font-serif text-lg leading-snug">
+                {item.es}
+              </p>
+              <p className="text-sm text-ink-muted">{item.text}</p>
+            </div>
+            {ttsSupported && (
+              <button
+                type="button"
+                onClick={() => speak(item.es)}
+                aria-label={text.listen(item.es)}
+                className="-mt-1 flex size-11 shrink-0 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
+              >
+                <Volume2 size={18} strokeWidth={1.75} aria-hidden />
+              </button>
+            )}
+          </li>
+        ) : (
+          <li key={i} className="ml-5 list-disc">
+            <Paragraph parts={item.parts} />
+          </li>
+        ),
+      )}
+    </ul>
+  )
+}
+
+/** An answer: its paragraphs and examples, and the cards the app draws from its data where the model put a marker. */
 function AnswerView({ text }: { text: string }) {
   return (
     <div className="flex flex-col gap-2">
       {answerBlocks(text).map((block, i) =>
-        block.type === 'card' ? <AnswerCardView key={i} card={block.card} /> : <Paragraph key={i} parts={block.parts} />,
+        block.type === 'card' ? (
+          <AnswerCardView key={i} card={block.card} />
+        ) : block.type === 'list' ? (
+          <List key={i} items={block.items} />
+        ) : (
+          <Paragraph key={i} parts={block.parts} />
+        ),
       )}
+    </div>
+  )
+}
+
+/** Questions to tap instead of typing: by the page in an empty chat, the model's follow-ups under its newest answer. */
+function QuestionChips({ label, questions, onPick }: { label: string; questions: string[]; onPick: (question: string) => void }) {
+  if (questions.length === 0) return null
+  return (
+    <div role="group" aria-label={label} className="flex flex-wrap gap-2">
+      {questions.map((question) => (
+        <button
+          key={question}
+          type="button"
+          onClick={() => onPick(question)}
+          className="min-h-11 rounded-2xl border border-line bg-surface px-3 py-2 text-left text-sm font-medium text-ink hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick active:bg-surface-2"
+        >
+          {question}
+        </button>
+      ))}
     </div>
   )
 }
@@ -116,6 +182,8 @@ function ChatList({ currentId, onOpen, onBack }: { currentId: string | null; onO
 interface AssistantChatProps {
   /** What the learner was looking at when they opened SOMO (lib/assistant/page.ts). */
   page?: string
+  /** The address of that page: the suggested questions of an empty chat follow it. */
+  pathname?: string
 }
 
 /**
@@ -123,7 +191,7 @@ interface AssistantChatProps {
  * screen is shared by both and stored on the device (src/lib/assistant/history.ts): closing the app and coming back
  * opens it again, and "Rozhovory" lists the earlier ones.
  */
-export function AssistantChat({ page }: AssistantChatProps) {
+export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const text = useT().assistant
   const account = useAccount()
   const chat = useChat()
@@ -206,6 +274,8 @@ export function AssistantChat({ page }: AssistantChatProps) {
   }
 
   const waiting = pending !== null && error === null
+  const suggestionText = (suggestion: Suggestion) => ('name' in suggestion ? text.suggest[suggestion.kind](suggestion.name) : text.suggest[suggestion.kind])
+  const followUps = pending === null && turns.length > 0 ? followUpsOf(turns[turns.length - 1].answer) : []
 
   if (view === 'list') {
     return (
@@ -247,6 +317,7 @@ export function AssistantChat({ page }: AssistantChatProps) {
         {turns.length === 0 && pending === null && (
           <div className="flex flex-col gap-3">
             <p className="text-ink-muted">{text.intro}</p>
+            <QuestionChips label={text.suggestionsLabel} questions={suggestionsFor(pathname).map(suggestionText)} onPick={(question) => void send(question)} />
             {empty && last && (
               <button
                 type="button"
@@ -270,6 +341,8 @@ export function AssistantChat({ page }: AssistantChatProps) {
             </div>
           </section>
         ))}
+
+        <QuestionChips label={text.followUpsLabel} questions={followUps} onPick={(question) => void send(question)} />
 
         {pending !== null && (
           <section className="flex flex-col gap-2">

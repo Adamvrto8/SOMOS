@@ -1,6 +1,6 @@
 import type { SpanishVariant } from '../../data/types'
 import { NOT_VOSOTROS, SPAIN_ONLY, VOSOTROS_ENDING } from '../spainOnly'
-import { cardOf, MARKER } from './answerText'
+import { cardOf, followUpOf, MARKER } from './answerText'
 
 // Checks of a finished answer in code, before it is shown (docs/chat-assistant-improvements.md S2). What they find goes
 // back to the model once as a note (chat.ts); the rules stay out of the prompt. A link to a page that does not exist is
@@ -18,7 +18,8 @@ const wordsOf = (text: string) => text.toLowerCase().split(/[^\p{L}]+/u).filter(
 export function checkAnswer(answer: string, question: string, variant: SpanishVariant): string[] {
   const notes: string[] = []
 
-  const broken = [...answer.matchAll(MARKER)].map((m) => m[0]).filter((marker) => !cardOf(marker.slice(2, -2).trim()))
+  // Follow-up questions ({{dalej:…}}) are markers too, but no card.
+  const broken = [...answer.matchAll(MARKER)].filter(([, inside]) => !cardOf(inside) && !followUpOf(inside)).map(([marker]) => marker)
   if (broken.length) {
     notes.push(
       `Karty ${broken.join(', ')} appka nemá, nezobrazia sa. Použi len karty presne z výsledku nástroja ({{word:id}}, {{conj:sloveso:čas}}, {{tip:id}}), alebo kartu vynechaj.`,

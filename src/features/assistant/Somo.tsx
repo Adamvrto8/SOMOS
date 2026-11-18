@@ -32,6 +32,7 @@ const FULL = `inset(0px 0px 0px 0px round ${PANEL_RADIUS}px ${PANEL_RADIUS}px 0p
 
 interface SomoSheetProps {
   page: string
+  pathname: string
   closing: boolean
   pill: RefObject<HTMLButtonElement | null>
   onClose: () => void
@@ -42,7 +43,7 @@ interface SomoSheetProps {
  * SOMO over the screen the learner is on, under the app header: it grows out of the pill and shrinks back into it.
  * ✕, Escape, a tap outside or Back closes it.
  */
-function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
+function SomoSheet({ page, pathname, closing, pill, onClose, onClosed }: SomoSheetProps) {
   const text = useT().assistant
   const panel = useRef<HTMLDivElement>(null)
   const bubble = useRef<HTMLDivElement>(null)
@@ -235,7 +236,7 @@ function SomoSheet({ page, closing, pill, onClose, onClosed }: SomoSheetProps) {
               <X size={22} strokeWidth={1.75} aria-hidden />
             </button>
           </header>
-          <AssistantChat page={page} />
+          <AssistantChat page={page} pathname={pathname} />
         </div>
         {/* The pill the sheet grows out of: its colour and its name, faded away as the sheet opens. */}
         <div ref={bubble} aria-hidden="true" className="pointer-events-none absolute inset-0 bg-brick opacity-0">
@@ -302,7 +303,7 @@ export function Somo() {
           </div>
         </div>
       )}
-      {shown && <SomoSheet page={describePage(pathname, search)} closing={!open} pill={pill} onClose={close} onClosed={closed} />}
+      {shown && <SomoSheet page={describePage(pathname, search)} pathname={pathname} closing={!open} pill={pill} onClose={close} onClosed={closed} />}
     </>
   )
 }

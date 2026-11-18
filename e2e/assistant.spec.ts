@@ -172,7 +172,8 @@ test('the pill stays off screens with their own bottom button, and off without d
 test('SOMO shows conjugation and word cards drawn from the app data; a link to a missing page stays text', async ({ page }) => {
   const chat = await signedInDev(page)
   chat.release()
-  chat.answer = 'Minulý čas od tener:\n{{conj:tener:preterito}}\nPozri aj [flarpo](/word/flarpo).\n{{word:casa}}'
+  chat.answer =
+    'Tener má v pretérite nepravidelné tvary, napríklad **tuve**.\n{{conj:tener:preterito}}\n- Ayer tuve mucho trabajo. – Včera som mal veľa práce.\nPozri aj [flarpo](/word/flarpo).\n{{word:casa}}\n{{dalej:Ako je tener v prítomnom čase?}}'
   await page.goto('/assistant')
   await askQuestion(page, 'Ako je tener v minulom čase?')
 
@@ -183,7 +184,31 @@ test('SOMO shows conjugation and word cards drawn from the app data; a link to a
   await expect(page.getByText('Pozri aj flarpo.')).toBeVisible()
   await expect(page.getByRole('link', { name: 'flarpo' })).toHaveCount(0)
   await expect(page.getByText('{{')).toHaveCount(0)
+  // Bold Spanish in the sentence, the example as on a word's page.
+  await expect(page.locator('strong', { hasText: 'tuve' })).toBeVisible()
+  await expect(page.getByText('Ayer tuve mucho trabajo.')).toBeVisible()
+  await expect(page.getByText('Včera som mal veľa práce.')).toBeVisible()
   await page.screenshot({ path: 'test-results/somo-cards.png', fullPage: true })
+
+  // The follow-up question is a chip that asks it.
+  const followUp = page.getByRole('group', { name: 'Môžeš sa spýtať ďalej' }).getByRole('button', { name: 'Ako je tener v prítomnom čase?' })
+  await followUp.tap()
+  await expect.poll(() => chat.contexts.length).toBe(2)
+  await expect(page.getByText('Ako je tener v prítomnom čase?')).toHaveCount(2) // the question, and the new chip under the answer
+})
+
+test('an empty chat suggests questions about the page it was opened on', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  await page.goto('/word/casa')
+  await pill(page).tap()
+  const suggested = sheet(page).getByRole('group', { name: 'Navrhnuté otázky' })
+  await expect(suggested.getByRole('button')).toHaveText(['Použi „casa“ vo vete', 'Kedy sa používa „casa“?'])
+  await page.waitForTimeout(600) // the sheet has grown out of the pill
+  await page.screenshot({ path: 'test-results/somo-suggestions.png' })
+  await suggested.getByRole('button', { name: 'Použi „casa“ vo vete' }).tap()
+  await expect.poll(() => chat.contexts.length).toBe(1)
+  await expect(sheet(page).getByText('Použi „casa“ vo vete')).toBeVisible()
 })
 
 test('the conversation is back after the app was closed, and earlier ones can be reopened', async ({ page }) => {

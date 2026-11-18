@@ -3,7 +3,7 @@ import { checkAnswer } from './answerCheck'
 
 describe('checkAnswer', () => {
   it('passes a clean answer', () => {
-    expect(checkAnswer('Auto je el carro.\n{{word:carro}}', 'Ako sa povie auto?', 'mx')).toEqual([])
+    expect(checkAnswer('Auto je el carro.\n{{word:carro}}\n{{dalej:Ako sa povie autobus?}}','Ako sa povie auto?', 'mx')).toEqual([])
   })
 
   it('finds cards the app does not have', () => {

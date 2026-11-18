@@ -371,4 +371,13 @@ describe('SYSTEM_PROMPT', () => {
   it('explains the page the learner opened SOMO on', () => {
     expect(SYSTEM_PROMPT).toContain('<aktualna_stranka>')
   })
+
+  it('answers by question type after a sample, with cards from the tools (2026-11-18)', () => {
+    for (const type of ['A. Slovo', 'B. Sloveso', 'C. Gramatika', 'D. Appka', 'E. Učiaci', 'F. Mimo témy']) expect(SYSTEM_PROMPT).toContain(type)
+    expect(SYSTEM_PROMPT).toContain('Vzor ukazuje tvar a dĺžku, nie obsah')
+    expect(SYSTEM_PROMPT).toContain('{{conj:tener:preterito}}')
+    expect(SYSTEM_PROMPT).toContain('Kartu nikdy nevymýšľaj')
+    expect(SYSTEM_PROMPT).toContain('{{dalej:')
+    expect(SYSTEM_PROMPT).toContain('tučne (**…**) len španielske slová')
+  })
 })
