@@ -1,4 +1,4 @@
-import { Dumbbell, Trash2, X } from 'lucide-react'
+import { Dumbbell, MessageCircleQuestion, Trash2, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
@@ -8,6 +8,9 @@ import { useLanguage } from '../../lib/language'
 import type { Mistake } from '../../lib/db'
 import { matchingTopics, taskFromItem, type ExerciseType, type Task } from '../../lib/lesson'
 import { clearMistakes, removeMistake } from '../../lib/mistakes'
+import { askInNewChat } from '../../lib/assistant/history'
+import { explainQuestion } from '../assistant/explainTask'
+import { useOpenSomo, useSomoAvailable } from '../assistant/somoVisibility'
 import { exerciseInfo } from '../exercises/exercises'
 import { taskSummary } from '../exercises/taskSummary'
 import { ArchiveFilters, NoMatches } from './ArchiveFilters'
@@ -27,6 +30,8 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
   const dictionary = useT()
   const text = dictionary.archive
   const language = useLanguage()
+  const somoAvailable = useSomoAvailable()
+  const openSomo = useOpenSomo()
 
   // The clear-all confirmation expires so a later stray tap can't wipe the list.
   useEffect(() => {
@@ -86,6 +91,20 @@ export function MistakesTab({ mistakes }: { mistakes: Mistake[] }) {
                   </p>
                 </div>
                 <SpeakButton text={task.kind === 'vocab' ? task.word.es : answer} />
+                {somoAvailable && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      askInNewChat(explainQuestion(task))
+                      openSomo()
+                    }}
+                    aria-label={dictionary.assistant.askAbout(answer)}
+                    title={dictionary.assistant.askAbout(answer)}
+                    className="flex size-11 shrink-0 items-center justify-center rounded-full text-brick transition-colors duration-150 hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick"
+                  >
+                    <MessageCircleQuestion size={18} strokeWidth={1.75} aria-hidden />
+                  </button>
+                )}
                 <button
                 type="button"
                 onClick={() => void removeMistake(mistake.exercise, mistake.itemId)}

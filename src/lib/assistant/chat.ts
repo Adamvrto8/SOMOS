@@ -36,7 +36,8 @@ export interface Answer {
 
 /** Same as the server (api/chat.ts) where they must be. */
 export const MAX_CALLS = 5
-export const MAX_QUESTION_CHARS = 500
+import { MAX_QUESTION_CHARS } from './limits'
+export { MAX_QUESTION_CHARS }
 /** Earlier turns sent along: the newest ones, so the conversation stays cheap. */
 export const MAX_TURNS_SENT = 6
 /** A context that takes longer (a database blocked by another tab) is left out, so the question still goes. */

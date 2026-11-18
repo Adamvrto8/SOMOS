@@ -1,4 +1,5 @@
 import { useEffect, useSyncExternalStore } from 'react'
+import { useLocation, useNavigate } from 'react-router'
 import { useAccount } from '../../lib/account'
 import { useDevMode } from '../../lib/devMode'
 
@@ -35,3 +36,17 @@ export function useSomoAvailable(): boolean {
 
 /** SOMO's sheet is open on this history entry: it is pushed as the same address with `somo` in its state. */
 export const isSomoOpen = (state: unknown): boolean => typeof state === 'object' && state !== null && (state as { somo?: unknown }).somo === true
+
+/**
+ * Opens SOMO's sheet over the current screen: the same address pushed with `somo` in its state, so Back closes it
+ * and the screen underneath (a lesson too) stays as it was.
+ */
+export function useOpenSomo(): () => void {
+  const location = useLocation()
+  const navigate = useNavigate()
+  return () => {
+    const { pathname, search, hash } = location
+    const state = (typeof location.state === 'object' && location.state) || {}
+    void navigate({ pathname, search, hash }, { state: { ...state, somo: true }, preventScrollReset: true })
+  }
+}

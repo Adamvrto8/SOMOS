@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { db } from '../db'
-import { addTurn, deleteChat, forgetChat, getChat, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, titleOf } from './history'
+import { addTurn, askInNewChat, deleteChat, forgetChat, getChat, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
 
 beforeEach(async () => {
   await db.chats.clear()
@@ -68,5 +68,15 @@ describe('SOMO conversations', () => {
     const long = titleOf('x'.repeat(200))
     expect(long).toHaveLength(80)
     expect(long.endsWith('…')).toBe(true)
+  })
+
+  it('a queued question opens a new conversation that the restore of the last one leaves alone', async () => {
+    await addTurn({ question: 'staré', answer: 'a' }, 1000)
+    resetChatModule() // the app opened again, right into "Prečo?"
+    askInNewChat('Prečo je moja odpoveď zlá?')
+    await restoreLastChat()
+    expect(getChat()).toMatchObject({ id: null, turns: [], ready: true, queued: 'Prečo je moja odpoveď zlá?' })
+    expect(takeQueued()).toBe('Prečo je moja odpoveď zlá?')
+    expect(takeQueued()).toBeNull()
   })
 })

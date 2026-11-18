@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router'
 import { useT } from '../../i18n'
 import { describePage } from '../../lib/assistant/page'
 import { AssistantChat } from './AssistantChat'
-import { isSomoOpen, useSomoAvailable, useSomoHidden } from './somoVisibility'
+import { isSomoOpen, useOpenSomo, useSomoAvailable, useSomoHidden } from './somoVisibility'
 
 const OPEN_MS = 420
 const CLOSE_MS = 320
@@ -258,27 +258,41 @@ function SomoSheet({ page, pathname, closing, pill, onClose, onClosed }: SomoShe
  * closes the sheet, and a link in an answer leaves it for that page. The sheet stays a moment after the state is gone,
  * to shrink back into the pill.
  */
-export function Somo() {
-  const text = useT().assistant
-  const available = useSomoAvailable()
-  const hidden = useSomoHidden()
+function useSomoSheet() {
   const location = useLocation()
   const navigate = useNavigate()
   const open = isSomoOpen(location.state)
   const [shown, setShown] = useState(open)
-  const pill = useRef<HTMLButtonElement>(null)
   if (open && !shown) setShown(true)
-
-  if (!available) return null
 
   const { pathname, search, hash } = location
   const state = (typeof location.state === 'object' && location.state) || {}
-  const openSheet = () => navigate({ pathname, search, hash }, { state: { ...state, somo: true }, preventScrollReset: true })
   const close = () => {
     // Opened in this session: step back. Opened from a reloaded or shared entry: just drop the flag.
     if (((window.history.state as { idx?: number } | null)?.idx ?? 0) > 0) navigate(-1)
     else navigate({ pathname, search, hash }, { replace: true, state: { ...state, somo: undefined }, preventScrollReset: true })
   }
+  return { open, shown, setShown, close, pathname, page: describePage(pathname, search), openSheet: useOpenSomo() }
+}
+
+/** SOMO's sheet without the pill, for screens outside the app layout (the lesson): opened by useOpenSomo. */
+export function SomoHost() {
+  const available = useSomoAvailable()
+  const sheet = useSomoSheet()
+  const noPill = useRef<HTMLButtonElement>(null)
+  if (!available || !sheet.shown) return null
+  return <SomoSheet page={sheet.page} pathname={sheet.pathname} closing={!sheet.open} pill={noPill} onClose={sheet.close} onClosed={() => sheet.setShown(false)} />
+}
+
+export function Somo() {
+  const text = useT().assistant
+  const available = useSomoAvailable()
+  const hidden = useSomoHidden()
+  const { open, shown, setShown, close, pathname, page, openSheet } = useSomoSheet()
+  const pill = useRef<HTMLButtonElement>(null)
+
+  if (!available) return null
+
   const closed = () => {
     setShown(false)
     pill.current?.focus({ preventScroll: true })
@@ -303,7 +317,7 @@ export function Somo() {
           </div>
         </div>
       )}
-      {shown && <SomoSheet page={describePage(pathname, search)} pathname={pathname} closing={!open} pill={pill} onClose={close} onClosed={closed} />}
+      {shown && <SomoSheet page={page} pathname={pathname} closing={!open} pill={pill} onClose={close} onClosed={closed} />}
     </>
   )
 }

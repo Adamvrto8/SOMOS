@@ -1,4 +1,4 @@
-import { CircleCheck, CircleX, Info, Lightbulb, TriangleAlert, type LucideIcon } from 'lucide-react'
+import { CircleCheck, CircleX, Info, Lightbulb, MessageCircleQuestion, TriangleAlert, type LucideIcon } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Button } from '../../components/Button'
 import { SpeakButton } from '../../components/SpeakButton'
@@ -89,9 +89,11 @@ interface FeedbackSheetProps {
   why?: { label: string; onOpen: () => void }
   /** What the learner answered: a wrong one can be reported as "should have been accepted". */
   learnerAnswer?: string
+  /** SOMO explains the wrong answer (developer mode + account): opens its sheet over the lesson. */
+  askSomo?: { label: string; onOpen: () => void }
 }
 
-export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why, learnerAnswer }: FeedbackSheetProps) {
+export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoice, why, learnerAnswer, askSomo }: FeedbackSheetProps) {
   const text = useT().lesson
   const tone = TONE[grade.verdict]
   const Icon = tone.icon
@@ -220,6 +222,16 @@ export function FeedbackSheet({ task, grade, onContinue, onOverride, mistakeChoi
               {text.carryOn}
             </Button>
           </div>
+        )}
+        {askSomo && grade.verdict === 'wrong' && (
+          <button
+            type="button"
+            onClick={askSomo.onOpen}
+            className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold text-brick hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-brick"
+          >
+            <MessageCircleQuestion size={18} strokeWidth={1.75} aria-hidden />
+            {askSomo.label}
+          </button>
         )}
         {onOverride && grade.verdict === 'wrong' && (
           <button

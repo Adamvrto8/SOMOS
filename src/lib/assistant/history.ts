@@ -18,9 +18,11 @@ export interface ChatState {
   turns: readonly Shown[]
   /** The last conversation has been looked for (the input waits for it, so a question never forks it). */
   ready: boolean
+  /** A question the chat sends by itself once it is open ("Prečo?" from a lesson or Chyby). */
+  queued: string | null
 }
 
-let state: ChatState = { id: null, turns: [], ready: false }
+let state: ChatState = { id: null, turns: [], ready: false, queued: null }
 let restoring: Promise<void> | undefined
 const listeners = new Set<() => void>()
 
@@ -44,7 +46,7 @@ export function restoreLastChat(): Promise<void> {
   restoring ??= (async () => {
     try {
       const last = await db.chats.orderBy('updatedAt').last()
-      if (last && state.id === null && state.turns.length === 0) set({ id: last.id, turns: last.turns })
+      if (last && state.id === null && state.turns.length === 0 && state.queued === null) set({ id: last.id, turns: last.turns })
     } catch (error) {
       console.error('SOMO: the last conversation could not be read', error)
     } finally {
@@ -77,6 +79,18 @@ export function startNewChat() {
   set({ id: null, turns: [] })
 }
 
+/** A new conversation that starts with `question`, sent as soon as the chat is open. */
+export function askInNewChat(question: string) {
+  set({ id: null, turns: [], queued: question })
+}
+
+/** The queued question, once: the chat that takes it sends it. */
+export function takeQueued(): string | null {
+  const question = state.queued
+  if (question !== null) set({ queued: null })
+  return question
+}
+
 /** Puts a stored conversation back on screen, to read or to go on with. */
 export async function openChat(id: string): Promise<boolean> {
   const thread = await db.chats.get(id)
@@ -92,7 +106,7 @@ export async function deleteChat(id: string): Promise<void> {
 
 /** Sign-out: the caller clears the stored conversations, this drops the one on screen. */
 export function forgetChat() {
-  set({ id: null, turns: [] })
+  set({ id: null, turns: [], queued: null })
 }
 
 export const getChat = () => state
@@ -110,6 +124,6 @@ export function useChat(): ChatState {
 
 /** For tests: the module as at an app start. */
 export function resetChatModule() {
-  state = { id: null, turns: [], ready: false }
+  state = { id: null, turns: [], ready: false, queued: null }
   restoring = undefined
 }

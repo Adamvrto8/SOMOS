@@ -6,7 +6,7 @@ import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
 import { answerBlocks, followUpsOf, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
-import { addTurn, deleteChat, listChats, openChat, restoreLastChat, startNewChat, useChat } from '../../lib/assistant/history'
+import { addTurn, deleteChat, listChats, openChat, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
 import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
 import type { ChatThread } from '../../lib/db'
 import { speak, ttsSupported } from '../../lib/tts'
@@ -231,9 +231,16 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
     end.current?.scrollIntoView?.({ block: 'end' })
   }, [turns, pending, error, view])
 
+  // "Prečo?" from a lesson or Chyby: its question goes by itself once the chat is ready.
+  useEffect(() => {
+    if (!account || !chat.ready || chat.queued === null || busy.current) return
+    const question = takeQueued()
+    if (question) void send(question)
+  })
+
   if (!account) return <p className="mt-4 text-ink-muted">{text.needsAccount}</p>
 
-  const send = async (question: string) => {
+  async function send(question: string) {
     const trimmed = question.trim()
     if (!trimmed || busy.current) return
     busy.current = true

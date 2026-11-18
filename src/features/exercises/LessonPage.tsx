@@ -47,6 +47,10 @@ import { tipFor, tipLabel } from '../../lib/tips'
 import { TipContent, type TipHere } from '../grammar/TipContent'
 import { TipSheet } from '../grammar/TipSheet'
 import { exerciseInfo, filterFromParams, filterLabel, filterToParams } from './exercises'
+import { askInNewChat } from '../../lib/assistant/history'
+import { explainQuestion } from '../assistant/explainTask'
+import { SomoHost } from '../assistant/Somo'
+import { useOpenSomo, useSomoAvailable } from '../assistant/somoVisibility'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LessonOverview } from './LessonOverview'
 import { LessonResult, type LessonAnswer } from './LessonResult'
@@ -183,6 +187,9 @@ export function LessonPage() {
   // so the lesson is not rebuilt): the phone's back button then closes the tip instead of leaving the lesson.
   const [openTip, setOpenTip] = useState<string | null>(null)
   const tipInHistory = (location.state as { tip?: true } | null)?.tip === true
+  // "Prečo? Opýtaj sa SOMO": the sheet opens over the lesson like the tip, Back closes it.
+  const somoAvailable = useSomoAvailable()
+  const openSomo = useOpenSomo()
 
   /** `score`: where the lesson's score starts. A correction round keeps the one it has. */
   const start = (next: Task[], lesson?: number, nextRound: Round = 'full', score = { solved: new Set<string>(), total: next.length }) => {
@@ -567,6 +574,17 @@ export function LessonPage() {
                 mistakeChoice={fromMistakes ? { onKeep: () => next(), onResolve: () => next({ resolve: true }) } : undefined}
                 why={taskTip && { label: tipLabel(taskTip), onOpen: () => showTip(taskTip.tip.id) }}
                 learnerAnswer={learnerAnswerText(task, answer)}
+                askSomo={
+                  somoAvailable
+                    ? {
+                        label: dictionary.assistant.askWhy,
+                        onOpen: () => {
+                          askInNewChat(explainQuestion(task, learnerAnswerText(task, answer), grade))
+                          openSomo()
+                        },
+                      }
+                    : undefined
+                }
               />
             ) : AUTO_SUBMIT.includes(task.kind) ? null : (
               // Rides on top of the open phone keyboard and drops back to the bottom without it (src/lib/keyboard.ts).
@@ -585,6 +603,8 @@ export function LessonPage() {
           </div>
         </div>
       )}
+
+      <SomoHost />
 
       {shownTip && (
         <TipSheet key={shownTip.id} label={localizedTip(shownTip).title} onClose={closeTip}>

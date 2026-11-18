@@ -20,6 +20,8 @@ interface Chat {
   release: () => void
   /** What /api/chat answers from now on. */
   answer: string
+  /** The newest question of every call. */
+  questions: string[]
 }
 
 /** Signs in with a faked Supabase in developer mode; /api/chat holds its answer until `release`. */
@@ -37,9 +39,12 @@ async function signedInDev(page: Page): Promise<Chat> {
   })
   let release: () => void = () => {}
   const released = new Promise<void>((resolve) => (release = resolve))
-  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER }
+  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER, questions: [] }
   await page.route('**/api/chat', async (route) => {
-    chat.contexts.push((route.request().postDataJSON() as { context?: { page?: string } }).context ?? {})
+    const body = route.request().postDataJSON() as { context?: { page?: string }; messages: { content: unknown }[] }
+    chat.contexts.push(body.context ?? {})
+    const newest = body.messages.at(-1)?.content
+    if (typeof newest === 'string') chat.questions.push(newest)
     await released
     await json(route, { content: [{ type: 'text', text: chat.answer }], stop_reason: 'end_turn' })
   })
@@ -245,4 +250,37 @@ test('the conversation is back after the app was closed, and earlier ones can be
   await page.getByRole('button', { name: 'Rozhovory' }).tap()
   await page.getByRole('button', { name: 'Vymazať rozhovor „Druhá otázka“' }).tap()
   await expect(list).toHaveCount(1)
+})
+
+test('"Prečo? Opýtaj sa SOMO" in a lesson explains the task over it, and Back returns to the feedback', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = 'Tvar je nepravidelný.\n{{tip:preterito}}'
+  await page.goto('/practice/lesson?type=conjugation&tense=preterito&level=A1&lesson=1')
+  await page.getByRole('textbox').first().fill('xyz')
+  await page.getByRole('button', { name: 'Skontrolovať' }).tap()
+  await page.getByRole('button', { name: 'Vzdať sa' }).tap()
+  await page.getByRole('button', { name: 'Prečo? Opýtaj sa SOMO' }).tap()
+
+  // The question goes by itself, made of what the app knows about the task.
+  await expect(sheet(page)).toBeVisible()
+  await expect.poll(() => chat.questions.length).toBe(1)
+  expect(chat.questions[0]).toMatch(/^Prečo je (moja odpoveď zlá|správne práve toto)\?\nCvičenie: .+\nÚloha: .+ · pretérito/)
+  expect(chat.questions[0]).toContain('\nSprávne: ')
+  await expect(sheet(page).getByRole('link', { name: /Otvoriť tip/ })).toBeVisible()
+  await page.waitForTimeout(500)
+  await page.screenshot({ path: 'test-results/somo-why.png' })
+
+  await page.goBack()
+  await expect(sheet(page)).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Pokračovať' })).toBeVisible()
+  await expect(page).toHaveURL(/\/practice\/lesson\?/)
+
+  // Chyby offer the same for every task kept there (the wrong answer is kept on going on).
+  await page.getByRole('button', { name: 'Pokračovať' }).tap()
+  await expect(page.getByRole('button', { name: 'Prečo? Opýtaj sa SOMO' })).toHaveCount(0)
+  await page.goto('/archive?tab=mistakes')
+  await page.getByRole('button', { name: /^Opýtať sa SOMO na úlohu:/ }).first().tap()
+  await expect.poll(() => chat.questions.length).toBe(2)
+  expect(chat.questions[1]).toMatch(/^Vysvetli mi túto úlohu/)
 })
