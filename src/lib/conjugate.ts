@@ -160,3 +160,27 @@ export function negativeVosotros(verb: Verb): FormPart[] {
     { text: form, irregular: vosotrosIrregular(verb, 'subjuntivo') },
   ]
 }
+
+export interface ConjugationRow {
+  person: string
+  label: string
+  parts: FormPart[]
+  negative?: FormPart[]
+}
+
+/** One tense of a verb as the table shows it (also SOMO's conjugation card): persons in order, vosotros in Spain. */
+export function conjugationRows(verb: Verb, tense: TableTense, estar: Verb, spain = SPAIN): ConjugationRow[] {
+  const imperative = tense === 'imperativo'
+  const rows: ConjugationRow[] = personsOf(tense).map((person) => ({
+    person,
+    label: personLabel(tense, person),
+    parts: conjugate(verb, tense, person, estar),
+    // The imperative shows the negative (no + subjuntivo) under the affirmative: two columns do not fit 375 px.
+    negative: imperative && person !== 'yo' ? negativeImperative(verb, person) : undefined,
+  }))
+  // Spain: vosotros sits before ellos / ustedes (derived, never stored).
+  if (spain) {
+    rows.splice(rows.length - 1, 0, { person: 'vosotros', label: 'vosotros', parts: conjugateVosotros(verb, tense), negative: imperative ? negativeVosotros(verb) : undefined })
+  }
+  return rows
+}

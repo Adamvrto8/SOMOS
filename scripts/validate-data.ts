@@ -15,6 +15,7 @@ import {
 } from '../src/lib/verbForms.ts'
 import { applySentences, applyWords, hiddenVerbIds, mergeById, type SentenceEs, type WordEs } from '../src/data/applyVariant.ts'
 import { bareVosotros } from '../src/lib/vosotros.ts'
+import { NOT_VOSOTROS, SPAIN_ONLY, VOSOTROS_ENDING, VOSOTROS_WORDS } from '../src/lib/spainOnly.ts'
 import { TIP_AREAS } from '../src/data/types.ts'
 import { BLANK_TIPS, checksOwnHint, usageClozeErrors, usageHint } from '../src/lib/clozeChecks.ts'
 
@@ -103,27 +104,7 @@ function checkTopics(where: string, ids: unknown, required: boolean) {
 
 // ---------- Mexican Spanish rules ----------
 
-// Words that are standard in Spain but not in Mexico (MX equivalent in comment).
-const SPAIN_ONLY = new Map([
-  ['coche', 'carro'],
-  ['coches', 'carros'],
-  ['ordenador', 'computadora'],
-  ['móvil', 'celular'],
-  ['zumo', 'jugo'],
-  ['patata', 'papa'],
-  ['patatas', 'papas'],
-  ['conducir', 'manejar'],
-  ['coger', 'tomar / agarrar'],
-  ['gafas', 'lentes'],
-  ['bolígrafo', 'pluma'],
-  ['aparcar', 'estacionar'],
-  ['billete', 'boleto'],
-  ['billetes', 'boletos'],
-])
-const VOSOTROS_WORDS = new Set(['vosotros', 'vosotras', 'os', 'sois', 'vais'])
-const VOSOTROS_ENDING = /(áis|éis|asteis|isteis)$/
-// Numbers that happen to end like a vosotros form.
-const NOT_VOSOTROS = new Set(['dieciséis', 'veintiséis'])
+// Spain-only words and vosotros: src/lib/spainOnly.ts (SOMO's answer check uses the same list).
 
 function checkSpanish(where: string, text: unknown) {
   // Spain text legitimately has vosotros forms and coche, conducir…: validate-es.ts checks it for leftover Mexican words instead.

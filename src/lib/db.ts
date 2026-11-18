@@ -68,6 +68,24 @@ export interface DiaryEntry {
   updatedAt: number
 }
 
+/** A question and SOMO's answer as the chat shows them (src/lib/assistant/history.ts). */
+export interface ChatTurn {
+  question: string
+  answer: string
+  truncated?: boolean
+  calls?: number
+}
+
+/** One conversation with SOMO, kept on this device only (not synced, not backed up, gone on sign-out). */
+export interface ChatThread {
+  id: string
+  /** The first question, shortened: the name in the list of conversations. */
+  title: string
+  turns: ChatTurn[]
+  createdAt: number
+  updatedAt: number
+}
+
 /** A change of the learner's tables not sent to the account yet (src/lib/sync). */
 export interface OutboxEntry {
   kind: 'customWord' | 'saved' | 'card' | 'attempt' | 'mistake' | 'diary'
@@ -85,6 +103,7 @@ export class SomosDB extends Dexie {
   lookups!: EntityTable<Lookup, 'key'>
   outbox!: Table<OutboxEntry, [string, string]>
   diary!: EntityTable<DiaryEntry, 'date'>
+  chats!: EntityTable<ChatThread, 'id'>
 
   constructor() {
     super('somos')
@@ -105,6 +124,9 @@ export class SomosDB extends Dexie {
     })
     this.version(5).stores({
       diary: 'date, updatedAt',
+    })
+    this.version(6).stores({
+      chats: 'id, updatedAt',
     })
   }
 }

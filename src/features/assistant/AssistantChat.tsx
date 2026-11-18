@@ -1,18 +1,20 @@
-import { Send } from 'lucide-react'
+import { History, MessageSquarePlus, Send, Trash2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { answerParts } from '../../lib/assistant/answerText'
+import { answerBlocks, type AnswerPart } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
-import { addTurn, useTurns } from '../../lib/assistant/history'
+import { addTurn, deleteChat, listChats, openChat, restoreLastChat, startNewChat, useChat } from '../../lib/assistant/history'
+import type { ChatThread } from '../../lib/db'
+import { AnswerCardView } from './AnswerCards'
 
-/** An answer with its links woven into the sentences: "otvor [opakovanie](/review)" shows "opakovanie" as a link. */
-function AnswerText({ text }: { text: string }) {
+/** Text with its links woven into the sentences: "otvor [opakovanie](/review)" shows "opakovanie" as a link. */
+function Paragraph({ parts }: { parts: AnswerPart[] }) {
   return (
     <p className="whitespace-pre-wrap">
-      {answerParts(text).map((part, i) =>
+      {parts.map((part, i) =>
         part.type === 'text' ? (
           part.text
         ) : (
@@ -26,6 +28,17 @@ function AnswerText({ text }: { text: string }) {
         ),
       )}
     </p>
+  )
+}
+
+/** An answer: its paragraphs, and the cards the app draws from its data where the model put a marker. */
+function AnswerView({ text }: { text: string }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {answerBlocks(text).map((block, i) =>
+        block.type === 'card' ? <AnswerCardView key={i} card={block.card} /> : <Paragraph key={i} parts={block.parts} />,
+      )}
+    </div>
   )
 }
 
@@ -46,19 +59,77 @@ function Thinking({ label }: { label: string }) {
   )
 }
 
+const TOOL_BUTTON =
+  'flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-medium text-ink-muted hover:bg-surface-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-brick disabled:opacity-50'
+
+/** The stored conversations, newest first: tap one to go on with it. */
+function ChatList({ currentId, onOpen, onBack }: { currentId: string | null; onOpen: (id: string) => void; onBack: () => void }) {
+  const text = useT().assistant
+  const [chats, setChats] = useState<ChatThread[] | null>(null)
+  const reload = () => {
+    void listChats().then(setChats, () => setChats([]))
+  }
+  useEffect(reload, [])
+
+  const when = new Intl.DateTimeFormat(undefined, { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' })
+  return (
+    <div className="mt-1 flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto pb-4">
+      <div className="flex items-center justify-between">
+        <h3 className="font-semibold">{text.historyTitle}</h3>
+        <button type="button" onClick={onBack} className={`${TOOL_BUTTON} -mr-3`}>
+          {text.backToChat}
+        </button>
+      </div>
+      {chats?.length === 0 && <p className="text-ink-muted">{text.historyEmpty}</p>}
+      {chats && chats.length > 0 && (
+        <ul className="divide-y divide-line rounded-card border border-line bg-surface">
+          {chats.map((chat) => (
+            <li key={chat.id} className="flex items-center">
+              <button
+                type="button"
+                onClick={() => onOpen(chat.id)}
+                aria-current={chat.id === currentId ? 'true' : undefined}
+                className="min-h-13 min-w-0 flex-1 px-3 py-2 text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brick active:bg-surface-2"
+              >
+                <span className={`block truncate ${chat.id === currentId ? 'font-semibold' : ''}`}>{chat.title}</span>
+                <span className="block text-sm text-ink-muted">
+                  {when.format(chat.updatedAt)} · {text.questions(chat.turns.length)}
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => void deleteChat(chat.id).then(reload)}
+                aria-label={text.deleteChat(chat.title)}
+                className="flex size-11 shrink-0 items-center justify-center text-ink-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-brick"
+              >
+                <Trash2 size={18} strokeWidth={1.75} aria-hidden />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className="text-sm text-ink-muted">{text.deviceOnly}</p>
+    </div>
+  )
+}
+
 interface AssistantChatProps {
   /** What the learner was looking at when they opened SOMO (lib/assistant/page.ts). */
   page?: string
 }
 
 /**
- * The conversation and the question field, for the /assistant page and the sheet over any screen. The history lives in
- * memory only (src/lib/assistant/history.ts), so both show the same conversation.
+ * The conversation and the question field, for the /assistant page and the sheet over any screen. The conversation on
+ * screen is shared by both and stored on the device (src/lib/assistant/history.ts): closing the app and coming back
+ * opens it again, and "Rozhovory" lists the earlier ones.
  */
 export function AssistantChat({ page }: AssistantChatProps) {
   const text = useT().assistant
   const account = useAccount()
-  const turns = useTurns()
+  const chat = useChat()
+  const { turns } = chat
+  const [view, setView] = useState<'chat' | 'list'>('chat')
+  const [last, setLast] = useState<ChatThread | null>(null)
   const [draft, setDraft] = useState('')
   const [pending, setPending] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -67,10 +138,30 @@ export function AssistantChat({ page }: AssistantChatProps) {
   const busy = useRef(false)
   const end = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    void restoreLastChat()
+  }, [])
+
+  // A new, empty conversation offers the last stored one back: one tap returns to it.
+  const empty = chat.ready && chat.id === null && turns.length === 0
+  useEffect(() => {
+    if (!empty) return
+    let live = true
+    listChats().then(
+      (chats) => {
+        if (live) setLast(chats[0] ?? null)
+      },
+      () => {},
+    )
+    return () => {
+      live = false
+    }
+  }, [empty])
+
   // Keep the newest message in view.
   useEffect(() => {
     end.current?.scrollIntoView?.({ block: 'end' })
-  }, [turns, pending, error])
+  }, [turns, pending, error, view])
 
   if (!account) return <p className="mt-4 text-ink-muted">{text.needsAccount}</p>
 
@@ -83,10 +174,10 @@ export function AssistantChat({ page }: AssistantChatProps) {
     setDraft('')
     try {
       const answer = await ask(turns, trimmed, { page })
-      addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls })
+      await addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls })
       setPending(null)
     } catch (failure) {
-      // The question stays visible with "Skúsiť znova"; the history is untouched.
+      // The question stays visible with "Skúsiť znova"; the conversation is untouched.
       const code = failure instanceof ChatFailure ? failure.code : 'failed'
       // A refused question is not sent again: the learner types a new one.
       setRetryable(code !== 'refused')
@@ -96,7 +187,13 @@ export function AssistantChat({ page }: AssistantChatProps) {
     }
   }
 
-  // Copied as the model wrote it, links as [label](/path): the eval checks exactly that.
+  /** Leaving the conversation drops a failed question that was waiting for "Skúsiť znova". */
+  const dropPending = () => {
+    setPending(null)
+    setError(null)
+  }
+
+  // Copied as the model wrote it, links as [label](/path) and cards as markers: the eval checks exactly that.
   const copy = async () => {
     const all = turns.map((turn) => `${text.you}: ${turn.question}\n${text.assistant}: ${turn.answer}`).join('\n\n')
     try {
@@ -110,16 +207,64 @@ export function AssistantChat({ page }: AssistantChatProps) {
 
   const waiting = pending !== null && error === null
 
+  if (view === 'list') {
+    return (
+      <ChatList
+        currentId={chat.id}
+        onBack={() => setView('chat')}
+        onOpen={(id) => {
+          dropPending()
+          void openChat(id).then(() => setView('chat'))
+        }}
+      />
+    )
+  }
+
   return (
     <>
-      <div className="mt-4 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto pb-4">
-        {turns.length === 0 && pending === null && <p className="text-ink-muted">{text.intro}</p>}
+      <div className="mt-1 flex shrink-0 items-center justify-between">
+        <button type="button" onClick={() => setView('list')} disabled={waiting} className={`${TOOL_BUTTON} -ml-3`}>
+          <History size={18} strokeWidth={1.75} aria-hidden />
+          {text.history}
+        </button>
+        {(turns.length > 0 || pending !== null) && (
+          <button
+            type="button"
+            onClick={() => {
+              dropPending()
+              startNewChat()
+            }}
+            disabled={waiting}
+            className={`${TOOL_BUTTON} -mr-3`}
+          >
+            <MessageSquarePlus size={18} strokeWidth={1.75} aria-hidden />
+            {text.newChat}
+          </button>
+        )}
+      </div>
+
+      <div className="mt-2 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto pb-4">
+        {turns.length === 0 && pending === null && (
+          <div className="flex flex-col gap-3">
+            <p className="text-ink-muted">{text.intro}</p>
+            {empty && last && (
+              <button
+                type="button"
+                onClick={() => void openChat(last.id)}
+                className="flex min-h-13 flex-col rounded-card border border-line bg-surface px-3 py-2 text-left focus-visible:outline-2 focus-visible:outline-brick active:bg-surface-2"
+              >
+                <span className="text-sm font-medium text-brick">{text.continueLast}</span>
+                <span className="w-full truncate">{last.title}</span>
+              </button>
+            )}
+          </div>
+        )}
 
         {turns.map((turn, i) => (
           <section key={i} className="flex flex-col gap-2">
             <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{turn.question}</p>
             <div className="rounded-card border border-line px-3 py-2">
-              <AnswerText text={turn.answer} />
+              <AnswerView text={turn.answer} />
               {turn.truncated && <p className="mt-1 text-sm text-ink-muted">{text.truncated}</p>}
               {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
             </div>
@@ -164,10 +309,16 @@ export function AssistantChat({ page }: AssistantChatProps) {
           maxLength={MAX_QUESTION_CHARS}
           placeholder={text.placeholder}
           aria-label={text.placeholder}
-          disabled={waiting}
+          disabled={waiting || !chat.ready}
           className="h-12 min-w-0 flex-1 rounded-2xl border border-line bg-surface px-3 text-base text-ink focus-visible:outline-2 focus-visible:outline-brick disabled:opacity-50"
         />
-        <Button type="submit" icon={Send} className="w-12 shrink-0 px-0" disabled={waiting || draft.trim() === ''} aria-label={text.send} />
+        <Button
+          type="submit"
+          icon={Send}
+          className="w-12 shrink-0 px-0"
+          disabled={waiting || !chat.ready || draft.trim() === ''}
+          aria-label={text.send}
+        />
       </form>
     </>
   )

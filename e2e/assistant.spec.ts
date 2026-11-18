@@ -18,6 +18,8 @@ interface Chat {
   contexts: { page?: string }[]
   /** Lets the held answer go. */
   release: () => void
+  /** What /api/chat answers from now on. */
+  answer: string
 }
 
 /** Signs in with a faked Supabase in developer mode; /api/chat holds its answer until `release`. */
@@ -35,11 +37,11 @@ async function signedInDev(page: Page): Promise<Chat> {
   })
   let release: () => void = () => {}
   const released = new Promise<void>((resolve) => (release = resolve))
-  const chat: Chat = { contexts: [], release: () => release() }
+  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER }
   await page.route('**/api/chat', async (route) => {
     chat.contexts.push((route.request().postDataJSON() as { context?: { page?: string } }).context ?? {})
     await released
-    await json(route, { content: [{ type: 'text', text: ANSWER }], stop_reason: 'end_turn' })
+    await json(route, { content: [{ type: 'text', text: chat.answer }], stop_reason: 'end_turn' })
   })
 
   await page.goto('/profile')
@@ -165,4 +167,57 @@ test('the pill stays off screens with their own bottom button, and off without d
   await page.goto('/')
   await expect(page.getByRole('link', { name: 'Domov' }).first()).toBeVisible()
   await expect(pill(page)).toHaveCount(0)
+})
+
+test('SOMO shows conjugation and word cards drawn from the app data; a link to a missing page stays text', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = 'Minulý čas od tener:\n{{conj:tener:preterito}}\nPozri aj [flarpo](/word/flarpo).\n{{word:casa}}'
+  await page.goto('/assistant')
+  await askQuestion(page, 'Ako je tener v minulom čase?')
+
+  const conjugation = page.getByRole('region', { name: 'tener · pretérito' })
+  await expect(conjugation.getByText('tuve')).toBeVisible()
+  await expect(conjugation.getByRole('link', { name: 'Celé časovanie' })).toHaveAttribute('href', '/word/tener')
+  await expect(page.getByRole('link', { name: /la casa/ })).toHaveAttribute('href', '/word/casa')
+  await expect(page.getByText('Pozri aj flarpo.')).toBeVisible()
+  await expect(page.getByRole('link', { name: 'flarpo' })).toHaveCount(0)
+  await expect(page.getByText('{{')).toHaveCount(0)
+  await page.screenshot({ path: 'test-results/somo-cards.png', fullPage: true })
+})
+
+test('the conversation is back after the app was closed, and earlier ones can be reopened', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  await page.goto('/assistant')
+  await askQuestion(page, 'Prvá otázka')
+  await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toBeVisible()
+
+  // Closed and opened again: the same conversation, and the next question goes on with it.
+  await page.reload()
+  await expect(page.getByText('Prvá otázka')).toBeVisible()
+  await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toBeVisible()
+
+  // A new conversation offers the last one back in one tap.
+  await page.getByRole('button', { name: 'Nový rozhovor' }).tap()
+  await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toHaveCount(0)
+  const back = page.getByRole('button', { name: /Pokračovať v poslednom rozhovore/ })
+  await expect(back).toContainText('Prvá otázka')
+  await askQuestion(page, 'Druhá otázka')
+  await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toBeVisible()
+
+  // The list has both, newest first; tapping the first one goes back to it.
+  await page.getByRole('button', { name: 'Rozhovory' }).tap()
+  const list = page.getByRole('listitem')
+  await expect(list).toHaveCount(2)
+  await expect(list.first()).toContainText('Druhá otázka')
+  await page.screenshot({ path: 'test-results/somo-history.png' })
+  await page.getByRole('button', { name: /^Prvá otázka/ }).tap()
+  await expect(page.getByText('Prvá otázka')).toBeVisible()
+  await expect(page.getByText('Druhá otázka')).toHaveCount(0)
+
+  // Deleting one leaves the other.
+  await page.getByRole('button', { name: 'Rozhovory' }).tap()
+  await page.getByRole('button', { name: 'Vymazať rozhovor „Druhá otázka“' }).tap()
+  await expect(list).toHaveCount(1)
 })

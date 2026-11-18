@@ -1,4 +1,6 @@
+import { variant } from '../../data'
 import { accessToken } from '../account'
+import { checkAnswer } from './answerCheck'
 import { buildChatContext, type ChatContext } from './context'
 import { runTool, type ToolOutcome } from './tools'
 
@@ -6,6 +8,8 @@ import { runTool, type ToolOutcome } from './tools'
 // is one model call; when the model asks for a tool, the app runs it over its own data and sends the conversation again
 // with the result. The history the screen keeps is plain questions and answers, so no tool traffic piles up in it.
 // Every POST also carries `context`: the app map and the learner's profile (context.ts), built once per question.
+// A finished answer is checked in code (answerCheck.ts); when the check finds something, the model gets one more call
+// with a note on what to fix, and the second answer is shown whatever it says.
 
 export type ChatErrorCode = 'offline' | 'not-signed-in' | 'not-allowed' | 'daily-limit' | 'busy' | 'not-configured' | 'too-many-steps' | 'refused' | 'failed'
 
@@ -62,7 +66,16 @@ export interface ChatDeps {
   context?: () => Promise<ChatContext | undefined>
   /** What the learner was looking at when they opened SOMO (page.ts); goes along even when the rest of the context is late. */
   page?: string
+  /** Notes on a finished answer (answerCheck.ts); empty = shown as it is. */
+  check?: (answer: string, question: string) => string[]
 }
+
+/** The note sent back with a checked answer: marked as the app's, so the model does not take it for the learner. */
+export const checkNote = (notes: string[]) =>
+  `[Kontrola appky, nie otázka učiaceho] ${notes.join(' ')} Napíš celú odpoveď na moju predchádzajúcu otázku znova, opravenú, bez zmienky o kontrole.`.slice(
+    0,
+    MAX_QUESTION_CHARS,
+  )
 
 const isBlockList = (value: unknown): value is Block[] =>
   Array.isArray(value) && value.every((b) => typeof b === 'object' && b !== null && typeof (b as { type?: unknown }).type === 'string')
@@ -113,7 +126,15 @@ const textOf = (blocks: Block[]) =>
  * the same question again.
  */
 export async function ask(turns: readonly Turn[], question: string, deps: ChatDeps = {}): Promise<Answer> {
-  const { fetchImpl = fetch, token = accessToken, online = () => navigator.onLine, tool = runTool, context: buildContext = buildChatContext, page } = deps
+  const {
+    fetchImpl = fetch,
+    token = accessToken,
+    online = () => navigator.onLine,
+    tool = runTool,
+    context: buildContext = buildChatContext,
+    page,
+    check = (answer, asked) => checkAnswer(answer, asked, variant),
+  } = deps
   const trimmed = question.trim()
   if (!trimmed || trimmed.length > MAX_QUESTION_CHARS) throw new ChatFailure('failed')
   if (!online()) throw new ChatFailure('offline')
@@ -138,13 +159,20 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
     { role: 'user', content: trimmed },
   ]
 
+  let checked = false
   for (let calls = 1; calls <= MAX_CALLS; calls++) {
     const reply = await callModel(messages, context, jwt, fetchImpl, online)
     if (reply.stop_reason === 'refusal') throw new ChatFailure('refused')
     if (reply.stop_reason !== 'tool_use') {
       const text = textOf(reply.content)
       if (!text) throw new ChatFailure('failed')
-      return { text, truncated: reply.stop_reason === 'max_tokens', calls }
+      const truncated = reply.stop_reason === 'max_tokens'
+      // One second try per question, and only while a call is left for it.
+      const notes = checked || truncated || calls === MAX_CALLS ? [] : check(text, trimmed)
+      if (notes.length === 0) return { text, truncated, calls }
+      checked = true
+      messages = [...messages, { role: 'assistant', content: reply.content }, { role: 'user', content: checkNote(notes) }]
+      continue
     }
     const results: Block[] = []
     for (const block of reply.content) {

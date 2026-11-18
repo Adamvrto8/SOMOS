@@ -241,3 +241,16 @@ describe('search_word topics', () => {
     expect(out.results[0].topics).toEqual([{ name: 'Mesto', link: '/topic/city' }])
   })
 })
+
+describe('cards in tool results', async () => {
+  it('give the marker the chat draws from the data, and every one of them is a card the app has', async () => {
+    const { cardOf } = await import('./answerText')
+    const word = await ok('search_word', { query: 'casa' })
+    expect(word.results[0].card).toBe('{{word:casa}}')
+    const conj = await ok('get_conjugation', { verb: 'fui', tense: 'preterito' })
+    expect(conj.cards).toEqual({ preterito: `{{conj:${conj.verb}:preterito}}` })
+    const tip = await ok('get_grammar_tip', { id: 'por-para' })
+    expect(tip.tips[0].card).toBe('{{tip:por-para}}')
+    for (const marker of [word.results[0].card, conj.cards.preterito, tip.tips[0].card]) expect(cardOf(marker.slice(2, -2))).toBeDefined()
+  })
+})

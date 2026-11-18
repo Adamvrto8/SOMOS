@@ -254,4 +254,30 @@ describe('ask: errors', () => {
     online = false
     expect(await failure(pending)).toBe('offline')
   })
+
+  it('sends a checked answer back once with a note, and shows the second answer', async () => {
+    const check = vi.fn((text: string) => (text.includes('coche') ? ['V odpovedi je "coche".'] : []))
+    const { d, sent } = deps([answer('Auto je el coche.'), answer('Auto je el carro.')], { check })
+    const result = await ask([], 'Ako sa povie auto?', d)
+    expect(result).toEqual({ text: 'Auto je el carro.', truncated: false, calls: 2 })
+    const second = sent[1].messages
+    expect(second.at(-2)).toEqual({ role: 'assistant', content: [{ type: 'text', text: 'Auto je el coche.' }] })
+    expect(second.at(-1).role).toBe('user')
+    expect(second.at(-1).content).toContain('[Kontrola appky')
+    expect(second.at(-1).content).toContain('V odpovedi je "coche".')
+    expect(second.at(-1).content.length).toBeLessThanOrEqual(MAX_QUESTION_CHARS)
+  })
+
+  it('tries only once: a second flagged answer is shown as it is', async () => {
+    const { d, fetchImpl } = deps([answer('{{word:x}}'), answer('{{word:y}}')], { check: () => ['karta'] })
+    expect((await ask([], 'q', d)).text).toBe('{{word:y}}')
+    expect(fetchImpl).toHaveBeenCalledTimes(2)
+  })
+
+  it('does not check an answer cut short by the token limit', async () => {
+    const check = vi.fn(() => ['x'])
+    const { d } = deps([answer('Dlhé…', 'max_tokens')], { check })
+    expect((await ask([], 'q', d)).truncated).toBe(true)
+    expect(check).not.toHaveBeenCalled()
+  })
 })

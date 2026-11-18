@@ -10,6 +10,8 @@ import { loadRecordsInput, RECORD_KINDS, recordsOf, type RecordKind } from './re
 
 // The tools the assistant's model may call (their schemas live in api/chat.ts; the names must match, a test checks it).
 // They only read the data bundled with the app, in the learner's variant (Mexico / Spain) and language.
+// Results carry `card` markers ({{word:casa}}, {{conj:tener:preterito}}, {{tip:por-para}}): the model puts one on its own
+// line and the chat draws it from the data (answerText.ts), so forms and words are never retyped by the model.
 
 export interface ToolOutcome {
   content: string
@@ -96,6 +98,7 @@ function searchWord(input: Record<string, unknown>): unknown {
         return topic ? [{ name: topicName(topic), link: `/topic/${id}` }] : []
       }),
       link: `/word/${word.id}`,
+      card: `{{word:${word.id}}}`,
     })),
   }
 }
@@ -159,6 +162,7 @@ function getConjugation(input: Record<string, unknown>): unknown {
   return {
     found: true,
     verb: verb.id,
+    cards: Object.fromEntries(tenses.map((tense) => [tense, `{{conj:${verb.id}:${tense}}}`])),
     translations: verbTranslations(verb),
     regular: verb.regular,
     gerund: verb.gerund,
@@ -188,6 +192,7 @@ function tipResult(found: Tip[]): unknown {
         variantNote: local.variantNote,
         sources: local.sources,
         link: `/practice/grammar/${tip.id}`,
+        card: `{{tip:${tip.id}}}`,
       }
     }),
   })

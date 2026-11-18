@@ -4,14 +4,13 @@ import { SectionTitle } from '../../components/SectionTitle'
 import { Segmented } from '../../components/Segmented'
 import type { Verb } from '../../data/types'
 import { useT } from '../../i18n'
-import { variant } from '../../data'
-import { conjugate, conjugateVosotros, formText, negativeVosotros, negativeImperative, personLabel, personsOf, TABLE_TENSES, TENSE_LABELS, type FormPart, type TableTense } from '../../lib/conjugate'
+import { conjugationRows, formText, TABLE_TENSES, TENSE_LABELS, type FormPart, type TableTense } from '../../lib/conjugate'
 import { speak, ttsSupported } from '../../lib/tts'
 
 const IRREGULAR = 'rounded-md bg-amber/30 px-1 font-semibold'
 
 /** A conjugated form, its irregular parts highlighted. */
-function Forms({ parts }: { parts: FormPart[] }) {
+export function Forms({ parts }: { parts: FormPart[] }) {
   return parts.map((part, i) => (
     <Fragment key={i}>
       {i > 0 && ' '}
@@ -28,18 +27,7 @@ interface ConjugationTableProps {
 export function ConjugationTable({ verb, estar }: ConjugationTableProps) {
   const [tense, setTense] = useState<TableTense>('presente')
   const labels = useT().word
-  const imperative = tense === 'imperativo'
-  const rows: { person: string; label: string; parts: FormPart[]; negative?: FormPart[] }[] = personsOf(tense).map((person) => ({
-    person,
-    label: personLabel(tense, person),
-    parts: conjugate(verb, tense, person, estar),
-    // The imperative shows the negative (no + subjuntivo) under the affirmative: two columns do not fit 375 px.
-    negative: imperative && person !== 'yo' ? negativeImperative(verb, person) : undefined,
-  }))
-  // Spain: vosotros sits before ellos / ustedes (derived, never stored).
-  if (variant === 'es') {
-    rows.splice(rows.length - 1, 0, { person: 'vosotros', label: 'vosotros', parts: conjugateVosotros(verb, tense), negative: imperative ? negativeVosotros(verb) : undefined })
-  }
+  const rows = conjugationRows(verb, tense, estar)
   const hasIrregular = rows.some((row) => [...row.parts, ...(row.negative ?? [])].some((p) => p.irregular))
 
   return (

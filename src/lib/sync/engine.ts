@@ -1,3 +1,4 @@
+import { forgetChat } from '../assistant/history'
 import { db } from '../db'
 import { clearLessonProgress } from '../lessonProgress'
 import { clearTestResults } from '../testProgress'
@@ -94,9 +95,10 @@ export async function pendingChanges(now = Date.now()): Promise<number> {
 /** Signing out or deleting the account: the learner's data leaves this device. Device settings stay. */
 export async function wipeLearnerData(): Promise<void> {
   setRecording(false)
-  await db.transaction('rw', [...TABLE_KINDS.map(tableOf), db.outbox, db.lookups], async () => {
-    await Promise.all([...TABLE_KINDS.map((kind) => tableOf(kind).clear()), db.outbox.clear(), db.lookups.clear()])
+  await db.transaction('rw', [...TABLE_KINDS.map(tableOf), db.outbox, db.lookups, db.chats], async () => {
+    await Promise.all([...TABLE_KINDS.map((kind) => tableOf(kind).clear()), db.outbox.clear(), db.lookups.clear(), db.chats.clear()])
   })
+  forgetChat()
   clearLessonProgress()
   clearTestResults()
   clearSyncState()
