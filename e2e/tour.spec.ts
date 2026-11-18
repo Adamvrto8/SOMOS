@@ -19,12 +19,12 @@ test('the offer walks through Domov, the tabs and Profil, then never comes back'
   await expect(offer(page)).toBeVisible()
   await button(page, 'Áno, ukáž mi').tap()
 
-  // SOMO's pill is not shown without dev mode and an account: six steps.
-  await expect(tour(page)).toContainText('Krok 1 z 6')
+  // SOMO's pill is not shown without dev mode and an account: seven steps.
+  await expect(tour(page)).toContainText('Krok 1 z 7')
   await expect(tour(page)).toContainText('Tu začneš')
   // The page behind cannot be tapped.
   await expect(page.locator('#root')).toHaveAttribute('inert', '')
-  for (const title of ['Tvoj pokrok', 'Hľadať', 'Cesta', 'Cvičiť']) {
+  for (const title of ['Tvoj pokrok', 'Ďalší cieľ', 'Hľadať', 'Cesta', 'Cvičiť']) {
     await button(page, 'Ďalej').tap()
     await expect(tour(page).getByRole('heading', { name: title })).toBeVisible()
   }
@@ -32,7 +32,7 @@ test('the offer walks through Domov, the tabs and Profil, then never comes back'
   await expect(tour(page).getByRole('heading', { name: 'Cesta' })).toBeVisible()
   await button(page, 'Ďalej').tap()
   await button(page, 'Ďalej').tap()
-  await expect(tour(page)).toContainText('Krok 6 z 6')
+  await expect(tour(page)).toContainText('Krok 7 z 7')
   await button(page, 'Hotovo').tap()
 
   await expect(tour(page)).toHaveCount(0)
@@ -72,7 +72,7 @@ test('the phone Back and Preskočiť end the tour on Domov', async ({ page }) =>
 
 test('the highlight takes in the whole raised Cesta button', async ({ page }) => {
   await page.goto('/?tour=1')
-  for (let i = 0; i < 3; i++) await button(page, 'Ďalej').tap()
+  for (let i = 0; i < 4; i++) await button(page, 'Ďalej').tap()
   await expect(tour(page).getByRole('heading', { name: 'Cesta' })).toBeVisible()
   const circle = (await page.locator('[data-tour="tab-path"] > span').first().boundingBox())!
   const spot = page.locator('[data-tour-spotlight]')
@@ -82,7 +82,7 @@ test('the highlight takes in the whole raised Cesta button', async ({ page }) =>
 test('on a short screen the buttons of the bubble stay on screen', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 460 })
   await page.goto('/?tour=1')
-  for (const title of ['Tu začneš', 'Tvoj pokrok']) {
+  for (const title of ['Tu začneš', 'Tvoj pokrok', 'Ďalší cieľ']) {
     await expect(tour(page).getByRole('heading', { name: title })).toBeVisible()
     await expect(button(page, 'Ďalej')).toBeInViewport({ ratio: 1 })
     await expect(button(page, 'Preskočiť')).toBeInViewport({ ratio: 1 })
@@ -115,9 +115,9 @@ test('Profil takes the tour again', async ({ page }) => {
 
 test('the text bubble stays on screen for the tab bar', async ({ page }) => {
   await page.goto('/?tour=1')
-  await expect(tour(page)).toContainText('Krok 1 z 6')
-  for (let i = 0; i < 5; i++) await button(page, 'Ďalej').tap() // the last tab: Profil
-  await expect(tour(page)).toContainText('Krok 6 z 6')
+  await expect(tour(page)).toContainText('Krok 1 z 7')
+  for (let i = 0; i < 6; i++) await button(page, 'Ďalej').tap() // the last tab: Profil
+  await expect(tour(page)).toContainText('Krok 7 z 7')
   const box = (await tour(page).boundingBox())!
   expect(box.y).toBeGreaterThanOrEqual(0)
   expect(box.y + box.height).toBeLessThanOrEqual(SCREEN.height - 64) // above the tab bar

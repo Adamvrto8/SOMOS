@@ -8,6 +8,7 @@ import { track } from './usage'
 export const TOUR_STEPS = [
   { id: 'next', target: 'home-next' },
   { id: 'progress', target: 'home-progress' },
+  { id: 'goal', target: 'home-goal' },
   { id: 'somo', target: 'somo' },
   { id: 'search', target: 'tab-search' },
   { id: 'path', target: 'tab-path' },

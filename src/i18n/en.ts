@@ -1158,9 +1158,10 @@ export const en: Dictionary = {
     steps: {
       next: { title: 'Start here', body: 'Every day this shows what’s next: your next lesson and the cards to review. Tapping the card takes you on.' },
       progress: { title: 'Your progress', body: 'Your streak and today’s goal. Below are the word of the day and your diary. Every card opens.' },
+      goal: { title: 'Next goal', body: 'The next test to aim for: your level’s topics one by one, then the exam for the whole level. The bar shows how many topics you’ve passed. Tap it to start the test.' },
       somo: { title: 'SOMO', body: 'Your helper. Ask it about a word, grammar or where to find something in the app.' },
       search: { title: 'Search', body: 'A dictionary both ways: translation, pronunciation, examples and verb conjugation. Words by topic too.' },
-      path: { title: 'Path', body: 'Your progress through levels A1 to B2. It shows what’s next, but you can go anywhere.' },
+      path: { title: 'Path', body: 'A course through levels A1 to B2, unit by unit: new words, grammar, sentences and a test. Each opens after the test of the one before. If you already know something, take the test straight away with “I know this”.' },
       practice: { title: 'Practice', body: 'Every exercise type, grammar and tests. You pick the topic and the level.' },
       profile: { title: 'Profile', body: 'Statistics, saved words and settings: daily goal, reminder, voice, backup and account. This tour is there too.' },
     },

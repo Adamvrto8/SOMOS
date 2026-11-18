@@ -1254,9 +1254,10 @@ export const sk = {
     steps: {
       next: { title: 'Tu začneš', body: 'Každý deň tu nájdeš, čo je na rade: ďalšiu lekciu a kartičky na zopakovanie. Ťuknutím na kartu pokračuješ v učení.' },
       progress: { title: 'Tvoj pokrok', body: 'Séria dní a dnešný cieľ. Nižšie je slovo dňa a denník. Každú kartu môžeš rozkliknúť.' },
+      goal: { title: 'Ďalší cieľ', body: 'Najbližší test, ku ktorému smeruješ: témy tvojej úrovne jedna po druhej, nakoniec skúška celej úrovne. Pásik ukazuje, koľko tém už máš zložených. Ťuknutím test spustíš.' },
       somo: { title: 'SOMO', body: 'Tvoj pomocník. Opýtaj sa ho na slovo, gramatiku alebo na to, kde čo v appke nájdeš.' },
       search: { title: 'Hľadať', body: 'Slovník v oboch smeroch: preklad, výslovnosť, príklady a časovanie slovies. Aj slovíčka podľa tém.' },
-      path: { title: 'Cesta', body: 'Tvoj postup po úrovniach A1 až B2. Ukáže, čo je na rade, ale môžeš ísť aj inde.' },
+      path: { title: 'Cesta', body: 'Kurz po úrovniach A1 až B2, jednotka za jednotkou: nové slová, gramatika, vety a test. Ďalšia sa otvorí po teste predošlej. Ak už niečo vieš, rovno urob test cez „Viem to“.' },
       practice: { title: 'Cvičiť', body: 'Všetky typy cvičení, gramatika a testy. Tému a úroveň si vyberieš sám.' },
       profile: { title: 'Profil', body: 'Štatistiky, uložené slová a nastavenia: denný cieľ, pripomienka, hlas, záloha a účet. Aj toto zoznámenie tu nájdeš znova.' },
     },

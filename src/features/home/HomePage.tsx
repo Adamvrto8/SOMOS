@@ -72,7 +72,9 @@ export function HomePage() {
         </div>
       )}
 
-      <NextGoalCard />
+      <div data-tour="home-goal">
+        <NextGoalCard />
+      </div>
 
       <WordOfDayCard />
 

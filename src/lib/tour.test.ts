@@ -64,13 +64,13 @@ describe('the tour offer', () => {
 })
 
 describe('the tour steps', () => {
-  it('go Domov first, then SOMO, then the tabs left to right', () => {
-    expect(TOUR_STEPS.map((s) => s.id)).toEqual(['next', 'progress', 'somo', 'search', 'path', 'practice', 'profile'])
+  it('go Domov first (next, progress, goal), then SOMO, then the tabs left to right', () => {
+    expect(TOUR_STEPS.map((s) => s.id)).toEqual(['next', 'progress', 'goal', 'somo', 'search', 'path', 'practice', 'profile'])
   })
 
   it('leave out a target that is not on screen (SOMO without its pill)', () => {
     const steps = visibleSteps((target) => target !== 'somo')
-    expect(steps.map((s) => s.id)).toEqual(['next', 'progress', 'search', 'path', 'practice', 'profile'])
+    expect(steps.map((s) => s.id)).toEqual(['next', 'progress', 'goal', 'search', 'path', 'practice', 'profile'])
   })
 })
 
