@@ -328,3 +328,27 @@ test('an answer is saved to today’s diary entry with its question', async ({ p
   const note = page.getByLabel('Čo si chceš zapamätať?')
   await expect(note).toHaveValue('Ako sa povie auto?\nAuto je po španielsky el carro.\n- Mi carro es rojo. – Moje auto je červené.\nel carro – auto')
 })
+
+test('an answer saved while the diary day is open shows there and is not overwritten by typing', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = 'Auto je po španielsky **el carro**.'
+  await page.goto('/diary')
+  await page.getByRole('link', { name: /^Dnes/ }).tap()
+  const note = page.getByLabel('Čo si chceš zapamätať?')
+  await note.fill('moja poznámka')
+  await expect(page.getByText('Uložené', { exact: true })).toBeVisible()
+
+  await pill(page).tap()
+  await askQuestion(page, 'Ako sa povie auto?')
+  await sheet(page).getByRole('button', { name: 'Uložiť do Denníka' }).tap()
+  await expect(sheet(page).getByText('Uložené do Denníka')).toBeVisible()
+  await sheet(page).getByRole('button', { name: 'Zavrieť' }).tap()
+
+  await expect(note).toHaveValue('moja poznámka\n\nAko sa povie auto?\nAuto je po španielsky el carro.')
+  await note.press('End')
+  await note.pressSequentially('!')
+  await page.waitForTimeout(1200)
+  await page.reload()
+  await expect(note).toHaveValue('moja poznámka\n\nAko sa povie auto?\nAuto je po španielsky el carro.!')
+})

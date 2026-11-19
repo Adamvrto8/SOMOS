@@ -64,6 +64,15 @@ function EntryForm({ date, entry }: { date: string; entry: DiaryEntry | null }) 
     }
   }, [flush])
 
+  // The day changed elsewhere (SOMO's "Uložiť do Denníka" over this page, another device): take the stored text unless
+  // something typed here is still waiting to be saved, so the next save cannot drop what was added.
+  const stored = entry?.text ?? ''
+  useEffect(() => {
+    if (dirty.current || stored === latest.current) return
+    latest.current = stored
+    setText(stored)
+  }, [stored])
+
   const change = (value: string) => {
     setText(value)
     latest.current = value
