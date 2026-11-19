@@ -116,9 +116,13 @@ export function freshFollowUps(turns: readonly { question: string; answer: strin
  */
 export const PLACEHOLDER_PATH = /\s*\(?\/[\w\-/?=&%]*<[^<>\n]{1,20}>[\w\-/?=&%<>]*\)?/g
 
-/** **bold** (or __bold__): the prompt keeps it for Spanish words in a sentence. */
-const BOLD = /\*\*([^*\n]+)\*\*|__([^_\n]+)__/g
-const unbold = (text: string) => text.replace(BOLD, (_whole, a?: string, b?: string) => a ?? b ?? '')
+/**
+ * **bold** (or __bold__): the prompt keeps it for Spanish words in a sentence. The model also writes *italics* for a
+ * Spanish word now and then (run 5: "*descansar*"); shown as bold too, never as stray asterisks.
+ */
+const BOLD = /\*\*([^*\n]+)\*\*|__([^_\n]+)__|(?<![\w*])\*([^*\s](?:[^*\n]*[^*\s])?)\*(?![\w*])/g
+const boldText = (match: RegExpMatchArray) => match[1] ?? match[2] ?? match[3] ?? ''
+const unbold = (text: string) => text.replace(BOLD, (...match: string[]) => match[1] ?? match[2] ?? match[3] ?? '')
 
 /** Text with its in-app links; a link to a page that does not exist stays its label. */
 function linkParts(plain: string, parts: AnswerPart[]) {
@@ -145,7 +149,7 @@ export function answerParts(text: string): AnswerPart[] {
   let last = 0
   for (const match of text.matchAll(BOLD)) {
     if (match.index > last) linkParts(text.slice(last, match.index), parts)
-    parts.push({ type: 'strong', text: match[1] ?? match[2] })
+    parts.push({ type: 'strong', text: boldText(match) })
     last = match.index + match[0].length
   }
   if (last < text.length) linkParts(text.slice(last), parts)

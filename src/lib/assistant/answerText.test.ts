@@ -119,6 +119,17 @@ describe('examples, lists and follow-up questions', () => {
     expect(freshFollowUps([])).toEqual([])
   })
 
+  it('shows *italics* as bold, without the asterisks', () => {
+    expect(answerParts('lebo *descansar* je pravidelné, napríklad *estoy en casa*.')).toEqual([
+      { type: 'text', text: 'lebo ' },
+      { type: 'strong', text: 'descansar' },
+      { type: 'text', text: ' je pravidelné, napríklad ' },
+      { type: 'strong', text: 'estoy en casa' },
+      { type: 'text', text: '.' },
+    ])
+    expect(answerParts('2 * 3 a 4*5')).toEqual([{ type: 'text', text: '2 * 3 a 4*5' }])
+  })
+
   it('leaves out a path with a placeholder of the app map', () => {
     expect(answerBlocks('Na detaile slova (/word/<id>) nájdeš príklady.')).toEqual([
       { type: 'text', parts: [{ type: 'text', text: 'Na detaile slova nájdeš príklady.' }] },

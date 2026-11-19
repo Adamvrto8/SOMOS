@@ -8,7 +8,7 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 | 2 | Čo znamená „carro“ a ako sa líši od „coche“? | carro = auto v Mexiku, coche = Španielsko | áno | správne; posledná veta zmätená |
 | 3 | Vyčasuj sloveso tener v pretérite. | tvary z appky (tuve, tuviste, tuvo, tuvimos, tuvieron) | áno | tvary správne; „skloňujú“ namiesto časujú |
 | 4 | Aký je tvar „fui“, od ktorého slovesa? | ir aj ser, pretérito, yo | | |
-| 5 | Kedy použiť ser a kedy estar? | stručné vysvetlenie, prípadne tip z appky | | beh 5: S2 V1 F1 J2 = 6; vysvetlenie a karta tipu ser-estar dobré, ale „Estoy en casa.“ označil „(vzor na estar, mimo appky)“, hoci veta je v tom istom tipe, a poznámka je vložená do prekladu |
+| 5 | Kedy použiť ser a kedy estar? | stručné vysvetlenie, prípadne tip z appky | | beh 5 (po oprave): S2 V2 F1 J1 = 6; bez „(mimo appky)“, príklady z tipu, čip „Daj mi ďalší príklad na ser a estar“; „*estoy en casa*“ s hviezdičkami (opravené) a „aký niečo je“. Prvý pokus S2 V1 F1 J2 = 6: vysvetlenie a karta tipu ser-estar dobré, ale „Estoy en casa.“ označil „(vzor na estar, mimo appky)“, hoci veta je v tom istom tipe, a poznámka je vložená do prekladu |
 | 6 | Vysvetli rozdiel medzi pretérito a imperfecto. | správne vysvetlenie, príklady | | |
 | 7 | Kedy sa používa por a kedy para? | správne vysvetlenie, príklady | áno | správne, tip por-para; zbytočne dlhé a profil (B1) navyše |
 | 8 | Aké sú nepravidelné tvary slovesa hacer v prítomnom čase? | hago, ostatné pravidelné | nie | tvary správne, ale „kmeň haz-/hac-“ je zlé pravidlo |
@@ -96,12 +96,12 @@ Otázky 1–26 hore sa v tomto behu hodnotia tiež bodmi (stačí zapísať S/V/
 | 32 | Dá sa so SOMO rozprávať hlasom? | nie, appka to nemá; najbližšia možnosť (Vyslovovanie, 🔊) | 2 | 2 | 2 | 2 | 8; Vyslovovanie aj Diktát s funkčnými odkazmi, 🔊 nespomenul; čip „ser v prítomnom čase“ zopakovaný z 31 |
 | 33 | Koľko vlastných slov mám pridaných? | číslo z profilu alebo get_my_records, nič odhadnuté | 2? | 2? | 2 | 2 | 8, ak v Pridané naozaj máš 5 slov (over v appke); záložka Pridané a kartičky v opakovaní sedia |
 | 34 | Ako sa povie „pes“? | el perro, bez „podobných“ slov pesar, peso | 2 | 2 | 2 | 2 | 8; príklad z appky (family.json), žiadne pesar / peso |
-| 35 | Lekcia Časovanie → zlá odpoveď → „Prečo? Opýtaj sa SOMO“ | otázka odíde sama; vysvetlí rozdiel medzi mojou a správnou odpoveďou podľa tipu, správny tvar tučne, karta tipu; Späť vráti do lekcie | 2 | 2 | 2 | 2 | 8 (opakované v appke, trabajar · él · progresivo, prázdna odpoveď → „Prečo je správne práve toto?“ s úlohou, správnym tvarom a tipom); está trabajando tučne, gerundium -ando, príklady z tipu progresivo, karta tipu; chat sa otvoril nad lekciou. Prvý pokus (text v chate): SOMO o tlačidle „Prečo?“ nevie, mapa ho nepopisuje |
-| 36 | Lekcia Doplň slovo → „Vzdať sa“ → „Prečo? …“ | „Prečo je správne práve toto?“, vysvetlenie vety s medzerou a nápovedou | | | | | beh 5: nespustené |
-| 37 | Chyby → ikona SOMO pri úlohe | „Vysvetli mi túto úlohu“, vysvetlenie bez vymyslenej „mojej odpovede“ | | | | | beh 5: neplatné (text v chate); „appka by mala poslať…“ je dohad |
-| 38 | Detail slova → čip „Použi … vo vete“ | veta s tým slovom, nevydávaná za vetu z appky | | | | | beh 5: neplatné (text v chate); v odpovedi holá šablóna „/word/<id>“ z mapy, čip „s time slovom perro“ (preklep) |
+| 35 | Lekcia Časovanie → zlá odpoveď → „Prečo? Opýtaj sa SOMO“ | otázka odíde sama; vysvetlí rozdiel medzi mojou a správnou odpoveďou podľa tipu, správny tvar tučne, karta tipu; Späť vráti do lekcie | 2 | 2 | 2 | 2 | 8 (descargar · yo · pretérito, descargo → descargué): prítomný čas namiesto pretérita, -gar pred -é dostane u; príklad z tipu, karta tipu, chat nad lekciou. Aj trabajar · progresivo s prázdnou odpoveďou („Prečo je správne práve toto?“) 8. Doplňovačka querer (quiero → quiere) 7: rozbor presný (kmeň e → ie dobre, zlá osoba), ale poznámka „(tvar pre yo, nie pre él)“ v preklade príkladu |
+| 36 | Lekcia Doplň slovo → „Vzdať sa“ → „Prečo? …“ | „Prečo je správne práve toto?“, vysvetlenie vety s medzerou a nápovedou | | | | | beh 5: „Prečo je správne práve toto?“ overené v Časovaní (35), v Doplň slovo po „Vzdať sa“ ešte nie |
+| 37 | Chyby → ikona SOMO pri úlohe | „Vysvetli mi túto úlohu“, vysvetlenie bez vymyslenej „mojej odpovede“ | 2 | 2 | 1 | 2 | 7 (descansar · ellos · pretérito): žiadna vymyslená moja odpoveď, kmeň + -aron, príklad z tipu, karta tipu, odkaz na časovanie; „*descansar*“ s hviezdičkami (opravené) |
+| 38 | Detail slova → čip „Použi … vo vete“ | veta s tým slovom, nevydávaná za vetu z appky | 2 | 2 | 2 | 2 | 8 (napísané ručne „Pouzi carro vo vete“): Mi carro es rojo. je veta z appky (city), karta slova |
 | 39 | Čip s ďalšou otázkou pod odpoveďou | zmysluplná otázka, na ktorú SOMO odpovie z appky | 2 | 2 | 2 | 2 | 8 (v appke: po „Koľko cvičení tu je?“ čip „Ktoré cvičenie je pre mňa najťažšie?“, zodpovedateľné z profilu); samotná odpoveď 11 druhov sedí s appkou. Z 27–34: čipy 27 a 32 nesúvisia s otázkou, 28 appka nezodpovie |
-| 40 | Polož otázku, zavri appku, otvor SOMO; potom „Nový rozhovor“ | rozhovor tam je; prázdny chat ponúkne „Pokračovať v poslednom rozhovore“ | | | | | |
+| 40 | Polož otázku, zavri appku, otvor SOMO; potom „Nový rozhovor“ | rozhovor tam je; prázdny chat má dve navrhnuté otázky (staršie rozhovory sú v Rozhovoroch) | | | | | beh 5: nespustené |
 
 Opravené po prvej časti behu 5 (2026-11-19): zástupná adresa (/word/<id>) sa nezobrazí a kontrola ju vráti modelu;
 poznámka o pôvode vety v preklade príkladu („mimo appky“) sa vráti modelu; čip, ktorý už v rozhovore padol, sa
@@ -111,9 +111,10 @@ neukáže; prompt: ďalšie otázky nadväzujú na práve položenú otázku a n
 Pri každej odpovedi, ktorá nesedí, daj aj 👎 s dôvodom: riadok v Supabase `chat_feedback` má otázku, odpoveď,
 volané nástroje aj stránku, takže sa dá dohľadať bez kopírovania.
 
-- Dátum:
-- Commit:
-- Body (priemer / najnižšia):
-- Namerané tokeny na otázku (input / output / cache_share):
-- Odhad ceny na otázku:
-- Verdikt:
+- Dátum: 2026-11-19
+- Commit: 83ef194 (27–34, 39), 39b0056 (35, 37, 38, 5 po oprave)
+- Body (priemer / najnižšia): 7,6 / 6 zo 16 hodnotených odpovedí (27–35, 37–39, 5 dvakrát); žiadna 0 v S ani vo V, chytáky 27–33 všetky aspoň 7.
+- Namerané tokeny na volanie (29 volaní za deň, väčšinou 2 na otázku): input 1729, output 308, cache read 10 542, cache write 781, cache_share 0,81.
+- Odhad ceny: 0,0154 USD za 29 volaní, ~0,0005 USD na volanie, ~0,001 USD na otázku (~1 USD za 1000 otázok; beh 4 ~0,0007).
+- Verdikt: kritériá behu 5 splnené. Ostáva 36 (Doplň slovo po „Vzdať sa“), 40 a otázky 1–26 bodmi.
+- Opravené po behu: *kurzíva* sa zobrazí tučne bez hviezdičiek, prompt kurzívu zakazuje. Drobnosti nechané: poznámka typu „(tvar pre yo)“ v preklade príkladu, „aký niečo je“.
