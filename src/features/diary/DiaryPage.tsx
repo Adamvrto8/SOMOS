@@ -27,7 +27,7 @@ export function DiaryPage() {
           <Link to={`/diary/${today}`} className={ROW}>
             <span className="min-w-0 flex-1">
               <span className="block font-medium">{t.today}</span>
-              <span lang={todays ? 'es' : undefined} className="block truncate text-sm text-ink-muted">
+              <span className="block truncate text-sm text-ink-muted">
                 {todays ? entryLine(todays) : t.nothingToday}
               </span>
             </span>
@@ -39,7 +39,7 @@ export function DiaryPage() {
             <Link to={`/diary/${entry.date}`} className={ROW}>
               <span className="min-w-0 flex-1">
                 <span className="block font-medium first-letter:uppercase">{diaryDate(entry.date, dictionary.dateLocale)}</span>
-                <span lang="es" className="block truncate text-sm text-ink-muted">
+                <span className="block truncate text-sm text-ink-muted">
                   {entryLine(entry)}
                 </span>
               </span>

@@ -42,7 +42,8 @@ test('a backup carries the settings to another device', async ({ page }) => {
   // The next backup from this device holds what now applies here.
   const [download] = await Promise.all([page.waitForEvent('download'), button(page, 'Stiahnuť zálohu').tap()])
   const saved = JSON.parse(readFileSync(await download.path(), 'utf8')) as { settings: unknown; diary: unknown }
-  expect(saved.diary).toEqual([backup.diary[0]])
+  // The diary row of the older backup (two fields) comes back as one text.
+  expect(saved.diary).toEqual([{ date: '2026-11-01', text: 'Fui al cine.', createdAt: 1, updatedAt: 2 }])
   // The backup had no language (made before there were two): this device keeps its own.
   expect(saved.settings).toEqual({ ...settings, reminder: { enabled: false, time: '07:30' }, language: 'sk' })
 })

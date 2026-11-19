@@ -1,21 +1,18 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { useT } from '../../i18n'
-import { useCustomWords } from '../../lib/archive'
 import type { DiaryEntry } from '../../lib/db'
 import { DIARY_MAX, isDiaryDate, saveDiaryEntry, useDiaryEntry } from '../../lib/diary'
 import { useLanguage } from '../../lib/language'
-import { DiaryCheck } from './DiaryCheck'
 import { diaryDate } from './diaryDate'
 
 const SAVE_AFTER = 800 // ms after the last keystroke
-const CHECK_AFTER = 600
 
 const FIELD =
-  'field-sizing-content w-full rounded-2xl border border-line bg-surface px-4 py-3 text-base leading-relaxed transition-colors duration-150 placeholder:text-ink-muted focus:border-brick focus:outline-none'
+  'w-full rounded-2xl border border-line bg-surface px-4 py-3 text-base leading-relaxed transition-colors duration-150 placeholder:text-ink-muted focus:border-brick focus:outline-none'
 
-/** /diary/:date — one day of the diary. */
+/** /diary/:date — one day of the diary: one free text. */
 export function DiaryEntryPage() {
   const { date = '' } = useParams()
   const valid = isDiaryDate(date)
@@ -30,15 +27,11 @@ function EntryForm({ date, entry }: { date: string; entry: DiaryEntry | null }) 
   const dictionary = useT()
   const t = dictionary.diary
   const language = useLanguage()
-  const customWords = useCustomWords()
-  const customEs = useMemo(() => customWords?.map((w) => w.es) ?? [], [customWords])
-  const [learned, setLearned] = useState(entry?.learned ?? '')
-  const [es, setEs] = useState(entry?.es ?? '')
-  const [checked, setChecked] = useState(entry?.es ?? '')
+  const [text, setText] = useState(entry?.text ?? '')
   const [saved, setSaved] = useState(false)
 
   // The latest text and whether it still has to be stored: read by the timer and on leaving the page.
-  const latest = useRef({ learned, es })
+  const latest = useRef(text)
   const dirty = useRef(false)
   const timer = useRef<number>(undefined)
   const savedTimer = useRef<number>(undefined)
@@ -71,22 +64,16 @@ function EntryForm({ date, entry }: { date: string; entry: DiaryEntry | null }) 
     }
   }, [flush])
 
-  useEffect(() => {
-    const id = window.setTimeout(() => setChecked(es), CHECK_AFTER)
-    return () => window.clearTimeout(id)
-  }, [es])
-
-  const change = (field: 'learned' | 'es', value: string) => {
-    if (field === 'learned') setLearned(value)
-    else setEs(value)
-    latest.current = { ...latest.current, [field]: value }
+  const change = (value: string) => {
+    setText(value)
+    latest.current = value
     dirty.current = true
     window.clearTimeout(timer.current)
     timer.current = window.setTimeout(flush, SAVE_AFTER)
   }
 
   return (
-    <div className="space-y-6">
+    <div className="flex min-h-[calc(100dvh-12rem)] flex-col gap-4">
       <div className="flex items-center justify-between gap-2">
         <BackButton fallback="/diary" />
         <span aria-live="polite" className="text-sm text-ink-muted">
@@ -94,36 +81,17 @@ function EntryForm({ date, entry }: { date: string; entry: DiaryEntry | null }) 
         </span>
       </div>
       <h1 className="font-serif text-3xl font-semibold tracking-tight first-letter:uppercase">{diaryDate(date, dictionary.dateLocale)}</h1>
-
-      <label className="block space-y-2">
-        <span className="block font-medium">{t.learned}</span>
+      <label className="flex flex-1 flex-col">
+        <span className="sr-only">{t.label}</span>
         <textarea
-          value={learned}
-          onChange={(e) => change('learned', e.target.value)}
+          value={text}
+          onChange={(e) => change(e.target.value)}
           lang={language}
-          rows={3}
           maxLength={DIARY_MAX}
-          placeholder={t.learnedHint}
-          className={`${FIELD} min-h-24`}
+          placeholder={`${t.label} ${t.hint}`}
+          className={`${FIELD} min-h-64 flex-1`}
         />
       </label>
-
-      <label className="block space-y-2">
-        <span className="block font-medium">{t.es}</span>
-        <textarea
-          value={es}
-          onChange={(e) => change('es', e.target.value)}
-          lang="es"
-          rows={6}
-          maxLength={DIARY_MAX}
-          spellCheck={false}
-          autoCapitalize="sentences"
-          placeholder={t.esHint}
-          className={`${FIELD} min-h-36 font-serif text-lg`}
-        />
-      </label>
-
-      <DiaryCheck text={checked} customEs={customEs} />
     </div>
   )
 }

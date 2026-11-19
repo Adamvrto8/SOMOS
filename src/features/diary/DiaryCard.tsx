@@ -1,21 +1,18 @@
 import { Check, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { useT } from '../../i18n'
-import { promptOfDay, todayKey, useDiaryEntry } from '../../lib/diary'
-import { useLanguage } from '../../lib/language'
+import { todayKey, useDiaryEntry } from '../../lib/diary'
 import { entryLine } from './diaryDate'
 
 /**
- * Domov: today's diary entry, compact — the day's prompt and "Napísať", or ✓ and the first line of what was written.
+ * Domov: today's diary entry, compact — a hint and "Napísať", or ✓ and the first line of what was written.
  * The card itself opens the day (stretched link); "Napísať" and "Všetky zápisy" sit above it.
  */
 export function DiaryCard() {
   const t = useT().diary
-  const language = useLanguage()
   const today = todayKey()
   const entry = useDiaryEntry(today)
   if (entry === undefined) return null // loading from IndexedDB
-  const prompt = promptOfDay(today)
   const href = `/diary/${today}`
 
   return (
@@ -40,13 +37,11 @@ export function DiaryCard() {
         <div className="min-w-0 flex-1">
           <Link
             to={href}
-            lang="es"
             tabIndex={entry ? undefined : -1}
-            className={`block font-serif text-lg leading-snug font-semibold ${entry ? 'truncate' : 'line-clamp-2'} after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-brick`}
+            className={`block leading-snug ${entry ? 'truncate font-serif text-lg font-semibold' : 'line-clamp-2 text-ink-muted'} after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-brick`}
           >
-            {entry ? entryLine(entry) : prompt.es}
+            {entry ? entryLine(entry) : t.cardHint}
           </Link>
-          {!entry && <p className="truncate text-sm text-ink-muted">{language === 'en' ? prompt.en : prompt.sk}</p>}
         </div>
         {entry ? (
           <ChevronRight size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />

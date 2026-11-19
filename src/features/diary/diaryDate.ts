@@ -9,5 +9,5 @@ export function diaryDate(date: string, locale: string): string {
 /** The first line with text, for a list row or the Domov card. */
 export const firstLine = (text: string) => text.split('\n').find((line) => line.trim())?.trim() ?? ''
 
-/** What a day shows in a list or on the card: the first line of the Spanish, else of the other field. */
-export const entryLine = (entry: DiaryEntry) => firstLine(entry.es) || firstLine(entry.learned)
+/** What a day shows in a list or on the card: the first line with text. */
+export const entryLine = (entry: DiaryEntry) => firstLine(entry.text)

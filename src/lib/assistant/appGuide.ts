@@ -74,7 +74,7 @@ export const GUIDE: GuideSection[] = [
     id: 'dennik',
     title: 'Denník',
     links: ['/diary'],
-    text: 'Karta na Domove. Na každý deň jeden zápis s dvoma poliami: „Čo som sa dnes naučil“ a „Po španielsky“ (pár viet o dni). Kontrola podčiarkne španielske slová, ktoré appka nepozná. „Všetky zápisy“ ukáže staršie dni. Nepočíta sa do cieľa ani série.',
+    text: 'Karta na Domove („Dnešný zápis“). Na každý deň jeden zápis: voľný text, kam si učiaci zapisuje, čo si chce zapamätať (slovíčka, pravidlá, vysvetlenia). Pod každou odpoveďou SOMO je „Uložiť do Denníka“, ktoré otázku aj odpoveď pridá na koniec dnešného zápisu. Text appka nekontroluje; vetu po španielsky skontroluje SOMO, keď ju sem učiaci pošle. „Všetky zápisy“ ukáže staršie dni. Nepočíta sa do cieľa ani série.',
   },
   {
     id: 'prehlad',
