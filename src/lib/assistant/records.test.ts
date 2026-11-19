@@ -8,8 +8,8 @@ const input: RecordsInput = {
     { exercise: 'cloze', itemId: 'casa', firstWrongAt: day(1), lastWrongAt: day(9), wrongCount: 1 },
   ],
   diary: [
-    { date: '2026-11-14', learned: 'pretérito', es: 'Ayer fui al cine.', createdAt: day(14), updatedAt: day(14) },
-    { date: '2026-11-15', learned: 'x'.repeat(900), es: '', createdAt: day(15), updatedAt: day(15) },
+    { date: '2026-11-14', text: 'pretérito\n\nAyer fui al cine.', createdAt: day(14), updatedAt: day(14) },
+    { date: '2026-11-15', text: 'x'.repeat(900), createdAt: day(15), updatedAt: day(15) },
   ],
   tests: { 'food:A1': { bestScore: 9, total: 10, passed: true, passedAt: day(5), attempts: 2, lastAt: day(5) } },
   lessons: { 'cloze:food:A1:1': { bestScore: 10, total: 10, passed: true, passedAt: day(4) }, 'cloze:food:A1:2': { bestScore: 3, total: 10, passed: false } },
@@ -28,7 +28,8 @@ describe('recordsOf', () => {
   it('clips long diary entries and respects the limit', () => {
     const [newest] = recordsOf('diary', input, 1)
     expect(newest.date).toBe('2026-11-15')
-    expect(String(newest.learned).length).toBeLessThanOrEqual(300)
+    expect(String(newest.text).length).toBeLessThanOrEqual(600)
+    expect(String(newest.text).length).toBeGreaterThan(300)
     expect(recordsOf('diary', input, 1)).toHaveLength(1)
   })
 

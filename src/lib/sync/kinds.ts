@@ -1,5 +1,6 @@
 import type { Table } from 'dexie'
 import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from '../db'
+import { toDiaryEntry } from '../diary'
 
 // What syncs between the devices of an account, record by record (docs/superpowers/specs/2026-10-19-accounts-design.md).
 
@@ -105,6 +106,12 @@ export async function readRow(kind: TableKind, key: string): Promise<unknown> {
 
 /** Stores a record's row from another device. Call inside runRemote. */
 export async function writeRow(kind: TableKind, key: string, data: unknown): Promise<void> {
+  if (kind === 'diary') {
+    // A device on an older app still sends learned + es.
+    const entry = toDiaryEntry(data)
+    if (entry) await db.diary.put(entry)
+    return
+  }
   if (kind !== 'attempt') {
     await tableOf(kind).put(data)
     return

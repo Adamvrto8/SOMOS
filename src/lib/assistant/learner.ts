@@ -29,7 +29,7 @@ export interface LearnerSnapshot {
   customWords: number
   diaryCount: number
   /** The newest entries first, at most 7. */
-  diary: Pick<DiaryEntry, 'date' | 'learned'>[]
+  diary: Pick<DiaryEntry, 'date' | 'text'>[]
   lessons: LessonProgressionMap
   tests: TestResultsMap
   next?: { title: string; step: string; href: string }
@@ -114,7 +114,7 @@ export function learnerProfile(s: LearnerSnapshot): string {
       ? `Naposledy hraná lekcia: ${s.lastLesson.type} · ${s.lastLesson.group}${s.lastLesson.level ? ` · ${s.lastLesson.level}` : ''} · lekcia ${s.lastLesson.lesson}`
       : '',
     s.diary.length
-      ? `Denník: ${s.diaryCount} zápisov; posledné „čo som sa naučil“: ${s.diary.slice(0, 3).map((e) => `${e.date}: ${clip(e.learned, 160) || '–'}`).join(' | ')}`
+      ? `Denník: ${s.diaryCount} zápisov; posledné: ${s.diary.slice(0, 3).map((e) => `${e.date}: ${clip(e.text, 160) || '–'}`).join(' | ')}`
       : 'Denník: zatiaľ bez zápisov',
   ]
   return lines.filter(Boolean).join('\n')

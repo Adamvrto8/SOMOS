@@ -137,19 +137,26 @@ describe('a sync round', () => {
 
 describe('diary', () => {
   it('an entry goes to the account, an edit and a removal from another device come back', async () => {
-    await saveDiaryEntry('2026-11-07', { learned: '', es: 'Hoy fui al mercado.' }, 100)
+    await saveDiaryEntry('2026-11-07', 'Hoy fui al mercado.', 100)
     await settle()
     await syncOnce(server)
-    expect(server.get('diary', '2026-11-07')?.data).toMatchObject({ es: 'Hoy fui al mercado.' })
+    expect(server.get('diary', '2026-11-07')?.data).toMatchObject({ text: 'Hoy fui al mercado.' })
 
-    const edited = { date: '2026-11-07', learned: '', es: 'Hoy fui al mercado con Ana.', createdAt: 100, updatedAt: 500 }
+    const edited = { date: '2026-11-07', text: 'Hoy fui al mercado con Ana.', createdAt: 100, updatedAt: 500 }
     await fromOtherDevice(server, 'diary', '2026-11-07', edited, Date.now() + 1000)
     await syncOnce(server)
-    expect((await db.diary.get('2026-11-07'))?.es).toBe('Hoy fui al mercado con Ana.')
+    expect((await db.diary.get('2026-11-07'))?.text).toBe('Hoy fui al mercado con Ana.')
 
     await fromOtherDevice(server, 'diary', '2026-11-07', null, Date.now() + 2000, true)
     await syncOnce(server)
     expect(await db.diary.get('2026-11-07')).toBeUndefined()
+  })
+
+  it('an entry of an older app (two fields) arrives as one text', async () => {
+    const old = { date: '2026-11-06', learned: 'pretérito', es: 'Ayer fui al cine.', createdAt: 1, updatedAt: 2 }
+    await fromOtherDevice(server, 'diary', '2026-11-06', old, Date.now() + 1000)
+    await syncOnce(server)
+    expect(await db.diary.get('2026-11-06')).toEqual({ date: '2026-11-06', text: 'pretérito\n\nAyer fui al cine.', createdAt: 1, updatedAt: 2 })
   })
 })
 

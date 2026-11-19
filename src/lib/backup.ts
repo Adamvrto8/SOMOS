@@ -4,7 +4,7 @@ import { getDailyGoal, setDailyGoal } from './dailyGoal'
 import { getLanguage, setLanguage } from './language'
 import { getExerciseOrder, setExerciseOrder } from './exerciseOrder'
 import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from './db'
-import { isDiaryEntry, newerDiaryEntries } from './diary'
+import { diaryEntriesOf, newerDiaryEntries } from './diary'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
 import { getReminderSettings, setReminderTime } from './reminder'
@@ -153,6 +153,8 @@ export function parseBackup(text: string): ParseResult {
   skipped += lessons.skipped
   const tests = parseTestResults(data.tests)
   skipped += tests.skipped
+  const diary = diaryEntriesOf(data.diary) // also the two fields of backups made before 2026-11-19
+  skipped += diary.skipped
 
   const backup: Backup = {
     app: APP,
@@ -163,7 +165,7 @@ export function parseBackup(text: string): ParseResult {
     reviewCards: pick(data.reviewCards, isReviewCard),
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
-    diary: pick(data.diary, isDiaryEntry),
+    diary: diary.entries,
     lessons: lessons.records,
     tests: tests.records,
     settings: parseSettingsBackup(data.settings),

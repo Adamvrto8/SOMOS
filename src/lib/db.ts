@@ -59,11 +59,10 @@ export interface Lookup {
   at: number
 }
 
-/** One day of the diary (Denník), keyed by the local date. */
+/** One day of the diary (Denník), keyed by the local date: one free text (since 2026-11-19, was two fields). */
 export interface DiaryEntry {
   date: string // "2026-11-07", local time
-  learned: string // Čo som sa dnes naučil
-  es: string // Po španielsky
+  text: string
   createdAt: number
   updatedAt: number
 }
@@ -136,6 +135,22 @@ export class SomosDB extends Dexie {
     this.version(6).stores({
       chats: 'id, updatedAt',
     })
+    // The diary's two fields (learned, es) became one text (docs/superpowers/specs/2026-11-19-diary-notes-design.md).
+    // Kept apart from diary.ts's toDiaryEntry: db.ts must not import diary.ts, which imports db.
+    this.version(7)
+      .stores({ diary: 'date, updatedAt' })
+      .upgrade((tx) =>
+        tx
+          .table('diary')
+          .toCollection()
+          .modify((row: Record<string, unknown>) => {
+            const learned = typeof row.learned === 'string' ? row.learned.trim() : ''
+            const es = typeof row.es === 'string' ? row.es.trim() : ''
+            if (typeof row.text !== 'string') row.text = [learned, es].filter(Boolean).join('\n\n')
+            delete row.learned
+            delete row.es
+          }),
+      )
   }
 }
 

@@ -62,7 +62,7 @@ export async function loadLearnerSnapshot(now = new Date()): Promise<LearnerSnap
     saved,
     customWords,
     diaryCount,
-    diary: diary.map(({ date, learned }) => ({ date, learned })),
+    diary: diary.map(({ date, text }) => ({ date, text })),
     lessons,
     tests,
     next: next && { title: unitTitle(next.unit.unit), step: next.step.id, href: stepHref(next.unit.unit, next.step.id) },

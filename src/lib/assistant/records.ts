@@ -33,7 +33,7 @@ export function recordsOf(kind: RecordKind, input: RecordsInput, limit: number):
       return [...input.diary]
         .sort((a, b) => b.date.localeCompare(a.date))
         .slice(0, limit)
-        .map((e) => ({ date: e.date, learned: clip(e.learned, 300), es: clip(e.es, 300) }))
+        .map((e) => ({ date: e.date, text: clip(e.text, 600) }))
     case 'tests':
       return Object.entries(input.tests)
         .sort(([, a], [, b]) => b.lastAt - a.lastAt)

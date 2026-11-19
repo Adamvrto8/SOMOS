@@ -1,13 +1,11 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { diaryPrompts } from '../data'
-import type { DiaryPrompt } from '../data/types'
 import { dayKey } from './dates'
 import { db, type DiaryEntry } from './db'
 
-// Denník: one entry per local day. Saved while typing; both fields empty = the day is removed.
+// Denník: one free text per local day. Saved while typing; an empty text removes the day.
 // Synced as table kind "diary" (src/lib/sync/kinds.ts) and carried by the backup.
 
-export const DIARY_MAX = 5000
+export const DIARY_MAX = 20_000
 const DATE = /^(\d{4})-(\d{2})-(\d{2})$/
 
 export const todayKey = () => dayKey(new Date())
@@ -23,25 +21,51 @@ export function isDiaryDate(date: string, today = todayKey()): boolean {
 const isStr = (x: unknown): x is string => typeof x === 'string'
 const isNum = (x: unknown): x is number => typeof x === 'number' && Number.isFinite(x)
 
-export function isDiaryEntry(x: unknown): x is DiaryEntry {
-  if (typeof x !== 'object' || x === null) return false
+/** A diary row in the current shape, also from the old one (learned + es, before 2026-11-19); null when broken. */
+export function toDiaryEntry(x: unknown): DiaryEntry | null {
+  if (typeof x !== 'object' || x === null) return null
   const e = x as Record<string, unknown>
-  return isStr(e.date) && DATE.test(e.date) && isStr(e.learned) && isStr(e.es) && isNum(e.createdAt) && isNum(e.updatedAt)
+  if (!isStr(e.date) || !DATE.test(e.date) || !isNum(e.createdAt) || !isNum(e.updatedAt)) return null
+  let text: string
+  if (isStr(e.text)) text = e.text
+  else if (isStr(e.learned) && isStr(e.es)) text = [e.learned.trim(), e.es.trim()].filter(Boolean).join('\n\n')
+  else return null
+  return { date: e.date, text: text.slice(0, DIARY_MAX), createdAt: e.createdAt, updatedAt: e.updatedAt }
 }
 
-/** Stores a day's two fields (cut to DIARY_MAX); both empty removes the day. */
-export async function saveDiaryEntry(date: string, fields: { learned: string; es: string }, now = Date.now()): Promise<'saved' | 'removed' | 'unchanged'> {
-  const learned = fields.learned.slice(0, DIARY_MAX)
-  const es = fields.es.slice(0, DIARY_MAX)
+/** The diary rows of a backup, old shape converted; `skipped` counts the broken ones. */
+export function diaryEntriesOf(list: unknown): { entries: DiaryEntry[]; skipped: number } {
+  if (!Array.isArray(list)) return { entries: [], skipped: 0 }
+  const entries = list.map(toDiaryEntry).filter((e): e is DiaryEntry => e !== null)
+  return { entries, skipped: list.length - entries.length }
+}
+
+/** Stores a day's text (cut to DIARY_MAX); an empty one removes the day. */
+export async function saveDiaryEntry(date: string, value: string, now = Date.now()): Promise<'saved' | 'removed' | 'unchanged'> {
+  const text = value.slice(0, DIARY_MAX)
   return db.transaction('rw', db.diary, async () => {
     const existing = await db.diary.get(date)
-    if (!learned.trim() && !es.trim()) {
+    if (!text.trim()) {
       if (!existing) return 'unchanged'
       await db.diary.delete(date)
       return 'removed'
     }
-    if (existing && existing.learned === learned && existing.es === es) return 'unchanged'
-    await db.diary.put({ date, learned, es, createdAt: existing?.createdAt ?? now, updatedAt: now })
+    if (existing && existing.text === text) return 'unchanged'
+    await db.diary.put({ date, text, createdAt: existing?.createdAt ?? now, updatedAt: now })
+    return 'saved'
+  })
+}
+
+/** Adds a block (an answer of SOMO) at the end of a day, after a blank line; once, and never over DIARY_MAX. */
+export async function appendToDiary(date: string, block: string, now = Date.now()): Promise<'saved' | 'unchanged' | 'full'> {
+  const add = block.trim()
+  return db.transaction('rw', db.diary, async () => {
+    const existing = await db.diary.get(date)
+    const before = existing?.text.trimEnd() ?? ''
+    if (before.includes(add)) return 'unchanged'
+    const text = before ? `${before}\n\n${add}` : add
+    if (text.length > DIARY_MAX) return 'full'
+    await db.diary.put({ date, text, createdAt: existing?.createdAt ?? now, updatedAt: now })
     return 'saved'
   })
 }
@@ -50,13 +74,6 @@ export async function saveDiaryEntry(date: string, fields: { learned: string; es
 export function newerDiaryEntries(local: DiaryEntry[], incoming: DiaryEntry[]): DiaryEntry[] {
   const here = new Map(local.map((e) => [e.date, e.updatedAt]))
   return incoming.filter((e) => e.updatedAt > (here.get(e.date) ?? -Infinity))
-}
-
-/** The prompt on the Domov card: one per day of the year, round the list. */
-export function promptOfDay(date: string): DiaryPrompt {
-  const [y, m, d] = date.split('-').map(Number)
-  const dayOfYear = Math.round((Date.UTC(y, m - 1, d) - Date.UTC(y, 0, 1)) / 86_400_000)
-  return diaryPrompts[dayOfYear % diaryPrompts.length]
 }
 
 /** `null` = no entry that day, `undefined` = still loading. */
