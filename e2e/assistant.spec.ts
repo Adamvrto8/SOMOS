@@ -312,3 +312,19 @@ test('👍 / 👎 under an answer is sent with the question, the answer and the 
   await expect(sheet(page).getByText('Ďakujem za hodnotenie.')).toBeVisible()
   await expect(sheet(page).getByRole('button', { name: 'Zlá odpoveď' })).toHaveCount(0)
 })
+
+test('an answer is saved to today’s diary entry with its question', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = 'Auto je po španielsky **el carro**.\n- Mi carro es rojo. – Moje auto je červené.\n{{word:carro}}\n{{dalej:Ako sa povie autobus?}}'
+  await page.goto('/assistant')
+  await askQuestion(page, 'Ako sa povie auto?')
+  await expect(page.getByText('Mi carro es rojo.')).toBeVisible()
+
+  await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
+  await expect(page.getByText('Uložené do Denníka')).toBeVisible()
+  await page.getByRole('link', { name: 'Otvoriť' }).tap()
+  await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
+  const note = page.getByLabel('Čo si chceš zapamätať?')
+  await expect(note).toHaveValue('Ako sa povie auto?\nAuto je po španielsky el carro.\n- Mi carro es rojo. – Moje auto je červené.\nel carro – auto')
+})

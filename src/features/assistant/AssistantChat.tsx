@@ -1,4 +1,4 @@
-import { History, MessageSquarePlus, Send, ThumbsDown, ThumbsUp, Trash2, Volume2 } from 'lucide-react'
+import { History, MessageSquarePlus, NotebookPen, Send, ThumbsDown, ThumbsUp, Trash2, Volume2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
@@ -8,8 +8,10 @@ import { answerBlocks, freshFollowUps, type AnswerPart, type ListItem } from '..
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
 import { addTurn, deleteChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
+import { turnAsNote } from '../../lib/assistant/note'
 import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
 import type { ChatThread, ChatTurn, FeedbackReason } from '../../lib/db'
+import { appendToDiary, todayKey } from '../../lib/diary'
 import { speak, ttsSupported } from '../../lib/tts'
 import { AnswerCardView } from './AnswerCards'
 
@@ -122,6 +124,41 @@ function Thinking({ label }: { label: string }) {
           style={{ animationDelay: `${delay}ms` }}
         />
       ))}
+    </div>
+  )
+}
+
+/** Adds the question and the answer to today's diary entry; a second tap adds nothing. */
+function SaveToDiary({ turn }: { turn: ChatTurn }) {
+  const text = useT().assistant
+  const [state, setState] = useState<'idle' | 'saved' | 'full'>('idle')
+  const today = todayKey()
+
+  const save = async () => {
+    const result = await appendToDiary(today, turnAsNote(turn))
+    setState(result === 'full' ? 'full' : 'saved')
+  }
+
+  if (state === 'saved')
+    return (
+      <p className="mt-1 flex min-h-11 items-center gap-1.5 text-xs text-ink-muted">
+        <NotebookPen size={14} strokeWidth={1.75} aria-hidden />
+        {text.savedToDiary} ·{' '}
+        <Link to={`/diary/${today}`} className="font-medium text-brick underline focus-visible:outline-2 focus-visible:outline-brick">
+          {text.openDiary}
+        </Link>
+      </p>
+    )
+  return (
+    <div className="mt-1">
+      <button type="button" onClick={() => void save()} aria-label={text.saveToDiary} title={text.saveToDiary} className={RATE_BUTTON}>
+        <NotebookPen size={18} strokeWidth={1.75} aria-hidden />
+      </button>
+      {state === 'full' && (
+        <p role="alert" className="text-sm text-error">
+          {text.diaryFull}
+        </p>
+      )}
     </div>
   )
 }
@@ -394,7 +431,10 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
               <AnswerView text={turn.answer} />
               {turn.truncated && <p className="mt-1 text-sm text-ink-muted">{text.truncated}</p>}
               {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
-              <Rating turn={turn} index={i} />
+              <div className="flex flex-wrap items-start gap-x-1">
+                <Rating turn={turn} index={i} />
+                <SaveToDiary turn={turn} />
+              </div>
             </div>
           </section>
         ))}
