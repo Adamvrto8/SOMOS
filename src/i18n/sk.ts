@@ -1304,6 +1304,9 @@ export const sk = {
     saveToDiary: 'Uložiť do Denníka',
     savedToDiary: 'Uložené do Denníka',
     openDiary: 'Otvoriť',
+    /** Who said what in an answer saved to the diary. */
+    noteQuestion: 'Otázka',
+    noteAnswer: 'SOMO',
     diaryFull: 'Dnešný zápis je plný, odpoveď sa nezmestí.',
     rateDown: 'Zlá odpoveď',
     reasonsLabel: 'Čo bolo zle?',
@@ -1358,6 +1361,8 @@ export const sk = {
     hint: 'Slovíčka, pravidlá, vysvetlenia od SOMO, čokoľvek',
     cardHint: 'Zapíš si, čo si chceš zapamätať',
     saved: 'Uložené',
+    save: 'Uložiť',
+    tips: 'Tipy v zápise',
     empty: 'Zatiaľ nemáš žiadny zápis.',
     emptyHint: 'Každý deň má jeden zápis: slovíčka, pravidlá alebo odpovede od SOMO, ktoré si chceš zapamätať.',
     nothingToday: 'Dnes ešte nič',

@@ -29,6 +29,20 @@ test('a diary day: kept after a reload, listed, removed when the text is cleared
   await expect(page.getByText('Zatiaľ nemáš žiadny zápis.')).toBeVisible()
 })
 
+test('"Uložiť" stores the text at once and closes the keyboard', async ({ page }) => {
+  await page.goto('/diary')
+  await today(page).tap()
+  const save = page.getByRole('button', { name: 'Uložiť', exact: true })
+  await expect(save).toBeVisible()
+  await note(page).fill('Hoy aprendí el pretérito.')
+  // Well before the 800 ms of the typing pause: only the button can have stored it.
+  await save.tap()
+  await expect(note(page)).not.toBeFocused()
+  await expect(page.getByText('Uložené', { exact: true })).toBeVisible({ timeout: 500 })
+  await page.reload()
+  await expect(note(page)).toHaveValue('Hoy aprendí el pretérito.')
+})
+
 test('a wrong or future date goes back to the diary', async ({ page }) => {
   await page.goto('/diary/2026-13-45')
   await expect(page).toHaveURL(/\/diary$/)

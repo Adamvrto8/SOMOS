@@ -326,7 +326,22 @@ test('an answer is saved to today’s diary entry with its question', async ({ p
   await page.getByRole('link', { name: 'Otvoriť' }).tap()
   await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
   const note = page.getByLabel('Čo si chceš zapamätať?')
-  await expect(note).toHaveValue('Ako sa povie auto?\nAuto je po španielsky el carro.\n- Mi carro es rojo. – Moje auto je červené.\nel carro – auto')
+  await expect(note).toHaveValue(
+    'Otázka: Ako sa povie auto?\n\nSOMO: Auto je po španielsky el carro.\n\n- Mi carro es rojo. – Moje auto je červené.\n\nel carro – auto',
+  )
+})
+
+test('a tip saved from an answer opens from the diary day', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = 'Ser hovorí, čo niečo je.\n{{tip:ser-estar}}'
+  await page.goto('/assistant')
+  await askQuestion(page, 'Ser alebo estar?')
+  await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
+  await page.getByRole('link', { name: 'Otvoriť', exact: true }).tap()
+  await expect(page.getByLabel('Čo si chceš zapamätať?')).toHaveValue(/\n\nTip: ser a estar/)
+  await page.getByRole('navigation', { name: 'Tipy v zápise' }).getByRole('link', { name: /^ser a estar/ }).tap()
+  await expect(page).toHaveURL(/\/practice\/grammar\/ser-estar$/)
 })
 
 test('an answer saved while the diary day is open shows there and is not overwritten by typing', async ({ page }) => {
@@ -345,10 +360,11 @@ test('an answer saved while the diary day is open shows there and is not overwri
   await expect(sheet(page).getByText('Uložené do Denníka')).toBeVisible()
   await sheet(page).getByRole('button', { name: 'Zavrieť' }).tap()
 
-  await expect(note).toHaveValue('moja poznámka\n\nAko sa povie auto?\nAuto je po španielsky el carro.')
+  const added = 'moja poznámka\n\nOtázka: Ako sa povie auto?\n\nSOMO: Auto je po španielsky el carro.'
+  await expect(note).toHaveValue(added)
   await note.press('End')
   await note.pressSequentially('!')
   await page.waitForTimeout(1200)
   await page.reload()
-  await expect(note).toHaveValue('moja poznámka\n\nAko sa povie auto?\nAuto je po španielsky el carro.!')
+  await expect(note).toHaveValue(`${added}!`)
 })

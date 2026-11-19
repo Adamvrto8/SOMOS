@@ -23,8 +23,10 @@ písanie po španielsky je vedľajšie a kontrolu viet zvládne SOMO.
   ak zápis blok už obsahuje, nič nezmení (`'unchanged'`); text nad limit sa nepridá (`'full'`).
 
 ## 2. Obrazovky
-- **Zápis dňa** `/diary/:date`: späť, „Uložené“, dátum ako nadpis, jedno textové pole na celú výšku
-  (placeholder „Čo si chceš zapamätať?“). Ukladanie priebežne ako doteraz (800 ms po písaní, pri odchode).
+- **Zápis dňa** `/diary/:date`: späť, „✓ Uložené“ a tlačidlo **„Uložiť“** (uloží hneď a zavrie klávesnicu; tehlové,
+  kým je niečo neuložené), dátum ako nadpis, jedno textové pole na celú výšku
+  (placeholder „Čo si chceš zapamätať?“). Ukladanie aj priebežne ako doteraz (800 ms po písaní, pri odchode).
+  Nad poľom „Tipy v zápise“: odkaz na každý tip, ktorého riadok `Tip: <názov>` je v texte (`tipsInText`).
 - **Zoznam** `/diary`: Dnes hore, potom staršie dni; pri každom dátum a prvý neprázdny riadok textu.
 - **Karta na Domove**: „Dnešný zápis“ + „Všetky zápisy“; so zápisom ✓ a prvý riadok; bez zápisu výzva
   „Zapíš si, čo si chceš zapamätať“ a tlačidlo „Napísať“.
@@ -35,6 +37,8 @@ písanie po španielsky je vedľajšie a kontrolu viet zvládne SOMO.
 - Pod každou odpoveďou vedľa 👍 / 👎 ikona „Uložiť do Denníka“ (aria-label). Po uložení text „Uložené do Denníka“
   s odkazom na dnešný zápis; ak tam blok už je, rovnaké potvrdenie (nič sa nepridá).
 - Text bloku (`turnAsNote(turn)` v `src/lib/assistant/`):
+  - `Otázka: …` a `SOMO: …` označia, kto čo povedal; odseky, zoznam príkladov a skupina kariet sú oddelené
+    prázdnym riadkom (karty idúce po sebe ostávajú spolu),
   - prvý riadok(y): otázka tak, ako bola poslaná (aj s riadkami úlohy pri „Prečo?“),
   - odpoveď ako čistý text: bez `**`/`*`, odkazy len ako ich text, zástupné adresy preč, príklady „- veta – preklad“,
   - karty ako text: slovo `el carro – auto`, časovanie `tener · pretérito: tuve, tuviste, tuvo, tuvimos, tuvieron`

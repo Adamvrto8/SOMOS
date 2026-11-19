@@ -135,7 +135,7 @@ function SaveToDiary({ turn }: { turn: ChatTurn }) {
   const today = todayKey()
 
   const save = async () => {
-    const result = await appendToDiary(today, turnAsNote(turn))
+    const result = await appendToDiary(today, turnAsNote(turn, { question: text.noteQuestion, answer: text.noteAnswer }))
     setState(result === 'full' ? 'full' : 'saved')
   }
 
