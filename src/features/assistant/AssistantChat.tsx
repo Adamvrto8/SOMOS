@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { answerBlocks, followUpsOf, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
+import { answerBlocks, freshFollowUps, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
 import { addTurn, deleteChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
@@ -273,7 +273,6 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const chat = useChat()
   const { turns } = chat
   const [view, setView] = useState<'chat' | 'list'>('chat')
-  const [last, setLast] = useState<ChatThread | null>(null)
   const [draft, setDraft] = useState('')
   const [pending, setPending] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -285,22 +284,6 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   useEffect(() => {
     void restoreLastChat()
   }, [])
-
-  // A new, empty conversation offers the last stored one back: one tap returns to it.
-  const empty = chat.ready && chat.id === null && turns.length === 0
-  useEffect(() => {
-    if (!empty) return
-    let live = true
-    listChats().then(
-      (chats) => {
-        if (live) setLast(chats[0] ?? null)
-      },
-      () => {},
-    )
-    return () => {
-      live = false
-    }
-  }, [empty])
 
   // Keep the newest message in view.
   useEffect(() => {
@@ -358,7 +341,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
 
   const waiting = pending !== null && error === null
   const suggestionText = (suggestion: Suggestion) => ('name' in suggestion ? text.suggest[suggestion.kind](suggestion.name) : text.suggest[suggestion.kind])
-  const followUps = pending === null && turns.length > 0 ? followUpsOf(turns[turns.length - 1].answer) : []
+  const followUps = pending === null ? freshFollowUps(turns) : []
 
   if (view === 'list') {
     return (
@@ -401,16 +384,6 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
           <div className="flex flex-col gap-3">
             <p className="text-ink-muted">{text.intro}</p>
             <QuestionChips label={text.suggestionsLabel} questions={suggestionsFor(pathname).map(suggestionText)} onPick={(question) => void send(question)} />
-            {empty && last && (
-              <button
-                type="button"
-                onClick={() => void openChat(last.id)}
-                className="flex min-h-13 flex-col rounded-card border border-line bg-surface px-3 py-2 text-left focus-visible:outline-2 focus-visible:outline-brick active:bg-surface-2"
-              >
-                <span className="text-sm font-medium text-brick">{text.continueLast}</span>
-                <span className="w-full truncate">{last.title}</span>
-              </button>
-            )}
           </div>
         )}
 

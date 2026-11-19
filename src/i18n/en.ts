@@ -1195,7 +1195,6 @@ export const en: Dictionary = {
     historyEmpty: 'No conversations yet.',
     backToChat: 'Back to the chat',
     newChat: 'New conversation',
-    continueLast: 'Continue the last conversation',
     deleteChat: (title: string) => `Delete the conversation “${title}”`,
     questions: (n: number) => `${n} ${pluralEn(n, 'question', 'questions')}`,
     deviceOnly: 'Conversations are kept on this device only. Signing out deletes them.',

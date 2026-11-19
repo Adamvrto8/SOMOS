@@ -1291,7 +1291,6 @@ export const sk = {
     historyEmpty: 'Zatiaľ tu nie sú žiadne rozhovory.',
     backToChat: 'Späť na rozhovor',
     newChat: 'Nový rozhovor',
-    continueLast: 'Pokračovať v poslednom rozhovore',
     deleteChat: (title: string) => `Vymazať rozhovor „${title}“`,
     questions: (n: number) => `${n} ${pluralSk(n, ['otázka', 'otázky', 'otázok'])}`,
     deviceOnly: 'Rozhovory sa ukladajú len v tomto zariadení. Po odhlásení sa vymažú.',

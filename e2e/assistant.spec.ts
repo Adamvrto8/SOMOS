@@ -206,7 +206,9 @@ test('SOMO shows conjugation and word cards drawn from the app data; a link to a
   const followUp = page.getByRole('group', { name: 'Môžeš sa spýtať ďalej' }).getByRole('button', { name: 'Ako je tener v prítomnom čase?' })
   await followUp.tap()
   await expect.poll(() => chat.contexts.length).toBe(2)
-  await expect(page.getByText('Ako je tener v prítomnom čase?')).toHaveCount(2) // the question, and the new chip under the answer
+  // The question is in the chat; the same chip under the next answer is not offered again.
+  await expect(page.locator('section').getByText('Ako je tener v prítomnom čase?')).toHaveCount(1)
+  await expect(page.getByRole('group', { name: 'Môžeš sa spýtať ďalej' })).toHaveCount(0)
 })
 
 test('an empty chat suggests questions about the page it was opened on', async ({ page }) => {
@@ -235,11 +237,9 @@ test('the conversation is back after the app was closed, and earlier ones can be
   await expect(page.getByText('Prvá otázka')).toBeVisible()
   await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toBeVisible()
 
-  // A new conversation offers the last one back in one tap.
+  // A new conversation starts empty; the earlier one stays in Rozhovory.
   await page.getByRole('button', { name: 'Nový rozhovor' }).tap()
   await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toHaveCount(0)
-  const back = page.getByRole('button', { name: /Pokračovať v poslednom rozhovore/ })
-  await expect(back).toContainText('Prvá otázka')
   await askQuestion(page, 'Druhá otázka')
   await expect(page.getByRole('link', { name: 'opakovaní kartičiek' })).toBeVisible()
 

@@ -9,7 +9,7 @@ export type Suggestion =
   | { kind: 'tipSimpler' | 'tipExamples'; name: string }
   | { kind: 'today' | 'progress' | 'serEstar' | 'mistakes' }
 
-/** Two or three questions for the page at `pathname` (no page: the general ones). */
+/** Two questions for the page at `pathname` (no page: the general ones). */
 export function suggestionsFor(pathname = ''): Suggestion[] {
   const [, first, second, third] = pathname.split('/')
   if (first === 'word' && second) {
@@ -24,5 +24,6 @@ export function suggestionsFor(pathname = ''): Suggestion[] {
     }
   }
   if (first === 'archive' || first === 'stats' || (first === 'profile' && second === 'stats')) return [{ kind: 'mistakes' }, { kind: 'today' }]
-  return [{ kind: 'today' }, { kind: 'progress' }, { kind: 'serEstar' }]
+  // Two at most: three chips and "continue the last conversation" crowded the empty chat (Adam, 2026-11-19).
+  return [{ kind: 'today' }, { kind: 'serEstar' }]
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { answerBlocks, answerParts, appPathExists, cardOf, followUpsOf } from './answerText'
+import { answerBlocks, answerParts, appPathExists, cardOf, followUpsOf, freshFollowUps } from './answerText'
 
 describe('answerParts', () => {
   it('keeps bold Spanish as its own part', () => {
@@ -108,5 +108,20 @@ describe('examples, lists and follow-up questions', () => {
     const text = 'Casa je dom.\n{{dalej:Ako sa povie byt?}}\n{{dalej: Použi casa vo vete }}\n{{dalej:Tretia?}}'
     expect(followUpsOf(text)).toEqual(['Ako sa povie byt?', 'Použi casa vo vete'])
     expect(answerBlocks(text)).toEqual([{ type: 'text', parts: [{ type: 'text', text: 'Casa je dom.' }] }])
+  })
+
+  it('offers only follow-ups the chat has not asked or offered before', () => {
+    const turns = [
+      { question: 'Čo je fue?', answer: 'Fue je ser aj ir.\n{{dalej:Ako sa časuje „ser“ v prítomnom čase?}}' },
+      { question: 'Dá sa hovoriť hlasom?', answer: 'Nie.\n{{dalej:Ako sa časuje ser v prítomnom čase?}}\n{{dalej:Čo je Vyslovovanie?}}' },
+    ]
+    expect(freshFollowUps(turns)).toEqual(['Čo je Vyslovovanie?'])
+    expect(freshFollowUps([])).toEqual([])
+  })
+
+  it('leaves out a path with a placeholder of the app map', () => {
+    expect(answerBlocks('Na detaile slova (/word/<id>) nájdeš príklady.')).toEqual([
+      { type: 'text', parts: [{ type: 'text', text: 'Na detaile slova nájdeš príklady.' }] },
+    ])
   })
 })

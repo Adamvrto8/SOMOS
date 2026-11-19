@@ -18,8 +18,8 @@ describe('suggestionsFor', () => {
   })
 
   it('falls back to the general questions, also for a word that does not exist', () => {
-    expect(suggestionsFor('/word/flarpo').map((s) => s.kind)).toEqual(['today', 'progress', 'serEstar'])
-    expect(suggestionsFor().map((s) => s.kind)).toEqual(['today', 'progress', 'serEstar'])
+    expect(suggestionsFor('/word/flarpo').map((s) => s.kind)).toEqual(['today', 'serEstar'])
+    expect(suggestionsFor().map((s) => s.kind)).toEqual(['today', 'serEstar'])
     expect(suggestionsFor('/archive').map((s) => s.kind)).toEqual(['mistakes', 'today'])
   })
 })

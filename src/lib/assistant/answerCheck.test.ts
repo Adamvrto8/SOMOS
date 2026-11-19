@@ -6,6 +6,17 @@ describe('checkAnswer', () => {
     expect(checkAnswer('Auto je el carro.\n{{word:carro}}\n{{dalej:Ako sa povie autobus?}}','Ako sa povie auto?', 'mx')).toEqual([])
   })
 
+  it('finds a path with a placeholder of the app map', () => {
+    const [note] = checkAnswer('Na detaile slova (/word/<id>) nájdeš príklady.', 'x', 'mx')
+    expect(note).toContain('/word/<id>')
+  })
+
+  it('finds a note on where an example comes from, not a note like (ser)', () => {
+    const [note] = checkAnswer('- Estoy en casa. – Som doma. (vzor na estar, mimo appky)', 'x', 'mx')
+    expect(note).toContain('mimo appky')
+    expect(checkAnswer('- Ayer fue martes. – Včera bol utorok. (ser)', 'x', 'mx')).toEqual([])
+  })
+
   it('finds cards the app does not have', () => {
     const [note] = checkAnswer('{{word:flarpo}} a {{conj:tener:pasado}}', 'x', 'mx')
     expect(note).toContain('{{word:flarpo}}')

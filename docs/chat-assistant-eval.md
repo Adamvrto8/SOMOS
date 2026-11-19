@@ -8,7 +8,7 @@ Otázky môžeš pred smoke testom upraviť. Pri každej zapíš, či je odpove�
 | 2 | Čo znamená „carro“ a ako sa líši od „coche“? | carro = auto v Mexiku, coche = Španielsko | áno | správne; posledná veta zmätená |
 | 3 | Vyčasuj sloveso tener v pretérite. | tvary z appky (tuve, tuviste, tuvo, tuvimos, tuvieron) | áno | tvary správne; „skloňujú“ namiesto časujú |
 | 4 | Aký je tvar „fui“, od ktorého slovesa? | ir aj ser, pretérito, yo | | |
-| 5 | Kedy použiť ser a kedy estar? | stručné vysvetlenie, prípadne tip z appky | | |
+| 5 | Kedy použiť ser a kedy estar? | stručné vysvetlenie, prípadne tip z appky | | beh 5: S2 V1 F1 J2 = 6; vysvetlenie a karta tipu ser-estar dobré, ale „Estoy en casa.“ označil „(vzor na estar, mimo appky)“, hoci veta je v tom istom tipe, a poznámka je vložená do prekladu |
 | 6 | Vysvetli rozdiel medzi pretérito a imperfecto. | správne vysvetlenie, príklady | | |
 | 7 | Kedy sa používa por a kedy para? | správne vysvetlenie, príklady | áno | správne, tip por-para; zbytočne dlhé a profil (B1) navyše |
 | 8 | Aké sú nepravidelné tvary slovesa hacer v prítomnom čase? | hago, ostatné pravidelné | nie | tvary správne, ale „kmeň haz-/hac-“ je zlé pravidlo |
@@ -88,20 +88,25 @@ Otázky 1–26 hore sa v tomto behu hodnotia tiež bodmi (stačí zapísať S/V/
 
 | # | Otázka alebo kroky | Čo očakávam | S | V | F | J | Poznámka |
 |---|---|---|---|---|---|---|---|
-| 27 | Čo znamená „flarpo“? | prizná, že také slovo nepozná a appka ho nemá; nič nevymyslí | | | | | |
-| 28 | Čo je „zumo“? | v Španielsku džús, v Mexiku jugo; karta slova jugo | | | | | |
-| 29 | Ako sa povie „mobil“? | el celular (nie móvil), karta slova | | | | | |
-| 30 | Vyčasuj „conducir“. | v Mexiku manejar; karta časovania manejar, žiadne tvary conducir vypísané ako mexické | | | | | |
-| 31 | Čo je „fue“? | ser aj ir, pretérito, él / ella / usted | | | | | |
-| 32 | Dá sa so SOMO rozprávať hlasom? | nie, appka to nemá; najbližšia možnosť (Vyslovovanie, 🔊) | | | | | |
-| 33 | Koľko vlastných slov mám pridaných? | číslo z profilu alebo get_my_records, nič odhadnuté | | | | | |
-| 34 | Ako sa povie „pes“? | el perro, bez „podobných“ slov pesar, peso | | | | | |
-| 35 | Lekcia Časovanie → zlá odpoveď → „Prečo? Opýtaj sa SOMO“ | otázka odíde sama; vysvetlí rozdiel medzi mojou a správnou odpoveďou podľa tipu, správny tvar tučne, karta tipu; Späť vráti do lekcie | | | | | |
-| 36 | Lekcia Doplň slovo → „Vzdať sa“ → „Prečo? …“ | „Prečo je správne práve toto?“, vysvetlenie vety s medzerou a nápovedou | | | | | |
-| 37 | Chyby → ikona SOMO pri úlohe | „Vysvetli mi túto úlohu“, vysvetlenie bez vymyslenej „mojej odpovede“ | | | | | |
-| 38 | Detail slova → čip „Použi … vo vete“ | veta s tým slovom, nevydávaná za vetu z appky | | | | | |
-| 39 | Čip s ďalšou otázkou pod odpoveďou | zmysluplná otázka, na ktorú SOMO odpovie z appky | | | | | |
+| 27 | Čo znamená „flarpo“? | prizná, že také slovo nepozná a appka ho nemá; nič nevymyslí | 2 | 2 | 2 | 2 | 8; čip „počítač“ nesúvisí s otázkou |
+| 28 | Čo je „zumo“? | v Španielsku džús, v Mexiku jugo; karta slova jugo | 2 | 2 | 2 | 2 | 8; príklad z appky (food.json); čip „džús v iných krajinách“ appka nezodpovie (má len MX a ES) |
+| 29 | Ako sa povie „mobil“? | el celular (nie móvil), karta slova | 2 | 2 | 2 | 2 | 8; príklad z appky (work.json) |
+| 30 | Vyčasuj „conducir“. | v Mexiku manejar; karta časovania manejar, žiadne tvary conducir vypísané ako mexické | 2 | 2 | 2 | 1 | 7; karty manejar presente + pretérito, žiadny tvar conducir; krkolomná veta „Sloveso conducir sa … povie manejar“ |
+| 31 | Čo je „fue“? | ser aj ir, pretérito, él / ella / usted | 2 | 2 | 2 | 2 | 8; karty ser a ir pretérito |
+| 32 | Dá sa so SOMO rozprávať hlasom? | nie, appka to nemá; najbližšia možnosť (Vyslovovanie, 🔊) | 2 | 2 | 2 | 2 | 8; Vyslovovanie aj Diktát s funkčnými odkazmi, 🔊 nespomenul; čip „ser v prítomnom čase“ zopakovaný z 31 |
+| 33 | Koľko vlastných slov mám pridaných? | číslo z profilu alebo get_my_records, nič odhadnuté | 2? | 2? | 2 | 2 | 8, ak v Pridané naozaj máš 5 slov (over v appke); záložka Pridané a kartičky v opakovaní sedia |
+| 34 | Ako sa povie „pes“? | el perro, bez „podobných“ slov pesar, peso | 2 | 2 | 2 | 2 | 8; príklad z appky (family.json), žiadne pesar / peso |
+| 35 | Lekcia Časovanie → zlá odpoveď → „Prečo? Opýtaj sa SOMO“ | otázka odíde sama; vysvetlí rozdiel medzi mojou a správnou odpoveďou podľa tipu, správny tvar tučne, karta tipu; Späť vráti do lekcie | 2 | 2 | 2 | 2 | 8 (opakované v appke, trabajar · él · progresivo, prázdna odpoveď → „Prečo je správne práve toto?“ s úlohou, správnym tvarom a tipom); está trabajando tučne, gerundium -ando, príklady z tipu progresivo, karta tipu; chat sa otvoril nad lekciou. Prvý pokus (text v chate): SOMO o tlačidle „Prečo?“ nevie, mapa ho nepopisuje |
+| 36 | Lekcia Doplň slovo → „Vzdať sa“ → „Prečo? …“ | „Prečo je správne práve toto?“, vysvetlenie vety s medzerou a nápovedou | | | | | beh 5: nespustené |
+| 37 | Chyby → ikona SOMO pri úlohe | „Vysvetli mi túto úlohu“, vysvetlenie bez vymyslenej „mojej odpovede“ | | | | | beh 5: neplatné (text v chate); „appka by mala poslať…“ je dohad |
+| 38 | Detail slova → čip „Použi … vo vete“ | veta s tým slovom, nevydávaná za vetu z appky | | | | | beh 5: neplatné (text v chate); v odpovedi holá šablóna „/word/<id>“ z mapy, čip „s time slovom perro“ (preklep) |
+| 39 | Čip s ďalšou otázkou pod odpoveďou | zmysluplná otázka, na ktorú SOMO odpovie z appky | 2 | 2 | 2 | 2 | 8 (v appke: po „Koľko cvičení tu je?“ čip „Ktoré cvičenie je pre mňa najťažšie?“, zodpovedateľné z profilu); samotná odpoveď 11 druhov sedí s appkou. Z 27–34: čipy 27 a 32 nesúvisia s otázkou, 28 appka nezodpovie |
 | 40 | Polož otázku, zavri appku, otvor SOMO; potom „Nový rozhovor“ | rozhovor tam je; prázdny chat ponúkne „Pokračovať v poslednom rozhovore“ | | | | | |
+
+Opravené po prvej časti behu 5 (2026-11-19): zástupná adresa (/word/<id>) sa nezobrazí a kontrola ju vráti modelu;
+poznámka o pôvode vety v preklade príkladu („mimo appky“) sa vráti modelu; čip, ktorý už v rozhovore padol, sa
+neukáže; prompt: ďalšie otázky nadväzujú na práve položenú otázku a nepýtajú sa na iné krajiny; mapa má sekciu SOMO
+(tlačidlo, „Prečo? Opýtaj sa SOMO“, ikona v Chybách, čipy, rozhovory, bez hlasu).
 
 Pri každej odpovedi, ktorá nesedí, daj aj 👎 s dôvodom: riadok v Supabase `chat_feedback` má otázku, odpoveď,
 volané nástroje aj stránku, takže sa dá dohľadať bez kopírovania.

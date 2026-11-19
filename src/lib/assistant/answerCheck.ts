@@ -1,6 +1,6 @@
 import type { SpanishVariant } from '../../data/types'
 import { NOT_VOSOTROS, SPAIN_ONLY, VOSOTROS_ENDING } from '../spainOnly'
-import { cardOf, followUpOf, MARKER } from './answerText'
+import { cardOf, followUpOf, MARKER, PLACEHOLDER_PATH } from './answerText'
 
 // Checks of a finished answer in code, before it is shown (docs/chat-assistant-improvements.md S2). What they find goes
 // back to the model once as a note (chat.ts); the rules stay out of the prompt. A link to a page that does not exist is
@@ -8,6 +8,11 @@ import { cardOf, followUpOf, MARKER } from './answerText'
 
 /** "os" is a Slovak word too (os = axis): only the unambiguous vosotros words count here. */
 const VOSOTROS_WORDS = new Set(['vosotros', 'vosotras', 'sois', 'vais'])
+
+/** An example line "- Spanish – translation": the translation. */
+const EXAMPLE_LINE = /^\s*[-•*]\s+.+?\s+[–—]\s+(.+)$/
+/** A note in brackets about where a sentence comes from ("mimo appky", "vzor", "not in the app"); "(ser)" is fine. */
+const SOURCE_NOTE = /\([^)]*\b(appk\p{L}*|app|vzor\p{L}*)\b[^)]*\)/iu
 
 const wordsOf = (text: string) => text.toLowerCase().split(/[^\p{L}]+/u).filter(Boolean)
 
@@ -23,6 +28,24 @@ export function checkAnswer(answer: string, question: string, variant: SpanishVa
   if (broken.length) {
     notes.push(
       `Karty ${broken.join(', ')} appka nemá, nezobrazia sa. Použi len karty presne z výsledku nástroja ({{word:id}}, {{conj:sloveso:čas}}, {{tip:id}}), alebo kartu vynechaj.`,
+    )
+  }
+
+  const placeholders = [...answer.matchAll(PLACEHOLDER_PATH)].map(([path]) => path.trim())
+  if (placeholders.length) {
+    notes.push(
+      `Adresa ${placeholders.join(', ')} má zástupný znak z mapy a nikam nevedie. Nahraď ho skutočnou hodnotou z nástroja a vlož odkaz do vety ([text](/cesta)), alebo adresu vynechaj.`,
+    )
+  }
+
+  // Run 5: "Estoy en casa. – Som doma. (vzor na estar, mimo appky)", a sentence of the very tip it had fetched.
+  const tagged = answer
+    .split('\n')
+    .map((line) => EXAMPLE_LINE.exec(line)?.[1])
+    .filter((translation): translation is string => translation !== undefined && SOURCE_NOTE.test(translation))
+  if (tagged.length) {
+    notes.push(
+      `V preklade príkladu je poznámka o pôvode vety (${tagged.join('; ')}). Príklad je len veta a jej preklad: poznámku vynechaj. Vety z výsledku nástroja sú z appky.`,
     )
   }
 

@@ -96,6 +96,26 @@ export function followUpsOf(text: string): string[] {
   return questions.slice(0, MAX_FOLLOW_UPS)
 }
 
+const sameQuestion = (question: string) => question.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim()
+
+/**
+ * The follow-ups of the newest answer that the chat has not asked or offered before: run 5 repeated a chip from the
+ * previous answer under an unrelated one.
+ */
+export function freshFollowUps(turns: readonly { question: string; answer: string }[]): string[] {
+  const last = turns.at(-1)
+  if (!last) return []
+  const seen = new Set(turns.map((turn) => sameQuestion(turn.question)))
+  for (const turn of turns.slice(0, -1)) for (const question of followUpsOf(turn.answer)) seen.add(sameQuestion(question))
+  return followUpsOf(last.answer).filter((question) => !seen.has(sameQuestion(question)))
+}
+
+/**
+ * A path with a placeholder of the app map, `(/word/<id>)`: it leads nowhere, so it is left out of what is shown
+ * (answerCheck.ts asks the model to fix it first).
+ */
+export const PLACEHOLDER_PATH = /\s*\(?\/[\w\-/?=&%]*<[^<>\n]{1,20}>[\w\-/?=&%<>]*\)?/g
+
 /** **bold** (or __bold__): the prompt keeps it for Spanish words in a sentence. */
 const BOLD = /\*\*([^*\n]+)\*\*|__([^_\n]+)__/g
 const unbold = (text: string) => text.replace(BOLD, (_whole, a?: string, b?: string) => a ?? b ?? '')
@@ -142,7 +162,8 @@ function listItem(line: string): ListItem {
 }
 
 /** Plain text of an answer as paragraphs and lists: lines starting with "- " make a list, the rest stays as written. */
-function textBlocks(piece: string, blocks: AnswerBlock[]) {
+function textBlocks(raw: string, blocks: AnswerBlock[]) {
+  const piece = raw.replace(PLACEHOLDER_PATH, '')
   let paragraph: string[] = []
   let items: ListItem[] = []
   const flushParagraph = () => {

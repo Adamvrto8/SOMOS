@@ -90,6 +90,14 @@ priemernej spotreby × denný limit × rezerva (poplatky platobnej brány, DPH).
 2. **Fáza 1 – paywall:** plán a denné limity v Supabase, Stripe, logovanie spotreby, prepnutie na platený model, privacy policy.
 3. **Fáza 2 – personalizácia:** level, Chyby, SRS, uloženie z odpovede, odporúčanie ďalšej lekcie.
 
+Nápady z testovania (Adam, 2026-11-19):
+- **Uložiť odpoveď do Denníka / poznámok:** pár ťuknutiami dostať text odpovede (alebo jej časť) do dnešného zápisu
+  Denníka či do poznámok, keď si chce niečo zapamätať. Treba rozhodnúť: celá odpoveď alebo výber, do ktorého poľa
+  Denníka, či vznikne samostatné miesto na poznámky.
+- **Kopírovanie:** veľké tlačidlo „Kopírovať konverzáciu“ nahradiť malým tlačidlom (kopírovať alebo rovno uložiť do
+  Denníka). Zatiaľ ostáva, kým sa celé rozhovory kopírujú do evalu.
+- Prázdny chat: dve navrhnuté otázky, bez „Pokračovať v poslednom rozhovore“ (staršie sú v Rozhovoroch). Hotové.
+
 ## 6. Otvorené rozhodnutia
 
 - Cena a tvar predplatného (mesačne / ročne / balík otázok), skúšobný limit pre free používateľov.

@@ -118,6 +118,12 @@ export const GUIDE: GuideSection[] = [
     links: ['/privacy'],
     text: 'SOMOS robí tím SOMOS; kontakt je v Ochrane súkromia (/privacy). Appka zatiaľ nie je v obchode s aplikáciami: je to webová appka, ktorá sa inštaluje z prehliadača cez „Pridať na plochu“ a funguje aj bez internetu. Mená ľudí z tímu neuvádzaj.',
   },
+  {
+    id: 'somo',
+    title: 'SOMO (tento chat)',
+    links: [],
+    text: 'SOMO otvára tlačidlo SOMO dole na obrazovke; potrebuje internet a prihlásený účet. V lekcii je po nesprávnej odpovedi pod spätnou väzbou „Prečo? Opýtaj sa SOMO“: sám pošle úlohu, moju odpoveď, správnu odpoveď a tip a SOMO vysvetlí rozdiel; po zatvorení chatu pokračuje lekcia. V Môj slovník → Chyby má každá úloha ikonu SOMO, ktorá pošle „Vysvetli mi túto úlohu“ s jej údajmi. Prázdny chat ponúkne otázky podľa obrazovky: na detaile slova „Použi … vo vete“ a „Ako sa časuje …?“ alebo „Kedy sa používa …?“, na gramatickom tipe „Vysvetli mi … jednoduchšie“ a „Daj mi ďalšie príklady k …“. Pod odpoveďou sú návrhy ďalších otázok, ťuknutím sa pošlú, a 👍 / 👎 na hodnotenie. „Rozhovory“ ukážu staršie rozhovory, „Nový rozhovor“ začne nový. So SOMO sa píše, hlasom nie.',
+  },
 ]
 
 /** One line per section: "- Title (links): text". */
