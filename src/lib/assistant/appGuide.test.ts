@@ -5,7 +5,7 @@ import { GUIDE, guideText } from './appGuide'
 // Screens the guide leaves out on purpose: redirects, players and details opened from a screen it describes, dev pages.
 const NOT_GUIDED = new Set([
   '*', 'practice/path', 'archive/settings', 'archive/settings/:section', 'archive/account', 'profile/:section',
-  'archive/custom/:id', 'diary/:date', '/practice/test', '/duel/:code', '/assistant', '/welcome', '/welcome/restore', '/dev/crash',
+  'archive/custom/:id', 'diary/:id', '/practice/test', '/duel/:code', '/assistant', '/welcome', '/welcome/restore', '/dev/crash',
 ])
 
 const routes = [...appSource.matchAll(/path: '([^']+)'/g)].map((m) => m[1]).filter((path) => !NOT_GUIDED.has(path))
@@ -37,7 +37,7 @@ describe('app guide', () => {
 
   it('renders one line per section', () => {
     expect(guideText().split('\n')).toHaveLength(GUIDE.length)
-    expect(guideText()).toContain('Denník (/diary)')
+    expect(guideText()).toContain('Denník (/diary, /diary/new)')
     // The form of a custom word, so the model does not promise a field that is not there.
     expect(guideText()).toContain('poznámka a téma')
     expect(guideText()).toContain('vynechaný deň spotrebuje jednu ochranu')

@@ -4,7 +4,7 @@ import { AppLayout } from './components/AppLayout'
 import { ErrorBoundary, RouteErrorScreen } from './components/ErrorScreen'
 import { PrivacyPage } from './features/account/PrivacyPage'
 import { AssistantPage } from './features/assistant/AssistantPage'
-import { DiaryEntryPage } from './features/diary/DiaryEntryPage'
+import { DiaryNotePage } from './features/diary/DiaryNotePage'
 import { DiaryPage } from './features/diary/DiaryPage'
 import { SignInPage } from './features/account/SignInPage'
 import { GoalCelebration } from './components/GoalCelebration'
@@ -69,7 +69,8 @@ const routes = [
       { path: 'archive/new', element: <CustomWordPage /> },
       { path: 'archive/custom/:id', element: <CustomWordPage /> },
       { path: 'diary', element: <DiaryPage /> },
-      { path: 'diary/:date', element: <DiaryEntryPage /> },
+      { path: 'diary/new', element: <DiaryNotePage fresh /> },
+      { path: 'diary/:id', element: <DiaryNotePage /> },
       { path: 'profile', element: <SettingsPage /> },
       { path: 'profile/sign-in', element: <SignInPage /> },
       // The same overview as /stats (from Domov), opened from Profil: the Profil tab stays lit.

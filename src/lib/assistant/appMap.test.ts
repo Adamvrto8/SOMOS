@@ -18,7 +18,7 @@ describe('app map', () => {
   })
 
   it('includes the guide and what is available on this device', () => {
-    expect(map).toContain('Denník (/diary)')
+    expect(map).toContain('Denník (/diary, /diary/new)')
     expect(map).toContain('Duel: áno, pripomienky: nie')
   })
 

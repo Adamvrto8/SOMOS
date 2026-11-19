@@ -245,7 +245,7 @@ export const sk = {
         const parts = [`uložené: ${r.savedItems}`, `vlastné slová: ${r.customWords}`]
         if (r.reviewCards) parts.push(`kartičky: ${r.reviewCards}`)
         if (r.attempts) parts.push(`nové výsledky cvičení: ${r.attempts}`)
-        if (r.diary) parts.push(`zápisy v denníku: ${r.diary}`)
+        if (r.diary) parts.push(`poznámky v denníku: ${r.diary}`)
         if (r.mistakes) parts.push(`chyby: ${r.mistakes}`)
         if (r.lessons) parts.push(`lekcie: ${r.lessons}`)
         const skipped = r.skipped ? ` Preskočené neplatné záznamy: ${r.skipped}.` : ''
@@ -1304,10 +1304,6 @@ export const sk = {
     saveToDiary: 'Uložiť do Denníka',
     savedToDiary: 'Uložené do Denníka',
     openDiary: 'Otvoriť',
-    /** Who said what in an answer saved to the diary. */
-    noteQuestion: 'Otázka',
-    noteAnswer: 'SOMO',
-    diaryFull: 'Dnešný zápis je plný, odpoveď sa nezmestí.',
     rateDown: 'Zlá odpoveď',
     reasonsLabel: 'Čo bolo zle?',
     reasons: { wrong: 'Nesprávne', unclear: 'Nejasné', long: 'Príliš dlhé', other: 'Iné' } as Record<string, string>,
@@ -1354,18 +1350,23 @@ export const sk = {
   diary: {
     title: 'Denník',
     today: 'Dnes',
-    todayEntry: 'Dnešný zápis',
+    yesterday: 'Včera',
+    newNote: 'Nová poznámka',
     write: 'Napísať',
-    all: 'Všetky zápisy',
+    all: 'Všetky poznámky',
+    titleLabel: 'Nadpis',
     label: 'Čo si chceš zapamätať?',
     hint: 'Slovíčka, pravidlá, vysvetlenia od SOMO, čokoľvek',
     cardHint: 'Zapíš si, čo si chceš zapamätať',
+    untitled: 'Bez nadpisu',
     saved: 'Uložené',
     save: 'Uložiť',
-    tips: 'Tipy v zápise',
-    empty: 'Zatiaľ nemáš žiadny zápis.',
-    emptyHint: 'Každý deň má jeden zápis: slovíčka, pravidlá alebo odpovede od SOMO, ktoré si chceš zapamätať.',
-    nothingToday: 'Dnes ešte nič',
+    remove: 'Vymazať poznámku',
+    removeConfirm: 'Naozaj vymazať túto poznámku?',
+    removeYes: 'Vymazať',
+    removeNo: 'Nechať',
+    empty: 'Zatiaľ nemáš žiadnu poznámku.',
+    emptyHint: 'Zapisuj si slovíčka, pravidlá alebo odpovede od SOMO, ktoré si chceš zapamätať. Každá poznámka patrí k dňu, keď vznikla.',
   },
   privacy: {
     title: 'Ochrana súkromia',

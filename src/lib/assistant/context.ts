@@ -2,6 +2,7 @@ import { readVariant } from '../../data/variant'
 import { accountsAvailable, getAccount } from '../account'
 import { getDailyGoal } from '../dailyGoal'
 import { db } from '../db'
+import { byNewest } from '../diary'
 import { duelsAvailable } from '../duel/backend'
 import { getLanguage } from '../language'
 import { getLastActiveLesson, getProgressionSnapshot } from '../lessonProgress'
@@ -39,8 +40,8 @@ export async function loadLearnerSnapshot(now = new Date()): Promise<LearnerSnap
     db.mistakes.toArray(),
     db.savedItems.count(),
     db.customWords.count(),
-    db.diary.count(),
-    db.diary.orderBy('date').reverse().limit(7).toArray(),
+    db.diaryNotes.count(),
+    db.diaryNotes.toArray().then((notes) => notes.sort(byNewest).slice(0, 7)),
   ])
   const onboarding = getOnboarding()
   const lessons = getProgressionSnapshot()
@@ -62,7 +63,7 @@ export async function loadLearnerSnapshot(now = new Date()): Promise<LearnerSnap
     saved,
     customWords,
     diaryCount,
-    diary: diary.map(({ date, text }) => ({ date, text })),
+    diary: diary.map(({ date, title, text }) => ({ date, title, text })),
     lessons,
     tests,
     next: next && { title: unitTitle(next.unit.unit), step: next.step.id, href: stepHref(next.unit.unit, next.step.id) },

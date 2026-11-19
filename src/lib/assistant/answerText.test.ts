@@ -53,10 +53,10 @@ describe('links to pages that do not exist', () => {
   })
 
   it('keeps real pages and their queries', () => {
-    for (const to of ['/', '/word/casa', '/topic/city', '/practice/grammar/por-para', '/practice?type=conjugation', '/diary/2026-11-07', '/profile/goal']) {
+    for (const to of ['/', '/word/casa', '/topic/city', '/practice/grammar/por-para', '/practice?type=conjugation', '/diary/new', '/profile/goal']) {
       expect(appPathExists(to), to).toBe(true)
     }
-    for (const to of ['/foo', '/word', '/word/casa/x', '/diary/dnes', '/practice/grammar/nic']) expect(appPathExists(to), to).toBe(false)
+    for (const to of ['/foo', '/word', '/word/casa/x', '/diary/dnes', '/diary/2026-11-07', '/practice/grammar/nic']) expect(appPathExists(to), to).toBe(false)
   })
 })
 

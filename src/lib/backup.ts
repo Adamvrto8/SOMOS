@@ -3,8 +3,8 @@ import { t } from '../i18n'
 import { getDailyGoal, setDailyGoal } from './dailyGoal'
 import { getLanguage, setLanguage } from './language'
 import { getExerciseOrder, setExerciseOrder } from './exerciseOrder'
-import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from './db'
-import { diaryEntriesOf, newerDiaryEntries } from './diary'
+import { db, type Attempt, type CustomWord, type DiaryNote, type Mistake, type ReviewCard, type SavedItem } from './db'
+import { diaryNotesOf, newerDiaryNotes } from './diary'
 import { getProgressionSnapshot, mergeProgression, parseProgression, type LessonProgressionMap } from './lessonProgress'
 import { syncPracticeCards } from './practice'
 import { getReminderSettings, setReminderTime } from './reminder'
@@ -32,7 +32,7 @@ export interface Backup {
   lessons?: LessonProgressionMap // passed lessons and best scores; missing in backups made before 2026-10-01
   settings?: SettingsBackup // missing in backups made before 2026-10-02
   tests?: TestResultsMap // test results; missing in backups made before 2026-10-18
-  diary?: DiaryEntry[] // missing in backups made before 2026-11-07
+  diary?: DiaryNote[] // missing in backups made before 2026-11-07; one text per day until 2026-11-19
 }
 
 export interface ImportResult {
@@ -77,7 +77,7 @@ export async function createBackup(): Promise<Backup> {
     db.reviewCards.toArray(),
     db.attempts.toArray(),
     db.mistakes.toArray(),
-    db.diary.toArray(),
+    db.diaryNotes.toArray(),
   ])
   return {
     app: APP,
@@ -153,7 +153,7 @@ export function parseBackup(text: string): ParseResult {
   skipped += lessons.skipped
   const tests = parseTestResults(data.tests)
   skipped += tests.skipped
-  const diary = diaryEntriesOf(data.diary) // also the two fields of backups made before 2026-11-19
+  const diary = diaryNotesOf(data.diary) // a day of older backups becomes the note keyed by its date
   skipped += diary.skipped
 
   const backup: Backup = {
@@ -165,7 +165,7 @@ export function parseBackup(text: string): ParseResult {
     reviewCards: pick(data.reviewCards, isReviewCard),
     attempts: pick(data.attempts, isAttempt),
     mistakes: pick(data.mistakes, isMistake),
-    diary: diary.entries,
+    diary: diary.notes,
     lessons: lessons.records,
     tests: tests.records,
     settings: parseSettingsBackup(data.settings),
@@ -178,7 +178,7 @@ export function parseBackup(text: string): ParseResult {
  * items with the same key are replaced by the backup version.
  */
 export async function importBackup(backup: Backup, skipped: number): Promise<ImportResult> {
-  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts, db.mistakes, db.diary], async () => {
+  const result = await db.transaction('rw', [db.customWords, db.savedItems, db.reviewCards, db.attempts, db.mistakes, db.diaryNotes], async () => {
     await db.customWords.bulkPut(backup.customWords)
     await db.savedItems.bulkPut(backup.savedItems)
     await db.reviewCards.bulkPut(backup.reviewCards)
@@ -192,9 +192,9 @@ export async function importBackup(backup: Backup, skipped: number): Promise<Imp
       .map(({ exercise, itemId, correct, at }) => ({ exercise, itemId, correct, at }))
     await db.attempts.bulkAdd(newAttempts)
 
-    // A day edited on both devices: the later edit stays.
-    const newDiary = newerDiaryEntries(await db.diary.toArray(), backup.diary ?? [])
-    await db.diary.bulkPut(newDiary)
+    // A note edited on both devices: the later edit stays.
+    const newDiary = newerDiaryNotes(await db.diaryNotes.toArray(), backup.diary ?? [])
+    await db.diaryNotes.bulkPut(newDiary)
 
     return {
       customWords: backup.customWords.length,

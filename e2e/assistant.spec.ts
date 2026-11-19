@@ -313,58 +313,32 @@ test('👍 / 👎 under an answer is sent with the question, the answer and the 
   await expect(sheet(page).getByRole('button', { name: 'Zlá odpoveď' })).toHaveCount(0)
 })
 
-test('an answer is saved to today’s diary entry with its question', async ({ page }) => {
+test('an answer is saved as a new diary note: the question its title, no tip and no sentence pointing in the app', async ({ page }) => {
   const chat = await signedInDev(page)
   chat.release()
-  chat.answer = 'Auto je po španielsky **el carro**.\n- Mi carro es rojo. – Moje auto je červené.\n{{word:carro}}\n{{dalej:Ako sa povie autobus?}}'
+  chat.answer = [
+    'Auto je po španielsky **el carro**.',
+    '- Mi carro es rojo. – Moje auto je červené.',
+    '{{word:carro}}',
+    '{{tip:ser-estar}}',
+    'Na precvičenie si otvor [gramatiku](/practice/grammar).',
+    '{{dalej:Ako sa povie autobus?}}',
+  ].join('\n')
   await page.goto('/assistant')
   await askQuestion(page, 'Ako sa povie auto?')
   await expect(page.getByText('Mi carro es rojo.')).toBeVisible()
 
   await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
   await expect(page.getByText('Uložené do Denníka')).toBeVisible()
-  await page.getByRole('link', { name: 'Otvoriť' }).tap()
-  await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
-  const note = page.getByLabel('Čo si chceš zapamätať?')
-  await expect(note).toHaveValue(
-    'Otázka: Ako sa povie auto?\n\nSOMO: Auto je po španielsky el carro.\n\n- Mi carro es rojo. – Moje auto je červené.\n\nel carro – auto',
-  )
-})
-
-test('a tip saved from an answer opens from the diary day', async ({ page }) => {
-  const chat = await signedInDev(page)
-  chat.release()
-  chat.answer = 'Ser hovorí, čo niečo je.\n{{tip:ser-estar}}'
-  await page.goto('/assistant')
-  await askQuestion(page, 'Ser alebo estar?')
-  await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
   await page.getByRole('link', { name: 'Otvoriť', exact: true }).tap()
-  await expect(page.getByLabel('Čo si chceš zapamätať?')).toHaveValue(/\n\nTip: ser a estar/)
-  await page.getByRole('navigation', { name: 'Tipy v zápise' }).getByRole('link', { name: /^ser a estar/ }).tap()
-  await expect(page).toHaveURL(/\/practice\/grammar\/ser-estar$/)
-})
+  await expect(page).toHaveURL(/\/diary\/n-[a-z0-9]+$/)
+  await expect(page.getByLabel('Nadpis')).toHaveValue('Ako sa povie auto?')
+  await expect(page.getByLabel('Čo si chceš zapamätať?')).toHaveValue(
+    'Auto je po španielsky el carro.\n\n- Mi carro es rojo. – Moje auto je červené.\n\nel carro – auto',
+  )
 
-test('an answer saved while the diary day is open shows there and is not overwritten by typing', async ({ page }) => {
-  const chat = await signedInDev(page)
-  chat.release()
-  chat.answer = 'Auto je po španielsky **el carro**.'
-  await page.goto('/diary')
-  await page.getByRole('link', { name: /^Dnes/ }).tap()
-  const note = page.getByLabel('Čo si chceš zapamätať?')
-  await note.fill('moja poznámka')
-  await expect(page.getByText('Uložené', { exact: true })).toBeVisible()
-
-  await pill(page).tap()
-  await askQuestion(page, 'Ako sa povie auto?')
-  await sheet(page).getByRole('button', { name: 'Uložiť do Denníka' }).tap()
-  await expect(sheet(page).getByText('Uložené do Denníka')).toBeVisible()
-  await sheet(page).getByRole('button', { name: 'Zavrieť' }).tap()
-
-  const added = 'moja poznámka\n\nOtázka: Ako sa povie auto?\n\nSOMO: Auto je po španielsky el carro.'
-  await expect(note).toHaveValue(added)
-  await note.press('End')
-  await note.pressSequentially('!')
-  await page.waitForTimeout(1200)
-  await page.reload()
-  await expect(note).toHaveValue(`${added}!`)
+  // "Uložiť" closes the note: it is in the list under today.
+  await page.getByRole('button', { name: 'Uložiť', exact: true }).tap()
+  await expect(page).toHaveURL(/\/diary$/)
+  await expect(page.getByRole('region', { name: 'Dnes' }).getByRole('link', { name: /^Ako sa povie auto\?/ })).toBeVisible()
 })

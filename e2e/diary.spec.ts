@@ -2,91 +2,103 @@
 import { expect, test, type Page } from '@playwright/test'
 import { button } from './helpers.ts'
 
-const note = (page: Page) => page.getByLabel('Čo si chceš zapamätať?')
-const today = (page: Page) => page.getByRole('link', { name: /^Dnes/ })
+const title = (page: Page) => page.getByLabel('Nadpis')
+const body = (page: Page) => page.getByLabel('Čo si chceš zapamätať?')
+const save = (page: Page) => page.getByRole('button', { name: 'Uložiť', exact: true })
+const newNote = (page: Page) => page.getByRole('link', { name: 'Nová poznámka' })
+const todays = (page: Page) => page.getByRole('region', { name: 'Dnes' })
 
-test('a diary day: kept after a reload, listed, removed when the text is cleared', async ({ page }) => {
+test('a new note: "Uložiť" closes it into the list under today, it reopens and stays after a reload', async ({ page }) => {
   await page.goto('/diary')
-  await expect(page.getByText('Zatiaľ nemáš žiadny zápis.')).toBeVisible()
-  await today(page).tap()
-  await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
+  await expect(page.getByText('Zatiaľ nemáš žiadnu poznámku.')).toBeVisible()
+  await newNote(page).tap()
+  await expect(page).toHaveURL(/\/diary\/new$/)
+  await expect(body(page)).toBeFocused()
 
-  await note(page).fill('el pretérito de ir: fui, fuiste, fue\nHoy fui al mercado.')
-  await expect(page.getByText('Uložené')).toBeVisible()
-  await page.reload()
-  await expect(note(page)).toHaveValue('el pretérito de ir: fui, fuiste, fue\nHoy fui al mercado.')
+  await title(page).fill('Pretérito de ir')
+  await body(page).fill('fui, fuiste, fue\nHoy fui al mercado.')
+  // At once, well before the 800 ms of the typing pause: the button stores it.
+  await save(page).tap()
+  await expect(page).toHaveURL(/\/diary$/)
+  const first = todays(page).getByRole('link', { name: /^Pretérito de ir/ })
+  await expect(first).toContainText('fui, fuiste, fue Hoy fui al mercado.')
 
-  await page.goto('/diary')
-  await expect(today(page)).toContainText('el pretérito de ir: fui, fuiste, fue')
-  await expect(today(page)).not.toContainText('Hoy fui al mercado.')
-
-  // Typed and left at once: the last text is still saved.
-  await today(page).tap()
-  await note(page).fill('')
+  // A second note the same day, without a title, left by Späť: saved too, listed first.
+  await newNote(page).tap()
+  await body(page).fill('Hoy comí tacos.\nCon Ana.')
   await button(page, 'Späť').tap()
   await expect(page).toHaveURL(/\/diary$/)
-  await expect(today(page)).toContainText('Dnes ešte nič')
-  await expect(page.getByText('Zatiaľ nemáš žiadny zápis.')).toBeVisible()
-})
+  const links = todays(page).getByRole('link')
+  await expect(links).toHaveCount(2)
+  await expect(links.first()).toContainText('Hoy comí tacos.')
+  await expect(links.first()).toContainText('Con Ana.')
 
-test('"Uložiť" stores the text at once and closes the keyboard', async ({ page }) => {
-  await page.goto('/diary')
-  await today(page).tap()
-  const save = page.getByRole('button', { name: 'Uložiť', exact: true })
-  await expect(save).toBeVisible()
-  await note(page).fill('Hoy aprendí el pretérito.')
-  // Well before the 800 ms of the typing pause: only the button can have stored it.
-  await save.tap()
-  await expect(note(page)).not.toBeFocused()
-  await expect(page.getByText('Uložené', { exact: true })).toBeVisible({ timeout: 500 })
+  await first.tap()
+  await expect(title(page)).toHaveValue('Pretérito de ir')
   await page.reload()
-  await expect(note(page)).toHaveValue('Hoy aprendí el pretérito.')
+  await expect(title(page)).toHaveValue('Pretérito de ir')
+  await expect(body(page)).toHaveValue('fui, fuiste, fue\nHoy fui al mercado.')
+  await expect(page.getByText('Uložené', { exact: true })).toBeVisible()
 })
 
-test('a wrong or future date goes back to the diary', async ({ page }) => {
-  await page.goto('/diary/2026-13-45')
+test('a new note left empty adds nothing; a note cleared and left is gone', async ({ page }) => {
+  await page.goto('/diary')
+  await newNote(page).tap()
+  await button(page, 'Späť').tap()
+  await expect(page.getByText('Zatiaľ nemáš žiadnu poznámku.')).toBeVisible()
+
+  await newNote(page).tap()
+  await body(page).fill('Hola')
+  await save(page).tap()
+  await todays(page).getByRole('link', { name: /^Hola/ }).tap()
+  await body(page).fill('')
+  await button(page, 'Späť').tap()
+  await expect(page.getByText('Zatiaľ nemáš žiadnu poznámku.')).toBeVisible()
+})
+
+test('"Vymazať poznámku" asks first, then removes the note', async ({ page }) => {
+  await page.goto('/diary')
+  await newNote(page).tap()
+  await title(page).fill('ser a estar')
+  await save(page).tap()
+  await todays(page).getByRole('link', { name: /^ser a estar/ }).tap()
+
+  await page.getByRole('button', { name: 'Vymazať poznámku' }).tap()
+  const confirm = page.getByRole('group', { name: 'Naozaj vymazať túto poznámku?' })
+  await confirm.getByRole('button', { name: 'Nechať' }).tap()
+  await expect(confirm).toHaveCount(0)
+  await page.getByRole('button', { name: 'Vymazať poznámku' }).tap()
+  await confirm.getByRole('button', { name: 'Vymazať' }).tap()
   await expect(page).toHaveURL(/\/diary$/)
-  await page.goto('/diary/2999-01-01')
+  await expect(page.getByText('Zatiaľ nemáš žiadnu poznámku.')).toBeVisible()
+})
+
+test('a note that does not exist goes back to the diary', async ({ page }) => {
+  await page.goto('/diary/n-nothing')
   await expect(page).toHaveURL(/\/diary$/)
 })
 
-test('the Domov card: a hint and "Napísať", then ✓ and the first line of the entry', async ({ page }) => {
+test('the Domov card: a hint and "Napísať", then ✓ and today’s newest note', async ({ page }) => {
   await page.goto('/')
-  const card = page.getByRole('region', { name: 'Dnešný zápis' })
+  const card = page.getByRole('region', { name: 'Denník' })
   await expect(card).toContainText('Zapíš si, čo si chceš zapamätať')
   await card.getByRole('link', { name: 'Napísať' }).tap()
-  await expect(page).toHaveURL(/\/diary\/\d{4}-\d{2}-\d{2}$/)
-  await note(page).fill('ser vs estar\nestar = kde a ako')
-  await expect(page.getByText('Uložené')).toBeVisible()
+  await expect(page).toHaveURL(/\/diary\/new$/)
+  await body(page).fill('ser vs estar\nestar = kde a ako')
+  await save(page).tap()
+  await expect(page).toHaveURL(/\/diary$/)
 
   await page.goto('/')
   await expect(card).toContainText('ser vs estar')
   await expect(card).not.toContainText('estar = kde a ako')
-  await expect(card.getByRole('link', { name: 'Napísať' })).toHaveCount(0)
-  await card.getByRole('link', { name: 'Všetky zápisy' }).tap()
+  await expect(card.getByRole('link', { name: 'Napísať' })).toBeVisible()
+  await card.getByRole('link', { name: 'Všetky poznámky' }).tap()
   await expect(page).toHaveURL(/\/diary$/)
 })
 
-test('going from one day to another in the history shows that day’s own text', async ({ page }) => {
-  await page.goto('/diary')
-  await today(page).tap()
-  await note(page).fill('Hoy comí tacos.')
-  await expect(page.getByText('Uložené')).toBeVisible()
-  // Yesterday, reached inside the app (as the history does), not by a fresh load.
-  await page.evaluate(() => {
-    const d = new Date()
-    d.setDate(d.getDate() - 1)
-    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
-    window.history.pushState({}, '', `/diary/${key}`)
-    window.dispatchEvent(new PopStateEvent('popstate'))
-  })
-  await expect(note(page)).toHaveValue('')
-})
-
 test('the app going to the background saves what was typed at once', async ({ page }) => {
-  await page.goto('/diary')
-  await today(page).tap()
-  await note(page).fill('Hoy fui al parque.')
+  await page.goto('/diary/new')
+  await body(page).fill('Hoy fui al parque.')
   await page.evaluate(() => {
     Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' })
     document.dispatchEvent(new Event('visibilitychange'))
@@ -98,7 +110,7 @@ test('the app going to the background saves what was typed at once', async ({ pa
       new Promise<string | undefined>((resolve) => {
         const open = indexedDB.open('somos')
         open.onsuccess = () => {
-          const rows = open.result.transaction('diary').objectStore('diary').getAll()
+          const rows = open.result.transaction('diaryNotes').objectStore('diaryNotes').getAll()
           rows.onsuccess = () => resolve((rows.result as { text: string }[])[0]?.text)
         }
       }),

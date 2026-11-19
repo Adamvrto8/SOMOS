@@ -47,6 +47,7 @@ const STATIC_PATHS = new Set([
   '/archive',
   '/archive/new',
   '/diary',
+  '/diary/new',
   '/profile',
   '/profile/stats',
   '/review',
@@ -62,7 +63,6 @@ export function appPathExists(to: string): boolean {
   if (first === 'word' && !third) return wordById.has(second)
   if (first === 'topic' && !third) return topicById.has(second)
   if (first === 'practice' && second === 'grammar' && third) return tipById.has(third)
-  if (first === 'diary' && !third) return /^\d{4}-\d{2}-\d{2}$/.test(second)
   if (first === 'profile' && !third) return /^[a-z-]+$/.test(second)
   return false
 }

@@ -59,9 +59,14 @@ export interface Lookup {
   at: number
 }
 
-/** One day of the diary (Denník), keyed by the local date: one free text (since 2026-11-19, was two fields). */
-export interface DiaryEntry {
-  date: string // "2026-11-07", local time
+/**
+ * One note of the diary (Denník); a day has any number of them (since 2026-11-19, was one text per day).
+ * A day written before notes became the note whose id is its date.
+ */
+export interface DiaryNote {
+  id: string
+  date: string // "2026-11-07", local time: the day it is listed under
+  title: string // may be empty: the list then shows the first line of the text
   text: string
   createdAt: number
   updatedAt: number
@@ -109,7 +114,7 @@ export class SomosDB extends Dexie {
   mistakes!: Table<Mistake, [string, string]>
   lookups!: EntityTable<Lookup, 'key'>
   outbox!: Table<OutboxEntry, [string, string]>
-  diary!: EntityTable<DiaryEntry, 'date'>
+  diaryNotes!: EntityTable<DiaryNote, 'id'>
   chats!: EntityTable<ChatThread, 'id'>
 
   constructor() {
@@ -151,6 +156,17 @@ export class SomosDB extends Dexie {
             delete row.es
           }),
       )
+    // Notes instead of one text per day: a Dexie table cannot change its key, so the days move to a new table, each
+    // becoming the note whose id is its date (sync and backups know a day by that key). The old table goes in version 9.
+    this.version(8)
+      .stores({ diaryNotes: 'id, date, updatedAt' })
+      .upgrade(async (tx) => {
+        const days = (await tx.table('diary').toArray()) as { date: string; text: string; createdAt: number; updatedAt: number }[]
+        await tx.table('diaryNotes').bulkPut(
+          days.map(({ date, text, createdAt, updatedAt }) => ({ id: date, date, title: '', text, createdAt, updatedAt })),
+        )
+      })
+    this.version(9).stores({ diary: null })
   }
 }
 

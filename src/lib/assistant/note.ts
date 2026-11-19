@@ -1,21 +1,38 @@
-import { english, tipById, tips, verbById, wordById } from '../../data'
+import { verbById, wordById } from '../../data'
 import { conjugationRows, formText, TENSE_LABELS } from '../conjugate'
+import { TITLE_MAX } from '../diary'
 import { articleFor } from '../grammar'
-import { localizedTip, wordTranslations } from '../localized'
+import { wordTranslations } from '../localized'
 import { answerBlocks, type AnswerCard, type AnswerPart, type ListItem } from './answerText'
 
-// An answer of SOMO as plain text for the diary (docs/superpowers/specs/2026-11-19-diary-notes-design.md §3):
-// the cards written out from the app's data, no marks, links as their words, no follow-up questions.
-// "Otázka:" and "SOMO:" mark who said what; a blank line parts the paragraphs, a list and a run of cards.
+// An answer of SOMO as a diary note (docs/superpowers/specs/2026-11-19-diary-notes-design.md §3): the question is the
+// title, the answer plain text — word and conjugation cards written out from the app's data, no marks, no tips, no
+// sentence that pointed somewhere in the app (it means nothing in a note), no follow-up questions.
+// A blank line parts the paragraphs, a list and a run of cards.
 
-/** How a tip card is written, and how the diary finds it again to offer its link. */
-const TIP_PREFIX = 'Tip: '
+/** Marks where a link was, so the sentence around it can be left out. */
+const LINK = '\u0000'
 
-const partsText = (parts: AnswerPart[]) => parts.map((p) => (p.type === 'link' ? p.label : p.text)).join('')
+const partsText = (parts: AnswerPart[]) => parts.map((p) => (p.type === 'link' ? `${LINK}${p.label}` : p.text)).join('')
 
-const itemText = (item: ListItem) => (item.type === 'example' ? `- ${item.es} – ${item.text}` : `- ${partsText(item.parts)}`)
+/** A paragraph without its sentences that held a link. */
+function withoutLinkedSentences(text: string): string {
+  if (!text.includes(LINK)) return text.trim()
+  return text
+    .split(/(?<=[.!?…])\s+/)
+    .filter((sentence) => !sentence.includes(LINK))
+    .join(' ')
+    .trim()
+}
 
-/** A card as one line; '' for a card whose data is gone. */
+/** A list item as a line; '' for an item that pointed somewhere in the app. */
+function itemText(item: ListItem): string {
+  if (item.type === 'example') return `- ${item.es} – ${item.text}`
+  const text = partsText(item.parts).trim()
+  return text && !text.includes(LINK) ? `- ${text}` : ''
+}
+
+/** A word or conjugation card as one line; '' for a tip and for a card whose data is gone. */
 export function cardAsText(card: AnswerCard): string {
   if (card.type === 'word') {
     const word = wordById.get(card.id)
@@ -23,10 +40,7 @@ export function cardAsText(card: AnswerCard): string {
     const article = articleFor(word)
     return `${article ? `${article} ` : ''}${word.es} – ${wordTranslations(word).join(', ')}`
   }
-  if (card.type === 'tip') {
-    const tip = tipById.get(card.id)
-    return tip ? `${TIP_PREFIX}${localizedTip(tip).title}` : ''
-  }
+  if (card.type === 'tip') return ''
   const verb = verbById.get(card.verbId)
   const estar = verbById.get('estar')
   if (!verb || !estar) return ''
@@ -34,45 +48,27 @@ export function cardAsText(card: AnswerCard): string {
   return `${verb.id} · ${TENSE_LABELS[card.tense]}: ${forms.join(', ')}`
 }
 
-export interface NoteLabels {
-  question: string
-  answer: string
-}
-
-/** The question and the answer of a chat turn as one block of the diary. */
-export function turnAsNote(turn: { question: string; answer: string }, labels: NoteLabels): string {
+/** A chat turn as a note: the question's first line is the title, its other lines (a task) open the text. */
+export function turnAsNote(turn: { question: string; answer: string }): { title: string; text: string } {
+  const [title = '', ...context] = turn.question
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
   // Each block of the answer becomes a group of lines; cards that follow each other stay one group.
   const groups: { lines: string[]; cards: boolean }[] = []
   for (const block of answerBlocks(turn.answer)) {
     const lines =
-      block.type === 'text' ? [partsText(block.parts).trim()] : block.type === 'list' ? block.items.map(itemText) : [cardAsText(block.card)]
+      block.type === 'text'
+        ? [withoutLinkedSentences(partsText(block.parts))]
+        : block.type === 'list'
+          ? block.items.map(itemText)
+          : [cardAsText(block.card)]
     const kept = lines.filter(Boolean)
     if (kept.length === 0) continue
     const last = groups.at(-1)
     if (block.type === 'card' && last?.cards) last.lines.push(...kept)
     else groups.push({ lines: kept, cards: block.type === 'card' })
   }
-  const [first, ...rest] = groups.map((g) => g.lines.join('\n'))
-  const question = `${labels.question}: ${turn.question.trim()}`
-  // Cards keep their own lines, so a "Tip: …" line still starts its line for tipsInText.
-  const answer = first === undefined ? '' : `${labels.answer}:${groups[0].cards ? '\n' : ' '}${first}`
-  return [question, answer, ...rest].filter(Boolean).join('\n\n')
-}
-
-/** Every tip of the app whose "Tip: <title>" line is in a diary text, in the order they come. */
-export function tipsInText(text: string): string[] {
-  const byTitle = new Map<string, string>()
-  for (const tip of tips) {
-    byTitle.set(tip.title, tip.id)
-    const en = english.tips.get(tip.id)?.title
-    if (en) byTitle.set(en, tip.id)
-  }
-  const found: string[] = []
-  for (const line of text.split('\n')) {
-    const trimmed = line.trim()
-    if (!trimmed.startsWith(TIP_PREFIX)) continue
-    const id = byTitle.get(trimmed.slice(TIP_PREFIX.length).trim())
-    if (id && !found.includes(id)) found.push(id)
-  }
-  return found
+  const parts = [context.join('\n'), ...groups.map((g) => g.lines.join('\n'))].filter(Boolean)
+  return { title: title.slice(0, TITLE_MAX), text: parts.join('\n\n') }
 }

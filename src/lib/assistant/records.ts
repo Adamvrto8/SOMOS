@@ -1,6 +1,7 @@
 import { wordById } from '../../data'
 import { dayKey } from '../dates'
-import { db, type CustomWord, type DiaryEntry, type Mistake, type SavedItem } from '../db'
+import { db, type CustomWord, type DiaryNote, type Mistake, type SavedItem } from '../db'
+import { byNewest } from '../diary'
 import { getProgressionSnapshot, type LessonProgressionMap } from '../lessonProgress'
 import { getTestResults, type TestResultsMap } from '../testProgress'
 import { clip, describeItem, exerciseLabel } from './learner'
@@ -12,7 +13,7 @@ export const RECORD_KINDS: RecordKind[] = ['mistakes', 'diary', 'tests', 'lesson
 
 export interface RecordsInput {
   mistakes: Mistake[]
-  diary: DiaryEntry[]
+  diary: DiaryNote[]
   tests: TestResultsMap
   lessons: LessonProgressionMap
   saved: SavedItem[]
@@ -31,9 +32,9 @@ export function recordsOf(kind: RecordKind, input: RecordsInput, limit: number):
         .map((m) => ({ item: describeItem(m.itemId), exercise: exerciseLabel(m.exercise), wrongCount: m.wrongCount, lastWrong: date(m.lastWrongAt) }))
     case 'diary':
       return [...input.diary]
-        .sort((a, b) => b.date.localeCompare(a.date))
+        .sort(byNewest)
         .slice(0, limit)
-        .map((e) => ({ date: e.date, text: clip(e.text, 600) }))
+        .map((e) => ({ date: e.date, ...(e.title.trim() ? { title: e.title.trim() } : {}), text: clip(e.text, 600) }))
     case 'tests':
       return Object.entries(input.tests)
         .sort(([, a], [, b]) => b.lastAt - a.lastAt)
@@ -62,7 +63,7 @@ export function recordsOf(kind: RecordKind, input: RecordsInput, limit: number):
 export async function loadRecordsInput(kind: RecordKind): Promise<RecordsInput> {
   const input: RecordsInput = { mistakes: [], diary: [], tests: {}, lessons: {}, saved: [], custom: [] }
   if (kind === 'mistakes') input.mistakes = await db.mistakes.toArray()
-  if (kind === 'diary') input.diary = await db.diary.toArray()
+  if (kind === 'diary') input.diary = await db.diaryNotes.toArray()
   if (kind === 'tests') input.tests = getTestResults()
   if (kind === 'lessons') input.lessons = getProgressionSnapshot()
   if (kind === 'saved') input.saved = await db.savedItems.toArray()

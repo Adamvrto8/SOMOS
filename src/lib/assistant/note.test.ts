@@ -1,18 +1,16 @@
 import { describe, expect, it } from 'vitest'
-import { cardAsText, tipsInText, turnAsNote } from './note'
-
-const labels = { question: 'Otázka', answer: 'SOMO' }
+import { cardAsText, turnAsNote } from './note'
 
 describe('cardAsText', () => {
-  it('writes a word, a conjugation and a tip from the app data', () => {
+  it('writes a word and a conjugation from the app data, and leaves a tip out', () => {
     expect(cardAsText({ type: 'word', id: 'carro' })).toBe('el carro – auto')
     expect(cardAsText({ type: 'conj', verbId: 'tener', tense: 'preterito' })).toBe('tener · pretérito: tuve, tuviste, tuvo, tuvimos, tuvieron')
-    expect(cardAsText({ type: 'tip', id: 'ser-estar' })).toMatch(/^Tip: ser a estar/)
+    expect(cardAsText({ type: 'tip', id: 'ser-estar' })).toBe('')
   })
 })
 
 describe('turnAsNote', () => {
-  it('marks the question and the answer, parts blocks by a blank line, drops marks and follow-ups', () => {
+  it('the question is the title; the answer without marks, tips, sentences with links and follow-ups', () => {
     const answer = [
       '**Ser** hovorí, čo niečo je, *estar* kde to je. Viac v [gramatike](/practice/grammar).',
       '- Ella es mi hermana. – Ona je moja sestra.',
@@ -20,34 +18,32 @@ describe('turnAsNote', () => {
       '{{word:carro}}',
       '{{word:flarpo}}',
       '{{tip:ser-estar}}',
+      '{{conj:ser:presente}}',
       'Detail slova (/word/<id>) má príklady.',
+      'Na precvičenie si otvor [gramatiku](/practice/grammar) a skús tvary oboch slovies.',
       '{{dalej:Daj mi ďalší príklad}}',
     ].join('\n')
-    const note = turnAsNote({ question: 'Aký je rozdiel medzi ser a estar?', answer }, labels)
-    expect(note.split('\n\n')).toEqual([
-      'Otázka: Aký je rozdiel medzi ser a estar?',
-      'SOMO: Ser hovorí, čo niečo je, estar kde to je. Viac v gramatike.',
+    const note = turnAsNote({ question: 'Aký je rozdiel medzi ser a estar?', answer })
+    expect(note.title).toBe('Aký je rozdiel medzi ser a estar?')
+    expect(note.text.split('\n\n')).toEqual([
+      'Ser hovorí, čo niečo je, estar kde to je.',
       '- Ella es mi hermana. – Ona je moja sestra.\n- Ella está en casa. – Ona je doma.',
-      expect.stringMatching(/^el carro – auto\nTip: ser a estar/),
+      expect.stringMatching(/^el carro – auto\nser · presente: soy,/),
       'Detail slova má príklady.',
     ])
+    expect(note.text).not.toContain('Tip')
+    expect(note.text).not.toContain('\u0000')
   })
 
-  it('keeps every line of a task question', () => {
-    const question = 'Prečo je moja odpoveď zlá?\nCvičenie: Časovanie\nÚloha: tener · yo · pretérito\nMoja odpoveď: tenía\nSprávne: tuve'
-    expect(turnAsNote({ question, answer: 'Treba **tuve**.' }, labels)).toBe(`Otázka: ${question}\n\nSOMO: Treba tuve.`)
+  it('the other lines of a task question open the text', () => {
+    const question = 'Prečo je moja odpoveď zlá?\nCvičenie: Časovanie\nÚloha: tener · yo · pretérito'
+    expect(turnAsNote({ question, answer: 'Treba **tuve**.' })).toEqual({
+      title: 'Prečo je moja odpoveď zlá?',
+      text: 'Cvičenie: Časovanie\nÚloha: tener · yo · pretérito\n\nTreba tuve.',
+    })
   })
 
-  it('an answer with nothing left keeps just the question', () => {
-    expect(turnAsNote({ question: 'Ahoj', answer: '{{dalej:Ďalej}}' }, labels)).toBe('Otázka: Ahoj')
-  })
-})
-
-describe('tipsInText', () => {
-  it('finds the tips written as "Tip: <title>" lines, once each, and nothing else', () => {
-    const note = turnAsNote({ question: 'ser?', answer: '{{tip:ser-estar}}' }, labels)
-    const text = `moja poznámka\nTip: niečo, čo nie je tip\n\n${note}\n\n${note}`
-    expect(tipsInText(text)).toEqual(['ser-estar'])
-    expect(tipsInText('Tip: ser a estar je ťažké')).toEqual([])
+  it('an answer with nothing left keeps just the title', () => {
+    expect(turnAsNote({ question: 'Ahoj', answer: '{{dalej:Ďalej}}' })).toEqual({ title: 'Ahoj', text: '' })
   })
 })

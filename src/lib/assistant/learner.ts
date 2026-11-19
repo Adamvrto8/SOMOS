@@ -2,7 +2,7 @@ import { sentenceById, wordById } from '../../data'
 import type { Level } from '../../data/types'
 import { t } from '../../i18n'
 import { dayKey } from '../dates'
-import type { Attempt, DiaryEntry, Mistake } from '../db'
+import type { Attempt, DiaryNote, Mistake } from '../db'
 import type { Language } from '../language'
 import type { LessonProgressionMap } from '../lessonProgress'
 import { EXERCISE_TYPES } from '../exerciseOrder'
@@ -28,8 +28,8 @@ export interface LearnerSnapshot {
   saved: number
   customWords: number
   diaryCount: number
-  /** The newest entries first, at most 7. */
-  diary: Pick<DiaryEntry, 'date' | 'text'>[]
+  /** The newest notes first, at most 7. */
+  diary: Pick<DiaryNote, 'date' | 'title' | 'text'>[]
   lessons: LessonProgressionMap
   tests: TestResultsMap
   next?: { title: string; step: string; href: string }
@@ -46,6 +46,9 @@ export const clip = (text: string, max: number) => {
   const flat = text.replace(/\s+/g, ' ').trim()
   return flat.length <= max ? flat : `${cutAt(flat, max - 1)}…`
 }
+
+/** A diary note as one line: its title, then its text. */
+export const noteLine = (note: { title: string; text: string }) => [note.title.trim(), note.text.trim()].filter(Boolean).join(' – ')
 
 const WEEKDAYS = ['nedeľa', 'pondelok', 'utorok', 'streda', 'štvrtok', 'piatok', 'sobota']
 
@@ -114,8 +117,8 @@ export function learnerProfile(s: LearnerSnapshot): string {
       ? `Naposledy hraná lekcia: ${s.lastLesson.type} · ${s.lastLesson.group}${s.lastLesson.level ? ` · ${s.lastLesson.level}` : ''} · lekcia ${s.lastLesson.lesson}`
       : '',
     s.diary.length
-      ? `Denník: ${s.diaryCount} zápisov; posledné: ${s.diary.slice(0, 3).map((e) => `${e.date}: ${clip(e.text, 160) || '–'}`).join(' | ')}`
-      : 'Denník: zatiaľ bez zápisov',
+      ? `Denník: ${s.diaryCount} poznámok; posledné: ${s.diary.slice(0, 3).map((e) => `${e.date}: ${clip(noteLine(e), 160) || '–'}`).join(' | ')}`
+      : 'Denník: zatiaľ bez poznámok',
   ]
   return lines.filter(Boolean).join('\n')
 }

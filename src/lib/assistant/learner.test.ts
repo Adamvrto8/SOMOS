@@ -60,7 +60,7 @@ describe('learnerProfile', () => {
     const text = learnerProfile({
       ...empty,
       mistakes: Array.from({ length: 300 }, (_, i) => ({ exercise: 'cloze', itemId: `x${i}`, firstWrongAt: at(1), lastWrongAt: at(1), wrongCount: 1 })),
-      diary: Array.from({ length: 7 }, (_, i) => ({ date: `2026-11-${10 + i}`, text: 'a'.repeat(5000) })),
+      diary: Array.from({ length: 7 }, (_, i) => ({ date: `2026-11-${10 + i}`, title: 'b'.repeat(200), text: 'a'.repeat(5000) })),
       diaryCount: 7,
     })
     expect(text.length).toBeLessThan(MAX_LEARNER_CHARS)

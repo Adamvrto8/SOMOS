@@ -1,6 +1,6 @@
 import type { Table } from 'dexie'
-import { db, type Attempt, type CustomWord, type DiaryEntry, type Mistake, type ReviewCard, type SavedItem } from '../db'
-import { toDiaryEntry } from '../diary'
+import { db, type Attempt, type CustomWord, type DiaryNote, type Mistake, type ReviewCard, type SavedItem } from '../db'
+import { toDiaryNote } from '../diary'
 
 // What syncs between the devices of an account, record by record (docs/superpowers/specs/2026-10-19-accounts-design.md).
 
@@ -58,7 +58,7 @@ export function keyOf(kind: TableKind, row: unknown): string {
     case 'attempt':
       return attemptKey(row as Attempt)
     case 'diary':
-      return (row as DiaryEntry).date
+      return (row as DiaryNote).id
   }
 }
 
@@ -75,7 +75,7 @@ export function tableOf(kind: TableKind): Table {
     case 'mistake':
       return db.mistakes
     case 'diary':
-      return db.diary
+      return db.diaryNotes
   }
 }
 
@@ -107,9 +107,9 @@ export async function readRow(kind: TableKind, key: string): Promise<unknown> {
 /** Stores a record's row from another device. Call inside runRemote. */
 export async function writeRow(kind: TableKind, key: string, data: unknown): Promise<void> {
   if (kind === 'diary') {
-    // A device on an older app still sends learned + es.
-    const entry = toDiaryEntry(data)
-    if (entry) await db.diary.put(entry)
+    // A device on an older app still sends a day (one text, or learned + es): it becomes the note keyed by its date.
+    const note = toDiaryNote(data)
+    if (note) await db.diaryNotes.put(note)
     return
   }
   if (kind !== 'attempt') {

@@ -73,8 +73,8 @@ export const GUIDE: GuideSection[] = [
   {
     id: 'dennik',
     title: 'Denník',
-    links: ['/diary'],
-    text: 'Karta na Domove („Dnešný zápis“). Na každý deň jeden zápis: voľný text, kam si učiaci zapisuje, čo si chce zapamätať (slovíčka, pravidlá, vysvetlenia). Pod každou odpoveďou SOMO je „Uložiť do Denníka“, ktoré otázku aj odpoveď pridá na koniec dnešného zápisu. Text appka nekontroluje; vetu po španielsky skontroluje SOMO, keď ju sem učiaci pošle. „Všetky zápisy“ ukáže staršie dni. Nepočíta sa do cieľa ani série.',
+    links: ['/diary', '/diary/new'],
+    text: 'Karta na Domove („Denník“, tlačidlo „Napísať“). Poznámky, kam si učiaci zapisuje, čo si chce zapamätať (slovíčka, pravidlá, vysvetlenia); za deň ich môže byť viac, každá má nepovinný nadpis a text. Zoznam ukazuje poznámky podľa dní (Dnes, Včera, dátum), „Nová poznámka“ pridá ďalšiu. „Uložiť“ poznámku uloží a vráti do zoznamu (ukladá sa aj priebežne), „Vymazať poznámku“ ju zmaže. Pod každou odpoveďou SOMO je „Uložiť do Denníka“: z otázky je nadpis novej poznámky, z odpovede text (bez tipov a odkazov do appky). Text appka nekontroluje; vetu po španielsky skontroluje SOMO, keď ju sem učiaci pošle. Nepočíta sa do cieľa ani série.',
   },
   {
     id: 'prehlad',

@@ -212,7 +212,7 @@ export const en: Dictionary = {
         if (r.reviewCards) parts.push(`flashcards: ${r.reviewCards}`)
         if (r.attempts) parts.push(`new exercise results: ${r.attempts}`)
         if (r.mistakes) parts.push(`mistakes: ${r.mistakes}`)
-        if (r.diary) parts.push(`diary entries: ${r.diary}`)
+        if (r.diary) parts.push(`diary notes: ${r.diary}`)
         if (r.lessons) parts.push(`lessons: ${r.lessons}`)
         const skipped = r.skipped ? ` Invalid records skipped: ${r.skipped}.` : ''
         const settings = r.settings ? ' The settings were restored too.' : ''
@@ -1208,9 +1208,6 @@ export const en: Dictionary = {
     saveToDiary: 'Save to the diary',
     savedToDiary: 'Saved to the diary',
     openDiary: 'Open',
-    noteQuestion: 'Question',
-    noteAnswer: 'SOMO',
-    diaryFull: "Today's entry is full, the answer does not fit.",
     rateDown: 'Bad answer',
     reasonsLabel: 'What was wrong?',
     reasons: { wrong: 'Wrong', unclear: 'Unclear', long: 'Too long', other: 'Other' } as Record<string, string>,
@@ -1257,18 +1254,23 @@ export const en: Dictionary = {
   diary: {
     title: 'Diary',
     today: 'Today',
-    todayEntry: "Today's entry",
+    yesterday: 'Yesterday',
+    newNote: 'New note',
     write: 'Write',
-    all: 'All entries',
+    all: 'All notes',
+    titleLabel: 'Title',
     label: 'What do you want to remember?',
     hint: 'Words, rules, explanations from SOMO, anything',
     cardHint: 'Write down what you want to remember',
+    untitled: 'Untitled',
     saved: 'Saved',
     save: 'Save',
-    tips: 'Tips in this entry',
-    empty: 'No entries yet.',
-    emptyHint: 'Every day has one entry: words, rules or answers from SOMO you want to remember.',
-    nothingToday: 'Nothing yet today',
+    remove: 'Delete note',
+    removeConfirm: 'Delete this note?',
+    removeYes: 'Delete',
+    removeNo: 'Keep',
+    empty: 'No notes yet.',
+    emptyHint: 'Write down words, rules or answers from SOMO you want to remember. Each note belongs to the day it was written.',
   },
   privacy: {
     title: 'Privacy',
