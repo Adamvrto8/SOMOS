@@ -84,6 +84,8 @@ export interface ChatTurn {
   /** 👍 / 👎 given to the answer (src/lib/assistant/feedback.ts). */
   rating?: 'up' | 'down'
   reason?: FeedbackReason
+  /** Saved to the diary note of its conversation (ChatThread.noteId). */
+  saved?: boolean
 }
 
 export type FeedbackReason = 'wrong' | 'unclear' | 'long' | 'other'
@@ -94,6 +96,8 @@ export interface ChatThread {
   /** The first question, shortened: the name in the list of conversations. */
   title: string
   turns: ChatTurn[]
+  /** The diary note its saved answers go to: one note per conversation, so follow-up questions stay together. */
+  noteId?: string
   createdAt: number
   updatedAt: number
 }

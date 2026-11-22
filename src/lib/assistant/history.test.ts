@@ -1,10 +1,11 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { db } from '../db'
-import { addTurn, askInNewChat, rateTurn, deleteChat, forgetChat, freshenChat, getChat, IDLE_MS, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
+import { addTurn, askInNewChat, rateTurn, saveTurnToDiary, deleteChat, forgetChat, freshenChat, getChat, IDLE_MS, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
 
 beforeEach(async () => {
   await db.chats.clear()
+  await db.diaryNotes.clear()
   resetChatModule()
 })
 
@@ -110,5 +111,40 @@ describe('SOMO conversations', () => {
     expect(getChat().turns[0].rating).toBeUndefined()
     const [stored] = await listChats()
     expect(stored.turns[1]).toMatchObject({ rating: 'down', reason: 'unclear' })
+  })
+
+  it('saved answers of one conversation go to one diary note; another conversation opens its own', async () => {
+    await addTurn({ question: 'Kedy por a kedy para?', answer: 'Para je cieľ.' })
+    await addTurn({ question: 'Daj mi príklad na por', answer: 'Por el parque.' })
+    const noteId = await saveTurnToDiary(0, 'Otázka: ')
+    expect(await saveTurnToDiary(1, 'Otázka: ')).toBe(noteId)
+    const notes = await db.diaryNotes.toArray()
+    expect(notes).toHaveLength(1)
+    expect(notes[0]).toMatchObject({ title: 'Kedy por a kedy para?', text: 'Para je cieľ.\n\nOtázka: Daj mi príklad na por\nPor el parque.' })
+    expect(getChat().turns.map((t) => t.saved)).toEqual([true, true])
+
+    // The conversation keeps its note after the app was closed.
+    const id = getChat().id!
+    resetChatModule()
+    await openChat(id)
+    expect(getChat().noteId).toBe(noteId)
+    await addTurn({ question: 'A para?', answer: 'Para ti.' })
+    await saveTurnToDiary(2, 'Otázka: ')
+    expect(await db.diaryNotes.count()).toBe(1)
+
+    startNewChat()
+    await addTurn({ question: 'Ako sa povie auto?', answer: 'El carro.' })
+    expect(await saveTurnToDiary(0, 'Otázka: ')).not.toBe(noteId)
+    expect(await db.diaryNotes.count()).toBe(2)
+  })
+
+  it('a note deleted in the diary gives way to a new one', async () => {
+    await addTurn({ question: 'a', answer: 'b' })
+    await addTurn({ question: 'c', answer: 'd' })
+    const first = await saveTurnToDiary(0, 'Otázka: ')
+    await db.diaryNotes.delete(first!)
+    const second = await saveTurnToDiary(1, 'Otázka: ')
+    expect(second).not.toBe(first)
+    expect(await db.diaryNotes.get(second!)).toMatchObject({ title: 'c', text: 'd' })
   })
 })

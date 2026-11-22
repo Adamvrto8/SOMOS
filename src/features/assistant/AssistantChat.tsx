@@ -7,11 +7,10 @@ import { useAccount } from '../../lib/account'
 import { answerBlocks, finishedPart, freshFollowUps, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
-import { addTurn, deleteChat, freshenChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
-import { turnAsNote } from '../../lib/assistant/note'
+import { addTurn, deleteChat, freshenChat, listChats, openChat, rateTurn, restoreLastChat, saveTurnToDiary, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
 import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
 import type { ChatThread, ChatTurn, FeedbackReason } from '../../lib/db'
-import { addDiaryNote, todayKey } from '../../lib/diary'
+import { useDiaryNote } from '../../lib/diary'
 import { speak, ttsSupported } from '../../lib/tts'
 import { AnswerCardView } from './AnswerCards'
 
@@ -129,14 +128,21 @@ function Thinking({ label }: { label: string }) {
 }
 
 /** Saves the question and the answer as a new note of today; a second tap adds nothing. */
-function SaveToDiary({ turn }: { turn: ChatTurn }) {
+function SaveToDiary({ turn, index }: { turn: ChatTurn; index: number }) {
   const text = useT().assistant
-  const [savedId, setSavedId] = useState<string>()
+  const { noteId } = useChat()
+  // A note deleted in the diary since: the answer can be saved again (to a new note).
+  const note = useDiaryNote(noteId ?? '')
+  const [busy, setBusy] = useState(false)
+  const savedId = turn.saved && note ? note.id : undefined
 
   const save = async () => {
-    const { title, text: body } = turnAsNote(turn)
-    const { id } = await addDiaryNote(todayKey(), title, body)
-    setSavedId(id)
+    setBusy(true)
+    try {
+      await saveTurnToDiary(index, text.noteQuestion)
+    } finally {
+      setBusy(false)
+    }
   }
 
   if (savedId)
@@ -151,7 +157,7 @@ function SaveToDiary({ turn }: { turn: ChatTurn }) {
     )
   return (
     <div className="mt-1">
-      <button type="button" onClick={() => void save()} aria-label={text.saveToDiary} title={text.saveToDiary} className={RATE_BUTTON}>
+      <button type="button" onClick={() => void save()} disabled={busy} aria-label={text.saveToDiary} title={text.saveToDiary} className={RATE_BUTTON}>
         <NotebookPen size={18} strokeWidth={1.75} aria-hidden />
       </button>
     </div>
@@ -427,7 +433,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
         {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
         <div className="flex flex-wrap items-start gap-x-1">
           <Rating turn={turn} index={i} />
-          <SaveToDiary turn={turn} />
+          <SaveToDiary turn={turn} index={i} />
         </div>
       </div>
     </section>

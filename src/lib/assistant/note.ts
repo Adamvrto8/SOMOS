@@ -48,6 +48,16 @@ export function cardAsText(card: AnswerCard): string {
   return `${verb.id} · ${TENSE_LABELS[card.tense]}: ${forms.join(', ')}`
 }
 
+/**
+ * A further answer saved at the end of its conversation's note (the first one gave the note its title): its question on
+ * a line of its own after `questionLabel`, then the answer as in turnAsNote.
+ */
+export function appendTurn(noteText: string, turn: { question: string; answer: string }, questionLabel: string): string {
+  const { title, text } = turnAsNote(turn)
+  const section = [`${questionLabel}${title}`, text].filter(Boolean).join('\n')
+  return noteText.trim() ? `${noteText.trimEnd()}\n\n${section}` : section
+}
+
 /** A chat turn as a note: the question's first line is the title, its other lines (a task) open the text. */
 export function turnAsNote(turn: { question: string; answer: string }): { title: string; text: string } {
   const [title = '', ...context] = turn.question

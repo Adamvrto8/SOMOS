@@ -1208,6 +1208,7 @@ export const en: Dictionary = {
     saveToDiary: 'Save to the diary',
     savedToDiary: 'Saved to the diary',
     openDiary: 'Open',
+    noteQuestion: 'Question: ',
     rateDown: 'Bad answer',
     reasonsLabel: 'What was wrong?',
     reasons: { wrong: 'Wrong', unclear: 'Unclear', long: 'Too long', other: 'Other' } as Record<string, string>,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { cardAsText, turnAsNote } from './note'
+import { appendTurn, cardAsText, turnAsNote } from './note'
 
 describe('cardAsText', () => {
   it('writes a word and a conjugation from the app data, and leaves a tip out', () => {
@@ -45,5 +45,15 @@ describe('turnAsNote', () => {
 
   it('an answer with nothing left keeps just the title', () => {
     expect(turnAsNote({ question: 'Ahoj', answer: '{{dalej:Ďalej}}' })).toEqual({ title: 'Ahoj', text: '' })
+  })
+})
+
+describe('appendTurn', () => {
+  it('puts a further answer at the end of the note, its question on a line of its own', () => {
+    const first = 'Para vyjadruje cieľ.'
+    expect(appendTurn(`${first}\n`, { question: 'Daj mi ďalší príklad', answer: 'Por je príčina.' }, 'Otázka: ')).toBe(
+      'Para vyjadruje cieľ.\n\nOtázka: Daj mi ďalší príklad\nPor je príčina.',
+    )
+    expect(appendTurn('', { question: 'A ser?', answer: 'Je.' }, 'Otázka: ')).toBe('Otázka: A ser?\nJe.')
   })
 })

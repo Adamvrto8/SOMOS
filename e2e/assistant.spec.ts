@@ -378,3 +378,27 @@ test('a streamed answer is written under its question, which stays at the top', 
   expect(belowTheFold).toBeGreaterThan(100)
   await page.screenshot({ path: 'test-results/somo-streamed.png' })
 })
+
+test('answers saved from one conversation go to one diary note', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.answer = '**Para** vyjadruje cieľ.\n- Este regalo es para ti. – Tento darček je pre teba.'
+  await page.goto('/assistant')
+  await askQuestion(page, 'Kedy por a kedy para?')
+  await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
+  await expect(page.getByText('Uložené do Denníka')).toHaveCount(1)
+
+  chat.answer = '**Por** vyjadruje príčinu.\n- Llegué tarde por el tráfico. – Prišiel som neskoro kvôli zápche.'
+  await askQuestion(page, 'Daj mi príklad na por')
+  await expect(page.getByText('Llegué tarde por el tráfico.')).toBeVisible()
+  await page.getByRole('button', { name: 'Uložiť do Denníka' }).tap()
+  await expect(page.getByText('Uložené do Denníka')).toHaveCount(2)
+
+  await page.getByRole('link', { name: 'Otvoriť', exact: true }).last().tap()
+  await expect(page.getByLabel('Nadpis')).toHaveValue('Kedy por a kedy para?')
+  await expect(page.getByLabel('Čo si chceš zapamätať?')).toHaveValue(
+    'Para vyjadruje cieľ.\n\n- Este regalo es para ti. – Tento darček je pre teba.\n\nOtázka: Daj mi príklad na por\nPor vyjadruje príčinu.\n\n- Llegué tarde por el tráfico. – Prišiel som neskoro kvôli zápche.',
+  )
+  await page.getByRole('button', { name: 'Uložiť', exact: true }).tap()
+  await expect(page.locator('a[href^="/diary/n-"]')).toHaveCount(1)
+})

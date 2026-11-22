@@ -1,5 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { db, type ChatThread, type ChatTurn, type FeedbackReason } from '../db'
+import { addDiaryNote, DIARY_MAX, saveDiaryNote, todayKey } from '../diary'
+import { appendTurn, turnAsNote } from './note'
 
 // SOMO's conversations. The one on screen lives in this module, so it survives in-app navigation (a link in an answer
 // closes the sheet) and both the sheet and /assistant show it. Every finished turn is also stored in Dexie `chats`, so
@@ -25,9 +27,11 @@ export interface ChatState {
   queued: string | null
   /** When the conversation on screen last got an answer or was opened: an old one gives way to an empty chat. */
   activeAt: number
+  /** The diary note its saved answers go to (ChatThread.noteId); null until the first one is saved. */
+  noteId: string | null
 }
 
-let state: ChatState = { id: null, turns: [], ready: false, queued: null, activeAt: 0 }
+let state: ChatState = { id: null, turns: [], ready: false, queued: null, activeAt: 0, noteId: null }
 let restoring: Promise<void> | undefined
 const listeners = new Set<() => void>()
 
@@ -57,7 +61,7 @@ export function restoreLastChat(now = Date.now()): Promise<void> {
     try {
       const last = await db.chats.orderBy('updatedAt').last()
       if (last && !isStale(last.updatedAt, now) && state.id === null && state.turns.length === 0 && state.queued === null) {
-        set({ id: last.id, turns: last.turns, activeAt: last.updatedAt })
+        set({ id: last.id, turns: last.turns, activeAt: last.updatedAt, noteId: last.noteId ?? null })
       }
     } catch (error) {
       console.error('SOMO: the last conversation could not be read', error)
@@ -86,7 +90,14 @@ export async function addTurn(turn: Shown, now = Date.now()): Promise<void> {
   try {
     await db.transaction('rw', db.chats, async () => {
       const stored = await db.chats.get(id)
-      await db.chats.put({ id, title: stored?.title ?? titleOf(turns[0].question), turns, createdAt: stored?.createdAt ?? now, updatedAt: now })
+      await db.chats.put({
+        id,
+        title: stored?.title ?? titleOf(turns[0].question),
+        turns,
+        ...(stored?.noteId ? { noteId: stored.noteId } : {}),
+        createdAt: stored?.createdAt ?? now,
+        updatedAt: now,
+      })
       const extra = (await db.chats.count()) - MAX_THREADS
       if (extra > 0) await db.chats.bulkDelete(await db.chats.orderBy('updatedAt').limit(extra).primaryKeys())
     })
@@ -111,14 +122,44 @@ export async function rateTurn(index: number, rating: 'up' | 'down', reason?: Fe
   }
 }
 
+/**
+ * Saves an answer of the conversation on screen to the diary. The first one saved opens the conversation's note (its
+ * question the title); every further one goes at the end of that note, so follow-up questions stay together. A note
+ * deleted meanwhile, or one that would grow past DIARY_MAX, gives way to a new one. Returns the note's id.
+ */
+export async function saveTurnToDiary(index: number, questionLabel: string, now = Date.now()): Promise<string | undefined> {
+  const id = state.id
+  const turn = state.turns[index]
+  if (!id || !turn) return undefined
+  const note = state.noteId ? await db.diaryNotes.get(state.noteId) : undefined
+  const longer = note ? appendTurn(note.text, turn, questionLabel) : ''
+  let noteId: string
+  if (note && longer.length <= DIARY_MAX) {
+    await saveDiaryNote({ id: note.id, date: note.date, title: note.title, text: longer }, now)
+    noteId = note.id
+  } else {
+    const { title, text } = turnAsNote(turn)
+    noteId = (await addDiaryNote(todayKey(), title, text, now)).id
+  }
+  const mark = (turns: readonly ChatTurn[]) => turns.map((t, i) => (i === index ? { ...t, saved: true } : t))
+  if (state.id === id) set({ turns: mark(state.turns), noteId })
+  try {
+    const stored = await db.chats.get(id)
+    if (stored) await db.chats.update(id, { turns: mark(stored.turns), noteId })
+  } catch (error) {
+    console.error('SOMO: the saved mark could not be stored', error)
+  }
+  return noteId
+}
+
 /** A new, empty conversation on screen; the previous one stays in the list. */
 export function startNewChat() {
-  set({ id: null, turns: [] })
+  set({ id: null, turns: [], noteId: null })
 }
 
 /** A new conversation that starts with `question`, sent as soon as the chat is open. */
 export function askInNewChat(question: string) {
-  set({ id: null, turns: [], queued: question })
+  set({ id: null, turns: [], queued: question, noteId: null })
 }
 
 /** The queued question, once: the chat that takes it sends it. */
@@ -132,7 +173,7 @@ export function takeQueued(): string | null {
 export async function openChat(id: string): Promise<boolean> {
   const thread = await db.chats.get(id)
   if (!thread) return false
-  set({ id: thread.id, turns: thread.turns, ready: true, activeAt: Date.now() })
+  set({ id: thread.id, turns: thread.turns, ready: true, activeAt: Date.now(), noteId: thread.noteId ?? null })
   return true
 }
 
@@ -143,7 +184,7 @@ export async function deleteChat(id: string): Promise<void> {
 
 /** Sign-out: the caller clears the stored conversations, this drops the one on screen. */
 export function forgetChat() {
-  set({ id: null, turns: [], queued: null })
+  set({ id: null, turns: [], queued: null, noteId: null })
 }
 
 export const getChat = () => state
@@ -161,6 +202,6 @@ export function useChat(): ChatState {
 
 /** For tests: the module as at an app start. */
 export function resetChatModule() {
-  state = { id: null, turns: [], ready: false, queued: null, activeAt: 0 }
+  state = { id: null, turns: [], ready: false, queued: null, activeAt: 0, noteId: null }
   restoring = undefined
 }

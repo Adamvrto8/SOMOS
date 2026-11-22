@@ -1304,6 +1304,7 @@ export const sk = {
     saveToDiary: 'Uložiť do Denníka',
     savedToDiary: 'Uložené do Denníka',
     openDiary: 'Otvoriť',
+    noteQuestion: 'Otázka: ',
     rateDown: 'Zlá odpoveď',
     reasonsLabel: 'Čo bolo zle?',
     reasons: { wrong: 'Nesprávne', unclear: 'Nejasné', long: 'Príliš dlhé', other: 'Iné' } as Record<string, string>,
