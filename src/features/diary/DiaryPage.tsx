@@ -1,30 +1,23 @@
-import { Plus } from 'lucide-react'
+import { CalendarDays, Pencil, Plus } from 'lucide-react'
 import { Link } from 'react-router'
 import { BackButton } from '../../components/BackButton'
 import { useT } from '../../i18n'
-import type { DiaryNote } from '../../lib/db'
 import { todayKey, useDiaryNotes } from '../../lib/diary'
-import { dayLabel, noteHeading, notePreview } from './diaryDate'
+import { dayLabel, noteHeading } from './diaryDate'
 import type { FromList } from './DiaryNotePage'
 
 const FROM_LIST: FromList = { fromList: true }
 
 const CARD =
-  'block rounded-card border border-line bg-surface px-4 py-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick active:bg-surface-2'
+  'flex items-center gap-3 rounded-card border border-line bg-surface px-4 py-3 transition-colors duration-150 hover:border-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick active:bg-surface-2'
 
-/** /diary — every note under its day, newest first, and "Nová poznámka". */
+/** /diary — every note as its day and its title, newest first; a tap opens it to edit. And "Nová poznámka". */
 export function DiaryPage() {
   const dictionary = useT()
   const t = dictionary.diary
   const notes = useDiaryNotes()
   if (!notes) return null
   const today = todayKey()
-  const days: { date: string; notes: DiaryNote[] }[] = []
-  for (const note of notes) {
-    const last = days.at(-1)
-    if (last?.date === note.date) last.notes.push(note)
-    else days.push({ date: note.date, notes: [note] })
-  }
 
   return (
     <div>
@@ -40,27 +33,24 @@ export function DiaryPage() {
           {t.newNote}
         </Link>
       </div>
-      {days.map((day) => {
-        const label = dayLabel(day.date, today, t, dictionary.dateLocale)
-        return (
-          <section key={day.date} aria-label={label} className="mt-6">
-            <h2 className="text-xs font-semibold tracking-widest text-ink-muted uppercase first-letter:uppercase">{label}</h2>
-            <ul className="mt-2 space-y-2">
-              {day.notes.map((note) => {
-                const preview = notePreview(note)
-                return (
-                  <li key={note.id}>
-                    <Link to={`/diary/${note.id}`} state={FROM_LIST} className={CARD}>
-                      <span className="line-clamp-2 block font-serif text-lg leading-snug font-semibold">{noteHeading(note) || t.untitled}</span>
-                      {preview && <span className="mt-0.5 line-clamp-2 block text-sm text-ink-muted">{preview}</span>}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
-        )
-      })}
+      {notes.length > 0 && (
+        <ul className="mt-6 space-y-2">
+          {notes.map((note) => (
+            <li key={note.id}>
+              <Link to={`/diary/${note.id}`} state={FROM_LIST} className={CARD}>
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center gap-1.5 text-xs text-ink-muted">
+                    <CalendarDays size={14} strokeWidth={1.75} aria-hidden />
+                    <span className="first-letter:uppercase">{dayLabel(note.date, today, t, dictionary.dateLocale)}</span>
+                  </span>
+                  <span className="mt-1 line-clamp-2 font-serif text-lg leading-snug font-semibold">{noteHeading(note) || t.untitled}</span>
+                </span>
+                <Pencil size={18} strokeWidth={1.75} className="shrink-0 text-ink-muted" aria-hidden />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
       {notes.length === 0 && (
         <div className="mt-6 text-sm text-ink-muted">
           <p className="font-medium text-ink">{t.empty}</p>

@@ -19,6 +19,3 @@ const lines = (text: string) => text.split('\n').map((line) => line.trim()).filt
 
 /** What a note shows as its name: its title, else the first line of its text. */
 export const noteHeading = (note: Pick<DiaryNote, 'title' | 'text'>) => note.title.trim() || lines(note.text)[0] || ''
-
-/** The text a list shows under the heading: what the heading did not take. */
-export const notePreview = (note: Pick<DiaryNote, 'title' | 'text'>) => (note.title.trim() ? lines(note.text) : lines(note.text).slice(1)).join(' ')

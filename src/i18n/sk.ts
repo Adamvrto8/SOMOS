@@ -1352,8 +1352,8 @@ export const sk = {
     today: 'Dnes',
     yesterday: 'Včera',
     newNote: 'Nová poznámka',
-    write: 'Napísať',
-    all: 'Všetky poznámky',
+    /** The Domov card: how many notes there are. */
+    count: (n: number) => `${n} ${n === 1 ? 'poznámka' : n >= 2 && n <= 4 ? 'poznámky' : 'poznámok'}`,
     titleLabel: 'Nadpis',
     label: 'Čo si chceš zapamätať?',
     hint: 'Slovíčka, pravidlá, vysvetlenia od SOMO, čokoľvek',

@@ -337,8 +337,9 @@ test('an answer is saved as a new diary note: the question its title, no tip and
     'Auto je po španielsky el carro.\n\n- Mi carro es rojo. – Moje auto je červené.\n\nel carro – auto',
   )
 
-  // "Uložiť" closes the note: it is in the list under today.
+  // "Uložiť" closes the note: it is in the list as today and its title.
   await page.getByRole('button', { name: 'Uložiť', exact: true }).tap()
   await expect(page).toHaveURL(/\/diary$/)
-  await expect(page.getByRole('region', { name: 'Dnes' }).getByRole('link', { name: /^Ako sa povie auto\?/ })).toBeVisible()
+  const listed = page.getByRole('listitem').getByRole('link').filter({ hasText: 'Ako sa povie auto?' })
+  await expect(listed).toContainText('Dnes')
 })

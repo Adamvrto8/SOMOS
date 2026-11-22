@@ -26,14 +26,14 @@ písanie po španielsky je vedľajšie a kontrolu viet zvládne SOMO.
 - Nové `id`: `n-<čas><náhoda>` (`crypto.randomUUID` na LAN dev serveri nie je).
 
 ## 2. Obrazovky
-- **Zoznam** `/diary`: „Nová poznámka“ hore; poznámky podľa dní (Dnes, Včera, dátum), v dni najnovšia hore.
-  Karta: nadpis (bez neho prvý riadok textu), pod ním začiatok textu.
+- **Zoznam** `/diary`: „Nová poznámka“ hore; poznámky od najnovšej. Karta (tretie kolo, podľa Google Denníka): len deň
+  (Dnes, Včera, dátum) a nadpis (bez neho prvý riadok textu), najviac dva riadky, ceruzka; ťuknutie otvorí úpravu.
 - **Poznámka** `/diary/new` a `/diary/:id`: späť, „✓ Uložené“, **„Uložiť“** (uloží a vráti do zoznamu: späť, ak prišla
   zo zoznamu, inak zoznam namiesto poznámky), dátum dňa, nadpis (rastie s textom, bez zalomení), text na celú výšku,
   dole „Vymazať poznámku“ s potvrdením („Nechať“ / „Vymazať“). Ukladá sa aj priebežne (800 ms po písaní, pri odchode,
   pri prechode appky na pozadie). Nová poznámka, z ktorej sa odíde prázdna, nevznikne. Neexistujúce `id` → zoznam.
-- **Karta na Domove**: „Denník“ (✓, ak je dnes poznámka) + „Všetky poznámky“; dnešná najnovšia poznámka, inak výzva
-  „Zapíš si, čo si chceš zapamätať“; „Napísať“ vždy otvorí novú poznámku.
+- **Karta na Domove**: jedno tlačidlo do zoznamu: „Denník“ (✓, ak je dnes poznámka) a počet poznámok, bez nich výzva
+  „Zapíš si, čo si chceš zapamätať“.
 - Zmiznú: `src/data/diaryPrompts.json` (+ typ `DiaryPrompt`, `promptOfDay`), `DiaryCheck.tsx`, `src/lib/diaryCheck.ts`
   a ich texty v i18n (sk aj en).
 
