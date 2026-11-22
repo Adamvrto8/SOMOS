@@ -126,6 +126,19 @@ export const TICK_LIMIT = 500
 export const TICK_BUDGET_MS = 45_000
 export const SEND_CONCURRENCY = 20
 const TEST_EVERY_MS = 60_000
+/**
+ * How long a message may stay unconfirmed before the device is asked for a new subscription. A push service
+ * can keep accepting messages for a subscription the phone no longer holds (Chrome or Play services reset):
+ * nothing but the missing receipt shows it, and a new subscription is the cure. A test arrives in seconds;
+ * a reminder may wait for a phone that was offline.
+ */
+export const RENEW_AFTER_MS: Record<Delivery['kind'], number> = { test: 10 * 60_000, reminder: 60 * 60_000 }
+
+/** The last message went to an app that confirms, and no confirmation came: its subscription is likely dead. */
+export function unconfirmed(delivery: Delivery | null, now: Date): boolean {
+  if (!delivery?.receipts || delivery.receivedAt) return false
+  return now.getTime() - new Date(delivery.sentAt).getTime() > RENEW_AFTER_MS[delivery.kind]
+}
 /** One request to Supabase or a push service; a hung one must not use up the tick. */
 const REQUEST_TIMEOUT_MS = 10_000
 
@@ -746,14 +759,17 @@ async function subscribe(request: Request, body: Record<string, unknown>, deps: 
     receipts: body.receipts === true,
     seenAt: deps.now().toISOString(),
   }
+  // The same subscription as before, and its last message never confirmed: the app makes a new one and
+  // subscribes again. A new subscription starts clean, so this cannot repeat on every start.
+  const renew = existing?.endpoint === endpoint && unconfirmed(existing.delivery, deps.now())
   if (own) {
     // Only what the device says about itself: what a tick or a report wrote meanwhile stays.
     if (holder && holder.device !== own.device) await deps.store.remove(holder.device)
-    await deps.store.update(own.device, settings)
+    await deps.store.update(own.device, own.endpoint === endpoint ? settings : { ...settings, delivery: null })
   } else {
     await deps.store.save({ ...EMPTY_STATE, ...holder, device: body.device, ...settings })
   }
-  return json({ ok: true })
+  return json(renew ? { ok: true, renew: true } : { ok: true })
 }
 
 async function handlePost(request: Request, deps: Deps): Promise<Response> {

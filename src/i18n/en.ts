@@ -283,7 +283,7 @@ export const en: Dictionary = {
         waiting: (what, sent) => `${what} of ${sent}: sent, waiting for the phone to confirm.`,
         cannotConfirm: (what, sent) => `${what} of ${sent}: sent. This phone cannot confirm yet, open the app.`,
         notReceived: (what, sent) =>
-          `${what} of ${sent}: the phone did not get it. Android is probably keeping Chrome from running in the background: in Android Settings → Apps → Chrome and SOMOS, allow autostart and set the battery to “No restrictions”.`,
+          `${what} of ${sent}: the phone did not get it. SOMOS makes a new notification connection the next time it opens. If it happens again, Android is probably keeping Chrome from running in the background: in Android Settings → Apps → Chrome, set the battery to “Unrestricted”.`,
       },
       testPending: 'A test notification goes out at the next check (within 15 minutes). Close the app, lock the phone and wait.',
     },

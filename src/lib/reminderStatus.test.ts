@@ -65,7 +65,7 @@ describe('describeStatus', () => {
     ])
     // Nearly two hours without a word from a phone that can confirm.
     expect(problems(status({ delivery: sent }))).toEqual([
-      'Pripomienka z 19:00: telefón ju neprijal. Android zrejme nepúšťa Chrome na pozadí: v Nastaveniach Androidu → Aplikácie → Chrome a SOMOS povoľ automatické spustenie a batériu nastav na „Bez obmedzení“.',
+      'Pripomienka z 19:00: telefón ju neprijal. SOMOS si pri ďalšom otvorení vytvorí nové spojenie pre notifikácie. Ak sa to opakuje, Android zrejme nepúšťa Chrome na pozadí: v Nastaveniach Androidu → Aplikácie → Chrome nastav batériu na „Neobmedzené“.',
     ])
     // Just sent: give it a moment. From yesterday: with its day.
     expect(texts(status({ delivery: { kind: 'test', sentAt: at(20, 48), receipts: true } }))).toContain(

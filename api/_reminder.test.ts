@@ -26,6 +26,7 @@ import {
   todayView,
   toDeviceRow,
   VAPID_PUBLIC_KEY,
+  type Delivery,
   type DeviceRow,
   type DeviceStore,
   type Deps,
@@ -820,6 +821,39 @@ describe('api/reminder: did the device get it', () => {
 
     await handleReminder(post({ type: 'received', endpoint: ENDPOINT, id: SENT_AT, shown: false, error: 'NotAllowedError: no permission' }), deps(store, noop, LATER))
     expect(store.rows.get(PHONE)?.delivery).toMatchObject({ shown: false, error: 'NotAllowedError: no permission' })
+  })
+
+  // A subscription the push service still accepts but no longer delivers (Chrome or Play services reset):
+  // nothing but the missing receipt tells, so the app is asked to make a new one.
+  describe('a subscription that takes messages but never delivers them', () => {
+    const unconfirmed = (kind: 'reminder' | 'test', sentAt: string, over: Partial<Delivery> = {}) =>
+      device({ receipts: true, delivery: { kind, sentAt, receipts: true, ...over } })
+    const answer = async (store: DeviceStore, now: Date, body = subscribeBody({ receipts: true })) =>
+      (await handleReminder(post(body), deps(store, noop, now))).json()
+
+    it('is renewed once a reminder stays unconfirmed for an hour', async () => {
+      expect(await answer(memoryDevices([unconfirmed('reminder', SENT_AT)]), new Date('2026-07-01T17:50:00Z'))).toEqual({ ok: true })
+      expect(await answer(memoryDevices([unconfirmed('reminder', SENT_AT)]), new Date('2026-07-01T18:11:00Z'))).toEqual({ ok: true, renew: true })
+    })
+
+    it('is renewed sooner after a test, which arrives in seconds', async () => {
+      expect(await answer(memoryDevices([unconfirmed('test', SENT_AT)]), new Date('2026-07-01T17:15:00Z'))).toEqual({ ok: true })
+      expect(await answer(memoryDevices([unconfirmed('test', SENT_AT)]), new Date('2026-07-01T17:21:00Z'))).toEqual({ ok: true, renew: true })
+    })
+
+    it('is kept when the message was confirmed, or the app cannot confirm', async () => {
+      const later = new Date('2026-07-02T08:00:00Z')
+      expect(await answer(memoryDevices([unconfirmed('reminder', SENT_AT, { receivedAt: '2026-07-01T17:10:05.000Z', shown: true })]), later)).toEqual({ ok: true })
+      expect(await answer(memoryDevices([device({ delivery: { kind: 'reminder', sentAt: SENT_AT, receipts: false } })]), later)).toEqual({ ok: true })
+    })
+
+    it('forgets the unconfirmed message once the device brings a new subscription', async () => {
+      const store = memoryDevices([unconfirmed('reminder', SENT_AT)])
+      const later = new Date('2026-07-02T08:00:00Z')
+      const fresh = { endpoint: 'https://fcm.googleapis.com/fcm/send/fresh', keys: { p256dh: P256DH_2, auth: AUTH } }
+      expect(await answer(store, later, subscribeBody({ receipts: true, subscription: fresh }))).toEqual({ ok: true })
+      expect(store.rows.get(PHONE)).toMatchObject({ endpoint: fresh.endpoint, delivery: null })
+    })
   })
 
   it('ignores a receipt from another device, or for another message', async () => {

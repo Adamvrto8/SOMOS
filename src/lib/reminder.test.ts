@@ -134,6 +134,17 @@ describe('a subscription the push service dropped', () => {
     expect(server.calls).toEqual([`subscribe ${DEAD}`, 'subscribe https://push.example/2'])
   })
 
+  it('is replaced when the server sees its messages go unconfirmed (accepted, never delivered)', async () => {
+    const calls: string[] = []
+    stubDevice(async (_input: RequestInfo | URL, init?: RequestInit) => {
+      const body = JSON.parse(String(init?.body)) as { type: string; subscription?: { endpoint: string } }
+      if (body.type === 'subscribe') calls.push(`subscribe ${body.subscription?.endpoint}`)
+      return Response.json(body.subscription?.endpoint === DEAD ? { ok: true, renew: true } : { ok: true })
+    })
+    await enableReminder('19:00')
+    expect(calls).toEqual([`subscribe ${DEAD}`, 'subscribe https://push.example/2'])
+  })
+
   it('is replaced, and the test sent again, when a test notification finds it dead', async () => {
     const server = fakeServer(false)
     stubDevice(server.fetchMock)

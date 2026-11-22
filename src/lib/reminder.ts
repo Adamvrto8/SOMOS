@@ -200,19 +200,24 @@ async function register(subscription: PushSubscription, time: string): Promise<u
   return answer
 }
 
-/** Registers this device; replaces a subscription the push service dropped (the server answers 410). */
+/** The server saw this subscription's messages go unconfirmed: accepted by the push service, never delivered. */
+const asksRenewal = (answer: unknown) => typeof answer === 'object' && answer !== null && (answer as { renew?: unknown }).renew === true
+
+/**
+ * Registers this device; replaces a subscription the push service dropped (the server answers 410) or one
+ * that silently stopped delivering (the server asks to renew it). Once: the new one starts clean on the server.
+ */
 async function registerDevice(time: string): Promise<PushSubscription> {
   const subscription = await ensureSubscription()
   try {
-    await register(subscription, time)
-    return subscription
+    if (!asksRenewal(await register(subscription, time))) return subscription
   } catch (error) {
     if (!isGone(error)) throw error
-    await subscription.unsubscribe()
-    const fresh = await ensureSubscription()
-    await register(fresh, time)
-    return fresh
   }
+  await subscription.unsubscribe()
+  const fresh = await ensureSubscription()
+  await register(fresh, time)
+  return fresh
 }
 
 // ---------- actions (Nastavenia) ----------

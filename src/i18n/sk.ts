@@ -323,7 +323,7 @@ export const sk = {
         waiting: (what: string, sent: string) => `${what} z ${sent}: odoslaná, čaká sa na potvrdenie z telefónu.`,
         cannotConfirm: (what: string, sent: string) => `${what} z ${sent}: odoslaná. Tento telefón ešte nevie potvrdiť prijatie, otvor aplikáciu.`,
         notReceived: (what: string, sent: string) =>
-          `${what} z ${sent}: telefón ju neprijal. Android zrejme nepúšťa Chrome na pozadí: v Nastaveniach Androidu → Aplikácie → Chrome a SOMOS povoľ automatické spustenie a batériu nastav na „Bez obmedzení“.`,
+          `${what} z ${sent}: telefón ju neprijal. SOMOS si pri ďalšom otvorení vytvorí nové spojenie pre notifikácie. Ak sa to opakuje, Android zrejme nepúšťa Chrome na pozadí: v Nastaveniach Androidu → Aplikácie → Chrome nastav batériu na „Neobmedzené“.`,
       },
       testPending: 'Skúšobná notifikácia odíde pri najbližšej kontrole (do 15 minút). Zavri aplikáciu, zamkni telefón a počkaj.',
     },
