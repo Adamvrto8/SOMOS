@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { db } from '../db'
-import { addTurn, askInNewChat, rateTurn, deleteChat, forgetChat, getChat, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
+import { addTurn, askInNewChat, rateTurn, deleteChat, forgetChat, freshenChat, getChat, IDLE_MS, listChats, MAX_THREADS, openChat, resetChatModule, restoreLastChat, startNewChat, takeQueued, titleOf } from './history'
 
 beforeEach(async () => {
   await db.chats.clear()
@@ -18,18 +18,40 @@ describe('SOMO conversations', () => {
     expect(stored.turns).toHaveLength(2)
   })
 
-  it('opens the last conversation again after the app was closed', async () => {
+  it('opens the last conversation again after the app was closed for a moment', async () => {
     await addTurn({ question: 'staré', answer: 'a' }, 1000)
     startNewChat()
     await addTurn({ question: 'nové', answer: 'b' }, 2000)
     resetChatModule() // the app closed
     expect(getChat()).toMatchObject({ turns: [], ready: false })
-    await restoreLastChat()
+    await restoreLastChat(2000 + IDLE_MS - 1)
     expect(getChat().ready).toBe(true)
     expect(getChat().turns.map((t) => t.question)).toEqual(['nové'])
     // Going on adds to the same stored conversation.
     await addTurn({ question: 'ďalej', answer: 'c' }, 3000)
     expect(await db.chats.count()).toBe(2)
+  })
+
+  it('after a long break the app opens on an empty chat, the old conversation stays in the list', async () => {
+    await addTurn({ question: 'včera', answer: 'a' }, 1000)
+    resetChatModule()
+    await restoreLastChat(1000 + IDLE_MS)
+    expect(getChat()).toMatchObject({ id: null, turns: [], ready: true })
+    expect((await listChats()).map((c) => c.title)).toEqual(['včera'])
+  })
+
+  it('an app left open in the background gives an old conversation way to an empty one', async () => {
+    await addTurn({ question: 'ráno', answer: 'a' }, 1000)
+    freshenChat(1000 + IDLE_MS - 1)
+    expect(getChat().turns).toHaveLength(1)
+    freshenChat(1000 + IDLE_MS)
+    expect(getChat()).toMatchObject({ id: null, turns: [] })
+    expect(await db.chats.count()).toBe(1)
+    // A conversation reopened from the list counts as fresh.
+    const [old] = await listChats()
+    await openChat(old.id)
+    freshenChat()
+    expect(getChat().turns).toHaveLength(1)
   })
 
   it('a new conversation leaves the previous one in the list, and it can be reopened', async () => {

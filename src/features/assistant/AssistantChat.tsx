@@ -7,7 +7,7 @@ import { useAccount } from '../../lib/account'
 import { answerBlocks, freshFollowUps, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
-import { addTurn, deleteChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
+import { addTurn, deleteChat, freshenChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
 import { turnAsNote } from '../../lib/assistant/note'
 import { suggestionsFor, type Suggestion } from '../../lib/assistant/suggestions'
 import type { ChatThread, ChatTurn, FeedbackReason } from '../../lib/db'
@@ -296,8 +296,8 @@ interface AssistantChatProps {
 
 /**
  * The conversation and the question field, for the /assistant page and the sheet over any screen. The conversation on
- * screen is shared by both and stored on the device (src/lib/assistant/history.ts): closing the app and coming back
- * opens it again, and "Rozhovory" lists the earlier ones.
+ * screen is shared by both and stored on the device (src/lib/assistant/history.ts): coming back within half an hour
+ * opens it again, later SOMO starts empty, and "Rozhovory" lists the earlier ones.
  */
 export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const text = useT().assistant
@@ -313,8 +313,20 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const busy = useRef(false)
   const end = useRef<HTMLDivElement>(null)
 
+  // An old conversation gives way to an empty chat: at the app start, when SOMO opens and when the app comes back.
   useEffect(() => {
+    freshenChat()
     void restoreLastChat()
+    const onVisible = () => {
+      if (document.visibilityState !== 'visible' || busy.current) return
+      if (freshenChat()) {
+        setPending(null)
+        setError(null)
+        setView('chat')
+      }
+    }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
   }, [])
 
   // Keep the newest message in view.
@@ -340,8 +352,11 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
     setDraft('')
     try {
       const answer = await ask(turns, trimmed, { page })
-      await addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls, tools: answer.tools, page })
+      // addTurn puts the turn on screen before it stores it: drop the waiting question in the same render, so the
+      // question is never shown twice.
+      const stored = addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls, tools: answer.tools, page })
       setPending(null)
+      await stored
     } catch (failure) {
       // The question stays visible with "Skúsiť znova"; the conversation is untouched.
       const code = failure instanceof ChatFailure ? failure.code : 'failed'

@@ -3,7 +3,8 @@ import { db, type ChatThread, type ChatTurn, type FeedbackReason } from '../db'
 
 // SOMO's conversations. The one on screen lives in this module, so it survives in-app navigation (a link in an answer
 // closes the sheet) and both the sheet and /assistant show it. Every finished turn is also stored in Dexie `chats`, so
-// after the app was closed the chat opens on the last conversation again, and older ones can be reopened from the list.
+// the last conversation comes back after a short break (the app closed for a moment), and older ones can be reopened
+// from the list. After IDLE_MS without a new answer SOMO opens on a new, empty conversation, as chat apps do.
 // Device only: not synced, not in the backup, cleared on sign-out (sync/engine.ts wipeLearnerData).
 
 export type Shown = ChatTurn
@@ -11,6 +12,8 @@ export type Shown = ChatTurn
 /** Conversations kept on the device; the oldest go first. */
 export const MAX_THREADS = 30
 const TITLE_CHARS = 80
+/** A conversation this long without a new answer is left in the list and SOMO opens empty. */
+export const IDLE_MS = 30 * 60_000
 
 export interface ChatState {
   /** The stored conversation on screen; null = a new one, stored with its first answer. */
@@ -20,9 +23,11 @@ export interface ChatState {
   ready: boolean
   /** A question the chat sends by itself once it is open ("Prečo?" from a lesson or Chyby). */
   queued: string | null
+  /** When the conversation on screen last got an answer or was opened: an old one gives way to an empty chat. */
+  activeAt: number
 }
 
-let state: ChatState = { id: null, turns: [], ready: false, queued: null }
+let state: ChatState = { id: null, turns: [], ready: false, queued: null, activeAt: 0 }
 let restoring: Promise<void> | undefined
 const listeners = new Set<() => void>()
 
@@ -41,12 +46,19 @@ export const titleOf = (question: string) => {
 /** Stored conversations, newest first. */
 export const listChats = (): Promise<ChatThread[]> => db.chats.orderBy('updatedAt').reverse().toArray()
 
-/** Opens the last conversation once per app start, unless the learner has already begun another. */
-export function restoreLastChat(): Promise<void> {
+const isStale = (at: number, now: number) => now - at >= IDLE_MS
+
+/**
+ * Opens the last conversation once per app start, if it got an answer less than IDLE_MS ago and the learner has not
+ * already begun another. An older one stays in the list.
+ */
+export function restoreLastChat(now = Date.now()): Promise<void> {
   restoring ??= (async () => {
     try {
       const last = await db.chats.orderBy('updatedAt').last()
-      if (last && state.id === null && state.turns.length === 0 && state.queued === null) set({ id: last.id, turns: last.turns })
+      if (last && !isStale(last.updatedAt, now) && state.id === null && state.turns.length === 0 && state.queued === null) {
+        set({ id: last.id, turns: last.turns, activeAt: last.updatedAt })
+      }
     } catch (error) {
       console.error('SOMO: the last conversation could not be read', error)
     } finally {
@@ -56,11 +68,21 @@ export function restoreLastChat(): Promise<void> {
   return restoring
 }
 
+/**
+ * The app stayed open in the background: a conversation on screen that has had no answer for IDLE_MS gives way to an
+ * empty one when SOMO opens or the app comes back. It stays in the list.
+ */
+export function freshenChat(now = Date.now()): boolean {
+  if (state.turns.length === 0 || state.queued !== null || !isStale(state.activeAt, now)) return false
+  startNewChat()
+  return true
+}
+
 /** Adds a finished turn to the conversation on screen and stores it, dropping conversations past MAX_THREADS. */
 export async function addTurn(turn: Shown, now = Date.now()): Promise<void> {
   const id = state.id ?? newId()
   const turns = [...state.turns, turn]
-  set({ id, turns })
+  set({ id, turns, activeAt: now })
   try {
     await db.transaction('rw', db.chats, async () => {
       const stored = await db.chats.get(id)
@@ -110,7 +132,7 @@ export function takeQueued(): string | null {
 export async function openChat(id: string): Promise<boolean> {
   const thread = await db.chats.get(id)
   if (!thread) return false
-  set({ id: thread.id, turns: thread.turns, ready: true })
+  set({ id: thread.id, turns: thread.turns, ready: true, activeAt: Date.now() })
   return true
 }
 
@@ -139,6 +161,6 @@ export function useChat(): ChatState {
 
 /** For tests: the module as at an app start. */
 export function resetChatModule() {
-  state = { id: null, turns: [], ready: false, queued: null }
+  state = { id: null, turns: [], ready: false, queued: null, activeAt: 0 }
   restoring = undefined
 }
