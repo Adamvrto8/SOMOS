@@ -1,4 +1,7 @@
-// Vercel function: POST /api/chat { messages, context? } → { content, stop_reason, usage }: one call of the assistant's model.
+// Vercel function: POST /api/chat { messages, context?, stream? } → { content, stop_reason, usage }: one call of the
+// assistant's model. With `stream: true` the answer comes as NDJSON lines while the model writes it:
+// {"t":"text","text":"…"} for every piece of answer text, then {"t":"done",content,stop_reason,usage} (the same as the
+// JSON answer) or {"t":"error","error":"busy"|"failed"}. Errors found before the model starts are plain JSON as ever.
 // A thin proxy (docs/superpowers/specs/2026-11-15-chat-assistant-prototype-design.md): the app runs the tools over its own
 // data and sends the conversation again with their results. The system prompt, the tool schemas, the model and the
 // Anthropic key live only here (ANTHROPIC_API_KEY in the Vercel project settings); the app cannot change them.
@@ -365,6 +368,7 @@ export async function chat(request: Request, env: Record<string, string | undefi
   if (today !== null && today >= dailyCap) return json({ error: 'daily-limit' }, 503)
 
   const model = env.CHAT_MODEL || MODEL
+  const stream = isRecord(parsedBody) && parsedBody.stream === true
   let res: Response
   try {
     res = await fetchImpl('https://api.anthropic.com/v1/messages', {
@@ -376,6 +380,7 @@ export async function chat(request: Request, env: Record<string, string | undefi
         system: systemBlocks(context),
         tools: TOOLS.map((tool, i) => (i === TOOLS.length - 1 ? { ...tool, cache_control: { type: 'ephemeral' } } : tool)),
         messages,
+        ...(stream ? { stream: true } : {}),
       }),
       signal: AbortSignal.timeout(ANTHROPIC_TIMEOUT_MS),
     })
@@ -389,31 +394,132 @@ export async function chat(request: Request, env: Record<string, string | undefi
     return json({ error: 'failed' }, 502)
   }
 
+  const log = (stopReason: string, counted: Required<Usage>) =>
+    logUsage(
+      supabase,
+      {
+        user_id: user.id,
+        model,
+        input_tokens: counted.input_tokens,
+        output_tokens: counted.output_tokens,
+        cache_read_tokens: counted.cache_read_input_tokens,
+        cache_creation_tokens: counted.cache_creation_input_tokens,
+        stop_reason: stopReason,
+      },
+      fetchImpl,
+    )
+
+  if (stream) return streamed(res, log)
+
   const data = (await res.json().catch(() => undefined)) as { content?: unknown; stop_reason?: unknown; usage?: Usage } | undefined
   if (!data || !Array.isArray(data.content)) return json({ error: 'failed' }, 502)
   const stopReason = typeof data.stop_reason === 'string' ? data.stop_reason : 'unknown'
-  const usage = data.usage ?? {}
-  const counted = {
-    input_tokens: count(usage.input_tokens),
-    output_tokens: count(usage.output_tokens),
-    cache_read_input_tokens: count(usage.cache_read_input_tokens),
-    cache_creation_input_tokens: count(usage.cache_creation_input_tokens),
-  }
-
-  await logUsage(
-    supabase,
-    {
-      user_id: user.id,
-      model,
-      input_tokens: counted.input_tokens,
-      output_tokens: counted.output_tokens,
-      cache_read_tokens: counted.cache_read_input_tokens,
-      cache_creation_tokens: counted.cache_creation_input_tokens,
-      stop_reason: stopReason,
-    },
-    fetchImpl,
-  )
+  const counted = countedUsage(data.usage ?? {})
+  await log(stopReason, counted)
   return json({ content: data.content, stop_reason: stopReason, usage: counted })
+}
+
+const countedUsage = (usage: Usage): Required<Usage> => ({
+  input_tokens: count(usage.input_tokens),
+  output_tokens: count(usage.output_tokens),
+  cache_read_input_tokens: count(usage.cache_read_input_tokens),
+  cache_creation_input_tokens: count(usage.cache_creation_input_tokens),
+})
+
+type StreamBlock = Record<string, unknown> & { type: string }
+
+/** Usage numbers of a stream event over the earlier ones (message_start, then message_delta); a missing or null one keeps the earlier. */
+function withUsage(usage: Usage, more: Record<string, unknown>): Usage {
+  const next: Record<string, unknown> = { ...usage }
+  for (const [key, value] of Object.entries(more)) if (typeof value === 'number') next[key] = value
+  return next as Usage
+}
+
+/** Anthropic's server-sent events, one `data:` JSON each, in order. A line split between two network chunks waits in `rest`. */
+async function* sseEvents(body: ReadableStream<Uint8Array>): AsyncGenerator<Record<string, unknown>> {
+  const reader = body.getReader()
+  const decoder = new TextDecoder()
+  let rest = ''
+  for (;;) {
+    const { done, value } = await reader.read()
+    rest += done ? decoder.decode() : decoder.decode(value, { stream: true })
+    const lines = rest.split(/\r?\n/)
+    rest = done ? '' : (lines.pop() ?? '')
+    for (const line of lines) {
+      if (!line.startsWith('data:')) continue
+      try {
+        const event: unknown = JSON.parse(line.slice(5))
+        if (isRecord(event)) yield event
+      } catch {
+        // Not JSON: skipped.
+      }
+    }
+    if (done) return
+  }
+}
+
+/**
+ * Passes the model's text on as it comes and puts the content blocks together for the closing line, so the app gets
+ * the same `content` as from a JSON answer (thinking with its signature, tool calls with their input).
+ */
+function streamed(res: Response, log: (stopReason: string, counted: Required<Usage>) => Promise<void>): Response {
+  const encoder = new TextEncoder()
+  const body = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const send = (line: unknown) => controller.enqueue(encoder.encode(`${JSON.stringify(line)}\n`))
+      const blocks: StreamBlock[] = []
+      const toolInput: string[] = []
+      let usage: Usage = {}
+      let stopReason = 'unknown'
+      let failure: 'busy' | 'failed' | undefined
+      try {
+        if (!res.body) throw new Error('no body')
+        for await (const event of sseEvents(res.body)) {
+          const index = typeof event.index === 'number' ? event.index : -1
+          if (event.type === 'message_start' && isRecord(event.message) && isRecord(event.message.usage)) {
+            usage = withUsage(usage, event.message.usage)
+          } else if (event.type === 'content_block_start' && isRecord(event.content_block) && typeof event.content_block.type === 'string') {
+            const block = { ...event.content_block } as StreamBlock
+            if (block.type === 'tool_use') block.input = {}
+            blocks[index] = block
+            toolInput[index] = ''
+          } else if (event.type === 'content_block_delta' && isRecord(event.delta) && blocks[index]) {
+            const block = blocks[index]
+            const delta = event.delta
+            if (delta.type === 'text_delta' && typeof delta.text === 'string') {
+              block.text = `${typeof block.text === 'string' ? block.text : ''}${delta.text}`
+              send({ t: 'text', text: delta.text })
+            } else if (delta.type === 'thinking_delta' && typeof delta.thinking === 'string') {
+              block.thinking = `${typeof block.thinking === 'string' ? block.thinking : ''}${delta.thinking}`
+            } else if (delta.type === 'signature_delta' && typeof delta.signature === 'string') {
+              block.signature = delta.signature
+            } else if (delta.type === 'input_json_delta' && typeof delta.partial_json === 'string') {
+              toolInput[index] += delta.partial_json
+            }
+          } else if (event.type === 'content_block_stop' && blocks[index]?.type === 'tool_use') {
+            blocks[index].input = toolInput[index] ? (JSON.parse(toolInput[index]) as unknown) : {}
+          } else if (event.type === 'message_delta') {
+            if (isRecord(event.delta) && typeof event.delta.stop_reason === 'string') stopReason = event.delta.stop_reason
+            if (isRecord(event.usage)) usage = withUsage(usage, event.usage)
+          } else if (event.type === 'error') {
+            const kind = isRecord(event.error) ? event.error.type : undefined
+            failure = kind === 'overloaded_error' || kind === 'rate_limit_error' ? 'busy' : 'failed'
+            console.error('chat model stream error', kind)
+            break
+          }
+        }
+        if (!failure && (stopReason === 'unknown' || blocks.length === 0)) failure = 'failed'
+      } catch (error) {
+        console.error('chat model stream failed', error)
+        failure = 'failed'
+      }
+      const counted = countedUsage(usage)
+      await log(failure ? 'stream_error' : stopReason, counted)
+      send(failure ? { t: 'error', error: failure } : { t: 'done', content: blocks.filter(Boolean), stop_reason: stopReason, usage: counted })
+      controller.close()
+    },
+  })
+  return new Response(body, { headers: { 'Content-Type': 'application/x-ndjson; charset=utf-8', 'Cache-Control': 'no-store' } })
 }
 
 export function POST(request: Request): Promise<Response> {

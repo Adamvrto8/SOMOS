@@ -24,6 +24,8 @@ interface Chat {
   questions: string[]
   /** Rows sent to chat_feedback (👍 / 👎). */
   feedback: Record<string, unknown>[]
+  /** Answer as api/chat.ts does when asked for a stream: NDJSON text pieces, then the closing line. */
+  stream: boolean
 }
 
 /** Signs in with a faked Supabase in developer mode; /api/chat holds its answer until `release`. */
@@ -46,14 +48,18 @@ async function signedInDev(page: Page): Promise<Chat> {
   })
   let release: () => void = () => {}
   const released = new Promise<void>((resolve) => (release = resolve))
-  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER, questions: [], feedback }
+  const chat: Chat = { contexts: [], release: () => release(), answer: ANSWER, questions: [], feedback, stream: false }
   await page.route('**/api/chat', async (route) => {
     const body = route.request().postDataJSON() as { context?: { page?: string }; messages: { content: unknown }[] }
     chat.contexts.push(body.context ?? {})
     const newest = body.messages.at(-1)?.content
     if (typeof newest === 'string') chat.questions.push(newest)
     await released
-    await json(route, { content: [{ type: 'text', text: chat.answer }], stop_reason: 'end_turn' })
+    const done = { content: [{ type: 'text', text: chat.answer }], stop_reason: 'end_turn' }
+    if (!chat.stream) return json(route, done)
+    const pieces = chat.answer.match(/[\s\S]{1,12}/g) ?? []
+    const lines = [...pieces.map((text) => ({ t: 'text', text })), { t: 'done', ...done }]
+    await route.fulfill({ status: 200, headers: { 'content-type': 'application/x-ndjson; charset=utf-8' }, body: lines.map((l) => JSON.stringify(l)).join('\n') + '\n' })
   })
 
   await page.goto('/profile')
@@ -342,4 +348,33 @@ test('an answer is saved as a new diary note: the question its title, no tip and
   await expect(page).toHaveURL(/\/diary$/)
   const listed = page.getByRole('listitem').getByRole('link').filter({ hasText: 'Ako sa povie auto?' })
   await expect(listed).toContainText('Dnes')
+})
+
+test('a streamed answer is written under its question, which stays at the top', async ({ page }) => {
+  const chat = await signedInDev(page)
+  chat.release()
+  chat.stream = true
+  chat.answer = Array.from({ length: 30 }, (_, i) => `Riadok ${i + 1} dlhej odpovede o slove **casa**.`).join('\n')
+  await page.goto('/assistant')
+  await askQuestion(page, 'Prvá otázka')
+  await expect(page.getByText('Riadok 30 dlhej odpovede')).toHaveCount(1)
+  await askQuestion(page, 'Druhá otázka')
+  await expect(page.getByText('Riadok 30 dlhej odpovede')).toHaveCount(2)
+
+  // The second question sits at the top of the conversation, the end of its answer is below, to scroll to.
+  const offset = () =>
+    page.getByText('Druhá otázka', { exact: true }).evaluate((question) => {
+      let box = question.parentElement
+      while (box && getComputedStyle(box).overflowY !== 'auto') box = box.parentElement
+      return question.getBoundingClientRect().top - box!.getBoundingClientRect().top
+    })
+  await expect.poll(offset).toBeLessThan(40)
+  await expect.poll(offset).toBeGreaterThanOrEqual(-1)
+  const belowTheFold = await page.getByText('Druhá otázka', { exact: true }).evaluate((question) => {
+    let box = question.parentElement
+    while (box && getComputedStyle(box).overflowY !== 'auto') box = box.parentElement
+    return box!.scrollHeight - box!.clientHeight - box!.scrollTop
+  })
+  expect(belowTheFold).toBeGreaterThan(100)
+  await page.screenshot({ path: 'test-results/somo-streamed.png' })
 })

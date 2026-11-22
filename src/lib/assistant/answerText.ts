@@ -210,3 +210,20 @@ export function answerBlocks(text: string): AnswerBlock[] {
   textBlocks(text.slice(last), blocks)
   return blocks
 }
+
+/**
+ * The part of an answer still being written that can be shown: a construct not finished yet (a marker `{{word:compu`,
+ * a link `[casa](/wo`, an opening `**`) waits for its end instead of flashing as raw characters.
+ */
+export function finishedPart(text: string): string {
+  let shown = text
+  const marker = shown.lastIndexOf('{{')
+  if (marker !== -1 && !shown.includes('}}', marker)) shown = shown.slice(0, marker)
+  shown = shown.replace(/\{$/, '')
+  const bracket = shown.lastIndexOf('[')
+  const tail = shown.slice(bracket)
+  if (bracket !== -1 && !tail.includes('\n') && !/^\[[^\]\n]*\]\([^)\n]*\)/.test(tail)) shown = shown.slice(0, bracket)
+  const opened = shown.lastIndexOf('**')
+  if ((shown.match(/\*\*/g)?.length ?? 0) % 2 === 1) shown = shown.slice(0, opened) + shown.slice(opened + 2)
+  return shown.replace(/(?<!\*)\*$/, '')
+}

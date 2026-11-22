@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { answerBlocks, answerParts, appPathExists, cardOf, followUpsOf, freshFollowUps } from './answerText'
+import { answerBlocks, answerParts, appPathExists, cardOf, followUpsOf, finishedPart, freshFollowUps } from './answerText'
 
 describe('answerParts', () => {
   it('keeps bold Spanish as its own part', () => {
@@ -134,5 +134,17 @@ describe('examples, lists and follow-up questions', () => {
     expect(answerBlocks('Na detaile slova (/word/<id>) nájdeš príklady.')).toEqual([
       { type: 'text', parts: [{ type: 'text', text: 'Na detaile slova nájdeš príklady.' }] },
     ])
+  })
+})
+
+describe('finishedPart', () => {
+  it('holds back a marker, a link and bold that are not finished yet', () => {
+    expect(finishedPart('Počítač je **la computadora**.\n{{word:compu')).toBe('Počítač je **la computadora**.\n')
+    expect(finishedPart('Pozri [opakovanie](/rev')).toBe('Pozri ')
+    expect(finishedPart('Pozri [opakovanie](/review) a')).toBe('Pozri [opakovanie](/review) a')
+    expect(finishedPart('Je to **tu')).toBe('Je to tu')
+    expect(finishedPart('Je to *')).toBe('Je to ')
+    expect(finishedPart('Hotovo {{word:casa}}')).toBe('Hotovo {{word:casa}}')
+    expect(finishedPart('{')).toBe('')
   })
 })

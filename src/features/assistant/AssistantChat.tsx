@@ -1,10 +1,10 @@
 import { History, MessageSquarePlus, NotebookPen, Send, ThumbsDown, ThumbsUp, Trash2, Volume2 } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '../../components/Button'
 import { useT } from '../../i18n'
 import { useAccount } from '../../lib/account'
-import { answerBlocks, freshFollowUps, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
+import { answerBlocks, finishedPart, freshFollowUps, type AnswerPart, type ListItem } from '../../lib/assistant/answerText'
 import { ask, ChatFailure, MAX_QUESTION_CHARS } from '../../lib/assistant/chat'
 import { FEEDBACK_REASONS, feedbackRow, sendFeedback } from '../../lib/assistant/feedback'
 import { addTurn, deleteChat, freshenChat, listChats, openChat, rateTurn, restoreLastChat, startNewChat, takeQueued, useChat } from '../../lib/assistant/history'
@@ -310,7 +310,16 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const [error, setError] = useState<string | null>(null)
   const [retryable, setRetryable] = useState(true)
   const [copied, setCopied] = useState(false)
+  /** The answer of the question on its way, as far as the model has written it. */
+  const [streaming, setStreaming] = useState('')
+  /**
+   * The height the newest exchange takes at least once a question is sent, so the question can sit at the top of the
+   * conversation while the answer is written under it (null = no question sent since the conversation was opened).
+   */
+  const [anchorHeight, setAnchorHeight] = useState<number | null>(null)
   const busy = useRef(false)
+  const box = useRef<HTMLDivElement>(null)
+  const latest = useRef<HTMLDivElement>(null)
   const end = useRef<HTMLDivElement>(null)
 
   // An old conversation gives way to an empty chat: at the app start, when SOMO opens and when the app comes back.
@@ -322,6 +331,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
       if (freshenChat()) {
         setPending(null)
         setError(null)
+        setAnchorHeight(null)
         setView('chat')
       }
     }
@@ -329,10 +339,19 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
     return () => document.removeEventListener('visibilitychange', onVisible)
   }, [])
 
-  // Keep the newest message in view.
+  // A conversation opened (restored, from the list, back from the list) shows its end.
   useEffect(() => {
     end.current?.scrollIntoView?.({ block: 'end' })
-  }, [turns, pending, error, view])
+  }, [chat.id, view])
+
+  // A question sent goes to the top, and the answer is written under it; the learner scrolls down when they want.
+  useLayoutEffect(() => {
+    const scroller = box.current
+    const question = latest.current
+    if (pending === null || anchorHeight === null || !scroller || !question) return
+    const top = scroller.scrollTop + question.getBoundingClientRect().top - scroller.getBoundingClientRect().top
+    scroller.scrollTo?.({ top, behavior: 'smooth' })
+  }, [pending, anchorHeight])
 
   // "Prečo?" from a lesson or Chyby: its question goes by itself once the chat is ready.
   useEffect(() => {
@@ -350,14 +369,18 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
     setError(null)
     setPending(trimmed)
     setDraft('')
+    setStreaming('')
+    if (box.current) setAnchorHeight(box.current.clientHeight)
     try {
-      const answer = await ask(turns, trimmed, { page })
+      const answer = await ask(turns, trimmed, { page, onText: setStreaming })
       // addTurn puts the turn on screen before it stores it: drop the waiting question in the same render, so the
       // question is never shown twice.
       const stored = addTurn({ question: trimmed, answer: answer.text, truncated: answer.truncated, calls: answer.calls, tools: answer.tools, page })
       setPending(null)
+      setStreaming('')
       await stored
     } catch (failure) {
+      setStreaming('')
       // The question stays visible with "Skúsiť znova"; the conversation is untouched.
       const code = failure instanceof ChatFailure ? failure.code : 'failed'
       // A refused question is not sent again: the learner types a new one.
@@ -372,6 +395,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const dropPending = () => {
     setPending(null)
     setError(null)
+    setAnchorHeight(null)
   }
 
   // Copied as the model wrote it, links as [label](/path) and cards as markers: the eval checks exactly that.
@@ -389,6 +413,25 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
   const waiting = pending !== null && error === null
   const suggestionText = (suggestion: Suggestion) => ('name' in suggestion ? text.suggest[suggestion.kind](suggestion.name) : text.suggest[suggestion.kind])
   const followUps = pending === null ? freshFollowUps(turns) : []
+  // The newest finished turn is drawn with its chips in the newest exchange, unless a question is on its way.
+  const earlier = pending === null ? turns.slice(0, -1) : turns
+  const newest = pending === null ? turns.at(-1) : undefined
+  const shownSoFar = finishedPart(streaming)
+
+  const turnView = (turn: ChatTurn, i: number) => (
+    <section key={i} className="flex flex-col gap-2">
+      <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{turn.question}</p>
+      <div className="rounded-card border border-line px-3 py-2">
+        <AnswerView text={turn.answer} />
+        {turn.truncated && <p className="mt-1 text-sm text-ink-muted">{text.truncated}</p>}
+        {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
+        <div className="flex flex-wrap items-start gap-x-1">
+          <Rating turn={turn} index={i} />
+          <SaveToDiary turn={turn} />
+        </div>
+      </div>
+    </section>
+  )
 
   if (view === 'list') {
     return (
@@ -426,7 +469,7 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
         )}
       </div>
 
-      <div className="mt-2 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto pb-4">
+      <div ref={box} className="mt-2 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto pb-4">
         {turns.length === 0 && pending === null && (
           <div className="flex flex-col gap-3">
             <p className="text-ink-muted">{text.intro}</p>
@@ -434,45 +477,41 @@ export function AssistantChat({ page, pathname }: AssistantChatProps) {
           </div>
         )}
 
-        {turns.map((turn, i) => (
-          <section key={i} className="flex flex-col gap-2">
-            <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{turn.question}</p>
-            <div className="rounded-card border border-line px-3 py-2">
-              <AnswerView text={turn.answer} />
-              {turn.truncated && <p className="mt-1 text-sm text-ink-muted">{text.truncated}</p>}
-              {turn.calls !== undefined && <p className="mt-1 text-xs text-ink-muted">{text.calls(turn.calls)}</p>}
-              <div className="flex flex-wrap items-start gap-x-1">
-                <Rating turn={turn} index={i} />
-                <SaveToDiary turn={turn} />
-              </div>
-            </div>
-          </section>
-        ))}
+        {earlier.map((turn, i) => turnView(turn, i))}
 
-        <QuestionChips label={text.followUpsLabel} questions={followUps} onPick={(question) => void send(question)} />
+        <div ref={latest} className="flex flex-col gap-4" style={anchorHeight !== null ? { minHeight: anchorHeight } : undefined}>
+          {newest && turnView(newest, turns.length - 1)}
 
-        {pending !== null && (
-          <section className="flex flex-col gap-2">
-            <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{pending}</p>
-            {waiting && <Thinking label={text.thinking} />}
-            {error && (
-              <div role="alert" className="flex flex-col gap-2 rounded-card border border-line px-3 py-2">
-                <p>{error}</p>
-                {retryable && (
-                  <Button variant="secondary" onClick={() => void send(pending)}>
-                    {text.retry}
-                  </Button>
-                )}
-              </div>
-            )}
-          </section>
-        )}
+          <QuestionChips label={text.followUpsLabel} questions={followUps} onPick={(question) => void send(question)} />
 
-        {turns.length > 0 && (
-          <Button variant="secondary" onClick={() => void copy()}>
-            {copied ? text.copied : text.copy}
-          </Button>
-        )}
+          {pending !== null && (
+            <section className="flex flex-col gap-2">
+              <p className="max-w-[85%] self-end whitespace-pre-wrap rounded-card bg-surface-2 px-3 py-2">{pending}</p>
+              {waiting && shownSoFar.trim() !== '' && (
+                <div className="rounded-card border border-line px-3 py-2">
+                  <AnswerView text={shownSoFar} />
+                </div>
+              )}
+              {waiting && shownSoFar.trim() === '' && <Thinking label={text.thinking} />}
+              {error && (
+                <div role="alert" className="flex flex-col gap-2 rounded-card border border-line px-3 py-2">
+                  <p>{error}</p>
+                  {retryable && (
+                    <Button variant="secondary" onClick={() => void send(pending)}>
+                      {text.retry}
+                    </Button>
+                  )}
+                </div>
+              )}
+            </section>
+          )}
+
+          {turns.length > 0 && (
+            <Button variant="secondary" onClick={() => void copy()}>
+              {copied ? text.copied : text.copy}
+            </Button>
+          )}
+        </div>
         <div ref={end} />
       </div>
 

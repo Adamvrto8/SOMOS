@@ -52,7 +52,7 @@ function fakes({ user = { id: USER_ID, email: 'adam@example.com' }, today = 0, a
       return Response.json(today)
     }
     if (url.endsWith('/rest/v1/chat_usage')) return new Response(null, { status: log })
-    if (url === 'https://api.anthropic.com/v1/messages') return Response.json(anthropic[1], { status: anthropic[0] })
+    if (url === 'https://api.anthropic.com/v1/messages') return anthropic[1] instanceof Response ? anthropic[1] : Response.json(anthropic[1], { status: anthropic[0] })
     throw new Error(`unexpected fetch ${url}`)
   })
   return { impl: impl as unknown as typeof fetch, calls }
@@ -380,5 +380,95 @@ describe('SYSTEM_PROMPT', () => {
     expect(SYSTEM_PROMPT).toContain('{{dalej:')
     expect(SYSTEM_PROMPT).toContain('tučne (**…**) len španielske slová')
     expect(SYSTEM_PROMPT).toContain('výsledok úlohy nikdy nemeň') // "Prečo?" from a lesson
+  })
+})
+
+/** Anthropic's streamed answer: one server-sent event per object, split into network chunks at odd places. */
+function sse(events: Record<string, unknown>[]) {
+  const text = events.map((event) => `event: ${String(event.type)}\ndata: ${JSON.stringify(event)}\n\n`).join('')
+  const encoder = new TextEncoder()
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      for (let i = 0; i < text.length; i += 37) controller.enqueue(encoder.encode(text.slice(i, i + 37)))
+      controller.close()
+    },
+  })
+  return new Response(body, { headers: { 'Content-Type': 'text/event-stream' } })
+}
+
+const ndjsonLines = async (res: Response) =>
+  (await res.text())
+    .split('\n')
+    .filter(Boolean)
+    .map((l) => JSON.parse(l) as Record<string, unknown>)
+
+describe('api/chat streamed', () => {
+  it('passes the text on as it comes and closes with the whole content, thinking and tool input put together', async () => {
+    const { impl, calls } = fakes({
+      anthropic: [
+        200,
+        sse([
+          { type: 'message_start', message: { usage: { input_tokens: 120, output_tokens: 1, cache_read_input_tokens: 100, cache_creation_input_tokens: 0 } } },
+          { type: 'content_block_start', index: 0, content_block: { type: 'thinking', thinking: '', signature: '' } },
+          { type: 'content_block_delta', index: 0, delta: { type: 'thinking_delta', thinking: 'Hm.' } },
+          { type: 'content_block_delta', index: 0, delta: { type: 'signature_delta', signature: 'sig' } },
+          { type: 'content_block_stop', index: 0 },
+          { type: 'content_block_start', index: 1, content_block: { type: 'text', text: '' } },
+          { type: 'content_block_delta', index: 1, delta: { type: 'text_delta', text: 'Dom ' } },
+          { type: 'content_block_delta', index: 1, delta: { type: 'text_delta', text: 'je casa.' } },
+          { type: 'content_block_stop', index: 1 },
+          { type: 'content_block_start', index: 2, content_block: { type: 'tool_use', id: 't1', name: 'search_word', input: {} } },
+          { type: 'content_block_delta', index: 2, delta: { type: 'input_json_delta', partial_json: '{"query":' } },
+          { type: 'content_block_delta', index: 2, delta: { type: 'input_json_delta', partial_json: '"dom"}' } },
+          { type: 'content_block_stop', index: 2 },
+          { type: 'message_delta', delta: { stop_reason: 'tool_use' }, usage: { output_tokens: 30, input_tokens: null } },
+          { type: 'message_stop' },
+        ]),
+      ],
+    })
+    const res = await chat(request({ ...ask(), stream: true }), ENV, impl)
+    expect(res.headers.get('content-type')).toContain('application/x-ndjson')
+    expect(await ndjsonLines(res)).toEqual([
+      { t: 'text', text: 'Dom ' },
+      { t: 'text', text: 'je casa.' },
+      {
+        t: 'done',
+        content: [
+          { type: 'thinking', thinking: 'Hm.', signature: 'sig' },
+          { type: 'text', text: 'Dom je casa.' },
+          { type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } },
+        ],
+        stop_reason: 'tool_use',
+        usage: { input_tokens: 120, output_tokens: 30, cache_read_input_tokens: 100, cache_creation_input_tokens: 0 },
+      },
+    ])
+    expect(JSON.parse(anthropicCalls(calls)[0].init.body as string).stream).toBe(true)
+    const logged = calls.find((c) => c.url.endsWith('/rest/v1/chat_usage'))!
+    expect(JSON.parse(logged.init.body as string)).toMatchObject({ input_tokens: 120, output_tokens: 30, cache_read_tokens: 100, stop_reason: 'tool_use' })
+  })
+
+  it('an overload in the middle ends the stream with busy, and is logged', async () => {
+    const { impl, calls } = fakes({
+      anthropic: [
+        200,
+        sse([
+          { type: 'message_start', message: { usage: { input_tokens: 10 } } },
+          { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } },
+          { type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text: 'Do' } },
+          { type: 'error', error: { type: 'overloaded_error', message: 'Overloaded' } },
+        ]),
+      ],
+    })
+    const lines = await ndjsonLines(await chat(request({ ...ask(), stream: true }), ENV, impl))
+    expect(lines.at(-1)).toEqual({ t: 'error', error: 'busy' })
+    const logged = calls.find((c) => c.url.endsWith('/rest/v1/chat_usage'))!
+    expect(JSON.parse(logged.init.body as string)).toMatchObject({ stop_reason: 'stream_error' })
+  })
+
+  it('without `stream` the answer is plain JSON, as for an older app', async () => {
+    const { impl, calls } = fakes()
+    const res = await chat(request(ask()), ENV, impl)
+    expect(await res.json()).toMatchObject({ content: [{ type: 'text', text: 'Ahoj' }], stop_reason: 'end_turn' })
+    expect(JSON.parse(anthropicCalls(calls)[0].init.body as string).stream).toBeUndefined()
   })
 })

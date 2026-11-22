@@ -289,3 +289,67 @@ describe('ask: errors', () => {
     ])
   })
 })
+
+/** A streamed answer of api/chat.ts: NDJSON lines in the given chunks (a line may be split between two). */
+function ndjson(chunks: string[]) {
+  const encoder = new TextEncoder()
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      for (const chunk of chunks) controller.enqueue(encoder.encode(chunk))
+      controller.close()
+    },
+  })
+  return new Response(body, { headers: { 'Content-Type': 'application/x-ndjson; charset=utf-8' } })
+}
+const line = (value: unknown) => `${JSON.stringify(value)}\n`
+
+describe('ask, streamed', () => {
+  const streamDeps = (responses: Response[], extra: Partial<ChatDeps> = {}) => {
+    const bodies: any[] = []
+    const fetchImpl = vi.fn(async (_url: string | URL | Request, init?: RequestInit) => {
+      bodies.push(JSON.parse(init!.body as string))
+      return responses.shift()!
+    })
+    const d: ChatDeps = {
+      fetchImpl: fetchImpl as unknown as typeof fetch,
+      token: async () => 'jwt',
+      online: () => true,
+      tool: () => ({ content: '{}', isError: false }),
+      context: async () => ({ app: 'MAPA', learner: 'PROFIL' }),
+      check: () => [],
+      ...extra,
+    }
+    return { d, bodies }
+  }
+
+  it('asks for a stream and passes the text on as it comes, a split line too', async () => {
+    const done = { t: 'done', content: [{ type: 'text', text: 'Dom je casa.' }], stop_reason: 'end_turn', usage: {} }
+    const whole = line({ t: 'text', text: 'Dom ' }) + line({ t: 'text', text: 'je casa.' }) + line(done)
+    const seen: string[] = []
+    const { d, bodies } = streamDeps([ndjson([whole.slice(0, 10), whole.slice(10, 40), whole.slice(40)])], { onText: (t) => seen.push(t) })
+    expect((await ask([], 'dom?', d)).text).toBe('Dom je casa.')
+    expect(bodies[0].stream).toBe(true)
+    expect(seen).toEqual(['Dom ', 'Dom je casa.'])
+  })
+
+  it('starts the text over for the call after a tool and for a corrected answer', async () => {
+    const tool = { t: 'done', content: [{ type: 'tool_use', id: 't1', name: 'search_word', input: { query: 'dom' } }], stop_reason: 'tool_use', usage: {} }
+    const first = { t: 'done', content: [{ type: 'text', text: 'Coche.' }], stop_reason: 'end_turn', usage: {} }
+    const fixed = { t: 'done', content: [{ type: 'text', text: 'Carro.' }], stop_reason: 'end_turn', usage: {} }
+    const seen: string[] = []
+    let checks = 0
+    const { d } = streamDeps(
+      [ndjson([line(tool)]), ndjson([line({ t: 'text', text: 'Coche.' }), line(first)]), ndjson([line({ t: 'text', text: 'Carro.' }), line(fixed)])],
+      { onText: (t) => seen.push(t), check: () => (checks++ === 0 ? ['Spain word'] : []) },
+    )
+    expect((await ask([], 'auto?', d)).text).toBe('Carro.')
+    expect(seen).toEqual(['', 'Coche.', '', 'Carro.'])
+  })
+
+  it('an error line or a broken stream is a failure', async () => {
+    const busy = streamDeps([ndjson([line({ t: 'text', text: 'Do' }), line({ t: 'error', error: 'busy' })])])
+    expect(await failure(ask([], 'dom?', busy.d))).toBe('busy')
+    const broken = streamDeps([ndjson([line({ t: 'text', text: 'Do' })])])
+    expect(await failure(ask([], 'dom?', broken.d))).toBe('failed')
+  })
+})

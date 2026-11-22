@@ -10,6 +10,9 @@ import { runTool, type ToolOutcome } from './tools'
 // Every POST also carries `context`: the app map and the learner's profile (context.ts), built once per question.
 // A finished answer is checked in code (answerCheck.ts); when the check finds something, the model gets one more call
 // with a note on what to fix, and the second answer is shown whatever it says.
+// The model's text comes while it is written (`stream: true`, NDJSON lines from api/chat.ts): `onText` gets the text of
+// the call so far, '' when a new call starts (after a tool, or for the corrected answer). A plain JSON answer (an older
+// server) works too.
 
 export type ChatErrorCode = 'offline' | 'not-signed-in' | 'not-allowed' | 'daily-limit' | 'busy' | 'not-configured' | 'too-many-steps' | 'refused' | 'failed'
 
@@ -76,6 +79,8 @@ export interface ChatDeps {
   page?: string
   /** Notes on a finished answer (answerCheck.ts); empty = shown as it is. */
   check?: (answer: string, question: string) => string[]
+  /** The answer text of the current model call so far, while it is written; '' when a new call starts. */
+  onText?: (text: string) => void
 }
 
 /** The note sent back with a checked answer: marked as the app's, so the model does not take it for the learner. */
@@ -99,28 +104,72 @@ function codeOf(status: number, error: unknown): ChatErrorCode {
   return 'failed'
 }
 
+function apiAnswer(data: unknown): ApiAnswer {
+  const answer = data as { content?: unknown; stop_reason?: unknown } | undefined
+  if (!answer || !isBlockList(answer.content) || typeof answer.stop_reason !== 'string') throw new ChatFailure('failed')
+  return { content: answer.content, stop_reason: answer.stop_reason }
+}
+
+/** The NDJSON lines of a streamed answer: text pieces go to `onText` as they come, the closing line is the answer. */
+async function readStream(body: ReadableStream<Uint8Array>, onText: (text: string) => void, online: () => boolean): Promise<ApiAnswer> {
+  const reader = body.getReader()
+  const decoder = new TextDecoder()
+  let rest = ''
+  let text = ''
+  for (;;) {
+    let chunk: ReadableStreamReadResult<Uint8Array>
+    try {
+      chunk = await reader.read()
+    } catch {
+      throw new ChatFailure(online() ? 'failed' : 'offline')
+    }
+    rest += chunk.done ? decoder.decode() : decoder.decode(chunk.value, { stream: true })
+    const lines = rest.split('\n')
+    rest = chunk.done ? '' : (lines.pop() ?? '')
+    for (const line of lines) {
+      if (!line.trim()) continue
+      let event: { t?: unknown; text?: unknown; error?: unknown }
+      try {
+        event = JSON.parse(line) as typeof event
+      } catch {
+        throw new ChatFailure('failed')
+      }
+      if (event.t === 'text' && typeof event.text === 'string') {
+        text += event.text
+        onText(text)
+      } else if (event.t === 'done') {
+        return apiAnswer(event)
+      } else if (event.t === 'error') {
+        throw new ChatFailure(event.error === 'busy' ? 'busy' : 'failed')
+      }
+    }
+    // The stream ended without its closing line: the connection broke.
+    if (chunk.done) throw new ChatFailure(online() ? 'failed' : 'offline')
+  }
+}
+
 async function callModel(
   messages: Message[],
   context: ChatContext | undefined,
   token: string,
   fetchImpl: typeof fetch,
   online: () => boolean,
+  onText: (text: string) => void,
 ): Promise<ApiAnswer> {
   let res: Response
   try {
     res = await fetchImpl('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify(context ? { messages, context } : { messages }),
+      body: JSON.stringify({ messages, ...(context ? { context } : {}), stream: true }),
     })
   } catch {
     throw new ChatFailure(online() ? 'failed' : 'offline')
   }
+  if (res.ok && res.body && res.headers.get('content-type')?.includes('application/x-ndjson')) return readStream(res.body, onText, online)
   const body: unknown = await res.json().catch(() => undefined)
   if (!res.ok) throw new ChatFailure(codeOf(res.status, (body as { error?: unknown } | undefined)?.error))
-  const data = body as { content?: unknown; stop_reason?: unknown } | undefined
-  if (!data || !isBlockList(data.content) || typeof data.stop_reason !== 'string') throw new ChatFailure('failed')
-  return { content: data.content, stop_reason: data.stop_reason }
+  return apiAnswer(body)
 }
 
 const textOf = (blocks: Block[]) =>
@@ -142,6 +191,7 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
     context: buildContext = buildChatContext,
     page,
     check = (answer, asked) => checkAnswer(answer, asked, variant),
+    onText = () => {},
   } = deps
   const trimmed = question.trim()
   if (!trimmed || trimmed.length > MAX_QUESTION_CHARS) throw new ChatFailure('failed')
@@ -170,7 +220,8 @@ export async function ask(turns: readonly Turn[], question: string, deps: ChatDe
   let checked = false
   const used: ToolCall[] = []
   for (let calls = 1; calls <= MAX_CALLS; calls++) {
-    const reply = await callModel(messages, context, jwt, fetchImpl, online)
+    if (calls > 1) onText('')
+    const reply = await callModel(messages, context, jwt, fetchImpl, online, onText)
     if (reply.stop_reason === 'refusal') throw new ChatFailure('refused')
     if (reply.stop_reason !== 'tool_use') {
       const text = textOf(reply.content)
