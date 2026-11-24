@@ -18,16 +18,21 @@ export interface ReviewEntry {
   note?: string
   /** Decided when the session loads, so a card coming back in the same session keeps its side. */
   slovakFirst: boolean
-  /** What may be typed for the hidden side; empty when the card can only be revealed (sentences). */
+  /** What may be typed for the hidden side; empty when the card can only be revealed (a sentence shown in Spanish). */
   answers: string[]
 }
 
 /**
- * Words alternate the side shown first with every review, so recalling the Spanish word
- * is practised too. Sentences are always read in Spanish.
+ * Cards alternate the side shown first with every review, so recalling the Spanish word
+ * or sentence is practised too.
  */
-export function slovakFirst(itemType: ReviewItemType, card: Card): boolean {
-  return itemType !== 'sentence' && card.reps % 2 === 1
+export function slovakFirst(card: Card): boolean {
+  return card.reps % 2 === 1
+}
+
+/** A sentence is typed in Spanish only: a free Slovak translation of it can't be checked. */
+export function sentenceAnswers(es: string, slovakShown: boolean): string[] {
+  return slovakShown ? [es] : []
 }
 
 /** A Spanish word typed with or without its article. */
@@ -54,11 +59,10 @@ export async function loadDueEntries(now = new Date()): Promise<ReviewEntry[]> {
   const customs = new Map((await db.customWords.bulkGet(customIds)).flatMap((c) => (c ? [[c.id, c] as const] : [])))
 
   return due.flatMap(({ rc, card }): ReviewEntry[] => {
-    const base = { itemType: rc.itemType, itemId: rc.itemId, card, slovakFirst: slovakFirst(rc.itemType, card) }
+    const base = { itemType: rc.itemType, itemId: rc.itemId, card, slovakFirst: slovakFirst(card) }
     if (rc.itemType === 'sentence') {
       const sentence = sentenceById.get(rc.itemId)
-      // A free Slovak translation of a sentence can't be checked: reveal only.
-      return sentence ? [{ ...base, es: sentence.es, sk: [sentenceTranslation(sentence)], answers: [] }] : []
+      return sentence ? [{ ...base, es: sentence.es, sk: [sentenceTranslation(sentence)], answers: sentenceAnswers(sentence.es, base.slovakFirst) }] : []
     }
     if (rc.itemType === 'word') {
       const word = wordById.get(rc.itemId)

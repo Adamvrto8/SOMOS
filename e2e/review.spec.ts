@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import type { Word } from '../src/data/types.ts'
-import { button, field, gapAboveBottom, KEYBOARD_OPEN, status, words } from './helpers.ts'
+import { askedSentence, button, field, gapAboveBottom, KEYBOARD_OPEN, sentences, status, words } from './helpers.ts'
 
 const DAY = 86_400_000
 
@@ -68,4 +68,83 @@ test('"Ukázať preklad" reveals the card for a manual rating', async ({ page })
   await expect(page.getByText('Ako dobre si to vedel?')).toBeVisible()
   await expect(field(page)).toHaveCount(0)
   await expect(button(page, 'Ukázať preklad')).toHaveCount(0)
+})
+
+test('a sentence card is read in Spanish, next time typed in Spanish from Slovak', async ({ page }) => {
+  // A wrong translation and ⭐ in its feedback both give the sentence a review card.
+  await page.goto('/practice/lesson?type=translation&topic=all&level=A1&lesson=1')
+  await askedSentence(page)
+  await field(page).fill('zzzz')
+  await button(page, 'Skontrolovať').tap()
+  await button(page, 'Vzdať sa').tap()
+  await button(page, 'Uložiť do môjho slovníka').tap()
+  await expect(button(page, 'Odstrániť z môjho slovníka')).toBeVisible()
+
+  const card = page.locator('article h1')
+  /** Reveals and rates every card shown in Spanish until one comes in Slovak (or the session ends). */
+  const rateSpanishCards = async () => {
+    await expect(card.or(page.getByText('Hotovo na dnes'))).toBeVisible()
+    while ((await card.isVisible()) && (await card.getAttribute('lang')) === 'es') {
+      // A Slovak translation of a sentence can't be checked, so the Spanish side is only revealed.
+      await expect(field(page)).toHaveCount(0)
+      const before = await card.innerText()
+      await button(page, 'Ukázať preklad').tap()
+      // Ľahké: a new card leaves the session at once (Dobre would bring it back in a few minutes).
+      await page.getByRole('button', { name: /^Ľahké/ }).tap()
+      await expect(page.locator('main')).not.toContainText(before)
+    }
+  }
+
+  // The first review shows the sentence in Spanish.
+  const start = Date.now()
+  await page.clock.setFixedTime(start + 3 * DAY)
+  await page.goto('/review')
+  await expect(card).toHaveAttribute('lang', 'es')
+  await rateSpanishCards()
+
+  // The next time it shows the Slovak side, and the Spanish sentence is typed.
+  await page.clock.setFixedTime(start + 60 * DAY)
+  await page.goto('/review')
+  await rateSpanishCards()
+  await expect(card).toHaveAttribute('lang', 'sk')
+  const shown = await card.innerText()
+  expect(sentences.some((s) => s.sk === shown)).toBe(true)
+  await field(page).fill('zzzz')
+  await button(page, 'Skontrolovať').tap()
+  await expect(status(page)).toContainText('Ešte to nie je ono')
+  await button(page, 'Vzdať sa').tap()
+  await expect(status(page)).toContainText('Nevedel si')
+  // A sentence can be said in other ways: as in a lesson, the learner may count it as right.
+  await button(page, 'Moja odpoveď bola tiež správna').tap()
+  await expect(button(page, 'Moja odpoveď bola tiež správna')).toHaveCount(0)
+})
+
+test('the longest word fits its card, and both sides of a card are one height', async ({ page }) => {
+  await page.goto('/word/electrodomestico')
+  await page.getByRole('button', { name: 'Uložiť do môjho slovníka' }).first().tap()
+  await expect(page.getByRole('button', { name: 'Odstrániť z môjho slovníka' }).first()).toBeVisible()
+
+  const card = page.locator('article')
+  const heightOfSide = async (lang: string) => {
+    await expect(card.locator('h1')).toHaveAttribute('lang', lang)
+    // Nothing sticks out of the card, and the page does not scroll sideways.
+    const h1 = (await card.locator('h1').boundingBox())!
+    const box = (await card.boundingBox())!
+    expect(h1.x).toBeGreaterThanOrEqual(box.x)
+    expect(h1.x + h1.width).toBeLessThanOrEqual(box.x + box.width)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+    return box.height
+  }
+
+  const start = Date.now()
+  await page.clock.setFixedTime(start + 3 * DAY)
+  await page.goto('/review')
+  const spanish = await heightOfSide('es')
+  await button(page, 'Ukázať preklad').tap()
+  await page.getByRole('button', { name: /^Ľahké/ }).tap()
+  await expect(page.getByText('Hotovo na dnes')).toBeVisible()
+
+  await page.clock.setFixedTime(start + 60 * DAY)
+  await page.goto('/review')
+  expect(await heightOfSide('sk')).toBe(spanish)
 })

@@ -8,7 +8,7 @@ import { Azulejos } from '../../components/Azulejos'
 import { useT } from '../../i18n'
 import { useLanguage } from '../../lib/language'
 import { celebrationOver } from '../../lib/celebration'
-import { checkAnswer, wrongAsWhole, type CheckResult } from '../../lib/checkAnswer'
+import { checkAnswer, diffWords, wrongAsWhole, type CheckOptions, type CheckResult } from '../../lib/checkAnswer'
 import { lookupForm } from '../../lib/knownForms'
 import type { Grade as LessonGrade } from '../../lib/lesson'
 import { playSound, soundForVerdict } from '../../lib/sound'
@@ -22,6 +22,20 @@ const GRADE_STYLE: Record<number, string> = {
   2: 'border border-line bg-surface text-ink',
   3: 'bg-brick text-on-accent',
   4: 'border border-line bg-surface text-leaf',
+}
+
+/** The front side's text; a word longer than the card is broken rather than pushing the page wider. */
+const FRONT_TEXT = 'max-w-full font-serif leading-tight font-semibold tracking-tight [overflow-wrap:anywhere] hyphens-auto'
+
+/**
+ * One size for a word on either side, by its longest word: "estacionamiento" at the size of "casa"
+ * would not fit the card at 375px. A long phrase steps down too, to stay on about two lines.
+ */
+function frontSize(text: string, sentence: boolean): string {
+  if (sentence) return 'text-3xl'
+  const longest = Math.max(...text.split(/\s+/).map((word) => word.length))
+  const step = (longest > 16 ? 3 : longest > 12 ? 2 : longest > 9 ? 1 : 0) + (text.length > 18 ? 1 : 0)
+  return ['text-5xl', 'text-4xl', 'text-3xl', 'text-2xl'][Math.min(step, 3)]
 }
 
 /** What TypedAnswer and its hint take: a lesson grade made from a check. */
@@ -53,6 +67,7 @@ export function ReviewPage() {
 
   const entry = queue?.[0]
   const canType = Boolean(entry?.answers.length)
+  const isSentence = entry?.itemType === 'sentence'
   const spoken = entry ? (entry.article ? `${entry.article} ${entry.es}` : entry.es) : ''
   const intervals = entry && revealed ? previewIntervals(entry.card, new Date()) : undefined
 
@@ -97,12 +112,15 @@ export function ReviewPage() {
 
   const check = () => {
     if (!entry || revealed || !typed.trim()) return
-    const result = checkAnswer(typed, entry.answers, entry.slovakFirst ? { lookup: lookupForm } : {})
+    // A sentence is checked like a translation in a lesson: "Yo tengo hambre" is right for "Tengo hambre".
+    const options: CheckOptions = isSentence ? { lookup: lookupForm, optionalSubject: true } : entry.slovakFirst ? { lookup: lookupForm } : {}
+    const result = checkAnswer(typed, entry.answers, options)
     setTries(tries + 1)
     // A wrong answer can be fixed and checked again, like in a lesson, and sounds like "not yet".
     if (result.verdict === 'wrong') {
       playSound('almost')
-      setHint({ ...asGrade(result), diff: wrongAsWhole(typed) })
+      // A sentence shows which of its words to fix; a word with several meanings is wrong as a whole.
+      setHint({ ...asGrade(result), diff: isSentence ? diffWords(typed, entry.es, options) : wrongAsWhole(typed) })
     } else {
       playSound(soundForVerdict(result.verdict))
       settle(typedRating(tries + 1, false), result)
@@ -166,30 +184,28 @@ export function ReviewPage() {
               <p className="text-xs font-semibold tracking-widest text-ink-muted uppercase">
                 {entry.slovakFirst ? text.howInSpanish : text.remember}
               </p>
-              {entry.slovakFirst ? (
-                // No 🔊 here: hearing the word would give the answer away.
-                <div className="mt-4">
-                  <h1 lang="sk" className="font-serif text-4xl leading-tight font-semibold tracking-tight hyphens-auto">
-                    {entry.sk[0]}
-                  </h1>
-                  {entry.sk.length > 1 && <p className="mt-2 text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
-                </div>
-              ) : (
-                <>
-                  <div className="mt-4 flex items-center justify-center gap-2">
-                    <h1
-                      lang="es"
-                      className={`font-serif leading-tight font-semibold tracking-tight hyphens-auto ${entry.itemType === 'sentence' ? 'text-3xl' : 'text-5xl'}`}
-                    >
-                      {entry.article && <span className="text-3xl font-normal text-ink-muted">{entry.article} </span>}
+              {/* One height for both sides, with or without 🔊, so the cards don't jump from one to the next. */}
+              <div className="mt-4 flex min-h-34 flex-col items-center justify-center">
+                {entry.slovakFirst ? (
+                  // No 🔊 here: hearing the word would give the answer away.
+                  <>
+                    <h1 lang="sk" className={`${FRONT_TEXT} ${frontSize(entry.sk[0], isSentence)}`}>
+                      {entry.sk[0]}
+                    </h1>
+                    {entry.sk.length > 1 && <p className="mt-2 text-ink-muted">{entry.sk.slice(1).join(', ')}</p>}
+                  </>
+                ) : (
+                  <>
+                    <h1 lang="es" className={`${FRONT_TEXT} ${frontSize(spoken, isSentence)}`}>
+                      {entry.article && <span className="font-normal text-ink-muted">{entry.article} </span>}
                       {entry.es}
                     </h1>
-                  </div>
-                  <div className="mt-3 flex justify-center">
-                    <SpeakButton text={spoken} size="lg" />
-                  </div>
-                </>
-              )}
+                    <div className="mt-3 flex justify-center">
+                      <SpeakButton text={spoken} size="lg" />
+                    </div>
+                  </>
+                )}
+              </div>
 
               {revealed && (
                 <div className="mt-6 border-t border-line pt-6 text-left">
@@ -275,6 +291,12 @@ export function ReviewPage() {
                 <Button onClick={() => void rate(outcome.grade)} disabled={busy} className="mt-3 w-full" autoFocus>
                   {dictionary.lesson.carryOn}
                 </Button>
+                {/* A sentence can be said in more ways than the one in the data, as in a lesson's translation. */}
+                {isSentence && outcome.grade === Rating.Again && (
+                  <Button variant="secondary" onClick={() => void rate(Rating.Good)} disabled={busy} className="mt-2 w-full">
+                    {dictionary.lesson.override}
+                  </Button>
+                )}
               </>
             ) : (
               <>
